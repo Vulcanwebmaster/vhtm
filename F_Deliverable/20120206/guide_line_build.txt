@@ -1,0 +1,14 @@
+Tai lieu nay huong dan cach build source code complier demo
+Step 1: Download va cai dat flex, bison, gcc (co the su dung cach cai Dev C)
+Step 2: Extract source code de mo 
+Step 3: Thuc hien cac cau lenh duoi day voi thu muc hien tai la thu muc da extract source code demo de build source complier code demo
+bison -d parser.y
+gcc -c parser.tab.c
+flex scanner.lex
+gcc -c lex.yy.c
+gcc -o complier parser.tab.o lex.yy.o -lm
+Step 4: Sau khi co duoc file compler.exe thi thuc hien lenh sau de run sample (file operator.txt)
+complier operator.txt
+
+***Chu y: Co the su dung file run.bat trong source code demo de tien hanh build
+Source code demo cac phep tinh se duoc thuc hien tu trai qua phai

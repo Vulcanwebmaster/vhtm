@@ -1,0 +1,9 @@
+let
+	integer n,x;
+begin
+	read n;
+	n := n * 10 - 2;
+	x := n / 2 * 4 + 3;
+	write n;
+	write x;
+end
