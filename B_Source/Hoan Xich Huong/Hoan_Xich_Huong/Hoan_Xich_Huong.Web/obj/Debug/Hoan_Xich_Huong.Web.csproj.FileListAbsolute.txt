@@ -1,0 +1,5 @@
+C:\Documents and Settings\User\Desktop\Hoan_Xich_Huong\Hoan_Xich_Huong.Web\bin\Hoan_Xich_Huong.Web.dll
+C:\Documents and Settings\User\Desktop\Hoan_Xich_Huong\Hoan_Xich_Huong.Web\bin\Hoan_Xich_Huong.Web.pdb
+C:\Documents and Settings\User\Desktop\Hoan_Xich_Huong\Hoan_Xich_Huong.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\User\Desktop\Hoan_Xich_Huong\Hoan_Xich_Huong.Web\obj\Debug\Hoan_Xich_Huong.Web.dll
+C:\Documents and Settings\User\Desktop\Hoan_Xich_Huong\Hoan_Xich_Huong.Web\obj\Debug\Hoan_Xich_Huong.Web.pdb

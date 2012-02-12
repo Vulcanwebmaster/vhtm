@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoan_Xich_Huong", "Hoan_Xich_Huong\Hoan_Xich_Huong.csproj", "{0B3FE7C2-33F5-4385-A19F-33F41D83E488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoan_Xich_Huong.Web", "Hoan_Xich_Huong.Web\Hoan_Xich_Huong.Web.csproj", "{63D6E22D-59E0-488E-9AEF-7AB421AF39FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B3FE7C2-33F5-4385-A19F-33F41D83E488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3FE7C2-33F5-4385-A19F-33F41D83E488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B3FE7C2-33F5-4385-A19F-33F41D83E488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3FE7C2-33F5-4385-A19F-33F41D83E488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D6E22D-59E0-488E-9AEF-7AB421AF39FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D6E22D-59E0-488E-9AEF-7AB421AF39FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D6E22D-59E0-488E-9AEF-7AB421AF39FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D6E22D-59E0-488E-9AEF-7AB421AF39FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

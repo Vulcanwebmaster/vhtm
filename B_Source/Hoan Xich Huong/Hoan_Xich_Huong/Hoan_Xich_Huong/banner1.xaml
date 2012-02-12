@@ -1,0 +1,33 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Hoan_Xich_Huong.banner1" Loaded="Image_Loaded"><!-- Height="135" Width="432"-->
+
+	<UserControl.Resources>
+		<Storyboard x:Name="storyboard_image">
+			<DoubleAnimation From="-200" To="0" SpeedRatio="0.3" Storyboard.TargetName="rotate_image1" Storyboard.TargetProperty="X"/>
+			<DoubleAnimation Storyboard.TargetName="textblock1" Storyboard.TargetProperty="Opacity" From="0" To="1" SpeedRatio="0.3"/>
+			<DoubleAnimation Storyboard.TargetName="translate1" Storyboard.TargetProperty="X" From="200" To="0" SpeedRatio="0.4"/>
+		</Storyboard>
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.304*"/>
+			<ColumnDefinition Width="0.696*"/>
+		</Grid.ColumnDefinitions>
+		<Image Source="image/hoan-xich-huong.png" Margin="30,0,0,0" Stretch="Uniform" HorizontalAlignment="Left" Loaded="Image_Loaded">
+			<Image.RenderTransform>
+				<!--RotateTransform x:Name="rotate_image1" Angle="0"/-->
+				<TranslateTransform x:Name="rotate_image1" X="0"/>
+			</Image.RenderTransform>
+		</Image>
+		<TextBlock x:Name="textblock1" FontSize="18" FontFamily="Arial" Opacity="1" TextAlignment="Left" Margin="70,0" VerticalAlignment="Center" Text="Giảm thể thể tích và khối lượng khối phì đại tuyến tiền liệt, cải thiện rõ rệt các rối loạn về tiểu tiện làm giảm số lần đi tiểu trong ngày, tăng lượng nước tiểu mỗi lần" TextWrapping="Wrap" Grid.Column="1" Foreground="#FF044508" LineHeight="26.667">
+			<TextBlock.RenderTransform>
+				<TranslateTransform X="0" x:Name="translate1"/>
+			</TextBlock.RenderTransform>
+		</TextBlock>
+	</Grid>
+</UserControl>
