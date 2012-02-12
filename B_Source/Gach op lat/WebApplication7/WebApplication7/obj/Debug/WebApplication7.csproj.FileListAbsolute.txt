@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\ASP solutions\WebApplication7\WebApplication7\bin\WebApplication7.dll
+C:\Users\Admin\Desktop\ASP solutions\WebApplication7\WebApplication7\bin\WebApplication7.pdb
+C:\Users\Admin\Desktop\ASP solutions\WebApplication7\WebApplication7\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\ASP solutions\WebApplication7\WebApplication7\obj\Debug\WebApplication7.dll
+C:\Users\Admin\Desktop\ASP solutions\WebApplication7\WebApplication7\obj\Debug\WebApplication7.pdb
