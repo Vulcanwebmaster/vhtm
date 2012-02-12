@@ -1,0 +1,10 @@
+let
+	integer x;
+begin
+	readi x;
+	while x < 20 
+	do 
+	    writei x;
+	    x:= x + 1;
+	end;
+end

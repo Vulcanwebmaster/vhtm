@@ -1,0 +1,14 @@
+let
+	integer a,b,cong,tru,nhan,chia;
+begin
+	read a;
+	read b;
+	cong := a + b;
+	tru := a - b;
+	nhan := a * b;
+	chia := a / b;
+	write cong;
+	write tru;
+	write nhan;
+	write chia;
+end
