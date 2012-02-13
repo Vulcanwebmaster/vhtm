@@ -1,0 +1,9 @@
+let
+	integer x,y;
+begin
+	readi x;
+	readi y;
+	if x > y then writei x; 
+	else writei y; 
+	fi;
+end

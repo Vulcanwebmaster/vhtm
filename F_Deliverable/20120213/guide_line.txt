@@ -1,0 +1,46 @@
+Tai lieu nay note nhung diem thay doi cua source code so voi lan release truoc
+1. Added item:
+1.1. Da implement them kieu double
+De su dung kieu double co the khai bao nhu sau:
+let
+    double x,y;
+De doc gia tri bien x kieu double dung lenh:
+readd x;
+De ghi gia tri bien x kieu double dung lenh:
+writed x;
+Hien tai co the so sanh, cong tru nhan chia voi kieu double, giua kia integer va kieu double (chi tiet co the refer o trong cac file source code demo if.txt, whiledo.txt...)
+
+1.2. Da implement them kieu character
+De su dung kieu double co the khai bao nhu sau:
+let
+    char x,y;
+De doc gia tri bien x kieu character dung lenh:
+readc x;
+De ghi gia tri bien x kieu character dung lenh:
+writec x;
+***Chu y: Hien tai kieu character moi chi ho tro khai bao, doc va ghi.
+
+1.3. Da implement them kieu string
+De su dung kieu double co the khai bao nhu sau:
+let
+    string x,y;
+De doc gia tri bien x kieu string dung lenh:
+reads x;
+De ghi gia tri bien x kieu string dung lenh:
+writes x;
+***Hien tai kieu string moi chi ho tro khai bao, doc va ghi.
+
+2. Changed item:
+2.1. Change cach doc va ghi bien kieu integer
+Old version:
+De doc gia tri bien x kieu integer dung lenh:
+read x;
+De ghi gia tri bien x kieu integer dung lenh:
+write x;
+
+Current version:
+De doc gia tri bien x kieu integer dung lenh:
+readi x;
+De ghi gia tri bien x kieu integer dung lenh:
+writei x;
+

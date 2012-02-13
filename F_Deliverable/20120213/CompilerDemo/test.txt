@@ -1,0 +1,8 @@
+let
+	double y, z;
+begin
+	readd y;
+	readd z;
+	z := y + z;
+	writed z;
+end
