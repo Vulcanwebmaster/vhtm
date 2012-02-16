@@ -62,6 +62,7 @@ int intval; /* Integer values */
 double douval;
 char *strval;
 char chrval;
+int bolval;
 char *id; /* Identifiers */
 struct lbs *lbls; /* For backpatching */
 }
@@ -71,14 +72,15 @@ TOKENS
 %start program
 %token <intval> NUMBER_VAL /* Simple integer */
 %token <douval> NUMBERD_VAL
+%token <bolval> NUMBERB_VAL
 %token <strval> STR_VAL  /* Added */
-%token <chrval> CHR_VAL /* Added */
+%token <chrval> CHR_VAL  /* Added */
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE /* For backpatching labels */
 %token SKIP THEN ELSE FI DO END
-%token INTEGER LET IN STRING DOUBLE CHAR
-%token READI READS READC READD
-%token WRITEI WRITES WRITEC WRITED
+%token INTEGER LET IN STRING DOUBLE CHAR BOOLEAN
+%token READI READS READC READD READB
+%token WRITEI WRITES WRITEC WRITED WRITEB
 %token ASSGNOP
 /*=========================================================================
 OPERATOR PRECEDENCE
@@ -103,6 +105,11 @@ declaration : INTEGER id_seq IDENTIFIER ';' { install( $3 ); }
 | CHAR id_seq IDENTIFIER ';' { install( $3 ); }
 | DOUBLE id_seq IDENTIFIER ';' { install( $3 ); }
 | STRING id_seq IDENTIFIER ';' { install( $3 ); }
+| BOOLEAN id_seq IDENTIFIER ';' { install( $3 ); }  
+| INTEGER id_seq IDENTIFIER ASSGNOP NUMBER_VAL ';' { install( $3 ) ; gen_code( LD_INT, $5 );}
+| DOUBLE id_seq IDENTIFIER ASSGNOP NUMBERD_VAL ';' { install( $3 ); gen_code( LD_INT, $5 );}
+| BOOLEAN id_seq IDENTIFIER ASSGNOP NUMBERB_VAL ';' { install( $3 ); gen_code( LD_INT, $5 ); }
+| STRING id_seq IDENTIFIER ASSGNOP NUMBERB_VAL ';' { install( $3 ); gen_code( LD_INT, $5 ); }
 ;
 id_seq : /* empty */
 | id_seq IDENTIFIER ',' { install( $2 ); }
@@ -115,10 +122,12 @@ command : SKIP
 | READD IDENTIFIER { context_check( READ_DOU, $2 ); }
 | READS IDENTIFIER { context_check( READ_STR, $2 ); }
 | READC IDENTIFIER { context_check( READ_CHR, $2 ); }
+| READB IDENTIFIER { context_check( READ_BOL, $2 ); }
 | WRITEI exp { gen_code( WRITE_INT, 0 ); }
 | WRITED exp { gen_code( WRITE_DOU, 0 ); }
 | WRITES exp { gen_code( WRITE_STR, 0 ); }
 | WRITEC exp { gen_code( WRITE_CHR, 0 ); }
+| WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1 ); }
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
@@ -136,6 +145,7 @@ gen_label() ); }
 ;
 exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | NUMBERD_VAL { gen_code( LD_INT, $1 ); }
+| NUMBERB_VAL { gen_code( LD_INT, $1 ); }
 | IDENTIFIER { context_check( LD_VAR, $1 ); }
 | exp '<' exp { gen_code( LT, 0 ); }
 | exp '=' exp { gen_code( EQ, 0 ); }

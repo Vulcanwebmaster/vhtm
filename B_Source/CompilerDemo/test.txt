@@ -1,8 +1,5 @@
 let
-	double y, z;
+	double y := 99.23 ;
 begin
-	readd y;
-	readd z;
-	z := y + z;
-	writed z;
+	writed y;
 end

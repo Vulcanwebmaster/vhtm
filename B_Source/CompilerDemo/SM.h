@@ -11,6 +11,7 @@ READ_INT, WRITE_INT,
 	READ_DOU, WRITE_DOU,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
+	READ_BOL, WRITE_BOL,
 LT, EQ, GT, ADD, SUB, MULT, DIV, PWR };
 /* OPERATIONS: External Representation */
 char *op_name[] = {"halt", "store", "jmp_false", "goto",
@@ -19,6 +20,7 @@ char *op_name[] = {"halt", "store", "jmp_false", "goto",
 	"in_dou", "out_dou",
 	"in_str", "out_str",
 	"in_chr", "out_chr",
+    "in_bol", "out_bol",
 "lt", "eq", "gt", "add", "sub", "mult", "div", "pwr" };
 struct instruction
 {
@@ -29,7 +31,7 @@ int arg;
 struct instruction code[999];
 /* RUN-TIME Stack */
 //double stack[999];
-enum type_code{ INT , DOU, STR, CHR};
+enum type_code{ INT , DOU, STR, CHR, BOL};
 struct mystack
 {
 	enum type_code type; 
@@ -37,6 +39,7 @@ struct mystack
 	double dou_val;
 	char chr_val;
 	char str_val[256];
+	int bol_val;
 };
 struct mystack stack[999];
 
@@ -89,10 +92,17 @@ case READ_CHR : printf( "Input Character: " );
 	stack[ar+ir.arg].chr_val = temp3; 
 	//printf("Con veo %c",stack[ar+ir.arg].chr_val);
 	break;
+case READ_BOL : printf( "Input Boolean: " );
+	int temp4;
+	scanf("%ld",&temp4);
+	stack[ar+ir.arg].type = BOL;
+	stack[ar+ir.arg].bol_val = temp4;
+	break;
 case WRITE_INT : printf ("Output Integer: %ld", stack[top--].int_val); break;
 case WRITE_DOU : printf ("Output Double: %f", stack[top--].dou_val); break;
 case WRITE_STR : printf ("Output String: %s", stack[top--].str_val); break;
 case WRITE_CHR : printf ("Output Character: %c", stack[top--].chr_val); break;
+case WRITE_BOL : printf ("Output Boolean: %ld", stack[top--].bol_val); break;
 case STORE : stack[ir.arg] = stack[top--]; break;
 case JMP_FALSE : 
 	if ( stack[top--].int_val == 0 )

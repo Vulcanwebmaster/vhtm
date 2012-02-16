@@ -41,32 +41,36 @@
    enum yytokentype {
      NUMBER_VAL = 258,
      NUMBERD_VAL = 259,
-     STR_VAL = 260,
-     CHR_VAL = 261,
-     IDENTIFIER = 262,
-     IF = 263,
-     WHILE = 264,
-     SKIP = 265,
-     THEN = 266,
-     ELSE = 267,
-     FI = 268,
-     DO = 269,
-     END = 270,
-     INTEGER = 271,
-     LET = 272,
-     IN = 273,
-     STRING = 274,
-     DOUBLE = 275,
-     CHAR = 276,
-     READI = 277,
-     READS = 278,
-     READC = 279,
-     READD = 280,
-     WRITEI = 281,
-     WRITES = 282,
-     WRITEC = 283,
-     WRITED = 284,
-     ASSGNOP = 285
+     NUMBERB_VAL = 260,
+     STR_VAL = 261,
+     CHR_VAL = 262,
+     IDENTIFIER = 263,
+     IF = 264,
+     WHILE = 265,
+     SKIP = 266,
+     THEN = 267,
+     ELSE = 268,
+     FI = 269,
+     DO = 270,
+     END = 271,
+     INTEGER = 272,
+     LET = 273,
+     IN = 274,
+     STRING = 275,
+     DOUBLE = 276,
+     CHAR = 277,
+     BOOLEAN = 278,
+     READI = 279,
+     READS = 280,
+     READC = 281,
+     READD = 282,
+     READB = 283,
+     WRITEI = 284,
+     WRITES = 285,
+     WRITEC = 286,
+     WRITED = 287,
+     WRITEB = 288,
+     ASSGNOP = 289
    };
 #endif
 
@@ -86,13 +90,14 @@ int intval; /* Integer values */
 double douval;
 char *strval;
 char chrval;
+int bolval;
 char *id; /* Identifiers */
 struct lbs *lbls; /* For backpatching */
 
 
 
 /* Line 1676 of yacc.c  */
-#line 96 "parser.tab.h"
+#line 101 "parser.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
