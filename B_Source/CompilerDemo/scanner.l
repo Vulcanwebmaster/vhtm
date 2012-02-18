@@ -17,7 +17,7 @@ DOUBLE [0-9]+\.[0-9]*
 ID [a-zA-Z_][a-zA-Z0-9_]*
 CHAR \'.\'
 BOOLEAN true|false
-STRING \"[[:alnum:]]+\"
+STRING \".*\"
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
