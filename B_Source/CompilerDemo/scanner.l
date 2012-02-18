@@ -15,9 +15,9 @@ TOKEN Definitions
 DIGIT [0-9]+
 DOUBLE [0-9]+\.[0-9]*
 ID [a-zA-Z_][a-zA-Z0-9_]*
-BOOLEAN ^1$|^0$
 CHAR \'.\'
-STRING [[:alnum:]]+
+BOOLEAN true|false
+STRING \"[[:alnum:]]+\"
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
@@ -30,7 +30,7 @@ fi { return(FI); }
 if { return(IF); }
 begin { return(IN); }
 integer { return(INTEGER); }
-char { return (CHAR);}    /* Added */
+char { return (CHAR);} /* Added */
 string { return(STRING);} /* Added */
 double { return(DOUBLE);} /* Added */
 bool {return(BOOLEAN);}   /* Added */
@@ -48,13 +48,35 @@ writed { return(WRITED); }
 writes { return(WRITES); }
 writec { return(WRITEC); }
 writeb { return(WRITEB); }
-{ID} { yylval.id = (char *) strdup(yytext);
-return(IDENTIFIER); }
+function { return(FUNCTION); }
+{BOOLEAN} { yylval.bolval = yytext; return(NUMBERB_VAL); } /* Added */
+{ID} { yylval.id = (char *) strdup(yytext); return(IDENTIFIER); }
 {DIGIT} { yylval.intval = atoi( yytext ); return(NUMBER_VAL); }
 {DOUBLE} { yylval.douval = atof( yytext ); return(NUMBERD_VAL); } /* Added */
-{STRING} { yylval.strval = yytext ; return(STR_VAL); } /* Added */
-{CHAR} { yylval.chrval = *yytext ; return(CHR_VAL); } /* Added */
-{BOOLEAN} { yylval.bolval = atoi( yytext ); return(NUMBERB_VAL); }
+{CHAR} { char * temp = yytext; 
+		 if (temp[0] == '\'') yylval.chrval = *(yytext+1); 
+			else yylval.chrval = *(yytext);
+		 return(CHR_VAL); } /* Added */
+{STRING} { 
+		char * temp = yytext;
+		char * result;
+		if (temp[0] == '\"') 
+		{
+			int i = 0;
+			result = (char *) malloc (strlen(temp)+1);
+			while (i < strlen(temp) - 2)
+			{
+				result[i] = temp[i+1];
+				i ++;
+			}
+			result[strlen(temp) - 2] = '\0';
+			yylval.strval = (char *) malloc (strlen(result)+1);
+			strcpy(yylval.strval, result);
+		} else {
+			yylval.strval = (char *) malloc (strlen(temp)+1);
+			strcpy(yylval.strval, temp);
+		}
+		return(STR_VAL); } /* Added */
 [ \t\n]+ /* eat up whitespace */ 
 . { return(yytext[0]);}
 %%
