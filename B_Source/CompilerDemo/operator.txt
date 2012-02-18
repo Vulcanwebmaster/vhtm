@@ -1,9 +1,0 @@
-let
-	integer n,x;
-begin
-	readi n;
-	n := n * 10 - 2;
-	x := n / 2 * 4 + 3;
-	writei n;
-	writei x;
-end
