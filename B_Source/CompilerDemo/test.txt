@@ -1,5 +1,4 @@
 let
-	double y := 99.23 ;
+	array_integer abcdef[10] ; 
 begin
-	writed y;
 end

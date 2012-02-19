@@ -69,6 +69,11 @@ SEMANTIC RECORDS
 	char chrval;
 	char *id; /* Identifiers */
 	struct lbs *lbls; /* For backpatching */
+	
+	int *arrIntval;
+	double *arrDouval;
+	char *arrChrval;
+	int *arrBolval;
 }
 /*=========================================================================
 TOKENS
@@ -85,6 +90,7 @@ TOKENS
 %token INTEGER LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READI READS READC READD READB
 %token WRITEI WRITES WRITEC WRITED WRITEB
+%token ARRAY_I ARRAY_D ARRAY_C ARRAY_B  
 %token ASSGNOP 
 /*=========================================================================
 OPERATOR PRECEDENCE
@@ -125,7 +131,11 @@ declaration : INTEGER id_seq IDENTIFIER ';' { install( $3 , function_name); }
 | CHAR id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | DOUBLE id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | STRING id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| BOOLEAN id_seq IDENTIFIER ';' { install( $3, function_name ); }  
+| BOOLEAN id_seq IDENTIFIER ';' { install( $3, function_name ); }
+| ARRAY_I IDENTIFIER '[' '1' '0' ']' ';' { printf("PPPP"); install ( $3, function_name ); }
+| ARRAY_D id_seq IDENTIFIER '[' NUMBER_VAL ']' ';' { install ( $3, function_name ); }
+| ARRAY_C id_seq IDENTIFIER '[' NUMBER_VAL ']' ';' { install ( $3, function_name ); }
+| ARRAY_B id_seq IDENTIFIER '[' NUMBER_VAL ']' ';' { install ( $3, function_name ); }
 ;
 
 id_seq : /* empty */
@@ -190,6 +200,7 @@ command : SKIP
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '(' values ');' {}
+| IDENTIFIER exparr 
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
 ELSE { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); } commands
@@ -199,6 +210,8 @@ DO
 commands
 END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
 ;
+
+exparr : '[' NUMBER_VAL ']' ASSGNOP NUMBER_VAL { gen_code_arr_int( LD_INT, $2 , $5 ); }
 
 exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | NUMBERD_VAL { gen_code_double( LD_DOU, $1 ); }
@@ -255,6 +268,7 @@ main( int argc, char *argv[] )
 		//print_code ();
 		fetch_execute_cycle();
 	}
+		
 }
 /*=========================================================================
 YYERROR

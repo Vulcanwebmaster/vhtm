@@ -12,7 +12,8 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, PWR };
+	LT, EQ, GT, ADD, SUB, MULT, DIV, PWR,
+	BOL_COMP, BOL_ONLY };
 /* OPERATIONS: External Representation */
 char *op_name[] = {"halt", "store", "jmp_false", "goto",
 	"data", "ld_int", "ld_var", "ld_dou", "ld_str", "ld_chr", "ld_bol",
@@ -21,9 +22,11 @@ char *op_name[] = {"halt", "store", "jmp_false", "goto",
 	"in_str", "out_str",
 	"in_chr", "out_chr",
 	"in_bol", "out_bol",
-	"lt", "eq", "gt", "add", "sub", "mult", "div", "pwr" };
+	"lt", "eq", "gt", "add", "sub", "mult", "div", "pwr",
+	"bol_comp" , "bol_only"};
 
-enum type_code{ INT , DOU, STR, CHR, BOL};
+enum type_code{ INT , DOU, STR, CHR, BOL,
+	ARR_I, ARR_D, ARR_C, ARR_B };
 struct mystack
 {
 	enum type_code type; 
@@ -32,6 +35,10 @@ struct mystack
 	char chr_val;
 	char str_val[256];
 	int bol_val;
+	int *arr_int_val;
+	double *arr_dou_val;
+	char *arr_chr_val;
+	int *arr_bol_val;
 };
 
 
@@ -88,7 +95,6 @@ void fetch_execute_cycle()
 				stack[ar+ir.arg.int_val].type = DOU;
 				stack[ar+ir.arg.int_val].dou_val = temp1; 
 				stack[ar+ir.arg.int_val].int_val = (int)temp1; 
-				//printf("Con veo Tung %f",stack[ar+ir.arg].dou_val);
 				break;
 			case READ_STR : printf( "Input String: " );
 				char temp2[256];
