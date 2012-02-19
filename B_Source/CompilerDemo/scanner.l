@@ -18,10 +18,7 @@ ID [a-zA-Z_][a-zA-Z0-9_]*
 CHAR \'.\'
 BOOLEAN true|false
 STRING \".*\"
-ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*\[[0-9]+\]
-ARRAY_D [a-zA-Z_][a-zA-Z0-9_]*\[[0-9]+\]
-ARRAY_B [a-zA-Z_][a-zA-Z0-9_]*\[[0-9]+\]
-ARRAY_C [a-zA-Z_][a-zA-Z0-9_]*\[[0-9]+\]
+ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*[0-9]+\]
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
@@ -38,6 +35,7 @@ char { return (CHAR);} /* Added */
 string { return(STRING);} /* Added */
 double { return(DOUBLE);} /* Added */
 bool {return(BOOLEAN);}   /* Added */
+array_integer {return(ARRAY_I);  } 
 let { return(LET); }
 readi { printf("Integer"); return(READI); }
 readd { return(READD); }
@@ -52,10 +50,6 @@ writed { return(WRITED); }
 writes { return(WRITES); }
 writec { return(WRITEC); }
 writeb { return(WRITEB); }
-array_integer {printf("Array Integer"); return(ARRAY_I);  } 
-array_double {return(ARRAY_D); }
-array_char {return(ARRAY_C); }
-array_bool {return(ARRAY_B); }
 function { return(FUNCTION); }
 {BOOLEAN} { yylval.bolval = yytext; return(NUMBERB_VAL); } /* Added */
 {ID} { yylval.id = (char *) strdup(yytext); return(IDENTIFIER); }
@@ -92,14 +86,14 @@ function { return(FUNCTION); }
 		int firstInd = 0;
 		while (i < strlen(temp))
 		{
-			if (temp[i] == '[')
+			if (temp[i] == '(')
 			{
 				firstInd = i;
 				break;
 			}
 			i++;
 		}
-		char *number = (char *) malloc (strlen(temp) - 1 - (firstInd));
+		char *number = (char *) malloc (strlen(temp) - (firstInd));
 		i = firstInd + 1;
 		while (i < strlen(temp) - 1)
 		{
@@ -110,6 +104,7 @@ function { return(FUNCTION); }
 		number[j] = '\0';
 		int size = atoi( number );
 		yylval.arrIntval = (int *) malloc (size + 1);
+		return (ARRAY_VAL);
 }		
 [ \t\n]+ /* eat up whitespace */ 
 . { return(yytext[0]);}

@@ -69,11 +69,7 @@ SEMANTIC RECORDS
 	char chrval;
 	char *id; /* Identifiers */
 	struct lbs *lbls; /* For backpatching */
-	
 	int *arrIntval;
-	double *arrDouval;
-	char *arrChrval;
-	int *arrBolval;
 }
 /*=========================================================================
 TOKENS
@@ -84,13 +80,14 @@ TOKENS
 %token <strval> STR_VAL  /* Added */
 %token <chrval> CHR_VAL /* Added */
 %token <bolval> NUMBERB_VAL
+%token <arrIntval> ARRAY_VAL
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE /* For backpatching labels */
 %token SKIP THEN ELSE FI DO END
 %token INTEGER LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READI READS READC READD READB
 %token WRITEI WRITES WRITEC WRITED WRITEB
-%token ARRAY_I ARRAY_D ARRAY_C ARRAY_B  
+%token ARRAY_I  
 %token ASSGNOP 
 /*=========================================================================
 OPERATOR PRECEDENCE
@@ -132,10 +129,7 @@ declaration : INTEGER id_seq IDENTIFIER ';' { install( $3 , function_name); }
 | DOUBLE id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | STRING id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | BOOLEAN id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| ARRAY_I IDENTIFIER '[' '1' '0' ']' ';' { printf("PPPP"); install ( $3, function_name ); }
-| ARRAY_D id_seq IDENTIFIER '[' NUMBER_VAL ']' ';' { install ( $3, function_name ); }
-| ARRAY_C id_seq IDENTIFIER '[' NUMBER_VAL ']' ';' { install ( $3, function_name ); }
-| ARRAY_B id_seq IDENTIFIER '[' NUMBER_VAL ']' ';' { install ( $3, function_name ); }
+| ARRAY_I IDENTIFIER '[' NUMBER_VAL ']' ';' { install( $2, function_name ); }
 ;
 
 id_seq : /* empty */
@@ -199,7 +193,7 @@ command : SKIP
 | WRITEC exp { gen_code( WRITE_CHR, 0 ); }
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
-| IDENTIFIER '(' values ');' {}
+| IDENTIFIER '(' values ");" {}
 | IDENTIFIER exparr 
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
