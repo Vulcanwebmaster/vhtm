@@ -221,6 +221,8 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | exp '*' exp { gen_code( MULT, 0 ); }
 | exp '/' exp { gen_code( DIV, 0 ); }
 | exp '^' exp { gen_code( PWR, 0 ); }
+| exp '&' exp { gen_code( AND, 0 ); }
+| exp '|' exp { gen_code( OR, 0 ); }
 | '(' exp ')'
 ;
 

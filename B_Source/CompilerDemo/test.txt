@@ -1,5 +1,10 @@
 let
-	integer x;
-	array_integer a[5];
+	integer x,y;
 begin
+	readi x;
+	readi y;
+	if ( x > 5 & y < 5 )
+	then writei x; 
+	else writei y; 
+	fi;
 end

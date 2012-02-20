@@ -12,7 +12,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, PWR,
+	LT, EQ, GT, ADD, SUB, MULT, DIV, PWR, AND, OR,
 	BOL_COMP, BOL_ONLY };
 /* OPERATIONS: External Representation */
 char *op_name[] = {"halt", "store", "jmp_false", "goto",
@@ -22,7 +22,7 @@ char *op_name[] = {"halt", "store", "jmp_false", "goto",
 	"in_str", "out_str",
 	"in_chr", "out_chr",
 	"in_bol", "out_bol",
-	"lt", "eq", "gt", "add", "sub", "mult", "div", "pwr",
+	"lt", "eq", "gt", "add", "sub", "mult", "div", "pwr", "and", "or",
 	"bol_comp" , "bol_only"};
 
 enum type_code{ INT , DOU, STR, CHR, BOL,
@@ -196,6 +196,20 @@ void fetch_execute_cycle()
 					stack[top-1].dou_val = stack[top-1].dou_val / stack[top].dou_val;
 					stack[top-1].int_val = (int)(stack[top-1].dou_val); 
 					top--; }
+				break;
+			case AND :
+				if ( stack[top-1].bol_val * stack[top].bol_val == 1 )
+				{	stack[--top].int_val = 1;
+					printf("Da chay vao ham AND 1\n");
+					}
+				else { stack[--top].int_val = 0;
+					printf("Da chay vao ham AND 0\n"); }
+				break;
+			case OR :
+				if ( stack[top-1].bol_val + stack[top].bol_val >= 1 )
+					stack[--top].int_val = 1;
+				else stack[--top].int_val = 0;
+				printf("Da chay vao ham OR");
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;

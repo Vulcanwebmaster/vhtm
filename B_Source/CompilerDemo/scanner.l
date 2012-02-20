@@ -37,7 +37,7 @@ double { return(DOUBLE);} /* Added */
 bool {return(BOOLEAN);}   /* Added */
 array_integer {return(ARRAY_I);  } 
 let { return(LET); }
-readi { printf("Integer"); return(READI); }
+readi { return(READI); }
 readd { return(READD); }
 reads { return(READS); }
 readc { return(READC); }
