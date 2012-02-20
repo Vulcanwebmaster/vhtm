@@ -1,10 +1,10 @@
 let
-	integer x,y;
+	bool x,y;
 begin
-	readi x;
-	readi y;
-	if ( x > 5 & y < 5 )
-	then writei x; 
-	else writei y; 
+	x := 1;
+	y := 1;
+	if ( x & y )
+	then writes "ABC"; 
+	else writes "XYZ"; 
 	fi;
 end

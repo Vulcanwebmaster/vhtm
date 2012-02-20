@@ -62,7 +62,7 @@ void gen_code_boolean( enum code_ops operation, char arg[] )
 void back_patch( int addr, enum code_ops operation, int arg )
 {
 	code[addr].op = operation;
-	code[addr].arg.int_val = arg;
+	code[addr].arg.bol_val = arg;
 }
 /*-------------------------------------------------------------------------
 Print Code to stdio

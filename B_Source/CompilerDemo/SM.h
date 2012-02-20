@@ -136,8 +136,8 @@ void fetch_execute_cycle()
 				break;
 			case STORE : stack[ir.arg.int_val] = stack[top--]; break;
 			case JMP_FALSE : 
-				if ( stack[top--].int_val == 0 )
-					pc = ir.arg.int_val;
+				if ( stack[top--].bol_val == 0 )
+					pc = ir.arg.bol_val;
 				break;
 			case GOTO : pc = ir.arg.int_val; break;
 			case DATA : top = top + ir.arg.int_val; break;
@@ -161,18 +161,18 @@ void fetch_execute_cycle()
 			case LD_VAR : stack[++top] = stack[ar+ir.arg.int_val]; break;
 			case LT : 
 				if ( stack[top-1].dou_val < stack[top].dou_val )
-					stack[--top].int_val = 1;
-				else stack[--top].int_val = 0;
+					stack[--top].bol_val = 1;
+				else stack[--top].bol_val = 0;
 				break;
 			case EQ : 
 				if ( stack[top-1].dou_val == stack[top].dou_val )
-					stack[--top].int_val = 1;
-				else stack[--top].int_val = 0;
+					stack[--top].bol_val = 1;
+				else stack[--top].bol_val = 0;
 				break;
 			case GT : 
 				if ( stack[top-1].dou_val > stack[top].dou_val )
-					stack[--top].int_val = 1;
-				else stack[--top].int_val = 0;
+					stack[--top].bol_val = 1;
+				else stack[--top].bol_val = 0;
 				break;
 			case ADD : 
 				stack[top-1].dou_val = stack[top-1].dou_val + stack[top].dou_val;
@@ -199,17 +199,13 @@ void fetch_execute_cycle()
 				break;
 			case AND :
 				if ( stack[top-1].bol_val * stack[top].bol_val == 1 )
-				{	stack[--top].int_val = 1;
-					printf("Da chay vao ham AND 1\n");
-					}
-				else { stack[--top].int_val = 0;
-					printf("Da chay vao ham AND 0\n"); }
+					stack[--top].bol_val = 1;
+				else { stack[--top].bol_val = 0;
 				break;
 			case OR :
 				if ( stack[top-1].bol_val + stack[top].bol_val >= 1 )
-					stack[--top].int_val = 1;
-				else stack[--top].int_val = 0;
-				printf("Da chay vao ham OR");
+					stack[--top].bol_val = 1;
+				else stack[--top].bol_val = 0;
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;
