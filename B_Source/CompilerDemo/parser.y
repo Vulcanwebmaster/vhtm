@@ -129,7 +129,7 @@ declaration : INTEGER id_seq IDENTIFIER ';' { install( $3 , function_name); }
 | DOUBLE id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | STRING id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | BOOLEAN id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| ARRAY_I IDENTIFIER '[' NUMBER_VAL ']' ';' { install( $2, function_name ); }
+| ARRAY_I IDENTIFIER '(' NUMBER_VAL ')' ';'{ printf("****"); install( $2, function_name ); }
 ;
 
 id_seq : /* empty */

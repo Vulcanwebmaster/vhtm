@@ -18,7 +18,7 @@ ID [a-zA-Z_][a-zA-Z0-9_]*
 CHAR \'.\'
 BOOLEAN true|false
 STRING \".*\"
-ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*[0-9]+\]
+ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*([0-9]+)
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
@@ -103,6 +103,7 @@ function { return(FUNCTION); }
 		}
 		number[j] = '\0';
 		int size = atoi( number );
+		printf("%d",size);
 		yylval.arrIntval = (int *) malloc (size + 1);
 		return (ARRAY_VAL);
 }		

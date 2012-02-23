@@ -1,10 +1,5 @@
 let
-	bool x,y;
+	array_integer xyz(10);
 begin
-	x := 1;
-	y := 1;
-	if ( x & y )
-	then writes "ABC"; 
-	else writes "XYZ"; 
-	fi;
+	
 end
