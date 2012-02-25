@@ -18,7 +18,7 @@ ID [a-zA-Z_][a-zA-Z0-9_]*
 CHAR \'.\'
 BOOLEAN true|false
 STRING \".*\"
-ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*([0-9]+)
+ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*\[[0-9]+\]
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
@@ -35,7 +35,7 @@ char { return (CHAR);} /* Added */
 string { return(STRING);} /* Added */
 double { return(DOUBLE);} /* Added */
 bool {return(BOOLEAN);}   /* Added */
-array_integer {return(ARRAY_I);  } 
+"array integer" {return(ARRAY_I);  } 
 let { return(LET); }
 readi { return(READI); }
 readd { return(READD); }
@@ -79,36 +79,8 @@ function { return(FUNCTION); }
 			strcpy(yylval.strval, temp);
 		}
 		return(STR_VAL); } /* Added */
-{ARRAY_I} {
-		char * temp = yytext;
-		int i = 0;
-		int j = 0;
-		int firstInd = 0;
-		while (i < strlen(temp))
-		{
-			if (temp[i] == '(')
-			{
-				firstInd = i;
-				break;
-			}
-			i++;
-		}
-		char *number = (char *) malloc (strlen(temp) - (firstInd));
-		i = firstInd + 1;
-		while (i < strlen(temp) - 1)
-		{
-			number[j] = temp[i];
-			j++;
-			i++;
-		}
-		number[j] = '\0';
-		int size = atoi( number );
-		printf("%d",size);
-		yylval.arrIntval = (int *) malloc (size + 1);
-		return (ARRAY_VAL);
-}		
-[ \t\n]+ /* eat up whitespace */ 
-. { return(yytext[0]);}
+[ \t\n]+ /* eat up whitespace */
+. { return (yytext[0]);}
 %%
 int yywrap(void){}
 /************************** End Scanner File *****************************/

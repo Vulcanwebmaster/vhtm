@@ -27,11 +27,6 @@ void gen_code( enum code_ops operation, int arg )
 	code[code_offset].op = operation;
 	code[code_offset++].arg.int_val = arg;
 }
-void gen_code_arr_int( enum code_ops operation, int index, int arg )
-{ 
-	code[code_offset].op = operation;
-	code[code_offset++].arg.arr_int_val[index] = arg;
-}
 
 void gen_code_double( enum code_ops operation, double arg )
 { 

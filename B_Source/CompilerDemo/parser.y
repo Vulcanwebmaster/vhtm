@@ -54,7 +54,10 @@ context_check( enum code_ops operation, char *sym_name, char *scope )
 			printf( "%s", sym_name );
 			printf( "%s\n", " is an undeclared identifier" );
 		}
-	else gen_code( operation, identifier->offset );
+	else 
+	{
+		gen_code( operation, identifier->offset );
+	}
 }
 /*=========================================================================
 SEMANTIC RECORDS
@@ -94,7 +97,6 @@ OPERATOR PRECEDENCE
 =========================================================================*/
 %left '-' '+'
 %left '*' '/'
-%right '^'
 /*=========================================================================
 GRAMMAR RULES for the Simple language
 =========================================================================*/
@@ -129,7 +131,7 @@ declaration : INTEGER id_seq IDENTIFIER ';' { install( $3 , function_name); }
 | DOUBLE id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | STRING id_seq IDENTIFIER ';' { install( $3, function_name ); }
 | BOOLEAN id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| ARRAY_I IDENTIFIER '(' NUMBER_VAL ')' ';'{ printf("****"); install( $2, function_name ); }
+| ARRAY_I IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name ); }
 ;
 
 id_seq : /* empty */
@@ -193,8 +195,8 @@ command : SKIP
 | WRITEC exp { gen_code( WRITE_CHR, 0 ); }
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
+| IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
 | IDENTIFIER '(' values ");" {}
-| IDENTIFIER exparr 
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
 ELSE { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); } commands
@@ -205,8 +207,13 @@ commands
 END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
 ;
 
-exparr : '[' NUMBER_VAL ']' ASSGNOP NUMBER_VAL { gen_code_arr_int( LD_INT, $2 , $5 ); }
-
+arr_exp : 
+	IDENTIFIER '[' index ']'  {context_check( ARR_PART, $1, function_name );} ;
+	
+index :	NUMBER_VAL { gen_code( LD_INT, $1 ); }
+| IDENTIFIER { context_check( LD_VAR, $1, function_name ); }
+;
+	
 exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | NUMBERD_VAL { gen_code_double( LD_DOU, $1 ); }
 | STR_VAL { gen_code_string ( LD_STR, $1); }
@@ -220,9 +227,9 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | exp '-' exp { gen_code( SUB, 0 ); }
 | exp '*' exp { gen_code( MULT, 0 ); }
 | exp '/' exp { gen_code( DIV, 0 ); }
-| exp '^' exp { gen_code( PWR, 0 ); }
 | exp '&' exp { gen_code( AND, 0 ); }
 | exp '|' exp { gen_code( OR, 0 ); }
+| arr_exp
 | '(' exp ')'
 ;
 

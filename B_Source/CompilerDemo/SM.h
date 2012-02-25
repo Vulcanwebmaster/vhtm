@@ -12,7 +12,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, PWR, AND, OR,
+	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE,
 	BOL_COMP, BOL_ONLY };
 /* OPERATIONS: External Representation */
 char *op_name[] = {"halt", "store", "jmp_false", "goto",
@@ -22,7 +22,7 @@ char *op_name[] = {"halt", "store", "jmp_false", "goto",
 	"in_str", "out_str",
 	"in_chr", "out_chr",
 	"in_bol", "out_bol",
-	"lt", "eq", "gt", "add", "sub", "mult", "div", "pwr", "and", "or",
+	"lt", "eq", "gt", "add", "sub", "mult", "div", "and", "or", "arr_part", "int_arr_store",
 	"bol_comp" , "bol_only"};
 
 enum type_code{ INT , DOU, STR, CHR, BOL,
@@ -35,7 +35,7 @@ struct mystack
 	char chr_val;
 	char str_val[256];
 	int bol_val;
-	int *arr_int_val;
+	int arr_int_val[10];
 	double *arr_dou_val;
 	char *arr_chr_val;
 	int *arr_bol_val;
@@ -245,6 +245,15 @@ void fetch_execute_cycle()
 					stack[--top].int_val = 0;
 					stack[top].bol_val = 0;
 				}
+				break;
+			case ARR_PART :
+				stack[top-1].int_val = stack[ir.arg.int_val].arr_int_val[stack[top].int_val];
+				stack[top-1].dou_val = stack[top-1].int_val;
+				top--;				
+				break;
+			case INT_ARR_STORE :
+				stack[ir.arg.int_val].arr_int_val[stack[top-1].int_val] = stack[top].int_val;
+				top--;
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;

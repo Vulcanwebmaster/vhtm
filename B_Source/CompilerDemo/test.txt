@@ -1,5 +1,9 @@
 let
-	array_integer xyz(10);
+	array integer x[4];
+	integer y;
 begin
-	
+	writes "anc";
+	y := 5;
+	x[1] := 4;
+	writei x[1];
 end
