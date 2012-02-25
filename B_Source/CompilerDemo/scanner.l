@@ -18,7 +18,6 @@ ID [a-zA-Z_][a-zA-Z0-9_]*
 CHAR \'.\'
 BOOLEAN true|false
 STRING \".*\"
-ARRAY_I [a-zA-Z_][a-zA-Z0-9_]*\[[0-9]+\]
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
@@ -36,6 +35,9 @@ string { return(STRING);} /* Added */
 double { return(DOUBLE);} /* Added */
 bool {return(BOOLEAN);}   /* Added */
 "array integer" {return(ARRAY_I);  } 
+"array boolean" {return(ARRAY_B);  }
+"array char" {return(ARRAY_C);  } 
+"array double" {return(ARRAY_D);  }  
 let { return(LET); }
 readi { return(READI); }
 readd { return(READD); }

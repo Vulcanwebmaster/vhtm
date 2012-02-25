@@ -29,18 +29,19 @@ struct lbs * newlblrec() /* Allocate space for the labels */
 /*-------------------------------------------------------------------------
 Install identifier & check if previously defined.
 -------------------------------------------------------------------------*/
-install ( char *sym_name, char *scope )
+install ( char *sym_name, char *scope, enum type_code type, int length )
 {
 	symrec *s;
 	s = getsym (sym_name, scope);
 	if (s == 0)
-		s = putsym (sym_name, scope);
+		s = putsym (sym_name, scope, type, length);
 	else 
-	{ 
+	{
 		errors++;
 		printf( "%s is already defined\n", sym_name );
 	}
 }
+
 /*-------------------------------------------------------------------------
 If identifier is defined, generate code
 -------------------------------------------------------------------------*/
@@ -56,7 +57,16 @@ context_check( enum code_ops operation, char *sym_name, char *scope )
 		}
 	else 
 	{
-		gen_code( operation, identifier->offset );
+		if (identifier->type == ARR_D && operation == INT_ARR_STORE)  
+			gen_code_variable( DOU_ARR_STORE, identifier);
+		else 
+		if (identifier->type == ARR_B && operation == INT_ARR_STORE)  
+			gen_code_variable( BOL_ARR_STORE, identifier);
+		else 
+		if (identifier->type == ARR_C && operation == INT_ARR_STORE)  
+			gen_code_variable( CHR_ARR_STORE, identifier);
+		else
+			gen_code_variable( operation, identifier);
 	}
 }
 /*=========================================================================
@@ -90,7 +100,7 @@ TOKENS
 %token INTEGER LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READI READS READC READD READB
 %token WRITEI WRITES WRITEC WRITED WRITEB
-%token ARRAY_I  
+%token ARRAY_I ARRAY_C ARRAY_B ARRAY_D  
 %token ASSGNOP 
 /*=========================================================================
 OPERATOR PRECEDENCE
@@ -108,6 +118,7 @@ LET
 }
 declarations
 func_decls
+declarations
 IN 
 { 
 	gen_code( DATA, data_location() - 1 );
@@ -126,16 +137,35 @@ declarations : /* empty */
 | declarations declaration
 ;
 
-declaration : INTEGER id_seq IDENTIFIER ';' { install( $3 , function_name); }
-| CHAR id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| DOUBLE id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| STRING id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| BOOLEAN id_seq IDENTIFIER ';' { install( $3, function_name ); }
-| ARRAY_I IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name ); }
+declaration : INTEGER id_seq_int IDENTIFIER ';' { install( $3 , function_name, INT, -1); }
+| CHAR id_seq_chr IDENTIFIER ';' { install( $3, function_name, CHR, -1 ); }
+| DOUBLE id_seq_dou IDENTIFIER ';' { install( $3, function_name, DOU, -1 ); }
+| STRING id_seq_str IDENTIFIER ';' { install( $3, function_name, STR, -1 ); }
+| BOOLEAN id_seq_bol IDENTIFIER ';' { install( $3, function_name, BOL, -1 ); }
+| ARRAY_I IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_I, $4 ); }
+| ARRAY_D IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_D, $4 ); }
+| ARRAY_C IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_C, $4 ); }
+| ARRAY_B IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_B, $4 ); }
 ;
 
-id_seq : /* empty */
-| id_seq IDENTIFIER ',' { install( $2, function_name ); }
+id_seq_int : /* empty */
+| id_seq_int IDENTIFIER ',' { install( $2, function_name, INT, -1 ); }
+;
+
+id_seq_chr : /* empty */
+| id_seq_chr IDENTIFIER ',' { install( $2, function_name, CHR, -1 ); }
+;
+
+id_seq_str : /* empty */
+| id_seq_str IDENTIFIER ',' { install( $2, function_name, STR, -1 ); }
+;
+
+id_seq_dou : /* empty */
+| id_seq_dou IDENTIFIER ',' { install( $2, function_name, DOU, -1 ); }
+;
+
+id_seq_bol : /* empty */
+| id_seq_bol IDENTIFIER ',' { install( $2, function_name, BOL, -1 ); }
 ;
 
 func_decls : /* empty */
@@ -144,11 +174,11 @@ func_decls : /* empty */
 
 func_decl: FUNCTION IDENTIFIER '(' func_var_decls ')' 
 {
-	install( $2 , "main"); 
+	install( $2 , "main", FUN, -1); 
 	if (function_name != NULL) free(function_name);
 	function_name = (char *) malloc (strlen($2)+1);
 	function_name = $2;
-	install( function_name , function_name);
+	install( function_name , function_name, FUN, -1);
 }
 declarations
 IN 
@@ -164,19 +194,19 @@ func_var_decls : /* empty */
 | func_var_decls func_var_decl
 ;
 
-func_var_decl : var_seq INTEGER IDENTIFIER { install( $3, function_name ); }
-| var_seq CHAR IDENTIFIER { install( $3, function_name ); }
-| var_seq DOUBLE IDENTIFIER { install( $3, function_name ); }
-| var_seq STRING IDENTIFIER { install( $3, function_name ); }
-| var_seq BOOLEAN IDENTIFIER { install( $3, function_name ); }
+func_var_decl : var_seq INTEGER IDENTIFIER { install( $3, function_name, INT, -1 ); }
+| var_seq CHAR IDENTIFIER { install( $3, function_name, CHR, -1 ); }
+| var_seq DOUBLE IDENTIFIER { install( $3, function_name, DOU, -1 ); }
+| var_seq STRING IDENTIFIER { install( $3, function_name, STR, -1 ); }
+| var_seq BOOLEAN IDENTIFIER { install( $3, function_name, BOL, -1 ); }
 ;
 
 var_seq : /* empty */
-| var_seq INTEGER IDENTIFIER ',' { install( $3, function_name ); }
-| var_seq CHAR IDENTIFIER ',' { install( $3, function_name ); }
-| var_seq DOUBLE IDENTIFIER ',' { install( $3, function_name ); }
-| var_seq STRING IDENTIFIER ',' { install( $3, function_name ); }
-| var_seq BOOLEAN IDENTIFIER ',' { install( $3, function_name ); }
+| var_seq INTEGER IDENTIFIER ',' { install( $3, function_name, INT, -1 ); }
+| var_seq CHAR IDENTIFIER ',' { install( $3, function_name, CHR, -1 ); }
+| var_seq DOUBLE IDENTIFIER ',' { install( $3, function_name, DOU, -1 ); }
+| var_seq STRING IDENTIFIER ',' { install( $3, function_name, STR, -1 ); }
+| var_seq BOOLEAN IDENTIFIER ',' { install( $3, function_name, BOL, -1 ); }
 ;
 
 commands : /* empty */
@@ -268,7 +298,6 @@ main( int argc, char *argv[] )
 	printf ("Parse Completed\n");
 	if ( errors == 0 )
 	{ 
-		//print_code ();
 		fetch_execute_cycle();
 	}
 		

@@ -1,9 +1,18 @@
 let
 	array integer x[4];
+	array char c[10];
 	integer y;
+function test()
+	integer k;
+begin
+	k := 5;
+	writei k;
+end
 begin
 	writes "anc";
 	y := 5;
 	x[1] := 4;
-	writei x[1];
+	c[5] := 'g';
+	writei x[2];
+	writec c[y];
 end

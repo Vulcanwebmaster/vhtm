@@ -22,10 +22,18 @@ int reserve_loc() /* Reserves a code location */
 	return code_offset++;
 }
 /* Generates code at current location */
-void gen_code( enum code_ops operation, int arg )
+void gen_code( enum code_ops operation, int arg)
 { 
 	code[code_offset].op = operation;
 	code[code_offset++].arg.int_val = arg;
+}
+
+void gen_code_variable( enum code_ops operation, symrec *identifier )
+{ 
+	code[code_offset].op = operation;
+	code[code_offset].arg.type = identifier->type;
+	code[code_offset].arg.length = identifier->length;
+	code[code_offset++].arg.int_val = identifier->offset;
 }
 
 void gen_code_double( enum code_ops operation, double arg )
@@ -58,16 +66,5 @@ void back_patch( int addr, enum code_ops operation, int arg )
 {
 	code[addr].op = operation;
 	code[addr].arg.int_val = arg;
-}
-/*-------------------------------------------------------------------------
-Print Code to stdio
--------------------------------------------------------------------------*/
-void print_code()
-{
-	int i = 0;
-	while (i < code_offset) {
-		printf("%3ld: %-10s%4ld\n",i,op_name[(int) code[i].op], code[i].arg );
-		i++;
-	}
 }
 /************************** End Code Generator **************************/

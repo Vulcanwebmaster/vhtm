@@ -12,7 +12,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE,
+	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE,
 	BOL_COMP, BOL_ONLY };
 /* OPERATIONS: External Representation */
 char *op_name[] = {"halt", "store", "jmp_false", "goto",
@@ -22,11 +22,9 @@ char *op_name[] = {"halt", "store", "jmp_false", "goto",
 	"in_str", "out_str",
 	"in_chr", "out_chr",
 	"in_bol", "out_bol",
-	"lt", "eq", "gt", "add", "sub", "mult", "div", "and", "or", "arr_part", "int_arr_store",
+	"lt", "eq", "gt", "add", "sub", "mult", "div", "and", "or", "arr_part", "int_arr_store", "dou_arr_store", "chr_arr_store", "bol_arr_store",
 	"bol_comp" , "bol_only"};
 
-enum type_code{ INT , DOU, STR, CHR, BOL,
-	ARR_I, ARR_D, ARR_C, ARR_B };
 struct mystack
 {
 	enum type_code type; 
@@ -35,12 +33,12 @@ struct mystack
 	char chr_val;
 	char str_val[256];
 	int bol_val;
-	int arr_int_val[10];
+	int *arr_int_val;
 	double *arr_dou_val;
 	char *arr_chr_val;
 	int *arr_bol_val;
+	int length;
 };
-
 
 struct instruction
 {
@@ -49,11 +47,11 @@ struct instruction
 };
 
 /* CODE Array */
-struct instruction code[999];
+struct instruction code[5000];
 /* RUN-TIME Stack */
 //double stack[999];
 
-struct mystack stack[999];
+struct mystack stack[5000];
 
 /*-------------------------------------------------------------------------
 Registers
@@ -247,12 +245,64 @@ void fetch_execute_cycle()
 				}
 				break;
 			case ARR_PART :
-				stack[top-1].int_val = stack[ir.arg.int_val].arr_int_val[stack[top].int_val];
-				stack[top-1].dou_val = stack[top-1].int_val;
+				if (ir.arg.type == ARR_I) 
+				{
+					if (stack[ir.arg.int_val].arr_int_val == NULL) {
+						stack[ir.arg.int_val].arr_int_val = (int *) malloc(stack[ir.arg.int_val].length);
+					}
+					stack[top-1].int_val = stack[ir.arg.int_val].arr_int_val[stack[top].int_val];
+					stack[top-1].dou_val = stack[top-1].int_val;
+				} else 
+				if (ir.arg.type == ARR_D) 
+				{
+					if (stack[ir.arg.int_val].arr_dou_val == NULL) {
+						stack[ir.arg.int_val].arr_dou_val = (double *) malloc(stack[ir.arg.int_val].length);
+					}
+					stack[top-1].dou_val = stack[ir.arg.int_val].arr_dou_val[stack[top].int_val];
+					stack[top-1].int_val = stack[top-1].dou_val;
+				} else 
+				if (ir.arg.type == ARR_B) 
+				{
+					if (stack[ir.arg.int_val].arr_bol_val == NULL) {
+						stack[ir.arg.int_val].arr_bol_val = (int *) malloc(stack[ir.arg.int_val].length);
+					}
+					stack[top-1].bol_val = stack[ir.arg.int_val].arr_bol_val[stack[top].int_val];
+				} else
+				if (ir.arg.type == ARR_C) 
+				{
+					if (stack[ir.arg.int_val].arr_chr_val == NULL) {
+						stack[ir.arg.int_val].arr_chr_val = (char *) malloc(stack[ir.arg.int_val].length);
+					}
+					stack[top-1].chr_val = stack[ir.arg.int_val].arr_chr_val[stack[top].int_val];
+				}
 				top--;				
 				break;
 			case INT_ARR_STORE :
+				if (stack[ir.arg.int_val].arr_int_val == NULL) {
+					stack[ir.arg.int_val].arr_int_val = (int *) malloc(stack[ir.arg.int_val].length);
+				}
 				stack[ir.arg.int_val].arr_int_val[stack[top-1].int_val] = stack[top].int_val;
+				top--;
+				break;
+			case DOU_ARR_STORE :
+				if (stack[ir.arg.int_val].arr_dou_val == NULL) {
+					stack[ir.arg.int_val].arr_dou_val = (double *) malloc(stack[ir.arg.int_val].length);
+				}
+				stack[ir.arg.int_val].arr_dou_val[stack[top-1].int_val] = stack[top].dou_val;
+				top--;
+				break;
+			case CHR_ARR_STORE :
+				if (stack[ir.arg.int_val].arr_chr_val == NULL) {
+					stack[ir.arg.int_val].arr_chr_val = (char *) malloc(stack[ir.arg.int_val].length);
+				}
+				stack[ir.arg.int_val].arr_chr_val[stack[top-1].int_val] = stack[top].chr_val;
+				top--;
+				break;
+			case BOL_ARR_STORE :
+				if (stack[ir.arg.int_val].arr_bol_val == NULL) {
+					stack[ir.arg.int_val].arr_bol_val = (int *) malloc(stack[ir.arg.int_val].length);
+				}
+				stack[ir.arg.int_val].arr_bol_val[stack[top-1].int_val] = stack[top].bol_val;
 				top--;
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
