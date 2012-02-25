@@ -14,16 +14,6 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_BOL, WRITE_BOL,
 	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE,
 	BOL_COMP, BOL_ONLY };
-/* OPERATIONS: External Representation */
-char *op_name[] = {"halt", "store", "jmp_false", "goto",
-	"data", "ld_int", "ld_var", "ld_dou", "ld_str", "ld_chr", "ld_bol",
-	"in_int", "out_int",
-	"in_dou", "out_dou",
-	"in_str", "out_str",
-	"in_chr", "out_chr",
-	"in_bol", "out_bol",
-	"lt", "eq", "gt", "add", "sub", "mult", "div", "and", "or", "arr_part", "int_arr_store", "dou_arr_store", "chr_arr_store", "bol_arr_store",
-	"bol_comp" , "bol_only"};
 
 struct mystack
 {
