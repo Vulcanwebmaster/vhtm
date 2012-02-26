@@ -52,12 +52,16 @@ context_check( enum code_ops operation, char *sym_name, char *scope )
 	symrec *identifier;
 	identifier = getsym(sym_name, scope);
 	if ( identifier == 0 )
-		{ 
-			errors++;
-			printf( "%s", sym_name );
-			printf( "%s\n", " is an undeclared identifier" );
+		{
+			identifier = getsym(sym_name, "global");
+			if ( identifier == 0 )
+			{
+				errors++;
+				printf( "%s", sym_name );
+				printf( "%s\n", " is an undeclared identifier" );
+			}
 		}
-	else 
+	if (identifier != 0)
 	{
 		if (identifier->type == ARR_D && operation == INT_ARR_STORE)  
 			gen_code_variable( DOU_ARR_STORE, identifier);
@@ -114,12 +118,12 @@ GRAMMAR RULES for the Simple language
 =========================================================================*/
 %%
 program :
-func_decls
-LET
+var
 {
-	function_name = "main";
+	function_name = "global";
 }
 declarations
+func_decls
 IN 
 { 
 	gen_code( DATA, data_location() - 1 );
@@ -133,6 +137,10 @@ END
 	gen_code( HALT, 0 ); 
 	YYACCEPT; 
 }
+;
+
+var: /* empty */
+| LET
 ;
 
 declarations : /* empty */
@@ -176,13 +184,13 @@ func_decls : /* empty */
 
 func_decl: FUNCTION IDENTIFIER '(' func_var_decls ')' 
 {
-	install( $2 , "main", FUN, -1); 
 	if (function_name != NULL) free(function_name);
 	function_name = (char *) malloc (strlen($2)+1);
 	function_name = $2;
-	install( function_name , function_name, FUN, -1);
+	install( function_name , function_name, FUN, gen_label());
+	install( function_name , "global", FUN, gen_label()); 
 }
-LET
+var
 	declarations
 IN 
 	commands
@@ -230,7 +238,7 @@ command : SKIP
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
-| IDENTIFIER '(' values ');' { context_check(CAL, $1, function_name);}
+| IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
 ELSE { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); } commands
@@ -302,8 +310,7 @@ main( int argc, char *argv[] )
 	if ( errors == 0 )
 	{ 
 		fetch_execute_cycle();
-	}
-		
+	}		
 }
 /*=========================================================================
 YYERROR

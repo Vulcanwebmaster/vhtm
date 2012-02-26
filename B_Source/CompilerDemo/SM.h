@@ -48,7 +48,8 @@ int pc = 0;
 struct instruction ir;
 int ar = 0;
 int top = 0;
-int current_pc = 0;
+int stack_call[1000];
+int top_call = 0;
 
 void start_main(int start_position) {
 	pc = start_position - 1;
@@ -299,11 +300,11 @@ void fetch_execute_cycle()
 				top--;
 				break;
 			case CAL :
-				pc = ir.arg.int_val;
-				current_pc = pc;
+				stack_call[top_call++] = pc;
+				pc = ir.arg.length;
 				break;
 			case END_CAL :
-				pc = current_pc;
+				pc = stack_call[--top_call];
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;

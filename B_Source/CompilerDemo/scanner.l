@@ -38,6 +38,7 @@ bool {return(BOOLEAN);}   /* Added */
 "array boolean" {return(ARRAY_B);  }
 "array char" {return(ARRAY_C);  } 
 "array double" {return(ARRAY_D);  }  
+return { return(RETURN); }
 var { return(LET); }
 readi { return(READI); }
 readd { return(READD); }

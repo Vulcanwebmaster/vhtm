@@ -1,16 +1,25 @@
+var
+	array integer x[4];
+	array char c[10];
+	integer y;
+	
+function hic()
+begin
+	writes "dfjdk";
+	y := 8;
+	writei y;
+end
+
 function test()
 var
 	integer k;
 begin
 	k := 5;
 	writei k;
+	hic();
 end
-var
-	array integer x[4];
-	array char c[10];
-	integer y;
+
 begin
-	writes "anc";
 	test();
-	writes "abc";
+	hic();
 end

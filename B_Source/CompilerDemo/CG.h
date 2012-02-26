@@ -67,4 +67,12 @@ void back_patch( int addr, enum code_ops operation, int arg )
 	code[addr].op = operation;
 	code[addr].arg.int_val = arg;
 }
+
+void debug() {
+	int i = 0;
+	while (i < code_offset) {
+		printf("%d %d \n",code[i].op, code[i].arg.int_val );
+		i++;
+	}
+}
 /************************** End Code Generator **************************/
