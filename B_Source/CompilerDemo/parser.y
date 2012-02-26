@@ -34,7 +34,9 @@ install ( char *sym_name, char *scope, enum type_code type, int length )
 	symrec *s;
 	s = getsym (sym_name, scope);
 	if (s == 0)
+	{
 		s = putsym (sym_name, scope, type, length);
+	}
 	else 
 	{
 		errors++;
@@ -188,6 +190,7 @@ END
 {
 	if (function_name != NULL) free(function_name);
 	function_name = "main";
+	gen_code(END_CAL, 0);
 }
 ;
 
@@ -227,7 +230,7 @@ command : SKIP
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
-| IDENTIFIER '(' values ");" {context_check(CAL, $1, function_name);}
+| IDENTIFIER '(' values ');' { context_check(CAL, $1, function_name);}
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
 ELSE { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); } commands

@@ -1,18 +1,16 @@
-let
-	array integer x[4];
-	array char c[10];
-	integer y;
 function test()
+var
 	integer k;
 begin
 	k := 5;
 	writei k;
 end
+var
+	array integer x[4];
+	array char c[10];
+	integer y;
 begin
 	writes "anc";
-	y := 5;
-	x[1] := 4;
-	c[5] := 'g';
-	writei x[2];
-	writec c[y];
+	test();
+	writes "abc";
 end

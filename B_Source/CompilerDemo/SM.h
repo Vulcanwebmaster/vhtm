@@ -12,7 +12,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE,
+	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL,
 	BOL_COMP, BOL_ONLY };
 
 struct mystack
@@ -39,8 +39,6 @@ struct instruction
 /* CODE Array */
 struct instruction code[5000];
 /* RUN-TIME Stack */
-//double stack[999];
-
 struct mystack stack[5000];
 
 /*-------------------------------------------------------------------------
@@ -50,7 +48,12 @@ int pc = 0;
 struct instruction ir;
 int ar = 0;
 int top = 0;
-char ch;
+int current_pc = 0;
+
+void start_main(int start_position) {
+	pc = start_position - 1;
+}
+
 /*=========================================================================
 Fetch Execute Cycle
 =========================================================================*/
@@ -294,6 +297,13 @@ void fetch_execute_cycle()
 				}
 				stack[ir.arg.int_val].arr_bol_val[stack[top-1].int_val] = stack[top].bol_val;
 				top--;
+				break;
+			case CAL :
+				pc = ir.arg.int_val;
+				current_pc = pc;
+				break;
+			case END_CAL :
+				pc = current_pc;
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;
