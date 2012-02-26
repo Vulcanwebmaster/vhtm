@@ -104,7 +104,7 @@ TOKENS
 %token SKIP THEN ELSE FI DO END
 %token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READI READS READC READD READB
-%token WRITEI WRITES WRITEC WRITED WRITEB
+%token WRITEI WRITES WRITEC WRITED WRITEB WRITELINE
 %token ARRAY_I ARRAY_C ARRAY_B ARRAY_D  
 %token ASSGNOP RETURN
 /*=========================================================================
@@ -187,7 +187,7 @@ const_declarations:
 | const_declarations const_declaration
 ;
 
-const_declaration : INTEGER IDENTIFIER ASSGNOP NUMBER_VAL ';' { install( $2 , function_name, C_INT, -1); gen_code( LD_INT, $4 ); context_check( STORE, $2, function_name );  }
+const_declaration : INTEGER IDENTIFIER ASSGNOP NUMBER_VAL ';' { install( $2 , "global", C_INT, -1); gen_code( LD_INT, $4 ); context_check( STORE, $2, function_name );  }
 | CHAR IDENTIFIER ASSGNOP CHR_VAL ';' { install( $2, function_name, C_CHR, -1 ); gen_code_char ( LD_CHR, $4); context_check( STORE, $2, function_name );  }
 | DOUBLE IDENTIFIER ASSGNOP NUMBERD_VAL ';' { install( $2, function_name, C_DOU, -1 ); gen_code_double( LD_DOU, $4 ); context_check( STORE, $2, function_name );  }
 | STRING  IDENTIFIER ASSGNOP STR_VAL ';' { install( $2, function_name, C_STR, -1 ); gen_code_string ( LD_STR, $4); context_check( STORE, $2, function_name ); }
@@ -252,6 +252,7 @@ command : SKIP
 | WRITES exp { gen_code( WRITE_STR, 0 ); }
 | WRITEC exp { gen_code( WRITE_CHR, 0 ); }
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
+| WRITELINE { gen_code ( WRITE_LINE, 0); }
 | RETURN exp { gen_code( RET, 0); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }

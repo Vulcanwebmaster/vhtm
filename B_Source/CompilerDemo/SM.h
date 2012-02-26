@@ -11,7 +11,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_DOU, WRITE_DOU,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
-	READ_BOL, WRITE_BOL,
+	READ_BOL, WRITE_BOL, WRITE_LINE,
 	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL, RET,
 	BOL_COMP, BOL_ONLY };
 
@@ -72,7 +72,7 @@ void fetch_execute_cycle()
 		switch (ir.op) 
 		{
 			case HALT : break;
-			case READ_INT : printf( "Input Integer: " );
+			case READ_INT :
 				fflush(stdout);
 				fflush(stdin);
 				int temp;
@@ -81,27 +81,27 @@ void fetch_execute_cycle()
 				stack[ar+ir.arg.int_val].int_val = temp;
 				stack[ar+ir.arg.int_val].dou_val = temp; 
 				break;
-			case READ_DOU : printf( "Input Double: " );
-				double temp1;
+			case READ_DOU :
 				fflush(stdout);
 				fflush(stdin);
+				double temp1;
 				scanf("%lf",&temp1);
 				stack[ar+ir.arg.int_val].type = DOU;
 				stack[ar+ir.arg.int_val].dou_val = temp1; 
 				stack[ar+ir.arg.int_val].int_val = (int)temp1; 
 				break;
-			case READ_STR : printf( "Input String: " );
-				char temp2[256];
+			case READ_STR :
 				fflush(stdout);
 				fflush(stdin);
+				char temp2[256];
 				scanf("%[^\n]%*[^\n]",temp2);
 				stack[ar+ir.arg.int_val].type = STR;
 				strcpy(stack[ar+ir.arg.int_val].str_val,temp2); 
 				break;
-			case READ_CHR : printf( "Input Character: " );
-				char temp3;
+			case READ_CHR :
 				fflush(stdout);
 				fflush(stdin);
+				char temp3;
 				scanf("%c",&temp3);
 				stack[ar+ir.arg.int_val].type = CHR;
 				stack[ar+ir.arg.int_val].chr_val = temp3; 
@@ -117,18 +117,18 @@ void fetch_execute_cycle()
 					if (strcmp(temp4,"false")) stack[ar+ir.arg.int_val].bol_val = 0;
 						printf("Loi input kieu boolean sai");
 				break;
-			case WRITE_INT : printf ("Output Integer: %ld", stack[top--].int_val); break;
-			case WRITE_DOU : printf ("Output Double: %f", stack[top--].dou_val); break;
-			case WRITE_STR : printf ("Output String: %s", stack[top--].str_val); break;
-			case WRITE_CHR : printf ("Output Character: %c", stack[top--].chr_val); break;
+			case WRITE_INT : printf ("%ld", stack[top--].int_val); break;
+			case WRITE_DOU : printf ("%f", stack[top--].dou_val); break;
+			case WRITE_STR : printf ("%s", stack[top--].str_val); break;
+			case WRITE_CHR : printf ("%c", stack[top--].chr_val); break;
 			case WRITE_BOL : 
-				printf ("Output Boolean: ");
-				int temp5 = 1;
-				temp5 = stack[top--].bol_val;
-				if (temp5 == 1) 
+				if (stack[top--].bol_val == 1) 
 					printf ("true");
 				else 
 					printf ("false");
+				break;
+			case WRITE_LINE :
+				printf("\n");
 				break;
 			case STORE : stack[ir.arg.int_val] = stack[top--]; 
 				break;

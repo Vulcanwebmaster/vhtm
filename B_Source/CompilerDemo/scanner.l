@@ -54,6 +54,7 @@ writed { return(WRITED); }
 writes { return(WRITES); }
 writec { return(WRITEC); }
 writeb { return(WRITEB); }
+writeline { return(WRITELINE); }
 function { return(FUNCTION); }
 {BOOLEAN} { yylval.bolval = yytext; return(NUMBERB_VAL); } /* Added */
 {ID} { yylval.id = (char *) strdup(yytext); return(IDENTIFIER); }
