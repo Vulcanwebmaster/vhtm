@@ -102,27 +102,6 @@ function { return(FUNCTION); }
 	}
 }
 
-"/*" {
-	register int c;
-	for ( ; ; )
-	{
-		while ((c = input())!= '*' && c != EOF)
-		; /* eat up text of comment */
-		if(c == '*' )
-		{
-			while((c = input()) == '*')
-			;
-			if (c == '/')
-				break; /* found the end of comment */
-		}
-		if (c == EOF)
-		{
-			printf("EOF in comment");
-			break;
-		}
-	}
-}
-
 "//" {
 	register int c;
 	for ( ; ; )
