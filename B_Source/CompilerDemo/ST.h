@@ -8,8 +8,9 @@ DECLARATIONS
 SYMBOL TABLE RECORD
 -------------------------------------------------------------------------*/
 enum type_code{ INT , DOU, STR, CHR, BOL,
-	ARR_I, ARR_D, ARR_C, ARR_B, FUN };
-
+	ARR_I, ARR_D, ARR_C, ARR_B, FUN,  
+	C_INT , C_DOU, C_STR, C_CHR, C_BOL 
+};
 	
 struct symrec
 {

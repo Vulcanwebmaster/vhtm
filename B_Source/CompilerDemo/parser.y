@@ -88,7 +88,6 @@ SEMANTIC RECORDS
 	char chrval;
 	char *id; /* Identifiers */
 	struct lbs *lbls; /* For backpatching */
-	int *arrIntval;
 }
 /*=========================================================================
 TOKENS
@@ -103,11 +102,11 @@ TOKENS
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE /* For backpatching labels */
 %token SKIP THEN ELSE FI DO END
-%token INTEGER LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
+%token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READI READS READC READD READB
 %token WRITEI WRITES WRITEC WRITED WRITEB
 %token ARRAY_I ARRAY_C ARRAY_B ARRAY_D  
-%token ASSGNOP 
+%token ASSGNOP RETURN
 /*=========================================================================
 OPERATOR PRECEDENCE
 =========================================================================*/
@@ -123,13 +122,15 @@ var
 	function_name = "global";
 }
 declarations
+constant 
+	const_declarations { if (start_const != -1) end_const =  gen_label();}
 func_decls
 IN 
 { 
 	gen_code( DATA, data_location() - 1 );
 	if (function_name != NULL) free(function_name);
 	function_name = "main";
-	start_main(gen_label());
+	main_start = gen_label() - 1;
 }
 commands
 END 
@@ -137,6 +138,10 @@ END
 	gen_code( HALT, 0 ); 
 	YYACCEPT; 
 }
+;
+
+constant : /* empty */
+|  CONST { start_const = gen_label(); }
 ;
 
 var: /* empty */
@@ -176,6 +181,17 @@ id_seq_dou : /* empty */
 
 id_seq_bol : /* empty */
 | id_seq_bol IDENTIFIER ',' { install( $2, function_name, BOL, -1 ); }
+;
+
+const_declarations:
+| const_declarations const_declaration
+;
+
+const_declaration : INTEGER IDENTIFIER ASSGNOP NUMBER_VAL ';' { install( $2 , function_name, C_INT, -1); gen_code( LD_INT, $4 ); context_check( STORE, $2, function_name );  }
+| CHAR IDENTIFIER ASSGNOP CHR_VAL ';' { install( $2, function_name, C_CHR, -1 ); gen_code_char ( LD_CHR, $4); context_check( STORE, $2, function_name );  }
+| DOUBLE IDENTIFIER ASSGNOP NUMBERD_VAL ';' { install( $2, function_name, C_DOU, -1 ); gen_code_double( LD_DOU, $4 ); context_check( STORE, $2, function_name );  }
+| STRING  IDENTIFIER ASSGNOP STR_VAL ';' { install( $2, function_name, C_STR, -1 ); gen_code_string ( LD_STR, $4); context_check( STORE, $2, function_name ); }
+| BOOLEAN IDENTIFIER ASSGNOP NUMBERB_VAL ';' { install( $2, function_name, C_BOL, -1 );  gen_code_boolean (LD_BOL, $4); context_check( STORE, $2, function_name);}
 ;
 
 func_decls : /* empty */
@@ -236,6 +252,7 @@ command : SKIP
 | WRITES exp { gen_code( WRITE_STR, 0 ); }
 | WRITEC exp { gen_code( WRITE_CHR, 0 ); }
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
+| RETURN exp { gen_code( RET, 0); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
 | IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}

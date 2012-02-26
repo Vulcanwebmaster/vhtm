@@ -12,7 +12,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL,
+	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL, RET,
 	BOL_COMP, BOL_ONLY };
 
 struct mystack
@@ -50,16 +50,18 @@ int ar = 0;
 int top = 0;
 int stack_call[1000];
 int top_call = 0;
-
-void start_main(int start_position) {
-	pc = start_position - 1;
-}
+int start_const = -1;
+int end_const = -1;
+int main_start = 0;
 
 /*=========================================================================
 Fetch Execute Cycle
 =========================================================================*/
 void fetch_execute_cycle()
-{ 
+{
+	if (start_const >= 0) 
+		pc = start_const;
+		else pc = main_start;
 	do 
 	{ 
 		/*printf( "PC = %3d IR.arg = %8d AR = %3d Top = %3d,%8d\n",
@@ -128,7 +130,8 @@ void fetch_execute_cycle()
 				else 
 					printf ("false");
 				break;
-			case STORE : stack[ir.arg.int_val] = stack[top--]; break;
+			case STORE : stack[ir.arg.int_val] = stack[top--]; 
+				break;
 			case JMP_FALSE : 
 				if ( stack[top--].int_val == 0 )
 					pc = ir.arg.int_val;
@@ -306,8 +309,14 @@ void fetch_execute_cycle()
 			case END_CAL :
 				pc = stack_call[--top_call];
 				break;
+			case RET :
+				
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;
+		}
+		if (pc == end_const)
+		{
+			pc = main_start;
 		}
 	} while (ir.op != HALT);
 }

@@ -34,6 +34,7 @@ char { return (CHAR);} /* Added */
 string { return(STRING);} /* Added */
 double { return(DOUBLE);} /* Added */
 bool {return(BOOLEAN);}   /* Added */
+const { return(CONST);}
 "array integer" {return(ARRAY_I);  } 
 "array boolean" {return(ARRAY_B);  }
 "array char" {return(ARRAY_C);  } 

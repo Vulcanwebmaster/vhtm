@@ -2,6 +2,8 @@ var
 	array integer x[4];
 	array char c[10];
 	integer y;
+const 
+	integer d := 6;
 	
 function hic()
 begin
@@ -20,6 +22,5 @@ begin
 end
 
 begin
-	test();
-	hic();
+	writei d;
 end
