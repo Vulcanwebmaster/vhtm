@@ -111,19 +111,19 @@ OPERATOR PRECEDENCE
 GRAMMAR RULES for the Simple language
 =========================================================================*/
 %%
-program : 
+program :
+func_decls
 LET
 {
 	function_name = "main";
 }
-declarations
-func_decls
 declarations
 IN 
 { 
 	gen_code( DATA, data_location() - 1 );
 	if (function_name != NULL) free(function_name);
 	function_name = "main";
+	start_main(gen_label());
 }
 commands
 END 
@@ -180,7 +180,8 @@ func_decl: FUNCTION IDENTIFIER '(' func_var_decls ')'
 	function_name = $2;
 	install( function_name , function_name, FUN, -1);
 }
-declarations
+LET
+	declarations
 IN 
 	commands
 END 
@@ -226,7 +227,7 @@ command : SKIP
 | WRITEB exp { gen_code( WRITE_BOL, 0 ); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
-| IDENTIFIER '(' values ");" {}
+| IDENTIFIER '(' values ");" {context_check(CAL, $1, function_name);}
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
 ELSE { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); } commands
@@ -272,7 +273,7 @@ value : val_seq NUMBER_VAL
 | val_seq STR_VAL
 | val_seq CHR_VAL
 | val_seq NUMBERB_VAL
-| val_seq IDENTIFIER
+| val_seq IDENTIFIER {context_check(LD_VAR, $2, function_name);}
 ;
 
 val_seq : /* empty */
@@ -281,7 +282,7 @@ val_seq : /* empty */
 | val_seq NUMBERB_VAL ','
 | val_seq STR_VAL ','
 | val_seq CHR_VAL ','
-| val_seq IDENTIFIER ','
+| val_seq IDENTIFIER ',' {context_check(LD_VAR, $2, function_name);}
 ;
 %%
 /*=========================================================================
@@ -295,7 +296,6 @@ main( int argc, char *argv[] )
 	/*yydebug = 1;*/
 	errors = 0;
 	yyparse ();
-	printf ("Parse Completed\n");
 	if ( errors == 0 )
 	{ 
 		fetch_execute_cycle();
