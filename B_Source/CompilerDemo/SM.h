@@ -157,6 +157,10 @@ void fetch_execute_cycle()
 				break;
 			case LD_VAR : stack[++top] = stack[ar+ir.arg.int_val]; break;
 			case LT : 
+				//printf("last top: %d ",top);
+				//printf("%f ",stack[top - 2].dou_val);
+				//printf("%f ",stack[top - 1].dou_val);
+				//printf("%f ",stack[top].dou_val);
 				if ( stack[top-1].dou_val < stack[top].dou_val )
 				{
 					stack[--top].int_val = 1;
@@ -242,39 +246,46 @@ void fetch_execute_cycle()
 				}
 				break;
 			case ARR_PART :
+				//printf("top: %d ",top);
+				//printf("%d ",stack[top - 2].int_val);
+				//printf("%d ",stack[top - 1].int_val);
+				//printf("%d ",stack[top].int_val);
 				if (ir.arg.type == ARR_I) 
 				{
 					if (stack[ir.arg.int_val].arr_int_val == NULL) {
 						stack[ir.arg.int_val].arr_int_val = (int *) malloc(stack[ir.arg.int_val].length);
 					}
-					stack[top-1].int_val = stack[ir.arg.int_val].arr_int_val[stack[top].int_val];
-					stack[top-1].dou_val = stack[top-1].int_val;
+					stack[top].int_val = stack[ir.arg.int_val].arr_int_val[stack[top].int_val];
+					stack[top].dou_val = stack[top].int_val;
 				} else 
 				if (ir.arg.type == ARR_D) 
 				{
 					if (stack[ir.arg.int_val].arr_dou_val == NULL) {
 						stack[ir.arg.int_val].arr_dou_val = (double *) malloc(stack[ir.arg.int_val].length);
 					}
-					stack[top-1].dou_val = stack[ir.arg.int_val].arr_dou_val[stack[top].int_val];
-					stack[top-1].int_val = stack[top-1].dou_val;
+					stack[top].dou_val = stack[ir.arg.int_val].arr_dou_val[stack[top].int_val];
+					stack[top].int_val = stack[top].dou_val;
 				} else 
 				if (ir.arg.type == ARR_B) 
 				{
 					if (stack[ir.arg.int_val].arr_bol_val == NULL) {
 						stack[ir.arg.int_val].arr_bol_val = (int *) malloc(stack[ir.arg.int_val].length);
 					}
-					stack[top-1].bol_val = stack[ir.arg.int_val].arr_bol_val[stack[top].int_val];
+					stack[top].bol_val = stack[ir.arg.int_val].arr_bol_val[stack[top].int_val];
 				} else
 				if (ir.arg.type == ARR_C) 
 				{
 					if (stack[ir.arg.int_val].arr_chr_val == NULL) {
 						stack[ir.arg.int_val].arr_chr_val = (char *) malloc(stack[ir.arg.int_val].length);
 					}
-					stack[top-1].chr_val = stack[ir.arg.int_val].arr_chr_val[stack[top].int_val];
-				}
-				top--;				
+					stack[top].chr_val = stack[ir.arg.int_val].arr_chr_val[stack[top].int_val];
+				}		
 				break;
 			case INT_ARR_STORE :
+				//printf("top: %d ",top);
+				//printf("%d ",stack[top - 2].int_val);
+				//printf("%d ",stack[top - 1].int_val);
+				//printf("%d ",stack[top].int_val);
 				if (stack[ir.arg.int_val].arr_int_val == NULL) {
 					stack[ir.arg.int_val].arr_int_val = (int *) malloc(stack[ir.arg.int_val].length);
 				}
