@@ -282,6 +282,7 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | IDENTIFIER { context_check( LD_VAR, $1, function_name ); }
 | exp '<' exp { gen_code( LT, 0 ); }
 | exp '=' exp { gen_code( EQ, 0 ); }
+| exp '!=' exp { gen_code( NEQ, 0 ); }
 | exp '>' exp { gen_code( GT, 0 ); }
 | exp '+' exp { gen_code( ADD, 0 ); }
 | exp '-' exp { gen_code( SUB, 0 ); }

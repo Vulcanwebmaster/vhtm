@@ -12,7 +12,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_STR, WRITE_STR,
 	READ_CHR, WRITE_CHR,
 	READ_BOL, WRITE_BOL, WRITE_LINE,
-	LT, EQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL, RET,
+	LT, EQ, NEQ, GT, ADD, SUB, MULT, DIV, AND, OR, ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL, RET,
 	BOL_COMP, BOL_ONLY };
 
 struct mystack
@@ -131,6 +131,8 @@ void fetch_execute_cycle()
 				printf("\n");
 				break;
 			case STORE : stack[ir.arg.int_val] = stack[top--]; 
+				if (stack[ir.arg.int_val].type == INT) 
+					stack[ir.arg.int_val].dou_val = stack[ir.arg.int_val].int_val; 
 				break;
 			case JMP_FALSE : 
 				if ( stack[top--].int_val == 0 )
@@ -174,6 +176,18 @@ void fetch_execute_cycle()
 				break;
 			case EQ : 
 				if ( stack[top-1].dou_val == stack[top].dou_val )
+				{
+					stack[--top].int_val = 1;
+					stack[top].bol_val = 1;
+				}
+				else
+				{	
+					stack[--top].int_val = 0;
+					stack[top].bol_val = 0;
+				}
+				break;
+			case NEQ : 
+				if ( stack[top-1].dou_val != stack[top].dou_val )
 				{
 					stack[--top].int_val = 1;
 					stack[top].bol_val = 1;
