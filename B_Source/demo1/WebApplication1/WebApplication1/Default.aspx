@@ -15,9 +15,9 @@
 </head>
 <body>
     <form id="form1" runat="server" 
-    style="margin: auto; width: 1000px; background-image: url('http://localhost:2133/images/background.png');">
+    style="margin: auto; width: 1000px; background-image: url('/images/background.png');">
     <div> 
-        <div style="height: 100px; width: 1000px;margin-top: -7px; background-image: url('http://localhost:2133/images/banner.jpg'); background-repeat: no-repeat;">
+        <div style="height: 100px; width: 1000px;margin-top: -7px; background-image: url('/images/banner.jpg'); background-repeat: no-repeat;">
             <br />
             <div align="right" style="margin-right: 30px;">
                 
@@ -34,7 +34,7 @@
             <br />
             <br />
             <table cellpadding="2px" style="width: 725px">
-                <tr style="background-image: url('http://localhost:2133/images/panel_right.png')">
+                <tr style="background-image: url('/images/panel_right.png')">
                     <td>
                         <center>
                         Province
@@ -66,7 +66,7 @@
                         </center>
                     </td>
                 </tr>
-                <tr style="background-image: url('http://localhost:2133/images/tablepanel.png')">
+                <tr style="background-image: url('/images/tablepanel.png')">
                     <td class="style1">
                     <center>
                         <p>Ha Noi</p>
@@ -74,41 +74,41 @@
                     </td>
                     <td class="style1">
                     <center>
-                        <img class="condition_image" src="images/sun3.jpg" alt=""/>
+                        <img class="condition_image" src="/images/sun3.jpg" alt=""/>
                         <p>31 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                     <td class="style1">
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                     <td class="style1">
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                     <td class="style1">
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                     <td class="style1">
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                 </tr>
-                <tr style="background-image: url('http://localhost:2133/images/tablepanel2.png')">
+                <tr style="background-image: url('/images/tablepanel2.png')">
                     <td>
                     <center>
                         <p>Vinh Phuc</p>
@@ -116,14 +116,14 @@
                     </td>
                     <td>
                     <center>
-                        <img class="condition_image" src="images/rain1.jpg" alt=""/>
+                        <img class="condition_image" src="/images/rain1.jpg" alt=""/>
                         <p>30 C</p>
                         <p>Humidity: High</p>
                         </center>
                     </td>
                     <td>
                     <center>
-                        <img class="condition_image" src="images/rain1.jpg" alt=""/>
+                        <img class="condition_image" src="/images/rain1.jpg" alt=""/>
                         <p>30 C</p>
                         <p>Humidity: High</p>
                         </center>
@@ -131,27 +131,27 @@
                     
                     <td>
                     <center>
-                        <img class="condition_image" src="images/rain1.jpg" alt=""/>
+                        <img class="condition_image" src="/images/rain1.jpg" alt=""/>
                         <p>30 C</p>
                         <p>Humidity: High</p>
                         </center>
                     </td>
                     <td>
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                     <td>
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                 </tr>
-                <tr style="background-image: url('http://localhost:2133/images/tablepanel.png')">
+                <tr style="background-image: url('/images/tablepanel.png')">
                     <td>
                         <center>
                         <p>Ha Tay</p>
@@ -159,41 +159,41 @@
                     </td>
                     <td>
                             <center>
-                            <img class="condition_image" src="images/cloud.png" alt=""/>
+                            <img class="condition_image" src="/images/cloud.png" alt=""/>
                             <p>24 C</p>
                             <p>Humidity: High</p>
                             </center>
                     </td>
                     <td>
                         <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                             <p>24 C</p>
                             <p>Humidity: High</p>
                             </center>
                     </td>
                     <td>
                         <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                             <p>24 C</p>
                             <p>Humidity: High</p>
                             </center>
                     </td>
                     <td>
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                     <td>
                     <center>
-                        <img class="condition_image" src="images/cloud.png" alt=""/>
+                        <img class="condition_image" src="/images/cloud.png" alt=""/>
                         <p>30 C</p>
                         <p>Humidity:Low</p>
                         </center>
                     </td>
                 </tr>
-                <tr style="background-image: url('http://localhost:2133/images/tablepanel2.png')">
+                <tr style="background-image: url('/images/tablepanel2.png')">
                     
                     <td>
                     <center>
