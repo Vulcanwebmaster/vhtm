@@ -1,0 +1,44 @@
+﻿body
+{
+    background-color: #99CCFF;
+    background-image: url('images/backgroundbody.jpg');
+    height: 1079px;
+}
+
+.condition_image
+{
+    width: 40px;
+    height: 40px;
+}
+
+.title_right
+{
+    margin: 10px 0px 0px 0px;
+    font-family: Verdana;
+    color: #FFFFFF;
+    clip: rect(10px, auto, 0px, auto);
+    bottom: 0px;
+}
+
+.discovery_item
+{
+    margin: 30px 25px 25px 25px;
+    color: #000099;
+}
+
+.title_panel
+{
+    height:25px;
+   /* margin-top: 0px;*/
+}
+
+.itemfooter
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#footerdiv
+{
+   /* margin-top: 20px;*/
+}

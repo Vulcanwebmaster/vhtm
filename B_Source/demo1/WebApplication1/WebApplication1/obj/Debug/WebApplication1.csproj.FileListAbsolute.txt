@@ -1,0 +1,5 @@
+D:\Du an\SVN\B_Source\demo1\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\Du an\SVN\B_Source\demo1\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\Du an\SVN\B_Source\demo1\WebApplication1\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
+D:\Du an\SVN\B_Source\demo1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\Du an\SVN\B_Source\demo1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
