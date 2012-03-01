@@ -1,0 +1,149 @@
+﻿form
+{
+    width: 1000px;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+body
+{
+    background-color: #E6E6E6; /*background-image: url('../images/background.png');*/
+    background-attachment: fixed;
+    background-image: url('../images/background.png');
+}
+
+#div_left
+{
+    margin: 20px 0px 20px 20px;
+    float: left;
+    width: 710px;
+}
+
+#div_right
+{
+    width: 230px;
+    background-color: #FFFFFF;
+}
+
+.title_view
+{
+    /*background-image: url('../images/title_view.png');*/
+    width: 710px;
+    margin-top: 20px;
+    background-image: url('../images/fream2.png');
+    background-repeat: no-repeat;
+}
+
+.title
+{
+    vertical-align: 20%;
+    text-align: center;
+    line-height: 25px;
+    color: #336600;
+}
+
+#div_search
+{
+    margin: 0px 15px 0px 0px;
+    background-image: url('../images/search_back_ground.png');
+    background-repeat: no-repeat;
+    width: 230px;
+}
+
+.div_right_item
+{
+    border-style: outset outset outset outset;
+    border-width: 1px;
+    border-color: #808080;
+    background-color: #FFFFFF;
+    margin-top: 5px;
+}
+
+.title_right_text
+{
+    text-align: center;
+    font-family: Verdana;
+    line-height: 30px;
+    color: #808080;
+    font-weight: bold;
+}
+
+.title_right
+{
+    background-image: url('../images/title_right_background.png');
+    background-repeat: no-repeat;
+}
+
+.div_content_right
+{
+    border: 1px none #808080;
+    background-image: url('../images/div_right_background.png');
+}
+
+#footer
+{
+    background-image: url('../images/footer.png');
+    height: 70px;
+    clear: both;
+}
+
+.gioithieu
+{
+    color: #0000FF;
+}
+
+.content_right
+{
+    padding: 0px 40px 0px 0px;
+    font-family: Arial;
+    color: #202020;
+    font-size: 13px;
+    vertical-align: top;
+    text-align: justify;
+}
+
+.xemtiep
+{
+    color: #3366FF;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.duongngancach
+{
+    border-style: outset none none none;
+    border-width: thin;
+    border-color: #99CCFF;
+    width:670px;
+}
+
+.software_name
+{
+    color: #0000FF;
+    font-family: Arial;
+    font-size: 13px;
+}
+
+.library_software
+{
+    font-size: 13px;
+}
+
+#linkthanhvien
+{
+    border-right: thin solid #FFFFFF;
+    vertical-align: top;
+    clip: rect(auto, 0px, auto, auto);
+    margin-right: 0px;
+    width: 100px;
+    text-align: center;
+    right: 0px;
+    margin-left: 583px;
+}
+
+#linklienket
+{
+    vertical-align: top;
+    text-align: center;
+    height: 95px;
+}
