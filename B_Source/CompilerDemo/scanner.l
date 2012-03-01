@@ -41,19 +41,11 @@ const { return(CONST);}
 "array double" {return(ARRAY_D);  }  
 return { return(RETURN); }
 var { return(LET); }
-readi { return(READI); }
-readd { return(READD); }
-reads { return(READS); }
-readc { return(READC); }
-readb { return(READB); }
+read { return(READ); }
 skip { return(SKIP); }
 then { return(THEN); }
 while { return(WHILE); }
-writei { return(WRITEI); }
-writed { return(WRITED); }
-writes { return(WRITES); }
-writec { return(WRITEC); }
-writeb { return(WRITEB); }
+write { return(WRITE); }
 writeline { return(WRITELINE); }
 function { return(FUNCTION); }
 {BOOLEAN} { yylval.bolval = yytext; return(NUMBERB_VAL); } /* Added */

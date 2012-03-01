@@ -5,22 +5,18 @@ var
 const 
 	integer d := 6;
 	
-function hic()
-begin
-	writes "dfjdk";
-	y := 8;
-	writei y;
-end
-
 function test()
 var
 	integer k;
+	char c;
+	string s;
+	double l;
 begin
-	k := 5;
-	writei k;
-	hic();
+	read s;
+	write s;
+	write "abc dat de di i";
 end
 
 begin
-	writei d;
+	test();
 end

@@ -103,8 +103,8 @@ TOKENS
 %token <lbls> IF WHILE /* For backpatching labels */
 %token SKIP THEN ELSE FI DO END
 %token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
-%token READI READS READC READD READB
-%token WRITEI WRITES WRITEC WRITED WRITEB WRITELINE
+%token READ
+%token WRITE WRITELINE
 %token ARRAY_I ARRAY_C ARRAY_B ARRAY_D  
 %token ASSGNOP RETURN
 /*=========================================================================
@@ -242,24 +242,18 @@ commands : /* empty */
 ;
 
 command : SKIP
-| READI IDENTIFIER { context_check( READ_INT, $2, function_name); }
-| READD IDENTIFIER { context_check( READ_DOU, $2, function_name ); }
-| READS IDENTIFIER { context_check( READ_STR, $2, function_name ); }
-| READC IDENTIFIER { context_check( READ_CHR, $2, function_name ); }
-| READB IDENTIFIER { context_check( READ_BOL, $2, function_name ); }
-| WRITEI exp { gen_code( WRITE_INT, 0 ); }
-| WRITED exp { gen_code( WRITE_DOU, 0 ); }
-| WRITES exp { gen_code( WRITE_STR, 0 ); }
-| WRITEC exp { gen_code( WRITE_CHR, 0 ); }
-| WRITEB exp { gen_code( WRITE_BOL, 0 ); }
+| READ IDENTIFIER { context_check( READ_VAR, $2, function_name); }
+| WRITE IDENTIFIER { context_check( WRITE_VAR, $2, function_name); }
+| WRITE STR_VAL { gen_code_string ( WRITE_STR, $2 );}
 | WRITELINE { gen_code ( WRITE_LINE, 0); }
-| RETURN exp { gen_code( RET, 0); }
+| RETURN exp { gen_code(END_CAL, 0); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
 | IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}
+| IDENTIFIER ASSGNOP IDENTIFIER '(' values ');' { context_check(CAL, $3, "global"); context_check( STORE, $1, function_name ); }
 | IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
 THEN commands { $1->for_goto = reserve_loc(); }
-ELSE { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); } commands
+else_exp { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); }
 FI { back_patch( $1->for_goto, GOTO, gen_label() ); }
 | WHILE { $1 = (struct lbs *) newlblrec(); $1->for_goto = gen_label(); } exp { $1->for_jmp_false = reserve_loc(); }
 DO
@@ -267,6 +261,9 @@ commands
 END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
 ;
 
+else_exp: /* empty */
+| ELSE commands;
+ 
 arr_exp : 
 	IDENTIFIER '[' index ']'  {context_check( ARR_PART, $1, function_name );} ;
 	
