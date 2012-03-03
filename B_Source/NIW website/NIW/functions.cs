@@ -13,7 +13,7 @@ namespace NIW
 {
     public class functions
     {
-        public static String host = "http://localhost:3591";
+        public static String host = "http://www.niwcheck.somee.com";
 
         public static String link_database = host+"/CSDL/XMLFile1.xml";
 

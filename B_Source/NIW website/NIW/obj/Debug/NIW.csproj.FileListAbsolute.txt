@@ -1,0 +1,5 @@
+D:\Du an\SVN\B_Source\NIW website\NIW\bin\NIW.dll
+D:\Du an\SVN\B_Source\NIW website\NIW\bin\NIW.pdb
+D:\Du an\SVN\B_Source\NIW website\NIW\obj\Debug\ResolveAssemblyReference.cache
+D:\Du an\SVN\B_Source\NIW website\NIW\obj\Debug\NIW.dll
+D:\Du an\SVN\B_Source\NIW website\NIW\obj\Debug\NIW.pdb

@@ -29,9 +29,9 @@ body
 {
     /*background-image: url('../images/title_view.png');*/
     width: 710px;
-    margin-top: 20px;
-    background-image: url('../images/fream2.png');
+    margin-top: 20px; /*background-image: url('../images/fream2.png');*/
     background-repeat: no-repeat;
+   /* background-image: url('../images/SuperTabControl6.png');*/
 }
 
 .title
@@ -39,7 +39,7 @@ body
     vertical-align: 20%;
     text-align: center;
     line-height: 25px;
-    color: #336600;
+    color: #FF9999;
 }
 
 #div_search
@@ -52,17 +52,16 @@ body
 
 .div_right_item
 {
-    border-style: outset outset outset outset;
+    /*border-style: none outset none outset;*/
     border-width: 1px;
     border-color: #808080;
-    background-color: #FFFFFF;
-    margin-top: 5px;
+    background-color: #FFFFFF; /* margin-top: 5px;*/
 }
 
 .title_right_text
 {
     text-align: center;
-    font-family: Verdana;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 30px;
     color: #808080;
     font-weight: bold;
@@ -70,21 +69,20 @@ body
 
 .title_right
 {
-    background-image: url('../images/title_right_background.png');
+    /*background-image: url('../images/title_right_background.png');*/
     background-repeat: no-repeat;
 }
 
 .div_content_right
 {
     border: 1px none #808080;
-    background-image: url('../images/div_right_background.png');
+   /* background-image: url('../images/div_right_background.png');*/
 }
 
 #footer
 {
     background-image: url('../images/footer.png');
-    height: 70px;
-    clear: both;
+    margin-top: 20px;
 }
 
 .gioithieu
@@ -94,9 +92,9 @@ body
 
 .content_right
 {
-    padding: 0px 40px 0px 0px;
+    padding: 0px;
     font-family: Arial;
-    color: #202020;
+    color: #FFFFFF;
     font-size: 13px;
     vertical-align: top;
     text-align: justify;
@@ -127,6 +125,7 @@ body
 .library_software
 {
     font-size: 13px;
+    margin-left: 20px;
 }
 
 #linkthanhvien
@@ -146,4 +145,15 @@ body
     vertical-align: top;
     text-align: center;
     height: 95px;
+}
+
+.icon_title
+{
+    margin-left: 10px;
+}
+
+.title_table
+{
+    margin-top: 20px;
+    
 }

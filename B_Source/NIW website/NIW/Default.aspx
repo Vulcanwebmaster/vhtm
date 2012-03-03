@@ -19,7 +19,10 @@
 <body>
     <form id="form1" runat="server" 
     
-    style="background-color: #FFFFFF; margin: auto; width: 1000px; font-family: Arial;">
+    
+    
+    
+    style="background-color: #EEEEEE; margin: auto; width: 1000px; font-family: Arial;">
 
     <%String host="http://localhost:3591"; %>
 
@@ -74,9 +77,11 @@
         </div>
         <!--hr style="margin: 0px" /-->
        <div id="div_left" 
-            style="background-color: #FFFFFF;">
+            
+            
+            style=" background-image: url('/images/fream3.png'); background-repeat: no-repeat; color: #FDFDFD;">
                 
-                <div ID="View1" runat="server" class="title_view" style="margin-top: 0px">
+                <div ID="View1" runat="server" class="title_view" style="margin-top: 20px">
                     <div>
                         <img class="icon_title" src="images/icon_gioithieu.png" alt=""/>
                         <label class="title">GIỚI THIỆU</label>
@@ -109,31 +114,32 @@
 
                         <asp:Panel ID="Panel1" runat="server">
                             <div>
-                                <div style="width: 316px; float: left; border-right-style: dotted; border-right-width: thin; border-right-color: #3399FF;">
+                                <div style="border-style: none; width: 316px; float: left; ">
+                                
                                     <img src="images/software/Best-Antivirus-Program.png" alt=""/>
-                                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Size="13px">Diệt Virus/spyware, tường lửa</asp:HyperLink>
-
-                                    <p style="margin: 0px">
+                                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Size="13px" CssClass="title_table">Diệt Virus/spyware, tường lửa</asp:HyperLink>
+                                    <br />
+                                    <p style="margin-bottom: 10px">
                                                     <asp:HyperLink ID="HyperLink6" runat="server" CssClass="library_software">* Kaspersky</asp:HyperLink> 
                                                 </p>
-                                                <p style="margin: 0px">
+                                                <p style="margin-bottom: 10px;margin-top:0px">
                                                     <asp:HyperLink ID="HyperLink7" runat="server" CssClass="library_software">* CMC</asp:HyperLink> 
                                                 </p> 
-                                                <p style="margin: 0px">
+                                                <p  style="margin-bottom: 10px;margin-top:0px">
                                                     <asp:HyperLink ID="HyperLink8" runat="server" CssClass="library_software">* Avira</asp:HyperLink> 
                                                 </p>
                                 </div>
-                                <div>
-                                    <img src="images/software/Best-Antivirus-Program.png" alt=""/>
+                                <div style="background-image: url('/images/table_background.png')">
+                                    <img src="images/software/Best-Antivirus-Program.png" alt="" style="margin-left:20px"/>
                                     <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="True" Font-Size="13px">Đồ họa và chỉnh sửa ảnh</asp:HyperLink>  
 
-                                    <p style="margin: 0px">
+                                    <p style="margin-bottom: 10px">
                                                     <asp:HyperLink ID="HyperLink9" runat="server" CssClass="library_software">* Adobe PhotoShop</asp:HyperLink> 
                                                 </p>
-                                                <p style="margin: 0px">
+                                                <p style="margin-bottom: 10px;margin-top:0px">
                                                     <asp:HyperLink ID="HyperLink10" runat="server" CssClass="library_software">* Blender</asp:HyperLink> 
                                                 </p> 
-                                                <p style="margin: 0px">
+                                                <p style="margin-bottom: 10px;margin-top:0px">
                                                     <asp:HyperLink ID="HyperLink11" runat="server" CssClass="library_software">* Auto CAD</asp:HyperLink> 
                                                 </p> 
                                 </div>
@@ -175,9 +181,22 @@
                 <!--/div-->*/
                 </script>
                 
+                <div id="footer" 
+        
+        style="clear: both;height:70px; background-image: url('/images/footer.png');">
+            <p style="color: #FFFFFF; margin: auto auto auto auto; vertical-align: middle; font-family: Verdana; font-size: x-small;" align="right">
+                 Copyright &copy: 2012 Công ty TNHH NIW
+                 <br />
+                 Design by NIW 
+                 <br />
+                 Địa chỉ liên hệ:
+                 <br />
+                 Điện thoại:
+            </p>
+        </div>
        </div>
        <div id="div_right" 
-            style="float: right; margin-right: 40px; margin-top: 20px; margin-bottom: 20px;">
+            style="float: right; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
         
             <div id="div_search" >
                 <label style="margin-left:10px; font-family: Arial; color: #191919; font-size: 13px;">Tìm kiếm</label>
@@ -188,11 +207,13 @@
                 
             </div>
 
-            <div class="div_right_item">
+            <div class="div_right_item" 
+                
+                style="background-image: url('/images/panel_right_top.png'); background-color: #E8E8E8;">
                 <div class="title_right">
-                    <center>
-                        <label class="title_right_text">DOWNLOAD</label>
-                    </center>
+                    
+                        <label class="title_right_text" style="margin-left: 10px">DOWNLOAD</label>
+                    
                 </div>
                 <div class="div_content_right">
                     <center>
@@ -215,40 +236,34 @@
             </div>
 
             <div class="div_right_item" 
-                style="background-color: #FFFFFF; margin: 5px 0px 0px 0px;">
+                
+                style="background-color: #FFFFFF; background-image: url('/images/panel_right2.png');">
                 <div class="title_right">
-                    <center>
-                        <label class="title_right_text">LIÊN HỆ</label>
-                    </center>
+                   
+                        <label class="title_right_text" 
+                            style="text-align: right;width:230px; right: 0px; margin-right: 0px;margin-left:150px" dir="rtl">LIÊN HỆ</label>
+                    
                 </div>
                 <div class="div_content_right" style="height: 203px"></div>
             </div>
 
             <div class="div_right_item" 
-                style="background-color: #FFFFFF; margin: 5px 0px 0px 0px;">
+                
+                
+                
+                style="border: thin none #808080; background-image: url('/images/panel_right.png'); background-repeat: no-repeat;">
                 <div class="title_right">
-                    <center>
-                        <label class="title_right_text">THÔNG TIN TRUY CẬP</label>
-                    </center>
+                    
+                        <label class="title_right_text" style="margin-left: 10px">TRUY CẬP</label>
+                    
                 </div>
-                <div class="div_content_right" style="height: 168px"></div>
+                <div class="div_content_right" style="height: 248px"></div>
             </div>
-       </div>      
+       </div> 
+       <hr style="clear: both" />     
     </div>
     
-        <div id="footer" 
         
-        style="clear: both;height:70px; background-image: url('images/footer.png');">
-            <p style="color: #FFFFFF; margin: auto auto auto auto; vertical-align: middle; font-family: Verdana; font-size: x-small;" align="right">
-                 Copyright &copy: 2012 Công ty TNHH NIW
-                 <br />
-                 Design by NIW 
-                 <br />
-                 Địa chỉ liên hệ:
-                 <br />
-                 Điện thoại:
-            </p>
-        </div>
     </form>
     
 </body>
