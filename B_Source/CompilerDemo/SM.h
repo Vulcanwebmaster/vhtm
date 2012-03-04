@@ -10,7 +10,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_VAR, WRITE_VAR,
 	WRITE_STR,
 	WRITE_LINE,
-	LT, EQ, NEQ, GT, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,  
+	LT, EQ, NEQ, GT, LTEQ, GTEQ, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,  
 	ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL,
 	BOL_COMP, BOL_ONLY };
 
@@ -185,7 +185,7 @@ void fetch_execute_cycle()
 				break;
 			case LD_BOL : 
 				stack[++top].bol_val = ir.arg.bol_val;
-				printf("bool %d %d", top, ir.arg.bol_val);
+				stack[top].int_val = ir.arg.bol_val;
 				break;
 			case LD_VAR : stack[++top] = stack[ar+ir.arg.int_val]; break;
 			case LT : 
@@ -296,6 +296,60 @@ void fetch_execute_cycle()
 					}
 				}
 				break;
+			case LTEQ : 
+				if ( stack[top-1].type == CHR) {
+					if ( stack[top-1].chr_val <= stack[top].chr_val )
+					{
+						stack[--top].int_val = 1;
+						stack[top].bol_val = 1;
+					}
+					else
+					{	
+						stack[--top].int_val = 0;
+						stack[top].bol_val = 0;
+					}
+				}
+				else
+				{	
+					if ( stack[top-1].dou_val <= stack[top].dou_val )
+					{
+						stack[--top].int_val = 1;
+						stack[top].bol_val = 1;
+					}
+					else
+					{	
+						stack[--top].int_val = 0;
+						stack[top].bol_val = 0;
+					}
+				}
+				break;
+			case GTEQ : 
+				if ( stack[top-1].type == CHR) {
+					if ( stack[top-1].chr_val >= stack[top].chr_val )
+					{
+						stack[--top].int_val = 1;
+						stack[top].bol_val = 1;
+					}
+					else
+					{	
+						stack[--top].int_val = 0;
+						stack[top].bol_val = 0;
+					}
+				}
+				else
+				{	
+					if ( stack[top-1].dou_val >= stack[top].dou_val )
+					{
+						stack[--top].int_val = 1;
+						stack[top].bol_val = 1;
+					}
+					else
+					{	
+						stack[--top].int_val = 0;
+						stack[top].bol_val = 0;
+					}
+				}
+				break;
 			case ADD : 
 				stack[top-1].dou_val = stack[top-1].dou_val + stack[top].dou_val;
 				stack[top-1].int_val = (int)(stack[top-1].dou_val); 
@@ -339,17 +393,15 @@ void fetch_execute_cycle()
 				}
 				break;
 			case NOT :
-				printf("Top - %d\n",top);
-				printf("NOT - %d\n",stack[top].bol_val);
 				if ( stack[top].bol_val == 1 ) 
 				{
 					stack[top].bol_val = 0;
-					printf("NOT1 - %d\n",stack[top].bol_val);
+					stack[top].int_val = 0;
 				}
 				else
 				{
 					stack[top].bol_val = 1;
-					printf("NOT2 - %d",stack[top].bol_val);
+					stack[top].int_val = 1;
 				}
 				break;
 			case OR :

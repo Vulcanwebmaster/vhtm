@@ -13,6 +13,7 @@ C Libraries, Symbol Table, Code Generator & other C code
 #define YYDEBUG 1 /* For Debugging */
 int errors; /* Error Count */
 char * function_name;
+struct lbs * if_var;
 /*-------------------------------------------------------------------------
 The following support backpatching
 -------------------------------------------------------------------------*/
@@ -251,19 +252,19 @@ command : SKIP
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
 | IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}
 | IDENTIFIER ASSGNOP IDENTIFIER '(' values ');' { context_check(CAL, $3, "global"); context_check( STORE, $1, function_name ); }
-| IF exp { $1 = (struct lbs *) newlblrec(); $1->for_jmp_false = reserve_loc(); }
-THEN commands { $1->for_goto = reserve_loc(); }
-else_exp { back_patch( $1->for_jmp_false,JMP_FALSE,gen_label() ); }
-FI { back_patch( $1->for_goto, GOTO, gen_label() ); }
+| IF exp { if_var = (struct lbs *) newlblrec(); if_var->for_jmp_false = reserve_loc(); }
+THEN commands { if_var->for_goto = reserve_loc(); }
+else_exp
+END { back_patch( if_var->for_goto, GOTO, gen_label() ); }
 | WHILE { $1 = (struct lbs *) newlblrec(); $1->for_goto = gen_label(); } exp { $1->for_jmp_false = reserve_loc(); }
 DO
 commands
 END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
 ;
 
-else_exp: /* empty */
-| ELSE commands;
- 
+else_exp: /* empty */ { back_patch( if_var->for_jmp_false,JMP_FALSE,gen_label() );} 
+| ELSE { back_patch( if_var->for_jmp_false,JMP_FALSE,gen_label() ); } commands; 
+
 arr_exp : 
 	IDENTIFIER '[' index ']'  {context_check( ARR_PART, $1, function_name );} ;
 	
@@ -280,6 +281,8 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | exp '<' exp { gen_code( LT, 0 ); }
 | exp '=' exp { gen_code( EQ, 0 ); }
 | exp '!''=' exp { gen_code( NEQ, 0 ); }
+| exp '>''=' exp { gen_code( GTEQ, 0 ); }
+| exp '<''=' exp { gen_code( LTEQ, 0 ); }
 | exp '>' exp { gen_code( GT, 0 ); }
 | exp '+' exp { gen_code( ADD, 0 ); }
 | exp '-' exp { gen_code( SUB, 0 ); }

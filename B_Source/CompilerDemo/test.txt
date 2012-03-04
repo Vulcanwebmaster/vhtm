@@ -1,22 +1,6 @@
 var
-	array integer x[4];
-	array char c[10];
-	integer y;
-const 
-	integer d := 6;
-	
-function test()
-var
-	integer k;
-	char c;
-	string s;
-	double l;
+	bool x;
 begin
-	read s;
-	write s;
-	write "abc dat de di i";
-end
-
-begin
-	test();
+	x := true;
+	if !(true) then write "a"; end;
 end
