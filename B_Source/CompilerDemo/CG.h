@@ -33,6 +33,9 @@ void gen_code_variable( enum code_ops operation, symrec *identifier )
 	code[code_offset].op = operation;
 	code[code_offset].arg.type = identifier->type;
 	code[code_offset].arg.length = identifier->length;
+	if (strcmp(identifier->scope,"global") == 0)
+		code[code_offset].function = 1; 
+		else code[code_offset].function = 0;
 	code[code_offset++].arg.int_val = identifier->offset;
 }
 

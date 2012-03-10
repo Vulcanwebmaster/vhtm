@@ -32,6 +32,7 @@ struct instruction
 {
 	enum code_ops op;
 	struct mystack arg;
+	int function;
 };
 
 /* CODE Array */
@@ -58,6 +59,7 @@ int main_start = 0;
 int check_const = 0;
 enum type_code current_type;
 int start_arg = 0;  
+int top_index = 0;
 
 /*=========================================================================
 Fetch Execute Cycle
@@ -80,6 +82,11 @@ void fetch_execute_cycle()
 		}
 		ir = code[pc++];
 		/* Execute */
+		if (ir.function == 1)
+		{
+			top_index = ar[0];
+		}
+		else top_index = ar[top_call];
 		switch (ir.op) 
 		{
 			case HALT : break;
@@ -96,9 +103,9 @@ void fetch_execute_cycle()
 						printf("Loi input kieu integer sai!");
 					else
 					{					
-						stack[ar[top_call]+ir.arg.int_val].type = INT;
-						stack[ar[top_call]+ir.arg.int_val].int_val = temp;
-						stack[ar[top_call]+ir.arg.int_val].dou_val = temp;
+						stack[top_index+ir.arg.int_val].type = INT;
+						stack[top_index+ir.arg.int_val].int_val = temp;
+						stack[top_index+ir.arg.int_val].dou_val = temp;
 					}
 				} else 
 				if (ir.arg.type == DOU)
@@ -111,33 +118,33 @@ void fetch_execute_cycle()
 						printf("Loi input kieu double sai!");
 					else
 					{					
-						stack[ar[top_call]+ir.arg.int_val].type = DOU;
-						stack[ar[top_call]+ir.arg.int_val].dou_val = temp1; 
-						stack[ar[top_call]+ir.arg.int_val].int_val = (int)temp1;
+						stack[top_index+ir.arg.int_val].type = DOU;
+						stack[top_index+ir.arg.int_val].dou_val = temp1; 
+						stack[top_index+ir.arg.int_val].int_val = (int)temp1;
 					}
 				} else 
 				if (ir.arg.type == CHR)
 				{
 					char temp3;
 					scanf("%c",&temp3);
-					stack[ar[top_call]+ir.arg.int_val].type = CHR;
-					stack[ar[top_call]+ir.arg.int_val].chr_val = temp3;
+					stack[top_index+ir.arg.int_val].type = CHR;
+					stack[top_index+ir.arg.int_val].chr_val = temp3;
 				} else
 				if (ir.arg.type == STR)
 				{
 					char temp2[256];
 					scanf("%[^\n]%*[^\n]",temp2);
-					stack[ar[top_call]+ir.arg.int_val].type = STR;
-					strcpy(stack[ar[top_call]+ir.arg.int_val].str_val,temp2);
+					stack[top_index+ir.arg.int_val].type = STR;
+					strcpy(stack[top_index+ir.arg.int_val].str_val,temp2);
 				} else 
 				if (ir.arg.type == BOL)
 				{
 					char temp4[10];
 					scanf("%s",temp4);
-					stack[ar[top_call]+ir.arg.int_val].type = BOL;
-					if (strcmp(temp4,"true")) stack[ar[top_call]+ir.arg.int_val].bol_val = 1;
+					stack[top_index+ir.arg.int_val].type = BOL;
+					if (strcmp(temp4,"true")) stack[top_index+ir.arg.int_val].bol_val = 1;
 					else 
-						if (strcmp(temp4,"false")) stack[ar[top_call]+ir.arg.int_val].bol_val = 0;
+						if (strcmp(temp4,"false")) stack[top_index+ir.arg.int_val].bol_val = 0;
 							printf("Loi input kieu boolean sai!");
 				}
 				break;
@@ -179,23 +186,23 @@ void fetch_execute_cycle()
 				fflush(stdin);
 				if (ir.arg.type == INT)
 				{
-					printf("%ld",stack[ar[top_call]+ir.arg.int_val].int_val);
+					printf("%ld",stack[top_index+ir.arg.int_val].int_val);
 				} else 
 				if (ir.arg.type == DOU)
 				{
-					printf("%f",stack[ar[top_call]+ir.arg.int_val].dou_val);
+					printf("%f",stack[top_index+ir.arg.int_val].dou_val);
 				} else 
 				if (ir.arg.type == CHR)
 				{
-					printf("%c",stack[ar[top_call]+ir.arg.int_val].chr_val);
+					printf("%c",stack[top_index+ir.arg.int_val].chr_val);
 				} else 
 				if (ir.arg.type == STR)
 				{
-					printf("%s",stack[ar[top_call]+ir.arg.int_val].str_val);
+					printf("%s",stack[top_index+ir.arg.int_val].str_val);
 				} else 
 				if (ir.arg.type == BOL)
 				{
-					if (stack[ar[top_call]+ir.arg.int_val].bol_val == 1) 
+					if (stack[top_index+ir.arg.int_val].bol_val == 1) 
 						printf ("true");
 						else 
 							printf ("false");
@@ -205,9 +212,9 @@ void fetch_execute_cycle()
 				printf("\n");
 				break;
 			case STORE : 
-				stack[ar[top_call]+ir.arg.int_val] = stack[top--];
-				if (stack[ar[top_call]+ir.arg.int_val].type == INT) 
-					stack[ar[top_call]+ir.arg.int_val].dou_val = stack[ar[top_call]+ir.arg.int_val].int_val; 
+				stack[top_index+ir.arg.int_val] = stack[top--];
+				if (stack[top_index+ir.arg.int_val].type == INT) 
+					stack[top_index+ir.arg.int_val].dou_val = stack[top_index+ir.arg.int_val].int_val; 
 				break;
 			case JMP_FALSE : 
 				if ( stack[top--].int_val == 0 )
@@ -239,7 +246,7 @@ void fetch_execute_cycle()
 				current_type = BOL;
 				break;
 			case LD_VAR : 
-				stack[++top] = stack[ar[top_call]+ir.arg.int_val]; 
+				stack[++top] = stack[top_index+ir.arg.int_val]; 
 				current_type = ir.arg.type;
 				break;
 			case LT : 
@@ -473,61 +480,61 @@ void fetch_execute_cycle()
 			case ARR_PART :
 				if (ir.arg.type == ARR_I) 
 				{
-					if (stack[ar[top_call]+ir.arg.int_val].arr_int_val == NULL) {
-						stack[ar[top_call]+ir.arg.int_val].arr_int_val = (int *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+					if (stack[top_index+ir.arg.int_val].arr_int_val == NULL) {
+						stack[top_index+ir.arg.int_val].arr_int_val = (int *) malloc(stack[top_index+ir.arg.int_val].length);
 					}
-					stack[top].int_val = stack[ar[top_call]+ir.arg.int_val].arr_int_val[stack[top].int_val];
+					stack[top].int_val = stack[top_index+ir.arg.int_val].arr_int_val[stack[top].int_val];
 					stack[top].dou_val = stack[top].int_val;
 				} else 
 				if (ir.arg.type == ARR_D) 
 				{
-					if (stack[ar[top_call]+ir.arg.int_val].arr_dou_val == NULL) {
-						stack[ar[top_call]+ir.arg.int_val].arr_dou_val = (double *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+					if (stack[top_index+ir.arg.int_val].arr_dou_val == NULL) {
+						stack[top_index+ir.arg.int_val].arr_dou_val = (double *) malloc(stack[top_index+ir.arg.int_val].length);
 					}
-					stack[top].dou_val = stack[ar[top_call]+ir.arg.int_val].arr_dou_val[stack[top].int_val];
+					stack[top].dou_val = stack[top_index+ir.arg.int_val].arr_dou_val[stack[top].int_val];
 					stack[top].int_val = stack[top].dou_val;
 				} else 
 				if (ir.arg.type == ARR_B) 
 				{
-					if (stack[ar[top_call]+ir.arg.int_val].arr_bol_val == NULL) {
-						stack[ar[top_call]+ir.arg.int_val].arr_bol_val = (int *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+					if (stack[top_index+ir.arg.int_val].arr_bol_val == NULL) {
+						stack[top_index+ir.arg.int_val].arr_bol_val = (int *) malloc(stack[top_index+ir.arg.int_val].length);
 					}
-					stack[top].bol_val = stack[ar[top_call]+ir.arg.int_val].arr_bol_val[stack[top].int_val];
+					stack[top].bol_val = stack[top_index+ir.arg.int_val].arr_bol_val[stack[top].int_val];
 				} else
 				if (ir.arg.type == ARR_C) 
 				{
-					if (stack[ar[top_call]+ir.arg.int_val].arr_chr_val == NULL) {
-						stack[ar[top_call]+ir.arg.int_val].arr_chr_val = (char *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+					if (stack[top_index+ir.arg.int_val].arr_chr_val == NULL) {
+						stack[top_index+ir.arg.int_val].arr_chr_val = (char *) malloc(stack[top_index+ir.arg.int_val].length);
 					}
-					stack[top].chr_val = stack[ar[top_call]+ir.arg.int_val].arr_chr_val[stack[top].int_val];
+					stack[top].chr_val = stack[top_index+ir.arg.int_val].arr_chr_val[stack[top].int_val];
 				}		
 				break;
 			case INT_ARR_STORE :
-				if (stack[ar[top_call]+ir.arg.int_val].arr_int_val == NULL) {
-					stack[ar[top_call]+ir.arg.int_val].arr_int_val = (int *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+				if (stack[top_index+ir.arg.int_val].arr_int_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_int_val = (int *) malloc(stack[top_index+ir.arg.int_val].length);
 				}
-				stack[ar[top_call]+ir.arg.int_val].arr_int_val[stack[top-1].int_val] = stack[top].int_val;
+				stack[top_index+ir.arg.int_val].arr_int_val[stack[top-1].int_val] = stack[top].int_val;
 				top--;
 				break;
 			case DOU_ARR_STORE :
-				if (stack[ar[top_call]+ir.arg.int_val].arr_dou_val == NULL) {
-					stack[ar[top_call]+ir.arg.int_val].arr_dou_val = (double *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+				if (stack[top_index+ir.arg.int_val].arr_dou_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_dou_val = (double *) malloc(stack[top_index+ir.arg.int_val].length);
 				}
-				stack[ar[top_call]+ir.arg.int_val].arr_dou_val[stack[top-1].int_val] = stack[top].dou_val;
+				stack[top_index+ir.arg.int_val].arr_dou_val[stack[top-1].int_val] = stack[top].dou_val;
 				top--;
 				break;
 			case CHR_ARR_STORE :
-				if (stack[ar[top_call]+ir.arg.int_val].arr_chr_val == NULL) {
-					stack[ar[top_call]+ir.arg.int_val].arr_chr_val = (char *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+				if (stack[top_index+ir.arg.int_val].arr_chr_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_chr_val = (char *) malloc(stack[top_index+ir.arg.int_val].length);
 				}
-				stack[ar[top_call]+ir.arg.int_val].arr_chr_val[stack[top-1].int_val] = stack[top].chr_val;
+				stack[top_index+ir.arg.int_val].arr_chr_val[stack[top-1].int_val] = stack[top].chr_val;
 				top--;
 				break;
 			case BOL_ARR_STORE :
-				if (stack[ar[top_call]+ir.arg.int_val].arr_bol_val == NULL) {
-					stack[ar[top_call]+ir.arg.int_val].arr_bol_val = (int *) malloc(stack[ar[top_call]+ir.arg.int_val].length);
+				if (stack[top_index+ir.arg.int_val].arr_bol_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_bol_val = (int *) malloc(stack[top_index+ir.arg.int_val].length);
 				}
-				stack[ar[top_call]+ir.arg.int_val].arr_bol_val[stack[top-1].int_val] = stack[top].bol_val;
+				stack[top_index+ir.arg.int_val].arr_bol_val[stack[top-1].int_val] = stack[top].bol_val;
 				top--;
 				break;
 			case BEGIN_CAL :
