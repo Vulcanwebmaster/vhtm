@@ -322,22 +322,9 @@ values : /* empty */
 | values value
 ;
 
-value : val_seq NUMBER_VAL { gen_code( LD_INT, $2 ); }
-| val_seq NUMBERD_VAL { gen_code_double( LD_DOU, $2 ); }
-| val_seq STR_VAL { gen_code_string( LD_STR, $2 ); }
-| val_seq CHR_VAL { gen_code_char( LD_CHR, $2 ); }
-| val_seq NUMBERB_VAL { gen_code_boolean( LD_BOL, $2 ); }
-| val_seq IDENTIFIER {context_check(LD_VAR, $2, function_name);}
+value : exp
 ;
 
-val_seq : /* empty */
-| val_seq NUMBER_VAL ',' { gen_code( LD_INT, $2 ); }
-| val_seq NUMBERD_VAL ',' { gen_code_double( LD_DOU, $2 ); }
-| val_seq NUMBERB_VAL ',' { gen_code_boolean( LD_BOL, $2 ); }
-| val_seq STR_VAL ',' { gen_code_string( LD_STR, $2 ); }
-| val_seq CHR_VAL ',' { gen_code_char( LD_CHR, $2 ); }
-| val_seq IDENTIFIER ',' {context_check(LD_VAR, $2, function_name);}
-;
 %%
 /*=========================================================================
 MAIN
