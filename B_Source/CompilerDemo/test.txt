@@ -1,6 +1,7 @@
 var
-	bool x;
+	double a,b;
 begin
-	x := true;
-	if !(true) then write "a"; end;
+	read a;
+	read b;
+	write a+b;
 end
