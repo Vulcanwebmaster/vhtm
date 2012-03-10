@@ -199,14 +199,14 @@ func_decls : /* empty */
 | func_decls func_decl
 ;
 
-func_decl: FUNCTION IDENTIFIER '(' func_var_decls ')' 
+func_decl: FUNCTION IDENTIFIER 
 {
 	if (function_name != NULL) free(function_name);
 	function_name = (char *) malloc (strlen($2)+1);
 	function_name = $2;
 	install( function_name , function_name, FUN, gen_label());
 	install( function_name , "global", FUN, gen_label()); 
-}
+} '(' func_var_decls ')' 
 var
 	declarations
 IN 
@@ -223,19 +223,19 @@ func_var_decls : /* empty */
 | func_var_decls func_var_decl
 ;
 
-func_var_decl : var_seq INTEGER IDENTIFIER { install( $3, function_name, INT, -1 ); }
-| var_seq CHAR IDENTIFIER { install( $3, function_name, CHR, -1 ); }
-| var_seq DOUBLE IDENTIFIER { install( $3, function_name, DOU, -1 ); }
-| var_seq STRING IDENTIFIER { install( $3, function_name, STR, -1 ); }
-| var_seq BOOLEAN IDENTIFIER { install( $3, function_name, BOL, -1 ); }
+func_var_decl : var_seq INTEGER IDENTIFIER { install( $3, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name );}
+| var_seq CHAR IDENTIFIER { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name );}
+| var_seq DOUBLE IDENTIFIER { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name );}
+| var_seq STRING IDENTIFIER { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name );}
+| var_seq BOOLEAN IDENTIFIER { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name );}
 ;
 
 var_seq : /* empty */
-| var_seq INTEGER IDENTIFIER ',' { install( $3, function_name, INT, -1 ); }
-| var_seq CHAR IDENTIFIER ',' { install( $3, function_name, CHR, -1 ); }
-| var_seq DOUBLE IDENTIFIER ',' { install( $3, function_name, DOU, -1 ); }
-| var_seq STRING IDENTIFIER ',' { install( $3, function_name, STR, -1 ); }
-| var_seq BOOLEAN IDENTIFIER ',' { install( $3, function_name, BOL, -1 ); }
+| var_seq INTEGER IDENTIFIER ',' { install( $3, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name );}
+| var_seq CHAR IDENTIFIER ',' { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name );}
+| var_seq DOUBLE IDENTIFIER ',' { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name );}
+| var_seq STRING IDENTIFIER ',' { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name );}
+| var_seq BOOLEAN IDENTIFIER ',' { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name );}
 ;
 
 commands : /* empty */
@@ -251,8 +251,8 @@ command : SKIP
 | RETURN exp { gen_code(END_CAL, 0); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
-| IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}
-| IDENTIFIER ASSGNOP IDENTIFIER '(' values ');' { context_check(CAL, $3, "global"); context_check( STORE, $1, function_name ); }
+| IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ');' { context_check(CAL, $1, "global");}
+| IDENTIFIER ASSGNOP IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ');' { context_check(CAL, $3, "global"); context_check( STORE, $1, function_name ); }
 | IF exp { if_var = (struct lbs *) newlblrec(); if_var->for_jmp_false = reserve_loc(); }
 THEN commands { if_var->for_goto = reserve_loc(); }
 else_exp
@@ -299,7 +299,7 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | CHR_VAL { gen_code_char ( LD_CHR, $1); }
 | NUMBERB_VAL { gen_code_boolean (LD_BOL, $1); } 
 | IDENTIFIER { context_check( LD_VAR, $1, function_name ); }
-| IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}
+| IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ');' { context_check(CAL, $1, "global");}
 | exp '<' exp { gen_code( LT, 0 ); }
 | exp '=' exp { gen_code( EQ, 0 ); }
 | exp '!''=' exp { gen_code( NEQ, 0 ); }
@@ -322,20 +322,20 @@ values : /* empty */
 | values value
 ;
 
-value : val_seq NUMBER_VAL
-| val_seq NUMBERD_VAL
-| val_seq STR_VAL
-| val_seq CHR_VAL
-| val_seq NUMBERB_VAL
+value : val_seq NUMBER_VAL { gen_code( LD_INT, $2 ); }
+| val_seq NUMBERD_VAL { gen_code_double( LD_DOU, $2 ); }
+| val_seq STR_VAL { gen_code_string( LD_STR, $2 ); }
+| val_seq CHR_VAL { gen_code_char( LD_CHR, $2 ); }
+| val_seq NUMBERB_VAL { gen_code_boolean( LD_BOL, $2 ); }
 | val_seq IDENTIFIER {context_check(LD_VAR, $2, function_name);}
 ;
 
 val_seq : /* empty */
-| val_seq NUMBER_VAL ','
-| val_seq NUMBERD_VAL ','
-| val_seq NUMBERB_VAL ','
-| val_seq STR_VAL ','
-| val_seq CHR_VAL ','
+| val_seq NUMBER_VAL ',' { gen_code( LD_INT, $2 ); }
+| val_seq NUMBERD_VAL ',' { gen_code_double( LD_DOU, $2 ); }
+| val_seq NUMBERB_VAL ',' { gen_code_boolean( LD_BOL, $2 ); }
+| val_seq STR_VAL ',' { gen_code_string( LD_STR, $2 ); }
+| val_seq CHR_VAL ',' { gen_code_char( LD_CHR, $2 ); }
 | val_seq IDENTIFIER ',' {context_check(LD_VAR, $2, function_name);}
 ;
 %%

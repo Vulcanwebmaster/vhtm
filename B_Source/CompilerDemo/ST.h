@@ -9,7 +9,8 @@ SYMBOL TABLE RECORD
 -------------------------------------------------------------------------*/
 enum type_code{ INT , DOU, STR, CHR, BOL,
 	ARR_I, ARR_D, ARR_C, ARR_B, FUN,  
-	C_INT , C_DOU, C_STR, C_CHR, C_BOL 
+	C_INT , C_DOU, C_STR, C_CHR, C_BOL ,
+	ARG_INT, ARG_DOU, ARG_STR, ARG_CHR, ARG_BOL
 };
 	
 struct symrec
