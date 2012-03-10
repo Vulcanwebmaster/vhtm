@@ -1,7 +1,7 @@
 var
-	double a,b;
+	integer a;
 begin
-	read a;
-	read b;
-	write a+b;
+	for a := 7 to 10 do 
+		write a;
+	end;
 end

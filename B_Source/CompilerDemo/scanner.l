@@ -48,6 +48,8 @@ while { return(WHILE); }
 write { return(WRITE); }
 writeline { return(WRITELINE); }
 function { return(FUNCTION); }
+for { return(FOR); }
+to { return(TO); }
 {BOOLEAN} { yylval.bolval = yytext; return(NUMBERB_VAL); } /* Added */
 {ID} { yylval.id = (char *) strdup(yytext); return(IDENTIFIER); }
 {DIGIT} { yylval.intval = atoi( yytext ); return(NUMBER_VAL); }
