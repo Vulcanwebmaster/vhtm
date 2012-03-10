@@ -8,8 +8,7 @@ DECLARATIONS
 enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	DATA, LD_INT, LD_VAR, LD_DOU, LD_STR, LD_CHR, LD_BOL,
 	READ_VAR, WRITE_VAR,
-	WRITE_STR,
-	WRITE_LINE,
+	WRITE_STR, WRITE_ALL, WRITE_LINE,
 	LT, EQ, NEQ, GT, LTEQ, GTEQ, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,  
 	ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL,
 	BOL_COMP, BOL_ONLY };
@@ -53,6 +52,7 @@ int start_const = -1;
 int end_const = -1;
 int main_start = 0;
 int check_const = 0;
+enum type_code current_type;  
 
 /*=========================================================================
 Fetch Execute Cycle
@@ -83,19 +83,33 @@ void fetch_execute_cycle()
 				fflush(stdin);
 				if (ir.arg.type == INT)
 				{
+					char temp5[256];
 					int temp;
-					scanf("%ld",&temp);
-					stack[ar+ir.arg.int_val].type = INT;
-					stack[ar+ir.arg.int_val].int_val = temp;
-					stack[ar+ir.arg.int_val].dou_val = temp;
+					scanf("%[^\n]%*[^\n]",temp5);
+					temp = atoi(temp5);
+					if (temp == 0 && strcmp(temp5,"0") != 0)
+						printf("Loi input kieu integer sai!");
+					else
+					{					
+						stack[ar+ir.arg.int_val].type = INT;
+						stack[ar+ir.arg.int_val].int_val = temp;
+						stack[ar+ir.arg.int_val].dou_val = temp;
+					}
 				} else 
 				if (ir.arg.type == DOU)
 				{
+					char temp6[256];
 					double temp1;
-					scanf("%lf",&temp1);
-					stack[ar+ir.arg.int_val].type = DOU;
-					stack[ar+ir.arg.int_val].dou_val = temp1; 
-					stack[ar+ir.arg.int_val].int_val = (int)temp1;
+					scanf("%[^\n]%*[^\n]",temp6);
+					temp1 = atof(temp6);
+					if (temp1 == 0.0 && strcmp(temp6,"0.0") != 0)
+						printf("Loi input kieu double sai!");
+					else
+					{					
+						stack[ar+ir.arg.int_val].type = DOU;
+						stack[ar+ir.arg.int_val].dou_val = temp1; 
+						stack[ar+ir.arg.int_val].int_val = (int)temp1;
+					}
 				} else 
 				if (ir.arg.type == CHR)
 				{
@@ -119,7 +133,7 @@ void fetch_execute_cycle()
 					if (strcmp(temp4,"true")) stack[ar+ir.arg.int_val].bol_val = 1;
 					else 
 						if (strcmp(temp4,"false")) stack[ar+ir.arg.int_val].bol_val = 0;
-							printf("Loi input kieu boolean sai");
+							printf("Loi input kieu boolean sai!");
 				}
 				break;
 			case WRITE_STR : 
@@ -127,6 +141,33 @@ void fetch_execute_cycle()
 				fflush(stdin);
 				strcpy(stack[++top].str_val,ir.arg.str_val);
 				printf ("%s", stack[top--].str_val); 
+				break;
+			case WRITE_ALL :
+				fflush(stdout);
+				fflush(stdin);
+				if (current_type == INT)
+				{
+					printf("%ld",stack[top--].int_val);
+				} else 
+				if (current_type == DOU)
+				{
+					printf("%f",stack[top--].dou_val);
+				} else 
+				if (current_type == CHR)
+				{
+					printf("%c",stack[top--].chr_val);
+				} else 
+				if (current_type == STR)
+				{
+					printf("%s",stack[top--].str_val);
+				} else 
+				if (current_type == BOL)
+				{
+					if (stack[top--].bol_val == 1) 
+						printf ("true");
+						else 
+							printf ("false");
+				} 
 				break;
 			case WRITE_VAR : 
 				fflush(stdout);
@@ -172,22 +213,30 @@ void fetch_execute_cycle()
 			case LD_INT : 
 				stack[++top].int_val = ir.arg.int_val;
 				stack[top].dou_val = ir.arg.int_val; 
+				current_type = INT;
 				break;
 			case LD_DOU : 
 				stack[++top].int_val = (int)(ir.arg.dou_val);
 				stack[top].dou_val = ir.arg.dou_val; 
+				current_type = DOU;
 				break;
 			case LD_STR : 
 				strcpy(stack[++top].str_val,ir.arg.str_val);
+				current_type = STR;
 				break;
 			case LD_CHR : 
 				stack[++top].chr_val = ir.arg.chr_val;
+				current_type = CHR;
 				break;
 			case LD_BOL : 
 				stack[++top].bol_val = ir.arg.bol_val;
 				stack[top].int_val = ir.arg.bol_val;
+				current_type = BOL;
 				break;
-			case LD_VAR : stack[++top] = stack[ar+ir.arg.int_val]; break;
+			case LD_VAR : 
+				stack[++top] = stack[ar+ir.arg.int_val]; 
+				current_type = ir.arg.type;
+				break;
 			case LT : 
 				if ( stack[top-1].type == CHR) {
 					if ( stack[top-1].chr_val < stack[top].chr_val )

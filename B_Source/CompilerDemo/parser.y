@@ -246,6 +246,7 @@ command : SKIP
 | READ IDENTIFIER { context_check( READ_VAR, $2, function_name); }
 | WRITE IDENTIFIER { context_check( WRITE_VAR, $2, function_name); }
 | WRITE STR_VAL { gen_code_string ( WRITE_STR, $2 );}
+| WRITE exp { gen_code ( WRITE_ALL, 0 );}
 | WRITELINE { gen_code ( WRITE_LINE, 0); }
 | RETURN exp { gen_code(END_CAL, 0); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
@@ -278,6 +279,7 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | CHR_VAL { gen_code_char ( LD_CHR, $1); }
 | NUMBERB_VAL { gen_code_boolean (LD_BOL, $1); } 
 | IDENTIFIER { context_check( LD_VAR, $1, function_name ); }
+| IDENTIFIER '(' values ');' { context_check(CAL, $1, "global");}
 | exp '<' exp { gen_code( LT, 0 ); }
 | exp '=' exp { gen_code( EQ, 0 ); }
 | exp '!''=' exp { gen_code( NEQ, 0 ); }
