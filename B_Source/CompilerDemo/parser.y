@@ -378,10 +378,11 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 ;
 
 values : /* empty */
-| values ',' value
+| exp value_seq
 ;
 
-value : exp
+value_seq: /* empty */ 
+| value_seq ',' exp
 ;
 
 %%
@@ -396,6 +397,7 @@ main( int argc, char *argv[] )
 	/*yydebug = 1;*/
 	errors = 0;
 	yyparse ();
+	//debug();
 	if ( errors == 0 )
 	{ 
 		fetch_execute_cycle();
