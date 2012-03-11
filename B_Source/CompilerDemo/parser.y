@@ -251,8 +251,7 @@ command : SKIP
 | RETURN exp { gen_code(END_CAL, 0); }
 | IDENTIFIER ASSGNOP exp { context_check( STORE, $1, function_name ); }
 | IDENTIFIER '[' index ']' ASSGNOP exp { context_check( INT_ARR_STORE, $1, function_name ); }
-| IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ');' { context_check(CAL, $1, "global");}
-| IDENTIFIER ASSGNOP IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ');' { context_check(CAL, $3, "global"); context_check( STORE, $1, function_name ); }
+| IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ')' { context_check(CAL, $1, "global");}
 | IF exp { if_var = (struct lbs *) newlblrec(); if_var->for_jmp_false = reserve_loc(); }
 THEN commands { if_var->for_goto = reserve_loc(); }
 else_exp
@@ -264,6 +263,66 @@ END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, 
 | FOR IDENTIFIER ASSGNOP NUMBER_VAL TO NUMBER_VAL
 {
 	gen_code( LD_INT, $4 ); 
+	context_check( STORE, $2, function_name );
+	$1 = (struct lbs *) newlblrec(); 
+	$1->for_goto = gen_label();
+	context_check( LD_VAR, $2, function_name ); 
+	gen_code( LD_INT, $6 );
+	gen_code( LTEQ, 0 );
+	$1->for_jmp_false = reserve_loc();
+}
+DO 
+commands
+{
+	context_check( LD_VAR, $2, function_name );
+	gen_code( LD_INT, 1 );
+	gen_code( ADD, 0 );
+	context_check( STORE, $2, function_name);
+}
+END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+| FOR IDENTIFIER ASSGNOP NUMBER_VAL TO IDENTIFIER
+{
+	gen_code( LD_INT, $4 ); 
+	context_check( STORE, $2, function_name );
+	$1 = (struct lbs *) newlblrec(); 
+	$1->for_goto = gen_label();
+	context_check( LD_VAR, $2, function_name ); 
+	context_check( LD_VAR, $6, function_name );
+	gen_code( LTEQ, 0 );
+	$1->for_jmp_false = reserve_loc();
+}
+DO 
+commands
+{
+	context_check( LD_VAR, $2, function_name );
+	gen_code( LD_INT, 1 );
+	gen_code( ADD, 0 );
+	context_check( STORE, $2, function_name);
+}
+END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+| FOR IDENTIFIER ASSGNOP IDENTIFIER TO IDENTIFIER
+{
+	context_check( LD_VAR, $4, function_name );
+	context_check( STORE, $2, function_name );
+	$1 = (struct lbs *) newlblrec(); 
+	$1->for_goto = gen_label();
+	context_check( LD_VAR, $2, function_name ); 
+	context_check( LD_VAR, $6, function_name );
+	gen_code( LTEQ, 0 );
+	$1->for_jmp_false = reserve_loc();
+}
+DO 
+commands
+{
+	context_check( LD_VAR, $2, function_name );
+	gen_code( LD_INT, 1 );
+	gen_code( ADD, 0 );
+	context_check( STORE, $2, function_name);
+}
+END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+| FOR IDENTIFIER ASSGNOP IDENTIFIER TO NUMBER_VAL
+{
+	context_check( LD_VAR, $4, function_name );
 	context_check( STORE, $2, function_name );
 	$1 = (struct lbs *) newlblrec(); 
 	$1->for_goto = gen_label();
@@ -298,8 +357,8 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 | STR_VAL { gen_code_string ( LD_STR, $1); }
 | CHR_VAL { gen_code_char ( LD_CHR, $1); }
 | NUMBERB_VAL { gen_code_boolean (LD_BOL, $1); } 
+| IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ')' { context_check(CAL, $1, "global");}
 | IDENTIFIER { context_check( LD_VAR, $1, function_name ); }
-| IDENTIFIER {gen_code(BEGIN_CAL,0);} '(' values ');' { context_check(CAL, $1, "global");}
 | exp '<' exp { gen_code( LT, 0 ); }
 | exp '=' exp { gen_code( EQ, 0 ); }
 | exp '!''=' exp { gen_code( NEQ, 0 ); }
@@ -319,7 +378,7 @@ exp : NUMBER_VAL { gen_code( LD_INT, $1 ); }
 ;
 
 values : /* empty */
-| values value
+| values ',' value
 ;
 
 value : exp

@@ -40,8 +40,6 @@ struct instruction code[5000];
 /* RUN-TIME Stack */
 struct mystack stack[5000];
 
-struct mystack function_stack[1000];
-int function_layer[1000];
 int funtion_top = 0;
 
 /*-------------------------------------------------------------------------
@@ -100,7 +98,10 @@ void fetch_execute_cycle()
 					scanf("%[^\n]%*[^\n]",temp5);
 					temp = atoi(temp5);
 					if (temp == 0 && strcmp(temp5,"0") != 0)
+					{
 						printf("Loi input kieu integer sai!");
+						return;
+					}
 					else
 					{					
 						stack[top_index+ir.arg.int_val].type = INT;
@@ -115,7 +116,10 @@ void fetch_execute_cycle()
 					scanf("%[^\n]%*[^\n]",temp6);
 					temp1 = atof(temp6);
 					if (temp1 == 0.0 && strcmp(temp6,"0.0") != 0)
+					{
 						printf("Loi input kieu double sai!");
+						return;
+					}
 					else
 					{					
 						stack[top_index+ir.arg.int_val].type = DOU;
@@ -145,7 +149,11 @@ void fetch_execute_cycle()
 					if (strcmp(temp4,"true")) stack[top_index+ir.arg.int_val].bol_val = 1;
 					else 
 						if (strcmp(temp4,"false")) stack[top_index+ir.arg.int_val].bol_val = 0;
+						else
+						{
 							printf("Loi input kieu boolean sai!");
+							return;
+						}
 				}
 				break;
 			case WRITE_STR : 
