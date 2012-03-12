@@ -1,0 +1,18 @@
+var 
+	integer gt;
+	
+function giaithua(integer i)
+var 
+	integer k;
+begin
+	if (i = 1) then return 1; 
+	else 
+	return i * giaithua(i - 1);
+	end;
+end
+
+begin
+	gt := giaithua(10);
+	write "Giai thua: ";
+	write gt;
+end

@@ -1,0 +1,21 @@
+var
+	integer i, n, m, dem;
+	bool c;
+begin
+	write "nhap vao so can kiem tra: ";
+	read n;
+	writeline;
+	i:=2;
+	dem := 0;
+	while i < n do
+		if  ((n % i) = 0) then 
+			dem := dem + 1;
+		else  end;
+		i := i+1;
+	end;
+	if dem = 0 then write n;
+			write " la so nguyen to";
+	else    write n;
+		write " khong la so nguyen to";	
+	end;
+end
