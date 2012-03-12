@@ -208,8 +208,11 @@ func_decl: FUNCTION IDENTIFIER
 	install( function_name , "global", FUN, gen_label()); 
 } '(' func_var_decls ')' 
 var
-	declarations
+	func_declarations
 IN 
+{
+	gen_code( DATA, data_location() - 1 );
+}
 	commands
 END 
 {
@@ -223,19 +226,55 @@ func_var_decls : /* empty */
 | func_var_decls func_var_decl
 ;
 
-func_var_decl : var_seq INTEGER IDENTIFIER { install( $3, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name );}
-| var_seq CHAR IDENTIFIER { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name );}
-| var_seq DOUBLE IDENTIFIER { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name );}
-| var_seq STRING IDENTIFIER { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name );}
-| var_seq BOOLEAN IDENTIFIER { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name );}
+func_var_decl : var_seq INTEGER IDENTIFIER { install( $3, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq CHAR IDENTIFIER { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq DOUBLE IDENTIFIER { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq STRING IDENTIFIER { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq BOOLEAN IDENTIFIER { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
 ;
 
 var_seq : /* empty */
-| var_seq INTEGER IDENTIFIER ',' { install( $3, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name );}
-| var_seq CHAR IDENTIFIER ',' { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name );}
-| var_seq DOUBLE IDENTIFIER ',' { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name );}
-| var_seq STRING IDENTIFIER ',' { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name );}
-| var_seq BOOLEAN IDENTIFIER ',' { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name );}
+| var_seq INTEGER IDENTIFIER ',' { install( $3, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq CHAR IDENTIFIER ',' { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq DOUBLE IDENTIFIER ',' { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq STRING IDENTIFIER ',' { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| var_seq BOOLEAN IDENTIFIER ',' { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+;
+
+func_declarations : /* empty */
+| func_declarations func_declaration
+;
+
+func_declaration : 
+INTEGER fun_id_seq_int IDENTIFIER ';' { install( $3 , function_name, INT, -1); gen_code( LD_INT, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| CHAR fun_id_seq_chr IDENTIFIER ';' { install( $3, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| DOUBLE fun_id_seq_dou IDENTIFIER ';' { install( $3, function_name, DOU, -1 ); gen_code_double( LD_DOU, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| STRING fun_id_seq_str IDENTIFIER ';' { install( $3, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| BOOLEAN fun_id_seq_bol IDENTIFIER ';' { install( $3, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $3, function_name ); context_check( LD_VAR, $3, function_name );}
+| ARRAY_I IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_I, $4 ); }
+| ARRAY_D IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_D, $4 ); }
+| ARRAY_C IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_C, $4 ); }
+| ARRAY_B IDENTIFIER '[' NUMBER_VAL ']' ';' {install( $2, function_name, ARR_B, $4 ); }
+;
+
+fun_id_seq_int : /* empty */
+| fun_id_seq_int IDENTIFIER ',' { install( $2, function_name, INT, -1 ); gen_code( LD_INT, 0 ); context_check( STORE, $2, function_name ); context_check( LD_VAR, $2, function_name );}
+;
+
+fun_id_seq_chr : /* empty */
+| fun_id_seq_chr IDENTIFIER ',' { install( $2, function_name, CHR, -1 ); gen_code_char( LD_CHR, 0 ); context_check( STORE, $2, function_name ); context_check( LD_VAR, $2, function_name );}
+;
+
+fun_id_seq_str : /* empty */
+| fun_id_seq_str IDENTIFIER ',' { install( $2, function_name, STR, -1 ); gen_code_string( LD_STR, "" ); context_check( STORE, $2, function_name ); context_check( LD_VAR, $2, function_name );}
+;
+
+fun_id_seq_dou : /* empty */
+| fun_id_seq_dou IDENTIFIER ',' { install( $2, function_name, DOU, -1 );  gen_code_double( LD_DOU, 0 ); context_check( STORE, $2, function_name ); context_check( LD_VAR, $2, function_name );}
+;
+
+fun_id_seq_bol : /* empty */
+| fun_id_seq_bol IDENTIFIER ',' { install( $2, function_name, BOL, -1 ); gen_code_boolean( LD_BOL, 0 ); context_check( STORE, $2, function_name ); context_check( LD_VAR, $2, function_name );}
 ;
 
 commands : /* empty */
@@ -260,74 +299,16 @@ END { back_patch( if_var->for_goto, GOTO, gen_label() ); }
 DO
 commands
 END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
-| FOR IDENTIFIER ASSGNOP NUMBER_VAL TO NUMBER_VAL
+| FOR IDENTIFIER ASSGNOP exp 
 {
-	gen_code( LD_INT, $4 ); 
 	context_check( STORE, $2, function_name );
 	$1 = (struct lbs *) newlblrec(); 
 	$1->for_goto = gen_label();
 	context_check( LD_VAR, $2, function_name ); 
-	gen_code( LD_INT, $6 );
-	gen_code( LTEQ, 0 );
-	$1->for_jmp_false = reserve_loc();
+	
 }
-DO 
-commands
+TO exp
 {
-	context_check( LD_VAR, $2, function_name );
-	gen_code( LD_INT, 1 );
-	gen_code( ADD, 0 );
-	context_check( STORE, $2, function_name);
-}
-END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
-| FOR IDENTIFIER ASSGNOP NUMBER_VAL TO IDENTIFIER
-{
-	gen_code( LD_INT, $4 ); 
-	context_check( STORE, $2, function_name );
-	$1 = (struct lbs *) newlblrec(); 
-	$1->for_goto = gen_label();
-	context_check( LD_VAR, $2, function_name ); 
-	context_check( LD_VAR, $6, function_name );
-	gen_code( LTEQ, 0 );
-	$1->for_jmp_false = reserve_loc();
-}
-DO 
-commands
-{
-	context_check( LD_VAR, $2, function_name );
-	gen_code( LD_INT, 1 );
-	gen_code( ADD, 0 );
-	context_check( STORE, $2, function_name);
-}
-END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
-| FOR IDENTIFIER ASSGNOP IDENTIFIER TO IDENTIFIER
-{
-	context_check( LD_VAR, $4, function_name );
-	context_check( STORE, $2, function_name );
-	$1 = (struct lbs *) newlblrec(); 
-	$1->for_goto = gen_label();
-	context_check( LD_VAR, $2, function_name ); 
-	context_check( LD_VAR, $6, function_name );
-	gen_code( LTEQ, 0 );
-	$1->for_jmp_false = reserve_loc();
-}
-DO 
-commands
-{
-	context_check( LD_VAR, $2, function_name );
-	gen_code( LD_INT, 1 );
-	gen_code( ADD, 0 );
-	context_check( STORE, $2, function_name);
-}
-END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
-| FOR IDENTIFIER ASSGNOP IDENTIFIER TO NUMBER_VAL
-{
-	context_check( LD_VAR, $4, function_name );
-	context_check( STORE, $2, function_name );
-	$1 = (struct lbs *) newlblrec(); 
-	$1->for_goto = gen_label();
-	context_check( LD_VAR, $2, function_name ); 
-	gen_code( LD_INT, $6 );
 	gen_code( LTEQ, 0 );
 	$1->for_jmp_false = reserve_loc();
 }

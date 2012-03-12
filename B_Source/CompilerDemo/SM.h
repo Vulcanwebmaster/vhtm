@@ -9,7 +9,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	DATA, LD_INT, LD_VAR, LD_DOU, LD_STR, LD_CHR, LD_BOL,
 	READ_VAR, WRITE_VAR,
 	WRITE_STR, WRITE_ALL, WRITE_LINE, BEGIN_CAL,
-	LT, EQ, NEQ, GT, LTEQ, GTEQ, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,  
+	LT, EQ, NEQ, GT, LTEQ, GTEQ, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,
 	ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL,
 	BOL_COMP, BOL_ONLY };
 
@@ -40,16 +40,15 @@ struct instruction code[5000];
 /* RUN-TIME Stack */
 struct mystack stack[5000];
 
-int funtion_top = 0;
-
 /*-------------------------------------------------------------------------
 Registers
 -------------------------------------------------------------------------*/
 int pc = 0;
 struct instruction ir;
-int ar[1000];
+int ar[1000] = {0};
 int top = 0;
-int stack_call[1000];
+int stack_call[1000] = {0};
+int pre_top[1000] = {0};
 int top_call = 0;
 int start_const = -1;
 int end_const = -1;
@@ -220,6 +219,7 @@ void fetch_execute_cycle()
 				printf("\n");
 				break;
 			case STORE : 
+				//printf("store %d: ",stack[top_index+ir.arg.int_val].int_val);
 				stack[top_index+ir.arg.int_val] = stack[top--];
 				if (stack[top_index+ir.arg.int_val].type == INT) 
 					stack[top_index+ir.arg.int_val].dou_val = stack[top_index+ir.arg.int_val].int_val; 
@@ -229,7 +229,7 @@ void fetch_execute_cycle()
 					pc = ir.arg.int_val;
 				break;
 			case GOTO : pc = ir.arg.int_val; break;
-			case DATA : top = top + ir.arg.int_val; break;
+			case DATA : top = top_index + ir.arg.int_val; break;
 			case LD_INT : 
 				stack[++top].int_val = ir.arg.int_val;
 				stack[top].dou_val = ir.arg.int_val; 
@@ -253,7 +253,10 @@ void fetch_execute_cycle()
 				stack[top].int_val = ir.arg.bol_val;
 				current_type = BOL;
 				break;
-			case LD_VAR : 
+			case LD_VAR :
+				//printf("index: %d \n",top_index);
+				//printf("ko ro: %d \n",ir.arg.int_val);
+				//printf("value: %d \n",stack[top_index+ir.arg.int_val].int_val);
 				stack[++top] = stack[top_index+ir.arg.int_val]; 
 				current_type = ir.arg.type;
 				break;
@@ -430,6 +433,7 @@ void fetch_execute_cycle()
 				top--;
 				break;
 			case MULT : 
+				//printf("%lf %lf %lf",stack[top-2].dou_val,stack[top-1].dou_val,stack[top].dou_val);
 				stack[top-1].dou_val = stack[top-1].dou_val * stack[top].dou_val;
 				stack[top-1].int_val = (int)(stack[top-1].dou_val); 
 				top--;
@@ -554,15 +558,23 @@ void fetch_execute_cycle()
 				int k = start_arg;
 				int tmp = pc;
 				int tmp2 = top + 1;
+				int count = -1;
 				while (k < tmp2) {
-					ir = code[tmp];
 					code[tmp].arg = stack[k];
-					tmp = tmp + 2;
+					//printf("value: %d ",stack[k].int_val);
+					tmp = tmp + 3;
 					k++;
+					count++;
 				}
-				ar[top_call] = top - 1 - code[pc + 1].arg.int_val;
+				ar[top_call] = top - count - code[pc + 1].arg.int_val;
+				pre_top[top_call] = top;
+				
+				//printf(" %d ", pre_top[top_call]);
 				break;
 			case END_CAL :
+				stack[pre_top[top_call]] = stack[top]; 
+				top = pre_top[top_call];
+				
 				pc = stack_call[--top_call];
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
