@@ -102,7 +102,7 @@ TOKENS
 %token <arrIntval> ARRAY_VAL
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE FOR /* For backpatching labels */
-%token SKIP THEN ELSE FI DO END TO
+%token SKIP THEN ELSE FI DO END TO ENDIF ENDFOR ENDWHILE
 %token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READ
 %token WRITE WRITELINE
@@ -294,11 +294,11 @@ command : SKIP
 | IF exp { if_var = (struct lbs *) newlblrec(); if_var->for_jmp_false = reserve_loc(); }
 THEN commands { if_var->for_goto = reserve_loc(); }
 else_exp
-END { back_patch( if_var->for_goto, GOTO, gen_label() ); }
+ENDIF { back_patch( if_var->for_goto, GOTO, gen_label() ); }
 | WHILE { $1 = (struct lbs *) newlblrec(); $1->for_goto = gen_label(); } exp { $1->for_jmp_false = reserve_loc(); }
 DO
 commands
-END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+ENDWHILE { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
 | FOR IDENTIFIER ASSGNOP exp 
 {
 	context_check( STORE, $2, function_name );
@@ -320,7 +320,7 @@ commands
 	gen_code( ADD, 0 );
 	context_check( STORE, $2, function_name);
 }
-END { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+ENDFOR { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
 ;
 
 else_exp: /* empty */ { back_patch( if_var->for_jmp_false,JMP_FALSE,gen_label() );} 

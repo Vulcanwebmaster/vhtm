@@ -26,6 +26,9 @@ REGULAR EXPRESSIONS defining the tokens for the Simple language
 do { return(DO); }
 else { return(ELSE); }
 end { return(END); }
+endif { return(ENDIF); }
+endwhile { return(ENDWHILE); }
+endfor { return(ENDFOR); }
 fi { return(FI); }
 if { return(IF); }
 begin { return(IN); }
