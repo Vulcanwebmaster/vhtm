@@ -1,0 +1,10 @@
+D:\Du an\NIW Website\NIW_Website_2\NIW_Website_2\bin\NIW_Website_2.dll
+D:\Du an\NIW Website\NIW_Website_2\NIW_Website_2\bin\NIW_Website_2.pdb
+D:\Du an\NIW Website\NIW_Website_2\NIW_Website_2\obj\Debug\ResolveAssemblyReference.cache
+D:\Du an\NIW Website\NIW_Website_2\NIW_Website_2\obj\Debug\NIW_Website_2.dll
+D:\Du an\NIW Website\NIW_Website_2\NIW_Website_2\obj\Debug\NIW_Website_2.pdb
+D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\obj\Debug\ResolveAssemblyReference.cache
+D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\obj\Debug\NIW_Website_2.dll
+D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\bin\NIW_Website_2.dll
+D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\bin\NIW_Website_2.pdb
+D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\obj\Debug\NIW_Website_2.pdb

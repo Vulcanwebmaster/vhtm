@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <Trang_chu>Trang chủ</Trang_chu>
+  <Gioi_thieu>Giới thiệu</Gioi_thieu>
+  <Dich_vu>Dịch vụ</Dich_vu>
+  <Tin_tuc>Tin tức</Tin_tuc>
+
+  <Xem... title="Xem">
+    <Trang_chu>Trang chủ</Trang_chu>
+    <Gioi_thieu>Giới thiệu</Gioi_thieu>
+    <Dich_vu>Dịch vụ</Dich_vu>
+    <Tin_tuc>Tic tức</Tin_tuc>
+  </Xem...>
+  <Tinmoinhat>Tin mới nhất</Tinmoinhat>
+
+  <Trangchu>
+    <title>NIW - Trang chủ</title>
+    <Lien_he>Liên hệ</Lien_he>
+    <Kha_nang>Những khả năng của NIW</Kha_nang>
+    <Ung_dung_Window>Ứng dụng Window</Ung_dung_Window>
+    <Website>Thiết kế website</Website>
+    <Bao_tri_nang_cap>Bảo trì và nâng cấp</Bao_tri_nang_cap>
+    <Dich_vu>Dịch vụ khách hàng</Dich_vu>
+  </Trangchu>
+
+  <Gioithieu>
+    <title>NIW - Giới thiệu</title>
+    <map1>NIW - Trang chủ</map1>
+    <map2>Giới thiệu</map2>
+    <Vai_net_chinh>Vài nét chính về NIW</Vai_net_chinh>
+    <Loi_gioi_thieu>Lời giới thiệu</Loi_gioi_thieu>
+    <Tieu_chi_hoat_dong>Tiêu chí hoạt động</Tieu_chi_hoat_dong>
+    <Thong_tin>Thông tin</Thong_tin>
+  </Gioithieu>
+
+  <Sanpham>
+    <title>NIW - Dịch vụ</title>
+    <map1>NIW - Trang chủ</map1>
+    <map2>Dịch vụ</map2>
+    <Thiet_ke_website>Thiết kế website</Thiet_ke_website>
+    <Phan_mem_ung_dung>Phân mềm ứng dụng</Phan_mem_ung_dung>
+    <Dich_vu>Dịch vụ</Dich_vu>
+    <Cac_tinh_nang>Các tính năng</Cac_tinh_nang>
+    <Cac_dich_vu>Các dịch vụ của NIW</Cac_dich_vu>
+  </Sanpham>
+
+  <Tintuc>
+    <title>NIW - Tin tức</title>
+    <map1>NIW - Trang chủ</map1>
+    <map2>Tin tức</map2>
+    <Cac_tin_tuc>Các tin tức công nghệ tại Việt Nam và thế giới...</Cac_tin_tuc>
+    <Cac_tinh_nang>Các tính năng</Cac_tinh_nang>
+  </Tintuc>
+</data>

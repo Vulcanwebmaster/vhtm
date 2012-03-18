@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <Trang_chu>Home page</Trang_chu>
+  <Gioi_thieu>About Us</Gioi_thieu>
+  <Dich_vu>Service</Dich_vu>
+  <Tin_tuc>NIW News</Tin_tuc>
+
+  <Xem... title="Watch">    
+    <Trang_chu>Homepage</Trang_chu>
+    <Gioi_thieu>About Us</Gioi_thieu>
+    <Dich_vu>Service</Dich_vu>
+    <Tin_tuc>NIW news</Tin_tuc>
+  </Xem...>
+  <Tinmoinhat>Latest News</Tinmoinhat>
+
+  <Trangchu>
+    <title>NIW - Home page</title>
+    <Lien_he>Contact Us</Lien_he>
+    <Kha_nang>Facilities of the NIW</Kha_nang>
+    <Ung_dung_Window>Applications</Ung_dung_Window>
+    <Website>Design Website</Website>
+    <Bao_tri_nang_cap>Maintenance and upgrades</Bao_tri_nang_cap>
+    <Dich_vu>Service</Dich_vu>
+  </Trangchu>
+
+  <Gioithieu>
+    <title>NIW - About Us</title>
+    <map1>Home page</map1>
+    <map2>About Us</map2>
+    <Vai_net_chinh>Aspects of the company NIW</Vai_net_chinh>
+    <Loi_gioi_thieu>Introduction</Loi_gioi_thieu>
+    <Tieu_chi_hoat_dong>Criteria for operation</Tieu_chi_hoat_dong>
+    <Thong_tin>Informations</Thong_tin>    
+  </Gioithieu>
+
+  <Sanpham>
+    <title>NIW - Produces</title>
+    <map1>Home page</map1>
+    <map2>Produces</map2>
+    <Thiet_ke_website>Design Website</Thiet_ke_website>
+    <Phan_mem_ung_dung>Applications</Phan_mem_ung_dung>
+    <Dich_vu>Service</Dich_vu>
+    <Cac_tinh_nang>Features</Cac_tinh_nang>
+    <Cac_dich_vu>Services of NIW...</Cac_dich_vu>
+  </Sanpham>
+
+  <Tintuc>
+    <title>NIW - News</title>
+    <map1>Home page</map1>
+    <map2>NIW news</map2>
+    <Cac_tin_tuc>The technology news in Vietnam and the world ...</Cac_tin_tuc>
+    <Cac_tinh_nang>Features</Cac_tinh_nang>
+  </Tintuc>
+
+</data>

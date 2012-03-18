@@ -1,0 +1,84 @@
+#top .kfw_styleswitcher{
+position: absolute;
+right:10px;
+top:23px;
+padding:20px;
+border-radius:5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+background: #fff;
+border:1px solid #999;
+z-index: 9999;
+font-size: 11px;
+color:#777;
+line-height: 16px;
+}
+
+.kfw_styleswitch_form{
+width:200px;
+position: relative;
+}
+
+#top .kfw_styleswitcher input, #top .kfw_styleswitcher select{
+border:1px solid #e1e1e1;
+padding:5px;
+color:#777;
+margin: 3px 0 10px 0;
+border-radius:3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+width:198px;
+}
+
+#top .kfw_styleswitcher .kfw_submit{
+cursor: pointer;
+}
+
+#top .kfw_styleswitcher .kfw_submit:hover{
+cursor: pointer;
+background: #888;
+color: #fff;
+}
+
+#top .kfw_styleswitcher .strongblock{
+display:block;
+}
+
+.kfw_styleswitcher .kfw_hr{
+display: block;
+clear: both;
+border-bottom: 1px solid #e1e1e1;
+margin:5px 0 10px 0;
+}
+
+.kfw_styleswitcher strong{
+color:#555;
+}
+
+.display_switch{
+display:block;
+}
+
+.display_switch_false{
+display:none;
+}
+
+.kfw_styleswitcher .openclose{
+display:block;
+height:32px;
+left:4px;
+position:absolute;
+top:3px;
+width:32px;
+cursor: pointer;
+}
+
+#top .openclosedisplay_switch{
+background: transparent url("minus.png")/*tpa=http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/minus.png*/ no-repeat center center;
+left:216px;
+top:-17px;
+}
+
+#top .openclosedisplay_switch_false{
+background: transparent url("plus.png")/*tpa=http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/plus.png*/ no-repeat center center;
+}
