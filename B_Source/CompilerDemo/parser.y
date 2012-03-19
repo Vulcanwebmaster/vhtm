@@ -41,7 +41,8 @@ install ( char *sym_name, char *scope, enum type_code type, int length )
 	else 
 	{
 		errors++;
-		printf( "%s is already defined\n", sym_name );
+		printf( "%s ", sym_name );
+		yyerror("is already defined");
 	}
 }
 
@@ -59,7 +60,7 @@ context_check( enum code_ops operation, char *sym_name, char *scope )
 			{
 				errors++;
 				printf( "%s", sym_name );
-				printf( "%s\n", " is an undeclared identifier" );
+				yyerror(" is an undeclared identifier");
 			}
 		}
 	if (identifier != 0)
@@ -383,13 +384,5 @@ main( int argc, char *argv[] )
 	{ 
 		fetch_execute_cycle();
 	}		
-}
-/*=========================================================================
-YYERROR
-=========================================================================*/
-yyerror ( char *s ) /* Called by yyparse on error */
-{
-	errors++;
-	printf ("%s\n", s);
 }
 /**************************** End Grammar File ***************************/

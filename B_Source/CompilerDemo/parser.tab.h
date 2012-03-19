@@ -56,24 +56,27 @@
      DO = 272,
      END = 273,
      TO = 274,
-     INTEGER = 275,
-     CONST = 276,
-     LET = 277,
-     IN = 278,
-     STRING = 279,
-     DOUBLE = 280,
-     CHAR = 281,
-     FUNCTION = 282,
-     BOOLEAN = 283,
-     READ = 284,
-     WRITE = 285,
-     WRITELINE = 286,
-     ARRAY_I = 287,
-     ARRAY_C = 288,
-     ARRAY_B = 289,
-     ARRAY_D = 290,
-     ASSGNOP = 291,
-     RETURN = 292
+     ENDIF = 275,
+     ENDFOR = 276,
+     ENDWHILE = 277,
+     INTEGER = 278,
+     CONST = 279,
+     LET = 280,
+     IN = 281,
+     STRING = 282,
+     DOUBLE = 283,
+     CHAR = 284,
+     FUNCTION = 285,
+     BOOLEAN = 286,
+     READ = 287,
+     WRITE = 288,
+     WRITELINE = 289,
+     ARRAY_I = 290,
+     ARRAY_C = 291,
+     ARRAY_B = 292,
+     ARRAY_D = 293,
+     ASSGNOP = 294,
+     RETURN = 295
    };
 #endif
 
@@ -82,12 +85,12 @@
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union 
 /* Line 1676 of yacc.c  */
-#line 83 "parser.y"
+#line 84 "parser.y"
 semrec
 {
 
 /* Line 1676 of yacc.c  */
-#line 84 "parser.y"
+#line 85 "parser.y"
 
 	int intval; /* Integer values */
 	double douval;
@@ -100,7 +103,7 @@ semrec
 
 
 /* Line 1676 of yacc.c  */
-#line 104 "parser.tab.h"
+#line 107 "parser.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

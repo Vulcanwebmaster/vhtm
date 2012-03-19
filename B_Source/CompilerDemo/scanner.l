@@ -18,6 +18,7 @@ ID [a-zA-Z_][a-zA-Z0-9_]*
 CHAR \'.\'
 BOOLEAN true|false
 STRING \".*\"
+%option yylineno
 /*=========================================================================
 REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
@@ -119,4 +120,9 @@ to { return(TO); }
 . { return (yytext[0]);}
 %%
 int yywrap(void){}
+void yyerror(char *s)
+{
+    printf("%s at line % d!\n", s, yylineno);
+	exit(0);
+}
 /************************** End Scanner File *****************************/
