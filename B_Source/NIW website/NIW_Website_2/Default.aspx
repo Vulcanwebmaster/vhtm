@@ -58,10 +58,11 @@
 
 
 <meta name='robots' content='noindex,nofollow' />
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-includes/js/jquery/jquery?ver=1.7.1'></script>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/prettyPhoto/js/jquery.prettyPhoto.js?ver=3.3.1'></script>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/flashplayer/flowplayer-3.1.4.min.js?ver=3.3.1'></script>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/custom.js?ver=3.3.1'></script>
+<script type='text/javascript' src='Scripts/jquery-1.4.1.js'></script>
+<script type='text/javascript' src='Scripts/jquery-ver=1.4.1.js'></script>
+<script type='text/javascript' src='Scripts/jquery.prettyPhoto.js'></script>
+<script type='text/javascript' src='Scripts/flowplayer-3.1.4.min.js'></script>
+<script type='text/javascript' src='Scripts/custom.js'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kriesi.at/themes/avisio/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kriesi.at/themes/avisio/wp-includes/wlwmanifest.xml" /> 
 
@@ -95,7 +96,7 @@
 <!-- end custom styles-->
 
 <!-- meta tags, needed for javascript -->
-<meta name="temp_url" content="http://www.kriesi.at/themes/avisio/wp-content/themes/avisio" />
+<meta name="NIW" />
 
 
 </head>
@@ -176,12 +177,12 @@
                     <li class='slideThumb ie6fix slideThumb1'><span class='slideThumWrap'><span class='slideThumbTitle'>
                         <strong class='slideThumbHeading rounded ie6fix'>NIW</strong> </span><span class='fancy'>
                         </span>
-                        <img src="images/slide/imageSlider.jpg" alt='' title='Welcome at Avisio!' height='50 '
+                        <img src="images/slide/imageSlider.jpg" alt='' title='Welcome at NIW' height='50 '
                             width='70' /></span></li><!-- end .slideThumb -->
                     <li class='slideThumb ie6fix slideThumb1'><span class='slideThumWrap'><span class='slideThumbTitle'>
                         <strong class='slideThumbHeading rounded ie6fix'>Website</strong> </span><span class='fancy'>
                         </span>
-                        <img src="images/slide/slide1.jpg" alt='' title='Welcome at Avisio!' height='50 '
+                        <img src="images/slide/slide1.jpg" alt='' title='Welcome at NIW' height='50 '
                             width='70' /></span></li><!-- end .slideThumb -->
                     <li class='slideThumb ie6fix slideThumb2'><span class='slideThumWrap'><span class='slideThumbTitle'>
                         <strong class='slideThumbHeading rounded ie6fix'>Phần mềm ứng dụng options</strong>

@@ -8,3 +8,8 @@ D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\obj\Debug\NIW_Website_2.dll
 D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\bin\NIW_Website_2.dll
 D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\bin\NIW_Website_2.pdb
 D:\Du an\NIW Website\NIW_Website_3\NIW_Website_2\obj\Debug\NIW_Website_2.pdb
+C:\Users\User\Desktop\VC\B_Source\NIW website\NIW_Website_2\bin\NIW_Website_2.dll
+C:\Users\User\Desktop\VC\B_Source\NIW website\NIW_Website_2\bin\NIW_Website_2.pdb
+C:\Users\User\Desktop\VC\B_Source\NIW website\NIW_Website_2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\User\Desktop\VC\B_Source\NIW website\NIW_Website_2\obj\Debug\NIW_Website_2.dll
+C:\Users\User\Desktop\VC\B_Source\NIW website\NIW_Website_2\obj\Debug\NIW_Website_2.pdb
