@@ -28,7 +28,7 @@ namespace NIW_Website_2 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Trang_chu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Trang_chu;
         
         /// <summary>
         /// Gioi_thieu control.

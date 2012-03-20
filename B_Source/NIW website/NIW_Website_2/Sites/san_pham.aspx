@@ -9,10 +9,6 @@
     <meta name="robots" content="index, follow" />
     <!-- title -->
     <title runat="server" id="title">NIW &#8211; Dịch vụ</title>
-    <!-- feeds and pingback -->
-    <link rel="alternate" type="application/rss+xml" title="Avisio &#8211; a flexible Wordpress Theme RSS2 Feed"
-        href="http://www.kriesi.at/themes/avisio/feed/" />
-    <link rel="pingback" href="http://www.kriesi.at/themes/avisio/xmlrpc.php" />
     <!-- stylesheets -->
     <link rel="stylesheet" href="../CSS/prettyPhoto.css"
         type="text/css" media="screen" />
@@ -21,17 +17,6 @@
     <link rel="stylesheet" href="../CSS/style1.css"
         type="text/css" media="screen" />
         <link rel="Stylesheet" type="text/css" href="../CSS/StyleSheet1.css" />
-    <!-- ########## end css ########## -->
-    <!-- scripts -->
-    <!--[if IE 6]>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/dd_belated_png.js'></script>
-<script>DD_belatedPNG.fix('.ie6fix, blockquote');</script>
-<style>.box ul li a, li, .hr {zoom:1;}</style>
-<![endif]-->
-    <!--[if lt IE 9]>
-<style>.boxed {border:1px solid #fff}</style>
-<![endif]-->
-    <!-- Make Slideshow variables available for Javascript-->
     <script type='text/javascript'>
         slideShowArray = [];
         slideShowArray['feature_count'] = '10';
@@ -49,12 +34,13 @@
         slideShowArray['save_my_options'] = '1';
         slideShowArray['Submit'] = 'Save Changes'; 
     </script>
-    <meta name='robots' content='noindex,nofollow' />
-    <script type='text/javascript' src='../Scripts/comment-reply.js-ver=20090102'></script>
-    <script type='text/javascript' src='../Scripts/jquery.js-ver=1.7.1'></script>
-    <script type='text/javascript' src='../Scripts/jquery.prettyPhoto.js-ver=3.3.1'></script>
-    <script type='text/javascript' src='../Scripts/flowplayer-3.1.4.min.js-ver=3.3.1'></script>
-    <script type='text/javascript' src='../Scripts/custom.js-ver=3.3.1'></script>
+    <meta name='robots' content='Product' />
+   <script type='text/javascript' src='../Scripts/comment-reply.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery-1.4.1.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery-ver=1.4.1.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='../Scripts/flowplayer-3.1.4.min.js'></script>
+    <script type='text/javascript' src='../Scripts/custom.js'></script>
 
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../Scripts/wlwmanifest.xml" />
     
@@ -99,12 +85,12 @@
                     </h2>
                     <!-- Navigation for Pages starts here -->
                     <ul id="menu-main" class="nav">
-                        <li id="menu-item-111" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                            <a href="/Default.aspx"<strong class="menu_item_2" style="font-size: 14px" id="Trang_chu" runat="server">Trang chủ</strong></a></li>
+                        <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page">
+                            <a href="/Default.aspx"<strong class="menu_item_2" id="Trang_chu" runat="server">Trang chủ</strong></a></li>
                         <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="/Sites/Gioi_thieu.aspx"><strong class="menu_item_2" id="Gioi_thieu_menu" runat="server">Giới thiệu</strong></a>
                         </li>
-                        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <li id="menu-item-116" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                             <a href="/Sites/san_pham.aspx"><strong  class="menu_item_2" id="Dich_vu" runat="server">Dịch vụ</strong></a>
                         </li>
                         <li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page">
@@ -246,7 +232,7 @@
                         <h3 class="widgettitle" runat="server" id="xem">
                             Xem...</h3>
                         <ul>
-                            <li class="page_item page-item-37 current_page_item"><a runat="server" id="Trang_chu_footer" href="Default.aspx">
+                            <li class="page_item page-item-37 current_page_item"><a runat="server" id="Trang_chu_footer" href="~/Default.aspx">
                                 Trang chủ</a>
                                 <ul class='children'>
                                     <li class="page_item page-item-50"><a href="../Sites/Gioi_thieu.aspx" runat="server" id="Gioi_thieu_footer">
@@ -282,8 +268,7 @@
                                     rel="bookmark" runat="server" id="news0_title">
                                     </a></h4>
                             <a class='alignleft  preloading_background'>
-                                <img class='rounded_small ie6fix alignleft'
-                                    alt='' height='50 ' width='70' runat="server" id="news0_image"/></a>
+                                <img class='rounded_small ie6fix alignleft' alt='' height='50 ' width='70' runat="server" id="news0_image"> </img></a>
                                     <p  runat="server" id="news0_content"
                                         style="text-align: justify"></p>
                         </div>
@@ -319,11 +304,10 @@
         </div>
         <!--end wrapp_all -->
     </div>
-        <script type="text/javascript" src="http://www.kriesi.at/themes/avisio/wp-content/plugins/avia_external_link/avia_external_link.js?v=2"></script>
-    
-                    <script type="text/javascript">
+        <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
     </script>
                         <script type="text/javascript">
         try {

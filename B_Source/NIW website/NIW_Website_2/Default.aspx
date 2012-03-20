@@ -9,10 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="robots" content="index, follow" />
 
-
-
 <!-- title -->
-<title runat="server" id="title">NIW &#8211; Công ty TNHH Công nghệ phần mềm NIW</title>
+<title runat="server" id="title">NIW &#8211; Trang chủ</title>
 
 
 <!-- feeds and pingback -->
@@ -21,21 +19,8 @@
 <!-- stylesheets -->
 <link rel="stylesheet" href="CSS/prettyPhoto.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="CSS/style.css" type="text/css" media="screen" />
-
+<link type="text/css" href="CSS/StyleSheet1.css" rel="Stylesheet" />
 <link rel="stylesheet" href="CSS/style1.css" type="text/css" media="screen"/>
-
-<!-- ########## end css ########## -->	
-
-<!-- scripts -->
-
-<!--[if IE 6]>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/dd_belated_png.js'></script>
-<script>DD_belatedPNG.fix('.ie6fix, blockquote');</script>
-<style>.box ul li a, li, .hr {zoom:1;}</style>
-<![endif]-->
-<!--[if lt IE 9]>
-<style>.boxed {border:1px solid #fff}</style>
-<![endif]-->
 
 <!-- Make Slideshow variables available for Javascript-->
 <script type='text/javascript'>
@@ -57,14 +42,12 @@
 </script>
 
 
-<meta name='robots' content='noindex,nofollow' />
 <script type='text/javascript' src='Scripts/jquery-1.4.1.js'></script>
 <script type='text/javascript' src='Scripts/jquery-ver=1.4.1.js'></script>
 <script type='text/javascript' src='Scripts/jquery.prettyPhoto.js'></script>
 <script type='text/javascript' src='Scripts/flowplayer-3.1.4.min.js'></script>
 <script type='text/javascript' src='Scripts/custom.js'></script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kriesi.at/themes/avisio/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kriesi.at/themes/avisio/wp-includes/wlwmanifest.xml" /> 
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="Scripts/wlwmanifest.xml" /> 
 
 
 <!-- Debugging help, do not remove -->
@@ -74,14 +57,15 @@
 <meta name="CMS Version" content="3.3.1" />
 
 
-<link rel="stylesheet" href="CSS/kfw_styleswitch.css" type="text/css" /><script type="text/javascript" src="http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/kfw_styleswitch.js"></script><script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/framework/fonts/cufon.js'></script>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/framework/fonts/josefine_small.font.js'></script>
+<link rel="stylesheet" href="CSS/kfw_styleswitch.css" type="text/css" /><script type="text/javascript" src="Scripts/kfw_styleswitch.js"></script>
+<script type='text/javascript' src='Scripts/cufon.js'></script>
+<script type='text/javascript' src='Scripts/josefine_small.font.js'></script>
 
 <script type='text/javascript'>
 
     Cufon.replace('#top h1, #top  h2, #top h3, #top  h4, #top  h5, #top  h6, #top  legend, #top .sliderheading, .big_button strong, .dynamicFont', {
 
-        fontFamily: 'cufon',
+        fontFamily: 'Verdana',
         hover: 'true'
 
     });
@@ -96,9 +80,7 @@
 <!-- end custom styles-->
 
 <!-- meta tags, needed for javascript -->
-<meta name="NIW" />
-
-
+<meta name="NIW" content = "NIW"/>
 </head>
 <body id='top' class="home blog" style="font-family: Verdana">
     <form runat="server">
@@ -112,7 +94,8 @@
                     <!-- Navigation for Pages starts here -->
                     <ul id="menu-main" class="nav">
                         <li id="menu-item-111" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                            <a href="Default.aspx"<strong class="menu_item_2" style="font-size: 14px" id="Trang_chu" runat="server">Trang chủ</strong></a></li>
+                            <a href="Default.aspx"><strong class="menu_item_2" style="font-size: 14px" id="Trang_chu" runat="server"> Trang chủ</strong></a>
+                        </li>
                         <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="Sites/Gioi_thieu.aspx"><strong class="menu_item_2" id="Gioi_thieu" runat="server">Giới thiệu</strong></a>
                         </li>
@@ -120,8 +103,7 @@
                             <a href="Sites/san_pham.aspx"><strong  class="menu_item_2" id="Dich_vu" runat="server">Dịch vụ</strong></a>
                         </li>
                         <li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="Sites/Tin_tuc.aspx"><strong class="menu_item_2" id="Tin_tuc" runat="server">Tin tức</strong></a></li>    
-                                                                                               
+                            <a href="Sites/Tin_tuc.aspx"><strong class="menu_item_2" id="Tin_tuc" runat="server">Tin tức</strong></a></li>                                                                         
                         <asp:ImageButton runat="server" ID="english" ImageUrl="~/images/english flag.gif" CssClass="menu_item_2" OnClick="english_click"/>
                         <asp:ImageButton runat="server" ID="vietnamese" ImageUrl="~/images/vietnam.jpg"  CssClass="menu_item_2" OnClick="vietnamese_click"/>
                     </ul>                   
@@ -142,23 +124,23 @@
                     <!-- ###################################################################### -->
                     <ul class='slideshow aviaslider'>
                         <li class='featured featured1'><span>
-                            <img src="images/slide/imageSlider.jpg" alt='' title='Welcome at Avisio!' height='440 '
+                            <img src="images/slide/imageSlider.jpg" alt='' height='440 '
                                 width='940' /></span> </li>
                         <!-- end .featured -->
                         <li class='featured featured6'><a>
-                            <img src="images/slide/slide1.jpg" alt='' title='This is a Slide example' height='440 '
+                            <img src="images/slide/slide1.jpg" alt='' height='440 '
                                 width='940' /></a> </li>
                         <!-- end .featured -->
                         <li class='featured featured7'><span>
-                            <img src="images/slide/slide2.jpg" alt='' title='The last slide ;)' height='440 '
+                            <img src="images/slide/slide2.jpg" alt='' height='440 '
                                 width='940' /></span> </li>
                         <!-- end .featured -->
                         <li class='featured featured8'><span>
-                            <img src="images/slide/slide3.jpg" alt='' title='The last slide ;)' height='440 '
+                            <img src="images/slide/slide3.jpg" alt='' height='440 '
                                 width='940' /></span> </li>
                         <!-- end .featured -->
                         <li class='featured featured9'><span>
-                            <img src="images/slide/slide4.jpg" alt='' title='The last slide ;)' height='440 '
+                            <img src="images/slide/slide4.jpg" alt='' height='440 '
                                 width='940' /></span> </li>
                         <!-- end .featured -->
                     </ul>
@@ -189,12 +171,12 @@
                     </span><span class='fancy'></span>
                         <img src="images/slide/slide2.jpg" alt='' title='Avisio, a theme with unlimited color options'
                             height='50 ' width='70' /></span></li><!-- end .slideThumb -->
-                    <li class='slideThumb ie6fix slideThumb3'><a href='http://www.kriesi.at/' class='slideThumWrap noLightbox'>
+                    <li class='slideThumb ie6fix slideThumb3'>
                         <span class='slideThumbTitle'><strong class='slideThumbHeading rounded ie6fix'>Chất
                             lượng</strong> </span><span class='fancy'></span>
                         <img src="images/slide/slide3.jpg" alt='' title='Another Slide example with featured text and image caption'
                             height='50 ' width='70' /></a></li><!-- end .slideThumb -->
-                    <li class='slideThumb ie6fix slideThumb3'><a href='http://www.kriesi.at/' class='slideThumWrap noLightbox'>
+                    <li class='slideThumb ie6fix slideThumb3'>
                         <span class='slideThumbTitle'><strong class='slideThumbHeading rounded ie6fix'>Dịch
                             vụ</strong> </span><span class='fancy'></span>
                         <img src="images/slide/slide4.jpg" alt='' title='Another Slide example with featured text and image caption'
@@ -213,15 +195,12 @@
         <div class="wrapper fullwidth" id='wrapper_main'>
             <div class="center">
                 <div id="main">
-                    <div class="frontpagetabs">
-                        <div class='entry'>
-                            <h1 class='fptab fpactive_tab' runat="server" id="Kha_nang" 
-                                style="font-size: 30px">
-                                Những khả năng của NIW?</h1>
-                            <div class='fptab_content tab1 fpactive_tab_content'>
+                      <div class='entry'>
+                      <div class='entry-content'>
+                            <h1 runat="server" id="Kha_nang">NIW</h1>
+                            <div>
                                 <div class="one_fourth ">
-                                    <h3 runat="server" id="Phan_mem_ung_dung" class="kha_nang">
-                                        Ứng dụng Window</h3>
+                                    <h5 runat="server" id="Phan_mem_ung_dung">Phát triển ứng dụng</h5>
                                     <p style="text-align: justify;height:205px">
                                         <span class="dropcap2 ie6fix">1</span>Xây dựng những phần mềm ứng dụng với các mục
                                         tiêu: chức năng đảm bảo, khả năng tương thích cao và hướng người sử dụng. Những
@@ -232,8 +211,7 @@
                                             alt="1"/></p>
                                 </div>
                                 <div class="one_fourth ">
-                                    <h3 runat="server" id="website" class="kha_nang">
-                                        Thiết kế website</h3>
+                                    <h5 runat="server" id="website">Thiết kế website</h5>
                                     <p style="text-align: justify; height: 200px;">
                                         <span class="dropcap2 ie6fix">2</span>Với tiêu chí xây dựng website nhằm đáp ứng
                                         mọi nhu cầu của mọi đối tượng khách hàng, sản phẩm web của NIW với những mẫu mã
@@ -244,8 +222,7 @@
                                             alt="2"/></p>
                                 </div>
                                 <div class="one_fourth ">
-                                    <h3 id="Bao_tri" runat="server" class="kha_nang">
-                                        Bảo trì và nâng cấp</h3>
+                                    <h5 id="Bao_tri" runat="server">Bảo trì và nâng cấp</h5>
                                     <p style="text-align: justify;height:200px">
                                         <span class="dropcap2 ie6fix">3</span>Nhờ xây dựng các sản phẩm một cách có hệ thống
                                         và khoa học, chúng tôi có thể bảo trì và nâng cấp sản phẩm của mình một cách dễ
@@ -255,8 +232,7 @@
                                             alt="3" /></p>
                                 </div>
                                 <div class="one_fourth last">
-                                    <h3 runat="server" id="dich_vu_khach_hang" class="kha_nang">
-                                        Dịch vụ khách hàng</h3>
+                                    <h5 runat="server" id="dich_vu_khach_hang">Dịch vụ tốt nhất</h5>
                                     <p style="text-align: justify;height:200px">
                                         <span class="dropcap2 ie6fix">4</span>Chúng tôi luôn đặt quyền lợi của quý khách
                                         hàng lên hàng đầu. Với hệ thống chăm sóc khách hàng tận tình, đến với NIW, bạn sẽ
@@ -266,97 +242,9 @@
                                             alt="4"/></p>
                                 </div>
                             </div>
-                            <h1 class='fptab '>
-                                <!--<a href="http://www.kriesi.at/themes/avisio/a-little-about-you/tab-example/"> -->
-                                Sản phẩm<!--</a>--></h1>
-                            <div class='fptab_content tab2 '>
-                                <p>
-                                    
-                                    <img src='http://www.kriesi.at/themes/avisio/wp-includes/images/smilies/icon_wink.gif'
-                                        alt=';)' class='wp-smiley' /><br />
-                                    </p>
-                                <table id="mytable" cellspacing="0" summary="The technical specifications of the Apple PowerMac G5 series">
-                                    <caption>
-                                        Table 1: Apple Product specs
-                                    </caption>
-                                    <tbody>
-                                        <tr>
-                                            <th class="nobg" scope="col">
-                                                Product:
-                                            </th>
-                                            <th scope="col">
-                                                iPhone 3GS
-                                            </th>
-                                            <th scope="col">
-                                                iPad
-                                            </th>
-                                            <th scope="col">
-                                                iPod Nano
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th class="spec" scope="row">
-                                                Version
-                                            </th>
-                                            <td>
-                                                3rd Generation build
-                                            </td>
-                                            <td>
-                                                1st Generation build
-                                            </td>
-                                            <td>
-                                                27th Generation build
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th class="specalt" scope="row">
-                                                Multitouch
-                                            </th>
-                                            <td class="alt">
-                                                Yes
-                                            </td>
-                                            <td class="alt">
-                                                Yes
-                                            </td>
-                                            <td class="alt">
-                                                No
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th class="spec" scope="row">
-                                                Video
-                                            </th>
-                                            <td>
-                                                Yes &#8211; doesnt play flash content
-                                            </td>
-                                            <td>
-                                                Yes &#8211; doesnt play content
-                                            </td>
-                                            <td>
-                                                Yes &#8211; does play any content
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th class="specalt" scope="row">
-                                                Release Date
-                                            </th>
-                                            <td class="alt">
-                                                Nov. 2009
-                                            </td>
-                                            <td class="alt">
-                                                Mai. 2010
-                                            </td>
-                                            <td class="alt">
-                                                Jun. 2010
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <span class="clearboth"></span>
-                            </div>
-                            <!--end enty -->
                         </div>
-                        <span class="hr"></span>
+                      </div>
+                      <span class="hr"></span>
                     </div>
                     <!--end main-->
                 </div>
@@ -449,11 +337,11 @@
         </div>
         <!--end wrapp_all -->
     </div>
-    <script type="text/javascript" src="http://www.kriesi.at/themes/avisio/wp-content/plugins/avia_external_link/avia_external_link.js?v=2"></script>
     </form>
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
     </script>
     <script type="text/javascript">
         try {

@@ -225,6 +225,8 @@
     <Content Include="images\twitter_16.png" />
     <Content Include="images\vietnam.jpg" />
     <Content Include="niw.ico" />
+    <Content Include="Scripts\cufon.js" />
+    <Content Include="Scripts\josefine_small.font.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -294,7 +296,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\comment-reply.js-ver=20090102" />
+    <Content Include="Scripts\comment-reply.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\flowplayer-3.1.4.min.js" />
     <Content Include="Scripts\jquery-ver=1.4.1.js" />

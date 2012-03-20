@@ -9,10 +9,6 @@
     <meta name="robots" content="index, follow" />
     <!-- title -->
     <title runat="server" id="title">NIW &#8211; Tin tức</title>
-    <!-- feeds and pingback -->
-    <link rel="alternate" type="application/rss+xml" title="Avisio &#8211; a flexible Wordpress Theme RSS2 Feed"
-        href="http://www.kriesi.at/themes/avisio/feed/" />
-    <link rel="pingback" href="http://www.kriesi.at/themes/avisio/xmlrpc.php" />
     <!-- stylesheets -->
     <link rel="stylesheet" href="../CSS/prettyPhoto.css"
         type="text/css" media="screen" />
@@ -21,17 +17,6 @@
     <link rel="stylesheet" href="../CSS/style1.css"
         type="text/css" media="screen" />
     <link type="text/css" href="../CSS/StyleSheet1.css" rel="Stylesheet" />
-    <!-- ########## end css ########## -->
-    <!-- scripts -->
-    <!--[if IE 6]>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/dd_belated_png.js'></script>
-<script>DD_belatedPNG.fix('.ie6fix, blockquote');</script>
-<style>.box ul li a, li, .hr {zoom:1;}</style>
-<![endif]-->
-    <!--[if lt IE 9]>
-<style>.boxed {border:1px solid #fff}</style>
-<![endif]-->
-    <!-- Make Slideshow variables available for Javascript-->
     <script type='text/javascript'>
         slideShowArray = [];
         slideShowArray['feature_count'] = '10';
@@ -49,28 +34,24 @@
         slideShowArray['save_my_options'] = '1';
         slideShowArray['Submit'] = 'Save Changes'; 
     </script>
-    <meta name='robots' content='noindex,nofollow' />
-    <link rel="alternate" type="application/rss+xml" title="Avisio - a flexible Wordpress Theme &raquo; About the theme Comments Feed"
-        href="http://www.kriesi.at/themes/avisio/a-little-about-you/feed/" />
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-includes/js/comment-reply.js?ver=20090102'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/prettyPhoto/js/jquery.prettyPhoto.js?ver=3.3.1'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/flashplayer/flowplayer-3.1.4.min.js?ver=3.3.1'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/custom.js?ver=3.3.1'></script>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kriesi.at/themes/avisio/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kriesi.at/themes/avisio/wp-includes/wlwmanifest.xml" />
-    <link rel='next' title='Blog' href='http://www.kriesi.at/themes/avisio/blog/' />
+    <meta name='robots' content='News' />
+    <script type='text/javascript' src='../Scripts/comment-reply.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery-1.4.1.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery-ver=1.4.1.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='../Scripts/flowplayer-3.1.4.min.js'></script>
+    <script type='text/javascript' src='../Scripts/custom.js'></script>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../Scripts/wlwmanifest.xml" />
     <!-- Debugging help, do not remove -->
     <meta name="Framework" content="Kpress" />
     <meta name="Theme Version" content="1.2" />
     <meta name="Framework Version" content="3.1" />
     <meta name="CMS Version" content="3.3.1" />
-    <link rel='canonical' href='http://www.kriesi.at/themes/avisio/a-little-about-you/' />
-    <link rel="stylesheet" href="http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/kfw_styleswitch.css"
-        type="text/css" />
-    <script type="text/javascript" src="http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/kfw_styleswitch.js"></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/framework/fonts/cufon.js'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/framework/fonts/josefine_small.font.js'></script>
+    <link rel="stylesheet" href="../CSS/kfw_styleswitch.css" type="text/css" />
+    <script type="text/javascript" src="../Scripts/kfw_styleswitch.js"></script>
+    <script type='text/javascript' src='../Scripts/cufon.js'></script>
+    <script type='text/javascript' src='../Scripts/josefine_small.font.js'></script>
+
     <script type='text/javascript'>
 
         Cufon.replace('#top h1, #top  h2, #top h3, #top  h4, #top  h5, #top  h6, #top  legend, #top .sliderheading, .big_button strong, .dynamicFont', {
@@ -88,7 +69,7 @@
     </style>
     <!-- end custom styles-->
     <!-- meta tags, needed for javascript -->
-    <meta name="temp_url" content="http://www.kriesi.at/themes/avisio/wp-content/themes/avisio" />
+    <meta name="NIW" content="NIW" />
 </head>
 <body id='top' class="page page-id-37 page-parent page-template-default">
     <form runat="server">
@@ -101,14 +82,14 @@
                     </h2>
                     <!-- Navigation for Pages starts here -->
                     <ul id="menu-main" class="nav">
-                        <li id="menu-item-111" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="../Default.aspx" class="menu_item_2" style="font-size:14px" runat="server" id="Trang_chu">Trang chủ</a> </li>
                         <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="Gioi_thieu.aspx"><strong class="menu_item_2" runat="server" id="Gioi_thieu">Giới thiệu</strong></a>
                         </li>
                         <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="san_pham.aspx"><strong class="menu_item_2" runat="server" id="Dich_vu">Dịch vụ</strong></a> </li>
-                        <li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                             <a href="Tin_tuc.aspx"><strong class="menu_item_2" runat="server" id="Tin_tuc_menu">Tin tức</strong></a></li>
                         <asp:ImageButton runat="server" ID="english" ImageUrl="~/images/english flag.gif"
                             CssClass="menu_item_2" OnClick="english_click"/>
