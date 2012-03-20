@@ -39,10 +39,13 @@ namespace NIW_Website_2
         void change_language()
         {
             XElement element;
-            if (Session["language"]=="en")
-                element = XElement.Load(functions.host+"/CSDL/en.xml");
+            if (Session["language"] != null)
+            {
+                if (Session["language"].ToString().Equals("en"))
+                    element = XElement.Load(functions.host + "/CSDL/en.xml");
+                else element = XElement.Load(functions.host + "/CSDL/vn.xml");
+            }
             else element = XElement.Load(functions.host + "/CSDL/vn.xml");
-
             Trang_chu.InnerText = element.Element("Trang_chu").Value;
             Gioi_thieu.InnerText = element.Element("Gioi_thieu").Value;
             Dich_vu.InnerText = element.Element("Dich_vu").Value;
