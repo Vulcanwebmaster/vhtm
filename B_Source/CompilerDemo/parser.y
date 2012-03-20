@@ -103,7 +103,7 @@ TOKENS
 %token <arrIntval> ARRAY_VAL
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE FOR /* For backpatching labels */
-%token SKIP THEN ELSE FI DO END TO ENDIF ENDFOR ENDWHILE
+%token SKIP THEN ELSE FI DO END TO ENDIF ENDFOR ENDWHILE ENDFUNCTION
 %token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
 %token READ
 %token WRITE WRITELINE
@@ -135,7 +135,7 @@ IN
 	main_start = gen_label() - 1;
 }
 commands
-END 
+END
 { 
 	gen_code( HALT, 0 ); 
 	YYACCEPT; 
@@ -215,7 +215,7 @@ IN
 	gen_code( DATA, data_location() - 1 );
 }
 	commands
-END 
+ENDFUNCTION ';'
 {
 	if (function_name != NULL) free(function_name);
 	function_name = "main";

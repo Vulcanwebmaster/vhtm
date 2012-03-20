@@ -8,6 +8,7 @@ C-libraries and Token definitions
 #include <string.h> /* for strdup */
 /*#include <stdlib.h> */ /* for atoi */
 #include "parser.tab.h" /* for token definitions and yylval */
+char linebuf;
 %}
 /*=========================================================================
 TOKEN Definitions
@@ -30,6 +31,7 @@ end { return(END); }
 endif { return(ENDIF); }
 endwhile { return(ENDWHILE); }
 endfor { return(ENDFOR); }
+endfunction { return(ENDFUNCTION); }
 fi { return(FI); }
 if { return(IF); }
 begin { return(IN); }
@@ -116,13 +118,16 @@ to { return(TO); }
 	}
 }
 
-[ \t\n]+ /* eat up whitespace */
+[ \t\n]+ /* eat up whitespace */ { linebuf = yytext[0];}
 . { return (yytext[0]);}
 %%
 int yywrap(void){}
 void yyerror(char *s)
 {
-    printf("%s at line % d!\n", s, yylineno);
+	if (linebuf == '\n')
+		printf("%s at line % d!\n", s, yylineno - 1);
+		else 
+			printf("%s at line % d!\n", s, yylineno);
 	exit(0);
 }
 /************************** End Scanner File *****************************/

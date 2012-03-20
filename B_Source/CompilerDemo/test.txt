@@ -1,7 +1,10 @@
 var
 	integer a;
+function k()
+begin
+endfunction;
 begin
 	for a := 7 to 10 do 
 		write -1;
 	endfor;
-end
+end.
