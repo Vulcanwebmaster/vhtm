@@ -148,6 +148,15 @@ namespace NIW_Website_2.Sites {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl content4;
         
         /// <summary>
+        /// content5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content5;
+        
+        /// <summary>
         /// Tieu_chi_hoat_dong control.
         /// </summary>
         /// <remarks>

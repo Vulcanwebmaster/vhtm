@@ -137,11 +137,14 @@
                                     Hãy liên hệ chúng tôi!                                     
                               </p>
                                 <p style="text-indent: 1cm">
-                                    NIW tự tin đem đến cho khách hàng:.<br />
-                                    
+                                    NIW tự tin đem đến cho khách hàng:
+                                </p>
+                                <p style="text-indent: 1cm">   
                                     Các thiết kế website hiện đại và đầy ấn tượng
                                     Cung cấp giải pháp hoàn hảo cho việc quảng bá thương hiệu trên Internet 
-                                    Dịch vụ tư vấn và hỗ trợ khách hàng 24/7
+                                </p>
+                                <p style="text-indent: 1cm">                                   
+                                    Dịch vụ tư vấn và hỗ trợ khách hàng 24/7.
                                 </p>
                                 
                                 <span class="hr "><a href="#top" class="scrollTop">top</a></span>
@@ -152,8 +155,12 @@
                                     Hãy liên hệ chúng tôi!</p>
                                 <p style="text-indent: 1cm">                                                                        
                                     NIW tự tin đem đến cho khách hàng:
+                                </p>
+                                <p style="text-indent: 1cm">
                                     Các phần mềm ứng dụng tốt nhất ở mọi lĩnh vực như kế toán, quản lý nguồn lực trong doanh nghiệp, đồ họa.
-                                    Dịch vụ tư vấn và hỗ trợ khách hàng 24/7.</p>                                                               
+                                </p>   
+                                <p style="text-indent: 1cm">                                                                                                           
+                                    Dịch vụ tư vấn và hỗ trợ khách hàng 24/7.</p>                                                             
                                 <span class="hr "><a href="#top" class="scrollTop">top</a></span>                                                              
                                 <!--end entry-content-->
                             </div>
