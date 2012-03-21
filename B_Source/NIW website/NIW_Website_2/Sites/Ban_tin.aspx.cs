@@ -42,6 +42,11 @@ namespace NIW_Website_2.Sites
 
             tin_moi_nhat.InnerText = element.Element("Tinmoinhat").Value;
 
+            Cac_tinh_nang.InnerText = element.Element("Tintuc").Element("Cac_tinh_nang").Value;
+            thiet_ke_noi_bat.InnerText = element.Element("Thiet_ke_noi_bat").Value;
+            da_chuc_nang.InnerText = element.Element("Da_chuc_nang").Value;
+            huong_nguoi_su_dung.InnerText = element.Element("Huong_nguoi_su_dung").Value;
+
             //Rieng:
             title_web.InnerText = element.Element("Tintuc").Element("title").Value;
             Cac_tin_tuc.InnerText = element.Element("Tintuc").Element("Cac_tin_tuc").Value;

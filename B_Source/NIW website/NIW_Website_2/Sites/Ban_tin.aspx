@@ -147,22 +147,25 @@
                             <h3 class="widgettitle" runat="server" id="Cac_tinh_nang">
                                 Các tính năng</h3>
                             <div class="entry box_entry">
-                                <p>
-                                    <strong>Thiết kế nổi bật</strong><br />
-                                    Lorem ipsum dolor sit amet, usmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p style="text-align: justify">
+                                    <strong runat="server" id="thiet_ke_noi_bat">Thiết kế nổi bật</strong><br />
+                                    Với đội ngũ thiết kế có trình độ và giàu kinh nghiệm, chúng tôi cam kết sẽ đem 
+                                    tới cho bạn những sản phẩm website với mẫu mã nổi bật, với một phong cách riêng 
+                                    biệt, đảm bảo làm hài lòng những khách hàng có nhu cầu thẩm mỹ khắt khe nhất.</p>
                             </div>
                             <div class="entry box_entry">
-                                <p>
-                                    <strong>Đa chức năng</strong><br />
-                                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua.</p>
+                                <p style="text-align: justify">
+                                    <strong runat="server" id="da_chuc_nang">Đa chức năng</strong><br />
+                                    Các sản phẩm đa chức năng có thể đáp ứng mọi nhu cầu khắt khe của nhiều đối tượng khách hàng. 
+                                    Sự kết hợp nhiều khả năng trong một, sản phẩm của NIW hướng tới một sự hoàn hảo 
+                                    trong lĩnh vực Công nghệ thông tin phục vụ khách hàng. </p>
                             </div>
                             <div class="entry box_entry">
-                                <p>
-                                    <strong>Hướng người sử dụng</strong><br />
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-                                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua.</p>
+                                <p style="text-align: justify">
+                                    <strong runat="server" id="huong_nguoi_su_dung">Hướng người sử dụng</strong><br />
+                                    Một sản phẩm dù nhiều chức năng, giao diện trau chuốt thế nào thì mục tiêu cuối cùng vẫn là phục vụ khách hàng. Vì vậy, 
+                                    chúng tôi chủ trương quan tâm và tìm hiểu nhu cầu của quý khách, từ đó mang tới 
+                                    cho mọi người những sản phẩm thiết thực, dễ sử dụng và bảo trì.</p>
                             </div>
                             <!--end box-->
                         </div>

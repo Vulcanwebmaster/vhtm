@@ -16,7 +16,7 @@ namespace NIW_Website_2
     {
         public static int language=1;
 
-        public static String host = "http://niw.com.vn";
+        public static String host = "http://localhost:28535";
 
         public static void getdata_gioithieu(String linkXml, ref String title, ref String content)
         {

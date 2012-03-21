@@ -60,13 +60,18 @@ namespace NIW_Website_2.Sites
 
             Tin_moi_nhat.InnerText = element.Element("Tinmoinhat").Value;
 
+            Cac_tinh_nang.InnerText = element.Element("Tintuc").Element("Cac_tinh_nang").Value;
+            thiet_ke_noi_bat.InnerText = element.Element("Thiet_ke_noi_bat").Value;
+            da_chuc_nang.InnerText = element.Element("Da_chuc_nang").Value;
+            huong_nguoi_su_dung.InnerText = element.Element("Huong_nguoi_su_dung").Value;
+
             //Rieng:
             title.InnerText = element.Element("Gioithieu").Element("title").Value;
             map1.InnerText = element.Element("Gioithieu").Element("map1").Value;
             map2.InnerText = element.Element("Gioithieu").Element("map2").Value;
             Loi_gioi_thieu.InnerText = element.Element("Gioithieu").Element("Loi_gioi_thieu").Value;
             Vai_net_chinh.InnerText = element.Element("Gioithieu").Element("Vai_net_chinh").Value;
-            Thong_tin.InnerText = element.Element("Gioithieu").Element("Thong_tin").Value;
+            //Thong_tin.InnerText = element.Element("Gioithieu").Element("Thong_tin").Value;
             Tieu_chi_hoat_dong.InnerText = element.Element("Gioithieu").Element("Tieu_chi_hoat_dong").Value;
         }
 

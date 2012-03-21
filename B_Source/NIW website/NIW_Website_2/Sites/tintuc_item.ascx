@@ -11,5 +11,5 @@
             
     </div>
     
-    <hr style="border-top-style: none; clear: both; margin-top: 20px; margin-bottom: 10px; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #C6E2FF;" />
+    <hr style="border-top-style: none; clear: both; margin-top: 20px; margin-bottom: 20px; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #C6E2FF;" />
 </div>

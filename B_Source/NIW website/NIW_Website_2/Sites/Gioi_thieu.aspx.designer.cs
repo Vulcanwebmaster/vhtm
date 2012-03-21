@@ -130,31 +130,40 @@ namespace NIW_Website_2.Sites {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Tieu_chi_hoat_dong;
         
         /// <summary>
-        /// Thong_tin control.
+        /// Cac_tinh_nang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Thong_tin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cac_tinh_nang;
         
         /// <summary>
-        /// Tuyen_dung control.
+        /// thiet_ke_noi_bat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Tuyen_dung;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl thiet_ke_noi_bat;
         
         /// <summary>
-        /// Thong_tin_lien_he control.
+        /// da_chuc_nang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Thong_tin_lien_he;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl da_chuc_nang;
+        
+        /// <summary>
+        /// huong_nguoi_su_dung control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl huong_nguoi_su_dung;
         
         /// <summary>
         /// xem control.

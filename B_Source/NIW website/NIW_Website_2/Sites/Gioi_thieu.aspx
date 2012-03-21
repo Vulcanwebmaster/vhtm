@@ -130,16 +130,15 @@
                             <div class="entry-content">
                                 <div>
                                     <br />
-                                    <p id="content" class="content" runat="server" style="text-align: justify" />
+                                    <p id="content" class="content" runat="server" 
+                                        style="text-align: justify; text-indent: 1.5cm;" />
                                 </div>
                                 <span class="hr "></span>&nbsp;
-                                <h3 runat="server" id="Tieu_chi_hoat_dong">
+                                <h3 runat="server" id="Tieu_chi_hoat_dong" style="padding: 0px">
                                     Tiêu chí hoạt động</h3>
-                                <blockquote>
+                                <blockquote style="font-family: Arial, Helvetica, sans-serif; padding-top: 20px;">
                                     <p>
-                                        From graphics to web development, audio to video and more.<br />
-                                        get the skills you want from our family of tutorial and resource sites. Need more?
-                                        We also offer a Plus program where you can access source files and bonus tutorials.</p>
+                                        Sự hài lòng của quý khách hàng là cam kết và thành công của chúng tôi.</p>
                                 </blockquote>
                                 <!--end entry-content-->
                             </div>
@@ -154,25 +153,28 @@
                             <!-- needed for smooth end of sidebar background-->
                         </span>
                         <div class="box_small box widget community_news">
-                            <h3 class="widgettitle" runat="server" id="Thong_tin">
-                                Thông tin</h3>
+                            <h3 class="widgettitle" runat="server" id="Cac_tinh_nang">
+                                Các tính năng</h3>
                             <div class="entry box_entry">
-                                <p>
-                                    <strong>Cơ cấu tổ chức</strong><br />
-                                    Lorem ipsum dolor sit amet, usmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p style="text-align: justify">
+                                    <strong id="thiet_ke_noi_bat" runat="server">Thiết kế nổi bật</strong><br />
+                                    Với đội ngũ thiết kế có trình độ và giàu kinh nghiệm, chúng tôi cam kết sẽ đem 
+                                    tới cho bạn những sản phẩm website với mẫu mã nổi bật, với một phong cách riêng 
+                                    biệt, đảm bảo làm hài lòng những khách hàng có nhu cầu thẩm mỹ khắt khe nhất.</p>
                             </div>
                             <div class="entry box_entry">
-                                <p>
-                                    <strong runat="server" id="Tuyen_dung">Tuyển dụng</strong><br />
-                                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua.</p>
+                                <p style="text-align: justify">
+                                    <strong id="da_chuc_nang" runat="server">Đa chức năng</strong><br />
+                                    Các sản phẩm đa chức năng có thể đáp ứng mọi nhu cầu khắt khe của nhiều đối tượng khách hàng. 
+                                    Sự kết hợp nhiều khả năng trong một, sản phẩm của NIW hướng tới một sự hoàn hảo 
+                                    trong lĩnh vực Công nghệ thông tin phục vụ khách hàng. </p>
                             </div>
                             <div class="entry box_entry">
-                                <p>
-                                    <strong runat="server" id="Thong_tin_lien_he">Thông tin liên hệ</strong><br />
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-                                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua.</p>
+                                <p style="text-align: justify">
+                                    <strong id="huong_nguoi_su_dung" runat="server">Hướng người sử dụng</strong><br />
+                                    Một sản phẩm dù nhiều chức năng, giao diện trau chuốt thế nào thì mục tiêu cuối cùng vẫn là phục vụ khách hàng. Vì vậy, 
+                                    chúng tôi chủ trương quan tâm và tìm hiểu nhu cầu của quý khách, từ đó mang tới 
+                                    cho mọi người những sản phẩm thiết thực, dễ sử dụng và bảo trì.</p>
                             </div>
                             <!--end box-->
                         </div>
