@@ -9,29 +9,15 @@
     <meta name="robots" content="index, follow" />
     <!-- title -->
     <title runat="server" id="title_web">NIW &#8211; Tin tức</title>
-    <!-- feeds and pingback -->
-    <link rel="alternate" type="application/rss+xml" title="Avisio &#8211; a flexible Wordpress Theme RSS2 Feed"
-        href="http://www.kriesi.at/themes/avisio/feed/" />
-    <link rel="pingback" href="http://www.kriesi.at/themes/avisio/xmlrpc.php" />
+    <meta name="robots" content="NIW" />
     <!-- stylesheets -->
-    <link rel="stylesheet" href="http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/prettyPhoto/css/prettyPhoto.css"
+    <link rel="stylesheet" href="../CSS/prettyPhoto.css"
         type="text/css" media="screen" />
-    <link rel="stylesheet" href="http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/style.css"
+    <link rel="stylesheet" href="../CSS/style.css"
         type="text/css" media="screen" />
-    <link rel="stylesheet" href="http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/css/style1.css"
+    <link rel="stylesheet" href="../CSS/style1.css"
         type="text/css" media="screen" />
     <link type="text/css" href="../CSS/StyleSheet1.css" rel="Stylesheet" />
-    <!-- ########## end css ########## -->
-    <!-- scripts -->
-    <!--[if IE 6]>
-<script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/dd_belated_png.js'></script>
-<script>DD_belatedPNG.fix('.ie6fix, blockquote');</script>
-<style>.box ul li a, li, .hr {zoom:1;}</style>
-<![endif]-->
-    <!--[if lt IE 9]>
-<style>.boxed {border:1px solid #fff}</style>
-<![endif]-->
-    <!-- Make Slideshow variables available for Javascript-->
     <script type='text/javascript'>
         slideShowArray = [];
         slideShowArray['feature_count'] = '10';
@@ -49,28 +35,26 @@
         slideShowArray['save_my_options'] = '1';
         slideShowArray['Submit'] = 'Save Changes'; 
     </script>
-    <meta name='robots' content='index,follow' />
-    <link rel="alternate" type="application/rss+xml" title="Avisio - a flexible Wordpress Theme &raquo; About the theme Comments Feed"
-        href="http://www.kriesi.at/themes/avisio/a-little-about-you/feed/" />
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-includes/js/comment-reply.js?ver=20090102'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/prettyPhoto/js/jquery.prettyPhoto.js?ver=3.3.1'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/flashplayer/flowplayer-3.1.4.min.js?ver=3.3.1'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/js/custom.js?ver=3.3.1'></script>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kriesi.at/themes/avisio/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kriesi.at/themes/avisio/wp-includes/wlwmanifest.xml" />
-    <link rel='next' title='Blog' href='http://www.kriesi.at/themes/avisio/blog/' />
+     <meta name='robots' content ="Ban Tin NIW"/>
+   
+    <script type='text/javascript' src='../Scripts/comment-reply.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery-1.4.1.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery-ver=1.4.1.js'></script>
+    <script type='text/javascript' src='../Scripts/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='../Scripts/flowplayer-3.1.4.min.js'></script>
+    <script type='text/javascript' src='../Scripts/custom.js'></script>
+
     <!-- Debugging help, do not remove -->
     <meta name="Framework" content="Kpress" />
     <meta name="Theme Version" content="1.2" />
     <meta name="Framework Version" content="3.1" />
     <meta name="CMS Version" content="3.3.1" />
-    <link rel='canonical' href='http://www.kriesi.at/themes/avisio/a-little-about-you/' />
-    <link rel="stylesheet" href="http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/kfw_styleswitch.css"
+    <link rel='canonical' href='Ban_tin.aspx' />
+    <link rel="stylesheet" href="../CSS/kfw_styleswitch.css"
         type="text/css" />
-    <script type="text/javascript" src="http://www.kriesi.at/themes/avisio/wp-content/plugins/kfw_styleswitch/kfw_styleswitch.js"></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/framework/fonts/cufon.js'></script>
-    <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-content/themes/avisio/framework/fonts/josefine_small.font.js'></script>
+    <script type="text/javascript" src="../Scripts/kfw_styleswitch.js"></script>
+    <script type='text/javascript' src='../Fonts/cufon.js'></script>
+    <script type='text/javascript' src='../Fonts/josefine_small.font.js'></script>
     <script type='text/javascript'>
 
         Cufon.replace('#top h1, #top  h2, #top h3, #top  h4, #top  h5, #top  h6, #top  legend, #top .sliderheading, .big_button strong, .dynamicFont', {
@@ -88,7 +72,7 @@
     </style>
     <!-- end custom styles-->
     <!-- meta tags, needed for javascript -->
-    <meta name="temp_url" content="http://www.kriesi.at/themes/avisio/wp-content/themes/avisio" />
+    <meta name="temp_url" content="NIW" />
 </head>
 <body id='top' class="page page-id-37 page-parent page-template-default">
     <form id="Form1" runat="server">
@@ -219,11 +203,11 @@
                     <div id="archives-3" class="box_small box widget widget_archive">
                         <h3 class="widgettitle" runat="server" id="download">
                             Download</h3>
-                        <ul>
-                            <li><a href='http://www.mediafire.com/?a5aymyauzprlx' title='MSVS2010'>MS Visual Studio 2010</a></li>
-                            <li><a href='http://www.mediafire.com/?8b9nwvh34rvr8d8' title='SKYPE'>Skype 5.6</a></li>
-                            <li><a href='http://htwares.com/windows/security-privacy/anti-virus-tools/download/avg-free-edition/' title='AVG'>AVG Free Edition 2012 12.0</a></li>
-                            <li><a href='http://softbuzz.net/Windows/Audio-Multimedia/Rippers-Converters/WinX-Video-Converter_24_1.html' title='WINX'>WinX Video Converter 4.5.6</a></li>
+                      <ul>
+                            <li><a href='http://kmplayer.en.softonic.com/' title='KMPlayer'>KMPlayer Free</a></li>
+                            <li><a href='http://www.skype.com/intl/en/business/download/' title='SKYPE'>Skype 5.6</a></li>
+                            <li><a href='http://free.avg.com/us-en/download' title='AVG'>AVG Free Edition 2012 12.0</a></li>
+                            <li><a href='http://www.winxdvd.com/video-converter/download.htm' title='WINX'>WinX Video Converter 4.5.6</a></li>
                         </ul>
                     </div>
                 </div>
@@ -262,9 +246,9 @@
                 <span class="copyright">&copy; Copyright <a href="../Default.aspx">NIW &#8211; Công
                     ty TNHH Công nghệ phần mềm</a> - Design by NIW</span>
                 <ul class="social_bookmarks">                    
-                    <li class='facebook'><a class='ie6fix' href='http://facebook.com/pages/Kriesi/333648177216'>
-                        Facebook</a></li><li class='twitter'><a class='ie6fix' href='http://www.twitter.com/kriesi'>
-                            Twitter</a></li><li class='flickr'><a class='ie6fix' href='http://www.flickr.com/people/34166943@N05'>
+                    <li class='facebook'><a class='ie6fix' href="http://facebook.com.vn">
+                        Facebook</a></li><li class='twitter'><a class='ie6fix' href="http://twitter.com">
+                            Twitter</a></li><li class='flickr'><a class='ie6fix' href="http://www.flickr.com">
                                 flickr</a></li>
                 </ul>
                 <a href="#top" class='scrollTop'>top</a>
@@ -274,8 +258,6 @@
         </div>
         <!--end wrapp_all -->
     </div>
-    <script type="text/javascript" src="http://www.kriesi.at/themes/avisio/wp-content/plugins/avia_external_link/avia_external_link.js?v=2"></script>
-    
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
