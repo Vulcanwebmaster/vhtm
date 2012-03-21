@@ -55,7 +55,7 @@ namespace NIW_Website_2.Sites
 
             tin_moi_nhat.InnerText = element.Element("Tinmoinhat").Value;
 
-            Cac_tinh_nang.InnerText = element.Element("Tintuc").Element("Cac_tinh_nang").Value;
+            Cac_tinh_nang.InnerText = element.Element("Cac_tinh_nang").Value;
             thiet_ke_noi_bat.InnerText = element.Element("Thiet_ke_noi_bat").Value;
             da_chuc_nang.InnerText = element.Element("Da_chuc_nang").Value;
             huong_nguoi_su_dung.InnerText = element.Element("Huong_nguoi_su_dung").Value;
@@ -65,8 +65,7 @@ namespace NIW_Website_2.Sites
             Cac_dich_vu.InnerText = element.Element("Sanpham").Element("Cac_dich_vu").Value;
             map1.InnerText = element.Element("Sanpham").Element("map1").Value;
             map2.InnerText = element.Element("Sanpham").Element("map2").Value;
-            Thiet_ke_Website.InnerText = element.Element("Sanpham").Element("Thiet_ke_website").Value;
-            Cac_tinh_nang.InnerText = element.Element("Sanpham").Element("Cac_dich_vu").Value;
+            Thiet_ke_Website.InnerText = element.Element("Sanpham").Element("Thiet_ke_website").Value;            
             Phan_mem_ung_dung.InnerText = element.Element("Sanpham").Element("Phan_mem_ung_dung").Value;
             Dichvu.InnerText = element.Element("Sanpham").Element("Dich_vu").Value;
         }
