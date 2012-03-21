@@ -131,53 +131,30 @@
                             <div class="entry-content">                                
                                 <h2 runat="server" id="Thiet_ke_Website">
                                     Thiết kế Website</h2>
-                                <p>
-                                    Audio to video and more, get the skills you want from our family of tutorial and
-                                    resource sites. Need more? We also offer a Plus program where you can access source
-                                    files and bonus tutorials .</p>
-                                <p>
-                                    From graphics to web development, audio to video and more.<br />
-                                    get the skills you want from our family of tutorial and resource sites. Need more?
-                                    We also offer a Plus program where you can access source files and bonus tutorials.</p>
-                                <ul>
-                                    <li><a href="#">Home</a> &#8211; From graphics to web development, audio to video and
-                                        more</li>
-                                    <li><a href="#">Portfolio</a> &#8211; From our family of tutorial and resource sites</li>
-                                    <li><a href="#">About</a> &#8211; We also offer a Plus program where you can access
-                                        source files and bonus tutorials</li>
-                                    <li>Audio to video and more, get the skills</li>
-                                    <li>This is an example of a static page</li>
-                                    <li>some small punchline goes here</li>
-                                </ul>
+                                <p style="text-indent: 1cm">
+                                    Bạn muốn phát triển cửa hàng hay công ty một cách chuyên nghiệp và hiệu quả?
+                                    Bạn muốn mọi người biết đến website của mình?
+                                    Hãy liên hệ chúng tôi!                                     
+                              </p>
+                                <p style="text-indent: 1cm">
+                                    NIW tự tin đem đến cho khách hàng:.<br />
+                                    
+                                    Các thiết kế website hiện đại và đầy ấn tượng
+                                    Cung cấp giải pháp hoàn hảo cho việc quảng bá thương hiệu trên Internet 
+                                    Dịch vụ tư vấn và hỗ trợ khách hàng 24/7
+                                </p>
+                                
                                 <span class="hr "><a href="#top" class="scrollTop">top</a></span>
                                 <h2 runat="server" id="Phan_mem_ung_dung">
                                     Phần mềm ứng dụng</h2>
-                                <p>
-                                    Audio to video and more, get the skills you want from our family of tutorial and
-                                    resource sites.</p>
-                                <p>
-                                    Need more? We also offer a Plus program where you can access source files and bonus
-                                    tutorials .From graphics to web development, audio to video and more.</p>
-                                <ol>
-                                    <li><a href="#">Home</a> &#8211; From graphics to web development, audio to video and
-                                        more</li>
-                                    <li><a href="#">Portfolio</a> &#8211; From our family of tutorial and resource sites</li>
-                                    <li><a href="#">About</a> &#8211; We also offer a Plus program where you can access
-                                        source files and bonus tutorials</li>
-                                    <li>Audio to video and more, get the skills</li>
-                                    <li>This is an example of a static page</li>
-                                    <li>some small punchline goes here</li>
-                                </ol>
-                                <p>
-                                    get the skills you want from our family of tutorial and resource sites. Need more?
-                                    We also offer a Plus program where you can access source files and bonus tutorials.</p>
-                                <span class="hr "><a href="#top" class="scrollTop">top</a></span>
-                                <h3 runat="server" id="Dichvu">
-                                    Dịch vụ</h3>
-                                <p>
-                                    Audio to video and more, get the skills you want from our family of tutorial and
-                                    resource sites. Need more? We also offer a Plus program where you can access source
-                                    files and bonus tutorials .</p>                                
+                                <p style="text-indent: 1cm">
+                                    Bạn đang cần một phần mềm ứng dụng hoàn thiện để nâng cao hiệu quả sản xuất kinh doanh.
+                                    Hãy liên hệ chúng tôi!</p>
+                                <p style="text-indent: 1cm">                                                                        
+                                    NIW tự tin đem đến cho khách hàng:
+                                    Các phần mềm ứng dụng tốt nhất ở mọi lĩnh vực như kế toán, quản lý nguồn lực trong doanh nghiệp, đồ họa.
+                                    Dịch vụ tư vấn và hỗ trợ khách hàng 24/7.</p>                                                               
+                                <span class="hr "><a href="#top" class="scrollTop">top</a></span>                                                              
                                 <!--end entry-content-->
                             </div>
                             <!--end entry -->

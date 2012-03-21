@@ -67,7 +67,7 @@ namespace NIW_Website_2.Sites
             map2.InnerText = element.Element("Sanpham").Element("map2").Value;
             Thiet_ke_Website.InnerText = element.Element("Sanpham").Element("Thiet_ke_website").Value;            
             Phan_mem_ung_dung.InnerText = element.Element("Sanpham").Element("Phan_mem_ung_dung").Value;
-            Dichvu.InnerText = element.Element("Sanpham").Element("Dich_vu").Value;
+           // Dichvu.InnerText = element.Element("Sanpham").Element("Dich_vu").Value;
         }
 
         protected void english_click(object sender, ImageClickEventArgs e)

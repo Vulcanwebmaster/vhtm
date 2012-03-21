@@ -112,13 +112,40 @@ namespace NIW_Website_2.Sites {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Loi_gioi_thieu;
         
         /// <summary>
-        /// content control.
+        /// content1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content1;
+        
+        /// <summary>
+        /// content2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content2;
+        
+        /// <summary>
+        /// content3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content3;
+        
+        /// <summary>
+        /// content4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl content4;
         
         /// <summary>
         /// Tieu_chi_hoat_dong control.

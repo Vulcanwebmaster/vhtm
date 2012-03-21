@@ -16,7 +16,10 @@ namespace NIW_Website_2.Sites
             String title_value = "";
             String content_value = "";
             functions.getdata_gioithieu(functions.host + "/CSDL/XMLFile1.xml", ref title_value, ref content_value);            
-            content.InnerText = content_value;
+            content1.InnerText = content_value.Split('*')[0];
+            content2.InnerText = content_value.Split('*')[1];
+            content3.InnerText = content_value.Split('*')[2];
+            content4.InnerText = content_value.Split('*')[3];
             get_news();
 
             change_language();

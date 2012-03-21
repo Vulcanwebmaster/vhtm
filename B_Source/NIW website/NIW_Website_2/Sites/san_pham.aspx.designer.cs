@@ -121,15 +121,6 @@ namespace NIW_Website_2.Sites {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Phan_mem_ung_dung;
         
         /// <summary>
-        /// Dichvu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Dichvu;
-        
-        /// <summary>
         /// Cac_tinh_nang control.
         /// </summary>
         /// <remarks>

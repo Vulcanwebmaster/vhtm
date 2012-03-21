@@ -130,8 +130,15 @@
                             <div class="entry-content">
                                 <div>
                                     <br />
-                                    <p id="content" class="content" runat="server" 
-                                        style="text-align: justify; text-indent: 1.5cm;" />
+                                    <p id="content1" class="content" runat="server" 
+                                        style="text-align: justify; text-indent: 1cm; margin-bottom: 10px;" />
+                                        <p id="content2" class="content" runat="server" 
+                                        style="text-align: justify; text-indent: 1cm; margin-bottom: 10px;" />
+                                        <p id="content3" class="content" runat="server" 
+                                        style="text-align: justify; text-indent: 1cm; margin-bottom: 10px;" />
+                                        <p id="content4" class="content" runat="server" 
+                                        style="text-align: right; margin-bottom: 10px; font-style: italic;" 
+                                        align="right" />
                                 </div>
                                 <span class="hr "></span>&nbsp;
                                 <h3 runat="server" id="Tieu_chi_hoat_dong" style="padding: 0px">
