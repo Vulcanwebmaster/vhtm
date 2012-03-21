@@ -85,15 +85,15 @@
                     <!-- Navigation for Pages starts here -->
                     <ul id="menu-main" class="nav">
                         <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="/Default.aspx"><strong class="menu_item_2"  id="Trang_chu" runat="server">Trang chủ</strong></a></li>
+                            <a href="../Default.aspx"><strong class="menu_item_2"  id="Trang_chu" runat="server">Trang chủ</strong></a></li>
                         <li id="menu-item-119" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                            <a href="/Sites/Gioi_thieu.aspx"><strong class="menu_item_2" id="Gioi_thieu_menu" runat="server">Giới thiệu</strong></a>
+                            <a href="Gioi_thieu.aspx"><strong class="menu_item_2" id="Gioi_thieu_menu" runat="server">Giới thiệu</strong></a>
                         </li>
                         <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="/Sites/san_pham.aspx"><strong  class="menu_item_2" id="Dich_vu" runat="server">Dịch vụ</strong></a>
+                            <a href="san_pham.aspx"><strong  class="menu_item_2" id="Dich_vu" runat="server">Dịch vụ</strong></a>
                         </li>
                         <li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="/Sites/Tin_tuc.aspx"><strong class="menu_item_2" id="Tin_tuc" runat="server">Tin tức</strong></a></li>    
+                            <a href="Tin_tuc.aspx"><strong class="menu_item_2" id="Tin_tuc" runat="server">Tin tức</strong></a></li>    
                                                                                                
                         <asp:ImageButton runat="server" ID="english" ImageUrl="~/images/english flag.gif" CssClass="menu_item_2" OnClick="english_click"/>
                         <asp:ImageButton runat="server" ID="vietnamese" ImageUrl="~/images/vietnam.jpg"  CssClass="menu_item_2" OnClick="vietnamese_click"/>

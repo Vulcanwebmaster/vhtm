@@ -96,7 +96,7 @@ namespace NIW_Website_2
 
         public static void get_news_footer(String[] title,String[] image_url,String[] content)
         {
-            XElement element = XElement.Load(host+"/CSDL/XMLFile1.xml");
+            XElement element = XElement.Load(host + "/CSDL/XMLFile1.xml");
             XElement newelement = element.Element("tintuc");
 
             IEnumerable<XElement> ds = from el in newelement.Elements("document")

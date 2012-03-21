@@ -49,7 +49,7 @@
         slideShowArray['save_my_options'] = '1';
         slideShowArray['Submit'] = 'Save Changes'; 
     </script>
-    <meta name='robots' content='noindex,nofollow' />
+    <meta name='robots' content='index,follow' />
     <link rel="alternate" type="application/rss+xml" title="Avisio - a flexible Wordpress Theme &raquo; About the theme Comments Feed"
         href="http://www.kriesi.at/themes/avisio/a-little-about-you/feed/" />
     <script type='text/javascript' src='http://www.kriesi.at/themes/avisio/wp-includes/js/comment-reply.js?ver=20090102'></script>
