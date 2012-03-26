@@ -215,7 +215,7 @@
                                     <p style="text-align: justify; height: 200px;">
                                         <span class="dropcap2 ie6fix">2</span>Với tiêu chí xây dựng website nhằm đáp ứng
                                         mọi nhu cầu của mọi đối tượng khách hàng, sản phẩm web của NIW với những mẫu mã
-                                        đẹp và gọn nhẹ sẽ giúp bạn thỏa mãn cái nhìn và vấn đề kinh te
+                                        đẹp và gọn nhẹ sẽ giúp bạn thỏa mãn cái nhìn và vấn đề kinh tế.
                                     </p>
                                     <p>
                                         <img class='noborder ie6fix' src="images/iconsets2.png"

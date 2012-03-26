@@ -149,6 +149,73 @@
         Trong khi đó, giá bán iPad 2 tại Mỹ đã giảm đáng kể ngay sau khi iPad mới ra mắt. Theo đó, bản WiFi 16GB được giảm giá 100 USD từ 499 USD xuống còn 399 USD (tương đương 8,3 triệu đồng), còn bản 3G 16GB có giá 529 USD (giảm từ 629 USD).
       </p>
     </document>
+
+    <document title="Xuất hiện Firefox 14 với nhiều tính năng mới">
+      <image>Firefox-14-2_3e9ca.jpg</image>
+      <p>
+        Không lâu sau khi Firefox 11 được chính thức lộ diện, Mozilla đã lại tiếp tục phát triển phiên bản Firefox 14, với bản thử nghiệm đầu tiên đã được ra mắt với khá nhiều sự thay đổi ấn tượng.
+
+        Download bản thử nghiệm của Firefox 14 tại đây (Bao gồm phiên bản cài đặt và phiên bản Portable dành cho Windows 32-bit và 64-bit).
+
+        Sau khi cài đặt, ấn  tượng đầu tiên mà bạn dễ dàng nhận ra đó là sự thay đổi về giao diện nút bấm trên menu của phần mềm, trong đó nút Back (trở lui) và Forward (tới) đã được đơn giản hóa hơn so với trước đây.
+
+
+        Nút bấm của Firefox đã có phần thay đổi so với trước đây
+
+        Bên cạnh sự thay đổi  chút ít về biểu tượng nút bấm, sự thay đổi đáng chú ý hơn ở Firefox 14 đó là giao diện của tab mới và giao diện trang chủ mặc định.
+
+        Cụ thể, trang chủ mặc định của Firefox 14 ngoài thanh công cụ tìm kiếm của Google trước đây, bên dưới còn được bổ sung thêm thanh công cụ riêng cho phép người dùng nhanh chóng truy cập các chức năng trên Firefox như mục quản lý danh sách Bookmark, lịch sử duyệt web (History), thiết lập tùy chọn (Settings), quản lý add-ons, danh sách download và đồng bộ hóa dữ liệu (Sync).
+
+
+        Trang chủ mặc định mới trên Firefox 14
+
+        Trong trường hợp bạn đang sử dụng trang chủ khác thay vì trang chủ mặc định của Firefox và muốn quay trở lại sử dụng trang chủ này, thì nhấn vào nút Menu ở góc trên bên trái của Firefox, chọn Options. Từ hộp thoại Options hiện ra, chọn tab General, sau đó nhấn vào nút “Restore to default” để khôi phục trang chủ về mặc định của Firefox.
+
+
+
+        Ngoài sự thay đổi về giao diện trang chủ, giao diện trên trang tab mới của Firefox 14 cũng đã có sự biến đổi. Trước đây, khi bạn mở 1 tab mới trên Firefox sẽ hiển thị một trang trắng, nhưng giờ đây, với Firefox 14, danh sách các trang web thường xuyên ghé thăm sẽ được hiển thị dưới dạng các thumbnail, cho phép bạn dễ dàng chọn để truy cập các trang web này nhanh chóng hơn.
+
+
+
+        Bạn có thể nhấn vào biểu tượng dấu X để xóa đi 1 trang web trong danh sách này, hoặc kéo và di chuyển các thumbnail để thay đổi vị trí giữa chúng.
+
+        Một sự thay đổi nhỏ khác về giao diện, đó là khi bạn donwload 1 file bằng Firefox, thông tin về quá trình download sẽ được hiển thị ở góc nhỏ phía bên phải cửa sổ trình duyệt web, là vị trí mũi tên mà lúc thông thường, bạn nhấn vào đó sẽ hiển thị danh sách các file đã download được trên Firefox.
+
+        Khi đang download dữ liệu bằng Firefox, biểu tượng này sẽ hiển thị khoảng thời gian còn lại để quá trình download được hoàn tất.
+
+
+
+        Bên cạnh những sự thay đổi về giao diện, bản thử nghiệm đầu tiên của Firefox 14 cũng được trang bị thêm một tính năng mới khá hữu ích, theo đó cho phép người dùng khôi phục lại trạng thái nguyên bản của Firefox 14 mà không cần phải cài đặt lại phần mềm.
+
+        Tính năng này hữu dụng trong trường hợp Firefox “trở chứng” trong quá trình sử dụng mà người dùng không biết cách khác phục. Trước đây, bạn sẽ phải tốn công gỡ bỏ Firefox và cài đặt mới, nhưng với tính năng khôi phục này, mọi thức sẽ đơn giản hơn.
+
+        Để sử dụng tính năng này, nhấn vào nút Menu ở góc trên bên trái Firefox, chọn Help -> Troubleshooting Information.
+
+
+
+        Từ giao diện trang web hiện ra, nhấn vào nút “Reset UX” để khôi phục lại nguyên mẫu trạng thái của Firefox.
+
+
+
+        Về cơ bản, tính năng này sẽ tạo 1 profile mới của Firefox, nghĩa là sẽ xóa toàn bộ những thiết lập và tùy chọn trước đó, như cache, cookies, lịch sử duyệt web, bookmark, mật khẩu đã ghi nhớ… Do vậy, bạn cần phải hết sức lưu ý trước khi sử dụng tính năng này và chỉ sử dụng những lúc nào cần thiết do Firefox bị gặp lỗi mà không biết cách khắc phục.
+
+        Hiện tính năng mới này chỉ đang áp dụng cho phiên bản thử nghiệm đầu tiên của Firefox 14. Nếu hiệu quả sẽ được trang bị ở những phiên bản tiếp theo sau trong tương lai.
+
+        Về hiệu suất và tốc độ, mặc dù chỉ mới phiên bản thử nghiệm sơ khai, tuy nhiên Firefox 14 vẫn đạt được điểm tối đa trong thử nghiệm mức độ ổn định.
+
+
+        Điểm tối đa khi thử nghiệm độ ổn định của Firefox 14
+
+        Trong khi đó, sử dụng công cụ SunSpider để chấm điểm tốc độ xử lý JavaScript, bản thử nghiệm của Firefox 14 cũng đạt được một kết quả rất khả quan về tốc độ của mình.
+
+
+        Kết quả chấm điểm tốc độ xử lý JavaScript bằng công cụ SunSpider
+
+        Một điều đáng chú ý khác đó là mặc dù chỉ mới phiên bản thử nghiệm, tuy nhiên Firefox 14 vẫn hỗ trợ và tương thích gần như là đầy đủ với các add-on của phiên bản Firefox trước. Đây thực sự là một tin vui với những ai yêu thích Firefox và các add-on của trình duyệt này.
+
+        Trên đây là các tính năng và những thay đổi mới được trang bị cho Firefox 14. Nếu không ngại đây là phiên bản thử nghiệm, bạn vẫn có thể sử dụng Firefox 14 để trở thành trình duyệt mặc định trên máy tính của mình để trải nghiệm những tính năng mới mẻ nhất. (bạn có thể download phiên bản Portable để sử dụng ngay mà không cần cài đặt).
+      </p>
+    </document>
   </tintuc>
   <doitac></doitac>
 </data>
