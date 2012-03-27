@@ -14,6 +14,9 @@ C Libraries, Symbol Table, Code Generator & other C code
 int errors; /* Error Count */
 char * function_name;
 struct lbs * if_var;
+struct lbs * switch_var[20];
+int switch_count = 0;
+char * store_identifier;
 /*-------------------------------------------------------------------------
 The following support backpatching
 -------------------------------------------------------------------------*/
@@ -73,6 +76,15 @@ context_check( enum code_ops operation, char *sym_name, char *scope )
 		else 
 		if (identifier->type == ARR_C && operation == INT_ARR_STORE)  
 			gen_code_variable( CHR_ARR_STORE, identifier);
+		else 
+		if (identifier->type == ARR_D && operation == READ_INT_ARR)  
+			gen_code_variable( READ_DOU_ARR, identifier);
+		else
+		if (identifier->type == ARR_B && operation == READ_INT_ARR)  
+			gen_code_variable( READ_BOL_ARR, identifier);
+		else
+		if (identifier->type == ARR_C && operation == READ_INT_ARR)  
+			gen_code_variable( READ_CHR_ARR, identifier);
 		else
 			gen_code_variable( operation, identifier);
 	}
@@ -103,8 +115,8 @@ TOKENS
 %token <arrIntval> ARRAY_VAL
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE FOR /* For backpatching labels */
-%token SKIP THEN ELSE FI DO END TO ENDIF ENDFOR ENDWHILE ENDFUNCTION
-%token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN
+%token THEN ELSE DO END TO ENDIF ENDFOR ENDWHILE ENDFUNCTION ENDSWITCH
+%token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN CASE SWITCH BREAK DEFAULT
 %token READ
 %token WRITE WRITELINE
 %token ARRAY_I ARRAY_C ARRAY_B ARRAY_D  
@@ -135,7 +147,7 @@ IN
 	main_start = gen_label() - 1;
 }
 commands
-END
+END '.'
 { 
 	gen_code( HALT, 0 ); 
 	YYACCEPT; 
@@ -282,8 +294,16 @@ commands : /* empty */
 | commands command ';'
 ;
 
-command : SKIP
-| READ IDENTIFIER { context_check( READ_VAR, $2, function_name); }
+read_exp : /* empty */
+| read_exp IDENTIFIER { context_check( READ_VAR, $2, function_name); }
+;
+
+read_array_exp: /* empty */
+| read_array_exp IDENTIFIER '[' index ']' { context_check( READ_INT_ARR, $2, function_name); } 
+;
+
+command : READ IDENTIFIER { context_check( READ_VAR, $2, function_name); } read_exp
+| READ IDENTIFIER '[' index ']' { context_check( READ_INT_ARR, $2, function_name); } read_array_exp
 | WRITE IDENTIFIER { context_check( WRITE_VAR, $2, function_name); }
 | WRITE STR_VAL { gen_code_string ( WRITE_STR, $2 );}
 | WRITE exp { gen_code ( WRITE_ALL, 0 );}
@@ -305,8 +325,7 @@ ENDWHILE { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FA
 	context_check( STORE, $2, function_name );
 	$1 = (struct lbs *) newlblrec(); 
 	$1->for_goto = gen_label();
-	context_check( LD_VAR, $2, function_name ); 
-	
+	context_check( LD_VAR, $2, function_name );
 }
 TO exp
 {
@@ -322,6 +341,40 @@ commands
 	context_check( STORE, $2, function_name);
 }
 ENDFOR { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALSE, gen_label() ); }
+| SWITCH '(' IDENTIFIER ')' CASE NUMBER_VAL ':' 
+{
+	if (store_identifier != NULL) free(store_identifier);
+	store_identifier = (char *) malloc (strlen($3)+1);
+	store_identifier = $3;
+	context_check( LD_VAR, $3, function_name);
+	gen_code (LD_INT, $6);
+	gen_code( EQ, 0 );
+	switch_var[switch_count] = (struct lbs *) newlblrec(); 
+	switch_var[switch_count]->for_jmp_false = reserve_loc();
+}
+commands { switch_var[switch_count]->for_goto = reserve_loc(); }
+BREAK { back_patch( switch_var[switch_count]->for_goto, GOTO, gen_label() ); }';'
+switch_exps
+default_exp
+ENDSWITCH ';'
+;
+
+switch_exp: CASE NUMBER_VAL { back_patch( switch_var[switch_count]->for_jmp_false,JMP_FALSE,gen_label());} ':' {
+	switch_count++;
+	context_check( LD_VAR, store_identifier, function_name);
+	gen_code (LD_INT, $2);
+	gen_code( EQ, 0 );
+	switch_var[switch_count] = (struct lbs *) newlblrec(); 
+	switch_var[switch_count]->for_jmp_false = reserve_loc();
+} commands BREAK { back_patch( switch_var[switch_count]->for_goto, GOTO, gen_label() );} ';'
+;
+
+switch_exps : /* empty */
+| switch_exps switch_exp
+;
+
+default_exp: { back_patch( switch_var[switch_count]->for_jmp_false,JMP_FALSE,gen_label() );}  /* empty */
+| DEFAULT { back_patch( switch_var[switch_count]->for_jmp_false,JMP_FALSE,gen_label() ); } ':' commands BREAK ';'
 ;
 
 else_exp: /* empty */ { back_patch( if_var->for_jmp_false,JMP_FALSE,gen_label() );} 
@@ -375,7 +428,11 @@ main( int argc, char *argv[] )
 { 
 	extern FILE *yyin;
 	++argv; --argc;
-	yyin = fopen( argv[0], "r" );
+	FILE * f_temp;
+	f_temp = fopen("temp.txt", "w");
+	fprintf(f_temp, argv[0]);
+	fclose(f_temp);
+	yyin = fopen( argv[0], "r" );	
 	/*yydebug = 1;*/
 	errors = 0;
 	yyparse ();

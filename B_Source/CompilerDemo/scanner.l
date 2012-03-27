@@ -9,6 +9,7 @@ C-libraries and Token definitions
 /*#include <stdlib.h> */ /* for atoi */
 #include "parser.tab.h" /* for token definitions and yylval */
 char linebuf;
+int check = 0;
 %}
 /*=========================================================================
 TOKEN Definitions
@@ -25,37 +26,40 @@ REGULAR EXPRESSIONS defining the tokens for the Simple language
 =========================================================================*/
 %%
 ":=" { return(ASSGNOP); }
-do { return(DO); }
-else { return(ELSE); }
-end { return(END); }
-endif { return(ENDIF); }
-endwhile { return(ENDWHILE); }
-endfor { return(ENDFOR); }
-endfunction { return(ENDFUNCTION); }
-fi { return(FI); }
-if { return(IF); }
-begin { return(IN); }
-integer { return(INTEGER); }
-char { return (CHAR);} /* Added */
-string { return(STRING);} /* Added */
-double { return(DOUBLE);} /* Added */
-bool {return(BOOLEAN);}   /* Added */
-const { return(CONST);}
-"array integer" {return(ARRAY_I);  } 
-"array boolean" {return(ARRAY_B);  }
-"array char" {return(ARRAY_C);  } 
-"array double" {return(ARRAY_D);  }  
-return { return(RETURN); }
-var { return(LET); }
-read { return(READ); }
-skip { return(SKIP); }
-then { return(THEN); }
-while { return(WHILE); }
-write { return(WRITE); }
-writeline { return(WRITELINE); }
-function { return(FUNCTION); }
-for { return(FOR); }
-to { return(TO); }
+do { check = 1; return(DO); }
+else { check = 1; return(ELSE); }
+end { check = 1; return(END); }
+endif { check = 1; return(ENDIF); }
+endwhile { check = 1; return(ENDWHILE); }
+endfor { check = 1; return(ENDFOR); }
+endfunction { check = 1; return(ENDFUNCTION); }
+endswitch {check = 1; return(ENDSWITCH); }
+if { check = 1; return(IF); }
+begin { check = 1; return(IN); }
+integer { check = 1; return(INTEGER); }
+char { check = 1; return (CHAR);} /* Added */
+string { check = 1; return(STRING);} /* Added */
+double { check = 1; return(DOUBLE);} /* Added */
+bool {check = 1; return(BOOLEAN);}   /* Added */
+const { check = 1; return(CONST);}
+"array integer" {check = 1; return(ARRAY_I);  } 
+"array boolean" {check = 1; return(ARRAY_B);  }
+"array char" {check = 1; return(ARRAY_C);  } 
+"array double" {check = 1; return(ARRAY_D);  }  
+return { check = 1; return(RETURN); }
+var { check = 1; return(LET); }
+read { check = 1; return(READ); }
+then { check = 1; return(THEN); }
+while { check = 1; return(WHILE); }
+write { check = 1; return(WRITE); }
+writeline { check = 1; return(WRITELINE); }
+function { check = 1; return(FUNCTION); }
+for { check = 1; return(FOR); }
+to { check = 1; return(TO); }
+switch {check = 1; return(SWITCH); }
+case {check = 1; return(CASE); }
+break {check = 1; return(BREAK); }
+default {check = 1; return(DEFAULT); } 
 {BOOLEAN} { yylval.bolval = yytext; return(NUMBERB_VAL); } /* Added */
 {ID} { yylval.id = (char *) strdup(yytext); return(IDENTIFIER); }
 {DIGIT} { yylval.intval = atoi( yytext ); return(NUMBER_VAL); }
@@ -118,15 +122,115 @@ to { return(TO); }
 	}
 }
 
-[ \t\n]+ /* eat up whitespace */ { linebuf = yytext[0];}
+[ \t\n]+ /* eat up whitespace */ { check = 0; linebuf = yytext[0];}
 . { return (yytext[0]);}
 %%
 int yywrap(void){}
 void yyerror(char *s)
 {
+	char * file_name;
+	int final = -1;
 	if (linebuf == '\n')
-		printf("%s at line % d!\n", s, yylineno - 1);
-		else 
+	{
+		FILE * f_temp;
+		file_name = (char *) malloc (250);
+		f_temp = fopen("temp.txt", "r");
+		char c;
+		int i = 0;
+		while (!feof(f_temp)) 
+		{
+			fscanf(f_temp,"%c",&c);
+			file_name[i] = c;
+			i++;
+		}
+		file_name[i - 1] = '\0';
+		fclose(f_temp);
+		
+		FILE * fp;
+		fp = fopen(file_name, "r");
+		char cur_c;
+		char pre_c;
+		int count = 1;
+		int store = -1;
+		while (!feof(fp)) 
+		{
+			fscanf(fp,"%c",&cur_c);
+			if (cur_c == '\n') 
+			{
+				count++;
+				if (pre_c == '\n' && store == -1)
+				{
+					store = count - 2;
+				}
+				else
+				{
+					pre_c = cur_c;
+				}
+			} else
+			{
+				pre_c = cur_c;
+				store = -1;
+			}
+			if (count == yylineno) break;
+		}
+		fclose(fp);
+		fp = fopen(file_name, "r");
+		if (store == -1) store = count - 1;
+		count = 1;
+		while (!feof(fp)) 
+		{
+			fscanf(fp,"%c",&cur_c);
+			if (cur_c == '\n') 
+			{
+				count++;
+			}
+			if (count == store) break;
+		}
+		char * str_buffer;
+		str_buffer = (char *) malloc (250);
+		int str_len = 0;
+		while (!feof(fp)) 
+		{
+			fscanf(fp,"%c",&cur_c);
+			if (cur_c == '\n') break;
+			else
+			if (cur_c == ' ' || cur_c == '\t')  str_len = 0;
+			else 
+			{
+				str_buffer[str_len] = cur_c;
+				str_len++;
+			}
+		}
+		str_buffer[str_len] = '\0';
+		printf(" %s ",str_buffer);
+		if (str_buffer[str_len - 1] == '(')
+			final = store;
+		else
+		if (strcmp(str_buffer,"endfunction") == 0)
+			final = store;
+		else
+		if (strcmp(str_buffer,"endfor") == 0)
+			final = store;
+		else
+		if (strcmp(str_buffer,"endif") == 0)
+			final = store;
+		else
+		if (strcmp(str_buffer,"endwhile") == 0)
+			final = store;
+		else
+		if (strcmp(str_buffer,"end") == 0)
+			final = store;
+		else
+		if (strcmp(str_buffer,"break") == 0)
+			final = store;
+		else
+		if (strcmp(str_buffer,"endswitch") == 0)
+			final = store;
+		else final = yylineno;
+		printf("%s at line % d!\n", s, final);
+		fclose(fp);
+	}
+	else 
 			printf("%s at line % d!\n", s, yylineno);
 	exit(0);
 }

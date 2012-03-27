@@ -10,7 +10,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	READ_VAR, WRITE_VAR,
 	WRITE_STR, WRITE_ALL, WRITE_LINE, BEGIN_CAL,
 	LT, EQ, NEQ, GT, LTEQ, GTEQ, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,
-	ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL,
+	ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL, READ_INT_ARR, READ_DOU_ARR, READ_BOL_ARR, READ_CHR_ARR,
 	BOL_COMP, BOL_ONLY };
 
 struct mystack
@@ -548,6 +548,73 @@ void fetch_execute_cycle()
 				}
 				stack[top_index+ir.arg.int_val].arr_bol_val[stack[top-1].int_val] = stack[top].bol_val;
 				top--;
+				break;
+			case READ_INT_ARR:
+				fflush(stdout);
+				fflush(stdin);
+				if (stack[top_index+ir.arg.int_val].arr_int_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_int_val = (int *) malloc(stack[top_index+ir.arg.int_val].length);
+				}
+				char temp_arr_1[256];
+				int temp_int;
+				scanf("%[^\n]%*[^\n]",temp_arr_1);
+				temp_int = atoi(temp_arr_1);
+				if (temp_int == 0 && strcmp(temp_arr_1,"0") != 0)
+				{
+					printf("Loi input kieu integer sai!");
+					return;
+				}
+				else
+				{					
+					stack[top_index+ir.arg.int_val].arr_int_val[stack[top].int_val] = temp_int;
+				}
+				break;
+			case READ_DOU_ARR:
+				fflush(stdout);
+				fflush(stdin);
+				if (stack[top_index+ir.arg.int_val].arr_dou_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_dou_val = (double *) malloc(stack[top_index+ir.arg.int_val].length);
+				}
+				char temp_arr_2[256];
+				double temp_dou;
+				scanf("%[^\n]%*[^\n]",temp_arr_2);
+				temp_dou = atof(temp_arr_2);
+				if (temp_dou == 0.0 && strcmp(temp_arr_2,"0.0") != 0)
+				{
+					printf("Loi input kieu double sai!");
+					return;
+				}
+				else
+				{					
+					stack[top_index+ir.arg.int_val].arr_dou_val[stack[top].int_val] = temp_dou; 
+				}
+				break;
+			case READ_BOL_ARR:
+				fflush(stdout);
+				fflush(stdin);
+				if (stack[top_index+ir.arg.int_val].arr_bol_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_bol_val = (int *) malloc(stack[top_index+ir.arg.int_val].length);
+				}
+				char temp_arr_3[10];
+				scanf("%s",temp_arr_3);
+				if (strcmp(temp_arr_3,"true")) stack[top_index+ir.arg.int_val].arr_bol_val[stack[top].int_val] = 1;
+				else 
+					if (strcmp(temp_arr_3,"false")) stack[top_index+ir.arg.int_val].arr_bol_val[stack[top].int_val] = 0;
+					else
+						{
+							printf("Loi input kieu boolean sai!");
+							return;
+						}
+				break;
+			case READ_CHR_ARR:
+				fflush(stdout);
+				fflush(stdin);
+				if (stack[top_index+ir.arg.int_val].arr_chr_val == NULL) {
+					stack[top_index+ir.arg.int_val].arr_chr_val = (char *) malloc(stack[top_index+ir.arg.int_val].length);
+				}
+				char temp_arr_4;
+				scanf("%c",&temp_arr_4);
+				stack[top_index+ir.arg.int_val].arr_chr_val[stack[top].int_val] = temp_arr_4;
 				break;
 			case BEGIN_CAL :
 				start_arg = top + 1;

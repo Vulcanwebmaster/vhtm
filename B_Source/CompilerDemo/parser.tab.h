@@ -49,35 +49,38 @@
      IF = 265,
      WHILE = 266,
      FOR = 267,
-     SKIP = 268,
-     THEN = 269,
-     ELSE = 270,
-     FI = 271,
-     DO = 272,
-     END = 273,
-     TO = 274,
-     ENDIF = 275,
-     ENDFOR = 276,
-     ENDWHILE = 277,
-     ENDFUNCTION = 278,
-     INTEGER = 279,
-     CONST = 280,
-     LET = 281,
-     IN = 282,
-     STRING = 283,
-     DOUBLE = 284,
-     CHAR = 285,
-     FUNCTION = 286,
-     BOOLEAN = 287,
-     READ = 288,
-     WRITE = 289,
-     WRITELINE = 290,
-     ARRAY_I = 291,
-     ARRAY_C = 292,
-     ARRAY_B = 293,
-     ARRAY_D = 294,
-     ASSGNOP = 295,
-     RETURN = 296
+     THEN = 268,
+     ELSE = 269,
+     DO = 270,
+     END = 271,
+     TO = 272,
+     ENDIF = 273,
+     ENDFOR = 274,
+     ENDWHILE = 275,
+     ENDFUNCTION = 276,
+     ENDSWITCH = 277,
+     INTEGER = 278,
+     CONST = 279,
+     LET = 280,
+     IN = 281,
+     STRING = 282,
+     DOUBLE = 283,
+     CHAR = 284,
+     FUNCTION = 285,
+     BOOLEAN = 286,
+     CASE = 287,
+     SWITCH = 288,
+     BREAK = 289,
+     DEFAULT = 290,
+     READ = 291,
+     WRITE = 292,
+     WRITELINE = 293,
+     ARRAY_I = 294,
+     ARRAY_C = 295,
+     ARRAY_B = 296,
+     ARRAY_D = 297,
+     ASSGNOP = 298,
+     RETURN = 299
    };
 #endif
 
@@ -86,12 +89,12 @@
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union 
 /* Line 1676 of yacc.c  */
-#line 84 "parser.y"
+#line 96 "parser.y"
 semrec
 {
 
 /* Line 1676 of yacc.c  */
-#line 85 "parser.y"
+#line 97 "parser.y"
 
 	int intval; /* Integer values */
 	double douval;
@@ -104,7 +107,7 @@ semrec
 
 
 /* Line 1676 of yacc.c  */
-#line 108 "parser.tab.h"
+#line 111 "parser.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

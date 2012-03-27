@@ -1,10 +1,11 @@
 var
-	integer a;
-function k()
+	integer a,b;
+	array integer x[10];
 begin
-endfunction;
-begin
-	for a := 7 to 10 do 
-		write -1;
-	endfor;
+	read a b;
+	read x[1] x[2];
+	write a;
+	write b;
+	write x[1];
+	write x[2];
 end.
