@@ -353,10 +353,17 @@ ENDFOR { gen_code( GOTO, $1->for_goto ); back_patch( $1->for_jmp_false, JMP_FALS
 	switch_var[switch_count]->for_jmp_false = reserve_loc();
 }
 commands { switch_var[switch_count]->for_goto = reserve_loc(); }
-BREAK { back_patch( switch_var[switch_count]->for_goto, GOTO, gen_label() ); }';'
+BREAK ';'
 switch_exps
 default_exp
-ENDSWITCH ';'
+{
+	int temp_count = switch_count;
+	while (temp_count >= 0) {
+		back_patch( switch_var[temp_count]->for_goto, GOTO, gen_label() );
+		temp_count --;
+	}
+}
+ENDSWITCH
 ;
 
 switch_exp: CASE NUMBER_VAL { back_patch( switch_var[switch_count]->for_jmp_false,JMP_FALSE,gen_label());} ':' {
@@ -366,7 +373,7 @@ switch_exp: CASE NUMBER_VAL { back_patch( switch_var[switch_count]->for_jmp_fals
 	gen_code( EQ, 0 );
 	switch_var[switch_count] = (struct lbs *) newlblrec(); 
 	switch_var[switch_count]->for_jmp_false = reserve_loc();
-} commands BREAK { back_patch( switch_var[switch_count]->for_goto, GOTO, gen_label() );} ';'
+} commands { switch_var[switch_count]->for_goto = reserve_loc(); } BREAK ';'
 ;
 
 switch_exps : /* empty */

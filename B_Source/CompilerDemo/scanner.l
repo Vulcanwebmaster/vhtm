@@ -202,7 +202,6 @@ void yyerror(char *s)
 			}
 		}
 		str_buffer[str_len] = '\0';
-		printf(" %s ",str_buffer);
 		if (str_buffer[str_len - 1] == '(')
 			final = store;
 		else
