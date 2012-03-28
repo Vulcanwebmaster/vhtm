@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace VietPas
 {
@@ -83,9 +84,6 @@ namespace VietPas
 
         private void hiệnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (panel_left.Visible == true)
-                panel_left.Visible = false;
-            else panel_left.Visible = true;
             //panel_left.Hide();
         }
 
@@ -102,13 +100,24 @@ namespace VietPas
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Output frm = new Output();
-            frm.Show();
+            Process p = new Process();
+            p.StartInfo.FileName = "minipas.exe";
+            string filename = BasicCommand.GetCurrentFileName(editer);
+            p.StartInfo.Arguments = filename;
+            p.StartInfo.UseShellExecute = true;
+            p.Start();
+            p.WaitForExit();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox frm = new AboutBox();
             frm.ShowDialog();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace VietPas
         public static void OpenFile(TabControl tab)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = @"VC File|*.vc";
+            dialog.Filter = @"Minipas File|*.pas|All Files (*.*)|*.*";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 FileInfo info = new FileInfo(dialog.FileName);
@@ -29,13 +29,13 @@ namespace VietPas
 
                 TabPage newpage = new TabPage();
                 newpage.Text = info.Name;
-
+                newpage.Name = info.FullName;
                 RichTextBox newrtb = new RichTextBox();
                 newrtb.Dock = DockStyle.Fill;
-                newrtb.WordWrap = false;
                 newrtb.Text = str;
+                newrtb.WordWrap = true;
+                newrtb.AcceptsTab = true;
                 newpage.Controls.Add(newrtb);
-
                 tab.TabPages.Add(newpage);
                 tab.SelectedTab = newpage;
             }
@@ -52,6 +52,18 @@ namespace VietPas
             }
         }
 
+        public static string GetCurrentFileName(TabControl tabcontrol)
+        {
+            foreach (TabPage page in tabcontrol.TabPages)
+            {
+                if (tabcontrol.SelectedTab == page)
+                {
+                    return page.Name;
+                }
+            }
+            return "@new";
+        }
+
         public static void CloseAllButThisTab(TabControl tabcontrol)
         {
             foreach (TabPage page in tabcontrol.TabPages)
@@ -66,7 +78,6 @@ namespace VietPas
         public static void NewFile(TabControl tabcontrol)
         {
             int sotab = tabcontrol.TabCount;
-            //MessageBox.Show(sotab.ToString());
             int i=0;
             for (i = 0; i < sotab; )
             {
@@ -83,14 +94,15 @@ namespace VietPas
                 else i++;
             }
 
-            //if (i < sotab)
             {
                 TabPage newpage = new TabPage();
                 newpage.Text = "New File" + i.ToString();
+                newpage.Name = "@new";
 
                 RichTextBox newrtb = new RichTextBox();
                 newrtb.Dock = DockStyle.Fill;
-                newrtb.WordWrap = false;                
+                newrtb.WordWrap = true;
+                newrtb.AcceptsTab = true;
                 newpage.Controls.Add(newrtb);
 
                 tabcontrol.TabPages.Add(newpage);
@@ -122,7 +134,6 @@ namespace VietPas
 
         public static void CutText(TabControl tabcontrol)
         {
-            String selected = "";
             TabPage currenttab = tabcontrol.SelectedTab;
             foreach (RichTextBox rtb in currenttab.Controls)
             {
