@@ -295,11 +295,11 @@ commands : /* empty */
 ;
 
 read_exp : /* empty */
-| read_exp IDENTIFIER { context_check( READ_VAR, $2, function_name); }
+| read_exp ',' IDENTIFIER { context_check( READ_VAR, $3, function_name); }
 ;
 
 read_array_exp: /* empty */
-| read_array_exp IDENTIFIER '[' index ']' { context_check( READ_INT_ARR, $2, function_name); } 
+| read_array_exp ',' IDENTIFIER '[' index ']' { context_check( READ_INT_ARR, $3, function_name); } 
 ;
 
 command : READ IDENTIFIER { context_check( READ_VAR, $2, function_name); } read_exp
