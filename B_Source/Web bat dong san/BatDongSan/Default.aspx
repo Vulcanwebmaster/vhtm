@@ -471,7 +471,7 @@
   <div style="width:181px; float:left; border:1px #9A9A9A solid;" class="left_panel">
     
     <div style="background:url(Images/bds.gif) no-repeat; width:163px; height:26px; padding-left:20px; line-height:25px; float:left"><a href="-Tab=8&cat_id=1.htm" tppabs="http://batdongsan24h.com.vn/?Tab=8&cat_id=1">
-        <font style="color: #FFFFFF" ><strong>Dự án Hà Nam</strong></font></a></div>
+        <font style="color: #FFFFFF" ><strong>Dự án tỉnh Hà Nam</strong></font></a></div>
     <div style="overflow-y:scroll; overflow-x:hidden; float:left; width:183px; max-height:700px; height:auto !important; height:700px">
       
       <div style="width:137px; height:24px; float:left;  no-repeat; padding-left:30px;" class="icon_left"><a href="-Tab=8&cat_id=3&sub_id=1.htm" tppabs="http://batdongsan24h.com.vn/?Tab=8&cat_id=3&sub_id=1"><font class="item_left" style="font-size:11px;">ĐTM Trung Hòa Nhân Chính</font></a></div>
@@ -492,7 +492,7 @@
       
     </div>
     
-    <div style="background:url(Images/bds.gif) no-repeat; width:163px; height:26px; padding-left:20px; line-height:25px; float:left"><a href="-Tab=8&cat_id=2.htm" tppabs="http://batdongsan24h.com.vn/?Tab=8&cat_id=2"><font color="#FFFFFF"><strong>Dự án các tỉnh lân cận</strong></font></a></div>
+    <div style="background:url(Images/bds.gif) no-repeat; width:163px; height:26px; padding-left:20px; line-height:25px; float:left"><a href="-Tab=8&cat_id=2.htm" tppabs="http://batdongsan24h.com.vn/?Tab=8&cat_id=2"><font color="#FFFFFF"><strong>Dự án tỉnh Ninh Bình</strong></font></a></div>
     <div style="overflow-y:scroll; overflow-x:hidden; float:left; width:183px; max-height:700px; height:auto !important; height:700px">
       
       <div style="width:137px; height:24px; float:left;  no-repeat; padding-left:30px;" class="icon_left"><a href="-Tab=8&cat_id=54&sub_id=2.htm" tppabs="http://batdongsan24h.com.vn/?Tab=8&cat_id=54&sub_id=2"><font class="item_left" style="font-size:11px;">ĐTM Nam An Khánh</font></a></div>
