@@ -1,0 +1,5 @@
+D:\NIW\Web bat dong san\My Web\BatDongSan\BatDongSan\bin\BatDongSan.dll
+D:\NIW\Web bat dong san\My Web\BatDongSan\BatDongSan\bin\BatDongSan.pdb
+D:\NIW\Web bat dong san\My Web\BatDongSan\BatDongSan\obj\Debug\ResolveAssemblyReference.cache
+D:\NIW\Web bat dong san\My Web\BatDongSan\BatDongSan\obj\Debug\BatDongSan.dll
+D:\NIW\Web bat dong san\My Web\BatDongSan\BatDongSan\obj\Debug\BatDongSan.pdb

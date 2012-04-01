@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D5BAE05-ECAE-4996-842B-E04793574856}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BatDongSan</RootNamespace>
+    <AssemblyName>BatDongSan</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\styles.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="htm\-Module=2.htm" />
+    <Content Include="htm\-Tab=1&amp;catenew_id=10.htm" />
+    <Content Include="htm\-Tab=1&amp;catenew_id=2.htm" />
+    <Content Include="htm\-Tab=1&amp;catenew_id=4.htm" />
+    <Content Include="htm\-Tab=1&amp;catenew_id=5.htm" />
+    <Content Include="htm\-Tab=1&amp;catenew_id=7.htm" />
+    <Content Include="htm\-Tab=1.htm" />
+    <Content Include="htm\-Tab=12.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=1054.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=1141.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=1216.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=1228.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=1250.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=1283.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=170.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=216.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=217.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=220.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=2890.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=2892.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=2893.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=2894.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4330.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4633.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4634.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4636.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4638.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4639.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4640.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4641.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4642.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4643.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4644.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4645.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4646.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4647.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4648.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4649.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4650.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4651.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4652.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4653.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4654.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4655.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4656.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4657.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4658.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4659.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4660.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4661.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4662.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4663.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4664.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=4665.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=904.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=931.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=938.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=939.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=940.htm" />
+    <Content Include="htm\-Tab=2&amp;news_id=979.htm" />
+    <Content Include="htm\-Tab=2.htm" />
+    <Content Include="htm\-Tab=3.htm" />
+    <Content Include="htm\-Tab=4.htm" />
+    <Content Include="htm\-Tab=5.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=10&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=100&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=102&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=103&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=104&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=105&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=106&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=107&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=108&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=109&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=11&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=110&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=111&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=112&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=113&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=114&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=115&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=116&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=117&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=118&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=119&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=12&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=120&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=121&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=123&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=124&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=125&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=126&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=127&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=129&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=130&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=14&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=15&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=154&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=155&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=156&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=157&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=158&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=159&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=16&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=160&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=164&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=165&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=166&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=169&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=17&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=170&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=172&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=174&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=177&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=179&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=18&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=182&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=189&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=19&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=20&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=21&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=22&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=23&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=24&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=25&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=26&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=27&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=28&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=29&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=3&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=31&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=32&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=34&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=36&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=4&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=41&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=42&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=43&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=44&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=45&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=46&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=47&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=48&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=49&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=5&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=50&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=51&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=52&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=53&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=54&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=55&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=56&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=57&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=58&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=59&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=60&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=61&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=62&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=63&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=64&amp;sub_id=2.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=7&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=8&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=9&amp;sub_id=1.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=92&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=93&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=94&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=95&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=96&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=98&amp;sub_id=184.htm" />
+    <Content Include="htm\-Tab=8&amp;cat_id=99&amp;sub_id=184.htm" />
+    <Content Include="htm\index.htm" />
+    <Content Include="htm\_inc_List_Ads_1.asp.htm" />
+    <Content Include="htm\_inc_List_Ads_2.asp.htm" />
+    <Content Include="htm\_inc_List_Project.asp.htm" />
+    <Content Include="htm\_inc_Video.asp-video=4.htm" />
+    <Content Include="htm\_inc_Video.asp-video=5.htm" />
+    <Content Include="htm\_inc_Video.asp-video=6.htm" />
+    <Content Include="htm\_inc_Video.asp-video=7.htm" />
+    <Content Include="htm\_inc_Video.asp-video=8.htm" />
+    <Content Include="htm\_inc_Video.asp-video=9.htm" />
+    <Content Include="player.swf" />
+    <Content Include="Flash\video1.FLV" />
+    <Content Include="Images\1+4.jpg" />
+    <Content Include="Images\1-1.jpg" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\10234126112009581873828.jpg" />
+    <Content Include="Images\10241372201258187771731.jpg" />
+    <Content Include="Images\10274172201258187771731.jpg" />
+    <Content Include="Images\10433072201258187771731.JPG" />
+    <Content Include="Images\1043911320115818768211.jpg" />
+    <Content Include="Images\10444729620095818718057.jpg" />
+    <Content Include="Images\1052162102009581877017.jpg" />
+    <Content Include="Images\10551422320115818735125.jpg" />
+    <Content Include="Images\10553226920091232425130.jpg" />
+    <Content Include="Images\10574716720105818764175.jpg" />
+    <Content Include="Images\105935722012581871001661.jpg" />
+    <Content Include="Images\1115712820091232422911.jpg" />
+    <Content Include="Images\11173537200958187176174.jpg" />
+    <Content Include="Images\11251722012581871001661.jpg" />
+    <Content Include="Images\113345632012123242261891.jpg" />
+    <Content Include="Images\113850632012123242261891.jpg" />
+    <Content Include="Images\114512820091232422911.jpg" />
+    <Content Include="Images\114620139201158187651751.jpg" />
+    <Content Include="Images\11493112820091232422911.jpg" />
+    <Content Include="Images\115558372010581872421771.jpg" />
+    <Content Include="Images\1158266201158187672111.jpg" />
+    <Content Include="Images\1203310820091232422911.jpg" />
+    <Content Include="Images\121832139201158187651751.jpg" />
+    <Content Include="Images\1241591542010581873566.jpg" />
+    <Content Include="Images\1280-icon.gif" />
+    <Content Include="Images\1358028920091232425130.jpg" />
+    <Content Include="Images\141955128201058187351051.jpg" />
+    <Content Include="Images\14314128920091232425130.jpg" />
+    <Content Include="Images\14485910820091232422911.jpg" />
+    <Content Include="Images\1448729920105818767231.jpg" />
+    <Content Include="Images\145122910201058187671681.jpg" />
+    <Content Include="Images\1452128920091232425130.jpg" />
+    <Content Include="Images\15124551201158187331521.jpg" />
+    <Content Include="Images\15142410820091232422911.JPG" />
+    <Content Include="Images\1517351201158187331521.jpg" />
+    <Content Include="Images\15185451201158187331521.jpg" />
+    <Content Include="Images\1523851201158187331521.jpg" />
+    <Content Include="Images\15328932011581876446.jpg" />
+    <Content Include="Images\15472317820115818768761.jpg" />
+    <Content Include="Images\15524386201158187672111.jpg" />
+    <Content Include="Images\163249211201058187671681.jpg" />
+    <Content Include="Images\165 Thai Ha_II-1.jpg" />
+    <Content Include="Images\165 thai ha_ii.jpg" />
+    <Content Include="Images\165-thai-ha.jpg" />
+    <Content Include="Images\1657287201058187651241.jpg" />
+    <Content Include="Images\16591387201058187651241.jpg" />
+    <Content Include="Images\168-168.gif" />
+    <Content Include="Images\170 ban-sua 1.jpg" />
+    <Content Include="Images\170-ban-sua-2.jpg" />
+    <Content Include="Images\17383522012581872161141.jpg" />
+    <Content Include="Images\173942522012581872161141.jpg" />
+    <Content Include="Images\174239522012581872161141.jpg" />
+    <Content Include="Images\181220522012581872161141.jpg" />
+    <Content Include="Images\181357522012581872161141.jpg" />
+    <Content Include="Images\18144427200958187176174.jpg" />
+    <Content Include="Images\181518522012581872161141.jpg" />
+    <Content Include="Images\181641522012581872161141.jpg" />
+    <Content Include="Images\1817027200958187176174.jpg" />
+    <Content Include="Images\181820522012581872161141.jpg" />
+    <Content Include="Images\182042522012581872161141.jpg" />
+    <Content Include="Images\182228522012581872161141.jpg" />
+    <Content Include="Images\182533522012581872161141.jpg" />
+    <Content Include="Images\182741522012581872161141.jpg" />
+    <Content Include="Images\182937522012581872161141.jpg" />
+    <Content Include="Images\18324522012581872161141.jpg" />
+    <Content Include="Images\18338522012581872161141.jpg" />
+    <Content Include="Images\1855522012581872161141.jpg" />
+    <Content Include="Images\18653522012581872161141-1.jpg" />
+    <Content Include="Images\18653522012581872161141.jpg" />
+    <Content Include="Images\18810522012581872161141-1.jpg" />
+    <Content Include="Images\18810522012581872161141.jpg" />
+    <Content Include="Images\18951522012581872161141-1.jpg" />
+    <Content Include="Images\18951522012581872161141.jpg" />
+    <Content Include="Images\2-1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\20090106_1.jpg" />
+    <Content Include="Images\20090106_4.jpg" />
+    <Content Include="Images\20273111620101187153761.jpg" />
+    <Content Include="Images\203958141120111132212544.JPG" />
+    <Content Include="Images\21225917220121551421211.jpg" />
+    <Content Include="Images\212539167201011316720136.jpg" />
+    <Content Include="Images\2131117220121551421211.jpg" />
+    <Content Include="Images\22451517220121551421211.jpg" />
+    <Content Include="Images\23463820220121551421211.jpg" />
+    <Content Include="Images\23523427200958187176174.jpg" />
+    <Content Include="Images\2657585577_8b43c329b0.jpg-v=0.jpg" />
+    <Content Include="Images\2658409404_0662a2c8e0.jpg-v=0.jpg" />
+    <Content Include="Images\2658409944_94614f3a7a.jpg-v=0.jpg" />
+    <Content Include="Images\2658410944_6f1a477fb7.jpg-v=0.jpg" />
+    <Content Include="Images\2693_hanoilandmark_01_540_100108.jpg" />
+    <Content Include="Images\29.jpg" />
+    <Content Include="Images\3-1.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\5302611720101187129821.jpg" />
+    <Content Include="Images\815891020095818739142.jpg" />
+    <Content Include="Images\817442720095818717610.jpg" />
+    <Content Include="Images\8191691020095818739142.jpg" />
+    <Content Include="Images\8251230720095818738220.jpg" />
+    <Content Include="Images\8312628920095818771188.jpg" />
+    <Content Include="Images\83_free200x120.gif" />
+    <Content Include="Images\84544210201058187672311.jpg" />
+    <Content Include="Images\847162710201058187671681.jpg" />
+    <Content Include="Images\91131102009581877017.jpg" />
+    <Content Include="Images\9192891020095818739142.jpg" />
+    <Content Include="Images\9215317820115818768761.jpg" />
+    <Content Include="Images\9223131120095818766102.jpg" />
+    <Content Include="Images\922591020095818739142.jpg" />
+    <Content Include="Images\9281591020095818739142.jpg" />
+    <Content Include="Images\931112610201058187671681.jpg" />
+    <Content Include="Images\937271410201058187321081.jpg" />
+    <Content Include="Images\947581102009581877017.jpg" />
+    <Content Include="Images\9555311720115818737991.jpg" />
+    <Content Include="Images\964736201158187672111.JPG" />
+    <Content Include="Images\a-tb-2-xay-khu-phuc-hop-tre.jpg" />
+    <Content Include="Images\a-tb-xay-khu-phuc-hop-tren-.jpg" />
+    <Content Include="Images\adv-title.gif" />
+    <Content Include="Images\anh-1.jpg" />
+    <Content Include="Images\anh01.jpg" />
+    <Content Include="Images\anh02.jpg" />
+    <Content Include="Images\an_ninh.jpg" />
+    <Content Include="Images\aribank.jpg" />
+    <Content Include="Images\BabylonResidence_Phoi-canh.jpg" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\bak_ban sua.jpg" />
+    <Content Include="Images\ban-do-viet-nam.jpg" />
+    <Content Include="Images\ban.jpg" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\bannernhadat26.vn.jpg" />
+    <Content Include="Images\banner_bds.gif" />
+    <Content Include="Images\ban_chothue_hoptac.png" />
+    <Content Include="Images\ban_chothue_hoptac2.png" />
+    <Content Include="Images\bds.gif" />
+    <Content Include="Images\bds_115.gif" />
+    <Content Include="Images\bds_12.gif" />
+    <Content Include="Images\bds_16.gif" />
+    <Content Include="Images\bgcate.png" />
+    <Content Include="Images\bgdangnhap.jpg" />
+    <Content Include="Images\bgduannoibat.png" />
+    <Content Include="Images\bghotrotructuyen.png" />
+    <Content Include="Images\bgtintucmoi.png" />
+    <Content Include="Images\bgtkt.jpg" />
+    <Content Include="Images\Bi-thu-xa-VQ.jpg" />
+    <Content Include="Images\bidv.jpg" />
+    <Content Include="Images\body_41.jpg" />
+    <Content Include="Images\body_42.jpg" />
+    <Content Include="Images\body_46.jpg" />
+    <Content Include="Images\body_49.jpg" />
+    <Content Include="Images\box-topleft1.gif" />
+    <Content Include="Images\box-topright1.gif" />
+    <Content Include="Images\btn-search.gif" />
+    <Content Include="Images\Can ho so 1-11.jpg" />
+    <Content Include="Images\Can ho so 5-7.jpg" />
+    <Content Include="Images\Can Ho so 6.jpg" />
+    <Content Include="Images\Can so 2 &amp; 10.jpg" />
+    <Content Include="Images\Can so 3,9.jpg" />
+    <Content Include="Images\Can so 4-8.jpg" />
+    <Content Include="Images\Can-ho-170-DLT-%28So%29.jpg" />
+    <Content Include="Images\cat.jpg" />
+    <Content Include="Images\caycanh.png" />
+    <Content Include="Images\che_2.jpg" />
+    <Content Include="Images\chothue.jpg" />
+    <Content Include="Images\Chu-tich-MTTQ-Tien-Lang---T.jpg" />
+    <Content Include="Images\chung-than.jpg" />
+    <Content Include="Images\Cuong_che.jpg" />
+    <Content Include="Images\dai_tuong_le_duc_anh.JPG" />
+    <Content Include="Images\dam-tom.jpg" />
+    <Content Include="Images\damtom6-1.jpg" />
+    <Content Include="Images\damtom6.jpg" />
+    <Content Include="Images\damtom9.jpg" />
+    <Content Include="Images\dang tin nha dat.gif" />
+    <Content Include="Images\dc.jpg" />
+    <Content Include="Images\dinh cong.jpg" />
+    <Content Include="Images\Do-Trung-Thoai-1.jpg" />
+    <Content Include="Images\doan-gs-1.jpg" />
+    <Content Include="Images\Doan_Van_Vuon1.jpg" />
+    <Content Include="Images\Don-ong-Vuon-12.jpg" />
+    <Content Include="Images\dot.jpg" />
+    <Content Include="Images\dowloat vb luat.gif" />
+    <Content Include="Images\DSC_5048.jpg" />
+    <Content Include="Images\DSC_5055.jpg" />
+    <Content Include="Images\DSC_5065.jpg" />
+    <Content Include="Images\DSC_5075.jpg" />
+    <Content Include="Images\DSC_5079.jpg" />
+    <Content Include="Images\DSC_5098.jpg" />
+    <Content Include="Images\DSC_5108.jpg" />
+    <Content Include="Images\DSC_5126.jpg" />
+    <Content Include="Images\DSC_5155x.jpg" />
+    <Content Include="Images\DSC_5170.jpg" />
+    <Content Include="Images\dt tay ho.jpg" />
+    <Content Include="Images\duan.png" />
+    <Content Include="Images\duan1.jpg" />
+    <Content Include="Images\duan2.jpg" />
+    <Content Include="Images\duanmoi.jpg" />
+    <Content Include="Images\Duong-1.jpg" />
+    <Content Include="Images\Duong.jpg" />
+    <Content Include="Images\ecopark 2.jpg" />
+    <Content Include="Images\facebook.gif" />
+    <Content Include="Images\forward_arrow.png" />
+    <Content Include="Images\fukoko-building-japan.jpg" />
+    <Content Include="Images\gachngang.gif" />
+    <Content Include="Images\google.gif" />
+    <Content Include="Images\gs1.jpg" />
+    <Content Include="Images\gs1a.jpg" />
+    <Content Include="Images\gs1b-1.jpg" />
+    <Content Include="Images\gs1b.jpg" />
+    <Content Include="Images\Haco2.jpg" />
+    <Content Include="Images\Haco3.jpg" />
+    <Content Include="Images\Haco_1.jpg" />
+    <Content Include="Images\hanoi landmark tower.jpg" />
+    <Content Include="Images\Hinh02.jpg" />
+    <Content Include="Images\HP1---nha-o-Vuon.jpg" />
+    <Content Include="icon_57.gif" />
+    <Content Include="Images\K6a%28CT14K%291 %28Small%29%281%29.jpg" />
+    <Content Include="Images\ke-menu.jpg" />
+    <Content Include="Images\khu-duc-viet.jpg" />
+    <Content Include="Images\Kim trung - di trach %28Duan%29-1.jpg" />
+    <Content Include="Images\kim trung - di trach %28duan%29.jpg" />
+    <Content Include="Images\kk thue.gif" />
+    <Content Include="Images\le trong tan - gelexemco.jpg" />
+    <Content Include="Images\left-top.gif" />
+    <Content Include="Images\left_item_bg.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo 24g 170x110.gif" />
+    <Content Include="Images\logo chuan dai lam1.jpg" />
+    <Content Include="Images\logo phongthuytrungquoc2..gif" />
+    <Content Include="Images\logo-EXIM.gif" />
+    <Content Include="Images\logoSb.gif" />
+    <Content Include="Images\ls1.jpg" />
+    <Content Include="Images\mask.png" />
+    <Content Include="Images\mask_left.png" />
+    <Content Include="Images\mask_right.png" />
+    <Content Include="Images\mbbank.jpg" />
+    <Content Include="Images\MBvitriduanFafilmnew.jpg" />
+    <Content Include="Images\mua.jpg" />
+    <Content Include="Images\n04.jpg" />
+    <Content Include="Images\nak_sua2.jpg" />
+    <Content Include="Images\Nam An Khanh.jpg" />
+    <Content Include="Images\nam-an-khanh-1.jpg" />
+    <Content Include="Images\nd1.jpg" />
+    <Content Include="Images\nha.jpg" />
+    <Content Include="Images\nhadatbanme.gif" />
+    <Content Include="Images\Nha_ong_Vuon-1.jpg" />
+    <Content Include="Images\nha_ong_Vuon.jpg" />
+    <Content Include="Images\Nha_ong_Vuon_1.jpg" />
+    <Content Include="Images\ong-Tiet.jpg" />
+    <Content Include="Images\ong-Trong.jpg" />
+    <Content Include="Images\ongkhanh.jpg" />
+    <Content Include="Images\online-u=bebu_263&amp;m=g&amp;t=2&amp;l=us.gif" />
+    <Content Include="Images\online-u=loank2008%40yahoo.com.vn&amp;m=g&amp;t=2&amp;l=us.gif" />
+    <Content Include="Images\online-u=toannv_82&amp;m=g&amp;t=2&amp;l=us.gif" />
+    <Content Include="Images\p2.jpg" />
+    <Content Include="Images\Phoi canh The Pride.jpg" />
+    <Content Include="Images\PHOI CANH VAN CANH web%281%29-1.jpg" />
+    <Content Include="Images\PHOI CANH VAN CANH web%281%29.jpg" />
+    <Content Include="Images\phoi-canh-tong-the.jpg" />
+    <Content Include="Images\qtviet.gif" />
+    <Content Include="Images\quangcaologobds.jpg" />
+    <Content Include="Images\quynh-anh-8.jpg" />
+    <Content Include="Images\registerbg.png" />
+    <Content Include="Images\right-top.gif" />
+    <Content Include="Images\royal-city-2.jpg" />
+    <Content Include="Images\royal-city.jpg" />
+    <Content Include="Images\SECURITY_IMG.asp.gif" />
+    <Content Include="Images\simsodep_simviet.gif" />
+    <Content Include="Images\slide1.jpg" />
+    <Content Include="Images\slide2.jpg" />
+    <Content Include="Images\slide3.jpg" />
+    <Content Include="Images\slide4.jpg" />
+    <Content Include="Images\slide5.jpg" />
+    <Content Include="Images\smallLink.gif" />
+    <Content Include="Images\smallLinkhover.gif" />
+    <Content Include="Images\So do thiet ke mat bang.jpg" />
+    <Content Include="Images\So do thong the The Pride.jpg" />
+    <Content Include="Images\song da.jpg" />
+    <Content Include="Images\submit.gif" />
+    <Content Include="Images\tai-nan-taxi-3-1.jpg" />
+    <Content Include="Images\tai-nan-taxi-4-1.jpg" />
+    <Content Include="Images\tan tay do-1.jpg" />
+    <Content Include="Images\tan tay do.jpg" />
+    <Content Include="Images\tchinhbai.jpg" />
+    <Content Include="Images\techcombank.jpg" />
+    <Content Include="Images\ThaiHa2bed.jpg" />
+    <Content Include="Images\ThaiHa3bed.jpg" />
+    <Content Include="Images\ThaiHaFl1.jpg" />
+    <Content Include="Images\ThaiHaFl2-5.jpg" />
+    <Content Include="Images\ThaiHaMasterPlan.jpg" />
+    <Content Include="Images\Thanh-Ha-Cienco-5.jpg" />
+    <Content Include="Images\thanh-ha.jpg" />
+    <Content Include="Images\theogiatien.png" />
+    <Content Include="Images\thevisa1.jpg" />
+    <Content Include="Images\thevisa2.jpg" />
+    <Content Include="Images\thevisa3.jpg" />
+    <Content Include="Images\thue.jpg" />
+    <Content Include="Images\timkiem.png" />
+    <Content Include="Images\tinchinhphu.png" />
+    <Content Include="Images\tooltiparrow.gif" />
+    <Content Include="Images\trung van.jpg" />
+    <Content Include="Images\tuyencongtacvien.jpg" />
+    <Content Include="Images\twitter.gif" />
+    <Content Include="Images\tygia.png" />
+    <Content Include="Images\Van Canh.jpg" />
+    <Content Include="Images\van canh_chay du an.jpg" />
+    <Content Include="Images\van-canh_phoi-canh%28Ban-sua-web%29-1.jpg" />
+    <Content Include="Images\van-canh_phoi-canh%28Ban-sua-web%29.jpg" />
+    <Content Include="Images\vi tri.JPG" />
+    <Content Include="Images\viet-nam-dong-10.jpg" />
+    <Content Include="Images\view.gif" />
+    <Content Include="Images\vinaconex.jpg" />
+    <Content Include="Images\vne-search.gif" />
+    <Content Include="Images\vuon.jpg" />
+    <Content Include="Images\Vuon1.jpg" />
+    <Content Include="Images\Xa-sung-HP_3.jpg" />
+    <Content Include="Images\Xa-sung-HP_6.jpg" />
+    <Content Include="Images\Xa-sung-HP_7.jpg" />
+    <Content Include="index.htm" />
+    <Content Include="Scripts\AC_RunActiveContent.js" />
+    <Content Include="Scripts\Config-Java-Control-Panel.js" />
+    <Content Include="Scripts\crawler.js" />
+    <Content Include="Scripts\ddaccordion.js" />
+    <Content Include="Scripts\Forex_Content.js" />
+    <Content Include="Scripts\Gold_Content.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\Library.js" />
+    <Content Include="Scripts\Register.js" />
+    <Content Include="Scripts\stmenu.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5776</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

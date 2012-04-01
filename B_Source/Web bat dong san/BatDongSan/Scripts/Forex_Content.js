@@ -1,0 +1,13 @@
+var vForexs = new Array();
+var vCosts = new Array();
+vForexs[0]  = 'USD';  vCosts[0]  = 'http://vnexpress.net/Service/20.860';
+vForexs[1]  = 'GBP';  vCosts[1]  = 'http://vnexpress.net/Service/33.489';
+vForexs[2]  = 'HKD';  vCosts[2]  = 'http://vnexpress.net/Service/2.699';
+vForexs[3]  = 'CHF';  vCosts[3]  = 'http://vnexpress.net/Service/23.183';
+vForexs[4]  = 'JPY';  vCosts[4]  = 'http://vnexpress.net/Service/254.81';
+vForexs[5]  = 'AUD'; vCosts[5]  = 'http://vnexpress.net/Service/21.772';
+vForexs[6]  = 'CAD'; vCosts[6]  = 'http://vnexpress.net/Service/21.013';
+vForexs[7]  = 'SGD'; vCosts[7]  = 'http://vnexpress.net/Service/16.648';
+vForexs[8]  = 'EUR'; vCosts[8]  = 'http://vnexpress.net/Service/27.927';
+vForexs[9]  = 'NZD'; vCosts[9]  = 'http://vnexpress.net/Service/17.273';
+vForexs[10] = 'Bat Thái Lan'; vCosts[10] = '779';
