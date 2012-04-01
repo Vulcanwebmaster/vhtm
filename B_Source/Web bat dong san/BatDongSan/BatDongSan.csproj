@@ -234,6 +234,9 @@
     <Content Include="htm\_inc_Video.asp-video=7.htm" />
     <Content Include="htm\_inc_Video.asp-video=8.htm" />
     <Content Include="htm\_inc_Video.asp-video=9.htm" />
+    <Content Include="Images\bgdangnhap.png" />
+    <Content Include="Images\bgduan.png" />
+    <Content Include="Images\tinchinhchu.png" />
     <Content Include="player.swf" />
     <Content Include="Flash\video1.FLV" />
     <Content Include="Images\1+4.jpg" />

@@ -466,7 +466,8 @@
     </div>
   </div>
   <!--Project-->
-  <div style="width:183px; height:33px; float:left; background:url(../Images/duan.png) no-repeat; margin-bottom: 3px;" class="left_panel"></div>
+  <div style="width:183px; height:33px; float:left; background:url('Images/bgduan.png') no-repeat; margin-bottom: 3px;" 
+          class="left_panel"></div>
   <div style="width:181px; float:left; border:1px #9A9A9A solid;" class="left_panel">
     
     <div style="background:url(Images/bds.gif) no-repeat; width:163px; height:26px; padding-left:20px; line-height:25px; float:left"><a href="-Tab=8&cat_id=1.htm" tppabs="http://batdongsan24h.com.vn/?Tab=8&cat_id=1">
@@ -688,7 +689,7 @@
 
 </script>
   <div class="left_panel" class="left_panel" 
-          style="width:177px; float:left; height:33px; background:url('/Images/tinchinhphu.png') no-repeat"></div>
+          style="width:177px; float:left; height:33px; background:url('/Images/tinchinhchu.png') no-repeat"></div>
   <div class="left_panel" style="width:167px; height:800px; border-left:1px #0088f4 solid; border-right:1px #0088f4 solid; border-bottom:1px #0088f4 solid; padding:4px; float:left">
     <div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
       <div id="vmarquee" style="position: absolute; width: 98%;">
@@ -1420,7 +1421,7 @@ marqueeInit({
   <div style="width:177px; margin-left:3px; float:left">
     
 
-<div style="width:177px; height:30px; float:left; background:url(../Images/bgdangnhap.jpg) no-repeat; margin-top: 5px;"></div>
+<div style="width:177px; height:30px; float:left; background:url(../Images/bgdangnhap.png) no-repeat; margin-top: 5px;"></div>
 <div class="right_panel" style="width:175px; border-left:1px #0088f4 solid; border-right:1px #0088f4 solid; border-bottom:1px #0088f4 solid; float:left">
   
   <div style="width:175px; float:left; padding-bottom:14px">
