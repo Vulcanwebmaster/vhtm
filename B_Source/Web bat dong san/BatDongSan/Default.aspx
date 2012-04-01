@@ -2170,14 +2170,15 @@ document.write('</td></table>')
 </div>
 
 <div style="margin-top:10px; float:left; width:996px" align="center">
-    <div style="width:996px; height:130px; background:url(Images/Skins/bgbottom.jpg) repeat-x; color:#FFF; padding-top:7px;">
+    <div style="width:996px; height:130px; background:url('http://localhost:5776/Images/bgbottom.jpg') repeat-x; color:#FFF; padding-top:7px;">
     <a href="index.htm" tppabs="http://batdongsan24h.com.vn/"><font color="#FFFFFF"><strong>Trang Chủ</strong></font></a> | <a href="-Tab=1.htm" tppabs="http://batdongsan24h.com.vn/?Tab=1"><font color="#FFFFFF"><strong>Tin Tức</strong></font></a> | <a href="-Tab=2.htm" tppabs="http://batdongsan24h.com.vn/?Tab=2"><font color="#FFFFFF"><strong>Quảng Bá</strong></font></a> | <a href="-Tab=3.htm" tppabs="http://batdongsan24h.com.vn/?Tab=3"><font color="#FFFFFF"><strong>Hỏi Đáp</strong></font></a> | <a href="-Tab=4.htm" tppabs="http://batdongsan24h.com.vn/?Tab=4"><font color="#FFFFFF"><strong>Liên Hệ</strong></font></a> | <a href="-Tab=5.htm" tppabs="http://batdongsan24h.com.vn/?Tab=5"><font color="#FFFFFF"><strong>Đăng Ký</strong></font></a>
    <p align="center"> =   =   =   =   =   =   =   =   =   =   =   =   =   =   =   =   =   =  =   =   =   =  <br />
-<font size="2"><strong>Công ty CP Đầu tư và Môi giới Bất Động Sản 24H</strong></font><br />
-Trụ sở: Số 26 Ngõ 8 Phố Nguyễn Thị Định - Trung Hòa - Nhân Chính - Cầu Giấy - Hà Nội<br />
-ĐT: 04.39959519-09 / Fax: 04.35642321 / Mobile: 0913.161 993 / 0904.368 036<br />
-Mail: <a href="mailto:ceo@batdongsan24h.com.vn"><font size="2"><i>ceo@batdongsan24h.com.vn</i></font></a> / <a href="mailto:toan.bds24h@batdongsan24h.com.vn"><font size="2"><i>toan.bds24h@batdongsan24h.com.vn</i></font></a>  <br />
-Website: <a href="index.htm" tppabs="http://batdongsan24h.com.vn/"><font size="2"><i>www.batdongsan24h.com.vn</i></font></a><br />
+<font size="2"><strong>Công ty TNHH Công nghệ NIW</strong></font><br />
+Phòng 1902, tòa CT5B, KĐT Mễ Trì Thượng, Mễ Trì, Từ Liêm<br />
+
+Mail: <a href="mailto:ceo@batdongsan24h.com.vn"><font size="2"><i>support@niw.com.vn</i></font></a>
+<br />
+Website: <a href="index.htm" tppabs="http://batdongsan24h.com.vn/"><font size="2"><i>http://www.niw.com.vn</i></font></a><br />
     </p>
     </div>
 </div>
