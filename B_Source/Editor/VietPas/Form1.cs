@@ -19,22 +19,22 @@ namespace VietPas
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.OpenFile(editer);
+            BasicCommand.OpenFile(editor);
         }
 
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
-            BasicCommand.OpenFile(editer);
+            BasicCommand.OpenFile(editor);
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.CloseTab(editer);
+            BasicCommand.CloseTab(editor);
         }
 
         private void closeAllButThisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.CloseAllButThisTab(editer);
+            BasicCommand.CloseAllButThisTab(editor);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,69 +44,66 @@ namespace VietPas
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.NewFile(editer);
+            BasicCommand.NewFile(editor);
         }
 
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
-            BasicCommand.NewFile(editer);
+            BasicCommand.NewFile(editor);
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.CopyText(editer);
+            BasicCommand.CopyText(editor);
         }
 
         private void copyToolStripButton_Click(object sender, EventArgs e)
         {
-            BasicCommand.CopyText(editer);
+            BasicCommand.CopyText(editor);
         }
 
         private void pasteToolStripButton_Click(object sender, EventArgs e)
         {
-            BasicCommand.PasteText(editer);
+            BasicCommand.PasteText(editor);
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.PasteText(editer);
+            BasicCommand.PasteText(editor);
         }
 
         private void cutToolStripButton_Click(object sender, EventArgs e)
         {
-            BasicCommand.CutText(editer);
+            BasicCommand.CutText(editor);
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasicCommand.CutText(editer);
-        }
-
-        private void hiệnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //panel_left.Hide();
-        }
-
-        private void panel_left_VisibleChanged(object sender, EventArgs e)
-        {
-            /*if (panel_left.Visible == true)
-            {
-                panel_right.Dock = DockStyle.None;
-            }
-            else
-                panel_right.Dock = DockStyle.Fill;*/
+            BasicCommand.CutText(editor);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Output frm = new Output();
             Process p = new Process();
-            p.StartInfo.FileName = "minipas.exe";
-            string filename = BasicCommand.GetCurrentFileName(editer);
-            p.StartInfo.Arguments = filename;
-            p.StartInfo.UseShellExecute = true;
-            p.Start();
-            p.WaitForExit();
+            p.StartInfo.FileName = "cmd.exe";
+            string filename = BasicCommand.GetCurrentFileName(editor);
+            if (filename.Equals("@new"))
+            {
+                BasicCommand.SaveFile(editor);
+                filename = BasicCommand.GetCurrentFileName(editor);
+            }
+            if (!filename.Equals("@new"))
+            {
+                System.IO.StreamWriter file = new System.IO.StreamWriter("temp.bat");
+                file.Flush();
+                file.Write("minipas.exe " + "\"" + filename + "\"");
+                file.Close();
+                file.Dispose();
+                p.StartInfo.Arguments = "/k temp.bat";
+                p.StartInfo.UseShellExecute = true;
+                p.Start();
+                p.WaitForExit();
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,7 +114,17 @@ namespace VietPas
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            BasicCommand.SaveFile(editor);
+        }
 
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            BasicCommand.SaveFile(editor);
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasicCommand.SaveAsFile(editor);
         }
     }
 }

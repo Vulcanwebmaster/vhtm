@@ -2,8 +2,8 @@ var
 	integer a,b;
 	array integer x[10];
 begin
-	read a b;
-	read x[1] x[2];
+	read a,b;
+	read x[1],x[2];
 	write a;
 	write b;
 	write x[1];

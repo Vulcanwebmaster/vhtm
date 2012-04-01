@@ -43,7 +43,7 @@ double { check = 1; return(DOUBLE);} /* Added */
 bool {check = 1; return(BOOLEAN);}   /* Added */
 const { check = 1; return(CONST);}
 "array integer" {check = 1; return(ARRAY_I);  } 
-"array boolean" {check = 1; return(ARRAY_B);  }
+"array bool" {check = 1; return(ARRAY_B);  }
 "array char" {check = 1; return(ARRAY_C);  } 
 "array double" {check = 1; return(ARRAY_D);  }  
 return { check = 1; return(RETURN); }
@@ -145,7 +145,7 @@ void yyerror(char *s)
 		}
 		file_name[i - 1] = '\0';
 		fclose(f_temp);
-		
+		remove("temp.txt");
 		FILE * fp;
 		fp = fopen(file_name, "r");
 		char cur_c;
@@ -225,12 +225,17 @@ void yyerror(char *s)
 		else
 		if (strcmp(str_buffer,"endswitch") == 0)
 			final = store;
+		else 
+		if (str_buffer[strlen(str_buffer)-1] != ';') 
+				final = store;
 		else final = yylineno;
 		printf("%s at line % d!\n", s, final);
 		fclose(fp);
 	}
 	else 
-			printf("%s at line % d!\n", s, yylineno);
+	{
+		printf("%s at line % d!\n", s, yylineno);
+	}
 	exit(0);
 }
 /************************** End Scanner File *****************************/

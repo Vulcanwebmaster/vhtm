@@ -25,16 +25,17 @@ namespace VietPas
 
                 FileStream stream = new FileStream(dialog.FileName, FileMode.Open, FileAccess.ReadWrite);
                 stream.Read(buffer, 0, (int)info.Length);
+                stream.Close();
+                stream.Dispose();
                 String str = ASCIIEncoding.ASCII.GetString(buffer);
-
+               
                 TabPage newpage = new TabPage();
                 newpage.Text = info.Name;
                 newpage.Name = info.FullName;
-                RichTextBox newrtb = new RichTextBox();
+                NumberedTextBoxUC newrtb = new NumberedTextBoxUC();
                 newrtb.Dock = DockStyle.Fill;
-                newrtb.Text = str;
-                newrtb.WordWrap = true;
-                newrtb.AcceptsTab = true;
+                newrtb.getRichTextBox().Text = str;
+                newrtb.MakeColorSyntaxForAllText(newrtb.getRichTextBox().Text);
                 newpage.Controls.Add(newrtb);
                 tab.TabPages.Add(newpage);
                 tab.SelectedTab = newpage;
@@ -77,46 +78,26 @@ namespace VietPas
 
         public static void NewFile(TabControl tabcontrol)
         {
-            int sotab = tabcontrol.TabCount;
-            int i=0;
-            for (i = 0; i < sotab; )
-            {
-                int dem = 0;
-                foreach (TabPage page in tabcontrol.TabPages)
-                {
-                    if (page.Text == "New File" + i.ToString())
-                    {
-                        dem++;
-                    }
-                }
-                if (dem == 0)
-                    break;
-                else i++;
-            }
+            int tabcount = tabcontrol.TabCount;
+            TabPage newpage = new TabPage();
+            newpage.Text = "New File " + (tabcount + 1).ToString();
+            newpage.Name = "@new";
 
-            {
-                TabPage newpage = new TabPage();
-                newpage.Text = "New File" + i.ToString();
-                newpage.Name = "@new";
+            NumberedTextBoxUC newrtb = new NumberedTextBoxUC();
+            newrtb.Dock = DockStyle.Fill;
+            newpage.Controls.Add(newrtb);
 
-                RichTextBox newrtb = new RichTextBox();
-                newrtb.Dock = DockStyle.Fill;
-                newrtb.WordWrap = true;
-                newrtb.AcceptsTab = true;
-                newpage.Controls.Add(newrtb);
-
-                tabcontrol.TabPages.Add(newpage);
-                tabcontrol.SelectedTab = newpage;
-            }
-        }
+            tabcontrol.TabPages.Add(newpage);
+            tabcontrol.SelectedTab = newpage;
+          }
 
         public static void CopyText(TabControl tabcontrol)
         {
             String selected = "";
             TabPage currenttab = tabcontrol.SelectedTab;
-            foreach (RichTextBox rtb in currenttab.Controls)
+            foreach (NumberedTextBoxUC rtb in currenttab.Controls)
             {
-                selected = rtb.SelectedText;
+                selected = rtb.getRichTextBox().SelectedText;
             }
 
             Clipboard.SetText(selected);                    
@@ -125,9 +106,9 @@ namespace VietPas
         public static void PasteText(TabControl tabcontrol)
         {
             TabPage currenttab = tabcontrol.SelectedTab;
-            foreach (RichTextBox rtb in currenttab.Controls)
+            foreach (NumberedTextBoxUC rtb in currenttab.Controls)
             {
-                rtb.Text += Clipboard.GetText();                 
+                rtb.getRichTextBox().Text += Clipboard.GetText();                 
             }
             
         }
@@ -135,9 +116,64 @@ namespace VietPas
         public static void CutText(TabControl tabcontrol)
         {
             TabPage currenttab = tabcontrol.SelectedTab;
-            foreach (RichTextBox rtb in currenttab.Controls)
+            foreach (NumberedTextBoxUC rtb in currenttab.Controls)
             {
-                rtb.Cut();
+                rtb.getRichTextBox().Cut();
+            }
+        }
+
+        public static void SaveFile(TabControl tabcontrol)
+        {
+            foreach (TabPage page in tabcontrol.TabPages)
+            {
+                if (tabcontrol.SelectedTab == page)
+                {
+                    if (page.Name.Equals("@new"))
+                    {
+                        SaveFileDialog saveFile = new SaveFileDialog();
+                        saveFile.Filter = @"Minipas File|*.pas|All Files (*.*)|*.*";
+                        if (saveFile.ShowDialog() == DialogResult.OK)
+                        {
+                            page.Name = saveFile.FileName;
+                            string[] temp = saveFile.FileName.Split('\\');
+                            page.Text = temp[temp.Length - 1];
+                        }
+                    }
+                    NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
+                    file.Flush(); 
+                    file.Write(newrtb.getRichTextBox().Text);
+                    file.Close();
+                    file.Dispose();
+                    System.Threading.Thread.Sleep(500);
+                    MessageBox.Show("Save Done!");
+                }
+            }
+        }
+
+        public static void SaveAsFile(TabControl tabcontrol)
+        {
+            foreach (TabPage page in tabcontrol.TabPages)
+            {
+                if (tabcontrol.SelectedTab == page)
+                {
+                    SaveFileDialog saveFile = new SaveFileDialog();
+                    saveFile.Filter = @"Minipas File|*.pas|All Files (*.*)|*.*";
+                    if (saveFile.ShowDialog() == DialogResult.OK)
+                    {
+                            page.Name = saveFile.FileName;
+                            string[] temp = saveFile.FileName.Split('\\');
+                            page.Text = temp[temp.Length - 1];
+                    }
+                    NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
+                    file.Flush();
+                    file.Write(newrtb.getRichTextBox().Text);
+                    file.Close();
+                    file.Dispose();
+                    System.Threading.Thread.Sleep(500);
+                    MessageBox.Show("Save Done!");
+                }
             }
         }
     }

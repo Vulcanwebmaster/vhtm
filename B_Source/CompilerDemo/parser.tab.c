@@ -2828,5 +2828,6 @@ main( int argc, char *argv[] )
 	{ 
 		fetch_execute_cycle();
 	}		
+	remove("temp.txt");
 }
 /**************************** End Grammar File ***************************/
