@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="FaceRecognition">
+</Property><Property Name="Solution File" Value="C:\Users\User\Desktop\Face_Recognition\FaceRecognition.sln">
+</Property><Property Name="User Options File" Value="C:\Users\User\Desktop\Face_Recognition\FaceRecognition.suo">
+</Property><Property Name="Date" Value="Thursday, March 22, 2012">
+</Property><Property Name="Time" Value="23:04 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="FaceRecognition.sln" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\FaceRecognition.sln">
+</Event><Event ErrorLevel="0" Project="" Source="FaceRecognition.suo" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\FaceRecognition.suo">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="FaceRecognition.csproj" Description="Project file successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\FaceRecognition.csproj">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="EigenObjectRecognizer.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\EigenObjectRecognizer.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="MainForm.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\MainForm.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="MainForm.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\MainForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="Program.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="Properties\Settings.settings" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="MainForm.resx" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="Properties\Resources.resx" Description="File successfully backed up as C:\Users\User\Desktop\Face_Recognition\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="FaceRecognition" Source="FaceRecognition.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="FaceRecognition" Source="FaceRecognition.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="FaceRecognition.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="FaceRecognition.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Faces" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database\Faces.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="FaceRecognition.Properties.Settings" SettingsPropertyName="FacesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HISTORY" Member="HISTORies">
+    <Type Name="HISTORY">
+      <Column Name="ID_History" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Person" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Recognized" Type="System.Data.Linq.Binary" DbType="Binary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="PERSON_HISTORY" Member="PERSON" ThisKey="ID_Person" OtherKey="ID_Person" Type="PERSON" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STRANGER" Member="STRANGERs">
+    <Type Name="STRANGER">
+      <Column Name="ID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSON" Member="PERSONs">
+    <Type Name="PERSON">
+      <Column Name="ID_Person" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_Position" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="SSc" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="PERSON_HISTORY" Member="HISTORies" ThisKey="ID_Person" OtherKey="ID_Person" Type="HISTORY" />
+      <Association Name="POSITION_PERSON" Member="POSITION" ThisKey="ID_Position" OtherKey="ID_Position" Type="POSITION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.POSITION" Member="POSITIONs">
+    <Type Name="POSITION">
+      <Column Name="ID_Position" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="POSITION_PERSON" Member="PERSONs" ThisKey="ID_Position" OtherKey="ID_Position" Type="PERSON" />
+    </Type>
+  </Table>
+</Database>
