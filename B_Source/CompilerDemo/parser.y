@@ -115,7 +115,7 @@ TOKENS
 %token <arrIntval> ARRAY_VAL
 %token <id> IDENTIFIER /* Simple identifier */
 %token <lbls> IF WHILE FOR /* For backpatching labels */
-%token THEN ELSE DO END TO ENDIF ENDFOR ENDWHILE ENDFUNCTION ENDSWITCH
+%token THEN ELSE DO END TO ENDIF ENDFOR ENDWHILE ENDFUNCTION ENDSWITCH WAIT
 %token INTEGER CONST LET IN STRING DOUBLE CHAR FUNCTION BOOLEAN CASE SWITCH BREAK DEFAULT
 %token READ
 %token WRITE WRITELINE
@@ -303,6 +303,7 @@ read_array_exp: /* empty */
 ;
 
 command : READ IDENTIFIER { context_check( READ_VAR, $2, function_name); } read_exp
+| WAIT { gen_code(WAIT_CALL, 0 ); }
 | READ IDENTIFIER '[' index ']' { context_check( READ_INT_ARR, $2, function_name); } read_array_exp
 | WRITE IDENTIFIER { context_check( WRITE_VAR, $2, function_name); }
 | WRITE STR_VAL { gen_code_string ( WRITE_STR, $2 );}

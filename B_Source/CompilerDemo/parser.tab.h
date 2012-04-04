@@ -59,28 +59,29 @@
      ENDWHILE = 275,
      ENDFUNCTION = 276,
      ENDSWITCH = 277,
-     INTEGER = 278,
-     CONST = 279,
-     LET = 280,
-     IN = 281,
-     STRING = 282,
-     DOUBLE = 283,
-     CHAR = 284,
-     FUNCTION = 285,
-     BOOLEAN = 286,
-     CASE = 287,
-     SWITCH = 288,
-     BREAK = 289,
-     DEFAULT = 290,
-     READ = 291,
-     WRITE = 292,
-     WRITELINE = 293,
-     ARRAY_I = 294,
-     ARRAY_C = 295,
-     ARRAY_B = 296,
-     ARRAY_D = 297,
-     ASSGNOP = 298,
-     RETURN = 299
+     WAIT = 278,
+     INTEGER = 279,
+     CONST = 280,
+     LET = 281,
+     IN = 282,
+     STRING = 283,
+     DOUBLE = 284,
+     CHAR = 285,
+     FUNCTION = 286,
+     BOOLEAN = 287,
+     CASE = 288,
+     SWITCH = 289,
+     BREAK = 290,
+     DEFAULT = 291,
+     READ = 292,
+     WRITE = 293,
+     WRITELINE = 294,
+     ARRAY_I = 295,
+     ARRAY_C = 296,
+     ARRAY_B = 297,
+     ARRAY_D = 298,
+     ASSGNOP = 299,
+     RETURN = 300
    };
 #endif
 
@@ -107,7 +108,7 @@ semrec
 
 
 /* Line 1676 of yacc.c  */
-#line 111 "parser.tab.h"
+#line 112 "parser.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

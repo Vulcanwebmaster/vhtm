@@ -11,7 +11,7 @@ enum code_ops { HALT, STORE, JMP_FALSE, GOTO,
 	WRITE_STR, WRITE_ALL, WRITE_LINE, BEGIN_CAL,
 	LT, EQ, NEQ, GT, LTEQ, GTEQ, ADD, SUB, MULT, DIV, AND, OR, MOD, NOT,
 	ARR_PART, INT_ARR_STORE, DOU_ARR_STORE, CHR_ARR_STORE, BOL_ARR_STORE, CAL, END_CAL, READ_INT_ARR, READ_DOU_ARR, READ_BOL_ARR, READ_CHR_ARR,
-	BOL_COMP, BOL_ONLY };
+	BOL_COMP, BOL_ONLY, WAIT_CALL };
 
 struct mystack
 {
@@ -643,6 +643,12 @@ void fetch_execute_cycle()
 				top = pre_top[top_call];
 				
 				pc = stack_call[--top_call];
+				break;
+			case WAIT_CALL :
+				fflush(stdout);
+				fflush(stdin);
+				char end;
+				scanf("%c",&end);
 				break;
 			default : printf( "%sInternal Error: Memory Dump\n" );
 			break;

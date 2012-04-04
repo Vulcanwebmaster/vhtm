@@ -85,7 +85,7 @@ namespace VietPas
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Process p = new Process();
-            p.StartInfo.FileName = "cmd.exe";
+            p.StartInfo.FileName = "minipas.exe";
             string filename = BasicCommand.GetCurrentFileName(editor);
             if (filename.Equals("@new"))
             {
@@ -94,12 +94,7 @@ namespace VietPas
             }
             if (!filename.Equals("@new"))
             {
-                System.IO.StreamWriter file = new System.IO.StreamWriter("temp.bat");
-                file.Flush();
-                file.Write("minipas.exe " + "\"" + filename + "\"");
-                file.Close();
-                file.Dispose();
-                p.StartInfo.Arguments = "/k temp.bat";
+                p.StartInfo.Arguments = filename;
                 p.StartInfo.UseShellExecute = true;
                 p.Start();
                 p.WaitForExit();
