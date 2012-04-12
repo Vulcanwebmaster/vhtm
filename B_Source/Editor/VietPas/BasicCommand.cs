@@ -48,7 +48,8 @@ namespace VietPas
             {
                 if (tabcontrol.SelectedTab==page)
                 {
-                    tabcontrol.TabPages.Remove(page);                    
+                    tabcontrol.TabPages.Remove(page);
+                    break;
                 }
             }
         }
@@ -93,14 +94,13 @@ namespace VietPas
 
         public static void CopyText(TabControl tabcontrol)
         {
-            String selected = "";
             TabPage currenttab = tabcontrol.SelectedTab;
             foreach (NumberedTextBoxUC rtb in currenttab.Controls)
             {
-                selected = rtb.getRichTextBox().SelectedText;
+                if (rtb.getRichTextBox().SelectionLength > 0)
+                    rtb.getRichTextBox().Copy();
+                rtb.type_undo = 0;
             }
-
-            Clipboard.SetText(selected);                    
         }
 
         public static void PasteText(TabControl tabcontrol)
@@ -108,9 +108,9 @@ namespace VietPas
             TabPage currenttab = tabcontrol.SelectedTab;
             foreach (NumberedTextBoxUC rtb in currenttab.Controls)
             {
-                rtb.getRichTextBox().Text += Clipboard.GetText();                 
+                rtb.getRichTextBox().Paste();
+                rtb.type_undo = 0;
             }
-            
         }
 
         public static void CutText(TabControl tabcontrol)
@@ -118,7 +118,11 @@ namespace VietPas
             TabPage currenttab = tabcontrol.SelectedTab;
             foreach (NumberedTextBoxUC rtb in currenttab.Controls)
             {
-                rtb.getRichTextBox().Cut();
+                if (rtb.getRichTextBox().SelectedText != "")
+                {
+                    rtb.getRichTextBox().Cut();
+                    rtb.type_undo = 1;
+                }
             }
         }
 
@@ -137,16 +141,27 @@ namespace VietPas
                             page.Name = saveFile.FileName;
                             string[] temp = saveFile.FileName.Split('\\');
                             page.Text = temp[temp.Length - 1];
+                            NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
+                            System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
+                            file.Flush();
+                            file.Write(newrtb.getRichTextBox().Text);
+                            file.Close();
+                            file.Dispose();
+                            System.Threading.Thread.Sleep(500);
+                            MessageBox.Show("Save Done!");
                         }
                     }
-                    NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
-                    file.Flush(); 
-                    file.Write(newrtb.getRichTextBox().Text);
-                    file.Close();
-                    file.Dispose();
-                    System.Threading.Thread.Sleep(500);
-                    MessageBox.Show("Save Done!");
+                    else
+                    {
+                        NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
+                        System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
+                        file.Flush();
+                        file.Write(newrtb.getRichTextBox().Text);
+                        file.Close();
+                        file.Dispose();
+                        System.Threading.Thread.Sleep(500);
+                        MessageBox.Show("Save Done!");
+                    }
                 }
             }
         }
@@ -164,15 +179,46 @@ namespace VietPas
                             page.Name = saveFile.FileName;
                             string[] temp = saveFile.FileName.Split('\\');
                             page.Text = temp[temp.Length - 1];
+                            NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
+                            System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
+                            file.Flush();
+                            file.Write(newrtb.getRichTextBox().Text);
+                            file.Close();
+                            file.Dispose();
+                            System.Threading.Thread.Sleep(500);
+                            MessageBox.Show("Save Done!");
                     }
-                    NumberedTextBoxUC newrtb = (NumberedTextBoxUC)page.Controls[0];
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(page.Name);
-                    file.Flush();
-                    file.Write(newrtb.getRichTextBox().Text);
-                    file.Close();
-                    file.Dispose();
-                    System.Threading.Thread.Sleep(500);
-                    MessageBox.Show("Save Done!");
+                    break;
+                }
+            }
+        }
+
+        public static void Undo(TabControl tabcontrol)
+        {
+            TabPage currenttab = tabcontrol.SelectedTab;
+            foreach (NumberedTextBoxUC rtb in currenttab.Controls)
+            {
+                if (rtb.getRichTextBox().CanUndo == true)
+                {
+                    if (rtb.type_undo == 1)
+                        rtb.getRichTextBox().Paste();
+                    else
+                    {
+                        if (rtb.type_undo == 2)
+                        {
+                            rtb.getRichTextBox().Hide();
+                            rtb.getRichTextBox().Text =  rtb.previous;
+                            rtb.MakeColorSyntaxForAllText(rtb.getRichTextBox().Text);
+                            rtb.getRichTextBox().Show();
+                        }
+                        else
+                        {
+                            rtb.getRichTextBox().Undo();
+                            if (rtb.getRichTextBox().SelectionLength > 0)
+                                rtb.getRichTextBox().Cut();
+                        }
+                    }
+                    rtb.getRichTextBox().ClearUndo();
                 }
             }
         }

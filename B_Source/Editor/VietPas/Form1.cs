@@ -121,5 +121,10 @@ namespace VietPas
         {
             BasicCommand.SaveAsFile(editor);
         }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BasicCommand.Undo(editor);
+        }
     }
 }

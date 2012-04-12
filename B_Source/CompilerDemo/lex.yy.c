@@ -2054,6 +2054,11 @@ void yyerror(char *s)
 	{
 		printf("%s at line % d!\n", s, yylineno);
 	}
+	remove("temp.txt");
+	fflush(stdout);
+	fflush(stdin);
+	char end;
+	scanf("%c",&end);
 	exit(0);
 }
 /************************** End Scanner File *****************************/
