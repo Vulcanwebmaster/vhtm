@@ -1,0 +1,40 @@
+1. Admin home 
+Show admin page
+
+2. Exchange order
+View Open Order
+Search Order
+Filter Order (Listing type)
+Delete Order
+Edit Order
+Manually pay out
+
+3. Exchange rate
+View rate
+Update rate
+
+4. Exchange setting
+View default exchange settings
+View all exchange settings
+Add new currency
+Update currencies
+
+5. Manage member 
+View all member
+Filter member
+Search member
+View detail member
+Update member
+
+Exchange orders Pending
+
+
+6. Site currencies
+
+7. Site settings: General + Localization
+
+8. News + page (ko can ho tro mutil language)
+
+9. Update profiles
+
+10. Logout
