@@ -109,7 +109,7 @@ celebSearch = function(when,start,count) {
    var bornDayMonth = when.getDate()+" "+when.getMonthName();
    var ud = Math.round(when.getTime()/1000);
    var search = 'site:www.imdb.com "Date of birth" "'+bornDayMonth+'" title:biography'
-   var query = "select * from boss.search("+start+","+count+") where q='"+search+"'";
+   var query = "select * from boss.search("+start+","+count+") where q='"+search+"'" and ck="dj0yJmk9NnFKMWFxMlhheVVsJmQ9WVdrOVJHWkxZVFpoTm0wbWNHbzlNVE16T0RRd016azJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kOA--" and secret="f089ae21f79cf0fc42f94f23500d229d72901c54";
    var celebs = y.query(query).results;
 
    //go through each result and start to get the persons name and their imdb info page out
