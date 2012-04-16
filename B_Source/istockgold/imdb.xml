@@ -109,7 +109,7 @@ celebSearch = function(when,start,count) {
    var bornDayMonth = when.getDate()+" "+when.getMonthName();
    var ud = Math.round(when.getTime()/1000);
    var search = 'site:www.imdb.com "Date of birth" "'+bornDayMonth+'" title:biography'
-   var query = "select * from microsoft.bing.web("+start+","+count+") where query='"+search+"'";
+   var query = "select * from boss.search("+start+","+count+") where query='"+search+"'";
    var celebs = y.query(query).results;
 
    //go through each result and start to get the persons name and their imdb info page out
