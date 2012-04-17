@@ -139,9 +139,9 @@
 		<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
 		<table cellpadding="0" cellspacing="0" border="0" align="center">
 			<tr>
-				<td width="200" valign="top"><?php if(isset($content1){echo $content1 ;} ?></td>
-				<td width="200" valign="top"><?php if(isset($content2){echo $content2 ;} ?></td>
-				<td width="200" valign="top"><?php if(isset($content3){echo $content3 ;} ?></td>
+				<td width="200" valign="top"><?php if(isset($content1)){echo $content1 ;} ?></td>
+				<td width="200" valign="top"><?php if(isset($content2)){echo $content2 ;} ?></td>
+				<td width="200" valign="top"><?php if(isset($content3)){echo $content3 ;} ?></td>
 			</tr>
 		</table>
 		<!-- End example table -->
@@ -159,7 +159,7 @@
 		</td>
 	</tr>
 </table>  
-<?php  if(isset($footer){echo $footer ;}  ?>
+<?php  if(isset($footer)){echo $footer ;}  ?>
 <!-- End of wrapper table -->
 </body>
 </html>

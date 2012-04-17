@@ -62,9 +62,9 @@ alink="#FF0000" link="#FF0000" bgcolor="#ffffff" text="#FFFFFF" yahoo="fix">
 
         <table cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" width="600" align="center">
             <tr>
-                <td width="200"><?php if(isset($content1){echo $content1 ;} ?></td>
-                <td width="200"><?php if(isset($content2){echo $content2 ;} ?></td>
-                <td width="200"><?php if(isset($content3){echo $content3 ;} ?></td>
+                <td width="200"><?php if(isset($content1)){echo $content1 ;} ?></td>
+                <td width="200"><?php if(isset($content2)){echo $content2 ;} ?></td>
+                <td width="200"><?php if(isset($content3)){echo $content3 ;} ?></td>
             </tr>
         </table> 
 
@@ -104,7 +104,7 @@ alink="#FF0000" link="#FF0000" bgcolor="#ffffff" text="#FFFFFF" yahoo="fix">
     		</tr>
 		</table>        
 -->
-<?php  if(isset($footer){echo $footer ;}  ?>
+<?php  if(isset($footer)){echo $footer ;}  ?>
     </div> <!--end wrapper-->
 
 </body>
