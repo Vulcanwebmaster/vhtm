@@ -25,33 +25,29 @@
     <?php $this->load->view($this->config->item('backendpro_template_shop') . 'header');?>
   </div>
   <div id="wrapper">
+       <div class="main-fream">
+                   <!-- LEFT -->
+                   <?php $this->load->view($this->config->item('backendpro_template_shop') . 'left');?>
 	<div class="inside">
-	  <div id="main">
-<?php 
- //   print displayStatus();
-    print (isset($content)) ? $content : NULL; 
-    if( isset($page))
-    {
-        if( isset($module))
-        {
-            $this->load->view($module.'/'.$page);
-        } 
-        else 
-        {
-            $this->load->view($page);
-        }
-    }
-?>
+	  <div id="main-column">
+                            <?php 
+                            //   print displayStatus();
+                                print (isset($content)) ? $content : NULL; 
+                                if( isset($page))
+                                {
+                                    if( isset($module))
+                                    {
+                                        $this->load->view($module.'/'.$page);
+                                    } 
+                                    else 
+                                    {
+                                        $this->load->view($page);
+                                    }
+                                }
+                            ?>
 	  </div><!--End of content-->
-	  <div id="left"><!--Start of leftcol -->
-		  
-		  <?php $this->load->view($this->config->item('backendpro_template_shop') . 'left');?>
-	  </div>
-	  <div id="right"><!--START RIGHT COLUMN -->
-		
-		 <?php $this->load->view($this->config->item('backendpro_template_shop') . 'right');?>
-	  </div>
 	</div>
+       </div>
     <div id="footer"> 
       
       <?php $this->load->view($this->config->item('backendpro_template_shop') . 'footer');?>

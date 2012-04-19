@@ -104,6 +104,7 @@ $config['asset'][] = array('file'=>'default.css');
 
 // webshop
 $config['asset'][] = array('file'=>'webshop.css');
+$config['asset'][] = array('file'=>'istockgold.css');
 // dropdown menu
 $config['asset'][] = array('file'=>'cecilie.init.js', 'needs'=>'quicksand');// need to be at the end	
 // delete item or recalculate
@@ -175,7 +176,7 @@ $config['asset_group']['PUBLIC'] = 'bep_front_layout|FlashStatus';
 $config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|FlashStatus|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
 
 // Added from here 
-$config['asset_group']['SHOP'] = 'shopcustomtools|FlashStatus|webshop|menu.init';
+$config['asset_group']['SHOP'] = 'shopcustomtools|FlashStatus|menu.init|istockgold';
 $config['asset_group']['SHOPADMIN'] = 'admin|site';
 
 // TinyMCE group

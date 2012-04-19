@@ -1,0 +1,153 @@
+﻿body {font-family:Arial}
+.main-fream{width:1160px;height:1000; margin:auto;}
+#header{height:200px}
+#header-top{height:100px}
+#header-bottom-center {background-image:url('../images/banner-bottom-bg.jpg'); width:914px; height:98px; margin-left:158px}
+#header-bottom-center img{float:left;}
+#header-line {height:20px; background-image:url('../images/blue-line.png')}
+#left-column{float:left; width:304px}
+#menu{width:100%; height:202px; background-image:url('../images/menu-bg.jpg'); padding-top:0px; padding-left:0px}
+#menu a{font-size:12px; font-weight:bold}
+#support{width:305px; height:238px; background-image:url('../images/support-bg.png'); margin-top:15px}
+.menuitem{height:22px}
+.menuitem a{padding-left:22px}
+
+#support-information{padding-top:5px}
+#support-information div{padding-left:60px;}
+#support-information span{font-size:12px; font-weight:bold; color:blue; height:20px; padding-top:10px}
+#support-information img{margin-top:10px; margin-left:10px}
+
+#istock{width:305px; height:130px; background-image:url('../images/istock bg.png'); margin-top:15px}
+#istock div{float:left; padding-left:10px}
+/*#istock img{width:100px;}*/
+#istock span{ font-size:12px; font-family:Arial; margin-left:10px}
+#lastest-exchange{width:305px; height:207px; border-bottom:inset 1px #9d9d9d; font-family:Arial;font-size:12px;background-image:url('../images/lastest-exchange-bg.png'); margin-top:15px}
+#lastest-exchange span{color:Red}
+#lastest-exchange table{width:100%; height:172px}
+.hangle
+{
+    background-color: #E9E9E9;
+}
+#send{width:305px; height:193px; background-image:url('../images/send-bg.png'); margin-top:15px}
+#send div{margin-top:6px}
+#main-column{float:right; padding-left:25px;width:831px}
+#label{height:50px}
+#label p
+{
+    color: #666666;
+    font-size:17px
+}
+#content1{/*width:831px*/width:100%; height:389px}
+#tab-head{height:50px; padding-top:5px}
+#tab-head div{float:left; width:200px; text-align:center}
+#tab-head p{font-size:14px; font-family:Arial; font-weight:bold}
+
+.content-head2
+{
+    color: #005782; font-size:20px
+}
+
+.image-selection1{width:40px; height:20px}
+.c1,.c3{padding-left:60px}
+
+.nhanmanh{color:red}
+table{width:100%}
+.c1b{width:50%; padding-left:50px}
+.c1b a{color:#005782}
+.c1b span{color: #005782; font-weight:bold}
+.c2b{font-family:Arial; font-size:12px}
+
+#news-panel{width:770px;height:193px; padding-left:0px; padding-top:10px}
+#news-title{margin-left:20px}
+#news-title span
+{
+    font-family: Arial;
+    font-size: 18px;
+    padding-top: 10px;
+    vertical-align: 50%;
+}
+#news-content{margin-left:20px;font-family:Arial; font-size:14px;}
+#news-content a{color:#2576ca; font-style:normal}
+#news-content a img{margin-right:5px}
+
+#content2{padding-top:10px}
+
+#comment-header{height:30px}
+#comment-header img{float:left;}
+#comment-header a{float: left; margin-top:5px; font-size:15px;color:#0b83d4; font-weight:bold}
+#news-control-panel{padding-top:10px; margin-bottom:20px}
+#news-control-panel span{float:left; margin-top:5px}
+#news-control-panel select
+{
+    border: 1px inset #C0C0C0;
+    border-radius: 5px;
+    margin-left: 10px;
+    float: left;
+    width: 61px;
+    height: 28px;
+    background-color: #EEEEEE;
+}
+#news-control-panel button
+{
+    border: 1px inset #CCCCCC;
+    border-radius: 5px;
+    background-color: #CCCCCC;
+}
+#comment-table button{float:left; background-color:Black; border:none; color:White}
+#comment-table span{font-size:11px; float:left; font-weight:bold; margin-top:3px}
+
+.frostwrath{font-size:14px; font-weight:bold}
+.from-UK{color:#a29e9e; font-size:13px; margin-left:10px}
+.comment-date
+{
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.comment-content{font-size:14px}
+.comment-col1{width:170px}
+.comment-table hr
+{
+    border-style: inset none none none;
+    border-width: 1px;
+    border-color: #C0C0C0;
+}
+.comment-date
+{
+    background-color: #E1E1E1;
+}
+#register-head1{height:20px}
+#register-head1 label{font-size:14px; font-weight:bold}
+#content4 div p
+{
+    width: 100%;
+    font-size: 12px;
+    overflow: auto;
+}
+#register-head2{height:50px}
+#register-head2 img{float:left}
+#register-head2 label{float:left;
+    font-size: 12px; margin-top:7px; margin-left:10px}
+#register-center{border-radius:5px;background-color:#e5ecf3}
+#register-center table{font-size:12px}
+#register-center table span{margin-left:10px; color:Red}
+.tddb{background-color:#eeeeee; padding:10px}
+
+#footer
+{
+    clear: both;
+    border-top: inset 2px silver;
+    border-top-color: #E4E4E4;
+}
+
+#footer{width:1160px; margin:auto; font-size:12px; padding:10px 0}
+#menu-footer{margin-bottom:10px}
+#menu-footer a{color:#0120a2; font-size:12px; font-weight:bold}
+
+/*ABOUT US*/
+#au-title{ text-transform:uppercase; font-size:16px; font-weight:bold; color:#ce0701; margin-top:10px;border-bottom:inset 2px #8ebada}
+#map{margin-top:15px}
+
+/*FAQ*/
+.FAQContent{font-size:12px; padding:25px 0 0 0}
+.FAQContent p{line-height:20px}
+.FAQTitle{color:#0093ff; font-weight:bold}
