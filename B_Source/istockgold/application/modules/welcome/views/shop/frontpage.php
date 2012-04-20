@@ -1,3 +1,12 @@
+
+
+<script type="text/javascript">
+
+
+var rateData 
+
+</script>
+
 <div id="main-column">
             <div id="label">
                 <p>LOW FEES - GOOD RATES - FAST AND EASY EXCHANGE E-CURRENCY - SECURE TRANSACTION</p>
@@ -13,40 +22,48 @@
                 <?php echo form_open( $module."/exchange" ); ?>
                     <div class="fromCurrency">
                     	<span class="content-head2">What's your currencty base?</span>
-                    	<div class="lr">
-                    		<input type="radio" name="fromCurrency" value="LR" checked="checked"/>
-                            <img alt="" src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" class="image-selection1"/>
-	                        <a>Liberty Reserve</a>
-                    	</div>
-                    	<div class="wu">
-	                    	<input type="radio" name="fromCurrency" value="WU" />
-	                        <img alt="" src="<?php echo base_url()?>assets/images/wu2.jpg" class="image-selection1"/>
-	                        <a>Western Union</a>
-                    	</div>
+                    	<?php
+						  	foreach ($buyCurrencies as $key => $currency){
+						 ?>
+						 	<!-- THE DIV for each currency -->
+						 	<div class="<?php echo strtolower($currency['code']);?>">
+	                    		<input type="radio" name="buyCurrency" value="<?php echo $currency['code'];?>" 
+	                    						<?php if($currency['code'] == 'LR') echo 'checked="checked"';?>
+	                    						onclick="fromtochange('<?php echo $currency['c_id'];?>','<?php echo $currency['c_name'];?>',6.30000,-1)"/>
+	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
+		                        <a><?php echo $currency['c_name'];?></a>
+	                    	</div>	
+	                    	<!-- THE DIV for each currency -->
+					 	<?php 
+						  	}
+						?>
                     </div>
                     <div class="currencyRate">
                     	<span class="content-head2">Rate</span>
                     	<br/>
-                    	<span style="color:Red">1 : 0.8092</span>
+                    	<span id="rate" style="color:Red">1 : 0.8092</span>
                     </div>
                     <div class="toCurrency">
                     	<span class="content-head2">What's currencty you will get?</span>
-                    	<div class="lr">
-                    		<input type="radio" name="toCurrency" value="LR" />
-                            <img alt="" src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" class="image-selection1"/>
-	                        <a>Liberty Reserve</a>
-                    	</div>
-                    	<div class="wu">
-	                    	<input type="radio" name="toCurrency" value="WU" checked="checked"/>
-	                        <img alt="" src="<?php echo base_url()?>assets/images/wu2.jpg" class="image-selection1"/>
-	                        <a>Western Union</a>
-                    	</div>
+                    	<?php
+						  	foreach ($sellCurrencies as $key => $currency){
+						 ?>
+						 	<!-- THE DIV for each currency -->
+						 	<div class="<?php echo strtolower($currency['code']);?>">
+	                    		<input type="radio" name="sellCurrency" value="<?php echo $currency['code'];?>" <?php if($currency['code'] == 'WU') echo 'checked="checked"';?> onclick=""/>
+	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
+		                        <a><?php echo $currency['c_name'];?></a>
+	                    	</div>	
+	                    	<!-- THE DIV for each currency -->
+					 	<?php 
+						  	}
+						?>
                     </div>
                     <div class="clearboth"> </div>
                     
-                    <div style="float: right; width: 51%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
+                    <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
                     	 <hr align="right" width="70%">
-                    	 You pay <input name="amount" value="1000" style="width: 35px;"> Money Gram, will get <span class="redText">786.26</span> Liberty reserve <button>Exchange</button>
+                    	 You pay <input name="amount" value="1000" style="width: 35px;"> <span id="pay">Liberty Reserve</span>, will get <span class="redText">786.26</span> <span id="get">Western Union </span> <button>Exchange</button>
                          <br />
                          <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
                     </div>

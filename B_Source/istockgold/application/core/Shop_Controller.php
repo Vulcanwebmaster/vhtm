@@ -61,6 +61,7 @@ class Shop_Controller extends MY_Controller
         $this->load->model('orders/MOrders');
         $this->load->model('pages/MPages');
         $this->load->model('products/MProducts');
+        $this->load->model('currency/MCurrency');
         $this->load->model('subscribers/MSubscribers');
         $this->load->model('languages/MLangs');
         $this->load->model('slideshow/MSlideshow');

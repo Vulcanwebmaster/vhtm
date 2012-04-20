@@ -43,7 +43,7 @@ class Welcome extends Shop_Controller
 
     function index()
     {
-        // this one is for a visitor changing a language first time through form
+    // this one is for a visitor changing a language first time through form
         if ($this->input->post('lang'))
         {
             $lang = $this->input->post('lang');
@@ -82,27 +82,17 @@ class Welcome extends Shop_Controller
                 $page = $this->MPages->getPagePath($indexpath);
             }
         }
-       	// you need to change webshop_lang $lang['webshop_folder'] = 'webshop';
-        // according to your folder name.
-        //$webshop = $module;
-        // feature == front
-        $feature='webshop';
-    	$featureimages = $this -> MProducts -> getFrontFeaturebyLang($feature,$this->lang_id);
-        //$featureimages = $this -> MProducts -> getFrontFeature($webshop);
+
+    	$buyCurrencies = $this -> MCurrency -> getBuyCurrency();
+    	$sellCurrencies = $this -> MCurrency -> getSellCurrency();
     	
-    	// load slideshow preference
-    	$this->bep_assets->load_asset_group($this->preference->item('webshop_slideshow'));
+    	$rateData = $this -> MCurrency -> getRateData();
     	
-    	// slideshow images
-    	//$catname = "Slideshow";
-        $where='status';
-        $what = 'active';
-        $slideimages = $this->MKaimonokago->getAllSimple('slideshow',$where,$what);
-        //$slideimages = $this -> MSlideshow -> getAllslideshow();
-    	$data['slides'] = $slideimages;
+    	$data['rateData']  = $rateData;
+    	$data['buyCurrencies'] = $buyCurrencies;
+    	$data['sellCurrencies'] = $sellCurrencies;
     	
-    	$data['images'] = $featureimages;
-        if($page)
+    	if($page)
         {// in order to prevent an error after installation
             $data['title'] = $page['name'];
             $data['pagecontent'] = $page;
@@ -112,6 +102,7 @@ class Welcome extends Shop_Controller
             $data['title'] = 'Welcome';
             $data['pagecontent'] = '';
         }
+        
         // delete these
         $data['get_class']=  get_class();
         $data['index_path']=$indexpath;
