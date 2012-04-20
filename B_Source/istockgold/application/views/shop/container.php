@@ -24,12 +24,10 @@
   <div id="container">
     <?php $this->load->view($this->config->item('backendpro_template_shop') . 'header');?>
   </div>
-  <div id="wrapper">
-       <div class="main-fream">
+    <div class="main-fream">
                    <!-- LEFT -->
                    <?php $this->load->view($this->config->item('backendpro_template_shop') . 'left');?>
-	<div class="inside">
-	  <div id="main-column">
+				  <!-- Main Columns -->
                             <?php 
                             //   print displayStatus();
                                 print (isset($content)) ? $content : NULL; 
@@ -45,9 +43,8 @@
                                     }
                                 }
                             ?>
-	  </div><!--End of content-->
+				 <!--End of content-->
 	</div>
-       </div>
     <div id="footer"> 
       
       <?php $this->load->view($this->config->item('backendpro_template_shop') . 'footer');?>

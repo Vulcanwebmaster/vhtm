@@ -200,12 +200,30 @@ class Welcome extends Shop_Controller
     
     function exchange()
     {
+    	
+    	$fromCurrency = $this->input->post('fromCurrency');
+    	$toCurrency = $this->input->post('toCurrency');
+    	$amount = $this->input->post('amount');
+    	
         $pageName = "Exchange";
         $data['title'] = $this->preference->item('site_name')." | ". $pageName;
-
-        $data['page'] = $this->config->item('backendpro_template_shop') . 'exchange';
+        $data['amount'] = $amount;
+        
+    	if ($fromCurrency == "LR" && $toCurrency == "WU") {
+    		$data['page'] = $this->config->item('backendpro_template_shop') . 'lr2wu';
+    	} else if ($fromCurrency == "WU" && $toCurrency == "LR") {
+    		$data['page'] = $this->config->item('backendpro_template_shop') . 'wu2lr';
+    	}
+		
+        
+        
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data);
+    }
+    
+    function getRate()
+    {
+    	
     }
 
 

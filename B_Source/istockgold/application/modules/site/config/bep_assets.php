@@ -171,7 +171,7 @@ $config['asset'][] = array('file'=>'unmaskpassword.js');
  * 
  * Where <asset_n> is the name of the asset file specified in the array above.
  */
-$config['asset_group']['SITE'] = 'reset|typography';
+$config['asset_group']['SITE'] = 'typography';
 $config['asset_group']['PUBLIC'] = 'bep_front_layout|FlashStatus';
 $config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|FlashStatus|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
 

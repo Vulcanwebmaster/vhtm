@@ -19,7 +19,7 @@
    and vertical margins are automatically calculated from this.
    The percentage is of 16px (0.75 * 16px = 12px). */
 
-body { font-size: 75%; }
+body {  }
 
 
 /* Default fonts and colors.
@@ -53,13 +53,13 @@ h6 { font-size: 1em; font-weight: bold; }
 /* Text elements
 -------------------------------------------------------------- */
 
-p           { margin: 0 0 1.5em; }
+p           { /*margin: 0 0 1.5em;*/ }
 p.last      { margin-bottom: 0; }
 p img       { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
 p img.top   { margin-top: 0; } /* Use this if the image is at the top of the <p>. */
 
 ul, ol      { margin:0 1.5em 1.5em 1.5em; }
-ul          { list-style-type: circle; }
+ul          {}
 ol          { list-style-type: decimal; }
 dl          { margin: 0 0 1.5em 0; }
 dl dt       { font-weight: bold; }
@@ -72,7 +72,7 @@ del         { color:#666; }
 
 a:focus,
 a:hover     { color: #000; }
-a           { color: #009; text-decoration: underline; }
+a           { color: #009; }
 
 blockquote  { margin: 1.5em; color: #666; font-style: italic; }
 strong      { font-weight: bold; }
@@ -86,9 +86,9 @@ tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
 /* Tables
 -------------------------------------------------------------- */
 
-table   { margin-bottom: 1.4em; }
-th      { border-bottom: 2px solid #ccc; font-weight: bold; }
-td      { border-bottom: 1px solid #ddd; }
+table   { /*margin-bottom: 1.4em;*/ }
+th      { /*border-bottom: 2px solid #ccc; font-weight: bold;*/ }
+td      { /*border-bottom: 1px solid #ddd;*/ }
 tfoot   { font-style: italic; }
 caption { background: #ffc; }
 
