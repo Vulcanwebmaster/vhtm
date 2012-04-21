@@ -1,0 +1,142 @@
+/**********TIM KIEM****************/
+
+#boxsearch_cdt {
+    float:left;
+    margin-left:10px;
+    padding-top:20px;
+    width:450px;
+}
+#boxsearch_cdt a {
+    color:#333333;
+}
+#boxsearch_cdt a:hover {
+    color:#DA251D;
+    text-decoration:none;
+}
+#boxsearch_cdt span {
+    color:#AAAAAA;
+}
+#boxsearch_advlink {
+    float:none;
+    padding-top:5px;
+}
+#boxsearch_advlink ul li {
+    color:#CCCCCC;
+    line-height:25px;
+    text-align:left;
+}
+#boxsearch_advlink ul li a {
+    color:#333333;
+    overflow:hidden;
+    padding-left:5px;
+    padding-right:5px;
+    position:relative;
+    text-decoration:none;
+}
+#boxsearch_advlink ul li a:hover {
+    color:#0000CC;
+    text-decoration:underline;
+}
+#boxsearch_tabs {
+    background:url("../images/bottom_bg.png") repeat-x scroll center bottom transparent;
+    height:25px;
+    overflow:hidden;
+    width:423px;
+}
+#boxsearch_tabs .activebutton, #boxsearch_tabs .normalbutton {
+    cursor:pointer;
+    float:left;
+    height:25px;
+    line-height:25px;
+    margin-right:5px;
+}
+#boxsearch_tabs .activebutton a, #boxsearch_tabs .activebutton a span, #boxsearch_tabs .activebutton a strong, #boxsearch_tabs .normalbutton a, #boxsearch_tabs .normalbutton a span, #boxsearch_tabs .normalbutton a strong {
+    cursor:pointer;
+    float:left;
+    height:25px;
+    text-decoration:none;
+}
+#boxsearch_tabs .normalbutton a strong, #boxsearch_tabs .activebutton a strong {
+    color:#FFFFFF;
+    font-size:12px;
+    font-weight:bold;
+    line-height:25px;
+    margin-left:5px;
+    margin-right:5px;
+    padding-left:5px;
+    padding-right:5px;
+}
+#boxsearch_tabs .activebutton a, #boxsearch_tabs .normalbutton a:hover {
+    background:url("../images/btton_act_left.gif") no-repeat scroll left top #FFFFFF;
+}
+#boxsearch_tabs .activebutton a strong, #boxsearch_tabs .normalbutton a:hover strong {
+    background:url("../images/btton_act_md.gif") repeat-x scroll center top #FFFFFF;
+    color:#DA251D;
+    font-weight:bold;
+}
+#boxsearch_tabs .activebutton a span, #boxsearch_tabs .normalbutton a:hover span {
+    background:url("../images/btton_act_right.gif") no-repeat scroll right top transparent;
+}
+#search_box01 {
+    border-bottom:1px solid #DDDDDD;
+    border-left:1px solid #DDDDDD;
+    border-right:1px solid #DDDDDD;
+    float:left;
+    height:25px;
+    overflow:hidden;
+    padding-bottom:2px;
+    width:421px;
+}
+#search_box01 p.hotkey, #search_box02 p.hotkey {
+    clear:both;
+    color:#333333;
+    font-size:11px;
+    line-height:18px;
+    padding-bottom:3px;
+    padding-left:5px;
+    text-align:left;
+}
+#search_box01 p.hotkey a, #search_box02 p.hotkey a {
+    color:#333333;
+}
+#search_box01 p.hotkey a:hover {
+    color:#DA251D;
+}
+#search_box01 p.hotkey span, #search_box02 p.hotkey span {
+    color:#999999;
+    font-weight:normal;
+    padding-right:5px;
+}
+#search_box01 p {
+    margin:0;
+    padding:3px 5px;
+}
+#search_box01 input.uni_khung_search, #search_box02 input.uni_khung_search {
+    background:none repeat scroll 0 0 transparent;
+    border:medium none !important;
+    float:left;
+    font-size:12px;
+    margin-top:6px;
+    padding:0 5px !important;
+    width:295px;
+    color: #FFFFFF;
+}
+#search_box01 input.uni_khung_search02, #search_box02 input.uni_khung_search02 {
+    background:none repeat scroll 0 0 transparent;
+    border:medium none !important;
+    float:left;
+    margin-top:6px;
+    width:295px;
+}
+#search_box01 input.uni_nut_search, #search_box01 input.uni_nut_search02 {
+    background:url("../images/search_button.gif") no-repeat scroll 0 0 transparent;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    float:left;
+    font-family:Verdana;
+    font-size:14px;
+    font-weight:bold;
+    height:27px;
+    width:101px;
+}

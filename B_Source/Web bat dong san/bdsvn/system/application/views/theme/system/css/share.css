@@ -1,0 +1,38 @@
+.icon-16-aim{
+    background-image : url(../images/icon16/aim_16.png); 
+}
+.icon-16-delicious{
+    background-image: url(../images/icon16/delicious_16.png);
+}
+.icon-16-digg{
+    background-image: url(../images/icon16/digg_16.png);
+}
+.icon-16-facebook{
+    background-image: url(../images/icon16/facebook_16.png);
+}
+.icon-16-flickr{
+    background-image: url(../images/icon16/flickr_16.png);
+}
+.icon-16-google{
+    background-image: url(../images/icon16/google_16.png);
+}
+.icon-16-reddit{
+    background-image: url(../images/icon16/reddit_16.png);
+}
+.icon-16-twitter{
+    background-image: url(../images/icon16/twitter_16.png);
+}
+.icon-16-yahoo{
+    background-image: url(../images/icon16/yahoo_16.png);
+}
+.icon-16-yahoobuzz{
+    background-image: url(../images/icon16/yahoobuzz_16.png);
+}
+.iconapp{
+    width: 16px;
+    float: right;
+    height: 16px;
+    margin-left: 5px;
+    
+
+}

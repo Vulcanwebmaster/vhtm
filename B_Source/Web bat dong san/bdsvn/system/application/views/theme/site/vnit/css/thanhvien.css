@@ -1,0 +1,120 @@
+body  {
+    text-align:left;
+    color:#333333;
+    font-family:Tahoma,Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size:12px;
+    line-height:18px;    
+}
+body, select, textarea, input {
+    color:#3D3D3D;
+    font-family:Tahoma,sans-serif;
+}
+html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, img {
+    border:0 none;
+    font-size:12px;
+    margin:0;
+    padding:0;
+}
+.clearfix{
+    display:block;
+}
+ a{
+     color: #2D73B7;
+     text-decoration: none;
+ }
+ a:hover{
+     color: #F2530A;
+     text-decoration: none;
+ }
+ a:active{
+     color: #2D73B7;
+     text-decoration: none;    
+ }
+ul,dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+dt {
+    margin: 0;
+    font-weight: bold;
+}
+li,dd {
+    margin: 0;
+    padding: 0;
+}
+img  {
+    border:medium none;
+    vertical-align:middle;
+}
+fieldset  {
+    -moz-border-radius:5px 5px 5px 5px;
+    border:1px solid #CCCCCC;
+    margin-bottom:10px;
+    padding:5px;
+    text-align:left;
+}
+fieldset legend{
+    font-weight: bold;
+    font-size: 13px;
+}
+/*******
+* Style
+*/
+#wrapper{
+    width: 1018px;
+    padding: 0px;
+    margin: 0 auto;
+    overflow: hidden;    
+}
+#wrap_header{
+    background: url(../images/diendan/header.png) no-repeat;
+    height: 156px;
+}
+#wrap_contenttop{
+    background: url(../images/diendan/body_head.png) no-repeat;
+    height: 20px;
+}
+#wrap_contentmid{
+    background: url(../images/diendan/body_mid.png) repeat-y;
+    overflow: hidden;
+}
+#wrap_contentbot{
+    background: url(../images/diendan/body_bot.png) no-repeat;
+    height: 20px;    
+}
+#bodycontent{
+    padding: 0 20px;
+}
+.headforum{
+    height: 115px;
+}
+.headforum .logo{
+    width: 300px;
+    float: left;
+}
+.headforum .quangcao{
+    width: 700px;
+    float: left;
+    padding-right: 5px;
+}
+.headforum .dangnhap{
+    width: 200px;
+    float: left;
+}
+.cpanel{
+    color: #FFFFFF;
+}
+.label{
+    font-size: 11px;
+}
+.label a{
+    color: #FFF;
+}
+input.login{
+    height: 13px;
+}
+.btlogin{
+    font-size: 11px;
+    
+}

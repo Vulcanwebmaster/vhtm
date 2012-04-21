@@ -1,0 +1,70 @@
+
+/*******/
+.remote{
+    background: url(../images/tv/bg_remote.png) no-repeat;
+    width: 200px;
+    height: 450px;
+}
+
+/*******/ 
+.tv{
+    width: 600px;
+}
+.tv .toptv{
+    background: url(../images/tv/topvideo.png) no-repeat;
+    width: 527px;
+    height: 22px;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+}
+.tv .midtv{
+    background: url(../images/tv/centervideo.png) repeat-y;  
+    width: 527px; 
+
+}
+.frame{
+   width: 490px;
+   padding-left: 20px; 
+}
+.tv .bottv{
+    background: url(../images/tv/botvideo.png) no-repeat; 
+    height: 52px;
+    width: 527px;   
+}
+.kenh{
+    width: 170px;
+    padding-left: 33px;
+    
+}
+.kenh ul li.vtc{
+    float: left;
+    width: 70px;
+    padding-bottom: 5px;
+}
+.kenhvtv{
+    width: 170px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.kenhvtv ul li.vtv{
+    float: left;
+    width: 40px;
+    padding-bottom: 5px;
+}
+.kenhhtv{
+  padding-left: 35px;  
+}
+.kenhhtv ul li{
+    width: 45px;  
+    float: left;
+}
+.kenhvov{
+  padding-left: 50px;
+  margin-top: 10px;  
+}
+.kenhvov ul li{
+    width: 60px;  
+    float: left;
+    padding-top: 5px;
+}

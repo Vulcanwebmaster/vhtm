@@ -1,0 +1,901 @@
+body  {
+    text-align:left;
+    color:#333333;
+    background: url(../images/music/background.png) repeat;
+    font-family:Tahoma,Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size:12px;
+    line-height:18px;    
+}
+body, select, textarea, input {
+    color:#3D3D3D;
+    font-family:Tahoma,sans-serif;
+}
+html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, img {
+    border:0 none;
+    font-size:12px;
+    margin:0;
+    padding:0;
+}
+.clearfix{
+    display:block;
+}
+.link a{
+    color: #333333;
+    text-decoration: none; 
+}
+.link a:hover{
+    color: #F2530A;
+    text-decoration: none; 
+}
+ a{
+     color: #2D73B7;
+     text-decoration: none;
+ }
+ a:hover{
+     color: #F2530A;
+     text-decoration: none;
+ }
+ a:active{
+     color: #2D73B7;
+     text-decoration: none;    
+ }
+ul,dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+dt {
+    margin: 0;
+    font-weight: bold;
+}
+li,dd {
+    margin: 0;
+    padding: 0;
+}
+img  {
+    border:medium none;
+    vertical-align:middle;
+}
+.form .input {
+    border:1px solid #C2C2C2;
+    color:#616161;
+    height:18px;
+    padding:1px;
+    width:300px;
+}
+.clearfix{
+    display:block;
+}
+.sitelink{
+    border-bottom:1px dashed #CCCCCC;
+    color:#FF0800;
+    font-size:18px;
+    font-weight:bold;
+    height:30px;
+    line-height:20px;
+    margin-bottom:10px;
+}
+/**********Style**********/
+#wrapper_top{
+    background: url(../images/music/background_header.png) repeat;
+    height: 148px;
+}
+#header{
+    width: 1022px;
+    background: url(../images/music/header.png) no-repeat;
+    height: 148px;
+}
+#wrapper{
+    width: 1022px;
+    padding: 0px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#body_mid{
+    background: url(../images/music/bg_wrap.png) repeat-y;
+    
+}
+#body_mid .mid_content{
+    padding: 5px 10px;
+    overflow: hidden;
+}
+#body_bot{
+    background: url(../images/music/bot_wrap.png) no-repeat;
+    height: 30px;
+    
+}
+#col_left{
+    width: 694px;
+    margin-right: 5px;
+    float: left;
+}
+#col_right{
+    width: 300px;
+    float: right;
+}
+
+
+/****SEARCH****/
+.body_timkiem .boxtimkiem{
+    width: 600px;
+    float: left; 
+    padding-top:5px;
+    padding-left: 20px;  
+    height: 33px;
+}
+.body_timkiem .boxdangnhap{
+    width: 300px;
+    float: right;
+}
+.boxtimkiem .sleft{
+    background: url(../images/music/sleft.png) no-repeat;
+    width: 15px;
+    float: left;
+    height:30px;
+}
+.boxtimkiem .smid{
+    background: url(../images/music/smid.png) repeat-x;
+    width: 280px;
+    height: 30px;
+    float: left;
+}
+.boxtimkiem .sright{
+    background: url(../images/music/sright.png) no-repeat;
+    width: 7px;
+    float: left;
+    height:30px;
+    margin-right: 20px;
+}
+.boxtimkiem .sbotton{
+    background:url("../images/music/sbotton.png") no-repeat scroll left top transparent;
+    border:0 none;
+    cursor:pointer;
+    height:30px;
+    margin-left:-5px;
+    width:91px;
+}
+
+/**grey**/
+.head-grey  {
+    background:url("../images/music/grey.png") no-repeat scroll 100% 0px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:35px;
+    line-height:29px;
+    padding-right:10px;
+}
+.head-grey .head-right {
+    background:url("../images/music/grey.png") no-repeat scroll 0 0px transparent;
+    float:left;
+    font-size:0 !important;
+    height:35px;
+    width:15px;
+}
+
+.boder-grey{
+    border-left: 1px solid #C0C0C0;
+    border-right: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    padding: 0 3px;
+}
+/*The loai*/
+.boxtheloai{
+    background-color:#F1F1F1;
+    border:1px solid #DDDDDD;
+    overflow:hidden;
+    padding:10px;   
+}
+.background{
+    background-color: #FFF;
+}
+.content{
+    padding: 0 10px;
+}
+.line-doted{
+    background:url("../images/music/pointer-row.jpg") repeat-x scroll left bottom transparent;
+    clear:both;
+    font-size:1px;
+    height:1px;
+    line-height:1px;
+    margin-bottom:10px;
+    padding-top:10px;
+    width:100%;
+}
+.listcontent .item{
+    background:url("../images/music/pointer-row.jpg") repeat-x scroll left bottom transparent;
+    margin-bottom:9px;
+    overflow:hidden;
+    padding-bottom:7px;
+
+}
+.item_left{
+    background: url(../images/music/icon_song.png) no-repeat center;
+    width: 60px;
+    height: 40px;
+    float: left;
+}
+.item_mid{
+    width: 540px;
+    float: left;
+    margin-right: 10px;
+}
+.item_right{
+    width: 40px;
+    float: left;
+}
+.t13{
+    font-size: 13px;
+    font-weight: bold;
+}
+span.info{
+    color: #5C5C5C;
+    padding: 0 5px;
+}
+div.add_to_list{
+    background: url(../images/music/addtolist.png) no-repeat center; 
+    height: 29px;
+    width: 29px;
+}
+div.added{
+    background: url(../images/music/added.png) no-repeat center; 
+    height: 29px;
+    width: 29px;
+}
+.numberPlaylist{
+    color: #FF0000;
+    font-size: 20px;
+    font-weight: bold;
+}
+/***Nghe nhac********/
+.nghenhac_tieude{
+    background:url("../images/music/pointer-row.jpg") repeat-x scroll left bottom transparent;
+    clear:both;
+    font-size:22px;
+    height:30px;
+    line-height:30px;
+    margin-bottom:5px;
+    color: #0D6AA9;
+    width:100%;    
+}
+.nghenhac_info{
+    margin-bottom: 20px;
+}
+.nghenhac_info .span{
+    padding: 5px 0;
+}
+.box_nghenhac{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.box_nghenhac .palyer{
+    width: 400px;
+    float: left;
+}
+.box_nghenhac .info{
+    width: 200px;
+    float: right;
+}
+.box_player{
+
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    background-color : #F1F1F1;
+}
+.box_player .background{
+    background-color : #FFF;
+    width: 100%;
+}
+
+.tabs{
+padding: 0;
+height: 26px;
+}
+
+.tabs ul{
+font-size: 11px;
+margin:0;
+padding:0;
+
+}
+
+.tabs li{
+display:inline;
+margin:0 2px 0 0;
+padding:0;
+text-transform:uppercase;
+}
+
+
+.tabs a{
+float:left;
+color: #5C5A5A;
+margin:0 2px 0 0;
+padding:0 0 0px 15px;
+text-decoration:none;
+letter-spacing: 1px;
+}
+
+.tabs a span{
+float:left;
+display:block;
+padding:4px 15px 4px 5px;
+}
+
+.tabs a span{
+float:none;
+}
+
+.tabs a:hover{
+background: url(../images/music/tab-left-ac.png) no-repeat left top;
+color: #FFF; 
+}
+
+.tabs a:hover span{
+background: transparent url(../images/music/tab-right-ac.png) no-repeat right top; 
+}
+.tabs li a.selected{
+
+color: #FFF; 
+background: url(../images/music/tab-left-ac.png) no-repeat left top;
+ 
+}
+
+.tabs li a.selected span{ /*currently selected tab*/
+background: transparent url(../images/music/tab-right-ac.png) no-repeat right top;
+}
+.app{
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    display: block;
+    
+}
+.app ul li{
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.app ul li a  {
+    background:url("../images/music/app-a-left.png") no-repeat scroll left top transparent;
+    color:#000000;
+    display:block;
+    line-height:30px;
+    padding:0 0 0 6px; 
+}
+.app ul li a span {
+    background:url("../images/music/app-a-right.png") no-repeat scroll right top transparent;
+    display:block;
+    line-height:30px;
+    padding-left:2px;
+    padding-right:10px; 
+    
+}
+.app ul li a span img{
+    padding: 3px;
+    
+}
+.app ul li a:hover  {
+    background:url("../images/music/app-a-left-ac.png") no-repeat scroll left top transparent;
+    color:#000000;
+    display:block;
+    line-height:30px;
+    padding:0 0 0 6px; 
+    color: #FFF;
+}
+.app ul li a:hover span {
+    background:url("../images/music/app-a-right-ac.png") no-repeat scroll right top transparent;
+    display:block;
+    line-height:30px;
+    padding-left:2px;
+    padding-right:10px; 
+    
+}
+.app ul li a.active {
+    background:url("../images/music/app-a-left-ac.png") no-repeat scroll left top transparent;
+    color:#000000;
+    display:block;
+    line-height:30px;
+    padding:0 0 0 6px; 
+    color: #FFF;
+}
+.app ul li a.active span {
+    background:url("../images/music/app-a-right-ac.png") no-repeat scroll right top transparent;
+    display:block;
+    line-height:30px;
+    padding-left:2px;
+    padding-right:10px; 
+    
+}
+.box-content{
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: none;
+    overflow: hidden;
+}
+.box-content1{
+    display: none;
+    overflow: hidden;
+}
+.submit{
+    background:url("../images/music/bg_botton.png") no-repeat scroll left top transparent;
+    border:medium none;
+    color:#FFF;
+    cursor:pointer;
+    font-family:Tahoma;
+    font-size:13px;
+    font-weight:bold;
+    height:25px;
+    margin-right:5px;
+    padding-bottom:4px;
+    width:90px;
+}
+
+/**********Home Nhac******************/
+.homepage_content{
+    background-color: #FFFFFF;
+    padding: 5px;
+    overflow: hidden;
+}
+.homepage_top{
+    overflow: hidden;
+}
+.homepage_top .colleft{
+    width: 180px;
+    float: left;
+
+}
+.homepage_top .colright{
+    width: 460px;
+    float: right;
+}
+.homepage_top .colleft img{
+    width: 180px;
+    height: 160px;
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+}
+.home_title_album{
+    margin-bottom:6px;
+    padding-bottom:8px;
+    padding-top:4px;    
+}
+div.itemsongalbum{
+    float: left;
+    width: 200px;
+    margin: 2px;
+}
+div.itemsongalbum span{
+    background-color: #FA520A;
+    border: 1px solid #e5e5e5;
+    width: 20px;
+    float: left;
+    color: #FFF;
+    text-align: center;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.itemalbum{
+    margin-top: 10px;
+    width: 125px;
+    margin-right: 5px;
+    float: left;
+    margin-bottom: 10px;
+}
+.itemalbum img{
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+    border: 1px solid #e5e5e5;
+}
+.listsong_album{
+    height:200px;
+    padding: 0 5px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    padding:0;
+    width:100%;
+}
+.listsong_album ul li{
+    border-bottom:1px solid #EAEAEA;
+    overflow: hidden;
+    padding-bottom:4px;
+    padding-top:4px;
+    
+}
+.listsong_album ul li .number{
+    padding-left: 5px;
+    float: left;
+    width: 20px;
+    padding-right: 5px;
+}
+.listsong_album ul li .tieude{
+   width: 300px;
+   float: left; 
+}
+.listsong_album ul li .icon{
+    width: 70px;
+    float: left;
+}
+.listsong_album ul li .icon img{
+    padding: 0 3px;
+}
+.div_embed{
+    margin : 5px 0;
+    overflow: hidden;
+}
+.div_embed .text{
+    width: 100px;
+    float: left;
+}
+.div_embed .input{
+    width: 500px;
+    float: left;
+}
+/**Full Box**/
+.hb{
+    background:url("../images/box.png") no-repeat scroll 100% 0px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb .hr{
+    background:url("../images/box.png") no-repeat scroll 0 0px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.hb1{
+    background:url("../images/box.png") no-repeat scroll 100% -39px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb1 .hr{
+    background:url("../images/box.png") no-repeat scroll 0 -39px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.hb2{
+    background:url("../images/box.png") no-repeat scroll 100% -78px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb2 .hr{
+    background:url("../images/box.png") no-repeat scroll 0 -78px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.hb3{
+    background:url("../images/box.png") no-repeat scroll 100% -117px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb3 .hr{
+    background:url("../images/box.png") no-repeat scroll 0 -117px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.hb4{
+    background:url("../images/box.png") no-repeat scroll 100% -156px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb4 .hr{
+    background:url("../images/box.png") no-repeat scroll 0 -156px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.hb5{
+    background:url("../images/box.png") no-repeat scroll 100% -195px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb5 .hr{
+    background:url("../images/box.png") no-repeat scroll 0 -195px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.hb6{
+    background:url("../images/box.png") no-repeat scroll 100% -234px transparent;
+    color:#333333;
+    font-weight:bold;
+    height:39px;
+    line-height:10px;
+    padding-right:10px;    
+}
+.hb6 .hr{
+    background:url("../images/box.png") no-repeat scroll 0 -234px transparent;
+    float:left;
+    font-size:0 !important;
+    height:39px;
+    line-height:0 !important;
+    width:15px;
+}
+.btieude{
+    padding-top: 15px;
+    font-size: 14px;
+
+}
+.bbox{
+   border-left: 1px solid #D6D6D6; 
+   border-right: 1px solid #D6D6D6;
+   margin-left: 9px;
+   padding: 0 3px;
+   overflow: hidden;
+}
+.bb{
+    background:url("../images/box.png") no-repeat scroll 100% -234px transparent;
+    font-size:1px !important;
+    height:10px;
+    line-height:1px !important;
+
+}
+.bb .br {
+    background:url("../images/box.png") no-repeat scroll 0 -234px transparent;
+    float:left;
+    font-size:0 !important;
+    height:10px;
+    line-height:0 !important;
+    width:15px;
+}
+.quangcao250{
+    background: #F3F3F3 url(../images/adby.png) no-repeat top;
+
+    padding: 20px 3px 3px 3px;
+    margin-bottom: 10px;
+}
+.quangcao250 img{
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+    width: 235px;
+    margin: 3px 0;
+} 
+.quangcao225{
+    background: #F3F3F3 url(../images/adby.png) no-repeat top left;
+
+    padding: 20px 3px 3px 3px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+.quangcao225 img{
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+    width: 210px;
+    margin: 3px 0;
+} 
+.quangcao290{
+    background: #F3F3F3 url(../images/adby.png) no-repeat top left;
+
+    padding: 20px 3px 3px 3px;
+    margin-bottom: 10px;
+}
+.quangcao290 img{
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+    width: 280px;
+    margin: 3px 0;
+}
+.menutheloai{
+    overflow: hidden;
+}
+.menutheloai ul li{
+    width: 135px;
+    float: left;
+    padding: 3px;
+}
+.title_decu{
+    background-color:#EEEFF1;
+    color:#000000;
+    font-size:16px;
+    font-weight:bold;
+    padding-bottom:5px;
+    padding-top:8px;
+    text-align:center;
+    text-decoration:none;
+    text-transform:capitalize;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.rowtop{
+    color:#000000;
+    font-weight:normal;
+    padding-bottom:5px;
+    padding-right:0;
+    padding-top:5px;
+    text-decoration:none;
+    width:274px;    
+}
+.rowtop img{
+    float:left;
+    margin-right:3px;
+    padding-bottom:10px;
+}
+.rowtop .link_title{
+    color:#000000;
+    font-size:12px;
+    font-weight:normal;
+    text-decoration:none;
+    text-transform:capitalize;
+}
+.rowtop p{
+    margin:0;
+    padding:0;
+    text-transform:capitalize;
+}
+
+/*****The loai**********/
+.albumCat ul li{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.albumCat ul li .hinhanh{
+    width: 54px;
+    float: left;
+}
+.albumCat ul li .hinhanh img{
+    width: 54px;
+    margin-right : 5px;
+    padding: 2px;
+    border: 1px solid #e5e5e5;
+}
+.albumCat ul li .text{
+    width: 215px;
+    float: right;
+}
+.rowalbum ul li{
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.rowalbum ul li .hinhanh{
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+.rowalbum ul li .hinhanh img{
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+}
+.rowalbum ul li .noidung{
+    width: 565px;
+    float: right;
+} 
+.rowalbum ul li .noidung .tieude{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.videotitlecat{
+    background: #EEEFF1 url(../images/music/bg_video.png) no-repeat;
+    height: 30px;
+    padding-left: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.itemvideo{
+    margin-top: 10px;
+    width: 151px;
+    margin-right: 10px;
+    float: left;
+    margin-bottom: 10px;
+    background-color : #F2F2F2;
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+}
+.itemvideo img{
+    border:1px solid #E5E5E5;
+    height:100px;
+    margin-left:5px;
+    padding:3px;
+    width:135px;
+}
+.itemvideo p{
+    height: 30px;
+}
+.xvideo ul li{
+    overflow: hidden;
+    width: 330px;
+    float: left;
+    padding: 5px;
+    height: 50px;
+}
+.xvideo ul li .hinhanh{
+  width: 60px; 
+  float: left; 
+}
+.xvideo ul li .hinhanh img{
+    width: 60px;
+    padding: 2px;
+    border: 1px solid #e5e5e5;
+}
+.xvideo ul li .noidung{
+    height:50px;
+    width:255px;
+    float: right;
+}
+.hotvideo ul li{
+    height: 65px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 5px;
+    
+}
+.hotvideo ul li .hinhanh{
+    width: 70px;
+    float: left;
+}
+.hotvideo ul li .hinhanh img{
+    width: 70px;
+    padding: 3px;
+    border: 1px solid #e5e5e5;
+}
+.hotvideo ul li .noidung{
+    width: 200px;
+    float: right;
+}
+.tinamnhac{
+ overflow: hidden;   
+}
+.tinamnhac .collef{
+    width: 400px;
+    float: left;
+}
+.tinamnhac .colright{
+    width: 250px;
+    float: right;
+}
+.news span{
+    width: 150px;
+    float: left;
+     margin-right: 10px;
+}
+.news span img{
+    width: 140px;
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+
+}
+.listtin{
+    background: url(../images/item10x6.png) no-repeat scroll left top transparent;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}

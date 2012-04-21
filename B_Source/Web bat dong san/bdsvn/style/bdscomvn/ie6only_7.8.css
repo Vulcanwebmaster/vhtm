@@ -1,0 +1,479 @@
+/* General */
+html{overflow-x: hidden;}
+.product .pro-content ul li .ct-content .left a img
+{
+	margin-top: 15px;
+}
+.product .prd-content UL LI IMG
+{
+	margin: 10px 5px 0 0;
+}
+#page #header{width:1000px;float:left; margin: 0;}
+/*#page #header .logo{	width: 240px; margin-left: 5px; }*/
+.hd-send ul{padding:0px;}
+.hd-send ul li{padding: 0px; margin:0px}
+/* No left column */
+#top-content
+{
+	height: 24px;
+	display: block;
+	overflow: hidden;
+}
+
+#page-nav{}
+#page-nav  ul li ul{z-index: 999;	border-bottom: 1px solid #ffffff;}
+
+.home-search ul
+{
+	width: 450px;
+	list-style-type: none;
+	display: block;
+}
+.home-search ul li
+{
+	width: 450px;
+}
+
+.home-search #divLabelSearchAdv
+{
+	width: 390px;
+	display: block;
+}
+#home .separateTabs
+{
+	line-height: 0px;
+}
+#home .pro-content
+{
+	overflow: hidden;
+}
+
+#home .product
+{
+	width: 540px;
+	display: block;
+	overflow: visible;
+}
+#home .product .pro-content ul li
+{
+	overflow: visible;
+}
+#home .product .pro-content ul li
+{
+	width: 534px;
+	overflow: visible;
+}
+
+.rightContent .rc42-home ul
+{
+	width: 185px;	
+}
+
+.rightContent .rc421,
+.rightContent .rc42,
+.rightContent .rc32,
+.rightContent .advice2
+{
+	padding-left: 2px;
+}
+
+/* Has left & right column */
+.breadcrumbs
+{
+	display: block;
+	width: 980px;
+}
+/*#content
+{
+	width: 1000px;
+}*/
+#column-left-n-center
+{
+	width: 810px;
+	overflow: hidden;
+}
+#column-right
+{
+	/*width: 178px;
+	overflow: hidden;*/
+}
+#column-left
+{
+	width: 180px;
+	overflow: hidden;
+}
+#column-center
+{
+	width: 618px;
+	overflow: hidden;
+}
+#home-center #right-center{
+	width: 180px;
+}
+.rightContent .rc421 ul,
+.rightContent .rc42 ul,
+.rightContent .rc32 ul, 
+.rightContent .advice ul 
+{
+	list-style-type: none;
+	padding-left: 0px;
+	margin-left:4px;
+	padding-top: 4px;
+}
+.rightContent .rc421 li,
+.rightContent .rc42 ul li, 
+.rightContent .rc32 ul li, 
+.rightContent .advice ul li 
+{
+	width: 150px;
+	background-image:url("icon-hot.jpg")/*tpa=http://media.batdongsan.com.vn/images/common/icon-hot.jpg*/;
+	background-repeat: no-repeat;
+	background-position: 0 8px;
+	padding-left: 12px;
+
+}
+#right-center .rightContent .rc421 li,#right-center .rightContent .rc42 ul li, #right-center .rightContent .rc32 ul li, #right-center .rightContent .advice ul li 
+{
+	width: 180px;	
+}
+#right-center .rightContent .rc422-gold ul li
+{
+	background-image: none;
+	width: 48px;
+}
+#right-center .rightContent{
+	width: 200px;
+}
+
+#view_other_product
+{
+	height: 28px;
+	display: block;
+}
+
+/* Demand */
+#column-left .left-nv 
+{
+	width: 178px;
+	overflow: hidden;
+}
+
+/*At home*/
+#content-no-left #column-right .rightContent .rc22
+{
+	width: 202px;
+}
+#home-right .rightContent .rc22{	width: 202px; }
+#content #column-right .rightContent .rc22,	
+#column-left .rightContent .rc22
+{
+	width: 172px;
+}
+
+#right-center  .rightContent .rc22 ul li
+{
+	width: 205px;
+}
+#content #column-right .rightContent .rc22 ul li,
+#column-left .rightContent .rc22 ul li
+{
+	width: 169px;
+}
+
+.rightContent .rc22
+{
+/*	width: 200px;*/
+}
+.rightContent .rc22 ul li
+{
+	clear: both;
+	/*width: 205px;*/
+}
+.rightContent .rc222-entVip {	width: 125px;}
+
+/* News index */
+#home .news-top .news-top-content .top-first,
+#home .news-top .news-top-content .top-first img
+{
+	width: 260px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+#home .news-top .news-top-content .top-list
+{
+	overflow: hidden;
+	width: 250px;
+}
+#home .news-top .news-top-content .top-list ul li
+{
+	width: 250px;
+}
+
+#home .news-top .news-top-content .top-list ul
+{
+	display: block;
+	margin-top: 0px;
+}
+
+#home .news-category .news-header
+{
+	width: 540px;
+	margin: 0px;
+	padding: 0px;
+}
+#home .news-category .news-header ul
+{
+	margin: 0px;
+	padding: 0px;
+	width: 400px;
+}
+#home .news-category .news-header ul li.news-active
+{
+	padding-top: 7px;
+	line-height: 24px;
+}
+
+#home .news-category .news-content .news-list ul li.sub-list
+{
+	width: 240px;
+	float: left;
+	margin: 0px;
+}
+#home .news-category .news-content .news-first ul
+{
+	display: block;
+}
+#home a.first-left
+{
+	float: left;
+}
+#home a.first-right
+ {
+	display: inline;
+	width: 110px;
+	margin: 0;
+	padding: 0;
+	float:right;
+}
+#home .news-category .news-content .news-first p
+{
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+/* News listing */
+#list-cate  .list-bor .img-first 
+{
+	float: left;
+	display: block;
+}
+/* News detail */
+.otheritem .o1
+{
+	width: 610px;
+}
+
+/* Broker */
+.broker
+{
+	float: none;
+}
+.broker .list-row div.content {	width: 450px;}
+/*.broker .list-content{	width: 608px;	overflow: hidden;	border-left:1px solid #959595;	border-right:1px solid #959595;}*/
+.broker .list-row-small
+{	
+	width: 543px;		
+	padding-left: 85px;
+	clear: both;
+	overflow: hidden;
+}
+/*.broker .image-link
+{
+	width: 65px;
+	display: block;
+	float: left;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+}*/
+.broker .img_small 
+{
+	position: absolute;
+
+}
+.broker .list-row-small div.title
+{	
+	width: 40px;
+	float: left;
+}
+.broker .list-row-small div.content
+{
+	width: 415px;
+	float: right;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Project */
+#home  #index .c1,
+#list-art .c1
+{
+	width: 540px;
+}
+#home #project .c31
+{
+	width: 160px;
+	display: block;
+}
+#home .rightContent .rc12
+{
+	width: 186px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+#home .rightContent .rc12 #searchForm  #btnSearch
+{
+	width: 59px;
+}
+/*#listing .c1
+{
+	width: 610px;
+}*/
+#detail #tabs .ui-tabs-nav
+{
+	width: 606px;
+	display: block;
+	white-space: nowrap;
+}
+
+/* Enterprise */
+#home #company .c2,
+#home #company .c3
+{
+	width: 540px;
+	display: block;
+	overflow: hidden;
+}
+#listing .c2 ul li,#detail .p1 ul li{	width: 620px;}
+#detail .investor{display: block; overflow: hidden; width: 608px;}
+#detail .p1{width: 630px;}
+#detail .p1 ul
+{
+	margin: 4px;
+	padding: 0px;
+}
+#detail .p1 ul li
+{
+	list-style-type: none;
+}
+#detail .p1 .avatar
+{
+	width: 142px;
+}
+#detail .p1 .intro,
+#detail .p1 .intro ul
+{
+	display: block;
+	width: 428px;
+	overflow: hidden;
+	text-align: justify;
+}
+#detail .p1 .intro ul li
+{
+	width: 420px;
+	text-align: justify;
+}
+
+/* Question */
+.question .title form
+{
+	padding: 0; margin: 0;
+	/*width: 598px;*/
+}
+.question .listing .listdetail 
+{
+	/*width: 594px;*/
+}
+.question .listing .intro a
+{
+	text-decoration: none;
+}
+.question .q1
+{
+	width: 610px;
+}
+.question .listing ul li
+{
+	/*width: 604px;*/
+}
+/* Post new product */
+#divPostNews .rowHeader
+{
+	width: 710px;
+}
+#divPostNews .rowContent
+{
+	width: 718px;
+}
+#divFengshui .clear
+{
+	padding-top: 0px;
+}
+#divFengshui .fg-button
+{
+	width: 100px;
+}
+.bannerTTop{margin: 0px; height: 90px; }
+
+/* Remove when add banner */
+.bannerLC,
+.bannerB
+{
+	height: 0px;
+	line-height: 0px;
+}
+.tab-hb-active-left,.tab-hb-inactive-right,.tab-hb-active-right{ padding-bottom: 1px;}
+.rightContent .rc42-home ul li ul li{width:48px;}
+.home-search-top {margin-bottom: 5px;}
+.separable{	clear: both;}
+.news-category .news-content .news-first ul li p{text-align:justify;}
+#pool .advice-home{border-bottom: none;}
+.rightContent .line{margin: 0px;}
+.fengshui-home{margin-top: 10px;}
+.rightContent .advice-box .advice1{letter-spacing:-1px;}
+.rightContent .rc32, .rightContent .rc321 {padding: 0; margin: 0; overflow: hidden;}
+.product-contact .contact-name, .product-contact .contact-question{margin-top:0px;}
+#index .c1, #index .c2{width: 560px;}
+
+.rightContent .rc12 ul li.button, .leftContent .rc12 ul li.button{margin: 5px 0 0;} 
+
+#page #footer .dashline{height: 1px; width: 100%; border-bottom: 1px dotted rgb(0, 0, 0);}
+.news-top .news-top-content .top-list ul li{display:inline-block;}
+.comment-list .rightarea{float:right;width:85%; margin-bottom: 5px;}
+.comment-list .forbutton{float:right; margin: 75px 48px 0 0;}
+.comment-idea img{vertical-align: middle;}
+.buttom-logo{padding:0px;}
+.content-detail-art br{line-height: 10px;}
+#page #footer .fqlinknew ul li, #page #footer .fqlink ul li{display: inline;}
+.ym {padding: 0 0 5px 50px;}
+.rightContent .rc31{line-height: 24px;}
+.rightContent .rc421{padding-bottom: 0;	margin-bottom: 0px;}
+.pager{margin:4px 3px;padding:4px 3px 2px;}
+#divPostNews .rowPost .note{font-style:italic;padding: 15px 0px 10px;}
+.box-search form{	margin: 0px;	padding: 0px;}
+#divSearchRe form, #divReSaler form {margin: 0; padding:0;}
+#divOfSeach {padding-top: 0; margin-top: 15px;}
+.newslist ul{list-style:none;}	
+.newslist UL LI{padding: 0; margin: 0;}
+#brokersearch ul{padding: 15px 20px 0; margin:0px;}
+.border{	line-height: 2px;}
+#product_search form{ padding: 0px; margin: 0px; }
+#content-main-right .rightContent .advice ul li {width: 210px;	background-image:url("icon-hot.jpg")/*tpa=http://media.batdongsan.com.vn/images/common/icon-hot.jpg*/;	background-repeat: no-repeat;	background-position: 0 8px;	padding-left: 12px;}
+#content-main-right .rightContent .rc32 ul li,#content-main-right .rightContent .rc42 ul li,  {	background-position: 0px 8px;	padding-left: 12px;	background-image: url("icon-hot.jpg")/*tpa=http://media.batdongsan.com.vn/images/common/icon-hot.jpg*/;	width: 210px;	background-repeat: no-repeat;	clear: both;}
+#content-main-right .question .listing .listdetail span.reply{	width: 730px;}
+#content-main-right .rightContent .rc22 UL LI {	CLEAR: both;	PADDING-RIGHT: 0px;	DISPLAY: block;	PADDING-LEFT: 3px;	PADDING-BOTTOM: 5px;	OVERFLOW: hidden;	PADDING-TOP: 5px;	width: 228px;}
+#info #ava{float:right; border: 1px solid #3466bb; padding: 1px; width: 60px; height: 60px; position:absolute; margin-left: -60px; margin-top: -85px;}
+.floatright{padding-top: 4px;}

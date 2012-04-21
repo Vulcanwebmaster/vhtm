@@ -1,0 +1,21 @@
+.contact_site{
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px dotted #e5e5e5;
+    color: #FF9000;
+    margin-bottom: 10px;
+}
+.contact_title{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.contact{
+    padding: 5px 0;
+    overflow: hidden;
+}
+.contact span{
+    float: left;
+    width: 100px;
+    font-weight: bold;
+}

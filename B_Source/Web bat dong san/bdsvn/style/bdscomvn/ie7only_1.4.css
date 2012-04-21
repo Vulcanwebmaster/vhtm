@@ -1,0 +1,24 @@
+.tab-hb-active-left,
+.tab-hb-inactive-right,
+.tab-hb-inactive-left,
+.tab-hb-inactive-middle,
+.tab-hb-active-middle,
+.tab-hb-active-right
+{
+	padding-bottom: 0px;
+}
+.tab-hb-active-middle
+{
+	z-index: 999;
+}
+.lay-clear{clear: both;}
+#content-no-left #column-right .rightContent .rc22
+{
+	width: 202px;
+}
+.pager{margin:4px 3px;padding:2px 3px;}
+.newslist UL LI{padding: 1px 0 0; margin: 0;}
+.border{
+	height: 1px; line-height: 1px;
+}
+#brokersearch ul{padding: 10px 20px 0; margin:0px;}

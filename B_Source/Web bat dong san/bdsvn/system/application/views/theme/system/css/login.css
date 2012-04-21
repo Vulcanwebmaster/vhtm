@@ -1,0 +1,71 @@
+body{
+    font-family: Tahoma;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    background-color: #d4d0c8;
+}
+a{
+    color: #FF9000;
+}
+a:hover{
+    color:#cecece
+}
+div.login{
+    margin: 0px;
+    padding: 0px;
+    width: 665px;
+    text-align: left;
+    margin-top: 100px;
+}
+div.login div.head{
+    background: url(../images/head_login.png) no-repeat;
+    width: 665px;
+    height: 25px;
+}
+div.login div.body{
+    background: url(../images/center_login.png) repeat-y;
+    padding: 0 10px;
+    overflow: hidden;
+}
+div.login div.bot{
+    background: url(../images/bot_login.png) no-repeat;
+    width: 665px;
+    height: 30px;
+}
+.body div.col1{
+    width: 250px;
+    float: left;
+}
+.icon_user{
+    background: url(../images/user_login.png) no-repeat;
+    text-align: center;
+    width: 191px;
+    height: 100px;
+}
+.body div.col2{
+    width: 380px;
+    float: left;
+}
+.col2 .headline{
+    border-bottom: 1px solid #F5700A;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: #AB4C03;
+}
+ul.login_form{
+    list-style: none;
+}
+ul.login_form li{
+    width: 100%;
+    padding: 5px 0;
+    
+}
+ul.login_form li span{
+    width: 100px;
+    float: left;
+    
+}

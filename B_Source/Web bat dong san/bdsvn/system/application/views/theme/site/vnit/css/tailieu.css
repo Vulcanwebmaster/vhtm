@@ -1,0 +1,393 @@
+
+
+.wrap_content{
+    overflow: hidden;
+} 
+.wrap_content .colleft{
+    width: 200px;
+    float: left;
+    padding-right: 5px;
+    
+}
+.wrap_content .colright{
+    width: 794px;
+    float: right;
+}
+.wrap_content .col_binhluan{
+    width: 300px;
+    float: left;
+    padding-right: 5px;
+}
+.wrap_content .col_xemnhieu{
+    width: 300px;
+    float: left;
+    padding-right: 5px;
+}
+.wrap_content .col_tainhieu{
+    width: 300px;
+    float: right;
+}
+.bg_category{
+    background: url(../images/bg_danhmuc.png) no-repeat;
+    width: 500px;
+    height: 150px;
+}
+.wrap_content .coldanhmuc{
+    width: 505px;
+    float: left;
+
+    
+}
+.wrap_content .colinfo{
+    width: 484px;
+    float: right;
+}
+.bg_category .box_space{
+    width: 150px;
+    float: left;
+}
+.bg_category .box_category{
+    width: 345px;
+    float: right;
+    padding-top: 10px;
+}
+.module_title{
+    font-size: 14px;
+    font-weight: 800;
+    color: #FA6B05;
+}
+.box_category ul li{
+    float: left;
+    width: 155px;
+    padding: 2px 3px;
+    font-size: 11px;
+    background: url(../images/icon_10_item.png) no-repeat left center;
+    padding-left: 12px;
+}
+/*********Box List xem nhieu***************/
+.head-box{
+    background:transparent url(../images/box_list.png) no-repeat scroll top right;
+    background-position:100% 0px; 
+    height:35px;
+    line-height:35px;
+    padding-right:10px;
+    color: #D91C3C; 
+    
+           
+}
+.head-box .head-right{
+    background:transparent url(../images/box_list.png) no-repeat scroll top;
+    background-position:0 0px;
+    width:10px;
+    _width:10px;
+    height:35px;
+    float:left;
+    font-size:0px !important;    
+}
+.cat-box{
+    background:transparent url(../images/folder.png) no-repeat scroll top right;
+    background-position:100% -19px; 
+    height:30px;
+    line-height:30px;
+    padding-right:10px;
+    color: #D91C3C; 
+    
+           
+}
+.cat-box .head-right{
+    background:transparent url(../images/folder.png) no-repeat scroll top;
+    background-position:0 -19px;
+    width:10px;
+    _width:10px;
+    height:30px;
+    float:left;
+    font-size:0px !important;    
+}
+.border_box{
+    border-left: 1px solid #20C7FA;
+    border-right: 1px solid #20C7FA;
+    background: url(../images/bg_box_list.png) repeat-x bottom;
+    overflow: hidden;
+}
+.bottom-box{
+    background:transparent url(../images/box_list.png) no-repeat scroll top;
+    background-position:100% -35px;
+    height:15px;
+    line-height:1px !important;
+    font-size:1px !important;    
+}
+.bottom-box .bottom-right{
+    background:transparent url(../images/box_list.png) no-repeat scroll top;
+    background-position:0 -35px;
+    width:10px;
+    height:15px;
+    line-height:0px !important;
+    float:left;
+    font-size:0px !important;    
+}
+
+/*********BOX FOLDER***************/
+.head-d{
+    background:transparent url(../images/folder.png) no-repeat scroll top right;
+    background-position:100% 0px; 
+    height:10px;
+    line-height:10px;
+    padding-right:10px;
+    color: #D91C3C; 
+    
+           
+}
+.head-d .head-right{
+    background:transparent url(../images/folder.png) no-repeat scroll top;
+    background-position:0 0px;
+    width:10px;
+    _width:10px;
+    height:10px;
+    float:left;
+    font-size:0px !important;    
+}
+.border_d{
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    overflow: hidden;
+}
+.bottom-d{
+    background:transparent url(../images/folder.png) no-repeat scroll top;
+    background-position:100% -10px;
+    height:10px;
+    line-height:1px !important;
+    font-size:1px !important;    
+}
+.bottom-d .bottom-right{
+    background:transparent url(../images/folder.png) no-repeat scroll top;
+    background-position:0 -10px;
+    width:10px;
+    height:10px;
+    line-height:0px !important;
+    float:left;
+    font-size:0px !important;    
+}
+.contenttab{
+    width: 100%;
+}
+.contenttab ul li{
+    width: 225px;
+    padding: 2px 3px;
+    float: left;
+    height: 64px;
+    border-bottom : 1px dotted #e5e5e5;
+    margin-bottom: 5px;
+}
+.contenttab ul li .hinhanh{
+    width: 64px;
+    
+    float: left;
+}
+.contenttab ul li .label{
+    width: 160px;
+    float: right;
+}
+.contenttab ul li .label .tieude{
+    height: 40px;
+
+}
+.contenttab ul li .label .info{
+    height: 24px;
+    color: #969696;
+    font-size: 11px;
+}
+.col_cophi{
+    width: 245px;
+    float: left;
+}
+.col_mienphi{
+    width: 245px;
+    float: right;
+    padding-right: 5px;
+}
+.home ul li{
+    width: 225px;
+    padding: 2px 3px;
+    float: left;
+    height: 64px;
+    border-bottom : 1px dotted #e5e5e5;
+    margin-bottom: 5px;
+}
+.home ul li .hinhanh{
+    width: 64px;
+    
+    float: left;
+}
+.home ul li .label{
+    width: 160px;
+    float: right;
+}
+.home ul li .label .tieude{
+    height: 40px;
+
+}
+.home ul li .label .info{
+    height: 24px;
+    color: #969696;
+    font-size: 11px;
+}
+.toplast{
+    background: url(../images/bg_intro.png) no-repeat;
+    height: 130px;
+    width: 120px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.detail ul li{
+    
+    
+    padding: 0 3px;
+    font-size: 12px;
+    
+}
+.detail ul li span{
+    width: 80px;
+    float: left;
+    text-align: left;
+    font-weight: 700;
+}
+.catbox ul li{
+     overflow: hidden;
+
+     
+}
+.catbox ul li .hinhanh{
+    background: url(../images/bg_e.gif);
+    width: 87px;
+    height: 106px;
+    float: left;
+    padding-bottom: 5px;
+}
+.catbox ul li .label{
+    float: right;
+    width: 650px;
+}
+.anhebook{
+    width: 82px;
+    height: 100px;
+    border: 1px solid #e5e5e5;
+}
+span.hinhanh{
+    background: url(../images/bg_e.gif);
+    width: 87px;
+    height: 106px;
+    float: left;
+    padding-bottom: 5px; 
+    margin-right: 5px;   
+}
+.catbox ul li .label .tieude{
+    min-height: 40px;
+}
+.catbox ul li .label .info{
+    color:#969696;
+    font-size:11px;
+    height:24px;
+}
+div.group-icon-comment {
+    clear:both;
+    display:block;
+    margin-bottom:4px;
+    margin-top:4px;
+    padding-bottom:25px;
+    padding-top:6px;
+    text-align:right;
+    width:100%;
+    font-size: 12px;
+}
+div.group-icon-app {
+    clear:both;
+    display:block;
+    height:24px;
+    margin-bottom:4px;
+    margin-top:4px;
+    padding-bottom:10px;
+    padding-top:6px;
+    width:100%;
+    
+}
+div.icon-user {
+    background:url("../images/toolbar.png") no-repeat scroll 0 0 transparent;
+}
+div.icon-comment {
+    background:url("../images/toolbar.png") no-repeat scroll 0 -71px transparent;
+}
+div.icon-linkmore {
+    background:url("../images/toolbar.png") no-repeat scroll 0 -90px transparent;
+}
+div.icon-hit {
+    background:url("../images/toolbar.png") no-repeat scroll 0 -35px transparent;
+}
+div.icon-date {
+    background:url("../images/toolbar.png") no-repeat scroll 0 -54px transparent;
+}
+div.icon-download {
+    background:url("../images/toolbar.png") no-repeat scroll 0 -156px transparent;
+}
+div.icon_facbook {
+    background:url("../images/app.gif") no-repeat scroll 0 0 transparent;
+}
+div.icon_delicious {
+    background:url("../images/app.gif") no-repeat scroll 0 -23px transparent;
+}
+div.icon_furl {
+    background:url("../images/app.gif") no-repeat scroll 0 -46px transparent;
+}
+div.icon_stumbleupon {
+    background:url("../images/app.gif") no-repeat scroll 0 -69px transparent;
+}
+div.icon_digg {
+    background:url("../images/app.gif") no-repeat scroll 0 -91px transparent;
+}
+div.icon_reddit {
+    background:url("../images/app.gif") no-repeat scroll 0 -114px transparent;
+}
+.icon-comment, .icon-linkmore, .icon-hit, .icon-user, .rate_post, .icon-date, .icon-download {
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    display:inline;
+    float:left;
+    height:18px;
+    margin-left:0px;
+    margin-right:10px;
+    text-indent:24px;
+}
+.icon_facbook, .icon_delicious, .icon_furl, .icon_stumbleupon, .icon_digg, .icon_reddit {
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    display:inline;
+    float:right;
+    height:23px;
+    margin-left:4px;
+    margin-right:4px;
+    text-indent:24px;
+    width:24px;
+}
+.username-pass{
+    font-size: 11px;
+    width: 90px;
+    
+}
+.download{
+    border: 1px solid #9EA2A3;
+    border-bottom: 10px solid #B8B8B8;
+    height: 50px;
+    margin: 5px 100px;
+    background: #E6E8E8 url(../images/download.png) no-repeat;
+    padding-left: 50px;
+}
+.download_detail{
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+.download_alert{
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: #FF9000;
+}

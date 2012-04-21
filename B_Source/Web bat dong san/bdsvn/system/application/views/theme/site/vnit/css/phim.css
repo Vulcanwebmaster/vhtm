@@ -1,0 +1,278 @@
+/*****************************/
+/*** Core html setup stuff ***/
+/*****************************/
+
+
+#wrap{
+    background: url(../images/phim/bg_body.jpg) repeat-x top;
+}
+#wrap_body{
+    width: 1000px;
+    padding: 0px;
+    margin: 0 auto;
+}
+#body_header{
+    height: 119px;
+    background: url(../images/phim/top_head.png) repeat-x;
+}
+#body_menu{
+   background: url(../images/phim/bg_menu.png) no-repeat;  
+   height: 26px;  
+}
+#body_top{
+    background: url(../images/phim/body_top.png) no-repeat;
+    height: 15px;
+    margin-top: 5px;
+}
+#body_mid{
+    background-color: #F4F4F4;
+    padding: 0 5px;
+    overflow: hidden;
+}
+#body_bot{
+    background: url(../images/phim/body_bot.png) no-repeat;
+    height: 15px;
+    padding-bottom: 20px;
+    
+}
+#footer{
+    
+    background: url(../images/bg_footer.png) repeat-x;
+    overflow: hidden;
+    padding-top: 15px;
+}
+#footer .version{
+    width: 400px;
+    float: left;
+    text-align: center;
+    color: #FFF;
+    font-size: 14px;
+}
+#footer .static{
+    width: 500px;
+    float: right;
+    text-align: right;
+}
+/*****Style App*******/
+.app{
+    width: 502px;
+    height: 26px;
+    background: url(../images/bg_ap.png) no-repeat;
+}
+.app ul li{
+    float: left;
+    padding: 5px 5px;
+    text-align: center;
+    
+    font-size: 13px;
+    font-family: Tahoma;
+}
+.header .logo{
+   width: 300px;
+   float: left; 
+}
+.header .adv{
+    width: 500px;
+    float: right;
+}
+
+/*********
+*Content 
+*****/
+#colright{
+    width: 300px;
+    float: right;
+}
+#colleft{
+    width: 685px;
+    float: left;
+}
+#colleft #content_left{
+    width: 150px;
+    float: left;
+}
+#colleft #content_right{
+    width: 530px;
+    float: right;
+}
+/*****
+*Moddule 
+******/
+.head-mod{
+    background:transparent url(../images/phim/mod_head.png) no-repeat scroll top right;
+    background-position:100% 0px; 
+    height:30px;
+    line-height:30px;
+    padding-right:10px;
+    color: #D91C3C; 
+    
+           
+}
+.head-mod .head-right{
+    background:transparent url(../images/phim/mod_head.png) no-repeat scroll top;
+    background-position:0 0px;
+    width:10px;
+    _width:10px;
+    height:30px;
+    float:left;
+    font-size:0px !important;    
+}
+.head-mod .title{
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: Tahoma;
+}
+.border-mod{
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    overflow: hidden;
+          
+}
+.bottom-mod{
+    background:transparent url(../images/phim/mod_bot.png) no-repeat scroll top;
+    background-position:100% 0px;
+    height:10px;
+    line-height:1px !important;
+    font-size:1px !important;    
+}
+.bottom-mod .bottom-right{
+    background:transparent url(../images/phim/mod_bot.png) no-repeat scroll top;
+    background-position:0 0px;
+    width:10px;
+    height:10px;
+    line-height:0px !important;
+    float:left;
+    font-size:0px !important;    
+}
+.fix{
+    height: 10px;
+}
+
+/****************
+*Style Phim 
+*************************/
+.listphim{
+    width: 100%;
+    padding: 5px;
+}
+.listphim ul li{
+    width: 160px;
+    float: left;
+    padding: 5px;
+    height: 220px;
+}
+img.hinhanh{
+    height:160px;
+    width:125px;
+    border: 3px solid #ED9124;
+}
+img.hinhanh:hover{
+    height:160px;
+    width:125px;
+    border: 3px solid #54CF1B;
+}
+.t18{
+    font-size:  18px;
+    color: #FA6F05;
+    font-weight: bold;
+}
+.t14{
+    font-size: 14px;
+    font-weight: bold;
+    color: #0588FA;
+}
+.t13{
+     text-align: center;
+}
+.danhmuc ul li{
+    font-size: 13px;
+    font-weight: bold;
+}
+.danhmuc ul li a{
+    color: #F0760C;
+    line-height: 20px;
+}
+
+/***********
+* Chi tiet phim
+*/
+.detail{
+     padding: 5px;
+     overflow: hidden;   
+}
+.detail .hinhanh{
+  width: 210px;
+  float: left;  
+}
+.detail .noidung{
+    width: 300px;
+    float: right;
+}
+.gioithieu{
+    padding: 5px;
+}
+.xemphim{
+    padding-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.totalphim{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.totalphim span{
+    color: #FF0000;
+}
+.listlinkphim{
+    text-align: center;
+    width: 15px;
+    font-weight: bold;
+    width: 100%;
+}
+.listlinkphim span.server{
+    font-size: 13px;
+}
+.listlinkphim span.item{
+    font-size: 15px;
+    float: left;
+    padding: 0 3px;
+}
+
+/***********MODULES RIGHT*******/
+.listview{
+   padding: 5px 0px; 
+}
+.listview ul li{
+    overflow: hidden;
+}
+.listview ul li .hinhanh{
+    width: 95px;
+    height: 120px;
+    float: left;
+}
+.listview ul li .noidung{
+    width: 190px;
+    float: right;
+}
+img.small{
+    width: 90px;
+    height: 110px;
+}
+
+/**********MOdules Dang nhap
+* 
+*/
+.dangnhap{
+    padding: 5px;
+}
+.dangnhap ul li{
+    padding-bottom: 5px;
+}
+.dangnhap ul li span{
+    float: left;
+    width: 100px;
+}

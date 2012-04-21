@@ -1,0 +1,294 @@
+body  {
+    text-align:left;
+    color:#333333;
+    font-family:Tahoma,Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size:12px;
+    line-height:18px;    
+}
+body, select, textarea, input {
+    color:#3D3D3D;
+    font-family:Tahoma,sans-serif;
+}
+html, body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, img {
+    border:0 none;
+    font-size:12px;
+    margin:0;
+    padding:0;
+}
+.clearfix{
+    display:block;
+}
+ a{
+     color: #2D73B7;
+     text-decoration: none;
+ }
+ a:hover{
+     color: #F2530A;
+     text-decoration: none;
+ }
+ a:active{
+     color: #2D73B7;
+     text-decoration: none;    
+ }
+ul,dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+dt {
+    margin: 0;
+    font-weight: bold;
+}
+li,dd {
+    margin: 0;
+    padding: 0;
+}
+img  {
+    border:medium none;
+    vertical-align:middle;
+}
+
+/*******
+* Style
+*/
+#wrapper{
+    width: 1018px;
+    padding: 0px;
+    margin: 0 auto;
+    overflow: hidden;    
+}
+#wrap_header{
+    background: url(../images/diendan/header.png) no-repeat;
+    height: 156px;
+}
+#wrap_contenttop{
+    background: url(../images/diendan/body_head.png) no-repeat;
+    height: 20px;
+}
+#wrap_contentmid{
+    background: url(../images/diendan/body_mid.png) repeat-y;
+    overflow: hidden;
+}
+#wrap_contentbot{
+    background: url(../images/diendan/body_bot.png) no-repeat;
+    height: 20px;    
+}
+#bodycontent{
+    padding: 0 20px;
+}
+
+/**
+* Body
+*/
+#head4rum{
+    background: url(../images/diendan/head4rum.png) no-repeat;
+    height: 30px;
+}
+#head4rum div.title{
+    color: #FFFFFF;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+    float: left;width: 650px;
+}
+#head4rum div.thongke{
+    color: #FFFFFF;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+    float: left;width: 90px;
+}
+#head4rum div.baicuoi{
+    color: #FFFFFF;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+    float: left;width: 220px;
+}
+#body4rum{
+  margin-bottom: 10px;  
+}
+#body4rum .mieuta{
+    border-bottom: 1px solid #CACACA;
+    border-left: 1px solid #CACACA;
+    border-right: 1px solid #CACACA;
+    background-color: #E9E9E9;
+    padding: 3px;
+    font-size: 11px;
+}
+.content4rum{
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 5px;
+    background: #FFFFFF url(../images/diendan/bg_thread.png) repeat-x bottom;
+    overflow: hidden;
+}
+.content4rum .icon{
+    width: 50px;
+    float: left;
+}
+.content4rum .noidung{
+    width : 600px;
+    float: left;
+}
+.content4rum .noidung .tieude{
+    font-weight: bold;
+}
+.content4rum .noidung .ghichu{
+    font-size: 11px;
+    line-height: 14px;
+}
+.content4rum .noidung .sub span{
+    background: url(../images/item.png) no-repeat left center;
+    padding-left: 8px;
+    float: left;
+    padding-right: 15px;
+}
+.content4rum .thongke{
+    width: 90px;
+    float: left;
+}
+.content4rum .baicuoi{
+    width: 220px;
+    float: left;
+}
+/**
+* Thread
+* 
+*/
+.thread_post_content{
+    
+}
+.thread_post_content .colleft{
+    width: 660px;
+    float: left;
+}
+.thread_post_content .colright{
+    width: 300px;
+    float: right;
+}
+.emotion{
+    padding-right: 25px;
+}
+
+/*****
+* viewthread
+*/
+.contentview4rum{
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 5px;
+    overflow: hidden;
+}
+.contentview4rum .infouser{
+    width: 180px;
+    float: left;
+}
+.contentview4rum .noidung{
+    width: 780px;
+    float: right;
+    
+}
+.addfunction{
+
+    overflow: hidden;
+    padding: 5px;
+}
+.addfunction span{
+    float: right;
+    padding-right: 20px;
+    height: 16px;
+    font-weight: bold;
+    
+}
+.addfunction span img{
+    padding-right: 2px;
+}
+.padding5px{
+    padding: 5px;
+}
+table.reply{
+    border: 0px;
+    width: 100%;
+}
+table.reply td.user{
+    
+    border-left: 1px solid #E5E5E5;
+    width: 180px;
+}
+table.reply td.noidung{
+    
+    border-right: 1px solid #E5E5E5;   
+    width: 780px; 
+}
+table.reply td.quickleft{
+    border-bottom: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
+    width: 180px;
+}
+table.reply td.quickright{
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #E5E5E5;
+    border-right: 1px solid #E5E5E5;   
+    width: 780px; 
+    text-align: right;
+    padding: 5px;
+}
+table.reply td.idpost{
+    background-color: #D0D4D6 ;
+    padding: 5px;
+    border-bottom: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
+    border-right: 1px solid #E5E5E5;
+}
+.sitename{
+    border: 1px solid #A6A3A1;
+    background-color :#E6EAEB ;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.headforum{
+    height: 115px;
+}
+.headforum .logo{
+    width: 300px;
+    float: left;
+}
+.headforum .quangcao{
+    width: 700px;
+    float: left;
+    padding-right: 5px;
+}
+.headforum .dangnhap{
+    width: 200px;
+    float: left;
+}
+.cpanel{
+    color: #FFFFFF;
+}
+.label{
+    font-size: 11px;
+}
+.label a{
+    color: #FFF;
+}
+input.login{
+    height: 13px;
+}
+.btlogin{
+    font-size: 11px;
+    
+}
+fieldset  {
+    -moz-border-radius:5px 5px 5px 5px;
+    border:1px solid #CCCCCC;
+    margin-bottom:10px;
+    padding:5px;
+    text-align:left;
+}
+fieldset legend{
+    font-weight: bold;
+    font-size: 13px; 
+}

@@ -1,0 +1,116 @@
+#menuhome{
+
+}
+#menuhome ul li{
+    height: 25px;
+    border-bottom: 1px dotted #e5e5e5;
+    font-size: 13px;
+}
+.news_item_home{
+    width: 480px;
+}
+.news_item_home ul li{
+    height: 100px;
+    width: 480px;
+
+}
+.news_item_home ul li .item_hinhanh{
+    width: 130px;
+    float: left;
+}
+.news_item_home ul li .item_noidung{
+    width: 340px;
+    float: right;
+}
+.news_title_home{
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/*******TIn tức sư kien**********/
+.sukienhome{
+    
+}
+.sukienhome ul li{
+    
+    padding-bottom: 20px;
+}
+.sukienhome ul li img{
+    width: 200px;
+    text-align: center;
+}
+.sukienhome ul li .tieude{
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+.sukienhome ul li .noidungngan{
+    
+}
+.lichphatsong{
+    background: #FFF url(../images/lichphatsong.png) no-repeat top;
+    padding-top: 40px;
+    
+}
+.photo .title{
+    font-size:17px;
+    font-weight: bold;
+}
+.photo img{
+    width: 240px;
+    padding: 0 5px;
+}
+.music ul li{
+ background: url(../images/music/iconmusic.png) no-repeat;  
+ height: 55px; 
+ padding-left: 48px;
+}
+.music ul li .tieude{
+    font-size: 14px;
+    font-weight: bold;
+}
+.music ul li .art{
+    font-size: 11px;
+    line-height: 15px;
+}
+.tailieurand  {
+    padding:0 5px;
+}
+.tailieurand ul li {
+border-bottom:1px solid #E5E5E5;
+    float:left;
+    margin-bottom:10px;
+    width:210px;
+}
+.tailieurand ul li .hinhanh {
+    float:left;
+    width:35px;
+}
+.tailieurand ul li .hinhanh img {
+    width:30px;
+}
+.tailieurand ul li .label {
+    float:right;
+    width:170px;
+}
+.phim  {
+    padding:0 5px;
+}
+.phim ul li {
+    border-bottom:1px solid #E5E5E5;
+    float:left;
+    margin-bottom:10px;
+    height: 85px;
+}
+.phim ul li .hinhanh {
+    float:left;
+    width:70px;
+}
+.phim ul li .hinhanh img {
+    width:65px;
+    height: 80px;
+}
+.phim ul li .label {
+    float:right;
+    width:160px;
+}

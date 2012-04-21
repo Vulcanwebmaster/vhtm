@@ -1,0 +1,141 @@
+.ddcolortabs{
+    padding-top: 2px;
+
+    font-family: Tahoma;
+}
+
+.ddcolortabs ul{
+    font-size: 12px;
+
+    list-style:none;
+}
+
+.ddcolortabs li{
+    display:inline;
+    margin:0 2px 0 0;
+    padding:0;
+}
+
+
+.ddcolortabs a{
+    float:left;
+    color: white;
+    margin:0 0px 0 0;
+    padding:0 0 0px 0px;
+    text-decoration:none;
+    letter-spacing: 1px;
+}
+.ddcolortabs li a.home {
+    height:32px;
+    overflow:hidden;
+    text-indent:-9999px;
+    width:40px;
+}
+.ddcolortabs a.home:hover {
+    background:url("../images/home.jpg") no-repeat scroll -1px top transparent;
+    margin-left : 2px;
+    width:38px;  
+}
+.ddcolortabs a span{
+
+    background:url("../images/a-bg.jpg") no-repeat scroll right top transparent;
+    color:#FFFFFF;
+    display:block;
+    float:left;
+    padding:5px 10px;
+}
+
+.ddcolortabs a span{
+    float:none;
+}
+
+.ddcolortabs a:hover{
+    background:url("../images/select.jpg") repeat-x scroll 0 0 transparent;
+}
+
+.ddcolortabs a:hover span{
+    background: transparent url(../images/bg_mainmenu_ac.png) repeat-x;
+    color: #ffffff;
+}
+.ddcolortabs li.selected a{
+    color: #FF0000; 
+}
+
+.ddcolortabs li.selected a span{ /*currently selected tab*/
+    background: transparent url(../images/bg_mainmenu_ac.png) repeat-x;
+    color: #ffffff; 
+}
+
+.ddcolortabsline{
+    clear: both;
+    padding: 0;
+    width: 100%;
+    height: 8px;
+    line-height: 8px;
+}
+
+/* ######### Style for Drop Down Menu ######### */
+
+.dropmenudiv_a{
+   border-bottom-width:0;
+    font:11.2px/18px Verdana;
+    position:absolute;
+    top:0;
+    visibility:hidden;
+    width:150px;
+    z-index:100;
+}
+
+
+.dropmenudiv_a  {
+    border-bottom-width:0;
+    font:11.2px/18px Verdana;
+    position:absolute;
+    top:0;
+    visibility:hidden;
+    width:150px;
+    z-index:100;
+}
+.dropmenudiv_a a {
+    background:url("../images/menu_bg.png") repeat-y scroll 0 0 transparent;
+    color:#FFFFFF;
+    display:block;
+    height:100%;
+    padding-bottom:3px;
+    padding-top:3px;
+    text-decoration:none;
+    text-indent:3px;
+    width:auto;
+}
+.bottom_div  {
+    background:url("../images/bg_bottom.png") repeat-x scroll 0 0 transparent;
+    height:6px;
+}
+.text_link {
+    padding-left:5px;
+    padding-top:2px;
+    width:150px;
+    }
+* html .dropmenudiv_a a {
+    width:100%;
+}
+.dropmenudiv_a a:hover {
+    background:url("../images/menu_bg.png") repeat-y scroll 0 0 transparent;
+    color:#D15CAB;
+    height:100%;
+}
+.dropmenudiv_a a{
+    background:url("../images/menu_bg.png") repeat-y scroll 0 0 transparent;
+    color:#FFFFFF;
+    display:block;
+    height:100%;
+    padding-bottom:3px;
+    padding-top:3px;
+    text-decoration:none;
+    text-indent:3px;
+    width:auto;
+}
+.dropmenudiv_a a.selected{ /*THEME CHANGE HERE*/
+    background-color: #8a3c3d;
+    color: white;
+}

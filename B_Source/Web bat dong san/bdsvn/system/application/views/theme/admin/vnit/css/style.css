@@ -1,0 +1,309 @@
+body{
+    font-size: 13px;
+    font-family: Tahoma;
+    margin: 0px;
+    padding: 0px;
+    color: #0B6896;
+}
+img{
+    border: 0px;
+}
+
+ul,dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    border:1px solid #CCCCCC;
+    margin-bottom:10px;
+    padding:5px;
+    text-align:left;
+    -moz-border-radius:5px 5px 5px 5px;
+}
+fieldset.adminform {
+    margin:10px;
+    overflow:hidden;
+}
+legend {
+    color:#146295;
+    font-size:13px;
+    font-weight:bold;
+}
+select{
+    font-size: 12px;
+}
+.body_content{
+    padding: 0px 10px;
+    width: 98%;
+}
+.header{
+   width: 100%; 
+   overflow: hidden;
+   background: url(../images/header-mid.png) repeat-x;  
+}
+.header .header-left{
+    background: url(../images/header-left.png) no-repeat;
+    height: 41px;
+    width: 153px;
+    float: left;
+}
+.header .header-mid{
+
+    float: left;
+    text-align: right;
+    height: 41px;
+
+}
+.site_header{
+    padding: 10px;
+    font-size: 13px;
+    text-align: right;
+}
+.welcome{
+    font-size: 14px;
+    color: #FFF;
+    float: left;
+    padding-right: 10px;
+}
+.homepage{
+
+    float: left;
+    padding-right: 10px; 
+    font-weight: bold;   
+}
+.homepage a{
+    color: #FFF;
+    text-decoration: none;
+}
+.header .header-right{
+    background: url(../images/header-right.png) no-repeat;
+    height: 41px;
+    width: 15px;
+    float: right;
+}
+.head_box{
+    background:none repeat scroll 0 0 #F0F0F0;
+    border:1px solid #CCCCCC;
+    height: 25px;
+}
+.content_box{
+    border-left:1px solid #CCCCCC;
+    border-right:1px solid #CCCCCC;
+    overflow: hidden;
+    padding: 5px;
+}
+.bottom_box{
+    background:url("../images/bottom.png") repeat-x scroll 0 0 transparent;
+}
+.bottom_box div{
+    background:url("../images/corner_br.png") no-repeat scroll 100% 0 transparent;
+}
+.bottom_box div div{
+    background:url("../images/corner_bl.png") no-repeat scroll 0 0 transparent;
+    height:11px;
+}
+
+
+#cpanel div.icon a {
+    color:#565656;
+    text-decoration:none;
+}
+#cpanel img {
+    margin:0 auto;
+    padding:10px 0;
+}
+#cpanel div.icon{
+    background-color:#FFFFFF;
+    float:left;
+    margin-bottom:15px;
+    margin-right:15px;
+    text-align:center;
+}
+#cpanel div.icon a {
+    border:1px solid #EAEAEA;
+    color:#565656;
+    display:block;
+    float:left;
+    height:97px;
+    text-decoration:none;
+    vertical-align:middle;
+    width:108px;
+}
+#cpanel div.icon a:hover {
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fbfbfb;
+    color: #025A8D;
+}
+
+#cpanel img {
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+#cpanel span {
+    display: block;
+    text-align: center;
+}
+.toolbar_box{
+    background:none repeat scroll 0 0 #F4F4F4;
+}
+.toolbar_box div.t{
+    background:url("../images/border.png") repeat-x scroll 0 0 transparent;
+}
+.toolbar_box div.t div.t{
+    background:url("../images/crn_tr_dark.png") no-repeat scroll 100% 0 transparent;
+}
+.toolbar_box div.t div.t div.t{
+    background:url("../images/crn_tl_dark.png") no-repeat scroll 0 0 transparent;
+}
+
+div.m{
+    background-color:#F4F4F4;
+    border-left:1px solid #CCCCCC;
+    border-right:1px solid #CCCCCC;
+    border-bottom:1px solid #CCCCCC; 
+    overflow: hidden;
+}
+div.t, div.b {
+    background-color:#F8F8F8;
+    height:6px;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+}
+.save{
+    background: #F4F4F4 url(../images/toolbar/save.png) no-repeat center top;
+    border:1px solid #F4F4F4;
+    padding-top: 30px;
+
+    height:50px;
+    
+}
+.save:hover {
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    color: #0B55C4;
+}
+.upload{
+    background: #F4F4F4 url(../images/toolbar/upload.png) no-repeat center top;
+    border:1px solid #F4F4F4;
+    padding-top: 30px;
+
+    height:50px;
+    
+}
+.upload:hover {
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    color: #0B55C4;
+}
+.list{
+    height:500px;
+    overflow-y:auto;
+    width:480px;
+
+
+}
+.itemanh ul li{
+    width: 120px;
+    height: 140px;
+    float: left;
+    margin: 5px;
+}
+.itemanh ul li img{
+    width: 110px;
+    height: 110px;
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+}
+/**
+* Đăng tin
+*/
+.hdangtin{
+    height: 60px;
+}
+.hdangtin ul li{
+    float: left;
+    width: 150px;
+    font-weight: bold;
+    border-bottom: 4px solid #FF9000;
+    border-left: 1px solid #FF9000;
+    margin-right: 10px;
+    padding-left: 5px;
+}
+.hdangtin ul li.dis{
+    color: #e5e5e5;
+    border-bottom: 4px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;    
+}
+table.tool{
+    width: 600px;
+    padding-top: 20px;
+}
+table.tool tr{
+    
+    
+}
+table.dangtin{
+    width: 600px;
+    
+}
+table.dangtin tr td{
+    vertical-align: top;
+    padding: 3px;
+}
+.tienich{
+   font-size: 12px;
+   font-weight: bold;
+   border-bottom: 5px  solid #e5e5e5;
+   margin-top: 10px;
+   width: 100%; 
+}
+.bgtitle{
+    
+
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 3px 0px;
+    border-bottom: 1px solid #FA790F;
+    
+}
+.bgtitle span{
+    background-color: #1C5E99;
+    padding: 5px;
+    border-left: 5px solid #FA790F; 
+}
+.bt_dangtin{
+    background: url(../images/bg_submit.png) repeat-x top;
+    border: 1px solid #e5e5e5;
+}
+#uploads ul li{
+    border:1px solid #E5E5E5;
+    float:left;
+    height:115px;
+    margin:5px;
+    padding:5px;
+    width:100px;
+
+}
+#uploads ul li img{
+    width: 100px;
+    height: 115px;
+    margin-bottom: 10px;
+}
+.d_title{
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase; 
+    padding: 5px 0px;
+}

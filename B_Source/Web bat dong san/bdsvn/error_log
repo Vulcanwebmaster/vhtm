@@ -1,0 +1,7 @@
+[22-Sep-2010 09:20:23] PHP Fatal error:  Call to undefined method load_library::loadimg() in /home/danangse/public_html/demo/system/application/views/site/nhadat/index.php on line 15
+[05-Oct-2010 16:34:40] PHP Parse error:  syntax error, unexpected '{' in /home/danangse/public_html/datdanang.com.vn/system/application/views/site/nhadat/dangtin.php on line 90
+[08-Oct-2010 10:01:42] PHP Parse error:  syntax error, unexpected ')' in /home/danangse/public_html/datdanang.com.vn/system/application/views/site/nhadat/index.php on line 15
+[08-Oct-2010 10:02:32] PHP Fatal error:  Call to undefined method load_library::loading() in /home/danangse/public_html/datdanang.com.vn/system/application/views/site/nhadat/index.php on line 15
+[08-Oct-2010 10:18:25] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/danangse/public_html/datdanang.com.vn/system/application/views/site/nhadat/chitiet.php on line 19
+[29-Oct-2010 10:33:50] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 17280 bytes) in /home/danangse/public_html/datdanang.com.vn/system/application/libraries/uploadthumb_library.php on line 59
+[29-Oct-2010 10:35:55] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 17280 bytes) in /home/danangse/public_html/datdanang.com.vn/system/application/libraries/uploadthumb_library.php on line 59
