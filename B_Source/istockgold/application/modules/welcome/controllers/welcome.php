@@ -209,6 +209,7 @@ class Welcome extends Shop_Controller
     		$data['page'] = $this->config->item('backendpro_template_shop') . 'exchange';
     		$data['module'] = $this->module;
         	$this->load->view($this->_container,$data);
+        	return;
     	}
     	
     	$data['cap_img'] = $this->_generate_captcha();
@@ -397,6 +398,11 @@ class Welcome extends Shop_Controller
             $data['title'] = $this->preference->item('site_name')." | "."Exchange";
             // set rules
             $config[] = array(
+                            'field'=>'mtcn',
+                            'label'=>$this->lang->line('mtcn'),
+                            'rules'=>"trim|required"
+                            );
+            $config[] = array(
                             'field'=>'email',
                             'label'=>$this->lang->line('webshop_email'),
                             'rules'=>"trim|required|valid_email"
@@ -411,17 +417,6 @@ class Welcome extends Shop_Controller
                             'label'=>$this->lang->line('webshop_last_name'),
                             'rules'=>"trim|required|min_length[3]|max_length[20]"
                             );
-            $config[] = array(
-                            'field'=>'street',
-                            'label'=>$this->lang->line('webshop_street'),
-                            'rules'=>"trim"
-                            );
-                           
-			$config[] = array(
-                            'field'=>'province',
-                            'label'=>$this->lang->line('webshop_province'),
-                            'rules'=>"trim"
-                            );
 			$config[] = array(
                             'field'=>'country',
                             'label'=>$this->lang->line('webshop_province'),
@@ -434,9 +429,9 @@ class Welcome extends Shop_Controller
                             'rules'=>"trim|required|alpha_dash"
                             );
             $config[] = array(
-                            'field'=>'post_code',
-                            'label'=>$this->lang->line('webshop_post_code'),
-                            'rules'=>"trim|required|numeric"
+                            'field'=>'lrAccount',
+                            'label'=>$this->lang->line('lr_account'),
+                            'rules'=>"trim|required"
                             );
             if($this->security_method=='recaptcha')
             {
@@ -461,11 +456,11 @@ class Welcome extends Shop_Controller
             // set fields. This will be used for error messages
             // for example instead of customer_first_name, First Name will be used in errors
             $fields['email']	                = lang('webshop_email');
+            $fields['lrAccount']	    		= lang('lr_account');
             $fields['firstName']	    		= lang('webshop_first_name');
             $fields['lastName']	    			= lang('webshop_last_name');
-            $fields['street']	                = lang('webshop_street');
             $fields['city']	                    = lang('webshop_city');
-            $fields['province']	                = lang('webshop_province');
+            $fields['country']	                = lang('webshop_country');
             $fields['post_code']	            = lang('webshop_post_code');
             $fields['recaptcha_response_field']	= $this->lang->line('kago_recaptcha_response_field');
             $fields['write_ans']                = $this->lang->line('webshop_write_ans');
@@ -483,36 +478,34 @@ class Welcome extends Shop_Controller
             	$fromCurrency = $_POST['fromCurrency'];
             	$toCurrency = $_POST['toCurrency'];
             	
-            	$rateId = $this -> MRate -> getRateId(db_clean($fromCurrency,3), db_clean($toCurrency,3));
+            	//$rateId = $this -> MRate -> getRateId(db_clean($fromCurrency,3), db_clean($toCurrency,3));
             	
                 $data = array(
                 	'c_src' 			=> $fromCurrency,
                 	'c_dst' 			=> $toCurrency,
                     'amount_src' 		=> db_clean($_POST['amount'],25),
                     'amount_dst'  		=> db_clean($_POST['getAmount'],25),
+                	'account_dst'  		=> db_clean($_POST['lrAccount'],25),
                     'date_src'        	=> date("Y-m-d H:i:s", time()),
                     'email'             => db_clean($_POST['email'],50)
                 );
                 
                 $orderId = $this->MOrders->addOrder($data, true);
                 
-                //TODO: load from DB for this account name
-                $ownerLRAccount = "U7511015";
-                $redirectUrl = "https://sci.libertyreserve.com/en";
-                $redirectUrl .= "?lr_acc=" . $ownerLRAccount;
-                $redirectUrl .= "&lr_amnt=" . $_POST['getAmount'];
-                $redirectUrl .= "&lr_currency=LRUSD";
-                $redirectUrl .= "&lr_comments=" . urlencode("Order Id: #". $orderId);
-                $redirectUrl .= "&lr_success_url=" . urlencode("http://localhost/istockgold/index.php/welcome/ordersucess");
-                $redirectUrl .= "&lr_success_url_method=GET" ;
-                
-                redirect( $redirectUrl );
+                redirect( $this->module."/orderTracking/".$oderId);
             }
         }// end of if($this->input->post('email'))
         
         if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
         	redirect( $this->module."/exchange" );
         }
+        $accountInfo = $this->MAccount->getAccountInfo($this->input->post('fromCurrency'));
+
+        $wuInfo = "";
+        foreach ($accountInfo as $key => $row) {
+        	$wuInfo .= "[" . $row['display']. "] ". $row['value'] . "<br/>";
+        }
+        $data['wuInfo'] = $wuInfo;
         $data['amount'] = $this->input->post('amount');
         $data['rate'] = $this->input->post('rate');
         $data['getAmount'] = $this->input->post('getAmount');
@@ -520,17 +513,44 @@ class Welcome extends Shop_Controller
         $data['toCurrency'] = $this->input->post('toCurrency');
         
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
-        $data['page'] = $this->config->item('backendpro_template_shop') . 'lr2wu';
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'wu2lr';
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data);
     }
     
-    function getRate()
+    /**
+     * 
+     * Tracking Order
+     * @param unknown_type $orderId
+     */
+    function order($id = null) 
     {
-    	
+    	if (!isset($id)) 
+    	{
+    		$data['question']= $this->security_question;
+	        $data['security_method']= $this->security_method;
+	        $data['title'] = $this->preference->item('site_name')." | "."Tracking Your Order";
+	        $data['cap_img'] = $this->_generate_captcha();	
+	        $data['page'] = $this->config->item('backendpro_template_shop') . 'ordertrack';
+	        $data['module'] = $this->module;
+	        $this->load->view($this->_container,$data);
+	        return;
+    	} else {
+    		$order = $this -> MOrders -> getOrder($id);
+    		
+    		if (isset($order)) 
+    		{
+    			$data['order'] =  $order;
+    		}
+    		
+    		$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
+	    	$data['page'] = $this->config->item('backendpro_template_shop') . 'orderstatus';
+	    	$data['module'] = $this->module;
+	    	$this->load->view($this->_container,$data);
+    	}
     }
-
-
+    
+    
     function pages()
     {
         // find page_uri from page id

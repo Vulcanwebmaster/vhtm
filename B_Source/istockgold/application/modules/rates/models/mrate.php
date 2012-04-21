@@ -20,7 +20,7 @@ class MRate extends CI_Model
 		$this->db->select('rate_id');
         $this->db->where('c_id_src',$from);
         $this->db->where('c_id_dst', $to);
-        $Q = $this->db->get('rate');
+        $Q = $this->db->get('is_rate');
         if ($Q->num_rows() > 0)
         {
             foreach ($Q->result_array() as $row)

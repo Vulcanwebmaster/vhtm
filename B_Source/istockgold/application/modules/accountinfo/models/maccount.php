@@ -16,10 +16,10 @@ class MAccount extends CI_Model
 	function getAccountInfo($currency)
 	{
 		$data = array();
-		$this->db->select('account_setting.*');
-		$this->db->from('account_setting');
-		$this->db->join('currency', 'currency.c_id = account_setting.c_id');
-		$this->db->where('currency.code', $currency);
+		$this->db->select('is_account_setting.*');
+		$this->db->from('is_account_setting');
+		$this->db->join('is_currency', 'is_currency.c_id = is_account_setting.c_id');
+		$this->db->where('is_currency.code', $currency);
 		
 		$Q = $this->db->get();
         if ($Q->num_rows() > 0)

@@ -44,6 +44,7 @@ $lang['webshop_if_registered'] = 'if you are already registered.';
 
 // modules/webshop/views/registration.php
 $lang['webshop_email'] = 'Email';
+$lang['mtcn'] = 'Money Transfer Control Number';
 $lang['webshop_email_confirm'] = 'Email Confirmation';
 $lang['webshop_pass_word'] = 'Password';
 $lang['webshop_pass_word_conf'] = 'Password Confirm';
@@ -53,7 +54,9 @@ $lang['webshop_mobile_tel'] = 'Mobile/Telephone';
 $lang['webshop_address'] = 'Street';
 $lang['webshop_province'] = 'Province';
 $lang['webshop_post_code'] = 'Postal Code';
+$lang['lr_account'] = 'Liberty Account';
 $lang['webshop_city'] = 'City';
+$lang['webshop_country'] = 'Country';
 $lang['webshop_register'] = 'Register';
 $lang['webshop_regist_plz_here'] = 'Please register here. ';
 $lang['webshop_price'] = 'Price';
