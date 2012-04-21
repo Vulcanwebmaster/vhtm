@@ -69,7 +69,8 @@ if (isset($analytics_error)){
 	});
 </script>
 
-<div id="analytics" class="line" style="padding-bottom: 10px"></div>
+<div id="analytics" class="line" style="padding-bottom: 10px">
+</div>
 
 <?php
 }

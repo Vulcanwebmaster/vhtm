@@ -10,9 +10,7 @@ class MCurrency extends CI_Model
         parent::__construct();
 	}
 
-    
-
-    function getAllProducts()
+	function getAllProducts()
     {
         // getting all the products of the same categroy.
         $data = array();

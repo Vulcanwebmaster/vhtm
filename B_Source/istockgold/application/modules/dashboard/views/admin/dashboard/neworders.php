@@ -9,7 +9,7 @@
 		<tr><th><?php print $this->lang->line('dashboard_statistics_order_total') ?></th><th><?php print $this->lang->line('dashboard_order_date') ?></th></tr>
 		
 		<?php
-                /*
+		        /*
                 echo "<pre>";
                 print_r ($orderdetails);
                 echo "</pre>";

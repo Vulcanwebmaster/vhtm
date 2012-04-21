@@ -23,7 +23,7 @@
  * THE LOGIN CONTROLLER, IT WILL CAUSE AN INFINITE LOOP
  */
 $config['userlib_action_login'] = '';
-$config['userlib_action_logout'] = '';
+$config['userlib_action_logout'] = '/admin';
 $config['userlib_action_register'] ='auth/register';
 $config['userlib_action_activation'] ='';
 $config['userlib_action_forgotten_password'] = 'auth/login';

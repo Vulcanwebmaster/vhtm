@@ -175,7 +175,7 @@ class Auth_form_processing
 				serialize(array('id'=>$user->id, 'login_field'=>$values['login_field'], 'password'=>$values['password'])),
 				$this->CI->preference->item('autologin_period')*86400);
 			} 
-			flashMsg('success',$this->CI->lang->line('userlib_login_successfull'));
+			//flashMsg('success',$this->CI->lang->line('userlib_login_successfull'));
 			// Redirect to requested page          
 			if(FALSE !== ($page = $this->CI->session->flashdata('requested_page')))
 			{
@@ -221,7 +221,7 @@ class Auth_form_processing
 		// Unset autologin variable
 		delete_cookie('autologin');
 
-		flashMsg('success',$this->CI->lang->line('userlib_logout_successfull'));
+		//flashMsg('success',$this->CI->lang->line('userlib_logout_successfull'));
 		redirect($this->CI->config->item('userlib_action_logout'),'location');
 	}
 

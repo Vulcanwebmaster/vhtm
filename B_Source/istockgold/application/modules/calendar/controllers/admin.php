@@ -23,7 +23,7 @@ class Admin extends Shop_Admin_Controller
 
     function index()
     {
-        // The forth segment will be used as timeid
+    	// The forth segment will be used as timeid
         $timeid = $this->uri->segment(4);
         if($timeid==0)
                 $time = time();

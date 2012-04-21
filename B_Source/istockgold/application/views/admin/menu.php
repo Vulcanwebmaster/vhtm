@@ -24,7 +24,7 @@ Examples can be seen below for menu_bep_system
         <li><?php print anchor('pages/admin','<img src="../assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_pages')) ?></li>				
         <div class="seperator"></div>
 		<li><?php print anchor('update_profile/admin','<img src="../assets/images/admin/n_profile.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_update_profile')) ?></li>
-        <li><?php print anchor('log_out/admin','<img src="../assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?></li>
+        <li><?php print anchor('auth/auth/logout','<img src="../assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?></li>
 	</ul>
 </div>
 
