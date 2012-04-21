@@ -1,11 +1,11 @@
 <div id="main">
                     <div id="page_title">
                         <h1>
-                            News</h1>
+                            Pages</h1>
                     </div>
-                    <a href="<?php echo base_url();?>news/admin/add_news/Add">
+                    <a href="<?php echo base_url();?>is_pages/admin/add_pages/Add">
                         <img src="<?php echo base_url();?>assets/images/admin/n_add.png"
-                            width="16" height="16" border="0">Add New News</a>
+                            width="16" height="16" border="0">Add New Pages</a>
                     <br>
                     <div id="status_box">
                         <table cellspacing="1" cellpadding="2" border="0" class="maintable">
@@ -22,12 +22,12 @@
                                 </tr>
                                 <tr height="20" class="col0">
                                     <td nowrap="nowrap">
-                                        [ <a href="<?php echo base_url();?>news/admin/edit_news/edit/12">Edit</a>
-                                        ] [ <a href="<?php echo base_url();?>news/admin/delete_news/delete/12"
+                                        [ <a href="<?php echo base_url();?>is_pages/admin/edit_pages/edit/12">Edit</a>
+                                        ] [ <a href="<?php echo base_url();?>is_pages/admin/delete_pages/delete/12"
                                             style="color: #990000;" onclick="">Delete</a> ]
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url();?>news/admin/edit_news/edit/12">Welcome to auto-exchanger script
+                                        <a href="<?php echo base_url();?>is_pages/admin/edit_pages/edit/12">FAQ
                                                 <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>

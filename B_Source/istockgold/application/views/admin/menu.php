@@ -18,7 +18,7 @@ Examples can be seen below for menu_bep_system
         <li><?php print anchor('site_currencies/admin','<img src="'.base_url().'assets/images/admin/n_currencies.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_site_currencies')) ?></li>
         <li><?php print anchor('site_settings/admin','<img src="'.base_url().'assets/images/admin/n_settings.gif" width="19" height="18" border="0" />'.$this->lang->line('istockgold_site_settings')) ?></li>			
 		<li><?php print anchor('news/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_news')) ?></li>
-        <li><?php print anchor('pages/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_pages')) ?></li>				
+        <li><?php print anchor('is_pages/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_pages')) ?></li>				
         <div class="seperator"></div>
 		<li><?php print anchor('update_profile/admin','<img src="'.base_url().'assets/images/admin/n_profile.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_update_profile')) ?></li>
         <li><?php print anchor('auth/auth/logout','<img src="'.base_url().'assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?></li>

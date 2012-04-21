@@ -3,7 +3,7 @@
  * This is for ci_bep
  *
  */
-class news_model extends CI_Model
+class pages_model extends CI_Model
 {
 
     function __construct()
@@ -12,11 +12,11 @@ class news_model extends CI_Model
         parent::__construct();
     }
     
-    function getAllNews()
+    function getAllPages()
     {
         // getting all the news
         $data = array();
-        $Q = $this->db->query('SELECT * FROM is_news');
+        $Q = $this->db->query('SELECT * FROM is_pages');
         if ($Q->num_rows() > 0)
         {
             foreach ($Q->result_array() as $row)
