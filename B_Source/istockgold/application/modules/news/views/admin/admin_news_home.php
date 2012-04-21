@@ -4,7 +4,7 @@
                             News</h1>
                     </div>
                     <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Add">
-                        <img src="<?php echo base_url();?>assets/admin/images/n_add.png"
+                        <img src="<?php echo base_url();?>assets/images/admin/n_add.png"
                             width="16" height="16" border="0">Add New News</a>
                     <br>
                     <div id="status_box">
@@ -31,7 +31,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=12">Welcome
                                             to auto-exchanger script</a> <a href="http://demo.auto-exchanger.com/nview/title/Welcome+to+auto-exchanger+script/"
                                                 target="_blank" title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -45,7 +45,7 @@
                                     <td>
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=1">FAQ</a>
                                         <a href="http://demo.auto-exchanger.com/nview/title/FAQ/" target="_blank" title="Preview this document in new window">
-                                            <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                            <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                 width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -60,7 +60,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=2">About
                                             us</a> <a href="http://demo.auto-exchanger.com/nview/title/About+us/" target="_blank"
                                                 title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -75,7 +75,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=3">Terms
                                             of services</a> <a href="http://demo.auto-exchanger.com/nview/title/Terms+of+services/"
                                                 target="_blank" title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -90,7 +90,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=4">Free Affiliate
                                             program</a> <a href="http://demo.auto-exchanger.com/nview/title/Free+Affiliate+program/"
                                                 target="_blank" title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -105,7 +105,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=5">Affiliate
                                             Links</a> <a href="http://demo.auto-exchanger.com/nview/title/Affiliate+Links/" target="_blank"
                                                 title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -120,7 +120,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=8">Vertification</a>
                                         <a href="http://demo.auto-exchanger.com/nview/title/Vertification/" target="_blank"
                                             title="Preview this document in new window">
-                                            <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                            <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                 width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -135,7 +135,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=9">Privacy
                                             Policy</a> <a href="http://demo.auto-exchanger.com/nview/title/Privacy+Policy/" target="_blank"
                                                 title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -150,7 +150,7 @@
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=10">Start
                                             your online exchange</a> <a href="http://demo.auto-exchanger.com/nview/title/Start+your+online+exchange/"
                                                 target="_blank" title="Preview this document in new window">
-                                                <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                     width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
@@ -164,7 +164,7 @@
                                     <td>
                                         <a href="http://demo.auto-exchanger.com/admin/adm_newsmain/?Action=Edit&id=4">Banners</a>
                                         <a href="http://demo.auto-exchanger.com/nview/title/Banners/" target="_blank" title="Preview this document in new window">
-                                            <img src="<?php echo base_url();?>assets/images/arrow1_hor.gif"
+                                            <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
                                                 width="7" height="11" border="0"></a>
                                     </td>
                                 </tr>
