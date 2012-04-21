@@ -28,7 +28,7 @@
 }
 #send{width:305px; height:193px}
 #send div{margin-top:6px}
-#main-column{float:right; padding-left:25px;width:831px}
+#main-column{float:right; padding-left:25px;width:831px; font-size:12px}
 #label{height:50px}
 #label p
 {
@@ -149,3 +149,57 @@ table{width:100%}
 .FAQContent{font-size:12px; padding:25px 0 0 0}
 .FAQContent p{line-height:20px}
 .FAQTitle{color:#0093ff; font-weight:bold}
+
+.red{color:red}
+
+/*TRACKING*/
+#tracking-column-center,#tracking-column-right{float:left}
+/*#tracking-column-right{width:auto}*/
+#tracking-column-center{width:585px; padding-right:0px}
+#tracking-column-center div{margin-right:20px}
+
+.tracking-col1,.tracking-col2{float:left}
+.tracking-col1{font-size:12px; width:150px}
+.tracking-col2{width:auto; width:305px}
+.tracking-col2 img{margin-top:2px}
+.tracking-row{height:27px; clear:both; padding-bottom:10px}
+
+.tracking-dialog-right{border:inset 1px #9d9d9d; border-radius:5px 5px 0 0; margin-top:15px; width:100%}
+.dialog-body{font-size:11px; padding:10px 20px; line-height:25px}
+.dialog-body input{width:100%}
+
+.tracking-right-date{margin-top:0; background-color:#f5f5f5; width:55%; font-size:10px; text-transform:uppercase}
+
+/*--SERVICE FEES--*/
+.fees-head1{color:#2e82be; text-transform:uppercase; font-size:14px; font-weight:bold}
+.fees-head2{color:#505050; font-size:13px; font-weight:bold; margin-bottom:5px;margin-top:5px}
+.fees-table{font-size:12px}
+.fees-table p{margin-top:5px}
+.fees-row td{border-bottom:inset 2px #e8e8e8;}
+.green{color:#48c10d}
+.red{color:red}
+.fee-col1{width:200px}
+.fee-col2{width:330px}
+
+/*--LIBERTY--*/
+.Liberty-head1{font-size:13px; font-weight:bold; margin-bottom:5px}
+.Liberty-row{border-bottom:inset 7px #b0b0b0}
+.box
+{
+    background-color: #ffffd0;
+    border: 1px solid #d0d060;
+}
+
+
+.Liberty2-table input
+{
+    border-style: none none solid none;
+    border-bottom-width: 1px;
+    border-bottom-color: #808080;
+    width:50%;
+}
+.Liberty2-table p{margin:10px 0}
+.liberty2-col1
+{
+    padding-right: 10px;
+}
