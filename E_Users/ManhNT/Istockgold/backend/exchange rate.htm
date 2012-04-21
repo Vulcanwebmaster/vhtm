@@ -1,0 +1,1605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>i-stockgold</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta content="MSHTML 6.00.2600.0" name="GENERATOR">
+    <meta name="Keywords" content="Exchange e-currency, buy currency, sell currency, Automatic currency exchange script, currency exchange software, e-gold,egold,buy,sell,convert,swap,funding,wu,mg,bankwire,local bank,deposit,exchange libertyreserve,Ukash,exchange webmoney,exchange,trade,trading,online money,online currency,best,cheap,ecurrency exchange,ecurrency trading,low,lowest commission,commission,gold,e-currency,ecurrency,e-currencies">
+    <meta name="Description" content="Auto-Exchanger Demo, Automatic Exchange E-currencies, Libertyreserve, Webmoney, E-gold, Alertpay, Perfectmoney, Pecunix, V-money, C-gold, Moneybookers, Strictpay, SolidTrustPay, Paypal, CashU, offline credit/debit cards & online debit/credit cards(worldmoney), Liqpay, Ukash, Paysafecard">
+    <meta name="Author" content="www.auto-exchanger.com">
+    <meta name="Robots" content="index,follow">
+    <meta name="Googlebot" content="index,follow">
+    <meta name="revisit-after" content="1">
+    <meta name="Rating" content="General">
+    <meta name="DISTRIBUTION" content="GLOBAL">
+    <meta name="RESOURCE-TYPE" content="DOCUMENT">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href='http://demo.auto-exchanger.com/rss/' />
+    <script type="text/javascript" language="JavaScript">        var site_url = 'http://demo.auto-exchanger.com'; var img_url = 'http://demo.auto-exchanger.com/_skins/brown/tplimgs/';</script>
+    <script type="text/javascript" language="JavaScript" src="js/lib.js"></script>
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="admin.css" media="screen">
+</head>
+<body>
+    <div id="header">
+        <table height="65" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td nowrap="nowrap">
+                    <h1>
+                        <font color="#FFCC00">i-stockgold</font></h1>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td width="9" src="images/top_left.gif">
+                    <img src="images/spacer.gif"
+                        width="9" height="60" />
+                </td>
+                <td width="100%" height="157" background="images/top_bg.gif"
+                    style="vertical-align: top">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" background="images/top_bg2.gif"
+                        style="margin-top: 8px;">
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td width="100%" style="text-align: center; vertical-align: top; height: 142px; text-align: left">
+                                <img src="images/logo.gif" alt="Auto-Exchanger Demo" vspace="11" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="9" src="images/top_right.gif">
+                    <img src="images/spacer.gif"
+                        width="9" height="60" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="outer_wrapper">
+        <div id="wrapper">
+            <div id="container_2cl">
+                <div id="left">
+                    <div id="navigation_menu">
+                        <ul>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_status/">
+                                <img src="images/n_status.gif"
+                                    width="18" height="16" border="0">Admin Home</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_exchanges/">
+                                <img src="images/n_order.png"
+                                    width="16" height="16" border="0">Exchange Orders</a></li>
+                            <li><a href="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  .htm"
+                                class="navigation_select">
+                                <img src="images/n_order_fee.png"
+                                    width="16" height="16" border="0">Exchange Rates</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies/">
+                                <img src="images/n_order_set.png"
+                                    width="18" height="18" border="0">Exchange settings</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_buysell/">
+                                <img src="images/n_buysell.png"
+                                    width="16" height="16" border="0">Sell/Buy Orders</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_buysell/">
+                                <img src="images/n_buysell_fee.png"
+                                    width="16" height="16" border="0">Sell/Buy currencies fees</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_buysell_methods/">
+                                <img src="images/n_buysell_set.png"
+                                    width="16" height="16" border="0">Sell/Buy payment methods</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_buysell_worthes/">
+                                <img src="images/n_buysell_rates.png"
+                                    width="16" height="16" border="0">Sell/Buy worth rates </a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_payouttousr/">
+                                <img src="images/n_pcomission.gif"
+                                    width="18" height="18" border="0">Payout Commissions</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_useraccount/">
+                                <img src="images/n_maccounts.gif"
+                                    width="18" height="18" border="0">Manage Members</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/">
+                                <img src="images/n_currencies.png"
+                                    width="16" height="16" border="0">Site currencies</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_settings/">
+                                <img src="images/n_settings.gif"
+                                    width="19" height="18" border="0">Site Settings</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_template/">
+                                <img src="images/n_template.gif"
+                                    width="18" height="18" border="0">Edit Templates</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_newsmain/">
+                                <img src="images/n_ehistory.gif"
+                                    width="17" height="17" border="0">News, Pages</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_massemail/">
+                                <img src="images/n_mail.gif"
+                                    width="18" height="17" border="0">Mass Mailing</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/admin/adm_events/">
+                                <img src="images/n_lhistory.gif"
+                                    width="18" height="17" border="0">Activity logs</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href="http://demo.auto-exchanger.com/signup/">
+                                <img src="images/n_profile.gif"
+                                    width="18" height="17" border="0">Update profile</a></li>
+                            <li><a href="http://demo.auto-exchanger.com/index/Action/logout/">
+                                <img src="images/n_logout.gif"
+                                    width="18" height="17" border="0">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="left_box">
+                        <div id="page_title">
+                            <h1>
+                                Reserved Amount</h1>
+                        </div>
+                        <div id="reserved_box">
+                            <img src="images/libertyreserve_3.gif"
+                                title="Libertyreserve usd, Our account: U2782065"><span class="money_1">$1,050.56</span>
+                            <img src="images/libertyreserve_3.gif"
+                                title="Libertyreserve euro, Our account: U2782065"><span class="money_1">€390.00</span>
+                            <img src="images/c-gold_3.gif"
+                                title="C-gold usd, Our account: 1372"><span class="money_1">$390.00</span>
+                            <img src="images/perfectmoney_3.gif"
+                                title="Perfectmoney usd, Our account: U1400933"><span class="money_1">$385.14</span>
+                            <img src="images/pecunix_3.gif"
+                                title="Pecunix usd, Our account: exchangerscript@gmail.com"><span class="money_1">$349.91</span>
+                            <img src="images/webmoney_3.gif"
+                                title="Webmoney usd, Our account: Z250323309410"><span class="money_1">$145.00</span>
+                            <img src="images/webmoney_3.gif"
+                                title="Webmoney euro, Our account: E126610237928"><span class="money_1">€600.00</span>
+                            <img src="images/moneybookers_3.gif"
+                                title="Moneybookers usd, Our account: "><span class="money_1">$630.00</span>
+                            <img src="images/paypal_3.gif"
+                                title="Paypal usd, Our account: goldan_1234562571_biz_api1.gmail.com"><span class="money_1">$630.00</span>
+                            <img src="images/strictpay_3.gif"
+                                title="Strictpay usd, Our account: "><span class="money_1">$1,000.00</span>
+                            <img src="images/solidtrustpay_3.gif"
+                                title="Solidtrustpay usd, Our account: "><span class="money_1">$1,000.00</span>
+                            <img src="images/cashu_3.gif"
+                                title="Cashu aed, Our account: "><span class="money_1">AED 1,000.00</span>
+                            <img src="images/globaldigitalpay_3.gif"
+                                title="Globaldigitalpay usd, Our account: G0915407"><span class="money_1">$1,183.01</span>
+                            <img src="images/liqpay_3.gif"
+                                title="Liqpay usd, Our account: "><span class="money_1">$0.00</span>
+                            <img src="images/debit card offline_3.gif"
+                                title="Debit card offline euro, Our account: "><span class="money_1">€1,000.00</span>
+                        </div>
+                    </div>
+                    <div id="border">
+                        <div class="left_box">
+                            <div id="page_title">
+                                <h1 style="padding-left: 5%">
+                                    We accept</h1>
+                            </div>
+                            <div class="content">
+                                <div id="source_box">
+                                    <img src="images/paysafecard_4.gif"
+                                        title="Paysafecard eur">Paysafecard
+                                    <img src="images/ukash_4.gif"
+                                        title="Ukash eur">Ukash
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left_box">
+                        <div id="news">
+                            <div id="page_title">
+                                <h1>
+                                    Latest News</h1>
+                            </div>
+                            <p>
+                                <b>Welcome to auto-exchanger script</b> <em>(2010-08-10)</em><br>
+                                This is sample news, wrote in by administrator <a href="http://demo.auto-exchanger.com/nview/title/Welcome+to+auto-exchanger+script/">
+                                    <img src="images/r_more.gif"
+                                        width="14" height="12" border="0">Read More</a>
+                            </p>
+                            <div style="text-align: right;">
+                                <a href="http://demo.auto-exchanger.com/nview/id/all/">News archive</a></div>
+                        </div>
+                    </div>
+                    <div class="left_box">
+                        <div id="page_title">
+                            <h1>
+                                Track your order here</h1>
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <form name="menu" action="http://demo.auto-exchanger.com/exchange_status/" method="post">
+                            </form>
+                            <tbody>
+                                <tr>
+                                    <th nowrap="nowrap" style="padding: 0 3px 0 3px; font-size: 11px;">
+                                        Reference
+                                    </th>
+                                    <td>
+                                        <input type="text" size="20" id="referenceid" name="referenceid">
+                                    </td>
+                                </tr>
+                                <tr style="padding: 0px;">
+                                    <td align="right" style="padding-right: 3px; text-align: right; font-size: 11px">
+                                        Code
+                                    </td>
+                                    <td valign="top">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input size="8" id="turing_status_box" name="turing_status_box" autocomplete="off">
+                                                    </td>
+                                                    <td style="padding-top: 2px;">
+                                                        <img src="images/turning.php"
+                                                            style="border: 1px solid #999999; width: 60px; height: 17px;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 23px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100%">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td>
+                                                        <input name="submit_status_box" id="submit_status_box" type="submit" class="btn"
+                                                            value="Submit">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="main">
+                    <div id="page_title">
+                        <h1>
+                            Exchange Rates</h1>
+                    </div>
+                    <style type="text/css">
+                        TH
+                        {
+                            background-color: #F8FAF9;
+                            cursor: default;
+                        }
+                        .tablefirstrow, .tablefirstrow td
+                        {
+                            padding: 2px;
+                            line-height: 18px !important;
+                        }
+                        select, input
+                        {
+                            font-size: 11px;
+                            height: 16px;
+                        }
+                        #main
+                        {
+                            position: absolute;
+                            top: 240px;
+                            left: 5px;
+                            z-index: 10;
+                            margin: 3%;
+                        }
+                        #left
+                        {
+                            visibility: hidden;
+                        }
+                    </style>
+                    <a href="http://demo.auto-exchanger.com/admin/adm_status/">
+                        <img src="images/n_status.gif"
+                            width="18" height="16" border="0">Admin Home</a> <a href="http://demo.auto-exchanger.com/admin/adm_currencies/">
+                                <img src="images/n_order_set.png"
+                                    width="16" height="16" border="0">Exchange settings</a> <a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/">
+                                        <img src="images/n_currencies.png"
+                                            width="16" height="16" border="0">Site currencies</a> <a href="http://demo.auto-exchanger.com/admin/adm_settings/">
+                                                <img src="images/n_settings.gif"
+                                                    width="19" height="18" border="0">Site Settings</a>
+                    <div id="status_box">
+                        <form id="form1" name="form1" method="post" action="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  .htm">
+                        <table width="99%" border="0" cellspacing="1" cellpadding="0" class="rates" style="background-color: #F3F3F3">
+                            <thead>
+                                <tr>
+                                    <th class="tablefirstrow" style="text-align: center">
+                                        To / From
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Libertyreserve<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Libertyreserve<br>
+                                        (Euro)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        C-gold<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Perfectmoney<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Pecunix<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Webmoney<br>
+                                        (WMZ)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Webmoney<br>
+                                        (WME)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Alertpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Moneybookers<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Paypal<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Strictpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Solidtrustpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Cashu<br>
+                                        (AED)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Globaldigitalpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Liqpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Paysafecard<br>
+                                        (Euro)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Ukash<br>
+                                        (Euro)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Debit card offline<br>
+                                        (Usd)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Libertyreserve Usd
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="3|3" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="3|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Libertyreserve Usd
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Libertyreserve Euro
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="4|4" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="4|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Libertyreserve Euro
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        C-gold Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="5|5" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="5|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        C-gold Usd
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Perfectmoney Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="6|6" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="6|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Perfectmoney Usd
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Pecunix Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="7|7" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="7|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Pecunix Usd
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Webmoney WMZ
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|3" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|4" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|5" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|6" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|7" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="9|9" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|10" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|13" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|14" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|15" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|17" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|18" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|19" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|21" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|23" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|37" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|39" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="9|42" value="0:0">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Webmoney WMZ
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Webmoney WME
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|3" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|4" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|5" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|6" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|7" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|9" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="10|10" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|13" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|14" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|15" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|17" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|18" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|19" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|21" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|23" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|37" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|39" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="10|42" value="0:0">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Webmoney WME
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Alertpay Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="13|13" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="13|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Alertpay Usd
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Moneybookers Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="14|14" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="14|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Moneybookers Usd
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Paypal Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="15|15" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="15|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Paypal Usd
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Strictpay Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="17|17" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="17|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Strictpay Usd
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Solidtrustpay Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="18|18" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="18|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Solidtrustpay Usd
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Cashu AED
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="19|19" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="19|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Cashu AED
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Globaldigitalpay Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="21|21" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="21|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Globaldigitalpay Usd
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Liqpay Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="23|23" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="23|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Liqpay Usd
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Paysafecard Euro
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="37|37" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="37|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Paysafecard Euro
+                                    </td>
+                                </tr>
+                                <tr class="col1">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Ukash Euro
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="39|39" value="-">&nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="39|42" value="1:0.982">
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Ukash Euro
+                                    </td>
+                                </tr>
+                                <tr class="col0">
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Debit card offline Usd
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|3" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|4" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|5" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|6" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|7" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|9" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|10" value="0:0">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|13" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|14" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|15" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|17" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|18" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|19" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|21" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|23" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|37" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" name="42|39" value="1:0.982">
+                                    </td>
+                                    <td>
+                                        <input type="hidden" name="42|42" value="-">&nbsp;
+                                    </td>
+                                    <td class="tablefirstrow" style="font-size: 11px; text-align: center;">
+                                        Debit card offline Usd
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="tablefirstrow" style="text-align: center">
+                                        To / From
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Libertyreserve<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Libertyreserve<br>
+                                        (Euro)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        C-gold<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Perfectmoney<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Pecunix<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Webmoney<br>
+                                        (WMZ)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Webmoney<br>
+                                        (WME)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Alertpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Moneybookers<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Paypal<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Strictpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Solidtrustpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Cashu<br>
+                                        (AED)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Globaldigitalpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Liqpay<br>
+                                        (Usd)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Paysafecard<br>
+                                        (Euro)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Ukash<br>
+                                        (Euro)
+                                    </th>
+                                    <th nowrap="" class="tablefirstrow" style="font-size: 11px; text-align: center">
+                                        Debit card offline<br>
+                                        (Usd)
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <input name="Action" type="hidden" id="Action" value="Save">
+                        <center>
+                            <input type="submit" name="Submit" value="Update All Exchange Rates" class="btn"></center>
+                        </form>
+                    </div>
+                    <br>
+                    <div id="page_guide">
+                        <h2>
+                            HELP:</h2>
+                        <strong>• Disable exchange</strong>: Enter <b>0:0 or empty</b> to disable exchange
+                        direction.<br>
+                        <strong>• Internal Usd</strong>: for Commissions withdraw exchange rate (Only used
+                        on members commissions withdraw page).<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearing">
+            &nbsp;</div>
+    </div>
+</body>
+</html>

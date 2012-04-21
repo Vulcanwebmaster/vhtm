@@ -1,0 +1,1752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>i-stockgold</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta content="MSHTML 6.00.2600.0" name="GENERATOR">
+    <meta name="Keywords" content="Exchange e-currency, buy currency, sell currency, Automatic currency exchange script, currency exchange software, e-gold,egold,buy,sell,convert,swap,funding,wu,mg,bankwire,local bank,deposit,exchange libertyreserve,Ukash,exchange webmoney,exchange,trade,trading,online money,online currency,best,cheap,ecurrency exchange,ecurrency trading,low,lowest commission,commission,gold,e-currency,ecurrency,e-currencies">
+    <meta name="Description" content="Auto-Exchanger Demo, Automatic Exchange E-currencies, Libertyreserve, Webmoney, E-gold, Alertpay, Perfectmoney, Pecunix, V-money, C-gold, Moneybookers, Strictpay, SolidTrustPay, Paypal, CashU, offline credit/debit cards & online debit/credit cards(worldmoney), Liqpay, Ukash, Paysafecard">
+    <meta name="Author" content="www.auto-exchanger.com">
+    <meta name="Robots" content="index,follow">
+    <meta name="Googlebot" content="index,follow">
+    <meta name="revisit-after" content="1">
+    <meta name="Rating" content="General">
+    <meta name="DISTRIBUTION" content="GLOBAL">
+    <meta name="RESOURCE-TYPE" content="DOCUMENT">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href='http://demo.auto-exchanger.com/rss/' />
+    <script type="text/javascript" language="JavaScript">        var site_url = 'http://demo.auto-exchanger.com'; var img_url = 'http://demo.auto-exchanger.com/_skins/brown/tplimgs/';</script>
+    <script type="text/javascript" language="JavaScript" src="js/lib.js"></script>
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="admin.css" media="screen">
+</head>
+<body>
+    <div id="header">
+        <table height="65" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td nowrap="nowrap">
+                    <h1>
+                        <font color="#FFCC00">i-stockgold</font></h1>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td width="9" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_left.gif">
+                    <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/spacer.gif"
+                        width="9" height="60" />
+                </td>
+                <td width="100%" height="157" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_bg.gif"
+                    style="vertical-align: top">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_bg2.gif"
+                        style="margin-top: 8px;">
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td width="100%" style="text-align: center; vertical-align: top; height: 142px; text-align: left">
+                                <img src="images/logo.gif" alt="Auto-Exchanger Demo" vspace="11" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="9" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_right.gif">
+                    <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/spacer.gif"
+                        width="9" height="60" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="outer_wrapper">
+        <div id="wrapper">
+            <div id="container_2cl">
+                <div id="left">
+                    <div id="navigation_menu">
+                        <ul>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_status/' class="navigation_select">
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_status.gif" width="18"
+                                    height="16" border="0" />Admin Home</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_exchanges/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_order.png" width="16"
+                                    height="16" border="0" />Exchange Orders</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_exchange_rate/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_order_fee.png"
+                                    width="16" height="16" border="0" />Exchange Rates</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_currencies/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_order_set.png"
+                                    width="18" height="18" border="0" />Exchange settings</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_useraccount/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_maccounts.gif"
+                                    width="18" height="18" border="0" />Manage Members</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_currencies_accounts/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_currencies.png"
+                                    width="16" height="16" border="0" />Site currencies</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_settings/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_settings.gif"
+                                    width="19" height="18" border="0" />Site Settings</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_newsmain/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_ehistory.gif"
+                                    width="17" height="17" border="0" />News</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_newsmain/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_ehistory.gif"
+                                    width="17" height="17" border="0" />Pages</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/signup/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_profile.gif"
+                                    width="18" height="17" border="0" />Update profile</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/index/Action/logout/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_logout.gif" width="18"
+                                    height="17" border="0" />Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="left_box">
+                        <div id="page_title">
+                            <h1>
+                                Reserved Amount</h1>
+                        </div>
+                        <div id="reserved_box">
+                            <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/bank_images/libertyreserve_3.gif"
+                                title="Libertyreserve usd, Our account: U2782065" /><span class="money_1">$1,050.56</span>
+                            <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/bank_images/libertyreserve_3.gif"
+                                title="Libertyreserve euro, Our account: U2782065" /><span class="money_1">&#8364;390.00</span>
+                        </div>
+                    </div>
+                    <div class="left_box">
+                        <div id="page_title">
+                            <h1>
+                                Track your order here</h1>
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <form name="menu" action='http://demo.auto-exchanger.com/exchange_status/' method="post">
+                            <tr>
+                                <th nowrap="nowrap" style="padding: 0 3px 0 3px; font-size: 11px;">
+                                    Reference
+                                </th>
+                                <td>
+                                    <input type="text" size="20" id="referenceid" name="referenceid">
+                                </td>
+                            </tr>
+                            <tr style="padding: 0px;">
+                                <td align="right" style="padding-right: 3px; text-align: right; font-size: 11px">
+                                    Code
+                                </td>
+                                <td valign="top">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td>
+                                                <input size="8" id="turing_status_box" name="turing_status_box" autocomplete="off" />
+                                            </td>
+                                            <td style="padding-top: 2px;">
+                                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/turning.php" style="border: 1px solid #999999;
+                                                    width: 60px; height: 17px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 23px;">
+                                        <tr>
+                                            <td width="100%">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <input name="submit_status_box" id="submit_status_box" type="submit" class="btn"
+                                                    value="Submit" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            </form>
+                        </table>
+                    </div>
+                </div>
+                <div id="main">
+                    <div id="Div1">
+                        <h1>
+                            Manage Currencies info &amp; passwords
+                        </h1>
+                    </div>
+                    Use the following form to enable and configure the e-currencies you want to accept
+                    in your site.
+                    <br>
+                    Enabling Auto Exchange allows your users to receive their exchange directly into
+                    their e-currencies accounts instead of their payment value.<br>
+                    <br>
+                    <!--Start of the Tabmenu -->
+                    <div style="border: #CFD1D0 3px solid; border-bottom: 0;">
+                        <div class="tabmenu">
+                            <ul>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(0); return false;"
+                                    id="tab0" class="tabselected">E-gold</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(1); return false;"
+                                    id="tab1" class="tab">Pecunix</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(2); return false;"
+                                    id="tab2" class="tab">LibertyReserve</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(3); return false;"
+                                    id="tab3" class="tab">Alertpay</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(4); return false;"
+                                    id="tab4" class="tab">PerfectMoney</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(5); return false;"
+                                    id="tab5" class="tab">Webmoney</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(6); return false;"
+                                    id="tab6" class="tab">V-money</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(7); return false;"
+                                    id="tab7" class="tab">C-gold</a></li>
+                            </ul>
+                        </div>
+                        <div class="tabmenu">
+                            <ul>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(8); return false;"
+                                    id="tab8" class="tab">MoneyBookers</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(9); return false;"
+                                    id="tab9" class="tab">Paypal</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(10); return false;"
+                                    id="tab10" class="tab">Strictpay</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(11); return false;"
+                                    id="tab11" class="tab">SolidTrustPay</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(12); return false;"
+                                    id="tab12" class="tab">WorldPay</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(13); return false;"
+                                    id="tab13" class="tab">CashU</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(14); return false;"
+                                    id="tab14" class="tab">Globaldigitalpay</a></li>
+                                <li><a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/#" onclick="TabClick(15); return false;"
+                                    id="tab15" class="tab">Liqpay</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--End of the Tabmenu -->
+                    <div id="status_box" style="border-top: 0;">
+                        <form id="settingform" name="settingform" method="post" action="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  .htm"
+                        enctype="multipart/form-data">
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox0" style="">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/e-gold_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            E-gold Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Gold : <span class="ErrorMessage">Disable</span><br>
+                                                            Silver : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        E-gold Account:
+                                    </td>
+                                    <td>
+                                        <input name="e-gold|ACCOUNT" type="text" id="e-gold|ACCOUNT" value="">
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Account Name:
+                                    </td>
+                                    <td>
+                                        <input name="e-gold|ACCOUNT_NAME" type="text" id="e-gold|ACCOUNT_NAME" value="">
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Alternate Password:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="e-gold|ALT_PASSWORD" type="text" id="e-gold|ALT_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        Alternate password that you use for log in to your account [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Login Password:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="e-gold|MAIN_PASSWORD" type="text" id="e-gold|MAIN_PASSWORD" value="">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        This is the password you use to login into E-Gold [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="e-gold|CURRENCY_VERIFIER" type="text" id="e-gold|CURRENCY_VERIFIER"
+                                                value="hsh_bnk/hsh_egold.php">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="color: #006600;"><strong>Note:</strong></span> For enable Auto Payout
+                                        system you must login to your e-gold account &gt; Account info &gt; AccSent &gt;
+                                        Automation Access and Select Allow from Any IP Address or type your server IP ADDRESS
+                                        in the box and select Allow from IP.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox1" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/pecunix_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Pecunix Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Pecunix Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="pecunix|ACCOUNT" type="text" id="pecunix|ACCOUNT" value="exchangerscript@gmail.com">
+                                    </td>
+                                    <td class="help">
+                                        E-mail address
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Shared Secret :
+                                    </td>
+                                    <td>
+                                        <input name="pecunix|ALT_PASSWORD" type="text" id="pecunix|ALT_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Shared secret as defined on the Account Details -&gt; Merchant Settings of your
+                                        Pecunix account [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Payment PIK:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="pecunix|MAIN_PASSWORD" type="text" id="pecunix|MAIN_PASSWORD" value="****************">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        This is the Payment PIK you received when you signed up for your Pecunix account.
+                                        Enter your Payment PIK WITHOUT ANY DASHES OR SPACES. [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="pecunix|CURRENCY_VERIFIER" type="text" id="pecunix|CURRENCY_VERIFIER"
+                                                value="hsh_bnk/hsh_pecunix.php">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="2" cellpadding="3" style="font-size: 11px; display: none;"
+                            width="99%" id="tabbox2">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/libertyreserve_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Liberty Reserve Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                            Euro : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Liberty Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="libertyreserve|ACCOUNT" type="text" id="libertyreserve|ACCOUNT" value="U2782065">
+                                    </td>
+                                    <td class="help">
+                                        Use cappital characters sample: UXXXX
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Account Name:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="libertyreserve|ACCOUNT_NAME" type="text" id="libertyreserve|ACCOUNT_NAME"
+                                            value="Auto Exchanger Demo">
+                                    </td>
+                                    <td class="help">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Store Name:
+                                    </td>
+                                    <td>
+                                        <input name="libertyreserve|PAYEE_NAME" type="text" id="libertyreserve|PAYEE_NAME"
+                                            value="Auto Exchanger Demo">
+                                    </td>
+                                    <td class="help">
+                                        This is the store name you must set up on Merchant tools &gt; Create new store.
+                                        [<strong>Auto Receive</strong>] create name,password and enable it. Select POST
+                                        for all HTTP methods
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Store Password:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="libertyreserve|ALT_PASSWORD" type="text" id="libertyreserve|ALT_PASSWORD"
+                                                value="****************">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Your store name password must set on libertyreserve store. [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        API Name:
+                                    </td>
+                                    <td>
+                                        <input name="libertyreserve|API_NAME" type="text" id="libertyreserve|API_NAME" value="Auto Exchanger Demo">
+                                    </td>
+                                    <td class="help">
+                                        This API name must create on Merchant Tools &gt; Create New API [<strong>Auto Payout</strong>]
+                                        Select POST for all fileds
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        API password:
+                                    </td>
+                                    <td>
+                                        <input name="libertyreserve|MAIN_PASSWORD" type="text" id="libertyreserve|MAIN_PASSWORD"
+                                            value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Your Api password must set on libertyreserve API. [<strong>Auto Payout</strong>],Also
+                                        need to Enabled Api and all opersations(Transfer, History, blanace and account name)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="libertyreserve|CURRENCY_VERIFIER" type="text" id="libertyreserve|CURRENCY_VERIFIER"
+                                                value="hsh_bnk/hsh_liberty.php">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox3" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/alertpay_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            AlertPay Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Alertpay account :
+                                    </td>
+                                    <td width="5%">
+                                        <input name="alertpay|ACCOUNT" type="text" id="alertpay|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        E-mail address (Primary account e-mail addresss)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Encrypted Security Code :
+                                    </td>
+                                    <td>
+                                        <input name="alertpay|ALT_PASSWORD" type="text" id="alertpay|ALT_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        This is the encrypted security code that you entered on the alertpay website IPN
+                                        Settings [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td colspan="2" style="line-height: 16px">
+                                        http://demo.auto-exchanger.com/hsh_bnk/hsh_alertpay.php
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payer E-mail address :
+                                    </td>
+                                    <td>
+                                        <input name="alertpay|API_NAME" type="text" id="alertpay|API_NAME" value="">
+                                    </td>
+                                    <td class="help">
+                                        The email address of your account which send money, paste main address(If it is
+                                        your primary email address then do not need to provide this again) [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        API password :
+                                    </td>
+                                    <td>
+                                        <input name="alertpay|MAIN_PASSWORD" type="text" id="alertpay|MAIN_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        You will find api password after Activate API in Bussiness tools of your alertpay
+                                        account [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="color: #006600;"><strong>Note:</strong></span> Change IPN status URL
+                                        to 'http://demo.auto-exchanger.com/hsh_bnk/hsh_alertpay.php' in your alertpay account.
+                                        <input name="alertpay|CURRENCY_VERIFIER" type="hidden" id="alertpay|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_alertpay.php">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox4" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/perfectmoney_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            PerfectMoney Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Account ID:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="perfectmoney|API_NAME" type="text" id="perfectmoney|API_NAME" value="573884">
+                                    </td>
+                                    <td class="help">
+                                        You login account id
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        USD Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="perfectmoney|ACCOUNT" type="text" id="perfectmoney|ACCOUNT" value="U1400933">
+                                    </td>
+                                    <td class="help">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Alternate Passphrase :
+                                    </td>
+                                    <td>
+                                        <input name="perfectmoney|ALT_PASSWORD" type="text" id="perfectmoney|ALT_PASSWORD"
+                                            value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Alternate Passphras as defined on the My account-&gt; change settings of your account
+                                        [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Login Pass :
+                                    </td>
+                                    <td>
+                                        <input name="perfectmoney|MAIN_PASSWORD" type="text" id="perfectmoney|MAIN_PASSWORD"
+                                            value="****************">
+                                    </td>
+                                    <td class="help">
+                                        This is your perfectmoney login password. [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="perfectmoney|CURRENCY_VERIFIER" type="text" id="perfectmoney|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_perfectmoney.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), Also
+                                        my you have to enter your site server address in IP Mask field.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="color: #006600;">Note:</span> You must enable Api in your perfectmoney:
+                                        My Account &gt; Change security setting &gt; Enable API, then update your Alternate
+                                        Passphrase.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox5" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/webmoney_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            WebMoney Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            WMZ : <span style="color: #006600;">Active</span><br>
+                                                            WME : <span style="color: #006600;">Active</span><br>
+                                                            WMR : <span class="ErrorMessage">Disable</span><br>
+                                                            WMU : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        WMID:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="webmoney|API_NAME" type="text" id="webmoney|API_NAME" value="510898609487">
+                                    </td>
+                                    <td class="help">
+                                        Your WMID
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        WMZ Account (USD):
+                                    </td>
+                                    <td width="5%">
+                                        <input name="webmoney|ACCOUNT|WMZ" type="text" id="webmoney|ACCOUNT|WMZ" value="Z250323309410">
+                                    </td>
+                                    <td class="help">
+                                        Webmoney usd purse (if available).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        WME Account (EURO):
+                                    </td>
+                                    <td width="5%">
+                                        <input name="webmoney|ACCOUNT|WME" type="text" id="webmoney|ACCOUNT|WME" value="E126610237928">
+                                    </td>
+                                    <td class="help">
+                                        Webmoney euro purse (if available).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" nowrap="nowrap">
+                                        WMU Account (Ukrainian):
+                                    </td>
+                                    <td width="5%">
+                                        <input name="webmoney|ACCOUNT|WMR" type="text" id="webmoney|ACCOUNT|WMR" value="U310378717485">
+                                    </td>
+                                    <td class="help">
+                                        Webmoney ukrainian purse (if available).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        WMR Account (Rur):
+                                    </td>
+                                    <td width="5%">
+                                        <input name="webmoney|ACCOUNT|WMU" type="text" id="webmoney|ACCOUNT|WMU" value="R314427349021">
+                                    </td>
+                                    <td class="help">
+                                        Webmoney rur purse (if available).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Secret key :
+                                    </td>
+                                    <td>
+                                        <input name="webmoney|ALT_PASSWORD" type="text" id="webmoney|ALT_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Set it by login to this address: <u>https://merchant.wmtransfer.com</u> [<strong>Auto
+                                            Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        kwm password:
+                                    </td>
+                                    <td>
+                                        <input name="webmoney|MAIN_PASSWORD" type="text" id="webmoney|MAIN_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Your kwm key password.<b> <u>https://security.wmtransfer.com</u> </b>[<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        Webmoney key file exists.<br>
+                                        If have problem or you want to update it, click <a href="http://demo.auto-exchanger.com/admin/adm_currencies_accounts/Action/webmoney_upagain/">
+                                            here</a> to upload again.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="webmoney|CURRENCY_VERIFIER" type="text" id="webmoney|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_webmoney.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox6" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/v-money_4.gif"
+                                                            width="88" height="31">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            V-money Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        V-money Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="v-money|ACCOUNT" type="text" id="v-money|ACCOUNT" value="101720">
+                                    </td>
+                                    <td class="help">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Merchant password :
+                                    </td>
+                                    <td>
+                                        <input name="v-money|ALT_PASSWORD" type="text" id="v-money|ALT_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Merchant password must set in v-money control panel [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Login password :
+                                    </td>
+                                    <td>
+                                        <input name="v-money|MAIN_PASSWORD" type="text" id="v-money|MAIN_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        This is your v-money Login password. [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Pin number:
+                                    </td>
+                                    <td>
+                                        <input name="v-money|PIN_NUMBER" type="text" id="v-money|PIN_NUMBER" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        This is the PIN you chose when you got your V-Money account.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="v-money|CURRENCY_VERIFIER" type="text" id="v-money|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_vmoney.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="3" cellpadding="3" style="font-size: 11px; display: none;"
+                            width="99%" id="tabbox7">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/c-gold_4.gif"
+                                                            width="88" height="31">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            C-gold Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        C-gold Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="c-gold|ACCOUNT" type="text" id="c-gold|ACCOUNT" value="1372">
+                                    </td>
+                                    <td class="help">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Merchant password :
+                                    </td>
+                                    <td>
+                                        <input name="c-gold|ALT_PASSWORD" type="text" id="c-gold|ALT_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        C-gold Merchant Passphrase, to setu login to your c-gold account &gt; Info &gt;
+                                        Passpharse &gt; Merchant Passphrase [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Login Password:
+                                    </td>
+                                    <td>
+                                        <input name="c-gold|MAIN_PASSWORD" type="text" id="c-gold|MAIN_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Your c-gold login password if you want to have c-gold exchange compelete automaticly.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="c-gold|CURRENCY_VERIFIER" type="text" id="c-gold|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_cgold.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="color: #006600; font-weight: normal"><strong>Note:</strong></span>
+                                        C-gold really doesn't have Auto Payout system, so we wrote this section depend our
+                                        customers requests, IF you want to enable c-gold auto payout you have 2 way:<br>
+                                        <strong>1-</strong> Log in to your c-gold account &gt; Security, And choose Insecure
+                                        Mode for both ip address security &amp; Browser change security<br>
+                                        <strong>2-</strong> Log in to your c-gold account &gt; Security, Change multiple
+                                        location to 2 or more, then login one time by your server (contact your administrator
+                                        for more info), we will do that for free, if you choose our server<br>
+                                        <strong>Note:</strong> If you don't have SSL certificate maybe your c-gold account
+                                        password be on risk.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox8" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/moneybookers_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            MoneyBookers Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" nowrap="nowrap">
+                                        Moneybookers Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="moneybookers|ACCOUNT" type="text" id="moneybookers|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        Account e-mail address
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" nowrap="nowrap">
+                                        Secret word
+                                    </td>
+                                    <td width="5%">
+                                        <input name="moneybookers|ALT_PASSWORD" type="text" id="moneybookers|ALT_PASSWORD"
+                                            value="">
+                                    </td>
+                                    <td class="help">
+                                        The secret word MUST be submitted in the ‘Merchant Tools’ section in lowercase [<strong>Auto
+                                            Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="moneybookers|CURRENCY_VERIFIER" type="text" id="moneybookers|CURRENCY_VERIFIER"
+                                            value="">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do.)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="3" cellpadding="3" style="font-size: 11px; display: none;"
+                            width="99%" id="tabbox9">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/paypal_4.gif"
+                                                            width="119" height="50">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Paypal Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                            Euro : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Paypal Account:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="paypal|ACCOUNT" type="text" id="paypal|ACCOUNT" value="goldan_1234562571_biz_api1.gmail.com">
+                                    </td>
+                                    <td class="help">
+                                        Your paypal e-mail address [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Paypal demo mode:
+                                    </td>
+                                    <td>
+                                        <input name="paypal|API_NAME" type="text" id="paypal|API_NAME" value="sandbox" maxlength="7">
+                                    </td>
+                                    <td class="help">
+                                        write <strong>sandbox</strong> in the box to enable paypal api demo, or live blank
+                                        for live payments
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        API Password:
+                                    </td>
+                                    <td>
+                                        <input name="paypal|MAIN_PASSWORD" type="text" id="paypal|MAIN_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Read from paypal account [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Signature:
+                                    </td>
+                                    <td>
+                                        <input name="paypal|ALT_PASSWORD" type="text" id="paypal|ALT_PASSWORD" value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Api Signature from your paypal account settings[<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="paypal|CURRENCY_VERIFIER" type="text" id="paypal|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_paypal.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="font-weight: normal; color: #006600;"><strong>Note:</strong></span>
+                                        You must setup merchant on your paypal account
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox10" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/strictpay_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Strictpay Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Account ID:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="strictpay|ACCOUNT" type="text" id="strictpay|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        Your <b>numeric account</b>, you received after signin up.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Account Email:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="strictpay|API_NAME" type="text" id="strictpay|API_NAME" value="">
+                                    </td>
+                                    <td class="help">
+                                        The email address you use to login on your StrictPay account.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Account Access code :
+                                    </td>
+                                    <td>
+                                        <input name="strictpay|ALT_PASSWORD" type="text" id="strictpay|ALT_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        The code you have set up in your StrictPay account [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Login Pass :
+                                    </td>
+                                    <td>
+                                        <input name="strictpay|MAIN_PASSWORD" type="text" id="strictpay|MAIN_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        The password you use to login on your StrictPay account. [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="strictpay|CURRENCY_VERIFIER" type="text" id="strictpay|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_strictpay.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), Also
+                                        my you have to enter your site server address in IP Mask field.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox11" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/solidtrustpay_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            SolidTrustPay Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        STP Username:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="solidtrustpay|ACCOUNT" type="text" id="solidtrustpay|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        Your SolidTrustPay account.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Secondary Password :
+                                    </td>
+                                    <td>
+                                        <input name="solidtrustpay|ALT_PASSWORD" type="text" id="solidtrustpay|ALT_PASSWORD"
+                                            value="">
+                                    </td>
+                                    <td class="help">
+                                        The password you use to login on your SolidTrustPay account. [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="solidtrustpay|CURRENCY_VERIFIER" type="text" id="solidtrustpay|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_solidtrustpay.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), Also
+                                        my you have to enter your site server address in IP Mask field.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox12" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/worldpay_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            WorldPay (Online credits/debits) Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span class="ErrorMessage">Disable</span><br>
+                                                            Euro : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" nowrap="nowrap">
+                                        WorldPay Installation ID:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="worldpay|ACCOUNT" type="text" id="worldpay|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        Your Installation ID after accepting merchant in <a href="http://www.worldpay.com/"
+                                            target="_blank">www.worldpay.com</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Payment Description:
+                                    </td>
+                                    <td>
+                                        <input type="text" name="worldpay|API_NAME" id="worldpay|API_NAME" value="" class="textbox">
+                                    </td>
+                                    <td class="help">
+                                        Enter yout favorite memo transaction
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Call Back Password :
+                                    </td>
+                                    <td>
+                                        <input name="worldpay|ALT_PASSWORD" type="text" id="worldpay|ALT_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        You need to set on your merchant settings [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="worldpay|CURRENCY_VERIFIER" type="text" id="worldpay|CURRENCY_VERIFIER"
+                                            value="hsh_bnk/hsh_worldpay.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), Also
+                                        my you have to enter your site server address in IP Mask field.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="color: #006600;"><strong>Note:</strong></span> Please make sure "Payment
+                                        Response enabled" is set to true in your WorldPay control panel.
+                                        <br>
+                                        Online Credit/Debit cards must set as source in all exchange directions.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox13" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/cashu_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            CashU Account settings</h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            AED : <span style="color: #006600;">Active</span><br>
+                                                            Usd : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%" nowrap="nowrap">
+                                        CashU Merchant ID:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="cashu|ACCOUNT" type="text" id="cashu|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        Your CashU Merchant ID
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Encryption Keyword :
+                                    </td>
+                                    <td>
+                                        <input name="cashu|ALT_PASSWORD" type="text" id="cashu|ALT_PASSWORD" value="">
+                                    </td>
+                                    <td class="help">
+                                        You need to set on your merchant settings [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <input name="cashu|CURRENCY_VERIFIER" type="text" id="cashu|CURRENCY_VERIFIER" value="hsh_bnk/hsh_cashu.php">
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), Also
+                                        my you have to enter your site server address in IP Mask field.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="help">
+                                        <span style="color: #006600;"><strong>Note: </strong></span>
+                                        <br>
+                                        Cashu merchant account (https://www.cashu.com/Merchants/index?lang=en) in 'Encryption
+                                        Information':<br>
+                                        set 'thnx_url' like 'http://demo.auto-exchanger.com/hsh_bnk/hsh_cashu.php'<br>
+                                        set 'thanks_url' like 'http://demo.auto-exchanger.com/Received.php'<br>
+                                        set 'fail_url' like 'http://demo.auto-exchanger.com/Received_no.php'
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="2" cellpadding="3" style="font-size: 11px; display: none;"
+                            width="99%" id="tabbox14">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/globaldigitalpay_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Globaldigitalpay Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                            Euro : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Account Number:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="globaldigitalpay|ACCOUNT" type="text" id="globaldigitalpay|ACCOUNT"
+                                            value="G0915407">
+                                    </td>
+                                    <td class="help">
+                                        Use cappital characters sample: GXXXX
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Store ID:
+                                    </td>
+                                    <td>
+                                        <input name="globaldigitalpay|PAYEE_NAME" type="text" id="globaldigitalpay|PAYEE_NAME"
+                                            value="1469">
+                                    </td>
+                                    <td class="help">
+                                        This is the store id you must set up on Merchant tools &gt; API Integration (Full
+                                        payment integration). [<strong>Auto Receive</strong>] Select POST for all HTTP methods
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Unique API key:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="globaldigitalpay|ALT_PASSWORD" type="text" id="globaldigitalpay|ALT_PASSWORD"
+                                                value="****************">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Your store api key must write from API Integration. [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Merchant Reference:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="globaldigitalpay|THIRD_PASSWORD" type="text" id="globaldigitalpay|THIRD_PASSWORD"
+                                                value="****************">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Merchant Reference must write from API Integration. [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        API Name:
+                                    </td>
+                                    <td>
+                                        <input name="globaldigitalpay|API_NAME" type="text" id="globaldigitalpay|API_NAME"
+                                            value="1472">
+                                    </td>
+                                    <td class="help">
+                                        This API name must create on Merchant Tools &gt; API Automation [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Unique API key:
+                                    </td>
+                                    <td>
+                                        <input name="globaldigitalpay|MAIN_PASSWORD" type="text" id="globaldigitalpay|MAIN_PASSWORD"
+                                            value="****************">
+                                    </td>
+                                    <td class="help">
+                                        Your Api key must write from globaldigitalpay API Automation. [<strong>Auto Payout</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="globaldigitalpay|CURRENCY_VERIFIER" type="text" id="globaldigitalpay|CURRENCY_VERIFIER"
+                                                value="hsh_bnk/hsh_globaldigitalpay.php">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), You
+                                        need to setup both API Integration/API Automation to verify payments
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="2" cellpadding="3" style="font-size: 11px; display: none;"
+                            width="99%" id="tabbox15">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="images/liqpay_4.gif"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Liqpay Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                            Euro : <span class="ErrorMessage">Disable</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        Cell phone number:
+                                    </td>
+                                    <td width="5%">
+                                        <input name="liqpay|ACCOUNT" type="text" id="liqpay|ACCOUNT" value="">
+                                    </td>
+                                    <td class="help">
+                                        Use cell phone number used to open liqpay account sample:+1XXX
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Merchant ID:
+                                    </td>
+                                    <td>
+                                        <input name="liqpay|API_NAME" type="text" id="liqpay|API_NAME" value="">
+                                    </td>
+                                    <td class="help">
+                                        This is the store id you must set up on Merchant Statement.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Signature for send money:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="liqpay|MAIN_PASSWORD" type="text" id="liqpay|MAIN_PASSWORD" value="">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Your store send money key must write from Merchant Statement. [<strong>Auto Receive</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Second signature:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="liqpay|ALT_PASSWORD" type="text" id="liqpay|ALT_PASSWORD" value="">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Merchant Reference must write from API Integration. [<strong>Auto Send</strong>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Payment method:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="liqpay|ACCOUNT_NAME" type="text" id="liqpay|ACCOUNT_NAME" value="phone">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Payment mothod <strong>card</strong> or <strong>phone</strong>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Payment verify page:
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="liqpay|CURRENCY_VERIFIER" type="text" id="liqpay|CURRENCY_VERIFIER"
+                                                value="hsh_bnk/hsh_liqpay.php">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Payment verify page address(don't need to change until you know what to do), You
+                                        need to setup both API Integration/API Automation to verify payments
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input name="Action" type="hidden" id="Action" value="Save">
+                        <input type="hidden" name="selectedtab" id="selectedtab" value="0">
+                        <center>
+                            <input type="submit" name="submit" value="Update All Currencies info" class="btn">
+                        </center>
+                        </form>
+                        <br>
+                    </div>
+                    <br>
+                    <a href="http://demo.auto-exchanger.com/admin/adm_currencies/">Exchange settings</a>
+                    <div id="page_guide">
+                        <h2>
+                            SECURITY ADVISORY:</h2>
+                        Auto Payouts &amp; Auto recieves requires very sensitive information about your
+                        currencies accounts, While all the passwords and other sensitive information are
+                        encrypted, each password will take too much time to decrypt by a professional, because
+                        all of them are encrypted depend on doman and 32 random characters long string,
+                        but still you should be careful about your hosting provider, and you need extra
+                        care if are using shared hosting.
+                    </div>
+                    <script language="javascript">                        var tabs = 16;</script>
+                    <script language="javascript" src="images/tabs.js"></script>
+                    <script language="javascript">                        TabClick();</script>
+                </div>
+            </div>
+            <div class="clearing">
+                &nbsp;</div>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="menu">
+            <a href='http://demo.auto-exchanger.com'>HOME</a> | <a href='http://demo.auto-exchanger.com/exchange_step/'>
+                EXCHANGE</a> | <a href='http://demo.auto-exchanger.com/place_order/Action/currency_sell/'>
+                    SELL</a> | <a href='http://demo.auto-exchanger.com/place_order/Action/currency_buy/'>
+                        BUY</a> | <a href='http://demo.auto-exchanger.com/exchange_rate/'>RATES</a>
+            | <a href='http://demo.auto-exchanger.com/nview/title/Free+Affiliate+program/'>AFFILIATION</a>
+            | <a href='http://demo.auto-exchanger.com/rss/'>
+                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/rss16.gif" width="16"
+                    height="16" border="0" /></a>
+            <p class="copyright">
+                &copy;2012 , Auto-Exchanger Demo, All Rights Reserved.<br />
+                <span style="display: none;">Powered by: <a href="http://www.auto-exchanger.com">Auto-Exchanger.com</a></span><a
+                    href='http://demo.auto-exchanger.com/nview/title/Terms+of+services/'>Term of Use</a>
+                | <a href='http://demo.auto-exchanger.com/nview/title/Privacy+Policy/'>Privacy Statement</a>
+            </p>
+        </p>
+    </div>
+</body>
+</html>

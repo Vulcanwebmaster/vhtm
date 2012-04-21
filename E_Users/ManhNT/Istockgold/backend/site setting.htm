@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>i-stockgold</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta content="MSHTML 6.00.2600.0" name="GENERATOR">
+    <meta name="Keywords" content="Exchange e-currency, buy currency, sell currency, Automatic currency exchange script, currency exchange software, e-gold,egold,buy,sell,convert,swap,funding,wu,mg,bankwire,local bank,deposit,exchange libertyreserve,Ukash,exchange webmoney,exchange,trade,trading,online money,online currency,best,cheap,ecurrency exchange,ecurrency trading,low,lowest commission,commission,gold,e-currency,ecurrency,e-currencies">
+    <meta name="Description" content="Auto-Exchanger Demo, Automatic Exchange E-currencies, Libertyreserve, Webmoney, E-gold, Alertpay, Perfectmoney, Pecunix, V-money, C-gold, Moneybookers, Strictpay, SolidTrustPay, Paypal, CashU, offline credit/debit cards & online debit/credit cards(worldmoney), Liqpay, Ukash, Paysafecard">
+    <meta name="Author" content="www.auto-exchanger.com">
+    <meta name="Robots" content="index,follow">
+    <meta name="Googlebot" content="index,follow">
+    <meta name="revisit-after" content="1">
+    <meta name="Rating" content="General">
+    <meta name="DISTRIBUTION" content="GLOBAL">
+    <meta name="RESOURCE-TYPE" content="DOCUMENT">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href='http://demo.auto-exchanger.com/rss/' />
+    <script type="text/javascript" language="JavaScript">        var site_url = 'http://demo.auto-exchanger.com'; var img_url = 'http://demo.auto-exchanger.com/_skins/brown/tplimgs/';</script>
+    <script type="text/javascript" language="JavaScript" src="js/lib.js"></script>
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="admin.css" media="screen">
+</head>
+<body>
+    <div id="header">
+        <table height="65" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td nowrap="nowrap">
+                    <h1>
+                        <font color="#FFCC00">i-stockgold</font></h1>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td width="9" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_left.gif">
+                    <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/spacer.gif"
+                        width="9" height="60" />
+                </td>
+                <td width="100%" height="157" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_bg.gif"
+                    style="vertical-align: top">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_bg2.gif"
+                        style="margin-top: 8px;">
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td width="100%" style="text-align: center; vertical-align: top; height: 142px; text-align: left">
+                                <img src="images/logo.gif" alt="Auto-Exchanger Demo" vspace="11" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="9" background="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/top_right.gif">
+                    <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/header/spacer.gif"
+                        width="9" height="60" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="outer_wrapper">
+        <div id="wrapper">
+            <div id="container_2cl">
+                <div id="left">
+                    <div id="navigation_menu">
+                        <ul>
+                            <li><a href='#' class="navigation_select">
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_status.gif" width="18"
+                                    height="16" border="0" />Admin Home</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_exchanges/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_order.png" width="16"
+                                    height="16" border="0" />Exchange Orders</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_exchange_rate/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_order_fee.png"
+                                    width="16" height="16" border="0" />Exchange Rates</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_currencies/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_order_set.png"
+                                    width="18" height="18" border="0" />Exchange settings</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_useraccount/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_maccounts.gif"
+                                    width="18" height="18" border="0" />Manage Members</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_currencies_accounts/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_currencies.png"
+                                    width="16" height="16" border="0" />Site currencies</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_settings/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_settings.gif"
+                                    width="19" height="18" border="0" />Site Settings</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_newsmain/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_ehistory.gif"
+                                    width="17" height="17" border="0" />News</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/admin/adm_newsmain/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_ehistory.gif"
+                                    width="17" height="17" border="0" />Pages</a></li>
+                            <div class="seperator">
+                            </div>
+                            <li><a href='http://demo.auto-exchanger.com/signup/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_profile.gif"
+                                    width="18" height="17" border="0" />Update profile</a></li>
+                            <li><a href='http://demo.auto-exchanger.com/index/Action/logout/'>
+                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/n_logout.gif" width="18"
+                                    height="17" border="0" />Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="left_box">
+                        <div id="page_title">
+                            <h1>
+                                Reserved Amount</h1>
+                        </div>
+                        <div id="reserved_box">
+                            <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/bank_images/libertyreserve_3.gif"
+                                title="Libertyreserve usd, Our account: U2782065" /><span class="money_1">$1,050.56</span>
+                            <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/bank_images/libertyreserve_3.gif"
+                                title="Libertyreserve euro, Our account: U2782065" /><span class="money_1">&#8364;390.00</span>
+                        </div>
+                    </div>
+                    <div class="left_box">
+                        <div id="page_title">
+                            <h1>
+                                Track your order here</h1>
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <form name="menu" action='http://demo.auto-exchanger.com/exchange_status/' method="post">
+                            <tr>
+                                <th nowrap="nowrap" style="padding: 0 3px 0 3px; font-size: 11px;">
+                                    Reference
+                                </th>
+                                <td>
+                                    <input type="text" size="20" id="referenceid" name="referenceid">
+                                </td>
+                            </tr>
+                            <tr style="padding: 0px;">
+                                <td align="right" style="padding-right: 3px; text-align: right; font-size: 11px">
+                                    Code
+                                </td>
+                                <td valign="top">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td>
+                                                <input size="8" id="turing_status_box" name="turing_status_box" autocomplete="off" />
+                                            </td>
+                                            <td style="padding-top: 2px;">
+                                                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/turning.php" style="border: 1px solid #999999;
+                                                    width: 60px; height: 17px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 23px;">
+                                        <tr>
+                                            <td width="100%">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <input name="submit_status_box" id="submit_status_box" type="submit" class="btn"
+                                                    value="Submit" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            </form>
+                        </table>
+                    </div>
+                </div>
+                <div id="main">
+                    <div id="page_title">
+                        <h1>
+                            Site Settings</h1>
+                    </div>
+                    <table width="99%" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="50%" class="tabspacer">
+                                    &nbsp;
+                                </td>
+                                <td id="tab0" class="tabselected" onclick="TabClick(0);">
+                                    General
+                                </td>
+                                <td width="1" class="tabspacer">
+                                    &nbsp;
+                                </td>
+                                <td id="tab1" class="tab" onclick="TabClick(1);">
+                                    Localization
+                                </td>
+                                <td width="1" class="tabspacer">
+                                    &nbsp;
+                                </td>
+                                <td nowrap="nowrap" class="tab" id="tab2" onclick="TabClick(2);">
+                                    Mail Settings
+                                </td>
+                                <td width="1" class="tabspacer">
+                                    &nbsp;
+                                </td>
+                                <td id="tab3" class="tab" onclick="TabClick(3);">
+                                    Template
+                                </td>
+                                <td width="1" class="tabspacer">
+                                    &nbsp;
+                                </td>
+                                <td id="tab4" class="tab" onclick="TabClick(4);">
+                                    Security
+                                </td>
+                                <td width="50%" class="tabspacer">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="admin_overview" style="border-top: 0;">
+                        <form id="form1" name="form1" method="post" action="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  .htm">
+                        <table border="0" cellspacing="6" cellpadding="6" id="tabbox0" style="">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        General Settings
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="10%">
+                                        Site Name
+                                    </td>
+                                    <td width="5%">
+                                        <input name="SITE_NAME" type="text" id="SITE_NAME" value="Auto-Exchanger Demo" size="35">
+                                    </td>
+                                    <td class="help">
+                                        Your Company Name as you want it to appear throughout the system.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Site Url
+                                    </td>
+                                    <td>
+                                        <input name="SITE_URL" type="text" id="SITE_URL" value="http://demo.auto-exchanger.com"
+                                            size="35">
+                                    </td>
+                                    <td class="help">
+                                        The domain of your main website, eg. http://www.yourdomain.com (without ending slash)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Site Secure Url <span style="font-size: 10px">(https)</span>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="SITE_URL_SECURE" type="text" id="SITE_URL_SECURE" value="" size="35">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Url of your secure site (SSL) certificate for secure access, eg. https://www.yourdomain.com
+                                        (leave empty if you do not have)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Temporary closed
+                                    </td>
+                                    <td nowrap="nowrap">
+                                        <select name="temporary_close" id="temporary_close">
+                                            <option value="1">Yes</option>
+                                            <option value="0" selected="">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        If you want to change skin, updating rates etc. Will show maintrance pages for visitors.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="6" cellpadding="6" id="tabbox1" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        Localization Settings
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%">
+                                        Friendly url
+                                    </td>
+                                    <td>
+                                        <select name="FRIENDLY_URL" id="FRIENDLY_URL">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Use search engines friendly urls (Just turn it on if you are using linux server
+                                        and mode_rewrite is on)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Default site language
+                                    </td>
+                                    <td>
+                                        <select name="DEF_LANGUAGE" id="DEF_LANGUAGE">
+                                            <option value="english" selected="">english</option>
+                                            <option value="german">german</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Site default Language.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%">
+                                        Affiliates commission
+                                    </td>
+                                    <td>
+                                        <input name="REFERRAL_EXCH_COMISSION" type="text" id="REFERRAL_EXCH_COMISSION" value="20"
+                                            size="5">%
+                                    </td>
+                                    <td class="help">
+                                        Enter the percentage of each exchange you want affiliates to receive, eg. 10 OR
+                                        <strong>0</strong> to disable referral commission in whole site
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" nowrap="nowrap">
+                                        Min exchange fee
+                                    </td>
+                                    <td>
+                                        <input name="MIN_EXCHANGE_FEE" type="text" id="MIN_EXCHANGE_FEE" value="1.00" size="5">$
+                                    </td>
+                                    <td class="help">
+                                        Enter your minimum exchange fee for all directions, eg. 2
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Allow more than reserved
+                                    </td>
+                                    <td>
+                                        <select name="ACCEPT_MORE_THAN_RESERVE" id="ACCEPT_MORE_THAN_RESERVE">
+                                            <option value="1">Yes</option>
+                                            <option value="0" selected="">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Accept orders more than current reserved amount or not
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" nowrap="nowrap">
+                                        Accept Buy/Sell Orders
+                                    </td>
+                                    <td>
+                                        <select name="SECTION_BUYSELL" id="SECTION_BUYSELL">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Enable or disanle buy/sell order pages in whole site.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Extend registration form
+                                    </td>
+                                    <td>
+                                        <select name="FULL_REGISTRATION" id="FULL_REGISTRATION">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Require more information in signup page.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" nowrap="nowrap">
+                                        Required fields to signup (<b>Extend registration form must be on</b>): <span class="help">
+                                            You may need more info to proccess credit or debit cards</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" nowrap="nowrap">
+                                        <input type="checkbox" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value="Zip_Code" class="checkbox" checked="checked">Zip
+                                        <input type="checkbox" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value="Phone_Number" class="checkbox" checked="checked">Phone
+                                        <input type="checkbox" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value="State" class="checkbox" checked="checked">State
+                                        <input type="checkbox" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value="City" class="checkbox" checked="checked">City
+                                        <input type="checkbox" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value="Street_Address" class="checkbox" checked="checked">Street Address
+                                        <input type="checkbox" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value="country" class="checkbox" checked="checked">Country
+                                        <input type="hidden" name="REQUIRE_REGISTRATION_FIELDS[]" id="REQUIRE_REGISTRATION_FIELDS[]"
+                                            value=" ">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script language="javascript">
+                            function mailChange(mtype) {
+                                if (mtype.value == "phpmail")
+                                    document.getElementById("smtp_setting").style.display = "none";
+                                else
+                                    document.getElementById("smtp_setting").style.display = "block";
+                            }
+</script>
+                        <table border="0" cellspacing="6" cellpadding="6" id="tabbox2" width="99%" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        Mailing Settings
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Support/Admin e-mail address
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="MAIL_ADMIN_ADDRESS" type="text" id="MAIL_ADMIN_ADDRESS" value="support@auto-exchanger.com"
+                                                size="35">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        Admin e-mail address to recieve support mails &amp; action reports.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Admin notification
+                                    </td>
+                                    <td>
+                                        <select name="adminemailnotification" id="adminemailnotification">
+                                            <option value="1">Yes</option>
+                                            <option value="0" selected="">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Select Yes to Send an Email Notification on every user activity, Exchange request,
+                                        Exchange status, Password reminder, Referral contacts and Signup
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        NoReply e-mail name
+                                    </td>
+                                    <td>
+                                        <input name="MAIL_REPORT_NAME" type="text" id="MAIL_REPORT_NAME" value="Auto-Exchanger no reply"
+                                            size="35">
+                                    </td>
+                                    <td class="help">
+                                        The default e-mail from name
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        NoReply e-mail address
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input name="MAIL_REPORT_ADDRESS" type="text" id="MAIL_REPORT_ADDRESS" value="noreply@auto-exchanger.com"
+                                                size="35">
+                                        </label>
+                                    </td>
+                                    <td class="help">
+                                        The default sender email address used for messages sent by site.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Mail format
+                                    </td>
+                                    <td>
+                                        <select name="MAIL_FORMAT">
+                                            <option value="text">Text</option>
+                                            <option value="html" selected="selected">HTML</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Select system mails format
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        HTML mail design
+                                    </td>
+                                    <td>
+                                        <a href="http://demo.auto-exchanger.com/admin/adm_template/Action/Edit/id/mail_template.html/">
+                                            Edit mail template</a>
+                                    </td>
+                                    <td class="help">
+                                        You can easily change site mail design.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Method of sending e-mails
+                                    </td>
+                                    <td>
+                                        <select name="MAIL_TYPE" onchange="mailChange(this);">
+                                            <option value="phpmail">PHP Mail()</option>
+                                            <option value="smtp" selected="selected">SMTP</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        If you choose SMTP, you must complete the fields below (SMTP usually works faster)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <table border="0" cellspacing="6" cellpadding="6" width="100%" id="smtp_setting">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="170px">
+                                                        SMTP Port
+                                                    </td>
+                                                    <td width="230px">
+                                                        <input type="text" name="MAIL_SMTP_PORT" size="5" value="25" id="MAIL_SMTP_PORT">
+                                                    </td>
+                                                    <td class="help">
+                                                        The port your mail server uses
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        SMTP Host
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="MAIL_SMTP_HOST" size="35" id="MAIL_SMTP_HOST" value="mail.auto-exchanger.com">
+                                                    </td>
+                                                    <td class="help">
+                                                        SMTP mail server address
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        SMTP Username
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="MAIL_SMTP_USER" size="35" id="MAIL_SMTP_USER" value="support@auto-exchanger.com">
+                                                    </td>
+                                                    <td class="help">
+                                                        <strong>DO NOT USE</strong> enter same e-mail address you have as main e-mail address
+                                                        in e-currencies.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td nowrap="nowrap">
+                                                        SMTP Password
+                                                    </td>
+                                                    <td>
+                                                        <input type="password" name="MAIL_SMTP_PASS" size="20" id="MAIL_SMTP_PASS" value="ah8uhvuo9s">
+                                                    </td>
+                                                    <td class="help">
+                                                        <strong>DO NOT USE </strong>enter same password used in main e-mail address for
+                                                        opening e-currencies
+                                                        <br>
+                                                        <strong>Leave empty</strong> if your server doesn't need SMTP authentication
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="99%" border="0" cellpadding="6" cellspacing="6" id="tabbox3" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        Template Settings [<a href="http://demo.auto-exchanger.com/admin/adm_settings/?recache=true">Clean
+                                            up cache folder</a>]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Caching status
+                                    </td>
+                                    <td>
+                                        <select name="caching_status" id="caching_status">
+                                            <option value="1">Yes</option>
+                                            <option value="0" selected="">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Enable system Cache, will improve your site speed between 4x to 8x, turn it on after
+                                        your template design complete.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Login box Captcha
+                                    </td>
+                                    <td>
+                                        <select name="TURNING_LOGIN" id="TURNING_LOGIN">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Show turning number in user login box.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Support Captcha
+                                    </td>
+                                    <td>
+                                        <select name="TURNING_SUPPORT" id="TURNING_SUPPORT">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Show turning number in support page.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Signup Captcha
+                                    </td>
+                                    <td>
+                                        <select name="TURNING_SIGNUP" id="TURNING_SIGNUP">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Show turning number in sign up page.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Order status Captcha
+                                    </td>
+                                    <td>
+                                        <select name="TURNING_ORDER_STATUS" id="TURNING_ORDER_STATUS">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Show turning number in order status box
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Buy/Sell order Captcha
+                                    </td>
+                                    <td>
+                                        <select name="TURNING_BUYSELL" id="TURNING_BUYSELL">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Show turning number in buy/sell page.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Records to display per page
+                                    </td>
+                                    <td>
+                                        <select name="recordsnumperpage">
+                                            <option value="20">20</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                            <option value="80">80</option>
+                                            <option value="100" selected="">100</option>
+                                            <option value="200">200</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Number of rows in customers order and admin pages
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Language menu
+                                    </td>
+                                    <td>
+                                        <select name="LANGUAGE_MENU" id="LANGUAGE_MENU">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Allow users to change language of the system
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Admin panel HTML editor
+                                    </td>
+                                    <td>
+                                        <select name="tinymce_editor" id="tinymce_editor">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Enable or disable HTML editor(tinymce) in admin panel
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Number of latest news
+                                    </td>
+                                    <td>
+                                        <input name="NEWS_NUMBER" id="NEWS_NUMBER" size="5" value="41">
+                                    </td>
+                                    <td class="help">
+                                        Number of latest news items to show in main page,enter <strong>0</strong> to hide
+                                        news box
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Track orders box
+                                    </td>
+                                    <td>
+                                        <select name="SECTION_ORDER_STATUS" id="SECTION_ORDER_STATUS">
+                                            <option value="1" selected="">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </td>
+                                    <td class="help">
+                                        Show/Hide Tracking orders box on th left panel
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top; padding-top: 10px">
+                                        Site Template
+                                    </td>
+                                    <td colspan="2">
+                                        <div style="float: left; text-align: center; padding: 15px;">
+                                            <img src="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/_preview.jpg"
+                                                width="160" height="124" alt="Brown"><br>
+                                            <input name="SITE_TEMPLATE" type="radio" value="brown" class="checkbox" checked="checked">Brown</div>
+                                        <div style="float: left; text-align: center; padding: 15px;">
+                                            <img src="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/_preview(1).jpg"
+                                                width="160" height="124" alt="Default"><br>
+                                            <input name="SITE_TEMPLATE" type="radio" value="default" class="checkbox">Default</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="6" cellpadding="6" id="tabbox4" width="99%" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        Security Settings
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Limit admin login ip address
+                                    </td>
+                                    <td>
+                                        <input name="adminloginlimitip" id="adminloginlimitip" value="">
+                                    </td>
+                                    <td class="help">
+                                        <br>
+                                        Use this feature to limit admin login ip address or ip range. (Example: <strong>212.136.45.*,210.134.*</strong>)
+                                        or leave empty to allow all.
+                                        <br>
+                                        your current ip address:113.190.152.172<br>
+                                        <br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Exclude currencies
+                                    </td>
+                                    <td>
+                                        <input name="EXCLUDE_CURRENCIES" id="EXCLUDE_CURRENCIES" value="">
+                                    </td>
+                                    <td class="help">
+                                        <br>
+                                        Use this option to exclude some of currencies from public exchange page, and enable
+                                        them for private usage or special type of currencies.<br>
+                                        example link to exclude: <strong>webmoney,e-gold </strong>To make a link that only
+                                        show your desired currency use this link on your pages or emails:<br>
+                                        <u>&lt;a href='{make_link:"index.php?inccur=webmoney,e-gold"}'&gt;Exchange webmoney
+                                            and e-gold&lt;/a&gt;</u>
+                                        <br>
+                                        result: <a href="http://demo.auto-exchanger.com/index/inccur/webmoney,e-gold/" target="_blank">
+                                            Exchange webmoney and e-gold<br>
+                                            <br>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hidden admin login url
+                                    </td>
+                                    <td>
+                                        <input name="secretadminlogin" id="secretadminlogin" value="admindemo">
+                                    </td>
+                                    <td class="help">
+                                        <br>
+                                        With this exta security feature you can define your own admin login address, so
+                                        no one can login as administrator without this url.<br>
+                                        <b>How to use:</b><br>
+                                        write any keyword that you want on this box, then you have to use this word in your
+                                        url address.<br>
+                                        <strong>Sample:</strong> admindemo =&gt; admin login url will be: <a href="http://demo.auto-exchanger.com/index/_login/admindemo/"
+                                            target="_blank">login</a> ( http://demo.auto-exchanger.com/index/_login/admindemo/
+                                        )<br>
+                                        <strong>Note:</strong> you must logout first to see how will works.<br>
+                                        <br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="nowrap">
+                                        Rename administration folder
+                                    </td>
+                                    <td>
+                                        <input type="text" name="ADMIN_FOLDER" value="admin">
+                                    </td>
+                                    <td class="help">
+                                        You can change administration folder to prevent unauthorized access, also you can
+                                        <strong>define an extra password for this folder by your hosting control panel(.htaccess)</strong>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Keys folder path
+                                    </td>
+                                    <td>
+                                        <input type="text" name="keys_folder" value="hsh_bnk/keys">
+                                    </td>
+                                    <td class="help">
+                                        Keys folder Path to upload key files, you can rename it, But remember made it unreadable
+                                        for user, or as we do user special .htaccess file to secure these files
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <center>
+                            <input name="Action" type="hidden" id="Action" value="Save">
+                            <input type="hidden" name="selectedtab" id="selectedtab" value="0">
+                            <input type="submit" name="submit" value="Save Settings" class="btn" style="margin: 20px"></center>
+                        </form>
+                    </div>
+                    <script language="javascript">                        var tabs = 5;</script>
+                    <script language="javascript" src="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/tabs.js"></script>
+                    <script language="javascript">                        TabClick();</script>
+                </div>
+            </div>
+            <div class="clearing">
+                &nbsp;</div>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="menu">
+            <a href='http://demo.auto-exchanger.com'>HOME</a> | <a href='http://demo.auto-exchanger.com/exchange_step/'>
+                EXCHANGE</a> | <a href='http://demo.auto-exchanger.com/place_order/Action/currency_sell/'>
+                    SELL</a> | <a href='http://demo.auto-exchanger.com/place_order/Action/currency_buy/'>
+                        BUY</a> | <a href='http://demo.auto-exchanger.com/exchange_rate/'>RATES</a>
+            | <a href='http://demo.auto-exchanger.com/nview/title/Free+Affiliate+program/'>AFFILIATION</a>
+            | <a href='http://demo.auto-exchanger.com/rss/'>
+                <img src="http://demo.auto-exchanger.com/_skins/brown/tplimgs/ico/rss16.gif" width="16"
+                    height="16" border="0" /></a>
+            <p class="copyright">
+                &copy;2012 , Auto-Exchanger Demo, All Rights Reserved.<br />
+                <span style="display: none;">Powered by: <a href="http://www.auto-exchanger.com">Auto-Exchanger.com</a></span><a
+                    href='http://demo.auto-exchanger.com/nview/title/Terms+of+services/'>Term of Use</a>
+                | <a href='http://demo.auto-exchanger.com/nview/title/Privacy+Policy/'>Privacy Statement</a>
+            </p>
+        </p>
+    </div>
+</body>
+</html>
