@@ -17,7 +17,7 @@ class Admin extends Shop_Admin_Controller
     {
         parent::__construct();
         // Check for access permission
-        $this->load->model('news_model');
+        $this->load->model('site_settings_model');
         $this->module=basename(dirname(dirname(__FILE__)));
         $this->module='news';
         mb_internal_encoding('UTF-8');
@@ -26,7 +26,7 @@ class Admin extends Shop_Admin_Controller
     function index()
     {
         //$data = $this->common_home();
-        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_news_home";
+        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_site_settings_home";
         $this->load->view($this->_container,$data);
     }
 
