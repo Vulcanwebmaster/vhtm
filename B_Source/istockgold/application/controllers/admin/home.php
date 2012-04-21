@@ -47,6 +47,7 @@ class Home extends Admin_Controller
 		$this->load->library('dashboard/Rss_widget');
 		// load flot.js
 		$this->bep_assets->load_asset_group('flot');
+		
 		// Assign widgets to dashboard
 //		if($this->preference->item('dashboard_rss'))
 //		{

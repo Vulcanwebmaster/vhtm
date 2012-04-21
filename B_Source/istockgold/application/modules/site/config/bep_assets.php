@@ -78,7 +78,7 @@ $config['asset'][] = array('file'=>'istock.js', 'needs'=>'jquery');
 
 // Added from here
 // Back-end Admin CSS
-$config['asset'][] = array('file'=>'admin.css');
+//$config['asset'][] = array('file'=>'admin.css');
 
 // Back-end Calendar CSS
 $config['asset'][] = array('file'=>'calendar.css');
@@ -179,6 +179,7 @@ $config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|FlashStatus|
 // Added from here 
 $config['asset_group']['SHOP'] = 'shopcustomtools|FlashStatus|menu.init|istockgold|istock';
 $config['asset_group']['SHOPADMIN'] = 'admin|site';
+
 
 // TinyMCE group
 $config['asset_group']['TINYMCE'] = "tinymce.init";

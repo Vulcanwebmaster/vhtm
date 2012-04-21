@@ -1,225 +1,55 @@
-/* admin css */
+#header { width:auto; margin:0 1% 0 1%; }
+#menu { width:auto; margin:0 2% 0 2%; }
+#outer_wrapper { width:auto; margin:0 2% 0 2%; }
+#footer { width:auto; margin:0 4% 0 4%; }
 
- .adminhome{
-   width: 48%;
-   float: left;
- }
- #homeleft{
-  
-   
- }
-#homeright{
-   width: 95%;
-   
-}
+.tab { padding:2px 4px 2px 4px;	background-color:#F5F5F5; white-space: no-wrap; font-size:12px; border:2px solid #cccccc; border-bottom:1px;	cursor: pointer;	cursor: hand;}
+.tab a { text-decoration: none;	color: #E8E8E8;	font-size:12px; }
+.tabselected { padding:4px 8px 4px 8px;	background-color:#ffffff;	border:2px solid #cccccc;	border-bottom:0px;	font-weight: bold;	cursor: pointer;	cursor: hand;}
+.tabspacer{border-bottom:2px solid #cccccc; }
 
-#homeright li {
-  list-style-type:none;
-}
+.help { font-size: 11px; color: #356079; font-family:Geneva, Arial, Helvetica, sans-serif;  font-family:Tahoma; line-height:16px !important; font-size:11px !important}
 
- .message{
- 	border:1px solid #c98c21;
- 	background-color:#efdda8;
- 	color:#c98c21;
- 	padding:5px;
- 	width:250px;
- 	font-size:12px;
- 	margin:5px 0px 5px 0px;
- }
+#admin_overview {background-color:#F4F4F4; border:1px solid #999999; border-top:0; margin-bottom:15px; height:100%; display:table; width:99%;}
+#admin_overview #title{text-align:left;border:1px dashed #152175;  background-color:#E4E9F1; font-size:14px;  color:#666666; font-family:"Trebuchet MS", Times, serif; padding:2px 0 2px 8px; letter-spacing:2px; font-weight:600; margin:0 -1px 0 -1px}
+#admin_overview #title:first-letter {font-weight:bold; color:#666666 }
+#admin_overview ul { list-style: none; margin:0; padding:6px}
+#admin_overview li { padding-bottom:3px;	}	
+#admin_overview #rbox{ width:50%; float:left; margin:5px 1px 5px 5px;line-height:18px}
+#admin_overview #lbox{ float:left; margin:5px 1px 5px 5px; width:auto; line-height:18px}
+#admin_overview #onebox{ float:left; padding:10px; width:28%; }
+#admin_overview #onebox a{ font-size:13px; }
+#admin_overview b{ color:#996600; line-height:12px; font-size:11px; font-weight:normal}
+#admin_overview #onebox img{ padding-right:3px; }
+
  
- 
-/******* CONTENT *******/
-.content p{
-	margin: 0pt auto;
-	width:90%;
-	text-align: left;
-	padding: 10px;
-	float:left;
-	font-size: 13px;
-}
-.content li, #completed li{
-	border: 1px solid #d0ccc9;
-	background: #efefef;
-	margin:5px;
-	padding: 5px;
-	
-}
-#completed ul, #message_ul {
-	
-	margin: 0;
-	padding:0;
-}
-.content .delete {
-	font-size: 14px;
-	padding: 5px;
-	margin: 0 0 5px 0;
-	
-}
-.content h1, #completed h1{
-	line-height: 1em;
-	vertical-align: middle;
-	height: 18px;
-	padding: 10px 10px 10px 52px;
-	font-size: 16px;
-	background: transparent url(images/bubble.jpg) no-repeat scroll left top;
-}
-.content li a, #completed li a{
-	width: 30px;
-	
-	padding: 0 10px;
-}
-.listbox{
-	
-	
-}
-.date{
-	font-weight: normal;
-	font-size: 10px;
-	color: #aeaeae;
-	padding: 0 3px;
-}
-.user{
-	
-	
-}
-.msg{
-	padding: 5px 0;
-	display:block;
-}
+.tabmenu {background-color:#F5F5F5; height:23px; width:100%; margin-right:-10px; border-bottom:2px solid #d7d7d7;}
+.tabmenu ul {margin:0px; padding:0px; list-style:none; text-align:center; }
+.tabmenu li {display:inline; line-height:23px;}
+.tabmenu li a {color:#333; text-decoration:none; padding:4px 5px 6px 5px;  border:0 1px 0 1px solid #d7d7d7;}
+.tabmenu li a:hover, .tabmenu li .tabselected {background-color:#d7d7d7; font-weight:bold;  position:relative;}
 
-#message {
-	margin:0;
-	padding: 0;
-        width: 90%;
-}
+TD{  line-height:22px !important;  font-size: 12px !important;}
 
-.messagelabel {
-	width: 100%;
-	padding: 5px 0;
-	margin : 0;
-	
-}
-.text {
-	float:left;
-}
-.msguser{
-	padding: 0 26px 0 0;
-}
-#send {
-	margin: 0 0 0 15px;
-}
+#page_guide {border:1px dashed #999; padding:4px; font-size:11px;  font-family:Tahoma; background-color:#F4F4F4; }
+#page_guide h2{ background-color:#CCC; color:#666; padding-left:4px;}
+#page_guide strong{ color:#036; font-weight:400}
 
 
-/******* LOADING *******/
-#loading{
-	text-align: center;
-	display:none;
+#pending_orders{
+	width:180px;
+	border: #ccc7bc 1px solid;
+	font-size:13px;
+	margin-right:10%;
+	background-color:#EFEEDA;
+	border-top:0;
+	line-height:16px;
+	filter:alpha(opacity=85); -moz-opacity:0.85;	opacity: 0.85;
+	margin:0 6px 0 0;
 }
-
-
-#completed {
-	float:left;
-	width:46%;
-}
-#container {
-	float: left;
-	width:46%;
-}
-
-#form {
-	width: 90%;
-	float: left;
-}
-#loading{
-	width: 70px;
-	float:left;
-	padding-top: 35px;
-}
-#showall{
-	height: 50px;
-	width: 170px;
-	float:left;
-	padding: 35px 0 0 0;
-}
-.clearboth{
-	clear:both;
-}
-
-/* Style for pages with accordion */
-
-#pagerightcont{
-   width: 30%;
-   float: left;
-   
-}
-
-#pageleftcont {
-   width: 68%;
-   padding-right: 2%;
-   float: left;
-   
-}
- #tablesorter td{
- 	padding: 4px !important;
- }
-
- #pageleftcont h1, #pageleftcont h2, #pageleftcont h3, #pageleftcont h4, #pageleftcont h5 ,#pageleftcont h6{
- 	border: none;
-	
- }
-form select {
-	border: 1px solid #aaaaaa;
-}
-
-/* For table in Menu home page */
-
-#menutable td.child {
-   padding-left: 25px !important;
-   
-}
-#menutable td.grandchild {
-   padding-left : 50px !important;
-   
-}
-/***********
-Module languages
-*******************/
-#addlang{
-    margin: 20px 0;
-
-}
-
-/***********
-langbox
-****************/
-#langbox{
-    float: right;
-    width: 150px;
-    
-}
-
-/********
-unmask
-******/
-.unmask{
-    clear: both;
-    width: 100px;
-    
-}
-
-.unmask label{
-    display: inline;
-}
-
-.unmask input{
-     margin-left:5px;
-  margin-right:3px;
-  vertical-align: bottom;
-}
-
-/******
-table td
-***********/
-#preference_form td{
-	border: none;
+.maintable tr:hover th[scope=row], .maintable tr:hover td
+{
+  background-color: #e2dbbd;
+  color: #000;
+  table-layout: fixed;
 }

@@ -5,9 +5,6 @@ Please ensure that you assign the LI a unique ID
 Examples can be seen below for menu_bep_system
 -->
 
-<div id="outer_wrapper">
-  <div id="wrapper">
-	<div id="container_2cl">
 		<div id="left">	<div id="navigation_menu">
 	<ul>
 		<li><?php print anchor('admin_home/admin','<img src="../assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'),array('class'=>'navigation_select'))?></li>
@@ -36,10 +33,5 @@ Examples can be seen below for menu_bep_system
             </div>
 </div>
 </div>		
-</div>
-
-<div class="clearing">&nbsp;</div>
-	</div>
-</div>
 
 
