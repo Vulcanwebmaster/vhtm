@@ -489,7 +489,7 @@ CREATE TABLE IF NOT EXISTS `is_account_setting` (
 --
 
 INSERT INTO `is_account_setting` (`id`, `c_id`, `key`, `display`, `value`, `note`, `order`) VALUES
-(1, 1, 'liberty.account', 'Liberty Account', 'U2782065', 'Use cappital characters sample: UXXXX', 1),
+(1, 1, 'liberty.account', 'Liberty Account', 'U7511015', 'Use cappital characters sample: UXXXX', 1),
 (2, 1, 'liberty.account.name', 'Account Name', 'Ngo Hoang Quyen', '', 2),
 (3, 1, 'liberty.account.storename', 'Store Name', 'istockgold', 'This is the store name you must set up on Merchant tools > Create new store. [Auto Receive] create name,password and enable it. Select POST for all HTTP methods', 3),
 (4, 2, 'western.receiver.firstname', 'Receiver''s First Name', 'Quyen', NULL, 1),
