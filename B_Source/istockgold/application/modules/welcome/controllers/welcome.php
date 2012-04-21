@@ -191,14 +191,35 @@ class Welcome extends Shop_Controller
     
     function exchange()
     {
-    	
-    	$fromCurrency = $this->input->post('fromCurrency');
-    	$toCurrency = $this->input->post('toCurrency');
+    	$fromCurrency = $this->input->post('buyCurrency');
+    	$toCurrency = $this->input->post('sellCurrency');
     	$amount = $this->input->post('amount');
+    	$rate = $this->input->post('rate');
+    	if (!$fromCurrency || !$fromCurrency || !$rate || !$amount) {
+    		$buyCurrencies = $this -> MCurrency -> getBuyCurrency();
+	    	$sellCurrencies = $this -> MCurrency -> getSellCurrency();
+	    	
+	    	$rateData = $this -> MCurrency -> getRateData();
+	    	
+	    	$data['rateData']  = $rateData;
+	    	$data['buyCurrencies'] = $buyCurrencies;
+	    	$data['sellCurrencies'] = $sellCurrencies;
+	    	
+    		$data['title'] = $this->preference->item('site_name')." | ". "E-Currency Exchange";
+    		$data['page'] = $this->config->item('backendpro_template_shop') . 'exchange';
+    		$data['module'] = $this->module;
+        	$this->load->view($this->_container,$data);
+    	}
     	
-        $pageName = "Exchange";
-        $data['title'] = $this->preference->item('site_name')." | ". $pageName;
+    	$data['cap_img'] = $this->_generate_captcha();
+        $data['question']= $this->security_question;
+        $data['security_method']= $this->security_method;
+        
+    	
+        $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['amount'] = $amount;
+        $data['rate'] = $rate;
+        $data['getAmount'] = round($amount * $rate,3);
         
     	if ($fromCurrency == "LR" && $toCurrency == "WU") {
     		$data['page'] = $this->config->item('backendpro_template_shop') . 'lr2wu';
@@ -206,8 +227,141 @@ class Welcome extends Shop_Controller
     		$data['page'] = $this->config->item('backendpro_template_shop') . 'wu2lr';
     	}
 		
+        $data['module'] = $this->module;
+        $this->load->view($this->_container,$data);
+    }
+    
+    /**
+     * Exchange function
+     * From Liberty Reserve to Western Union...
+     */
+    function lr2wu() 
+    {
+    	$captcha_result = '';
+        $data['cap_img'] = $this->_generate_captcha();
+        $data['question']= $this->security_question;
+        $data['security_method']= $this->security_method;
         
+        if ($this->input->post('email'))
+        {
+            $data['title'] = $this->preference->item('site_name')." | "."Exchange";
+            // set rules
+            $config[] = array(
+                            'field'=>'email',
+                            'label'=>$this->lang->line('webshop_email'),
+                            'rules'=>"trim|required|valid_email"
+                            );
+            $config[] = array(
+                            'field'=>'firstName',
+                            'label'=>$this->lang->line('webshop_first_name'),
+                            'rules'=>"trim|required|min_length[3]|max_length[20]"
+                            );
+            $config[] = array(
+                            'field'=>'lastName',
+                            'label'=>$this->lang->line('webshop_last_name'),
+                            'rules'=>"trim|required|min_length[3]|max_length[20]"
+                            );
+            $config[] = array(
+                            'field'=>'street',
+                            'label'=>$this->lang->line('webshop_street'),
+                            'rules'=>"trim"
+                            );
+                           
+			$config[] = array(
+                            'field'=>'province',
+                            'label'=>$this->lang->line('webshop_province'),
+                            'rules'=>"trim"
+                            );
+			$config[] = array(
+                            'field'=>'country',
+                            'label'=>$this->lang->line('webshop_province'),
+                            'rules'=>"trim"
+                            );
+                            
+            $config[] = array(
+                            'field'=>'city',
+                            'label'=>$this->lang->line('webshop_city'),
+                            'rules'=>"trim|required|alpha_dash"
+                            );
+            $config[] = array(
+                            'field'=>'post_code',
+                            'label'=>$this->lang->line('webshop_post_code'),
+                            'rules'=>"trim|required|numeric"
+                            );
+            if($this->security_method=='recaptcha')
+            {
+                $config[] = array(
+                            'field'=>'recaptcha_response_field',
+                            'label'=>$this->lang->line('kago_recaptcha_response_field'),
+                            'rules'=>"trim|required|valid_captcha"
+                            );
+                //$rules['recaptcha_response_field'] = 'trim|required|valid_captcha';
+            }
+            else if($this->security_method=='question')
+            {
+                $config[] = array(
+                            'field'=>'write_ans',
+                            'label'=>$this->lang->line('kago_write_ans'),
+                            'rules'=>"trim|required|callback_security_check"
+                            );
+                //$rules['write_ans']= 'trim|required|callback_security_check';
+            }
+            $this->form_validation->set_rules($config);
+
+            // set fields. This will be used for error messages
+            // for example instead of customer_first_name, First Name will be used in errors
+            $fields['email']	                = lang('webshop_email');
+            $fields['firstName']	    		= lang('webshop_first_name');
+            $fields['lastName']	    			= lang('webshop_last_name');
+            $fields['street']	                = lang('webshop_street');
+            $fields['city']	                    = lang('webshop_city');
+            $fields['province']	                = lang('webshop_province');
+            $fields['post_code']	            = lang('webshop_post_code');
+            $fields['recaptcha_response_field']	= $this->lang->line('kago_recaptcha_response_field');
+            $fields['write_ans']                = $this->lang->line('webshop_write_ans');
+            
+            $this->form_validation->set_fields($fields);
+
+            // run validation
+            if ($this->form_validation->run() == FALSE)
+            {
+                // if false outputs errors
+                $this->form_validation->output_errors();
+            }
+            else
+            {
+                $data = array(
+                    'amount_src' 		=> db_clean($_POST['amount'],25),
+                    'amount_dst'  		=> db_clean($_POST['getAmount'],25),
+                    'date_src'        	=> date("Y-m-d H:i:s", time()),
+                    'email'             => db_clean($_POST['email'],50)
+                );
+                
+                $orderId = $this->MOrders->addOrder($data, true);
+                
+                //TODO: load from DB for this account name
+                $ownerLRAccount = "U7511015";
+                $redirectUrl = "https://sci.libertyreserve.com/en";
+                $redirectUrl .= "?lr_acc=" . $ownerLRAccount;
+                $redirectUrl .= "&lr_amnt=" . $_POST['getAmount'];
+                $redirectUrl .= "&lr_currency=LRUSD";
+                $redirectUrl .= "&lr_comments=" . urlencode("Order Id: #". $orderId);
+                $redirectUrl .= "&lr_success_url=" . urlencode("http://localhost/istockgold/index.php/welcome/ordersucess");
+                $redirectUrl .= "&lr_success_url_method=GET" ;
+                
+                redirect( $redirectUrl );
+            }
+        }// end of if($this->input->post('email'))
         
+        if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
+        	redirect( $this->module."/exchange" );
+        }
+        $data['amount'] = $this->input->post('amount');
+        $data['rate'] = $this->input->post('rate');
+        $data['getAmount'] = $this->input->post('getAmount');
+        
+        $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'lr2wu';
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data);
     }

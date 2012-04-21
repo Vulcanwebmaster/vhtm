@@ -1,10 +1,11 @@
 /**
  * 
  */
-var b = -1;
-var s = -1;
-var eb_b = -1;
-var eb_s = -1;
+var buy_code = "LR";
+var buy_name = "Liberty Reserve";
+var sell_code = "WU";
+var sell_name = "Western Union";
+//rateData will be loaded in everypage needed
 
 Math.hold = function(x,n)
 {
@@ -12,39 +13,45 @@ Math.hold = function(x,n)
   return Math.round(x * N)/N;
 }
 
-function fromtochange(eb_id,eb_name,rate_buy,rate_sell)
-{
-  if (rate_buy != -1)
-  {
-    eb_b = eb_id;
-    b = rate_buy;
-    document.all('pay').innerHTML = eb_name;
-  }
-  
-  if (rate_sell != -1)
-  {
-    eb_s = eb_id;
-    s = rate_sell;
-    document.all('get').innerHTML = eb_name;
-  }
-  
-  if (eb_b == eb_s)
-  {
-    document.all('rate').innerHTML = 'N/A';
-  }
-  else if (b != -1 && s != -1)
-  {
-  	if (b == 1)
-  	{
-  	  var r = s;
-  	  document.all('rate').innerHTML = r+':1';
-  	}
-  	else
-  	{
-  	  r = Math.hold(b/s,4);
-      document.all('rate').innerHTML = '1:'+r;
-    }
-  }
 
-  update_amount();
+function changeBuy(buy, name) {
+	buy_code = buy;
+	buy_name = name;
+	update(buy_code, sell_code, buy_name, sell_name);
 }
+
+function changeSell(sell, name) {
+	sell_code = sell;
+	sell_name = name;
+	update(buy_code, sell_code, buy_name, sell_name);
+}
+
+function update(buy, sell) {
+	if (buy == sell) {
+		$('#rate').html('N/A');
+	} else if (rateData[buy][sell]) {
+		$('#rate').html('1:' + rateData[buy][sell]);
+		$('#input_rate').val(rateData[buy][sell]);
+	}
+	update_amount();
+}
+
+function update_amount() {
+	var pay_amount = $('#pay_amount').val();
+	var get_amount = Math.hold(pay_amount * rateData[buy_code][sell_code], 2);
+	$('#get_amount').html(get_amount);
+	
+	$('#pay').html(buy_name);
+	$('#get').html(sell_name);
+}
+
+$(document).ready(function() {
+	var buyCurrencyRadio = $('input[name=buyCurrency]');
+	buy_code = buyCurrencyRadio.filter(':checked').val();
+
+	var sellCurrencyRadio = $('input[name=sellCurrency]');
+	sell_code = sellCurrencyRadio.filter(':checked').val();
+	
+	update(buy_code, sell_code);
+	update_amount();
+});

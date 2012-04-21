@@ -1,10 +1,7 @@
 
 
 <script type="text/javascript">
-
-
-var rateData 
-
+	var rateData = <?php echo json_encode($rateData); ?>;
 </script>
 
 <div id="main-column">
@@ -29,7 +26,7 @@ var rateData
 						 	<div class="<?php echo strtolower($currency['code']);?>">
 	                    		<input type="radio" name="buyCurrency" value="<?php echo $currency['code'];?>" 
 	                    						<?php if($currency['code'] == 'LR') echo 'checked="checked"';?>
-	                    						onclick="fromtochange('<?php echo $currency['c_id'];?>','<?php echo $currency['c_name'];?>',6.30000,-1)"/>
+	                    						onclick="changeBuy('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
 	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
 		                        <a><?php echo $currency['c_name'];?></a>
 	                    	</div>	
@@ -41,7 +38,8 @@ var rateData
                     <div class="currencyRate">
                     	<span class="content-head2">Rate</span>
                     	<br/>
-                    	<span id="rate" style="color:Red">1 : 0.8092</span>
+                    	<span id="rate" style="color:Red"></span>
+                    	<input type="hidden" name="rate" id="input_rate">
                     </div>
                     <div class="toCurrency">
                     	<span class="content-head2">What's currencty you will get?</span>
@@ -50,7 +48,8 @@ var rateData
 						 ?>
 						 	<!-- THE DIV for each currency -->
 						 	<div class="<?php echo strtolower($currency['code']);?>">
-	                    		<input type="radio" name="sellCurrency" value="<?php echo $currency['code'];?>" <?php if($currency['code'] == 'WU') echo 'checked="checked"';?> onclick=""/>
+	                    		<input type="radio" name="sellCurrency" value="<?php echo $currency['code'];?>" 
+	                    		<?php if($currency['code'] == 'WU') echo 'checked="checked"';?> onclick="changeSell('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
 	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
 		                        <a><?php echo $currency['c_name'];?></a>
 	                    	</div>	
@@ -63,7 +62,7 @@ var rateData
                     
                     <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
                     	 <hr align="right" width="70%">
-                    	 You pay <input name="amount" value="1000" style="width: 35px;"> <span id="pay">Liberty Reserve</span>, will get <span class="redText">786.26</span> <span id="get">Western Union </span> <button>Exchange</button>
+                    	 You pay <input id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="width: 35px;"> <span id="pay">Liberty Reserve</span>, will get <span class="redText" id="get_amount">786.26</span> <span id="get">Western Union </span> <button>Exchange</button>
                          <br />
                          <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
                     </div>

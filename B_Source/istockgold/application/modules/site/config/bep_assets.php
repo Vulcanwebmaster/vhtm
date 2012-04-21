@@ -73,6 +73,7 @@ $config['asset'][] = array('file'=>'bep_navigation.js','needs'=>'jquery.cookie|j
 $config['asset'][] = array('file'=>'bep_generate_password.js', 'needs'=>'jquery', 'name'=>'bep_generate_password.js');
 $config['asset'][] = array('file'=>'bep_access_control.js', 'needs'=>'jquery.treeview');
 $config['asset'][] = array('file'=>'bep_select_all.js', 'needs'=>'jquery');
+$config['asset'][] = array('file'=>'istock.js', 'needs'=>'jquery');
 
 
 // Added from here
@@ -176,7 +177,7 @@ $config['asset_group']['PUBLIC'] = 'bep_front_layout|FlashStatus';
 $config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|FlashStatus|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
 
 // Added from here 
-$config['asset_group']['SHOP'] = 'shopcustomtools|FlashStatus|menu.init|istockgold';
+$config['asset_group']['SHOP'] = 'shopcustomtools|FlashStatus|menu.init|istockgold|istock';
 $config['asset_group']['SHOPADMIN'] = 'admin|site';
 
 // TinyMCE group

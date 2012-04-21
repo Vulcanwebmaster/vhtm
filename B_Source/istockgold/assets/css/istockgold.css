@@ -211,3 +211,9 @@
 {
     padding-right: 10px;
 }
+
+.message , .error
+{
+	color: red;
+	font-size: 12px;
+} 
