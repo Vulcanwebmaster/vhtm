@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2012 at 11:23 AM
+-- Generation Time: Apr 21, 2012 at 11:40 AM
 -- Server version: 5.1.61
 -- PHP Version: 5.3.6-13ubuntu3.6
 
@@ -450,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('650af91204b70f126f47cae34c8a9253', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:11.0) Gecko/20100101 Firefox/11.0', 1334981417, 'a:13:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-03-17 20:33:13";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:6:"status";s:177:"a:1:{s:7:"warning";a:1:{i:0;s:138:" The First Name field is required. \n The Last Name field is required. \n The City field is required. \n The Postal Code field is required. \n";}}";}');
+('d82ffbba16f0c9984ce27f309494d963', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:11.0) Gecko/20100101 Firefox/11.0', 1334983175, 'a:13:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-03-17 20:33:13";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:6:"status";s:177:"a:1:{s:7:"warning";a:1:{i:0;s:138:" The First Name field is required. \n The Last Name field is required. \n The City field is required. \n The Postal Code field is required. \n";}}";}');
 
 -- --------------------------------------------------------
 
@@ -882,7 +882,6 @@ INSERT INTO `omc_subscribers` (`id`, `name`, `email`) VALUES
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_code` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
   `c_src` varchar(3) CHARACTER SET utf8 NOT NULL,
   `c_dst` varchar(3) CHARACTER SET utf8 NOT NULL,
   `amount_src` int(11) NOT NULL,
@@ -893,10 +892,15 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_dst` datetime DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `note` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`order_id`),
-  KEY `user_id` (`user_id`),
-  KEY `rate_id` (`rate_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`order_id`, `order_code`, `c_src`, `c_dst`, `amount_src`, `amount_dst`, `status_src`, `status_dst`, `date_src`, `date_dst`, `email`, `note`) VALUES
+(7, NULL, 'LR', 'WU', 1000, 982, NULL, NULL, '2012-04-21 11:40:01', NULL, 'anh.trinhtrung@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -996,13 +1000,6 @@ ALTER TABLE `be_resources`
 --
 ALTER TABLE `be_users`
   ADD CONSTRAINT `be_users_ibfk_1` FOREIGN KEY (`group`) REFERENCES `be_acl_groups` (`id`) ON DELETE SET NULL;
-
---
--- Constraints for table `order`
---
-ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`rate_id`) REFERENCES `rate` (`rate_id`);
 
 --
 -- Constraints for table `rate`
