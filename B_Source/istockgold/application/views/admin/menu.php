@@ -5,21 +5,41 @@ Please ensure that you assign the LI a unique ID
 Examples can be seen below for menu_bep_system
 -->
 
-<ul id="menu">
-    <li id="menu_bep_home"><?php print anchor('admin',$this->lang->line('backendpro_dashboard'),array('class'=>'icon_house'))?></li>
-    <?php if(check('System',NULL,FALSE)):?>
-    <li id="menu_bep_system"><span class="icon_computer"><?php print $this->lang->line('backendpro_system')?></span>
-        <ul>
-            <?php if(check('Members',NULL,FALSE)):?><li><?php print anchor('auth/admin/members',$this->lang->line('backendpro_members'),array('class'=>'icon_group'))?></li><?php endif;?>
-            <?php if(check('Access Control',NULL,FALSE)):?><li><?php print anchor('auth/admin/access_control',$this->lang->line('backendpro_access_control'),array('class'=>'icon_shield'))?></li><?php endif;?>
-            <?php if(check('Settings',NULL,FALSE)):?><li><?php print anchor('admin/settings',$this->lang->line('backendpro_settings'),array('class'=>'icon_cog'))?></li><?php endif;?>
-            <?php if(check('Phpinfo',NULL,FALSE)):?><li><?php print anchor('auth/admin/phpinfo',$this->lang->line('backendpro_phpinfo'),array('class'=>'icon_information'))?></li><?php endif;?>
-        </ul>
-    </li>
-    <?php endif;?>
-    <?php 
-     $this->load->view($this->config->item('backendpro_template_admin') . 'kkmenu');
-    ?>
-   
-    
-</ul>
+<div id="outer_wrapper">
+  <div id="wrapper">
+	<div id="container_2cl">
+		<div id="left">	<div id="navigation_menu">
+	<ul>
+		<li><?php print anchor('admin_home/admin','<img src="../assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'),array('class'=>'navigation_select'))?></li>
+        <div class="seperator"></div>        
+        <li><?php print anchor('exchange_orders/admin','<img src="../assets/images/admin/n_order.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_exchanges_ordes')) ?></li>
+		<li><?php print anchor('exchange_rates/admin','<img src="../assets/images/admin/n_order_fee.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_exchange_rates')) ?></li>
+		<li><?php print anchor('currency/admin','<img src="../assets/images/admin/n_order_set.png" width="18" height="18" border="0" />'.$this->lang->line('istockgold_exchange_settings')) ?></li>			
+		<div class="seperator"></div>            			                       
+        <li><?php print anchor('manage_members/admin','<img src="../assets/images/admin/n_maccounts.gif" width="18" height="18" border="0" />'.$this->lang->line('istockgold_manage_members')) ?></li>
+        <div class="seperator"></div>           
+        <li><?php print anchor('site_currencies/admin','<img src="../assets/images/admin/n_currencies.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_site_currencies')) ?></li>
+        <li><?php print anchor('site_settings/admin','<img src="../assets/images/admin/n_settings.gif" width="19" height="18" border="0" />'.$this->lang->line('istockgold_site_settings')) ?></li>			
+		<li><?php print anchor('news/admin','<img src="../assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_news')) ?></li>
+        <li><?php print anchor('pages/admin','<img src="../assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_pages')) ?></li>				
+        <div class="seperator"></div>
+		<li><?php print anchor('update_profile/admin','<img src="../assets/images/admin/n_profile.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_update_profile')) ?></li>
+        <li><?php print anchor('log_out/admin','<img src="../assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?></li>
+	</ul>
+</div>
+
+<div class="left_box">
+    <div id="page_title"><h1>Reserved Amount</h1></div>
+    <div id="reserved_box">
+                    <img src="../assets/images/admin/libertyreserve_3.gif"  title="Libertyreserve usd, Our account: U2782065" /><span class="money_1">$1,050.56</span>
+                    <img src="../assets/images/admin/libertyreserve_3.gif"  title="Libertyreserve euro, Our account: U2782065" /><span class="money_1">&#8364;390.00</span>                    
+            </div>
+</div>
+</div>		
+</div>
+
+<div class="clearing">&nbsp;</div>
+	</div>
+</div>
+
+

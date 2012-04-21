@@ -53,6 +53,18 @@ $lang['backendpro_subscribers'] = 'Subscribers';
 $lang['backendpro_file_manager'] = 'File Manager';
 $lang['backendpro_langages'] = 'Languages';
 
+$lang['istockgold_admin_home'] = 'Admin Home';
+$lang['istockgold_exchanges_ordes'] = 'Exchange Orders';
+$lang['istockgold_exchange_rates'] = 'Exchange Rates';
+$lang['istockgold_exchange_settings'] = 'Exchange Settings';
+$lang['istockgold_manage_members'] = 'Manage Members';
+$lang['istockgold_site_currencies'] = 'Site Currencies';
+$lang['istockgold_site_settings'] = 'Site Settings';
+$lang['istockgold_news'] = 'News';
+$lang['istockgold_pages'] = 'Pages';
+$lang['istockgold_update_profile'] = 'Update Profile';
+$lang['istockgold_log_out'] = 'Log Out';
+
 
 /* For Webshop */
 $lang['preference_website_configuration'] = "Website Configuration";

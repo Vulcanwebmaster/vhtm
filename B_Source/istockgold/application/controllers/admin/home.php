@@ -36,6 +36,7 @@ class Home extends Admin_Controller
 		$this->bep_assets->load_asset('bep_dashboard');
 		// Load the dashboard library
 		$this->load->library('dashboard/dashboard');
+
 		//twitter
 		$this->load->library('dashboard/Twitter_widget');
 		// Load any widget libraries
@@ -47,28 +48,28 @@ class Home extends Admin_Controller
 		// load flot.js
 		$this->bep_assets->load_asset_group('flot');
 		// Assign widgets to dashboard
-		if($this->preference->item('dashboard_rss'))
-		{
-			$this->dashboard->assign_widget(new widget('RSS Feed',$this->rss_widget->create()),'right');
-		}
+//		if($this->preference->item('dashboard_rss'))
+//		{
+//			$this->dashboard->assign_widget(new widget('RSS Feed',$this->rss_widget->create()),'right');
+//		}
 		// Assign widgets to dashboard
-		if($this->preference->item('ga_email') AND $this->preference->item('ga_password') AND $this->preference->item('ga_profile'))
-		{
-	      	$this->dashboard->assign_widget(new widget($this->lang->line('dashboard_analytics'),$this->analytics_widget->create()),'top');
-	    }
+//		if($this->preference->item('ga_email') AND $this->preference->item('ga_password') AND $this->preference->item('ga_profile'))
+//		{
+//	      	$this->dashboard->assign_widget(new widget($this->lang->line('dashboard_analytics'),$this->analytics_widget->create()),'top');
+//	    }
 	    //$this->dashboard->assign_widget(new widget($this->lang->line('dashboard_neworders'),$this->neworders_widget->create()),'left');
 		//$this->dashboard->assign_widget(new widget($this->lang->line('dashboard_example'),$this->lang->line('dashboard_example_body')),'left');
-		$this->dashboard->assign_widget(new widget($this->lang->line('dashboard_statistics'),$this->statistic_widget->create()),'left');
+//		$this->dashboard->assign_widget(new widget($this->lang->line('dashboard_statistics'),$this->statistic_widget->create()),'left');
 		//twitter
-		if($this->preference->item('twittername'))
-		{
-			$this->dashboard->assign_widget(new widget('Twitter',$this->twitter_widget->create()),'left');		
-		}
+//		if($this->preference->item('twittername'))
+//		{
+//			$this->dashboard->assign_widget(new widget('Twitter',$this->twitter_widget->create()),'left');		
+//		}
 		// Load dashboard onto page
 		$data['dashboard'] = $this->dashboard->output();
 		// Display Page
-		$data['header'] = $this->lang->line('backendpro_dashboard');
-		$data['page'] = $this->config->item('backendpro_template_admin') . "home";
+//		$data['header'] = $this->lang->line('backendpro_dashboard');
+//		$data['page'] = $this->config->item('backendpro_template_admin') . "home";
 		$this->load->view($this->_container,$data);
 	}
 }

@@ -1,0 +1,55 @@
+#header { width:auto; margin:0 1% 0 1%; }
+#menu { width:auto; margin:0 2% 0 2%; }
+#outer_wrapper { width:auto; margin:0 2% 0 2%; }
+#footer { width:auto; margin:0 4% 0 4%; }
+
+.tab { padding:2px 4px 2px 4px;	background-color:#F5F5F5; white-space: no-wrap; font-size:12px; border:2px solid #cccccc; border-bottom:1px;	cursor: pointer;	cursor: hand;}
+.tab a { text-decoration: none;	color: #E8E8E8;	font-size:12px; }
+.tabselected { padding:4px 8px 4px 8px;	background-color:#ffffff;	border:2px solid #cccccc;	border-bottom:0px;	font-weight: bold;	cursor: pointer;	cursor: hand;}
+.tabspacer{border-bottom:2px solid #cccccc; }
+
+.help { font-size: 11px; color: #356079; font-family:Geneva, Arial, Helvetica, sans-serif;  font-family:Tahoma; line-height:16px !important; font-size:11px !important}
+
+#admin_overview {background-color:#F4F4F4; border:1px solid #999999; border-top:0; margin-bottom:15px; height:100%; display:table; width:99%;}
+#admin_overview #title{text-align:left;border:1px dashed #152175;  background-color:#E4E9F1; font-size:14px;  color:#666666; font-family:"Trebuchet MS", Times, serif; padding:2px 0 2px 8px; letter-spacing:2px; font-weight:600; margin:0 -1px 0 -1px}
+#admin_overview #title:first-letter {font-weight:bold; color:#666666 }
+#admin_overview ul { list-style: none; margin:0; padding:6px}
+#admin_overview li { padding-bottom:3px;	}	
+#admin_overview #rbox{ width:50%; float:left; margin:5px 1px 5px 5px;line-height:18px}
+#admin_overview #lbox{ float:left; margin:5px 1px 5px 5px; width:auto; line-height:18px}
+#admin_overview #onebox{ float:left; padding:10px; width:28%; }
+#admin_overview #onebox a{ font-size:13px; }
+#admin_overview b{ color:#996600; line-height:12px; font-size:11px; font-weight:normal}
+#admin_overview #onebox img{ padding-right:3px; }
+
+ 
+.tabmenu {background-color:#F5F5F5; height:23px; width:100%; margin-right:-10px; border-bottom:2px solid #d7d7d7;}
+.tabmenu ul {margin:0px; padding:0px; list-style:none; text-align:center; }
+.tabmenu li {display:inline; line-height:23px;}
+.tabmenu li a {color:#333; text-decoration:none; padding:4px 5px 6px 5px;  border:0 1px 0 1px solid #d7d7d7;}
+.tabmenu li a:hover, .tabmenu li .tabselected {background-color:#d7d7d7; font-weight:bold;  position:relative;}
+
+TD{  line-height:22px !important;  font-size: 12px !important;}
+
+#page_guide {border:1px dashed #999; padding:4px; font-size:11px;  font-family:Tahoma; background-color:#F4F4F4; }
+#page_guide h2{ background-color:#CCC; color:#666; padding-left:4px;}
+#page_guide strong{ color:#036; font-weight:400}
+
+
+#pending_orders{
+	width:180px;
+	border: #ccc7bc 1px solid;
+	font-size:13px;
+	margin-right:10%;
+	background-color:#EFEEDA;
+	border-top:0;
+	line-height:16px;
+	filter:alpha(opacity=85); -moz-opacity:0.85;	opacity: 0.85;
+	margin:0 6px 0 0;
+}
+.maintable tr:hover th[scope=row], .maintable tr:hover td
+{
+  background-color: #e2dbbd;
+  color: #000;
+  table-layout: fixed;
+}
