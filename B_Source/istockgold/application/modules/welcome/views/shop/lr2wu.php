@@ -18,6 +18,8 @@
 				?>
 				<?php echo validation_errors('<div class="message error">','</div>'); ?>
                 <?php echo form_open($module."/lr2wu", array('class' => 'expose', 'id' => 'echangeForm')); ?>
+                	<input type="hidden" name="fromCurrency" value="<?php if(isset($fromCurrency)) echo $fromCurrency; else echo set_value('fromCurrency');?>"/>
+                	<input type="hidden" name="toCurrency" value="<?php if(isset($toCurrency)) echo $toCurrency; else echo set_value('toCurrency');?>"/>
                 	<input type="hidden" name="amount" value="<?php if(isset($amount)) echo $amount; else echo set_value('amount');?>"/>
                 	<input type="hidden" name="getAmount" value="<?php if(isset($getAmount)) echo $getAmount; else echo set_value('getAmount');?>"/>
                 	<input type="hidden" name="rate" value="<?php if(isset($rate)) echo $rate; else echo set_value('rate');?>"/>
