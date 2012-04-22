@@ -39,7 +39,7 @@
 				
 				<tr class="col1">
 					<td>3</td>
-					<td>Libertyreserve</td>
+					<td>LibertyReserve</td>
 					<td>Usd</td>
 					<td>
 						<select name="exchange_status|3">
@@ -67,8 +67,8 @@
 				</tr>
 				<tr class="col0">
 					<td>4</td>
-					<td>Libertyreserve</td>
-					<td>Euro</td>
+					<td>WesternUnion</td>
+					<td>Usd</td>
 					<td>
 						<select name="exchange_status|4">
 							<option selected="" value="1">Yes</option>
