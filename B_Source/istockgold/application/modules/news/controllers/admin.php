@@ -26,6 +26,9 @@ class Admin extends Shop_Admin_Controller
     function index()
     {
         //$data = $this->common_home();
+		$this->load->database();
+		$query="select * from is_news";
+		$data['list']=$this->db->query($query);
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_news_home";
         $this->load->view($this->_container,$data);
     }

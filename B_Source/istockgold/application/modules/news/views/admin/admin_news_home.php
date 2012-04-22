@@ -1,4 +1,4 @@
-<div id="main">
+﻿<div id="main">
                     <div id="page_title">
                         <h1>
                             News</h1>
@@ -20,18 +20,25 @@
                                             Title</h4>
                                     </td>
                                 </tr>
-                                <tr height="20" class="col0">
-                                    <td nowrap="nowrap">
-                                        [ <a href="<?php echo base_url();?>news/admin/edit_news/edit/12">Edit</a>
-                                        ] [ <a href="<?php echo base_url();?>news/admin/delete_news/delete/12"
-                                            style="color: #990000;" onclick="">Delete</a> ]
-                                    </td>
-                                    <td>
-                                        <a href="<?php echo base_url();?>news/admin/edit_news/edit/12">Welcome to auto-exchanger script
-                                                <img src="<?php echo base_url();?>assets/images/admin/arrow1_hor.gif"
-                                                    width="7" height="11" border="0"></a>
-                                    </td>
-                                </tr>
+								
+								<!-- NỘI DUNG CHÍNH -->
+								<?php
+									foreach($list->result() as $rows)
+									{
+										echo '<tr height="20" class="col0">';
+										echo '<td nowrap="nowrap">';
+										echo '[ <a href="'.base_url().'news/admin/edit_news/edit/12">Edit</a>';
+										echo '] [ <a href="'.base_url().'news/admin/delete_news/delete/12"
+												style="color: #990000;" onclick="">Delete</a> ]';                                    
+										echo '</td>';
+										echo '<td>';
+										echo '<a href="'.base_url().'news/admin/edit_news/edit/12">'.$rows->title.'<img src="'.base_url().'assets/images/admin/arrow1_hor.gif"
+														width="7" height="11" border="0"></a>';
+										echo '</td>';
+										echo '</tr>';
+									}
+								?>
+								<!---->
                                 </tbody>
                         </table>
                     </div>
