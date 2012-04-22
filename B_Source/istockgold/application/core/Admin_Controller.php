@@ -49,6 +49,7 @@ class Admin_Controller extends MY_Controller
 		$this->bep_assets->load_asset_group('ADMIN');
 		// Loading module model for menu on the left
 		$this->load->model('category/MCats');
+		$this->load->model('currency/MCurrency');
 		$this->lang->load('shop');
 		$this->load->language('kaimonokago/kaimonokagoadmin');
 		$this->load->language('welcome/webshop');
