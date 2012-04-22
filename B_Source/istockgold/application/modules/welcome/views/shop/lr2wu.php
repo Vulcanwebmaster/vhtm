@@ -67,18 +67,8 @@
                                 <label style="color:#b5b5b5">(input a working e-mail address)</label></td>
                         </tr>
                         <tr>
-                        	<td  class="liberty2-col1" align="right">
-                        	<?php
-					                if($security_method=='recaptcha'){
-					                    echo "<h3>*".$this->lang->line('contact_captcha')."</h3>";
-					                    echo "<p>$cap_img</p>" ;
-					                    
-					                }elseif($security_method=='question'){
-					                    echo $question;
-					                    echo "<td align=\"left\"><input type=\"text\" name=\"write_ans\" id=\"write_ans\" maxlength=\"30\" size=\"30\"  /><label style=\"color:#b5b5b5\">(input the number showed in picture) </label></td>";
-					                }
-							
-							?>
+                        	<td  class="liberty2-col1" align="right"><?php echo $cap['image'];?></td>
+                        	<td><input type="text" name="captcha" value="" /></td>
                         </tr>
                         <tr>
                             <td colspan="2"><p class="red" style="margin-top:20px">*Notice 1: you will get paid in 24 hours and you pay the Western Union transfer fee.</p></td>

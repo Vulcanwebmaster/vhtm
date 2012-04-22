@@ -20,16 +20,16 @@
                 <div style="padding-top:20px; padding-left:40px">
                     <div class="menuitem">
                         <img alt="" src="<?php echo base_url()?>assets/images/house-icon.png" style="float:left"/>
-                        <a style="float:left; margin-left:-20px">Home</a>
+                        <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px">Home</a>
                     </div>
                     <div class="menuitem">
                         <a>Service news</a>
                     </div>
-                    <div class="menuitem"><a>Service Fees</a></div>
-                    <div class="menuitem"><a>Buy/Sell LR</a></div>
-                    <div class="menuitem"><a>Marchants</a></div>
-                    <div class="menuitem"><a>Downloads</a></div>
-                    <div class="menuitem"><a>Consummer Alert</a></div>
+                    <div class="menuitem"><a href="#">Service Fees</a></div>
+                    <div class="menuitem"><a href="#">Buy/Sell LR</a></div>
+                    <div class="menuitem"><a href="#">Marchants</a></div>
+                    <div class="menuitem"><a href="#">Downloads</a></div>
+                    <div class="menuitem"><a href="#">Consummer Alert</a></div>
                 </div>
             </div>
             <div id="support">

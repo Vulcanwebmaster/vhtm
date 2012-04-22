@@ -67,12 +67,13 @@ if ( ! function_exists('create_captcha'))
 		{
 			return FALSE;
 		}
+		
 
 		if ( ! is_writable($img_path))
 		{
 			return FALSE;
 		}
-
+		
 		if ( ! extension_loaded('gd'))
 		{
 			return FALSE;

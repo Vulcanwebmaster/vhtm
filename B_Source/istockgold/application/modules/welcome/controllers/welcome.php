@@ -115,78 +115,48 @@ class Welcome extends Shop_Controller
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data); 
     }
-
-  
-	
-	
-    function cat($id)
+    
+    function generate_captcha() 
     {
-        $module ='category';
-        $lang_id=$this->data['lang_id'];
-        $cat = $this->MKaimonokago->getinfo($module,$id);
-        //$cat = $this->MCats->getCategory($id);
-        /**
-          * $id is the third(3) in URI which represents the ID and any
-          * variables that will be passed to the controller.
-          */
-        if (!count($cat))
-        {
-                // if there is no such a category id, then redirect.
-                redirect( $this->module.'/index','refresh');
-        }
-        $data['title'] = $this->preference->item('site_name')." | ". $cat['name'];
-
-        if ($cat['parentid'] < 1)
-        {
-                /**
-          * If a parent id is 0, it must be a root category, so show children/sub-categories
-          */
-            $data['listing'] = $this->MCats->getSubCategories($id);
-                /**
-         * this will receive a series of array with id, name, shortdesc and thumbnail
-                 * and store them in listing. Array ([0]=>array([id]=>14 [name]=>long-sleeve...))
-         */
-            $data['level'] = 1;
-        }
-        else
-        {
-            // otherwise, it must be a category, so let's show products
-            $data['listing'] = $this->MProducts->getProductsByCategory($id,"TRUE",$lang_id);
-            // this will receive a series of product with array.id,name,shortdesc,thumbnail
-            $data['level'] = 2;
-        }
-        $data['category'] = $cat;
-        $data['page'] = $this->config->item('backendpro_template_shop') . 'category';
-        $data['module'] = $this->module;
-        $this->load->view($this->_container,$data);
+    	$vals = array(
+		    'img_path' => './captcha/',
+		    'img_url' => base_url().'/captcha/',
+	    	'img_width' => '100',
+	    	'img_height' => '30'	
+	    );
+	    $cap = create_captcha($vals);
+	    
+	    $data = array(
+		    'captcha_time' => $cap['time'],
+		    'ip_address' => $this->input->ip_address(),
+		    'word' => $cap['word']
+	    );
+	    
+	    $query = $this->db->insert_string('captcha', $data);
+		$this->db->query($query);
+	    
+	    return $cap;
     }
-
-
-
-    function product($id)
+    
+    function verify_captcha() 
     {
-        $module = 'products';
-        $product = $this->MKaimonokago->getInfo($module, $id);
-        //$product = $this->MProducts->getProduct($id);
-        /** this returns all, i.e. id, name, shortdesc, longdesc, thumbnail,
-         * image, grouping, status, category_id, featured and price
-         * from product db.
-         */
-        if (!count($product))
-        {
-            // no product so redirect
-            redirect( $this->module.'/index','refresh');
-        }
-        $data['product'] = $product;
-        $data['title'] = $this->preference->item('site_name')." | ". $product['name'];
-
-        // I am not using colors and sizes, but you can.
-        $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
-        $data['assigned_sizes'] = $this->MProducts->getAssignedSizes($id);
-
-        $data['page'] = $this->config->item('backendpro_template_shop') . 'product';
-        $data['module'] = $this->module;
-        $this->load->view($this->_container,$data);
+    	echo 'test';
+    	// First, delete old captchas
+		$expiration = time()-7200; // Two hour limit
+		$this->db->query("DELETE FROM captcha WHERE captcha_time < ".$expiration);
+		
+		// Then see if a captcha exists:
+		$sql = "SELECT COUNT(*) AS count FROM captcha WHERE word = ? AND ip_address = ? AND captcha_time > ?";
+		$binds = array($_POST['captcha'], $this->input->ip_address(), $expiration);
+		$query = $this->db->query($sql, $binds);
+		$row = $query->row();
+		
+		if ($row->count == 0)
+		{
+			$this->form_validation->set_message('verify_captcha', 'Your answer was incorrect!');
+		    return false;
+		}
+		return true;
     }
     
     function exchange()
@@ -212,10 +182,7 @@ class Welcome extends Shop_Controller
         	return;
     	}
     	
-    	$data['cap_img'] = $this->_generate_captcha();
-        $data['question']= $this->security_question;
-        $data['security_method']= $this->security_method;
-        
+    	$data['cap'] = $this->generate_captcha();
     	
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['amount'] = $amount;
@@ -248,11 +215,6 @@ class Welcome extends Shop_Controller
      */
     function lr2wu() 
     {
-    	$captcha_result = '';
-        $data['cap_img'] = $this->_generate_captcha();
-        $data['question']= $this->security_question;
-        $data['security_method']= $this->security_method;
-        
         if ($this->input->post('email'))
         {
             $data['title'] = $this->preference->item('site_name')." | "."Exchange";
@@ -277,19 +239,19 @@ class Welcome extends Shop_Controller
                             'label'=>$this->lang->line('webshop_street'),
                             'rules'=>"trim"
                             );
-                           
-			$config[] = array(
+                             
+                            $config[] = array(
                             'field'=>'province',
                             'label'=>$this->lang->line('webshop_province'),
                             'rules'=>"trim"
                             );
-			$config[] = array(
+                            $config[] = array(
                             'field'=>'country',
                             'label'=>$this->lang->line('webshop_province'),
                             'rules'=>"trim"
                             );
-                            
-            $config[] = array(
+
+                            $config[] = array(
                             'field'=>'city',
                             'label'=>$this->lang->line('webshop_city'),
                             'rules'=>"trim|required|alpha_dash"
@@ -299,24 +261,12 @@ class Welcome extends Shop_Controller
                             'label'=>$this->lang->line('webshop_post_code'),
                             'rules'=>"trim|required|numeric"
                             );
-            if($this->security_method=='recaptcha')
-            {
-                $config[] = array(
-                            'field'=>'recaptcha_response_field',
-                            'label'=>$this->lang->line('kago_recaptcha_response_field'),
-                            'rules'=>"trim|required|valid_captcha"
+            $config[] = array(
+                            'field'=>'captcha',
+                            'label'=>'Captcha',
+                            'rules'=>"trim|required|callback_verify_captcha"
                             );
-                //$rules['recaptcha_response_field'] = 'trim|required|valid_captcha';
-            }
-            else if($this->security_method=='question')
-            {
-                $config[] = array(
-                            'field'=>'write_ans',
-                            'label'=>$this->lang->line('kago_write_ans'),
-                            'rules'=>"trim|required|callback_security_check"
-                            );
-                //$rules['write_ans']= 'trim|required|callback_security_check';
-            }
+            
             $this->form_validation->set_rules($config);
 
             // set fields. This will be used for error messages
@@ -328,11 +278,9 @@ class Welcome extends Shop_Controller
             $fields['city']	                    = lang('webshop_city');
             $fields['province']	                = lang('webshop_province');
             $fields['post_code']	            = lang('webshop_post_code');
-            $fields['recaptcha_response_field']	= $this->lang->line('kago_recaptcha_response_field');
-            $fields['write_ans']                = $this->lang->line('webshop_write_ans');
+            $fields['captcha']                	= "Captcha";
             
             $this->form_validation->set_fields($fields);
-
             // run validation
             if ($this->form_validation->run() == FALSE)
             {
@@ -341,10 +289,11 @@ class Welcome extends Shop_Controller
             }
             else
             {
+				/*
+				 * CREATE ORDER
+				 */
             	$fromCurrency = $_POST['fromCurrency'];
             	$toCurrency = $_POST['toCurrency'];
-            	
-            	$rateId = $this -> MRate -> getRateId(db_clean($fromCurrency,3), db_clean($toCurrency,3));
             	
                 $data = array(
                 	'c_src' 			=> $fromCurrency,
@@ -357,28 +306,52 @@ class Welcome extends Shop_Controller
                 
                 $orderId = $this->MOrders->addOrder($data, true);
                 
-                //TODO: load from DB for this account name
-                $ownerLRAccount = "U7511015";
-                $redirectUrl = "https://sci.libertyreserve.com/en";
-                $redirectUrl .= "?lr_acc=" . $ownerLRAccount;
-                $redirectUrl .= "&lr_amnt=" . $_POST['getAmount'];
-                $redirectUrl .= "&lr_currency=LRUSD";
-                $redirectUrl .= "&lr_comments=" . urlencode("Order Id: #". $orderId);
-                $redirectUrl .= "&lr_success_url=" . urlencode("http://localhost/istockgold/index.php/welcome/ordersucess");
-                $redirectUrl .= "&lr_success_url_method=GET" ;
+                /*
+                 * LOAD LR's configuration from DB
+                 * REDIRECT TO LIBERTY PAGE
+                 * - Success payment -- go to psuccess page
+                 * - Failed payment -- go to pcancel page
+                 */
+                $ownerLRAccount = null;
+                $accountInfo = $this->MAccount->getAccountInfo($fromCurrency);
+                foreach ($accountInfo as $key => $row)
+                {
+                	if ($row['key'] == "liberty.account")
+                		$ownerLRAccount = $row['value']; 
+                }
                 
-                redirect( $redirectUrl );
+                if (isset($ownerLRAccount)) 
+                {
+                	$redirectUrl = "https://sci.libertyreserve.com/en";
+	                $redirectUrl .= "?lr_acc=" . $ownerLRAccount;
+	                $redirectUrl .= "&lr_amnt=" . $_POST['getAmount'];
+	                $redirectUrl .= "&lr_currency=LRUSD";
+	                
+	                //Storename require merchant to work in Advance mode
+	                //$redirectUrl .= "&lr_store=IstockGold";
+	                $redirectUrl .= "&lr_comments=" . urlencode("Order Id: #". $orderId);
+	                $redirectUrl .= "&lr_success_url=" . urlencode(site_url("welcome/psuccess")."/".$orderId);
+	                $redirectUrl .= "&lr_success_url_method=POST" ;
+	                $redirectUrl .= "&lr_fail_url=" .  urlencode(site_url("welcome/pcancel")."/".$orderId);
+	                $redirectUrl .= "&lr_fail_url_method=POST";
+	                
+	                redirect( $redirectUrl );	
+                } else {
+					redirect($this->module.'/error');          	
+                }
             }
         }// end of if($this->input->post('email'))
         
         if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
         	redirect( $this->module."/exchange" );
         }
+        
         $data['amount'] = $this->input->post('amount');
         $data['rate'] = $this->input->post('rate');
         $data['getAmount'] = $this->input->post('getAmount');
         $data['fromCurrency'] = $this->input->post('fromCurrency');
         $data['toCurrency'] = $this->input->post('toCurrency');
+        $data['cap'] = $this->generate_captcha();
         
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'lr2wu';
@@ -388,11 +361,6 @@ class Welcome extends Shop_Controller
     
 	function wu2lr() 
     {
-    	$captcha_result = '';
-        $data['cap_img'] = $this->_generate_captcha();
-        $data['question']= $this->security_question;
-        $data['security_method']= $this->security_method;
-        
         if ($this->input->post('email'))
         {
             $data['title'] = $this->preference->item('site_name')." | "."Exchange";
@@ -433,24 +401,12 @@ class Welcome extends Shop_Controller
                             'label'=>$this->lang->line('lr_account'),
                             'rules'=>"trim|required"
                             );
-            if($this->security_method=='recaptcha')
-            {
                 $config[] = array(
-                            'field'=>'recaptcha_response_field',
-                            'label'=>$this->lang->line('kago_recaptcha_response_field'),
-                            'rules'=>"trim|required|valid_captcha"
-                            );
-                //$rules['recaptcha_response_field'] = 'trim|required|valid_captcha';
-            }
-            else if($this->security_method=='question')
-            {
-                $config[] = array(
-                            'field'=>'write_ans',
+                            'field'=>'captcha',
                             'label'=>$this->lang->line('kago_write_ans'),
-                            'rules'=>"trim|required|callback_security_check"
+                            'rules'=>"trim|required|callback_verify_captcha"
                             );
                 //$rules['write_ans']= 'trim|required|callback_security_check';
-            }
             $this->form_validation->set_rules($config);
 
             // set fields. This will be used for error messages
@@ -462,8 +418,7 @@ class Welcome extends Shop_Controller
             $fields['city']	                    = lang('webshop_city');
             $fields['country']	                = lang('webshop_country');
             $fields['post_code']	            = lang('webshop_post_code');
-            $fields['recaptcha_response_field']	= $this->lang->line('kago_recaptcha_response_field');
-            $fields['write_ans']                = $this->lang->line('webshop_write_ans');
+            $fields['captcha']                  = "Captcha";
             
             $this->form_validation->set_fields($fields);
 
@@ -491,8 +446,8 @@ class Welcome extends Shop_Controller
                 );
                 
                 $orderId = $this->MOrders->addOrder($data, true);
-                
-                redirect( $this->module."/orderTracking/".$oderId);
+                $redirect_to = "/order/".$orderId;
+                redirect( $this->module.$redirect_to);
             }
         }// end of if($this->input->post('email'))
         
@@ -511,6 +466,7 @@ class Welcome extends Shop_Controller
         $data['getAmount'] = $this->input->post('getAmount');
         $data['fromCurrency'] = $this->input->post('fromCurrency');
         $data['toCurrency'] = $this->input->post('toCurrency');
+        $data['cap'] = $this->generate_captcha();
         
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'wu2lr';
@@ -525,31 +481,83 @@ class Welcome extends Shop_Controller
      */
     function order($id = null) 
     {
-    	if (!isset($id)) 
+    	if (!isset($id))
     	{
-    		$data['question']= $this->security_question;
-	        $data['security_method']= $this->security_method;
-	        $data['title'] = $this->preference->item('site_name')." | "."Tracking Your Order";
-	        $data['cap_img'] = $this->_generate_captcha();	
-	        $data['page'] = $this->config->item('backendpro_template_shop') . 'ordertrack';
-	        $data['module'] = $this->module;
-	        $this->load->view($this->_container,$data);
-	        return;
-    	} else {
-    		$order = $this -> MOrders -> getOrder($id);
+	    	//If the user submit OrderId via Form
+	    	if ($this->input->post('orderId'))
+	    	{
+	    		$id = $this->input->post('orderId');
+	    	}
+
+	    	if (!isset($id)) 
+	    	{
+		        $data['cap'] = $this->generate_captcha();
+		        $data['title'] = $this->preference->item('site_name')." | "."Tracking Your Order";
+		        $data['page'] = $this->config->item('backendpro_template_shop') . 'ordertrack';
+		        $data['module'] = $this->module;
+		        $this->load->view($this->_container,$data);
+		        return;	
+	    	}
+    	}   
+    	$order = $this -> MOrders -> getOrder($id);
     		
-    		if (isset($order)) 
-    		{
-    			$data['order'] =  $order;
-    		}
+    	if (isset($order)) 
+    	{
+    		$data['order'] =  $order;
+    	}
     		
-    		$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
-	    	$data['page'] = $this->config->item('backendpro_template_shop') . 'orderstatus';
-	    	$data['module'] = $this->module;
-	    	$this->load->view($this->_container,$data);
+    	$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
+	    $data['page'] = $this->config->item('backendpro_template_shop') . 'orderstatus';
+	    $data['module'] = $this->module;
+	    $this->load->view($this->_container,$data);
+    }
+    
+    /**
+     * 
+     * PAYMENT IS FAILED OR CANCELED
+     * @param unknown_type $id
+     */
+    function pcancel($id =null) 
+    {
+    	if (isset($id))
+    	{
+	    	$order = $this -> MOrders -> getOrder($id);
+		    		
+			if (isset($order)) 
+	    	{
+	    		$data['order'] =  $order;
+	    	}
+	    		
+	    	$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
+		    $data['page'] = $this->config->item('backendpro_template_shop') . 'pcancel';
+		    $data['module'] = $this->module;
+		    $this->load->view($this->_container,$data);
     	}
     }
     
+    /**
+     * 
+     * PAYMENT IS SUCCESSeD
+     * @param unknown_type $id
+     */
+	function psuccess($id =null) 
+    {
+		if (isset($id))
+    	{
+	    	$order = $this -> MOrders -> getOrder($id);
+		    		
+			if (isset($order)) 
+	    	{
+	    		$data['order'] =  $order;
+	    	}
+	    		
+	    	$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
+		    $data['page'] = $this->config->item('backendpro_template_shop') . 'psuccess';
+		    $data['module'] = $this->module;
+		    $this->load->view($this->_container,$data);
+    	}
+    	
+    }
     
     function pages()
     {
@@ -621,29 +629,22 @@ class Welcome extends Shop_Controller
   	
 
   
-    function contact()
+	function contact()
     {
-        $data['question']= $this->security_question;
-        $data['security_method']= $this->security_method;
+    	$data['cap'] = $this->generate_captcha();
         $data['title'] = $this->preference->item('site_name')." | "."Contact us";
-        $data['cap_img'] = $this->_generate_captcha();	
         $data['page'] = $this->config->item('backendpro_template_shop') . 'contact';
         $data['module'] = $this->module;
+        $this->form_validation->set_rules('name','name','required');
+		$this->form_validation->set_rules('email','email','required');
+        if($this->form_validation->run()){
+			if ($this->MContactUs->save()){
+				redirect('welcome/contact');
+			}
+        }
         $this->load->view($this->_container,$data);
     }
   
-
-
-  
-    function _generate_captcha()
-    {
-        $this->bep_assets->load_asset('recaptcha');
-        $this->load->library('recaptcha/Recaptcha');
-        return $this->recaptcha->recaptcha_get_html();
-    }
-
-
-
     function error()
     {
         $data['title'] = $this->preference->item('site_name')." | "."Wow! Something went wrong.";
@@ -651,112 +652,7 @@ class Welcome extends Shop_Controller
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data);
     }
-
-
-
-
-    function security_check($str)
-    {
-        $security_answer= strtolower($this->preference->item('security_answer'));
-        $security_input = strtolower($str);
-        if ($security_input != $security_answer)
-        {
-            $this->form_validation->set_message('security_check', lang('webshop_security_wrong'));
-            return FALSE;
-        }
-        else
-        {
-            return TRUE;
-        }
-    }
-
-
-
-
-    function message()
-    {
-        $data['question']= $this->security_question;
-        $data['security_method']= $this->security_method;
-        $config[] = array(
-                            'field'=>'name',
-                            'label'=>$this->lang->line('access_name'),
-                            'rules'=>"trim|required|max_length[32]"
-                            );
-        $config[] = array(
-                            'field'=>'email',
-                            'label'=>$this->lang->line('kago_email'),
-                            'rules'=>"trim|required|max_length[254]|valid_email"
-                            );
-        $config[] = array(
-                            'field'=>'message',
-                            'label'=>$this->lang->line('kago_message'),
-                            'rules'=>"trim|required"
-                            );
-        //$rules['name'] = 'trim|required|max_length[32]';
-        //$rules['email'] = 'trim|required|max_length[254]|valid_email';
-        //$rules['message'] = 'trim|required';
-        if($this->security_method=='recaptcha')
-        {
-            $config[] = array(
-                            'field'=>'message',
-                            'label'=>$this->lang->line('kago_recaptcha_response_field'),
-                            'rules'=>"trim|required|valid_captcha"
-                            );
-            //$rules['recaptcha_response_field'] = 'trim|required|valid_captcha';
-        }
-        elseif($this->security_method=='question')
-        {
-            $config[] = array(
-                            'field'=>'write_ans',
-                            'label'=>$this->lang->line('kago_write_ans'),
-                            'rules'=>"trim|required|callback_security_check"
-                            );
-            //$rules['write_ans']= 'trim|required|callback_security_check';
-        }
-        $this->form_validation->set_rules($config);
-        $fields['name']	= lang('general_name');
-        $fields['email']	= lang('webshop_email');
-        $fields['message']	= lang('message_message');
-        $fields['recaptcha_response_field']	= 'Recaptcha';
-        $fields['write_ans']        = lang('webshop_security_question');
-        $this->form_validation->set_fields($fields);
-        if ($this->form_validation->run() == FALSE)
-        {
-            // if any form_validation errors, display them
-            $this->form_validation->output_errors();
-            $captcha_result = '';
-            $data['cap_img'] = $this->_generate_captcha();
-            $data['title'] = $this->preference->item('site_name')." | ". lang('webshop_message_contact_us');
-            $data['page'] = $this->config->item('backendpro_template_shop') . 'contact';
-            $data['module'] = $this->module;
-            $this->load->view($this->_container,$data);
-        }
-        else
-        {
-            // you need to send email
-            // validation has passed. Now send the email
-            $name = $this->input->post('name');
-            $email = $this->input->post('email');
-            $message = $this->input->post('message');
-            // get email from preferences/settings
-            $myemail = $this->preference->item('admin_email');
-            $this->load->library('email');
-            $this->email->from($email." | ".$name);
-            $this->email->to($myemail);
-            $this->email->subject(sprintf(lang('webshop_message_subject'),$this->preference->item('site_name')));
-            $this->email->message(lang('webshop_message_sender'). ": ".
-            $name."\r\n".lang('webshop_message_sender_email').": ".
-            $email. "\r\n".lang('webshop_message_message').": " . $message);
-            $this->email->send();
-            flashMsg('success', lang('webshop_message_thank_for_message'));
-            // $this->session->set_flashdata('subscribe_msg', lang('webshop_message_thank_for_message'));
-            redirect($this->module.'/contact');
-        }
-    }
-
-
-
-
+    
     function registration()
     {
     /* If you are using recaptcha, don't forget to configure modules/recaptcha/config/recaptcha.php

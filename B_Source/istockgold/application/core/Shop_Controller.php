@@ -64,6 +64,7 @@ class Shop_Controller extends MY_Controller
         $this->load->model('currency/MCurrency');
         $this->load->model('accountinfo/MAccount');
         $this->load->model('rates/MRate');
+        $this->load->model('contactus/MContactUs');
         $this->load->model('subscribers/MSubscribers');
         $this->load->model('languages/MLangs');
         $this->load->model('slideshow/MSlideshow');
@@ -74,6 +75,7 @@ class Shop_Controller extends MY_Controller
 
         // Loading helpers
         $this->load->helper( array('security', 'form', 'mytools') );
+        $this->load->helper('captcha');
         $this->mainmodule = $this->preference->item('main_module_name');
         $this->data['mainmodule']= $this->mainmodule;
 
@@ -209,6 +211,8 @@ class Shop_Controller extends MY_Controller
         // get all the languages
         $this->data['langs'] = $this->MLangs->getLangDropDown();
         // get the main module, this must be the same as $route['default_controller'] = "welcome"; in config/routes.php
+        
+        $this->data['CI'] =& get_instance();
 
     }
 }

@@ -1,6 +1,6 @@
  <div id="main-column">
 	<div id="au-title">
-                    <label>Your Order Status: </label>
+                    <label>Payment has failed.</label>
      </div>
      <div class="order-status" style="font-size: 13px;">
 		 <?php 

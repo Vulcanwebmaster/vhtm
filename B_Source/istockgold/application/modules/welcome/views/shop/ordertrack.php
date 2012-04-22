@@ -12,7 +12,7 @@
                 </div>
                 <div>
                 
-                <?php echo form_open($module."/order", array('class' => 'expose', 'id' => 'echangeForm')); ?>
+                <?php echo form_open($module."/order", array('class' => 'expose', 'id' => 'orderForm')); ?>
                     <div style="margin:20px 15px 25px 35px; padding-right:0">
                         <div class="tracking-row">
                             <div class="tracking-col1">
@@ -35,8 +35,9 @@
                                 <label>Turing Number : </label>
                             </div>
                             <div class="tracking-col2">
-                                <img src="images/test-number-tracking.png" alt="" style="float:left"/>
-                                <input type="text"  style="float:right; width:70%; margin-left:18px"/>
+                                <?php echo $cap['image'];?>
+                                <br/>
+                        		<input type="text" name="captcha" value="" />
                             </div>
                         </div>
                         <div class="tracking-row" align="right">
