@@ -677,7 +677,7 @@ class Welcome extends Shop_Controller
                             'label'=>$this->lang->line('webshop_email_confirm'),
                             'rules'=>"trim|required|valid_email"
                             );
-            $config[] = array(ng c
+            $config[] = array(
                             'field'=>'password',
                             'label'=>$this->lang->line('webshop_pass_word'),
                             'rules'=>"trim|required"
