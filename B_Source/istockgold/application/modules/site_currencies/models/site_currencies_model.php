@@ -3,7 +3,7 @@
  * This is for ci_bep
  *
  */
-class news_model extends CI_Model
+class site_currencies_model extends CI_Model
 {
 
     function __construct()

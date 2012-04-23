@@ -8,7 +8,6 @@ class MPages extends CI_Model
 		parent::__construct();
 	}
 
-
 	function getPage($id, $table=NULL){
 	    $data = array();
 	    $this->db->where('id',id_clean($id));

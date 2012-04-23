@@ -1,6 +1,12 @@
 <h2><?php echo $title;?></h2>
 <?php
 
+$test = "3";
+echo "<script language=javascript> 
+var tmp = \"$test\"
+alert(tmp)
+</script>";
+            			
 echo form_open('pages/admin/create');
 echo "\n<table id='preference_form'><tr><td class='label'><label for='menuname'>".$this->lang->line('kago_name')."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text');

@@ -61,7 +61,7 @@ if(!$pagecontent['lang_id']==0)
     echo $this->lang->line('kago_original').$original['content'];
 }
 echo "</td>";
-$data = array('name'=>'content','id'=>'long','rows'=>'30', 'cols'=>'80', 'value' => $pagecontent['content']);
+$data = array('name'=>'content','id'=>'long','rows'=>'16', 'cols'=>'150', 'value' => $pagecontent['content']);
 echo "<td id='nopad' >";
 echo form_textarea($data);
 ?>
@@ -84,7 +84,7 @@ echo form_hidden('id',$pagecontent['id']);
     <?php print $this->bep_assets->icon('disk');?>
     <?php print $this->lang->line('general_save');?>
     </button>
-
+    &nbsp;&nbsp;&nbsp;
     <a href="<?php print site_url($cancel_link);?>" class="negative">
     <?php print $this->bep_assets->icon('cross');?>
     <?php print $this->lang->line('general_cancel');?>

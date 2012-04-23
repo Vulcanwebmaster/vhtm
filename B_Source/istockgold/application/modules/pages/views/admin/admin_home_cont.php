@@ -11,7 +11,7 @@ if ($this->session->flashdata('message')){
 */
 if (count($pages))
 {
-  echo "<table id='tablesorter1' class='tablesorter' border='1' cellspacing='0' cellpadding='3' width='100%'>\n";
+  echo "<table id='tablesorter1' class='tablesorter' border='1' cellspacing='0' cellpadding='3' width='80%'>\n";
   echo "<thead>\n<tr valign='top'>\n";
   echo "<th>".$this->lang->line('kago_id')."</th>\n<th>".$this->lang->line('kago_name')."</th><th>".
             $this->lang->line('kago_full_path')."</th><th>".$this->lang->line('kago_status').
