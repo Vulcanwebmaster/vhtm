@@ -32,10 +32,10 @@
 			visibility: hidden;
 		}
 	</style>
-	<?php print anchor('admin_home/admin','<img src=base_url()."assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'))?> 
+	<?php print anchor('is_admin_home/admin','<img src="'.base_url().'assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'))?> 
 	<?php print anchor('currency/admin','<img src="'.base_url().'assets/images/admin/n_order_set.png" width="18" height="18" border="0" />'.$this->lang->line('istockgold_exchange_settings')) ?> 
-	<?php print anchor('site_currencies/admin','<img src="'.base_url().'assets/images/admin/n_currencies.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_site_currencies')) ?>
-	<?php print anchor('site_settings/admin','<img src="'.base_url().'assets/images/admin/n_settings.gif" width="19" height="18" border="0" />'.$this->lang->line('istockgold_site_settings')) ?>
+	<?php print anchor('is_site_currencies/admin','<img src="'.base_url().'assets/images/admin/n_currencies.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_site_currencies')) ?>
+	<?php print anchor('is_site_settings/admin','<img src="'.base_url().'assets/images/admin/n_settings.gif" width="19" height="18" border="0" />'.$this->lang->line('istockgold_site_settings')) ?>
 	<div id="status_box">
 		<form id="form1" name="form1" method="post" action="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  .htm">
 		<table width="99%" border="0" cellspacing="1" cellpadding="0" class="rates" style="background-color: #F3F3F3">

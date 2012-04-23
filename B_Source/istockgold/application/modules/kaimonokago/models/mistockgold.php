@@ -175,7 +175,12 @@ class MIStockGold extends Base_model
             $idname = 'customer_id';
             $this->db->where($idname, id_clean($_POST['customer_id']));
         }
-        else
+        elseif($module =='currency')
+        {// omc_cutomer has customer_id
+            $idname = 'c_id';
+            $this->db->where($idname, $data['c_id']);
+        }
+        else 
         {
             $idname = 'id';
             $this->db->where($idname, id_clean($_POST['id']));

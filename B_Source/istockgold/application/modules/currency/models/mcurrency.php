@@ -67,20 +67,20 @@ class MCurrency extends CI_Model
         return $data;
     }
     
-	function getAllCurency()
-    {
-        // getting all the currency
-        $data = array();
-        $Q = $this->db->query('SELECT * FROM is_currency');
-        if ($Q->num_rows() > 0)
-        {
-            foreach ($Q->result_array() as $row)
-            {
-                $data[] = $row;
-            }
-        }
-        $Q->free_result();
-        return $data;
-    }
+//	function getAllCurency()
+//    {
+//        // getting all the currency
+//        $data = array();
+//        $Q = $this->db->query('SELECT * FROM is_currency');
+//        if ($Q->num_rows() > 0)
+//        {
+//            foreach ($Q->result_array() as $row)
+//            {
+//                $data[] = $row;
+//            }
+//        }
+//        $Q->free_result();
+//        return $data;
+//    }
 }//end class
 ?>

@@ -2,9 +2,7 @@
 	<div id="page_title">
 		<h1>Exchange settings</h1>
 	</div>
-	<a href="http://demo.auto-exchanger.com/admin/adm_currencies/?Show=All">
-		<img width="22" height="10" border="0" src="<?php echo base_url();?>assets/images/admin/n_all_rows.png">
-		Show All currencies</a> <a href="http://demo.auto-exchanger.com/admin/adm_currencies/?Action=Add">
+	<a href="http://demo.auto-exchanger.com/admin/adm_currencies/?Action=Add">
 			<img width="16" height="16" border="0" src="<?php echo base_url();?>assets/images/admin/n_add.png">
 			Add new currency</a>
 	<style type="text/css">
@@ -19,7 +17,7 @@
 			line-height: 16px !important;
 		}
 	</style>
-	<form action="./Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  _files/Auto-Exchanger Demo   Automatic currency exchange software - Auto-Exchanger demo  .htm" method="post" name="form1" id="form1">
+	<form action="<?php echo base_url()?>index.php/currency/admin/edit" method="post" name="form1" id="form1">
 	<div style="width: 99%">
 		<table cellspacing="0" cellpadding="0" border="0" class="rates">
 			<tbody>
@@ -37,62 +35,77 @@
 					<td nowrap="" style="font-size: 11px;">Show<br>as<br>destination</td>
 				</tr>
 				
-				<tr class="col1">
-					<td>3</td>
-					<td>LibertyReserve</td>
-					<td>Usd</td>
-					<td>
-						<select name="exchange_status|3">
-							<option selected="" value="1">Yes</option>
-							<option value="0">No</option>
-						</select>
-					</td>
-					<td><input type="text" size="5" value="" name="exchange_accept_limit|3"></td>
-					<td><input type="text" size="5" value="0" name="exchange_max_fee|3"></td>
-					<td><input type="text" size="5" value="0.01" name="exchange_min|3"></td>
-					<td><input type="text" size="5" value="5000" name="exchange_max|3"></td>
-					<td><input type="text" size="5" value="1050.564" name="reserve_amount|3"></td>
-					<td>
-						<select name="show_as_source|3">
-							<option selected="" value="1">Yes</option>
-							<option value="0">No</option>
-						</select>
-					</td>
-					<td>
-						<select name="show_as_destination|3">
-							<option selected="" value="1">Yes</option>
-							<option value="0">No</option>
-						</select>
-					</td>
-				</tr>
-				<tr class="col0">
-					<td>4</td>
-					<td>WesternUnion</td>
-					<td>Usd</td>
-					<td>
-						<select name="exchange_status|4">
-							<option selected="" value="1">Yes</option>
-							<option value="0">No</option>
-						</select>
-					</td>
-					<td><input type="text" size="5" value="600" name="exchange_accept_limit|4"></td>
-					<td><input type="text" size="5" value="0" name="exchange_max_fee|4"></td>
-					<td><input type="text" size="5" value="0.01" name="exchange_min|4"></td>
-					<td><input type="text" size="5" value="5000" name="exchange_max|4"></td>
-					<td><input type="text" size="5" value="390" name="reserve_amount|4"></td>
-					<td>
-						<select name="show_as_source|4">
-							<option selected="" value="1">Yes</option>
-							<option value="0">No</option>
-						</select>
-					</td>
-					<td>
-						<select name="show_as_destination|4">
-							<option selected="" value="1">Yes</option>
-							<option value="0">No</option>
-						</select>
-					</td>
-				</tr>
+				<?php 
+				if (count($currencies))
+				{
+					$i = 0;
+					foreach ($currencies as $key => $list)
+					{
+						if($i % 2 == 0)
+							echo "<tr class=\"col1\">";
+						else
+							echo "<tr class=\"col0\">";
+							
+						echo "<td>".$list['c_id']."</td>";
+						echo "<td>".$list['c_name']."</td>";
+						echo "<td>".$list['c_metal_name']."</td>";
+						if ($list['status']=="1")
+							echo "<td>
+									<select name=\"status".$list['c_id']."\">
+										<option selected=\"\" value=\"1\">Yes</option>
+										<option value=\"0\">No</option>
+									</select>
+								 </td>";
+						else
+							echo "<td>
+									<select name=\"status".$list['c_id']."\">
+										<option value=\"1\">Yes</option>
+										<option selected=\"\" value=\"0\">No</option>
+									</select>
+								 </td>";
+							
+						echo "<td><input type=\"text\" size=\"5\" value=\"".$list['c_limit']."\" name=\"c_limit".$list['c_id']."\"></td>";
+						echo "<td><input type=\"text\" size=\"5\" value=\"".$list['c_max_fee']."\" name=\"c_max_fee".$list['c_id']."\"></td>";
+						echo "<td><input type=\"text\" size=\"5\" value=\"".$list['c_ex_min']."\" name=\"c_ex_min".$list['c_id']."\"></td>";
+						echo "<td><input type=\"text\" size=\"5\" value=\"".$list['c_ex_max']."\" name=\"c_ex_max".$list['c_id']."\"></td>";
+						echo "<td><input type=\"text\" size=\"5\" value=\"".$list['c_reserve']."\" name=\"c_reserve".$list['c_id']."\"></td>";
+						
+						if ($list['is_show_src']=="1")
+							echo "<td>
+									<select name=\"is_show_src".$list['c_id']."\">
+										<option selected=\"\" value=\"1\">Yes</option>
+										<option value=\"0\">No</option>
+									</select>
+								 </td>";
+						else
+							echo "<td>
+									<select name=\"is_show_src".$list['c_id']."\">
+										<option value=\"1\">Yes</option>
+										<option selected=\"\" value=\"0\">No</option>
+									</select>
+								 </td>";
+							
+						if ($list['is_show_dst']=="1")
+							echo "<td>
+									<select name=\"is_show_dst".$list['c_id']."\">
+										<option selected=\"\" value=\"1\">Yes</option>
+										<option value=\"0\">No</option>
+									</select>
+								 </td>";
+						else
+							echo "<td>
+									<select name=\"is_show_dst".$list['c_id']."\">
+										<option value=\"1\">Yes</option>
+										<option selected=\"\" value=\"0\">No</option>
+									</select>
+								 </td>";
+							
+						echo "</tr>";
+						$i = $i + 1;
+					}
+				}
+				?>
+								
 				
 				<tr class="tablefirstrow">
 					<td nowrap="" style="font-size: 11px;">Cid</td>
