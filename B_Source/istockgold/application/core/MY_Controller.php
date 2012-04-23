@@ -59,6 +59,7 @@ class MY_Controller extends CI_Controller
 
 		// Loading kaimonokago model
         $this->load->model('kaimonokago/MKaimonokago');
+        $this->load->model('kaimonokago/MIStockGold');
 		// Display page debug messages if needed
 		if ($this->preference->item('page_debug'))
 		{
