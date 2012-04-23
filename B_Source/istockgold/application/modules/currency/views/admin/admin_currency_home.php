@@ -2,7 +2,7 @@
 	<div id="page_title">
 		<h1>Exchange settings</h1>
 	</div>
-	<a href="http://demo.auto-exchanger.com/admin/adm_currencies/?Action=Add">
+	<a href="<?php echo base_url()?>index.php/currency/admin/add">
 			<img width="16" height="16" border="0" src="<?php echo base_url();?>assets/images/admin/n_add.png">
 			Add new currency</a>
 	<style type="text/css">

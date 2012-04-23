@@ -34,10 +34,38 @@ class Admin extends Shop_Admin_Controller
             'status'			=> $this->input->post('status'.$id),
             'c_limit'			=> $this->input->post('c_limit'.$id),
             'c_max_fee'			=> $this->input->post('c_max_fee'.$id),
-            'c_ex_max'          => $this->input->post('c_ex_max'.$id),
+            'c_ex_min'          => $this->input->post('c_ex_min'.$id),
+        	'c_ex_max'          => $this->input->post('c_ex_max'.$id),
             'c_reserve'			=> $this->input->post('c_reserve'.$id),
             'is_show_src'		=> $this->input->post('is_show_src'.$id),
             'is_show_dst'		=> $this->input->post('is_show_dst'.$id)
+        );
+        return $data;
+    }
+    
+	function _fields_for_adding()
+    {
+        $data = array(
+        	'c_name'			=> $this->input->post('c_name0'),
+        	'c_metal_name'		=> $this->input->post('c_metal_name0'),
+            'status'			=> $this->input->post('status0'),
+            'c_limit'			=> $this->input->post('c_limit0'),
+            'c_max_fee'			=> $this->input->post('c_max_fee0'),
+        	'c_ex_min'			=> $this->input->post('c_ex_min0'),
+            'c_ex_max'          => $this->input->post('c_ex_max0'),
+            'c_reserve'			=> $this->input->post('c_reserve0'),
+            'is_show_src'		=> $this->input->post('is_show_src0'),
+            'is_show_dst'		=> $this->input->post('is_show_dst0')
+        );
+        return $data;
+    }
+    
+    function _fields_for_adding_rate($src_id, $dst_id)
+    {
+    	$data = array(
+        	'c_id_src'			=> $src_id,
+        	'c_id_dst'			=> $dst_id,
+            'rate_dst'			=> 1
         );
         return $data;
     }
@@ -59,72 +87,46 @@ class Admin extends Shop_Admin_Controller
         $this->load->view('admin/admin_home_cont',$data);
     }
 
-    function create()
+    function add()
     {
-    	$test = "5";
-    	echo "<script language=javascript> 
-			var tmp = \"$test\"
-			alert(tmp)
-			</script>";
+    	if ($this->input->post('c_name0'))
+        {	
+        	//Get all ID Currencies
+	        $fields = array('c_id');
+	        $orderby = array('c_id');
+	        $data['currencies'] = $this->MIStockGold->getAll($this->module,$fields, $orderby);
+	    	
+	        $cur_id = array();
+	        foreach ($data['currencies'] as $key => $list)
+	        {
+	        	array_push($cur_id, $list['c_id']);
+	        }
+	        //Get all ID Currencies - End
+	        
+	        
+            $data = $this->_fields_for_adding();
+            $new_id = $this->MIStockGold->addItem($this->module,$data,TRUE);
             
-        // We need TinyMCE, so load it
-        $this->bep_assets->load_asset_group('TINYMCE');
-        $multilang = $this->preference->item('multi_language');
-        $data['multilang']=$multilang;
-        if ($this->input->post('name'))
-        {
-            // if info is filled in then do this
-            //$data = $this->_fields();
-            $this->MIStockGold->addItem($this->module,$data);
-//            $this->MPages->addPage();
-            // This is CI way to show flashdata
-            // $this->session->set_flashdata('message','Page created');
-            // But here we use Bep way to display flash msg
-            flashMsg('success',$this->lang->line('kago_page_created'));
-            // and redirect to this index page
+            foreach($cur_id as $old_id)
+            {
+            	$data2 = $this->_fields_for_adding_rate($new_id, $old_id);
+            	$this->MIStockGold->addItem('rate',$data2);
+            	
+            	$data2 = $this->_fields_for_adding_rate($old_id, $new_id);
+            	$this->MIStockGold->addItem('rate',$data2);
+            }
+            
+            flashMsg('success',"Added successfully.");
             redirect( $this->module.'/admin/index','refresh');
         }
         else
         {
-            // this must be first visit to the creat page
-            $data['title'] = $this->lang->line('kago_create_page');
-            $data['menus'] = $this->MMenus->getAllMenusDisplay();
-
-            // Set breadcrumb
-            $this->bep_site->set_crumb($this->lang->line('kago_create'),'pages/admin/create');
-            $data['header'] = $this->lang->line('backendpro_access_control');
-            // Setting up page and telling which module
-            $data['cancel_link']= $this->module."/admin/index/";
-            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_pages_create";
+            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_currency_add";
             $data['module'] = $this->module;
-            $test = "1";
-			echo "<script language=javascript> 
-			var tmp = \"$test\"
-			alert(tmp)
-			</script>";
             $this->load->view($this->_container,$data);
         }
     }
 
-	function makestring($array)
-	{
-		$outval = "";
-		foreach($array as $key=>$value) 
-		{
-			if(is_array($value))
-			{
-				$outval .= "$key\n";
-				$outval .= makestring($value);
-			}
-			else 
-			{
-				$outval .= "$key: $value\n";
-			}
-		} 
-		return $outval;
-	} 
-
-//    function edit($id=0)
     function edit()
     {
     	$fields = array('c_id');
@@ -137,29 +139,12 @@ class Admin extends Shop_Admin_Controller
         	array_push($cur_id, $list['c_id']);
         }
         
-        $test2 = implode(" *** ",$cur_id);
-     		echo "<script language=javascript> 
-   			var tmp = \"$test2\"
-   			alert(tmp)
-   			</script>";
-        
         foreach ($cur_id as $str)
         {	
         	$data = $this->_fields($str);
-        	
-        	$test = $this->makestring($data);
-     		echo "<script language=javascript> 
-   			var tmp = \"$test\"
-   			alert(tmp)
-   			</script>";
-     		
             $this->MIStockGold->updateItem($this->module,$data);
-            //$this->MPages->updatePage();
-            // This is CI way to show flashdata
-            // $this->session->set_flashdata('message','Page updated');
     	}
-        // But here we use Bep way to display flash msg
-        //flashMsg('success',$this->lang->line('kago_page_updated'));
+        flashMsg('success',"Currencies were updated successfully.");
         redirect($this->module.'/admin/index','refresh');
     }
     	
