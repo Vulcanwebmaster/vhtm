@@ -45,21 +45,11 @@ class Admin extends Shop_Admin_Controller
         return $data;
     }
 
-    /*
-    * this is used for ajax function
-    */
-
-    function Ajaxgetupdate()
-    {
-        $data = $this->common_home();
-        $this->load->view('admin/admin_home_cont',$data);
-    }
-
     function _fields()
     {
         $data = array(
         'email'        => db_clean($_POST['mail']),
-        'password'    => $this->userlib->encode_password($this->input->post('password'))
+        'password'    => $this->userlib->encode_password($_POST['password0'])
         );
         return $data;
     }

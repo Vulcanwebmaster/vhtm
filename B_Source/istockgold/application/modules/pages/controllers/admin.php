@@ -88,12 +88,7 @@ class Admin extends Shop_Admin_Controller
 
     function create()
     {
-    	$test = "5";
-    	echo "<script language=javascript> 
-			var tmp = \"$test\"
-			alert(tmp)
-			</script>";
-            
+    	    
         // We need TinyMCE, so load it
         $this->bep_assets->load_asset_group('TINYMCE');
         $multilang = $this->preference->item('multi_language');
@@ -124,11 +119,6 @@ class Admin extends Shop_Admin_Controller
             $data['cancel_link']= $this->module."/admin/index/";
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_pages_create";
             $data['module'] = $this->module;
-            $test = "1";
-			echo "<script language=javascript> 
-			var tmp = \"$test\"
-			alert(tmp)
-			</script>";
             $this->load->view($this->_container,$data);
         }
     }

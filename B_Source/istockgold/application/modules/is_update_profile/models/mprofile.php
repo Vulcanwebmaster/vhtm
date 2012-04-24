@@ -31,18 +31,15 @@ class MProfile extends CI_Model
     {
     	if (isset($data['password']))
     	{
-    		$data = array( 
-			'email' => $data['email'],
-			'password' => $data['password']);
-    		$this->db->where('id',1);
+		   	$this->db->where('id',1);
     		$this->db->update('be_users', $data);
     	}
 		else
 		{
-    		$data = array( 
+    		$data_new = array(
 			'email' => $data['email']);
     		$this->db->where('id',1);
-			$this->db->update('be_users', $data);
+			$this->db->update('be_users', $data_new);
 		}
     }
 }
