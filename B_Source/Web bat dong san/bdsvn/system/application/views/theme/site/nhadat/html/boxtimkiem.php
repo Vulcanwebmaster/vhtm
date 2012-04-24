@@ -35,16 +35,11 @@ $this->CI->db->where('idquan',0);
 $query = $this->CI->db->get('thanhpho');
 $listtp = $query->result();
 ?>
+<?=form_open(base_url().'nhadat/timkiem')?> 
 <div id="divSearchRe">
 
 		<div class="title"><h1>Công cụ tìm kiếm</h1></div>
-		<div class="content">	   
-			<div class="tabs">
-		<div id="divTab"> </div>
-		<div id="divTabRESale" onclick="ShowTab(1);">Nhà đất bán</div>
-		<div id="divTabREBorrow" onclick="ShowTab(2);">Nhà đất<br /> cho thuê</div>
-		<div id="divTabRESaler" onclick="ShowTab(3);">Tìm môi giới</div>		
-	</div>
+		<div class="content">
     <div style="clear:both;">
        <form action="" method="post" id="frmSearchProduct" name="frmSearchProduct">
         <div id="divOfSeach">
@@ -53,19 +48,28 @@ $listtp = $query->result();
                     <li>
                         <span id="listCategoryRe">
                             <select class="inputbox-blue" id="cboTypeRe" name="cboTypeRe">
-                            <option value="">---Chọn Loại nhà đất---</option>
-							<option value="0">Cho thuê nhà xưởng</option>
-                            <option value="1">Bán nhà xưởng</option>
-                            <option value="2">Hợp tác kinh doanh</option>
-                            <option value="2">Cho thuê đất</option>
+                            <option value="0">---Chọn loại tin---</option>
+                            <option value="1">Cần bán</option>
+                            <option value="2">Cần mua</option>
+                            <option value="2">Cần thuê</option>
                             <option value="2">Cho thuê</option>
-</select>
+							</select>
+                        </span>
+                    </li>
+					<li>
+                        <span id="listCategoryRe">
+                            <select class="inputbox-blue" id="cboTypeRe" name="cboTypeRe">
+                            <option value="0">---Chọn danh mục---</option>
+							<?foreach($listdm as $rs):?>
+                            	<option value="<?=$rs->iddm?>"><?=$rs->danhmuc?></option>
+                            <?endforeach;?>
+							</select>
                         </span>
                     </li>
                     <li>
                         <span id="listCity">
                             <select class="inputbox-blue" id="cboCity" name="cboCity">
-                            	<option value="">---Chọn Tỉnh-Thành phố---</option>
+                            	<option value="0">---Chọn Tỉnh-Thành phố---</option>
 								<?foreach($listtp as $rs):?>
                             		<option value="<?=$rs->idthanhpho?>"><?=$rs->ten?></option>
                             	<?endforeach;?> 
@@ -74,60 +78,81 @@ $listtp = $query->result();
                     </li>
                     <li>
                         <span id="listDistrict">
-                            <select class="inputbox-blue" id="cboDistrict" name="cboDistrict"><option value="">---Chọn Quận/Huyện---</option>
-</select>
+                            <select class="inputbox-blue" id="cboDistrict" name="cboDistrict">
+                            	<option value="0">---Chọn giá từ---</option>
+								<option value="1000000"> &nbsp;&nbsp; 1 triệu</option>
+	                            <option value="5000000"> &nbsp;&nbsp; 5 triệu</option>
+	                            <option value="10000000"> &nbsp;10 triệu</option>
+	                            <option value="15000000"> &nbsp;15 triệu</option>
+	                            <option value="20000000"> &nbsp;20 triệu</option>
+	                            <option value="40000000"> &nbsp;40 triệu</option>
+	                            <option value="50000000"> &nbsp;50 triệu</option>
+	                            <option value="100000000">100 triệu</option>
+	                            <option value="200000000">200 triệu</option>
+	                            <option value="500000000">500 triệu</option>
+	                            <option value="1000000000"> &nbsp;1 tỷ</option>
+	                            <option value="2000000000"> &nbsp;2 tỷ</option>
+	                            <option value="3000000000"> &nbsp;3 tỷ</option>
+	                            <option value="4000000000"> &nbsp;4 tỷ</option>
+	                            <option value="5000000000"> &nbsp;5 tỷ</option>
+	                            <option value="6000000000"> &nbsp;6 tỷ</option>
+	                            <option value="7000000000"> &nbsp;7 tỷ</option>
+	                            <option value="8000000000"> &nbsp;8 tỷ</option>
+	                            <option value="9000000000"> &nbsp;9 tỷ</option>
+	                            <option value="10000000000">10 tỷ</option>
+	                            <option value="30000000000">30 tỷ</option>
+							</select>
                         </span>
                     </li>
                     <li>
                         <span>
                             <select class="inputbox-blue" id="cboArea" name="cboArea" onchange="SearchCount();">
-								<option value="">---Chọn Diện tích---</option>
-								<option value="0">Không xác định</option>
-								<option value="1">&le; 30 m2</option>
-								<option value="2">30-50 m2</option>
-								<option value="3">50-80 m2</option>
-								<option value="4">80-100 m2</option>
-								<option value="5">100-150 m2</option>
-								<option value="6">150-200 m2</option>
-								<option value="7">200-250 m2</option>
-								<option value="8">250-300 m2</option>
-								<option value="9">300-500 m2</option>
-								<option value="10">&ge;500 m2</option>
+								<option value="0">---Đến giá---</option>
+	                            <option value="1000000"> &nbsp;&nbsp; 1 triệu</option>
+	                            <option value="5000000"> &nbsp;&nbsp; 5 triệu</option>
+	                            <option value="10000000"> &nbsp;10 triệu</option>
+	                            <option value="15000000"> &nbsp;15 triệu</option>
+	                            <option value="20000000"> &nbsp;20 triệu</option>
+	                            <option value="40000000"> &nbsp;40 triệu</option>
+	                            <option value="50000000"> &nbsp;50 triệu</option>
+	                            <option value="100000000">100 triệu</option>
+	                            <option value="200000000">200 triệu</option>
+	                            <option value="500000000">500 triệu</option>
+	                            <option value="1000000000"> &nbsp;1 tỷ</option>
+	                            <option value="2000000000"> &nbsp;2 tỷ</option>
+	                            <option value="3000000000"> &nbsp;3 tỷ</option>
+	                            <option value="4000000000"> &nbsp;4 tỷ</option>
+	                            <option value="5000000000"> &nbsp;5 tỷ</option>
+	                            <option value="6000000000"> &nbsp;6 tỷ</option>
+	                            <option value="7000000000"> &nbsp;7 tỷ</option>
+	                            <option value="8000000000"> &nbsp;8 tỷ</option>
+	                            <option value="9000000000"> &nbsp;9 tỷ</option>
+	                            <option value="10000000000">10 tỷ</option>
+	                            <option value="30000000000">30 tỷ</option>
 </select>
                         </span>
                     </li>
                     <li>
                         <span id="divPrice">
-                            <select class="inputbox-blue" id="cboPrice" name="cboPrice"><option value="">---Chọn mức giá---</option>
-</select>
+                            <select class="inputbox-blue" id="cboPrice" name="cboPrice">
+                            	<option value="0">---Chọn hướng nhà---</option>
+								<?foreach($listhuong as $rs):?>
+									<option value="<?=$rs->idhuong?>"><?=$rs->tenhuong?></option>
+								<?endforeach;?>
+							</select>
                         </span>
                     </li>                   
                     <li class="adv-search" style="display:none">
                         <span> 
                         <select class="inputbox-blue" id="cboBedRoom" name="cboBedRoom" onchange="SearchCount();">
-                        <option value="">---Chọn số phòng---</option>
-						<option value="0">Không xác định</option>
-						<option value="1">1+</option>
-						<option value="2">2+</option>
-						<option value="3">3+</option>
-						<option value="4">4+</option>
-						<option value="5">5+</option>
 						</select> 
 						</span>
                     </li>
                     <li class="adv-search" style="display:none">
                         <span>
                         <select class="inputbox-blue" id="cboHomeDirection" name="cboHomeDirection" onchange="SearchCount();">
-	                        <option value="">---Chọn hướng nhà---</option>
-							<option value="0">Không xác định</option>
-							<option value="1">Đông</option>
-							<option value="2">Tây</option>
-							<option value="3">Nam</option>
-							<option value="4">Bắc</option>
-							<option value="5">Đông-Bắc</option>
-							<option value="6">Tây-Bắc</option>
-							<option value="7">Tây-Nam</option>
-							<option value="8">đông-Nam</option>
+	                        <option value="0">---Chọn hướng nhà---</option>
+
 						</select>
 						</span>
                     </li>
@@ -202,7 +227,7 @@ $listtp = $query->result();
 					</ul>
 					<div class="btn">
 						<input type="image" src="<?php echo base_url();?>images/bdscomvn/before.png" onmouseover="this.src='<?php echo base_url();?>after.png'" 
-							onmouseout="this.src='<?php echo base_url();?>images/bdscomvn/before.png'/*tpa=http://media.batdongsan.com.vn/images/tab/before.png*/" onclick="this.frmBrokerSearch.submit();" /></div>   
+							onmouseout="this.src='<?php echo base_url();?>images/bdscomvn/before.png'" onclick="timkiem()" name="search" /></div>   
 					<div class="lay-clear"></div>
 				</div>
 				</form>
@@ -210,3 +235,22 @@ $listtp = $query->result();
     </div>
     </div>
 </div>
+<?=form_close();?>
+<script type="text/javascript">
+function timkiem()
+{ 
+    var nhucau=$("#nhucau").val();
+    var sectionid=$("#sectionid").val();
+    var giatu=$("#giatu").val();
+    var giaden=$("#giaden").val();
+    var id_thanhpho=$("#id_thanhpho").val();
+    var idhuong=$("#idhuong").val();
+    var page_no ='0';
+    $.post("<?=base_url()?>nhadat/timkiem/",{'nhucau':nhucau,'sectionid':sectionid,'giatu':giatu,'giaden':giaden,'id_thanhpho':id_thanhpho,'idhuong':idhuong},function(data)
+            {
+                //if (data!='')
+                $("#nhadat").html(data);
+            }); 
+}
+
+</script>

@@ -55,6 +55,7 @@
 * Tìm kiem
 */
       function timkiem(){
+			$data['title'] = "THUÊ NHÀ XƯỞNG - TÌM KIẾM";      		
           $data['sectionid'] = (int)$this->input->post('sectionid');
           $data['nhucau'] = (int)$this->input->post('nhucau');
           $data['giatu'] = (int)$this->input->post('giatu');
@@ -72,8 +73,8 @@
               $start = 0;   
           $data['list'] =   $this->nhadat->getTimkiem($limit,$start);
           
-          $url = base_url().'ebook/danhmuccon/'; 
-          $data['pagination']   = $this->pagination_library->pagination($num,$offset,$limit,$url); 
+          $url = base_url().'ebook/danhmuccon/';
+          	$data['pagination']   = $this->pagination_library->pagination($num,$offset,$limit,$url); 
                     
           $this->load->view('site/nhadat/timkiem',$data);
      }

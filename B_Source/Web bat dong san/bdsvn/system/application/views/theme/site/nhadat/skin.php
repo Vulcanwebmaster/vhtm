@@ -499,6 +499,7 @@
         <div class="bottomline">
         </div>
 		<?=$this->load->view("theme/site/nhadat/html/footer")?>
+		</div>
 </body>
 </html>
         

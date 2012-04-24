@@ -514,17 +514,17 @@ padding-bottom:5px;padding-left:10px;
 #divSearchRe{overflow:hidden;width:250px;}
 #divSearchRe .title
 {
-    background: url('http://media.batdongsan.com.vn/images/tab/1a.jpg') /*tpa=http://media.batdongsan.com.vn/images/tab/1a.jpg*/;
+    background: url('images/1a.jpg') /*tpa=http://media.batdongsan.com.vn/images/tab/1a.jpg*/;
     height: 32px;
 }
 #divSearchRe .title h1{ color: white; font-weight: bold; font-size: 13px; margin:0; padding: 8px 0 0 15px; text-align: center;}
-#divSearchRe .content{background: url('http://media.batdongsan.com.vn/images/tab/13a.jpg') no-repeat center bottom/*tpa=http://media.batdongsan.com.vn/images/tab/13a.jpg*/ ; 
+#divSearchRe .content{background: url('images/13a.jpg') no-repeat center bottom/*tpa=http://media.batdongsan.com.vn/images/tab/13a.jpg*/ ; 
 padding: 0 7px;height:275px;
 }
 #divSearchRe .tabs{font-weight:bold; color:#0081AF;}	
 #divSearchRe .divSearchInAct{border-left: 1px solid #a7dcfe;
     border-bottom: 1px solid #a7dcfe;
-    line-height:15px; text-align:center; background: url('images/bdscomvn/2.jpg') repeat-x/*tpa=http://media.batdongsan.com.vn/images/tab/2.jpg*/;
+    line-height:15px; text-align:center; background: url('images/2.jpg') repeat-x/*tpa=http://media.batdongsan.com.vn/images/tab/2.jpg*/;
     border-right-style: none;
     border-right-color: inherit;
     border-right-width: medium;
@@ -541,7 +541,6 @@ padding: 0 7px;height:275px;
     float: left;
     border-bottom: 1px solid #a7dcfe;
     height: 30px;
-    background: url('../../images/bdscomvn/2.jpg') repeat-x /*tpa=http://media.batdongsan.com.vn/images/tab/2.jpg*/;
 }
 #divTabRESale{ width:71px;}
 #divTabREBorrow{ width:82px;}
@@ -552,7 +551,7 @@ padding: 0 7px;height:275px;
 #divOfSeach ul{list-style:none;}
 #divOfSeach ul li, #brokersearch ul li{padding: 2px 0; margin: 0; height: 22px;}
 #divSearchRe .inputbox-blue{padding: 2px; color:#515151;}
-#searchArea{height: 140px; overflow:auto;}
+#searchArea{height: 200px; overflow:auto;}
 #divSearchRe .text{text-align: right; padding-right: 20px;}
 #divSearchRe .text span{font-weight:bold; color:#994a2b;}		
 #divLabelSearchAdv{ clear:both; padding-bottom: 5px; padding-right: 20px; text-align: right;}
