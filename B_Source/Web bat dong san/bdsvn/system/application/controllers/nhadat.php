@@ -26,9 +26,9 @@
 			$data['nhadat'] = $this->nhadat->getAllNhaXuong($config['per_page'],$this->uri->segment('3'));
 			$data['pagination']    = $this->pagination->create_links();
 			
-          $data['chungcu'] = $this->nhadat->getchungcuvip();
-          $data['muaban'] = $this->nhadat->getmuaban();
-          $data['chothue'] = $this->nhadat->getchothue();
+			$data['chungcu'] = $this->nhadat->getchungcuvip();
+			$data['muaban'] = $this->nhadat->getmuaban();
+			$data['chothue'] = $this->nhadat->getchothue();
           
           
 			$this->_templates['page'] = 'site/nhadat/index';
@@ -40,42 +40,27 @@
 */
       function timkiem(){
 			$data['title'] = "THUÊ NHÀ XƯỞNG - TÌM KIẾM";      		
-          $data['sectionid'] = (int)$this->input->post('sectionid');
-          $data['nhucau'] = (int)$this->input->post('nhucau');
-          $data['giatu'] = (int)$this->input->post('giatu');
-          $data['giaden'] = (int)$this->input->post('giaden');
-          $data['id_thanhpho'] = (int)$this->input->post('id_thanhpho');
-          $data['idhuong'] = (int)$this->input->post('idhuong');
-          /*
-          $limit  =   '10';  
-          $data['limit'] = $limit; 
-          $offset = (int)$this->input->post('page_no'); 
-          $data['offset'] = $offset;
-          $num = $this->nhadat->getNumTimkiem();
-          if($offset!=0) 
-              $start = ($offset - 1) * $limit;
-          else
-              $start = 0;   
-          $data['list'] =   $this->nhadat->getTimkiem($limit,$start);
-          
-          $url = base_url().'nhadat/timkiem';
-			$data['pagination']   = $this->pagination_library->pagination($num,$offset,$limit,$url);
-			*/   
-			$config['base_url'] = base_url().'/'."nhadat/timkiem";
-			$config['total_rows']   =  $this->nhadat->getNumTimkiem();
-			$config['per_page']= '5';
-			$config['uri_segment'] = 3;
+			$data['sectionid'] = (int)$this->input->post('sectionid');
+			$data['nhucau'] = (int)$this->input->post('nhucau');
+			$data['giatu'] = (int)$this->input->post('giatu');
+			$data['giaden'] = (int)$this->input->post('giaden');
+			$data['id_thanhpho'] = (int)$this->input->post('id_thanhpho');
+			$data['idhuong'] = (int)$this->input->post('idhuong');
 			$limit  =   '10';  
 			$data['limit'] = $limit;
 			$offset = (int)$this->input->post('page_no');
 			$data['offset'] = $offset;
-			$this->pagination->initialize($config);
 			$num = $this->nhadat->getNumTimkiem();
 			if($offset!=0) 
 				$start = ($offset - 1) * $limit;
 			else
-				$start = 0; 
-			$data['list'] =   $this->nhadat->getTimkiem($limit,$start);
+				$start = 0;
+			$config['base_url'] = base_url().'/'."nhadat/timkiem";
+			$config['total_rows']   =  $this->nhadat->getNumTimkiem();
+			$config['per_page']= '5';
+			$config['uri_segment'] = 3;
+			$this->pagination->initialize($config); 
+			$data['list'] =   $this->nhadat->getTimkiem($config['per_page'],$this->uri->segment('3'));
 			$data['pagination']    = $this->pagination->create_links();                 
 			$this->load->view('site/nhadat/timkiem',$data);
      }
