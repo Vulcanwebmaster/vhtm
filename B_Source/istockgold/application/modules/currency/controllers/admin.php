@@ -72,11 +72,9 @@ class Admin extends Shop_Admin_Controller
 
     function common_home()
     {
-//        $data['title'] = $this->lang->line('kago_manage_page');
         $fields = array('c_id','c_name','c_metal_name','status','c_limit','c_max_fee','c_ex_max','c_reserve','is_show_src','is_show_dst');
         $orderby = array('c_id');
         $data['currencies'] = $this->MIStockGold->getAll($this->module,$fields, $orderby);
-//        $data['languages'] =$this->MLangs->getLangDropDownWithId();
         $data['module'] = $this->module;
         return $data;
     }

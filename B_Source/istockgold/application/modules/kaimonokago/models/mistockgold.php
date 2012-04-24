@@ -352,6 +352,10 @@ class MIStockGold extends Base_model
         if($table =='omc_customer')
         {
             $idname = 'customer_id';
+        }
+        elseif ($table = 'is_user')
+        {
+        	$idname = 'user_id';
         }  
         else 
         {

@@ -17,15 +17,15 @@ class Admin extends Shop_Admin_Controller
     {
         parent::__construct();
         // Check for access permission
-        $this->load->model('mexchange_order');
+        $this->load->model('MExchange_order');
         $this->module=basename(dirname(dirname(__FILE__)));
-        $this->module='exchange_orders';
+        $this->module='is_exchange_orders';
         mb_internal_encoding('UTF-8');
     }
 
     function index()
     {
-        //$data = $this->common_home();
+        $data = $this->common_home();
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_exchange_order_home";
         $this->load->view($this->_container,$data);
     }
@@ -36,13 +36,7 @@ class Admin extends Shop_Admin_Controller
 
     function common_home()
     {
-        $data['title'] = $this->lang->line('kago_category');
-        $fields = array('id','order','name','parentid','status','table_id','lang_id');
-        $orderby = array('table_id','lang_id','order','table_id');
-        //$data['categories'] = $this->MCats->getAllCategories();
-        $data['categories'] = $this->MKaimonokago->getAll($this->module,$fields, $orderby);
-        $data['header'] = $this->lang->line('backendpro_access_control');
-        $data['module'] = $this->module;
+        $data['orders'] = $this->MExchange_order->getAllOrder();
         return $data;
     }
 

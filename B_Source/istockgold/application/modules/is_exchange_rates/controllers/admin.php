@@ -26,7 +26,7 @@ class Admin extends Shop_Admin_Controller
     function index()
     {
         //$data = $this->common_home();
-        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_exchange_rate_home";
+        $data['rate'] = $this->config->item('backendpro_template_admin') . "admin_exchange_rate_home";
         $this->load->view($this->_container,$data);
     }
 
@@ -36,17 +36,16 @@ class Admin extends Shop_Admin_Controller
 
     function common_home()
     {
-        $data['title'] = $this->lang->line('kago_category');
-        $fields = array('id','order','name','parentid','status','table_id','lang_id');
-        $orderby = array('table_id','lang_id','order','table_id');
-        //$data['categories'] = $this->MCats->getAllCategories();
-        $data['categories'] = $this->MKaimonokago->getAll($this->module,$fields, $orderby);
-        $data['header'] = $this->lang->line('backendpro_access_control');
-        $data['module'] = $this->module;
+        $fields = array('c_id_src','c_id_dst','rate_dst','parentid');
+        $orderby = array('c_id_src','c_id_dst');
+        $data['rates'] = $this->MIStockGold->getAll('rate',$fields, $orderby);
+        
+        $fields = array('c_id','c_name');
+        $orderby = array('c_id');
+        $data['currencies'] = $this->MIStockGold->getAll('currency',$fields, $orderby);
+        
         return $data;
     }
-
-
 
     /*
     * this is used for ajax function
@@ -57,9 +56,6 @@ class Admin extends Shop_Admin_Controller
         $data = $this->common_home();
         $this->load->view('admin/admin_home_cont',$data);
     }
-
-
-    
 
     function _fields()
     {
@@ -78,44 +74,6 @@ class Admin extends Shop_Admin_Controller
         // $this->MKaimonokago->addItem($this->module, $data);
         return $data;
     }
-
-
-
-    function create()
-    {
-        $this->bep_assets->load_asset_group('TINYMCE');
-
-        if ($this->input->post('name'))
-        {
-            //$this->MCats->addCategory();
-            $data = $this-> _fields();
-            $this->MKaimonokago->addItem($this->module, $data);
-            $string = $this->input->post('name');
-            // createdirname function is from plugin mytools.php
-            $folder = createdirname($string);
-            $folder = 'assets/images/'.$folder;
-            create_path($folder);
-            // we used to use like this. $this->session->set_flashdata('message','Category created');
-            // now we are using Bep's flashMsg function to show messages.
-            flashMsg('success',$this->lang->line('userlib_category_created'));
-            redirect($this->module.'/admin/index','refresh');
-        }
-        else
-        {
-            $data['title'] = "Create Category";
-            $data['categories'] = $this->MCats->getTopCategories();
-            //$data['right'] = 'admin/category_right';
-            // Set breadcrumb
-            $this->bep_site->set_crumb($this->lang->line('userlib_create')." category",'category/admin/create');
-            $data['header'] = $this->lang->line('backendpro_access_control');
-            // This is how BackendPro do
-            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_cat_create";
-            $data['cancel_link']= $this->module."/admin/index/";
-            $data['module'] = $this->module;
-            $this->load->view($this->_container,$data);
-        }
-    }
-
 
 
     function edit($id=0)
@@ -172,44 +130,6 @@ class Admin extends Shop_Admin_Controller
             $this->load->view($this->_container,$data);
         }
     }
-
-
-
-    function delete($id)
-    {
-        // delete button is hidden in the page, but
-        // check if parentid is not 0
-        $cate = $this->MCats->getCategory($id);
-        $parentid = $cate['parentid'];
-        if(!$parentid==0)
-        {
-            $cat = $this->MCats->getCategory($id);
-            $string = $cat['name'];
-            $catname = createdirname($string);
-            $catname = 'assets/images/'.$catname;
-            recursive_remove_directory($catname, $empty=FALSE);
-            $orphans = $this->MCats->checkOrphans($id);
-            if (count($orphans))
-            {
-                $this->session->set_userdata('orphans',$orphans);
-                redirect('category/admin/reassign/'.$id,'refresh');
-            }
-            else
-            {
-                $this->MCats->deleteCategory($id);
-                flashMsg('success',$this->lang->line('userlib_category_deleted'));
-                redirect('category/admin/index','refresh');
-            }
-        }
-        else 
-        {
-            $this->MCats->deleteCategory($id);
-            flashMsg('success',$this->lang->line('userlib_category_deleted'));
-            redirect('category/admin/index','refresh');
-        }
-    }
-
-
 
     function export()
     {
