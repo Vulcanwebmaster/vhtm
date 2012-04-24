@@ -1,6 +1,15 @@
 <?php
   class nhadat extends Controller{
       protected $_templates;
+      
+      function __construct()
+      {
+      	 session_start();          
+      	  parent::Controller();
+          $this->load->model('nhadat_model','nhadat');
+          $this->load->library('pagination_library');
+      }
+      
       function nhadat(){
           parent::Controller();
           $this->load->model('nhadat_model','nhadat');
@@ -8,19 +17,26 @@
       }
       function index(){
 			$data['title'] = 'THUÊ NHÀ XƯỞNG';
+			//Lay du lieu "rao vat" xap xep theo tin vip.
+			$config['base_url'] = base_url().'/'."nhadat/index";
+			$config['total_rows']   =  $this->nhadat->getNumNhaXuong();
+			$config['per_page']= '5';
+			$config['uri_segment'] = 3;
+			$this->pagination->initialize($config);
+			$data['nhadat'] = $this->nhadat->getAllNhaXuong($config['per_page'],$this->uri->segment('3'));
+			$data['pagination']    = $this->pagination->create_links();
+			
           $data['chungcu'] = $this->nhadat->getchungcuvip();
           $data['muaban'] = $this->nhadat->getmuaban();
           $data['chothue'] = $this->nhadat->getchothue();
-          session_start();
-          $_SESSION['kiemtra'] = 1; 
           //Them pagin cho phan tin vip - by tlx
-			$config['base_url'] = base_url().'/'."nhadat/index";  
-          	$config['total_rows']   =  $this->nhadat->getnumnhadatvip();
-          	$config['per_page']= '5';
-          	$config['uri_segment'] = 3;
-          	$this->pagination->initialize($config);
-          	$data['nhadat'] = $this->nhadat->getallnhadatvip($config['per_page'],$this->uri->segment('3'));
-          $data['pagination']    = $this->pagination->create_links();
+			//$config['base_url'] = base_url().'/'."nhadat/index";  
+          	//$config['total_rows']   =  $this->nhadat->getnumnhadatvip();
+          	//$config['per_page']= '5';
+          	//$config['uri_segment'] = 3;
+          	//$this->pagination->initialize($config);
+          	//$data['nhadat'] = $this->nhadat->getallnhadatvip($config['per_page'],$this->uri->segment('3'));
+          //$data['pagination']    = $this->pagination->create_links();
           
           //Them pagin cho phan tin thuong - by tlx
           $config1['base_url'] = base_url().'/'."nhadat/index/1";  
@@ -32,7 +48,7 @@
           $data['pagination1']    = $this->pagination->create_links();
           
 			$this->_templates['page'] = 'site/nhadat/index';
-          $this->site_library->load($this->_templates['page'],$data);
+			$this->site_library->load($this->_templates['page'],$data);
           
       }
 /**

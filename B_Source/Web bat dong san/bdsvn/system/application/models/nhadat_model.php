@@ -3,7 +3,36 @@
       function nhadat_model(){
           parent::Model();
       }
-      
+      //getnhadat() : by tlx
+		function getNhaXuong(){
+      		$query =$this->db->query("SELECT * FROM vnit_nhadat where bat=1 And (sectionid=2 OR sectionid=3) order by vip limit 10");
+      		return $query->result();
+      	}
+      	function getNumNhaXuong(){
+      		$query =$this->db->query("SELECT * FROM vnit_nhadat where bat=1 And (sectionid=2 OR sectionid=3) order by vip");
+      		return $query->num_rows();
+      	}
+		function getAllNhaXuong($num,$offset){
+			$this->db->where('bat',1);
+			$id = array ('2','3'); 
+			$this->db->where_in('sectionid', $id);
+			$this->db->order_by('vip','DESC');
+			$query = $this->db->get('nhadat',$num,$offset);
+			return $query->result();
+      }      
+		//end getnhadat()
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
       function getnhadatvip(){
       
           $query =$this->db->query("SELECT * FROM vnit_nhadat where bat=1 AND vip=1 AND dang=1 And (sectionid=2 OR sectionid=3) order by batdau DESC limit 5");

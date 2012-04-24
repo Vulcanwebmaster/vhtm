@@ -66,7 +66,7 @@
 <div id="footer">
     <div id="wrap_body">
         <div class="version">
-            <p>Trang thông tin Học Tập & Giải Trí ĐÈN ĐOM ĐÓM</p>
+            <p>Trang thông tin Học Tập và Giải Trí ĐÈN ĐOM ĐÓM</p>
             <p>Trang xem phim trực tuyến</p>
             <p>Website đươc phát triển dựa trên phiên bản 360vnit V2.0</p>
             <p>Copyright @ 2010 dendomdom.com</p>

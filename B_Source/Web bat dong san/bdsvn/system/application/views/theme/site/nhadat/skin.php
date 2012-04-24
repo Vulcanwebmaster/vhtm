@@ -85,66 +85,28 @@
 <!--*************** AD BANNER *****************-->
  <?php if($page == "site/nhadat/index"){?>
     <div class="product-for-you">
-<div class="product" id="divlistProduct">
-<?php if ($_SESSION['kiemtra']==2){?>
-<!--*************** HEADER OF LIST *****************-->
-    <div class="tab-hb" style="margin-top:0;">
-		<div id="tab0" class="tab-hb-inactive">
-			<div class="tab-hb-active-left"></div>
-			<div class="tab-hb-active-middle"><h2>Tip VIP</h2></div>
-			<div class="tab-hb-active-right"></div>
-		</div>
-		<div id="tab1" class="tab-hb-active">
-			<div class="tab-hb-inactive-left"></div>
-			<div class="tab-hb-inactive-middle">Tin rao vặt</div>
-			<div class="tab-hb-inactive-right"></div>
-		</div>
-    </div>
-<!--*************** CONTENT OF LIST *****************-->
-
-<!--  Goi TAB Tin Vip-->
-    <div id="prd_tab0">
-		<?php $this->load->view($page)?>
-	</div>
-  <!--  Goi TAB Tin rao vat-->
-    <div id="prd_tab1" style="display:none">
-		<?=$this->load->view($page."1")?>
-	</div>
-    
-    <div id="prd_tab2" style="display:none">
-    </div>
-</div>
-<?php } else {?>    
+<div class="product" id="divlistProduct"> 
 <!--*************** HEADER OF LIST *****************-->
     <div class="tab-hb" style="margin-top:0;">
 		<div id="tab0" class="tab-hb-active">
 			<div class="tab-hb-active-left"></div>
-			<div class="tab-hb-active-middle"><h2>Tip VIP</h2></div>
+			<div class="tab-hb-active-middle"><h2>Tin rao vặt</h2></div>
 			<div class="tab-hb-active-right"></div>
-		</div>
-		<div id="tab1" class="tab-hb-inactive">
-			<div class="tab-hb-inactive-left"></div>
-			<div class="tab-hb-inactive-middle">Tin rao vặt</div>
-			<div class="tab-hb-inactive-right"></div>
 		</div>
     </div>
 <!--*************** CONTENT OF LIST *****************-->
 
 <!--  Goi TAB Tin Vip-->
-    <div id="prd_tab0">
-		<?php $this->load->view($page)?>
+    <div id="prd_tab0" >
+    	<?php $this->load->view($page)?>		
 	</div>
   <!--  Goi TAB Tin rao vat-->
-    <div id="prd_tab1" style="display:none">
-		<?=$this->load->view($page."1")?>
+    <div id="prd_tab1" >
 	</div>
     
-    <div id="prd_tab2" style="display:none">
+    <div id="prd_tab2">
     </div>
 </div>
-
-
-
 <script type="text/javascript">
     $("#tab0").mouseover(
 		function () {
@@ -160,7 +122,6 @@
 		    $("#tab0 .tab-hb-inactive-right").removeClass("tab-hb-inactive-right").addClass("tab-hb-active-right");
 		    $("#prd_tab0").css("display", "block");
 		    $("#prd_tab1").css("display", "none");
-		    $("#prd_tab2").css("display", "none");
 		}
 	);
 
@@ -178,39 +139,16 @@
 		    $("#tab1 .tab-hb-inactive-right").removeClass("tab-hb-inactive-right").addClass("tab-hb-active-right");
 		    $("#prd_tab1").css("display", "block");
 		    $("#prd_tab0").css("display", "none");
-		    $("#prd_tab2").css("display", "none");
 		}
 		);
-
-    $("#tab2").mouseover(
-		function () {
-		    $("#tab2").css("cursor", "default");
-		    $("#divlistProduct .tab-hb-active").removeClass("tab-hb-active").addClass("tab-hb-inactive");
-		    $("#divlistProduct .tab-hb-active-left").removeClass("tab-hb-active-left").addClass("tab-hb-inactive-left");
-		    $("#divlistProduct .tab-hb-active-middle").removeClass("tab-hb-active-middle").addClass("tab-hb-inactive-middle");
-		    $("#divlistProduct .tab-hb-active-right").removeClass("tab-hb-active-right").addClass("tab-hb-inactive-right");
-
-		    $("#tab2").removeClass("tab-hb-inactive").addClass("tab-hb-active");
-		    $("#tab2 .tab-hb-inactive-left").removeClass("tab-hb-inactive-left").addClass("tab-hb-active-left");
-		    $("#tab2 .tab-hb-inactive-middle").removeClass("tab-hb-inactive-middle").addClass("tab-hb-active-middle");
-		    $("#tab2 .tab-hb-inactive-right").removeClass("tab-hb-inactive-right").addClass("tab-hb-active-right");
-		    $("#prd_tab2").css("display", "block");
-		    $("#prd_tab0").css("display", "none");
-		    $("#prd_tab1").css("display", "none");
-		}
-	);
 </script>
 
     </div>
     <div class="lay-clear">
     </div>
     <div>
-		
-
-
     </div>
-    <?php }?>
-    <?php } else {?>
+<?php } else {?>
     <!--*************** HEADER OF LIST *****************-->
     <div class="tab-hb" style="margin-top:0;">
 		<div id="tab0" class="tab-hb-active">

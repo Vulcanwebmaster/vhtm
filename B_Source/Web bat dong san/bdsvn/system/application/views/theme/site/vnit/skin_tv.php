@@ -39,8 +39,9 @@
                         <ul>
                             <li class="vtv">
                                 <a href="<?=base_url()?>tv/vtv1.html">
-                                    <img src="<?=base_url()?>system/application/views/theme/site/vnit/images/tv/vtv1.png" alt=""></li>
+                                    <img src="<?=base_url()?>system/application/views/theme/site/vnit/images/tv/vtv1.png" alt="">
                                 </a>
+							</li>
                             <li class="vtv">
                                 <a href="<?=base_url()?>tv/vtv2.html">
                                     <img src="<?=base_url()?>system/application/views/theme/site/vnit/images/tv/vtv2.png" alt="">
@@ -219,7 +220,7 @@
             <div style="width: 100%;float: left;">
                 <div class="content_text">
                 <p>
-                    <b>Copyright &copy; 2010 - Cổng thông tin học tập & giải trí Việt v2.0</b><br> 
+                    <b>Copyright &copy; 2010 - Cổng thông tin học tập và giải trí Việt v2.0</b><br> 
                     Support: ĐT: 0989284278 - Email: tranngocduoc@gmail.com<br>
                     Ghi rõ nguồn "DENDOMDOM" khi phát hành lại thông tin từ website này
                      <br>

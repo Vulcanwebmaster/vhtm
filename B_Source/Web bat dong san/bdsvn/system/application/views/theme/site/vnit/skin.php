@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<jdoc:include type="modules" name="debug" />
+<!-- <jdoc:include type="modules" name="debug" />  -->
 
 </body>
 </html>

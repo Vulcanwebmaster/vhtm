@@ -1,7 +1,41 @@
 <?php
+  $this->CI = get_instance();
+  $this->CI->db->where('bat',1);
+  $this->CI->db->where('parentid',2);
+  $this->CI->db->order_by('sapxep','ASC');
+  $query = $this->CI->db->get('nhadat_dm');
+  $listnha = $query->result();
+ 
+  $this->CI->db->where('bat',1);
+  $this->CI->db->where('parentid',3);
+  $this->CI->db->order_by('sapxep','ASC');
+  $query = $this->CI->db->get('nhadat_dm');
+  $listdat = $query->result();
+
+  $this->CI->db->where('bat',1);
+  $this->CI->db->where('parentid',1);
+  $this->CI->db->order_by('sapxep','ASC');
+  $query = $this->CI->db->get('nhadat_dm');
+  $listbt = $query->result();
+     
+  $this->db->where('idquan',5);
+  $query = $this->db->get('thanhpho');
+  $thanhpho = $query->result();
 ?>
-	
-	<div id="divSearchRe">
+<?
+$this->CI->db->where('parentid <>',0);
+$this->CI->db->order_by('danhmuc','ASC');
+$query = $this->CI->db->get('nhadat_dm');
+$listdm = $query->result();
+
+$query = $this->CI->db->get('huong');
+$listhuong = $query->result();
+
+$this->CI->db->where('idquan',0);
+$query = $this->CI->db->get('thanhpho');
+$listtp = $query->result();
+?>
+<div id="divSearchRe">
 
 		<div class="title"><h1>Công cụ tìm kiếm</h1></div>
 		<div class="content">	   
@@ -12,83 +46,30 @@
 		<div id="divTabRESaler" onclick="ShowTab(3);">Tìm môi giới</div>		
 	</div>
     <div style="clear:both;">
-       <form action="http://batdongsan.com.vn/products/searchproduct" method="post" id="frmSearchProduct" name="frmSearchProduct">
+       <form action="" method="post" id="frmSearchProduct" name="frmSearchProduct">
         <div id="divOfSeach">
             <div id="searchArea">
                 <ul>
                     <li>
                         <span id="listCategoryRe">
-                            <select class="inputbox-blue" id="cboTypeRe" name="cboTypeRe"><option value="">---Chọn Loại nhà đất---</option>
+                            <select class="inputbox-blue" id="cboTypeRe" name="cboTypeRe">
+                            <option value="">---Chọn Loại nhà đất---</option>
+							<option value="0">Cho thuê nhà xưởng</option>
+                            <option value="1">Bán nhà xưởng</option>
+                            <option value="2">Hợp tác kinh doanh</option>
+                            <option value="2">Cho thuê đất</option>
+                            <option value="2">Cho thuê</option>
 </select>
                         </span>
                     </li>
                     <li>
                         <span id="listCity">
-                            <select class="inputbox-blue" id="cboCity" name="cboCity"><option value="">---Chọn Tỉnh-Thành phố---</option>
-								<option value="SG">Tp.HCM</option>
-								<option value="HN">Hà Nội</option>
-								<option value="BD">Bình Dương</option>
-								<option value="DDN">Đà Nẵng</option>
-								<option value="HP">Hải Phòng</option>
-								<option value="DNA">Đồng Nai</option>
-								<option value="AG">An Giang</option>
-								<option value="VT">Bà Rịa Vũng Tàu</option>
-								<option value="BG">Bắc Giang</option>
-								<option value="BK">Bắc Kạn</option>
-								<option value="BL">Bạc Liêu</option>
-								<option value="BN">Bắc Ninh</option>
-								<option value="BTR">Bến Tre</option>
-								<option value="BDD">Bình Định</option>
-								<option value="BP">Bình Phước</option>
-								<option value="BTH">Bình Thuận  </option>
-								<option value="CM">Cà Mau</option>
-								<option value="CT">Cần Thơ</option>
-								<option value="CB">Cao Bằng</option>
-								<option value="DDL">Đắk Lắk</option>
-								<option value="DNO">Đắk Nông</option>
-								<option value="DDB">Điện Biên</option>
-								<option value="DDT">Đồng Tháp</option>
-								<option value="GL">Gia Lai</option>
-								<option value="HG">Hà Giang</option>
-								<option value="HNA">Hà Nam</option>
-								<option value="HT">Hà Tĩnh</option>
-								<option value="HD">Hải Dương</option>
-								<option value="HGI">Hậu Giang</option>
-								<option value="HB">Hòa Bình</option>
-								<option value="HY">Hưng Yên</option>
-								<option value="KH">Khánh Hòa</option>
-								<option value="KG">Kiên Giang</option>
-								<option value="KT">Kon Tum</option>
-								<option value="LCH">Lai Châu</option>
-								<option value="LDD">Lâm Đồng</option>
-								<option value="LS">Lạng Sơn</option>
-								<option value="LCA">Lào Cai</option>
-								<option value="LA">Long An</option>
-								<option value="NDD">Nam Định</option>
-								<option value="NA">Nghệ An</option>
-								<option value="NB">Ninh Bình</option>
-								<option value="NT">Ninh Thuận</option>
-								<option value="PT">Phú Thọ</option>
-								<option value="PY">Phú Yên</option>
-								<option value="QB">Quảng Bình</option>
-								<option value="QNA">Quảng Nam</option>
-								<option value="QNG">Quảng Ngãi</option>
-								<option value="QNI">Quảng Ninh</option>
-								<option value="QT">Quảng Trị</option>
-								<option value="ST">Sóc Trăng</option>
-								<option value="SL">Sơn La</option>
-								<option value="TNI">Tây Ninh</option>
-								<option value="TB">Thái Bình</option>
-								<option value="TN">Thái Nguyên</option>
-								<option value="TH">Thanh Hóa</option>
-								<option value="TTH">Thừa Thiên Huế</option>
-								<option value="TG">Tiền Giang</option>
-								<option value="TV">Trà Vinh</option>
-								<option value="TQ">Tuyên Quang</option>
-								<option value="VL">Vĩnh Long</option>
-								<option value="VP">Vĩnh Phúc</option>
-								<option value="YB">Yên Bái</option>
-</select>
+                            <select class="inputbox-blue" id="cboCity" name="cboCity">
+                            	<option value="">---Chọn Tỉnh-Thành phố---</option>
+								<?foreach($listtp as $rs):?>
+                            		<option value="<?=$rs->idthanhpho?>"><?=$rs->ten?></option>
+                            	<?endforeach;?> 
+							</select>
                         </span>
                     </li>
                     <li>
@@ -99,7 +80,8 @@
                     </li>
                     <li>
                         <span>
-                            <select class="inputbox-blue" id="cboArea" name="cboArea" onchange="SearchCount();"><option value="">---Chọn Diện tích---</option>
+                            <select class="inputbox-blue" id="cboArea" name="cboArea" onchange="SearchCount();">
+								<option value="">---Chọn Diện tích---</option>
 								<option value="0">Không xác định</option>
 								<option value="1">&le; 30 m2</option>
 								<option value="2">30-50 m2</option>
@@ -121,27 +103,33 @@
                         </span>
                     </li>                   
                     <li class="adv-search" style="display:none">
-                        <span> <select class="inputbox-blue" id="cboBedRoom" name="cboBedRoom" onchange="SearchCount();"><option value="">---Chọn số phòng---</option>
-<option value="0">Không xác định</option>
-<option value="1">1+</option>
-<option value="2">2+</option>
-<option value="3">3+</option>
-<option value="4">4+</option>
-<option value="5">5+</option>
-</select> </span>
+                        <span> 
+                        <select class="inputbox-blue" id="cboBedRoom" name="cboBedRoom" onchange="SearchCount();">
+                        <option value="">---Chọn số phòng---</option>
+						<option value="0">Không xác định</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						</select> 
+						</span>
                     </li>
                     <li class="adv-search" style="display:none">
-                        <span><select class="inputbox-blue" id="cboHomeDirection" name="cboHomeDirection" onchange="SearchCount();"><option value="">---Chọn hướng nhà---</option>
-<option value="0">Không xác định</option>
-<option value="1">Đông</option>
-<option value="2">Tây</option>
-<option value="3">Nam</option>
-<option value="4">Bắc</option>
-<option value="5">Đông-Bắc</option>
-<option value="6">Tây-Bắc</option>
-<option value="7">Tây-Nam</option>
-<option value="8">đông-Nam</option>
-</select></span>
+                        <span>
+                        <select class="inputbox-blue" id="cboHomeDirection" name="cboHomeDirection" onchange="SearchCount();">
+	                        <option value="">---Chọn hướng nhà---</option>
+							<option value="0">Không xác định</option>
+							<option value="1">Đông</option>
+							<option value="2">Tây</option>
+							<option value="3">Nam</option>
+							<option value="4">Bắc</option>
+							<option value="5">Đông-Bắc</option>
+							<option value="6">Tây-Bắc</option>
+							<option value="7">Tây-Nam</option>
+							<option value="8">đông-Nam</option>
+						</select>
+						</span>
                     </li>
                     <li class="adv-search" style="display:none">
                         <span id="listProj"><select class="inputbox-blue" id="cboListProj" name="cboListProj" onchange="SearchCount();"><option value="">---Chọn dự án bất động sản---</option>
@@ -151,8 +139,6 @@
                       </div>                                           
                       <div class="btn"><input type="image" src="<?php echo base_url();?>images/bdscomvn/before.png" onmouseover="this.src='<?php echo base_url();?>images/bdscomvn/after.png'" 
 						onmouseout="this.src='<?php echo base_url();?>images/bdscomvn/before.png'/*tpa=http://media.batdongsan.com.vn/images/tab/before.png*/" onclick="this.frmSearchProduct.submit();" /></div>
-                   
-                    <div id="divLabelSearchAdv"><label id="lblSearch" onclick="DisplaySearchAdvance('divSearchAdvan','divLabelSearchAdv');" class="divLabelSearch" style="width:345px;text-align:right" >Tìm kiếm nâng cao</label></div>
                     <div style="display:none">
                         <span>
                             <select class="inputbox-blue" id="cboCategory" name="cboCategory"><option value="">---Chọn loại tin rao---</option>
@@ -162,7 +148,6 @@
                         </span>
                    </div>
                    <div class="text">
-                   Có <span>3000</span> tin mới mỗi ngày
                </div> 
            
         </div>
@@ -190,70 +175,11 @@
 						<!-- Combo box chọn Tỉnh thành phố -->
 						<li>
 							<span>
-								<select class="inputbox-blue" id="cmbCity" name="cmbCity"><option value="">--Chọn Tỉnh / Thành phố--</option>
-									<option value="SG">Tp.HCM</option>
-									<option value="HN">Hà Nội</option>
-									<option value="BD">Bình Dương</option>
-									<option value="DDN">đà Nẵng</option>
-									<option value="HP">Hải Phòng</option>
-									<option value="DNA">đồng Nai</option>
-									<option value="AG">An Giang</option>
-									<option value="VT">Bà Rịa Vũng Tàu</option>
-									<option value="BG">Bắc Giang</option>
-									<option value="BK">Bắc Kạn</option>
-									<option value="BL">Bạc Liêu</option>
-									<option value="BN">Bắc Ninh</option>
-									<option value="BTR">Bến Tre</option>
-									<option value="BDD">Bình định</option>
-									<option value="BP">Bình Phước</option>
-									<option value="BTH">Bình Thuận  </option>
-									<option value="CM">Cà Mau</option>
-									<option value="CT">Cần Thơ</option>
-									<option value="CB">Cao Bằng</option>
-									<option value="DDL">đắk Lắk</option>
-									<option value="DNO">đắk Nông</option>
-									<option value="DDB">điện Biên</option>
-									<option value="DDT">đồng Tháp</option>
-									<option value="GL">Gia Lai</option>
-									<option value="HG">Hà Giang</option>
-									<option value="HNA">Hà Nam</option>
-									<option value="HT">Hà Tĩnh</option>
-									<option value="HD">Hải Dương</option>
-									<option value="HGI">Hậu Giang</option>
-									<option value="HB">Hòa Bình</option>
-									<option value="HY">Hưng Yên</option>
-									<option value="KH">Khánh Hòa</option>
-									<option value="KG">Kiên Giang</option>
-									<option value="KT">Kon Tum</option>
-									<option value="LCH">Lai Châu</option>
-									<option value="LDD">Lâm đồng</option>
-									<option value="LS">Lạng Sơn</option>
-									<option value="LCA">Lào Cai</option>
-									<option value="LA">Long An</option>
-									<option value="NDD">Nam định</option>
-									<option value="NA">Nghệ An</option>
-									<option value="NB">Ninh Bình</option>
-									<option value="NT">Ninh Thuận</option>
-									<option value="PT">Phú Thọ</option>
-									<option value="PY">Phú Yên</option>
-									<option value="QB">Quảng Bình</option>
-									<option value="QNA">Quảng Nam</option>
-									<option value="QNG">Quảng Ngãi</option>
-									<option value="QNI">Quảng Ninh</option>
-									<option value="QT">Quảng Trị</option>
-									<option value="ST">Sóc Trăng</option>
-									<option value="SL">Sơn La</option>
-									<option value="TNI">Tây Ninh</option>
-									<option value="TB">Thái Bình</option>
-									<option value="TN">Thái Nguyên</option>
-									<option value="TH">Thanh Hóa</option>
-									<option value="TTH">Thừa Thiên Huế</option>
-									<option value="TG">Tiền Giang</option>
-									<option value="TV">Trà Vinh</option>
-									<option value="TQ">Tuyên Quang</option>
-									<option value="VL">Vĩnh Long</option>
-									<option value="VP">Vĩnh Phúc</option>
-									<option value="YB">Yên Bái</option>
+								<select class="inputbox-blue" id="cmbCity" name="cmbCity">
+								<option value="">--Chọn Tỉnh / Thành phố--</option>
+                				<?foreach($thanhpho as $tp):?>
+									<option value="<?=$tp->idthanhpho?>"><?=$tp->ten?></option>
+                				<?endforeach;?>
 								</select>
 							</span></li>
 						<!-- Combo box chọn Quận huyện -->

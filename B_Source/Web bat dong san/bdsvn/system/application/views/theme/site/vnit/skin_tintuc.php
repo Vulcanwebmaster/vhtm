@@ -51,7 +51,7 @@
             <div style="width: 100%;float: left;">
                 <div class="content_text">
                 <p>
-                    <b>Copyright &copy; 2010 - Cổng thông tin học tập & giải trí Việt v2.0</b><br>  
+                    <b>Copyright &copy; 2010 - Cổng thông tin học tập và giải trí Việt v2.0</b><br>  
                     Support: ĐT: 0989284278 - Email: tranngocduoc@gmail.com<br>
                     Ghi rõ nguồn "DENDOMDOM" khi phát hành lại thông tin từ website này
                      <br>
