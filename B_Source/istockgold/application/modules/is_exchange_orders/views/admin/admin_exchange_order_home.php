@@ -57,7 +57,7 @@
 								echo "<tr height=\"20\" class=\"col1\">";
 							
 							echo "<td>".$list['order_id']."</td>";
-							echo "<td><a href='".base_url()."is_exchange_rates/admin/edit/".$list['order_id']."'title=\"Edit this order\">".$list['order_code']."</a></td>";
+							echo "<td><a href='".base_url()."index.php/is_exchange_orders/admin/edit/".$list['order_id']."'title=\"Edit this order\">".$list['order_code']."</a></td>";
 							echo "<td><span style=\"font-size: 10px !important; line-height: 14px;\">".$list['date_src']."<br />".ucwords(strtolower($list['status_src']))."</span></td>";
 							echo "<td style=\"text-align: left\" nowrap=\"nowrap\"><img src='".base_url()."assets/images/wu2.jpg' /><b><span
 							class=\"money_1\">$".$list['amount_src']."</span></b></td>";
@@ -66,7 +66,7 @@
 							echo "<td align=\"right\"><img src='".base_url()."assets/images/3_combo.gif' />
 							<span class=\"money_1\">$".$list['amount_dst']."</span></a>";
 							echo "</td><td style=\"text-align: center; line-height: 16px\" nowrap=\"nowrap\">
-						 	<a href='".base_url()."is_exchange_rates/admin/delete/".$list['order_id'].
+						 	<a href='".base_url()."index.php/is_exchange_orders/admin/delete/".$list['order_id'].
 								"' title=\"Delete this order\" onclick=\"return confirm_entry('DELETE #".$list['order_code']."')\">
 								<img src='".base_url()."assets/images/fasle3.gif' /></a></td>";
 							echo "</tr>";
