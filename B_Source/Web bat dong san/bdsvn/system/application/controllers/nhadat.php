@@ -29,23 +29,7 @@
           $data['chungcu'] = $this->nhadat->getchungcuvip();
           $data['muaban'] = $this->nhadat->getmuaban();
           $data['chothue'] = $this->nhadat->getchothue();
-          //Them pagin cho phan tin vip - by tlx
-			//$config['base_url'] = base_url().'/'."nhadat/index";  
-          	//$config['total_rows']   =  $this->nhadat->getnumnhadatvip();
-          	//$config['per_page']= '5';
-          	//$config['uri_segment'] = 3;
-          	//$this->pagination->initialize($config);
-          	//$data['nhadat'] = $this->nhadat->getallnhadatvip($config['per_page'],$this->uri->segment('3'));
-          //$data['pagination']    = $this->pagination->create_links();
           
-          //Them pagin cho phan tin thuong - by tlx
-          $config1['base_url'] = base_url().'/'."nhadat/index/1";  
-          	$config1['total_rows']   =  $this->nhadat->getnummuaban();
-          	$config1['per_page']= '5';
-          	$config1['uri_segment'] = 4;
-          	$this->pagination->initialize($config1);
-          	$data['muaban'] = $this->nhadat->getallmuaban($config1['per_page'],$this->uri->segment('4'));
-          $data['pagination1']    = $this->pagination->create_links();
           
 			$this->_templates['page'] = 'site/nhadat/index';
 			$this->site_library->load($this->_templates['page'],$data);
@@ -62,7 +46,8 @@
           $data['giaden'] = (int)$this->input->post('giaden');
           $data['id_thanhpho'] = (int)$this->input->post('id_thanhpho');
           $data['idhuong'] = (int)$this->input->post('idhuong');
-          $limit  =   '20';  
+          /*
+          $limit  =   '10';  
           $data['limit'] = $limit; 
           $offset = (int)$this->input->post('page_no'); 
           $data['offset'] = $offset;
@@ -73,10 +58,26 @@
               $start = 0;   
           $data['list'] =   $this->nhadat->getTimkiem($limit,$start);
           
-          $url = base_url().'ebook/danhmuccon/';
-          	$data['pagination']   = $this->pagination_library->pagination($num,$offset,$limit,$url); 
-                    
-          $this->load->view('site/nhadat/timkiem',$data);
+          $url = base_url().'nhadat/timkiem';
+			$data['pagination']   = $this->pagination_library->pagination($num,$offset,$limit,$url);
+			*/   
+			$config['base_url'] = base_url().'/'."nhadat/timkiem";
+			$config['total_rows']   =  $this->nhadat->getNumTimkiem();
+			$config['per_page']= '5';
+			$config['uri_segment'] = 3;
+			$limit  =   '10';  
+			$data['limit'] = $limit;
+			$offset = (int)$this->input->post('page_no');
+			$data['offset'] = $offset;
+			$this->pagination->initialize($config);
+			$num = $this->nhadat->getNumTimkiem();
+			if($offset!=0) 
+				$start = ($offset - 1) * $limit;
+			else
+				$start = 0; 
+			$data['list'] =   $this->nhadat->getTimkiem($limit,$start);
+			$data['pagination']    = $this->pagination->create_links();                 
+			$this->load->view('site/nhadat/timkiem',$data);
      }
 /**
 * Đăng tin      

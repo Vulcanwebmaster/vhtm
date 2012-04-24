@@ -47,7 +47,7 @@ $listtp = $query->result();
                 <ul>
                     <li>
                         <span id="listCategoryRe">
-                            <select class="inputbox-blue" id="cboTypeRe" name="cboTypeRe">
+                            <select class="inputbox-blue" name="nhucau" id="nhucau">
                             <option value="0">---Chọn loại tin---</option>
                             <option value="1">Cần bán</option>
                             <option value="2">Cần mua</option>
@@ -58,7 +58,7 @@ $listtp = $query->result();
                     </li>
 					<li>
                         <span id="listCategoryRe">
-                            <select class="inputbox-blue" id="cboTypeRe" name="cboTypeRe">
+                            <select class="inputbox-blue" name="sectionid" id="sectionid">
                             <option value="0">---Chọn danh mục---</option>
 							<?foreach($listdm as $rs):?>
                             	<option value="<?=$rs->iddm?>"><?=$rs->danhmuc?></option>
@@ -68,7 +68,7 @@ $listtp = $query->result();
                     </li>
                     <li>
                         <span id="listCity">
-                            <select class="inputbox-blue" id="cboCity" name="cboCity">
+                            <select class="inputbox-blue" name="id_thanhpho" id="id_thanhpho">
                             	<option value="0">---Chọn Tỉnh-Thành phố---</option>
 								<?foreach($listtp as $rs):?>
                             		<option value="<?=$rs->idthanhpho?>"><?=$rs->ten?></option>
@@ -78,7 +78,7 @@ $listtp = $query->result();
                     </li>
                     <li>
                         <span id="listDistrict">
-                            <select class="inputbox-blue" id="cboDistrict" name="cboDistrict">
+                            <select class="inputbox-blue" name="giatu" id="giatu">
                             	<option value="0">---Chọn giá từ---</option>
 								<option value="1000000"> &nbsp;&nbsp; 1 triệu</option>
 	                            <option value="5000000"> &nbsp;&nbsp; 5 triệu</option>
@@ -106,7 +106,7 @@ $listtp = $query->result();
                     </li>
                     <li>
                         <span>
-                            <select class="inputbox-blue" id="cboArea" name="cboArea" onchange="SearchCount();">
+                            <select class="inputbox-blue" name="giaden" id="giaden">
 								<option value="0">---Đến giá---</option>
 	                            <option value="1000000"> &nbsp;&nbsp; 1 triệu</option>
 	                            <option value="5000000"> &nbsp;&nbsp; 5 triệu</option>
@@ -134,7 +134,7 @@ $listtp = $query->result();
                     </li>
                     <li>
                         <span id="divPrice">
-                            <select class="inputbox-blue" id="cboPrice" name="cboPrice">
+                            <select class="inputbox-blue" name="idhuong" id="idhuong">
                             	<option value="0">---Chọn hướng nhà---</option>
 								<?foreach($listhuong as $rs):?>
 									<option value="<?=$rs->idhuong?>"><?=$rs->tenhuong?></option>
