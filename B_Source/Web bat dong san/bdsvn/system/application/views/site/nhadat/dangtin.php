@@ -47,7 +47,7 @@
 $buoc = (int)$this->uri->segment(2);
 $segment = (int)$this->uri->segment('3');
 ?>
-<div class="hdangtin">
+<div class="hdangtin" style="margin-bottom:300px">
     <ul >
     <?if($buoc==1){?>
         <li><img src="<?=base_url()?>skins/1.jpg" alt="">Bước 1:<br>Thông tin chung</li>
@@ -452,8 +452,10 @@ if($buoc==3){
 <?php
   echo form_open('dangtin/3/'.$this->uri->segment('3'));
 ?>
+
 <div class="bgtitle">
-    <span>Nội dung đăng tin</span>
+	
+    <span style="width:200px; clear:both">Nội dung đăng tin</span>
 </div>
 <table class="dangtin" align="center">   
     <tr>
@@ -673,7 +675,7 @@ if($buoc==4){
         </div>  
         
 
-<div style="float: left;width: 100%;margin-top:20px">
+<div style="float: left;width: 70%;margin-top:20px">
 <?=form_open('dangtin/4/'.$this->uri->segment(3))?>
 <table class="tool" cellpadding="0" cellspacing="0">
     <tr>

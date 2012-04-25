@@ -9,7 +9,7 @@ $this->CI = get_instance();
     <?foreach($item as $rs):
     ?>
 		<div style="width: 137px; height: 24px; float: left; padding-left: 30px;" class="icon_left">
-			<a href="htm/-Tab=8&cat_id=3&sub_id=1.htm"><font class="item_left" style="font-size: 11px;">
+			<a href="<?=base_url()?>tintuc/chi-tiet/<?=$rs->idcat?>/<?=$rs->id?>/<?=$rs->alias.duoi()?>"><font class="item_left" style="font-size: 11px;">
                                         <?=$rs->tieude?></font></a></div>
 <?endforeach;?>
 

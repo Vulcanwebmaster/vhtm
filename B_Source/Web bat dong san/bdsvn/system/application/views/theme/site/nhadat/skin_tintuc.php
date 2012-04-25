@@ -62,17 +62,19 @@
        </div>
         <div class="nav-right">
 		<div id="main-center" style="margin-top: 10px;  float:left; width:560px">
-				<?if($this->session->flashdata('message')){
-    echo '<div class="message">'.$this->session->flashdata('message').'</div>';
-}if($this->session->flashdata('error')){
-    echo '<div class="error">'.$this->session->flashdata('error').'</div>';
-}if($this->session->flashdata('notes')){
-    echo '<div class="notes">'.$this->session->flashdata('notes').'</div>';
-}
+			<?if($this->session->flashdata('message')){
+		    echo '<div class="message">'.$this->session->flashdata('message').'</div>';
+		}if($this->session->flashdata('error')){
+		    echo '<div class="error">'.$this->session->flashdata('error').'</div>';
+		}if($this->session->flashdata('notes')){
+		    echo '<div class="notes">'.$this->session->flashdata('notes').'</div>';
+		}
 
 ?>   
 				<?=$this->load->view($page)?>
 		</div>
+
+<?php if($page != "site/tintuc/index") {?>	
 <div id="right-center" style="width:180px; float:right; margin-right:15px; margin-top:10px">
 	<div class="rightContent left-side">     
 		
@@ -137,32 +139,22 @@
         <div class="rc421">
             
             <ul>
-                
                 <li>
                     <a rel = 'nofollow'>Tin tức, dự án BĐS nổi bật tuần từ ngày 2/4 đến ngày 8/4</a>                    
-                    
                 </li>
-                
                 <li>
                     <a rel = 'nofollow'>Giá đền bù sẽ cao hơn khi bỏ khung giá đất?</a>                    
-                    
                 </li>
-                
                 <li>
                     <a rel = 'nofollow'>Giá đất Hà Nội "đắt" hơn từ 25% so với bảng giá đất</a>                    
-                    
                 </li>
-                
                 <li>
                     <a rel = 'nofollow'>Nguy cơ đổ bể hàng loạt dự án của AZ Land</a>                    
                     
                 </li>
-                
                 <li>
                     <a rel = 'nofollow'>Công khai mua bán đất nông nghiệp: Khó xử lý vì thiếu chỉ giới quy hoạch</a>                    
-                    
                 </li>
-                
                 <li>
                     <a rel = 'nofollow'>Tin tức bất động sản nổi bật tuần từ 26-31/3</a>                    
                     
@@ -271,7 +263,8 @@
 <div class="separable"></div>
 		
     </div>
-</div>                        
+</div>
+<?php }?>                        
 </div>
         <div class="bottomline">
         </div>

@@ -13,7 +13,7 @@
                 <div class="sap">
                 </div>
                 <div class="toplinks">
-                    <a href="#">TIN TỨC</a></div>
+                    <a href="<?=base_url()?>tintuc">TIN TỨC</a></div>
                 <div class="sap">
                 </div>
                 <div class="toplinks">

@@ -129,7 +129,7 @@ $listtp = $query->result();
 	                            <option value="9000000000"> &nbsp;9 tỷ</option>
 	                            <option value="10000000000">10 tỷ</option>
 	                            <option value="30000000000">30 tỷ</option>
-</select>
+								</select>
                         </span>
                     </li>
                     <li>

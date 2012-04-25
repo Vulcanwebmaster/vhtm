@@ -76,7 +76,7 @@ margin-left:3px;/*177px;*/
 .gap
 {width:20px; float:left; font-size:1px; height:100px;}
 .nav-right
-{width:783px; float:left; border-left:1px dashed #82817F;border-right:3px solid #b9b9bb;}
+{width:783px; float:left; /*border-left:1px dashed #82817F;border-right:3px solid #b9b9bb;*/}
 .gap2
 {clear:left; }
 .smaltext{
@@ -150,10 +150,12 @@ ul {
 	list-style: none;
 }
 
-ul li { width:147px;
-	padding: 2px 0 5px 0;
-	border-bottom:1px dotted #444444;;
+ul li { width:100%;
+	padding: 2px 0 5px 0;	
+	/*border-bottom:1px dotted #444444;*/
 }
+/*sửa màu chữ*/
+ul li a{color: blue}
 
 ul li.first {
 	background: none;
@@ -218,7 +220,7 @@ clear:left;
 background-color:#358fdd;
 }
 
-/* th�m */
+/* thêm */
 
 .left_panel, .right_panel
 {

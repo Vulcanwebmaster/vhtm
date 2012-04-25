@@ -40,7 +40,7 @@
                     <div><?=$this->string_library->catchu($top->noidungngan,220)?></div>
                 </div>
             </div>
-            <div class="toptin_cat_list fl">
+            <div class="toptin_cat_list fl" style="width:100%">
                 <ul>
                 <?foreach($sec as $sc):?>
                     <li><a href="<?=base_url()?>tintuc/chi-tiet/<?=$sc->idcat?>/<?=$sc->id?>/<?=$sc->alias.duoi()?>"><?=$sc->tieude?></a></li>

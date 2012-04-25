@@ -551,7 +551,7 @@ padding: 0 7px;height:275px;
 #divOfSeach ul{list-style:none;}
 #divOfSeach ul li, #brokersearch ul li{padding: 2px 0; margin: 0; height: 22px;}
 #divSearchRe .inputbox-blue{padding: 2px; color:#515151;}
-#searchArea{height: 200px; overflow:auto;}
+#searchArea{height: 180px; overflow:auto;}
 #divSearchRe .text{text-align: right; padding-right: 20px;}
 #divSearchRe .text span{font-weight:bold; color:#994a2b;}		
 #divLabelSearchAdv{ clear:both; padding-bottom: 5px; padding-right: 20px; text-align: right;}
@@ -2302,7 +2302,7 @@ padding:3px 0 0 55px; height:32px; width:130px; line-height: 14px;
 #aboutus #article a:hover{text-decoration: underline;}
 #googleplus {clear:both; padding: 10px 0 0 0 ; height:18px;}
 #search-box{ float:right; width: 250px; margin-right: 10px; overflow:hidden;}
-#hot24-box{	float:left; width: 510px; height:307; overflow:hidden; padding-top: 5px; }
+#hot24-box{	float:left; width: 510px; height:307; overflow:hidden; padding-top: 5px; padding-left: 5px; padding-bottom: 5px;}
 .tempHide{display: none;}
 #inter{position:relative; float:right; display:block;	margin:0px;	padding:0px; width: 95px; background:url('../../images/bdscomvn/top1.jpg') no-repeat/*tpa=http://media.batdongsan.com.vn/images/top1.jpg*/;
 }
