@@ -18,7 +18,7 @@
                                         Site Name
                                     </td>
                                     <td width="5%">
-                                        <input name="SITE_NAME" type="text" id="SITE_NAME" value="Auto-Exchanger Demo" size="35">
+                                        <input name="SITE_NAME" type="text" id="SITE_NAME" value="" size="35">
                                     </td>
                                     <td class="help">
                                         Your Company Name as you want it to appear throughout the system.
@@ -29,7 +29,7 @@
                                         Site Url
                                     </td>
                                     <td>
-                                        <input name="SITE_URL" type="text" id="SITE_URL" value="http://demo.auto-exchanger.com"
+                                        <input name="SITE_URL" type="text" id="SITE_URL" value=""
                                             size="35">
                                     </td>
                                     <td class="help">

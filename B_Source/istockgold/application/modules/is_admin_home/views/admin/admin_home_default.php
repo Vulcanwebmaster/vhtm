@@ -33,7 +33,7 @@
 
 <div id="admin_overview">
 	<div id="title">Admin Actions</div>
-	<div id="onebox"><img width="18" height="18" src="<?php echo base_url();?>assets/images/admin/n_profile.gif"><a href="http://demo.auto-exchanger.com/signup/">Update password</a>
+	<div id="onebox"><img width="18" height="18" src="<?php echo base_url();?>assets/images/admin/n_profile.gif"><a href="<?php echo base_url()?>index.php/is_update_profile/admin">Update password</a>
 	<br><b>Update admin login password </b></div>
 	<div id="onebox"><?php print anchor('auth/auth/logout','<img src="'.base_url().'assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?>
 	<br><b>Exit admin panel </b></div>

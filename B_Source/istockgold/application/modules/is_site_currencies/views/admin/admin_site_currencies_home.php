@@ -1,4 +1,11 @@
-   <div id="main">
+ <?php 
+ foreach ($site_currencies as $key => $list)
+{
+	$data[$list['key']] = $list['value'];
+}
+?>
+
+<div id="main">
                     <div id="Div1">
                         <h1>
                             Manage Currencies info &amp; passwords
@@ -23,9 +30,8 @@
                     </div>
                     <!--End of the Tabmenu -->
                     <div id="status_box" style="border-top: 0;">
-                        <form id="settingform" name="settingform" method="post" action=""
-                        enctype="multipart/form-data">
-                                               <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox0" style="">
+                        <form id="settingform" name="settingform" method="post" action="<?php echo base_url()?>index.php/is_site_currencies/admin/edit">
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox0" style="">
                             <tbody>
                                 <tr class="tablefirstrow">
                                     <td colspan="3">
@@ -33,7 +39,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td width="100">
-                                                        <img src="images/libertyreserve_4.gif"
+                                                        <img src="<?php echo base_url()?>assets/images/admin/libertyreserve_3.gif"
                                                             width="100" height="42">
                                                     </td>
                                                     <td>
@@ -44,7 +50,6 @@
                                                     <td width="10%" nowrap="nowrap">
                                                         <div style="line-height: 16px">
                                                             Usd : <span style="color: #006600;">Active</span><br>
-                                                            Euro : <span style="color: #006600;">Active</span><br>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -57,7 +62,8 @@
                                         Liberty Account:
                                     </td>
                                     <td width="5%">
-                                        <input name="libertyreserve|ACCOUNT" type="text" id="libertyreserve|ACCOUNT" value="U2782065">
+                                        <input name="liberty_account" type="text" id="liberty_account" 
+                                        	value="<?php echo $data['liberty.account']?>">
                                     </td>
                                     <td class="help">
                                         Use cappital characters sample: UXXXX
@@ -68,8 +74,8 @@
                                         Account Name:
                                     </td>
                                     <td width="5%">
-                                        <input name="libertyreserve|ACCOUNT_NAME" type="text" id="libertyreserve|ACCOUNT_NAME"
-                                            value="Auto Exchanger Demo">
+                                        <input name="liberty_account_name" type="text" id="liberty_account_name"
+                                            value="<?php echo $data['liberty.account.name']?>">
                                     </td>
                                     <td class="help">
                                         &nbsp;
@@ -80,8 +86,8 @@
                                         Store Name:
                                     </td>
                                     <td>
-                                        <input name="libertyreserve|PAYEE_NAME" type="text" id="libertyreserve|PAYEE_NAME"
-                                            value="Auto Exchanger Demo">
+                                        <input name="liberty_account_storename" type="text" id="liberty_account_storename"
+                                            value="<?php echo $data['liberty.account.storename']?>">
                                     </td>
                                     <td class="help">
                                         This is the store name you must set up on Merchant tools &gt; Create new store.
@@ -89,57 +95,68 @@
                                         for all HTTP methods
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        Store Password:
-                                    </td>
-                                    <td>
-                                        <label>
-                                            <input name="libertyreserve|ALT_PASSWORD" type="text" id="libertyreserve|ALT_PASSWORD"
-                                                value="****************">
-                                        </label>
-                                    </td>
-                                    <td class="help">
-                                        Your store name password must set on libertyreserve store. [<strong>Auto Receive</strong>]
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        API Name:
-                                    </td>
-                                    <td>
-                                        <input name="libertyreserve|API_NAME" type="text" id="libertyreserve|API_NAME" value="Auto Exchanger Demo">
-                                    </td>
-                                    <td class="help">
-                                        This API name must create on Merchant Tools &gt; Create New API [<strong>Auto Payout</strong>]
-                                        Select POST for all fileds
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        API password:
-                                    </td>
-                                    <td>
-                                        <input name="libertyreserve|MAIN_PASSWORD" type="text" id="libertyreserve|MAIN_PASSWORD"
-                                            value="****************">
-                                    </td>
-                                    <td class="help">
-                                        Your Api password must set on libertyreserve API. [<strong>Auto Payout</strong>],Also
-                                        need to Enabled Api and all opersations(Transfer, History, blanace and account name)
+                            </tbody>
+                        </table>
+                        <table border="0" cellspacing="5" cellpadding="5" width="99%" id="tabbox1" style="display: none;">
+                            <tbody>
+                                <tr class="tablefirstrow">
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100">
+                                                        <img src="<?php echo base_url()?>assets/images/western unio.jpg"
+                                                            width="100" height="42">
+                                                    </td>
+                                                    <td>
+                                                        <h1>
+                                                            Westion Union Account settings
+                                                        </h1>
+                                                    </td>
+                                                    <td width="10%" nowrap="nowrap">
+                                                        <div style="line-height: 16px">
+                                                            Usd : <span style="color: #006600;">Active</span><br>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td nowrap="nowrap">
-                                        Payment verify page:
+                                    <td width="5%">
+                                        Receiver's First Name:
                                     </td>
-                                    <td>
-                                        <label>
-                                            <input name="libertyreserve|CURRENCY_VERIFIER" type="text" id="libertyreserve|CURRENCY_VERIFIER"
-                                                value="hsh_bnk/hsh_liberty.php">
-                                        </label>
+                                    <td width="30%" align="left">
+                                        <input name="western_receiver_firstname" type="text" id="western_receiver_firstname" 
+                                        value="<?php echo $data['western.receiver.firstname']?>">
                                     </td>
-                                    <td class="help">
-                                        Payment verify page address(don't need to change until you know what to do)
+                                </tr>
+                                <tr>
+                                    <td width="5%">
+                                        Receiver's Last Name:
+                                    </td>
+                                    <td width="30%" align="left">
+                                        <input name="western_receiver_lastname" type="text" id="western_receiver_lastname"
+                                            value="<?php echo $data['western.receiver.lastname']?>">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="5%">
+                                        Reveiver's City:
+                                    </td>
+                                    <td width="30%" align="left">
+                                        <input name="western_receiver_city" type="text" id="western_receiver_city"
+                                            value="<?php echo $data['western.receiver.city']?>">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="5%">
+                                        Reveiver's Country:
+                                    </td>
+                                    <td width="30%" align="left">
+                                        <input name="western_receiver_country" type="text" id="western_receiver_country"
+                                            value="<?php echo $data['western.receiver.country']?>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -147,13 +164,12 @@
                         <input name="Action" type="hidden" id="Action" value="Save">
                         <input type="hidden" name="selectedtab" id="selectedtab" value="0">
                         <center>
-                            <input type="submit" name="submit" value="Update All Currencies info" class="btn">
+                            <input type="submit" name="submit" value="Update" class="btn">
                         </center>
                         </form>
                         <br>
                     </div>
                     <br>
-                    <a href="http://demo.auto-exchanger.com/admin/adm_currencies/">Exchange settings</a>
                     <div id="page_guide">
                         <h2>
                             SECURITY ADVISORY:</h2>
@@ -165,6 +181,6 @@
                         care if are using shared hosting.
                     </div>
                     <script language="javascript">                        var tabs = 2;</script>
-                    <script language="javascript" src="<?php base_url()?>assets/js/admin/tabs.js"></script>
+                    <script language="javascript" src="<?php echo base_url()?>assets/js/admin/tabs.js"></script>
                     <script language="javascript">                        TabClick(0);</script>
                 </div>

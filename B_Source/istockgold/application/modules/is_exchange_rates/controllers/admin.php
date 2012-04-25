@@ -26,7 +26,7 @@ class Admin extends Shop_Admin_Controller
     function index()
     {
         //$data = $this->common_home();
-        $data['rate'] = $this->config->item('backendpro_template_admin') . "admin_exchange_rate_home";
+        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_exchange_rate_home";
         $this->load->view($this->_container,$data);
     }
 
