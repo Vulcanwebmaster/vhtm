@@ -17,8 +17,8 @@ Vị trí thuận lợi an ninh, môi trường tốt.</li>
                         </ul>
                     </div>
                     
-                </div>
-                <div style="width:49%;float:right;border-right:inset;border-left:outset;border-bottom:outset;border-top:inset">
+</div>
+<div style="width:49%;float:right;border-right:inset;border-left:outset;border-bottom:outset;border-top:inset">
                     <div>
                         <p style="width:100%; margin-bottom:5px"><strong style="color: #006699">CỤM CÔNG NGHIỆP HOÀNG ĐÔNG</strong></p>
                         <div style="padding:5px">
@@ -35,4 +35,4 @@ Vị trí thuận lợi an ninh, môi trường tốt.</li>
                             
                         </ul>
                     </div>
-                </div>
+</div>

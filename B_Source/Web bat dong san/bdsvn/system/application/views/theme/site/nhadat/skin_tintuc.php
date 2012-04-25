@@ -171,36 +171,21 @@
        <h4>Lời khuyên</h4>        
     </div></div>
     <div class="rc42 rc42-tabart ablack">
-        <div class="rc421"><ul>
-            
-                <li>
-                    <a rel="nofollow">Bí quyết tìm kiếm các trung tâm môi giới nhà đất</a>
-                </li>
+        <div class="rc421">
+        <ul>
+			<? $this->CI = get_instance();?>
+    		<?
+			    $this->db->where('idcat',"55");
+			    $query = $this->db->get('noidung');
+			    $item = $query->result();?>
+			    <?foreach($item as $rs):?>
+					<li>
+	                    <a rel = 'nofollow' href="<?=base_url()?>tintuc/chi-tiet/<?=$rs->idcat?>/<?=$rs->id?>/<?=$rs->alias.duoi()?>">
+	                                        <?=$rs->tieude?></a>
+					</li>
+				<?endforeach;?>
                 
-                <li>
-                    <a rel="nofollow">Doanh nghiệp bán nền đất "ảo" tại Cần Thơ</a>
-                </li>
-                
-                <li>
-                    <a rel="nofollow">Bình Dương: Bỏ tiền tỷ mua đất mang "sổ đỏ" giả</a>
-                </li>
-                
-                <li>
-                    <a rel="nofollow">Một vài kinh nghiệm bán nhà nhanh gọn và được giá</a>
-                    
-                </li>
-                
-                <li>
-                    <a rel="nofollow">36 kế bán hàng được doanh nghiệp BĐS áp dụng (P3)</a>
-                    
-                </li>
-                
-                <li>
-                    <a rel="nofollow">36 kế bán hàng được doanh nghiệp BĐS áp dụng (P2)</a>
-                    
-                </li>
-                
-            </ul>
+		</ul>
         </div>
     </div>
 </div></div>
@@ -254,12 +239,7 @@
 <!-- Vach ngan cach -->
         <div class="separable"></div>
         
-<div class="box-bg-right">
-    <ul>
-        <li style="padding: 3px 0"><a href="#"><img src="<?php echo base_url();?>images/bdscomvn/Info.png" width="24px" height="24px" alt="" />XEM PHONG THỦY THEO TUỔI</a></li>
-        <li><a href="#"><img src="<?php echo base_url();?>images/bdscomvn/coins.png" width="24px" height="24px" alt="" />TÍNH LÃI SUẤT</a></li>
-    </ul>
-</div>
+
 <div class="separable"></div>
 		
     </div>

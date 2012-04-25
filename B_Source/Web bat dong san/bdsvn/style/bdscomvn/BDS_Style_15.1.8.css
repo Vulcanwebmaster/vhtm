@@ -1359,7 +1359,7 @@ ul.dropdown li:hover > ul{visibility:visible;}
 .question .message{padding:5px;font-size:110%;color:Blue;display:block;text-align:center;}
 .question .mceEditor{width:600px;}
 .question .divReply{text-align:center;display:none;}
-#ask-advice{width:628px;border:1px solid #CFCFCF;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;overflow:hidden;display:block;clear:both;}
+#ask-advice{width:782px;border:1px solid #CFCFCF;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;overflow:hidden;display:block;clear:both;}
 #ask-advice form{margin:10px;}
 #ask-advice .hq1{display:block;padding-left:20px;background-color:#0593D8;background-image:url('../../images/bdscomvn/hoi_dap_image01.gif.png')/*tpa=http://media.batdongsan.com.vn/Images/system/tab/hoi_dap_image01.gif*/;
 background-position:left bottom;background-repeat:no-repeat;margin:0px;padding:6px 60px;color:#fff;text-transform:uppercase;font-size:1.1em;font-weight:bold;
@@ -2427,17 +2427,17 @@ cursor: pointer; color:#FFFFFF; }
 #info .dt-row{float:left;}
 #info #ava{float:right; border: 1px solid #3466bb; padding: 1px; width: 60px; height: 60px; position:absolute; margin-left: -60px; margin-top: -20px;}
 #divlistProduct .tab-hb .tab-hb-active{float:left;line-height:22px;height:22px;}
-#divlistProduct .tab-hb .tab-hb-active .tab-hb-active-left{background:url('../../images/bdscomvn/ptab-left.jpg') no-repeat left 50%/*tpa=http://media.batdongsan.com.vn/images/system/tab/ptab-left.jpg*/;
+#divlistProduct .tab-hb .tab-hb-active .tab-hb-active-left{/*background:url('../../images/bdscomvn/ptab-left.jpg') no-repeat left 50%;*/
 height:22px;width:5px;float:left;
 }
-#divlistProduct .tab-hb .tab-hb-active .tab-hb-active-right{background:url('../../images/bdscomvn/ptab-right.jpg') no-repeat right 50%/*tpa=http://media.batdongsan.com.vn/images/system/tab/ptab-right.jpg*/;
+#divlistProduct .tab-hb .tab-hb-active .tab-hb-active-right{/*background:url('../../images/bdscomvn/ptab-right.jpg') no-repeat right 50%;*/
 height:22px;line-height:22px;width:8px;float:left;
 }
 #divlistProduct .tab-hb .tab-hb-active .tab-hb-active-middle{border-top:2px solid #0099cc;background:#fff;height:22px;line-height:22px;float:left;font-weight:bold;color:#333333;z-index:10;overflow:hidden;}
 #divlistProduct .tab-hb .tab-hb-active .tab-hb-active-middle a{text-decoration:none;}
 #divlistProduct .tab-hb .tab-hb-active .tab-hb-active-middle a:hover{text-decoration:none;}
 #divlistProduct .tab-hb .tab-hb-inactive{height:22px;line-height:22px;float:left;}
-#divlistProduct .tab-hb .tab-hb-inactive .tab-hb-inactive-left{background:url('../../images/bdscomvn/tab-left-inactive.jpg') no-repeat left 50%/*tpa=http://media.batdongsan.com.vn/images/system/tab/tab-left-inactive.jpg*/;
+#divlistProduct .tab-hb .tab-hb-inactive .tab-hb-inactive-left{background:url('../../images/bdscomvn/tab-left-inactive.jpg') no-repeat left 50%;
 height:22px;width:5px;float:left;
 }
 #divlistProduct .tab-hb .tab-hb-inactive .tab-hb-inactive-right{background:url('../../images/bdscomvn/ptab-right-inactive.jpg') no-repeat right 50%/*tpa=http://media.batdongsan.com.vn/images/system/tab/ptab-right-inactive.jpg*/;

@@ -6,7 +6,7 @@
         <div class="hq2">
 
         </div>
-        <fieldset id="basic-infor">
+        <fieldset id="basic-infor" style="width:100%">
             <div style="width: 50%; float: left">
                 <h2>
                     Tên liên hệ&nbsp;(<span style="color: Red">*</span>)</h2>
@@ -16,20 +16,20 @@
                     Email&nbsp;(<span style="color: Red">*</span>)</h2>
                 <input id="email" type="text" name="email" class="required email" value=<?php set_value('email');?>></div>
         </fieldset>
-        <fieldset id="ask-detail" class="ask">
+        <fieldset id="ask-detail" class="ask" style="width:100%">
             <h2>
                 Chi tiết câu hỏi
                 <span style="font-weight: normal;">(Yêu cầu gõ tiếng Việt có dấu):</span>
             </h2>
-            <textarea cols="80" class="mceEditor" id="commentDetail" name="commentDetail" rows="10" ><?php 
+            <textarea cols="80" class="mceEditor" id="commentDetail" name="commentDetail" rows="10" style="width:98%"><?php 
             if (isset($_POST["questionTitle"]))
             	echo $_POST["questionTitle"];
             ?><?php set_value('commentDetail');?></textarea>
 
         	</fieldset>
-				<fieldset class="ask-button">
-					<input type="submit" value='Gửi' />
-					<input type="button" id="questionCancel" name="questionCancel" value='Hủy' />
-        		</fieldset>
+			<fieldset class="ask-button" style="width:100%">
+				<input type="submit" value='Gửi' />
+				<input type="button" id="questionCancel" name="questionCancel" value='Hủy' />
+        	</fieldset>
 </div>
  <?=form_close()?>
