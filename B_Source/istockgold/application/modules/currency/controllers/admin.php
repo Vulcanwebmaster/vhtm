@@ -9,14 +9,9 @@ class Admin extends Shop_Admin_Controller
     function __construct()
     {
         parent::__construct();
-//        check('Pages');
     	$this->module='currency';
-//        $this->module=basename(dirname(dirname(__FILE__)));
-        // Load modules/menus/models/MMenus
         $this->load->model('menus/MMenus');
-        // Load pages model
         $this->load->model('MCurrency');
-        // Set breadcrumb
         $this->bep_site->set_crumb($this->lang->line('backendpro_pages'),$this->module.'/admin');
     }
 
