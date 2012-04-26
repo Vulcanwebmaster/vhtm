@@ -24,5 +24,64 @@ class MExchange_order extends CI_Model
         $Q->free_result();
         return $data;
 	}
+	
+	function getOrder($id) 
+    {
+        $data = array();
+        $this->db->where('order_id',$id);
+        $Q = $this->db->get('is_order');
+		if ($Q->num_rows() > 0){
+	      	$data = $Q->row_array();
+	    }
+	    $Q->free_result();    
+	    return $data;
+    }
+    
+	function getOrderStatus() 
+    {
+        $data = array();
+        $Q = $this->db->get('is_order_status');
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+    
+    function getSourceCurrency()
+    {
+    	$data = array();
+    	$this->db->where('is_show_src',1);
+        $Q = $this->db->get('is_currency');
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+    
+    function getDestinationCurrency()
+    {
+    	$data = array();
+    	$this->db->where('is_show_dst',1);
+        $Q = $this->db->get('is_currency');
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
 }//end class
 ?>

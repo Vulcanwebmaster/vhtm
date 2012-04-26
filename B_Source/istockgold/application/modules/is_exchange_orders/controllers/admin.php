@@ -1,13 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * modules/category/controllers/admin.php
- * Kaimonokago shopping cart on CodeIgniter
- * Author   Shin Okada
- * Contact okada.shin@gmail.com
- * version: 1.1.4 beta
- *
- *
- */
 
 class Admin extends Shop_Admin_Controller 
 {
@@ -30,21 +21,11 @@ class Admin extends Shop_Admin_Controller
         $this->load->view($this->_container,$data);
     }
 
-    /*
-    * This is used in index() and function Ajaxgetupdatecat()
-    */ 
-
     function common_home()
     {
         $data['orders'] = $this->MExchange_order->getAllOrder();
         return $data;
     }
-
-
-
-    /*
-    * this is used for ajax function
-    */
 
     function Ajaxgetupdate()
     {
@@ -58,5 +39,22 @@ class Admin extends Shop_Admin_Controller
         flashMsg('success',"Deleted successfully.");
         redirect('is_exchange_orders/admin/index','refresh');
     }
-}//end class
+    
+	function edit($id=0)
+    {
+        if ($this->input->post('order_id'))
+        {
+
+        }
+        else
+        {
+        	$data['page'] = $this->config->item('backendpro_template_admin') . "admin_exchange_order_edit";
+        	$data['order'] = $this->MExchange_order->getOrder($id);
+            $data['order_status'] = $this->MExchange_order->getOrderStatus();
+        	$data['source_currencies'] = $this->MExchange_order->getSourceCurrency();
+        	$data['destination_currencies'] = $this->MExchange_order->getDestinationCurrency();
+        	$this->load->view($this->_container,$data);
+        }
+    }
+}
 ?>
