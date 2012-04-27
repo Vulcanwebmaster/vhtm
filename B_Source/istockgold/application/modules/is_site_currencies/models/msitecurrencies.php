@@ -14,15 +14,16 @@ class MSiteCurrencies extends CI_Model
     
     function getAllKey() {
     	$this->db->select('key');
-    	$Q = $this->db->get("is_account_setting");
-        if ($Q->num_rows() > 0)
-        {
-            foreach ($Q->result_array() as $row)
+    	$Q = $this->db->get('is_account_setting');
+    	$abc = "";
+        if ($Q->num_rows() > 0){
+        	foreach ($Q->result_array() as $row)
             {
-                $data = $row;
-                break;
+                $data[] = $row;
+                //$abc = $abc.print_r($row);
             }
-        }
+	    }
+	    //echo $abc;
         $Q->free_result();
         return $data;
     }

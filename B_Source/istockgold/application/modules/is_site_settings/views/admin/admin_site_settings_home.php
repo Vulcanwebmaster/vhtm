@@ -18,7 +18,7 @@
                                         Site Name
                                     </td>
                                     <td width="5%">
-                                        <input name="SITE_NAME" type="text" id="SITE_NAME" value="" size="35">
+                                        <input name="SITE_NAME" type="text" id="SITE_NAME" value="<?php if (count($site_setting)) echo $site_setting['site_name'];?>" size="35">
                                     </td>
                                     <td class="help">
                                         Your Company Name as you want it to appear throughout the system.
@@ -29,7 +29,7 @@
                                         Site Url
                                     </td>
                                     <td>
-                                        <input name="SITE_URL" type="text" id="SITE_URL" value=""
+                                        <input name="SITE_URL" type="text" id="SITE_URL" value="<?php if (count($site_setting)) echo $site_setting['site_url'];?>"
                                             size="35">
                                     </td>
                                     <td class="help">
@@ -42,7 +42,7 @@
                                     </td>
                                     <td>
                                         <label>
-                                            <input name="SITE_URL_SECURE" type="text" id="SITE_URL_SECURE" value="" size="35">
+                                            <input name="SITE_URL_SECURE" type="text" id="SITE_URL_SECURE" value="<?php if (count($site_setting)) echo $site_setting['site_secure'];?>" size="35">
                                         </label>
                                     </td>
                                     <td class="help">
@@ -57,8 +57,8 @@
                                     </td>
                                     <td>
                                         <select name="FRIENDLY_URL" id="FRIENDLY_URL">
-                                            <option value="1" selected="selected">Yes</option>
-                                            <option value="0">No</option>
+                                            <option value="1" <?php if (count($site_setting)) if ($site_setting['friendly_url'] == 1) echo "selected=\"selected\""?> >Yes</option>
+                                            <option value="0" <?php if (count($site_setting)) if ($site_setting['friendly_url'] == 0) echo "selected=\"selected\""?> >No</option>
                                         </select>
                                     </td>
                                     <td class="help">
@@ -73,8 +73,8 @@
                                     </td>
                                     <td nowrap="nowrap">
                                         <select name="temporary_close" id="temporary_close">
-                                            <option value="1">Yes</option>
-                                            <option value="0" selected="selected">No</option>
+                                            <option value="1" <?php if (count($site_setting)) if ($site_setting['temporary'] == 1) echo "selected=\"selected\""?> >Yes</option>
+                                            <option value="0" <?php if (count($site_setting)) if ($site_setting['temporary'] == 1) echo "selected=\"selected\""?> ed="selected">No</option>
                                         </select>
                                     </td>
                                     <td class="help">

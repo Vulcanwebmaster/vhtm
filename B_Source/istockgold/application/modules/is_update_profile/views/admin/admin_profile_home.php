@@ -60,9 +60,9 @@
 <div id="page_title"><h1>Update Profile</h1></div> 
 <div id="status_box"> 
 <form name="signup" id="signup" action="<?php echo base_url()?>index.php/is_update_profile/admin/edit" method="post" onsubmit="return CheckForm();">
-  	<fieldset>
-			Update your contact information by filling out the form below.
-			<br><label id="lbl_error" class="ErrorMessage"></label><br>
+Update your contact information by filling out the form below.
+<fieldset>
+			<label id="lbl_error" class="ErrorMessage"></label>
 			<label id="n_password0"><span>Password<i> (required)</i>:</span>
 			<input type="password" maxlength="20" size="50" name="password0" id="password0" value="*********" onclick="reset_pass();"/>
 			</label>
@@ -70,12 +70,18 @@
    		    <input type="password" maxlength="20" size="50" name="password1" id="password1" value="*********" onclick="reset_pass();" />
 			</label>
 			<label id="n_mail"><span>E-mail<i> (required)</i>:</span>
-            <input maxlength="60" size="50" name="mail" id="mail" value=<?php echo $profiles['email']?> type="text">
+            <input maxlength="60" size="50" name="mail" id="mail" value=<?php if (count($profiles)) echo $profiles['email']?> type="text">
  			</label>
- 			<center>
- 				<input type="submit" class="btn" name="Submit" value="Update">
- 			</center>
-	</fieldset>			
+			<label>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			<input type="submit" class="btn" name="Submit" value="Update"> 
+            </label>
+</fieldset>
 </form>
 </div>		  
 </div>

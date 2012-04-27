@@ -40,7 +40,6 @@ class Admin extends Shop_Admin_Controller
         $fields = array('id','c_id','key','display','value','note','order');
         $orderby = array('id','order');
         $data['site_currencies'] = $this->MIStockGold->getAll("account_setting",$fields, $orderby);
-        $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
         $this->store = $data['site_currencies'];
         return $data;
@@ -56,9 +55,9 @@ class Admin extends Shop_Admin_Controller
     {
     	$main_value = str_replace(".", "_", $value);  
         $data = array(
-        'value'      => db_clean($_POST[$main_value])
+        'value'      => $_POST[$main_value]
         );
-        echo "$main_value";
+        //echo $data['value'];
         return $data;
     }
 
@@ -72,12 +71,22 @@ class Admin extends Shop_Admin_Controller
             $this->store_key = $this->MSiteCurrencies->getAllKey();
             foreach ($this->store_key as $key => $temp)
 			{
-            	$data = $this->fields($temp);
-          		$this->MSiteCurrencies->updateValueByKey($temp,$data);
+            	$data = $this->fields($temp['key']);
+          		$this->MSiteCurrencies->updateValueByKey($temp['key'],$data);
 			}
             flashMsg('success',"Update site currencies infor");
         }
         redirect('is_site_currencies/admin/index','refresh');
     }
+    
+    function getAccountLBName($accountID)
+    {
+		include  base_url()."helper/ApiAgent.php";
+		$auth = new Authentication($accountID, "ApiName", "SecurityWord");
+		$accountToRetrieve = "X567";
+		$apiAgent = ApiAgentFactory::createApiAgent(ApiAgentFactory::SOAP, $auth); 
+		$accountName = $apiAgent->accountName($accountToRetrieve);    
+		return $accountName;
+    }   
 }//end class
 ?>

@@ -4,7 +4,7 @@
 <div id="head">Edit Exchange Order #<?php echo $order['order_code']?>></div>
 <a href="">Back to List Order exchanges</a>
 	<table width="99%" cellspacing="4" cellpadding="4" border="0">
-	<form method="post" action="http://demo.auto-exchanger.com/admin/adm_exchanges/?Action=Edit&amp;eid=32" name="edit_lines"></form>
+	<form method="post" action="" name="edit_lines"></form>
 	  <tbody>
 		<tr>
 			<td>Order Id</td>
@@ -103,7 +103,7 @@
 		</tr>
 		<tr>
 			<td style="text-align:center;" colspan="2">
-				<input type="reset" onclick="parent.location='http://demo.auto-exchanger.com/admin/adm_exchanges/'" class="btn" value="Cancel" id="button" name="cancel">
+				<input type="reset" onclick="" class="btn" value="Cancel" id="button" name="cancel">
 				<input type="submit" value="Update" class="btn" name="submit">
 			</td>
 		</tr>

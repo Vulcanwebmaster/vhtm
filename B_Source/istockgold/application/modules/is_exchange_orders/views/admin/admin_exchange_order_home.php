@@ -7,10 +7,11 @@
 		<script language="JavaScript">
 			function accept(usr, tid, amt, acc, emn) {
 				if (confirm('Sure you want to Manually Pay "' + amt + '"'))
-					window.open('http://demo.auto-exchanger.com/admin/adm_manuallpay/?Type=exchange&act=accept&id=' + tid + '&amount=' + amt + '&account=' + acc + '&cid=' + emn + '&user=' + usr);
+					//window.open('http://demo.auto-exchanger.com/admin/adm_manuallpay/?Type=exchange&act=accept&id=' + tid + '&amount=' + amt + '&account=' + acc + '&cid=' + emn + '&user=' + usr);
+				{}
 			}
 			function getbulk() {
-				scrollScreen('http://demo.auto-exchanger.com/admin/adm_autopayuser/?Type=exchange&act=bulk&bulk=' + getlist(document.lines, 'pay'));
+				//scrollScreen('http://demo.auto-exchanger.com/admin/adm_autopayuser/?Type=exchange&act=bulk&bulk=' + getlist(document.lines, 'pay'));
 			}
 			function checkAll(form) {
 				for (var i = 0; i < document.getElementById(form).elements.length; i++) {
@@ -22,7 +23,7 @@
 			}
 		</script>
 		<div id="head">
-			<form name="lines" id="lines" action="http://demo.auto-exchanger.com/admin/adm_exchanges/"
+			<form name="lines" id="lines" action=""
 			method="post">
 			<input name="fld_search" type="text" id="fld_search" value="" />
 			<input type="submit" name="submit_search" value="Search" class="btn" />

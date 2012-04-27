@@ -19,14 +19,14 @@ class Admin extends Shop_Admin_Controller
         // Check for access permission
         $this->load->model('msite_settings');
         $this->module=basename(dirname(dirname(__FILE__)));
-        $this->module='is_set_settings';
+        $this->module='is_site_settings';
         mb_internal_encoding('UTF-8');
     }
 
     function index()
     {
-        //$data = $this->common_home();
-        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_site_settings_home";
+        $data = $this->common_home();
+        $data['page'] = "admin/admin_site_settings_home";
         $this->load->view($this->_container,$data);
     }
     
@@ -35,7 +35,15 @@ class Admin extends Shop_Admin_Controller
             $data = $this-> _fields_settings();
             $this->msite_settings->update($data);
             redirect(base_url().'index.php/is_site_settings/admin');
-        
+    }
+    
+    function common_home()
+    {
+        $fields = array('site_settings_id','site_name','site_url','site_secure','friendly_url','temporary');
+        $orderby = array('site_settings_id');
+        $data['site_setting'] = $this->MIStockGold->getAll("site_settings",$fields, $orderby);
+        $data['module'] = $this->module;
+        return $data;
     }
 
     function _fields_settings()

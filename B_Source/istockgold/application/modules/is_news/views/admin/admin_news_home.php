@@ -19,7 +19,8 @@
                                     </td>
                                 </tr>
                                 
-<?php 
+<?php
+if (count($news))
 foreach ($news as $key => $list)
 {
 	echo "<tr height=\"20\" class=\"col0\">";

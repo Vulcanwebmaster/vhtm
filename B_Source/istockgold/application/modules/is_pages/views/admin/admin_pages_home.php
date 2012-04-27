@@ -20,6 +20,7 @@
                                 </tr>
                                 
 <?php 
+if (count($pages))
 foreach ($pages as $key => $list)
 {
 	echo "<tr height=\"20\" class=\"col0\">";

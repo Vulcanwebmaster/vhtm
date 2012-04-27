@@ -1,10 +1,12 @@
  <?php 
+ if (count($site_currencies))
  foreach ($site_currencies as $key => $list)
 {
 	$data[$list['key']] = $list['value'];
 }
 ?>
 
+      
 <div id="main">
                     <div id="Div1">
                         <h1>
@@ -74,7 +76,7 @@
                                         Account Name:
                                     </td>
                                     <td width="5%">
-                                        <input name="liberty_account_name" type="text" id="liberty_account_name"
+                                        <input name="liberty_account_name" type="text" id="liberty_account_name" readonly="readonly"
                                             value="<?php echo $data['liberty.account.name']?>">
                                     </td>
                                     <td class="help">
@@ -183,4 +185,42 @@
                     <script language="javascript">                        var tabs = 2;</script>
                     <script language="javascript" src="<?php echo base_url()?>assets/js/admin/tabs.js"></script>
                     <script language="javascript">                        TabClick(0);</script>
-                </div>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+      <script type="text/javascript" src="http://crypto-js.googlecode.com/files/2.3.0-crypto-sha256.js"></script>
+      <script type="text/javascript" src="http://sites.google.com/site/jollytoad/json.js"></script>
+      <script type="text/javascript" src="<?php echo base_url()?>assets/js/apiagent.js"></script>
+      <script type="text/javascript">
+      var accountname = document.getElementById("liberty_account");
+
+      if (accountname.addEventListener ) {
+    	  accountname.addEventListener('keydown',keyHandler,false);
+      } else if(accountname.attachEvent ) {
+    	  accountname.attachEvent('onkeydown',keyHandler); /* damn IE hack */
+      }
+
+      function getAccountName() {
+          var account = document.getElementById("liberty_account").value;
+          var api = "APIEntry1";
+          var securityWord = "";           
+          auth.create("U9450274", api, securityWord);
+          jsApiAgent.initialize(auth);
+          var request = "\,\"search\":\"U9450274\"}";
+          //alert(request);
+          var data = jsApiAgent.accountName(request);
+          if(data.Accounts[0])
+        	  //$("#liberty_account_name").html($.toJSON(data.Accounts[0].Name)); 
+        	  document.getElementById("liberty_account_name").value = $.toJSON(data.Accounts[0].Name);
+          else
+              alert("Data not found");  
+          return false;                
+	  };
+
+      function keyHandler(e) {
+          var TABKEY = 9;
+          if(e.keyCode == TABKEY) {
+        	  getAccountName();
+              return false;
+          }
+      }
+      </script>
+ </div>
