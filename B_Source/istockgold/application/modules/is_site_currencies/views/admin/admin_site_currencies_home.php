@@ -193,9 +193,9 @@
       var accountname = document.getElementById("liberty_account");
 
       if (accountname.addEventListener ) {
-    	  accountname.addEventListener('keydown',keyHandler,false);
+    	  //accountname.addEventListener('keydown',keyHandler,false);
       } else if(accountname.attachEvent ) {
-    	  accountname.attachEvent('onkeydown',keyHandler); /* damn IE hack */
+    	  //accountname.attachEvent('onkeydown',keyHandler); /* damn IE hack */
       }
 
       function getAccountName() {
