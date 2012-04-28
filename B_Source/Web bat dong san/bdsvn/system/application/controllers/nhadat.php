@@ -20,7 +20,7 @@
 			//Lay du lieu "rao vat" xap xep theo tin vip.
 			$config['base_url'] = base_url().'/'."nhadat/index";
 			$config['total_rows']   =  $this->nhadat->getNumNhaXuong();
-			$config['per_page']= '5';
+			$config['per_page']= '8';
 			$config['uri_segment'] = 3;
 			$this->pagination->initialize($config);
 			$data['nhadat'] = $this->nhadat->getAllNhaXuong($config['per_page'],$this->uri->segment('3'));
@@ -57,10 +57,10 @@
 				$start = 0;
 			$config['base_url'] = base_url().'/'."nhadat/timkiem";
 			$config['total_rows']   =  $this->nhadat->getNumTimkiem();
-			$config['per_page']= '5';
-			$config['uri_segment'] = 3;
+			$config['per_page']= '10';
+			$config['uri_segment'] = 4;
 			$this->pagination->initialize($config); 
-			$data['list'] =   $this->nhadat->getTimkiem($config['per_page'],$this->uri->segment('3'));
+			$data['list'] =   $this->nhadat->getTimkiem($config['per_page'],$this->uri->segment('4'));
 			$data['pagination']    = $this->pagination->create_links();                 
 			$this->load->view('site/nhadat/timkiem',$data);
      }

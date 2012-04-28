@@ -43,7 +43,7 @@ select{
    background: url(../images/header-mid.png) repeat-x;  
 }
 .header .header-left{
-    background: url(../images/header-left.png) no-repeat;
+    /*background: url(../images/header-left.png) no-repeat;*/
     height: 41px;
     width: 153px;
     float: left;
@@ -227,7 +227,7 @@ div.t, div.b {
     border: 1px solid #e5e5e5;
 }
 /**
-* Đăng tin
+* Ä�Äƒng tin
 */
 .hdangtin{
     height: 60px;

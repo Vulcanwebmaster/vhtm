@@ -15,11 +15,13 @@
         <div class="head"></div>
         <div class="body">
             <div class="col1" align="center">
-                <div class="icon_user" align="center"></div>
-                <div>Sản phẩm được phát triển bởi:<br><b>CTY TNHH MTV PHAN GIA HUY</b></div>
+                <div class="icon_user" align="center">
+                	<img src="<?php echo base_url();?>images/admin/user_login.png" width="191px" height="100px" />
+                </div>
+                <div>Sản phẩm được phát triển bởi:<br><b>CTY TNHH NIW</b></div>
                 <div>Email: </div>
                 <div>Điện thoại: </div>
-                <div>wesite: <a href="http://phangiahuy.com" target="_blank">http://phangiahuy.com</a></div>
+                <div>wesite: <a href="http://niw.com.vn/" target="_blank">http://www.niw.com.vn</a></div>
             </div>
             <div class="col2">
                 <div class="headline">Đăng nhập hệ thống</div>

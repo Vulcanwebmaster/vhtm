@@ -5,7 +5,7 @@
       }
       //getnhadat() : by tlx
 		function getNhaXuong(){
-      		$query =$this->db->query("SELECT * FROM vnit_nhadat where bat=1 And (sectionid=2 OR sectionid=3) order by vip limit 10");
+      		$query =$this->db->query("SELECT * FROM vnit_nhadat where bat=1 And (sectionid=2 OR sectionid=3) order by vip limit 8");
       		return $query->result();
       	}
       	function getNumNhaXuong(){
@@ -132,14 +132,17 @@
       * Tim kiem        
       */
       function getTimkiem($num,$offset){
-         $sectionid = (int)$this->input->post('sectionid');
+         $sectionid = (int)$this->input->post('chuyenmuc');
          $nhucau = (int)$this->input->post('nhucau');
          $giatu = (int)$this->input->post('giatu');
          $giaden = (int)$this->input->post('giaden');
          $id_thanhpho = (int)$this->input->post('id_thanhpho');
          $idhuong = (int)$this->input->post('idhuong');
+         echo $sectionid;
          if($sectionid!=0){
-             $this->db->where('sectionid',$sectionid);
+             //$this->db->where('sectionid',$sectionid);
+             //$this->db->or_where('parentid',$sectionid);
+             $this->db->where('parentid',$sectionid);
          }
          if($nhucau!=0){
              $this->db->where('nhucau',$nhucau);
@@ -156,14 +159,15 @@
          return $query->result();   
       }
       function getNumTimkiem(){
-          $sectionid = (int)$this->input->post('sectionid');
+          $sectionid = (int)$this->input->post('chuyenmuc');
          $nhucau = (int)$this->input->post('nhucau');
          $giatu = (int)$this->input->post('giatu');
          $giaden = (int)$this->input->post('giaden');
          $id_thanhpho = (int)$this->input->post('id_thanhpho');
          $idhuong = (int)$this->input->post('idhuong');
          if($sectionid!=0){
-             $this->db->where('sectionid',$sectionid);
+             //$this->db->where('sectionid',$sectionid);
+             $this->db->where('parentid',$sectionid);
          }
          if($nhucau!=0){
              $this->db->where('nhucau',$nhucau);

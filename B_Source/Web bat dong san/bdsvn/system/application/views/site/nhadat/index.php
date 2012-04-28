@@ -18,6 +18,7 @@
         	<div class="ct-home">    
 				<h3>
                     <a title="<?=$rs->tieude?>"href="<?=base_url()?>chi-tiet/<?=$this->string_library->stringchange($this->load_library->loadnhucau($rs->nhucau))?>/<?=$rs->idtin?>/<?=$rs->url_tieude.duoi()?>"><?=$this->string_library->catchu($rs->tieude,60)?></a>
+                    <img src="<?=base_url()?>skins/vip.gif" alt="">
 				</h3>       
 			<div>
 				<div class="photo">

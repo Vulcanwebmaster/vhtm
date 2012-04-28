@@ -1,3 +1,48 @@
+<script>
+    var sectionid = 0;
+    var parentid = 0;
+    var id_thanhpho = 0;
+    var id_quan = 0;
+
+    LoadDanhmuc(sectionid);
+    LoadThanhpho(id_thanhpho); 
+     function LoadDanhmuc(value,subvalue){    
+        if(value!=0)
+        {
+            $.post("<?=base_url()?>nhadat/loadloaithanh/",
+                {
+                    //path     : "member",
+                    sectionid  : value},
+                    function (data) {
+                    //alert(data);
+                    $("#subcon").html(data);
+                }
+            );                       
+        }else{
+            document.getElementById("subcon").innerHTML="<select name='parentid' style='width:200px;'><option value='0' >Chọn Danh mục con</option></select>";
+        }
+        
+    }
+    
+    
+     function LoadThanhpho(value,subvalue){    
+        if(value!=0)
+        {
+            $.post("<?=base_url()?>nhadat/loadquan/",
+                {
+                    //path     : "member",
+                    id_thanhpho  : value},
+                    function (data) {
+                    //alert(data);
+                    $("#subzone").html(data);
+                }
+            );                       
+        }else{
+            document.getElementById("subzone").innerHTML="<select name='id_quan' style='width:200px;'><option value='0' >Chọn Quận | Huyện</option></select>";
+        }
+        
+    }    
+</script>
 <?php
   $this->CI = get_instance();
   $this->CI->db->where('bat',1);
@@ -23,7 +68,7 @@
   $thanhpho = $query->result();
 ?>
 <?
-$this->CI->db->where('parentid <>',0);
+//$this->CI->db->where('parentid',0);
 $this->CI->db->order_by('danhmuc','ASC');
 $query = $this->CI->db->get('nhadat_dm');
 $listdm = $query->result();
@@ -41,28 +86,37 @@ $listtp = $query->result();
 		<div class="title"><h1>Công cụ tìm kiếm</h1></div>
 		<div class="content">
     <div style="clear:both;">
-       <form action="" method="post" id="frmSearchProduct" name="frmSearchProduct">
         <div id="divOfSeach">
             <div id="searchArea">
                 <ul>
                     <li>
-                        <span id="listCategoryRe">
+                        <span id="listNhuCau">
                             <select class="inputbox-blue" name="nhucau" id="nhucau">
-                            <option value="0">---Chọn loại tin---</option>
+                            <option value="0">---Chọn nhu cầu---</option>
                             <option value="1">Cần bán</option>
                             <option value="2">Cần mua</option>
-                            <option value="2">Cần thuê</option>
-                            <option value="2">Cho thuê</option>
+                            <option value="3">Cần thuê</option>
+                            <option value="4">Cho thuê</option>
 							</select>
                         </span>
                     </li>
 					<li>
-                        <span id="listCategoryRe">
-                            <select class="inputbox-blue" name="sectionid" id="sectionid">
-                            <option value="0">---Chọn danh mục---</option>
+                        <span id="listChuyenMuc">
+                            <select class="inputbox-blue" name="chuyenmuc" id="chuyenmuc">
+                            <option value="0">---Chọn chuyên mục---</option>
 							<?foreach($listdm as $rs):?>
-                            	<option value="<?=$rs->iddm?>"><?=$rs->danhmuc?></option>
-                            <?endforeach;?>
+							<?php if ($rs->parentid == 0){
+							?>
+								<option value="<?php echo $rs->iddm?>"><?php echo $rs->iddm;echo $rs->danhmuc?></option>
+							<?php } else {
+								$vach='-- '.$rs->danhmuc;
+							?>
+								<option value="<?php echo $rs->iddm?>"><?php echo $rs->iddm;echo $vach?></option>
+							<?php }?>
+							                            		
+                            <?php 
+                            endforeach;
+                            ?>
 							</select>
                         </span>
                     </li>
@@ -76,6 +130,7 @@ $listtp = $query->result();
 							</select>
                         </span>
                     </li>
+                    <!-- 
                     <li>
                         <span id="listDistrict">
                             <select class="inputbox-blue" name="giatu" id="giatu">
@@ -104,6 +159,9 @@ $listtp = $query->result();
 							</select>
                         </span>
                     </li>
+                    -->
+                    
+                    <!-- 
                     <li>
                         <span>
                             <select class="inputbox-blue" name="giaden" id="giaden">
@@ -132,6 +190,7 @@ $listtp = $query->result();
 								</select>
                         </span>
                     </li>
+                     -->
                     <li>
                         <span id="divPrice">
                             <select class="inputbox-blue" name="idhuong" id="idhuong">
@@ -176,65 +235,9 @@ $listtp = $query->result();
                </div> 
            
         </div>
-        </form>       
-		  
-        <div id="divReSaler" style="display:none">   
-            <form id="frmBrokerSearch" action="http://batdongsan.com.vn/broker/index" name="frmBrokerSearch"
-				method="post" enctype="multipart/form-data">
-				<div id="brokersearch">
-					<ul>						
-						<!-- Combo box Chọn chuyên mục -->
-						<li>
-							<span>
-								<select class="inputbox-blue" id="cmbCategory" name="cmbCategory"><option value="">--Chọn giao dịch--</option>
-<option value="38">Nhà đất bán</option>
-<option value="49">Nhà đất cho thuê</option>
-</select>
-							</span></li>
-						<!-- Combo box chọn Loại bất động sản -->
-						<li>
-							<span id="listTypeBDS">
-								<select class="inputbox-blue" id="cmbTypeBDS" name="cmbTypeBDS"><option value="">--Chọn Loại nhà đất--</option>
-</select></span>
-						</li>
-						<!-- Combo box chọn Tỉnh thành phố -->
-						<li>
-							<span>
-								<select class="inputbox-blue" id="cmbCity" name="cmbCity">
-								<option value="">--Chọn Tỉnh / Thành phố--</option>
-                				<?foreach($thanhpho as $tp):?>
-									<option value="<?=$tp->idthanhpho?>"><?=$tp->ten?></option>
-                				<?endforeach;?>
-								</select>
-							</span></li>
-						<!-- Combo box chọn Quận huyện -->
-						<li>
-							<span id="divListDistrict">
-								<select class="inputbox-blue" id="cmbDistrict" name="cmbDistrict"><option value="">--Chọn Quận / Huyện--</option>
-								</select></span>
-						</li>
-						<!-- Combo box chọn Dự án -->
-						<li>
-							<span id="divListProject">
-								<select class="inputbox-blue" id="cmbProject" name="cmbProject"><option value="">--Chọn Dự án--</option>
-								</select></span>
-						</li>
-						<!-- Text box nhập keyword cho nhà môi giới -->
-						<li class="tempHide">
-							<span>
-								<input type="text" name="txtBrokerName" id="txtBrokerName" value="" class="inputbox-blue" style="width:195px;" /></span>
-						</li>	
-					</ul>
-					<div class="btn">
-						<input type="image" src="<?php echo base_url();?>images/bdscomvn/before.png" onmouseover="this.src='<?php echo base_url();?>after.png'" 
-							onmouseout="this.src='<?php echo base_url();?>images/bdscomvn/before.png'" onclick="timkiem()" name="search" /></div>   
-					<div class="lay-clear"></div>
-				</div>
-				</form>
         </div>
     </div>
     </div>
-</div>
 <?=form_close();?>
 <script type="text/javascript">
 function timkiem()

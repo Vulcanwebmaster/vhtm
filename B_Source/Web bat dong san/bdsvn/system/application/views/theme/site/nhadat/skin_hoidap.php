@@ -53,7 +53,6 @@
 	<?=$this->load->view('theme/site/nhadat/html/quangcao2ben')?>
 	<div style="width:1000px; margin:auto">
 		<?=$this->load->view('theme/site/nhadat/html/banner')?>
-	
 		<div class="nav-left">
         	<?=$this->load->view('theme/site/nhadat/html/menu_trai')?>
 		</div>

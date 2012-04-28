@@ -2,10 +2,7 @@
 ?>
 <!-- Quang cao 2 ben -->
 	<div>
-        <div id="divAdRight" style="display: none; position: absolute; top: 0px;">
-            <a href="#">
-                <img src="<?=base_url()?>images/banner_left.png" alt="" width="150" /></a>
-        </div>
+	<?php echo $this->load->view("modules/tnd_quangcao/quangcaotrai"); ?>
         <div id="divAdLeft" style="display: none; position: absolute; top: 0px">
             <a href="#">
                 <img src="<?=base_url()?>images/banner_right.png" alt="" width="150" /></a>

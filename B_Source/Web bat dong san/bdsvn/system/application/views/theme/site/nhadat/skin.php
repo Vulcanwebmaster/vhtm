@@ -72,10 +72,10 @@
             </div>
 		
 <div id="top-center" style="margin-bottom: 20px ; margin-top: 230px">
-	<div id="search-box">		
+	<div id="search-box" style="margin-bottom: 20px ; margin-top: 20px">		
 		<?=$this->load->view('theme/site/nhadat/html/boxtimkiem')?>
 	</div>
-	<div id="hot24-box" style="border-right:ridge;border-left:ridge;border-bottom:ridge;border-top:ridge">
+	<div id="hot24-box" style="margin-bottom: 20px ; margin-top: 20px">
 		<?=$this->load->view('theme/site/nhadat/html/tinhot')?>
 	</div>
 </div>
@@ -247,43 +247,41 @@
     <div class="art-item">
         <ul>
             
-            <li><a href="javascript:if(confirm('http://vatlieuxaydung.batdongsan.com.vn/am-dam-thi-truong-thep-JtvWRZZcL081.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://vatlieuxaydung.batdongsan.com.vn/am-dam-thi-truong-thep-JtvWRZZcL081.html'">
-                Ảm đạm thị trường thép
+            <li id="video1"><a href="">
+                Video 1
+            </a>
+            </li>
+            
+            <li><a href="">
+                Video 2
             </a>
             
             </li>
-            
-            <li><a href="javascript:if(confirm('http://congtrinhdocdao.batdongsan.com.vn/10-dia-danh-noi-tieng-tay-ban-nha-Ud2sd0JZE0E1.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://congtrinhdocdao.batdongsan.com.vn/10-dia-danh-noi-tieng-tay-ban-nha-Ud2sd0JZE0E1.html'">
-                10 địa danh nổi tiếng ở Tây Ban Nha
+            <li><a href="">
+                Video 3
             </a>
-            
             </li>
             
-            <li><a href="javascript:if(confirm('http://phongthuyvanphong.batdongsan.com.vn/trong-kien-truc-kinh-doanh-SsTNEg0q_6I1.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://phongthuyvanphong.batdongsan.com.vn/trong-kien-truc-kinh-doanh-SsTNEg0q_6I1.html'">
-                Phong thủy trong Kiến trúc và Kinh doanh
+            <li><a href="">
+                Video 4
             </a>
-            
             </li>
             
-            <li><a href="javascript:if(confirm('http://thegioikientruc.batdongsan.com.vn/thiet-ke-doc-dao-cua-toa-nha-al-hamra-firdous-tower-HTAdg83zwMk1.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://thegioikientruc.batdongsan.com.vn/thiet-ke-doc-dao-cua-toa-nha-al-hamra-firdous-tower-HTAdg83zwMk1.html'">
-                Thiết kế độc đáo của tòa nhà Al Hamra Firdous Tower
+            <li><a href="">
+                Video 5
             </a>
-            
-            </li>
-            
-            <li><a href="javascript:if(confirm('http://congtrinhdocdao.batdongsan.com.vn/chiem-nguong-tru-so-bi-mat-dep-long-lanh-cua-apple-OY2x9wEj-KE1.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://congtrinhdocdao.batdongsan.com.vn/chiem-nguong-tru-so-bi-mat-dep-long-lanh-cua-apple-OY2x9wEj-KE1.html'" >
-                Chiêm ngưỡng trụ sở bí mật đẹp long lanh của Apple
-            </a>
-            
             </li>
             
         </ul>
     </div>
     <div id="video-container">
-        <object width="100%" height="210px">
-           <param name="movie" value="video/Export.swf">
-           <embed src="video/Export.swf" width="100%" height="210px" />
-        </object>
+        <video width="100%" height="200px" controls="controls">
+  			<source src="<?php echo base_url();?>video/Export.mp4" type="video/mp4" />
+			<object width="100%" height="210px" src="<?php echo base_url();?>video/Export.mp4">
+				<embed width="100%" height="210px" src="<?php echo base_url();?>video/Export.mp4">
+				</embed>
+			</object>
+		</video>
     </div>
 </div>
 </div>
@@ -299,36 +297,31 @@
                         <div class="right_panel" style="width: 175px; border-left: 1px #0088f4 solid; border-right: 1px #0088f4 solid;
                             border-bottom: 1px #0088f4 solid;">
                             <div style="margin-left: 10px; width: 165px;">
+                            <? $this->CI = get_instance();?>
+                            <?php 
+								$this->db->where('id_group','22');
+			    				$query = $this->db->get('thanhvien');
+								$item = $query->result();
+								//$this->db->where()?>
+								
                                 <div style="color: #f66c03; padding: 5px; width: 155px">
                                     <strong>TƯ VẤN MUA BÁN</strong></div>
-                                <div style="color: #006de8; padding: 5px; width: 155px;">
-                                    <strong>Mr. Mạnh</strong></div>
-                                <div style="color: #355f9d; padding: 5px; width: 155px;">
+								<?foreach($item as $rs):?>
+									<div style="color: #006de8; padding: 5px; width: 155px;">
+                                    	<strong><? echo $rs->fullname;?></strong></div>
+                                	<div style="color: #355f9d; padding: 5px; width: 155px;">
                                     <div style="width: 27px; height: 24px; float: left"">
                                         <img src="<?php echo base_url();?>images/bds_12.gif"
                                             width="27" height="24" /></div>
                                     <div style="padding-left: 5px; font-size: 12px; width: 123px;">
-                                        <strong>0904.631535 04.85858684</strong></div>
+                                        <strong><?php echo $rs->username;?></strong></div>
                                 </div>
                                 <div style="padding-left: 5px; width: 155px; padding-bottom: 10px">
-                                    <a href="ymsgr:sendim?kisianhtrang_110205">
-                                        <img border="0" src="http://opi.yahoo.com/online?u=kisianhtrang_110205&amp;m=g&amp;t=2&amp;l=us" width="125"
+                                    <a href="ymsgr:sendim?<?php echo $rs->email;?>">
+                                        <img border="0" src="http://opi.yahoo.com/online?u=<?php echo $rs->email;?>&amp;m=g&amp;t=2&amp;l=us" width="125"
                                             height="25"></a></div>
-                                <div style="color: #006de8; padding: 5px; width: 155px;">
-                                    <strong>Mrs. Huệ</strong></div>
-                                <div style="color: #355f9d; padding: 5px; width: 155px;">
-                                    <div style="width: 27px; height: 24px; float: left">
-                                        <img src="<?php echo base_url();?>images/bds_12.gif"
-                                            width="27" height="24" /></div>
-                                    <div style="padding-left: 5px; font-size: 12px; width: 123px;">
-                                        <strong>0913.161993 04.39959519</strong></div>
-                                </div>
-                                <div style="padding-left: 5px; width: 155px; padding-bottom: 10px">
-                                    <a href="ymsgr:sendim?bebu_263">
-                                        <img border="0" src="<?php echo base_url();?>images/onlinebebu.gif" width="125"
-                                            height="25"></a></div>
-                            </div>
-                        </div>
+                                <?endforeach;?>
+                        	</div>
         </div>
 
         <div id="danhgia" style="padding-top:10px">
@@ -343,7 +336,8 @@
             </center>
         </div>
 
-<div class="rc4 iebleft"><div class="iebright">
+<div class="rc4 iebleft">
+<div class="iebright">
     <div class="rc41 white">
         <div class="ierightcorner">
         <h4>Tiêu điểm tuần qua</h4>
@@ -352,34 +346,24 @@
     <div class="rc42 rc42-tabart ablack">
         <div class="rc421">
             <ul>
-                <li>
-                    <a rel = 'nofollow'>Tin tức, dự án BĐS nổi bật tuần từ ngày 2/4 đến ngày 8/4</a>                    
-                </li>
-                
-                <li>
-                    <a rel = 'nofollow'>Giá đền bù sẽ cao hơn khi bỏ khung giá đất?</a>                    
-                </li>
-                
-                <li>
-                    <a rel = 'nofollow'>Giá đất Hà Nội "đắt" hơn từ 25% so với bảng giá đất</a>                    
-                </li>
-                
-                <li>
-                    <a rel = 'nofollow'>Nguy cơ đổ bể hàng loạt dự án của AZ Land</a>                    
-                </li>
-                
-                <li>
-                    <a rel = 'nofollow'>Công khai mua bán đất nông nghiệp: Khó xử lý vì thiếu chỉ giới quy hoạch</a>                    
-                </li>
-                
-                <li>
-                    <a rel = 'nofollow'>Tin tức bất động sản nổi bật tuần từ 26-31/3</a>                    
-                </li>
+			<? $this->CI = get_instance();?>
+    		<?
+			    $this->db->where('bat',"1");
+			    $this->db->order_by('luotxem','DESC');
+			    $query = $this->db->get('noidung','7');
+			    $item = $query->result();?>
+			    <?foreach($item as $rs):?>
+					<li>
+	                    <a rel = 'nofollow' href="<?=base_url()?>tintuc/chi-tiet/<?=$rs->idcat?>/<?=$rs->id?>/<?=$rs->alias.duoi()?>">
+	                                        <?=$rs->tieude?></a>
+					</li>
+				<?endforeach;?>
                 
             </ul>
         </div>
     </div>
-</div></div>
+</div>
+</div>
 <div class="separable"></div>
 <div class="rc4 iebleft"><div class="iebright">
     <div class="rc41 white">
@@ -411,7 +395,8 @@
 	09/12/2011: Chuyển tiêu đề box thành link tới trang Hỏi đáp và rel = "nofollow"
 -->
 
-<div class="rc3 iebleft"><div class="iebright">
+<div class="rc3 iebleft">
+<div class="iebright">
     <div class="rc31 white">
         <div class="ierightcorner">
 			
@@ -450,7 +435,8 @@
 	
 </div>
     </div>            
-</div></div>
+</div>
+</div>
 
 <!-- Vach ngan cach -->
         <div class="separable"></div>
@@ -462,9 +448,8 @@
 </div>                        
 </div>
 </div>
-
-        <div class="bottomline">
-        </div>
+</div>
+        <div class="bottomline"></div>
 		<?=$this->load->view("theme/site/nhadat/html/footer")?>
 		</div>
 </body>

@@ -17,7 +17,9 @@
 }?>
 <div class="body_content">
     <div class="header">
-          <div class="header-left"></div>
+          <div class="header-left">
+          <img src="<?php echo base_url();?>images/admin/header-left.png" width="80px" height="41px"/>
+          </div>
           <div class="header-mid">
           <div class="site_header">
             <span class="welcome">Xin chào: <?=$this->session->userdata('username')?></span> 

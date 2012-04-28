@@ -38,7 +38,7 @@ div.login div.bot{
     float: left;
 }
 .icon_user{
-    background: url(../images/user_login.png) no-repeat;
+    /*background: url(../images/user_login.png) no-repeat;*/
     text-align: center;
     width: 191px;
     height: 100px;

@@ -17,7 +17,7 @@
                 <div class="sap">
                 </div>
                 <div class="toplinks">
-                    <a href="#">QUẢNG BÁ</a></div>
+                    <a href="<?php echo base_url();?>tintuc/chi-tiet/56/310/">QUẢNG BÁ</a></div>
                 <div class="sap">
                 </div>
                 <div class="toplinks">
