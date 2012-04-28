@@ -134,14 +134,12 @@
       function getTimkiem($num,$offset){
          $sectionid = (int)$this->input->post('chuyenmuc');
          $nhucau = (int)$this->input->post('nhucau');
-         $giatu = (int)$this->input->post('giatu');
-         $giaden = (int)$this->input->post('giaden');
+         //$giatu = (int)$this->input->post('giatu');
+         //$giaden = (int)$this->input->post('giaden');
          $id_thanhpho = (int)$this->input->post('id_thanhpho');
          $idhuong = (int)$this->input->post('idhuong');
          echo $sectionid;
          if($sectionid!=0){
-             //$this->db->where('sectionid',$sectionid);
-             //$this->db->or_where('parentid',$sectionid);
              $this->db->where('parentid',$sectionid);
          }
          if($nhucau!=0){

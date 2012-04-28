@@ -234,6 +234,23 @@
     </div>
 </div>
 
+<script type="text/javascript">
+function video1() {
+	document.getElementById('video-container1').style.display='inline';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='none';
+}
+function video2() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='inline';
+	document.getElementById('video-container3').style.display='none';
+}
+function video3() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='inline';
+}
+</script>
 
 
 <div class="lay-clear">
@@ -246,44 +263,44 @@
 <div class="art-latest">
     <div class="art-item">
         <ul>
-            
-            <li id="video1"><a href="">
-                Video 1
-            </a>
+             
+            <li>
+                <!-- <input onclick = "video1()" value ="video 1" type = "button">  -->
+                <a onclick = "video1()">Load video 1</a>
             </li>
-            
-            <li><a href="">
-                Video 2
-            </a>
-            
-            </li>
-            <li><a href="">
-                Video 3
-            </a>
-            </li>
-            
-            <li><a href="">
-                Video 4
-            </a>
-            </li>
-            
-            <li><a href="">
-                Video 5
-            </a>
+            <li>
+                <!-- <input onclick = "video2()" value ="video 2" type = "button">-->
+                <a onclick = "video2()">Load video 2</a>
+            </li>            
+            <li>
+                <!--<input onclick = "video3()" value ="video 3" type = "button">-->
+                <a onclick = "video3()">Load video 3</a>
             </li>
             
         </ul>
+
     </div>
-    <div id="video-container">
-        <video width="100%" height="200px" controls="controls">
-  			<source src="<?php echo base_url();?>video/Export.mp4" type="video/mp4" />
-			<object width="100%" height="210px" src="<?php echo base_url();?>video/Export.mp4">
-				<embed width="100%" height="210px" src="<?php echo base_url();?>video/Export.mp4">
-				</embed>
-			</object>
-		</video>
+                <div id="video-container1" style="float:left;width: 45%;padding:10px;background-color: transparent;">
+        <object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/Export.swf">
+           <embed src="<?php echo base_url();?>video/Export.swf" width="100%" height="210px" />
+        </object>
     </div>
+        <div id = "video-container2" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
+           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
+        </object>
+    </div>
+        <div id = "video-container3" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
+           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
+        </object>
+    </div>
+
 </div>
+
 </div>
     </div>	
 </div>

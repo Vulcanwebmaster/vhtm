@@ -66,17 +66,17 @@
 
 <?
   foreach($list as $rs): 
-if($rs->option==0){
-?>
-	 <div id="divAdRight" style="display: none; position: absolute; top: 0px;">
-			<a href="<?=$rs->link?>">
-			<img src="<?=base_url().$rs->hinhanh?>" alt="<?=$rs->name?>" style="width: <?=$rs->dai?>px;height: <?=$rs->cao?>px;">
-			</a>
-	</div>
-<?
+		if($rs->option==0){
+		?>
+			 <div id="divAdLeft" style="display: none; position: absolute; top: 0px;">
+					<a href="<?=$rs->link?>">
+					<img src="<?=base_url().$rs->hinhanh?>" alt="<?=$rs->name?>" style="width: <?=$rs->dai?>px;height: <?=$rs->cao?>px;">
+					</a>
+			</div>
+		<?
 }else{
 ?>
-        <div id="divAdRight" style="display: none; position: absolute; top: 0px;">
+        <div id="divAdLeft" style="display: none; position: absolute; top: 0px;">
             <a href="#">
                 <img src="<?=base_url().$rs->hinhanh?>" alt="" height="<?=$rs->cao?>" width="<?=$rs->dai?>" /></a>
         </div>

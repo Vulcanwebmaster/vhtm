@@ -1,7 +1,7 @@
 <div style="background-color: #214263; height:170px">
 		<div id="bottom">
 			<div class="bottomlink">
-                <a href="<?php echo base_url();?>>">TRANG CHỦ</a></div>
+                <a href="<?php echo base_url();?>">TRANG CHỦ</a></div>
             <div class="sap3">
                 |</div>
             <div class="bottomlink">

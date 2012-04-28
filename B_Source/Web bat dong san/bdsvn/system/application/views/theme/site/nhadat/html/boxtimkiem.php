@@ -66,6 +66,9 @@
   $this->db->where('idquan',5);
   $query = $this->db->get('thanhpho');
   $thanhpho = $query->result();
+  
+  $query = $this->db->get('vitri');
+  $listvitri = $query->result();
 ?>
 <?
 //$this->CI->db->where('parentid',0);
@@ -97,6 +100,7 @@ $listtp = $query->result();
                             <option value="2">Cần mua</option>
                             <option value="3">Cần thuê</option>
                             <option value="4">Cho thuê</option>
+                            <option value="5">Hợp tác kinh doanh</option>
 							</select>
                         </span>
                     </li>
@@ -117,6 +121,16 @@ $listtp = $query->result();
                             <?php 
                             endforeach;
                             ?>
+							</select>
+                        </span>
+                    </li>
+					<li>
+                        <span id="listViTri">
+                            <select class="inputbox-blue" name="vitri" id="vitri">
+                            <option value="0">---Chọn vị trí---</option>
+								<?foreach($listvitri as $rs):?>
+                            		<option value="<?=$rs->idvitri?>"><?=$rs->tenvitri?></option>
+                            	<?endforeach;?> 
 							</select>
                         </span>
                     </li>

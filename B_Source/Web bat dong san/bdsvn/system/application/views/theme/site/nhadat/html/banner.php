@@ -1,6 +1,5 @@
 <?php
 ?>
-
     <div style="width:1000px; margin:auto">
         <div class="wraper">
      	<div id="left">

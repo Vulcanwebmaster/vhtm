@@ -3,6 +3,7 @@
 <!-- Quang cao 2 ben -->
 	<div>
 	<?php echo $this->load->view("modules/tnd_quangcao/quangcaotrai"); ?>
+	<?php echo $this->load->view("modules/tnd_quangcao/quangcaophai"); ?>
         <div id="divAdLeft" style="display: none; position: absolute; top: 0px">
             <a href="#">
                 <img src="<?=base_url()?>images/banner_right.png" alt="" width="150" /></a>
