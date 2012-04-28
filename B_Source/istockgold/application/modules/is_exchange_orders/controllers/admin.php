@@ -56,5 +56,16 @@ class Admin extends Shop_Admin_Controller
         	$this->load->view($this->_container,$data);
         }
     }
+    
+    function search()
+    {
+    	$search = $this->input->post('fld_search');
+    	$data['orders']=$this->MExchange_order->getSearch($search);
+        $data['page'] = "admin/admin_exchange_order_home";
+        $this->load->view($this->_container,$data);
+  	  	
+    }
+
+ 
 }
 ?>

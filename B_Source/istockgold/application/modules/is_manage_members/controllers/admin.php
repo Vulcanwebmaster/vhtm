@@ -17,7 +17,7 @@ class Admin extends Shop_Admin_Controller
     {
         parent::__construct();
         // Check for access permission
-        $this->load->model('mmanage_member');
+        $this->load->model('Mmanage_member');
         $this->module=basename(dirname(dirname(__FILE__)));
         $this->module='is_manage_members';
         mb_internal_encoding('UTF-8');
@@ -75,6 +75,18 @@ class Admin extends Shop_Admin_Controller
         $this->MIStockGold->deleteitem('is_user',$id);
         flashMsg('Success',"Delete successfully.");
         redirect('is_manage_members/admin/index','refresh');
-    }    
+    }
+
+     function search()
+     {
+     	$search = $this->input->post('fld_search');  	
+     	$data['users']=$this->Mmanage_member->getSearch($search);
+     	$data['page'] = "admin/admin_manage_members_home";
+        $this->load->view($this->_container,$data);
+
+     }
+    
+    
+    
 }//end class
 ?>

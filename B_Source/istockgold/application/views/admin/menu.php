@@ -5,6 +5,62 @@ Please ensure that you assign the LI a unique ID
 Examples can be seen below for menu_bep_system
 -->
 
+<script type="text/javascript">
+function time()
+{
+	var xmlHttp;
+	try
+	  {
+	  // Firefox, Opera 8.0+, Safari
+	  xmlHttp=new XMLHttpRequest();	  
+	  }
+	catch (e)
+	  {
+	  // Internet Explorer
+	  try
+	    {
+	    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+	    }
+	  catch (e)
+	    {
+	    try
+	      {
+	      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+	      }
+	    catch (e)
+	      {
+	      alert("Your browser does not support AJAX!");
+	      return false;
+	      }
+	    }
+	  }//kiem tra brower
+  
+	xmlHttp.onreadystatechange=function()
+    {
+    	if(xmlHttp.readyState==4)
+      	{
+    		success(xmlHttp.responseText);
+      	}
+    }	
+	xmlHttp.open("POST","<?php echo base_url()?>application/views/admin/ajax.php",true);
+	xmlHttp.send();
+}
+
+function success(response)
+{
+	var result=response;
+	var mang=result.split("&");
+	document.getElementById("a").innerHTML = "$"+mang[1];
+	document.getElementById("b").innerHTML = "$"+mang[2];
+	return true;
+}
+
+self.setInterval("time()",3000);
+</script>
+
+
+
+
 		<div id="left">	<div id="navigation_menu">
 	<ul>
 		<li><?php print anchor('is_admin_home/admin','<img src="'.base_url().'assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'),array('class'=>'navigation_select'))?></li>
@@ -25,12 +81,18 @@ Examples can be seen below for menu_bep_system
 	</ul>
 </div>
 
-<div class="left_box">
+
+	<div class="left_box">
     <div id="page_title"><h1>Reserved Amount</h1></div>
     <div id="reserved_box">
-                    <img src="<?php echo base_url();?>assets/images/admin/libertyreserve_3.gif"  title="Libertyreserve usd, Our account: U2782065" /><span class="money_1">$1,050.56</span>
-                    <img src="<?php echo base_url();?>assets/images/admin/libertyreserve_3.gif"  title="Libertyreserve euro, Our account: U2782065" /><span class="money_1">&#8364;390.00</span>                    
-            </div>
+      <img src="<?php echo base_url();?>assets/images/admin/libertyreserve_3.gif"/>
+      <span id ="a"></span>
+      
+      <img src="<?php echo base_url();?>assets/images/admin/wu.jpg"/>
+      <span id ="b"></span>
+      
+                                   
+     </div>
 </div>
 </div>		
 

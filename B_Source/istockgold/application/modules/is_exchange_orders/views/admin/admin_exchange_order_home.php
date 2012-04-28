@@ -22,11 +22,13 @@
 				}
 			}
 		</script>
+		
+		
 		<div id="head">
-			<form name="lines" id="lines" action=""
-			method="post">
+			<form name="lines" id="lines" method="post" action="<?php echo base_url()?>index.php/is_exchange_orders/admin/search">		
 			<input name="fld_search" type="text" id="fld_search" value="" />
 			<input type="submit" name="submit_search" value="Search" class="btn" />
+			</form>
 		</div>
 		<style type="text/css">
 			td
@@ -34,6 +36,9 @@
 				text-align: center;
 			}
 		</style>
+		
+		
+		
 		<table cellspacing="1" cellpadding="2" border="0" width="99%" class="maintable">
 			<tbody>
 				<tr height="21">

@@ -5,7 +5,7 @@
 	</div>
 	<div id="status_box">
 		<div id="head">
-			<form name="lines" id="lines" action=""
+			<form name="lines" id="lines" action="<?php echo base_url()?>index.php/is_manage_members/admin/search"
 			method="post">
 			<input name="fld_search" type="text" id="fld_search" value="">
 			<input id="button" class="btn" type="submit" value="Search" name="button">
