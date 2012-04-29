@@ -39,7 +39,6 @@ function clearDefault(el) {
   if (el.defaultValue==el.value) el.value = "";
 }
 
-
 var rowHighlight = true
   var colHighlight = true
 
