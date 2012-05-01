@@ -1,36 +1,45 @@
 <div id="main">
     <div id="page_title">
                         <h1>
-                            Mail</h1>
+                            Contact Message</h1>
                     </div>
-                    <a href="<?php echo base_url();?>index.php/is_mail/admin/create">
-                        <img src="<?php echo base_url();?>assets/images/admin/n_add.png"
-                            width="16" height="16" border="0">Add New Mail</a>
-                    <br>
                     <div id="status_box">
                         <table cellspacing="1" cellpadding="2" border="0" class="maintable">
                             <tbody>
                                 <tr height="21" bgcolor="#FFFFFF">
-                                    <td width="10%">
-                                        <h4> Action</h4>
+                                    <td width="20%">
+                                        <h4> MessageId</h4>
                                     </td>
                                     <td width="40%">
-                                        <h4> Title</h4>
+                                        <h4> Name</h4>
+                                    </td>
+                                    <td width="40%">
+                                        <h4> Company</h4>
+                                    </td>
+                                    <td width="40%">
+                                        <h4> Delete</h4>
                                     </td>
                                 </tr>
                                 
 <?php
-if (count($news))
-foreach ($news as $key => $list)
+if (count($contact))
+foreach ($contact as $key => $list)
 {
 	echo "<tr height=\"20\" class=\"col0\">";
 	echo "<td nowrap=\"nowrap\">";
- 	echo "[<a href=\"".base_url()."index.php/is_mail/admin/edit/".$list['id']."\">Edit</a>]";
- 	echo "[<a href=\"".base_url()."index.php/is_mail/admin/delete/".$list['id']."\" onclick=\"return confirm_entry('DELETE #".$list['id']."')\">Delete</a>]";
+	echo '<a href="'.base_url().'index.php/is_contact_message/admin/view/'.$list['message_id'].'">'.$list['message_id'].'</a>';
 	echo "</td>";
  	echo "<td>";
-	echo $list['title'];
+	echo $list['name'];
 	echo "</td>";
+	echo "<td>";
+	echo $list['company'];
+	echo "</td>";
+	echo "</td><td style=\"text-align: center; line-height: 16px\" nowrap=\"nowrap\">
+						 	<a href='".base_url()."index.php/is_contact_message/admin/delete/".$list['message_id'].
+								"' title=\"Delete this message\" onclick=\"return confirm_entry('DELETE #".$list['message_id']."')\">
+								<img src='".base_url()."assets/images/fasle3.gif' /></a></td>";
+							
 	echo "</tr>";
 }
 ?>                                

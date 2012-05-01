@@ -26,7 +26,7 @@ foreach ($news as $key => $list)
 	echo "<tr height=\"20\" class=\"col0\">";
 	echo "<td nowrap=\"nowrap\">";
  	echo "[<a href=\"".base_url()."index.php/is_news/admin/edit/".$list['id']."\">Edit</a>]";
- 	echo "[<a href=\"".base_url()."index.php/is_news/admin/delete/".$list['id']."\">Delete</a>]";
+ 	echo "[<a href=\"".base_url()."index.php/is_news/admin/delete/".$list['id']."\" onclick=\"return confirm_entry('DELETE #".$list['id']."')\">Delete</a>]";
 	echo "</td>";
  	echo "<td>";
 	echo $list['title'];

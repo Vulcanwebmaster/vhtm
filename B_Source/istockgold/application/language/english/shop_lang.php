@@ -62,6 +62,8 @@ $lang['istockgold_site_currencies'] = 'Site Currencies';
 $lang['istockgold_site_settings'] = 'Site Settings';
 $lang['istockgold_news'] = 'News';
 $lang['istockgold_pages'] = 'Pages';
+$lang['istockgold_mail'] = 'Mail';
+$lang['istockgold_contact_us'] = 'Contact Message';
 $lang['istockgold_update_profile'] = 'Update Profile';
 $lang['istockgold_log_out'] = 'Log Out';
 

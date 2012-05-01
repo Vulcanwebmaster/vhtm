@@ -40,11 +40,34 @@ class Admin extends Shop_Admin_Controller
         redirect('is_exchange_orders/admin/index','refresh');
     }
     
+    function _fields($id)
+    {
+		if ($this->input->post('src_cid') == 1) $src = "LR";
+			else $src = "WU";
+		if ($this->input->post('src_dst') == 1) $dst = "LR";
+			else $dst = "WU";
+        $data = array(
+        'order_id'			=> $id,
+        'c_src'       		=> $src,
+        'c_dst'   	 		=> $dst,
+        'amount_src'		=> $this->input->post('src_amount'),
+        'status_src'		=> $this->input->post('status_src'),
+        'amount_dst'		=> $this->input->post('amount_dst'),
+        'account_dst'		=> $this->input->post('account_dst'),
+        'status_dst'		=> $this->input->post('status_dst')
+        );
+        if ($this->input->post('date_src')!="") $data['date_src'] = $this->input->post('date_src');
+        if ($this->input->post('date_dst')!="") $data['date_dst'] = $this->input->post('date_dst');
+        return $data;
+    }
+    
 	function edit($id=0)
     {
-        if ($this->input->post('order_id'))
+        if ($this->input->post('src_cid'))
         {
-
+			$data = $this->_fields($id);
+			$this->MIStockGold->updateItem("order",$data);
+			redirect(base_url().'index.php/is_exchange_orders/admin','refresh');
         }
         else
         {
@@ -63,9 +86,6 @@ class Admin extends Shop_Admin_Controller
     	$data['orders']=$this->MExchange_order->getSearch($search);
         $data['page'] = "admin/admin_exchange_order_home";
         $this->load->view($this->_container,$data);
-  	  	
     }
-
- 
 }
 ?>

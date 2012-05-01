@@ -175,12 +175,17 @@ class MIStockGold extends Base_model
             $idname = 'customer_id';
             $this->db->where($idname, id_clean($_POST['customer_id']));
         }
-        elseif($module =='currency')
+        else if($module =='currency')
         {// omc_cutomer has customer_id
             $idname = 'c_id';
             $this->db->where($idname, $data['c_id']);
         }
-        else 
+        else if ($module == 'order')
+        {
+        	$idname = 'order_id';
+        	$this->db->where($idname, $data['order_id']);
+        }
+        else
         {
             $idname = 'id';
             $this->db->where($idname, id_clean($_POST['id']));
@@ -360,6 +365,10 @@ class MIStockGold extends Base_model
         elseif ($table == 'is_order')
         {
         	$idname = 'order_id';
+        }  
+        elseif ($table == 'is_contact_us')
+        {
+        	$idname = 'message_id';
         }  
         else 
         {

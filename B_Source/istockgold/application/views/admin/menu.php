@@ -6,6 +6,7 @@ Examples can be seen below for menu_bep_system
 -->
 
 <script type="text/javascript">
+self.setInterval("time()",100);
 function time()
 {
 	var xmlHttp;
@@ -54,13 +55,8 @@ function success(response)
 	document.getElementById("b").innerHTML = "$"+mang[2];
 	return true;
 }
-
 self.setInterval("time()",3000);
 </script>
-
-
-
-
 		<div id="left">	<div id="navigation_menu">
 	<ul>
 		<li><?php print anchor('is_admin_home/admin','<img src="'.base_url().'assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'),array('class'=>'navigation_select'))?></li>
@@ -75,6 +71,8 @@ self.setInterval("time()",3000);
         <li><?php print anchor('is_site_settings/admin','<img src="'.base_url().'assets/images/admin/n_settings.gif" width="19" height="18" border="0" />'.$this->lang->line('istockgold_site_settings')) ?></li>			
 		<li><?php print anchor('is_news/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_news')) ?></li>
         <li><?php print anchor('is_pages/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_pages')) ?></li>				
+        <li><?php print anchor('is_mail/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_mail')) ?></li>				
+        <li><?php print anchor('is_contact_message/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_contact_us')) ?></li>				
         <div class="seperator"></div>
 		<li><?php print anchor('is_update_profile/admin','<img src="'.base_url().'assets/images/admin/n_profile.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_update_profile')) ?></li>
         <li><?php print anchor('auth/auth/logout','<img src="'.base_url().'assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?></li>
@@ -87,11 +85,8 @@ self.setInterval("time()",3000);
     <div id="reserved_box">
       <img src="<?php echo base_url();?>assets/images/admin/libertyreserve_3.gif"/>
       <span id ="a"></span>
-      
-      <img src="<?php echo base_url();?>assets/images/admin/wu.jpg"/>
+      <img src="<?php echo base_url();?>assets/images/wu.jpg"/>
       <span id ="b"></span>
-      
-                                   
      </div>
 </div>
 </div>		

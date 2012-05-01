@@ -1,5 +1,5 @@
 <?php
-$link = mysql_connect("localhost", "root", "");    
+$link = mysql_connect("localhost", "root", "khongcopass");    
         mysql_select_db('istockgold', $link);
    
         $sql='SELECT c_reserve FROM is_currency WHERE 1';
@@ -17,6 +17,5 @@ $link = mysql_connect("localhost", "root", "");
         {
             $result = $result."&".$list;
         }
-
         echo $result;
 ?>
