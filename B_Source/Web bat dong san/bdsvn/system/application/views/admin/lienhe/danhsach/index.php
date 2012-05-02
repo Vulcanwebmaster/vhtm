@@ -1,14 +1,15 @@
  <div style="width: 78%;float: left;">
      <fieldset>
-        <legend>Danh sách liên hệ</legend>
+        <legend>Danh sách liên hệ hỏi đáp</legend>
         <table class="adminlist">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Họ và tên</th>
-                    <th>Nhóm liên hệ</th>
+                    <th>Email</th>
                     <th>Ngày gửi</th>
-                    <th>Chức năng</th>
+                    <th>Nội dung</th>
+                    <th>Xóa</th>
                 </tr>
             </thead>
             <?$k=1;
@@ -16,16 +17,19 @@
             $nhom =$this->lienhe->getItemNhom($rs->idnhom);
             ?>
             <tr class="row<?=$k?> record">
-                <td width="30"><?=$rs->id?></td>
+                <td width="30"><?=$rs->idlienhe?></td>
                 <td><?=$rs->hovaten?></td>
-                <td width="70">
-                <?=$nhom->tenlienhe?>   
+                <td width="90px">
+                <?=$rs->email?>   
                 </td>
                 <td><?=$rs->ngay?></td>
 
-                <td align="center">
+                <td align="left">
 
-                <?=$this->icon_library->del($rs->id)?>
+                <?=$rs->noidung?>
+                </td>
+                <td>
+                <?=$this->icon_library->del($rs->idlienhe)?>
                 </td>
             </tr>
             <?
@@ -68,7 +72,7 @@ $(".delbutton").click(function(){
 var element = $(this);
 var del_id = element.attr("id");
 var info =del_id;
-    if(confirm("Bạn có chắc chắn muốn xóa liên hệ này?"))
+    if(confirm("Bạn có chắc chắn muốn xóa câu hỏi này?"))
     {
         $.ajax({
         type: "POST",

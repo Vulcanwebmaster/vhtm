@@ -31,21 +31,23 @@
             <img src="<?=base_url().$path?>icon-48-user.png" alt="">
             <span>Thành viên</span>
         </a>
-    </div>    
+    </div>   
+    <!--  
     <div class="icon">
         <a href="">
             <img src="<?=base_url().$path?>icon-48-themes.png" alt="">
             <span>Giao diện</span>
         </a>
-    </div>     
+    </div>
+     -->     
     <div class="icon">
         <a href="<?=base_url()?>lienhe/danhsach">
             <img src="<?=base_url().$path?>icon-48-contacts.png" alt="">
-            <span>Liên hệ</span>
+            <span>Liên hệ hỏi đáp</span>
         </a>
     </div> 
     <div class="icon">
-        <a href="">
+        <a href="<?=base_url()?>quangcao/danhsach">
             <img src="<?=base_url().$path?>icon-48-banner-categories.png" alt="">
             <span>Quảng cáo</span>
         </a>

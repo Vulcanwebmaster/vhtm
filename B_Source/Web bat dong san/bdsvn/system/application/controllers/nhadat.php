@@ -46,21 +46,13 @@
 			$data['giaden'] = (int)$this->input->post('giaden');
 			$data['id_thanhpho'] = (int)$this->input->post('id_thanhpho');
 			$data['idhuong'] = (int)$this->input->post('idhuong');
-			$limit  =   '10';  
-			$data['limit'] = $limit;
-			$offset = (int)$this->input->post('page_no');
-			$data['offset'] = $offset;
-			$num = $this->nhadat->getNumTimkiem();
-			if($offset!=0) 
-				$start = ($offset - 1) * $limit;
-			else
-				$start = 0;
+			
 			$config['base_url'] = base_url().'/'."nhadat/timkiem";
 			$config['total_rows']   =  $this->nhadat->getNumTimkiem();
 			$config['per_page']= '10';
-			$config['uri_segment'] = 4;
+			$config['uri_segment'] = 3;
 			$this->pagination->initialize($config); 
-			$data['list'] =   $this->nhadat->getTimkiem($config['per_page'],$this->uri->segment('4'));
+			$data['list'] =   $this->nhadat->getTimkiem($config['per_page'],$this->uri->segment('3'));
 			$data['pagination']    = $this->pagination->create_links();                 
 			$this->load->view('site/nhadat/timkiem',$data);
      }
@@ -318,6 +310,11 @@ $this->pagination->initialize($config);
 			$data['title'] = 'THUÊ NHÀ XƯỞNG - HỎI ĐÁP';
 			$this->_templates['page'] = 'site/nhadat/hoidap';
 			$this->site_library->load($this->_templates['page'],$data,'hoidap');
+      }
+      function danhgiaweb(){
+			$data['title'] = 'THUÊ NHÀ XƯỞNG - HỎI ĐÁP';
+			$this->_templates['page'] = 'site/nhadat/danhgiaweb';
+			$this->site_library->load($this->_templates['page'],$data,'danhgiaweb');
       }
       
   }

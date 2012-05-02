@@ -343,14 +343,15 @@ function video3() {
 
         <div id="danhgia" style="padding-top:10px">
             <h4 style="color: #FFFFFF; text-align: center;" align="right">ĐÁNH GIÁ WEBSITE</h4>
-            <form style="padding-left:10px;padding-top:10px">
-                <p style="padding-top:10px"><input type="radio" name="group1" />Đẹp</p>
-                <p style="padding-top:10px"><input type="radio" name="group1" />Bình thường</p>
-                <p style="padding-top:10px"><input type="radio" name="group1" />Xấu</p>
+            <form action="" method="post" style="padding-left:10px;padding-top:10px;float:left">
+                <p style="padding-top:10px"><input type="radio" name="danhgia" value="dep"/>Đẹp</p>
+                <p style="padding-top:5px"><input type="radio" name="danhgia" value="binhthuong"/>Bình thường</p>
+                <p style="padding-top:5px;padding-bottom:5px"><input type="radio" name="danhgia" value="xau">Xấu</p>				
+                <!-- <button style="height:24px; margin-left:95px">đánh giá</button> -->
+                <button type="submit" style="height:24px; float:left">Đánh giá</button>
+                <button type="submit" style="height:24px; float:left">Kết quả</button>
             </form>
-            <center>
-                <button style="height:24px; margin-left:95px">đánh giá</button>
-            </center>
+
         </div>
 
 <div class="rc4 iebleft">

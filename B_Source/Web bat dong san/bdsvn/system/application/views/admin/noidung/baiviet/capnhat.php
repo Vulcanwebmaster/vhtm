@@ -9,7 +9,7 @@
                 <td rowspan="5">
                     <?if($rs->hinhanh!=''){
                     ?>
-                    <img src="<?=base_url().$rs->hinhanh?>" alt="" style="height: 150px;">
+                    	<img src="<?=base_url().$rs->hinhanh?>" alt="" style="height: 150px;">
                     <?
                     }?>
                 </td>
@@ -28,7 +28,7 @@
                         ?>
                         <option value="<?=$cm->id?>-0" <?if($rs->idcat == $cm->id && $rs->idsub==0){echo 'selected="selected"';}?>><?=$cm->ten?></option>
                         <?foreach($item as $sub):?>
-                        <option value="<?=$cm->id?>-<?=$sub->id?>" <?if($rs->idcat == $cm->id && $rs->idsub==$sub->id){echo 'selected="selected"';}?>> - -<?=$sub->ten?></option
+                        <option value="<?=$cm->id?>-<?=$sub->id?>" <?if($rs->idcat == $cm->id && $rs->idsub==$sub->id){echo 'selected="selected"';}?>> - -<?=$sub->ten?></option>
                         <?endforeach;?>
                         <?endforeach;?>
                     </select>

@@ -1,6 +1,6 @@
  <div style="width: 78%;float: left;">
      <fieldset>
-        <legend>Quản lý thể loại</legend>
+        <legend>Quản lý quảng cáo</legend>
         <table class="adminlist">
             <thead>
                 <tr>
@@ -24,7 +24,7 @@
                 <td align="center">
 
                 <?=$this->icon_library->edit('quangcao/capnhat/'.$rs->id)?>
-                <?=$this->icon_library->publish('quangcao/bat/'.$rs->id.'/'.$rs->bat,$rs->bat)?>
+                <!-- <?=$this->icon_library->publish('quangcao/bat/'.$rs->id.'/'.$rs->bat,$rs->bat)?> -->
                 <?=$this->icon_library->del($rs->id)?>
                 </td>
             </tr>
@@ -72,11 +72,11 @@ $(".delbutton").click(function(){
 var element = $(this);
 var del_id = element.attr("id");
 var info =del_id;
-    if(confirm("Bạn có chắc chắn muốn xóa thể loại này?"))
+    if(confirm("Bạn có chắc chắn muốn xóa quảng cáo này?"))
     {
         $.ajax({
         type: "POST",
-        url: "<?=base_url()?>noidung/xoatheloai/"+info,
+        url: "<?=base_url()?>quangcao/xoaquangcao/"+info,
         data: info,
         success: function(){
         }

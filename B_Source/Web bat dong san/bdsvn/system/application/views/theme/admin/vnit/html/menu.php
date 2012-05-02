@@ -35,7 +35,8 @@
 </li>
 <li class="node"><a href="#" class="">Ứng dụng</a>
     <ul>
-        <li class="node"><a href="<?=base_url()?>nhadats/index" class="icon-16-contact">Nhà đất</a>
+    	<li><a href="<?=base_url()?>nhadats/index" class="icon-16-contact">Nhà đất</a>
+        <!-- <li class="node"><a href="<?=base_url()?>nhadats/index" class="icon-16-contact">Nhà đất</a> -->
             <!--
             <ul class="menu-component" id="menu-contacts">
                 <li><a href="<?=base_url()?>nhadats/danhsach/0" class="icon-16-contact">Tin đang chờ duyệt</a></li>
@@ -43,13 +44,10 @@
             </ul>
             -->
         </li>    
-        <li class="node"><a href="<?=base_url()?>quangcao/danhsach" class="icon-16-banners">Quảng cáo</a>
+        <li><a href="<?=base_url()?>quangcao/danhsach" class="icon-16-banners">Quảng cáo</a>
         </li>
-        <li class="node"><a href="<?=base_url()?>lienhe/nhomlienhe" class="icon-16-contact">Liên hệ</a>
-            <ul class="menu-component" id="menu-contacts">
-                <li><a href="<?=base_url()?>lienhe/nhomlienhe" class="icon-16-contact">Liên hệ</a></li>
-                <li><a href="<?=base_url()?>lienhe/danhsach" class="icon-16-contact-cat">Thông tin liên hệ</a></li>
-            </ul>
+        <li><a href="<?=base_url()?>lienhe/nhomlienhe" class="icon-16-contact">Liên hệ</a>
+        <li><a href="<?=base_url()?>lienhe/danhsach" class="icon-16-contact-cat">Liên hệ hỏi đáp</a></li>
         </li>
 
     </ul>

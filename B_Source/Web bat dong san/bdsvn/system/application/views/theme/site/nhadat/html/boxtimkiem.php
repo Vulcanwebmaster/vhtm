@@ -110,12 +110,10 @@ $listtp = $query->result();
                             <option value="0">---Chọn chuyên mục---</option>
 							<?foreach($listdm as $rs):?>
 							<?php if ($rs->parentid == 0){
-							?>
-								<option value="<?php echo $rs->iddm?>"><?php echo $rs->iddm;echo $rs->danhmuc?></option>
+							?>								
 							<?php } else {
-								$vach='-- '.$rs->danhmuc;
 							?>
-								<option value="<?php echo $rs->iddm?>"><?php echo $rs->iddm;echo $vach?></option>
+								<option value="<?php echo $rs->iddm?>"><?php echo $rs->danhmuc?></option>
 							<?php }?>
 							                            		
                             <?php 
@@ -144,67 +142,6 @@ $listtp = $query->result();
 							</select>
                         </span>
                     </li>
-                    <!-- 
-                    <li>
-                        <span id="listDistrict">
-                            <select class="inputbox-blue" name="giatu" id="giatu">
-                            	<option value="0">---Chọn giá từ---</option>
-								<option value="1000000"> &nbsp;&nbsp; 1 triệu</option>
-	                            <option value="5000000"> &nbsp;&nbsp; 5 triệu</option>
-	                            <option value="10000000"> &nbsp;10 triệu</option>
-	                            <option value="15000000"> &nbsp;15 triệu</option>
-	                            <option value="20000000"> &nbsp;20 triệu</option>
-	                            <option value="40000000"> &nbsp;40 triệu</option>
-	                            <option value="50000000"> &nbsp;50 triệu</option>
-	                            <option value="100000000">100 triệu</option>
-	                            <option value="200000000">200 triệu</option>
-	                            <option value="500000000">500 triệu</option>
-	                            <option value="1000000000"> &nbsp;1 tỷ</option>
-	                            <option value="2000000000"> &nbsp;2 tỷ</option>
-	                            <option value="3000000000"> &nbsp;3 tỷ</option>
-	                            <option value="4000000000"> &nbsp;4 tỷ</option>
-	                            <option value="5000000000"> &nbsp;5 tỷ</option>
-	                            <option value="6000000000"> &nbsp;6 tỷ</option>
-	                            <option value="7000000000"> &nbsp;7 tỷ</option>
-	                            <option value="8000000000"> &nbsp;8 tỷ</option>
-	                            <option value="9000000000"> &nbsp;9 tỷ</option>
-	                            <option value="10000000000">10 tỷ</option>
-	                            <option value="30000000000">30 tỷ</option>
-							</select>
-                        </span>
-                    </li>
-                    -->
-                    
-                    <!-- 
-                    <li>
-                        <span>
-                            <select class="inputbox-blue" name="giaden" id="giaden">
-								<option value="0">---Đến giá---</option>
-	                            <option value="1000000"> &nbsp;&nbsp; 1 triệu</option>
-	                            <option value="5000000"> &nbsp;&nbsp; 5 triệu</option>
-	                            <option value="10000000"> &nbsp;10 triệu</option>
-	                            <option value="15000000"> &nbsp;15 triệu</option>
-	                            <option value="20000000"> &nbsp;20 triệu</option>
-	                            <option value="40000000"> &nbsp;40 triệu</option>
-	                            <option value="50000000"> &nbsp;50 triệu</option>
-	                            <option value="100000000">100 triệu</option>
-	                            <option value="200000000">200 triệu</option>
-	                            <option value="500000000">500 triệu</option>
-	                            <option value="1000000000"> &nbsp;1 tỷ</option>
-	                            <option value="2000000000"> &nbsp;2 tỷ</option>
-	                            <option value="3000000000"> &nbsp;3 tỷ</option>
-	                            <option value="4000000000"> &nbsp;4 tỷ</option>
-	                            <option value="5000000000"> &nbsp;5 tỷ</option>
-	                            <option value="6000000000"> &nbsp;6 tỷ</option>
-	                            <option value="7000000000"> &nbsp;7 tỷ</option>
-	                            <option value="8000000000"> &nbsp;8 tỷ</option>
-	                            <option value="9000000000"> &nbsp;9 tỷ</option>
-	                            <option value="10000000000">10 tỷ</option>
-	                            <option value="30000000000">30 tỷ</option>
-								</select>
-                        </span>
-                    </li>
-                     -->
                     <li>
                         <span id="divPrice">
                             <select class="inputbox-blue" name="idhuong" id="idhuong">
@@ -237,14 +174,6 @@ $listtp = $query->result();
                       </div>                                           
                       <div class="btn"><input type="image" src="<?php echo base_url();?>images/bdscomvn/before.png" onmouseover="this.src='<?php echo base_url();?>images/bdscomvn/after.png'" 
 						onmouseout="this.src='<?php echo base_url();?>images/bdscomvn/before.png'/*tpa=http://media.batdongsan.com.vn/images/tab/before.png*/" onclick="this.frmSearchProduct.submit();" /></div>
-                    <div style="display:none">
-                        <span>
-                            <select class="inputbox-blue" id="cboCategory" name="cboCategory"><option value="">---Chọn loại tin rao---</option>
-<option selected="selected" value="38">Nhà đất bán</option>
-<option value="49">Nhà đất cho thuê</option>
-</select>
-                        </span>
-                   </div>
                    <div class="text">
                </div> 
            

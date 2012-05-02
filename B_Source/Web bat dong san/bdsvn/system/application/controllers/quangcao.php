@@ -40,6 +40,11 @@
           $this->_templates['page'] = 'admin/quangcao/capnhat';
           $this->site_library->loadadmin($this->_templates['page'],$data);
       }      
-      
+	function xoaquangcao(){
+          $id = $this->uri->segment('3');
+          $this->db->where('id',$id);
+          $this->db->delete('quangcao');
+          echo 'ok';
+      } 
   }
 ?>

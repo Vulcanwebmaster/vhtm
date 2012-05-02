@@ -21,7 +21,7 @@
                         ?>
                         <option value="<?=$cm->id?>-0"><?=$cm->ten?></option>
                         <?foreach($item as $sub):?>
-                        <option value="<?=$cm->id?>-<?=$sub->id?>"> - -<?=$sub->ten?></option
+                        <option value="<?=$cm->id?>-<?=$sub->id?>"> - -<?=$sub->ten?></option>
                         <?endforeach;?>
                         <?endforeach;?>
                     </select>

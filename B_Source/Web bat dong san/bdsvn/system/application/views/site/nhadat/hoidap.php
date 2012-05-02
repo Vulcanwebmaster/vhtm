@@ -1,4 +1,7 @@
 <!-- Author: tienlx -->
+<?php
+	 
+?>
 <?php echo form_open('hoidap');?>
     <div id="ask-advice">       
         <h1 class="hq1">

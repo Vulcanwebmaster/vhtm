@@ -137,40 +137,64 @@ $totalvisit = str_replace($array_number,$array_img,$totalvisit);
                         </style>
                         
 
- <!-- Ban cho thue hop tac -->                       
+<script type="text/javascript">
+function submitform(fromName)
+{
+    document.forms[fromName].submit();
+}
+</script>
+ <!-- Ban cho thue hop tac -->
+       
  <div style="width: 183px; height: 33px; float: left;margin-bottom: 3px; background-image: url('<?php echo base_url();?>images/banchothuehoptac.png'); margin-top: 5px;"></div>
                         <div style="width: 183px; float: left" class="left_panel">
-                            <div class="applemenu">
+							<div class="applemenu">
+<!-- Tim kiem nha xuong cho thue -->
+<form name="myform" method="post" action="<?php echo base_url();?>nhadat/timkiem">
                                 <div class="silverheader">
-                                    <a class="tab" href="#" style="height: 30px">Cho thuê nhà xưởng</a>                                    
+                                	<input style="display:none" name="nhucau" id="nhucau" value="4"/>
+                                	<input style="display:none" name="chuyenmuc" id="chuyenmuc" value="19"/>
+                                    <a class="tab" style="height: 30px" href="javascript:submitform('myform')">Cho thuê nhà xưởng</a>
                                 </div>
                                 <div class="submenu">
                                     
                                 </div>
+</form>
+<!-- Tim kiem nha xuong cho thue -->
+<form name="myform2" method="post" action="<?php echo base_url();?>nhadat/timkiem">
                                 <div class="silverheader">
-                                    <a class="tab" href="#" style="height: 30px">Bán nhà xưởng</a></div>
+                                	<input style="display:none" name="nhucau" id="nhucau" value="1"/>
+                                	<input style="display:none" name="chuyenmuc" id="chuyenmuc" value="19"/>
+                                     <a class="tab" href="javascript:submitform('myform2')" style="height: 30px">Bán nhà xưởng</a>
+								</div>
+                                <div class="submenu">
+								</div>
+</form>
+<form name="myform3" method="post" action="<?php echo base_url();?>nhadat/timkiem">
+                                <div class="silverheader">
+                                	<input style="display:none" name="nhucau" id="nhucau" value="5"/>
+                                    <a class="tab" href="javascript:submitform('myform3')" style="height: 30px">Hợp tác kinh doanh</a></div>
+                                <div class="submenu">
+                                </div>
+</form>
+<form name="myform4" method="post" action="<?php echo base_url();?>nhadat/timkiem">
+                                <div class="silverheader">
+                                <input style="display:none" name="nhucau" id="nhucau" value="4"/>
+								<input style="display:none" name="chuyenmuc" id="chuyenmuc" value="11"/>
+                                    <a class="tab" href="javascript:submitform('myform4')" style="height: 28px">Cho thuê đất</a></div>
+                                <div class="submenu">
+                                </div>
+</form>
+<form name="myform5" method="post" action="<?php echo base_url();?>nhadat/timkiem">
+                                <div class="silverheader">
+                                <input style="display:none" name="nhucau" id="nhucau" value="2"/>
+                                    <a class="tab" href="javascript:submitform('myform5')" style="height: 28px">Mua</a></div>
                                 <div class="submenu">
                                     
                                 </div>
-                                <div class="silverheader">
-                                    <a class="tab" href="#" style="height: 30px">Hợp tác kinh doanh</a></div>
-                                <div class="submenu">
-                                    
-                                </div>
-                                <div class="silverheader">
-                                    <a class="tab" href="#" style="height: 28px">Cho thuê đất</a></div>
-                                <div class="submenu">
-                                    
-                                </div>
-                                <div class="silverheader">
-                                    <a class="tab" href="#" style="height: 28px">Mua</a></div>
-                                <div class="submenu">
-                                    
-                                </div>
+</form>
                             </div>
                         </div>
                         
-
  <!-- Du an -->
                          <div style="width: 183px; height: 33px; float: left; background: url('<?php echo base_url();?>images/duan.png'); no-repeat;
                             margin-bottom: 0px; margin-top: 5px;" class="left_panel">
@@ -211,15 +235,43 @@ $totalvisit = str_replace($array_number,$array_img,$totalvisit);
                             
                             <div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a><font color="#FFFFFF"><strong>Cây hoàn thiện</strong></font></a></div>
+                                <a><font color="#FFFFFF"><strong>Cây cảnh hoàn thiện</strong></font></a></div>
 
 								<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
                                 height: auto !important; height: 700px">
-                                <!-- Load cay canh phoi tu database -->
-                                <?=$this->load->view('modules/tnd_tinmenucaycanh2/index')?>
-                            	</div> 
-                        </div>
-
+	                                <!-- Load cay canh phoi tu database -->
+	                                <?=$this->load->view('modules/tnd_tinmenucaycanh2/index')?>
+	                            	</div> 
+                        
+<!-- Cho thue cot pha-->                        
+                            <div style="width: 182px; height: 33px; float: left; background: url('<?php echo base_url();?>images/thuecotpha.png') no-repeat;
+                                margin-bottom: 0px; margin-top: 5px;" class="left_panel">
+                            </div>
+							<div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
+                                <a><font color="#FFFFFF"><strong>Cốt pha hoàn thiện</strong></font></a></div>
+									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
+	                                height: auto !important; height: 700px">
+	                                <!-- Load cay canh phoi tu database -->
+	                                	<?=$this->load->view('modules/tnd_thuegianrao1/index')?>
+	                            </div>
+							<div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
+                                <a><font color="#FFFFFF"><strong>Cốt pha giàn ráo</strong></font></a></div>
+									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
+	                                height: auto !important; height: 700px">
+	                                <!-- Load cay canh phoi tu database -->
+	                                	<?=$this->load->view('modules/tnd_thuegianrao2/index')?>
+	                            </div>
+							<div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
+                                <a><font color="#FFFFFF"><strong>Hỗ trợ, tư vấn, lắp ráp</strong></font></a></div>
+									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
+	                                height: auto !important; height: 700px">
+	                                <!-- Load cay canh phoi tu database -->
+	                                	<?=$this->load->view('modules/tnd_thuegianrao3/index')?>
+	                            </div>
+                            </div>
 <!-- Bang thong ke -->
                         <div style="width: 180px; padding-left: 0px; float: left; margin-top: 10px; margin-bottom:10px">
                             <div style="width: 179px; border: 1px #0088f4 solid; float: left">
@@ -233,6 +285,11 @@ $totalvisit = str_replace($array_number,$array_img,$totalvisit);
                                     <strong>Tổng truy cập: <?php echo $tongtruycap; ?></strong></div>
                             </div>
                         </div>
+<!-- Ban do -->                        
                         <div style="margin-top:10px;margin-bottom:10px"> 
                             <img src="<?php echo base_url();?>images/hanoi-travel-map.jpg" width="180px" alt="" style="margin: 0px">
                             </div>
+<!-- Quang cao duoi menu trai -->
+                            
+                            
+<!-- Ham tim kiem-->

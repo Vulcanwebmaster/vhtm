@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>system/application/views/theme/system/css/system.css">
 <script type="text/javascript" src="<?=base_url()?>system/application/views/theme/system/js/jquery-core.js"></script>
 <script type="text/javascript" src="<?=base_url()?>system/application/views/theme/system/js/popup.js"></script> 
-
 </head>
 <body>
 <?if($this->session->userdata('id_group')<=18){
@@ -27,7 +26,7 @@
                 <a target="_blank" href="<?=base_url()?>">Trang chủ</a>
             </span>
             <span class="homepage">
-                <a target="_blank" href="<?=base_url()?>">Thoát</a>
+                <a target="_blank" href="<?=base_url()?>admin/logout" onclick="logout()">Thoát</a>
             </span>            
           </div>
           </div>

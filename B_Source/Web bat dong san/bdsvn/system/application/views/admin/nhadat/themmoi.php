@@ -91,6 +91,7 @@ $segment = (int)$this->uri->segment('4');
             <input type="radio" name="nhucau" value="2" <?if($nhucau==2){echo 'checked="checked"';}?>>Cần mua
             <input type="radio" name="nhucau" value="3" <?if($nhucau==3){echo 'checked="checked"';}?>>Cần thuê
             <input type="radio" name="nhucau" value="4" <?if($nhucau==4){echo 'checked="checked"';}?>>Cho thuê
+            <input type="radio" name="nhucau" value="5" <?if($nhucau==5){echo 'checked="checked"';}?>>Hợp tác kinh doanh
             <?=form_error('nhucau')?>
         </td>
     </tr>

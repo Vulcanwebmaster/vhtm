@@ -25,8 +25,8 @@
                             = = = = = = = = = = = = = = = = = = = = = =
                             <br />
                             <font size="2"><strong>Công ty TNHH Minh Châu</strong></font><br />
-                            Add: Tiểu Thủ Công nghiệp Kim Bình - Hà Nam<br />
-                            Tel: 0351.3 537 386<br />
+                            Địa chỉ: Tiểu Thủ Công nghiệp Kim Bình - Hà Nam<br />
+                            Điện thoại: 0351.3 537 386<br />
                             Website: <a href="http://thuenhaxuong.net "><font
                                 size="2"><i>http://thuenhaxuong.net</i></font></a><br />
                             Email: 
