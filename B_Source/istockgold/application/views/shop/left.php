@@ -32,26 +32,28 @@
                     <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/consummeralert">Consummer Alert</a></div>
                 </div>
             </div>
-            <div id="support">
-                <div style="height:30px"></div>
-                <div style="padding-top:15px" align="center">
-                    <img src="<?php echo base_url()?>assets/images/support-logo.jpg" alt="" />
-                </div>
-                <div id="support-information">
-                    <div style="margin-bottom:0px">                        
-                            <span style="float:left">Y! online support 1:</span>
-                            <img style="float:left;" src="<?php echo base_url()?>assets/images/online.png" alt="" />                        
-                    </div>
-                    <div style="clear:both; margin-top:0px; margin-bottom:0px">                        
-                            <span style="float:left">Y! online support 2:</span>
-                            <img style="float:left;" src="<?php echo base_url()?>assets/images/offline.png" alt="" />                        
-                    </div>
-                    
-                    <div style="clear:both;margin-top:-15px;">
-                        <span style="margin-top:0px; float:left">icq support</span>
-                        <img alt="" src="<?php echo base_url()?>assets/images/green-flower.png" style=" float:left; margin-top:0px" />
-                        <span style="float:left">:  19900081</span>
-                    </div>
+           <div id="support">
+                <div id="head-support" style="height:30px"></div>
+                <div style="border-left:solid 1px #9d9d9d; border-right:solid 1px #9d9d9d; border-bottom:solid 1px #9d9d9d">
+	                <div style="padding-top:15px" align="center">
+	                    <img src="<?php echo base_url()?>assets/images/support-logo.jpg" alt="" />
+	                </div>
+	                <div id="support-information">
+	                    <div style="margin-bottom:0px">                        
+	                            <span style="float:left">Y! online support 1:</span>
+	                            <img style="float:left;" src="<?php echo base_url()?>assets/images/online.png" alt="" />                        
+	                    </div>
+	                    <div style="clear:both; margin-top:0px; margin-bottom:0px">                        
+	                            <span style="float:left">Y! online support 2:</span>
+	                            <img style="float:left;" src="<?php echo base_url()?>assets/images/offline.png" alt="" />                        
+	                    </div>
+	                    
+	                    <div style="clear:both;margin-top:-15px; height:33px">
+	                        <span style="margin-top:0px; float:left">icq support</span>
+	                        <img alt="" src="<?php echo base_url()?>assets/images/green-flower.png" style=" float:left; margin-top:0px" />
+	                        <span style="float:left">:  19900081</span>
+	                    </div>
+	                </div>
                 </div>
             </div>
             <div id="istock">                
