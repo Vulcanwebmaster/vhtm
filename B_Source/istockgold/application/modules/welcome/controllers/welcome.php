@@ -644,6 +644,16 @@ class Welcome extends Shop_Controller
         }
         $this->load->view($this->_container,$data);
     }
+    
+	function FAQ()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."FAQ";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'faq';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['faq'] = $this->MIStockGold->getAllSimple("pages","title","FAQ");
+        $this->load->view($this->_container,$data);
+    }
   
     function error()
     {
