@@ -239,16 +239,36 @@ function video1() {
 	document.getElementById('video-container1').style.display='inline';
 	document.getElementById('video-container2').style.display='none';
 	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='none';
 }
 function video2() {
 	document.getElementById('video-container1').style.display='none';
 	document.getElementById('video-container2').style.display='inline';
 	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='none';
 }
 function video3() {
 	document.getElementById('video-container1').style.display='none';
 	document.getElementById('video-container2').style.display='none';
 	document.getElementById('video-container3').style.display='inline';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='none';
+}
+function video4() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='inline';
+	document.getElementById('video-container5').style.display='none';
+}
+function video5() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='inline';
 }
 </script>
 
@@ -259,46 +279,96 @@ function video3() {
 <div class="hb-data" id="handbook0">
 <div class="lay-clear">
 </div>
-
+  <?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id_dm',5);
+  $this->CI->db->order_by('name');
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
 <div class="art-latest">
     <div class="art-item">
         <ul>
-             
+			<?foreach($list as $rs):?> 
             <li>
                 <!-- <input onclick = "video1()" value ="video 1" type = "button">  -->
-                <a onclick = "video1()">Load video 1</a>
+                <a onclick = "<?=$rs->hinhanh?>"><strong><?=$rs->name?></strong></a>
             </li>
-            <li>
-                <!-- <input onclick = "video2()" value ="video 2" type = "button">-->
-                <a onclick = "video2()">Load video 2</a>
-            </li>            
-            <li>
-                <!--<input onclick = "video3()" value ="video 3" type = "button">-->
-                <a onclick = "video3()">Load video 3</a>
-            </li>
-            
+            <?endforeach;?>
         </ul>
 
     </div>
-                <div id="video-container1" style="float:left;width: 45%;padding:10px;background-color: transparent;">
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id',32);  
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
+	<?foreach($list as $rs):?> 
+	<div id="video-container1" style="float:left;width: 45%;padding:10px;background-color: transparent;">
         <object width="100%" height="210px">
-           <param name="movie" value="<?php echo base_url();?>video/Export.swf">
-           <embed src="<?php echo base_url();?>video/Export.swf" width="100%" height="210px" />
+           <param name="movie" value="<?php echo $rs->link;?>">
+           <embed src="<?php echo $rs->link;?>" width="100%" height="210px" />
         </object>
     </div>
-        <div id = "video-container2" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
-    	<object width="100%" height="210px">
-           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
-           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
-        </object>
-    </div>
-        <div id = "video-container3" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
-    	<object width="100%" height="210px">
-           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
-           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
-        </object>
-    </div>
+    <?endforeach;?>
 
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id',33);  
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>    
+    <?foreach($list as $rs):?> 
+	<div id = "video-container2" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+		<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/Export.swf">
+           <embed src="video/Export.swf" width="100%" height="210px" />
+        </object>
+    </div>
+    <?endforeach;?>
+    
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id',34);  
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
+<?foreach($list as $rs):?>        
+	<div id = "video-container3" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<iframe width="100%" height="210" src="http://www.youtube.com/embed/BA7fdSkp8ds" frameborder="0" allowfullscreen></iframe>
+    </div>
+<?endforeach;?>
+
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id',35);  
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
+<?foreach($list as $rs):?>    
+	<div id = "video-container4" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
+           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
+        </object>
+    </div>
+    <?endforeach;?>
+    
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id',36);  
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
+<?foreach($list as $rs):?>     
+	<div id = "video-container5" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
+           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
+        </object>
+    </div>
+    <?endforeach;?>
 </div>
 
 </div>
@@ -343,15 +413,14 @@ function video3() {
 
         <div id="danhgia" style="padding-top:10px">
             <h4 style="color: #FFFFFF; text-align: center;" align="right">ĐÁNH GIÁ WEBSITE</h4>
-            <form action="" method="post" style="padding-left:10px;padding-top:10px;float:left">
-                <p style="padding-top:10px"><input type="radio" name="danhgia" value="dep"/>Đẹp</p>
-                <p style="padding-top:5px"><input type="radio" name="danhgia" value="binhthuong"/>Bình thường</p>
-                <p style="padding-top:5px;padding-bottom:5px"><input type="radio" name="danhgia" value="xau">Xấu</p>				
+            <form action="<?php echo base_url();?>nhadat/danhgiaweb" method="post" style="padding-left:10px;padding-top:10px;float:left">
+                <p style="padding-top:10px"><input type="radio" name="danhgia" value="1"/>Đẹp</p>
+                <p style="padding-top:5px"><input type="radio" name="danhgia" value="2"/>Bình thường</p>
+                <p style="padding-top:5px;padding-bottom:5px"><input type="radio" name="danhgia" value="3">Xấu</p>				
                 <!-- <button style="height:24px; margin-left:95px">đánh giá</button> -->
                 <button type="submit" style="height:24px; float:left">Đánh giá</button>
                 <button type="submit" style="height:24px; float:left">Kết quả</button>
             </form>
-
         </div>
 
 <div class="rc4 iebleft">

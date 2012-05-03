@@ -85,48 +85,32 @@
                         <div class="right_panel" style="width: 175px; border-left: 1px #0088f4 solid; border-right: 1px #0088f4 solid;
                             border-bottom: 1px #0088f4 solid;">
                             <div style="margin-left: 10px; width: 165px;">
+                            <? $this->CI = get_instance();?>
+                            <?php 
+								$this->db->where('id_group','22');
+			    				$query = $this->db->get('thanhvien');
+								$item = $query->result();
+								//$this->db->where()?>
+								
                                 <div style="color: #f66c03; padding: 5px; width: 155px">
                                     <strong>TƯ VẤN MUA BÁN</strong></div>
-                                <div style="color: #006de8; padding: 5px; width: 155px;">
-                                    <strong>Mr. Tài</strong></div>
-                                <div style="color: #355f9d; padding: 5px; width: 155px;">
+								<?foreach($item as $rs):?>
+									<div style="color: #006de8; padding: 5px; width: 155px;">
+                                    	<strong><? echo $rs->fullname;?></strong></div>
+                                	<div style="color: #355f9d; padding: 5px; width: 155px;">
                                     <div style="width: 27px; height: 24px; float: left"">
                                         <img src="<?php echo base_url();?>images/bds_12.gif"
                                             width="27" height="24" /></div>
                                     <div style="padding-left: 5px; font-size: 12px; width: 123px;">
-                                        <strong>0904.631535 04.85858684</strong></div>
+                                        <strong><?php echo $rs->username;?></strong></div>
                                 </div>
                                 <div style="padding-left: 5px; width: 155px; padding-bottom: 10px">
-                                    <a href="ymsgr:sendim?toannv_82">
-                                        <img border="0" src="<?php echo base_url();?>images/onlinetoan.gif" width="125"
+                                    <a href="ymsgr:sendim?<?php echo $rs->email;?>">
+                                        <img border="0" src="http://opi.yahoo.com/online?u=<?php echo $rs->email;?>&amp;m=g&amp;t=2&amp;l=us" width="125"
                                             height="25"></a></div>
-                                <div style="color: #006de8; padding: 5px; width: 155px;">
-                                    <strong>Mrs. Huệ</strong></div>
-                                <div style="color: #355f9d; padding: 5px; width: 155px;">
-                                    <div style="width: 27px; height: 24px; float: left">
-                                        <img src="<?php echo base_url();?>images/bds_12.gif"
-                                            width="27" height="24" /></div>
-                                    <div style="padding-left: 5px; font-size: 12px; width: 123px;">
-                                        <strong>0913.161993 04.39959519</strong></div>
-                                </div>
-                                <div style="padding-left: 5px; width: 155px; padding-bottom: 10px">
-                                    <a href="ymsgr:sendim?bebu_263">
-                                        <img border="0" src="<?php echo base_url();?>images/onlinebebu.gif" width="125"
-                                            height="25"></a></div>
-                            </div>
+                                <?endforeach;?>
+                        	</div>
                         </div>
-        </div>
-
-        <div id="danhgia" style="padding-top:10px">
-            <h4 style="color: #FFFFFF; text-align: center;" align="right">ĐÁNH GIÁ WEBSITE</h4>
-            <form style="padding-left:10px;padding-top:10px">
-                <p style="padding-top:10px"><input type="radio" name="group1" />Đẹp</p>
-                <p style="padding-top:10px"><input type="radio" name="group1" />Bình thường</p>
-                <p style="padding-top:10px"><input type="radio" name="group1" />Xấu</p>
-            </form>
-            <center>
-                <button style="height:24px; margin-left:95px">đánh giá</button>
-            </center>
         </div>
 
 <div class="rc4 iebleft"><div class="iebright">

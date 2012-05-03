@@ -551,6 +551,66 @@
           $query = $this->db->get('nhadat');
           return $query->num_rows();
       }
-                                    
+    //Dang gia website
+      	function getDGDep(){
+		$this->CI = get_instance();
+  		$this->CI->db->where('id','1');
+  		$query = $this->CI->db->get('dgwebsite');
+  		$kq = $query->result();
+  		$temp = 0;
+		foreach($kq as $rs):
+			$temp = $rs->danhgia;	
+		endforeach;
+		return $temp;
+  	}
+  	function getDGBT(){
+		$this->CI = get_instance();
+  		$this->CI->db->where('id','2');
+  		$query = $this->CI->db->get('dgwebsite');
+  		$kq = $query->result();
+  		$temp = 0;
+		foreach($kq as $rs):
+			$temp = $rs->danhgia;	
+		endforeach;
+		return $temp;
+  	}
+  	function getDGXau(){
+		$this->CI = get_instance();
+  		$this->CI->db->where('id','3');
+  		$query = $this->CI->db->get('dgwebsite');
+  		$kq = $query->result();
+  		$temp = 0;
+		foreach($kq as $rs):
+			$temp = $rs->danhgia;	
+		endforeach;
+		return $temp;
+  	}   
+  	function luudanhgia(){
+
+	  		$danhgia = $this->input->post('danhgia');
+	  		$dgDep = $this->getDGDep()+1;
+	  		$dgBT = $this->getDGBT()+1;
+	  		$dgXau = $this->getDGXau()+1;
+	  		$data1 = array(
+	  			'danhgia' => $dgDep,
+	  		);
+	  		$data2 = array(
+	  			'danhgia' => $dgBT,
+	  		);
+	  		$data3 = array(
+	  			'danhgia' => $dgXau,
+	  		);
+	  		if ($danhgia == 1){
+	  			$this->db->update('dgwebsite',$data1,"id = 1");
+	  		}
+	  		if ($danhgia == 2){
+	  			$this->db->update('dgwebsite',$data2,"id = 2");
+	  		}
+	  		if ($danhgia == 3){
+	  			$this->db->update('dgwebsite',$data3,"id = 3");
+	  		}
+  	}                          
   }
+  
+
 ?>

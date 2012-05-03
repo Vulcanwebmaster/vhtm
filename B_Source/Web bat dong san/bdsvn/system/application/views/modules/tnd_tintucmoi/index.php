@@ -2,7 +2,7 @@
 $this->CI = get_instance();
 $this->CI->db->where('bat',1);
 $this->CI->db->order_by('ngay',"DESC");
-$query = $this->db->get('noidung',6,0);
+$query = $this->db->get('noidung',4,0);
 ?>
     <?
     $item = $query->result();?>

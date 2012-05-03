@@ -285,11 +285,21 @@ function submitform(fromName)
                                     <strong>Tổng truy cập: <?php echo $tongtruycap; ?></strong></div>
                             </div>
                         </div>
-<!-- Ban do -->                        
-                        <div style="margin-top:10px;margin-bottom:10px"> 
-                            <img src="<?php echo base_url();?>images/hanoi-travel-map.jpg" width="180px" alt="" style="margin: 0px">
-                            </div>
+<!-- Ban do -->
+			<div style="width: 180px; padding-left: 0px; float: left; margin-top: 10px; margin-bottom:10px">
+						<div style="width: 179px; border: 1px #0088f4 solid; float: left">
+                                <div style="padding: 5px; float: left; width: 175px; text-align: center">
+                                    <strong>BẢN ĐỒ</strong></div>
+						</div>      
+				<?php echo $this->load->view("modules/tnd_quangcao/map"); ?>
+			</div>
 <!-- Quang cao duoi menu trai -->
-                            
+			<div style="width: 180px; padding-left: 0px; float: left; margin-top: 10px; margin-bottom:10px">
+						<div style="width: 179px; border: 1px #0088f4 solid; float: left">
+                                <div style="padding: 5px; float: left; width: 175px; text-align: center">
+                                    <strong>QUẢNG CÁO</strong></div>
+						</div>      
+				<?php echo $this->load->view("modules/tnd_quangcao/quangcaoduoimenutrai"); ?> 
+			</div>
                             
 <!-- Ham tim kiem-->

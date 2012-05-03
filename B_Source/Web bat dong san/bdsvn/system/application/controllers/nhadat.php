@@ -313,6 +313,18 @@ $this->pagination->initialize($config);
       }
       function danhgiaweb(){
 			$data['title'] = 'THUÊ NHÀ XƯỞNG - HỎI ĐÁP';
+			$this->form_validation->set_rules('danhgia','Đánh giá','required');	
+			if($this->form_validation->run()){
+
+				if($this->nhadat->luudanhgia()){ 
+                    //$this->session->set_flashdata('message','Lưu bước 3 thành công.');
+                    redirect('nhadat/danhgiaweb'); 
+                                        
+                  }else{
+                      //$this->session->set_flashdata('error','Đăng tin không thành công. Xin vui lòng thử lại');
+                  }
+              }
+			
 			$this->_templates['page'] = 'site/nhadat/danhgiaweb';
 			$this->site_library->load($this->_templates['page'],$data,'danhgiaweb');
       }
