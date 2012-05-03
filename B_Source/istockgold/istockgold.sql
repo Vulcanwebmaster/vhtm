@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5deb1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 22, 2012 at 10:47 PM
--- Server version: 5.1.61
--- PHP Version: 5.3.6-13ubuntu3.6
+-- Generation Time: May 02, 2012 at 05:23 PM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -389,7 +389,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-04-22 21:04:13', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
+(1, 'admin', '06e76565cbff3beacd11fa4222c9518efc4b4662', 'admin@gmail.com', 1, 2, NULL, '2012-05-01 17:50:58', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
 
 -- --------------------------------------------------------
 
@@ -430,23 +430,26 @@ CREATE TABLE IF NOT EXISTS `captcha` (
   `word` varchar(20) NOT NULL,
   PRIMARY KEY (`captcha_id`),
   KEY `word` (`word`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
 
 --
 -- Dumping data for table `captcha`
 --
 
 INSERT INTO `captcha` (`captcha_id`, `captcha_time`, `ip_address`, `word`) VALUES
-(49, 1335103175, '127.0.0.1', 'p5BGE6fj'),
-(48, 1335103130, '127.0.0.1', 'xsk7hjpy'),
-(47, 1335103079, '127.0.0.1', 'FARid3Sh'),
-(46, 1335103034, '127.0.0.1', 'JeIcHJGl'),
-(45, 1335102896, '127.0.0.1', 'kioxtwVt'),
-(44, 1335102872, '127.0.0.1', 'ZE1WeW3I'),
-(43, 1335102716, '127.0.0.1', 'T8dHoODD'),
-(40, 1335102672, '127.0.0.1', 'oQHVL8mm'),
-(41, 1335102690, '127.0.0.1', 'iGK0gZgT'),
-(42, 1335102701, '127.0.0.1', 'SbJTWfXZ');
+(60, 1335273132, '0.0.0.0', 'fZVdcJC2'),
+(59, 1335273097, '0.0.0.0', 'XcBViV2b'),
+(58, 1335272986, '0.0.0.0', 'PVQn8h7e'),
+(57, 1335272963, '0.0.0.0', 'KO0saZNH'),
+(56, 1335272936, '0.0.0.0', 'NrEPxFAs'),
+(55, 1335272913, '0.0.0.0', 'Z3N2oiRa'),
+(54, 1335269477, '0.0.0.0', 'DG4NC8Xr'),
+(53, 1335269456, '0.0.0.0', 'IoxNuaPO'),
+(52, 1335267419, '0.0.0.0', 'qzv561uH'),
+(51, 1335267386, '0.0.0.0', 'ZhehoZW0'),
+(50, 1335267325, '0.0.0.0', '06UgoQgv'),
+(61, 1335273192, '0.0.0.0', 'ry8FJDjZ'),
+(62, 1335274460, '0.0.0.0', 'NPjsy6tX');
 
 -- --------------------------------------------------------
 
@@ -469,8 +472,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('b872ccf7bb7cb770bb9f81d820e97d22', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:11.0) Gecko/20100101 Firefox/11.0', 1335103469, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-04-22 14:43:54";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
-('d6f047ca93cbcca4a7bf90a9d7626d80', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.162 Safari/535.19', 1335102635, 'a:2:{s:9:"user_data";s:0:"";s:6:"status";s:272:"a:1:{s:7:"warning";a:3:{i:0;s:147:" The Last Name field must be at least 3 characters in length. \n The Postal Code field must contain only numbers. \n The Captcha field is required. \n";i:1;s:33:" The Captcha field is required. \n";i:2;s:29:" Your answer was incorrect! \n";}}";}');
+('0661866b0f1c6117c9088de00c8d861a', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0', 1335898519, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"06e76565cbff3beacd11fa4222c9518efc4b4662";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-04-30 02:32:02";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -520,9 +522,9 @@ CREATE TABLE IF NOT EXISTS `is_account_setting` (
 --
 
 INSERT INTO `is_account_setting` (`id`, `c_id`, `key`, `display`, `value`, `note`, `order`) VALUES
-(1, 1, 'liberty.account', 'Liberty Account', 'U7511015', 'Use cappital characters sample: UXXXX', 1),
-(2, 1, 'liberty.account.name', 'Account Name', 'Ngo Hoang Quyen', '', 2),
-(3, 1, 'liberty.account.storename', 'Store Name', 'istockgold', 'This is the store name you must set up on Merchant tools > Create new store. [Auto Receive] create name,password and enable it. Select POST for all HTTP methods', 3),
+(1, 1, 'liberty.account', 'Liberty Account', 'U9450274', 'Use cappital characters sample: UXXXX', 1),
+(2, 1, 'liberty.account.name', 'Account Name', 'Nguyen Son Tung', '', 2),
+(3, 1, 'liberty.account.storename', 'Store Name', 'istock', 'This is the store name you must set up on Merchant tools > Create new store. [Auto Receive] create name,password and enable it. Select POST for all HTTP methods', 3),
 (4, 2, 'western.receiver.firstname', 'Receiver''s First Name', 'Quyen', NULL, 1),
 (5, 2, 'western.receiver.lastname', 'Receiver''s Last Name', 'Ngo', NULL, 2),
 (6, 2, 'western.receiver.city', 'Reveiver''s City', 'Hanoi', NULL, 3),
@@ -605,8 +607,22 @@ CREATE TABLE IF NOT EXISTS `is_currency` (
 --
 
 INSERT INTO `is_currency` (`c_id`, `c_name`, `c_metal_name`, `code`, `logo_src`, `status`, `c_limit`, `c_max_fee`, `c_ex_min`, `c_ex_max`, `c_reserve`, `is_show_src`, `is_show_dst`) VALUES
-(1, 'Liberty Reserve', 'Usd', 'LR', 'Liberty Reserve.jpg', 1, 300, 3, 1, 5000, 3000, 1, 1),
+(1, 'Liberty Reserve', 'Usd', 'LR', 'Liberty Reserve.jpg', 1, 200, 3, 10, 5000, 3000, 1, 1),
 (2, 'Western Union', 'Usd', 'WU', 'wu2.jpg', 1, 200, 5, 1, 4000, 3000, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `is_mail`
+--
+
+CREATE TABLE IF NOT EXISTS `is_mail` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -615,14 +631,21 @@ INSERT INTO `is_currency` (`c_id`, `c_name`, `c_metal_name`, `code`, `logo_src`,
 --
 
 CREATE TABLE IF NOT EXISTS `is_news` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `created_date` int(11) NOT NULL,
-  `view` int(11) NOT NULL,
-  `visible` tinyint(1) NOT NULL DEFAULT '1',
+  `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `is_news`
+--
+
+INSERT INTO `is_news` (`id`, `title`, `content`, `date`) VALUES
+(2, '1', 'sdfsd', '2012-04-24'),
+(3, 'dfgdfg', 'sdfsdf', '2012-04-24'),
+(4, 'fwegerwe', '<p>ewrwerwe<strong>?rewer</strong></p>', '2012-04-25');
 
 -- --------------------------------------------------------
 
@@ -647,14 +670,14 @@ CREATE TABLE IF NOT EXISTS `is_order` (
   PRIMARY KEY (`order_id`),
   KEY `status_src` (`status_src`),
   KEY `status_dst` (`status_dst`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `is_order`
 --
 
 INSERT INTO `is_order` (`order_id`, `order_code`, `c_src`, `c_dst`, `amount_src`, `amount_dst`, `account_dst`, `status_src`, `status_dst`, `date_src`, `date_dst`, `email`, `note`) VALUES
-(1, NULL, 'LR', 'WU', 1000, 982, '', 1, 1, '2012-04-22 02:48:49', NULL, 'anh.trinhtrung@gmail.com', NULL),
+(1, 123, 'LR', 'WU', 1000, 66, '', 1, 1, '2012-04-22 02:48:49', '2012-04-22 02:48:49', 'anh.trinhtrung@gmail.com', NULL),
 (2, NULL, 'WU', 'LR', 1000, 879, '212312', 1, 1, '2012-04-22 02:49:17', NULL, 'anh.trinhtrung@gmail.com', NULL),
 (3, NULL, 'WU', 'LR', 1000, 879, '123123', 1, 1, '2012-04-22 02:56:05', NULL, '123123@gmail.com', NULL),
 (4, NULL, 'WU', 'LR', 1000, 879, '434', 1, 1, '2012-04-22 02:58:12', NULL, '123123@gmail.com', NULL),
@@ -663,7 +686,10 @@ INSERT INTO `is_order` (`order_id`, `order_code`, `c_src`, `c_dst`, `amount_src`
 (7, NULL, 'LR', 'WU', 1000, 982, '', 1, 1, '2012-04-22 03:39:53', NULL, 'asd@foor.bar', NULL),
 (8, NULL, 'LR', 'WU', 456, 448, '', 1, 1, '2012-04-22 20:52:09', NULL, 'anh.trinhtrung@gmail.com', NULL),
 (9, NULL, 'LR', 'WU', 1000, 982, '', 1, 1, '2012-04-22 20:55:05', NULL, 'asd@foor.bar', NULL),
-(10, NULL, 'WU', 'LR', 1000, 879, 'U787879', 1, 1, '2012-04-22 20:58:10', NULL, 'anh.trinhtrung@gmail.com', NULL);
+(10, NULL, 'WU', 'LR', 1000, 879, 'U787879', 1, 1, '2012-04-22 20:58:10', NULL, 'anh.trinhtrung@gmail.com', NULL),
+(11, NULL, 'LR', 'WU', 1000, 982, '', 1, 1, '2012-04-24 13:37:20', NULL, 'tungns@niw.com.vn', NULL),
+(12, NULL, 'LR', 'WU', 2000, 1964, '', 1, 1, '2012-04-24 15:09:57', NULL, 'tungns@gmail.com', NULL),
+(13, NULL, 'WU', 'LR', 1000, 879, 'U4567', 1, 1, '2012-04-24 15:13:48', NULL, 'tungns@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -694,6 +720,28 @@ INSERT INTO `is_order_status` (`id`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `is_pages`
+--
+
+CREATE TABLE IF NOT EXISTS `is_pages` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `is_pages`
+--
+
+INSERT INTO `is_pages` (`id`, `title`, `content`, `date`) VALUES
+(4, 'abc', 'abc', '2012-04-16'),
+(6, 'cvsdfsd', 'dsfsdf', '2012-04-24');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `is_rate`
 --
 
@@ -714,6 +762,22 @@ CREATE TABLE IF NOT EXISTS `is_rate` (
 INSERT INTO `is_rate` (`rate_id`, `c_id_src`, `c_id_dst`, `rate_dst`) VALUES
 (1, 1, 2, 0.982),
 (2, 2, 1, 0.879);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `is_site_settings`
+--
+
+CREATE TABLE IF NOT EXISTS `is_site_settings` (
+  `site_settings_id` int(30) NOT NULL,
+  `site_name` varchar(45) NOT NULL,
+  `site_url` varchar(45) NOT NULL,
+  `site_secure` varchar(45) NOT NULL,
+  `friendly_url` int(2) NOT NULL,
+  `temporary` int(2) NOT NULL,
+  PRIMARY KEY (`site_settings_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
