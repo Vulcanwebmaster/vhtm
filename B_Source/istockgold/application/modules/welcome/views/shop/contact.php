@@ -17,28 +17,28 @@
 			<label style="font-size:12px; font-weight:bold">Please insert your infomation into form :</label>
 			<hr style="border-top-width: 2px; border-color: #333333; border-style: dotted none none none" />
 				<div style="margin-top:10px; background-color:#e5ecf3; border-radius:10px; padding:25px">
-                    <table style="width:95%">
+                    <table style="width:99%">
                         <tr>
                             <td>Name:</td>
                             <td><input type="text" class="au_col2" id="name" name="name" value=<?php set_value('name');?>></td>
-                            <td>Company:</td>
-                            <td><input type="text" class="au_col4" id="company" name="company" value=<?php set_value('company');?>></td>
+                            <td class="col2">Company:</td>
+                            <td><input type="text" class="au_col2" id="company" name="company" value=<?php set_value('company');?>></td>
                         </tr>
                         <tr>
                             <td>Address:</td>
-                            <td colspan="3" class="au_col2"><input type="text" id="address" name="address" value=<?php set_value('address');?>></td>
+                            <td colspan="3"><input style="width:100%" type="text" id="address" name="address" value=<?php set_value('address');?>></td>
                         </tr>
                         <tr>
                             <td>Phone:</td>
                             <td><input type="text" class="au_col2" id="phone" name="phone" value=<?php set_value('phone');?>></td>
-                            <td>Mobile:</td>
-                            <td><input type="text" class="au_col4" id="mobile" name="mobile" value=<?php set_value('mobile');?>></td>
+                            <td class="col2">Mobile:</td>
+                            <td><input type="text" class="au_col2" id="mobile" name="mobile" value=<?php set_value('mobile');?>></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
                             <td><input type="text" class="au_col2" id="email" name="email" value=<?php set_value('email');?>></td>
-                            <td>Email:</td>
-                            <td><input type="text" class="au_col4" id="email_com" name="email_com" value=<?php set_value('email_com');?>></td>
+                            <td class="col2">Email:</td>
+                            <td><input type="text" class="au_col2" id="email_com" name="email_com" value=<?php set_value('email_com');?>></td>
                         </tr>
                         <tr>
                             <td>Contents:</td>
@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                             <td>Code:</td>
-                            <td>
+                            <td colspan="3">
                                 <table>
                                     <tr>
                                         <td> <?php echo $cap['image'];?></td>
