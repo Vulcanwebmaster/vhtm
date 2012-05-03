@@ -25,11 +25,11 @@
                     <div class="menuitem">
                         <a>Service news</a>
                     </div>
-                    <div class="menuitem"><a href="#">Service Fees</a></div>
-                    <div class="menuitem"><a href="#">Buy/Sell LR</a></div>
-                    <div class="menuitem"><a href="#">Marchants</a></div>
-                    <div class="menuitem"><a href="#">Downloads</a></div>
-                    <div class="menuitem"><a href="#">Consummer Alert</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/servicefees">Service Fees</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/exchangers">Buy/Sell LR</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/merchants">Merchants</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/download">Downloads</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/consummeralert">Consummer Alert</a></div>
                 </div>
             </div>
             <div id="support">

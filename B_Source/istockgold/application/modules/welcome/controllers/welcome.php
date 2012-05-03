@@ -645,13 +645,73 @@ class Welcome extends Shop_Controller
         $this->load->view($this->_container,$data);
     }
     
-	function FAQ()
+	function faq()
     {
         $data['title'] = $this->preference->item('site_name')." | "."FAQ";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'faq';
         $data['module'] = $this->module;
         $fields = array('id','title','content','date');
         $data['faq'] = $this->MIStockGold->getAllSimple("pages","title","FAQ");
+        $this->load->view($this->_container,$data);
+    }
+    
+	function servicefees()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."servicefees";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'servicefees';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['servicefees'] = $this->MIStockGold->getAllSimple("pages","title","Service Fees");
+        $this->load->view($this->_container,$data);
+    }
+    
+	function exchangers()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."exchangers";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'exchangers';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['exchangers'] = $this->MIStockGold->getAllSimple("pages","title","Exchangers");
+        $this->load->view($this->_container,$data);
+    }
+    
+	function merchants()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."merchants";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'merchants';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['merchants'] = $this->MIStockGold->getAllSimple("pages","title","Merchants");
+        $this->load->view($this->_container,$data);
+    }
+    
+	function download()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."download";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'download';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['download'] = $this->MIStockGold->getAllSimple("pages","title","Download");
+        $this->load->view($this->_container,$data);
+    }
+    
+	function consummeralert()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."consummeralert";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'consummeralert';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['consummeralert'] = $this->MIStockGold->getAllSimple("pages","title","Consummer Alert");
+        $this->load->view($this->_container,$data);
+    }
+    
+	function ouraccounts()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."ouraccounts";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'ouraccounts';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['ouraccounts'] = $this->MIStockGold->getAllSimple("pages","title","Our Accounts");
         $this->load->view($this->_container,$data);
     }
   

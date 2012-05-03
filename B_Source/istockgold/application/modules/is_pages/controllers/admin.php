@@ -101,7 +101,7 @@ class Admin extends Shop_Admin_Controller
     function delete($id)
     {
         $this->MIStockGold->deleteitem("is_pages",$id);
-        redirect(base_url().'index.php/is_page/admin','refresh');
+        redirect(base_url().'index.php/is_pages/admin','refresh');
     }
 }//end class
 ?>

@@ -7,7 +7,7 @@
                 <div style="float:right">
                     <div style="margin-top:10px;">
                         <img src="<?php echo base_url()?>assets/images/dola.png" alt="" style="float:left"/>
-                        <p style="float:left; margin-top:2px; font-family:Tahoma; font-size:12px;color:Silver; margin-right:20px"><a href="<?php  echo site_url($module."/order");?>">Tracking my order</a> | Our accounts |<a href="<?php  echo base_url()?>index.php/welcome/faq"> FAQ </a>|<a href="<?php  echo base_url()?>index.php/welcome/contact"> Contact us</a>
+                        <p style="float:left; margin-top:2px; font-family:Tahoma; font-size:12px;color:Silver; margin-right:20px"><a href="<?php  echo site_url($module."/order");?>">Tracking my order</a> |<a href="<?php  echo base_url()?>index.php/welcome/ouraccounts"> Our accounts </a>|<a href="<?php  echo base_url()?>index.php/welcome/faq"> FAQ </a>|<a href="<?php  echo base_url()?>index.php/welcome/contact"> Contact us</a>
                     </div>
                     <div style="padding-left:25px;padding-top:5px">
                         <img alt="" src="<?php echo base_url()?>assets/images/customer service.jpg" />
