@@ -424,12 +424,60 @@
                                     <tr>
                                         <td>
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
+                                			<script type="text/javascript">
+                                				$(document).ready(function(){
+													$("#star1").mouseenter(function(){
+														star1.src="<?php echo base_url()?>assets/images/star2.png";
+													});
+													$("#star1").mouseleave(function(){
+														star1.src="<?php echo base_url()?>assets/images/star.png";
+													});
+
+													$("#star2").mouseenter(function(){														
+														$("#star1").mouseenter();
+														star2.src="<?php echo base_url()?>assets/images/star2.png";
+													});
+													$("#star2").mouseleave(function(){
+														$("#star1").mouseleave();
+														star2.src="<?php echo base_url()?>assets/images/star.png";
+													});
+
+													$("#star3").mouseenter(function(){														
+														$("#star2").mouseenter();
+														star3.src="<?php echo base_url()?>assets/images/star2.png";
+													});
+													$("#star3").mouseleave(function(){
+														$("#star2").mouseleave();
+														star3.src="<?php echo base_url()?>assets/images/star.png";
+													});
+
+													$("#star4").mouseenter(function(){														
+														$("#star3").mouseenter();
+														star4.src="<?php echo base_url()?>assets/images/star2.png";
+													});
+													$("#star4").mouseleave(function(){
+														$("#star3").mouseleave();
+														star4.src="<?php echo base_url()?>assets/images/star.png";
+													});
+
+													$("#star5").mouseenter(function(){														
+														$("#star4").mouseenter();
+														star5.src="<?php echo base_url()?>assets/images/star2.png";
+													});
+													$("#star5").mouseleave(function(){
+														$("#star4").mouseleave();
+														star5.src="<?php echo base_url()?>assets/images/star.png";
+													});
+                                    			});
+                                					
+                                				
+                                			</script>
                                 
-                                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
+                                            <img id="star1" src="<?php echo base_url()?>assets/images/star.png" alt="" />
+                                            <img id="star2" src="<?php echo base_url()?>assets/images/star.png" alt="" />
+                                            <img id="star3" src="<?php echo base_url()?>assets/images/star.png" alt="" />
+                                            <img id="star4" src="<?php echo base_url()?>assets/images/star.png" alt="" />
+                                            <img id="star5" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <label style=" margin-left:5px"">Perfect. It doesn't get any better</label>
                                             <input type="button" value="Submit" />
                                         </td>
