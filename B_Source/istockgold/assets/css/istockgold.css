@@ -1,4 +1,4 @@
-﻿.main-fream{width:1160px;height:1000; margin:auto;}
+.main-fream{width:1160px;height:1000; margin:auto;}
 #header{height:200px}
 #header-top{height:100px}
 #header-bottom-center {background-image:url('../images/banner-bottom-bg.jpg'); width:914px; height:98px; margin-left:158px}
@@ -7,7 +7,8 @@
 #left-column{float:left; width:304px}
 #menu{width:100%; height:202px; background-image:url('../images/menu-bg.jpg'); padding-top:0px; padding-left:0px}
 #menu a{font-size:12px; font-weight:bold}
-#support{width:305px; height:238px; background-image:url('../images/support-bg.png'); margin-top:15px}
+#support{width:305px; height:238px; margin-top:15px}
+#head-support{background-image:url('../images/head-support.jpg')}
 .menuitem{height:22px}
 .menuitem a{padding-left:22px}
 
@@ -139,14 +140,15 @@
 
 #footer
 {
+ 	font-weight:bold;
     clear: both;
     border-top: inset 2px silver;
     border-top-color: #E4E4E4;
 }
-
-#footer{width:1160px; margin:auto; font-size:12px; padding:10px 0}
+#footer{width:1160px; margin:auto; font-size:11px; padding:10px 0}
 #menu-footer{margin-bottom:10px}
-#menu-footer a{color:#0120a2; font-size:12px; font-weight:bold}
+#footer a{color:#0120a2; font-size:12px; font-weight:bold}
+#footer p{font-size:12px; color:#615d5d}
 
 /*ABOUT US*/
 #au-title{ text-transform:uppercase; font-size:16px; font-weight:bold; color:#ce0701; margin-top:10px;border-bottom:inset 2px #8ebada}

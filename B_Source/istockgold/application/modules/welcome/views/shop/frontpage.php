@@ -62,7 +62,7 @@
                     
                     <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
                     	 <hr align="right" width="70%">
-                    	 You pay <input id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="width: 35px;"> <span id="pay">Liberty Reserve</span>, will get <span class="redText" id="get_amount">786.26</span> <span id="get">Western Union </span> <button>Exchange</button>
+                    	 You pay <input id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px"> <span id="pay">Liberty Reserve</span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span> <span id="get">Western Union </span> <button>Exchange</button>
                          <br />
                          <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
                     </div>
@@ -401,7 +401,7 @@
                             <td style="border: 1px inset #C0C0C0" class="tddb">
                                 <input type="text"  style="width:98%"/>
                                 <br />
-                                <img alt="" src="images/down-arrow.png"/>
+                                <img alt="" src="<?php echo base_url();?>assets/images/down-arrow.png"/>
                                 <a style="font-size:11px;color:#53b0da">Hide examples</a>
                                 <br />
                                 <span style="margin-left:5px; color:Black; font-size:11px; margin-top:5px">"Don't judge a book by its cover"</span><br />
