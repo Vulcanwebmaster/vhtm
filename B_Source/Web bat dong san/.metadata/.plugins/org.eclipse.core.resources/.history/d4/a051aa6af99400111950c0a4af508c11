@@ -1,0 +1,65 @@
+<?php
+$this->CI = get_instance();
+$this->CI->db->where('id',61);
+$query = $this->CI->db->get('danhmuc');
+$tieude1 = $query->result();
+
+$this->CI->db->where('id',62);
+$query = $this->CI->db->get('danhmuc');
+$tieude2 = $query->result();
+
+$this->CI->db->where('id',314);
+$query1 = $this->CI->db->get('noidung');
+$baiviet1 = $query1->result();
+
+$this->CI->db->where('id',315);
+$query2 = $this->CI->db->get('noidung');
+$baiviet2 = $query2->result();
+
+?>
+<div style="width:49%;float:left;">
+                    <div>
+                    <?foreach($tieude1 as $rs):?>
+                        <p style="width:100%; margin-bottom:2px; border-bottom: solid 2px red"><strong style="color: #006699"><?php echo $rs->ten;?></strong></p>
+					<?endforeach;?>
+					<?foreach($baiviet1 as $rs):?>
+                        <div style="padding:5px">
+                            <img src="<?=base_url()?><?php echo $rs->hinhanh;?>" border="0" style="padding-bottom: 0px; float:left" align="left" width="80" height="97" alt=""/>
+                            <div style="float:left; width:70%; padding-left:10px; text-align:justify">
+                                <strong><?php echo $rs->tieude;?> </strong> <p style="margin-top:0px; width:100%"><?php echo $rs->noidungngan;?> </p>
+                            </div>
+                        </div>
+                        <ul style="width:95%; margin-top:0px; clear: both; border-bottom: solid 2px red">
+                            <li style="width:100%; padding-right:5px">
+                                <?php echo $rs->noidung;?></li>
+                            <li style="width:100%; padding-right:5px"></li>
+                            <li style="width:100%; padding-right:5px"></li>
+                            
+                        </ul>
+					<?endforeach;?>
+                    </div>
+                    
+</div>
+<div style="width:49%;float:right;">
+                    <div>
+                    <?foreach($tieude1 as $rs):?>
+                        <p style="width:100%; margin-bottom:2px; border-bottom: solid 2px red"><strong style="color: #006699"><?php echo $rs->ten;?></strong></p>
+					<?endforeach;?>
+					<?foreach($baiviet2 as $rs):?>
+                        <div style="padding:4px">
+                            <img src="<?=base_url()?><?php echo $rs->hinhanh;?>" border="0" style="padding-bottom: 0px; float:left" align="left" width="80" height="97" alt=""/>
+                            <div style="float:left; width:70%; padding-left:10px; text-align:justify">
+                                <strong><?php echo $rs->tieude;?>  </strong>
+                                <p style="margin-top:0px; width:100%"><?php echo $rs->noidungngan;?> </p>
+                            </div>
+                        </div>
+                        <ul style="width:95%; margin-top:0px; clear: both; border-bottom: solid 2px red">
+                            <li style="width:100%; padding-right:5px">
+                                <?php echo $rs->noidung;?></li>
+                            <li style="width:100%; padding-right:5px"></li>
+                            <li style="width:100%; padding-right:5px"></li>
+                            
+                        </ul>
+                        <?endforeach;?>
+                    </div>
+</div>

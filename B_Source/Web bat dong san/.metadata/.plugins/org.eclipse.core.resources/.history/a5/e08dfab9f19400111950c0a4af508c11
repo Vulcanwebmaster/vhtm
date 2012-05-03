@@ -1,0 +1,79 @@
+<!-- Author: tienlx -->
+<?php
+	$this->CI = get_instance();
+	$this->CI->db->where('id',1);
+	$query = $this->CI->db->get('dgwebsite');
+	$dep = $query->result();
+	
+	$this->CI->db->where('id',2);
+	$query = $this->CI->db->get('dgwebsite');
+	$binhthuong = $query->result();
+	
+	$this->CI->db->where('id',3);
+	$query = $this->CI->db->get('dgwebsite');
+	$xau = $query->result();
+	
+	$this->db->select_sum('danhgia');
+	$query = $this->CI->db->get('dgwebsite');
+	$tongso = $query->result();
+	echo $tongso;
+	
+?>
+<div class="box">
+    <div class="ctitle">ĐÁNH GIÁ WEBSITE</div>
+    <div class="cnoidung" style="padding-left: 5px;text-align: justify;">
+    <table>
+        
+            <tbody><tr>
+                <td valign="top" style="width: 230px; border: 1px solid #c8d9ea; padding: 2px">
+                    <font size="2" face="Arial">
+                        Đẹp
+                    </font>
+                </td>
+                <?foreach($dep as $rs):?>                
+                <td valign="top" style="width: 100px; border: 1px solid #c8d9ea; padding: 2px">
+                    <font size="2" face="Arial">
+                        <?php echo $rs->danhgia;?>
+                        (74%)</font></td>
+				<?php endforeach;?>
+                <td valign="top" style="width: 210px; border: 1px solid #c8d9ea; padding: 2px">
+                    &nbsp;<img width="148" height="15" alt="" src="http://dantri3.vcmedia.vn/App_Themes/Default/Images/vote.gif"></td>
+            </tr>
+        
+            <tr>
+                <td valign="top" style="width: 230px; border: 1px solid #c8d9ea; padding: 2px">
+                    <font size="2" face="Arial">
+                        Bình thường
+                    </font>
+                </td>
+                <?foreach($binhthuong as $rs):?>
+                <td valign="top" style="width: 100px; border: 1px solid #c8d9ea; padding: 2px">
+                    <font size="2" face="Arial">
+                        <?php echo $rs->danhgia;?>
+                        (21%)</font></td>
+				<?php endforeach;?>
+                <td valign="top" style="width: 210px; border: 1px solid #c8d9ea; padding: 2px">
+                    &nbsp;<img width="42" height="15" alt="" src="http://dantri3.vcmedia.vn/App_Themes/Default/Images/vote.gif"></td>
+            </tr>
+        
+            <tr>
+                <td valign="top" style="width: 230px; border: 1px solid #c8d9ea; padding: 2px">
+                    <font size="2" face="Arial">
+                        Xấu
+                    </font>
+                </td>
+                <?foreach($xau as $rs):?>
+                <td valign="top" style="width: 100px; border: 1px solid #c8d9ea; padding: 2px">
+                    <font size="2" face="Arial">
+                        <?php echo $rs->danhgia;?>
+                        (5%)</font></td>
+				<?php endforeach;?>
+                <td valign="top" style="width: 210px; border: 1px solid #c8d9ea; padding: 2px">
+                    &nbsp;<img width="10" height="15" alt="" src="http://dantri3.vcmedia.vn/App_Themes/Default/Images/vote.gif"></td>
+            </tr>
+        
+            </tbody></table>
+    </div>
+    
+    <div class="clearfix"></div>
+</div>

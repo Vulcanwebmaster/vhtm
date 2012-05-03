@@ -1,0 +1,512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google-site-verification" content="0mef_3XMZ9fPQCVD22aC7EbLOD7HfcP7qkuxBh9NY4k" />
+<title><?=$title?></title>
+<meta name="description" content="<?=$this->setting_library->setting['site_description']?>">
+<meta name="keywords" content="<?=$this->setting_library->setting['site_keywords']?>">
+<meta name="generator" content="Phan Gia Huy Co., Ltd. - info@phangiahuy.com, www.phangiahuy.com, 0905211588" /> 
+
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>system/application/views/theme/site/<?=$this->site_library->get_default_template()?>/css/dinhviet.css">
+
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>system/application/views/theme/system/css/system.css">
+<script type="text/javascript" src="<?=base_url()?>system/application/views/theme/system/js/jquery-core.js"></script>
+<!-- CSS -->
+    <link href="<?=base_url()?>style/style.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>style/Jqueryslide.css" rel="Stylesheet" type="text/css" />
+	<link href="<?=base_url()?>style/bdscomvn/jquery-ui-1.7.3.custom.css" rel="Stylesheet" type="text/css" />    
+    <link href="<?=base_url()?>style/bdscomvn/BDS_Style_15.1.8.css" rel="Stylesheet" type="text/css" />    
+<!-- CSS -->
+
+<!-- Javascript -->
+	<script src="<?=base_url()?>Scripts/bdscomvn/bds_jquery_1.5.js" type='text/javascript'></script>
+    <script src="<?=base_url()?>Scripts/bdscomvn/bds_javascript_2.4.3.js" type='text/javascript'></script>
+    <script src="<?=base_url()?>Scripts/bdscomvn/Banner.Loader_3.0.js" type='text/javascript'></script>
+    <script src="<?=base_url()?>Scripts/bdscomvn/avim_1.1.js" type='text/javascript'></script>
+    <script src="<?=base_url()?>Scripts/bdscomvn/tiny_mce.js" type='text/javascript'></script>
+    <script src="<?=base_url()?>Scripts/bdscomvn/jcarousellite_1.2.js" type='text/javascript'></script>
+    <script src="<?=base_url()?>Scripts/bdscomvn/message_1.1.js" type='text/javascript'></script>
+    
+    <script src="<?=base_url()?>Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="<?=base_url()?>Scripts/slide/JScriptslide1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".slider").slideshow({
+                width: 757,
+                height: 277,
+                transition: 'square'
+            });
+
+        });
+        $(document).ready(function () {
+            window.setInterval(function () {
+                $("#imglogo").fadeIn(1000).delay(4000).fadeOut(1000);
+            });
+
+        });
+
+    </script>
+<!-- Hết Javascript -->
+
+</head>
+<body>
+	<?=$this->load->view('theme/site/nhadat/html/quangcao2ben')?>
+    <div style="width:1000px; margin:auto">
+ 			<?=$this->load->view('theme/site/nhadat/html/banner')?>
+        <div class="gap2">
+        </div>
+        <!-- CỘT TRÁI-->
+        <div class="nav-left">
+        	<?=$this->load->view('theme/site/nhadat/html/menu_trai')?>
+       </div>
+        <div class="nav-right">
+        <div id="home-center">
+		
+			<div id="slogan-container" style="height:50px;">
+                <img id="slogan" alt="" src="<?php echo base_url();?>images/slogan.png"/>
+            </div>
+
+            <div id="duannoibat" style="border-bottom-style: inset; border-bottom-width: 1px; border-bottom-color: #EAFFFF">
+				<?=$this->load->view('theme/site/nhadat/html/content_du_an_nb')?>
+            </div>
+		
+<div id="top-center" style="margin-bottom: 20px ; margin-top: 230px">
+	<div id="search-box" style="margin-bottom: 20px ; margin-top: 20px">		
+		<?=$this->load->view('theme/site/nhadat/html/boxtimkiem')?>
+	</div>
+	<div id="hot24-box" style="margin-bottom: 20px ; margin-top: 20px">
+		<?=$this->load->view('theme/site/nhadat/html/tinhot')?>
+	</div>
+</div>
+
+<br />
+<div id="main-center" style="margin-top: 10px;  float:left; width:560px">
+<!--*************** AD BANNER *****************-->
+ <?php if($page == "site/nhadat/index"){?>
+    <div class="product-for-you">
+<div class="product" id="divlistProduct"> 
+<!--*************** HEADER OF LIST *****************-->
+    <div class="tab-hb" style="margin-top:0;">
+		<div id="tab0" class="tab-hb-active">
+			<div class="tab-hb-active-left"></div>
+			<div class="tab-hb-active-middle"><h2>Tin rao vặt</h2></div>
+			<div class="tab-hb-active-right"></div>
+		</div>
+    </div>
+<!--*************** CONTENT OF LIST *****************-->
+
+<!--  Goi TAB Tin Vip-->
+    <div id="prd_tab0" >
+    	<?php $this->load->view($page)?>		
+	</div>
+  <!--  Goi TAB Tin rao vat-->
+    <div id="prd_tab1" >
+	</div>
+    
+    <div id="prd_tab2">
+    </div>
+</div>
+<script type="text/javascript">
+    $("#tab0").mouseover(
+		function () {
+		    $("#tab0").css("cursor", "default");
+		    $("#divlistProduct .tab-hb-active").removeClass("tab-hb-active").addClass("tab-hb-inactive");
+		    $("#divlistProduct .tab-hb-active-left").removeClass("tab-hb-active-left").addClass("tab-hb-inactive-left");
+		    $("#divlistProduct .tab-hb-active-middle").removeClass("tab-hb-active-middle").addClass("tab-hb-inactive-middle");
+		    $("#divlistProduct .tab-hb-active-right").removeClass("tab-hb-active-right").addClass("tab-hb-inactive-right");
+
+		    $("#tab0").removeClass("tab-hb-inactive").addClass("tab-hb-active");
+		    $("#tab0 .tab-hb-inactive-left").removeClass("tab-hb-inactive-left").addClass("tab-hb-active-left");
+		    $("#tab0 .tab-hb-inactive-middle").removeClass("tab-hb-inactive-middle").addClass("tab-hb-active-middle");
+		    $("#tab0 .tab-hb-inactive-right").removeClass("tab-hb-inactive-right").addClass("tab-hb-active-right");
+		    $("#prd_tab0").css("display", "block");
+		    $("#prd_tab1").css("display", "none");
+		}
+	);
+
+    $("#tab1").mouseover(
+		function () {
+		    $("#tab1").css("cursor", "default");
+		    $("#divlistProduct .tab-hb-active").removeClass("tab-hb-active").addClass("tab-hb-inactive");
+		    $("#divlistProduct .tab-hb-active-left").removeClass("tab-hb-active-left").addClass("tab-hb-inactive-left");
+		    $("#divlistProduct .tab-hb-active-middle").removeClass("tab-hb-active-middle").addClass("tab-hb-inactive-middle");
+		    $("#divlistProduct .tab-hb-active-right").removeClass("tab-hb-active-right").addClass("tab-hb-inactive-right");
+
+		    $("#tab1").removeClass("tab-hb-inactive").addClass("tab-hb-active");
+		    $("#tab1 .tab-hb-inactive-left").removeClass("tab-hb-inactive-left").addClass("tab-hb-active-left");
+		    $("#tab1 .tab-hb-inactive-middle").removeClass("tab-hb-inactive-middle").addClass("tab-hb-active-middle");
+		    $("#tab1 .tab-hb-inactive-right").removeClass("tab-hb-inactive-right").addClass("tab-hb-active-right");
+		    $("#prd_tab1").css("display", "block");
+		    $("#prd_tab0").css("display", "none");
+		}
+		);
+</script>
+
+    </div>
+    <div class="lay-clear">
+    </div>
+    <div>
+    </div>
+<?php } else {?>
+    <!--*************** HEADER OF LIST *****************-->
+    <div class="tab-hb" style="margin-top:0;">
+		<div id="tab0" class="tab-hb-active">
+			<div class="tab-hb-active-left"></div>
+			<div class="tab-hb-active-middle"><h2>Chi tiết rao vặt</h2></div>
+			<div class="tab-hb-active-right"></div>
+		</div>
+    </div>
+<!--*************** CONTENT OF LIST *****************-->
+
+<!--  Goi chi tiet rao vat-->
+    <div id="prd_tab0">
+		<?=$this->load->view($page)?>
+	</div>
+    
+    <div id="prd_tab2" style="display:none">
+    </div>
+    <?php }?>	
+<div id="hot24-content" style="display:none;">
+               
+</div>
+	
+<!--*************** AD TIN TUC*****************-->
+<div class="lay-clear"></div>    
+ 
+    <div id="new-article">
+		
+    </div>
+    <div class="lay-clear">
+    </div>
+<!-- TIN TUC MOI -->
+<div id="contruct">
+        
+<div class="tab-hb">
+    <div class="tab-hb-active" id="handbook_tab0">
+        <div class="tab-hb-active-left">
+        </div>
+        <div class="tab-hb-active-middle">
+            <span style="cursor: default">            
+                Tin tức mới
+            </span>
+        </div>
+        <div class="tab-hb-active-right">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="lay-clear">
+</div>
+<!-- Noi dung tab tin tuc moi -->
+<div class="hb-data" id="handbook0">
+<?=$this->load->view('modules/tnd_tintucmoi/index')?>
+
+
+<div class="lay-clear">
+</div>
+
+
+
+
+</div>
+
+
+
+    </div>
+    
+<!-- VIDEO NOI BAT -->
+<div id="contruct">
+        
+<div class="tab-hb">
+    <div class="tab-hb-active" id="handbook_tab0">
+        <div class="tab-hb-active-left">
+        </div>
+        <div class="tab-hb-active-middle">
+            <span style="cursor: default">            
+                Video nổi bật
+            </span>
+        </div>
+        <div class="tab-hb-active-right">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+function video1() {
+	document.getElementById('video-container1').style.display='inline';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='none';
+}
+function video2() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='inline';
+	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='none';
+}
+function video3() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='inline';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='none';
+}
+function video4() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='inline';
+	document.getElementById('video-container5').style.display='none';
+}
+function video5() {
+	document.getElementById('video-container1').style.display='none';
+	document.getElementById('video-container2').style.display='none';
+	document.getElementById('video-container3').style.display='none';
+	document.getElementById('video-container4').style.display='none';
+	document.getElementById('video-container5').style.display='inline';
+}
+</script>
+
+
+<div class="lay-clear">
+</div>
+<!-- Noi dung tab Video noi bat -->
+<div class="hb-data" id="handbook0">
+<div class="lay-clear">
+</div>
+  <?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id_dm',5);
+  $this->CI->db->order_by('name');
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
+<div class="art-latest">
+    <div class="art-item">
+        <ul>
+			<?foreach($list as $rs):?> 
+            <li>
+                <!-- <input onclick = "video1()" value ="video 1" type = "button">  -->
+                <a onclick = "<?=$rs->hinhanh?>"><strong><?=$rs->name?></strong></a>
+            </li>
+            <?endforeach;?>
+        </ul>
+
+    </div>
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id',32);  
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+?>
+	<?foreach($list as $rs):?> 
+	<div id="video-container1" style="float:left;width: 45%;padding:10px;background-color: transparent;">
+        <object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/Export.swf">
+           <embed src="video/Export.swf" width="100%" height="210px" />
+        </object>
+    </div>
+    
+	<div id = "video-container2" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+		<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/Export.swf">
+           <embed src="video/Export.swf" width="100%" height="210px" />
+        </object>
+    </div>
+    
+	<div id = "video-container3" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<iframe width="100%" height="210" src="http://www.youtube.com/embed/BA7fdSkp8ds" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+	<div id = "video-container4" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
+           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
+        </object>
+    </div>
+    
+	<div id = "video-container5" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
+    	<object width="100%" height="210px">
+           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
+           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
+        </object>
+    </div>
+
+</div>
+
+</div>
+    </div>	
+</div>
+<div id="right-center" style="width:180px; float:right; margin-right:15px; margin-top:10px">
+	<div class="rightContent left-side">     
+		
+        <div id="lienhetructuyen" style="margin-bottom:10px">
+            <div style="width: 177px; height: 30px; background: url('<?php echo base_url();?>images/bghotrotructuyen.png') no-repeat;
+                            margin-top: 5px;">
+                        </div>
+                        <div class="right_panel" style="width: 175px; border-left: 1px #0088f4 solid; border-right: 1px #0088f4 solid;
+                            border-bottom: 1px #0088f4 solid;">
+                            <div style="margin-left: 10px; width: 165px;">
+                            <? $this->CI = get_instance();?>
+                            <?php 
+								$this->db->where('id_group','22');
+			    				$query = $this->db->get('thanhvien');
+								$item = $query->result();
+								//$this->db->where()?>
+								
+                                <div style="color: #f66c03; padding: 5px; width: 155px">
+                                    <strong>TƯ VẤN MUA BÁN</strong></div>
+								<?foreach($item as $rs):?>
+									<div style="color: #006de8; padding: 5px; width: 155px;">
+                                    	<strong><? echo $rs->fullname;?></strong></div>
+                                	<div style="color: #355f9d; padding: 5px; width: 155px;">
+                                    <div style="width: 27px; height: 24px; float: left"">
+                                        <img src="<?php echo base_url();?>images/bds_12.gif"
+                                            width="27" height="24" /></div>
+                                    <div style="padding-left: 5px; font-size: 12px; width: 123px;">
+                                        <strong><?php echo $rs->username;?></strong></div>
+                                </div>
+                                <div style="padding-left: 5px; width: 155px; padding-bottom: 10px">
+                                    <a href="ymsgr:sendim?<?php echo $rs->email;?>">
+                                        <img border="0" src="http://opi.yahoo.com/online?u=<?php echo $rs->email;?>&amp;m=g&amp;t=2&amp;l=us" width="125"
+                                            height="25"></a></div>
+                                <?endforeach;?>
+                        	</div>
+        </div>
+
+        <div id="danhgia" style="padding-top:10px">
+            <h4 style="color: #FFFFFF; text-align: center;" align="right">ĐÁNH GIÁ WEBSITE</h4>
+            <form action="<?php echo base_url();?>nhadat/danhgiaweb" method="post" style="padding-left:10px;padding-top:10px;float:left">
+                <p style="padding-top:10px"><input type="radio" name="danhgia" value="1"/>Đẹp</p>
+                <p style="padding-top:5px"><input type="radio" name="danhgia" value="2"/>Bình thường</p>
+                <p style="padding-top:5px;padding-bottom:5px"><input type="radio" name="danhgia" value="3">Xấu</p>				
+                <!-- <button style="height:24px; margin-left:95px">đánh giá</button> -->
+                <button type="submit" style="height:24px; float:left">Đánh giá</button>
+                <button type="submit" style="height:24px; float:left">Kết quả</button>
+            </form>
+        </div>
+
+<div class="rc4 iebleft">
+<div class="iebright">
+    <div class="rc41 white">
+        <div class="ierightcorner">
+        <h4>Tiêu điểm tuần qua</h4>
+    </div></div>
+    <!-- Chiều cao tối thiểu luôn hiển thị đủ 6 tin -->
+    <div class="rc42 rc42-tabart ablack">
+        <div class="rc421">
+            <ul>
+			<? $this->CI = get_instance();?>
+    		<?
+			    $this->db->where('bat',"1");
+			    $this->db->order_by('luotxem','DESC');
+			    $query = $this->db->get('noidung','7');
+			    $item = $query->result();?>
+			    <?foreach($item as $rs):?>
+					<li>
+	                    <a rel = 'nofollow' href="<?=base_url()?>tintuc/chi-tiet/<?=$rs->idcat?>/<?=$rs->id?>/<?=$rs->alias.duoi()?>">
+	                                        <?=$rs->tieude?></a>
+					</li>
+				<?endforeach;?>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="separable"></div>
+<div class="rc4 iebleft"><div class="iebright">
+    <div class="rc41 white">
+        <div class="ierightcorner">
+       <h4>Lời khuyên</h4>        
+    </div></div>
+    <div class="rc42 rc42-tabart ablack">
+        <div class="rc421">
+        <ul>
+			<? $this->CI = get_instance();?>
+    		<?
+			    $this->db->where('idcat',"55");
+			    $query = $this->db->get('noidung');
+			    $item = $query->result();?>
+			    <?foreach($item as $rs):?>
+					<li>
+	                    <a rel = 'nofollow' href="<?=base_url()?>tintuc/chi-tiet/<?=$rs->idcat?>/<?=$rs->id?>/<?=$rs->alias.duoi()?>">
+	                                        <?=$rs->tieude?></a>
+					</li>
+				<?endforeach;?>
+                
+		</ul>
+        </div>
+    </div>
+</div></div>
+        <div class="separable"></div>
+        
+<!--
+	09/12/2011: Chuyển tiêu đề box thành link tới trang Hỏi đáp và rel = "nofollow"
+-->
+
+<div class="rc3 iebleft">
+<div class="iebright">
+    <div class="rc31 white">
+        <div class="ierightcorner">
+			
+            <h4><a rel="nofollow">HỎI- ĐÁP</a></h4>
+            
+        </div></div>
+    <div class="rc32 ablack">
+        
+
+
+<div class="rc321">
+
+    <label>Gửi câu hỏi của bạn tại đây</label>    
+    <form name="form1" action = "<?php echo base_url();?>hoidap" method="post">
+        <textarea id="questionTitle" name="questionTitle" rows="4" cols="10"></textarea>
+        <div style="margin-top:5px;">
+            <input type="submit" onclick="" value="Gửi câu hỏi" />
+        </div>
+        <input type="hidden" id="questionContent" name="questionContent" value=""/>
+        <input id="CategoryId" name="CategoryId" type="hidden" value="" />
+            <input id="JobId" name="JobId" type="hidden" value="" />
+            <input id="ProjectId" name="ProjectId" type="hidden" value="" />
+            <input id="ProductId" name="ProductId" type="hidden" value="" />
+            <input id="ArticleId" name="ArticleId" type="hidden" value="" />
+            <input id="BrokerId" name="BrokerId" type="hidden" value="" />
+            <input id="CompanyId" name="CompanyId" type="hidden" value="" />
+            <input id="EnterpriseId" name="EnterpriseId" type="hidden" value="" />
+        
+	</form>
+	<script type="text/javascript">
+	    function getvalue() {
+	        var text = $('#questionTitle').val();
+	        text = text.replace(/\n\r?/g, '<br/>');
+	    }
+	    </script>
+	
+</div>
+    </div>            
+</div>
+</div>
+
+<!-- Vach ngan cach -->
+        <div class="separable"></div>
+        
+
+<div class="separable"></div>
+		
+    </div>
+</div>                        
+</div>
+</div>
+</div>
+        <div class="bottomline"></div>
+		<?=$this->load->view("theme/site/nhadat/html/footer")?>
+		</div>
+</body>
+</html>
+        

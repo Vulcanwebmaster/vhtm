@@ -1,0 +1,31 @@
+<?php
+//insert thong tin vao bang vnit_danhgiaweb
+  class danhgiaweb_model extends Model{
+      function danhgiaweb_model(){
+          parent::Model();
+      }
+      function luu(){
+      	$this->CI = get_instance();
+      	$query = $this->db->get('dgwebsite');
+      	$item = $query->result();
+      	$danhgia = $this->input->post('danhgia');
+      	
+      	if ($danhgia == 'dep')
+			$dep = $query->
+          $email = $this->input->post('email');
+          $comment = $this->input->post('commentDetail');
+          $data = array(
+               'dep' => $title,
+               'binhthuong' => $name,
+               'xau' => $date
+            );
+			$this->db->update('dgwebsite', $data); 
+		if($this->db->update('lienhe',$data)){
+              return true;
+          }else{
+              return false;
+          }
+      }
+      
+}
+?>

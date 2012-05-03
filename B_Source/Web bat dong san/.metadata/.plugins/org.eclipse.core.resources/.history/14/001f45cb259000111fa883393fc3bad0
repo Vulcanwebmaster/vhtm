@@ -1,0 +1,32 @@
+<?php
+  $this->CI = get_instance();
+  $this->CI->db->where('id_dm',2);
+  $this->CI->db->where('bat',1);
+  $query = $this->CI->db->get('quangcao');
+  $list = $query->result();
+  if(count($list) > 0){
+
+  
+?>
+<div class="quangcao290">
+<?
+  foreach($list as $rs): 
+if($rs->option==0){
+?>
+<a href="<?=$rs->link?>">
+<img src="<?=base_url().$rs->hinhanh?>" alt="<?=$rs->name?>" style="width: <?=$rs->dai?>px;height: <?=$rs->cao?>px;">
+</a>
+<?
+}else{
+?>
+        <div id="divAdRight" style="display: none; position: absolute; top: 0px;">
+            <a href="#">
+                <img src="<?=base_url().$rs->hinhanh?>" alt="" height="<?=$rs->cao?>" width="<?=$rs->dai?>" /></a>
+        </div>
+<?
+}
+endforeach; 
+?>
+</div>
+<?
+}?>

@@ -1,0 +1,268 @@
+BODY
+{
+    margin: 0px;
+    font-size: 13px;
+    font-family: arial;
+    color: #464646;
+    background-image: url(../images/bg.jpg);
+    background-repeat: repeat-x;
+    
+}
+
+.wraper
+{width:1000px;
+text-align:left;
+margin:0 auto;
+}
+#left
+{
+width:243px;
+ float:left;
+ }
+#right
+{
+width:757px;
+ float:left;
+/* background:url(../images/header.png) no-repeat;*/
+  height:277px;
+  }
+  #right p
+  {
+  font-size:16px;
+  font-weight:bold;
+  font-style:italic;
+  color:#222222;
+  padding:15px;
+  background:url(../images/tag-bg.png) repeat;
+  margin:140px 50px 80px 100px;
+  border:1px solid #FFCC66;
+  }
+#logo
+{height:93px;}
+.name
+{
+font-size:28px;
+ text-transform:uppercase; 
+ color:#ffffff; 
+ padding-top:35px;}
+#links-bg
+{height:184px;}
+.toplinks
+{height:35px; 
+line-height:35px; 
+background-image:url(../images/links-bg.jpg);
+background-repeat: no-repeat; 
+text-transform:uppercase; 
+font-weight:bold; 
+padding-left:70px;}
+.toplinks a
+{
+text-decoration:none; 
+color:#ffffff;}
+.toplinks a:hover
+{
+text-decoration:none; 
+color:#F61F63;}
+.sap
+{
+height:2px; 
+font-size:1px;
+}
+.nav-left
+{width:205px; 
+float:left; 
+padding-left:5px;
+margin-left:3px;/*177px;*/
+}
+.gap
+{width:20px; float:left; font-size:1px; height:100px;}
+.nav-right
+{width:783px; float:left; /*border-left:1px dashed #82817F;border-right:3px solid #b9b9bb;*/}
+.gap2
+{clear:left; }
+.smaltext{
+font-family:tahoma; 
+font-size:11px; 
+color:#464646; 
+text-align:justify; 
+padding-right:10px;
+}
+.date{
+font-family:tahoma; 
+color:#464646; 
+padding-top:5px; 
+padding-bottom:5px;
+font-weight:bold; 
+font-size:11px; 
+clear:right;}
+.read-more
+{font-family:tahoma; 
+height:25px; 
+line-height:25px; 
+font-weight:bold; 
+font-size:10px; 
+padding-right:14px; 
+text-transform:uppercase; 
+padding-left:100px;}
+.read-more a
+{color:#F51D64; 
+text-decoration:none;}
+.read-more a:hover
+{color:#F51D64; 
+text-decoration:none;}
+.heading
+{font-family:"trebuchet MS"; 
+font-size:15px; 
+font-weight:bold; 
+color:#F61F63; 
+text-transform:uppercase; 
+background:(../images/news-icon.jpg) left bottom no-repeat; 
+height:40px; 
+padding-left:40px; 
+padding-top:15px;}
+.heading2
+{color:#464646; 
+font-weight:normal;
+font-weight:bold;}
+#main
+{padding:10px; 
+text-align:justify; }
+#main img { 
+width:240px; 
+height:160px; 
+border: 2px solid #CCCCCC; 
+float:left; 
+margin:5px;}
+#mainlinks
+{ 
+float: right;
+width:230px;
+
+}
+p, ol, ul {
+	line-height: 22px;
+	text-align:justify;
+    width: auto;
+}
+
+ul {
+	margin-left: 10px;
+	padding-left: 0;
+	list-style: none;
+}
+
+ul li { width:100%;
+	padding: 2px 0 5px 0;	
+	/*border-bottom:1px dotted #444444;*/
+}
+/*sửa màu chữ*/
+ul li a{color: blue}
+
+ul li.first {
+	background: none;
+}
+.heading3
+{font-family:"trebuchet MS"; 
+font-size:17px; 
+font-weight:bold; 
+color:#F61F63; 
+text-transform:uppercase; 
+background:url(../images/cap.jpg) left bottom no-repeat; 
+height:40px; 
+padding-left:55px; 
+margin-left:20px;
+padding-top:15px;}
+#bottom
+{width:779px;
+clear:left;
+margin:0 auto;}
+.sap3
+{width:1px;
+float:left;
+height:35px;
+line-height:35px;
+color:#c7c6c6;
+}
+.bottomlink
+{width:152px;
+text-align:center;
+height:35px;
+line-height:35px;
+font-weight:bold;
+text-transform:uppercase;
+color:#FFFFFF;
+float:left;
+}
+.bottomlink a
+{
+    color: #c7c6c6;
+    text-decoration: none;
+}
+.bottomlink a:hover
+{
+text-decoration:none;
+color:#ff7700;
+}
+.sap4
+{ 
+height:25px;
+clear:left;
+width:779px;}
+a{
+color:#F51E62; 
+text-decoration:none;}
+a:hover{
+color:#F51E62; 
+text-decoration:none;}
+.bottomline
+{height:5px; 
+font-size:1px; 
+clear:left; 
+background-color:#358fdd;
+}
+
+/* thêm */
+
+.left_panel, .right_panel
+{
+    background-color: #FFFAE8;
+}
+.tab
+{
+    margin-left: 20px;
+    color: White;
+    margin-top: 0px;
+    height: 30px;
+    vertical-align: 10%;
+}
+.silverheader
+{
+    border-style: none;
+    width: 183px;
+    padding-top: 0px;
+    height: 30px;
+    background-image: url('../images/tabbg.png');
+    color: #FFFFFF;
+    font-family: Tahoma;
+    background-repeat: no-repeat;
+}
+.head
+{
+    background-image: url('../images/headbg.png');
+    margin-top: 10px;
+}
+.icon_left
+{
+    /*background-image: url('../Images/forward_arrow.png');*/
+    background-image: url('../Images/left_item_bg.png');
+    background-repeat: no-repeat;
+}
+.item_left
+{
+    color: #666633;
+    height: 100%;
+}
+.test ul
+{
+	
+}

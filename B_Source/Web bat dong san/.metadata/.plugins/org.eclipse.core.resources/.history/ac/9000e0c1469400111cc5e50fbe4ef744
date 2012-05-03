@@ -1,0 +1,25 @@
+<?php
+//insert thong tin vao bang vnit_danhgiaweb
+  class danhgiaweb_model extends Model{
+      function danhgiaweb_model(){
+          parent::Model();
+      }
+      function luu(){
+      				$name = $this->input->post('name');
+          $email = $this->input->post('email');
+          $comment = $this->input->post('commentDetail');
+          $data = array(
+               'dep' => $title,
+               'binhthuong' => $name,
+               'xau' => $date
+            );
+			$this->db->update('dgwebsite', $data); 
+		if($this->db->update('lienhe',$data)){
+              return true;
+          }else{
+              return false;
+          }
+      }
+      
+}
+?>

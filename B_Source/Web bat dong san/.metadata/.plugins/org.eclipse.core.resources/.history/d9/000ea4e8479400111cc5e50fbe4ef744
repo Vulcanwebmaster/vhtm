@@ -1,0 +1,17 @@
+<?php
+  class danhgiaweb extends Controller{
+      protected $_templates;
+      function danhgiaweb(){
+          parent::Controller();
+          $this->load->model('danhgiaweb_model','danhgiaweb');
+      }
+
+      function index(){
+			$data['title'] = 'THUÊ NHÀ XƯỞNG - ĐÁNH GIÁ WEBSITE';
+          	$this->_templates['page'] = 'site/nhadat/danhgiaweb';
+			$this->site_library->load($this->_templates['page'],$data,'danhgiaweb');
+      }
+
+      
+}
+?>

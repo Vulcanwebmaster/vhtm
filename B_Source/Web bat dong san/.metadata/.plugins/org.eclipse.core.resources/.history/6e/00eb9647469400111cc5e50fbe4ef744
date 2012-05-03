@@ -1,0 +1,24 @@
+<?php
+//insert thong tin vao bang vnit_danhgiaweb
+  class danhgiaweb_model extends Model{
+      function danhgiaweb_model(){
+          parent::Model();
+      }
+      function luu(){
+          $data = array(
+               'title' => $title,
+               'name' => $name,
+               'date' => $date
+            );
+
+			$this->db->where('id', $id);
+			$this->db->update('mytable', $data); 
+		if($this->db->insert('lienhe',$data)){
+              return true;
+          }else{
+              return false;
+          }
+      }
+      
+}
+?>

@@ -1,0 +1,29 @@
+<?php
+  class danhgiaweb extends Controller{
+      protected $_templates;
+      function danhgiaweb(){
+          parent::Controller();
+          $this->load->model('danhgiaweb_model','danhgiaweb');
+      }
+
+      function index(){
+			$data['title'] = 'THUÊ NHÀ XƯỞNG - HỎI ĐÁP';
+			$this->form_validation->set_rules('name','Tên','required');
+			$this->form_validation->set_rules('email','Email','required');
+			$this->form_validation->set_rules('commentDetail','Email','required');
+			if($this->form_validation->run()){
+              if($this->hoidap->luu()){
+                  $this->session->set_flashdata('message','Câu hỏi bạn đăng thành công hay đợi chúng tôi trả lời');
+                  redirect('hoidap');
+              }else{
+                  $this->session->set_flashdata('error','Không thành công. Xin vui lòng thử lại');
+              }
+          }
+          $this->_templates['page'] = 'site/nhadat/hoidap';
+			$this->site_library->load($this->_templates['page'],$data,'hoidap');
+
+      }
+
+      
+}
+?>
