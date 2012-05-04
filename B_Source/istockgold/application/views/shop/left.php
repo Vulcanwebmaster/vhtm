@@ -12,7 +12,7 @@
 //    echo "\n</ul>\n";
 //    }
 //
-    ?>
+?>
 </div>
 -->
 <div id="left-column">
@@ -96,8 +96,8 @@
                         <td>Amount</td>
                     </tr>
                     <tr class="hangle">
-                        <td><?=$rs->date?></td>
-                        <td><?=$rs->c_src?> <span>To</span> <?=$rs->c_dst?></td>
+                        <td>11/09/2011</td>
+                        <td>Wu <span>To</span> LR(USD)</td>
                         <td>UCE**</td>
                         <td><span>$500,00</span></td>
                     </tr>                    
