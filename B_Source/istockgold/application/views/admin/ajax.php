@@ -18,4 +18,5 @@ $link = mysql_connect("localhost", "root", "khongcopass");
             $result = $result."&".$list;
         }
         echo $result;
+      
 ?>

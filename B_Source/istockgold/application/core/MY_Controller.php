@@ -54,6 +54,7 @@ class MY_Controller extends CI_Controller
 		$this->load->library('site/bep_site');
 		$this->load->library('site/bep_assets');
 		$this->load->library('page/Page');
+		$this->load->library('pagination');
 
 		$this->load->library('auth/userlib');
 

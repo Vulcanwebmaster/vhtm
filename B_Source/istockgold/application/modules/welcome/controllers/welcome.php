@@ -121,6 +121,8 @@ class Welcome extends Shop_Controller
 		//reviews by An
         $data['reviews']=$this->getReviews();
         //end
+        
+        
         $this->load->view($this->_container,$data); 
     }
     
@@ -1449,7 +1451,7 @@ class Welcome extends Shop_Controller
 		$this->form_validation->set_rules('your_order','your_order','required');
 		$this->form_validation->set_rules('review_title','review_title','required');
 		$this->form_validation->set_rules('comment','comment','required');
-		//$this->form_validation->set_rules('rating','rating','required');
+		$this->form_validation->set_rules('ratingstarvalue','ratingstarvalue','required');
 	
         if($this->form_validation->run())
         {
@@ -1460,7 +1462,8 @@ class Welcome extends Shop_Controller
 		$your_phone = $this->input->post('your_phone');
 		$your_order= $this->input->post('your_order');
 		$review_title = $this->input->post('review_title');
-		$comment = $this->input->post('comment');		
+		$comment = $this->input->post('comment');
+		$rating = $this->input->post('ratingstarvalue');		
 				
 		$this->db->where('order_code',$your_order);
 		$query=$this->db->get('is_order');
@@ -1475,7 +1478,8 @@ class Welcome extends Shop_Controller
             'email' 		=> $your_email,
             'phone_number'  => $your_phone,
 			'title' 		=> $review_title,
-			'comment' 		=> $comment
+			'comment' 		=> $comment,
+			'rating'		=> $rating
 		
  		);
  		

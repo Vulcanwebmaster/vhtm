@@ -13,6 +13,7 @@
 //    }
 //
 ?>
+
 <?php
 	$this->db->order_by("date_src","DESC");
 	$query = $this->db->get("is_order",5);
@@ -28,7 +29,7 @@
                         <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px">Home</a>
                     </div>
                     <div class="menuitem">
-                        <a>Service news</a>
+                        <a href="<?php  echo base_url()?>index.php/welcome/allNews">Service news</a>
                     </div>
                     <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/servicefees">Service Fees</a></div>
                     <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/exchangers">Buy/Sell LR</a></div>
@@ -153,8 +154,7 @@ self.setInterval("time()",3000);
      -->
      
           
-            
-            
+     
             <div id="lastest-exchange">
                 <div style="height:35px"></div>
                 <table>
@@ -166,7 +166,7 @@ self.setInterval("time()",3000);
                     </tr>
                     <?php foreach ($exchange_order as $rs):?>
                     <tr class="hangle">
-                        <td><?=$rs->date_src?></td>
+                        <td><? echo $rs->date_src?></td>
                         <td><?=$rs->c_src?> <span>To</span> <?=$rs->c_dst?></td>
                         <td><?=$rs->email?></td>
                         <td><span><?=$rs->amount_src?>$</span></td>

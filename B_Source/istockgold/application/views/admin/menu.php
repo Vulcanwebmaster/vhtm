@@ -6,7 +6,7 @@ Examples can be seen below for menu_bep_system
 -->
 
 <script type="text/javascript">
-self.setInterval("time()",100);
+self.setInterval("time()",1000);
 function time()
 {
 	var xmlHttp;
@@ -51,8 +51,8 @@ function success(response)
 {
 	var result=response;
 	var mang=result.split("&");
-	document.getElementById("a").innerHTML = "$"+mang[1];
-	document.getElementById("b").innerHTML = "$"+mang[2];
+	document.getElementById("a").innerHTML = "  $"+mang[1];
+	document.getElementById("b").innerHTML = "  $"+mang[2];
 	return true;
 }
 self.setInterval("time()",3000);

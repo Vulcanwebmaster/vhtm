@@ -204,14 +204,15 @@
                        
                         <td>
                             <button><?php echo $list['rating'];?>.0</button>
-                            <span><?php echo $list['title'];?></span>
+                            <span style="font-size:12px;line-height:20px"><?php echo $list['title'];?></span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="comment-col1">
+                        <td class="comment-col1" style="width: 25%">
                             <label class="frostwrath"><?php echo $list['name'];?></label>
                             <label class="from-UK">from <?php echo $list['location'];?></label>
                         </td>
+
                         <td>
                             <label class="comment-date">Date : <?php echo $list['date'];?></label>
                         </td>
@@ -357,62 +358,142 @@
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
                                 			<script type="text/javascript">
                                 				$(document).ready(function(){
+                                    				var flag = 0;
+                                    				value = document.getElementById("value");
+                                    				ratingstarvalue = document.getElementById("ratingstarvalue");
+                                    				star1 = document.getElementById("star1");
+                                    				star2 = document.getElementById("star2");
+                                    				star3 = document.getElementById("star3");
+                                    				star4 = document.getElementById("star4");
+                                    				star5 = document.getElementById("star5");
+                                    				
                                     				value.innerHTML="...";
-													$("#star1").mouseenter(function(){														
-														star1.src="<?php echo base_url();?>assets/images/star2.png";
-														value.style.width='50px';
-														value.innerHTML="very bad";										
-													});
+                                    				
+													$("#star1").mouseenter(function(){	
+														if (flag == 0) {
+															star1.src="<?php echo base_url();?>assets/images/star2.png";
+															value.style.width='50px';
+															value.innerHTML="very bad";
+														}
+													})
 													$("#star1").mouseleave(function(){
-														star1.src="<?php echo base_url();?>assets/images/star.png";
+														if (flag == 0) {
+															star1.src="<?php echo base_url();?>assets/images/star.png";
+														}
+													});
+													
+													$("#star1").mousedown(function(){
+														if (flag == 0)
+														{											
+														flag = 1;
+														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														ratingstarvalue.value = 1;
+														}
 													});
 
-													$("#star2").mouseenter(function(){														
+													
+
+													$("#star2").mouseenter(function(){
+														if (flag == 0) {														
 														$("#star1").mouseenter();
 														star2.src="<?php echo base_url();?>assets/images/star2.png";
 														value.style.width='50px';
 														value.innerHTML="bad";
+														}
 													});
 													$("#star2").mouseleave(function(){
+														if (flag == 0) {
 														$("#star1").mouseleave();
 														star2.src="<?php echo base_url();?>assets/images/star.png";
+														}
 													});
 
-													$("#star3").mouseenter(function(){														
+													$("#star2").mousedown(function(){
+														if (flag == 0)
+														{													
+														flag = 1;
+														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														ratingstarvalue.value = 2;
+														}
+													});
+
+													$("#star3").mouseenter(function(){	
+														if (flag == 0) {													
 														$("#star2").mouseenter();
 														star3.src="<?php echo base_url();?>assets/images/star2.png";
 														value.style.width='50px';
 														value.innerHTML="normal";
+														}
 													});
 													$("#star3").mouseleave(function(){
+														if (flag == 0) {
 														$("#star2").mouseleave();
 														star3.src="<?php echo base_url();?>assets/images/star.png";
+														}
 													});
 
-													$("#star4").mouseenter(function(){														
+													$("#star3").mousedown(function(){
+														if (flag == 0)
+														{														
+														flag = 1;
+														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														ratingstarvalue.value = 3;
+														}
+													});
+
+
+													
+													$("#star4").mouseenter(function(){
+														if (flag == 0) {														
 														$("#star3").mouseenter();
 														star4.src="<?php echo base_url();?>assets/images/star2.png";
 														value.style.width='50px';
 														value.innerHTML="good";
+														}
 													});
 													$("#star4").mouseleave(function(){
+														if (flag == 0) {
 														$("#star3").mouseleave();
 														star4.src="<?php echo base_url();?>assets/images/star.png";
+														}
 													});
 
-													$("#star5").mouseenter(function(){														
+													$("#star4").mousedown(function(){	
+														if (flag == 0)
+														{												
+														flag = 1;
+														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														ratingstarvalue.value = 4;
+														}
+													});
+
+
+													$("#star5").mouseenter(function(){
+														if (flag == 0) {														
 														$("#star4").mouseenter();
 														star5.src="<?php echo base_url();?>assets/images/star2.png";
 														value.style.width='50px';
 														value.innerHTML="perfect";
+														}
 													});
 													$("#star5").mouseleave(function(){
 														$("#star4").mouseleave();
+														if (flag == 0) {
 														star5.src="<?php echo base_url();?>assets/images/star.png";
+														}
 													});
+
+													$("#star5").mousedown(function(){
+														if (flag == 0)
+														{														
+															flag = 1;
+															star1.src="<?php echo base_url();?>assets/images/star2.png";
+															ratingstarvalue.value = 5;
+														}
+													});
+													
                                     			});
                                 					
-                                				
                                 			</script>
                                 
                                             <img id="star1" src="<?php echo base_url()?>assets/images/star.png" alt="" />
@@ -421,7 +502,7 @@
                                             <img id="star4" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <img id="star5" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <label id="value" style=" margin-left:5px; width:50px">Perfect. It doesn't get any better</label>
-                                            
+                                            <input type="hidden" name ="ratingstarvalue" id="ratingstarvalue" value=""/> 
                                             <input type="submit" value="Submit" />
                                         </td>
                                     </tr>
