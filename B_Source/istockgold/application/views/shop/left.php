@@ -12,6 +12,9 @@
 //    echo "\n</ul>\n";
 //    }
 //
+	$this->CI = get_instance();
+	$this->db->order_by("date","DESC");
+	$query = $this->db->get();
     ?>
 </div>
 -->
