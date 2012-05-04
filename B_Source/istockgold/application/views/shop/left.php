@@ -12,9 +12,6 @@
 //    echo "\n</ul>\n";
 //    }
 //
-	$this->CI = get_instance();
-	$this->db->order_by("date","DESC");
-	$query = $this->db->get();
     ?>
 </div>
 -->
@@ -99,11 +96,11 @@
                         <td>Amount</td>
                     </tr>
                     <tr class="hangle">
-                        <td>11/09/2011</td>
-                        <td>Wu <span>To</span> LR(USD)</td>
+                        <td><?=$rs->date?></td>
+                        <td><?=$rs->c_src?> <span>To</span> <?=$rs->c_dst?></td>
                         <td>UCE**</td>
                         <td><span>$500,00</span></td>
-                    </tr>
+                    </tr>                    
                     <tr>
                         <td>11/09/2011</td>
                         <td>Wu <span>To</span> LR(USD)</td>
