@@ -13,6 +13,11 @@
 //    }
 //
 ?>
+<?php
+	$this->db->order_by("date_src","DESC");
+	$query = $this->db->get("is_order",5);
+	$exchange_order = $query->result();   
+?>
 </div>
 -->
 <div id="left-column">
@@ -159,12 +164,15 @@ self.setInterval("time()",3000);
                         <td>User</td>
                         <td>Amount</td>
                     </tr>
+                    <?php foreach ($exchange_order as $rs):?>
                     <tr class="hangle">
-                        <td>11/09/2011</td>
-                        <td>Wu <span>To</span> LR(USD)</td>
-                        <td>UCE**</td>
-                        <td><span>$500,00</span></td>
-                    </tr>                    
+                        <td><?=$rs->date_src?></td>
+                        <td><?=$rs->c_src?> <span>To</span> <?=$rs->c_dst?></td>
+                        <td><?=$rs->email?></td>
+                        <td><span><?=$rs->amount_src?>$</span></td>
+                    </tr>
+                    <?php endforeach;?>  
+                    <!--                  
                     <tr>
                         <td>11/09/2011</td>
                         <td>Wu <span>To</span> LR(USD)</td>
@@ -189,6 +197,7 @@ self.setInterval("time()",3000);
                         <td>UCE**</td>
                         <td><span>$500,00</span></td>
                     </tr>
+                     --> 
                 </table>
             </div>
             <div id="send">
