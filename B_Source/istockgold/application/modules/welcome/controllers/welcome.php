@@ -113,6 +113,14 @@ class Welcome extends Shop_Controller
         $data['metadesc'] =$page['metadesc'];
         $data['metakeyword'] =$page['metakeyword'];
         $data['module'] = $this->module;
+        
+        //Author: tienlx
+        $data['topnews']=$this->MNews->getTopNews();
+        //End author : tienlx
+        
+		//reviews by An
+        $data['reviews']=$this->getReviews();
+        //end
         $this->load->view($this->_container,$data); 
     }
     
@@ -644,6 +652,28 @@ class Welcome extends Shop_Controller
         }
         $this->load->view($this->_container,$data);
     }
+    
+    //Author: tienlx
+    function detailNews(){
+
+		$data['title'] = $this->preference->item('site_name')." | "."Detail";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'detailnews';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['detailnews'] = $this->MIStockGold->getAllSimple("news","id",$this->uri->segment('3'));
+        $this->load->view($this->_container,$data);
+    }
+    function allNews(){
+    	$data['title'] = $this->preference->item('site_name')." | "."All WebMonyNew";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'allnews';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $query =$this->db->get("is_news");
+        $listnews = $query->result();
+        $data['allnews'] = $listnews;
+        $this->load->view($this->_container,$data);
+    }
+    //End Author: tienlx
     
 	function faq()
     {
@@ -1407,6 +1437,89 @@ class Welcome extends Shop_Controller
           echo "yes";
         }    
     }
+    
+    
+    
+     //ham review_An 4/5/2012
+    function review()
+    {
+    	//kiem tra nhap
+		$this->form_validation->set_rules('your_name','your_name','required');
+		$this->form_validation->set_rules('location','location','required');
+		$this->form_validation->set_rules('your_order','your_order','required');
+		$this->form_validation->set_rules('review_title','review_title','required');
+		$this->form_validation->set_rules('comment','comment','required');
+		//$this->form_validation->set_rules('rating','rating','required');
+	
+        if($this->form_validation->run())
+        {
+			
+		$your_name = $this->input->post('your_name');
+		$location = $this->input->post('location');
+		$your_email = $this->input->post('your_email');
+		$your_phone = $this->input->post('your_phone');
+		$your_order= $this->input->post('your_order');
+		$review_title = $this->input->post('review_title');
+		$comment = $this->input->post('comment');		
+				
+		$this->db->where('order_code',$your_order);
+		$query=$this->db->get('is_order');
+		$row=$query->num_rows();
+		
+		//kiem tra ordercode trong csdl
+		if ($row<>0)
+		{		
+		$data = array(
+			'name' 			=> $your_name,
+			'location' 		=> $location,
+            'email' 		=> $your_email,
+            'phone_number'  => $your_phone,
+			'title' 		=> $review_title,
+			'comment' 		=> $comment
+		
+ 		);
+ 		
+ 		$this->db->set('date','NOW()',FALSE);
+		$this->db->insert('is_reviews',$data);	
+		
+		//hien thi thong bao
+		}
+		$this->session->set_flashdata('message',' * Successful ');
+		redirect('welcome');		
+        }
+        else 
+        {
+         $this->session->set_flashdata('error','* Error Input');
+         redirect('welcome');
+        }
+	
+    }
+    //ham lay review tu csdl by An    
+    function getReviews()
+    {
+    	
+    	$data = array();
+       	
+       	$this->db->select('id, name, location, title, date, comment, rating');
+		$this->db->from('is_reviews');
+    	$this->db->order_by('date','desc');
+    	
+    	$Q=	$this->db->get();
+
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+	//end by An 4/5/2012
+	
+    
+    
 }//end controller class
 
 ?>

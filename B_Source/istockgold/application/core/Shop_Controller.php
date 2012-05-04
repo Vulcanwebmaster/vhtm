@@ -68,7 +68,11 @@ class Shop_Controller extends MY_Controller
         $this->load->model('subscribers/MSubscribers');
         $this->load->model('languages/MLangs');
         $this->load->model('slideshow/MSlideshow');
-
+        
+        //Author: tienlx
+        $this->load->model('is_news/MNews');
+		//End author: tienlx
+		
         // Loading libraries instead of autoload
         $this->load->library('form_validation');
         //$this->load->library('validation'); // for BEP 0.6

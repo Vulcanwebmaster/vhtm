@@ -39,15 +39,31 @@
 	                    <img src="<?php echo base_url()?>assets/images/support-logo.jpg" alt="" />
 	                </div>
 	                <div id="support-information">
-	                    <div style="margin-bottom:0px">                        
+	                    <div style="margin-bottom:0px">
+	                    <!--                         
 	                            <span style="float:left">Y! online support 1:</span>
-	                            <img style="float:left;" src="<?php echo base_url()?>assets/images/online.png" alt="" />                        
-	                    </div>
-	                    <div style="clear:both; margin-top:0px; margin-bottom:0px">                        
-	                            <span style="float:left">Y! online support 2:</span>
-	                            <img style="float:left;" src="<?php echo base_url()?>assets/images/offline.png" alt="" />                        
+	                            <img style="float:left;" src="<?php echo base_url()?>assets/images/online.png" alt="" />
+						-->
+						<!-- Author: tienlx -->
+								<span style="float:left">Y! online support 1:</span>
+								<a href="ymsgr:sendim?mr_superan">
+	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=mr_superan&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
+	                            </a>
+						<!-- End Author: tienlx -->
 	                    </div>
 	                    
+	                    <div style="clear:both; margin-top:0px; margin-bottom:0px">
+	                    <!--                         
+	                            <span style="float:left">Y! online support 2:</span>
+	                            <img style="float:left;" src="<?php echo base_url()?>assets/images/offline.png" alt="" />
+						-->                        
+						<!-- Author: tienlx -->
+								<span style="float:left">Y! online support 2:</span>
+								<a href="ymsgr:sendim?omega_weapon_0311">
+	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=omega_weapon_0311&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
+	                            </a>
+						<!-- End Author: tienlx -->
+						</div>
 	                    <div style="clear:both;margin-top:-15px; height:33px">
 	                        <span style="margin-top:0px; float:left">icq support</span>
 	                        <img alt="" src="<?php echo base_url()?>assets/images/green-flower.png" style=" float:left; margin-top:0px" />

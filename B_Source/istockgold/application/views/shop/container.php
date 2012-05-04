@@ -51,7 +51,7 @@
     </div>
       
     
-  </div><!--End of wrapper-->
+  <!--End of wrapper-->
 <!-- sharethis buttons -->
 <?php
 

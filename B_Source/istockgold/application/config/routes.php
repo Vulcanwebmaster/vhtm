@@ -44,6 +44,8 @@ $route['default_controller'] = "welcome";
 $route['scaffolding_trigger'] = "";
 
 $route['admin'] = 'admin/home';
-
+//Author: tienlx
+//$route['istockgold/index.php/welcome/detailnews/(:any)'] = 'istockgold/index.php/welcome/detailnews/$1';
+//End Author: tienlx
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

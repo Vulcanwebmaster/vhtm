@@ -34,5 +34,14 @@ class MNews extends CI_Model
    		$this->db->set('date', 'NOW()', FALSE);
 		$this->db->insert("is_news",$data);
 	}
+	
+	//Author: tienlx
+	function getTopNews(){
+		$this->db->order_by('date',"DESC");
+		$query = $this->db->get('is_news',5);
+		$listnews = $query->result();
+		return $listnews;
+	}
+	//End author: tienlx
 }
 ?>

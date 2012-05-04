@@ -116,6 +116,7 @@
                         <img src="<?php echo base_url()?>assets/images/news-icon.png" alt="" />
                         <span>News</span>
                     </div>
+                    <!-- 
                     <div id="news-content">
                         <a><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/>Telepay Service : Prices Go Down, Number of Operators Go Up</a>
                         <br />
@@ -131,18 +132,39 @@
                             <a style="text-decoration:underline; margin-right:20px"><img src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/>All WebMoney News</a>
                         </div>
                     </div>
+                    -->
+                    <!-- Author: tienlx -->
+                    <div id="news-content">
+                    	<?php foreach ($topnews as $rs):?>
+                    	<a href="<?php echo base_url()?>index.php/welcome/detailnews/<?=$rs->id;?>"><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?=$rs->title?></a>
+                    	<br />
+                    	<?php endforeach;?>
+						<div align="right">
+                            <a href="<?php echo base_url()?>index.php/welcome/allNews"style="text-decoration:underline; margin-right:20px"><img src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/>All WebMoney News</a>
+                        </div>
+                    </div>
+                    <!-- End Author: tienlx -->
                 </div>
             </div>
+            
+            
+            <!--
+             hien thi review by An
+            -->
+             
+            
             <div id="content3">
                 <div id="comment-header">
                     <img src="<?php echo base_url()?>assets/images/comment-icon.jpg" alt="" />
                     <a>REVIEWS | Customers Feedback </a>
                 </div>
+                
                 <div id="news-control-panel">
                     <span style="font-size:12px; font-weight:bold">Show</span> 
                         <select>
                             <option>20</option>
                         </select>
+                        
                     <div style="float:right">
                         <button>First</button>
                         <button>Previous</button>
@@ -154,102 +176,49 @@
                         <button>Next</button>
                         <button>Last</button>                          
                     </div>
+                    
                 </div>
+                
                 <br />
                 <table id="comment-table">
-                    <tr>
-                        <td class="comment-col1">
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                        </td>
-                        <td>
-                            <button>5.0</button>
-                            <span>Wow...truly a memorable centerpiece!</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="comment-col1">
-                            <label class="frostwrath">frostwrath</label>
-                            <label class="from-UK">from UK</label>
-                        </td>
-                        <td>
-                            <label class="comment-date">Date : DEC. 4, 2011 </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <label class="comment-content">The south could always start by rising from the couch and doing something with that obesity rate.</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <hr />
-                        </td>
-                    </tr>
+                <?php 
+                if(count($reviews))
+					{						
+						foreach ($reviews as $key => $list)
+						{						
 
-                    <!---->
-                    <tr>
-                        <td class="comment-col1">
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
+                ?>
+                    <tr> 
+                    <td class="comment-col1">                     
+                        <?php 
+                        for ($i=1;$i<=$list['rating'];$i++)
+							{
+                        ?>
+                        
+                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />   
+                        <?php 
+							}
+                        ?>
+                          
                         </td>
+                       
                         <td>
-                            <button>5.0</button>
-                            <span>Wow...truly a memorable centerpiece!</span>
+                            <button><?php echo $list['rating'];?>.0</button>
+                            <span><?php echo $list['title'];?></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="comment-col1">
-                            <label class="frostwrath">frostwrath</label>
-                            <label class="from-UK">from UK</label>
+                            <label class="frostwrath"><?php echo $list['name'];?></label>
+                            <label class="from-UK">from <?php echo $list['location'];?></label>
                         </td>
                         <td>
-                            <label class="comment-date">Date : DEC. 4, 2011 </label>
+                            <label class="comment-date">Date : <?php echo $list['date'];?></label>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <label class="comment-content">The south could always start by rising from the couch and doing something with that obesity rate.</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <hr />
-                        </td>
-                    </tr>
-
-                    <!---->
-                    <tr>
-                        <td class="comment-col1">
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                        </td>
-                        <td>
-                            <button>5.0</button>
-                            <span>Wow...truly a memorable centerpiece!</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="comment-col1">
-                            <label class="frostwrath">frostwrath</label>
-                            <label class="from-UK">from UK</label>
-                        </td>
-                        <td>
-                            <label class="comment-date">Date : DEC. 4, 2011 </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <label class="comment-content">The south could always start by rising from the couch and doing something with that obesity rate.</label>
+                            <label class="comment-content"><?php echo $list['comment'];?></label>
                         </td>
                     </tr>
                     <tr>
@@ -257,76 +226,21 @@
                             <hr />
                         </td>
                     </tr>
-
-                    <!---->
-                    <tr>
-                        <td class="comment-col1">
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                        </td>
-                        <td>
-                            <button>5.0</button>
-                            <span>Wow...truly a memorable centerpiece!</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="comment-col1">
-                            <label class="frostwrath">frostwrath</label>
-                            <label class="from-UK">from UK</label>
-                        </td>
-                        <td>
-                            <label class="comment-date">Date : DEC. 4, 2011 </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <label class="comment-content">The south could always start by rising from the couch and doing something with that obesity rate.</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <hr />
-                        </td>
-                    </tr>
-
-                    <!---->
-                    <tr>
-                        <td class="comment-col1">
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                            <img src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                        </td>
-                        <td>
-                            <button>5.0</button>
-                            <span>Wow...truly a memorable centerpiece!</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="comment-col1">
-                            <label class="frostwrath">frostwrath</label>
-                            <label class="from-UK">from UK</label>
-                        </td>
-                        <td>
-                            <label class="comment-date">Date : DEC. 4, 2011 </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <label class="comment-content">The south could always start by rising from the couch and doing something with that obesity rate.</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <hr />
-                        </td>
-                    </tr>
+                    
+                    <?php 
+						}
+					}
+                    
+                    ?>
+                      
                 </table>
             </div>
+            <!-- end   -->
+            
+        
+            <!-- form by AN   -->
+            <form id="form1" name="form1" method="post" action="<?php echo base_url()?>index.php/welcome/review"> 
+            
             <div id="content4">
                 <div id="register-head1">
                     <img src="<?php echo base_url()?>assets/images/message-icon.png" alt="" style="float:left"/>
@@ -340,7 +254,22 @@
                 <div id="register-head2">
                     <img src="<?php echo base_url()?>assets/images/i-icon.png" alt=""/>
                     <label>Please focus on product's appearance and quality. You may also leave service comments below.</label>                    
-                </div>                
+            	</div> 
+                
+                
+                <?php 
+                if($this->session->flashdata('message'))
+                {
+   				 echo '<div><a style="color:red;font-size:12px;line-height:20px">
+   				 '.$this->session->flashdata('message').'</a></div>';
+                }
+                if($this->session->flashdata('error'))
+                {
+   				 echo '<div><a style="color:red;font-size:12px;line-height:20px">
+   				 '.$this->session->flashdata('error').'</a></div>';
+                }
+                ?>
+                              
                 <div id="register-center">
                     <table cellspacing="15">
                         <tr>
@@ -353,7 +282,7 @@
                                 <span>*</span> Your name:
                             </td>
                             <td>
-                                <input type="text" style="width:290px"/>
+                                <input name="your_name" type="text" id="your_name" type="text" style="width:290px"/>
                             </td>
                         </tr>
                         <tr>
@@ -361,8 +290,10 @@
                                 <span>*</span> Your Location:
                             </td>
                             <td>
-                                <select style="width:165px">
-                                    <option>VietNam</option>
+                                <select name="location" id="location" style="width:165px">
+                                    <option value="Vietnam">VietNam</option>
+                                    <option value="Thailand">Thailand</option>
+                                    <option value="China">China</option>
                                 </select>
                             </td>
                         </tr>
@@ -371,7 +302,7 @@
                                 <span>*</span> Your email:
                             </td>
                             <td>
-                                <input type="text"  style="width:290px"/>
+                                <input name="your_email" type="text" id="your_email" type="text"  style="width:290px " />
                             </td>
                         </tr>
                         <tr>
@@ -379,7 +310,7 @@
                                 Please filled your phone number (option):
                             </td>
                             <td style="border: 1px inset #C0C0C0" class="tddb">
-                                <input type="text"  style="width:200px"/>
+                                <input name="your_phone" type="text" id="your_phone" type="text"  style="width:200px"/>
                                 <br />
                                 <label style="color:#7b7b7b; font-size:11px">We will call you when your order delivered</label>
                             </td>
@@ -389,7 +320,7 @@
                                 <span>*</span> Please filled your order number :
                             </td>
                             <td style="border: 1px inset #C0C0C0" class="tddb">
-                                <input type="text"  style="width:200px"/>
+                                <input name="your_order" type="text" id="your_order" type="text"  style="width:200px"/>
                                 <br />
                                 <label style="color:#7b7b7b; font-size:11px">This required for check valid order when you submit your review</label>
                             </td>
@@ -399,7 +330,7 @@
                                 <span>*</span> Review Title:
                             </td>
                             <td style="border: 1px inset #C0C0C0" class="tddb">
-                                <input type="text"  style="width:98%"/>
+                                <input name="review_title" type="text" id="review_title" type="text"  style="width:98%"/>
                                 <br />
                                 <img alt="" src="<?php echo base_url();?>assets/images/down-arrow.png"/>
                                 <a style="font-size:11px;color:#53b0da">Hide examples</a>
@@ -415,7 +346,7 @@
                             </td>
                             <td>
                                 
-                                <textarea style="height:80px; width:99%;color:#7b7b7b;" rows="1" cols="1">Leave a comment...</textarea>                              
+                                <textarea name="comment" id="comment" style="height:80px; width:99%;color:#7b7b7b;" rows="1" cols="1">Leave a comment...</textarea>                              
                             </td>
                         </tr>
                         <tr>
@@ -490,7 +421,8 @@
                                             <img id="star4" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <img id="star5" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <label id="value" style=" margin-left:5px; width:50px">Perfect. It doesn't get any better</label>
-                                            <input type="button" value="Submit" />
+                                            
+                                            <input type="submit" value="Submit" />
                                         </td>
                                     </tr>
                                     <tr style=" margin-top:-30px">
@@ -507,6 +439,8 @@
 
                 </div>
             </div>
+            </form> <!--  End form by AN   -->
+            
             <div id="content5">
                 <img src="<?php echo base_url()?>assets/images/bottom-banner.png" alt="" style="margin:10px 0"/>
             </div>
