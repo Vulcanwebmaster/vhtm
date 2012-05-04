@@ -72,20 +72,84 @@
 	                </div>
                 </div>
             </div>
-            <div id="istock">                
-                <div style="margin-top:30px">
-                    <img alt="" src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" style="margin-top:10px; width:70px"/>
-                    <span>Liberty Reserve (USD): 30,000.00</span>
-                </div>
-                <div>
-                    <img alt="" src="<?php echo base_url()?>assets/images/Paypal.jpg" style="margin-top:3px; width:70px"/>
-                    <span>Paypal: 85,500.00</span>
-                </div>
-                <div>
-                    <img alt="" src="<?php echo base_url()?>assets/images/wu.jpg" style="margin-top:3px; width:70px"/>
-                    <span>Paypal: 85,500.00</span>
+        
+            
+                 
+    <!--
+		E-currency reserve by An
+     -->
+     
+ <script type="text/javascript">
+self.setInterval("time()",1000);
+function time()
+{
+	var xmlHttp;
+	try
+	  {
+	  // Firefox, Opera 8.0+, Safari
+	  xmlHttp=new XMLHttpRequest();	  
+	  }
+	catch (e)
+	  {
+	  // Internet Explorer
+	  try
+	    {
+	    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+	    }
+	  catch (e)
+	    {
+	    try
+	      {
+	      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+	      }
+	    catch (e)
+	      {
+	      alert("Your browser does not support AJAX!");
+	      return false;
+	      }
+	    }
+	  }//kiem tra brower
+  
+	xmlHttp.onreadystatechange=function()
+    {
+    	if(xmlHttp.readyState==4)
+      	{
+    		success(xmlHttp.responseText);
+      	}
+    }	
+	xmlHttp.open("POST","<?php echo base_url()?>application/views/admin/ajax.php",true);
+	xmlHttp.send();
+}
+
+function success(response)
+{
+	var result=response;
+	var mang=result.split("&");
+	document.getElementById("a").innerHTML = "Lyberty Reserve (USD):  $"+mang[1];
+	document.getElementById("b").innerHTML = "Western Union (USD):   $"+mang[2];
+	return true;
+}
+self.setInterval("time()",3000);
+</script> 
+            
+            <div id="istock"> 
+            <div> </div>               
+                <div id="reserved_box" style="margin-top:30px">
+                    <img alt="" src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" style="margin-top:10px; width:80px"/>
+                    <span id ="a" style="font-size:12px;line-height:20px"></span>
+                <br>
+                    <img alt="" src="<?php echo base_url()?>assets/images/wu.jpg" style="margin-top:3px; width:80px"/>
+                    <span id ="b" style="font-size:12px;line-height:20px"></span>
                 </div>
             </div>
+            
+       <!--
+		End by An
+     -->
+     
+          
+            
+            
             <div id="lastest-exchange">
                 <div style="height:35px"></div>
                 <table>
