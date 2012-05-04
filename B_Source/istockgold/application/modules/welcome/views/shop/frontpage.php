@@ -426,6 +426,7 @@
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
                                 			<script type="text/javascript">
                                 				$(document).ready(function(){
+                                    				value.innerHTML="...";
 													$("#star1").mouseenter(function(){														
 														star1.src="<?php echo base_url();?>assets/images/star2.png";
 														value.style.width='50px';
