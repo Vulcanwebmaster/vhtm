@@ -770,6 +770,16 @@ class Welcome extends Shop_Controller
         $data['ouraccounts'] = $this->MIStockGold->getAllSimple("pages","title","Our Accounts");
         $this->load->view($this->_container,$data);
     }
+    
+	function ourcompany()
+    {
+        $data['title'] = $this->preference->item('site_name')." | "."ourcompany";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'ourcompany';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $data['ourcompany'] = $this->MIStockGold->getAllSimple("pages","title","Our Company");
+        $this->load->view($this->_container,$data);
+    }
   
     function error()
     {

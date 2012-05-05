@@ -10,7 +10,7 @@
                         <p style="float:left; margin-top:2px; font-family:Tahoma; font-size:12px;color:Silver; margin-right:20px">
                         	<a href="<?php  echo site_url($module."/order");?>">Tracking my order</a> 
                         	|
-                        	<a href="<?php  echo base_url()?>index.php/welcome/ouraccounts"> Our accounts </a>
+                        	<a href="<?php  echo base_url()?>index.php/welcome/ourcompany"> Our Company </a>
                         	|
                         	<a href="<?php  echo base_url()?>index.php/welcome/faq"> FAQ </a>
                         	|
