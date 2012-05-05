@@ -162,10 +162,24 @@
                 <div id="news-control-panel">
                     <span style="font-size:12px; font-weight:bold">Show</span> 
                         <select>
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
                             <option>20</option>
                         </select>
-                        
+                    
+                    <script type="text/javascript">
+                    	$(document).ready(function(){
+							$('.bt').mouseenter(function(){								
+								$(this).css('background-color','#C1E0FF');
+								});
+							$('.bt').mouseleave(function(){								
+								$(this).css('background-color','silver');
+								});
+                        	});
+                    </script> 
                     <div style="float:right">
+                      <!-- 
                         <button>First</button>
                         <button>Previous</button>
                         <button style="background-color: #C1E0FF">1</button>
@@ -174,7 +188,9 @@
                         <button>4</button>
                         <button>5</button>
                         <button>Next</button>
-                        <button>Last</button>                          
+                        <button>Last</button>
+					  -->
+					<?php echo $pagination;?>                   
                     </div>
                     
                 </div>
@@ -525,5 +541,4 @@
             <div id="content5">
                 <img src="<?php echo base_url()?>assets/images/bottom-banner.png" alt="" style="margin:10px 0"/>
             </div>
-        </div>
-    </div>
+        </div>    

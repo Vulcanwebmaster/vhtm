@@ -6,7 +6,6 @@
 <?php 
 if (count($faq))
 foreach ($faq as $key => $list)
-	echo $list['title'];
 	echo $list['content'];
 ?>
 </div>

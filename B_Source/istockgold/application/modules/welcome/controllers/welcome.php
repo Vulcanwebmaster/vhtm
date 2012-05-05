@@ -119,8 +119,22 @@ class Welcome extends Shop_Controller
         //End author : tienlx
         
 		//reviews by An
-        $data['reviews']=$this->getReviews();
+        //$data['reviews']=$this->getReviews();
         //end
+        
+        //Author tienlx: pagination reviews
+        $config['base_url'] = base_url()."index.php"."/"."welcome"."/"."index";
+        $config['total_rows']= $this->getNumReviews();
+        $config['per_page']= '1';
+        $config['uri_segment'] = 3;
+
+        $this->pagination->initialize($config);
+        //$data['reviews']=$this->getAllReviews($config['per_page'],$this->uri->segment('2'));
+        $data['reviews']=$this->getReviews($config['per_page'],$this->uri->segment('3'));
+        $data['pagination'] = $this->pagination->create_links();
+        
+        //End author tienlx
+        
         
         
         $this->load->view($this->_container,$data); 
@@ -1499,16 +1513,16 @@ class Welcome extends Shop_Controller
 	
     }
     //ham lay review tu csdl by An    
-    function getReviews()
+    function getReviews($num,$offset)
     {
     	
     	$data = array();
-       	
        	$this->db->select('id, name, location, title, date, comment, rating');
-		$this->db->from('is_reviews');
+		//$this->db->from('is_reviews');
     	$this->db->order_by('date','desc');
     	
-    	$Q=	$this->db->get();
+    	
+    	$Q=	$this->db->get("is_reviews",$num,$offset);
 
         if ($Q->num_rows() > 0)
         {
@@ -1522,6 +1536,17 @@ class Welcome extends Shop_Controller
     }
 	//end by An 4/5/2012
 	
+    //Author: tienlx Pagination Reviews
+    function getNumReviews(){
+    	$query =$this->db->query("SELECT * FROM is_reviews");
+    	return $query->num_rows();
+    }
+    function getAllReviews($num,$offset){
+    	$this->db->order_by("date","DESC");
+    	$query = $this->db->get('is_reviews',$num,$offset);
+    	return $query->result();
+    }
+    //End author: tienlx 
     
     
 }//end controller class

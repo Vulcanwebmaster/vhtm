@@ -36,25 +36,25 @@ class CI_Pagination {
 	var $cur_page			=  0; // The current page being viewed
 	var $use_page_numbers	= FALSE; // Use page number for segment instead of offset
 	var $first_link			= '&lsaquo; First';
-	var $next_link			= '&gt;';
-	var $prev_link			= '&lt;';
+	var $next_link			= 'Next';
+	var $prev_link			= 'Previous';
 	var $last_link			= 'Last &rsaquo;';
 	var $uri_segment		= 3;
 	var $full_tag_open		= '';
 	var $full_tag_close		= '';
-	var $first_tag_open		= '';
-	var $first_tag_close	= '&nbsp;';
-	var $last_tag_open		= '&nbsp;';
-	var $last_tag_close		= '';
+	var $first_tag_open		= '<button class="bt">';
+	var $first_tag_close	= '</button>&nbsp;';
+	var $last_tag_open		= '<button class="bt">&nbsp;';
+	var $last_tag_close		= '</button>';
 	var $first_url			= ''; // Alternative URL for the First Page.
-	var $cur_tag_open		= '&nbsp;<strong>';
-	var $cur_tag_close		= '</strong>';
-	var $next_tag_open		= '&nbsp;';
-	var $next_tag_close		= '&nbsp;';
-	var $prev_tag_open		= '&nbsp;';
-	var $prev_tag_close		= '';
-	var $num_tag_open		= '&nbsp;';
-	var $num_tag_close		= '';
+	var $cur_tag_open		= '<button class="bt2" style="background-color: #C1E0FF">&nbsp;<strong>';
+	var $cur_tag_close		= '</strong></button>';
+	var $next_tag_open		= '<button class="bt">&nbsp;';
+	var $next_tag_close		= '</button>&nbsp;';
+	var $prev_tag_open		= '<button class="bt">&nbsp;';
+	var $prev_tag_close		= '</button>';
+	var $num_tag_open		= '<button class="bt">&nbsp;';
+	var $num_tag_close		= '</button>';
 	var $page_query_string	= FALSE;
 	var $query_string_segment = 'per_page';
 	var $display_pages		= TRUE;
@@ -117,7 +117,9 @@ class CI_Pagination {
 		// If our item count or per-page total is zero there is no need to continue.
 		if ($this->total_rows == 0 OR $this->per_page == 0)
 		{
+
 			return '';
+			
 		}
 
 		// Calculate the total number of pages
