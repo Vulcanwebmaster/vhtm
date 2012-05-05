@@ -44,6 +44,17 @@
 	                <div style="padding-top:15px" align="center">
 	                    <img src="<?php echo base_url()?>assets/images/support-logo.jpg" alt="" />
 	                </div>
+	                
+	                
+	         <!-- by AN 5/5 -->
+	         
+	                <?php  
+						$query = $this->db->get("is_online_support");
+						$online_support = $query->result();
+						foreach ($online_support as $row) {  
+					?>
+	                
+	               
 	                <div id="support-information">
 	                    <div style="margin-bottom:0px">
 	                    <!--                         
@@ -52,8 +63,8 @@
 						-->
 						<!-- Author: tienlx -->
 								<span style="float:left">Y! online support 1:</span>
-								<a href="ymsgr:sendim?mr_superan">
-	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=mr_superan&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
+								<a href="ymsgr:sendim?<?php echo $row->yahoo_nick1?>">
+	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=<?php echo $row->yahoo_nick1?>&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
 	                            </a>
 						<!-- End Author: tienlx -->
 	                    </div>
@@ -65,22 +76,26 @@
 						-->                        
 						<!-- Author: tienlx -->
 								<span style="float:left">Y! online support 2:</span>
-								<a href="ymsgr:sendim?omega_weapon_0311">
-	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=omega_weapon_0311&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
+								<a href="ymsgr:sendim?<?php echo $row->yahoo_nick2?>">
+	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=<?php echo $row->yahoo_nick2?>&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
 	                            </a>
 						<!-- End Author: tienlx -->
 						</div>
 	                    <div style="clear:both;margin-top:-15px; height:33px">
-	                        <span style="margin-top:0px; float:left">icq support</span>
+	                        <span style="margin-top:0px; float:left"><?php echo $row->name?></span>
 	                        <img alt="" src="<?php echo base_url()?>assets/images/green-flower.png" style=" float:left; margin-top:0px" />
-	                        <span style="float:left">:  19900081</span>
+	                        <span style="float:left">:  <?php echo $row->phone?></span>
 	                    </div>
 	                </div>
+
+	                <?php } ?>
+	                	                
                 </div>
-            </div>
-        
+            </div> 
+           <!-- by AN 5/5 -->
             
-                 
+            
+            
     <!--
 		E-currency reserve by An
      -->

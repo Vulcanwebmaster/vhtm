@@ -73,7 +73,9 @@ self.setInterval("time()",3000);
         <li><?php print anchor('is_pages/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_pages')) ?></li>				
         <li><?php print anchor('is_mail/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_mail')) ?></li>				
         <li><?php print anchor('is_contact_message/admin','<img src="'.base_url().'assets/images/admin/n_ehistory.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_contact_us')) ?></li>				
+         
         <div class="seperator"></div>
+             <li><?php print anchor('is_online_support/admin','<img src="'.base_url().'assets/images/admin/n_profile.gif" width="17" height="17" border="0" />'.$this->lang->line('istockgold_online_support')) ?></li> 
 		<li><?php print anchor('is_update_profile/admin','<img src="'.base_url().'assets/images/admin/n_profile.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_update_profile')) ?></li>
         <li><?php print anchor('auth/auth/logout','<img src="'.base_url().'assets/images/admin/n_logout.gif" width="18" height="17" border="0" />'.$this->lang->line('istockgold_log_out')) ?></li>
 	</ul>

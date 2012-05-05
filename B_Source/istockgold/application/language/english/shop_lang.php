@@ -64,6 +64,7 @@ $lang['istockgold_news'] = 'News';
 $lang['istockgold_pages'] = 'Pages';
 $lang['istockgold_mail'] = 'Mail';
 $lang['istockgold_contact_us'] = 'Contact Message';
+$lang['istockgold_online_support'] = 'Online Support';
 $lang['istockgold_update_profile'] = 'Update Profile';
 $lang['istockgold_log_out'] = 'Log Out';
 
