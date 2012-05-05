@@ -1,0 +1,35 @@
+input, select, textarea, button {color:#7B7B7B;font:12px/15px Arial,Helvetica,sans-serif;}
+img {border:0 none;vertical-align:top;}
+caption, th, td {font-weight:normal;text-align:left;vertical-align:top;}
+h1, h2, h3, h4, h5, h6 {line-height:1.35}
+a {color:#323232;cursor:pointer;text-decoration:none;}
+.page-popup {padding:25px 30px;text-align:left;background:url("../images/bkg_body.png") repeat scroll 0 0 #000000;color:#323232;font:12px/1.55 Arial,sans-serif;text-transform:lowercase;}
+.page-popup .page-title {border-bottom:0 none;text-align:right;padding:0 0 11px;}
+.catalog-product-compare-index .page-title h1 {color:#00BEEE;margin:0;font:bold 20px Arial,sans-serif;text-transform:lowercase;float:left;}
+.page-popup a.link-print {text-decoration:none;background:url("../images/i_print.gif") no-repeat scroll 0 center transparent;color:#00BEEE;font-size:11px;padding:2px 0 2px 25px;text-transform:lowercase;cursor:pointer;}
+.compare-table {border:0 none;width:100%;border-collapse:collapse;border-spacing:0;empty-cells:show;font-size:100%;}
+.compare-table tbody th, .compare-table tbody td {background:none repeat scroll 0 0 #FFFFFF;padding:10px;border:1px solid #D8D8D8;}
+.compare-table tbody th {background:none repeat scroll 0 0 #FFFFFF;color:#13151B;font-size:16px;
+font-weight:bold;text-transform:lowercase;}
+.compare-table tr.first td {padding:0 0 10px;}
+.compare-table tr.first td .product-image {border-bottom:2px solid #000000;display:block;margin:0 auto;text-align:center;width:100%;}
+.compare-table tr.first td .product-name {margin:0 0 5px;padding:10px 0 0 10px;color:#00BEEE;
+font-size:12px;font-weight:normal;white-space:nowrap;}
+.compare-table tr.first td .product-name a {color:#00BEEE;text-decoration:none;}
+.compare-table tr.first td .price-box {margin:0;padding:0 0 0 10px;}
+.compare-table  .regular-price .price {font-size:16px;font-weight:bold;color:#00BEEE;
+white-space:nowrap !important;}
+.compare-table tr.first td p, .compare-table tr.add-to-row td p {float:left;margin:0;}
+.compare-table button.button {background:none repeat scroll 0 0 transparent;border:0 none;cursor:pointer;margin:0;overflow:visible;padding:0;width:auto;}
+.compare-table button.btn-cart span {background:none repeat scroll 0 0 transparent;padding-left:5px;display:block;font:12px/30px Arial,Helvetica,sans-serif;height:30px;padding:0 0 0 10px;text-align:center;text-transform:lowercase;white-space:nowrap;}
+.compare-table button.btn-cart span span {background:url("../images/btn-cart.gif") no-repeat scroll 5px center transparent;color:#000000;font-size:11px;font-weight:bold;padding:0 !important;width:100px;border:0 none;}
+.compare-table tr.first td .add-to-links {float:left;margin-top:8px;font-size:11px;margin:5px 0 0;}
+.compare-table tr.first td  .add-to-links li {margin-bottom:0;overflow:hidden;margin-left: 15px;}
+.compare-table .link-wishlist {background:url("../images/wishlist-icon.gif") no-repeat scroll left center transparent;color:#8F8F8F;float:left;font-size:10px;height:15px;margin-right:3px;padding-left:15px;text-transform:lowercase;}
+.buttons-set {clear:both;padding:8px 0 0;text-align:right;}
+.catalog-product-compare-index .buttons-set .button {background:url("../images/close-btn.png") no-repeat scroll left top transparent;height:30px;text-indent:-9999px;width:123px;border:medium none;}
+.catalog-product-compare-index .buttons-set .button span {background:none repeat scroll 0 0 transparent;}
+.catalog-product-compare-index .buttons-set .button span {background:none repeat scroll 0 0 transparent;}
+.compare-table tbody td tbody td { border:medium none;}
+.catalog-product-compare-index  .page-title { position: static;}
+.catalog-product-compare-index .add-to-links li {  margin-left: 15px;}

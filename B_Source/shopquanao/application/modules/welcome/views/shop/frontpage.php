@@ -1,95 +1,798 @@
-<div id="maintop">
+<div class="main-container col2-right-layout">
+	<div class="main">
+		<div class="breadcrumbs">
+			<ul>
+				<li class="home"><a href="http://demo.emthemes.com/casualwear/"
+					title="Go to Home Page">Home</a> <span>/ </span></li>
+				<li class="category53"><strong>women</strong></li>
+			</ul>
+		</div>
+		<div class="bg-inner">
+			<div class="col-main">
+				<div class="col-inner">
+					<div class="category-image-container">
+						<div class="category-image-container-inner">
+							<p class="category-image">
+								<img src="women_files/swarovski-rings_6.jpg" alt="women"
+									title="women">
+							</p>
+						</div>
+					</div>
+					<div class="page-title category-title">
+						<h1>women</h1>
+					</div>
 
-    <?php print displayStatus();?>
-    
-    <?php
-      /*
-    echo "<pre>images is: ";
-print_r($images);
-echo "</pre>";
-  
-echo "<pre>multilang is: ";
-print_r ($this->data['multilang']);
-echo "</pre>";
-echo "<pre>mylanguage: ";
-print_r ($this->data['mylanguage']);
-echo "</pre>";
-echo "<pre>lang_id: ";
-print_r ($this->data['lang_id']);
-echo "</pre>";
-echo "<pre>language: ";
-var_dump ($this->data['language']);
-echo "</pre>";
-echo "<pre>mylanguate1: ";
-print_r ($this->data['mylanguage1']);
-echo "</pre>";
-echo "<pre>sessionlang: ";
-var_dump ($this->data['sessionlang']);
-echo "</pre>";
 
-echo "<pre>get_class is: ";
-print_r($get_class);
-echo "</pre>";
-echo "<pre>module name is: ";
-print_r($module);
-echo "</pre>";
-echo "<pre>index path is: ";
-print_r($index_path);
-echo "</pre>";
-echo "<pre>cat_parent is: ";
-print_r ($this->data['cat_parent']);
-echo "</pre>";
-echo "<pre>navlist: ";
-print_r ($this->data['navlist']);
-echo "</pre>";
-*/
-    if(!empty($slides)){
-        echo "<div id=\"slideshow\" class=\"pics\">";
-        foreach ($slides as $slide)
-        {
-            $imageinfo = $slide['image'];
-                            $slideimg=convert_image_path($imageinfo);
-            echo '<img class="hideme" src="'. $slideimg. '" alt="' . $slide['name'] .
-            '" />';
+					<div class="category-products">
+						<div class="toolbar">
+							<div class="pager">
+								<p class="amount">
+									<strong>10 Item(s)</strong>
+								</p>
 
+								<div class="limiter">
+									<label>Show</label> <select onchange="setLocation(this.value)">
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?limit=2">
+											2</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?limit=4">
+											4</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?limit=6">
+											6</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?limit=8">
+											8</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?limit=10">
+											10</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?limit=12"
+											selected="selected">12</option>
+									</select> per page
+								</div>
+
+
+
+
+
+
+
+
+							</div>
+
+							<div class="sorter">
+								<p class="view-mode">
+									<label>View as:</label> <strong title="Grid" class="grid">Grid</strong>&nbsp;
+									<a
+										href="http://demo.emthemes.com/casualwear/women.html?mode=list"
+										title="List" class="list">List</a>&nbsp;
+								</p>
+
+								<div class="sort-by">
+									<label>Sort By</label> <select
+										onchange="setLocation(this.value)">
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=position"
+											selected="selected">Position</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=name">
+											Name</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=price">
+											Price</option>
+										<option
+											value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=gender">
+											Gender</option>
+									</select> <a
+										href="http://demo.emthemes.com/casualwear/women.html?dir=desc&amp;order=position"
+										title="Set Descending Direction"><img
+										src="women_files/i_asc_arrow.gif"
+										alt="Set Descending Direction" class="v-middle">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="products-container">
+							<div class="products-container-inner">
+
+
+								<ul class="products-grid first odd">
+									<li class="item first"><a
+										href="http://demo.emthemes.com/casualwear/women/women-s-shoulder-logo-tee.html"
+										title="women's shoulder logo tee" class="product-image"><img
+											src="women_files/untitled-6.png"
+											alt="women's shoulder logo tee" height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/women-s-shoulder-logo-tee.html"
+												title="women's shoulder logo tee">women's shoulder logo tee</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-192"> <span
+												class="price">$110.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/192/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/192/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/192/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+									<li class="item last"><a
+										href="http://demo.emthemes.com/casualwear/women/wrench-eye-tee.html"
+										title="women's wrench eye tee" class="product-image"><img
+											src="women_files/untitled-1_1.png"
+											alt="women's wrench eye tee" height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/wrench-eye-tee.html"
+												title="women's wrench eye tee">women's wrench eye tee</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-187"> <span
+												class="price">$260.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/187/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/187/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/187/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+								</ul>
+								<ul class="products-grid even">
+									<li class="item first"><a
+										href="http://demo.emthemes.com/casualwear/women/women-s-trust-no-one-tee.html"
+										title="women's trust no one tee" class="product-image"><img
+											src="women_files/untitled-2_1.png"
+											alt="women's trust no one tee" height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/women-s-trust-no-one-tee.html"
+												title="women's trust no one tee">women's trust no one tee</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-188"> <span
+												class="price">$190.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/188/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/188/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/188/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+									<li class="item last"><a
+										href="http://demo.emthemes.com/casualwear/women/women-s-pincross-tee.html"
+										title="women's pincross tee" class="product-image"><img
+											src="women_files/untitled-3.png" alt="women's pincross tee"
+											height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/women-s-pincross-tee.html"
+												title="women's pincross tee">women's pincross tee</a>
+										</h2>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width: 87%"></div>
+											</div>
+											<span class="amount"><a href="#"
+												onclick="var t = opener ? opener.window : window; t.location.href='http://demo.emthemes.com/casualwear/review/product/list/id/189/category/53/'; return false;">1
+													Review(s)</a>
+											</span>
+										</div>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-189"> <span
+												class="price">$340.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/189/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/189/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/189/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+								</ul>
+								<ul class="products-grid odd">
+									<li class="item first"><a
+										href="http://demo.emthemes.com/casualwear/women/women-s-ted-snake-tee.html"
+										title="women's ted snake tee" class="product-image"><img
+											src="women_files/untitled-4.png" alt="women's ted snake tee"
+											height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/women-s-ted-snake-tee.html"
+												title="women's ted snake tee">women's ted snake tee</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-190"> <span
+												class="price">$160.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/190/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/190/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/190/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+									<li class="item last"><a
+										href="http://demo.emthemes.com/casualwear/women/women-s-tevolver-tee.html"
+										title="women's tevolver tee" class="product-image"><img
+											src="women_files/untitled-7.png" alt="women's tevolver tee"
+											height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/women-s-tevolver-tee.html"
+												title="women's tevolver tee">women's tevolver tee</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-193"> <span
+												class="price">$260.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/193/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/193/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/193/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+								</ul>
+								<ul class="products-grid even">
+									<li class="item first"><a
+										href="http://demo.emthemes.com/casualwear/women/women-s-poverty-tee.html"
+										title="women's poverty tee" class="product-image"><img
+											src="women_files/untitled-9.png" alt="women's poverty tee"
+											height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/women-s-poverty-tee.html"
+												title="women's poverty tee">women's poverty tee</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-196"> <span
+												class="price">$110.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/196/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/196/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/196/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+									<li class="item last"><a
+										href="http://demo.emthemes.com/casualwear/women/all-star-garment-dye.html"
+										title="all star garment dye" class="product-image"><img
+											src="women_files/untitled-3_1.png" alt="all star garment dye"
+											height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/all-star-garment-dye.html"
+												title="all star garment dye">all star garment dye</a>
+										</h2>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-194"> <span
+												class="price">$110.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/194/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/194/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/194/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+								</ul>
+								<ul class="products-grid last odd">
+									<li class="item first"><a
+										href="http://demo.emthemes.com/casualwear/women/all-star-reverse-print.html"
+										title="all star reverse print" class="product-image"><img
+											src="women_files/untitled-11.png"
+											alt="all star reverse print" height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/women/all-star-reverse-print.html"
+												title="all star reverse print">all star reverse print</a>
+										</h2>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width: 100%"></div>
+											</div>
+											<span class="amount"><a href="#"
+												onclick="var t = opener ? opener.window : window; t.location.href='http://demo.emthemes.com/casualwear/review/product/list/id/198/category/53/'; return false;">1
+													Review(s)</a>
+											</span>
+										</div>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-198"> <span
+												class="price">$120.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/198/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/198/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/198/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+									<li class="item last"><a
+										href="http://demo.emthemes.com/casualwear/all-star-jimi-hendrix.html"
+										title="all star jimi hendrix" class="product-image"><img
+											src="women_files/untitled-10.png" alt="all star jimi hendrix"
+											height="185" width="168">
+									</a>
+
+										<h2 class="product-name">
+											<a
+												href="http://demo.emthemes.com/casualwear/all-star-jimi-hendrix.html"
+												title="all star jimi hendrix">all star jimi hendrix</a>
+										</h2>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width: 100%"></div>
+											</div>
+											<span class="amount"><a href="#"
+												onclick="var t = opener ? opener.window : window; t.location.href='http://demo.emthemes.com/casualwear/review/product/list/id/197/category/53/'; return false;">1
+													Review(s)</a>
+											</span>
+										</div>
+
+
+
+
+										<div class="price-box">
+											<span class="regular-price" id="product-price-197"> <span
+												class="price">$150.00</span> </span>
+
+										</div>
+
+										<ul class="add-to-links">
+											<li><a
+												href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/197/"
+												class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a
+												href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/197/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
+												class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="actions">
+											<button type="button" title="Add to Cart"
+												class="button btn-cart"
+												onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/197/')">
+												<span><span>Add to Cart</span>
+												</span>
+											</button>
+										</div></li>
+								</ul>
+								<script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+							</div>
+						</div>
+						<div class="toolbar-bottom">
+							<div class="toolbar">
+								<div class="pager">
+									<p class="amount">
+										<strong>10 Item(s)</strong>
+									</p>
+
+									<div class="limiter">
+										<label>Show</label> <select onchange="setLocation(this.value)">
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?limit=2">
+												2</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?limit=4">
+												4</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?limit=6">
+												6</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?limit=8">
+												8</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?limit=10">
+												10</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?limit=12"
+												selected="selected">12</option>
+										</select> per page
+									</div>
+
+
+
+
+
+
+
+
+								</div>
+
+								<div class="sorter">
+									<p class="view-mode">
+										<label>View as:</label> <strong title="Grid" class="grid">Grid</strong>&nbsp;
+										<a
+											href="http://demo.emthemes.com/casualwear/women.html?mode=list"
+											title="List" class="list">List</a>&nbsp;
+									</p>
+
+									<div class="sort-by">
+										<label>Sort By</label> <select
+											onchange="setLocation(this.value)">
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=position"
+												selected="selected">Position</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=name">
+												Name</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=price">
+												Price</option>
+											<option
+												value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=gender">
+												Gender</option>
+										</select> <a
+											href="http://demo.emthemes.com/casualwear/women.html?dir=desc&amp;order=position"
+											title="Set Descending Direction"><img
+											src="women_files/i_asc_arrow.gif"
+											alt="Set Descending Direction" class="v-middle">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-right sidebar">
+				<div class="block block-list block-compare">
+					<div class="block-title">
+						<strong><span>Compare Products </span>
+						</strong>
+					</div>
+					<div class="block-content">
+						<p class="empty">You have no items to compare.</p>
+					</div>
+				</div>
+				<div class="block block-cart">
+					<div class="block-title">
+						<strong><span>shopping cart</span>
+						</strong>
+					</div>
+					<div class="block-content">
+						<p class="empty">You have no items in your shopping cart.</p>
+					</div>
+				</div>
+				<div class="block block-banner">
+					<div class="block-content">
+						<img src="women_files/col_right_callout.jpg"
+							title="Keep your eyes open for our special Back to School items and save A LOT!"
+							alt="Keep your eyes open for our special Back to School items and save A LOT!">
+					</div>
+				</div>
+				<script type="text/javascript">
+//<![CDATA[
+    function validatePollAnswerIsSelected()
+    {
+        var options = $$('input.poll_vote');
+        for( i in options ) {
+            if( options[i].checked == true ) {
+                return true;
+            }
         }
-        echo "</div>";
+        return false;
     }
-  //  print_r ($slides);
-
-   // print_r ($pagecontent);
-     if(isset($pagecontent['content'])){// this if is for the installation without this it will display an error
-         echo $pagecontent['content'];
-     }
-     ;?>
+//]]>
+</script>
+				<div class="block block-poll">
+					<div class="block-title">
+						<strong><span>Community Poll</span>
+						</strong>
+					</div>
+					<form id="pollForm"
+						action="http://demo.emthemes.com/casualwear/poll/vote/add/poll_id/2/"
+						method="post" onsubmit="return validatePollAnswerIsSelected();">
+						<div class="block-content">
+							<p class="block-subtitle">What is your favorite Magento feature?</p>
+							<ul id="poll-answers">
+								<li class="odd"><input name="vote" class="radio poll_vote"
+									id="vote_5" value="5" type="radio"> <span class="label"><label
+										for="vote_5">Layered Navigation</label>
+								</span></li>
+								<li class="even"><input name="vote" class="radio poll_vote"
+									id="vote_6" value="6" type="radio"> <span class="label"><label
+										for="vote_6">Price Rules</label>
+								</span></li>
+								<li class="odd"><input name="vote" class="radio poll_vote"
+									id="vote_7" value="7" type="radio"> <span class="label"><label
+										for="vote_7">Category Management</label>
+								</span></li>
+								<li class="last even"><input name="vote" class="radio poll_vote"
+									id="vote_8" value="8" type="radio"> <span class="label"><label
+										for="vote_8">Compare Products</label>
+								</span></li>
+							</ul>
+							<script type="text/javascript">decorateList('poll-answers');</script>
+							<div class="actions">
+								<button type="submit" title="Vote" class="button">
+									<span><span>Vote</span>
+									</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="block block-tags">
+					<div class="block-title">
+						<strong><span>Popular Tags</span>
+						</strong>
+					</div>
+					<div class="block-content">
+						<ul class="tags-list">
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/23/"
+								style="font-size: 98.3333%;">Camera</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/109/"
+								style="font-size: 86.6667%;">Hohoho</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/27/"
+								style="font-size: 145%;">SEXY</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/61/"
+								style="font-size: 75%;">Tag</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/29/"
+								style="font-size: 110%;">Test</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/17/"
+								style="font-size: 86.6667%;">bones</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/12/"
+								style="font-size: 110%;">cool</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/184/"
+								style="font-size: 86.6667%;">cool t-shirt</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/173/"
+								style="font-size: 86.6667%;">crap</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/41/"
+								style="font-size: 86.6667%;">good</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/16/"
+								style="font-size: 86.6667%;">green</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/5/"
+								style="font-size: 86.6667%;">hip</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/51/"
+								style="font-size: 75%;">laptop</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/70/"
+								style="font-size: 75%;">nice</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/77/"
+								style="font-size: 75%;">notebook</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/42/"
+								style="font-size: 86.6667%;">phone</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/30/"
+								style="font-size: 98.3333%;">red</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/28/"
+								style="font-size: 86.6667%;">tight</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/2/"
+								style="font-size: 75%;">trendy</a>
+							</li>
+							<li><a
+								href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/4/"
+								style="font-size: 86.6667%;">young</a>
+							</li>
+						</ul>
+						<div class="actions">
+							<a href="http://demo.emthemes.com/casualwear/tag/list/">View All
+								Tags</a>
+						</div>
+					</div>
+				</div>
+				<div class="paypal-logo">
+					<a href="#" title="Additional Options"
+						onclick="javascript:window.open('https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','paypal','width=600,height=350,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;"><img
+						src="women_files/bnr_nowAccepting_150x60.gif"
+						alt="Additional Options" title="Additional Options">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<div id="frontproducttable">
-
-<?php
-foreach ($images as $image)
-{
-    $imageinfo = $image['thumbnail'];
-    $thumbnail=convert_image_path($imageinfo);
-
-        echo '<div class="vt ac" >'."\n".'<div class="frontpro">'."\n".'<div class="vt">'."\n";
-        echo '<a href="' . site_url().'/'.$module. '/product/'.$image['id']. '">';
-        echo "<img src='".$thumbnail."' border='0' class='thumbnail'/></a>\n</div>\n<div class='vt al'>\n";
-        echo '<span class="hdrproduct"><a href="' . site_url(). '/'.$module.'/product/'.$image['id']. '">'."\n";
-        echo $image['name']. "</a></span><br />\n";
-        echo $image['shortdesc']."</div>\n";
-        echo "<div class='vt ar'><b>".$this->lang->line('webshop_price')."</b>: <span class='price'>".$this->lang->line('webshop_currency_symbol').$image['price']."</span><br />\n";
-        echo '<a href="' . site_url()."/".$module. '/cart/'.$image['id']. '"><p class="addtocart">'.$this->lang->line('webshop_buy').'</p></a></div>';
-    echo "\n</div>\n</div>\n";
-}
-
-
-echo "<div class=\"clearboth\" ></div>";
-/*
-echo "<pre>";
-print_r ($this->data['mainnav']);
-echo "</pre>";
-*/
-?>
-
-</div>
-
