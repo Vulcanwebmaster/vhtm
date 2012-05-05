@@ -160,14 +160,18 @@
                 </div>
                 
                 <div id="news-control-panel">
+                
                     <span style="font-size:12px; font-weight:bold">Show</span> 
-                        <select>
-                            <option>5</option>
-                            <option>10</option>
-                            <option>15</option>
-                            <option>20</option>
+                    <form name="your_form_name" method="post" action="<?php echo base_url();?>">
+                        <select name = "show_id" onchange="document.your_form_name.submit()">
+                        	<option value="">Select:</option>
+                        	<option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
                         </select>
-                    
+                    </form>
                     <script type="text/javascript">
                     	$(document).ready(function(){
 							$('.bt').mouseenter(function(){								
@@ -179,18 +183,7 @@
                         	});
                     </script> 
                     <div style="float:right">
-                      <!-- 
-                        <button>First</button>
-                        <button>Previous</button>
-                        <button style="background-color: #C1E0FF">1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>Next</button>
-                        <button>Last</button>
-					  -->
-					<?php echo $pagination;?>                   
+						<?php echo $pagination;?>                   
                     </div>
                     
                 </div>

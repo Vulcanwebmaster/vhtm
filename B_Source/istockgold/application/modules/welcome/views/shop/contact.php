@@ -10,7 +10,10 @@
 		<label style="font-size:14px; font-weight:bold;color:#4e4e4e; margin-bottom:10px">- Số 6 Ngõ 39/2 Trung Kính, Trung Hòa, Cầu Giấy, Hà Nội</label>
 		<br />
 		<label style="font-size:12px; font-weight:bold;color:#4e4e4e; padding-left:10px;">Tel: (08) 3500 5568  -  Fax: (08) 3526 8522</label>
-			<img src="<?php echo base_url();?>assets/images/map.jpg" alt="" id="map"/>
+			<!-- <img src="<?php echo base_url();?>assets/images/map.jpg" alt="" id="map"/> -->
+			<br/>
+			 <iframe src="http://www.map-generator.org/7110cb50-a767-412d-acdf-c3c5b15c3caa/iframe-map.aspx" scrolling="no" height="450px" width="800px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><small>
+			 <a href="http://www.map-generator.org/7110cb50-a767-412d-acdf-c3c5b15c3caa/large-map.aspx" target="_blank">Open large map<a/></small>
 	</div>                
 </div>
 		<div style="padding-left:80px; padding-right:80px; padding-top:20px">

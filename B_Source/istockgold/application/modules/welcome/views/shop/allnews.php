@@ -6,7 +6,7 @@
 </div>
 <div class="box">
 <?foreach ($allnews as $rs):?> 
-	<div class="ctitle"><a href="<?php echo base_url()?>index.php/welcome/detailnews/<?=$rs->id;?>"><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?=$rs->title?></a></div>
+	<div class="ctitle"><a href="<?php echo base_url();?>index.php/welcome/detailnews/<?=$rs->id;?>"><img alt="" src="<?php echo base_url();?>assets/images/checked.png"/><?php echo $rs->title?></a></div>
     <br/>
 <?endforeach;?>
 </div>

@@ -124,9 +124,21 @@ class Welcome extends Shop_Controller
         
         //Author tienlx: pagination reviews
         $config['base_url'] = base_url()."index.php"."/"."welcome"."/"."index";
-        $config['total_rows']= $this->getNumReviews();
-        $config['per_page']= '1';
-        $config['uri_segment'] = 3;
+        $config['total_rows']= $this->getNumReviews(); 
+        if (isset($_POST['show_id'])){
+        	$config['per_page']= $_POST['show_id'];
+        	$_SESSION['show']= $config['per_page'];
+        }
+        else{
+        	if(isset($_SESSION['show']))
+        	{
+        		$config['per_page']= $_SESSION['show'];
+        	}
+        	else{
+        		$config['per_page']= '3';
+        	}
+        }
+        $config['uri_segment'] = 3;        
 
         $this->pagination->initialize($config);
         //$data['reviews']=$this->getAllReviews($config['per_page'],$this->uri->segment('2'));
@@ -134,9 +146,7 @@ class Welcome extends Shop_Controller
         $data['pagination'] = $this->pagination->create_links();
         
         //End author tienlx
-        
-        
-        
+
         $this->load->view($this->_container,$data); 
     }
     
