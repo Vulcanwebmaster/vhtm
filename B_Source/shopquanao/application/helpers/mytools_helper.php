@@ -200,6 +200,27 @@ function recursive_remove_directory($directory, $empty=FALSE)
 		$image = str_replace($tags, "", $image);
 		return $image;
 	}
+	
+	function replace_image_path($text_contains_image)
+	{
+		$str = $text_contains_image;
+		
+		$m = array();
+		
+		preg_match('#<.*?/([^\.]+\.(jpg|jpeg|gif|png))"#', $str, $m);
+
+		$tags = array("<p>", "</p>");
+		
+		foreach($m as $key => $img)
+		{
+			$originalText = $img;
+			$img = str_replace($tags, "", $img);
+			echo $img;
+			str_replace($originalText, $img, $str);
+		}
+		
+		return $str;
+	}
 
 
 
