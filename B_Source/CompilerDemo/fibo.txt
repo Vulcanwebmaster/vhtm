@@ -1,0 +1,28 @@
+var
+	integer i,n;
+	
+function fibo(integer a)
+var 
+	integer x, y; 
+begin
+	if (a < 2) then return 1; endif;
+	return  fibo(a - 1) +  fibo(a - 2);
+endfunction;
+	
+begin
+	write "Chuong trinh tinh day Fibonaci bang de quy";
+	writeline;
+	write "Nhap so n:";
+	read n;
+	i := 0;
+	write n;
+	write " so Fibonaci la: ";
+	while ( i < n )
+	do
+		write fibo(i);
+		write " ";
+		i := i + 1;
+	endwhile;
+	wait;
+end.
+
