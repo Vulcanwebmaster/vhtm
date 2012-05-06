@@ -320,8 +320,7 @@ class Welcome extends Shop_Controller
 
     function message()
     {
-        $data['question']= $this->security_question;
-        $data['security_method']= $this->security_method;
+    	$captcha_result = '';
         $config[] = array(
                             'field'=>'name',
                             'label'=>$this->lang->line('access_name'),
@@ -337,9 +336,6 @@ class Welcome extends Shop_Controller
                             'label'=>$this->lang->line('kago_message'),
                             'rules'=>"trim|required"
                             );
-        //$rules['name'] = 'trim|required|max_length[32]';
-        //$rules['email'] = 'trim|required|max_length[254]|valid_email';
-        //$rules['message'] = 'trim|required';
         $config[] = array(
                             'field'=>'recaptcha_response_field',
                             'label'=>$this->lang->line('kago_recaptcha_response_field'),
@@ -353,6 +349,7 @@ class Welcome extends Shop_Controller
         $this->form_validation->set_fields($fields);
         if ($this->form_validation->run() == FALSE)
         {
+        	echo "Test";
             // if any form_validation errors, display them
             $this->form_validation->output_errors();
             $captcha_result = '';
@@ -1066,13 +1063,6 @@ class Welcome extends Shop_Controller
           //username available i.e. user name doesn't exists in array
           echo "yes";
         }    
-    }
-    
-    function homepage()
-    {
-    	$data['page']=$this->config->item('backendpro_template_shop').'homepage';
-    	$data['module']=$this->module;
-    	$this->load->view($this->_container,$data);
     }
 }//end controller class
 

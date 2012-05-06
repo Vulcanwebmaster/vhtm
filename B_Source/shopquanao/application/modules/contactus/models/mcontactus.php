@@ -11,7 +11,7 @@ class MContactUs extends CI_Model
     {
 		$data = array(
 			'name' => $name,
-			'email' => $company,
+			'email' => $email,
 			'contents' => $message
  		);
 		if($this->db->insert('shop_contact_us',$data)){

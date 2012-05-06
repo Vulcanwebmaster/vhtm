@@ -102,7 +102,7 @@ class MY_Form_validation extends CI_Form_validation
 	function valid_captcha()
 	{
 		// Make sure the captcha library is loaded
-		$this->CI->load->module_library('recaptcha','Recaptcha');
+		$this->CI->load->library('Recaptcha');
 
 		// Set the error message
 		$this->CI->form_validation->set_message('valid_captcha', $this->CI->lang->line('userlib_validation_captcha'));
