@@ -1,10 +1,10 @@
 /**
  * 
  */
-var buy_code = "LR";
-var buy_name = "Liberty Reserve";
-var sell_code = "WU";
-var sell_name = "Western Union";
+var buy_code = "WU";
+var buy_name = "Western Union";
+var sell_code = "LR";
+var sell_name = "Liberty Reserve";
 //rateData will be loaded in everypage needed
 
 Math.hold = function(x,n)

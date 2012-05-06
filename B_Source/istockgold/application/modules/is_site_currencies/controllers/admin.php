@@ -312,7 +312,6 @@ class Admin extends Shop_Admin_Controller
 
  	function getAccount($accountID) 
     {
-    	echo '</script> </script>';
 		$auth = new Authentication("U9450274", "NIW", "tungns00457");
 		$accountToRetrieve = $accountID;
 		$apiAgent = ApiAgentFactory::createApiAgent(ApiAgentFactory::SOAP, $auth); 

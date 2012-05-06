@@ -2,6 +2,14 @@
 
 <script type="text/javascript">
 	var rateData = <?php echo json_encode($rateData); ?>;
+	function reset_value()
+	{
+		if (document.getElementById('pay_amount').value != '') {
+        	document.getElementById('pay_amount').value = '';
+        	document.getElementById('get_amount').innerHTML = '0';
+		}
+    }
+	
 </script>
 
 <div id="main-column">
@@ -25,10 +33,10 @@
 						 	<!-- THE DIV for each currency -->
 						 	<div class="<?php echo strtolower($currency['code']);?>">
 	                    		<input type="radio" name="buyCurrency" value="<?php echo $currency['code'];?>" 
-	                    						<?php if($currency['code'] == 'LR') echo 'checked="checked"';?>
+	                    						<?php if($currency['code'] == 'WU') echo 'checked="checked"';?>
 	                    						onclick="changeBuy('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
 	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
-		                        <a><?php echo $currency['c_name'];?></a>
+		                        <a><?php if ($currency['code'] == 'LR') echo $currency['c_name']; else echo $currency['c_name']."&nbsp;";?></a>
 	                    	</div>	
 	                    	<!-- THE DIV for each currency -->
 					 	<?php 
@@ -49,7 +57,7 @@
 						 	<!-- THE DIV for each currency -->
 						 	<div class="<?php echo strtolower($currency['code']);?>">
 	                    		<input type="radio" name="sellCurrency" value="<?php echo $currency['code'];?>" 
-	                    		<?php if($currency['code'] == 'WU') echo 'checked="checked"';?> onclick="changeSell('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
+	                    		<?php if($currency['code'] == 'LR') echo 'checked="checked"';?> onclick="changeSell('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
 	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
 		                        <a><?php echo $currency['c_name'];?></a>
 	                    	</div>	
@@ -62,7 +70,9 @@
                     
                     <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
                     	 <hr align="right" width="70%">
-                    	 You pay <input id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px"> <span id="pay">Liberty Reserve</span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span> <span id="get">Western Union </span> <button>Exchange</button>
+                    	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
+                    	 <span id="pay">Western Union </span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
+                    	 <span id="get">Liberty Reserve</span> <button>Exchange</button>
                          <br />
                          <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
                     </div>
