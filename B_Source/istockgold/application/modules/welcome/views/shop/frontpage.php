@@ -33,10 +33,10 @@
 						 	<!-- THE DIV for each currency -->
 						 	<div class="<?php echo strtolower($currency['code']);?>">
 	                    		<input type="radio" name="buyCurrency" value="<?php echo $currency['code'];?>" 
-	                    						<?php if($currency['code'] == 'WU') echo 'checked="checked"';?>
-	                    						onclick="changeBuy('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
+	                    						onclick="changeBuy('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"
+	                    						<?php if($currency['code'] == 'WU') echo 'checked="checked"';?>/>
 	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
-		                        <a><?php if ($currency['code'] == 'LR') echo $currency['c_name']; else echo $currency['c_name']."&nbsp;";?></a>
+		                        <a><?php if ($currency['code'] == 'LR') echo $currency['c_name']; else echo $currency['c_name']."&nbsp;&nbsp;";?></a>
 	                    	</div>	
 	                    	<!-- THE DIV for each currency -->
 					 	<?php 
@@ -57,7 +57,8 @@
 						 	<!-- THE DIV for each currency -->
 						 	<div class="<?php echo strtolower($currency['code']);?>">
 	                    		<input type="radio" name="sellCurrency" value="<?php echo $currency['code'];?>" 
-	                    		<?php if($currency['code'] == 'LR') echo 'checked="checked"';?> onclick="changeSell('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"/>
+	                    		 onclick="changeSell('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"
+	                    		 <?php if($currency['code'] == 'LR') echo 'checked="checked"';?>/>
 	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
 		                        <a><?php echo $currency['c_name'];?></a>
 	                    	</div>	
@@ -71,12 +72,15 @@
                     <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
                     	 <hr align="right" width="70%">
                     	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
-                    	 <span id="pay">Western Union </span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
-                    	 <span id="get">Liberty Reserve</span> <button>Exchange</button>
+                    	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
+                    	 <span id="get"></span> <button>Exchange</button>
                          <br />
                          <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
                     </div>
-                    
+                    <script type="text/javascript">
+                    //changeBuy("WR","Western Union");
+                    //changeSell("LR","Liberty Reserve");
+                    </script>
                     <div class="clearboth"> </div>
                     
                     <div class="how-link">
@@ -544,4 +548,36 @@
             <div id="content5">
                 <img src="<?php echo base_url()?>assets/images/bottom-banner.png" alt="" style="margin:10px 0"/>
             </div>
+            <script type="text/javascript">
+        	var buy_code = "WU";
+            var buy_name = "Western Union";
+            var sell_code = "LR";
+            var sell_name = "Liberty Reserve";
+            
+            function update() {
+            	if (buy_code == sell_code) {
+            		$('#rate').html('N/A');
+            	} else if (rateData[buy_code][sell_code]) {
+            		$('#rate').html('1:' + rateData[buy_code][sell_code]);
+            		$('#input_rate').val(rateData[buy_code][sell_code]);
+            	}
+            	update_amount();
+            }
+
+            function update_amount() {
+            	var pay_amount = document.getElementById('pay_amount').value;
+            	var get_amount = Math.hold(pay_amount * rateData[buy_code][sell_code], 2);
+            	$('#get_amount').html(get_amount);
+            	$('#pay').html(buy_name);
+            	$('#get').html(sell_name);
+            }
+                        
+            $(document).ready(function() {
+            	var buyCurrencyRadio = $('input[name=buyCurrency]');
+            	buy_code = buyCurrencyRadio.filter(':checked').val();
+            	var sellCurrencyRadio = $('input[name=sellCurrency]');
+            	sell_code = sellCurrencyRadio.filter(':checked').val();
+            	update();
+            });
+            </script>
         </div>    
