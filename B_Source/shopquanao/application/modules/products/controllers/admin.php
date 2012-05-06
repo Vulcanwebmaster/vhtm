@@ -88,10 +88,8 @@ class Admin extends Shop_Admin_Controller
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_number";
         $this->load->view($this->_container,$data);
        
-
     }
     
-
 
     /*
     * ajax functions
@@ -103,7 +101,6 @@ class Admin extends Shop_Admin_Controller
     }
 
 
-
     function create()
     {
         // we are using TinyMCE in this page, so load it
@@ -111,16 +108,18 @@ class Admin extends Shop_Admin_Controller
         if ($this->input->post('name'))
         {
             $data = $this->_field();
-            $this->MKaimonokago->addItem($this->module,$data);
+            $this->MKaimonokago->addItem($this->module,$data);            
             
+            $total1=$this->input->post('kho1',TRUE);
+            $total2=$this->input->post('kho2',TRUE);
+            $total3=$this->input->post('kho3',TRUE); 
+            $code  =$this->input->post('code',TRUE);
             
-            $kho1=$this->input->post('kho1',TRUE);
-            $kho2=$this->input->post('kho2',TRUE);
-            $kho3=$this->input->post('kho3',TRUE);
-            
-            $this->db->select('id');
-            $this->db->where('code',$data['code']);
-            $Q = $this->db->get('omc_products');   
+            $this->db->select('id');            
+            $this->db->where('code',$code);
+            $this->db->from('omc_products');
+            $Q = $this->db->get();
+               
             if ($Q->num_rows() > 0)
        		 {
 	            foreach ($Q->result_array() as $row)
@@ -128,17 +127,15 @@ class Admin extends Shop_Admin_Controller
 	                $mang[] = $row;
 	            }
         	 }
-       		 $Q->free_result();
-
-            if($id<>0){$this->MProducts->addSanphamkho(1,$mang['id'],$kho1);}
-            if($id<>0) {$this->MProducts->addSanphamkho(2,$mang['id'],$kho2);}
-            if($id<>0){$this->MProducts->addSanphamkho(3,$mang['id'],$kho3);}
-            
-            
-            // fields are filled up so do the followings
-            //$this->MProducts->insertProduct();
-            // CI way to set flashdata, but we are not using it
-            // $this->session->set_flashdata('message','Product created');
+       		$Q->free_result();
+       		
+       		foreach ($mang as $key => $list)
+       		{
+            if($total1<>0){$this->MProducts->addSanphamkho(1,$list['id'],$total1);}
+            if($total2<>0) {$this->MProducts->addSanphamkho(2,$list['id'],$total2);}
+            if($total3<>0){$this->MProducts->addSanphamkho(3,$list['id'],$total3);}
+       		}
+          
             // we are using Bep function for flash msg
             flashMsg('success','Product created');
             redirect($this->module.'/admin/index','refresh');
