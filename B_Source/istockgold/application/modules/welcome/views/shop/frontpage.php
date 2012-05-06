@@ -146,7 +146,7 @@
                     <!-- Author: tienlx -->
                     <div id="news-content">
                     	<?php foreach ($topnews as $rs):?>
-                    	<a href="<?php echo base_url()?>index.php/welcome/detailnews/<?=$rs->id;?>"><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?=$rs->title?></a>
+                    	<a href="<?php echo base_url()?>index.php/welcome/detailnews/<?php echo $rs->id;?>"><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
                     	<br />
                     	<?php endforeach;?>
 						<div align="right">
