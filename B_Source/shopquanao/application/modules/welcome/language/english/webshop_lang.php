@@ -45,21 +45,21 @@ $lang['webshop_if_registered'] = 'if you are already registered.';
 // modules/webshop/views/registration.php
 $lang['webshop_email'] = 'Email';
 $lang['webshop_email_confirm'] = 'Email Confirmation';
-$lang['webshop_pass_word'] = 'Password';
-$lang['webshop_pass_word_conf'] = 'Password Confirm';
-$lang['webshop_first_name'] = 'First Name';
-$lang['webshop_last_name'] = 'Last Name';
-$lang['webshop_mobile_tel'] = 'Mobile/Telephone';
-$lang['webshop_shipping_address'] = 'Shipping Address';
-$lang['webshop_address'] = 'Address';
+$lang['webshop_pass_word'] = 'Mật Khẩu';
+$lang['webshop_pass_word_conf'] = 'Nhập lại Mật Khẩu';
+$lang['webshop_first_name'] = 'Tên';
+$lang['webshop_last_name'] = 'Họ';
+$lang['webshop_mobile_tel'] = 'Điện Thoại';
+$lang['webshop_shipping_address'] = 'Địa chỉ nhận hàng';
+$lang['webshop_address'] = 'Địa Chỉ';
 $lang['webshop_post_code'] = 'Postal Code';
-$lang['webshop_city'] = 'City';
-$lang['webshop_register'] = 'Register';
-$lang['webshop_regist_plz_here'] = 'Please register here. ';
-$lang['webshop_price'] = 'Price';
+$lang['webshop_city'] = 'Thành Phố';
+$lang['webshop_register'] = 'Đăng ký';
+$lang['webshop_regist_plz_here'] = 'Đăng ký tại đây';
+$lang['webshop_price'] = 'Giá';
 $lang['webshop_registed_before'] = 'Your email is in our database. Please login.';
 $lang['webshop_thank_registration'] = 'Thank you for your registration! You may log in now.';
-$lang['webshop_name'] = "Name";
+$lang['webshop_name'] = "Tên";
 
 
 // modules/webshop/controllers/webshop.php for function messages
@@ -133,9 +133,9 @@ $lang['email_order_conf'] = "Order confirmation";
 
 
 /* views/contact.php */
-$lang['contact_your_message']="Your Message";
-$lang['contact_captcha']= "Type the two words please";
-$lang['contact_send']= "Send";
+$lang['contact_your_message']="Lời nhắn";
+$lang['contact_captcha']= "Nhập vào hai từ";
+$lang['contact_send']= "Gửi Đi";
 $lang['contact_if_you_human'] = "If you are human, please input six letters or nummers. Please try again!";
 $lang['contact_all_field_required'] = "All fields are required . Please try ingen!";
 

@@ -318,9 +318,6 @@ class Welcome extends Shop_Controller
         }
     }
 
-
-
-
     function message()
     {
         $data['question']= $this->security_question;
@@ -343,30 +340,16 @@ class Welcome extends Shop_Controller
         //$rules['name'] = 'trim|required|max_length[32]';
         //$rules['email'] = 'trim|required|max_length[254]|valid_email';
         //$rules['message'] = 'trim|required';
-        if($this->security_method=='recaptcha')
-        {
-            $config[] = array(
-                            'field'=>'message',
+        $config[] = array(
+                            'field'=>'recaptcha_response_field',
                             'label'=>$this->lang->line('kago_recaptcha_response_field'),
                             'rules'=>"trim|required|valid_captcha"
                             );
-            //$rules['recaptcha_response_field'] = 'trim|required|valid_captcha';
-        }
-        elseif($this->security_method=='question')
-        {
-            $config[] = array(
-                            'field'=>'write_ans',
-                            'label'=>$this->lang->line('kago_write_ans'),
-                            'rules'=>"trim|required|callback_security_check"
-                            );
-            //$rules['write_ans']= 'trim|required|callback_security_check';
-        }
         $this->form_validation->set_rules($config);
         $fields['name']	= lang('general_name');
         $fields['email']	= lang('webshop_email');
         $fields['message']	= lang('message_message');
         $fields['recaptcha_response_field']	= 'Recaptcha';
-        $fields['write_ans']        = lang('webshop_security_question');
         $this->form_validation->set_fields($fields);
         if ($this->form_validation->run() == FALSE)
         {
@@ -386,19 +369,14 @@ class Welcome extends Shop_Controller
             $name = $this->input->post('name');
             $email = $this->input->post('email');
             $message = $this->input->post('message');
-            // get email from preferences/settings
-            $myemail = $this->preference->item('admin_email');
-            $this->load->library('email');
-            $this->email->from($email." | ".$name);
-            $this->email->to($myemail);
-            $this->email->subject(sprintf(lang('webshop_message_subject'),$this->preference->item('site_name')));
-            $this->email->message(lang('webshop_message_sender'). ": ".
-            $name."\r\n".lang('webshop_message_sender_email').": ".
-            $email. "\r\n".lang('webshop_message_message').": " . $message);
-            $this->email->send();
-            flashMsg('success', lang('webshop_message_thank_for_message'));
-            // $this->session->set_flashdata('subscribe_msg', lang('webshop_message_thank_for_message'));
-            redirect($this->module.'/contact');
+            
+        	if ($this->MContactUs->save($name, $email, $message)){
+				flashMsg('success', lang('webshop_message_thank_for_message'));
+	            // $this->session->set_flashdata('subscribe_msg', lang('webshop_message_thank_for_message'));
+	            redirect($this->module.'/contact');
+			}
+			
+            
         }
     }
 

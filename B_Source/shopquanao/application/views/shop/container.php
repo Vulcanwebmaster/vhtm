@@ -91,19 +91,6 @@ optionalZipCountries = ["HK","IE","MO","PA"];
         	<div class="header">
 				<?php $this->load->view($this->config->item('backendpro_template_shop') . 'header');?>
 				<?php $this->load->view($this->config->item('backendpro_template_shop') . 'navigation');?>
-
-					<div class="sub">
-						<div class="subheader">
-							<span>popular category</span>
-							<ul>
-								<li><a><img src="women_files/i_tshirt.png" alt="">
-								</a></li>
-								<li><a><img src="women_files/i_shoes.png" alt="">
-								</a></li>
-							</ul>
-						</div>
-					</div>
-					
 					<div style="clear:both"></div>
 					
 					<!-- main content  -->

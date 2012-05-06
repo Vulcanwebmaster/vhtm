@@ -1,5 +1,6 @@
 <div class="main-container col2-right-layout">
 	<div class="main">
+		<!--  
 		<div class="breadcrumbs">
 			<ul>
 				<li class="home"><a href="http://demo.emthemes.com/casualwear/"
@@ -7,6 +8,20 @@
 				<li class="category53"><strong>women</strong></li>
 			</ul>
 		</div>
+		-->
+		<?php 
+		if(!empty($slides)){
+        echo "<div id=\"slideshow\" class=\"pics\">";
+        foreach ($slides as $slide)
+        {
+            $imageinfo = $slide['image'];
+                            $slideimg=convert_image_path($imageinfo);
+            echo '<img class="hideme" src="'. $slideimg. '" alt="' . $slide['name'] .
+            '" />';
+
+        }
+        echo "</div>";
+    	}?>
 		<div class="bg-inner">
 			<div class="col-main">
 				<div class="col-inner">
@@ -88,7 +103,7 @@
 									</select> <a
 										href="http://demo.emthemes.com/casualwear/women.html?dir=desc&amp;order=position"
 										title="Set Descending Direction"><img
-										src="women_files/i_asc_arrow.gif"
+										src="<?php echo base_url();?>assets/women_files/i_asc_arrow.gif"
 										alt="Set Descending Direction" class="v-middle">
 									</a>
 								</div>
@@ -102,7 +117,7 @@
 									<li class="item first"><a
 										href="http://demo.emthemes.com/casualwear/women/women-s-shoulder-logo-tee.html"
 										title="women's shoulder logo tee" class="product-image"><img
-											src="women_files/untitled-6.png"
+											src="<?php echo base_url();?>assets/women_files/untitled-6.png"
 											alt="women's shoulder logo tee" height="185" width="168">
 									</a>
 
@@ -142,7 +157,7 @@
 									<li class="item last"><a
 										href="http://demo.emthemes.com/casualwear/women/wrench-eye-tee.html"
 										title="women's wrench eye tee" class="product-image"><img
-											src="women_files/untitled-1_1.png"
+											src="<?php echo base_url();?>assets/women_files/untitled-1_1.png"
 											alt="women's wrench eye tee" height="185" width="168">
 									</a>
 
@@ -184,7 +199,7 @@
 									<li class="item first"><a
 										href="http://demo.emthemes.com/casualwear/women/women-s-trust-no-one-tee.html"
 										title="women's trust no one tee" class="product-image"><img
-											src="women_files/untitled-2_1.png"
+											src="<?php echo base_url();?>assets/women_files/untitled-2_1.png"
 											alt="women's trust no one tee" height="185" width="168">
 									</a>
 
@@ -224,7 +239,7 @@
 									<li class="item last"><a
 										href="http://demo.emthemes.com/casualwear/women/women-s-pincross-tee.html"
 										title="women's pincross tee" class="product-image"><img
-											src="women_files/untitled-3.png" alt="women's pincross tee"
+											src="<?php echo base_url();?>assets/women_files/untitled-3.png" alt="women's pincross tee"
 											height="185" width="168">
 									</a>
 
@@ -275,7 +290,7 @@
 									<li class="item first"><a
 										href="http://demo.emthemes.com/casualwear/women/women-s-ted-snake-tee.html"
 										title="women's ted snake tee" class="product-image"><img
-											src="women_files/untitled-4.png" alt="women's ted snake tee"
+											src="<?php echo base_url();?>assets/women_files/untitled-4.png" alt="women's ted snake tee"
 											height="185" width="168">
 									</a>
 
@@ -315,7 +330,7 @@
 									<li class="item last"><a
 										href="http://demo.emthemes.com/casualwear/women/women-s-tevolver-tee.html"
 										title="women's tevolver tee" class="product-image"><img
-											src="women_files/untitled-7.png" alt="women's tevolver tee"
+											src="<?php echo base_url();?>assets/women_files/untitled-7.png" alt="women's tevolver tee"
 											height="185" width="168">
 									</a>
 
@@ -357,7 +372,7 @@
 									<li class="item first"><a
 										href="http://demo.emthemes.com/casualwear/women/women-s-poverty-tee.html"
 										title="women's poverty tee" class="product-image"><img
-											src="women_files/untitled-9.png" alt="women's poverty tee"
+											src="<?php echo base_url();?>assets/women_files/untitled-9.png" alt="women's poverty tee"
 											height="185" width="168">
 									</a>
 
@@ -397,7 +412,7 @@
 									<li class="item last"><a
 										href="http://demo.emthemes.com/casualwear/women/all-star-garment-dye.html"
 										title="all star garment dye" class="product-image"><img
-											src="women_files/untitled-3_1.png" alt="all star garment dye"
+											src="<?php echo base_url();?>assets/women_files/untitled-3_1.png" alt="all star garment dye"
 											height="185" width="168">
 									</a>
 
@@ -439,7 +454,7 @@
 									<li class="item first"><a
 										href="http://demo.emthemes.com/casualwear/women/all-star-reverse-print.html"
 										title="all star reverse print" class="product-image"><img
-											src="women_files/untitled-11.png"
+											src="<?php echo base_url();?>assets/women_files/untitled-11.png"
 											alt="all star reverse print" height="185" width="168">
 									</a>
 
@@ -488,7 +503,7 @@
 									<li class="item last"><a
 										href="http://demo.emthemes.com/casualwear/all-star-jimi-hendrix.html"
 										title="all star jimi hendrix" class="product-image"><img
-											src="women_files/untitled-10.png" alt="all star jimi hendrix"
+											src="<?php echo base_url();?>assets/women_files/untitled-10.png" alt="all star jimi hendrix"
 											height="185" width="168">
 									</a>
 
@@ -603,7 +618,7 @@
 										</select> <a
 											href="http://demo.emthemes.com/casualwear/women.html?dir=desc&amp;order=position"
 											title="Set Descending Direction"><img
-											src="women_files/i_asc_arrow.gif"
+											src="<?php echo base_url();?>assets/women_files/i_asc_arrow.gif"
 											alt="Set Descending Direction" class="v-middle">
 										</a>
 									</div>

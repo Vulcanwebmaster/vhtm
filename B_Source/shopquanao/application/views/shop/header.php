@@ -1,7 +1,7 @@
 <div class="header">
 	<a href="http://demo.emthemes.com/casualwear/" title="Magento Commerce"
 		class="logo"><strong>Magento Commerce</strong><img
-		src="women_files/logo.png" alt="Magento Commerce">
+		src="<?php echo base_url();?>assets/women_files/logo.png" alt="Magento Commerce">
 	</a>
 	<div class="quick-access">
 		<form id="search_mini_form"
@@ -27,16 +27,6 @@
 		</form>
 
 		<div class="links">
-
-			<ul class="">
-				<li class="first"><a
-					href="http://demo.emthemes.com/casualwear/customer/account/"
-					title="My Account">My Account</a>
-				</li>
-				<li><a href="http://demo.emthemes.com/casualwear/wishlist/"
-					title="My Wishlist">My Wishlist</a>
-				</li>
-			</ul>
 			<ul class="">
 				<li><a href="http://demo.emthemes.com/casualwear/checkout/cart/"
 					title="My Cart" class="top-link-cart">My Cart</a>
@@ -44,13 +34,6 @@
 				<li><a href="http://demo.emthemes.com/casualwear/checkout/"
 					title="Checkout" class="top-link-checkout">Checkout</a>
 				</li>
-			</ul>
-			<ul class="last">
-				<li class=" last"><a
-					href="http://demo.emthemes.com/casualwear/customer/account/login/"
-					title="Log In">Log In</a>
-				</li>
-				<li class="welcome">Default welcome msg!</li>
 			</ul>
 		</div>
 		<div class="top-container">

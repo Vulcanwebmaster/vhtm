@@ -1,7 +1,7 @@
 <div class="nav-container">
 	<ul id="nav">
 		<li class="level0 level-top first"><a
-			href="#" class="level-top"><span>Home</span>
+			href="<?php echo base_url();?>" class="level-top"><span>Trang Chủ </span>
 		</a></li>
 		<li class="level0 nav-1 active level-top first parent"><a
 			href="#"
@@ -148,70 +148,17 @@
 								<span>reclaimed (vintage)</span> </a></li>
 					</ul></li>
 			</ul></li>
-		<li class="level0 nav-2 level-top parent"><a
-			href="http://demo.emthemes.com/casualwear/men.html" class="level-top">
-				<span>men</span> </a>
-			<ul style="width: 700px;" class="level0 a-right">
-				<li class="title"><a> <span>men</span> </a>
-				</li>
-				<li class="level1 nav-2-1 first"><a
-					href="http://demo.emthemes.com/casualwear/men/category-1.html"> <span>Category
-							1</span> </a></li>
-				<li class="level1 nav-2-2"><a
-					href="http://demo.emthemes.com/casualwear/men/category-2.html"> <span>Category
-							2</span> </a></li>
-				<li class="level1 nav-2-3"><a
-					href="http://demo.emthemes.com/casualwear/men/category-3.html"> <span>Category
-							3</span> </a></li>
-				<li class="level1 nav-2-4"><a
-					href="http://demo.emthemes.com/casualwear/men/category-4.html"> <span>Category
-							4</span> </a></li>
-				<li class="level1 nav-2-5"><a
-					href="http://demo.emthemes.com/casualwear/men/category-5.html"> <span>Category
-							5</span> </a></li>
-				<li class="level1 nav-2-6"><a
-					href="http://demo.emthemes.com/casualwear/men/category-6.html"> <span>Category
-							6</span> </a></li>
-				<li class="level1 nav-2-7"><a
-					href="http://demo.emthemes.com/casualwear/men/category-7.html"> <span>Category
-							7</span> </a></li>
-				<li class="level1 nav-2-8"><a
-					href="http://demo.emthemes.com/casualwear/men/category-8.html"> <span>Category
-							8</span> </a></li>
-				<li class="level1 nav-2-9 last"><a
-					href="http://demo.emthemes.com/casualwear/men/category-9.html"> <span>Category
-							9</span> </a></li>
-			</ul></li>
 		<li class="level0 nav-3 level-top"><a
 			href="http://demo.emthemes.com/casualwear/girls.html"
-			class="level-top"> <span>girls</span> </a></li>
+			class="level-top"> <span>Hàng Mới Về</span> </a></li>
 		<li class="level0 nav-4 level-top"><a
 			href="http://demo.emthemes.com/casualwear/earings.html"
-			class="level-top"> <span>babies</span> </a></li>
+			class="level-top"> <span>Phụ Kiện</span> </a></li>
 		<li class="level0 nav-5 level-top"><a
-			href="http://demo.emthemes.com/casualwear/organic.html"
-			class="level-top"> <span>organic</span> </a></li>
+			href="<?php  echo base_url()?>index.php/welcome/cart"
+			class="level-top"> <span>Giỏ Hàng</span> </a></li>
 		<li class="level0 nav-6 level-top"><a
-			href="http://demo.emthemes.com/casualwear/wholesale.html"
-			class="level-top"> <span>wholesale</span> </a></li>
-		<li class="level0 nav-7 level-top last parent"><a
-			href="http://demo.emthemes.com/casualwear/household-items.html"
-			class="level-top"> <span>environment</span> </a>
-			<ul style="width: 415px;" class="level0 a-right">
-				<li class="title"><a> <span>environment</span> </a>
-				</li>
-				<li class="level1 nav-7-1 first"><a
-					href="http://demo.emthemes.com/casualwear/household-items/env1.html">
-						<span>Swimwear</span> </a></li>
-				<li class="level1 nav-7-2"><a
-					href="http://demo.emthemes.com/casualwear/household-items/env2.html">
-						<span>Lingerie &amp; Nightwear</span> </a></li>
-				<li class="level1 nav-7-3"><a
-					href="http://demo.emthemes.com/casualwear/household-items/env3.html">
-						<span>Watches</span> </a></li>
-				<li class="level1 nav-7-4 last"><a
-					href="http://demo.emthemes.com/casualwear/household-items/category.html">
-						<span>Shoes</span> </a></li>
-			</ul></li>
+			href="<?php  echo base_url()?>index.php/welcome/contact"
+			class="level-top"> <span>Liên Hệ</span> </a></li>
 	</ul>
 </div>

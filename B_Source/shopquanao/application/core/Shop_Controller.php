@@ -64,6 +64,7 @@ class Shop_Controller extends MY_Controller
         $this->load->model('subscribers/MSubscribers');
         $this->load->model('languages/MLangs');
         $this->load->model('slideshow/MSlideshow');
+        $this->load->model('contactus/MContactUs');
 
         // Loading libraries instead of autoload
         $this->load->library('form_validation');

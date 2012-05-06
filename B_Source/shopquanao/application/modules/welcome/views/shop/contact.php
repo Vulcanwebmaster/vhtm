@@ -1,7 +1,5 @@
-<div id="content">
+<div id="main-container col2-right-layout">
     <div id="omossleft">
-        <div id="logo">
-        </div>
         <div class="contentleft">
 	<?php print displayStatus();?>
         <?php
@@ -11,53 +9,58 @@
                 echo "</div>";
         }
         ?>
-	
-        <div id="contactform">
-            <?php echo form_open( $module."/message"); ?>
-                <h3><?php echo form_fieldset($this->lang->line('contact_send')." ".$this->lang->line('contact_your_message')); ?></h3>
+		<div class="page-title">
+			<h1>Liên Hệ Với Chúng Tôi</h1>
+		</div>
+		 <?php echo form_open( $module."/message", array('class' => 'contactForm', 'id' => 'contactForm')); ?>
+		    <div class="fieldset">
+		        <h2 class="legend">Contact Information</h2>
+		        <ul class="form-list">
+		            <li class="fields">
+		                <div class="field">
+		                    <label class="required" for="name"><em>*</em>Name</label>
+		                    <div class="input-box">
+		                        <input type="text" class="input-text required-entry" name="name" id="name" value="<?php echo set_value('name'); ?>" maxlength="30" size="30"  />
+		                    </div>
+		                </div>
+		                <div class="field">
+		                    <label class="required" for="email"><em>*</em>Email</label>
+		                    <div class="input-box">
+		                        <input type="text" class="input-text required-entry" name="email" id="email" value="<?php echo set_value('email'); ?>" maxlength="30" size="30"  />
+		                    </div>
+		                </div>
+		            </li>
+		            <li class="wide">
+		                <label class="required" for="comment"><em>*</em>Comment</label>
+		                <div class="input-box">
+		                    <?php 
+			                          $data = array(
+			                      'name'  => 'message',
+			                      'id'    => 'message',
+		                          'value' => set_value('message'),
+			                      'rows'  => '15',
+			                      'cols'  => '3',
+			                      'style' => 'width:106%',
+			                    );	
 			
-                <p id="name">
-                        <label for="name">*<?php echo $this->lang->line('webshop_name'); ?>: </label>
-                        <input type="text" name="name" id="name" value="<?php echo set_value('name'); ?>" maxlength="30" size="30"  />
-
-                </p>
-
-                <p id="email">
-                        <label for="email">*<?php echo $this->lang->line('webshop_email'); ?>: </label>
-                        <input type="text" name="email" id="email" value="<?php echo set_value('email'); ?>" maxlength="30" size="30"  />
-
-                </p>
-
-                <p>
-                        <label for="message">*<?php echo $this->lang->line('contact_your_message'); ?>: </label><br />
-                        <?php 
-                          $data = array(
-                      'name'  => 'message',
-                      'id'    => 'message',
-                      'rows'  => '10',
-                      'cols'  => '3',
-                      'style' => 'width:60%',
-                    );	
-
-                echo form_textarea($data);
-                ?>
-                </p>
-                <?php
-                if($security_method=='recaptcha'){
-                    echo "<p>*".$this->lang->line('contact_captcha')."</p>";
-                    echo "<p>$cap_img</p>" ;
-                    
-                }elseif($security_method=='question'){
-                    echo "<label for=\"write_ans\">*". $this->lang->line('webshop_write_ans')."</label><br />";
-                    echo $question;
-                    echo "<input type=\"text\" name=\"write_ans\" id=\"write_ans\" maxlength=\"30\" size=\"30\"  />";
-                }
-                    echo "<div id=\"contactsubmit\"><input type=\"submit\" value=\"".$this->lang->line('contact_send')."\" /></div>";
-                ?>
-           
-                <?php echo form_fieldset_close(); ?>
-                <?php echo form_close(); ?>
-            </div>
+			                echo form_textarea($data);
+			                ?>
+		                </div>
+		            </li>
+		            <li class="fields">
+		                <?php
+			                    echo "<p>*".$this->lang->line('contact_captcha')."</p>";
+			                    echo "<p>$cap_img</p>" ;
+			                ?>
+		            </li>
+		        </ul>
+		    </div>
+		    <div class="buttons-set">
+		        <p class="required">* Required Fields</p>
+		        <input type="text" style="display:none !important;" value="" id="hideit" name="hideit">
+		        <button class="button" title="Submit" type="submit"><span><span>Submit</span></span></button>
+		    </div>
+		<?php echo form_close(); ?>
         </div>
     </div>
 </div>
