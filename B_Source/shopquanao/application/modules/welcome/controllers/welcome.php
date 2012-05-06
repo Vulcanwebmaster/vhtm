@@ -1067,6 +1067,13 @@ class Welcome extends Shop_Controller
           echo "yes";
         }    
     }
+    
+    function homepage()
+    {
+    	$data['page']=$this->config->item('backendpro_template_shop').'homepage';
+    	$data['module']=$this->module;
+    	$this->load->view($this->_container,$data);
+    }
 }//end controller class
 
 ?>
