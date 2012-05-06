@@ -23,6 +23,8 @@
         <?php if(check('Products',NULL,FALSE) && $this->preference->item('products')):?><li><?php print anchor('products/admin',$this->lang->line('backendpro_products'),array('class'=>'icon_color_swatch'))?></li><?php echo "\n"; endif;?>
         <?php if(check('Slideshow',NULL,FALSE) && $this->preference->item('slideshow')):?><li><?php print anchor('slideshow/admin',$this->lang->line('backendpro_slideshow'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
         <?php if(check('Subscribers',NULL,FALSE) && $this->preference->item('subscribers')):?><li><?php print anchor('subscribers/admin',$this->lang->line('backendpro_subscribers'),array('class'=>'icon_user_red'))?></li><?php echo "\n"; endif;?>
+        <li><?php print anchor('shop_kho/admin',$this->lang->line('backendpro_kho'),array('class'=>'icon_user_red'))?></li><?php echo "\n";?>
+        
     </ul>
 </li>
 

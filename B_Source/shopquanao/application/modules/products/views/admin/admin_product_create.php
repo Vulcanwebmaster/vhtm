@@ -6,9 +6,41 @@ echo "\n<table id='preference_form'><tr><td class='label'><label for='category'>
 echo "<td>";
 echo form_dropdown('category_id',$categories);
 echo "</td></tr>\n";
-
+?>
+<tr>
+	<td>
+		Kho: 
+	</td>
+	<td>
+		Kho 1
+		<input name="kho1" id="kho1" style="" type="text" />
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+		Kho 2
+		<input name="kho2" id="kho2" style="" type="text" />
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+		Kho 3
+		<input name="kho3" id="kho3" style="" type="text" />
+	</td>
+</tr>
+<?php
 echo "<tr><td class='label'><label for='pname'>".$this->lang->line('kago_name')."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text');
+echo "<td>";
+echo form_input($data);
+echo "</td></tr>\n";
+
+echo "<tr><td class='label'><label for='mahang'>".$this->lang->line('kago_code')."</label></td>\n";
+$data = array('name'=>'code','id'=>'code','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
@@ -55,18 +87,6 @@ echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='product_order'>".$this->lang->line('kago_order')."</label></td>\n";
 $data = array('name'=>'product_order','id'=>'product_order','class'=>'text');
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='class'>".$this->lang->line('kago_class')."</label></td>\n";
-$data = array('name'=>'class','id'=>'class','class'=>'text');
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='group'>".$this->lang->line('kago_grouping')."</label></td>\n";
-$data = array('name'=>'grouping','id'=>'group','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";

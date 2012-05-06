@@ -18,10 +18,31 @@ echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
+echo "<tr><td class='label'><label for='code'>".$this->lang->line('kago_code')."</label></td>\n";
+$data = array('name'=>'code','id'=>'code','class'=>'text', 'value' => $product['code']);
+echo "<td>";
+echo form_input($data);
+echo "</td></tr>\n";
+
+
+echo "<tr><td class='label'><label for='kho_code'>".$this->lang->line('kago_kho_code')."</label></td>\n";
+$data = array('name'=>'kho_id','id'=>'kho_id','class'=>'text', 'value' => $product['kho_id']);
+$data = array('name'=>'kho_id','id'=>'kho_id','class'=>'text', 'value' => $product['kho_id']);
+$data = array('name'=>'kho_id','id'=>'kho_id','class'=>'text', 'value' => $product['kho_id']);
+
+//$total= ;
+
+echo "<td>";
+echo "Kho hang 1: ".form_input($data);
+echo "Kho hang 2: ".form_input($data);
+echo "Kho hang 3: ".form_input($data);
+echo "</td>";
+
+
+
 echo "<tr><td class='label'><label for='short'>".$this->lang->line('kago_short_desc')."</label></td>\n";
 $data = array('name'=>'shortdesc','id'=>'short','class'=>'text', 'value' => $product['shortdesc']);
 echo "<td>";
-echo form_input($data);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='long'>".$this->lang->line('kago_long_desc')."</label></td>\n";
@@ -60,18 +81,6 @@ echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='product_order'>".$this->lang->line('kago_order')."</label></td>\n";
 $data = array('name'=>'product_order','id'=>'product_order','class'=>'text', 'value' => $product['product_order']);
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='class'>".$this->lang->line('kago_class')."</label></td>\n";
-$data = array('name'=>'class','id'=>'class','class'=>'text', 'value' => $product['class']);
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='group'>".$this->lang->line('kago_grouping')."</label></td>\n";
-$data = array('name'=>'grouping','id'=>'group','class'=>'text', 'value' => $product['grouping']);
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";

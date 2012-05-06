@@ -42,6 +42,7 @@ $lang['kago_calendar'] = 'Calendar';
 $lang['kago_product'] = 'Product';
 $lang['kago_category'] = 'Category';
 $lang['kago_customer'] = 'Customer';
+
 $lang['kago_slideshow'] = 'Slideshow';
 $lang['kago_manage'] = 'Manage';
 $lang['kago_no_exist'] = 'This does not exist.';
@@ -54,16 +55,16 @@ $lang['kago_create_menu'] = 'Create menu';
 $lang['kago_name'] = "Name";
 $lang['kago_create_product']= "Create New Product";
 $lang['current_language'] = "English";
-$lang['kago_productid'] = "Product ID";
+$lang['kago_productid'] = "STT San Pham";
 $lang['kago_class'] = "Class";
 $lang['kago_grouping'] = "Grouping";
-$lang['kago_catname']= 'Category Name';
-$lang['kago_status'] = "Status";
-$lang['kago_name'] = "Name";
+$lang['kago_catname']= 'Loai san pham';
+$lang['kago_status'] = "Trang thai";
+$lang['kago_name'] = "Ten";
 $lang['kago_featured'] ="Featured";
 $lang['kago_other_feature'] ="Other Feature";
-$lang['kago_price'] = "Price";
-$lang['kago_lang'] = "Language";
+$lang['kago_price'] = "Gia tien";
+$lang['kago_lang'] = "Ngon Ngu";
 $lang['kago_meta_desc'] = "Meta Description";
 $lang['kago_meta_keyword'] = "Meta Keywords";
 $lang['kago_short_desc'] = "Short Description";
@@ -85,7 +86,7 @@ $lang['kago_path_furl'] = "Path/FURL: ";
 $lang['kago_content'] = "Content";
 $lang['kago_id'] = "ID";
 $lang['kago_full_path'] = "Full Path";
-$lang['kago_actions'] = "Actions";
+$lang['kago_actions'] = "Thuc Hien";
 $lang['kago_subscribe'] = "subscribe";
 $lang['kago_email'] = "Email";
 $lang['kago_create_email'] = "Create new email";
@@ -112,7 +113,7 @@ $lang['kago_cat_id'] = "cat_id";
 
 $lang['kago_playroom'] = "Playroom";
 $lang['kago_activity'] = "Activity";
-$lang['kago_table_id'] = "table_id";
+$lang['kago_table_id'] = "ID Bang";
 $lang['kago_menu_exist'] = "The page you are going to delete is used in Menu. Delete the menu first";
 $lang['kago_language_name'] = "Language Name";
 $lang['kago_send'] = "Send";
@@ -126,6 +127,11 @@ $lang['kago_temp_default_changed'] = "Default Template Changed";
 
 $lang['kago_recaptcha_response_field'] = "Recaptcha response";
 $lang['kago_write_ans'] = "Security answer";
+
+$lang['kago_kho'] = 'Kho';
+$lang['kago_code'] = 'Ma Hang';
+$lang['kago_kho_code'] = 'Ma Kho';
+$lang['kago_total'] = 'So luong';
 
 /*dashboard  */
 

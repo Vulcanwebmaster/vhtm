@@ -189,6 +189,8 @@ $lang["preference_desc_subscribers"]="Subscribers";
 $lang["preference_label_customer_registration"]="Customer Registration";
 $lang["preference_desc_customer_registration"]="Customer Registration";
 
+$lang["preference_label_kho"]="Kho";
+$lang["preference_desc_kho"]="Kho";
 
 /**
  *     BELOW HERE DEFINE ANY LANGUAGE STRINGS FOR YOUR APPLICATIONS

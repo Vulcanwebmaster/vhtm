@@ -33,6 +33,7 @@ class Admin extends Shop_Admin_Controller
     {
         $data = array(
             'name'              => $this->input->post('name',TRUE),
+       		'code'				=> $this->input->post('code',TRUE),
             'public'            => $this->input->post('public',TRUE),
             'shortdesc' 	    => $this->input->post('shortdesc',TRUE),
             'longdesc' 		    => $this->input->post('longdesc'),
@@ -40,8 +41,6 @@ class Admin extends Shop_Admin_Controller
             'image'		        => $this->input->post('image'),
             'weblink'           => $this->input->post('weblink'),
             'product_order'     => $this->input->post('product_order',TRUE),
-            'class' 		    => $this->input->post('class',TRUE),
-            'grouping' 		    => $this->input->post('grouping',TRUE),
             'status' 		    => $this->input->post('status',TRUE),
             'category_id' 	    => $this->input->post('category_id',TRUE),
             'featured' 		    => $this->input->post('featured',TRUE),
@@ -52,6 +51,8 @@ class Admin extends Shop_Admin_Controller
         );
         return $data;
     }
+    
+    
 
 
     /*
@@ -72,6 +73,24 @@ class Admin extends Shop_Admin_Controller
         $data['module'] = $this->module;
         return $data;
     }
+    
+    
+    function sortKho()
+    {
+    	$data['title'] = "Manage Products";
+        $id= $this->input->post('giatrikho');
+        $data['id']=$id;           
+        $data['products'] = $this->MProducts->getProductsbyKho($id);
+        $data['categories'] = $this->MCats->getCategoriesDropDown();
+        // we are pulling a header word from language file
+        $data['header'] = $this->lang->line('backendpro_access_control');
+        $data['module'] = $this->module;
+        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_number";
+        $this->load->view($this->_container,$data);
+       
+
+    }
+    
 
 
     /*
@@ -93,6 +112,29 @@ class Admin extends Shop_Admin_Controller
         {
             $data = $this->_field();
             $this->MKaimonokago->addItem($this->module,$data);
+            
+            
+            $kho1=$this->input->post('kho1',TRUE);
+            $kho2=$this->input->post('kho2',TRUE);
+            $kho3=$this->input->post('kho3',TRUE);
+            
+            $this->db->select('id');
+            $this->db->where('code',$data['code']);
+            $Q = $this->db->get('omc_products');   
+            if ($Q->num_rows() > 0)
+       		 {
+	            foreach ($Q->result_array() as $row)
+	            {
+	                $mang[] = $row;
+	            }
+        	 }
+       		 $Q->free_result();
+
+            if($id<>0){$this->MProducts->addSanphamkho(1,$mang['id'],$kho1);}
+            if($id<>0) {$this->MProducts->addSanphamkho(2,$mang['id'],$kho2);}
+            if($id<>0){$this->MProducts->addSanphamkho(3,$mang['id'],$kho3);}
+            
+            
             // fields are filled up so do the followings
             //$this->MProducts->insertProduct();
             // CI way to set flashdata, but we are not using it

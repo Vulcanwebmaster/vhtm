@@ -19,6 +19,7 @@ class MProducts extends CI_Model
         //$this->db->order_by('table_id','asc');
         $Q = $this->db->query('SELECT P.*, C.Name AS CatName FROM omc_products AS P
         LEFT JOIN omc_category AS C ON C.id = P.category_id
+        LEFT JOIN shop_kho AS kho ON kho.id = P.kho_id
         ORDER BY table_id ASC ');
         if ($Q->num_rows() > 0)
         {
@@ -29,6 +30,37 @@ class MProducts extends CI_Model
         }
         $Q->free_result();
         return $data;
+    }
+    
+    
+    function addSanphamkho($kho,$id,$total)
+    {
+    
+    	if($kho==1)
+    	{
+    		$data = array(
+        	'id'          => $id,
+        	'total'    	  => $total
+    		);   		
+    		$this->db->insert('shop_sanphamkho',$data);
+    	}
+    	if($kho==2)
+    	{
+    		$data = array(
+        	'id'          => $id,
+        	'total'    	  => $total
+    		);   		
+    		$this->db->insert('shop_sanphamkho',$data);
+    	}
+    	if($kho==3)
+    	{
+    		$data = array(
+        	'id'          => $id,
+        	'total'    	  => $total
+    		);   		
+    		$this->db->insert('shop_sanphamkho',$data);
+    	}  
+    		   	
     }
 
 
@@ -48,8 +80,8 @@ class MProducts extends CI_Model
         // for cecilieokada, one language this is ok. If it is multilang, then change back to the above one
         $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName')->from('omc_products')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
-                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
-                ->order_by('omc_products.table_id')->order_by('omc_products.product_order');
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')                              
+                ->order_by('omc_products.id')->order_by('omc_products.product_order');
         $Q = $this->db->get();
         if ($Q->num_rows() > 0)
         {
@@ -167,6 +199,31 @@ class MProducts extends CI_Model
         }
         
         $Q = $this->db->get('omc_products');
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+    
+    
+    
+    function getProductsbyKho($id)
+    {
+    	$data = array();
+        
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')->from('omc_products')
+                ->join('omc_category','omc_category.id=omc_products.category_id','left')
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
+                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                
+                ->order_by('omc_products.table_id')->order_by('omc_products.product_order');
+        $this->db->where('shop_sanphamkho.kho_id',$id);
+        $Q = $this->db->get();
         if ($Q->num_rows() > 0)
         {
             foreach ($Q->result_array() as $row)

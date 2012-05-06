@@ -60,6 +60,7 @@ $lang['webshop_price'] = 'Giá';
 $lang['webshop_registed_before'] = 'Your email is in our database. Please login.';
 $lang['webshop_thank_registration'] = 'Thank you for your registration! You may log in now.';
 $lang['webshop_name'] = "Tên";
+$lang['webshop_code'] = "Code";
 
 
 // modules/webshop/controllers/webshop.php for function messages

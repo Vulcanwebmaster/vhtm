@@ -52,6 +52,8 @@ class Manage extends Shop_Admin_Controller
     {
         $data = array(
             'name'              => $this->input->post('name'),
+        	'code'				=> $this->input->post('code',TRUE),
+       		'kho_code'			=> $this->input->post('kho_code',TRUE),
             'public'            => $this->input->post('public'),
             'shortdesc'         => $this->input->post('shortdesc'),
             'longdesc'          => $this->input->post('longdesc'),

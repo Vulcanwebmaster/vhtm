@@ -5,21 +5,33 @@ $module=$this->uri->segment(1);
 
 if (count($products))
 {
-	echo form_open($module."/admin/batchmode");
-        /*
+    /*
 	echo "<p>Category: ". form_dropdown('category_id',$categories);
 	echo "&nbsp;";
 	$data = array('name'=>'grouping','size'=>'10');
 	echo "Grouping: ". form_input($data);
 	echo form_submit("submit","batch update");
 	echo "</p>";*/
+?>	
+<div align="right">
+<form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
+<select name = "giatrikho" onchange = "formkho.submit();">
+	<option value="0">Chon Kho:</option>
+	<option value="1">Kho 1</option>
+	<option value="2">Kho 2</option>
+	<option value="3">Kho 3</option>
+</select>
+</form>
+</div>
+<br/>
+<?php
 	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
 	echo "<thead>\n<tr valign='top'>\n";
 	echo "<th>".$this->lang->line('kago_productid')."</th>\n<th>".$this->lang->line('kago_name').
-            "</th><th>".$this->lang->line('kago_class')."</th><th>".$this->lang->line('kago_grouping')."</th><th>".
-            $this->lang->line('kago_status')."</th><th>".$this->lang->line('kago_catname').
-            "</th><th>".$this->lang->line('kago_featured')."</th><th>".$this->lang->line('kago_price').
-            "</th><th>".$this->lang->line('kago_lang')."</th><th>table_id</th><th>".$this->lang->line('kago_actions')."</th>\n";
+            "</th><th>".$this->lang->line('kago_code')."</th><th>".$this->lang->line('kago_status')."</th><th>".$this->lang->line('kago_catname').
+			"</th><th>".$this->lang->line('kago_featured')."</th><th>".$this->lang->line('kago_price').
+            "</th><th>".$this->lang->line('kago_lang')."</th><th>".$this->lang->line('kago_table_id').
+            "</th><th>".$this->lang->line('kago_actions')."</th>\n";
 	echo "</tr>\n</thead>\n<tbody>\n";
 	foreach ($products as $key => $list)
 	{
@@ -34,13 +46,14 @@ if (count($products))
 			//.$list['name'].
 			echo anchor('products/admin/edit/'.$list['id'],$list['name']);
 			echo "</td>\n";
-			echo "<td align='center'>".$list['class']."</td>\n";
-			echo "<td align='center'>".$list['grouping']."</td>\n";
+			echo "<td align='center'>".$list['code']."</td>\n";
+			echo "<td align='center'>".$list['total']."</td>\n";				
 			echo "<td align='center'>";
 			$active_icon = ($list['status']=='active'?'tick':'cross');
 			echo anchor("kaimonokago/admin/changeStatus/$module/".$list['id'],$this->bep_assets->icon($active_icon), array('class' => $list['status']. ' changestatus'));
 			echo "</td>\n";
 			// echo "<td align='center'>".$list['category_id']."</td>\n";
+			
 			echo "<td align='center'>".$list['CatName']."</td>\n";
 			echo "<td align='center'>".$list['featured']."</td>\n";
 			echo "<td align='center'>".$list['price']."</td>\n";
@@ -79,8 +92,7 @@ if (count($products))
 		        //.$list['name'].
 		        echo anchor('products/admin/edit/'.$list['id'],$list['name']);
 		        echo "</td>\n";
-				echo "<td align='center'>".$list['class']."</td>\n";
-				echo "<td align='center'>".$list['grouping']."</td>\n";
+		        echo "<td align='center'>".$list['code']."</td>\n";		        	
 				echo "<td align='center'>";
 				$active_icon = ($list['status']=='active'?'tick':'cross');
 				echo anchor("kaimonokago/admin/changeStatus/$module/".$list['id'],$this->bep_assets->icon($active_icon), array('class' => $list['status']. ' changestatus'));
@@ -113,6 +125,7 @@ if (count($products))
 		}           
 	}
 	echo "</tbody></table>";
-	echo form_close();
-}
+	
+}//end count
+
 ?>

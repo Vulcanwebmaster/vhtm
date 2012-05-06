@@ -348,6 +348,7 @@ class MKaimonokago extends Base_model
         {
             $idname = 'customer_id';
         }  
+        
         else 
         {
             $idname = 'id';
