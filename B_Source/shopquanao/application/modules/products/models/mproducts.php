@@ -39,6 +39,7 @@ class MProducts extends CI_Model
     	if($kho==1)
     	{
     		$data = array(
+    		'kho_id'	  => 1,
         	'id'          => $id,
         	'total'    	  => $total
     		);   		
@@ -47,6 +48,7 @@ class MProducts extends CI_Model
     	if($kho==2)
     	{
     		$data = array(
+    		'kho_id'	  => 2,
         	'id'          => $id,
         	'total'    	  => $total
     		);   		
@@ -55,6 +57,7 @@ class MProducts extends CI_Model
     	if($kho==3)
     	{
     		$data = array(
+    		'kho_id'	  => 3,
         	'id'          => $id,
         	'total'    	  => $total
     		);   		
@@ -62,7 +65,6 @@ class MProducts extends CI_Model
     	}  
     		   	
     }
-
 
 
     function getAllProductswithLang()
@@ -78,9 +80,9 @@ class MProducts extends CI_Model
         ORDER BY table_id ASC ');
         */  
         // for cecilieokada, one language this is ok. If it is multilang, then change back to the above one
-        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName')->from('omc_products')
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, ')->from('omc_products')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
-                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')                              
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')          
                 ->order_by('omc_products.id')->order_by('omc_products.product_order');
         $Q = $this->db->get();
         if ($Q->num_rows() > 0)
