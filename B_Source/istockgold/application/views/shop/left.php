@@ -181,10 +181,10 @@ self.setInterval("time()",3000);
                     </tr>
                     <?php foreach ($exchange_order as $rs):?>
                     <tr class="hangle">
-                        <td><? echo $rs->date_src?></td>
-                        <td><?=$rs->c_src?> <span>To</span> <?=$rs->c_dst?></td>
-                        <td><?=$rs->email?></td>
-                        <td><span><?=$rs->amount_src?>$</span></td>
+                        <td><?php echo $rs->date_src?></td>
+                        <td><?php echo $rs->c_src?> <span>To</span> <?php echo $rs->c_dst?></td>
+                        <td><?php echo $rs->email?></td>
+                        <td><span><?php echo $rs->amount_src?>$</span></td>
                     </tr>
                     <?php endforeach;?>  
                     <!--                  
