@@ -339,11 +339,37 @@
                                 <input name="review_title" type="text" id="review_title" type="text"  style="width:98%"/>
                                 <br />
                                 <img alt="" src="<?php echo base_url();?>assets/images/down-arrow.png"/>
-                                <a style="font-size:11px;color:#53b0da">Hide examples</a>
+                                
+                                <script type="text/javascript">
+                                	$(document).ready(function(){
+                                		$('#exampletrigger').css('cursor','default');
+                                		$('#exampletrigger').mouseenter(function(){
+                                			$('#exampletrigger').css('color','orange');
+                                    	});
+                                		$('#exampletrigger').mouseleave(function(){
+                                			$('#exampletrigger').css('color','#53b0da');
+                                    	});
+										$('#exampletrigger').click(function(){
+											if (exampletrigger.innerHTML=="Hide examples")
+											{
+												exampletrigger.innerHTML="Show examples";
+												$('#examples').slideUp(500);
+											}
+											else if (exampletrigger.innerHTML=="Show examples")
+											{
+												exampletrigger.innerHTML="Hide examples";
+												$('#examples').slideDown(500);
+											}
+										});
+                                    });
+                                </script>
+                                <a id="exampletrigger" style="font-size:11px;color:#53b0da">Hide examples</a>
                                 <br />
-                                <span style="margin-left:5px; color:Black; font-size:11px; margin-top:5px">"Don't judge a book by its cover"</span><br />
-                                <span style="margin-left:5px; color:Black; font-size:11px">"I would buy this product again and again"</span><br />
-                                <span style="margin-left:5px; color:Black; font-size:11px">"Too much whiz and not enough bang"</span>
+                                <div id="examples">
+	                                <span style="margin-left:5px; color:Black; font-size:11px; margin-top:5px">"Don't judge a book by its cover"</span><br />
+	                                <span style="margin-left:5px; color:Black; font-size:11px">"I would buy this product again and again"</span><br />
+	                                <span style="margin-left:5px; color:Black; font-size:11px">"Too much whiz and not enough bang"</span>
+                            	</div>
                             </td>
                         </tr>
                         <tr>
@@ -351,7 +377,19 @@
                                 <span>*</span> Comment:
                             </td>
                             <td>
-                                
+                                <script type="text/javascript">
+			                        $(document).ready(function () {
+			                            comment.innerHTML = "Leave a comment...";
+			                            $('#comment').focusin(function () {
+			                                if (comment.value=="Leave a comment...")
+			                                    comment.value = "";
+			                            });
+			                            $('#comment').focusout(function () {
+			                                if (comment.value == "")
+			                                    comment.value = "Leave a comment...";
+			                            });
+			                        });
+                   		 		</script>
                                 <textarea name="comment" id="comment" style="height:80px; width:99%;color:#7b7b7b;" rows="1" cols="1">Leave a comment...</textarea>                              
                             </td>
                         </tr>
