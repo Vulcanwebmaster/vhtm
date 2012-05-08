@@ -379,7 +379,8 @@
                             <td>
                                 <script type="text/javascript">
 			                        $(document).ready(function () {
-			                            comment.innerHTML = "Leave a comment...";
+				                        var comment=document.getElementById("comment")
+			                            comment.value = "Leave a comment...";
 			                            $('#comment').focusin(function () {
 			                                if (comment.value=="Leave a comment...")
 			                                    comment.value = "";
@@ -401,7 +402,8 @@
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
                                 			<script type="text/javascript">
                                 				$(document).ready(function(){													
-                                    				var flag = 0;                                    				
+                                    				var flag = 0;  
+                                    				                                  				
                                     				var value = document.getElementById("value");
                                     				
                                     				var ratingstarvalue = document.getElementById("ratingstarvalue");
