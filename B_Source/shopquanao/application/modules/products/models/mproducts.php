@@ -10,16 +10,13 @@ class MProducts extends CI_Model
         parent::__construct();
 	}
 
-    
-
     function getAllProducts()
     {
         // getting all the products of the same categroy.
         $data = array();
         //$this->db->order_by('table_id','asc');
         $Q = $this->db->query('SELECT P.*, C.Name AS CatName FROM omc_products AS P
-        LEFT JOIN omc_category AS C ON C.id = P.category_id
-        LEFT JOIN shop_kho AS kho ON kho.id = P.kho_id
+        LEFT JOIN omc_category AS C ON C.id = P.category_id        
         ORDER BY table_id ASC ');
         if ($Q->num_rows() > 0)
         {
@@ -32,7 +29,7 @@ class MProducts extends CI_Model
         return $data;
     }
     
-    
+    // By An
     function addSanphamkho($kho,$id,$total)
     {
     
@@ -65,8 +62,95 @@ class MProducts extends CI_Model
     	}  
     		   	
     }
-
-
+    
+	function updateSanphamkho($kho,$id,$total)
+    {
+    
+    	if($kho==1)
+    	{
+	    	if ($this->MProducts->checkSanphamkho(1,$id)==TRUE)
+	    	{
+	    		$data = array(    			
+        		'total'    	  => $total
+    			);   		
+    			$this->db->where('kho_id',1);
+			   	$this->db->where('id',$id);
+	    		$this->db->update('shop_sanphamkho',$data);
+	    	}
+			else
+			{				
+	    		$this->MProducts->addSanphamkho(1,$id,$total);
+			}    		
+    	}
+    	
+    	if($kho==2)
+    	{
+    		if ($this->MProducts->checkSanphamkho(2,$id)==TRUE)
+	    	{
+	    		$data = array(    			
+        		'total'    	  => $total
+    			);   		
+    			$this->db->where('kho_id',2);
+			   	$this->db->where('id',$id);
+	    		$this->db->update('shop_sanphamkho',$data);
+	    	}
+			else
+			{
+	    		$this->MProducts->addSanphamkho(2,$id,$total);
+			}
+    	}
+    	
+   		if($kho==3)
+    	{
+    		if ($this->MProducts->checkSanphamkho(3,$id)==TRUE)
+	    	{
+	    		$data = array(    			
+        		'total'    	  => $total
+    			);   		
+    			$this->db->where('kho_id',3);
+			   	$this->db->where('id',$id);
+	    		$this->db->update('shop_sanphamkho',$data);
+	    	}
+			else
+			{
+	    		$this->MProducts->addSanphamkho(3,$id,$total);
+			}
+    	}	   	
+    }
+	
+    function checkSanphamkho($kho,$id)
+    {
+		$this->db->where('kho_id',$kho);
+		$this->db->where('id',$id);
+		$Q = $this->db->get('shop_sanphamkho');
+    	if($Q->num_rows()>0){return True;}
+    	else return False;
+    }
+    
+ 	function getProductsbyKho($id)
+    {
+    	$data = array();
+        
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')->from('omc_products')
+                ->join('omc_category','omc_category.id=omc_products.category_id','left')
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
+                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                
+                ->order_by('omc_products.id')->order_by('omc_products.product_order');
+        $this->db->where('shop_sanphamkho.kho_id',$id);
+        $Q = $this->db->get();
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }    
+    // End An
+    
     function getAllProductswithLang()
     {
         // getting all the products of the same categroy.
@@ -156,23 +240,6 @@ class MProducts extends CI_Model
         return $data;
     }
 
-/*
-     function getMemberProductsByCategory($catid){
-         $data = array();
-         $this->db->where('category_id', id_clean($catid));
-         $this->db->where('status', 'active');
-         //$this->db->order_by('name','asc');
-         $this->db->order_by('product_order','asc');
-         $Q = $this->db->get('omc_products');
-         if ($Q->num_rows() > 0){
-           foreach ($Q->result_array() as $row){
-             $data[] = $row;
-           }
-        }
-        $Q->free_result();
-        return $data;
-     }
-*/
 
     function getAllProductsByCategory($catid, $where=NULL, $orderby=NULL)
     {
@@ -211,31 +278,8 @@ class MProducts extends CI_Model
         $Q->free_result();
         return $data;
     }
-    
-    
-    
-    function getProductsbyKho($id)
-    {
-    	$data = array();
-        
-        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')->from('omc_products')
-                ->join('omc_category','omc_category.id=omc_products.category_id','left')
-                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
-                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
-                
-                ->order_by('omc_products.table_id')->order_by('omc_products.product_order');
-        $this->db->where('shop_sanphamkho.kho_id',$id);
-        $Q = $this->db->get();
-        if ($Q->num_rows() > 0)
-        {
-            foreach ($Q->result_array() as $row)
-            {
-                $data[] = $row;
-            }
-        }
-        $Q->free_result();
-        return $data;
-    }
+      
+   
 
 
 
@@ -421,8 +465,6 @@ class MProducts extends CI_Model
         return $data;
     }
 
-
-
     function getRandomProducts($limit,$skip)
     {
         // when you want to select three random products, use this.
@@ -462,7 +504,6 @@ class MProducts extends CI_Model
     }
 
 
-
     function search($term)
     {
         $data = array();
@@ -483,7 +524,6 @@ class MProducts extends CI_Model
     }
 	 
 
-
     function getFeaturedProducts($feature)
     {
         $data = array();
@@ -503,8 +543,6 @@ class MProducts extends CI_Model
         $Q->free_result();
         return $data;
     }
-
-
 
     function getFeaturedProductsbyLang($feature,$lang_id)
     {

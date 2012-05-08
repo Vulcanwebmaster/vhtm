@@ -62,7 +62,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Manage Products";
+        $data['title'] = "Quan ly san pham";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
@@ -77,7 +77,7 @@ class Admin extends Shop_Admin_Controller
     
     function sortKho()
     {
-    	$data['title'] = "Manage Products";
+    	$data['title'] = "Quan ly san pham theo kho";
         $id= $this->input->post('giatrikho');
         $data['id']=$id;           
         $data['products'] = $this->MProducts->getProductsbyKho($id);
@@ -143,7 +143,7 @@ class Admin extends Shop_Admin_Controller
         else
         {
             // this must be the first time, so set variables
-            $data['title'] = "Create Product";
+            $data['title'] = "Tao san pham";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -170,12 +170,39 @@ class Admin extends Shop_Admin_Controller
         if ($this->input->post('name'))
         {
             // fields filled up so,
-            $data = $this->_field();
+            $data = $this->_field();                                            
             $this->MKaimonokago->updateItem($this->module,$data);
             //$this->MProducts->new_updateProduct();
             // CI way to set flashdata, but we are not using it
             // $this->session->set_flashdata('message','Product updated');
-            // we are using Bep function for flash msg
+            // we are using Bep function for flash msg           
+            
+      		$total1=$this->input->post('kho1',TRUE);
+            $total2=$this->input->post('kho2',TRUE);
+            $total3=$this->input->post('kho3',TRUE); 
+            $code  =$this->input->post('code',TRUE);
+            
+            $this->db->select('id');            
+            $this->db->where('code',$code);
+            $this->db->from('omc_products');
+            $Q = $this->db->get();
+               
+            if ($Q->num_rows() > 0)
+       		 {
+	            foreach ($Q->result_array() as $row)
+	            {
+	                $mang[] = $row;
+	            }
+        	 }
+       		$Q->free_result();
+       		
+       		foreach ($mang as $key => $list)
+       		{
+            if($total1<>0){$this->MProducts->updateSanphamkho(1,$list['id'],$total1);}
+            if($total2<>0) {$this->MProducts->updateSanphamkho(2,$list['id'],$total2);}
+            if($total3<>0){$this->MProducts->updateSanphamkho(3,$list['id'],$total3);}
+       		}
+       		
             flashMsg('success','Product updated');
             redirect($this->module.'/admin/index','refresh');
         }

@@ -55,7 +55,7 @@ $lang['kago_create_menu'] = 'Create menu';
 $lang['kago_name'] = "Name";
 $lang['kago_create_product']= "Create New Product";
 $lang['current_language'] = "English";
-$lang['kago_productid'] = "STT San Pham";
+$lang['kago_productid'] = "ID San Pham";
 $lang['kago_class'] = "Class";
 $lang['kago_grouping'] = "Grouping";
 $lang['kago_catname']= 'Loai san pham';
@@ -132,6 +132,7 @@ $lang['kago_kho'] = 'Kho';
 $lang['kago_code'] = 'Ma Hang';
 $lang['kago_kho_code'] = 'Ma Kho';
 $lang['kago_total'] = 'So luong';
+$lang['kago_search'] = 'Tim kiem';
 
 /*dashboard  */
 

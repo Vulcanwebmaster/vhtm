@@ -9,6 +9,66 @@ class MSlideshow extends CI_Model
     {
         parent::__construct();
     }
+    
+    //By An
+    function selectImage()
+    {
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+	// all the superglobals to store file information and to verify a valid upload.
+	if ((($_FILES["file"]["type"] == "image/gif")
+		|| ($_FILES["file"]["type"] == "image/jpeg")
+		|| ($_FILES["file"]["type"] == "image/pjpeg"))
+		&& ($_FILES["file"]["size"] < 20000000))
+	{
+		
+	// check for any error
+	if ($_FILES["file"]["error"] > 0)
+	{
+		echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+	}
+	else
+	{
+	// display the file information
+	    /*echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+	    echo "Type: " . $_FILES["file"]["type"] . "<br />";
+	    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+	    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";        */
+	
+	// Display the image
+	
+	$file=$_FILES["file"]["name"];
+	echo '<img src="'.base_url().'assets/images/frontpage/'.$file.' " alt="" width="516" height="200" />';
+	echo"<br/>";
+	
+		// check for already existing files
+	
+		if (file_exists("../../../../assets/images/frontpage/" . $_FILES["file"]["name"]))
+		      {
+		      echo $_FILES["file"]["name"] . " already exists. ";
+		      }
+		else
+		      {
+			  // saving the uploaded file permanently to the "upload" folder
+		      move_uploaded_file($_FILES["file"]["tmp_name"],"../../../../assets/images/frontpage/" . $_FILES["file"]["name"]);
+		     // echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+		      }
+	}//end error
+	    	  	    
+	}
+	else { echo "file is incompatible, Plz try another image ";  }
+	
+	}//end post	
+	
+	else { echo "Choose image first"; }
+    	
+    }//end select
+    
+    //End An
+    
+    
+    
+    
    /* not used, move to kaimonokago
 
     function insertslideshow(){

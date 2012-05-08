@@ -48,11 +48,12 @@ $lang['backendpro_menus'] = 'Menus';
 $lang['backendpro_messages'] = 'Messages';
 $lang['backendpro_orders'] = 'Orders';
 $lang['backendpro_pages'] = 'Pages';
-$lang['backendpro_products'] = 'Sản Phẩm';
+$lang['backendpro_products'] = 'Quản lý sản phẩm';
 $lang['backendpro_subscribers'] = 'Subscribers';
 $lang['backendpro_file_manager'] = 'File Manager';
 $lang['backendpro_langages'] = 'Languages';
-$lang['backendpro_kho'] = 'Kho hàng';
+$lang['backendpro_kho'] = 'Quản lý kho';
+$lang['backendpro_search'] = 'Tìm kiếm sản phẩm';
 
 
 /* For Webshop */

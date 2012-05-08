@@ -23,23 +23,34 @@ $data = array('name'=>'code','id'=>'code','class'=>'text', 'value' => $product['
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
+?>
+<tr>
+	<td>
+		Kho: 
+	</td>
+	<td>
+		Kho 1
+		<input name="kho1" id="kho1" style="" type="text" />
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+		Kho 2
+		<input name="kho2" id="kho2" style="" type="text" />
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+		Kho 3
+		<input name="kho3" id="kho3" style="" type="text" />
+	</td>
+</tr>
 
-
-echo "<tr><td class='label'><label for='kho_code'>".$this->lang->line('kago_kho_code')."</label></td>\n";
-$data = array('name'=>'kho_id','id'=>'kho_id','class'=>'text', 'value' => $product['kho_id']);
-$data = array('name'=>'kho_id','id'=>'kho_id','class'=>'text', 'value' => $product['kho_id']);
-$data = array('name'=>'kho_id','id'=>'kho_id','class'=>'text', 'value' => $product['kho_id']);
-
-//$total= ;
-
-echo "<td>";
-echo "Kho hang 1: ".form_input($data);
-echo "Kho hang 2: ".form_input($data);
-echo "Kho hang 3: ".form_input($data);
-echo "</td>";
-
-
-
+<?php
 echo "<tr><td class='label'><label for='short'>".$this->lang->line('kago_short_desc')."</label></td>\n";
 $data = array('name'=>'shortdesc','id'=>'short','class'=>'text', 'value' => $product['shortdesc']);
 echo "<td>";

@@ -58,7 +58,38 @@ echo form_textarea($data) ;
 
 ?>
 <a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
-<?php
+
+
+<!--<tr>
+<td id="nopad">
+<span id="uimage_parent" class="mceEditor defaultSkin"></span>
+<table id="uimage_tbl" class="mceLayout" cellpadding="0" cellspacing="0" style="width: 272px; height: 166px; ">
+<tbody>
+<tr class="mceFirst">
+<td class="mceToolbar mceLeft mceFirst mceLast">
+
+<table id="uimage_toolbar2" class="mceToolbar mceToolbarRow2 Enabled" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td>
+<a id="" href="javascript:;" class="mceButton mceButtonEnabled mce_image" onmousedown="return false;" onclick="return false;" title="Insert/edit image">
+<span class="mceIcon mce_image"> 
+</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+--><?php
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='uimage'>".$this->lang->line('kago_select_img')."</label></td>\n";
@@ -72,7 +103,10 @@ $data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
+?>
 
+
+<?php
 echo "<tr><td class='label'><label for='weblink'>".$this->lang->line('kago_weblink')."</label></td>\n";
 $data = array('name'=>'weblink','id'=>'weblink','class'=>'text');
 echo "<td>";

@@ -23,18 +23,35 @@ echo form_textarea($data) ;
 <a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
 <?php
 echo "</td></tr>\n";
+?>
 
-echo "<tr><td class='label'><label for='uimage'>".$this->lang->line('kago_select_img')."</label></td>\n";
-$data = array('name'=>'image','id'=>'uimage','rows'=>'10', 'cols'=>'80');
-echo "<td id='nopad' >";
-echo form_textarea($data);
-echo "</td></tr>\n";
+<tr>
+	<td>
+		<strong>Select Image:</strong>
+	</td>
+	<td>
+		<form action="<?php echo base_url()?>index.php/slideshow/admin/create" method="post" enctype="multipart/form-data">
+		<label for="photo"></label>
+		<input type="file" name="image"/>
+		<input type="submit" value="Upload" />
+</form>
+	</td>
+</tr><br/>
 
-echo "<tr><td class='label'><label for='uthumb'>".$this->lang->line('kago_select_thumb')."</label></td>\n";
-$data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80');
-echo "<td id='nopad' >";
-echo form_textarea($data);
-echo "</td></tr>\n";
+<tr>
+	<td>
+		<strong>Select Thumnail:</strong>
+	</td>
+	<td>
+		<form action="<?php echo base_url()?>index.php/slideshow/admin/create" method="post" enctype="multipart/form-data">
+		<label for="photo"></label>
+		<input type="file" name="thumnail" />
+		<input type="submit" value="Upload" />
+</form>
+	</td>
+</tr><br/>
+
+<?php
 
 echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
 $options = array('active' => 'active', 'inactive' => 'inactive');

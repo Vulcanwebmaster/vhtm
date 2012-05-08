@@ -78,6 +78,10 @@ class Admin extends Shop_Admin_Controller
         {
             // fields are filled up so do the followings
             $data = $this->_feild();
+            
+            //xu li anh
+            
+            
             $this->MKaimonokago->addItem($this->module,$data);
             flashMsg('success','slideshow created');
             redirect($this->module.'/admin/index','refresh');
