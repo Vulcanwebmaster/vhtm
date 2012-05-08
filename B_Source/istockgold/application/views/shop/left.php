@@ -26,7 +26,7 @@
                 <div style="padding-top:20px; padding-left:40px">
                     <div class="menuitem">
                         <img alt="" src="<?php echo base_url()?>assets/images/house-icon.png" style="float:left"/>
-                        <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px">Home</a>
+                        <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px; color:#ce0701">Home</a>
                     </div>
                     <div class="menuitem">
                         <a href="<?php  echo base_url()?>index.php/welcome/allNews">Service news</a>
@@ -64,7 +64,7 @@
 						<!-- Author: tienlx -->
 								<span style="float:left">Y! online support 1:</span>
 								<a href="ymsgr:sendim?<?php echo $row->yahoo_nick1?>">
-	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=<?php echo $row->yahoo_nick1?>&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
+	                            	<img style="border-style:none;float:left;" src="http://opi.yahoo.com/online?u=<?php echo $row->yahoo_nick1?>&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
 	                            </a>
 						<!-- End Author: tienlx -->
 	                    </div>
@@ -77,7 +77,7 @@
 						<!-- Author: tienlx -->
 								<span style="float:left">Y! online support 2:</span>
 								<a href="ymsgr:sendim?<?php echo $row->yahoo_nick2?>">
-	                            	<img style="float:left;" src="http://opi.yahoo.com/online?u=<?php echo $row->yahoo_nick2?>&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
+	                            	<img style="border-style:none;float:left;" src="http://opi.yahoo.com/online?u=<?php echo $row->yahoo_nick2?>&amp;m=g&amp;t=2&amp;l=us" width="70" height="20" alt="" />
 	                            </a>
 						<!-- End Author: tienlx -->
 						</div>
@@ -156,11 +156,11 @@ self.setInterval("time()",3000);
             <div id="istock"> 
             <div> </div>               
                 <div id="reserved_box" style="margin-top:30px">
-                    <img alt="" src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" style="margin-top:10px; width:80px"/>
-                    <span id ="a" style="font-size:12px;line-height:20px"></span>
+                    <img alt="" src="<?php echo base_url()?>assets/images/abc.jpg" style="padding-top:15px; width:80px"/>
+                    <span id ="a" style="font-size:12px;line-height:10px; padding-bottom:5px"></span>
                 <br>
                     <img alt="" src="<?php echo base_url()?>assets/images/wu.jpg" style="margin-top:3px; width:80px"/>
-                    <span id ="b" style="font-size:12px;line-height:20px"></span>
+                    <span id ="b" style="font-size:12px;line-height:10px"></span>
                 </div>
             </div>
             
@@ -172,7 +172,7 @@ self.setInterval("time()",3000);
      
             <div id="lastest-exchange">
                 <div style="height:35px"></div>
-                <table>
+                <table style="margin-top:-5px; border-right:solid 1px silver; border-left:solid 1px silver">
                     <tr style="font-weight:bold">
                         <td>Date</td>
                         <td>Action</td>
@@ -187,44 +187,19 @@ self.setInterval("time()",3000);
                         <td><span><?php echo $rs->amount_src?>$</span></td>
                     </tr>
                     <?php endforeach;?>  
-                    <!--                  
-                    <tr>
-                        <td>11/09/2011</td>
-                        <td>Wu <span>To</span> LR(USD)</td>
-                        <td>UCE**</td>
-                        <td><span>$500,00</span></td>
-                    </tr>
-                    <tr class="hangle">
-                        <td>11/09/2011</td>
-                        <td>Wu <span>To</span> LR(USD)</td>
-                        <td>UCE**</td>
-                        <td><span>$500,00</span></td>
-                    </tr>
-                    <tr>
-                        <td>11/09/2011</td>
-                        <td>Wu <span>To</span> LR(USD)</td>
-                        <td>UCE**</td>
-                        <td><span>$500,00</span></td>
-                    </tr>
-                    <tr class="hangle">
-                        <td>11/09/2011</td>
-                        <td>Wu <span>To</span> LR(USD)</td>
-                        <td>UCE**</td>
-                        <td><span>$500,00</span></td>
-                    </tr>
-                     --> 
+                    
                 </table>
             </div>
             <div id="send">
-                <div style="height:35px"></div>
+                <div id="send-head" style="height:35px"></div>
                 <div align="center">
-                    <img src="<?php echo base_url()?>assets/images/weston unio2.jpg" alt="" />
+                    <img src="<?php echo base_url()?>assets/images/weston unio2.jpg"/>
                 </div>
                 <div align="center">
-                    <img src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" alt="" />
+                    <img src="<?php echo base_url()?>assets/images/abc.jpg"/>
                 </div>
                 <div align="center">
-                    <img src="<?php echo base_url()?>assets/images/web-money.jpg" alt="" />
+                    <img src="<?php echo base_url()?>assets/images/web-money.jpg" />
                 </div>
             </div>
         </div>  

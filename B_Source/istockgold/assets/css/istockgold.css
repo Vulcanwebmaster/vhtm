@@ -1,7 +1,8 @@
+body{margin:0px}
 .main-fream{width:1160px;height:1000; margin:auto;}
-#header{height:200px}
+#header{height:auto}
 #header-top{height:100px}
-#header-bottom-center {background-image:url('../images/banner-bottom-bg.jpg'); width:914px; height:98px; margin-left:158px}
+#header-bottom-center {background-image:url('../images/banner-bottom-bg.jpg'); width:900px; height:98px; margin-left:120px}
 #header-bottom-center img{float:left;}
 #header-line {height:20px; background-image:url('../images/blue-line.png')}
 #left-column{float:left; width:304px}
@@ -9,8 +10,8 @@
 #menu a{font-size:12px; font-weight:bold}
 #support{width:305px; height:238px; margin-top:15px}
 #head-support{background-image:url('../images/head-support.jpg')}
-.menuitem{height:22px}
-.menuitem a{padding-left:22px}
+.menuitem{height:25px}
+.menuitem a{padding-left:22px; color:#4f5959; font-size:12px; font-family:Arial; padding-top:4px}
 
 #support-information{padding-top:5px}
 #support-information div{padding-left:60px;}
@@ -21,17 +22,18 @@
 #istock div{float:left; padding-left:10px}
 /*#istock img{width:100px;}*/
 #istock span{ font-size:12px; font-family:Arial; margin-left:10px}
-#lastest-exchange{width:305px; height:207px; border-bottom:inset 1px #9d9d9d; font-family:Arial;font-size:11px;background-image:url('../images/lastest-exchange-bg.png'); margin-top:15px}
+#lastest-exchange{width:305px; height:auto; border-bottom:inset 1px #9d9d9d; font-family:Arial;font-size:11px;background-image:url('../images/lastest-exchange-bg.png');background-repeat:no-repeat; margin-top:15px}
 #lastest-exchange span{color:Red}
 #lastest-exchange table{width:100%; height:172px}
 .hangle
 {
     background-color: #E9E9E9;
 }
-#send{width:305px; height:193px; background-image:url('../images/send-bg.png'); margin-top:15px}
-#send div{margin-top:6px}
+#send{behavior:url('PIE/PIE.htc');width:305px; height:auto;border:solid 1px #9d9d9d;border-radius:5px 5px 0 0; margin-top:15px; padding-bottom:5px}
+#send-head{background-image:url('../images/we-accept-head.png'); background-repeat:no-repeat}
+#send img{margin-top:5px}
 #main-column{float:right; padding-left:25px;width:831px}
-#label{height:50px}
+#label{height:40px}
 #label p
 {
     color: #666666;
@@ -47,9 +49,9 @@
     color: #005782; font-size:20px
 }
 .clearboth { clear: both;}
-.fromCurrency {text-align:center; float: left; width: 40%; padding: 20px 10px;}
+.fromCurrency {text-align:center; float: left; width: 40%; padding: 20px 10px 5px 10px;}
 .currencyRate {float: left; width: 10%; padding: 20px 10px;}
-.toCurrency {float: right; width: 40%; padding: 20px 10px;}
+.toCurrency {float: right; width: 40%; padding: 20px 10px 5px 10px;}
 
 .image-selection1{width:40px; height:20px}
 .c1,.c3{padding-left:60px}
@@ -60,10 +62,10 @@
 .how-link ul li{list-style: none; padding:  3px;}
 .how-link a{color:#005782}
 .how-link span{color: #005782; font-weight:bold; }
-.note {float: right; width: 50%; margin-top: -25px;}
+.note {float: right; width: auto; margin-top: -25px;line-height:20px}
 .c2b{font-family:Arial; font-size:12px}
 
-#news-panel{width:770px;height:193px; padding-left:0px; padding-top:10px;background-image:url('../images/news-bg.png'); background-repeat:no-repeat" align="left}
+#news-panel{behavior:url('PIE/PIE.htc');width:auto;height:193px; padding-left:0px; padding-top:10px;padding-bottom:0px; margin-bottom:10px;border-radius:10px; background-color:#f3f3f3; background-repeat:no-repeat" align="left}
 #news-title{margin-left:20px}
 #news-title span
 {
@@ -85,7 +87,9 @@
 #news-control-panel span{float:left; margin-top:5px}
 #news-control-panel select
 {
-    border: 1px inset #C0C0C0;
+	behavior:url('PIE/PIE.htc');
+	padding:5px;
+    border: 1px solid #C0C0C0;
     border-radius: 5px;
     margin-left: 10px;
     float: left;
@@ -222,3 +226,6 @@
 
 .au_col2{width:100%}
 .col2{padding-left:30px}
+
+.bt{behavior:url('PIE/PIE.htc'); border-radius:5px}
+.note{background-color:#ffffd0; border:solid 1px #d0d060; margin-right:15px; margin-top:0px}

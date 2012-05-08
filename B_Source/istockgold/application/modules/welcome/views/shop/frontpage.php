@@ -21,8 +21,7 @@
                     <div>
                         <p>Exchange</p>
                     </div>
-                    <div><p>Pay</p></div>
-                    <div><p>Cast out</p></div>
+                    <div><p>iStockgold marketplace</p></div>                    
                 </div>
                 <?php echo form_open( $module."/exchange" ); ?>
                     <div class="fromCurrency">
@@ -69,8 +68,8 @@
                     </div>
                     <div class="clearboth"> </div>
                     
-                    <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 12px;">
-                    	 <hr align="right" width="70%">
+                    <div style="float: right; width: 53%; padding-bottom: 10px; margin-bottom: 10px; font-size: 13px;">
+                    	 <hr align="right" width="70%" style="border-style:solid; margin-right:15px">
                     	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
                     	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
                     	 <span id="get"></span> <button>Exchange</button>
@@ -110,7 +109,7 @@
                     </div>
                     
                     <div class="note">
-                    	<ul style="font-size:13px; margin-top:25px;">
+                    	<ul style="font-size:12px; margin-top:15px;">
                              <li style="margin-bottom:20px">
                                         The transer free of Liberty Reserve:<br />
                                         1% of the transfer amount, minimum 0.01USD, maximun 2.99USD
@@ -130,31 +129,15 @@
                         <img src="<?php echo base_url()?>assets/images/news-icon.png" alt="" />
                         <span>News</span>
                     </div>
-                    <!-- 
-                    <div id="news-content">
-                        <a><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/>Telepay Service : Prices Go Down, Number of Operators Go Up</a>
-                        <br />
-                        <a><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/>More top-up options available in Vietnam</a>
-                        <br />
-                        <a><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/>The first online exchange for WMV is now open in Vietnam</a>
-                        <br />
-                        <a><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/>Top-up via FOXBOX temirals available now in Lithuania</a>
-                        <br />
-                        <a><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/>WebMoney News: Cheap Chineese gadgets at wsdeal.com</a>
-                        <br />
-                        <div align="right">
-                            <a style="text-decoration:underline; margin-right:20px"><img src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/>All WebMoney News</a>
-                        </div>
-                    </div>
-                    -->
+                    
                     <!-- Author: tienlx -->
                     <div id="news-content">
                     	<?php foreach ($topnews as $rs):?>
-                    	<a href="<?php echo base_url()?>index.php/welcome/detailnews/<?php echo $rs->id;?>"><img alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
+                    	<a href="<?php echo base_url()?>index.php/welcome/detailnews/<?php echo $rs->id;?>"><img style="border-style:none" alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
                     	<br />
                     	<?php endforeach;?>
 						<div align="right">
-                            <a href="<?php echo base_url()?>index.php/welcome/allNews"style="text-decoration:underline; margin-right:20px"><img src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/>All WebMoney News</a>
+                            <a href="<?php echo base_url()?>index.php/welcome/allNews"style="text-decoration:underline; margin-right:20px"><img style="border-style:none" src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/>All WebMoney News</a>
                         </div>
                     </div>
                     <!-- End Author: tienlx -->
@@ -177,8 +160,7 @@
                 
                     <span style="font-size:12px; font-weight:bold">Show</span> 
                     <form name="your_form_name" method="post" action="<?php echo base_url();?>">
-                        <select name = "show_id" onchange="document.your_form_name.submit()">
-                        	<option value="">Select:</option>
+                        <select id="show_id" name = "show_id" onchange="document.your_form_name.submit()">
                         	<option value="1">1</option>
                             <option value="5">5</option>
                             <option value="10">10</option>
@@ -227,7 +209,7 @@
                        
                         <td>
                             <button><?php echo $list['rating'];?>.0</button>
-                            <span style="font-size:12px;line-height:20px"><?php echo $list['title'];?></span>
+                            <span style="margin-left:10px;font-size:12px;line-height:20px"><?php echo $list['title'];?></span>
                         </td>
                     </tr>
                     <tr>
@@ -295,14 +277,14 @@
                 ?>
                               
                 <div id="register-center">
-                    <table cellspacing="15">
+                    <table cellspacing="15" style="font-size:12px; color:#414142; font-family:Arial">
                         <tr>
                             <td align="right" colspan="2">
                                 <span>*</span>= required
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="width:32%">
                                 <span>*</span> Your name:
                             </td>
                             <td>
@@ -333,7 +315,7 @@
                             <td style="padding-left:18px">
                                 Please filled your phone number (option):
                             </td>
-                            <td style="border: 1px inset #C0C0C0" class="tddb">
+                            <td style="border: 1px solid #C0C0C0" class="tddb">
                                 <input name="your_phone" type="text" id="your_phone" type="text"  style="width:200px"/>
                                 <br />
                                 <label style="color:#7b7b7b; font-size:11px">We will call you when your order delivered</label>
@@ -343,7 +325,7 @@
                             <td>
                                 <span>*</span> Please filled your order number :
                             </td>
-                            <td style="border: 1px inset #C0C0C0" class="tddb">
+                            <td style="border: 1px solid #C0C0C0" class="tddb">
                                 <input name="your_order" type="text" id="your_order" type="text"  style="width:200px"/>
                                 <br />
                                 <label style="color:#7b7b7b; font-size:11px">This required for check valid order when you submit your review</label>
@@ -353,7 +335,7 @@
                             <td>
                                 <span>*</span> Review Title:
                             </td>
-                            <td style="border: 1px inset #C0C0C0" class="tddb">
+                            <td style="border: 1px solid #C0C0C0" class="tddb">
                                 <input name="review_title" type="text" id="review_title" type="text"  style="width:98%"/>
                                 <br />
                                 <img alt="" src="<?php echo base_url();?>assets/images/down-arrow.png"/>
@@ -374,25 +356,27 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td colspan="2">
                                 <table>
                                     <tr>
                                         <td>
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
                                 			<script type="text/javascript">
-                                				$(document).ready(function(){
-                                    				var flag = 0;
-                                    				value = document.getElementById("value");
-                                    				ratingstarvalue = document.getElementById("ratingstarvalue");
-                                    				star1 = document.getElementById("star1");
-                                    				star2 = document.getElementById("star2");
-                                    				star3 = document.getElementById("star3");
-                                    				star4 = document.getElementById("star4");
-                                    				star5 = document.getElementById("star5");
+                                				$(document).ready(function(){													
+                                    				var flag = 0;                                    				
+                                    				var value = document.getElementById("value");
                                     				
+                                    				var ratingstarvalue = document.getElementById("ratingstarvalue");
+                                    				var star1 = document.getElementById("star1");
+                                    				var star2 = document.getElementById("star2");
+                                    				var star3 = document.getElementById("star3");
+                                    				var star4 = document.getElementById("star4");
+                                    				var star5 = document.getElementById("star5");
+
                                     				value.innerHTML="...";
                                     				
 													$("#star1").mouseenter(function(){	
+																											
 														if (flag == 0) {
 															star1.src="<?php echo base_url();?>assets/images/star2.png";
 															value.style.width='50px';
@@ -524,7 +508,7 @@
                                             <img id="star3" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <img id="star4" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <img id="star5" src="<?php echo base_url()?>assets/images/star.png" alt="" />
-                                            <label id="value" style=" margin-left:5px; width:50px">Perfect. It doesn't get any better</label>
+                                            <label id="value" style=" margin-left:5px; width:50px">...</label>
                                             <input type="hidden" name ="ratingstarvalue" id="ratingstarvalue" value=""/> 
                                             <input type="submit" value="Submit" />
                                         </td>

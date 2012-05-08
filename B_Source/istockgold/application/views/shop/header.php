@@ -1,13 +1,22 @@
  <div id="header" class="main-fream">
             <div id="header-top">
-                <img alt="" src="<?php echo base_url()?>assets/images/logo.png" style="float:left"/>                    
-                <div style="float:left; font-family:Tahoma; color:#FF8040; margin-left:10px; margin-top:20px; font-weight:bold; font-size:16px">
-                    <p>Instant e-currency exchange - Fast delivery - LowFee</p>
+            	<div style="float:left">
+					<a href="<?php echo base_url();?>">
+                		<img alt="" src="<?php echo base_url()?>assets/images/logo.png" style="margin-bottom:-5px; border-style:none"/>
+                	</a>
+                	<br/>
+                	<span style="font-family:Britannic Bold; font-size:16px; margin-left:170px; color:#7f7f7f">.com</span>
+                </div>                    
+                <div style="float:left; font-family:Arial; color:#e96d1f; margin-left:10px; margin-top:15px; font-weight:bold; font-size:16px">
+                    <p style="font-size:20px">Instant e-currency exchange - Fast delivery - Low Fee</p>
                 </div>
                 <div style="float:right">
                     <div style="margin-top:10px">
                         <img src="<?php echo base_url()?>assets/images/dola.png" alt="" style="float:left"/>
                         <p style="float:left; margin-top:2px; font-family:Tahoma; font-size:12px;color:Silver; margin-right:20px">
+                        	<style>
+                        		a{color:#9d9d9d;font-family:Arial;font-size:12px;text-decoration:none}
+                        	</style>
                         	<a href="<?php  echo site_url($module."/order");?>">Tracking my order</a> 
                         	|
                         	<a href="<?php  echo base_url()?>index.php/welcome/ourcompany"> Our Company </a>
@@ -21,12 +30,23 @@
                         <img alt="" src="<?php echo base_url()?>assets/images/customer service.jpg" />
                     </div>
                     <div align="right" style="margin-right:20px">
-                        <select>                            
-                            <option>
-                                ENG                                                            
-                            </option>
-                            <option>VNI</option>
+                    	<script type="text/javascript">
+                    		$(document).ready(function(){
+                    			$('#langselector').mouseup(function(){
+										if (langselector.value=="ENG")
+											langicon.src='<?php echo base_url();?>assets/images/ENG.png';
+										else langicon.src='<?php echo base_url();?>assets/images/vietnam.jpg';
+								});
+                    		});
+                    	</script>
+                    
+                    	<fieldset style="width:80px; height:20px; border:solid 1px #bdbdbd; background-color:#f8f8f8; padding:0">
+                    	<img width="14px" height="11px" id="langicon" src="<?php echo base_url();?>assets/images/ENG.png"/>
+                        <select id="langselector" style="border-style:none; background-color:#f8f8f8">                            
+                            <option value="ENG">ENG</option>
+                            <option value="vni">VNI</option>
                         </select>
+                        </fieldset>
                     </div>
                 </div>
             </div>
@@ -35,7 +55,7 @@
                     <img src="<?php echo base_url()?>assets/images/we exchange from.png" alt="" style="margin-top:30px"/>
                     <img src="<?php echo base_url()?>assets/images/western unio.jpg" alt="" style="margin-top:20px"/>
                     <img src="<?php echo base_url()?>assets/images/to.png" alt="" style="margin-top:35px; margin-left:35px"/>
-                    <img src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" alt="" style="margin-top:15px; margin-left:30px; border:inset 1px silver"/>
+                    <img src="<?php echo base_url()?>assets/images/Liberty Reserve.jpg" alt="" style="margin-top:15px; margin-left:30px; border:solid 1px #a08d12"/>
                     <img src="<?php echo base_url()?>assets/images/lowest fee in the world.png" alt="" style="margin-top:35px; margin-left:30px"/>
                 </div>
             </div>

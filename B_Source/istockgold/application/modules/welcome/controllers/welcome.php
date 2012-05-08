@@ -42,7 +42,7 @@ class Welcome extends Shop_Controller
 
 
     function index()
-    {
+    {    	
     // this one is for a visitor changing a language first time through form
         if ($this->input->post('lang'))
         {
@@ -146,8 +146,39 @@ class Welcome extends Shop_Controller
         $data['pagination'] = $this->pagination->create_links();
         
         //End author tienlx
-
+	
         $this->load->view($this->_container,$data); 
+    }
+    
+    function load_comment_table()
+    {
+    	echo "<script language=javascript>
+    		var tmp=\"anc\"
+    		alert(tmp)
+    		</script>";
+    	
+    	$config['base_url'] = base_url()."index.php"."/"."welcome"."/"."index";
+        $config['total_rows']= $this->getNumReviews(); 
+        if (isset($_POST['show_id'])){
+        	$config['per_page']= $_POST['show_id'];
+        	$_SESSION['show']= $config['per_page'];
+        }
+        else{
+        	if(isset($_SESSION['show']))
+        	{
+        		$config['per_page']= $_SESSION['show'];
+        	}
+        	else{
+        		$config['per_page']= '3';
+        	}
+        }
+        $config['uri_segment'] = 3;        
+
+        $this->pagination->initialize($config);
+        //$data['reviews']=$this->getAllReviews($config['per_page'],$this->uri->segment('2'));
+        $data['reviews']=$this->getReviews($config['per_page'],$this->uri->segment('3'));
+        $data['pagination'] = $this->pagination->create_links();;
+    	$this->load->view('commenttable',$data); 
     }
     
     function generate_captcha() 

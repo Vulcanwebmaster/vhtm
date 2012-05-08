@@ -47,7 +47,7 @@ class CI_Pagination {
 	var $last_tag_open		= '&nbsp;';
 	var $last_tag_close		= '&nbsp;';
 	var $first_url			= ''; // Alternative URL for the First Page.
-	var $cur_tag_open		= '&nbsp;<a  style="font-size:12px;border-radius:5px; background-color:#a3d8f8; padding: 5px 10px">';
+	var $cur_tag_open		= '&nbsp;<a class="bt" style="font-size:12px;border-radius:5px; background-color:#a3d8f8; padding: 5px 10px">';
 	var $cur_tag_close		= '</a>&nbsp;';
 	var $next_tag_open		= '&nbsp;';
 	var $next_tag_close		= '&nbsp;';
@@ -247,12 +247,12 @@ class CI_Pagination {
 
 			if ($i == 0 && $this->first_url != '')
 			{
-				$output .= $this->prev_tag_open.'<a style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->first_url.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= $this->prev_tag_open.'<a class="bt" style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->first_url.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
 			}
 			else
 			{
 				$i = ($i == 0) ? '' : $this->prefix.$i.$this->suffix;
-				$output .= $this->prev_tag_open.'<a style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->base_url.$i.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= $this->prev_tag_open.'<a class="bt" style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->base_url.$i.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
 			}
 
 		}
@@ -284,13 +284,13 @@ class CI_Pagination {
 
 						if ($n == '' && $this->first_url != '')
 						{
-							$output .= $this->num_tag_open.'<a style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->first_url.'">'.$loop.'</a>'.$this->num_tag_close;
+							$output .= $this->num_tag_open.'<a class="bt" style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->first_url.'">'.$loop.'</a>'.$this->num_tag_close;
 						}
 						else
 						{
 							$n = ($n == '') ? '' : $this->prefix.$n.$this->suffix;
 
-							$output .= $this->num_tag_open.'<a style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->base_url.$n.'">'.$loop.'</a>'.$this->num_tag_close;
+							$output .= $this->num_tag_open.'<a class="bt" style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->base_url.$n.'">'.$loop.'</a>'.$this->num_tag_close;
 						}
 					}
 				}
@@ -309,7 +309,7 @@ class CI_Pagination {
 				$i = ($this->cur_page * $this->per_page);
 			}
 
-			$output .= $this->next_tag_open.'<a style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->next_link.'</a>'.$this->next_tag_close;
+			$output .= $this->next_tag_open.'<a class="bt" style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none" '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->next_link.'</a>'.$this->next_tag_close;
 		}
 
 		// Render the "Last" link
@@ -323,7 +323,7 @@ class CI_Pagination {
 			{
 				$i = (($num_pages * $this->per_page) - $this->per_page);
 			}
-			$output .= $this->last_tag_open.'<a  style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none"'.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_link.'</a>'.$this->last_tag_close;
+			$output .= $this->last_tag_open.'<a  class="bt" style="font-size:12px;border-radius:5px; background-color:silver; padding: 5px 10px; text-decoration: none"'.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_link.'</a>'.$this->last_tag_close;
 		}
 
 		// Kill double slashes.  Note: Sometimes we can end up with a double slash
