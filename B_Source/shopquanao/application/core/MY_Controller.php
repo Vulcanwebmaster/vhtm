@@ -33,6 +33,7 @@ class MY_Controller extends CI_Controller
 		// Load Base CodeIgniter files
 		$this->load->database();
 		$this->load->library('session');
+		$this->load->library('pagination');
 		$this->load->helper('url');
 		$this->load->helper('html');
 		$this->load->helper('status/status');

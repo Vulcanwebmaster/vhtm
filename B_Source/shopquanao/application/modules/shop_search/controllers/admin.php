@@ -21,7 +21,7 @@ class Admin extends Shop_Admin_Controller
     function index()
     {
         $data = $this->common_home();
-        $data['search']=$this->MSearch->getSearch('',0);
+        
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_search_home";
         $this->load->view($this->_container,$data);
     }
@@ -36,6 +36,21 @@ class Admin extends Shop_Admin_Controller
         $data['title'] = "Tìm kiem san pham";
         //$data['kho'] = $this->MKho->getKho();
         
+        //Author tienlx: pagination reviews
+        $config['base_url'] = base_url()."index.php"."/"."shop_search"."/"."admin"."/"."index";
+        $config['total_rows']= $this->MSearch->getNumSearch('','');
+       	$config['per_page']= '10';
+        $config['uri_segment'] = 4; 
+        $config['cur_tag_open'] = '<span style="color:red">';
+        $config['cur_tag_close'] = '</span>';
+          
+
+        $this->pagination->initialize($config);		
+        $data['pagination'] = $this->pagination->create_links();        
+        //End author tienlx
+        
+        $data['search']=$this->MSearch->getSearch($config['per_page'],$this->uri->segment('4'),'','');
+        
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
@@ -45,21 +60,34 @@ class Admin extends Shop_Admin_Controller
     function _fields()
     {
         $data = array(
-            'search'     => $this->input->post('search',TRUE),
-        	'type_search'=> $this->input->post('type_search',TRUE)            
+            'makho'     => $this->input->post('makho',TRUE),
+        	'masanpham'=> $this->input->post('masanpham',TRUE)            
         );
         return $data;
     }
     
     function search()
     {
-    	   	
-    	$search= $this->input->post('search',TRUE);    	
-    	$type_search= $this->input->post('type_search',TRUE);
-    	    	
-    	$data['search']=$this->MSearch->getSearch($search,$type_search);
+ 	
+    	$masanpham= $this->input->post('masanpham',TRUE);
+    	$makho= $this->input->post('makho',TRUE); 
+
+    	//Author tienlx: pagination reviews
+        $config['base_url'] = base_url()."index.php"."/"."shop_search"."/"."admin"."/"."search";
+        $config['total_rows']= $this->MSearch->getNumSearch($masanpham,$makho);
+       	$config['per_page']= '10';
+        $config['uri_segment'] = 4; 
+        $config['cur_tag_open'] = '<span style="color:red">';
+        $config['cur_tag_close'] = '</span>';
+          
+        $this->pagination->initialize($config);		
+        $data['pagination'] = $this->pagination->create_links();        
+        //End author tienlx
     	
-        $data['title'] = "Tim Kiem";
+    	
+    	$data['search']=$this->MSearch->getSearch($config['per_page'],$this->uri->segment('4'),$masanpham,$makho);
+    	
+        $data['title'] = "Tìm Kiếm";
         // Set breadcrumb
         $this->bep_site->set_crumb($this->lang->line('kago_search')." ".$this->lang->line('kago_search'),$this->module.'/admin/search');
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -70,10 +98,7 @@ class Admin extends Shop_Admin_Controller
            
                /* flashMsg('success','Kho được tạo');
                 redirect($this->module.'/admin/index','refresh');*/
-            
-        
-       
-   	
+             	
     }
 
 

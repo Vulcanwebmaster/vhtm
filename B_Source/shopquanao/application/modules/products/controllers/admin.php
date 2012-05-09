@@ -25,6 +25,7 @@ class Admin extends Shop_Admin_Controller
     {
         $data = $this->common_home();
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_home";
+
         $this->load->view($this->_container,$data);
     }
   
@@ -62,11 +63,27 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quan ly san pham";
+        $data['title'] = "Quản lý sản phẩm";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
-        $data['products'] = $this->MProducts->getAllProductswithLang($order);
+        
+        //Author tienlx: pagination reviews
+        $config['base_url'] = base_url()."index.php"."/"."products"."/"."admin"."/"."index";
+        $config['total_rows']= $this->MProducts->getNumProducts();
+       	$config['per_page']= '10';
+        $config['uri_segment'] = 4; 
+        $config['cur_tag_open'] = '<span style="color:red">';
+        $config['cur_tag_close'] = '</span>';  
+
+        $this->pagination->initialize($config);
+
+		
+        $data['pagination'] = $this->pagination->create_links();        
+        //End author tienlx
+               
+	                      
+        $data['products'] = $this->MProducts->getAllProductswithLang($config['per_page'],$this->uri->segment('4'));
         $data['categories'] = $this->MCats->getCategoriesDropDown();
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -77,10 +94,23 @@ class Admin extends Shop_Admin_Controller
     
     function sortKho()
     {
-    	$data['title'] = "Quan ly san pham theo kho";
-        $id= $this->input->post('giatrikho');
-        $data['id']=$id;           
-        $data['products'] = $this->MProducts->getProductsbyKho($id);
+    	$data['title'] = "Quản lý sản phẩm theo kho";
+    	$id= $this->input->post('giatrikho');
+        $data['id']=$id;   
+    	//Author tienlx: pagination reviews
+        $config['base_url'] = base_url()."index.php"."/"."products"."/"."admin"."/"."sortKho";
+        $config['total_rows']= $this->MProducts->getNumSortProducts($id);
+       	$config['per_page']= '10';
+        $config['uri_segment'] = 4; 
+        $config['cur_tag_open'] = '<span style="color:red">';
+        $config['cur_tag_close'] = '</span>';  
+
+        $this->pagination->initialize($config);		
+        $data['pagination'] = $this->pagination->create_links();        
+        //End author tienlx    	
+    	
+                
+        $data['products'] = $this->MProducts->getProductsbyKho($config['per_page'],$this->uri->segment('4'),$id);
         $data['categories'] = $this->MCats->getCategoriesDropDown();
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -143,7 +173,7 @@ class Admin extends Shop_Admin_Controller
         else
         {
             // this must be the first time, so set variables
-            $data['title'] = "Tao san pham";
+            $data['title'] = "Tạo sản phẩm";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';

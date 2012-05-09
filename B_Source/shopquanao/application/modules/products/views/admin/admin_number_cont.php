@@ -13,7 +13,7 @@ if (count($products))
 	echo form_submit("submit","batch update");
 	echo "</p>";*/
 ?>	
-<div align="right">
+<div align="left">
 <form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
 <select name = "giatrikho" onchange = "formkho.submit();">
 	<option value="0">Chon Kho</option>	
@@ -23,6 +23,12 @@ if (count($products))
 </select>
 </form>
 </div>
+
+<div align="right" style="float:right">
+	<?php 	
+	 echo $pagination;?>                   
+</div>
+
 <br/>
 <?php
 	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';

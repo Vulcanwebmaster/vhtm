@@ -17,11 +17,6 @@
 
 <?php
 $this->load->view('admin/admin_home_cont');
-/*
-echo "<pre>products";
-print_r ($products);
-echo "</pre>";
-*/
 ?>
 
 

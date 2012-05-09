@@ -5,15 +5,10 @@ $module=$this->uri->segment(1);
 
 if (count($products))
 {
-    /*
-	echo "<p>Category: ". form_dropdown('category_id',$categories);
-	echo "&nbsp;";
-	$data = array('name'=>'grouping','size'=>'10');
-	echo "Grouping: ". form_input($data);
-	echo form_submit("submit","batch update");
-	echo "</p>";*/
-?>	
-<div align="right">
+    
+?>
+
+<div align="left">
 <form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
 <select name = "giatrikho" onchange = "formkho.submit();">
 	<option value="0">Chon Kho:</option>
@@ -23,7 +18,13 @@ if (count($products))
 </select>
 </form>
 </div>
+
+ <div align="right" style="float:right">
+	<?php echo $pagination;?>                   
+</div>
+
 <br/>
+
 <?php
 	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
 	echo "<thead>\n<tr valign='top'>\n";
@@ -81,8 +82,8 @@ if (count($products))
 		else
 		{
             // single language so display only lang_id ==0
-            if($list['lang_id']==0)
-            {        
+           	if($list['lang_id']==0)
+            	{        
                 echo "<tr ";
 		        ($list['lang_id']>0)? $class="dentme" : $class = '';
 				echo "class = \"".$class. "\" valign='top'>\n";
@@ -121,7 +122,7 @@ if (count($products))
 		        }
 				echo "</td>\n";
 				echo "</tr>\n";       
-            }
+           } 
 		}           
 	}
 	echo "</tbody></table>";
