@@ -127,10 +127,38 @@ class MProducts extends CI_Model
     	else return False;
     }
     
+    function checkMaHang($code)
+    {
+    	$this->db->select('code');
+		$this->db->where('code',$code);
+		$Q = $this->db->get('omc_products');
+    	if($Q->num_rows()>0){return True;}
+    	else return False;
+    }
+    
+    function getGiatriKho($id)
+    {   	
+    	$this->db->where('id',$id);
+    	$this->db->order_by('kho_id','ASC');          
+        $Q = $this->db->get('shop_sanphamkho');
+        
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+    
  	function getProductsbyKho($num,$offset,$id)
     {
     	$data = array();
         
+    	if($id!=100)
+    	{
         $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
@@ -149,6 +177,29 @@ class MProducts extends CI_Model
         }
         $Q->free_result();
         return $data;
+    	}
+    	
+    	else
+    	{
+    	$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
+                ->join('omc_category','omc_category.id=omc_products.category_id','left')
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
+                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                
+                ->order_by('omc_products.lang_id','ASC')
+                ->order_by('omc_products.product_order');
+        $Q = $this->db->get('omc_products',$num,$offset);
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;   	
+    	}
+    	
     }    
     // End An
     
@@ -166,10 +217,12 @@ class MProducts extends CI_Model
         */  
         
         // for cecilieokada, one language this is ok. If it is multilang, then change back to the above one
-        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName ');     	      
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName,shop_sanphamkho.total ');     	      
         $this->db->join('omc_category','omc_category.id=omc_products.category_id','left');
-        $this->db->join('omc_languages','omc_languages.id=omc_products.lang_id','left') ;         
-        $this->db ->order_by('omc_products.lang_id',"ASC");
+        $this->db->join('omc_languages','omc_languages.id=omc_products.lang_id','left') ;
+        $this->db->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left');         
+        
+        $this->db ->order_by('omc_products.lang_id',"ASC");    
         $this->db->order_by('omc_products.product_order');
                 
         $Q = $this->db->get('omc_products',$num,$offset);
@@ -200,17 +253,34 @@ class MProducts extends CI_Model
     }
     
 	function getNumSortProducts($id){
+		
+		if($id!=100)
+		{
     		$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
                 ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
                 
-                ->order_by('omc_products.lang_id','ASC')
+              //  ->order_by('omc_products.lang_id','ASC')
                 ->order_by('omc_products.product_order');
-        $this->db->where('shop_sanphamkho.kho_id',$id);
+       // $this->db->where('shop_sanphamkho.kho_id',$id);
                 
         $Q = $this->db->get('omc_products');
     	return $Q->num_rows();
+		}//end if
+		else 
+		{
+		$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
+                ->join('omc_category','omc_category.id=omc_products.category_id','left')
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
+                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                
+               // ->order_by('omc_products.lang_id','ASC')
+                ->order_by('omc_products.product_order');        
+                
+        $Q = $this->db->get('omc_products');
+    	return $Q->num_rows();
+		}
     }
     
     

@@ -10,7 +10,7 @@
 <div class="buttons">
 	<a href="<?php print  site_url('products/admin/create')?>">
     <?php print $this->bep_assets->icon('add');?>
-    <?php print $this->lang->line('kago_create_product'); ?>
+    <?php print 'Tạo sản phẩm mới'; ?>
     </a>
 </div>
 <div class="clearboth">&nbsp;</div>

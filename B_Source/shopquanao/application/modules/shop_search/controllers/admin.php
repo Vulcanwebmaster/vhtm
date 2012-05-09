@@ -21,7 +21,7 @@ class Admin extends Shop_Admin_Controller
     function index()
     {
         $data = $this->common_home();
-        
+       // $data['gtsearch'] = array('tensanpham'=>'search tensanpham','masanpham'=>'search masanpham','makho'=>'search makho');
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_search_home";
         $this->load->view($this->_container,$data);
     }
@@ -33,12 +33,12 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Tìm kiem san pham";
+        $data['title'] = "Tìm kiếm sản phẩm";
         //$data['kho'] = $this->MKho->getKho();
         
         //Author tienlx: pagination reviews
         $config['base_url'] = base_url()."index.php"."/"."shop_search"."/"."admin"."/"."index";
-        $config['total_rows']= $this->MSearch->getNumSearch('','');
+        $config['total_rows']= $this->MSearch->getNumSearch('','','');
        	$config['per_page']= '10';
         $config['uri_segment'] = 4; 
         $config['cur_tag_open'] = '<span style="color:red">';
@@ -49,7 +49,7 @@ class Admin extends Shop_Admin_Controller
         $data['pagination'] = $this->pagination->create_links();        
         //End author tienlx
         
-        $data['search']=$this->MSearch->getSearch($config['per_page'],$this->uri->segment('4'),'','');
+        $data['search']=$this->MSearch->getSearch($config['per_page'],$this->uri->segment('4'),'','','');
         
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -61,20 +61,22 @@ class Admin extends Shop_Admin_Controller
     {
         $data = array(
             'makho'     => $this->input->post('makho',TRUE),
-        	'masanpham'=> $this->input->post('masanpham',TRUE)            
+        	'masanpham'=> $this->input->post('masanpham',TRUE),
+        	'tensanpham' => $this->input->post('tensanpham',TRUE)          
         );
         return $data;
     }
     
     function search()
     {
- 	
+ 		$tensanpham= $this->input->post('tensanpham',TRUE);
     	$masanpham= $this->input->post('masanpham',TRUE);
-    	$makho= $this->input->post('makho',TRUE); 
+    	$makho= $this->input->post('makho',TRUE);
+    	//$data['gtsearch'] = $this->_fields();
 
     	//Author tienlx: pagination reviews
         $config['base_url'] = base_url()."index.php"."/"."shop_search"."/"."admin"."/"."search";
-        $config['total_rows']= $this->MSearch->getNumSearch($masanpham,$makho);
+        $config['total_rows']= $this->MSearch->getNumSearch($tensanpham,$masanpham,$makho);
        	$config['per_page']= '10';
         $config['uri_segment'] = 4; 
         $config['cur_tag_open'] = '<span style="color:red">';
@@ -85,7 +87,7 @@ class Admin extends Shop_Admin_Controller
         //End author tienlx
     	
     	
-    	$data['search']=$this->MSearch->getSearch($config['per_page'],$this->uri->segment('4'),$masanpham,$makho);
+    	$data['search']=$this->MSearch->getSearch($config['per_page'],$this->uri->segment('4'),$tensanpham,$masanpham,$makho);
     	
         $data['title'] = "Tìm Kiếm";
         // Set breadcrumb

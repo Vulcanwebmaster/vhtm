@@ -3,8 +3,10 @@
 <div class="" align="left">
 	<form name="search" action="<?php echo base_url()?>index.php/shop_search/admin/search" method="post"> 
 	<div>
-	Ma san pham: <input name="masanpham" type="text" id="masanpham" value="" >
-	Ma kho: <input name="makho" type="text" id="makho" value="" >
+
+	<?php echo 'Tên sản phẩm:'?> <input name="tensanpham" type="text" id="tensanpham" value="" >
+	<?php echo 'Mã sản phẩm:'?><input name="masanpham" type="text" id="masanpham" value="" >
+	<?php echo 'Mã kho:'?><input name="makho" type="text" id="makho" value="" >
 	<input type="submit" value="Search" />	
 	</div>
     </form>       
@@ -25,7 +27,7 @@
 if (count($search)){
     echo "<table id='tablesorter' class='tablesorter' border='1' cellspacing='0' cellpadding='3' width='100%'>\n";
     echo "<thead>\n<tr valign='top'>\n";
-    echo "<th>ID San Pham</th>\n<th>Ten san pham</th><th>Ma so san pham</th><th>Ma so Kho</th><th>So luong</th>\n";
+    echo "<th>ID Sản phẩm</th>\n<th>Tên sản phẩm</th><th>Mã số sản phẩm</th><th>Mã số kho</th><th>Số lượng</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($search as $key => $list){
         echo "<tr valign='top'>\n";
@@ -46,7 +48,7 @@ else
 {
 	echo "<table id='tablesorter' class='tablesorter' border='1' cellspacing='0' cellpadding='3' width='100%'>\n";
     echo "<thead>\n<tr valign='top'>\n";
-    echo "<th>ID San Pham</th>\n<th>Ten san pham</th><th>Ma so san pham</th><th>Ma so Kho</th><th>So luong</th>\n";
+    echo "<th>ID Sản phẩm</th>\n<th>Tên sản phẩm</th><th>Mã số sản phẩm</th><th>Mã số kho</th><th>Số lượng</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
 }
 

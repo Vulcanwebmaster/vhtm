@@ -133,6 +133,7 @@ $lang['kago_code'] = 'Ma Hang';
 $lang['kago_kho_code'] = 'Ma Kho';
 $lang['kago_total'] = 'So luong';
 $lang['kago_search'] = 'Tim kiem';
+$lang['kago_public'] = 'Public';
 
 /*dashboard  */
 

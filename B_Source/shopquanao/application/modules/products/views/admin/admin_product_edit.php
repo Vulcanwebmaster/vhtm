@@ -7,116 +7,157 @@ if($product['lang_id']=='0' AND $multilang){
 
 echo form_open_multipart('products/admin/edit/'.$product['id']);
 
-echo "\n<table id='preference_form'><tr><td class='label'><label for='category'>".$this->lang->line('kago_category')."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='category'>".'Loại sản phẩm:'."</label></td>\n";
 echo "<td>";
 echo form_dropdown('category_id',$categories,$product['category_id']);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='pname'>".$this->lang->line('kago_name')."</label></td>\n";
-$data = array('name'=>'name','id'=>'pname','class'=>'text', 'value' => $product['name']);
+echo "<tr><td class='label'><label for='pname'>".'*'.'Tên hàng:'."</label></td>\n";
+$data = array('name'=>'name','id'=>'pname','class'=>'text' );
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='code'>".$this->lang->line('kago_code')."</label></td>\n";
-$data = array('name'=>'code','id'=>'code','class'=>'text', 'value' => $product['code']);
+echo "<tr><td class='label'><label for='mahang'>".'*'.'Mã hàng:'."</label></td>\n";
+$data = array('name'=>'code','id'=>'code','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
+
+						
+	foreach ($giatrikho as $key => $list)
+	{	
+		if($list['kho_id']==1)
+		{
+
 ?>
 <tr>
 	<td>
-		Kho: 
+		<strong>Kho:</strong> 
 	</td>
 	<td>
 		Kho 1
-		<input name="kho1" id="kho1" style="" type="text" />
+		<input name="kho1" id="kho1" style="" type="text" 
+		value="<?php
+				  echo $list['total'];
+				  //else echo '0';
+		 	   ?>" />
 	</td>
 </tr>
+<?php }
+
+	if($list['kho_id']==2)
+	{
+?>
 <tr>
 	<td>
 	</td>
 	<td>
 		Kho 2
-		<input name="kho2" id="kho2" style="" type="text" />
+		<input name="kho2" id="kho2" style="" type="text" 
+		value="<?php
+				  echo $list['total'];
+				  //else echo '0';
+		 	   ?>" />
 	</td>
 </tr>
+
+<?php }
+
+	if($list['kho_id']==3)
+	{
+?>
 <tr>
 	<td>
 	</td>
 	<td>
 		Kho 3
-		<input name="kho3" id="kho3" style="" type="text" />
+		<input name="kho3" id="kho3" style="" type="text" 
+		value="<?php
+				  echo $list['total'];
+				  //else echo '0';
+		 	   ?>"/>
 	</td>
 </tr>
 
 <?php
-echo "<tr><td class='label'><label for='short'>".$this->lang->line('kago_short_desc')."</label></td>\n";
-$data = array('name'=>'shortdesc','id'=>'short','class'=>'text', 'value' => $product['shortdesc']);
+	}
+
+	}//end
+	
+echo "<tr><td class='label'><label for='short'>".'Mô tả sản phẩm:'."</label></td>\n";
+$data = array('name'=>'shortdesc','id'=>'short','class'=>'text');
 echo "<td>";
+echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='long'>".$this->lang->line('kago_long_desc')."</label></td>\n";
-$data = array('name'=>'longdesc','id'=>'long','rows'=>'10', 'cols'=>'80', 'value' => $product['longdesc']);
+echo "<tr><td class='label'><label for='long'>".'Mô tả chi tiết sản phẩm:'."</label></td>\n";
+$data = array('name'=>'longdesc','id'=>'long','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
-echo form_textarea($data);
+echo form_textarea($data) ;
+echo "</td></tr>\n";
 
 ?>
 <a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
 <?php
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='uimage'>".$this->lang->line('kago_select_img')."</label></td>\n";
-$data = array('name'=>'image','id'=>'uimage','rows'=>'10', 'cols'=>'80', 'value' => $product['image']);
+echo "<tr><td class='label'><label for='uimage'>".'Chọn ảnh sản phẩm:'."</label></td>\n";
+$data = array('name'=>'image','id'=>'uimage','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='uthumb'>".$this->lang->line('kago_select_thumb')."</label></td>\n";
-$data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80', 'value' => $product['thumbnail']);
+echo "<tr><td class='label'><label for='uthumb'>".'Chọn thumnail sản phẩm:'."</label></td>\n";
+$data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='weblink'>".$this->lang->line('kago_weblink')."</label></td>\n";
-$data = array('name'=>'weblink','id'=>'weblink', 'value' => $product['weblink'],'class'=>'text');
+echo "<tr><td class='label'><label for='weblink'>".'Weblink'."</label></td>\n";
+$data = array('name'=>'weblink','id'=>'weblink','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
+echo "<tr><td class='label'><label for='public'>".'Chế độ public'."</label></td>\n";
 $options = array('active' => 'active', 'inactive' => 'inactive');
 echo "<td>";
-echo form_dropdown('status',$options, $product['status']);
+echo form_dropdown('public',$options);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='product_order'>".$this->lang->line('kago_order')."</label></td>\n";
-$data = array('name'=>'product_order','id'=>'product_order','class'=>'text', 'value' => $product['product_order']);
+echo "<tr><td class='label'><label for='status'>".'Trạng thái'."</label></td>\n";
+$options = array('active' => 'active', 'inactive' => 'inactive');
+echo "<td>";
+echo form_dropdown('status',$options);
+echo "</td></tr>\n";
+
+echo "<tr><td class='label'><label for='product_order'>".'Yêu cầu'."</label></td>\n";
+$data = array('name'=>'product_order','id'=>'product_order','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='price'>".$this->lang->line('kago_price')."</label></td>\n";
-$data = array('name'=>'price','id'=>'price','class'=>'text', 'value' => $product['price']);
+echo "<tr><td class='label'><label for='price'>".'Giá tiền'."</label></td>\n";
+$data = array('name'=>'price','id'=>'price','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-
-echo "<tr><td class='label'><label for='featured'>".$this->lang->line('kago_featured')."</label></td>\n";
-$options = array('none' => 'none',  'quicksand' => 'Quicksand', 'front' => 'Front', 'webshop' => 'Webshop');// add more as you wish 'front' => 'Main frontpage'
+echo "<tr><td class='label'><label for='featured'>".'Đặc điểm:'."</label></td>\n";
+$options = array('none' => 'none', 'quicksand' => 'Quicksand');// you can add more here as you wish
 echo "<td>";
-echo form_dropdown('featured',$options, $product['featured']);
+echo form_dropdown('featured',$options);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='other_feature'>".$this->lang->line('kago_other_feature')."</label></td>\n";
+echo "<tr><td class='label'><label for='other_feature'>".'Đặc điểm khác'."</label></td>\n";
 $options = array('none' => 'none', 'most sold' => 'Most sold', 'new product' => 'New Product');
 echo "<td>";
-echo form_dropdown('other_feature',$options, $product['other_feature']);
+echo form_dropdown('other_feature',$options);
 echo "</td></tr></table>\n";
 
 echo form_hidden('lang_id',$product['lang_id']);
-echo form_hidden('table_id',$product['table_id']);
+//echo form_hidden('table_id',$product['table_id']);
 echo form_hidden('id',$product['id']);
 
 ?>
@@ -134,23 +175,7 @@ echo form_hidden('id',$product['id']);
 <?php
 //echo form_submit('submit',$this->lang->line('kago_update'));
 echo form_close();
-/*
-echo "<pre>languages";
-print_r($languages);
-echo "</pre>";
 
-echo "<pre>translanguages";
-print_r($translanguages);
-echo "</pre>";
-
-echo "<pre>product";
-print_r($product);
-echo "</pre>";
-
-echo "<pre>categories";
-print_r($categories);
-echo "</pre>";
-*/
 ?>
 
    

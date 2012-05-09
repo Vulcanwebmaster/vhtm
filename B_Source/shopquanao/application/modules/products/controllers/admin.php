@@ -48,7 +48,7 @@ class Admin extends Shop_Admin_Controller
             'other_feature'     => $this->input->post('other_feature',TRUE),
             'price' 		    => $this->input->post('price',TRUE),
             'lang_id'           => $this->input->post('lang_id',TRUE),
-            'table_id'          => $this->input->post('table_id',TRUE),
+           
         );
         return $data;
     }
@@ -94,12 +94,11 @@ class Admin extends Shop_Admin_Controller
     
     function sortKho()
     {
-    	$data['title'] = "Quản lý sản phẩm theo kho";
-    	$id= $this->input->post('giatrikho');
-        $data['id']=$id;   
+    	$data['title'] = "Quản lý sản phẩm theo kho";    	
+        $data['id']=$this->input->post('giatrikho');   
     	//Author tienlx: pagination reviews
         $config['base_url'] = base_url()."index.php"."/"."products"."/"."admin"."/"."sortKho";
-        $config['total_rows']= $this->MProducts->getNumSortProducts($id);
+        $config['total_rows']= $this->MProducts->getNumSortProducts($this->input->post('giatrikho'));
        	$config['per_page']= '10';
         $config['uri_segment'] = 4; 
         $config['cur_tag_open'] = '<span style="color:red">';
@@ -108,14 +107,13 @@ class Admin extends Shop_Admin_Controller
         $this->pagination->initialize($config);		
         $data['pagination'] = $this->pagination->create_links();        
         //End author tienlx    	
-    	
-                
-        $data['products'] = $this->MProducts->getProductsbyKho($config['per_page'],$this->uri->segment('4'),$id);
+    	               
+        $data['products'] = $this->MProducts->getProductsbyKho($config['per_page'],$this->uri->segment('4'),$this->input->post('giatrikho'));
         $data['categories'] = $this->MCats->getCategoriesDropDown();
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
-        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_number";
+        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_home";
         $this->load->view($this->_container,$data);
        
     }
@@ -128,16 +126,23 @@ class Admin extends Shop_Admin_Controller
     {
         $data = $this->common_home();
         $this->load->view('admin/admin_home_cont',$data);
-    }
+    }	
 
 
     function create()
     {
         // we are using TinyMCE in this page, so load it
         $this->bep_assets->load_asset_group('TINYMCE');
+               
         if ($this->input->post('name'))
         {
             $data = $this->_field();
+            
+            if($this->input->post('code'))
+            {
+            
+            if($this->MProducts->checkMaHang($this->input->post('code'))==False)
+            {	         
             $this->MKaimonokago->addItem($this->module,$data);            
             
             $total1=$this->input->post('kho1',TRUE);
@@ -161,17 +166,17 @@ class Admin extends Shop_Admin_Controller
        		
        		foreach ($mang as $key => $list)
        		{
-            if($total1<>0){$this->MProducts->addSanphamkho(1,$list['id'],$total1);}
-            if($total2<>0) {$this->MProducts->addSanphamkho(2,$list['id'],$total2);}
-            if($total3<>0){$this->MProducts->addSanphamkho(3,$list['id'],$total3);}
-       		}
+            if($total1>=0){$this->MProducts->addSanphamkho(1,$list['id'],$total1);}
+            if($total2>=0) {$this->MProducts->addSanphamkho(2,$list['id'],$total2);}
+            if($total3>=0){$this->MProducts->addSanphamkho(3,$list['id'],$total3);}
+       		}            
           
             // we are using Bep function for flash msg
-            flashMsg('success','Product created');
+            flashMsg('success','Hàng đã được tạo');
             redirect($this->module.'/admin/index','refresh');
-        }
-        else
-        {
+            }//end check
+            else 
+            {
             // this must be the first time, so set variables
             $data['title'] = "Tạo sản phẩm";
             // get categories by lang_id
@@ -186,8 +191,59 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
+            flashMsg('error','Tên mã hàng đã được đăng ký, mời chọn lại');
+            $this->load->view($this->_container,$data);	
+            }
+  
+            }//end nhap
+        
+            else 
+            {
+            // this must be the first time, so set variables
+            $data['title'] = "Tạo sản phẩm";
+            // get categories by lang_id
+            // $data['categories'] = $this->MCats->getCategoriesDropDown();
+            $lang_id = '0';
+            $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
+            // loading this for giving some instructions.
+            $data['right'] = 'admin/product_right';
+            // Set breadcrumb
+            $this->bep_site->set_crumb($this->lang->line('kago_create'),$this->module.'/admin/create');
+            $data['header'] = $this->lang->line('backendpro_access_control');
+            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
+            $data['cancel_link']= $this->module."/admin/index/";
+            $data['module'] = $this->module;
+            flashMsg('error','Chưa nhập mã hàng');
+            $this->load->view($this->_container,$data);
+            }
+                       
+        }
+        else
+        {
+        	
+            // this must be the first time, so set variables
+            $data['title'] = "Tạo sản phẩm";
+            // get categories by lang_id
+            // $data['categories'] = $this->MCats->getCategoriesDropDown();
+            $lang_id = '0';
+            $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
+            // loading this for giving some instructions.
+            $data['right'] = 'admin/product_right';
+            // Set breadcrumb
+            $this->bep_site->set_crumb($this->lang->line('kago_create'),$this->module.'/admin/create');
+            $data['header'] = $this->lang->line('backendpro_access_control');
+            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
+            $data['cancel_link']= $this->module."/admin/index/";
+            $data['module'] = $this->module;
+            flashMsg('notice','Mời bạn nhập số liệu sản phẩm');
             $this->load->view($this->_container,$data);
         }
+        
+       
+        
+        
+        
+        
     }
 
 
@@ -197,6 +253,8 @@ class Admin extends Shop_Admin_Controller
         $this->bep_assets->load_asset_group('TINYMCE');
         $multilang = $this->preference->item('multi_language');
         $data['multilang']=$multilang;
+        
+        $data['giatrikho']=$this->MProducts->getGiatriKho($this->uri->segment(4));
         if ($this->input->post('name'))
         {
             // fields filled up so,
