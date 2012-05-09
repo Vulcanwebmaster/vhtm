@@ -16,6 +16,16 @@
                 	setLabelText("lbl_error", "Title can not be null !!!");
                 	return false;
                 }
+                var temp = tinymce.EditorManager.get('content').getContent();
+                var i = 0;
+                while (true)
+                {
+                	temp = temp.replace('style="color: ',"@$%#@");
+                	temp = temp.replace('style="background-color: ',"&$%#@"); 
+					i = i + 1;
+					if (i == 10) break;
+                }
+                document.getElementById("backup").value = temp;
                 return true;
             }
 </script>
@@ -66,6 +76,7 @@
  			<textarea id="content" name="content" rows="15" cols="80" style="width: 60%">
 			</textarea>
 			</label>
+			<input name = "backup" id = "backup" type = "hidden">
 			<input type="submit" class="btn" name="Submit" value="  Add  ">			
 </form>
 </div>		  

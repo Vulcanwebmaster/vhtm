@@ -77,7 +77,7 @@ if (count($site_currencies))
                                         Account Name:
                                     </td>
                                     <td width="5%">
-                                        <input name="liberty_account_name" type="text" id="liberty_account_name" readonly="readonly"
+                                        <input name="liberty_account_name" type="text" id="liberty_account_name"
                                             value="<?php echo $data['liberty.account.name']?>"/>
                                     </td>
                                     <td class="help">

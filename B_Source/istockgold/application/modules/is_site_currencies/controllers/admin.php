@@ -332,7 +332,7 @@ class Admin extends Shop_Admin_Controller
             $this->store_key = $this->MSiteCurrencies->getAllKey();
             foreach ($this->store_key as $key => $temp)
 			{
-				if ($temp['key'] == 'liberty.account')
+				/*if ($temp['key'] == 'liberty.account')
 				{
 					$data = $this->getAccount($_POST['liberty_account']);
 					if (isset($data['value']))
@@ -352,7 +352,7 @@ class Admin extends Shop_Admin_Controller
 				if ($temp['key'] == 'liberty.account.name')
 				{
 				}
-				else
+				else*/
 				{
 					$data = $this->fields($temp['key']);
           		    $this->MSiteCurrencies->updateValueByKey($temp['key'],$data);

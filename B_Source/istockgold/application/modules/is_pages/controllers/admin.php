@@ -54,9 +54,11 @@ class Admin extends Shop_Admin_Controller
 
 	function _fields()
     {
+    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['backup']);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
         $data = array(
         'title'       => db_clean($_POST['title']),
-        'content'     => $this->input->post('content')
+        'content'     => $temp
         );
         return $data;
     }
