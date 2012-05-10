@@ -37,6 +37,7 @@ class Welcome extends Shop_Controller
         $this->security_method      = $this->preference->item('security_method');
         $this->security_question    = $this->preference->item('security_question');
         $this->security_answer      = $this->preference->item('security_answer');
+        $this->load->library('Jquery_pagination');
         //$this->myclass = strtolower(get_class());
     }
 
@@ -123,9 +124,7 @@ class Welcome extends Shop_Controller
         //end
         
         //Author tienlx: pagination reviews
-        $config['base_url'] = base_url()."index.php"."/"."welcome"."/"."index";
-        $config['total_rows']= $this->getNumReviews(); 
-        if (isset($_POST['show_id'])){
+        /*if (isset($_POST['show_id'])){
         	$config['per_page']= $_POST['show_id'];
         	$_SESSION['show']= $config['per_page'];
         }
@@ -137,26 +136,54 @@ class Welcome extends Shop_Controller
         	else{
         		$config['per_page']= '3';
         	}
-        }
-        $config['uri_segment'] = 3;        
-
-        $this->pagination->initialize($config);
-        //$data['reviews']=$this->getAllReviews($config['per_page'],$this->uri->segment('2'));
-        $data['reviews']=$this->getReviews($config['per_page'],$this->uri->segment('3'));
-        $data['pagination'] = $this->pagination->create_links();
-        
+        }*/
+        //$config['uri_segment'] = 3;      
+        $config['total_rows']= $this->getNumReviews(); 
+		$config['per_page']= '3';  
+		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
+		$config['div'] = '#content3';
+	    $this->jquery_pagination->initialize($config);
+		$data['reviews'] = $this->MNews->getReviews($config['per_page'],0);
+		$data['pagination'] = $this->jquery_pagination->create_links();
+        			
         //End author tienlx
 	
         $this->load->view($this->_container,$data); 
     }
     
+    function ajax_review($offset = 0)
+    {
+    	$config['total_rows']= $this->getNumReviews(); 
+		$config['per_page']= '3';
+		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
+		$config['div'] = '#content3';
+	    $this->jquery_pagination->initialize($config);
+		$data['reviews'] = $this->MNews->getReviews($config['per_page'], $offset);
+		$data['pagination'] = $this->jquery_pagination->create_links();
+        $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data); 
+    }
+    
+    function getReviews($num, $offset)
+    {
+    	$data = array();
+       	$this->db->select('id, name, location, title, date, comment, rating');
+    	$this->db->order_by('date','desc');
+
+    	$Q=	$this->db->get("is_reviews",$num,$offset);
+
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+    
     function load_comment_table()
     {
-    	echo "<script language=javascript>
-    		var tmp=\"anc\"
-    		alert(tmp)
-    		</script>";
-    	
     	$config['base_url'] = base_url()."index.php"."/"."welcome"."/"."index";
         $config['total_rows']= $this->getNumReviews(); 
         if (isset($_POST['show_id'])){
@@ -1566,28 +1593,7 @@ class Welcome extends Shop_Controller
 	
     }
     //ham lay review tu csdl by An    
-    function getReviews($num,$offset)
-    {
-    	
-    	$data = array();
-       	$this->db->select('id, name, location, title, date, comment, rating');
-		//$this->db->from('is_reviews');
-    	$this->db->order_by('date','desc');
-    	
-    	
-    	$Q=	$this->db->get("is_reviews",$num,$offset);
-
-        if ($Q->num_rows() > 0)
-        {
-            foreach ($Q->result_array() as $row)
-            {
-                $data[] = $row;
-            }
-        }
-        $Q->free_result();
-        return $data;
-    }
-	//end by An 4/5/2012
+    	//end by An 4/5/2012
 	
     //Author: tienlx Pagination Reviews
     function getNumReviews(){

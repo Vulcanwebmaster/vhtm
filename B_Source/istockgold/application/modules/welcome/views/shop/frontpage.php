@@ -177,16 +177,18 @@
 								$(this).css('background-color','silver');
 								});
                         	});
+                    </script>
+                    <script type="text/javascript"
+                    src="<?php echo base_url()?>assets/js/jquery-1.6.2.min.js">
                     </script> 
                     <div style="float:right">
 						<?php echo $pagination;?>                   
                     </div>
                     
                 </div>
-                
                 <br />
                 <table id="comment-table">
-                <?php 
+                <?php
                 if(count($reviews))
 					{						
 						foreach ($reviews as $key => $list)
@@ -196,10 +198,9 @@
                     <tr> 
                     <td class="comment-col1">                     
                         <?php 
-                        for ($i=1;$i<=$list['rating'];$i++)
+                        for ($i=1; $i<=$list['rating']; $i++)
 							{
                         ?>
-                        
                             <img src="<?php echo base_url()?>assets/images/star.png" alt="" />   
                         <?php 
 							}
@@ -289,7 +290,7 @@
                             </td>
                             <td>
                             	<?php echo form_error('username'); ?>
-                                <input name="your_name" type="text" id="your_name" type="text" style="width:290px" ?>"/>
+                                <input name="your_name" type="text" id="your_name" type="text" style="width:290px" ?>
                             </td>
                         </tr>
                         <tr>

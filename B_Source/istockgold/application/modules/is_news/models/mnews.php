@@ -43,5 +43,25 @@ class MNews extends CI_Model
 		return $listnews;
 	}
 	//End author: tienlx
+	
+	function getReviews($num, $offset)
+    {
+    	$data = array();
+       	$this->db->select('id, name, location, title, date, comment, rating');
+    	$this->db->order_by('date','desc');
+
+    	$Q=	$this->db->get("is_reviews",$num,$offset);
+
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+	
 }
 ?>

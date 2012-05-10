@@ -34,5 +34,6 @@ class MISPages extends CI_Model
    		$this->db->set('date', 'NOW()', FALSE);
 		$this->db->insert("is_pages",$data);
 	}
-}
+	
+	}
 ?>
