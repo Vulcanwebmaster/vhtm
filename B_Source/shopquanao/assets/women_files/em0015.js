@@ -29,7 +29,7 @@ function decorateNav() {
 	
 	$('nav').childElements().each(function(li) {
 		if (li.hasClassName('parent')) {
-			li.down('ul').insert({'top': '<li class="title"><a>'+li.down('a').innerHTML+'</a></li>'});
+			//li.down('ul').insert({'top': '<li class="title"><a>'+li.down('a').innerHTML+'</a></li>'});
 		}
 	});
 	

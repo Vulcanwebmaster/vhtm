@@ -7,12 +7,43 @@
 <meta name="keywords" content="" />
 <base href="<?php echo base_url();?>" />
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/compare.css" media="all">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/styles.css" media="all">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/widgets.css" media="all">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/em_ajaxcart.css" media="all">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/cloud-zoom.css" media="all">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/compare.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/styles.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/widgets.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/em_ajaxcart.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/cloud-zoom.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/print.css" media="print"/>
+
+<!-- slide -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/jquery.slider.css" />
+	<!--[if IE 6]>
+	
+	  <link rel="stylesheet" type="text/css" href="javascript/slider/themes/fresh/jquery.slider.ie6.css" />
+	
+	  <![endif]-->
+	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.slider.min.js"></script>
+	
+	  <script type="text/javascript">
+	
+	    jQuery(document).ready(function($) {
+	
+	      $(".slider").slideshow({
+	
+	        width      : 900,
+	
+	        height     : 325,
+	
+	        transition : 'squareRandom'
+	
+	      });
+	
+	    });
+	
+	  </script>
+<!-- ===================== -->
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/prototype.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/ccard.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/validation.js"></script>
@@ -30,7 +61,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/styleswitch.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/swfobject.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em0015.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/scriptaculous.js"></script><script type="text/javascript" src="women_files/effects.js"></script><script type="text/javascript" src="women_files/dragdrop.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/scriptaculous.js"></script><script type="text/javascript" src="assets/women_files/effects.js"></script><script type="text/javascript" src="assets/women_files/dragdrop.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/lightbox.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em_ajaxcart.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cloud-zoom.js"></script>
@@ -88,7 +119,7 @@ optionalZipCountries = ["HK","IE","MO","PA"];
     
     <div class="page">
         <div class="header-container">
-        	<div class="header">
+        	<!-- div class="header" -->
 				<?php $this->load->view($this->config->item('backendpro_template_shop') . 'header');?>
 				<?php $this->load->view($this->config->item('backendpro_template_shop') . 'navigation');?>
 					<div style="clear:both"></div>
@@ -127,7 +158,7 @@ optionalZipCountries = ["HK","IE","MO","PA"];
 					
 					<div id="ajax_content" style="display:none"></div>    
 				</div>
-			</div>
+			<!-- /div -->
         </div>
         
     </div>
