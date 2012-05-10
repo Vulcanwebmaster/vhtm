@@ -3,8 +3,6 @@
 class MProducts extends CI_Model
 {
 
-
-
 	function __construct()
     {
         parent::__construct();
@@ -29,7 +27,12 @@ class MProducts extends CI_Model
         return $data;
     }
     
-    // By An
+    // By An   
+    function sumTotal()
+    {
+    	
+    }
+    
     function addSanphamkho($kho,$id,$total)
     {
     
@@ -157,17 +160,19 @@ class MProducts extends CI_Model
     {
     	$data = array();
         
-    	if($id!=100)
+    	if($id==1)
     	{
-        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop.total')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
-                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                ->join('(SELECT shop_sanphamkho.id as id, shop_sanphamkho.total as total 
+        		FROM shop_sanphamkho Where shop_sanphamkho.kho_id=1 ) AS shop','shop.id=omc_products.id','left')
                 
-                ->order_by('omc_products.lang_id','ASC')
-                ->order_by('omc_products.product_order');
-        $this->db->where('shop_sanphamkho.kho_id',$id);
+                //->order_by('omc_products.lang_id','ASC')
+                ->order_by('omc_products.product_order','DESC');
+       // $this->db->where('shop_sanphamkho.kho_id',$id);
         $Q = $this->db->get('omc_products',$num,$offset);
+      
         if ($Q->num_rows() > 0)
         {
             foreach ($Q->result_array() as $row)
@@ -179,15 +184,64 @@ class MProducts extends CI_Model
         return $data;
     	}
     	
-    	else
+   	 	if($id==2)
     	{
-    	$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop.total')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
-                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                ->join('(SELECT shop_sanphamkho.id as id, shop_sanphamkho.total as total 
+        		FROM shop_sanphamkho Where shop_sanphamkho.kho_id=2 ) AS shop','shop.id=omc_products.id','left')
                 
-                ->order_by('omc_products.lang_id','ASC')
-                ->order_by('omc_products.product_order');
+                //->order_by('omc_products.lang_id','ASC')
+                ->order_by('omc_products.product_order','DESC');
+       // $this->db->where('shop_sanphamkho.kho_id',$id);
+        $Q = $this->db->get('omc_products',$num,$offset);
+      
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    	}
+    	
+    	if($id==3)
+    	{
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop.total')
+                ->join('omc_category','omc_category.id=omc_products.category_id','left')
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
+                ->join('(SELECT shop_sanphamkho.id as id, shop_sanphamkho.total as total 
+        		FROM shop_sanphamkho Where shop_sanphamkho.kho_id=3 ) AS shop','shop.id=omc_products.id','left')
+                
+                //->order_by('omc_products.lang_id','ASC')
+                ->order_by('omc_products.product_order','DESC');
+       // $this->db->where('shop_sanphamkho.kho_id',$id);
+        $Q = $this->db->get('omc_products',$num,$offset);
+      
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    	}
+    	
+    	if($id==100)
+    	{
+    	$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop.total')
+                ->join('omc_category','omc_category.id=omc_products.category_id','left')
+                ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
+        		->join('(SELECT shop_sanphamkho.id as id, SUM(shop_sanphamkho.total) as total 
+        		FROM shop_sanphamkho GROUP BY shop_sanphamkho.id ) AS shop','shop.id=omc_products.id','left')         
+                                
+               // ->order_by('omc_products.lang_id','ASC')
+                ->order_by('omc_products.product_order','DESC');
         $Q = $this->db->get('omc_products',$num,$offset);
         if ($Q->num_rows() > 0)
         {
@@ -217,13 +271,13 @@ class MProducts extends CI_Model
         */  
         
         // for cecilieokada, one language this is ok. If it is multilang, then change back to the above one
-        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName,shop_sanphamkho.total ');     	      
+        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName,shop.total ');     	      
         $this->db->join('omc_category','omc_category.id=omc_products.category_id','left');
         $this->db->join('omc_languages','omc_languages.id=omc_products.lang_id','left') ;
-        $this->db->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left');         
+        $this->db->join('(SELECT shop_sanphamkho.id as id, SUM(shop_sanphamkho.total) as total FROM shop_sanphamkho GROUP BY shop_sanphamkho.id ) AS shop','shop.id=omc_products.id','left');         
         
-        $this->db ->order_by('omc_products.lang_id',"ASC");    
-        $this->db->order_by('omc_products.product_order');
+       // $this->db ->order_by('omc_products.lang_id',"ASC");    
+        $this->db->order_by('omc_products.product_order','DESC');
                 
         $Q = $this->db->get('omc_products',$num,$offset);
         
@@ -245,8 +299,8 @@ class MProducts extends CI_Model
        
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')                         
-                ->order_by('omc_products.id')
-                ->order_by('omc_products.product_order');
+              //  ->order_by('omc_products.id')
+                ->order_by('omc_products.product_order','DESC');
                 
         $Q = $this->db->get('omc_products');
     	return $Q->num_rows();
@@ -254,29 +308,32 @@ class MProducts extends CI_Model
     
 	function getNumSortProducts($id){
 		
-		if($id!=100)
+		if($id==1)
 		{
-    		$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
+    		$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop.total')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
-                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                ->join('(SELECT shop_sanphamkho.id as id, shop_sanphamkho.total as total 
+        		FROM shop_sanphamkho Where shop_sanphamkho.kho_id=1 ) AS shop','shop.id=omc_products.id','left')
                 
               //  ->order_by('omc_products.lang_id','ASC')
-                ->order_by('omc_products.product_order');
-       // $this->db->where('shop_sanphamkho.kho_id',$id);
+                ->order_by('omc_products.product_order','DESC');
+        //$this->db->where('shop_sanphamkho.kho_id',$id);
                 
         $Q = $this->db->get('omc_products');
     	return $Q->num_rows();
 		}//end if
-		else 
+		
+		if($id==100) 
 		{
-		$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop_sanphamkho.total')
+		$this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName, shop.total')
                 ->join('omc_category','omc_category.id=omc_products.category_id','left')
                 ->join('omc_languages','omc_languages.id=omc_products.lang_id','left')
-                ->join('shop_sanphamkho','shop_sanphamkho.id=omc_products.id','left')
+                ->join('(SELECT shop_sanphamkho.id as id, SUM(shop_sanphamkho.total) as total 
+        		FROM shop_sanphamkho GROUP BY shop_sanphamkho.id ) AS shop','shop.id=omc_products.id','left')
                 
                // ->order_by('omc_products.lang_id','ASC')
-                ->order_by('omc_products.product_order');        
+                ->order_by('omc_products.product_order','DESC');        
                 
         $Q = $this->db->get('omc_products');
     	return $Q->num_rows();

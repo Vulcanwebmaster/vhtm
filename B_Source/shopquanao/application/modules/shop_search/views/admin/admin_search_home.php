@@ -4,9 +4,9 @@
 	<form name="search" action="<?php echo base_url()?>index.php/shop_search/admin/search" method="post"> 
 	<div>
 
-	<?php echo 'Tên sản phẩm:'?> <input name="tensanpham" type="text" id="tensanpham" value="" >
-	<?php echo 'Mã sản phẩm:'?><input name="masanpham" type="text" id="masanpham" value="" >
-	<?php echo 'Mã kho:'?><input name="makho" type="text" id="makho" value="" >
+	<?php echo 'Tên sản phẩm:'?> <input name="tensanpham" type="text" id="tensanpham" value="<?php echo $tensanpham?>" >
+	<?php echo 'Mã sản phẩm:'?><input name="masanpham" type="text" id="masanpham" value="<?php echo $masanpham?>" >
+	<?php echo 'Mã kho:'?><input name="makho" type="text" id="makho" value="<?php echo $makho?>" >
 	<input type="submit" value="Search" />	
 	</div>
     </form>       

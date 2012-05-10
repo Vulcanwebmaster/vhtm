@@ -34,6 +34,10 @@ class Admin extends Shop_Admin_Controller
     {
         // Setting variables
         $data['title'] = "Tìm kiếm sản phẩm";
+        $data['makho'] = '';
+    	$data['masanpham'] = '';
+    	$data['tensanpham'] = '';
+       
         //$data['kho'] = $this->MKho->getKho();
         
         //Author tienlx: pagination reviews
@@ -72,7 +76,9 @@ class Admin extends Shop_Admin_Controller
  		$tensanpham= $this->input->post('tensanpham',TRUE);
     	$masanpham= $this->input->post('masanpham',TRUE);
     	$makho= $this->input->post('makho',TRUE);
-    	//$data['gtsearch'] = $this->_fields();
+    	$data['makho'] = $makho;
+    	$data['masanpham'] = $masanpham;
+    	$data['tensanpham'] = $tensanpham;
 
     	//Author tienlx: pagination reviews
         $config['base_url'] = base_url()."index.php"."/"."shop_search"."/"."admin"."/"."search";

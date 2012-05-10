@@ -95,10 +95,13 @@ class Admin extends Shop_Admin_Controller
     function sortKho()
     {
     	$data['title'] = "Quản lý sản phẩm theo kho";    	
-        $data['id']=$this->input->post('giatrikho');   
+        //$data['id']=$this->input->post('giatrikho');   
     	//Author tienlx: pagination reviews
+    	
+    	$kho_id=$this->input->post('giatrikho');   
+    	
         $config['base_url'] = base_url()."index.php"."/"."products"."/"."admin"."/"."sortKho";
-        $config['total_rows']= $this->MProducts->getNumSortProducts($this->input->post('giatrikho'));
+        $config['total_rows']= $this->MProducts->getNumSortProducts($kho_id);
        	$config['per_page']= '10';
         $config['uri_segment'] = 4; 
         $config['cur_tag_open'] = '<span style="color:red">';
@@ -108,7 +111,7 @@ class Admin extends Shop_Admin_Controller
         $data['pagination'] = $this->pagination->create_links();        
         //End author tienlx    	
     	               
-        $data['products'] = $this->MProducts->getProductsbyKho($config['per_page'],$this->uri->segment('4'),$this->input->post('giatrikho'));
+        $data['products'] = $this->MProducts->getProductsbyKho($config['per_page'],$this->uri->segment('4'),$kho_id);
         $data['categories'] = $this->MCats->getCategoriesDropDown();
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -268,28 +271,10 @@ class Admin extends Shop_Admin_Controller
       		$total1=$this->input->post('kho1',TRUE);
             $total2=$this->input->post('kho2',TRUE);
             $total3=$this->input->post('kho3',TRUE); 
-            $code  =$this->input->post('code',TRUE);
             
-            $this->db->select('id');            
-            $this->db->where('code',$code);
-            $this->db->from('omc_products');
-            $Q = $this->db->get();
-               
-            if ($Q->num_rows() > 0)
-       		 {
-	            foreach ($Q->result_array() as $row)
-	            {
-	                $mang[] = $row;
-	            }
-        	 }
-       		$Q->free_result();
-       		
-       		foreach ($mang as $key => $list)
-       		{
-            if($total1<>0){$this->MProducts->updateSanphamkho(1,$list['id'],$total1);}
-            if($total2<>0) {$this->MProducts->updateSanphamkho(2,$list['id'],$total2);}
-            if($total3<>0){$this->MProducts->updateSanphamkho(3,$list['id'],$total3);}
-       		}
+            if($total1>=0){$this->MProducts->updateSanphamkho(1,$this->uri->segment(4),$total1);}
+            if($total2>=0) {$this->MProducts->updateSanphamkho(2,$this->uri->segment(4),$total2);}
+            if($total3>=0){$this->MProducts->updateSanphamkho(3,$this->uri->segment(4),$total3);}      	
        		
             flashMsg('success','Product updated');
             redirect($this->module.'/admin/index','refresh');
