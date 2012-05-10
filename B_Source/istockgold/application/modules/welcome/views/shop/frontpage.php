@@ -275,7 +275,7 @@
    				 '.$this->session->flashdata('error').'</a></div>';
                 }
                 ?>
-                              
+                  <?php echo validation_errors(); ?>            
                 <div id="register-center">
                     <table cellspacing="15" style="font-size:12px; color:#414142; font-family:Arial">
                         <tr>
@@ -288,7 +288,8 @@
                                 <span>*</span> Your name:
                             </td>
                             <td>
-                                <input name="your_name" type="text" id="your_name" type="text" style="width:290px"/>
+                            	<?php echo form_error('username'); ?>
+                                <input name="your_name" type="text" id="your_name" type="text" style="width:290px" ?>"/>
                             </td>
                         </tr>
                         <tr>

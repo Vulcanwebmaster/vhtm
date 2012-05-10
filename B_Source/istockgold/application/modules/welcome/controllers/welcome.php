@@ -1511,56 +1511,58 @@ class Welcome extends Shop_Controller
     function review()
     {
     	//kiem tra nhap
-		$this->form_validation->set_rules('your_name','your_name','required');
-		$this->form_validation->set_rules('location','location','required');
-		$this->form_validation->set_rules('your_order','your_order','required');
-		$this->form_validation->set_rules('review_title','review_title','required');
-		$this->form_validation->set_rules('comment','comment','required');
-		$this->form_validation->set_rules('ratingstarvalue','ratingstarvalue','required');
-	
+		$this->form_validation->set_rules('your_name','Your Name','required');
+		$this->form_validation->set_rules('location','Your location','required');
+		$this->form_validation->set_rules('your_order','Your order number','required');
+		$this->form_validation->set_rules('review_title','Your review title','required');
+		$this->form_validation->set_rules('comment','Your comment','required');
+		$this->form_validation->set_rules('ratingstarvalue','Your rating','required');
+		
         if($this->form_validation->run())
         {
+
+			$your_name = $this->input->post('your_name');
+			$location = $this->input->post('location');
+			$your_email = $this->input->post('your_email');
+			$your_phone = $this->input->post('your_phone');
+			$your_order= $this->input->post('your_order');
+			$review_title = $this->input->post('review_title');
+			$comment = $this->input->post('comment');
+			$rating = $this->input->post('ratingstarvalue');		
+					
+			$this->db->where('order_code',$your_order);
+			$query=$this->db->get('is_order');
+			$row=$query->num_rows();
+		
+			//kiem tra ordercode trong csdl
+			if ($row<>0)
+			{
+			$data = array(
+				'name' 			=> $your_name,
+				'location' 		=> $location,
+	            'email' 		=> $your_email,
+	            'phone_number'  => $your_phone,
+				'title' 		=> $review_title,
+				'comment' 		=> $comment,
+				'rating'		=> $rating
 			
-		$your_name = $this->input->post('your_name');
-		$location = $this->input->post('location');
-		$your_email = $this->input->post('your_email');
-		$your_phone = $this->input->post('your_phone');
-		$your_order= $this->input->post('your_order');
-		$review_title = $this->input->post('review_title');
-		$comment = $this->input->post('comment');
-		$rating = $this->input->post('ratingstarvalue');		
-				
-		$this->db->where('order_code',$your_order);
-		$query=$this->db->get('is_order');
-		$row=$query->num_rows();
-		
-		//kiem tra ordercode trong csdl
-		if ($row<>0)
-		{		
-		$data = array(
-			'name' 			=> $your_name,
-			'location' 		=> $location,
-            'email' 		=> $your_email,
-            'phone_number'  => $your_phone,
-			'title' 		=> $review_title,
-			'comment' 		=> $comment,
-			'rating'		=> $rating
-		
- 		);
+	 		);
  		
- 		$this->db->set('date','NOW()',FALSE);
-		$this->db->insert('is_reviews',$data);	
+	 		$this->db->set('date','NOW()',FALSE);
+			$this->db->insert('is_reviews',$data);	
 		
 		//hien thi thong bao
 		}
-		$this->session->set_flashdata('message',' * Successful ');
-		redirect('welcome');		
+			$this->session->set_flashdata('message',' * Successful ');
+			redirect('welcome');		
         }
         else 
         {
-         $this->session->set_flashdata('error','* Error Input');
-         redirect('welcome');
+			$warning = validation_errors();
+	         $this->session->set_flashdata('error',$warning);
+	         redirect('welcome');
         }
+        redirect('welcome');
 	
     }
     //ham lay review tu csdl by An    
