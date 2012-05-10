@@ -172,7 +172,7 @@ self.setInterval("time()",3000);
      
             <div id="lastest-exchange">
                 <div style="height:35px"></div>
-                <table style="margin-top:-5px; border-right:solid 1px silver; border-left:solid 1px silver">
+                <table style="margin-top:-5px; border-right:solid 1px silver; border-left:solid 1px silver; font-size:11px">
                     <tr style="font-weight:bold">
                         <td>Date</td>
                         <td>Action</td>
