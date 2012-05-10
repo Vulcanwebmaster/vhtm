@@ -31,25 +31,25 @@ class Jquery_pagination{
 	var $per_page	 		= 10; // Max number of items you want shown per page
 	var $num_links			=  2; // Number of "digit" links to show before/after the currently viewed page
 	var $cur_page	 		=  0; // The current page being viewed
-	var $first_link   		= '&lsaquo; First';
-	var $next_link			= '&gt;';
-	var $prev_link			= '&lt;';
+	var $first_link			= '&lsaquo; First';
+	var $next_link			= 'Next';
+	var $prev_link			= 'Previous';
 	var $last_link			= 'Last &rsaquo;';
 	var $uri_segment		= 3;
 	var $full_tag_open		= '';
 	var $full_tag_close		= '';
-	var $first_tag_open		= '';
+	var $first_tag_open		= '&nbsp;';
 	var $first_tag_close	= '&nbsp;';
 	var $last_tag_open		= '&nbsp;';
-	var $last_tag_close		= '';
-	var $cur_tag_open		= '&nbsp;<b>';
-	var $cur_tag_close		= '</b>';
+	var $last_tag_close		= '&nbsp;';
+	var $cur_tag_open		= '&nbsp;<a class="bt" style="font-size:12px;border-radius:5px; color: black; background-color:#a3d8f8; padding: 5px 10px">';
+	var $cur_tag_close		= '</a>&nbsp;';
 	var $next_tag_open		= '&nbsp;';
 	var $next_tag_close		= '&nbsp;';
 	var $prev_tag_open		= '&nbsp;';
-	var $prev_tag_close		= '';
+	var $prev_tag_close		= '&nbsp;';
 	var $num_tag_open		= '&nbsp;';
-	var $num_tag_close		= '';
+	var $num_tag_close		= '&nbsp;';
 	
 	// Added By Tohin
 	var $js_rebind 			= '';
@@ -129,7 +129,7 @@ class Jquery_pagination{
 		if ($num_pages == 1)
 		{
             $info = 'Showing : ' . $this->total_rows;
-			return $info;
+			return "";
 		}
 
 		// Determine the current page number.		
@@ -187,7 +187,7 @@ class Jquery_pagination{
             $info .= $this->total_rows;
 
          $info .= ' of ' . $this->total_rows . ' | ';
-
+		 $info = "";
          $output .= $info;
       }
 
@@ -263,7 +263,7 @@ class Jquery_pagination{
         if( $this->additional_param == '' )
         	$this->additional_param = "{'t' : 't'}";
 
-		return "<a href=\"\"
+		return "<a class=\"bt\" style=\"font-size:12px;border-radius:5px; color: black; background-color:silver; padding: 5px 10px\" href=\"\"
 		         " . $this->anchor_class . "
 					onclick=\"$.post('". $this->base_url . $count ."', ". $this->additional_param .", function(data){
 					$('". $this->div . "').html(data);" . $this->js_rebind ."; }); return false;\">"

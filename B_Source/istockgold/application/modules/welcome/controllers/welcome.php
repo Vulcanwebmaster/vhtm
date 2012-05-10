@@ -120,26 +120,11 @@ class Welcome extends Shop_Controller
         //End author : tienlx
         
 		//reviews by An
-        //$data['reviews']=$this->getReviews();
-        //end
         
         //Author tienlx: pagination reviews
-        /*if (isset($_POST['show_id'])){
-        	$config['per_page']= $_POST['show_id'];
-        	$_SESSION['show']= $config['per_page'];
-        }
-        else{
-        	if(isset($_SESSION['show']))
-        	{
-        		$config['per_page']= $_SESSION['show'];
-        	}
-        	else{
-        		$config['per_page']= '3';
-        	}
-        }*/
-        //$config['uri_segment'] = 3;      
         $config['total_rows']= $this->getNumReviews(); 
-		$config['per_page']= '3';  
+		if (isset($_SESSION['show'])) $config['per_page']= $_SESSION['show'];
+		else $config['per_page']= 5;
 		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
 		$config['div'] = '#content3';
 	    $this->jquery_pagination->initialize($config);
@@ -154,11 +139,25 @@ class Welcome extends Shop_Controller
     function ajax_review($offset = 0)
     {
     	$config['total_rows']= $this->getNumReviews(); 
-		$config['per_page']= '3';
+		if (isset($_SESSION['show'])) $config['per_page']= $_SESSION['show'];
+		else $config['per_page']= 5;
 		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
 		$config['div'] = '#content3';
 	    $this->jquery_pagination->initialize($config);
 		$data['reviews'] = $this->MNews->getReviews($config['per_page'], $offset);
+		$data['pagination'] = $this->jquery_pagination->create_links();
+        $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data); 
+    }
+    
+	function ajax_review_show($offset = 0)
+    {
+    	$config['total_rows']= $this->getNumReviews(); 
+		$config['per_page']= $offset;
+		$_SESSION['show']= $config['per_page'];
+		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
+		$config['div'] = '#content3';
+	    $this->jquery_pagination->initialize($config);
+		$data['reviews'] = $this->MNews->getReviews($config['per_page'], 0);
 		$data['pagination'] = $this->jquery_pagination->create_links();
         $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data); 
     }

@@ -157,18 +157,46 @@
                 </div>
                 
                 <div id="news-control-panel">
-                
-                    <span style="font-size:12px; font-weight:bold">Show</span> 
-                    <form name="your_form_name" method="post" action="<?php echo base_url();?>">
-                        <select id="show_id" name = "show_id" onchange="document.your_form_name.submit()">
-                        	<option value="1">1</option>
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                        </select>
-                    </form>
+                	<script type="text/javascript"
+                    src="<?php echo base_url()?>assets/js/jquery-1.6.2.min.js">
+                    </script> 
+                    <span style="font-size:12px; font-weight:bold">Show</span>
+                    <select id="show_id" name = "show_id">
+                            <option <?php if (isset($_SESSION['show'])) if ($_SESSION['show'] == 5) echo 'selected = "selected"'?> id = "option5" value = "5" >5</option>
+                            <option <?php if (isset($_SESSION['show'])) if ($_SESSION['show'] == 10) echo 'selected = "selected"'?> id ="option10" value="10">10</option>
+                            <option <?php if (isset($_SESSION['show'])) if ($_SESSION['show'] == 20) echo 'selected = "selected"'?> id ="option20" value="20">20</option>
+                            <option <?php if (isset($_SESSION['show'])) if ($_SESSION['show'] == 40) echo 'selected = "selected"'?> id ="option40" value="40">40</option>
+                    </select>
                     <script type="text/javascript">
+                    $('#show_id').change(function(){
+                    	var value = "hu";
+                    	var select = document.getElementById('show_id');
+                    	if (select)
+                    	{
+                    	   if (select.selectedIndex == 0)
+                    	   {
+                    		   $.post('<?php echo base_url()?>index.php/welcome/ajax_review_show/5', {'t' : 't'}, 
+                                   	function(data){$('#content3').html(data);; });
+                    	   } else 
+                    		   if (select.selectedIndex == 1)
+                        	   {
+                    			   $.post('<?php echo base_url()?>index.php/welcome/ajax_review_show/10', {'t' : 't'}, 
+                                          	function(data){$('#content3').html(data);; });
+                        	   } else
+                        		   if (select.selectedIndex == 2)
+                            	   {
+                        			   $.post('<?php echo base_url()?>index.php/welcome/ajax_review_show/20', {'t' : 't'}, 
+                                              	function(data){$('#content3').html(data);; });
+                            	   } else
+                            		   if (select.selectedIndex == 3)
+                                	   {
+                            			   $.post('<?php echo base_url()?>index.php/welcome/ajax_review_show/40', {'t' : 't'}, 
+                                                  	function(data){$('#content3').html(data);; });
+                                	   }    
+                    	}
+                    });
+                    </script>
+                        <script type="text/javascript">
                     	$(document).ready(function(){
 							$('.bt').mouseenter(function(){								
 								$(this).css('background-color','#C1E0FF');
@@ -178,9 +206,6 @@
 								});
                         	});
                     </script>
-                    <script type="text/javascript"
-                    src="<?php echo base_url()?>assets/js/jquery-1.6.2.min.js">
-                    </script> 
                     <div style="float:right">
 						<?php echo $pagination;?>                   
                     </div>
