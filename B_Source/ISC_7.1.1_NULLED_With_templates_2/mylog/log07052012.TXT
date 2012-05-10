@@ -1,0 +1,3 @@
+﻿* Fix lỗi: TYPE=MyISAM
+Sửa lại ở cái vị trí search được với từ khóa TYPE=MyISAM
+Bằng ENGINE=MyISAM
