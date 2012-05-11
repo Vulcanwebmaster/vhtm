@@ -244,12 +244,7 @@ class Admin extends Shop_Admin_Controller
             flashMsg('notice','Mời bạn nhập số liệu sản phẩm');
             $this->load->view($this->_container,$data);
         }
-        
-       
-        
-        
-        
-        
+
     }
 
 
@@ -263,6 +258,8 @@ class Admin extends Shop_Admin_Controller
         $data['giatrikho']=$this->MProducts->getGiatriKho($this->uri->segment(4));
         if ($this->input->post('name')!='')
         {
+        	if($this->input->post('code')!='')
+        	{
         	if($this->MProducts->checkMaHang($this->input->post('code'))==False)
             {
         	
@@ -321,7 +318,46 @@ class Admin extends Shop_Admin_Controller
             $data['module'] = $this->module;
             flashMsg('error','Mã sản phẩm đã được đăng ký, mời nhập lại');
             $this->load->view($this->_container,$data);
+            }           
+        }//end ma hang
+        else
+        {
+            // similar to category
+            //$id = $this->uri->segment(4);
+            $data['title'] = $this->lang->line('kago_edit')." ".$this->lang->line('kago_product');
+            // get all the languages
+            $data['languages'] =$this->MLangs->getLangDropDownWithId();
+            // get translated languages
+            // For other languages segment 4 is omc_products.table_id, table_id is id of english(original), omc_menu.id
+            // for english is omc_products.id
+            // $table_id is used to find translated languages and it is used to get info of english menu
+            $table_id = $this->uri->segment(4);
+            $data['translanguages'] =$this->MLangs->getTransLang($this->module,$table_id);
+            $data['module']=$this->module;
+            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_edit";
+            $product = $this->MKaimonokago->getInfo($this->module, $id);
+            $data['product'] = $product;
+            // get categories by lang
+            $lang_id = $product['lang_id'];
+            $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
+            // I am not using colors and sizes any more. But they are available if you want to use them.
+            $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
+            $data['assigned_sizes'] = $this->MProducts->getAssignedSizes($id);
+            // I am loading product_right here which gives instructions.
+            $data['right'] = 'admin/product_right';
+            if (!count($data['product']))
+            {
+                redirect($this->module.'/admin/index','refresh');
             }
+            // 	Set breadcrumb
+            $this->bep_site->set_crumb($this->lang->line('kago_edit'),$this->module.'/admin/edit');
+            $data['header'] = $this->lang->line('backendpro_access_control');
+            $data['cancel_link']= $this->module."/admin/index/";
+            $data['module'] = $this->module;
+            flashMsg('error','bạn phải nhập mã hàng');
+            $this->load->view($this->_container,$data);
+        }
+        
         }
         else
         {

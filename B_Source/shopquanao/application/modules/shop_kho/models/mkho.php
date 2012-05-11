@@ -93,8 +93,7 @@ class MKho extends CI_Model
     
 	function getInfo($id)
     {
-        $data = array();              
-       
+        $data = array();                     
         $options = array('kho_id' =>$id);
         $Q = $this->db->get_where('shop_kho',$options,1);
         if ($Q->num_rows() > 0)
