@@ -15,6 +15,24 @@
 </div>
 <div class="clearboth">&nbsp;</div>
 
+<div align="left">
+<form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
+<select name = "giatrikho" onchange = "formkho.submit();">
+	<option value="0"><?php echo 'Chọn kho'?></option>
+	<option value="100"><?php echo 'Tất cả'?></option>
+	<option value="1">Kho 1</option>
+	<option value="2">Kho 2</option>
+	<option value="3">Kho 3</option>	
+</select>
+</form>
+</div>
+
+<div align="right" style="float:right">
+	<?php echo $pagination;?>                   
+</div>
+
+<br/>
+
 <?php
 $this->load->view('admin/admin_home_cont');
 ?>

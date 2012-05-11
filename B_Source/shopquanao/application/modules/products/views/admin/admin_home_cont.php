@@ -8,7 +8,7 @@ if (count($products))
     
 ?>
 
-<div align="left">
+<!--<div align="left">
 <form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
 <select name = "giatrikho" onchange = "formkho.submit();">
 	<option value="0"><?php echo 'Chọn kho'?></option>
@@ -20,11 +20,11 @@ if (count($products))
 </form>
 </div>
 
- <div align="right" style="float:right">
+<div align="right" style="float:right">
 	<?php echo $pagination;?>                   
 </div>
 
-<br/>
+<br/> -->
 
 <?php
 	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
@@ -89,5 +89,18 @@ if (count($products))
 	echo "</tbody></table>";
 	
 }//end count
+
+else 
+{
+	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
+	echo "<thead>\n<tr valign='top'>\n";
+	echo "<th>".'ID Sản Phẩm'."</th>\n<th>".'Tên sản phẩm'.
+            "</th><th>".'Mã sản phẩm'."</th><th>".'Số lượng'.
+            "</th><th>".'Trạng thái'."</th><th>".'Loại sản phẩm'.
+			"</th><th>".'Đặc điểm'."</th><th>".'Giá tiền'.
+            "</th><th>".'Ngôn ngữ'."</th><th>".'Thực hiện'."</th>\n";
+	echo "</tr>\n</thead>\n<tbody>\n";
+	echo "</tbody></table>";
+}
 
 ?>
