@@ -9,7 +9,7 @@ if (count($orders))
 {
 	echo '<table id="tablesorter_product" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
 	echo "<thead>\n<tr valign='top'>\n";
-	echo "<th>&nbsp;</th><th>Order ID</th>\n<th>First name</th><th>Last name</th><th>Email</th><th>Total</th><th>Telephone</th><th>Order Date</th><th>Delivery Date</th><th>Payment Date</th><th>City</th><th>Actions</th>\n";
+	echo "<th>&nbsp;</th><th>ID Đặt hàng</th>\n<th>Họ</th><th>Tên</th><th>Email</th><th>Số Lượng</th><th>Số điện thoại</th><th>Ngày đặt hàng</th><th>Ngày giao hàng</th><th>Ngày giao tiên</th><th>Thành phố</th><th>Thực hiện</th>\n";
 	echo "</tr>\n</thead>\n<tbody>\n";
 	foreach ($orders as $key => $list)
 	{

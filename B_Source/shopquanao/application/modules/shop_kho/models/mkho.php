@@ -26,6 +26,15 @@ class MKho extends CI_Model
         return $data;
     }
     
+	function checkMaKho($kho_code)
+    {
+    	//$this->db->select('kho_code');
+		$this->db->where('kho_code',$kho_code);
+		$Q = $this->db->get('shop_kho');
+    	if($Q->num_rows()>0){return True;}
+    	else return False;
+    }
+    
 	function checkOrphans($id)
     {
         $data = array();
@@ -82,25 +91,12 @@ class MKho extends CI_Model
     }
     
     
-	function getInfo($module, $id, $lang_id=NULL)
+	function getInfo($id)
     {
-        $data = array();
-        $table = $module;
-        if($module=='shop_kho')
-        {
-            $where = 'kho_id';
-        }
-        else 
-        {
-            $where = 'id';
-        }
-        
-        if(!empty($lang_id))
-        {
-            $this->db->where('lang_id', $lang_id); 
-        }
-        $options = array($where =>$id);
-        $Q = $this->db->get_where($table,$options,1);
+        $data = array();              
+       
+        $options = array('kho_id' =>$id);
+        $Q = $this->db->get_where('shop_kho',$options,1);
         if ($Q->num_rows() > 0)
         {
             $data = $Q->row_array();

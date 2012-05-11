@@ -3,13 +3,13 @@
 <?php
 
 echo form_open('shop_kho/admin/create');
-echo "\n<table id='preference_form'><tr><td class='label'><label for='kho_name'>*".$this->lang->line('webshop_name')."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='kho_name'>*Tên kho: </label></td>\n";
 $data = array('name'=>'kho_name','id'=>'kho_name','class'=>'text','value'=>set_value('kho_name'));
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='kho_code'>*".$this->lang->line('webshop_code')."</label></td>\n";
+echo "<tr><td class='label'><label for='kho_code'>*Mã kho: </label></td>\n";
 $data = array('name'=>'kho_code','id'=>'kho_code','class'=>'text','value'=>set_value('kho_code'));
 echo "<td>";
 echo form_input($data);

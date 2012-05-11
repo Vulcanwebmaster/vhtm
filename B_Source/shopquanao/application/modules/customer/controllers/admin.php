@@ -22,7 +22,7 @@ class Admin extends Shop_Admin_Controller
 
     function index()
     {
-    	$data['title'] = "Manage customer";
+    	$data['title'] = "Quản lý khách hàng";
     	$data['customers'] = $this->MKaimonokago->getAllSimple($this->module);
         //$data['customers'] = $this->MCustomers->getAllCustomers();
     	$data['header'] = $this->lang->line('backendpro_access_control');

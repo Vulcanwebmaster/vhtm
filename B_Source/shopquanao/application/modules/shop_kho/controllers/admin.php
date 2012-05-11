@@ -32,7 +32,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quanly Kho";
+        $data['title'] = "Quản lý kho";
         $data['kho'] = $this->MKho->getKho();
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -53,15 +53,13 @@ class Admin extends Shop_Admin_Controller
 
 function create()
     {
-        if ($this->input->post('kho_name'))
+        if ($this->input->post('kho_name')!='')
         {
-            $rules['kho_name'] = 'required';
-            $rules['kho_code'] = 'required';                    
-            $this->form_validation->set_rules($rules);
-
-            if ($this->form_validation->run() == FALSE)
-            {
-                $this->form_validation->output_errors();
+            
+            if ($this->input->post('kho_code')!='')
+            {                             
+                if($this->MKho->checkMaKho($this->input->post('kho_code')))
+                {
                 //redirect($this->module.'/admin/create');
                 $data['title'] = "Tạo Kho";
                 // Set breadcrumb
@@ -69,27 +67,42 @@ function create()
                 $data['header'] = $this->lang->line('backendpro_access_control');
                 $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_create";
                 $data['cancel_link']= $this->module."/admin/index/";
+                flashMsg('error','Mã kho đã được đăng ký, mời nhập lại');
                 $data['module'] = $this->module;
                 $this->load->view($this->_container,$data);
+                }
+                else
+                {
+               	$data = $this->_fields();
+                $this->MKho->addKho($data);
+                //$this->MCustomers->addCustomer();
+                flashMsg('success','Tạo kho thành công');
+                redirect($this->module.'/admin/index','refresh');
+                }
             }
             else
             {
                 
-                $data = $this->_fields();
-                $this->MKho->addKho($data);
-                //$this->MCustomers->addCustomer();
-                flashMsg('success','Kho được tạo');
-                redirect($this->module.'/admin/index','refresh');
-            }
-        }
-        else
-        {
-            $data['title'] = "Tạo Kho";
+            $data['title'] = "Tạo kho";
             // Set breadcrumb
             $this->bep_site->set_crumb($this->lang->line('kago_create')." ".$this->lang->line('kago_kho'),$this->module.'/admin/create');
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_create";
             $data['cancel_link']= $this->module."/admin/index/";
+            flashMsg('error','bạn phải nhập mã kho');
+            $data['module'] = $this->module;
+            $this->load->view($this->_container,$data);
+            }
+        }
+        else
+        {
+            $data['title'] = "Tạo kho";
+            // Set breadcrumb
+            $this->bep_site->set_crumb($this->lang->line('kago_create')." ".$this->lang->line('kago_kho'),$this->module.'/admin/create');
+            $data['header'] = $this->lang->line('backendpro_access_control');
+            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_create";
+            $data['cancel_link']= $this->module."/admin/index/";
+            flashMsg('notice','Mời bạn nhập vào tên kho và mã kho');
             $data['module'] = $this->module;
             $this->load->view($this->_container,$data);
         }
@@ -99,33 +112,67 @@ function create()
 
     function edit($id=0)
     {
-        if ($this->input->post('kho_name'))
+    	$kho_id=$this->input->post('kho_id');
+        if ($this->input->post('kho_name')!='')
         {
-            $rules['kho_name'] = 'required';
-            $rules['kho_code'] = 'required';
-            //$rules['passconf'] =  'required';
-           
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == FALSE)
-            {
-                $this->form_validation->output_errors();
-                $customer_id = $this->input->post('kho_id');
-                redirect($this->module.'/admin/edit/'.$kho_id,'refresh');
+            
+            if ($this->input->post('kho_code')=='')
+            {                      
+            	//$this->form_validation->output_errors();
+	            
+	            $data['title'] = "Sửa Kho";
+	            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_edit";
+	            $data['kho'] = $this->MKho->getInfo($kho_id);
+	            //$data['customer'] = $this->MCustomers->getCustomer($id);
+	            if (!count($data['kho']))
+	            {
+	                redirect($this->module.'/kho/index','refresh');
+	            }
+	            $data['header'] = $this->lang->line('backendpro_access_control');
+	            // Set breadcrumb
+	            $this->bep_site->set_crumb($this->lang->line('kago_edit')." ".$this->lang->line('kago_kho'),$this->module.'/admin/edit');
+	            $data['cancel_link']= $this->module."/admin/index/";
+	            flashMsg('error','Bạn chưa nhập mã kho');
+	            $data['module'] = $this->module;
+	            $this->load->view($this->_container,$data);
             }
             else
-            {
+            {	
+            	if ($this->MKho->checkMaKho($this->input->post('kho_code'))==False)
+            	{
                 $data = $this->_fields();
                 $this->MKho->updateKho($data);
                 //$this->MCustomers->updateCustomer();
                 flashMsg('success','Kho đã được sửa');
                 redirect($this->module.'/admin/index','refresh');
+            	}
+              	else 
+            	{
+
+                $data['title'] = "Sửa Kho";
+	            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_edit";
+	            $data['kho'] = $this->MKho->getInfo($kho_id);
+	            //$data['customer'] = $this->MCustomers->getCustomer($id);
+	            if (!count($data['kho']))
+	            {
+	                redirect($this->module.'/kho/index','refresh');
+	            }
+	            $data['header'] = $this->lang->line('backendpro_access_control');
+	            // Set breadcrumb
+	            $this->bep_site->set_crumb($this->lang->line('kago_edit')." ".$this->lang->line('kago_kho'),$this->module.'/admin/edit');
+	            $data['cancel_link']= $this->module."/admin/index/";
+	            $data['module'] = $this->module;
+	            flashMsg('error','Mã kho đã được đăng ký, mời nhập lại');
+	            $this->load->view($this->_container,$data);
+            	}
             }
+          
         }
         else
         {
             $data['title'] = "Sửa Kho";
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_edit";
-            $data['kho'] = $this->MKho->getInfo($this->module,$id);
+            $data['kho'] = $this->MKho->getInfo($kho_id);
             //$data['customer'] = $this->MCustomers->getCustomer($id);
             if (!count($data['kho']))
             {

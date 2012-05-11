@@ -3,7 +3,7 @@
 <div class="buttons">
 	<a href="<?php print  site_url('shop_kho/admin/create')?>">
     <?php print $this->bep_assets->icon('add');?>
-    <?php print $this->lang->line('kago_create')." ".$this->lang->line('kago_kho'); ?>
+    <?php print "Tạo kho mới"; ?>
     </a>
 </div>
 <div class="clearboth">&nbsp;</div>
@@ -13,13 +13,13 @@
 if (count($kho)){
     echo "<table id='tablesorter' class='tablesorter' border='1' cellspacing='0' cellpadding='3' width='100%'>\n";
     echo "<thead>\n<tr valign='top'>\n";
-    echo "<th>Kho ID</th>\n<th>Ma so Kho</th><th>Ten Kho</th><th>Actions</th>\n";
+    echo "<th>Kho ID</th>\n<th>Tên Kho</th><th>Mã số Kho</th><th>Thực hiện</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($kho as $key => $list){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['kho_id']."</td>\n";
-        echo "<td align='center'>".$list['kho_code']."</td>\n";
         echo "<td align='center'>".$list['kho_name']."</td>\n";
+        echo "<td align='center'>".$list['kho_code']."</td>\n";       
         echo "<td align='center'>";
         echo anchor('shop_kho/admin/edit/'.$list['kho_id'],$this->bep_assets->icon('pencil'));
         //echo " | ";

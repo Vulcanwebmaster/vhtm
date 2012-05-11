@@ -38,19 +38,19 @@ $lang['general_check_out'] = 'Go to check out';
 
 
 /* All Main Controller Names and menu items */
-$lang['backendpro_general'] = 'General';
+$lang['backendpro_general'] = 'Quản lý chung';
 $lang['backendpro_admins'] = 'Admins';
 $lang['backendpro_calendar'] = 'Calendar';
-$lang['backendpro_category'] = 'Category';
-$lang['backendpro_slideshow'] = 'Slideshow';
-$lang['backendpro_customers'] = 'Customers';
-$lang['backendpro_menus'] = 'Menus';
+$lang['backendpro_category'] = 'Quản lý loại sản phẩm';
+$lang['backendpro_slideshow'] = 'Quản lý Slideshow';
+$lang['backendpro_customers'] = 'Quản lý khách hàng';
+$lang['backendpro_menus'] = 'Quản lý Menu';
 $lang['backendpro_messages'] = 'Messages';
-$lang['backendpro_orders'] = 'Orders';
+$lang['backendpro_orders'] = 'Quản lý đặt hàng';
 $lang['backendpro_pages'] = 'Pages';
 $lang['backendpro_products'] = 'Quản lý sản phẩm';
 $lang['backendpro_subscribers'] = 'Subscribers';
-$lang['backendpro_file_manager'] = 'File Manager';
+$lang['backendpro_file_manager'] = 'Quản lý File';
 $lang['backendpro_langages'] = 'Languages';
 $lang['backendpro_kho'] = 'Quản lý kho';
 $lang['backendpro_search'] = 'Tìm kiếm sản phẩm';

@@ -13,7 +13,7 @@
 if (count($customers)){
     echo "<table id='tablesorter' class='tablesorter' border='1' cellspacing='0' cellpadding='3' width='100%'>\n";
     echo "<thead>\n<tr valign='top'>\n";
-    echo "<th>Customer ID</th>\n<th>First name</th><th>Last name</th><th>Phone Number</th><th>Email</th><th>Address</th><th>City</th><th>Actions</th>\n";
+    echo "<th>ID Khách hàng</th>\n<th>Họ</th><th>Tên</th><th>Số điện thoại</th><th>Email</th><th>Địa chỉ</th><th>Thành phố</th><th>Thực hiện</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($customers as $key => $list){
         echo "<tr valign='top'>\n";

@@ -21,7 +21,7 @@ class Admin extends Shop_Admin_Controller
 
   	function index()
   	{
-		$data['title'] = "Manage Orders";
+		$data['title'] = "Quản lý đặt hàng";
 		//$data['main'] = 'admin_orders_home';
 		$data['products'] = $this->MProducts->getAllProducts();
 		$data['categories'] = $this->MCats->getCategoriesDropDown();
@@ -36,7 +36,7 @@ class Admin extends Shop_Admin_Controller
   
   	function details($id)
   	{
-		$data['title'] = "Order Details";
+		$data['title'] = "Chi tiết đặt hàng";
 		//$data['main'] = 'admin_orders_details';
 		$data['products'] = $this->MProducts->getAllProducts();
 		$data['categories'] = $this->MCats->getCategoriesDropDown();
