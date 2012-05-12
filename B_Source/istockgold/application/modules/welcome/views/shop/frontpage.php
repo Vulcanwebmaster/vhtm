@@ -169,7 +169,6 @@
                     </select>
                     <script type="text/javascript">
                     $('#show_id').change(function(){
-                    	var value = "hu";
                     	var select = document.getElementById('show_id');
                     	if (select)
                     	{
