@@ -22,7 +22,7 @@ body
  *********************************************************************/
 a
 {
-  color:#095fbf;
+  color:#c8851b;
   text-decoration:none;
 }
 
@@ -67,7 +67,7 @@ h2
   margin:45px 0 15px;
   line-height:28px;
   font-weight:normal;
-  text-transform:uppercase;
+  /*text-transform:uppercase;*/
   padding:0 0 10px;
   border-bottom:2px solid #dfdfdf;
   position:relative;
@@ -171,7 +171,6 @@ label
 {
   line-height:17px;
   font-weight:bold;
-  display:block;
 }
 
 input,

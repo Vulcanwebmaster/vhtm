@@ -4,7 +4,7 @@
 			href="<?php echo base_url();?>index.php/welcome/homepage" class="level-top"><span>Trang chủ </span>
 		</a></li>
 		<li class="level0 nav-1 active level-top first parent"><a
-			href="<?php echo site_url();?>/welcome/cat/1"
+			href="<?php echo site_url();?>/ao"
 			class="level-top"> <span>Áo</span> </a>
 		</li>
 		<li class="level0 nav-1 active level-top first parent"><a

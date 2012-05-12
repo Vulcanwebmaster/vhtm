@@ -43,13 +43,13 @@
 </div>
 <div>
 	<div class="main-container col1-layout">
-    <div class="main">
+    <div class="main" style="margin-top:15px">
         <div class="bg-inner">
             <div class="col-main">
                 <div class="col-inner">
                     <div class="page-title">
-                        <p style="font-weight:bold; font-size:20px">
-                            new arrivals this month</p>
+                        <p style="font-weight:bold; font-size:20px; line-height:100%">
+                            New arrivals this month</p>
                     </div>
                     <div class="std">
                         <div>
@@ -62,7 +62,7 @@
                                                     <ul class="products-grid" style="width: 2539px; position: relative; left: 0px; top: 0px;">
                                                         <li class="item first"><a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html"
                                                             title="all star reverse print" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-11.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-11.png"
                                                                 width="168" height="185" alt="all star reverse print"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html" title="all star reverse print)">
@@ -86,7 +86,7 @@
                                                         </li>
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/all-star-teverse-print.html"
                                                             title="all star teverse print" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-12.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-12.png"
                                                                 width="168" height="185" alt="all star teverse print"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/all-star-teverse-print.html" title="all star teverse print)">
@@ -102,7 +102,7 @@
                                                         </li>
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/women-s-pincross-tee.html"
                                                             title="women's pincross tee" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-3.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-3.png"
                                                                 width="168" height="185" alt="women's pincross tee"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/women-s-pincross-tee.html" title="women's pincross tee)">
@@ -126,7 +126,7 @@
                                                         </li>
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/wrench-eye-tee.html"
                                                             title="women's wrench eye tee" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-1_1.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-1_1.png"
                                                                 width="168" height="185" alt="women's wrench eye tee"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/wrench-eye-tee.html" title="women's wrench eye tee)">
@@ -142,7 +142,7 @@
                                                         </li>
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/all-star-jimi-hendrix.html"
                                                             title="all star jimi hendrix" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-10.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-10.png"
                                                                 width="168" height="185" alt="all star jimi hendrix"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/all-star-jimi-hendrix.html" title="all star jimi hendrix)">
@@ -166,7 +166,7 @@
                                                         </li>
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/poorman-weapon.html"
                                                             title="poorman weapon" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-5.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-5.png"
                                                                 width="168" height="185" alt="poorman weapon"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/poorman-weapon.html" title="poorman weapon)">
@@ -182,7 +182,7 @@
                                                         </li>
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/women-s-tevolver-tee.html"
                                                             title="women's tevolver tee" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-7.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-7.png"
                                                                 width="168" height="185" alt="women's tevolver tee"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/women-s-tevolver-tee.html" title="women's tevolver tee)">
@@ -198,7 +198,7 @@
                                                         </li>
                                                         <li class="item last"><a href="http://demo.emthemes.com/casualwear/women-s-poverty-tee.html"
                                                             title="women's poverty tee" class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/168x185/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-9.png"
+                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-9.png"
                                                                 width="168" height="185" alt="women's poverty tee"></a>
                                                             <h3 class="product-name">
                                                                 <a href="http://demo.emthemes.com/casualwear/women-s-poverty-tee.html" title="women's poverty tee)">

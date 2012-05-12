@@ -898,7 +898,7 @@ color:#FFFFFF;line-height:28px;padding:0 0 0 7px; }
 .catalog-category-view .col3-layout .products-container-inner,
 .catalog-category-view .col3-layout .category-image-container-inner { }
 
-.category-title {border:0 none;left:0;margin:0;position:absolute;top:0;}
+.category-title {border:0 none;margin:0;}
 .category-title h1,
 .category-title h2 { font:normal 20px Arial,sans-serif; }
 .category-image { width:100%; overflow:hidden; margin:0; text-align:center; margin-top:-5px;}
@@ -2072,7 +2072,7 @@ font-size:16px;font-weight:bold;padding-top:9px;}
 .select-theme a{display:inline!important}
 #my-orders-table .price{color:#000;font-weight:bold}
 .box-account.box-info .col-2{width:41.5%}
-.bg-inner{background:url("../images/bkg_main-inner.png") no-repeat scroll left 30px transparent;height:100%;padding-top:30px;position:relative;margin-top:20px;}
+.bg-inner{height:100%;padding-top:30px;position:relative;margin-top:20px;}
 .cms-index-index  .bg-inner{background:none;padding:0;margin:0;min-height:0}
 .checkout-cart-index .bg-inner{background-position:left 40px;
 margin-top:40px;padding-top:40px;}
