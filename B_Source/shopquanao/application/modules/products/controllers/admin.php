@@ -260,6 +260,14 @@ class Admin extends Shop_Admin_Controller
         {
         	if($this->input->post('code')!='')
         	{
+        		
+        		$mahang=$this->MProducts->getMaHang($this->uri->segment(4));
+        		foreach ($mahang as $key => $list)
+        		{	
+        		
+        		if($list['code']!=$this->input->post('code'))
+        		{		
+        		
         	if($this->MProducts->checkMaHang($this->input->post('code'))==False)
             {
         	
@@ -318,8 +326,74 @@ class Admin extends Shop_Admin_Controller
             $data['module'] = $this->module;
             flashMsg('error','Mã sản phẩm đã được đăng ký, mời nhập lại');
             $this->load->view($this->_container,$data);
-            }           
-        }//end ma hang
+            }
+        		}//so sanh ma hang hien tai
+
+        	else if($list['code']==$this->input->post('code'))
+        	{
+        		// fields filled up so,
+            $data = $this->_field();                                            
+            $this->MKaimonokago->updateItem($this->module,$data);
+            //$this->MProducts->new_updateProduct();
+            // CI way to set flashdata, but we are not using it
+            // $this->session->set_flashdata('message','Product updated');
+            // we are using Bep function for flash msg           
+            
+      		$total1=$this->input->post('kho1',TRUE);
+            $total2=$this->input->post('kho2',TRUE);
+            $total3=$this->input->post('kho3',TRUE); 
+            
+            if($total1>=0){$this->MProducts->updateSanphamkho(1,$this->uri->segment(4),$total1);}
+            if($total2>=0) {$this->MProducts->updateSanphamkho(2,$this->uri->segment(4),$total2);}
+            if($total3>=0){$this->MProducts->updateSanphamkho(3,$this->uri->segment(4),$total3);}      	
+       		
+            flashMsg('success','Product updated');
+            redirect($this->module.'/admin/index','refresh');
+            }
+        		
+  			}//foreach	
+        		   		
+            if($this->input->post('code')=='') 
+            {
+            	// similar to category
+            //$id = $this->uri->segment(4);
+            $data['title'] = $this->lang->line('kago_edit')." ".$this->lang->line('kago_product');
+            // get all the languages
+            $data['languages'] =$this->MLangs->getLangDropDownWithId();
+            // get translated languages
+            // For other languages segment 4 is omc_products.table_id, table_id is id of english(original), omc_menu.id
+            // for english is omc_products.id
+            // $table_id is used to find translated languages and it is used to get info of english menu
+            $table_id = $this->uri->segment(4);
+            $data['translanguages'] =$this->MLangs->getTransLang($this->module,$table_id);
+            $data['module']=$this->module;
+            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_edit";
+            $product = $this->MKaimonokago->getInfo($this->module, $id);
+            $data['product'] = $product;
+            // get categories by lang
+            $lang_id = $product['lang_id'];
+            $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
+            // I am not using colors and sizes any more. But they are available if you want to use them.
+            $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
+            $data['assigned_sizes'] = $this->MProducts->getAssignedSizes($id);
+            // I am loading product_right here which gives instructions.
+            $data['right'] = 'admin/product_right';
+            if (!count($data['product']))
+            {
+                redirect($this->module.'/admin/index','refresh');
+            }
+            // 	Set breadcrumb
+            $this->bep_site->set_crumb($this->lang->line('kago_edit'),$this->module.'/admin/edit');
+            $data['header'] = $this->lang->line('backendpro_access_control');
+            $data['cancel_link']= $this->module."/admin/index/";
+            $data['module'] = $this->module;
+            flashMsg('error','Mã sản phẩm đã được đăng ký, mời nhập lại');
+            $this->load->view($this->_container,$data);
+        	}
+       	
+        }//end ma hang bang rong
+        
+        
         else
         {
             // similar to category
@@ -358,7 +432,7 @@ class Admin extends Shop_Admin_Controller
             $this->load->view($this->_container,$data);
         }
         
-        }
+        }//end ten hang bang rong
         else
         {
             // similar to category
