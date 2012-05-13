@@ -9,7 +9,8 @@
         <div class="form-search"  style="border-radius:5px">
             <label for="search">
                 Search:</label>
-            <input id="fsearch" type="text" name="fsearch" value="" class="input-text" autocomplete="off">
+            <input id="fsearch" type="text" name="fsearch" value="<?php if(isset($sea)) echo $sea;
+            else echo "SEARCH HERE"?>" class="input-text" autocomplete="off">
             <button type="submit" title="Search" class="button">
                 <span><span>Search</span></span></button>
             <div id="search_autocomplete" class="search-autocomplete" style="display: none;">
