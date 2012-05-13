@@ -23,7 +23,7 @@
 	  <link rel="stylesheet" type="text/css" href="javascript/slider/themes/fresh/jquery.slider.ie6.css" />
 	
 	  <![endif]-->
-	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.slider.min.js"></script>
 	
 	  <script type="text/javascript">
@@ -44,7 +44,6 @@
 	
 	  </script>
 <!-- ===================== -->
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/prototype.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/ccard.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/validation.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/builder.js"></script>
@@ -57,7 +56,6 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/menu.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/translate.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cookies.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery-1.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/styleswitch.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/swfobject.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em0015.js"></script>
@@ -65,6 +63,8 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/lightbox.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em_ajaxcart.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cloud-zoom.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/shopcustomtools.js"></script>
+
 <!--[if IE]>
 <link href="<?php echo base_url();?>assets/css/ie.css" rel="stylesheet" type="text/css" />
 <![endif]-->

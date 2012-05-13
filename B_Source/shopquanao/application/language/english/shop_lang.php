@@ -24,17 +24,17 @@
 $lang['general_login'] = 'Log in';
 $lang['general_logout'] = 'Log out';
 $lang['general_not_logged_in'] = 'You are not logged in';
-$lang['general_cart'] = 'Cart';
-$lang['general_shopping_cart'] ='Shopping Cart';
+$lang['general_cart'] = 'Giỏ';
+$lang['general_shopping_cart'] ='Giỏ Hàng';
 $lang['general_search_results'] ='Search Results';
-$lang['general_name'] = "Name";
+$lang['general_name'] = "Tên";
 $lang['general_pass_word'] = "Password";
 $lang['general_register'] = "Register";
 $lang['general_login_msg'] = "Or click <span class='login'>%s</span> if you are already registered.";
 $lang['general_logged_in'] = "You are logged in";
 $lang['general_hello'] = "Hello ";
-$lang['general_web_shop'] = 'Web shop';
-$lang['general_check_out'] = 'Go to check out';
+$lang['general_web_shop'] = 'Cửa hàng quần áo';
+$lang['general_check_out'] = 'Kiểm tra giỏ hàng';
 
 
 /* All Main Controller Names and menu items */

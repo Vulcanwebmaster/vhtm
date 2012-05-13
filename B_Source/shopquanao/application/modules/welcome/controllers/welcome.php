@@ -1072,7 +1072,7 @@ class Welcome extends Shop_Controller
     }
     
 	// AN NGUYEN:===============================================================================================
-function search_frontend()
+	function search_frontend()
     {
     	if ($this->input->post('fsearch')) 
     	{

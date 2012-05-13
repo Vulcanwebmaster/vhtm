@@ -28,15 +28,15 @@ $lang['customer_login_plz_login'] = 'Please login. This will fill up your detail
 
 
 // modules/webshop/views/shoppingcart.php
-$lang['webshop_update'] = 'Update';
-$lang['webshop_delete'] = 'DELETE';
-$lang['webshop_checkout'] = 'Go to Checkout';
+$lang['webshop_update'] = 'Cập nhập';
+$lang['webshop_delete'] = 'Xóa';
+$lang['webshop_checkout'] = 'Kiểm tra Checkout';
 $lang['webshop_no_items_to_show'] = 'No item to show';
-$lang['webshop_will_be_added'] = 'will be added';
+$lang['webshop_will_be_added'] = 'sẽ được thêm vào';
 $lang['webshop_shipping_charge'] = 'Shipping charge';
 $lang['webshop_currency'] = 'dollars';
 $lang['webshop_currency_symbol'] = '$'; // &#36;
-$lang['webshop_shoppingcart_empty'] = 'Shopping cart is empty';
+$lang['webshop_shoppingcart_empty'] = 'Giỏ hàng rỗng';
 $lang['webshop_search'] = 'search';
 $lang['webshop_click_here'] = 'Click here';
 $lang['webshop_if_registered'] = 'if you are already registered.';
@@ -91,18 +91,18 @@ $lang['general_register'] = "Register";
 
 
 /* orders */
-$lang['orders_added_cart'] = "We have added this product to the shoppfiring cart.";
-$lang['orders_product_removed'] = "Product removed.";
-$lang['orders_not_in_cart'] = "Product not in shopping cart!";
+$lang['orders_added_cart'] = "Thêm sản phẩm này vào giỏ hàng.";
+$lang['orders_product_removed'] = "Sản phẩm đã bị xóa.";
+$lang['orders_not_in_cart'] = "Sản phẩm không có trong giỏ!";
 $lang['orders_no_records'] = "No records";
 $lang['orders_record'] = "record";
 $lang['orders_records'] = "records";
 $lang['orders_updated'] = "updated";
 $lang['orders_no_changes_detected'] = "No changes detected";
-$lang['orders_nothing_to_update'] = "Nothing to update";
-$lang['orders_nothing_in_cart'] = "Nothing in cart!";
-$lang['orders_no_item_yet'] = "You have no item yet!";
-$lang['orders_total_price'] = "Total Price";
+$lang['orders_nothing_to_update'] = "Không có gì update";
+$lang['orders_nothing_in_cart'] = "Không có gì trong giỏ!";
+$lang['orders_no_item_yet'] = "Bạn chưa có hàng trong giỏ!";
+$lang['orders_total_price'] = "Tổng giá tiền";
 
 
 /* view/confirmorder.php*/

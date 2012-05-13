@@ -96,8 +96,8 @@
                                                 class="link-compare">Add to Compare</a></li>
                                         </ul>
                                         <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.base_url().'welcome/cart/'.$fsearch[$i]->id.')">
-                                                <span><span>Add to Cart</span></span></button>
+                                            <a href='.base_url().'index.php/welcome/cart/'.$fsearch[$i]->id.'>
+                                                <span><span>Add to Cart</span></span>
                                         </div>
                                     </li>';
                             		if ($i+1<count($fsearch))
@@ -106,7 +106,7 @@
                                     '<li class="item last"><a href="#"
                                         title="" class="product-image">
                                         <img src="';
-                            		echo convert_image_path($fsearch[$i+1]->image);;
+                            		echo convert_image_path($fsearch[$i+1]->image);
                             		echo '"
                                             width="168" height="185" alt=""></a>
                                         <h2 class="product-name">
@@ -122,7 +122,7 @@
                                                 class="link-compare">Add to Compare</a></li>
                                         </ul>
                                         <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.base_url().'welcome/cart/'.$fsearch[$i+1]->id.')">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation(\''.base_url().'index.php/welcome/cart/'.$fsearch[$i+1]->id.'\')">
                                                 <span><span>Add to Cart</span></span></button>
                                         </div>
                                     </li>';

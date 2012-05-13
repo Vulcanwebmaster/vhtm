@@ -12,12 +12,12 @@ function jsUpdateCart(){
 
   var params = 'ids='+parameter_string;
   
-   $.ajax({
+  jQuery.ajax({
    type: "POST",
    url: "index.php/welcome/ajax_cart",
    data: params,
    success: function( r ) {
-    $('#ajax_msg').html( r );
+	  jQuery('#ajax_msg').html( r );
     location.reload( true );
   }
  });
@@ -28,12 +28,12 @@ function jsUpdateCart(){
 
 function jsRemoveProduct(id){
   var params = 'id='+id;
-  $.ajax({
+  jQuery.ajax({
    type: "POST",
    url: "index.php/welcome/ajax_cart_remove",
    data: params,
    success: function( r ) {
-    $('#ajax_msg').html( r );
+	  jQuery('#ajax_msg').html( r );
     location.reload( true );
   }
  });

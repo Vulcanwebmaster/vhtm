@@ -139,6 +139,23 @@ class MProducts extends CI_Model
     	else return False;
     }
     
+    function getMaHang($id)
+    {
+    	$this->db->select('code');
+		$this->db->where('id',$id);
+		$Q = $this->db->get('omc_products');
+		if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+		
+    }
+    
     function getGiatriKho($id)
     {   	
     	$this->db->where('id',$id);

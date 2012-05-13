@@ -8,6 +8,8 @@ class MSearch extends CI_Model
         parent::__construct();
 	}
 
+	
+	
 	function getSearch($num,$offset,$tensanpham,$masanpham,$makho)
     {   	
     	$data = array();
