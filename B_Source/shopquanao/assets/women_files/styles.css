@@ -957,7 +957,7 @@ bottom:2px;height:62px;left:-7px;line-height:normal;margin:0;padding-left:15px;p
 .ratings-table th { font-weight:bold; padding-right:8px; }
 
 /* Availability */
-.availability { margin:0; font-style:italic;font-size:14px;font-style:italic}
+.availability { margin:0; font-style:italic;font-size:12px;font-style:italic}
 .availability span { font-weight:bold; }
 .availability.in-stock span {}
 .availability.out-of-stock span { color:#d83820;margin-left:12px }
@@ -1140,6 +1140,7 @@ a.minimal-price-link:hover { text-decoration:underline; }
 margin:0;}
 .product-view .product-shop .availability { padding:10px 0;}
 .product-view .product-shop .short-description { margin:10px 0;padding:10px 0 0; clear:both;*margin:0!important;*padding:5px 0 0!important }
+.product-view .product-shop .short-description img {max-height: 150px; max-width: 150px;}
 .product-view .product-shop .price-box { margin:5px 10px 10px 0; float:left;}
 
 .product-view .product-shop .add-to-links {float:right;margin-top:-20px;}
@@ -1214,7 +1215,7 @@ margin:0;}
 .product-view .box-up-sell .products-grid .price-box .regular-price .price,.product-view .box-up-sell .products-grid .price-box .regular-price{margin:0;font-size:16px}
 .product-view .box-up-sell .products-grid .price-box .old-price{margin:0}
 .product-view .box-up-sell .products-grid .price-box  span,.product-view .product-shop .regular-price .price {font-weight:bold;margin-left:2px;color:#333}
-.product-view .product-shop .regular-price .price{font-size:16px}
+.product-view .product-shop .regular-price .price{font-size:14px; color: #E67817;}
 
 
 /* Block: Tags */
@@ -2142,3 +2143,77 @@ font-size:16px;font-weight:bold;padding-top:9px;}
 
 
 .cloud-zoom-lens{width:89.1125px;height:89.1125px}
+
+.post {
+    background: url("http://2.bp.blogspot.com/_4HKUHirY_2U/TP8Kd08tfHI/AAAAAAAAI9A/jn7taS3rVCY/s1600/box.png") repeat-x scroll center bottom #060606;
+    border: 3px solid #FAAE5C;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    height: 308px;
+    margin-bottom: 30px;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 15px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    width: 200px;
+}
+.post-body {
+    color: #EEEEEE;
+    font-size: 0;
+}
+.post-body img {
+    border: medium none;
+    height: 270px;
+    padding: 0;
+    width: 200px;
+}
+.post h3 {
+    bottom: -11px;
+    font-size: 14px;
+    font-weight: normal;
+    left: 10px;
+    padding-top: 10px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+}
+.post h3 a:link, .post h3 a:visited {
+    color: #666666;
+}
+.post-header {
+    display: none;
+}
+.post-footer {
+    display: none;
+}
+.post-header-line-1 {
+    display: none;
+}
+.post-footer-line-1 {
+    display: none;
+}
+.post-footer-line-2 {
+    display: none;
+}
+.post-labels {
+    display: none;
+}
+
+.subscribesec {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    height: 37px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    padding: 10px;
+}
+.feedlist {
+}
+.feedlist ul li {
+    float: left;
+    margin: 0 5px;
+}

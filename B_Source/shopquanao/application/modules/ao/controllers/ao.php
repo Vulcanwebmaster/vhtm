@@ -35,7 +35,7 @@
 				$data['type']='Phụ kiện';
 			$data['title']='Danh mục sản phẩm';
 			$data['count']=$this->Get_data->count($type);
-			$data['list']=$this->Get_data->get_list($type,$index);
+			$data['list'] = $this->Get_data->get_list($type,$index);
 			$data['page']=$this->config->item('backendpro_template_shop').'dsao';
 			$data['module']=$this->module;
 			$this->load->view($this->_container,$data);
