@@ -1,14 +1,25 @@
+
+<!--<div id='pleft'>
+<h2>
+</div>
+
+
+-->
+
+
+
+
 <div class="main-container col2-right-layout">
     <div class="main">
         <div class="breadcrumbs">
             <ul>
                 <li class="home"><a href="http://demo.emthemes.com/casualwear/" title="Tới trang chủ">
                     Trang chủ</a> <span>/ </span></li>
-                <li class="category53"><strong><?php echo $type;?></strong> </li>
+                <li class="category53"><strong>Tìm kiếm</strong> </li>
             </ul>
         </div>
         <div class="page-title category-title">
-                        <h1><?php echo $type;?></h1>
+                        <h1>Tìm kiếm</h1>
                     </div>
         <div class="bg-inner">
             <div class="col-main">
@@ -62,20 +73,20 @@
                         <div class="products-container">
                             <div class="products-container-inner"> 
                             	<?php                             		                            	
-                            		for ($i=0;$i<count($list);$i+=2)
+                            		for ($i=0;$i<count($fsearch);$i+=2)
                             	{
                             		echo '<ul class="products-grid first odd">
                                     <li class="item first">                                    
                                     <a href="#"
                                         title="" class="product-image">                                        
                                         <img src="';
-                            		echo convert_image_path($list[$i]->image);
+                            		echo convert_image_path($fsearch[$i]->image);
                             		echo '" width="168px" height="185px" alt=""/></a>';
                             		echo '<h2 class="product-name">
-                                            <a href="'.base_url().'index.php/chitietsp/get_inf/'.$list[$i]->id.'"
-                                                title="">'.$list[$i]->name.'</a></h2>
+                                            <a href=""
+                                                title="">'.$fsearch[$i]->name.'</a></h2>
                                         <div class="price-box">
-                                            <span class="regular-price" id="product-price-192"><span class="price">'.$list[$i]->price.'</span>
+                                            <span class="regular-price" id="product-price-192"><span class="price">'.$fsearch[$i]->price.'</span>
                                             </span>
                                         </div>
                                         <ul class="add-to-links">
@@ -85,23 +96,23 @@
                                                 class="link-compare">Add to Compare</a></li>
                                         </ul>
                                         <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.'http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/192/'.')">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.base_url().'welcome/cart/'.$fsearch[$i]->id.')">
                                                 <span><span>Add to Cart</span></span></button>
                                         </div>
                                     </li>';
-                            		if ($i+1<count($list))
+                            		if ($i+1<count($fsearch))
                             		{ 
                             		echo 
                                     '<li class="item last"><a href="#"
                                         title="" class="product-image">
                                         <img src="';
-                            		echo convert_image_path($list[$i+1]->image);;
+                            		echo convert_image_path($fsearch[$i+1]->image);;
                             		echo '"
                                             width="168" height="185" alt=""></a>
                                         <h2 class="product-name">
-                                            <a href="'.base_url().'index.php/chitietsp/get_inf/'.$list[$i+1]->id.'" title="">'.$list[$i+1]->name.'</a></h2>
+                                            <a href="#" title="">'.$fsearch[$i+1]->name.'</a></h2>
                                         <div class="price-box">
-                                            <span class="regular-price" id="product-price-187"><span class="price">'.$list[$i+1]->price.'</span>
+                                            <span class="regular-price" id="product-price-187"><span class="price">'.$fsearch[$i+1]->price.'</span>
                                             </span>
                                         </div>
                                         <ul class="add-to-links">
@@ -111,7 +122,7 @@
                                                 class="link-compare">Add to Compare</a></li>
                                         </ul>
                                         <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.'http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/187/'.')">
+                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.base_url().'welcome/cart/'.$fsearch[$i+1]->id.')">
                                                 <span><span>Add to Cart</span></span></button>
                                         </div>
                                     </li>';

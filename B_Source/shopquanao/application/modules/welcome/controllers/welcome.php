@@ -38,6 +38,7 @@ class Welcome extends Shop_Controller
         $this->security_question    = $this->preference->item('security_question');
         $this->security_answer      = $this->preference->item('security_answer');
         //$this->myclass = strtolower(get_class());
+        $this->load->library('pagination');
     }
 
 
@@ -121,6 +122,11 @@ class Welcome extends Shop_Controller
         $data['header'] ="HOME";
         $data['metadesc'] =$page['metadesc'];
         $data['metakeyword'] =$page['metakeyword'];
+        //tienlx: load data slide New arrivals this month
+        $this->db->order_by('id',"DESC");
+        $query = $this->db->get("omc_products");
+        $data['newArrivals']=$query->result();
+        //end tienlx
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data); 
     }
@@ -1065,12 +1071,86 @@ class Welcome extends Shop_Controller
         }    
     }
     
-	function homepage()
+	// AN NGUYEN:===============================================================================================
+function search_frontend()
     {
-    	$data['page']=$this->config->item('backendpro_template_shop').'homepage';
-    	$data['module']=$this->module;
-    	$this->load->view($this->_container,$data);
+    	if ($this->input->post('fsearch')) 
+    	{
+    		$fsearch = $this->input->post('fsearch'); 
+    		redirect(base_url().'index.php/welcome/get_page/'.$fsearch,'refresh');
+    	}
+    	
+    	
+   		/*if ($this->input->post('fsearch')) {
+    		$fsearch = $this->input->post('fsearch');   
+    		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
+    		$config['total_rows']=10;//$this->count($fsearch); 	  
+    		$config['per_page']=10;  	
+
+    	$data['fsearch']=$this->getSearch_frontend($fsearch);    	
+    	
+        $this->bep_site->set_crumb($this->lang->line('kago_search')." ".$this->lang->line('kago_search'),$this->module.'/admin/search_frontend');
+        //$data['header'] = $this->lang->line('backendpro_access_control');
+        $data['page'] =$this->config->item('backendpro_template_shop') . 'search_home';
+        
+        
+        $data['module'] = $this->module;
+        $this->load->view($this->_container,$data);
+   		}*/
     }
-}//end controller class
+	
+    function get_page($fsearch,$index="0")
+    {
+    	   
+    		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
+    		$config['total_rows']=$this->count($fsearch); 	  
+    		$config['per_page']=10;
+    		$this->pagination->initialize($config);
+    		
+    		$data['fsearch']=$this->getSearch_frontend($fsearch,$index);
+    		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
+    		$data['module']=$this->module;
+    		$this->load->view($this->_container,$data);
+    }
+    
+	function getSearch_frontend($fsearch="",$index="0")
+	{		
+		//$data = array();		
+		$this->db->like('name', $fsearch);
+		//$this->db->or_like('code',$fsearch);    	    	        
+    	$this->db->order_by('other_feature','DESC');    
+       	$Q=	$this->db->get('omc_products',10,$index);
+
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+	
+	}
+	
+	function count($fsearch)
+	{
+		$this->db->like('name', $fsearch);
+		//$this->db->or_like('code',$fsearch);    	    	        
+    	$this->db->order_by('other_feature','DESC');    
+       	$Q=	$this->db->get('omc_products');
+
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        
+        return $Q->num_rows();		
+	}
+    
+	}//end controller class
 
 ?>

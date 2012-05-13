@@ -60,16 +60,16 @@
                                             <div class="slideshow" id="slideshow">
                                                 <div class="slideshow-box">
                                                     <ul class="products-grid" style="width: 2539px; position: relative; left: 0px; top: 0px;">
+                                                    <?php foreach ($newArrivals as $rs):?>
                                                         <li class="item first"><a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html"
                                                             title="all star reverse print" class="product-image">
-                                                            <img src="<?php echo base_url();?>assets/women_files/produces/untitled-11.png"
-                                                                width="168" height="185" alt="all star reverse print"></a>
+                                                            <img src="<?php echo convert_image_path(base_url().$rs->image);?>" width="168px" height="185px" alt="all star reverse print"></a>
                                                             <h3 class="product-name">
-                                                                <a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html" title="all star reverse print)">
-                                                                    all star reverse print</a></h3>
+                                                                <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $rs->id;?>" title="all star reverse print)">
+                                                                    <?php echo $rs->name;?></a></h3>
                                                             <div class="price-box">
                                                                 <span class="regular-price" id="product-price-198-widget-new-grid"><span class="price">
-                                                                    $120.00</span> </span>
+                                                                    $<?php echo $rs->price;?></span> </span>
                                                             </div>
                                                             <div class="actions">
                                                                 <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIv/product/198/')">
@@ -84,6 +84,8 @@
                                                                 </div>
                                                             </div>
                                                         </li>
+                                                        <?php endforeach;?>
+                                                        <!-- 
                                                         <li class="item"><a href="http://demo.emthemes.com/casualwear/all-star-teverse-print.html"
                                                             title="all star teverse print" class="product-image">
                                                             <img src="<?php echo base_url();?>assets/women_files/produces/untitled-12.png"
@@ -212,6 +214,7 @@
                                                                     <span><span>more like this</span></span></button>
                                                             </div>
                                                         </li>
+                                                         -->
                                                     </ul>
                                                 </div>
                                                 <a href="#" class="previous">Previous</a> <a href="#" class="next">Next</a>

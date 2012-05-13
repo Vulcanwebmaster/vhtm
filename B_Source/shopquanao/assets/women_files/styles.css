@@ -386,7 +386,7 @@ p.required {color:#F1520B;font-style:normal;text-align:left;text-transform:capit
 .sorter .view-mode { float:left; margin:0;height:11px;padding-top:10px;width:150px}
 .sorter .view-mode label { float:left; margin-right:5px;line-height:16px; font-size:11px}
 .sorter .view-mode .grid,
-.sorter .view-mode .list {margin-top:3px;  background:url(../images/bkg_viewmode.png) 0 0 no-repeat;width:16px;height:11px;*height:15px;overflow:hidden; display:inline-block; text-indent:-9999px; margin-right:5px;}
+.sorter .view-mode .list {margin-top:3px;  background:url(bkg_viewmode.png) 0 0 no-repeat;width:16px;height:11px;*height:15px;overflow:hidden; display:inline-block; text-indent:-9999px; margin-right:5px;}
 .sorter .view-mode strong.grid { background-position: left 0}
 .sorter .view-mode a.grid { overflow:hidden;background-position: 0 100%; }
 .sorter .view-mode strong.list { background-position: right top; }
@@ -1104,7 +1104,7 @@ a.minimal-price-link:hover { text-decoration:underline; }
 .product-collateral h2 {border-bottom:2px solid #1E1E1E;color:#000;line-height:19px;padding:0 0 4px;font-size:16px;font-weight:bold}
 .product-essential .std,
 .product-collateral .std { clear:both; }
-.product-collateral .box-description .std{width:615px;overflow:hidden}
+.product-collateral .box-description .std{width:100%;overflow:hidden}
 .product-essential{height:100%;overflow:hidden}
 .product-collateral { padding: 5px 0;}
 
@@ -1137,7 +1137,7 @@ a.minimal-price-link:hover { text-decoration:underline; }
 .product-view .product-shop {float:right;width:310px; }
 .col1-layout .product-view .product-shop { float:right; width:635px; }
 .col3-layout .product-view .product-shop { float:none; width:auto; }
-.product-view .product-shop .product-name { margin:0 0 5px;padding: 0 0 8px;}
+.product-view .product-shop .product-name { margin:0 0 5px;padding: 10px 0 8px;}
 .product-view .product-shop .product-name h1 {color:#00BEEE;font:bold 18px/1.35 Arial,Tahoma,sans-serif;
 margin:0;}
 .product-view .product-shop .availability { padding:10px 0;}
@@ -2141,3 +2141,6 @@ font-size:16px;font-weight:bold;padding-top:9px;}
 .clear-both {
 	clear: both;
 }
+
+
+.cloud-zoom-lens{width:89.1125px;height:89.1125px}

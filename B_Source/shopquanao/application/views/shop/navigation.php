@@ -1,21 +1,21 @@
 <div class="nav-container">
 	<ul id="nav">
 		<li class="level0 level-top first"><a
-			href="<?php echo base_url();?>index.php/welcome/homepage" class="level-top"><span>Trang chủ </span>
+			href="<?php echo base_url();?>index.php" class="level-top"><span>Trang chủ </span>
 		</a></li>
 		<li class="level0 nav-1 active level-top first parent"><a
-			href="<?php echo site_url();?>/ao"
+			href="<?php echo site_url();?>/ao/get_list/ao"
 			class="level-top"> <span>Áo</span> </a>
 		</li>
 		<li class="level0 nav-1 active level-top first parent"><a
-			href="<?php echo site_url();?>/welcome/cat/2"
+			href="<?php echo site_url();?>/ao/get_list/quan"
 			class="level-top"> <span>Quần</span> </a>
 		</li>
 		<li class="level0 nav-3 level-top"><a
-			href="http://demo.emthemes.com/casualwear/girls.html"
+			href="#"
 			class="level-top"> <span>Hàng mới về</span> </a></li>
 		<li class="level0 nav-4 level-top"><a
-			href="http://demo.emthemes.com/casualwear/earings.html"
+			href="<?php echo site_url();?>/ao/get_list/phukien"
 			class="level-top"> <span>Phụ kiện</span> </a></li>
 		<li class="level0 nav-5 level-top"><a
 			href="<?php  echo base_url()?>index.php/welcome/cart"
