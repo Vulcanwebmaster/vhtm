@@ -78,9 +78,11 @@ class MOrders extends CI_Model
                 $prevct = $cart[$productid]['count'];
                 $prevname = $cart[$productid]['name'];
                 $prevprice = $cart[$productid]['price'];
+                $previmage = $cart[$productid]['image'];
                 $cart[$productid] = array(
                                 'name' => $prevname,
                                 'price' => $prevprice,
+                				'image' => $previmage,
                                 'count' => $prevct + 1
                                 );
             }
@@ -91,6 +93,7 @@ class MOrders extends CI_Model
                                 // 'price' => $this->format_currency($fullproduct['price']),
                                 // This should be done in view
                                 'price' => $fullproduct['price'],
+                				'image' => convert_image_path($fullproduct['image']),
                                 'count' => 1
                                 );			
             }				

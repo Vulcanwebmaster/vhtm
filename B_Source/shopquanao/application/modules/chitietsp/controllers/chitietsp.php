@@ -15,9 +15,9 @@
 		
 		function get_inf($id)
 		{
-			$this->load->model('Get_inf');
-			$data['inf']=$this->Get_inf->get($id);
-			$data['other']=$this->Get_inf->other_products($id);
+			$data['inf']=$this->MProducts->getProductById($id);
+			$data['other']=$this->MProducts->other_products($id);
+			$data['kholist'] = $this->MKho->getKhoOfProduct($id);
 			
 			$data['title']='Chi tiết sản phẩm';
 			$data['page']=$this->config->item('backendpro_template_shop').'chitietsp';

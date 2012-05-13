@@ -409,6 +409,33 @@ class MProducts extends CI_Model
         $Q->free_result();
         return $data;
     }
+    
+	function getProductById($id) 
+	{
+		$this->db->where('id',$id);
+		$kq=$this->db->get('omc_products');
+		if ($kq->num_rows()>0)
+			return $kq->row(0);
+		else return false;
+	}
+	
+	function other_products($id)
+		{			
+			$item=$this->getProductById($id);
+			
+			$this->db->where('category_id',$item->category_id);
+			$ds=$this->db->get('omc_products');
+			
+			$count=0;
+			$kq=array();
+			while ($count<3)
+			{
+				$a=$ds->row($count);
+				$kq[]=$a;
+				$count++;
+			}
+			return $kq;
+		}
 
      
     function getPublicProductsByCategory($catid)

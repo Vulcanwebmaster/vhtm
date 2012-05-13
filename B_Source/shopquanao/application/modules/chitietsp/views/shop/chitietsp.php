@@ -48,15 +48,25 @@
                                             <a href="http://demo.emthemes.com/casualwear/review/product/list/id/192/category/53/#review-form">
                                                 Be the first to review this product</a></p>
                                         <p class="availability in-stock">
-                                            Availability: <span>In stock</span></p>
+                                            Tình Trạng: 
+                                            <br/>
+                                            <ul>
+                                            	<?php
+														foreach ($kholist as $index => $kho) 
+														{
+															$tinhtrang =  $kho['total'] == 0 ? "<span style='color:red;'>Hết Hàng<span>" : $kho['total']; 
+															echo "<li>". $kho['kho_name']. " : " . $tinhtrang ."</li>";
+														}
+                                            	?>
+                                            </ul>
                                         <!--p class="availability in-stock">Availability: <span>In stock</span></p-->
                                         <div class="price-box">
-                                            <span class="regular-price" id="product-price-192"><span class="price"><?php echo $inf->price;?></span>
+                                            <span class="regular-price" id="product-price-192"><span class="price"><?php echo $inf->price;?> VNĐ</span>
                                             </span>
                                         </div>
                                         <div class="short-description">
                                             <h2>
-                                                Quick Overview</h2>
+                                                Mô Tả</h2>
                                             <div class="std" style="border-bottom:dotted 1px silver">
                                             	<?php echo substr($inf->longdesc,0,200);?>
                                                 <!-- p>
@@ -349,22 +359,10 @@
                                         </div>
                                         <script type="text/javascript">                                            decorateGeneric($$('#product-options-wrapper dl'), ['last']);</script>
                                         <div class="product-options-bottom">
-                                            <div class="price-box">
-                                                <span class="regular-price" id="product-price-192_clone"><span class="price"><?php echo $inf->price;?></span>
-                                                </span>
-                                            </div>
                                             <div class="add-to-cart">
-                                                <label for="qty">
-                                                    Qty:</label>
-                                                <input type="text" name="qty" id="qty" maxlength="12" value="0" title="Qty" class="input-text qty">
                                                 <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
-                                                    <span><span>Add to Cart</span></span></button>
+                                                    <span><span>THêm Vào Giỏ</span></span></button>
                                             </div>
-                                            <ul class="add-to-links" style="margin-right:15px">
-                                                <li><a href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/192/"
-                                                    onclick="productAddToCartForm.submitLight(this, 'http://demo.emthemes.com/casualwear/wishlist/index/add/product/192/'); return false;"
-                                                    class="link-wishlist">Add to Wishlist</a></li>                                                
-                                            </ul>
                                         </div>
                                     </div>
                                     <div class="product-img-box">
@@ -410,55 +408,11 @@
                                     <div class="clearer">
                                     </div>
                                     </form>
-                                    <script type="text/javascript">
-    //<![CDATA[
-                                        var productAddToCartForm = new VarienForm('product_addtocart_form');
-                                        productAddToCartForm.submit = function (button, url) {
-                                            if (this.validator.validate()) {
-                                                var form = this.form;
-                                                var oldUrl = form.action;
-
-                                                if (url) {
-                                                    form.action = url;
-                                                }
-                                                var e = null;
-                                                try {
-                                                    this.form.submit();
-                                                } catch (e) {
-                                                }
-                                                this.form.action = oldUrl;
-                                                if (e) {
-                                                    throw e;
-                                                }
-
-                                                if (button && button != 'undefined') {
-                                                    button.disabled = true;
-                                                }
-                                            }
-                                        } .bind(productAddToCartForm);
-
-                                        productAddToCartForm.submitLight = function (button, url) {
-                                            if (this.validator) {
-                                                var nv = Validation.methods;
-                                                delete Validation.methods['required-entry'];
-                                                delete Validation.methods['validate-one-required'];
-                                                delete Validation.methods['validate-one-required-by-name'];
-                                                if (this.validator.validate()) {
-                                                    if (url) {
-                                                        this.form.action = url;
-                                                    }
-                                                    this.form.submit();
-                                                }
-                                                Object.extend(Validation.methods, nv);
-                                            }
-                                        } .bind(productAddToCartForm);
-    //]]>
-                                    </script>
                                 </div>
                                 <div class="product-collateral">
                                     <div class="box-collateral box-description">
                                         <h2>
-                                            Details</h2>
+                                            Chi Tiết Sản Phẩm</h2>
                                         <div class="std">
                                             <table border="0">
                                                 <tbody>
@@ -473,7 +427,7 @@
                                     </div>
                                     <div class="box-collateral box-up-sell">
                                         <h2>
-                                            You may also be interested in the following product(s)</h2>
+                                            Sản Phẩm Tương Tự</h2>
                                         <table class="products-grid" id="upsell-product-table">
                                             <tbody>
                                                 <tr class="first last odd">
@@ -491,69 +445,8 @@
                                                             <span class="regular-price" id="product-price-189-upsell"><span class="price">$'.$item->price.'</span>
                                                             </span>
                                                         </div>
-                                                        <div class="ratings">
-                                                            <div class="rating-box">
-                                                                <div class="rating" style="width: 87%">
-                                                                </div>
-                                                            </div>
-                                                            <p class="rating-links">
-                                                                <a href="http://demo.emthemes.com/casualwear/review/product/list/id/189/category/53/">
-                                                                    1 Review(s)</a> <span class="separator">|</span> <a href="http://demo.emthemes.com/casualwear/review/product/list/id/189/category/53/#review-form">
-                                                                        Add Your Review</a>
-                                                            </p>
-                                                        </div>
                                                     </td>';
                                                 	}?>
-                                                    <!-- td>
-                                                        <a href="http://demo.emthemes.com/casualwear/women-s-pincross-tee.html" title="women's pincross tee"
-                                                            class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/199x/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-3.png"
-                                                                width="199" height="199" alt="women's pincross tee"></a>
-                                                        <h3 class="product-name">
-                                                            <a href="#" title="women's pincross tee">
-                                                                women's pincross tee</a></h3>
-                                                        <div class="price-box">
-                                                            <span class="regular-price" id="product-price-189-upsell"><span class="price">$<?php echo $inf->price;?></span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <div class="rating-box">
-                                                                <div class="rating" style="width: 87%">
-                                                                </div>
-                                                            </div>
-                                                            <p class="rating-links">
-                                                                <a href="http://demo.emthemes.com/casualwear/review/product/list/id/189/category/53/">
-                                                                    1 Review(s)</a> <span class="separator">|</span> <a href="http://demo.emthemes.com/casualwear/review/product/list/id/189/category/53/#review-form">
-                                                                        Add Your Review</a>
-                                                            </p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="http://demo.emthemes.com/casualwear/women-s-ted-snake-tee.html" title="women's ted snake tee"
-                                                            class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/199x/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-4.png"
-                                                                width="199" height="199" alt="women's ted snake tee"></a>
-                                                        <h3 class="product-name">
-                                                            <a href="http://demo.emthemes.com/casualwear/women-s-ted-snake-tee.html" title="women's ted snake tee">
-                                                                women's ted snake tee</a></h3>
-                                                        <div class="price-box">
-                                                            <span class="regular-price" id="product-price-190-upsell"><span class="price">$160.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="last">
-                                                        <a href="http://demo.emthemes.com/casualwear/poorman-weapon.html" title="poorman weapon"
-                                                            class="product-image">
-                                                            <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/small_image/199x/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-5.png"
-                                                                width="199" height="199" alt="poorman weapon"></a>
-                                                        <h3 class="product-name">
-                                                            <a href="http://demo.emthemes.com/casualwear/poorman-weapon.html" title="poorman weapon">
-                                                                poorman weapon</a></h3>
-                                                        <div class="price-box">
-                                                            <span class="regular-price" id="product-price-191-upsell"><span class="price">$220.00</span>
-                                                            </span>
-                                                        </div>
-                                                    </td -->
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -687,63 +580,6 @@
                         </div>
                     </div>
                     </form>
-                </div>
-                <div class="block block-tags">
-                    <div class="block-title">
-                        <strong><span>Popular Tags</span></strong>
-                    </div>
-                    <div class="block-content">
-                        <ul class="tags-list">
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/23/" style="font-size: 98.333333333333%;">
-                                Camera</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/109/" style="font-size: 86.666666666667%;">
-                                Hohoho</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/27/" style="font-size: 145%;">
-                                SEXY</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/61/" style="font-size: 75%;">
-                                Tag</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/29/" style="font-size: 110%;">
-                                Test</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/17/" style="font-size: 86.666666666667%;">
-                                bones</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/12/" style="font-size: 110%;">
-                                cool</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/184/" style="font-size: 86.666666666667%;">
-                                cool t-shirt</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/173/" style="font-size: 86.666666666667%;">
-                                crap</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/41/" style="font-size: 86.666666666667%;">
-                                good</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/16/" style="font-size: 86.666666666667%;">
-                                green</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/5/" style="font-size: 86.666666666667%;">
-                                hip</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/51/" style="font-size: 75%;">
-                                laptop</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/70/" style="font-size: 75%;">
-                                nice</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/77/" style="font-size: 75%;">
-                                notebook</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/42/" style="font-size: 86.666666666667%;">
-                                phone</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/30/" style="font-size: 98.333333333333%;">
-                                red</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/28/" style="font-size: 86.666666666667%;">
-                                tight</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/2/" style="font-size: 75%;">
-                                trendy</a></li>
-                            <li><a href="http://demo.emthemes.com/casualwear/tag/product/list/tagId/4/" style="font-size: 86.666666666667%;">
-                                young</a></li>
-                        </ul>
-                        <div class="actions">
-                            <a href="http://demo.emthemes.com/casualwear/tag/list/">View All Tags</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="paypal-logo">
-                    <a href="#" title="Additional Options" onclick="javascript:window.open('https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','paypal','width=600,height=350,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;">
-                        <img src="https://www.paypalobjects.com/en_US/i/bnr/bnr_nowAccepting_150x60.gif"
-                            alt="Additional Options" title="Additional Options"></a>
                 </div>
             </div>
         </div>

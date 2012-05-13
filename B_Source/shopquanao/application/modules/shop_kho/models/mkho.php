@@ -26,6 +26,31 @@ class MKho extends CI_Model
         return $data;
     }
     
+    /**
+     * Get Tat ca kho + so luong hang cua mot san pham theo tung kho
+     * Enter description here ...
+     * @param unknown_type $id
+     */
+	function getKhoOfProduct($id)
+    {
+         // getting all the products of the same categroy.
+        $data = array();
+        
+        $this->db->select('shop_kho.kho_name as kho_name, shop_sanphamkho.*');
+        $this->db->where('id',$id);
+        $this->db->join('shop_kho', 'shop_kho.kho_id = shop_sanphamkho.kho_id');
+        $Q = $this->db->get('shop_sanphamkho');
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+    
 	function checkMaKho($kho_code)
     {
     	//$this->db->select('kho_code');
