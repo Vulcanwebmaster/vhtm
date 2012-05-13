@@ -122,11 +122,11 @@ class Welcome extends Shop_Controller
         $data['header'] ="HOME";
         $data['metadesc'] =$page['metadesc'];
         $data['metakeyword'] =$page['metakeyword'];
-        //tienlx: load data slide New arrivals this month
-        $this->db->order_by('id',"DESC");
-        $query = $this->db->get("omc_products");
-        $data['newArrivals']=$query->result();
-        //end tienlx
+        
+        //By An : load homepage      
+        $data['newArrivals']=$this->getHomepage();
+        //end An
+        
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data); 
     }
@@ -1075,11 +1075,13 @@ class Welcome extends Shop_Controller
     	if ($this->input->post('fsearch')) 
     	{
     		$fsearch = $this->input->post('fsearch'); 
-    		redirect(base_url().'index.php/welcome/get_page/'.$fsearch,'refresh');
+    		$this->get_page($fsearch);
+    		//redirect(base_url().'index.php/welcome/get_page/'.$fsearch,'refresh');
     	}
     	else 
-    	{
-    		$data['fsearch']=$this->getSearch_frontend('',$index);
+    	{    		
+    		$data['fsearch']='';
+    		$data['title']="Tìm kiếm"; 		
     		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
     		$data['module']=$this->module;
     		$data['mes']= "Không có sản phẩm này trong kho";  		
@@ -1105,8 +1107,9 @@ class Welcome extends Shop_Controller
    		}*/
     }
 	
-    function get_page($fsearch,$index="0")
+    function get_page($fsearch,$index=0)
     {
+    		
     	    $data['sea']=$fsearch;
     		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
     		$config['total_rows']=$this->count($fsearch); 	  
@@ -1118,16 +1121,18 @@ class Welcome extends Shop_Controller
     		if(count ($result))
     		{
     		$data['fsearch']=$result;
+    		$data['title']="Tìm kiếm"; 		
     		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
     		$data['module']=$this->module;
     		$this->load->view($this->_container,$data);
     		}
     		else
     		{
-    		$data['fsearch']=$result;
+    		$data['fsearch']='';
     		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
     		$data['module']=$this->module;
-    		$data['mes']= "Không có sản phẩm này trong kho";  		
+    		$data['mes']= "Không có sản phẩm này trong kho"; 
+    		$data['title']="Tìm kiếm"; 		
     		$this->load->view($this->_container,$data);
     		}
     }
@@ -1151,7 +1156,7 @@ class Welcome extends Shop_Controller
         return $data;
 	
 	}
-	
+
 	function count($fsearch)
 	{
 		$this->db->like('name', $fsearch);
@@ -1168,6 +1173,27 @@ class Welcome extends Shop_Controller
         }
         
         return $Q->num_rows();		
+	}
+	
+	
+	function getHomepage()
+	{		
+		$data = array();		
+
+		$this->db->where('other_feature','new product');
+    	$this->db->order_by('id','DESC');    
+       	$Q=	$this->db->get('omc_products');
+
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+	
 	}
     
 	}//end controller class
