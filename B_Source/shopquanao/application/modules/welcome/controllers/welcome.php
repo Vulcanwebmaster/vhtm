@@ -711,8 +711,6 @@ class Welcome extends Shop_Controller
         }
     }
   
-  
-
 
     function cart($productid=0)
     {
@@ -1079,6 +1077,14 @@ class Welcome extends Shop_Controller
     		$fsearch = $this->input->post('fsearch'); 
     		redirect(base_url().'index.php/welcome/get_page/'.$fsearch,'refresh');
     	}
+    	else 
+    	{
+    		$data['fsearch']=$this->getSearch_frontend('',$index);
+    		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
+    		$data['module']=$this->module;
+    		$data['mes']= "Không có sản phẩm này trong kho";  		
+    		$this->load->view($this->_container,$data);
+    	}
     	
     	
    		/*if ($this->input->post('fsearch')) {
@@ -1101,21 +1107,34 @@ class Welcome extends Shop_Controller
 	
     function get_page($fsearch,$index="0")
     {
-    	   
+    	    $data['sea']=$fsearch;
     		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
     		$config['total_rows']=$this->count($fsearch); 	  
     		$config['per_page']=10;
     		$this->pagination->initialize($config);
     		
-    		$data['fsearch']=$this->getSearch_frontend($fsearch,$index);
+    		//$data['fsearch']=$this->getSearch_frontend($fsearch,$index);
+    		$result=$this->getSearch_frontend($fsearch,$index);
+    		if(count ($result))
+    		{
+    		$data['fsearch']=$result;
     		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
     		$data['module']=$this->module;
     		$this->load->view($this->_container,$data);
+    		}
+    		else
+    		{
+    		$data['fsearch']=$result;
+    		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
+    		$data['module']=$this->module;
+    		$data['mes']= "Không có sản phẩm này trong kho";  		
+    		$this->load->view($this->_container,$data);
+    		}
     }
     
 	function getSearch_frontend($fsearch="",$index="0")
 	{		
-		//$data = array();		
+		$data = array();		
 		$this->db->like('name', $fsearch);
 		//$this->db->or_like('code',$fsearch);    	    	        
     	$this->db->order_by('other_feature','DESC');    
