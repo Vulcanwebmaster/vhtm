@@ -65,7 +65,7 @@
                                             </span>
                                         </div>
                                         <div class="short-description">
-                                            <h2>
+                                            <h2 style="color: #E67817;">
                                                 Mô Tả</h2>
                                             <div class="std" style="border-bottom:dotted 1px silver">
                                             	<?php echo substr($inf->longdesc,0,200);?>
@@ -411,7 +411,7 @@
                                 </div>
                                 <div class="product-collateral">
                                     <div class="box-collateral box-description">
-                                        <h2>
+                                        <h2 style="color: #E67817;">
                                             Chi Tiết Sản Phẩm</h2>
                                         <div class="std">
                                             <table border="0">
@@ -426,7 +426,7 @@
                                         </div>
                                     </div>
                                     <div class="box-collateral box-up-sell">
-                                        <h2>
+                                        <h2 style="color: #E67817;">
                                             Sản Phẩm Tương Tự</h2>
                                         <table class="products-grid" id="upsell-product-table">
                                             <tbody>
@@ -453,7 +453,7 @@
                                         <script type="text/javascript">                                            decorateTable('upsell-product-table')</script>
                                     </div>
                                     <div class="box-collateral box-tags">
-                                        <h2>
+                                        <h2 style="color: #E67817;">
                                             Product Tags</h2>
                                         <form id="addTagForm" action="http://demo.emthemes.com/casualwear/tag/index/save/product/192/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4vd29tZW4tcy1zaG91bGRlci1sb2dvLXRlZS5odG1s/"
                                         method="get">
