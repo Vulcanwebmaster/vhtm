@@ -37,10 +37,10 @@
 $active_group = "default";
 $active_record = TRUE;
 
-$db['default']['hostname'] = "localhost";
-$db['default']['username'] = "root";
-$db['default']['password'] = "khongcopass";
-$db['default']['database'] = "shopquanao";
+$db['default']['hostname'] = "www.trinhtrunganh.info";
+$db['default']['username'] = "trinhtru_shopqa";
+$db['default']['password'] = "shopquanao";
+$db['default']['database'] = "trinhtru_shopquanao";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
