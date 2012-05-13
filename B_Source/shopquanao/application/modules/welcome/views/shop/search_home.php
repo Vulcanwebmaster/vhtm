@@ -8,7 +8,6 @@
 
 
 
-
 <div class="main-container col2-right-layout">
     <div class="main">
         <div class="breadcrumbs">
@@ -30,10 +29,13 @@
                                 <img src="http://demo.emthemes.com/casualwear/media/catalog/category/swarovski-rings_6.jpg"
                                     alt="women" title="women"></p>
                         </div>
-                    </div>
                     
+                    </div>
                     <div class="category-products">
+                    <p style= "color: red" >*<?php if (isset($mes)) echo $mes;?></p>
+                                        
                         <div class="toolbar">
+                        
                             <div class="pager">
                                 <p class="amount">
                                     <strong>10 Item(s)</strong>
