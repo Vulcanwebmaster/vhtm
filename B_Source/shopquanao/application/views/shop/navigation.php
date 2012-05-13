@@ -12,7 +12,7 @@
 			class="level-top"> <span>Quần</span> </a>
 		</li>
 		<li class="level0 nav-3 level-top"><a
-			href="#"
+			href="<?php echo site_url();?>/ao/hangmoi"
 			class="level-top"> <span>Hàng mới về</span> </a></li>
 		<li class="level0 nav-4 level-top"><a
 			href="<?php echo site_url();?>/ao/get_list/phukien"

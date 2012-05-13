@@ -158,7 +158,7 @@ input.checkbox { margin-right:3px; }
 input.qty { width:2.5em !important; }
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
-button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer;/*margin-left:-40px;*/float:left;}
+button.button { overflow:visible; width:auto; border:0; padding-bottom:10px; margin:0; background:transparent; cursor:pointer;/*margin-left:-40px;*/float:left;}
 button.button span { display:block; height:30px; background:url(../images/btn2.png) 0 0 no-repeat; padding:0 0 0 10px; font:normal 12px/30px Arial,Tahoma,sans-serif; text-align:center; white-space:nowrap; color:#fff;}
 button.button span span { border:0; padding:0 15px 0 5px; background-position: 100% 100%;}
 button.disabled span { }
@@ -168,7 +168,7 @@ button.btn-cart span span{ background:url(../images/btn-cart.gif) no-repeat left
 .widget-products button.btn-cart span span{background:url(../images/more-icon.gif) no-repeat 5px center;color:#8c8c8c;font-weight:normal;padding-left:20px}
 .widget-products  .action .availability .out-of-stock span{margin-left:10px}
 button.btn-cart span  {background:none;}
-button.btn-checkout span { height:30px; width:207px; border:0; background:url(../images/btn_checkout.png) 0 0 no-repeat !important; padding: 0; }
+button.btn-checkout span { height:30px; width:207px; border:0; background:url(btn_checkout.png) 0 0 no-repeat !important; padding: 0; }
 button.btn-checkout span span { background:none; padding:0; text-indent: -9999px; }
 button.btn-checkout.no-checkout span { background-position:0 100%; color:#b8baba; }
 button.btn-checkout.no-checkout span span { background-position:100% 100%; }
@@ -721,7 +721,7 @@ font-size: 11px;}
 
 /* Block: Cart */
 .block-cart { }
-.block-cart .block-title { background:url(../images/i_cart.png) no-repeat right 2px}
+.block-cart .block-title { background:url(i_cart.png) no-repeat right 2px}
 .block-cart .block-subtitle{clear:both}
 .block-cart .block-title strong { }
 .block-cart .block-content { }
@@ -1330,7 +1330,7 @@ height:24px;width:528px; line-height:24px}
 
 
 .cart .page-title { border-bottom:0;margin-bottom:0;padding-bottom:0;width:100%}
-.cart .page-title h1 {color:#00beee;font-size:20px;padding:0 0 0 10px;}
+.cart .page-title h1 {color:#00beee;font-size:20px;padding:10px 0 0 10px;}
 
 /* Checkout Types */
 .cart .page-title .checkout-types li {}

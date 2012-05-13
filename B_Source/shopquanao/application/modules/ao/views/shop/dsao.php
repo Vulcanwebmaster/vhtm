@@ -2,13 +2,13 @@
     <div class="main">
         <div class="breadcrumbs">
             <ul>
-                <li class="home"><a href="http://demo.emthemes.com/casualwear/" title="Tới trang chủ">
+                <li class="home"><a href="<?php echo base_url();?>" title="Tới trang chủ">
                     Trang chủ</a> <span>/ </span></li>
-                <li class="category53"><strong><?php echo $type;?></strong> </li>
+                <li class="category53"><strong style="color:#e67817"><?php echo $type;?></strong> </li>
             </ul>
         </div>
         <div class="page-title category-title">
-                        <h1><?php echo $type;?></h1>
+                        <h1 style="color:#e67817"><?php echo $type;?></h1>
                     </div>
         <div class="bg-inner">
             <div class="col-main">
@@ -27,36 +27,36 @@
                         <div class="toolbar">
                             <div class="pager">
                                 <p class="amount">
-                                    <strong>10 Item(s)</strong>
+                                    <strong><?php echo $count;?> sản phẩm</strong>
                                 </p>
                                 <div class="limiter">
-                                    <label>Show 10</label>                                    
-                                    per page
+                                    <label>Hiển thị 10</label>                                    
+                                    sản phẩm / trang
                                 </div>
                             </div>
                             <div class="sorter">
                                 <p class="view-mode">
                                     <label>
-                                        View as:</label>
+                                        Chế độ hiển thị:</label>
                                     <strong title="Grid" class="grid">Grid</strong>&nbsp; <a href="http://demo.emthemes.com/casualwear/women.html?mode=list"
                                         title="List" class="list">List</a>&nbsp;
                                 </p>
                                 <div class="sort-by">
                                     <label>
-                                        Sort By</label>
+                                        Sắp xếp theo</label>
                                     <select onchange="setLocation(this.value)">
                                         <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=position"
-                                            selected="selected">Position </option>
+                                            selected="selected">Vị trí </option>
                                         <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=name">
-                                            Name </option>
+                                            Tên </option>
                                         <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=price">
-                                            Price </option>
+                                            Giá </option>
                                         <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=gender">
-                                            Gender </option>
+                                            Giới tính </option>
                                     </select>
                                     <a href="http://demo.emthemes.com/casualwear/women.html?dir=desc&amp;order=position"
                                         title="Set Descending Direction">
-                                        <img src="http://demo.emthemes.com/casualwear/skin/frontend/em0015/default/images/i_asc_arrow.gif"
+                                        <img src="<?php echo base_url();?>assets/women_files/i_asc_arrow.gif"
                                             alt="Set Descending Direction" class="v-middle"></a>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             	{
                             		echo '<ul class="products-grid first odd">
                                     <li class="item first">                                    
-                                    <a href="#"
+                                    <a href="'.base_url().'index.php/chitietsp/get_inf/'.$list[$i]->id.'"
                                         title="" class="product-image">                                        
                                         <img src="';
                             		echo convert_image_path($list[$i]->image);
@@ -80,21 +80,19 @@
                                             <span class="regular-price" id="product-price-192"><span class="price">'.$list[$i]->price.'</span>
                                             </span>
                                         </div>
-                                        <ul class="add-to-links">
-                                            <li><a href="#"
-                                                class="link-wishlist">Add to Wishlist</a></li>
-                                            <li><span class="separator">|</span> <a href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/192/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
-                                                class="link-compare">Add to Compare</a></li>
-                                        </ul>
+                                        
                                         <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.'http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/192/'.')">
-                                                <span><span>Add to Cart</span></span></button>
+                                            <button type="button" title="Add to Cart" class="button btn-cart">
+                                                <span><span>
+                                                <a style="color:black" href="'.base_url().'index.php/chitietsp/get_inf/'.$list[$i]->id.'">THÊM GIỎ HÀNG</a>
+                                                </span></span></button>
+                                            
                                         </div>
                                     </li>';
                             		if ($i+1<count($list))
                             		{ 
                             		echo 
-                                    '<li class="item last"><a href="#"
+                                    '<li class="item last"><a href="'.base_url().'index.php/chitietsp/get_inf/'.$list[$i+1]->id.'"
                                         title="" class="product-image">
                                         <img src="';
                             		echo convert_image_path($list[$i+1]->image);;
@@ -106,15 +104,13 @@
                                             <span class="regular-price" id="product-price-187"><span class="price">'.$list[$i+1]->price.'</span>
                                             </span>
                                         </div>
-                                        <ul class="add-to-links">
-                                            <li><a href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/187/"
-                                                class="link-wishlist">Add to Wishlist</a></li>
-                                            <li><span class="separator">|</span> <a href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/187/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
-                                                class="link-compare">Add to Compare</a></li>
-                                        </ul>
+                                        
                                         <div class="actions">
                                             <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.'http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/187/'.')">
-                                                <span><span>Add to Cart</span></span></button>
+                                                <span><span>
+                                                <a style="color:black" href="'.base_url().'index.php/chitietsp/get_inf/'.$list[$i+1]->id.'">THÊM GIỎ HÀNG</a>
+                                                </span></span></button>
+                                            
                                         </div>
                                     </li>';
                             		}
@@ -124,64 +120,7 @@
                             	echo $this->pagination->create_links();
                             	
                             	?>                            	
-                            	<!-- ?php                             		
-                            	for ($i=0;$i<count($list);$i+=2)
-                            	{
-                            		echo '<ul class="products-grid first odd">
-                                    <li class="item first">                                    
-                                    <a href="#"
-                                        title="" class="product-image">                                        
-                                        <img src="';
-                            		echo convert_image_path($list[$i]->image);
-                            		echo '" width="168px" height="185px" alt=""/></a>';
-                            		echo '<h2 class="product-name">
-                                            <a href=""
-                                                title="">'.$list[$i]->name.'</a></h2>
-                                        <div class="price-box">
-                                            <span class="regular-price" id="product-price-192"><span class="price">'.$list[$i]->price.'</span>
-                                            </span>
-                                        </div>
-                                        <ul class="add-to-links">
-                                            <li><a href="#"
-                                                class="link-wishlist">Add to Wishlist</a></li>
-                                            <li><span class="separator">|</span> <a href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/192/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
-                                                class="link-compare">Add to Compare</a></li>
-                                        </ul>
-                                        <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.'http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/192/'.')">
-                                                <span><span>Add to Cart</span></span></button>
-                                        </div>
-                                    </li>';
-                            		if ($i+1<count($list))
-                            		{ 
-                            		echo 
-                                    '<li class="item last"><a href="#"
-                                        title="" class="product-image">
-                                        <img src="';
-                            		echo convert_image_path($list[$i+1]->image);;
-                            		echo '"
-                                            width="168" height="185" alt=""></a>
-                                        <h2 class="product-name">
-                                            <a href="#" title="">'.$list[$i+1]->name.'</a></h2>
-                                        <div class="price-box">
-                                            <span class="regular-price" id="product-price-187"><span class="price">'.$list[$i+1]->price.'</span>
-                                            </span>
-                                        </div>
-                                        <ul class="add-to-links">
-                                            <li><a href="http://demo.emthemes.com/casualwear/wishlist/index/add/product/187/"
-                                                class="link-wishlist">Add to Wishlist</a></li>
-                                            <li><span class="separator">|</span> <a href="http://demo.emthemes.com/casualwear/catalog/product_compare/add/product/187/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/"
-                                                class="link-compare">Add to Compare</a></li>
-                                        </ul>
-                                        <div class="actions">
-                                            <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('.'http://demo.emthemes.com/casualwear/checkout/cart/add/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvd29tZW4uaHRtbA,,/product/187/'.')">
-                                                <span><span>Add to Cart</span></span></button>
-                                        </div>
-                                    </li>';
-                            		}
-                                echo '</ul>';
-                            	}? -->                            	                                                    
-                                
+                            	                            	                                                                                    
                                 <script type="text/javascript">                                    decorateGeneric($$('ul.products-grid'), ['odd', 'even', 'first', 'last'])</script>
                             </div>
                         </div>
@@ -189,37 +128,37 @@
                             <div class="toolbar">
                                 <div class="pager">
                                     <p class="amount">
-                                        <strong>10 Item(s)</strong>
+                                        <strong><?php echo $count;?> sản phẩm</strong>
                                     </p>
                                     <div class="limiter">
                                         <label>
-                                            Show 10</label>                                        
-                                        per page
+                                            Hiển thị 10</label>                                        
+                                        sản phẩm / trang
                                     </div>
                                 </div>
                                 <div class="sorter">
                                     <p class="view-mode">
                                         <label>
-                                            View as:</label>
+                                            Chế độ hiển thị:</label>
                                         <strong title="Grid" class="grid">Grid</strong>&nbsp; <a href="http://demo.emthemes.com/casualwear/women.html?mode=list"
                                             title="List" class="list">List</a>&nbsp;
                                     </p>
                                     <div class="sort-by">
                                         <label>
-                                            Sort By</label>
+                                            Sắp xếp theo</label>
                                         <select onchange="setLocation(this.value)">
                                             <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=position"
-                                                selected="selected">Position </option>
+                                                selected="selected">Vị trí </option>
                                             <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=name">
-                                                Name </option>
+                                                Tên </option>
                                             <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=price">
-                                                Price </option>
+                                                Giá </option>
                                             <option value="http://demo.emthemes.com/casualwear/women.html?dir=asc&amp;order=gender">
-                                                Gender </option>
+                                                Giới tính </option>
                                         </select>
                                         <a href="http://demo.emthemes.com/casualwear/women.html?dir=desc&amp;order=position"
                                             title="Set Descending Direction">
-                                            <img src="http://demo.emthemes.com/casualwear/skin/frontend/em0015/default/images/i_asc_arrow.gif"
+                                            <img src="<?php echo base_url();?>assets/women_files/i_asc_arrow.gif"
                                                 alt="Set Descending Direction" class="v-middle"></a>
                                     </div>
                                 </div>
@@ -228,40 +167,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-right sidebar">
-                <div class="block block-list block-compare">
-                    <div class="block-title">
-                        <strong><span>Compare Products </span></strong>
-                    </div>
-                    <div class="block-content">
-                        <p class="empty">
-                            You have no items to compare.</p>
-                    </div>
-                </div>
+            
+            <div class="col-right sidebar">                
                 <div class="block block-cart">
                     <div class="block-title">
-                        <strong><span>shopping cart</span></strong>
+                        <strong><span>Giỏ hàng</span></strong>
                     </div>
                     <div class="block-content">
                         <p class="empty">
-                            You have no items in your shopping cart.</p>
+                            Bạn chưa có mặt hàng nào trong giỏ hàng.</p>
                     </div>
                 </div>
-                <div class="block block-list block-viewed">
-                    <div class="block-title">
-                        <strong><span>Recently Viewed Products</span></strong>
-                    </div>
-                    <div class="block-content">
-                        <ol id="recently-viewed-items">
-                            <li class="item last odd">
-                                <p class="product-name">
-                                    <a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html">all star reverse
-                                        print</a></p>
-                            </li>
-                        </ol>
-                        <script type="text/javascript">                            decorateList('recently-viewed-items');</script>
-                    </div>
-                </div>
+                
                 <div class="block block-banner">
                     <div class="block-content">
                         <img src="<?php echo base_url();?>assets/women_files/col_right_callout.jpg" style="width:100%"
@@ -379,6 +296,7 @@
                             alt="Additional Options" title="Additional Options"></a>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>

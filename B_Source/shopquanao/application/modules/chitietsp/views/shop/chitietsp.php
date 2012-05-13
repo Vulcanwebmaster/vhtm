@@ -2,14 +2,14 @@
     <div class="main">
         <div class="breadcrumbs">
             <ul>
-                <li class="home"><a href="<?php echo base_url();?>" title="Go to Home Page">Home</a>
+                <li class="home"><a href="<?php echo base_url();?>" title="Tới trang chủ">Trang chủ</a>
                     <span>/ </span></li>
-                <li class="category53"><strong>women</strong> </li>
+                <li class="category53"><strong style="color:#e67817">Chi tiết sản phẩm</strong> </li>
             </ul>
         </div>
         <div class="page-title category-title">
-            <h1>
-                women</h1>
+            <h1 style="color:#e67817">
+                Chi tiết sản phẩm</h1>
         </div>
         <div class="bg-inner">
             <div class="col-main">
@@ -39,11 +39,11 @@
                                     </div>
                                     <div class="product-shop">
                                         <div class="product-name">
-                                            <h1><?php echo $inf->name;?></h1>
+                                            <h1 style="color:#f65719"><?php echo $inf->name;?></h1>
                                         </div>
                                         <p class="email-friend">
                                             <a href="http://demo.emthemes.com/casualwear/sendfriend/product/send/id/192/cat_id/53/">
-                                                Email to a Friend</a></p>
+                                                Gửi mail tới bạn bè</a></p>
                                         <p class="no-rating">
                                             <a href="http://demo.emthemes.com/casualwear/review/product/list/id/192/category/53/#review-form">
                                                 Be the first to review this product</a></p>

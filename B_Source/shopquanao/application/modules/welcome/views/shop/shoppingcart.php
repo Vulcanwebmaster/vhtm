@@ -1,83 +1,109 @@
-<h1><?php echo lang('general_shopping_cart'); ?></h1>
-<div id='pleft'>
-<?php
-/*
-if ($this->session->flashdata('msg')){
-	echo "<div class='status_box'>";
-	echo $this->session->flashdata('msg');
-	echo "</div>";
-}*/
-?>
-<?php echo form_open($module.'/checkout'); ?>
-<table border='1' cellspacing='0' cellpadding='5' width='90%'>
-<?php
-if(isset($_SESSION['totalprice'])){
-	$data['totalprice'] = $_SESSION['totalprice'];
-	}
-
-if (isset($_SESSION['cart'])){
-	foreach ($_SESSION['cart'] as $PID => $row){	
-		$data = array(	
-				'name' => "li_id[$PID]", 
-				'value'=>$row['count'], 
-				'id' => "li_id_$PID", 
-				'class' => 'process',
-				'size' => 5
-		);
-		
-		echo "<tr valign='top'>\n";
-		echo "<td>". form_input($data)."</td>\n";
-		echo "<td id='li_name_".$PID."'>". $row['name']."</td>\n"; 
-		echo "<td id='li_price_".$PID."'>".lang('webshop_currency_symbol'). $row['price']."</td>\n";
-		echo "<td id='li_total_".$PID."'>".lang('webshop_currency_symbol').number_format($row['price'] * $row['count'], 2,'.',',')."</td>\n";
-		echo "<td><input type='button' name='delete' value='".lang('webshop_delete')."' onclick='jsRemoveProduct($PID)'></td>\n";
-		echo "</tr>\n";
-	}
-	$TOTALPRICE = $_SESSION['totalprice'];
-	$TOTALPRICE = number_format($TOTALPRICE,2,'.',',');
-	$total_data = array('name' => 'total', 'id'=>'total', 'value' => $TOTALPRICE);
-	echo "<tr valign='top'>\n";
-	echo "<td colspan='3'>".lang('orders_total_price')."</td>\n";
-	echo "<td colspan='2'>".lang('webshop_currency_symbol')."$TOTALPRICE ".form_hidden($total_data)."</td>\n";
-	
-	echo "</tr>\n";
-
-	echo "<tr valign='top'>\n";
-	echo "<td colspan='3'>&nbsp;</td>\n";
-	echo "<td colspan='2'><input type='button' name='update' value='".lang('webshop_update')."' onclick='jsUpdateCart()'/></td>\n";
-	echo "</tr>\n";	
-	
-	echo "<tr valign='top'>\n";
-	echo "<td colspan='3'>&nbsp;</td>\n";
-	$data = array(
-    'name'        => 'submit',
-    'value'       => lang('webshop_checkout'),
-    );
-	echo "<td colspan='2'>".form_submit($data)."</td>\n";
-	echo "</tr>\n";	
-}else{
-	//just in case!
-   // echo "<tr><td id='tdmes'>" . lang('webshop_no_items_to_show') . "</td></tr>\n";
-	echo "<tr><td></td></tr>\n";
-}//end outer if count
-?>
-</table>
-<?php echo form_close(); ?>
-<br />
-<?php
-	if($shippingprice>0){
-		echo "<div class='status_box'><h2>";
-	echo lang('webshop_shipping_charge');
-	if (isset($shippingprice)){
-	echo " ". lang('webshop_currency_symbol')."$shippingprice";
-	}else{
-		echo "0 ". lang('webshop_currency');
-	}
-	echo " " . lang('webshop_will_be_added');
-	echo "</h2></div>";
-	}
-	?>
-
-<div id='ajax_msg'></div>
+<div class="main-container col1-layout">
+    <div class="main">
+        <div class="bg-inner">
+            <div class="col-main">
+                <div class="col-inner">
+                    <div class="cart">
+                        <div class="page-title title-buttons">
+                            <h1>
+                                Shopping Cart</h1>
+                            <ul class="checkout-types">
+                                <li>
+                                    <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout"
+                                        onclick="window.location='http://demo.emthemes.com/casualwear/checkout/onepage/';">
+                                        <span><span>Proceed to Checkout</span></span></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cart-container-inner">
+                            <form action="http://demo.emthemes.com/casualwear/checkout/cart/updatePost/" method="post">
+                            <fieldset>
+                                <table id="shopping-cart-table" class="data-table cart-table">
+                                    <colgroup>
+                                        <col width="1">
+                                        <col width="1">
+                                        <col>
+                                        <col width="1">
+                                        <col width="1">
+                                        <col width="1">
+                                        <col width="1">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="first last">
+                                            <th rowspan="1">
+                                                &nbsp;
+                                            </th>
+                                            <th rowspan="1">
+                                            </th>
+                                            <th rowspan="1">
+                                                <span class="nobr">Product Name</span>
+                                            </th>
+                                            <th class="a-center" colspan="1">
+                                                Edit
+                                            </th>
+                                            <th rowspan="1" class="a-center">
+                                                <span class="nobr">Unit Price</span>
+                                            </th>
+                                            <th class="a-center" colspan="1">
+                                                Qty
+                                            </th>
+                                            <th rowspan="1" class="a-center">
+                                                Subtotal
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr class="first last">
+                                            <td colspan="50" class="a-right last">
+                                                <button type="button" title="Continue Shopping" class="button btn-continue" onclick="setLocation('http://demo.emthemes.com/casualwear/')">
+                                                    <span><span>Continue Shopping</span></span></button>
+                                                <button type="submit" title="Update Shopping Cart" class="button btn-update">
+                                                    <span><span>Update Shopping Cart</span></span></button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr class="first last odd">
+                                            <td class="a-center">
+                                                <a href="http://demo.emthemes.com/casualwear/checkout/cart/delete/id/762/uenc/aHR0cDovL2RlbW8uZW10aGVtZXMuY29tL2Nhc3VhbHdlYXIvY2hlY2tvdXQvY2FydC8,/"
+                                                    title="Remove item" class="btn-remove2">Remove item</a>
+                                            </td>
+                                            <td>
+                                                <a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html" title="all star reverse print">
+                                                    <img src="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/thumbnail/75x/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-11.png"
+                                                        width="75" height="75" alt="all star reverse print"></a>
+                                            </td>
+                                            <td>
+                                                <h2 class="product-name">
+                                                    <a href="http://demo.emthemes.com/casualwear/all-star-reverse-print.html">all star reverse
+                                                        print</a>
+                                                </h2>
+                                            </td>
+                                            <td class="a-center">
+                                                <a href="http://demo.emthemes.com/casualwear/checkout/cart/configure/id/762/" title="Edit item parameters">
+                                                    Edit</a>
+                                            </td>
+                                            <td class="a-right">
+                                                <span class="cart-price"><span class="price">$120.00</span> </span>
+                                            </td>
+                                            <td class="a-center">
+                                                <input name="cart[762][qty]" value="1" size="4" title="Qty" class="input-text qty"
+                                                    maxlength="12">
+                                            </td>
+                                            <td class="a-right last">
+                                                <span class="cart-price"><span class="price">$120.00</span> </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <script type="text/javascript">                                    decorateTable('shopping-cart-table')</script>
+                            </fieldset>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-

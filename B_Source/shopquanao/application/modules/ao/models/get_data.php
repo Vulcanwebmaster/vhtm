@@ -14,7 +14,7 @@
 			elseif ($type=='quan')
 				$cat_id='25';	
 			elseif ($type=='phukien')
-				$cat_id='27';			
+				$cat_id='27';				
 			return $cat_id;
 		}
 		
@@ -45,5 +45,33 @@
 			$list=$this->db->get("omc_products");
 			return $list->num_rows();
 		}
+		
+		//=====HÀNG MỚI VỀ ==================================================================
+		function hang_moi_ve($offset)
+		{
+			$this->db->where('other_feature', 'new product');	        
+	        $data = array();
+		
+	    	$Q=	$this->db->get("omc_products",10,$offset);
+	
+	        if ($Q->num_rows() > 0)
+	        {
+	            foreach ($Q->result() as $row)
+	            {
+	                $data[] = $row;
+	            }
+	        }
+	        $Q->free_result();
+	        return $data;		
+		}
+		function count_hang_moi()
+		{
+			$this->db->where('other_feature', 'new product');	        
+	        $data = array();
+		
+	    	$Q=	$this->db->get("omc_products");
+			return $Q->num_rows();
+		}
+		
 	}
 ?>

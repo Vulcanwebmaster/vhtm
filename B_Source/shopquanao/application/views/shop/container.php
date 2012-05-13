@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $title ?></title>
+<title><?php echo $title; ?></title>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <base href="<?php echo base_url();?>" />
@@ -41,6 +41,21 @@
 	      });
 	
 	    });
+	    
+		$(document).ready(function(){
+    		
+    		var fsearch=document.getElementById("fsearch");
+    		fsearch.value="Nhập sản phẩm cần tìm...";
+			$('#fsearch').focusin(function(){				
+				if (fsearch.value=="Nhập sản phẩm cần tìm...")					
+					fsearch.value="";
+			});
+			$('#fsearch').focusout(function(){
+				if (fsearch.value=='')
+					fsearch.value='Nhập sản phẩm cần tìm...';
+			});
+    	});
+	
 	
 	  </script>
 <!-- ===================== -->

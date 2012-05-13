@@ -3,7 +3,7 @@
         <strong>Magento Commerce</strong><a href="http://demo.emthemes.com/casualwear/" title="Magento Commerce"
             class="logo"><img src="<?php echo base_url();?>assets/women_files/logo1.png" style="width:250px; height:100px"
                 alt="Magento Commerce"></a></h1>
-    <div class="quick-access">
+    <div class="quick-access">    	   
         <form id="search_mini_form" action="<?php echo base_url()?>index.php/welcome/search_frontend/"
         method="post">
         <div class="form-search"  style="border-radius:5px">
