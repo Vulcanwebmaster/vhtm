@@ -424,6 +424,7 @@ class MProducts extends CI_Model
 			$item=$this->getProductById($id);
 			
 			$this->db->where('category_id',$item->category_id);
+			$this->db->order_by("name", "random");
 			$ds=$this->db->get('omc_products');
 			
 			$count=0;

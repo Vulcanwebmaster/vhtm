@@ -649,7 +649,9 @@ font-size: 11px;}
 .block .block-title a { text-decoration:none !important; }
 .block .block-subtitle {}
 .block .block-content {padding: 5px 0 10px;}
-.block .block-content li.item {padding:5px 0; }
+.block .block-content  img {max-height: 150px; max-width: 150px;}
+.block .block-content li {border-bottom: 1px dashed; padding-top: 5px; padding-left: 20px; text-align: center;}
+.block .block-content li.item {padding:5px 0;}
 .block .block-content .product-name { }
 .block .btn-remove { float:right; margin:1px 0 2px 5px; }
 .block .actions { padding:5px 0; text-align:left; }
