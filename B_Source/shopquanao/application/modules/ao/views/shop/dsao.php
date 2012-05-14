@@ -4,9 +4,9 @@
         	?><div class="post hentry">
             <a name="1655744853648508510"></a>
             <h3 class="post-title entry-title">
-            	<div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg.png'); background-repeat:no-repeat">
+            	<div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat">
                     	<h5 style="float:left;color:white; padding-top:15px;padding-left:25px;"><?php echo $product['price'];?></h5>
-                    	<a style="padding-top:20px;padding-right:10px;color:red;text-transform:uppercase; float:right; font-size:9px">Thêm giỏ hàng</a>
+                    	<a style="padding-top:20px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">Thêm giỏ hàng</a>
                     </div>
                 <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $product['id'];?>"><?php echo $product['name'];?></a>                
             </h3>
