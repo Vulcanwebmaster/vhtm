@@ -1,52 +1,32 @@
-<div class="header">
-    <h1 class="logo">
-        <strong>Magento Commerce</strong><a href="http://demo.emthemes.com/casualwear/" title="Magento Commerce"
-            class="logo"><img src="<?php echo base_url();?>assets/women_files/logo1.png" style="width:250px; height:100px"
-                alt="Magento Commerce"></a></h1>
-    <div class="quick-access">    	   
-        <form id="search_mini_form" action="<?php echo base_url()?>index.php/welcome/search_frontend/"
-        method="post">
-        <div class="form-search"  style="border-radius:5px">
-            <label for="search">
-                Search:</label>
-            <input id="fsearch" type="text" name="fsearch" value="<?php if(isset($sea)) echo $sea;
-            else echo "SEARCH HERE"?>" class="input-text" autocomplete="off">
-            <button type="submit" title="Search" class="button">
-                <span><span>Search</span></span></button>
-            <div id="search_autocomplete" class="search-autocomplete" style="display: none;">
+<div id="masthead">
+    <div id="header-wrapper">
+        <div class="header section" id="header">
+            <div class="widget Header" id="Header1">
+                <div id="header-inner">
+                    <a href="http://www.vananhshop.com/" style="display: block">
+                        <img alt="shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm" height="90px; "
+                            id="Header1_headerimg" src="<?php echo base_url();?>assets/women_files/logo1.png"
+                            style="display: block; padding-top: 10px; padding-left: 20px;" width="229px; ">
+                    </a>
+                </div>
             </div>
-            <script type="text/javascript">
-        //<![CDATA[
-                var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search entire store here...');
-                searchForm.initAutocomplete('http://demo.emthemes.com/casualwear/catalogsearch/ajax/suggest/', 'search_autocomplete');
-        //]]>
-            </script>
         </div>
-        </form>
-        <!-- div class="links">
-            <ul class="">
-                <li class="first"><a href="http://demo.emthemes.com/casualwear/customer/account/"
-                    title="My Account">My Account</a></li>
-                <li><a href="http://demo.emthemes.com/casualwear/wishlist/" title="My Wishlist">My Wishlist</a></li>
-            </ul>
-            <ul class="">
-                <li><a href="http://demo.emthemes.com/casualwear/checkout/cart/" title="My Cart"
-                    class="top-link-cart">My Cart</a></li>
-                <li><a href="http://demo.emthemes.com/casualwear/checkout/" title="Checkout" class="top-link-checkout">
-                    Checkout</a></li>
-            </ul>
-            <ul class="last">
-                <li class=" last"><a href="http://demo.emthemes.com/casualwear/customer/account/login/"
-                    title="Log In">Log In</a></li>
-                <li class="welcome">Default welcome msg!</li>
-            </ul>
-        </div -->
-        <div class="top-container">
-            <ul>
-                <li class="default"><a href="?___store=default"><span>Default</span></a></li>
-                <li class="black"><a href="?___store=black"><span>Black</span></a></li>
-                <li class="orange"><a href="?___store=orange"><span>Orange</span></a></li>
-            </ul>
+        <div id="header2">
+            <div id="foxmenucontainer">
+                <div id="menu">
+                    <ul id="pagemenu">
+                        <li class="current_page_item"><a href="<?php echo base_url();?>">Trang chủ</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/ao/get_list/ao">Áo</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/ao/get_list/quan">Quần</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/ao/hangmoi">Hàng mới về</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/ao/get_list/phukien">Phụ kiện</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/welcome/cart">Giỏ hàng</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/welcome/contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;">
         </div>
     </div>
 </div>
