@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2012 at 10:05 PM
+-- Generation Time: May 14, 2012 at 10:08 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -787,7 +787,7 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
   `category_id` int(11) unsigned NOT NULL,
   `featured` enum('none','front','webshop') COLLATE utf8_unicode_ci NOT NULL,
   `other_feature` enum('none','most sold','new product') COLLATE utf8_unicode_ci NOT NULL,
-  `price` float(7,2) NOT NULL,
+  `price` float NOT NULL,
   `lang_id` int(2) unsigned NOT NULL,
   `table_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
@@ -798,39 +798,39 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
 --
 
 INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longdesc`, `thumbnail`, `image`, `weblink`, `product_order`, `status`, `category_id`, `featured`, `other_feature`, `price`, `lang_id`, `table_id`) VALUES
-(1, '1', '1', 0, '', '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 2, 'none', 'new product', 1111.00, 0, 0),
-(2, '2', '2', 0, '', '', '', '<p><img src="../../../../assets/images/55345576-1292315768-T-shirt-nuy-131232.jpg" alt="" width="650" height="650" /></p>', '0', 0, 'active', 2, 'none', 'new product', 5555.00, 0, 0),
-(3, '3', '3', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 333.00, 0, 0),
-(4, '4', '4', 0, '', '', '', '', NULL, NULL, '', 25, '', 'new product', 4444.00, 0, 0),
-(5, '5', '5', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555.00, 0, 0),
-(6, '6', '6', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 6666.00, 0, 0),
-(7, '7', '7', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 7777.00, 0, 0),
-(8, '8', '8', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 8888.00, 0, 0),
-(9, '9', '9', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 9999.00, 0, 0),
-(10, '10', '10', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 1200.00, 0, 0),
-(11, '11', '11', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50.00, 0, 0),
-(12, '12', '12', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 230.00, 0, 0),
-(13, '13', '13', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50.00, 0, 0),
-(14, '14', '14', 0, '', '', '', '', NULL, NULL, 'active', 26, 'webshop', 'new product', 220.00, 0, 0),
-(15, '15', '15', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 0.00, 0, 0),
-(16, '16', '16', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 123.00, 0, 0),
-(17, '17', '717', 0, '', '', '', '', NULL, NULL, 'active', 0, '', 'new product', 46346.00, 0, 0),
-(20, '20', '20', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 1111.00, 0, 0),
-(21, '21', '21', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 2222.00, 0, 0),
-(22, '22', '22', 0, '', '', '', '', NULL, NULL, '', 27, '', 'new product', 222.00, 0, 0),
-(45, 'B1', 'Sách xịn', 0, '11', '', '', '', '', 11, 'active', 26, 'none', 'new product', 111.00, 0, 45),
-(48, 'A3', 'Blue angels', 0, '', '', '', '', '', 26, 'active', 9, 'none', 'new product', 1200.00, 0, 48),
-(49, 'A4', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0.00, 0, 49),
-(50, 'A5', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0.00, 0, 50),
-(54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '', '', '', 1, 'active', 26, 'none', 'new product', 13454.00, 0, 54),
-(55, 'A10', 'Sách văn', 0, 'văn', '', '', '', '', 12, 'active', 26, 'none', 'new product', 8765.00, 0, 55),
-(59, 'A17', 'Sách sử', 0, '', '', '', '', '', 21, 'active', 26, 'none', 'new product', 1234.00, 0, 59),
-(60, 'dfgdfgdf', 'dfgdfgfd', 0, '', '', '', '', '0', 0, 'active', 26, 'none', 'new product', 0.00, 0, 60),
-(61, 'xcvv', 'sdfsdf', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0.00, 0, 61),
-(62, 'ghfgh', 'efsdf', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0.00, 0, 62),
-(63, 'a123', 'a', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0.00, 0, 63),
-(64, 'a1234', 'aa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0.00, 0, 64),
-(65, 'a12345', 'aaa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0.00, 0, 65);
+(1, '1', '1', 0, '', '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 2, 'none', 'new product', 1111, 0, 0),
+(2, '2', '2', 0, '', '', '', '<p><img src="../../../../assets/images/55345576-1292315768-T-shirt-nuy-131232.jpg" alt="" width="650" height="650" /></p>', '0', 0, 'active', 2, 'none', 'new product', 5555, 0, 0),
+(3, '3', '3', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 333, 0, 0),
+(4, '4', '4', 0, '', '', '', '', NULL, NULL, '', 25, '', 'new product', 4444, 0, 0),
+(5, '5', '5', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555, 0, 0),
+(6, '6', '6', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 6666, 0, 0),
+(7, '7', '7', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 7777, 0, 0),
+(8, '8', '8', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 8888, 0, 0),
+(9, '9', '9', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 9999, 0, 0),
+(10, '10', '10', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 1200, 0, 0),
+(11, '11', '11', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50, 0, 0),
+(12, '12', '12', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 230, 0, 0),
+(13, '13', '13', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50, 0, 0),
+(14, '14', '14', 0, '', '', '', '', NULL, NULL, 'active', 26, 'webshop', 'new product', 220, 0, 0),
+(15, '15', '15', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 0, 0, 0),
+(16, '16', '16', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 123, 0, 0),
+(17, '17', '717', 0, '', '', '', '', NULL, NULL, 'active', 0, '', 'new product', 46346, 0, 0),
+(20, '20', '20', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 1111, 0, 0),
+(21, '21', '21', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 2222, 0, 0),
+(22, '22', '22', 0, '', '', '', '', NULL, NULL, '', 27, '', 'new product', 222, 0, 0),
+(45, 'B1', 'Sách xịn', 0, '11', '', '', '', '', 11, 'active', 26, 'none', 'new product', 111, 0, 45),
+(48, 'A3', 'Blue angels', 0, '', '', '', '', '', 26, 'active', 9, 'none', 'new product', 1200, 0, 48),
+(49, 'A4', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0, 0, 49),
+(50, 'A5', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0, 0, 50),
+(54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '', '', '', 1, 'active', 26, 'none', 'new product', 13454, 0, 54),
+(55, 'A10', 'Sách văn', 0, 'văn', '', '', '', '', 12, 'active', 26, 'none', 'new product', 8765, 0, 55),
+(59, 'A17', 'Sách sử', 0, '', '', '', '', '', 21, 'active', 26, 'none', 'new product', 1234, 0, 59),
+(60, 'dfgdfgdf', 'dfgdfgfd', 0, '', '', '', '', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 60),
+(61, 'xcvv', 'sdfsdf', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 61),
+(62, 'ghfgh', 'efsdf', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 62),
+(63, 'a123', 'a', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0, 0, 63),
+(64, 'a1234', 'aa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0, 0, 64),
+(65, 'a12345', 'aaa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 65);
 
 -- --------------------------------------------------------
 
