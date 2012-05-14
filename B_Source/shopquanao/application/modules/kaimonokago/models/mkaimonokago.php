@@ -416,7 +416,18 @@ class MKaimonokago extends Base_model
         $Q->free_result();
         return $data;
     }
-
+	
+    function get_link_image($source_link)
+    {
+    	if ($source_link!="")
+    	{
+    	$i=13;
+    	while ($source_link[$i]=='.' || $source_link[$i]=='/')
+    		$i++;
+    	$ds=base_url().substr($source_link, $i);
+    	return $ds;
+    	}
+    }
 }
 
 ?>

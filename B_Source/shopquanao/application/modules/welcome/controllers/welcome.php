@@ -134,11 +134,10 @@ class Welcome extends Shop_Controller
         $query = $this->db->get("omc_products",8,$index);
         $data['newArrivals']=$query->result();
         //end tienlx
-
+		
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data); 
     }
-	
 	
     function cat($id)
     {

@@ -1,3 +1,50 @@
+
+<div class="jquery-slider-wrapper jquery-slider-option-navigation-selector-control-timer" style="width: 100%; height: 325px; margin-bottom:20px">
+	<div id="slideshow" class="slider" style="width: 100%; height: 325px; overflow-x: hidden; overflow-y: hidden; position: relative; ">
+		<div class="jquery-slider-slide jquery-slider-slide-1" style="opacity: 0; ">
+			<img class="hideme" src="<?php echo base_url();?>assets/images/frontpage/big_tree.jpg" alt="big_tree.jpg"/>
+		</div>
+		<div class="jquery-slider-slide jquery-slider-slide-2" style="opacity: 0; ">
+			<img class="hideme" src="<?php echo base_url();?>assets/images/frontpage/build.jpg" alt="build.jpg"/>
+		</div>
+		<div class="jquery-slider-slide jquery-slider-slide-3 jquery-slider-slide-current" style="opacity: 1; ">
+			<img class="hideme" src="<?php echo base_url();?>assets/images/frontpage/station.jpg" alt="station.jpg"/>
+		</div>
+	</div>
+	<div class="jquery-slider-timer">
+		<div class="jquery-slider-timer-mask">
+			<div class="jquery-slider-timer-rotator"></div>
+		</div>
+		<div class="jquery-slider-timer-bar" style="overflow-x: hidden; overflow-y: hidden; width: 37.17777777777778%; ">
+		</div>
+	</div>
+	<a href="#" class="jquery-slider-control jquery-slider-control-pause"><span>Play/Pause</span></a>
+	<div class="jquery-slider-navigation">
+		<a href="#" class="jquery-slider-navigation-prev" rel="-1">
+			<span>Prev</span>
+		</a>
+		<a href="#" class="jquery-slider-navigation-next" rel="+1">
+			<span>Next</span>
+		</a>
+	</div>
+	<div class="jquery-slider-selectors">
+		<a href="#" class="jquery-slider-selector" rel="1">
+			<span class="jquery-slider-selector-span jquery-slider-selector-1">
+				<span>1</span>
+			</span>
+		</a>
+		<a href="#" class="jquery-slider-selector" rel="2">
+			<span class="jquery-slider-selector-span jquery-slider-selector-2">
+				<span>2</span>
+			</span>
+		</a>
+		<a href="#" class="jquery-slider-selector jquery-slider-selector-current" rel="3">
+			<span class="jquery-slider-selector-span jquery-slider-selector-3">
+				<span>3</span>
+			</span>
+		</a>
+	</div>
+</div>
 <div class="widget Blog" id="Blog1">
     <div class="blog-posts hfeed">
         <!-- google_ad_section_start(name=default) -->
@@ -61,7 +108,7 @@
                 </p>
                 <div id="summary1655744853648508510">
                     <span style="float: left; padding: 0px 10px 5px 0px;">
-                        <img src="<?php echo convert_image_path($row->image) ;?>"
+                        <img src="<?php echo $this->MKaimonokago->get_link_image($row->image) ;?>"
                             width="200px" height="270px">
                     </span>
                     

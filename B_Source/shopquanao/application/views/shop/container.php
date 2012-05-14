@@ -92,6 +92,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
     </script>
     <!--  ================ js===============-->
 
+
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.slider.min.js"></script>
 	
@@ -101,7 +102,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 	
 	      $(".slider").slideshow({
 	
-	        width      : 100%,
+	        width      : 1000,
 	
 	        height     : 325,
 	
@@ -185,49 +186,7 @@ head.appendChild(script);
 </div>
 
 <div class="main section" id="main">
-<div class="jquery-slider-wrapper jquery-slider-option-navigation-selector-control-timer" style="width: 100%; height: 325px; margin-bottom:20px">
-	<div id="slideshow" class="slider" style="width: 100%; height: 325px; overflow-x: hidden; overflow-y: hidden; position: relative; ">
-		<div class="jquery-slider-slide jquery-slider-slide-1" style="opacity: 0; "><img class="hideme" src="assets/images/frontpage/big_tree.jpg" alt="big_tree.jpg"></div><div class="jquery-slider-slide jquery-slider-slide-2" style="opacity: 0; ">
-			<img class="hideme" src="assets/images/frontpage/build.jpg" alt="build.jpg">
-		</div>
-		<div class="jquery-slider-slide jquery-slider-slide-3 jquery-slider-slide-current" style="opacity: 1; ">
-			<img class="hideme" src="assets/images/frontpage/station.jpg" alt="station.jpg">
-		</div>
-	</div>
-	<div class="jquery-slider-timer">
-		<div class="jquery-slider-timer-mask">
-			<div class="jquery-slider-timer-rotator"></div>
-		</div>
-		<div class="jquery-slider-timer-bar" style="overflow-x: hidden; overflow-y: hidden; width: 37.17777777777778%; ">
-		</div>
-	</div>
-	<a href="#" class="jquery-slider-control jquery-slider-control-pause"><span>Play/Pause</span></a>
-	<div class="jquery-slider-navigation">
-		<a href="#" class="jquery-slider-navigation-prev" rel="-1">
-			<span>Prev</span>
-		</a>
-		<a href="#" class="jquery-slider-navigation-next" rel="+1">
-			<span>Next</span>
-		</a>
-	</div>
-	<div class="jquery-slider-selectors">
-		<a href="#" class="jquery-slider-selector" rel="1">
-			<span class="jquery-slider-selector-span jquery-slider-selector-1">
-				<span>1</span>
-			</span>
-		</a>
-		<a href="#" class="jquery-slider-selector" rel="2">
-			<span class="jquery-slider-selector-span jquery-slider-selector-2">
-				<span>2</span>
-			</span>
-		</a>
-		<a href="#" class="jquery-slider-selector jquery-slider-selector-current" rel="3">
-			<span class="jquery-slider-selector-span jquery-slider-selector-3">
-				<span>3</span>
-			</span>
-		</a>
-	</div>
-</div>
+
 
 <!-- ===============Ná»˜I DUNG CHÃ�NH -->
 <div>
@@ -270,9 +229,9 @@ var downPageWord =' &#187;';
 </script>
 <script type="text/javascript">
 //<![CDATA[
-function showpageCount(json){var thisUrl=home_page_url;var htmlMap=new Array();var thisNum=1;var postNum=1;var itemCount=0;var fFlag=0;var eFlag=0;var html='';var upPageHtml='';var downPageHtml='';for(var i=0,post;post=json.feed.entry[i];i++){var timestamp1=post.published.$t.substring(0,19)+post.published.$t.substring(23,29);timestamp=encodeURIComponent(timestamp1);var title=post.title.$t;if(title!=''){if(itemCount==0||(itemCount%pageCount==(pageCount-1))){if(thisUrl.indexOf(timestamp)!=-1){thisNum=postNum}if(title!='')postNum++;htmlMap[htmlMap.length]='/search?updated-max='+timestamp+'&max-results='+pageCount}}itemCount++}for(var p=0;p<htmlMap.length;p++){if(p>=(thisNum-displayPageNum-1)&&p<(thisNum+displayPageNum)){if(fFlag==0&&p==thisNum-2){if(thisNum==2){upPageHtml='<span class="showpage" style="padding: 2px 2px 2px 4px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"><a href="/">'+upPageWord+'</a></span>'}else{upPageHtml='<span class="showpage" style="padding: 2px 2px 2px 4px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"><a href="'+htmlMap[p]+'">'+upPageWord+'</a></span>'}fFlag++}if(p==(thisNum-1)){html+='<span class="showpagePoint">'+thisNum+'</span>'}else{if(p==0){html+='<span class="showpageNum"><a href="/">1</a></span>'}else{html+='<span class="showpageNum"><a href="'+htmlMap[p]+'">'+(p+1)+'</a></span>'}}if(eFlag==0&&p==thisNum){downPageHtml='<span class="showpage" style="padding: 2px 4px 2px 2px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"> <a href="'+htmlMap[p]+'">'+downPageWord+'</a></span>';eFlag++}}}if(thisNum>1){html=''+upPageHtml+' '+html+' '}html='<div class="showpageArea"><span style="COLOR: #676767;background:#fff;border: 1px solid #b6b5b5;font-size: 15px;padding:2px 4px;margin:0 4px;" class="showpageOf"> Pages '+(postNum-1)+'</span>'+html;if(thisNum<(postNum-1)){html+=downPageHtml}if(postNum==1)postNum++;html+='</div>';var pageArea=document.getElementsByName("pageArea");var blogPager=document.getElementById("blog-pager");if(postNum<=2){html=''}for(var p=0;p<pageArea.length;p++){pageArea[p].innerHTML=html}if(pageArea&&pageArea.length>0){html=''}if(blogPager){blogPager.innerHTML=html}}function showpageCount2(json){var thisUrl=home_page_url;var htmlMap=new Array();var isLablePage=thisUrl.indexOf("/search/label/")!=-1;var thisLable=isLablePage?thisUrl.substr(thisUrl.indexOf("/search/label/")+14,thisUrl.length):"";thisLable=thisLable.indexOf("?")!=-1?thisLable.substr(0,thisLable.indexOf("?")):thisLable;var thisNum=1;var postNum=1;var itemCount=0;var fFlag=0;var eFlag=0;var html='';var upPageHtml='';var downPageHtml='';var labelHtml='<span class="showpageNum"><a href="/search/label/'+thisLable+'?&max-results='+pageCount+'">';var thisUrl=home_page_url;for(var i=0,post;post=json.feed.entry[i];i++){var timestamp1=post.published.$t.substring(0,19)+post.published.$t.substring(23,29);timestamp=encodeURIComponent(timestamp1);var title=post.title.$t;if(title!=''){if(itemCount==0||(itemCount%pageCount==(pageCount-1))){if(thisUrl.indexOf(timestamp)!=-1){thisNum=postNum}if(title!='')postNum++;htmlMap[htmlMap.length]='/search/label/'+thisLable+'?updated-max='+timestamp+'&max-results='+pageCount}}itemCount++}for(var p=0;p<htmlMap.length;p++){if(p>=(thisNum-displayPageNum-1)&&p<(thisNum+displayPageNum)){if(fFlag==0&&p==thisNum-2){if(thisNum==2){upPageHtml=labelHtml+upPageWord+'</a></span>'}else{upPageHtml='<span class="showpage" style="padding: 2px 2px 2px 4px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"><a href="'+htmlMap[p]+'">'+upPageWord+'</a></span>'}fFlag++}if(p==(thisNum-1)){html+='<span class="showpagePoint">'+thisNum+'</span>'}else{if(p==0){html=labelHtml+'1</a></span>'}else{html+='<span class="showpageNum"><a href="'+htmlMap[p]+'">'+(p+1)+'</a></span>'}}if(eFlag==0&&p==thisNum){downPageHtml='<span class="showpage" style="padding: 2px 4px 2px 2px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"> <a href="'+htmlMap[p]+'">'+downPageWord+'</a></span>';eFlag++}}}if(thisNum>1){if(!isLablePage){html=''+upPageHtml+' '+html+' '}else{html=''+upPageHtml+' '+html+' '}}html='<div class="showpageArea"><span style="COLOR: #999;" class="showpageOf"> Pages ('+(postNum-1)+')</span>'+html;if(thisNum<(postNum-1)){html+=downPageHtml}if(postNum==1)postNum++;html+='</div>';var pageArea=document.getElementsByName("pageArea");var blogPager=document.getElementById("blog-pager");if(postNum<=2){html=''}for(var p=0;p<pageArea.length;p++){pageArea[p].innerHTML=html}if(pageArea&&pageArea.length>0){html=''}if(blogPager){blogPager.innerHTML=html}}var home_page_url=location.href;var thisUrl=home_page_url;if(thisUrl.indexOf("/search/label/")!=-1){if(thisUrl.indexOf("?updated-max")!=-1){var lblname1=thisUrl.substring(thisUrl.indexOf("/search/label/")+14,thisUrl.indexOf("?updated-max"))}else{var lblname1=thisUrl.substring(thisUrl.indexOf("/search/label/")+14,thisUrl.indexOf("?&max"))}}var home_page="/";if(thisUrl.indexOf("?q=")==-1){if(thisUrl.indexOf("/search/label/")==-1){document.write('<script src="'+home_page+'feeds/posts/summary?alt=json-in-script&callback=showpageCount&max-results=99999" ><\/script>')}else{document.write('<script src="'+home_page+'feeds/posts/full/-/'+lblname1+'?alt=json-in-script&callback=showpageCount2&max-results=99999" ><\/script>')}}
+//function showpageCount(json){var thisUrl=home_page_url;var htmlMap=new Array();var thisNum=1;var postNum=1;var itemCount=0;var fFlag=0;var eFlag=0;var html='';var upPageHtml='';var downPageHtml='';for(var i=0,post;post=json.feed.entry[i];i++){var timestamp1=post.published.$t.substring(0,19)+post.published.$t.substring(23,29);timestamp=encodeURIComponent(timestamp1);var title=post.title.$t;if(title!=''){if(itemCount==0||(itemCount%pageCount==(pageCount-1))){if(thisUrl.indexOf(timestamp)!=-1){thisNum=postNum}if(title!='')postNum++;htmlMap[htmlMap.length]='/search?updated-max='+timestamp+'&max-results='+pageCount}}itemCount++}for(var p=0;p<htmlMap.length;p++){if(p>=(thisNum-displayPageNum-1)&&p<(thisNum+displayPageNum)){if(fFlag==0&&p==thisNum-2){if(thisNum==2){upPageHtml='<span class="showpage" style="padding: 2px 2px 2px 4px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"><a href="/">'+upPageWord+'</a></span>'}else{upPageHtml='<span class="showpage" style="padding: 2px 2px 2px 4px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"><a href="'+htmlMap[p]+'">'+upPageWord+'</a></span>'}fFlag++}if(p==(thisNum-1)){html+='<span class="showpagePoint">'+thisNum+'</span>'}else{if(p==0){html+='<span class="showpageNum"><a href="/">1</a></span>'}else{html+='<span class="showpageNum"><a href="'+htmlMap[p]+'">'+(p+1)+'</a></span>'}}if(eFlag==0&&p==thisNum){downPageHtml='<span class="showpage" style="padding: 2px 4px 2px 2px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"> <a href="'+htmlMap[p]+'">'+downPageWord+'</a></span>';eFlag++}}}if(thisNum>1){html=''+upPageHtml+' '+html+' '}html='<div class="showpageArea"><span style="COLOR: #676767;background:#fff;border: 1px solid #b6b5b5;font-size: 15px;padding:2px 4px;margin:0 4px;" class="showpageOf"> Pages '+(postNum-1)+'</span>'+html;if(thisNum<(postNum-1)){html+=downPageHtml}if(postNum==1)postNum++;html+='</div>';var pageArea=document.getElementsByName("pageArea");var blogPager=document.getElementById("blog-pager");if(postNum<=2){html=''}for(var p=0;p<pageArea.length;p++){pageArea[p].innerHTML=html}if(pageArea&&pageArea.length>0){html=''}if(blogPager){blogPager.innerHTML=html}}function showpageCount2(json){var thisUrl=home_page_url;var htmlMap=new Array();var isLablePage=thisUrl.indexOf("/search/label/")!=-1;var thisLable=isLablePage?thisUrl.substr(thisUrl.indexOf("/search/label/")+14,thisUrl.length):"";thisLable=thisLable.indexOf("?")!=-1?thisLable.substr(0,thisLable.indexOf("?")):thisLable;var thisNum=1;var postNum=1;var itemCount=0;var fFlag=0;var eFlag=0;var html='';var upPageHtml='';var downPageHtml='';var labelHtml='<span class="showpageNum"><a href="/search/label/'+thisLable+'?&max-results='+pageCount+'">';var thisUrl=home_page_url;for(var i=0,post;post=json.feed.entry[i];i++){var timestamp1=post.published.$t.substring(0,19)+post.published.$t.substring(23,29);timestamp=encodeURIComponent(timestamp1);var title=post.title.$t;if(title!=''){if(itemCount==0||(itemCount%pageCount==(pageCount-1))){if(thisUrl.indexOf(timestamp)!=-1){thisNum=postNum}if(title!='')postNum++;htmlMap[htmlMap.length]='/search/label/'+thisLable+'?updated-max='+timestamp+'&max-results='+pageCount}}itemCount++}for(var p=0;p<htmlMap.length;p++){if(p>=(thisNum-displayPageNum-1)&&p<(thisNum+displayPageNum)){if(fFlag==0&&p==thisNum-2){if(thisNum==2){upPageHtml=labelHtml+upPageWord+'</a></span>'}else{upPageHtml='<span class="showpage" style="padding: 2px 2px 2px 4px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"><a href="'+htmlMap[p]+'">'+upPageWord+'</a></span>'}fFlag++}if(p==(thisNum-1)){html+='<span class="showpagePoint">'+thisNum+'</span>'}else{if(p==0){html=labelHtml+'1</a></span>'}else{html+='<span class="showpageNum"><a href="'+htmlMap[p]+'">'+(p+1)+'</a></span>'}}if(eFlag==0&&p==thisNum){downPageHtml='<span class="showpage" style="padding: 2px 4px 2px 2px;margin:0 4px;text-decoration:none;background:#dfdfdf;color:#686868; border:1px solid #989898;"> <a href="'+htmlMap[p]+'">'+downPageWord+'</a></span>';eFlag++}}}if(thisNum>1){if(!isLablePage){html=''+upPageHtml+' '+html+' '}else{html=''+upPageHtml+' '+html+' '}}html='<div class="showpageArea"><span style="COLOR: #999;" class="showpageOf"> Pages ('+(postNum-1)+')</span>'+html;if(thisNum<(postNum-1)){html+=downPageHtml}if(postNum==1)postNum++;html+='</div>';var pageArea=document.getElementsByName("pageArea");var blogPager=document.getElementById("blog-pager");if(postNum<=2){html=''}for(var p=0;p<pageArea.length;p++){pageArea[p].innerHTML=html}if(pageArea&&pageArea.length>0){html=''}if(blogPager){blogPager.innerHTML=html}}var home_page_url=location.href;var thisUrl=home_page_url;if(thisUrl.indexOf("/search/label/")!=-1){if(thisUrl.indexOf("?updated-max")!=-1){var lblname1=thisUrl.substring(thisUrl.indexOf("/search/label/")+14,thisUrl.indexOf("?updated-max"))}else{var lblname1=thisUrl.substring(thisUrl.indexOf("/search/label/")+14,thisUrl.indexOf("?&max"))}}var home_page="/";if(thisUrl.indexOf("?q=")==-1){if(thisUrl.indexOf("/search/label/")==-1){document.write('<script src="'+home_page+'feeds/posts/summary?alt=json-in-script&callback=showpageCount&max-results=99999" ><\/script>')}else{document.write('<script src="'+home_page+'feeds/posts/full/-/'+lblname1+'?alt=json-in-script&callback=showpageCount2&max-results=99999" ><\/script>')}}
 //]]>
-</script><script src="/feeds/posts/summary?alt=json-in-script&amp;callback=showpageCount&amp;max-results=99999"></script>
+</script><!-- script src="/feeds/posts/summary?alt=json-in-script&amp;callback=showpageCount&amp;max-results=99999"></script -->
 <!-- PAGE NAVIGATION STOP-->
 </div>
 <!-- google Tracking Code -->
