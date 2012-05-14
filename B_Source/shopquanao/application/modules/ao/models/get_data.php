@@ -25,7 +25,7 @@
 	        $this->db->where('category_id', $cat_id);	        
 	        $data = array();
 		
-	    	$Q=	$this->db->get("omc_products",10,$offset);
+	    	$Q=	$this->db->get("omc_products",8,$offset);
 	
 	        if ($Q->num_rows() > 0)
 	        {
@@ -52,11 +52,11 @@
 			$this->db->where('other_feature', 'new product');	        
 	        $data = array();
 		
-	    	$Q=	$this->db->get("omc_products",10,$offset);
+	    	$Q=	$this->db->get("omc_products",8,$offset);
 	
 	        if ($Q->num_rows() > 0)
 	        {
-	            foreach ($Q->result() as $row)
+	            foreach ($Q->result_array() as $row)
 	            {
 	                $data[] = $row;
 	            }

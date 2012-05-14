@@ -22,7 +22,8 @@
 		{	
 			$config['base_url']=base_url().'index.php/ao/get_list/'.$type;
             
-            $config['per_page']=10;
+            $config['per_page']=8;
+            $config['uri_segment'] = 4; 
 			$config['total_rows']=$this->Get_data->count($type);
 			$count=$this->Get_data->count($type);
 			
@@ -43,11 +44,12 @@
 		
 		function hangmoi($index=0)
 		{
-			$config['base_url']=base_url().'index.php/ao/hangmoi';
+			$config['base_url']=base_url().'index.php/ao/hangmoi/';
             
-            $config['per_page']=10;
+            $config['per_page']=8;
+            $config['uri_segment'] = 2; 
 			$config['total_rows']=$this->Get_data->count_hang_moi();			
-			
+			$this->pagination->initialize($config);
 			$data['title']='Hàng mới về';
 			$data['count']=$this->Get_data->count_hang_moi();
 			$data['type']="Hàng mới";
