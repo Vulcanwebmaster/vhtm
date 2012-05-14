@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2012 at 08:28 PM
+-- Generation Time: May 14, 2012 at 08:48 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -440,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('40054d027049a13b66c1b3f02875d5c0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337019928, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 19:19:56";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('2b4ef9fbacb0892c94f05feb4a71432c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337021087, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 19:19:56";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -798,6 +798,26 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
 --
 
 INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longdesc`, `thumbnail`, `image`, `weblink`, `product_order`, `status`, `category_id`, `featured`, `other_feature`, `price`, `lang_id`, `table_id`) VALUES
+(1, '1', '1', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 1111.00, 0, 0),
+(2, '2', '2', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555.00, 0, 0),
+(3, '3', '3', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 333.00, 0, 0),
+(4, '4', '4', 0, '', '', '', '', NULL, NULL, '', 25, '', 'new product', 4444.00, 0, 0),
+(5, '5', '5', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555.00, 0, 0),
+(6, '6', '6', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 6666.00, 0, 0),
+(7, '7', '7', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 7777.00, 0, 0),
+(8, '8', '8', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 8888.00, 0, 0),
+(9, '9', '9', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 9999.00, 0, 0),
+(10, '10', '10', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 1200.00, 0, 0),
+(11, '11', '11', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50.00, 0, 0),
+(12, '12', '12', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 230.00, 0, 0),
+(13, '13', '13', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50.00, 0, 0),
+(14, '14', '14', 0, '', '', '', '', NULL, NULL, 'active', 26, 'webshop', 'new product', 220.00, 0, 0),
+(15, '15', '15', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 0.00, 0, 0),
+(16, '16', '16', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 123.00, 0, 0),
+(17, '17', '717', 0, '', '', '', '', NULL, NULL, 'active', 0, '', 'new product', 46346.00, 0, 0),
+(20, '20', '20', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 1111.00, 0, 0),
+(21, '21', '21', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 2222.00, 0, 0),
+(22, '22', '22', 0, '', '', '', '', NULL, NULL, '', 27, '', 'new product', 222.00, 0, 0),
 (45, 'B1', 'Sách xịn', 0, '11', '', '', '', '', 11, 'active', 26, 'none', 'new product', 111.00, 0, 45),
 (48, 'A3', 'Blue angels', 0, '', '', '', '', '', 26, 'active', 9, 'none', 'new product', 1200.00, 0, 48),
 (49, 'A4', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0.00, 0, 49),

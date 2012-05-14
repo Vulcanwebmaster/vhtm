@@ -47,7 +47,7 @@
 			$config['base_url']=base_url().'index.php/ao/hangmoi/';
             
             $config['per_page']=8;
-            $config['uri_segment'] = 2; 
+            $config['uri_segment'] = 3; 
 			$config['total_rows']=$this->Get_data->count_hang_moi();			
 			$this->pagination->initialize($config);
 			$data['title']='Hàng mới về';
