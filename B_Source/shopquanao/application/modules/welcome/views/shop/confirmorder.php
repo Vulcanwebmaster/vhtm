@@ -2,7 +2,8 @@
 <?php echo validation_errors('<div class="message error">','</div>'); // for CI ?>
 <style type="text/css">
 	h2{font-size:12px; font-weight:bold; margin:0; padding:0; border-style:none}
-	p{text-transform:none}
+	p{text-transform:none; margin-bottom:0}
+	input{margin-bottom:10px}
 </style>
 <div style="text-align:left; font-size:12px; padding-left:50px">
 	<h1 style="text-transform:lowercase; font-family: Times New Roman"><?php echo $this->lang->line('orders_plz_confirm'); ?></h1>
