@@ -43,7 +43,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
     
     
     <link type='text/css' rel='stylesheet' href='<?php echo base_url();?>assets/women_files/828895675-widget_css_bundle.css' />
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/authorization.css?targetBlogID=6804016548630797752&zx=38d82890-550f-43d3-9fef-f7610e5c2b7d" />
+    <!-- link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/authorization.css" / -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/newstyle.css"/>
     
     <style id='page-skin-1' type='text/css'><!--
@@ -91,7 +91,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
         if (window.jstiming) window.jstiming.load.tick('headEnd');
     </script>
     <!--  ================ js===============-->
-
+<!-- 
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/ccard.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/validation.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/builder.js"></script>
@@ -108,10 +108,12 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/styleswitch.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/swfobject.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em0015.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/scriptaculous.js"></script><script type="text/javascript" src="assets/women_files/effects.js"></script><script type="text/javascript" src="assets/women_files/dragdrop.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/scriptaculous.js"></script>
+<script type="text/javascript" src="assets/women_files/effects.js"></script>
+<script type="text/javascript" src="assets/women_files/dragdrop.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/lightbox.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em_ajaxcart.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cloud-zoom.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cloud-zoom.js"></script> -->
 </head>
 
 <body data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="https://platform.twitter.com/widgets/hub.html"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="http://platform.twitter.com/widgets/hub.html"></iframe>
@@ -298,7 +300,7 @@ head.appendChild(script);
 	}
 
 </style>
-					<script src="<?php echo base_url();?>assets/women_file/kMenu.js" type="text/javascript"></script>
+					<script src="<?php echo base_url();?>assets/women_files/kMenu.js" type="text/javascript"></script>
 						
 					<script type="text/javascript">
 					    kMenu.Init('kmenu',o_ChannelRoot);
