@@ -7,6 +7,8 @@ frame.css
 */
 
 /* menustyle.css */
+.ErrorMessage {	color: #990000;	font-weight:bold; padding:3px; margin:3px 0 3px 0; line-height:18px !important;}
+
 #nav{
 list-style-type:none;
 list-style-position:outside;
