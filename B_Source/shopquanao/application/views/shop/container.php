@@ -173,7 +173,7 @@ head.appendChild(script);
 		</div>
 		<div id="search">			
 	        <form action="<?php echo base_url();?>index.php/welcome/search_frontend" id="searchform" method="post">
-		        <input align="center" style="width:200px; height:19px" class="rounded" id="fsearch" name="fsearch" onblur="if (this.value == &quot;&quot;) {this.value = &quot;search site&quot;;}"
+		        <input align="center"   style="width:200px; border:0px; height:19px" class="rounded" id="fsearch" name="fsearch" onblur="if (this.value == &quot;&quot;) {this.value = &quot;search site&quot;;}"
 		            onfocus="if (this.value == &quot;search site&quot;) {this.value = &quot;&quot;;}"
 		            type="text" value="" />
 		        <input id="searchsubmit" type="submit" value="" />
