@@ -101,7 +101,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 	
 	      $(".slider").slideshow({
 	
-	        width      : 1000,
+	        width      : 100%,
 	
 	        height     : 325,
 	
@@ -185,8 +185,8 @@ head.appendChild(script);
 </div>
 
 <div class="main section" id="main">
-<div class="jquery-slider-wrapper jquery-slider-option-navigation-selector-control-timer" style="width: 1000px; height: 325px; margin-bottom:20px">
-	<div id="slideshow" class="slider" style="width: 1000px; height: 325px; overflow-x: hidden; overflow-y: hidden; position: relative; ">
+<div class="jquery-slider-wrapper jquery-slider-option-navigation-selector-control-timer" style="width: 100%; height: 325px; margin-bottom:20px">
+	<div id="slideshow" class="slider" style="width: 100%; height: 325px; overflow-x: hidden; overflow-y: hidden; position: relative; ">
 		<div class="jquery-slider-slide jquery-slider-slide-1" style="opacity: 0; "><img class="hideme" src="assets/images/frontpage/big_tree.jpg" alt="big_tree.jpg"></div><div class="jquery-slider-slide jquery-slider-slide-2" style="opacity: 0; ">
 			<img class="hideme" src="assets/images/frontpage/build.jpg" alt="build.jpg">
 		</div>
