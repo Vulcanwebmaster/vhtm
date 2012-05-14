@@ -9,13 +9,7 @@
                         <div class="page-title title-buttons">
                             <h1>
                                 Shopping Cart</h1>
-                            <ul class="checkout-types">
-                                <li>
-                                    <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout"
-                                        onclick="window.location='http://demo.emthemes.com/casualwear/checkout/onepage/';">
-                                        <span><span>Proceed to Checkout</span></span></button>
-                                </li>
-                            </ul>
+                             
                         </div>
                         <div class="cart-container-inner">
 							<?php echo form_open($module.'/checkout'); ?>        	

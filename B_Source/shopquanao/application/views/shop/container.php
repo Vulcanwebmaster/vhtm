@@ -95,6 +95,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.slider.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/shopcustomtools.js"></script>
 	
 	  <script type="text/javascript">
 	
