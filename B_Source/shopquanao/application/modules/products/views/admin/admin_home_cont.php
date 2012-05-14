@@ -15,13 +15,10 @@ if (count($products))
 	foreach ($products as $key => $list)
 	{     
             // single language so display only lang_id ==0
-           	if($list['lang_id']==0)
-            	{
            // if($list['total']!=0)
            // {        
                 echo "<tr ";
-		        ($list['lang_id']>0)? $class="dentme" : $class = '';
-				echo "class = \"".$class. "\" valign='top'>\n";
+				echo "valign='top'>\n";
 		       	// echo "<td align='center'>".form_checkbox('p_id[]',$list['id'],FALSE)."</td>";
 				echo "<td align='center'>".$list['id']."</td>\n";
 				echo "<td align='center'>";
@@ -50,7 +47,6 @@ if (count($products))
 				echo "</td>\n";
 				echo "</tr>\n";       
           // 	} //end kho_id
-            } //end lang
 		}           
 	
 	echo "</tbody></table>";

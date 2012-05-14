@@ -115,7 +115,6 @@ function create()
     	
     	if ($this->input->post('kho_id')) {
     		$id = $this->input->post('kho_id');
-    		echo $id; 	
     	} 
     	
         if ($this->input->post('kho_name'))
