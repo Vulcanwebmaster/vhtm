@@ -7,7 +7,7 @@
                     title="Quần Áo online">Quần áo online</a> | <a href="<?php echo base_url();?>" target="_blank"
                         title="Váy đầm">Váy đầm</a>
         <br>
-        <a href="<?php echo base_url();?>" target="_blank" title="Quan Ao">Vân Anh shop - Địa Chỉ: 329/28 Điện Biên Phủ, Phường 4, Quận 3, Tp.HCM | Điện Thoại: 0909554060 | Email : info@vananhshop.com | Yahoo Chat : vananhshop01 </a>
+        <a href="<?php echo base_url();?>" target="_blank" title="Quan Ao">Monami shop - Địa Chỉ: ... | Điện Thoại: ... | Email : ... | Yahoo Chat : ... </a>
         <br>
         <!-- Tua cuoi trang START-->
         <a href="<?php echo base_url();?>" target="_blank" title="">quần áo online</a>|
