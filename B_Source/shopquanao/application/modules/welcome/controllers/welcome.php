@@ -42,9 +42,9 @@ class Welcome extends Shop_Controller
     }
 
 
-    function index()
+    function index($index=0)
     {
-        // this one is for a visitor changing a language first time through form
+        //this one is for a visitor changing a language first time through form
         if ($this->input->post('lang'))
         {
             $lang = $this->input->post('lang');
@@ -122,16 +122,22 @@ class Welcome extends Shop_Controller
         $data['header'] ="HOME";
         $data['metadesc'] =$page['metadesc'];
         $data['metakeyword'] =$page['metakeyword'];
+
+        //tienlx: load data slide New arrivals this month
+        $config['base_url']=base_url().'index.php/welcome/index';        
         
-        //By An : load homepage      
-        $data['newArrivals']=$this->getHomepage();
-        //end An
-        
+        $this->db->order_by('id',"DESC");
+        $full=$this->db->get("omc_products");
+        $config['total_rows']=$full->num_rows();
+        $config['per_page']=8;
+        $this->pagination->initialize($config);
+        $query = $this->db->get("omc_products",8,$index);
+        $data['newArrivals']=$query->result();
+        //end tienlx
+
         $data['module'] = $this->module;
         $this->load->view($this->_container,$data); 
     }
-
-  
 	
 	
     function cat($id)
