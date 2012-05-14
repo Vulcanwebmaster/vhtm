@@ -1118,7 +1118,8 @@ class Welcome extends Shop_Controller
     	    $data['sea']=$fsearch;
     		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
     		$config['total_rows']=$this->count($fsearch); 	  
-    		$config['per_page']=10;
+    		$config['per_page']=8;
+    		$config['uri_segment'] = 4;
     		$this->pagination->initialize($config);
     		
     		//$data['fsearch']=$this->getSearch_frontend($fsearch,$index);
@@ -1147,12 +1148,12 @@ class Welcome extends Shop_Controller
 		$data = array();		
 		$this->db->like('name', $fsearch);
 		//$this->db->or_like('code',$fsearch);    	    	        
-    	$this->db->order_by('other_feature','DESC');    
-       	$Q=	$this->db->get('omc_products',10,$index);
+    	$this->db->order_by('id','DESC');    
+       	$Q=	$this->db->get('omc_products',8,$index);
 
         if ($Q->num_rows() > 0)
         {
-            foreach ($Q->result() as $row)
+            foreach ($Q->result_array() as $row)
             {
                 $data[] = $row;
             }
@@ -1166,12 +1167,12 @@ class Welcome extends Shop_Controller
 	{
 		$this->db->like('name', $fsearch);
 		//$this->db->or_like('code',$fsearch);    	    	        
-    	$this->db->order_by('other_feature','DESC');    
+    	$this->db->order_by('id','DESC');    
        	$Q=	$this->db->get('omc_products');
 
         if ($Q->num_rows() > 0)
         {
-            foreach ($Q->result() as $row)
+            foreach ($Q->result_array() as $row)
             {
                 $data[] = $row;
             }

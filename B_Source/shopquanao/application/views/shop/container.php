@@ -172,8 +172,8 @@ head.appendChild(script);
 			</marquee>
 		</div>
 		<div id="search">			
-	        <form action="/search" id="searchform" method="get">
-		        <input class="rounded" id="s" name="q" onblur="if (this.value == &quot;&quot;) {this.value = &quot;search site&quot;;}"
+	        <form action="<?php echo base_url();?>index.php/welcome/search_frontend" id="searchform" method="post">
+		        <input class="rounded" id="fsearch" name="fsearch" onblur="if (this.value == &quot;&quot;) {this.value = &quot;search site&quot;;}"
 		            onfocus="if (this.value == &quot;search site&quot;) {this.value = &quot;&quot;;}"
 		            type="text" value="" />
 		        <input id="searchsubmit" type="submit" value="" />
