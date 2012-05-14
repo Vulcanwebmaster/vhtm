@@ -61,13 +61,13 @@ function create()
                 if($this->MKho->checkMaKho($this->input->post('kho_code')))
                 {
                 //redirect($this->module.'/admin/create');
-                $data['title'] = "Tạo Kho";
+                $data['title'] = "Táº¡o Kho";
                 // Set breadcrumb
                 $this->bep_site->set_crumb($this->lang->line('kago_create')." ".$this->lang->line('kago_kho'),$this->module.'/admin/create');
                 $data['header'] = $this->lang->line('backendpro_access_control');
                 $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_create";
                 $data['cancel_link']= $this->module."/admin/index/";
-                flashMsg('error','Mã kho đã được đăng ký, mời nhập lại');
+                flashMsg('error','Mã kho đã tồn tại, mời bạn nhập lại.');
                 $data['module'] = $this->module;
                 $this->load->view($this->_container,$data);
                 }
@@ -89,7 +89,7 @@ function create()
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_create";
             $data['cancel_link']= $this->module."/admin/index/";
-            flashMsg('error','bạn phải nhập mã kho');
+            flashMsg('error','báº¡n pháº£i nháº­p mÃ£ kho');
             $data['module'] = $this->module;
             $this->load->view($this->_container,$data);
             }
@@ -126,17 +126,17 @@ function create()
 			  	if($this->form_validation->run())
 			  	{
             	//$this->form_validation->output_errors();
-	            if ($this->MKho->checkMaKho($this->input->post('kho_code'))==False)
+            	$temp = $this->MKho->getInfo($id);
+            	if ($temp['kho_code'] == $this->input->post('kho_code') || $this->MKho->checkMaKho($this->input->post('kho_code'))==False)
             	{
-                $data = $this->_fields();
-                $this->MKho->updateKho($data);
-                //$this->MCustomers->updateCustomer();
-                flashMsg('success','Kho đã được sửa');
-                redirect($this->module.'/admin/index','refresh');
+	                $data = $this->_fields();
+	                $this->MKho->updateKho($data);
+	                //$this->MCustomers->updateCustomer();
+	                flashMsg('success','Kho đã được update');
+	                redirect($this->module.'/admin/index','refresh');
             	}
               	else 
             	{
-
                 $data['title'] = "Sửa Kho";
 	            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_edit";
 	            $data['kho'] = $this->MKho->getInfo($id);
@@ -150,13 +150,13 @@ function create()
 	            $this->bep_site->set_crumb($this->lang->line('kago_edit')." ".$this->lang->line('kago_kho'),$this->module.'/admin/edit');
 	            $data['cancel_link']= $this->module."/admin/index/";
 	            $data['module'] = $this->module;
-	            flashMsg('error','Mã kho đã được đăng ký, mời nhập lại');
+	            flashMsg('error','Mã kho đã tồn tại, mời nhập lại.');
 	            $this->load->view($this->_container,$data);
             	}
 			  	}//end form
 			  	else 
 			  	{
-			  	$data['title'] = "Sửa Kho";
+			  	$data['title'] = "Sá»­a Kho";
 	            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_kho_edit";
 	            $data['kho'] = $this->MKho->getInfo($id);
 	            //$data['customer'] = $this->MCustomers->getCustomer($id);
@@ -189,7 +189,7 @@ function create()
             $this->bep_site->set_crumb($this->lang->line('kago_edit')." ".$this->lang->line('kago_kho'),$this->module.'/admin/edit');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('noctice','Mời bạn sửa số liệu kho');
+            flashMsg('noctice','Mời bạn nhập dữ liệu kho');
             $this->load->view($this->_container,$data);
         }
     }
@@ -216,7 +216,7 @@ function create()
             $table =$this->module;
             $this->MKho->deleteitem($table,$id);
             //$this->MCustomers->deleteCustomer($id);
-            flashMsg('success','Kho đã bị xóa');
+            flashMsg('success','Kho đã được xóa thành công.');
             redirect($this->module.'/admin/index','refresh');
         }
     }
