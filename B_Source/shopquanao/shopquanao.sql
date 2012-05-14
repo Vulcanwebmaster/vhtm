@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2012 at 08:48 PM
+-- Generation Time: May 14, 2012 at 10:05 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -389,7 +389,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-14 19:30:05', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-14 21:20:25', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'an', 'a97b4c3de192c200fdc31eac8ca2cf57639da998', 'anan@gmail.com', 1, 1, 'qFLDP9DBM3oERI1uT3cAJ5cBADidq28N', '2012-05-05 18:48:45', '2012-05-05 18:45:43', '2012-05-05 18:48:28');
 
 -- --------------------------------------------------------
@@ -440,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('2b4ef9fbacb0892c94f05feb4a71432c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337021087, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 19:19:56";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('ee1e4219185bbcf4f52bc28f02e347f2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337025914, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 21:19:59";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -798,8 +798,8 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
 --
 
 INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longdesc`, `thumbnail`, `image`, `weblink`, `product_order`, `status`, `category_id`, `featured`, `other_feature`, `price`, `lang_id`, `table_id`) VALUES
-(1, '1', '1', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 1111.00, 0, 0),
-(2, '2', '2', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555.00, 0, 0),
+(1, '1', '1', 0, '', '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 2, 'none', 'new product', 1111.00, 0, 0),
+(2, '2', '2', 0, '', '', '', '<p><img src="../../../../assets/images/55345576-1292315768-T-shirt-nuy-131232.jpg" alt="" width="650" height="650" /></p>', '0', 0, 'active', 2, 'none', 'new product', 5555.00, 0, 0),
 (3, '3', '3', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 333.00, 0, 0),
 (4, '4', '4', 0, '', '', '', '', NULL, NULL, '', 25, '', 'new product', 4444.00, 0, 0),
 (5, '5', '5', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555.00, 0, 0),
@@ -969,7 +969,7 @@ CREATE TABLE IF NOT EXISTS `shop_sanphamkho` (
   `id` int(11) NOT NULL,
   `total` int(10) NOT NULL,
   PRIMARY KEY (`sanphamkho_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=88 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=94 ;
 
 --
 -- Dumping data for table `shop_sanphamkho`
@@ -1038,7 +1038,13 @@ INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (84, 3, 64, 0),
 (85, 1, 65, 0),
 (86, 2, 65, 0),
-(87, 3, 65, 0);
+(87, 3, 65, 0),
+(88, 1, 1, 0),
+(89, 2, 1, 0),
+(90, 3, 1, 0),
+(91, 1, 2, 0),
+(92, 2, 2, 0),
+(93, 3, 2, 0);
 
 -- --------------------------------------------------------
 
