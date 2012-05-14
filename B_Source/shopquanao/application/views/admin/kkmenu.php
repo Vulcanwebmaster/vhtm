@@ -14,8 +14,6 @@
         
         <?php if(check('Category',NULL,FALSE) && $this->preference->item('category')):?><li><?php print anchor('category/admin',$this->lang->line('backendpro_category'),array('class'=>'icon_category'))?></li><?php echo "\n"; endif;?>
         <?php if(check('Customers',NULL,FALSE) && $this->preference->item('customers')):?><li><?php print anchor('customer/admin',$this->lang->line('backendpro_customers'),array('class'=>'icon_user_suit'))?></li><?php echo "\n"; endif;?>
-        <?php if(check('Filemanager',NULL,FALSE) && $this->preference->item('filemanager')):?><li><?php print anchor('file_manager/admin',$this->lang->line('backendpro_file_manager'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
-        <?php if(check('Menus',NULL,FALSE) && $this->preference->item('menus')):?><li><?php print anchor('menus/admin',$this->lang->line('backendpro_menus'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
         <?php if(check('Orders',NULL,FALSE) && $this->preference->item('orders')):?><li><?php print anchor('orders/admin',$this->lang->line('backendpro_orders'),array('class'=>'icon_cake'))?></li><?php echo "\n"; endif;?>
         <?php if(check('Slideshow',NULL,FALSE) && $this->preference->item('slideshow')):?><li><?php print anchor('slideshow/admin',$this->lang->line('backendpro_slideshow'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
         <?php if(check('Products',NULL,FALSE) && $this->preference->item('products')):?><li><?php print anchor('products/admin',$this->lang->line('backendpro_products'),array('class'=>'icon_color_swatch'))?></li><?php echo "\n"; endif;?>

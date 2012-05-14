@@ -1,15 +1,10 @@
 <h2><?php echo $title;?></h2>
 <?php
-if ($this->session->flashdata('message'))
-{
-	echo "<div class='status_box'>".$this->session->flashdata('message')."</div>";
-}
-
 if (count($orderdetails))
 {	
 	echo '<table id="tablesorter_product" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
 	echo "<thead>\n<tr valign='top'>\n";
-	echo "<th>&nbsp;</th><th>ID Đặt hàng</th>\n<th>Tên Sản Phẩm</th><th>Số lượng</th><th>Giá tiền</th><th>Thực hiện</th>\n";
+	echo "<th>&nbsp;</th><th>ID Đơn hàng</th>\n<th>Tên sản phẩm</th><th>Số lượng</th><th>Giá tiền</th><th>Thanh toán</th>\n";
 	echo "</tr>\n</thead>\n<tbody>\n";
 	foreach ($orderdetails as $key => $list)
 	{

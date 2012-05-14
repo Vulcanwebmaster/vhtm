@@ -7,7 +7,7 @@
 
 echo form_open_multipart('slideshow/admin/edit/'.$slide['id']);
 
-echo "\n<table id='preference_form'><tr><td class='label'><label for='pname'>".$this->lang->line('kago_name')."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='pname'>"."(*)".$this->lang->line('kago_name')."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text','value' => $slide['name']);
 echo "<td>";
 echo form_input($data);
@@ -25,18 +25,11 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 
 ?>
-<a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
 <?php
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='uimage'>".$this->lang->line('kago_select_img')."</label></td>\n";
 $data = array('name'=>'image','id'=>'uimage','rows'=>'10', 'cols'=>'80', 'value' => $slide['image']);
-echo "<td id='nopad' >";
-echo form_textarea($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='uthumb'>".$this->lang->line('kago_select_thumb')."</label></td>\n";
-$data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80', 'value' => $slide['thumbnail']);
 echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
@@ -47,13 +40,7 @@ echo "<td>";
 echo form_dropdown('status',$options, $slide['status']);
 echo "</td></tr>\n";
 
-
-
-echo "<tr><td class='label'><label for='slide_order'>".$this->lang->line('kago_order')."</label></td>\n";
-$data = array('name'=>'slide_order','id'=>'slide_order','class'=>'text','value' => $slide['slide_order']);
-echo "<td>";
-echo form_input($data);
-echo "</td></tr></table>\n";
+echo "</table>\n";
 
 echo form_hidden('id',$slide['id']);
 ?>

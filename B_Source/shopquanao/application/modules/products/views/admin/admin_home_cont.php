@@ -2,21 +2,16 @@
 /* modules/views/admin/admin_home_cont.php */
 // get the module name. We use this in the link. Then it will be used in kaimonokago controller to redirect to the module
 $module=$this->uri->segment(1);
-
 if (count($products))
 {
-    
-?>
-
-<?php
 	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
-	echo "<thead>\n<tr valign='top'>\n";
-	echo "<th>".'ID Sản Phẩm'."</th>\n<th>".'Tên sản phẩm'.
-            "</th><th>".'Mã sản phẩm'."</th><th>".'Số lượng'.
+	echo "<thead><tr valign='top'>";
+	echo "<th>".'ID Sản Phẩm</th><th>'.'Tên Sản Phẩm'.
+            "</th><th>".'Mã Sản Phẩm'."</th><th>".'Số lượng'.
             "</th><th>".'Trạng thái'."</th><th>".'Loại sản phẩm'.
-			"</th><th>".'Đặc điểm'."</th><th>".'Giá tiền'.
-            "</th><th>".'Ngôn ngữ'."</th><th>".'Thực hiện'."</th>\n";
-	echo "</tr>\n</thead>\n<tbody>\n";
+			"</th><th>".'Giá tiền'.
+            "</th><th>".'Thực hiện'."</th>";
+	echo "</tr></thead><tbody>";
 	foreach ($products as $key => $list)
 	{     
             // single language so display only lang_id ==0
@@ -42,17 +37,7 @@ if (count($products))
 				echo "</td>\n";
 				// echo "<td align='center'>".$list['category_id']."</td>\n";
 				echo "<td align='center'>".$list['CatName']."</td>\n";
-				echo "<td align='center'>".$list['featured']."</td>\n";
 				echo "<td align='center'>".$list['price']."</td>\n";
-		        if($list['langname'])
-		        {
-		            $langname = ucfirst($list['langname']);
-		        }
-		        else
-		        {
-		            $langname = 'English';
-		        }
-		        echo "<td align='center'>$langname</td>\n";
 		        //echo "<td align='center'>".$list['lang_id']."</td>\n";
 		        //echo "<td align='center'>".$list['table_id']."</td>\n";
 				echo "<td align='center'>";
@@ -76,13 +61,15 @@ else
 {
 	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
 	echo "<thead>\n<tr valign='top'>\n";
-	echo "<th>".'ID Sản Phẩm'."</th>\n<th>".'Tên sản phẩm'.
-            "</th><th>".'Mã sản phẩm'."</th><th>".'Số lượng'.
+	echo '<table id="tablesorter1" class="tablesorter" border="1" cellspacing="0" cellpadding="3" width="100%">';
+	echo "<thead><tr valign='top'>";
+	echo "<th>".'ID Sản Phẩm"</th>\n<th>'.'Tên Sản Phẩm'.
+            "</th><th>".'Mã Sản Phẩm'."</th><th>".'Số lượng'.
             "</th><th>".'Trạng thái'."</th><th>".'Loại sản phẩm'.
-			"</th><th>".'Đặc điểm'."</th><th>".'Giá tiền'.
-            "</th><th>".'Ngôn ngữ'."</th><th>".'Thực hiện'."</th>\n";
-	echo "</tr>\n</thead>\n<tbody>\n";
-	echo "</tbody></table>";
+			"</th><th>".'Giá tiền'.
+            "</th><th>".'Thực hiện'."</th>";
+	echo "</tr></thead><tbody>";
+	echo "</table>";
 }
 
 ?>

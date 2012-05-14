@@ -23,8 +23,6 @@ $data = array('name'=>'code','id'=>'code','class'=>'text','value'=>$product['cod
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
-
-						
 	foreach ($giatrikho as $key => $list)
 	{	
 		if($list['kho_id']==1)
@@ -85,7 +83,7 @@ echo "</td></tr>\n";
 
 	}//end
 	
-echo "<tr><td class='label'><label for='short'>".'Mô tả sản phẩm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='short'>".'Mô tả sản phầm:'."</label></td>\n";
 $data = array('name'=>'shortdesc','id'=>'short','class'=>'text','value'=>$product['shortdesc']);
 echo "<td>";
 echo form_input($data);
@@ -97,9 +95,6 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-?>
-<a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
-<?php
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='uimage'>".'Chọn ảnh sản phẩm:'."</label></td>\n";
@@ -114,28 +109,10 @@ echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='weblink'>".'Weblink:'."</label></td>\n";
-$data = array('name'=>'weblink','id'=>'weblink','class'=>'text','value'=>$product['weblink']);
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='public'>".'Chế độ public:'."</label></td>\n";
-$options = array('active' => 'active', 'inactive' => 'inactive');
-echo "<td>";
-echo form_dropdown('public',$options,$product['public']);
-echo "</td></tr>\n";
-
 echo "<tr><td class='label'><label for='status'>".'Trạng thái:'."</label></td>\n";
 $options = array('active' => 'active', 'inactive' => 'inactive');
 echo "<td>";
 echo form_dropdown('status',$options,$product['status']);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='product_order'>".'Yêu cầu:'."</label></td>\n";
-$data = array('name'=>'product_order','id'=>'product_order','class'=>'text','value'=>$product['product_order']);
-echo "<td>";
-echo form_input($data);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='price'>".'Giá tiền:'."</label></td>\n";

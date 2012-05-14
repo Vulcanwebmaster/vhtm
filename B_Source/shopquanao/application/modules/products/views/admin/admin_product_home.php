@@ -18,25 +18,20 @@
 <div align="left">
 <form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
 <strong>Chọn kho:</strong> <select name = "giatrikho" onchange = "formkho.submit();">	
-	<option value="100" <?php if ( isset($kho_id) && $kho_id == 100) echo " selected ";?>><?php echo 'Tất cả'?></option>
-	<option value="1" <?php if ( isset($kho_id) && $kho_id == 1) echo " selected ";?>>Kho 1</option>
-	<option value="2" <?php if ( isset($kho_id) && $kho_id == 2) echo " selected ";?>>Kho 2</option>
-	<option value="3" <?php if ( isset($kho_id) && $kho_id == 3) echo " selected ";?>>Kho 3</option>	
+	<option value="100" <?php if ( isset($kho_id) && $kho_id == 100) echo 'selected="selected"';?> ><?php echo 'Tất cả'?></option>
+	<option value="1" <?php if ( isset($kho_id) && $kho_id == 1) echo 'selected="selected"';?>>Kho 1</option>
+	<option value="2" <?php if ( isset($kho_id) && $kho_id == 2) echo 'selected="selected"';?>>Kho 2</option>
+	<option value="3" <?php if ( isset($kho_id) && $kho_id == 3) echo 'selected="selected"';?>>Kho 3</option>	
 </select>
 </form>
 </div>
-
-<div align="right" style="float:right">
+<div align="right">
 	<?php echo $pagination;?>                   
 </div>
-
-<br/>
-
+<br>
 <?php
 $this->load->view('admin/admin_home_cont');
 ?>
-
-
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -44,10 +39,12 @@ $(document).ready(function(){
     var module = "<?php echo $module ; ?>";
 
     function updateitem()
-    {    
+    {   
         $.ajax({
             type: "POST", 
-            url: "<?php echo site_url($module.'/admin/Ajaxgetupdate'); ?>", 
+            url: "<?php if ($this->uri->segment('3') != "sortKho")
+            			echo site_url($module.'/admin/Ajaxgetupdate/'.$this->uri->segment('4'));
+            			else echo site_url($module.'/admin/Ajaxgetupdate/'.$this->uri->segment('5')); ?>", 
             complete: function(data)
             {
                 tablecont.html(data.responseText);

@@ -11,5 +11,5 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <h1><?php print $this->preference->item('site_name')?></h1>
+        <h1>NIW - ADMIN</h1>
     </div>

@@ -31,7 +31,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+            	   $data[] = $row;
             }
         }
         $Q->free_result();
@@ -51,7 +52,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+            	   $data[] = $row;
             }
         }
         $Q->free_result();
@@ -71,7 +73,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+                if (isset($row['id']))
+            		$data[] = $row;
             }
         }
         $Q->free_result();
@@ -90,7 +93,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+	                $data[] = $row;
             }
         }
         $Q->free_result();
@@ -114,7 +118,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+            	   $data[] = $row;
             }
         }
         $Q->free_result();
@@ -135,7 +140,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+            	   $data[] = $row;
             }
         }
         $Q->free_result();
@@ -155,7 +161,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+            	    $data[] = $row;
             }
         }
         $Q->free_result();
@@ -176,7 +183,8 @@ class MSearch extends CI_Model
         {
             foreach ($Q->result_array() as $row)
             {
-                $data[] = $row;
+            	if (isset($row['id']))
+	                $data[] = $row;
             }
         }
         $Q->free_result();

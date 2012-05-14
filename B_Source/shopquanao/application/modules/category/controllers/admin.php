@@ -79,10 +79,7 @@ class Admin extends Shop_Admin_Controller
         'shortdesc'   => db_clean($_POST['shortdesc']),
         'longdesc'    => $this->input->post('longdesc'),
         'status'      => db_clean($_POST['status'],8),
-        'parentid'    => id_clean($_POST['parentid']),
         'lang_id'     => id_clean($_POST['lang_id']),
-        'order'       => id_clean($_POST['order'],10),
-        'table_id'    => id_clean($_POST['table_id'])
         );
         // $this->MKaimonokago->addItem($this->module, $data);
         return $data;

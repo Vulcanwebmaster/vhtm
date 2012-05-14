@@ -45,6 +45,7 @@ class MOrders extends CI_Model
 
 	function getOrderDetails($id)
 	{
+		 $data = array(); 
 		 $this->db->select('omc_order_item.order_item_id,omc_order_item.order_id,omc_order_item.product_id,
 						   omc_order_item.quantity,omc_order_item.price,omc_products.name,
 						   omc_order.order_date, omc_order.delivery_date, omc_order.payment_date');

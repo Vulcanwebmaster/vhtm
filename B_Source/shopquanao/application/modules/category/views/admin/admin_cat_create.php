@@ -2,7 +2,7 @@
 
 <?php
 echo form_open('category/admin/create');
-echo "\n<table id='preference_form'><tr><td class='label'><label for='catname'>".$this->lang->line('kago_name')."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='catname'>"."(*)".$this->lang->line('kago_name')."</label></td>\n";
 $data = array('name'=>'name','id'=>'catname','class'=>'text');
 echo "<td>";
 echo form_input($data);
@@ -30,14 +30,6 @@ echo "<tr><td class='label'><label for='long'>".$this->lang->line('kago_long_des
 $data = array('name'=>'longdesc','id'=>'long','rows'=>'30', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
-?>
-    <a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a>
-<?php
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='parent'>".$this->lang->line('kago_parent')."</label></td>\n";
-echo "<td>";
-echo form_dropdown('parentid',$categories) ;
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
@@ -46,11 +38,7 @@ echo "<td>";
 echo form_dropdown('status',$options);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='order'>".$this->lang->line('kago_order')."</label></td>\n";
-$data = array('name'=>'order','id'=>'order','class'=>'text');
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n</table>\n";
+echo "</table>\n";
 
 echo form_hidden('lang_id', '0');
 echo form_hidden('table_id', '0');

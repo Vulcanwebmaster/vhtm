@@ -2,7 +2,7 @@
 <?php
 echo form_open_multipart('slideshow/admin/create')."\n";
 
-echo "\n<table id='preference_form'><tr><td class='label'><label for='pname'>".$this->lang->line('kago_name')."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='pname'>"."(*)".$this->lang->line('kago_name')."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text');
 echo "<td>";
 echo form_input($data);
@@ -20,7 +20,6 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 
 ?>
-<a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
 <?php
 echo "</td></tr>\n";
 ?>
@@ -38,19 +37,6 @@ echo "</td></tr>\n";
 	</td>
 </tr><br/>
 
-<tr>
-	<td>
-		<strong>Select Thumnail:</strong>
-	</td>
-	<td>
-		<form action="<?php echo base_url()?>index.php/slideshow/admin/create" method="post" enctype="multipart/form-data">
-		<label for="photo"></label>
-		<input type="file" name="thumnail" />
-		<input type="submit" value="Upload" />
-</form>
-	</td>
-</tr><br/>
-
 <?php
 
 echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
@@ -59,13 +45,7 @@ echo "<td>";
 echo form_dropdown('status',$options);
 echo "</td></tr>\n";
 
-
-
-echo "<tr><td class='label'><label for='slide_order'>".$this->lang->line('kago_order')."</label></td>\n";
-$data = array('name'=>'slide_order','id'=>'slide_order','class'=>'text');
-echo "<td>";
-echo form_input($data);
-echo "</td></tr></table>\n";
+echo "</table>\n";
 
 ?>
 <div class="buttons">

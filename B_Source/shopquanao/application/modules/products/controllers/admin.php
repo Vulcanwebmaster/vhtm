@@ -63,7 +63,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quản lý sản phẩm";
+        $data['title'] = "Quản lý sản phẩm theo kho";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
@@ -178,13 +178,13 @@ class Admin extends Shop_Admin_Controller
        		}            
           
             // we are using Bep function for flash msg
-            flashMsg('success','Hàng đã được tạo');
+            flashMsg('success','Sản phẩm đã được tạo');
             redirect($this->module.'/admin/index','refresh');
             }//end check
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "Tạo sản phẩm";
+            $data['title'] = "Tên sản phẩm";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -197,7 +197,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Tên mã hàng đã được đăng ký, mời chọn lại');
+            flashMsg('error','Chưa nhập tên mặt hàng');
             $this->load->view($this->_container,$data);	
             }
   
@@ -222,7 +222,6 @@ class Admin extends Shop_Admin_Controller
             flashMsg('error','Chưa nhập mã hàng');
             $this->load->view($this->_container,$data);
             }
-                       
         }
         else
         {
@@ -241,7 +240,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','Mời bạn nhập số liệu sản phẩm');
+            flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
             $this->load->view($this->_container,$data);
         }
 
@@ -324,7 +323,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Mã sản phẩm đã được đăng ký, mời nhập lại');
+            flashMsg('error','Mã sản phẩm đã tồn tại, mời nhập lại');
             $this->load->view($this->_container,$data);
             }
         		}//so sanh ma hang hien tai
@@ -387,7 +386,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Mã sản phẩm đã được đăng ký, mời nhập lại');
+            flashMsg('error','Mã sản phẩm đã tồn tại, mời nhập lại');
             $this->load->view($this->_container,$data);
         	}
        	
@@ -428,7 +427,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','bạn phải nhập mã hàng');
+            flashMsg('error','Bạn phải nhập mã hàng');
             $this->load->view($this->_container,$data);
         }
         
@@ -467,7 +466,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','Mời bạn sửa số liệu sản phẩm');
+            flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
             $this->load->view($this->_container,$data);
         }
     }

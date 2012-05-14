@@ -17,11 +17,9 @@ class Admin extends Shop_Admin_Controller
 		$this->bep_site->set_crumb($this->lang->line('backendpro_orders'),'orders/admin');		
 	}
   
-
-
   	function index()
   	{
-		$data['title'] = "Quản lý đặt hàng";
+		$data['title'] = "Quản lý đơn hàng";
 		//$data['main'] = 'admin_orders_home';
 		$data['products'] = $this->MProducts->getAllProducts();
 		$data['categories'] = $this->MCats->getCategoriesDropDown();
@@ -36,7 +34,7 @@ class Admin extends Shop_Admin_Controller
   
   	function details($id)
   	{
-		$data['title'] = "Chi tiết đặt hàng";
+		$data['title'] = "Chi tiết đơn hàng";
 		//$data['main'] = 'admin_orders_details';
 		$data['products'] = $this->MProducts->getAllProducts();
 		$data['categories'] = $this->MCats->getCategoriesDropDown();
@@ -49,8 +47,6 @@ class Admin extends Shop_Admin_Controller
 		$this->load->view($this->_container,$data);
   	}
   
-  
-
   	function paid($id)
   	{
 		$this->MOrders->setpayment($id);
@@ -58,8 +54,6 @@ class Admin extends Shop_Admin_Controller
 		redirect('orders/admin');
    	}
   
-
-   
   	function delivered($id)
   	{
 		$this->MOrders->setdelivery($id);
@@ -67,8 +61,6 @@ class Admin extends Shop_Admin_Controller
 		redirect('orders/admin/');
    	}	
   
-   	
-
   	function deleteitem($order_id, $order_item_id)
   	{
 		$order_id = $this->uri->segment(4);
@@ -88,6 +80,4 @@ class Admin extends Shop_Admin_Controller
 		}
 	}
 }
-
-
 ?>

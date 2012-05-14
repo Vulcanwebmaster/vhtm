@@ -288,9 +288,8 @@ class MProducts extends CI_Model
         */  
         
         // for cecilieokada, one language this is ok. If it is multilang, then change back to the above one
-        $this->db->select('omc_products.*, omc_languages.langname, omc_category.Name AS CatName,shop.total ');     	      
+        $this->db->select('omc_products.*, omc_category.Name AS CatName,shop.total ');     	      
         $this->db->join('omc_category','omc_category.id=omc_products.category_id','left');
-        $this->db->join('omc_languages','omc_languages.id=omc_products.lang_id','left') ;
         $this->db->join('(SELECT shop_sanphamkho.id as id, SUM(shop_sanphamkho.total) as total FROM shop_sanphamkho GROUP BY shop_sanphamkho.id ) AS shop','shop.id=omc_products.id','left');         
         
        // $this->db ->order_by('omc_products.lang_id',"ASC");    

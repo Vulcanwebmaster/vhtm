@@ -57,9 +57,6 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 
 ?>
-<a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
-
-
 <!--<tr>
 <td id="nopad">
 <span id="uimage_parent" class="mceEditor defaultSkin"></span>
@@ -98,37 +95,16 @@ echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='uthumb'>".'Chọn thumnail sản phẩm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='uthumb'>".'Chọn thumnail sản phầm:'."</label></td>\n";
 $data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
-echo "</td></tr>\n";
-?>
-
-
-<?php
-echo "<tr><td class='label'><label for='weblink'>".'Weblink'."</label></td>\n";
-$data = array('name'=>'weblink','id'=>'weblink','class'=>'text');
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='public'>".'Chế độ public'."</label></td>\n";
-$options = array('active' => 'active', 'inactive' => 'inactive');
-echo "<td>";
-echo form_dropdown('public',$options);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='status'>".'Trạng thái'."</label></td>\n";
 $options = array('active' => 'active', 'inactive' => 'inactive');
 echo "<td>";
 echo form_dropdown('status',$options);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='product_order'>".'Yêu cầu'."</label></td>\n";
-$data = array('name'=>'product_order','id'=>'product_order','class'=>'text');
-echo "<td>";
-echo form_input($data);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='price'>".'Giá tiền'."</label></td>\n";
@@ -138,13 +114,13 @@ echo form_input($data);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='featured'>".'Đặc điểm:'."</label></td>\n";
-$options = array('none' => 'none', 'quicksand' => 'Quicksand');// you can add more here as you wish
+$options = array('none' => 'None', 'quicksand' => 'Quicksand');// you can add more here as you wish
 echo "<td>";
 echo form_dropdown('featured',$options);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='other_feature'>".'Đặc điểm khác'."</label></td>\n";
-$options = array('none' => 'none', 'most sold' => 'Most sold', 'new product' => 'New Product');
+$options = array('none' => 'None', 'most sold' => 'Most sold', 'new product' => 'New Product');
 echo "<td>";
 echo form_dropdown('other_feature',$options);
 echo "</td></tr></table>\n";
@@ -166,6 +142,4 @@ echo form_hidden('table_id', '0');
 <?php
 //echo form_submit('submit',$this->lang->line('kago_create_product'));
 echo form_close();
-
-
 ?>

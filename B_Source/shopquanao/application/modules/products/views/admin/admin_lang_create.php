@@ -39,9 +39,6 @@ $data = array('name'=>'longdesc','id'=>'long','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
 
-?>
-<a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
-<?php
 echo "</td></tr>\n";
 
 /*
@@ -57,7 +54,6 @@ $data = array('name'=>'thumbnail','id'=>'uthumb','size'=>80);
 echo form_textarea($data) ."</p>\n";
  */
 echo form_hidden('thumbnail',$product['thumbnail']);
-echo form_hidden('weblink',$product['weblink']);
 /*
 echo "<p><label for='status'>Status</label><br/>";
 $options = array('active' => 'active', 'inactive' => 'inactive');
@@ -69,7 +65,6 @@ echo "<p><label for='product_order'>Product Order</label><br/>";
 $data = array('name'=>'product_order','id'=>'product_order','size'=>11);
 echo form_input($data) ."</p>\n";
 */
-echo form_hidden('product_order',$product['product_order']);
 /*
 echo "<p><label for='class'>Class</label><br/>";
 $data = array('name'=>'class','id'=>'class','size'=>50);

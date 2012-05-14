@@ -6,7 +6,7 @@ if($category['lang_id']==0 AND $multilang ){
 
 echo form_open('category/admin/edit');
 
-echo "\n<table id='preference_form'><tr><td class='label'><label for='catname'>".$this->lang->line('kago_name')."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='catname'>"."(*)".$this->lang->line('kago_name')."</label></td>\n";
 $data = array('name'=>'name','id'=>'catname','class'=>'text','value' => $category['name']);
 echo "<td>";
 echo form_input($data);
@@ -34,13 +34,6 @@ echo "<tr><td class='label'><label for='long'>".$this->lang->line('kago_long_des
 $data = array('name'=>'longdesc','id'=>'long','rows'=>'30', 'cols'=>'80', 'value' => $category['longdesc']);
 echo "<td id='nopad' >";
 echo form_textarea($data);
-?>
-<a href="javascript:toggleEditor('long');"><?php echo $this->lang->line('kago_add_remove') ;?></a><br /><br />
-<?php
-echo "</td></tr>\n";
-echo "<tr><td class='label'><label for='parent'>".$this->lang->line('kago_parent')."</label></td>\n";
-echo "<td>";
-echo form_dropdown('parentid',$categories,$category['parentid']) ;
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
@@ -49,11 +42,7 @@ echo "<td>";
 echo form_dropdown('status',$options, $category['status']);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='order'>".$this->lang->line('kago_order')."</label></td>\n";
-$data = array('name'=>'order','id'=>'order','class'=>'text', 'value' => $category['order']);
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n</table>\n";
+echo "</table>";
 
 
 echo form_hidden('id',$category['id']);

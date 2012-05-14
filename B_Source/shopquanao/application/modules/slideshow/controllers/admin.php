@@ -35,9 +35,7 @@ class Admin extends Shop_Admin_Controller
             'shortdesc'     => db_clean($_POST['shortdesc']),
             'longdesc'      => db_clean($_POST['longdesc'],5000),
             'status'        => db_clean($_POST['status'],8),
-            'slide_order'   => db_clean($_POST['slide_order']),
-            'thumbnail'     => db_clean($_POST['thumbnail']),
-            'image'         => db_clean($_POST['image']),
+            'image'         => $this->input->post('image'),
         );
         return $data;
     }
