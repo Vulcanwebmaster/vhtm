@@ -13,12 +13,12 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
         href="" />
     <link rel="alternate" type="application/rss+xml" title="shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - RSS"
         href="" />
-    <link rel="service.post" type="application/atom+xml" title="shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - Atom"
+    <link rel="service.post" type="application/atom+xml" title=""
         href="" />    
     <!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
-    <meta content='quáº§n Ã¡o ná»¯, shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m kiá»ƒu, Ã¡o thun ná»¯, Ã¡o khoÃ¡c ná»¯, thá»�i trang ná»¯, phá»¥ kiá»‡n thá»�i trang, quáº§n Ã¡o thá»�i trang, shop quáº§n Ã¡o ná»¯, Ä‘áº§m ná»¯, vÃ¡y ná»¯'
+    <meta content=''
         name='description' />
-    <meta content='shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m kiá»ƒu, Ã¡o thun ná»¯, Ã¡o khoÃ¡c ná»¯, thá»�i trang ná»¯, phá»¥ kiá»‡n thá»�i trang, quáº§n Ã¡o thá»�i trang, shop quáº§n Ã¡o ná»¯, Ä‘áº§m ná»¯, vÃ¡y ná»¯'
+    <meta content=''
         name='keywords' />
     <meta content='all' name='robots' />
     <meta content='index,all,follow' name='Robots' />
@@ -26,7 +26,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
     <meta content='1 days' name='revisit-after' />
     <meta content='3600' http-equiv='REFRESH' />
     <!-- Start www.vananhshop.com: Changing the Blogger Title Tag -->
-    <title>shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m</title>
+    <title>Shop quần áo</title>
     <!-- End www.vananhshop.com: Changing the Blogger Title Tag -->
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/compare.css" media="all"/>
@@ -91,29 +91,27 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
         if (window.jstiming) window.jstiming.load.tick('headEnd');
     </script>
     <!--  ================ js===============-->
-<!-- 
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/ccard.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/validation.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/builder.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/effects_002.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/dragdrop_002.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/controls.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/slider.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/js.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/form.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/menu.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/translate.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cookies.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery-1.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/styleswitch.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/swfobject.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em0015.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/scriptaculous.js"></script>
-<script type="text/javascript" src="assets/women_files/effects.js"></script>
-<script type="text/javascript" src="assets/women_files/dragdrop.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/lightbox.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em_ajaxcart.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cloud-zoom.js"></script> -->
+
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery.slider.min.js"></script>
+	
+	  <script type="text/javascript">
+	
+	    jQuery(document).ready(function($) {
+	
+	      $(".slider").slideshow({
+	
+	        width      : 1000,
+	
+	        height     : 325,
+	
+	        transition : 'squareRandom'
+	
+	      });
+	
+	    });
+	
+	  </script>
 </head>
 
 <body data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="https://platform.twitter.com/widgets/hub.html"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="http://platform.twitter.com/widgets/hub.html"></iframe>
@@ -154,168 +152,9 @@ head.appendChild(script);
 <div id="wrap2">
 	<div id="content-wrapper">
 		<div id="crosscol-wrapper" style="text-align:center">
-			<div class="crosscol section" id="crosscol"><div class="widget HTML" id="HTML4">
-
-				<div class="widget-content">
-<style type="text/css">
-.hide {display:none;}
-#kmenu
-{
-    font-size:12px;
-    height: 80px;
-    background: url(menu-bg.gif) repeat-x;
-}
-#kmenu .kmenu-r
-{
-    height: 80px;
-    background: url(<?php echo base_url();?>assets/women_files/menu-right-bg.gif) no-repeat top right;
-}
-#kmenu .kmenu-l
-{
-    height: 80px;
-    background: url(<?php echo base_url();?>assets/women_files/menu-left-bg.gif) no-repeat top left;
-}
-#kmenu .homepage
-{
-    padding: 20px 0px 0px 8px;
-    width: 78px;
-    float: left;
-}
-#kmenu .homepage a
-{
-    font-weight: bold;text-decoration: none;
-}
-#kmenu .homepage a:hover
-{
-    color: #f68121;
-    text-decoration: none;
-}
-#kmenu .mnav
-{
-    width: 800px;
-    float: left;
-    padding: 17px 0 0 20px;
-}
-#kmenu .mnav ul.zlstmnav
-{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-    height: 28px;
-}
-#kmenu .mnav .zlstmnav li
-{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    float: left;
-}
-#kmenu .mnav .zlstmnav li a
-{
-    float: left;
-    display: block;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0 0 0 0px;
-    height: 27px;
-    line-height: 27px;
-    text-align: center;
-    cursor: pointer;
-    font-family: Arial;
-}
-#kmenu .mnav .zlstmnav li a span
-{
-    float: left;
-    display: block;
-    padding: 0 0px 0 20px;
-}
-#kmenu .mnav .zlstmnav li a:hover, #kmenu .mnav .zlstmnav li.selected a
-{
-    margin-top: 1px;
-    height: 26px;
-    line-height: 26px;
-    background: #2e2e2e url('<?php echo base_url();?>assets/women_files/nav-left-bg.gif') no-repeat top left;
-}
-#kmenu .mnav .zlstmnav li.first a:hover
-{
-    background: #2e2e2e url('<?php echo base_url();?>assets/women_files/nav-left-home.gif') no-repeat top left;
-}
-#kmenu .mnav .zlstmnav li a:hover span, #kmenu .mnav .zlstmnav li.selected a span
-{
-    background: url('<?php echo base_url();?>assets/women_files/nav-right-bg.gif') no-repeat top right;
-    padding: 0 23px 0 23px;
-}
-#kmenu .submenu
-{
-    padding-left: 15px;
-	padding-top: 3px;
-}
-#kmenu .submenu li
-{
-    float: left;list-style: none;
-}
-#kmenu .submenu li a
-{
-    color: #fff;
-    display: block;
-    padding-right: 15px;
-    text-decoration:none;
-}
-#kmenu .submenu li a:hover
-{
-              color: #f68121;
-	background:url('<?php echo base_url();?>assets/women_files/icon-li.png') no-repeat left;
-	padding-left:14px;
-}
-#sub_FormSearch {float:right;}
-
-#sub_FormSearch {
-	padding:0 0px 3px 20px;
-	background:url('<?php echo base_url();?>assets/women_files/search-bg.png') no-repeat top left;
-	height:24px;
-}
-#sub_FormSearch .search {
-
-	width: 200px;
-	height: 25px;
-        margin:0;
-        padding:0;
-
-	}
-#sub_FormSearch input {
-
-	width: 180px;
-	height: 18px;
-	margin: 1px 0 0 0;
-
-	font: normal normal normal 11px/15px Verdana, Geneva, Tahoma, sans-serif;
-	color: #fff;
-        border:none;
-	background-color: transparent;
-	}
-#sub_FormSearch .search-submit, #sub_FormSearch .button {
-	display: none;
-	}
-
-</style>
-					<script src="<?php echo base_url();?>assets/women_files/kMenu.js" type="text/javascript"></script>
-						
-					<script type="text/javascript">
-					    kMenu.Init('kmenu',o_ChannelRoot);
-					</script>
-				</div>
-			<div class="clear"></div>
-			<span class="widget-item-control">
-				<span class="item-control blog-admin">
-					<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6804016548630797752&amp;widgetType=HTML&amp;widgetId=HTML4&amp;action=editWidget&amp;sectionId=crosscol" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML4&quot;));" target="configHTML4" title="Chá»‰nh sá»­a">
-						<img alt="" height="18" src="http://img1.blogblog.com/img/icon18_wrench_allbkg.png" width="18">
-					</a>
-				</span>
-			</span>
-			<div class="clear"></div>
-</div></div>
+			<div class="crosscol section" id="crosscol">
+				
+			</div>
 </div>
 <div id="main-wrapper">
 <div class="subscribesec">
@@ -346,69 +185,48 @@ head.appendChild(script);
 </div>
 
 <div class="main section" id="main">
-<div class="widget HTML" id="HTML3">
-<div class="widget-content">
-<style type="text/css">
-.box {
-	float: left;
-              border-top:2px solid #ddd;
-              border-bottom:2px solid #ddd;
-              background:url(chen link vo day) no-repeat top left;
-              padding-left:45px;
-}
-
-</style>
-
-<script type="text/java" src="<?php echo base_url();?>assets/women_files/logo-footer.js"></script>
-
- <div id="ctl00_plcMain_divLogo" class="box" style="width: 100%; margin-bottom:20px">
-
-             <div id="Logo_wrapper">
-	<div style="overflow-x: hidden; overflow-y: hidden; position: relative; height: 99px; width: 960px; zoom: 1; " id="Logo_Div">
-	<table cellpadding="0px" cellspacing="0px" style="position: relative; top: 0px; width: 1200px; left: 0px; " id="Logo_FrameContainer">
-		<tbody>
-			<tr>
-				<td id="Logo_frame4" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
- 
-				 <a href="http://www.vananhshop.com/2011/12/ao-a9-006.html"  title="quáº§n Ã¡o - Ã¡o a9-006">
-				      <img src="<?php echo base_url();?>assets/women_files/a9-006-3.jpg" alt="quáº§n Ã¡o" height="85" width="85" title="quáº§n Ã¡o - Ã¡o a9-006"/></a>
-				      </td><td id="Logo_frame0" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
-				  <a href="http://www.vananhshop.com/2011/12/dam-d9-019.html"  title="quáº§n Ã¡o - Ä‘áº§m d9-019">
-				    <img src="<?php echo base_url();?>assets/women_files/d9-019-3.jpg" alt="quáº§n Ã¡o " height="85" width="85" border="0" title="quáº§n Ã¡o - Ä‘áº§m d9-019"/></a>
-				</td>
-				<td id="Logo_frame1" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
-
-					 <a href="http://www.vananhshop.com/2011/10/ao-a7-008.html"  title="quáº§n Ã¡o - Ã¡o a7-008">
-					   <img src="<?php echo base_url();?>assets/women_files/a7-008-1.jpg" alt="quáº§n Ã¡o" height="85" width="85" title="quáº§n Ã¡o - Ã¡o a7-008"/></a>
-				</td>
-				<td id="Logo_frame2" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
-
-					  <a href="http://www.vananhshop.com/2011/12/dam-d9-017.html"  title="quáº§n Ã¡o - Ä‘áº§m d9-017">
-					    <img src="<?php echo base_url();?>assets/women_files/d9-017-4.jpg" alt="quáº§n Ã¡o" height="85" width="85" title="quáº§n Ã¡o - Ä‘áº§m d9-017"/></a>
-				</td>
-				<td id="Logo_frame3" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
-  
-					<a href="http://www.vananhshop.com/2011/10/ao-a7-003.html"  title="quáº§n Ã¡o - Ã¡o a7-003">
-					     <img src="<?php echo base_url();?>assets/women_files/a7-003-1a.jpg" alt="quan ao" height="85" width="85" title="quáº§n Ã¡o - Ã¡o a7-003"/></a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-<script type="text/javascript">window["Logo"] = new RadRotator('Logo',4);window["Logo"].AutoAdvance = 1;window["Logo"].FrameTimeout = 4000;window["Logo"].RotatorMode = 'Scroll';window["Logo"].NumberOfFrames = 5;window["Logo"].PauseOnMouseOver = 1;window["Logo"].HasTickers = 0;window["Logo"].FrameIdArray = new Array('Logo_frame0','Logo_frame1','Logo_frame2','Logo_frame3','Logo_frame4');window["Logo"].ScrollSpeed = 10;window["Logo"].ScrollDirection = 'Left';window["Logo"].UseSmoothScroll = 1;window["Logo"].SmoothScrollDelay = 10;window["Logo"].Start();</script>
-</div>
-</div>
-</div>
-<div class="clear"></div>
-<span class="widget-item-control">
-<span class="item-control blog-admin">
-<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6804016548630797752&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=main" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML3&quot;));" target="configHTML3" title="Chá»‰nh sá»­a">
-<img alt="" height="18" src="http://img1.blogblog.com/img/icon18_wrench_allbkg.png" width="18">
-</a>
-</span>
-</span>
-<div class="clear"></div>
+<div class="jquery-slider-wrapper jquery-slider-option-navigation-selector-control-timer" style="width: 1000px; height: 325px; margin-bottom:20px">
+	<div id="slideshow" class="slider" style="width: 1000px; height: 325px; overflow-x: hidden; overflow-y: hidden; position: relative; ">
+		<div class="jquery-slider-slide jquery-slider-slide-1" style="opacity: 0; "><img class="hideme" src="assets/images/frontpage/big_tree.jpg" alt="big_tree.jpg"></div><div class="jquery-slider-slide jquery-slider-slide-2" style="opacity: 0; ">
+			<img class="hideme" src="assets/images/frontpage/build.jpg" alt="build.jpg">
+		</div>
+		<div class="jquery-slider-slide jquery-slider-slide-3 jquery-slider-slide-current" style="opacity: 1; ">
+			<img class="hideme" src="assets/images/frontpage/station.jpg" alt="station.jpg">
+		</div>
+	</div>
+	<div class="jquery-slider-timer">
+		<div class="jquery-slider-timer-mask">
+			<div class="jquery-slider-timer-rotator"></div>
+		</div>
+		<div class="jquery-slider-timer-bar" style="overflow-x: hidden; overflow-y: hidden; width: 37.17777777777778%; ">
+		</div>
+	</div>
+	<a href="#" class="jquery-slider-control jquery-slider-control-pause"><span>Play/Pause</span></a>
+	<div class="jquery-slider-navigation">
+		<a href="#" class="jquery-slider-navigation-prev" rel="-1">
+			<span>Prev</span>
+		</a>
+		<a href="#" class="jquery-slider-navigation-next" rel="+1">
+			<span>Next</span>
+		</a>
+	</div>
+	<div class="jquery-slider-selectors">
+		<a href="#" class="jquery-slider-selector" rel="1">
+			<span class="jquery-slider-selector-span jquery-slider-selector-1">
+				<span>1</span>
+			</span>
+		</a>
+		<a href="#" class="jquery-slider-selector" rel="2">
+			<span class="jquery-slider-selector-span jquery-slider-selector-2">
+				<span>2</span>
+			</span>
+		</a>
+		<a href="#" class="jquery-slider-selector jquery-slider-selector-current" rel="3">
+			<span class="jquery-slider-selector-span jquery-slider-selector-3">
+				<span>3</span>
+			</span>
+		</a>
+	</div>
 </div>
 
 <!-- ===============Ná»˜I DUNG CHÃ�NH -->

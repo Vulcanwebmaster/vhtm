@@ -3,8 +3,8 @@
         <div class="header section" id="header">
             <div class="widget Header" id="Header1">
                 <div id="header-inner">
-                    <a href="http://www.vananhshop.com/" style="display: block">
-                        <img alt="shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm" height="90px; "
+                    <a href="<?php echo base_url();?>" style="display: block">
+                        <img alt="" height="90px; "
                             id="Header1_headerimg" src="<?php echo base_url();?>assets/women_files/logo1.png"
                             style="display: block; padding-top: 10px; padding-left: 20px;" width="229px; ">
                     </a>
