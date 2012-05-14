@@ -9,16 +9,16 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
     <meta content='true' name='MSSmartTagsPreventParsing' />
     <meta content='blogger' name='generator' />
     <link href='<?php echo base_url();?>assets/women_files/favicon.ico' rel='icon' type='image/x-icon' />
-    <link rel="alternate" type="application/atom+xml" title="shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm - Atom"
+    <link rel="alternate" type="application/atom+xml" title="shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - Atom"
         href="" />
-    <link rel="alternate" type="application/rss+xml" title="shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm - RSS"
+    <link rel="alternate" type="application/rss+xml" title="shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - RSS"
         href="" />
-    <link rel="service.post" type="application/atom+xml" title="shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm - Atom"
+    <link rel="service.post" type="application/atom+xml" title="shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - Atom"
         href="" />    
     <!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
-    <meta content='quần áo nữ, shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm kiểu, áo thun nữ, áo khoác nữ, thời trang nữ, phụ kiện thời trang, quần áo thời trang, shop quần áo nữ, đầm nữ, váy nữ'
+    <meta content='quáº§n Ã¡o ná»¯, shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m kiá»ƒu, Ã¡o thun ná»¯, Ã¡o khoÃ¡c ná»¯, thá»�i trang ná»¯, phá»¥ kiá»‡n thá»�i trang, quáº§n Ã¡o thá»�i trang, shop quáº§n Ã¡o ná»¯, Ä‘áº§m ná»¯, vÃ¡y ná»¯'
         name='description' />
-    <meta content='shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm kiểu, áo thun nữ, áo khoác nữ, thời trang nữ, phụ kiện thời trang, quần áo thời trang, shop quần áo nữ, đầm nữ, váy nữ'
+    <meta content='shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m kiá»ƒu, Ã¡o thun ná»¯, Ã¡o khoÃ¡c ná»¯, thá»�i trang ná»¯, phá»¥ kiá»‡n thá»�i trang, quáº§n Ã¡o thá»�i trang, shop quáº§n Ã¡o ná»¯, Ä‘áº§m ná»¯, vÃ¡y ná»¯'
         name='keywords' />
     <meta content='all' name='robots' />
     <meta content='index,all,follow' name='Robots' />
@@ -26,12 +26,26 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
     <meta content='1 days' name='revisit-after' />
     <meta content='3600' http-equiv='REFRESH' />
     <!-- Start www.vananhshop.com: Changing the Blogger Title Tag -->
-    <title>shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm</title>
+    <title>shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m</title>
     <!-- End www.vananhshop.com: Changing the Blogger Title Tag -->
+    
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/compare.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/styles.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/widgets.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/em_ajaxcart.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/cloud-zoom.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/print.css" media="print"/>
+
+<!-- slide -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/jquery.slider.css" />
+    
     
     <link type='text/css' rel='stylesheet' href='<?php echo base_url();?>assets/women_files/828895675-widget_css_bundle.css' />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/authorization.css?targetBlogID=6804016548630797752&zx=38d82890-550f-43d3-9fef-f7610e5c2b7d" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/newstyle.css"/>
+    
     <style id='page-skin-1' type='text/css'><!--
 
 		#related-posts{float:left}
@@ -76,6 +90,28 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
     <script type="text/javascript">
         if (window.jstiming) window.jstiming.load.tick('headEnd');
     </script>
+    <!--  ================ js===============-->
+
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/ccard.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/validation.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/builder.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/effects_002.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/dragdrop_002.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/controls.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/slider.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/js.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/form.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/menu.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/translate.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cookies.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/jquery-1.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/styleswitch.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/swfobject.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em0015.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/scriptaculous.js"></script><script type="text/javascript" src="assets/women_files/effects.js"></script><script type="text/javascript" src="assets/women_files/dragdrop.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/lightbox.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/em_ajaxcart.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/women_files/cloud-zoom.js"></script>
 </head>
 
 <body data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="https://platform.twitter.com/widgets/hub.html"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="http://platform.twitter.com/widgets/hub.html"></iframe>
@@ -125,17 +161,17 @@ head.appendChild(script);
 {
     font-size:12px;
     height: 80px;
-    background: url(http://vananhshop.googlecode.com/files/menu-bg.gif) repeat-x;
+    background: url(menu-bg.gif) repeat-x;
 }
 #kmenu .kmenu-r
 {
     height: 80px;
-    background: url(http://vananhshop.googlecode.com/files/menu-right-bg.gif) no-repeat top right;
+    background: url(<?php echo base_url();?>assets/women_files/menu-right-bg.gif) no-repeat top right;
 }
 #kmenu .kmenu-l
 {
     height: 80px;
-    background: url(http://vananhshop.googlecode.com/files/menu-left-bg.gif) no-repeat top left;
+    background: url(<?php echo base_url();?>assets/women_files/menu-left-bg.gif) no-repeat top left;
 }
 #kmenu .homepage
 {
@@ -198,15 +234,15 @@ head.appendChild(script);
     margin-top: 1px;
     height: 26px;
     line-height: 26px;
-    background: #2e2e2e url(http://vananhshop.googlecode.com/files/nav-left-bg.gif) no-repeat top left;
+    background: #2e2e2e url('<?php echo base_url();?>assets/women_files/nav-left-bg.gif') no-repeat top left;
 }
 #kmenu .mnav .zlstmnav li.first a:hover
 {
-    background: #2e2e2e url(http://vananhshop.googlecode.com/files/nav-left-home.gif) no-repeat top left;
+    background: #2e2e2e url('<?php echo base_url();?>assets/women_files/nav-left-home.gif') no-repeat top left;
 }
 #kmenu .mnav .zlstmnav li a:hover span, #kmenu .mnav .zlstmnav li.selected a span
 {
-    background: url(http://vananhshop.googlecode.com/files/nav-right-bg.gif) no-repeat top right;
+    background: url('<?php echo base_url();?>assets/women_files/nav-right-bg.gif') no-repeat top right;
     padding: 0 23px 0 23px;
 }
 #kmenu .submenu
@@ -228,14 +264,14 @@ head.appendChild(script);
 #kmenu .submenu li a:hover
 {
               color: #f68121;
-	background:url(http://vananhshop.googlecode.com/files/icon-li.png) no-repeat left;
+	background:url('<?php echo base_url();?>assets/women_files/icon-li.png') no-repeat left;
 	padding-left:14px;
 }
 #sub_FormSearch {float:right;}
 
 #sub_FormSearch {
 	padding:0 0px 3px 20px;
-	background:url(http://vananhshop.googlecode.com/files/search-bg.png) no-repeat top left;
+	background:url('<?php echo base_url();?>assets/women_files/search-bg.png') no-repeat top left;
 	height:24px;
 }
 #sub_FormSearch .search {
@@ -262,44 +298,8 @@ head.appendChild(script);
 	}
 
 </style>
-					<script src="http://vananhshop.googlecode.com/files/kMenu.js" type="text/javascript"></script>
-						<div id="kmenu">
-						    <div class="kmenu-r">
-						        <div class="kmenu-l">
-						            <div class="kmenu-c">
-						                <div class="homepage"><a href="/view/flipcard">Sản Phẩm</a></div>
+					<script src="<?php echo base_url();?>assets/women_file/kMenu.js" type="text/javascript"></script>
 						
-							 <div id="mn1" class="mnav">
-						                    <ul class="zlstmnav">
-						                        <li class="selected"><a id="mn_home" href=""></a></li>
-						                        <li class=""><a id="mn_2" href="/search/label/Đầm"><span>Đầm Váy</span></a></li>
-						                        <li class=""><a id="mn_3" href="/search/label/Áo%20Thun%20-%20Sơ%20Mi"><span>Áo Thun Sơ Mi</span></a></li>
-						                       <li class=""><a id="mn_4" href="/2010/12/hang-moi-ve.html"><span>Hàng Mới Về</span></a></li>
-						                        <li class=""><a id="mn_5" href="/2010/11/hang-sap-ve.html"><span>Hàng Sắp Về</span></a></li>
-						                        <li class=""><a id="mn_6" href="/2010/12/hang-moi-ve.html"><span>Hàng Có Sẵn</span></a></li>
-						                        <li class=""><a id="mn_7" href="/search/label/Hàng%20Đã%20Hết"><span>Hàng Order</span></a></li>
-						                        <li class=""><a id="mn_8" href="/search/label/Hàng%20Đã%20Hết"><span>Hàng Đã Hết</span></a></li>
-						                        <li class=""><a id="mn_9" href="/2010/11/khuyen-mai-giam-gia.html"><span>Khuyến Mãi</span></a></li>
-						                            
-							      </ul>
-						
-						                    <div class="submenu">
-							         <div id="main"></div>
-						                        <div id="sub_FormSearch" class="">
-								<div class="search" id="search-">
-						                              <form action="/search/" class="search-form" id="search-form-" method="get">
-								     <input class="search-text" id="search-text-" name="q" onblur="if (this.value == &quot;&quot;) {this.value = &quot;Search on this site...&quot;;}" onfocus="if (this.value == &quot;Search on this site...&quot;) {this.value = &quot;&quot;}" tabindex="7" type="text" value="Search on this site..."/>
-								     <input class="search-submit button" id="search-submit-" name="submit" tabindex="8" type="submit" value="Search"/>
-							 	  </form>
-						                        </div></div>
-						</div>
-						                </div>
-						                <div class="clear">
-						                </div>
-						            </div>
-						        </div>
-						    </div>
-						</div>
 					<script type="text/javascript">
 					    kMenu.Init('kmenu',o_ChannelRoot);
 					</script>
@@ -307,7 +307,7 @@ head.appendChild(script);
 			<div class="clear"></div>
 			<span class="widget-item-control">
 				<span class="item-control blog-admin">
-					<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6804016548630797752&amp;widgetType=HTML&amp;widgetId=HTML4&amp;action=editWidget&amp;sectionId=crosscol" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML4&quot;));" target="configHTML4" title="Chỉnh sửa">
+					<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6804016548630797752&amp;widgetType=HTML&amp;widgetId=HTML4&amp;action=editWidget&amp;sectionId=crosscol" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML4&quot;));" target="configHTML4" title="Chá»‰nh sá»­a">
 						<img alt="" height="18" src="http://img1.blogblog.com/img/icon18_wrench_allbkg.png" width="18">
 					</a>
 				</span>
@@ -317,14 +317,28 @@ head.appendChild(script);
 </div>
 <div id="main-wrapper">
 <div class="subscribesec">
-    <div id="search">
-        <form action="/search" id="searchform" method="get">
-        <input class="rounded" id="s" name="q" onblur="if (this.value == &quot;&quot;) {this.value = &quot;search site&quot;;}"
-            onfocus="if (this.value == &quot;search site&quot;) {this.value = &quot;&quot;;}"
-            type="text" value="" />
-        <input id="searchsubmit" type="submit" value="" />
-        </form>
-    </div>
+	<div>
+		<div style="float:left">
+			<p style="float:left; padding-left:10px; margin-right:20px">
+				<img src="<?php echo base_url();?>assets/women_files/hot line.png" style="width:30px; float:left; margin-right:10px"/>
+				<span style="float:left">HOTLINE<br/>
+					<span style="color:silver">(08) 3 941 4379</span>
+				</span>
+			</p>
+			<marquee style="float:left; width:500px" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="3" behavior="scroll" style="width:98%; border-top:1px solid red;border-bottom:1px solid red; ">
+				<p style="text-transform:none; color:orange">Tin khuyến mãi: Giảm giá 30% các sản phẩm từ ngày 14/05  tới 20/05</p>
+			</marquee>
+		</div>
+		<div id="search">			
+	        <form action="/search" id="searchform" method="get">
+		        <input class="rounded" id="s" name="q" onblur="if (this.value == &quot;&quot;) {this.value = &quot;search site&quot;;}"
+		            onfocus="if (this.value == &quot;search site&quot;) {this.value = &quot;&quot;;}"
+		            type="text" value="" />
+		        <input id="searchsubmit" type="submit" value="" />
+	        </form>
+	    </div>
+	</div>
+    
     <div class="clear">
     </div>
 </div>
@@ -345,29 +359,40 @@ head.appendChild(script);
 
 <script type="text/java" src="<?php echo base_url();?>assets/women_files/logo-footer.js"></script>
 
- <div id="ctl00_plcMain_divLogo" class="box" style="width: 100%">
+ <div id="ctl00_plcMain_divLogo" class="box" style="width: 100%; margin-bottom:20px">
 
              <div id="Logo_wrapper">
-	<div style="overflow-x: hidden; overflow-y: hidden; position: relative; height: 99px; width: 960px; zoom: 1; " id="Logo_Div"><table cellpadding="0px" cellspacing="0px" style="position: relative; top: 0px; width: 1200px; left: 0px; " id="Logo_FrameContainer"><tbody><tr><td id="Logo_frame4" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
+	<div style="overflow-x: hidden; overflow-y: hidden; position: relative; height: 99px; width: 960px; zoom: 1; " id="Logo_Div">
+	<table cellpadding="0px" cellspacing="0px" style="position: relative; top: 0px; width: 1200px; left: 0px; " id="Logo_FrameContainer">
+		<tbody>
+			<tr>
+				<td id="Logo_frame4" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
  
- <a href="http://www.vananhshop.com/2011/12/ao-a9-006.html"  title="quần áo - áo a9-006">
-      <img src="http://4.bp.blogspot.com/-6rrxixo3S18/Tt16TivCTMI/AAAAAAAADjs/hDJLIL4BbzU/s1600/a9-006-3.jpg" alt="quần áo" height="85" width="85" border="0" title="quần áo - áo a9-006"></a>
-      </td><td id="Logo_frame0" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
-  <a href="http://www.vananhshop.com/2011/12/dam-d9-019.html"  title="quần áo - đầm d9-019">
-    <img src="http://2.bp.blogspot.com/-_ZzMo7EfevU/Tt2uDnoJ6aI/AAAAAAAAD8Y/9Tj1q93Rbwo/s1600/d9-019-3.jpg" alt="quần áo " height="85" width="85" border="0" title="quần áo - đầm d9-019"></a>
-</td><td id="Logo_frame1" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
+				 <a href="http://www.vananhshop.com/2011/12/ao-a9-006.html"  title="quáº§n Ã¡o - Ã¡o a9-006">
+				      <img src="<?php echo base_url();?>assets/women_files/a9-006-3.jpg" alt="quáº§n Ã¡o" height="85" width="85" title="quáº§n Ã¡o - Ã¡o a9-006"/></a>
+				      </td><td id="Logo_frame0" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
+				  <a href="http://www.vananhshop.com/2011/12/dam-d9-019.html"  title="quáº§n Ã¡o - Ä‘áº§m d9-019">
+				    <img src="<?php echo base_url();?>assets/women_files/d9-019-3.jpg" alt="quáº§n Ã¡o " height="85" width="85" border="0" title="quáº§n Ã¡o - Ä‘áº§m d9-019"/></a>
+				</td>
+				<td id="Logo_frame1" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
 
- <a href="http://www.vananhshop.com/2011/10/ao-a7-008.html"  title="quần áo - áo a7-008">
-   <img src="http://2.bp.blogspot.com/-ZViNSN0EIv4/TpzLGaWKdvI/AAAAAAAACYY/QU6lWEtWMlI/s1600/a7-008-1.jpg" alt="quần áo" height="85" width="85" border="0" title="quần áo - áo a7-008"></a>
-    </td><td id="Logo_frame2" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
+					 <a href="http://www.vananhshop.com/2011/10/ao-a7-008.html"  title="quáº§n Ã¡o - Ã¡o a7-008">
+					   <img src="<?php echo base_url();?>assets/women_files/a7-008-1.jpg" alt="quáº§n Ã¡o" height="85" width="85" title="quáº§n Ã¡o - Ã¡o a7-008"/></a>
+				</td>
+				<td id="Logo_frame2" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
 
-  <a href="http://www.vananhshop.com/2011/12/dam-d9-017.html"  title="quần áo - đầm d9-017">
-    <img src="http://3.bp.blogspot.com/-lzhPJAkuynE/Tt2rYYU-_FI/AAAAAAAAD5Q/wwZttgxW2Qc/s1600/d9-017-4.jpg" alt="quần áo" height="85" width="85" border="0" title="quần áo - đầm d9-017"></a>
-     </td><td id="Logo_frame3" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
+					  <a href="http://www.vananhshop.com/2011/12/dam-d9-017.html"  title="quáº§n Ã¡o - Ä‘áº§m d9-017">
+					    <img src="<?php echo base_url();?>assets/women_files/d9-017-4.jpg" alt="quáº§n Ã¡o" height="85" width="85" title="quáº§n Ã¡o - Ä‘áº§m d9-017"/></a>
+				</td>
+				<td id="Logo_frame3" style="overflow-x: hidden; overflow-y: hidden; height: 99px; width: 240px; ">
   
-<a href="http://www.vananhshop.com/2011/10/ao-a7-003.html"  title="quần áo - áo a7-003">
-     <img src="http://1.bp.blogspot.com/-dkjHX6hQeLk/TpxUWWeMGXI/AAAAAAAACSM/lmSAy7iLpn8/s1600/a7-003-1a.jpg" alt="quan ao" height="85" width="85" border="0" title="quần áo - áo a7-003"></a>
-     </td></tr></tbody></table></div>
+					<a href="http://www.vananhshop.com/2011/10/ao-a7-003.html"  title="quáº§n Ã¡o - Ã¡o a7-003">
+					     <img src="<?php echo base_url();?>assets/women_files/a7-003-1a.jpg" alt="quan ao" height="85" width="85" title="quáº§n Ã¡o - Ã¡o a7-003"/></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 <script type="text/javascript">window["Logo"] = new RadRotator('Logo',4);window["Logo"].AutoAdvance = 1;window["Logo"].FrameTimeout = 4000;window["Logo"].RotatorMode = 'Scroll';window["Logo"].NumberOfFrames = 5;window["Logo"].PauseOnMouseOver = 1;window["Logo"].HasTickers = 0;window["Logo"].FrameIdArray = new Array('Logo_frame0','Logo_frame1','Logo_frame2','Logo_frame3','Logo_frame4');window["Logo"].ScrollSpeed = 10;window["Logo"].ScrollDirection = 'Left';window["Logo"].UseSmoothScroll = 1;window["Logo"].SmoothScrollDelay = 10;window["Logo"].Start();</script>
 </div>
@@ -376,7 +401,7 @@ head.appendChild(script);
 <div class="clear"></div>
 <span class="widget-item-control">
 <span class="item-control blog-admin">
-<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6804016548630797752&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=main" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML3&quot;));" target="configHTML3" title="Chỉnh sửa">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=6804016548630797752&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=main" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML3&quot;));" target="configHTML3" title="Chá»‰nh sá»­a">
 <img alt="" height="18" src="http://img1.blogblog.com/img/icon18_wrench_allbkg.png" width="18">
 </a>
 </span>
@@ -384,7 +409,7 @@ head.appendChild(script);
 <div class="clear"></div>
 </div>
 
-<!-- ===============NỘI DUNG CHÍNH -->
+<!-- ===============Ná»˜I DUNG CHÃ�NH -->
 <div>
 	<?php 
 					 //   print displayStatus();
@@ -410,6 +435,7 @@ head.appendChild(script);
 <!-- end content-wrapper -->
 </div>
 </div>
+</div>
 <!-- end outer-wrapper -->
 <div style="clear:both;"></div>
 
@@ -428,7 +454,6 @@ function showpageCount(json){var thisUrl=home_page_url;var htmlMap=new Array();v
 //]]>
 </script><script src="/feeds/posts/summary?alt=json-in-script&amp;callback=showpageCount&amp;max-results=99999"></script>
 <!-- PAGE NAVIGATION STOP-->
-</div>
 </div>
 <!-- google Tracking Code -->
 <script type="text/javascript">
@@ -454,7 +479,7 @@ if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
 <script type="text/javascript">
 if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '6804016548630797752';BLOG_attachCsiOnload(''); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID\x3d6804016548630797752','http://www.vananhshop.com/','6804016548630797752');
 _WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID\x3d6804016548630797752','APq4FmBDed_I1yo8o4gMX5lH7QmlICSOSOIazPb4JTIYn99qHGDx8uOCBdgENEAebVEAmXxYM7krdj_6mlsg_kJWIu_f1mP4YnhGpjUuXDYJDqxna6bxHxs\x3d','AOuZoY5Ah4B-37YnHpl3OrYruC1q2xv1eA:1336928339233');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'bloggerUrl': 'http://www.blogger.com', 'title': 'shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm', 'pageType': 'index', 'url': 'http://www.vananhshop.com/', 'canonicalUrl': 'http://www.vananhshop.com/', 'canonicalHomepageUrl': 'http://www.vananhshop.com/', 'homepageUrl': 'http://www.vananhshop.com/', 'blogspotFaviconUrl': 'http://www.vananhshop.com/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'searchLabel': '', 'searchQuery': '', 'pageName': '', 'pageTitle': 'shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm', 'encoding': 'UTF-8', 'locale': 'vi', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm - Atom\42 href\75\42http://www.vananhshop.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm - RSS\42 href\75\42http://www.vananhshop.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42shop quần áo, shop thời trang, quần áo, quần áo online, váy đầm, đầm - Atom\42 href\75\42http://www.blogger.com/feeds/6804016548630797752/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0756804016548630797752\42 /\076', 'meTag': '\74link rel\75\42me\42 href\75\42http://www.blogger.com/profile/12232527786298296503\42 /\76\n', 'openIdOpTag': '\74link rel\75\42openid.server\42 href\75\42http://www.blogger.com/openid-server.g\42 /\76\n\74link rel\75\42openid.delegate\42 href\75\42http://www.vananhshop.com/\42 /\76\n', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(b,i,d){d\75void 0!\75d?d:(new Date).getTime();this.t[b]\75[d,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;a.chrome\46\46a.chrome.csi\46\46(g\75Math.floor(a.chrome.csi().pageT));null\75\75g\46\46a.gtbExternal\46\46(g\75a.gtbExternal.pageT());null\75\75g\46\46a.external\46\46(g\75a.external.pageT);g\46\46(a.jstiming.pt\75g)}catch(h){};a.tickAboveFold\75function(b){var e\0750;if(b.offsetParent){do e+\75b.offsetTop;while(b\75b.offsetParent)}b\75e;750\76\75b\46\46a.jstiming.load.tick(\42aft\42)};var j\75!1;function k(){j||(j\75!0,a.jstiming.load.tick(\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,k,!1):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': '', 'analyticsAccountNumber': 'UA-23906922-1', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/f75e48f708466c7f/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/b8f4953a48a6764f'}}, {'name': 'skin', 'data': {'vars': {'sidebartextcolor': '#666666', 'linkcolor': '#5588aa', 'visitedlinkcolor': '#999999', 'textcolor': '#333333', 'headerfont': 'normal normal 78% \47Trebuchet MS\47,Trebuchet,Arial,Verdana,Sans-serif', 'pagetitlefont': 'normal normal 200% Georgia, Serif', 'bgcolor': '#ffffff', 'descriptioncolor': '#999999', 'titlecolor': '#cc6600', 'bordercolor': '#cccccc', 'postfooterfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'pagetitlecolor': '#666666', 'bodyfont': 'normal normal 100% Georgia, Serif', 'endSide': 'right', 'startSide': 'left', 'descriptionfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'sidebarcolor': '#999999'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'bloggerUrl': 'http://www.blogger.com', 'title': 'shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m', 'pageType': 'index', 'url': 'http://www.vananhshop.com/', 'canonicalUrl': 'http://www.vananhshop.com/', 'canonicalHomepageUrl': 'http://www.vananhshop.com/', 'homepageUrl': 'http://www.vananhshop.com/', 'blogspotFaviconUrl': 'http://www.vananhshop.com/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'searchLabel': '', 'searchQuery': '', 'pageName': '', 'pageTitle': 'shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m', 'encoding': 'UTF-8', 'locale': 'vi', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - Atom\42 href\75\42http://www.vananhshop.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - RSS\42 href\75\42http://www.vananhshop.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42shop quáº§n Ã¡o, shop thá»�i trang, quáº§n Ã¡o, quáº§n Ã¡o online, vÃ¡y Ä‘áº§m, Ä‘áº§m - Atom\42 href\75\42http://www.blogger.com/feeds/6804016548630797752/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0756804016548630797752\42 /\076', 'meTag': '\74link rel\75\42me\42 href\75\42http://www.blogger.com/profile/12232527786298296503\42 /\76\n', 'openIdOpTag': '\74link rel\75\42openid.server\42 href\75\42http://www.blogger.com/openid-server.g\42 /\76\n\74link rel\75\42openid.delegate\42 href\75\42http://www.vananhshop.com/\42 /\76\n', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(b,i,d){d\75void 0!\75d?d:(new Date).getTime();this.t[b]\75[d,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;a.chrome\46\46a.chrome.csi\46\46(g\75Math.floor(a.chrome.csi().pageT));null\75\75g\46\46a.gtbExternal\46\46(g\75a.gtbExternal.pageT());null\75\75g\46\46a.external\46\46(g\75a.external.pageT);g\46\46(a.jstiming.pt\75g)}catch(h){};a.tickAboveFold\75function(b){var e\0750;if(b.offsetParent){do e+\75b.offsetTop;while(b\75b.offsetParent)}b\75e;750\76\75b\46\46a.jstiming.load.tick(\42aft\42)};var j\75!1;function k(){j||(j\75!0,a.jstiming.load.tick(\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,k,!1):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': '', 'analyticsAccountNumber': 'UA-23906922-1', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/f75e48f708466c7f/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/b8f4953a48a6764f'}}, {'name': 'skin', 'data': {'vars': {'sidebartextcolor': '#666666', 'linkcolor': '#5588aa', 'visitedlinkcolor': '#999999', 'textcolor': '#333333', 'headerfont': 'normal normal 78% \47Trebuchet MS\47,Trebuchet,Arial,Verdana,Sans-serif', 'pagetitlefont': 'normal normal 200% Georgia, Serif', 'bgcolor': '#ffffff', 'descriptioncolor': '#999999', 'titlecolor': '#cc6600', 'bordercolor': '#cccccc', 'postfooterfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'pagetitlecolor': '#666666', 'bodyfont': 'normal normal 100% Georgia, Serif', 'endSide': 'right', 'startSide': 'left', 'descriptionfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'sidebarcolor': '#999999'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
 _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'crosscol', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
 _WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'col1', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
 _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'col3', null, document.getElementById('HTML2'), {}, 'displayModeFull'));

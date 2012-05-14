@@ -518,7 +518,7 @@ color:#000000;font-size:11px;font-weight:bold;width:100px;padding-left:15px }
 .logo { float:left; }
 .header-container {z-index:2 }
 .header { width:950px;margin:0 auto; padding: 0;
-background:url("../images/header_bg.gif") repeat-x scroll left bottom transparent;padding-bottom:15px;text-align:left}
+background:url("") repeat-x scroll left bottom transparent;padding-bottom:15px;text-align:left}
 .header .logo { float:left; margin:20px 0 0; text-decoration:none !important;height: 114px;width: 285px; }
 .header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
 .header h1.logo { margin:0;height: auto;}

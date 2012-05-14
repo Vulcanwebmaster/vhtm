@@ -6,7 +6,11 @@
         	?><div class="post hentry">
             <a name="1655744853648508510"></a>
             <h3 class="post-title entry-title">
-                <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $row->id;?>"><?php echo $row->name;?></a>
+            	<div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg.png'); background-repeat:no-repeat">
+                    	<h5 style="float:left;color:white; padding-top:15px;padding-left:25px;"><?php echo $row->price;?></h5>
+                    	<a style="padding-top:20px;padding-right:10px;color:red;text-transform:uppercase; float:right; font-size:9px">Thêm giỏ hàng</a>
+                    </div>
+                <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $row->id;?>"><?php echo $row->name;?></a>                
             </h3>
             <div class="post-header-line-1">
             </div>
@@ -58,8 +62,10 @@
                 <div id="summary1655744853648508510">
                     <span style="float: left; padding: 0px 10px 5px 0px;">
                         <img src="<?php echo convert_image_path($row->image) ;?>"
-                            width="200px" height="270px"></span><div>
-                                ...</div>
+                            width="200px" height="270px">
+                    </span>
+                    
+                            <div>...</div>
                 </div>
                 <script type="text/javascript">                    createSummaryAndThumb("summary1655744853648508510");</script>
                 <p>
