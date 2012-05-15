@@ -52,14 +52,15 @@
         {
         	?><div class="post hentry">
             <a name="1655744853648508510"></a>
-            <h3 class="post-title entry-title">
-            	<div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat">
-                    	<h5 style="float:left;color:white; padding-top:15px;padding-left:25px;"><?php echo $row->price;?></h5>
+            <h3 class="post-title entry-title" style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat">
+            	<!-- div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat" -->
+                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $row->price;?>VNĐ</span>
                     	<a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row->id;?>"
-                    	style="padding-top:20px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">Thêm giỏ hàng</a>
-                    </div>
-                <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $row->id;?>"><?php echo $row->name;?></a>                
+                    	style="padding-top:10px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">Thêm giỏ hàng</a>
+                <!-- /div -->
+                                
             </h3>
+            <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $row->id;?>"><?php echo $row->name;?></a>
             <div class="post-header-line-1">
             </div>
             <div class="post-body entry-content">
@@ -108,10 +109,10 @@
                     </script>
                 </p>
                 <div id="summary1655744853648508510">
-                    <span style="float: left; padding: 0px 10px 5px 0px;">
+                    <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $row->id;?>" style="float: left; padding: 0px 10px 5px 0px;">
                         <img src="<?php echo $this->MKaimonokago->get_link_image($row->image) ;?>"
                             width="200px" height="270px">
-                    </span>
+                    </a>
                     
                             <div>...</div>
                 </div>
