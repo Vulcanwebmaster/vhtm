@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 15, 2012 at 09:06 PM
+-- Generation Time: May 15, 2012 at 09:51 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -440,8 +440,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('6fecb2899491f7aa077181309a2ba08c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337108411, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-15 18:10:24";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
-('d608fe9bac9e81487a08d1d316e505ca', '127.0.0.1', 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; BTRS122332; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.3072', 1337101967, '');
+('bbf8d095038c24315ccb426e9e878a56', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337111457, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-15 18:10:24";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -798,13 +797,13 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
 --
 
 INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longdesc`, `thumbnail`, `image`, `weblink`, `product_order`, `status`, `category_id`, `featured`, `other_feature`, `price`, `lang_id`, `table_id`) VALUES
-(1, 'A1', 'Áo phông 1', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 2, 'none', 'new product', 1111, 0, 0),
-(2, 'A2', 'Áo phông 2', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 2, 'none', 'new product', 5555, 0, 0),
-(3, 'A3', 'Áo phông 3', 0, 'áo ', 'Các loại áo dài', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 5, 'active', 25, 'front', 'new product', 333, 0, 0),
-(4, 'A4', 'Áo phông 4', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 25, 'none', 'new product', 4444, 0, 0),
-(5, 'A5', 'Áo phông 5', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/kidsbrownface_lg.jpg" alt="" width="350" height="360" /></p>', '0', 0, 'active', 25, 'none', 'new product', 5555, 0, 0),
-(6, 'A6', 'Áo phông 6', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 0, 'active', 25, 'none', 'new product', 6666, 0, 0),
-(7, 'A7', 'Áo phông 7', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 0, 'active', 25, 'none', 'new product', 7777, 0, 0),
+(1, 'A1', 'Áo phông 1', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 4, 'active', 25, 'none', 'new product', 1111, 0, 0),
+(2, 'A2', 'Quần 2', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 4, 'active', 25, 'none', 'new product', 5555, 0, 0),
+(3, 'A3', 'Quần 3', 0, 'quần', '<p>C&aacute;c loại quần d&agrave;i</p>', '<p><img src="../../../../assets/images/quan4.jpg" alt="" width="400" height="400" /><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan4.jpg" alt="" width="400" height="400" /><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 0, 'active', 25, 'none', 'new product', 333, 0, 0),
+(4, 'A4', 'Quần 4', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 0, 'active', 25, 'none', 'new product', 4444, 0, 0),
+(5, 'A5', 'Quần 5', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'none', 'new product', 5555, 0, 0),
+(6, 'A6', 'Quần 6', 0, '', '', '<p><img src="../../../../assets/images/quan2.gif" alt="" width="365" height="365" /></p>', '<p><img src="../../../../assets/images/quan2.gif" alt="" width="365" height="365" /></p>', '0', 0, 'active', 25, 'none', 'new product', 6666, 0, 0),
+(7, 'A7', 'Quần 7', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 3, 'active', 25, 'none', 'new product', 7777, 0, 0),
 (8, 'A8', 'Áo phông 8', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 8, 'active', 26, '', 'new product', 8888, 0, 0),
 (9, 'A9', 'Áo phông 9', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 9999, 0, 0),
 (10, 'A10', 'Áo phông 10', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 1200, 0, 0),
@@ -812,25 +811,25 @@ INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longde
 (12, 'A12', 'Áo phông 12', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 9, 'active', 26, '', 'new product', 230, 0, 0),
 (13, 'A13', 'Áo phông 13', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 8, 'active', 26, 'front', 'new product', 50, 0, 0),
 (14, 'A14', 'Áo phông 14', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 26, 'webshop', 'new product', 220, 0, 0),
-(15, 'A15', 'Áo phông 15', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 26, 'front', 'new product', 0, 0, 0),
+(15, 'A15', 'Áo phông 15', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 26, 'front', 'new product', 30000, 0, 0),
 (16, 'A16', 'Áo phông 16', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 26, 'webshop', 'new product', 123, 0, 0),
-(17, 'A17', 'Áo phông 17', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 8, 'active', 0, 'webshop', 'new product', 46346, 0, 0),
-(20, 'A20', 'Áo phông 20', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 27, 'front', 'new product', 1111, 0, 0),
-(21, 'A21', 'Áo phông 21', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 6, 'active', 27, 'webshop', 'new product', 2222, 0, 0),
-(22, 'A22', 'Áo phông 22', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 6, 'active', 27, '', 'new product', 222, 0, 0),
+(17, 'A17', 'Quần 17', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 3, 'active', 25, 'none', 'new product', 46346, 0, 0),
+(20, 'A20', 'Phụ kiện 20', 0, '', '', '<p><img src="../../../../assets/images/phukien2.jpg" alt="" width="400" height="478" /></p>', '<p><img src="../../../../assets/images/phukien2.jpg" alt="" width="400" height="478" /></p>', '0', 0, 'active', 27, 'none', 'new product', 1111, 0, 0),
+(21, 'A21', 'Phụ kiện 21', 0, '', '', '<p><img src="../../../../assets/images/phukien3.jpg" alt="" width="350" height="437" /></p>', '<p><img src="../../../../assets/images/phukien3.jpg" alt="" width="350" height="437" /></p>', '0', 0, 'active', 27, 'none', 'new product', 2222, 0, 0),
+(22, 'A22', 'Phụ kiện 22', 0, '', '', '<p><img src="../../../../assets/images/phukien1.jpg" alt="" width="350" height="428" /></p>', '<p><img src="../../../../assets/images/phukien1.jpg" alt="" width="350" height="428" /></p>', '0', 0, 'active', 27, 'none', 'new product', 222, 0, 0),
 (45, 'B1', 'Sách xịn', 0, '11', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 11, 'active', 26, 'none', 'new product', 111, 0, 45),
-(48, 'A3', 'Blue angels', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 26, 'active', 9, 'none', 'new product', 1200, 0, 48),
-(49, 'A4', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 49),
-(50, 'A5', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 50),
+(48, 'A31', 'Quần 48', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 5, 'active', 25, 'none', 'new product', 1200, 0, 48),
+(49, 'A40', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 456000, 0, 49),
+(50, 'A50', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 123000, 0, 50),
 (54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 1, 'active', 26, 'none', 'new product', 13454, 0, 54),
-(55, 'A10', 'Sách văn', 0, 'văn', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 12, 'active', 26, 'none', 'new product', 8765, 0, 55),
-(59, 'A17', 'Sách sử', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 21, 'active', 26, 'none', 'new product', 1234, 0, 59),
-(60, 'dfgdfgdf', 'dfgdfgfd', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 60),
-(61, 'xcvv', 'sdfsdf', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 0, 'active', 25, 'front', 'new product', 0, 0, 61),
-(62, 'ghfgh', 'efsdf', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 25, 'webshop', 'new product', 0, 0, 62),
-(63, 'a123', 'a', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0, 0, 63),
-(64, 'a1234', 'aa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0, 0, 64),
-(65, 'a12345', 'aaa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 65);
+(55, 'A100', 'Sách văn', 0, 'văn', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 12, 'active', 26, 'none', 'new product', 8765, 0, 55),
+(59, 'A170', 'Sách sử', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 21, 'active', 26, 'none', 'new product', 1234, 0, 59),
+(60, 'dfgdfgdf', 'Áo phông 60', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 4, 'active', 26, 'none', 'new product', 1200000, 0, 60),
+(61, 'xcvv', 'Quần 61', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'front', 'new product', 1276600, 0, 61),
+(62, 'ghfgh', 'Quần 62', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'webshop', 'new product', 124000, 0, 62),
+(63, 'a123', 'Quần 63', 0, '', '', '', '', '0', 2, 'active', 25, 'webshop', 'new product', 120000, 0, 63),
+(64, 'a1234', 'Quần 64', 0, '', '', '', '', '0', 3, 'active', 25, 'front', 'new product', 134000, 0, 64),
+(65, 'a12345', 'Quần 65', 0, '', '', '', '', '0', 4, 'active', 25, 'webshop', 'new product', 150000, 0, 65);
 
 -- --------------------------------------------------------
 
@@ -989,7 +988,7 @@ CREATE TABLE IF NOT EXISTS `shop_sanphamkho` (
   `id` int(11) NOT NULL,
   `total` int(10) NOT NULL,
   PRIMARY KEY (`sanphamkho_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=106 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=148 ;
 
 --
 -- Dumping data for table `shop_sanphamkho`
@@ -1005,9 +1004,9 @@ INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (31, 1, 47, 4),
 (32, 2, 47, 1),
 (33, 3, 47, 0),
-(34, 1, 48, 0),
+(34, 1, 48, 1),
 (35, 2, 48, 3),
-(36, 3, 48, 0),
+(36, 3, 48, 2),
 (37, 1, 49, 0),
 (38, 2, 49, 0),
 (39, 3, 49, 5),
@@ -1076,7 +1075,49 @@ INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (102, 3, 6, 0),
 (103, 1, 7, 3),
 (104, 2, 7, 1),
-(105, 3, 7, 4);
+(105, 3, 7, 4),
+(106, 1, 3, 4),
+(107, 2, 3, 3),
+(108, 3, 3, 1),
+(109, 1, 17, 3),
+(110, 2, 17, 1),
+(111, 3, 17, 2),
+(112, 1, 20, 0),
+(113, 2, 20, 0),
+(114, 3, 20, 0),
+(115, 1, 21, 0),
+(116, 2, 21, 0),
+(117, 3, 21, 0),
+(118, 1, 22, 0),
+(119, 2, 22, 0),
+(120, 3, 22, 0),
+(121, 1, 8, 2),
+(122, 2, 8, 7),
+(123, 3, 8, 6),
+(124, 3, 9, 6),
+(125, 1, 9, 4),
+(126, 2, 9, 6),
+(127, 1, 10, 5),
+(128, 2, 10, 4),
+(129, 3, 10, 0),
+(130, 1, 11, 2),
+(131, 2, 11, 7),
+(132, 3, 11, 6),
+(133, 3, 12, 6),
+(134, 1, 12, 4),
+(135, 2, 12, 6),
+(136, 1, 13, 5),
+(137, 2, 13, 4),
+(138, 3, 13, 0),
+(139, 1, 14, 2),
+(140, 2, 14, 7),
+(141, 3, 14, 6),
+(142, 3, 15, 6),
+(143, 1, 15, 4),
+(144, 2, 15, 6),
+(145, 1, 16, 5),
+(146, 2, 16, 4),
+(147, 3, 16, 0);
 
 -- --------------------------------------------------------
 
