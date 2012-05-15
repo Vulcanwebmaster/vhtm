@@ -231,10 +231,8 @@ class MCats extends CI_Model
 
     function getCategoriesDropDownbyLang($lang_id)
     {
-     
      $data = array();
      $this->db->select('id,name');
-     $this->db->where('parentid !=',0);
      $Q = $this->db->get_where('omc_category', array('lang_id'=>$lang_id));
      if ($Q->num_rows() > 0){
        foreach ($Q->result_array() as $row){

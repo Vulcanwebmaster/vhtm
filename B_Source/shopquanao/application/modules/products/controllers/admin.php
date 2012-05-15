@@ -210,7 +210,7 @@ class Admin extends Shop_Admin_Controller
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
-            $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
+            $data['categories'] = $this->MCats->getCategoriesDropDown();
             // loading this for giving some instructions.
             $data['right'] = 'admin/product_right';
             // Set breadcrumb
@@ -307,7 +307,7 @@ class Admin extends Shop_Admin_Controller
             $product = $this->MKaimonokago->getInfo($this->module, $id);
             $data['product'] = $product;
             // get categories by lang
-            $lang_id = $product['lang_id'];
+            $lang_id = '0';
             $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
             // I am not using colors and sizes any more. But they are available if you want to use them.
             $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
@@ -370,7 +370,7 @@ class Admin extends Shop_Admin_Controller
             $product = $this->MKaimonokago->getInfo($this->module, $id);
             $data['product'] = $product;
             // get categories by lang
-            $lang_id = $product['lang_id'];
+            $lang_id = '0';
             $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
             // I am not using colors and sizes any more. But they are available if you want to use them.
             $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
@@ -411,7 +411,7 @@ class Admin extends Shop_Admin_Controller
             $product = $this->MKaimonokago->getInfo($this->module, $id);
             $data['product'] = $product;
             // get categories by lang
-            $lang_id = $product['lang_id'];
+            $lang_id = '0';
             $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
             // I am not using colors and sizes any more. But they are available if you want to use them.
             $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
@@ -450,7 +450,7 @@ class Admin extends Shop_Admin_Controller
             $product = $this->MKaimonokago->getInfo($this->module, $id);
             $data['product'] = $product;
             // get categories by lang
-            $lang_id = $product['lang_id'];
+            $lang_id = '0';
             $data['categories'] = $this->MCats->getCategoriesDropDownbyLang($lang_id);
             // I am not using colors and sizes any more. But they are available if you want to use them.
             $data['assigned_colors'] = $this->MProducts->getAssignedColors($id);
