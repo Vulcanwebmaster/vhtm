@@ -197,7 +197,7 @@
                                 <div class="product-collateral">
                                     <div class="box-collateral box-description">
                                         <h2 style="color: #E67817;">
-                                            Chi tiáº¿t sáº£n pháº©m</h2>
+                                            Chi tiết sản phẩm</h2>
                                         <div class="std" style="background-color:white;background-image:url('<?php echo base_url();?>assets/women_files/des-bg.png'); background-repeat:no-repeat;border:solid 1px silver; border-radius:5px; min-height:200px; width:620px">
                                                         	<?php echo $inf->longdesc;?>                                                                                                                       
                                         </div>
@@ -221,7 +221,7 @@
                 </div>
                 <div class="block block-list block-viewed">
                     <div class="block-title">
-                        <strong><span>Sáº£n Pháº©m TÆ°Æ¡ng Tá»±</span></strong>
+                        <strong><span>Sản phẩm tương tự</span></strong>
                     </div>
                     <div class="block-content">
                     	<ul>
