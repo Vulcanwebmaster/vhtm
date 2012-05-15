@@ -1,8 +1,97 @@
+<script type="text/javascript">
+
+    //<![CDATA[
+
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+
+        productAddToCartForm.submit = function(button, url) {
+
+            if (this.validator.validate()) {
+
+                var form = this.form;
+
+                var oldUrl = form.action;
+
+
+
+                if (url) {
+
+                   form.action = url;
+
+                }
+
+                var e = null;
+
+                try {
+
+                    this.form.submit();
+
+                } catch (e) {
+
+                }
+
+                this.form.action = oldUrl;
+
+                if (e) {
+
+                    throw e;
+
+                }
+
+
+
+                if (button && button != 'undefined') {
+
+                    button.disabled = true;
+
+                }
+
+            }
+
+        }.bind(productAddToCartForm);
+
+
+
+        productAddToCartForm.submitLight = function(button, url){
+
+            if(this.validator) {
+
+                var nv = Validation.methods;
+
+                delete Validation.methods['required-entry'];
+
+                delete Validation.methods['validate-one-required'];
+
+                delete Validation.methods['validate-one-required-by-name'];
+
+                if (this.validator.validate()) {
+
+                    if (url) {
+
+                        this.form.action = url;
+
+                    }
+
+                    this.form.submit();
+
+                }
+
+                Object.extend(Validation.methods, nv);
+
+            }
+
+        }.bind(productAddToCartForm);
+
+    //]]>
+
+    </script>
+
+
 <div class="main-container col2-right-layout">
     <div class="main">
         <div class="breadcrumbs">
             <ul>
-                <li class="home"><a href="<?php echo base_url();?>" title="Tá»›i trang chá»§">Trang chủ</a>
+                <li class="home"><a href="<?php echo base_url();?>" title="TÃ¡Â»â€ºi trang chÃ¡Â»Â§">Trang chủ</a>
                     <span>/ </span></li>
                 <li class="category53"><strong style="color:#E67817">Chi tiết sản phẩm</strong> </li>
             </ul>
@@ -21,7 +110,8 @@
                             <div id="messages_product_view">
                             </div>
                             <div class="product-view">
-                                <div class="product-essential">
+                                <div class="product-essential">                                
+							                                
                                     <div class="product-shop">
                                         <div class="product-name">
                                             <h1 style="color:#E67817;border-bottom:solid 2px black"><?php echo $inf->name;?></h1>
@@ -49,14 +139,15 @@
 	                                        </div>
 	                                        <div class="product-options-bottom" style="float:right">
 	                                            <div class="add-to-cart">
-	                                                <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
-	                                                    <span><span>Thêm vào giỏ</span></span></button>
+	                                                <a title="Add to Cart" class="button btn-cart" href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $inf->id;?>">
+	                                                    <span><span>Thêm vào giỏ</span></span>
+	                                                </a>
 	                                            </div>
 	                                        </div>
 	                                    </div>
                                         <div class="short-description">
                                             <h2 style="color: #E67817;">
-                                                MÔ TẢ</h2>
+                                                Mô tả</h2>
                                             <div class="std" style="border-bottom:dotted 1px silver">
                                             	<?php echo substr($inf->shortdesc,0,200);?>
                                                 <!-- p>
@@ -106,7 +197,7 @@
                                 <div class="product-collateral">
                                     <div class="box-collateral box-description">
                                         <h2 style="color: #E67817;">
-                                            Chi tiết sản phẩm</h2>
+                                            Chi tiáº¿t sáº£n pháº©m</h2>
                                         <div class="std" style="background-color:white;background-image:url('<?php echo base_url();?>assets/women_files/des-bg.png'); background-repeat:no-repeat;border:solid 1px silver; border-radius:5px; min-height:200px; width:620px">
                                                         	<?php echo $inf->longdesc;?>                                                                                                                       
                                         </div>
@@ -130,7 +221,7 @@
                 </div>
                 <div class="block block-list block-viewed">
                     <div class="block-title">
-                        <strong><span>Sản Phẩm Tương Tự</span></strong>
+                        <strong><span>Sáº£n Pháº©m TÆ°Æ¡ng Tá»±</span></strong>
                     </div>
                     <div class="block-content">
                     	<ul>

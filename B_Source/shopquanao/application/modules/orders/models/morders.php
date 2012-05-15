@@ -108,6 +108,9 @@ class MOrders extends CI_Model
             $_SESSION['cart'] = $cart;
             $msg = lang('orders_added_cart');
             $this->session->set_flashdata('conf_msg', $msg); 
+            echo '<script language=javascript>
+            	alert("Succesful");
+            </script>';
         }	
     }
 

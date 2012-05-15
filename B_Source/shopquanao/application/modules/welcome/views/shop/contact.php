@@ -12,10 +12,11 @@
                 echo "</div>";
         }
         ?>
-		<div class="page-title">
+		
+<div id="main-container col2-right-layout" align="left" style="padding:0 130px">
+	<div class="page-title">
 			<h1 style="color:#c36f02">Liên hệ với chúng tôi</h1>
 		</div>
-<div id="main-container col2-right-layout" align="left" style="padding:0 130px">
     <div id="omossleft">
         <div class="contentleft">
 	
@@ -25,7 +26,7 @@
 		        <ul class="form-list">
 		            <li class="fields">
 		                <div class="field">
-		                    <label class="required" for="name"><em>*</em>Họ Tên</label>
+		                    <label class="required" for="name"><em>*</em>Họ tên</label>
 		                    <div class="input-box">
 		                        <input type="text" class="input-text required-entry" name="name" id="name" value="<?php echo set_value('name'); ?>" width="100%" size="30"  />
 		                    </div>

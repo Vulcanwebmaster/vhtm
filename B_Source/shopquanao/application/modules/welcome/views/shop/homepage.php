@@ -56,8 +56,10 @@
             <a name="1655744853648508510"></a>
             <h3 class="post-title entry-title" style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat">
             	<!-- div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat" -->
-                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $row->price;?>VNĐ</span>
-                    	<a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row->id;?>" style="padding-top:10px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">Thêm giỏ hàng</a>
+                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $this->MKaimonokago->format_price($row->price);?> VNĐ</span>
+                    	<a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row->id;?>" style="padding-top:0px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">
+							<img style="background:transparent; border:transparent" src="<?php echo base_url();?>assets/women_files/shopping_cart.gif" width="30px"/>
+						</a>
                 <!-- /div -->
                                 
             </h3>

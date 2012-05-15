@@ -435,6 +435,24 @@ class MKaimonokago extends Base_model
 		    else return base_url().$source_link;
     	}
     }
+    
+    function format_price($price)
+    {
+    	if (strlen($price)>3)
+    	{
+    		$kq="";
+    		$leng=strlen($price);
+    		for($i=$leng-1;$i>=0;$i--)
+    		{
+    			
+    			$kq=$kq.$price[$i];
+    			if (($leng-$i)%3==0)
+    				$kq=$kq.'.';
+    		}
+    		return strrev($kq);
+    	}
+    	else return $price;
+    }
 }
 
 ?>
