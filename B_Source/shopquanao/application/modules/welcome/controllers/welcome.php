@@ -360,7 +360,7 @@ class Welcome extends Shop_Controller
         $this->form_validation->set_fields($fields);
         if ($this->form_validation->run() == FALSE)
         {
-        	echo "Test";
+        	
             // if any form_validation errors, display them
             $this->form_validation->output_errors();
             $captcha_result = '';
@@ -974,7 +974,7 @@ class Welcome extends Shop_Controller
 			 *
 			 */
 			$totalprice = $_SESSION['totalprice'];
-			
+			//echo $totalprice;
 			$this->MOrders->enterorder($totalprice);
 			
 			//Create body of message by cleaning each field and then appending each name and value to it
