@@ -1,4 +1,13 @@
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.delete').mouseenter(function(){			
+			$(this).css('color','red');
+			});		
+		$('.delete').mouseleave(function(){
+			$(this).css('color','black');
+			});
+		});
+</script>
 
 <div class="main-container col1-layout">
     <div class="main">
@@ -7,7 +16,7 @@
                 <div class="col-inner">
                     <div class="cart">
                         <div class="page-title title-buttons">
-                            <h1>
+                            <h1 style="color:#f26f05">
                                 Shopping Cart</h1>
                              
                         </div>
@@ -27,22 +36,22 @@
                                     <thead>
                                         <tr class="first last">
                                             <th rowspan="1">
-                                            	Ảnh Sản Phẩm
+                                            	ảnh sản phẩm
                                             </th>
                                             <th rowspan="1">
-                                                <span class="nobr">Tên Sản Phẩm</span>
+                                                <span class="nobr">tên sản phẩm</span>
                                             </th>
                                             <th class="a-center" colspan="1">
-                                                Chức Năng
+                                                Chức năng
                                             </th>
                                             <th rowspan="1" class="a-center">
                                                 <span class="nobr">Giá </span>
                                             </th>
                                             <th class="a-center" colspan="1">
-                                                Số Lượng
+                                                Số lượng
                                             </th>
                                             <th rowspan="1" class="a-center">
-                                                Thành Tiền
+                                                Thành tiền
                                             </th>
                                         </tr>
                                     </thead>
@@ -67,7 +76,7 @@
 												<!-- START LIST PRODUCT -->	
 												<tr class="first last odd">
 	                                            <td>
-	                                                <img src="<?php if (isset($row['image'])) echo convert_image_path($row['image']);?>"
+	                                                <img src="<?php if (isset($row['image'])) echo $this->MKaimonokago->get_link_image($row['image']);?>"
                                                         alt="" title="<?php echo $row['name'];?>" style="width:75px; height:75px;display: block;">
 	                                            </td>
 	                                            <td>
@@ -76,7 +85,7 @@
 	                                                </h2>
 	                                            </td>
 	                                            <td class="a-center">
-	                                               <input type='button' name='delete' value='<?php echo lang('webshop_delete'); ?>' onclick='jsRemoveProduct(<?php echo $PID;?>)'>
+	                                               <input type='button' class='delete' name='delete' value='<?php echo lang('webshop_delete'); ?>' onclick='jsRemoveProduct(<?php echo $PID;?>)'>
 	                                            </td>
 	                                            <td class="a-right">
 	                                                <span class="cart-price"><span class="price"><?php echo $row['price'] . lang('webshop_currency_symbol');?></span> </span>
@@ -104,8 +113,8 @@
                                         <tr class="first last">
                                             <td colspan="6" class="a-right last">
                                                 <button type="button" title="Continue Shopping" style="float:right;" class="button btn-continue" onclick="setLocation('http://demo.emthemes.com/casualwear/')">
-                                                    <span><span>Tiếp Tục Mua Sắm</span></span></button>
-                                                <button type="submit" title="Thanh Toán " class="button btn-update" style="float:right;">
+                                                    <span><span style="background-image:url(<?php echo base_url();?>assets/women_files/btn1.png)">Tiếp tục mua sắm</span></span></button>
+                                                <button type="submit" title="Thanh ToÃ¡n " class="button btn-update" style="float:right;">
                                                     <span><span>Thanh Toán</span></span></button>
                                             </td>
                                         </tr>

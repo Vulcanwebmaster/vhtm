@@ -2,7 +2,7 @@
     <div class="main">
         <div class="breadcrumbs">
             <ul>
-                <li class="home"><a href="<?php echo base_url();?>" title="Tới trang chủ">Trang chủ</a>
+                <li class="home"><a href="<?php echo base_url();?>" title="Tá»›i trang chá»§">Trang chủ</a>
                     <span>/ </span></li>
                 <li class="category53"><strong style="color:#E67817">Chi tiết sản phẩm</strong> </li>
             </ul>
@@ -24,40 +24,39 @@
                                 <div class="product-essential">
                                     <div class="product-shop">
                                         <div class="product-name">
-                                            <h1 style="color:#E67817"><?php echo $inf->name;?></h1>
+                                            <h1 style="color:#E67817;border-bottom:solid 2px black"><?php echo $inf->name;?></h1>
                                         </div>
-                                        <p class="email-friend">
-                                            <a href="http://demo.emthemes.com/casualwear/sendfriend/product/send/id/192/cat_id/53/">
-                                                Gửi mail tới bạn bè</a></p>
-                                        <p class="no-rating">
-                                            <a href="http://demo.emthemes.com/casualwear/review/product/list/id/192/category/53/#review-form">
-                                                Be the first to review this product</a></p>
-                                        <p class="availability in-stock">
-                                            Tình Trạng: 
-                                            <br/>
-                                            <ul style="font-size: 12px; font-style: italic; margin-bottom: 20px;">
+                                        <p class="email-friend" style="background-color:#595959; border:solid 1px black; border-radius:5px">
+                                            <a href="#" style="color:orange">
+                                                Gửi mail tới bạn bè¨</a></p>                                        
+                                        <p class="availability in-stock" style="text-transform:uppercase; padding:10px 0 5px 0">
+                                            Tình trạng: 
+                                            
+                                            <ul style="font-size: 12px; font-style: italic; margin-bottom: 20px; padding-left:20px">
                                             	<?php
 														foreach ($kholist as $index => $kho) 
 														{
-															$tinhtrang =  $kho['total'] == 0 ? "<span style='color:red;'>Hết Hàng<span>" : $kho['total']; 
+															$tinhtrang =  $kho['total'] == 0 ? "<span style='color:red;'>Hết hàng<span>" : $kho['total']; 
 															echo "<li><b>". $kho['kho_name']. " </b> : " . $tinhtrang ."</li>";
 														}
                                             	?>
                                             </ul>
                                         <!--p class="availability in-stock">Availability: <span>In stock</span></p-->
-                                        <div class="price-box">
-                                            <span class="regular-price" id="product-price-192"><b>Giá: </b><span class="price"><?php echo $inf->price;?> VNĐ</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-options-bottom">
-                                            <div class="add-to-cart">
-                                                <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
-                                                    <span><span>THêm Vào Giỏ</span></span></button>
-                                            </div>
-                                        </div>
+                                        <div style="border:solid 1px silver; border-radius:7px; padding:10px; height:50px">
+	                                        <div class="price-box" style="float:left">
+	                                            <span class="regular-price" id="product-price-192"><b>Giá: </b><span class="price"><?php echo $inf->price;?> VNĐ</span>
+	                                            </span>
+	                                        </div>
+	                                        <div class="product-options-bottom" style="float:right">
+	                                            <div class="add-to-cart">
+	                                                <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)">
+	                                                    <span><span>Thêm vào giỏ</span></span></button>
+	                                            </div>
+	                                        </div>
+	                                    </div>
                                         <div class="short-description">
                                             <h2 style="color: #E67817;">
-                                                Mô Tả</h2>
+                                                MÔ TẢ</h2>
                                             <div class="std" style="border-bottom:dotted 1px silver">
                                             	<?php echo substr($inf->shortdesc,0,200);?>
                                                 <!-- p>
@@ -73,8 +72,7 @@
                                                 <a href="<?php echo convert_image_path($inf->image);?>"
                                                     class="cloud-zoom" id="zoom1" rel="position:'right',showTitle:1,titleOpacity:0.5,lensOpacity:0.5,adjustX: 10, adjustY:-4"
                                                     style="position: relative; display: block;">
-                                                    <img src="<?php echo convert_image_path($inf->image);?>"
-                                                        alt="" title="<?php echo $inf->name;?>" style="width:267px; height:267px;display: block;">
+                                                    <img src="<?php echo $this->MKaimonokago->get_link_image($inf->image);?>" alt="" title="<?php echo $inf->name;?>" style="width:267px; height:267px;display: block;"/>
                                                 </a>
                                                 <div class="mousetrap" style="background-image: initial; background-attachment: initial;
                                                     background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255);
@@ -90,9 +88,9 @@
                                                         <h2>
                                                             More Views</h2>
                                                         <ul class="products-grid" style="width: 76px; top: 0px; left: 0px;">
-                                                            <li><a href="http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-6.png"
+                                                            <li><a href=""
                                                                 class="cloud-zoom-gallery" title="" rel="useZoom: 'zoom1', smallImage: 'http://demo.emthemes.com/casualwear/media/catalog/product/cache/1/image/267x/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-6.png' ">
-                                                                <img src="<?php echo convert_image_path($inf->image);?>" style="width:64px; height:64px"
+                                                                <img src="<?php echo $this->MKaimonokago->get_link_image($inf->image);?>" style="width:64px; height:64px"
                                                                     alt="">
                                                             </a></li>
                                                         </ul>
@@ -108,17 +106,9 @@
                                 <div class="product-collateral">
                                     <div class="box-collateral box-description">
                                         <h2 style="color: #E67817;">
-                                            Chi Tiết Sản Phẩm</h2>
-                                        <div class="std">
-                                            <table border="0">
-                                                <tbody>
-                                                    <tr valign="top">                                                        
-                                                        <td style="text-align:justify">
+                                            Chi tiết sản phẩm</h2>
+                                        <div class="std" style="background-color:white;background-image:url('<?php echo base_url();?>assets/women_files/des-bg.png'); background-repeat:no-repeat;border:solid 1px silver; border-radius:5px; min-height:200px; width:620px">
                                                         	<?php echo $inf->longdesc;?>                                                                                                                       
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -127,8 +117,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-right sidebar">
-                
+            
+            <div class="col-right sidebar" style="padding:30px 10px 0 45px; background-image:url('<?php echo base_url();?>assets/women_files/right-bg.png'); background-repeat:repeat-y">
                 <div class="block block-cart">
                     <div class="block-title">
                         <strong><span>shopping cart</span></strong>
@@ -149,7 +139,7 @@
                     				echo '<li>';
                     				echo '<a href="" title=""
                                                             class="product-image">
-                                                            <img src="'.convert_image_path($item->image).'"
+                                                            <img src="'.$this->MKaimonokago->get_link_image($item->image).'"
                                                                 width="199" height="199" alt=""></a>';
                     				echo '<h3 class="product-name">
                                                             <a href="#" title="">'.$item->name.'

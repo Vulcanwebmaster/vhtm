@@ -421,11 +421,18 @@ class MKaimonokago extends Base_model
     {
     	if ($source_link!="")
     	{
-    	$i=13;
-    	while ($source_link[$i]=='.' || $source_link[$i]=='/')
-    		$i++;
-    	$ds=base_url().substr($source_link, $i);
-    	return $ds;
+	    	if ($source_link[0]=='<' && $source_link[1]=='p')
+	    	{
+		    	$i=13;
+		    	while ($source_link[$i]=='.' || $source_link[$i]=='/')
+		    		$i++;
+		    	$j=$i;
+		    	while ($source_link[$j]!='"')
+		    		$j++;
+		    	$ds=base_url().substr($source_link, $i,$j-$i+1);
+		    	return $ds;
+		    }
+		    else return base_url().$source_link;
     	}
     }
 }
