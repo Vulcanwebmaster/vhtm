@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 15, 2012 at 03:08 AM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Generation Time: May 15, 2012 at 09:02 PM
+-- Server version: 5.5.8
+-- PHP Version: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -32,6 +31,11 @@ CREATE TABLE IF NOT EXISTS `be_acl_actions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `be_acl_actions`
+--
+
 
 -- --------------------------------------------------------
 
@@ -110,6 +114,11 @@ CREATE TABLE IF NOT EXISTS `be_acl_permission_actions` (
   KEY `access_id` (`access_id`),
   KEY `axo_id` (`axo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `be_acl_permission_actions`
+--
+
 
 -- --------------------------------------------------------
 
@@ -380,7 +389,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-15 02:19:08', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-15 18:23:16', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'an', 'a97b4c3de192c200fdc31eac8ca2cf57639da998', 'anan@gmail.com', 1, 1, 'qFLDP9DBM3oERI1uT3cAJ5cBADidq28N', '2012-05-05 18:48:45', '2012-05-05 18:45:43', '2012-05-05 18:48:28');
 
 -- --------------------------------------------------------
@@ -431,8 +440,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('d3c148a64722e652ae65e2c83919ba67', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0', 1337043736, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 23:43:12";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
-('daec2681be758860dbe2849b44cb7881', '0.0.0.0', 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR ', 1337043615, '');
+('6fecb2899491f7aa077181309a2ba08c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337108411, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-15 18:10:24";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
+('d608fe9bac9e81487a08d1d316e505ca', '127.0.0.1', 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; BTRS122332; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.3072', 1337101967, '');
 
 -- --------------------------------------------------------
 
@@ -487,22 +496,15 @@ CREATE TABLE IF NOT EXISTS `omc_category` (
 INSERT INTO `omc_category` (`id`, `name`, `metadesc`, `metakeyword`, `shortdesc`, `longdesc`, `status`, `order`, `parentid`, `lang_id`, `table_id`) VALUES
 (1, 'English category', '', '', '', '', 'active', NULL, 0, 0, 1),
 (2, 'Books', '', '', '', '', 'active', 40, 1, 0, 2),
-(5, 'Japanese category', '', '', '', '', 'active', NULL, 0, 1, 1),
 (7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, 1, 0, 7),
 (9, 'Mountain', '', '', '', '', 'active', 10, 1, 0, 9),
 (11, 'River', '', '', '', '', 'active', 25, 1, 0, 11),
-(13, '山', 'Fjell p&aring; Norsk', '', '', '', 'active', 10, 5, 1, 9),
-(14, 'Elv', 'elv', '', '', '', 'active', 25, 5, 1, 11),
-(15, '瞑想', '瞑想', '', '', '', 'active', 30, 5, 1, 7),
-(16, 'Alver', 'Alver', '', '', '', 'active', 40, 5, 1, 2),
 (17, 'Angels', 'Angels in english', '', '', '', 'active', 35, 1, 0, 17),
-(19, '天使', 'Engler', '', '', '', 'active', 35, 5, 1, 17),
 (20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, 1, 0, 20),
 (23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, 1, 0, 23),
-(24, 'マジック', '', '<p>Content</p>', '', '', 'active', NULL, 5, 1, 20),
-(25, 'vđgsbs', '', '', '', '', 'active', 0, 0, 0, 25),
-(26, 'abc', '', '', '', '', 'active', 0, 0, 0, 26),
-(27, 'zád', '', '', '', '', 'active', 0, 0, 0, 27),
+(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, 0, 0, 25),
+(26, 'Áo', '', '', '', '', 'active', 0, 0, 0, 26),
+(27, 'Phụ kiện', '', '', '', '', 'active', 0, 0, 0, 27),
 (28, 'sdfsdf', '', '', '', '', 'active', 0, 0, 0, 28),
 (29, 'hoho', '', '', '', '', 'active', 0, 0, 0, 29),
 (30, 'dsfsdf', '', '', '', '', 'active', 0, 0, 0, 30),
@@ -522,6 +524,11 @@ CREATE TABLE IF NOT EXISTS `omc_colors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `omc_colors`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -539,14 +546,15 @@ CREATE TABLE IF NOT EXISTS `omc_customer` (
   `city` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `post_code` int(10) unsigned NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `omc_customer`
 --
 
 INSERT INTO `omc_customer` (`customer_id`, `password`, `customer_first_name`, `customer_last_name`, `phone_number`, `email`, `address`, `city`, `post_code`) VALUES
-(1, '1234', 'an', 'nguyen', 1234567, 'anan@gmail.com', 'tayho', 'hanoi', 1);
+(1, '1234', 'aaa', 'cccc', 111111111, 'anan@gmail.com', 'cdcc', 'cccc', 0),
+(2, '', 'aaa', 'cccc', 111111111, 'cccc@cccc.com', 'cdcc', 'cccc', 0);
 
 -- --------------------------------------------------------
 
@@ -668,6 +676,11 @@ CREATE TABLE IF NOT EXISTS `omc_messages` (
   PRIMARY KEY (`msg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `omc_messages`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -682,14 +695,15 @@ CREATE TABLE IF NOT EXISTS `omc_order` (
   `delivery_date` datetime NOT NULL,
   `payment_date` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `omc_order`
 --
 
 INSERT INTO `omc_order` (`order_id`, `customer_id`, `total`, `order_date`, `delivery_date`, `payment_date`) VALUES
-(1, 1, 2.00, '2012-05-08 12:56:16', '2012-05-13 22:47:28', '2012-05-13 22:47:22');
+(1, 1, 2.00, '2012-05-08 12:56:16', '2012-05-13 22:47:28', '2012-05-13 22:47:22'),
+(2, 2, 11602.00, '2012-05-15 22:48:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -704,7 +718,16 @@ CREATE TABLE IF NOT EXISTS `omc_order_item` (
   `quantity` int(10) unsigned NOT NULL,
   `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`order_item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `omc_order_item`
+--
+
+INSERT INTO `omc_order_item` (`order_item_id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
+(1, 2, 59, 4, 1234.00),
+(2, 2, 2, 1, 5555.00),
+(3, 2, 1, 1, 1111.00);
 
 -- --------------------------------------------------------
 
@@ -775,36 +798,36 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
 --
 
 INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longdesc`, `thumbnail`, `image`, `weblink`, `product_order`, `status`, `category_id`, `featured`, `other_feature`, `price`, `lang_id`, `table_id`) VALUES
-(1, '1', '1', 0, '', '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 2, 'none', 'new product', 1111, 0, 0),
-(2, '2', '2', 0, '', '', '', '<p><img src="../../../../assets/images/55345576-1292315768-T-shirt-nuy-131232.jpg" alt="" width="650" height="650" /></p>', '0', 0, 'active', 2, 'none', 'new product', 5555, 0, 0),
-(3, '3', '3', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 333, 0, 0),
-(4, '4', '4', 0, '', '', '', '', NULL, NULL, '', 25, '', 'new product', 4444, 0, 0),
-(5, '5', '5', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 5555, 0, 0),
-(6, '6', '6', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 6666, 0, 0),
-(7, '7', '7', 0, '', '', '', '', NULL, NULL, 'active', 25, '', 'new product', 7777, 0, 0),
-(8, '8', '8', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 8888, 0, 0),
-(9, '9', '9', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 9999, 0, 0),
-(10, '10', '10', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 1200, 0, 0),
-(11, '11', '11', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50, 0, 0),
-(12, '12', '12', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 230, 0, 0),
-(13, '13', '13', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 50, 0, 0),
-(14, '14', '14', 0, '', '', '', '', NULL, NULL, 'active', 26, 'webshop', 'new product', 220, 0, 0),
-(15, '15', '15', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 0, 0, 0),
-(16, '16', '16', 0, '', '', '', '', NULL, NULL, 'active', 26, '', 'new product', 123, 0, 0),
-(17, '17', '717', 0, '', '', '', '', NULL, NULL, 'active', 0, '', 'new product', 46346, 0, 0),
-(20, '20', '20', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 1111, 0, 0),
-(21, '21', '21', 0, '', '', '', '', NULL, NULL, 'active', 27, '', 'new product', 2222, 0, 0),
-(22, '22', '22', 0, '', '', '', '', NULL, NULL, '', 27, '', 'new product', 222, 0, 0),
-(45, 'B1', 'Sách xịn', 0, '11', '', '', '', '', 11, 'active', 26, 'none', 'new product', 111, 0, 45),
-(48, 'A3', 'Blue angels', 0, '', '', '', '', '', 26, 'active', 9, 'none', 'new product', 1200, 0, 48),
-(49, 'A4', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0, 0, 49),
-(50, 'A5', 'Meditation', 0, '', '', '', '', '', 0, 'active', 26, 'none', 'new product', 0, 0, 50),
-(54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '', '', '', 1, 'active', 26, 'none', 'new product', 13454, 0, 54),
-(55, 'A10', 'Sách văn', 0, 'văn', '', '', '', '', 12, 'active', 26, 'none', 'new product', 8765, 0, 55),
-(59, 'A17', 'Sách sử', 0, '', '', '', '', '', 21, 'active', 26, 'none', 'new product', 1234, 0, 59),
-(60, 'dfgdfgdf', 'dfgdfgfd', 0, '', '', '', '', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 60),
-(61, 'xcvv', 'sdfsdf', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 61),
-(62, 'ghfgh', 'efsdf', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 62),
+(1, 'A1', 'Áo phông 1', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 2, 'none', 'new product', 1111, 0, 0),
+(2, 'A2', 'Áo phông 2', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 2, 'none', 'new product', 5555, 0, 0),
+(3, 'A3', 'Áo phông 3', 0, 'áo ', 'Các loại áo dài', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 5, 'active', 25, 'front', 'new product', 333, 0, 0),
+(4, 'A4', 'Áo phông 4', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 25, 'none', 'new product', 4444, 0, 0),
+(5, 'A5', 'Áo phông 5', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/kidsbrownface_lg.jpg" alt="" width="350" height="360" /></p>', '0', 0, 'active', 25, 'none', 'new product', 5555, 0, 0),
+(6, 'A6', 'Áo phông 6', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 0, 'active', 25, 'none', 'new product', 6666, 0, 0),
+(7, 'A7', 'Áo phông 7', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 0, 'active', 25, 'none', 'new product', 7777, 0, 0),
+(8, 'A8', 'Áo phông 8', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 8, 'active', 26, '', 'new product', 8888, 0, 0),
+(9, 'A9', 'Áo phông 9', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 9999, 0, 0),
+(10, 'A10', 'Áo phông 10', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 1200, 0, 0),
+(11, 'A11', 'Áo phông 11', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, 'front', 'new product', 50, 0, 0),
+(12, 'A12', 'Áo phông 12', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 9, 'active', 26, '', 'new product', 230, 0, 0),
+(13, 'A13', 'Áo phông 13', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 8, 'active', 26, 'front', 'new product', 50, 0, 0),
+(14, 'A14', 'Áo phông 14', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 26, 'webshop', 'new product', 220, 0, 0),
+(15, 'A15', 'Áo phông 15', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 26, 'front', 'new product', 0, 0, 0),
+(16, 'A16', 'Áo phông 16', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 26, 'webshop', 'new product', 123, 0, 0),
+(17, 'A17', 'Áo phông 17', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 8, 'active', 0, 'webshop', 'new product', 46346, 0, 0),
+(20, 'A20', 'Áo phông 20', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 27, 'front', 'new product', 1111, 0, 0),
+(21, 'A21', 'Áo phông 21', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 6, 'active', 27, 'webshop', 'new product', 2222, 0, 0),
+(22, 'A22', 'Áo phông 22', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 6, 'active', 27, '', 'new product', 222, 0, 0),
+(45, 'B1', 'Sách xịn', 0, '11', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 11, 'active', 26, 'none', 'new product', 111, 0, 45),
+(48, 'A3', 'Blue angels', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 26, 'active', 9, 'none', 'new product', 1200, 0, 48),
+(49, 'A4', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 49),
+(50, 'A5', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 50),
+(54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 1, 'active', 26, 'none', 'new product', 13454, 0, 54),
+(55, 'A10', 'Sách văn', 0, 'văn', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 12, 'active', 26, 'none', 'new product', 8765, 0, 55),
+(59, 'A17', 'Sách sử', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 21, 'active', 26, 'none', 'new product', 1234, 0, 59),
+(60, 'dfgdfgdf', 'dfgdfgfd', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 0, 'active', 26, 'none', 'new product', 0, 0, 60),
+(61, 'xcvv', 'sdfsdf', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 0, 'active', 25, 'front', 'new product', 0, 0, 61),
+(62, 'ghfgh', 'efsdf', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 25, 'webshop', 'new product', 0, 0, 62),
 (63, 'a123', 'a', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0, 0, 63),
 (64, 'a1234', 'aa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'new product', 0, 0, 64),
 (65, 'a12345', 'aaa', 0, '', '', '', '', '0', 0, 'active', 25, 'none', 'none', 0, 0, 65);
@@ -821,6 +844,11 @@ CREATE TABLE IF NOT EXISTS `omc_product_colors` (
   PRIMARY KEY (`product_id`,`color_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `omc_product_colors`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -832,6 +860,11 @@ CREATE TABLE IF NOT EXISTS `omc_product_sizes` (
   `size_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`size_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `omc_product_sizes`
+--
+
 
 -- --------------------------------------------------------
 
@@ -845,6 +878,11 @@ CREATE TABLE IF NOT EXISTS `omc_sizes` (
   `status` enum('active','inactive') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `omc_sizes`
+--
+
 
 -- --------------------------------------------------------
 
@@ -909,6 +947,11 @@ CREATE TABLE IF NOT EXISTS `shop_contact_us` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `shop_contact_us`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -945,7 +988,7 @@ CREATE TABLE IF NOT EXISTS `shop_sanphamkho` (
   `id` int(11) NOT NULL,
   `total` int(10) NOT NULL,
   PRIMARY KEY (`sanphamkho_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=94 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=106 ;
 
 --
 -- Dumping data for table `shop_sanphamkho`
@@ -1020,7 +1063,19 @@ INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (90, 3, 1, 0),
 (91, 1, 2, 0),
 (92, 2, 2, 0),
-(93, 3, 2, 0);
+(93, 3, 2, 0),
+(94, 1, 4, 0),
+(95, 2, 4, 0),
+(96, 3, 4, 0),
+(97, 1, 5, 0),
+(98, 2, 5, 0),
+(99, 3, 5, 0),
+(100, 1, 6, 0),
+(101, 2, 6, 0),
+(102, 3, 6, 0),
+(103, 1, 7, 0),
+(104, 2, 7, 0),
+(105, 3, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -1038,6 +1093,11 @@ CREATE TABLE IF NOT EXISTS `shoutbox` (
   `privacy` enum('public','private') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'public',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `shoutbox`
+--
+
 
 --
 -- Constraints for dumped tables
@@ -1074,7 +1134,3 @@ ALTER TABLE `be_resources`
 --
 ALTER TABLE `be_users`
   ADD CONSTRAINT `be_users_ibfk_1` FOREIGN KEY (`group`) REFERENCES `be_acl_groups` (`id`) ON DELETE SET NULL;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
