@@ -19,6 +19,7 @@
                 }
             );                       
         }else{
+            if(subvalue)
             document.getElementById("subcon").innerHTML="<select name='parentid' style='width:200px;'><option value='0' >Chọn Danh mục con</option></select>";
         }
         

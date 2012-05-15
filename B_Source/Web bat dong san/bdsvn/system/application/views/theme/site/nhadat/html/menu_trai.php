@@ -200,19 +200,31 @@ function submitform(fromName)
                             margin-bottom: 0px; margin-top: 5px;" class="left_panel">
                         </div>
                         <div style="width: 181px; float: left; border: 1px #9A9A9A solid;" class="left_panel">
+    <?php
+    $this->db->where('id',"51");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
                             <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a ><font
-                                    style="color: #FFFFFF"><strong>Dự án tỉnh Hà Nam</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
                             <div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
                                 height: auto !important; height: 700px">
                                 <!-- Load du an tinh Ha Nam tu database -->
 								<?=$this->load->view('modules/tnd_tinmenutrai/index')?>
                             </div>
+    <?php
+    $this->db->where('id',"52");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
                             <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="htm/-Tab=8&cat_id=2.htm" >
-                                    <font color="#FFFFFF"><strong>Dự án tỉnh Ninh Bình</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
                             <div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
                                 height: auto !important; height: 700px">
                                 <!-- Load du an tinh Ninh Bình tu database -->
@@ -224,18 +236,32 @@ function submitform(fromName)
                             <div style="width: 182px; height: 33px; float: left; background: url('<?php echo base_url();?>images/caycanh.png') no-repeat;
                                 margin-bottom: 0px; margin-top: 5px;" class="left_panel">
                             </div>                                                        
-                            <div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+    <?php
+    $this->db->where('id',"53");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
+                            <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a><font color="#FFFFFF"><strong>Cây cảnh phôi</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
 							<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
                                 height: auto !important; height: 700px">
                                 <!-- Load cay canh phoi tu database -->
                                 <?=$this->load->view('modules/tnd_tinmenucaycanh/index')?>
                             </div> 
                             
-                            <div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+    <?php
+    $this->db->where('id',"54");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
+                            <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a><font color="#FFFFFF"><strong>Cây cảnh hoàn thiện</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
 
 								<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
                                 height: auto !important; height: 700px">
@@ -247,25 +273,46 @@ function submitform(fromName)
                             <div style="width: 182px; height: 33px; float: left; background: url('<?php echo base_url();?>images/thuecotpha.png') no-repeat;
                                 margin-bottom: 0px; margin-top: 5px;" class="left_panel">
                             </div>
-							<div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+    <?php
+    $this->db->where('id',"58");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
+                            <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a><font color="#FFFFFF"><strong>Cốt pha hoàn thiện</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
 									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
 	                                height: auto !important; height: 700px">
 	                                <!-- Load cay canh phoi tu database -->
 	                                	<?=$this->load->view('modules/tnd_thuegianrao1/index')?>
 	                            </div>
-							<div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+    <?php
+    $this->db->where('id',"59");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
+                            <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a><font color="#FFFFFF"><strong>Cốt pha giàn ráo</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
 									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
 	                                height: auto !important; height: 700px">
 	                                <!-- Load cay canh phoi tu database -->
 	                                	<?=$this->load->view('modules/tnd_thuegianrao2/index')?>
 	                            </div>
-							<div class="silverheader" style="background: url('<?php echo base_url();?>images/tabbg.png') no-repeat; width: 162px;
+    <?php
+    $this->db->where('id',"60");
+    $query = $this->db->get('danhmuc');
+    $item = $query->result();?>
+    <?php foreach($item as $cm):?>
+                            <div class="silverheader" style=" width: 162px;
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a><font color="#FFFFFF"><strong>Hỗ trợ, tư vấn, lắp ráp</strong></font></a></div>
+                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
+                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+<?php endforeach;?>
 									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
 	                                height: auto !important; height: 700px">
 	                                <!-- Load cay canh phoi tu database -->

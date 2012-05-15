@@ -32,11 +32,10 @@
           }
       }
       function uploadpop(){
-          
+      	echo $_FILES['file']['tmp_name']; die();
          $size=filesize($_FILES['file']['tmp_name']); 
-          
-         
           if($size > 0){
+				
               if($this->file->upload()){
                   $this->session->set_flashdata('message','Upload thành công');
               }else{

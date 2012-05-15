@@ -16,7 +16,8 @@
     <link href="<?=base_url()?>style/style.css" rel="stylesheet" type="text/css" />
     <link href="<?=base_url()?>style/Jqueryslide.css" rel="Stylesheet" type="text/css" />
 	<link href="<?=base_url()?>style/bdscomvn/jquery-ui-1.7.3.custom.css" rel="Stylesheet" type="text/css" />    
-    <link href="<?=base_url()?>style/bdscomvn/BDS_Style_15.1.8.css" rel="Stylesheet" type="text/css" />    
+    <link href="<?=base_url()?>style/bdscomvn/BDS_Style_15.1.8.css" rel="Stylesheet" type="text/css" />
+	<link href="<?=base_url()?>style/videobox.css" rel="Stylesheet" type="text/css" />
 <!-- CSS -->
 
 <!-- Javascript -->
@@ -30,6 +31,8 @@
     
     <script src="<?=base_url()?>Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="<?=base_url()?>Scripts/slide/JScriptslide1.js" type="text/javascript"></script>
+    <script src="<?=base_url()?>Scripts/prototype.js" type="text/javascript"></script>
+    <script src="<?=base_url()?>Scripts/videobox.js" type="text/javascript"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $(".slider").slideshow({
@@ -272,7 +275,25 @@ function video5() {
 }
 </script>
 
+<?php
+ function youtube($string,$autoplay=0,$width=480,$height=390)
+{
+	$findme   = 'http://www.youtube.com/';
+	$pos = strpos($string, $findme);
 
+	if ($pos !== false){
+	preg_match('#(v\/|watch\?v=)([\w\-]+)#', $string, $match);
+  	return preg_replace(
+    '#((http://)?(www.)?youtube\.com/watch\?[=a-z0-9&_;-]+)#i',
+    "<iframe title=\"YouTube video player\" width=\"$width\" height=\"$height\" src=\"http://www.youtube.com/embed/$match[2]?autoplay=$autoplay\" frameborder=\"0\" allowfullscreen></iframe>",
+    $string);
+	}
+	else {
+		return "<iframe width=\"100%\" height=\"210\" src=\"$string\" frameborder=\"0\" allowfullscreen></iframe>";
+	}
+    
+} 
+?>
 <div class="lay-clear">
 </div>
 <!-- Noi dung tab Video noi bat -->
@@ -282,7 +303,7 @@ function video5() {
   <?php
   $this->CI = get_instance();
   $this->CI->db->where('id_dm',5);
-  $this->CI->db->order_by('name');
+  $this->CI->db->order_by('id');
   $query = $this->CI->db->get('quangcao');
   $list = $query->result();
 ?>
@@ -292,7 +313,7 @@ function video5() {
 			<?foreach($list as $rs):?> 
             <li>
                 <!-- <input onclick = "video1()" value ="video 1" type = "button">  -->
-                <a onclick = "<?=$rs->hinhanh?>"><strong><?=$rs->name?></strong></a>
+                <a onclick = "<?=$rs->link?>"><strong><?=$rs->name?></strong></a>
             </li>
             <?endforeach;?>
         </ul>
@@ -306,10 +327,7 @@ function video5() {
 ?>
 	<?foreach($list as $rs):?> 
 	<div id="video-container1" style="float:left;width: 45%;padding:10px;background-color: transparent;">
-        <object width="100%" height="210px">
-           <param name="movie" value="<?php echo $rs->link;?>">
-           <embed src="<?php echo $rs->link;?>" width="100%" height="210px" />
-        </object>
+        <?php echo youtube($rs->hinhanh,0,"100%",210);?>
     </div>
     <?endforeach;?>
 
@@ -321,10 +339,7 @@ function video5() {
 ?>    
     <?foreach($list as $rs):?> 
 	<div id = "video-container2" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
-		<object width="100%" height="210px">
-           <param name="movie" value="<?php echo base_url();?>video/Export.swf">
-           <embed src="video/Export.swf" width="100%" height="210px" />
-        </object>
+		<?php echo youtube($rs->hinhanh,0,"100%",210);?>
     </div>
     <?endforeach;?>
     
@@ -334,9 +349,11 @@ function video5() {
   $query = $this->CI->db->get('quangcao');
   $list = $query->result();
 ?>
-<?foreach($list as $rs):?>        
+<?foreach($list as $rs):?>
 	<div id = "video-container3" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
-    	<iframe width="100%" height="210" src="http://www.youtube.com/embed/BA7fdSkp8ds" frameborder="0" allowfullscreen></iframe>
+		<?php //echo youtube("http://www.youtube.com/watch?v=IockzufaPYw",0,"100%",210);?>
+		<?php echo youtube($rs->hinhanh,0,"100%",210);?>
+		
     </div>
 <?endforeach;?>
 
@@ -348,10 +365,7 @@ function video5() {
 ?>
 <?foreach($list as $rs):?>    
 	<div id = "video-container4" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
-    	<object width="100%" height="210px">
-           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
-           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
-        </object>
+		<?php echo youtube($rs->hinhanh,0,"100%",210);?>
     </div>
     <?endforeach;?>
     
@@ -363,10 +377,7 @@ function video5() {
 ?>
 <?foreach($list as $rs):?>     
 	<div id = "video-container5" style="float:left;width: 45%;padding:10px;background-color: transparent;display:none">
-    	<object width="100%" height="210px">
-           <param name="movie" value="<?php echo base_url();?>video/abc.swf">
-           <embed src="<?php echo base_url();?>video/abc.swf" width="100%" height="210px" />
-        </object>
+		<?php echo youtube($rs->hinhanh,0,"100%",210);?>
     </div>
     <?endforeach;?>
 </div>
@@ -463,6 +474,7 @@ function video5() {
 			<? $this->CI = get_instance();?>
     		<?
 			    $this->db->where('idcat',"55");
+			    $this->db->where('bat',"1");
 			    $query = $this->db->get('noidung');
 			    $item = $query->result();?>
 			    <?foreach($item as $rs):?>

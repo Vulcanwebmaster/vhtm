@@ -18,7 +18,6 @@ opener.document.adminform.<?=$name?>.value  = text;
 window.close();
 }
 </script>
-
 <div style="width: 500px;float: left;">
 <?=form_open_multipart('quanlyfile/uploadpop/'.$this->uri->segment(3),array('name'=>'up'))?> 
  <fieldset>

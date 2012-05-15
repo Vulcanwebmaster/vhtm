@@ -47,6 +47,7 @@
 $buoc = (int)$this->uri->segment(2);
 $segment = (int)$this->uri->segment('3');
 ?>
+
 <div class="hdangtin" style="margin-bottom:300px">
     <ul >
     <?if($buoc==1){?>
@@ -80,7 +81,7 @@ $segment = (int)$this->uri->segment('3');
 ?>
 <table class="dangtin" align="center">  
     <tr>
-        <td>Nhu cầu:</td>
+        <td>Nhu cầu(*):</td>
         <td>
             <?if($segment!=0){
                 $nhucau = $buoc1->nhucau;
@@ -96,7 +97,7 @@ $segment = (int)$this->uri->segment('3');
         </td>
     </tr>
     <tr>
-        <td>Chuyên mục:</td>
+        <td>Chuyên mục:(*)</td>
         <td>
             <?if($segment!=0){
                 $sectionid = $buoc1->sectionid;
@@ -177,7 +178,7 @@ $segment = (int)$this->uri->segment('3');
                 $id_thanhpho = set_value('id_thanhpho');
             }?>     
     <tr>
-        <td>Tỉnh thành phố:</td>
+        <td>Tỉnh thành phố:(*)</td>
         <td>
             <select name="id_thanhpho" style="width: 200px;" id="id_thanhpho" onchange='LoadThanhpho(this.value,0)'>
                 <option value="">Chọn Tỉnh/ Thành phố</option>
@@ -461,7 +462,7 @@ if($buoc==3){
 <table class="dangtin" align="center">   
     <tr>
         <td style="width: 100px;">  
-           Tiêu đề
+           Tiêu đề(*)
         </td>
         <td>
             <?if(set_value('tieude')==''){
@@ -478,7 +479,7 @@ if($buoc==3){
     </tr>
     <tr>        
         <td>
-           Giá
+           Giá(*)
         </td>
 
         <td>
@@ -533,7 +534,7 @@ if($buoc==3){
     </tr>    
     <tr>        
         <td>
-           Địa chỉ
+           Địa chỉ(*)
         </td>
         <td>
             <?if(set_value('diachilienhe')==''){
@@ -563,7 +564,7 @@ if($buoc==3){
 <table class="dangtin" align="center">   
     <tr>
         <td style="width: 100px;">
-           Họ và tên
+           Họ và tên(*)
         </td>
         <td>
             <?if(set_value('hoten')==''){
@@ -577,7 +578,7 @@ if($buoc==3){
     </tr>
     <tr>        
         <td>
-           Địa chỉ
+           Địa chỉ(*)
         </td>
             <?if(set_value('diachi')==''){
                 $diachi = $buoc1->diachi;
@@ -605,7 +606,7 @@ if($buoc==3){
     </tr>    
     <tr>        
         <td>
-           Điện thoại
+           Điện thoại(*)
         </td>
             <?if(set_value('dienthoailienhe')==''){
                 $dienthoai = $buoc1->dienthoailienhe;
