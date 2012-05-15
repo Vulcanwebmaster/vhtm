@@ -84,7 +84,8 @@
 	                                                    <?php echo $row['name'];?>
 	                                                </h2>
 	                                            </td>
-	                                            <td class="a-center">
+												<script src='<?php echo base_url();?>assets/js/shopcustomtools.js' type='text/javascript'></script>
+                                                <td class="a-center">
 	                                               <input type='button' class='delete' name='delete' value='<?php echo lang('webshop_delete'); ?>' onclick='jsRemoveProduct(<?php echo $PID;?>)'>
 	                                            </td>
 	                                            <td class="a-right">
@@ -112,9 +113,7 @@
                                      <tfoot>
                                         <tr class="first last">
                                             <td colspan="6" class="a-right last">
-                                                <button type="button" title="Continue Shopping" style="float:right;" class="button btn-continue" onclick="setLocation('http://demo.emthemes.com/casualwear/')">
-                                                    <span><span style="background-image:url(<?php echo base_url();?>assets/women_files/btn1.png)">Tiếp tục mua sắm</span></span></button>
-                                                <button type="submit" title="Thanh ToÃ¡n " class="button btn-update" style="float:right;">
+                                            	<button type="submit" title="Thanh Toán " class="button btn-update" style="float:right;">
                                                     <span><span>Thanh Toán</span></span></button>
                                             </td>
                                         </tr>

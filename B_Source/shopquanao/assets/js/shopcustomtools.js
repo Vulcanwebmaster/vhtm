@@ -30,7 +30,7 @@ function jsRemoveProduct(id){
   var params = 'id='+id;
   jQuery.ajax({
    type: "POST",
-   url: "index.php/welcome/ajax_cart_remove",
+   url: "ajax_cart_remove",
    data: params,
    success: function( r ) {
 	  jQuery('#ajax_msg').html( r );

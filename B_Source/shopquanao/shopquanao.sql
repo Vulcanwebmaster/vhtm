@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2012 at 10:08 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: May 15, 2012 at 03:08 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -31,11 +32,6 @@ CREATE TABLE IF NOT EXISTS `be_acl_actions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `be_acl_actions`
---
-
 
 -- --------------------------------------------------------
 
@@ -114,11 +110,6 @@ CREATE TABLE IF NOT EXISTS `be_acl_permission_actions` (
   KEY `access_id` (`access_id`),
   KEY `axo_id` (`axo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `be_acl_permission_actions`
---
-
 
 -- --------------------------------------------------------
 
@@ -389,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-14 21:20:25', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-15 02:19:08', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'an', 'a97b4c3de192c200fdc31eac8ca2cf57639da998', 'anan@gmail.com', 1, 1, 'qFLDP9DBM3oERI1uT3cAJ5cBADidq28N', '2012-05-05 18:48:45', '2012-05-05 18:45:43', '2012-05-05 18:48:28');
 
 -- --------------------------------------------------------
@@ -440,7 +431,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('ee1e4219185bbcf4f52bc28f02e347f2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337025914, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 21:19:59";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('d3c148a64722e652ae65e2c83919ba67', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0', 1337043736, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-14 23:43:12";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
+('daec2681be758860dbe2849b44cb7881', '0.0.0.0', 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR ', 1337043615, '');
 
 -- --------------------------------------------------------
 
@@ -529,11 +521,6 @@ CREATE TABLE IF NOT EXISTS `omc_colors` (
   `status` enum('active','inactive') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `omc_colors`
---
-
 
 -- --------------------------------------------------------
 
@@ -681,11 +668,6 @@ CREATE TABLE IF NOT EXISTS `omc_messages` (
   PRIMARY KEY (`msg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `omc_messages`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -723,11 +705,6 @@ CREATE TABLE IF NOT EXISTS `omc_order_item` (
   `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`order_item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `omc_order_item`
---
-
 
 -- --------------------------------------------------------
 
@@ -844,11 +821,6 @@ CREATE TABLE IF NOT EXISTS `omc_product_colors` (
   PRIMARY KEY (`product_id`,`color_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `omc_product_colors`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -860,11 +832,6 @@ CREATE TABLE IF NOT EXISTS `omc_product_sizes` (
   `size_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`size_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `omc_product_sizes`
---
-
 
 -- --------------------------------------------------------
 
@@ -878,11 +845,6 @@ CREATE TABLE IF NOT EXISTS `omc_sizes` (
   `status` enum('active','inactive') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `omc_sizes`
---
-
 
 -- --------------------------------------------------------
 
@@ -932,6 +894,20 @@ CREATE TABLE IF NOT EXISTS `omc_subscribers` (
 INSERT INTO `omc_subscribers` (`id`, `name`, `email`) VALUES
 (1, 'shin', 'admin@gmail.com'),
 (3, 'sokada', 'test1@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shop_contact_us`
+--
+
+CREATE TABLE IF NOT EXISTS `shop_contact_us` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contents` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1064,11 +1040,6 @@ CREATE TABLE IF NOT EXISTS `shoutbox` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
--- Dumping data for table `shoutbox`
---
-
-
---
 -- Constraints for dumped tables
 --
 
@@ -1103,3 +1074,7 @@ ALTER TABLE `be_resources`
 --
 ALTER TABLE `be_users`
   ADD CONSTRAINT `be_users_ibfk_1` FOREIGN KEY (`group`) REFERENCES `be_acl_groups` (`id`) ON DELETE SET NULL;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
