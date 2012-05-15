@@ -446,7 +446,7 @@ class MKaimonokago extends Base_model
     		{
     			
     			$kq=$kq.$price[$i];
-    			if (($leng-$i)%3==0)
+    			if (($leng-$i)%3==0 && $i>0)
     				$kq=$kq.'.';
     		}
     		return strrev($kq);
