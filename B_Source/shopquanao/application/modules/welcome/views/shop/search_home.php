@@ -19,7 +19,7 @@
                     	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $this->MKaimonokago->format_price($row['price']);?> VNĐ</span>
                     	<a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row['id'];?>"
                     	style="padding-top:0px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">
-							<img style="background:transparent; border:transparent" src="<?php echo base_url();?>assets/women_files/shopping_cart.gif" width="30px"/>
+							<img style="background:transparent; border:transparent" src="<?php echo base_url();?>assets/women_files/shopping_cart.png" width="30px"/>
 						</a>
                 <!-- /div -->
                                 
