@@ -34,7 +34,7 @@
 				$data['type']='Quần';
 			elseif ($type=='phukien')
 				$data['type']='Phụ kiện';
-			$data['title']='Danh mục sản phẩm';
+			$data['title']='Danh sách sản phẩm';
 			$data['count']=$this->Get_data->count($type);
 			$data['list'] = $this->Get_data->get_list($type,$index);
 			$data['page']=$this->config->item('backendpro_template_shop').'dsao';
@@ -50,9 +50,9 @@
             $config['uri_segment'] = 3; 
 			$config['total_rows']=$this->Get_data->count_hang_moi();			
 			$this->pagination->initialize($config);
-			$data['title']='Hàng mới về';
+			$data['title']='HÃ ng má»›i vá»�';
 			$data['count']=$this->Get_data->count_hang_moi();
-			$data['type']="Hàng mới";
+			$data['type']="HÃ ng má»›i";
 			$data['list']=$this->Get_data->hang_moi_ve($index);
 			$data['page']=$this->config->item('backendpro_template_shop').'dsao';
 			$data['module']=$this->module;
