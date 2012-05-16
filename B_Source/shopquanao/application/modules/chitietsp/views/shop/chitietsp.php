@@ -5,9 +5,9 @@
     <div class="main">
         <div class="breadcrumbs">
             <ul>
-                <li class="home"><a href="<?php echo base_url();?>" title="Tới trang chủ">Trang chủ</a>
+                <li class="home"><a href="<?php echo base_url();?>" title="Tá»›i trang chá»§">Trang chá»§</a>
                     <span>/ </span></li>
-                <li class="category53"><strong style="color:#E67817">Chi tiết sản phẩm</strong> </li>
+                <li class="category53"><strong style="color:#E67817">Chi tiáº¿t sáº£n pháº©m</strong> </li>
             </ul>
         </div>
         <div class="page-title category-title">
@@ -32,7 +32,7 @@
                                             <?php $this->load->library('session');
                                             	if ($this->session->userdata('added'))
                                             	{
-                                            		echo '<p style="padding-top:10px; color:orange">Đã thêm vào giỏ hàng thành công</p>';
+                                            		echo '<p style="padding-top:10px; color:orange">Ä�Ã£ thÃªm vÃ o giá»� hÃ ng thÃ nh cÃ´ng</p>';
                                             		$this->session->unset_userdata('added');
                                             	}
                                             ?>
@@ -45,7 +45,7 @@
                                             	<?php
 														foreach ($kholist as $index => $kho) 
 														{
-															$tinhtrang =  $kho['total'] == 0 ? "<span style='color:red;'>Hết hàng<span>" : $kho['total']; 
+															$tinhtrang =  $kho['total'] == 0 ? "<span style='color:red;'>Háº¿t hÃ ng<span>" : $kho['total']; 
 															echo "<li><b>". $kho['kho_name']. " </b> : " . $tinhtrang ."</li>";
 														}
                                             	?>
@@ -53,20 +53,20 @@
                                         <!--p class="availability in-stock">Availability: <span>In stock</span></p-->
                                         <div style="border:solid 1px silver; border-radius:7px; padding:10px; height:50px">
 	                                        <div class="price-box" style="float:left">
-	                                            <span class="regular-price" id="product-price-192"><b>Giá: </b><span class="price"><?php echo $inf->price;?> VNĐ</span>
+	                                            <span class="regular-price" id="product-price-192"><b>GiÃ¡: </b><span class="price"><?php echo $inf->price;?> VNÄ�</span>
 	                                            </span>
 	                                        </div>
 	                                        <div class="product-options-bottom" style="float:right">
 	                                            <div class="add-to-cart">
 	                                                <a title="Add to Cart" class="button btn-cart" href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $inf->id;?>">
-	                                                    <span><span>Thêm vào giỏ</span></span>
+	                                                    <span><span>ThÃªm vÃ o giá»�</span></span>
 	                                                </a>
 	                                            </div>
 	                                        </div>
 	                                    </div>
                                         <div class="short-description">
                                             <h2 style="color: #E67817;">
-                                                Mô tả</h2>
+                                                MÃ´ táº£</h2>
                                             <div class="std" style="border-bottom:dotted 1px silver">
                                             	<?php echo substr($inf->shortdesc,0,200);?>
                                                 <!-- p>
@@ -134,13 +134,24 @@
                         <strong><span>Giỏ hàng</span></strong>
                     </div>
                     <div class="block-content">
-                        <p class="empty">
-                            Không có mặt hàng nào trong giỏ của bạn</p>
+                    	<?php if (isset($_SESSION['cart'])){
+                    		$count=0;
+												foreach ($_SESSION['cart'] as $PID => $row){	
+													$count++;
+												}
+												if ($count>0)
+												echo '<h3 style="width:100%; text-align:center; text-transform:none"><span style="color:red; text-weight:bold; font-size:40px">'.$count.'</span> mặt hàng</h3>';
+												else 
+												echo '<p class="empty">Không cóc mặt hàng nào trong giỏ hàng của bạn</p>';
+                    	}
+                    	else echo '<p class="empty">Không cóc mặt hàng nào trong giỏ hàng của bạn</p>';
+												?>
+                        
                     </div>
                 </div>
                 <div class="block block-list block-viewed">
                     <div class="block-title">
-                        <strong><span>Sản phẩm liên quan</span></strong>
+                        <strong><span>Sáº£n pháº©m liÃªn quan</span></strong>
                     </div>
                     <div class="block-content">
                     	<ul>

@@ -63,7 +63,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quản lý sản phẩm theo kho";
+        $data['title'] = "Quáº£n lÃ½ sáº£n pháº©m theo kho";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
@@ -94,7 +94,7 @@ class Admin extends Shop_Admin_Controller
     
     function sortKho($kho_id = 100)
     {
-    	$data['title'] = "Quáº£n lÃ½ sáº£n pháº©m theo kho";    	
+    	$data['title'] = "QuÃ¡ÂºÂ£n lÃƒÂ½ sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m theo kho";    	
         //$data['id']=$this->input->post('giatrikho');   
     	//Author tienlx: pagination reviews
     	
@@ -137,6 +137,7 @@ class Admin extends Shop_Admin_Controller
 
     function create()
     {
+    	$data['listkho']=$this->MKaimonokago->getListKho();
         // we are using TinyMCE in this page, so load it
         $this->bep_assets->load_asset_group('TINYMCE');
                
@@ -178,13 +179,13 @@ class Admin extends Shop_Admin_Controller
        		}            
           
             // we are using Bep function for flash msg
-            flashMsg('success','Sáº£n pháº©m Ä‘Ã£ Ä‘Æ°á»£c táº¡o');
+            flashMsg('success','SÃ¡ÂºÂ£n phÃ¡ÂºÂ©m Ã„â€˜ÃƒÂ£ Ã„â€˜Ã†Â°Ã¡Â»Â£c tÃ¡ÂºÂ¡o');
             redirect($this->module.'/admin/index','refresh');
             }//end check
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "TÃªn sáº£n pháº©m";
+            $data['title'] = "TÃƒÂªn sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -197,7 +198,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','ChÆ°a nháº­p tÃªn máº·t hÃ ng');
+            flashMsg('error','ChÃ†Â°a nhÃ¡ÂºÂ­p tÃƒÂªn mÃ¡ÂºÂ·t hÃƒÂ ng');
             $this->load->view($this->_container,$data);	
             }
   
@@ -206,7 +207,7 @@ class Admin extends Shop_Admin_Controller
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "Táº¡o sáº£n pháº©m";
+            $data['title'] = "TÃ¡ÂºÂ¡o sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -219,7 +220,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','ChÆ°a nháº­p mÃ£ hÃ ng');
+            flashMsg('error','ChÃ†Â°a nhÃ¡ÂºÂ­p mÃƒÂ£ hÃƒÂ ng');
             $this->load->view($this->_container,$data);
             }
         }
@@ -227,7 +228,7 @@ class Admin extends Shop_Admin_Controller
         {
         	
             // this must be the first time, so set variables
-            $data['title'] = "Tạo sản phẩm";
+            $data['title'] = "Táº¡o sáº£n pháº©m";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -241,7 +242,7 @@ class Admin extends Shop_Admin_Controller
             $data['listkho']=$this->MKaimonokago->getListKho();
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
+            flashMsg('notice','Má»�i báº¡n nháº­p sá»‘ lÆ°á»£ng sáº£n pháº©m');
             $this->load->view($this->_container,$data);
         }
 
@@ -325,7 +326,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','MÃ£ sáº£n pháº©m Ä‘Ã£ tá»“n táº¡i, má»�i nháº­p láº¡i');
+            flashMsg('error','MÃƒÂ£ sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m Ã„â€˜ÃƒÂ£ tÃ¡Â»â€œn tÃ¡ÂºÂ¡i, mÃ¡Â»ï¿½i nhÃ¡ÂºÂ­p lÃ¡ÂºÂ¡i');
             $this->load->view($this->_container,$data);
             }
         		}//so sanh ma hang hien tai
@@ -388,7 +389,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','MÃ£ sáº£n pháº©m Ä‘Ã£ tá»“n táº¡i, má»�i nháº­p láº¡i');
+            flashMsg('error','MÃƒÂ£ sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m Ã„â€˜ÃƒÂ£ tÃ¡Â»â€œn tÃ¡ÂºÂ¡i, mÃ¡Â»ï¿½i nhÃ¡ÂºÂ­p lÃ¡ÂºÂ¡i');
             $this->load->view($this->_container,$data);
         	}
        	
@@ -430,7 +431,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Báº¡n pháº£i nháº­p mÃ£ hÃ ng');
+            flashMsg('error','BÃ¡ÂºÂ¡n phÃ¡ÂºÂ£i nhÃ¡ÂºÂ­p mÃƒÂ£ hÃƒÂ ng');
             $this->load->view($this->_container,$data);
         }
         
@@ -469,7 +470,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','Má»�i báº¡n nháº­p sá»‘ lÆ°á»£ng sáº£n pháº©m');
+            flashMsg('notice','MÃ¡Â»ï¿½i bÃ¡ÂºÂ¡n nhÃ¡ÂºÂ­p sÃ¡Â»â€˜ lÃ†Â°Ã¡Â»Â£ng sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m');
             $this->load->view($this->_container,$data);
         }
     }
