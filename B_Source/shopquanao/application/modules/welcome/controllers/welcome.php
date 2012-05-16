@@ -727,7 +727,7 @@ class Welcome extends Shop_Controller
             $fullproduct = $this->MKaimonokago->getInfo($module, $productid);
             //$fullproduct = $this->MProducts->getProduct($productid);
             $this->MOrders->updateCart($productid,$fullproduct);
-            $this->index();
+            
         }
         else
         {

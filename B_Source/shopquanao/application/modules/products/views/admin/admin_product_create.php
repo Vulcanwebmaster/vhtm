@@ -15,36 +15,12 @@ echo "</td></tr>\n";
 			<strong>Kho: </strong>
 		</td>
 		<td>
-			<?php echo $kho->kho_name;?>
-			<input name="kho1" id="kho1" style="" value="0" type="text" />
+			<span style="width:50px; float:left; padding-top:2px"><?php echo $kho->kho_name;?></span>
+			<input name="kho1" id="kho1" style="float:left" value="0" type="text" />
 		</td>
 	</tr>
 <?php }?>
-<!-- tr>
-	<td>
-		<strong>Kho: </strong>
-	</td>
-	<td>
-		Kho 1
-		<input name="kho1" id="kho1" style="" value="0" type="text" />
-	</td>
-</tr>
-<tr>
-	<td>
-	</td>
-	<td>
-		Kho 2
-		<input name="kho2" id="kho2" style="" value="0" type="text" />
-	</td>
-</tr>
-<tr>
-	<td>
-	</td>
-	<td>
-		Kho 3
-		<input name="kho3" id="kho3" style="" value="0" type="text" />
-	</td>
-</tr-->
+
 <?php
 echo "<tr><td class='label'><label for='pname'>".'*'.'Tên hàng:'."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text');

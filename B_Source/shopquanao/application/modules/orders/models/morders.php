@@ -107,10 +107,15 @@ class MOrders extends CI_Model
             $_SESSION['totalprice'] = $totalprice;
             $_SESSION['cart'] = $cart;
             $msg = lang('orders_added_cart');
-            $this->session->set_flashdata('conf_msg', $msg); 
-            echo '<script language=javascript>
+            
+            $this->load->library('session');
+            $a=array('added'=>'1');
+            $this->session->set_userdata($a);            
+            redirect(base_url().'/index.php/chitietsp/get_inf/'.$productid,'refresh'); 
+            /*echo '<script language=javascript>
             	alert("Succesful");
-            </script>';
+            </script>';*/
+            
         }	
     }
 

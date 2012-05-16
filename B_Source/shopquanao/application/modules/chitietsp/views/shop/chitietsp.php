@@ -1,97 +1,11 @@
-<script type="text/javascript">
 
-    //<![CDATA[
-
-        var productAddToCartForm = new VarienForm('product_addtocart_form');
-
-        productAddToCartForm.submit = function(button, url) {
-
-            if (this.validator.validate()) {
-
-                var form = this.form;
-
-                var oldUrl = form.action;
-
-
-
-                if (url) {
-
-                   form.action = url;
-
-                }
-
-                var e = null;
-
-                try {
-
-                    this.form.submit();
-
-                } catch (e) {
-
-                }
-
-                this.form.action = oldUrl;
-
-                if (e) {
-
-                    throw e;
-
-                }
-
-
-
-                if (button && button != 'undefined') {
-
-                    button.disabled = true;
-
-                }
-
-            }
-
-        }.bind(productAddToCartForm);
-
-
-
-        productAddToCartForm.submitLight = function(button, url){
-
-            if(this.validator) {
-
-                var nv = Validation.methods;
-
-                delete Validation.methods['required-entry'];
-
-                delete Validation.methods['validate-one-required'];
-
-                delete Validation.methods['validate-one-required-by-name'];
-
-                if (this.validator.validate()) {
-
-                    if (url) {
-
-                        this.form.action = url;
-
-                    }
-
-                    this.form.submit();
-
-                }
-
-                Object.extend(Validation.methods, nv);
-
-            }
-
-        }.bind(productAddToCartForm);
-
-    //]]>
-
-    </script>
 
 
 <div class="main-container col2-right-layout">
     <div class="main">
         <div class="breadcrumbs">
             <ul>
-                <li class="home"><a href="<?php echo base_url();?>" title="TÃ¡Â»â€ºi trang chÃ¡Â»Â§">Trang chủ</a>
+                <li class="home"><a href="<?php echo base_url();?>" title="Tới trang chủ">Trang chủ</a>
                     <span>/ </span></li>
                 <li class="category53"><strong style="color:#E67817">Chi tiết sản phẩm</strong> </li>
             </ul>
@@ -115,6 +29,13 @@
                                     <div class="product-shop">
                                         <div class="product-name" >
                                             <h1 style="padding:3px 0 3px 10px;color:orange;background-color:#595959; border:solid 1px black; border-radius:5px"><?php echo $inf->name;?></h1>
+                                            <?php $this->load->library('session');
+                                            	if ($this->session->userdata('added'))
+                                            	{
+                                            		echo '<p style="padding-top:10px; color:orange">Đã thêm vào giỏ hàng thành công</p>';
+                                            		$this->session->unset_userdata('added');
+                                            	}
+                                            ?>
                                         </div>
                                                                               
                                         <p class="availability in-stock" style="text-transform:uppercase; padding:0 0 5px 0">
@@ -210,16 +131,16 @@
             <div class="col-right sidebar" style="padding:30px 10px 0 45px; background-image:url('<?php echo base_url();?>assets/women_files/right-bg.png'); background-repeat:repeat-y">
                 <div class="block block-cart">
                     <div class="block-title">
-                        <strong><span>shopping cart</span></strong>
+                        <strong><span>Giỏ hàng</span></strong>
                     </div>
                     <div class="block-content">
                         <p class="empty">
-                            You have no items in your shopping cart.</p>
+                            Không có mặt hàng nào trong giỏ của bạn</p>
                     </div>
                 </div>
                 <div class="block block-list block-viewed">
                     <div class="block-title">
-                        <strong><span>Sản phẩm tương tự</span></strong>
+                        <strong><span>Sản phẩm liên quan</span></strong>
                     </div>
                     <div class="block-content">
                     	<ul>

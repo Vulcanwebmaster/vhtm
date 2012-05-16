@@ -7,89 +7,43 @@ if($product['lang_id']=='0' AND $multilang){
 
 echo form_open_multipart('products/admin/edit/'.$product['id']);
 
-echo "\n<table id='preference_form'><tr><td class='label'><label for='category'>".'Loại sản phẩm:'."</label></td>\n";
+echo "\n<table id='preference_form'><tr><td class='label'><label for='category'>".'Loáº¡i sáº£n pháº©m:'."</label></td>\n";
 echo "<td>";
 echo form_dropdown('category_id',$categories,$product['category_id']);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='pname'>".'*'.'Tên hàng:'."</label></td>\n";
+echo "<tr><td class='label'><label for='pname'>".'*'.'TÃªn hÃ ng:'."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text','value'=>$product['name'] );
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='mahang'>".'*'.'Mã hàng:'."</label></td>\n";
+echo "<tr><td class='label'><label for='mahang'>".'*'.'MÃ£ hÃ ng:'."</label></td>\n";
 $data = array('name'=>'code','id'=>'code','class'=>'text','value'=>$product['code']);
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
-	foreach ($giatrikho as $key => $list)
-	{	
-		if($list['kho_id']==1)
-		{
-
 ?>
-<tr>
-	<td>
-		<strong>Kho:</strong> 
-	</td>
-	<td>
-		Kho 1
-		<input name="kho1" id="kho1" style="" type="text" 
-		value="<?php
-				  echo $list['total'];
-				  //else echo '0';
-		 	   ?>" />
-	</td>
-</tr>
-<?php }
-
-	if($list['kho_id']==2)
-	{
-?>
-<tr>
-	<td>
-	</td>
-	<td>
-		Kho 2
-		<input name="kho2" id="kho2" style="" type="text" 
-		value="<?php
-				  echo $list['total'];
-				  //else echo '0';
-		 	   ?>" />
-	</td>
-</tr>
-
-<?php }
-
-	if($list['kho_id']==3)
-	{
-?>
-<tr>
-	<td>
-	</td>
-	<td>
-		Kho 3
-		<input name="kho3" id="kho3" style="" type="text" 
-		value="<?php
-				  echo $list['total'];
-				  //else echo '0';
-		 	   ?>"/>
-	</td>
-</tr>
-
-<?php
-	}
-
-	}//end
-	
-echo "<tr><td class='label'><label for='short'>".'Mô tả sản phầm:'."</label></td>\n";
+<?php foreach($listkho as $kho)
+{?>
+	<tr>
+		<td>
+			<strong>Kho: </strong>
+		</td>
+		<td>
+			<span style="width:50px; float:left; padding-top:2px"><?php echo $kho->kho_name;?></span>
+			<input name="kho1" id="kho1" style="float:left" value="0" type="text" />
+		</td>
+	</tr>
+<?php }?>
+<?php 	
+echo "<tr><td class='label'><label for='short'>".'MÃ´ táº£ sáº£n pháº§m:'."</label></td>\n";
 $data = array('name'=>'shortdesc','id'=>'short','class'=>'text','value'=>$product['shortdesc']);
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='long'>".'Mô tả chi tiết sản phẩm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='long'>".'MÃ´ táº£ chi tiáº¿t sáº£n pháº©m:'."</label></td>\n";
 $data = array('name'=>'longdesc','id'=>'long','rows'=>'10', 'cols'=>'80','value'=>$product['longdesc']);
 echo "<td id='nopad' >";
 echo form_textarea($data) ;
@@ -97,37 +51,37 @@ echo "</td></tr>\n";
 
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='uimage'>".'Chọn ảnh sản phẩm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='uimage'>".'Chá»�n áº£nh sáº£n pháº©m:'."</label></td>\n";
 $data = array('name'=>'image','id'=>'uimage','rows'=>'10', 'cols'=>'80','value'=>$product['image']);
 echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='uthumb'>".'Chọn thumnail sản phẩm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='uthumb'>".'Chá»�n thumnail sáº£n pháº©m:'."</label></td>\n";
 $data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80','value'=>$product['thumbnail']);
 echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='status'>".'Trạng thái:'."</label></td>\n";
+echo "<tr><td class='label'><label for='status'>".'Tráº¡ng thÃ¡i:'."</label></td>\n";
 $options = array('active' => 'active', 'inactive' => 'inactive');
 echo "<td>";
 echo form_dropdown('status',$options,$product['status']);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='price'>".'Giá tiền:'."</label></td>\n";
+echo "<tr><td class='label'><label for='price'>".'GiÃ¡ tiá»�n:'."</label></td>\n";
 $data = array('name'=>'price','id'=>'price','class'=>'text','value'=>$product['price']);
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='featured'>".'Đặc điểm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='featured'>".'Ä�áº·c Ä‘iá»ƒm:'."</label></td>\n";
 $options = array('none' => 'none', 'quicksand' => 'Quicksand');// you can add more here as you wish
 echo "<td>";
 echo form_dropdown('featured',$options,$product['featured']);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='other_feature'>".'Đặc điểm khác:'."</label></td>\n";
+echo "<tr><td class='label'><label for='other_feature'>".'Ä�áº·c Ä‘iá»ƒm khÃ¡c:'."</label></td>\n";
 $options = array('none' => 'none', 'most sold' => 'Most sold', 'new product' => 'New Product');
 echo "<td>";
 echo form_dropdown('other_feature',$options,$product['other_feature']);

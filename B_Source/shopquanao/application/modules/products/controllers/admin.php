@@ -63,7 +63,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quáº£n lÃ½ sáº£n pháº©m theo kho";
+        $data['title'] = "Quản lý sản phẩm theo kho";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
@@ -250,6 +250,7 @@ class Admin extends Shop_Admin_Controller
 
     function edit($id=0)
     {
+    	$data['listkho']=$this->MKaimonokago->getListKho();
         // we are using TinyMCE in edit as well
         $this->bep_assets->load_asset_group('TINYMCE');
         $multilang = $this->preference->item('multi_language');
@@ -409,6 +410,7 @@ class Admin extends Shop_Admin_Controller
             $data['translanguages'] =$this->MLangs->getTransLang($this->module,$table_id);
             $data['module']=$this->module;
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_edit";
+            $data['listkho']=$this->MKaimonokago->getListKho();
             $product = $this->MKaimonokago->getInfo($this->module, $id);
             $data['product'] = $product;
             // get categories by lang
