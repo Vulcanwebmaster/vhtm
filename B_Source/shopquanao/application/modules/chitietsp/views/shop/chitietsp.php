@@ -113,13 +113,11 @@
                                 <div class="product-essential">                                
 							                                
                                     <div class="product-shop">
-                                        <div class="product-name">
-                                            <h1 style="color:#E67817;border-bottom:solid 2px black"><?php echo $inf->name;?></h1>
+                                        <div class="product-name" >
+                                            <h1 style="padding:3px 0 3px 10px;color:orange;background-color:#595959; border:solid 1px black; border-radius:5px"><?php echo $inf->name;?></h1>
                                         </div>
-                                        <p class="email-friend" style="background-color:#595959; border:solid 1px black; border-radius:5px">
-                                            <a href="#" style="color:orange">
-                                                Gửi mail tới bạn bè¨</a></p>                                        
-                                        <p class="availability in-stock" style="text-transform:uppercase; padding:10px 0 5px 0">
+                                                                              
+                                        <p class="availability in-stock" style="text-transform:uppercase; padding:0 0 5px 0">
                                             Tình trạng: 
                                             
                                             <ul style="font-size: 12px; font-style: italic; margin-bottom: 20px; padding-left:20px">
@@ -228,12 +226,12 @@
                     		<?php 
                     			foreach($other as $item) {
                     				echo '<li>';
-                    				echo '<a href="" title=""
-                                                            class="product-image">
-                                                            <img src="'.$this->MKaimonokago->get_link_image($item->image).'"
+                    				echo '<a href="'.base_url().'index.php/chitietsp/get_inf/'.$item->id.'" title=""
+                                                            class="product-image" style="margin-bottom:10px">                                                            
+                                                            <img style="margin-bottom:10px" src="'.$this->MKaimonokago->get_link_image($item->image).'"
                                                                 width="199" height="199" alt=""></a>';
                     				echo '<h3 class="product-name">
-                                                            <a href="#" title="">'.$item->name.'
+                                                            <a href="'.base_url().'index.php/chitietsp/get_inf/'.$item->id.'" title="">'.$item->name.'
                                                                 </a></h3>';
                     				
                     				echo '</li>';
