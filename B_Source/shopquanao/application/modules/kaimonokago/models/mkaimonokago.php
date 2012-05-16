@@ -453,6 +453,19 @@ class MKaimonokago extends Base_model
     	}
     	else return $price;
     }
+    
+    function getListKho()
+    {
+    	$this->load->database();
+    	$ds=$this->db->get('shop_kho');
+    	$list=array();
+    	foreach($ds->result() as $kho)
+    	{
+    		$list[]=$kho;
+    	}
+    	$ds->free_result();
+    	return $list;
+    }
 }
 
 ?>

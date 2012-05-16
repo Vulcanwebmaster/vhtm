@@ -63,7 +63,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quản lý sản phẩm theo kho";
+        $data['title'] = "Quáº£n lÃ½ sáº£n pháº©m theo kho";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
@@ -94,7 +94,7 @@ class Admin extends Shop_Admin_Controller
     
     function sortKho($kho_id = 100)
     {
-    	$data['title'] = "Quản lý sản phẩm theo kho";    	
+    	$data['title'] = "Quáº£n lÃ½ sáº£n pháº©m theo kho";    	
         //$data['id']=$this->input->post('giatrikho');   
     	//Author tienlx: pagination reviews
     	
@@ -178,13 +178,13 @@ class Admin extends Shop_Admin_Controller
        		}            
           
             // we are using Bep function for flash msg
-            flashMsg('success','Sản phẩm đã được tạo');
+            flashMsg('success','Sáº£n pháº©m Ä‘Ã£ Ä‘Æ°á»£c táº¡o');
             redirect($this->module.'/admin/index','refresh');
             }//end check
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "Tên sản phẩm";
+            $data['title'] = "TÃªn sáº£n pháº©m";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -197,7 +197,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Chưa nhập tên mặt hàng');
+            flashMsg('error','ChÆ°a nháº­p tÃªn máº·t hÃ ng');
             $this->load->view($this->_container,$data);	
             }
   
@@ -206,7 +206,7 @@ class Admin extends Shop_Admin_Controller
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "Tạo sản phẩm";
+            $data['title'] = "Táº¡o sáº£n pháº©m";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -219,7 +219,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Chưa nhập mã hàng');
+            flashMsg('error','ChÆ°a nháº­p mÃ£ hÃ ng');
             $this->load->view($this->_container,$data);
             }
         }
@@ -238,6 +238,7 @@ class Admin extends Shop_Admin_Controller
             $this->bep_site->set_crumb($this->lang->line('kago_create'),$this->module.'/admin/create');
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
+            $data['listkho']=$this->MKaimonokago->getListKho();
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
             flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
@@ -323,7 +324,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Mã sản phẩm đã tồn tại, mời nhập lại');
+            flashMsg('error','MÃ£ sáº£n pháº©m Ä‘Ã£ tá»“n táº¡i, má»�i nháº­p láº¡i');
             $this->load->view($this->_container,$data);
             }
         		}//so sanh ma hang hien tai
@@ -386,7 +387,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Mã sản phẩm đã tồn tại, mời nhập lại');
+            flashMsg('error','MÃ£ sáº£n pháº©m Ä‘Ã£ tá»“n táº¡i, má»�i nháº­p láº¡i');
             $this->load->view($this->_container,$data);
         	}
        	
@@ -427,7 +428,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','Bạn phải nhập mã hàng');
+            flashMsg('error','Báº¡n pháº£i nháº­p mÃ£ hÃ ng');
             $this->load->view($this->_container,$data);
         }
         
@@ -466,7 +467,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
+            flashMsg('notice','Má»�i báº¡n nháº­p sá»‘ lÆ°á»£ng sáº£n pháº©m');
             $this->load->view($this->_container,$data);
         }
     }

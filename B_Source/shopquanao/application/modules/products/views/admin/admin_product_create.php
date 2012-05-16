@@ -7,7 +7,20 @@ echo "<td>";
 echo form_dropdown('category_id',$categories);
 echo "</td></tr>\n";
 ?>
-<tr>
+
+<?php foreach($listkho as $kho)
+{?>
+	<tr>
+		<td>
+			<strong>Kho: </strong>
+		</td>
+		<td>
+			<?php echo $kho->kho_name;?>
+			<input name="kho1" id="kho1" style="" value="0" type="text" />
+		</td>
+	</tr>
+<?php }?>
+<!-- tr>
 	<td>
 		<strong>Kho: </strong>
 	</td>
@@ -31,7 +44,7 @@ echo "</td></tr>\n";
 		Kho 3
 		<input name="kho3" id="kho3" style="" value="0" type="text" />
 	</td>
-</tr>
+</tr-->
 <?php
 echo "<tr><td class='label'><label for='pname'>".'*'.'Tên hàng:'."</label></td>\n";
 $data = array('name'=>'name','id'=>'pname','class'=>'text');
@@ -95,7 +108,7 @@ echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='uthumb'>".'Chọn thumnail sản phầm:'."</label></td>\n";
+echo "<tr><td class='label'><label for='uthumb'>".'Chọn thumnail sản phẩm:'."</label></td>\n";
 $data = array('name'=>'thumbnail','id'=>'uthumb','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data);
