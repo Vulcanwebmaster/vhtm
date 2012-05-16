@@ -18,6 +18,7 @@ class Admin extends Shop_Admin_Controller
         //$this->module='products';
         // Set breadcrumb
         $this->bep_site->set_crumb($this->lang->line('backendpro_products'),$this->module.'/admin');
+        $data['listkho']=$this->MKaimonokago->getListKho();
     }
 
 
