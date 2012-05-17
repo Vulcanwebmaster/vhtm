@@ -12,6 +12,21 @@
           $data['chuyenmuc'] = $this->tintuc->getAllChuyenmuc();
           $data['tieudiem'] = $this->tintuc->getTieudiem();
           $this->_templates['page'] = 'site/tintuc/index';
+      	  $temp = $this->session->userdata("ngonngu");
+			if ($temp==2)
+			{
+					$this->lang->load('eng','english');
+					$this->session->set_userdata("ngonngu",2);				
+			}
+			else if ($temp==1)
+			{
+					$this->lang->load('vn', 'vn');
+					$this->session->set_userdata("ngonngu",1);
+			}
+			else 
+			{
+				$this->lang->load('vn', 'vn');
+			}
           $this->site_library->load($this->_templates['page'],$data,'tintuc');
       }
       

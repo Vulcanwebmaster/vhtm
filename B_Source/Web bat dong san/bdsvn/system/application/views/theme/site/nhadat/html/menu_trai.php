@@ -136,7 +136,39 @@ $totalvisit = str_replace($array_number,$array_img,$totalvisit);
                             }
                         </style>
                         
-
+<!-- Language -->
+                    	<script type="text/javascript">
+                    		$(document).ready(function(){
+                    			$('#langselector').mouseup(function(){
+										if (langselector.value==2)
+											langicon.src='<?php echo base_url();?>images/language/ENG.png';
+										if (langselector.value==1)
+										    langicon.src='<?php echo base_url();?>images/language/vietnam.jpg';
+										else
+										    langicon.src='';
+								});
+                    		});
+                    	</script>
+                    	<?php echo form_open(base_url())?> 
+                    	<fieldset style="width:183px; height:20px; background-color:#f8f8f8; padding-top:2px">
+                    	<img width="20px" height="100%" id="langicon" src=""/>
+                        <select id="langselector" name="langselector" style="width:120px;height:100%;border:solid 1px red; background-color:#f8f8f8">
+							<option value="0">Chọn ngôn ngữ:</option>	                                                    
+                            <option value="1">VNI</option>
+                            <option value="2">ENG</option>
+                        </select>
+                        <input style="width:30px;height:100%" type="submit" value='OK' />
+						</fieldset>
+						<?php form_close();?>
+						
+						
+						
+						
+						
+						
+						
+						
+						
 <script type="text/javascript">
 function submitform(fromName)
 {
@@ -153,6 +185,7 @@ function submitform(fromName)
                                 <div class="silverheader">
                                 	<input style="display:none" name="nhucau" id="nhucau" value="4"/>
                                 	<input style="display:none" name="chuyenmuc" id="chuyenmuc" value="19"/>
+                                	<input style="display:none" name="dacbiet" id="dacbiet" value="1"/>
                                     <a class="tab" style="height: 30px" href="javascript:submitform('myform')">Cho thuê nhà xưởng</a>
                                 </div>
                                 <div class="submenu">
@@ -164,6 +197,7 @@ function submitform(fromName)
                                 <div class="silverheader">
                                 	<input style="display:none" name="nhucau" id="nhucau" value="1"/>
                                 	<input style="display:none" name="chuyenmuc" id="chuyenmuc" value="19"/>
+                                	<input style="display:none" name="dacbiet" id="dacbiet" value="2"/>
                                      <a class="tab" href="javascript:submitform('myform2')" style="height: 30px">Bán nhà xưởng</a>
 								</div>
                                 <div class="submenu">
@@ -172,6 +206,7 @@ function submitform(fromName)
 <form name="myform3" method="post" action="<?php echo base_url();?>nhadat/timkiem">
                                 <div class="silverheader">
                                 	<input style="display:none" name="nhucau" id="nhucau" value="5"/>
+                                	<input style="display:none" name="dacbiet" id="dacbiet" value="3"/>
                                     <a class="tab" href="javascript:submitform('myform3')" style="height: 30px">Hợp tác kinh doanh</a></div>
                                 <div class="submenu">
                                 </div>
@@ -180,6 +215,7 @@ function submitform(fromName)
                                 <div class="silverheader">
                                 <input style="display:none" name="nhucau" id="nhucau" value="4"/>
 								<input style="display:none" name="chuyenmuc" id="chuyenmuc" value="11"/>
+								<input style="display:none" name="dacbiet" id="dacbiet" value="4"/>
                                     <a class="tab" href="javascript:submitform('myform4')" style="height: 28px">Cho thuê đất</a></div>
                                 <div class="submenu">
                                 </div>
@@ -187,6 +223,7 @@ function submitform(fromName)
 <form name="myform5" method="post" action="<?php echo base_url();?>nhadat/timkiem">
                                 <div class="silverheader">
                                 <input style="display:none" name="nhucau" id="nhucau" value="2"/>
+                                <input style="display:none" name="dacbiet" id="dacbiet" value="5"/>
                                     <a class="tab" href="javascript:submitform('myform5')" style="height: 28px">Mua</a></div>
                                 <div class="submenu">
                                     

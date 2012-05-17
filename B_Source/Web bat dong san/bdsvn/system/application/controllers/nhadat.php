@@ -29,24 +29,65 @@
 			$data['chungcu'] = $this->nhadat->getchungcuvip();
 			$data['muaban'] = $this->nhadat->getmuaban();
 			$data['chothue'] = $this->nhadat->getchothue();
-          
-          
+			
+			//config language
+			$data['language'] = (int)$this->input->post('langselector');
+			if ($data['language'] != $this->session->userdata("ngonngu")){
+				
+				$this->session->unset_userdata("ngonngu");
+				$this->session->set_userdata("ngonngu",$data['language']);
+			}
+			$temp = $this->session->userdata("ngonngu");
+
+			if ($temp==2)
+			{
+					$this->lang->load('eng','english');
+					$this->session->set_userdata("ngonngu",2);			
+			}
+			else if ($temp==1)
+			{
+					$this->lang->load('vn', 'vn');
+					$this->session->set_userdata("ngonngu",1);
+			}
+			else 
+			{
+				$this->lang->load('vn', 'vn');
+			}	
 			$this->_templates['page'] = 'site/nhadat/index';
 			$this->site_library->load($this->_templates['page'],$data);
           
       }
 /**
+ * Ngon ngu
+ */      
+      function changeLanguage($language){
+      	
+      }
+/**
 * Tìm kiem
 */
       function timkiem(){
-			$data['title'] = "THUÊ NHÀ XƯỞNG - TÌM KIẾM";      		
-			$data['sectionid'] = (int)$this->input->post('sectionid');
+			      		
+			$data['sectionid'] = (int)$this->input->post('chuyenmuc');
 			$data['nhucau'] = (int)$this->input->post('nhucau');
-			$data['giatu'] = (int)$this->input->post('giatu');
-			$data['giaden'] = (int)$this->input->post('giaden');
+			//$data['giatu'] = (int)$this->input->post('giatu');
+			//$data['giaden'] = (int)$this->input->post('giaden');
 			$data['id_thanhpho'] = (int)$this->input->post('id_thanhpho');
 			$data['idhuong'] = (int)$this->input->post('idhuong');
-			
+			$data['dacbiet'] = (int)$this->input->post('dacbiet');
+			if ($data['dacbiet'] == 1)
+				$data['tieudetimkiem']="CHO THUÊ NHÀ XƯỞNG";
+			else if ($data['dacbiet'] == 2)
+				$data['tieudetimkiem']="BÁN NHÀ XƯỞNG";
+			else if ($data['dacbiet'] == 3)
+				$data['tieudetimkiem']="HỢP TÁC KINH DOANH";
+			else if ($data['dacbiet'] == 4)
+				$data['tieudetimkiem']="CHO THUÊ ĐẤT";
+			else if ($data['dacbiet'] == 5)
+				$data['tieudetimkiem']="MUA";				
+			else
+				$data['tieudetimkiem']="KẾT QUẢ TÌM KIẾM";
+			$data['title'] = "THUÊ NHÀ XƯỞNG - ".$data['tieudetimkiem'];				
 			$config['base_url'] = base_url().'/'."nhadat/timkiem";
 			$config['total_rows']   =  $this->nhadat->getNumTimkiem();
 			$config['per_page']= '10';

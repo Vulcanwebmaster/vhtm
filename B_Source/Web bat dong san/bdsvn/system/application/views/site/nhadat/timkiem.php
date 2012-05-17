@@ -51,11 +51,10 @@
 
 </head>
 <body>
+
 	<?=$this->load->view('theme/site/nhadat/html/quangcao2ben')?>
     <div style="width:1000px; margin:auto">
  			<?=$this->load->view('theme/site/nhadat/html/banner')?>
-        <div class="gap2">
-        </div>
         <!-- CỘT TRÁI-->
         <div class="nav-left">
         	<?=$this->load->view('theme/site/nhadat/html/menu_trai')?>
@@ -63,28 +62,15 @@
         <div class="nav-right">
         <div id="home-center">
 		
-			<div id="slogan-container" style="height:50px;">
-                <img id="slogan" alt="" src="<?php echo base_url();?>images/slogan.png"/>
-            </div>
 
-            <div id="duannoibat" style="border-bottom-style: inset; border-bottom-width: 1px; border-bottom-color: #EAFFFF">
-				<?=$this->load->view('theme/site/nhadat/html/content_du_an_nb')?>
-            </div>
-		
-<div id="top-center" style="margin-bottom: 20px">
-	<div id="search-box">		
-		<?=$this->load->view('theme/site/nhadat/html/boxtimkiem')?>
-	</div>
-	<div id="hot24-box">
-		<?=$this->load->view('theme/site/nhadat/html/tinhot')?>
-	</div>
-</div>
 
+
+ 
 <br />
-<div id="main-center" style="margin-top: 10px;  float:left; width:560px">
+<div id="main-center" style="margin-top: 10px;  float:left; width:710px">
 <!--*************** AD BANNER *****************-->
  <div class="box">
-    <div class="title">KẾT QUẢ TÌM KIẾM</div>
+    <div class="title"><?php echo $tieudetimkiem;?></div>
     <?if(count($list) >0){?>
     <?
     $k=0;
@@ -108,7 +94,7 @@
 					</div>
 				</div>                
 				<div class="pcontent">                          
-					<?=$this->string_library->catchu($rs->noidung,60)?> 
+					<?=$this->string_library->catchu($rs->noidung,300)?> 
 				</div>
 			</div>
                 <div>

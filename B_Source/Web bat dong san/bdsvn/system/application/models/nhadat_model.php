@@ -138,7 +138,6 @@
          //$giaden = (int)$this->input->post('giaden');
          $id_thanhpho = (int)$this->input->post('id_thanhpho');
          $idhuong = (int)$this->input->post('idhuong');
-         echo $sectionid;
          if($sectionid!=0){
              $this->db->where('parentid',$sectionid);
          }

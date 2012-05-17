@@ -32,7 +32,6 @@
           }
       }
       function uploadpop(){
-      	echo $_FILES['file']['tmp_name']; die();
          $size=filesize($_FILES['file']['tmp_name']); 
           if($size > 0){
 				

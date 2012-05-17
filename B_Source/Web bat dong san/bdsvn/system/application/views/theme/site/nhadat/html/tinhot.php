@@ -19,7 +19,7 @@ $list5 = $query->result();
 		<p style="width:98%"><?php echo $rs->noidungngan;?></p>
 	<?endforeach;?>
 </div>
-	<marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="1" behavior="scroll" direction="up" style="width:98%; border-top:1px solid red;border-bottom:1px solid red; ">            
+	<marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="1" behavior="scroll" direction="up" style="width:98%; height: 180px;border-top:1px solid red;border-bottom:1px solid red; ">            
 		<ul style="width:100%">
 		<?foreach($list5 as $rs):?>		                	
                 <li style="color: blue;width:100%"><?=anchor('tintuc/chi-tiet/'.$rs->idcat.'/'.$rs->id.'/'.$rs->alias.duoi(),$rs->tieude)?></li>
