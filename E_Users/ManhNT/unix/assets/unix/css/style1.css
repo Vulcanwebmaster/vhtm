@@ -1,0 +1,50 @@
+@CHARSET "ISO-8859-1";
+
+body{margin:0; font-family:Tahoma}
+/*=============== BEGIN HEADER =====================================*/
+#top-bar{height:10px; background-color:black}
+#header-main{height:100px; background-image:url('../images/header-bg.png')}
+#head-content{width: 1000px; margin:auto;}
+#head-content img{padding-top:10px; float:left}
+#menu{background-image:url('../images/menuitem-bg3.png'); background-repeat:repeat-x; height:50px; padding-top:10px; font-family:Tahoma}
+.menuitem{width:auto; padding:10px; height:55px; float:left; font-size:13px; text-transform:uppercase; color:#2b2b2b}
+/*=============== END HEADER =====================================*/
+
+
+/*====================== BEGIN SLIDE ===============================*/
+#slide-container{height:375px; background-image:url('../images/slide-bg.jpg')}
+#slider{margin:auto; width:1000px; text-align:center}
+/*====================== END SLIDE ===============================*/
+
+/*====================== BEGIN BODY ===============================*/
+#main{width:1000px; margin:auto}
+.field-center{width:400px; float:left}
+.field-center .field-image-panel{height:200px; background-image:url('../images/img-bg.png'); text-align:center}
+.field-content-panel{height:150px; background-image:url('../images/content-bg.png')}
+.field-content-panel p{margin-top:0;text-align:justify; font-size:12px; color:#626262; line-height:20px; padding:10px 50px}
+.field-content-panel p a{color:blue}
+.field-content-panel h4{margin-bottom:0px; text-transform:uppercase; color:#626262; text-align:center; padding-top:10px}
+
+.field-left{width:300px; float:left}
+.field-left .field-image-panel{text-align:right;height:200px; background-image:url('../images/img-bg-left.png')}
+
+.field-right{width:300px; float:left}
+.field-right .field-image-panel{text-align:left;height:200px; background-image:url('../images/img-bg-right.png')}
+
+#mainbottom{height:230px; background-image:url('../images/image-video-panel.png'); clear:both}
+
+#bottom-left{float:left; width:660px}
+#bottom-right{float:right}
+
+#detail-panel{width:1050px; margin:auto; background:url('../images/daixanh.png') no-repeat; height:130px; padding:10px 0}
+.detail{float:left; color:white; width:45%}
+.detail p{text-align:justify; font-size:12px; padding:0 20px}
+.detail h4{text-align:center; text-transform:uppercase; font-weight:bold; padding:5px 0}
+/*====================== END BODY ===============================*/
+
+/*====================== START FOOTER ===============================*/
+#footer{height:50px; margin:auto; background-color:#025878}
+#menufooter a{float:left; color:#37bbed; padding:5px; font-size:11px}
+#menufooter span{float:left}
+#footer-content{width:1000px; margin:auto}
+/*====================== END FOOTER ===============================*/
