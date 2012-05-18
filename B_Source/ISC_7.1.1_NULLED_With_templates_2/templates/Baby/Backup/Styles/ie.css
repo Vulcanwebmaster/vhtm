@@ -1,0 +1,51 @@
+/** IE 67 Specific Fixes **/
+* html .Left {
+	margin-left: 5px;
+}
+
+* html .Right {
+	margin-right: 5px;
+}
+* html .Content, * html .Left, * html .Right {
+	height: 600px; /* Compensates for no min-height */
+}
+
+* html .Content {
+	margin: 0;
+}
+* html .Content.Widest {
+	margin: 0 0 0 20px;
+}
+
+* html #Menu li a {
+	padding: 9px 0 8px 12px;
+}
+
+* html #Container {
+	width : 987px;
+}
+
+* html #Header {
+	width : 987px;
+}
+
+* html .Right .TopSellers li.TopSeller1 .TopSellerNumber {
+	background: url(../../Baby/images/pastel/TopSellerNumber1Bg.gif) 0 0 no-repeat;
+	margin: -3px 2px 0 0;
+	padding: 2px 2px 0 0;
+}
+
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+/** General IE Fixes **/
+.Content .FeedLink {
+	margin: 0 4px 0 0;
+}
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+select, input {
+	font-size: 0.95em;
+}
