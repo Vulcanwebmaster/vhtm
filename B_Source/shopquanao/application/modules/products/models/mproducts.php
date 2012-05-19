@@ -59,35 +59,12 @@ class MProducts extends CI_Model
     
     function addSanphamkho($kho,$id,$total)
     {
-    
-    	if($kho==1)
-    	{
-    		$data = array(
-    		'kho_id'	  => 1,
-        	'id'          => $id,
-        	'total'    	  => $total
+    	$data = array(
+	    	'kho_id'	  => $kho,
+	        'id'          => $id,
+	        'total'    	  => $total
     		);   		
-    		$this->db->insert('shop_sanphamkho',$data);
-    	}
-    	if($kho==2)
-    	{
-    		$data = array(
-    		'kho_id'	  => 2,
-        	'id'          => $id,
-        	'total'    	  => $total
-    		);   		
-    		$this->db->insert('shop_sanphamkho',$data);
-    	}
-    	if($kho==3)
-    	{
-    		$data = array(
-    		'kho_id'	  => 3,
-        	'id'          => $id,
-        	'total'    	  => $total
-    		);   		
-    		$this->db->insert('shop_sanphamkho',$data);
-    	}  
-    		   	
+    	$this->db->insert('shop_sanphamkho',$data);	   	
     }
     
 	function updateSanphamkho($kho,$id,$total)

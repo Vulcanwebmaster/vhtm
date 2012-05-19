@@ -5,7 +5,8 @@ if (count($categories))
     echo "<thead>\n<tr valign='top'>\n";
     echo "<th>".$this->lang->line('kago_id')."</th>\n<th>".$this->lang->line('kago_name').
         "</th><th>".$this->lang->line('kago_status')."</th>".
-        "</th><th>".$this->lang->line('kago_actions')."</th>\n";
+        "<th>".$this->lang->line('kago_actions')."</th>".
+    	"<th>"."Hiển thị"."</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($categories as $key => $list)
     {
@@ -31,6 +32,12 @@ if (count($categories))
                 //echo " | ";
                 echo anchor($module.'/admin/delete/'.$list['id'],$this->bep_assets->icon('delete'), array('class' => 'delete_link',"onclick"=>"return confirmSubmit('".$list['name']."')"));
             }
+            echo "</td>\n";
+            echo "<td align='center'>";
+            if ($list['is_display_in_menu']=='0')
+            	echo 'Không';
+            else 
+            	echo 'Có';
             echo "</td>\n";
             echo "</tr>\n";
         }
