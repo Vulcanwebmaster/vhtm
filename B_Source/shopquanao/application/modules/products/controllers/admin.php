@@ -14,6 +14,7 @@ class Admin extends Shop_Admin_Controller
         $this->load->model('category/MCats');
         // load the MProducts model
         $this->load->model('MProducts');
+        $this->load->model('shop_kho/MKho');
         $this->module=basename(dirname(dirname(__FILE__)));
         //$this->module='products';
         // Set breadcrumb
@@ -26,7 +27,7 @@ class Admin extends Shop_Admin_Controller
     {
         $data = $this->common_home();
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_home";
-
+		$data['warehouse'] = $this->MKho->getKho();
         $this->load->view($this->_container,$data);
     }
   
@@ -64,7 +65,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         // Setting variables
-        $data['title'] = "Quáº£n lÃ½ sáº£n pháº©m theo kho";
+        $data['title'] = "Quản lý sản phẩm theo kho";
         //$data['products'] = $this->MProducts->getAllProducts();
         // hard to use $this->MKaimonokago->getAll($this->module,$fields, $orderby); for products
         $order= 'lang_id,order';
@@ -95,7 +96,7 @@ class Admin extends Shop_Admin_Controller
     
     function sortKho($kho_id = 100)
     {
-    	$data['title'] = "QuÃ¡ÂºÂ£n lÃƒÂ½ sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m theo kho";    	
+    	$data['title'] = "Quản lý sản phẩm theo kho";    	
         //$data['id']=$this->input->post('giatrikho');   
     	//Author tienlx: pagination reviews
     	
@@ -116,6 +117,7 @@ class Admin extends Shop_Admin_Controller
     	                     
         $data['products'] = $this->MProducts->getProductsbyKho($config['per_page'],$this->uri->segment('5'),$kho_id);
         $data['categories'] = $this->MCats->getCategoriesDropDown();
+		$data['warehouse'] = $this->MKho->getKho();
         $data['kho_id']=$kho_id;
         // we are pulling a header word from language file
         $data['header'] = $this->lang->line('backendpro_access_control');
@@ -180,13 +182,13 @@ class Admin extends Shop_Admin_Controller
        		}            
           
             // we are using Bep function for flash msg
-            flashMsg('success','SÃ¡ÂºÂ£n phÃ¡ÂºÂ©m Ã„â€˜ÃƒÂ£ Ã„â€˜Ã†Â°Ã¡Â»Â£c tÃ¡ÂºÂ¡o');
+            flashMsg('success','Sản phẩm đã được tạo thành công.');
             redirect($this->module.'/admin/index','refresh');
             }//end check
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "TÃƒÂªn sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m";
+            $data['title'] = "Tên sản phẩm";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -199,7 +201,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','ChÃ†Â°a nhÃ¡ÂºÂ­p tÃƒÂªn mÃ¡ÂºÂ·t hÃƒÂ ng');
+            flashMsg('error','Chưa nhập tên sản phẩm.');
             $this->load->view($this->_container,$data);	
             }
   
@@ -208,7 +210,7 @@ class Admin extends Shop_Admin_Controller
             else 
             {
             // this must be the first time, so set variables
-            $data['title'] = "TÃ¡ÂºÂ¡o sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m";
+            $data['title'] = "Tên sản phẩm";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -221,7 +223,7 @@ class Admin extends Shop_Admin_Controller
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_product_create";
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','ChÃ†Â°a nhÃ¡ÂºÂ­p mÃƒÂ£ hÃƒÂ ng');
+            flashMsg('error','Chưa nhập mã hàng');
             $this->load->view($this->_container,$data);
             }
         }
@@ -229,7 +231,7 @@ class Admin extends Shop_Admin_Controller
         {
         	
             // this must be the first time, so set variables
-            $data['title'] = "Táº¡o sáº£n pháº©m";
+            $data['title'] = "Tên sản phẩm";
             // get categories by lang_id
             // $data['categories'] = $this->MCats->getCategoriesDropDown();
             $lang_id = '0';
@@ -243,16 +245,16 @@ class Admin extends Shop_Admin_Controller
             $data['listkho']=$this->MKaimonokago->getListKho();
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','Má»�i báº¡n nháº­p sá»‘ lÆ°á»£ng sáº£n pháº©m');
+            flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
             $this->load->view($this->_container,$data);
         }
 
     }
 
-
     function edit($id=0)
     {
     	$data['listkho']=$this->MKaimonokago->getListKho();
+    	$data['soluong']=$this->MProducts->getQuantitiesProducts($id);
         // we are using TinyMCE in edit as well
         $this->bep_assets->load_asset_group('TINYMCE');
         $multilang = $this->preference->item('multi_language');
@@ -282,6 +284,11 @@ class Admin extends Shop_Admin_Controller
             // $this->session->set_flashdata('message','Product updated');
             // we are using Bep function for flash msg           
             
+            $data['listkho']=$this->MKaimonokago->getListKho();
+            if (count($data['listkho']))
+            {	
+            	//foreach ($data['listkho'])
+            }
       		$total1=$this->input->post('kho1',TRUE);
             $total2=$this->input->post('kho2',TRUE);
             $total3=$this->input->post('kho3',TRUE); 
@@ -432,7 +439,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('error','BÃ¡ÂºÂ¡n phÃ¡ÂºÂ£i nhÃ¡ÂºÂ­p mÃƒÂ£ hÃƒÂ ng');
+            flashMsg('error','Bạn phải nhập mã hàng.');
             $this->load->view($this->_container,$data);
         }
         
@@ -471,7 +478,7 @@ class Admin extends Shop_Admin_Controller
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('notice','MÃ¡Â»ï¿½i bÃ¡ÂºÂ¡n nhÃ¡ÂºÂ­p sÃ¡Â»â€˜ lÃ†Â°Ã¡Â»Â£ng sÃ¡ÂºÂ£n phÃ¡ÂºÂ©m');
+            flashMsg('notice','Mời bạn nhập số lượng sản phẩm');
             $this->load->view($this->_container,$data);
         }
     }

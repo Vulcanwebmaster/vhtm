@@ -8,6 +8,30 @@ class MProducts extends CI_Model
         parent::__construct();
 	}
 
+	function getQuantitiesProducts($id = 0)
+    {
+        $data = array();
+        $query_string = "SELECT  shop_kho.kho_id AS kho_id, 
+		    					 shop_kho.kho_name AS kho_name, 
+		    					 shop_kho.kho_code AS kho_code, 
+		    					 shop_sanphamkho.total AS total  
+		    			 FROM shop_kho, shop_sanphamkho  
+		    			 WHERE shop_sanphamkho.kho_id = shop_kho.kho_id 
+		    			 AND shop_sanphamkho.id = ".$id."
+		    			 ORDER BY shop_kho.kho_id";
+        
+        $Q = $this->db->query($query_string);
+        if ($Q->num_rows() > 0)
+        {
+            foreach ($Q->result_array() as $row)
+            {
+                $data[] = $row;
+            }
+        }
+        $Q->free_result();
+        return $data;
+    }
+	
     function getAllProducts()
     {
         // getting all the products of the same categroy.
@@ -68,57 +92,19 @@ class MProducts extends CI_Model
     
 	function updateSanphamkho($kho,$id,$total)
     {
-    
-    	if($kho==1)
+    	if ($this->MProducts->checkSanphamkho($kho,$id)==TRUE)
     	{
-	    	if ($this->MProducts->checkSanphamkho(1,$id)==TRUE)
-	    	{
-	    		$data = array(    			
-        		'total'    	  => $total
-    			);   		
-    			$this->db->where('kho_id',1);
-			   	$this->db->where('id',$id);
-	    		$this->db->update('shop_sanphamkho',$data);
-	    	}
-			else
-			{				
-	    		$this->MProducts->addSanphamkho(1,$id,$total);
-			}    		
+    		$data = array(    			
+        	'total'    	  => $total
+    		);   		
+    		$this->db->where('kho_id',$kho);
+		   	$this->db->where('id',$id);
+    		$this->db->update('shop_sanphamkho',$data);
     	}
-    	
-    	if($kho==2)
-    	{
-    		if ($this->MProducts->checkSanphamkho(2,$id)==TRUE)
-	    	{
-	    		$data = array(    			
-        		'total'    	  => $total
-    			);   		
-    			$this->db->where('kho_id',2);
-			   	$this->db->where('id',$id);
-	    		$this->db->update('shop_sanphamkho',$data);
-	    	}
-			else
-			{
-	    		$this->MProducts->addSanphamkho(2,$id,$total);
-			}
-    	}
-    	
-   		if($kho==3)
-    	{
-    		if ($this->MProducts->checkSanphamkho(3,$id)==TRUE)
-	    	{
-	    		$data = array(    			
-        		'total'    	  => $total
-    			);   		
-    			$this->db->where('kho_id',3);
-			   	$this->db->where('id',$id);
-	    		$this->db->update('shop_sanphamkho',$data);
-	    	}
-			else
-			{
-	    		$this->MProducts->addSanphamkho(3,$id,$total);
-			}
-    	}	   	
+		else
+		{				
+    		$this->MProducts->addSanphamkho($kho,$id,$total);
+		}    		
     }
 	
     function checkSanphamkho($kho,$id)

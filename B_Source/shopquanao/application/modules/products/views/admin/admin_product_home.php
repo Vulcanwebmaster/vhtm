@@ -17,11 +17,17 @@
 
 <div align="left">
 <form name = "formkho" method="post" action="<?php echo base_url()?>index.php/products/admin/sortKho">
-<strong>Chọn kho:</strong> <select name = "giatrikho" onchange = "formkho.submit();">	
-	<option value="100" <?php if ( isset($kho_id) && $kho_id == 100) echo 'selected="selected"';?> ><?php echo 'Tất cả'?></option>
-	<option value="1" <?php if ( isset($kho_id) && $kho_id == 1) echo 'selected="selected"';?>>Kho 1</option>
-	<option value="2" <?php if ( isset($kho_id) && $kho_id == 2) echo 'selected="selected"';?>>Kho 2</option>
-	<option value="3" <?php if ( isset($kho_id) && $kho_id == 3) echo 'selected="selected"';?>>Kho 3</option>	
+<strong>Chọn kho:</strong> <select name = "giatrikho" onchange = "formkho.submit();">
+	<option value="100" ><?php echo 'Tất cả'?></option>
+    <?php 
+	if (count($warehouse))
+	{
+		foreach ($warehouse as $key => $list)
+		{
+			echo "<option value=\"".$list['kho_id']."\" >".$list['kho_name']."</option>";
+		}
+	}
+	?>		
 </select>
 </form>
 </div>
