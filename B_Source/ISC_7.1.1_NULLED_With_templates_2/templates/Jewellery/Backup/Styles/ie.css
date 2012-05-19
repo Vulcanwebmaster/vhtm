@@ -1,0 +1,37 @@
+/** IE 67 Specific Fixes **/
+
+* html .Content, * html .Left, * html .Right {
+	height: 500px; /* Compensates for no min-height */
+}
+
+* html #Container	{
+	width: expression(document.body.clientWidth < 1000? "990px" : "auto");
+}
+
+* html #Wrapper {
+	padding: 0 1% 0 1%;
+	margin: 0;
+}
+* html #Menu {
+	padding: 0 1% 0 1%;
+	margin: 0;
+}
+* html #Menu li a {
+	float: left;
+	padding-bottom: 9px;
+}
+
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+/** General IE Fixes **/
+.Content .FeedLink {
+	margin: 2px 4px 0 0;
+}
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+select, input {
+	font-size: 0.95em;
+}

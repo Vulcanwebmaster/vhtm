@@ -1,0 +1,15 @@
+#TopMenu {
+	top: 8px;
+}
+
+#Menu {
+	top: 112px;
+}
+
+#Menu li a {
+	float: left;
+}
+
+.NewsletterSubscription input.Textbox {
+	width: 123px;
+}

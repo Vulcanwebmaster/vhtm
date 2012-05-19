@@ -1,0 +1,96 @@
+/* Product Comparisons */
+.CompareItem { border-left: solid 1px #CACACA; }
+.CompareFieldName {  border-bottom: 1px solid #EFF8FA; }
+.CompareFieldTop { border-bottom: solid 1px #85BADF; }
+.CompareFieldTop a:hover { color: red; }
+.CompareCenter { border-left: solid 1px #85BADF; border-bottom: solid 1px #F2F2F2; }
+.CompareLeft { border-left: solid 1px #85BADF; border-bottom: solid 1px #F2F2F2; }
+
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #EFF8FA;
+}
+
+/* Quick Search */
+.QuickSearch {
+	background: #fff;
+	border: 1px solid #BFBFBF;
+}
+
+.QuickSearchHover td{
+	background: #E8F4F8;
+}
+
+.QuickSearchAllResults a {
+	background: url('../../Serenity/images/blue/QuickSearchAllResultsButton.gif') no-repeat right;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #c7d7cb;
+	background: #efefef;
+}
+
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	border-bottom: 1px solid #6fbbf7;
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background: #f0f0f0;
+	border: 0;
+	color: #555;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #3d9abe;
+}
+
+.TabNav li a {
+	border: 1px solid #3d9abe;
+	background: #ddf0f6;
+}
+
+.TabNav li a:hover {
+	background-color: #c8e6ed;
+}
+
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #3d9abe;
+}
+
+.TabNav li a {
+	border: 1px solid #3d9abe;
+	background: #ddf0f6;
+}
+
+.TabNav li a:hover {
+	background-color: #c8e6ed;
+}
+
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #c7d7db;
+	border-top-color: #c7d7db;
+	background: #D4EDF9;
+	color: #424748;
+}

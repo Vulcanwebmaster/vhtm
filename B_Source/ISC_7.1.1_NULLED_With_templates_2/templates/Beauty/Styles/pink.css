@@ -1,0 +1,439 @@
+/* Color: Pink */
+
+body {
+	background: #fff url(../../Beauty/images/pink/BodyBg.gif) 0 0 repeat-x;
+	color: #02294a;
+}
+
+a {
+	color: #02294a;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #0a4272;
+}
+
+h2 {
+}
+
+h3 {
+	color: #a26b9c;
+}
+hr {
+	background: #f5dfed;
+	color: #f5dfed;
+}
+
+#Container {
+}
+
+#TopMenu {
+}
+
+#TopMenu li{
+	background: url(../../Beauty/images/pink/PagesMenuBg.gif) 0 6px no-repeat;
+}
+
+#TopMenu li.First {
+	background-image: none;
+}
+
+#TopMenu li a {
+}
+
+#TopMenu li div {
+}
+
+#TopMenu li a:hover {
+	text-decoration: underline;
+}
+
+#Menu {
+	background: url(../../Beauty/images/pink/MenuBg.gif) 0 0 no-repeat;
+}
+
+#Menu li {
+}
+
+#Menu li a {
+	background: url(../../Beauty/images/pink/MenuBgBtn.gif) 0 12px no-repeat;
+	color: #fff;
+}
+
+#Menu li.First a {
+	background-image: none;
+}
+
+#Menu li a:hover {
+	color: #e2f5ff;
+}
+
+#Menu li ul li a {
+	background: #106eb1;
+}
+
+#Menu li ul li a:hover {
+	background: #CF9BCC;
+}
+
+#Menu li:hover a, #Menu li.over a{
+}
+
+#Outer {
+}
+
+#Wrapper {
+}
+
+#Header {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+#Logo h1 {
+	color: #445374;
+}
+
+#Logo h1 a {
+	color: #445374;
+}
+
+#SearchForm {
+	background: url(../../Beauty/images/pink/SearchBg.gif) 0 0 no-repeat;
+}
+
+#SearchForm label {
+}
+
+#SearchForm input {
+	background: #fff;
+	border: 1px solid #d9aecb;
+}
+
+#SearchForm .Button {
+	border: 0;
+}
+
+#SearchForm a {
+	color: #805c74;
+}
+
+#SearchForm p {
+	color: #805c74;
+}
+
+.Left {
+	background: url(../../Beauty/images/pink/SideBg.gif) 0 0 no-repeat;
+}
+
+.Left h2 {
+	color: #106EB1;
+}
+
+.Left li {
+	border-bottom: 1px solid #fdf8fc;
+}
+
+.Left li a {
+	color: #02294a;
+}
+
+.Left li a:hover {
+	color: #0a4272;
+}
+
+.Left .CategoryList li, .Right .CategoryList li {
+	background: url(../../Beauty/images/pink/BlockArrow.gif) no-repeat left 7px;
+	padding-left:8px;
+}
+.Left .BrandList li, .Right .BrandList li {
+	background: url(../../Beauty/images/pink/BlockArrow.gif) no-repeat left center;
+	padding-left:8px;
+}
+
+
+.Content {
+}
+
+.Content h2 {
+	color: #0a4272;
+	font-weight: normal;
+}
+
+.Content.Wide {
+}
+
+.Content.Widest {
+}
+
+.Right {
+	background: url(../../Beauty/images/pink/SideBg.gif) 0 0 no-repeat;
+}
+
+.Right .Block {
+}
+
+.Right h2 {
+	color: #106EB1;
+	font-weight: normal;
+}
+
+.Right li {
+	border-bottom: 1px solid #fdf8fc;
+}
+
+.Right li a {
+	color: #02294a;
+}
+
+.Right a:hover, .Right a:hover strong {
+	color: #0a4272;
+}
+
+.Right hr {
+	background: #f5dfed;
+	color: #f5dfed;
+}
+
+#Footer {
+	background: url(../../Beauty/images/pink/FooterBg.gif) 50% 0 no-repeat;
+}
+
+#Footer p {
+}
+
+#Footer a {
+}
+
+
+.NewsletterSubscription input {
+	border: 1px solid #f5dfed;
+}
+
+.Content .ProductList li {
+}
+
+.Content .ProductList li:hover, .Content .ProductList li.Over {
+}
+
+.Content .ProductList a:hover {
+	color: #0a4272;
+}
+
+.Content .ProductList li {
+	background: url(../../Beauty/images/pink/ProductListBgBottom.gif) 0 100% no-repeat;
+}
+
+.Content .ProductList .ProductImage {
+	background: url(../../Beauty/images/pink/ProductListBgTop.gif) 0 0 no-repeat;
+}
+
+.Content .ProductList .ProductDetails {
+}
+
+.ProductList strong, .ProductList strong a {
+	color: #0a4272;
+}
+
+.ProductPrice, .ProductList em {
+	color: #e02e15;
+}
+
+.ProductList .Rating {
+	color: #6a6a6a;
+}
+
+.Right .ProductList li {
+}
+
+.Content .FeaturedProducts .ProductList li {
+	background: url(../../Beauty/images/pink/ProductListBgBottomFeatured.gif) 0 100% no-repeat;
+}
+
+.Content .FeaturedProducts .ProductList .ProductImage {
+}
+
+.Content .FeaturedProducts .ProductList li:hover, .Content .FeaturedProducts .ProductList li.Over {
+}
+
+.Right .TopSellers li {
+}
+
+.Right .TopSellers li .TopSellerNumber { /* Contains the number of the item */
+	color: #106EB1;
+}
+
+.Right .TopSellers li.TopSeller1 .ProductImage { /* No1 seller box */
+}
+.Right .TopSellers li.TopSeller1 {
+	background: #fff;
+	border: 1px solid #f7fafb;
+}
+.Right .TopSellers li.TopSeller1 .ProductDetails { /* No1 seller box */
+}
+.Right .TopSellers li.TopSeller1 .TopSellerNumber {
+	color: #fff;
+	background: url(../../Beauty/images/pink/No1SellerNumberBg.gif) 0 0 no-repeat;
+}
+.Right .TopSellers li.TopSeller1 .Rating {
+}
+
+.Breadcrumb {
+	border-bottom: 1px solid #f5dfed;
+}
+
+
+.CompareItem { width:200px; border-left: solid 1px #f5dfed; }
+.CompareFieldName { font-weight:bold; border-bottom: 1px solid #f5dfed; }
+.CompareFieldTop { border-bottom:solid 1px #f5dfed; }
+.CompareFieldTop a:hover { color:#e02e15; }
+.CompareCenter { border-left:solid 1px #f5dfed; border-bottom:solid 1px #f5dfed; }
+.CompareLeft { border-left:solid 1px #f5dfed; border-bottom:solid 1px #f5dfed; }
+
+.ViewCartLink {
+	background: url('../../Beauty/images/pink/Cart.gif') no-repeat 8px 0;
+}
+
+table.CartContents, table.General {
+	border: 1px solid #f5dfed;
+}
+
+table.CartContents thead tr th, table.General thead tr th {
+	background: #fdf8fc;
+	color: #0a4272;
+	border-bottom: 1px solid #f5dfed;
+}
+
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #f5dfed;
+	color: #0a4272;
+}
+
+.MiniCart .SubTotal {
+	color: #0a4272;
+}
+
+.JustAddedProduct {
+	border: 1px solid #f5dfed;
+	background: #fff;
+}
+
+.JustAddedProduct strong, .JustAddedProduct a {
+	color: #0a4272;
+}
+
+.CategoryPagination {
+	color: #0A4272;
+	background: #f5dfed;
+	border: 1px solid #f5dfed;
+}
+
+.CheckoutRedeemCoupon { background: #fdf8fc; padding: 10px; width: 300px; border: 1px solid #f5dfed; margin-bottom: 10px; }
+
+.InfoMessage {
+	background: #f5dfed url('../../Beauty/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.SuccessMessage {
+	background: #E8FFDF url('../../Beauty/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ErrorMessage {
+	background: #FFECEC url('../../Beauty/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #fdf8fc;
+}
+
+.QuickSearch { background: #fff; border: 1px solid #f5dfed;  }
+
+.QuickSearchHover td{ background: #fdf8fc; }
+
+.QuickSearchAllResults a { background: url('../../Beauty/images/pink/QuickSearchAllResultsButton.gif') no-repeat right; }
+
+.CreateAccount {
+	border-right: 1px solid #f5dfed;
+}
+
+.SearchTips .Examples {
+	background: #fdf8fc;
+	border: 1px solid #f5dfed;
+	color: #555;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #f5dfed;
+	background: #fdf8fc;
+}
+
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #f3dbeb;
+	border: 1px solid #eabed5;
+	color: #106eb1;
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	color: #555;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #eabfdc;
+}
+
+.TabNav li a {
+	border: 1px solid #eabfdc;
+	background: #f9eaf4;
+}
+
+.TabNav li a:hover {
+	background-color: #f0cfe5;
+}
+
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+
+/* Product Videos */
+
+#VideoContainer {
+	border: 1px solid #cccccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.currentVideo {
+	background-color: #ddf0f6;
+}
+
+.videoRow:hover {
+	background-color: #efefef;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #f5dfed;
+	border-top-color: #f5dfed;
+	background: #fdf8fc;
+	color: #0a4272;
+}

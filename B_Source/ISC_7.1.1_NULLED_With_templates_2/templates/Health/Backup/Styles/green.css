@@ -1,0 +1,365 @@
+/* Color: Blue */
+
+body {
+	background: #fff;
+	color: #2f2f2f;
+}
+
+a {
+	color: #2f2f2f;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #005e99;
+}
+
+h2 {
+	color: #3cb9dd;
+}
+
+h3 {
+	color: #8cca14;
+}
+
+#Container {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+#TopMenu {
+	border-bottom: 1px solid #b3da67;
+	color: #fff;
+}
+
+#TopMenu li a, #TopMenu li span {
+	color: #fff;
+}
+
+#TopMenu li span a {
+}
+
+#TopMenu li a:hover {
+	text-decoration: underline;
+}
+
+#Menu {
+}
+
+#Menu li {
+}
+
+#Menu li a {
+	color: #282828;
+	background: url(../../Health/images/green/MenuBg.gif) bottom left repeat-x;
+}
+
+#Menu li ul li a {
+	background: #e7f4ce;
+}
+
+#Menu li ul li a:hover {
+	background: #d3eba5;
+}
+
+#Menu li:hover a, #Menu li.over a{
+	text-decoration: underline;
+}
+
+#Outer {
+}
+
+#Wrapper {
+}
+
+#Header {
+}
+
+#Logo h1 {
+	color: #fff;
+	background: url('../../Health/images/green/LogoLeft.gif') no-repeat;
+	padding-left: 65px;
+	padding-top: 10px;
+	height: 55px;
+}
+
+#Logo h1 a {
+	color: #fff;
+}
+
+#SearchForm {
+}
+
+#SearchForm label {
+	color: #fff;
+}
+
+#SearchForm input {
+	background: #fff;
+	border: 1px solid #8cca14;
+}
+
+#SearchForm .Button {
+	border: 0;
+}
+
+#SearchForm a {
+	color: #2f2f2f;
+}
+
+#SearchForm p {
+}
+
+.Left {
+	background: #fff url(../../Health/images/green/SideBg.gif) 0 0 no-repeat;
+}
+
+.Left h2 {
+	background: url(../../Health/images/green/SideBg_h2.gif) 0 0 no-repeat;
+	color: #8CCA14;
+	padding: 0 0 0 20px;
+}
+
+.Left li {
+}
+
+.Left li a {
+}
+
+.Left li a:hover {
+}
+
+.Content {
+}
+
+.Content h2 {
+	border-bottom: 1px solid #DCDFE2;
+}
+
+.Content a {
+	color: #075899;
+}
+
+.Content.Wide {
+}
+
+.Content.Widest {
+}
+
+.Right {
+	background: #fff url(../../Health/images/green/SideBg.gif) 0 0 no-repeat;
+}
+
+.Right h2 {
+	background: url(../../Health/images/green/SideBg_h2.gif) 0 0 no-repeat;
+	color: #8CCA14;
+	padding: 0 0 0 20px;
+}
+
+.Right a {
+	color: #034285;
+}
+
+.Right a:hover, .Right a:hover strong {
+}
+
+#Footer {
+	border-top: 1px solid #B3DA67;
+}
+
+#Footer li a {
+	border-left: 1px solid #208db5;
+}
+
+.NewsletterSubscription input {
+	border: 1px solid #e9e6d9;
+}
+
+.Content .ProductList li {
+}
+
+.Content .ProductList li:hover, .Content .ProductList li.Over {
+}
+
+.ProductList .ProductImage {
+	background: #fff;
+	padding: 2px;
+}
+
+.ProductList strong, .ProductList strong a {
+	color: #075899;
+}
+
+.ProductPrice, .ProductList em {
+	color: #800000;
+}
+
+.ProductList .Rating {
+	color: #6a6a6a;
+}
+
+.Right .ProductList li {
+	border-bottom: 1px solid #fff;
+}
+
+.Right .TopSellers li .TopSellerNumber { /* Contains the number of the item */
+	background: url(../../Health/images/green/TopSellerNumberBg.gif) 0 0 no-repeat;
+	color: #fff;
+}
+
+.Right .TopSellers li.TopSeller1 { /* No1 seller box */
+	background: url(../../Health/images/green/TopSeller1Bg.gif) 0 0 no-repeat;
+	border-bottom: 2px solid #d6eaae;
+}
+
+.Right .TopSellers li.TopSeller1 .TopSellerNumber {
+	background: url(../../Health/images/green/TopSellerNumber1Bg.png) 0 0 no-repeat;
+	float: right;
+	color: #fff;
+}
+
+.Breadcrumb {
+	border-bottom: 1px solid #D6EAAE;
+}
+
+.CompareItem { width:200px; border-left: solid 1px #CACACA; }
+.CompareFieldName { font-weight:bold; border-bottom: 1px solid #EFF8FA; }
+.CompareFieldTop { border-bottom:solid 1px #B6DC69; }
+.CompareFieldTop a:hover { color:red; }
+.CompareCenter { border-left:solid 1px #B6DC69; border-bottom:solid 1px #F2F2F2; }
+.CompareLeft { border-left:solid 1px #B6DC69; border-bottom:solid 1px #F2F2F2; }
+
+.ViewCartLink {
+	background: url('../../Health/images/green/Cart.gif') no-repeat 3px 0;
+}
+
+table.CartContents, table.General {
+	border: 1px solid #B6DC69;
+}
+
+table.CartContents thead tr th, table.General thead tr th {
+	background: #EEF7DB;
+	color: #424748;
+	border-bottom: 1px solid #B6DC69;
+}
+
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #B6DC69;
+	color: #075899;
+}
+
+.MiniCart .SubTotal {
+	color: #075899;
+}
+
+.JustAddedProduct {
+	border: 1px solid #c0dae7;
+	background: #fff;
+}
+
+.JustAddedProduct strong, .JustAddedProduct a {
+	color: #075899;
+}
+
+.CategoryPagination {
+	color: #034285;
+	background: #EEF7DB;
+}
+
+.CheckoutRedeemCoupon { background: #B6DC69; padding: 10px; width: 300px; border: 1px solid #9DD3D8; margin-bottom: 10px; }
+
+.SubCategoryList, .SubBrandList {
+	background:#EEF7DB;
+}
+
+.InfoMessage {
+	background: #EFF8FA url('../../Health/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.SuccessMessage {
+	background: #E8FFDF url('../../Health/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ErrorMessage {
+	background: #FFECEC url('../../Health/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #EEF7DB;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #bbdc69;
+	background: #eef7d8;
+}
+
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #dcefb8;
+	border-bottom: 1px solid #85c50c;
+	color: #7eb511;
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background: #f8f8f8;
+	border: 1px solid #e5f5f5;
+	color: #555;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #7eb712;
+}
+
+.TabNav li a {
+	border: 1px solid #7eb712;
+	background: #e9f5cf;
+	color: #333;
+}
+
+.TabNav li a:hover {
+	background-color: #e1e382;
+}
+
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+
+/* Product Videos */
+
+#VideoContainer {
+	border: 1px solid #cccccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.currentVideo {
+	background-color: #ddf0f6;
+}
+
+.videoRow:hover {
+	background-color: #efefef;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #B6DC69;
+	border-top-color: #B6DC69;
+	background: #EEF7DB;
+	color: #424748;
+}

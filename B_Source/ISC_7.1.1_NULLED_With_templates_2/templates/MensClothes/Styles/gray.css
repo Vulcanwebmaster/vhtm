@@ -1,0 +1,365 @@
+/*****************************************************************\
+* Interspire Shopping Cart Style File              				  *
+*                                                 				  *
+* Name: SmartShop                                 				  *
+* Author: Kostiantin Iatseniuk (Max) (Interspire Pty. Ltd.)       *
+* Id: $Id$                                          			  *
+\*****************************************************************/
+
+/* Color: Blue */
+
+body {
+	color: #050402;
+	background:#181820 url(../../MensClothes/images/gray/bg_body.jpg) repeat-x 50% 0
+}
+a {
+	color: #1a2f0d;
+	font-weight: 400;
+	text-decoration: underline;
+}
+a:hover {
+	color: #1a2f0d;
+}
+h2 {
+	color: #443522;
+}
+h3 {
+	color: #0E0E0E;
+}
+#TopMenu li a, #TopMenu li div {
+	color: #cccccc;
+	background:url(../../MensClothes/images/gray/bg_menu.gif) no-repeat 0% 3px;
+}
+#TopMenu li div a {
+	background:none !important;
+	color:#cccccc
+}
+#TopMenu li a:hover {
+	color: #cccccc;
+}
+#Menu li a {
+	color: #a72742;
+	text-decoration:underline;
+}
+#Menu li.ActivePage a {
+	color:#1a2f0d;
+	font-weight:700;
+	text-decoration:none
+}
+#Menu li ul li a {
+	background-color: #e3dcce;
+	border:1px solid #dbd1bf;
+	border-top:none;
+}
+#Menu li ul li a:hover {
+	background-color: #e3dcce;
+	color: #a72742;
+}
+#Menu li:hover a, #Menu li.over a {
+	color:#a72742
+}
+#Outer {
+}
+#Header {
+}
+#Wrapper {
+	background-color:#cbc3b6;
+	border:2px solid #b3802d;
+	border-top:none;
+}
+#Logo h1 {
+	color: #fff;
+	letter-spacing:-2px;
+}
+#Logo h1 a {
+	color: #fff;
+}
+#Logo span {
+	color:#ffcc33;
+}
+#SearchForm {
+	color: #eeeadf;
+	background:url(../../MensClothes/images/gray/bg_searchform.png) no-repeat 2px 0%;
+	height:30px;
+}
+#SearchForm label {
+	color: #eeeadf;
+}
+#SearchForm a {
+	color: #eeeadf;
+	text-decoration:none
+}
+#SearchForm a:hover {
+	color: #eeeadf;
+}
+.leftinner {
+	background-color: #ede9dc;
+	border:1px solid #bcb5a0;
+}
+#SideNewsletterBox {
+	background-color: #ede9dc;
+	margin-top:6px;
+	padding-top:2px;
+}
+.Right {
+	background-color: #afd437;
+	border:1px solid #bddb4a;
+}
+.Left li {
+	background:url(../../MensClothes/images/gray/bg_side_li.gif) no-repeat 2px 10px;
+	padding:7px 0 7px 10px;
+	border-bottom:1px solid #d2ccbb;
+	margin-top:1px;
+}
+.Left li:hover {
+	background-color:#dfd9cc
+}
+.Content {
+	background-color:#fff;
+	border:1px solid #bcb5a0;
+}
+.main_banner {
+	display:block;
+	width:688px;
+	height:176px;
+	background:url(../../MensClothes/images/main_banner.jpg) no-repeat;
+	margin:0 auto 5px;
+	float:left
+}
+.main_banner span {
+	display:none
+}
+.Content.Wide {
+}
+.Content.Widest {
+}
+.Right {
+}
+.Right a {
+}
+.Right a:hover, .Right a:hover strong {
+	color: #000000;
+}
+#Footer {
+	background-color:#a9a18e;
+	color:#333333;
+	height:30px;
+	padding-top:16px;
+}
+#Footer a {
+	color:#333333;
+	text-decoration:underline
+}
+#Footer li a {
+	border-left: 1px solid #333333;
+}
+.Content .ProductList li {
+}
+.Content .ProductList li:hover, .Content .ProductList li.Over {
+}
+.ProductList .ProductImage {
+}
+.ProductList strong, .ProductList strong a {
+	color: #ab2945;
+	font-weight:700 !important;
+}
+.ProductPrice, .ProductList em {
+	color: #ff3333;
+	font-size:.99em;
+}
+.ProductList .Rating {
+	color: #797979;
+}
+.Right .ProductList li {
+	background:url(../../MensClothes/images/gray/bg_sideli.gif) repeat-x 0% 100%;
+}
+.Left h2 {
+	color:#fff;
+}
+.Left .TopSellers li .TopSellerNumber, .Right .TopSellers li .TopSellerNumber { /* Contains the number of the item */
+	background: url(../../MensClothes/images/gray/TopSellerNumberBg.gif) 0 4px no-repeat;
+	color: #fff;
+	font-weight:700;
+}
+.Left .TopSellers li.TopSeller1, .Right .TopSellers li.TopSeller1 { /* No1 seller box */
+}
+.Left .TopSellers li.TopSeller1 .TopSellerNumber, .Right .TopSellers li.TopSeller1 .TopSellerNumber {
+	background: url(../../MensClothes/images/gray/TopSellerNumber1Bg.png) 0 0 no-repeat;
+	color: #fff;
+	font-weight:700;
+}
+.Left .TopSellers .ProductActionAdd, .Right .TopSellers .ProductActionAdd, .Left .NewProducts .ProductActionAdd, .Right .NewProducts .ProductActionAdd, .Left #SideProductRecentlyViewed .ProductActionAdd, .Right #SideProductRecentlyViewed .ProductActionAdd {
+	background:none;
+	display:inline;
+	text-align:left;
+	margin-top:5px;
+}
+.Left .TopSellers .ProductActionAdd a, .Right .TopSellers .ProductActionAdd a, .Left #SideProductRecentlyViewed .ProductActionAdd a, .Right #SideProductRecentlyViewed .ProductActionAdd a {
+	color:#2988d6;
+	text-decoration:underline;
+	font-size:1.1em !important
+}
+.Left .NewProducts .ProductActionAdd, .Right .NewProducts .ProductActionAdd {
+	background:none;
+	display:inline;
+	text-align:left;
+	margin-top:5px;
+}
+.Left .NewProducts .ProductActionAdd a, .Right .NewProducts .ProductActionAdd a {
+	color:#2988d6;
+	text-decoration:underline;
+	font-size:1.1em !important
+}
+.Left .TopSellers li.TopSeller1 .ProductActionAdd a, .Right .TopSellers li.TopSeller1 .ProductActionAdd a, .Left .TopSellers li.TopSeller1 .ProductActionAdd a:hover, .Right .TopSellers li.TopSeller1 .ProductActionAdd a:hover {
+	color:#fff;
+	text-decoration:none;
+	font-weight:400 !important
+}
+.Left .TopSellers li.TopSeller1 .ProductActionAdd, .Right .TopSellers li.TopSeller1 .ProductActionAdd {
+	display: block;
+	margin: 5px 0;
+	width:112px;
+	height:20px;
+	text-align:center;
+	padding-top:4px;
+	font-size:.95em;
+	background:url(../../MensClothes/images/gray/ProductActionAdd.gif) no-repeat 0% 0%;
+	font-weight:400
+}
+.Breadcrumb {
+	border-bottom: 1px solid #DCDFE2;
+}
+.CompareItem {
+	width:200px;
+	border-left: solid 1px #CACACA;
+}
+.CompareFieldName {
+	font-weight:bold;
+	border-bottom: 1px solid #f1e8d4;
+}
+.CompareFieldTop {
+	border-bottom:solid 1px #f1e8d4;
+}
+.CompareFieldTop a:hover {
+	color:red;
+}
+.CompareCenter {
+	border-left:solid 1px #f1e8d4;
+	border-bottom:solid 1px #f1e8d4;
+}
+.CompareLeft {
+	border-left:solid 1px #f1e8d4;
+	border-bottom:solid 1px #f1e8d4;
+}
+.ViewCartLink {
+	background: url('../../MensClothes/images/gray/Cart.gif') no-repeat -4px 0;
+}
+table.CartContents, table.General {
+	border: 1px solid #e5e5e5;
+}
+.CartContents thead tr th, table.General thead tr th {
+	background: #faf8f4;
+	color: #424748;
+	border-bottom: 1px solid #e5e5e5;
+}
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #e5e5e5;
+	color: #333;
+}
+.MiniCart .SubTotal {
+	color: #333;
+}
+.JustAddedProduct {
+	background: #fff;
+}
+.JustAddedProduct strong, .JustAddedProduct a {
+	color: #333;
+}
+.CategoryPagination {
+	color: #034285;
+	background: #f4fbfc;
+	border: 1px solid #c0dae7;
+}
+.CheckoutRedeemCoupon {
+	background: #EAFDFF;
+	padding: 10px;
+	width: 300px;
+	border: 1px solid #9DD3D8;
+	margin-bottom: 10px;
+}
+.SubCategoryList, .SubBrandList {
+}
+.InfoMessage {
+	background: #faf8f4 url('../../MensClothes/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+.SuccessMessage {
+	background: #E8FFDF url('../../MensClothes/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+.ErrorMessage {
+	background: #FFECEC url('../../MensClothes/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #faf8f4;
+}
+.ProductActionAdd {
+	background:url(../../MensClothes/images/gray/ProductActionAdd.gif) no-repeat 0% 0%;
+}
+.ProductActionAdd a {
+	color:#fff;
+	font-weight:400;
+	font-size:1.1em;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif
+}
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #e5e5e5;
+	background: #edf2f3;
+}
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #f3f0ea;
+}
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background:#fff;
+	border: 1px solid #f3f0ea;
+	color: #555;
+}
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #3d9abe;
+}
+.TabNav li a {
+	border: 1px solid #3d9abe;
+	background: #ddf0f6;
+}
+.TabNav li a:hover {
+	background-color: #c8e6ed;
+}
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+.Breadcrumb ul {
+	background-color:#f3f0ea;
+	padding:10px;
+}
+.SideCart li {
+	background:none
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #e5e5e5;
+	border-top-color: #e5e5e5;
+	background: #faf8f4;
+	color: #424748;
+}

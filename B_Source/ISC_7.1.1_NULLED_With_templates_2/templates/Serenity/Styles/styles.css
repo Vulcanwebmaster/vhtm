@@ -1,0 +1,2140 @@
+/* Global Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* General Styles */
+body {
+	background: #90959a;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#35383d;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color : #0a7fc2;
+}
+
+a:active {
+	text-decoration: underline;
+	color : #cc6600;
+}
+
+a:hover {
+	text-decoration: underline;
+	color : #cc6600;
+}
+
+h1, h2, h3, h4, .TitleHeading {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#cc6600;
+}
+
+h3 {
+	margin-bottom: 7px;
+	font-size: 14px;
+}
+
+h4 {
+	color: #000;
+	margin-bottom: 4px;
+}
+
+img, img a {
+	border: 0;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+input, select, .ISSelect {
+	font-size: 11px;
+}
+
+input {
+	padding: 2px;
+}
+
+ul, ol {
+	margin: 0 0 10px 30px;
+}
+
+li {
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+}
+
+blockquote {
+	margin-left: 28px;
+}
+
+select option {
+	padding: 0 10px;
+}
+
+hr {
+	margin: 10px 0;
+	padding: 0;
+	background: #abb0b5;
+	height: 1px;
+	border: 0;
+	color: #abb0b5;
+}
+
+/* Page Container */
+#Container {
+	width: 970px;
+	margin: 0 auto;
+}
+
+/* Header */
+#Header {
+	margin: 0 0px;
+	padding: 20px 10px;
+	position: relative;
+	background: #fff url('../../Serenity/images/HeaderBgBottom.gif') no-repeat bottom;
+	height: 35px;
+}
+
+#HeaderTop {
+	position: absolute;
+	background: url('../../Serenity/images/HeaderBgTop.gif') no-repeat top;
+	width: 970px;
+	top: 0;
+	left: 0;
+	height: 10px;
+}
+
+#Header #Logo {
+	float: left;
+	padding-left: 10px;
+}
+
+#Header #Logo h1 {
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: -1px;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	color:#003366;
+}
+
+#Header .ImageLogo {
+	position: absolute;
+	top: 10px;
+}
+
+#Header #Logo h1 a, #Header #Logo h1 a:visited, #Header #Logo h1 a:hover {
+	color: #003366;
+	text-decoration: none;
+}
+
+/* Pages Menu */
+#Menu {
+	background: url('../../Serenity/images/blue/MenuBg.gif') repeat-x bottom;
+	margin-bottom: 2px;
+	font-size: 10px;
+	height: 30px;
+}
+
+#Menu ul, #Menu li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#Menu li {
+	float: left;
+	display: block;
+	line-height: 1;
+	font-weight: bold;
+	position: relative;
+}
+
+#Menu li a {
+	display: block;
+	float: left;
+	color: #fff;
+	text-decoration: none;
+	padding-left: 8px;
+	margin-right: 1px;
+	background: url('../../Serenity/images/blue/MenuLeftBg.gif') no-repeat top left;
+	z-index: 100;
+}
+
+#Menu li a span {
+	padding: 6px 8px 14px 0;
+	display: block;
+	background: url('../../Serenity/images/blue/MenuRightBg.gif') no-repeat right top;
+	float: left;
+	color: #fff;
+}
+
+#Menu a:hover, #Menu li:hover a, #Menu li.Over a, #Menu li.ActivePage a {
+	background-position: 0 -24px;
+}
+
+#Menu a:hover span, #Menu li:hover a span, #Menu li.Over a span, #Menu li.ActivePage a span {
+	cursor: hand;
+	background-position: 100% -24px;
+}
+
+#Menu ul ul {
+	padding: 0;
+	display: none;
+	z-index: 150;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	margin: 0;
+	width: 150px;
+	background: #1591d2;
+}
+
+#Menu ul li li {
+	clear: left;
+	padding: 0;
+	display: inline;
+	margin: 0;
+	border: 0;
+}
+
+#Menu ul li:hover ul, #Menu ul li.Over ul {
+	display: block;
+}
+
+#Menu li li a {
+	font-weight: normal;
+	display: block;
+	width: 150px;
+	padding: 7px 7px;
+	color: #fff;
+	background: #1591d2;
+}
+
+#Menu li li a:hover {
+	background: #003366;
+}
+
+/* Top Menu */
+
+#TopMenu {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: right;
+	font-size: 11px;
+	color: #fff;
+}
+
+#TopMenu a {
+	color: #fff;
+}
+
+#TopMenu ul, #TopMenu li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#TopMenu li {
+	display: inline;
+}
+
+#TopMenu li a {
+	margin-left: 12px;
+}
+
+#TopMenu li a:hover {
+	text-decoration: underline;
+}
+
+#TopMenu li div {
+	margin-left: 12px;
+	display: inline;
+}
+
+#TopMenu li div a {
+	margin-left: 0;
+}
+
+/* Header Search Form */
+#SearchForm {
+	float: right;
+	text-align: left;
+}
+
+#SearchForm label {
+	display: none;
+}
+
+#SearchForm .Textbox {
+	font-size: 11px;
+	padding: 2px;
+	margin: 0;
+	vertical-align: middle;
+	width: 170px;
+}
+
+#SearchForm p {
+	font-size: 10px;
+	margin-top: 4px;
+}
+
+#SearchForm p a, #SearchForm p a:hover {
+	color: #999;
+}
+
+#SearchForm p a strong {
+	padding-left: 14px;
+	background: url('../../Serenity/images/MoreArrow.gif') no-repeat 0 2px;
+}
+
+#SearchForm .Button {
+	padding: 0;
+	vertical-align: middle;
+}
+
+#ContentWrapper {
+	margin-top: 10px;
+	background: #fff url('../../Serenity/images/HeaderBgTop.gif') no-repeat top;
+	padding: 10px;
+}
+
+#Footer {
+	margin: 0 auto;
+	padding: 10px;
+	background: #b2b6ba url('../../Serenity/images/FooterBgBottom.gif') no-repeat bottom;
+	position: relative;
+}
+
+#Footer p {
+	color:#FFFFFF;
+	font-family:Verdana;
+	font-size:10px;
+	margin-bottom: 0;
+}
+
+#Footer p a {
+	color: #fff;
+}
+
+#FooterTop {
+	position: absolute;
+	background: url('../../Serenity/images/FooterBgTop.gif') no-repeat top;
+	width: 970px;
+	height: 5px;
+	top: 0;
+	left: 0;
+}
+
+#Banner {
+	height: 125px;
+	background-repeat: no-repeat;
+	background-color: #6fbbf7;
+	color: #fff;
+	margin-bottom: 8px;
+}
+
+#Banner .BannerTitle {
+	font-size: 24px;
+	font-family: "Trebuchet MS";
+	padding: 10px 10px 0 10px;
+}
+
+#Banner p {
+	padding: 0px 10px 10px;
+	margin: 0;
+	font-size: 11px;
+	width: 650px;
+	line-height: 1.5;
+}
+
+.Left {
+	float: left;
+	width: 170px;
+}
+
+.Content {
+	float:left;
+	padding:0px 20px;
+	width:570px;
+}
+
+.Content.Wide {
+	width: 740px;
+}
+
+.Content.Widest {
+	width: 910px;
+}
+
+.Content p, .Content li {
+	line-height: 1.3;
+}
+
+.Right {
+	float: right;
+	width: 170px;
+}
+
+.Clear {
+	clear: both;
+}
+
+.Left .Block, .Right .Block {
+	border:1px solid #CCCCCC;
+	margin-bottom:10px;
+	padding:5px;
+	font-size: 11px;
+}
+
+.Left .Block h2, .Right .Block h2 {
+	background:#F9F7F2;
+	color:#993300;
+	font-size:14px;
+	margin:0px;
+	padding:5px;
+}
+
+.Left .BlockContent, .Right .BlockContent {
+	padding: 5px 5px;
+}
+
+.Left .Block ul, .Left .Block li, .Right .Block ul, .Right .Block li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.Left .Block li, .Right .Block li {
+	background: url('../../Serenity/images/BlockArrow.gif') no-repeat left center;
+	padding-left:12px;
+}
+
+.Left .CategoryList li, .Right .CategoryList li {
+	background: url('../../Serenity/images/CategoryBg.gif') no-repeat left 7px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	padding:2px 0px 2px 15px;
+}
+
+.Left #SideCategoryList li{
+	padding:5px 0 0 15px;
+}
+
+.NewsletterSubscription form {
+	font-weight:bold;
+	padding: 0 5px;
+}
+
+.NewsletterSubscription label {
+	font-weight: bold;
+	display: block;
+	padding: 5px 0 3px 0;
+}
+
+.NewsletterSubscription input {
+	font-size: 11px;
+	font-weight: normal;
+	margin-top: 5px;
+	padding: 2px;
+}
+
+/* Product Listings */
+.ProductList .ProductImage {
+	display: table-cell;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+	overflow: hidden;
+	width: 120px;
+	vertical-align: middle;
+}
+
+.ProductList .ProductImage img {
+	vertical-align: middle;
+}
+
+.ProductList em, .ProductList .Rating {
+	display: block;
+}
+
+.ProductList .Rating {
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.ProductList .Rating img {
+	height: 12px;
+	margin-top: 3px;
+}
+
+.ProductList p {
+	margin: 5px 0 5px 5px;
+}
+
+.ProductList li .ProductCompareButton {
+	margin-top: 6px;
+	font-size: 11px;
+	text-align: center;
+}
+
+.ProductDetails strong {
+	font-weight: normal;
+}
+
+.ProductDetails em, .ProductPrice {
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* Product Listings in Content Column */
+.Content .ProductList li {
+	padding: 5px 0 5px 8px;
+	background-image: none;
+	list-style: none;
+	float: left;
+	width: 130px;
+	margin:10px;
+	padding: 4px;
+	min-height: 18em;
+	overflow: hidden;
+	text-align: center;
+}
+
+.Content .ProductList a {
+	text-decoration: underline;
+}
+
+.Content .ProductList li em {
+	font-size: 11px;
+	letter-spacing: -1px;
+	padding: 3px 0;
+}
+
+/* Product Listings in Left & Right Columns */
+.Left .ProductList .ProductImage, .Right .ProductList .ProductImage {
+	display: none;
+}
+
+.Left .ProductList, .Left .ProductList li, .Right .ProductList, .Right .ProductList li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.Left .ProductList li, .Right .ProductList li {
+	background-image: none;
+	border-bottom: 1px solid #e5e5e1;
+	padding: 8px 0;
+}
+
+.Left .ProductList li:last-child, .Left .ProductList li.LastChild,
+.Right .ProductList li:last-child, .Right .ProductList li.LastChild {
+	border-bottom: 0;
+}
+
+.Right .CompareButton, .Left .CompareButton {
+	text-align: center;
+	margin-top: 0;
+}
+
+/* Recent News Lists */
+.RecentNews ul {
+	padding-top: 0;
+	margin-left: 10px;
+}
+
+.RecentNews ul li {
+	list-style: none;
+	background: url('../../Serenity/images/BlockArrow.gif') no-repeat left center;
+	padding: 2px 0 2px 10px;
+}
+
+/* Page Breadcrumbs */
+.Breadcrumb ul, .Breadcrumb li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.Breadcrumb {
+	font-size: 10px;
+	padding: 0 0 10px;
+	font-weight: bold;
+}
+
+.Breadcrumb li {
+	display: inline;
+	padding-right: 5px;
+	padding-left: 10px;
+	background: url('../../Serenity/images/BreadcrumbSep.gif') no-repeat left;
+}
+
+.Content h2 {
+	border-bottom:3px solid #ddd;
+	font-size:20px;
+	font-weight:normal;
+	letter-spacing:-1px;
+	margin: 0;
+	margin-bottom: 10px;
+	padding:5px 0 5px 0;
+}
+
+.Block.AddtoCart {
+	background:#FDEEBB;
+	border:1px solid #E8D9A6;
+	color:#663300;
+	font-size:11px;
+	margin-bottom:10px;
+	padding:10px 5px;
+	text-align:center;
+}
+
+.Block.AddtoCart h2 {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+.Block.AddtoCart p {
+	margin-bottom: 0;
+	margin-top: 5px;
+}.Block.AddToWishlist {
+	background:#C7E3F9;
+	border:1px solid #BCD8EE;
+	color:#003366;
+	font-size:11px;
+	margin-bottom:10px;
+	padding:10px 5px;
+	text-align:center;
+}
+
+.Block.AddToWishlist p {
+	margin-bottom: 0;
+	margin-top: 5px;
+}
+
+.Block.AddToWishlist h2 {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+/* Top Sellers List */
+.TopSellerNumber {
+	display: none;
+}
+
+/* Forms */
+.HorizontalFormContainer dl, .VerticalFormContainer dl {
+	margin: 0;
+}
+.HorizontalFormContainer dt img {
+	vertical-align: middle;
+	float: left;
+}
+
+.HorizontalFormContainer dt .fieldLabel {
+	float:left;
+	padding-top: 4px;
+	padding-left: 4px;
+}
+
+.HorizontalFormContainer dt {
+	width: 160px;
+	float: left;
+	clear: left;
+}
+
+.HorizontalFormContainer dd.ProductField {
+	height: 20px;
+}
+
+.HorizontalFormContainer dd {
+	padding-top:4px;
+	margin-left: 170px;
+}
+
+.NarrowFormContainer dt {
+	width: 110px;
+}
+
+.NarrowFormContainer dd {
+	margin-left: 120px;
+}
+
+.HorizontalFormContainer p.Submit {
+	margin-left: 170px;
+}
+
+.NarrowFormContainer p.Submit {
+	margin-left: 120px;
+}
+
+.VerticalFormContainer dt {
+	margin-bottom: 6px;
+}
+
+.VerticalFormContainer dd {
+	margin-bottom: 6px;
+	margin-left: 10px;
+}
+
+/* Find Products by Category Lists */
+.FindByCategory ul, .FindByCategory li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.FindByCategory li {
+	padding-left: 12px;
+	background: url('../../Serenity/images/BreadcrumbSep.gif') no-repeat 3px 5px;
+	padding-right: 8px;
+	display: inline;
+}
+
+/* Information Messages */
+.InfoMessage {
+	background: #EFF8FA url('../../Serenity/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+	padding: 8px 6px 8px 28px;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+
+/* Success Messages */
+.SuccessMessage {
+	background: #E8FFDF url('../../Serenity/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+	padding: 8px 6px 8px 28px;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+
+/* Error Messages */
+.ErrorMessage {
+	background: #FFECEC url('../../Serenity/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+	padding: 8px 6px 8px 28px;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+
+/* Shipping Address Lists */
+ul.ShippingAddressList, ul.ShippingAddressList li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.ShippingAddressList li {
+	width: 30%;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+/* Product Details View */
+.PrimaryProductDetails .ProductThumb {
+	float: left;
+	width: 190px;
+	text-align: center;
+}
+
+.PrimaryProductDetails .ProductThumb p {
+	margin-top: 10px;
+	font-size: 0.9em;
+}
+
+.PrimaryProductDetails .ProductThumb p a {
+	font-weight: bold;
+}
+
+.ProductDescription, .ProductReviews, .ProductsByCategory, .ProductOtherDetails {
+	margin-top: 20px;
+}
+
+.PrimaryProductDetails .ProductMain {
+	float: left;
+	width: 330px;
+}
+
+.PrimaryProductDetails dl {
+	font-size: 0.90em;
+}
+
+.ProductDescriptionContainer {
+	line-height: 1.5;
+}
+
+.PrimaryProductDetails dt {
+	font-weight: bold;
+	width: 80px;
+	clear: left;
+}
+
+.PrimaryProductDetails dd {
+	margin-left: 90px;
+}
+
+.FindByCategory {
+	font-size: 11px;
+}
+
+.ProductOtherDetails {
+	font-size: 11px;
+}
+
+/* Product Reviews */
+.ProductReviewList {
+	clear: both;
+}
+
+.ProductReviews {
+	font-size: 11px;
+}
+
+.ProductReviewForm {
+	margin-bottom: 10px;
+}
+
+/* Product Custom Fields List */
+.ProductDetailsGrid dt {
+	width: 112px;
+	margin-bottom: 6px;
+	float: left;
+	font-weight: bold;
+}
+
+.ProductDetailsGrid dd {
+	margin-left: 112px;
+	margin-bottom: 6px;
+}/* Cart/Order/Item Contents Tables */
+#CartHeader h2 span, #ConfirmOrder h2 span {
+	margin-top: 4px;
+	display: block;
+}
+
+/* General Tables */
+table.General,
+table.CartContents, table.General {
+	width: 100%;
+	margin: 10px 0;
+}
+
+table.General thead tr th,
+table.CartContents thead tr th {
+	padding: 6px 10px;
+	text-align: left;
+}
+
+table.General tbody td,
+table.CartContents tbody td {
+	padding: 6px 10px;
+	vertical-align: top;
+}
+
+table.General tbody tr.First td {
+	border-top: 0;
+}
+
+/* Cart Contents Table */
+
+.CartContents tbody td {
+	border-bottom: 0;
+}
+.CartContents .ProductName a {
+	font-weight: bold;
+}
+
+.CartContents tfoot .SubTotal td {
+	text-align: right;
+	font-weight: bold;
+}
+
+table.General,
+table.CartContents, table.General {
+	border: 1px solid #c7d7db;
+	font-size: 11px;
+}
+
+table.General thead tr th,
+table.CartContents thead tr th {
+	background: #D4EDF9;
+	color: #424748;
+	border-bottom: 1px solid #c7d7db;
+}
+
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #c7d7db;
+	color: #075899;
+}
+
+/* Product Comparisons */
+.ComparisonTable {
+	width: 100%;
+}
+
+.ComparisonTable td {
+	vertical-align: top;
+	font-size: 11px
+}
+
+.CompareFieldName {
+	width: 95px;
+	padding: 8px 10px 8px 15px;
+	font-weight: bold;
+}
+
+.CompareFieldTop {
+	padding: 5px;
+	text-align: center;
+}
+
+.CompareFieldTop a {
+	text-decoration: none;
+	font-size: 10px;
+}
+
+.CompareFieldTop a:hover {
+	text-decoration: underline;
+}
+
+.CompareLeft {
+	padding: 5px 10px 5px 10px;
+}
+
+.CompareCenter {
+	text-align: center;
+	padding: 5px;
+}
+
+.CompareRating {
+	text-align: center;
+	padding-top: 8px;
+	vertical-align: middle;
+}
+
+.CompareProductOption {
+	margin-left: 20px;
+	padding-left: 5px;
+}
+
+.CompareItem {
+	width: 200px;
+}
+
+/* Proceed to Checkout Links */
+.ProceedToCheckout {
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+.ProceedToCheckout a {
+	display: block;
+}
+
+/* Suggestive Cart "Mini Cart" Block */
+.MiniCart {
+	text-align: center;
+}
+
+.MiniCart .SubTotal {
+	font-size: 115%;
+}
+
+.JustAddedProduct {
+	width: 128px;
+	overflow: hidden;
+	margin: auto;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.JustAddedProduct strong, .JustAddedProduct a {
+	font-weight: bold;
+	font-size: 1.02em;
+	display: block;
+	margin-bottom: 3px;
+}
+
+/* Paging Lists */
+.PagingList, .PagingList li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.CategoryPagination {
+	padding: 5px;
+	text-align: center;
+}
+
+.CategoryPagination .PagingList li {
+	display: inline;
+	padding: 0 5px;
+}
+
+/* Brand Tag Clouds */
+.BrandCloud .smallest { font-size: 12px; }
+.BrandCloud .small { font-size: 15px; }
+.BrandCloud .medium { font-size: 18px; }
+.BrandCloud .large { font-size: 20px; }
+.BrandCloud .largest { font-size: 26px; }
+.BrandCloud a { padding-right: 5px; }
+
+/* Checkout Coupon Redemption Block */
+.CheckoutRedeemCoupon {
+	background: #EAFDFF;
+	border: 1px solid #9DD3D8;
+	padding: 10px;
+	width: 300px;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+
+.CheckoutRedeemCoupon h4 {
+	margin-top: 0;
+}
+
+.CheckoutRedeemCoupon p {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+/* Quick Search */
+.QuickSearch {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+.QuickSearchTitle td, .QuickSearchAllResults td {
+	font-weight: bold;
+	padding: 4px;
+	font-size: 11px;
+}
+
+.QuickSearchResult td {
+	font-size: 11px;
+	padding: 8px 0 8px 8px;
+	cursor: pointer;
+}
+
+.QuickSearchResultImage {
+	margin-left: 4px;
+	margin-right: 10px;
+	text-align: center;
+}
+
+.QuickSearchResultNoImage {
+	padding-top: 10px;
+	color: #777;
+}
+
+.QuickSearchResultName {
+	text-decoration: none;
+	display: block;
+	padding-bottom: 5px;
+}
+
+.QuickSearchResult .Price {
+	font-size: 11px;
+}
+
+.QuickSearchHover a {
+	text-decoration: underline;
+}
+
+.QuickSearchAllResults {
+	text-indent: -7000px;
+}
+
+.QuickSearchAllResults a {
+	text-decoration: underline;
+	height: 25px;
+	display: block;
+}
+
+.QuickSearchAllResults a:active, .QuickSearchAllResults a {
+	outline: none;
+	-moz-outline-style: none;
+}
+
+.QuickSearchResult .RatingIMG {
+	padding-left: 4px;
+}
+
+/* Sub Category Lists */
+.SubCategoryList {
+	margin-top: 5px;
+}
+
+.SubCategoryList ul, .SubCategoryList li {
+	list-style: none;
+	margin-left: 0;
+}
+
+.SubCategoryList ul li {
+	margin-bottom: 4px;
+	padding-left: 25px;
+	background: url('../../Serenity/images/SubCategory.gif') no-repeat 3px 1px;
+}
+
+/* Miscellaneous Definitions */
+.Clear {
+	clear: both;
+}
+
+br.Clear {
+	line-height: 1;
+	font-size: 1px;
+}
+
+.Meta, .NewsDate {
+	color: #444;
+	font-size: 11px;
+}
+
+.Left .FeedLink, .Right .FeedLink {
+	padding-right: 5px;
+}
+
+.Content .FeedLink {
+	margin-top: 4px;
+}
+
+.FloatRight {
+	float: right;
+}
+
+.FloatLeft {
+	float: left;
+}
+
+.ClearRight {
+	clear: right;
+}
+
+.ClearLeft {
+	clear: left;
+}
+
+.SortBox {
+	font-size: 11px;
+	margin-top: 10px;
+	color: #444;
+}
+
+.CompareButton {
+	clear: both;
+	text-align: right;
+	margin-top: 12px;
+	padding: 4px;
+}
+
+.Field45 {
+	width: 45px;
+}
+
+.Field100 {
+	width: 100px;
+}
+
+.Field150 {
+	width: 150px;
+}
+
+.Field200 {
+	width: 200px;
+}
+
+.Field250 {
+	width: 250px;
+}
+
+.Field300 {
+	width: 300px;
+}
+
+.Field350 {
+	width: 350px;
+}
+
+.Field400 {
+	width: 400px;
+}
+
+.MB10 { margin-bottom: 10px; }
+.MT0 { margin-top: 0; }
+.LH140 { line-height: 140%; }
+.PLRB5 { padding: 0 5px 5px 5px; }
+.PLR10 { padding: 0 10px 0 10px; }
+.PL20 { padding: 0 0 0 20px; }
+.PL40 { padding: 0 0 0 40px; }
+.ML20 { margin: 0 0 0 20px; }
+.MT10 { margin-top: 10px; }
+.PL10 { padding-left: 10px; }
+.PB2 { padding-bottom: 2px; }
+.NoMarginBottom { margin-bottom: 0; }
+
+.Required {
+	color: red;
+	font-weight: bold;
+}
+
+.ComparisonCheckbox {
+	float: left;
+}
+
+.Availability { color: gray; }
+.LittleNote { color: gray; font-size: 0.85em; }
+
+.ViewCartLink {
+	text-align: center;
+	padding-left: 15px;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	background: url('../../Serenity/images/ViewCart.gif') no-repeat 0 5px;
+}
+
+.AutomaticSearchCheck {
+	padding-top: 4px;
+	font-size: 11px;
+}
+
+.ToggleSearchFormLink {
+	margin-top: 16px;
+}
+
+small {
+	font-size: 11px;
+	color: gray;
+}
+
+.GiftCertificateThemeList input {
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+
+.SmallText {
+	font-size: 11px;
+}
+
+.PaymentOptions {
+	width: 545px;
+}
+
+#provider_list {
+	padding-top: 5px;
+}
+
+#provider_list input {
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+
+.HowToPay {
+	margin-bottom: 10px;
+}
+
+.DownloadExpires { padding-top: 3px; font-style: italic; color: gray; }
+.DownloadExpiresToday { color: red; }
+
+.BillingDetails {
+	float: left;
+	width: 48%;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+
+.ShippingDetails {
+	float: left;
+	width: 48%;
+	margin-bottom: 15px;
+}
+
+.SearchTips .Examples {
+	background: lightyellow;
+	padding: 8px;
+	border: 1px solid #aaa;
+	color: #555;
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+
+.SortBox select {
+	font-size: 0.9em;
+}
+
+ .SortBox option {
+	color: #444;
+}
+
+.YourAccount li {
+	margin-bottom: 8px;
+}
+
+.SoldOut {
+	color: #999;
+}
+
+.RemoveFromWishlistForm {
+	margin: 5px;
+}
+
+
+.ShippingProviderList {
+	list-style: none;
+}
+
+/* Recently Viewed Products Listing */
+.SideRecentlyViewed .ProductList li {
+	margin-left: 0;
+}
+
+.SideRecentlyViewed .ProductDetails {
+	margin-left: 20px;
+}
+
+.ComparisonCheckbox {
+	float: left;
+}
+
+/* Create Account & Login Page */
+.CreateAccount {
+	margin-top: 10px;
+	float: left;
+	width: 45%;
+	padding-right: 10px;
+}
+
+.AccountLogin {
+	margin-top: 10px;
+	float: left;
+	padding-left: 20px;
+	width: 45%;
+}
+
+/* Side Mini Cart */
+.SideCart .ProductList {
+	margin-top: 10px;
+}
+
+.SideCart .ProductList li {
+	background: url('../../Serenity/images/BlockArrow.gif') no-repeat left 13px;
+	padding: 8px 0 8px 10px;
+	margin: 0;
+	list-style-type: none;
+}
+
+.SideCart p {
+	margin-bottom: 4px;
+}
+
+.GoogleCheckout p,
+.PayPalExpressCheckout p,
+.AlternativeCheckout p {
+	margin: 0;
+	font-size: 90%;
+}
+
+.GoogleCheckout,
+.PayPalExpressCheckout,
+.AlternativeCheckout {
+	text-align: center;
+	margin-bottom: 10px;
+	clear:both;
+}
+
+.KeepShopping {
+	width: 180px;
+	clear: both;
+	text-align: right;
+}
+
+/** Top Right Locale Chooser (list of flags) **/
+#TopMenu li.Flag {
+	float: right;
+}
+
+#TopMenu li.Flag div {
+	border: 0;
+}
+
+#TopMenu li.Flag img {
+	margin: 3px;
+}
+
+#TopMenu li.Flag img.Last {
+	margin-right: 0px;
+}
+
+#TopMenu li.Flag img.Selected {
+	border: 2px solid #ffffaa;
+	margin: 1px 3px;
+}
+
+/** Currency Selector **/
+.CurrencyList dl {
+	margin: 0;
+	padding: 0;
+}
+
+.CurrencyList dd {
+	padding: 0px;
+	margin: 0px;
+	border: 1px solid #EDECEC;
+	background-color: #F9F9F9;
+	clear: both;
+}
+
+.CurrencyList a {
+	padding: 0 3px 0 5px;
+	display: block;
+	line-height: 1.8;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+.CurrencyList a.Sel {
+	background-color: #FFFFAA;
+}
+
+.CurrencyList a:hover .Text {
+	text-decoration: underline;
+}
+
+.CurrencyList a .Flag {
+	margin-top: 4px;
+	display: block;
+	float: left;
+	width: 24px;
+	padding-right: 2px;
+	vertical-align: middle;
+}
+
+.CurrencyList a .Text {
+	display: block;
+	padding-left: 24px;
+}
+
+.PrimaryProductDetails .YouSave {
+	font-weight: bold;
+	margin-top: 3px;
+	display: block;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	font-weight: normal;
+	width: 320px;
+	padding: 7px;
+	float: right;
+}
+
+.EstimateShipping dt {
+	width: 100px;
+	float: left;
+	margin-bottom: 8px;
+	clear: left;
+}
+
+.EstimateShipping dd {
+	margin-bottom: 8px;
+	font-weight: normal;
+	text-align: left;
+	margin-left: 114px;
+}
+
+.EstimateShipping p.Submit {
+	margin-top: 10px;
+	margin-bottom: 3px;
+}
+
+.EstimateShipping label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.EstimatedShippingMethods {
+	text-align: left;
+}
+
+.EstimatedShippingMethods table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.EstimatedShippingMethods .VendorShipping {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.EstimatedShippingMethods .Submit {
+	text-align: right;
+}
+
+.CartContents tfoot .SubTotal .EstimatedShippingMethods tbody td {
+	text-align: left;
+}
+
+.CartContents tfoot .SubTotal .EstimatedShippingMethods tbody td.Price {
+	text-align: right;
+}
+
+.SharePublicWishList {
+	background-color:seashell;
+	padding:5px;
+	border:1px solid lightgray;
+}
+
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	position: relative;
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.ExpressCheckoutBlock h3 a {
+	font-size: 12px;
+}
+
+.ExpressCheckoutBlock {
+	padding-top: 6px;
+}
+
+.ExpressCheckoutBlock .ExpressCheckoutCompletedContent {
+	display: none;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	display: inline;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutContent {
+	display: none;
+}
+
+a.ChangeLink {
+	position: absolute;
+	right: 15px;
+}
+
+.ExpressCheckoutBlock a.ChangeLink {
+	display: none;
+}
+
+.ExpressCheckoutBlockCompleted a.ChangeLink {
+	display: inline;
+}
+
+.ExpressCheckoutCompletedContent {
+	position: absolute;
+	left: 250px;
+}
+
+.LoadingIndicator {
+	margin-left: 10px;
+}
+
+.LoadingIndicator img {
+	vertical-align: middle;
+	margin-right: 10px;
+}#TopMenu li.HeaderLiveChat {
+	background-image: none;
+}
+
+#TopMenu li.HeaderLiveChat div {
+	border-left: 0;
+}
+
+#TopMenu li.HeaderLiveChat div a {
+	background-image: none;
+	font-weight: bold;
+}
+
+.HeaderLiveChat img {
+	vertical-align: middle;
+}
+
+#ProductOtherDetails .ProductDetailsGrid {
+	margin-left: 25px;
+}
+
+.SubCategoryListGrid {
+	padding: 4px;
+}
+
+.SubCategoryListGrid ul, .SubCategoryListGrid li {
+	list-style: none;
+	margin-left: 0;
+}
+
+.SubCategoryListGrid li {
+	margin-bottom: 4px;
+	padding: 10px;
+	margin-left: 10px;
+	background: #fff;
+	float: left;
+	text-align: center;
+}
+
+.SubCategoryListGrid ol {
+	clear: both;
+}
+.SubBrandList {
+	padding: 4px;
+}
+
+.SubBrandList ul, .SubBrandList li {
+	list-style: none;
+	margin-left: 0;
+}
+
+.SubBrandList li {
+	margin-bottom: 4px;
+	padding-left: 25px;
+	background: url('../../Serenity/images/SubBrand.gif') no-repeat 3px 1px;
+}
+
+.SubBrandListGrid {
+	padding: 4px;
+}
+
+.SubBrandListGrid ul, .SubBrandListGrid li {
+	list-style: none;
+	margin-left: 0;
+}
+
+.SubBrandListGrid li {
+	margin-bottom: 4px;
+	padding: 10px;
+	margin-left: 10px;
+	background: #fff;
+	float: left;
+	text-align: center;
+}
+
+.SubBrandListGrid ol {
+	clear: both;
+}
+
+.ProductAddToCart dt div.Required, #CartEditProductFieldsForm dt div.Required{
+	width: 8px;
+}
+
+.ProductAddToCart input.Textbox, #CartEditProductFieldsForm input.Textbox{
+	width:181px;
+}
+
+.ProductAddToCart textarea, #CartEditProductFieldsForm textarea{
+	width:183px;
+	height: 50px;
+}
+
+.CartContents .CartProductFieldsLink {
+	font-size: 11px;
+	color: #666;
+	margin-top: 6px;
+	padding-left: 22px;
+	background: url('../../Serenity/images/GiftWrappingAvailable.gif') no-repeat;
+	padding-bottom: 4px;
+}
+
+.ProductFields dd {
+	margin-bottom: 4px;
+	float:left;
+	margin-left:20px;
+}
+
+.ProductFields {
+	margin-bottom: 15px;
+}
+
+.ProductFields input[type="text"] {
+	width:100%;
+}
+
+.ProductFields TextArea {
+	width:100%;
+}
+
+.CartContents .CartProductFieldsRow {
+	border-top: 0;
+}
+
+.CartContents .CartProductFieldsRow dl {
+	margin-top:15px;
+}
+
+p.QuantityInput, p.AddCartButton {
+	text-align: center;
+}
+
+.ProductAddToCart dt.QuantityInput {
+	margin-top: 7px;
+}
+
+.ProductAddToCart dd.AddCartButton span {
+	margin-top: 7px;
+	padding-right: 5px;
+}
+.ProductActionAdd {
+	display: block;
+	margin-top: 3px;
+}
+
+.ProductActionAdd a, .ProductActionAdd strong a {
+	text-decoration: underline;
+}
+
+.TagList {
+	margin-top: 20px;
+}
+
+.CartThumb {
+	text-align: center;
+	width: 1px;
+}
+
+.WrappingOptions {
+	font-size: 11px;
+	color: #666;
+	margin-top: 6px;
+	padding-left: 22px;
+	background: url('../../Serenity/images/GiftWrappingAvailable.gif') no-repeat;
+	padding-bottom: 4px;
+	line-height: 1.6;
+}
+
+.ViewAllLink a {
+	padding-top: 10px;
+	display: block;
+}
+
+.SelectGiftWrapMultiple {
+	max-height: 400px;
+}
+
+/* Tabbed Navigation */
+.TabNav, .TabNav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.TabNav {
+	font-size: 11px;
+	margin-bottom: 10px;
+	padding: 6px 4px 6px 4px;
+}
+
+.TabNav li {
+	display: inline;
+}
+
+.TabNav li a {
+	position: relative;
+	top: 2px;
+	font-size: 12px;
+	padding: 4px 6px;
+	margin-right: 3px;
+	margin-top: 3px;
+	text-decoration: none;
+}
+
+.TabNav li a:hover {
+	text-decoration: none;
+}
+
+.TabNav li.Active a {
+	margin-top: 0px;
+	padding-top: 7px;
+	font-weight: bold;
+}
+
+.ProductAddToCart dd.AddCartButton div.BulkDiscount {
+	display: inline-block;
+	float:left;
+}
+
+.ProductAddToCart dd.AddCartButton div.BulkDiscount div.BulkDiscountLink {
+	padding-left: 4px;
+}
+
+#VendorLogo .BlockContent, #VendorPhoto .BlockContent {
+	margin: 0;
+	text-align: center;
+}
+
+.TransitTime {
+	font-weight: normal;
+	color: gray;
+}
+.Content .ProductList.List li {
+	margin: 0;
+	margin-top: 6px;
+	display: block;
+	width: auto;
+	float: none;
+	padding: 6px;
+	min-height: 0;
+	height: 132px;
+	background-image: none;
+}
+
+.Content .ProductList.List .ProductImage {
+	margin: 0 !important;
+	padding: 0px;
+	margin-right: 15px;
+	float: left;
+	background-image: none;
+	width: 120px;
+	height: 120px;
+}
+
+.Content .ProductList.List .ProductDetails {
+	height: auto;
+	display: block;
+	clear: none;
+	padding: 0px;
+	padding-left: 5px;
+	margin: 0px;
+	margin-left: 135px;
+	text-align: left;
+	background-image: none;
+}
+
+.Content .ProductList.List .ProductQty {
+	margin-left: 10px;
+}
+
+.Content .ProductList.List .ProductDescription {
+	font-style: italic;
+	margin-top: 5px;
+}
+
+.Content .ProductList .ProductRightCol {
+	float: right;
+}
+
+.Content .ProductList.List li .ProductCompareButton {
+	text-align: left;
+	margin-top: 10px;
+}
+
+
+.OrderItemMessage {
+	background-color:#fff1a8;
+	padding:7px;
+	margin:10px 0px 10px 0px;
+}
+
+/* Custom Fields - Start */
+
+.LittleNotePassword {
+	color:gray;
+	font-size: 0.85em;
+	padding:2px 0px 2px 0px;
+}
+
+.RequiredClear {
+	visibility: hidden;
+}
+
+/* Product Details */
+.ProductDetailsGrid .DetailRow {
+	clear: left;
+	margin-top: 6px;
+	padding-left: 140px;
+}
+
+.ProductDetailsGrid .Label {
+	margin: 0 0 6px -140px;
+	float: left;
+	width: 130px;
+	font-weight: bold;
+	padding-top: 1px;
+	display: inline;
+	position: relative;
+	text-align:right;
+}
+
+.ProductDetailsGrid .Value {
+	display: inline;
+}
+
+.ProductDetailsGrid .Label .Required {
+	position: absolute;
+	left: -1em;
+}
+
+.ProductOptionList ul, .ProductOptionList li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ProductOptionList li {
+	margin-bottom: 3px;
+}
+
+.ProductOptionList input {
+	vertical-align: middle;
+}
+
+/* Product Videos */
+
+#FeaturedVideo, #VideoList, #VideoSingle  {
+	float: left;
+}
+
+#VideoList {
+	padding-left: 5px;
+}
+
+.VideoSeparator {
+	clear: both;
+}
+
+.videoRow {
+	clear: both;
+	margin-bottom: 4px;
+	display: block;
+	height: 75px;
+}
+
+.previewImageContainer {
+	height: 30px;
+	width: 50px;
+}
+
+.videoRow img {
+	float: left;
+	padding-right: 5px;
+}
+
+.videoRowTitle {
+	font-weight: bold;
+}
+
+.videoRowDescription {
+	max-height: 50px;
+	overflow:hidden;
+}
+
+.VideoOverlay {
+	background-image: url('../images/VideoOverlay.png');
+	background-position: center center;
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	top: 0;
+}
+
+.VideoContentContainer {
+	position: relative;
+	margin-left: 3px;
+	padding-left: 92px;
+}
+
+/** If you change the width of the .VideoPreviewSize class below, change the padding-left of the .VideoContentContainer class above **/
+
+.VideoPreviewSize {
+	width: 92px;
+	height: 69px;
+}
+
+.videoRowLength {
+	padding-left: 4px;
+}
+
+.videoRow, .videoRowTitle, .videoRow img, .videoRowLength {
+	cursor: pointer;
+}
+
+#VideoList ul {
+	position: relative;
+	overflow-y: auto;
+	padding:0;
+	margin: 0;
+	width: 235px;
+	height: 265px;
+}
+
+#VideoSingle {
+	padding-left: 10px;
+	width:235px;
+}
+
+#VideoContainer {
+	padding: 5px 0 5px 5px;
+	height: 265px;
+}
+
+.HideElement {
+	display: none;
+}
+
+
+
+.VideoSingleTitle {
+	font-weight: bold;
+}
+
+.VideoSingleDescription {
+	padding-top: 10px;
+	overflow-y: auto;
+	height: 220px;
+	padding-right:5px;
+}
+
+.Left #VideoMiddleContainer, .Right #VideoMiddleContainer {
+	display: none;
+}
+
+.Content #VideoSideContainer {
+	display: none;
+}
+
+#VideoSideContainer ul {
+	text-align: center;
+}
+
+#VideoSideContainer ul li {
+	margin-bottom: 5px;
+}
+
+.VideoSideDescription {
+	padding: 2px 10px;
+}
+
+.VideoImageContainer {
+	position: relative;
+	float: left;
+}
+
+/** Search All Form Result - Start **/
+.SearchPaging {
+	float: right;
+	font-size: 0.95em;
+}
+
+.SearchSorting {
+	float: right;
+	font-size: 0.95em;
+	margin: 8px 0px;
+}
+
+.SearchSorting select {
+	font-size: 0.95em;
+}
+
+#SearchResultsCategoryAndBrand {
+	margin: 5px;
+	padding: 5px;
+}
+
+.ContentList em, .QuickSearchResultMeta em {
+	font-size: 0.8em;
+}
+
+/** Search All Form Result - End **/
+
+/** AJAX loading box - Start **/
+
+#AjaxLoading {
+	display: none;
+	text-align: center;
+	background: #FCF5AA;
+	width: 180px;
+	z-index: 10000000000;
+	padding: 5px 10px;
+}
+
+#AjaxLoading img {
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+/** AJAX loading box - End **/
+
+#ProductDetails #ImageScrollPrev,
+#ProductDetails #ImageScrollNext {
+	float: left;
+	background:none;
+	border:none;
+	margin-top:16px;
+	cursor:pointer;
+	display: none;
+}
+
+#ProductDetails .ProductTinyImageList {
+	float: left;
+	margin-top:10px;
+	white-space:nowrap;
+	width: 80%;
+	overflow: hidden;
+	margin-left:auto;
+}
+
+#ProductDetails .ProductTinyImageList ul li {
+	width: 40px;
+	height: 30px;
+	overflow: hidden;
+	float: left;
+	margin-left:3px;
+	border: 1px solid gray;
+
+}
+
+
+#ProductDetails .ProductTinyImageList ul li div {
+	display: table-cell;
+	text-align: center;
+}
+
+#ProductDetails .ProductTinyImageList ul li #TinyOuterDiv {
+	border: 2px solid white;
+}
+
+#ProductDetails .ProductTinyImageList ul {
+	margin: 0pt;
+	padding: 0pt;
+	position: relative;
+	list-style-type: none;
+	white-space:nowrap;
+	width: 2500px;
+}
+
+#ProductDetails .ProductThumbImage {
+	height: 220px;
+	width: 220px;
+	overflow: hidden;
+	margin:auto;
+}
+
+.carousel {
+    position: relative;
+    visibility: hidden;
+    left: -5000px;
+	width: 180px;
+}

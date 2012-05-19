@@ -1,0 +1,41 @@
+/** IE 67 Specific Fixes **/
+
+* html #TopMenu {
+	height: 50px;
+}
+* html #SearchForm {
+	height: 85px;
+}
+* html #Menu li a {
+	float: left;
+	padding-bottom: 11px;
+}
+* html .Content {
+	height: 600px;
+}
+* html .Content .ProductList li {
+	height: 12em;
+}
+* html .Left li, * html .Right li {
+	background: url(../images/white/bg_side_list.gif) 0 100% no-repeat;
+}
+* html .Left #SideCategoryList li ul li {
+	background: url(../images/white/bg_side_list.gif) 0 0 no-repeat;
+}
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+/** General IE Fixes **/
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+select, input {
+	font-size: 0.95em;
+}
+.ProductAddToCart dd {
+	float: none;
+}
+.ProductAddToCart dt div.Required, #CartEditProductFieldsForm dt div.Required{
+	margin-left: 0px;
+}

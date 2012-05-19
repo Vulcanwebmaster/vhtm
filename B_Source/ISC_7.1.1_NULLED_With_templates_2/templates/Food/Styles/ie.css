@@ -1,0 +1,24 @@
+/** IE 67 Specific Fixes **/
+
+* html .Content, * html .Left, * html .Right {
+	height: 500px; /* Compensates for no min-height */
+}
+
+* html #Container	{
+	width: expression(document.body.clientWidth < 1000? "990px" : "auto");
+}
+
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+/** General IE Fixes **/
+.Content .FeedLink {
+	margin: 2px 4px 0 0;
+}
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+select, input {
+	font-size: 0.95em;
+}

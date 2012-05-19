@@ -1,0 +1,414 @@
+/* Color: Cream */
+body {
+	background: #fff3e2;
+	color: #303030;
+}
+#Outer {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background: #fff3e2 url(../../Skincare/images/cream/ContainerBg.gif) repeat-y scroll 0 0;
+}
+
+a {
+	color: #303030;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #084283;
+}
+
+h2 {
+	color: #ca0519;
+}
+
+h3 {
+	color: #4a3616;
+}
+hr {
+	background: #ffdca6;
+	color: #ffdca6;
+}
+
+#Container {
+}
+
+#TopMenu {
+	background: #fff3e2;
+}
+
+#TopMenu li{
+	background: url(../../Skincare/images/cream/PagesMenuBg.gif) 0 9px no-repeat;
+}
+
+#TopMenu li.First {
+	background-image: none;
+}
+
+#TopMenu li a {
+}
+
+#TopMenu li div {
+}
+
+#TopMenu li a:hover {
+	text-decoration: underline;
+}
+
+#Menu {
+	background: url(../../Skincare/images/cream/MenuBg.gif) 0 0 no-repeat;
+}
+
+#Menu li {
+}
+
+#Menu li a {
+	background: url(../../Skincare/images/cream/MenuBgBtn.gif) 0 14px no-repeat;
+	color: #4a3616;
+}
+
+#Menu li.First a {
+	background-image: none;
+}
+
+#Menu li a:hover {
+	color: #221909;
+}
+
+#Menu li ul  {
+}
+
+#Menu li ul li a {
+	background: #ffdca6;
+}
+
+#Menu li ul li a:hover {
+}
+
+#Menu li:hover a, #Menu li.over a{
+}
+
+#Outer {
+}
+
+#Wrapper {
+}
+
+#Header {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+#Logo h1 {
+	color: #D30419;
+}
+
+#Logo h1 a {
+	color: #D30419;
+}
+
+#SearchForm {
+	background: url(../../Skincare/images/cream/SearchBg.gif) 0 0 no-repeat;
+}
+
+#SearchForm label {
+}
+
+#SearchForm input {
+	background: #fff;
+	border: 1px solid #9e8a68;
+}
+
+#SearchForm .Button {
+	border: 0;
+}
+
+#SearchForm a {
+	color: #9e8a68;
+}
+
+#SearchForm p {
+	color: #9e8a68;
+}
+
+.Left {
+}
+.Left h2 {
+}
+.Left li {
+	border-bottom: 1px solid #ffdca6;
+}
+.Left li a {
+	color: #084283;
+}
+.Left li a:hover {
+	color: #012c5c;
+}
+
+
+.Content {
+}
+.Content h2 {
+	font-weight: normal;
+}
+.Content.Wide {
+}
+.Content.Widest {
+}
+
+
+.Right {
+}
+.Right .Block {
+}
+.Right h2 {
+	font-weight: normal;
+}
+.Right li {
+	border-bottom: 1px solid #ffdca6;
+}
+.Right li a {
+	color: #084283;
+}
+.Right a:hover, .Right a:hover strong {
+	color: #012c5c;
+}
+.Right hr {
+	background: #ffdca6;
+	color: #ffdca6;
+}
+
+
+#Footer {
+	background: url(../../Skincare/images/cream/FooterBg.gif) 50% 0 no-repeat;
+}
+#Footer p {
+}
+#Footer a {
+}
+
+
+.NewsletterSubscription input {
+	border: 1px solid #ffdca6;
+}
+.Content .ProductList li {
+	background: url(../../Skincare/images/cream/ProductListBgBottom.gif) bottom left no-repeat;
+}
+
+.Content .ProductList .ProductImage {
+	background: url(../../Skincare/images/cream/ProductListBgTop.gif) top left no-repeat;
+}
+
+.Content .ProductList .ProductDetails {
+	background: url(../../Skincare/images/cream/ProductListBgTop.gif) top right no-repeat;
+}
+
+
+.ProductList strong, .ProductList strong a {
+	color: #0a4272;
+}
+
+.ProductPrice, .ProductList em {
+	color: #ca0519;
+}
+
+.ProductList .Rating {
+	color: #6a6a6a;
+}
+
+.Right .ProductList li {
+}
+
+.Content .FeaturedProducts .ProductList li {
+	background: url(../../Skincare/images/cream/ProductListBgBottomHlt.gif) bottom left no-repeat;
+}
+
+.Content .FeaturedProducts .ProductList .ProductImage {
+	background: url(../../Skincare/images/cream/ProductListBgTopHlt.gif) top left no-repeat;
+}
+
+.Content .FeaturedProducts .ProductList .ProductDetails {
+	background: url(../../Skincare/images/cream/ProductListBgTopHlt.gif) top right no-repeat;
+}
+
+.Content .FeaturedProducts .ProductList li:hover, .Content .FeaturedProducts .ProductList li.Over {
+}
+
+.Right .TopSellers li {
+}
+
+.Right .TopSellers li .TopSellerNumber { /* Contains the number of the item */
+	background: url(../../Skincare/images/cream/TopSellerNumberBg.gif) 0 0 no-repeat;
+	color: #4a3616;
+}
+
+.Right .TopSellers li.TopSeller1 .ProductImage { /* No1 seller box */
+}
+.Right .TopSellers li.TopSeller1 .ProductImage { /* No1 seller box */
+	background: url(../../Skincare/images/cream/TopSeller1Bg.gif) 0 0 no-repeat;
+}
+.Right .TopSellers li.TopSeller1 .ProductDetails { /* No1 seller box */
+	background: url(../../Skincare/images/cream/TopSeller1RDetails.gif) bottom no-repeat;
+}
+.Right .TopSellers li.TopSeller1 .TopSellerNumber {
+	background: url(../../Skincare/images/cream/TopSellerNumber1Bg.png) 0 0 no-repeat;
+	color: #fff;
+}
+.Right .TopSellers li.TopSeller1 .Rating {
+background: url(../../Skincare/images/cream/TopSeller1Rating.gif) bottom left no-repeat;
+}
+
+.Breadcrumb {
+	border-bottom: 1px solid #ffdca6;
+}
+
+
+.CompareItem { width:200px; border-left: solid 1px #ffdca6; }
+.CompareFieldName { font-weight:bold; border-bottom: 1px solid #ffdca6; }
+.CompareFieldTop { border-bottom:solid 1px #ffdca6; }
+.CompareFieldTop a:hover { color:#ca0519; }
+.CompareCenter { border-left:solid 1px #ffdca6; border-bottom:solid 1px #ffdca6; }
+.CompareLeft { border-left:solid 1px #ffdca6; border-bottom:solid 1px #ffdca6; }
+
+.ViewCartLink {
+	background: url('../../Skincare/images/cream/Cart.gif') no-repeat 8px 0;
+}
+
+table.CartContents, table.General {
+	border: 1px solid #ffdca6;
+}
+
+table.CartContents thead tr th, table.General thead tr th {
+	background: #fff3e2;
+	color: #0a4272;
+	border-bottom: 1px solid #ffdca6;
+}
+
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #ffdca6;
+	color: #0a4272;
+}
+
+.MiniCart .SubTotal {
+	color: #0a4272;
+}
+
+.JustAddedProduct {
+	border: 1px solid #ffdca6;
+	background: #fff;
+}
+
+.JustAddedProduct strong, .JustAddedProduct a {
+	color: #0a4272;
+}
+
+.CategoryPagination {
+	color: #0A4272;
+	background: #fff3e2;
+	border: 1px solid #ffdca6;
+}
+
+.CheckoutRedeemCoupon { background: #fff3e2; padding: 10px; width: 300px; border: 1px solid #ffdca6; margin-bottom: 10px; }
+
+.SubCategoryList {
+	background:#fff3e2;
+}
+
+.InfoMessage {
+	background: #fff3e2 url('../../Skincare/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.SuccessMessage {
+	background: #E8FFDF url('../../Skincare/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ErrorMessage {
+	background: #FFECEC url('../../Skincare/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #fff3e2;
+}
+
+.QuickSearch { background: #fff; border: 1px solid #ffdca6;  }
+
+.QuickSearchHover td{ background: #fff3e2; }
+
+.QuickSearchAllResults a { background: url('../../Skincare/images/cream/QuickSearchAllResultsButton.gif') no-repeat right; }
+
+.CreateAccount {
+	border-right: 1px solid #ffdca6;
+}
+
+.SearchTips .Examples {
+	background: #fff3e2;
+	border: 1px solid #ffdca6;
+	color: #555;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #ffdca6;
+	background: #fff3e2;
+}
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #fff3e2;
+	border: 1px solid #ffdca6;
+}
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background: #fff3e2;
+	border: 1px solid #ffdca6;
+	color: #555;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent
+	color: #888;
+}
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #FFDCA6;
+}
+.TabNav li a {
+	border: 1px solid #FFDCA6;
+	background: #FFF3E2;
+}
+
+.TabNav li a:hover {
+	background-color: #FFECE2;
+}
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+	color: #CA0519;
+
+/* Product Videos */
+#VideoContainer {
+	border: 1px solid #cccccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.currentVideo {
+	background-color: #ddf0f6;
+}
+.videoRow:hover {
+	background-color: #efefef;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #ffdca6;
+	border-top-color: #ffdca6;
+	background: #fff3e2;
+	color: #0a4272;
+}

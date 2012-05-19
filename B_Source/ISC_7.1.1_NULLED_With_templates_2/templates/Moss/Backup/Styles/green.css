@@ -1,0 +1,310 @@
+/* Color: Blue */
+
+body {
+	background: #002425 url('../../Moss/images/green/bg_body.jpg') repeat-x 0 0;
+	color: #fff;
+}
+a {
+	color: #fff;
+	font-weight: normal;
+	text-decoration: underline;
+}
+a:hover {
+	color: #fff;
+}
+h2 {
+	color: #C1D533;
+}
+h3 {
+	color: #C1D533;
+}
+#TopMenu li a, #TopMenu li div {
+	background:url(../../Moss/images/green/bg_topmenu.gif) no-repeat 0 3px;
+	color: #fff;
+}
+#TopMenu li div a {
+	background:none;
+}
+#TopMenu li a:hover {
+	color: #fff;
+}
+#Menu li a {
+	color: #fff;
+}
+#Menu li.ActivePage {
+	background: url(../../Moss/images/green/PagesMenuBg.png) repeat;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+#Menu li ul li a {
+	background:  url(../../Moss/images/green/PagesMenuBg.png) repeat;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+#Menu li ul li a:hover {
+	color: #fff;
+}
+#Menu li:hover a, #Menu li.over a {
+	color:#d6e85c
+}
+#Outer {
+}
+#Header {
+}
+#Logo h1 {
+	color: #fff;
+	font-family:Arial, Helvetica, sans-serif;
+	text-transform:uppercase
+}
+#Logo h1 a {
+	color: #fff;
+}
+#Logo h1 a span {
+	color:#d6e85c;
+}
+#SearchForm {
+	color: #95bbd1;
+	background:url(../../Moss/images/green/bg_search.png) no-repeat;
+	width:381px;
+	height:54px;
+}
+#SearchForm label {
+	color: #fff;
+}
+#SearchForm a {
+}
+#SearchForm a:hover {
+	color: #fff;
+}
+.Left {
+	background: transparent url('../../Moss/images/green/bg_left.png') no-repeat;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+.Left li {
+}
+.Left li:hover {
+	background:  url(../../Moss/images/green/PagesMenuBg.png) repeat;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.Content {
+}
+.Content a {
+	color: #fff;
+}
+.Content.Wide {
+}
+.Content.Widest {
+}
+.Right {
+	background: transparent url('../../Moss/images/green/RightBg.gif') no-repeat;
+}
+.Right a {
+	color: #034285;
+}
+.Right a:hover, .Right a:hover strong {
+	color: #001927;
+}
+#Footer {
+	color:#043f30;
+	background:#000000 url(../../Moss/images/green/bg_footer.gif) repeat-x 0 0
+}
+#Footer a {
+	color:#043f30;
+}
+#Footer li a {
+	border-left: 1px solid #043f30;
+}
+.Content .ProductList li {
+}
+.Content .ProductList li:hover, .Content .ProductList li.Over {
+}
+.ProductList .ProductImage {
+	background: #fff;
+}
+.ProductList strong, .ProductList strong a {
+	color: #fff;
+}
+.ProductPrice, .ProductList em {
+	color: #ff3300;
+}
+.Content .ProductPrice, .Content .ProductList em {
+	color: #ff3300;
+	text-align:center
+}
+.ProductList .Rating {
+	color: #797979;
+}
+.Content .ProductList .Rating {
+	color: #797979;
+	text-align:center
+}
+.Right .ProductList li {
+}
+.Content .FeaturedProducts .ProductList li {
+}
+.Content .FeaturedProducts .ProductList li:hover, .Content .FeaturedProducts .ProductList li.Over {
+}
+.Breadcrumb {
+}
+.CompareItem {
+	width:200px;
+	border-left: solid 1px #011714;
+}
+.CompareFieldName {
+	font-weight:bold;
+	border-bottom: 1px solid #011714;
+}
+.CompareFieldTop {
+	border-bottom:solid 1px #011714;
+}
+.CompareFieldTop a:hover {
+	color:red;
+}
+.CompareCenter {
+	border-left:solid 1px #011714;
+	border-bottom:solid 1px #011714;
+}
+.CompareLeft {
+	border-left:solid 1px #011714;
+	border-bottom:solid 1px #011714;
+}
+.ViewCartLink {
+	background: url('../../Moss/images/green/Cart.gif') no-repeat 3px 0;
+}
+table.CartContents, table.General {
+	border: 1px solid #011714;
+}
+.CartContents thead tr th, table.General thead tr th {
+	background: #011714;
+	color: #fff;
+	border-bottom: 1px solid #011714;
+}
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #011714;
+	color: #fff;
+}
+.MiniCart .SubTotal {
+	color: #fff;
+}
+.JustAddedProduct {
+	border: 1px solid #011714;
+	background: #fff;
+}
+.JustAddedProduct strong, .JustAddedProduct a {
+	color: #fff;
+}
+.CategoryPagination {
+	color: #034285;
+	background: #f4fbfc;
+	border: 1px solid #c0dae7;
+}
+.CheckoutRedeemCoupon {
+	background: #EAFDFF;
+	padding: 10px;
+	width: 300px;
+	border: 1px solid #9DD3D8;
+	margin-bottom: 10px;
+}
+.SubCategoryList, .SubBrandList {
+	background:#011714;
+}
+.InfoMessage {
+	background: #011714 url('../../Moss/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+.SuccessMessage {
+	background: #E8FFDF url('../../Moss/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+.ErrorMessage {
+	background: #FFECEC url('../../Moss/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #011714;
+}
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #011714;
+	background: #011714;
+}
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #011714;
+}
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background:none;
+	border: 1px solid #011714;
+}
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #C1D52C;
+}
+.TabNav li a {
+	border: 1px solid #C1D52C;
+	background-color: #001C1D;
+}
+.TabNav li a:hover {
+	background-color: #C1D52C;
+}
+.TabNav li.Active a {
+	border: 1px solid white;
+	background-color: #C1D52C;
+	color: #001C1D;
+}
+
+
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #011714;
+}
+/* Product Videos */
+
+#VideoContainer {
+	border: 1px solid #cccccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.currentVideo {
+	background-color: #ddf0f6;
+}
+.videoRow:hover {
+	background-color: #011714;
+}
+/* Product Videos */
+
+#VideoContainer {
+	border: 1px solid #cccccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.currentVideo {
+	background-color: #ddf0f6;
+}
+.videoRow:hover {
+	background-color: #011714;
+}
+#SearchResultsCategoryAndBrand {
+	background-color: #011714;
+}
+
+.ProductMain table.ExpectedReleaseDate td {
+	border-color: #001818;
+	background-color: #B6CB1D;
+	color: #16301D;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #011714;
+	border-top-color: #011714;
+	background: #011714;
+	color: #FFF;
+}

@@ -1,0 +1,36 @@
+/** IE 67 Specific Fixes **/
+
+* html #Container {
+}
+
+* html .Right {
+	margin-left: 0;
+}
+
+* html .Right .TopSellers li.TopSeller1 .TopSellerNumber {
+	background: url(../../Fashion/images/blue/TopSellerNumber1Bg.gif) 0 0 no-repeat;
+	margin: -3px 2px 0 0;
+	padding: 1px 2px 0 2px;
+}
+
+* html #Logo {
+	height: 76px;
+}
+
+.Content .FeedLink {
+	margin: 2px 4px 0 0;
+}
+
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+/** General IE Fixes **/
+
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+
+select, input {
+	font-size: 0.95em;
+}

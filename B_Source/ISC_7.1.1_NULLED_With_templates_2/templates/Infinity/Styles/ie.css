@@ -1,0 +1,32 @@
+/** IE 67 Specific Fixes **/
+
+* html #Logo h1 {
+	background: url(../../Infinity/images/red/Logo.gif) top left no-repeat;
+}
+
+* html .ComparisonCheckbox {
+	margin-top: 15px;
+}
+
+* html .SideRecentlyViewed .ProductList .ProductDetails a{
+	width: 103px;
+}
+
+* html .Left .BlockContent, * html .Right .BlockContent {
+	width: 128px;
+}
+
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+
+/** General IE Fixes **/
+
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+
+select, input {
+	font-size: 0.95em;
+}

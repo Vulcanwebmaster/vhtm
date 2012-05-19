@@ -1,0 +1,125 @@
+/* Color: Red */
+
+.Container {
+	background: #fff;
+}
+
+.CompareItem { width:200px; border-left: solid 1px #CACACA; }
+.CompareFieldName { font-weight:bold; border-bottom: 1px solid #EFF8FA; }
+.CompareFieldTop { border-bottom:solid 1px #D6D6D6; }
+.CompareFieldTop a:hover { color:red; }
+.CompareCenter { border-left:solid 1px #D6D6D6; border-bottom:solid 1px #F2F2F2; }
+.CompareLeft { border-left:solid 1px #D6D6D6; border-bottom:solid 1px #F2F2F2; }
+
+table.CartContents, table.General {
+	border: 1px solid #c7d7db;
+	border-bottom: 0;
+}
+
+table.CartContents thead tr th, table.General thead tr th {
+	background: #5FA5C4;
+	color: #fff;
+	border-bottom: 1px solid #c7d7db;
+}
+
+.CartContents tbody td {
+	border-bottom: 1px solid #c7d7db;
+	color: #000;
+}
+
+.MiniCart .SubTotal {
+	color: #075899;
+}
+
+.JustAddedProduct {
+	border: 1px solid #c0dae7;
+	background: #fff;
+}
+
+.JustAddedProduct strong, .JustAddedProduct a {
+	color: #075899;
+}
+
+.CategoryPagination {
+	color: #000;
+}
+
+.CheckoutRedeemCoupon { background: #f0f0f0; padding: 10px; width: 300px; border: 1px solid #ccc; margin-bottom: 10px; }
+
+.InfoMessage {
+	background: #F6F6F6 url('../../Infinity/images/InfoMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.SuccessMessage {
+	background: #E8FFDF url('../../Infinity/images/SuccessMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ErrorMessage {
+	background: #FFECEC url('../../Infinity/images/ErrorMessage.gif') no-repeat 5px 8px;
+	color: #555;
+}
+
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #F6F6F6;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #5fa5c4;
+	background: #efefef;
+}
+
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #efefef;
+	border-bottom: 1px solid #cacaca;
+	color: #dd2020;
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	color: #555;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #3d9abe;
+}
+
+.TabNav li a {
+	border: 1px solid #3d9abe;
+	background: #ddf0f6;
+}
+
+.TabNav li a:hover {
+	background-color: #c8e6ed;
+}
+
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+}
+
+.CartContents tfoot .SubTotal td {
+	border-top: none;
+	border-bottom: 1px solid #c7d7db;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #c7d7db;
+	border-top-color: #c7d7db;
+	background: #5FA5C4;
+	color: #fff;
+}

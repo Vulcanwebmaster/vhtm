@@ -1,0 +1,39 @@
+/** IE 67 Specific Fixes **/
+
+* html #Container {
+}
+
+* html #Menu li a {
+	float: left;
+	padding-bottom: 10px;
+}
+
+*html .Left .FeedLink, *html .Right .FeedLink {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+*html .Left .FeedLink a, {
+	color: #f30f60;
+}
+*html .Right .FeedLink a {
+	color: #f4f4f4;
+}
+
+.Content .FeedLink {
+	margin: 2px 4px 0 0;
+}
+
+* html .SelectGiftWrapMultiple {
+	height: 400px;
+}
+
+/** General IE Fixes **/
+
+#SearchForm .Button {
+	vertical-align: bottom;
+}
+
+select, input {
+	font-size: 0.95em;
+}

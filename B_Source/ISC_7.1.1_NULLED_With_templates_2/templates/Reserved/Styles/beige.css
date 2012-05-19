@@ -1,0 +1,349 @@
+body {
+	background: #fdfdf8 url('../../Reserved/images/beige/PageBg.gif') repeat-x;
+	color: #535353;
+}
+
+a {
+	color: #003399;
+}
+
+a: hover {
+	color: #3366cc;
+}
+
+h1, h2, h3, h4 {
+	color: #cc6600;
+}
+
+
+h3 {
+	border-bottom: 1px solid #DCD7D2;
+	color: #993300;
+}
+
+h4 {
+	border-bottom: 1px dashed #ccc;
+	color: #666666;
+}
+
+#Header #Logo h1 {
+	color: #003366;
+}
+
+#Header #Logo h1 a {
+	color: #003366;
+}
+
+#Menu li {
+	border-left: solid 1px #a3a290;
+}
+
+#Menu li a {
+	color: #003366;
+}
+
+#Menu li a:hover {
+	color: #cc6600;
+}
+
+#Menu li.HasSubMenu:hover, #Menu li.HasSubMenu.over {
+	background: #fff;
+	border-top: 1px solid #a3a290;
+}
+
+#Menu li.HasSubMenu:hover, #Menu li.HasSubMenu.over {
+	background: #fff;
+}
+
+#Menu li.HasSubMenu ul {
+	border: 1px solid #a3a290;
+}
+
+#Menu li.HasSubMenu ul li {
+	color: white;
+}
+
+#Menu li:hover ul, #Menu li.over ul {
+	background: #fff;
+}
+
+#Menu ul li.CartLink a {
+	background: url('../../Reserved/images/ViewCart.gif') no-repeat left center;
+}
+
+#Menu ul li.CartLink a span {
+	color: #808080;
+}
+
+#Wrapper {
+	background: #fff;
+	border: 1px solid #d3d1bc;
+}
+
+#HeaderMenu {
+	background: #f5f4e9 url('../../Reserved/images/SearchBackground.gif') repeat-x bottom;
+	border: 1px solid #d3d1bc;
+}
+
+#SearchForm .Textbox {
+	background: #fff;
+}
+
+
+#SearchForm p a, #SearchForm p a:hover {
+	color: #333;
+}
+
+#TopMenu ul li {
+	border-left: 1px solid #999;
+}
+
+#TopMenu a {
+	color: #333;
+}
+
+#TopMenu a:hover, #TopMenu a:visited {
+	color: #333;
+}
+
+.Left h2 {
+	border-bottom: solid 1px #d4b99d;
+}
+
+.Left .Block {
+	border: solid 1px #e5e5e1;
+}
+
+.Content h2 {
+	border-bottom: 1px solid #D4B99D;
+}
+
+.Right h2 {
+	border-bottom: solid 1px #e5e5e1;
+	color: #cc6600;
+}
+
+.Right .Block {
+	border: solid 1px #e5e5e1;
+}
+
+/* Newsletter Subscription Block */
+.Block.NewsletterSubscription {
+	background: #EDEDCF;
+	border: 0;
+}
+
+.NewsletterSubscription h2 {
+	border-bottom: 1px solid #E4D293;
+	color: #cc6600;
+}
+
+.ProductDetails em, .ProductPrice {
+	color: #CC6600;
+}
+
+/* Product Listings in Left & Right Columns */
+.Left .ProductList li, .Right .ProductList li {
+	border-bottom: 1px solid #e5e5e1;
+}
+
+/* Side Mini Cart */
+.SideCart .ProductList {
+	border-top: 1px solid #e5e5e1;
+}
+
+/* Page Footer */
+#Footer p {
+	color: #989591;
+}
+
+#Footer a {
+	color: #989591;
+}
+
+#Footer a:visited {
+	color: #989591;
+}
+
+#Footer a:hover {
+	color: #989591;
+}
+
+/* Page Breadcrumbs */
+.Breadcrumb {
+	background: #F7F6F0;
+}
+
+/* Create Account & Login Page */
+.CreateAccount {
+	border-right: 1px solid #ccc;
+}
+
+/* Product Comparisons */
+.CompareItem { border-left: solid 1px #CACACA; }
+.CompareFieldName {  border-bottom: 1px solid #EFF8FA; }
+.CompareFieldTop { border-bottom: solid 1px #85BADF; }
+.CompareFieldTop a:hover { color: red; }
+.CompareCenter { border-left: solid 1px #85BADF; border-bottom: solid 1px #F2F2F2; }
+.CompareLeft { border-left: solid 1px #85BADF; border-bottom: solid 1px #F2F2F2; }
+
+.ComparisonTable tr:hover td, .ComparisonTable tr.Over td {
+	background: #EFF8FA;
+}
+
+/* Cart/Order/Item Contents Tables */
+table.CartContents, table.General {
+	border: 1px solid #c7d7db;
+}
+
+table.CartContents thead tr th, table.General thead tr th {
+	background: #D4EDF9;
+	color: #424748;
+	border-bottom: 1px solid #c7d7db;
+}
+
+.CartContents tfoot .SubTotal td {
+	border-top: 1px solid #c7d7db;
+	color: #075899;
+}
+
+/* Suggestive Cart "Mini Cart" Block */
+.MiniCart .SubTotal {
+	color: #075899;
+}
+
+/* Paging Lists */
+.CategoryPagination {
+	background: #FFF8DF;
+}
+
+
+/* Checkout Coupon Redemption Block */
+.CheckoutRedeemCoupon {
+	background: #EAFDFF;
+	border: 1px solid #9DD3D8;
+}
+
+/* Add to Cart Block */
+.Block.AddtoCart {
+	background: #53AEDE;
+	color: #fff;
+	border: 0;
+}
+
+.AddtoCart h2 {
+	border-bottom: 1px solid #A1D1EA;
+	color: #fff;
+}
+
+.AddtoCart .ProductPrice {
+	color: #fff;
+}
+
+/* Add to Wishlist Block */
+.Block.AddToWishlist {
+	background: #D4EDF9;
+	color: #003366;
+	border: 0;
+}
+
+.AddToWishlist h2 {
+	color: #003366;
+}
+
+/* Quick Search */
+.QuickSearch {
+	background: #fff;
+	border: 1px solid #BFBFBF;
+}
+
+.QuickSearchHover td{
+	background: #E8F4F8;
+}
+
+.QuickSearchAllResults a {
+	background: url('../../Reserved/images/beige/QuickSearchAllResultsButton.gif') no-repeat right;
+}
+
+/* Category and Brand Listing Boxes */
+.Block.CategoryList, .Block.BrandList {
+	background: #d4edf9;
+	border: 0;
+}
+
+.CategoryList h2, .BrandList h2 {
+	border-bottom: solid 1px #a4cbde;
+	color: #003366;
+}
+
+/* Shipping Estimation on Cart Contents Page */
+.EstimateShipping {
+	border: 1px solid #c7d7cb;
+	background: #efefef;
+}
+
+/* Express Checkout */
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+	background: #dcf0f5;
+	border: 1px solid #bce0e8;
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	color: #555;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent {
+	color: #888;
+}
+
+/* General Tables */
+table.General tbody tr td {
+	border-top: 1px solid #efefef;
+}
+
+/* Tabbed Navigation */
+.TabNav {
+	border-bottom: 1px solid #d4b99d;
+}
+
+.TabNav li a {
+	border: 1px solid #d4b99d;
+	background: #ececed;
+	color: #444;
+}
+
+.TabNav li a:hover {
+	background-color: #e0e0e0;
+}
+
+.TabNav li.Active a {
+	border-bottom: 1px solid #fff;
+	background: #fff;
+	color: #c60;
+}
+
+/* Product Videos */
+
+#VideoContainer {
+	border: 1px solid #cccccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.currentVideo {
+	background-color: #ddf0f6;
+}
+
+.videoRow:hover {
+	background-color: #efefef;
+}
+
+.CartContents .ItemShipping th {
+	border-bottom-color: #c7d7db;
+	border-top-color: #c7d7db;
+	background: #D4EDF9;
+	color: #424748;
+}
