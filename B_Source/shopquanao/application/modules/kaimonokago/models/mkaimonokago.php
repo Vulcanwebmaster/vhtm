@@ -466,6 +466,20 @@ class MKaimonokago extends Base_model
     	$ds->free_result();
     	return $list;
     }
+    
+    function getMenuList()
+    {
+    	$this->load->database();
+    	$this->db->where('is_display_in_menu','1');
+    	$list=$this->db->get('omc_category');
+    	$ds=array();
+    	foreach($list->result() as $ct)
+    	{
+    		$ds[]=$ct;
+    	}
+    	$list->free_result();
+    	return $ds;
+    }
 }
 
 ?>

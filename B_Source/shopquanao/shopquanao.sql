@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 15, 2012 at 09:51 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: May 19, 2012 at 06:31 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -31,11 +32,6 @@ CREATE TABLE IF NOT EXISTS `be_acl_actions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `be_acl_actions`
---
-
 
 -- --------------------------------------------------------
 
@@ -114,11 +110,6 @@ CREATE TABLE IF NOT EXISTS `be_acl_permission_actions` (
   KEY `access_id` (`access_id`),
   KEY `axo_id` (`axo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `be_acl_permission_actions`
---
-
 
 -- --------------------------------------------------------
 
@@ -389,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-15 18:23:16', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-17 12:43:52', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'an', 'a97b4c3de192c200fdc31eac8ca2cf57639da998', 'anan@gmail.com', 1, 1, 'qFLDP9DBM3oERI1uT3cAJ5cBADidq28N', '2012-05-05 18:48:45', '2012-05-05 18:45:43', '2012-05-05 18:48:28');
 
 -- --------------------------------------------------------
@@ -440,7 +431,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('bbf8d095038c24315ccb426e9e878a56', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337111457, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-15 18:10:24";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('9c5d5648ace156eafe7dca69ccebd6de', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337240562, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-16 19:31:18";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
+('f3ac31a102f5844e230797909322295c', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337251424, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-17 05:40:47";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -485,6 +477,7 @@ CREATE TABLE IF NOT EXISTS `omc_category` (
   `parentid` int(11) unsigned NOT NULL,
   `lang_id` int(2) unsigned NOT NULL,
   `table_id` int(11) unsigned NOT NULL,
+  `is_display_in_menu` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=33 ;
 
@@ -492,23 +485,23 @@ CREATE TABLE IF NOT EXISTS `omc_category` (
 -- Dumping data for table `omc_category`
 --
 
-INSERT INTO `omc_category` (`id`, `name`, `metadesc`, `metakeyword`, `shortdesc`, `longdesc`, `status`, `order`, `parentid`, `lang_id`, `table_id`) VALUES
-(1, 'English category', '', '', '', '', 'active', NULL, 0, 0, 1),
-(2, 'Books', '', '', '', '', 'active', 40, 1, 0, 2),
-(7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, 1, 0, 7),
-(9, 'Mountain', '', '', '', '', 'active', 10, 1, 0, 9),
-(11, 'River', '', '', '', '', 'active', 25, 1, 0, 11),
-(17, 'Angels', 'Angels in english', '', '', '', 'active', 35, 1, 0, 17),
-(20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, 1, 0, 20),
-(23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, 1, 0, 23),
-(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, 0, 0, 25),
-(26, 'Áo', '', '', '', '', 'active', 0, 0, 0, 26),
-(27, 'Phụ kiện', '', '', '', '', 'active', 0, 0, 0, 27),
-(28, 'sdfsdf', '', '', '', '', 'active', 0, 0, 0, 28),
-(29, 'hoho', '', '', '', '', 'active', 0, 0, 0, 29),
-(30, 'dsfsdf', '', '', '', '', 'active', 0, 0, 0, 30),
-(31, '3qwrwe', '', '', '', '', 'active', 0, 0, 0, 31),
-(32, 'sdgdfg', '', '', '', '', 'active', NULL, 0, 0, 32);
+INSERT INTO `omc_category` (`id`, `name`, `metadesc`, `metakeyword`, `shortdesc`, `longdesc`, `status`, `order`, `parentid`, `lang_id`, `table_id`, `is_display_in_menu`) VALUES
+(1, 'English category', '', '', '', '', 'active', NULL, 0, 0, 1, '0'),
+(2, 'Books', '', '', '', '', 'active', 40, 1, 0, 2, '0'),
+(7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, 1, 0, 7, '0'),
+(9, 'Mountain', '', '', '', '', 'active', 10, 1, 0, 9, '0'),
+(11, 'River', '', '', '', '', 'active', 25, 1, 0, 11, '0'),
+(17, 'Angels', 'Angels in english', '', '', '', 'active', 35, 1, 0, 17, '0'),
+(20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, 1, 0, 20, '0'),
+(23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, 1, 0, 23, '0'),
+(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, 0, 0, 25, '1'),
+(26, 'Áo', '', '', '', '', 'active', 0, 0, 0, 26, '1'),
+(27, 'Phụ kiện', '', '', '', '', 'active', 0, 0, 0, 27, '1'),
+(28, 'sdfsdf', '', '', '', '', 'active', 0, 0, 0, 28, '0'),
+(29, 'hoho', '', '', '', '', 'active', 0, 0, 0, 29, '1'),
+(30, 'dsfsdf', '', '', '', '', 'active', 0, 0, 0, 30, '0'),
+(31, '3qwrwe', '', '', '', '', 'active', 0, 0, 0, 31, '0'),
+(32, 'sdgdfg', '', '', '', '', 'active', NULL, 0, 0, 32, '0');
 
 -- --------------------------------------------------------
 
@@ -522,11 +515,6 @@ CREATE TABLE IF NOT EXISTS `omc_colors` (
   `status` enum('active','inactive') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `omc_colors`
---
-
 
 -- --------------------------------------------------------
 
@@ -675,11 +663,6 @@ CREATE TABLE IF NOT EXISTS `omc_messages` (
   PRIMARY KEY (`msg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `omc_messages`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -790,7 +773,7 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
   `lang_id` int(2) unsigned NOT NULL,
   `table_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=66 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=68 ;
 
 --
 -- Dumping data for table `omc_products`
@@ -805,7 +788,7 @@ INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longde
 (6, 'A6', 'Quần 6', 0, '', '', '<p><img src="../../../../assets/images/quan2.gif" alt="" width="365" height="365" /></p>', '<p><img src="../../../../assets/images/quan2.gif" alt="" width="365" height="365" /></p>', '0', 0, 'active', 25, 'none', 'new product', 6666, 0, 0),
 (7, 'A7', 'Quần 7', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 3, 'active', 25, 'none', 'new product', 7777, 0, 0),
 (8, 'A8', 'Áo phông 8', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 8, 'active', 26, '', 'new product', 8888, 0, 0),
-(9, 'A9', 'Áo phông 9', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 9999, 0, 0),
+(9, 'A9', 'Áo phông 9', 0, '', '<p>dfgdfglfgskfkdfbgkjfgbdkfjgbdfg<img src="../../../../assets/images/12012009235402_87033H.jpg" alt="" width="1800" height="1821" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 26, 'none', 'new product', 9999, 0, 0),
 (10, 'A10', 'Áo phông 10', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 1200, 0, 0),
 (11, 'A11', 'Áo phông 11', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, 'front', 'new product', 50, 0, 0),
 (12, 'A12', 'Áo phông 12', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 9, 'active', 26, '', 'new product', 230, 0, 0),
@@ -829,7 +812,9 @@ INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longde
 (62, 'ghfgh', 'Quần 62', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'webshop', 'new product', 124000, 0, 62),
 (63, 'a123', 'Quần 63', 0, '', '', '', '', '0', 2, 'active', 25, 'webshop', 'new product', 120000, 0, 63),
 (64, 'a1234', 'Quần 64', 0, '', '', '', '', '0', 3, 'active', 25, 'front', 'new product', 134000, 0, 64),
-(65, 'a12345', 'Quần 65', 0, '', '', '', '', '0', 4, 'active', 25, 'webshop', 'new product', 150000, 0, 65);
+(65, 'a12345', 'Quần 65', 0, '', '', '', '', '0', 4, 'active', 25, 'webshop', 'new product', 150000, 0, 65),
+(66, '100', 'Áo sơ mi nam', 0, 'Xanh xanh xanh', '<p>X&aacute;m x&aacute;m x&aacute;m</p>', '', '<p><img src="../../../assets/images/12012009235402_87033H.jpg" alt="" width="1800" height="1821" /></p>', '0', 0, 'active', 26, 'none', 'none', 0, 0, 66),
+(67, '101', 'Áo so mi nữ', 0, 'xấu xấu', '<p>bẩn bẩn</p>', '', '<p><img src="../../../assets/images/12012009235402_87033H.jpg" alt="" width="1800" height="1821" /></p>', '0', 0, 'active', 1, 'none', 'none', 0, 0, 67);
 
 -- --------------------------------------------------------
 
@@ -843,11 +828,6 @@ CREATE TABLE IF NOT EXISTS `omc_product_colors` (
   PRIMARY KEY (`product_id`,`color_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `omc_product_colors`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -859,11 +839,6 @@ CREATE TABLE IF NOT EXISTS `omc_product_sizes` (
   `size_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`size_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `omc_product_sizes`
---
-
 
 -- --------------------------------------------------------
 
@@ -877,11 +852,6 @@ CREATE TABLE IF NOT EXISTS `omc_sizes` (
   `status` enum('active','inactive') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `omc_sizes`
---
-
 
 -- --------------------------------------------------------
 
@@ -946,11 +916,6 @@ CREATE TABLE IF NOT EXISTS `shop_contact_us` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `shop_contact_us`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -962,7 +927,7 @@ CREATE TABLE IF NOT EXISTS `shop_kho` (
   `kho_name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `kho_code` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`kho_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `shop_kho`
@@ -988,7 +953,7 @@ CREATE TABLE IF NOT EXISTS `shop_sanphamkho` (
   `id` int(11) NOT NULL,
   `total` int(10) NOT NULL,
   PRIMARY KEY (`sanphamkho_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=148 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=154 ;
 
 --
 -- Dumping data for table `shop_sanphamkho`
@@ -1094,9 +1059,9 @@ INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (121, 1, 8, 2),
 (122, 2, 8, 7),
 (123, 3, 8, 6),
-(124, 3, 9, 6),
-(125, 1, 9, 4),
-(126, 2, 9, 6),
+(124, 3, 9, 0),
+(125, 1, 9, 0),
+(126, 2, 9, 0),
 (127, 1, 10, 5),
 (128, 2, 10, 4),
 (129, 3, 10, 0),
@@ -1117,7 +1082,13 @@ INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (144, 2, 15, 6),
 (145, 1, 16, 5),
 (146, 2, 16, 4),
-(147, 3, 16, 0);
+(147, 3, 16, 0),
+(148, 1, 66, 0),
+(149, 2, 66, 0),
+(150, 3, 66, 0),
+(151, 1, 67, 0),
+(152, 2, 67, 0),
+(153, 3, 67, 0);
 
 -- --------------------------------------------------------
 
@@ -1135,11 +1106,6 @@ CREATE TABLE IF NOT EXISTS `shoutbox` (
   `privacy` enum('public','private') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'public',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `shoutbox`
---
-
 
 --
 -- Constraints for dumped tables
@@ -1176,3 +1142,7 @@ ALTER TABLE `be_resources`
 --
 ALTER TABLE `be_users`
   ADD CONSTRAINT `be_users_ibfk_1` FOREIGN KEY (`group`) REFERENCES `be_acl_groups` (`id`) ON DELETE SET NULL;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

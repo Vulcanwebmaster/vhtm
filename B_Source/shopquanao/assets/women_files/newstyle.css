@@ -177,7 +177,7 @@ a img{border:none}
 #header .description{display:none;padding-left:5px;color:#ffffff;font-size:14px;font-weight:normal;margin-top:0px;padding-top:0px;}
 #header h1 a,#header h1 a:visited{color:#ffffff;text-decoration:none}
 #header h2{padding-left:15px;color:#736f74;font:14px Arial,Helvetica,Sans-serif}
-#header2{float:right;width:720px;overflow:hidden;}
+#header2{float:right;/*width:720px;overflow:hidden;*/}
 #header2 .widget{padding:10px 5px 0 10px;float:right}
 /* Outer-Wrapper----------------------------------------------- */
 #outer-wrapper{width:1000px;margin:0px auto 0px auto;padding:100px 0px 0px 0px;text-align:$startSide;font:$bodyfont;}
@@ -229,7 +229,7 @@ a.comment-permalink{color:#067bd6;font:normal normal 10px Arial,Tahoma,Verdana}
 .profile-textblock{margin:0.5em 0;line-height:1.6em}
 .profile-link{font:$postfooterfont;text-transform:uppercase;letter-spacing:.1em}
 #navbar-iframe{height:0;visibility:hidden;display:none}
-#foxmenucontainer{height:38px;position:absolute;top:30px;right:0;display:block;padding:0 5px 0 5px;font:13px Arial,Tahoma,Century gothic,verdana,sans-serif;font-weight:normal;float:right;width:715px;background:#3F3F3F;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+.foxmenucontainer{height:38px;/*position:absolute;*/top:30px;right:0;display:block;padding:0 5px 0 5px;font:13px Arial,Tahoma,Century gothic,verdana,sans-serif;font-weight:normal;background:#3F3F3F;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
 #menu{margin:1px 0;padding:0;height:36px;overflow:hidden;float:left;width:715px}
 #menu ul{float:left;list-style:none;margin:0;padding:0}
 #menu li{float:left;list-style:none;margin:0;padding:0}

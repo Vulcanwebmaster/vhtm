@@ -18,25 +18,22 @@
 			redirect(base_url().'index.php/ao/get_list/ao/0');           			
 		}
 		
-		function get_list($type,$index=0)
+		
+		
+		function get_list($cat_id,$index=0)
 		{	
-			$config['base_url']=base_url().'index.php/ao/get_list/'.$type;
+			$config['base_url']=base_url().'index.php/ao/get_list/'.$cat_id;
             
             $config['per_page']=8;
             $config['uri_segment'] = 4; 
-			$config['total_rows']=$this->Get_data->count($type);
-			$count=$this->Get_data->count($type);
+			$config['total_rows']=$this->Get_data->count($cat_id);
+			$count=$this->Get_data->count($cat_id);
 			
 			$this->pagination->initialize($config);
-			if ($type=='ao')
-				$data['type']='Áo';
-			elseif ($type=='quan')
-				$data['type']='Quần';
-			elseif ($type=='phukien')
-				$data['type']='Phụ kiện';
+			$data['type']=$this->Get_data->get_name_cat($cat_id);
 			$data['title']='Danh sách sản phẩm';
-			$data['count']=$this->Get_data->count($type);
-			$data['list'] = $this->Get_data->get_list($type,$index);
+			$data['count']=$this->Get_data->count($cat_id);
+			$data['list'] = $this->Get_data->get_list($cat_id,$index);
 			$data['page']=$this->config->item('backendpro_template_shop').'dsao';
 			$data['module']=$this->module;
 			$this->load->view($this->_container,$data);
@@ -50,9 +47,9 @@
             $config['uri_segment'] = 3; 
 			$config['total_rows']=$this->Get_data->count_hang_moi();			
 			$this->pagination->initialize($config);
-			$data['title']='HÃ ng má»›i vá»�';
+			$data['title']='HÃƒÂ ng mÃ¡Â»â€ºi vÃ¡Â»ï¿½';
 			$data['count']=$this->Get_data->count_hang_moi();
-			$data['type']="HÃ ng má»›i";
+			$data['type']="HÃƒÂ ng mÃ¡Â»â€ºi";
 			$data['list']=$this->Get_data->hang_moi_ve($index);
 			$data['page']=$this->config->item('backendpro_template_shop').'dsao';
 			$data['module']=$this->module;

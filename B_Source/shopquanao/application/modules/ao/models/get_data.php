@@ -18,10 +18,8 @@
 			return $cat_id;
 		}
 		
-		function get_list($type,$offset)
+		function get_list($cat_id,$offset)
 		{
-			$cat_id=$this->type($type);
-			
 	        $this->db->where('category_id', $cat_id);	        
 	        $data = array();
 		
@@ -37,13 +35,21 @@
 	        $Q->free_result();
 	        return $data;
 		}
-		
-		function count($type)
+			
+	function count($cat_id)
 		{
-			$cat_id=$this->type($type);
 			$this->db->where('category_id', $cat_id);
 			$list=$this->db->get("omc_products");
 			return $list->num_rows();
+		}
+		
+		function get_name_cat($cat_id)
+		{
+			$this->db->where('id',$cat_id);
+			$ds=$this->db->get('omc_category');
+			if ($ds->num_rows()>0)
+				return $ds->row(0);
+				else return FALSE;
 		}
 		
 		//=====HÀNG MỚI VỀ ==================================================================

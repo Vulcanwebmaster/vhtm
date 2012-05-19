@@ -36,22 +36,22 @@
                                     <thead>
                                         <tr class="first last">
                                             <th rowspan="1">
-                                            	ảnh sản phẩm
+                                            	áº£nh sáº£n pháº©m
                                             </th>
                                             <th rowspan="1">
-                                                <span class="nobr">tên sản phẩm</span>
+                                                <span class="nobr">tÃªn sáº£n pháº©m</span>
                                             </th>
                                             <th class="a-center" colspan="1">
-                                                Chức năng
+                                                Chá»©c nÄƒng
                                             </th>
                                             <th rowspan="1" class="a-center">
-                                                <span class="nobr">Giá </span>
+                                                <span class="nobr">GiÃ¡ </span>
                                             </th>
                                             <th class="a-center" colspan="1">
-                                                Số lượng
+                                                Sá»‘ lÆ°á»£ng
                                             </th>
                                             <th rowspan="1" class="a-center">
-                                                Thành tiền
+                                                ThÃ nh tiá»�n
                                             </th>
                                         </tr>
                                     </thead>
@@ -92,7 +92,7 @@
 	                                                <span class="cart-price"><span class="price"><?php echo $row['price'] . lang('webshop_currency_symbol');?></span> </span>
 	                                            </td>
 	                                            <td class="a-right">
-	                                                <?php echo form_input($data);?>
+	                                                <?php echo $row['count']//echo form_input($data);?>
 	                                            </td>
 	                                            <td class="a-center last">
 	                                                <span class="cart-price"><span class="price"><?php echo $data['value'] * $row['price'] . lang('webshop_currency_symbol');?></span> </span>
@@ -113,8 +113,8 @@
                                      <tfoot>
                                         <tr class="first last">
                                             <td colspan="6" class="a-right last">
-                                            	<button type="submit" title="Thanh Toán " class="button btn-update" style="float:right;">
-                                                    <span><span>Thanh Toán</span></span></button>
+                                            	<button type="submit" title="Thanh ToÃ¡n " class="button btn-update" style="float:right;">
+                                                    <span><span>Thanh ToÃ¡n</span></span></button>
                                             </td>
                                         </tr>
                                     </tfoot>
