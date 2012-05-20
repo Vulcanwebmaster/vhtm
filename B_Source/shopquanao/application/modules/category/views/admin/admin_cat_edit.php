@@ -42,6 +42,12 @@ echo "<td>";
 echo form_dropdown('status',$options, $category['status']);
 echo "</td></tr>\n";
 
+echo "<tr><td class='label'><label for='is_display_in_menu'>".$this->lang->line('kago_is_display')."</label></td>\n";
+$options2 = array('1' => 'Có', '0' => 'Không');
+echo "<td>";
+echo form_dropdown('is_display_in_menu',$options2, $category['is_display_in_menu']);
+echo "</td></tr>\n";
+
 echo "</table>";
 
 

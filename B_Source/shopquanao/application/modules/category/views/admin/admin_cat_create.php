@@ -38,6 +38,12 @@ echo "<td>";
 echo form_dropdown('status',$options);
 echo "</td></tr>\n";
 
+echo "<tr><td class='label'><label for='is_display_in_menu'>".$this->lang->line('kago_is_display')."</label></td>\n";
+$options2 = array('1' => 'Có', '0' => 'Không');
+echo "<td>";
+echo form_dropdown('is_display_in_menu',$options2);
+echo "</td></tr>\n";
+
 echo "</table>\n";
 
 echo form_hidden('lang_id', '0');

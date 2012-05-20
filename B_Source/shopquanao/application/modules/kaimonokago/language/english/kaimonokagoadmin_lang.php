@@ -69,6 +69,7 @@ $lang['kago_meta_desc'] = "Mô tả";
 $lang['kago_meta_keyword'] = "Từ khóa";
 $lang['kago_short_desc'] = "Mô tả ngắn gọn";
 $lang['kago_long_desc'] = "Mô tả chi tiết";
+$lang['kago_is_display'] = "Hiển thị trên menu";
 $lang['kago_add_remove'] = "Thêm/Xóa công cụ";
 $lang['kago_select_img'] = "Chọn ảnh";
 $lang['kago_select_thumb'] = "Chọn thumnail";

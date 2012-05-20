@@ -80,6 +80,7 @@ class Admin extends Shop_Admin_Controller
         'longdesc'    => $this->input->post('longdesc'),
         'status'      => db_clean($_POST['status'],8),
         'lang_id'     => id_clean($_POST['lang_id']),
+        'is_display_in_menu' => db_clean($_POST['is_display_in_menu'],1) 
         );
         // $this->MKaimonokago->addItem($this->module, $data);
         return $data;

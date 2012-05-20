@@ -34,12 +34,12 @@ if (count($categories))
             }
             echo "</td>\n";
             echo "<td align='center'>";
-            if ($list['is_display_in_menu']=='0')
+            if ($list['is_display_in_menu'] == '0')
             	echo 'Không';
             else 
             	echo 'Có';
             echo "</td>\n";
-            echo "</tr>\n";
+            echo  "</tr>\n";
         }
         else
         {
@@ -66,7 +66,13 @@ if (count($categories))
                     echo anchor($module.'/admin/delete/'.$list['id'],$this->bep_assets->icon('delete'), array('class' => 'delete_link',"onclick"=>"return confirmSubmit('".$list['name']."')"));
                 }
                 echo "</td>\n";
-                echo "</tr>\n";
+                echo "<td align='center'>";
+            	if ($list['is_display_in_menu'] == '0')
+            		echo 'Không';
+            	else 
+            		echo 'Có';
+            	echo "</td>\n";
+            	echo  "</tr>\n";
             }
         }       
     }
