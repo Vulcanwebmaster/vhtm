@@ -32,7 +32,7 @@
                     <div align="right" style="margin-right:20px">
                     	<script type="text/javascript">
                     		$(document).ready(function(){
-                    			$('#langselector').mouseup(function(){
+                    			$('#langselector').change(function(){
 										if (langselector.value=="ENG")
 											langicon.src='<?php echo base_url();?>assets/images/ENG.png';
 										else langicon.src='<?php echo base_url();?>assets/images/vietnam.jpg';

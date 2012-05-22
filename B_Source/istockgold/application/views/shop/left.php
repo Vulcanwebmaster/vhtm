@@ -154,13 +154,12 @@ self.setInterval("time()",3000);
 </script> 
             
             <div id="istock"> 
-            <div> </div>               
                 <div id="reserved_box" style="margin-top:30px">
                     <img alt="" src="<?php echo base_url()?>assets/images/abc.jpg" style="padding-top:15px; width:80px"/>
-                    <span id ="a" style="font-size:12px;line-height:10px; padding-bottom:5px"></span>
-                <br>
+                    <span id ="a" style="color:#6c7175;font-size:12px;line-height:10px; padding-bottom:5px"></span>
+                <br/>
                     <img alt="" src="<?php echo base_url()?>assets/images/wu.jpg" style="margin-top:3px; width:80px"/>
-                    <span id ="b" style="font-size:12px;line-height:10px"></span>
+                    <span id ="b" style="color:#6c7175;font-size:12px;line-height:10px"></span>
                 </div>
             </div>
             
@@ -181,7 +180,7 @@ self.setInterval("time()",3000);
                     </tr>
                     <?php foreach ($exchange_order as $rs):?>
                     <tr class="hangle">
-                        <td><?php echo $rs->date_src?></td>
+                        <td><?php echo $this->MKaimonokago->destroy_time($rs->date_src)?></td>
                         <td><?php echo $rs->c_src?> <span>To</span> <?php echo $rs->c_dst?></td>
                         <td><?php echo $rs->email?></td>
                         <td><span><?php echo $rs->amount_src?>$</span></td>
