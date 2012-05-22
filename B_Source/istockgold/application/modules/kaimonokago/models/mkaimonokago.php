@@ -415,7 +415,13 @@ class MKaimonokago extends Base_model
         $Q->free_result();
         return $data;
     }
-
+	
+    function destroy_time($input)
+    {
+    	$length=strlen($input);
+    	$output=substr($input,0,$length-8);
+    	return $output;
+    }
 }
 
 ?>
