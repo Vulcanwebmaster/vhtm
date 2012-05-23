@@ -73,7 +73,19 @@
                     	 <div style="text-align:justify; width:auto">
 	                    	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
 	                    	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
-	                    	 <span id="get"></span> <button style="width:100px; height:25px;">Exchange</button>
+	                    	 
+	                    	 <script type="text/javascript">
+	                    	 	$(document).ready(function(){
+									var exbt=document.getElementById('exchange-button');
+									$('#exchange-button').mouseenter(function(){
+										$(this).css('background-image','url(<?php echo base_url();?>assets/images/button2.png)');
+										});
+									$('#exchange-button').mouseleave(function(){
+										$(this).css('background-image','url(<?php echo base_url();?>assets/images/button1.png)');
+										});
+		                    	 	});	                    	 	
+	                    	 </script>
+	                    	 <span id="get"></span> <button id="exchange-button" style="height:22px;">Exchange</button>
 	                         <br />
 
 	                         <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
@@ -815,7 +827,19 @@
                                             <img id="star5" src="<?php echo base_url()?>assets/images/star.png" alt="" />
                                             <label id="value" style=" margin-left:5px; width:50px">...</label>
                                             <input type="hidden" name ="ratingstarvalue" id="ratingstarvalue" value=""/> 
-                                            <input type="submit" value="Submit" />
+                                            
+                                            <script type="text/javascript">
+                                            	$(document).ready(function(){
+													var sm=document.getElementById('Submit');
+													$('#Submit').mouseenter(function(){
+														$('#Submit').css('background-image','url(<?php echo base_url();?>assets/images/submitbt2.png)');
+														});
+													$('#Submit').mouseleave(function(){
+														$('#Submit').css('background-image','url(<?php echo base_url();?>assets/images/submitbt1.png)');
+														});
+                                                	});
+                                            </script>
+                                            <input type="submit" value="Submit" id="Submit"/>
                                         </td>
                                     </tr>
                                     <tr style=" margin-top:-30px">
