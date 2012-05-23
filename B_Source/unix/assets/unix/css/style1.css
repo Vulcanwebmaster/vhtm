@@ -26,7 +26,8 @@ body{margin:0; font-family:Tahoma}
 #menu-slide{width:1000px; margin:auto}*/
 #menu-slide{border:solid 5px white}
 #slidemenus td{text-align:center}
-.slideitem{border-right:solid 1px #48cafb;border-left:solid 1px #48cafb;background-color:#f8fcfd; border-radius:5px; width:100px;padding:10px}
+.slideitem{border-style:none;border-right:solid 1px #48cafb;border-left:solid 1px #48cafb;background-color:#f8fcfd; border-radius:5px; width:100px;padding:10px}
+.slideitem h3{color:#626363}
 /*====================== END SLIDE ===============================*/
 
 /*====================== BEGIN BODY ===============================*/
@@ -76,6 +77,11 @@ body{margin:0; font-family:Tahoma}
 #left-bottom{height:20px; width:230px; background:url('../images/left-bg-bottom.png'); background-color:white}
 .list-left ul{list-style-type:none; padding-left:5px; padding-right:20px; font-size:12px}
 .list-left ul li{border-bottom:dotted 1px #d3d4d4;line-height:25px; padding-left:10px}
+
+					/*RIGHT*/
+#col_right{float:right}
+#content{border:solid 2px silver; border-radius:10px; width:750px; font-size:12px; background-color:#f4f4f4}
+.list{list-style-type:none; padding:0 15px}
 /*====================== END BODY ===============================*/
 
 /*====================== START FOOTER ===============================*/

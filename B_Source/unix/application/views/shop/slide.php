@@ -16,11 +16,10 @@
           						<center>
 	          						<fieldset class="slideitem">
 		          						<img src="<?php echo base_url();?>assets/unix/images/image-khoahoc.png" alt=""/>
-		          						<h2>Khóa học</h2>
+		          						<h3>Khóa học</h3>
 	          						</fieldset>
           						</center>
           					</td></tr>
-          					<!-- tr><td><h2>Khóa học</h2></td></tr -->
           				</table>
           			</td>
           			
@@ -30,7 +29,7 @@
           						<center>
 	          						<fieldset class="slideitem">
 		          						<img src="<?php echo base_url();?>assets/unix/images/image-thuvien.png" alt=""/>
-		          						<h2>Thư viện</h2>
+		          						<h3>Thư viện</h3>
 	          						</fieldset>
           						</center>
           					</td></tr>
