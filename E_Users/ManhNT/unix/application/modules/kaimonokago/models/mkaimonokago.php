@@ -10,6 +10,7 @@ class MKaimonokago extends Base_model
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->database();
     }
 
 
@@ -415,7 +416,18 @@ class MKaimonokago extends Base_model
         $Q->free_result();
         return $data;
     }
-
+	
+    function getListHoiThao()
+    {
+    	$list=$this->db->get('hoithao');
+    	$ds=array();
+    	foreach ($list->result() as $item)
+    	{
+    		$ds[]=$item;
+    	}
+    	$list->free_result();
+    	return $ds;
+    }
 }
 
 ?>

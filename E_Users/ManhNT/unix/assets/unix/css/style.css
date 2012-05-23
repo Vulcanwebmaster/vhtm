@@ -8,7 +8,7 @@
 /*====================*/
 /*=== Reset Styles ===*/
 /*====================*/
-html, body, div, span, applet, object, iframe,
+/*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
@@ -25,7 +25,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-size:100%;
 	font-family:inherit;
 	vertical-align:baseline;
-}
+}*/
 body {
 	line-height:1;
 	color:black;
@@ -62,7 +62,7 @@ body {
 }
 
 a, a:visited {
-	color:blue;
+	/*color:blue;*/
 	text-decoration:none;
 }
 a:hover, a:active {

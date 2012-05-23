@@ -23,7 +23,7 @@
 </head>
 <body>
     <?php $this->load->view('shop/header.php')?>
-    <?php $this->load->view('shop/slide.php')?>
+    
     <?php 
 											 //   print displayStatus();
 												print (isset($content)) ? $content : NULL; 

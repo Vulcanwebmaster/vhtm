@@ -1,3 +1,4 @@
+<?php $this->load->view('shop/slide.php')?>
 <div id="main">
 	<div id="maintop">
 			<div class="field-left">

@@ -14,7 +14,9 @@
 			<a href="#">Liên hệ</a>
 			<span>|</span>
 			<a href="#">Cảm nhận</a>
-			
+		</div>
+		<div id="information">
+			<p>Bản quyền © 2012 - UNIX. Thiết kế bởi NIW</p>
 		</div>
 	</div>
 </div>
