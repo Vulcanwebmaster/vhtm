@@ -229,3 +229,6 @@ body{margin:0px}
 
 .bt{behavior:url('PIE/PIE.htc'); border-radius:5px}
 .note{background-color:#ffffd0; border:solid 1px #d0d060; margin-right:15px; margin-top:0px}
+
+#exchange-button{background:url('../images/button1.png') no-repeat; width:84px; border-style:none}
+#Submit{background:url('../images/submitbt1.png'); width:72px; height:29px; border-style:none}
