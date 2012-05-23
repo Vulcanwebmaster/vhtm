@@ -1,4 +1,9 @@
 <div id="main-column">
+<ul id="mapsite">
+		<li><a href="<?php echo base_url();?>">Home page</a></li>
+		<li><a>:</a></li>
+		<li><a>Liberty Reserve => Western Union</a></li>
+	</ul>
             <div id="au-title">
                 <label>Liberty Reserve => Western Union</label>
             </div>

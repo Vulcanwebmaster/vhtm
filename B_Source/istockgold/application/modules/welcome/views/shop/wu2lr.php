@@ -1,4 +1,9 @@
 <div id="main-column">
+<ul id="mapsite">
+		<li><a href="<?php echo base_url();?>">Home page</a></li>
+		<li><a>:</a></li>
+		<li><a>Western Union => Liberty Reserve</a></li>
+	</ul>
         <!--Má»¤C RIÃŠNG -->
             <div id="au-title">
                 <label>Western Union => Liberty Reserve</label>

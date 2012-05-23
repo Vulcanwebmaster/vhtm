@@ -1,6 +1,11 @@
 <!-- Author: tienlx -->
 <?php echo form_open("welcome/contact")?>
 <div id="main-column">
+<ul id="mapsite">
+		<li><a href="<?php echo base_url();?>">Home page</a></li>
+		<li><a>:</a></li>
+		<li><a>Contact Us</a></li>
+	</ul>
 <div id="au-title">
 	<label>Contact us</label>
 </div>
