@@ -171,21 +171,27 @@ self.setInterval("time()",3000);
      
             <div id="lastest-exchange">
                 <div style="height:35px"></div>
-                <table style="margin-top:-5px; border-right:solid 1px silver; border-left:solid 1px silver; font-size:11px">
+                <style type="text/css">
+                	td{padding:0 0 0 6px}
+                </style>
+                <table style="border-spacing:0;margin-top:-5px; border-right:solid 1px silver; border-left:solid 1px silver; font-size:11px">
                     <tr style="font-weight:bold">
                         <td>Date</td>
                         <td>Action</td>
                         <td>User</td>
                         <td>Amount</td>
                     </tr>
-                    <?php foreach ($exchange_order as $rs):?>
-                    <tr class="hangle">
-                        <td><?php echo $this->MKaimonokago->destroy_time($rs->date_src)?></td>
+                    <?php 
+                    $count=0;
+                    foreach ($exchange_order as $rs)
+                    {?>
+                    <tr class="hangle" <?php if ($count%2!=0) echo 'style="background-color:white"';?>>
+                        <td style="color:#647f0f"><?php echo $this->MKaimonokago->destroy_time($rs->date_src)?></td>
                         <td><?php echo $rs->c_src?> <span>To</span> <?php echo $rs->c_dst?></td>
                         <td><?php echo $rs->email?></td>
                         <td><span><?php echo $rs->amount_src?>$</span></td>
                     </tr>
-                    <?php endforeach;?>  
+                    <?php $count++;};?>  
                     
                 </table>
             </div>

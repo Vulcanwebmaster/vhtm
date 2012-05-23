@@ -1,5 +1,5 @@
 <div id="main-column">
-        <!--MỤC RIÊNG -->
+        <!--Má»¤C RIÃŠNG -->
             <div id="au-title">
                 <label>Western Union => Liberty Reserve</label>
             </div>
@@ -43,7 +43,29 @@
                          <tr>
                             <td class="liberty2-col1" align="right" style="width:120px"><p>MTCN</p></td>
                             <td>
-                                <input type="text" name="mtcn" value="<?php echo set_value('mtcn'); ?>" style="width:20%"/>
+                            	<script type="text/javascript">
+                            		$(document).ready(function(){
+										var mtcn=document.getElementById('MTCN');
+										var lra=document.getElementById('lrAccount');
+										$('#MTCN').keyup(function(){
+											if (mtcn.value.length>10)
+												mtcn.value=mtcn.value.substring(0,10);
+											});
+										$('#lrAccount').keyup(function(){
+											var value=lra.value;
+											if (value.length>0)
+												if (value[0]!='U')
+													if (value[0]=='u')
+														lra.value='U'+value.substring(1,value.length);
+													else 
+													{
+														alert('ký tự đầu tiên phải là ký tự U');
+														lra.value='';
+													}
+												});
+                                		});                            		
+                            	</script>
+                                <input id="MTCN" type="text" name="mtcn" value="<?php echo set_value('mtcn'); ?>" style="width:20%"/>
                                 <font style="color:#a0a0a0">(input the Money Transfer Control Number of Western Union transaction)</font>
                             </td>
                         </tr> 
@@ -85,7 +107,7 @@
                         <tr>
                             <td class="liberty2-col1" align="right"><p>Your LR account</p></td>
                             <td>
-                                <input type="text" name="lrAccount" value="<?php echo set_value('lrAccount'); ?>" style="width:23%"/>                                
+                                <input id="lrAccount" type="text" name="lrAccount" value="<?php echo set_value('lrAccount'); ?>" style="width:23%"/>                                
                             </td>
                         </tr> 
                         <tr>
