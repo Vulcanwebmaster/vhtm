@@ -214,11 +214,12 @@ body{margin:0px}
     padding-right: 10px;
 }
 
-.message , .error
+.message_error
 {
-	color: red;
+	color: #333333;
 	font-size: 12px;
 }
+#error-panel{background-color:#ffebe8; padding:15px 10px; border:solid 1px #dd3c10}
 
 .au_col2{width:100%}
 .col2{padding-left:30px}
@@ -231,3 +232,5 @@ body{margin:0px}
 
 #mapsite{list-style-type:none; padding-left:0; padding-top:10px}
 #mapsite li{float:left; padding:0 5px;border-bottom:solid 1px silver}
+
+.lr{margin-bottom:10px}

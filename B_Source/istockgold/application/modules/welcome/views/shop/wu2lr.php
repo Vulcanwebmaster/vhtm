@@ -13,7 +13,9 @@
                     <p style="font-size:13px; font-weight:bold; color:#505050">1 Western Union => <?php if(isset($rate)) echo $rate; else echo set_value('rate');?> Liberty Reserve (available: $35948.65)</p>
                     <hr style="border-top:solid 7px #b0b0b0; margin-top:-5px"/>
                 </div>
+                
                 <div>
+                	
                 	<?php
 					if ($this->session->flashdata('msg')|| $this->session->flashdata('error')){ 
 						echo "<div class='status_box'>";
@@ -22,7 +24,10 @@
 						echo "</div>";
 					}
 					?>
-					<?php echo validation_errors('<div class="message error">','</div>'); ?>
+					
+					<div id="error-panel">
+						<?php echo validation_errors('<div class="message_error">','</div>'); ?>
+					</div>
 	                <?php echo form_open($module."/wu2lr", array('class' => 'expose', 'id' => 'echangeForm')); ?>
                 	<input type="hidden" name="fromCurrency" value="<?php if(isset($fromCurrency)) echo $fromCurrency; else echo set_value('fromCurrency');?>"/>
                 	<input type="hidden" name="toCurrency" value="<?php if(isset($toCurrency)) echo $toCurrency; else echo set_value('toCurrency');?>"/>
