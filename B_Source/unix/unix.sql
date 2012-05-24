@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 23, 2012 at 09:11 AM
+-- Generation Time: May 24, 2012 at 05:20 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -411,22 +411,6 @@ INSERT INTO `be_user_profiles` (`user_id`, `company_name`, `full_name`, `web_add
 -- --------------------------------------------------------
 
 --
--- Table structure for table `camnhan`
---
-
-CREATE TABLE IF NOT EXISTS `camnhan` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `noidung` text NOT NULL,
-  `theloai` bit(1) NOT NULL,
-  `mabaiviet` int(11) NOT NULL,
-  `ngaythang` int(11) NOT NULL,
-  `nguoidang` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `ci_sessions`
 --
 
@@ -472,76 +456,6 @@ CREATE TABLE IF NOT EXISTS `eventcal` (
 INSERT INTO `eventcal` (`id`, `user`, `user_id`, `eventDate`, `eventTitle`, `eventContent`, `privacy`) VALUES
 (2, 'shinokada', 8, '2011-05-17', '17th May', 'Hurray', 'public'),
 (8, 'shinokada', 8, '2011-05-18', 'test', 'test', 'public');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gioithieu`
---
-
-CREATE TABLE IF NOT EXISTS `gioithieu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `noidung` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `gioithieu`
---
-
-INSERT INTO `gioithieu` (`id`, `noidung`) VALUES
-(1, '<p><strong>1. Gi?i thi?u công ty Unix:</strong><p>\r\n<p>Công ty c? ph?n Unix ???c thành l?p b?i các doanh nhân và chuyên gia ?ào t?o nhi?u kinh nghi?m ??n t? nhi?u ??n v? giáo d?c khác nhau. Chúng tôi mu?n t?o nên m?t cái tên m?i v?i m?c tiêu giúp cho khách hàng ???c ti?p c?n v?i nh?ng ch??ng trình ?ào t?o ch?t l??ng nh?t.</p>\r\n<p><strong>2. Khi tham gia các khóa h?c do công ty Unix t? ch?c h?c viên s? ???c:</strong></p>\r\n<p>- ?ào t?o và hu?n luy?n theo nh?ng ph??ng pháp ?ào t?o m?i nh?t và ?ang ???c áp d?ng hi?u qu? trên th? gi?i.</p>\r\n<p>- Kh?i ngu?n c?m h?ng và có nh?ng ngu?n ??ng l?c m?nh m? khi tham gia khóa h?c.</p>\r\n<p>- ???c ?ào t?o và hu?n luy?n b?i nh?ng gi?ng viên, chuyên gia ?ào t?o t?t nh?t.</p>\r\n<p>- Luôn t?o nên nh?ng hi?u qu? v??t tr?i sau khi tham gia ch??ng trình.</p>\r\n<p><strong>3. Di?n gi?, chuyên gia ?ào t?o:</strong></p>\r\n<p>- Nh?ng giáo viên, di?n gi?, chuyên gia ?ào t?o ???c công ty Unix m?i tham gia gi?ng d?y luôn là nh?ng ng??i không ch? có chuyên môn v?ng vàng , dày d?n kinh nghi?m mà ?i?u quan tr?ng nh?t là h? ph?i là ng??i t?o ra hi?u qu? cao nh?t trong h?c viên. Chính vì l? ?ó các di?n gi?, chuyên gia ?ào t?o c?a công ty Unix luôn th??ng xuyên tham gia các ch??ng trình ?ào t?o c?a các chuyên gia, di?n gi? hàng ??u trên th? gi?i, ?? không ng?ng c?p nh?t nh?ng ph??ng pháp ?ào t?o t?t nh?t , nâng cao k? n?ng gi?ng d?y và ki?n th?c chuyên môn.</p>\r\n<p><strong>4. S? m?nh c?a Unix education:</strong></p>\r\n<p>- Unix education ra ??i v?i m?t s? m?nh là giúp cho m?i ng??i ???c ti?p c?n v?i nh?ng ch??ng trình ?ào t?o t?t nh?t.</p>');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hoithao`
---
-
-CREATE TABLE IF NOT EXISTS `hoithao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `TieuDe` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `NoiDung` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `ThoiGian` date NOT NULL,
-  `PhanHoi` bit(1) NOT NULL,
-  `anhdaidien` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `hoithao`
---
-
-INSERT INTO `hoithao` (`id`, `TieuDe`, `NoiDung`, `ThoiGian`, `PhanHoi`, `anhdaidien`) VALUES
-(1, 'Hội thảo: “Chinh phục môn Toán thi vào cấp 2 Hà Nội Amsterdam” dành cho học sinh lớp 4', '<p>Công ty cổ phần Unix kính gửi các bậc phụ huynh và các em học sinh thư mời tham dự:\r\nHội thảo:”Chinh phục môn toán thi vào cấp 2 Hà Nội Amsterdam”<p>\r\n<p>Tham gia chương trình, các em sẽ nhận được:\r\nLàm thế nào để tăng từ 1 đến 2 điểm ngay lập tức bằng chính khả năng học của mình?\r\nLàm thế nào để đạt trên 12/15 điểm chỉ trong 15 đến 20 phút làm bài?\r\nLàm thế nào để có được phong độ làm bài tốt nhất trước khi thi?\r\nTại sao nhiều học sinh có sức học tốt nhưng vẫn không có được kết quả như mong muốn?\r\nKì thi vào cấp 2 trường Hà Nội Amsterdam được coi là như là một trong những kỳ thi khó nhất đối với các học sinh tiểu học. Kỳ thi này không chỉ là một cuộc tuyển chọn, nó còn là cơ hội để các em học sinh phấn đấu nỗ lực và nâng cao khả năng học tập của mình.\r\nĐặc biệt môn Toán thi vào cấp 2 Hà Nội Amsterdam hoàn toàn khác với những kỳ thi và những bài kiểm tra thông thường. Để làm tốt bài thi các em học sinh cần phải có những kỹ năng, chiến thuật làm bài, những phương pháp đặc biệt giành riêng cho kỳ thi này. Vậy phải ôn thi và chuẩn bị cho kỳ thi này như thế nào?</p>\r\n<p>Ngoài ra, Chương trình “Chinh phục kỳ thi môn toán vào cấp 2 Hà Nội Amsterdam” sẽ giúp các em học sinh:</p>\r\n<ol>\r\n<li>Có những động lực thúc đẩy mạnh mẽ và tràn đầy quyết tâm cho kỳ thi.</li>\r\n<li>Sở hữu những chiến thuật làm bài riêng biệt cho kỳ thi để ngay lập tức tăng từ 1 đến 2 điểm.</li>\r\n<li>Có các phương pháp ôn tập để đạt kết quả tốt nhất trong kì thi</li>\r\n<li> Có những thủ thuật giải toán siêu tốc để đạt trên 12/15 điểm toán chỉ trong 15-20 phút làm bài.</li>\r\n<ol>\r\n<p>Các em học sinh và các bậc phụ huynh sẽ được gặp gỡ, giao lưu và lắng nghe chia sẻ của thầy Phan Quang Điệp</p>\r\n<ul>\r\n<li> Hiện tại thầy được công nhận giảng viên quốc tế của tập đoàn giáo dục Skyquestcom Singapore, giáo viên chuyên luyện thi Olympic toán Châu Á Thái Bình Dương, chuyên gia đào tạo trong lĩnh vực phát triển con người, một người thầy truyền cảm hứng tuyệt vời cho các em học sinh.</li>\r\n<li>Là giáo viên chuyên luyện thi môn toán trường Amsterdam uy tín tại Hà Nội với những bài giảng:“Chinh phục kỳ thi môn toán vào cấp 2 Hà Nội Amsterdam”,”giải toán siêu tốc bằng máy tính bỏ túi”,”chiến thuật và thủ thuật trong kỳ thi môn toán trường Ams”,…</li>\r\n<li>Rất nhiều học sinh của thầy đã đạt được những thành tích cao trong các cuộc thi quốc tế và dành nhiều học bổng tại các trường danh tiếng tại Mỹ, Singapore, Hàn Quốc, thi đỗ thành tích cao vào trường Hà Nội Amsterdam…</li>\r\n<li>Thầy đã từng có những buổi hội thảo chuyên đề chất lượng tại Bộ Văn Hóa Thể Thao và Du Lịch,  viện Dinh Dưỡng Quốc Gia, tập đoàn giáo dục Skyquestcom Singapore, Felix Group và nhiều doanh nghiệp, trường học, trung tâm đào tạo v v…</li>\r\n</ul>\r\n<p><strong>Cảm nhận của phụ huynh và học sinh đã từng tham gia chương trình:</strong></p>\r\n<p>“…Trước khi tham gia chương trình “Chinh phục kỳ thi môn toán vào cấp 2 Hà Nội Amsterdam” của thầy Phan Quang Điệp, tôi và con trai cũng không có ý định thi vào trường Ams. Lúc đó, vào tháng 5 cháu làm bài thi thử môn toán chỉ đạt từ  2/15 đến 4/15 điểm, cháu cũng không thích học môn toán. Nhưng sau khi tham dự chương trình này cả hai mẹ con đã thực sự thay đổi và quyết tâm thi vào trường Amsterdam. Và thật tuyệt vời thầy Điệp đã truyền cảm hứng học tập có những phương pháp giảng dạy tuyệt vời giúp con trai tôi đạt 10/15 điểm toán sau vài buổi huấn luyện trước ngày thi. Thật sự gia đình tôi rất biết ơn thầy về những bài giảng tuyệt vời mà thầy đã dành cho con tôi…. ” </p>\r\n<p>Chị Lan Anh-PHHS cháu Đào Phúc Thành-trúng tuyển kì thì tuyển sinh lớp 6 Hà Nội Amsterdam 2010</p>\r\n<p>“…Tôi tên là Lê Quý Dương, tôi có ước mơ thi đỗ vào trường Hà Nội Amsterdam.Trước khi tham gia chương trình này điểm thi thử của tôi chỉ được từ 5-6 điểm. Nhưng sau khi học các phương pháp, chiến thuật và thủ thuật làm bài nhanh mà thầy Điệp hướng dẫn điểm số của tôi đã nâng lên 11-12 điểm. Và thật tuyệt vời ước mơ của tôi đã thành sự thật.Hẹn gặp lại các bạn tại trường Hà Nội Amsterdam…”</p>\r\n<p>Lê Quý Dương-HS trường tiểu học Thái Thịnh-trúng tuyển kỳ thi tuyển sinh lớp 6 Hà Nội Ams 2011.</p>\r\n<p><strong>Chương trình này nội dung chia sẻ giành cho cả phụ huynh và học sinh, vì vậy công ty rất mong các bậc phụ huynh tham gia cùng các con !</strong></p>\r\n<p>Thời gian: Hội thảo sáng: 8h30 – 10h30 CN ngày 20/05/2012</p>\r\n<p>Hội thảo chiều: 14h30-16h30 CN ngày 20/05/2012</p>\r\n<p>Địa chỉ:  Hội trường tầng 2, khách sạn Asean số 8 Chùa Bộc, Đống Đa, Hà Nội</p>\r\n<p><strong>PHHS đăng ký tham gia chương trình vui lòng gọi theo hotline: 0983 768 342.</strong></p>\r\n', '2012-05-15', '1', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `khoahoc`
---
-
-CREATE TABLE IF NOT EXISTS `khoahoc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `mota` text NOT NULL,
-  `batdau` date DEFAULT NULL,
-  `ketthuc` date DEFAULT NULL,
-  `hocphi` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `loaisach`
---
-
-CREATE TABLE IF NOT EXISTS `loaisach` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tenloai` varchar(20) NOT NULL,
-  `mota` text,
-  PRIMARY KEY (`id`,`tenloai`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -981,16 +895,102 @@ CREATE TABLE IF NOT EXISTS `shoutbox` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thuvien`
+-- Table structure for table `unix_camnhan`
 --
 
-CREATE TABLE IF NOT EXISTS `thuvien` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `TenSach` varchar(1000) NOT NULL,
-  `MoTa` text NOT NULL,
-  `TheLoai` varchar(100) NOT NULL,
-  `TacGia` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE IF NOT EXISTS `unix_camnhan` (
+  `camnhan_id` int(11) NOT NULL AUTO_INCREMENT,
+  `noidung` text NOT NULL,
+  `theloai` bit(1) NOT NULL,
+  `mabaiviet` int(11) NOT NULL,
+  `ngaythang` int(11) NOT NULL,
+  `nguoidang` int(11) NOT NULL,
+  PRIMARY KEY (`camnhan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unix_gioithieu`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_gioithieu` (
+  `gioithieu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `noidung` text NOT NULL,
+  PRIMARY KEY (`gioithieu_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `unix_gioithieu`
+--
+
+INSERT INTO `unix_gioithieu` (`gioithieu_id`, `noidung`) VALUES
+(1, '<p><strong>1. Gi?i thi?u công ty Unix:</strong><p>\r\n<p>Công ty c? ph?n Unix ???c thành l?p b?i các doanh nhân và chuyên gia ?ào t?o nhi?u kinh nghi?m ??n t? nhi?u ??n v? giáo d?c khác nhau. Chúng tôi mu?n t?o nên m?t cái tên m?i v?i m?c tiêu giúp cho khách hàng ???c ti?p c?n v?i nh?ng ch??ng trình ?ào t?o ch?t l??ng nh?t.</p>\r\n<p><strong>2. Khi tham gia các khóa h?c do công ty Unix t? ch?c h?c viên s? ???c:</strong></p>\r\n<p>- ?ào t?o và hu?n luy?n theo nh?ng ph??ng pháp ?ào t?o m?i nh?t và ?ang ???c áp d?ng hi?u qu? trên th? gi?i.</p>\r\n<p>- Kh?i ngu?n c?m h?ng và có nh?ng ngu?n ??ng l?c m?nh m? khi tham gia khóa h?c.</p>\r\n<p>- ???c ?ào t?o và hu?n luy?n b?i nh?ng gi?ng viên, chuyên gia ?ào t?o t?t nh?t.</p>\r\n<p>- Luôn t?o nên nh?ng hi?u qu? v??t tr?i sau khi tham gia ch??ng trình.</p>\r\n<p><strong>3. Di?n gi?, chuyên gia ?ào t?o:</strong></p>\r\n<p>- Nh?ng giáo viên, di?n gi?, chuyên gia ?ào t?o ???c công ty Unix m?i tham gia gi?ng d?y luôn là nh?ng ng??i không ch? có chuyên môn v?ng vàng , dày d?n kinh nghi?m mà ?i?u quan tr?ng nh?t là h? ph?i là ng??i t?o ra hi?u qu? cao nh?t trong h?c viên. Chính vì l? ?ó các di?n gi?, chuyên gia ?ào t?o c?a công ty Unix luôn th??ng xuyên tham gia các ch??ng trình ?ào t?o c?a các chuyên gia, di?n gi? hàng ??u trên th? gi?i, ?? không ng?ng c?p nh?t nh?ng ph??ng pháp ?ào t?o t?t nh?t , nâng cao k? n?ng gi?ng d?y và ki?n th?c chuyên môn.</p>\r\n<p><strong>4. S? m?nh c?a Unix education:</strong></p>\r\n<p>- Unix education ra ??i v?i m?t s? m?nh là giúp cho m?i ng??i ???c ti?p c?n v?i nh?ng ch??ng trình ?ào t?o t?t nh?t.</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unix_hoithao`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_hoithao` (
+  `hoithao_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tieude` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `noidung` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `thoigian` date NOT NULL,
+  `phanhoi` bit(1) NOT NULL,
+  `anhdaidien` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`hoithao_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `unix_hoithao`
+--
+
+INSERT INTO `unix_hoithao` (`hoithao_id`, `tieude`, `noidung`, `thoigian`, `phanhoi`, `anhdaidien`) VALUES
+(1, 'Hội thảo: “Chinh phục môn Toán thi vào cấp 2 Hà Nội Amsterdam” dành cho học sinh lớp 4', '<p>Công ty cổ phần Unix kính gửi các bậc phụ huynh và các em học sinh thư mời tham dự:\r\nHội thảo:”Chinh phục môn toán thi vào cấp 2 Hà Nội Amsterdam”<p>\r\n<p>Tham gia chương trình, các em sẽ nhận được:\r\nLàm thế nào để tăng từ 1 đến 2 điểm ngay lập tức bằng chính khả năng học của mình?\r\nLàm thế nào để đạt trên 12/15 điểm chỉ trong 15 đến 20 phút làm bài?\r\nLàm thế nào để có được phong độ làm bài tốt nhất trước khi thi?\r\nTại sao nhiều học sinh có sức học tốt nhưng vẫn không có được kết quả như mong muốn?\r\nKì thi vào cấp 2 trường Hà Nội Amsterdam được coi là như là một trong những kỳ thi khó nhất đối với các học sinh tiểu học. Kỳ thi này không chỉ là một cuộc tuyển chọn, nó còn là cơ hội để các em học sinh phấn đấu nỗ lực và nâng cao khả năng học tập của mình.\r\nĐặc biệt môn Toán thi vào cấp 2 Hà Nội Amsterdam hoàn toàn khác với những kỳ thi và những bài kiểm tra thông thường. Để làm tốt bài thi các em học sinh cần phải có những kỹ năng, chiến thuật làm bài, những phương pháp đặc biệt giành riêng cho kỳ thi này. Vậy phải ôn thi và chuẩn bị cho kỳ thi này như thế nào?</p>\r\n<p>Ngoài ra, Chương trình “Chinh phục kỳ thi môn toán vào cấp 2 Hà Nội Amsterdam” sẽ giúp các em học sinh:</p>\r\n<ol>\r\n<li>Có những động lực thúc đẩy mạnh mẽ và tràn đầy quyết tâm cho kỳ thi.</li>\r\n<li>Sở hữu những chiến thuật làm bài riêng biệt cho kỳ thi để ngay lập tức tăng từ 1 đến 2 điểm.</li>\r\n<li>Có các phương pháp ôn tập để đạt kết quả tốt nhất trong kì thi</li>\r\n<li> Có những thủ thuật giải toán siêu tốc để đạt trên 12/15 điểm toán chỉ trong 15-20 phút làm bài.</li>\r\n<ol>\r\n<p>Các em học sinh và các bậc phụ huynh sẽ được gặp gỡ, giao lưu và lắng nghe chia sẻ của thầy Phan Quang Điệp</p>\r\n<ul>\r\n<li> Hiện tại thầy được công nhận giảng viên quốc tế của tập đoàn giáo dục Skyquestcom Singapore, giáo viên chuyên luyện thi Olympic toán Châu Á Thái Bình Dương, chuyên gia đào tạo trong lĩnh vực phát triển con người, một người thầy truyền cảm hứng tuyệt vời cho các em học sinh.</li>\r\n<li>Là giáo viên chuyên luyện thi môn toán trường Amsterdam uy tín tại Hà Nội với những bài giảng:“Chinh phục kỳ thi môn toán vào cấp 2 Hà Nội Amsterdam”,”giải toán siêu tốc bằng máy tính bỏ túi”,”chiến thuật và thủ thuật trong kỳ thi môn toán trường Ams”,…</li>\r\n<li>Rất nhiều học sinh của thầy đã đạt được những thành tích cao trong các cuộc thi quốc tế và dành nhiều học bổng tại các trường danh tiếng tại Mỹ, Singapore, Hàn Quốc, thi đỗ thành tích cao vào trường Hà Nội Amsterdam…</li>\r\n<li>Thầy đã từng có những buổi hội thảo chuyên đề chất lượng tại Bộ Văn Hóa Thể Thao và Du Lịch,  viện Dinh Dưỡng Quốc Gia, tập đoàn giáo dục Skyquestcom Singapore, Felix Group và nhiều doanh nghiệp, trường học, trung tâm đào tạo v v…</li>\r\n</ul>\r\n<p><strong>Cảm nhận của phụ huynh và học sinh đã từng tham gia chương trình:</strong></p>\r\n<p>“…Trước khi tham gia chương trình “Chinh phục kỳ thi môn toán vào cấp 2 Hà Nội Amsterdam” của thầy Phan Quang Điệp, tôi và con trai cũng không có ý định thi vào trường Ams. Lúc đó, vào tháng 5 cháu làm bài thi thử môn toán chỉ đạt từ  2/15 đến 4/15 điểm, cháu cũng không thích học môn toán. Nhưng sau khi tham dự chương trình này cả hai mẹ con đã thực sự thay đổi và quyết tâm thi vào trường Amsterdam. Và thật tuyệt vời thầy Điệp đã truyền cảm hứng học tập có những phương pháp giảng dạy tuyệt vời giúp con trai tôi đạt 10/15 điểm toán sau vài buổi huấn luyện trước ngày thi. Thật sự gia đình tôi rất biết ơn thầy về những bài giảng tuyệt vời mà thầy đã dành cho con tôi…. ” </p>\r\n<p>Chị Lan Anh-PHHS cháu Đào Phúc Thành-trúng tuyển kì thì tuyển sinh lớp 6 Hà Nội Amsterdam 2010</p>\r\n<p>“…Tôi tên là Lê Quý Dương, tôi có ước mơ thi đỗ vào trường Hà Nội Amsterdam.Trước khi tham gia chương trình này điểm thi thử của tôi chỉ được từ 5-6 điểm. Nhưng sau khi học các phương pháp, chiến thuật và thủ thuật làm bài nhanh mà thầy Điệp hướng dẫn điểm số của tôi đã nâng lên 11-12 điểm. Và thật tuyệt vời ước mơ của tôi đã thành sự thật.Hẹn gặp lại các bạn tại trường Hà Nội Amsterdam…”</p>\r\n<p>Lê Quý Dương-HS trường tiểu học Thái Thịnh-trúng tuyển kỳ thi tuyển sinh lớp 6 Hà Nội Ams 2011.</p>\r\n<p><strong>Chương trình này nội dung chia sẻ giành cho cả phụ huynh và học sinh, vì vậy công ty rất mong các bậc phụ huynh tham gia cùng các con !</strong></p>\r\n<p>Thời gian: Hội thảo sáng: 8h30 – 10h30 CN ngày 20/05/2012</p>\r\n<p>Hội thảo chiều: 14h30-16h30 CN ngày 20/05/2012</p>\r\n<p>Địa chỉ:  Hội trường tầng 2, khách sạn Asean số 8 Chùa Bộc, Đống Đa, Hà Nội</p>\r\n<p><strong>PHHS đăng ký tham gia chương trình vui lòng gọi theo hotline: 0983 768 342.</strong></p>\r\n', '2012-05-15', '1', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unix_khoahoc`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_khoahoc` (
+  `khoahoc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `mota` text NOT NULL,
+  `batdau` date DEFAULT NULL,
+  `ketthuc` date DEFAULT NULL,
+  `hocphi` int(11) DEFAULT NULL,
+  PRIMARY KEY (`khoahoc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unix_loaisach`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_loaisach` (
+  `loaisach_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tenloai` varchar(20) NOT NULL,
+  `mota` text,
+  PRIMARY KEY (`loaisach_id`,`tenloai`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unix_sach`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_sach` (
+  `sach_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tensach` varchar(1000) NOT NULL,
+  `mota` text NOT NULL,
+  `theloai` varchar(100) NOT NULL,
+  `tacgia` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`sach_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
