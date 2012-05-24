@@ -59,9 +59,10 @@
                             <td colspan="3">
                                 <table>
                                     <tr>
-                                        <td> <?php echo $cap['image'];?></td>
-                                        <td><input type="text" name="captcha" value="" /></td>
-                                        <td> <input type="submit" name="submit" value="Submit" /></td>
+                                        <td> <?php echo $cap;?></td>
+                                    </tr>
+                                    <tr>
+                                    <td> <input type="submit" name="submit" value="Submit" /></td>
                                     </tr>
                                 </table>
                             </td>

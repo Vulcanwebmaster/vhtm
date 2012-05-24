@@ -37,6 +37,7 @@ class Welcome extends Shop_Controller
         $this->security_method      = $this->preference->item('security_method');
         $this->security_question    = $this->preference->item('security_question');
         $this->security_answer      = $this->preference->item('security_answer');
+        $this->load->helper('captcha');
         $this->load->library('Jquery_pagination');
         //$this->myclass = strtolower(get_class());
     }
@@ -256,6 +257,7 @@ class Welcome extends Shop_Controller
     	$toCurrency = $this->input->post('sellCurrency');
     	$amount = $this->input->post('amount');
     	$rate = $this->input->post('rate');
+    	$data['security_method']= $this->security_method;
     	if (!$fromCurrency || !$fromCurrency || !$rate || !$amount) {
     		$buyCurrencies = $this -> MCurrency -> getBuyCurrency();
 	    	$sellCurrencies = $this -> MCurrency -> getSellCurrency();
@@ -272,8 +274,8 @@ class Welcome extends Shop_Controller
         	$this->load->view($this->_container,$data);
         	return;
     	}
-    	
-    	$data['cap'] = $this->generate_captcha();
+    	$data['security_method']= $this->security_method;
+    	$data['cap'] = $this->_generate_captcha();
     	
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['amount'] = $amount;
@@ -345,18 +347,20 @@ class Welcome extends Shop_Controller
                             $config[] = array(
                             'field'=>'city',
                             'label'=>$this->lang->line('webshop_city'),
-                            'rules'=>"trim|required|alpha_dash"
+                            'rules'=>"required"
                             );
             $config[] = array(
                             'field'=>'post_code',
                             'label'=>$this->lang->line('webshop_post_code'),
                             'rules'=>"trim|required|numeric"
                             );
+
             $config[] = array(
-                            'field'=>'captcha',
-                            'label'=>'Captcha',
-                            'rules'=>"trim|required|callback_verify_captcha"
+                            'field'=>'recaptcha_response_field',
+                            'label'=>'captcha',
+                            'rules'=>"trim|required|valid_captcha"
                             );
+            
             
             $this->form_validation->set_rules($config);
 
@@ -369,7 +373,7 @@ class Welcome extends Shop_Controller
             $fields['city']	                    = lang('webshop_city');
             $fields['province']	                = lang('webshop_province');
             $fields['post_code']	            = lang('webshop_post_code');
-            $fields['captcha']                	= "Captcha";
+            $fields['recaptcha_response_field']	= 'Recaptcha';
             
             $this->form_validation->set_fields($fields);
             // run validation
@@ -434,7 +438,7 @@ class Welcome extends Shop_Controller
         }// end of if($this->input->post('email'))
         
         if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
-        	redirect( $this->module."/exchange" );
+        	redirect( $this->module."/index" );
         }
         
         $data['amount'] = $this->input->post('amount');
@@ -442,7 +446,7 @@ class Welcome extends Shop_Controller
         $data['getAmount'] = $this->input->post('getAmount');
         $data['fromCurrency'] = $this->input->post('fromCurrency');
         $data['toCurrency'] = $this->input->post('toCurrency');
-        $data['cap'] = $this->generate_captcha();
+        $data['cap'] = $this->_generate_captcha();
         
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'lr2wu';
@@ -459,7 +463,7 @@ class Welcome extends Shop_Controller
             $config[] = array(
                             'field'=>'mtcn',
                             'label'=>$this->lang->line('mtcn'),
-                            'rules'=>"trim|required"
+                            'rules'=>"trim|required|min_length[10]|max_length[10]"
                             );
             $config[] = array(
                             'field'=>'email',
@@ -485,18 +489,23 @@ class Welcome extends Shop_Controller
             $config[] = array(
                             'field'=>'city',
                             'label'=>$this->lang->line('webshop_city'),
-                            'rules'=>"trim|required|alpha_dash"
+                            'rules'=>"required"
                             );
             $config[] = array(
                             'field'=>'lrAccount',
                             'label'=>$this->lang->line('lr_account'),
-                            'rules'=>"trim|required"
+                            'rules'=>"trim|required|callback_lrAccount_check"
                             );
-                $config[] = array(
-                            'field'=>'captcha',
-                            'label'=>$this->lang->line('kago_write_ans'),
-                            'rules'=>"trim|required|callback_verify_captcha"
+            $config[] = array(
+                            'field'=>'recaptcha_response_field',
+                            'label'=>'captcha',
+                            'rules'=>"trim|required|valid_captcha"
                             );
+            //$config[] = array(
+            //                'field'=>'captcha',
+            //                'label'=>$this->lang->line('kago_write_ans'),
+            //                'rules'=>"trim|required|callback_verify_captcha"
+            //                );
                 //$rules['write_ans']= 'trim|required|callback_security_check';
             $this->form_validation->set_rules($config);
 
@@ -509,10 +518,9 @@ class Welcome extends Shop_Controller
             $fields['city']	                    = lang('webshop_city');
             $fields['country']	                = lang('webshop_country');
             $fields['post_code']	            = lang('webshop_post_code');
-            $fields['captcha']                  = "Captcha";
+            $fields['recaptcha_response_field']	= 'Recaptcha';
             
             $this->form_validation->set_fields($fields);
-
             // run validation
             if ($this->form_validation->run() == FALSE)
             {
@@ -543,7 +551,7 @@ class Welcome extends Shop_Controller
         }// end of if($this->input->post('email'))
         
         if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
-        	redirect( $this->module."/exchange" );
+        	redirect( $this->module."/index" );
         }
         $accountInfo = $this->MAccount->getAccountInfo($this->input->post('fromCurrency'));
 
@@ -557,7 +565,7 @@ class Welcome extends Shop_Controller
         $data['getAmount'] = $this->input->post('getAmount');
         $data['fromCurrency'] = $this->input->post('fromCurrency');
         $data['toCurrency'] = $this->input->post('toCurrency');
-        $data['cap'] = $this->generate_captcha();
+        $data['cap'] = $this->_generate_captcha();
         
         $data['title'] = $this->preference->item('site_name')." | ". "Exchange";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'wu2lr';
@@ -565,6 +573,19 @@ class Welcome extends Shop_Controller
         $this->load->view($this->_container,$data);
     }
     
+    
+    function callback_lrAccount_check($str) 
+    {
+    	if ($str[0] != 'U')
+		{
+			$this->form_validation->set_message('LR Account field have to start with U character');
+			return FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}
+    }
     /**
      * 
      * Tracking Order
@@ -722,12 +743,13 @@ class Welcome extends Shop_Controller
   
 	function contact()
     {
-    	$data['cap'] = $this->generate_captcha();
+    	$data['cap'] = $this->_generate_captcha();
         $data['title'] = $this->preference->item('site_name')." | "."Contact us";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'contact';
         $data['module'] = $this->module;
         $this->form_validation->set_rules('name','name','required');
 		$this->form_validation->set_rules('email','email','required');
+		$this->form_validation->set_rules('recaptcha_response_field','captcha','required|valid_captcha');
         if($this->form_validation->run()){
 			if ($this->MContactUs->save()){
 				redirect('welcome/contact');
@@ -1171,7 +1193,12 @@ class Welcome extends Shop_Controller
         }
     }
   
-  
+	function _generate_captcha()
+    {
+        $this->bep_assets->load_asset('recaptcha');
+        $this->load->library('recaptcha/Recaptcha');
+        return $this->recaptcha->recaptcha_get_html();
+    }
 
 
     function cart($productid=0)

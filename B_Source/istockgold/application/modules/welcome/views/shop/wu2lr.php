@@ -64,7 +64,7 @@
 														lra.value='U'+value.substring(1,value.length);
 													else 
 													{
-														alert('ký tự đầu tiên phải là ký tự U');
+														alert('LR Account field have to start with U character');
 														lra.value='';
 													}
 												});
@@ -123,8 +123,9 @@
                             </td>
                         </tr>  
                         <tr>
-                        	<td  class="liberty2-col1" align="right"><?php echo $cap['image'];?></td>
-                        	<td><input type="text" name="captcha" value="" /></td>
+                        	<td></td>
+                        	<td><?php echo $cap;?>
+                        	</td>
                         </tr>
                         <tr>
                             <td colspan="2" style="padding-top:20px"><hr style="border-top:solid 4px #b0b0b0; margin-top:-5px"/></td>
