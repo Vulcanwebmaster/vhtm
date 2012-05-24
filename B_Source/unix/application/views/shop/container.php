@@ -17,7 +17,16 @@
         $('#slider').nivoSlider();
     });
     </script>
-    <!-- ================================= -->
+    
+    <!-- =============UNIFORM============== -->
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/uniform.default.css" type="text/css"/>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/unix/js/jquery.uniform.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("#list-book").uniform();
+      });
+    </script>
+    <!-- ====================================== -->
     
     <link rel="Stylesheet" type="text/css" href="<?php echo base_url();?>/assets/unix/css/style1.css"/>
 </head>

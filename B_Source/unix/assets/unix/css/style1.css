@@ -56,6 +56,14 @@ body{margin:0; font-family:Tahoma}
 .detail p{text-align:justify; font-size:12px; padding:0 20px}
 .detail h4{text-align:center; text-transform:uppercase; font-weight:bold; padding:20px 0 0 0; margin:0}
 
+					/*THU VIEN*/
+#menu-panel{ height:53px; margin-right:-24px; text-align:right}
+#menu-book{height:100%; width:313px; background:url('../images/thuvien-type-list.png'); float:right}
+#menu-book p{line-height:62px; margin:0}
+#quangcao{float:left}
+#quangcao marquee{width:450px; padding-top:10px}
+#quangcao marquee p{font-size:12px;color:#fd4403; width:550px}
+
 					/*PAGES*/
 #title-panel{height:50px; width:100%; margin:auto; background:url('../images/title-panel.png') repeat-x}
 #title{width:1000px; margin:auto}
