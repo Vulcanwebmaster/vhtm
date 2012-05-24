@@ -155,7 +155,7 @@ body{margin:0px}
 #footer p{font-size:12px; color:#615d5d}
 
 /*ABOUT US*/
-#au-title{ text-transform:uppercase; font-size:16px; font-weight:bold; color:#ce0701; margin-top:10px;border-bottom:inset 2px #8ebada}
+#au-title{padding-top:20px; clear:both;text-transform:uppercase; font-size:16px; font-weight:bold; color:#ce0701; margin-top:10px;border-bottom:inset 2px #e5e6e7}
 #map{margin-top:15px}
 
 /*FAQ*/
@@ -198,11 +198,7 @@ body{margin:0px}
 /*--LIBERTY--*/
 .Liberty-head1{font-size:13px; font-weight:bold; margin-bottom:5px}
 .Liberty-row{border-bottom:inset 7px #b0b0b0}
-.box
-{
-    background-color: #ffffd0;
-    border: 1px solid #d0d060;
-}
+
 
 
 .Liberty2-table input
@@ -232,3 +228,6 @@ body{margin:0px}
 
 #exchange-button{background:url('../images/button1.png') no-repeat; width:84px; border-style:none}
 #Submit{background:url('../images/submitbt1.png'); width:72px; height:29px; border-style:none}
+
+#mapsite{list-style-type:none; padding-left:0; padding-top:10px}
+#mapsite li{float:left; padding:0 5px;border-bottom:solid 1px silver}
