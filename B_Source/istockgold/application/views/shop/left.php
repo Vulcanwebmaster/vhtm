@@ -29,13 +29,13 @@
                         <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px; color:#ce0701">Home</a>
                     </div>
                     <div class="menuitem">
-                        <a href="<?php  echo base_url()?>index.php/welcome/allNews">Service news</a>
+                        <a href="<?php  echo base_url()?>allNews">Service news</a>
                     </div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/servicefees">Service Fees</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/exchangers">Buy/Sell LR</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/merchants">Merchants</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/download">Downloads</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>index.php/welcome/consummeralert">Consummer Alert</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>servicefees">Service Fees</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>exchangers">Buy/Sell LR</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>merchants">Merchants</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>download">Downloads</a></div>
+                    <div class="menuitem"><a href="<?php  echo base_url()?>consummeralert">Consummer Alert</a></div>
                 </div>
             </div>
            <div id="support">

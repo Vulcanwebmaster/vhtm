@@ -33,7 +33,7 @@
 					</div>
 					<?php }?>
 					
-	                <?php echo form_open($module."/wu2lr", array('class' => 'expose', 'id' => 'echangeForm')); ?>
+	                <?php echo form_open(base_url()."wu2lr", array('class' => 'expose', 'id' => 'echangeForm')); ?>
                 	<input type="hidden" name="fromCurrency" value="<?php if(isset($fromCurrency)) echo $fromCurrency; else echo set_value('fromCurrency');?>"/>
                 	<input type="hidden" name="toCurrency" value="<?php if(isset($toCurrency)) echo $toCurrency; else echo set_value('toCurrency');?>"/>
                 	<input type="hidden" name="getAmount" value="<?php if(isset($getAmount)) echo $getAmount; else echo set_value('getAmount');?>"/>

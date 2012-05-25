@@ -1,5 +1,5 @@
 <!-- Author: tienlx -->
-<?php echo form_open("welcome/contact")?>
+<?php echo form_open(base_url()."contact")?>
 <div id="main-column">
 <ul id="mapsite">
 		<li><a href="<?php echo base_url();?>">Home page</a></li>

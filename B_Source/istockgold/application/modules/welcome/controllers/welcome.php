@@ -59,7 +59,7 @@ class Welcome extends Shop_Controller
             // for testing language in header
             //$this->lang->load($this->langfilename, $lang);
             // $module is name of folder
-            redirect( $this->module.'/index','refresh');
+            redirect( base_url(),'refresh');
         }
         //$webshop = $module;
         $indexpath = $this->index_path;
@@ -126,7 +126,7 @@ class Welcome extends Shop_Controller
         $config['total_rows']= $this->getNumReviews(); 
 		if (isset($_SESSION['show'])) $config['per_page']= $_SESSION['show'];
 		else $config['per_page']= 5;
-		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
+		$config['base_url'] = base_url()."ajax_review";
 		$config['div'] = '#content3';
 	    $this->jquery_pagination->initialize($config);
 		$data['reviews'] = $this->MNews->getReviews($config['per_page'],0);
@@ -147,7 +147,7 @@ class Welcome extends Shop_Controller
 	    $this->jquery_pagination->initialize($config);
 		$data['reviews'] = $this->MNews->getReviews($config['per_page'], $offset);
 		$data['pagination'] = $this->jquery_pagination->create_links();
-        $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data); 
+        $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data);
     }
     
 	function ajax_review_show($offset = 0)
@@ -157,10 +157,11 @@ class Welcome extends Shop_Controller
 		$_SESSION['show']= $config['per_page'];
 		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
 		$config['div'] = '#content3';
+		$config['cur_page'] = -1;
 	    $this->jquery_pagination->initialize($config);
 		$data['reviews'] = $this->MNews->getReviews($config['per_page'], 0);
 		$data['pagination'] = $this->jquery_pagination->create_links();
-        $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data); 
+        $this->load->view($this->config->item('backendpro_template_shop') ."ajax_review",$data);
     }
     
     function getReviews($num, $offset)
@@ -184,7 +185,7 @@ class Welcome extends Shop_Controller
     
     function load_comment_table()
     {
-    	$config['base_url'] = base_url()."index.php"."/"."welcome"."/"."index";
+    	$config['base_url'] = base_url();
         $config['total_rows']= $this->getNumReviews(); 
         if (isset($_POST['show_id'])){
         	$config['per_page']= $_POST['show_id'];
@@ -269,9 +270,8 @@ class Welcome extends Shop_Controller
 	    	$data['sellCurrencies'] = $sellCurrencies;
 	    	
     		$data['title'] = $this->preference->item('site_name')." | ". "E-Currency Exchange";
-    		$data['page'] = $this->config->item('backendpro_template_shop') . 'exchange';
     		$data['module'] = $this->module;
-        	$this->load->view($this->_container,$data);
+        	redirect(base_url());
         	return;
     	}
     	$data['security_method']= $this->security_method;
@@ -425,20 +425,20 @@ class Welcome extends Shop_Controller
 	                //Storename require merchant to work in Advance mode
 	                //$redirectUrl .= "&lr_store=IstockGold";
 	                $redirectUrl .= "&lr_comments=" . urlencode("Order Id: #". $orderId);
-	                $redirectUrl .= "&lr_success_url=" . urlencode(site_url("welcome/psuccess")."/".$orderId);
+	                $redirectUrl .= "&lr_success_url=" . urlencode(base_url()."psuccess"."/".$orderId);
 	                $redirectUrl .= "&lr_success_url_method=POST" ;
-	                $redirectUrl .= "&lr_fail_url=" .  urlencode(site_url("welcome/pcancel")."/".$orderId);
+	                $redirectUrl .= "&lr_fail_url=" .  urlencode(base_url()."pcancel"."/".$orderId);
 	                $redirectUrl .= "&lr_fail_url_method=POST";
 	                
 	                redirect( $redirectUrl );	
                 } else {
-					redirect($this->module.'/error');          	
+					redirect(base_url().'/error');          	
                 }
             }
         }// end of if($this->input->post('email'))
         
         if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
-        	redirect( $this->module."/index" );
+        	redirect( base_url());
         }
         
         $data['amount'] = $this->input->post('amount');
@@ -546,12 +546,12 @@ class Welcome extends Shop_Controller
                 
                 $orderId = $this->MOrders->addOrder($data, true);
                 $redirect_to = "/order/".$orderId;
-                redirect( $this->module.$redirect_to);
+                redirect( base_url().$redirect_to);
             }
         }// end of if($this->input->post('email'))
         
         if(!$this->input->post('amount') && !$this->input->post('getAmount')) {
-        	redirect( $this->module."/index" );
+        	redirect( base_url() );
         }
         $accountInfo = $this->MAccount->getAccountInfo($this->input->post('fromCurrency'));
 
@@ -603,7 +603,7 @@ class Welcome extends Shop_Controller
 
 	    	if (!isset($id)) 
 	    	{
-		        $data['cap'] = $this->generate_captcha();
+		        $data['cap'] = $this->_generate_captcha();
 		        $data['title'] = $this->preference->item('site_name')." | "."Tracking Your Order";
 		        $data['page'] = $this->config->item('backendpro_template_shop') . 'ordertrack';
 		        $data['module'] = $this->module;
@@ -752,7 +752,7 @@ class Welcome extends Shop_Controller
 		$this->form_validation->set_rules('recaptcha_response_field','captcha','required|valid_captcha');
         if($this->form_validation->run()){
 			if ($this->MContactUs->save()){
-				redirect('welcome/contact');
+				redirect(base_url().'contact');
 			}
         }
         $this->load->view($this->_container,$data);
@@ -1607,15 +1607,15 @@ class Welcome extends Shop_Controller
 		//hien thi thong bao
 		}
 			$this->session->set_flashdata('message',' * Successful ');
-			redirect('welcome');		
+			redirect(base_url());		
         }
         else 
         {
 			$warning = validation_errors();
 	         $this->session->set_flashdata('error',$warning);
-	         redirect('welcome');
+	         redirect(base_url());
         }
-        redirect('welcome');
+        redirect(base_url());
 	
     }
     //ham lay review tu csdl by An    

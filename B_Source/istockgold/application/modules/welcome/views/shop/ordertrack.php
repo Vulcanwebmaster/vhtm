@@ -40,9 +40,7 @@
                                 <label>Turing Number : </label>
                             </div>
                             <div class="tracking-col2">
-                                <?php echo $cap['image'];?>
-                                <br/>
-                        		<input type="text" name="captcha" value="" />
+                                <?php echo $cap;?>
                             </div>
                         </div>
                         <div class="tracking-row" align="right">

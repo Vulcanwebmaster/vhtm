@@ -17,13 +17,13 @@
                         	<style>
                         		a{color:#9d9d9d;font-family:Arial;font-size:12px;text-decoration:none}
                         	</style>
-                        	<a href="<?php  echo site_url($module."/order");?>">Tracking my order</a> 
+                        	<a href="<?php  echo base_url()?>order">Tracking my order</a> 
                         	|
-                        	<a href="<?php  echo base_url()?>index.php/welcome/ourcompany"> Our Company </a>
+                        	<a href="<?php  echo base_url()?>ourcompany"> Our Company </a>
                         	|
-                        	<a href="<?php  echo base_url()?>index.php/welcome/faq"> FAQ </a>
+                        	<a href="<?php  echo base_url()?>faq"> FAQ </a>
                         	|
-                        	<a href="<?php  echo base_url()?>index.php/welcome/contact"> Contact us</a>
+                        	<a href="<?php  echo base_url()?>contact"> Contact us</a>
                         </p>
                     </div>
                     <div style="padding-left:25px;padding-top:5px; clear:both">

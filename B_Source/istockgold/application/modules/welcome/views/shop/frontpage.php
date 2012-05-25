@@ -23,7 +23,7 @@
                     </div>
                     <div><p>iStockgold marketplace</p></div>                    
                 </div>
-                <?php echo form_open( $module."/exchange" ); ?>
+                <?php echo form_open( base_url()."exchange" ); ?>
                     <div class="fromCurrency">
                     	<span class="content-head2" style="font-weight:bold; color:#2c5692">What's your currencty base?</span>
                     	<?php
@@ -154,11 +154,11 @@
                     <!-- Author: tienlx -->
                     <div id="news-content">
                     	<?php foreach ($topnews as $rs):?>
-                    	<a style="font-size:14px; line-height:20px" href="<?php echo base_url()?>index.php/welcome/detailnews/<?php echo $rs->id;?>"><img style="border-style:none" alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
+                    	<a style="font-size:14px; line-height:20px" href="<?php echo base_url()?>detailnews/<?php echo $rs->id;?>"><img style="border-style:none" alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
                     	<br />
                     	<?php endforeach;?>
 						<div align="right">
-                            <a href="<?php echo base_url()?>index.php/welcome/allNews"style="text-decoration:underline; margin-right:20px"><img style="border-style:none" src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/><strong>All WebMoney News</strong></a>
+                            <a href="<?php echo base_url()?>allNews"style="text-decoration:underline; margin-right:20px"><img style="border-style:none" src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/><strong>All WebMoney News</strong></a>
                         </div>
                     </div>
                     <!-- End Author: tienlx -->
@@ -221,7 +221,7 @@
 							$('.bt').mouseenter(function(){								
 								$(this).css('background-color','#C1E0FF');
 								});
-							$('.bt').mouseleave(function(){								
+							$('.bt').mouseleave(function(){		
 								$(this).css('background-color','silver');
 								});
                         	});
@@ -291,7 +291,7 @@
             
         
             <!-- form by AN   -->
-            <form id="form1" name="form1" method="post" action="<?php echo base_url()?>index.php/welcome/review"> 
+            <form id="form1" name="form1" method="post" action="<?php echo base_url()?>review"> 
             
             <div id="content4">
                 <div id="register-head1">
@@ -308,20 +308,23 @@
                     <label>Please focus on product's appearance and quality. You may also leave service comments below.</label>                    
             	</div> 
                 
-                
-                <?php 
-                if($this->session->flashdata('message'))
-                {
-   				 echo '<div><a style="color:red;font-size:12px;line-height:20px">
-   				 '.$this->session->flashdata('message').'</a></div>';
-                }
-                if($this->session->flashdata('error'))
-                {
-   				 echo '<div><a style="color:red;font-size:12px;line-height:20px">
-   				 '.$this->session->flashdata('error').'</a></div>';
-                }
-                ?>
-                  <?php echo validation_errors(); ?>            
+                	<?php
+					if ($this->session->flashdata('msg')|| $this->session->flashdata('error')){ 
+						echo "<div class='status_box'>";
+						echo $this->session->flashdata('msg');
+						echo $this->session->flashdata('error');
+						echo "</div>";
+					}
+					?>
+					
+					<?php if (validation_errors())
+					{?>
+					<div id="error-panel">
+						<?php 
+						echo validation_errors('<div class="message_error">','</div>'); ?>
+					</div>
+					<?php }?>
+					            
                 <div id="register-center">
                     <table cellspacing="15" style="font-size:12px; color:#414142; font-family:Arial">
                         <tr>
@@ -701,7 +704,6 @@
                                     				value.innerHTML="...";
                                     				
 													$("#star1").mouseenter(function(){	
-																											
 															star1.src="<?php echo base_url();?>assets/images/star2.png";
 															if (flag==1)
 															{
@@ -749,7 +751,7 @@
 													$("#star2").mousedown(function(){
 														//if (flag == 0)
 														$("#star1").mousedown();
-														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														star2.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 2;
 													});
 
@@ -769,7 +771,7 @@
 
 													$("#star3").mousedown(function(){
 														$("#star2").mousedown();														
-														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														star3.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 3;
 													});
 
@@ -791,7 +793,7 @@
 
 													$("#star4").mousedown(function(){	
 														$("#star3").mousedown();											
-														star1.src="<?php echo base_url();?>assets/images/star2.png";
+														star4.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 4;
 													});
 
@@ -812,7 +814,7 @@
 
 													$("#star5").mousedown(function(){
 														$("#star4").mousedown();
-															star1.src="<?php echo base_url();?>assets/images/star2.png";
+															star5.src="<?php echo base_url();?>assets/images/star2.png";
 															ratingstarvalue.value = 5;
 													});
 													

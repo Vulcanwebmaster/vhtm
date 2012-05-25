@@ -28,7 +28,7 @@
 					echo validation_errors('<div class="message_error">','</div>'); ?>
 				</div>
 				<?php }?>
-                <?php echo form_open($module."/lr2wu", array('class' => 'expose', 'id' => 'echangeForm')); ?>
+                <?php echo form_open(base_url()."lr2wu", array('class' => 'expose', 'id' => 'echangeForm')); ?>
                 	<input type="hidden" name="fromCurrency" value="<?php if(isset($fromCurrency)) echo $fromCurrency; else echo set_value('fromCurrency');?>"/>
                 	<input type="hidden" name="toCurrency" value="<?php if(isset($toCurrency)) echo $toCurrency; else echo set_value('toCurrency');?>"/>
                 	<input type="hidden" name="amount" value="<?php if(isset($amount)) echo $amount; else echo set_value('amount');?>"/>
@@ -78,8 +78,8 @@
                                 <label style="color:#b5b5b5">(input a working e-mail address)</label></td>
                         </tr>
                         <tr>
-                        	<td  class="liberty2-col1" align="right"><?php echo $cap['image'];?></td>
-                        	<td><input type="text" name="captcha" value="" /></td>
+                        	<td></td>
+                        	<td><?php echo $cap;?></td>
                         </tr>
                         <tr>
                             <td colspan="2"><p class="red" style="margin-top:20px">*Notice 1: you will get paid in 24 hours and you pay the Western Union transfer fee.</p></td>

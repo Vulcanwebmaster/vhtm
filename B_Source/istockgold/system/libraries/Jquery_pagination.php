@@ -42,7 +42,7 @@ class Jquery_pagination{
 	var $first_tag_close	= '&nbsp;';
 	var $last_tag_open		= '&nbsp;';
 	var $last_tag_close		= '&nbsp;';
-	var $cur_tag_open		= '&nbsp;<a class="bt" style="font-size:12px;border-radius:5px; color: black; background-color:#a3d8f8; padding: 5px 10px">';
+	var $cur_tag_open		= '&nbsp;<a class="bt2" style="font-size:12px;border-radius:5px; color: black; background-color:#a3d8f8; padding: 5px 10px">';
 	var $cur_tag_close		= '</a>&nbsp;';
 	var $next_tag_open		= '&nbsp;';
 	var $next_tag_close		= '&nbsp;';
@@ -134,12 +134,14 @@ class Jquery_pagination{
 
 		// Determine the current page number.		
 		$CI =& get_instance();	
-		if ($CI->uri->segment($this->uri_segment) != 0)
-		{
-			$this->cur_page = $CI->uri->segment($this->uri_segment);
-			
-			// Prep the current page - no funny business!
-			$this->cur_page = (int) $this->cur_page;
+		if ($this->cur_page != -1) {
+			if ($CI->uri->segment($this->uri_segment) != 0)
+			{
+				$this->cur_page = $CI->uri->segment($this->uri_segment);
+				
+				// Prep the current page - no funny business!
+				$this->cur_page = (int) $this->cur_page;
+			}
 		}
 
 		$this->num_links = (int)$this->num_links;
@@ -149,20 +151,28 @@ class Jquery_pagination{
 			show_error('Your number of links must be a positive number.');
 		}
 				
-		if ( ! is_numeric($this->cur_page))
-		{
-			$this->cur_page = 0;
-		}
 		
 		// Is the page number beyond the result range?
 		// If so we show the last page
-		if ($this->cur_page > $this->total_rows)
+		if ($this->cur_page != -1)
 		{
-			$this->cur_page = ($num_pages - 1) * $this->per_page;
+			if ( ! is_numeric($this->cur_page))
+			{
+				$this->cur_page = 0;
+			}
+			if ($this->cur_page > $this->total_rows)
+			{
+				$this->cur_page = ($num_pages - 1) * $this->per_page;
+			}
+			
+			$uri_page_number = $this->cur_page;
+			$this->cur_page = floor(($this->cur_page/$this->per_page) + 1);
 		}
-		
-		$uri_page_number = $this->cur_page;
-		$this->cur_page = floor(($this->cur_page/$this->per_page) + 1);
+		else 
+		{
+			$this->cur_page = 1;
+			$uri_page_number = $this->cur_page;
+		}
 
 		// Calculate the start and end numbers. These determine
 		// which number to start and end the digit links with

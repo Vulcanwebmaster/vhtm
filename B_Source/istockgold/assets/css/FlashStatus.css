@@ -4,10 +4,16 @@
         margin-top: 5px;
 	background:#FFF bottom center repeat-x;
 	border:1px solid;
-	border-color: #33CCFF;
+	border-color: red;
 	white-space:normal;
 	width: 95%;
 	background-image:url('../images/status/bg_info.gif');
+	
+}
+
+.status_box p {
+		color: red;
+		font-size: 12px;
 }
 
 #pleft .status_box{

@@ -142,7 +142,7 @@
 	{
 		$CFG->_assign_to_config($assign_to_config);
 	}
-
+	
 /*
  * ------------------------------------------------------
  *  Instantiate the UTF-8 class
@@ -170,14 +170,17 @@
  * ------------------------------------------------------
  */
 	$RTR =& load_class('Router', 'core');
+	
+	
 	$RTR->_set_routing();
+	
 
 	// Set any routing overrides that may exist in the main index file
 	if (isset($routing))
 	{
 		$RTR->_set_overrides($routing);
 	}
-
+	
 /*
  * ------------------------------------------------------
  *  Instantiate the output class

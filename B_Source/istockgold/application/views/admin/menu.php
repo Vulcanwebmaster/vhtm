@@ -59,7 +59,7 @@ self.setInterval("time()",3000);
 </script>
 		<div id="left">	<div id="navigation_menu">
 	<ul>
-		<li><?php print anchor('is_admin_home/admin','<img src="'.base_url().'assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'),array('class'=>'navigation_select'))?></li>
+		<li><?php print anchor('index.php/is_admin_home/admin','<img src="'.base_url().'assets/images/admin/n_status.gif" width="18" height="16" border="0" />'.$this->lang->line('istockgold_admin_home'),array('class'=>'navigation_select'))?></li>
         <div class="seperator"></div>        
         <li><?php print anchor('is_exchange_orders/admin','<img src="'.base_url().'assets/images/admin/n_order.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_exchanges_ordes')) ?></li>
 		<li><?php print anchor('is_exchange_rates/admin','<img src="'.base_url().'assets/images/admin/n_order_fee.png" width="16" height="16" border="0" />'.$this->lang->line('istockgold_exchange_rates')) ?></li>

@@ -72,7 +72,7 @@ class Home extends Admin_Controller
 //		$data['header'] = $this->lang->line('backendpro_dashboard');
 //		$data['page'] = $this->config->item('backendpro_template_admin') . "home";
 		$this->load->view($this->_container,$data);
-		redirect('is_admin_home/admin/admin','refresh');
+		redirect('index.php/is_admin_home/admin','refresh');
 	}
 }
 /* End of file home.php */

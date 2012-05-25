@@ -138,6 +138,8 @@ class CI_Router {
 			include(APPPATH.'config/routes.php');
 		}
 
+		
+		
 		$this->routes = ( ! isset($route) OR ! is_array($route)) ? array() : $route;
 		unset($route);
 
@@ -154,21 +156,22 @@ class CI_Router {
 		// Fetch the complete URI string
 		$this->uri->_fetch_uri_string();
 
-		// Is there a URI string? If not, the default controller specified in the "routes" file will be shown.
+			// Is there a URI string? If not, the default controller specified in the "routes" file will be shown.
 		if ($this->uri->uri_string == '')
 		{
 			return $this->_set_default_controller();
 		}
 
-		// Do we need to remove the URL suffix?
+			// Do we need to remove the URL suffix?
 		$this->uri->_remove_url_suffix();
 
 		// Compile the segments into an array
 		$this->uri->_explode_segments();
 
+	
 		// Parse any custom routing that may exist
 		$this->_parse_routes();
-
+	
 		// Re-index the segment array so that it starts with 1 rather than 0
 		$this->uri->_reindex_segments();
 	}
@@ -365,6 +368,9 @@ class CI_Router {
 		// Turn the segment array into a URI string
 		$uri = implode('/', $this->uri->segments);
 
+		
+		
+		
 		// Is there a literal match?  If so we're done
 		if (isset($this->routes[$uri]))
 		{
@@ -392,6 +398,7 @@ class CI_Router {
 
 		// If we got this far it means we didn't encounter a
 		// matching route so we'll set the site default route
+	
 		$this->_set_request($this->uri->segments);
 	}
 
