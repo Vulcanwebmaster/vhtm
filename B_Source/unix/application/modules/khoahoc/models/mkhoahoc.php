@@ -1,5 +1,5 @@
 <?php
-	class Mhoithao extends CI_Model
+	class Mkhoahoc extends CI_Model
 	{
 		function __construct()
 		{
@@ -7,34 +7,34 @@
 			$this->load->database();
 		}
 		
-		function getList($index)
+		function getlist($index)
 		{
-			$kq=$this->db->get('unix_hoithao',6,$index);
+			$ds=$this->db->get('unix_khoahoc',6,$index);
 			$list=array();
-			foreach($kq->result() as $item)
+			foreach($ds->result() as $item)
 			{
 				$list[]=$item;
 			}
-			$kq->free_result();
+			$ds->free_result();
 			return $list;
 		}
 		
-		function full()
+		function count()
 		{
-			$kq=$this->db->get('unix_hoithao');
+			$ds=$this->db->get('unix_khoahoc');
 			$list=array();
-			foreach($kq->result() as $item)
+			foreach($ds->result() as $item)
 			{
 				$list[]=$item;
 			}
-			$kq->free_result();
-			return $list;
+			$ds->free_result();
+			return count($list);
 		}
 		
 		function getInf($id)
 		{
-			$this->db->where('hoithao_id',$id);
-			$ds=$this->db->get('unix_hoithao');
+			$this->db->where('khoahoc_id',$id);
+			$ds=$this->db->get('unix_khoahoc');
 			if ($ds->num_rows()>0)
 			{
 				$item=$ds->row(0);

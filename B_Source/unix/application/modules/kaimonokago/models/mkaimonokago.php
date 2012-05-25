@@ -419,7 +419,7 @@ class MKaimonokago extends Base_model
 	
     function getListHoiThao()
     {
-    	$list=$this->db->get('hoithao');
+    	$list=$this->db->get('unix_hoithao',5,0);
     	$ds=array();
     	foreach ($list->result() as $item)
     	{
@@ -428,6 +428,30 @@ class MKaimonokago extends Base_model
     	$list->free_result();
     	return $ds;
     }
+    
+    function getListKhoaHoc()
+    {
+    	$list=$this->db->get('unix_khoahoc',5,0);
+    	$ds=array();
+    	foreach ($list->result() as $item)
+    	{
+    		$ds[]=$item;
+    	}
+    	$list->free_result();
+    	return $ds;
+    }
+    
+	function getListThuVien()
+		{
+			$ds=$this->db->get('unix_loaisach');
+			$list=array();
+			foreach($ds->result() as $item)
+			{
+				$list[]=$item;
+			}
+			$ds->free_result();
+			return $list;
+		}
 }
 
 ?>

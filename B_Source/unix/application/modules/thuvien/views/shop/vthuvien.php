@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		var content=document.getElementById('content');		
+		$('#listbook').load('<?php echo base_url();?>index.php/thuvien/loadFull');
+		$('#list-type').change(function(){
+			var list=document.getElementById('list-type');
+			var value=list.value;
+			$('#listbook').load('<?php echo base_url();?>index.php/thuvien/load/0/'+value);
+			});
+		});
+</script>
+
 <div id="title-panel">
 	<div id="title">
 		<div id="title-left"></div>
@@ -23,11 +35,15 @@
 				<div id="menu-book">
 					<p>
 						<span style="color:white; font-size:12px">Chọn loại sách: </span>
-						<select id="list-book">
-							<option value="">Toán</option>
-							<option value="">Văn</option>
-							<option value="">Sinh</option>
-							<option value="">Tin học</option>
+						<select id="list-type">
+							<option value="0">Tất cả</option>
+							<?php if (isset($listtype))
+							{
+								foreach($listtype as $item)
+								{
+									echo '<option value="'.$item->loaisach_id.'">'.$item->tenloai.'</option>';
+								}
+							}?>						
 						</select>
 					</p>
 				</div>
@@ -36,6 +52,9 @@
 						<p> Hệ thống thư viện phong phú của Unix là một kho tri thức khổng lồ chờ bạn khám phá</p>
 					</marquee>
 				</div>
+			</div>
+			<div id="listbook">
+				
 			</div>
 		</div>
 	</div>

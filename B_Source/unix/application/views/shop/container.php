@@ -23,7 +23,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/unix/js/jquery.uniform.js"></script>
     <script type="text/javascript" charset="utf-8">
       $(function(){
-        $("#list-book").uniform();
+        $("#list-type, .input-lienhe, #submit").uniform();
       });
     </script>
     <!-- ====================================== -->

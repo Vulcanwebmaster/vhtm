@@ -32,12 +32,12 @@
 						<table>
 							<tr>
 								<td>
-									<a href="#"><img src="<?php echo base_url().'assets/images/hoithao/'.$item->anhdaidien;?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
+									<a href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>"><img src="<?php echo base_url().'assets/unix/images/hoithao/'.$item->anhdaidien;?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
 								</td>
 								<td style="padding:0 10px; text-align:justify; vertical-align:0">
-									<a href="#"><h3 style="margin:0;color:#0158a1"><?php echo $item->TieuDe;?></h3></a>
-									<?php echo substr($item->NoiDung,0,200).' ...';?>
-									<a href="#" style="font-style:italic">Xem thêm</a>
+									<a href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>"><h3 style="margin:0;color:#0158a1"><?php echo $item->tieude;?></h3></a>
+									<?php echo substr($item->noidung,0,200).' ...';?>
+									<a href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" style="font-style:italic">Xem thêm</a>
 								</td>
 							</tr>
 						</table>

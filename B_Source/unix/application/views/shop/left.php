@@ -10,7 +10,7 @@
 					foreach($listhoithao as $item)
 					{
 				?>		
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->TieuDe,0,35).' ...';?></li>
+				<li><a style="color:#5A5A5A" href="" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
 				<?php }?>
 			</ul>
 		</div>
@@ -21,11 +21,12 @@
 	</div>
 		<div class="list-left">
 			<ul>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
+			<?php $listkhoahoc=$this->MKaimonokago->getListKhoaHoc();
+					foreach($listkhoahoc as $item)
+					{?>
+						<li><a style="color:#5A5A5A" href="" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+			<?php 	}
+			?>
 			</ul>
 		</div>
 		
@@ -35,11 +36,17 @@
 	</div>
 		<div class="list-left">
 			<ul>
+				<?php $listthuvien=$this->MKaimonokago->getListThuVien();
+					foreach($listthuvien as $item)
+					{?>
+						<li><a style="color:#5A5A5A" href="" title="<?php echo $item->tenloai;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tenloai,0,35);?></a></li>
+				<?php 	}
+				?>
+				<!-- li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
 				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
 				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
 				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
-				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li>
+				<li><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>Nguyễn Tiến Mạnh</li -->
 			</ul>
 		</div>
 	<div id="left-bottom"></div>

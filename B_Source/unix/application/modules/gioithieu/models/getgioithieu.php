@@ -9,7 +9,7 @@
 		
 		function get()
 		{
-			$ds=$this->db->get('gioithieu');
+			$ds=$this->db->get('unix_gioithieu');
 			if ($ds->num_rows()>0)
 			{
 				$kq=$ds->row(0);
