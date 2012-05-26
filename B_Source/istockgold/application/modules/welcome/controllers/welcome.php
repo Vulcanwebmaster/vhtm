@@ -764,10 +764,19 @@ class Welcome extends Shop_Controller
 		$data['title'] = $this->preference->item('site_name')." | "."Detail";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'detailnews';
         $data['module'] = $this->module;
+        $data['tinlienquan']=$this->tinlienquan();
         $fields = array('id','title','content','date');
-        $data['detailnews'] = $this->MIStockGold->getAllSimple("news","id",$this->uri->segment('3'));
+        $data['detailnews'] = $this->MIStockGold->getAllSimple("news","id",$this->uri->segment('2'));
         $this->load->view($this->_container,$data);
     }
+
+    function tinlienquan(){
+    	$fields = array('id','title','content','date');
+        $query =$this->db->get("is_news",3,0);
+        $listnews = $query->result();
+        return $listnews;
+    }
+    
     function allNews(){
     	$data['title'] = $this->preference->item('site_name')." | "."All WebMonyNew";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'allnews';
