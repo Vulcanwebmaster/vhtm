@@ -310,20 +310,12 @@
                 
                 	<?php
 					if ($this->session->flashdata('msg')|| $this->session->flashdata('error')){ 
-						echo "<div class='status_box'>";
+						echo "<div id='error-panel' style='margin-bottom:15px'>";
 						echo $this->session->flashdata('msg');
 						echo $this->session->flashdata('error');
 						echo "</div>";
 					}
 					?>
-					
-					<?php if (validation_errors())
-					{?>
-					<div id="error-panel">
-						<?php 
-						echo validation_errors('<div class="message_error">','</div>'); ?>
-					</div>
-					<?php }?>
 					            
                 <div id="register-center">
                     <table cellspacing="15" style="font-size:12px; color:#414142; font-family:Arial">
