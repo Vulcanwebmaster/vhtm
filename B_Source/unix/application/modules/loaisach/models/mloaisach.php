@@ -22,6 +22,23 @@
 	        $Q->free_result();
 	        return $data;
 	    }
+		
+	    function getLoaiSachDropDown()
+	    {
+	        $data = array();
+	        $this->db->select('loaisach_id,tenloai');
+	        $this->db->order_by('loaisach_id','asc');
+	        $Q = $this->db->get('unix_loaisach');
+	        if ($Q->num_rows() > 0)
+	        {
+	            foreach ($Q->result_array() as $row)
+	            {
+	                $data[] = $row;
+	            }
+	        }
+	        $Q->free_result();
+	        return $data;
+	    }
 	
 	    function addLoaiSach($data)
 	    {
