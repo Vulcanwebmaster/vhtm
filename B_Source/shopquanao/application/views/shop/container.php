@@ -110,7 +110,15 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 	        transition : 'squareRandom'
 	
 	      });
-	
+			$(document).ready(function(){
+				$("#col-right").css('border','solid 1px #3f3f3f');
+				var a=document.getElementById('col-left');
+				//alert(a.width);
+				var left=$('#col-left').css('height');//document.getElementById('col-left');
+				var right=$('#col-right').css('height');//document.getElementById('col_right');
+
+				$('#col-right').css('height','auto');
+			});
 	    });
 	
 	  </script>

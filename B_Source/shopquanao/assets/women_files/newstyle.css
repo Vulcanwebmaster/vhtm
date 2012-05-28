@@ -213,12 +213,12 @@ a.comment-permalink{color:#067bd6;font:normal normal 10px Arial,Tahoma,Verdana}
 #blog-pager{text-align:center}
 .feed-links{clear:both;line-height:2.5em}
 /* Sidebar Content----------------------------------------------- */
-.sidebar{margin:0 0 10px 0;font-size:13px;color:#3A4A5D;}
+.sidebar{margin:0 0 10px 0;font-size:13px;color:#3A4A5D; border-left:dotted 1px silver}
 .sidebar a{text-decoration:none;color:#3A4A5D;}
 .sidebar a:hover{text-decoration:underline;color:#DE6503}
 .sidebar h2{margin:10px 0 4px 0;padding:10px 0 12px 8px;text-align:left;font-size:18px;line-height:18px;color:#324256;font-family:Arial,Helvetica,Sans-serif;font-weight:bold;text-transform:uppercase;background:url(sidebar-tab.png) left top repeat-x;}
 .sidebar ul{list-style-type:none;margin:0 0 10px 0;padding:0}
-.sidebar ul li{padding: 6px 0px 6px 4px;margin:0;background: url(sidebar-line.png) left bottom repeat-x;}
+.sidebar ul li{padding: 6px 0px 6px 4px;margin:0; border-bottom:solid 1px white}/*;background: url(sidebar-line.png) left bottom repeat-x;}*/
 .sidebar .widget{border-bottom:0 dotted $bordercolor;margin:0 0 0.2em;padding:0px 5px 4px 10px;}
 .main .widget{border-bottom:0 dotted $bordercolor;margin:0 0 1.5em;padding:0 0 1.5em}
 .main .Blog{border-bottom-width:0}
@@ -229,10 +229,10 @@ a.comment-permalink{color:#067bd6;font:normal normal 10px Arial,Tahoma,Verdana}
 .profile-textblock{margin:0.5em 0;line-height:1.6em}
 .profile-link{font:$postfooterfont;text-transform:uppercase;letter-spacing:.1em}
 #navbar-iframe{height:0;visibility:hidden;display:none}
-.foxmenucontainer{height:38px;/*position:absolute;*/top:30px;right:0;display:block;padding:0 5px 0 5px;font:13px Arial,Tahoma,Century gothic,verdana,sans-serif;font-weight:normal;background:#3F3F3F;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
-#menu{margin:1px 0;padding:0;height:36px;overflow:hidden;float:left;width:715px}
-#menu ul{float:left;list-style:none;margin:0;padding:0}
-#menu li{float:left;list-style:none;margin:0;padding:0}
+.foxmenucontainer{height:auto;/*position:absolute;*/top:30px;right:0;display:block;padding:0 5px 0 5px;font:13px Arial,Tahoma,Century gothic,verdana,sans-serif;font-weight:normal;background:#3F3F3F;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+#menu{margin:1px 0;padding:0;height:auto;overflow:hidden;width:auto}
+#menu ul{list-style:none;margin:0;padding:0}
+#menu li{list-style:none;margin:0;padding:0}
 #menu li a,#menu li a:link,#menu li a:visited{color:#ccc;display:block;margin:0;padding:0 20px;line-height:36px}
 #menu li a:hover,#menu li a:active{background:#222;color:#fff;margin:0;padding:0 20px;line-height:36px;text-decoration:none;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
 #menu li li a,#menu li li a:link,#menu li li a:visited{background:#3F3F3F;width:150px;color:#ddd;float:none;margin:0;padding:0 20px;font-weight:normal;line-height:34px;border-bottom:1px solid #262626}

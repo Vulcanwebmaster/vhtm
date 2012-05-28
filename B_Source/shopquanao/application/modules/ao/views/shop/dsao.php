@@ -1,4 +1,4 @@
-<div class="main-container col2-right-layout">
+<div class="main-container col2-right-layout" style="width:750px; float:left">
 	<?php foreach ($list as $index => $row)
         {
         	?>
@@ -6,7 +6,7 @@
             <a name="1655744853648508510"></a>
             <h3 class="post-title entry-title" style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat">
             	<!-- div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat" -->
-                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $this->MKaimonokago->format_price($row['price']);?> VNĐ</span>
+                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $this->MKaimonokago->format_price($row['price']);?> VNÄ�</span>
                     	<a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row['id'];?>"
                     	style="padding-top:0px;padding-right:10px;text-transform:uppercase; float:right; font-size:9px">
 							<img style="background:transparent; border:transparent" src="<?php echo base_url();?>assets/women_files/shopping_cart.png" width="30px"/>
@@ -85,13 +85,16 @@
             </div>
         </div>
         <?php }?>
+	    <div style="clear: both;">
+	    </div>
+	    <div align="center">
+	    	<?php echo $this->pagination->create_links();?>
+	    </div>
 	</div>
+	<div id="right" style="float:right">
+    	<?php $this->load->view('shop/right');?>
+    </div>
 	
-	<div style="clear: both;">
-    </div>
-    <div align="center">
-    	<?php echo $this->pagination->create_links();?>
-    </div>
     <div class="clear">
     </div>
 

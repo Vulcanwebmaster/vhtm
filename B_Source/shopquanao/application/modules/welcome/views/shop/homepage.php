@@ -1,4 +1,3 @@
-
 <div class="jquery-slider-wrapper jquery-slider-option-navigation-selector-control-timer" style="width: 100%; height: 325px; margin-bottom:20px">
 	<div id="slideshow" class="slider" style="width: 100%; height: 325px; overflow-x: hidden; overflow-y: hidden; position: relative; ">
 		<div class="jquery-slider-slide jquery-slider-slide-1" style="opacity: 0; ">
@@ -46,7 +45,7 @@
 	</div>
 </div>
 <div class="widget Blog" id="Blog1">
-    <div class="blog-posts hfeed">
+    <div id="col-left" class="blog-posts hfeed" style="width:750px; float:left">
         <!-- google_ad_section_start(name=default) -->
         <?php foreach ($newArrivals as $row)
         {
@@ -138,11 +137,14 @@
         
         
         <!-- google_ad_section_end -->
+    	<div style="clear: both;">
+	    </div>
+	    <div align="center">
+	    	<?php echo $this->pagination->create_links();?>
+	    </div>
     </div>
-    <div style="clear: both;">
-    </div>
-    <div align="center">
-    	<?php echo $this->pagination->create_links();?>
+    <div id="right" style="float:right">
+    	<?php $this->load->view('shop/right');?>
     </div>
     <div class="clear">
     </div>
