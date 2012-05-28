@@ -62,8 +62,6 @@
 			{
 	    		$data_new = array( 
 		    		'noidung'    => $data['noidung'],
-		    		'theloai'    => $data['theloai'],
-		    		'mabaiviet'  => $data['mabaiviet'],
 		    		'ngaythang'  => $data['ngaythang'],
 		    		'nguoidang'  => $data['nguoidang']
 	    		);

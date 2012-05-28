@@ -34,10 +34,13 @@ class Admin extends Shop_Admin_Controller
     {
         $data = array(
             'khoahoc_id'  => $this->input->post('khoahoc_id',TRUE),
+        	'tieude'      => $this->input->post('tieude',TRUE),
             'mota'        => $this->input->post('mota',TRUE),
             'batdau'      => $this->input->post('batdau',TRUE),
             'ketthuc'     => $this->input->post('ketthuc',TRUE),        
-            'hocphi'      => $this->input->post('hocphi',TRUE)    
+            'hocphi'      => $this->input->post('hocphi',TRUE),
+        	'anhdaidien'  => $this->input->post('anhdaidien',TRUE),
+        	'thoigian'    => $this->input->post('thoigian',TRUE)    
         );
         return $data;
     }
@@ -45,7 +48,7 @@ class Admin extends Shop_Admin_Controller
 
 	function create()
     {
-        if ($this->input->post('mota')!='')
+        if ($this->input->post('tieude')!='')
         {
 			$data = $this->_fields();
            	$this->MKhoahoc->addKhoaHoc($data);
@@ -71,8 +74,9 @@ class Admin extends Shop_Admin_Controller
     	if ($this->input->post('khoahoc_id')) {
     		$id = $this->input->post('khoahoc_id');
     	} 
-        if ($this->input->post('mota'))
-        {           
+        if ($this->input->post('tieude'))
+        {   
+        	$this->form_validation->set_rules('tieude', 'tieude', 'required');        
 		  	$this->form_validation->set_rules('mota', 'mota', 'required');
 		  	$this->form_validation->set_rules('batdau', 'batdau', 'required');  
 		  	$this->form_validation->set_rules('ketthuc', 'ketthuc', 'required');     

@@ -74,10 +74,12 @@
 			else
 			{
 	    		$data_new = array( 
-		    		'mota'     => $data['mota'],
-		    		'batdau'    => $data['batdau'],
-		    		'ketthuc'   => $data['ketthuc'],
-		    		'hocphi'    => $data['hocphi']
+	    			'tieude'     => $data['tieude'],
+		    		'mota'       => $data['mota'],
+		    		'batdau'     => $data['batdau'],
+		    		'ketthuc'    => $data['ketthuc'],
+		    		'hocphi'     => $data['hocphi'],
+	    			'anhdaidien' => $data['anhdaidien']
 	    		);
 	    		$this->db->where('khoahoc_id',$data['khoahoc_id']);
 				$this->db->update('unix_khoahoc', $data_new);

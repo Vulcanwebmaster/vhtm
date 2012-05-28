@@ -4,32 +4,20 @@
 echo form_open('camnhan/admin/create');
 echo "\n<table id='preference_form'>";
 
-echo "<tr><td class='label'><label for='tieude'>".'(*)'.'Tiêu Đề:'."</label></td>\n";
-$data = array('name'=>'tieude','id'=>'tieude','class'=>'text');
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
 echo "<tr><td class='label'><label for='long'>".'(*)Nội dung:'."</label></td>\n";
 $data = array('name'=>'noidung','id'=>'long','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='thoigian'>".'(*)'.'Thời gian (yyyy-mm-dd):'."</label></td>\n";
-$data = array('name'=>'thoigian','id'=>'thoigian','class'=>'text');
+echo "<tr><td class='label'><label for='ngaythang'>".'(*)'.'Thời gian đăng (yyyy-mm-dd):'."</label></td>\n";
+$data = array('name'=>'ngaythang','id'=>'ngaythang','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='phanhoi'>".'Phản Hồi:'."</label></td>\n";
-$options = array( '1' => 'Có', '0' => 'Không');
-echo "<td>";
-echo form_dropdown('phanhoi',$options);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='anhdaidien'>".'Ảnh Đại Diện:'."</label></td>\n";
-$data = array('name'=>'anhdaidien','id'=>'anhdaidien','class'=>'text');
+echo "<tr><td class='label'><label for='nguoidang'>".'(*)'.'Người Đăng:'."</label></td>\n";
+$data = array('name'=>'nguoidang','id'=>'nguoidang','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";

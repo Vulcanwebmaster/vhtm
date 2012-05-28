@@ -36,11 +36,9 @@ class Admin extends Shop_Admin_Controller
     {
         $data = array(
             'camnhan_id'   => $this->input->post('camnhan_id',TRUE),
-            'tieude'       => $this->input->post('tieude',TRUE),
             'noidung'      => $this->input->post('noidung',TRUE),
-            'thoigian'     => $this->input->post('thoigian',TRUE),        
-            'phanhoi'      => $this->input->post('phanhoi',TRUE),
-            'anhdaidien'   => $this->input->post('anhdaidien',TRUE)     
+            'ngaythang'    => $this->input->post('ngaythang',TRUE),        
+            'nguoidang'    => $this->input->post('nguoidang',TRUE)   
         );
         return $data;
     }
@@ -76,9 +74,7 @@ class Admin extends Shop_Admin_Controller
     	} 
         if ($this->input->post('noidung'))
         {           
-		  	$this->form_validation->set_rules('noidung', 'noidung', 'required');
-		  	$this->form_validation->set_rules('theloai', 'theloai', 'required');  
-		  	$this->form_validation->set_rules('mabaiviet', 'mabaiviet', 'required');     
+		  	$this->form_validation->set_rules('noidung', 'noidung', 'required');  
 		  	$this->form_validation->set_rules('ngaythang', 'ngaythang', 'required');  
 		  	$this->form_validation->set_rules('nguoidang', 'nguoidang', 'required');  
 		  	if($this->form_validation->run())
