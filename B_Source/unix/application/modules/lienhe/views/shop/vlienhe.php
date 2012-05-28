@@ -24,30 +24,44 @@
 				td{padding:5px 10px}
 				.input-lienhe{width:300px}
 			</style>
+			
 			<div style="width:750px;">
+				<?php 
+				$this->load->library('session');				
+				if ($this->session->userdata('message'))
+				{
+					echo $this->session->userdata('message');
+					$this->session->unset_userdata('message');
+				}?>
+				<div style="background-color:#ffebe8; border:solid 1px #dd3c10; padding:10px">
+					<?php
+						echo validation_errors('<p class="error" style="font-size:11px; color:#333; margin:0">', '</p>');?>
+				</div>
 				<center style="margin-top:50px">
-					<table style="font-size:12px" border-shading="30px">
-						<tr>
-							<td><span>*</span>Họ tên</td>
-							<td><input class="input-lienhe" type="text"/></td>
-						</tr>
-						<tr>
-							<td><span>*</span>Email</td>
-							<td><input class="input-lienhe" type="text"/></td>
-						</tr>
-						<tr>
-							<td><span>*</span>Tiêu đề</td>
-							<td><input class="input-lienhe" type="text"/></td>
-						</tr>
-						<tr>
-							<td><span>*</span>Nội dung</td>
-							<td><input class="input-lienhe" type="text"/></td>
-						</tr>
-						<tr>
-							<td colspan="2" align="center">
-								<center><input id="submit" type="submit" value="Gửi" style="width:100px"/></center></td>
-						</tr>
-					</table>
+					<form method="post" name="lienhe-form" id="lienhe-form" action="<?php echo base_url();?>index.php/lienhe/submit">
+						<table style="font-size:12px">
+							<tr>
+								<td><span>*</span>Họ tên</td>
+								<td><input class="input-lienhe" type="text" name="hoten"/></td>
+							</tr>
+							<tr>
+								<td><span>*</span>Email</td>
+								<td><input class="input-lienhe" type="text" name="email"/></td>
+							</tr>
+							<tr>
+								<td><span>*</span>Tiêu đề</td>
+								<td><input class="input-lienhe" type="text" name="tieude"/></td>
+							</tr>
+							<tr>
+								<td><span>*</span>Nội dung</td>
+								<td><input class="input-lienhe" type="text" name="noidung"/></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center">
+									<center><input id="submit" name="submit" type="submit" value="Gửi" style="width:100px"/></center></td>
+							</tr>
+						</table>
+					</form>
 				</center>
 				<hr/>
 				<div style="margin-left:185px">
