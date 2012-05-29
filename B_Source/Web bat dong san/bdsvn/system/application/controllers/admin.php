@@ -16,7 +16,7 @@
           $this->form_validation->set_rules('password','Mật khẩu','required');
           if($this->form_validation->run()){
               if($this->admin->checklogin()){
-                  $this->session->set_flashdata('message','Đăng nhập thành công');
+              	$this->session->set_flashdata('message','Đăng nhập thành công');
                   redirect('admin/quantri');
               }else{
                   $this->session->set_flashdata('error','Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin');

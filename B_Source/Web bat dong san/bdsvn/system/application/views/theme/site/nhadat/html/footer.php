@@ -1,23 +1,23 @@
 <div style="background-color: #214263; height:170px">
 		<div id="bottom">
 			<div class="bottomlink">
-                <a href="<?php echo base_url();?>">TRANG CHỦ</a></div>
+                <a href="<?php echo base_url();?>"><?php echo $this->lang->line('trangchu')?></a></div>
             <div class="sap3">
                 |</div>
             <div class="bottomlink">
-                <a href="<?=base_url()?>tintuc">TIN TỨC</a></div>
+                <a href="<?=base_url()?>tintuc"><?php echo $this->lang->line('tintuc')?></a></div>
             <div class="sap3">
                 |</div>
             <div class="bottomlink">
-                <a href="<?php echo base_url();?>tintuc/chi-tiet/56/310/">QUẢNG BÁ</a></div>
+                <a href="<?php echo base_url();?>tintuc/chi-tiet/56/310/"><?php echo $this->lang->line('quangba')?></a></div>
             <div class="sap3">
                 |</div>
             <div class="bottomlink">
-                <a href="<?=base_url()?>hoidap">HỎI ĐÁP</a></div>
+                <a href="<?=base_url()?>hoidap"><?php echo $this->lang->line('hoidap')?></a></div>
             <div class="sap3">
                 |</div>
             <div class="bottomlink">
-                <a href="<?=base_url()?>dangtin/1">KÝ GỬI</a></div>
+                <a href="<?=base_url()?>dangtin/1"><?php echo $this->lang->line('kigui')?></a></div>
         </div>
         <?php
         $this->CI = get_instance();
@@ -44,10 +44,10 @@
                             = = = = = = = = = = = = = = = = = = = = = =
                             <br />
                             <font size="2"><strong><?php echo $rs->tenlienhe;?></strong></font><br />
-                            Địa chỉ: <?php echo $rs->diachi;?><br />
-                            Điện thoại: <?php echo $rs->dienthoai;?><br />
+                            <?php echo $this->lang->line('diachi')?>: <?php echo $rs->diachi;?><br />
+                            <?php echo $this->lang->line('dienthoai')?>: <?php echo $rs->dienthoai;?><br />
                             <?php if ($rs->didong != ""){?>
-                            Di động: <?php echo $rs->didong;?><br />
+                            <?php echo $this->lang->line('didong')?>: <?php echo $rs->didong;?><br />
                             <?php }?>
                             Website: <a href="http://thuenhaxuong.net "><font
                                 size="2"><i>http://thuenhaxuong.net</i></font></a><br />

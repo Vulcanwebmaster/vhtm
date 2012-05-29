@@ -21,13 +21,15 @@
                     <img src="<?=base_url()?>skins/vip.gif" alt="">
 				</h3>       
 			<div>
+			<!--
 				<div class="photo">
 					<div >
 						<img src="<?if($this->load_library->loadimg($rs->idtin)){echo base_url().$this->load_library->loadimg($rs->idtin)->normal;}?>" alt="">
 					</div>
-				</div>                
+				</div>    
+			-->            
 				<div class="pcontent">                          
-					<?=$this->string_library->catchu($rs->noidung,60)?> 
+					<?=$this->string_library->catchu($rs->noidung,300)?> 
 				</div>
 			</div>
                 <div>

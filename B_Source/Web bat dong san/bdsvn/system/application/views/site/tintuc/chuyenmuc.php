@@ -3,7 +3,7 @@
 <div class="sitelink"><?=$link->ten?></div>   
 <div class="bbox" style="margin-bottom: 20px;overflow: hidden;">
             <img src="<?=base_url().$top->hinhanh?>" alt="" style="width: 300px;float: left;padding-right: 10px;">
-            <div style="font-size: 20px;line-height: 25px;"><?=anchor('tintuc/chi-tiet/'.$top->idcat.'/'.$top->id.'/'.$top->alias.duoi(),$top->tieude)?></div>
+            <div style="color: red;font-size: 20px;line-height: 25px;"><strong><?=anchor('tintuc/chi-tiet/'.$top->idcat.'/'.$top->id.'/'.$top->alias.duoi(),$top->tieude)?></strong></div>
             <?=$top->noidungngan?>
 </div>
 

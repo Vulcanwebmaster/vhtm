@@ -8,7 +8,8 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>system/application/views/theme/admin/vnit/css/icon.css">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>system/application/views/theme/system/css/system.css">
 <script type="text/javascript" src="<?=base_url()?>system/application/views/theme/system/js/jquery-core.js"></script>
-<script type="text/javascript" src="<?=base_url()?>system/application/views/theme/system/js/popup.js"></script> 
+<script type="text/javascript" src="<?=base_url()?>system/application/views/theme/system/js/popup.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>skins/tinymce/jscripts/tiny_mce/tiny_mce.js"></script> 
 </head>
 <body>
 <?if($this->session->userdata('id_group')<=18){

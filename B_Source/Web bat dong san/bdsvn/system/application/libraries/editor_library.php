@@ -42,8 +42,8 @@
           return $data;
       }
       function editor_simply($name,$value,$error){
-          $data ='<script type="text/javascript" src="'.base_url().'skins/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>';
-          $data .='<script type="text/javascript">';
+          //$data ='<script type="text/javascript" src="'.base_url().'skins/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>';
+          $data ='<script type="text/javascript">';
           $data .='
             tinyMCE.init({
                 // General options

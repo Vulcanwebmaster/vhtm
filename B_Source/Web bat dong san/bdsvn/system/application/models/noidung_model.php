@@ -32,7 +32,10 @@
             'sapxep' => $this->input->post('sapxep'),
             'phantrang' => $this->input->post('phantrang'),
             'mieuta' => $this->input->post('mieuta'),
-            'tukhoa' => $this->input->post('tukhoa')
+            'tukhoa' => $this->input->post('tukhoa'),
+          	'ten_eng' => $this->input->post('ten_eng'),
+            'ten_japan' => $this->input->post('ten_japan'),
+          	'ten_korea' => $this->input->post('ten_korea')
           );
           if($id){
               $this->db->where('id',$id);
@@ -134,7 +137,10 @@
             'ngay' => mdate('%Y-%m-%d %H:%i:%s',time()),
             'tukhoa' => (string)$this->input->post('tukhoa'),
             'option' => 'hienthi='.$this->input->post('hienthi').',lienquan='.$this->input->post('lienquan').',luotxem='.$this->input->post('luotxem').',ngaydang='.$this->input->post('ngaydang'),
-            'bat' => $this->input->post('bat')
+            'bat' => $this->input->post('bat'),
+          	'tieude_eng' => $this->input->post('tieude_eng'),
+          	'noidungngan_eng' => (string)$this->input->post('noidungngan_eng'),
+          	'noidung_eng' => $this->input->post('noidung_eng')
           );
           
           if($id){

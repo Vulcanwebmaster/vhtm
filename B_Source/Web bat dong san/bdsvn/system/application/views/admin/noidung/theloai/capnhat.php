@@ -7,6 +7,18 @@
                 <td class="key" width="200">Tên thể loại</td>
                 <td><input type="text" name="ten" value="<?=$rs->ten?>" style="width: 300px;"></td>
             </tr>
+			<tr>
+                <td class="key" width="200">Tên thể loại (Tiếng Anh)</td>
+                <td><input type="text" name="ten_eng" value="<?=$rs->ten_eng?>" style="width: 300px;"></td>
+            </tr>
+			<tr>
+                <td class="key" width="200">Tên thể loại (Tiếng Nhật)</td>
+                <td><input type="text" name="ten_japan" value="<?=$rs->ten_japan?>" style="width: 300px;"></td>
+            </tr>
+            <tr>
+                <td class="key" width="200">Tên thể loại (Tiếng Hàn)</td>
+                <td><input type="text" name="ten_korea" value="<?=$rs->ten_korea?>" style="width: 300px;"></td>
+            </tr>
             <tr>
                 <td class="key" width="200">Alias:</td>
                 <td><input type="text" name="alias" value="<?=$rs->alias?>" style="width: 300px;"></td>

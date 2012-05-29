@@ -7,6 +7,18 @@
                 <td class="key" width="200">Tên danh mục</td>
                 <td><input type="text" name="ten" value="<?=set_value('ten')?>" style="width: 300px;"></td>
             </tr>
+			<tr>
+                <td class="key" width="200">Tên danh mục (Tiếng Anh)</td>
+                <td><input type="text" name="ten_eng" value="<?=set_value('ten_eng')?>" style="width: 300px;"></td>
+            </tr>
+			<tr>
+                <td class="key" width="200">Tên danh mục (Tiếng Nhật)</td>
+                <td><input type="text" name="ten_eng" value="<?=set_value('ten_japan')?>" style="width: 300px;"></td>
+            </tr>
+			<tr>
+                <td class="key" width="200">Tên danh mục (Tiếng Hàn)</td>
+                <td><input type="text" name="ten_eng" value="<?=set_value('ten_korea')?>" style="width: 300px;"></td>
+            </tr>
             <tr>
                 <td class="key" width="200">Alias:</td>
                 <td><input type="text" name="alias" value="<?=set_value('alias')?>" style="width: 300px;"></td>

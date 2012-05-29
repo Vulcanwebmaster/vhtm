@@ -38,7 +38,7 @@ body *{font-family:"Tahoma",Helvetica,sans-serif;font-size:12px; }
 .lessblack{	color: #444444;}
 /*h3{font-size:1.1em;font-weight:bold;margin:3px 0 0 0;}*/
 /*h4{border:solid 0;color:#000;font-size:1em;}*/
-a{color:#000;}
+a{color: red;}
 input[type="reset"], input[type="button"], input[type="submit"]{color:#0081af;font-weight:bold;cursor:pointer;text-align:center;font-size:11px; margin:0 4px 0 0;}
 .button_ie6{color:#0081af;font-weight:bold;cursor:pointer;text-align:center; margin:4px 0px; }
 #page{background:#fff;width:1000px;text-align:left;margin:0px auto;padding:0px 10px;vertical-align:top; z-index:1}
@@ -257,7 +257,7 @@ padding-left:12px;
 .inputbox2{border:1.1px solid #CCCCCC;line-height:1.8em;height:1.8em;padding-left:5px;}
 .selectbox{border:#CCCCCC 1px solid;width:100%;font-size:1em;padding:1px 0;margin:0px;}
 .selectbox2{border:#CCCCCC 1px solid;font-size:1em;padding:3px 0 3px 0;margin:0px;}
-.inputbox-blue{background:#fff none repeat scroll 0 0;border:1px solid #9fceec;width:200px;color:#016c95;}
+.inputbox-blue{background:#fff none repeat scroll 0 0;border:1px solid #9fceec;width:150px;color:#016c95;}
 .sub-header{font:12px;color:#13639e;font-weight:bold;line-height:16px;}
 .pro-total{width:100%;float:left;overflow:hidden;display:block;}
 .pro-total h1{margin:3px 0 0 0; padding:0 0px 7px 0px;font-size:17px;font-weight:bolder;text-transform:uppercase;color:#FF6600;border-bottom:solid 1px #FF6600; text-align: center;}
@@ -511,15 +511,15 @@ padding-bottom:5px;padding-left:10px;
 .sectionheader{font-weight:bold;padding-left:70px;}
 .divLabelSearch{clear:both;color:#0081AF;font-weight:bold;cursor:pointer;}
 .divLabelSearch:hover{text-decoration:none;}
-#divSearchRe{overflow:hidden;width:250px;}
+#divSearchRe{overflow:hidden;width:175px;}
 #divSearchRe .title
 {
     background: url('images/1a.jpg') /*tpa=http://media.batdongsan.com.vn/images/tab/1a.jpg*/;
     height: 32px;
 }
 #divSearchRe .title h1{ color: white; font-weight: bold; font-size: 13px; margin:0; padding: 8px 0 0 15px; text-align: center;}
-#divSearchRe .content{background: url('images/13a.jpg') no-repeat center bottom/*tpa=http://media.batdongsan.com.vn/images/tab/13a.jpg*/ ; 
-padding: 0 7px;height:260px;
+#divSearchRe .content{background: url('images/13a.jpg') no-repeat/*tpa=http://media.batdongsan.com.vn/images/tab/13a.jpg*/ ; 
+padding: 0 7px;height:240px;
 }
 #divSearchRe .tabs{font-weight:bold; color:#0081AF;}	
 #divSearchRe .divSearchInAct{border-left: 1px solid #a7dcfe;
@@ -551,7 +551,7 @@ padding: 0 7px;height:260px;
 #divOfSeach ul{list-style:none;}
 #divOfSeach ul li, #brokersearch ul li{padding: 5px 0; margin: 0; height: 22px;}
 #divSearchRe .inputbox-blue{padding: 2px; color:#515151;}
-#searchArea{height: 180px; overflow:auto;}
+#searchArea{height: 170px; overflow:none}
 #divSearchRe .text{text-align: right; padding-right: 20px;}
 #divSearchRe .text span{font-weight:bold; color:#994a2b;}		
 #divLabelSearchAdv{ clear:both; padding-bottom: 5px; padding-right: 20px; text-align: right;}
@@ -2301,7 +2301,7 @@ padding:3px 0 0 55px; height:32px; width:130px; line-height: 14px;
 #aboutus #article a{color:#016c95; text-decoration: none; vertical-align: top; font-weight: normal;}
 #aboutus #article a:hover{text-decoration: underline;}
 #googleplus {clear:both; padding: 10px 0 0 0 ; height:18px;}
-#search-box{ float:right; width: 250px; margin-right: 10px; overflow:hidden;}
+#search-box{ float:right; width: 175px; margin-right: 17px; overflow:hidden;}
 #hot24-box{	float:left; width: 510px; height:307; overflow:hidden; padding-top: 5px; padding-left: 5px; padding-bottom: 5px;}
 .tempHide{display: none;}
 #inter{position:relative; float:right; display:block;	margin:0px;	padding:0px; width: 95px; background:url('../../images/bdscomvn/top1.jpg') no-repeat/*tpa=http://media.batdongsan.com.vn/images/top1.jpg*/;

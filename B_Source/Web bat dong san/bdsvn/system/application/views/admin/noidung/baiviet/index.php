@@ -20,7 +20,12 @@
                 <td width="30"><?=$rs->id?></td>
                 <td><?=$rs->tieude?></td>
                 <td>
-                <?=$this->noidung->getNameCat($rs->idcat)->ten?>
+                <?php
+                if ($rs->idsub == 0) 
+                	echo $this->noidung->getNameCat($rs->idcat)->ten;
+               	else
+               		echo $this->noidung->getNameCat($rs->idsub)->ten;
+               	?>
                 </td>
                 <td><?=$rs->luotxem?></td>
                 <td align="center">

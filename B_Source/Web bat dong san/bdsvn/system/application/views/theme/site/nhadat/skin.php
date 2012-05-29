@@ -75,7 +75,7 @@
             </div>
 		
 <div id="top-center" style="margin-bottom: 20px ; margin-top: 230px">
-	<div id="search-box" style="margin-bottom: 20px ; margin-top: 20px">		
+	<div id="search-box" style="margin-bottom: 2px ; margin-top: 20px">		
 		<?=$this->load->view('theme/site/nhadat/html/boxtimkiem')?>
 	</div>
 	<div id="hot24-box" style="margin-bottom: 20px ; margin-top: 20px">
@@ -391,7 +391,8 @@ function video5() {
         <div id="lienhetructuyen" style="margin-bottom:10px">
             <div style="width: 177px; height: 30px; background: url('<?php echo base_url();?>images/bghotrotructuyen.png') no-repeat;
                             margin-top: 5px;">
-                        </div>
+                            <p style="font-size:15px;margin-left: 50px;color:white;padding-top:2px"><strong>Hỗ trợ trực tuyến</strong></p>
+			</div>
                         <div class="right_panel" style="width: 175px; border-left: 1px #0088f4 solid; border-right: 1px #0088f4 solid;
                             border-bottom: 1px #0088f4 solid;">
                             <div style="margin-left: 10px; width: 165px;">

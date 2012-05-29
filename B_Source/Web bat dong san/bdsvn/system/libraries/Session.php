@@ -459,7 +459,6 @@ class CI_Session {
 				$this->userdata[$key] = $val;
 			}
 		}
-
 		$this->sess_write();
 	}
 
@@ -502,16 +501,17 @@ class CI_Session {
 	 */
 	function set_flashdata($newdata = array(), $newval = '')
 	{
+		
 		if (is_string($newdata))
 		{
 			$newdata = array($newdata => $newval);
 		}
-
+		
 		if (count($newdata) > 0)
 		{
 			foreach ($newdata as $key => $val)
 			{
-				$flashdata_key = $this->flashdata_key.':new:'.$key;
+				$val = $this->flashdata_key.':new:'.$key;
 				$this->set_userdata($flashdata_key, $val);
 			}
 		}

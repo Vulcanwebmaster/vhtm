@@ -139,11 +139,21 @@ $totalvisit = str_replace($array_number,$array_img,$totalvisit);
 <!-- Language -->
                     	<script type="text/javascript">
                     		$(document).ready(function(){
+								if (langselector.value==2)
+									langicon.src='<?php echo base_url();?>images/language/ENG.png';
+								if (langselector.value==1)
+								    langicon.src='<?php echo base_url();?>images/language/vietnam.jpg';
+								else
+								    langicon.src='';
                     			$('#langselector').mouseup(function(){
 										if (langselector.value==2)
 											langicon.src='<?php echo base_url();?>images/language/ENG.png';
 										if (langselector.value==1)
 										    langicon.src='<?php echo base_url();?>images/language/vietnam.jpg';
+										if (langselector.value==3)
+											    langicon.src='<?php echo base_url();?>images/language/japan.gif';
+										if (langselector.value==4)
+												    langicon.src='<?php echo base_url();?>images/language/korea.png';
 										else
 										    langicon.src='';
 								});
@@ -151,11 +161,13 @@ $totalvisit = str_replace($array_number,$array_img,$totalvisit);
                     	</script>
                     	<?php echo form_open(base_url())?> 
                     	<fieldset style="width:183px; height:20px; background-color:#f8f8f8; padding-top:2px">
-                    	<img width="20px" height="100%" id="langicon" src=""/>
+                    	<img width="20px" height="100%" id="langicon" border="1px" src=""/>
                         <select id="langselector" name="langselector" style="width:120px;height:100%;border:solid 1px red; background-color:#f8f8f8">
 							<option value="0">Chọn ngôn ngữ:</option>	                                                    
-                            <option value="1">VNI</option>
-                            <option value="2">ENG</option>
+                            <option <?php if($language == 1) echo 'selected = "selected"'?>value="1">VNI</option>
+                            <option <?php if($language == 2) echo 'selected = "selected"'?>value="2">ENG</option>
+                            <option <?php if($language == 3) echo 'selected = "selected"'?>value="3">JAP</option>
+                            <option <?php if($language == 4) echo 'selected = "selected"'?>value="4">KOR</option>
                         </select>
                         <input style="width:30px;height:100%" type="submit" value='OK' />
 						</fieldset>
@@ -177,7 +189,12 @@ function submitform(fromName)
 </script>
  <!-- Ban cho thue hop tac -->
        
- <div style="width: 183px; height: 33px; float: left;margin-bottom: 3px; background-image: url('<?php echo base_url();?>images/banchothuehoptac.png'); margin-top: 5px;"></div>
+ 						<div style="width: 183px; height: 33px; float: left; background: url('<?php echo base_url();?>images/title-bg.png'); no-repeat;
+                            margin-bottom: 0px; margin-top: 5px;" class="left_panel"  align="left">
+                            <center style="margin-left:40px">
+                            <span style="line-height:35px;text-transform:uppercase; color:white; font-family:Tahoma; font-size:11px;font-weight:bold;  margin-right:10px">bán,cho thuê,hợp tác</span>
+                            </center>
+                        </div>
                         <div style="width: 183px; float: left" class="left_panel">
 							<div class="applemenu">
 <!-- Tim kiem nha xuong cho thue -->
@@ -231,14 +248,28 @@ function submitform(fromName)
 </form>
                             </div>
                         </div>
-                        
+
+
+
+                       
  <!-- Du an -->
-                         <div style="width: 183px; height: 33px; float: left; background: url('<?php echo base_url();?>images/duan.png'); no-repeat;
-                            margin-bottom: 0px; margin-top: 5px;" class="left_panel">
+
+<div style="width: 181px; float: left; border: 1px #9A9A9A solid;" class="left_panel">
+<?php
+	$this->db->where('phantrang',1);
+	$this->db->order_by('sapxep',"ASD");
+	$query = $this->db->get('danhmuc');
+	$item = $query->result();
+	foreach($item as $tl):
+?>
+						<div style="width: 183px; height: 33px; float: left; background: url('<?php echo base_url();?>images/title-bg.png'); no-repeat;
+                            margin-bottom: 0px; margin-top: 5px;" class="left_panel"  align="left">
+                            <center style="margin-left:25px">
+                            <span style="line-height:35px;text-transform:uppercase; color:white; font-family:Tahoma; font-size:11px;font-weight:bold;  margin-right:10px"><?php echo $tl->ten;?></span>
+                            </center>
                         </div>
-                        <div style="width: 181px; float: left; border: 1px #9A9A9A solid;" class="left_panel">
     <?php
-    $this->db->where('id',"51");
+    $this->db->where('parentid',$tl->id);
     $query = $this->db->get('danhmuc');
     $item = $query->result();?>
     <?php foreach($item as $cm):?>
@@ -246,115 +277,27 @@ function submitform(fromName)
                                 height: 30px; padding-left: 40px; line-height: 30px; float: left">
                                 <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
                                     style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
-<?php endforeach;?>
                             <div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
                                 height: auto !important; height: 700px">
                                 <!-- Load du an tinh Ha Nam tu database -->
-								<?=$this->load->view('modules/tnd_tinmenutrai/index')?>
+								    <?
+								    	$this->db->select('*');
+										$this->db->from('noidung');
+										$this->db->join('danhmuc', 'noidung.idcat = danhmuc.id');
+									    $this->db->where('idcat',$cm->id);
+									    $this->db->limit(3,0);
+									    $query = $this->db->get();
+									    $item = $query->result();?>
+									    <?foreach($item as $rs):
+									    ?>
+											<div style="width: 137px; height: 24px; float: left; padding-left: 30px;" class="icon_left">
+												<a href="<?=base_url()?>tintuc/chi-tiet/<?=$rs->idcat?>/<?=$rs->id?>/<?=$rs->alias.duoi()?>"><font class="item_left" style="font-size: 11px;">
+									                                        <?=$rs->tieude?></font></a></div>
+									<?endforeach;?>
                             </div>
-    <?php
-    $this->db->where('id',"52");
-    $query = $this->db->get('danhmuc');
-    $item = $query->result();?>
-    <?php foreach($item as $cm):?>
-                            <div class="silverheader" style=" width: 162px;
-                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
-                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
+ <?php endforeach;?>
+     
 <?php endforeach;?>
-                            <div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
-                                height: auto !important; height: 700px">
-                                <!-- Load du an tinh Ninh Bình tu database -->
-                                <?=$this->load->view('modules/tnd_tinmenutrai2/index')?>
-                            </div> 
- 
- 
- <!-- Cay canh -->
-                            <div style="width: 182px; height: 33px; float: left; background: url('<?php echo base_url();?>images/caycanh.png') no-repeat;
-                                margin-bottom: 0px; margin-top: 5px;" class="left_panel">
-                            </div>                                                        
-    <?php
-    $this->db->where('id',"53");
-    $query = $this->db->get('danhmuc');
-    $item = $query->result();?>
-    <?php foreach($item as $cm):?>
-                            <div class="silverheader" style=" width: 162px;
-                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
-                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
-<?php endforeach;?>
-							<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
-                                height: auto !important; height: 700px">
-                                <!-- Load cay canh phoi tu database -->
-                                <?=$this->load->view('modules/tnd_tinmenucaycanh/index')?>
-                            </div> 
-                            
-    <?php
-    $this->db->where('id',"54");
-    $query = $this->db->get('danhmuc');
-    $item = $query->result();?>
-    <?php foreach($item as $cm):?>
-                            <div class="silverheader" style=" width: 162px;
-                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
-                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
-<?php endforeach;?>
-
-								<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
-                                height: auto !important; height: 700px">
-	                                <!-- Load cay canh phoi tu database -->
-	                                <?=$this->load->view('modules/tnd_tinmenucaycanh2/index')?>
-	                            	</div> 
-                        
-<!-- Cho thue cot pha-->                        
-                            <div style="width: 182px; height: 33px; float: left; background: url('<?php echo base_url();?>images/thuecotpha.png') no-repeat;
-                                margin-bottom: 0px; margin-top: 5px;" class="left_panel">
-                            </div>
-    <?php
-    $this->db->where('id',"58");
-    $query = $this->db->get('danhmuc');
-    $item = $query->result();?>
-    <?php foreach($item as $cm):?>
-                            <div class="silverheader" style=" width: 162px;
-                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
-                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
-<?php endforeach;?>
-									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
-	                                height: auto !important; height: 700px">
-	                                <!-- Load cay canh phoi tu database -->
-	                                	<?=$this->load->view('modules/tnd_thuegianrao1/index')?>
-	                            </div>
-    <?php
-    $this->db->where('id',"59");
-    $query = $this->db->get('danhmuc');
-    $item = $query->result();?>
-    <?php foreach($item as $cm):?>
-                            <div class="silverheader" style=" width: 162px;
-                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
-                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
-<?php endforeach;?>
-									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
-	                                height: auto !important; height: 700px">
-	                                <!-- Load cay canh phoi tu database -->
-	                                	<?=$this->load->view('modules/tnd_thuegianrao2/index')?>
-	                            </div>
-    <?php
-    $this->db->where('id',"60");
-    $query = $this->db->get('danhmuc');
-    $item = $query->result();?>
-    <?php foreach($item as $cm):?>
-                            <div class="silverheader" style=" width: 162px;
-                                height: 30px; padding-left: 40px; line-height: 30px; float: left">
-                                <a href="<?php echo base_url();?>tintuc/chuyen-muc/<?php echo $cm->id;?>/<?php echo $cm->alias.duoi();?>"><font
-                                    style="color: #FFFFFF"><strong><?php echo $cm->ten?></strong></font></a></div>
-<?php endforeach;?>
-									<div style="overflow-y: hidden; overflow-x: hidden; float: left; width: 183px; max-height: 700px;
-	                                height: auto !important; height: 700px">
-	                                <!-- Load cay canh phoi tu database -->
-	                                	<?=$this->load->view('modules/tnd_thuegianrao3/index')?>
-	                            </div>
                             </div>
 <!-- Bang thong ke -->
                         <div style="width: 180px; padding-left: 0px; float: left; margin-top: 10px; margin-bottom:10px">

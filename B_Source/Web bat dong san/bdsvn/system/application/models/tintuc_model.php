@@ -20,7 +20,7 @@
           $this->db->where('bat',1);
           $this->db->where('parentid',0);
           $this->db->order_by('sapxep','ASC');
-          $query = $this->db->get('danhmuc');
+          $query = $this->db->get('danhmuc',8,1);
           return $query->result();
       }
       
@@ -86,6 +86,7 @@
       function getTinChuyenmuc($num,$offset){
           $item = $this->getItemChuyenmuc();
           $dis = $this->getTopTinChuyenmuc();
+          //var_dump($dis); die();
           if($item->parentid==0){
               $this->db->where('idcat',$item->id);
           }else{
@@ -93,7 +94,8 @@
           }
           $this->db->where('bat',1);
           $this->db->order_by('id','DESC');
-          $this->db->where('id <>',$dis->id);
+          if(isset($dis->id))
+          	$this->db->where('id <>',$dis->id);
           $query = $this->db->get('noidung',$num,$offset);
           return $query->result();
       }  
@@ -106,7 +108,8 @@
               $this->db->where('idsub',$item->id);
           }
           $this->db->where('bat',1);
-          $this->db->where('id <>',$dis->id);
+          if(isset($dis->id))
+          	$this->db->where('id <>',$dis->id);
           $this->db->order_by('id','DESC');
           $query = $this->db->get('noidung');
           return $query->num_rows();

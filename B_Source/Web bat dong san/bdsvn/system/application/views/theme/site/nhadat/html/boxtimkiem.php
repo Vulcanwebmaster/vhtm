@@ -87,12 +87,12 @@ $listtp = $query->result();
 <?=form_open(base_url().'nhadat/timkiem')?> 
 <div id="divSearchRe">
 
-		<div class="title"><h1>Công cụ tìm kiếm</h1></div>
-		<div class="content">
+		<div class="title" style="width:175px"><h1><?php echo $this->lang->line('congcutimkiem')?></h1></div>
+		<div class="content" style="width:175px">
     <div style="clear:both;">
         <div id="divOfSeach">
             <div id="searchArea">
-                <ul>
+                <ul style="padding-left:5px">
                     <li>
                         <span id="listNhuCau">
                             <select class="inputbox-blue" name="nhucau" id="nhucau">

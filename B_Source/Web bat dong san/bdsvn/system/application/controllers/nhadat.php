@@ -4,7 +4,6 @@
       
       function __construct()
       {
-      	 session_start();          
       	  parent::Controller();
           $this->load->model('nhadat_model','nhadat');
           $this->load->library('pagination_library');
@@ -31,28 +30,49 @@
 			$data['chothue'] = $this->nhadat->getchothue();
 			
 			//config language
-			$data['language'] = (int)$this->input->post('langselector');
-			if ($data['language'] != $this->session->userdata("ngonngu")){
-				
-				$this->session->unset_userdata("ngonngu");
-				$this->session->set_userdata("ngonngu",$data['language']);
-			}
+			if (isset($_POST['langselector'])){
+				$data['language'] = (int)$this->input->post('langselector');			
+				if ($data['language'] != $this->session->userdata("ngonngu")){
+					
+					$this->session->unset_userdata("ngonngu");
+					$this->session->set_userdata("ngonngu",$data['language']);
+				}
 			$temp = $this->session->userdata("ngonngu");
-
-			if ($temp==2)
-			{
-					$this->lang->load('eng','english');
-					$this->session->set_userdata("ngonngu",2);			
-			}
-			else if ($temp==1)
-			{
+	
+				if ($temp==2)
+				{
+						$this->lang->load('eng','english');
+						$data['language']=2;		
+				}
+				else if ($temp==1)
+				{
+						$this->lang->load('vn', 'vn');
+						$data['language']=1;
+				}
+				else 
+				{
 					$this->lang->load('vn', 'vn');
-					$this->session->set_userdata("ngonngu",1);
+					$data['language']=1;
+				}
 			}
-			else 
-			{
-				$this->lang->load('vn', 'vn');
-			}	
+			else {
+			      	  $temp = $this->session->userdata('ngonngu');
+					if ($temp==2)
+					{
+							$this->lang->load('eng','english');
+							$data['language']=2;				
+					}
+					else if ($temp==1)
+					{
+							$this->lang->load('vn', 'vn');
+							$data['language']=1;
+					}
+					else 
+					{
+						$this->lang->load('vn', 'vn');
+						$data['language']=1;
+					}
+			}
 			$this->_templates['page'] = 'site/nhadat/index';
 			$this->site_library->load($this->_templates['page'],$data);
           
@@ -75,16 +95,31 @@
 			$data['id_thanhpho'] = (int)$this->input->post('id_thanhpho');
 			$data['idhuong'] = (int)$this->input->post('idhuong');
 			$data['dacbiet'] = (int)$this->input->post('dacbiet');
+			      			      	  $temp = $this->session->userdata('ngonngu');
+					if ($temp==2)
+					{
+							$this->lang->load('eng','english');
+							$this->session->set_userdata("ngonngu",2);				
+					}
+					else if ($temp==1)
+					{
+							$this->lang->load('vn', 'vn');
+							$this->session->set_userdata("ngonngu",1);
+					}
+					else 
+					{
+						$this->lang->load('vn', 'vn');
+					}  
 			if ($data['dacbiet'] == 1)
-				$data['tieudetimkiem']="CHO THUÊ NHÀ XƯỞNG";
+				$data['tieudetimkiem']=(string)$this->lang->line('thuenhaxuong');
 			else if ($data['dacbiet'] == 2)
-				$data['tieudetimkiem']="BÁN NHÀ XƯỞNG";
+				$data['tieudetimkiem']=(string)$this->lang->line('bannhaxuong');
 			else if ($data['dacbiet'] == 3)
-				$data['tieudetimkiem']="HỢP TÁC KINH DOANH";
+				$data['tieudetimkiem']=(string)$this->lang->line('hoptackinhdoanh');
 			else if ($data['dacbiet'] == 4)
-				$data['tieudetimkiem']="CHO THUÊ ĐẤT";
+				$data['tieudetimkiem']=(string)$this->lang->line('chothuedat');
 			else if ($data['dacbiet'] == 5)
-				$data['tieudetimkiem']="MUA";				
+				$data['tieudetimkiem']=(string)$this->lang->line('mua');				
 			else
 				$data['tieudetimkiem']="KẾT QUẢ TÌM KIẾM";
 			$data['title'] = "THUÊ NHÀ XƯỞNG - ".$data['tieudetimkiem'];				
@@ -94,7 +129,8 @@
 			$config['uri_segment'] = 3;
 			$this->pagination->initialize($config); 
 			$data['list'] =   $this->nhadat->getTimkiem($config['per_page'],$this->uri->segment('3'));
-			$data['pagination']    = $this->pagination->create_links();                 
+			$data['pagination']    = $this->pagination->create_links();
+               
 			$this->load->view('site/nhadat/timkiem',$data);
      }
 /**
@@ -198,7 +234,21 @@
                  redirect(); 
               }
           }         
-                       
+           			      	  $temp = $this->session->userdata('ngonngu');
+					if ($temp==2)
+					{
+							$this->lang->load('eng','english');
+							$this->session->set_userdata("ngonngu",2);				
+					}
+					else if ($temp==1)
+					{
+							$this->lang->load('vn', 'vn');
+							$this->session->set_userdata("ngonngu",1);
+					}
+					else 
+					{
+						$this->lang->load('vn', 'vn');
+					}
         $this->_templates['page'] = 'site/nhadat/dangtin';
         $this->site_library->load($this->_templates['page'],$data,'dangtin');   
      }
@@ -290,6 +340,21 @@ $this->pagination->initialize($config);
           $data['pagination']    = $this->pagination->create_links();                  
          
           $this->_templates['page'] = 'site/nhadat/loaihinh';
+            			      	  $temp = $this->session->userdata('ngonngu');
+					if ($temp==2)
+					{
+							$this->lang->load('eng','english');
+							$this->session->set_userdata("ngonngu",2);				
+					}
+					else if ($temp==1)
+					{
+							$this->lang->load('vn', 'vn');
+							$this->session->set_userdata("ngonngu",1);
+					}
+					else 
+					{
+						$this->lang->load('vn', 'vn');
+					}
           $this->site_library->load($this->_templates['page'],$data);
       } 
       

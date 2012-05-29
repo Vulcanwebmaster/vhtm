@@ -12,21 +12,24 @@
           $data['chuyenmuc'] = $this->tintuc->getAllChuyenmuc();
           $data['tieudiem'] = $this->tintuc->getTieudiem();
           $this->_templates['page'] = 'site/tintuc/index';
-      	  $temp = $this->session->userdata("ngonngu");
+          
+      	  $temp = $this->session->userdata('ngonngu');
 			if ($temp==2)
 			{
 					$this->lang->load('eng','english');
-					$this->session->set_userdata("ngonngu",2);				
+					$data['language']=2;				
 			}
 			else if ($temp==1)
 			{
 					$this->lang->load('vn', 'vn');
-					$this->session->set_userdata("ngonngu",1);
+					$data['language']=1;
 			}
 			else 
 			{
 				$this->lang->load('vn', 'vn');
+				$data['language']=1;
 			}
+			
           $this->site_library->load($this->_templates['page'],$data,'tintuc');
       }
       
@@ -59,6 +62,21 @@
           }else{
               $this->_templates['page'] = 'error/loi';
           }
+                      	  $temp = $this->session->userdata('ngonngu');
+			if ($temp==2)
+			{
+					$this->lang->load('eng','english');
+					$data['language']=2;				
+			}
+			else if ($temp==1)
+			{
+					$this->lang->load('vn', 'vn');
+					$data['language']=1;
+			}
+			else 
+			{
+				$this->lang->load('vn', 'vn');
+			}
           $this->site_library->load($this->_templates['page'],$data,'tintuc');
       }
       
@@ -79,6 +97,22 @@
               $data['moidang'] = $this->tintuc->getTinmoidang();
               $data['cuhon'] = $this->tintuc->getTincuhon();
               $data['link'] = $this->tintuc->getItemChuyenmuc();
+                	  $temp = $this->session->userdata('ngonngu');
+			if ($temp==2)
+			{
+					$this->lang->load('eng','english');
+					$data['language']=2;				
+			}
+			else if ($temp==1)
+			{
+					$this->lang->load('vn', 'vn');
+					$data['language']=1;
+			}
+			else 
+			{
+				$this->lang->load('vn', 'vn');
+				$data['language']=1;
+			}
           $this->_templates['page'] = 'site/tintuc/chitiet';
           }else{
               $data['title'] = 'Không tim thấy trang yêu cầu';

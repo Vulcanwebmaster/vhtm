@@ -57,16 +57,96 @@
                 </td>
             </tr>     
             <tr>
-                <td colspan="2">Nội dung
-               
+                <td colspan="2">Nội dung               
                      <?=$this->editor_library->editor_simply('noidung','','')?> 
                 </td>
             </tr>
                                                       
         </table>
-     </fieldset>
- </div> 
+        </fieldset>
+        
 
+<!-- Ngon ngu tieng Anh -->
+     <fieldset>
+             <legend>Nội dung Tiếng Anh</legend>
+        <table class="adminform">
+            <tr>
+                <td class="key" width="120">Tiêu đề</td>
+                <td><input type="text" name="tieude_eng" value="<?=set_value('tieude_eng')?>" style="width: 300px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Nội dung ngắn
+                
+                    <textarea cols="" rows="" style="width: 99%;height: 100px;" name="noidungngan_eng"></textarea>
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2">Nội dung               
+                     <?=$this->editor_library->editor_simply('noidung_eng','','')?> 
+                </td>
+            </tr>
+                                                      
+        </table>
+     </fieldset>
+ 
+<!-- Het phan ngon ngu tieng Anh -->
+ 
+
+<!-- Ngon ngu tieng Nhat -->
+     <fieldset>
+             <legend>Nội dung Tiếng Nhật</legend>
+        <table class="adminform">
+            <tr>
+                <td class="key" width="120">Tiêu đề</td>
+                <td><input type="text" name="tieude_japan" value="<?=set_value('tieude_japan')?>" style="width: 300px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Nội dung ngắn
+                
+                    <textarea cols="" rows="" style="width: 99%;height: 100px;" name="noidungngan_japan"></textarea>
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2">Nội dung               
+                     <?=$this->editor_library->editor_simply('noidung_japan','','')?> 
+                </td>
+            </tr>
+                                                      
+        </table>
+     </fieldset>
+ 
+<!-- Het phan ngon ngu tieng Nhat --> 
+ 
+ 
+ <!-- Ngon ngu tieng Han -->
+     <fieldset>
+             <legend>Nội dung Tiếng Hàn</legend>
+        <table class="adminform">
+            <tr>
+                <td class="key" width="120">Tiêu đề</td>
+                <td><input type="text" name="tieude_korea" value="<?=set_value('tieude_korea')?>" style="width: 300px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Nội dung ngắn
+                
+                    <textarea cols="" rows="" style="width: 99%;height: 100px;" name="noidungngan_korea"></textarea>
+                </td>
+            </tr>     
+            <tr>
+                <td colspan="2">Nội dung               
+                     <?=$this->editor_library->editor_simply('noidung_korea','','')?> 
+                </td>
+            </tr>
+                                                      
+        </table>
+     </fieldset>
+ 
+<!-- Het phan ngon ngu tieng Han --> 
+ </div> 
+ 
+ 
+ 
+ 
  
  <div style="width: 39%;float: right;">
  <div class="toolbar_box">
