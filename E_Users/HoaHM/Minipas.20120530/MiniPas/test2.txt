@@ -1,0 +1,30 @@
+var
+ array integer x[5];
+ integer count, a, temp;
+ integer i;
+begin
+ //Nhap gia tri cho mang gom 5 phan tu
+ write "*** Nhap 5 phan tu cua mang ***";
+ writeline;
+ count := 0;
+ while count < 5 
+ do 
+  write "Phan tu so ";
+  write count;
+  write " : ";
+  read temp;
+  x[count] := temp;
+  count := count + 1;
+ endwhile;
+ 
+ //Tim phan tu lon nhat cua mang
+ a := x[0];
+ count := 1;
+ while count < 5 
+ do 
+	if (a < x[count]) then a:=x[count]; endif;
+	count := count + 1;
+ endwhile;
+ write "Phan tu lon nhat cua mang la : ";
+ write a;
+end

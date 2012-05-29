@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="VietPas">
+</Property><Property Name="Solution File" Value="C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\VietPas.sln">
+</Property><Property Name="Date" Value="Tuesday, March 27, 2012">
+</Property><Property Name="Time" Value="7:37:48 AM">
+</Property></Properties><Event ErrorLevel="0" Project="VietPas" Source="VietPas.csproj" Description="Project file successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\VietPas.csproj">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="AboutBox.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\AboutBox.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="AboutBox.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\AboutBox.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="BasicCommand.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\BasicCommand.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Form1.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Form1.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Form1.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Output.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Output.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Output.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Output.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Program.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Properties\Settings.settings" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="icon\run.ico" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\icon\run.ico">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="AboutBox.resx" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\AboutBox.resx">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Form1.resx" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Form1.resx">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Output.resx" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Output.resx">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="Properties\Resources.resx" Description="File successfully backed up as C:\Users\User\Desktop\VC\B_Source\Editor\VietPas\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="VietPas.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="VietPas" Source="VietPas.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="VietPas" Source="VietPas.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

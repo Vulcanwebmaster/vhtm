@@ -1,0 +1,8 @@
+const 
+	string a := "a";
+begin
+	write a;
+	writeline;
+	a := "b";
+	wait;
+end.

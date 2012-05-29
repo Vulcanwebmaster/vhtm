@@ -1,0 +1,16 @@
+var
+	integer x;
+begin
+	x := 3;
+	switch (x)
+		case 1:
+			write "test 1";
+			break;
+		case 2:
+			write "test 2";
+			break;
+		default:
+			write "het roai";
+			break;
+	endswitch;
+end.

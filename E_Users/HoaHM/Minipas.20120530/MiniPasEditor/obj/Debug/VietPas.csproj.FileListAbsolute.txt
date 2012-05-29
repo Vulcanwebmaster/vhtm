@@ -1,0 +1,45 @@
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\bin\Debug\MiniPasEditor.exe.config
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\bin\Debug\MiniPasEditor.exe
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\bin\Debug\MiniPasEditor.pdb
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\VietPas.AboutBox.resources
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\VietPas.Form1.resources
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\VietPas.NumberedTextBoxUC.resources
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\MiniPasEditor.Properties.Resources.resources
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\MiniPasEditor.exe
+C:\Documents and Settings\tungns02\Desktop\VietPas\VietPas\obj\Debug\MiniPasEditor.pdb
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\bin\Debug\MiniPasEditor.exe.config
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\MiniPasEditor.exe
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\MiniPasEditor.pdb
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\bin\Debug\MiniPasEditor.exe
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\bin\Debug\MiniPasEditor.pdb
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\VietPas.AboutBox.resources
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\VietPas.Form1.resources
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\VietPas.NumberedTextBoxUC.resources
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\MiniPasEditor.Properties.Resources.resources
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\tungns02_Temp\Desktop\VietPas\VietPas\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\bin\Debug\MiniPasEditor.exe.config
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\MiniPasEditor.exe
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\MiniPasEditor.pdb
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\bin\Debug\MiniPasEditor.exe
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\bin\Debug\MiniPasEditor.pdb
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\VietPas.AboutBox.resources
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\VietPas.Form1.resources
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\VietPas.NumberedTextBoxUC.resources
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\MiniPasEditor.Properties.Resources.resources
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\User\Documents\Downloads\Compressed\VietPas\VietPas\VietPas\obj\Debug\GenerateResource.write.1.tlog
+E:\BackUp\CompilerDemo\CompilerDemo\VietPas\bin\Debug\MiniPasEditor.exe.config
+E:\BackUp\CompilerDemo\CompilerDemo\VietPas\obj\Debug\MiniPasEditor.exe
+E:\BackUp\CompilerDemo\CompilerDemo\VietPas\obj\Debug\MiniPasEditor.pdb
