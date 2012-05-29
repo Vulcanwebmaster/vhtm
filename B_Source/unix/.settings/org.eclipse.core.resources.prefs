@@ -1,9 +1,10 @@
-#Sat May 26 11:07:45 ICT 2012
+#Tue May 29 15:37:43 ICT 2012
 eclipse.preferences.version=1
 encoding//application/modules/camnhan/views/shop/vcamnhan.php=UTF-8
 encoding//application/modules/gioithieu/views/shop/gioithieuview.php=UTF-8
 encoding//application/modules/hoithao/views/shop/vdetail.php=UTF-8
 encoding//application/modules/hoithao/views/shop/vhoithao.php=UTF-8
+encoding//application/modules/kaimonokago/models/mkaimonokago.php=UTF-8
 encoding//application/modules/khoahoc/views/shop/vdetail.php=UTF-8
 encoding//application/modules/khoahoc/views/shop/vkhoahoc.php=UTF-8
 encoding//application/modules/lienhe/controllers/lienhe.php=UTF-8

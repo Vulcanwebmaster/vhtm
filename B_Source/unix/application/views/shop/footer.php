@@ -1,19 +1,19 @@
 <div id="footer">
 	<div id="footer-content">
 		<div id="menufooter">
-			<a href="#">Trang chủ</a>
+			<a href="<?php echo base_url();?>">Trang chủ</a>
 			<span>|</span>
-			<a href="#">Giới thiệu</a>
+			<a href="<?php echo base_url();?>index.php/gioithieu">Giới thiệu</a>
 			<span>|</span>
-			<a href="#">Khóa học</a>
+			<a href="<?php echo base_url();?>index.php/khoahoc">Khóa học</a>
 			<span>|</span>
-			<a href="#">Hội thảo</a>
+			<a href="<?php echo base_url();?>index.php/hoithao">Hội thảo</a>
 			<span>|</span>
-			<a href="#">Thư viện</a>
+			<a href="<?php echo base_url();?>index.php/thuvien">Thư viện</a>
 			<span>|</span>
-			<a href="#">Liên hệ</a>
+			<a href="<?php echo base_url();?>index.php/lienhe">Liên hệ</a>
 			<span>|</span>
-			<a href="#">Cảm nhận</a>
+			<a href="<?php echo base_url();?>index.php/camnhan">Cảm nhận</a>
 		</div>
 		<div id="information">
 			<p>Bản quyền © 2012 - UNIX. Thiết kế bởi NIW</p>

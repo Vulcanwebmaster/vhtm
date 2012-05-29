@@ -1,10 +1,16 @@
 <div id="slide-container">
 	
 	<div id="slider" class="nivoSlider">
-          <img src="<?php echo base_url();?>assets/unix/images/khoahoc-slide.jpg" alt="" />
-          <!-- a href="http://dev7studios.com"><img src="images/up.jpg" alt="" title="This is an example of a caption" /></a -->
-          <img src="<?php echo base_url();?>assets/unix/images/thuvien-slide.jpg" alt="" data-transition="slideInLeft" />
-          <!-- img src="images/nemo.jpg" alt="" title="#htmlcaption" / -->
+		<?php if ($this->MKaimonokago->homepageLoadNoiDung('slide'))
+		{
+			$slide=$this->MKaimonokago->homepageLoadNoiDung('slide');
+			foreach(explode(',', $slide->dulieu) as $item)
+			{
+				echo '<img src="'.$item.'" alt="" />';
+			}
+		}?>
+          <!-- img src="<?php echo base_url();?>assets/unix/images/khoahoc-slide.jpg" alt="" />
+          <img src="<?php echo base_url();?>assets/unix/images/thuvien-slide.jpg" alt="" data-transition="slideInLeft" / -->
     </div>
           <div id="slidemenus">
           	<center>

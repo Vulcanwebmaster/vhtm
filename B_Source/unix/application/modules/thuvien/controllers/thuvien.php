@@ -31,7 +31,7 @@
 		
 		function load($index=0,$type=0)
 		{
-			$config['base_url']=base_url().'index.php/thuvien/loadFull';
+			$config['base_url']=base_url().'index.php/thuvien/load';
 			$config['total_rows']=$this->Mthuvien->count($type);
 			$config['per_page']=12;
 			$this->pagination->initialize($config);
@@ -46,6 +46,7 @@
 			$data['page']=$this->config->item('backendpro_template_shop').'vdetail';
 			$data['module']=$this->module;
 			$data['information']=$this->Mthuvien->getDetail($id);
+			$data['type']=$this->Mthuvien->getNameType($id);
 			$this->load->view($this->_container,$data);
 		}
 	}

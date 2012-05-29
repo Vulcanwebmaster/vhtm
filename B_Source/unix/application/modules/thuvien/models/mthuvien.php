@@ -61,7 +61,7 @@
 		{
 			if ($idtype!='0')
 			{
-				$this->db->where('theloai',$this->getNameType($idtype));
+				$this->db->where('loaisach_id',$idtype);
 			}
 			$ds=$this->db->get('unix_sach');
 			$list=array();
@@ -77,7 +77,7 @@
 		{
 			if ($idtype!='0')
 			{
-				$this->db->where('theloai',$this->getNameType($idtype));
+				$this->db->where('loaisach_id',$idtype);
 			}
 			$ds=$this->db->get('unix_sach',12,$index);
 			$list=array();

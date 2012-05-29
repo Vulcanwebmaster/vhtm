@@ -37,7 +37,7 @@
 					</tr>
 					<tr>
 						<td>Thể loại</td>
-						<td><?php echo $information->theloai;?></td>
+						<td><?php echo $type;?></td>
 					</tr>
 					<tr>
 						<td>Mô tả</td>

@@ -33,10 +33,15 @@
 					echo $this->session->userdata('message');
 					$this->session->unset_userdata('message');
 				}?>
-				<div style="background-color:#ffebe8; border:solid 1px #dd3c10; padding:10px">
-					<?php
-						echo validation_errors('<p class="error" style="font-size:11px; color:#333; margin:0">', '</p>');?>
-				</div>
+				
+					<?php if (validation_errors())
+					{
+						echo '<div style="background-color:#ffebe8; border:solid 1px #dd3c10; padding:10px">';
+						echo validation_errors('<p class="error" style="font-size:11px; color:#333; margin:0">', '</p>');
+						echo '</div>';
+					}
+					?>
+				
 				<center style="margin-top:50px">
 					<form method="post" name="lienhe-form" id="lienhe-form" action="<?php echo base_url();?>index.php/lienhe/submit">
 						<table style="font-size:12px">

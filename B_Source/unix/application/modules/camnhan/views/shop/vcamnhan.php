@@ -21,7 +21,7 @@
 		<div id="col_right">
 			<div id="content">
 				<ul style="list-style-type:none; margin:15px; padding-left:0">
-					<?php if(isset($list))
+					<?php if(count($list)>0)
 					{
 						foreach($list as $item)
 						{?>
@@ -30,7 +30,8 @@
 								<p style="text-align:justify">"..<?php echo $item->noidung;?>.."</p>
 							</li>
 					<?php	}
-					}?>
+					}
+					else echo '<center><p>Không có bài cảm nhận nào.</p></center>'?>
 				</ul>
 				<?php echo $this->pagination->create_links();?>
 			</div>

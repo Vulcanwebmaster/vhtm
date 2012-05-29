@@ -1084,4 +1084,15 @@ class Welcome extends Shop_Controller
         $this->load->view("shop/ajaxsubscribe",$data);
         //return $result;
     }
+    
+    
+    function detail($id)
+    {
+    	$name=$this->MKaimonokago->getName($id);
+    	$data['page'] = $this->config->item('backendpro_template_shop') . 'vdetail';
+    	$data['module'] = $this->module;
+    	$data['dulieu']=$this->MKaimonokago->homepageLoadNoiDung($name);
+    	$data['maintitle']=$name;
+    	$this->load->view($this->_container,$data);
+    }
 }//end controller class

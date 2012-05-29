@@ -452,6 +452,31 @@ class MKaimonokago extends Base_model
 			$ds->free_result();
 			return $list;
 		}
+	function homepageLoadNoiDung($tieude)
+	{
+		$this->db->where('tenmuc',$tieude);
+		$ds=$this->db->get('unix_homepage');
+		if ($ds->num_rows()>0)
+		{
+			$kq=$ds->row(0);
+			$ds->free_result();
+			return $kq;
+		}
+		else return false;
+	}
+	
+	function getName($id)
+	{
+		$this->db->where('muc_id',$id);
+		$ds=$this->db->get('unix_homepage');
+		if ($ds->num_rows()>0)
+		{
+			$kq=$ds->row(0);
+			$ds->free_result();
+			return $kq->tenmuc;
+		}
+		else return false;
+	}
 }
 
 ?>
