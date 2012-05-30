@@ -1089,29 +1089,56 @@ class Welcome extends Shop_Controller
     		$data['title']="Tìm kiếm"; 		
     		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
     		$data['module']=$this->module;
-    		$data['mes']= "Không có sản phẩm này trong kho";  		
+    		$data['mes']= "Không có sản phẩm nào trong kho";  		
     		$this->load->view($this->_container,$data);
     	}
     	
-    	
-   		/*if ($this->input->post('fsearch')) {
-    		$fsearch = $this->input->post('fsearch');   
-    		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
-    		$config['total_rows']=10;//$this->count($fsearch); 	  
-    		$config['per_page']=10;  	
-
-    	$data['fsearch']=$this->getSearch_frontend($fsearch);    	
-    	
-        $this->bep_site->set_crumb($this->lang->line('kago_search')." ".$this->lang->line('kago_search'),$this->module.'/admin/search_frontend');
-        //$data['header'] = $this->lang->line('backendpro_access_control');
-        $data['page'] =$this->config->item('backendpro_template_shop') . 'search_home';
-        
-        
-        $data['module'] = $this->module;
-        $this->load->view($this->_container,$data);
-   		}*/
+    }
+    
+    function filter()
+    {
+    	if ($this->input->post('submit'))
+    	{
+    		$price=$this->input->post('price-filter');
+    		$this->get_filter($price);
+    	}
     }
 	
+    function get_filter($price=0,$index=0)
+    {
+    	$this->db->where('price <=',$price);
+    	$result=$this->db->get('omc_products',9,$index);
+    	$list=array();
+    	foreach($result->result_array() as $item)
+    	{
+    		$list[]=$item;
+    	}
+    	$result->free_result();
+    	$data['fsearch']=$list;
+    	
+    	$config['base_url']=base_url().'index.php/welcome/get_filter/'.$price;
+    	$config['total_rows']=$this->count_filter($price);
+    	$config['per_page']=9;
+    	$this->pagination->initialize($config);
+    	
+    	$data['page']=$this->config->item('backendpro_template_shop').'search_home';
+    	$data['module']=$this->module;
+    	$this->load->view($this->_container,$data);
+    }
+    
+    function count_filter($price)
+    {
+    	$this->db->where('price <=',$price);
+    	$result=$this->db->get('omc_products');
+    	$list=array();
+    	foreach($result->result() as $item)
+    	{
+    		$list[]=$item;
+    	}
+    	$result->free_result();
+    	return count($list);
+    }
+    
     function get_page($fsearch,$index=0)
     {
     		
@@ -1137,8 +1164,8 @@ class Welcome extends Shop_Controller
     		$data['fsearch']='';
     		$data['page']=$this->config->item('backendpro_template_shop').'search_home';
     		$data['module']=$this->module;
-    		$data['mes']= "Không có sản phẩm này trong kho"; 
-    		$data['title']="Tìm kiếm"; 		
+    		$data['mes']= "KhÃ´ng cÃ³ sáº£n pháº©m nÃ y trong kho"; 
+    		$data['title']="TÃ¬m kiáº¿m"; 		
     		$this->load->view($this->_container,$data);
     		}
     }

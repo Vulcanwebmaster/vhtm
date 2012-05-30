@@ -1,4 +1,4 @@
-<div class="main-container col2-right-layout">
+<div class="main-container col2-right-layout" style="width:750px; float:left">
 	<?php 
 	
 	if($fsearch=='')
@@ -97,13 +97,16 @@
         <?php }
         
         ?>
+        <div style="clear: both;">
+	    </div>
+	    <div align="center">
+	    	<?php echo $this->pagination->create_links();?>
+	    </div>
 	</div>
+	<div id="right" style="float:right">
+    	<?php $this->load->view('shop/right');?>
+    </div>
 	
-	<div style="clear: both;">
-    </div>
-    <div align="center">
-    	<?php echo $this->pagination->create_links();?>
-    </div>
     <div class="clear">
     </div>
 

@@ -122,6 +122,15 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 	    });
 	
 	  </script>
+	  
+	  <!-- =======UNIFORM====== -->
+	  	<script src="<?php echo base_url();?>assets/women_files/jquery.uniform.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript" charset="utf-8">
+	      $(function(){
+	        $("#price-filter,#submit").uniform();
+	      });
+	    </script>
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/women_files/uniform.default.css" type="text/css" media="screen"/>
 </head>
 
 <body data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="https://platform.twitter.com/widgets/hub.html"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="http://platform.twitter.com/widgets/hub.html"></iframe>
