@@ -354,3 +354,11 @@ div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div
         {
             display: none;
         }
+
+.menu-panel{float:left; padding-left:100px; padding-top:40px}
+#menumain{ background-repeat:repeat-x; height:50px; padding-top:0px; font-family:Tahoma}
+.menumainitem-head, .menumainitem-foot{float:left; width:50px; height:55px; background-repeat:no-repeat}
+.menumainitem-head{background-image:url('menuitem-bg-left.png')}
+.menumainitem-foot{background-image:url('menuitem-bg-right.png')}
+.menumainitem{text-shadow:0 1px 0 white; background-image:url('menuitem-bg3.png');background-repeat:repeat-x; width:auto; padding:20px 15px 10px 15px; height:55px; float:left; font-size:11px; text-transform:uppercase; color:#4e4e4e}
+.menumainitem img{width:20px; height:20px; padding-top:0; float:left; margin-right:3px}
