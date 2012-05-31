@@ -11,7 +11,10 @@
     }
 	
 </script>
-
+<style type="text/css">
+	form{clear:both}
+	#tab-head p{margin:10px 0 3px 0}
+</style>
 <div id="main-column">
             <div id="label">
                 <p>LOW FEES - GOOD RATES - FAST AND EASY EXCHANGE E-CURRENCY - SECURE TRANSACTION</p>
@@ -30,12 +33,12 @@
 						  	foreach ($buyCurrencies as $key => $currency){
 						 ?>
 						 	<!-- THE DIV for each currency -->
-						 	<div class="<?php echo strtolower($currency['code']);?>">
+						 	<div class="<?php echo strtolower($currency['code']);?>" style="margin-top:10px">
 	                    		<input type="radio" name="buyCurrency" value="<?php echo $currency['code'];?>" 
 	                    						onclick="changeBuy('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"
 	                    						<?php if($currency['code'] == 'WU') echo 'checked="checked"';?>/>
-	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
-		                        <a style="font-weight:bold; color:#2c6eaa"><?php if ($currency['code'] == 'LR') echo $currency['c_name']; else echo $currency['c_name']."&nbsp;&nbsp;";?></a>
+	                            <img style="border:solid 1px #b9b8b8; width:55px" alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
+		                        <a style="font-weight:bold; color:#2c6eaa; font-size:15px; font-weight:bold"><?php if ($currency['code'] == 'LR') echo $currency['c_name']; else echo $currency['c_name']."&nbsp;&nbsp;";?></a>
 	                    	</div>	
 	                    	<!-- THE DIV for each currency -->
 					 	<?php 
@@ -45,7 +48,8 @@
                     <div class="currencyRate">
                     	<span class="content-head2">Rate</span>
                     	<br/>
-                    	<span id="rate" style="color:Red"></span>
+                    	<br/>
+                    	<span id="rate" style="color:Red; margin-top:10px"></span>
                     	<input type="hidden" name="rate" id="input_rate">
                     </div>
                     <div class="toCurrency">
@@ -54,12 +58,12 @@
 						  	foreach ($sellCurrencies as $key => $currency){
 						 ?>
 						 	<!-- THE DIV for each currency -->
-						 	<div class="<?php echo strtolower($currency['code']);?>">
+						 	<div class="<?php echo strtolower($currency['code']);?>" style="margin-top:10px">
 	                    		<input type="radio" name="sellCurrency" value="<?php echo $currency['code'];?>" 
 	                    		 onclick="changeSell('<?php echo $currency['code'];?>', '<?php echo $currency['c_name'];?>');"
 	                    		 <?php if($currency['code'] == 'LR') echo 'checked="checked"';?>/>
-	                            <img alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
-		                        <a style="font-weight:bold; color:#2c6eaa"><?php echo $currency['c_name'];?></a>
+	                            <img style="border:solid 1px #b9b8b8; width:55px" alt="" src="<?php echo base_url()?>assets/images/<?php echo $currency['logo_src'];?>" class="image-selection1"/>
+		                        <a style="font-weight:bold; color:#2c6eaa; font-size:15px; font-weight:bold"><?php echo $currency['c_name'];?></a>
 	                    	</div>	
 	                    	<!-- THE DIV for each currency -->
 					 	<?php 
@@ -72,7 +76,7 @@
                     	 <hr align="right" width="80%" style="border-style:solid">
                     	 <div style="text-align:justify; width:auto">
 	                    	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
-	                    	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
+	                    	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="over-flow:hidden; width:20px;border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
 	                    	 
 	                    	 <script type="text/javascript">
 	                    	 	$(document).ready(function(){
@@ -623,6 +627,7 @@
                                 
                                 <script type="text/javascript">
                                 	$(document).ready(function(){
+                                		
                                 		$('#exampletrigger').css('cursor','default');
                                 		$('#exampletrigger').mouseenter(function(){
                                 			$('#exampletrigger').css('color','orange');
@@ -642,6 +647,7 @@
 												$('#examples').slideDown(500);
 											}
 										});
+										$('#exampletrigger').click();
                                     });
                                 </script>
                                 <a id="exampletrigger" style="font-size:11px;color:#53b0da">Hide examples</a>
@@ -695,48 +701,18 @@
 
                                     				value.innerHTML="...";
                                     				
-													$("#star1").mouseenter(function(){	
-															star1.src="<?php echo base_url();?>assets/images/star2.png";
-															if (flag==1)
-															{
-																flag=0;
-																star2.src="<?php echo base_url();?>assets/images/star.png";
-																star3.src="<?php echo base_url();?>assets/images/star.png";
-																star4.src="<?php echo base_url();?>assets/images/star.png";
-																star5.src="<?php echo base_url();?>assets/images/star.png";
-															}
-															value.style.width='50px';
-															value.innerHTML="very bad";
-													});
-													$("#star1").mouseleave(function(){
-														if (flag == 0) {
-															star1.src="<?php echo base_url();?>assets/images/star.png";
-														}
-													});
-													
 													$("#star1").mousedown(function(){
-														//if (flag == 0)
+														star1.src="<?php echo base_url();?>assets/images/star.png";
+														star2.src="<?php echo base_url();?>assets/images/star.png";
+														star3.src="<?php echo base_url();?>assets/images/star.png";
+														star4.src="<?php echo base_url();?>assets/images/star.png";
+														star5.src="<?php echo base_url();?>assets/images/star.png";
+
 														{											
 														flag = 1;
 														star1.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 1;
-														}
-													});
-
-													
-
-													$("#star2").mouseenter(function(){
-														//if (flag == 0) {														
-														$("#star1").mouseenter();
-														star2.src="<?php echo base_url();?>assets/images/star2.png";
-														value.style.width='50px';
-														value.innerHTML="bad";
-														
-													});
-													$("#star2").mouseleave(function(){
-														if (flag == 0) {
-														$("#star1").mouseleave();
-														star2.src="<?php echo base_url();?>assets/images/star.png";
+														value.innerHTML="1";
 														}
 													});
 
@@ -745,69 +721,28 @@
 														$("#star1").mousedown();
 														star2.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 2;
-													});
-
-													$("#star3").mouseenter(function(){	
-														//if (flag == 0) {													
-														$("#star2").mouseenter();
-														star3.src="<?php echo base_url();?>assets/images/star2.png";
-														value.style.width='50px';
-														value.innerHTML="normal";
-													});
-													$("#star3").mouseleave(function(){
-														if (flag == 0) {
-														$("#star2").mouseleave();
-														star3.src="<?php echo base_url();?>assets/images/star.png";
-														}
+														value.innerHTML="2";
 													});
 
 													$("#star3").mousedown(function(){
 														$("#star2").mousedown();														
 														star3.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 3;
-													});
-
-
-													
-													$("#star4").mouseenter(function(){
-														//if (flag == 0) {														
-														$("#star3").mouseenter();
-														star4.src="<?php echo base_url();?>assets/images/star2.png";
-														value.style.width='50px';
-														value.innerHTML="good";
-													});
-													$("#star4").mouseleave(function(){
-														if (flag == 0) {
-														$("#star3").mouseleave();
-														star4.src="<?php echo base_url();?>assets/images/star.png";
-														}
+														value.innerHTML="3";
 													});
 
 													$("#star4").mousedown(function(){	
 														$("#star3").mousedown();											
 														star4.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 4;
-													});
-
-
-													$("#star5").mouseenter(function(){
-														//if (flag == 0) {														
-														$("#star4").mouseenter();
-														star5.src="<?php echo base_url();?>assets/images/star2.png";
-														value.style.width='50px';
-														value.innerHTML="perfect";
-													});
-													$("#star5").mouseleave(function(){
-														$("#star4").mouseleave();
-														if (flag == 0) {
-														star5.src="<?php echo base_url();?>assets/images/star.png";
-														}
+														value.innerHTML="4";
 													});
 
 													$("#star5").mousedown(function(){
 														$("#star4").mousedown();
 															star5.src="<?php echo base_url();?>assets/images/star2.png";
 															ratingstarvalue.value = 5;
+															value.innerHTML="5";
 													});
 													
                                     			});
@@ -833,7 +768,7 @@
 														});
                                                 	});
                                             </script>
-                                            <input type="submit" value="Submit" id="Submit"/>
+                                            <input type="submit" value="Submit" id="Submit" style="margin-left:30px"/>
                                         </td>
                                     </tr>
                                     <tr style=" margin-top:-30px">

@@ -188,7 +188,7 @@ self.setInterval("time()",3000);
                     <tr class="hangle" <?php if ($count%2!=0) echo 'style="background-color:white"';?>>
                         <td style="color:#647f0f"><?php echo $this->MKaimonokago->destroy_time($rs->date_src)?></td>
                         <td><?php echo $rs->c_src?> <span>To</span> <?php echo $rs->c_dst?></td>
-                        <td><?php echo $rs->email?></td>
+                        <td><?php echo substr($rs->email, 0, 3).'***'?></td>
                         <td><span><?php echo $rs->amount_src?>$</span></td>
                     </tr>
                     <?php $count++;};?>  

@@ -1,10 +1,19 @@
 <!-- Author: tienlx -->
-<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/tintuc.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/tintuc.css">
 <div id="main-column">
+
 <?php 
 if (count($detailnews))
 foreach ($detailnews as $key => $list)
 ?>
+	<ul id="mapsite">
+		<li><a href="<?php echo base_url();?>">Home</a></li>
+		<li>></li>
+		<li><a>News</a></li>
+		<li>></li>
+		<li><a><?php echo $list['title'];?></a></li>
+	</ul>
+	
 <div id="au-title">
 	<label><?php echo $list['title'];?></label>
 </div>

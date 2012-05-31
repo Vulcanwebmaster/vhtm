@@ -1,8 +1,8 @@
  <div id="main-column">
  <ul id="mapsite">
-		<li><a href="<?php echo base_url();?>">Home page</a></li>
-		<li><a>:</a></li>
-		<li><a>Tracking my order</a></li>
+		<li><a href="<?php echo base_url();?>">Home</a></li>
+		<li>></li>
+		<li><a>Tracking-my-order</a></li>
 	</ul>
         <!--MỤC RIÊNG -->
             <div id="tracking-column-center">

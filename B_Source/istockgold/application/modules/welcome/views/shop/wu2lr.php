@@ -141,7 +141,18 @@
                             <td colspan="2" style="padding-top:20px"><hr style="border-top:solid 4px #b0b0b0; margin-top:-5px"/></td>
                         </tr> 
                         <tr>
-                            <td align="center" colspan="2"><input type="submit" name="submit" value="Exchange" /></td>
+                        	<script type="text/javascript">
+                        		$(document).ready(function(){
+									$('#wu2lr-submit').css('background','url(<?php echo base_url();?>assets/images/exchange-bt.png)');
+									$('#wu2lr-submit').mouseenter(function(){
+										$(this).css('background','url(<?php echo base_url();?>assets/images/exchange-bt2.png)');
+									});
+									$('#wu2lr-submit').mouseleave(function(){
+										$(this).css('background','url(<?php echo base_url();?>assets/images/exchange-bt.png)');
+									});
+                            	});
+                        	</script>
+                            <td align="center" colspan="2"><input type="submit" name="submit" value="Exchange" id="wu2lr-submit" style="width:81px; height:22px; border-style:none"/></td>
                         </tr>  
                     </table>
                     <?php echo form_close(); ?>

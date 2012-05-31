@@ -2,9 +2,9 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/tintuc.css">
 <div id="main-column">
 	<ul id="mapsite">
-		<li><a href="<?php echo base_url();?>">Home page</a></li>
-		<li><a>:</a></li>
-		<li><a>All news</a></li>
+		<li><a href="<?php echo base_url();?>">Home</a></li>
+		<li>></li>
+		<li><a>News</a></li>
 	</ul>
 <div id="au-title" style="clear:both">
 	<label>All News</label>

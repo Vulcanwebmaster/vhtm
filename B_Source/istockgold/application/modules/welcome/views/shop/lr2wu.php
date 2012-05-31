@@ -91,8 +91,19 @@
                             <td colspan="2"><hr style="border-top:solid 7px #b0b0b0; margin-top:-5px"/></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="center"><input type="submit" name="submit" value="Exchange" /></td>
-                        </tr>
+                        	<script type="text/javascript">
+                        		$(document).ready(function(){
+									$('#lr2wu-submit').css('background','url(<?php echo base_url();?>assets/images/exchange-bt.png)');
+									$('#lr2wu-submit').mouseenter(function(){
+										$(this).css('background','url(<?php echo base_url();?>assets/images/exchange-bt2.png)');
+									});
+									$('#lr2wu-submit').mouseleave(function(){
+										$(this).css('background','url(<?php echo base_url();?>assets/images/exchange-bt.png)');
+									});
+                            	});
+                        	</script>
+                            <td align="center" colspan="2"><input type="submit" name="submit" value="Exchange" id="lr2wu-submit" style="width:81px; height:22px; border-style:none"/></td>
+                        </tr>  
                     </table>
                    <?php echo form_close(); ?>
                 </div>

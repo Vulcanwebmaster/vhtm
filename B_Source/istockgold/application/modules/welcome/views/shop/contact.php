@@ -2,9 +2,9 @@
 <?php echo form_open(base_url()."contact")?>
 <div id="main-column">
 <ul id="mapsite">
-		<li><a href="<?php echo base_url();?>">Home page</a></li>
-		<li><a>:</a></li>
-		<li><a>Contact Us</a></li>
+		<li><a href="<?php echo base_url();?>">Home</a></li>
+		<li>></li>
+		<li><a>Contact-Us</a></li>
 	</ul>
 <div id="au-title">
 	<label>Contact us</label>
