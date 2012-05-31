@@ -12,7 +12,7 @@
           <!-- img src="<?php echo base_url();?>assets/unix/images/khoahoc-slide.jpg" alt="" />
           <img src="<?php echo base_url();?>assets/unix/images/thuvien-slide.jpg" alt="" data-transition="slideInLeft" / -->
     </div>
-          <div id="slidemenus">
+          <!-- div id="slidemenus">
           	<center>
           	<table id="menu-slide">
           		<tr>
@@ -39,12 +39,10 @@
 	          						</fieldset>
           						</center>
           					</td></tr>
-          					<!-- tr><td><h2>Khóa học</h2></td></tr -->
           				</table>
           			</td>
           		</tr>
           	</table>
           	</center>
-          </div> 
-          <hr style="border:solid 2px #05a6e3; width:1000px; margin:auto"/>
+          </div --> 
 </div>
