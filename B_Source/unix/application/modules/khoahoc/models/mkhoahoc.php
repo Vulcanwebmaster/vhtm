@@ -7,8 +7,10 @@
 			$this->load->database();
 		}
 		
-		function getlist($index)
+		function getlist($index,$id_doituong)
 		{
+			if ($id_doituong>0)
+				$this->db->where('doituong',$id_doituong);
 			$ds=$this->db->get('unix_khoahoc',6,$index);
 			$list=array();
 			foreach($ds->result() as $item)
@@ -111,6 +113,18 @@
 	        }
 	        $Q->free_result();
 	        return $data;
+	    }
+	    
+	    function getListDoiTuong()
+	    {
+	    	$ds=$this->db->get('unix_doituong');
+	    	$list=array();
+	    	foreach($ds->result() as $item)
+	    	{
+	    		$list[]=$item;
+	    	}
+	    	$ds->free_result();
+	    	return $list;
 	    }
 	}
 ?>

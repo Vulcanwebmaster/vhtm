@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		var content=document.getElementById('content');		
+		$('#content').load('<?php echo base_url();?>index.php/khoahoc/pages');
+		$('#list-type').change(function(){
+			var list=document.getElementById('list-type');
+			var value=list.value;
+			$('#content').load('<?php echo base_url();?>index.php/khoahoc/pages/0/'+value);
+			});
+		});
+</script>
+
 <div id="title-panel">
 	<div id="title">
 		<div id="title-left"></div>
@@ -19,7 +31,28 @@
 			<?php $this->load->view('shop/left');?>
 		</div>
 		<div id="col_right">
+			<div id="menu-panel" style="margin-bottom:15px">
+				<div id="menu-book">
+					<p>
+						<span style="color:white; font-size:12px">Chọn đối tượng: </span>
+						<select id="list-type">
+							<option value="0">Tất cả</option>
+							<?php if (isset($listdoituong))
+							{
+								foreach($listdoituong as $item)
+								{
+									echo '<option value="'.$item->doituong_id.'">'.$item->tendoituong.'</option>';
+								}
+							}?>						
+						</select>
+					</p>
+				</div>
+			</div>
+			
 			<div id="content">
+			
+			</div>
+			<!-- div id="content">
 				<ul class="list">
 					<?php 
 					{
@@ -47,7 +80,7 @@
 					}?>
 				</ul>
 				<?php echo $this->pagination->create_links();?>
-			</div>
+			</div -->
 		</div>
 	</div>
 </div>
