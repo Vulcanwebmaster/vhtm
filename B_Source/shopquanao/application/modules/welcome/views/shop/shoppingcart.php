@@ -36,22 +36,22 @@
                                     <thead>
                                         <tr class="first last">
                                             <th rowspan="1">
-                                            	áº£nh sáº£n pháº©m
+                                            	Ảnh sản phẩm
                                             </th>
                                             <th rowspan="1">
-                                                <span class="nobr">tÃªn sáº£n pháº©m</span>
+                                                <span class="nobr">tên sản phẩm</span>
                                             </th>
                                             <th class="a-center" colspan="1">
-                                                Chá»©c nÄƒng
+                                                chức năng
                                             </th>
                                             <th rowspan="1" class="a-center">
-                                                <span class="nobr">GiÃ¡ </span>
+                                                <span class="nobr">giá </span>
                                             </th>
                                             <th class="a-center" colspan="1">
-                                                Sá»‘ lÆ°á»£ng
+                                                số lượng
                                             </th>
                                             <th rowspan="1" class="a-center">
-                                                ThÃ nh tiá»�n
+                                                thành tiền
                                             </th>
                                         </tr>
                                     </thead>
@@ -113,8 +113,8 @@
                                      <tfoot>
                                         <tr class="first last">
                                             <td colspan="6" class="a-right last">
-                                            	<button type="submit" title="Thanh ToÃ¡n " class="button btn-update" style="float:right;">
-                                                    <span><span>Thanh ToÃ¡n</span></span></button>
+                                            	<button type="submit" title="Thanh toán" class="button btn-update" style="float:right;">
+                                                    <span><span>Thanh Toán</span></span></button>
                                             </td>
                                         </tr>
                                     </tfoot>

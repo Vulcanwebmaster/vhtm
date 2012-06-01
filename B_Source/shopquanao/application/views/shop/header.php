@@ -15,9 +15,9 @@
         	<div id="menumain">
 					<a class="menumainitem-head"></a>
 					<a style="color:#4e4e4e" class="menumainitem" href="<?php echo base_url();?>index.php"><img src="<?php echo base_url();?>assets/women_files/trang chu.png" alt="">Trang chủ</a>
-					<a style="color:#4e4e4e" class="menumainitem" href="#"><img src="<?php echo base_url();?>assets/women_files/hang moi nhap.png" alt="">Hàng mới về</a>
-					<a style="color:#4e4e4e" class="menumainitem" href="#"><img src="<?php echo base_url();?>assets/women_files/giohang.png" alt="">Giỏ hàng</a>
-					<a style="color:#4e4e4e" class="menumainitem" href="#"><img src="<?php echo base_url();?>assets/women_files/lienhe.png" alt="">Liên hệ</a>
+					<a style="color:#4e4e4e" class="menumainitem" href="<?php echo base_url();?>index.php/ao/hangmoi"><img src="<?php echo base_url();?>assets/women_files/hang moi nhap.png" alt="">Hàng mới về</a>
+					<a style="color:#4e4e4e" class="menumainitem" href="<?php echo base_url();?>index.php/welcome/cart"><img src="<?php echo base_url();?>assets/women_files/giohang.png" alt="">Giỏ hàng</a>
+					<a style="color:#4e4e4e" class="menumainitem" href="<?php echo base_url();?>index.php/welcome/contact"><img src="<?php echo base_url();?>assets/women_files/lienhe.png" alt="">Liên hệ</a>
 					<a style="color:#4e4e4e" class="menumainitem-foot"></a>
 			</div>
         </div>
