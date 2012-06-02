@@ -195,7 +195,7 @@ self.setInterval("time()",3000);
                     
                 </table>
             </div>
-            <div id="send">
+            <div id="send" style="margin-bottom:15px">
                 <div id="send-head" style="height:35px"></div>
                 <div align="center">
                     <img src="<?php echo base_url()?>assets/images/weston unio2.jpg"/>
@@ -206,5 +206,27 @@ self.setInterval("time()",3000);
                 <div align="center">
                     <img src="<?php echo base_url()?>assets/images/web-money.jpg" />
                 </div>
+            </div>
+            
+            <div id="tags-box">
+            	<img id="img-tag" src="<?php echo base_url();?>assets/images/bg-tag.gif"/>
+            	<div>
+            		<?php $listTag=$this->MIStockGold->getListTag();
+            			$tags=explode(',', $listTag);
+            			for ($i=0;$i<count($tags);$i+=5)
+            			{
+            				if ($i<count($tags))
+            					echo '<a style=" color:#026197; font-size:12px"><strong> '.$tags[$i].',</strong></a>';
+            				if ($i+1<count($tags))
+            					echo '<a style=" color:#026197; font-size:10px"><strong> '.$tags[$i+1].',</strong></a>';
+            				if ($i+2<count($tags))
+            					echo '<a style=" color:#026197; font-size:22px"><strong> '.$tags[$i+2].',</strong></a>';
+            				if ($i+3<count($tags))
+            					echo '<a style=" color:#026197; font-size:20px"><strong> '.$tags[$i+3].',</strong></a>';
+            				if ($i+4<count($tags))
+            					echo '<a style=" color:#026197; font-size:22px"><strong> '.$tags[$i+4].',</strong></a>';
+            			}
+            		?>
+            	</div>
             </div>
         </div>  

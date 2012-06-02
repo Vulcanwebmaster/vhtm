@@ -66,9 +66,13 @@
 			<br>
 			<label id="lbl_error" class="ErrorMessage"></label>
 			<br>
-			<label id="title_label"><span>Title<i> (required)</i>:</span>
+			<label id="title_label"><span>Title<i> (required)</i>:</span></label>
 			<br>
 			<input type="text" align="left" size="123%" name="title" id="title" value=""/>
+			<br/>
+			<label id="title_label"><span>Tag:</span>
+			<br>
+			<input type="text" align="left" size="123%" name="tag" id="tag" value=""/>
 			<br>
 			</label>
 			<label id="content_label"><span>Content:</span>

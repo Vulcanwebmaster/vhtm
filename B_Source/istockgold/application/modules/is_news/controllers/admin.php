@@ -58,6 +58,7 @@ class Admin extends Shop_Admin_Controller
     	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
         $data = array(
         'title'       => db_clean($_POST['title']),
+        'tag'		  => $this->input->post('tag'),		
         'content'     => $temp
         );
         return $data;

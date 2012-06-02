@@ -71,6 +71,11 @@ tinyMCE.init({
 			<input type="text" align="left" size="124%" name="title" id="title" value="<?php echo $news['title'];?>">
 			<br>
 			</label>
+			<label id="title_label"><span>Tag:</span>
+			<br>
+			<input type="text" align="left" size="123%" name="tag" id="tag" value="<?php echo $news['tag'];?>"/>
+			<br>
+			</label>
 			<label id="content_label"><span>Content:</span>
 			<br>
  			<textarea id="content" name="content" rows="20" cols="80" style="width: 60%">

@@ -437,7 +437,18 @@ class MIStockGold extends Base_model
         $Q->free_result();
         return $data;
     }
-
+	
+    function getListTag()
+    {
+    	$ds=$this->db->get('is_news');
+    	$tags="";
+    	foreach ($ds->result() as $item)
+    	{
+    		$tags=$tags.','.$item->tag;
+    	}
+    	$ds->free_result();
+    	return $tags;
+    }
 }
 
 ?>

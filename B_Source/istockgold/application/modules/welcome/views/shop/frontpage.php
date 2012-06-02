@@ -689,7 +689,8 @@
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
                                 			<script type="text/javascript">
                                 				$(document).ready(function(){													
-                                    				var flag = 0;  
+                                    				var flag = 0;
+                                    				var ispressed=0;  
                                     				var value = document.getElementById("value");
                                     				
                                     				var ratingstarvalue = document.getElementById("ratingstarvalue");
@@ -700,8 +701,68 @@
                                     				var star5 = document.getElementById("star5");
 
                                     				value.innerHTML="...";
-                                    				
+
+                                    				$("#star1").mouseenter(function(){
+                                        				if (ispressed==0)
+                                        				{
+                                        					star1.src="<?php echo base_url();?>assets/images/star.png";
+    														star2.src="<?php echo base_url();?>assets/images/star.png";
+    														star3.src="<?php echo base_url();?>assets/images/star.png";
+    														star4.src="<?php echo base_url();?>assets/images/star.png";
+    														star5.src="<?php echo base_url();?>assets/images/star.png";
+    														
+                                    						star1.src="<?php echo base_url();?>assets/images/star2.png";
+                                        				}
+                                        			});
+                                    				$("#star1").mouseleave(function(){
+                                        				if (ispressed==0)
+                                        				{
+                                        					star1.src="<?php echo base_url();?>assets/images/star.png";
+    														star2.src="<?php echo base_url();?>assets/images/star.png";
+    														star3.src="<?php echo base_url();?>assets/images/star.png";
+    														star4.src="<?php echo base_url();?>assets/images/star.png";
+    														star5.src="<?php echo base_url();?>assets/images/star.png";
+                                        				}
+                                        			});
+
+                                    				$("#star2").mouseenter(function(){
+                                    					$("#star1").mouseenter();
+                                    					if (ispressed==0)
+                                    						star2.src="<?php echo base_url();?>assets/images/star2.png";
+                                            		});
+                                            		$("#star2").mouseleave(function(){
+														$('#star1').mouseleave();
+                                                    });
+                                                    
+                                            		$("#star3").mouseenter(function(){
+                                    					$("#star2").mouseenter();
+                                    					if (ispressed==0)
+                                    						star3.src="<?php echo base_url();?>assets/images/star2.png";
+                                            		});
+                                            		$("#star3").mouseleave(function(){
+														$('#star2').mouseleave();
+                                                    });
+
+                                            		$("#star4").mouseenter(function(){
+                                    					$("#star3").mouseenter();
+                                    					if (ispressed==0)
+                                    						star4.src="<?php echo base_url();?>assets/images/star2.png";
+                                            		});
+                                            		$("#star4").mouseleave(function(){
+														$('#star3').mouseleave();
+                                                    });
+
+                                            		$("#star5").mouseenter(function(){
+                                    					$("#star4").mouseenter();
+                                    					if (ispressed==0)
+                                    						star5.src="<?php echo base_url();?>assets/images/star2.png";
+                                            		});
+                                            		$("#star5").mouseleave(function(){
+														$('#star4').mouseleave();
+                                                    });                                                    
+                                        			
 													$("#star1").mousedown(function(){
+														ispressed=1;
 														star1.src="<?php echo base_url();?>assets/images/star.png";
 														star2.src="<?php echo base_url();?>assets/images/star.png";
 														star3.src="<?php echo base_url();?>assets/images/star.png";
@@ -712,7 +773,7 @@
 														flag = 1;
 														star1.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 1;
-														value.innerHTML="1";
+														value.innerHTML="Not good";
 														}
 													});
 
@@ -721,28 +782,28 @@
 														$("#star1").mousedown();
 														star2.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 2;
-														value.innerHTML="2";
+														value.innerHTML="Needs That Special Something";
 													});
 
 													$("#star3").mousedown(function(){
 														$("#star2").mousedown();														
 														star3.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 3;
-														value.innerHTML="3";
+														value.innerHTML="Average, Ordinary";
 													});
 
 													$("#star4").mousedown(function(){	
 														$("#star3").mousedown();											
 														star4.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 4;
-														value.innerHTML="4";
+														value.innerHTML="That's Good Stuff";
 													});
 
 													$("#star5").mousedown(function(){
 														$("#star4").mousedown();
 															star5.src="<?php echo base_url();?>assets/images/star2.png";
 															ratingstarvalue.value = 5;
-															value.innerHTML="5";
+															value.innerHTML="Perfect. It doesn't get any better";
 													});
 													
                                     			});

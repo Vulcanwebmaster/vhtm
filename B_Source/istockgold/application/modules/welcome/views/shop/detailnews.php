@@ -16,6 +16,7 @@ foreach ($detailnews as $key => $list)
 	
 <div id="au-title">
 	<label><?php echo $list['title'];?></label>
+	<p style="text-transform:none;font-weight:normal;font-size:12px; color:#616060; margin:3px"><strong style="margin-right:10px">TAG:</strong>  <?php echo $list['tag'];?></p>
 </div>
 <div class="box">
     <div class="cnoidung" style="padding-left: 5px;text-align: justify;"><?php echo $list['content'];?></div>
