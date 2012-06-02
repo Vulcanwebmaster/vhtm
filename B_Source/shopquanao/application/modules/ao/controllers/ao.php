@@ -24,7 +24,7 @@
 		{	
 			$config['base_url']=base_url().'index.php/ao/get_list/'.$cat_id;
             
-            $config['per_page']=8;
+            $config['per_page']=9;
             $config['uri_segment'] = 4; 
 			$config['total_rows']=$this->Get_data->count($cat_id);
 			$count=$this->Get_data->count($cat_id);
@@ -43,13 +43,13 @@
 		{
 			$config['base_url']=base_url().'index.php/ao/hangmoi/';
             
-            $config['per_page']=8;
+            $config['per_page']=9;
             $config['uri_segment'] = 3; 
 			$config['total_rows']=$this->Get_data->count_hang_moi();			
 			$this->pagination->initialize($config);
-			$data['title']='HÃƒÂ ng mÃ¡Â»â€ºi vÃ¡Â»ï¿½';
+			$data['title']='Hàng mới về';
 			$data['count']=$this->Get_data->count_hang_moi();
-			$data['type']="HÃƒÂ ng mÃ¡Â»â€ºi";
+			$data['type']="Hàng mới";
 			$data['list']=$this->Get_data->hang_moi_ve($index);
 			$data['page']=$this->config->item('backendpro_template_shop').'dsao';
 			$data['module']=$this->module;

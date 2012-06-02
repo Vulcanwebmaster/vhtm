@@ -6,17 +6,48 @@
 		echo '<span style="color:red">'.$mes.'</span>';
 	}
 	
-	else
-	
+	if ($fsearch!='' && count($fsearch))
 	{
-
-	foreach ($fsearch as $index => $row)
+	foreach ($fsearch as $key => $row)
         {
+        	$price = $row['price'];
+        	if (strlen($price)>3)
+    	    {
+    			$kq="";
+	    		$leng=strlen($price);
+	    		for($i=$leng-1;$i>=0;$i--)
+	    		{
+	    			
+	    			$kq=$kq.$price[$i];
+	    			if (($leng-$i)%3==0 && $i>0)
+	    				$kq=$kq.'.';
+	    		}
+	    		$price = strrev($kq);
+    	    }
+    	    $source_link =  $row['image'];
+	        if (trim($source_link)!= "")
+	    	{
+	    		if ($source_link[0]=='<' && $source_link[1]=='p' && strlen($source_link) > 21)
+		    	{
+			    	$i=13;
+			    	while ($source_link[$i]=='.' || $source_link[$i]=='/')
+			    		$i++;
+			    	$j=$i;
+			    	while ($source_link[$j]!='"')
+			    		$j++;
+		    		if (strlen($source_link) > $j + 1)
+		    		{
+			    		$ds=base_url().substr($source_link, $i,$j-$i+1);
+		    			$source_link = $ds;
+		    		}
+			    }
+			    else $source_link = base_url().$source_link;
+	    	}
         	?><div class="post hentry">
             <a name="1655744853648508510"></a>
             <h3 class="post-title entry-title" style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat">
             	<!-- div style="width:200px;clear:both; height:62px; background-image:url('<?php echo base_url();?>assets/women_files/pricebox_bg2.png'); background-repeat:no-repeat" -->
-                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $this->MKaimonokago->format_price($row['price']);?> VNĐ</span>
+                    	<span style="float:left;color:white; padding-top:10px;padding-left:25px;"><?php echo $price;?> VNĐ</span>
                     	<a href="<?php echo base_url();?>index.php/welcome/cart/<?php echo $row['id'];?>"
                     	style="padding-top:0px;padding-right:10px;color:#606060;text-transform:uppercase; float:right; font-size:9px">
 							<img style="background:transparent; border:transparent" src="<?php echo base_url();?>assets/women_files/shopping_cart.png" width="30px"/>
@@ -74,7 +105,7 @@
                 </p>
                 <div class="summary1655744853648508510">
                     <a href="<?php echo base_url();?>index.php/chitietsp/get_inf/<?php echo $row['id'];?>" style="float: left; padding: 0px 10px 5px 0px;">
-                        <img src="<?php echo $this->MKaimonokago->get_link_image($row['image']) ;?>" width="200px" height="270px"/>
+                        <img src="<?php echo $source_link;?>" width="200px" height="270px"/>
                     </a>
                     
                             <div>...</div>

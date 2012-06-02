@@ -129,9 +129,9 @@ class Welcome extends Shop_Controller
         $this->db->order_by('id',"DESC");
         $full=$this->db->get("omc_products");
         $config['total_rows']=$full->num_rows();
-        $config['per_page']=8;
+        $config['per_page']=9;
         $this->pagination->initialize($config);
-        $query = $this->db->get("omc_products",8,$index);
+        $query = $this->db->get("omc_products",9,$index);
         $data['newArrivals']=$query->result();
         //end tienlx
 		
@@ -1104,28 +1104,43 @@ class Welcome extends Shop_Controller
     	}
     }
 	
-    function get_filter($price=0,$index=0)
+	function count_filter($price)
+	{
+		$this->db->where('price <=',$price);
+    	$result=$this->db->get('omc_products');
+    	$count = $result->num_rows();
+    	$result->free_result();
+    	return $count;
+   	}
+   	
+    function get_filter($price,$index=0)
     {
-    	if ($price < 1000) $price = 1000;
+    	$count = $this->count_filter($price);
+    	
+    	$config['base_url']=base_url().'index.php/welcome/get_filter/'.$price."/";
+    	$config['total_rows']=$count;
+    	$config['per_page'] = 9;
+    	$this->pagination->initialize($config);
+    	
     	$this->db->where('price <=',$price);
     	$result=$this->db->get('omc_products',9,$index);
     	$list=array();
-    	foreach($result->result_array() as $item)
-    	{
-    		$list[]=$item;
-    	}
-    	$count = count($list);
-    	$data['fsearch']=$list;
+    	if ($result->num_rows() > 0)
+        {
+    		foreach($result->result_array() as $item)
+    		{
+    			$list[]=$item;
+    		}
+        }
     	$result->free_result();
     	
-    	$config['base_url']=base_url().'index.php/welcome/get_filter/'.$price;
-    	$config['total_rows']=$count;
-    	$config['per_page']=9;
-    	$this->pagination->initialize($config);
-    	$data['page']=$this->config->item('backendpro_template_shop').'search_home';
+    	$data['fsearch']=$list;
+    	$data['page']= $this->config->item('backendpro_template_shop'). 'search_home';
     	$data['module']=$this->module;
     	$this->load->view($this->_container,$data);
     }
+    
+	
     
     function get_page($fsearch,$index=0)
     {
@@ -1133,7 +1148,7 @@ class Welcome extends Shop_Controller
     	    $data['sea']=$fsearch;
     		$config['base_url']=base_url().'index.php/welcome/get_page/'.$fsearch;
     		$config['total_rows']=$this->count($fsearch); 	  
-    		$config['per_page']=8;
+    		$config['per_page']=9;
     		$config['uri_segment'] = 4;
     		$this->pagination->initialize($config);
     		
@@ -1164,7 +1179,7 @@ class Welcome extends Shop_Controller
 		$this->db->like('name', $fsearch);
 		//$this->db->or_like('code',$fsearch);    	    	        
     	$this->db->order_by('id','DESC');    
-       	$Q=	$this->db->get('omc_products',8,$index);
+       	$Q=	$this->db->get('omc_products',9,$index);
 
         if ($Q->num_rows() > 0)
         {
