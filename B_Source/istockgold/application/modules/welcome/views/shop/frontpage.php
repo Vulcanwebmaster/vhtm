@@ -72,9 +72,9 @@
                     </div>
                     <div class="clearboth"> </div>
                     
-                    <div style="float: right; width: auto;text-align:left; padding-bottom: 10px;padding-right: 15px; margin-bottom: 10px; font-size: 13px;">
-                    	 <hr align="right" width="80%" style="border-style:solid">
-                    	 <div style="text-align:left; width:auto">
+                    <div style="float: right; width: auto;text-align:right; padding-bottom: 10px;padding-right: 15px; margin-bottom: 10px; font-size: 13px;">
+                    	 <hr align="right" width=auto; style="border-style:solid">
+                    	 <div style="text-align:right; width:auto">
 	                    	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
 	                    	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="over-flow:hidden; width:20px;border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
 	                    	 
@@ -89,9 +89,8 @@
 										});
 		                    	 	});	                    	 	
 	                    	 </script>
-	                    	 <span id="get"></span> <button id="exchange-button" style="height:22px;">Exchange</button>
+	                    	 <button id="exchange-button" style="height:22px;">Exchange</button>
 	                         <br />
-
 	                         <span class="redText">*Notice: e-currency transfer fees also tobe deducted from this transaction</span>
                          </div>
                     </div>

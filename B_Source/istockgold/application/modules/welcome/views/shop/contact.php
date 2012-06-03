@@ -10,49 +10,53 @@
 	<label>Contact us</label>
 </div>
 <div style="margin-top:15px">
-	<label style="font-size:16px; font-weight:bold; color:#606060; margin-top:15px">Istockgold</label>
-	<div style="padding-top:15px; padding-bottom:15px; padding-left:15px; background-color:#f5f5f5">
-		<label style="font-size:14px; font-weight:bold;color:#4e4e4e; margin-bottom:10px">- Số 6 Ngõ 39/2 Trung Kính, Trung Hòa, Cầu Giấy, Hà Nội</label>
-		<br />
-		<label style="font-size:12px; font-weight:bold;color:#4e4e4e; padding-left:10px;">Tel: (08) 3500 5568  -  Fax: (08) 3526 8522</label>
-			<!-- <img src="<?php echo base_url();?>assets/images/map.jpg" alt="" id="map"/> -->
-			<br/>
-			 <iframe src="http://www.map-generator.org/7110cb50-a767-412d-acdf-c3c5b15c3caa/iframe-map.aspx" scrolling="no" height="450px" width="800px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><small>
-			 <a href="http://www.map-generator.org/7110cb50-a767-412d-acdf-c3c5b15c3caa/large-map.aspx" target="_blank">Open large map<a/></small>
-	</div>                
-</div>
 		<div style="padding-left:80px; padding-right:80px; padding-top:20px">
-			<label style="font-size:12px; font-weight:bold">Please insert your infomation into form :</label>
+			<label style="font-family:arial; font-size:12px; font-weight:bold">Please insert your infomation into form (All fields are required):</label>
 			<hr style="border-top-width: 2px; border-color: #333333; border-style: dotted none none none" />
-				<div style="margin-top:10px; background-color:#e5ecf3; border-radius:10px; padding:25px">
+				<div style="font-family:arial; font-size:13px; margin-top:10px; background-color:#e5ecf3; border-radius:10px; padding:25px">
                     <table style="width:99%">
                         <tr>
-                            <td>Name:</td>
-                            <td><input type="text" class="au_col2" id="name" name="name" value=<?php set_value('name');?>></td>
-                            <td class="col2">Company:</td>
-                            <td><input type="text" class="au_col2" id="company" name="company" value=<?php set_value('company');?>></td>
+                            <td>First Name:</td>
+                            <td><input type="text" class="au_col2" id="first_name" name="first_name"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td><input type="text" class="au_col2" id="last_name" name="last_name"></td>
                         </tr>
                         <tr>
                             <td>Address:</td>
-                            <td colspan="3"><input style="width:100%" type="text" id="address" name="address" value=<?php set_value('address');?>></td>
+                            <td><input class="au_col2" type="text" id="address" name="address"></td>
+                        </tr>
+                        <tr>
+                            <td>City:</td>
+                            <td><input type="text" class="au_col2" id="city" name="city"></td>
+                        </tr>
+                        <tr>
+                            <td>State:</td>
+                            <td><input type="text" class="au_col2" id="state" name="state"></td>
+                        </tr>
+                        <tr>
+                            <td>Zip code/Postal Code:</td>
+                            <td><input type="text" class="au_col2" id="zip_code" name="zip_code"></td>
+                        </tr>
+                        <tr>
+                            <td>Country:</td>
+                            <td><input type="text" class="au_col2" id="country" name="country"></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td><input type="text" class="au_col2" id="email" name="email"></td>
                         </tr>
                         <tr>
                             <td>Phone:</td>
-                            <td><input type="text" class="au_col2" id="phone" name="phone" value=<?php set_value('phone');?>></td>
-                            <td class="col2">Mobile:</td>
-                            <td><input type="text" class="au_col2" id="mobile" name="mobile" value=<?php set_value('mobile');?>></td>
-                        </tr>
-                        <tr>
-                            <td>Email:</td>
-                            <td><input type="text" class="au_col2" id="email" name="email" value=<?php set_value('email');?>></td>
-                            <td class="col2">Email:</td>
-                            <td><input type="text" class="au_col2" id="email_com" name="email_com" value=<?php set_value('email_com');?>></td>
+                            <td><input type="text" class="au_col2" id="phone" name="phone"></td>
                         </tr>
                         <tr>
                             <td>Contents:</td>
-                            <td colspan="3">
-                                <textarea style="width:100%; height:150px" rows="1" cols="1" id="contents" name="contents"><?php set_value('contents');?></textarea>
+                            <td>
+                                <textarea onclick="eraseText()" style="width:100%; height:80px" rows="1" cols="1" id="contents" name="contents">Text your contact us content here...</textarea>
                             </td>
+                            
                         </tr>
                         <tr>
                             <td>Code:</td>
@@ -68,7 +72,27 @@
                             </td>
                         </tr>
                     </table>
+                    
+                    <script type = "text/javascript">
+						function eraseText() {
+								document.getElementById("contents").value = "";
+						}
+					</script>
                 </div>
+                <table style="font-family:arial;font-size:14px;">
+                        <tr>
+                        	<td>
+                        		<p><b>iStockgold Ecurrency Exchange Company</b></p>
+                        		<p><b>United States:</b></p>
+                        		<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Address:</b> 12433 Admiralty Way S403, Everett, WA, USA</p>
+                        		<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Tel:</b> (+1) 425 346 2341 - Fax: (+1) 425 346 2342</p>
+                        		<p><b>Vietnam:</b></p>
+                        		<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Address:</b> 39 Trung Kinh Str.</p>
+                        		<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Customer Service:</b> (+84) 979-059-029</p>
+                        	</td>
+                        </tr>
+                 </table>
+                 <iframe width="650" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=vi&amp;geocode=&amp;q=39+Trung+K%C3%ADnh,+Y%C3%AAn+Ho%C3%A0,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;aq=0&amp;oq=39+Trung+Kinh&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=39+Trung+K%C3%ADnh,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;z=14&amp;ll=21.017138,105.793871&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=vi&amp;geocode=&amp;q=39+Trung+K%C3%ADnh,+Y%C3%AAn+Ho%C3%A0,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;aq=0&amp;oq=39+Trung+Kinh&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=39+Trung+K%C3%ADnh,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;z=14&amp;ll=21.017138,105.793871" style="color:#0000FF;text-align:left">View large map</a></small>
             </div>
 </div>
 <?php echo form_close();?>
