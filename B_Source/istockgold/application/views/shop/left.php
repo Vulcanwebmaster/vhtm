@@ -29,7 +29,7 @@
                         <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px; color:#ce0701">Home</a>
                     </div>
                     <div class="menuitem">
-                        <a href="<?php  echo base_url()?>allNews">Service news</a>
+                        <a href="<?php  echo base_url()?>news/all-news">Service news</a>
                     </div>
                     <div class="menuitem"><a href="<?php  echo base_url()?>servicefees">Service Fees</a></div>
                     <div class="menuitem"><a href="<?php  echo base_url()?>exchangers">Buy/Sell LR</a></div>

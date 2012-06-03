@@ -13,12 +13,26 @@ class MNews extends CI_Model
 	
 	function getNewsByID($id = 0)
 	{
+		$data = array();
    		$this->db->where('id',id_clean($id));
 		$Q = $this->db->get('is_news');
 		if ($Q->num_rows() > 0){
 	      	$data = $Q->row_array();
 	    }
 	    $Q->free_result();    
+	    return $data;
+	}
+	
+	function getNewsByTitle($title) {
+		$data = array();
+		$this->db->where('title',$title);
+		$Q = $this->db->get('is_news');
+		if ($Q->num_rows() > 0){
+	      	$data = $Q->row_array();
+	    }
+	    $Q->free_result();    
+	    var_dump($data);
+	    die();
 	    return $data;
 	}
 	

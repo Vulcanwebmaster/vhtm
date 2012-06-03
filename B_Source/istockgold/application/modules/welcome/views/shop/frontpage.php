@@ -72,9 +72,9 @@
                     </div>
                     <div class="clearboth"> </div>
                     
-                    <div style="float: right; width: 54%;text-align:justify; padding-bottom: 10px;padding-right: 15px; margin-bottom: 10px; font-size: 13px;">
+                    <div style="float: right; width: auto;text-align:left; padding-bottom: 10px;padding-right: 15px; margin-bottom: 10px; font-size: 13px;">
                     	 <hr align="right" width="80%" style="border-style:solid">
-                    	 <div style="text-align:justify; width:auto">
+                    	 <div style="text-align:left; width:auto">
 	                    	 You pay <input onclick="reset_value();" id="pay_amount" name="amount" onkeyup="update_amount();" value="1000" style="color:red;width: 35px;border-style:none none solid none; border-color:red; border-width:1px">
 	                    	 <span id="pay"></span>, will get <span class="redText" id="get_amount" style="over-flow:hidden; width:20px;border-style:none none solid none; border-color:red; border-width:1px">786.26</span>
 	                    	 
@@ -109,17 +109,17 @@
                     	<ul>
                     		<li>
                     			<img src="<?php echo base_url()?>assets/images/arrow.png" alt="" />
-                                <a class="how-item">Via online exchangers</a>
+                                <a class="how-item" href = <?php echo base_url().'faq/Via-online-exchangers'?>>Via online exchangers</a>
 
                     		</li>
                     		<li>
                     			 <img src="<?php echo base_url()?>assets/images/arrow.png" alt="" />
-                                  <a class="how-item">By a bank wire</a>
+                                  <a class="how-item" href = <?php echo base_url().'faq/By-a-bank-wire'?>>By a bank wire</a>
 
                     		</li>
                     		<li>
                                  <img src="<?php echo base_url()?>assets/images/arrow.png" alt="" />
-                                  <a class="how-item">With a scratch card</a>
+                                  <a class="how-item" href = <?php echo base_url().'faq/With-a-scratch-card'?>>With a scratch card</a>
 
                     		</li>
                     		<li>
@@ -158,11 +158,19 @@
                     <!-- Author: tienlx -->
                     <div id="news-content">
                     	<?php foreach ($topnews as $rs):?>
-                    	<a style="font-size:14px; line-height:20px" href="<?php echo base_url()?>detailnews/<?php echo $rs->id;?>"><img style="border-style:none" alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
+                    	<?php 
+                    		$title = $rs->title;
+                    		$title = str_replace(" ", "-", $title);
+                    		$title = str_replace(":", "-", $title);
+                    		$title = str_replace(".", "-", $title);
+                    		$title = str_replace(",", "-", $title);
+                    		$title = $title."-".$rs->id;
+                    	?>
+                    	<a style="font-size:14px; line-height:20px" href="<?php echo base_url()?>news/<?php echo $title;?>"><img style="border-style:none" alt="" src="<?php echo base_url()?>assets/images/checked.png"/><?php echo $rs->title?></a>
                     	<br />
                     	<?php endforeach;?>
 						<div align="right">
-                            <a href="<?php echo base_url()?>allNews"style="text-decoration:underline; margin-right:20px"><img style="border-style:none" src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/><strong>All WebMoney News</strong></a>
+                            <a href="<?php echo base_url()?>news/all-news"style="text-decoration:underline; margin-right:20px"><img style="border-style:none" src="<?php echo base_url()?>assets/images/play-icon.png" alt=""/><strong>All WebMoney News</strong></a>
                         </div>
                     </div>
                     <!-- End Author: tienlx -->
@@ -178,13 +186,10 @@
             <div id="content3">
                 <div id="comment-header">
                     <img src="<?php echo base_url()?>assets/images/comment-icon.jpg" alt="" />
-                    <a>REVIEWS | Customers Feedback </a>
+                    <a>See What Our Customers say about our service ! </a>
                 </div>
                 
                 <div id="news-control-panel">
-                	<script type="text/javascript"
-                    src="<?php echo base_url()?>assets/js/jquery-1.6.2.min.js">
-                    </script> 
                     <span style="font-size:12px; font-weight:bold">Show</span>
                     <select id="show_id" name = "show_id">
                             <option <?php if (isset($_SESSION['show'])) if ($_SESSION['show'] == 5) echo 'selected = "selected"'?> id = "option5" value = "5" >5</option>
@@ -689,10 +694,8 @@
                                              <label style=" text-decoration:underline; margin-right:5px"><span>*</span><strong>Service Rating:</strong></label>
                                 			<script type="text/javascript">
                                 				$(document).ready(function(){													
-                                    				var flag = 0;
                                     				var ispressed=0;  
                                     				var value = document.getElementById("value");
-                                    				
                                     				var ratingstarvalue = document.getElementById("ratingstarvalue");
                                     				var star1 = document.getElementById("star1");
                                     				var star2 = document.getElementById("star2");
@@ -705,12 +708,10 @@
                                     				$("#star1").mouseenter(function(){
                                         				if (ispressed==0)
                                         				{
-                                        					star1.src="<?php echo base_url();?>assets/images/star.png";
     														star2.src="<?php echo base_url();?>assets/images/star.png";
     														star3.src="<?php echo base_url();?>assets/images/star.png";
     														star4.src="<?php echo base_url();?>assets/images/star.png";
     														star5.src="<?php echo base_url();?>assets/images/star.png";
-    														
                                     						star1.src="<?php echo base_url();?>assets/images/star2.png";
                                         				}
                                         			});
@@ -763,22 +764,16 @@
                                         			
 													$("#star1").mousedown(function(){
 														ispressed=1;
-														star1.src="<?php echo base_url();?>assets/images/star.png";
 														star2.src="<?php echo base_url();?>assets/images/star.png";
 														star3.src="<?php echo base_url();?>assets/images/star.png";
 														star4.src="<?php echo base_url();?>assets/images/star.png";
 														star5.src="<?php echo base_url();?>assets/images/star.png";
-
-														{											
-														flag = 1;
 														star1.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 1;
 														value.innerHTML="Not good";
-														}
 													});
 
 													$("#star2").mousedown(function(){
-														//if (flag == 0)
 														$("#star1").mousedown();
 														star2.src="<?php echo base_url();?>assets/images/star2.png";
 														ratingstarvalue.value = 2;

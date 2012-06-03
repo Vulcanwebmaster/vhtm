@@ -29,7 +29,13 @@ foreach ($detailnews as $key => $list)
 	    	{
 	    		foreach($tinlienquan as $item)
 	    		{
-	    			echo '<li><a style="color:#616060; font-size:13px" href="'.base_url().'detailnews/'.$item->id.'">'.$item->title.'</a></li>';
+			         $title = $item->title;
+			         $title = str_replace(" ", "-", $title);
+			         $title = str_replace(":", "-", $title);
+			         $title = str_replace(".", "-", $title);
+			         $title = str_replace(",", "-", $title);
+			         $title = $title."-".$item->id;
+	    			echo '<li><a style="color:#616060; font-size:13px" href="'.base_url().'news/'.$title.'">'.$item->title.'</a></li>';
 	    		}
 	    	}?>
     	</ul>

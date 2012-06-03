@@ -1,12 +1,9 @@
                 <div id="comment-header">
                     <img src="<?php echo base_url()?>assets/images/comment-icon.jpg" alt="" />
-                    <a>REVIEWS | Customers Feedback </a>
+                    <a>See What Our Customers say about our service ! </a>
                 </div>
                 
                 <div id="news-control-panel">
-                	<script type="text/javascript"
-                    src="<?php echo base_url()?>assets/js/jquery-1.6.2.min.js">
-                    </script> 
                     <span style="font-size:12px; font-weight:bold">Show</span>
                     <select id="show_id" name = "show_id">
                             <option <?php if (isset($_SESSION['show'])) if ($_SESSION['show'] == 5) echo 'selected = "selected"'?> id = "option5" value = "5" >5</option>

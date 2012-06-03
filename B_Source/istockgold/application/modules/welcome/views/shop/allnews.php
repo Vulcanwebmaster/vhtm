@@ -1,5 +1,5 @@
 <!-- Author: tienlx -->
-<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/tintuc.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/tintuc.css">
 <div id="main-column">
 	<ul id="mapsite">
 		<li><a href="<?php echo base_url();?>">Home</a></li>
@@ -11,7 +11,15 @@
 </div>
 <div class="box">
 <?php foreach ($allnews as $rs):?> 
-	<div class="ctitle"><a href="<?php echo base_url();?>detailnews/<?php echo $rs->id;?>"><img style="border-style:none; margin-right:7px" alt="" src="<?php echo base_url();?>assets/images/ico_n.gif"/><?php echo $rs->title?></a></div>
+	<?php 
+         $title = $rs->title;
+         $title = str_replace(" ", "-", $title);
+         $title = str_replace(":", "-", $title);
+         $title = str_replace(".", "-", $title);
+         $title = str_replace(",", "-", $title);
+         $title = $title."-".$rs->id;
+    ?>
+	<div class="ctitle"><a href="<?php echo base_url();?>news/<?php echo $title;?>"><img style="border-style:none; margin-right:7px" alt="" src="<?php echo base_url();?>assets/images/ico_n.gif"/><?php echo $rs->title?></a></div>
     <br/>
 <?php endforeach;?>
 </div>

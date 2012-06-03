@@ -44,13 +44,15 @@ $route['default_controller'] = "welcome";
 $route['scaffolding_trigger'] = "";
 
 $route['faq'] = 'welcome/faq';
+$route['faq/(:any)'] = 'welcome/faq/$1';
 $route['wu2lr'] = 'welcome/wu2lr';
 $route['lr2wu'] = 'welcome/lr2wu';
 $route['order'] = 'welcome/order';
 $route['order/:num'] = 'welcome/order/$1';
 $route['ourcompany'] = 'welcome/ourcompany';
 $route['contact'] = 'welcome/contact';
-$route['allNews'] = 'welcome/allNews';
+$route['news/all-news'] = 'welcome/allNews';
+$route['news/(:any)'] = 'welcome/detailnews/$1';
 $route['detailnews/:num'] = 'welcome/detailnews/$1';
 $route['ajax_review'] = 'welcome/ajax_review';
 $route['ajax_review/:num'] = 'welcome/ajax_review/$1';

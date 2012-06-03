@@ -13,4 +13,9 @@ if (count($faq))
 foreach ($faq as $key => $list)
 	echo $list['content'];
 ?>
+<?php if ($param != "")
+	echo '<script type="text/javascript">
+document.body.scrollTop = 300;
+</script>';
+?>
 </div>

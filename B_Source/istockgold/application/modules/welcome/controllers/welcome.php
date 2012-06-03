@@ -126,7 +126,7 @@ class Welcome extends Shop_Controller
         $config['total_rows']= $this->getNumReviews(); 
 		if (isset($_SESSION['show'])) $config['per_page']= $_SESSION['show'];
 		else $config['per_page']= 5;
-		$config['base_url'] = base_url()."ajax_review";
+		$config['base_url'] = base_url()."index.php/welcome/ajax_review";
 		$config['div'] = '#content3';
 	    $this->jquery_pagination->initialize($config);
 		$data['reviews'] = $this->MNews->getReviews($config['per_page'],0);
@@ -766,7 +766,11 @@ class Welcome extends Shop_Controller
         $data['module'] = $this->module;
         $data['tinlienquan']=$this->tinlienquan();
         $fields = array('id','title','content','date');
-        $data['detailnews'] = $this->MIStockGold->getAllSimple("news","id",$this->uri->segment('2'));
+        $title = $this->uri->segment('2');
+        $pos = strrpos($title,"-");
+        if ($pos != false)
+        	$id = substr($title, $pos+1);
+        $data['detailnews'] = $this->MIStockGold->getAllSimple("news","id",$id);
         $this->load->view($this->_container,$data);
     }
 
@@ -791,6 +795,7 @@ class Welcome extends Shop_Controller
     
 	function faq()
     {
+    	$data['param'] = $this->uri->segment('2');
         $data['title'] = $this->preference->item('site_name')." | "."FAQ";
         $data['page'] = $this->config->item('backendpro_template_shop') . 'faq';
         $data['module'] = $this->module;
