@@ -35,12 +35,13 @@
 		 * @param {Window} win Window to bind the selection object to.
 		 * @param {tinymce.dom.Serializer} serializer DOM serialization class to use for getContent.
 		 */
-		Selection : function(dom, win, serializer) {
+		Selection : function(dom, win, serializer, editor) {
 			var t = this;
 
 			t.dom = dom;
 			t.win = win;
 			t.serializer = serializer;
+			t.editor = editor;
 
 			// Add events
 			each([
@@ -1170,14 +1171,73 @@
 			}
 		},
 
-		destroy : function(s) {
-			var t = this;
+		/**
+		 * Executes callback of the current selection matches the specified selector or not and passes the state and args to the callback.
+		 *
+		 * @method selectorChanged
+		 * @param {String} selector CSS selector to check for.
+		 * @param {function} callback Callback with state and args when the selector is matches or not.
+		 */
+		selectorChanged: function(selector, callback) {
+			var self = this, currentSelectors;
 
-			t.win = null;
+			if (!self.selectorChangedData) {
+				self.selectorChangedData = {};
+				currentSelectors = {};
+
+				self.editor.onNodeChange.addToTop(function(ed, cm, node) {
+					var dom = self.dom, parents = dom.getParents(node, null, dom.getRoot()), matchedSelectors = {};
+
+					// Check for new matching selectors
+					each(self.selectorChangedData, function(callbacks, selector) {
+						each(parents, function(node) {
+							if (dom.is(node, selector)) {
+								if (!currentSelectors[selector]) {
+									// Execute callbacks
+									each(callbacks, function(callback) {
+										callback(true, {node: node, selector: selector, parents: parents});
+									});
+
+									currentSelectors[selector] = callbacks;
+								}
+
+								matchedSelectors[selector] = callbacks;
+								return false;
+							}
+						});
+					});
+
+					// Check if current selectors still match
+					each(currentSelectors, function(callbacks, selector) {
+						if (!matchedSelectors[selector]) {
+							delete currentSelectors[selector];
+
+							each(callbacks, function(callback) {
+								callback(false, {node: node, selector: selector, parents: parents});
+							});
+						}
+					});
+				});
+			}
+
+			// Add selector listeners
+			if (!self.selectorChangedData[selector]) {
+				self.selectorChangedData[selector] = [];
+			}
+
+			self.selectorChangedData[selector].push(callback);
+
+			return self;
+		},
+
+		destroy : function(manual) {
+			var self = this;
+
+			self.win = null;
 
 			// Manual destroy then remove unload handler
-			if (!s)
-				tinymce.removeUnload(t.destroy);
+			if (!manual)
+				tinymce.removeUnload(self.destroy);
 		},
 
 		// IE has an issue where you can't select/move the caret by clicking outside the body if the document is in standards mode
