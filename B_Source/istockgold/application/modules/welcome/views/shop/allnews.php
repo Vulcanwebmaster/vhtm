@@ -7,7 +7,7 @@
 		<li><a>News</a></li>
 	</ul>
 <div id="au-title" style="clear:both">
-	<label>All News</label>
+	<label>All News <?php if (isset($tag)) echo '| Tag:'.$tag;?></label>
 </div>
 <div class="box">
 <?php foreach ($allnews as $rs):?> 

@@ -791,6 +791,19 @@ class Welcome extends Shop_Controller
         $data['allnews'] = $listnews;
         $this->load->view($this->_container,$data);
     }
+    
+	function allNewsWithTag($tag){
+    	$data['title'] = $this->preference->item('site_name')." | "."All WebMonyNew";
+        $data['page'] = $this->config->item('backendpro_template_shop') . 'allnews';
+        $data['module'] = $this->module;
+        $fields = array('id','title','content','date');
+        $this->db->like('tag',$tag,'both');
+        $query =$this->db->get("is_news");
+        $listnews = $query->result();
+        $data['allnews'] = $listnews;
+        $data['tag']=$tag;
+        $this->load->view($this->_container,$data);
+    }
     //End Author: tienlx
     
 	function faq()
