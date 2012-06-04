@@ -238,6 +238,6 @@ body{margin:0px}
 #related-news{border:solid 1px silver; border-radius:5px; font-size:13px; padding:0 10px; margin-bottom:15px}
 
 /*====================TAGS BOX====================*/
-#tags-box{border:solid 1px #9d9d9d; overflow-y:auto; color:#026197; border-radius:10px 10px 0 0; height:200px}
+#tags-box{border:solid 1px #9d9d9d; overflow-y:auto; color:#026197; border-radius:5px 5px 0 0; height:200px}
 #tags-box div{padding:10px}
 #img-tag{margin-left:-6px}
