@@ -24,7 +24,24 @@
 			<input type="text" name="price-filter" id="price-filter" style="width:95%; background-color:#f3f3f3"/>
 			<center><input type="submit" name="submit" id="submit" value="Lọc"/></center>
 		</form>
-	</div>              
+	</div>
+	
+<!-- Fileter By Kho -->              
+	<div style="margin-bottom:10px; border:solid 1px white; border-radius:5px; padding:10px">
+		<form name="filterByKho" method="post" action="<?php echo base_url();?>index.php/welcome/filterByKhoId">
+			<p style="margin:0; font-size:13px; text-shadow:0 1px 0 white">Lọc theo kho</p>
+			<select name="kho-filter" id="kho-filter" style="width:95%; background-color:#f3f3f3">
+				<?php $list=$this->MKaimonokago->getListKho();
+					foreach($list as $kho)
+					{
+						echo '<option value="'.$kho->kho_id.'">'.$kho->kho_name.'</option>';
+					}
+				?>			
+			</select>
+			<center><input type="submit" name="submitKhoId" id="submitKhoId" value="Lọc"/></center>
+		</form>
+	</div>
+<!--  -->
     <div class="foxmenucontainer" id="col-right">
                 <div id="menu">
                     <ul id="pagemenu">

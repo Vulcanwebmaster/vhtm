@@ -10,6 +10,7 @@ class MKaimonokago extends Base_model
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->database();
     }
 
 
@@ -479,6 +480,20 @@ class MKaimonokago extends Base_model
     	}
     	$list->free_result();
     	return $ds;
+    }
+    
+    function getProductById($id)
+    {
+    	$this->db->where('id',$id);
+    	$ds=$this->db->get('omc_products');
+    	if ($ds->num_rows()>0)
+    	{
+    		$list=$ds->result_array();
+    		$item=$list[0];
+    		$ds->free_result();
+    		return $item;
+    	}
+    	else return false;
     }
 }
 

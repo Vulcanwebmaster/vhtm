@@ -1142,6 +1142,52 @@ class Welcome extends Shop_Controller
     
 	
     
+    /*
+     * filter by Kho
+     */
+    function countFilterByKho($id_kho)
+    {
+    	$this->db->where('kho_id',$id_kho);
+    	$ds=$this->db->get('shop_sanphamkho');
+    	$amount=$ds->num_rows();
+    	$ds->free_result();
+    	return $amount;
+    }
+    
+    function filterByKhoId()
+    {
+    	if ($this->input->post('submitKhoId'))
+    	{
+    		$id_kho=$this->input->post('kho-filter');
+    		$this->getPageByKho($id_kho);
+    	}
+    }
+    
+    function getPageByKho($id_kho=0,$index=0)
+    {
+    	$this->db->where('kho_id',$id_kho);
+    	$result=$this->db->get('shop_sanphamkho',9,$index);
+    	$config['base_url']=base_url().'index.php/welcome/getPageByKho/'.$id_kho;
+    	$config['total_rows']=$this->countFilterByKho($id_kho);
+    	$config['per_page']=9;
+    	$this->pagination->initialize($config);
+    	
+    	$list=array();
+    	foreach($result->result_array() as $item)
+    	{
+    		$list[]=$this->MKaimonokago->getProductById($item['id']);
+    	}
+    	$result->free_result();
+    	$data['fsearch']=$list;
+    	
+    	$data['page']=$this->config->item('backendpro_template_shop').'search_home';
+    	$data['module']=$this->module;
+    	$this->load->view($this->_container,$data);
+    }
+    /*
+     * 
+     */
+    
     function get_page($fsearch,$index=0)
     {
     		
