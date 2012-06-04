@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#servicefees').removeClass('menu-text');
+		$('#servicefees').css('color','#ce0701');
+	});
+</script>
+
 <!-- Author: tienlx -->
 <div id="main-column">
 

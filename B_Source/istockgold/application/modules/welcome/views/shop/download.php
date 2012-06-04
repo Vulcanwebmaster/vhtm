@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#download').removeClass('menu-text');
+		$('#download').css('color','#ce0701');
+	});
+</script>
+
 <!-- Author: tienlx -->
 <div id="main-column">
 <ul id="mapsite">

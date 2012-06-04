@@ -1,3 +1,11 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#exchanges').removeClass('menu-text');
+		$('#exchanges').css('color','#ce0701');
+	});
+</script>
+
+
 <!-- Author: tienlx -->
 <div id="main-column">
 <ul id="mapsite">

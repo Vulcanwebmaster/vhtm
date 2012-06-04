@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#consummeralert').removeClass('menu-text');
+		$('#consummeralert').css('color','#ce0701');
+	});
+</script>
+
 <!-- Author: tienlx -->
 <div id="main-column">
 <ul id="mapsite">

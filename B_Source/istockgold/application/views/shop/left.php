@@ -21,21 +21,23 @@
 ?>
 </div>
 -->
+
+
 <div id="left-column">
             <div id="menu">
                 <div style="padding-top:20px; padding-left:40px">
                     <div class="menuitem">
                         <img alt="" src="<?php echo base_url()?>assets/images/house-icon.png" style="float:left"/>
-                        <a href="<?php echo site_url()?>" style="float:left; margin-left:-20px; color:#ce0701">Home</a>
+                        <a class="menu-text" id="home" href="<?php echo site_url()?>" style="float:left; margin-left:-20px">Home</a>
                     </div>
                     <div class="menuitem">
-                        <a href="<?php  echo base_url()?>news/all-news">Service news</a>
+                        <a class="menu-text" id="all-news" href="<?php  echo base_url()?>news/all-news">Service news</a>
                     </div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>servicefees">Service Fees</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>exchangers">Buy/Sell LR</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>merchants">Merchants</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>download">Downloads</a></div>
-                    <div class="menuitem"><a href="<?php  echo base_url()?>consummeralert">Consummer Alert</a></div>
+                    <div class="menuitem"><a class="menu-text" id="servicefees" href="<?php  echo base_url()?>servicefees">Service Fees</a></div>
+                    <div class="menuitem"><a class="menu-text" id="exchanges" href="<?php  echo base_url()?>exchangers">Buy/Sell LR</a></div>
+                    <div class="menuitem"><a class="menu-text" id="merchangers" href="<?php  echo base_url()?>merchants">Merchants</a></div>
+                    <div class="menuitem"><a class="menu-text" id="download" href="<?php  echo base_url()?>download">Downloads</a></div>
+                    <div class="menuitem"><a class="menu-text" id="consummeralert" href="<?php  echo base_url()?>consummeralert">Consummer Alert</a></div>
                 </div>
             </div>
            <div id="support">

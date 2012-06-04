@@ -45,6 +45,20 @@
                             ?>
 				 <!--End of content-->
 	</div>
+	
+	<!-- menuitem when mouse leave and enter-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menu-text').mouseenter(function(){
+					$(this).css('color','#ce0701');
+			});
+			$('.menu-text').mouseleave(function(){
+					$(this).css('color','#4F5959');
+			});
+		});
+	</script>
+	<!---->
+	
     <div id="footer-panel"> 
       
       <?php $this->load->view($this->config->item('backendpro_template_shop') . 'footer');?>

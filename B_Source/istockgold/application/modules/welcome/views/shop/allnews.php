@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#all-news').removeClass('menu-text');
+		$('#all-news').css('color','#ce0701');
+	});
+</script>
+
 <!-- Author: tienlx -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/tintuc.css">
 <div id="main-column">

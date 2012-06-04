@@ -9,7 +9,10 @@
         	document.getElementById('get_amount').innerHTML = '0';
 		}
     }
-	
+	$(document).ready(function(){
+		$('#home').removeClass('menu-text');
+		$('#home').css('color','#ce0701');
+	});
 </script>
 <style type="text/css">
 	form{clear:both}
