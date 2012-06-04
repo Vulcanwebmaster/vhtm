@@ -9,6 +9,24 @@
 <div id="au-title">
 	<label>Contact us</label>
 </div>
+<script type="text/javascript">
+	                    	 	$(document).ready(function(){
+									$('#Submit').mouseenter(function(){
+										$(this).css('background-image','url(<?php echo base_url();?>assets/images/submitbt2.png)');
+										});
+									$('#Submit').mouseleave(function(){
+										$(this).css('background-image','url(<?php echo base_url();?>assets/images/submitbt1.png)');
+										});
+		                    	 	});	                    	 	
+	                    	 </script>
+	                    	 
+				<?php if (validation_errors())
+				{?>
+				<div id="error-panel">
+					<?php 
+					echo validation_errors('<div class="message_error">','</div>'); ?>
+				</div>
+				<?php }?>
 <div style="margin-top:15px">
 		<div style="padding-left:80px; padding-right:80px; padding-top:20px">
 			<label style="font-family:arial; font-size:12px; font-weight:bold">Please insert your infomation into form (All fields are required):</label>
@@ -66,14 +84,13 @@
                                         <td> <?php echo $cap;?></td>
                                     </tr>
                                     <tr>
-                                    <td> <input type="submit" name="submit" value="Submit" /></td>
+                                        <td> <input id ="Submit" type="submit" name="Submit" value="Submit"/></td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                     </table>
-                    
-                    <script type = "text/javascript">
+					<script type = "text/javascript">
 						function eraseText() {
 								document.getElementById("contents").value = "";
 						}

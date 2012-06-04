@@ -545,7 +545,7 @@ class Welcome extends Shop_Controller
                 );
                 
                 $orderId = $this->MOrders->addOrder($data, true);
-                $redirect_to = "/order/".$orderId;
+                $redirect_to = "order/".$orderId;
                 redirect( base_url().$redirect_to);
             }
         }// end of if($this->input->post('email'))
@@ -744,17 +744,40 @@ class Welcome extends Shop_Controller
 	function contact()
     {
     	$data['cap'] = $this->_generate_captcha();
-        $data['title'] = $this->preference->item('site_name')." | "."Contact us";
-        $data['page'] = $this->config->item('backendpro_template_shop') . 'contact';
-        $data['module'] = $this->module;
-        $this->form_validation->set_rules('name','name','required');
-		$this->form_validation->set_rules('email','email','required');
-		$this->form_validation->set_rules('recaptcha_response_field','captcha','required|valid_captcha');
-        if($this->form_validation->run()){
-			if ($this->MContactUs->save()){
-				redirect(base_url().'contact');
-			}
-        }
+	    $data['title'] = $this->preference->item('site_name')." | "."Contact us";
+	    $data['page'] = $this->config->item('backendpro_template_shop') . 'contact';
+	    $data['module'] = $this->module;
+    	if ($this->input->post('email'))
+    	{
+	    	$this->form_validation->set_rules('first_name','first_name','required');
+			$this->form_validation->set_rules('last_name','last_name','required');
+			$this->form_validation->set_rules('address','address','required');
+			$this->form_validation->set_rules('city','city','required');
+			$this->form_validation->set_rules('state','state','required');
+			$this->form_validation->set_rules('zip_code','zip_code','required|numeric');
+			$this->form_validation->set_rules('country','country','required');
+			$this->form_validation->set_rules('phone','phone','required|numeric');
+			$this->form_validation->set_rules('email','email','required|valid_email');
+			$this->form_validation->set_rules('recaptcha_response_field','captcha','required|valid_captcha');
+			$fields['email']	                = "Email";
+	        $fields['first_name']	    		= "First Name";
+	        $fields['last_name']	    		= "Last Name";
+	        $fields['city']	                	= "City";
+	        $fields['state']	                = "State";
+	        $fields['country']	                = "Country";
+	        $fields['zip_code']	           		= "Zip Code";
+	        $fields['phone']	           		= "Phone";
+	        $fields['recaptcha_response_field']	= 'Recaptcha';
+	        $this->form_validation->set_fields($fields);
+	        if($this->form_validation->run() == FALSE){
+				$this->form_validation->output_errors();
+	        } else 
+	        {
+	        	if ($this->MContactUs->save()){
+					redirect(base_url().'contact');
+				}
+	        }
+    	}
         $this->load->view($this->_container,$data);
     }
     
