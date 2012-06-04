@@ -6,7 +6,7 @@
 			$slide=$this->MKaimonokago->homepageLoadNoiDung('slide');
 			foreach(explode(',', $slide->dulieu) as $item)
 			{
-				echo '<img src="'.$item.'" alt="" />';
+				echo '<img src="'.base_url().trim($item).'" alt="" />';
 			}
 		}?>
           <!-- img src="<?php echo base_url();?>assets/unix/images/khoahoc-slide.jpg" alt="" />

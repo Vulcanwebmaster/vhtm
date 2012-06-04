@@ -53,7 +53,7 @@
 					$images=$this->MKaimonokago->homepageLoadNoiDung('images');
 					foreach(explode(',', $images->dulieu) as $item)
 					{
-						echo '<a><img alt="" src="'.$item.'" height="150px"/></a>';
+						echo '<a><img alt="" src="'.base_url().trim($item).'" height="150px"/></a>';
 					}
 				}?>
 				<!-- a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/1.jpg" height="150px"/></a>
