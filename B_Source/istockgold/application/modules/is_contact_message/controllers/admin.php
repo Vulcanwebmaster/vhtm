@@ -36,7 +36,7 @@ class Admin extends Shop_Admin_Controller
 
     function common_home()
     {
-        $fields = array('message_id','name','company');
+        $fields = array('message_id','first_name','last_name','email');
         $orderby = array('message_id');
         $data['contact'] = $this->MIStockGold->getAll("contact_us",$fields,$orderby);
         return $data;

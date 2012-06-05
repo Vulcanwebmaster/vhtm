@@ -639,7 +639,6 @@ class Welcome extends Shop_Controller
 	    	{
 	    		$data['order'] =  $order;
 	    	}
-	    		
 	    	$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
 		    $data['page'] = $this->config->item('backendpro_template_shop') . 'pcancel';
 		    $data['module'] = $this->module;
@@ -662,7 +661,6 @@ class Welcome extends Shop_Controller
 	    	{
 	    		$data['order'] =  $order;
 	    	}
-	    		
 	    	$data['title'] = $this->preference->item('site_name')." | ". "Order Status";
 		    $data['page'] = $this->config->item('backendpro_template_shop') . 'psuccess';
 		    $data['module'] = $this->module;
@@ -758,6 +756,7 @@ class Welcome extends Shop_Controller
 			$this->form_validation->set_rules('country','country','required');
 			$this->form_validation->set_rules('phone','phone','required|numeric');
 			$this->form_validation->set_rules('email','email','required|valid_email');
+			$this->form_validation->set_rules('contents','contents','required');
 			$this->form_validation->set_rules('recaptcha_response_field','captcha','required|valid_captcha');
 			$fields['email']	                = "Email";
 	        $fields['first_name']	    		= "First Name";
@@ -767,6 +766,7 @@ class Welcome extends Shop_Controller
 	        $fields['country']	                = "Country";
 	        $fields['zip_code']	           		= "Zip Code";
 	        $fields['phone']	           		= "Phone";
+	        $fields['contents']	           		= "Content";
 	        $fields['recaptcha_response_field']	= 'Recaptcha';
 	        $this->form_validation->set_fields($fields);
 	        if($this->form_validation->run() == FALSE){

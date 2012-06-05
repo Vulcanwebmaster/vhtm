@@ -9,22 +9,26 @@ class MContactUs extends CI_Model
     
     function save()
     {
-		$name = $this->input->post('name');
-		$company = $this->input->post('company');
+		$first_name = $this->input->post('first_name');
+		$last_name = $this->input->post('last_name');
 		$address = $this->input->post('address');
-		$phone = $this->input->post('phone');
-		$mobile = $this->input->post('mobile');
+		$city = $this->input->post('city');
+		$state = $this->input->post('state');
 		$email = $this->input->post('email');
-		$email_com = $this->input->post('email_com');
+		$zip_code = $this->input->post('zip_code');
+		$country = $this->input->post('country');
+		$phone = $this->input->post('phone');
 		$contents = $this->input->post('contents');
 		$data = array(
-			'name' => $name,
-			'company' => $company,
+			'first_name' => $first_name,
+			'last_name' => $last_name,
             'address' => $address,
-            'phone' => $phone,
-			'mobile' => $phone,
+            'city' => $city,
+			'state' => $state,
 			'email' => $email,
-			'email_com' => $email_com,
+			'zip_code' => $zip_code,
+            'country' => $country,
+            'phone' => $phone,
 			'contents' => $contents
  		);
 		if($this->db->insert('is_contact_us',$data)){

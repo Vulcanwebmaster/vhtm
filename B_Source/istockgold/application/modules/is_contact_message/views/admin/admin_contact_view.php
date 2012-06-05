@@ -7,32 +7,36 @@
 			<td><?php echo $contact['message_id']?></td>
 		</tr>
 		<tr>
-			<td><strong>Name </strong>:</td>
-			<td><?php echo $contact['name']?></td>
+			<td><strong>First Name </strong>:</td>
+			<td><?php echo $contact['first_name']?></td>
 		</tr>
 		<tr>
-			<td><strong>Company </strong>:</td>
-			<td><?php echo $contact['company']?></td>
+			<td><strong>Last Name </strong>:</td>
+			<td><?php echo $contact['last_name']?></td>
 		</tr>
 		<tr>
 			<td><strong>Address </strong>:</td>
 			<td><?php echo $contact['address']?></td>
+		</tr>
+				<tr>
+			<td><strong>City </strong>:</td>
+			<td><?php echo $contact['city']?></td>
+		</tr>
+		<tr>
+			<td><strong>State</strong>:</td>
+			<td><?php echo $contact['state']?></td>
+		</tr>
+		<tr>
+			<td><strong>Country</strong>:</td>
+			<td><?php echo $contact['country']?></td>
 		</tr>
 		<tr>
 			<td><strong>Phone </strong>:</td>
 			<td><?php echo $contact['phone']?></td>
 		</tr>
 		<tr>
-			<td><strong>Mobile </strong>:</td>
-			<td><?php echo $contact['mobile']?></td>
-		</tr>
-		<tr>
 			<td><strong>Email </strong>:</td>
 			<td><?php echo $contact['email']?></td>
-		</tr>
-		<tr>
-			<td><strong>Email Company </strong>:</td>
-			<td><?php echo $contact['email_com']?></td>
 		</tr>
 		<tr>
 			<td><strong>Content </strong>:</td>

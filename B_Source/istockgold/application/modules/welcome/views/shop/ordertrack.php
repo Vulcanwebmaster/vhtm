@@ -1,4 +1,14 @@
  <div id="main-column">
+ <script type="text/javascript">
+	                    	 	$(document).ready(function(){
+									$('#Submit').mouseenter(function(){
+										$(this).css('background-image','url(<?php echo base_url();?>assets/images/submitbt2.png)');
+										});
+									$('#Submit').mouseleave(function(){
+										$(this).css('background-image','url(<?php echo base_url();?>assets/images/submitbt1.png)');
+										});
+		                    	 	});	                    	 	
+	                    	 </script>
  <ul id="mapsite">
 		<li><a href="<?php echo base_url();?>">Home</a></li>
 		<li>></li>
@@ -44,7 +54,7 @@
                             </div>
                         </div>
                         <div class="tracking-row" align="right">
-                            <input type="submit" name="submit" value="Track" />
+                            <input type="submit" name="Submit" id="Submit" value="Track" />
                         </div>
                     </div>
                     <?php echo form_close(); ?>

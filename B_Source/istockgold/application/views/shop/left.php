@@ -24,7 +24,7 @@
 
 
 <div id="left-column">
-            <div id="menu">
+	        <div id="menu">
                 <div style="padding-top:20px; padding-left:40px">
                     <div class="menuitem">
                         <img alt="" src="<?php echo base_url()?>assets/images/house-icon.png" style="float:left"/>
@@ -218,15 +218,15 @@ self.setInterval("time()",3000);
             			for ($i=0;$i<count($tags);$i+=5)
             			{
             				if ($i<count($tags))
-            					echo '<a href="'.base_url().'index.php/welcome/allNewsWithTag/'.trim($tags[$i]).'" style=" color:#026197; font-size:12px"><strong> '.$tags[$i].',</strong></a>';
+            					echo '<a href="'.base_url().'news/tags/'.trim($tags[$i]).'" style=" color:#026197; font-size:12px"><strong> '.$tags[$i].',</strong></a>';
             				if ($i+1<count($tags))
-            					echo '<a href="'.base_url().'index.php/welcome/allNewsWithTag/'.trim($tags[$i+1]).'" style=" color:#026197; font-size:10px"><strong> '.$tags[$i+1].',</strong></a>';
+            					echo '<a href="'.base_url().'news/tags/'.trim($tags[$i+1]).'" style=" color:#026197; font-size:10px"><strong> '.$tags[$i+1].',</strong></a>';
             				if ($i+2<count($tags))
-            					echo '<a href="'.base_url().'index.php/welcome/allNewsWithTag/'.trim($tags[$i+2]).'" style=" color:#026197; font-size:22px"><strong> '.$tags[$i+2].',</strong></a>';
+            					echo '<a href="'.base_url().'news/tags/'.trim($tags[$i+2]).'" style=" color:#026197; font-size:22px"><strong> '.$tags[$i+2].',</strong></a>';
             				if ($i+3<count($tags))
-            					echo '<a href="'.base_url().'index.php/welcome/allNewsWithTag/'.trim($tags[$i+3]).'" style=" color:#026197; font-size:20px"><strong> '.$tags[$i+3].',</strong></a>';
+            					echo '<a href="'.base_url().'news/tags/'.trim($tags[$i+3]).'" style=" color:#026197; font-size:20px"><strong> '.$tags[$i+3].',</strong></a>';
             				if ($i+4<count($tags))
-            					echo '<a href="'.base_url().'index.php/welcome/allNewsWithTag/'.trim($tags[$i+4]).'" style=" color:#026197; font-size:22px"><strong> '.$tags[$i+4].',</strong></a>';
+            					echo '<a href="'.base_url().'news/tags/'.trim($tags[$i+4]).'" style=" color:#026197; font-size:22px"><strong> '.$tags[$i+4].',</strong></a>';
             			}
             		?>
             	</div>

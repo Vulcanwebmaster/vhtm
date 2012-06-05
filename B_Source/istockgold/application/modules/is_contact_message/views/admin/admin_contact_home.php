@@ -11,10 +11,13 @@
                                         <h4> MessageId</h4>
                                     </td>
                                     <td width="40%">
-                                        <h4> Name</h4>
+                                        <h4> First Name</h4>
                                     </td>
                                     <td width="40%">
-                                        <h4> Company</h4>
+                                        <h4> Last Name</h4>
+                                    </td>
+                                    <td width="60%">
+                                        <h4> Email</h4>
                                     </td>
                                     <td width="40%">
                                         <h4> Delete</h4>
@@ -30,10 +33,13 @@ foreach ($contact as $key => $list)
 	echo '<a href="'.base_url().'index.php/is_contact_message/admin/view/'.$list['message_id'].'">'.$list['message_id'].'</a>';
 	echo "</td>";
  	echo "<td>";
-	echo $list['name'];
+	echo $list['first_name'];
 	echo "</td>";
 	echo "<td>";
-	echo $list['company'];
+	echo $list['last_name'];
+	echo "</td>";
+	echo "<td>";
+	echo $list['email'];
 	echo "</td>";
 	echo "</td><td style=\"text-align: center; line-height: 16px\" nowrap=\"nowrap\">
 						 	<a href='".base_url()."index.php/is_contact_message/admin/delete/".$list['message_id'].

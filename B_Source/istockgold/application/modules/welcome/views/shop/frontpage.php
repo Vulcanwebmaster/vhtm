@@ -1,6 +1,4 @@
-﻿
-
-<script type="text/javascript">
+﻿<script type="text/javascript">
 	var rateData = <?php echo json_encode($rateData); ?>;
 	function reset_value()
 	{
@@ -9,9 +7,17 @@
         	document.getElementById('get_amount').innerHTML = '0';
 		}
     }
+ </script>
+<script type="text/javascript">
 	$(document).ready(function(){
 		$('#home').removeClass('menu-text');
 		$('#home').css('color','#ce0701');
+		$('.menu-text').mouseenter(function(){
+			$(this).css('color','#ce0701');
+		});
+		$('.menu-text').mouseleave(function(){
+			$(this).css('color','#4F5959');
+		});
 	});
 </script>
 <style type="text/css">
@@ -643,14 +649,14 @@
                                 			$('#exampletrigger').css('color','#53b0da');
                                     	});
 										$('#exampletrigger').click(function(){
-											if (exampletrigger.innerHTML=="Hide examples")
+											if (document.getElementById("exampletrigger").innerHTML=="Hide examples")
 											{
-												exampletrigger.innerHTML="Show examples";
+												document.getElementById("exampletrigger").innerHTML="Show examples";
 												$('#examples').slideUp(500);
 											}
-											else if (exampletrigger.innerHTML=="Show examples")
+											else if (document.getElementById("exampletrigger").innerHTML=="Show examples")
 											{
-												exampletrigger.innerHTML="Hide examples";
+												document.getElementById("exampletrigger").innerHTML="Hide examples";
 												$('#examples').slideDown(500);
 											}
 										});
