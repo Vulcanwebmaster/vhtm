@@ -1,9 +1,4 @@
 <?php
-	if(!defined('AJAX_INIT_DONE'))
-	{
-		die('Permission denied');
-	}
-?><?php
 	/**
 	 * function avaialble to the file manager
 	 * @author Logan Cai (cailongqun [at] yahoo [dot] com [dot] cn)
@@ -42,7 +37,7 @@ if (!function_exists("stripos"))
 					$strAppend = "?";
 					$count++;
 				}
-				$output .= $strAppend . urlencode($k) . "=" . urlencode($v);
+				$output .= $strAppend . $k . "=" . $v;
 			}
 		}
 		return $output;
@@ -232,18 +227,14 @@ function prependSlash($value)
 
 	function writeInfo($data, $die = false)
 	{
-		
-/*		$fp = @fopen(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'data.php', 'w+');
-		$data  = '<?php
-	die();
-?>' . "\n" . $data; 
+		$fp = @fopen(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'data.php', 'w+');
 		@fwrite($fp, $data);
 		@fwrite($fp, "\n\n" . date('d/M/Y H:i:s') );
 		@fclose($fp);
 		if($die)
 		{
 			die();
-		}*/
+		}
 		
 	}
 
@@ -292,7 +283,7 @@ function addNoCacheHeaders() {
 		{
 			if(array_search($k, $excluded) === false)
 			{
-				$output .= ($count>1?'&':'') . (urlencode($k) . "=" . urlencode($v));
+				$output .= ($count>1?'&':'') . ($k . "=" . $v);
 				$count++;
 			}
 		}

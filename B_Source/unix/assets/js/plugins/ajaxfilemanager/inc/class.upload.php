@@ -1,9 +1,4 @@
 <?php
-	if(!defined('AJAX_INIT_DONE'))
-	{
-		die('Permission denied');
-	}
-?><?php
 	/**
 	 * This class provide all file upload functionalities
 	 * @author Logan Cai (cailongqun [at] yahoo [dot] com [dot] cn)

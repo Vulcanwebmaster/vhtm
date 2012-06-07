@@ -1,9 +1,4 @@
 <?php
-	if(!defined('AJAX_INIT_DONE'))
-	{
-		die('Permission denied');
-	}
-?><?php
 	/**
 	 * sysem base config setting
 	 * @author Logan Cai (cailongqun [at] yahoo [dot] com [dot] cn)

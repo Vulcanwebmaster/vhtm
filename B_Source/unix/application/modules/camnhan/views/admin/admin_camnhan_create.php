@@ -1,5 +1,19 @@
 <h2><?php echo $title;?></h2>
+<link type="text/css" href="<?php echo base_url();?>assets/css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui-1.8.20.custom.min.js"></script>
+<script>
+	$(function() {
+		$( "#ngaythang" ).datepicker();
+	});
 
+	$(function(){
+		$( "#ngaythang" ).change(function(){
+			var x = document.getElementById("ngaythang").value;
+			document.getElementById("ngaythang").value = $.datepicker.formatDate('yy-mm-dd', new Date(x));
+			});
+	});
+</script>
 <?php
 echo form_open('camnhan/admin/create');
 echo "\n<table id='preference_form'>";

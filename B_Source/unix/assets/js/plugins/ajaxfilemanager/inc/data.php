@@ -1,8 +1,8 @@
 <pre>Array
 (
     [currentFolderPath] => ../../../../assets/images/
-    [new_folder] => Licensing
+    [new_folder] => image-test
 )
 </pre>
 
-19/Dec/2011 04:13:13
+05/Jun/2012 16:55:13

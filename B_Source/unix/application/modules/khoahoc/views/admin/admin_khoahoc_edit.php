@@ -1,5 +1,22 @@
 <h2><?php echo $title;?></h2>
-
+<script>
+	$(function(){
+		$( "#batdau" ).change(function(){
+			var x = document.getElementById("batdau").value;
+			document.getElementById("batdau").value = $.datepicker.formatDate('yy-mm-dd', new Date(x));
+			});
+	});
+	$(function(){
+		$( "#ketthuc" ).change(function(){
+			var x = document.getElementById("ketthuc").value;
+			document.getElementById("ketthuc").value = $.datepicker.formatDate('yy-mm-dd', new Date(x));
+			});
+	});
+	$(function() {
+		$( "#batdau" ).datepicker();
+		$( "#ketthuc" ).datepicker();
+	});
+</script>
 <?php
 echo form_open('khoahoc/admin/edit');
 

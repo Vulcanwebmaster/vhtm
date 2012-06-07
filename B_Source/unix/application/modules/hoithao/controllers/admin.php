@@ -34,10 +34,12 @@ class Admin extends Shop_Admin_Controller
 
     function _fields()
     {
+    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['noidung_backup']);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
         $data = array(
             'hoithao_id'   => $this->input->post('hoithao_id',TRUE),
             'tieude'       => $this->input->post('tieude',TRUE),
-            'noidung'      => $this->input->post('noidung',TRUE),
+            'noidung'      => $temp,
             'thoigian'     => $this->input->post('thoigian',TRUE),        
             'phanhoi'      => $this->input->post('phanhoi',TRUE),
             'anhdaidien'   => $this->input->post('anhdaidien',TRUE)     
