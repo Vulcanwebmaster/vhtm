@@ -31,10 +31,17 @@
 		<form name="filterByKho" method="post" action="<?php echo base_url();?>index.php/welcome/filterByKhoId">
 			<p style="margin:0; font-size:13px; text-shadow:0 1px 0 white">Lọc theo kho</p>
 			<select name="kho-filter" id="kho-filter" style="width:95%; background-color:#f3f3f3">
+				<option value="0">Tất cả</option>
 				<?php $list=$this->MKaimonokago->getListKho();
 					foreach($list as $kho)
 					{
-						echo '<option value="'.$kho->kho_id.'">'.$kho->kho_name.'</option>';
+						if ($this->session->userdata('kho'))
+						{
+							if ($kho->kho_id==$this->session->userdata('kho'))
+								echo '<option value="'.$kho->kho_id.'" selected="selected">'.$kho->kho_name.'</option>';
+							else echo '<option value="'.$kho->kho_id.'">'.$kho->kho_name.'</option>';
+						}
+						else echo '<option value="'.$kho->kho_id.'">'.$kho->kho_name.'</option>';
 					}
 				?>			
 			</select>

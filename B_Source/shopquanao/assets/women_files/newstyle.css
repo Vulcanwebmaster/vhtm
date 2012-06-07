@@ -213,7 +213,7 @@ a.comment-permalink{color:#067bd6;font:normal normal 10px Arial,Tahoma,Verdana}
 #blog-pager{text-align:center}
 .feed-links{clear:both;line-height:2.5em}
 /* Sidebar Content----------------------------------------------- */
-.sidebar{margin:0 0 10px 0;font-size:13px;color:#3A4A5D; border-left:dotted 1px silver}
+.sidebar{margin:0 0 10px 0;font-size:13px;color:#3A4A5D; border-right:dotted 1px silver}
 .sidebar a{text-decoration:none;color:#3A4A5D;}
 .sidebar a:hover{text-decoration:underline;color:#DE6503}
 .sidebar h2{margin:10px 0 4px 0;padding:10px 0 12px 8px;text-align:left;font-size:18px;line-height:18px;color:#324256;font-family:Arial,Helvetica,Sans-serif;font-weight:bold;text-transform:uppercase;background:url(sidebar-tab.png) left top repeat-x;}

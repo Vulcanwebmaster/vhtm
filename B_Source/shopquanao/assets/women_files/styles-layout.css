@@ -103,7 +103,7 @@ ul,ol ,li        { list-style:none; }
 .col-left { float:left; width:274px;padding:0 10px;}
 .col-main .col-inner{padding:10px}
 .cms-index-index.cms-home .col-main .col-inner,.catalog-category-view  .col-main .col-inner,.catalogsearch-result-index .col-main .col-inner{padding:0}
-.col-right { float:right; width:274px;padding:0 10px; }
+.col-right { float:right; width:274px;padding:0 10px 0 0; }
 
 /* 1 Column Layout */
 .col1-layout { }

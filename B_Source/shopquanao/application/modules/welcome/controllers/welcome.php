@@ -44,6 +44,8 @@ class Welcome extends Shop_Controller
 
     function index($index=0)
     {
+    	$this->load->library('session');
+    	$this->session->set_userdata('kho','0');
         //this one is for a visitor changing a language first time through form
         if ($this->input->post('lang'))
         {
@@ -1118,6 +1120,7 @@ class Welcome extends Shop_Controller
     	$count = $this->count_filter($price);
     	
     	$config['base_url']=base_url().'index.php/welcome/get_filter/'.$price."/";
+    	$config['uri_segment']=4;
     	$config['total_rows']=$count;
     	$config['per_page'] = 9;
     	$this->pagination->initialize($config);
@@ -1159,15 +1162,20 @@ class Welcome extends Shop_Controller
     	if ($this->input->post('submitKhoId'))
     	{
     		$id_kho=$this->input->post('kho-filter');
+    		$this->load->library('session');
+    		$this->session->set_userdata('kho',$id_kho);
     		$this->getPageByKho($id_kho);
     	}
     }
     
     function getPageByKho($id_kho=0,$index=0)
     {
-    	$this->db->where('kho_id',$id_kho);
+    	if ($id_kho!=0)
+    		$this->db->where('kho_id',$id_kho);
+    	
     	$result=$this->db->get('shop_sanphamkho',9,$index);
     	$config['base_url']=base_url().'index.php/welcome/getPageByKho/'.$id_kho;
+    	$config['uri_segment']=4;
     	$config['total_rows']=$this->countFilterByKho($id_kho);
     	$config['per_page']=9;
     	$this->pagination->initialize($config);
