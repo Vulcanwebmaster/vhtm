@@ -50,6 +50,7 @@ class Admin extends Shop_Admin_Controller
 
 	function create()
     {
+    	$this->bep_assets->load_asset_group('TINYMCE');
         if ($this->input->post('noidung')!='')
         {
 			$data = $this->_fields();
@@ -73,6 +74,7 @@ class Admin extends Shop_Admin_Controller
   
     function edit($id=0)
     {   
+    	$this->bep_assets->load_asset_group('TINYMCE');
     	if ($this->input->post('hoithao_id')) {
     		$id = $this->input->post('hoithao_id');
     	} 
