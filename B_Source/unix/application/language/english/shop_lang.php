@@ -54,6 +54,7 @@ $lang['backendpro_file_manager'] = 'File Manager';
 $lang['backendpro_langages'] = 'Languages';
 
 $lang['backendpro_management'] = 'Quản Trị';
+$lang['backendpro_homepage'] = 'Trang Chủ';
 $lang['backendpro_gioithieu'] = 'Giới Thiệu';
 $lang['backendpro_hoithao'] = 'Hội Thảo';
 $lang['backendpro_khoahoc'] = 'Khóa Học';
@@ -61,6 +62,7 @@ $lang['backendpro_loaisach'] = 'Loại Sách';
 $lang['backendpro_sach'] = 'Sách';
 $lang['backendpro_camnhan'] = 'Cảm Nhận';
 
+$lang['backendpro_ql_homepage'] = 'Quản lý trang chủ';
 $lang['backendpro_ql_gioithieu'] = 'Quản lý tin giới thiệu';
 $lang['backendpro_ql_hoithao'] = 'Quản lý hội thảo';
 $lang['backendpro_ql_khoahoc'] = 'Quản lý khóa học';
