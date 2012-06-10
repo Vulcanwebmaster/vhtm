@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2012 at 12:11 PM
+-- Generation Time: Jun 10, 2012 at 12:36 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -435,7 +435,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('72882d287fb58a7e62e09ec927fb4510', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339322390, '');
+('72882d287fb58a7e62e09ec927fb4510', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339322390, ''),
+('ef821a2c19ef440d7ce49fd9def706a7', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339324112, '');
 
 -- --------------------------------------------------------
 
@@ -1095,10 +1096,9 @@ CREATE TABLE IF NOT EXISTS `unix_loaisach` (
 --
 
 INSERT INTO `unix_loaisach` (`loaisach_id`, `tenloai`, `mota`) VALUES
-(1, 'Sách tâm lý', 'Loại sách dành cho lứa tuổi thanh thiếu niên'),
-(3, 'Tiểu Thuyết Lá Cải', 'Báo LÁ Cải & Mương 14'),
-(4, 'Test 01', 'Test 01 - Demo test'),
-(5, 'Just a moment', 'Những tác phẩm đặc biệt nhất mọi thời đại');
+(1, 'Clip', 'Các video clip'),
+(3, 'Ảnh', 'Các hình ảnh'),
+(4, 'Sách', 'Tài liệu sách');
 
 -- --------------------------------------------------------
 
@@ -1123,7 +1123,7 @@ INSERT INTO `unix_sach` (`sach_id`, `tensach`, `mota`, `loaisach_id`, `tacgia`) 
 (1, 'Học làm giàu', 'Sách dạy làm giàu', 1, 'Ho Minh Hoa'),
 (2, 'Kenh14', 'Mương la liếm cho các bạn trẻ năng động', 3, 'Mương 14 ABCDEF'),
 (3, 'Như đã dấu yêu', 'Trong đôi mắt anh, em là tất cả :)))) Updated', 1, 'Ai mà biết'),
-(5, 'OOps I did it', 'Nghiện', 5, '=)))))');
+(5, 'OOps I did it', 'Nghiện', 4, '=)))))');
 
 --
 -- Constraints for dumped tables
