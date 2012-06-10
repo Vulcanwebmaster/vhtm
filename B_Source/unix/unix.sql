@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2012 at 12:36 PM
+-- Generation Time: Jun 10, 2012 at 01:34 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -388,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-08 20:51:23', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-10 13:00:25', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
 
 -- --------------------------------------------------------
 
@@ -438,7 +438,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 ('72882d287fb58a7e62e09ec927fb4510', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339322390, ''),
-('ef821a2c19ef440d7ce49fd9def706a7', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339324112, '');
+('c8e8ec8cf36483b0f03b2e1309545f3f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339327651, 'a:12:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-10 12:57:00";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:6:"status";s:66:"a:1:{s:7:"success";a:1:{i:0;s:28:"C?p nh?t thành công!!!";}}";}');
 
 -- --------------------------------------------------------
 
@@ -952,7 +952,7 @@ CREATE TABLE IF NOT EXISTS `unix_gioithieu` (
 --
 
 INSERT INTO `unix_gioithieu` (`gioithieu_id`, `noidung`) VALUES
-(1, '<li><strong>1. Giới thiệu công ty Unix:</strong></li>\r\n<ul>\r\n<li>Công ty cổ phần Unix được thành lập bởi các doanh nhân và chuyên gia đào tạo nhiều kinh nghiệm đến từ nhiều đơn vị giáo dục khác nhau. Chúng tôi muốn tạo nên một cái tên mới với mục tiêu giúp cho khách hàng được tiếp cận với những chương trình đào tạo chất lượng nhất.</li>\r\n</ul>\r\n<li><strong>2. Khi tham gia các khóa học do công ty Unix tổ chức học viên sẽ được:</strong></li>\r\n<ul>\r\n<li>- Đào tạo và huấn luyện theo những phương pháp đào tạo mới nhất và đang được áp dụng hiệu quả trên thế giới.</li>\r\n<li>- Khơi nguồn cảm hứng và có những nguồn động lực mạnh mẽ khi tham gia khóa học.</li>\r\n<li>- Được đào tạo và huấn luyện bởi những giảng viên, chuyên gia đào tạo tốt nhất.</li>\r\n<li>- Luôn tạo nên những hiệu quả vượt trội sau khi tham gia chương trình.</li>\r\n</ul>\r\n<li><strong>3. Diễn giả, chuyên gia đào tạo:</strong></li>\r\n<ul>\r\n<li>- Những giáo viên, diễn giả, chuyên gia đào tạo được công ty Unix mời tham gia giảng dạy luôn là những người không chỉ có chuyên môn vững vàng , dày dạn kinh nghiệm mà điều quan trọng nhất là họ phải là người tạo ra hiệu quả cao nhất trong học viên. Chính vì lẽ đó các diễn giả, chuyên gia đào tạo của công ty Unix luôn thường xuyên tham gia các chương trình đào tạo của các chuyên gia, diễn giả hàng đầu trên thế giới, để không ngừng cập nhật những phương pháp đào tạo tốt nhất , nâng cao kỹ năng giảng dạy và kiến thức chuyên môn.</li>\r\n</ul>\r\n<li><strong>4. Sứ mệnh của Unix education:</strong></li>\r\n<ul>\r\n<li>- Unix education ra đời với một sứ mệnh là giúp cho mọi người được tiếp cận với những chương trình đào tạo tốt nhất.</li>'),
+(1, '<li><strong>1. Giới thiệu công ty Unix:</strong></li>\r\n<ul>\r\n<li>Công ty cổ phần Unix được thành lập bởi các doanh nhân và chuyên gia đào tạo nhiều kinh nghiệm đến từ nhiều đơn vị giáo dục khác nhau. Chúng tôi muốn tạo nên một cái tên mới với mục tiêu giúp cho khách hàng được tiếp cận với những chương trình đào tạo chất lượng nhất.</li>\r\n</ul>\r\n<li><strong>2. Khi tham gia các khóa học do công ty Unix tổ chức học viên sẽ được:</strong></li>\r\n<ul>\r\n<li>- Đào tạo và huấn luyện theo những phương pháp đào tạo mới nhất và đang được áp dụng hiệu quả trên thế giới.</li>\r\n<li>- Khơi nguồn cảm hứng và có những nguồn động lực mạnh mẽ khi tham gia khóa học.</li>\r\n<li>- Được đào tạo và huấn luyện bởi những giảng viên, chuyên gia đào tạo tốt nhất.</li>\r\n<li>- Luôn tạo nên những hiệu quả vượt trội sau khi tham gia chương trình.</li>\r\n</ul>\r\n<li><strong>3. Diễn giả, chuyên gia đào tạo:</strong></li>\r\n<ul>\r\n<li>- Những giáo viên, diễn giả, chuyên gia đào tạo được công ty Unix mời tham gia giảng dạy luôn là những người không chỉ có chuyên môn vững vàng , dày dạn kinh nghiệm mà điều quan trọng nhất là họ phải là người tạo ra hiệu quả cao nhất trong học viên. Chính vì lẽ đó các diễn giả, chuyên gia đào tạo của công ty Unix luôn thường xuyên tham gia các chương trình đào tạo của các chuyên gia, diễn giả hàng đầu trên thế giới, để không ngừng cập nhật những phương pháp đào tạo tốt nhất , nâng cao kỹ năng giảng dạy và kiến thức chuyên môn.</li>\r\n</ul>\r\n<li><strong>4. Sứ mệnh của Unix education:</strong></li>\r\n<ul>\r\n<li>- Unix education ra đời với một sứ mệnh là giúp cho mọi người được tiếp cận với những chương trình đào tạo tốt nhất.</li>');
 
 -- --------------------------------------------------------
 
@@ -965,7 +965,7 @@ CREATE TABLE IF NOT EXISTS `unix_gioithieu_submenu` (
   `ten` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `noidung` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`submenu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `unix_gioithieu_submenu`
@@ -973,7 +973,8 @@ CREATE TABLE IF NOT EXISTS `unix_gioithieu_submenu` (
 
 INSERT INTO `unix_gioithieu_submenu` (`submenu_id`, `ten`, `noidung`) VALUES
 (1, 'Tầm nhìn', 'Đây là trang tầm nhìn'),
-(2, 'Sứ mệnh', 'Đây là trang Sứ mệnh');
+(2, 'Sứ mệnh', 'Đây là trang Sứ mệnh'),
+(4, 'HoaHM', '<p>ABCDEF</p>\r\n<p><img src="../../../assets/images/cells.png" alt="" width="243" height="162" /></p>');
 
 -- --------------------------------------------------------
 
@@ -1023,7 +1024,7 @@ INSERT INTO `unix_homepage` (`muc_id`, `tenmuc`, `dulieu`) VALUES
 (3, 'Sự kiện', 'Hội thảo:”Bứt phá môn Toán thi vào cấp 2 Hà Nội Amsterdam” ..'),
 (4, 'slide', 'assets/unix/images/khoahoc-slide.jpg,assets/unix/images/thuvien-slide.jpg'),
 (5, 'images', 'assets/unix/images/slide-bottom/1.jpg,assets/unix/images/slide-bottom/2.jpg,assets/unix/images/slide-bottom/3.jpg,assets/unix/images/slide-bottom/4.jpg,assets/unix/images/slide-bottom/5.jpg'),
-(6, 'video', '<iframe height="180" src="http://www.youtube.com/embed/7GHT-TSiZio" frameborder="0" allowfullscreen></iframe>'),
+(6, 'video', 'http://www.youtube.com/watch?v=5FlQSQuv_mg'),
 (7, 'Chúng tôi là ai', 'Công ty cổ phần Unix, là một trong những công ty cung cấp các chương trình đào tạo chất lượng cao hàng đầu Việt Nam. Unix mang đến những công nghệ đào tạo tiên tiến và các chương trình phát triển cá nhân hàng đầu trên thế giới.'),
 (8, 'Chúng tôi làm gì', 'Các khóa học kỹ năng thay đổi tư duy và cách nghĩ, chúng tôi mang lại những trải nghiệm hoàn toàn khác biệt. Môi trường làm việc năng động, chuyên nghiệp Unix luôn chào đón những con người có năng lực tham gia đồng hành cùng chúng tôi');
 
@@ -1094,9 +1095,10 @@ CREATE TABLE IF NOT EXISTS `unix_loaisach` (
 --
 
 INSERT INTO `unix_loaisach` (`loaisach_id`, `tenloai`, `mota`) VALUES
-(1, 'Clip', 'Các video clip'),
-(3, 'Ảnh', 'Các hình ảnh'),
-(4, 'Sách', 'Tài liệu sách');
+(1, 'Sách tâm lý', 'Loại sách dành cho lứa tuổi thanh thiếu niên'),
+(3, 'Tiểu Thuyết Lá Cải', 'Báo LÁ Cải & Mương 14'),
+(4, 'Test 01', 'Test 01 - Demo test'),
+(5, 'Just a moment', 'Những tác phẩm đặc biệt nhất mọi thời đại');
 
 -- --------------------------------------------------------
 
@@ -1121,7 +1123,7 @@ INSERT INTO `unix_sach` (`sach_id`, `tensach`, `mota`, `loaisach_id`, `tacgia`) 
 (1, 'Học làm giàu', 'Sách dạy làm giàu', 1, 'Ho Minh Hoa'),
 (2, 'Kenh14', 'Mương la liếm cho các bạn trẻ năng động', 3, 'Mương 14 ABCDEF'),
 (3, 'Như đã dấu yêu', 'Trong đôi mắt anh, em là tất cả :)))) Updated', 1, 'Ai mà biết'),
-(5, 'OOps I did it', 'Nghiện', 4, '=)))))');
+(5, 'OOps I did it', 'Nghiện', 5, '=)))))');
 
 --
 -- Constraints for dumped tables
