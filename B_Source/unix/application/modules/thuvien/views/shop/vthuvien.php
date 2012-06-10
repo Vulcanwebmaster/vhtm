@@ -34,7 +34,7 @@
 			<div id="menu-panel">
 				<div id="menu-book">
 					<p>
-						<span style="color:white; font-size:12px">Chọn loại sách: </span>
+						<span style="color:white; font-size:12px">Chọn loại tài liệu: </span>
 						<select id="list-type">
 							<option value="0">Tất cả</option>
 							<?php if (isset($listtype))

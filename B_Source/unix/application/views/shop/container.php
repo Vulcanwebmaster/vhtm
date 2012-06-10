@@ -55,7 +55,7 @@
 	    <!-- =================================================================== -->
 	</head>
 	<body>
-		<object width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMC8wOC8yLzUvInagaMEMjVjZjFkNDJkM2FjMjI2MjQ4OThiMjmUsIC2YmNjNzMzZmUdUngWeBXAzfEFdUngaCBW4WeBqrWeBiDEkOG7o2kgQ2jhdUng518xJBhWeBiBUmUsICsaw4WeBdUngdWeBmd8MXwy" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMC8wOC8yLzUvInagaMEMjVjZjFkNDJkM2FjMjI2MjQ4OThiMjmUsIC2YmNjNzMzZmUdUngWeBXAzfEFdUngaCBW4WeBqrWeBiDEkOG7o2kgQ2jhdUng518xJBhWeBiBUmUsICsaw4WeBdUngdWeBmd8MXwy" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object><br />
+		<object width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object><br />
 	    <?php $this->load->view('shop/header.php')?>
 	    <?php 
 												 //   print displayStatus();
