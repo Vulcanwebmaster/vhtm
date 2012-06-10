@@ -298,7 +298,9 @@ INSERT INTO `be_preferences` (`name`, `value`) VALUES
 ('hoithao', '1'),
 ('khoahoc', '1'),
 ('loaisach', '1'),
-('sach', '1');
+('sach', '1'),
+('thongtingioithieu', '1'),
+('homepage', '1');
 
 -- --------------------------------------------------------
 
@@ -951,10 +953,6 @@ CREATE TABLE IF NOT EXISTS `unix_gioithieu` (
 
 INSERT INTO `unix_gioithieu` (`gioithieu_id`, `noidung`) VALUES
 (1, '<li><strong>1. Giới thiệu công ty Unix:</strong></li>\r\n<ul>\r\n<li>Công ty cổ phần Unix được thành lập bởi các doanh nhân và chuyên gia đào tạo nhiều kinh nghiệm đến từ nhiều đơn vị giáo dục khác nhau. Chúng tôi muốn tạo nên một cái tên mới với mục tiêu giúp cho khách hàng được tiếp cận với những chương trình đào tạo chất lượng nhất.</li>\r\n</ul>\r\n<li><strong>2. Khi tham gia các khóa học do công ty Unix tổ chức học viên sẽ được:</strong></li>\r\n<ul>\r\n<li>- Đào tạo và huấn luyện theo những phương pháp đào tạo mới nhất và đang được áp dụng hiệu quả trên thế giới.</li>\r\n<li>- Khơi nguồn cảm hứng và có những nguồn động lực mạnh mẽ khi tham gia khóa học.</li>\r\n<li>- Được đào tạo và huấn luyện bởi những giảng viên, chuyên gia đào tạo tốt nhất.</li>\r\n<li>- Luôn tạo nên những hiệu quả vượt trội sau khi tham gia chương trình.</li>\r\n</ul>\r\n<li><strong>3. Diễn giả, chuyên gia đào tạo:</strong></li>\r\n<ul>\r\n<li>- Những giáo viên, diễn giả, chuyên gia đào tạo được công ty Unix mời tham gia giảng dạy luôn là những người không chỉ có chuyên môn vững vàng , dày dạn kinh nghiệm mà điều quan trọng nhất là họ phải là người tạo ra hiệu quả cao nhất trong học viên. Chính vì lẽ đó các diễn giả, chuyên gia đào tạo của công ty Unix luôn thường xuyên tham gia các chương trình đào tạo của các chuyên gia, diễn giả hàng đầu trên thế giới, để không ngừng cập nhật những phương pháp đào tạo tốt nhất , nâng cao kỹ năng giảng dạy và kiến thức chuyên môn.</li>\r\n</ul>\r\n<li><strong>4. Sứ mệnh của Unix education:</strong></li>\r\n<ul>\r\n<li>- Unix education ra đời với một sứ mệnh là giúp cho mọi người được tiếp cận với những chương trình đào tạo tốt nhất.</li>'),
-(3, '<p> <b>Welcome to my world :D </b>That is very hard to understand</p>'),
-(4, '<p>Hoa test <b>My World is very beautiful :D </b> <i>I love my world </i>That is very hard to understand</p>'),
-(5, 'Test <b> Tin giới thiệu </b> \r\n</br>\r\n<u> Demo cho khách hàng </u>\r\n</br>\r\n<i> Dự kiến release vào thứ 2 ngày 28 tháng 5 </i>\r\n</br>\r\n<b><u>Vừa mới thêm vào </u></b>\r\n\r\n1234567'),
-(6, '<u><b> Demo Unix cho khách hàng </b></u>\r\n</br>\r\n<i> Dự kiến release vào thứ 2 ngày 28 tháng 5 năm 2012 </i>\r\n');
 
 -- --------------------------------------------------------
 

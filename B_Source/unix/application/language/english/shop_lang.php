@@ -59,11 +59,13 @@ $lang['backendpro_gioithieu'] = 'Giới Thiệu';
 $lang['backendpro_hoithao'] = 'Hội Thảo';
 $lang['backendpro_khoahoc'] = 'Khóa Học';
 $lang['backendpro_loaisach'] = 'Loại Sách';
+$lang['backendpro_thongtingioithieu'] = 'Thông Tin Giới Thiệu';
 $lang['backendpro_sach'] = 'Sách';
 $lang['backendpro_camnhan'] = 'Cảm Nhận';
 
 $lang['backendpro_ql_homepage'] = 'Quản lý trang chủ';
 $lang['backendpro_ql_gioithieu'] = 'Quản lý tin giới thiệu';
+$lang['backendpro_ql_thongtingioithieu'] = 'Quản lý thông tin giới thiệu';
 $lang['backendpro_ql_hoithao'] = 'Quản lý hội thảo';
 $lang['backendpro_ql_khoahoc'] = 'Quản lý khóa học';
 $lang['backendpro_ql_loaisach'] = 'Quản lý loại sách';

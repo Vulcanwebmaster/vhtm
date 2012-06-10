@@ -12,7 +12,8 @@
 <li id="menu_bep_general"><span class="icon_general"><?php print $this->lang->line('backendpro_management')?></span>
     <ul>
     	<?php if($this->preference->item('homepage')):?><li><?php print anchor('homepage/admin',$this->lang->line('backendpro_homepage'),array('class'=>'icon_page'))?></li><?php echo "\n"; endif;?>
-        <?php if($this->preference->item('gioithieu')):?><li><?php print anchor('gioithieu/admin',$this->lang->line('backendpro_gioithieu'),array('class'=>'icon_color_swatch'))?></li><?php echo "\n"; endif;?>
+        <?php if($this->preference->item('thongtingioithieu')):?><li><?php print anchor('thongtingioithieu/admin',$this->lang->line('backendpro_thongtingioithieu'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
+    	<?php if($this->preference->item('gioithieu')):?><li><?php print anchor('gioithieu/admin',$this->lang->line('backendpro_gioithieu'),array('class'=>'icon_color_swatch'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('hoithao')):?><li><?php print anchor('hoithao/admin',$this->lang->line('backendpro_hoithao'),array('class'=>'icon_calendar'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('khoahoc')):?><li><?php print anchor('khoahoc/admin',$this->lang->line('backendpro_khoahoc'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('loaisach')):?><li><?php print anchor('loaisach/admin',$this->lang->line('backendpro_loaisach'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
