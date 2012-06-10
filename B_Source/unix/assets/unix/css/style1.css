@@ -1,6 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 body{margin:0; font-family:Tahoma}
+img{border-style:none}
 /*=============== BEGIN HEADER =====================================*/
 #top-bar{height:10px; background-color:black}
 #header-main{height:100px; background-image:url('../images/header-bg.png')}

@@ -43,11 +43,11 @@
 					var width = $(this).children("ul").width(); //get the width of the dropdown
 					var over = (left + width) - 940;
 					
-					$(this).children('ul').slideDown(700);
+					$(this).children('ul').slideDown(1000);
 					//$(this).children('ul').css({left:left-over, top:top});
 				});
 				$('.menuitem').mouseleave(function(){
-					$(this).children('ul').slideUp(700);
+					$(this).children('ul').slideUp(1000);
 					//$(this).children('ul').css({left:left-over, top:top});
 				});
 			});

@@ -16,7 +16,7 @@
 			<a href="<?php echo base_url();?>index.php/camnhan">Cảm nhận</a>
 		</div>
 		<div id="information">
-			<p>Bản quyền © 2012 - UNIX. Thiết kế bởi NIW</p>
+			<p>Bản quyền © 2012 - UNIX. Thiết kế bởi <a href="http://niw.com.vn" style="color:#37BBED; text-decoration:underline">NIW</a></p>
 		</div>
 	</div>
 </div>
