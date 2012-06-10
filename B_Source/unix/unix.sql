@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 01, 2012 at 12:28 PM
+-- Generation Time: Jun 10, 2012 at 12:11 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -386,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-01 11:41:56', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-08 20:51:23', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
 
 -- --------------------------------------------------------
 
@@ -435,7 +435,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('713a9bca1cb1f580b4751aa515b0f16b', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1338546189, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-01 07:58:15";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('72882d287fb58a7e62e09ec927fb4510', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339322390, '');
 
 -- --------------------------------------------------------
 
@@ -958,6 +958,27 @@ INSERT INTO `unix_gioithieu` (`gioithieu_id`, `noidung`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unix_gioithieu_submenu`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_gioithieu_submenu` (
+  `submenu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `noidung` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`submenu_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `unix_gioithieu_submenu`
+--
+
+INSERT INTO `unix_gioithieu_submenu` (`submenu_id`, `ten`, `noidung`) VALUES
+(1, 'Tầm nhìn', 'Đây là trang tầm nhìn'),
+(2, 'Sứ mệnh', 'Đây là trang Sứ mệnh');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unix_hoithao`
 --
 
@@ -1001,8 +1022,8 @@ INSERT INTO `unix_homepage` (`muc_id`, `tenmuc`, `dulieu`) VALUES
 (1, 'Các khóa học', 'Chương trình này là một chương trình bao gồm chuỗi các bài giảng và các hội thảo có một không hai tại Hà Nội. Không có một chương trình đào tạo nào giống như thế ở bất cứ đâu. ..'),
 (2, 'Phương pháp đào tạo', 'Hiện tại thầy Phan Quang Điệp được công nhận giảng viên quốc tế của tập đoàn giáo dục Skyquestcom Singapore, giáo viên chuyên luyện thi Olympic Toán Châu Á Thái Bình Dương ..'),
 (3, 'Sự kiện', 'Hội thảo:”Bứt phá môn Toán thi vào cấp 2 Hà Nội Amsterdam” ..'),
-(4, 'slide', 'http://localhost/unix/assets/unix/images/khoahoc-slide.jpg,http://localhost/unix/assets/unix/images/thuvien-slide.jpg'),
-(5, 'images', 'http://localhost/unix/assets/unix/images/slide-bottom/1.jpg,http://localhost/unix/assets/unix/images/slide-bottom/2.jpg,http://localhost/unix/assets/unix/images/slide-bottom/3.jpg,http://localhost/unix/assets/unix/images/slide-bottom/4.jpg,http://localhost/unix/assets/unix/images/slide-bottom/5.jpg'),
+(4, 'slide', 'assets/unix/images/khoahoc-slide.jpg,assets/unix/images/thuvien-slide.jpg'),
+(5, 'images', 'assets/unix/images/slide-bottom/1.jpg,assets/unix/images/slide-bottom/2.jpg,assets/unix/images/slide-bottom/3.jpg,assets/unix/images/slide-bottom/4.jpg,assets/unix/images/slide-bottom/5.jpg'),
 (6, 'video', '<iframe height="180" src="http://www.youtube.com/embed/7GHT-TSiZio" frameborder="0" allowfullscreen></iframe>'),
 (7, 'Chúng tôi là ai', 'Công ty cổ phần Unix, là một trong những công ty cung cấp các chương trình đào tạo chất lượng cao hàng đầu Việt Nam. Unix mang đến những công nghệ đào tạo tiên tiến và các chương trình phát triển cá nhân hàng đầu trên thế giới.'),
 (8, 'Chúng tôi làm gì', 'Các khóa học kỹ năng thay đổi tư duy và cách nghĩ, chúng tôi mang lại những trải nghiệm hoàn toàn khác biệt. Môi trường làm việc năng động, chuyên nghiệp Unix luôn chào đón những con người có năng lực tham gia đồng hành cùng chúng tôi');
