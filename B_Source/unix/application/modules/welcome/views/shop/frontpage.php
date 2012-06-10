@@ -68,9 +68,9 @@
 			<?php if ($this->MKaimonokago->homepageLoadNoiDung('video'))
 			{
 				$video=$this->MKaimonokago->homepageLoadNoiDung('video');
-				echo $video->dulieu;
+				echo '<iframe height="180px" src="'.str_replace('watch?v=', 'embed/', $video->dulieu).'" frameborder="0" allowfullscreen></iframe>';
 			}?>
-			<!-- iframe height="170px" src="http://www.youtube.com/embed/bKAdluwY49M" frameborder="0" allowfullscreen></iframe -->
+			<!-- iframe height="200px" src="http://www.youtube.com/embed/bKAdluwY49M" frameborder="0" allowfullscreen></iframe -->
 		</div>
 	</div>
 </div>
