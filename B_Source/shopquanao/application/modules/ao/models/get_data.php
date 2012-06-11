@@ -18,9 +18,54 @@
 			return $cat_id;
 		}
 		
+		function isChildOf($parent_id,$children_id)
+		{
+			$ar=array('id'=>$children_id,
+						'parentid'=>$parent_id);
+			$this->db->where($ar);
+			$ds=$this->db->get('omc_category');
+			if ($ds->num_rows()>0)
+				return true;
+			else return false;
+		}
+		
+		function getCategoryById($id)
+		{
+			$this->db->where('id',$id);
+			$ds=$this->db->get('omc_category');
+			if ($ds->num_rows()>0)
+			{
+				$item=$ds->row(0);
+				$ds->free_result();
+				return $item;
+			}	
+			else return false;
+		}
+		
 		function get_list($cat_id,$offset)
 		{
-	        $this->db->where('category_id', $cat_id);	        
+			$cate=$this->getCategoryById($cat_id);
+			if ($cate)
+				if ($cate->parentid>0)
+				{
+					$this->db->where('category_id', $cat_id);
+				}
+				else 
+				{
+					$Child=$this->MKaimonokago->getListChild($cat_id);
+					if (count($Child)>0)
+					{
+						$names=array();
+						foreach($Child as $item)
+							$names[]=$item->id;
+						$this->db->where_in('category_id',$names);
+					}	
+					else 
+					{
+						$this->db->where('category_id', $cat_id);
+					}
+				}
+	        	        
 	        $data = array();
 		
 	    	$Q=	$this->db->get("omc_products",9,$offset);
@@ -38,7 +83,27 @@
 			
 	function count($cat_id)
 		{
-			$this->db->where('category_id', $cat_id);
+			$cate=$this->getCategoryById($cat_id);
+			if ($cate)
+				if ($cate->parentid>0)
+				{
+					$this->db->where('category_id', $cat_id);
+				}
+				else 
+				{
+					$Child=$this->MKaimonokago->getListChild($cat_id);
+					if (count($Child)>0)
+					{
+						$names=array();
+						foreach($Child as $item)
+							$names[]=$item->id;
+						$this->db->where_in('category_id',$names);
+					}	
+					else 
+					{
+						$this->db->where('category_id', $cat_id);
+					}
+				}
 			$list=$this->db->get("omc_products");
 			return $list->num_rows();
 		}

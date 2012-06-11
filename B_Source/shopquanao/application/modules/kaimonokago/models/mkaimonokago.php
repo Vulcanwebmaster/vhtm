@@ -495,6 +495,45 @@ class MKaimonokago extends Base_model
     	}
     	else return false;
     }
+    
+    function isParent($id)
+    {
+    	$ds=$this->db->get('omc_category');
+    	$dem=0;
+    	foreach($ds->result() as $item)
+    	{
+    		$parents=explode('-',$item->parentid);
+    		$i=0;
+    		foreach($parents as $parent)
+    		{
+    			if ($parent==$id)
+    			{
+    				$i++;
+    				break;
+    			}
+    		}
+    		if ($i>0)
+    			$dem++;
+    	}
+    	$ds->free_result();
+    	if ($dem>0)
+    		return true;
+    	else return false;
+    }
+    
+    function getListChild($id)
+    {
+    	$ds=$this->db->get('omc_category');
+    	$list=array();
+    	foreach($ds->result() as $item)
+    	{
+    		$parents=$item->parentid;
+    		if ($parents==$id)
+    			$list[]=$item;
+    	}
+    	$ds->free_result();
+    	return $list;
+    }
 }
 
 ?>
