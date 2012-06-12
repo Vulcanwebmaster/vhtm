@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2012 at 09:48 AM
+-- Generation Time: Jun 12, 2012 at 09:51 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -380,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-12 09:46:11', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-12 09:49:44', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'an', 'a97b4c3de192c200fdc31eac8ca2cf57639da998', 'anan@gmail.com', 1, 1, 'qFLDP9DBM3oERI1uT3cAJ5cBADidq28N', '2012-05-05 18:48:45', '2012-05-05 18:45:43', '2012-05-05 18:48:28');
 
 -- --------------------------------------------------------
@@ -431,7 +431,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('718d142f40d4ed488aedda3cf3d72ef0', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5', 1339487171, 'a:13:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-11 13:34:57";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:3:"kho";s:1:"0";}'),
+('718d142f40d4ed488aedda3cf3d72ef0', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5', 1339487171, 'a:12:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-12 09:46:11";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:3:"kho";s:1:"0";}'),
 ('87daecd13066d17ead8b9eccd1ea86ea', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339415616, 'a:12:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-11 10:05:41";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:3:"kho";s:1:"0";}');
 
 -- --------------------------------------------------------
@@ -477,7 +477,7 @@ CREATE TABLE IF NOT EXISTS `omc_category` (
   `parentid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `lang_id` int(2) unsigned NOT NULL,
   `table_id` int(11) unsigned NOT NULL,
-  `is_display_in_menu` bit(1) NOT NULL DEFAULT b'0',
+  `is_display_in_menu` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=35 ;
 
@@ -486,24 +486,24 @@ CREATE TABLE IF NOT EXISTS `omc_category` (
 --
 
 INSERT INTO `omc_category` (`id`, `name`, `metadesc`, `metakeyword`, `shortdesc`, `longdesc`, `status`, `order`, `parentid`, `lang_id`, `table_id`, `is_display_in_menu`) VALUES
-(1, 'English category', '', '', '', '', 'active', NULL, '0', 0, 1, '1'),
-(2, 'Books', '', '', '', '', 'active', 40, '0', 0, 2, '1'),
-(7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, '0', 0, 7, '1'),
-(9, 'Mountain', '', '', '', '', 'active', 10, '0', 0, 9, '1'),
-(11, 'River', '', '', '', '', 'active', 25, '0', 0, 11, '1'),
-(17, 'Angels', 'Angels in english', '', '', '', 'active', 35, '0', 0, 17, '1'),
-(20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, '0', 0, 20, '1'),
-(23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, '0', 0, 23, '1'),
-(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, '0', 0, 25, '1'),
-(26, 'Áo', '', '', '', '', 'active', 0, '0', 0, 26, '1'),
-(27, 'Phụ kiện', '', '', '', '', 'active', 0, '0', 0, 27, '1'),
-(28, 'sdfsdf', '', '', '', '', 'active', 0, '0', 0, 28, '1'),
-(29, 'hoho', '', '', '', '', 'active', 0, '0', 0, 29, '1'),
-(30, 'dsfsdf', '', '', '', '', 'active', 0, '0', 0, 30, '1'),
-(31, '3qwrwe', '', '', '', '', 'active', 0, '0', 0, 31, '1'),
-(32, 'sdgdfg', '', '', '', '', 'active', NULL, '0', 0, 32, '1'),
-(33, 'Áo phông', 'ád', 'fgafasd', 'sfsdf', 'faaaaaaaaaaaa', 'active', NULL, '26', 0, 0, '0'),
-(34, 'Áo sơ mi', 'dfsdf', 'ádasd', 'sdfac', 'ádasd', 'active', NULL, '26', 0, 0, '0');
+(1, 'English category', '', '', '', '', 'active', NULL, '0', 0, 1, 1),
+(2, 'Books', '', '', '', '', 'active', 40, '0', 0, 2, 1),
+(7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, '0', 0, 7, 1),
+(9, 'Mountain', '', '', '', '', 'active', 10, '0', 0, 9, 1),
+(11, 'River', '', '', '', '', 'active', 25, '0', 0, 11, 1),
+(17, 'Angels', 'Angels in english', '', '', '', 'active', 35, '0', 0, 17, 1),
+(20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, '0', 0, 20, 1),
+(23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, '0', 0, 23, 1),
+(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, '0', 0, 25, 1),
+(26, 'Áo', '', '', '', '', 'active', 0, '0', 0, 26, 1),
+(27, 'Phụ kiện', '', '', '', '', 'active', 0, '0', 0, 27, 1),
+(28, 'sdfsdf', '', '', '', '', 'active', 0, '0', 0, 28, 1),
+(29, 'hoho', '', '', '', '', 'active', 0, '0', 0, 29, 1),
+(30, 'dsfsdf', '', '', '', '', 'active', 0, '0', 0, 30, 1),
+(31, '3qwrwe', '', '', '', '', 'active', 0, '0', 0, 31, 1),
+(32, 'sdgdfg', '', '', '', '', 'active', NULL, '0', 0, 32, 1),
+(33, 'Áo phông', 'ád', 'fgafasd', 'sfsdf', 'faaaaaaaaaaaa', 'active', NULL, '26', 0, 0, 0),
+(34, 'Áo sơ mi', 'dfsdf', 'ádasd', 'sdfac', 'ádasd', 'active', NULL, '26', 0, 0, 0);
 
 -- --------------------------------------------------------
 
