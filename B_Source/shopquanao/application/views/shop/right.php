@@ -74,7 +74,8 @@
                         			echo '<ul class="menulevel2" style="padding-left:30px">';
                         			foreach ($this->MKaimonokago->getListChild($list[$i]->id) as $child)
                         			{
-                        				echo '<li><a style="background-color:#929291" href="'.base_url().'index.php/ao/get_list/'.$child->id.'">'.$child->name.'</a></li>';
+                        				if ($child->is_display_in_menu==1)
+                        					echo '<li><a style="background-color:#929291" href="'.base_url().'index.php/ao/get_list/'.$child->id.'">'.$child->name.'</a></li>';
                         			}
                         			echo '</ul>';
                         			echo '</li>';
