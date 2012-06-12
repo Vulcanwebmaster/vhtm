@@ -36,11 +36,34 @@ echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
-$options = array('active' => 'active', 'inactive' => 'inactive');
-echo "<td>";
-echo form_dropdown('status',$options, $category['status']);
-echo "</td></tr>\n";
+if (count($categories))
+{
+	echo "<tr><td class='label'><label for='parent_id'>"."Loại sản phẩm cha"."</label></td>\n";
+	echo "<td>";
+?>
+<select name = "parent_id">
+<?php
+	if ($category['parentid'] == 0)
+	{
+		echo '<option value = "0" selected="selected">Không có loại sản phẩm cha</option>';
+	}
+	else 
+	{
+		echo '<option value = "0">Không có loại sản phẩm cha</option>';
+	}
+	foreach ($categories as $key => $list) 
+	{ 
+		if ($list['parentid'] == 0 && $list['id'] != $category['id']) {
+		?> <option value = <?php echo $list['id']?>
+		<?php if ($list['id'] == $category['parentid']) echo 'selected="selected"'?>>
+		<?php echo $list['name']?></option>
+<?php	
+		}
+	}
+	?></select>
+<?php 
+	echo "</td></tr>\n";
+}
 
 echo "<tr><td class='label'><label for='is_display_in_menu'>".$this->lang->line('kago_is_display')."</label></td>\n";
 $options2 = array('1' => 'Có', '0' => 'Không');

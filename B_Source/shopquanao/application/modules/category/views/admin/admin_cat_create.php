@@ -32,11 +32,21 @@ echo "<td id='nopad' >";
 echo form_textarea($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='status'>".$this->lang->line('kago_status')."</label></td>\n";
-$options = array('active' => 'active', 'inactive' => 'inactive');
-echo "<td>";
-echo form_dropdown('status',$options);
-echo "</td></tr>\n";
+if (count($categories))
+{
+	echo "<tr><td class='label'><label for='parent_id'>"."Loại sản phẩm cha"."</label></td>\n";
+	$options1 = array('0' => 'Không có loại sản phẩm cha');
+	foreach ($categories as $key => $list) 
+	{
+		if ($list['parentid'] == 0)
+		{
+			$options1[$list['id']] = $list['name'];
+		}		
+	}
+	echo "<td>";
+	echo form_dropdown('parent_id',$options1);
+	echo "</td></tr>\n";
+}
 
 echo "<tr><td class='label'><label for='is_display_in_menu'>".$this->lang->line('kago_is_display')."</label></td>\n";
 $options2 = array('1' => 'Có', '0' => 'Không');

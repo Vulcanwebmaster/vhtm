@@ -46,7 +46,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         $data['title'] = $this->lang->line('kago_category');
-        $fields = array('id','order','name','parentid','status','table_id','lang_id');
+        $fields = array('id','order','name','parentid','status','table_id','lang_id','is_display_in_menu');
         $orderby = array('table_id','lang_id','order','table_id');
         //$data['categories'] = $this->MCats->getAllCategories();
         $data['categories'] = $this->MKaimonokago->getAll($this->module,$fields, $orderby);
@@ -78,11 +78,9 @@ class Admin extends Shop_Admin_Controller
         'metakeyword' => db_clean($_POST['metakeyword']),
         'shortdesc'   => db_clean($_POST['shortdesc']),
         'longdesc'    => $this->input->post('longdesc'),
-        'status'      => db_clean($_POST['status'],8),
-        'lang_id'     => id_clean($_POST['lang_id']),
-        'is_display_in_menu' => db_clean($_POST['is_display_in_menu'],1) 
+        'is_display_in_menu' => $_POST['is_display_in_menu'],
+        'parentid' => $_POST['parent_id'] 
         );
-        // $this->MKaimonokago->addItem($this->module, $data);
         return $data;
     }
 
@@ -109,9 +107,10 @@ class Admin extends Shop_Admin_Controller
         }
         else
         {
-            $data['title'] = "Create Category";
-            $data['categories'] = $this->MCats->getTopCategories();
-            //$data['right'] = 'admin/category_right';
+            $data['title'] = "Tạo loại sản phẩm";
+            $fields = array('id','name','parentid');
+        	$orderby = array('id');
+        	$data['categories'] = $this->MKaimonokago->getAll($this->module,$fields, $orderby);
             // Set breadcrumb
             $this->bep_site->set_crumb($this->lang->line('userlib_create')." category",'category/admin/create');
             $data['header'] = $this->lang->line('backendpro_access_control');
@@ -159,16 +158,13 @@ class Admin extends Shop_Admin_Controller
             $data['page']           = $this->config->item('backendpro_template_admin') . "admin_cat_edit";
             $category               = $this->MCats->getCategory($id);
             $data['category']       = $category;
+            $fields = array('id','name','parentid');
+        	$orderby = array('id');
+        	$data['categories'] = $this->MKaimonokago->getAll($this->module,$fields, $orderby);
+            
             $data['module']         =$this->module;
 
             //$data['categories'] = $this->MCats->getTopCategories();
-            $lang_id                = $category['lang_id'];
-            $data['categories']     = $this->MCats->getTopCategories($lang_id);
-            $data['right']          = 'admin/category_right';
-            if (!count($data['category']))
-            {
-                redirect('admin/category/index','refresh');
-            }
 
             // Set breadcrumb
             $this->bep_site->set_crumb($this->lang->line('kago_edit'),'category/admin/edit');
