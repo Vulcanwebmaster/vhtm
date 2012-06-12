@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 19, 2012 at 06:31 AM
+-- Generation Time: Jun 12, 2012 at 09:48 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -380,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-05-17 12:43:52', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-12 09:46:11', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'an', 'a97b4c3de192c200fdc31eac8ca2cf57639da998', 'anan@gmail.com', 1, 1, 'qFLDP9DBM3oERI1uT3cAJ5cBADidq28N', '2012-05-05 18:48:45', '2012-05-05 18:45:43', '2012-05-05 18:48:28');
 
 -- --------------------------------------------------------
@@ -431,8 +431,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('9c5d5648ace156eafe7dca69ccebd6de', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337240562, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-16 19:31:18";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
-('f3ac31a102f5844e230797909322295c', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19', 1337251424, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-05-17 05:40:47";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('718d142f40d4ed488aedda3cf3d72ef0', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5', 1339487171, 'a:13:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-11 13:34:57";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:3:"kho";s:1:"0";}'),
+('87daecd13066d17ead8b9eccd1ea86ea', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339415616, 'a:12:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-11 10:05:41";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:3:"kho";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -474,34 +474,36 @@ CREATE TABLE IF NOT EXISTS `omc_category` (
   `longdesc` text COLLATE utf8_unicode_ci NOT NULL,
   `status` enum('active','inactive') COLLATE utf8_unicode_ci NOT NULL,
   `order` int(11) unsigned DEFAULT NULL,
-  `parentid` int(11) unsigned NOT NULL,
+  `parentid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `lang_id` int(2) unsigned NOT NULL,
   `table_id` int(11) unsigned NOT NULL,
   `is_display_in_menu` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `omc_category`
 --
 
 INSERT INTO `omc_category` (`id`, `name`, `metadesc`, `metakeyword`, `shortdesc`, `longdesc`, `status`, `order`, `parentid`, `lang_id`, `table_id`, `is_display_in_menu`) VALUES
-(1, 'English category', '', '', '', '', 'active', NULL, 0, 0, 1, '0'),
-(2, 'Books', '', '', '', '', 'active', 40, 1, 0, 2, '0'),
-(7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, 1, 0, 7, '0'),
-(9, 'Mountain', '', '', '', '', 'active', 10, 1, 0, 9, '0'),
-(11, 'River', '', '', '', '', 'active', 25, 1, 0, 11, '0'),
-(17, 'Angels', 'Angels in english', '', '', '', 'active', 35, 1, 0, 17, '0'),
-(20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, 1, 0, 20, '0'),
-(23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, 1, 0, 23, '0'),
-(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, 0, 0, 25, '1'),
-(26, 'Áo', '', '', '', '', 'active', 0, 0, 0, 26, '1'),
-(27, 'Phụ kiện', '', '', '', '', 'active', 0, 0, 0, 27, '1'),
-(28, 'sdfsdf', '', '', '', '', 'active', 0, 0, 0, 28, '0'),
-(29, 'hoho', '', '', '', '', 'active', 0, 0, 0, 29, '1'),
-(30, 'dsfsdf', '', '', '', '', 'active', 0, 0, 0, 30, '0'),
-(31, '3qwrwe', '', '', '', '', 'active', 0, 0, 0, 31, '0'),
-(32, 'sdgdfg', '', '', '', '', 'active', NULL, 0, 0, 32, '0');
+(1, 'English category', '', '', '', '', 'active', NULL, '0', 0, 1, '1'),
+(2, 'Books', '', '', '', '', 'active', 40, '0', 0, 2, '1'),
+(7, 'Meditation', 'Meditation in English', '', '', '', 'active', 30, '0', 0, 7, '1'),
+(9, 'Mountain', '', '', '', '', 'active', 10, '0', 0, 9, '1'),
+(11, 'River', '', '', '', '', 'active', 25, '0', 0, 11, '1'),
+(17, 'Angels', 'Angels in english', '', '', '', 'active', 35, '0', 0, 17, '1'),
+(20, 'Magic', 'Magic desc.', '', '', '', 'active', 55, '0', 0, 20, '1'),
+(23, 'Ocean', 'Ocean desc', '', '', '', 'active', 70, '0', 0, 23, '1'),
+(25, 'Quần', '', '', '', 'các loại quần áo', 'active', 0, '0', 0, 25, '1'),
+(26, 'Áo', '', '', '', '', 'active', 0, '0', 0, 26, '1'),
+(27, 'Phụ kiện', '', '', '', '', 'active', 0, '0', 0, 27, '1'),
+(28, 'sdfsdf', '', '', '', '', 'active', 0, '0', 0, 28, '1'),
+(29, 'hoho', '', '', '', '', 'active', 0, '0', 0, 29, '1'),
+(30, 'dsfsdf', '', '', '', '', 'active', 0, '0', 0, 30, '1'),
+(31, '3qwrwe', '', '', '', '', 'active', 0, '0', 0, 31, '1'),
+(32, 'sdgdfg', '', '', '', '', 'active', NULL, '0', 0, 32, '1'),
+(33, 'Áo phông', 'ád', 'fgafasd', 'sfsdf', 'faaaaaaaaaaaa', 'active', NULL, '26', 0, 0, '0'),
+(34, 'Áo sơ mi', 'dfsdf', 'ádasd', 'sdfac', 'ádasd', 'active', NULL, '26', 0, 0, '0');
 
 -- --------------------------------------------------------
 
@@ -773,7 +775,7 @@ CREATE TABLE IF NOT EXISTS `omc_products` (
   `lang_id` int(2) unsigned NOT NULL,
   `table_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=68 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=69 ;
 
 --
 -- Dumping data for table `omc_products`
@@ -783,38 +785,39 @@ INSERT INTO `omc_products` (`id`, `code`, `name`, `public`, `shortdesc`, `longde
 (1, 'A1', 'Áo phông 1', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 4, 'active', 25, 'none', 'new product', 1111, 0, 0),
 (2, 'A2', 'Quần 2', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 4, 'active', 25, 'none', 'new product', 5555, 0, 0),
 (3, 'A3', 'Quần 3', 0, 'quần', '<p>C&aacute;c loại quần d&agrave;i</p>', '<p><img src="../../../../assets/images/quan4.jpg" alt="" width="400" height="400" /><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan4.jpg" alt="" width="400" height="400" /><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 0, 'active', 25, 'none', 'new product', 333, 0, 0),
-(4, 'A4', 'Quần 4', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 0, 'active', 25, 'none', 'new product', 4444, 0, 0),
+(4, 'A4', 'Quần 4', 0, 'This is a new style of the year', '<p><img src="../../../../assets/images/55345576-1292315768-T-shirt-nuy-131232.jpg" alt="" width="400" height="423" /></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>ASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trung Anh ;kjas;df</p>\n<p>ASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trung</p>\n<p>ASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trung</p>\n<p>ASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trung</p>\n<p>ASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trungASDASKLDASKLDJASKLDJAKLSDJASKLD&nbsp; Trinh Trun gAnh Trinh trung</p>\n<p>&nbsp;</p>\n<p>TEST TEST STETSETSETOSEPOTISEOPT</p>\n<p>TEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPT</p>\n<p>TEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPTTEST TEST STETSETSETOSEPOTISEOPT</p>\n<p>TEST TEST STETSETSETOSEPOTISEOPT</p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 0, 'active', 25, 'none', 'new product', 350000, 0, 0),
 (5, 'A5', 'Quần 5', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'none', 'new product', 5555, 0, 0),
 (6, 'A6', 'Quần 6', 0, '', '', '<p><img src="../../../../assets/images/quan2.gif" alt="" width="365" height="365" /></p>', '<p><img src="../../../../assets/images/quan2.gif" alt="" width="365" height="365" /></p>', '0', 0, 'active', 25, 'none', 'new product', 6666, 0, 0),
 (7, 'A7', 'Quần 7', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 3, 'active', 25, 'none', 'new product', 7777, 0, 0),
-(8, 'A8', 'Áo phông 8', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 8, 'active', 26, '', 'new product', 8888, 0, 0),
-(9, 'A9', 'Áo phông 9', 0, '', '<p>dfgdfglfgskfkdfbgkjfgbdkfjgbdfg<img src="../../../../assets/images/12012009235402_87033H.jpg" alt="" width="1800" height="1821" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 0, 'active', 26, 'none', 'new product', 9999, 0, 0),
-(10, 'A10', 'Áo phông 10', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, '', 'new product', 1200, 0, 0),
-(11, 'A11', 'Áo phông 11', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 26, 'front', 'new product', 50, 0, 0),
-(12, 'A12', 'Áo phông 12', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 9, 'active', 26, '', 'new product', 230, 0, 0),
-(13, 'A13', 'Áo phông 13', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 8, 'active', 26, 'front', 'new product', 50, 0, 0),
-(14, 'A14', 'Áo phông 14', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 26, 'webshop', 'new product', 220, 0, 0),
-(15, 'A15', 'Áo phông 15', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 26, 'front', 'new product', 30000, 0, 0),
-(16, 'A16', 'Áo phông 16', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 26, 'webshop', 'new product', 123, 0, 0),
+(8, 'A8', 'Áo phông 8', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 8, 'active', 33, '', 'new product', 8888, 0, 0),
+(9, 'A9', 'Áo phông 9', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 33, '', 'new product', 9999, 0, 0),
+(10, 'A10', 'Áo phông 10', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 34, '', 'new product', 1200, 0, 0),
+(11, 'A11', 'Áo phông 11', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 9, 'active', 33, 'front', 'new product', 50, 0, 0),
+(12, 'A12', 'Áo phông 12', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 9, 'active', 34, '', 'new product', 230, 0, 0),
+(13, 'A13', 'Áo phông 13', 0, '', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 8, 'active', 33, 'front', 'new product', 50, 0, 0),
+(14, 'A14', 'Áo phông 14', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 34, 'webshop', 'new product', 220, 0, 0),
+(15, 'A15', 'Áo phông 15', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 7, 'active', 33, 'front', 'new product', 30000, 0, 0),
+(16, 'A16', 'Áo phông 16', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 7, 'active', 34, 'webshop', 'new product', 123, 0, 0),
 (17, 'A17', 'Quần 17', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 3, 'active', 25, 'none', 'new product', 46346, 0, 0),
 (20, 'A20', 'Phụ kiện 20', 0, '', '', '<p><img src="../../../../assets/images/phukien2.jpg" alt="" width="400" height="478" /></p>', '<p><img src="../../../../assets/images/phukien2.jpg" alt="" width="400" height="478" /></p>', '0', 0, 'active', 27, 'none', 'new product', 1111, 0, 0),
 (21, 'A21', 'Phụ kiện 21', 0, '', '', '<p><img src="../../../../assets/images/phukien3.jpg" alt="" width="350" height="437" /></p>', '<p><img src="../../../../assets/images/phukien3.jpg" alt="" width="350" height="437" /></p>', '0', 0, 'active', 27, 'none', 'new product', 2222, 0, 0),
 (22, 'A22', 'Phụ kiện 22', 0, '', '', '<p><img src="../../../../assets/images/phukien1.jpg" alt="" width="350" height="428" /></p>', '<p><img src="../../../../assets/images/phukien1.jpg" alt="" width="350" height="428" /></p>', '0', 0, 'active', 27, 'none', 'new product', 222, 0, 0),
-(45, 'B1', 'Sách xịn', 0, '11', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 11, 'active', 26, 'none', 'new product', 111, 0, 45),
+(45, 'B1', 'Sách xịn', 0, '11', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 11, 'active', 33, 'none', 'new product', 111, 0, 45),
 (48, 'A31', 'Quần 48', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 5, 'active', 25, 'none', 'new product', 1200, 0, 48),
-(49, 'A40', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 456000, 0, 49),
-(50, 'A50', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 26, 'none', 'new product', 123000, 0, 50),
-(54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 1, 'active', 26, 'none', 'new product', 13454, 0, 54),
-(55, 'A100', 'Sách văn', 0, 'văn', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 12, 'active', 26, 'none', 'new product', 8765, 0, 55),
-(59, 'A170', 'Sách sử', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 21, 'active', 26, 'none', 'new product', 1234, 0, 59),
-(60, 'dfgdfgdf', 'Áo phông 60', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 4, 'active', 26, 'none', 'new product', 1200000, 0, 60),
+(49, 'A40', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 34, 'none', 'new product', 456000, 0, 49),
+(50, 'A50', 'Meditation', 0, '', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 0, 'active', 33, 'none', 'new product', 123000, 0, 50),
+(54, 'A9', 'Áo dài', 0, 'aaaaaâ', '', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '<p><img src="../../../../assets/images/sexy-and-i-know-it-kids-shirts.png" alt="" width="378" height="378" /></p>', '0', 1, 'active', 34, 'none', 'new product', 13454, 0, 54),
+(55, 'A100', 'Sách văn', 0, 'văn', '', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '<p><img src="../../../../assets/images/untitled-6.png" alt="" width="168" height="185" /></p>', '0', 12, 'active', 33, 'none', 'new product', 8765, 0, 55),
+(59, 'A170', 'Sách sử', 0, '', '', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '<p><img src="../../../../assets/images/flash-logo-t-shirt.jpg" alt="" width="500" height="400" /></p>', '0', 21, 'active', 34, 'none', 'new product', 1234, 0, 59),
+(60, 'dfgdfgdf', 'Áo phông 60', 0, '', '', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '<p><img src="../../../../assets/images/Superman_symbol.jpg" alt="" width="550" height="600" /></p>', '0', 4, 'active', 33, 'none', 'new product', 1200000, 0, 60),
 (61, 'xcvv', 'Quần 61', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'front', 'new product', 1276600, 0, 61),
 (62, 'ghfgh', 'Quần 62', 0, '', '', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '<p><img src="../../../../assets/images/quan1.jpg" alt="" width="400" height="523" /></p>', '0', 2, 'active', 25, 'webshop', 'new product', 124000, 0, 62),
 (63, 'a123', 'Quần 63', 0, '', '', '', '', '0', 2, 'active', 25, 'webshop', 'new product', 120000, 0, 63),
 (64, 'a1234', 'Quần 64', 0, '', '', '', '', '0', 3, 'active', 25, 'front', 'new product', 134000, 0, 64),
 (65, 'a12345', 'Quần 65', 0, '', '', '', '', '0', 4, 'active', 25, 'webshop', 'new product', 150000, 0, 65),
-(66, '100', 'Áo sơ mi nam', 0, 'Xanh xanh xanh', '<p>X&aacute;m x&aacute;m x&aacute;m</p>', '', '<p><img src="../../../assets/images/12012009235402_87033H.jpg" alt="" width="1800" height="1821" /></p>', '0', 0, 'active', 26, 'none', 'none', 0, 0, 66),
-(67, '101', 'Áo so mi nữ', 0, 'xấu xấu', '<p>bẩn bẩn</p>', '', '<p><img src="../../../assets/images/12012009235402_87033H.jpg" alt="" width="1800" height="1821" /></p>', '0', 0, 'active', 1, 'none', 'none', 0, 0, 67);
+(66, 'N100', 'News', 0, '', '', '', '', '0', 0, 'active', 1, 'none', 'none', 0, 0, 66),
+(67, '100', 'Áo sơ mi nam', 0, 'xấu xấu', '', '<p>&lt;html /&gt;</p>', '<p>&lt;html /&gt;</p>', '0', 0, 'active', 1, 'none', 'none', 0, 0, 67),
+(68, 'N123', 'News', 0, '', '', '', '', '0', 0, 'active', 9, 'none', 'none', 0, 0, 68);
 
 -- --------------------------------------------------------
 
@@ -961,7 +964,6 @@ CREATE TABLE IF NOT EXISTS `shop_sanphamkho` (
 
 INSERT INTO `shop_sanphamkho` (`sanphamkho_id`, `kho_id`, `id`, `total`) VALUES
 (25, 1, 45, 2),
-(26, 2, 45, 0),
 (27, 3, 45, 4),
 (28, 1, 46, 2),
 (29, 2, 46, 0),
