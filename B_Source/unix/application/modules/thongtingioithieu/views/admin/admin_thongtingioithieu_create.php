@@ -1,7 +1,26 @@
 <h2><?php echo $title;?></h2>
 
+<script language="JavaScript" type="text/javascript">
+	function CheckForm() 
+	{
+        var temp = tinymce.EditorManager.get('noidung').getContent();
+        var i = 0;
+        while (true)
+        {
+            temp = temp.replace('style="color: ',"@$%#@");
+            temp = temp.replace('style="background-color: ',"&$%#@"); 
+			i = i + 1;
+			if (i == 10) break;
+        }
+        document.getElementById("noidung_backup").value = temp;
+        return true;
+    }
+</script>
+
+<form action="<?php echo base_url()?>index.php/thongtingioithieu/admin/create" 
+		method="post" onsubmit="return CheckForm();">
+
 <?php
-echo form_open('thongtingioithieu/admin/create');
 echo "\n<table id='preference_form'>";
 
 echo "<tr><td class='label'><label for='tenloai'>".'(*)'.'Tên:'."</label></td>\n";
@@ -19,6 +38,7 @@ echo "</td></tr>\n";
 
 echo "</table>";
 ?>
+<input name = "noidung_backup" id = "noidung_backup" type = "hidden">
 <div class="buttons">
 	<button type="submit" class="positive" name="submit" value="submit">
     <?php print $this->bep_assets->icon('disk');?>
@@ -30,6 +50,4 @@ echo "</table>";
     <?php print $this->lang->line('general_cancel');?>
     </a>
 </div>
-<?php
-echo form_close();
-?>
+</form>

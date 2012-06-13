@@ -34,9 +34,12 @@ class Admin extends Shop_Admin_Controller
 
     function _fields()
     {
+    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['noidung_backup']);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+    	$temp = str_replace("../../../", base_url(), $temp);
         $data = array(
             'submenu_id'   => $this->input->post('submenu_id',TRUE),
-            'ten'          => $this->input->post('ten',TRUE),
+            'ten'          => $temp,
             'noidung'      => $this->input->post('noidung',TRUE)  
         );
         return $data;

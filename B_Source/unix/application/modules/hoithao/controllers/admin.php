@@ -36,6 +36,7 @@ class Admin extends Shop_Admin_Controller
     {
     	$temp = str_replace("@$%#@", 'style="color: ',$_POST['noidung_backup']);
     	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+    	$temp = str_replace("../../../", base_url(), $temp);
         $data = array(
             'hoithao_id'   => $this->input->post('hoithao_id',TRUE),
             'tieude'       => $this->input->post('tieude',TRUE),

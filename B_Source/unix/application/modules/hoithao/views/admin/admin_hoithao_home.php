@@ -15,7 +15,6 @@ if (count($hoithao)){
     echo "<thead>\n<tr valign='top'>\n";
     echo "<th>ID</th>\n
     	  <th>Tiêu Đề</th>\n
-    	  <th>Nội Dung</th>\n
     	  <th>Thời Gian</th>\n
     	  <th>Phản Hồi</th>\n
     	  <th>Ảnh đại diện</th>\n
@@ -25,7 +24,6 @@ if (count($hoithao)){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['hoithao_id']."</td>\n";
         echo "<td align='center'>".substr($list['tieude'],0,40)."..."."</td>\n";
-        echo "<td align='center'>".substr($list['noidung'],0,100)."..."."</td>\n";
         echo "<td align='center'>".$list['thoigian']."..."."</td>\n";
         echo "<td align='center'>".$list['phanhoi']."..."."</td>\n";
         echo "<td align='center'>".$list['anhdaidien']."..."."</td>\n";      

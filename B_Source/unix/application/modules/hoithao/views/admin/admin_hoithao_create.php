@@ -43,8 +43,8 @@ echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='long'>".'(*)Nội dung:'."</label></td>\n";
-$data = array('name'=>'noidung','id'=>'long','rows'=>'10', 'cols'=>'80');
+echo "<tr><td class='label'><label for='noidung'>".'(*)Nội dung:'."</label></td>\n";
+$data = array('name'=>'noidung','id'=>'noidung','rows'=>'10', 'cols'=>'80');
 echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
@@ -69,7 +69,7 @@ echo "</td></tr>\n";
 
 echo "</table>";
 ?>
-<input name = "mota_backup" id = "noidung_backup" type = "hidden">
+<input name = "noidung_backup" id = "noidung_backup" type = "hidden">
 <div class="buttons">
 	<button type="submit" class="positive" name="submit" value="submit">
     <?php print $this->bep_assets->icon('disk');?>

@@ -1,7 +1,28 @@
 <h2><?php echo $title;?></h2>
+<link type="text/css" href="<?php echo base_url();?>assets/css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui-1.8.20.custom.min.js"></script>
 
+<script language="JavaScript" type="text/javascript">
+	function CheckForm() 
+	{
+        var temp = tinymce.EditorManager.get('noidung').getContent();
+        var i = 0;
+        while (true)
+        {
+            temp = temp.replace('style="color: ',"@$%#@");
+            temp = temp.replace('style="background-color: ',"&$%#@"); 
+			i = i + 1;
+			if (i == 10) break;
+        }
+        document.getElementById("noidung_backup").value = temp;
+        return true;
+    }
+</script>
+
+<form action="<?php echo base_url()?>index.php/hoithao/admin/edit" 
+		method="post" onsubmit="return CheckForm();">
 <?php
-echo form_open('hoithao/admin/edit');
 
 echo "\n<table id='preference_form'>";
 
@@ -40,6 +61,7 @@ echo "</table>\n";
 echo form_hidden('hoithao_id',$hoithao['hoithao_id']);
 
 ?>
+<input name = "noidung_backup" id = "noidung_backup" type = "hidden">
 <div class="buttons">
 	<button type="submit" class="positive" name="submit" value="submit">
     <?php print $this->bep_assets->icon('disk');?>
@@ -51,9 +73,4 @@ echo form_hidden('hoithao_id',$hoithao['hoithao_id']);
     <?php print $this->lang->line('general_cancel');?>
     </a>
 </div>
-<?php
-//echo form_submit('submit','update customer');
-echo form_close();
-
-
-?>
+</form>

@@ -34,6 +34,7 @@ class Admin extends Shop_Admin_Controller
     {
     	$temp = str_replace("@$%#@", 'style="color: ',$_POST['mota_backup']);
     	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+    	$temp = str_replace("../../../", base_url(), $temp);
         $data = array(
             'khoahoc_id'  => $this->input->post('khoahoc_id',TRUE),
         	'tieude'      => $this->input->post('tieude',TRUE),
@@ -80,11 +81,10 @@ class Admin extends Shop_Admin_Controller
     	} 
         if ($this->input->post('tieude'))
         {   
-        	$this->form_validation->set_rules('tieude', 'tieude', 'required');        
-		  	$this->form_validation->set_rules('mota', 'mota', 'required');
-		  	$this->form_validation->set_rules('batdau', 'batdau', 'required');  
-		  	$this->form_validation->set_rules('ketthuc', 'ketthuc', 'required');     
-		  	$this->form_validation->set_rules('hocphi', 'hocphi', 'required');     
+        	$this->form_validation->set_rules('mota',    'mota',    'required');
+        	$this->form_validation->set_rules('batdau',  'batdau',  'required');
+        	$this->form_validation->set_rules('ketthuc', 'ketthuc', 'required');
+        	$this->form_validation->set_rules('hocphi',  'hocphi',  'required');
 		  	if($this->form_validation->run())
 		  	{
 				$data = $this->_fields();

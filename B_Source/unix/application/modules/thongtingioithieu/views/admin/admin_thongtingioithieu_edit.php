@@ -1,7 +1,24 @@
 <h2><?php echo $title;?></h2>
 
+<script language="JavaScript" type="text/javascript">
+	function CheckForm() 
+	{
+        var temp = tinymce.EditorManager.get('mota').getContent();
+        var i = 0;
+        while (true)
+        {
+            temp = temp.replace('style="color: ',"@$%#@");
+            temp = temp.replace('style="background-color: ',"&$%#@"); 
+			i = i + 1;
+			if (i == 10) break;
+        }
+        document.getElementById("mota_backup").value = temp;
+        return true;
+    }
+</script>
+<form action="<?php echo base_url()?>index.php/thongtingioithieu/admin/edit" 
+		method="post" onsubmit="return CheckForm();">
 <?php
-echo form_open('thongtingioithieu/admin/edit');
 
 echo "\n<table id='preference_form'>";
 
@@ -22,6 +39,7 @@ echo "</table>\n";
 echo form_hidden('submenu_id',$thongtingioithieu['submenu_id']);
 
 ?>
+<input name = "noidung_backup" id = "noidung_backup" type = "hidden">
 <div class="buttons">
 	<button type="submit" class="positive" name="submit" value="submit">
     <?php print $this->bep_assets->icon('disk');?>
@@ -33,9 +51,4 @@ echo form_hidden('submenu_id',$thongtingioithieu['submenu_id']);
     <?php print $this->lang->line('general_cancel');?>
     </a>
 </div>
-<?php
-//echo form_submit('submit','update customer');
-echo form_close();
-
-
-?>
+</form>
