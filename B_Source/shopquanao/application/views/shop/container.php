@@ -41,8 +41,6 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/women_files/jquery.slider.css" />
     
-    
-    <link type='text/css' rel='stylesheet' href='<?php echo base_url();?>assets/women_files/828895675-widget_css_bundle.css' />
     <!-- link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/authorization.css" / -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/women_files/newstyle.css"/>
     
@@ -133,7 +131,7 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/women_files/uniform.default.css" type="text/css" media="screen"/>
 </head>
 
-<body data-twttr-rendered="true"><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="https://platform.twitter.com/widgets/hub.html"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" style="position: absolute; top: -9999em; width: 10px; height: 10px; " src="http://platform.twitter.com/widgets/hub.html"></iframe>
+<body>
 <div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
     function setAttributeOnload(object, attribute, val) {
       if(window.addEventListener) {
@@ -144,8 +142,9 @@ xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.c
       }
     }
   </script>
-<iframe src="http://www.blogger.com/navbar.g?targetBlogID=6804016548630797752&amp;blogName=shop+qu%E1%BA%A7n+%C3%A1o,+shop+th%E1%BB%9Di+trang,+qu%E1%BA%A7n+%C3%A1...&amp;publishMode=PUBLISH_MODE_HOSTED&amp;navbarType=LIGHT&amp;layoutType=LAYOUTS&amp;searchRoot=http://www.vananhshop.com/search&amp;blogLocale=vi&amp;homepageUrl=http://www.vananhshop.com/&amp;vt=-1830162304995213558" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
-<div></div><script type="text/javascript">
+<div>
+</div>
+<script type="text/javascript">
 (function() {
 var script = document.createElement('script');
 script.type = 'text/javascript';

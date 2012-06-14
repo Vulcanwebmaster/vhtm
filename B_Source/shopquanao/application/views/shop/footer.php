@@ -24,5 +24,8 @@
         <a href=" <?php echo base_url();?>" target="_blank" title="">quần áo online</a>.
         <!-- Tua cuoi trang END-->
     </div>
+    <div>
+    	<p style="color:#999">Design by <a href="http://niw.com.vn">NIW</a></p>
+    </div>
 </div>
 	

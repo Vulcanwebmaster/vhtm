@@ -51,7 +51,7 @@
 <!--  -->
 	
     <div class="foxmenucontainer" id="col-right">
-    		<script type="text/javascript">
+    		<!-- script type="text/javascript">
 				$(document).ready(function(){
 					$('.menulevel1').children('ul').slideUp(1000);
 					$('.menulevel1').mouseenter(function(){
@@ -61,7 +61,7 @@
 						$(this).children('ul').slideUp(400);
 					});
 				});
-			</script>
+			</script -->
                 <div id="menu">
                     <ul id="pagemenu">
                         <?php $list=$this->MKaimonokago->getMenuList();
@@ -70,18 +70,18 @@
                         		
                         		if ($this->MKaimonokago->isParent($list[$i]->id))
                         		{
-                        			echo '<li class="menulevel1"><a href="'.base_url().'index.php/ao/get_list/'.$list[$i]->id.'">'.$list[$i]->name.'</a>';
+                        			echo '<li class="menulevel1"><a href="'.base_url().'get-list/'.$list[$i]->id.'">'.$list[$i]->name.'</a>';
                         			echo '<ul class="menulevel2" style="padding-left:30px">';
                         			foreach ($this->MKaimonokago->getListChild($list[$i]->id) as $child)
                         			{
                         				if ($child->is_display_in_menu==1)
-                        					echo '<li><a style="background-color:#929291" href="'.base_url().'index.php/ao/get_list/'.$child->id.'">'.$child->name.'</a></li>';
+                        					echo '<li><a style="background-color:#929291" href="'.base_url().'get-list/'.$child->id.'">'.$child->name.'</a></li>';
                         			}
                         			echo '</ul>';
                         			echo '</li>';
                         		}
-                        		else 
-                        			echo '<li><a href="'.base_url().'index.php/ao/get_list/'.$list[$i]->id.'">'.$list[$i]->name.'</a></li>';
+                        		else if ($list[$i]->parentid==0)
+                        			echo '<li><a href="'.base_url().'get-list/'.$list[$i]->id.'">'.$list[$i]->name.'</a></li>';
                         	}
                         	echo '</ul>
 		                </div>

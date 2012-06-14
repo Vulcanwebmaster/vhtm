@@ -44,6 +44,10 @@ $route['default_controller'] = "welcome";
 $route['scaffolding_trigger'] = "";
 
 $route['admin'] = 'admin/home';
+$route['hangmoi'] = 'ao/hangmoi';
+$route['cart']='welcome/cart';
+$route['contact']='welcome/contact';
+$route['get-list/(:any)']='ao/get_list/$1';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

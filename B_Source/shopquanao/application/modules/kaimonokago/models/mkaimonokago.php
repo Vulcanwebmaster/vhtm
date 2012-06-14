@@ -521,6 +521,8 @@ class MKaimonokago extends Base_model
     	else return false;
     }
     
+    
+    
     function getListChild($id)
     {
     	$ds=$this->db->get('omc_category');

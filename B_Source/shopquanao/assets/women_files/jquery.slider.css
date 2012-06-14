@@ -56,7 +56,6 @@
 
 .jquery-slider-selector
 {
-  background:url(images/jquery-slider-theme.png) no-repeat -20px 0;
   display:inline;
   float:left;
   width:10px;
@@ -71,7 +70,6 @@
 
 .jquery-slider-selector-current
 {
-  background:url(images/jquery-slider-theme.png) no-repeat -20px -10px;
 }
 
 .jquery-slider-control
@@ -103,22 +101,18 @@
 
 .jquery-slider-control-play
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 -44px;
 }
 
 .jquery-slider-control-pause
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 -24px;
 }
 
 .jquery-slider-control-play:active
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 -132px;
 }
 
 .jquery-slider-control-pause:active
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 -112px;
 }
 
 .jquery-slider-navigation
@@ -133,7 +127,6 @@
 
 .jquery-slider-navigation-prev
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 0;
   cursor: pointer;
   width:19px;
   height:24px;
@@ -149,12 +142,10 @@
 
 .jquery-slider-navigation-prev:active
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 -88px;
 }
 
 .jquery-slider-navigation-next
 {
-  background:url(images/jquery-slider-theme.png) no-repeat 0 -64px;
   cursor: pointer;
   width:19px;
   height:24px;
@@ -205,7 +196,6 @@
 
 .jquery-slider-timer-bar
 {
-  background:url(images/jquery-slider-theme.png) no-repeat -31px 0;
   float:left;
   display:inline;
   height:2px;
