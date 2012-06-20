@@ -47,10 +47,10 @@ class Home extends Admin_Controller
 		// load flot.js
 		$this->bep_assets->load_asset_group('flot');
 		// Assign widgets to dashboard
-		if($this->preference->item('dashboard_rss'))
-		{
-			$this->dashboard->assign_widget(new widget('RSS Feed',$this->rss_widget->create()),'right');
-		}
+		//if($this->preference->item('dashboard_rss'))
+		//{
+		//	$this->dashboard->assign_widget(new widget('RSS Feed',$this->rss_widget->create()),'right');
+		//}
 		// Assign widgets to dashboard
 		if($this->preference->item('ga_email') AND $this->preference->item('ga_password') AND $this->preference->item('ga_profile'))
 		{
