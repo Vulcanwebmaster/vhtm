@@ -35,6 +35,13 @@ class Admin extends Shop_Admin_Controller
     	$temp = str_replace("@$%#@", 'style="color: ',$_POST['mota_backup']);
     	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
     	$temp = str_replace("../../../", base_url(), $temp);
+    	
+    	$anhdaidien = $this->input->post('anhdaidien',TRUE);
+    	$tmp = strstr(strstr($anhdaidien, "src=\"../../../"),"../../../");
+    	$pos = strpos($tmp, "\"");
+    	$link = substr($tmp, 0, $pos);
+    	$link = str_replace("../../../", "", $link);
+    	
         $data = array(
             'khoahoc_id'  => $this->input->post('khoahoc_id',TRUE),
         	'tieude'      => $this->input->post('tieude',TRUE),
@@ -42,7 +49,7 @@ class Admin extends Shop_Admin_Controller
             'batdau'      => $this->input->post('batdau',TRUE),
             'ketthuc'     => $this->input->post('ketthuc',TRUE),        
             'hocphi'      => $this->input->post('hocphi',TRUE),
-        	'anhdaidien'  => $this->input->post('anhdaidien',TRUE),
+        	'anhdaidien'  => $link,
         	'thoigian'    => $this->input->post('thoigian',TRUE)    
         );
         return $data;

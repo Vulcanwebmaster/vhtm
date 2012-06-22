@@ -74,10 +74,10 @@ echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='anhdaidien'>".'Ảnh đại diện:'."</label></td>\n";
-$data = array('name'=>'anhdaidien','id'=>'anhdaidien','class'=>'text','value'=>$khoahoc['anhdaidien']);
-echo "<td>";
-echo form_input($data);
+echo "<tr><td class='label'><label for='anhdaidien'>".'Ảnh Đại Diện:'."</label></td>\n";
+$data = array('name'=>'anhdaidien','id'=>'anhdaidien','rows'=>'10', 'cols'=>'80','value'=>"<p><img src=\"".base_url().$khoahoc['anhdaidien']."\" alt=\"\" /></p>");
+echo "<td id='nopad' >";
+echo form_textarea($data) ;
 echo "</td></tr>\n";
 
 echo "</table>\n";

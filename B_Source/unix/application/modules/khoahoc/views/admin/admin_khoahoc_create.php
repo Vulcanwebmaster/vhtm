@@ -75,9 +75,9 @@ echo form_input($data);
 echo "</td></tr>\n";
 
 echo "<tr><td class='label'><label for='anhdaidien'>".'Ảnh Đại Diện:'."</label></td>\n";
-$data = array('name'=>'anhdaidien','id'=>'anhdaidien','class'=>'text');
-echo "<td>";
-echo form_input($data);
+$data = array('name'=>'anhdaidien','id'=>'anhdaidien','rows'=>'10', 'cols'=>'110');
+echo "<td id='nopad' >";
+echo form_textarea($data) ;
 echo "</td></tr>\n";
 
 echo "</table>";
