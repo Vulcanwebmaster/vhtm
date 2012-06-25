@@ -16,6 +16,7 @@ class Admin extends Shop_Admin_Controller
 
     function index()
     {
+    	$this->bep_assets->load_asset_group('TINYMCE');
         $data = $this->common_home();
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_homepage_home";
         $this->load->view($this->_container,$data);
@@ -24,7 +25,21 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         $data['title'] = "Quản lý trang chủ";
-        $data['homepage'] = $this->MHomepage->getHomePage();
+        $temp = $this->MHomepage->getHomePage();
+        foreach ($temp as $key => $list){
+        	if ($list['muc_id'] == 4 || $list['muc_id'] == 5){
+        		$tmp = explode(",", $list['dulieu']);
+        		$final = "";
+        		foreach($tmp as $str)
+        		{
+        			$final = $final."<p><img src=\"".base_url().$str."\" alt=\"\" /></p>" ;
+        		}
+        		$list['dulieu'] = $final;
+        	}
+        }
+        var_dump($temp);
+        		die();
+        $data['homepage'] = $temp;
         $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
         return $data;
@@ -41,6 +56,7 @@ class Admin extends Shop_Admin_Controller
     
 	function update()
     {
+    	$this->bep_assets->load_asset_group('TINYMCE');
         $data['homepage'] = $this->MHomepage->getIDs();
         $x = $data['homepage'];
         foreach($x as $key => $list )
