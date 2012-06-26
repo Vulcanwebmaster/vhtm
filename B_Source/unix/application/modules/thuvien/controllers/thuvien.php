@@ -14,7 +14,8 @@
 		{
 			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
 			$data['module']=$this->module;		
-			$data['listtype']=$this->Mthuvien->getListType();	
+			$data['listtype']=$this->Mthuvien->getListType();
+			$data['flag_DanhMuc']=3;			
 			$this->load->view($this->_container,$data);
 		}
 		

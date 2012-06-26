@@ -59,7 +59,10 @@
 							</tr>
 							<tr>
 								<td><span>*</span>Nội dung</td>
-								<td><input class="input-lienhe" type="text" name="noidung"/></td>
+								<td>
+								<!-- <input class="input-lienhe" type="text-area" name="noidung"/> -->
+								<textarea class="input-lienhe" rows="7" cols="20"></textarea>
+								</td>
 							</tr>
 							<tr>
 								<td colspan="2" align="center">

@@ -27,6 +27,7 @@
 			$data['page']=$this->config->item('backendpro_template_shop').'vhoithao';
 			$data['module']=$this->module;
 			$data['list']=$this->Mhoithao->getList($start);
+			$data['flag_DanhMuc']=2;
 			$this->load->view($this->_container,$data);
 		}
 		

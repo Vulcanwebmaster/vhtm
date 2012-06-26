@@ -15,6 +15,7 @@
 			$data['page']=$this->config->item('backendpro_template_shop').'vkhoahoc';
 			$data['module']=$this->module;
 			$data['listdoituong']=$this->Mkhoahoc->getListDoiTuong();
+			$data['flag_DanhMuc']=1;
 			$this->load->view($this->_container,$data);
 			//$this->pages();
 		}
