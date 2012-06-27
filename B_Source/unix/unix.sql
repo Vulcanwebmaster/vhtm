@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2012 at 01:44 PM
+-- Generation Time: Jun 27, 2012 at 07:47 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -388,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-10 13:36:49', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-06-27 17:22:51', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
 
 -- --------------------------------------------------------
 
@@ -437,9 +437,9 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('72882d287fb58a7e62e09ec927fb4510', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339322390, ''),
-('836169c140cf9864c7bcd8cc1528f79b', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339328167, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-10 13:36:07";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
-('c8e8ec8cf36483b0f03b2e1309545f3f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5', 1339327651, 'a:12:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-10 12:57:00";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:6:"status";s:66:"a:1:{s:7:"success";a:1:{i:0;s:28:"C?p nh?t thành công!!!";}}";}');
+('096114e6a824b9af351f299e8cdf7d53', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11', 1340817820, 'a:13:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-27 16:59:16";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:6:"status";s:306:"a:1:{s:7:"warning";a:3:{i:0;s:97:" The hoten field is required. \n The email field is required. \n The dienthoai field is required. \n";i:1;s:89:" The email field must contain a valid email address. \n The dienthoai field is required. \n";i:2;s:58:" The dienthoai field must contain a valid email address. \n";}}";}'),
+('4bf4c659fbc43e07c9de0b1c2d0aa863', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11', 1340809903, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-27 15:44:00";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
+('f72fd6ca7503bc1133b92e887fd68d94', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11', 1340808608, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:5:"email";s:15:"admin@gmail.com";s:8:"password";s:40:"0993abd18b04dce02cafde93878540f109592da5";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-06-27 10:32:36";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-03-17 21:56:17";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
 
 -- --------------------------------------------------------
 
@@ -918,6 +918,28 @@ CREATE TABLE IF NOT EXISTS `unix_camnhan` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unix_dangky`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_dangky` (
+  `dangky_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `truonghoc` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `dienthoai` int(30) NOT NULL,
+  PRIMARY KEY (`dangky_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `unix_dangky`
+--
+
+INSERT INTO `unix_dangky` (`dangky_id`, `ten`, `truonghoc`, `email`, `dienthoai`) VALUES
+(10, 'nguyen tien manh', 'abc', 'mooncavalier110205@gmail.com', 135268257);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unix_doituong`
 --
 
@@ -946,7 +968,7 @@ CREATE TABLE IF NOT EXISTS `unix_gioithieu` (
   `gioithieu_id` int(11) NOT NULL AUTO_INCREMENT,
   `noidung` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`gioithieu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `unix_gioithieu`
@@ -966,7 +988,7 @@ CREATE TABLE IF NOT EXISTS `unix_gioithieu_submenu` (
   `ten` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `noidung` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`submenu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `unix_gioithieu_submenu`
@@ -1088,7 +1110,7 @@ CREATE TABLE IF NOT EXISTS `unix_loaisach` (
   `tenloai` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `mota` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`loaisach_id`,`tenloai`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `unix_loaisach`
