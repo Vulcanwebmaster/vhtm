@@ -15,7 +15,7 @@ if (count($dangky)){
     foreach ($dangky as $key => $list){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['dangky_id']."</td>\n";   
-        echo "<td align='center'>".$list['hoten']."..."."</td>\n";
+        echo "<td align='center'>".$list['hoten']."</td>\n";
         echo "<td align='center'>".$list['truong']."</td>\n";
         echo "<td align='center'>".$list['lop']."</td>\n";
         echo "<td align='center'>".$list['phuhuynh']."</td>\n";
