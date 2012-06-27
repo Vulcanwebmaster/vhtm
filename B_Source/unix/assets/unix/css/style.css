@@ -98,3 +98,23 @@ a:hover, a:active {
 .clear {
 	clear:both;
 }
+
+#banner-left,#banner-right{position:fixed; z-index:999; top:150px; width:auto; border:solid 2px silver; border-radius:5px; padding:10px; background:url(../images/vertical-banner-bg.png) repeat; font-size:11px; color:white}
+#banner-left a,#banner-right a{color:white; line-height:32px}
+#banner-left ul,#banner-right ul{padding-left:0; list-style-type:none}
+#banner-left hr,#banner-right hr{border-top:dotted 1px white; border-style:dotted none none none}
+#banner-left a img{width:40px; height:40px; margin-right:5px; float:left}
+#banner-right{width:150px}
+#banner-right img{width:20px; height:20px}
+#banner-right ul li{margin-bottom:10px}
+#banner-right ul li hr{width:120px; border-bottom:dashed 1px white; float:right; height:13px; border-style:none none dashed none}
+#banner-right h3{text-align:center; text-transform:uppercase}
+#register{text-transform:uppercase; text-align:center}
+
+#banner-left{float:left}
+#banner-right{float:right; left:1170px}
+#slides{margin:auto; width:1000px; padding:0}
+#slide1, #slide2{width:1000px; height:250px}
+/*#slides img{margin-top:-19px}*/
+.slidebutton{margin-left:200px; margin-top:200px; cursor:pointer}
+#register-panel{}

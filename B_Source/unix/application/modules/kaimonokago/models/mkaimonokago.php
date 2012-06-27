@@ -477,6 +477,14 @@ class MKaimonokago extends Base_model
 		}
 		else return false;
 	}
+	
+	function register($input)
+	{
+		$this->load->database();
+		if ($this->db->insert('unix_dangky',$input))
+			return true;
+		else return false;
+	}
 }
 
 ?>

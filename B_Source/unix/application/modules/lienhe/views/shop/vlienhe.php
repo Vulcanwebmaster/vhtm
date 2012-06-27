@@ -20,7 +20,6 @@
 		</div>
 		<div id="col_right" style=" background:url('<?php echo base_url();?>assets/unix/images/gioithieu-bg.png') no-repeat; min-height:500px">
 			<style type="text/css">
-				span{color:red}
 				td{padding:5px 10px}
 				.input-lienhe{width:300px}
 			</style>
@@ -58,7 +57,7 @@
 								<td><input class="input-lienhe" type="text" name="tieude"/></td>
 							</tr>
 							<tr>
-								<td><span>*</span>Nội dung</td>
+								<td style="vertical-align:5px"><span>*</span>Nội dung</td>
 								<td>
 								<!-- <input class="input-lienhe" type="text-area" name="noidung"/> -->
 								<textarea class="input-lienhe" rows="7" cols="20"></textarea>
