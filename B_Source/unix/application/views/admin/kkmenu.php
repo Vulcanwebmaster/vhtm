@@ -19,6 +19,7 @@
         <?php if($this->preference->item('loaisach')):?><li><?php print anchor('loaisach/admin',$this->lang->line('backendpro_loaisach'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('sach')):?><li><?php print anchor('sach/admin',$this->lang->line('backendpro_sach'),array('class'=>'icon_page'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('camnhan')):?><li><?php print anchor('camnhan/admin',$this->lang->line('backendpro_camnhan'),array('class'=>'icon_comment'))?></li><?php echo "\n"; endif;?>
+        <?php if($this->preference->item('dangky')):?><li><?php print anchor('dangky/admin',$this->lang->line('backendpro_dangky'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
     </ul>
 </li>
 

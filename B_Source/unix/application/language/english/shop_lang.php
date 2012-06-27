@@ -62,6 +62,7 @@ $lang['backendpro_loaisach'] = 'Loại Sách';
 $lang['backendpro_thongtingioithieu'] = 'Thông Tin Giới Thiệu';
 $lang['backendpro_sach'] = 'Sách';
 $lang['backendpro_camnhan'] = 'Cảm Nhận';
+$lang['backendpro_dangky'] = 'Đăng Ký';
 
 $lang['backendpro_ql_homepage'] = 'Quản lý trang chủ';
 $lang['backendpro_ql_gioithieu'] = 'Quản lý tin giới thiệu';
@@ -71,6 +72,7 @@ $lang['backendpro_ql_khoahoc'] = 'Quản lý khóa học';
 $lang['backendpro_ql_loaisach'] = 'Quản lý loại sách';
 $lang['backendpro_ql_sach'] = 'Quản lý sách';
 $lang['backendpro_ql_camnhan'] = 'Quản lý cảm nhận';
+$lang['backendpro_ql_dangky'] = 'Quản lý danh sách đăng ký dự thi';
 
 /* For Webshop */
 $lang['preference_website_configuration'] = "Website Configuration";

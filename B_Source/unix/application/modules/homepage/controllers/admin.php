@@ -35,10 +35,10 @@ class Admin extends Shop_Admin_Controller
         			$final = $final."<p><img src=\"".base_url().$str."\" alt=\"\" /></p>" ;
         		}
         		$list['dulieu'] = $final;
+        		var_dump($final);
+        		die();
         	}
         }
-        var_dump($temp);
-        		die();
         $data['homepage'] = $temp;
         $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
