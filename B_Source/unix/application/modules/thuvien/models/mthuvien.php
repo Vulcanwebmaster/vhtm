@@ -44,9 +44,9 @@
 			return count($list);
 		}
 		
-		function getListFull($index)
+		function getListFull()
 		{
-			$ds=$this->db->get('unix_sach',12,$index);
+			$ds=$this->db->get('unix_sach');
 			$list=array();
 			foreach ($ds->result() as $item)
 			{
@@ -73,13 +73,13 @@
 			return count($list);
 		}
 		
-		function getList($index,$idtype)
+		function getList($idtype)
 		{
 			if ($idtype!='0')
 			{
 				$this->db->where('loaisach_id',$idtype);
 			}
-			$ds=$this->db->get('unix_sach',12,$index);
+			$ds=$this->db->get('unix_sach');
 			$list=array();
 			foreach ($ds->result() as $item)
 			{

@@ -19,25 +19,15 @@
 			$this->load->view($this->_container,$data);
 		}
 		
-		function loadFull($index=0)
+		function loadFull()
 		{
-			$config['base_url']=base_url().'index.php/thuvien/loadFull';
-			$config['total_rows']=$this->Mthuvien->countFull();
-			$config['per_page']=12;
-			$this->pagination->initialize($config);
-			
-			$data['listfull']=$this->Mthuvien->getListFull($index);
+			$data['listfull']=$this->Mthuvien->getListFull();
 			$this->load->view('shop/vlistfull',$data);
 		}
 		
-		function load($index=0,$type=0)
+		function load($type=0)
 		{
-			$config['base_url']=base_url().'index.php/thuvien/load';
-			$config['total_rows']=$this->Mthuvien->count($type);
-			$config['per_page']=12;
-			$this->pagination->initialize($config);
-			
-			$data['listfull']=$this->Mthuvien->getList($index,$type);
+			$data['listfull']=$this->Mthuvien->getList($type);
 			$this->load->view('shop/vlistfull',$data);
 		}
 		
@@ -47,7 +37,7 @@
 			$data['page']=$this->config->item('backendpro_template_shop').'vdetail';
 			$data['module']=$this->module;
 			$data['information']=$this->Mthuvien->getDetail($id);
-			$data['type']=$this->Mthuvien->getNameType($id);
+			$data['type']=$this->Mthuvien->getNameType($data['information']->loaisach_id);
 			$this->load->view($this->_container,$data);
 		}
 	}

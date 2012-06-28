@@ -50,6 +50,9 @@
 				</table>
 				</center>
 			</div>
+			<div id="content-panel" style="width:750px; text-align:center">
+				<?php echo $information->noidung;?>
+			</div>
 		</div>
 	</div>
 </div>

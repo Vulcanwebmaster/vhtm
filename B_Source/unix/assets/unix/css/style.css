@@ -112,10 +112,12 @@ a:hover, a:active {
 #register{text-transform:uppercase; text-align:center}
 
 #banner-left{float:left}
-#banner-right{float:right; left:1170px}
+#banner-right{float:right; /*left:1170px*/}
 #slides{margin:auto; width:1000px; padding:0}
 #slide1, #slide2{width:1000px; height:250px}
 /*#slides img{margin-top:-19px}*/
-.slidebutton{margin-left:200px; margin-top:200px; cursor:pointer}
+.slidebutton{margin-left:120px; margin-top:100px; cursor:pointer}
 #register-panel{}
 #register{cursor:pointer}
+
+#listbook{overflow-y:auto; height:500px; margin-bottom:15px; margin-top:15px}

@@ -55,7 +55,7 @@
 	    <!-- =================================================================== -->
 	</head>
 	<body>
-		<object width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object><br />
+		<!-- object width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object><br / -->
 	    
 	    <script type="text/javascript">
 			$(document).ready(function(){
@@ -67,64 +67,21 @@
 				$('#maskClose').click(function(){
 					$('#mask').slideUp(1000);
 				});
+
+				$left=$(window).width()-175;
+				$('#banner-right').css('left',$left);
+				
+				$(window).resize(function(){
+					$left=$(window).width()-175;
+					$('#banner-right').css('left',$left);
+				});
 			});
 		</script>
 	    
 		
 		
 		<?php $this->load->view('shop/header.php')?>
-		<div id="mask" style="text-align:center;padding: 20px; text-shadow: black 0px -1px 0px; color: white; position: fixed; width: 600px; height: auto; margin-top: 0; margin-left:350px; background-color: rgb(90, 90, 90); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index: 9; border: 4px solid rgb(182, 182, 181); display: block; ">
-			<div style="width:30px; cursor:pointer; border-radius:10px; background-color:white; padding:5px; color:black; float:right" align="right"><span id="maskClose">Thoát</span></div>
-			<h3>Đăng ký miễn phí lớp học</h3>
-			<h2>BỨT PHÁ MÔN TOÁN TRƯỜNG HN AMS</h2>
-			<center>
-				<form method="post" action="<?php echo base_url();?>index.php/dangky/dangkymoi">
-					<table>
-						<tr>
-							<td style="width:150px">Họ tên</td>
-							<td><input name="hoten" type="text"/></td>
-						</tr>
-						<tr><td style="height:10px"></td></tr>
-						<tr>
-							<td>Trường học</td>
-							<td><input name="truonghoc" type="text"/></td>
-						</tr>
-						<tr><td style="height:10px"></td></tr>
-						<tr>
-							<td>Lớp</td>
-							<td><input name="lop" type="text"/></td>
-						</tr>
-						<tr><td style="height:10px"></td></tr>
-						<tr>
-							<td>Phụ huynh</td>
-							<td><input name="phuhuynh" type="text"/></td>
-						</tr>
-						<tr><td style="height:10px"></td></tr>
-						<tr>
-							<td>Điện thoại liên lạc</td>
-							<td><input name="dienthoai" type="text"/></td>
-						</tr>
-						<tr><td style="height:10px"></td></tr>
-						<tr>
-							<td colspan="2" style="text-align:center">
-								<input type="submit" value="Đăng ký" name="submit"/>
-							</td>
-						</tr>
-					</table>
-				</form>
-			</center>
-		</div>
-	    <div id="banner-left">
-	    	<ul>
-		    	<li>
-		    		<a href="<?php echo base_url();?>index.php/welcome/detail/2" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/teacher_icon.png"/><span>Thầy Phan Quang Điệp</span></a>
-		    	</li>
-		    	<li><hr/></li>
-		    	<li>
-		    		<a href="<?php echo base_url();?>index.php/camnhan" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/comment-icon.png"/><span>Cảm nhận</span></a>
-		    	</li>	    	
-	    	</ul>
-	    </div>
+
 	    <?php 
 		 //   print displayStatus();
 			print (isset($content)) ? $content : NULL; 
@@ -140,16 +97,7 @@
 				}
 			}
 		?>
-		<div id="banner-right">
-	    	<ul>
-	    		<li><h3>Bứt phá môn Toán trường HN Ams</h3></li>
-	    		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>
-	    		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>
-	    		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>
-	    		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>
-	    		<li><h4 id="register">Đăng ký (Free)</h4></li>
-	    	</ul>
-	    </div>
+		
 	    
 	    
 		<?php $this->load->view('shop/footer.php')?>											

@@ -4,6 +4,13 @@
 		$('#slides div').css('z-index','1');
 		$('#slides div').css('position','absolute');
 		$('#slide2').hide();
+
+		$('.slidebutton').mouseenter(function(){
+			$(this).fadeTo(200,0.5);
+		});
+		$('.slidebutton').mouseleave(function(){
+			$(this).fadeTo(200,1);
+		});
 	});
 
 	var flag=0;
@@ -41,11 +48,9 @@
     		<br/>
     		<br/>
     		<br/>
-    		<br/>
     		<a class="slidebutton" href="<?php echo base_url();?>index.php/khoahoc"><img src="<?php echo base_url();?>assets/unix/images/slidebutton.png"/></a>
     	</div>
     	<div id="slide2" style="background:url('<?php echo base_url();?>assets/unix/images/thuvien-slide.jpg')">
-    		<br/>
     		<br/>
     		<br/>
     		<br/>

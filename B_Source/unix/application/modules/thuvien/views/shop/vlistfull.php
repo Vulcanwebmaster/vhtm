@@ -18,7 +18,7 @@
 											if (isset($listfull[$i+$j]))
 											{
 											?>
-											<li style="float:left; margin:0 30px 10px 5px;">
+											<li style="float:left; margin:0 20px 10px 5px;">
 												<fieldset style="width:120px; height:130px; border-style:none;background:url('<?php echo base_url();?>assets/unix/images/book-bg.png') no-repeat">
 													<div id="book-name">
 														<div style="height:40px"></div>
@@ -44,4 +44,3 @@
 							}
 					}?>
 				</ul>	
-<?php echo $this->pagination->create_links();?>
