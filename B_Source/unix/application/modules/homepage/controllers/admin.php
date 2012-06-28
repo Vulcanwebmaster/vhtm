@@ -25,6 +25,7 @@ class Admin extends Shop_Admin_Controller
     function common_home()
     {
         $data['title'] = "Quản lý trang chủ";
+        $result = array();
         $temp = $this->MHomepage->getHomePage();
         foreach ($temp as $key => $list){
         	if ($list['muc_id'] == 4 || $list['muc_id'] == 5){
@@ -32,14 +33,13 @@ class Admin extends Shop_Admin_Controller
         		$final = "";
         		foreach($tmp as $str)
         		{
-        			$final = $final."<p><img src=\"".base_url().$str."\" alt=\"\" /></p>" ;
+        			$final = $final."<p><img src=\"".base_url().$str."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
         		}
         		$list['dulieu'] = $final;
-        		var_dump($final);
-        		die();
         	}
+        	$result[] = $list;
         }
-        $data['homepage'] = $temp;
+        $data['homepage'] = $result;
         $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
         return $data;

@@ -14,18 +14,9 @@ if (count($homepage)){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['muc_id']."</td>\n";
         echo "<td align='center'>".$list['tenmuc']."</td>\n";
-        
-		echo "<td id='nopad' >";
-		if ($list['muc_id'] == 4 || $list['muc_id'] == 5)
-		{
-			$data = array('name'=>'dulieu_'.$list['muc_id'],'id'=>'long','rows'=>'5', 'cols'=>'60','value'=>$list['dulieu']);
-			echo form_textarea($data) ;
-		}
-		else
-		{ 
-			$data = array('name'=>'dulieu_'.$list['muc_id'], 'rows'=>'5', 'cols'=>'60', 'class'=>'text','value'=>$list['dulieu']);
-			echo form_input($data) ;
-		}
+		echo "<td>";
+		$data = array('name'=>'dulieu_'.$list['muc_id'],'id'=>'long','rows'=>'5', 'cols'=>'60','value'=>$list['dulieu']);
+		echo form_textarea($data) ;
 		echo "</td>\n";
     }
     echo "</tbody>\n</table>";
