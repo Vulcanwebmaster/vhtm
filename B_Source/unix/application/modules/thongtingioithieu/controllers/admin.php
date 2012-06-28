@@ -34,7 +34,7 @@ class Admin extends Shop_Admin_Controller
 
     function _fields()
     {
-    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['noidung_backup']);
+    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['ten']);
     	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
     	$temp = str_replace("../../../", base_url(), $temp);
         $data = array(
