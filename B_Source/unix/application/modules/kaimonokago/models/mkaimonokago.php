@@ -485,6 +485,35 @@ class MKaimonokago extends Base_model
 			return true;
 		else return false;
 	}
+	
+	function str_insert($string,$pos,$offset, $string2)
+	{
+		$count=0;
+		foreach($pos as $item)
+		{
+			$string1=substr($string, 0,$item+$count*strlen($string2)+$offset);
+			$string3=substr($string, $item+$count*strlen($string2)+$offset);
+			$string=$string1.$string2.$string3;
+			$count++;
+		}
+		return $string;
+	}
+	
+	function getYouTubeLink($source)
+	{
+		$source=str_replace('http://www.youtube.com/watch?v=', '<iframe width="420" height="315" src="http://www.youtube.com/embed/', $source);
+		//$pos=strpos($source,'<iframe width="420" height="315" src="http://www.youtube.com/embed/');
+		$pos=array();
+		for ($i=0;$i<strlen($source);$i++)
+		{
+			if ($source[$i]=='<' && $source[$i+1]=='i' && $source[$i+2]=='f')
+			{
+				$pos[]=$i;
+			}
+		}
+		$string2='" frameborder="0" allowfullscreen></iframe>';
+		return $this->str_insert($source, $pos, 78, $string2);
+	}
 }
 
 ?>

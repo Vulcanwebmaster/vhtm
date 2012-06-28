@@ -191,7 +191,7 @@ else{?>
 				<?php $listthuvien=$this->MKaimonokago->getListThuVien();
 					foreach($listthuvien as $item)
 					{?>
-						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/thuvien" title="<?php echo $item->tenloai;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tenloai,0,35);?></a></li>
+						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/thuvien/load/<?php echo $item->loaisach_id;?>" title="<?php echo $item->tenloai;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tenloai,0,35);?></a></li>
 				<?php 	}
 				?>
 				

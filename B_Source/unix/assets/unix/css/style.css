@@ -121,3 +121,4 @@ a:hover, a:active {
 #register{cursor:pointer}
 
 #listbook{overflow-y:auto; height:500px; margin-bottom:15px; margin-top:15px}
+#maskClose{font-size:11px}

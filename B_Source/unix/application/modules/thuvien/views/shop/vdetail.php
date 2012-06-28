@@ -40,18 +40,15 @@
 						<td><?php echo $type;?></td>
 					</tr>
 					<tr>
-						<td>Mô tả</td>
-						<td><?php echo $information->mota;?></td>
-					</tr>
-					<tr>
 						<td>Tác giả</td>
 						<td><?php echo $information->tacgia;?></td>
 					</tr>
 				</table>
 				</center>
 			</div>
-			<div id="content-panel" style="width:750px; text-align:center">
-				<?php echo $information->noidung;?>
+			<div id="content-panel" style="width:750px; text-align:center; margin-bottom:15px">
+				<!-- iframe width="560" height="315" src="<?php echo str_replace('watch?v=', 'embed/', $information->mota);?>" frameborder="0" allowfullscreen></iframe -->
+				<?php echo $this->MKaimonokago->getYouTubeLink($information->mota);?>
 			</div>
 		</div>
 	</div>

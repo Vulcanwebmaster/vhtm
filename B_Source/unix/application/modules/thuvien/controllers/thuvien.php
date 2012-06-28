@@ -12,23 +12,33 @@
 		
 		function index()
 		{
-			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
+			/*$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
 			$data['module']=$this->module;		
 			$data['listtype']=$this->Mthuvien->getListType();
-			$data['flag_DanhMuc']=3;			
-			$this->load->view($this->_container,$data);
+			$data['flag_DanhMuc']=3;
+			$data['selected']=0;			
+			$this->load->view($this->_container,$data);*/
+			$this->loadFull();
 		}
 		
 		function loadFull()
 		{
 			$data['listfull']=$this->Mthuvien->getListFull();
-			$this->load->view('shop/vlistfull',$data);
+			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
+			$data['listtype']=$this->Mthuvien->getListType();
+			$data['module']=$this->module;
+			$data['selected']=0;
+			$this->load->view($this->_container,$data);
 		}
 		
 		function load($type=0)
 		{
 			$data['listfull']=$this->Mthuvien->getList($type);
-			$this->load->view('shop/vlistfull',$data);
+			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
+			$data['listtype']=$this->Mthuvien->getListType();
+			$data['module']=$this->module;
+			$data['selected']=$type;
+			$this->load->view($this->_container,$data);
 		}
 		
 		//====================DETAIL==========================
