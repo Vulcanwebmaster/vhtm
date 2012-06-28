@@ -47,9 +47,22 @@ class Admin extends Shop_Admin_Controller
 
     function _fields($muc_id)
     {
+    	$tmp = $this->input->post('dulieu_'.$muc_id,TRUE);
+    	if ($muc_id==4 || $muc_id == 5)
+    	{
+    		$matches = array();
+	    	preg_match_all( '/src="([^"]*)"/i', $tmp, $matches ) ;
+	    	$arr_rslt = $matches[1];
+	    	foreach ($arr_rslt as $i => $value) 
+	    	{
+    			$arr_rslt[$i] = str_replace("../../", "", $arr_rslt[$i]);
+			}
+			$tmp = implode(",", $arr_rslt);
+    	}
+    	
     	$data = array(
             'muc_id'      => $muc_id,
-            'dulieu'      => $this->input->post('dulieu_'.$muc_id,TRUE)   
+            'dulieu'      => $tmp  
         );
         return $data;
     }
