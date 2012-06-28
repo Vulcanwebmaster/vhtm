@@ -35,13 +35,6 @@
             			<?php print $this->bep_assets->icon('arrow_refresh') ?>
             			<?php print $this->lang->line('userlib_forgotten_password')?>
             		</a>
-
-            		<?php if($this->preference->item('allow_user_registration')):?>
-            		<a href="<?php print site_url('auth/register') ?>">
-            			<?php print $this->bep_assets->icon('user') ?>
-            			<?php print $this->lang->line('userlib_register')?>
-            		</a>
-            		<?php endif;?>
             </li>
         </ol>
     </fieldset>
