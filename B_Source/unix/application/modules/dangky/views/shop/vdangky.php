@@ -12,32 +12,37 @@
 	
 		<form method="post" action="<?php echo base_url();?>index.php/dangky/dangkymoi">
 			<table>
-				<tr>
-					<td style="width:150px">Họ tên</td>
-					<td><input name="hoten" type="text"/></td>
-				</tr>
-				<tr><td style="height:10px"></td></tr>
-				<tr>
-					<td>Trường học</td>
-					<td><input name="truonghoc" type="text"/></td>
-				</tr>
-				<tr><td style="height:10px"></td></tr>
-				<tr>
-					<td>Email</td>
-					<td><input name="email" type="text"/></td>
-				</tr>
-				<tr><td style="height:10px"></td></tr>
-				<tr>
-					<td>Điện thoại liên lạc</td>
-					<td><input name="dienthoai" type="text"/></td>
-				</tr>
-				<tr><td style="height:10px"></td></tr>
-				<tr>
-					<td colspan="2" style="text-align:center">
-						<input type="submit" value="Đăng ký" name="submit"/>
-					</td>
-				</tr>
-			</table>
+						<tr>
+							<td style="width:150px">Họ tên</td>
+							<td><input name="hoten" type="text"/></td>
+						</tr>
+						<tr><td style="height:10px"></td></tr>
+						<tr>
+							<td>Trường học</td>
+							<td><input name="truonghoc" type="text"/></td>
+						</tr>
+						<tr><td style="height:10px"></td></tr>
+						<tr>
+							<td>Lớp</td>
+							<td><input name="lop" type="text"/></td>
+						</tr>
+						<tr><td style="height:10px"></td></tr>
+						<tr>
+							<td>Phụ huynh</td>
+							<td><input name="phuhuynh" type="text"/></td>
+						</tr>
+						<tr><td style="height:10px"></td></tr>
+						<tr>
+							<td>Điện thoại liên lạc</td>
+							<td><input name="dienthoai" type="text"/></td>
+						</tr>
+						<tr><td style="height:10px"></td></tr>
+						<tr>
+							<td colspan="2" style="text-align:center">
+								<input type="submit" value="Đăng ký" name="submit"/>
+							</td>
+						</tr>
+					</table>
 		</form>
 	</center>
 </div>

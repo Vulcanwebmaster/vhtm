@@ -11,9 +11,10 @@
 		
 		function get_input()
 		{
-			$input=array('ten'=>$this->input->post('hoten'),
-						'truonghoc'=>$this->input->post('truonghoc'),
-						'email'=>$this->input->post('email'),
+			$input=array('hoten'=>$this->input->post('hoten'),
+						'truong'=>$this->input->post('truonghoc'),
+						'lop'=>$this->input->post('lop'),
+						'phuhuynh'=>$this->input->post('phuhuynh'),
 						'dienthoai'=>$this->input->post('dienthoai'));
 			return $input;
 		}
@@ -31,8 +32,7 @@
 			{
 				$this->load->library('form_validation');
 				$this->form_validation->set_rules('hoten','Họ tên','required|trim');
-				$this->form_validation->set_rules('email','email','required|trim|valid_email');
-				$this->form_validation->set_rules('dienthoai','Điện thoại','required|trim');
+				$this->form_validation->set_rules('dienthoai','Điện thoại','required|trim|numeric');
 				
 				if (!$this->form_validation->run())
 				{

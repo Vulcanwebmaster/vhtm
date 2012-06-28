@@ -91,8 +91,13 @@
 						</tr>
 						<tr><td style="height:10px"></td></tr>
 						<tr>
-							<td>Email</td>
-							<td><input name="email" type="text"/></td>
+							<td>Lớp</td>
+							<td><input name="lop" type="text"/></td>
+						</tr>
+						<tr><td style="height:10px"></td></tr>
+						<tr>
+							<td>Phụ huynh</td>
+							<td><input name="phuhuynh" type="text"/></td>
 						</tr>
 						<tr><td style="height:10px"></td></tr>
 						<tr>
