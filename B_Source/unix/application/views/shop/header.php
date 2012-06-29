@@ -5,7 +5,7 @@
 	<div id="top-bar"></div>
 	<div id="header-main">
 		<div id="head-content">
-			<img id="logo" src="<?php echo base_url();?>assets/unix/images/logo.png"/>
+			<a href="<?php echo base_url();?>"><img id="logo" src="<?php echo base_url();?>assets/unix/images/logo.png"/></a>
 			<div style="float:right">
 				<div style="height:20px"></div>
 				<ul id="nav">

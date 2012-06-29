@@ -2,7 +2,7 @@
 	<div id="title">
 		<div id="title-left"></div>
 		<div id="title-center">
-			<h1>Khóa học</h1>
+			<h1>Hội thảo</h1>
 		</div>
 		<div id="title-right"></div>
 	</div>
@@ -11,7 +11,7 @@
 	<div id="current-map">
 		<a href="<?php echo base_url();?>">Trang chủ</a>
 		<a>:</a>
-		<a href="<?php echo base_url();?>index.php/khoahoc">Khóa học</a>
+		<a href="<?php echo base_url();?>index.php/hoithao">Hội thảo</a>
 		<a>:</a>
 		<a><?php if (isset($info)) echo $info->tieude;?></a>
 	</div>

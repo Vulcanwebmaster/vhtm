@@ -45,6 +45,7 @@
 		//====================DETAIL==========================
 		function detail($id=0)
 		{
+			$data['flag_DanhMuc']=3;
 			$data['page']=$this->config->item('backendpro_template_shop').'vdetail';
 			$data['module']=$this->module;
 			$data['information']=$this->Mthuvien->getDetail($id);

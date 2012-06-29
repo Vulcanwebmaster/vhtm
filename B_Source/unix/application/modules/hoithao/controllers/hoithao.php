@@ -28,7 +28,6 @@
 			$data['page']=$this->config->item('backendpro_template_shop').'vhoithao';
 			$data['module']=$this->module;
 			$data['list']=$this->Mhoithao->getList($start);
-			$data['flag_DanhMuc']=2;
 			$this->load->view($this->_container,$data);
 		}
 		
@@ -36,7 +35,6 @@
 		{
 			$data['page']=$this->config->item('backendpro_template_shop').'vdetail';
 			$data['module']=$this->module;
-			$data['flag_DanhMuc']=2;
 			if ($this->Mhoithao->getInf($id))
 				$data['info']=$this->Mhoithao->getInf($id);
 			$this->load->view($this->_container,$data);

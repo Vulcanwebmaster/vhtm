@@ -39,6 +39,26 @@
 				</form>
 			</center>
 		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var flag=0;
+				$('#sound-controller').click(function(){
+					if (flag==0)
+					{
+						flag=1;
+						$('#background-music').hide();
+						$(this).attr('src','<?php echo base_url();?>assets/unix/images/speaker-on.png');
+					}
+					else
+					{
+						flag=0;
+						$('#background-music').show();
+						$(this).attr('src','<?php echo base_url();?>assets/unix/images/speaker-off.png');
+					}
+				});
+			});
+		</script>
 	    <div id="banner-left">
 	    	<ul>
 		    	<li>
@@ -47,6 +67,10 @@
 		    	<li><hr/></li>
 		    	<li>
 		    		<a href="<?php echo base_url();?>index.php/camnhan" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/comment-icon.png"/><span>Cảm nhận</span></a>
+		    	</li>	
+		    	<li><hr/></li>
+		    	<li style="text-align:center">
+		    		<img id="sound-controller" style="width:32px; height:32px" src="<?php echo base_url();?>assets/unix/images/speaker-off.png"/>
 		    	</li>	    	
 	    	</ul>
 	    </div>

@@ -12,9 +12,9 @@
 
 <div id="wrapper">
     <div id="header">
-        <div id="site"><?php print "NIW - Admin"?></div>
+        <div id="site"><?php print "UNIX - Admin"?></div>
         <div id="info">
-             <?php print anchor('',"NIW",array('class'=>'icon_world_go','target'=>'_blank'))?>&nbsp;&nbsp;&nbsp;&nbsp;
+             <?php print anchor('',"UNIX",array('class'=>'icon_world_go','target'=>'_blank'))?>&nbsp;&nbsp;&nbsp;&nbsp;
             <?php print anchor('auth/logout',$this->lang->line('userlib_logout'),array('class'=>'icon_key_go'))?>
         </div>
     </div>
