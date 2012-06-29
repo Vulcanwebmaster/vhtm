@@ -11,7 +11,11 @@
 					foreach($listhoithao as $item)
 					{
 				?>		
-				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php
+					$offset=35;
+					while ($item->tieude[$offset]!=' ')
+						$offset++;
+					echo substr($item->tieude,0,$offset).' ...';?></a></li>
 				<?php }?>
 			</ul>
 		</div>
@@ -25,7 +29,13 @@
 			<?php $listkhoahoc=$this->MKaimonokago->getListKhoaHoc();
 					foreach($listkhoahoc as $item)
 					{?>
-						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+							<?php 
+								$offset=35;
+								while ($item->tieude[$offset]!=' ')
+									$offset++;
+								echo substr($item->tieude,0,$offset).' ...';?>
+							</a></li>
 			<?php 	}
 			?>
 			</ul>
@@ -40,7 +50,13 @@
 				<?php $listthuvien=$this->MKaimonokago->getListThuVien();
 					foreach($listthuvien as $item)
 					{?>
-						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/thuvien" title="<?php echo $item->tenloai;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tenloai,0,35);?></a></li>
+						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/thuvien" title="<?php echo $item->tenloai;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+							<?php 
+							$offset=35;
+							while($item->tenloai[$offset]!=' ')
+								$offset++;
+							echo substr($item->tenloai,0,$offset);?>
+							</a></li>
 				<?php 	}
 				?>
 				
@@ -76,7 +92,13 @@ else if (isset($flag_DanhMuc) && $flag_DanhMuc == 1){ ?>
 					foreach($listhoithao as $item)
 					{
 				?>		
-				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+					<?php
+					$offset=35;
+					while($item->tieude[$offset]!=' ')
+						$offset++;
+					echo substr($item->tieude,0,$offset).' ...';?>
+				</a></li>
 				<?php }?>
 			</ul>
 		</div>

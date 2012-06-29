@@ -18,6 +18,7 @@
 		
 		function pages($start=0)
 		{
+			
 			$full=count($this->Mhoithao->full());
 			$config['base_url']=base_url()."index.php/hoithao/pages";
 			$config['per_page']=6;
@@ -35,6 +36,7 @@
 		{
 			$data['page']=$this->config->item('backendpro_template_shop').'vdetail';
 			$data['module']=$this->module;
+			$data['flag_DanhMuc']=2;
 			if ($this->Mhoithao->getInf($id))
 				$data['info']=$this->Mhoithao->getInf($id);
 			$this->load->view($this->_container,$data);

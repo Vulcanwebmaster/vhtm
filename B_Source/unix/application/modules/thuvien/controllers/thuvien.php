@@ -15,7 +15,7 @@
 			/*$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
 			$data['module']=$this->module;		
 			$data['listtype']=$this->Mthuvien->getListType();
-			$data['flag_DanhMuc']=3;
+			
 			$data['selected']=0;			
 			$this->load->view($this->_container,$data);*/
 			$this->loadFull();
@@ -23,6 +23,7 @@
 		
 		function loadFull()
 		{
+			$data['flag_DanhMuc']=3;
 			$data['listfull']=$this->Mthuvien->getListFull();
 			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
 			$data['listtype']=$this->Mthuvien->getListType();

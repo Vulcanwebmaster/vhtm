@@ -501,7 +501,7 @@ class MKaimonokago extends Base_model
 	
 	function getYouTubeLink($source)
 	{
-		$source=str_replace('http://www.youtube.com/watch?v=', '<iframe width="420" height="315" src="http://www.youtube.com/embed/', $source);
+		$source=str_replace('http://www.youtube.com/watch?v=', '<br/><iframe width="420" height="315" src="http://www.youtube.com/embed/', $source);
 		//$pos=strpos($source,'<iframe width="420" height="315" src="http://www.youtube.com/embed/');
 		$pos=array();
 		for ($i=0;$i<strlen($source);$i++)
