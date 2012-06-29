@@ -40,7 +40,7 @@
 			</center>
 		</div>
 		
-		<script type="text/javascript">
+		<!-- script type="text/javascript">
 			$(document).ready(function(){
 				var flag=0;
 				$('#sound-controller').click(function(){
@@ -58,7 +58,7 @@
 					}
 				});
 			});
-		</script>
+		</script -->
 	    <div id="banner-left">
 	    	<ul>
 		    	<li>
@@ -68,10 +68,10 @@
 		    	<li>
 		    		<a href="<?php echo base_url();?>index.php/camnhan" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/comment-icon.png"/><span>Cảm nhận</span></a>
 		    	</li>	
-		    	<li><hr/></li>
+		    	<!-- li><hr/></li>
 		    	<li style="text-align:center">
 		    		<img id="sound-controller" style="width:32px; height:32px" src="<?php echo base_url();?>assets/unix/images/speaker-off.png"/>
-		    	</li>	    	
+		    	</li -->	    	
 	    	</ul>
 	    </div>
 

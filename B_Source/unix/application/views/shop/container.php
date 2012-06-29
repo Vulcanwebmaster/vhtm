@@ -50,12 +50,20 @@
 					$(this).children('ul').slideUp(1000);
 					//$(this).children('ul').css({left:left-over, top:top});
 				});
+
+				$left=$(window).width()-300;
+				$('#background-music').css('left',$left);
+				$(window).resize(function(){
+					$left=$(window).width()-300;
+					$('#background-music').css('left',$left);
+				});
 			});
 		</script>
 	    <!-- =================================================================== -->
 	</head>
 	<body>
-		<object id="background-music" width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object>
+		<!-- object id="background-music" width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object -->
+		<object id="background-music" style="position:fixed; z-index:999" width="300" height="50"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="300" height="61" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object>
 	    
 	    <script type="text/javascript">
 			$(document).ready(function(){

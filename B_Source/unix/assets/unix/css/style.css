@@ -99,9 +99,10 @@ a:hover, a:active {
 	clear:both;
 }
 
-#banner-left,#banner-right{position:fixed; z-index:999; top:150px; width:auto; border:solid 1px silver; border-radius:5px; padding:10px; background:url(../images/vertical-banner-bg.png) repeat; font-size:11px; color:#4d4e4e}
+#banner-left,#banner-right{position:fixed; z-index:999; top:150px; width:158px; border:solid 1px silver; border-radius:5px; padding:10px; background:url(../images/vertical-banner-bg.png) repeat; font-size:11px; color:#4d4e4e}
 #banner-left a,#banner-right a{color:#4d4e4e; line-height:32px}
 #banner-left ul,#banner-right ul{padding-left:0; list-style-type:none}
+#banner-left ul li,#banner-right ul li{clear:both}
 #banner-left hr,#banner-right hr{border-top:dotted 1px #4d4e4e; border-style:dotted none none none}
 #banner-left a img{width:40px; height:40px; margin-right:5px; float:left}
 #banner-right{width:150px}
