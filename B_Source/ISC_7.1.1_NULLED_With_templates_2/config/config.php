@@ -1,9 +1,9 @@
 <?php
 
-	// Last Updated: 7th May 2012 @ 4:28 PM
+	// Last Updated: 24th Jun 2012 @ 10:43 AM
 
 	$GLOBALS['ISC_CFG']["isSetup"] = true;
-	$GLOBALS['ISC_CFG']["Language"] = 'vn';
+	$GLOBALS['ISC_CFG']["Language"] = 'en';
 	$GLOBALS['ISC_CFG']["AllowPurchasing"] = 1;
 	$GLOBALS['ISC_CFG']["serverStamp"] = 'cctvvs';
 	$GLOBALS['ISC_CFG']["HostingProvider"] = '';
@@ -26,8 +26,8 @@
 	$GLOBALS['ISC_CFG']["MetaDesc"] = '';
 	$GLOBALS['ISC_CFG']["DownloadDirectory"] = 'product_downloads';
 	$GLOBALS['ISC_CFG']["ImageDirectory"] = 'product_images';
-	$GLOBALS['ISC_CFG']["template"] = 'Baby';
-	$GLOBALS['ISC_CFG']["SiteColor"] = 'pastel';
+	$GLOBALS['ISC_CFG']["template"] = 'Electronics';
+	$GLOBALS['ISC_CFG']["SiteColor"] = 'magenta';
 	$GLOBALS['ISC_CFG']["CurrencyToken"] = '$';
 	$GLOBALS['ISC_CFG']["CurrencyLocation"] = 'left';
 	$GLOBALS['ISC_CFG']["DecimalToken"] = '.';
@@ -211,8 +211,8 @@
 	$GLOBALS['ISC_CFG']["LogoFields"] = array (
 );
 	$GLOBALS['ISC_CFG']["ForceWebsiteTitleText"] = 0;
-	$GLOBALS['ISC_CFG']['UseAlternateTitle'] = 0;
-	$GLOBALS['ISC_CFG']['AlternateTitle'] = '';
+	$GLOBALS['ISC_CFG']['UseAlternateTitle'] = 1;
+	$GLOBALS['ISC_CFG']['AlternateTitle'] = 'abc';
 	$GLOBALS['ISC_CFG']['UsingLogoEditor'] = 0;
 	$GLOBALS['ISC_CFG']['UsingTemplateLogo'] = 0;
 
