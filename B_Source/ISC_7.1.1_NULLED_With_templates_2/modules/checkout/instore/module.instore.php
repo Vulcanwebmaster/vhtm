@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	class CHECKOUT_INSTORE extends ISC_CHECKOUT_PROVIDER
 	{
@@ -103,7 +103,7 @@
 			$this->_variables['helptext'] = array("name" => "Payment Information",
 			   "type" => "textarea",
 			   "help" => GetLang('InStorePaymentInformationHelp'),
-			   "default" => "Type instructions to pay by visiting your retail store in here.",
+			   "default" => "Bạn vui lòng đến cửa hàng để thanh toán và nhận hàng..",
 			   "required" => true,
 			   "rows" => 7
 			);

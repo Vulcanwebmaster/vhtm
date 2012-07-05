@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	class CHECKOUT_BANKDEPOSIT extends ISC_CHECKOUT_PROVIDER
 	{
@@ -108,7 +108,7 @@
 			$this->_variables['helptext'] = array("name" => "Account Information",
 			   "type" => "textarea",
 			   "help" => GetLang('BankDepositAccountInformationHelp'),
-			   "default" => "Bank Name: ACME Bank\nBank Branch: New York\nAccount Name: John Smith\nAccount Number: XXXXXXXXXXXX\n\nType any special instructions in here.",
+			   "default" => "Tên ngân hàng: XXXX Bank\nChi nhánh: New York\nTên tài khoản: John Smith\nMã số tài khoản: XXXXXXXXXXXX\n\nNhập thêm thông tin vào đây.",
 			   "required" => true,
 			   "rows" => 7
 			);

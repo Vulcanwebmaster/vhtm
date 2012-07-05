@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	class CHECKOUT_COD extends ISC_CHECKOUT_PROVIDER
 	{
@@ -102,7 +102,7 @@
 			$this->_variables['helptext'] = array("name" => "Delivery Information",
 			   "type" => "textarea",
 			   "help" => GetLang('CODDeliveryInformationHelp'),
-			   "default" => "Type your cash on delivery instructions in here.",
+			   "default" => "Bạn sẽ thanh toán khi nhận được hàng chuyển đến địa chỉ mua hàng của bạn..",
 			   "required" => true,
 			   "rows" => 7
 			);
