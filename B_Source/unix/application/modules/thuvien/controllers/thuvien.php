@@ -34,6 +34,7 @@
 		
 		function load($type=0)
 		{
+			$data['flag_DanhMuc']=3;
 			$data['listfull']=$this->Mthuvien->getList($type);
 			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
 			$data['listtype']=$this->Mthuvien->getListType();

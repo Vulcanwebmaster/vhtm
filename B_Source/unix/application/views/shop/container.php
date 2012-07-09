@@ -62,10 +62,7 @@
 	    <!-- =================================================================== -->
 	</head>
 	<body>
-		<!-- object id="background-music" width="1" height="1"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="1" height="1" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object -->
-		<object id="background-music" style="position:fixed; z-index:999" width="300" height="50"><param name="movie" value="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><embed width="300" height="61" src="http://static.mp3.zing.vn/skins/mp3_main/flash/player/mp3Player_skin1.swf?xmlurl=http://mp3.zing.vn/blog?MjAxMC8xMS8wNi82LzQvInagaMENjRhNzM4MDhlNDgyMDMxN2QxMDNhZmU5NWRjMTYyMWEdUngWeBXAzfFNhWeBnRvInagaMEmUsICmldUngaXxZYW5dUngaXwxfDI" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed></object>
-	    
-	    <script type="text/javascript">
+		<script type="text/javascript">
 			$(document).ready(function(){
 				
 				$('#mask').hide();
@@ -83,11 +80,26 @@
 					$left=$(window).width()-175;
 					$('#banner-right').css('left',$left);
 				});
+
+				// nhac nen
+				var flag=0;
+				$('#sound-controller').click(function(){
+					if (flag==0)
+					{
+						flag=1;
+						$('#background-music').hide();
+						$(this).attr('src','<?php echo base_url();?>assets/unix/images/speaker-off.png');
+					}
+					else
+					{
+						flag=0;
+						$('#background-music').show();
+						$(this).attr('src','<?php echo base_url();?>assets/unix/images/speaker-on.png');
+					}
+				});
 			});
 		</script>
-	    
-		
-		
+
 		<?php $this->load->view('shop/header.php')?>
 
 	    <?php 

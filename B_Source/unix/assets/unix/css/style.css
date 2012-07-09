@@ -123,3 +123,7 @@ a:hover, a:active {
 
 #listbook{overflow-y:auto; height:500px; margin-bottom:15px; margin-top:15px}
 #maskClose{font-size:11px}
+
+#newest{padding:10px}
+#newest h3{margin:0}
+#newest ul li a{color:#035A77; font-size:12px}

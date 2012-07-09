@@ -1,7 +1,7 @@
 		<div id="mask" style="text-align:center;padding: 20px; text-shadow: black 0px -1px 0px; color: white; position: fixed; width: 600px; height: auto; margin-top: 0; margin-left:350px; background-color: rgb(90, 90, 90); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index: 9; border: 4px solid rgb(182, 182, 181); display: block; ">
 			<div style="width:30px; cursor:pointer; border-radius:10px; background-color:white; padding:5px; color:black; float:right" align="right"><span id="maskClose">Thoát</span></div>
-			<h3>Đăng ký miễn phí lớp học</h3>
-			<h2>BỨT PHÁ MÔN TOÁN TRƯỜNG HN AMS</h2>
+			<h3 style="padding-left:20px">Đăng ký</h3>
+			<h2>KIỂM TRA ĐẦU VÀO MIỄN PHÍ TẠI UNIX</h2>
 			<center>
 				<form method="post" action="<?php echo base_url();?>index.php/dangky/dangkymoi">
 					<table>
@@ -40,25 +40,6 @@
 			</center>
 		</div>
 		
-		<!-- script type="text/javascript">
-			$(document).ready(function(){
-				var flag=0;
-				$('#sound-controller').click(function(){
-					if (flag==0)
-					{
-						flag=1;
-						$('#background-music').hide();
-						$(this).attr('src','<?php echo base_url();?>assets/unix/images/speaker-on.png');
-					}
-					else
-					{
-						flag=0;
-						$('#background-music').show();
-						$(this).attr('src','<?php echo base_url();?>assets/unix/images/speaker-off.png');
-					}
-				});
-			});
-		</script -->
 	    <div id="banner-left">
 	    	<ul>
 		    	<li>
@@ -68,10 +49,7 @@
 		    	<li>
 		    		<a href="<?php echo base_url();?>index.php/camnhan" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/comment-icon.png"/><span>Cảm nhận</span></a>
 		    	</li>	
-		    	<!-- li><hr/></li>
-		    	<li style="text-align:center">
-		    		<img id="sound-controller" style="width:32px; height:32px" src="<?php echo base_url();?>assets/unix/images/speaker-off.png"/>
-		    	</li -->	    	
+		    	<li><hr/></li>
 	    	</ul>
 	    </div>
 
@@ -84,12 +62,10 @@
 				</div>
 				<div class="field-content-panel">
 					<h4>Các khóa học</h4>
-					<p style=" padding:10px 20px">
-						<?php if ($this->MKaimonokago->homepageLoadNoiDung('Các khóa học'))
-							echo substr($this->MKaimonokago->homepageLoadNoiDung('Các khóa học')->dulieu,0,300);
-						?>
-						<a href="<?php echo base_url();?>index.php/khoahoc">Chi tiết</a>
-					</p>
+					<?php if ($this->MKaimonokago->homepageLoadNoiDung('Các khóa học'))
+						echo substr($this->MKaimonokago->homepageLoadNoiDung('Các khóa học')->dulieu,0,300);
+					?>
+					<a href="<?php echo base_url();?>index.php/khoahoc">Chi tiết</a>
 				</div>
 			</div>
 			<div class="field-center">
@@ -98,12 +74,10 @@
 				</div>
 				<div class="field-content-panel">
 					<h4>Phương pháp đào tạo</h4>
-					<p>
-						<?php if ($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo'))
-							echo substr($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo')->dulieu,0,300);
-						?>
-						<a href="<?php echo base_url();?>index.php/welcome/detail/2">Chi tiết</a>
-					</p>
+					<?php if ($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo'))
+						echo substr($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo')->dulieu,0,300);
+					?>
+					<a href="<?php echo base_url();?>index.php/welcome/detail/2">Chi tiết</a>
 				</div>
 			</div>
 			<div class="field-right">
@@ -112,12 +86,10 @@
 				</div>
 				<div class="field-content-panel">
 					<h4>Sự kiện</h4>
-					<p>
-						<?php if ($this->MKaimonokago->homepageLoadNoiDung('Sự kiện'))
-							echo substr($this->MKaimonokago->homepageLoadNoiDung('Sự kiện')->dulieu,0,300);
-						?>
-						<a href="<?php echo base_url();?>index.php/hoithao">Chi tiết</a>
-					</p>
+					<?php if ($this->MKaimonokago->homepageLoadNoiDung('Sự kiện'))
+						echo substr($this->MKaimonokago->homepageLoadNoiDung('Sự kiện')->dulieu,0,300);
+					?>
+					<a href="<?php echo base_url();?>index.php/hoithao">Chi tiết</a>
 				</div>
 			</div>
 	</div>
@@ -179,7 +151,7 @@
 
 <div id="banner-right">
     	<ul>
-    		<li><h3>Bứt phá môn Toán trường HN Ams</h3></li>
+    		<li><h3>kiểm tra đầu vào miễn phí tại UNIX</h3></li>
     		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>
     		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>
     		<li><img src="<?php echo base_url();?>assets/unix/images/ticked-icon.png"/><hr/></li>

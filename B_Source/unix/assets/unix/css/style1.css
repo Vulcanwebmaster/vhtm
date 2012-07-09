@@ -11,7 +11,7 @@ img{border-style:none}
 .menuitem-head, .menuitem-foot{float:left; width:50px; height:55px; background-repeat:no-repeat}
 .menuitem-head{background-image:url('../images/menuitem-bg-left.png')}
 .menuitem-foot{background-image:url('../images/menuitem-bg-right.png')}
-.menuitem{background-image:url('../images/menuitem-bg3.png');background-repeat:repeat-x; width:auto; padding:20px 12px 10px 12px; height:55px; float:left; font-size:11px; text-transform:uppercase}
+.menuitem{background-image:url('../images/menuitem-bg3.png');background-repeat:repeat-x; width:auto; padding:20px 2px 2px 12px; height:55px; float:left; font-size:11px; text-transform:uppercase}
 .menuitem a{ color:#2b2b2b}
 .menuitem img{width:20px; height:20px; padding-top:0; float:left; margin-right:3px}
 .menu-lever2{list-style-type:none;position:absolute; z-index:200 ; margin-top:10px; width:70px; clear:both; border:solid 1px silver; border-style:none solid solid solid; background-color:#f9f8f8; padding:10px; opacity:0.8; text-transform:none}
@@ -38,7 +38,7 @@ img{border-style:none}
 #main{width:1000px; margin:auto; clear:both}
 .field-center{width:400px; float:left; padding-top:10px}
 .field-center .field-image-panel{height:220px; background-image:url('../images/img-bg.png'); text-align:center}
-.field-content-panel{height:150px; background:url('../images/content-bg.png') no-repeat; padding-bottom:10px}
+.field-content-panel{height:auto; background:url('../images/content-bg.png') no-repeat; padding-bottom:10px}
 .field-content-panel p{margin-top:0;text-align:justify; font-size:12px; color:#626262; line-height:20px; padding:10px 50px}
 .field-content-panel p a{color:blue}
 .field-content-panel h4{margin-bottom:0px; text-transform:uppercase;font-weight:bold;font-size:16px; color:#626262; text-align:center; padding-top:10px}

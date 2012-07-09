@@ -16,10 +16,12 @@
     	<?php if($this->preference->item('gioithieu')):?><li><?php print anchor('gioithieu/admin',$this->lang->line('backendpro_gioithieu'),array('class'=>'icon_color_swatch'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('hoithao')):?><li><?php print anchor('hoithao/admin',$this->lang->line('backendpro_hoithao'),array('class'=>'icon_calendar'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('khoahoc')):?><li><?php print anchor('khoahoc/admin',$this->lang->line('backendpro_khoahoc'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
+        <li><a href="<?php echo base_url();?>index.php/tintuc/admin" class="icon_comment">Tin tức</a></li>
         <?php if($this->preference->item('loaisach')):?><li><?php print anchor('loaisach/admin',$this->lang->line('backendpro_loaisach'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('sach')):?><li><?php print anchor('sach/admin',$this->lang->line('backendpro_sach'),array('class'=>'icon_page'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('camnhan')):?><li><?php print anchor('camnhan/admin',$this->lang->line('backendpro_camnhan'),array('class'=>'icon_comment'))?></li><?php echo "\n"; endif;?>
-        <?php if($this->preference->item('dangky')):?><li><?php print anchor('dangky/admin',$this->lang->line('backendpro_dangky'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
+        <li><a href="<?php echo base_url();?>index.php/dangky/admin" class="icon_comment">Đăng ký</a></li>
+        <li><a href="<?php echo base_url();?>index.php/lienhe/admin" class="icon_television">Liên hệ</a></li>
     </ul>
 </li>
 

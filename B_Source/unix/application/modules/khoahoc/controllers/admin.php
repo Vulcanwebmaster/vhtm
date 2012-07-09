@@ -11,6 +11,7 @@ class Admin extends Shop_Admin_Controller
         $this->load->model('MKhoahoc');
         $this->module=basename(dirname(dirname(__FILE__)));      
         $this->bep_site->set_crumb($this->lang->line('backendpro_ql_khoahoc'),$this->module.'/admin');
+        $this->load->library('form_validation');
     }
 
 
@@ -45,11 +46,11 @@ class Admin extends Shop_Admin_Controller
         $data = array(
             'khoahoc_id'  => $this->input->post('khoahoc_id',TRUE),
         	'tieude'      => $this->input->post('tieude',TRUE),
-            'mota'        => $temp,
+            'mota'        => $this->input->post('mota',TRUE),
             'batdau'      => $this->input->post('batdau',TRUE),
             'ketthuc'     => $this->input->post('ketthuc',TRUE),        
             'hocphi'      => $this->input->post('hocphi',TRUE),
-        	'anhdaidien'  => $link,
+        	'anhdaidien'  => '../'.$link,
         	'thoigian'    => $this->input->post('thoigian',TRUE)    
         );
         return $data;
@@ -59,12 +60,15 @@ class Admin extends Shop_Admin_Controller
 	function create()
     {
     	$this->bep_assets->load_asset_group('TINYMCE');
-        if ($this->input->post('tieude')!='')
+		$this->form_validation->set_rules('mota','Mô tả','required|trim');
+		$this->form_validation->set_rules('tieude','Tiêu đề','required|trim');
+		$this->form_validation->set_message('required','Mục %s không được để trống');
+        if ($this->form_validation->run())//$this->input->post('tieude')!='')
         {
-			$data = $this->_fields();
-           	$this->MKhoahoc->addKhoaHoc($data);
-            flashMsg('success','Tạo khóa học thành công');
-            redirect($this->module.'/admin/index','refresh');
+				$data = $this->_fields();
+	           	$this->MKhoahoc->addKhoaHoc($data);
+	            flashMsg('success','Tạo khóa học thành công');
+	            redirect($this->module.'/admin/index','refresh');
         }
         else
         {
@@ -89,9 +93,6 @@ class Admin extends Shop_Admin_Controller
         if ($this->input->post('tieude'))
         {   
         	$this->form_validation->set_rules('mota',    'mota',    'required');
-        	$this->form_validation->set_rules('batdau',  'batdau',  'required');
-        	$this->form_validation->set_rules('ketthuc', 'ketthuc', 'required');
-        	$this->form_validation->set_rules('hocphi',  'hocphi',  'required');
 		  	if($this->form_validation->run())
 		  	{
 				$data = $this->_fields();

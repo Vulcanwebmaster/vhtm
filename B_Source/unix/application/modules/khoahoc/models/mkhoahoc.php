@@ -7,11 +7,11 @@
 			$this->load->database();
 		}
 		
-		function getlist($index,$id_doituong)
+		function getlist($id_doituong)
 		{
 			if ($id_doituong>0)
 				$this->db->where('doituong',$id_doituong);
-			$ds=$this->db->get('unix_khoahoc',6,$index);
+			$ds=$this->db->get('unix_khoahoc');
 			$list=array();
 			foreach($ds->result() as $item)
 			{

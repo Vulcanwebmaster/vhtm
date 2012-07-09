@@ -49,7 +49,7 @@
 				</div>
 			</div>
 			
-			<div id="content">
+			<div id="content" style="overflow-y:auto; height:515px">
 			
 			</div>
 			<!-- div id="content">
@@ -79,7 +79,6 @@
 					<?php 	}
 					}?>
 				</ul>
-				<?php echo $this->pagination->create_links();?>
 			</div -->
 		</div>
 	</div>

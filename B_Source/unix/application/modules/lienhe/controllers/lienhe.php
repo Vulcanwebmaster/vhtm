@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			$this->load->model('Mlienhe');
+			$this->load->library('session');
 		}
 		
 		function index()
@@ -32,7 +33,8 @@
 				if ($this->form_validation->run())
 				{
 					$this->Mlienhe->insert();
-					redirect(base_url().'index.php/lienhe','refresh');
+					$this->session->set_userdata('message','Thông điệp của bạn đã được gửi thành công.');
+					$this->index();
 				}
 				else  
 				{

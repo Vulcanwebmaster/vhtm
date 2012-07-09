@@ -17,5 +17,22 @@
 													'noidung'=>$this->input->post('noidung')));
 			$this->session->set_userdata('message','Thư của bạn đã được gửi thành công.');
 		}
+		
+		function getListContact()
+		{
+			$ds=$this->db->get('unix_lienhe');
+			$list=array();
+			foreach ($ds->result() as $item)
+			{
+				$list[]=$item;
+			}
+			$ds->free_result();
+			return $list;
+		}
+		
+		function deleteContact($id)
+		{
+			$this->db->delete('unix_lienhe',array('lienhe_id'=>$id));
+		}
 	}
 ?>

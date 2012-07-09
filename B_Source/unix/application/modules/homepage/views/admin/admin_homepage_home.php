@@ -16,7 +16,11 @@ if (count($homepage)){
         echo "<td align='center'>".$list['tenmuc']."</td>\n";
 		echo "<td>";
 		$data = array('name'=>'dulieu_'.$list['muc_id'],'id'=>'long','rows'=>'5', 'cols'=>'60','value'=>$list['dulieu']);
-		echo form_textarea($data) ;
+		if ($list['muc_id']==6)
+		{
+			echo form_input($data);
+		}
+		else echo form_textarea($data) ;
 		echo "</td>\n";
     }
     echo "</tbody>\n</table>";

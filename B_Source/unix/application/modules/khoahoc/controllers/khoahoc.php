@@ -20,28 +20,9 @@
 			//$this->pages();
 		}
 		
-		/*function pages($index=0)
+		function pages($id_doituong=0)
 		{
-			$config['base_url']=base_url().'index.php/khoahoc/pages';
-			$config['total_rows']=$this->Mkhoahoc->count();
-			$config['per_page']=6;
-			$this->pagination->initialize($config);
-			
-			$data['page']=$this->config->item('backendpro_template_shop').'vkhoahoc';
-			$data['module']=$this->module;
-			$data['list']=$this->Mkhoahoc->getlist($index);
-			$this->load->view($this->_container,$data);
-		}*/
-		function pages($index=0,$id_doituong=0)
-		{
-			$config['base_url']=base_url().'index.php/khoahoc/pages';
-			$config['total_rows']=$this->Mkhoahoc->count();
-			$config['per_page']=6;
-			$this->pagination->initialize($config);
-			
-			//$data['page']=$this->config->item('backendpro_template_shop').'vkhoahoc';
-			//$data['module']=$this->module;
-			$data['list']=$this->Mkhoahoc->getlist($index,$id_doituong);
+			$data['list']=$this->Mkhoahoc->getlist($id_doituong);
 			$this->load->view('shop/vlist',$data);
 		}
 		

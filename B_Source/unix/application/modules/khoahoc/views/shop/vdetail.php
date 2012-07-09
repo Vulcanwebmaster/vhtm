@@ -29,7 +29,7 @@
 					}?></h1>
 				</center>
 				<p style="color:#035a77; text-transform:uppercase">Ngày đăng: <?php if (isset($info)) echo $info->thoigian;?></p>
-				<?php echo $info->mota;?>
+				<?php if (isset($info)) echo $info->mota;?>
 			</div>
 		</div>
 	</div>

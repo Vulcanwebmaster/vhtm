@@ -60,7 +60,7 @@
 								<td style="vertical-align:5px"><span>*</span>Nội dung</td>
 								<td>
 								<!-- <input class="input-lienhe" type="text-area" name="noidung"/> -->
-								<textarea class="input-lienhe" rows="7" cols="20"></textarea>
+								<textarea name="noidung" class="input-lienhe" rows="7" cols="20"></textarea>
 								</td>
 							</tr>
 							<tr>
