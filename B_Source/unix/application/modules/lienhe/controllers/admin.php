@@ -28,5 +28,13 @@
 	    	$this->Mlienhe->deleteContact($id);
 	    	$this->index();
 	    }
+	    
+		function view($id=0)
+		{
+	    	$data['title']='Liên hệ';
+	        $data['lienhe']=$this->Mlienhe->getView($id);
+	        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_lienhe_view";
+	        $this->load->view($this->_container,$data);
+	    }
 	}
 ?>

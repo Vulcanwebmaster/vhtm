@@ -24,7 +24,9 @@ if (count($sach)){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['sach_id']."</td>\n";
         echo "<td align='center'>".$list['tensach']."</td>\n";
-        echo "<td align='center'>".$list['mota']."</td>\n";
+        if (strlen($list['mota']) > 20)
+        	$list['mota'] = substr($list['mota'], 0, 20);
+        echo "<td align='center'>".$list['mota']."\"</td>\n";
         echo "<td align='center'>".$list['tenloai']."</td>\n";
         echo "<td align='center'>".$list['tacgia']."</td>\n";    
         echo "<td align='center'>";

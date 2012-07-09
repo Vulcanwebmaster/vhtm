@@ -8,7 +8,8 @@ if (count($listContact)){
     echo "<thead>\n<tr valign='top'>\n";
     echo "<th>ID</th>\n
 			<th>Họ tên</th>\n
-			<th>Email</th>\n
+          <th>Email</th>\n
+          <th>Điện thoại</th>\n
           <th>Tiêu Đề</th>\n
           <th>Nội dung</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
@@ -17,10 +18,12 @@ if (count($listContact)){
         echo "<td align='center'>".$list->lienhe_id."</td>\n";
         echo "<td align='center'>".$list->hoten."</td>\n";
         echo "<td align='center'>".$list->email."</td>\n";
+        echo "<td align='center'>".$list->dienthoai."</td>\n";
         echo "<td align='center'>".substr($list->tieude,0,40)."..."."</td>\n";
         echo "<td align='center'>".substr($list->noidung,0,100)."..."."</td>\n";
         echo "<td align='center'>";
         echo "&nbsp;&nbsp;";
+        echo anchor('lienhe/admin/view/'.$list->lienhe_id,$this->bep_assets->icon('pencil'));
         echo anchor('lienhe/admin/delete/'.$list->lienhe_id,$this->bep_assets->icon('delete'),array("onclick"=>"return confirmSubmit('".$list->tieude."')"));
         echo "</td>\n";
         echo "</tr>\n";

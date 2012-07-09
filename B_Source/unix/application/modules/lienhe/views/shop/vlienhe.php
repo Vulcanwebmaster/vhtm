@@ -53,6 +53,10 @@
 								<td><input class="input-lienhe" type="text" name="email"/></td>
 							</tr>
 							<tr>
+								<td><span>*</span>Số điện thoại</td>
+								<td><input class="input-lienhe" type="text" name="dienthoai"/></td>
+							</tr>
+							<tr>
 								<td><span>*</span>Tiêu đề</td>
 								<td><input class="input-lienhe" type="text" name="tieude"/></td>
 							</tr>

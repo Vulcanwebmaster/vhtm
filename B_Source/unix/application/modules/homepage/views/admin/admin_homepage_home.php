@@ -11,17 +11,20 @@ if (count($homepage)){
     	  <th>Dữ Liệu</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($homepage as $key => $list){
+    if ($list['muc_id'] != 4) 
+    {
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['muc_id']."</td>\n";
         echo "<td align='center'>".$list['tenmuc']."</td>\n";
 		echo "<td>";
 		$data = array('name'=>'dulieu_'.$list['muc_id'],'id'=>'long','rows'=>'5', 'cols'=>'60','value'=>$list['dulieu']);
-		if ($list['muc_id']==6)
+		if ($list['muc_id'] == 6)
 		{
 			echo form_input($data);
 		}
 		else echo form_textarea($data) ;
 		echo "</td>\n";
+    }
     }
     echo "</tbody>\n</table>";
 }

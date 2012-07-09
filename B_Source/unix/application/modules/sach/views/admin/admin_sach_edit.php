@@ -1,7 +1,25 @@
 <h2><?php echo $title;?></h2>
+<script language="JavaScript" type="text/javascript">
+	function CheckForm() 
+	{
+        var temp = tinymce.EditorManager.get('noidung').getContent();
+        var i = 0;
+        while (true)
+        {
+            temp = temp.replace('style="color: ',"@$%#@");
+            temp = temp.replace('style="background-color: ',"&$%#@"); 
+			i = i + 1;
+			if (i == 10) break;
+        }
+        document.getElementById("noidung_backup").value = temp;
+        return true;
+    }
+</script>
+
+<form action="<?php echo base_url()?>index.php/sach/admin/edit" 
+		method="post" onsubmit="return CheckForm();">
 
 <?php
-echo form_open('sach/admin/edit');
 
 echo "\n<table id='preference_form'>";
 
