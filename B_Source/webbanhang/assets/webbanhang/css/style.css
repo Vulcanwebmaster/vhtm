@@ -1,6 +1,6 @@
 /* Global properties ======================================================== */
 html, body {width:100%; padding:0; margin:0;}
-body {font:14px/25px Arial,Helvetica,sans-serif;color:#3c3c3c;min-width:1264px;background:#131313}
+body {font:14px Arial,Helvetica,sans-serif;color:#3c3c3c;min-width:1264px;background:#CCC9C9; line-height:20px}
 .ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
 .main {width:100%; background:#f4f3f3;}
 /***********************************************************************/
@@ -98,7 +98,7 @@ ul.menu li:hover , ul.menu li.current {background:#2098f5;}
 .block-2>a {float:left; margin-right:20px; display:inline-block;}
 
 /****************************footer************************/
-footer {border-top:solid 5px #7b7b7b;clear:both; width:100%; position:relative; overflow:hidden; text-align:center; padding:20px 0 0 0; background:#dfdddd;}
+#footer {border-top:solid 5px #7b7b7b;clear:both; width:100%; position:relative; overflow:hidden; text-align:center; padding:20px 0 0 0; background:#dfdddd;}
 footer p, footer a {color:#939393;}
 footer a:hover {text-decoration:underline;}
 
@@ -117,7 +117,7 @@ dl dd a {}
 .btns a {display:inline-block; margin:0 20px 0 0px;}
 
 #slogan-panel{ padding:10px; border-radius:10px; height:auto}
-#line1{clear:both; margin-top:10px; border-style:none none solid none; padding:5px}
+#line1{clear:both; margin-top:10px; border-style:none none solid none;}
 #slogan-left{color:#2098F5; float:left; padding-top:0}
 
 .contact-online{color:#939393}
