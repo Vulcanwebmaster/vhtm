@@ -55,7 +55,10 @@ class Admin extends Shop_Admin_Controller
 	    	$arr_rslt = $matches[1];
 	    	foreach ($arr_rslt as $i => $value) 
 	    	{
-    			$arr_rslt[$i] = str_replace("../../", "", $arr_rslt[$i]);
+	    		if (strpos($arr_rslt[$i], "http://i1168.photobucket.com") == false)
+	    		{
+    				$arr_rslt[$i] = str_replace("../../", "", $arr_rslt[$i]);
+	    		}
 			}
 			$tmp = implode(",", $arr_rslt);
     	}
