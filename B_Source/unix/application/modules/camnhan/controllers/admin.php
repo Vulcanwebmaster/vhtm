@@ -34,9 +34,13 @@ class Admin extends Shop_Admin_Controller
 
     function _fields()
     {
+    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['noidung']);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+    	$temp = str_replace("../../../", base_url(), $temp);
+    	
         $data = array(
             'camnhan_id'   => $this->input->post('camnhan_id',TRUE),
-            'noidung'      => $this->input->post('noidung',TRUE),
+            'noidung'      => $temp,
             'ngaythang'    => $this->input->post('ngaythang',TRUE),        
             'nguoidang'    => $this->input->post('nguoidang',TRUE)   
         );
@@ -46,6 +50,7 @@ class Admin extends Shop_Admin_Controller
 
 	function create()
     {
+    	$this->bep_assets->load_asset_group('TINYMCE');
         if ($this->input->post('noidung')!='')
         {
 			$data = $this->_fields();
@@ -69,6 +74,7 @@ class Admin extends Shop_Admin_Controller
   
     function edit($id=0)
     {   
+    	$this->bep_assets->load_asset_group('TINYMCE');
     	if ($this->input->post('camnhan_id')) {
     		$id = $this->input->post('camnhan_id');
     	} 

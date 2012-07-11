@@ -1,8 +1,23 @@
 <h2><?php echo $title;?></h2>
-
+<script language="JavaScript" type="text/javascript">
+	function CheckForm() 
+	{
+        var temp = tinymce.EditorManager.get('mota').getContent();
+        var i = 0;
+        while (true)
+        {
+            temp = temp.replace('style="color: ',"@$%#@");
+            temp = temp.replace('style="background-color: ',"&$%#@"); 
+			i = i + 1;
+			if (i == 10) break;
+        }
+        document.getElementById("mota_backup").value = temp;
+        return true;
+    }
+</script>
+<form action="<?php echo base_url()?>index.php/camnhan/admin/edit" 
+		method="post" onsubmit="return CheckForm();">
 <?php
-echo form_open('camnhan/admin/edit');
-
 echo "\n<table id='preference_form'>";
 
 echo "<tr><td class='label'><label for='long'>".'(*)Nội Dung:'."</label></td>\n";
