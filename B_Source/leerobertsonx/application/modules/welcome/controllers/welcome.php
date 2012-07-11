@@ -117,6 +117,7 @@ class Welcome extends Shop_Controller
         $data['index_path']=$indexpath;
         $data['module']=$this->module;
         // delete upto here
+        $data['title']='L.R.X | Home';
         $data['page'] = $this->config->item('backendpro_template_shop') . 'frontpage';
         $data['header'] ="HOME";
         $data['metadesc'] =$page['metadesc'];

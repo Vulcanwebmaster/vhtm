@@ -7,11 +7,11 @@
 			<nav id="footer-nav" class="clearfix">
 
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Website</a></li>
-					<li><a href="#">Application</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact Us</a></li>
+					<li><a href="<?php echo base_url();?>">Home</a></li>
+					<li><a href="<?php echo base_url();?>website">Website</a></li>
+					<li><a href="<?php echo base_url();?>app">Applications</a></li>
+					<li><a href="<?php echo base_url();?>aboutus">About Us</a></li>
+					<li><a href="<?php echo base_url();?>contactus">Contact Us</a></li>
 				</ul>
 				
 			</nav><!-- end #footer-nav -->
@@ -58,19 +58,19 @@
 </footer><!-- end #footer-bottom -->
 
 <!--[if !lte IE 6]><!-->
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery-1.7.1.min.js"></script>
+	
 	<script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery-1.7.1.min.js"><\/script>')</script>
-	<!--[if lt IE 9]> <script src="js/selectivizr-and-extra-selectors.min.js"></script> <![endif]-->
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/respond.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.easing-1.3.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.fancybox-1.3.4.pack.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.smartStartSlider.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.jcarousel.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.cycle.all.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.isotope.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/mediaelement-and-player.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/css/fontsgoogleapiscom.css"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.gmap.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.touchSwipe-1.2.5.min.js"></script>
-	<script src="<?php echo base_url();?>assets/leerobertsonx/js/custom.js"></script>
+			<!--[if lt IE 9]> <script src="js/selectivizr-and-extra-selectors.min.js"></script> <![endif]-->
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/respond.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.easing-1.3.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.fancybox-1.3.4.pack.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.smartStartSlider.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.jcarousel.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.cycle.all.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.isotope.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/mediaelement-and-player.min.js"></script>
+				<!-- script src="<?php echo base_url();?>assets/leerobertsonx/css/fontsgoogleapiscom.css"></script -->
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.gmap.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/jquery.touchSwipe-1.2.5.min.js"></script>
+			<script src="<?php echo base_url();?>assets/leerobertsonx/js/custom.js"></script>
 <!--<![endif]-->
