@@ -11,13 +11,13 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='ngaythang'>".'(*)Thời Gian Đăng:'."</label></td>\n";
+echo "<tr><td class='label'><label for='ngaythang'>".'Thời Gian Đăng:'."</label></td>\n";
 $data = array('name'=>'ngaythang','id'=>'ngaythang','class'=>'text','value'=>$camnhan['ngaythang']);
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='nguoidang'>".'(*)Người Đăng:'."</label></td>\n";
+echo "<tr><td class='label'><label for='nguoidang'>".'Người Đăng:'."</label></td>\n";
 $data = array('name'=>'nguoidang','id'=>'nguoidang','class'=>'text','value'=>$camnhan['nguoidang']);
 echo "<td>";
 echo form_input($data);

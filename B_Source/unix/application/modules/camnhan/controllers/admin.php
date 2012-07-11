@@ -75,8 +75,6 @@ class Admin extends Shop_Admin_Controller
         if ($this->input->post('noidung'))
         {           
 		  	$this->form_validation->set_rules('noidung', 'noidung', 'required');  
-		  	$this->form_validation->set_rules('ngaythang', 'ngaythang', 'required');  
-		  	$this->form_validation->set_rules('nguoidang', 'nguoidang', 'required');  
 		  	if($this->form_validation->run())
 		  	{
 				$data = $this->_fields();

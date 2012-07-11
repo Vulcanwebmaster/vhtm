@@ -24,13 +24,13 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='ngaythang'>".'(*)'.'Thời gian đăng (yyyy-mm-dd):'."</label></td>\n";
+echo "<tr><td class='label'><label for='ngaythang'>".'Thời gian đăng (yyyy-mm-dd):'."</label></td>\n";
 $data = array('name'=>'ngaythang','id'=>'ngaythang','class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='nguoidang'>".'(*)'.'Người Đăng:'."</label></td>\n";
+echo "<tr><td class='label'><label for='nguoidang'>".'Người Đăng:'."</label></td>\n";
 $data = array('name'=>'nguoidang','id'=>'nguoidang','class'=>'text');
 echo "<td>";
 echo form_input($data);

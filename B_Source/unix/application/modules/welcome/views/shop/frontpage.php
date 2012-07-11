@@ -43,7 +43,7 @@
 	    <div id="banner-left">
 	    	<ul>
 		    	<li>
-		    		<a href="<?php echo base_url();?>index.php/welcome/detail/2" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/teacher_icon.png"/><span>Thầy Phan Quang Điệp</span></a>
+		    		<a href="<?php echo base_url();?>index.php/gioithieu" style="vertical-align:50%"><img src="<?php echo base_url();?>assets/unix/images/teacher_icon.png"/><span>Thầy Phan Quang Điệp</span></a>
 		    	</li>
 		    	<li><hr/></li>
 		    	<li>
@@ -62,10 +62,14 @@
 				</div>
 				<div class="field-content-panel">
 					<h4>Các khóa học</h4>
-					<?php if ($this->MKaimonokago->homepageLoadNoiDung('Các khóa học'))
-						echo substr($this->MKaimonokago->homepageLoadNoiDung('Các khóa học')->dulieu,0,300);
-					?>
-					<a href="<?php echo base_url();?>index.php/khoahoc">Chi tiết</a>
+					
+						<?php if ($this->MKaimonokago->homepageLoadNoiDung('Các khóa học'))
+							{
+								$content=substr($this->MKaimonokago->homepageLoadNoiDung('Các khóa học')->dulieu,0,300);
+								$content=substr($content,0,count($content)-5).'<br/><a style="float:left" href="'.base_url().'index.php/khoahoc">Chi tiết</a>'.'</p>';
+								echo $content;
+							}						
+						?>	
 				</div>
 			</div>
 			<div class="field-center">
@@ -74,10 +78,14 @@
 				</div>
 				<div class="field-content-panel">
 					<h4>Phương pháp đào tạo</h4>
-					<?php if ($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo'))
-						echo substr($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo')->dulieu,0,300);
-					?>
-					<a href="<?php echo base_url();?>index.php/welcome/detail/2">Chi tiết</a>
+					
+						<?php if ($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo'))
+							{
+							$content=substr($this->MKaimonokago->homepageLoadNoiDung('Phương pháp đào tạo')->dulieu,0,300);
+							$content=substr($content,0,count($content)-5).'<br/><a style="float:left" href="'.base_url().'index.php/welcome/detail/2">Chi tiết</a>'.'</p>';
+							echo $content;
+							}
+						?>					
 				</div>
 			</div>
 			<div class="field-right">
@@ -86,10 +94,14 @@
 				</div>
 				<div class="field-content-panel">
 					<h4>Sự kiện</h4>
-					<?php if ($this->MKaimonokago->homepageLoadNoiDung('Sự kiện'))
-						echo substr($this->MKaimonokago->homepageLoadNoiDung('Sự kiện')->dulieu,0,300);
-					?>
-					<a href="<?php echo base_url();?>index.php/hoithao">Chi tiết</a>
+					
+						<?php if ($this->MKaimonokago->homepageLoadNoiDung('Sự kiện'))
+							{
+								$content=substr($this->MKaimonokago->homepageLoadNoiDung('Sự kiện')->dulieu,0,300);
+								$content=substr($content,0,count($content)-5).'<br/><a style="float:left" href="'.base_url().'index.php/hoithao">Chi tiết</a>'.'</p>';
+								echo $content;							
+							}
+						?>											
 				</div>
 			</div>
 	</div>
@@ -102,7 +114,13 @@
 					$images=$this->MKaimonokago->homepageLoadNoiDung('images');
 					foreach(explode(',', $images->dulieu) as $item)
 					{
-						echo '<a><img alt="" src="'.base_url().trim($item).'" height="150px"/></a>';
+						$offset=0;
+						while ($item[$offset]=='.' || $item[$offset]=='/')
+							$offset++;
+						$item=substr(trim($item),$offset);
+						if (strpos(trim($item),'photobucket')!=count(trim($item)))
+						echo '<a><img alt="" src="'.trim($item).'" height="150px"/></a>';
+						else echo '<a><img alt="" src="'.base_url().trim($item).'" height="150px"/></a>';
 					}
 				}?>
 				<!-- a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/1.jpg" height="150px"/></a>
