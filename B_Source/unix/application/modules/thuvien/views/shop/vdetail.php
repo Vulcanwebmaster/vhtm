@@ -46,7 +46,7 @@
 				</table>
 				</center>
 			</div>
-			<div id="content-panel" style="width:750px; text-align:center; margin-bottom:15px">
+			<div id="content-panel" style="width:750px; text-align:justify; margin-bottom:15px">
 				<!-- iframe width="560" height="315" src="<?php echo str_replace('watch?v=', 'embed/', $information->mota);?>" frameborder="0" allowfullscreen></iframe -->
 				<?php echo $this->MKaimonokago->getYouTubeLink($information->mota);?>
 			</div>

@@ -19,7 +19,7 @@
 		{
 			$config['base_url']=base_url().'index.php/camnhan/pages';
 			$config['total_rows']=$this->MCamnhan->count();
-			$config['perpage']=5;
+			$config['per_page']=5;
 			
 			$data['page']=$this->config->item('backendpro_template_shop').'vcamnhan';
 			$data['module']=$this->module;
