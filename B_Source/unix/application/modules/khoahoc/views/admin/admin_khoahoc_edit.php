@@ -4,20 +4,13 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui-1.8.20.custom.min.js"></script>
 <script>
 	$(function(){
-		$( "#batdau" ).change(function(){
-			var x = document.getElementById("batdau").value;
-			document.getElementById("batdau").value = $.datepicker.formatDate('yy-mm-dd', new Date(x));
-			});
-	});
-	$(function(){
-		$( "#ketthuc" ).change(function(){
-			var x = document.getElementById("ketthuc").value;
-			document.getElementById("ketthuc").value = $.datepicker.formatDate('yy-mm-dd', new Date(x));
+		$( "#thoigian" ).change(function(){
+			var x = document.getElementById("thoigian").value;
+			document.getElementById("thoigian").value = $.datepicker.formatDate('yy-mm-dd', new Date(x));
 			});
 	});
 	$(function() {
-		$( "#batdau" ).datepicker();
-		$( "#ketthuc" ).datepicker();
+		$( "#thoigian" ).datepicker();
 	});
 </script>
 <script language="JavaScript" type="text/javascript">
@@ -56,14 +49,8 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='batdau'>".'Bắt đầu (yyyy-mm-dd):'."</label></td>\n";
-$data = array('name'=>'batdau','id'=>'batdau','class'=>'text','value'=>$khoahoc['batdau']);
-echo "<td>";
-echo form_input($data);
-echo "</td></tr>\n";
-
-echo "<tr><td class='label'><label for='ketthuc'>".'Kết thúc (yyyy-mm-dd):'."</label></td>\n";
-$data = array('name'=>'ketthuc','id'=>'ketthuc','class'=>'text','value'=>$khoahoc['ketthuc']);
+echo "<tr><td class='label'><label for='batdau'>".'Ngày đăng (yyyy-mm-dd):'."</label></td>\n";
+$data = array('name'=>'thoigian','id'=>'thoigian','value'=>$khoahoc['thoigian'],'class'=>'text');
 echo "<td>";
 echo form_input($data);
 echo "</td></tr>\n";
@@ -78,6 +65,19 @@ echo "<tr><td class='label'><label for='anhdaidien'>".'Ảnh Đại Diện:'."</
 $data = array('name'=>'anhdaidien','id'=>'anhdaidien','rows'=>'10', 'cols'=>'80','value'=>"<p><img src=\"".base_url().$khoahoc['anhdaidien']."\" alt=\"\" /></p>");
 echo "<td id='nopad' >";
 echo form_textarea($data) ;
+echo "</td></tr>\n";
+
+echo "<tr><td class='label'><label for='loaikhoahoc_id'>".'(*) Loại khóa học:'."</label></td>\n";
+echo "<td>";
+$options = array();
+if(count($cacloaikhoahoc))
+{
+	foreach ($cacloaikhoahoc as $key => $list)
+	{
+		$options[$list['loaikhoahoc_id']] = $list['tenloai'];
+	}
+}
+echo form_dropdown('loaikhoahoc_id',$options,$khoahoc['loaikhoahoc_id']);
 echo "</td></tr>\n";
 
 echo "</table>\n";

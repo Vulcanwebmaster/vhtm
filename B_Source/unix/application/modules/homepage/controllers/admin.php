@@ -32,8 +32,32 @@ class Admin extends Shop_Admin_Controller
         		$tmp = explode(",", $list['dulieu']);
         		$final = "";
         		foreach($tmp as $str)
+        		if ($str != "")
         		{
-        			$final = $final."<p><img src=\"".base_url().$str."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
+        			if ($list['muc_id'] == 4) 
+        			{
+        				$image = explode("*", $str);
+	        			if (strpos($image[0], "1168.photobucket.com") == false)
+	        			{
+	        				$final = $final."<p><img src=\"".base_url().$image[0]."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
+	        			}
+	        			else  
+	        			{
+	        				$final = $final."<p><img src=\"".$image[0]."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
+	        			}
+	        			$final = $final."*".$image[1];
+        			}
+        			if ($list['muc_id'] == 5) 
+        			{
+	        			if (strpos($str, "1168.photobucket.com") == false)
+	        			{
+	        				$final = $final."<p><img src=\"".base_url().$str."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
+	        			}
+	        			else  
+	        			{
+	        				$final = $final."<p><img src=\"".$str."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
+	        			}
+        			}
         		}
         		$list['dulieu'] = $final;
         	}
@@ -55,10 +79,7 @@ class Admin extends Shop_Admin_Controller
 	    	$arr_rslt = $matches[1];
 	    	foreach ($arr_rslt as $i => $value) 
 	    	{
-	    		if (strpos($arr_rslt[$i], "http://i1168.photobucket.com") == false)
-	    		{
-    				$arr_rslt[$i] = str_replace("../../", "", $arr_rslt[$i]);
-	    		}
+   				$arr_rslt[$i] = str_replace("../../", "", $arr_rslt[$i]);
 			}
 			$tmp = implode(",", $arr_rslt);
     	}

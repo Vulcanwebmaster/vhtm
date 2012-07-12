@@ -11,7 +11,6 @@ if (count($homepage)){
     	  <th>Dữ Liệu</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($homepage as $key => $list){
-    if ($list['muc_id'] != 4) 
     {
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['muc_id']."</td>\n";

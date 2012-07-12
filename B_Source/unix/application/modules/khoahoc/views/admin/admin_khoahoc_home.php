@@ -16,8 +16,6 @@ if (count($khoahoc)){
     echo "<th>ID</th>\n
           <th>Tiêu Đề</th>\n
           <th>Nội dung</th>\n
-    	  <th>Bắt Đầu</th>\n
-    	  <th>Kết Thúc</th>\n
     	  <th>Học Phí</th>\n
     	  <th>Ảnh</th>\n
     	  <th>Sửa/Xóa</th>\n";
@@ -27,8 +25,6 @@ if (count($khoahoc)){
         echo "<td align='center'>".$list['khoahoc_id']."</td>\n";
         echo "<td align='center'>".substr($list['tieude'],0,40)."..."."</td>\n";
         echo "<td align='center'>".substr($list['mota'],0,100)."..."."</td>\n";
-        echo "<td align='center'>".$list['batdau']."</td>\n";
-        echo "<td align='center'>".$list['ketthuc']."</td>\n";
         echo "<td align='center'>".$list['hocphi']."</td>\n";
         echo "<td align='center'>".$list['anhdaidien']."</td>\n";      
         echo "<td align='center'>";

@@ -108,7 +108,7 @@
 	<div id="mainbottom">
 		<div id="bottom-left">
 			<div style="height:55px"></div>
-			<marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll" direction="left" scrollamount=3>
+			<marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll" direction="left" scrollamount=5>
 				<?php if ($this->MKaimonokago->homepageLoadNoiDung('images'))
 				{
 					$images=$this->MKaimonokago->homepageLoadNoiDung('images');

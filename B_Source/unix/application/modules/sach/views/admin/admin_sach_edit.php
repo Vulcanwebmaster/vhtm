@@ -35,6 +35,12 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
+echo "<tr><td class='label'><label for='long'>".'(*)Ảnh đại diện:'."</label></td>\n";
+$data = array('name'=>'anhdaidien','id'=>'anhdaidien','value'=>"<p><img src=\"".base_url().$sach['anhdaidien']."\" alt=\"\" /></p>",'rows'=>'10', 'cols'=>'80');
+echo "<td id='nopad' >";
+echo form_textarea($data) ;
+echo "</td></tr>\n";
+
 echo "<tr><td class='label'><label for='loaisach_id'>".'(*)Loại Sách:'."</label></td>\n";
 echo "<td>";
 $options = array();

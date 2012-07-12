@@ -40,16 +40,17 @@ class Admin extends Shop_Admin_Controller
     	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
     	$temp = str_replace("../../../", base_url(), $temp);
     	
-    	//$anhdaidien = $this->input->post('anhdaidien',TRUE);
-    	//$tmp = strstr(strstr($anhdaidien, "src=\"../../../"),"../../../");
-    	//$pos = strpos($tmp, "\"");
-    	//$link = substr($tmp, 0, $pos);
-    	//$link = str_replace("../../../", "", $link);
+    	$anhdaidien = $this->input->post('anhdaidien',TRUE);
+    	$tmp = strstr(strstr($anhdaidien, "src=\"../../../"),"../../../");
+    	$pos = strpos($tmp, "\"");
+    	$link = substr($tmp, 0, $pos);
+    	$link = str_replace("../../../", "", $link);
     	
         $data = array(
             'sach_id'     => $this->input->post('sach_id',TRUE),
             'tensach'     => $this->input->post('tensach',TRUE),
             'mota'        => $temp,
+        	'anhdaidien'  => '../'.$link,
             'loaisach_id' => $this->input->post('loaisach_id',TRUE),        
             'tacgia'      => $this->input->post('tacgia',TRUE)    
         );

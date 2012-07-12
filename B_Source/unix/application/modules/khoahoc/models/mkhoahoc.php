@@ -10,7 +10,7 @@
 		function getlist($id_doituong)
 		{
 			if ($id_doituong>0)
-				$this->db->where('doituong',$id_doituong);
+				$this->db->where('loaikhoahoc',$id_doituong);
 			$ds=$this->db->get('unix_khoahoc');
 			$list=array();
 			foreach($ds->result() as $item)
@@ -78,9 +78,9 @@
 	    		$data_new = array( 
 	    			'tieude'     => $data['tieude'],
 		    		'mota'       => $data['mota'],
-		    		'batdau'     => $data['batdau'],
-		    		'ketthuc'    => $data['ketthuc'],
+		    		'thoigian'     => $data['thoigian'],
 		    		'hocphi'     => $data['hocphi'],
+	    		    'doituong'     => $data['loaikhoahoc_id'],
 	    			'anhdaidien' => $data['anhdaidien']
 	    		);
 	    		$this->db->where('khoahoc_id',$data['khoahoc_id']);

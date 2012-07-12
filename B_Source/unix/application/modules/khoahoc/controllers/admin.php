@@ -9,6 +9,7 @@ class Admin extends Shop_Admin_Controller
     {
         parent::__construct();       
         $this->load->model('MKhoahoc');
+        $this->load->model('loaikhoahoc/MLoaiKhoaHoc');
         $this->module=basename(dirname(dirname(__FILE__)));      
         $this->bep_site->set_crumb($this->lang->line('backendpro_ql_khoahoc'),$this->module.'/admin');
         $this->load->library('form_validation');
@@ -51,6 +52,7 @@ class Admin extends Shop_Admin_Controller
             'ketthuc'     => $this->input->post('ketthuc',TRUE),        
             'hocphi'      => $this->input->post('hocphi',TRUE),
         	'anhdaidien'  => '../'.$link,
+        	'loaikhoahoc_id' => $this->input->post('loaikhoahoc_id',TRUE),        
         	'thoigian'    => $this->input->post('thoigian',TRUE)    
         );
         return $data;
@@ -74,6 +76,7 @@ class Admin extends Shop_Admin_Controller
         {
             $data['title'] = "Tạo khóa học";
             // Set breadcrumb
+            $data['cacloaikhoahoc'] = $this->MLoaiKhoaHoc->getLoaiKhoaHocDropDown();
             $this->bep_site->set_crumb($this->lang->line('kago_create')." ".$this->lang->line('kago_khoahoc'),$this->module.'/admin/create');
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_create";
@@ -102,6 +105,7 @@ class Admin extends Shop_Admin_Controller
 		  	}
 		  	else 
 		  	{
+		  		$data['cacloaikhoahoc'] = $this->MLoaiKhoaHoc->getLoaiKhoaHocDropDown();
 			  	$data['title'] = "Sửa khóa học";
 	            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_edit";
 	            $data['khoahoc'] = $this->MKhoahoc->getInfo($id);
@@ -120,6 +124,7 @@ class Admin extends Shop_Admin_Controller
         else
         {
             $data['title'] = "Sửa khóa học";
+            $data['cacloaikhoahoc'] = $this->MLoaiKhoaHoc->getLoaiKhoaHocDropDown();
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_edit";
             $data['khoahoc'] = $this->MKhoahoc->getInfo($id);
             if (!count($data['khoahoc']))

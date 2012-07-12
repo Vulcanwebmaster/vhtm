@@ -15,6 +15,7 @@
         <?php if($this->preference->item('thongtingioithieu')):?><li><?php print anchor('thongtingioithieu/admin',$this->lang->line('backendpro_thongtingioithieu'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>
     	<?php if($this->preference->item('gioithieu')):?><li><?php print anchor('gioithieu/admin',$this->lang->line('backendpro_gioithieu'),array('class'=>'icon_color_swatch'))?></li><?php echo "\n"; endif;?>
         <?php if($this->preference->item('hoithao')):?><li><?php print anchor('hoithao/admin',$this->lang->line('backendpro_hoithao'),array('class'=>'icon_calendar'))?></li><?php echo "\n"; endif;?>
+        <?php print anchor('loaikhoahoc/admin',"Loại khóa học",array('class'=>'icon_folder'))?></li><?php echo "\n";?>
         <?php if($this->preference->item('khoahoc')):?><li><?php print anchor('khoahoc/admin',$this->lang->line('backendpro_khoahoc'),array('class'=>'icon_television'))?></li><?php echo "\n"; endif;?>
         <li><a href="<?php echo base_url();?>index.php/tintuc/admin" class="icon_comment">Tin tức</a></li>
         <?php if($this->preference->item('loaisach')):?><li><?php print anchor('loaisach/admin',$this->lang->line('backendpro_loaisach'),array('class'=>'icon_folder'))?></li><?php echo "\n"; endif;?>

@@ -50,6 +50,7 @@
 	        						unix_sach.mota AS mota, 
 	        						unix_sach.tensach AS tensach, 
 	        						unix_sach.tacgia AS tacgia,
+	        						unix_sach.anhdaidien AS anhdaidien,
 	        						unix_loaisach.loaisach_id AS loaisach_id, 
 	        						unix_loaisach.tenloai AS tenloai
 							FROM unix_sach, unix_loaisach
@@ -84,6 +85,7 @@
 	    		$data_new = array( 
 		    		'tensach'     => $data['tensach'],
 		    		'mota'        => $data['mota'],
+	    			'anhdaidien'        => $data['anhdaidien'],
 		    		'loaisach_id' => $data['loaisach_id'],
 		    		'tacgia'      => $data['tacgia']
 	    		);
@@ -113,6 +115,7 @@
 	        						unix_sach.mota AS mota, 
 	        						unix_sach.tensach AS tensach, 
 	        						unix_sach.tacgia AS tacgia, 
+	        						unix_sach.anhdaidien AS anhdaidien,
 	        						unix_loaisach.loaisach_id AS loaisach_id,
 	        						unix_loaisach.tenloai AS tenloai
 							FROM unix_sach, unix_loaisach
