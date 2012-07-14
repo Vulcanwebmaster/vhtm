@@ -5,6 +5,7 @@ class Example extends NIW_controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
 	}
 	
@@ -14,5 +15,5 @@ class Example extends NIW_controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file example */
+/* Location: ./application/modules/example/example.php */

@@ -10,6 +10,7 @@ class Home extends Admin_Controller {
 	public function index()
 	{
 		$data["title"] = "Dash Broad";
+		$data['page'] = "admin/home";
 		$this->load->view("admin/container",$data);
 	}
 }

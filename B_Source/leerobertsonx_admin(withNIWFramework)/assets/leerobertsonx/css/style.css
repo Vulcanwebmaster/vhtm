@@ -1,7 +1,6 @@
 /* ---------------------------------------------------------------------- */
 /*	Reset & Clearfix (http://meyerweb.com/eric/tools/css/reset/)
 /* ---------------------------------------------------------------------- */
-
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,and,address,cite,code,del,dfn,em,images,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,input,textarea,select{background:transparent;border:0;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}del{text-decoration:line-through}hr{background:transparent;border:0;clear:both;color:transparent;height:1px;margin:0;padding:0}mark{background-color:#ffffb3;font-style:italic}input,select{vertical-align:middle}ins{background-color:red;color:white;text-decoration:none}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}
 
 /* Clearfix */
@@ -26,7 +25,8 @@ dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset,blockquote,article,p { 
 /* ---------------------------------------------------------------------- */
 
 body {
-	background: #fff;
+	background:url('../images/body-bg.jpg') no-repeat;
+	background-attachment:fixed;
 	border-top: 6px solid #3a3a3a;
 	color: #909090;
 	font: 11px/1.7 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
@@ -351,28 +351,28 @@ ul.dotted + ul.dotted:before {
 }
 
 .error {
-	background: #f9e5e6 url(../images/icon-box-error.png) no-repeat 10px 9px;
+	background: #f9e5e6 url(../images/icon-box-error.png) no-repeat;
 	border: 1px solid #f7c7c9;
 	border-left-width: 4px;
 	color: #b3696c;
 }
 
 .success {
-	background: #e3ebc6 url(../images//icon-box-success.png) no-repeat 12px 8px;
+	background: #e3ebc6 url(../images//icon-box-success.png) no-repeat;
 	border: 1px solid #c2d288;
 	border-left-width: 4px;
 	color: #8fa442;
 }
 
 .info {
-	background: #d8ecf5 url(../images//icon-box-info.png) no-repeat 10px 8px;
+	background: #d8ecf5 url(../images//icon-box-info.png) no-repeat;
 	border: 1px solid #9ac9df;
 	border-left-width: 4px;
 	color: #528da9;
 }
 
 .notice {
-	background: #fcf7d9 url(../images//icon-box-notice.png) no-repeat 10px 9px;
+	background: #fcf7d9 url(../images//icon-box-notice.png) no-repeat;
 	border: 1px solid #f5dc7d;
 	border-left-width: 4px;
 	color: #c4a21b;
@@ -449,7 +449,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 .container {
 	margin: 0 auto;
 	position: relative;
-	width: 940px;
+	width: 100%;/*940px;*/
 }
 
 	/* -------------------------------------------------- */
@@ -478,7 +478,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 /* ---------------------------------------------------------------------- */
 
 #header {
-	border-bottom: 1px solid #efefef;
+	border-bottom: 1px solid #d0d0d0;
 	height: 86px;
 	z-index: 97;
 }
@@ -512,7 +512,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 					font-weight: 800;
 					display: block;
 					letter-spacing: -0.08px;
-					padding: 26px 20px 40px;
+					padding: 10px 20px 10px;
 					position: relative;
 					text-align: center;
 					text-transform: uppercase;
@@ -626,7 +626,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 /* ---------------------------------------------------------------------- */
 
 #content {
-	margin-top: 40px;
+	margin-top: 25px;
 }
 
 	/* -------------------------------------------------- */
@@ -642,6 +642,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 			font-weight: 300;
 			letter-spacing: -0.1px;
 			margin-bottom: 0;
+			color:#575858;
 		}
 
 		.page-title, .page-description, .page-subdescription, .project-title {
@@ -652,7 +653,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 
 		.slogan {
 			font-size: 24px;
-			margin-bottom: 40px;
+			margin-bottom: 25px;
 		}
 
 		.page-title { margin-top: -15px; }
@@ -818,7 +819,8 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 
 				h6.acc-trigger.active a { background-position: 20px -90px; }
 
-			.acc-container .content { padding: 0 20px 25px 55px; }
+			.acc-container .content { padding: 0 20px 25px 55px; text-transform:lowercase;}
+			.acc-container .content h3{ font-weight:none; font-size:12px}
 
 			.js .acc-container { margin-top: -15px; }
 
@@ -880,7 +882,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 			width: 100%;
 		}
 
-			.tab-content { padding: 20px; }
+			.tab-content { padding: 20px; text-align:justify}
 
 	/* -------------------------------------------------- */
 	/*	Pricing Tables
@@ -1213,7 +1215,7 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 
 	.ss-slider {
 		background: #fff url(../images/loader.gif) no-repeat center 185px;
-		margin: 20px auto 80px;
+		margin: 20px auto 40px;
 		max-height: 465px;
 		max-width: 940px;
 		overflow: hidden;
@@ -1716,8 +1718,8 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 	/* -------------------------------------------------- */
 
 	.jcarousel-container {
-		border-top: 1px solid #efefef;
-		margin: 15px -20px 80px 0;
+		border-top: 4px solid #d0d0d0;
+		margin: 15px -20px 40px 0;
 		max-width: 100%;
 		padding: 25px 0 0;
 	}
@@ -3518,3 +3520,14 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 
 }
 .last-project-img{border: solid 1px #d8d9d9; width:100%}
+.menuitem img{height:40px}
+#clients-panel{list-style-type:none; text-align:right}
+#clients-panel img{ height:50px}
+
+#clients-panel{width:205px; padding:10px}
+#whyus-panel ul{padding:0}
+#whyus-panel ul li{border-bottom:dotted 1px silver; width:100%}
+#whyus-panel ul li span{text-transform:uppercase}
+#whyus-panel ul li p{text-align:justify}
+.more{margin-left:20px; font-style:italic}
+hr{border-color:#a9a9a9; border-width:4px}

@@ -1,15 +1,16 @@
-<h3>Content</h3>
+<h3>Home</h3>
 	<ul class="toggle">
 		<li class="icn_new_article"><a href="<?php echo base_url()?>news/admin">New Article</a></li>
 		<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
 		<li class="icn_categories"><a href="#">Categories</a></li>
 		<li class="icn_tags"><a href="#">Tags</a></li>
 	</ul>
-<h3>Users</h3>
+<h3>Pages</h3>
 	<ul class="toggle">
-		<li class="icn_add_user"><a href="#">Add New User</a></li>
-		<li class="icn_view_users"><a href="#">View Users</a></li>
-		<li class="icn_profile"><a href="#">Your Profile</a></li>
+		<li class="icn_new_article"><a href="<?php echo base_url()?>news/admin">New Article</a></li>
+		<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
+		<li class="icn_categories"><a href="#">Categories</a></li>
+		<li class="icn_tags"><a href="#">Tags</a></li>
 	</ul>
 <h3>Media</h3>
 	<ul class="toggle">

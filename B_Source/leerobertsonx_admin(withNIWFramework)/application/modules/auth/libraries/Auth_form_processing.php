@@ -237,8 +237,9 @@ class Auth_form_processing
 	function forgotten_password_form($container)
 	{
 		// Setup fields
-		$fields['email'] = $this->CI->lang->line('userlib_email');
-		$this->CI->form_validation->set_fields($fields);
+		//$fields['email'] = $this->CI->lang->line('userlib_email');
+		//echo $fields['email'];
+		//$this->CI->form_validation->set_fields($fields);
 
 		// Set Rules
 		$rules['email'] = 'trim|required|valid_email';
@@ -247,14 +248,14 @@ class Auth_form_processing
 		if ( $this->CI->form_validation->run() === FALSE )
 		{
 			// Output any errors
-			$this->CI->form_validation->output_errors();
+			//$this->CI->form_validation->output_errors();
 
 			// Display page
-			$data['header'] = $this->CI->lang->line('userlib_forgotten_password');
-			$data['page'] = $this->CI->config->item('backendpro_template_public') . 'form_forgotten_password';
-			$data['module'] = 'auth';
-			$this->CI->load->view($container,$data);
-
+			//$data['header'] = $this->CI->lang->line('userlib_forgotten_password');
+			//$data['page'] = $this->CI->config->item('backendpro_template_public') . 'form_forgotten_password';
+			//$data['module'] = 'auth';
+			//$this->CI->load->view($container,$data);
+			$this->CI->load->view($container);
 			$this->CI->session->keep_flashdata('requested_page');
 		}
 		else

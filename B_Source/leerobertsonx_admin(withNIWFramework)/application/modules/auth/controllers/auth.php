@@ -54,7 +54,7 @@ class auth extends Public_Controller
 
 	function forgotten_password()
 	{
-		$this->auth_form_processing->forgotten_password_form("public/form_forgotten_pass");
+		$this->auth_form_processing->forgotten_password_form("public/form_forgotten_password");
 	}
 
 	function register()

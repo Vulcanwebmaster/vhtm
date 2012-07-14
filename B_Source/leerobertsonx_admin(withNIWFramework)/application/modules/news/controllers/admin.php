@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Admin extends NIW_controller {
+class Admin extends Admin_Controller {
 	
 	function __construct()
 	{
