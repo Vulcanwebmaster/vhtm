@@ -14,5 +14,6 @@
 			$data['module']=$this->module;
 			$this->load->view("front/container",$data);
 		}
+
 	}
 ?>

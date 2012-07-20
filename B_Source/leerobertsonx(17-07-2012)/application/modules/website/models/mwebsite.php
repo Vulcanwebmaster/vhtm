@@ -6,7 +6,8 @@
 			parent::__construct();
 			$this->load->database();
 		}
-		
+
+//Front-end function
 		function getListInfo()
 		{
 			$ds=$this->db->get('lee_website');
@@ -17,6 +18,18 @@
 			}
 			$ds->free_result();
 			return $list;
+		}
+		function getCategoryByID_Front($id)
+    	{	
+	    	$this->db->where('id',$id);
+	    	$result=$this->db->get('lee_website_categories');
+	    	return $result->result();
+    	}
+		function getLstArticleByCtg_Front($ctg)
+		{
+			$this->db->where('category',$ctg);
+    		$query = $this->db->get('lee_website');
+    		return $query;
 		}
 		
 		function getInfoByAlias($alias)

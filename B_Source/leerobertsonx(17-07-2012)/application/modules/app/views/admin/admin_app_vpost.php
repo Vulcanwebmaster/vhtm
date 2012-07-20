@@ -1,6 +1,6 @@
 <form action="admin/savePostApp" method="post">
 		<article class="module width_full">
-			<header><h3>Post Application</h3></header>
+			<header><h3>Add New Article</h3></header>
 				<div class="module_content">
 						<fieldset>
 							<label>Title</label>

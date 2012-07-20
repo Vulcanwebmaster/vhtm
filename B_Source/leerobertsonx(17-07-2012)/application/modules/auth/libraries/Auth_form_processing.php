@@ -216,14 +216,16 @@ class Auth_form_processing
 		{
 			// Failed to log user out
 			flashMsg('error',$this->CI->lang->line('userlib_logout_failed'));
-			redirect($this->CI->config->item('userlib_action_logout'),'location');
+			//redirect($this->CI->config->item('userlib_action_logout'),'location');
+			redirect("admin");
 		}
 
 		// Unset autologin variable
 		delete_cookie('autologin');
 
 		flashMsg('success',$this->CI->lang->line('userlib_logout_successfull'));
-		redirect($this->CI->config->item('userlib_action_logout'),'location');
+		//redirect($this->CI->config->item('userlib_action_logout'),'location');
+		redirect("admin");
 	}
 
 	/**

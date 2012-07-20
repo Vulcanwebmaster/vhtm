@@ -27,7 +27,7 @@
 <body>
 	<?php $this->load->view('admin/header');?>	
 	<aside id="sidebar" class="column">
-		<?php $this->load->view('admin/searchbox')?>
+		<?php //$this->load->view('admin/searchbox')?>
 		<hr/>
 		<?php $this->load->view('admin/menu')?>
 		<?php $this->load->view('admin/footer')?>

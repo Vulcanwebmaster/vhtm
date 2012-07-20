@@ -10,87 +10,99 @@
 		<h1 class="page-title"><?php echo $maintitle;?></h1>
 		
 	</header><!-- end .page-header -->
-	
+
+<?php foreach ($Ctg1 as $ctg):?>
 	<div class="one-fourth">
-
-		<h4>Web design</h4>
-
+	<h4><?php echo $ctg->name?></h4>
+	<?php foreach ($LstArt1 as $art):?>
 		<span class="acc-trigger">
-			<a href="#">Small Business Design</a>
+			<a href="#"><?php echo $art->title?></a>
 		</span>
 		<div class="acc-container">
 			<div class="content">
-				<?php $item=$this->Mwebsite->getInfoByAlias('small-business-design');
-					echo substr($item->content,0,50).'...';
+				<?php 
+					echo substr($art->content,0,50).'...';
 				?>
-				<a class="more" href="<?php echo base_url();?>website/detail/small-business-design">More</a>
+				<a class="more" href="<?php echo base_url();?>website/detail/<?php echo $art->alias;?>">More</a>
 			</div>
 		</div><!-- end .acc-container -->
-
-		<span class="acc-trigger">
-			<a href="#">Flash Design</a>
-		</span>
-		<div class="acc-container">
-			<div class="content">
-				<?php $item=$this->Mwebsite->getInfoByAlias('flash-design');
-					echo substr($item->content,0,50).'...';
-				?>
-				<a class="more" href="<?php echo base_url();?>website/detail/flash-design">More</a>
-			</div>
-		</div><!-- end .acc-container -->
-		
-		<span class="acc-trigger">
-			<a href="#">HTML Design</a>
-		</span>
-		<div class="acc-container">
-			<div class="content">
-				<?php $item=$this->Mwebsite->getInfoByAlias('html-design');
-					echo substr($item->content,0,50).'...';
-				?>
-				<a class="more" href="<?php echo base_url();?>website/detail/html-design">More</a>
-			</div>
-		</div><!-- end .acc-container -->
+	<?php endforeach;?>	
 	</div><!-- end .one-fourth -->
-	
+
+<?php foreach ($Ctg2 as $ctg):?>
 	<div class="one-fourth">
-
-		<h4>SEO</h4>
-
+		<h4><?php echo $ctg->name?></h4>
 		<ul class="tabs-nav">
-
+		<?php for ($i = 1; $i <= $NumLstArt2; $i++):?>
+			<?php if ($i == 1){?>
 			<li class="active">
-				<a href="#tab1">1</a>
+				<a href="#tab<?php echo $i?>"><?php echo $i?></a>
 			</li>
-
+			<?php }else{?>
 			<li>
-				<a href="#tab2">2</a>
+				<a href="#tab<?php echo $i?>"><?php echo $i?></a>
 			</li>
-
+			<?php }?>
+		<?php endfor;?>
 		</ul><!-- end .tabs-nav -->
 
 		<div class="tabs-container">
-
-			<div class="tab-content" id="tab1">
-				<?php $item=$this->Mwebsite->getInfoByAlias('seo-1');
-					echo substr($item->content,0,300);
-				?>
-				<a class="more" href="<?php echo base_url();?>website/detail/<?php echo $item->alias?>">More...</a>
+			<?php
+			$i  = 1; 
+			foreach ($LstArt2 as $art):?>
+				<div class="tab-content" id="tab<?php echo $i?>">
+				<?php echo substr($art->content,0,300);?>
+				<a class="more" href="<?php echo base_url();?>website/detail/<?php echo $art->alias?>">More...</a>
 			</div><!-- end #tab1 -->
-
-			<div class="tab-content" id="tab2">
-				<?php $item=$this->Mwebsite->getInfoByAlias('seo-2');
-					echo substr($item->content,0,300);
-				?>
-				<a class="more" href="<?php echo base_url();?>website/detail/<?php echo $item->alias?>">More...</a>
-			</div><!-- end #tab2 -->
+			<?php
+			$i = $i + 1; 
+			endforeach;?>
 		</div><!-- end .tabs-container -->
 		
 	</div><!-- end .one-fourth -->
-	
+<?php endforeach;?>
+<?php foreach ($Ctg3 as $ctg):?>
 	<div class="one-fourth">
 
-		<h4>Web developement</h4>
-
+		<h4><?php echo $ctg->name;?></h4>
+		<?php
+		$i = 1; 
+		foreach ($LstArt3 as $art):?>
+		<?php if ($i == 1){?>
+		<p class="error">
+			<?php 
+				echo '<a href="'.base_url().'website/detail/'.$art->alias.'">'.$art->title.'</a>';
+			?>
+		</p>
+		<?php }else if ($i == 2){?>
+		<p class="success">
+			<?php 
+				echo '<a href="'.base_url().'website/detail/'.$art->alias.'">'.$art->title.'</a>';
+			?>
+		</p>
+		<?php }else if ($i == 3){?>
+		<p class="info">
+			<?php 
+				echo '<a href="'.base_url().'website/detail/'.$art->alias.'">'.$art->title.'</a>';
+			?>
+		</p>
+		<?php }else if ($i == 4){?>
+		<p class="notice">
+			<?php 
+				echo '<a href="'.base_url().'website/detail/'.$art->alias.'">'.$art->title.'</a>';
+			?>
+		</p>		
+		<?php }else{?>
+		<p class="info">
+			<?php 
+				echo '<a href="'.base_url().'website/detail/'.$art->alias.'">'.$art->title.'</a>';
+			?>
+		</p>
+		<?php }?>
+		<?php
+		$i = $i+1; 
+		endforeach;?>
+<!-- 
 		<p class="error">
 			<?php $item=$this->Mwebsite->getInfoByAlias('rich-internet-applications');
 				echo '<a href="'.base_url().'website/detail/'.$item->alias.'">'.$item->title.'</a>';
@@ -114,9 +126,9 @@
 				echo '<a href="'.base_url().'website/detail/'.$item->alias.'">'.$item->title.'</a>';
 			?>
 		</p>
-		
+ -->		
 	</div><!-- end .one-fourth -->
-	
+<?php endforeach;?>	
 	<div class="one-fourth last">
 
 		<h4>Pricing Tables</h4>
@@ -145,4 +157,5 @@
 			echo $item->content;
 		?>
 	</div>	
+<?php endforeach;?>
 </section><!-- end #content -->

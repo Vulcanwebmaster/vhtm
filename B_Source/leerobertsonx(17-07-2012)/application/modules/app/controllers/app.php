@@ -16,7 +16,7 @@
 			$data['title']="L.R.X | Applications";
 			$data['maintitle']="Applications";
 			$data['vcontent']=$this->Mapp->loadApp();
-			
+
 			
 			$this->load->view("front/container",$data);
 		}

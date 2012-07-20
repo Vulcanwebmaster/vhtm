@@ -11,6 +11,9 @@ class Home extends Admin_Controller {
 	{
 		$data["title"] = "Dash Broad";
 		$data['page'] = "admin/home";
+		//Breadcrumb data
+		$data['bcCurrent'] = "Dash Broad";
+		
 		$this->load->view("admin/container",$data);
 	}
 }

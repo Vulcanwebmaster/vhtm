@@ -27,10 +27,10 @@
 				<tr> 
    					<td><input type="checkbox"></td> 
     				<td><?php echo $rowuser-> title?></td> 
-    				<td><?php echo word_limiter($rowuser-> shortcontent, 10);?></td> 
+    				<td><?php echo word_limiter($rowuser-> shortcontent, 8);?></td> 
     				<td><?php echo $rowuser-> order?></td>
     				<td><?php echo $rowuser-> date?></td> 
-    				<td><a href="<?php echo base_url()?>app/admin/getApp/<?php echo $rowuser->id?>" title="View"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_view.png"></a>
+    				<td><a href="<?php echo base_url()?>app/admin/getApp/<?php echo $rowuser->id?>" title="Edit"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_edit.png"></a>
     				<a href="<?php echo base_url()?>app/admin/delApp/<?php echo $rowuser->id?>" title="Del"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_trash.png"></a></td>
 				</tr> 
 				<?php endforeach;?>
@@ -43,7 +43,7 @@
 		<form action="<?php echo base_url()?>app/admin/getPost" method="post">
 				<div class="submit_link">
 					
-					<input type="submit" value="Post" class="alt_btn">
+					<input type="submit" value="Add New Article" class="alt_btn">
 					
 				</div>
 				</form>

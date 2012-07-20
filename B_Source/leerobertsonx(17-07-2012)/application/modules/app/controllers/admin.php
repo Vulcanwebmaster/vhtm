@@ -54,6 +54,9 @@ class Admin extends Admin_Controller {
 		$data['module'] = $this->module;
 		$data['page'] = "admin_app_vapplication";
 		$data['title'] = "Application";
+		
+		//Breadcrumb data
+		$data['bcCurrent'] = "Applications";
 		$this->load->view('admin/container',$data);
 	}
 	function getPost()
@@ -61,18 +64,17 @@ class Admin extends Admin_Controller {
 		
 		$data['module'] = $this->module;
 		$data['page'] = "admin_app_vpost";
-		$data['title'] = "Application";
+		$data['title'] = "Applications - Add New Article";
 		$data['list']=$this->Mapp->getDataAppById();
+		
+		//Breadcrumb data
+		$data['bcLv1']= "Appplications";
+		$data['bcLv1_link']= "app/admin";
+		$data['bcCurrent'] = "Add New Article";
 		$this->load->view('admin/container',$data);
-	
-		
-			
-		
 	}
 	function savePostApp()
 	{
-		
-		
 		if($this->Mapp->savePostApplication()==true)
 		{
 			redirect('app/admin');
@@ -82,7 +84,11 @@ class Admin extends Admin_Controller {
 	{
 		$data['module'] = $this->module;
 		$data['page'] = "admin_app_veditapplication";
-		$data['title'] = "Application";
+		$data['title'] = "Applications - Edit Article";
+		//Breadcrumb data
+		$data['bcLv1']= "Appplications";
+		$data['bcLv1_link']= "app/admin";
+		$data['bcCurrent'] = "Edit Article";
 		$data['list']=$this->Mapp->getDataAppById();
 		$this->load->view('admin/container',$data);
 	}

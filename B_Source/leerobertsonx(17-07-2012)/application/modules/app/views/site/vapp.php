@@ -12,7 +12,7 @@
 				<?php echo '<h2 style="text-transform:uppercase">'.$rows->title.'</h2>';
 					echo $rows->shortcontent.'...';
 				?>
-				<a href="<?php echo base_url();?>app/detail/<?php echo $rows->id.'/'.$rows->alias?>" data-description="">
+				<a href="<?php echo base_url();?>app/detail/<?php echo $rows->id.'/'.$rows->alias?>.htm" data-description="">
 					<i>see more</i>
 					</a>
 				<hr>

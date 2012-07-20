@@ -51,6 +51,11 @@ class Admin extends Admin_Controller {
 		$data['module'] = $this->module;
 		$data['page'] = "admin_contactus_contact";
 		$data['title'] = "Contact us";
+		
+		//Breadcrumb data
+		$data['bcCurrent'] = "Contact us";
+		
+		
 		$this->load->view('admin/container',$data);
 	}
 	function savecontact()
@@ -66,6 +71,10 @@ class Admin extends Admin_Controller {
 		$data['module'] = $this->module;
 		$data['title'] = "Contact us - Message Details";
 		$data['page'] = "admin_contactus_detailmessage";
+		//Breadcrumb data
+		$data['bcLv1']= "Contact us";
+		$data['bcLv1_link']= "contactus/admin";
+		$data['bcCurrent'] = "Message Details";
 		$this->load->view('admin/container',$data);
 	}
 	function delMessage()

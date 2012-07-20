@@ -1,6 +1,6 @@
 
 		<article class="module width_full">
-			<header><h3>Edit Application</h3></header>
+			<header><h3>Edit Article</h3></header>
 				<div class="module_content">
 				<?php foreach ($list as $row):?>
 <form action="<?php echo base_url()?>app/admin/editApp/<?php echo $row->id?>" method="post">

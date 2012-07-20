@@ -4,6 +4,6 @@
 
 var tinyMCEImageList = new Array(
 	// Name, URL
-	["Logo 1", "media/logo.jpg"],
-	["Logo 2 Over", "media/logo_over.jpg"]
+	["Logo 1", "../../uploads/images/logo.jpg"],
+	["Logo 2 Over", "../../uploads/images/logo_over.jpg"]
 );

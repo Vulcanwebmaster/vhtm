@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Internet Dreams</title>
+<title>Login</title>
 <link rel="stylesheet" href="<?php echo base_url()?>assets/leerobertsonx_admin/css/screen.css" type="text/css" media="screen" title="default" />
 <!--  jquery core -->
 <script src="<?php echo base_url()?>assets/leerobertsonx_admin/js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>

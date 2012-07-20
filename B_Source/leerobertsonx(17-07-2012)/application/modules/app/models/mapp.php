@@ -8,6 +8,7 @@
 			$this->load->helper('date');
 			$this->load->helper('url');
 			$this->load->library('string_library');
+
 		}
 		
 		function getInfoByAlias($alias)
@@ -46,7 +47,7 @@
 	    function savePostApplication()
 	    {
 	    	$title=$this->input->post('title');
-	    	$alias=$this->substring->stringchage($title);
+	    	$alias=(string)$this->string_library->stringchange($title);
 	    	$data=(array(
 	    				'title'=>$title,
 	    				'order'=>$this->input->post('order'),
@@ -71,10 +72,12 @@
 	    function editApp()
 	    {
 	    	$id=$this->uri->segment(4);
+	    	$title=$this->input->post('title');
+	    	$alias=(string)$this->string_library->stringchange($title);
 	    	$data=(array(
-	    				'title'=>$this->input->post('title'),
+	    				'title'=>$title,
 	    		    	'order'=>$this->input->post('order'),
-	    				'alias'=>$this->input->post('catology'),
+	    				'alias'=>$alias,
 	    				'shortcontent'=>$this->input->post('shortcontent'),
 	    				'content'=>(string)$this->input->post('content'),
 	    				'date'=>mdate('%Y-%m-%d %H:%i:%s',time())

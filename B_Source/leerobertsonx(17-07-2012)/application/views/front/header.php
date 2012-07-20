@@ -39,7 +39,7 @@
 				</a>
 				<ul>
 				<?php foreach ($app as $row):?>
-					<li><a href="<?php echo base_url();?>app/detail/<?php echo $row->id.'/'.$row->alias?>"><?php echo $row->title?></a></li>
+					<li><a href="<?php echo base_url();?>app/detail/<?php echo $row->id.'/'.$row->alias?>.htm"><?php echo $row->title?></a></li>
 					<?php endforeach;?>
 				</ul>
 			</li>

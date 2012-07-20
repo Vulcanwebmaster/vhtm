@@ -1,6 +1,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#about-us').addClass('current');
+		$('.image-gallery-slider ul').css('height','120px');
 	});
 </script>
 <section id="content" class="container clearfix">
@@ -15,32 +16,55 @@
 		
 	</header><!-- end .page-header -->
 	
-	<div class="one-third">
-
-		<h4>Smart, Agile, Imaginative</h4>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>
-		
-	</div><!-- end .one-third -->
-
-	<div class="one-third">
-
-		<h4>Our Approach</h4>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-		<p>Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>
-		
-	</div><!-- end .one-third -->
-
-	<div class="one-third last">
-
-		<h4>Methodology</h4>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum.</p>
-
-		<p>Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>
-		
-	</div><!-- end .one-third.last -->
-	
+	<div style="text-align:right">
+		<style type="text/css">
+			.newController{cursor:pointer}
+		</style>
+		<ul>
+			<li style="display:inline; position: relative;">
+				<a class="newController">Pre</a>
+			</li>
+			<li style="display:inline">
+				<a class="newController">Nxt</a>
+			</li>
+		</ul>
+	</div>
+	<hr style="width:2px;color: ">
+	<div style="width:910px; overflow-x: hidden">
+	<ul id="newslide" style=" width:-moz-max-content ;list-style-type: none ">	
+		<?php foreach ($list as $row):?>
+			<li style="float:left; width:260px;text-align: justify;padding-right: 10px"><h4><strong><?php echo $row->title?></strong></h4><p><?php echo $row->content?></p></li>
+		<?php endforeach; ?>
+	</ul>
+	</div>
 </section><!-- end #content -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var amount=$('#newslide li').length;
+		var width1=amount*300;
+		var width2=width1+"px";
+		$('#newslide').css('width',width2);
+
+		//xu ly newController
+		$('.newController:last').click(function(){
+			var max=parseInt($('#newslide').css('width'));
+			
+			var left=parseInt($('#newslide').css('margin-left'));
+			if (Math.abs(left)<Math.abs(max)-910)
+			{
+				var newleft=left-910;
+				$('#newslide').animate({marginLeft:newleft});
+			}
+		});
+		$('.newController:first').click(function(){
+			var left=parseInt($('#newslide').css('margin-left'));
+
+			if (left<0)
+			{
+				var newleft=left+910;
+				$('#newslide').animate({marginLeft:newleft});
+			}
+		});
+	});
+</script>
