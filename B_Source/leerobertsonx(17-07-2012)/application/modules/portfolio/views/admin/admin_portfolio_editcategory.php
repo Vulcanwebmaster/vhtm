@@ -1,6 +1,6 @@
 <article class="module width_full">
 <?php foreach ($category as $rw):?>
-		<?php echo form_open("website/admin/updateCategory/".$rw->id)?>
+		<?php echo form_open("portfolio/admin/updateCategory/".$rw->id)?>
 			<header><h3>Edit Catogory</h3></header>
 				<div class="module_content">
 						<fieldset>

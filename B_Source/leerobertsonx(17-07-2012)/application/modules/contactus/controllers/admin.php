@@ -9,6 +9,7 @@ class Admin extends Admin_Controller {
 		$this->module = strtolower(get_class());
 		$this->load->model('Mcontactus');
 		$this->load->helper('form');
+		$this->load->library('editor_library');
 		$this->load->library('pagination');
 	}
 	

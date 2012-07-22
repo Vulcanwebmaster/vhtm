@@ -1,5 +1,3 @@
-
-<?php echo $this->editor_library->init_editor()?>
 <article class="module width_full">
 <header><h3>Edit Portfolio</h3></header>
 <?php foreach ($portfolio as $rw):?>
@@ -48,7 +46,7 @@
 				<?php if ($rw->type == 1){?>
 				<center><img style= "margin-top:20px" src="<?php echo base_url().$rw->url?>" height="auto" width="auto" /></center>
 				<?php } else {?>
-					<?php echo $rw->url;?> 
+					<p><iframe src="<?php echo $rw->url;?>" width="320" height="240"></iframe></p> 
 				<?php }?>
 			</fieldset>
 			<fieldset>

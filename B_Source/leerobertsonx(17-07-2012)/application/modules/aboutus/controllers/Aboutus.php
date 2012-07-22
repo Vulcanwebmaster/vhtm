@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			$this->load->model('Mboutus');
+			$this->load->helper('text');
 		}
 		
 		function index()

@@ -25,9 +25,38 @@ class Admin extends Admin_Controller {
 		$this->load->view('admin/container',$data);
 	}
 	//Category
-	public function delCategory() 
+	public function insertCategory()
 	{
+		$data['module'] = $this->module;
+		$data['page'] = "admin_portfolio_insertcategory";
+		$data['title'] = "Portfolio - Insert Category";
 		
+		//Breadcrumb data
+		$data['bcLv1']= "Portfolio";
+		$data['bcLv1_link']= "portfolio/admin";
+		$data['bcCurrent'] = "Insert Category";
+		
+		$this->load->view('admin/container',$data);
+		
+	}
+	public function addCategory()
+	{
+		if($this->Mportfolio->insertCategory())
+		{
+			$temp = $this->Mportfolio->getNewCtg();
+			foreach ($temp as $rw){
+				$id = $temp->id;
+			}
+			redirect('portfolio/admin/editCategory/'.$id);
+		}
+	}
+	public function updateCategory() 
+	{
+		if($this->Mportfolio->updateCategory())
+		{
+			$id = $this->uri->segment(4);
+			redirect('portfolio/admin/editCategory/'.$id);
+		}
 	}
 	public function editCategory()
 	{
@@ -41,6 +70,11 @@ class Admin extends Admin_Controller {
 		$data['bcLv1_link']= "portfolio/admin";
 		$data['bcCurrent'] = "Edit Category";
 		$this->load->view('admin/container',$data);
+	}
+	public  function delCategory(){
+		if($this->Mportfolio->delCategory()){
+			redirect("portfolio/admin");
+		}
 	}
 	//PortFolio
 	public function editPortFolio()
@@ -70,7 +104,28 @@ class Admin extends Admin_Controller {
 	}
 	public function insertPortFolio()
 	{
-		
+		$data['module'] = $this->module;
+		$data['page'] = "admin_portfolio_insertportfolio";
+		$data['title'] = "Portfolio - Insert Portfolio";
+		//Breadcrumb data
+		$data['bcLv1']= "Portfolio";
+		$data['bcLv1_link']= "portfolio/admin";
+		$data['bcCurrent'] = "Insert Portfolio";
+		$data['categories']=$this->Mportfolio->getListCategories();
+		$data['types']=$this->Mportfolio->getListTypes();
+		$this->load->view('admin/container',$data);
+	}
+	public function addPortFolio()
+	{
+		if($this->Mportfolio->insertPortfolio())
+		{
+			redirect('portfolio/admin/');
+		}
+	}
+	public function delPortfolio(){
+		if($this->Mportfolio->deletePortfolio()){
+			redirect('portfolio/admin/');
+		}
 	}
 }
 

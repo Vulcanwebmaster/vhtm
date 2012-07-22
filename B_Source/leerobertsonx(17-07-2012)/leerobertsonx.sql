@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 20, 2012 at 04:59 PM
+-- Generation Time: Jul 22, 2012 at 08:42 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -173,20 +173,17 @@ CREATE TABLE IF NOT EXISTS `n_lee_aboutus` (
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `n_lee_aboutus`
 --
 
 INSERT INTO `n_lee_aboutus` (`id`, `title`, `content`, `date`) VALUES
-(2, 'Our Approach', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>', '2012-07-18 06:19:43'),
-(3, 'Methodology', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum.\r\n\r\nVivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.', '0000-00-00 00:00:00'),
+(2, 'Our Approach', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\r\n<p>Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>', '2012-07-21 12:27:23'),
+(3, 'Methodology', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum.</p>\r\n<p>Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>', '2012-07-21 12:27:57'),
 (5, 'Smart, Agile, Imaginative', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.', '2012-07-18 00:00:00'),
-(6, 'Smart, Agile, Imaginative', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.', '2012-07-18 00:00:00'),
-(7, 'Smart, Agile, Imaginative', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.', '2012-07-18 00:00:00'),
-(8, 'Our Approach', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>', '2012-07-18 06:19:43'),
-(9, 'Our Approach', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed consectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo tristique odio, quis fringilla ligula aliquet ut. Maecenas sed justo varius velit imperdiet bibendum. Vivamus nec sapien massa, a imperdiet diam. Aliquam erat volutpat. Sed tetur suscipit nunc et rutrum.</p>', '2012-07-18 06:19:43');
+(10, 'We Love To Design - We Love To Be Creative!', '<p>LXL Web Design Company provides complete web design &amp; development service and solutions. Our main goal is not only to satisfy your requirement but rather to exceed your expectations. We have been designing and developing websites for over a decade and we are very proficient and skillful in these fields- we offer an inspiring design which further gives your company recognition and a stand-alone status. You can check out some of our solutions in the snapshots above.</p>', '2012-07-21 12:38:59');
 
 -- --------------------------------------------------------
 
@@ -210,8 +207,81 @@ CREATE TABLE IF NOT EXISTS `n_lee_application` (
 --
 
 INSERT INTO `n_lee_application` (`id`, `title`, `alias`, `content`, `shortcontent`, `date`, `order`) VALUES
-(1, 'Applications Services', 'Applications-Services', '<h3>Applications Development Services</h3>\r\n<p>With the path-breaking developments in the field of communications, outsourcing of business has become a viable as well as a highly profitable option. With high-speed communications allowing customers and vendors to communicate on a real-time basis, offshore Application Development has become practically equivalent to getting software developed in another location of the outsourcing organisation.</p>\r\n<h3>Outsource Application Development US</h3>\r\n<p>US has always been a leading provider of offshore development services. Choosing the right outsourcing vendor can provide various benefits to your organisation, such as:</p>\r\n<ul>\r\n<li>Large savings in cost</li>\r\n<li>Synergy across business processes</li>\r\n<li>Knowledge enhancement</li>\r\n<li>Operational flexibility</li>\r\n<li>Better quality of products and services</li>\r\n<li>Improved competitiveness</li>\r\n<li>Ability to focus on core business</li>\r\n</ul>\r\n<h3>Offshore Application Development Company US</h3>\r\n<p>NetProphets is an (USn company) established name in the field of offshore Application Development. NetProphets comprises of a team of seasoned software professionals dedicated to provide a reliable and cost-effective end-product. Our Application Development model is a result of various innovations and enhancements, and is engineered to deliver a product that not only fulfils clients&rsquo; requirements, but also adheres to global standards of software engineering.</p>\r\n<p>Though an USn company by origin, NetProphets has successfully adopted global IT standards and has established itself as a leading player in the offshore Application Development domain. Our client base comprises of the best known names in the global realm, who have derived substantial outsourcing gains through their association with NetProphets</p>\r\n<p>Our time-tested mechanisms for hiring and training ensure that our team of engineers is fully equipped to adapt to diverse work cultures and environments. Each offshore client that we service, results in a new valuable learning for us, thus enabling us to further enhance our expertise to deliver quality.</p>', 'With the path-breaking developments in the field of communications, outsourcing of business has become a viable as well as a highly profitable option. With high-speed communications allowing customers and vendors to communicate on a real-time basis, offshore Application Development has become practically equivalent to getting software developed in another location of the outsourcing organisation.\r\n', '2012-07-18', 2),
+(1, 'Applications Services', 'Applications-Services', '<h3>Applications Development Services</h3>\r\n<p>With the path-breaking developments in the field of communications, outsourcing of business has become a viable as well as a highly profitable option. With high-speed communications allowing customers and vendors to communicate on a real-time basis, offshore Application Development has become practically equivalent to getting software developed in another location of the outsourcing organisation.</p>\r\n<h3>Outsource Application Development US</h3>\r\n<p>US has always been a leading provider of offshore development services. Choosing the right outsourcing vendor can provide various benefits to your organisation, such as:</p>\r\n<ul>\r\n<li>Large savings in cost</li>\r\n<li>Synergy across business processes</li>\r\n<li>Knowledge enhancement</li>\r\n<li>Operational flexibility</li>\r\n<li>Better quality of products and services</li>\r\n<li>Improved competitiveness</li>\r\n<li>Ability to focus on core business</li>\r\n</ul>\r\n<h3>Offshore Application Development Company US</h3>\r\n<p>NetProphets is an (USn company) established name in the field of offshore Application Development. NetProphets comprises of a team of seasoned software professionals dedicated to provide a reliable and cost-effective end-product. Our Application Development model is a result of various innovations and enhancements, and is engineered to deliver a product that not only fulfils clients&rsquo; requirements, but also adheres to global standards of software engineering.</p>\r\n<p>Though an USn company by origin, NetProphets has successfully adopted global IT standards and has established itself as a leading player in the offshore Application Development domain. Our client base comprises of the best known names in the global realm, who have derived substantial outsourcing gains through their association with NetProphets</p>\r\n<p>Our time-tested mechanisms for hiring and training ensure that our team of engineers is fully equipped to adapt to diverse work cultures and environments. Each offshore client that we service, results in a new valuable learning for us, thus enabling us to further enhance our expertise to deliver quality.</p>', 'With the path-breaking developments in the field of communications, outsourcing of business has become a viable as well as a highly profitable option. With high-speed communications allowing customers and vendors to communicate on a real-time basis, offshore Application Development has become practically equivalent to getting software developed in another location of the outsourcing organisation.\r\n', '2012-07-21', 2),
 (2, 'Mobile Applications', 'Mobile-Applications', '<h3>Mobile Applications</h3>\r\n<p>Netprophets Mobile is a business division within Netprophets Cyberworks. Our mission is to build Value Added Services and Applications on all mobile platforms and devices.</p>\r\n<p>We serve US and International clients by integrating into our current line of internet applications services. Further, NP is also committed to build innovative product applications for the iPhone Blackberry and Android devices.</p>\r\n<p>The world of mobile app''s is poised for tremendous growth with opportunities in VAS and business applications to social media and taking advantage of this opportunity NP the mobile division at NP will target the following industries:</p>\r\n<ol>\r\n<li><strong>Media and entertainment:</strong> music, gaming, media, with an emphasis on IPTV and 3G solutions.</li>\r\n<li><strong>Business enterprise solutions:</strong> linked to Ecommerce and CRM</li>\r\n<li><strong>Telecom:</strong> VAS applications on a services basis.</li>\r\n</ol>', 'Netprophets Mobile is a business division within Netprophets Cyberworks. Our mission is to build Value Added Services and Applications on all mobile platforms and devices.', '2012-07-18', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_lee_categories_help`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_categories_help` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `content` text CHARACTER SET utf8 NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `n_lee_categories_help`
+--
+
+INSERT INTO `n_lee_categories_help` (`id`, `title`, `content`, `date`) VALUES
+(1, 'Increse your sales!', '<p>We develop custom eCommerce websites and shopping carts. Our solutions can help you to keep your business up and running 24/7 and keep track of orders and inventory.</p>', '2012-07-22'),
+(2, 'Web marketing strtegy', '<p><span>A good marketing strategy will launch your business and help you to establish an online presence through which your business will generate revenue. The Internet has introduced innovation in the field of marketing - Internet marketing opens doors to new ways of advertising.</span></p>', '2012-07-22'),
+(4, 'We can help you to...', '<p><span>We will develop custom website according to your specific needs. We will provide you with the best HTML and SEO solutions which will further position your website higher in the search engine directories</span></p>', '2012-07-22'),
+(5, 'Help you position your brand...', '<p><span>Our Web design company is a leading company that provides innovative, cutting-edge solutions for companies/corporations/businesses/individuals. We provide custom made web development and design solutions and in that manner we enable you to convey your messages to your target audience expand your reach and generate revenue</span></p>', '2012-07-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_lee_categories_outline`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_categories_outline` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `n_lee_categories_outline`
+--
+
+INSERT INTO `n_lee_categories_outline` (`id`, `image`) VALUES
+(1, '<p><img src="../../../assets/js/uploaded/dell.png" alt="" width="591" height="602" /></p>'),
+(2, '<p><img src="../../../assets/js/uploaded/toyota.png" alt="" width="947" height="899" /></p>'),
+(3, '<p><img src="../../../assets/js/uploaded/Scripps.png" alt="" width="1030" height="294" /></p>'),
+(4, '<p><img src="../../../assets/js/uploaded/AramarkLogoColor.png" alt="" width="1403" height="447" /></p>'),
+(5, '<p><img src="../../assets/leerobertsonx/images/AramarkLogoColor.png" alt="" /></p>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_lee_categories_whyus`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_categories_whyus` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `detail` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `n_lee_categories_whyus`
+--
+
+INSERT INTO `n_lee_categories_whyus` (`id`, `title`, `detail`) VALUES
+(1, '100% unique custom design', 'All our designs are 100% unique , custom and template free.'),
+(2, 'Creative web 2.0 designs', 'we will bring you the latest web technologies that match your website.'),
+(3, 'CONTENT MANAGEMENT SYSTEM', 'CMS enables website owners to arrange, edit, publish, delete their website content independently and without much technical knowledge. CMS is the best tool for increasing website activity thus providing a better user experience.'),
+(4, 'ADMIN PANEL TRAINING', 'We will train you on the CMS admin panel, so you can easily use it.'),
+(5, 'WE DON''T OUTSOURCE', ''),
+(6, 'WORK DIRECTLY WITH YOUR TEAM', ''),
+(7, 'SEARCH ENGINE OPTIMIZATIONS', '');
 
 -- --------------------------------------------------------
 
@@ -264,6 +334,75 @@ INSERT INTO `n_lee_contactus_message_info` (`id`, `name`, `email`, `subject`, `y
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_lee_homepage_logo`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_homepage_logo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `logo` varchar(1000) NOT NULL,
+  `link` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `n_lee_homepage_logo`
+--
+
+INSERT INTO `n_lee_homepage_logo` (`id`, `title`, `logo`, `link`) VALUES
+(2, 'Unix', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-1.jpg" alt="" width="220" height="140" /></p>', 'http://www.unix.com/'),
+(3, 'Istockgold', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-2.jpg" alt="" width="220" height="140" /></p>', 'http://istockgold.com/istockgold/'),
+(4, 'Monamimode', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-4.jpg" alt="" width="220" height="140" /></p>', 'http://monamimode.vn'),
+(5, 'NIW', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-3.jpg" alt="" width="220" height="140" /></p>', 'http://niw.com.vn');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_lee_homepage_slide`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_homepage_slide` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `descriptiontitle` text NOT NULL,
+  `order` int(11) NOT NULL,
+  `detailtitle` varchar(100) NOT NULL,
+  `detaildescription` text NOT NULL,
+  `linkimage` varchar(1000) CHARACTER SET latin1 DEFAULT NULL,
+  `link` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `n_lee_homepage_slide`
+--
+
+INSERT INTO `n_lee_homepage_slide` (`id`, `title`, `descriptiontitle`, `order`, `detailtitle`, `detaildescription`, `linkimage`, `link`) VALUES
+(1, 'SEO', 'Reach the top of Google', 1, 'SEO - Search engine optimization', 'Rich Internet Applications deliver an interface that is quicker and more responsive than classic applications.', '<p><img src="../../../assets/js/uploaded/slider-slide-1.jpg" alt="" width="940" height="380" /></p>', 'http://localhost/leerobertsonx/website/seo'),
+(2, 'Design', 'Unique Web 2.0 Design', 2, 'Web Design', 'L.R.X will help you to make a strong impact on your partners and clients!', '<p><img src="../../../assets/js/uploaded/slider-slide-2.jpg" alt="" width="940" height="380" /></p>', 'http://localhost/leerobertsonx/website/webDesign'),
+(3, 'Developement', '100% money back guarantee', 3, 'Web developement', 'Rich Internet Applications deliver an interface that is quicker and more responsive than classic applications.', '<p><img src="../../../assets/js/uploaded/slider-slide-4.jpg" alt="" width="940" height="380" /></p>', 'http://localhost/leerobertsonx/website/webDevelopement'),
+(4, 'Money back', '100% money back guarantee', 4, '100% money back', 'We ensure that all clients are happy with our work. Should you for any reason not be completely satisfied with our work, and we cannot produce what you are seeking you can simply notify us and we will provide you with a refund less design fees.', '<p><img src="../../../assets/leerobertsonx/images/placeholders/slider-slide-3.jpg" alt="" width="448" height="798" /></p>', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_lee_homepage_slogan`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_homepage_slogan` (
+  `slogan` text CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `n_lee_homepage_slogan`
+--
+
+INSERT INTO `n_lee_homepage_slogan` (`slogan`) VALUES
+('We are a group of experienced designers and developers.\r\nWe set new standards in user experience & make future happen.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_lee_portfolio`
 --
 
@@ -276,7 +415,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_portfolio` (
   `image` text NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `n_lee_portfolio`
@@ -285,8 +424,20 @@ CREATE TABLE IF NOT EXISTS `n_lee_portfolio` (
 INSERT INTO `n_lee_portfolio` (`id`, `title`, `name`, `type`, `url`, `image`, `date`) VALUES
 (1, 'Altered', 'Altered - Something abstract', '1', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-20'),
 (2, 'Snow Tower', 'Snow Tower - ', '1', 'assets/leerobertsonx/images/placeholders/portfolio-project-3rd-3.jpg', 'assets/leerobertsonx/images/placeholders/portfolio-project-3rd-3.jpg', '0000-00-00'),
-(3, 'Shift', 'Shift - Abstract animation using Modo & After Effects.', '2', '<p><iframe src="http://www.youtube.com/embed/kEogJacjLTE" width="320" height="240"></iframe></p>', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-20'),
-(4, 'Trantor', 'Trantor - planet city', '1', 'assets/leerobertsonx/images/placeholders/portfolio-project-3rd-3.jpg', 'assets/leerobertsonx/images/placeholders/portfolio-project-3rd-3.jpg', '0000-00-00');
+(3, 'Shift', 'Shift - Abstract animation using Modo & After Effects.', '2', 'http://www.youtube.com/embed/kEogJacjLTE', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-21'),
+(4, 'Trantor', 'Trantor - planet city', '1', 'assets/leerobertsonx/images/placeholders/portfolio-project-3rd-3.jpg', 'assets/leerobertsonx/images/placeholders/portfolio-project-3rd-3.jpg', '0000-00-00'),
+(5, 'Not the end', 'Not the end - The beginning of the end.', '1', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', '2012-07-21'),
+(6, 'Synergy', 'Synergy - The name says it all.', '1', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-21'),
+(7, 'The Game', 'The Game - Canon 5D Canon 28mm f/2.8 Studio Shot.', '1', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', '2012-07-21'),
+(8, 'Futurisk', 'Futurisk - ', '1', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', '2012-07-21'),
+(9, 'Forrst App UI Design Mockups', 'Forrst Android App UI Design Mockups - UI design for a Forrst Android App concept.', '1', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-21'),
+(10, 'Forbidden Words', 'Forbidden Words - ', '1', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', '2012-07-21'),
+(11, 'Static Adventure', 'Static Adventure - ', '1', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', '2012-07-21'),
+(12, 'Nothing endures but change', 'Nothing endures but change - ', '1', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', '2012-07-21'),
+(13, 'The Travelers', 'The Travelers - ', '1', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-21'),
+(14, 'Boombox', 'Boombox -', '1', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', '2012-07-21'),
+(15, 'Impossible is nothing', 'Impossible is nothing - ', '1', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', '2012-07-21'),
+(16, 'Deadly Kiss', 'Deadly Kiss - ', '1', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', '2012-07-21');
 
 -- --------------------------------------------------------
 
@@ -306,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_portfolio_categories` (
 --
 
 INSERT INTO `n_lee_portfolio_categories` (`id`, `name`, `date`) VALUES
-(1, 'animation', '0000-00-00'),
+(1, 'animation', '2012-07-21'),
 (2, 'design', '0000-00-00'),
 (3, 'illustration', '0000-00-00'),
 (4, 'photography', '0000-00-00'),
@@ -335,9 +486,33 @@ INSERT INTO `n_lee_portfolio_relate_ctg_port` (`portfolio_id`, `category_id`) VA
 (4, 3),
 (4, 5),
 (4, 1),
+(5, 1),
+(5, 3),
+(6, 3),
+(6, 4),
+(7, 4),
+(8, 2),
+(8, 3),
+(9, 2),
+(9, 5),
+(10, 1),
+(10, 2),
+(10, 3),
+(11, 2),
+(11, 3),
+(12, 3),
+(12, 5),
+(13, 1),
+(13, 3),
+(14, 1),
+(14, 2),
+(15, 3),
+(15, 4),
+(16, 4),
+(16, 5),
 (3, 1),
 (3, 2),
-(3, 5);
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -382,8 +557,8 @@ CREATE TABLE IF NOT EXISTS `n_lee_website` (
 INSERT INTO `n_lee_website` (`id`, `title`, `alias`, `content`, `category`, `date`) VALUES
 (1, 'SEARCH ENGINE OPTIMIZATION FOR BETTER BUSINESS DEVELOPMENT!', 'seo-1', '<p>SEO-Search Engine Optimization is the skill of increasing a website''s visibility through a wisely planned keyword implementation strategy. SEO-Search Engine Optimization is a long -term marketing strategy that can help you to expand your market reach and build a trustworthy relationship with your clients/customers. SEO - Search Engine Optimization includes market research, keyword research and market analysis. Through these elements businesses are opting for the best marketing campaign through which they \r\ncan get wanted results. When it comes to building your brand the most important thing is to convey your message and promote your business and services in a positive manner. This can help you reach more potential customers/clients and generate leads. SEO - Search Engine Optimization is an integral part of any web development-however if poorly created and realized it can do more damage than good. It''s imperative to have a well developed SEO strategy because your website''s visibility depends on a good SEO implementation.</p> ', 2, '0000-00-00'),
 (2, 'DOLSH WEB SEO SOLUTIONS....', 'seo-2', '<p>Dolsh will help you understand the benefits of SEO- Search Engine Optimization and web marketing in general. We are proficient in the field of SEO- Search Engine Optimization and we will develop a custom SEO campaign. Dolsh Web Design Company will do keyword research and phrases and find the best possible solution for your company/business/corporation/individual needs. We understand the importance of a smart implementation and usage of keywords - we will integrate the perfect SEO solution and in that way help you to represent your services/products to your target audience and accomplish recognition on a global level. Our company will develop tailor-made campaigna to fit your specific requirements and enable you to accomplish your business'' objectives. We will analyze and understand the position of your website and help you reach your company''s goals, will generate leads and revenue ultimately maximizing yout profit. Dolsh Web Design Company SEO solutions include:</p>\r\n<ul>\r\n<li>Improvement of your website visibility & position</li>\r\n<li>Retain the existing base & position</li>\r\n<li>Retain the existing cross-linking status</li>\r\n<li>Improve the internal page-linking</li>\r\n<li>Use the foundation of LSA-Latent Semantic Analysis which Google refers too</li>\r\n<li>Establish your social reference through a well planned process - help you build a strong positive reputation</li>\r\n<li>We do SEO consulting thus helping your administrators to handle small SEO tasks and routine maintenance</li>\r\n</ul>\r\n<p>Through all these steps Search Engine Optimization solutions -Dolsh Web Design Company can help you build a recognizable brand, get respectability and of course improve your website''s visibility. Our SEO -Search Engine Optimization solutions will most certainly increase your profit, improve your website''s traffic and in general help you to understand the market and through this understanding to determine your next business move. Dolsh Web Design SEO has solutions for your business.</p>', 2, '0000-00-00'),
-(3, 'Shift - Abstract animation using Modo & After Effects.', 'small-business-design', '0', 0, '2012-07-20'),
-(4, 'Trantor - planet city', 'flash-design', '0', 0, '2012-07-20'),
+(3, 'Small Business Design', 'small-business-design', '<h3>L.R.X will help you to make a strong impact on your partners and clients!</h3>\r\n<p>If you aim to launch your business in a wise manner then you should consider having a website. A well- designed professional website will help you to launch your business, reach new potential clients and most certainly help you to build your brand. A professional website will help you to improve you credibility and also to position your business among the competition.</p>\r\n<p>If your goal is to expand your reach onto new markets then you should definitely have a custom &ndash;made business website. This solution helps companies/businesses to build strong online presence and also to improve online/offline exposure while still reducing the costs of marketing. A professional website will also enable you to do business even if you&rsquo;re out of the office as it represents your company/business.</p>\r\n<p>This marketing vehicle will most certainly help you to land more business deals and reach your target audience even outside of your working hours. A professional website is fully capable of conveying your message while communicating with current/potential business partners or clients. A well-developed professional business website will most certainly help you to make a strong impact while providing you with an opportunity to take your business to the higher level.</p>\r\n<h3>HOW CAN WE HELP YOU?</h3>\r\n<p>Our company provides professional website solutions which will most certainly help you provide your end-users with necessary information and help them to get acquainted with your services/business. We provide innovative, advanced solutions which are focused on helping you to build your brand, attract target audience and further on generate revenue.</p>\r\n<p>We develop professional website design, e-marketing and technical consultation. We can help you to understand how can a professional website improve your business and launch it.</p>\r\n<p>We are focused on your business goals and we offer to analyze your business, competition and market in order to come up with the best professional design according to your specific needs. We can develop an effective design that is fully capable to further maximize your profit. Our approach is based on an in-depth understanding of:</p>\r\n<ul>\r\n<li>Your Business &amp; Goals</li>\r\n<li>Target Industry &amp; Market</li>\r\n<li>Current Business Trends</li>\r\n<li>Your Services and/or Products</li>\r\n<li>Your Website&rsquo;s Strategic Goals</li>\r\n<li>What you Aim to Accomplish with Your Website</li>\r\n</ul>\r\n<p>According to these elements we provide you with a custom-made professional website. We aim to understand every aspect of your business because only then we&rsquo;re completely able to provide you with a tool which can help you to accomplish your aims. We will help you to understand your prospects, position of your competition and even provide e-marketing consultation services. Our services include the following:</p>\r\n<ul>\r\n<li>Custom Brochure Website Design</li>\r\n<li>Custom eCommerce Website Design</li>\r\n<li>Custom Lead Generation Website Design</li>\r\n<li>Business to Business Websites (B2B)</li>\r\n<li>Business to Consumer Websites (B2C)</li>\r\n</ul>\r\n<p>Our innovative solutions are based on a thorough communication with our clients through the whole process and in that manner we&rsquo;re fully capable to produce tailored cutting-edge solutions.</p>', 1, '2012-07-21'),
+(4, 'Flash Design', 'flash-design', '<h3>flash solutions- for a dynamic and interactive setting!</h3>\r\n<p>If your goal is to offer a better experience to your users and to provide a dynamic, interactive interface setting then you should look for flash development solutions. Flash is a powerful tool which helps to represent your business/company/firm/individual ventures in an interactive manner and provides an interesting layout for end-users.</p>\r\n<p>Flash provides an opportunity to implement flashy graphics and dynamic feel into a website which conveys your message and offers the target audience a unique experience. Flash action script can also be implemented in HTML based website and provide certain elements developed in Flash.</p>\r\n<p>This can be a handy solution if you are looking to get an eCommerce website which demands interactive elements in the design. Ultimately Flash can be highly manipulated and it can also draw additional attention to your website quickly.</p>\r\n<h3>L.R.X WEB DESIGN EXPERTISE...</h3>\r\n<p>We can develop fully Flash based websites and/or we can implement Flash elements in your website architecture and design. We design Flash based websites and implement advanced action script, thus providing you a tool capable to convey your message, reflect your services and conduct your business, even outside of working hours.</p>\r\n<p>Flash brings fresh concepts to the table and can provide animation, animated banners and other dynamic elements to your website. Flash based websites are not dependent on browsers and will appear in search engine rankings regardless.</p>\r\n<p>We develop Flash based websites according to your specific requirements and that way help you to reflect your services in the perfect manner. Dolsh Web Design Company designers &amp; flash developers can:</p>\r\n<ul>\r\n<li>Implement Flash elements with HTML content and that way allow site crawlers to render your HTML content and give you a higher search engine rankings</li>\r\n<li>Integrate Flash animations, Flash graphics, audio and visual elements in order to create an unique user''s experience</li>\r\n<li>We can create interactive Flash presentations</li>\r\n<li>We can create cutting-edge signs and displays</li>\r\n<li>We can create Flash based education materials</li>\r\n</ul>\r\n<p>Our team of Flash developers has a vast experience and an excellent set of skills. We can create and develop anything you need and we can transform your ideas into creative applications, intros, banners and fully Flash developed websites. Dolsh Web Design Flash based solutions are:</p>\r\n<ul>\r\n<li>Custom Flash Website Development</li>\r\n<li>Flash Animation Development</li>\r\n<li>Flash Animated Banners Development</li>\r\n<li>Flash Intros Development</li>\r\n</ul>\r\n<p>We offer other features too such as Flash embed into an HTML page and thus can give your page layout the dynamics and interactivity you need.</p>', 1, '2012-07-21'),
 (5, 'HTML Design', 'html-design', '<h3>let us show you how html can work in your favor!</h3>\r\n<p>HTML based websites are the best marketing vehicle. If you aim to enhance your business and establish good communication with your clients then a custom websites should be your first option. The Internet has become a big market and offers many advertising options.</p>\r\n<p> In order to represent your business/services/products and manage your company properly it''s imperative to own a professional website. A professional website has numerous advantages from promotion, purchase, financial transaction to building a brand- a well designed marketing vessel can take your company far.</p>\r\n<p>HTML based websites are the best solutions simply because they have a blend of search engine friendly technology and creativity which all together can result in higher visibility, improved exposure and better client-company communication for your business. </p>\r\n<h3>L.R.X WEB DESIGN COMPANY OFFERS....</h3>\r\n<p>We have mastered HTML, CSS, JavaScript and other web development languages. We have a lot experience in design and website development- we provide forefront solutions for your business, company and/or corporation.</p>\r\n<p>We develop custom user-friendly, search-engine friendly HTML based websites which are validated and capable to expose you to a broader market. We offer HTML solutions which are optimized and will get high search engine rankings.</p>\r\n<p>We will help you understand the importance of keywords and organic SEO. We provide full web design & development services. We will empower you to take full advantage of your website and expand your business. The benefits of an HTML based website are great and some of these benefits are:</p>\r\n<h4>HTML IS DOMINANT ON THE WEB</h4>\r\n<p>HTML is dominating the World Wide Web. HTML is widely used markup language - this means that your HTML website will be running smoothly and have better browser compatibility. It can also be used to improve search engine rankings that can lead to the improvement of a website''s visibility.</p>\r\n<h4>HTML IS VERY CLEAN</h4>\r\n<p>HTML coding is very clean. This improves loading time of a website and also results in better online positioning and ranking.</p>\r\n<h4>HTML ALLOWS FOR OTHER PROGRAMS TO BE EMBEDDED</h4>\r\n<p>One of the most appealing benefits of HTML is that it can be combined with other scripting languages. This can be/ and is used to create more interesting, interactive, dynamic design and provides end-users a better experience.</p>\r\n<p>Dolsh Web Design develops professional, elegant, creative websites and can add value to your business. </p>', 1, '0000-00-00'),
 (6, 'Rich Internet Applications', 'rich-internet-applications', '<h3>RICH INTERNET APPLICATIONS- FOR INTERACTIVE INTERFACES!</h3>\r\n\r\n<p>Rich Internet Applications deliver an interface that is quicker and more responsive than classic applications. RIAs provide end users with a better experience, and facilitates physical, audio and visual interaction. RIA helps improve a static nature of HTML based website and has transformed a static database to an interactive online experience. RIAs have web applications that have a functionality of desktop applications but they have improved functionality. RIAs allows the possibility of online/offline utilization and enables companies to increase productivity and implement a cutting-edge system of communications. RIAs are practical for businesses because they provide a high quality customer services and deliver a wide array of features and functions. Rich Internet Applications offer scalability and usability. They can be used for representing complex processes, for minimizing data transfers, and it manages data rendering etc... RIAs work toward simplifying the registration processes, data analysis, and online shopping.</p>\r\n<h3>DOLSH WEB DESIGN SET OF SKILLS....</h3>\r\n<p>Our team of developers is proficient in building custom rich internet applications. Our developers are working with different technological tools thus provide the perfect solutions for clients. We are ready to analyze your business and implement custom solutions that reflect your business''s vision and idea. Dolsh Web Design team''s set of skills includes. </p>\r\n<ul>\r\n<li>Adobe Flex</li>\r\n<li>Adobe Flash</li>\r\n<li>Ajax</li>\r\n<li>Flash Media Server </li>\r\n<li>Silver Light</li>\r\n<li>WPF </li>\r\n</ul>\r\n<h3>DOLSH WEB DESIGN COMPANY OFFERS CUSTOM RICH INTERNET APPLICATIONS...</h3>\r\n<p>Dolsh Web Design Company possess a lot of experience in building interactive Rich Internet Applications. We offer innovative RIA solutions for businesses,corporations and entertainment companies. We deliver custom RIA solutions and implement forefront applications in order to provide your end-users with a unique experience. Dolsh Web Design Company delivers RIA solutions for:</p>\r\n<ul>\r\n<li>Custom Dynamic Website development</li>\r\n<li>Custom Built RIA solutions</li>\r\n<li>Large scale RIA applications</li>\r\n<li>High-End RIA Solutions - low cost deployment</li>\r\n<li>Complete featured RIA applications</li>\r\n</ul>', 3, '0000-00-00'),
 (7, 'Website Redesign', 'website-redesign', '<h3>DOLSH WEB DESIGN COMPANY OFFERS BOLD REDESIGN SOLUTIONS!</h3>\r\n<p>Website redesign will give your existing website a completely fresh look, style and feel. Redesigning a site is perfect for outdated websites which are in need of the latest web solutions. Website is a powerful tool which represents your business/corporation/firm or individual ventures and as such it should be created by the latest trends in design and development. It''s imperative, not only because of the esthetics but also because of the possible out-dated architecture of the website. If you have a website which has been on the web for a while then it probably needs the implementation of fresh SEO solutions in order to improve your website''s visibility. In order to have a website that is completely capable of meeting your marketing needs and achieving your business objective - redesign is a perfect solution. Redesign reduces your costs and yet provides a complete new architecture and design to your existing marketing carrier.</p>\r\n<h3>REDESIGN YOUR WEBSITE - BY THE LATEST STANDARDS...</h3>\r\n<p>Dolsh Web Design Company offers a full website redesign services. Our company provides innovative redesign solutions which will enable you to generate leads and improve your online presence. Our website redesign solutions will turn your out-dated website into a lead- generating marketing vehicle and empower you to achieve your professional goals and objectives. Our team will analyze your current business objectives, your existing website and transform them into a fully functional website. This way you will get a chance to strengthen your online position and brand. Our team of developers will also implement the latest SEO solutions and in that way rank you higher in search-engine directories and listings. We offer to help you enhance your business through smart website redesign and organic SEO strategies. Dolsh Web Design Company offers: </p>\r\n<ul>\r\n<li>Custom & Complete Web Redesign Services (maintenance and updates)</li>\r\n<li>Web Analysis</li>\r\n<li>Organic SEO  Solutions</li>\r\n<li>Existing Website & Content Analytics</li>\r\n<li>Improved Usability & Conversion </li>\r\n<li>In-Depth Research & Analysis</li>\r\n<li>Implementation of Custom Web Applications</li>\r\n</ul>\r\n<p>Website redesign can help to catapult your business forward and improve your website''s functionality. These are all important elements of your offline business and will most certainly help to improve your online exposure and offline exposure as well. Allow us to show how much a website redesign can influence your overall reputation -online as well as the offline.</p>', 3, '0000-00-00'),
@@ -411,7 +586,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_website_categories` (
 --
 
 INSERT INTO `n_lee_website_categories` (`id`, `name`, `date`) VALUES
-(1, 'Web design', '2012-07-17'),
+(1, 'Design', '2012-07-21'),
 (2, 'SEO', '2012-07-18'),
 (3, 'Web developement', '0000-00-00'),
 (4, 'Pricing Tables', '0000-00-00'),
@@ -552,7 +727,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-07-20 15:17:31', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-07-22 07:44:29', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
 
 -- --------------------------------------------------------
 

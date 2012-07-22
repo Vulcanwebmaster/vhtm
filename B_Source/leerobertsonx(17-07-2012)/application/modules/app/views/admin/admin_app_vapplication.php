@@ -12,20 +12,17 @@
 			<table class="tablesorter" cellspacing="0"> 
 			<thead> 
 				<tr> 
-   					<th></th> 
     				<th>Tittle</th> 
     				<th>Shortcontent</th>
     				<th>Order</th>
     				<th>Last Modify</th> 
     				<th>Actions</th> 
-    				
 				</tr> 
 			</thead> 
 			<tbody> 
 			
 			<?php foreach ($listpaging as $rowuser):?>
 				<tr> 
-   					<td><input type="checkbox"></td> 
     				<td><?php echo $rowuser-> title?></td> 
     				<td><?php echo word_limiter($rowuser-> shortcontent, 8);?></td> 
     				<td><?php echo $rowuser-> order?></td>

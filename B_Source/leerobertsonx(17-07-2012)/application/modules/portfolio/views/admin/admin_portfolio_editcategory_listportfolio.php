@@ -16,7 +16,9 @@
 				</tr> 
 			</thead> 
 			<tbody>
-			<?php foreach ($lst_portfolio as $rw):?> 
+			<?php
+			if (isset($lst_portfolio)) {
+			foreach ($lst_portfolio as $rw):?> 
 				<tr>  
     				<td><?php echo $rw->id?></td> 
     				<td><?php echo $rw->title?></td> 
@@ -24,18 +26,23 @@
     				<td><?php echo $rw->date?></td>
     				<td>
     				<a href="<?php echo base_url()?>portfolio/admin/editPortFolio/<?php echo $rw->id?>" title="Edit"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_edit.png">
-    				<a href="<?php echo base_url()?>portfolio/admin/delPortFolio/<?php echo $rw->id?>" title="Delele Article"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_trash.png"></a>
+    				<a href="<?php echo base_url()?>portfolio/admin/delPortFolio/<?php echo $rw->id?>" title="Delele"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_trash.png"></a>
     				</td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach;}
+			else {?>
+			<tr>
+				<td>Please insert more portfolio!</td>
+			</tr>
+			<?php }?>
 			</tbody> 
 			</table>
 			</div><!-- end of #tab1 -->
 		</div><!-- end of .tab_container -->
-		<?php echo form_open('website/admin/insertPortFolio/'.$this->uri->segment(4))?>
+		<?php echo form_open('portfolio/admin/insertPortFolio/')?>
 		<footer>
 			<div class="submit_link">
-				<input type="submit" value="Add New Port Folio" class="alt_btn">
+				<input type="submit" value="Add New Portfolio" class="alt_btn">
 			</div>
 		</footer>
 		<?php echo form_close();?>

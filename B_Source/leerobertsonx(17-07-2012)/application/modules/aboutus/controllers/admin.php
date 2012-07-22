@@ -67,7 +67,7 @@ class Admin extends Admin_Controller {
 		$data['bcCurrent'] = "Add New Article";
 		$this->load->view('admin/container',$data);
 	}
-function getEditAbout() 
+	function getEditAbout() 
 	{
 		
 		$data['module'] = $this->module;
@@ -84,7 +84,7 @@ function getEditAbout()
 	{
 		if($this->Mboutus->editAbout()==true)
 		{
-				$this->index();			
+			redirect("aboutus/admin");			
 		}
 	}
 	function delAboutus()

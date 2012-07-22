@@ -14,7 +14,6 @@
 			<table class="tablesorter" cellspacing="0"> 
 			<thead> 
 				<tr> 
-   					<th></th> 
     				<th>Tittle</th> 
     				<th>Content</th> 
     				<th>Last Modify</th> 
@@ -25,8 +24,7 @@
 			<tbody> 
 			
 			<?php foreach ($listpaging as $row):?>
-				<tr> 
-   					<td><input type="checkbox"></td> 
+				<tr>    					
     				<td><?php echo $row-> title?></td> 
     				<td><?php echo word_limiter($row->content,7).'...'?></td> 
     				<td><?php echo $row-> date?></td> 

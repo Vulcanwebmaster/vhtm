@@ -5,6 +5,7 @@ class Home extends Admin_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->library('editor_library');
 	}
 	
 	public function index()

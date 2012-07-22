@@ -129,27 +129,11 @@
 					<h5 class="title">Why Us</h5>
 				</a>
 				<ul>
-					<li><span>100% unique custom design</span>
-						<p class="whyus-content">All our designs are 100% unique , custom and template free.</p>
+				<?php foreach ($result as $row):?>
+					<li><span><?php echo $row->title?></span>
+						<p class="whyus-content"><?php echo $row->detail?></p>
 					</li>
-					<li><span>Creative web 2.0 designs</span>
-						<p class="whyus-content">we will bring you the latest web technologies that match your website.</p>
-					</li>
-					<li><span>CONTENT MANAGEMENT SYSTEM</span>
-						<p class="whyus-content">
-							CMS enables website owners to arrange, edit, publish, 
-							delete their website content independently and without much technical knowledge. 
-							CMS is the best tool for increasing website activity thus providing a better user experience.
-						</p>
-					</li>
-					<li><span>ADMIN PANEL TRAINING</span>
-						<p class="whyus-content">
-							We will train you on the CMS admin panel, so you can easily use it.
-						</p>
-					</li>
-					<li><span>WE DON'T OUTSOURCE</span></li>
-					<li><span>WORK DIRECTLY WITH YOUR TEAM</span></li>
-					<li><span>SEARCH ENGINE OPTIMIZATIONS</span></li>
+					<?php endforeach;?>
 				</ul>
 			</div><!-- end .entry-body -->
 		</li>
