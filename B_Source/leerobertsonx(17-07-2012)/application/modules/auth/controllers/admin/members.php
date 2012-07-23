@@ -44,6 +44,7 @@ class Members extends Admin_Controller
         $this->load->model('user_model');
 
 		log_message('debug','BackendPro : Members class loaded');
+		$this->load->library('editor_library');
 	}
 
 	/**
@@ -57,11 +58,15 @@ class Members extends Admin_Controller
 		$data['members'] = $this->user_model->getUsers();
 
 		// Display Page
-		$data['header'] = $this->lang->line('backendpro_members');
+		//$data['header'] = $this->lang->line('backendpro_members');
+		//$data['page'] = $this->config->item('backendpro_template_admin') . "members/view";
+		//Breadcrumb data
+		$data['bcCurrent'] = "Manage users";
+		
+		$data['title'] = "Manage users";
+		$data['header'] = "Manage Users";
 		$data['page'] = "admin/members/view";
 		$data['module'] = 'auth';
-		$data['bcCurrent']='user';
-		$data['title']='User';		
 		$this->load->view("admin/container",$data);
 	}
 
@@ -82,7 +87,7 @@ class Members extends Admin_Controller
 		$this->form_validation->set_default_value('address','Address');
 		$this->form_validation->set_default_value('city','City');
 		$this->form_validation->set_default_value('post_code','Post Code');
-		
+	
 	}
 
 	/**
@@ -149,6 +154,7 @@ class Members extends Admin_Controller
 	function form($id = NULL)
 	{
 		// VALIDATION FIELDS
+		
 		$fields['id'] = "ID";
 		$fields['username'] = $this->lang->line('userlib_username');
 		$fields['email'] = $this->lang->line('userlib_email');
@@ -156,7 +162,7 @@ class Members extends Admin_Controller
 		$fields['confirm_password'] = $this->lang->line('userlib_confirm_password');
 		$fields['group'] = $this->lang->line('userlib_group');
 		$fields['active'] = $this->lang->line('userlib_active');
-		$fields = array_merge($fields, $this->config->item('userlib_profile_fields'));
+		$fields = array_merge($fields, $this->config->item('userlib_profile_fields'));				
         $config;
 		$this->form_validation->set_fields($fields);
 
@@ -215,7 +221,7 @@ class Members extends Admin_Controller
 			$this->form_validation->set_default_value($user);
 		}
 		elseif( is_null($id) AND ! $this->input->post('submit'))
-		{
+		{			
 			// Create form, first load
 			$this->form_validation->set_value('group',$this->preference->item('default_user_group'));
 			$this->form_validation->set_value('active','1');
@@ -226,7 +232,7 @@ class Members extends Admin_Controller
 		elseif( $this->input->post('submit'))
 		{
 			// Form submited, check rules
-			$this->form_validation->set_rules($config);
+			$this->form_validation->set_rules($config);		
 		}
 
 		// RUN
@@ -241,20 +247,24 @@ class Members extends Admin_Controller
 
 			 // get profile details
 			$data['profiles']= $this->_pull_profile_details($id);
-             
 			// Display form
-			//$this->form_validation->output_errors();
+			$this->form_validation->output_errors();
+
 			$data['header'] = ( is_null($id)?$this->lang->line('userlib_create_user'):$this->lang->line('userlib_edit_user'));
 			$this->bep_site->set_crumb($data['header'],'auth/admin/members/form/'.$id);
 			$data['page'] = "admin/members/form_member";
 			$data['module'] = 'auth';
-			$this->load->view('front/container',$data);
+			$data['title'] = "User Manager";
+			//Breadcrumb data
+			$data['bcCurrent'] = "Manage User";
+			$this->load->view("admin/container",$data);
 		}
 		else
 		{
 			// Save form
 			if( is_null($id))
 			{
+				
 				// CREATE
 				// Fetch form values
 				$user = $this->_get_user_details();
@@ -284,7 +294,6 @@ class Members extends Admin_Controller
 				$user = $this->_get_user_details();
 				$user['modified'] = date('Y-m-d H:i:s');
 				$profile = $this->_get_profile_details();
-
 				$this->db->trans_begin();
 				$this->user_model->update('Users',$user,array('id'=>$user['id']));
 
@@ -324,7 +333,6 @@ class Members extends Admin_Controller
 		{
 			redirect('auth/admin/members','location');
 		}
-
 		foreach($selected as $user)
 		{
 			if($user != 1)
