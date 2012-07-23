@@ -11,9 +11,11 @@
 		<h1 class="page-title">About Us</h1>
 
 		<hr />
-
-		<h2 class="page-description">We are regarded as industry leaders in digital strategy and solutions, focused solely on delivering great user experiences.</h2>
-		
+		<?php foreach ($slogan as $sl):?>
+		<h2 class="page-description"><?php echo $sl->slogan?></h2>
+		<?php endforeach;?>
+	</header><!-- end .page-header -->
+	
 	</header><!-- end .page-header -->
 		<ul class="post-carousel">
 		<?php foreach ($list as $row):?>	

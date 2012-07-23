@@ -49,7 +49,7 @@ class access_control_model extends Base_Model
 
 		// Setup ARO Model
 		$this->group = new Nested_sets_model();
-		$this->group->setControlParams($this->_TABLES['aros']);
+		$this->group->setControlParams("n_".$this->_TABLES['aros']);
 		$this->group->setPrimaryKeyColumn('id');
 
 		log_message('debug','BackendPro : Access_control_model class loaded');
@@ -180,10 +180,8 @@ class access_control_model extends Base_Model
 		{
 			show_error("BackendPro->Access_control_model->buildACLDropDown : The tree_id for the dropdown must be either 'group' OR 'resource'.");
 		}
-
 		$obj =& $this->{$tree_id};
 		$tree = $obj->getTreePreorder($obj->getRoot());
-
 		$dropdown = array();
 		while($obj->getTreeNext($tree))
 		{

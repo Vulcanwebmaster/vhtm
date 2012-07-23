@@ -86,5 +86,22 @@ class Mboutus extends CI_Model
 	{
 		return $this->db->get('lee_aboutus')->result();
 	}
+	function getSlogan()
+	{
+		return $this->db->get('lee_aboutus_slogan')->result();
+	}
+	function editSlogan()
+	{
+		$data=(array(
+				'slogan'=>$this->input->post('slogan')
+		));
+		if($this->db->update('lee_aboutus_slogan',$data))
+		{
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
 ?>

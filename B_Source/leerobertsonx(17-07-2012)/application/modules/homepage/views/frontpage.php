@@ -15,13 +15,21 @@
 	$result3=$this->db->get('lee_categories_outline')->result();
 	$query=$this->db->get('lee_homepage_slide');
 	$logo=$this->db->get('lee_homepage_logo')->result();
+	$slogan = $this->db->get('lee_homepage_slogan')->result();
 ?>
 
 <section id="content" class="container clearfix">
-
-	<h2 class="slogan align-center">We are a group of experienced designers and developers.<br />
-	We set new standards in user experience &amp; make future happen.</h2>
-
+<!-- 
+	<h2 class="slogan align-center">
+	We are a group of experienced designers and developers.<br />
+	We set new standards in user experience &amp; make future happen.
+	</h2>
+ -->
+ <?php foreach ($slogan as $rw):?>
+ 	<h2 class="slogan align-center">
+		<?php echo $rw->slogan?>
+	</h2>
+<?php endforeach;?>
 	<section id="features-slider" class="ss-slider">
 	
 	<?php if($query->num_rows()>0):?>

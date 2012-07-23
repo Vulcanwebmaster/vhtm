@@ -30,6 +30,27 @@
 			return $strings;
     		
 		}
+		function getCategoryByPortfolio_ToDisplay($id)
+		{
+			$this->db->select('name');
+			$this->db->from('lee_portfolio_categories');
+			$this->db->join('lee_portfolio_relate_ctg_port','lee_portfolio_categories.id = lee_portfolio_relate_ctg_port.category_id');
+			$this->db->where('portfolio_id',$id);
+			$query = $this->db->get();
+			$result=$query->result();
+			$strings = "";
+			$i = 0;
+			foreach ($result as $rw){
+				$string = $rw->name;
+				if ($i != 0){
+					$strings = $strings." / ".$string;}
+				else 
+					$strings = $string;
+				$i = $i + 1;
+			}
+			return $strings;
+    		
+		}
 		function getTypeByPortfolio($id)
 		{
 			$this->db->where('id',$id);

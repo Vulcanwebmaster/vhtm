@@ -1,3 +1,7 @@
+<?php
+	$query = $this->db->get('n_lee_contactus_info');
+	$result = $query->result();
+?>
 <footer id="footer" class="clearfix">
 
 	<div class="container">
@@ -15,13 +19,13 @@
 				</ul>
 				
 			</nav><!-- end #footer-nav -->
-
+<?php foreach ($result as $rw):?>
 			<ul class="contact-info">
-				<li class="address">. Missouri, STL, 63109. USA</li>
-				<li class="phone">(314) 570-3661</li>
-				<li class="email"><a href="mailto:contact@companyname.com">infot@leerobertsonx.com</a></li>
+				<li class="address"><?php echo $rw->address;?></li>
+				<li class="phone"><?php echo $rw->phone;?></li>
+				<li class="email"><a href="mailto:<?php echo $rw->email;?>"><?php echo $rw->email;?></a></li>
 			</ul><!-- end .contact-info -->
-			
+<?php endforeach;?>			
 		</div><!-- end .three-fourth -->
 
 		<div class="one-fourth last">

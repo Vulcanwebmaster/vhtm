@@ -2,40 +2,28 @@
 	$this->load->model('Mfrontpage'); 
 	
 ?>
-	<article class="module width_3_quarter" style="width:95%;">
-	<form action="<?php echo base_url()?>homepage/admin/getEditSlogan" method="post">
-		<header><h3 class="tabs_involved">Slogan</h3>
-		</header>
-		<div class="tab_container">
-			<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="0"> 
-			
-			<tbody> 
-			
-			<?php foreach ($slogan as $rw):?>
-				<tr>  
-    				<td><textarea rows="5" cols="117" name="slogan"><?php echo $rw-> slogan?></textarea></td> 
-    				
-				</tr> 
-				<?php endforeach;?>
-				
-			</tbody> 
-			</table>
-			</div><!-- end of #tab1 -->
-		
-		<footer>
-		
-				<div class="submit_link">
-					
-					<input type="submit" value="Update" class="alt_btn">
-					
+
+<article class="module width_full">
+<?php foreach ($slogan as $rw):?>
+		<form action="<?php echo base_url()?>homepage/admin/getEditSlogan" method="post">
+			<header><h3>Edit Slogan</h3></header>
+				<div class="module_content">
+						<fieldset>
+							<label>Slogan</label>
+							<!-- <input type="text" name="slogan" id="slogan" value="<?php echo $rw->slogan?>"> -->
+							<?php echo $this->editor_library->editor('slogan',$rw->slogan,'')?>
+						</fieldset>
+						<div class="clear"></div>
 				</div>
-				</form>
+			<footer>
+				<div class="submit_link">
+					<input type="submit" value="Update" class="alt_btn">
+				</div>
 			</footer>
-			
-		</div><!-- end of .tab_container -->
-		
-		</article><!-- end of content manager article -->
+		<?php echo form_close();?>
+<?php endforeach;?>
+</article><!-- end of post new article -->	
+
 		
 		
 		

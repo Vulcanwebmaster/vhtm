@@ -11,6 +11,7 @@ class Admin extends Admin_Controller {
 		$this->load->library('pagination');
 		$this->load->library('editor_library');
 		$this->load->helper('text');
+		$this->load->library('form_validation');
 		
 	}
 	
@@ -45,9 +46,9 @@ class Admin extends Admin_Controller {
 		$config['cur_tag_close'] = '</li></a>';
 		
 		$this->pagination->initialize($config); 
-		$data['listpaging']=$this->Mboutus->getdDataAbout($config['per_page'],$this->uri->segment(4));
+		$data['listpaging']=$this->Mboutus->getDataAbout($config['per_page'],$this->uri->segment(4));
 		$data['paging'] = $this->pagination->create_links();
-		//$data['list']=$this->Mapp->getcontactus();
+		$data['slogan']=$this->Mboutus->getSlogan();
 		$data['module'] = $this->module;
 		$data['page'] = "admin_aboutus_vabout";
 		$data['title'] = "About Us";
@@ -60,11 +61,11 @@ class Admin extends Admin_Controller {
 	{
 		$data['module'] = $this->module;
 		$data['page'] = "admin_aboutus_vpostabout";
-		$data['title'] = "About Us - Add New Article";
+		$data['title'] = " About Us";
 		//Breadcrumb data
 		$data['bcLv1']= "About us";
 		$data['bcLv1_link']= "aboutus/admin";
-		$data['bcCurrent'] = "Add New Article";
+		$data['bcCurrent'] = "Post About Us";
 		$this->load->view('admin/container',$data);
 	}
 	function getEditAbout() 
@@ -84,7 +85,7 @@ class Admin extends Admin_Controller {
 	{
 		if($this->Mboutus->editAbout()==true)
 		{
-			redirect("aboutus/admin");			
+				$this->index();			
 		}
 	}
 	function delAboutus()
@@ -101,6 +102,13 @@ class Admin extends Admin_Controller {
 					
 			redirect('aboutus/admin');
 			
+		}
+	}
+	function editSlogan()
+	{
+		if($this->Mboutus->editSlogan()==true)
+		{
+			redirect('aboutus/admin');
 		}
 	}
 }

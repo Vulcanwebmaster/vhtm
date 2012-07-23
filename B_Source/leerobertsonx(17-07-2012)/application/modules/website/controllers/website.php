@@ -21,13 +21,11 @@
 			$data['Ctg2'] = $this->Mwebsite->getCategoryByID_Front('2');
 			$data['Ctg3'] = $this->Mwebsite->getCategoryByID_Front('3');
 			$data['Ctg4'] = $this->Mwebsite->getCategoryByID_Front('4');
-			$data['Ctg5'] = $this->Mwebsite->getCategoryByID_Front('5');
 			$data['LstArt1'] = $this->Mwebsite->getLstArticleByCtg_Front('1')->result();
 			$data['LstArt2'] = $this->Mwebsite->getLstArticleByCtg_Front('2')->result();
 			$data['NumLstArt2'] = $this->Mwebsite->getLstArticleByCtg_Front('2')->num_rows();
 			$data['LstArt3'] = $this->Mwebsite->getLstArticleByCtg_Front('3')->result();
 			$data['LstArt4'] = $this->Mwebsite->getLstArticleByCtg_Front('4')->result();
-			$data['LstArt5'] = $this->Mwebsite->getLstArticleByCtg_Front('5')->result();
 			
 			//End database datas
 			$this->load->view('front/container',$data);

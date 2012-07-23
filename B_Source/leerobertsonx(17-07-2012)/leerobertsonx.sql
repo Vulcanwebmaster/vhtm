@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2012 at 08:42 AM
+-- Generation Time: Jul 23, 2012 at 12:07 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -188,6 +188,23 @@ INSERT INTO `n_lee_aboutus` (`id`, `title`, `content`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_lee_aboutus_slogan`
+--
+
+CREATE TABLE IF NOT EXISTS `n_lee_aboutus_slogan` (
+  `slogan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `n_lee_aboutus_slogan`
+--
+
+INSERT INTO `n_lee_aboutus_slogan` (`slogan`) VALUES
+('We are regarded as industry leaders in digital strategy and solutions, focused solely on delivering great user experiences.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_lee_application`
 --
 
@@ -230,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_categories_help` (
 
 INSERT INTO `n_lee_categories_help` (`id`, `title`, `content`, `date`) VALUES
 (1, 'Increse your sales!', '<p>We develop custom eCommerce websites and shopping carts. Our solutions can help you to keep your business up and running 24/7 and keep track of orders and inventory.</p>', '2012-07-22'),
-(2, 'Web marketing strtegy', '<p><span>A good marketing strategy will launch your business and help you to establish an online presence through which your business will generate revenue. The Internet has introduced innovation in the field of marketing - Internet marketing opens doors to new ways of advertising.</span></p>', '2012-07-22'),
+(2, 'Web marketing strategy', '<p><span>A good marketing strategy will launch your business and help you to establish an online presence through which your business will generate revenue. The Internet has introduced innovation in the field of marketing - Internet marketing opens doors to new ways of advertising.</span></p>', '2012-07-23'),
 (4, 'We can help you to...', '<p><span>We will develop custom website according to your specific needs. We will provide you with the best HTML and SEO solutions which will further position your website higher in the search engine directories</span></p>', '2012-07-22'),
 (5, 'Help you position your brand...', '<p><span>Our Web design company is a leading company that provides innovative, cutting-edge solutions for companies/corporations/businesses/individuals. We provide custom made web development and design solutions and in that manner we enable you to convey your messages to your target audience expand your reach and generate revenue</span></p>', '2012-07-22');
 
@@ -244,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_categories_outline` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `n_lee_categories_outline`
@@ -254,8 +271,7 @@ INSERT INTO `n_lee_categories_outline` (`id`, `image`) VALUES
 (1, '<p><img src="../../../assets/js/uploaded/dell.png" alt="" width="591" height="602" /></p>'),
 (2, '<p><img src="../../../assets/js/uploaded/toyota.png" alt="" width="947" height="899" /></p>'),
 (3, '<p><img src="../../../assets/js/uploaded/Scripps.png" alt="" width="1030" height="294" /></p>'),
-(4, '<p><img src="../../../assets/js/uploaded/AramarkLogoColor.png" alt="" width="1403" height="447" /></p>'),
-(5, '<p><img src="../../assets/leerobertsonx/images/AramarkLogoColor.png" alt="" /></p>');
+(4, '<p><img src="../../../assets/js/uploaded/AramarkLogoColor.png" alt="" width="1403" height="447" /></p>');
 
 -- --------------------------------------------------------
 
@@ -343,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_homepage_logo` (
   `logo` varchar(1000) NOT NULL,
   `link` text CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `n_lee_homepage_logo`
@@ -353,7 +369,8 @@ INSERT INTO `n_lee_homepage_logo` (`id`, `title`, `logo`, `link`) VALUES
 (2, 'Unix', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-1.jpg" alt="" width="220" height="140" /></p>', 'http://www.unix.com/'),
 (3, 'Istockgold', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-2.jpg" alt="" width="220" height="140" /></p>', 'http://istockgold.com/istockgold/'),
 (4, 'Monamimode', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-4.jpg" alt="" width="220" height="140" /></p>', 'http://monamimode.vn'),
-(5, 'NIW', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-3.jpg" alt="" width="220" height="140" /></p>', 'http://niw.com.vn');
+(5, 'NIW', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-3.jpg" alt="" width="220" height="140" /></p>', 'http://niw.com.vn'),
+(6, 'Testing!', '<p><img src="../../../assets/js/uploaded/portfolio-project-4th-4.jpg" alt="" width="220" height="140" /></p>', 'http://www.google.com.vn');
 
 -- --------------------------------------------------------
 
@@ -371,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_homepage_slide` (
   `linkimage` varchar(1000) CHARACTER SET latin1 DEFAULT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `n_lee_homepage_slide`
@@ -415,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_portfolio` (
   `image` text NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `n_lee_portfolio`
@@ -437,7 +454,8 @@ INSERT INTO `n_lee_portfolio` (`id`, `title`, `name`, `type`, `url`, `image`, `d
 (13, 'The Travelers', 'The Travelers - ', '1', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-21'),
 (14, 'Boombox', 'Boombox -', '1', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', 'assets/js/uploaded/portfolio-project-3rd-2.jpg', '2012-07-21'),
 (15, 'Impossible is nothing', 'Impossible is nothing - ', '1', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', 'assets/js/uploaded/portfolio-project-3rd-3.jpg', '2012-07-21'),
-(16, 'Deadly Kiss', 'Deadly Kiss - ', '1', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', '2012-07-21');
+(16, 'Deadly Kiss', 'Deadly Kiss - ', '1', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', 'assets/js/uploaded/portfolio-project-3rd-4.jpg', '2012-07-21'),
+(17, 'Testing!', 'Test -', '1', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', 'assets/js/uploaded/portfolio-project-3rd-1.jpg', '2012-07-23');
 
 -- --------------------------------------------------------
 
@@ -512,7 +530,10 @@ INSERT INTO `n_lee_portfolio_relate_ctg_port` (`portfolio_id`, `category_id`) VA
 (16, 5),
 (3, 1),
 (3, 2),
-(3, 3);
+(3, 3),
+(17, 1),
+(17, 3),
+(17, 4);
 
 -- --------------------------------------------------------
 
@@ -548,7 +569,7 @@ CREATE TABLE IF NOT EXISTS `n_lee_website` (
   `category` int(10) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `n_lee_website`
@@ -564,8 +585,8 @@ INSERT INTO `n_lee_website` (`id`, `title`, `alias`, `content`, `category`, `dat
 (7, 'Website Redesign', 'website-redesign', '<h3>DOLSH WEB DESIGN COMPANY OFFERS BOLD REDESIGN SOLUTIONS!</h3>\r\n<p>Website redesign will give your existing website a completely fresh look, style and feel. Redesigning a site is perfect for outdated websites which are in need of the latest web solutions. Website is a powerful tool which represents your business/corporation/firm or individual ventures and as such it should be created by the latest trends in design and development. It''s imperative, not only because of the esthetics but also because of the possible out-dated architecture of the website. If you have a website which has been on the web for a while then it probably needs the implementation of fresh SEO solutions in order to improve your website''s visibility. In order to have a website that is completely capable of meeting your marketing needs and achieving your business objective - redesign is a perfect solution. Redesign reduces your costs and yet provides a complete new architecture and design to your existing marketing carrier.</p>\r\n<h3>REDESIGN YOUR WEBSITE - BY THE LATEST STANDARDS...</h3>\r\n<p>Dolsh Web Design Company offers a full website redesign services. Our company provides innovative redesign solutions which will enable you to generate leads and improve your online presence. Our website redesign solutions will turn your out-dated website into a lead- generating marketing vehicle and empower you to achieve your professional goals and objectives. Our team will analyze your current business objectives, your existing website and transform them into a fully functional website. This way you will get a chance to strengthen your online position and brand. Our team of developers will also implement the latest SEO solutions and in that way rank you higher in search-engine directories and listings. We offer to help you enhance your business through smart website redesign and organic SEO strategies. Dolsh Web Design Company offers: </p>\r\n<ul>\r\n<li>Custom & Complete Web Redesign Services (maintenance and updates)</li>\r\n<li>Web Analysis</li>\r\n<li>Organic SEO  Solutions</li>\r\n<li>Existing Website & Content Analytics</li>\r\n<li>Improved Usability & Conversion </li>\r\n<li>In-Depth Research & Analysis</li>\r\n<li>Implementation of Custom Web Applications</li>\r\n</ul>\r\n<p>Website redesign can help to catapult your business forward and improve your website''s functionality. These are all important elements of your offline business and will most certainly help to improve your online exposure and offline exposure as well. Allow us to show how much a website redesign can influence your overall reputation -online as well as the offline.</p>', 3, '0000-00-00'),
 (8, 'CMS Solutions', 'cms-solutions', '<h3>CMS -CONTENT MENAGEMENT SYSTEMS FOR A BETTER WEBSITE CONTENT UPDATE, MENAGEMENT AND EDITING!</h3>\r\n<p>A CMS or Content Management System is perfect if your goal is to change, update, delete and add content to your website independently. Content Management Systems enables you to manage your website easily and quickly. CMS allows updates or edits of your website content separately-meaning that you can change text without changing the design and vice versa. Content management systems are also practical because a person can make all the necessary changes without much technical knowledge or skills. This all together enables website owners to manipulate their content or change the design themselves if needed. CMS makes it simple to add new pages, blogs, articles, services, product and images to your website. CMS gives owners a better control of the website content and design without interference from a third party. This particular technique is especially handy if website owners need to make instant changes, add new products/features etc., this way they are capable of finalizing the update themselves.  Basic CMS features include:</p>\r\n<ul>\r\n<li>Database driven site capability</li>\r\n<li>Editable sections such as news, products, services etc...</li>\r\n<li>Topics sections can be edited/changed/added by authors</li>\r\n<li>Customizable layouts (left, center, right menu boxes)</li>\r\n<li>Browser upload of stored images</li>\r\n<li>Dynamic forums/votes booth for an immediate results</li>\r\n<li>Import of formatted documents ( text, graphics etc)</li>\r\n<li>Assignment of different roles/privileges to different users</li>\r\n<li>Alert notification systems for admin to be informed if any changes occurred to the existing content</li>\r\n<li>Version control which gives administrators a complete control of the menagement/document versions</li>\r\n<li>CMS is supported by a centralized archive where all content is stored.</li>\r\n<li>Robust editing systems- enables the complete control of the formatting and documents</li>\r\n</ul>\r\n<p>CMS has extensive features which allows for even better control of your website and for better manipulation of your content. Advanced CMS features include:</p>\r\n<ul>\r\n<li>Change of order of object</li>\r\n<li>Generator for news flash</li>\r\n<li>Author module for submission</li>\r\n<li>Implementation of the large amount of sections, departments, divisions, etc..</li>\r\n<li>Image storage and library</li>\r\n<li>Path finder</li>\r\n<li>News feed management</li>\r\n<li>Text editor</li>\r\n<li>Surveys</li>\r\n<li>Custom made page modules</li>\r\n<li>Easy Banner managment</li>\r\n</ul>\r\n<h3>DOLSH WEB DESIGN COMPANY CONTENT MANAGEMENT SERVICES..</h3>\r\n<p>A CMS allows you to keep track of your site''s content and allows you to make all the necessary changes to your content. The Dolsh Web Design Company can help you to understand how to utilize this tool and take full advantage of content management system. We will implement CMS software into your website and empower you to use CMS according to your needs. We can educate you about the benefits of a regular website update and enable you to provide a high quality customer service for your end-users. CMS -content management system can generate traffic and draw more attention from potential clients/customers. Our company provides a full CMS package and we can empower you to completely control your content, images, texts and that way arrange your website to your specific requirements. The Dolsh Web Design Company offers the following CMS features:</p>\r\n<ul>\r\n<li>Independence for creation of content</li>\r\n<li>Centralized editing tools which are easy accessible</li>\r\n<li>WYSIWYG editing</li>\r\n<li>Technical Independence</li>\r\n<li>Multi-Point Editing </li>\r\n<li>Media management </li>\r\n<li>Document archiving</li>\r\n<li>Document management</li>\r\n<li>Role Assignment</li>\r\n</ul>', 3, '0000-00-00'),
 (9, 'Dynamic Websites', 'dynamic-websites', '<h3>DYNAMIC WEBSITES FOR BETTER ONLINE BUSINESS & TRANSACTIONS!</h3>\r\n<p>Dynamic websites are database driven websites. These types of websites are perfect for online banking and businesses. Dynamic websites are starting to take the lead over the classic static type of websites. A dynamic website has numerous benefits and advantages. A dynamic website offers features such as receiving or storing your services, content, member information, products, etc.... Dynamic database driven websites have a feature which can change their layout every time a page is opened and/or reloaded. They can also offer the end-users exactly what they need and what they are looking for -based on their personal likes and dislikes(for example based on the picture, text, section they are clicking). Database driven websites are focused on the implementation of content from databases and that''s how they are capable of changing the content and look of the website every time they are loaded. Dynamic website, as above mentioned -is perfect for online businesses and as such they can help you improve your customers service, change your content, send customized emails and much more. All these elements together will help you to promote your business, improve your website traffic and online-offline exposure. Dynamic websites are a perfect solution if your goal is to present a large amount of information, products and services. </p>\r\n<h3>DOLSH WEB DESIGN COMPANY WILL HELP YOU TO...</h3>\r\n<p>Our company will help you to understand the importance of a well developed dynamic website. We create database driven websites which are capable of handling complex tasks such as: receive, send and/or store products, add, edit, delete content, presenting and/or estimating sales information etc... Our web development team is highly proficient, and is striving for innovative concepts and bold solutions. We are here to help you to promote your business, increase your sales and generate revenue. Dolsh Web Dynamic website features are: </p>\r\n<ul>\r\n<li>Unlimited Product/Services Display</li>\r\n<li>Custom Shopping Carts/eCommerce Solutions</li>\r\n<li>Facility to Manage Content and Links </li>\r\n<li>Dynamic Flash Options & Solutions </li>\r\n<li>User-Friendly Development Solutions</li>\r\n</ul>\r\n<p>Our team of developers is proficient in side-server programming and they can develop and create anything that a client demands. Our set of skills includes:</p>\r\n<ul>\r\n<li>PHP</li>\r\n<li>ASP</li>\r\n<li>PERL</li>\r\n<li>Cold Fusion</li>\r\n<li>JSP</li>\r\n</ul>\r\n<p>We will develop a dynamic website according to your requirements and your company''s needs. We provide solutions which will give your prospective clients a unique feel and amplify your users'' experience. We can create dynamic websites that are highly functional and that can complete your transactions and collect valuable information.</p>', 3, '0000-00-00'),
-(10, 'L.R.X WEB DESIGN COMPANY', 'lrx-dolsh-web-design-company', '<p>Web development includes several elements. Web development involves several stages and steps. In order to produce a good website a web developer has to be proficient in coding and markup but also has to be familiar with the organic SEO, search-engine algorithms and web marketing techniques. If your are opting for a professional website or maybe an individual one, you should know that search-engine friendly websites are the most important tool, and are playing a key role in your business and/or individual promotion. Search-engine friendly websites will position your company/business/corporation higher on search-engine listings and that way improve your online exposure and visibility. Web development is much more than just mere coding, it''s a set of skills that involves web analytics, keyword research and almost constant improvement and education.  Web developers should be able to produce a website that is capable to run-smoothly, without technical glitches- a website which has a clean coding and efficient architecture. Only then, will your website fulfill its purpose and bring in the wanted results. A professional team of web developers should also monitor the changes in algorithms in order to provide a healthy, organic SEO and that way ensures good search-engine rankings. Website development procedures are not over when a website is finished- as mentioned earlier- due to changes in the algorithm- website maintenance is a much needed feature. A professional team of web developers should be familiar with all these elements and only then are they fully equipped to provide you with complete web development service.</p>', 5, '0000-00-00'),
-(11, 'L.R.X WEB DESIGN COMPANY OFFERS...', 'lrx-web-design-company-offers', '<p>Dolsh Web Design Company has a team of professional developers who are proficient in the fields of website development, rich internet application development, eCommerce solutions, social network and forum systems development. We have a vast experience and we have mastered every technique - we provide cutting-edge solutions. We strive for perfection and that''s why we are constantly improving with the evolution of technology. Dolsh Web Design Company features are:</p>\r\n<ul>\r\n<li>Dynamic Websites & Solutions</li>\r\n<li>Website Re-Design & Solutions</li>\r\n<li>CMS solutions</li>\r\n<li>e-Commerce Website Design</li>\r\n<li>Data Base Driven Web Development</li>\r\n<li>PHP Web Development</li>\r\n<li>RIA- custom rich internet applications</li>\r\n</ul>', 5, '0000-00-00'),
+(10, 'L.R.X WEB DESIGN COMPANY', 'lrx-dolsh-web-design-company', '<p>Web development includes several elements. Web development involves several stages and steps. In order to produce a good website a web developer has to be proficient in coding and markup but also has to be familiar with the organic SEO, search-engine algorithms and web marketing techniques. If your are opting for a professional website or maybe an individual one, you should know that search-engine friendly websites are the most important tool, and are playing a key role in your business and/or individual promotion. Search-engine friendly websites will position your company/business/corporation higher on search-engine listings and that way improve your online exposure and visibility. Web development is much more than just mere coding, it''s a set of skills that involves web analytics, keyword research and almost constant improvement and education.  Web developers should be able to produce a website that is capable to run-smoothly, without technical glitches- a website which has a clean coding and efficient architecture. Only then, will your website fulfill its purpose and bring in the wanted results. A professional team of web developers should also monitor the changes in algorithms in order to provide a healthy, organic SEO and that way ensures good search-engine rankings. Website development procedures are not over when a website is finished- as mentioned earlier- due to changes in the algorithm- website maintenance is a much needed feature. A professional team of web developers should be familiar with all these elements and only then are they fully equipped to provide you with complete web development service.</p>', 4, '0000-00-00'),
+(11, 'L.R.X WEB DESIGN COMPANY OFFERS...', 'lrx-web-design-company-offers', '<p>Dolsh Web Design Company has a team of professional developers who are proficient in the fields of website development, rich internet application development, eCommerce solutions, social network and forum systems development. We have a vast experience and we have mastered every technique - we provide cutting-edge solutions. We strive for perfection and that''s why we are constantly improving with the evolution of technology. Dolsh Web Design Company features are:</p>\r\n<ul>\r\n<li>Dynamic Websites & Solutions</li>\r\n<li>Website Re-Design & Solutions</li>\r\n<li>CMS solutions</li>\r\n<li>e-Commerce Website Design</li>\r\n<li>Data Base Driven Web Development</li>\r\n<li>PHP Web Development</li>\r\n<li>RIA- custom rich internet applications</li>\r\n</ul>', 4, '0000-00-00'),
 (12, 'SEO - SEARCH ENGINE OPTIMIZATION', 'seo', '<h3>SEARCH ENGINE OPTIMIZATION FOR BETTER BUSINESS DEVELOPMENT!</h3>\r\n<p>SEO-Search Engine Optimization is the skill of increasing a website''s visibility through a wisely planned keyword implementation strategy. SEO-Search Engine Optimization is a long -term marketing strategy that can help you to expand your market reach and build a trustworthy relationship with your clients/customers. SEO - Search Engine Optimization includes market research, keyword research and market analysis. Through these elements businesses are opting for the best marketing campaign through which they can get wanted results. When it comes to building your brand the most important thing is to convey your message and promote your business and services in a positive manner. This can help you reach more potential customers/clients and generate leads. SEO - Search Engine Optimization is an integral part of any web development-however if poorly created and realized it can do more damage than good. It''s imperative to have a well developed SEO strategy because your website''s visibility depends on a good SEO implementation. </p>\r\n<h3>L.R.X WEB SEO SOLUTIONS....</h3>\r\n<p>Dolsh will help you understand the benefits of SEO- Search Engine Optimization and web marketing in general. We are proficient in the field of SEO- Search Engine Optimization and we will develop a custom SEO campaign. Dolsh Web Design Company will do keyword research and phrases and find the best possible solution for your company/business/corporation/individual needs. We understand the importance of a smart implementation and usage of keywords - we will integrate the perfect SEO solution and in that way help you to represent your services/products to your target audience and accomplish recognition on a global level. Our company will develop tailor-made campaigna to fit your specific requirements and enable you to accomplish your business'' objectives. We will analyze and understand the position of your website and help you reach your company''s goals, will generate leads and revenue ultimately maximizing yout profit. Dolsh Web Design Company SEO solutions include:</p>\r\n<ul>\r\n<li>Improvement of your website visibility & position</li>\r\n<li>Retain the existing base & position</li>\r\n<li>Retain the existing cross-linking status</li>\r\n<li>Improve the internal page-linking</li>\r\n<li>Use the foundation of LSA-Latent Semantic Analysis which Google refers too</li>\r\n<li>Establish your social reference through a well planned process - help you build a strong positive reputation</li>\r\n<li>We do SEO consulting thus helping your administrators to handle small SEO tasks and routine maintenance</li>\r\n</ul>\r\n<p>Through all these steps Search Engine Optimization solutions -Dolsh Web Design Company can help you build a recognizable brand, get respectability and of course improve your website''s visibility. Our SEO -Search Engine Optimization solutions will most certainly increase your profit, improve your website''s traffic and in general help you to understand the market and through this understanding to determine your next business move. Dolsh Web Design SEO has solutions for your business.</p>', 0, '0000-00-00');
 
 -- --------------------------------------------------------
@@ -589,8 +610,7 @@ INSERT INTO `n_lee_website_categories` (`id`, `name`, `date`) VALUES
 (1, 'Design', '2012-07-21'),
 (2, 'SEO', '2012-07-18'),
 (3, 'Web developement', '0000-00-00'),
-(4, 'Pricing Tables', '0000-00-00'),
-(5, 'Another Articles', '0000-00-00');
+(4, 'Another Articles', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -720,14 +740,15 @@ CREATE TABLE IF NOT EXISTS `n_users` (
   UNIQUE KEY `email` (`email`),
   KEY `password` (`password`),
   KEY `group` (`group`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `n_users`
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-07-22 07:44:29', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-07-23 12:02:21', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -753,6 +774,7 @@ CREATE TABLE IF NOT EXISTS `n_user_profiles` (
 
 INSERT INTO `n_user_profiles` (`user_id`, `company_name`, `full_name`, `web_address`, `phone_number`, `address`, `city`, `post_code`) VALUES
 (1, '', '', '', '', '', '', 0),
+(2, '', '', '', '', '', '', 0),
 (14, '', '', '', '', '', '', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -35,18 +35,20 @@ class Access_control extends Admin_Controller
 		check('Access Control');
 
 		// Set breadcrumb
-		$this->bep_site->set_crumb($this->lang->line('backendpro_access_control'),'auth/admin/access_control');
+		//$this->bep_site->set_crumb($this->lang->line('backendpro_access_control'),'auth/admin/access_control');
 
 		log_message('debug','BackendPro : Access_control class loaded');
+		
+		$this->load->library('editor_library');
 	}
 
 	function index()
 	{
 		// Display Page
-		$data['header'] = $this->lang->line('backendpro_access_control');
-		$data['page'] = $this->config->item('backendpro_template_admin') . "access_control/home";
+		$data['header'] = "Manage Users";
+		$data['page'] = "admin/access_control/home";
 		$data['module'] = 'auth';
-		$this->load->view($this->_container,$data);
+		$this->load->view("admin/container",$data);
 		return;
 	}
 }

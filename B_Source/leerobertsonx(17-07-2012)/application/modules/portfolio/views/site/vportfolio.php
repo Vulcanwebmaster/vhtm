@@ -35,9 +35,9 @@
 				<img src="<?php echo base_url();?><?php echo $rw->image;?>" alt="">
 			</a>
 
-			<a href="single-project.html" class="project-meta">
+			<a href="#" class="project-meta">
 				<h5 class="title"><?php echo $rw->title?></h5>
-				<span class="categories"><?php echo $this->Mportfolio->getCategoryByPortfolio($rw->id)?></span>
+				<span class="categories"><?php echo $this->Mportfolio->getCategoryByPortfolio_ToDisplay($rw->id)?></span>
 			</a>
 			
 		</article><!-- end .one-third (Altered) -->

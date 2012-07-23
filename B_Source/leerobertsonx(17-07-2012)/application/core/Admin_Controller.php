@@ -9,6 +9,8 @@ class Admin_Controller extends NIW_Controller
 		
 		// Load the ADMIN asset group
 		$this->bep_assets->load_asset_group('ADMIN');
+		$this->load->library('form_validation');
+		$this->load->helper('language');
 	}
 }
 

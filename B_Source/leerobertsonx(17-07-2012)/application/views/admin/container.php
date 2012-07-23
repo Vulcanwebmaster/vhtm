@@ -19,8 +19,8 @@
     $(function(){
         $('.column').equalHeight();
     });
+    </script>
     
-</script>
 
 </head>
 

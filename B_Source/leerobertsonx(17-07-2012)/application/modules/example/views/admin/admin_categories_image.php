@@ -1,5 +1,4 @@
 <?php
-	$this->load->helper('date');
 	$this->load->model('Mcategories');
 ?>
 

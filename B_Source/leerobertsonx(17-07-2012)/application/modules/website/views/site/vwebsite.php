@@ -102,31 +102,7 @@
 		<?php
 		$i = $i+1; 
 		endforeach;?>
-<!-- 
-		<p class="error">
-			<?php $item=$this->Mwebsite->getInfoByAlias('rich-internet-applications');
-				echo '<a href="'.base_url().'website/detail/'.$item->alias.'">'.$item->title.'</a>';
-			?>
-		</p>
-		
-		<p class="success">
-			<?php $item=$this->Mwebsite->getInfoByAlias('website-redesign');
-				echo '<a href="'.base_url().'website/detail/'.$item->alias.'">'.$item->title.'</a>';
-			?>
-		</p>
 
-		<p class="info">
-			<?php $item=$this->Mwebsite->getInfoByAlias('cms-solutions');
-				echo '<a href="'.base_url().'website/detail/'.$item->alias.'">'.$item->title.'</a>';
-			?>
-		</p>
-
-		<p class="notice">
-			<?php $item=$this->Mwebsite->getInfoByAlias('dynamic-websites');
-				echo '<a href="'.base_url().'website/detail/'.$item->alias.'">'.$item->title.'</a>';
-			?>
-		</p>
- -->		
 	</div><!-- end .one-fourth -->
 <?php endforeach;?>	
 	<div class="one-fourth last">
@@ -146,16 +122,13 @@
 	<div class="clear"></div>
 
 	<hr />
-	
+<?php foreach ($LstArt4 as $art):?>	
 	<div>
-		<?php $item=$this->Mwebsite->getInfoByAlias('lrx-dolsh-web-design-company');
-			echo '<h3>'.$item->title.'</h3>';
-			echo $item->content;
+		<?php 
+			echo '<h3>'.$art->title.'</h3>';
+			echo $art->content;
 		?>
-		<?php $item=$this->Mwebsite->getInfoByAlias('lrx-web-design-company-offers');
-			echo '<h3>'.$item->title.'</h3>';
-			echo $item->content;
-		?>
-	</div>	
+	</div>
+<?php endforeach;?>	
 <?php endforeach;?>
 </section><!-- end #content -->

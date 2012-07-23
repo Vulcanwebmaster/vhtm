@@ -58,11 +58,11 @@
 				<li data-feature="Domain aliasing">&mdash;</li>
 				<li data-feature="30 day trial"><span class="check">&check;</span></li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
-			
+ 			
 		</div><!-- end .column.free -->
 
 		<div class="column">
@@ -89,7 +89,7 @@
 				<li data-feature="Domain aliasing"><span class="check">&check;</span></li>
 				<li data-feature="30 day trial"><span class="check">&check;</span></li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
@@ -120,11 +120,11 @@
 				<li data-feature="Domain aliasing"><span class="check">&check;</span></li>
 				<li data-feature="30 day trial"><span class="check">&check;</span></li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
-			
+ 			
 		</div><!-- end .column.featured -->
 
 		<div class="column">
@@ -151,7 +151,7 @@
 				<li data-feature="Domain aliasing"><span class="check">&check;</span></li>
 				<li data-feature="30 day trial"><span class="check">&check;</span></li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
@@ -182,7 +182,7 @@
 				<li>Admins / moderators</li>
 				<li>1 feedback zone</li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
@@ -207,7 +207,7 @@
 				<li data-tooltip="Tooltip - Optional description of the feature can go here!">Admins / moderators</li>
 				<li data-tooltip="Tooltip - Optional description of the feature can go here!">Unlimited feedback zone</li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
@@ -232,7 +232,7 @@
 				<li>Admins / moderators</li>
 				<li>Unlimited feedback zone</li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->
@@ -256,7 +256,7 @@
 				<li>Admins / moderators</li>
 				<li>Unlimited feedback zone</li>
 			</ul><!-- end .features -->
-
+<!-- 
 			<div class="footer">
 				<a class="button" href="#">Sign Up</a>
 			</div><!-- end .footer -->

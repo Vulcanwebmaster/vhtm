@@ -35,6 +35,7 @@ class Auth extends Public_Controller
 		$this->load->library('auth/auth_form_processing');
 		log_message('debug','BackendPro : Auth class loaded');
                 //$this->output->enable_profiler(TRUE);
+        $this->load->library('editor_library');
 	}
 
 	function index()

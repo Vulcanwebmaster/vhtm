@@ -20,6 +20,7 @@ class Mfrontpage extends CI_Model
 			$link = str_replace("../../../", "", $link);
 			return $link;
     	}
+    //slide
 	function getSlidePaging($number, $offset)
 		{
 	            $query =  $this->db->get('lee_homepage_slide',$number,$offset);
@@ -97,6 +98,7 @@ class Mfrontpage extends CI_Model
 	 		return false;
 	 	}
 	 }
+	 //Slogan
 	 function getSlogan()
 	 {
 	 	return $this->db->get('lee_homepage_slogan')->result();
