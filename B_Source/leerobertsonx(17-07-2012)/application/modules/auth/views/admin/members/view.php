@@ -1,33 +1,24 @@
-<h2><?php print $header?></h2>
+<style type="text/css">
+	td, th{text-align:center; padding:5px 15px; border-bottom:solid 1px silver}
+	form{margin-left:20px}
+</style>
 
-<div class="buttons">                
-	<a href="<?php print  site_url('auth/admin/members/form')?>">
-    <?php print  $this->bep_assets->icon('add');?>
-    <?php print $this->lang->line('userlib_create_user')?>
-    </a>
-</div><br/><br/>
+<h2><?php print $header?></h2>
 
 <?php print form_open('auth/admin/members/delete')?>
 <table class="data_grid" cellspacing="0">
     <thead>
         <tr>
-            <th width=5%><?php print $this->lang->line('general_id')?></th>
+            <th width=5%>ID</th>
             <th><?php print $this->lang->line('userlib_username')?></th>
             <th><?php print $this->lang->line('userlib_email')?></th>
             <th><?php print $this->lang->line('userlib_group')?></th>
             <th><?php print $this->lang->line('userlib_last_visit')?></th>
-            <th class="middle"><?php print $this->lang->line('userlib_avatar')?></th>
             <th width=5% class="middle"><?php print $this->lang->line('userlib_active')?></th> 
-            <th width=5% class="middle"><?php print $this->lang->line('general_edit')?></th>
-            <th width=10%><?php print form_checkbox('all','select',FALSE)?><?php print $this->lang->line('general_delete')?></th>        
+            <th width=5% class="middle">Modify</th>
+            <th width=10%><?php print form_checkbox('all','select',FALSE)?>Delete</th>        
         </tr>
     </thead>
-    <tfoot>
-        <tr>
-            <td colspan=7>&nbsp;</td>
-            <td><?php print form_submit('delete',$this->lang->line('general_delete'),'onClick="return confirm(\''.$this->lang->line('userlib_delete_user_confirm').'\');"')?></td>
-        </tr>
-    </tfoot>
     <tbody>
         <?php foreach($members->result_array() as $row):
             // Check if this user account belongs to the person logged in
@@ -43,15 +34,9 @@
             <td><?php print $row['email']?></td>
             <td><?php print $row['group']?></td>
             <td><?php print $row['last_visit']?></td>
-             <td class="middle"><?php  
-                $myemail = $row['email'];
-                $size = 20;
-                echo gravatar($myemail, $size);
-            
-            ?></td>
-            <td class="middle"><?php print $this->bep_assets->icon($active);?></td>
-            <td class="middle"><a href="<?php print site_url('auth/admin/members/form/'.$row['id'])?>"><?php print $this->bep_assets->icon('pencil');?></a></td>
-            <td><?php print $delete?></td>
+            <td class="middle"><img src="<?php echo base_url();?>assets/leerobertsonx_admin/images/tick.png"/></td>
+            <td class="middle"><a href="<?php print site_url('auth/admin/members/form/'.$row['id'])?>"><img src="<?php echo base_url();?>assets/leerobertsonx_admin/images/pencil.png"/></a></td>
+            <td><input type="submit" name="delete" value="Delete" onclick="return confirm('Are you SURE you want to delete these members? Doing so could loose system data!');"></td>
         </tr>
         <?php endforeach; ?>
     </tbody>

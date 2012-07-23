@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/leerobertsonx';
+$config['base_url']	= 'http://localhost/leerobertsonx(NIW_Framework)';
 
 /*
 |--------------------------------------------------------------------------

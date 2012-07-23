@@ -14,7 +14,7 @@
 	<script src="<?php echo base_url()?>/assets/leerobertsonx_admin/js/hideshow.js" type="text/javascript"></script>
 	<script src="<?php echo base_url()?>/assets/leerobertsonx_admin/js/jquery.tablesorter.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="<?php echo base_url()?>/assets/leerobertsonx_admin/js/jquery.equalHeight.js"></script>
-	<?php echo $this->editor_library->init_editor()?>
+	<!-- ?php echo $this->editor_library->init_editor()? -->
     <script type="text/javascript">
     $(function(){
         $('.column').equalHeight();

@@ -22,7 +22,7 @@
  * @package			BackendPro
  * @subpackage		Controllers
  */
-class auth extends Public_Controller
+class Auth extends Public_Controller
 {
 	/**
 	 * Constructor

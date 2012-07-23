@@ -12,7 +12,7 @@
 <h2><?php print $header?></h2>
 <p><?php print $this->lang->line('userlib_password_info')?></p>
 
-<?php print form_open('auth/admin/members/form/'.$this->form_validation->id,array('class'=>'horizontal'))?>
+<?php print form_open('auth/admin/members/form/'/*.$this->form_validation->id*/,array('class'=>'horizontal'))?>
     <fieldset>
         <ol>
             <li>

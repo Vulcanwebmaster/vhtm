@@ -58,9 +58,11 @@ class Members extends Admin_Controller
 
 		// Display Page
 		$data['header'] = $this->lang->line('backendpro_members');
-		$data['page'] = $this->config->item('backendpro_template_admin') . "members/view";
+		$data['page'] = "admin/members/view";
 		$data['module'] = 'auth';
-		$this->load->view($this->_container,$data);
+		$data['bcCurrent']='user';
+		$data['title']='User';		
+		$this->load->view("admin/container",$data);
 	}
 
 	/**
@@ -80,7 +82,7 @@ class Members extends Admin_Controller
 		$this->form_validation->set_default_value('address','Address');
 		$this->form_validation->set_default_value('city','City');
 		$this->form_validation->set_default_value('post_code','Post Code');
-	
+		
 	}
 
 	/**
@@ -241,12 +243,12 @@ class Members extends Admin_Controller
 			$data['profiles']= $this->_pull_profile_details($id);
              
 			// Display form
-			$this->form_validation->output_errors();
+			//$this->form_validation->output_errors();
 			$data['header'] = ( is_null($id)?$this->lang->line('userlib_create_user'):$this->lang->line('userlib_edit_user'));
 			$this->bep_site->set_crumb($data['header'],'auth/admin/members/form/'.$id);
-			$data['page'] = $this->config->item('backendpro_template_admin') . "members/form_member";
+			$data['page'] = "admin/members/form_member";
 			$data['module'] = 'auth';
-			$this->load->view($this->_container,$data);
+			$this->load->view('front/container',$data);
 		}
 		else
 		{
