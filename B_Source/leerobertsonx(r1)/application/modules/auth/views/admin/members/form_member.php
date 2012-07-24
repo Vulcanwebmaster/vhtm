@@ -34,53 +34,9 @@
                 		<?php print "NO"?> <?php print form_radio('active','0',set_radio('active','0',$selected = ($this->form_validation->active == 1) ? FALSE : TRUE))?>
                 	</div>
 				</fieldset>
-				</fieldset><div class="clear"></div>
+				<?php print form_hidden('id',set_value('id',$this->form_validation->id))?>
+				<div class="clear"></div>
 		</div>
-		<header><h3>User Profile</h3></header>
-<?php
-    if( ! $this->preference->item('allow_user_profiles')):
-        print "<p>".$this->lang->line('userlib_profile_disabled')."</p>";
-    else:
-?>
-		<div class="module_content">
-				<fieldset>
-					<?php print form_label('Company Name','company_name')?>
-				<?php $value = (empty($profiles['company_name']))? '' : $profiles['company_name'];  ?>
-                <?php print form_input('company_name',$value,'id="company_name" class="text"')?>
-				</fieldset>
-				<fieldset>
-					<?php print form_label('Full Name','full_name')?>
-				<?php $value = (empty($profiles['full_name']))? '' : $profiles['full_name'];  ?>
-                <?php print form_input('full_name',$value,'id="full_name" class="text"')?>
-				</fieldset>
-				<fieldset>
-					<?php print form_label('Web Address','web_address')?>
-                 <?php $value = (empty($profiles['web_address']))? '' : $profiles['web_address'];  ?>
-                <?php print form_input('web_address',$value,'id="web_address" class="text"')?>
-				</fieldset>
-				<fieldset>
-					<?php print form_label('Phone Number','phone_number')?>
-                 <?php $value = (empty($profiles['phone_number']))? '' : $profiles['phone_number'];  ?>
-                <?php print form_input('phone_number',$value,'id="phone_number" class="text"')?>
-				</fieldset>
-				<fieldset>
-					<?php print form_label('Address','address')?>
-				<?php $value = (empty($profiles['address']))? '' : $profiles['address'];  ?>
-                <?php print form_input('address',$value,'id="address" class="text"')?>
-				</fieldset>
-				<fieldset>
-					<?php print form_label('City','city')?>
-                 <?php $value = (empty($profiles['city']))? '' : $profiles['city'];  ?>
-                <?php print form_input('city',$value,'id="city" class="text"')?>
-				</fieldset>
-				<fieldset>
-					<?php print form_label('Post Code','post_code')?>
-                 <?php $value = (empty($profiles['post_code']))? '' : $profiles['post_code'];  ?>
-                <?php print form_input('post_code',$value,'id="post_code" class="text"')?>
-				</fieldset>
-				</fieldset><div class="clear"></div>
-		</div>
-<?php endif;?>
 	<footer>
 		<div class="submit_link">
 			<input type="submit" name="submit" value="Submit" class="alt_btn">

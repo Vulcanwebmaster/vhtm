@@ -189,6 +189,7 @@ class Members extends Admin_Controller
 		}
 		else
 		{
+			/*
                     $config[] = array(
                                     'field'=>'username',
                                     'label'=>$this->lang->line('userlib_username'),
@@ -199,6 +200,13 @@ class Members extends Admin_Controller
                                     'label'=>$this->lang->line('userlib_email'),
                                     'rules'=>"trim|required|valid_email|callback_spare_edit_email"
                                     );
+                    $config[] = array(
+                                    'field'=>'password',
+                                    'label'=>$this->lang->line('userlib_password'),
+                                    'rules'=>"trim|required|min_length[".$this->preference->item('min_password_length')."]|matches[confirm_password]"
+                                    );
+                                    */
+
                     $config[] = array(
                                     'field'=>'password',
                                     'label'=>$this->lang->line('userlib_password'),
@@ -232,12 +240,14 @@ class Members extends Admin_Controller
 		elseif( $this->input->post('submit'))
 		{
 			// Form submited, check rules
+
 			$this->form_validation->set_rules($config);		
 		}
 
 		// RUN
 		if ($this->form_validation->run() == FALSE)
 		{
+			
 			// Load Generate Password Assets
 			$this->bep_assets->load_asset_group('GENERATE_PASSWORD');
 
@@ -264,7 +274,6 @@ class Members extends Admin_Controller
 			// Save form
 			if( is_null($id))
 			{
-				
 				// CREATE
 				// Fetch form values
 				$user = $this->_get_user_details();
@@ -290,6 +299,7 @@ class Members extends Admin_Controller
 			}
 			else
 			{
+
 				// SAVE
 				$user = $this->_get_user_details();
 				$user['modified'] = date('Y-m-d H:i:s');
@@ -309,13 +319,15 @@ class Members extends Admin_Controller
 				{
 					$this->db->trans_commit();
 					flashMsg('success',sprintf($this->lang->line('userlib_user_saved'),$user['username']));
+					redirect('auth/admin/members');
 				}
 				else
 				{
+
 					$this->db->trans_rollback();
 					flashMsg('error',sprintf($this->lang->line('backendpro_action_failed'),$this->lang->line('userlib_edit_user')));
 				}
-				redirect('auth/admin/members');
+				//redirect('auth/admin/members');
 			}
 		}
 	}
