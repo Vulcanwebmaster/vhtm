@@ -5,6 +5,9 @@
 		{
 			parent::__construct();
 			$this->load->database();
+			$this->load->helper('date');
+			$this->load->helper('url');
+			$this->load->library('string_library');
 		}
 
 //Front-end function
@@ -94,11 +97,14 @@
     	}
     	function insertArticle()
     	{
+    		$title = $this->input->post('title');
+    		$alias = (string)$this->string_library->stringchange($title);
    			$data=(
 				array(
-				'title' => $this->input->post('title'),
+				'title' => $title,
 				'content' => $this->input->post('content'),
 				'category'=>$this->input->post('category'),
+				'alias' => $alias,
 				'date' => mdate('%Y-%m-%d %H:%i:%s',time())
 				)
 			);
@@ -114,11 +120,14 @@
     	function saveArticle()
     	{
     		$id = $this->uri->segment('4');
+    		$title = $this->input->post('title');
+    		$alias = (string)$this->string_library->stringchange($title);
 			$data=(
 				array(
-				'title' => $this->input->post('title'),
+				'title' => $title,
 				'content' => $this->input->post('content'),
 				'category'=>$this->input->post('category'),
+				'alias' => $alias,
 				'date' => mdate('%Y-%m-%d %H:%i:%s',time())
 				)
 			);

@@ -57,8 +57,6 @@
 	    				'date'=>mdate('%Y-%m-%d %H:%i:%s',time())
 	    	
 	    	));
-	    	
-	    		
 	    		if($this->db->insert('lee_application',$data))
 	    		{
 	    			return true;

@@ -1,4 +1,4 @@
-<form action="admin/savePostApp" method="post">
+<form action="<?php echo base_url()?>app/admin/savePostApp" method="post">
 		<article class="module width_full">
 			<header><h3>Add New Article</h3></header>
 				<div class="module_content">

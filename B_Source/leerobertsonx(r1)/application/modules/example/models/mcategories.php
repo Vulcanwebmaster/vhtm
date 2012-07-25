@@ -40,7 +40,7 @@ class Mcategories extends CI_Model
 	{
 		$id=$this->uri->segment(4);
 		$this->db->where('id',$id);
-		if($this->db->delete('lee_categories_whyus',$data))
+		if($this->db->delete('lee_categories_whyus'))
 		{
 			return true;
 		}

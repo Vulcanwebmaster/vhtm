@@ -79,6 +79,10 @@ class Admin extends Admin_Controller {
 		{
 			redirect('app/admin');
 		}
+		else
+		{
+			
+		}
 	}
 	function getApp()
 	{

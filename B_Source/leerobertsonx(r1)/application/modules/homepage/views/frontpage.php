@@ -13,7 +13,8 @@
 	$result2=$this->db->get('lee_categories_help')->result();
 	$this->load->model('Mfrontpage');
 	$result3=$this->db->get('lee_categories_outline')->result();
-	$query=$this->db->get('lee_homepage_slide');
+	$this->db->order_by("order");
+	$query=$this->db->get('lee_homepage_slide',4,0);
 	$logo=$this->db->get('lee_homepage_logo')->result();
 	$slogan = $this->db->get('lee_homepage_slogan')->result();
 ?>
@@ -37,7 +38,7 @@
 	<?php foreach ($query->result() as $rwsl):?>
 		<article class="slide">
 		
-			<img alt="" src="<?php echo base_url().$this->Mfrontpage->fixImageLink_ToView($rwsl->linkimage)?>" class="slide-bg-image" />
+			<img style="width:940px;height:380px" alt="" src="<?php echo base_url().$this->Mfrontpage->fixImageLink_ToView($rwsl->linkimage)?>" class="slide-bg-image" />
 			
 			<div class="slide-button">
 				<span class="dropcap"><?php echo $rwsl->order;?></span>
@@ -62,7 +63,7 @@
 		<?php foreach ($logo as $rwlg):?>
 		<li>
 			<a href="<?php echo $rwlg->link?>">
-				<img class="last-project-img" src="<?php echo base_url().$this->Mfrontpage->fixImageLink_ToView($rwlg->logo)?>" alt="">
+				<img style="width:220px;height:140px" class="last-project-img" src="<?php echo base_url().$this->Mfrontpage->fixImageLink_ToView($rwlg->logo)?>" alt="">
 				<h5 class="title"><?php echo $rwlg->title?></h5>
 			</a>
 		</li>

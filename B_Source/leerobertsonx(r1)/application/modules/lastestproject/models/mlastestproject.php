@@ -40,9 +40,10 @@
 	 } 
 	 function saveLogo()
 	 {
+	 	$linkimage = str_replace("../../", "../../../", $this->input->post('imageslide'));
 	 $data=(array(
 	 		'title'=>$this->input->post('title'),
-	 		'logo'=>$this->input->post('imageslide'),
+	 		'logo'=>$linkimage,
 	 		'link'=>$this->input->post('link')
 	 	));
 	 	if($this->db->insert('lee_homepage_logo',$data))

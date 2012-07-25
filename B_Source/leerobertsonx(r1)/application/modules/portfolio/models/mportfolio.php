@@ -353,6 +353,7 @@
 			$link = str_replace("../../../", "", $link);
 			return $link;
     	}
+    	
 	   	function fixImageLink_ToView ($image)
     	{
 			$tmp = strstr(strstr($image, "src=\"../../../"),"../../../");

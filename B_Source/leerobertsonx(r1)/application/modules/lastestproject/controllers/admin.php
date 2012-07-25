@@ -74,7 +74,7 @@ class Admin extends CI_Controller {
 	{
 		if($this->mject->saveLogo()==true)
 		{
-			redirect('lastestProject/admin');	
+			redirect('lastestproject/admin');	
 		}
 	}
 	function getProject()
@@ -94,14 +94,14 @@ class Admin extends CI_Controller {
 	{
 		if($this->mject->editLogo()==true)
 		{
-			redirect('lastestProject/admin');	
+			redirect('lastestproject/admin');	
 		}
 	}
 	function delProject()
 	{
 		if($this->mject->delLogo()==true)
 		{
-			redirect('lastestProject/admin');	
+			redirect('lastestproject/admin');	
 		}
 	}
 }

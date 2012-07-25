@@ -2,24 +2,24 @@
 class string_library{
     function stringchange($value)
     {
-    	$title = str_replace("H", "h", $title);
-        $title = str_replace("N", "n", $title);
-        $title = str_replace("G", "g", $title);
-        $title = str_replace("K", "k", $title);
-        $title = str_replace("M", "m", $title);
-        $title = str_replace("C", "c", $title);
-        $title = str_replace("R", "r", $title);
-        $title = str_replace("B", "b", $title);
-        $title = str_replace("L", "l", $title);
-        $title = str_replace("Z", "z", $title);
-        $title = str_replace("T", "t", $title);
-        $title = str_replace("V", "v", $title);
-        $title = str_replace("Q", "q", $title);
-        $title = str_replace("W", "w", $title);
-        $title = str_replace("P", "p", $title);
-		$title = str_replace("J", "j", $title);
-        $title = str_replace("F", "f", $title);
-        $title = str_replace("X", "x", $title);
+    	$value = str_replace("H", "h", $value);
+        $value = str_replace("N", "n", $value);
+        $value = str_replace("G", "g", $value);
+        $value = str_replace("K", "k", $value);
+        $value = str_replace("M", "m", $value);
+        $value = str_replace("C", "c", $value);
+        $value = str_replace("R", "r", $value);
+        $value = str_replace("B", "b", $value);
+        $value = str_replace("L", "l", $value);
+        $value = str_replace("Z", "z", $value);
+        $value = str_replace("T", "t", $value);
+        $value = str_replace("V", "v", $value);
+        $value = str_replace("Q", "q", $value);
+        $value = str_replace("W", "w", $value);
+        $value = str_replace("P", "p", $value);
+		$value = str_replace("J", "j", $value);
+        $value = str_replace("F", "f", $value);
+        $value = str_replace("X", "x", $value);
         #---------------------------------a^
         $value = str_replace("ấ", "a", $value);
         $value = str_replace("ầ", "a", $value);

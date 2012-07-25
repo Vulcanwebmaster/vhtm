@@ -20,7 +20,7 @@
     				</td>
 				</tr>
 			<tr>
-				   <td>Company Image</td> 
+				   <td>Our Client</td> 
     				<td>
     				<a href="<?php echo base_url()?>example/admin/getImageSlide/" title="View"><img src="<?php echo base_url()?>assets/leerobertsonx_admin/images/icn_view.png"></a>
     				</td>

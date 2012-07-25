@@ -37,13 +37,14 @@ class Mfrontpage extends CI_Model
 	 
 	 function saveSlide()
 	 {
+	 	$linkimage = str_replace("../../", "../../../", $this->input->post('imageslide'));
 	 	$data=(array(
 	 		'title'=>$this->input->post('title'),
 	 		'descriptiontitle'=>$this->input->post('description'),
 	 		'order'=>$this->input->post('order'),
 	 		'detailtitle'=>$this->input->post('detailtitle'),
 	 		'detaildescription'=>$this->input->post('detaildescription'),
-	 		'linkimage'=>$this->input->post('imageslide'),
+	 		'linkimage'=>$linkimage,
 	 		'link'=>$this->input->post('link')
 	 	));
 	 	if($this->db->insert('lee_homepage_slide',$data))

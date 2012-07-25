@@ -120,14 +120,14 @@ class Admin extends Admin_Controller {
 	function postWhyUs(){
 		if($this->Mcategories->insertWhyUs()==true)
 		{
-			redirect('example/admin');
+			redirect('example/admin/getWhyUs');
 		}
 	}
 	function delWhyUs()
 	{
 		if($this->Mcategories->delWhyUs()==true)
 		{
-			redirect('example/admin');
+			redirect('example/admin/getWhyUs');
 		}
 	}
 	function getEditWhyUs()
@@ -137,7 +137,7 @@ class Admin extends Admin_Controller {
 		$data['title'] = "Categories";
 		$data['list']=$this->Mcategories->getEditWhyUs();
 		//Breadcrumb data
-		$data['bcLv1']= "Edit Why Us";
+		$data['bcLv1']= "Why Us";
 		$data['bcLv1_link']= "example/admin";
 		$data['bcCurrent'] = "Edit Why Us";				
 		$this->load->view('admin/container',$data);
@@ -152,7 +152,7 @@ class Admin extends Admin_Controller {
 				alert("update success");
 			</script>
 			';
-			redirect('example/admin');
+			redirect('example/admin/getWhyUs');
 		}
 		else 
 		{
@@ -160,7 +160,7 @@ class Admin extends Admin_Controller {
 				alert("update unsuccess");
 			</script>
 			';
-			redirect('example/admin');
+			redirect('example/admin/getWhyUs');
 		}
 		
 	}
@@ -255,7 +255,7 @@ class Admin extends Admin_Controller {
 				alert("update success");
 			</script>
 			';
-			redirect('example/admin/getHelp');
+			redirect('example/admin/gethelp');
 		}
 		else 
 		{

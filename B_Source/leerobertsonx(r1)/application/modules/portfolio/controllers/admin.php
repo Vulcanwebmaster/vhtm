@@ -42,10 +42,10 @@ class Admin extends Admin_Controller {
 	public function addCategory()
 	{
 		if($this->Mportfolio->insertCategory())
-		{
+		{			
 			$temp = $this->Mportfolio->getNewCtg();
 			foreach ($temp as $rw){
-				$id = $temp->id;
+				$id = $rw->id;
 			}
 			redirect('portfolio/admin/editCategory/'.$id);
 		}

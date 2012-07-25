@@ -56,6 +56,7 @@
 			$data['module']=$this->module;
 			$data['maintitle']='Web design';
 			$data['title']='L.R.X | Website';
+			$data['LstArt'] = $this->Mwebsite->getLstArticleByCtg_Front('1')->result();
 			$this->load->view('front/container',$data);
 		}
 		
@@ -65,6 +66,7 @@
 			$data['module']=$this->module;
 			$data['maintitle']='Web developement';
 			$data['title']='L.R.X | Website';
+			$data['LstArt'] = $this->Mwebsite->getLstArticleByCtg_Front('3')->result();
 			$this->load->view('front/container',$data);
 		}
 		
@@ -75,6 +77,7 @@
 			$data['vcontent']=$this->Mwebsite->getInfoByAlias('seo');
 			$data['maintitle']=$data['vcontent']->title;
 			$data['title']='L.R.X | Website';
+			$data['LstArt'] = $this->Mwebsite->getLstArticleByCtg_Front('2')->result();
 			$this->load->view('front/container',$data);
 		}
 	}

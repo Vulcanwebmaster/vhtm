@@ -10,7 +10,7 @@
 						
 						<fieldset>
 							<label>Content</label>
-							<?php echo $this->editor_library->editor('content','','')?>
+							<textarea rows="10" cols="100" name="content"></textarea>
 						</fieldset>															
 						<div class="clear"></div>
 						
