@@ -4,6 +4,11 @@
 		<li class="icn_edit_article"><a href="#">Article</a></li>
 		<li class="icn_categories"><a href="#">Categories</a></li>
 	</ul>
+<h3>Product</h3>
+	<ul class="toggle">
+		<li class="icn_photo"><a href="<?php echo base_url()?>sanpham/admin">Product</a></li>
+		<li class="icn_categories"><a href="<?php echo base_url()?>categorysanpham/admin">Categories</a></li>
+	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
 		<li class="icn_application"><a href="<?php echo base_url()?>example/admin">Example</a></li>

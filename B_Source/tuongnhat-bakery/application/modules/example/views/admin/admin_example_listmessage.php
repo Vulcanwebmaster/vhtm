@@ -39,5 +39,5 @@
 		</div><!-- end of .tab_container -->
 				</article><!-- end of content manager article -->	
 
-<?php echo $this->paging_library->ajax_paging("ajax_paging","content")?>
+<?php echo $this->paging_library->ajax_paging("ajax_paging","content","ajax")?>
 		

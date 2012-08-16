@@ -3,7 +3,7 @@
       function __construct(){
           $this->CI = get_instance();
       }
-      function ajax_paging($id_paging,$id_content)
+      function ajax_paging($id_paging,$id_content,$ajax)
       {
 		      	$data = '
 		      	  <script>
@@ -14,7 +14,7 @@
 		      $("#'.$id_paging.' a").click(function() {
 		        var url = $(this).attr("href");
 		    	var form_data = {
-		    			ajax: \'1\'		
+		    			'.$ajax.': \'1\'		
 		    		};
 		        $.ajax({
 		          type: "POST",
