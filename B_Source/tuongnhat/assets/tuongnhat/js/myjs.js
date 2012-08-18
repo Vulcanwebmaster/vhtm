@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+$(document).ready(function(){	
+	$('.level2').hide();
+	$('.menuitem').mouseover(function(){
+		$(this).children('.level2').slideDown();
+	});
+	$('.menuitem').mouseleave(function(){
+		$(this).children('.level2').slideUp();
+	});
+});
