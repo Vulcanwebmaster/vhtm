@@ -6,14 +6,14 @@
     <meta content="IE=8" http-equiv="X-UA-Compatible" />
     <meta name="google-site-verification" content="3uDygLHhHDKj5B_fnNhCEOjGSpw0h-FKI5LWBTVebTU" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="<?php echo base_url();?>assets/bakery/images/misc/deh.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?php echo base_url();?>assets/bakery/images/misc/deh.ico" type="image/x-icon" />
     <title><?php if (isset($title)) echo $title;
     		else echo 'Tuong Nhat Bakery';?></title>
-    <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url();?>assets/bakery/css/css_398aefa4654252bc4c36ae2f94506dc8.css" tppabs="css/css_398aefa4654252bc4c36ae2f94506dc8.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url();?>assets/bakery/css/css_398aefa4654252bc4c36ae2f94506dc8.css" />
    
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/bakery/css/nivo-slider.css">
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/bakery/themes/default/default.css">
-    <script type="text/javascript" src="<?php echo base_url();?>assets/bakery/js/js_947739bfd73690c18a3dfba113b7c80c.jsmin.js" tppabs="js/js_947739bfd73690c18a3dfba113b7c80c.jsmin.js"></script>
+	<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/bakery/css/nivo-slider.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/bakery/themes/default/default.css"/>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/bakery/js/js_947739bfd73690c18a3dfba113b7c80c.jsmin.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/bakery/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/bakery/js/jquery.nivo.slider.js"></script>
 
@@ -87,41 +87,28 @@
 	    <a href="#navi-main">Zur Hauptnavigation springen</a>
 	    <a href="#navi-sub">Jump to subnavigation</a>
 	    <a href="#navi-std">Jump to standards navigation</a>
-	  </div>
+	</div>
 	
-	  <div id="page-top" class="pngfix"></div>
+	<div id="page-top" class="pngfix"></div>
 	
-	  <div id="page-wrapper" class="pngfix">
-	 	<?php $this->load->view('front/content.php');?>
+	<div id="page-wrapper" class="pngfix">
+		<div id="content-wrapper" class="clear-block">
+			<div id="center">
+				<?php $this->load->view('front/content.php');?>
+			</div>
+			<?php $this->load->view('front/right.php');?>
+		</div>
+	 	
 		 <?php $this->load->view('front/header.php');?>
 		 <?php $this->load->view('front/footer.php');?>
-	 </div>
+	</div>
 	 
-	 <div id="page-bottom" class="pngfix">
+	<div id="page-bottom" class="pngfix">
     </div>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/bakery/js/js_1a70e5d7476a8e976ab401602e9d16f9.jsmin.js"
-        tppabs="<?php echo base_url();?>assets/bakery/js/js_1a70e5d7476a8e976ab401602e9d16f9.jsmin.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="<?php echo base_url();?>assets/bakery/js/js_1a70e5d7476a8e976ab401602e9d16f9.jsmin.js"></script>
 
 
-<!--/Shadowbox.init({"player":["img"],"handleOversize":"drag"})/--><![CDATA[//><!--Shadowbox.init({"player":["img"],"handleOversize":"drag"})//--><!]]>
 
-    </script>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-32502318-1']);
-        _gaq.push(['_gat._anonymizeIp']);
-        _gaq.push(['_setDomainName', 'entrup-haselbach.de']);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? '' : '') + 'js/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    [if lt IE 7]>
-    <script src="js/DD_belatedPNG_0.0.8a-min.js" tppabs="<?php echo base_url();?>assets/bakery/js/DD_belatedPNG_0.0.8a-min.js"></script>
-    <script>        DD_belatedPNG.fix('.pngfix');</script>
-    <![endif]
+
   </body>
+  </html>

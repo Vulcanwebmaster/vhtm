@@ -77,6 +77,14 @@ class NIW_Controller extends CI_Controller {
 			{
 				$this->$error = '';
 			}
+		}		
+	}
+	
+	function SetLangSession()
+	{
+		if ($this->session->userdata('lang')=='')
+		{
+			$this->session->set_userdata('lang','vn');
 		}
 	}
 }
