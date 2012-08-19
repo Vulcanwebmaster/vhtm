@@ -29,7 +29,7 @@
 			$data['info']=$this->Msanpham->GetCategoryById($id);
 			$data['relate_products']=$this->Msanpham->GetProductByCategoryId($id);
 			$data['module']=$this->module;
-			$data['page']='vdetail';
+			$data['page']='vdetail-category';
 			$this->load->view('front/container',$data);
 		}
 		
@@ -38,6 +38,14 @@
 			$data['detail_product']=$this->Msanpham->GetDetailProductById($product_id);
 			$data['module']=$this->module;
 			$data['page']='vdetail-product';
+			$this->load->view('front/container',$data);
+		}
+		
+		function new_products()
+		{
+			$data['list']=$this->Msanpham->GetListNew();
+			$data['module']=$this->module;
+			$data['page']='vnew-list';
 			$this->load->view('front/container',$data);
 		}
 	}

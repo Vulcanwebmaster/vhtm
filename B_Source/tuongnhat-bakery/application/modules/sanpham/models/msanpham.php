@@ -57,5 +57,19 @@
 			}
 			else false;
 		}
+		
+		function GetListNew()
+		{
+			$this->db->where('product_new !=','0');
+			$this->db->or_where('product_new !=','');
+			$ds=$this->db->get('n_b_product');
+			$list=array();
+			foreach ($ds->result() as $cate)
+			{
+				$list[]=$cate;
+			}
+			$ds->free_result();
+			return $list;
+		}
 	}
 ?>
