@@ -1,5 +1,17 @@
 <section id="main" class="column" style="width:100%;">
 <form action="<? echo base_url()?>example/admin/savecontact" method="post">
+	  	<fieldset>
+     <label>Short content</label>
+     <textarea name="short_content" id="content_1" ></textarea>
+     <?php echo display_ckeditor($ckeditor_1); ?>
+    </fieldset><div class="clear"></div>
+      
+    <fieldset> 
+     <label>Main content</label>
+     <textarea name="main_content" id="content_2" ></textarea>
+     <?php echo display_ckeditor($ckeditor_2); ?>
+    </fieldset><div class="clear"></div>
+    
 	<article class="module width_full" style="width:95%;">
 		<header><h3>Contact Infomation</h3></header>
 			<div class="module_content">

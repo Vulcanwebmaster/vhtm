@@ -4,7 +4,6 @@
 			<div class="slogan">
 				<p><span class="clr-1">Phục vụ</span> khách hàng với chất lượng dịch vụ tốt nhất</p>
 				<p>Làm hài lòng quý vị là phương châm hoạt động của chúng tôi.</p>
-				<a href="#" class="button-2">click here</a>
 			</div>
 			<div class="wrap page1-row1">
 				<div class="box-1 border-right">

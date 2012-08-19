@@ -3,7 +3,6 @@
         <div class="slogan top-1">
         	<p>Chúng tôi <span class="clr-1">cung cấp</span> cho bạn <span class="clr-1">những</span>  dịch vụ <span class="clr-1">tốt nhất</span></p>
             <p>Làm hài lòng quý vị là phương châm hoạt động của chúng tôi.</p>
-            <a href="#" class="button-2">click here</a>
         </div>
         <div class="wrap page2-row1">
         	<div class="page2-col-1 border-right">

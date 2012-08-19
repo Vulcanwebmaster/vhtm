@@ -3,7 +3,7 @@
         <div class="slogan top-1">
         	<p>Chúng tôi <span class="clr-1">cung cấp</span> cho bạn <span class="clr-1">những</span>  dịch vụ <span class="clr-1">tốt nhất</span></p>
             <p>Làm hài lòng quý vị là phương châm hoạt động của chúng tôi.</p>
-            <a href="#" class="button-2">click here</a>
+            
         </div>
         <div class="page5-row1">
             <div class="page5-col-1 border-right">
@@ -16,21 +16,34 @@
                     <dd><span>Fax:</span><strong>(+844) 38284948</strong></dd>
                     <dd><span>Email:</span><a href="#" class="link">Lien@kensingtoncoll.ac.uk</a><br/></dd>
                     <dd style="padding-left:72px;"><a href="#" class="link">kcb2vietnam@gmail.com</a><br/></dd>
-                    <dd><span>Website:</span><a href="#" class="link">www.kensingtoncoll.ac.uk/vietnam</a></dd><br/>
+                    <dd><span>Website:</span><a href="#" class="link">www.kensingtoncoll.ac.uk/vietnam</a></dd>
                     <dd><img src="<?php echo base_url();?>assets/tuongnhat/images/fc.png"/></dd>
                     
                 </dl> 
             </div>
             <div class="page5-col-2">
+            	<p style="color:#9eb4be">
+            		<?php echo $this->session->userdata('result');?>
+				</p>
+            	<?php if (validation_errors())
+            	{
+            		echo '<div>';
+            		echo validation_errors('<p style="color:#cf4e47">','</p>');
+            		echo '</div>';
+            	}?>
             	<h2><span class="clr-1">L</span>iên hệ:</h2>
-                <form id="form" method="post" >
+                <form id="form" method="post" action="<?php echo base_url();?>lienhe/Insert">
                   <fieldset>
-                    <label><strong>Tên:</strong><input type="text" value=""><strong class="clear"></strong></label>
-                    <label><strong>Email:</strong><input type="text" value=""><strong class="clear"></strong></label>
-                    <label><strong>Thông tin:</strong><textarea></textarea><strong class="clear"></strong></label>
+                    <label><strong>Tên:</strong><input type="text" value="" name="ten"><strong class="clear"></strong></label>
+                    <label><strong>Email:</strong><input type="text" value="" name="email"><strong class="clear"></strong></label>
+                    <label><strong>Thông tin:</strong><textarea name="thongtin" id="thongtin"></textarea><strong class="clear"></strong></label>
                     <strong class="clear"></strong>
-                    <div class="btns"><a href="#" class="link-2">Xóa</a><a href="#" class="link-2" onClick="document.getElementById('form').submit()">Gửi</a></div>
-                    <div style="margin-top:10px;">Sơ đồ<img src="<?php echo base_url();?>assets/tuongnhat/images/map.jpg"/ width="460px" height="200px" style="padding-left:100px;"></div>
+                    <div class="btns">
+                    	<input type="submit" value="Gửi" style="width:auto; height:auto; float:right; text-transform:uppercase; text-decoration:underline; cursor:pointer"/>
+                    </div>
+                    <div style="margin-top:10px;">Sơ đồ
+                    	 <iframe style="float:right" width="460" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=H%E1%BB%93ng+Ph%C3%BAc,+qu%E1%BA%ADn+Ba+%C4%90%C3%ACnh,+H%C3%A0+N%E1%BB%99i,+Vietnam&amp;aq=&amp;sll=21.042044,105.846984&amp;sspn=0.002483,0.005284&amp;ie=UTF8&amp;hq=&amp;hnear=H%E1%BB%93ng+Ph%C3%BAc,+Ba+Dinh+District,+Hanoi,+Vietnam&amp;t=m&amp;ll=21.040687,105.848465&amp;spn=0.016022,0.039396&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=H%E1%BB%93ng+Ph%C3%BAc,+qu%E1%BA%ADn+Ba+%C4%90%C3%ACnh,+H%C3%A0+N%E1%BB%99i,+Vietnam&amp;aq=&amp;sll=21.042044,105.846984&amp;sspn=0.002483,0.005284&amp;ie=UTF8&amp;hq=&amp;hnear=H%E1%BB%93ng+Ph%C3%BAc,+Ba+Dinh+District,+Hanoi,+Vietnam&amp;t=m&amp;ll=21.040687,105.848465&amp;spn=0.016022,0.039396&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                    </div>
                   </fieldset>  
                 </form> 
                 
@@ -44,7 +57,7 @@
 						<form id="form-search" method="post">
 						  <span>Nhập địa chỉ email:</span>
 						  <input type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  />
-						  <a href="#" onClick="document.getElementById('form-search').submit()" class="link-2">Đăng ký</a>
+						  <a href="#" class="link-2">Đăng ký</a>
 						</form>
 					</div>
 					<div class="aside-col-2 border-right-2">
