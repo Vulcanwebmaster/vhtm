@@ -71,5 +71,25 @@
 			$ds->free_result();
 			return $list;
 		}
+		
+		function countFullProduct()
+		{
+			$ds=$this->db->get('n_b_product');
+			$amount=$ds->num_rows();
+			$ds->free_result();
+			return $amount;
+		}
+		
+		function getListProduct($index)
+		{
+			$ds=$this->db->get('n_b_product',6,$index);
+			$list=array();
+			foreach ($ds->result() as $product)
+			{
+				$list[]=$product;
+			}
+			$ds->free_result();
+			return $list;
+		}
 	}
 ?>

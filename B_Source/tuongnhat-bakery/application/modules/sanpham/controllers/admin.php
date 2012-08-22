@@ -9,84 +9,52 @@
 			$this->module = strtolower(get_class());
 			//load model
 			$this->load->model('Msanpham');
-			$this->load->library('editor_library');
+			$this->load->library('pagination');
+			$this->load->helper('ckeditor');
 		}
 		
 		function index()
 		{
-			//paging
-			$baseurl = base_url().'sanpham/admin/index';
-			$totalrow = $this->Msanpham->getProductRow();
-			$perpage = 3;
-			$urisegment = 4;
-			$config = $this->PagingConfig($baseurl,$totalrow,$perpage,$urisegment);
-			$this->pagination->initialize($config);
-			$data['listpaging']=$this->Msanpham->getProducts($config['per_page'],$this->uri->segment(4));
-			$data['paging'] = $this->pagination->create_links();
-			//
-			if(!$this->input->post('ajax_sanpham'))
-			{
-				$data['module']=$this->module;
-				$data['page']="admin_sanpham_vsanpham";
-				$data['title'] = "Products";
-				//Breadcrumb data
-				$data['bcCurrent'] = "Show Products";
-				
-				$this->load->view('admin/container',$data);
-			}
-			else {
-				$this->load->view('admin/admin_sanpham_vsanpham_ajax',$data);
-			}
-			
-		}
-		function getDetailProduct()
-		{
-			$data['product']=$this->Msanpham->detailProduct();
-			$data['module'] = $this->module;
-			$data['title'] = "Detail Product";
-			$data['page'] = "admin_sanpham_detailproduct";
-			//Breadcrumb data
-			$data['bcLv1']= "Product";
-			$data['bcLv1_link']= "sanpham/admin";
-			$data['bcCurrent'] = "Details Product";
-			$this->load->view('admin/container',$data);
-		}
-		function updateProduct()
-		{
-			if($this->Msanpham->updateProduct()==TRUE)
-			{
-				redirect('sanpham/admin');
-			}
-			
-		}
-		function getInsertProduct()
-		{
-			//get category product
-			$data['category']=$this->Msanpham->getCategoryProduct();
-			$data['product']=$this->Msanpham->detailProduct();
-			$data['module'] = $this->module;
-			$data['title'] = "Detail Product";
-			$data['page'] = "admin_sanpham_insert";
-			//Breadcrumb data
-			$data['bcLv1']= "Product";
-			$data['bcLv1_link']= "sanpham/admin";
-			$data['bcCurrent'] = "Insert Product";
-			$this->load->view('admin/container',$data);
-		}
-		function insertProduct()
-		{
-			if($this->Msanpham->insertProduct()==TRUE)
-			{
-				redirect('sanpham/admin');
-			}
-		}
-		function delProduct()
-		{
-			if($this->Msanpham->delProduct()==true)
-			{
-				redirect('sanpham/admin');
-			}
+			$this->paging();
 		}
 		
+		//================== PRODUCT ===========================================
+		function paging($index=0)
+		{
+			$config['base_url']=base_url().'sanpham/admin/paging';
+			$config['uri_segment']=4;
+			$config['total_rows']=$this->Msanpham->countFullProduct();
+			$config['per_page']=6;
+			$this->pagination->initialize($config);
+			
+			$data['list']=$this->Msanpham->getListProduct($index);
+			$data['module']=$this->module;
+			$data['page']='admin-list-product';
+			$data['title']='Sản phẩm';
+			$data['bcCurrent']='Sản phẩm';
+			$this->load->view('admin/container',$data);
+		}
+		
+		function editProductById($id=0)
+		{
+			$data['motav']=$this->setupCKEditor('motav');
+			$data['motae']=$this->setupCKEditor('motae');
+			$data['huongdanv']=$this->setupCKEditor('huongdanv');
+			$data['huongdane']=$this->setupCKEditor('huongdane');
+			$data['lodoiluuv']=$this->setupCKEditor('lodoiluuv');
+			$data['lodoiluue']=$this->setupCKEditor('lodoiluue');
+			$data['loquayv']=$this->setupCKEditor('loquayv');
+			$data['loquaye']=$this->setupCKEditor('loquaye');
+			$data['dinhduongv']=$this->setupCKEditor('dinhduongv');
+			$data['dinhduonge']=$this->setupCKEditor('dinhduonge');
+			$data['hinhanh']=$this->setupCKEditor('hinhanh');
+			
+			$data['title']='Sản phẩm';
+			$data['bcCurrent']='Sản phẩm';
+			$data['info']=$this->Msanpham->GetDetailProductById($id);
+			$data['page']='admin-edit-product';
+			$data['module']=$this->module;
+			$this->load->view('admin/container',$data);
+		}
 	}
 ?>
