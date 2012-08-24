@@ -7,6 +7,12 @@ class Homepage extends NIW_controller {
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
+		
+		$this->SetLang();
+		
+		if ($this->session->userdata('lang')=='vn')
+			$this->lang->load('tn','vietnamese');
+		else $this->lang->load('tn','english');
 	}
 	
 	public function index()

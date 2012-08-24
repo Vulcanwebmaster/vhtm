@@ -10,6 +10,13 @@
 			$this->load->library('form_validation');
 			$this->load->library('session');
 			$this->load->model('Mlienhe');
+			
+			//Language:
+			$this->SetLang();
+		
+			if ($this->session->userdata('lang')=='vn')
+				$this->lang->load('tn','vietnamese');
+			else $this->lang->load('tn','english');
 		}
 		
 		function index()
@@ -44,9 +51,16 @@
 					$input=$this->_GetInput();
 					if ($this->Mlienhe->Insert($input))
 					{
-						$this->session->set_userdata('result','Thông tin của bạn đã được gửi thành công');
+						if ($this->session->userdata('lang','vn'))
+							$this->session->set_userdata('result','Thông tin của bạn đã được gửi thành công');
+						else $this->session->set_userdata('result','Your message has sent succesful');
 					}
-					else $this->session->set_userdata('result','Không thành công');
+					else 
+					{
+						if ($this->session->userdata('lang','vn'))
+							$this->session->set_userdata('result','Không thành công');
+						else $this->session->set_userdata('result','Your message has not sent. Try again!');
+					}
 				}
 			}
 			$this->index();

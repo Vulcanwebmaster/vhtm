@@ -79,6 +79,12 @@ class NIW_Controller extends CI_Controller {
 			}
 		}
 	}
+	
+	function SetLang()
+	{
+		if ($this->session->userdata('lang')=='')
+			$this->session->set_userdata('lang','vn');
+	}
 }
 
 /* End of file welcome.php */

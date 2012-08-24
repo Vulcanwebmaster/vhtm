@@ -769,7 +769,26 @@ class CI_Session {
 		}
 	}
 
-
+	function CutText($text)
+	{
+		$i=0;
+		$space=0;
+		while ($space<2)
+		{
+			if ($text[$i]==' ') $space++;
+			$i++;
+		}
+		$result=array('before'=>substr($text, 0, $i),
+						'after'=>substr($text, $i));
+		return $result;
+	}
+	
+	function GetFirstChar($text)
+	{
+		$result=array('before'=>$text[0],
+						'after'=>substr($text, 1));
+		return $result;
+	}
 }
 // END Session Class
 
