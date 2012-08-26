@@ -70,26 +70,26 @@
 		}
 		function getInsertCategory()
 		{
-			$this->load->library ('ckeditor_php5',array('instanceName' => 'category_image','basePath'=> base_url()."assets/bakery/js/ckeditor/", 'outPut' => true));                             
-			$config = array();
-			$config['toolbar'] = array(
-			        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
-			        array( 'Image', 'Link', 'Unlink', 'Anchor' )
-			);
-			$config['filebrowserBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html";
-			$config['filebrowserImageBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html?type=Images";
-			$config['filebrowserUploadUrl'] =base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
-			$config['filebrowserImageUploadUrl'] =base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
-			$config[‘toolbar’]="Full";
-			$config[‘width’]="97%";
-			$config[‘height’]="100px";
-			$data['category_image'] = $this->ckeditor->editor("mi-textarea", "<p>Valor inicial.</p>",$config);
+			//$this->load->library ('ckeditor_php5',array('instanceName' => 'category_image','basePath'=> base_url()."assets/bakery/js/ckeditor/", 'outPut' => true));                             
+			//$config = array();
+			//$config['toolbar'] = array(
+			//        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+			//        array( 'Image', 'Link', 'Unlink', 'Anchor' )
+			//);
+			//$config['filebrowserBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html";
+			//$config['filebrowserImageBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html?type=Images";
+			//$config['filebrowserUploadUrl'] =base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
+			//$config['filebrowserImageUploadUrl'] =base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
+			//$config[‘toolbar’]="Full";
+			//$config[‘width’]="97%";
+			//$config[‘height’]="100px";
+			//$data['category_image'] = $this->ckeditor->editor("mi-textarea", "<p>Valor inicial.</p>",$config);
 			
 			
 			
 			$data['catogories_decription_en']=$this->setupCKEditor('catogories_decription_en');
 			$data['catogories_decription_vn']=$this->setupCKEditor('catogories_decription_vn');
-			//$data['category_image']=$this->setupCKEditor('category_image');
+			$data['category_image']=$this->setupCKEditor('category_image');
 			
 			$data['module'] = $this->module;
 			$data['title'] = "Insert Category Product";

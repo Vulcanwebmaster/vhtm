@@ -41,4 +41,17 @@
 	$lang['lienhe_ma']='What code is in the image?';
 	$lang['lienhe_nhapma']='Enter the characters shown in the image.';
 	$lang['lienhe_submit']='Submit';
+	//============================== DANH MUC SAN PHAM ====================================
+	$lang['category-admin-product-category']='Product Category';
+	$lang['category-admin-id']='Id';
+	$lang['category-admin-name-vn']='Name (VN)';
+	$lang['category-admin-name-en']='Name (EN)';
+	$lang['category-admin-description-vn']='Description (VN)';
+	$lang['category-admin-description-en']='Description (EN)';
+	$lang['category-admin-image']='Image';
+	$lang['category-admin-actions']='Actions';
+	$lang['category-admin-insert']='Insert';
+	$lang['category-admin-insert-new']='Insert new Product Category';
+	$lang['category-admin-update']='Update';
+	$lang['category-admin-update-category']='Update Product Category';
 ?>

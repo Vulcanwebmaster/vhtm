@@ -23,7 +23,7 @@
 				</fieldset><div class="clear"></div>
 				<fieldset style="width:100%; float:left;"> <!-- to make two field float next to one another, adjust values accordingly -->
 					<label><?php echo $this->lang->line('category-admin-image');?></label>
-					<textarea rows="5" style="width: 521px; height: 100px;" name="category_image" id="category_image"></textarea>							
+					<textarea rows="5" style="width: 521px; height: 100px;" name="category_image" id="category_image"><?php echo $row->category_image?></textarea>							
 					<?php echo display_ckeditor($category_image); ?>	
 				</fieldset><div class="clear"></div>	
 			</div>		

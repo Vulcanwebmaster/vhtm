@@ -41,4 +41,17 @@
 	$lang['lienhe_ma']='Mã bảo vệ';
 	$lang['lienhe_nhapma']='Hãy nhập đoạn mã trong hình trên';
 	$lang['lienhe_submit']='Liên hệ';
+	//============================== DANH MUC SAN PHAM ====================================
+	$lang['category-admin-product-category']='Danh mục sản phẩm';
+	$lang['category-admin-id']='Mã';
+	$lang['category-admin-name-vn']='Tên (t. Việt)';
+	$lang['category-admin-name-en']='Tên (t. Anh)';
+	$lang['category-admin-description-vn']='Mô tả (t. Việt)';
+	$lang['category-admin-description-en']='Mô tả (t. Anh)';
+	$lang['category-admin-image']='Ảnh';
+	$lang['category-admin-actions']='Thao tác';
+	$lang['category-admin-insert']='Tạo mới';
+	$lang['category-admin-insert-new']='Tạo mới danh mục sản phẩm';
+	$lang['category-admin-update']='Cập nhật';
+	$lang['category-admin-update-category']='Cập nhật danh mục sản phẩm';
 ?>
