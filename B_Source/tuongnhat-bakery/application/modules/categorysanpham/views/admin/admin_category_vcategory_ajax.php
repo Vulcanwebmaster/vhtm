@@ -1,4 +1,4 @@
-		<header><h3 class="tabs_involved">Products</h3>
+		<header><h3 class="tabs_involved"><?php echo $this->lang->line('category-admin-product-category');?></h3>
 			<ul class="tabs">
 			<div id="ajax_paging">
    				<?php echo $paging;?>
@@ -6,28 +6,31 @@
 			</ul>
 		</header>
 		<div class="tab_container">
-			<div id="tab1" class="tab_content">
-   		
-
-			<table class="tablesorter" cellspacing="0"> 
+			<div id="tab1" class="tab_content" style="overflow:auto">
+			<table class="tablesorter" cellspacing="0" style="width:1800px"> 
 			<thead> 
 				<tr> 
-    				<th>Name_VN</th> 
-    				<th>Name_EN</th>
-    				<th>Actions</th> 
+    				<th style="width: 50px"><?php echo $this->lang->line('category-admin-id');?></th> 
+    				<th style="width: 150px"><?php echo $this->lang->line('category-admin-name-en');?></th>
+    				<th style="width: 150px"><?php echo $this->lang->line('category-admin-name-vn');?></th> 
+    				<th style="width: 500px"><?php echo $this->lang->line('category-admin-description-en');?></th>
+    				<th style="width: 500px"><?php echo $this->lang->line('category-admin-description-vn');?></th> 
+    				<th style="width: 200px"><?php echo $this->lang->line('category-admin-image');?></th> 
+    				<th style="width: 100px"><?php echo $this->lang->line('category-admin-actions');?></th> 
 				</tr> 
 			</thead> 
 			<tbody> 
 			<?php foreach ($listpaging as $row):?>
-			<?php echo form_open('sanpham/admin/getInsertProduct')?>
+			<?php //echo form_open('sanpham/admin/getInsertProduct')?>
 				<tr> 
 					<td><?php echo $row-> category_id?></td> 
     				<td><?php echo $row-> category_name_en?></td>  
     				<td><?php echo $row-> category_name_vn?></td> 
-    				<td><?php echo $row-> category_decription_en?></td>  
-    				<td><?php echo $row-> category_decription_vn?></td> 
-    				<td><a href="<?php echo base_url()?>sanpham/admin/getDetailProduct/<?php echo $row->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-    				<a href="<?php echo base_url()?>sanpham/admin/delProduct/<?php echo $row->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a></td>
+    				<td><?php echo $row-> catogories_decription_en?></td>  
+    				<td><?php echo $row-> catogories_decription_vn?></td> 
+    				<td><img height="190" width="240" class="imagecache imagecache-prodgroup" title="Spelt wheat and organic products" alt="Spelt wheat and organic products" src="<?php echo base_url().$row-> category_image?>"></td>
+    				<td><a href="<?php echo base_url()?>categorysanpham/admin/getUpdateCategory/<?php echo $row->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+    				<a href="<?php echo base_url()?>categorysanpham/admin/delCategory/<?php echo $row->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a></td>
     			</tr> 
 		
 			<?php endforeach;?>
@@ -35,11 +38,13 @@
 			</tbody> 
 			</table>
 			</div>
+			<?php echo form_open('categorysanpham/admin/getInsertCategory')?>
 				<footer>
 					<div class="submit_link">
-						<input type="submit" value="Insert" class="alt_btn">
+						<input type="submit" value="<?php echo $this->lang->line('category-admin-insert');?>" class="alt_btn">
 					</div>
 				</footer>
+			</form> 
 		</form> 
 		</div><!-- end of .tab_container -->
 <?php echo $this->paging_library->ajax_paging("ajax_paging","content","ajax_category")?>
