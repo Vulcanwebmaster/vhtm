@@ -1,3 +1,11 @@
+<?php if ($this->session->userdata('backend_product_result')!='')
+{
+	echo '<p style="color:red; padding-left:30px">';
+	echo $this->session->userdata('backend_product_result');
+	$this->session->unset_userdata('backend_product_result');
+	echo '</p>';
+}?>
+
 <article class="module width_3_quarter" style="width: 95%;">
 <header>
 	<h3 class="tabs_involved"><?php if (isset($bcCurrent)) echo $bcCurrent;?></h3>
@@ -8,7 +16,8 @@
 	<div id="tab1" class="tab_content" style="overflow:auto">
 		<table class="tablesorter" cellspacing="0" style="width:2300px"> 
 			<thead> 
-				<tr> 
+				<tr>
+					<th style="width:80px">Chức năng</th> 
 		    		<th style="width:70px">Danh mục</th> 
 		    		<th>Tên V</th>
 		    		<th>Tên E</th>
@@ -26,13 +35,15 @@
 					<th>Dinh dưỡng E</th>
 					<th style="width:100px">Sản phẩm mới</th>
 					<th>Hình ảnh</th>
-					<th style="width:80px">Chức năng</th>
+					
 				</tr> 
 			</thead> 
 			<tbody> 
 				<?php foreach ($list as $item)
 				{?>
 					<tr> 
+						<td><a href="<?php echo base_url();?>sanpham/admin/editProductById/<?php echo $item->product_id;?>" title="Edit"><img src="<?php echo base_url();?>assets/admin/images/icn_edit.png"></a>
+    				<a href="<?php echo base_url();?>sanpham/admin/deleteProductById/<?php echo $item->product_id;?>" title="Del"><img src="<?php echo base_url();?>assets/admin/images/icn_trash.png"></a></td>
 			    		<td><?php echo $item->category_id;?></td> 
 			    		<td><?php echo $item->product_name_vn;?></td> 
 			    		<td><?php echo $item->product_name_en;?></td> 
@@ -50,8 +61,6 @@
 			    		<td><?php echo $item->product_nutrient_content_en;?></td> 
 			    		<td><?php echo $item->product_new;?></td> 
 			    		<td><?php echo $item->product_img;?></td> 
-			    		<td><a href="<?php echo base_url();?>sanpham/admin/editProductById/<?php echo $item->product_id;?>" title="Edit"><img src="<?php echo base_url();?>assets/admin/images/icn_edit.png"></a>
-    				<a href="http://localhost/leerobertsonx/app/admin/delApp/1" title="Del"><img src="<?php echo base_url();?>assets/admin/images/icn_trash.png"></a></td>
 					</tr>
 				<?php }?>
 			</tbody> 
@@ -62,8 +71,7 @@
 <form action="http://localhost/leerobertsonx/app/admin/getPost" method="post">
 		<div class="submit_link">
 			<?php echo $this->pagination->create_links();?>	
-			<input type="submit" value="Thêm sản phẩm" class="alt_btn">
-					
+			<a href="<?php echo base_url();?>sanpham/admin/insertNewProduct" class='alt_btn'>Thêm mới</a>				
 		</div>
 		</form>
 	</footer>

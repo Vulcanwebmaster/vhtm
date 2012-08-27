@@ -47,6 +47,11 @@
 		}
 		function getUpdateCategory()
 		{
+			//=============================================
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/bakery/js/ckeditor/", 'outPut' => true));                             
+			$data['config'] = $this->setupCKEditor();
+			//=============================================
+			
 			$data['catogories_decription_en']=$this->setupCKEditor('catogories_decription_en');
 			$data['catogories_decription_vn']=$this->setupCKEditor('catogories_decription_vn');
 			$data['category_image']=$this->setupCKEditor('category_image');

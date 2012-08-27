@@ -55,48 +55,20 @@ class Admin_Controller extends NIW_Controller
 		return $config;
 	}
 	
-	function setupCKEditor($id='')
+	function setupCKEditor()
 	{
-		$result=array(
- 
-			//ID of the textarea that will be replaced
-			'id' 	=> 	$id,
-			'path'	=>	'assets/bakery/js/ckeditor',
- 
-			//Optionnal values
-			'config' => array(
-				'toolbar' 	=> 	"Full", 	//Using the Full toolbar
-				'width' 	=> 	"97%",	//Setting a custom width
-				'height' 	=> 	'100px',	//Setting a custom height
- 
-			),
- 
-			//Replacing styles from the "Styles tool"
-			'styles' => array(
- 
-				//Creating a new style named "style 1"
-				'style 1' => array (
-					'name' 		=> 	'Blue Title',
-					'element' 	=> 	'h2',
-					'styles' => array(
-						'color' 	=> 	'Blue',
-						'font-weight' 	=> 	'bold'
-					)
-				),
- 
-				//Creating a new style named "style 2"
-				'style 2' => array (
-					'name' 	=> 	'Red Title',
-					'element' 	=> 	'h2',
-					'styles' => array(
-						'color' 		=> 	'Red',
-						'font-weight' 		=> 	'bold',
-						'text-decoration'	=> 	'underline'
-					)
-				)				
-			)
-		);
-		return $result;
+		$config['toolbar'] = array(
+			        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+			        array( 'Image', 'Link', 'Unlink', 'Anchor' )
+			);
+		$config['filebrowserBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html";
+		$config['filebrowserImageBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html?type=Images";
+		$config['filebrowserUploadUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
+		$config['filebrowserImageUploadUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
+		$config['toolbar']='Full';
+		$config['width']='97%';
+		$config['height']='100px';
+		return $config;
 	}
 }
 

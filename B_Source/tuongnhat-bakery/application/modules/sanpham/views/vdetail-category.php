@@ -64,9 +64,10 @@
 					        ?></a>
 	                </div>
 	                <div class="foto">
-	                    <img src="<?php echo base_url().$item->product_img;?>"
+	                	<?php echo $item->product_img;?>
+	                    <!-- img src="<?php echo base_url().$item->product_img;?>"
 	                        alt="Crusty spelt wheat roll 85g, partly baked " title="Crusty spelt wheat roll 85g, partly baked "
-	                        width="195" height="143" class="imagecache imagecache-product_thumb">
+	                        width="195" height="143" class="imagecache imagecache-product_thumb" -->
 	                </div>
 	                <?php if ($item->product_new!='')
 	                {?>

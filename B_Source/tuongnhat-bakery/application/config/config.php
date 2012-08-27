@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/tuongnhat-bakery/';
+$config['base_url']	= 'http://localhost/tuongnhat_bakery/';
 
 /*
 |--------------------------------------------------------------------------

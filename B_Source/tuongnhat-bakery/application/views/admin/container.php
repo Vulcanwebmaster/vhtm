@@ -21,7 +21,7 @@
 	<script src="<?php echo base_url()?>/assets/admin/js/jquery.tablesorter.min.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" src="<?php echo base_url()?>/assets/admin/js/jquery.equalHeight.js"></script>
-	<?php echo $this->editor_library->init_editor()?>
+	<!-- ?php echo $this->editor_library->init_editor()? -->
     <script type="text/javascript">
     $(function(){
         $('.column').equalHeight();

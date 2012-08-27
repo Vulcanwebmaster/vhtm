@@ -91,5 +91,26 @@
 			$ds->free_result();
 			return $list;
 		}
+		
+		function editProductById($input,$id)
+		{
+			if ($this->db->update('n_b_product',$input,array('product_id'=>$id)))
+				return true;
+			else return false;
+		}
+		
+		function deleteProductById($id)
+		{
+			if ($this->db->delete('n_b_product',array('product_id'=>$id)))
+				return true;
+			else return false;
+		}
+		
+		function insertNewProduct($input)
+		{
+			if ($this->db->insert('n_b_product',$input))
+				return true;
+			else return false;
+		}
 	}
 ?>

@@ -1,4 +1,10 @@
-<form action="admin/savePostApp" method="post">
+<?php if (validation_errors())
+{
+	echo '<div class="error" style="color:red; padding-left:30px">';
+	echo validation_errors('<p>','</p>');
+	echo '</div>';
+}?>	    
+<form action="<?php echo base_url();?>sanpham/admin/editProductById/<?php echo $info->product_id;?>" method="post">
 		<article class="module width_full">
 			<header><h3>Chỉnh sửa</h3></header>
 				<div class="module_content" style="overflow-y:auto; height:500px">
@@ -25,68 +31,59 @@
 						<fieldset>
 							<label>Mô tả (V)</label>
 							<center>
-								<textarea id="motav" name="motav"><?php echo $info->product_sales_name_vn;?></textarea>
-								<?php echo display_ckeditor($motav);?>		
+								<?php echo $this->ckeditor->editor("motav",$info->product_sales_name_vn ,$config);?>	
 							</center>				
 						</fieldset>
 						<fieldset>
 							<label>Mô tả (E)</label>
 							<center>
-								<textarea id="motae" name="motae"><?php echo $info->product_sales_name_en;?></textarea>
-								<?php echo display_ckeditor($motae);?>
+								<?php echo $this->ckeditor->editor("motae",$info->product_sales_name_en, $config);?>
 							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hướng dẫn (V)</label>
 							<center>
-								<textarea id="huongdanv" name="huongdanv"><?php echo $info->product_introductions_vn;?></textarea>
-								<?php echo display_ckeditor($huongdanv);?>
+								<?php echo $this->ckeditor->editor("huongdanv",$info->product_introductions_vn ,$config);?>
 							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hướng dẫn (E)</label>
 							<center>
-								<textarea id="huongdane" name="huongdane"><?php echo $info->product_introductions_en;?></textarea>
-								<?php echo display_ckeditor($huongdane);?>	
+								<?php echo $this->ckeditor->editor("huongdane",$info->product_introductions_en ,$config);?>	
 							</center>			
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò đối lưu (V)</label>
 							<center>
-								<textarea id="lodoiluuv" name="lodoiluuv"><?php echo $info->product_convection_oven_vn;?></textarea>
-								<?php echo display_ckeditor($lodoiluuv);?>
+								<?php echo $this->ckeditor->editor("lodoiluuv",$info->product_convection_oven_vn ,$config);?>
 							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò đối lưu (E)</label>
 							<center>
-								<textarea id="lodoiluue" name="lodoiluue"><?php echo $info->product_convection_oven_en;?></textarea>
-								<?php echo display_ckeditor($lodoiluue);?>
+								<?php echo $this->ckeditor->editor("lodoiluue",$info->product_convection_oven_en ,$config);?>
 							</center>								
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò quay (V)</label>
-							<textarea id="loquayv" name="loquayv"><?php echo $info->product_rotary_oven_vn;?></textarea>							
+							<?php echo $this->ckeditor->editor("loquayv",$info->product_rotary_oven_vn ,$config);;?>
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò quay (E)</label>
 							<center>
-								<textarea id="loquaye" name="loquaye"><?php echo $info->product_rotary_oven_en;?></textarea>
-								<?php echo display_ckeditor($loquaye);?>
+								<?php echo $this->ckeditor->editor("loquaye",$info->product_rotary_oven_en ,$config);;?>
 							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hàm lượng dinh dưỡng (V)</label>
 							<center>
-								<textarea id="dinhduongv" name="dinhduongv"><?php echo $info->product_nutrient_content_vn;?></textarea>
-								<?php echo display_ckeditor($dinhduongv);?>
+								<?php echo $this->ckeditor->editor("dinhduongv",$info->product_nutrient_content_vn ,$config);;?>
 							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hàm lượng dinh dưỡng (E)</label>
 							<center>
-								<textarea id="dinhduonge" name="dinhduonge"><?php echo $info->product_nutrient_content_en;?></textarea>
-								<?php echo display_ckeditor($dinhduonge);?>
+								<?php echo $this->ckeditor->editor("dinhduonge",$info->product_nutrient_content_en ,$config);;?>
 							</center>							
 						</fieldset>
 						<fieldset>
@@ -99,8 +96,7 @@
 						<fieldset>
 							<label>Hình ảnh</label>
 							<center>
-								<textarea id="hinhanh" name="hinhanh"><?php echo $info->product_img;?></textarea>
-								<?php echo display_ckeditor($hinhanh);?>
+								<?php echo $this->ckeditor->editor("hinhanh",$info->product_img ,$config);?>
 							</center>							
 						</fieldset>
 						<div class="clear"></div>

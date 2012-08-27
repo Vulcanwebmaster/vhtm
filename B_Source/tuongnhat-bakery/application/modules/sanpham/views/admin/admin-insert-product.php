@@ -1,10 +1,16 @@
-<form action="admin/savePostApp" method="post">
+<?php if (validation_errors())
+{
+	echo '<div class="error" style="color:red; padding-left:30px">';
+	echo validation_errors('<p>','</p>');
+	echo '</div>';
+}?>	 
+<form action="<?php echo base_url();?>sanpham/admin/insertNewProduct" method="post">
 		<article class="module width_full">
 			<header><h3>Chỉnh sửa</h3></header>
-				<div class="module_content">
+				<div class="module_content" style="overflow-y:auto; height:500px">
 						<fieldset>
 							<label>Danh mục</label>
-							<input type="text" name="danhmuc">							
+							<input type="text" name="danhmuc"/>							
 						</fieldset>
 						<fieldset>
 							<label>Tên (V)</label>
@@ -16,51 +22,69 @@
 						</fieldset>						
 						<fieldset>
 							<label>Unit</label>
-							<input type="text" name="unit">							
+							<input type="text" name="unit"/>							
 						</fieldset>
 						<fieldset>
 							<label>Carton</label>
-							<input type="text" name="carton">							
+							<input type="text" name="carton"/>							
 						</fieldset>
 						<fieldset>
 							<label>Mô tả (V)</label>
-							<textarea id="motav" name="motav"></textarea>						
+							<center>
+								<?php echo $this->ckeditor->editor("motav",'' ,$config);?>	
+							</center>				
 						</fieldset>
 						<fieldset>
 							<label>Mô tả (E)</label>
-							<textarea id="motae" name="motae"></textarea>							
+							<center>
+								<?php echo $this->ckeditor->editor("motae",'', $config);?>
+							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hướng dẫn (V)</label>
-							<textarea id="huongdanv" name="huongdanv"></textarea>							
+							<center>
+								<?php echo $this->ckeditor->editor("huongdanv",'' ,$config);?>
+							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hướng dẫn (E)</label>
-							<textarea id="huongdane" name="huongdane"></textarea>							
+							<center>
+								<?php echo $this->ckeditor->editor("huongdane",'' ,$config);?>	
+							</center>			
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò đối lưu (V)</label>
-							<textarea id="lodoiluuv" name="lodoiluuv"></textarea>							
+							<center>
+								<?php echo $this->ckeditor->editor("lodoiluuv",'' ,$config);?>
+							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò đối lưu (E)</label>
-							<textarea id="lodoiluue" name="lodoiluue"></textarea>								
+							<center>
+								<?php echo $this->ckeditor->editor("lodoiluue",'' ,$config);?>
+							</center>								
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò quay (V)</label>
-							<textarea id="loquayv" name="loquayv"></textarea>							
+							<?php echo $this->ckeditor->editor("loquayv",'' ,$config);;?>
 						</fieldset>
 						<fieldset>
 							<label>Sử dụng lò quay (E)</label>
-							<textarea id="loquaye" name="loquaye"></textarea>							
+							<center>
+								<?php echo $this->ckeditor->editor("loquaye",'' ,$config);;?>
+							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Hàm lượng dinh dưỡng (V)</label>
-							<textarea id="dinhduongv" name="dinhduongv"></textarea>							
+							<center>
+								<?php echo $this->ckeditor->editor("dinhduongv",'' ,$config);;?>
+							</center>							
 						</fieldset>
 						<fieldset>
-							<label>hàm lượng dinh dưỡng (E)</label>
-							<textarea id="dinhduonge" name="dinhduonge"></textarea>							
+							<label>Hàm lượng dinh dưỡng (E)</label>
+							<center>
+								<?php echo $this->ckeditor->editor("dinhduonge",'',$config);;?>
+							</center>							
 						</fieldset>
 						<fieldset>
 							<label>Sản phẩm mới</label>
@@ -69,7 +93,12 @@
 								<option value="1">Có</option>
 							</select>
 						</fieldset>
-						
+						<fieldset>
+							<label>Hình ảnh</label>
+							<center>
+								<?php echo $this->ckeditor->editor("hinhanh",'' ,$config);?>
+							</center>							
+						</fieldset>
 						<div class="clear"></div>
 				</div>
 			<footer>

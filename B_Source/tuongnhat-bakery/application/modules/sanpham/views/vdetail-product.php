@@ -123,7 +123,7 @@
         </p>
     </div>
     <div class="foto">
-        <img src="<?php echo base_url().$detail_product->product_img;?>" alt="Crusty spelt wheat roll 85g, partly baked " title="Crusty spelt wheat roll 85g, partly baked "
+        <?php echo $detail_product->product_img;?>
             width="195" height="143" class="imagecache imagecache-product_thumb">
     </div>
     <?php if ($detail_product->product_new!='' || $detail_product->product_new!='0')
