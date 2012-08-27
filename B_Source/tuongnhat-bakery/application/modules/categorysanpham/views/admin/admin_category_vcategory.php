@@ -29,7 +29,7 @@
     				<td><?php echo $row-> category_name_vn?></td> 
     				<td><?php echo $row-> catogories_decription_en?></td>  
     				<td><?php echo $row-> catogories_decription_vn?></td> 
-    				<td><img height="120" width="160" class="imagecache imagecache-prodgroup" title="Spelt wheat and organic products" alt="Spelt wheat and organic products" src="<?php echo base_url().$row-> category_image?>"></td>
+    				<td><?php echo $row-> category_image?></td>
     				<td><a href="<?php echo base_url()?>categorysanpham/admin/getUpdateCategory/<?php echo $row->category_id?>" title="View"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
     				<a href="<?php echo base_url()?>categorysanpham/admin/delCategory/id=<?php echo $row->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a></td>
     			</tr> 

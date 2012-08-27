@@ -30,7 +30,8 @@ class Mcategorysanpham extends CI_Model
 				'category_name_vn'=>$this->input->post('category_name_vn'),
 				'category_name_en'=>$this->input->post('category_name_en'),
 				'catogories_decription_vn'=>$this->input->post('catogories_decription_vn'),
-				'catogories_decription_en'=>$this->input->post('catogories_decription_en')
+				'catogories_decription_en'=>$this->input->post('catogories_decription_en'),
+				'category_image'=>$this->input->post('category_image')
 		));
 		$this->db->where('category_id',$id_category);
 		if($this->db->update('b_product_category',$data))

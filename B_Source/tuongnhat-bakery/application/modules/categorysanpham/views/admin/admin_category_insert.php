@@ -12,18 +12,15 @@
 						</fieldset><div class="clear"></div>
 						<fieldset style="width:100%; float:left;"> <!-- to make two field float next to one another, adjust values accordingly -->
 							<label><?php echo $this->lang->line('category-admin-description-en');?></label>
-							<textarea rows="5" style="width: 521px; height: 100px;" name="catogories_decription_en" id="catogories_decription_en"></textarea>
-							<?php echo display_ckeditor($catogories_decription_en); ?>
+							<?php echo $this->ckeditor->editor('catogories_decription_en',"",$config);?>
 						</fieldset><div class="clear"></div>
 						<fieldset style="width:100%; float:left;"> <!-- to make two field float next to one another, adjust values accordingly -->
 							<label><?php echo $this->lang->line('category-admin-description-vn');?></label>
-							<textarea rows="5" style="width: 521px; height: 100px;" name="catogories_decription_vn" id="catogories_decription_vn"></textarea>
-							<?php echo display_ckeditor($catogories_decription_vn); ?>
+							<?php echo $this->ckeditor->editor('catogories_decription_vn',"",$config);?>
 						</fieldset><div class="clear"></div>
 						<fieldset style="width:100%; float:left;"> <!-- to make two field float next to one another, adjust values accordingly -->
-							<label><?php echo $this->lang->line('category-admin-image');?></label>
-							<textarea rows="5" style="width: 521px; height: 100px;" name="category_image" id="category_image"></textarea>	
-							<?php echo display_ckeditor($category_image); ?>						
+							<label><?php echo $this->lang->line('category-admin-image');?></label>	
+							<?php echo $this->ckeditor->editor('category_image',"",$config);?>				
 						</fieldset><div class="clear"></div>	
 				</div>
 				<footer>

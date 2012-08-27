@@ -28,8 +28,7 @@
                     			?>
                     			</a>
                     			<a href="<?php echo base_url();?>sanpham/detail/<?php echo $cate->category_id;?>">
-                                    <img src="<?php echo base_url().$cate->category_image;?>" alt="Spelt wheat and organic products" title="Spelt wheat and organic products"
-                                        width="240" height="190" class="imagecache imagecache-prodgroup" /></a>
+                                    <?php echo $cate->category_image;?></a>
                     		</div>
                     	</div>
                     	<?php }?>                        

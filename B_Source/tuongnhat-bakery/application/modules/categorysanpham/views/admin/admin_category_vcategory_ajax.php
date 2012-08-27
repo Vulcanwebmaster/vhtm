@@ -28,7 +28,7 @@
     				<td><?php echo $row-> category_name_vn?></td> 
     				<td><?php echo $row-> catogories_decription_en?></td>  
     				<td><?php echo $row-> catogories_decription_vn?></td> 
-    				<td><img height="190" width="240" class="imagecache imagecache-prodgroup" title="Spelt wheat and organic products" alt="Spelt wheat and organic products" src="<?php echo base_url().$row-> category_image?>"></td>
+    				<td><?php echo $row-> category_image?></td>    				
     				<td><a href="<?php echo base_url()?>categorysanpham/admin/getUpdateCategory/<?php echo $row->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
     				<a href="<?php echo base_url()?>categorysanpham/admin/delCategory/<?php echo $row->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a></td>
     			</tr> 
