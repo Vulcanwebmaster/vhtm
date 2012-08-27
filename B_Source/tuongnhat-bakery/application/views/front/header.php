@@ -28,10 +28,8 @@
                         <li class="menu-item" id="giaohang-menu"><a href=""><?php echo $this->lang->line('menu-giaohang');?></a></li>
                         <li class="menu-item" id="dichvu-menu"><a href=""><?php echo $this->lang->line('menu-dichvu');?></a></li>
                         <li class="menu-item" id="tintuc-menu"><a href=""><?php echo $this->lang->line('menu-tintuc');?></a></li>
-                        <li class="menu-item" id="dhe-menu"><a href=""><?php echo $this->lang->line('menu-dhe');?></a></li>
                         <li class="menu-item" id="lienhe-menu"><a href="<?php echo base_url();?>lienhe"><?php echo $this->lang->line('menu-lienhe');?></a></li>
                         <!--<li class="menu-605"><a href=""></a></li>-->
-                        <li class="menu-item" id="b2b-menu"><a href=""><?php echo $this->lang->line('menu-b2b');?></a></li>
                         <li class="menu-item last" id="huongnghiep-menu"><a href=""><?php echo $this->lang->line('menu-huongnghiep');?></a></li>
                     </ul>
                 </div>
