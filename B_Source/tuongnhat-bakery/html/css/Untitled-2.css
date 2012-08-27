@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	background-color:#2e2e2e
+}
+.body{
+	font-family:"Verdana"; font-size:12px; color:#FFF; text-align:center; height:auto;margin:0 150px 0 150px
+	}
+.banner
+{
+	/*background: url(images/noithat_03.jpg) repeat;*/
+	height:150px; width:100%; margin-left:0px; background:url(images/shadow.png)
+}	
+.logo
+{
+	float:left; margin-left:10px; margin-top:20px; background:url('images/logo-bg.png')
+}
+.menu
+{
+	clear:both; margin-top:65px; padding-bottom:0px; margin-right:30px; font-weight:none; padding-right:50px; text-indent: 10px;
+}
+.menu ul
+{
+
+	line-height:27px; list-style:none;
+}
+.menuitem
+{
+	display:inline-block; position:relative;
+}
+.menu ul li a
+{
+	text-shadow:0 -2px 0 black;
+	color:#FFF;	
+	text-decoration:none;
+}
+.menu ul li a:link
+{
+	color:#FFF;
+}
+.menu ul li a
+{
+	font-size:14px; text-transform:uppercase
+}
+#submenu{width:120px}
+#submenu a
+{
+	text-transform:none;color:#0e0e0e; text-shadow:0 1px 0 white;cursor:pointer
+}
+.menu ul li a:hover
+{
+	color:#ececec;
+}
+.menu li ul{
+	 display:none; 
+}
+.menu li:hover ul
+{
+	display:block;
+}
+.menu ul li ul li
+{
+	width:70px;	padding:0px;margin:0px;text-align:left;	border:1px solid #666; background:#999;
+}
+.search
+{
+	margin-top:10px; margin-right:10px;
+}
+.content1
+{
+	margin-top:0px; margin-left:0px; clear:both;
+}
+.content2
+{
+	clear:both; width:100%; margin-left:0px; margin-top:0px; padding-top:20px
+}
+#form1
+{
+	margin-left:60px;
+}
+.form
+{
+	margin:0px 15px 15px 17px; width:280px; height:270px; background:url(images/noithat_10.jpg) repeat; border-radius:20px; padding-top:10px; padding-bottom:10px; clear:none;
+}
+.button
+{
+	background-image:url(images/head-bar.png); width:252px; height:40px; text-align:center; margin-left:15px; line-height:10px; font-weight:bold;
+}
+.button h3
+{
+	line-height:40px; text-transform:uppercase
+}
+.img
+{
+	width:100%; height:167px; padding:10px 0;
+}
+.img img
+{
+	width:95%; height:95%
+}
+.contentform
+{
+	text-align:justify; margin:0 10px 0 12px;
+}
+.continues
+{
+	float:right; text-decoration:underline; margin-right:15px; margin-bottom:10px; clear:both; 
+}
+.continues a
+{
+	color:#F90;
+}
+.form
+{
+	margin:0px 15px 15px 15px; width:280px; float:left; height:300px; background:url(images/noithat_10.jpg) repeat; border-radius:5px; padding-top:10px; padding-bottom:10px;
+}
+.draw
+{
+	background:url(images/noithat_20.jpg) repeat-x; width:842px; height:2px; bottom: -450px; left:192px;
+}
+.contact
+{
+	clear:both; bottom:45px; font-size:10px;
+}
+#banner-right
+{
+	float:right;
+}
+#text-search
+{
+	border-style:none;background:transparent; color: white;height:100%
+}
+#search-form
+{
+	border:solid 2px white; border-radius:10px; width:40%; float:right
+}
+#search-icon
+{
+	height:20px;
+}
+#line1
+{
+	border-top:solid 1px #525150; border-style:solid none none none; clear:both
+}
+
+.content2
+{
+	background:url(images/shadow-bottom.png) repeat-x;
+}
+#footer .body
+{	
+	line-height:20px;
+	color:#d7d7d7
+}
+#footer .body ul
+{
+	float:left
+}
+#footer .body p
+{
+	float:right;
+}
+#footer .body li, #footer .body li a, #footer .body p
+{
+	display:inline;color:#b6b6b5; text-decoration:none;  
+}
+#hotline-panel
+{
+	float:right; 
+	margin-right:15px
+}
+#hotline-panel h3
+{
+	text-transform:uppercase; 
+	margin-top:-8px
+}
+#hotline-panel h3 a
+{
+	line-height:40px; 
+	float:right; 
+	color:#f5cb90
+}
+#hotline-panel img
+{
+	height:40px; 
+	float:left
+}
+#submenu
+{
+	position:absolute; 
+	z-index:999; 
+	background:url('images/submenu-bg.png') repeat
+}
+marquee{float:left; width:1000px}
+marquee li{float:left; list-style-type:none; text-align:center}
+marquee li img{height:150px; border:double 3px #dbdbdb}
+#hot-head
+{
+	border:solid 1px #dbdbdb; background:url('images/hot-head-bg.png') repeat; color:orange
+}
+#hot-head h2
+{
+	text-transform:uppercase; text-shadow:0 1px 0 #f1ece6
+}
+#hot-right
+{
+	float:right;
+	background:url('images/hot-head-bg2.png') no-repeat;
+	width:30px;
+	height:100px
+}
