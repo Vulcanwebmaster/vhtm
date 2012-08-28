@@ -38,46 +38,21 @@
                                                         </td>
                                                         <td colspan="2" valign="top" style="padding-top: 8px;">
                                                             <table>
-                                                                <tr class="sectiontext">
-                                                                    <td width="20px">
-                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
-                                                                    </td>
-                                                                    <td align="left">
-                                                                        <a href="">Khóa học đại học</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="sectiontext">
-                                                                    <td width="20px">
-                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
-                                                                    </td>
-                                                                    <td align="left">
-                                                                        <a href="">Khóa học cao học</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="sectiontext">
-                                                                    <td width="20px">
-                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
-                                                                    </td>
-                                                                    <td align="left">
-                                                                        <a href="">Khóa học nghiệp vụ</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="sectiontext">
-                                                                    <td width="20px">
-                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
-                                                                    </td>
-                                                                    <td align="left">
-                                                                        <a href="">Khóa học bán thời gian</a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="sectiontext">
-                                                                    <td width="20px">
-                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
-                                                                    </td>
-                                                                    <td align="left">
-                                                                        <a href="">Các khóa học khác</a>
-                                                                    </td>
-                                                                </tr>
+                                                            	<?php 
+																	foreach($loaikhoahoc as $loai)
+																	{
+																?>
+	                                                                <tr class="sectiontext">
+	                                                                    <td width="20px">
+	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
+	                                                                    </td>
+	                                                                    <td align="left">
+	                                                                        <a href=""><?php echo $loai->ten; ?></a>
+	                                                                    </td>
+	                                                                </tr>
+                                                              	<?php 
+																	}
+																?>  
                                                             </table>
                                                         </td>
                                                     </tr>

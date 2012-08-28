@@ -73,9 +73,9 @@
                         </script>
                         <div id="menu">
                             <ul>
-                                <li style="margin-left: -30px"><a href="" class="mainlevel_active-trans">Trang chủ</a></li>
+                                <li style="margin-left: -30px"><a href="<?php echo base_url()?>" class="mainlevel_active-trans">Trang chủ</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Giới thiệu</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/gioithieu" class="mainlevel-trans">Giới thiệu</a></li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Tin nhắn của hiệu trưởng</a></li>
                                 <li>|</li>
@@ -83,19 +83,24 @@
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans" id="item">Các khóa học</a>
                                     <div id="item-menu">
-                                        <a>Các khóa đại học</a><hr />
-                                        <a>Các khóa Cao học</a><hr />
-                                        <a>Các khóa học khác</a>
+                                    	<?php 
+											foreach($loaikhoahoc as $loai)
+											{
+										?>
+	                                         <a><?php echo $loai->ten;?></a><hr />
+                                         <?php 
+											}
+										 ?> 
                                     </div>
                                 </li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Thủ tục nhập học</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Học phí</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/hocphi" class="mainlevel-trans">Học phí</a></li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Hình ảnh</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Liên hệ với chúng tôi</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/lienhe" class="mainlevel-trans">Liên hệ với chúng tôi</a></li>
                             </ul>
                         </div>
                     </td>

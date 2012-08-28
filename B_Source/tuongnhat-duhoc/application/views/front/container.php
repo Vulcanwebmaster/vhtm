@@ -6,14 +6,16 @@
 	  <meta name="keywords" content="KCB" />
 	  <meta name="description" content="Kensington College of Business" />
 	  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
-	  <title>Tường Nhật</title>
+	  <title><?php echo $title;?></title>
 	  <script type="text/javascript" src="<?php echo base_url();?>assets/duhoc/js/mootools.js"></script>
 	  <script type="text/javascript" src="<?php echo base_url();?>assets/duhoc/js/caption.js"></script>
 	
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/system.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/general.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/template.css"" type="text/css" />
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/styles.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/styles-1.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/template-1.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/duhoc/css/template.css" type="text/css" />
+		
 	</head>
 	
 	<body>

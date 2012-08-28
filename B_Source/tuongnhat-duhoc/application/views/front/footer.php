@@ -5,7 +5,7 @@
             <table width="100%" border="0" cellpadding="0" cellspacing="1">
                 <tr>
                     <td nowrap="nowrap">
-                        <a href="" class="mainlevel-mystyle">Giới thiệu</a><span class="mainlevel-mystyle">
+                        <a href="<?php echo base_url() ?>index.php/gioithieu" class="mainlevel-mystyle">Giới thiệu</a><span class="mainlevel-mystyle">
                             | </span><a href="" class="mainlevel-mystyle">Sơ đồ</a><span class="mainlevel-mystyle">
                                 | </span><a href="" class="mainlevel-mystyle">Liên hệ</a><span class="mainlevel-mystyle">
                                     | </span><a href="html/EL-version.htm" class="mainlevel-mystyle">Phiên bản Anh</a><span

@@ -37,5 +37,33 @@ class Mlienhe extends CI_Model
 		$result = $query->result();
 		return $result;
 	}
+	
+	function list_loaikhoahoc()
+	{
+		$query=$this->db->get('tn_loaikhoahoc');
+		return $query->result();
+	}
+	
+	function getLienHe()
+	{
+		$query=$this->db->get('tn_lienhe');
+		return $query->row();
+	}
+	
+	function update($id)
+	{
+		$data=array(
+					'ten'		=>	$this->input->post('ten'),
+					'diachi'		=>	$this->input->post('diachi'),
+					'telephone'		=>	$this->input->post('tel'),
+					'mobile'		=>	$this->input->post('mob'),
+					'fax'		=>	$this->input->post('fax'),
+					'website'		=>	$this->input->post('website'),
+					'email'		=>	$this->input->post('email')
+					);
+		$this->db->where('id',$id);
+		if($this->db->update('tn_lienhe',$data)) return true;
+		else return false;
+	}
 }
 ?>

@@ -1,93 +1,128 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-	class Admin extends Admin_Controller
-	{
+
+class Admin extends Admin_Controller {
 	
-		function __construct()
+	function __construct()
+	{
+		parent::__construct();
+		$this->module = basename(dirname(dirname(__FILE__))); 
+		$this->module = strtolower(get_class());
+		$this->load->model('Mgioithieu');
+		$this->load->helper('ckeditor');
+	}
+	
+	function index()
+	{
+		$data['gioithieu']=$this->Mgioithieu->getGioiThieu();	 
+		$data['module'] = $this->module;
+		$data['page'] = "admin_gioithieu_home";
+		$data['title'] = "Giới thiệu";
+		$data['bcCurrent'] = "Giới thiệu";
+		
+		$data['ckeditor_1'] = array(
+ 
+			//ID of the textarea that will be replaced
+			'id' 	=> 	'content_1',
+			'path'	=>	'assets/js/ckeditor',
+ 
+			//Optionnal values
+			'config' => array(
+				'toolbar' 	=> 	"Full", 	//Using the Full toolbar
+				'width' 	=> 	"98%",	//Setting a custom width
+				'height' 	=> 	"100px",	//Setting a custom height
+ 				'filebrowserBrowseUrl'      => base_url().'assets/js/ckeditor/ckfinder/ckfinder.html',
+                'filebrowserImageBrowseUrl' => base_url().'assets/js/ckeditor/ckfinder/ckfinder.html?Type=Images',
+                'filebrowserFlashBrowseUrl' => base_url().'assets/js/ckeditor/ckfinder/ckfinder.html?Type=Flash',
+                'filebrowserUploadUrl'      => base_url().'assets/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                'filebrowserImageUploadUrl' => base_url().'assets/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                'filebrowserFlashUploadUrl' => base_url().'assets/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+			),
+ 
+			//Replacing styles from the "Styles tool"
+			'styles' => array(
+ 
+				//Creating a new style named "style 1"
+				'style 1' => array (
+					'name' 		=> 	'Blue Title',
+					'element' 	=> 	'h2',
+					'styles' => array(
+						'color' 	=> 	'Blue',
+						'font-weight' 	=> 	'bold'
+					)
+				),
+ 
+				//Creating a new style named "style 2"
+				'style 2' => array (
+					'name' 	=> 	'Red Title',
+					'element' 	=> 	'h2',
+					'styles' => array(
+						'color' 		=> 	'Red',
+						'font-weight' 		=> 	'bold',
+						'text-decoration'	=> 	'underline'
+					)
+				)				
+			)
+		);
+ 		$data['ckeditor_2'] = array(
+ 
+			//ID of the textarea that will be replaced
+			'id' 	=> 	'content_2',
+			'path'	=>	'assets/js/ckeditor',
+ 
+			//Optionnal values
+			'config' => array(
+				'toolbar' 	=> 	"Full", 	//Using the Full toolbar
+				'width' 	=> 	"98%",	//Setting a custom width
+				'height' 	=> 	"200px",	//Setting a custom height
+ 				'filebrowserBrowseUrl'      => base_url().'assets/js/ckeditor/ckfinder/ckfinder.html',
+                'filebrowserImageBrowseUrl' => base_url().'assets/js/ckeditor/ckfinder/ckfinder.html?Type=Images',
+                'filebrowserFlashBrowseUrl' => base_url().'assets/js/ckeditor/ckfinder/ckfinder.html?Type=Flash',
+                'filebrowserUploadUrl'      => base_url().'assets/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                'filebrowserImageUploadUrl' => base_url().'assets/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                'filebrowserFlashUploadUrl' => base_url().'assets/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash' 
+			),
+ 
+			//Replacing styles from the "Styles tool"
+			'styles' => array(
+ 
+				//Creating a new style named "style 1"
+				'style 1' => array (
+					'name' 		=> 	'Blue Title',
+					'element' 	=> 	'h2',
+					'styles' => array(
+						'color' 	=> 	'Blue',
+						'font-weight' 	=> 	'bold'
+					)
+				),
+ 
+				//Creating a new style named "style 2"
+				'style 2' => array (
+					'name' 	=> 	'Red Title',
+					'element' 	=> 	'h2',
+					'styles' => array(
+						'color' 		=> 	'Red',
+						'font-weight' 		=> 	'bold',
+						'text-decoration'	=> 	'underline'
+					)
+				)				
+			)
+		);
+		$this->load->view('admin/container',$data);
+	}
+	
+	function delete($id)
+	{
+		if($this->image_model->delete($id)==true)
 		{
-			parent::__construct();
-			$this->module = basename(dirname(dirname(__FILE__))); 
-			$this->module = strtolower(get_class());
-			//load model
-			$this->load->model('Mhocphi');
-			$this->load->library('editor_library');
-			$this->load->helper('ckeditor');
-			//Load language:
-			//$this->SetLang();		
-			if ($this->session->userdata('lang')=='vn')
-				$this->lang->load('tuongnhat','vietnamese');
-			else 
-				$this->lang->load('tuongnhat','english');
-		}		
-		function index()
-		{
-			//paging
-			$baseurl = base_url().'hocphi/admin/index';
-			$totalrow = $this->Mhocphi->getFeeRow();
-			$perpage = 3;
-			$urisegment = 4;
-			$config = $this->PagingConfig($baseurl,$totalrow,$perpage,$urisegment);
-			$this->pagination->initialize($config);
-			$data['listpaging']=$this->Mhocphi->getFee($config['per_page'],$this->uri->segment(4));
-			$data['paging'] = $this->pagination->create_links();
-			//			
-			if(!$this->input->post('ajax'))
-			{
-				$data['module']=$this->module;
-				$data['page']="admin_hocphi_vhocphi";
-				$data['title'] = $this->lang->line('hocphi-admin-product-hocphi');
-				//Breadcrumb data
-				$data['bcCurrent'] = $this->lang->line('hocphi-admin-product-hocphi');
-				
-				$this->load->view('admin/container',$data);
-			}
-			else {
-				$this->load->view('admin/admin_hocphi_vhocphi_ajax',$data);
-			}
-			
+			redirect(base_url().'imagemanager/admin','refresh');
 		}
-		function getUpdateFee()
-		{			
-			$data['product']=$this->Mhocphi->getDetailFee();
-			$data['module'] = $this->module;
-			$data['title'] = $this->lang->line('hocphi-admin-update-hocphi');
-			$data['page'] = "admin_hocphi_vupdate";
-			//Breadcrumb data
-			$data['bcLv1']= $this->lang->line('hocphi-admin-product-hocphi');
-			$data['bcLv1_link']= "hocphi/admin";
-			$data['bcCurrent'] = $this->lang->line('hocphi-admin-update-hocphi');
-			$this->load->view('admin/container',$data);
-		}
-		function updateFee()
-		{
-			if($this->Mhocphi->updateFee()==TRUE)
-			{
-				redirect('hocphi/admin');
-			}
-		}
-		function getInsertFee()
-		{						
-			$data['module'] = $this->module;
-			$data['title'] = $this->lang->line('hocphi-admin-insert-new');
-			$data['page'] = "admin_hocphi_insert";
-			//Breadcrumb data
-			$data['bcLv1']= $this->lang->line('hocphi-admin-product-hocphi');
-			$data['bcLv1_link']= "hocphi/admin";
-			$data['bcCurrent'] = $this->lang->line('hocphi-admin-insert-new');
-			$this->load->view('admin/container',$data);
-		}
-		function insertFee()
-		{
-			if($this->Mhocphi->insertFee()==true)
-			{
-				redirect('hocphi/admin');
-			}
-		}
-		function delFee()
-		{
-			if($this->Mhocphi->delFee()==TRUE)
-			{
-				redirect('hocphi/admin');
-			}
-		}
+	}
+
+	function edit($id)
+	{
+		$this->Mgioithieu->update($id);
+		redirect(base_url().'index.php/gioithieu/admin','refresh');
+	}
+	
 }
 ?>

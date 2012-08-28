@@ -7,11 +7,13 @@ class Homepage extends NIW_controller {
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
+		$this->load->model('Mhomepage');
 	}
 	
 	public function index()
 	{
 		$data['title']='[Name Defined] | Home';
+		$data['loaikhoahoc']=$this->Mhomepage->list_loaikhoahoc();
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);

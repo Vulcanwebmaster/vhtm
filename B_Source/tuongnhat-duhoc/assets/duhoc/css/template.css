@@ -580,6 +580,7 @@ table.contentpaneopen, table.contentpane {
 	margin: 0;
 	padding: 0;
 	width: auto;
+	margin-bottom:10px;
 }
 
 table.contentpaneopen li {
