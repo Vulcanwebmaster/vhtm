@@ -9,4 +9,16 @@
 	$lang['contact-phone']='Số điện thoại';
 	$lang['contact-fax']='Số fax';
 	$lang['contact-update']='Cập nhật';
+	//============================== HOC PHI ====================================
+	$lang['hocphi-admin-product-hocphi']='Học phí';
+	$lang['hocphi-admin-fee-id']='Mã học phí';
+	$lang['hocphi-admin-fee-name-vn']='Tên học phí (t.Việt)';
+	$lang['hocphi-admin-fee-name-en']='Tên học phí (t.Anh)';
+	$lang['hocphi-admin-fee-decription-vn']='Chi tiết học phí (t.Việt)';
+	$lang['hocphi-admin-fee-decription-en']='Chi tiết học phí (t.Anh)';
+	$lang['hocphi-admin-update-hocphi']='Cập nhật học phí';
+	$lang['hocphi-admin-insert-new']='Tạo mới học phí';
+	$lang['hocphi-admin-insert']='Tạo mới';
+	$lang['hocphi-admin-update']='Cập nhật';
+	$lang['hocphi-admin-actions']='Thao tác';	
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 26, 2012 at 05:22 PM
+-- Generation Time: Aug 28, 2012 at 12:31 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `n_example_contactus_message_info` (
   `yourmessage` text COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `n_example_contactus_message_info`
@@ -206,6 +206,31 @@ INSERT INTO `n_example_contactus_message_info` (`id`, `name`, `email`, `subject`
 (17, 'Xuân Lê tiến', 'lexuantien0311@gmail.com', 'Ni hao', 'Ni hao!!!!', '2012-07-16 12:53:17'),
 (18, 'Le Tien', 'lexuantien0311@gmail.com', 'Tesstttt', 'Hellooooo!', '2012-07-16 13:03:15'),
 (19, 'Xuân Lê tiến', 'lexuantien0311@gmail.com', 'Ni hao', 'Ni hao!!!!', '2012-07-16 12:53:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fee`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fee` (
+  `fee_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fee_name_vn` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `fee_name_en` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `fee_decription_vn` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `fee_decription_en` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`fee_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `n_fee`
+--
+
+INSERT INTO `n_fee` (`fee_id`, `fee_name_vn`, `fee_name_en`, `fee_decription_vn`, `fee_decription_en`) VALUES
+(1, 'Tiếng Anh thương mại', 'Business English', '1.100.000 VND', '50$'),
+(2, 'TOEFL iBT', 'TOEFL iBT', '2.200.200 VND', '100$'),
+(4, 'test 212', 'test 2 ENG124124', '2.200.200 VND 42', '100$2424'),
+(6, '124', '124', '124', '4214');
 
 -- --------------------------------------------------------
 
@@ -367,7 +392,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-07-24 10:52:21', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-08-28 10:13:06', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
