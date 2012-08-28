@@ -1,0 +1,112 @@
+[07-Sep-2010 21:37:55] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'web1244_hrumos'@'localhost' (using password: YES) in /home/web1244/public_html/config.php on line 6
+[08-Sep-2010 09:43:18] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[08-Sep-2010 09:43:26] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 09:43:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:26] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/web1244/public_html/classes/anytable.class.php on line 70
+[08-Sep-2010 10:00:27] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[09-Sep-2010 18:42:23] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'web1244_hrumos'@'localhost' (using password: YES) in /home/web1244/public_html/config.php on line 6
+[09-Sep-2010 18:43:02] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'web1244_hrumos'@'localhost' (using password: YES) in /home/web1244/public_html/config.php on line 6
+[09-Sep-2010 18:43:07] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'web1244_hrumos'@'localhost' (using password: YES) in /home/web1244/public_html/config.php on line 6
+[09-Sep-2010 21:59:13] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[10-Sep-2010 01:37:44] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[10-Sep-2010 01:45:13] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[10-Sep-2010 01:45:31] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[14-Sep-2010 17:42:43] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/web1244/public_html/classes/isincollection.class.php on line 115
+[12-Jun-2011 07:11:08] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[13-Jun-2011 14:11:46] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[24-Jun-2011 14:45:25] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/custodycollection.class.php on line 136
+[02-Jul-2011 03:17:38] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[02-Jul-2011 03:17:57] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[02-Jul-2011 03:23:09] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[02-Jul-2011 03:23:32] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[02-Jul-2011 03:33:36] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/perfectf/public_html/classes/clientcollection.class.php:25) in /home/perfectf/public_html/classes/transfercollection.class.php on line 200
+[07-Jul-2011 10:09:35] PHP Warning:  require_once(../include/admin-left-menu.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/perfectf/public_html/manage/accounts.php on line 131
+[07-Jul-2011 10:09:35] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../include/admin-left-menu.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/perfectf/public_html/manage/accounts.php on line 131
+[07-Jul-2011 10:10:17] PHP Warning:  require_once(../include/admin-left-menu.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/perfectf/public_html/manage/accounts.php on line 131
+[07-Jul-2011 10:10:17] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../include/admin-left-menu.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/perfectf/public_html/manage/accounts.php on line 131

@@ -1,0 +1,21 @@
+.roundcorner_div
+{
+ margin-left:0px;
+ height:23px;
+ width:110x;
+ background:url(img/round_corner.gif) no-repeat bottom;
+}
+
+.roundcorner_textbox
+{
+ background:none;
+ border:none;
+ width:100px;
+ height:15px;
+ margin-left:5px;
+ margin-top: 2px;
+ padding: 0px 0px 0px 0px;
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:11px;
+}
+

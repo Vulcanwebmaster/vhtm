@@ -1,0 +1,20 @@
+<?php
+//connect
+include('config.php');
+include('functions.php');
+include('classes/client.class.php');
+include('classes/account.class.php');
+include('classes/accountcollection.class.php');
+//check, if client is already logged in.
+login();
+if(!logged())
+  {
+  include('login_header.php');
+  }
+else
+  {
+  include($templates.'menu.php');  
+  include($templates.'welcome.html');  
+  include($templates.'footer.php');
+  }
+?>

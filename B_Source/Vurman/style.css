@@ -1,0 +1,67 @@
+.roundcorner_div
+{
+ margin-left:0px;
+ height:23px;
+ width:110x;
+ background:url(img/round_corner.gif) no-repeat bottom;
+}
+
+.roundcorner_textbox
+{
+ background:none;
+ border:none;
+ width:100px;
+ height:15px;
+ margin-left:5px;
+ margin-top: 2px;
+ padding: 0px 0px 0px 0px;
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:11px;
+}
+
+.round_corner
+{    
+ display:inline block; /* use inline block if you want it to behave inline */    
+ border:none;
+ width:116px;    
+ height:21px;
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:9px;        
+ cursor:pointer; /* little hand to show it's a button */    
+ background:url(img/round_corner.gif) no-repeat;
+}
+
+.btn, .btn a {
+  display:block;
+  width:134px !important;
+  height:27px;
+  border:none;
+  font-family:arial, helvetica, sans-serif !important;
+  line-height:27px !important;
+  background:url(../images/button.jpg) top left no-repeat;
+  text-align:center;
+  color:#fff !important;
+  font-weight:normal;
+  text-decoration:none;
+  padding:0;
+  margin:0;
+  float:left;
+}
+
+form .btn {
+  padding-bottom:4px;
+}
+
+/* Buttons  */
+.button, .button2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size:11px;
+    margin: 5px;
+}
+
+.button {
+    border: 1px solid;
+}
+
+
