@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.menu-item a').removeClass('active');
+		$('#sanpham-menu a').addClass('active');
+	});
+</script>
+
+<div class="breadcrumb">
+	<a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
+	&rsaquo; <?php echo $this->lang->line('menu-sanpham');?>
+</div>
+
 <a name="top"></a><a name="crusty-spelt-wheat-roll-85g-partly-baked-5354"></a>
 <div id="node-5354" class="product product clear-block">
     <div class="details">
@@ -115,16 +127,9 @@
                 </tr>
             </tbody>
         </table>
-        <p>
-            <a href="#" class="button">« <?php if ($lang=='vn') echo 'quay lai';
-            								else echo 'back';?></a> 
-            <a href="#" class="button external" target="_blank"><?php if ($lang=='vn') echo 'In';
-            								else echo 'print';?></a>
-        </p>
     </div>
     <div class="foto">
         <?php echo $detail_product->product_img;?>
-            width="195" height="143" class="imagecache imagecache-product_thumb">
     </div>
     <?php if ($detail_product->product_new!='' || $detail_product->product_new!='0')
     {?>

@@ -20,7 +20,8 @@
 		}
 
 		function index()
-		{			
+		{		
+			$data['rightmenu']=$this->Mlienhe->getRightColumn();	
 			$data['title']='Tuong Nhat Bakery - Lien he';
 			$data['module']=$this->module;
 			$data['page']='vlienhe';

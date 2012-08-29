@@ -17,6 +17,7 @@
 
 		function index()
 		{		
+			$data['rightmenu']=$this->Msanpham->getRightColumn();
 			$data['list']=$this->Msanpham->GetListCate();
 			$data['title']='Tuong Nhat Bakery - San pham';
 			$data['module']=$this->module;
@@ -26,6 +27,7 @@
 		
 		function detail($id=0)
 		{
+			$data['rightmenu']=$this->Msanpham->getRightColumn();
 			$data['info']=$this->Msanpham->GetCategoryById($id);
 			$data['relate_products']=$this->Msanpham->GetProductByCategoryId($id);
 			$data['module']=$this->module;
@@ -35,6 +37,7 @@
 		
 		function detail_product($product_id=0)
 		{
+			$data['rightmenu']=$this->Msanpham->getRightColumn();
 			$data['detail_product']=$this->Msanpham->GetDetailProductById($product_id);
 			$data['module']=$this->module;
 			$data['page']='vdetail-product';
@@ -43,6 +46,7 @@
 		
 		function new_products()
 		{
+			$data['rightmenu']=$this->Msanpham->getRightColumn();
 			$data['list']=$this->Msanpham->GetListNew();
 			$data['module']=$this->module;
 			$data['page']='vnew-list';

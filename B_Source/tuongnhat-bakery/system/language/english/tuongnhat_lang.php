@@ -6,11 +6,11 @@
 	$lang['menu-sanpham']='Assortment';
 	$lang['menu-giaohang']='Delivery';
 	$lang['menu-dichvu']='Service & Promotion';
-	$lang['menu-tintuc']='News';
+	$lang['menu-moi']='News';
 	$lang['menu-dhe']='Dhe';
 	$lang['menu-lienhe']='Contact';
 	$lang['menu-b2b']='b2b';
-	$lang['menu-huongnghiep']='Career';
+	$lang['menu-tuyendung']='Career';
 	//============================== HEADER ====================================
 	$lang['header-dieukhoan']='Terms';
 	$lang['header-cauhoi']='FAQ';

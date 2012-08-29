@@ -25,12 +25,12 @@
                         <li class="menu-item" id="trangchu-menu">
                         	<a href="<?php echo base_url();?>" title="Home"><?php echo $this->lang->line('menu-trangchu');?></a></li>
                         <li class="menu-item" id="sanpham-menu"><a href="<?php echo base_url();?>sanpham"><?php echo $this->lang->line('menu-sanpham');?></a></li>
-                        <li class="menu-item" id="giaohang-menu"><a href=""><?php echo $this->lang->line('menu-giaohang');?></a></li>
-                        <li class="menu-item" id="dichvu-menu"><a href=""><?php echo $this->lang->line('menu-dichvu');?></a></li>
-                        <li class="menu-item" id="tintuc-menu"><a href=""><?php echo $this->lang->line('menu-tintuc');?></a></li>
+                        <li class="menu-item" id="giaohang-menu"><a href="<?php echo base_url();?>giaohang"><?php echo $this->lang->line('menu-giaohang');?></a></li>
+                        <li class="menu-item" id="dichvu-menu"><a href="<?php echo base_url();?>dichvu"><?php echo $this->lang->line('menu-dichvu');?></a></li>
+                        <li class="menu-item" id="tintuc-menu"><a href="<?php echo base_url();?>sanpham/new_products"><?php echo $this->lang->line('menu-moi');?></a></li>
                         <li class="menu-item" id="lienhe-menu"><a href="<?php echo base_url();?>lienhe"><?php echo $this->lang->line('menu-lienhe');?></a></li>
                         <!--<li class="menu-605"><a href=""></a></li>-->
-                        <li class="menu-item last" id="huongnghiep-menu"><a href=""><?php echo $this->lang->line('menu-huongnghiep');?></a></li>
+                        <li class="menu-item last" id="tuyendung-menu"><a href="<?php echo base_url();?>tuyendung"><?php echo $this->lang->line('menu-tuyendung');?></a></li>
                     </ul>
                 </div>
                 <div class="navi-main-right pngfix">
@@ -44,12 +44,12 @@
                     <a href="<?php echo base_url();?>">
                         <img src="<?php echo base_url();?>assets/bakery/images/logo1.png" height="91px" /></a></div>
                 <div style="float: left; width: 66%; height: 88px;">
-                    <form action="" accept-charset="UTF-8" method="post" id="search-theme-form">
+                    <form action="<?php echo base_url();?>timkiem/doSearch" accept-charset="UTF-8" method="post" id="search-theme-form">
                     <div>
                         <div id="search" class="container-inline">
                             <div class="form-item" id="edit-search-theme-form-1-wrapper">
                                 <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1"
-                                    size="15" value="<?php echo $this->lang->line('header-timkiem');?>" class="form-text" />
+                                    size="15" class="form-text" />
                             </div>
                             <input type="submit" name="op" id="edit-submit" value="<?php echo $this->lang->line('header-tim');?>" class="form-submit" />
                             <input type="hidden" name="form_build_id" id="form-047b856064db17e6411a1dac13e9accf"
@@ -61,12 +61,9 @@
                     <div>
                         <a name="#navi-std"></a>
                         <div id="navi-std-wrapper" class="clear-block" style="float: left; width: 60%; height: 30px;
-                            margin-left: 267px;">
+                            margin-left: 565px;">
                             <ul class="menu">
-                                <li class="menu-397 first"><a href=""><?php echo $this->lang->line('header-dieukhoan');?></a></li>
-                                <li class="menu-1262"><a href=""><?php echo $this->lang->line('header-cauhoi');?></a></li>
-                                <li class="menu-396"><a href=""><?php echo $this->lang->line('header-nhasanxuat');?></a></li>
-                                <li class="menu-400 last"><a href=""><?php echo $this->lang->line('header-dangnhap');?></a></li>
+                                <li class="menu-1262"><a href="<?php echo base_url();?>faq"><?php echo $this->lang->line('header-cauhoi');?></a></li>
                             </ul>
                         </div>
                         <div id="langswitch" class="clear-block" style="float: left; height: 30px">

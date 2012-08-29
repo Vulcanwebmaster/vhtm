@@ -50,6 +50,19 @@ class CI_Model {
 		$CI =& get_instance();
 		return $CI->$key;
 	}
+	
+	function getRightColumn()
+	{
+		$this->load->database();
+		$ds=$this->db->get('n_b_menuphai');
+		$list=array();
+		foreach($ds->result() as $item)
+		{
+			$list[]=$item;
+		}
+		$ds->free_result();
+		return $list;
+	}
 }
 // END Model Class
 

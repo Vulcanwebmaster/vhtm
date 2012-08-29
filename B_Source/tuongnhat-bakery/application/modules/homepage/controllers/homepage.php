@@ -9,6 +9,9 @@ class Homepage extends NIW_controller {
 		$this->module = strtolower(get_class());
 		
 		$this->load->library('session');
+		$this->load->model('Mhomepage');
+		
+		$this->SetLangSession();
 		
 		if ($this->session->userdata('lang')=='vn')
 				$this->lang->load('tuongnhat','vietnamese');
@@ -20,13 +23,14 @@ class Homepage extends NIW_controller {
 	{
 		if ($this->session->userdata('lang')=='')
 		{
-			$this->session->userdata('lang','vn');
+			$this->session->set_userdata('lang','vn');
 		}
 	}
 	
 	public function index()
 	{
-		$this->SetLangSession();
+		$data['list']=$this->Mhomepage->getListFull();
+		$data['rightmenu']=$this->Mhomepage->getRightColumn();
 		$data['title']='Tuong Nhat Bakery';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';

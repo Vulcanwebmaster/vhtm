@@ -6,11 +6,11 @@
 	$lang['menu-sanpham']='Sản phẩm';
 	$lang['menu-giaohang']='Giao hàng';
 	$lang['menu-dichvu']='Dịch vụ & Khuyến mãi';
-	$lang['menu-tintuc']='Tin tức';
+	$lang['menu-moi']='Mới';
 	$lang['menu-dhe']='Dhe';
 	$lang['menu-lienhe']='Liên hệ';
 	$lang['menu-b2b']='b2b';
-	$lang['menu-huongnghiep']='Hướng nghiệp';
+	$lang['menu-tuyendung']='Tuyển dụng';
 	//============================== HEADER ====================================
 	$lang['header-dieukhoan']='Điều khoản';
 	$lang['header-cauhoi']='FAQ';

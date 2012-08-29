@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.menu-item a').removeClass('active');
+		$('#sanpham-menu a').addClass('active');
+	});
+</script>
+
+<div class="breadcrumb">
+	<a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
+	&rsaquo; <?php echo $this->lang->line('menu-sanpham');?>
+</div>
+
 <div id="node-5721" class="product-group product-group clear-block prodcat-5 prodcat-31">
 	<?php foreach($list as $item)
 	{?>
@@ -39,17 +51,12 @@
 						        ?></a>
 		                </div>
 		                <div class="foto">
-		                    <img src="<?php echo base_url().$item->product_img;?>"
-		                        alt="Crusty spelt wheat roll 85g, partly baked " title="Crusty spelt wheat roll 85g, partly baked "
-		                        width="195" height="143" class="imagecache imagecache-product_thumb">
+		                    <?php echo $item->product_img;?>
 		                </div>
 		                <?php if ($item->product_new!='')
 		                {?>
 		                	<img src="<?php echo base_url();?>assets/bakery/images/icon_new_en.png" alt="New!" class="new pngfix">
 		                <?php }?>
-		                <a href="/sites/default/files/imagecache/product_zoom/sites/default/files/images/products/0394_dinkelcrusty-1.jpg"
-		                    rel="shadowbox[5354]" title="Crusty spelt wheat roll 85g, partly baked , Article No. 0394">
-		                    <img src="<?php echo base_url();?>assets/bakery/images//icon-zoom.png" alt="Zoom" class="zoom"></a>
 		                <div class="bottom">
 		                </div>
 		            </div>
