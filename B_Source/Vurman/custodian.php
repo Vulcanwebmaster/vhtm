@@ -135,7 +135,7 @@ function pageselectCallback(page_index, jq){
         </div>
     <div id="content">
         
-      <fieldset style="border:1px solid #CCC; width:610px; margin:0px; padding:0px;">
+      <fieldset style="border:1px solid #CCC; width:600px; margin:0px; padding:0px;">
    	    <legend>COUNTERPARTY MANAGEMENT</legend>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
           <table id="searchtable" width="600" border="0" cellspacing="1" cellpadding="2">
@@ -147,7 +147,7 @@ function pageselectCallback(page_index, jq){
               <td align="left"><input name="search_counterparty" type="text" id="search_counterparty" size="20" /></td>              <th align="right">BIC (CP)</th>              <td align="left"><input name="search_biccp" type="text" id="search_biccp" size="20" /></td>              
             </tr>
             <tr>
-              <th align="right">CUST-ID</th>              <td align="left">              <input name="search_custid" type="text" id="search_custid" size="20" /></td>              			  <!--<th align="right">CUSTODIAN</th>-->			  <th align="right">NAME CUST</th>              <td align="left"><input name="search_custodian" type="text" id="search_custodian" size="20" /></td>			  			  <th align="right">BIC (CUST.)</th>              <td align="left"><input name="search_biccust" type="text" id="search_biccust" size="20" /></td>              <tr/>              <tr>			  			  <th align="right">CP-A/C-WITH-CUST</th>              <td align="left"><input name="search_cpacwithcust" type="text" id="search_cpacwithcust" size="20" /></td>              </tr>              <tr>
+              <th align="right">CUST-ID</th>              <td align="left">              <input name="search_custid" type="text" id="search_custid" size="20" /></td>              			  <!--<th align="right">CUSTODIAN</th>-->			  <th align="right">NAME CUST</th>              <td align="left"><input name="search_custodian" type="text" id="search_custodian" size="20" /></td>			  			  <th align="right" >BIC (CUST.)</th>              <td align="left"><input name="search_biccust" type="text" id="search_biccust" size="20" /></td>              <tr/>              <tr>			  			  <th align="right" colspan="3">CP-A/C-WITH-CUST</th>              <td align="left"><input name="search_cpacwithcust" type="text" id="search_cpacwithcust" size="20" /></td>              </tr>              <tr>
               <td colspan="8" align="right">
                 <input type="submit" name="Search" id="Search" value="SEARCH" />
                 <input type="button" id="create-custodian" value="ADD CUSTODIAN" />              </td>
