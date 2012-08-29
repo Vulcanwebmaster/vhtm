@@ -10,6 +10,14 @@ class Khoahoc extends NIW_controller {
 		$this->module = strtolower(get_class());
 	}
 	
+	function index()
+	{
+		$data['title']='Khóa học';
+		$data['module'] = $this->module;
+		$data['page'] = 'shop/vkhoahoc.php';
+		$this->load->view('front/container',$data);
+	}
+	
 	function daihoc()
 	{
 		$data['title']='Khóa học - Đại học';

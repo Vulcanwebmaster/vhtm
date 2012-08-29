@@ -75,7 +75,7 @@
                             <ul>
                                 <li style="margin-left: -30px"><a href="<?php echo base_url()?>" class="mainlevel_active-trans">Trang chủ</a></li>
                                 <li>|</li>
-                                <li><a href="<?php echo base_url(); ?>index.php/gioithieu" class="mainlevel-trans">Giới thiệu</a></li>
+                                <li><a href="<?php echo base_url(); ?>gioithieu" class="mainlevel-trans">Giới thiệu</a></li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Tin nhắn của hiệu trưởng</a></li>
                                 <li>|</li>
@@ -83,21 +83,21 @@
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans" id="item">Các khóa học</a>
                                     <div id="item-menu" style="display: none; ">
-                                    	<a href="<?php echo base_url() ?>index.php/khoahoc/daihoc">Đại học</a><hr>
-	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/saudaihoc">Sau đại học</a><hr>
-	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/nghiepvu">Nghiệp vụ</a><hr>
-	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/banthoigian">Bán thời gian</a><hr>
-	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/khac">Khóa học khác</a>
+                                    	<a href="<?php echo base_url() ?>khoahoc/daihoc">Đại học</a><hr>
+	                                    <a href="<?php echo base_url() ?>khoahoc/saudaihoc">Sau đại học</a><hr>
+	                                    <a href="<?php echo base_url() ?>khoahoc/nghiepvu">Nghiệp vụ</a><hr>
+	                                    <a href="<?php echo base_url() ?>khoahoc/banthoigian">Bán thời gian</a><hr>
+	                                    <a href="<?php echo base_url() ?>khoahoc/khac">Khóa học khác</a>
                                     </div>
                                 </li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Thủ tục nhập học</a></li>
                                 <li>|</li>
-                                <li><a href="<?php echo base_url(); ?>index.php/hocphi" class="mainlevel-trans">Học phí</a></li>
+                                <li><a href="<?php echo base_url(); ?>hocphi" class="mainlevel-trans">Học phí</a></li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Hình ảnh</a></li>
                                 <li>|</li>
-                                <li><a href="<?php echo base_url(); ?>index.php/lienhe" class="mainlevel-trans">Liên hệ với chúng tôi</a></li>
+                                <li><a href="<?php echo base_url(); ?>lienhe" class="mainlevel-trans">Liên hệ với chúng tôi</a></li>
                             </ul>
                         </div>
                     </td>
