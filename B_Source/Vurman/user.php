@@ -146,17 +146,14 @@ function pageselectCallback(page_index, jq){
 		else if(color=="#cccccc")	color="#f5f5f5";
 		//alert(i);
 		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
-		newcontent += '<td>  <a style=\'text-decoration:underline; cursor:pointer;\' onclick=ViewUser(' + JSONUser[i].id+')>'+JSONUser[i].id + '</a></td>';
-		newcontent += '<td>' + JSONUser[i].clientid + '</td>';
-		newcontent += '<td>' + JSONUser[i].firstname + '</td>';
-		newcontent += '<td>' + JSONUser[i].lastname + '</td>';		newcontent += '<td>' + JSONUser[i].department + '</td>';		newcontent += '<td>' + JSONUser[i].email + '</td>';
-		newcontent+="</tr>";
-		
-		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
-		newcontent += '<td>' + JSONUser[i].loginid + '</td>';
-		newcontent += '<td>' + JSONUser[i].officephone + '</td>';		newcontent += '<td>' + JSONUser[i].cellphone + '</td>';		newcontent += '<td>' + JSONUser[i].phone + '</td>';		newcontent += '<td>' + JSONUser[i].password + '</td>';
-
-		newcontent += '<td>' + JSONUser[i].role + '|' + getActive(JSONUser[i].active) + '</td>';
+		newcontent += '<td style="text-align:center;">  <a style=\'text-decoration:underline;  cursor:pointer;\' onclick=ViewUser(' + JSONUser[i].id+')>'+JSONUser[i].id + '</a></td>';
+		newcontent += '<td style="text-align:center;">' + JSONUser[i].clientid + '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].loginid + '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].password + '</td>';				newcontent+="</tr>";		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";		
+		newcontent += '<td style="text-align:center;">' + JSONUser[i].firstname + '</td>';
+		newcontent += '<td style="text-align:center;">' + JSONUser[i].lastname + '</td>';		newcontent += '<td style="text-align:center;" colspan="2">' + JSONUser[i].department + '</td>';				newcontent+="</tr>";
+		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";		
+		newcontent += '<td style="text-align:center;">' + JSONUser[i].officephone + '</td>';		newcontent += '<td style="text-align:center;">' + JSONUser[i].cellphone + '</td>';				newcontent += '<td style="text-align:center;" colspan="2">' + JSONUser[i].email + '</td>';		//newcontent += '<td>' + JSONUser[i].phone + '</td>';				newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
+				newcontent +='<td style="text-align:center;" >' + getActive(JSONUser[i].active) + '</td>';		
+		newcontent += '<td style="text-align:center;" colspan="3">' + JSONUser[i].role + '</td>';
 		newcontent+="</tr>";
 	}
 	
@@ -199,8 +196,8 @@ function pageselectCallback(page_index, jq){
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
          <fieldset style="border:1px solid #CCC; width:710px; margin:0px; padding:0px;" >
    	    <legend>USER MANAGEMENT</legend>
-        
-          <table id="searchtable" width="700" border="0" cellspacing="1" cellpadding="2">			<tr>				<th align="right" width="5%">ID</th>				<td align="left" width="5%">					<input name="search_id" type="text" id="search_id" size="7" />				</td>				<th align="right" width="15%">FIRST NAME</th>				<td align="left" width="15%">					<input name="search_firstname" type="text" id="search_firstname" size="20" />				</td>				<th align="right" width="15%">LAST NAME</th>				<td align="left" width="15%">					<input name="search_lastname" type="text" id="search_lastname" size="20" />				</td>				<th align="right" width="15%">DEPARTMENT</th>				<td align="left" width="15%">					<input name="search_department" type="text" id="search_department" size="20" />				</td>			</tr>			<tr>				<th align="right">CLIENT-ID</th>				<td align="left">					<input name="search_clientid" type="text" id="search_clientid" size="7" />				</td>				<th align="right" width="">OFFICE PHONE NO.</th>				<td align="left">					<input name="search_officephone" type="text" id="search_officephone" size="20" />				</td>				<th align="right">CELL PHONE NO.</th>				<td align="left">					<input name="search_cellphone" type="text" id="search_cellphone" size="20" />				</td>				<th align="right">E-MAIL</th>				<td align="left">					<input name="search_email" type="text" id="search_email" size="20" />				</td>			</tr>			<tr>				<th align="right">LOGIN-ID</th>				<td align="left">					<input name="search_loginid" type="text" id="search_loginid" size="7" />				</td>				<th align="right">PHONE NO.</th>				<td align="left">					<input name="search_phone" type="text" id="search_phone" size="20" />				</td>				<th align="right">PASSWORD</th>				<td align="left">					<input name="search_password" type="text" id="search_password" size="20" />				</td>				<th align="right">ACTIVE					<select name="search_active" id="search_active">                <option value="-1" selected="selected">select</option>                <option value="1">YES</option>                <option value="0">NO</option>              </select>				</th>				<th align="right">ROLE					<select name="search_role" id="search_role">                <option value="select">select</option>                <option value="user">USER</option>                <option value="admin">ADMIN</option>              </select>				</th>			</tr>
+        <!-- Sắp xếp thứ tự trình bày các thuộc tính USER MÂNGEMENT và bỏ PHONE NO-->
+          <table id="searchtable" width="700" border="0" cellspacing="1" cellpadding="2">			<tr>				<th align="right" width="5%">ID</th>				<td align="left" width="5%">					<input name="search_id" type="text" id="search_id" size="18" />				</td>				<th align="right">CLIENT-ID</th>				<td align="left">					<input name="search_clientid" type="text" id="search_clientid" size="18" />				</td>				<th align="right">LOGIN-ID</th>				<td align="left">					<input name="search_loginid" type="text" id="search_loginid" size="18" />				</td>				<th align="right">PASSWORD</th>				<td align="left">					<input name="search_password" type="text" id="search_password" size="18" />				</td>				</tr>			<tr>				<th align="right" width="15%">FIRST NAME</th>				<td align="left" width="15%">					<input name="search_firstname" type="text" id="search_firstname" size="18" />				</td>				<th align="right" width="15%">LAST NAME</th>				<td align="left" width="15%">					<input name="search_lastname" type="text" id="search_lastname" size="18" />				</td>				<th align="right" width="15%">DEPARTMENT</th>				<td align="left" width="15%">					<input name="search_department" type="text" id="search_department" size="18" />				</td>			</tr>			<tr>				<th align="right" width="">OFFICE PHONE NO.</th>				<td align="left">					<input name="search_officephone" type="text" id="search_officephone" size="18" />				</td>				<th align="right">CELL PHONE NO.</th>				<td align="left">					<input name="search_cellphone" type="text" id="search_cellphone" size="18" />				</td>				<th align="right">E-MAIL</th>				<td align="left">					<input name="search_email" type="text" id="search_email" size="18" />				</td>			</tr>											<!--<th align="right">PHONE NO.</th>				<td align="left">					<input name="search_phone" type="text" id="search_phone" size="20" />				</td>-->			<tr >				<th>&nbsp;</th>				<th>ACTIVE					<select name="search_active" id="search_active" style="padding-left: 13px;">                <option value="-1" selected="selected">select</option>                <option value="1">YES</option>                <option value="0">NO</option>              </select>				</th>				   <th>&nbsp;</th>				<th align="right">ROLE					<select name="search_role" id="search_role">                <option value="select">select</option>                <option value="user">USER</option>                <option value="admin">ADMIN</option>              </select>             </th>                       </tr>					<!--Kết thúc sửa-->
             <tr>
               <th  align="right">&nbsp;</th>
               <td>&nbsp;</td>
@@ -214,21 +211,20 @@ function pageselectCallback(page_index, jq){
           </table>
 		
       </fieldset>
-      </form>
+      </form><!--Hoang- Customize table--like remaning work vurman.com-->
     	<div id="users-contain" class="ui-widget" style=" width: 710px; clear:both; float:left; margin:0px; padding:0px; padding-top:5px;">
             <div id="Searchuser">This content will be replaced when pagination inits.</div>
             <table id="users" class="ui-widget ui-widget-content" style="width: 710px;">
                 <thead>
                     <tr class="ui-widget-header ">
                     	<th>ID</th>
-                        <th>CLIENT-ID</th>
-                        <th>FIRST NAME</th>                                                <th>FIRST NAME</th>                                                <th>DEPARTMENT</th>
-                        <th>EMAIL</th>
+                        <th>CLIENT-ID</th>                        						<th>LOGIN ID</th>												 <th>PASSWORD</th>                      
+                       
                     </tr>
-                    <tr class="ui-widget-header ">
-                      <th>LOGIN ID</th>                                            <th>OFFICE PHONE</th>                                            <th>CELL PHONE</th>                                            <th>PHONE</th>
-                      <th>PASSWORD</th>
-                      <th>ROLE|ACTIVE</th>
+                    <tr class="ui-widget-header " style=" width: :710px;" >
+                       <th style="width: 238px;">FIRST NAME</th>                                                <th style="width: 238px;" >LAST NAME</th>                                                <th style="width: 238px;" colspan="2">DEPARTMENT</th>                                           <!-- <th>PHONE</th>-->					</tr>					<tr class="ui-widget-header ">						<th>OFFICE PHONE</th>                                            	<th>CELL PHONE</th>                      	                      	<th colspan="2">E-MAIL</th>						</tr>	
+                     					<tr class="ui-widget-header ">
+                      <th>ACTIVE</th>                                            <th colspan="3">ROLE</th>
                     </tr>
                 </thead>
                 <tbody>

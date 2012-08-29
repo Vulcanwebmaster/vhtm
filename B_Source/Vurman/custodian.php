@@ -93,15 +93,15 @@ function pageselectCallback(page_index, jq){
 	{		if(color=="#f5f5f5") 			color="#cccccc";		else if(color=="#cccccc")				color="#f5f5f5";
 		//alert(i);
 		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
-		newcontent += '<td>  <a style=\'text-decoration:underline; cursor:pointer;\' onclick=ViewCustodian(' + JSONCustodian[i].id+')>'+JSONCustodian[i].id + '</a></td>';
-		newcontent += '<td>' + JSONCustodian[i].cpid + '</td>';
-		newcontent += '<td>' + JSONCustodian[i].counterparty + '</td>';
-		newcontent += '<td>' + JSONCustodian[i].biccp + '</td>';
+		newcontent += '<td style="text-align:center;">  <a style=\'text-decoration:underline; cursor:pointer;\' onclick=ViewCustodian(' + JSONCustodian[i].id+')>'+JSONCustodian[i].id + '</a></td>';
+		newcontent += '<td style="text-align:center;">' + JSONCustodian[i].cpid + '</td>';
+		newcontent += '<td style="text-align:center;">' + JSONCustodian[i].counterparty + '</td>';
+		newcontent += '<td style="text-align:center;">' + JSONCustodian[i].biccp + '</td>';
 		newcontent+="</tr>";
 		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
-		newcontent += '<td>' + JSONCustodian[i].custid + '</td>';
-		newcontent += '<td>' + JSONCustodian[i].custodian + '</td>';		newcontent += '<td>' + JSONCustodian[i].biccust + '</td>';		newcontent += '<td>' + JSONCustodian[i].cpacwithcust + '</td>';		
-		newcontent+="</tr>";
+		newcontent += '<td style="text-align:center;">' + JSONCustodian[i].custid + '</td>';
+		newcontent += '<td style="text-align:center;">' + JSONCustodian[i].custodian + '</td>';		newcontent += '<td colspan="2" style="text-align:center;">' + JSONCustodian[i].biccust + '</td>';		
+		newcontent+="</tr>";				newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";				newcontent += '<td colspan="4" style="text-align:center;">' + JSONCustodian[i].cpacwithcust + '</td>';							newcontent+="</tr>";
 	}
 	
 	// Replace old content with new content
@@ -142,12 +142,12 @@ function pageselectCallback(page_index, jq){
             <tr>
               <th align="right">ID</th>
               <td align="left">
-              <input name="search_id" type="text" id="search_id" size="7" /></td>                            <th align="right">CP-ID</th>              <td align="left">              <input name="search_cpid" type="text" id="search_cpid" size="7" /></td>
-              <th align="right">COUNTERPARTY</th>
-              <td align="left"><input name="search_counterparty" type="text" id="search_counterparty" size="20" /></td>              <th align="right">BIC (CP)</th>              <td align="left"><input name="search_biccp" type="text" id="search_biccp" size="15" /></td>              
+              <input name="search_id" type="text" id="search_id" size="20" /></td>                            <th align="right">CP-ID</th>              <td align="left">              <input name="search_cpid" type="text" id="search_cpid" size="20" /></td>
+              <!--<th align="right">COUNTERPARTY</th>-->              <th align="right">NAME CP</th>
+              <td align="left"><input name="search_counterparty" type="text" id="search_counterparty" size="20" /></td>              <th align="right">BIC (CP)</th>              <td align="left"><input name="search_biccp" type="text" id="search_biccp" size="20" /></td>              
             </tr>
             <tr>
-              <th align="right">CUST-ID</th>              <td align="left">              <input name="search_custid" type="text" id="search_custid" size="7" /></td>              			  <th align="right">CUSTODIAN</th>              <td align="left"><input name="search_custodian" type="text" id="search_custodian" size="20" /></td>			  			  <th align="right">BIC (CUST.)</th>              <td align="left"><input name="search_biccust" type="text" id="search_biccust" size="20" /></td>			  			  <th align="right">CP-A/C-WITH-CUST</th>              <td align="left"><input name="search_cpacwithcust" type="text" id="search_cpacwithcust" size="15" /></td>              </tr>              <tr>
+              <th align="right">CUST-ID</th>              <td align="left">              <input name="search_custid" type="text" id="search_custid" size="20" /></td>              			  <!--<th align="right">CUSTODIAN</th>-->			  <th align="right">NAME CUST</th>              <td align="left"><input name="search_custodian" type="text" id="search_custodian" size="20" /></td>			  			  <th align="right">BIC (CUST.)</th>              <td align="left"><input name="search_biccust" type="text" id="search_biccust" size="20" /></td>              <tr/>              <tr>			  			  <th align="right">CP-A/C-WITH-CUST</th>              <td align="left"><input name="search_cpacwithcust" type="text" id="search_cpacwithcust" size="20" /></td>              </tr>              <tr>
               <td colspan="8" align="right">
                 <input type="submit" name="Search" id="Search" value="SEARCH" />
                 <input type="button" id="create-custodian" value="ADD CUSTODIAN" />              </td>
@@ -161,13 +161,13 @@ function pageselectCallback(page_index, jq){
                 <thead>
                     <tr class="ui-widget-header ">
                     	<th>ID</th>
-                        <th>CP-ID</th>
-                        <th>COUNTERPARTY</th>
-                        <th>BIC (CP)</th>
+                        <th>COUNTERPARTY - ID</th>
+                        <!--<th>COUNTERPARTY</th>-->                        <th>NAME COUNTERPARTY</th>                        
+                        <th >BIC (COUNTERPARTY)</th>
                     </tr>
-                    <tr class="ui-widget-header ">                    	<th>CUST-ID</th>                        <th>CUSTODIAN</th>
-                    	<th>BIC (CUST.)</th>
-                        <th>CP A/C WITH CUST.</th>
+                    <tr class="ui-widget-header ">                    	<th>CUSTODIAN-ID</th>                        <!--<th>CUSTODIAN</th>-->                        <th>NAME CUSTODIAN</th>
+                    	<th colspan="3">BIC (CUSTODIAN)</th>                    </tr>                    <tr class="ui-widget-header " >
+                        <th colspan="4">COUNTERPARTY A/C WITH CUSTODIAN</th>
                     </tr>
                 </thead>
                 <tbody>
