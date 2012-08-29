@@ -94,6 +94,7 @@ function login()
 			{
 				  $resx=mysql_fetch_assoc($res);
 				  $_SESSION['login'] = $resx['id'];
+				  $_SESSION['name']=$resx['firstname'];
 				  $_SESSION['usertype'] = $resx['role'];
 			}
 	  }

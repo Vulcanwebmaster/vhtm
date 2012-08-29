@@ -14,7 +14,8 @@ if(!logged())
 else
   {
   include($templates.'menu.php');  
-  include($templates.'welcome.html');  
+  include($templates.'welcome.php');  
+  //include($templates.'sucess.php'); 
   include($templates.'footer.php');
   }
 ?>
