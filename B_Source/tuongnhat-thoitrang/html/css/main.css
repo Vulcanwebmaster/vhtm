@@ -1,0 +1,1481 @@
+/* Css basic style rules */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+body{
+    *behavior: url(/css/valentino/hover1.htc);/*IE6 behavior don't remove*/
+	font-family: Arial,Verdana,serif;
+	text-align:center;
+	font-size:68.8%;
+    height:100%;
+    width:100%;
+    font-size:11px;
+}
+form{
+	padding: 0;
+	margin: 0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset, img {
+	border:0 none;
+}
+address, caption, cite, code, dfn, em, th, var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol, ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+caption, th {
+	text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:100;
+}
+#subWrapper {
+    display:none;
+}
+.clear{
+    clear:both;
+}
+
+/* INPUT, SELECT */
+input, select{
+	margin: 0 0 4px 0;
+	padding: 2px 0 0 3px;
+	width: 240px;
+	height: 16px;
+	font-size:11px;
+	background: #F8F8F8;
+	border: 1px solid #E1E1E1;
+}
+select{
+	height: 18px !important;
+	padding: 0px 0px 0px 3px;
+}
+a.buttonPrev:hover , a.buttonPrev:active ,
+a.buttonNext:hover , a.buttonNext:active { /*ho eliminato tutti gli hover per incompatibilit�*/
+	color:#000;
+}
+a.buttonNext, a.buttonNext:link, a.buttonNext:visited {
+    background:none repeat scroll 0 0 #fff;
+    border:1px solid #e9e9e9;
+    color:#999;
+    cursor:pointer;
+    display:block;
+    float:left;
+    font-weight:bold;
+    height:19px;
+    line-height:19px;
+    padding:0 10px;
+    text-align:center;
+    text-transform:uppercase;
+}
+a:link, a:visited, a:active,
+.error a:link, .error a:visited, .error a:active {
+	cursor: pointer;
+	color: #999;
+	text-decoration: none;
+}
+a:hover, .error a:hover {
+	color: #000;
+	cursor: pointer;
+}
+a:active {
+	outline: none;
+}
+a:focus {
+	-moz-outline-style: none;
+	outline: none;
+}
+object {
+	outline: none;
+}
+.bold{
+    font-weight:bold;
+}
+.privacy {
+    clear:both;
+    padding:14px 0;
+    width:100%;
+}
+/* INPUT, SELECT END*/
+
+/* Header */
+#header{
+    height:90px;
+    margin-top:20px;
+    z-index:3;
+}
+#header, #subheader {
+    padding:0 19px;
+    position:relative;
+}
+#logoContainer h1, #logoCartContainer h1{
+    position:absolute; 
+    left:-9000px;
+}
+.headerCnt{
+    height:100%;
+    position:relative;
+    width:960px;
+}
+.logoTop{
+    padding-top:15px;
+}
+#logoContainer{z-index:1000;}
+#logoContainer, #logoContainerZoom{
+    position:relative;
+    display:block;
+    background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;
+    height:45px;
+    width:280px;
+}
+#logoContainer /* IE6 PNG FILTER */ {
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='http://cdn2.yoox.biz/Os/valentino3/valentino.png');
+}
+#logoCartContainer{
+    position:relative;
+    display:block;
+    background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;
+    height:45px;
+    width:280px;
+}
+   
+
+/*LOGO RED*/
+.redValentino #logoContainer,.redValentino #logoContainerZoom{
+    background:url('http://cdn2.yoox.biz/Os/valentino3/redvalentino.png') no-repeat scroll left top;
+    width:225px;
+    height:71px;
+}
+.redValentino #logoContainer /* IE6 PNG FILTER */ {
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='http://cdn2.yoox.biz/Os/valentino3/redvalentino.png');
+}
+.right{
+    position:absolute;
+    right:0;
+}
+#cntTop{top:0;}
+#userBar
+{
+	float:left;
+}
+#textSearch .inputSearch input
+{
+	width: 170px;
+	height:18px;
+	border:1px solid #626262;
+	margin-top: -5px;
+}
+#textSearch .inputSearch a
+{
+	background: url("http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg") no-repeat;
+    display: block;
+    height: 16px;
+    position:absolute;
+    top:-3px;
+    right:2px;
+    width: 16px;
+	
+}
+#containerNewsletter{top:26px}
+#login{font-family:'DinLight',Arial,Verdana,serif;}
+#login li, .navCnt li{display:inline;}
+#login a{
+    font-size:12px;
+    line-height:11px;
+    display:block;
+    float:left;
+    height:10px;
+    padding:0 8px;
+    border-left:1px solid #626262;
+    text-transform:uppercase;
+    color:#999;
+}
+#login a:hover{color:#000;}
+#login li.first a {border:none;}
+#login li.last a {padding-right:0;}
+.navCnt a#wishBtn, .navCnt span#cartLink{
+    display:block;
+    float:left;
+    font-size:12px;
+    width:121px;
+    text-align:center;
+    text-decoration:none;
+}
+#wishBtn{
+    border:1px solid #000;
+    color:#000;
+}
+#cartLink{
+    border: 1px solid #C81E12;
+    color: #C81E12;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    margin-left: 10px;
+    text-align: center;
+    width: 130px;
+}
+span#cartLink:hover{    
+    background-color:#c81e12;
+    color:#fff;
+}
+a#wishBtn:hover{
+    background-color:#000;
+    color:#fff;
+}
+#bannerMenu{
+    width:280px;
+    z-index:1;
+    /*display:inline;
+    float:right;*/
+    
+    position:absolute;
+    top:20px;
+    right:285px;
+}
+
+.banner1, .banner2, .banner3, .banner4{
+    display:inline;
+    float:left;
+    text-align:center;
+    height:16px;
+    width:135px;
+    margin:5px 0 0 5px;  
+	/*position: absolute;*/
+}
+/*
+.banner1{
+	left:700px;
+	top:0;
+}
+.banner2{
+	left:840px;
+	top:0;
+}
+.banner3{
+	left:700px;
+	top:19px;
+}
+.banner4{
+	left:840px;
+	top:19px;
+}
+*/
+ #subheader{
+    height:47px;
+    *position:absolute;
+    *z-index:2;
+    *width:960px;
+}
+.redValentino #subheader{
+    display:none;
+}
+/**menu Home e relativo sottomenu**/
+.menuNavigation .mpa li a{
+    position:relative;
+    text-decoration:none;
+}
+.menuNavigation .mpa li a:hover{background-color:#cb2519;_height:26px;}
+.menuNavigation li{float:left;text-transform:uppercase;}
+.menuNavigation a{
+    float:left;
+    white-space:nowrap;
+}
+.menuNavigation ul{
+    position:absolute;
+    top:-9000px;
+    background-color:#fff;
+    z-index:2;/*perch� il wrapper � 1*/
+    width: 224px;
+}
+ul #pap{width:203px;}
+ul #as{width:174px;}
+.menuNavigation ul.subMenu-on{
+    position:absolute;
+    top:26px;
+    left:44px;
+    border-right:1px solid #ECECEC;
+    z-index: 1001;/*perch� il prFilter � 1000*/
+}
+li.currentSel,#subMenu li.selected{background-color:#cb2519;height: 26px;cursor:pointer;}
+.menuNavigation ul li{
+    float:none;
+    background-color:#909090;
+    height:26px;
+	line-height:26px;
+    margin:2px;
+    z-index:2;
+    padding-right: 9px;
+   
+}
+.menuNavigation ul a{
+    float:none;
+    display:block;
+    padding-top:5px;
+    padding-left:9px;
+    font: 16px/16px "DinRegular",Arial,Verdana,serif;
+}
+.mpa{
+    position:relative;
+    background-color:#909090;
+    height:30px;
+    padding-right:10px;
+    padding-left:55px;
+    margin-right:5px;
+}
+.mpa.notsel, .mpa.notsel.currentSel{
+    background-color:#eee;
+    cursor:default;
+}
+.mpa.notsel a:hover, .mpa.notsel.currentSel a:hover{cursor:default;}
+.mpa:hover,ul.subMenu-on li:hover,.subMenu li.selected:hover,.mpa li.selected{background-color:#C62917}
+.menuNavigation li .selected {
+    font: 24px/24px "DinRegular",Arial,Verdana,serif; 
+    display:block;
+    text-decoration:none;
+	padding-top:5px;
+}
+.menuNavigation .selected, .menuNavigation ul a{height:20px;color:#fff;width:auto;line-height:16px;}
+.subMenu-on{display:block;}
+#subMenu{
+    position:absolute;
+    top:14px;
+    _width:680px;/*IE6 richiede dimensione fissa*/
+}
+li.mpa{_width:82px;}/*IE6 richiede dimensione fissa*/
+.switchSeason {
+    color: #909090;
+    font-family: 'DinRegular',Arial,Verdana,serif;
+    font-size: 20px;
+    float:left;
+    display:inline;
+    padding-left:18px;
+    text-transform: uppercase;
+    /**width:407px;*//*IE6/7 richiedono dimensione fissa sul float*/
+}
+.switchSeason li {display:inline;}
+.redValentino .switchSeason {
+    font-family:'DinLight',Arial,Verdana,serif;
+    margin:-58px 0 0 308px;
+}
+.redValentino .switchSeason li{float:none;}
+.redValentino a.secondarySeason:hover {
+    background-color:#666;
+}
+.redValentino .mainSeason {
+    font-size:26px;
+    display:block;
+    color:#727272;
+    letter-spacing:-2px;
+}
+.redValentino .secondarySeason {
+    font-size: 16px;
+    background-color:#e5e5e5;
+    color:#999;
+    padding:0 10px;
+}
+.redValentino .secondarySeason:hover{color:#999;}
+.secondarySeason {
+    font-size:12px;
+    line-height:30px;
+    text-decoration:none;
+    color: #909090;
+}
+.secondarySeason:hover{color:#000;}
+
+.switchGender {
+    color: #909090;
+    font-family: 'DinRegular',Arial,Verdana,serif;
+    font-size: 20px;
+    float:right;
+    display:inline;
+    margin-right:265px;
+    text-transform: uppercase;
+    /**width:407px;*//*IE6/7 richiedono dimensione fissa sul float*/
+}
+.switchGender li {display:inline;}
+
+.notSelGender {
+    color: #909090;
+    font-size: 12px;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.cols{
+    z-index:1;
+    font-weight: normal;
+    text-align: left;
+}
+.welcome{
+    float:left;
+    line-height: 11px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.welcome span{padding:0 8px;}
+.mainSectionsInner{/*modificare gianluca*/
+    font-family:'DinMedium',Arial,Verdana,serif;
+}
+.redValentino #login{
+    font: 12px 'DinMedium',Arial,Verdana,serif;
+}
+.redValentino #mainSectionsInner{top: 72px;}
+#mainSectionsInner{
+    font-size:11px;
+    text-transform:uppercase;
+}
+/* Newsletter & Shop By Red-Valentino */
+#containerNewsletter{
+    font:11px/25px 'DinLight',Arial,Verdana,serif;
+    height:25px;
+}
+.redValentino #containerNewsletter{
+    font-size:12px;
+}
+#containerShop{
+    display:inline;
+    float:right;
+    font-size:14px;
+    width: 400px;
+	position: relative;
+	z-index: 1000;
+}
+#containerShop a{
+    color:#000;
+    padding:0 10px;
+}
+#containerShop a#first{
+    border-right:1px solid #000;
+}
+#containerShop a.selected{
+    text-decoration:underline;
+}
+#newsletter{
+    display:inline;
+    float:right;
+    position:relative;
+}
+#newsletter span{
+    margin:0 10px 0 0;
+    text-transform:uppercase;
+    font-weight:100;
+}
+#newsletter form {
+    display:inline;
+}
+#newsletter input {
+    background:none repeat scroll 0 0 #fff;
+    width:170px;
+    height:18px;
+    line-height:18px;
+    border:1px solid #626262;
+    margin:0;
+    _height:20px;
+}
+.redValentino #newsletter input {
+    background:none repeat scroll 0 0 #dcdcdc;
+    width:140px;
+    height:16px;
+    line-height:16px;
+    margin:0 22px 0 0;
+    border: 0 none;
+}
+.redValentino a#newsletterSubmit {
+    background-position:0px -16px;
+    display:block;
+    position:absolute;
+    right:3px;
+    top:4px;
+    *top:5px;
+    _top:1px
+}
+a#newsletterSubmit {
+    background:url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll 0 0 transparent;
+    display:block;
+    height:16px;
+    position:absolute;
+    right:3px;
+    top:3px;
+    *top:5px;
+    _top:3px;
+    width:16px;
+}
+/* Newsletter End*/
+
+/* menuRed */
+div.floatL.textSearch{
+    display:none;
+}
+.redValentino  input#textsearchinput {
+    background:none repeat scroll 0 0 #DCDCDC;
+    border:0 none;
+    height:16px;
+    line-height:16px;
+    margin:12px 22px 0 0;
+    width:205px;
+}
+.redValentino input#searchRight {
+    border:0 none;
+    padding:0 none;
+    background:url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll 0 -15px transparent;
+    display:block;
+    position:absolute;
+    right:0px;
+    top:12px;
+    *top:13px;
+    width:16px;
+    height:16px;
+    cursor:pointer;
+}
+.menuRed{
+    border-bottom:1px solid #000;
+}
+#menuRed{
+    font-family:'DinLight',Arial,Verdana,serif;
+    text-transform:uppercase;
+}
+#switchSeason, #menuRed h2 a{
+    font-size:19px;
+}
+#switchSeason a.super{
+    letter-spacing:-2px;
+}
+#menuRed h2 a{
+    background-color:#000;
+    color:#fff;
+    padding:0 10px;
+    text-decoration:none;
+}
+#theme h2 a{
+    height:20px;
+    line-height:50px;
+    padding:0;
+    color:#000;
+    background-color:#fff;   
+}
+#switchSeason li a{
+    background-color:#666;
+    color:#fff;
+    padding:0 10px;
+    font-weight:100;
+    text-decoration:none;
+}
+.redValentino #switchSeason li.selected a,
+.redValentino  #switchSeason #micro li.selected a{
+    background-color:#000;
+}
+#switchSeason #micro{
+    margin-left:14px;
+}
+#switchSeason li a:hover,
+#switchSeason #micro a{background-color:#999;}
+#switchSeason a.super{background-color:#e5e5e5;}
+#switchSeason a.super.sel,
+#switchSeason #micro a:hover{
+    background-color:#666;
+}
+#switchSeason #super_22{color:#999;}
+#switchSeason #super_22:hover{background-color:#666;}
+#switchSeason a.super.sel,
+.redValentino  #switchSeason #micro li.selected a{cursor:default;}
+.subMacro, #theme li a{
+    font-size:16px;
+    line-height:20px;
+}
+#theme li a{
+    padding:0 5px;
+    color:#000;
+}
+#theme li.selected a,#theme li a:hover{
+    background-color:#000;
+    color:#fff;
+}
+#textSearch{
+    height:50px;
+    position:relative;
+}
+#theme{
+    padding-bottom:15px;
+    font-weight:100;
+}
+#bannerSlot a{
+    line-height:50px;
+    font-weight:100;
+}
+
+#newArrivals {
+	margin-bottom: 10px;
+}
+
+#newArrivals li a.selected, #newArrivals li a.selected:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#newArrivals li a {
+    color: #000;
+    padding: 0 5px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+
+
+
+/* menuRed End */
+
+/* Main Structure */
+#container{
+    text-align:left;
+    width:998px;
+    margin:0 auto;
+}
+#accountindex #wrapper, #accountregistration #wrapper{
+    padding:0 9px;
+}
+.redValentino #wrapper{
+    margin-top:30px;
+    height:470px;/* per IE5.x e IE6 */
+    min-height:470px; 
+}
+#wrapper{
+    height:auto!important;  /* per i browser moderni */
+    height:540px;/* per IE5.x e IE6 */
+    min-height:540px; 
+    z-index:1;
+    padding:19px;
+    *padding:66px 19px 19px 19px;
+}
+#content{position:relative;}
+#switchBrand{
+    font-family:'DinLight',Arial,Verdana,serif;
+    left: 0px;
+}
+.redValentino #switchBrand{margin-top:22px;position:static;}
+#switchBrand a{
+    font-size:16px;
+    color:#fff;
+    font-weight:100;
+    text-decoration:none;
+}
+.redValentino #switchBrand a{
+    padding:0 5px;
+    background-color:#000;
+}
+#col1{
+    height:auto;
+    width:100%;
+    position:relative;
+}
+.redValentino #content{
+    width:230px;
+    min-height:440px;
+    height:auto !important;
+    height:440px;
+    float:left;
+    display:inline;
+    padding-bottom:19px;
+    position:relative;
+}
+.redValentino #col1{
+    width:730px;
+    min-height:440px;
+    height:auto !important;
+    height:440px;
+    float:left;
+    display:inline;
+    margin:0 auto;
+}
+#slotContainer{
+    height:540px;
+    width:960px;
+}
+.redValentino #slotContainer{
+    float:right;
+    height:404px;
+    width:720px;
+    position: absolute;
+    left: 10px;
+}
+
+/* BANNER SLOT HOMEPAGE VALENTINO */
+.innerSlot01, 
+.innerSlot02, 
+.innerSlot03, 
+.innerSlot04, 
+.innerSlot05, 
+.innerSlot06, 
+.innerSlot07, 
+.innerSlot08, 
+.innerSlot09, 
+.innerSlot10, 
+.innerSlot11, 
+.innerSlot12, 
+.innerSlot13, 
+.innerSlot14, 
+.innerSlot15, 
+.innerSlot16{
+	position:absolute;
+	float: left;
+	min-height:135px;
+	min-width: 240px;
+}
+.innerSlot01{
+	top:0;
+	left:0;
+}
+.innerSlot02{
+	top:0;
+	left:240px;
+}
+.innerSlot03{
+	top:0;
+	left:480px;
+}
+.innerSlot04{
+	top:0;
+	left:720px;
+}
+.innerSlot05{
+	top:135px;
+	left:0;
+}
+.innerSlot06{
+	top:135px;
+	left:240px;
+}
+.innerSlot07{
+	top:135px;
+	left:480px;
+}
+.innerSlot08{
+	top:135px;
+	left:720px;
+}
+.innerSlot09{
+	top:270px;
+	left:0;
+}
+.innerSlot10{
+	top:270px;
+	left:240px;
+}
+.innerSlot11{
+	top:270px;
+	left:480px;
+}
+.innerSlot12{
+	top:270px;
+	left:720px;
+}
+.innerSlot13{
+	top:405px;
+	left:0;
+}
+.innerSlot14{
+	top:405px;
+	left:240px;
+}
+.innerSlot15{
+	top:405px;
+	left:480px;
+}
+.innerSlot16{
+	top:405px;
+	left:720px;
+}
+
+/* BANNER SLOT HOMEPAGE RED-VALENTINO */
+.redValentino .innerSlot01, 
+.redValentino .innerSlot02, 
+.redValentino .innerSlot03, 
+.redValentino .innerSlot04, 
+.redValentino .innerSlot05, 
+.redValentino .innerSlot06, 
+.redValentino .innerSlot07, 
+.redValentino .innerSlot08, 
+.redValentino .innerSlot09, 
+.redValentino .innerSlot10, 
+.redValentino .innerSlot11, 
+.redValentino .innerSlot12, 
+.redValentino .innerSlot13, 
+.redValentino .innerSlot14, 
+.redValentino .innerSlot15, 
+.redValentino .innerSlot16{
+	position:absolute;
+	float: left;
+	min-height:180px;
+	min-width: 101px;
+}
+.redValentino .innerSlot01{
+	top:0;
+	left:0;
+}
+.redValentino .innerSlot02{
+	top:0;
+	left:180px;
+}
+.redValentino .innerSlot03{
+	top:0;
+	left:360px;
+}
+.redValentino .innerSlot04{
+	top:0;
+	left:540px;
+}
+.redValentino .innerSlot05{
+	top:101px;
+	left:0;
+}
+.redValentino .innerSlot06{
+	top:101px;
+	left:180px;
+}
+.redValentino .innerSlot07{
+	top:101px;
+	left:360px;
+}
+.redValentino .innerSlot08{
+	top:101px;
+	left:540px;
+}
+.redValentino .innerSlot09{
+	top:202px;
+	left:0;
+}
+.redValentino .innerSlot10{
+	top:202px;
+	left:180px;
+}
+.redValentino .innerSlot11{
+	top:202px;
+	left:360px;
+}
+.redValentino .innerSlot12{
+	top:202px;
+	left:540px;
+}
+.redValentino .innerSlot13{
+	top:303px;
+	left:0;
+}
+.redValentino .innerSlot14{
+	top:303px;
+	left:180px;
+}
+.redValentino .innerSlot15{
+	top:303px;
+	left:360px;
+}
+.redValentino .innerSlot16{
+	top:303px;
+	left:540px;
+}
+
+.redValentino .innerSlot{
+    float:left;
+    display:inline;
+    background-color:Green;
+    width:180px;/*appena saranno presenti i banner inserire auto e accomunare le classi*/
+    height:101px;/*appena saranno presenti i banner inserire auto e accomunare le classi*/
+}
+
+/* Main Structure End*/
+
+/* Footer */
+#footer{
+    font-family:'DinMedium',Arial,Verdana,serif;
+    font-size:10px;
+    margin:0 auto;
+    text-transform:uppercase;
+    width:998px;
+    height:73px;
+    clear:both;
+}
+#footer a{
+    text-decoration:none;
+}
+#footer li{
+    display:inline;
+}
+.redValentino #footer, #accountindex #footer, #accountregistration #footer,
+#accountprofile #footer, #accountorders #footer,
+#accountaddress #footer, #accountwishlist #footer, .helpArea #footer{
+    clear:both;
+    background:0 none;
+}
+#footer{
+    background-color:#909090;
+}
+#ftLeft{
+    float:left;
+    display:inline;
+    margin:26px 0 41px 19px;
+    position:relative;
+}
+.border {
+    border-right:1px solid #fff;
+}
+#ftLeft li span{padding-right:8px;}
+#ftLeft li span.border{font-weight:bold;}
+.redValentino #ftLeft li span.border{font-weight:normal;color:#000;}
+.redValentino #shpp, .redValentino .border,
+#accountindex #shpp, #accountindex .border,
+#accountregistration #shpp, #accountregistration .border,
+#accountprofile #shpp, #accountprofile .border,
+#accountorders #shpp, #accountorders .border,
+#accountaddress #shpp, #accountaddress .border,
+#accountwishlist #shpp, #accountwishlist .border,
+.helpArea #shpp, .helpArea .border{
+    border-right: 1px solid #b2b2b2;
+}
+#footer #ftLeft li, #footer #cyc{
+    display:inline-block;
+    float:left;
+    height:10px;
+    line-height:10px;
+}
+#footer #ftRight li{float:right;}
+#footer #ftRight li.last a{padding-right:0px;}
+#ftRight a, #ftLeft a, #cyc,#ftLeft li span{
+    color:#fff;
+}
+#footer #cyc{
+    margin-left:8px;
+}
+#shpp{
+    color:#fff;
+}
+#shpp{
+    padding-right:8px;
+}    
+#ftRight{
+    float:right;
+    display:inline;
+    margin: 26px 19px 41px 0;
+    width:560px;
+}
+#footer #ftRight a{
+    padding:0 8px;
+}
+#footer #ftRight .copyright li{font-size:11px;padding:0;}
+.redValentino #footer, #accountindex #footer, #accountregistration #footer,
+#accountprofile #footer, #accountorders #footer, #accountaddress #footer, #accountwishlist #footer,.helpArea #footer{
+    border-top:1px solid #b2b2b2;
+}
+.redValentino #footer li,.redValentino #footer a,.redValentino #footer span,
+#accountindex #footer li span, #accountindex #footer a,
+#accountregistration #footer li, #accountregistration #footer a,
+#accountprofile #footer li, #accountprofile #footer a,
+#accountorders #footer li, #accountorders #footer a,
+#accountaddress #footer li, #accountaddress #footer a,
+#accountwishlist #footer li, #accountwishlist #footer a,
+.helpArea #footer li, .helpArea #footer a, .helpArea #ftLeft li span,#accountorders #footer #ftLeft span,#accountprofile #footer #ftLeft span,
+#accountaddress #footer #ftLeft span,#accountwishlist #footer #ftLeft span{
+    color:#b2b2b2;
+}
+#ftRight ul{float:right;}
+.copyright{
+    font-size:9px;
+    text-transform:none;
+    color:#535353;
+    margin-top:8px;
+}
+#footer #ftRight .copyright li a{
+    float:none;
+    color:#535353;
+    padding:0px;
+}
+/* Footer End*/
+
+/* Litbox */
+.LB_window {
+    display:none;
+    font-size:11px;
+    position:absolute;
+    z-index:5001;/*maggiore di col2*/
+    text-align: left;
+}
+.LB_overlay,#LB_overlay {
+    background:url("http://cdn2.yoox.biz/Os/blank.gif") repeat scroll 0 0 transparent;
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;
+}
+#productAddedToCart{z-index:5011;}
+#productAddedToCart.errorAdd .item{display:none;}
+.errorAdd{height:50px;}
+.LB_overlay{z-index:4999;}
+body#item .LB_overlay{z-index:5000;}
+#wishlistInfoBox{z-index:5011;}
+.LB_content {
+    height:auto;
+}
+.shippingCell {
+    float:left;
+    display:inline;
+    width:300px;
+}
+.shippingCosts {
+    float: right;
+    text-align: right;
+    width: 100px;
+}
+#clearer, .clearer {
+    clear:both;
+    height:0 !important;
+    line-height:0;
+    margin:0;
+    padding:0;
+}
+.LB_window .inside {
+    background:none repeat scroll 0 0 #fff;
+    border:1px solid #909090;
+    padding:5px;
+}
+
+.popupSizeConversion .inside{
+    width:600px;
+}
+
+ .popupSizeConversion1 .inside{
+    width:550px;
+  }
+
+.popupSizeConversion td, .popupSizeConversion1 td {
+    border:1px solid #666;
+    text-align:center;
+    padding:4px;
+}
+.popupSizeConversion .caption, .popupSizeConversion1 .caption {
+    width:150px;
+    text-align:left;
+}
+
+.popupSizeConversion #sizeconvTableContainer
+{
+    border:0;
+}
+
+
+
+.popupSizeConversion .colorCaption, .popupSizeConversion1 .colorCaption{
+    background:#333;
+    color:#fff;
+    font-weight:bold;
+}
+
+#sizeConv2 table{
+    width:520px;
+ }
+
+.popupSizeConversion1 .left{ text-align:left; width:180px;}
+
+#shippingCosContent .contribution {
+    float:left;
+    display:inline;
+    width:460px;
+}
+.LB_closeAjaxWindow a:link, .LB_closeAjaxWindow a:visited {
+    background:url("http://cdn2.yoox.biz/Os/valentino/main/v02/x_close.gif") no-repeat scroll right top transparent;
+    color:#000;
+    display:block;
+    float:right;
+    font-size:10px;
+    font-weight:bold;
+    height:15px;
+    position:relative;
+    width:15px;
+    z-index:9998;
+    margin: 5px 5px 0 0;
+}
+#addToWish{
+    display: inline;
+    float: right;
+    margin-top: -19px;
+}
+#labelUser,#labelPassword{display:block;}
+#buttonSubmit {
+    clear: left;
+}
+#submitLogin .buttonSx{height:0px;}
+/* Litbox End*/
+
+/* Litbox Newsletter */
+#newsletterLayer{
+    font-family:'DinLight',Arial,Verdana,serif;
+    padding:30px;
+    text-align:left;
+    height: auto;
+    font-size: 13px;
+}
+#newsletterLayer h2.sectionTitle {
+    font-family:'DinMedium',Arial,Verdana,serif;
+    font-size:14px;
+}
+#labelEmailNewsletter{
+    margin:18px 0;
+}
+.twinletterNewsletter {
+    width:15px;
+    height:15px;
+}
+#chooseLogo {
+    width:100%;
+    margin-top:40px;
+    height: 90px;
+}
+#chooseLogo div {
+    float:left;
+    display:inline;
+    width:209px;
+}
+#chooseLogo input {
+    margin-right:15px;
+    margin-top:12px;
+    vertical-align:top;
+    border:none;
+}
+#v {
+    /*padding-top:27px;*/
+    text-align:right;
+}
+#emailNewsletter {
+    background:none repeat scroll 0 0 #DCDCDC;
+    border:0 none;
+    font-size: 13px;
+}
+a#submitNewsletter.buttonNext {
+    background:#000;
+    border:0 none;
+    color:#fff;
+    font-size:14px;
+    position:absolute;
+    bottom:40px;
+    right:228px;
+    padding:0 5px;
+}
+a#submitNewsletter.buttonNext:hover {
+    color:#fff;
+}
+
+#errNewsletterFlag{
+	color:Red;
+}
+/* Litbox Newsletter End */
+
+/* Account */
+#accountindex #header, #accountregistration #header,
+#accountprofile #header, #accountorders #header,
+#accountaddress #header, #accountwishlist #header{
+    height:160px;
+}
+.hiddenSubmit, .hiddenField {
+    border:medium none !important;
+    display:none;
+}
+.hiddenInput {
+    height:0;
+    margin:0;
+    padding:0;
+    visibility:hidden;
+    width:auto !important;
+}
+#accountNavigation, #headWrapper {
+    background:none repeat scroll 0 0 #666;
+    border-bottom:1px solid #fff;
+    height:27px;
+    line-height:27px;
+    margin:0 auto;
+    width:960px;
+}
+h2.sectionTitle, #newsletter h2 {
+    font-size:12px;
+    height:27px;
+    line-height:27px;
+    text-align:left;
+    text-transform:uppercase;
+}
+h2.sectionInnerTitle {
+    color:#4C4C4C;
+    font-size:12px;
+    font-weight:bold;
+    height:40px;
+    line-height:35px;
+    margin-bottom:15px;
+    text-align:left;
+    text-transform:uppercase;
+}
+.sectionHeader {
+    display:inline !important;
+    float:left;
+    width:100%;
+}
+#partials {
+    background:none repeat scroll 0 0 #fff;
+    border:1px solid #656565;
+    margin-left:500px;
+    padding:10px;
+    position:absolute;
+    top:300px;
+    width:400px;
+}
+
+#partials .flagMM {
+    display: inline;
+    margin-left: 50px;
+}
+#myHeader {
+    float:right;
+    font-size:9px;
+    overflow:hidden;
+    padding:0;
+    text-align:left;
+    text-transform:uppercase;
+    width:650px;
+}
+#myHeader ul {
+    float:right;
+    margin:0;
+    overflow:hidden;
+}
+#myHeader ul li {
+    float:left;
+    height:27px;
+    line-height:27px;
+    list-style:none outside none;
+    padding:0 5px;
+    text-align:center;
+    text-transform:uppercase;
+}
+#myHeader ul li a {
+    color:#fff;
+}
+#myHeader ul li a, #myHeader ul li span {
+    /*float:left; da verificare se rompe qualcosa*/
+    height:27px;
+    line-height:27px;
+}
+#myHeader ul li.sel {
+    background:none repeat scroll 0 0 #fff;
+    color:#000;
+    line-height:27px;
+}
+#headWrapper h1 {
+    color:#fff;
+    display:inline;
+    float:left;
+    font-size:12px;
+    padding-left:10px;
+    text-align:left;
+    text-transform:uppercase;
+}
+.gb #myHeader{
+	width: 715px;
+}
+/* Account End */
+
+a.buttonPrev, a.buttonPrev:link, a.buttonPrev:visited {
+    background:none repeat scroll 0 0 #FFFFFF;
+    border:1px solid #E9E9E9;
+    color:#999999;
+    cursor:pointer;
+    display:block;
+    float:left;
+    font-weight:bold;
+    height:19px;
+    line-height:19px;
+    padding:0 10px;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+/* Sitemap */
+
+#sitemap .brands h2, #sitemap .ccare h2 { margin-bottom: 5px; font: 12px 'DinRegular',Arial,Verdana,serif; text-transform: uppercase;}
+#sitemap .firstLevelItem { width: 300px; float: left; margin-left: 10px; }
+#sitemap .secondSel { margin: 0 0 0 10px; }
+#sitemap .thirdSel { margin: 0 0 10px 10px; }
+
+/*****LitBox wishList and ShoppingBag*****/
+
+#cartLayer,#productAddedToCart{
+    position:absolute;
+    background-color:#fff;
+    border-right:1px solid #eaeaea;
+    border-bottom:1px solid #d8d8d8;
+    border-left:1px solid #eaeaea;
+    right: 0;
+    top: 17px;
+}
+#productAddedToCart .msg b{display:none;}
+#cartLayer{z-index:5002;/*maggiore di col2*/background:#fff;}
+#cartLayer .itemInCart,#productAddedToCart .item{
+    height:70px;
+    text-align:right;
+    border-bottom: 1px solid #B3B3B3;
+}
+#cartLayer .itemInCart{margin:7px 10px;}    
+#productAddedToCart .item{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+}
+#productAddedToCart .item .desc{color: #B3B3B3;}
+.itemInCart a, .itemInCart a:hover, .total a, .total a:hover{color:#000;text-decoration:none;}
+#productAddedToCart .item{height:auto; border:none;}
+#productAddedToCart .inside{border:none;}
+#cartLayer img,#productAddedToCart .item img{
+    display:inline;
+    float:left;
+    height:63px;
+    width:50px;
+}
+#cartLayer .total{margin: 8px 0 16px;text-align: center;}
+#cartLayer strong{color:#b3b3b3;}
+#cartLayer .price{color:#000;}   
+#productAddedToCart .item a{
+    background-color: #C81E12;
+    color: #fff;
+    display: block;
+    font-family: 'DinLight',Arial,Verdana,serif;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    width: 240px;
+    text-align: center;
+}
+#productAddedToCart .item .goToSB{display:none;}/*verificare correttezza*/
+#cartLayer .total, #cartLayer .total .price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.taglicolore,.price{
+    font-weight:bold;
+    color: #000;
+}
+#addToShoppingBag{
+    text-transform: none;
+    display: block;
+    width: 240px;
+    height:auto;
+}
+.continueShopping{height:30px;margin: 5px;}
+.continueShopping a{position:relative;}
+#cartLayer .continueShopping a {
+    font-family:'DinRegular',Arial,Verdana,serif;
+    background-color: #C81E12;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 8px 5px;
+    text-transform: uppercase;
+    width:220px;
+    margin-bottom: 5px;
+}
+.redValentino #cartLayer{
+    border:1px solid#000;
+    top:16px;
+}
+.redValentino #cartLayer strong {color:#000;}
+
+.switchBrandVale .red {color:#C81E12}
+
+.switchBrandRed {visibility: hidden}
+
+#subhomeVALENTINO #switchBrand {
+	text-align:right;
+	clear:both;
+}
+
+#subhomeVALENTINO #switchBrand span{
+    font-size:16px;
+    color:#fff;
+    font-weight:100;
+    text-decoration:none;
+}
+#subhomeVALENTINO .usa a {
+	background: url('http://cdn2.yoox.biz/Os/valentino3/logoRedFooter2.gif') no-repeat scroll 0 0 transparent;
+	height: 50px;
+    margin-left: 10px;
+    position: absolute;
+    top: -11px;
+    width: 138px;
+}
+
+#targetVideo {
+	position:relative;
+}
+
+#linkLayer {
+    left: 0;
+    position: absolute;
+    top: 0;
+    display:block;
+    height:537px;
+    width:960px;
+    background : url("http://cdn2.yoox.biz/Os/valentino/blank.gif") repeat; 
+    cursor: pointer;
+}
+
+/*	unsubscribeNL */
+.unsubscribe{
+	width: 250px;
+}
+.unsubscribe .checkbox{
+	margin-top: 12px;
+}
+div.unsubscibeNL{
+	height: 140px;
+	padding-bottom: 0;
+}
+.unsubscibeNL p{
+	float: left;
+	height: 20px;
+	padding-top: 3px;
+}
+p.mailInput{
+	padding-top: 0;
+	margin-left: 20px;
+}
+#multipleUnsubscribe{
+	clear: both;
+}
+span#unsubscribeNl {
+    background: url("http://cdn2.yoox.biz/Os/valentino3/unsubNl.png") no-repeat scroll 28px top transparent;
+    display: block;
+    height: 55px;
+}
+#unsubscribe1 #unsubscribeNl{
+	height: 28px;
+}
+#unsubscribe2 #unsubscribeNl{
+	background-position: 28px -28px;
+}
+.subMenu1{ position:absolute; z-index:999; background-color:#909090; width:183px; font-size:16px; text-transform:uppercase; top:30px; color:#FFF; padding-left:5px;}
+.subMenu1 a{ cursor:pointer; height:25px; width:183px; }
+.subMenu1 a:hover{ background-color:#C62917; color:#FFF;}
+.subMenu2{ position:absolute; z-index:999; background-color:#909090; width:183px;font-size:16px; text-transform:uppercase; top:30px; color:#FFF; padding-left:5px;}
+.subMenu2 a{ cursor:pointer; height:25px; width:183px; }
+.subMenu2 a:hover{ background-color:#C62917; color:#FFF;}
+.subMenu3{ position:absolute; z-index:999; background-color:#909090; width:183px;font-size:16px; text-transform:uppercase; top:30px;  padding-left:5px;}
+.subMenu3 a{ cursor:pointer; height:25px; width:183px;color:#FFF;}
+.subMenu3 a:hover{ background-color:#C62917; color:#FFF;}

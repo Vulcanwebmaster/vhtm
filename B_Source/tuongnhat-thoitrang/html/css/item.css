@@ -1,0 +1,776 @@
+#wrapper{
+    font-family:"DinLight", Arial, Verdana, Sans-Serif;
+    padding:0 19px;
+    *padding:66px 19px 19px 19px;
+}
+#header{z-index:13;}/*maggiore dello z-index dei bottoni di sb e wh*/
+.redValentino #wrapper{ padding:0 19px;}
+.htmlZoomOverflow{overflow:hidden;}
+iframe{border:0px solid #fff;height:80px;}
+.productTip{display:none !important;}/***PROVA.. metto important perch� ha valenza sullo stile in linea*/
+.redValentino #content{margin-right:11px;}
+.cols, #thumbs{
+    display:inline;
+    float:left;
+}
+.innerCol{height:100%;}
+.redValentino #col1{
+    width:470px; 
+    margin-top:30px;
+}
+.redValentino #col2{
+    width:239px;
+    margin:26px 0 0 9px;
+}
+#backToWrapper{padding-top:18px;}
+.redValentino #backToWrapper{padding:0;}
+#container{ *overflow:hidden;}
+#col1{width:515px;/*deve eseere fissa per ie*/}
+
+#wrapColumns
+{
+	min-height:500px;
+	display:inline-block;
+}
+
+#images{min-height:490px;}
+#buttonsWrap{height:50px;}
+.redValentino #buttonsWrap{
+    height:15px;
+    border-top:1px solid #9c9c9c;
+    margin-bottom:3px;
+}
+#mainImage, .thumb{cursor:pointer;}
+
+#wrapInputField{position:relative;}
+
+#col2{
+    height:100%;
+    width:424px;
+    margin-top:0;
+    margin-left:21px;
+}
+#col2Print {
+	margin-left:21px;
+	margin-top:0;
+}
+
+#innerThumbs .thumb.sel, .redValentino #zoomThumbsContainer .thumb.sel, #zoomThumbsContainer .thumb.sel{border:1px solid #909090;}
+.redValentino #zoomThumbsContainer #otherImages{
+    position:relative;
+    top:-25px;
+    display:block;
+    text-transform:uppercase;
+    color:#000;
+    font: 14px "DinLight",arial;
+}
+.redValentino #innerThumbs .thumb.sel{
+    border:none;
+    border-bottom:1px solid #000;
+}
+#thumbs{
+    margin-right:34px;
+    width:94px;
+}
+#innerThumbs .thumbElement360 .thumb{
+    background: url("http://cdn2.yoox.biz/Os/valentino3/spin360.gif") no-repeat scroll center center transparent;
+    width:90px;
+    height:116px;
+}
+.redValentino #thumbs{
+    margin:0;
+    clear:both;
+}
+#mainImg{
+    display:inline;
+    float:left;
+    width:387px;
+}
+.redValentino #mainImg{
+    width:360px;
+    margin-top:1px;
+}
+.related{
+    display:inline;
+    float:left;
+    margin: 80px 6px 0 0;
+    border:1px solid #dadada;
+}
+.redValentino .related{margin: 5px 6px 0 0;}
+#relatedBox{
+    height: 200px;
+    position: relative;
+    bottom:0;
+}
+.redValentino #relatedBox{
+    position:static;
+    height:auto;/*sovrascrive valentino*/
+}
+.thumbElement{
+    border:1px solid #dadada;
+    margin:6px 0;
+}
+
+.reducedThumb
+{
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+
+.reducedThumb img
+{
+	height:95px
+}
+
+.redValentino .thumbElement {margin: 6px 1px;}
+.redValentino .thumbElement{
+    border:none;
+    display: inline;
+    float: left;
+} 
+#zoomDesc{cursor:pointer;}
+#zoomDesc, #printPage{
+    position:absolute;
+    right:20px;
+    bottom:15px;
+}
+#printPage{bottom:0px;}
+.fontStyle{
+    font-size:14px;
+    color:#a0a0a0;
+    text-transform:uppercase;
+}
+/***buttons***/
+
+#backToSr{
+    float:right;
+    background-position:left -46px;
+    padding-left:15px;
+    font-size:12px:
+}
+#backToSr span{
+    text-transform:uppercase;
+}
+.redValentino #backToSr{
+    border-right:1px solid #9C9C9C;
+    border-bottom:1px solid #9C9C9C;
+    border-left:1px solid #9C9C9C;
+    background-image: url('http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg');
+    background-repeat:no-repeat;
+    background-position: left 0;
+    display:inline;
+    float:left;
+    padding-left:18px;
+    padding-right:5px;
+}
+.redValentino #backToSr a{font-size:11px;}
+#backToSr,#prevNextImg{
+    display:inline;
+} 
+#prevNextImg{float:left;}
+.redValentino #prevNextImg{
+    float:right;
+    padding:0;
+    border-right:1px solid #9C9C9C;
+    border-bottom:1px solid #9C9C9C;
+    border-left:1px solid #9C9C9C;
+}
+.itemsButton{
+    background-image:url('http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg');
+    background-repeat:no-repeat;
+}
+.redValentino .itemsButton a{
+    color:#000;
+    font-size:11px;
+}
+#prev{background-position:left -46px;}
+.redValentino #prev{background-position:left -16px;}
+#next{background-position:right -62px;}
+.redValentino #next{background-position:right -31px;}
+
+/* zoom */
+
+#logoContainerZoom {
+    position:absolute;
+    z-index:5004;
+    left: 60px;
+    top:35px;
+}
+#zoomCloseBtn{
+    background:url('http://cdn2.yoox.biz/Os/valentino3/cross.gif') no-repeat scroll 70px center;
+    position:absolute;
+    top:35px;
+    right:45px;
+    color:#000;
+    border:1px solid #000;
+    padding: 2px 35px 2px 9px;
+    text-transform:uppercase;
+    font: 14px arial;
+    z-index:1001;
+}
+.touchScrollInner, #bigPhoto {
+    background-color:#fff;
+}
+#bigPhoto {
+    left:0;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:5001;/*maggiore di col2*/
+}
+.loading {
+    background: #fff url("http://cdn2.yoox.biz/Os/valentino3/ajax-loader.gif") center no-repeat;
+}
+.loading #iPhoto {
+    display:none;
+}
+#zoomThumbsContainer {
+    width:94px;
+    position:absolute;
+    left:60px;
+    bottom:12px;
+    z-index:5001;
+}
+.redValentino #zoomThumbsContainer{
+    width:auto;
+    border-top:1px solid #000;
+}
+.redValentino #zoomThumbsContainer a{
+    display:inline-block;
+    border:none;
+    padding:0 2px;
+}
+#zoomThumbsContainer a{display:block;}
+#iPhoto {
+    cursor:pointer;
+    overflow:hidden;
+}
+#WrapTextScroll{
+    overflow:hidden;
+    position:relative;
+}
+/**bottoni add to*/
+#wishAndAddButton, #vision360{
+    clear:both;
+    margin-top:10px;    
+    position: relative;
+}
+.redValentino #wishAndAddButton{height:auto;}
+#greenbox{
+    display:inline;
+    float:left;
+    width:163px;
+    position:relative;
+}
+.redValentino #greenbox{
+    border:1px solid #000;
+    width:239px;
+    display:block;
+    float:none;
+}
+.redValentino #greenbox a{
+    background-color:Transparent;
+    text-align:center;
+}
+#addToShare{
+    display:inline;
+    float:right;
+    width:180px;
+}
+.redValentino #printPage{
+    position:relative;
+    margin-top:10px;
+    border:1px solid #767676;
+    width:239px;
+    right:0;
+    bottom:0;
+    text-align:center;
+}
+.redValentino #printPage a{
+    display:block;
+    padding:6px 0;
+    font-family: "DinMedium",Arial,Verdana;
+}
+.redValentino #addToShare{
+    float:none;
+    display:block;
+    width:239px;
+}
+/**tab dettagli prodotto**/
+#tabs{height:16px;}
+#tabs a, .buttons a{
+    font: 12px "DinLight",arial;
+    text-transform:uppercase;
+    color:#707070;
+    padding: 0 11px;
+}
+.buttons li{display:inline;}
+.redValentino #prev a{
+    padding-left:11px;
+    padding-right:5px;
+}
+.redValentino #next a{
+    padding-left:5px;
+    padding-right:11px;
+}
+#tabs li{
+    float:left;
+    display:inline;
+    border-right:1px solid #a0a0a0;
+}
+#descriptionList{border-left:1px solid #a0a0a0;}
+#itemDescription{margin-top:20px;}
+.tab{
+    display:none;
+    margin-top:10px;
+    height: auto !important;  /* per i browser moderni */
+    height: 90px;      /* per IE5.x e IE6 */
+    min-height: 90px;  /* per i browser moderni */
+}
+.tab.active-tab-body{
+    display:block;
+    font-family:arial;
+}
+#tabs .active-tab{color:#ca2519;}
+#cp{
+    display:inline-block;
+    width:265px;
+    padding:10px 0;
+}
+#cp,#linkSizeConv{
+    text-transform:uppercase;
+    font:12px arial;
+    color:#535353;
+}
+.redValentino #cp{
+    margin:20px 0 23px 0;
+    color:#999;
+    padding:0px;
+    width:239px;
+}
+#boxDescDtlsRed{
+    border-bottom:1px solid #999;
+}
+#boxDescDtlsRed ul{height:23px;}
+#boxDescDtlsRed li{
+    display:block;
+    float:left;
+}
+#boxDescDtlsRed span#InfoRed{
+    background-color:#e5e5e5;
+    border-left:1px solid #999;
+    border-right:1px solid #999;
+    border-top:1px solid #999;
+    display:block;
+    font-family:"DinMedium",arial;
+    height:21px;
+    line-height:21px;
+    position:relative;
+    text-align:center;
+    text-transform:uppercase;
+    width:108px;
+}
+#boxDescDtlsRed #fakeLi{
+    width:108px;
+    margin-left:130px;
+    border-bottom:1px solid #999;
+}
+#textArea{
+   height:149px;
+   border:1px solid #999;
+   margin-top:-1px;
+   overflow:hidden;
+}
+.redValentino #textAreaContent{padding:13px 13px 0 13px;}
+/*****select per le taglie******/
+.sizeWrap{
+    cursor:pointer;
+    display:inline;
+    float:left;
+    width:142px;
+}
+#productInfo{
+    position:relative;
+    z-index:13;
+    width:132px;
+}
+#tableSizeConv{
+    display:inline;
+    float:left;
+}
+.redValentino #tableSizeConv{float:right;margin-top:-18px;}
+.redValentino #linkSizeConv{background-image:none;color:#000;line-height: 12px;margin-top: 0;}
+#tableSizeConv a{
+    display:inline-block;
+    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg") no-repeat scroll left -75px;
+    margin-left:28px;
+    margin-top: 3px;
+    padding-left:20px;
+}
+#sizeChoose{
+    background-color:#fff;
+    cursor:pointer;
+    color:#c7c7c7;
+    padding:3px;
+    margin:0;
+    text-align:left;
+    width:142px;
+    font-size:12px\9;
+}
+.redValentino .sizeWrap{
+    margin-top:22px;
+    float:none;
+    display:block;
+}
+.redValentino #sizeChoose{
+    font-family:"DinRegular", arial;
+    background-color:#e5e5e5;
+    color:#000;
+    padding-left:10px;
+    text-transform:uppercase;
+    width:148px;
+    text-align:left;
+}
+.backImage{
+    background: #fff url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll center -32px;
+    height:16px;
+    width:16px;
+    display:block;
+    position:absolute;
+    top:4px;
+    *top:5px;
+    right:-4px;
+}
+.redValentino .backImage{
+    background: #fff url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll center -48px;
+    right:-15px;
+}
+#sizeChooseWrap{
+    width:132px;
+    background-color:#fff;
+}
+#sizeWrapper {
+    height: 20px;
+    width: 290px;
+}
+.itemBoxPrice{
+    margin:15px 0 10px;
+    clear:both;
+    height:auto;
+    z-index:1;
+}
+.redValentino .itemBoxPrice{margin-top:9px;}
+.oldprice{text-decoration:line-through;}
+.itemBoxPrice span{
+    font:16px "DinMedium", Arial;
+    color: #313131;
+}
+.redValentino .itemBoxPrice span{
+    font:16px\16px "DinRegular", Arial;
+    color:#000;
+}
+/*****bottoni di aggiunta a carrello, wishlist****/
+#cartBox {
+    position: relative;
+    width:400px;
+}
+.redValentino #cartBox{margin-top:23px;}
+#linkAddToCart{
+    font-size:18px;
+    *width:321px/*IE 6/7 necessitano di width fixed*/
+}
+.redValentino #addToCart{
+    border:1px solid #c81e12;
+    padding:16px 0;
+}
+.redValentino #linkAddToCart{
+    background-color: transparent;
+    color: #C81E12;
+    float: none;
+    font: 16px/16px "DinMedium",arial;
+    height: 16px;
+    padding: 0;
+    width: auto;
+}
+.redValentino #linkAddToCart span{width:auto;}
+.redValentino #addToDreamboxNotLogged, .redValentino #addToDreamboxLogged{
+    padding:6px 0;
+    color:#000;
+    width:auto;
+}
+#linkAddToCart, #addToDreamboxNotLogged, #addToDreamboxLogged{
+    font-family:"DinMedium",Arial;
+    text-transform:uppercase;
+    color:#fff;
+}
+#linkAddToCart{
+    color: #fff;
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    position: relative;
+    text-align: center;
+    width: 296px;
+    z-index: 12;
+}
+/*.redValentino #linkAddToCart{z-index:11;}*/
+.redValentino #linkAddToCart,.redValentino #linkAddToCart span {background-image:none;padding:0;}
+#addToCart{position:relative;}
+.redValentino #linkLeftSide, .redValentino #linkRightSide{background:none;}
+#linkLeftSide,#linkRightSide{
+    background: url('http://cdn2.yoox.biz/Os/valentino3/spritevalentino.gif') no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 29px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 230px;
+    z-index: 11;
+}
+#linkRightSide{
+    background-position: 50px 0;
+    right: 0;
+    top: 0;
+    width: 300px;
+    z-index: 10;
+}
+.redValentino #linkRightSide{width:239px;}
+
+#thumbElement360, #dreamboxContLogged,#dreamboxContNotLogged, #rotate360container{ text-align:center;}
+#rotate360container img{padding-left:90px;}
+#addToDreamboxNotLogged, #addToDreamboxLogged{
+    color:#fff;
+    display:block;
+    font-size:14px;
+    line-height: 19px;
+    width:200px;
+    position:relative;
+    z-index: 12;
+}
+#thumbElement360Link {
+    background: url('http://cdn2.yoox.biz/Os/valentino3/360view_bn.jpg') no-repeat scroll 0 5px transparent;
+    display: block;
+    height: 60px;
+    position: relative;
+    text-align: left;
+    width: 57px;
+    z-index: 12;
+    text-indent:-2000px;
+}
+.redValentino #linkWhishLeftSide, .redValentino #linkWhishRightSide{background:none;}
+#linkWhishLeftSide,#linkWhishRightSide {
+    background:url('http://cdn2.yoox.biz/Os/valentino3/spritevalentino.gif') no-repeat scroll left -35px;
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 170px;
+    z-index: 11;
+}
+#linkWhishRightSide, #thumbElement360RightSide{
+    background-position: right -35px;
+    right: 0;
+    top: 0;
+    width: 200px;
+    z-index: 10;
+}
+.redValentino #addToDreamboxNotLogged, .redValentino #addToDreamboxLogged{background-image:none;}
+.redValentino #addToDreamboxNotLogged span, .redValentino #addToDreamboxLogged span{
+    background-image:none;
+    width:auto;
+}
+.list{
+    display:block;
+    height:16px;
+}
+#delicious{background-position: -66px -59px;}
+.redValentino #delicious{background-position: -143px -83px;}
+#facebook{background-position: 0 -59px;}
+.redValentino #facebook{background-position: -38px -83px;}
+#friendfeed{background-position: -88px -59px;}
+.redValentino #friendfeed{background-position: -177px -83px;}
+#myspace{background-position: -45px -59px;}
+.redValentino #myspace{background-position: -108px -83px;}
+#twitter{background-position: -22px -59px;}
+.redValentino #twitter{background-position: -72px -83px;}
+#shareLabel,.snWrapper{
+    display:inline;
+    float:left;
+}
+.snWrapper{height:23px;}
+.redValentino .snWrapper{margin-top:12px;}
+.redValentino .snWrapper{float:right;}
+.social{
+    float:left;
+    display:inline-block;
+    height:20px;
+    width:16px;
+    background-image: url('http://cdn2.yoox.biz/Os/valentino3/spriteValentino.gif');
+    background-repeat:no-repeat;
+    padding:0 2px 0 4px;
+}
+.redValentino .social{
+    width:26px;
+    margin-left:11px;
+    padding:0;
+} 
+#shareLabel{
+    color:#707070;
+    font:14px "DinMedium",Arial;
+    text-transform:uppercase;
+}
+.redValentino #shareLabel{
+    font-size:12px;
+    height:12px;
+    padding-right:0;
+    display:block;
+    margin-top:15px;
+}
+#itemprint #header h1 { left: 19px; }
+.redValentino #shareLabel{
+    font-family:"DinLight",Arial;
+    color:#000;
+} 
+.redValentino #microBox{
+    border-bottom:1px solid #000;
+    padding-bottom:9px;
+}
+.redValentino #microBox span{
+    font:23px/23px "DinMedium", Arial;
+    color:#000;
+    text-transform:uppercase;
+}
+.redValentino #facebookItem{
+    margin-top:10px;
+    display:inline;
+    float:right;
+    background:url("http://cdn2.yoox.biz/Os/valentino3/spriteValentino.gif") no-repeat scroll -149px -65px #ECEEF5;
+    height:16px;
+    width:72px;
+    border:1px solid #CAD4E7;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.redValentino #facebookItem a{
+    padding-left:22px;
+    color:#585e9a;
+}
+.redValentino #facebookItem span{display:inline-block;}
+.redValentino #zoomDesc{display:none;}
+/******RELATED*******/
+#relatedTitle{
+    font:18px "DinLight",Arial,Verdana;
+    color:#909090;
+    text-transform:uppercase;
+    clear:both;
+    position:absolute;
+    top:50px;
+    *top:60px;
+}
+.redValentino #relatedTitle{
+    font:14px "DinRegular",Arial,Verdana;
+    color:#000;
+    position:static;/*sosvrascrive valentino*/
+    text-align:center;
+}
+.redValentino #related{
+    border-top:1px solid #999;
+    height:115px;
+    width:270px;
+    margin: 0 auto 20px auto;
+}
+.redValentino .related{
+    border:none;
+    position:static;
+    margin-top:5px;
+ }
+#itemprint #container { width: auto;}
+#itemprint #header { padding: 0;}
+#itemprint .headerCnt, #itemprint #subHeader { width: 620px; padding-left: 19px; font: 20px "DinLight",Arial,Verdana,Sans-Serif; color: #B4B4B4;}
+#itemprint #col1 { width: 387px;}
+#itemprint #col2Print { width: 205px;}
+#itemprint #wrapper { height: 500px; min-height: 500px;}
+#itemprint #footer { width: 620px; color: #666; background-color:#FFF; border-top: 1px solid #CCC; text-align: center; text-transform: uppercase; padding: 10px 0; height:auto; }
+#printInfo .info { color: #C92519; }
+#printInfo { color: #535353; font-family: Arial, Verdana, sans-serif; }
+#printInfo span { font: 12px "DinMedium",Arial,Verdana,Sans-Serif; text-transform: uppercase; display: block; margin-top: 35px;}
+#printInfo .info { color: #C92519; }
+.redValentino .thumb{border:0 none;}
+.thumb{border:1px solid #fff;}
+.redValentino .thumbElement img{border-bottom:1px solid #fff;}
+.redValentino #zoomThumbsContainer .thumbElement img {border: 1px solid #fff;}
+#LB_overlay{z-index:10;}
+#listOfSz{
+    background-color:#fff;
+    border: 1px solid #E1E1E1;
+    overflow:hidden;/*per i padding degli li*/
+    position: absolute;
+    text-align: center;
+    width: 142px;
+    z-index: 13;
+}
+.redValentino #listOfSz{background-color:#E5E5E5;}
+#listOfSz li{
+    width:99%;
+    border-bottom:1px solid #E1E1E1;
+    text-align:left;
+    padding-left:10px;
+}
+.redValentino #listOfSz li{border-top:1px solid #999;}
+#productAddedToSb{display:none;}
+#footer{margin-top:48px;}
+.redValentino #footer{margin:0px;}
+.popupSizeConversion{z-index:5011;}
+#sizeConversion,#sizeNoConversion{
+    width:427px;
+    position:absolute;
+    top:25px;
+}
+.redValentino #sizeConversion,.redValentino #sizeNoConversion{
+    position:static;
+    margin-top:3px;
+    width:241px;
+}
+/***tabella guida alle taglie***/
+.headCol, .cntCol1{padding:0 4px;}
+/*#sizeConv .headCol{background-color:#E1E1E1;}*/
+#sizeConv .description{
+    display:block;
+    /*width:240px;*/
+    margin: 20px 0 0 0px;
+    padding:5px;
+    /*border: 1px solid #333;*/
+}
+#sizeConv .cntCol1,.cntCol2 
+{
+    line-height:10px;
+}
+#otherViews{
+    font-size: 14px;
+    color:#000;
+    top: -25px;
+    text-transform: uppercase;
+    position:relative;
+    *top:-25px;
+}
+
+#propositon65 {
+	margin: 10px 0;
+}
+
+.Proposition65Popup .inside {
+    padding:10px;
+}
+#item .preorder{
+	font-family: arial;
+	padding-top: 15px;
+	width: 200px;
+
+}
