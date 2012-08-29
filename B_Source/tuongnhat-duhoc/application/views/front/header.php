@@ -82,15 +82,12 @@
                                 <li><a href="" class="mainlevel-trans">Cơ sở</a></li>
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans" id="item">Các khóa học</a>
-                                    <div id="item-menu">
-                                    	<?php 
-											foreach($loaikhoahoc as $loai)
-											{
-										?>
-	                                         <a><?php echo $loai->ten;?></a><hr />
-                                         <?php 
-											}
-										 ?> 
+                                    <div id="item-menu" style="display: none; ">
+                                    	<a href="<?php echo base_url() ?>index.php/khoahoc/daihoc">Đại học</a><hr>
+	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/saudaihoc">Sau đại học</a><hr>
+	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/nghiepvu">Nghiệp vụ</a><hr>
+	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/banthoigian">Bán thời gian</a><hr>
+	                                    <a href="<?php echo base_url() ?>index.php/khoahoc/khac">Khóa học khác</a>
                                     </div>
                                 </li>
                                 <li>|</li>

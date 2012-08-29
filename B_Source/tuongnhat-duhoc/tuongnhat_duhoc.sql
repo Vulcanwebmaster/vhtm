@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 28, 2012 at 12:31 PM
+-- Generation Time: Aug 29, 2012 at 05:08 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -163,6 +163,32 @@ INSERT INTO `n_be_acl_resources` (`id`, `lft`, `rgt`, `name`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_entry`
+--
+
+CREATE TABLE IF NOT EXISTS `n_entry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text COLLATE utf8_unicode_ci,
+  `short_content` text COLLATE utf8_unicode_ci,
+  `main_content` text COLLATE utf8_unicode_ci,
+  `create_on` datetime DEFAULT NULL,
+  `last_update` datetime DEFAULT NULL,
+  `avatar` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `n_entry`
+--
+
+INSERT INTO `n_entry` (`id`, `title`, `short_content`, `main_content`, `create_on`, `last_update`, `avatar`) VALUES
+(5, 'Agave2', '<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Agave</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	abc</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n', '2012-08-02 00:00:00', '2012-08-02 00:23:49', '/images/Agave.jpg'),
+(6, 'Untitled', '<p>\r\n	Untitled</p>\r\n', '<p>\r\n	Untitled</p>\r\n', '2012-08-02 00:24:07', NULL, '/images/Untitled.jpg'),
+(7, 'Grass_Blades', '<p>\r\n	Grass_Blades</p>\r\n', '<p>\r\n	Grass_Blades</p>\r\n', '2012-08-02 00:25:10', NULL, '/images/Grass_Blades.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_example_contactus_info`
 --
 
@@ -210,27 +236,25 @@ INSERT INTO `n_example_contactus_message_info` (`id`, `name`, `email`, `subject`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `n_fee`
+-- Table structure for table `n_image`
 --
 
-CREATE TABLE IF NOT EXISTS `n_fee` (
-  `fee_id` int(11) NOT NULL AUTO_INCREMENT,
-  `fee_name_vn` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `fee_name_en` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `fee_decription_vn` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `fee_decription_en` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`fee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+CREATE TABLE IF NOT EXISTS `n_image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 --
--- Dumping data for table `n_fee`
+-- Dumping data for table `n_image`
 --
 
-INSERT INTO `n_fee` (`fee_id`, `fee_name_vn`, `fee_name_en`, `fee_decription_vn`, `fee_decription_en`) VALUES
-(1, 'Tiếng Anh thương mại', 'Business English', '1.100.000 VND', '50$'),
-(2, 'TOEFL iBT', 'TOEFL iBT', '2.200.200 VND', '100$'),
-(4, 'test 212', 'test 2 ENG124124', '2.200.200 VND 42', '100$2424'),
-(6, '124', '124', '124', '4214');
+INSERT INTO `n_image` (`id`, `name`, `link`) VALUES
+(26, '68-dk-off_[320x200].jpg', '/images/68-dk-off_[320x200].jpg'),
+(27, 'Untitled.jpg', '/images/Untitled.jpg'),
+(28, 'Agave.jpg', '/images/Agave.jpg'),
+(29, 'Grass_Blades.jpg', '/images/Grass_Blades.jpg');
 
 -- --------------------------------------------------------
 
@@ -239,14 +263,16 @@ INSERT INTO `n_fee` (`fee_id`, `fee_name_vn`, `fee_name_en`, `fee_decription_vn`
 --
 
 CREATE TABLE IF NOT EXISTS `n_lienhe` (
-  `id` int(11) NOT NULL,
-  `address_vn` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `address_en` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `info_vn` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
-  `info_en` varchar(4000) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `phone_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `fax_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `parentid` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `title` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `titleE` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `content` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `contentE` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `attribute1` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `attribute2` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `attribute1E` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `attribute2E` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -254,8 +280,27 @@ CREATE TABLE IF NOT EXISTS `n_lienhe` (
 -- Dumping data for table `n_lienhe`
 --
 
-INSERT INTO `n_lienhe` (`id`, `address_vn`, `address_en`, `info_vn`, `info_en`, `email`, `phone_number`, `fax_number`) VALUES
-(0, '<table border="0" cellpadding="0" cellspacing="0" width="100%">\r\n	<tbody>\r\n		<tr>\r\n			<td valign="top">\r\n				Kensington College of Business<br />\r\n				Wesley House<br />\r\n				4 Wild Court</td>\r\n		</tr>\r\n		<tr>\r\n			<td valign="top">\r\n				London</td>\r\n		</tr>\r\n		<tr>\r\n			<td valign="top">\r\n				WC2B 4AU</td>\r\n		</tr>\r\n		<tr>\r\n			<td valign="top">\r\n				UK</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '<table border="0" cellpadding="0" cellspacing="0" width="100%">\r\n	<tbody>\r\n		<tr>\r\n			<td valign="top">\r\n				Kensington College of Business<br />\r\n				Wesley House<br />\r\n				4 Wild Court</td>\r\n		</tr>\r\n		<tr>\r\n			<td valign="top">\r\n				London</td>\r\n		</tr>\r\n		<tr>\r\n			<td valign="top">\r\n				WC2B 4AU</td>\r\n		</tr>\r\n		<tr>\r\n			<td valign="top">\r\n				UK</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	The nearest underground station is Holborn which is on the Central and Piccadilly Lines. Take the exit in front of the escalators and turn left from the station down the main road called Kingsway and Wild Court can be found 3rd on the right hand side where a Bar and restaurant called BELGO can be seen on the corner of the road.</p>\r\n', '<p>\r\n	The nearest underground station is Holborn which is on the Central and Piccadilly Lines. Take the exit in front of the escalators and turn left from the station down the main road called Kingsway and Wild Court can be found 3rd on the right hand side where a Bar and restaurant called BELGO can be seen on the corner of the road.</p>\r\n', 'kcb@kensingtoncoll.ac.uk', '+44 207 404 6330 ', '+44 207 404 6708 ');
+INSERT INTO `n_lienhe` (`id`, `parentid`, `title`, `titleE`, `content`, `contentE`, `attribute1`, `attribute2`, `attribute1E`, `attribute2E`) VALUES
+('column1', '', 'Tại sao là chúng tôi?', 'Why us?', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. (VIE)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. (E)', '', NULL, NULL, NULL),
+('column1-0', 'column1', 'Lorem ipsum1', 'Lorem ipsum1(E)', '#', '#', '', NULL, NULL, NULL),
+('column1-1', 'column1', 'Lorem ipsum2', 'Lorem ipsum2(E)', '#', '#', '', NULL, NULL, NULL),
+('column1-2', 'column1', 'Lorem ipsum', 'Lorem ipsum(E)', '#', '#', '', NULL, NULL, NULL),
+('column1-3', 'column1', 'Consectetur elit', 'Consectetur elit (E)', '#', '#', '', NULL, NULL, NULL),
+('column1-4', 'column1', 'Vivamus sed a', 'Vivamus sed a (E)', '#', '#', '', NULL, NULL, NULL),
+('column1-5', 'column1', 'Ivamus hendrerit', 'Ivamus hendrerit (E)', '#', '#', '', NULL, NULL, NULL),
+('column1-6', 'column1', 'Gravida viverra', 'Gravida viverra (E)', '#', '#', '', NULL, NULL, NULL),
+('column1-7', 'column1', '', '', '', '', '', NULL, NULL, NULL),
+('column1-8', 'column1', '', '', '', '', '', NULL, NULL, NULL),
+('column1-9', 'column1', '', '', '', '', '', NULL, NULL, NULL),
+('column2', '', 'Chúng tôi là ai?', 'Who are we?', '<p class=" extra-wrap"><strong class="clr-2">(VIE)Kensington College of Business (KCB)</strong> <br> là một trong những trường Cao Đẳng đầu tiên được phép đào tạo các khóa Đại Học ở Anh và năm 2007 trường đã vinh dự tổ chức kỷ niệm 25 năm kể từ ngày thành lập. </p> </div> <p><strong> KCB là trường duy nhất ở Anh được tham gia vào ba lĩnh vực giảng dạy:</strong><br>Dự Bị Đại Học, Đại Học và Cao Học, Đây là nơi cung cấp nguồn lao động dồi dào và tay nghề chuyên môn cho một số ngân hàng, các công ty và một số các tập đoàn lớn ở Anh cũng như nhiều nước trên thế giới. Trường cũng trang bị cho sinh viên bằng cấp tay nghề hàng đầu như (Chartered Professional bodies), Institute of Chartered Secretaries and Administrators  (ICSA) và Viện Tiếp Thị (Chartered Institute of Marketing - CIM). Một số các sáng kiến hợp tác với các cơ quan đã được độc quyền bởi KCB - độc quyền đào tạo các khóa học (Certificate in Company Secretarial Practice and Share Registration Practice – CCSP).<br>velit velit eu magna. (E)</p>', '<p class=" extra-wrap"><strong class="clr-2">(ENG)Kensington College of Business (KCB)</strong> <br> là một trong những trường Cao Đẳng đầu tiên được phép đào tạo các khóa Đại Học ở Anh và năm 2007 trường đã vinh dự tổ chức kỷ niệm 25 năm kể từ ngày thành lập. </p> </div> <p><strong> KCB là trường duy nhất ở Anh được tham gia vào ba lĩnh vực giảng dạy:</strong><br>Dự Bị Đại Học, Đại Học và Cao Học, Đây là nơi cung cấp nguồn lao động dồi dào và tay nghề chuyên môn cho một số ngân hàng, các công ty và một số các tập đoàn lớn ở Anh cũng như nhiều nước trên thế giới. Trường cũng trang bị cho sinh viên bằng cấp tay nghề hàng đầu như (Chartered Professional bodies), Institute of Chartered Secretaries and Administrators  (ICSA) và Viện Tiếp Thị (Chartered Institute of Marketing - CIM). Một số các sáng kiến hợp tác với các cơ quan đã được độc quyền bởi KCB - độc quyền đào tạo các khóa học (Certificate in Company Secretarial Practice and Share Registration Practice – CCSP).<br>velit velit eu magna. (E)</p>', '', NULL, NULL, NULL),
+('column3', '', 'Nhận xét', 'Comments', '', '', '', NULL, NULL, NULL),
+('column3-0', 'column3', '', '', 'Lorem ipsum dolor sit amet, ', 'Lorem ipsum dolor sit amet,  (Eng)', 'Tina Smith Vie', 'top manager', 'Tina Smith', 'top manager'),
+('column3-1', 'column3', '', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed arcu dui, eu tincidunt sem vivamus.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed arcu dui, eu tincidunt sem vivamus.', 'Tina Smith', 'top manager', 'Tina Smith', 'top manager'),
+('column3-2', 'column3', '', '', 'Vivamus sed arcu dui, eu tincidunt sem vivamus. hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros.', 'Vivamus sed arcu dui, eu tincidunt sem vivamus. hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros.', 'John Green', 'director', 'John Green', 'director'),
+('column3-3', 'column3', '', '', 'test1 12414', 'test1(E)', 'a  124', 'a1', 'a  124', 'a1(E)'),
+('column3-4', 'column3', '', '', '', '', '', '', '', ''),
+('hyperlink1', '', 'Xem', 'Click here', 'http://abc.com', 'http://abc.com', '', NULL, NULL, NULL),
+('slogan', '', 'Chúng tôi cung cấp cho bạn những dịch vụ tốt nhất', 'We provide you best services', 'Làm hài lòng quý vị là phương châm hoạt động của chúng tôi. ', 'Pleasing customers is our motto. ', '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -366,6 +411,125 @@ INSERT INTO `n_preferences` (`name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_tn_gioithieu`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_gioithieu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tieude` text COLLATE utf8_unicode_ci,
+  `noidung` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `n_tn_gioithieu`
+--
+
+INSERT INTO `n_tn_gioithieu` (`id`, `tieude`, `noidung`) VALUES
+(1, '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 22pt; line-height: 23pt; text-align: left; ">Đan Trường th&oacute;t tim v&igrave; m&aacute;y bay bị nghi khủng bố, ha ha ha</span></p>\r\n', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 16px; line-height: 15pt; text-align: justify; ">Theo đ&uacute;ng lịch tr&igrave;nh,&nbsp;</span><a class="zinglive_highlight" href="http://news.zing.vn/sao-viet/dan-truong-thot-tim-vi-may-bay-bi-nghi-khung-bo/a269926.html#" rel="đan-trường" style="font-family: ''Times New Roman'', Times, serif; font-size: 12.2pt; line-height: 15pt; text-align: justify; margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: dashed; border-bottom-color: rgb(177, 177, 177); outline: 0px; background-color: transparent; color: rgb(0, 0, 0); text-decoration: none; " title="Thảo luận cộng đồng">Đan Trường</a><span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 16px; line-height: 15pt; text-align: justify; ">&nbsp;sẽ c&ugrave;ng quản l&yacute; của m&igrave;nh l&agrave; &ocirc;ng bầu&nbsp;</span><a class="zinglive_highlight" href="http://news.zing.vn/sao-viet/dan-truong-thot-tim-vi-may-bay-bi-nghi-khung-bo/a269926.html#" rel="hoàng-tuấn" style="font-family: ''Times New Roman'', Times, serif; font-size: 12.2pt; line-height: 15pt; text-align: justify; margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: dashed; border-bottom-color: rgb(177, 177, 177); outline: 0px; background-color: transparent; color: rgb(0, 0, 0); text-decoration: none; " title="Thảo luận cộng đồng">Ho&agrave;ng Tuấn</a><span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 16px; line-height: 15pt; text-align: justify; ">&nbsp;c&oacute; mặt tại Mỹ v&agrave;o ng&agrave;y 24/8. Ngay sau đ&oacute;, họ đ&aacute;p chuyến bay từ Los Angeles đi St.Louis để ng&agrave;y 25/8 c&oacute; mặt biểu diễn tại casino Harad St. Louis.</span></p>\r\n<p class="pBody" style="margin: 0px 0px 10px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; color: rgb(51, 51, 51); line-height: 15pt; font-family: ''Times New Roman'', Times, serif; text-align: justify; ">\r\n	Tuy nhi&ecirc;n, khi&nbsp;<a class="zinglive_highlight" href="http://news.zing.vn/sao-viet/dan-truong-thot-tim-vi-may-bay-bi-nghi-khung-bo/a269926.html#" rel="đan-trường" style="margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: dashed; border-bottom-color: rgb(177, 177, 177); outline: 0px; font-size: 12.2pt; background-color: transparent; color: rgb(0, 0, 0); text-decoration: none; background-position: initial initial; background-repeat: initial initial; " title="Thảo luận cộng đồng">Đan Trường</a>&nbsp;c&ugrave;ng &ocirc;ng bầu v&agrave; rất nhiều h&agrave;nh kh&aacute;ch kh&aacute;c đ&atilde; ổn định chỗ ngồi tr&ecirc;n chuyến bay SW 1310 của h&atilde;ng Southwest Airlines v&agrave; chờ m&aacute;y bay cất c&aacute;nh th&igrave; nhận được th&ocirc;ng b&aacute;o tạm thời kh&ocirc;ng thể bay v&igrave; l&yacute; do an ninh. Hơn 1 tiếng đồng hồ ngồi tr&ecirc;n m&aacute;y bay chờ đợi, cuối c&ugrave;ng anh Bo th&oacute;t tim khi nhận được th&ocirc;ng b&aacute;o l&agrave; chuyến bay tạm hủy do cơ quan an ninh Mỹ nghi c&oacute;<a class="zinglive_highlight" href="http://news.zing.vn/sao-viet/dan-truong-thot-tim-vi-may-bay-bi-nghi-khung-bo/a269926.html#" rel="khủng-bố" style="margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: dashed; border-bottom-color: rgb(177, 177, 177); outline: 0px; font-size: 12.2pt; background-color: transparent; color: rgb(0, 0, 0); text-decoration: none; background-position: initial initial; background-repeat: initial initial; " title="Thảo luận cộng đồng">khủng bố</a>&nbsp;sử dụng chất nổ.</p>\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_tn_khoahoc`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_khoahoc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `loaikhoahoc` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `noidung` text COLLATE utf8_unicode_ci,
+  `hocphi` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `n_tn_khoahoc`
+--
+
+INSERT INTO `n_tn_khoahoc` (`id`, `ten`, `loaikhoahoc`, `noidung`, `hocphi`) VALUES
+(9, 'BA (Hons) Marketing - 2 năm', 'Đại học (Undergraduate Courses)', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 16px; line-height: 20px; text-align: justify; ">Sau đ&ecirc;m diễn n&agrave;y ở St. Louis,&nbsp;</span><a class="zinglive_highlight" href="http://news.zing.vn/sao-viet/dan-truong-thot-tim-vi-may-bay-bi-nghi-khung-bo/a269926.html#" rel="đan-trường" style="margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: dashed; border-bottom-color: rgb(177, 177, 177); outline: 0px; font-size: 16px; color: rgb(0, 0, 0); text-decoration: none; font-family: ''Times New Roman'', Times, serif; line-height: 20px; text-align: justify; " title="Thảo luận cộng đồng">Đan Trường</a><span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 16px; line-height: 20px; text-align: justify; ">&nbsp;tiếp tục biểu diễn tại Quận Cam &ndash; nơi tập trung rất đ&ocirc;ng người Việt sinh sống &ndash; v&agrave;o ng&agrave;y 26/8. Sau đ&oacute;, anh l&ecirc;n đường sang Canada&nbsp;</span><a class="zinglive_highlight" href="http://news.zing.vn/sao-viet/dan-truong-thot-tim-vi-may-bay-bi-nghi-khung-bo/a269926.html#" rel="lưu-diễn" style="margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: dashed; border-bottom-color: rgb(177, 177, 177); outline: 0px; font-size: 16px; color: rgb(0, 0, 0); text-decoration: none; font-family: ''Times New Roman'', Times, serif; line-height: 20px; text-align: justify; " title="Thảo luận cộng đồng">lưu diễn</a><span style="color: rgb(51, 51, 51); font-family: ''Times New Roman'', Times, serif; font-size: 16px; line-height: 20px; text-align: justify; ">&nbsp;từ ng&agrave;y 31/8 &ndash; 2/9. Điểm dừng ch&acirc;n của anh Bo trong thời gian n&agrave;y l&agrave; c&aacute;c th&agrave;nh phố Vancouver, Edmonton v&agrave; Calgary.</span></p>\r\n', '10.000.000 VND'),
+(12, 'BA - Marketing - 3 năm', 'Đại học (Undergraduate Courses)', '', '10.000.000 VND'),
+(13, 'BA - Kế toán doanh nghiệp và tài chính - 2 năm', 'Đại học (Undergraduate Courses)', '', '10.000.000 VND'),
+(14, 'BA (Hons) Quản trị kinh doanh - 3 năm', 'Đại học (Undergraduate Courses)', '', '10.000.000 VND'),
+(15, ' BA (Hons) Quản lý thông tin - 2 năm', 'Đại học (Undergraduate Courses)', '', '10.000.000 VND'),
+(16, 'BA (Hons)Quản lý thông tin - 3 năm', 'Đại học (Undergraduate Courses)', '', '10.000.000 VND'),
+(17, 'BA - Kế toán doanh nghiệp và tài chính - 3 năm', 'Đại học (Undergraduate Courses)', '', '10.000.000 VND'),
+(18, 'MBA - Quản lý bảo mật', 'Sau đại học (Postgraduate Courses)', '', '10.000.000 VND'),
+(19, 'Tổng quát MBA', 'Sau đại học (Postgraduate Courses)', '', '10.000.000 VND');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_tn_lienhe`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_lienhe` (
+  `id` int(11) DEFAULT NULL,
+  `ten` text COLLATE utf8_unicode_ci,
+  `diachi` text COLLATE utf8_unicode_ci,
+  `telephone` text COLLATE utf8_unicode_ci,
+  `mobile` text COLLATE utf8_unicode_ci,
+  `fax` text COLLATE utf8_unicode_ci,
+  `email` text COLLATE utf8_unicode_ci,
+  `website` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `n_tn_lienhe`
+--
+
+INSERT INTO `n_tn_lienhe` (`id`, `ten`, `diachi`, `telephone`, `mobile`, `fax`, `email`, `website`) VALUES
+(1, 'Kensington College of Business', '34 Hồng Phúc, Quận Ba Đình Hà Nội, Vietnam', '(+844) 85868119', '(+84) 0983721368', '(+844) 38284948', 'Lien@kensingtoncoll.ac.uk', 'www.kensingtoncoll.ac.uk/vietnam');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_tn_loaikhoahoc`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_loaikhoahoc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `n_tn_loaikhoahoc`
+--
+
+INSERT INTO `n_tn_loaikhoahoc` (`id`, `ten`) VALUES
+(1, 'Đại học (Undergraduate Courses)'),
+(2, 'Sau đại học (Postgraduate Courses)'),
+(3, 'Nghiệp vụ (Professional Courses)'),
+(4, 'Bán thời gian (Parttime Courses)'),
+(5, 'Khóa học khác (Other Courses)');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_tn_tiente`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_tiente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `n_tn_tiente`
+--
+
+INSERT INTO `n_tn_tiente` (`id`, `ten`) VALUES
+(1, 'VND'),
+(2, '£'),
+(3, '€'),
+(4, '$');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_users`
 --
 
@@ -385,15 +549,14 @@ CREATE TABLE IF NOT EXISTS `n_users` (
   UNIQUE KEY `email` (`email`),
   KEY `password` (`password`),
   KEY `group` (`group`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `n_users`
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-08-28 10:13:06', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
-(2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-08-29 05:38:19', '2012-02-22 13:46:09', '2012-03-17 21:56:17');
 
 -- --------------------------------------------------------
 
@@ -419,7 +582,6 @@ CREATE TABLE IF NOT EXISTS `n_user_profiles` (
 
 INSERT INTO `n_user_profiles` (`user_id`, `company_name`, `full_name`, `web_address`, `phone_number`, `address`, `city`, `post_code`) VALUES
 (1, '', '', '', '', '', '', 0),
-(2, '', '', '', '', '', '', 0),
 (14, '', '', '', '', '', '', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
