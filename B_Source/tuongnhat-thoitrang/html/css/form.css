@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+
+form div.clear {
+	clear:both;
+}
+form div.buttons {
+	height:auto;
+	margin:0;
+}
+#fastreg form div.privacy{
+	height:50px;
+	width:438px;
+}
+/* VALIDATION ADVICE */
+form div .validation-advice {
+	font-size: 11px;
+	color: #CC0000;
+	height: 14px;
+	bottom: 0px;
+	left: 180px;
+	position: absolute;
+	padding: 0;
+	top:22px;
+}
+#advice-required-yletter {
+    position:relative;
+}
+/* LABEL */
+label {
+	font-weight: bold;
+	display:inline;
+	float:left;
+	margin:0;
+	padding: 2px 0 0 0;
+	text-align:left;
+	width: 180px;
+	color: #717171;
+}
+.error label, .inputError label {
+	width:185px;
+}
+.inputContainer, .inputCnt {
+	height: 36px;
+	clear: both;
+	position: relative;
+}
+.error, .error_credCard, .inputError{
+	color:#CC0000;
+	font-size:11px;
+	margin-bottom:10px;
+}
+.error input, .inputError input {
+	border:1px solid #c00;
+	color:#c00;
+}
+.custom-advice {
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #C8AA00;
+	color : #FFF;
+	font-weight: bold;
+}
+input.radio, input.checkbox {
+	border: 0 none !important;
+	width: 15px;
+	margin: 3px 5px 0 0;
+	vertical-align: middle;
+	background-color: transparent;
+}
+input.disabled {
+	border: none;
+	background: #dddddd;
+}
+input.validation-failed, textarea.validation-failed {
+	border-bottom: 1px solid #cc0000;
+	color: #cc0000;
+}
+
+.cnstCheckbox.validation-failed{
+	border: 1px solid #cc0000;
+}
+
+/* TEXTAREA, FIELDSET, ... */
+textarea{
+	margin: 0 0 4px 0;
+	padding: 2px 0 0 3px;
+	font-family: Arial,Helvetica,clean,sans-serif;
+	font-size:11px;
+	background: #F8F8F8;
+	border: 1px solid #E1E1E1;
+}
+fieldset {
+	padding: 1em;
+	margin-bottom: 0.5em;
+}
+hr.preSubmit{
+	border: 0;
+	color: #fff;
+	height: 1px;
+	clear: both;
+}
+/* ALTRO ... */
+#addressFormButtons{
+	height:auto;
+}
+#accountaddress form#addressForm input#defaddr{
+	width:auto;
+}
+#profileFormButtons{
+	margin-top: 15px;
+	padding-bottom: 10px;
+}
+li.firstLevelItem h2 {display:none;}
+
+
+
+
+/* consensi */
+#partials {
+	background:#FFFFFF ;
+	border:1px solid #656565;
+	padding: 10px;
+	position:absolute;
+	width:400px;
+	margin-top:0px;
+}
+
+#partialsInner{  
+	float:left;
+}
+#cnstThirdLev div{ 
+	float:left; 
+	margin-bottom:10px; 
+}
+#partials .clearer {
+	float: none;
+	margin-bottom: 0px;
+}
+#cnstThirdLev input { 
+	margin: 0 10px 0 0;
+}
+#cnstThirdLev .LB_closeAjaxWindow{
+	margin: 0; 
+	float: none;
+}
+.yletter, .yecomm{ 
+	width:350px;
+}
+.cnstSingleBox { 
+	float:left; 
+	width:20px;
+}
+#partials #clearer {
+	_display: none;
+}
+#cnstContainer{ 
+	margin:10px 0;
+	padding:10px 0;
+}
+table.tySpace{ 
+	width:100%;
+}
+
+#partials .flagMM{
+	margin-left:20px;
+	display:inline; /* corregge il margin in ie6 */
+}
+
+#cnstContainer{
+	position:relative;
+}
+
+#cnstContainer #advice-yAllCB
+{
+	top:-3px;
+	left:0;
+	background:none;
+	_width:300px !important;
+}

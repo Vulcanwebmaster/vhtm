@@ -29,7 +29,7 @@ ul.filterSr li div.content{
 	text-align:left;
 }
 li div.content{
-    background:url("http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg") no-repeat scroll 132px -48px transparent;
+    background:url("../images/searchbutton.jpg") no-repeat scroll 132px -48px transparent;
     height:16px;
     line-height:16px;
     margin-top:2px;
@@ -38,7 +38,7 @@ li div.content{
     cursor:pointer;
 }
 li div.contentV{
-    background: url("http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg") no-repeat scroll 130px -32px #FFFFFF;
+    background: url("../images/searchbutton.jpg") no-repeat scroll 130px -32px #FFFFFF;
     border: 1px solid #FFFFFF;
     cursor: pointer;
     height: 16px;
@@ -121,7 +121,7 @@ li .last{
     display: block;
 }
 #backToTop {
-    background: url('http://cdn2.yoox.biz/Os/valentino3/back_to_top.gif') no-repeat scroll 50% 0 transparent;
+    background: url('../images/back_to_top.gif') no-repeat scroll 50% 0 transparent;
     bottom: 160px;
     color: #fff;
     display: none;

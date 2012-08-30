@@ -1,0 +1,100 @@
+#submitOrder{
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;	
+	margin-top:10px;
+}
+
+#helpContainer .col1{ 
+	display:none;
+}
+#helpContainer .col2{ 
+	padding: 10px;
+}
+#codeOrderCont {
+	border-top: 1px solid #D0D0D0;
+	line-height:15px;
+	padding: 10px 7px 0;
+	background:#efefef;
+}
+#descrContainer{
+	padding: 15px 7px;
+	background:#efefef;	
+}
+.SCONTO {
+	text-decoration: line-through;
+}
+.PRICE , .price {
+	font-weight: bold;
+}
+#deleteCont{
+	font-weight:bold;
+	float:right;
+	display: inline;
+	width: 80px;
+	height: 20px;	
+	line-height: 20px;
+	text-align: center;
+	padding-top: 10px;
+}
+a#deleteOrder {
+	color: #FFF;
+	background-color: #2DB2AF;
+	display:block;
+	height:20px;
+} 
+.error {
+	width: 100%;
+	border-top: 1px solid #D4D4D4;	
+	padding-top: 20px;
+}
+.cancelError {
+	padding: 10px 7px;
+	background: #EFEFEF;
+	border-color: #D0D0D0;
+	border-style: solid solid none;
+	border-width:0px 1px medium;
+}
+#invoiceCont{
+	margin-top:15px;
+}
+.statusReturn{
+	color: #F49949;
+}
+#orderTitleContent.details{ 
+	float:left; 
+	display: inline;
+	width:300px;
+}
+#orderTitleContent.right{ 
+	float:right;
+	display: inline;
+	width:300px;
+}
+.typeDeliv, .descr, .name{ 
+	float:left;
+	display: inline;
+}
+.typeDeliv{ 
+	width:300px;
+}
+.descr {
+	width:150px;
+}
+.title{ 
+	padding: 8px 0;
+}
+#messageError{ 
+	padding: 10px 0; 
+	height:200px;
+}
+#frmContattaci input {
+	width:115px;
+}
+input#idord {
+    display:block;
+    float:none;
+    margin:1px 10px 10px 0;
+    width:348px;
+    height:16px;
+}

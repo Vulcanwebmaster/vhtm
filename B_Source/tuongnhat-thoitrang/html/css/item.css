@@ -73,7 +73,7 @@ iframe{border:0px solid #fff;height:80px;}
     width:94px;
 }
 #innerThumbs .thumbElement360 .thumb{
-    background: url("http://cdn2.yoox.biz/Os/valentino3/spin360.gif") no-repeat scroll center center transparent;
+    background: url("../images/spin360.gif") no-repeat scroll center center transparent;
     width:90px;
     height:116px;
 }
@@ -157,7 +157,7 @@ iframe{border:0px solid #fff;height:80px;}
     border-right:1px solid #9C9C9C;
     border-bottom:1px solid #9C9C9C;
     border-left:1px solid #9C9C9C;
-    background-image: url('http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg');
+    background-image: url('../images/arrowbutton.jpg');
     background-repeat:no-repeat;
     background-position: left 0;
     display:inline;
@@ -178,7 +178,7 @@ iframe{border:0px solid #fff;height:80px;}
     border-left:1px solid #9C9C9C;
 }
 .itemsButton{
-    background-image:url('http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg');
+    background-image:url('../images/arrowbutton.jpg');
     background-repeat:no-repeat;
 }
 .redValentino .itemsButton a{
@@ -199,7 +199,7 @@ iframe{border:0px solid #fff;height:80px;}
     top:35px;
 }
 #zoomCloseBtn{
-    background:url('http://cdn2.yoox.biz/Os/valentino3/cross.gif') no-repeat scroll 70px center;
+    background:url('../images/cross.gif') no-repeat scroll 70px center;
     position:absolute;
     top:35px;
     right:45px;
@@ -224,7 +224,7 @@ iframe{border:0px solid #fff;height:80px;}
     z-index:5001;/*maggiore di col2*/
 }
 .loading {
-    background: #fff url("http://cdn2.yoox.biz/Os/valentino3/ajax-loader.gif") center no-repeat;
+    background: #fff url("../images/ajax-loader.gif") center no-repeat;
 }
 .loading #iPhoto {
     display:none;
@@ -407,7 +407,7 @@ iframe{border:0px solid #fff;height:80px;}
 .redValentino #linkSizeConv{background-image:none;color:#000;line-height: 12px;margin-top: 0;}
 #tableSizeConv a{
     display:inline-block;
-    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg") no-repeat scroll left -75px;
+    background: url("../images/arrowbutton.jpg") no-repeat scroll left -75px;
     margin-left:28px;
     margin-top: 3px;
     padding-left:20px;
@@ -437,7 +437,7 @@ iframe{border:0px solid #fff;height:80px;}
     text-align:left;
 }
 .backImage{
-    background: #fff url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll center -32px;
+    background: #fff url('../images/searchbutton.jpg') no-repeat scroll center -32px;
     height:16px;
     width:16px;
     display:block;
@@ -447,7 +447,7 @@ iframe{border:0px solid #fff;height:80px;}
     right:-4px;
 }
 .redValentino .backImage{
-    background: #fff url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll center -48px;
+    background: #fff url('../images/searchbutton.jpg') no-repeat scroll center -48px;
     right:-15px;
 }
 #sizeChooseWrap{
@@ -523,7 +523,7 @@ iframe{border:0px solid #fff;height:80px;}
 #addToCart{position:relative;}
 .redValentino #linkLeftSide, .redValentino #linkRightSide{background:none;}
 #linkLeftSide,#linkRightSide{
-    background: url('http://cdn2.yoox.biz/Os/valentino3/spritevalentino.gif') no-repeat scroll 0 0 transparent;
+    background: url('../images/spritevalentino.gif') no-repeat scroll 0 0 transparent;
     display: block;
     height: 29px;
     left: 0;
@@ -553,7 +553,7 @@ iframe{border:0px solid #fff;height:80px;}
     z-index: 12;
 }
 #thumbElement360Link {
-    background: url('http://cdn2.yoox.biz/Os/valentino3/360view_bn.jpg') no-repeat scroll 0 5px transparent;
+    background: url('../images/360view_bn.jpg') no-repeat scroll 0 5px transparent;
     display: block;
     height: 60px;
     position: relative;
@@ -564,7 +564,7 @@ iframe{border:0px solid #fff;height:80px;}
 }
 .redValentino #linkWhishLeftSide, .redValentino #linkWhishRightSide{background:none;}
 #linkWhishLeftSide,#linkWhishRightSide {
-    background:url('http://cdn2.yoox.biz/Os/valentino3/spritevalentino.gif') no-repeat scroll left -35px;
+    background:url('../images/spritevalentino.gif') no-repeat scroll left -35px;
     display: block;
     height: 20px;
     left: 0;
@@ -611,7 +611,7 @@ iframe{border:0px solid #fff;height:80px;}
     display:inline-block;
     height:20px;
     width:16px;
-    background-image: url('http://cdn2.yoox.biz/Os/valentino3/spriteValentino.gif');
+    background-image: url('../images/spriteValentino.gif');
     background-repeat:no-repeat;
     padding:0 2px 0 4px;
 }
@@ -650,7 +650,7 @@ iframe{border:0px solid #fff;height:80px;}
     margin-top:10px;
     display:inline;
     float:right;
-    background:url("http://cdn2.yoox.biz/Os/valentino3/spriteValentino.gif") no-repeat scroll -149px -65px #ECEEF5;
+    background:url("../images/spriteValentino.gif") no-repeat scroll -149px -65px #ECEEF5;
     height:16px;
     width:72px;
     border:1px solid #CAD4E7;

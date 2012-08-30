@@ -129,23 +129,24 @@ object {
 }
 .logoTop{
     padding-top:15px;
+	margin-left:42px;
 }
 #logoContainer{z-index:1000;}
 #logoContainer, #logoContainerZoom{
     position:relative;
     display:block;
-    background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;
+    background:url('../images/valentino.png') no-repeat scroll left top;
     height:45px;
     width:280px;
 }
 #logoContainer /* IE6 PNG FILTER */ {
     _background: none;
-    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='http://cdn2.yoox.biz/Os/valentino3/valentino.png');
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='../images/valentino.png');
 }
 #logoCartContainer{
     position:relative;
     display:block;
-    background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;
+    background:url('../images/valentino.png') no-repeat scroll left top;
     height:45px;
     width:280px;
 }
@@ -153,13 +154,13 @@ object {
 
 /*LOGO RED*/
 .redValentino #logoContainer,.redValentino #logoContainerZoom{
-    background:url('http://cdn2.yoox.biz/Os/valentino3/redvalentino.png') no-repeat scroll left top;
+    background:url('../images/redvalentino.png') no-repeat scroll left top;
     width:225px;
     height:71px;
 }
 .redValentino #logoContainer /* IE6 PNG FILTER */ {
     _background: none;
-    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='http://cdn2.yoox.biz/Os/valentino3/redvalentino.png');
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='../images/redvalentino.png');
 }
 .right{
     position:absolute;
@@ -179,7 +180,7 @@ object {
 }
 #textSearch .inputSearch a
 {
-	background: url("http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg") no-repeat;
+	background: url("../images/searchbutton.jpg") no-repeat;
     display: block;
     height: 16px;
     position:absolute;
@@ -503,7 +504,7 @@ li.mpa{_width:82px;}/*IE6 richiede dimensione fissa*/
     _top:1px
 }
 a#newsletterSubmit {
-    background:url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll 0 0 transparent;
+    background:url('../images/searchbutton.jpg') no-repeat scroll 0 0 transparent;
     display:block;
     height:16px;
     position:absolute;
@@ -530,7 +531,7 @@ div.floatL.textSearch{
 .redValentino input#searchRight {
     border:0 none;
     padding:0 none;
-    background:url('http://cdn2.yoox.biz/Os/valentino3/searchbutton.jpg') no-repeat scroll 0 -15px transparent;
+    background:url('../images/searchbutton.jpg') no-repeat scroll 0 -15px transparent;
     display:block;
     position:absolute;
     right:0px;
@@ -1011,7 +1012,7 @@ div.floatL.textSearch{
     text-align: left;
 }
 .LB_overlay,#LB_overlay {
-    background:url("http://cdn2.yoox.biz/Os/blank.gif") repeat scroll 0 0 transparent;
+    background:url("../images/blank.gif") repeat scroll 0 0 transparent;
     height:100%;
     left:0;
     position:absolute;
@@ -1413,7 +1414,7 @@ a.buttonPrev, a.buttonPrev:link, a.buttonPrev:visited {
     text-decoration:none;
 }
 #subhomeVALENTINO .usa a {
-	background: url('http://cdn2.yoox.biz/Os/valentino3/logoRedFooter2.gif') no-repeat scroll 0 0 transparent;
+	background: url('../images/logoRedFooter2.gif') no-repeat scroll 0 0 transparent;
 	height: 50px;
     margin-left: 10px;
     position: absolute;
@@ -1432,7 +1433,7 @@ a.buttonPrev, a.buttonPrev:link, a.buttonPrev:visited {
     display:block;
     height:537px;
     width:960px;
-    background : url("http://cdn2.yoox.biz/Os/valentino/blank.gif") repeat; 
+    background : url("../images/blank.gif") repeat; 
     cursor: pointer;
 }
 
@@ -1460,7 +1461,7 @@ p.mailInput{
 	clear: both;
 }
 span#unsubscribeNl {
-    background: url("http://cdn2.yoox.biz/Os/valentino3/unsubNl.png") no-repeat scroll 28px top transparent;
+    background: url("../images/unsubNl.png") no-repeat scroll 28px top transparent;
     display: block;
     height: 55px;
 }

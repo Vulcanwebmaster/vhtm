@@ -109,7 +109,7 @@ a:hover .shadow{display:block;}
 .prodPriceDiscount{text-decoration:line-through;}
 .shadow .prodPriceDiscount{margin-right:-8px;}
 .shadow span.go{
-    background-image: url("http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg");
+    background-image: url("../images/arrowbutton.jpg");
     background-position:100% -76px;
     background-repeat:no-repeat;
     display: block;
@@ -187,13 +187,13 @@ a.itemContainer:hover span.itemExtendedInfo{
     top: 465px;
 }
 #sliderLeftArrow {
-    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowsx.jpg") no-repeat scroll 0 0 transparent;
+    background: url("../images/arrowsx.jpg") no-repeat scroll 0 0 transparent;
     left: 0;
     height:12px;
     width:13px;
 }
 #sliderRightArrow {
-    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowdx.jpg") no-repeat scroll 0 0 transparent;
+    background: url("../images/arrowdx.jpg") no-repeat scroll 0 0 transparent;
     left: 0;
     height:12px;
     width:13px;
@@ -271,7 +271,7 @@ a.itemContainer:hover span.itemExtendedInfo{
     z-index: 11;
 }
 #sliderPattern {
-    background: url("http://cdn2.yoox.biz/Os/dolcegabbana/items/slideTrack.gif") no-repeat scroll right top transparent;
+    background: url("../images/slideTrack.gif") no-repeat scroll right top transparent;
     cursor: pointer;
     height: 16px;
     left: 100%;
@@ -311,7 +311,7 @@ a.itemContainer:hover span.itemExtendedInfo{
     z-index: 10;
 }
 #backTo a{
-    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg") no-repeat scroll 0 0 transparent;
+    background: url("../images/arrowbutton.jpg") no-repeat scroll 0 0 transparent;
     padding-left: 20px;
 }
 #look.redValentino #backToTop{display:none;}

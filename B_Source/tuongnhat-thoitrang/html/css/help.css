@@ -1,0 +1,252 @@
+body{
+	margin:0 auto; 
+	_text-align:center;
+}
+#wrapper{ _text-align:center;}
+
+#categoryPanel {
+	text-transform:uppercase;
+}
+#container { _text-align:center;}
+
+.floatRight {
+	float: none;
+}
+/* Help's POPUP */
+#popupBody { background: #ffffff none;}
+#popupBody #col1{
+	display:none;
+}
+#popupBody #headWrapper{
+	width:100%;
+}
+#popupBody #content{
+	min-height:300px;
+	height: auto !important;
+	height:300px;
+	width:978px;
+}
+#popupBody #main { width: 950px;}
+#popup #content {
+	padding: 0px;
+}
+#popupBody #frmContattaci div {
+	float:left;
+}
+#popupBody textarea{
+	width:203px !important; 
+	margin:0;
+}
+/* Main Content */
+#helpContainer{
+    clear: both;
+    margin:0 auto;
+    width:960px;
+    float: none;
+    text-align: center;
+}
+#main {
+	border: 1px solid #f3f3f3;
+	border-bottom: 2px solid #e1e1e1;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	padding: 0px 15px 15px 15px;
+	float: left;
+	width:928px;
+}
+#menu_home {
+	padding-top:3px;
+	float:left;
+}
+#content {
+	margin:10px 0 0 0;
+	float: left;
+	width: 950px;
+}
+/* MENU (col on the left) */
+#helpContainer .col1 {
+	display: block;
+	float:left;
+	width:190px;
+}
+#helpContainer .col1 h1 {
+	font-weight: bold;
+}
+/* CONTENT (col on the right) */
+.col2 {
+	display: inline;
+	height: auto !important;
+	padding:0 0 0 20px;
+	text-align: left;
+	float:left;
+	width:720px;
+}
+.col2 h1 {
+	display: none;
+}
+.col2 h2 {
+	margin-bottom: 10px;
+}
+.col2 ul {
+	list-style-type: disc;
+	list-style-position: outside;
+	padding-left: 40px;
+}
+.big {
+	padding: 10px 30px;
+	text-align: left;
+	min-height: 300px;
+	height: auto !important;
+	height: 300px;
+}
+.big h1 {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+/* Link delle sezioni */
+#menuSect{ 
+	text-transform: uppercase;
+	min-height: 244px;
+	height: auto !important;
+	height: 244px;
+	text-align: left;
+}
+.menuParent {
+	display: inline;
+}
+.menuItem   {
+	margin-bottom: 1px;
+}
+.menuItem1  {
+	padding: 0 0 10px 10px;
+}
+.menuItem1 span {
+	padding: 1px 0;
+}
+.menuItem1:hover span {
+	color: #000000;
+}
+.selected .menuItem1 span{
+	cursor: pointer;
+}
+/* Sottosezioni */
+#FAQ_nested_container {
+    width: 580px;
+}
+/* Titolo di sezione */
+.FAQ_accordion_toggle {
+	padding: 3px 0px 5px 0;
+	display: block;
+	width: 100%;
+}
+.FAQ_accordion_toggle a, .FAQ_accordion_toggle a b {
+	text-transform:uppercase;
+	font-weight: normal;
+}
+/* Titolo di sezione attivo */
+.FAQ_accordion_toggle_active a, .FAQ_accordion_toggle_active a:link, .FAQ_accordion_toggle_active a:visited, .FAQ_accordion_toggle_active a:hover, .FAQ_accordion_toggle_active a:active {
+	color: #000 !important;
+}
+.FAQ_accordion_toggle_active span {
+	color: #000 !important;	
+}
+/* Contenuto della sezione */
+.FAQ_accordion_content {
+	display: block ;
+	margin: 10px 0 20px 0;
+	overflow: hidden;
+}
+.internal {
+	line-height:15px;
+}
+.FAQ_accordion_content h2 {
+	margin: 15px 0 5px 10px;
+}
+.FAQ_accordion_content p {
+	line-height: 150%;
+	padding: 5px 10px 15px 0;
+}
+/* Shipping */
+.helpArea .contribution{
+	line-height:120%;
+	margin-bottom:20px;
+	width: 550px !important;
+}
+.helpArea .shippingCell {
+	width: 360px;
+	clear: both;
+	margin-bottom: 10px;
+}
+.helpArea .contribution .contribution .shippingCell {	
+	float:left;
+	display: inline;
+}
+.helpArea .shippingCosts {	
+	width:120px;
+}
+.legalDisclaimerCnt {
+	padding:5px;
+}
+.submitfield {
+	margin-right:10px;
+	float: left;
+	width: 150px;
+}
+/* Link area help con freccia a destra */
+a.Olink {
+    float: none;
+}
+#serviceAvaibility span {	
+	float:left;
+	font-weight: bold;
+}
+#serviceAvaibility a span{ color: #000000;}
+#serviceAvaibility a:hover span, a.Olink:hover span, a#buttonSubmit:hover span {	
+	color: #999999;
+}
+/* Return */
+.padding {
+	padding: 10px 0px 30px 0px;
+}
+#oblfld {
+	display: none;
+}
+.error{
+	margin:0 !important;
+}
+.oblfld{
+	display:none;
+}
+.containerExtender{
+	height:30px;
+}
+#buttonSubmit {
+	margin:0 !important;
+}
+td {
+	font-size: 11px;
+}
+#frmContattaci div{ 
+    clear:both;
+    min-height:36px;
+    height: auto !important;
+    height:36px;
+    position:relative;
+    width: 100%;
+}
+#frmContattaci textarea{ 
+     width: 245px;
+     margin-bottom:30px;
+}
+#frmContattaci label{ width: 250px;}
+#frmContattaci div .validation-advice { position: absolute !important; width: auto !important; left: 250px;}
+#sendcopy { border: none; background: none; width: auto; float: left;margin-left: 250px; margin-right: 5px;}
+#advice-comment{ top:110px; *top:100px;}
+@media screen and (-webkit-min-device-pixel-ratio:0){#advice-comment{top:90px;}} 
+
+
+#printDownload
+{
+	padding: 20px 0 20px 27px;
+}

@@ -1,0 +1,1121 @@
+#footer {font-family:Arial,Verdana,serif;}
+#logoCartContainer{background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;}
+#logoCartContainer /* IE6 PNG FILTER */ {
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='../images/valentino.png');
+}
+.LB_closeAjaxWindow a:link, .LB_closeAjaxWindow a:visited {
+	background:transparent url('../images/x_close.gif') no-repeat right top;
+}
+.LB_overlay {
+	background: url('../images/blank.gif') repeat;
+}
+a#logo {
+	background: transparent url('../images/valentinoLogo02.gif') top left no-repeat;
+}
+
+input.radio, input.checkbox, 
+.shippingCheck input#updateCart, 
+#creditcard input#updateCart, 
+#paymentCheck input#updateCart, 
+#visBilling input#billing , #giftWrappingCHK {
+	border: 0 none !important;
+	width: 15px;
+	margin: 0px 5px 0 0;
+	vertical-align: middle;
+	background-color: transparent;
+}
+/*body{background: #ffffff url('http://cdn2.yoox.biz/Os/valentino/main/v02/bgsite.jpg') repeat-x 0 160px  ;}
+#header {
+    	background: transparent url('http://cdn2.yoox.biz/Os/valentino/main/v02/common/bgHeader.jpg') bottom left repeat-x;
+}*/
+/***************************
+ * POSIZIONAMENTO 
+ **************************/
+#wrapper {
+	position: relative;
+	display: block;
+	float: none;
+	background: none;
+	margin: 80px 0 40px 0;
+	width:980px;
+	padding:0 8px;
+}
+#wrapper #content {
+	display: block;
+	float: none;
+    margin-left: 0;
+}
+.containerExtender{ display: none;}
+
+#wrapper #col1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+#cartContainer, #deliveryContainer {
+	clear: both;
+	padding: 10px 13px;
+}
+#emptyCart {
+	height: 380px;
+	clear: both;
+	padding: 10px 0;
+}
+
+/***************************
+ * COMMON: Step di navigazione 
+ **************************/
+#secMenu {
+	width: 974px;
+	height: 24px;
+	line-height: 24px;
+	background-color: #717171;
+}
+
+#secMenu ul li{
+	color: #CCCCCC;
+	display: inline;
+	line-height: 24px;
+	float: left;
+	text-align: center;
+	padding: 0 15px;
+	text-transform: uppercase;
+}
+#secMenu ul li.navbarSelected {
+	color: #FFF;
+}
+#secMenu ul li.navbarSelected div {
+	display: inline;
+}
+#secMenu ul li a, #secMenu ul li a:link, #secMenu ul li a:visited {
+	color: #999;
+}
+#secMenu ul li a:hover {
+	color: #DEDEDE;
+}
+
+/***************************
+ * COMMON: Pulsanti avanti/indietro carrello 
+ **************************/
+.leftButton{
+
+}
+.rightButton{
+	padding-right: 15px;
+}
+#navBarTop .leftButton{
+	top: -30px;
+	padding-left: 3px;
+	height: 30px;
+}
+#navBarBottom .leftButton{
+	top: 32px;
+}
+#deliveryOption{
+	float: left;
+	width: 918px;
+}
+#checkoutcart #deliveryOption{
+	width: 922px;
+}
+.buttonBar, #checkoutthankyou #navContainer {
+	position: relative;
+	height: 30px;
+	clear: both;
+}
+#navBarBottom{
+	height:24px;
+	width:980px;
+	background-color: #717171;
+}
+#navBarBottom .rightButton{
+	top: 3px;
+}
+#navBarBottom #navContainer{
+	background-color: #717171;
+}
+#navBarBottom {
+	margin: 15px 0px;
+}
+.buttonBar .leftButton, .buttonBar .rightButton {
+	position: absolute;
+	bottom: 8px;
+}
+.buttonBar .leftButton {
+	left: 0px;
+}
+.buttonBar .rightButton {
+	right: 0px;
+}
+.buttonBar .leftButton a, .buttonBar .leftButton a:link, .buttonBar .leftButton a:visited, 
+.buttonBar .rightButton a, .buttonBar .rightButton a:link, .buttonBar .rightButton a:visited ,
+.modify div a, .modify div a:link, .modify div a:visited {
+	padding: 0 25px;
+	width: auto !important;
+	width: 170px;
+	height: 19px;
+	line-height: 19px;
+}
+.buttonBar .leftButton a, .buttonBar .leftButton a:link, .buttonBar .leftButton a:visited {
+	background: #fff url("../images/arrows.gif") no-repeat 10px -2px;
+}
+.buttonBar .rightButton a, .buttonBar .rightButton a:link, .buttonBar .rightButton a:visited  {
+	background: transparent url("../images/arrows.gif") no-repeat right -23px;
+	color: #FFF;
+	border: 0;
+}
+.buttonBar .leftButton a:hover {
+}
+.buttonBar .rightButton a:hover  {
+}
+.buttonBar .leftButton a span, .buttonBar .rightButton a span , .modify a.buttonPrev span{
+	display: block;
+	background-color: #FFF;
+}
+.leftButton a.buttonPrev span, .modify a.buttonPrev span {
+	margin-left: 10px;
+	padding: 0 10px;
+}
+.rightButton a.buttonNext span {
+	margin-right: 10px;
+	padding: 0px 10px;
+}
+
+/***************************
+ * COMMON: titoli delle sezioni (no sfondo)
+ **************************/
+#userRecordedTitle, #userNoRecordedTitle, #formTitle, #checkoutdelivery #billingTitleBox #formTitle,
+#titlePayment, #registrationFormTitle {
+	text-transform: uppercase;
+	display: block;
+	padding: 1px 15px 10px 15px;
+	margin: 10px 0;
+}
+.cartTitle {
+	display: inline;
+	font-weight: bold;
+	color: #4c4c4c;
+}
+
+/***************************
+ * COMMON: titoli delle sezioni (sfondo grigio)
+ **************************/
+.emptyCartNoProds, #totale, #ddp, 
+#checkoutpayment .paymentCosts, #checkoutpayment .secureInfoTitle, 
+#waitcont p.ty {
+	clear: both;
+	font-size: 12px;
+	padding: 0px 0px 0px 15px;
+	text-transform: uppercase;
+	height: 40px;
+	line-height: 40px;
+}
+div#totalPrice {
+	line-height: 40px;
+	font-weight: bold;
+}
+#checkoutconfirmation div#totalPrice {
+	color:#A52021;
+}
+#labelTotalPayment {
+	line-height: 23px;
+}
+#checkoutpayment .paymentCosts, #checkoutpayment .secureInfoTitle {
+	width: 932px;
+}
+
+/***************************
+ * COMMON: griglia prodotti 
+ **************************/
+	/* Header */
+	ul.nav_barra {
+		height: 21px;
+		line-height: 21px;
+		clear: both;
+		width: 939px;
+		margin-top: 5px;
+		padding-left: 8px;
+	}
+	
+	ul.nav_barra li {
+		float: left;
+		display: inline;
+		text-transform: uppercase;
+		padding-left: 4px;
+		color: #bebebe;
+	}
+	li.sep0, li.sep1{
+		width: 470px;
+	}
+	#checkoutconfirmation li.sep0 {
+		width: 242px;
+	}
+	li.sep2, li.sep3, li.sep4 {
+		text-align: center;
+		width: 100px;
+	}
+	#checkoutconfirmation li.sep2, #checkoutconfirmation li.sep3, #checkoutconfirmation li.sep4 {
+		width: 167px;
+	}
+	li.sep5{
+		text-align: right;
+		width: 100px;
+		padding-right: 25px;
+	}
+	#checkoutconfirmation li.sep5 {
+		width: 151px;
+	}
+	/* Singolo prodotto */
+	.singleItemRow {
+		border: 1px solid #f3f3f3;
+		border-bottom: 2px solid #e1e1e1;
+		margin-bottom: 2px;
+		height: 93px;
+		padding: 0px 0px 0px 8px;
+		width:954px;
+	}
+	#checkoutconfirmation .singleItemRow {
+		margin-bottom: 2px;
+	}
+	.singleItemRow ul {
+		width: 100%;
+	}
+	.singleItemRow ul li {
+		float: left;
+		display: inline;
+		padding-top: 40px;
+		color: #666;
+	}
+	.quickZoom2 .image {	
+		width: 50px;
+		height: 83px;
+		margin-right: 10px;
+		float: left;
+		display: inline;
+	}
+	.quickZoom2 .txtItem { padding-top: 20px;}
+	li.list0, li.list2, li.list3, li.list4, li.list5, li.list6, li.list7 {
+		padding-top: 10px;
+	}
+	li.list0, li.list2 {
+		width: 470px;
+		padding-top: 15px !important;
+		padding-top: 20px;
+	}
+	.singleItemRow ul li.list0, .singleItemRow ul li.list2 {
+		padding-top: 10px;
+	}
+	#checkoutconfirmation li.list0 {
+		width: 244px;
+		padding-top:30px !important;
+	}
+	li.list3, li.list4, li.list5, li.list6, li.list7{
+		text-align: center;
+		width: 100px;
+		padding-left: 4px;
+	}
+	#checkoutconfirmation li.list3, #checkoutconfirmation li.list4, #checkoutconfirmation li.list5, #checkoutconfirmation li.list6, #checkoutconfirmation li.list7 {
+		width: 167px;
+	}
+	li.list7{
+		text-align: right;
+		width: 100px;
+		padding-right: 67px;
+		background-color: #f8f8f8;
+		height: 53px;
+	}
+	#checkoutconfirmation li.list7 {
+		width: 121px;
+	}
+	.price{
+		color: #a52021;
+	}
+	.sconto{
+	    text-decoration:line-through;
+	}
+
+/***************************
+ * COMMON: subtotale/totale 
+ **************************/
+.ttal .price{
+	text-transform: uppercase;
+}
+.ttal, #totale {
+	padding-right: 25px;
+	text-align: right;
+	border-top: 0px none;
+}
+
+.ttal div#subtotal, #totale #total, #totale #confTotal #totalPrice .price{
+	display: inline;
+	margin-left: 15px;
+	padding-left: 40px;
+}
+/* margin-bottom per dare spazio a fondo pagina (cart), prima dei pulsanti */
+#totale { 
+	margin-bottom: 20px;
+	padding-right:58px;
+	width:954px;
+}
+#infoSubtotal{
+	padding: 10px 0px 15px 0px;
+	/*float: left;*/
+}
+.ttal{
+	display: inline;
+	float: right;
+	width: 244px;
+	padding-top: 20px;
+}
+.ttal #subtotal{
+	padding-left: 50px;
+	padding-right: 33px;
+}
+/***************************
+ * COMMON: ddp
+ **************************/
+
+#ddp{
+    padding-right:58px;
+    text-align:right;
+    font-size:12px;
+    text-transform:none;
+    line-height:10px;
+    height:auto;
+    margin-top:15px;
+}
+#ddp #labelDdp, #totale #labelTotalCart  {
+    display:inline;
+    float:left;
+    text-align:right;
+    width:735px;
+}
+#ddpPrice #ddpTotal{
+    margin-left:15px;
+    padding-left:40px;
+}
+
+
+
+/***************************
+ * COMMON: box informativi 
+ **************************/
+.infoGeneralS {
+	clear: both;
+}
+#informazioniDelivery{padding-left:15px;}
+.infoS {
+	clear: both;
+	padding: 10px 0px 10px 15px;
+	display: inline;
+	float: left;
+	color: #A8A8A8;
+}
+
+.recapLegal .infoS {
+	clear: both;
+	padding: 10px 0px 10px 15px;	
+	width: auto;
+	display: block;
+	float: none;
+	color: #A8A8A8;
+}
+
+#checkIP .infoS{
+	float: none;
+}
+#checkIP .infoS .tySpace{
+	padding-left: 15px;
+}
+#infoDelivery{
+	color: #A8A8A8;
+	padding: 10px 0px 15px 15px;
+	float: left;
+	width: 922px;
+}
+.errorInfos, .error_credCard, #checkoutdelivery div#infoErrors {
+	border-bottom: 1px solid #ff0000;
+	border-top: 1px solid #ff0000;
+	color: #ff0000;
+	font-weight: bold;
+	padding: 3px 15px;
+	margin: 10px 0px;
+	height:auto;
+	line-height: normal;
+	float: none;
+	display: block;
+}
+.errorInfos .infoS {
+	padding: 15px 0;
+}
+#checkoutdelivery div#infoErrors  div {
+	display: inline;
+	float: none
+}
+#checkoutdelivery div#infoErrors div div.infoS {
+	padding-left: 0;
+}
+.error, .error_credCard {
+	margin-bottom: 10px;
+}
+#checkoutcart .infoS, #checkoutthankyou .infoS,
+#checkoutcart .errorInfos, #checkoutthankyou .errorInfos {
+	color: #a8a8a8;
+}
+
+/***************************
+ * COMMON: Box opzioni
+ * #deliveryOption: SPEDIZIONE
+ * .giftContainer: GIFT WRAPPING
+ * #shippingMethods/.shippingMethods: PAGAMENTO (#delivery / .confirmation)
+ * #promocode: CODICE PROMOZIONALE 
+ * .salesTax: SALES TAX
+ **************************/
+/* Contenitori */
+#areaCart .formDelivery, .shipBox{
+	padding: 10px 15px;
+}
+
+#deliveryOption, .giftContainer, #shippingMethods, .shippingMethods, #promocode, .salesTax {
+	background: url('../images/cart_title.gif') 0px 8px no-repeat;
+	border: 1px solid #f3f3f3;
+	border-bottom: 2px solid #e1e1e1;
+	margin-bottom: 2px;
+	padding: 0px 15px 15px 15px;
+	clear: both;
+	position: relative;
+	width:932px;
+}
+
+/* Titoli */
+#deliveryOption #deliveryTitle, 
+.giftContainer .giftTitle, 
+#shippingMethods #shippingTitle, 
+.shippingMethods .shippingTitle, 
+#promocode #promocodeTitle , 
+.salesTax .shippingTitle, 
+#orderCompleted .bgThankYouTitle, 
+#suggestionsForm .TitleSuggests, 
+#registrationFormTitle .TitleNotRecorded,
+.boxRecap .titleConf, .giftMessageConfirmation .titleConf, .shipBox .titleConf, .shipBox .titleConfJP, .formSpaced .titleConf {
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	color: #4c4c4c;
+}
+#content .titleCheckout{
+    padding-top:10px;
+	padding-left: 15px;
+	text-transform: uppercase;
+}
+/* Contenuto box */
+#deliveryOption #deliveryType, #deliveryOption #deliverySelected, .giftContainer .giftDetails, #shippingMethods #shippingDetails, .shippingMethods .shippingDetails, .salesTax .shippingDetails {
+	padding-left: 50px;
+	width: 535px;
+}
+/* Prezzo */
+#deliveryOption #deliveryCosts, #deliveryOption #contribPrice, .giftContainer .giftPrice, #shippingMethods #shippingPrice, .shippingMethods .contribPrice, .salesTax #contribPrice {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding-right: 58px;
+}
+#deliveryCosts .price, #shippingPrice .price, .giftPrice .price{
+	padding-right:58px;
+	padding-top:40px;
+	position:absolute;
+	right:0px;
+}
+/***************************
+ * BOX SPEDIZIONE
+ **************************/
+#deliveryTopBox, #cartContainer .formDelivery, #cartContainer #dati, .recapLegal, .shipBox .formSpaced{
+	background: url('../images/cart_title.gif') 0px 8px no-repeat;
+	border: 1px solid #f3f3f3;
+	border-bottom: 2px solid #e1e1e1;
+	margin-bottom: 2px;
+}
+
+#deliveryOption #deliveryType {
+	float: left;
+	display: inline;
+	padding-right:20px;
+}
+#deliveryOption #deliveryType .shippingCosts {
+	float: none;
+	text-align: left;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.shippingCosts div /*#deliveryOption #deliveryType .shippingCosts div*/ {
+	display: inline;
+}
+#deliveryOption #deliveryType .shippingCosts div input.radio {
+	margin-top: 0;
+}
+#deliveryOption #upsLogo {
+	display: inline;
+}
+#deliveryOption #infoDelivery {
+	padding: 15px 15px 0px 50px;
+	clear: both;
+}
+#deliveryOption #deliveryType .price,
+#deliveryOption #shippingMethods .price,
+#shippingDetails .price {
+	color: #000000;
+}
+
+/***************************
+ * BOX GIFT WRAPPING
+ **************************/
+.giftContainer .giftDetails {
+	width: 596px;
+}
+.giftContainer .giftDetails .giftCheck {
+	display: inline;
+	float: left;
+}
+.giftContainer #imageGift {
+	display: inline;
+}
+.giftContainer .giftDescriptions {
+	margin-left: 20px;
+}
+.giftContainer .giftDescriptions span {
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+/***************************
+ * BOX PAGAMENTO
+ **************************/
+#shippingMethods #shippingDetails {
+}
+#shippingMethods #shippingDetails #creditcard {
+	margin-bottom: 5px;
+}
+#shippingMethods #shippingDetails #creditcard img {
+	position: absolute;
+	top: 25px;
+	right: 150px;
+}
+
+/***************************
+ * BOX PROMOCODE 
+ **************************/
+
+#promocode #promocodeForm {
+	height: 23px;
+	padding-left: 50px;
+}
+#promocode #promocodeForm .promocodeInput {
+	width: 270px;
+	display: inline;
+	float: left;
+	margin-top: 2px;
+}
+#promocode #promocodeForm #checkCode {
+	color:#717171;
+	margin-left:10px;
+	text-transform:none;
+}
+#promocode #promocodeForm #checkCode:hover {
+	color: #999;
+}
+
+/***************************
+ * COMMON: link informativi
+ **************************/
+.deleteBtn a, #promocodeTitle a, .infoS a, #holidaysNoDelivery a, #checkCode{
+ 	text-decoration: underline;
+}
+#promocode #linkYooxCode, #linkDelivery, #linkCVV, .secureInfoTitle a {
+	color: #717171;
+	text-transform: none;
+	margin-left: 10px;
+	font-weight: normal;
+}
+#promocode #linkYooxCode:hover, #linkDelivery:hover, #linkCVV:hover, .secureInfoTitle a:hover {
+	color: #000;
+}
+
+/***************************
+ * COMMON: Campi dei moduli
+ **************************/
+.billingForm{
+	display: inline;
+	float: left;
+	background: url('http://cdn2.yoox.biz/Os/valentino/main/v02/checkout/cart_title.gif') 0px 8px no-repeat;
+}
+/* Contenitore campi input (~ .inputContainer) */
+#checkoutdelivery .inputCnt,
+#checkoutdelivery .giftContainer  div,
+#checkoutdelivery #deliveryMain div, 
+#checkoutdelivery #deliveryMain #contactAddress div,
+#checkoutdelivery #billingShip div,
+#checkoutpayment .cardCvvCnt, #checkoutpayment #cardExpire,
+#checkoutpayment .cardSurnameCnt, #checkoutpayment .cardNameCnt,
+#checkoutpayment .cardNamed div,
+#checkoutthankyou #frmNEWUSER .tySpace div {
+	padding-left: 15px;
+	float: left;
+	display: inline;
+	width: 458px;
+	position: relative;
+	height: 54px;
+}
+#checkoutdelivery #deliveryMain #contactAddress div.contactAddresses_gift {
+	height: 80px;
+}
+
+
+/* Div interni ai campi (~ .inputContainer div) */
+#checkoutdelivery .giftContainer  div div,
+#checkoutdelivery #deliveryMain div div, 
+#checkoutdelivery #deliveryMain #contactAddress, 
+#checkoutdelivery #deliveryMain #contactAddress div div,
+#checkoutdelivery #billingShip div div,
+#checkoutthankyou #frmNEWUSER .tySpace div div {
+	padding: 0;
+	float: none;
+	width: auto;
+	height: auto;
+	position: static;
+	height: auto;
+	display: inherit;
+}
+/* Forza il position absolute sui validation advice */
+#checkoutdelivery  #delivery_form .validation-advice,
+#checkoutdelivery  #delivery_form #contactAddress .validation-advice,
+#checkoutpayment .paymentForm .validation-advice,
+#checkoutthankyou .tySpace .validation-advice {
+	position: absolute !important;
+	left: 195px;
+	height: 14px;
+	line-height: 14px;
+	top: 22px;
+}
+
+/***************************
+ * CART: Carrello vuoto
+ **************************/
+.emptyCartErrorDet {
+	margin: 30px 5px;
+}
+
+/***************************
+ * DELIVERY 
+ **************************/
+/* Contenitori sezioni */
+#checkoutdelivery .giftContainer, #checkoutdelivery #shipForm, #checkoutdelivery .shipForm, #checkoutdelivery .messageSend {
+	border: 0px none;
+	padding: 0px;
+	width: 947px;
+	clear: both;
+}
+
+/* Clearer dei form */
+#checkoutdelivery .giftContainer div.formClearer, 
+#checkoutdelivery #deliveryMain div.formClearer {
+	clear: both;
+	min-height: 10px;
+	height: 10px !important;
+	display: block;
+	float: none;
+	padding: 0;
+	position: static;
+}
+
+/* Area di login */
+#registeredContent, #login_form { 
+	display: inline;
+	float: left;
+	width: 458px;
+	height: 190px;
+	padding-left: 15px;
+}
+#registeredContent {
+	padding: 5px 15px 0px 15px;
+	width: 443px;
+	color: #A8A8A8;
+}
+#checkoutdelivery .inputCnt, .rememberDelivery, .forgotten {
+	padding-left: 0px;
+}
+.rememberDelivery {
+	clear: both;
+	padding: 3px 0;
+}
+.rememberDelivery input {
+	margin-top: 1px;
+}
+#userNoRecordedContent {
+	clear: both;
+	padding: 5px 15px 15px 15px;
+	width: 917px;
+}
+#noRecordedForm {
+	display: none;
+}
+
+/* ADDRESS */
+#checkoutdelivery #delivery_form #loadAddress {
+	padding-left:195px;
+	float: left;
+	display: inline;
+	height: 36px !important;
+	
+}
+#checkoutdelivery #delivery_form div.clearer {
+	width: auto;
+	float: none;
+	display: block;
+}
+
+/* Gift Wrapping */
+#checkoutdelivery #billingTitleBox, #checkoutdelivery #billingTitleBox div {
+	padding: 0;
+	float: none;
+	width: 917px;
+}
+#checkoutdelivery #contactAddress #checkTelefono {
+	clear: both;
+	display: block !important;
+}
+#checkoutdelivery #messaggioTxtArea, #checkoutdelivery .ccard {
+	padding-left: 15px;
+}
+#checkoutdelivery #messaggioTxtArea {
+	margin-bottom: 10px;
+}
+#checkoutdelivery #messaggioTxtArea label {
+	float: left;
+	display: inline;
+}
+#checkoutdelivery #messaggioTxtArea textarea {
+	width: 712px;
+}
+
+/* Billing */
+#checkoutdelivery  #nazione {
+	margin: 5px 0px;
+}
+#checkoutdelivery  #visBilling {
+	padding: 15px;
+}
+#checkoutdelivery  #visBilling #billing {
+	margin-top: 0px;
+}
+
+/***************************
+ * PAYMENT
+ **************************/
+#checkoutpayment #paymentContent {
+	position: relative;
+}
+#checkoutpayment .alertJap {
+	margin-top: 10px;
+}
+#checkoutpayment .paymentForm #clearer, #checkoutpayment .insertCC, #checkoutpayment .alertJap2 {
+	display: none;
+	position: static;
+	height: 0px;
+	line-height: 0px;
+}
+#checkoutpayment .cardSurnameCnt, #checkoutpayment .cardNamed, #checkoutpayment #provincecardCnt {
+	clear: both;
+}
+#checkoutpayment .cardCvvCnt label {
+	width: 350px;
+}
+
+/* IE6 duplicate characters bug fix */
+#checkoutpayment .cardNameCnt, #checkoutpayment #provincecardCnt, #checkoutpayment .cardNamed {
+	margin-right: -3px;
+}
+
+
+/* Titoli */
+#checkoutpayment .paymentCosts, #checkoutpayment .secureInfoTitle {
+	height: 23px;
+	line-height: 23px;
+	font-weight: normal;
+}
+#checkoutpayment .secureInfoTitle {
+	text-transform: none;
+}
+
+/* Dati carta di credito */
+#checkoutpayment .paymentForm {
+	margin-top: 15px;
+}
+#checkoutpayment #creditCard {
+	position: absolute;
+	left:470px;
+	top: -5px;
+}
+#checkoutpayment .cardNum div, #checkoutpayment .alertJap {
+	padding-left: 15px;
+	position: relative;
+	height: 43px;
+} 
+#checkoutpayment .yooxAlert {
+	padding-left: 15px;
+	margin-bottom: 10px;
+}
+#checkoutpayment .cartTypeCnt label {
+	float: left;
+	display: inline;
+	padding-top: 2px;
+}
+#checkoutpayment .cartTypeCnt select {
+	width: 245px;
+}
+#checkoutpayment #cardExpire select {
+	width: 90px;
+}
+#paymentContent .paymentForm label{
+	width: 150px;
+}
+/* Advice SSL / sito sicuro */
+#checkoutpayment .adviceSSL {
+	margin-top: 10px;
+}
+#checkoutpayment #serverSecureInfo #first {
+	position:absolute;
+	right:20px;
+	display: block;
+}
+#checkoutpayment #serverSecureInfo .secureInfoDesciption {
+	margin:15px 130px 15px 15px;
+}
+
+
+/***************************
+ * CONFIRMATION
+ **************************/
+#checkoutconfirmation #orderMod {
+	height: 21px;
+	position: absolute;
+	margin: -52px 0 0 8px;
+}
+/* Box di riepilogo (contenitore) */
+.boxRecap, .giftMessageConfirmation {
+	position: relative;
+	margin-top: 10px;
+	padding: 0px 0px 42px 15px;
+}
+/* Barra Modifica */
+.shipBox .modify, .shipbox .modify {
+	height: 30px;
+	line-height: 30px;
+	width: 947px;
+	left: 0;
+	bottom: 0;
+	position: relative;
+}
+.shipBox .modify div a, .shipbox .modify div a {
+	margin: 5px 0px 0px 7px;
+}
+.modify div a.buttonPrev, .modify div a.buttonPrev:link, .modify div a.buttonPrev:visited {
+	border:1px solid #E9E9E9;
+	background: #FFF url("../images/arrows.gif") no-repeat 0px -2px;
+	color: #999999;
+}
+
+
+/* Dati del box di recap */
+.shipBox .formSpaced{ padding: 0 15px 15px 15px;}
+.shipBox .address, .shipBox #paymentData{ color: #999;}
+.shipBox .black{ color: #000;}
+.boxRecap .address div, .boxRecap #payment div {
+	clear: both;
+}
+.boxRecap .address div span, .boxRecap #payment div span {
+	width: 150px;
+	float: left;
+	display: inline;
+}
+.boxRecap .address div span.black, .boxRecap #payment div span.black {
+	float: none;
+	width: auto;
+}
+/* Box spedizione (#deliveryOption) + pagamento (.shippingMethods) + sales tax (.salesTax)  */
+#checkoutconfirmation #deliveryOption, #checkoutconfirmation .shippingMethods, #checkoutconfirmation .salesTax {
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 15px;
+}
+#checkoutconfirmation .confirmationDelivery .clearer, 
+#checkoutconfirmation .confirmationShipping .clearer  {
+	display: none;
+}
+
+#checkoutconfirmation #deliveryOption div, #checkoutconfirmation .shippingMethods div, #checkoutconfirmation .salesTax div {
+	line-height: 30px;
+}
+#checkoutconfirmation #cartContainer div.clearer {
+	line-height: 0px;
+}
+#checkoutconfirmation #deliveryOption {
+	/*border-top: 0px none;*/
+}
+#checkoutconfirmation #deliveryTitle, #checkoutconfirmation .shippingTitle, #checkoutconfirmation .shippingTitleGift {
+	margin-bottom: 0;
+	width: 175px;
+	float: left;
+	display: inline;
+	margin-top: 0px;
+}
+#checkoutconfirmation #deliverySelected, #checkoutconfirmation .shippingDetails {
+	display: inline;
+	padding: 0;
+}
+#checkoutconfirmation #deliveryOption #contribPrice, #checkoutconfirmation .contribPrice, #checkoutconfirmation #contribPrice {
+	top: 0;
+}
+#checkoutconfirmation .borderBottom {
+	display: none;
+	height: 0;
+	line-height: 0;
+}
+
+/* Margine a fondo pagina, prima dei pulsanti */
+.shipbox, .shipBox {
+	margin-bottom: 20px;
+	padding-left: 15px;
+}
+
+/***************************
+ * WAITFRAME
+ **************************/
+#container.waitframeContainer {
+	position: relative;
+	text-align: center;
+}
+#container.waitframeContainer a#logo
+{
+	background:none;
+}
+#waitCont #col1 {
+	display: none;
+}
+#waitcont .waitframeInnerCnt {
+	margin: 20px auto;
+	padding: 75px 0px 50px 0px;
+}
+#waitcont p.ty {
+	text-align: center;
+	margin: 0 auto 50px auto;
+	height: auto;
+}
+
+/***************************
+ * THANK YOU PAGE
+ **************************/
+#checkoutthankyou #navContainer {
+	padding-top: 10px;
+}
+#checkoutthankyou #orderCompleted {
+	margin-top: 10px;
+	background: url('../images/cart_title.gif') 0px 8px no-repeat;
+	border: 1px solid #f3f3f3;
+	border-bottom: 2px solid #e1e1e1;
+	margin-bottom: 2px;
+	padding: 0px 15px 15px 15px;
+	clear: both;
+	position: relative;
+}
+#checkoutthankyou .bgThankYou {
+    width: 900px;
+}
+#checkoutthankyou #cartContainer{ padding: 0 15px;}
+
+.thanksBackTitle{ 
+	position:relative;
+	top:-30px;
+	width:100%;
+}
+
+/* Registrazione nuovo utente */
+.rega{ padding: 15px;}
+#checkoutthankyou #frmNEWUSER {
+	margin-top: 15px;
+}
+.TitleNotRecorded { margin-top: 0 !important; margin-bottom: 0 !important;}
+#checkoutthankyou .infoS {
+	padding: 0;
+	float: none;
+}
+#checkoutthankyou  #frmNEWUSER .tySpace .thanksDiv {
+	height: auto;
+	height: 36px;
+}
+#checkoutthankyou #frmNEWUSER .tySpace div {
+	width: 900px;
+	padding-left: 0;
+	height: 36px;
+}
+#checkoutthankyou .noborderInput input {
+	margin-top: 0;
+}
+#checkoutthankyou .noborderInput span {
+	margin-right: 10px;
+}
+#checkoutthankyou .privacyNotRecorded, #checkoutthankyou #cnstContainer {
+	clear: both;
+}
+#checkoutthankyou .privacyNotRecorded .textArea {
+    margin-bottom: 10px;
+	margin-left: 180px;
+	width:700px;
+	_margin-top:0;
+}
+#checkoutthankyou .cnstCheckbox {
+	float: left;
+	display: inline;
+}
+#checkoutthankyou .bgThankYouButton {
+	height: 26px;
+		padding-top: 15px;
+}
+#checkoutthankyou #registrationFormDone {
+	clear: both;
+	padding: 15px;
+}
+#insertAdviceForm{ padding-top:10px;}
+
+/* Commenti */
+#checkoutthankyou #frmAdvice {
+	margin-left: 0;
+}
+#advice{ width: 405px; }
+#checkoutthankyou #suggestionsForm {
+	background: url('../images/cart_title.gif') 0px 8px no-repeat;
+	border: 1px solid #f3f3f3;
+	border-bottom: 2px solid #e1e1e1;
+	margin-bottom: 2px;
+	padding: 0px 15px 15px 15px;
+	clear: both;
+	position: relative;
+}
+#checkoutthankyou .bgThankYouMessage {
+	padding-top: 15px;
+}
+#checkoutthankyou .bgThankYouButtonMessage {
+	height:26px;
+	padding: 15px 0px;
+}
+#checkoutthankyou #insertAdviceError, #checkoutthankyou #insertAdviceDone {
+	padding: 5px 15px;
+}
+.suggestTextarea{ width: 400px;}
+#checkoutdelivery #loginBtn{ margin-top: 15px;}
+#deliverySelect .shippingInfo {
+    display: block;
+    margin-left: 30px;
+}
