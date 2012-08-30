@@ -1,0 +1,396 @@
+#wrapper{
+    font-family:'DinRegular',Arial,Verdana,serif;
+}
+#content{
+    display:inline;
+    float:left;
+    width:170px;
+    height:100%;
+}
+#col1{
+    display:inline;
+    float:right;
+    width:790px;
+    padding-bottom:19px;
+}
+#prFilter{
+    text-align:right;
+    height:25px;
+}
+#filters{
+    display:inline;
+    float:left;
+}
+span.numProd{
+    font-size:12px;
+    position:relative;
+    z-index:1;
+    float:right;
+    display:inline;
+}
+#accessoriesFilter h2.macro a{
+    font-size:24px;
+    color:#c62917;
+    padding:0 0 25px 3px;
+    text-decoration:none;
+    border:0 none;
+}
+#accessoriesFilter h2.macro a:hover{font-family:'DinRegular',Arial,Verdana,serif;}
+#accessoriesFilter, span.numProd{
+    text-transform:uppercase;
+}
+#accessoriesFilter a{
+    display:block;
+    height:20px;
+    line-height:20px;
+    border-bottom:1px solid #909090;
+    color:#909090;
+    font-size:11px;
+    padding-left:3px;
+    text-decoration:none;
+}
+#accessoriesFilter a:hover,
+#accessoriesFilter .selected a{
+    font-family:'DinMedium',Arial,Verdana,serif;
+    color:#000;
+}
+.redValentino .productimage{
+    width:245px;
+    padding-bottom:80px;
+}
+.productimage{
+	margin-top:10px;
+    display:inline;
+    float:left;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
+.prodInfoViewAll{display:block;margin-bottom: -1px;}
+.shadow{
+    padding: 0 5px;
+    position: absolute;
+    right: 15px;
+    bottom: 110px;
+    width: auto;
+    display:none;
+    z-index:1001;
+}
+a:hover .shadow{display:block;}
+.infoImageSlideContainer{
+    text-align:right;
+    font-size:16px;
+}
+
+.redValentino .descCont
+{
+	width:220px;
+	height:40px;
+	border-bottom:1px solid #000000;
+	
+	margin:0 auto;
+}
+.redValentino .descCont, .redValentino .priceCont
+{
+	position:relative;
+}
+
+.redValentino .infoImageSlideContainer{
+    font-size:11px;
+    text-align:center;
+    height: 60px;
+    
+    position:relative;
+}
+.shadow span{font-size:18px;}
+.shadow .prodInfoViewAll,.shadow .prodPrice,
+.shadow .prodPriceDiscount,.shadow .prodPriceSaleInline{background-color:#fff;padding: 0 3px;}
+.shadow .prodPrice, .prodPriceSaleInline{font-weight:bold;}
+.prodPriceDiscount{text-decoration:line-through;}
+.shadow .prodPriceDiscount{margin-right:-8px;}
+.shadow span.go{
+    background-image: url("http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg");
+    background-position:100% -76px;
+    background-repeat:no-repeat;
+    display: block;
+    height: 18px;
+    width: 100%;
+    margin-top: 10px;
+}
+.prodInfoViewAll{
+    text-transform:uppercase;
+    color:#909090;
+    font-size:14px;
+}
+.redValentino .prodInfoViewAll {
+    font-family:'DinMedium',Arial,Verdana,serif;
+    width:220px;
+	text-align: center;
+    color:#000;
+    font-size:15px;
+    
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+.redValentino .imageSlideContainer {
+    margin:0 auto;
+    height:233px;
+    width:180px;
+    overflow: hidden;
+    z-index:1;
+    position:relative;
+}
+.redValentino .imageSlideContainer img {
+    display:block;
+    height:233px;
+    width:180px;
+    z-index:1;
+    position:relative;
+}
+.redValentino a.itemContainer:hover img.imgformat_10_f, .redValentino a.itemContainer:hover img.imgformat_10p_f {
+    display:none;
+}
+.itemExtendedInfo {
+    display:none;
+    color:#000;
+    font-size:10px;
+    top:280px;
+    left:42px;
+    padding:5px;
+    position:absolute;
+    z-index:1;
+}
+a.itemContainer:hover span.itemExtendedInfo{
+    display:block;
+}
+.emptyResult{
+    font-size:12px;
+}
+/* highlights */
+.highlights #content{
+    display:none;
+}
+.highlights #col1, .highlights #elementsContainer{
+    width:960px;
+}
+/* highlights */
+/* fashionshow */
+#sliderTrackContainer {
+    display: block;
+    height: 1px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 95%;
+    z-index: 20;
+    top: 465px;
+}
+#sliderLeftArrow {
+    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowsx.jpg") no-repeat scroll 0 0 transparent;
+    left: 0;
+    height:12px;
+    width:13px;
+}
+#sliderRightArrow {
+    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowdx.jpg") no-repeat scroll 0 0 transparent;
+    left: 0;
+    height:12px;
+    width:13px;
+}
+#sliderTrack {
+    background:#dfdfdf;
+    height: 12px;
+    left: 0;
+    position: absolute;
+    width: 99%;
+    z-index: 22;
+}
+#sliderPattern {
+    cursor: pointer;
+    height: 12px;
+    left: 100%;
+    position: absolute;
+    width: 15px;
+    z-index: 22;
+}
+#sliderHandle {
+    cursor: pointer;
+    height: 12px;
+    left: 0;
+    margin: 0 10px;
+    position: absolute;
+    width: 157px;
+    z-index: 30;
+}
+#sliderHandle img {
+    height: 12px;
+    width: 157px;
+}
+#sliderRightArrow {
+    left: 686px;
+}
+#sliderRightArrow, #sliderLeftArrow {
+    height: 16px;
+    position: absolute;
+    width: 17px;
+    z-index: 50;
+}
+#sliderMaskContainer {
+    float: none;
+    margin: 0 auto;
+    position: relative;
+}
+#sliderMask {
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 0 20px;
+    position: relative;
+    width: 93% !important;
+}
+#sliderContent {
+    height: 100%;
+    margin: 0 auto;
+}
+.prod {
+    position: relative;
+    z-index: 1;
+}
+#elementsContainer {
+    height:100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+#elementsContainer .hProduct {
+    float: left;
+    height: auto;
+    width: auto;
+    z-index: 11;
+}
+#sliderPattern {
+    background: url("http://cdn2.yoox.biz/Os/dolcegabbana/items/slideTrack.gif") no-repeat scroll right top transparent;
+    cursor: pointer;
+    height: 16px;
+    left: 100%;
+    position: absolute;
+    width: 15px;
+    z-index: 22;
+}
+/* fashionshow */
+/* shop by look */
+
+#look #content {width:400px;}
+#look.redValentino #col1 {
+    height:540px!important;
+    width:560px;
+    border-bottom:1px solid #000;
+    border-top:1px solid #000;
+    margin-bottom:19px;
+}
+#look.redValentino .productimage {
+    width: 180px;
+    margin-right:6px;
+    padding: 0;
+}
+#look.redValentino .infoImageSlideContainer {width: 180px;}
+#backTo{
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:150px;
+    border-bottom:1px solid #000;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    text-align:right;
+    padding-right:5px;
+    text-transform:uppercase;
+    font-size:12px;
+    z-index: 10;
+}
+#backTo a{
+    background: url("http://cdn2.yoox.biz/Os/valentino3/arrowbutton.jpg") no-repeat scroll 0 0 transparent;
+    padding-left: 20px;
+}
+#look.redValentino #backToTop{display:none;}
+#look.redValentino a.itemContainer:hover img.imgformat_10_f, #look.redValentino a.itemContainer:hover img.imgformat_10p_f {
+    display:block;
+}
+#advanceMaskContainer img{
+    height:455px;
+}
+/* shop by look */
+
+
+/*****scroll bar for ipad********/
+.touchScroll {
+	position: relative;
+}
+
+.touchScrollBars {
+	display: -webkit-box;
+	padding: 3px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2147483647;
+	-webkit-box-align: end;
+	-webkit-box-pack: end;
+	-webkit-box-sizing: border-box;
+}
+
+.touchScrollTrack {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.touchScrollTrackX {
+	height: 6px;
+}
+
+.touchScrollTrackY {
+	float: right;
+	width: 6px;
+}
+
+.touchScrollBarsBoth {
+	padding-bottom: 12px;
+	padding-right: 12px;
+}
+
+.touchScrollBarsBoth .touchScrollTrackX {
+	-webkit-transform: translateY(9px);
+}
+
+.touchScrollBarsBoth .touchScrollTrackY {
+	-webkit-transform: translateX(3px);
+}
+
+.touchScrollHandle {
+	border: 1px solid;
+	min-height: 4px;
+	min-width: 4px;
+	-webkit-transition-property: -webkit-transform, height, width;
+	-webkit-border-radius: 3px;
+
+	/* COLOR VARIANTS */
+/* Default */
+	border-color: rgba(255, 255, 255, 0.15);
+	background: rgba(0, 0, 0, 0.5);
+/**/
+
+/* White
+	border-color: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.5);
+/**/
+
+/* Black
+	border-color: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.5);
+/**/
+}
