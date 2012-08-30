@@ -6,6 +6,7 @@
 	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
+		<li class="icn_application"><a href="<?php echo base_url()?>homepage/admin">Trang chủ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>		
 	</ul>

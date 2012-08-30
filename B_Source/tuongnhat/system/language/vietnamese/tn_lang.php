@@ -31,4 +31,22 @@
 	$lang['bottom-luuy']='Lưu ý';
 	$lang['bottom-dt1']='ĐT 1';
 	$lang['bottom-dt2']='ĐT 2';
+	
+	//========================== GIOITHIEU ==============================
+	$lang['gioithieu-admin-aboutus'] = "Liên hệ";
+	$lang['gioithieu-admin-column1'] = "Cột 1";
+	$lang['gioithieu-admin-column1-hyperlinklist'] = "Dánh sách liên kết";
+	$lang['gioithieu-admin-update'] = "Cập nhật";
+	$lang['gioithieu-admin-column2'] = "Cột 2";
+	$lang['gioithieu-admin-column2-content'] = "Nội dung";
+	$lang['gioithieu-admin-column3'] = "Cột 3";
+	$lang['gioithieu-admin-column3-comment'] = "Danh sách nhận xét";
+	
+	$lang['gioithieu-why-us'] = "Tại sao là chúng tôi?";
+	$lang['gioithieu-why-us-content'] = "Because whatever just for test VIE";
+	$lang['gioithieu-who-are-we'] = "Chúng tôi là ai?";
+	$lang['gioithieu-comment'] = "Đánh giá";
+	
+	//========================== TRANGCHU ==============================
+	$lang['trangchu-xemthem']='Xem thêm';
 ?>

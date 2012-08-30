@@ -89,7 +89,6 @@ function display_ckeditor($data = array())
     // Creating a Ckeditor instance
     $return .= cke_create_instance($data);
 	
-
     // Adding styles values
     if(isset($data['styles'])) {
     	

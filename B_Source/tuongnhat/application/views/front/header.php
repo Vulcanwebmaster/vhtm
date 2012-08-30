@@ -24,7 +24,7 @@
                 </li>
 				<li><a href="#"><?php echo $this->lang->line('menu-dichvu');?></a></li>
 				<li><a href="<?php echo base_url();?>lienhe"><?php echo $this->lang->line('menu-lienhe');?></a></li>
-				<li><a href="#"><?php echo $this->lang->line('menu-doitac');?></a></li>
+				<li><a href="<?php echo base_url();?>doitac"><?php echo $this->lang->line('menu-doitac');?></a></li>
             </ul>
          </nav>
     

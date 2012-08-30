@@ -37,7 +37,7 @@ a:hover {text-decoration:none;}
 .text-1 {font-weight:300;color:#91abb5; font-size:30px; line-height:36px;}
 .text-2 { font-weight:bold;color:#4d4d4d; font-size:12px; line-height:18px;}
 .text-3 { color:#4d4d4d; font-size:14px; line-height:20px;}
-.text-4 { color:#b92103;  font-family: 'Muli', sans-serif; font-size:22px; line-height:30px;}
+.text-4 {clear:both; color:#b92103;  font-family: 'Muli', sans-serif; font-size:22px; line-height:30px;}
 
 h2 { font-size:36px; line-height:46px; color:#92abb5; font-weight:300; font-family: 'Muli', sans-serif; letter-spacing:-2px; border-bottom:#c4d2d7 1px solid; }
 h2 strong {display:block; font-weight:300; margin-top:-10px;}
@@ -99,7 +99,7 @@ ul.menu li a:hover , ul.menu li.current a { text-shadow: 0px 0px 1px #c4d2d8; co
 
 .page1-row1 {padding:27px 0 38px 6px;}
 
-.box-1 {float:left; width:190px; padding:0 25px 0 24px; text-align:center;}
+.box-1 {float:left; width:190px; padding:0 25px 0 24px; text-align:center}
 .number {width:70px; height:55px; text-align:center;font-family: 'Passion One', cursive; font-weight:300;color:#fff; font-size:36px; line-height:42px; display:inline-block; padding-top:15px;}
 .number-1 {background:url(../images/number-1.png) 0 0 no-repeat; }
 .number-2 {background:url(../images/number-2.png) 0 0 no-repeat; }
@@ -107,6 +107,8 @@ ul.menu li a:hover , ul.menu li.current a { text-shadow: 0px 0px 1px #c4d2d8; co
 .number-4 {background:url(../images/number-4.png) 0 0 no-repeat; }
 .box-1 .text-1 {display:block; margin:1px 0 8px 0;}
 .box-1 .text-3 {border-bottom:#c4d2d7 1px solid; padding-bottom:16px; margin-bottom:10px;}
+
+.column-content{height:90px}
 
 .border-right {border-right:#c4d2d7 1px solid;}
 
@@ -215,7 +217,7 @@ dl.adr dd a:hover {}
 #form label {position:relative;display: block;min-height:34px;}
 .btns {text-align:right; overflow:hidden; width:575px;}
 .btns a {display:inline-block; margin:7px 0px 0 25px;}
-#form label strong {float:left; text-align:right; display:block; padding-top:5px; line-height:15px; width:55px; font-weight:normal; margin-right:7px; white-space:nowrap;} 
+#form label strong {float:left; text-align:right; display:block; padding-top:5px; line-height:15px; width:55px; font-weight:normal; margin-right:7px; white-space:nowrap;}
 
 /*======================footer========================*/
 .footer-cat{float:left; padding:15px; color:#e4e8ea; font-size:12px}
@@ -230,3 +232,8 @@ dl.adr dd a:hover {}
 #footer{ background-color:#515151; height:auto; width:100%; padding-top:15px; border-top:solid 5px #363636}
 .group{width:1000px; margin:auto}
 
+
+/*================d?i tác ============*/
+#images-img{margin-top:7px;}
+#div-img{ float:left; text-align:center; margin:10px; width:184px; height:163px;}
+#ks{ margin-top:5px;}

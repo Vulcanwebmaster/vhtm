@@ -16,11 +16,11 @@
 			$this->load->model('Mgioithieu');
 			
 			//Language:
-			$this->SetLang();
-		
+			$this->SetLang();		
 			if ($this->session->userdata('lang')=='vn')
 				$this->lang->load('tn','vietnamese');
-			else $this->lang->load('tn','english');
+			else 
+				$this->lang->load('tn','english');
 		}
 		
 		function index()
