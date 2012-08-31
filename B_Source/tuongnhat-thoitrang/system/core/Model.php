@@ -50,6 +50,92 @@ class CI_Model {
 		$CI =& get_instance();
 		return $CI->$key;
 	}
+	
+	//===================== MY FUNCTIONS ========================================
+	 
+	 function getRowByColumn($tableName='',$columnName='',$value='')
+	 {
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get($tableName);
+	 	if ($ds->num_rows()>0)
+	 	{
+	 		$item=$ds->row(0);
+	 		$ds->free_result();
+	 		return $item;
+	 	}
+	 	else return false;
+	 }
+	 
+	 function getListFull($tableName='')
+	 {
+	 	$ds=$this->db->get($tableName);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListOffset($tableName='',$offset='',$index='')
+	 {
+	 	$ds=$this->db->get($tableName,$offset,$index);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListByColumn($tableName='',$columnName='',$value='')
+	 {
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get($tableName);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function insertNewRow($tableName='',$input)
+	 {
+	 	if ($this->db->insert($tableName,$input))
+	 		return true;
+	 	else return false;
+	 }
+	 
+	 function deleteRowByColumn($tableName='',$columnName='',$value='')
+	 {
+	 	if ($this->db->delete($tableName,array($columnName=>$value)))
+	 		return true;
+	 	else return false;
+	 }
+	 
+	 function updateRowByColumn($tableName='',$columnName='',$value='',$input)
+	 {
+	 	if ($this->db->update($tableName,$input,array($columnName=>$value)))
+	 		return true;
+	 	else return false;
+	 }
+	 
+	 function getListOrderByColumn($tableName='',$columnName='',$order='',$limit=0)
+	 {
+	 	$this->db->order_by($columnName,$order);
+	 	$ds=$this->db->get($tableName,$limit,0);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
 }
 // END Model Class
 

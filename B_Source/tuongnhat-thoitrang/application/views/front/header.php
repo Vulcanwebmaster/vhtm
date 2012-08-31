@@ -15,7 +15,6 @@
            		<div id="userBar">
                 	<div id="login">
                     	<ul class="notLogged">
-                    		<li class="first"><a href="">Đăng ký</a></li>
                             <li class="last"><a href="">Chăm sóc khách hàng</a></li>
                        	</ul>
                     </div><!---->
@@ -35,7 +34,6 @@
            	<div id="mainSectionsInner" class="right">
             	<ul class="navCnt">
                 	<li><a id="wishBtn" href="">Mặt hàng ưa thích</a></li>
-                    <li><span href="" id="cartLink">Cửa hàng túi xách<span id="cartNum"><!----></span><span id="addToShoppingBag"><!----></span></span></li>
                 </ul>
                </div>
               </div>
@@ -69,32 +67,58 @@
 					});
 				
             </script>
+            
+            <?php 
+            	$this->db->where('menu','sản phẩm');
+			 	$ds=$this->db->get('n_t_danhmuc');
+			 	$list=array();
+			 	foreach($ds->result() as $item)
+			 	{
+			 		$list[]=$item;
+			 	}
+			 	$ds->free_result();
+            	$sanphammenu=$list;
+            
+            	$this->db->where('menu','phụ kiện');
+			 	$ds=$this->db->get('n_t_danhmuc');
+			 	$list2=array();
+			 	foreach($ds->result() as $item)
+			 	{
+			 		$list2[]=$item;
+			 	}
+			 	$ds->free_result();
+            	$phukienmenu=$list2;
+            ?>
+            
+            <style>
+			<!--
+				.subMenu1 a{color:white !important}
+			-->
+			</style>
+            
             <div id="subheader"><div id="subMenu">
             	<ul class="menuNavigation">
                 	<li id="mood" class="mpa"><a href="" class="selected"  id="tieudiem">Tiêu điểm</a>
                     	<div id="hl" class="subMenu1">
-                        	<a >Sản phẩm mới</a><hr />
-                        	<a >Sản phẩm yêu thích</a><hr />
-                            <a >Sản phẩm bán chạy</a><hr />
-                            <a >màu nổi bật, cá tính</a><hr />
-                            <a >charity initiative</a>
+                        	<a href="<?php echo base_url();?>sanpham/sanphammoi">Sản phẩm mới</a><hr />
+                        	<a href="<?php echo base_url();?>sanpham/spyeuthich">Sản phẩm yêu thích</a><hr />
+                            <a href="<?php echo base_url();?>sanpham/spnoibat">màu nổi bật, cá tính</a><hr />
                         </div>
                      </li>
-                    <li id="pretPorter" class="mpa"><a href="" class="selected" >Sản phẩm</a>
+                    <li id="pretPorter" class="mpa"><a href="<?php echo base_url();?>sanpham" class="selected" >Sản phẩm</a>
                         <div id="pap" class="subMenu2">
-                            <a >áo gió và áo khoác</a><br /><hr />
-                            <a >Áo phông</a><br /><hr />
-                            <a >Quần</a><br /><hr />
-                            <a >Váy</a><br /><hr />
-                            <a >Đầm</a><br /><hr />
-                            <a >Hàng thêu</a>
+                        	<?php foreach($sanphammenu as $item)
+                        	{?>
+                        		<a style="color: white" href="<?php echo base_url();?>sanpham/danhmuc/<?php echo $item->id;?>"><?php echo $item->ten;?></a><br /><hr />
+                        	<?php }?>
                         </div>
                     </li>
                             <li id="accessories" class="mpa"><a href="" class="selected">Phụ kiện</a>
                             	<div id="pap" class="subMenu3">
-                                	<a title="Jackets and coats" href="">túi xách</a><br /><hr />
-                                	<a title="T-shirt couture" href="">Giầy dép</a><br /><hr />
-                                    <a title="T-shirt couture" href="">Phụ kiện khác</a>
+                                	<?php foreach($phukienmenu as $item)
+		                        	{?>
+		                        		<a href="<?php echo base_url();?>sanpham/danhmuc/<?php echo $item->id;?>"><?php echo $item->ten;?></a><br /><hr />
+		                        	<?php }?>
                                 </div>
                             </li>
                      </ul></li></ul></div></div>

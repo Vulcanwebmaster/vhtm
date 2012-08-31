@@ -279,7 +279,7 @@ iframe{border:0px solid #fff;height:80px;}
 }
 #addToShare{
     display:inline;
-    float:right;
+    float:left;
     width:180px;
 }
 .redValentino #printPage{

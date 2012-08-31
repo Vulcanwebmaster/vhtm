@@ -134,7 +134,8 @@ object {
 #logoContainer, #logoContainerZoom{
     position:relative;
     display:block;
-    background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;
+    background:url('../images/valentino.png') no-repeat scroll left top;
+    /*background:url('http://cdn2.yoox.biz/Os/valentino3/valentino.png') no-repeat scroll left top;*/
     height:45px;
     width:280px;
 }
@@ -1479,3 +1480,5 @@ span#unsubscribeNl {
 .subMenu3{ position:absolute; z-index:999; background-color:#909090; width:183px;font-size:16px; text-transform:uppercase; top:30px;  padding-left:5px;}
 .subMenu3 a{ cursor:pointer; height:25px; width:183px;color:#FFF;}
 .subMenu3 a:hover{ background-color:#C62917; color:#FFF;}
+
+.itemContainer p img{width:300px !important; height:270px !important}

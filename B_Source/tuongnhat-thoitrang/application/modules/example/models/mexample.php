@@ -83,5 +83,7 @@ class Mexample extends CI_Model
 	  	else 
 	  	return false;
 	 }
+	 
+	 
 }
 ?>
