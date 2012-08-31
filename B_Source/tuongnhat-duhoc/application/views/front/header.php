@@ -81,7 +81,7 @@
                                 <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Cơ sở</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans" id="item">Các khóa học</a>
+                                <li><a href="<?php echo base_url();?>khoahoc" class="mainlevel-trans" id="item">Các khóa học</a>
                                     <div id="item-menu" style="display: none; ">
                                     	<a href="<?php echo base_url() ?>khoahoc/daihoc">Đại học</a><hr>
 	                                    <a href="<?php echo base_url() ?>khoahoc/saudaihoc">Sau đại học</a><hr>
