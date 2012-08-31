@@ -1,16 +1,8 @@
-<h3>Home</h3>
-	<ul class="toggle">
-		<li class="icn_photo"><a href="#">Images Slider</a></li>
-		<li class="icn_edit_article"><a href="#">Article</a></li>
-		<li class="icn_categories"><a href="#">Categories</a></li>
-	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
-		<li class="icn_application"><a href="<?php echo base_url()?>example/admin">Example</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>sanpham/admin">Sản phẩm</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>policy/admin">Chính sách</a></li>
-		<li class="icn_application"><a href="#">Manage Page 3</a></li>
-		<li class="icn_application"><a href="#">Manage Page 4</a></li>
-		<li class="icn_application"><a href="#">Manage Page 5</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">
