@@ -1,7 +1,7 @@
 <div id="footer" class="hmenu">
     <div id="ftRight">
         <ul>
-            <li class="last"><a href="">Quy định bảo mật</a></li>
+            <li class="last"><a href="<?php echo base_url()  ?>policy/index/4">Quy định bảo mật</a></li>
             <li><a href="" class="border">Hỗ trợ luật</a></li>
             <li><a href="javascript:Links.openReturns()" class="border">trở lại</a></li>
             <li><a href="javascript:Links.openShippingTimes()" class="border">Vận chuyển</a></li>
