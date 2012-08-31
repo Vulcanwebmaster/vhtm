@@ -54,6 +54,49 @@ class Admin_Controller extends NIW_Controller
 		$config['cur_tag_close'] = '</li></a>';
 		return $config;
 	}
+	function setupCKEditor($id='')
+	{
+		$result=array(
+ 
+			//ID of the textarea that will be replaced
+			'id' 	=> 	$id,
+			'path'	=>	'assets/thoitrang/js/ckeditor',
+ 
+			//Optionnal values
+			'config' => array(
+				'toolbar' 	=> 	"Full", 	//Using the Full toolbar
+				'width' 	=> 	"97%",	//Setting a custom width
+				'height' 	=> 	'100px',	//Setting a custom height
+ 
+			),
+ 
+			//Replacing styles from the "Styles tool"
+			'styles' => array(
+ 
+				//Creating a new style named "style 1"
+				'style 1' => array (
+					'name' 		=> 	'Blue Title',
+					'element' 	=> 	'h2',
+					'styles' => array(
+						'color' 	=> 	'Blue',
+						'font-weight' 	=> 	'bold'
+					)
+				),
+ 
+				//Creating a new style named "style 2"
+				'style 2' => array (
+					'name' 	=> 	'Red Title',
+					'element' 	=> 	'h2',
+					'styles' => array(
+						'color' 		=> 	'Red',
+						'font-weight' 		=> 	'bold',
+						'text-decoration'	=> 	'underline'
+					)
+				)				
+			)
+		);
+		return $result;
+	}
 }
 
 /* End of Admin_controller.php */
