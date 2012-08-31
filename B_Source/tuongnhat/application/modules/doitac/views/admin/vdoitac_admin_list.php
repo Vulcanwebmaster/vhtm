@@ -10,7 +10,7 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-		    				<th>ID</th> 
+							<th>Hình ảnh</th>
 		    				<th>Tên công ty</th> 
 		    				<th>Website</th> 
 		    				<th>Địa chỉ</th>
@@ -24,7 +24,7 @@
 					 	<?php foreach ($list as $item)
 					 	{?>
 					 		<tr>  
-			    				<td><?php echo $item->id;?></td> 
+					 			<td><?php echo $item->hinhanh; ?></td>
 			    				<td><?php echo $item->ten;?></td> 
 			    				<td><a href="<?php echo $item->website;?>"><?php echo $item->website;?></a></td> 
 			    				<td><?php echo $item->diachi;?></td> 

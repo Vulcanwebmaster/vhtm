@@ -7,9 +7,14 @@ body {
 	min-width:1147px;
 	background: #f4f7f8;
 }
+
+.avatar p img{
+	width:184px !important;height:119px !important;
+}
+
 .ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
 .bg {width:100%; background:url(../images/bg.jpg) center 0 repeat-x #fef9ea;}
-.bg-2 {width:100%; background:url(../images/bg-2.jpg) center 0 no-repeat;}
+.bg-2 {width:100%; background:url(../images/bg-2.jpg) center 0;}
 /***********************************************************************/
 a {text-decoration:none; cursor:pointer;text-decoration:none; }
 a:hover {text-decoration:none;}
@@ -17,7 +22,7 @@ a:hover {text-decoration:none;}
 .button-1 {background:#91abb5; color:#fff; font-size:12px; line-height:15px; font-weight:bold; padding:6px 21px 9px 21px; display:inline-block; border-radius:6px;}
 .button-1:hover {background:#b92103; }
 
-.button-2 {cursor:pointer;color:#b92103; font-family: 'Muli', sans-serif; font-size:14px; line-height:18px; text-transform:uppercase; padding:6px 15px 6px 15px; display:inline-block; border-radius:6px;}
+.button-2 {background:#b92103; color:#fff; font-family: 'Muli', sans-serif; font-size:14px; line-height:18px; text-transform:uppercase; padding:6px 15px 6px 15px; display:inline-block; border-radius:6px;}
 .button-2:hover {background:#91abb5; }
 
 .link {color:#94adb7; text-decoration:underline; }
@@ -37,7 +42,7 @@ a:hover {text-decoration:none;}
 .text-1 {font-weight:300;color:#91abb5; font-size:30px; line-height:36px;}
 .text-2 { font-weight:bold;color:#4d4d4d; font-size:12px; line-height:18px;}
 .text-3 { color:#4d4d4d; font-size:14px; line-height:20px;}
-.text-4 {clear:both; color:#b92103;  font-family: 'Muli', sans-serif; font-size:22px; line-height:30px;}
+.text-4 { color:#b92103;  font-family: 'Muli', sans-serif; font-size:22px; line-height:30px;}
 
 h2 { font-size:36px; line-height:46px; color:#92abb5; font-weight:300; font-family: 'Muli', sans-serif; letter-spacing:-2px; border-bottom:#c4d2d7 1px solid; }
 h2 strong {display:block; font-weight:300; margin-top:-10px;}
@@ -95,11 +100,11 @@ ul.menu li a:hover , ul.menu li.current a { text-shadow: 0px 0px 1px #c4d2d8; co
 .slogan {text-align:center; padding:16px 0 24px 0px; background:url(../images/slogan-bg.png) 0 bottom no-repeat; position:relative;}
 .slogan p:first-child {font-weight:300; font-size:41px; line-height:50px; }
 .slogan p+p {color:#8a8a8a; font-size:12px; line-height:18px; font-weight:bold; margin-top:-4px; }
-.button-2 {position:absolute; top:97px ; left:1069px; z-index:100;}
+.slogan .button-2 {position:absolute; bottom:-16px ; left:431px; z-index:100;}
 
 .page1-row1 {padding:27px 0 38px 6px;}
 
-.box-1 {float:left; width:190px; padding:0 25px 0 24px; text-align:center}
+.box-1 {float:left; width:190px; padding:0 25px 0 24px; text-align:center;}
 .number {width:70px; height:55px; text-align:center;font-family: 'Passion One', cursive; font-weight:300;color:#fff; font-size:36px; line-height:42px; display:inline-block; padding-top:15px;}
 .number-1 {background:url(../images/number-1.png) 0 0 no-repeat; }
 .number-2 {background:url(../images/number-2.png) 0 0 no-repeat; }
@@ -107,8 +112,6 @@ ul.menu li a:hover , ul.menu li.current a { text-shadow: 0px 0px 1px #c4d2d8; co
 .number-4 {background:url(../images/number-4.png) 0 0 no-repeat; }
 .box-1 .text-1 {display:block; margin:1px 0 8px 0;}
 .box-1 .text-3 {border-bottom:#c4d2d7 1px solid; padding-bottom:16px; margin-bottom:10px;}
-
-.column-content{height:90px}
 
 .border-right {border-right:#c4d2d7 1px solid;}
 
@@ -149,8 +152,8 @@ ul.menu li a:hover , ul.menu li.current a { text-shadow: 0px 0px 1px #c4d2d8; co
 
 .page3-row1 {padding:50px 0px 0 40px; overflow:hidden;}
 .page3-row1 h2 {margin-bottom:11px;}
-.page3-col-1 {overflow:hidden; width:282px; float:left; padding-right:24px; margin-right:12px;}
-.box-4 {width:282px; overflow:hidden;}
+.page3-col-1 {overflow:hidden; width:100%; padding-right:24px; margin-right:12px;}
+.box-4 {width:100%; overflow:hidden;}
 .number2 {width:60px; height:51px; text-align:center;font-family: 'Passion One', cursive; font-weight:300;color:#fff; font-size:36px; line-height:42px; display:inline-block; padding-top:9px; float:left; background:url(../images/number2.png) 0 0 no-repeat; margin-right:7px;}
 .box-4 .extra-wrap {margin-top:16px;}
 .box-4 .text-4 {margin-bottom:6px; display:block;}
@@ -217,7 +220,7 @@ dl.adr dd a:hover {}
 #form label {position:relative;display: block;min-height:34px;}
 .btns {text-align:right; overflow:hidden; width:575px;}
 .btns a {display:inline-block; margin:7px 0px 0 25px;}
-#form label strong {float:left; text-align:right; display:block; padding-top:5px; line-height:15px; width:55px; font-weight:normal; margin-right:7px; white-space:nowrap;}
+#form label strong {float:left; text-align:right; display:block; padding-top:5px; line-height:15px; width:55px; font-weight:normal; margin-right:7px; white-space:nowrap;} 
 
 /*======================footer========================*/
 .footer-cat{float:left; padding:15px; color:#e4e8ea; font-size:12px}
@@ -232,8 +235,7 @@ dl.adr dd a:hover {}
 #footer{ background-color:#515151; height:auto; width:100%; padding-top:15px; border-top:solid 5px #363636}
 .group{width:1000px; margin:auto}
 
-
-/*================d?i t�c ============*/
+/*================đối tác ============*/
 #images-img{margin-top:7px;}
 #div-img{ float:left; text-align:center; margin:10px; width:184px; height:163px;}
 #ks{ margin-top:5px;}

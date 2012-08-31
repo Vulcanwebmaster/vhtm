@@ -10,11 +10,10 @@ class Admin extends Admin_Controller {
 		$this->load->helper('ckeditor');
 		//Load model
 		$this->load->model('Mgioithieu');
-		//Load language:
-		$this->SetLang();		
+		$this->load->library('session');
 		if ($this->session->userdata('lang')=='vn')
 			$this->lang->load('tn','vietnamese');
-		else 
+		else
 			$this->lang->load('tn','english');
 	}
 	
@@ -22,11 +21,11 @@ class Admin extends Admin_Controller {
 	{
 		$data['module'] = $this->module;
 		$data['page'] = "admin_gioithieu";
-		$data['title'] = $this->lang->line('gioithieu-admin-aboutus');
+		$data['title'] = $this->lang->line('gioithieu_admin_tieude');
 		$data['formData']=$this->Mgioithieu->getFormData();
 		
 		//Breadcrumb data
-		$data['bcCurrent'] = $this->lang->line('gioithieu-admin-aboutus');
+		$data['bcCurrent'] = $this->lang->line('gioithieu_admin_tieude');
 		
 		//get text editor
 		//Ckeditor's configuration

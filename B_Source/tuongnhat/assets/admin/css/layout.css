@@ -4,6 +4,10 @@ html, div, map, dt, isindex, form, header, aside, section, section, article, foo
     display: block;  
 } 
 
+p img{
+	width:50px !important;height:40px !important;
+}
+
 html, body {
 height: 100%;
 margin: 0;
@@ -620,21 +624,21 @@ input[type=submit]:hover {
 color: #333333;
 }
 
-.alt_btn {
-background: #D0D1D4 url(../images/btn_submit_2.png) repeat-x !important;
-border: 1px solid#30B0C8 !important;
--webkit-box-shadow: 0 1px 0 #fff !important;
--moz-box-shadow: 0 1px 0 #fff !important;
-box-shadow: 0 1px 0 #fff !important;
-font-weight: bold !important;
-height: 22px !important;
--webkit-border-radius: 5px !important;
--moz-border-radius: 5px !important;
-border-radius: 5px !important;
-padding: 0 10px !important;
-color: #003E49 !important;
-text-shadow: 0 1px 0 #6CDCF9 !important;
-cursor: pointer !important;
+input[type=submit].alt_btn {
+background: #D0D1D4 url(../images/btn_submit_2.png) repeat-x;
+border: 1px solid#30B0C8;
+-webkit-box-shadow: 0 1px 0 #fff;
+-moz-box-shadow: 0 1px 0 #fff;
+box-shadow: 0 1px 0 #fff;
+font-weight: bold;
+height: 22px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding: 0 10px;
+color: #003E49;
+text-shadow: 0 1px 0 #6CDCF9;
+cursor: pointer;
 }
 
 input[type=submit].alt_btn:hover {
@@ -918,5 +922,12 @@ padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
 
-.fieldset-lv1{padding:15px}
-.fieldset-lv1 legend{text-transform:uppercase; font-weight:bold; font-size:18px !important; color:#1F1F20 !important}
+
+.tab_content{
+	margin: 10px 20px;
+	color: #666;
+}
+
+.error{
+	height:40px;color:red;font-size:15px;padding:10px 0 0 10px;
+}

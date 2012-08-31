@@ -8,7 +8,6 @@
 			$this->module=strtolower(get_class());
 			$this->load->model('Mhomepage');
 			$this->load->database();
-			
 			$this->load->helper('ckeditor');
 		}
 		

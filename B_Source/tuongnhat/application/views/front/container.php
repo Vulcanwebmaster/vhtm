@@ -5,9 +5,10 @@
 	    			echo $title;
 	    		else echo 'Tuong Nhat';?></title>
 	    <meta charset="utf-8">
-	    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>assets/tuongnhat/css/reset.css">
-	    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>assets/tuongnhat/css/style.css">
-	    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>assets/tuongnhat/css/slider.css">
+
+	    <link rel="stylesheet" type="text/css" media="screen" href="assets/tuongnhat/css/reset.css">
+	    <link rel="stylesheet" type="text/css" media="screen" href="assets/tuongnhat/css/style.css">
+	    <link rel="stylesheet" type="text/css" media="screen" href="assets/tuongnhat/css/slider.css">
 	    <!--link href='http://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 	    <link href='http://fonts.googleapis.com/css?family=Passion+One:400,700' rel='stylesheet' type='text/css'-->
 	    <script src="<?php echo base_url();?>assets/tuongnhat/js/jquery-1.7.min.js"></script>

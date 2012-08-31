@@ -30,14 +30,42 @@
 					<label>Email</label>
 					<input type="text" name="email" style="width:92%" value="<?php echo $doitac->email;?>"/>
 				</fieldset>	
-				<fieldset style="width:48%">
+				<fieldset style="width:48%;color:blue">
 					<label>Loại đối tác</label>
 					<select name="loaidoitac">
-						<option value="thoitrang">Thương mại thời trang</option>
-						<option value="bakery">Thương mại bakery</option>
-						<option value="duhoc">Đối tác du học</option>
+						<option value="<?php echo $doitac->loaidoitac; ?>"><?php echo $doitac->loaidoitac; ?></option>
+						<?php 
+							if($doitac->loaidoitac=="Thương mại thời trang")
+							{
+								?>
+									<option value="Thương mại bakery">Thương mại bakery</option>
+									<option value="Du học">Đối tác du học</option>
+								<?php
+							}
+							else if($doitac->loaidoitac=="Thương mại bakery")
+							{
+								?>
+									<option value="Thương mại thời trang">Thương mại thời trang</option>
+									<option value="Du học">Đối tác du học</option>
+								<?php
+							}
+							else 
+							{
+								?>
+									<option value="Thương mại thời trang">Thương mại thời trang</option>
+									<option value="Thương mại bakery">Thương mại bakery</option>
+								<?php
+							}
+						?>
 					</select>
-				</fieldset>			
+				</fieldset>	
+				
+				<fieldset>
+					<label>Ảnh đại diện: </label>
+					<textarea name="hinhanh" id="content" ><?php echo $doitac->hinhanh; ?></textarea>
+						<?php echo display_ckeditor($ckeditor); ?>
+				</fieldset>
+						
 			</div>
 			
 			<footer style="float:left">
@@ -48,6 +76,6 @@
 			</footer>
 				
 			
-		</div><!-- end of .tab_container -->
-				</article><!-- end of content manager article -->	
+		</div>
+	</article>
 </form>

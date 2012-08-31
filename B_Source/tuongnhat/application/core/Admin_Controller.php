@@ -54,22 +54,6 @@ class Admin_Controller extends NIW_Controller
 		$config['cur_tag_close'] = '</li></a>';
 		return $config;
 	}
-	
-	function setupCKEditor()
-	{
-		$config['toolbar'] = array(
-			        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
-			        array( 'Image', 'Link', 'Unlink', 'Anchor' )
-			);
-		$config['filebrowserBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html";
-		$config['filebrowserImageBrowseUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/ckfinder.html?type=Images";
-		$config['filebrowserUploadUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
-		$config['filebrowserImageUploadUrl'] = base_url()."assets/bakery/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
-		$config['toolbar']='Full';
-		$config['width']='97%';
-		$config['height']='100px';
-		return $config;
-	}
 }
 
 /* End of Admin_controller.php */

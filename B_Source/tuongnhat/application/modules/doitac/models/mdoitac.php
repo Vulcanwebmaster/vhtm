@@ -9,7 +9,7 @@
 		
 		function GetList($index)
 		{
-			$ds=$this->db->get('tn_doitac',6,$index);
+			$ds=$this->db->get('tn_doitac',5,$index);
 			return $ds->result();
 		}
 		
@@ -30,7 +30,8 @@
 						'website'	=> 	$this->input->post('website'),
 						'dienthoai'	=>	$this->input->post('dienthoai'),
 						'email'		=>	$this->input->post('email'),
-						'loaidoitac'=>	$this->input->post('loaidoitac')
+						'loaidoitac'=>	$this->input->post('loaidoitac'),
+						'hinhanh'	=>	$this->input->post('hinhanh')
 						);
 			if ($this->db->insert('tn_doitac',$data))
 				return true;
@@ -51,7 +52,8 @@
 						'website'	=> 	$this->input->post('website'),
 						'dienthoai'	=>	$this->input->post('dienthoai'),
 						'email'		=>	$this->input->post('email'),
-						'loaidoitac'=>	$this->input->post('loaidoitac')
+						'loaidoitac'=>	$this->input->post('loaidoitac'),
+						'hinhanh'	=>	$this->input->post('hinhanh')
 						);
 			$this->db->update('tn_doitac',$data,array('id'=>$id));
 		}
@@ -64,7 +66,8 @@
 		
 		function getDT($loaidoitac)
 		{
-			$query=$this->db->get_where('tn_doitac',array('loaidoitac'=>$loaidoitac));
+			$this->db->where('loaidoitac',$loaidoitac);
+			$query=$this->db->get('tn_doitac');
 			return $query->result();
 		}
 	}
