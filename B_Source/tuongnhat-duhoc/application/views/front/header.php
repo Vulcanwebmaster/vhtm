@@ -77,8 +77,6 @@
                                 <li>|</li>
                                 <li><a href="<?php echo base_url(); ?>gioithieu" class="mainlevel-trans">Giới thiệu</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Tin nhắn của hiệu trưởng</a></li>
-                                <li>|</li>
                                 <li><a href="" class="mainlevel-trans">Cơ sở</a></li>
                                 <li>|</li>
                                 <li><a href="<?php echo base_url();?>khoahoc" class="mainlevel-trans" id="item">Các khóa học</a>
