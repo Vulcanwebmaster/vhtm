@@ -11,7 +11,7 @@
 	?>	
 	</title>
 	
-	<link rel="stylesheet" href="<?php echo base_url()?>assets/admin/css/layout.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url()?>/assets/admin/css/layout.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

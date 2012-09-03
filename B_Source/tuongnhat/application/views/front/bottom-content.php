@@ -6,10 +6,10 @@
 				<div class="wrap">
 				  <div class="aside-col-1 border-right-2">
 						<h3><span class="clr-1"><?php echo $dangky['before'];?></span><?php echo $dangky['after'];?>:</h3>
-						<form id="form-search" method="post">
+						<form id="form-search" method="post" action="<?php echo base_url();?>dangky/doRegister">
 						  <span><?php echo $this->lang->line('bottom-nhapdiachi');?>:</span>
-						  <input type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  />
-						  <a href="#" class="link-2"><?php echo $this->lang->line('bottom-dangky');?></a>
+						  <input name="email" type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  />
+						  <input style="width:auto; height:auto; background:transparent; border:none" class="link-2" type="submit" value="<?php echo $this->lang->line('bottom-dangky');?>"/>
 						</form>
 					</div>
 					<div class="aside-col-2 border-right-2">

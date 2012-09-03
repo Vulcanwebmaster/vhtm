@@ -34,21 +34,14 @@
 					<label>Email</label>
 					<input type="text" name="email" style="width:92%"/>
 				</fieldset>	
-				<fieldset style="width:48%;color:blue">
+				<fieldset style="width:48%">
 					<label>Loại đối tác</label>
 					<select name="loaidoitac">
-						<option value="Thương mại thời trang">Thương mại thời trang</option>
-						<option value="Thương mại bakery">Thương mại bakery</option>
-						<option value="Du học">Du học</option>
+						<option value="thoitrang">Thương mại thời trang</option>
+						<option value="bakery">Thương mại bakery</option>
+						<option value="duhoc">Du học</option>
 					</select>
-				</fieldset>
-				
-				<fieldset>
-					<label>Ảnh đại diện: </label>
-					<textarea name="hinhanh" id="content" ></textarea>
-						<?php echo display_ckeditor($ckeditor); ?>
-				</fieldset>
-						
+				</fieldset>		
 			</div>
 			
 			<footer style="float:left">
@@ -57,7 +50,7 @@
 						<input type="submit" name="submit" value="Insert" class="alt_btn">
 					</div>
 			</footer>
-		</div>
-	</article>	
+		</div><!-- end of .tab_container -->
+				</article><!-- end of content manager article -->	
 </form>
 		

@@ -10,7 +10,6 @@
 			$this->load->library('pagination');
 			$this->load->library('form_validation');
 			$this->load->library('session');
-			$this->load->helper('ckeditor');
 		}
 		
 		function index()
@@ -29,7 +28,7 @@
 		function page($index=0)
 		{
 			$config['base_url']=base_url().'doitac/admin/page';
-			$config['per_page']=5;
+			$config['per_page']=6;
 			$config['uri_segment']='4';
 			$config['total_rows']=$this->Mdoitac->CountFull();
 			$this->pagination->initialize($config);
@@ -48,46 +47,6 @@
 			$data['title'] = "THÊM ĐỐI TÁC";
 			$data['module']=$this->module;
 			$data['page']='vdoitac_admin_add';
-			
-			$data['ckeditor'] = array(			
-				'id'    =>   'content',
-				'path'  =>   'assets/tuongnhat/js/ckeditor',	
-					
-				'config' => array(
-				'toolbar'   =>   "Full",     
-				'width'     =>   "98%",    
-				'height'    =>   '100px', 
-				'filebrowserBrowseUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html',
-                'filebrowserImageBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Images',
-                'filebrowserFlashBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Flash',
-                'filebrowserUploadUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                'filebrowserImageUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                'filebrowserFlashUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'   
-				),
-				
-				'styles' => array(
-				
-					'style 1' => array (
-						'name'      =>   'Blue Title',
-						'element'   =>   'h2',
-						'styles' => array(
-							'color'     =>   'Blue',
-							'font-weight'   =>   'bold'
-						)
-					),
-						
-					'style 2' => array (
-						'name'  =>   'Red Title',
-						'element'   =>   'h2',
-						'styles' => array(
-							'color'         =>   'Red',
-							'font-weight'       =>   'bold',
-							'text-decoration'   =>   'underline'
-						)
-					)
-				)
-			);
-			
 			$this->load->view('admin/container',$data);
 		}
 		
@@ -121,7 +80,7 @@
 			if($this->input->post('submit'))
 			{
 				$this->Mdoitac->Update($id);
-				redirect(base_url().'doitac/admin','refresh');
+				$this->page();
 			}
 			else 
 			{
@@ -136,46 +95,6 @@
 			$data['title'] = "SỬA THÔNG TIN ĐỐI TÁC";
 			$data['module']=$this->module;
 			$data['page']='vdoitac_admin_edit';
-			
-			$data['ckeditor'] = array(			
-				'id'    =>   'content',
-				'path'  =>   'assets/tuongnhat/js/ckeditor',	
-					
-				'config' => array(
-				'toolbar'   =>   "Full",     
-				'width'     =>   "98%",    
-				'height'    =>   '100px', 
-				'filebrowserBrowseUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html',
-                'filebrowserImageBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Images',
-                'filebrowserFlashBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Flash',
-                'filebrowserUploadUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                'filebrowserImageUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                'filebrowserFlashUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'   
-				),
-				
-				'styles' => array(
-				
-					'style 1' => array (
-						'name'      =>   'Blue Title',
-						'element'   =>   'h2',
-						'styles' => array(
-							'color'     =>   'Blue',
-							'font-weight'   =>   'bold'
-						)
-					),
-						
-					'style 2' => array (
-						'name'  =>   'Red Title',
-						'element'   =>   'h2',
-						'styles' => array(
-							'color'         =>   'Red',
-							'font-weight'       =>   'bold',
-							'text-decoration'   =>   'underline'
-						)
-					)
-				)
-			);
-			
 			$this->load->view('admin/container',$data);
 		}
 	}

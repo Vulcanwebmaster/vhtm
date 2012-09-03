@@ -7,6 +7,7 @@ class Homepage extends NIW_controller {
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
+		$this->load->model('Mhomepage');
 		
 		$this->SetLang();
 		
@@ -17,6 +18,11 @@ class Homepage extends NIW_controller {
 	
 	public function index()
 	{
+		$data['column1']=$this->Mhomepage->getRowById('1');
+		$data['column2']=$this->Mhomepage->getRowById('2');
+		$data['column3']=$this->Mhomepage->getRowById('3');
+		$data['column4']=$this->Mhomepage->getRowById('4');
+		
 		$data['title']='Tuong Nhat | Home';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
