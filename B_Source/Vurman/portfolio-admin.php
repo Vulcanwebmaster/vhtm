@@ -14,16 +14,12 @@ require_once('BLL/IsinBLL.php');
 
 
 
+
 require_once('BLL/CurrencyBLL.php');
 
 
 
 require_once('BLL/FundPortFolioBLL.php');
-
-
-
-
-
 
 
 $objISIN=new IsinClass($db);
@@ -340,7 +336,6 @@ if(isset($msg) && $msg!=""){
 
 
    <legend>CLIENT DETAILS</legend>
-
 
 
     <table class="contab" align="center">

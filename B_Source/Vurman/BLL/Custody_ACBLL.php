@@ -15,6 +15,7 @@ Class Custody_ACClass extends ChildCoreClass
 		$arr=$this->GetFieldsByArray();
 		$this->custody_acArr=$arr;
 	}
+
 	
 	function GetCustody_ACUsingArray()
 	{

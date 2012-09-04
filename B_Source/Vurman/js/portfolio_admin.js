@@ -58,23 +58,24 @@ $(function() {
 		
 		  return false;
 		}
-		
+
+
+
 
 //Get Client Name
 
 function getClientName()
 {
 	var clientid=getValueFromId('Client-ID');
+	// Hoang - declare a variable check set value 'fkcd' default for getClientName always run when client no click on client-id
+	var check="fkcd";
 	
-	
-	if(clientid!="")
+	if(clientid!=""||check!="")
 	{
 		getAJaxReqest();
 		//setValueFromId('Client',"abc");
-		
 		var url="ajaxfiles/getclientinfo.php";
 		var queryString="clientid="+clientid;
-		
 		$('#loading-dialog').dialog('open');
 		
 		req.open("POST", url, true); 
@@ -309,4 +310,7 @@ function showSeller()
 		setValueFromId('BIC_Partner',"Loading..");
 	}
 }
-
+//Hoang---Add document ready when form load success
+  $(document).ready(function() {
+        getClientName();
+    });

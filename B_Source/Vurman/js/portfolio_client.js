@@ -187,9 +187,10 @@ $(function() {
 function getClientName()
 {
 	var clientid=getValueFromId('Client-ID');
+	// Hoang - declare a new varriable set value. After, Insert condition into next clienid help for select always run.
+	var check="default";
 	
-	
-	if(clientid!="")
+	if(clientid!=""||check!="")
 	{
 		getAJaxReqest();
 		//setValueFromId('Client',"abc");
@@ -421,4 +422,7 @@ function showSeller()
 		setValueFromId('BIC_Partner',"Loading..");
 	}
 }
+ $(document).ready(function() {
+        getClientName();
+    });
 

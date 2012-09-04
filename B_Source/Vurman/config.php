@@ -1,7 +1,7 @@
 <?php
 session_start();
-//session_register("login");
-//session_register("usertype");
+session_register("login");
+session_register("usertype");
 define('DBHOST','localhost');
 define('LOGIN','root');
 define('PASSWORD','');
