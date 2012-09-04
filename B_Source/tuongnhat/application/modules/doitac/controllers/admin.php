@@ -10,6 +10,7 @@
 			$this->load->library('pagination');
 			$this->load->library('form_validation');
 			$this->load->library('session');
+			$this->load->helper('ckeditor');
 		}
 		
 		function index()
@@ -47,6 +48,45 @@
 			$data['title'] = "THÊM ĐỐI TÁC";
 			$data['module']=$this->module;
 			$data['page']='vdoitac_admin_add';
+			
+			$data['ckeditor'] = array(			
+				'id'    =>   'content',
+				'path'  =>   'assets/tuongnhat/js/ckeditor',	
+					
+				'config' => array(
+				'toolbar'   =>   "Full",     
+				'width'     =>   "98%",    
+				'height'    =>   '200px', 
+				'filebrowserBrowseUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html',
+                'filebrowserImageBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Images',
+                'filebrowserFlashBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Flash',
+                'filebrowserUploadUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                'filebrowserImageUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                'filebrowserFlashUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'   
+				),
+				
+				'styles' => array(
+				
+					'style 1' => array (
+						'name'      =>   'Blue Title',
+						'element'   =>   'h2',
+						'styles' => array(
+							'color'     =>   'Blue',
+							'font-weight'   =>   'bold'
+						)
+					),
+						
+					'style 2' => array (
+						'name'  =>   'Red Title',
+						'element'   =>   'h2',
+						'styles' => array(
+							'color'         =>   'Red',
+							'font-weight'       =>   'bold',
+							'text-decoration'   =>   'underline'
+						)
+					)
+				)
+			);
 			$this->load->view('admin/container',$data);
 		}
 		
@@ -95,6 +135,44 @@
 			$data['title'] = "SỬA THÔNG TIN ĐỐI TÁC";
 			$data['module']=$this->module;
 			$data['page']='vdoitac_admin_edit';
+			$data['ckeditor'] = array(			
+				'id'    =>   'content',
+				'path'  =>   'assets/tuongnhat/js/ckeditor',	
+					
+				'config' => array(
+				'toolbar'   =>   "Full",     
+				'width'     =>   "98%",    
+				'height'    =>   '200px', 
+				'filebrowserBrowseUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html',
+                'filebrowserImageBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Images',
+                'filebrowserFlashBrowseUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/ckfinder.html?Type=Flash',
+                'filebrowserUploadUrl'      => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                'filebrowserImageUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                'filebrowserFlashUploadUrl' => base_url().'assets/tuongnhat/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'   
+				),
+				
+				'styles' => array(
+				
+					'style 1' => array (
+						'name'      =>   'Blue Title',
+						'element'   =>   'h2',
+						'styles' => array(
+							'color'     =>   'Blue',
+							'font-weight'   =>   'bold'
+						)
+					),
+						
+					'style 2' => array (
+						'name'  =>   'Red Title',
+						'element'   =>   'h2',
+						'styles' => array(
+							'color'         =>   'Red',
+							'font-weight'       =>   'bold',
+							'text-decoration'   =>   'underline'
+						)
+					)
+				)
+			);
 			$this->load->view('admin/container',$data);
 		}
 	}

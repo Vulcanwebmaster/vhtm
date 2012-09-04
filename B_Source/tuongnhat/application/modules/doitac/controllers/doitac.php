@@ -26,9 +26,9 @@
 		function index()
 		{
 			$data['page']='shop/vdoitac';
-			$data['thoitrang']=$this->Mdoitac->getDT('thoitrang');
-			$data['bakery']=$this->Mdoitac->getDT('bakery');
-			$data['duhoc']=$this->Mdoitac->getDT('duhoc');
+			$data['thoitrang']=$this->Mdoitac->getDT('Thương mại thời trang');
+			$data['bakery']=$this->Mdoitac->getDT('Thương mại bakery');
+			$data['duhoc']=$this->Mdoitac->getDT('Du học');
 			$data['module']=$this->module;
 			$this->load->view('front/container',$data);			
 		}

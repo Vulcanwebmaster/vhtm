@@ -18,7 +18,7 @@
                         		foreach($thoitrang as $tt)
                         		{
                         ?>
-	                      	<div id="div-img"><img src="../images/shop1.jpg" height="119px" width="184px"/><p id="ks"><?php echo $tt->ten;?></p></div>                        
+	                      	<div id="div-img"><?php echo $tt->hinhanh; ?><p id="ks"><?php echo $tt->ten;?></p></div>                        
                         <?php 
 							}
 								}
@@ -40,7 +40,7 @@
                         		foreach($bakery as $bk)
                         		{
                         ?>
-	                      	<div id="div-img"><img src="../images/ks1.jpg" height="119px" width="184px"/><p id="ks"><?php echo $bk->ten; ?></p></div>                        
+	                      	<div id="div-img"><?php echo $bk->hinhanh; ?><p id="ks"><?php echo $bk->ten; ?></p></div>                        
                         <?php 
 							}
 								}
@@ -61,7 +61,7 @@
                         		foreach($duhoc as $dh)
                         		{
                         ?>
-	                      	<div id="div-img"><img src="../images/hiephoi.jpg" height="119px" width="184px"/><p id="ks"><?php echo $dh->ten; ?></p></div>                       
+	                      	<div id="div-img"><?php echo $dh->hinhanh; ?><p id="ks"><?php echo $dh->ten; ?></p></div>                       
                         <?php 
 							}
 								}

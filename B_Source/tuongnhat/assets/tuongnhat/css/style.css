@@ -236,4 +236,7 @@ dl.adr dd a:hover {}
 /*================d?i t�c ============*/
 #images-img{margin-top:7px;}
 #div-img{ float:left; text-align:center; margin:10px; width:184px; height:163px;}
+#div-img p img{
+	width:184px !important;height:119px !important;
+}
 #ks{ margin-top:5px;}

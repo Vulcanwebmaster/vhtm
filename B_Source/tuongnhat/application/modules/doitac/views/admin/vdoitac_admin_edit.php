@@ -33,11 +33,26 @@
 				<fieldset style="width:48%">
 					<label>Loại đối tác</label>
 					<select name="loaidoitac">
-						<option value="thoitrang">Thương mại thời trang</option>
-						<option value="bakery">Thương mại bakery</option>
-						<option value="duhoc">Đối tác du học</option>
+						<option value="<?php echo $doitac->loaidoitac; ?>"><?php echo $doitac->loaidoitac; ?></option>
+						<?php if($doitac->loaidoitac=="Thương mại thời trang"){?>
+							<option value="Thương mại bakery">Thương mại bakery</option>
+							<option value="Du học">Đối tác du học</option>
+						<?php }?>
+						<?php if($doitac->loaidoitac=="Thương mại bakery"){?>
+							<option value="Thương mại bakery">Thương mại thời trang</option>
+							<option value="Du học">Đối tác du học</option>
+						<?php }?>
+						<?php if($doitac->loaidoitac=="Du học"){?>
+							<option value="Thương mại bakery">Thương mại thời trang</option>
+							<option value="Du học">Thương mại bakery</option>
+						<?php }?>
 					</select>
-				</fieldset>			
+				</fieldset>	
+				<fieldset>
+					<label>Ảnh đại diện : </label>
+					<textarea name="hinhanh" id="content"><?php echo $doitac->hinhanh; ?></textarea>
+						<?php echo display_ckeditor($ckeditor); ?>
+				</fieldset><div class="clear"></div>		
 			</div>
 			
 			<footer style="float:left">

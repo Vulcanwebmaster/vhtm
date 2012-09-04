@@ -41,7 +41,12 @@
 						<option value="bakery">Thương mại bakery</option>
 						<option value="duhoc">Du học</option>
 					</select>
-				</fieldset>		
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện : </label>
+					<textarea name="hinhanh" id="content"></textarea>
+						<?php echo display_ckeditor($ckeditor); ?>
+				</fieldset><div class="clear"></div>		
 			</div>
 			
 			<footer style="float:left">
