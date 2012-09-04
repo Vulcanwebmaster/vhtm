@@ -12,6 +12,8 @@ class Homepage extends NIW_controller {
 	
 	public function index()
 	{
+		$data['coso']=$this->Mhomepage->getCoSo(0);
+		$data['giangday']=$this->Mhomepage->getCoSo(1);
 		$data['title']='[Name Defined] | Home';
 		$data['loaikhoahoc']=$this->Mhomepage->list_loaikhoahoc();
 		$data['module'] = $this->module;

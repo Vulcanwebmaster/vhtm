@@ -47,7 +47,7 @@
 	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
 	                                                                    </td>
 	                                                                    <td align="left">
-	                                                                        <a href=""><?php echo $loai->ten; ?></a>
+	                                                                        <a style="color: white" href=""><?php echo $loai->ten; ?></a>
 	                                                                    </td>
 	                                                                </tr>
                                                               	<?php 
@@ -164,7 +164,7 @@
                                                                         <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                     </td>
                                                                     <td align="left">
-                                                                        <a href="">Cơ sở</a>
+                                                                        <a style="color:white" href="<?php echo base_url() ?>coso"><?php echo $coso->ten; ?></a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr class="sectiontext">
@@ -172,7 +172,7 @@
                                                                         <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="/bullet.gif" />
                                                                     </td>
                                                                     <td align="left">
-                                                                        <a href="">Giảng dạy/ Giảng viên</a>
+                                                                        <a style="color:white" href="<?php echo base_url() ?>coso/giangday"><?php echo $giangday->ten; ?></a>
                                                                     </td>
                                                                 </tr>
                                                             </table>

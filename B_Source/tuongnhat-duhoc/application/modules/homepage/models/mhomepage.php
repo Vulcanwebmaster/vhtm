@@ -19,5 +19,11 @@
 			$query=$this->db->get('tn_loaikhoahoc');
 			return $query->row($stt);
 		}
+		
+		function getCoSo($stt)
+		{
+			$query=$this->db->get('tn_coso');
+			return $query->row($stt);
+		}
 	}
 ?>

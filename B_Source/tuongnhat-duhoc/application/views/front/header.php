@@ -77,7 +77,7 @@
                                 <li>|</li>
                                 <li><a href="<?php echo base_url(); ?>gioithieu" class="mainlevel-trans">Giới thiệu</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Cơ sở</a></li>
+                                <li><a href="<?php echo base_url() ?>coso" class="mainlevel-trans">Cơ sở</a></li>
                                 <li>|</li>
                                 <li><a href="<?php echo base_url();?>khoahoc" class="mainlevel-trans" id="item">Các khóa học</a>
                                     <div id="item-menu" style="display: none; ">
@@ -89,11 +89,11 @@
                                     </div>
                                 </li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Thủ tục nhập học</a></li>
+                                <li><a href="<?php echo base_url() ?>thutucnhaphoc" class="mainlevel-trans">Thủ tục nhập học</a></li>
                                 <li>|</li>
                                 <li><a href="<?php echo base_url(); ?>hocphi" class="mainlevel-trans">Học phí</a></li>
                                 <li>|</li>
-                                <li><a href="" class="mainlevel-trans">Hình ảnh</a></li>
+                                <li><a href="<?php echo base_url() ?>hinhanh" class="mainlevel-trans">Hình ảnh</a></li>
                                 <li>|</li>
                                 <li><a href="<?php echo base_url(); ?>lienhe" class="mainlevel-trans">Liên hệ với chúng tôi</a></li>
                             </ul>

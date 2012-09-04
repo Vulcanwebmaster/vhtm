@@ -10,6 +10,9 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Profiles (Giới thiệu)</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Contact Us (Liên hệ)</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>khoahoc/admin">Courses (Các khóa học)</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>coso/admin">Facilities (Cơ sở)</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>hinhanh/admin">Pictures (Hình ảnh)</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>thutucnhaphoc/admin">Thủ tục nhập học</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

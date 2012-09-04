@@ -24,11 +24,14 @@ color:#FFFFFF;
 font-weight:normal;
 }
 
+.sectiontext{
+	color:white;
+}
+
 .sectiontext a{
 font-family:Tahoma;
 font-size:11px;
 text-decoration:none;
-color:#FFFFFF;
 font-weight:normal;
 }
 .sectiontext a:hover {
