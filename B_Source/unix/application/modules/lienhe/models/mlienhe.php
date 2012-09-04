@@ -11,11 +11,14 @@
 		
 		function insert()
 		{
-			$this->db->insert('unix_lienhe',array('hoten'=>$this->input->post('hoten'),
-													'email'=>$this->input->post('email'),
-													'tieude'=>$this->input->post('tieude'),
-													'dienthoai'=>$this->input->post('dienthoai'),
-													'noidung'=>$this->input->post('noidung')));
+			$data=array('hoten'=>$this->input->post('hoten'),
+						'email'=>$this->input->post('email'),
+						'tieude'=>$this->input->post('tieude'),
+						'dienthoai'=>$this->input->post('dienthoai'),
+						'noidung'=>$this->input->post('noidung')
+						);
+			$this->db->set('ngaythang','now()',false);
+			$this->db->insert('unix_lienhe',$data);
 			$this->session->set_userdata('message','Thư của bạn đã được gửi thành công.');
 		}
 		

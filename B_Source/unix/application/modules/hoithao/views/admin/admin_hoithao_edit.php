@@ -38,7 +38,7 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='thoigian'>".'(*)Thời Gian:'."</label></td>\n";
+echo "<tr><td class='label'><label for='thoigian'>".'Thời Gian:'."</label></td>\n";
 $data = array('name'=>'thoigian','id'=>'thoigian','class'=>'text','value'=>$hoithao['thoigian']);
 echo "<td>";
 echo form_input($data);

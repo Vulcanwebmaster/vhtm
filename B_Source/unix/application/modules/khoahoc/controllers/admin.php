@@ -13,8 +13,10 @@ class Admin extends Shop_Admin_Controller
         $this->module=basename(dirname(dirname(__FILE__)));      
         $this->bep_site->set_crumb($this->lang->line('backendpro_ql_khoahoc'),$this->module.'/admin');
         $this->load->library('form_validation');
+		$this->load->helper('ckeditor');
     }
-
+	
+	
 
     function index()
     {
@@ -22,7 +24,21 @@ class Admin extends Shop_Admin_Controller
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_home";
         $this->load->view($this->_container,$data);
     }
-  
+	
+  	function home()
+	{
+		$this->bep_assets->load_asset_group('TINYMCE');
+		//$data=$this->_ckeditor();
+		$data['title']="Cập nhật khóa học mặc định";
+		$data['module'] = $this->module;
+		$data['header'] = $this->lang->line('backendpro_access_control');
+		$data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_default";
+		$data['khoahoc'] = $this->MKhoahoc->get_KhoaHoc_Default();
+			    
+	    flashMsg('noctice','Mời bạn nhập các thông tin về khóa học mặc định');	
+		$this->load->view($this->_container,$data);
+	}
+	
     function common_home()
     {
         $data['title'] = "Quản lý khóa học";
@@ -58,7 +74,6 @@ class Admin extends Shop_Admin_Controller
         return $data;
     }
 
-
 	function create()
     {
     	$this->bep_assets->load_asset_group('TINYMCE');
@@ -86,12 +101,64 @@ class Admin extends Shop_Admin_Controller
             $this->load->view($this->_container,$data);
         }
     }
-  
+
+  	function fjx_bgcolor()
+	{
+		$noidung=$this->input->post('noidung_backup');
+		//echo $noidung;die();
+		
+		$temp = str_replace("@$%#@", 'style="color: ',$noidung);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+		//echo $temp;die();
+		$data= array(
+            'tieude'       => $this->input->post('tieude'),
+            'noidung'      => $temp,  
+        );
+		return $data;
+	}
+	function update($id)
+	{
+		$this->bep_assets->load_asset_group('TINYMCE');
+		if ($this->input->post('tieude'))
+        {   
+        	$this->form_validation->set_rules('noidung','Nội dung','required');
+		  	if($this->form_validation->run()==true)
+		  	{
+		  		$data=$this->fjx_bgcolor();		
+                $this->MKhoahoc->update_KhoaHoc_Default($id,$data);
+                $this->bep_assets->load_asset_group('TINYMCE');
+				$data['title']="Cập nhật khóa học mặc định";
+				$data['module'] = $this->module;
+				$data['header'] = $this->lang->line('backendpro_access_control');
+				$data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_default";
+				$data['khoahoc'] = $this->MKhoahoc->get_KhoaHoc_Default();
+                flashMsg('success','Khóa học mặc định đã được cập nhật thành công');
+				$this->load->view($this->_container,$data);
+		  	}
+		  	else 
+		  	{
+			  	$this->bep_assets->load_asset_group('TINYMCE');
+				$data['title']="Cập nhật khóa học mặc định";
+				$data['module'] = $this->module;
+				$data['header'] = $this->lang->line('backendpro_access_control');
+				$data['page'] = $this->config->item('backendpro_template_admin') . "admin_khoahoc_default";
+				$data['khoahoc'] = $this->MKhoahoc->get_KhoaHoc_Default();
+	            flashMsg('error','Bạn phải nhập đầy đủ nội dung của khóa học');
+	            $this->load->view($this->_container,$data);
+		  	}
+        }
+        else
+        {
+        	redirect($this->module.'/admin/home','refresh');
+        }
+		
+		
+	}
     function edit($id=0)
     {   
     	$this->bep_assets->load_asset_group('TINYMCE');
-    	if ($this->input->post('khoahoc_id')) {
-    		$id = $this->input->post('khoahoc_id');
+    	if ($this->input->post('id')) {
+    		$id = $this->input->post('id');
     	} 
         if ($this->input->post('tieude'))
         {   

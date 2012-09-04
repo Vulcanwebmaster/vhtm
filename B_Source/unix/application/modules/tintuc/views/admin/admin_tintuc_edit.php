@@ -55,6 +55,12 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
+echo "<tr><td class='label'><label for='long'>".'Ảnh đại diện:'."</label></td>\n";
+$data = array('name'=>'anhdaidien','id'=>'long','rows'=>'10', 'cols'=>'80','value'=>$tintuc->anhdaidien);
+echo "<td id='nopad' >";
+echo form_textarea($data) ;
+echo "</td></tr>\n";
+
 echo "<tr><td class='label'><label for='ngaythang'>".'(*)Ngày tháng (yyyy-mm-dd):'."</label></td>\n";
 $data = array('name'=>'ngaythang','id'=>'ngaythang','class'=>'text','value'=>$tintuc->ngaythang);
 echo "<td>";

@@ -32,8 +32,10 @@
 		}
 		
 		//================================ FULL ====================================
-		function countFull()
+		function countFull($loaisach_id)
 		{
+			if ($loaisach_id>0)
+				$this->db->where('loaisach_id',$loaisach_id);
 			$ds=$this->db->get('unix_sach');
 			$list=array();
 			foreach ($ds->result() as $item)
@@ -44,9 +46,11 @@
 			return count($list);
 		}
 		
-		function getListFull()
+		function getListFull($loaisach_id, $index)
 		{
-			$ds=$this->db->get('unix_sach');
+			if ($loaisach_id>0)
+				$this->db->where('loaisach_id',$loaisach_id);
+			$ds=$this->db->get('unix_sach',4,$index);
 			$list=array();
 			foreach ($ds->result() as $item)
 			{

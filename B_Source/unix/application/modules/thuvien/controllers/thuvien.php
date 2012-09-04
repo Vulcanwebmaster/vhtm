@@ -12,35 +12,30 @@
 		
 		function index()
 		{
-			/*$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
-			$data['module']=$this->module;		
-			$data['listtype']=$this->Mthuvien->getListType();
-			
-			$data['selected']=0;			
-			$this->load->view($this->_container,$data);*/
 			$this->loadFull();
 		}
 		
-		function loadFull()
+		function loadFull($loaisach_id=0, $index=0)
 		{
+			$config['base_url']=base_url().'index.php/thuvien/loadFull/'.$loaisach_id;
+			$config['total_rows']=$this->Mthuvien->countFull($loaisach_id);
+			$config['per_page']=4;
+			$config['uri_segment']=4;
+			$this->pagination->initialize($config);
+			
 			$data['flag_DanhMuc']=3;
-			$data['listfull']=$this->Mthuvien->getListFull();
+			$data['listfull']=$this->Mthuvien->getListFull($loaisach_id, $index);
 			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
 			$data['listtype']=$this->Mthuvien->getListType();
 			$data['module']=$this->module;
-			$data['selected']=0;
+			$data['selected']=$loaisach_id;
+			$data['tieude']="THƯ VIỆN";
 			$this->load->view($this->_container,$data);
 		}
 		
 		function load($type=0)
 		{
-			$data['flag_DanhMuc']=3;
-			$data['listfull']=$this->Mthuvien->getList($type);
-			$data['page']=$this->config->item('backendpro_template_shop').'vthuvien';
-			$data['listtype']=$this->Mthuvien->getListType();
-			$data['module']=$this->module;
-			$data['selected']=$type;
-			$this->load->view($this->_container,$data);
+			$this->loadFull($type,0);
 		}
 		
 		//====================DETAIL==========================

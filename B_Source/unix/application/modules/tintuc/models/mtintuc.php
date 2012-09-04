@@ -9,6 +9,7 @@
 		
 		function loadListNews($index)
 		{
+			$this->db->order_by('tintuc_id','desc');
 			$ds=$this->db->get('unix_tintuc',6,$index);
 			$list=array();
 			foreach($ds->result() as $news)
@@ -21,6 +22,7 @@
 		
 		function loadListFull()
 		{
+			$this->db->order_by('tintuc_id','desc');
 			$ds=$this->db->get('unix_tintuc');
 			$list=array();
 			foreach($ds->result() as $news)

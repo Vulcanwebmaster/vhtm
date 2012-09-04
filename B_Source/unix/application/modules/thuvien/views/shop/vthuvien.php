@@ -21,12 +21,7 @@
 	</div>
 </div>
 <div id="content-panel">
-	<div id="current-map">
-		<a href="<?php echo base_url();?>">Trang chủ</a>
-		<a>:</a>
-		<a>Thư viện</a>
-	</div>
-	<hr/>
+	<hr style="border:none">
 	<div id="thuvien-content">
 		<div id="col_left">
 			<?php $this->load->view('shop/left');?>
@@ -35,7 +30,7 @@
 			<div id="menu-panel">
 				<div id="menu-book">
 					<p>
-						<span style="color:white; font-size:12px">Chọn loại tài liệu: </span>
+						<span style="color:white; font-size:12px">Loại tài liệu: </span>
 						<select id="list-type">
 							<option value="0">Tất cả</option>
 							<?php if (isset($listtype))
@@ -58,52 +53,44 @@
 				</div>
 			</div>
 			<div id="listbook">
-				<script type="text/javascript">
-					$(document).ready(function(){
-						$("#list").hide().fadeIn(400);
-						
-						});
-				</script>
-				<ul id="list" class="list" style="text-align:center; margin-top:40px">
-					<?php if (isset($listfull))
+				<div id="content">
+				<ul class="list">
+					<?php 
 					{
-						for ($i=0;$i<count($listfull);$i+=4)
-						{							
-							?>
-							<li style="clear:both; height:145px">
-								<ul style="list-style-type:none; padding-left:0">
-									<?php $j=0;
-										for($j=0;$j<4;$j++)
-										{
-											if (isset($listfull[$i+$j]))
-											{
-											?>
-											<li style="float:left; margin:0 20px 10px 5px;">
-												<fieldset style="width:120px; height:130px; border-style:none;background:url('<?php echo base_url();?>assets/unix/images/book-bg.png') no-repeat">
-													<div id="book-name">
-														<div style="height:40px"></div>
-														<a title="<?php echo $listfull[$i+$j]->tensach;?>" href="<?php echo base_url();?>index.php/thuvien/detail/<?php echo $listfull[$i+$j]->sach_id;?>"><?php 
-														{
-															if (strlen($listfull[$i+$j]->tensach)>50)
-																echo substr($listfull[$i+$j]->tensach,0,50).' ...';
-															else echo $listfull[$i+$j]->tensach;
-														}?></a>
-													</div>
-													<div id="book-information">
-														<p><?php echo substr($listfull[$i+$j]->tacgia,0,17);?></p>
-													</div>
-												</fieldset>
-											</li>
-										<?php }
+						foreach($listfull as $item)
+						{?>
+					<li style="clear:both">
+						<style type="text/css">
+							p{margin-top:5px; margin-bottom:3px}
+						</style>
+						<table>
+							<tr>
+								<td>
+									<a href="<?php echo base_url();?>index.php/thuvien/detail/<?php echo $item->sach_id;?>"><img src="<?php if ($item->anhdaidien!='') echo base_url().$item->anhdaidien; else echo base_url().'assets/unix/images/logo2.png';?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
+								</td>
+								<td style="padding:0 10px; text-align:justify; vertical-align:0">
+									<a href="<?php echo base_url();?>index.php/thuvien/detail/<?php echo $item->sach_id;?>"><h3 style="margin:0;color:#0158a1"><?php echo $item->tensach;?></h3></a>
+									<p>Thể loại: 
+										<?php if ($this->MKaimonokago->getTheLoaiById($item->loaisach_id))
+										{?>
+											<a href="<?php echo base_url();?>index.php/thuvien/load/<?php echo $item->loaisach_id;?>"><?php echo $this->MKaimonokago->getTheLoaiById($item->loaisach_id)->tenloai;?></a></p>
+										<?php 
 										}
-									?>
-								</ul>
-							</li>
-							<li style="height:20px"></li>
-					<?php
-							}
+										else echo 'Chưa biết';?>
+									<!-- ?php echo substr($item->noidung,0,200).' ...';?>
+									<a href="#" style="font-style:italic">Xem thêm</a-->
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li><hr/></li>
+					<?php 	}
 					}?>
-				</ul>	
+				</ul>
+				<?php echo $this->pagination->create_links();?>
+				<br id="space-bottom"/>
+			</div>
+			
 			</div>
 		</div>
 	</div>

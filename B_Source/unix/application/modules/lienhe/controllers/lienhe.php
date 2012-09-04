@@ -14,6 +14,7 @@
 		{
 			$data['page']=$this->config->item('backendpro_template_shop').'vlienhe';
 			$data['module']=$this->module;
+			$data['tieude']="LIÊN HỆ";
 			$this->load->view($this->_container,$data); 
 		}
 		
@@ -28,7 +29,7 @@
 				$this->form_validation->set_rules('dienthoai','dienthoai','required');
 				
 				$this->form_validation->set_message('required','Mục %s không được để trống');
-				$this->form_validation->set_message('valid_email','Giá trị %s phải đúng định dạng email');
+				$this->form_validation->set_message('valid_email','Mục %s chưa đúng định dạng email');
 				
 				
 				if ($this->form_validation->run())
@@ -41,6 +42,7 @@
 				{
 					$data['page']=$this->config->item('backendpro_template_shop').'vlienhe';
 					$data['module']=$this->module;
+					$data['tieude']="LIÊN HỆ";
 					$this->load->view($this->_container,$data); 
 				}
 			}

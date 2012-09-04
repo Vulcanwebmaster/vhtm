@@ -5,13 +5,15 @@
 		{
 			parent::__construct();
 			$this->load->database();
+			$this->load->helper('date');
 		}
 		
-		function getlist($id_doituong)
+		function getlist($id_doituong,$index)
 		{
+			$this->db->order_by('thoigian','desc');
 			if ($id_doituong>0)
-				$this->db->where('loaikhoahoc',$id_doituong);
-			$ds=$this->db->get('unix_khoahoc');
+				$this->db->where('loaikhoahoc_id',$id_doituong);
+			$ds=$this->db->get('unix_khoahoc',4,$index);
 			$list=array();
 			foreach($ds->result() as $item)
 			{
@@ -21,8 +23,10 @@
 			return $list;
 		}
 		
-		function count()
+		function count($id_doituong)
 		{
+			if ($id_doituong>0)
+				$this->db->where('loaikhoahoc_id',$id_doituong);
 			$ds=$this->db->get('unix_khoahoc');
 			$list=array();
 			foreach($ds->result() as $item)
@@ -33,17 +37,7 @@
 			return count($list);
 		}
 		
-		function getInf($id)
-		{
-			$this->db->where('khoahoc_id',$id);
-			$ds=$this->db->get('unix_khoahoc');
-			if ($ds->num_rows()>0)
-			{
-				$item=$ds->row(0);
-				return $item;
-			}			
-			else return false;
-		}
+		
 		
 	function getKhoaHoc()
 	    {
@@ -117,7 +111,7 @@
 	    
 	    function getListDoiTuong()
 	    {
-	    	$ds=$this->db->get('unix_doituong');
+	    	$ds=$this->db->get('unix_loaikhoahoc');
 	    	$list=array();
 	    	foreach($ds->result() as $item)
 	    	{
@@ -126,5 +120,36 @@
 	    	$ds->free_result();
 	    	return $list;
 	    }
+
+		function getInf($id)
+		{
+			$this->db->where('khoahoc_id',$id);
+			$ds=$this->db->get('unix_khoahoc');
+			if ($ds->num_rows()>0)
+			{
+				$item=$ds->row(0);
+				return $item;
+			}			
+			else return false;
+		}
+		
+		function get_KhoaHoc_Default()
+		{
+			$query=$this->db->get('unix_khoahoc_default');
+			if($query->num_rows()>0)
+			{
+				$row=$query->row();
+				return $row;
+			}
+			else return false;
+		}
+		
+		function update_KhoaHoc_Default($id,$data)
+		{
+			$this->db->set('ngaydang','now()',false);
+	    	$this->db->update('unix_khoahoc_default', $data,array('id'=>$id));
+		}
+				
+		
 	}
 ?>

@@ -8,12 +8,7 @@
 	</div>
 </div>
 <div id="content-panel">
-	<div id="current-map">
-		<a href="<?php echo base_url();?>">Trang chủ</a>
-		<a>:</a>
-		<a>Cảm nhận</a>
-	</div>
-	<hr/>
+	<hr style="border:none">
 	<div id="thuvien-content">
 		<div id="col_left">
 			<?php $this->load->view('shop/left');?>
@@ -27,7 +22,10 @@
 						{?>
 							<li>
 								<h3 style="color:#005274"><?php echo $item->nguoidang;?></h3>
-								<p style="text-align:justify">"..<?php echo $item->noidung;?>.."</p>
+								<?php if ($item->noidung!='')
+								{?>
+									<p style="text-align:justify"><?php echo $item->noidung;?></p>
+								<?php }?>
 							</li>
 					<?php	}
 					}

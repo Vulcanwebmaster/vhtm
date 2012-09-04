@@ -25,11 +25,13 @@
 			$data['list']=$this->Mtintuc->loadListNews($index);
 			$data['page']=$this->config->item('backendpro_template_shop').'vtintuc';
 			$data['module']=$this->module;
+			$data['tieude']="TIN TỨC";
 			$this->load->view($this->_container,$data);
 		}
 		
 		function detail($alias=0)
 		{
+			$data['tieude']='TIN TỨC';
 			$data['newest']=$this->Mtintuc->getNewestNews($alias);
 			if ($this->Mtintuc->getDetailByAlias($alias))
 				$data['info']=$this->Mtintuc->getDetailByAlias($alias);

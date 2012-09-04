@@ -22,7 +22,58 @@ class Admin extends Shop_Admin_Controller
         $data['page'] = $this->config->item('backendpro_template_admin') . "admin_hoithao_home";
         $this->load->view($this->_container,$data);
     }
-  
+  	
+	function home()
+	{
+		$this->bep_assets->load_asset_group('TINYMCE');
+		$data['title']="Cập nhật hội thảo mặc định";
+		$data['module'] = $this->module;
+		$data['header'] = $this->lang->line('backendpro_access_control');
+		$data['page'] = $this->config->item('backendpro_template_admin') . "admin_hoithao_default";
+		$data['hoithao'] = $this->MHoithao->get_HoiThao_Default();
+			    
+	    flashMsg('noctice','Mời bạn nhập các thông tin về hội thảo mặc định');	
+		$this->load->view($this->_container,$data);
+	}
+	
+	function update($id)
+	{
+		$this->bep_assets->load_asset_group('TINYMCE');
+		if ($this->input->post('tieude'))
+        {   
+        	$this->form_validation->set_rules('noidung','Nội dung','required');
+		  	if($this->form_validation->run()==true)
+		  	{
+		  		$data=$this->fjx_bgcolor(); 	
+                $this->MHoithao->update_HoiThao_Default($id,$data);
+                redirect($this->module.'/admin/home','refresh');
+                flashMsg('success','Hội thảo mặc định đã được cập nhật');
+		  	}
+		  	else 
+		  	{
+			  	$this->bep_assets->load_asset_group('TINYMCE');
+				$data['title']="Cập nhật hội thảo mặc định";
+				$data['module'] = $this->module;
+				$data['header'] = $this->lang->line('backendpro_access_control');
+				$data['page'] = $this->config->item('backendpro_template_admin') . "admin_hoithao_default";
+				$data['hoithao'] = $this->MHoithao->get_HoiThao_Default();
+	            flashMsg('error','Bạn phải nhập nội dung của khóa học');
+	            $this->load->view($this->_container,$data);
+		  	}
+        }
+        else
+        {
+        	$this->bep_assets->load_asset_group('TINYMCE');
+			$data['title']="Sửa hội thảo mặc định";
+			$data['module'] = $this->module;
+			$data['header'] = $this->lang->line('backendpro_access_control');
+			$data['page'] = $this->config->item('backendpro_template_admin') . "admin_hoithao_default";
+			$data['hoithao'] = $this->MHoithao->get_HoiThao_Default();
+			flashMsg('noctice','Mời bạn nhập các thông tin về hội thảo mặc định');	
+			$this->load->view($this->_container,$data);
+        }	
+	}
+
     function common_home()
     {
         $data['title'] = "Quản lý hội thảo";
@@ -32,6 +83,20 @@ class Admin extends Shop_Admin_Controller
         return $data;
     }
 
+	function fjx_bgcolor()
+	{
+		$noidung=$this->input->post('noidung_backup');
+		
+		$temp = str_replace("@$%#@", 'style="color: ',$noidung);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+		//echo $temp;die();
+		$data= array(
+            'tieude'       => $this->input->post('tieude'),
+            'noidung'      => $temp,  
+        );
+		return $data;
+	}
+	
     function _fields()
     {
     	$temp = str_replace("@$%#@", 'style="color: ',$_POST['noidung_backup']);
@@ -47,7 +112,7 @@ class Admin extends Shop_Admin_Controller
         $data = array(
             'hoithao_id'   => $this->input->post('hoithao_id',TRUE),
             'tieude'       => $this->input->post('tieude',TRUE),
-            'noidung'      => $temp,
+            'noidung'      => $this->input->post('noidung',TRUE),
             'thoigian'     => $this->input->post('thoigian',TRUE),        
             'phanhoi'      => $this->input->post('phanhoi',TRUE),
             'anhdaidien'   => $link    
@@ -90,7 +155,7 @@ class Admin extends Shop_Admin_Controller
         {           
 		  	$this->form_validation->set_rules('tieude', 'tieude', 'required');
 		  	$this->form_validation->set_rules('noidung', 'noidung', 'required');  
-		  	$this->form_validation->set_rules('thoigian', 'thoigian', 'required');      
+		  	     
 		  	if($this->form_validation->run())
 		  	{
 				$data = $this->_fields();

@@ -122,6 +122,7 @@ class Welcome extends Shop_Controller
         $data['metadesc'] =$page['metadesc'];
         $data['metakeyword'] =$page['metakeyword'];
         $data['module'] = $this->module;
+        $data['tieude']="TRANG CHỦ";       
         $this->load->view($this->_container,$data); 
     }
 
@@ -1088,10 +1089,11 @@ class Welcome extends Shop_Controller
     
     function detail($id)
     {
+    	$data['tieude']='Phương pháp đào tạo';
     	$name=$this->MKaimonokago->getName($id);
     	$data['page'] = $this->config->item('backendpro_template_shop') . 'vdetail';
     	$data['module'] = $this->module;
-    	$data['dulieu']=$this->MKaimonokago->homepageLoadNoiDung($name);
+    	$data['dulieu']=$this->MKaimonokago->homepageLoadNoiDung($id);
     	$data['maintitle']=$name;
     	$this->load->view($this->_container,$data);
     }

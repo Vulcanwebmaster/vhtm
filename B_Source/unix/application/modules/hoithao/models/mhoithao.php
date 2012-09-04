@@ -9,7 +9,8 @@
 		
 		function getList($index)
 		{
-			$kq=$this->db->get('unix_hoithao',6,$index);
+			$this->db->order_by('thoigian','desc');
+			$kq=$this->db->get('unix_hoithao',5,$index);
 			$list=array();
 			foreach($kq->result() as $item)
 			{
@@ -21,6 +22,7 @@
 		
 		function full()
 		{
+			$this->db->order_by('thoigian','desc');
 			$kq=$this->db->get('unix_hoithao');
 			$list=array();
 			foreach($kq->result() as $item)
@@ -111,5 +113,23 @@
 	        $Q->free_result();
 	        return $data;
 	    }
+		
+		function get_HoiThao_Default()
+		{
+			$query=$this->db->get('unix_hoithao_default');
+			if($query->num_rows()>0)
+			{
+				$row=$query->row();
+				return $row;
+			}
+			else return false;
+		}
+
+		function update_HoiThao_Default($id,$data)
+		{
+			$this->db->set('ngaydang','now()',false);
+	    	$this->db->update('unix_hoithao_default', $data,array('id'=>$id));
+		}
+
 	}
 ?>

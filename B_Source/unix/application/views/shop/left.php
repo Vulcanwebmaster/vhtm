@@ -1,28 +1,37 @@
-<?php if (isset($flag_DanhMuc) && $flag_DanhMuc == 2){ ?>
+<?php
+	$hoithao=$this->MKaimonokago->getListDanhMucOld(0);
+	$khoahoc=$this->MKaimonokago->getListDanhMucOld(1);
+	$thuvien=$this->MKaimonokago->getListDanhMucOld(2);
+
+	$this->load->helper('text');
+	if (isset($flag_DanhMuc) && $flag_DanhMuc == 2){ 
+	?>
 <div>
-	<div id="left-top"></div>
+	<!--<!--<div id="left-top"></div>--></div>-->
 	<!-- ============= HỘI THẢO ================== -->
 	<div class="left-title">
-		<h4>Tin hội thảo mới nhất</h4>
+		<h4><?php echo $hoithao->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
 				<?php $listhoithao=$this->MKaimonokago->getListHoiThao();
+								
 					foreach($listhoithao as $item)
 					{
 				?>		
-				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php
-					$offset=35;
-					while ($item->tieude[$offset]!=' ')
-						$offset++;
-					echo substr($item->tieude,0,$offset).' ...';?></a></li>
+				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+					<?php
+						$string=$item->tieude;
+						echo word_limiter($string,10);
+					?>
+				</a></li>
 				<?php }?>
 			</ul>
 		</div>
 	
 	<!-- ============= KHÓA HỌC ================== -->
 	<div class="left-title">
-		<h4>Khóa học nổi bật</h4>
+		<h4><?php echo $khoahoc->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -30,11 +39,10 @@
 					foreach($listkhoahoc as $item)
 					{?>
 						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
-							<?php 
-								$offset=35;
-								while ($item->tieude[$offset]!=' ')
-									$offset++;
-								echo substr($item->tieude,0,$offset).' ...';?>
+							<?php
+								$string=$item->tieude;
+								echo word_limiter($string,10);
+							?>
 							</a></li>
 			<?php 	}
 			?>
@@ -43,7 +51,7 @@
 		
 	<!-- ============= THƯ VIỆN ================== -->
 	<div class="left-title">
-		<h4>Thư viện</h4>
+		<h4><?php echo $thuvien->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -62,29 +70,35 @@
 				
 			</ul>
 		</div>
-	<div id="left-bottom"></div>
-</div>
+		
+	
+
 <?php }
 else if (isset($flag_DanhMuc) && $flag_DanhMuc == 1){ ?>
 <div>
-	<div id="left-top"></div>
+	<!--<div id="left-top"></div>--></div>
 	<!-- ============= KHÓA HỌC ================== -->
 	<div class="left-title">
-		<h4>Khóa học nổi bật</h4>
+		<h4><?php echo $khoahoc->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
 			<?php $listkhoahoc=$this->MKaimonokago->getListKhoaHoc();
 					foreach($listkhoahoc as $item)
 					{?>
-						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+							<?php
+								$string=$item->tieude;
+								echo word_limiter($string,10);
+							?>
+							</a></li>
 			<?php 	}
 			?>
 			</ul>
 		</div>
 	<!-- ============= HỘI THẢO ================== -->
 	<div class="left-title">
-		<h4>Tin hội thảo mới nhất</h4>
+		<h4><?php echo $hoithao->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -94,10 +108,9 @@ else if (isset($flag_DanhMuc) && $flag_DanhMuc == 1){ ?>
 				?>		
 				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
 					<?php
-					$offset=35;
-					while($item->tieude[$offset]!=' ')
-						$offset++;
-					echo substr($item->tieude,0,$offset).' ...';?>
+						$string=$item->tieude;
+						echo word_limiter($string,10);
+					?>
 				</a></li>
 				<?php }?>
 			</ul>
@@ -105,7 +118,7 @@ else if (isset($flag_DanhMuc) && $flag_DanhMuc == 1){ ?>
 		
 	<!-- ============= THƯ VIỆN ================== -->
 	<div class="left-title">
-		<h4>Thư viện</h4>
+		<h4><?php echo $thuvien->ten; ?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -118,15 +131,16 @@ else if (isset($flag_DanhMuc) && $flag_DanhMuc == 1){ ?>
 				
 			</ul>
 		</div>
-	<div id="left-bottom"></div>
-</div>
+			
+	
+
 <?php } 
 else if (isset($flag_DanhMuc) && $flag_DanhMuc == 3){ ?>
 <div>
-	<div id="left-top"></div>
+	<!--<div id="left-top"></div>--></div>
 	<!-- ============= THƯ VIỆN ================== -->
 	<div class="left-title">
-		<h4>Thư viện</h4>
+		<h4><?php echo $thuvien->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -141,7 +155,7 @@ else if (isset($flag_DanhMuc) && $flag_DanhMuc == 3){ ?>
 		</div>
 	<!-- ============= HỘI THẢO ================== -->
 	<div class="left-title">
-		<h4>Tin hội thảo mới nhất</h4>
+		<h4><?php echo $hoithao->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -149,34 +163,44 @@ else if (isset($flag_DanhMuc) && $flag_DanhMuc == 3){ ?>
 					foreach($listhoithao as $item)
 					{
 				?>		
-				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+					<?php
+						$string=$item->tieude;
+						echo word_limiter($string,10);
+					?>
+					</a></li>
 				<?php }?>
 			</ul>
 		</div>	
 	<!-- ============= KHÓA HỌC ================== -->
 	<div class="left-title">
-		<h4>Khóa học nổi bật</h4>
+		<h4><?php echo $khoahoc->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
 			<?php $listkhoahoc=$this->MKaimonokago->getListKhoaHoc();
 					foreach($listkhoahoc as $item)
 					{?>
-						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+							<?php
+								$string=$item->tieude;
+								echo word_limiter($string,10);
+							?>
+							</a></li>
 			<?php 	}
 			?>
 			</ul>
 		</div>
+			
+	
 
-	<div id="left-bottom"></div>
-</div>
 <?php } 
 else{?>
 <div>
-	<div id="left-top"></div>
+	<!--<div id="left-top"></div>--></div>
 	<!-- ============= HỘI THẢO ================== -->
 	<div class="left-title">
-		<h4>Tin hội thảo mới nhất</h4>
+		<h4><?php echo $hoithao->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -184,21 +208,31 @@ else{?>
 					foreach($listhoithao as $item)
 					{
 				?>		
-				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+				<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/hoithao/detail/<?php echo $item->hoithao_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+					<?php
+						$string=$item->tieude;
+						echo word_limiter($string,10);
+					?>
+				</a></li>
 				<?php }?>
 			</ul>
 		</div>
 	
 	<!-- ============= KHÓA HỌC ================== -->
 	<div class="left-title">
-		<h4>Khóa học nổi bật</h4>
+		<h4><?php echo $khoahoc->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
 			<?php $listkhoahoc=$this->MKaimonokago->getListKhoaHoc();
 					foreach($listkhoahoc as $item)
 					{?>
-						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tieude,0,35).' ...';?></a></li>
+						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>" title="<?php echo $item->tieude;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+							<?php
+								$string=$item->tieude;
+								echo word_limiter($string,10);
+							?>
+							</a></li>
 			<?php 	}
 			?>
 			</ul>
@@ -206,7 +240,7 @@ else{?>
 		
 	<!-- ============= THƯ VIỆN ================== -->
 	<div class="left-title">
-		<h4>Thư viện</h4>
+		<h4><?php echo $thuvien->ten;?></h4>
 	</div>
 		<div class="list-left">
 			<ul>
@@ -215,11 +249,40 @@ else{?>
 					{?>
 						<li><a style="color:#5A5A5A" href="<?php echo base_url();?>index.php/thuvien/load/<?php echo $item->loaisach_id;?>" title="<?php echo $item->tenloai;?>"><img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/><?php echo substr($item->tenloai,0,35);?></a></li>
 				<?php 	}
-				?>
-				
+				?>				
 			</ul>
 		</div>
-	<div id="left-bottom"></div>
-</div>
+		
+	
 <?php }?>
+
+<!--List danh muc moi-->
+
+<?php 
+	$listdanhmuc=$this->MKaimonokago->getListDanhMucNew();
+	foreach($listdanhmuc as $danhmuc)
+	{
+		if($danhmuc->ten!="")
+		{
+?>
+		<div class="left-title">
+		<h4><?php echo $danhmuc->ten; ?></h4>
+		</div>
+		<div class="list-left">
+			<ul>
+				<li>
+					<img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+					<a style="color:#5A5A5A" href="<?php echo base_url()?>index.php/hoidap">Hỏi đáp</a>
+				</li>
+				<li>
+					<img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
+					<a style="color:#5A5A5A" href="<?php echo base_url()?>index.php/diemthi">Xem điểm thi</a>
+				</li>
+			</ul>
+		</div>
+<?php
+		}
+	}
+?>
+<div id="left-bottom"></div> 
 

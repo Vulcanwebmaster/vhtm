@@ -8,14 +8,7 @@
 	</div>
 </div>
 <div id="content-panel">
-	<div id="current-map">
-		<a href="<?php echo base_url();?>">Trang chủ</a>
-		<a>:</a>
-		<a href="<?php echo base_url();?>index.php/hoithao">Hội thảo</a>
-		<a>:</a>
-		<a><?php if (isset($info)) echo $info->tieude;?></a>
-	</div>
-	<hr/>
+	<hr style="border:none">
 	<div id="hoithao-content">
 		<div id="col_left">
 			<?php $this->load->view('shop/left');?>

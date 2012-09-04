@@ -13,7 +13,14 @@
 		
 		function index()
 		{
-			$this->pages(0);
+			//$this->pages(0);
+			$data['page']=$this->config->item('backendpro_template_shop').'vdefault';
+			$data['module']=$this->module;
+			if($this->Mhoithao->get_HoiThao_Default())
+				$data['info']=$this->Mhoithao->get_HoiThao_Default();
+			$data['tieude']="HỘI THẢO";
+			$this->load->view($this->_container,$data);
+			
 		}
 		
 		function pages($start=0)
@@ -21,7 +28,7 @@
 			
 			$full=count($this->Mhoithao->full());
 			$config['base_url']=base_url()."index.php/hoithao/pages";
-			$config['per_page']=6;
+			$config['per_page']=5;
 			$config['total_rows']=$full;
 			$this->pagination->initialize($config);
 			
@@ -33,6 +40,7 @@
 		
 		function detail($id)
 		{
+			$data['tieude']='Chi tiết hội thảo';
 			$data['page']=$this->config->item('backendpro_template_shop').'vdetail';
 			$data['module']=$this->module;
 			if ($this->Mhoithao->getInf($id))

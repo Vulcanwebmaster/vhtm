@@ -66,13 +66,25 @@ $lang['backendpro_dangky'] = 'Đăng Ký';
 
 $lang['backendpro_ql_homepage'] = 'Quản lý trang chủ';
 $lang['backendpro_ql_gioithieu'] = 'Quản lý tin giới thiệu';
-$lang['backendpro_ql_thongtingioithieu'] = 'Quản lý thông tin giới thiệu';
+$lang['backendpro_ql_gioithieu'] = 'Quản lý thông tin giới thiệu';
 $lang['backendpro_ql_hoithao'] = 'Quản lý hội thảo';
 $lang['backendpro_ql_khoahoc'] = 'Quản lý khóa học';
 $lang['backendpro_ql_loaisach'] = 'Quản lý loại sách';
 $lang['backendpro_ql_sach'] = 'Quản lý sách';
 $lang['backendpro_ql_camnhan'] = 'Quản lý cảm nhận';
 $lang['backendpro_ql_dangky'] = 'Quản lý danh sách đăng ký dự thi';
+$lang['backendpro_ql_khoahoc_default']='Khóa học mặc định';
+$lang['backendpro_ql_hoithao_default']='Hội thảo mặc định';
+$lang['backendpro_ql_danhmuc']='Quản lý danh mục';
+$lang['backendpro_ql_contact']='Địa chỉ liên hệ';
+$lang['backendpro_ql_lichhoithao']='Lịch hội thảo';
+$lang['backendpro_ql_lichtest']='Lịch kiểm tra đầu vào';
+$lang['backendpro_ql_lichhoc']='Lịch học từng khóa';
+$lang['backendpro_ql_hoidap']='Quản lý hỏi đáp';
+$lang['backendpro_ql_sukien']='Quản lý sự kiện';
+$lang['backendpro_ql_diemthi']='Quản lý điểm thi';
+
+
 
 /* For Webshop */
 $lang['preference_website_configuration'] = "Website Configuration";
@@ -151,6 +163,14 @@ $lang['preference_desc_slideshow_two'] = 'Select a slideshow type for other page
 $lang['preference_label_calendar'] = 'Calendar';
 $lang['preference_desc_calendar'] = 'Do you want display in the side menu?';
 
+//Crumb
+$lang['kago_sukien']='Quản lý sự kiện';
+$lang['kago_creat_sukien']='Tạo sự kiện';
+$lang['kago_edit_sukien']='Sửa sự kiện';
+$lang['kogo_edit_hoidap']='Trả lời câu hỏi';
+$lang['kago_create_diemthi']='Nhập điểm thi';
+$lang['kago_view_diemthi']='Xem điểm thi';
+$lang['kago_create_danhmuc']='Tạo danh mục mới';
 
 /* End of file shop_lang.php */
 /* Location: ./system/application/language/english/shop_lang.php */

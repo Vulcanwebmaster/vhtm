@@ -1,11 +1,12 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var content=document.getElementById('content');		
-		$('#content').load('<?php echo base_url();?>index.php/khoahoc/pages');
+		//$('#content').load('<?php echo base_url();?>index.php/khoahoc/pages');
 		$('#list-type').change(function(){
 			var list=document.getElementById('list-type');
 			var value=list.value;
-			$('#content').load('<?php echo base_url();?>index.php/khoahoc/pages/0/'+value);
+			//$('#content').load('<?php echo base_url();?>index.php/khoahoc/pages/0/'+value);
+			window.location.href='<?php echo base_url();?>index.php/khoahoc/pages/'+value+'/0';
 			});
 		});
 </script>
@@ -20,12 +21,7 @@
 	</div>
 </div>
 <div id="content-panel">
-	<div id="current-map">
-		<a href="<?php echo base_url();?>">Trang chủ</a>
-		<a>:</a>
-		<a>Khóa học</a>
-	</div>
-	<hr/>
+	<hr style="border:none">
 	<div id="hoithao-content">
 		<div id="col_left">
 			<?php $this->load->view('shop/left');?>
@@ -41,7 +37,9 @@
 							{
 								foreach($listdoituong as $item)
 								{
-									echo '<option value="'.$item->doituong_id.'">'.$item->tendoituong.'</option>';
+									if ($item->loaikhoahoc_id==$id_doituong)
+										echo '<option selected="selected" value="'.$item->loaikhoahoc_id.'">'.$item->tenloai.'</option>';
+									else echo '<option value="'.$item->loaikhoahoc_id.'">'.$item->tenloai.'</option>';
 								}
 							}?>						
 						</select>
@@ -49,13 +47,11 @@
 				</div>
 			</div>
 			
-			<div id="content" style="overflow-y:auto; height:515px">
-			
-			</div>
-			<!-- div id="content">
+			<div id="content">
 				<ul class="list">
 					<?php 
 					{
+						if (count($list)>0)
 						foreach($list as $item)
 						{?>
 							<li style="clear:both">
@@ -65,7 +61,7 @@
 								<table>
 									<tr>
 										<td>
-											<a href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>"><img src="<?php echo $item->anhdaidien;?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
+											<a href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>"><img src="<?php echo base_url().substr($item->anhdaidien,3);?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
 										</td>
 										<td style="padding:0 10px; text-align:justify; vertical-align:0">
 											<a href="<?php echo base_url();?>index.php/khoahoc/detail/<?php echo $item->khoahoc_id;?>"><h3 style="margin:0;color:#0158a1"><?php echo $item->tieude;?></h3></a>
@@ -77,9 +73,11 @@
 							</li>
 							<li><hr/></li>
 					<?php 	}
+						else echo 'Không có khóa học nào phù hợp';
 					}?>
 				</ul>
-			</div -->
+			</div>
+			<?php echo $this->pagination->create_links();?>
 		</div>
 	</div>
 </div>

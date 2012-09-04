@@ -22,5 +22,22 @@
 	        $Q->free_result();
 	        return $data;
 	    }
+		
+		function register()
+		{
+			$data=array(
+						'hoten'=>$this->input->post('hoten'),
+						'truong'=>$this->input->post('truonghoc'),
+						'lop'=>$this->input->post('lop'),
+						'phuhuynh'=>$this->input->post('phuhuynh'),
+						'dienthoai'=>$this->input->post('dienthoai'),
+						'ten'=>$this->input->post('ten')
+			);
+			$this->db->set('ngaythang','now()',false);
+			if ($this->db->insert('unix_dangky',$data))
+				return true;
+			else return false;
+		}
+		
 	}
 ?>

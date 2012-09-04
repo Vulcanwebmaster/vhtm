@@ -45,7 +45,7 @@ class Admin extends Shop_Admin_Controller
 	        			{
 	        				$final = $final."<p><img src=\"".$image[0]."\" width = \"100px\" height = \"80px\" alt=\"\" /></p>" ;
 	        			}
-	        			$final = $final."*".$image[1];
+	        			$final = $final."*".$image[0];
         			}
         			if ($list['muc_id'] == 5) 
         			{
@@ -72,20 +72,39 @@ class Admin extends Shop_Admin_Controller
     function _fields($muc_id)
     {
     	$tmp = $this->input->post('dulieu_'.$muc_id,TRUE);
+		$tenmuc=$this->input->post('tenmuc_'.$muc_id,true);
+
     	if ($muc_id==4 || $muc_id == 5)
     	{
     		$matches = array();
+    		$temp = array();
 	    	preg_match_all( '/src="([^"]*)"/i', $tmp, $matches ) ;
 	    	$arr_rslt = $matches[1];
 	    	foreach ($arr_rslt as $i => $value) 
 	    	{
    				$arr_rslt[$i] = str_replace("../../", "", $arr_rslt[$i]);
 			}
-			$tmp = implode(",", $arr_rslt);
+	    	$store = $tmp;
+	    	$i = 0;
+	    	if ($muc_id==4) {
+	    		while (true) 
+	    		{
+		    		$store = strstr($store, "*http://");
+		    		if ($store != false) 
+		    		{
+		    			$pos = strpos($store, "</p>");
+		    			$arr_rslt[$i] = $arr_rslt[$i].substr($store, 0, $pos);
+		    			$store = strstr($store, "</p>");
+		    			$i++;
+		    		} else break;
+	    		}
+	    	}
+	    	$tmp = implode(",", $arr_rslt);
     	}
     	
     	$data = array(
             'muc_id'      => $muc_id,
+            'tenmuc'	  => $tenmuc,
             'dulieu'      => $tmp  
         );
         return $data;
@@ -98,9 +117,10 @@ class Admin extends Shop_Admin_Controller
         $x = $data['homepage'];
         foreach($x as $key => $list )
         {
-         	$data = $this->_fields($list['muc_id']);
-        	$this->MHomepage->updateHomePage($data);
+         	$data = $this->_fields($list['muc_id']);	
+        	$this->MHomepage->updateHomePage($data);		
         }
+		
         $this->index();
         flashMsg('success','Cập nhật thành công!!!');
     }

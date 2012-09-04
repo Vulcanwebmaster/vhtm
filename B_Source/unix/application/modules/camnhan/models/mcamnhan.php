@@ -9,6 +9,7 @@
 		
 		function getList($index)
 		{
+			$this->db->order_by('ngaythang','desc');
 			$ds=$this->db->get('unix_camnhan',5,$index);
 			$list=array();
 			foreach($ds->result() as $item)

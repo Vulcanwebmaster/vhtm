@@ -1,0 +1,10 @@
+body {
+
+}
+#table{ height:auto; max-width:1000px; margin:auto; position:relative; width:auto; padding:25px 10px 10px 10px;}
+#icon-menu{ position:absolute; z-index: 11111; left:-13px; top:0px; background:url(icon-lichhoc.png); width:220px; height:54px; color:#FFFFFF; text-transform:uppercase;}
+#main-table{ border:1px solid #D3D4D4; background-color:#f0f0f0;}
+#tr1{ background:url('../../images/bg-table.png') repeat-x;}
+#tr1 td{padding-top:25px; font-weight:bold; padding:16px 0 10px 0;}
+.tr-td td{border-bottom:1px solid #d3d3d3; text-align:center;}
+p{ margin-left:22px; font-weight:bold;}

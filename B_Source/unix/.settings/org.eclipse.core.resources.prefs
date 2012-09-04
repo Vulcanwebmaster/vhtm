@@ -1,8 +1,9 @@
-#Sun Jun 10 16:47:45 ICT 2012
 eclipse.preferences.version=1
 encoding//application/modules/camnhan/views/shop/vcamnhan.php=UTF-8
-encoding//application/modules/gioithieu/controllers/gioithieu.php=UTF-8
-encoding//application/modules/gioithieu/views/shop/gioithieuview.php=UTF-8
+encoding//application/modules/hoidap/controllers/hoidap.php=UTF-8
+encoding//application/modules/hoidap/models/mhoidap.php=UTF-8
+encoding//application/modules/hoidap/views/shop/vdetails.php=UTF-8
+encoding//application/modules/hoidap/views/shop/vhoidap.php=UTF-8
 encoding//application/modules/hoithao/views/shop/vdetail.php=UTF-8
 encoding//application/modules/hoithao/views/shop/vhoithao.php=UTF-8
 encoding//application/modules/kaimonokago/models/mkaimonokago.php=UTF-8
@@ -17,6 +18,7 @@ encoding//application/modules/thuvien/views/shop/vdetail.php=UTF-8
 encoding//application/modules/thuvien/views/shop/vlistfull.php=UTF-8
 encoding//application/modules/thuvien/views/shop/vthuvien.php=UTF-8
 encoding//application/modules/welcome/views/shop/frontpage.php=UTF-8
+encoding//application/views/admin/kkmenu.php=UTF-8
 encoding//application/views/shop/footer.php=UTF-8
 encoding//application/views/shop/header.php=UTF-8
 encoding//application/views/shop/left.php=UTF-8

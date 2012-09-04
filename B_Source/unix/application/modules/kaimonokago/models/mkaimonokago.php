@@ -452,9 +452,9 @@ class MKaimonokago extends Base_model
 			$ds->free_result();
 			return $list;
 		}
-	function homepageLoadNoiDung($tieude)
+	function homepageLoadNoiDung($muc_id)
 	{
-		$this->db->where('tenmuc',$tieude);
+		$this->db->where('muc_id',$muc_id);
 		$ds=$this->db->get('unix_homepage');
 		if ($ds->num_rows()>0)
 		{
@@ -478,13 +478,7 @@ class MKaimonokago extends Base_model
 		else return false;
 	}
 	
-	function register($input)
-	{
-		$this->load->database();
-		if ($this->db->insert('unix_dangky',$input))
-			return true;
-		else return false;
-	}
+	
 	
 	function str_insert($string,$pos,$offset, $string2)
 	{
@@ -514,6 +508,92 @@ class MKaimonokago extends Base_model
 		$string2='" frameborder="0" allowfullscreen></iframe>';
 		return $this->str_insert($source, $pos, 78, $string2);
 	}
+	
+	function getTheLoaiById($theloai_id)
+	{
+		$this->load->database();
+		$this->db->where('loaisach_id',$theloai_id);
+		$ds=$this->db->get('unix_loaisach');
+		if ($ds->num_rows()>0)
+		{
+			$item=$ds->row(0);
+			$ds->free_result();
+			return $item;
+		}
+		else return false;
+	}
+	function showlichhoithao()
+	{
+		$query=$this->db->get('unix_hoithao');
+		return $query->result();
+	}
+	function showlichhoc()
+	{
+		$query=$this->db->get('unix_khoahoc');
+		return $query->result();
+	}
+	
+   /*function showlichkt()
+	{
+		$query=$this->db->get('unix_lichkiemtra');
+		return $query->result();
+	}*/
+	
+		function getListDanhMucOld($stt)
+		{
+			$this->db->order_by('id','asc');
+			$query=$this->db->get('unix_danhmuc');
+			return $query->row($stt);
+		}
+		
+		function getContact()
+		{
+			$query=$this->db->get('unix_contact');
+			if($query->num_rows()>0)
+			{
+				$row=$query->row();
+				return $row;
+			}
+			else return false;
+		}
+		
+		function getLuot($id)
+		{
+			$this->db->where('id_hoidap',$id);
+			$luotxem=$this->db->get('unix_hoidap');
+			return $luotxem->row(0);
+		}
+		
+		function get_lichhoithao() 
+		{
+			$query=$this->db->get('unix_lichhoithao');
+			return $query->result();
+		}
+		function get_lichhoc() 
+		{
+			$query=$this->db->get('unix_lichhoc');
+			return $query->result();
+		}
+		
+		function get_lichtest()
+		{
+			$query=$this->db->get('unix_lichtest');
+			return $query->result();
+		}
+		
+		function getnew($stt)
+		{
+			$this->db->order_by('ngaythang','desc');
+			$query=$this->db->get('unix_tintuc',4,0);
+			return $query->row($stt);
+		}
+		
+		function getListDanhMucNew()
+		{
+			$this->db->order_by('id','asc');
+			$query=$this->db->get('unix_danhmuc',100,3);
+			return $query->result();
+		}
 }
 
 ?>

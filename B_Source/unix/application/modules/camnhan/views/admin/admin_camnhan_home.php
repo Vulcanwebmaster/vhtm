@@ -1,5 +1,5 @@
 <h2><?php echo $title;?></h2>
-
+<?php $this->load->helper('text');?>
 <div class="buttons">
 	<a href="<?php print  site_url('camnhan/admin/create')?>">
     <?php print $this->bep_assets->icon('add');?>
@@ -22,7 +22,7 @@ if (count($camnhan)){
     foreach ($camnhan as $key => $list){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list['camnhan_id']."</td>\n";   
-        echo "<td align='center'>".substr($list['noidung'],0,150)."..."."</td>\n";
+        echo "<td align='center'>".word_limiter($list['noidung'],40)."..."."</td>\n";
         echo "<td align='center'>".$list['ngaythang']."</td>\n";
         echo "<td align='center'>".$list['nguoidang']."</td>\n";   
         echo "<td align='center'>";

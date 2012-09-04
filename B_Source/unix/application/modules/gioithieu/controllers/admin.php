@@ -9,7 +9,7 @@ class Admin extends Shop_Admin_Controller
     {
         parent::__construct();
         // Check for access permission
-        //check('Gioithieu');        
+        //check('Thongtingioithieu');        
         $this->load->model('MGioithieu');
         $this->module=basename(dirname(dirname(__FILE__)));      
         $this->bep_site->set_crumb($this->lang->line('backendpro_ql_gioithieu'),$this->module.'/admin');
@@ -25,8 +25,8 @@ class Admin extends Shop_Admin_Controller
   
     function common_home()
     {
-        $data['title'] = "Quản lý tin giới thiệu";
-        $data['gioithieu'] = $this->MGioithieu->getGioiThieu();
+        $data['title'] = "Quản lý thông tin giới thiệu";
+        $data['gioithieu'] = $this->MGioithieu->getThongTinGioiThieu();
         $data['header'] = $this->lang->line('backendpro_access_control');
         $data['module'] = $this->module;
         return $data;
@@ -34,9 +34,13 @@ class Admin extends Shop_Admin_Controller
 
     function _fields()
     {
+    	$temp = str_replace("@$%#@", 'style="color: ',$_POST['ten']);
+    	$temp = str_replace("&$%#@", 'style="background-color: ',$temp);
+    	$temp = str_replace("../../../", base_url(), $temp);
         $data = array(
-            'gioithieu_id'       => $this->input->post('gioithieu_id',TRUE),
-            'noidung'            => $this->input->post('noidung',TRUE)     
+            'submenu_id'   => $this->input->post('submenu_id',TRUE),
+            'ten'          => $temp,
+            'noidung'      => $this->input->post('noidung',TRUE)  
         );
         return $data;
     }
@@ -45,22 +49,22 @@ class Admin extends Shop_Admin_Controller
 	function create()
     {
     	$this->bep_assets->load_asset_group('TINYMCE');
-        if ($this->input->post('noidung')!='')
+        if ($this->input->post('ten')!='')
         {
 			$data = $this->_fields();
-           	$this->MGioithieu->addGioiThieu($data);
-            flashMsg('success','Tạo tin giới thiệu thành công');
+           	$this->MGioithieu->addThongTinGioiThieu($data);
+            flashMsg('success','Tạo thông tin giới thiệu thành công');
             redirect($this->module.'/admin/index','refresh');
         }
         else
         {
-            $data['title'] = "Tạo tin giới thiệu";
+            $data['title'] = "Tạo thông tin giới thiệu";
             // Set breadcrumb
             $this->bep_site->set_crumb($this->lang->line('kago_create')." ".$this->lang->line('kago_gioithieu'),$this->module.'/admin/create');
             $data['header'] = $this->lang->line('backendpro_access_control');
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_gioithieu_create";
             $data['cancel_link']= $this->module."/admin/index/";
-            flashMsg('notice','Mời bạn nhập vào nội dung tin giới thiệu');
+            flashMsg('notice','Mời bạn nhập tên');
             $data['module'] = $this->module;
             $this->load->view($this->_container,$data);
         }
@@ -69,22 +73,22 @@ class Admin extends Shop_Admin_Controller
     function edit($id=0)
     {   
     	$this->bep_assets->load_asset_group('TINYMCE');
-    	if ($this->input->post('gioithieu_id')) {
-    		$id = $this->input->post('gioithieu_id');
+    	if ($this->input->post('submenu_id')) {
+    		$id = $this->input->post('submenu_id');
     	} 
-        if ($this->input->post('noidung'))
+        if ($this->input->post('ten'))
         {           
-		  	$this->form_validation->set_rules('noidung', 'noidung', 'required');    
+		  	$this->form_validation->set_rules('ten', 'ten', 'required');
 		  	if($this->form_validation->run())
 		  	{
 				$data = $this->_fields();
-                $this->MGioithieu->updateGioiThieu($data);
+                $this->MGioithieu->updateThongTinGioiThieu($data);
                 redirect($this->module.'/admin/index','refresh');
-                flashMsg('success','Tin giới thiệu đã được update');
+                flashMsg('success','Thông tin giới thiệu đã được cập nhật');
 		  	}
 		  	else 
 		  	{
-			  	$data['title'] = "Sửa tin giới thiệu";
+			  	$data['title'] = "Sửa thông tin giới thiệu";
 	            $data['page'] = $this->config->item('backendpro_template_admin') . "admin_gioithieu_edit";
 	            $data['gioithieu'] = $this->MGioithieu->getInfo($id);
 	            if (!count($data['gioithieu']))
@@ -95,13 +99,13 @@ class Admin extends Shop_Admin_Controller
 	            $this->bep_site->set_crumb($this->lang->line('kago_edit')." ".$this->lang->line('kago_gioithieu'),$this->module.'/admin/edit');
 	            $data['cancel_link']= $this->module."/admin/index/";
 	            $data['module'] = $this->module;
-	            flashMsg('error','Bạn phải nhập nội dung');
+	            flashMsg('error','Bạn phải nhập tên thông tin giới thiệu');
 	            $this->load->view($this->_container,$data);
 		  	}
         }
         else
         {
-            $data['title'] = "Sửa tin giới thiệu";
+            $data['title'] = "Sửa thông tin giới thiệu";
             $data['page'] = $this->config->item('backendpro_template_admin') . "admin_gioithieu_edit";
             $data['gioithieu'] = $this->MGioithieu->getInfo($id);
             if (!count($data['gioithieu']))
@@ -113,16 +117,16 @@ class Admin extends Shop_Admin_Controller
             $this->bep_site->set_crumb($this->lang->line('kago_edit')." ".$this->lang->line('kago_gioithieu'),$this->module.'/admin/edit');
             $data['cancel_link']= $this->module."/admin/index/";
             $data['module'] = $this->module;
-            flashMsg('noctice','Mời bạn nhập thông tin giới thiệu');
+            flashMsg('noctice','Mời bạn nhập các thông tin về thông tin giới thiệu');
             $this->load->view($this->_container,$data);
         }
     }
   
     function delete($id)
     {
-        $table ='unix_'.$this->module;
+        $table ='unix_gioithieu_submenu';
         $this->MGioithieu->deleteitem($table,$id);
-        flashMsg('success','Tin giới thiệu đã được xóa thành công.');
+        flashMsg('success','Thông tin giới thiệu đã được xóa thành công.');
         redirect($this->module.'/admin/index','refresh');
     }
 }// end of class

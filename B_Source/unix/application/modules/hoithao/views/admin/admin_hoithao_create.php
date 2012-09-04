@@ -49,7 +49,7 @@ echo "<td id='nopad' >";
 echo form_textarea($data) ;
 echo "</td></tr>\n";
 
-echo "<tr><td class='label'><label for='thoigian'>".'(*)'.'Thời gian (yyyy-mm-dd):'."</label></td>\n";
+echo "<tr><td class='label'><label for='thoigian'>".'Thời gian (yyyy-mm-dd):'."</label></td>\n";
 $data = array('name'=>'thoigian','id'=>'thoigian','class'=>'text');
 echo "<td>";
 echo form_input($data);

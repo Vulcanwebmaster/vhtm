@@ -50,7 +50,7 @@ class Admin extends Shop_Admin_Controller
             'sach_id'     => $this->input->post('sach_id',TRUE),
             'tensach'     => $this->input->post('tensach',TRUE),
             'mota'        => $temp,
-        	'anhdaidien'  => '../'.$link,
+        	'anhdaidien'  => $link,
             'loaisach_id' => $this->input->post('loaisach_id',TRUE),        
             'tacgia'      => $this->input->post('tacgia',TRUE)    
         );

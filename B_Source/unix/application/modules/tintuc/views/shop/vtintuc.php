@@ -9,12 +9,7 @@
 </div>
 
 <div id="content-panel">
-	<div id="current-map">
-		<a href="<?php echo base_url();?>">Trang chủ</a>
-		<a>:</a>
-		<a>Tin tức</a>
-	</div>
-	<hr/>
+	<hr style="border:none">
 	<div id="hoithao-content">
 		<div id="col_left">
 			<?php $this->load->view('shop/left');?>
@@ -32,6 +27,9 @@
 						</style>
 						<table>
 							<tr>
+								<td>
+									<a href="<?php echo base_url();?>index.php/tintuc/detail/<?php echo $item->alias;?>"><img src="<?php if ($item->anhdaidien!='') echo base_url().substr($item->anhdaidien,3); else echo base_url().'assets/unix/images/logo2.png';?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
+								</td>
 								<td style="padding:0 10px; text-align:justify; vertical-align:0">
 									<a href="<?php echo base_url();?>index.php/tintuc/detail/<?php echo $item->alias;?>"><h3 style="margin:0;color:#0158a1"><?php echo $item->tieude;?></h3></a>
 									<?php echo substr($item->noidung,0,200).' ...';?>

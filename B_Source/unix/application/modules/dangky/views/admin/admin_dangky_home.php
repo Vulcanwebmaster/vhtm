@@ -10,7 +10,8 @@ if (count($dangky)){
     	  <th>Trường</th>\n
     	  <th>Lớp</th>\n
     	  <th>Phụ huynh</th>\n
-    	  <th>Số điện thoại</th>\n";
+    	  <th>Số điện thoại</th>\n
+    	  <th>Ngày đăng ký</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($dangky as $key => $list){
         echo "<tr valign='top'>\n";
@@ -19,7 +20,8 @@ if (count($dangky)){
         echo "<td align='center'>".$list['truong']."</td>\n";
         echo "<td align='center'>".$list['lop']."</td>\n";
         echo "<td align='center'>".$list['phuhuynh']."</td>\n";
-        echo "<td align='center'>".$list['dienthoai']."</td>\n";   
+        echo "<td align='center'>".$list['dienthoai']."</td>\n";
+		echo "<td align='center'>".$list['ngaythang']."</td>\n";
         echo "</tr>\n";
     }
     echo "</tbody>\n</table>";

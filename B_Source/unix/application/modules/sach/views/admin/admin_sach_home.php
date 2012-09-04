@@ -7,7 +7,7 @@
     </a>
 </div>
 <div class="clearboth">&nbsp;</div>
-
+<?php $this->load->helper('text');?>
 <?php
 
 if (count($sach)){
@@ -25,7 +25,7 @@ if (count($sach)){
         echo "<td align='center'>".$list['sach_id']."</td>\n";
         echo "<td align='center'>".$list['tensach']."</td>\n";
         if (strlen($list['mota']) > 20)
-        	$list['mota'] = substr($list['mota'], 0, 20);
+        	$list['mota'] = word_limiter($list['mota'],5);
         echo "<td align='center'>".$list['mota']."\"</td>\n";
         echo "<td align='center'>".$list['tenloai']."</td>\n";
         echo "<td align='center'>".$list['tacgia']."</td>\n";    

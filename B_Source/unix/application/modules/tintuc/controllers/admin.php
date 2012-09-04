@@ -25,9 +25,16 @@ class Admin extends Shop_Admin_Controller
     
     function _field()
     {
+    	$anhdaidien = $this->input->post('anhdaidien',TRUE);
+    	$tmp = strstr(strstr($anhdaidien, "src=\"../../../"),"../../../");
+    	$pos = strpos($tmp, "\"");
+    	$link = substr($tmp, 0, $pos);
+    	$link = str_replace("../../../", "", $link);
+    	
     	$data=array('tieude'=>$this->input->post('tieude'),
     				'alias'=>$this->input->post('alias'),
     				'noidung'=>$this->input->post('noidung'),
+    				'anhdaidien'=>'../'.$link,
     				'ngaythang'=>$this->input->post('ngaythang'));
     	return $data;
     }

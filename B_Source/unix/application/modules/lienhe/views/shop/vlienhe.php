@@ -1,3 +1,4 @@
+<?php $query=$this->MKaimonokago->getContact();?>
 <div id="title-panel">
 	<div id="title">
 		<div id="title-left"></div>
@@ -8,12 +9,7 @@
 	</div>
 </div>
 <div id="content-panel">
-	<div id="current-map">
-		<a href="<?php echo base_url();?>">Trang chủ</a>
-		<a>:</a>
-		<a>Liên hệ</a>
-	</div>
-	<hr/>
+	<hr style="border:none">
 	<div id="thuvien-content">
 		<div id="col_left">
 			<?php $this->load->view('shop/left');?>
@@ -75,13 +71,13 @@
 					</form>
 				</center>
 				<hr/>
-				<div style="margin-left:185px">
+				<div style="margin-left:105px">
 					<h3 style="text-transform:uppercase">Liên hệ tại Hà Nội:</h3>
 					<h4>Công ty cổ phần Unix</h4>
-					<p>Địa chỉ:  Phòng 703A (Tháp A), Hà Thành Plaza 102 Thái Thịnh, Đống Đa, Hà Nội.</p>
-					<p>Điện thoại: (04)-6276 4637.  Hotline:  0983 768 342</p>
-					<p>Email:         <a style="color:#018bc5; text-decoration:none">unix.group.vn@gmail.com</a></p>
-					<p>Website:    <a style="color:#018bc5; text-decoration:none">www.unix.vn</a></p>
+					<p>Địa chỉ:  <?php echo $query->diachi; ?></p>
+					<p>Điện thoại: <?php echo $query->dienthoai ?></p>
+					<p>Email:         <a style="color:#018bc5; text-decoration:none"><?php echo $query->email;?></a></p>
+					<p>Website:    <a style="color:#018bc5; text-decoration:none"><?php echo $query->website;?></a></p>
 				</div>
 			</div>
 		</div>

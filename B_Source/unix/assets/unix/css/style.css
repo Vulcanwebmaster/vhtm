@@ -83,8 +83,8 @@ a:hover, a:active {
 }
 
 .theme-default #slider {
-    margin:100px auto 0 auto;
-    width:618px; /* Make sure your images are the same size */
+    margin:auto;
+    width:1000px; /* Make sure your images are the same size */
     height:246px; /* Make sure your images are the same size */
 }
 .theme-pascal.slider-wrapper,
@@ -121,9 +121,11 @@ a:hover, a:active {
 #register-panel{}
 #register{cursor:pointer}
 
-#listbook{overflow-y:auto; height:500px; margin-bottom:15px; margin-top:15px}
+#listbook{height:500px; margin-bottom:53px; margin-top:15px}
+#space-bottom{clear:both}
 #maskClose{font-size:11px}
 
 #newest{padding:10px}
 #newest h3{margin:0}
 #newest ul li a{color:#035A77; font-size:12px}
+.error{width:100%}

@@ -1,22 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		
+		<title><?php echo $tieude;?></title>
 		
 		<!-- ========SLIDE============= -->
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/default/default.css" type="text/css" media="screen" />
-	    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/pascal/pascal.css" type="text/css" media="screen" />
-	    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/orman/orman.css" type="text/css" media="screen" />
-	    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/nivo-slider.css" type="text/css" media="screen" />
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/style.css" type="text/css" media="screen" />
-	    
+	    <link rel="stylesheet"  href="<?php echo base_url(); ?>assets/unix/css/table/table.css" type="text/css" media="screen"/>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/unix/js/jquery-1.7.1.min.js"></script>
-	    <script type="text/javascript" src="<?php echo base_url();?>assets/unix/js/jquery.nivo.slider.pack.js"></script>
-	    <script type="text/javascript">
-	    $(window).load(function() {
-	        $('#slider').nivoSlider();
-	    });
-	    </script>
 	    
 	    <!-- =============UNIFORM============== -->
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/uniform.default.css" type="text/css"/>
@@ -27,7 +17,17 @@
 	      });
 	    </script>
 	    <!-- ====================================== -->
-	    
+	    <script type="text/javascript">
+			$(document).ready(function(){
+				$('#xyz').hide();
+				$('#abc').mouseenter(function(){
+					$('#xyz').slideDown();
+					});
+				$('#xyz').mouseleave(function(){
+					$('#xyz').slideUp();
+					});
+				});
+        </script>
 	    <link rel="Stylesheet" type="text/css" href="<?php echo base_url();?>/assets/unix/css/style1.css"/>
 	    
 	    <!-- ==================================MENU============================= -->
@@ -117,9 +117,7 @@
 				}
 			}
 		?>
-		
-	    
-	    
+
 		<?php $this->load->view('shop/footer.php')?>											
 	</body>
 </html>
