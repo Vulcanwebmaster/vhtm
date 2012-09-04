@@ -11,9 +11,16 @@ body {
 	margin-right: 0px;
 	margin-bottom: 0px;
 }
-
 .MsoNormal{
 	color:black;
+}
+
+#image-content{
+	color:black;
+}
+
+#image-content p img{
+	width:524px !important;height:300px !important;
 }
 
 .search {
@@ -40,6 +47,9 @@ font-weight:normal;
 font-family: Arial;
 
 font-size:14px;
+
+color:white;
+
 font-weight:600;
 }
 
