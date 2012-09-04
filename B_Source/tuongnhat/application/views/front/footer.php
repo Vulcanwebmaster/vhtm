@@ -6,17 +6,17 @@
 				<img alt="" src="<?php echo base_url();?>assets/tuongnhat/images/cross-line.png">
 			</div>
 			<div class="footer-cat">
-				<h3>Du học</h3>		
+				<h3><?php echo $this->lang->line('menu-duhoc');?></h3>		
 			</div>
 			<div class="footer-cat">
-				<h3>Thương mại</h3>
+				<h3><?php echo $this->lang->line('menu-thuongmai');?></h3>
 			</div>
 			<div class="footer-cat">
-				<h3>Đối tác</h3>		
+				<h3><?php echo $this->lang->line('menu-doitac');?></h3>		
 			</div>
 			
 			<div class="footer-cat">	
-				<h3>Dịch vụ</h3>
+				<h3><?php echo $this->lang->line('menu-dichvu');?></h3>
 			</div>
 		</div>
 		<div id="info-panel">

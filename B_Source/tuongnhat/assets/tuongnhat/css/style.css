@@ -95,7 +95,7 @@ ul.menu li a:hover , ul.menu li.current a { text-shadow: 0px 0px 1px #c4d2d8; co
 .slogan {text-align:center; padding:16px 0 24px 0px; background:url(../images/slogan-bg.png) 0 bottom no-repeat; position:relative;}
 .slogan p:first-child {font-weight:300; font-size:41px; line-height:50px; }
 .slogan p+p {color:#8a8a8a; font-size:12px; line-height:18px; font-weight:bold; margin-top:-4px; }
-.button-2 {position:absolute; top:97px ; left:1069px; z-index:100;}
+.button-2 {position:absolute; top:97px ; left:1015px; z-index:100;}
 
 .page1-row1 {padding:27px 0 38px 6px;}
 
