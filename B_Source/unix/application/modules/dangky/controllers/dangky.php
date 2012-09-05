@@ -13,8 +13,6 @@
 		
 		function index()
 		{
-			$this->session->unset_userdata('success');
-			$this->session->unset_userdata('fail');
 			$data['page']=$this->config->item('backendpro_template_shop').'vdangky';
 			$data['module']=$this->module;
 			$this->load->view($this->_container,$data);
@@ -34,9 +32,16 @@
 				}
 				else if ($this->Mdangky->register())
 				{
-					$this->session->set_userdata('success','Đăng ký thành công');
+					echo "<script type='text/javascript'>
+						alert('Đăng ký thành công');
+					</script>";
 				}
-				else $this->session->set_userdata('fail','Đăng ký không thành công');
+				else 
+				{
+					echo "<script type='text/javascript'>
+						alert('Đăng ký không thành công');
+					</script>";
+				}
 			}
 			$this->index();
 		}

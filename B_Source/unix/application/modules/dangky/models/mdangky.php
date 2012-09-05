@@ -39,5 +39,11 @@
 			else return false;
 		}
 		
+		function delete($id)
+		{
+			$this->db->where('dangky_id',$id);
+			$this->db->delete('unix_dangky');
+		}
+		
 	}
 ?>

@@ -19,8 +19,6 @@
 		<th class='table1'>Thời gian</th>
 		<th class='table1'>Địa điểm</th>
 		<th class='table1'>Đơn vị tổ chức</th>
-		<th class='table1'>Đã đăng ký</th>
-		<th class='table1'>Tối đa</th>
 	</tr>
 	<?php
 		foreach ($query as $row){ ?>
@@ -29,8 +27,6 @@
 					<td class='table1'><?php echo $row->thoigian; ?></td>
 					<td class='table1'><?php echo $row->diadiem; ?></td>
 					<td class='table1'><?php echo $row->donvitochuc; ?></td>
-					<td class='table1'><?php echo $row->current; ?></td>
-					<td class='table1'><?php echo $row->max; ?></td>
 				</tr>
 			<?php
 			}

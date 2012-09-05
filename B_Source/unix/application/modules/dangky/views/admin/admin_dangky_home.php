@@ -1,5 +1,5 @@
 <h2><?php echo $title;?></h2>
-
+<form method="post" action="<?php echo base_url() ?>index.php/dangky/admin/delete/<?php echo $list['dangky_id']; ?>">
 <?php
 
 if (count($dangky)){
@@ -11,7 +11,8 @@ if (count($dangky)){
     	  <th>Lớp</th>\n
     	  <th>Phụ huynh</th>\n
     	  <th>Số điện thoại</th>\n
-    	  <th>Ngày đăng ký</th>\n";
+    	  <th>Ngày đăng ký</th>\n
+    	  <th>Xóa</th>\n";
     echo "</tr>\n</thead>\n<tbody>\n";
     foreach ($dangky as $key => $list){
         echo "<tr valign='top'>\n";
@@ -22,8 +23,10 @@ if (count($dangky)){
         echo "<td align='center'>".$list['phuhuynh']."</td>\n";
         echo "<td align='center'>".$list['dienthoai']."</td>\n";
 		echo "<td align='center'>".$list['ngaythang']."</td>\n";
+		echo '<td align="center"><a href="'.base_url().'index.php/dangky/admin/delete/'.$list['dangky_id'].'"><img src="'.base_url().'assets/icons/cross.png" alt="cross"></a></td>';
         echo "</tr>\n";
     }
     echo "</tbody>\n</table>";
 }
 ?>
+</form>

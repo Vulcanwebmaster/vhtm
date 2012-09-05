@@ -148,7 +148,6 @@
 				<td style="width:20%"><b>Thời gian</b></td>
 				<td style="width:20%"><b>Địa điểm</b></td>
 				<td style="width:15%"><b>Đơn vị tổ chức</b></td>
-				<td style="width:10%"><b>Đã đăng ký</b></td>
 			</tr>
 			<?php 
 				$lichtest=$this->MKaimonokago->get_lichtest();
@@ -160,7 +159,6 @@
 				<td><?php echo $test->thoigian; ?></td>
 				<td><?php echo $test->diadiem; ?></td>
 				<td><?php echo $test->donvitochuc; ?></td>
-				<td><?php echo $test->current.'/'.$test->max; ?></td>					
 			</tr>
 			<?php }?>
 		</table>

@@ -58,14 +58,12 @@
 					$dulieu = new Spreadsheet_Excel_Reader($pathToFile);
 					for ($i = 2; $i <= $dulieu->sheets[0]['numRows']; $i++) 
 						    {
-						    	$ten=$dulieu->sheets[0]['cells'][$i][1];
-								$thoigian=$dulieu->sheets[0]['cells'][$i][2];
-								$diadiem=$dulieu->sheets[0]['cells'][$i][3];
-								$donvitochuc=$dulieu->sheets[0]['cells'][$i][4];
-								$max=$dulieu->sheets[0]['cells'][$i][5];
-								if($max!=null)
-						      		$this->Mlichtest->insert_lichtest($ten,$thoigian,$diadiem,$donvitochuc,$max,0);
-								else $this->Mlichtest->insert_lichtest($ten,$thoigian,$diadiem,$donvitochuc,0,0);
+						    	$ten			=	$dulieu->sheets[0]['cells'][$i][1];
+								$thoigian		=	$dulieu->sheets[0]['cells'][$i][2];
+								$diadiem		=	$dulieu->sheets[0]['cells'][$i][3];
+								$donvitochuc	=	$dulieu->sheets[0]['cells'][$i][4];
+								
+						      	$this->Mlichtest->insert_lichtest($ten,$thoigian,$diadiem,$donvitochuc);
 						    }
 					if(file_exists($pathToFile))
 						unlink($pathToFile);

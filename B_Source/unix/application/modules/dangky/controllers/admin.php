@@ -8,8 +8,6 @@ class Admin extends Shop_Admin_Controller
     function __construct()
     {
         parent::__construct();
-        // Check for access permission
-        //check('Dangky');        
         $this->load->model('MDangky');
         $this->module=basename(dirname(dirname(__FILE__)));      
         $this->bep_site->set_crumb($this->lang->line('backendpro_ql_dangky'),$this->module.'/admin');
@@ -31,6 +29,12 @@ class Admin extends Shop_Admin_Controller
         $data['module'] = $this->module;
         return $data;
     }
+	
+	function delete($id)
+	{
+		$this->MDangky->delete($id);
+		$this->index();
+	}
     
-}// end of class
+}
 ?>

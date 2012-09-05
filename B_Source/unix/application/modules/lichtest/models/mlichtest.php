@@ -14,18 +14,14 @@
 			return $query->result();
 		}
 		
-		function insert_lichtest($ten,$thoigian,$diadiem,$donvitochuc,$max)
+		function insert_lichtest($ten,$thoigian,$diadiem,$donvitochuc)
 		{
 			$data=array(
 						'ten'=>$ten,
 						'thoigian'=>$thoigian,
 						'diadiem'=>$diadiem,
-						'donvitochuc'=>$donvitochuc,
-						'max'=>$max,
-						'current'=>0
+						'donvitochuc'=>$donvitochuc
 						);
-			//var_dump($data);
-			//die();
 			$this->db->insert('unix_lichtest',$data);
 		}
 		
