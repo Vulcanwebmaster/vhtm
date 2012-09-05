@@ -56,7 +56,7 @@ require_once('BLL/UserBLL.php');
 		.ui-button { outline: 0; margin:0; padding: .1em ; text-decoration:none;  !important; cursor:pointer; position: relative; text-align: center; }
 		.ui-dialog .ui-state-highlight, .ui-dialog .ui-state-error { padding: .3em;  }
 		#searchtable th{ font-size:0.85em;}
-		#searchtable select, #searchtable input{font-size:0.85em;}
+		#searchtable select, #searchtable input{font-size:0.85em;}		
 	</style>
     
     <?php 
@@ -217,14 +217,14 @@ function pageselectCallback(page_index, jq){
             <table id="users" class="ui-widget ui-widget-content" style="width: 710px;">
                 <thead>
                     <tr class="ui-widget-header ">
-                    	<th>ID</th>
-                        <th>CLIENT-ID</th>                        						<th>LOGIN ID</th>												 <th>PASSWORD</th>                      
+                    	<th style="text-align: center;">ID</th>
+                        <th style="text-align: center;">CLIENT-ID</th>                        						<th style="text-align: center;">LOGIN ID</th>												 <th style="text-align: center;">PASSWORD</th>                      
                        
                     </tr>
                     <tr class="ui-widget-header " style=" width: :710px;" >
-                       <th style="width: 238px;">FIRST NAME</th>                                                <th style="width: 238px;" >LAST NAME</th>                                                <th style="width: 238px;" colspan="2">DEPARTMENT</th>                                           <!-- <th>PHONE</th>-->					</tr>					<tr class="ui-widget-header ">						<th>OFFICE PHONE</th>                                            	<th>CELL PHONE</th>                      	                      	<th colspan="2">E-MAIL</th>						</tr>	
+                       <th style="width: 238px; text-align: center;">FIRST NAME</th>                                                <th style="width: 238px; text-align: center;" >LAST NAME</th>                                                <th style="width: 238px; text-align: center;" colspan="2">DEPARTMENT</th>                                           <!-- <th>PHONE</th>-->					</tr>					<tr class="ui-widget-header ">						<th style="text-align: center;">OFFICE PHONE</th>                                            	<th style="text-align: center;">CELL PHONE</th>                      	                      	<th style="text-align: center;" colspan="2">E-MAIL</th>						</tr>	
                      					<tr class="ui-widget-header ">
-                      <th>ACTIVE</th>                                            <th colspan="3">ROLE</th>
+                      <th style="text-align: center;">ACTIVE</th>                                            <th style="text-align: center;" colspan="3">ROLE</th>
                     </tr>
                 </thead>
                 <tbody>

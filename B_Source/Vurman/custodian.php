@@ -160,14 +160,14 @@ function pageselectCallback(page_index, jq){
             <table id="users" class="ui-widget ui-widget-content">
                 <thead>
                     <tr class="ui-widget-header ">
-                    	<th>ID</th>
-                        <th>COUNTERPARTY - ID</th>
-                        <!--<th>COUNTERPARTY</th>-->                        <th>NAME COUNTERPARTY</th>                        
-                        <th >BIC (COUNTERPARTY)</th>
+                    	<th style="text-align: center;">ID</th>
+                        <th style="text-align: center;">COUNTERPARTY - ID</th>
+                        <!--<th>COUNTERPARTY</th>-->                        <th style="text-align: center;">NAME COUNTERPARTY</th>                        
+                        <th style="text-align: center;" >BIC (COUNTERPARTY)</th>
                     </tr>
-                    <tr class="ui-widget-header ">                    	<th>CUSTODIAN-ID</th>                        <!--<th>CUSTODIAN</th>-->                        <th>NAME CUSTODIAN</th>
-                    	<th colspan="3">BIC (CUSTODIAN)</th>                    </tr>                    <tr class="ui-widget-header " >
-                        <th colspan="4">COUNTERPARTY A/C WITH CUSTODIAN</th>
+                    <tr class="ui-widget-header ">                    	<th style="text-align: center;">CUSTODIAN-ID</th>                        <!--<th>CUSTODIAN</th>-->                        <th style="text-align: center;">NAME CUSTODIAN</th>
+                    	<th colspan="3" style="text-align: center;">BIC (CUSTODIAN)</th>                    </tr>                    <tr class="ui-widget-header " >
+                        <th colspan="4" style="text-align: center;">COUNTERPARTY A/C WITH CUSTODIAN</th>
                     </tr>
                 </thead>
                 <tbody>
