@@ -8,7 +8,6 @@ class Policy extends NIW_controller {
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
 		$this->load->model('Mpolicy');
-		$this->load->helper('ckeditor');
 	}
 	
 	public function index($id)

@@ -14,7 +14,7 @@
 
 <div class="tab_container">
 	<div id="tab1" class="tab_content" style="overflow:auto">
-		<table class="tablesorter" cellspacing="0" style="font-size:12px"> 
+		<table class="tablesorter" cellspacing="0" style="font-size:12p; width:1700px"> 
 			<thead> 
 				<tr>
 					<th>Chức năng</th> 

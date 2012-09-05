@@ -21,7 +21,14 @@
                 </div>
            </div>
            <div id="containerNewsletter" class="right">
-           	<div id="newsletter"><span>Thư mới:</span><input id="newsletterInput" type="text" value="e-mail của bạn" /><a id="newsletterSubmit"></a></div>
+	           	<div id="newsletter">
+	           		<form method="post" action="<?php echo base_url();?>hotro/doRegister">
+		           		<span>Thư mới:</span>
+			           	<input id="newsletterInput" type="text" name="email" value="e-mail của bạn" />
+			           	<a id="newsletterSubmit"></a>
+			           	<input type="submit" style="position:absolute; border:none; width:20px; left:212px; top:2px; cursor:pointer; background:transparent" value=""/>
+		           	</form>
+	           	</div>
 				<script type="text/javascript">
                     var jsinit_newsletter = {
                     "defaultText": "Insert your e-mail",
@@ -33,7 +40,7 @@
            <div class="mainSections">
            	<div id="mainSectionsInner" class="right">
             	<ul class="navCnt">
-                	<li><a id="wishBtn" href="">Mặt hàng ưa thích</a></li>
+                	<li><a id="wishBtn" href="<?php echo base_url();?>sanpham/spyeuthich">Mặt hàng ưa thích</a></li>
                 </ul>
                </div>
               </div>
@@ -105,7 +112,7 @@
                             <a href="<?php echo base_url();?>sanpham/spnoibat">màu nổi bật, cá tính</a><hr />
                         </div>
                      </li>
-                    <li id="pretPorter" class="mpa"><a href="<?php echo base_url();?>sanpham" class="selected" >Sản phẩm</a>
+                    <li id="pretPorter" class="mpa"><a class="selected" >Sản phẩm</a>
                         <div id="pap" class="subMenu2">
                         	<?php foreach($sanphammenu as $item)
                         	{?>

@@ -14,26 +14,7 @@
 				<?php  foreach ($policy as $row) { ?>
 					<fieldset style="width:100%; float:left;">
 						<label style="width:100%"><?php echo $title[$row->id]?></label>
-						<textarea name="content<?php echo $row->id?>" id="content<?php echo $row->id?>"><?php echo $row->content; ?></textarea>
-						<?php 
-						switch ($row->id) {
-						    case 1:
-						        echo display_ckeditor($content1); 
-						        break;
-						    case 2:
-						        echo display_ckeditor($content2); 
-						        break;
-						    case 3:
-						        echo display_ckeditor($content3); 
-						        break;
-							case 4:
-						        echo display_ckeditor($content4); 
-						        break;
-							case 5:
-						        echo display_ckeditor($content5); 
-						        break;
-						}						
-						?>
+						<?php echo $this->ckeditor->editor('content'.$row->id,$row->content,$config);?>
 					</fieldset><div class="clear"></div>
 				<?php } ?>				
 			</div>

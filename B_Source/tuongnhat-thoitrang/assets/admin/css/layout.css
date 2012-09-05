@@ -922,5 +922,5 @@ text-indent: 40px;
 font-size: 14px;}
 
 .tab_container .tab_content{overflow:auto; height:500px; width:987px}
-.tab_container .tab_content .tablesorter{width:1700px}
+.tab_container .tab_content .tablesorter{width: 100%}
 .tablesorter p img{width:100px !important; height:70px !important}

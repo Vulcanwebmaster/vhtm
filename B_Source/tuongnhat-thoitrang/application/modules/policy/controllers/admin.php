@@ -8,22 +8,20 @@ class Admin extends Admin_Controller {
 		$this->module = basename(dirname(dirname(__FILE__))); 
 		$this->module = strtolower(get_class());
 		$this->load->model('Mpolicy');
-		$this->load->helper('ckeditor');
 	}
 	
 	function index()
 	{
+		//=============================================
+		$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/thoitrang/js/ckeditor/", 'outPut' => true));                             
+		$data['config'] = $this->setupCKEditor();
+		//=============================================
+		
 		$data['policy']=$this->Mpolicy->getListPolicy();	 
 		$data['module'] = $this->module;
 		$data['page'] = "admin_policy";
 		$data['title'] = "Chính sách";
 		$data['bcCurrent'] = "Chính sách";
-		
-		$data['content1'] = $this->setupCKEditor("content1");
-		$data['content2'] = $this->setupCKEditor("content2");
-		$data['content3'] = $this->setupCKEditor("content3");
-		$data['content4'] = $this->setupCKEditor("content4");
-		$data['content5'] = $this->setupCKEditor("content5");
 		
 		$this->load->view('admin/container',$data);
 	}
