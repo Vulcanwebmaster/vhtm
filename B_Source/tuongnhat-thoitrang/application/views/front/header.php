@@ -1,5 +1,8 @@
-<div id="header"><div class="headerCnt">
-    	<div id="bannerMenu">
+<div id="header">
+	
+	<div class="headerCnt">
+
+    	<div id="bannerMenu" >
         	<div class="banner1"><img src="<?php echo base_url();?>assets/thoitrang/images/404.gif" /></div>
             <div class="banner2"><img src="<?php echo base_url();?>assets/thoitrang/images/404.gif"  /></div>
             <div class="banner3"><a href=""><img src="<?php echo base_url();?>assets/thoitrang/images/1149_1_BN_270x16_Saldi_VL_EN.jpg" /></a></div>
@@ -43,8 +46,15 @@
                 	<li><a id="wishBtn" href="<?php echo base_url();?>sanpham/spyeuthich">Mặt hàng ưa thích</a></li>
                 </ul>
                </div>
-              </div>
              </div>
+             
+             </div>
+             <div id="el-vn">
+			<ul >
+				<li><div id="vn"><a href=""><img src="<?php echo base_url(); ?>assets/thoitrang/images/vn19.jpg" /></a></div></li>
+				<li> <div id="vn"><a href=""><img src="<?php echo base_url(); ?>assets/thoitrang/images/el.jpg" /></a></div></li>
+			</ul>
+	</div>
             </div>
             <!--------------------menu------------------------------>
             <script type="text/javascript" language="javascript">
