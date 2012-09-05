@@ -1,0 +1,31 @@
+﻿1. 
+TRANSFER-REC-CLIENT.PHP
+
+SETTLEMENT INSTRUCTION
+
+LINK ´TO RECEIVE FUND´
+
+- AFTER SUCCESSFUL ORDER ENTRY A PERSONALIZED MESSAGE APPEARS (LINKED TO THE PERSON WHO ENTERED THE ORDER)
+
+
+2.
+TRANSFER-DEL-CLIENT.PHP
+
+SETTLEMENT INSTRUCTION
+
+LINK ´TO DELIVER FUND´
+
+- AFTER SUCCESSFUL ORDER ENTRY A PERSONALIZED MESSAGE APPEARS (LINKED TO THE PERSON WHO ENTERED THE ORDER)
+
+Hướng dẫn cho task 1, 2:
+
+Khi nhập SELLER-ID/BUYER-ID, giá trị SELLER, BIC (SELLER)/ BUYER, BIC (BUYER) sẽ tự động được get từ DB ra
+Khi nhập CUSTODIAN-ID, giá trị CUSTODIAN, BIC (CUSTODIAN), SELLER/BUYER A/C WITH CUST. sẽ tự động được get từ DB ra
+Table Custodian: 
+- Column cpid tương ứng với SELLER-ID/BUYER-ID
+- Column counterparty tương ứng với SELLER/BUYER
+- Column biccp BIC (SELLER)/BIC (BUYER)
+- Column custid tương ứng với CUSTODIAN-ID
+- Coumn custodian tương ứng với CUSTODIAN
+- Column biccust tương ứng với BIC (CUSTODIAN)
+- Column cpacwithcust tương ứng với SELLER/BUYER A/C WITH CUST
