@@ -17,11 +17,11 @@
   // SMTP-Password
   define ('PHPMAILER_PASSWORD', "aMAJDD67");
   // Absender
-  define ('PHPMAILER_FROM', "???");
+  define ('PHPMAILER_FROM', "<???>");
   // Absender-Name
-  define ('PHPMAILER_FROM_NAME', "Kontaktformular <???>");
+  define ('PHPMAILER_FROM_NAME', "Kontaktformular<???>");
   // Empfaenger
-  define ('PHPMAILER_TO', "info@vurman.com");
+  define ('PHPMAILER_TO', "info@vurman.com");  //define ('PHPMAILER_TO', "hoangdx12@gmail.com");  
   // Betreff
   define ('PHPMAILER_SUBJECT', "Nachricht aus Kontaktformular");
 

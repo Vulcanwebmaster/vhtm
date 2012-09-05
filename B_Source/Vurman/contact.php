@@ -24,8 +24,7 @@
   {
      // Ja, also Ueberpruefung der Daten
   
-     $validEmail = true;
-     
+     $validEmail = true;
      // config laden
      include ("./mailconfig.inc.php");
      
@@ -59,56 +58,56 @@
     $topic = isset($_POST['topic']) ? stripslashes(trim($_POST['topic'])) : "";
     
     if (!empty($email))
-    {
-       $validEmail = checkMail($email);
+    {
+       $validEmail = checkMail($email);
     }
     
     // Fehler vorhanden
-    if (count($errors))
-       $errorText = "Fields marked with an asterisk * are mandatory: " . implode(", ", $errors);
- 
+    if (count($errors))	{
+       $errorText = "Fields marked with an asterisk * are mandatory: " . implode(", ", $errors);
+	}
     // Check der MailAdresse erfolgreich?
     if (!$validEmail)
     {
        $errorText .= (strlen($errorText)) ? "<br /><br />" : "";
-       $errorText .= "E-mail address invalid";
+       $errorText .= "E-mail address invalid";
     }
-    
+
     // Wenn jetzt kein Fehlertext vorhanden ist, kann die Mail raus,
     if (!strlen ($errorText))
-    {
+    {
        // Keine Fehler gefunden
-       // phpMailer laden
-		include ("mail/class.phpmailer.php");		//include ("mailconfig.inc.php");
-        
+       // phpMailer laden              
+		include ("mail/class.phpmailer.php");						     // Hoang - Add code in here 		     		     		     		$mail = new PHPMailer();		$mail->IsSMTP(); // set mailer to use SMTP		$mail->Host = PHPMAILER_HOST; // specify main and backup server		$mail->Port = 465; // set the port to use		$mail->charset="utf-8";		$mail->SMTPAuth = true; // turn on SMTP authentication		$mail->SMTPSecure = 'ssl';		$mail->Username = PHPMAILER_USER; // your SMTP username or your gmail username		$mail->Password = PHPMAILER_PASSWORD; // your SMTP password or your gmail password		//$from = "hoangdx12@gmail.com"; // Reply to this email		$to=PHPMAILER_TO; // Recipients email ID		$name="Do Xuan Hoang"; // Recipient's name		$mail->From = $email;		$mail->FromName = $firstname; // Name to indicate where the email came from when the recepient received		$mail->AddAddress($to,$name);		//$mail->AddReplyTo($from,"Do Xuan Hoang");		$mail->WordWrap = 50; // set word wrap		$mail->IsHTML(true); // send as HTML		$mail->Subject = PHPMAILER_SUBJECT;		$emailTemplate='Hello administrator.		 <br/>We got contact email.				 <br/>The content is next :								 <br/>Company: '.$company.'				 <br/>From : '.$firstname.' '.$lastname.'				 <br/>Contact email : '.$email.'				 <br/>Phone: '.$telefon.'				 <br/>Address: '.$street.' 				 <br/>Fax: '.$fax.'				 <br/>Subject: '.$topic.'				 <br/>Message text:'.$message;		$mail->Body = $emailTemplate; //HTML Body		$mail->AltBody = $txt; //Text Body		//$mail->SMTPDebug = 2;		print "Chuan bi send mail";		print $email;		if(!$mail->Send())		{			$errorText = "Transmission error, please try again later";			echo "<h1>Message erro: " . $mail->ErrorInfo . '</h1>';		}		else		{			// Hoang add $mstp for thank you contact in each case			$mstp=$_POST['messagetopic'];			if($mstp=="General_Inquiry")			{				header("Location:thanks-contact.html");				exit;			}			if($mstp=="Service_Feedback")			{				header("Location:thanks-contact1.html");				exit;			}			if($mstp=="Suggestions_Complaints")			{				header("Location:thanks-contact2.html");				exit;			}			else {
+				header("Location:thanks-contact.html");				exit;
+			}					}				//End code														//include ("mailconfig.inc.php");
         // Texte laden
 //        include ("./mailtext.inc.php");
-       
-        $mail            = new phpmailer();
+       		/*
+        $mail            = new phpmailer();		$mail->IsSMTP();		$mail->Port=465;		$mail->SMTPSecure="ssl";
         $mail->Subject   = PHPMAILER_SUBJECT;
         $mail->FromName  = PHPMAILER_FROM_NAME;
         $mail->PluginDir = PHPMAILER_PLUGIN_DIR;
         $mail->Host      = PHPMAILER_HOST;
         $mail->From      = PHPMAILER_FROM;
         $mail->Username  = PHPMAILER_USER;
-        $mail->Password  = PHPMAILER_PASSWORD;
+        $mail->Password  = PHPMAILER_PASSWORD;				
         $mail->IsHTML(true); 
         $mail->AddAddress(PHPMAILER_TO);
-     // $mail->SMTPAuth  = true;
-     // $mail->Mailer    = "smtp";
+     // $mail->SMTPAuth  = true;     	$mail->SMTPAuth  = true;
+     // $mail->Mailer    = "smtp";     	$mail->Mailer    = "smtp";     
         $mail->Body    = $emailTemplate;
         $mail->AltBody = $txt;
-       
 		if($mail->Send())
           if(mail(PHPMAILER_TO,PHPMAILER_SUBJECT,$txt))
 //        if(mail("info@vurman.com",PHPMAILER_SUBJECT,$txt))
-        {
+        {
            header ("Location: thanks-contact.html");
            exit;
         }
-        else
-          $errorText = "Transmission error, please try again later";
-      
+        else		{			
+          $errorText = "Transmission error, please try again later";
+		}		*/
     }
   }
 ?> 
@@ -259,7 +258,7 @@ fieldset{
 ?>
 
 <!-- Beginn Kontaktformular -->
-<FORM ACTION="<?php echo $_SERVER['SCRIPT_NAME']; ?>" METHOD="post">
+<FORM ACTION="<?php echo $_SERVER['SCRIPT_NAME']; ?>" METHOD="post">
  <div>
   <fieldset>
    <legend>Personal Information</legend>
