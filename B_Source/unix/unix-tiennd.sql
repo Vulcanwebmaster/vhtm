@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2012 at 06:46 AM
+-- Generation Time: Sep 06, 2012 at 12:16 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -388,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `be_users` (
 --
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'unixcompany', 'dc033ec86b0607f5d90ff8715a118a99312c502f', 'ducpv00349@gmail.com', 1, 2, NULL, '2012-09-05 06:00:23', '2012-02-22 13:46:09', '2012-08-07 14:57:58');
+(1, 'unixcompany', 'dc033ec86b0607f5d90ff8715a118a99312c502f', 'ducpv00349@gmail.com', 1, 2, NULL, '2012-09-06 09:57:43', '2012-02-22 13:46:09', '2012-08-07 14:57:58');
 
 -- --------------------------------------------------------
 
@@ -437,8 +437,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('198685cd4d3810a41520a89acadb72b9', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11', 1346819289, 'a:12:{s:9:"user_data";s:0:"";s:2:"id";s:1:"1";s:8:"username";s:11:"unixcompany";s:5:"email";s:20:"ducpv00349@gmail.com";s:8:"password";s:40:"dc033ec86b0607f5d90ff8715a118a99312c502f";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-09-05 05:44:08";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-08-07 14:57:58";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}'),
-('ba2ee7a6dca63fcae8a915a1a3a5e95f', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11', 1346816605, 'a:11:{s:2:"id";s:1:"1";s:8:"username";s:11:"unixcompany";s:5:"email";s:20:"ducpv00349@gmail.com";s:8:"password";s:40:"dc033ec86b0607f5d90ff8715a118a99312c502f";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-09-05 05:34:13";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-08-07 14:57:58";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";}');
+('e293fde8ff3f782a01da268057bae13c', '0.0.0.0', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11', 1346926535, 'a:12:{s:2:"id";s:1:"1";s:8:"username";s:11:"unixcompany";s:5:"email";s:20:"ducpv00349@gmail.com";s:8:"password";s:40:"dc033ec86b0607f5d90ff8715a118a99312c502f";s:6:"active";s:1:"1";s:10:"last_visit";s:19:"2012-09-06 09:48:16";s:7:"created";s:19:"2012-02-22 13:46:09";s:8:"modified";s:19:"2012-08-07 14:57:58";s:5:"group";s:13:"Administrator";s:8:"group_id";s:1:"2";s:9:"post_code";s:1:"0";s:8:"bangdiem";s:9:"B?ng 11";}');
 
 -- --------------------------------------------------------
 
@@ -930,6 +929,29 @@ INSERT INTO `unix_camnhan` (`camnhan_id`, `noidung`, `ngaythang`, `nguoidang`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unix_chuyenmuc`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_chuyenmuc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` text COLLATE utf8_unicode_ci,
+  `noidung` text COLLATE utf8_unicode_ci,
+  `danhmuc` text COLLATE utf8_unicode_ci,
+  `ngaydang` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `unix_chuyenmuc`
+--
+
+INSERT INTO `unix_chuyenmuc` (`id`, `ten`, `noidung`, `danhmuc`, `ngaydang`) VALUES
+(4, 'Chuyên mục 1', '<p><span style="background-color: #ffff99;">Đ&acirc;y l&agrave; nội dung của chuy&ecirc;n mục 1</span></p>', 'Sự kiện', '2012-09-06'),
+(5, 'Chuyên mục 1', '<p><span style="background-color: #ffff99;">Đ&acirc;y l&agrave; nội dung của chuy&ecirc;n mục 1</span></p>', 'Sự kiện', '2012-09-06');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unix_contact`
 --
 
@@ -966,7 +988,7 @@ CREATE TABLE IF NOT EXISTS `unix_dangky` (
   `ngaythang` date DEFAULT NULL,
   `ten` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`dangky_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `unix_dangky`
@@ -978,7 +1000,8 @@ INSERT INTO `unix_dangky` (`dangky_id`, `hoten`, `truong`, `lop`, `phuhuynh`, `d
 (5, 'Nguyen Khai', 'Tiểu học Mỹ Đình', '3A2', 'Vu Giang', '0988988808', NULL, NULL),
 (7, 'Hảo minh', 'Định công', '5D', 'Bình', '0974505002', NULL, NULL),
 (8, 'thanh trung', 'thai thinh', '5e', 'le thanh binh', '0915923043', NULL, NULL),
-(57, 'Nguyễn Đức Tiến', '', '', '', '0987384249', '2012-09-05', 'Lịch 1');
+(57, 'Nguyễn Đức Tiến', '', '', '', '0987384249', '2012-09-05', 'Lịch 1'),
+(58, 'Nguyễn Đức Tiến', '', '', '', '0987384249', '2012-09-05', 'Lịch 1');
 
 -- --------------------------------------------------------
 
@@ -1000,7 +1023,7 @@ INSERT INTO `unix_danhmuc` (`id`, `ten`) VALUES
 (1, 'Hội thảo khác'),
 (2, 'Khóa học'),
 (3, 'Thư viện'),
-(4, 'Danh mục khác'),
+(4, 'Sự kiện'),
 (5, '');
 
 -- --------------------------------------------------------
@@ -1023,230 +1046,237 @@ CREATE TABLE IF NOT EXISTS `unix_diemthi` (
 --
 
 INSERT INTO `unix_diemthi` (`stt`, `hocsinh`, `phuhuynh`, `lop`, `diemthi`, `dotthi`) VALUES
-(1, 'Nguyễn Thu Trang', 'Nguyễn Thị Hoài Thu', '5B5', '0', 'Điểm test lần 2 khóa tháng 7'),
-(2, 'Bùi Thế Vũ', 'Trần Thị Viện', '5B5', '1', 'Điểm test lần 2 khóa tháng 7'),
-(3, 'Tạ Minh Nguyệt ', 'Kim Thị Thu Hằng ', '5B5', '1', 'Điểm test lần 2 khóa tháng 7'),
-(4, 'Trần Aneta Trang', 'Trần Thu Hương', '5B5', '1', 'Điểm test lần 2 khóa tháng 7'),
-(5, 'Hoàng Ngọc Minh', 'Hoàng Kim Sơn', '5B5', '1', 'Điểm test lần 2 khóa tháng 7'),
-(6, 'Nguyễn Thùy Dương', 'Nguyễn Thúy Hằng', '5B5', '2', 'Điểm test lần 2 khóa tháng 7'),
-(7, 'Nguyễn Phương Anh', 'Nguyễn Thị Thanh', '5B5', '2', 'Điểm test lần 2 khóa tháng 7'),
-(8, 'Nguyễn Minh Hiếu', 'Nguyễn Hoàng Minh', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(9, 'Đỗ Tuấn Quang', 'Thái Thị Hoàng Oanh', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(10, 'Nguyễn Khánh Tùng', 'Dương Thị Thúy Hà', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(11, 'Hoàng Anh Đức', 'Lê Hải Vân', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(12, 'Nguyễn Hoàng Sơn ', 'Cao Thị Thanh Tú', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(13, 'Nguyễn Đức Mạnh', 'Đào Hải Yến', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(14, 'Vũ Hải Phong', 'Vũ Minh Thìn', '5B5', '3', 'Điểm test lần 2 khóa tháng 7'),
-(15, 'Cao Lê Vân Ly', 'Lê Thu Minh', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(16, 'Đoàn Hồng Vân', 'Lê Thanh Nhung', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(17, 'Thân Việt Hoàng', 'Trần Mai Hoa', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(18, 'Trịnh Đức Phú', 'Trịnh Ngọc Thành', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(19, 'Lưu Trà My', 'Nguyễn Thị Vân Anh', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(20, 'Nguyễn Đức Hoàng ', 'Lương Xuân Cúc ', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(21, 'Dương Anh Đức', 'Phạm Hải Yến', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(22, 'Nguyễn Nhật Hà', 'Nguyễn Quang Hào', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(23, 'Nguyễn Mai Linh', 'Nguyễn Thị Dương', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(24, 'Trần Đức Mạnh', 'Trần Quang Minh', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(25, 'Nguyễn Việt Mỹ', 'Nguyễn Việt Anh', '5A5', '4', 'Điểm test lần 2 khóa tháng 7'),
-(26, 'Nghiêm Thu Diệp', 'Trần Thúy Lan', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(27, 'Dương Yến Chi', 'Cao Thị Thu Hằng', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(28, 'Nguyễn Đức Anh ', 'Lê Lan Hương', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(29, 'Đinh Hương Giang', 'Nguyễn Thị Lan Hương', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(30, 'Nguyễn Minh Phúc', 'Nguyễn Thị Vân', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(31, 'Nguyễn Hà Lan Anh', 'Nguyễn Văn Thắng', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(32, 'Nguyễn Thúy Nhi', 'Nguyễn Thị Thu Phương', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(33, 'Đỗ Đức Tâm', 'Phạm Thị Loan', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(34, 'Nguyễn Thị Hải Dương', 'Nguyễn Hải Bình', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(35, 'Nguyễn Xuân Anh', 'Bạch Thị Thu Hường', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(36, 'Nguyễn Duy Khánh', 'Lê Mai Hương', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(37, 'Võ Thùy Trang', 'Nguyễn Thanh Thủy', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(38, 'Trần Đức Thắng', 'Lại Thị Hà', '5A5', '5', 'Điểm test lần 2 khóa tháng 7'),
-(39, 'Bùi Thị Linh Trang', 'Phạm Thị Tuyết Dung', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(40, 'Đỗ Minh Ánh', 'Nguyễn Thị Minh Phượng', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(41, 'Đặng Vũ Bá ', 'Bùi Thị Hương ', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(42, 'Lương Quang Thắng', 'Lê Hải Thanh', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(43, 'Phạm Nguyễn Ngân Hà', 'Nguyễn Mai Chi', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(44, 'Mai Kim Kh', 'Mai Viết Dung', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(45, 'Nguyễn Diệu Linh', 'Lưu Thu Hoài', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(46, 'Đồng Tuyết Anh ', 'Đồng Quốc Hùng ', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(47, 'Ngô Nam Khánh', 'Ngô Đăng Thịnh', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(48, 'Nguyễn Nhật Hoàng', 'Mai Thị Hồng Nguyên', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(49, 'Phạm Nhật Quang', 'Hoàng Thị Tâm Chính', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(50, 'Nguyễn Phương Uyên', 'Nguyễn Phương Đông', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(51, 'Nguyễn Quý Hiển', 'Nguyễn Thị Tuyết Lan', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(52, 'Trịnh Ngọc Anh', 'Nguyễn Thanh Huyền', '5B4', '6', 'Điểm test lần 2 khóa tháng 7'),
-(53, 'Cao Thế Phong', 'Cao Thế Long', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(54, 'Đào Lê Khôi Nguyên', 'Lê Thị Minh Hoa', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(55, 'Ngô Minh Anh', 'Nguyễn Anh Thư', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(56, 'Nguyễn Bá Công', 'Vũ Diễm Hằng', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(57, 'Lê Anh Cường', 'Lê Thị Huệ', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(58, 'Nguyễn Hồng Sâm', 'Nguyễn Hồng Dưỡng', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(59, 'Nguyễn Bá Khôi', 'Nguyễn Bá Trịnh', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(60, 'Lâm Hải Long', 'Nguyễn Thị Đoan Trang', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(61, 'Nguyễn Minh Hùng', 'Nguyễn Minh Đức', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(62, 'Nguyễn Phan Anh', 'Phan Thị Phương', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(63, 'Vũ Linh Chi', 'Dương Mai Linh', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(64, 'Vũ Thảo Nhi ', 'Vũ việt Đức ', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(65, 'Trương Hương Giang', 'Nguyễn Thị Vân', '5A4', '7', 'Điểm test lần 2 khóa tháng 7'),
-(66, 'Lê Nguyên Khánh', 'Lê Văn Trịnh', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(67, 'Đoàn Khánh Linh', 'Đoãn Nhữ Minh ', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(68, 'Nguyễn Ánh Ngọc', 'Nguyễn Thị Thanh Thủy', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(69, 'Đào Quốc Thành', 'Đào Ngọc Lâm', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(70, 'Hà Trung Hiếu', 'Hà Thị Hồng Nga', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(71, 'Đặng Minh Thư', 'Chương Thúy Quỳnh', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(72, 'Lê Bùi Khánh Linh ', 'Bùi Thị Hồng Việt ', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(73, 'Nguyễn Minh Ngọc', 'Phạm Thị Thu Nga', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(74, 'Nguyễn Minh Hùng', 'Thái Thị Cẩm Chi', '5B3', '8', 'Điểm test lần 2 khóa tháng 7'),
-(75, 'Đặng Nam Khánh', 'Đặng Nhật Tân', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(76, 'Chu Minh Nga', 'Trần Song Hoa', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(77, 'Phạm Thùy Dương', 'Nguyễn Thị Thúy Hằng', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(78, 'Đỗ Hương Giang', 'Đỗ Văn Quang', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(79, 'Dương Duy Anh', 'Nguyễn Phương Anh', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(80, 'Hà Linh Chi', 'Phạm Thị Hà Giang', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(81, 'Hoàng Bảo Hưng', 'Đinh Thị Hoa', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(82, 'Hồ Anh Vũ', 'Nguyễn Thanh Nga', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(83, 'Hoàng Vân Linh', 'Hoàng Thanh Vân', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(84, 'Nguyễn Công Minh', 'Nguyễn Công Thái', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(85, 'Lã Phan Anh', 'Vũ Thị Hòa', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(86, 'Đoàn Mỹ Linh ', 'Đoãn Nhữ Minh ', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(87, 'Vũ Lê Phương Uyên', 'Vũ Anh Việt', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(88, 'Nguyễn Thành Trung', 'Nguyễn Thị Hồng Sâm', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(89, 'Trịnh Gia Linh', 'Trịnh Quang Thanh', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(90, 'Nguyễn Tùng Sơn', 'Nguyễn Thế Trung/Lê Thị Dinh', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(91, 'Phạm Đức Anh', 'Bùi Thúy Hương', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(92, 'Lê Thanh Hiền', 'Lê Kim Thanh', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(93, 'Bùi Duy Minh', 'Bùi Mai Phương', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(94, 'Vũ Bình Sơn', 'Trương Thị Việt Hà', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(95, 'Đỗ Đình Long', 'Nguyễn Thị Nga', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(96, 'Trần Nguyễn Hoàng Lan', 'Trần Thanh Long', '5A3', '9', 'Điểm test lần 2 khóa tháng 7'),
-(97, 'Bùi Thị Vân Hà', 'Đàm Thị Thanh Vân', '5A3', '10', 'Điểm test lần 2 khóa tháng 7'),
-(98, 'Nguyễn Trung Hiếu', 'Nguyễn Việt Dũng', '5A3', '10', 'Điểm test lần 2 khóa tháng 7'),
-(99, 'Nguyễn Cao Thành', 'Cao Thị Phương Lan', '5A3', '10', 'Điểm test lần 2 khóa tháng 7'),
-(100, 'Khúc Thị Khánh Huyền', 'Lại Thị Bích Hồng', '5A3', '10', 'Điểm test lần 2 khóa tháng 7'),
-(101, 'Nguyễn Quang Trung ', 'Nguyễn Quang Vinh ', '5A3', '10', 'Điểm test lần 2 khóa tháng 7'),
-(102, 'Vũ Quốc Đạt', 'Nguyễn Khánh Kiều Trang', '5A3', '10', 'Điểm test lần 2 khóa tháng 7'),
-(103, 'Nguyễn Đức Bình', 'Nguyễn Đăng Sáu', '5B2', '11', 'Điểm test lần 2 khóa tháng 7'),
-(104, 'Lê Hoàng Minh', 'Phạm Mai Hương', '5B2', '11', 'Điểm test lần 2 khóa tháng 7'),
-(105, 'Lương Hiền Nga', 'Nguyễn Thị Kim Oanh', '5B2', '11', 'Điểm test lần 2 khóa tháng 7'),
-(106, 'Lê Thái Dương', 'Lê Xuân Hùng', '5B2', '11', 'Điểm test lần 2 khóa tháng 7'),
-(107, 'Mai Thu Huyền', 'Đào Thị Thu Hằng', '5B2', '11', 'Điểm test lần 2 khóa tháng 7'),
-(108, 'Nguyễn Việt Trung', 'Nguyễn Xuân Ngọc', '5B2', '11', 'Điểm test lần 2 khóa tháng 7'),
-(109, 'Lê Thành Vinh', 'Lương Thu Hằng', '5B2', '12', 'Điểm test lần 2 khóa tháng 7'),
-(110, 'Nguyễn Đăng Thành', 'Nguyễn Đăng Khoa', '5B2', '12', 'Điểm test lần 2 khóa tháng 7'),
-(111, 'Phạm Văn Khánh', 'Nguyễn Thị Thu Phương', '5B2', '12', 'Điểm test lần 2 khóa tháng 7'),
-(112, 'Lê Ngọc Phương Nhi', 'Trương Thị Ngọc Trang', '5B2', '14', 'Điểm test lần 2 khóa tháng 7'),
-(113, 'Ngô Thái Hoàng Anh', 'Hoàng Thị Hòa', '5B2', '14', 'Điểm test lần 2 khóa tháng 7'),
-(114, 'Hoàng Nghĩa Hiếu', 'Nghiêm Thị Liên', '5B2', '15', 'Điểm test lần 2 khóa tháng 7'),
-(115, 'Vũ Phương Nhung', 'Nguyễn Thị Bích Thủy', '5B2', '15', 'Điểm test lần 2 khóa tháng 7'),
-(116, 'Phạm Việt Anh ', 'Nguyễn Thị Ngọc Thủy', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(117, 'Lê Yến Vy', 'Đỗ Thu Hiền', '5B5', '1,5', 'Điểm test lần 2 khóa tháng 7'),
-(118, 'Nguyễn Minh Hà Anh', 'Nguyễn Thu Hằng', '5B5', '1,5', 'Điểm test lần 2 khóa tháng 7'),
-(119, 'Nguyễn Vũ Đức Trọng', 'Nguyễn Xuân Thành', '5B5', '1,5', 'Điểm test lần 2 khóa tháng 7'),
-(120, 'Trần Đức Anh', 'Trần Kim Thủy', '5B5', '1,5', 'Điểm test lần 2 khóa tháng 7'),
-(121, 'Nguyễn Minh An', 'Nguyễn Minh Tuấn', '5B5', '1,5', 'Điểm test lần 2 khóa tháng 7'),
-(122, 'Vũ Trang Anh', 'Vũ Yên/Lê Thị Minh', '5B5', '1,5', 'Điểm test lần 2 khóa tháng 7'),
-(123, 'Nguyễn Trang Linh', 'Nguyễn Duy Phương', '5B2', '10,5', 'Điểm test lần 2 khóa tháng 7'),
-(124, 'Nghiêm Xuân Sơn', 'Nghiêm Quyết Thắng', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(125, 'Phạm Thị Hằng', 'Phạm Thế Hưng', '5B2', '10,5', 'Điểm test lần 2 khóa tháng 7'),
-(126, 'Trần Hải Anh', 'Nguyễn Thị Ánh Tuyết', '5B2', '10,5', 'Điểm test lần 2 khóa tháng 7'),
-(127, 'Vũ Nhật Anh ', 'Vũ Thanh Hoa', '5B2', '10,5', 'Điểm test lần 2 khóa tháng 7'),
-(128, 'Đinh Viết Quang', 'Nguyễn Thị Kim Ngọc', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(129, 'Khổng Minh Ngọc', 'Nguyễn Thị Hoài ', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(130, 'Nguyễn Huy Quang', 'Nguyễn Huy Trung', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(131, 'Lê Minh Đức', 'Lê Văn Thắng', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(132, 'Nguyễn Thế Phúc Kháng', 'Thẩm Kim Hoàn', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(133, 'Nguyễn Thị Mai Sương', 'Phạm Thị Lệ Hoa', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(134, 'Nguyễn Tuấn Minh', 'Nguyễn Bá Hùng', '5B2', '11,5', 'Điểm test lần 2 khóa tháng 7'),
-(135, 'Hoàng Nguyễn Minh Trang', 'Nguyễn Thị Hoa', '5B2', '12,5', 'Điểm test lần 2 khóa tháng 7'),
-(136, 'Nguyễn Văn Duy Anh', 'Phạm Châu Anh', '5B2', '12,5', 'Điểm test lần 2 khóa tháng 7'),
-(137, 'Đỗ Nam Thắng', 'Nguyễn Thị Thu Hà', '5B2', '13,5', 'Điểm test lần 2 khóa tháng 7'),
-(138, 'Nguyễn Đức Nghĩa', 'Nguyễn Bá Khương', '5B2', '13,5', 'Điểm test lần 2 khóa tháng 7'),
-(139, 'Nguyễn Văn Kiên', 'Nguyễn Văn Tuyến', '5B5', '2,5', 'Điểm test lần 2 khóa tháng 7'),
-(140, 'Phạm Quỳnh Hương', 'Phạm Xuân Hải', '5B5', '2,5', 'Điểm test lần 2 khóa tháng 7'),
-(141, 'Phạm Khánh Huyền', 'Nguyễn Thị Việt Hà', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(142, 'Phạm Tuấn Vũ', 'Nguyễn Thu Huyền', '5B5', '2,5', 'Điểm test lần 2 khóa tháng 7'),
-(143, 'Đỗ Quốc Trung', 'Đỗ Hùng Kiên', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(144, 'Nguyễn Hải Đăng', 'Nguyễn Vũ Trường Giang', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(145, 'Nguyễn Hữu Lực', 'Nguyễn Thúy Nga', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(146, 'Nguyễn Minh Anh', 'Nguyễn văn Cương', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(147, 'Dương Xuân Quang', 'Trần Thị Xuân', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(148, 'Nguyễn Phương Anh', 'Lê Thị Thanh Huyền ', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(149, 'Nguyễn Phan Bách', 'Phan Thị Hiền Lương', '5B5', '3,5', 'Điểm test lần 2 khóa tháng 7'),
-(150, 'Đặng Tuấn Hiệp', 'Đặng Ngọc Quý', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(151, 'Đào Hồng Ngọc', 'Dương Mai Hoa', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(152, 'Trần Lâm Chi', 'Phạm Thu Hà', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(153, 'Nguyễn Hà Trinh', 'Nguyễn Thị Phương', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(154, 'Nguyễn Phương Anh', 'Nguyễn Văn Hưởng', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(155, 'Nguyễn Duy Khánh', 'Nguyễn Thanh Hồng', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(156, 'Nguyễn Minh Phúc', 'Hoàng Lan Anh', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(157, 'Trần Ngọc Cường', 'Ngô Thị Hương', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(158, 'Nguyễn Xuân Duy Anh', 'Tạ Ngọc Anh', '5A5', '4,5', 'Điểm test lần 2 khóa tháng 7'),
-(159, 'Đặng Trần Văn Nguyên', 'Trần Đỗ Hải Yến', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(160, 'Đỗ Diệu Minh', 'Vũ Thị Thu Thủy', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(161, 'Đặng Trần Cường', 'Đặng Trần Chính', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(162, 'Đỗ Thị Thanh Vân', 'Nguyễn Thị Kim Hoa', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(163, 'Vũ Thúy Quỳnh', 'Vũ Thị Hương', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(164, 'Hà Trần Khánh Linh', 'Hà Ngọc Dũng', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(165, 'Trần Ánh Phương', 'Trần Nguyệt Ánh', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(166, 'Nguyễn Hữu Trung Kiên', 'Nguyễn Thanh Hoa', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(167, 'Đỗ Hoàng Dương ', 'Đỗ Hùng Mạnh', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(168, 'Đỗ Thùy Trang', 'Vũ Thị Khánh', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(169, 'Nguyễn Hà Chi', 'Nguyễn Thị Thu Hiền', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(170, 'Trần Minh Anh', 'Tôn Nữ Lan Phương', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(171, 'Tôn Thất Vương Anh', 'Phạm Thị Hà', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(172, 'Nguyễn Thị Vân Đan', 'Lê Thị Ngân', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(173, 'Phùng Thùy Trang', 'Nguyễn Thị Lan', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(174, 'Trần Thảo Vi', 'Lê Thị Thanh Hương', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(175, 'Nguyễn Tiến Trường', 'Nguyễn Thị Xuân', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(176, 'Vũ Đặng Anh Quân', 'Vũ Anh Phong', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(177, 'Trần Phương Lam', 'Trịnh Mai Ly', '5B4', '5,5', 'Điểm test lần 2 khóa tháng 7'),
-(178, 'Phạm Hồng Phúc', 'Phạm Hồng Minh', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(179, 'Lê Phan Anh Thư', 'Trịnh Phan Liên', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(180, 'Đoàn Ngọc Minh', 'Vương Thị Hồng', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(181, 'Đỗ Trung Nghĩa', 'Đỗ Quang Minh', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(182, 'Hoàng Diệu Linh', 'Hoàng Thị Hoài Yến', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(183, 'Lương Hồng Dương', 'Nguyễn Thúy Hằng', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(184, 'Nguyễn Quang Minh', 'Hà Sơn Bình', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(185, 'Lê Thùy Hương', 'Kiều Thanh Hải', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(186, 'Phan Nguyễn Phương Nhi', 'Nguyễn Thị Minh Phương', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(187, 'Nguyễn Quang Phúc Thành', 'Bùi Thu Thủy', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(188, 'Trần Hải Bình', 'Kiều Thị Miên', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(189, 'Nguyễn Việt Hưng', 'Đặng Thị Lành', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(190, 'Trần Hải Hà', 'Trần Đăng', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(191, 'Nguyễn Lâm Khoa', 'Nguyễn Tiến Bình', '5A4', '6,5', 'Điểm test lần 2 khóa tháng 7'),
-(192, 'Cao Phương Quỳnh', 'Cao Thành Phương', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(193, 'Đặng Xuân Nguyên', 'Nguyễn Thị Hồng', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(194, 'Đỗ Khôi Nguyên', 'Hoàng Thị Ngọc Thủy', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(195, 'Đinh Huệ Linh', 'Lê Ngọc Huệ', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(196, 'Đỗ Hà Chi', 'Nguyễn Thị Việt Hà', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(197, 'Hoàng Trung Hiếu', 'Hoàng Xuân Sơn', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(198, 'Đỗ Huy Anh', 'Hàn Ngọc Lan', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(199, 'Trần Thu Ngân', 'Trần Mai Liên', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(200, 'Phạm Thùy Linh ', 'Nguyễn Thị Ngọc Lan ', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(201, 'Phan Trần Minh Ngọc', 'Phan Thành Dương', '', '', 'Điểm test lần 2 khóa tháng 7'),
-(202, 'Nguyễn Bảo Trang', 'Bùi Thu Hằng', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(203, 'Nguyễn Tú Minh', 'Phạm Hồng Hoa', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(204, 'Nguyễn Tài Phúc', 'Phạm Thị Thúy Lan', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(205, 'Trần Minh Tùng', 'Nguyễn Thị Hằng', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(206, 'Trần Hoàng Anh Quân', 'Trần Hoàng Anh', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(207, 'Vũ Đức Kiên', 'Vũ Trí Thành', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(208, 'Nguyễn Tường Vy', 'Đỗ Thị Hoài Thu', '5B3', '7,5', 'Điểm test lần 2 khóa tháng 7'),
-(209, 'Nguyễn Duy Uyên', 'Nguyễn Thị Thu Hương', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(210, 'Lê Thái Chí', 'Nguyễn Phương Anh', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(211, 'Phạm Vũ Minh Đức', 'Vũ Thị Yến', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(212, 'Nguyễn Phương Mai', 'Bùi Thị Mai Hương', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(213, 'Trịnh Nam Phong', 'Dương Thị Hạnh Phúc', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(214, 'Trần Nguyễn Vân Tiên', 'Nguyễn Thị Thanh Thủy', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(215, 'Nguyễn Văn Hảo Minh', 'Nguyễn Huy Bình', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(216, 'Vũ Thị Mai Phương', 'Nguyễn Thanh Tú', '5B3', '8,5', 'Điểm test lần 2 khóa tháng 7'),
-(217, 'Nguyễn Tuấn Khanh', 'Trần Thị Hương', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(218, 'Đoàn Nguyễn Hoàng Long', 'Nguyễn Thu Hương', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(219, 'Đỗ Xuân Nghĩa ', 'Phan Thị Hải Nam ', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(220, 'Ngô Quang Phúc', 'Nguyễn Thị Ánh Nguyệt', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(221, 'Nguyễn Diệu Linh', 'Nguyễn Thị Thanh Thủy', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(222, 'Phạm Ngọc Bách', 'Vũ Thị Hồng Hải', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(223, 'Nguyễn Trung Kiên', 'Nguyễn Thị Hiền', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7'),
-(224, 'Trần Đức Toàn', 'Hà Mỹ Hạnh', '5A3', '9,5', 'Điểm test lần 2 khóa tháng 7');
+(1, 'Nguyễn Thu Trang', 'Nguyễn Thị Hoài Thu', '5B5', '0', '11'),
+(2, 'Bùi Thế Vũ', 'Trần Thị Viện', '5B5', '1', '11'),
+(3, 'Tạ Minh Nguyệt ', 'Kim Thị Thu Hằng ', '5B5', '1', '11'),
+(4, 'Trần Aneta Trang', 'Trần Thu Hương', '5B5', '1', '11'),
+(5, 'Hoàng Ngọc Minh', 'Hoàng Kim Sơn', '5B5', '1', '11'),
+(6, 'Nguyễn Thùy Dương', 'Nguyễn Thúy Hằng', '5B5', '2', '11'),
+(7, 'Nguyễn Phương Anh', 'Nguyễn Thị Thanh', '5B5', '2', '11'),
+(8, 'Nguyễn Minh Hiếu', 'Nguyễn Hoàng Minh', '5B5', '3', '11'),
+(9, 'Đỗ Tuấn Quang', 'Thái Thị Hoàng Oanh', '5B5', '3', '11'),
+(10, 'Nguyễn Khánh Tùng', 'Dương Thị Thúy Hà', '5B5', '3', '11'),
+(11, 'Hoàng Anh Đức', 'Lê Hải Vân', '5B5', '3', '11'),
+(12, 'Nguyễn Hoàng Sơn ', 'Cao Thị Thanh Tú', '5B5', '3', '11'),
+(13, 'Nguyễn Đức Mạnh', 'Đào Hải Yến', '5B5', '3', '11'),
+(14, 'Vũ Hải Phong', 'Vũ Minh Thìn', '5B5', '3', '11'),
+(15, 'Cao Lê Vân Ly', 'Lê Thu Minh', '5A5', '4', '11'),
+(16, 'Đoàn Hồng Vân', 'Lê Thanh Nhung', '5A5', '4', '11'),
+(17, 'Thân Việt Hoàng', 'Trần Mai Hoa', '5A5', '4', '11'),
+(18, 'Trịnh Đức Phú', 'Trịnh Ngọc Thành', '', '', '11'),
+(19, 'Lưu Trà My', 'Nguyễn Thị Vân Anh', '5A5', '4', '11'),
+(20, 'Nguyễn Đức Hoàng ', 'Lương Xuân Cúc ', '5A5', '4', '11'),
+(21, 'Dương Anh Đức', 'Phạm Hải Yến', '', '', '11'),
+(22, 'Nguyễn Nhật Hà', 'Nguyễn Quang Hào', '5A5', '4', '11'),
+(23, 'Nguyễn Mai Linh', 'Nguyễn Thị Dương', '5A5', '4', '11'),
+(24, 'Trần Đức Mạnh', 'Trần Quang Minh', '5A5', '4', '11'),
+(25, 'Nguyễn Việt Mỹ', 'Nguyễn Việt Anh', '5A5', '4', '11'),
+(26, 'Nghiêm Thu Diệp', 'Trần Thúy Lan', '5A5', '5', '11'),
+(27, 'Dương Yến Chi', 'Cao Thị Thu Hằng', '5A5', '5', '11'),
+(28, 'Nguyễn Đức Anh ', 'Lê Lan Hương', '5A5', '5', '11'),
+(29, 'Đinh Hương Giang', 'Nguyễn Thị Lan Hương', '', '', '11'),
+(30, 'Nguyễn Minh Phúc', 'Nguyễn Thị Vân', '5A5', '5', '11'),
+(31, 'Nguyễn Hà Lan Anh', 'Nguyễn Văn Thắng', '5A5', '5', '11'),
+(32, 'Nguyễn Thúy Nhi', 'Nguyễn Thị Thu Phương', '5A5', '5', '11'),
+(33, 'Đỗ Đức Tâm', 'Phạm Thị Loan', '5A5', '5', '11'),
+(34, 'Nguyễn Thị Hải Dương', 'Nguyễn Hải Bình', '5A5', '5', '11'),
+(35, 'Nguyễn Xuân Anh', 'Bạch Thị Thu Hường', '5A5', '5', '11'),
+(36, 'Nguyễn Duy Khánh', 'Lê Mai Hương', '5A5', '5', '11'),
+(37, 'Võ Thùy Trang', 'Nguyễn Thanh Thủy', '5A5', '5', '11'),
+(38, 'Trần Đức Thắng', 'Lại Thị Hà', '5A5', '5', '11'),
+(39, 'Bùi Thị Linh Trang', 'Phạm Thị Tuyết Dung', '5B4', '6', '11'),
+(40, 'Đỗ Minh Ánh', 'Nguyễn Thị Minh Phượng', '5B4', '6', '11'),
+(41, 'Đặng Vũ Bá ', 'Bùi Thị Hương ', '5B4', '6', '11'),
+(42, 'Lương Quang Thắng', 'Lê Hải Thanh', '5B4', '6', '11'),
+(43, 'Phạm Nguyễn Ngân Hà', 'Nguyễn Mai Chi', '5B4', '6', '11'),
+(44, 'Mai Kim Kh', 'Mai Viết Dung', '5B4', '6', '11'),
+(45, 'Nguyễn Diệu Linh', 'Lưu Thu Hoài', '5B4', '6', '11'),
+(46, 'Đồng Tuyết Anh ', 'Đồng Quốc Hùng ', '5B4', '6', '11'),
+(47, 'Ngô Nam Khánh', 'Ngô Đăng Thịnh', '5B4', '6', '11'),
+(48, 'Nguyễn Nhật Hoàng', 'Mai Thị Hồng Nguyên', '5B4', '6', '11'),
+(49, 'Phạm Nhật Quang', 'Hoàng Thị Tâm Chính', '5B4', '6', '11'),
+(50, 'Nguyễn Phương Uyên', 'Nguyễn Phương Đông', '5B4', '6', '11'),
+(51, 'Nguyễn Quý Hiển', 'Nguyễn Thị Tuyết Lan', '5B4', '6', '11'),
+(52, 'Trịnh Ngọc Anh', 'Nguyễn Thanh Huyền', '5B4', '6', '11'),
+(53, 'Cao Thế Phong', 'Cao Thế Long', '5A4', '7', '11'),
+(54, 'Đào Lê Khôi Nguyên', 'Lê Thị Minh Hoa', '5A4', '7', '11'),
+(55, 'Ngô Minh Anh', 'Nguyễn Anh Thư', '5A4', '7', '11'),
+(56, 'Nguyễn Bá Công', 'Vũ Diễm Hằng', '5A4', '7', '11'),
+(57, 'Lê Anh Cường', 'Lê Thị Huệ', '5A4', '7', '11'),
+(58, 'Nguyễn Hồng Sâm', 'Nguyễn Hồng Dưỡng', '5A4', '7', '11'),
+(59, 'Nguyễn Bá Khôi', 'Nguyễn Bá Trịnh', '5A4', '7', '11'),
+(60, 'Lâm Hải Long', 'Nguyễn Thị Đoan Trang', '5A4', '7', '11'),
+(61, 'Nguyễn Minh Hùng', 'Nguyễn Minh Đức', '5A4', '7', '11'),
+(62, 'Nguyễn Phan Anh', 'Phan Thị Phương', '5A4', '7', '11'),
+(63, 'Vũ Linh Chi', 'Dương Mai Linh', '5A4', '7', '11'),
+(64, 'Vũ Thảo Nhi ', 'Vũ việt Đức ', '5A4', '7', '11'),
+(65, 'Trương Hương Giang', 'Nguyễn Thị Vân', '5A4', '7', '11'),
+(66, 'Lê Nguyên Khánh', 'Lê Văn Trịnh', '5B3', '8', '11'),
+(67, 'Đoàn Khánh Linh', 'Đoãn Nhữ Minh ', '', '', '11'),
+(68, 'Nguyễn Ánh Ngọc', 'Nguyễn Thị Thanh Thủy', '5B3', '8', '11'),
+(69, 'Đào Quốc Thành', 'Đào Ngọc Lâm', '', '', '11'),
+(70, 'Hà Trung Hiếu', 'Hà Thị Hồng Nga', '5B3', '8', '11'),
+(71, 'Đặng Minh Thư', 'Chương Thúy Quỳnh', '5B3', '8', '11'),
+(72, 'Lê Bùi Khánh Linh ', 'Bùi Thị Hồng Việt ', '5B3', '8', '11'),
+(73, 'Nguyễn Minh Ngọc', 'Phạm Thị Thu Nga', '5B3', '8', '11'),
+(74, 'Nguyễn Minh Hùng', 'Thái Thị Cẩm Chi', '5B3', '8', '11'),
+(75, 'Đặng Nam Khánh', 'Đặng Nhật Tân', '5A3', '9', '11'),
+(76, 'Chu Minh Nga', 'Trần Song Hoa', '5A3', '9', '11'),
+(77, 'Phạm Thùy Dương', 'Nguyễn Thị Thúy Hằng', '5A3', '9', '11'),
+(78, 'Đỗ Hương Giang', 'Đỗ Văn Quang', '5A3', '9', '11'),
+(79, 'Dương Duy Anh', 'Nguyễn Phương Anh', '5A3', '9', '11'),
+(80, 'Hà Linh Chi', 'Phạm Thị Hà Giang', '5A3', '9', '11'),
+(81, 'Hoàng Bảo Hưng', 'Đinh Thị Hoa', '5A3', '9', '11'),
+(82, 'Hồ Anh Vũ', 'Nguyễn Thanh Nga', '5A3', '9', '11'),
+(83, 'Hoàng Vân Linh', 'Hoàng Thanh Vân', '5A3', '9', '11'),
+(84, 'Nguyễn Công Minh', 'Nguyễn Công Thái', '5A3', '9', '11'),
+(85, 'Lã Phan Anh', 'Vũ Thị Hòa', '5A3', '9', '11'),
+(86, 'Đoàn Mỹ Linh ', 'Đoãn Nhữ Minh ', '', '', '11'),
+(87, 'Vũ Lê Phương Uyên', 'Vũ Anh Việt', '5A3', '9', '11'),
+(88, 'Nguyễn Thành Trung', 'Nguyễn Thị Hồng Sâm', '5A3', '9', '11'),
+(89, 'Trịnh Gia Linh', 'Trịnh Quang Thanh', '5A3', '9', '11'),
+(90, 'Nguyễn Tùng Sơn', 'Nguyễn Thế Trung/Lê Thị Dinh', '5A3', '9', '11'),
+(91, 'Phạm Đức Anh', 'Bùi Thúy Hương', '5A3', '9', '11'),
+(92, 'Lê Thanh Hiền', 'Lê Kim Thanh', '', '', '11'),
+(93, 'Bùi Duy Minh', 'Bùi Mai Phương', '5A3', '9', '11'),
+(94, 'Vũ Bình Sơn', 'Trương Thị Việt Hà', '5A3', '9', '11'),
+(95, 'Đỗ Đình Long', 'Nguyễn Thị Nga', '', '', '11'),
+(96, 'Trần Nguyễn Hoàng Lan', 'Trần Thanh Long', '5A3', '9', '11'),
+(97, 'Bùi Thị Vân Hà', 'Đàm Thị Thanh Vân', '5A3', '10', '11'),
+(98, 'Nguyễn Trung Hiếu', 'Nguyễn Việt Dũng', '5A3', '10', '11'),
+(99, 'Nguyễn Cao Thành', 'Cao Thị Phương Lan', '5A3', '10', '11'),
+(100, 'Khúc Thị Khánh Huyền', 'Lại Thị Bích Hồng', '5A3', '10', '11'),
+(101, 'Nguyễn Quang Trung ', 'Nguyễn Quang Vinh ', '5A3', '10', '11'),
+(102, 'Vũ Quốc Đạt', 'Nguyễn Khánh Kiều Trang', '5A3', '10', '11'),
+(103, 'Nguyễn Đức Bình', 'Nguyễn Đăng Sáu', '5B2', '11', '11'),
+(104, 'Lê Hoàng Minh', 'Phạm Mai Hương', '5B2', '11', '11'),
+(105, 'Lương Hiền Nga', 'Nguyễn Thị Kim Oanh', '5B2', '11', '11'),
+(106, 'Lê Thái Dương', 'Lê Xuân Hùng', '5B2', '11', '11'),
+(107, 'Mai Thu Huyền', 'Đào Thị Thu Hằng', '5B2', '11', '11'),
+(108, 'Nguyễn Việt Trung', 'Nguyễn Xuân Ngọc', '5B2', '11', '11'),
+(109, 'Lê Thành Vinh', 'Lương Thu Hằng', '5B2', '12', '11'),
+(110, 'Nguyễn Đăng Thành', 'Nguyễn Đăng Khoa', '5B2', '12', '11'),
+(111, 'Phạm Văn Khánh', 'Nguyễn Thị Thu Phương', '5B2', '12', '11'),
+(112, 'Lê Ngọc Phương Nhi', 'Trương Thị Ngọc Trang', '5B2', '14', '11'),
+(113, 'Ngô Thái Hoàng Anh', 'Hoàng Thị Hòa', '5B2', '14', '11'),
+(114, 'Hoàng Nghĩa Hiếu', 'Nghiêm Thị Liên', '5B2', '15', '11'),
+(115, 'Vũ Phương Nhung', 'Nguyễn Thị Bích Thủy', '5B2', '15', '11'),
+(116, 'Phạm Việt Anh ', 'Nguyễn Thị Ngọc Thủy', '5B2', '11,5', '11'),
+(117, 'Lê Yến Vy', 'Đỗ Thu Hiền', '5B5', '1,5', '11'),
+(118, 'Nguyễn Minh Hà Anh', 'Nguyễn Thu Hằng', '5B5', '1,5', '11'),
+(119, 'Nguyễn Vũ Đức Trọng', 'Nguyễn Xuân Thành', '5B5', '1,5', '11'),
+(120, 'Trần Đức Anh', 'Trần Kim Thủy', '5B5', '1,5', '11'),
+(121, 'Nguyễn Minh An', 'Nguyễn Minh Tuấn', '5B5', '1,5', '11'),
+(122, 'Vũ Trang Anh', 'Vũ Yên/Lê Thị Minh', '5B5', '1,5', '11'),
+(123, 'Nguyễn Trang Linh', 'Nguyễn Duy Phương', '5B2', '10,5', '11'),
+(124, 'Nghiêm Xuân Sơn', 'Nghiêm Quyết Thắng', '', '', '11'),
+(125, 'Phạm Thị Hằng', 'Phạm Thế Hưng', '5B2', '10,5', '11'),
+(126, 'Trần Hải Anh', 'Nguyễn Thị Ánh Tuyết', '5B2', '10,5', '11'),
+(127, 'Vũ Nhật Anh ', 'Vũ Thanh Hoa', '5B2', '10,5', '11'),
+(128, 'Đinh Viết Quang', 'Nguyễn Thị Kim Ngọc', '5B2', '11,5', '11'),
+(129, 'Khổng Minh Ngọc', 'Nguyễn Thị Hoài ', '5B2', '11,5', '11'),
+(130, 'Nguyễn Huy Quang', 'Nguyễn Huy Trung', '5B2', '11,5', '11'),
+(131, 'Lê Minh Đức', 'Lê Văn Thắng', '5B2', '11,5', '11'),
+(132, 'Nguyễn Thế Phúc Kháng', 'Thẩm Kim Hoàn', '5B2', '11,5', '11'),
+(133, 'Nguyễn Thị Mai Sương', 'Phạm Thị Lệ Hoa', '5B2', '11,5', '11'),
+(134, 'Nguyễn Tuấn Minh', 'Nguyễn Bá Hùng', '5B2', '11,5', '11'),
+(135, 'Hoàng Nguyễn Minh Trang', 'Nguyễn Thị Hoa', '5B2', '12,5', '11'),
+(136, 'Nguyễn Văn Duy Anh', 'Phạm Châu Anh', '5B2', '12,5', '11'),
+(137, 'Đỗ Nam Thắng', 'Nguyễn Thị Thu Hà', '5B2', '13,5', '11'),
+(138, 'Nguyễn Đức Nghĩa', 'Nguyễn Bá Khương', '5B2', '13,5', '11'),
+(139, 'Nguyễn Văn Kiên', 'Nguyễn Văn Tuyến', '5B5', '2,5', '11'),
+(140, 'Phạm Quỳnh Hương', 'Phạm Xuân Hải', '5B5', '2,5', '11'),
+(141, 'Phạm Khánh Huyền', 'Nguyễn Thị Việt Hà', '', '', '11'),
+(142, 'Phạm Tuấn Vũ', 'Nguyễn Thu Huyền', '5B5', '2,5', '11'),
+(143, 'Đỗ Quốc Trung', 'Đỗ Hùng Kiên', '5B5', '3,5', '11'),
+(144, 'Nguyễn Hải Đăng', 'Nguyễn Vũ Trường Giang', '5B5', '3,5', '11'),
+(145, 'Nguyễn Hữu Lực', 'Nguyễn Thúy Nga', '5B5', '3,5', '11'),
+(146, 'Nguyễn Minh Anh', 'Nguyễn văn Cương', '5B5', '3,5', '11'),
+(147, 'Dương Xuân Quang', 'Trần Thị Xuân', '5B5', '3,5', '11'),
+(148, 'Nguyễn Phương Anh', 'Lê Thị Thanh Huyền ', '5B5', '3,5', '11'),
+(149, 'Nguyễn Phan Bách', 'Phan Thị Hiền Lương', '5B5', '3,5', '11'),
+(150, 'Đặng Tuấn Hiệp', 'Đặng Ngọc Quý', '5A5', '4,5', '11'),
+(151, 'Đào Hồng Ngọc', 'Dương Mai Hoa', '5A5', '4,5', '11'),
+(152, 'Trần Lâm Chi', 'Phạm Thu Hà', '5A5', '4,5', '11'),
+(153, 'Nguyễn Hà Trinh', 'Nguyễn Thị Phương', '5A5', '4,5', '11'),
+(154, 'Nguyễn Phương Anh', 'Nguyễn Văn Hưởng', '5A5', '4,5', '11'),
+(155, 'Nguyễn Duy Khánh', 'Nguyễn Thanh Hồng', '5A5', '4,5', '11'),
+(156, 'Nguyễn Minh Phúc', 'Hoàng Lan Anh', '5A5', '4,5', '11'),
+(157, 'Trần Ngọc Cường', 'Ngô Thị Hương', '5A5', '4,5', '11'),
+(158, 'Nguyễn Xuân Duy Anh', 'Tạ Ngọc Anh', '5A5', '4,5', '11'),
+(159, 'Đặng Trần Văn Nguyên', 'Trần Đỗ Hải Yến', '5B4', '5,5', '11'),
+(160, 'Đỗ Diệu Minh', 'Vũ Thị Thu Thủy', '5B4', '5,5', '11'),
+(161, 'Đặng Trần Cường', 'Đặng Trần Chính', '5B4', '5,5', '11'),
+(162, 'Đỗ Thị Thanh Vân', 'Nguyễn Thị Kim Hoa', '5B4', '5,5', '11'),
+(163, 'Vũ Thúy Quỳnh', 'Vũ Thị Hương', '5B4', '5,5', '11'),
+(164, 'Hà Trần Khánh Linh', 'Hà Ngọc Dũng', '', '', '11'),
+(165, 'Trần Ánh Phương', 'Trần Nguyệt Ánh', '5B4', '5,5', '11'),
+(166, 'Nguyễn Hữu Trung Kiên', 'Nguyễn Thanh Hoa', '5B4', '5,5', '11'),
+(167, 'Đỗ Hoàng Dương ', 'Đỗ Hùng Mạnh', '5B4', '5,5', '11'),
+(168, 'Đỗ Thùy Trang', 'Vũ Thị Khánh', '5B4', '5,5', '11'),
+(169, 'Nguyễn Hà Chi', 'Nguyễn Thị Thu Hiền', '5B4', '5,5', '11'),
+(170, 'Trần Minh Anh', 'Tôn Nữ Lan Phương', '5B4', '5,5', '11'),
+(171, 'Tôn Thất Vương Anh', 'Phạm Thị Hà', '5B4', '5,5', '11'),
+(172, 'Nguyễn Thị Vân Đan', 'Lê Thị Ngân', '5B4', '5,5', '11'),
+(173, 'Phùng Thùy Trang', 'Nguyễn Thị Lan', '5B4', '5,5', '11'),
+(174, 'Trần Thảo Vi', 'Lê Thị Thanh Hương', '', '', '11'),
+(175, 'Nguyễn Tiến Trường', 'Nguyễn Thị Xuân', '5B4', '5,5', '11'),
+(176, 'Vũ Đặng Anh Quân', 'Vũ Anh Phong', '5B4', '5,5', '11'),
+(177, 'Trần Phương Lam', 'Trịnh Mai Ly', '5B4', '5,5', '11'),
+(178, 'Phạm Hồng Phúc', 'Phạm Hồng Minh', '5A4', '6,5', '11'),
+(179, 'Lê Phan Anh Thư', 'Trịnh Phan Liên', '5A4', '6,5', '11'),
+(180, 'Đoàn Ngọc Minh', 'Vương Thị Hồng', '5A4', '6,5', '11'),
+(181, 'Đỗ Trung Nghĩa', 'Đỗ Quang Minh', '5A4', '6,5', '11'),
+(182, 'Hoàng Diệu Linh', 'Hoàng Thị Hoài Yến', '5A4', '6,5', '11'),
+(183, 'Lương Hồng Dương', 'Nguyễn Thúy Hằng', '5A4', '6,5', '11'),
+(184, 'Nguyễn Quang Minh', 'Hà Sơn Bình', '5A4', '6,5', '11'),
+(185, 'Lê Thùy Hương', 'Kiều Thanh Hải', '5A4', '6,5', '11'),
+(186, 'Phan Nguyễn Phương Nhi', 'Nguyễn Thị Minh Phương', '5A4', '6,5', '11'),
+(187, 'Nguyễn Quang Phúc Thành', 'Bùi Thu Thủy', '5A4', '6,5', '11'),
+(188, 'Trần Hải Bình', 'Kiều Thị Miên', '5A4', '6,5', '11'),
+(189, 'Nguyễn Việt Hưng', 'Đặng Thị Lành', '5A4', '6,5', '11'),
+(190, 'Trần Hải Hà', 'Trần Đăng', '5A4', '6,5', '11'),
+(191, 'Nguyễn Lâm Khoa', 'Nguyễn Tiến Bình', '5A4', '6,5', '11'),
+(192, 'Cao Phương Quỳnh', 'Cao Thành Phương', '5B3', '7,5', '11'),
+(193, 'Đặng Xuân Nguyên', 'Nguyễn Thị Hồng', '5B3', '7,5', '11'),
+(194, 'Đỗ Khôi Nguyên', 'Hoàng Thị Ngọc Thủy', '5B3', '7,5', '11'),
+(195, 'Đinh Huệ Linh', 'Lê Ngọc Huệ', '5B3', '7,5', '11'),
+(196, 'Đỗ Hà Chi', 'Nguyễn Thị Việt Hà', '5B3', '7,5', '11'),
+(197, 'Hoàng Trung Hiếu', 'Hoàng Xuân Sơn', '5B3', '7,5', '11'),
+(198, 'Đỗ Huy Anh', 'Hàn Ngọc Lan', '5B3', '7,5', '11'),
+(199, 'Trần Thu Ngân', 'Trần Mai Liên', '5B3', '7,5', '11'),
+(200, 'Phạm Thùy Linh ', 'Nguyễn Thị Ngọc Lan ', '5B3', '7,5', '11'),
+(201, 'Phan Trần Minh Ngọc', 'Phan Thành Dương', '', '', '11'),
+(202, 'Nguyễn Bảo Trang', 'Bùi Thu Hằng', '5B3', '7,5', '11'),
+(203, 'Nguyễn Tú Minh', 'Phạm Hồng Hoa', '5B3', '7,5', '11'),
+(204, 'Nguyễn Tài Phúc', 'Phạm Thị Thúy Lan', '5B3', '7,5', '11'),
+(205, 'Trần Minh Tùng', 'Nguyễn Thị Hằng', '5B3', '7,5', '11'),
+(206, 'Trần Hoàng Anh Quân', 'Trần Hoàng Anh', '5B3', '7,5', '11'),
+(207, 'Vũ Đức Kiên', 'Vũ Trí Thành', '5B3', '7,5', '11'),
+(208, 'Nguyễn Tường Vy', 'Đỗ Thị Hoài Thu', '5B3', '7,5', '11'),
+(209, 'Nguyễn Duy Uyên', 'Nguyễn Thị Thu Hương', '5B3', '8,5', '11'),
+(210, 'Lê Thái Chí', 'Nguyễn Phương Anh', '5B3', '8,5', '11'),
+(211, 'Phạm Vũ Minh Đức', 'Vũ Thị Yến', '5B3', '8,5', '11'),
+(212, 'Nguyễn Phương Mai', 'Bùi Thị Mai Hương', '5B3', '8,5', '11'),
+(213, 'Trịnh Nam Phong', 'Dương Thị Hạnh Phúc', '5B3', '8,5', '11'),
+(214, 'Trần Nguyễn Vân Tiên', 'Nguyễn Thị Thanh Thủy', '5B3', '8,5', '11'),
+(215, 'Nguyễn Văn Hảo Minh', 'Nguyễn Huy Bình', '5B3', '8,5', '11'),
+(216, 'Vũ Thị Mai Phương', 'Nguyễn Thanh Tú', '5B3', '8,5', '11'),
+(217, 'Nguyễn Tuấn Khanh', 'Trần Thị Hương', '5A3', '9,5', '11'),
+(218, 'Đoàn Nguyễn Hoàng Long', 'Nguyễn Thu Hương', '5A3', '9,5', '11'),
+(219, 'Đỗ Xuân Nghĩa ', 'Phan Thị Hải Nam ', '5A3', '9,5', '11'),
+(220, 'Ngô Quang Phúc', 'Nguyễn Thị Ánh Nguyệt', '5A3', '9,5', '11'),
+(221, 'Nguyễn Diệu Linh', 'Nguyễn Thị Thanh Thủy', '5A3', '9,5', '11'),
+(222, 'Phạm Ngọc Bách', 'Vũ Thị Hồng Hải', '5A3', '9,5', '11'),
+(223, 'Nguyễn Trung Kiên', 'Nguyễn Thị Hiền', '5A3', '9,5', '11'),
+(224, 'Trần Đức Toàn', 'Hà Mỹ Hạnh', '5A3', '9,5', '11'),
+(1, 'Nguyễn Tiến M', 'Nguyễn Tiến A', '5A1', '4', '12'),
+(2, 'Nguyễn Thị T', 'Nguyễn Thị B', '5A1', '6', '12'),
+(3, 'Nguyễn Thị L', 'Nguyễn Thị C', '5A1', '7', '12'),
+(4, 'Nguyễn Sơn T', 'Nguyễn Sơn D', '5A2', '9', '12'),
+(5, 'Nguyễn Duy V', 'Nguyễn Duy E', '5A2', '7', '12'),
+(6, 'Nguyễn Thị H', 'Nguyễn Thị F', '5A2', '6', '12'),
+(7, 'Nguyễn Văn H', 'Nguyễn Văn G', '5A2', '8', '12');
 
 -- --------------------------------------------------------
 
@@ -1258,14 +1288,15 @@ CREATE TABLE IF NOT EXISTS `unix_dotthi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dotthi` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `unix_dotthi`
 --
 
 INSERT INTO `unix_dotthi` (`id`, `dotthi`) VALUES
-(11, 'Điểm test lần 2 khóa tháng 7');
+(11, 'Điểm test lần 2 khóa tháng 7'),
+(12, 'demo');
 
 -- --------------------------------------------------------
 
@@ -1325,16 +1356,16 @@ CREATE TABLE IF NOT EXISTS `unix_hoidap` (
   `luotxem` int(11) DEFAULT NULL,
   `luottraloi` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_hoidap`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `unix_hoidap`
 --
 
 INSERT INTO `unix_hoidap` (`ngaytraloi`, `id_hoidap`, `ten`, `sodt`, `noidung`, `traloi`, `ngaygui`, `luotxem`, `luottraloi`) VALUES
-('2012-09-05 10:38:10', 7, 'Nguyễn Đức Tiến', '0987654321', '<p>T&ocirc;i l&agrave; Nguyễn Đức Tiến, t&ocirc;i c&oacute; một thằng ch&aacute;u &nbsp;t&ecirc;n l&agrave; Nguyễn Tiến Mạnh, ch&aacute;u đang học lớp 3, hiện tại ch&aacute;u học rất dốt....</p>', '<p>Dốt nhưng m&agrave; ngoan l&agrave; ok ! Ha ha ha ! hahaha</p>', '2012-08-19 17:21:56', 19, 4),
+('2012-09-05 10:38:10', 7, 'Nguyễn Đức Tiến', '0987654321', '<p>T&ocirc;i l&agrave; Nguyễn Đức Tiến, t&ocirc;i c&oacute; một thằng ch&aacute;u &nbsp;t&ecirc;n l&agrave; Nguyễn Tiến Mạnh, ch&aacute;u đang học lớp 3, hiện tại ch&aacute;u học rất dốt....</p>', '<p>Dốt nhưng m&agrave; ngoan l&agrave; ok ! Ha ha ha ! hahaha</p>', '2012-08-19 17:21:56', 20, 4),
 ('2012-08-27 13:55:07', 8, 'Nguyễn Đức Tiến', '0987384249', '<p>text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;</p>', '<p>trả lời tại đ&acirc;y</p>', '2012-08-19 17:22:16', 21, 5),
-('2012-08-27 13:55:34', 9, 'Nguyễn Đức Tiến', '0987384249', '<p>text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;</p>', '', '2012-08-19 17:44:41', 14, 7);
+('2012-08-27 13:55:34', 9, 'Nguyễn Đức Tiến', '0987384249', '<p>text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;text-indent text-indent&nbsp;</p>', '', '2012-08-19 17:44:41', 15, 7);
 
 -- --------------------------------------------------------
 
@@ -1398,14 +1429,14 @@ CREATE TABLE IF NOT EXISTS `unix_homepage` (
 --
 
 INSERT INTO `unix_homepage` (`muc_id`, `tenmuc`, `dulieu`) VALUES
-(1, 'Khóa học', '<p>Chương tr&igrave;nh đ&agrave;o tạo tại UNIX lu&ocirc;n được cập nhật nhằm cung cấp những kiến thức mới nhất với mục ti&ecirc;u hỗ trợ tối đa về kiến thức d&agrave;nh cho học vi&ecirc;n tham gia c&aacute;c kh&oacute;a đ&agrave;o tạo tại UNIX.</p>'),
-(2, 'Phương pháp đào tạo', '<p>C&ocirc;ng ty Cổ phần UNIX cung cấp c&aacute;c chương tr&igrave;nh ph&aacute;t triển c&aacute; nh&acirc;n h&agrave;ng đầu cho c&aacute;c em học sinh tr&ecirc;n c&aacute;c lĩnh vực: Học thuật (To&aacute;n, Văn), Ph&aacute;t triển c&aacute; nh&acirc;n ..Với đội ngũ giảng vi&ecirc;n đ&agrave;o tạo li&ecirc;n tục được cử đi học c&aacute;c kh&oacute;a học h&agrave;ng đầu trong v&agrave; ngo&agrave;i nước, ch&uacute;ng t&ocirc;i lu&ocirc;n đảm bảo rằng c&aacute;c học sinh tham gia c&aacute;c kh&oacute;a đ&agrave;o tạo b&ecirc;n UNIX sẽ được tiếp cận với những phương ph&aacute;p đ&agrave;o tạo mới nhất v&agrave; li&ecirc;n tục được cải tiến.</p>\r\n<p class="MsoNormal"><span lang="EN-US">Chương tr&igrave;nh :"Bứt ph&aacute; m&ocirc;n To&aacute;n trường H&agrave; Nội Ams" đ&atilde; được thiết kế c&ocirc;ng phu v&agrave; với sự phối hợp của c&aacute;c gi&aacute;o vi&ecirc;n , chuy&ecirc;n gia huấn luyện, c&aacute;c em sẽ:</span></p>\r\n<p class="MsoListParagraphCxSpFirst"><strong><span lang="EN-US">Sở hữu c&aacute;c chiến thuật l&agrave;m b&agrave;i hiệu quả để n&acirc;ng tối đa điểm số của m&igrave;nh.</span></strong></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">Hi&ecirc;̉u r&otilde; phương ph&aacute;p giải của hơn 75 dạng to&aacute;n của hơn 10 chuy&ecirc;n đ&ecirc;̀ thường xuy&ecirc;n xu&acirc;́t hi&ecirc;̣n trong kỳ thi.</span></strong></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">V&acirc;̣n dụng những phương ph&aacute;p giải to&aacute;n đặc bi&ecirc;̣t t&igrave;m đ&aacute;p s&ocirc;́ đ&uacute;ng cho c&aacute;c b&agrave;i to&aacute;n chỉ trong thời gian 15-30 gi&acirc;y.</span></strong></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">Ho&agrave;n thi&ecirc;̣n từng kỹ năng xử l&yacute; c&aacute;c b&agrave;i to&aacute;n.</span></strong></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">Quy&ecirc;́t t&acirc;m n&ocirc;̃ lực cho kỳ thi m&ocirc;̣t c&aacute;ch tự gi&aacute;c v&agrave; say m&ecirc;.</span></strong></p>\r\n<p class="MsoListParagraphCxSpLast"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">C&oacute; thể thi v&agrave;o bất kỳ một trường cấp 2 n&agrave;o tại H&agrave; Nội với kiến thức được học.</span></strong></p>\r\n<p>&nbsp;</p>'),
-(3, 'Sự kiện', '<p>C&aacute;c chương tr&igrave;nh sự kiện tại UNIX li&ecirc;n tục cập nhật. Với đội ngũ giảng vi&ecirc;n, chuy&ecirc;n gia đ&agrave;o tạo gi&agrave;u kinh nghiệm trong v&agrave; ngo&agrave;i nước, mục ti&ecirc;u lớn nhất của ch&uacute;ng t&ocirc;i l&agrave; đem lại cho qu&yacute; kh&aacute;ch mời tham dự sự h&agrave;i l&ograve;ng tr&ecirc;n cả mức mong đợi.</p>'),
+(1, 'Khóa học', '<p><span style="background-color: #ffff00;">Chương tr&igrave;nh đ&agrave;o tạo tại UNIX lu&ocirc;n được cập nhật nhằm cung cấp những kiến thức mới nhất với mục ti&ecirc;u hỗ trợ tối đa về kiến thức d&agrave;nh cho học vi&ecirc;n tham gia c&aacute;c kh&oacute;a đ&agrave;o tạo tại UNIX.</span></p>'),
+(2, 'Phương pháp đào tạo', '<p><span style="background-color: #99cc00;">C&ocirc;ng ty Cổ phần UNIX cung cấp c&aacute;c chương tr&igrave;nh ph&aacute;t triển c&aacute; nh&acirc;n h&agrave;ng đầu cho c&aacute;c em học sinh tr&ecirc;n c&aacute;c lĩnh vực: Học thuật (To&aacute;n, Văn), Ph&aacute;t triển c&aacute; nh&acirc;n ..Với đội ngũ giảng vi&ecirc;n đ&agrave;o tạo li&ecirc;n tục được cử đi học c&aacute;c kh&oacute;a học h&agrave;ng đầu trong v&agrave; ngo&agrave;i nước, ch&uacute;ng t&ocirc;i lu&ocirc;n đảm bảo rằng c&aacute;c học sinh tham gia c&aacute;c kh&oacute;a đ&agrave;o tạo b&ecirc;n UNIX sẽ được tiếp cận với những phương ph&aacute;p đ&agrave;o tạo mới nhất v&agrave; li&ecirc;n tục được cải tiến.</span></p>\r\n<p class="MsoNormal"><span lang="EN-US"><span style="background-color: #99cc00;">Chương tr&igrave;nh :"Bứt ph&aacute; m&ocirc;n To&aacute;n trường H&agrave; Nội Ams" đ&atilde; được thiết kế c&ocirc;ng phu v&agrave; với sự phối hợp của c&aacute;c gi&aacute;o vi&ecirc;n , chuy&ecirc;n gia huấn luyện, c&aacute;c em sẽ:</span></span></p>\r\n<p class="MsoListParagraphCxSpFirst"><strong><span lang="EN-US"><span style="background-color: #99cc00;">Sở hữu c&aacute;c chiến thuật l&agrave;m b&agrave;i hiệu quả để n&acirc;ng tối đa điểm số của m&igrave;nh.</span></span></strong></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span style="background-color: #99cc00;"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">Hi&ecirc;̉u r&otilde; phương ph&aacute;p giải của hơn 75 dạng to&aacute;n của hơn 10 chuy&ecirc;n đ&ecirc;̀ thường xuy&ecirc;n xu&acirc;́t hi&ecirc;̣n trong kỳ thi.</span></strong></span></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span style="background-color: #99cc00;"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">V&acirc;̣n dụng những phương ph&aacute;p giải to&aacute;n đặc bi&ecirc;̣t t&igrave;m đ&aacute;p s&ocirc;́ đ&uacute;ng cho c&aacute;c b&agrave;i to&aacute;n chỉ trong thời gian 15-30 gi&acirc;y.</span></strong></span></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span style="background-color: #99cc00;"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">Ho&agrave;n thi&ecirc;̣n từng kỹ năng xử l&yacute; c&aacute;c b&agrave;i to&aacute;n.</span></strong></span></p>\r\n<p class="MsoListParagraphCxSpMiddle"><span style="background-color: #99cc00;"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">Quy&ecirc;́t t&acirc;m n&ocirc;̃ lực cho kỳ thi m&ocirc;̣t c&aacute;ch tự gi&aacute;c v&agrave; say m&ecirc;.</span></strong></span></p>\r\n<p class="MsoListParagraphCxSpLast"><span style="background-color: #99cc00;"><span lang="EN-US">&middot;&nbsp;&nbsp;&nbsp;</span><strong><span lang="EN-US">C&oacute; thể thi v&agrave;o bất kỳ một trường cấp 2 n&agrave;o tại H&agrave; Nội với kiến thức được học.</span></strong></span></p>\r\n<p>&nbsp;</p>'),
+(3, 'Sự kiện', '<p><span style="background-color: #3366ff;">C&aacute;c chương tr&igrave;nh sự kiện tại UNIX li&ecirc;n tục cập nhật. Với đội ngũ giảng vi&ecirc;n, chuy&ecirc;n gia đ&agrave;o tạo gi&agrave;u kinh nghiệm trong v&agrave; ngo&agrave;i nước, mục ti&ecirc;u lớn nhất của ch&uacute;ng t&ocirc;i l&agrave; đem lại cho qu&yacute; kh&aacute;ch mời tham dự sự h&agrave;i l&ograve;ng tr&ecirc;n cả mức mong đợi.</span></p>'),
 (4, 'slide', 'http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0596.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0596.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0601.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0601.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0616.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0616.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/1123MaxWidth640MaxHeight480.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/1123MaxWidth640MaxHeight480.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/7.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/7.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0341.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0341.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0364MaxWidth1024MaxHeight768.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0364MaxWidth1024MaxHeight768.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0350.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0350.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/33MaxWidth640MaxHeight480.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/33MaxWidth640MaxHeight480.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0770.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0770.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0704.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0704.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0719.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0719.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/IMG_3318MaxWidth640MaxHeight480.jpg*http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/IMG_3318MaxWidth640MaxHeight480.jpg'),
 (5, 'images', 'http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0596.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0601.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0616.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/1123MaxWidth640MaxHeight480.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/7.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0341.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0364MaxWidth1024MaxHeight768.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0350.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/33MaxWidth640MaxHeight480.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0770.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0704.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0719.jpg,http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/IMG_3318MaxWidth640MaxHeight480.jpg'),
 (6, 'video', 'http://www.youtube.com/watch?v=mlUMDpcg9Kg'),
-(7, 'Chúng tôi là ai', '<p>C&ocirc;ng ty cổ phần Unix, l&agrave; một trong những c&ocirc;ng ty cung cấp c&aacute;c chương tr&igrave;nh đ&agrave;o tạo chất lượng cao h&agrave;ng đầu Việt Nam. Unix mang đến những c&ocirc;ng nghệ đ&agrave;o tạo ti&ecirc;n tiến v&agrave; c&aacute;c chương tr&igrave;nh ph&aacute;t triển c&aacute; nh&acirc;n h&agrave;ng đầu tr&ecirc;n thế giới.</p>'),
-(8, 'Chúng tôi làm gì', '<p>C&aacute;c kh&oacute;a học kỹ năng thay đổi tư duy v&agrave; c&aacute;ch nghĩ, ch&uacute;ng t&ocirc;i mang lại những trải nghiệm ho&agrave;n to&agrave;n kh&aacute;c biệt. M&ocirc;i trường l&agrave;m việc năng động, chuy&ecirc;n nghiệp Unix lu&ocirc;n ch&agrave;o đ&oacute;n những con người c&oacute; năng lực tham gia đồng h&agrave;nh c&ugrave;ng ch&uacute;ng t&ocirc;i</p>');
+(7, 'Chúng tôi là ai', '<p><span style="background-color: #808080;">C&ocirc;ng ty cổ phần Unix, l&agrave; một trong những c&ocirc;ng ty cung cấp c&aacute;c chương tr&igrave;nh đ&agrave;o tạo chất lượng cao h&agrave;ng đầu Việt Nam. Unix mang đến những c&ocirc;ng nghệ đ&agrave;o tạo ti&ecirc;n tiến v&agrave; c&aacute;c chương tr&igrave;nh ph&aacute;t triển c&aacute; nh&acirc;n h&agrave;ng đầu tr&ecirc;n thế giới.</span></p>'),
+(8, 'Chúng tôi làm gì', '<p><span style="background-color: #ff99cc;">C&aacute;c kh&oacute;a học kỹ năng thay đổi tư duy v&agrave; c&aacute;ch nghĩ, ch&uacute;ng t&ocirc;i mang lại những trải nghiệm ho&agrave;n to&agrave;n kh&aacute;c biệt. M&ocirc;i trường l&agrave;m việc năng động, chuy&ecirc;n nghiệp Unix lu&ocirc;n ch&agrave;o đ&oacute;n những con người c&oacute; năng lực tham gia đồng h&agrave;nh c&ugrave;ng ch&uacute;ng t&ocirc;i</span></p>');
 
 -- --------------------------------------------------------
 
@@ -1511,12 +1542,12 @@ CREATE TABLE IF NOT EXISTS `unix_lichhoithao` (
 --
 
 INSERT INTO `unix_lichhoithao` (`sukien`, `thoigian`, `diadiem`, `donvitochuc`, `tinhtrang`) VALUES
-('Sự kiện 1', 'Thời gian 1', 'Địa điểm 1', 'Đơn vị 1', NULL),
-('Sự kiện 2', 'Thời gian 2', 'Địa điểm 2', 'Đơn vị 2', NULL),
+('Lê Xuân Tiến', 'Thời gian 1', 'Địa điểm 1', 'Đơn vị 1', NULL),
+('Ngô Thị Lan', 'Thời gian 2', 'Địa điểm 2', 'Đơn vị 2', NULL),
 ('Sự kiện 3', 'Thời gian 3', 'Địa điểm 3', 'Đơn vị 3', NULL),
 ('Sự kiện 4', 'Thời gian 4', 'Địa điểm 4', 'Đơn vị 4', NULL),
 ('Sự kiện 5', 'Thời gian 5', 'Địa điểm 5', 'Đơn vị 5', NULL),
-(NULL, NULL, 'hdhdh', 'Ddown vi 6', NULL);
+('Lịch hội thảo', NULL, 'hdhdh', 'Ddown vi 6', NULL);
 
 -- --------------------------------------------------------
 
@@ -1707,6 +1738,29 @@ INSERT INTO `unix_sach` (`sach_id`, `tensach`, `mota`, `loaisach_id`, `tacgia`, 
 (45, 'Chương trình :"Bứt phá môn Toán trường Hà Nội Ams" ngày 25.3', '<p><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/41.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/1ipgbmp1.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/1ipgbmp4254.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/22.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/137.jpg" alt="" width="720" height="576" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/237.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/189.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/99.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/124.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/89.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/45.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/37.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/31.jpg" alt="" width="720" height="576" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/33.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/29.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/163.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/205.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/197.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/180.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/133.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 25 thang 3/132.jpg" alt="" /></p>', 3, 'Unix JSC', '../assets/images/6 [Max Width 640 Max Height 480].jpg'),
 (46, 'Chương trình :"Quà tặng đặc biệt cho kỳ thi trường Hà Nội Amsterdam"', '<p><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0169.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0174.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0178.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0192.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0193.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0211.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0235.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0244.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0260.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0267.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0273.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0282.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0296.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0304.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0318.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0336.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0342.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0350.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0365.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0368.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0377.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0418.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0456.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0457.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0467.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0469.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0474.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0478.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0496.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0505.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0510.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0508.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0518.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0522.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0525.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0529.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0531.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0535.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0545.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0553.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0556.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0572.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0582.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0593.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0596.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0601.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0614.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0616.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0622.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0631.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0634.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0640.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0644.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0648.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0656.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0658.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0665.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0667.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0672.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0680.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0682.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0684.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0687.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0689.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0691.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0695.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0699.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0706.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0702.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0705.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0715.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0726.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0755.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0769.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0775.jpg" alt="" /><img src="http://i1168.photobucket.com/albums/r484/manhtienunix/Hoi thao ngay 20 thang 5/Hoi thao ngay 10 thang 6/DSC_0778.jpg" alt="" /></p>', 3, 'Unix JSC', '../assets/images/DSC_0721.JPG'),
 (50, 'Clip chia tay cực "độc" của 300 học sinh lớp 12 trường Ams ', '<p><a href="http://www.youtube.com/watch?v=1uWcpU2x9As">http://www.youtube.com/watch?v=1uWcpU2x9As</a></p>', 1, '', '../assets/images/ams_1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unix_slide`
+--
+
+CREATE TABLE IF NOT EXISTS `unix_slide` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tieude` text COLLATE utf8_unicode_ci,
+  `noidung` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `unix_slide`
+--
+
+INSERT INTO `unix_slide` (`id`, `tieude`, `noidung`) VALUES
+(1, 'Slide 1', '<p><img src="http://localhost/unix/assets/images/Slide/34 - Copy.jpg" alt="" width="1024" height="768" /></p>'),
+(2, 'Slide 2', '<p><img src="http://localhost/unix/assets/images/Slide/35 - Copy.jpg" alt="" width="1024" height="768" /></p>'),
+(3, 'Slide 3', '<p><img src="http://localhost/unix/assets/images/Slide/41.jpg" alt="" width="1024" height="768" /></p>'),
+(4, 'Slide 4', '<p><img src="http://localhost/unix/assets/images/Slide/52.jpg" alt="" width="1920" height="1200" /></p>');
 
 -- --------------------------------------------------------
 
