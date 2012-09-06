@@ -12,12 +12,14 @@ class Homepage extends NIW_controller {
 	
 	public function index()
 	{
-		$data['coso']=$this->Mhomepage->getCoSo(0);
-		$data['giangday']=$this->Mhomepage->getCoSo(1);
-		$data['title']='[Name Defined] | Home';
-		$data['loaikhoahoc']=$this->Mhomepage->list_loaikhoahoc();
-		$data['module'] = $this->module;
-		$data['page'] = 'frontpage';
+		$data['lienhe']		=	$this->Mhomepage->getLienHe();
+		$data['hinhanh']	=	$this->Mhomepage->getHinhAnh();
+		$data['coso']		=	$this->Mhomepage->getCoSo(0);
+		$data['giangday']	=	$this->Mhomepage->getCoSo(1);
+		$data['title']		=	'[Name Defined] | Home';
+		$data['loaikhoahoc']=	$this->Mhomepage->list_loaikhoahoc();
+		$data['module'] 	= 	$this->module;
+		$data['page'] 		= 	'frontpage';
 		$this->load->view('front/container',$data);
 	}
 }

@@ -25,5 +25,17 @@
 			$query=$this->db->get('tn_coso');
 			return $query->row($stt);
 		}
+		
+		function getHinhAnh()
+		{
+			$query=$this->db->get('tn_hinhanh');
+			return $query->result();
+		}
+		
+		function getLienHe()
+		{
+			$query=$this->db->get('tn_lienhe');
+			return $query->row();
+		}
 	}
 ?>

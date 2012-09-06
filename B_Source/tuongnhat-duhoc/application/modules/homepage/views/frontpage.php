@@ -38,21 +38,48 @@
                                                         </td>
                                                         <td colspan="2" valign="top" style="padding-top: 8px;">
                                                             <table>
-                                                            	<?php 
-																	foreach($loaikhoahoc as $loai)
-																	{
-																?>
+                                                            	
 	                                                                <tr class="sectiontext">
 	                                                                    <td width="20px">
 	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
 	                                                                    </td>
 	                                                                    <td align="left">
-	                                                                        <a style="color: white" href=""><?php echo $loai->ten; ?></a>
+	                                                                        <a style="color: white" href="<?php echo base_url() ?>khoahoc/daihoc">Đại học</a>
 	                                                                    </td>
 	                                                                </tr>
-                                                              	<?php 
-																	}
-																?>  
+	                                                                <tr class="sectiontext">
+	                                                                    <td width="20px">
+	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
+	                                                                    </td>
+	                                                                    <td align="left">
+	                                                                        <a style="color: white" href="<?php echo base_url() ?>khoahoc/saudaihoc">Sau đại học</a>
+	                                                                    </td>
+	                                                                </tr>
+	                                                                <tr class="sectiontext">
+	                                                                    <td width="20px">
+	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
+	                                                                    </td>
+	                                                                    <td align="left">
+	                                                                        <a style="color: white" href="<?php echo base_url() ?>khoahoc/nghiepvu">Nghiệp vụ</a>
+	                                                                    </td>
+	                                                                </tr>
+	                                                                <tr class="sectiontext">
+	                                                                    <td width="20px">
+	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
+	                                                                    </td>
+	                                                                    <td align="left">
+	                                                                        <a style="color: white" href="<?php echo base_url() ?>khoahoc/banthoigian">Bán thời gian</a>
+	                                                                    </td>
+	                                                                </tr>
+	                                                                <tr class="sectiontext">
+	                                                                    <td width="20px">
+	                                                                        <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/stories/bullet.gif" />
+	                                                                    </td>
+	                                                                    <td align="left">
+	                                                                        <a style="color: white" href="<?php echo base_url() ?>khoahoc/khac">Khóa học khác</a>
+	                                                                    </td>
+	                                                                </tr>
+                                                              	  
                                                             </table>
                                                         </td>
                                                     </tr>
@@ -203,7 +230,7 @@
                                 <img src="<?php echo base_url();?>assets/duhoc/images/book.jpg" tppabs="images/book.jpg" width="49" height="31" />
                             </td>
                             <td width="78%" height="40" valign="middle" class="arial">
-                                Nghiên cứu liên kết
+                                Thủ tục nhập học
                             </td>
                         </tr>
                         <tr>
@@ -237,7 +264,7 @@
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">Thư viện UoW trực tuyến</a>
+                                                                                    <a href="<?php echo base_url() ?>thutucnhaphoc">Hồ sơ kết quả học tập</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr class="sectiontext">
@@ -245,7 +272,7 @@
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">Thư viện Tường Nhật trực tuyến</a>
+                                                                                    <a href="<?php echo base_url() ?>thutucnhaphoc">Sơ yếu lí lịch</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr class="sectiontext">
@@ -253,7 +280,7 @@
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">ICSA sinh viên cổng thông tin Web</a>
+                                                                                    <a href="<?php echo base_url() ?>thutucnhaphoc">Hộ chiếu</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr class="sectiontext">
@@ -261,7 +288,23 @@
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">Tường nhật sinh viên cổng thông tin Web</a>
+                                                                                    <a href="<?php echo base_url() ?>thutucnhaphoc">Kiểm tra Tiếng Anh</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="sectiontext">
+                                                                                <td width="20px">
+                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
+                                                                                </td>
+                                                                                <td align="left">
+                                                                                    <a href="<?php echo base_url() ?>thutucnhaphoc">Điền mẫu đơn của KCB</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="sectiontext">
+                                                                                <td width="20px">
+                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
+                                                                                </td>
+                                                                                <td align="left">
+                                                                                    <a href="<?php echo base_url() ?>thutucnhaphoc">2 Ảnh hộ chiếu</a>
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
@@ -290,7 +333,7 @@
                                 <img src="<?php echo base_url();?>assets/duhoc/images/partner.jpg" tppabs="images/partner.jpg" width="32" height="34" />
                             </td>
                             <td width="86%" height="40" align="left" valign="middle" class="arial">
-                                Các trường Đại Học đối tác và các tổ chức
+                                Hình ảnh
                             </td>
                         </tr>
                         <tr>
@@ -320,30 +363,20 @@
                                                                     </td>
                                                                     <td colspan="2" valign="top" style="padding-top: 8px;">
                                                                         <table>
-                                                                            <tr class="sectiontext">
-                                                                                <td width="20px">
-                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
-                                                                                </td>
-                                                                                <td align="left">
-                                                                                    <a href="">Các hiệp hội, bằng chứng nhận và chi nhánh </a>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr class="sectiontext">
-                                                                                <td width="20px">
-                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
-                                                                                </td>
-                                                                                <td align="left">
-                                                                                    <a href="">Các tổ chức chuyên nghiệp</a>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr class="sectiontext">
-                                                                                <td width="20px">
-                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
-                                                                                </td>
-                                                                                <td align="left">
-                                                                                    <a href="">Hợp tác quốc tế</a>
-                                                                                </td>
-                                                                            </tr>
+                                                                        	<?php foreach($hinhanh as $ha)
+                                                                        	{
+                                                                        	?>
+	                                                                            <tr class="sectiontext">
+	                                                                                <td width="20px">
+	                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
+	                                                                                </td>
+	                                                                                <td align="left">
+	                                                                                    <a href="<?php echo base_url() ?>hinhanh/view/<?php echo $ha->id; ?>"><?php echo $ha->tieude; ?></a>
+	                                                                                </td>
+	                                                                            </tr>
+	                                                                         <?php
+	                                                                         }
+	                                                                         ?>
                                                                         </table>
                                                                     </td>
                                                                 </tr>
@@ -369,7 +402,7 @@
                                 <img src="<?php echo base_url();?>assets/duhoc/images/overseas.jpg" tppabs="images/overseas.jpg" width="32" height="34" />
                             </td>
                             <td width="77%" height="40" valign="middle" class="arial">
-                                Sinh viên ở nước ngoài
+                                Liên hệ
                             </td>
                         </tr>
                         <tr>
@@ -399,38 +432,52 @@
                                                                     </td>
                                                                     <td colspan="2" valign="top" style="padding-top: 8px;">
                                                                         <table>
+                                                                        	
                                                                             <tr class="sectiontext">
                                                                                 <td width="20px">
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">Điều khoản và điều kiện</a>
+                                                                                    <a href="<?php echo base_url() ?>lienhe">Tel : <?php echo $lienhe->telephone; ?></a>
                                                                                 </td>
                                                                             </tr>
+                                                                            
                                                                             <tr class="sectiontext">
                                                                                 <td width="20px">
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">Chi tiết liên hệ ở nước ngoài</a>
+                                                                                    <a href="<?php echo base_url() ?>lienhe">Mob : <?php echo $lienhe->mobile; ?></a>
                                                                                 </td>
                                                                             </tr>
+                                                                            
                                                                             <tr class="sectiontext">
                                                                                 <td width="20px">
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">Yêu cầu ngôn ngữ tiếng anh</a>
+                                                                                    <a href="<?php echo base_url() ?>lienhe">Fax : <?php echo $lienhe->fax; ?></a>
                                                                                 </td>
                                                                             </tr>
+                                                                            
                                                                             <tr class="sectiontext">
                                                                                 <td width="20px">
                                                                                     <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
                                                                                 </td>
                                                                                 <td align="left">
-                                                                                    <a href="">UKCISA</a>
+                                                                                    <a href="<?php echo base_url() ?>lienhe">Email : <?php echo $lienhe->email; ?></a>
                                                                                 </td>
                                                                             </tr>
+                                                                            
+                                                                            <tr class="sectiontext">
+                                                                                <td width="20px">
+                                                                                    <img src="<?php echo base_url();?>assets/duhoc/images/bullet.gif" tppabs="images/bullet.gif" />
+                                                                                </td>
+                                                                                <td align="left">
+                                                                                    <a href="<?php echo base_url() ?>lienhe">Website : <?php echo $lienhe->website; ?></a>
+                                                                                </td>
+                                                                            </tr>
+
                                                                         </table>
                                                                     </td>
                                                                 </tr>
