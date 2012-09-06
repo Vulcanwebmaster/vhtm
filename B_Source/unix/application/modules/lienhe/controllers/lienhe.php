@@ -14,7 +14,7 @@
 		{
 			$data['page']=$this->config->item('backendpro_template_shop').'vlienhe';
 			$data['module']=$this->module;
-			$data['tieude']="LIÊN HỆ";
+			$data['tieude']="GÓP Ý";
 			$this->load->view($this->_container,$data); 
 		}
 		

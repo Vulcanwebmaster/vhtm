@@ -46,7 +46,7 @@
 						</select>
 					</p>
 				</div>
-				<div id="quangcao">
+				<div class="quangcao">
 					<marquee>
 						<p> Hệ thống thư viện phong phú của Unix là một kho tri thức khổng lồ chờ bạn khám phá</p>
 					</marquee>

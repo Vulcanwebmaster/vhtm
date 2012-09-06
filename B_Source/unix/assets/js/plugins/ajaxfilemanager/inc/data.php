@@ -1,8 +1,8 @@
 <pre>Array
 (
     [currentFolderPath] => ../../../../assets/images/
-    [new_folder] => image-test
+    [new_folder] => Slide
 )
 </pre>
 
-05/Jun/2012 16:55:13
+05/Sep/2012 12:39:25

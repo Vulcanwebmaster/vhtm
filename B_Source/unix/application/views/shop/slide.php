@@ -58,10 +58,14 @@
 	<div id="main-slide">
 		<div id="slide-left">
 			<div id="content-slide-left">
-				<div id="slide-img1" class="myslide"><img src="<?php  echo base_url();?>assets/unix/images/thuvien-slide.jpg" width="750px" height="250px"/></div>
-				<div id="slide-img2" class="myslide"><img src="<?php  echo base_url();?>assets/unix/images/khoahoc-slide.jpg" width="750px" height="250px"/></div>
-				<div id="slide-img3" class="myslide"><img src="<?php  echo base_url();?>assets/unix/images/study-slide.jpg" width="750px" height="250px"/></div>
-				<div id="slide-img4" class="myslide"><img src="<?php  echo base_url();?>assets/unix/images/khoahoc-slide.jpg" width="750px" height="250px"/></div>
+				<?php $slide=$this->MKaimonokago->getSlide();
+					foreach($slide as $sl)
+					{
+					?>
+						<div class="myslide"><?php echo $sl->noidung; ?></div>
+					<?php
+					}
+				?>
 			</div>
 		</div>
 		<?php 

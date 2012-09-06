@@ -21,14 +21,14 @@
 			//$data['page']=$this->config->item('backendpro_template_shop').'vhoidap';
 			//$data['module']=$this->module;
 			//$this->load->view($this->_container,$data);
-			$this->pages();
+			$this->page();
 		}
 		
-		function pages($index=0)
+		function page()
 		{
-			$config['base_url']=base_url().'/index.php/hoidap/pages';
+			$config['base_url']=base_url().'/index.php/hoidap/page';
 			$config['total_rows']=$this->Mhoidap->count();
-			$config['per_page']=5;
+			$config['per_page']=4;
 			$this->pagination->initialize($config);
 			
 			$data['tieude']='HỎI ĐÁP';

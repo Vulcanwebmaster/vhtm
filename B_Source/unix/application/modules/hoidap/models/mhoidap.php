@@ -70,16 +70,14 @@
 	function count()
 		{
 			$ds=$this->db->get('unix_hoidap');
-			$amount=$ds->num_rows();
+			return $ds->num_rows();
 		}
-		
-		
 		
 	function getNew($id)
 		{
 			$this->db->order_by('ngaygui','desc');
 			$this->db->where('id_hoidap !=',$id);
-			$ds=$this->db->get('unix_hoidap',3,0);
+			$ds=$this->db->get('unix_hoidap',10,0);
 			return $ds->result();
 		}
 	function getDetail($id)

@@ -8,11 +8,10 @@
 			$this->load->helper('date');
 		}
 		
-		function getList($index,$dot)
+		function getList($num,$dot)
 		{
-			$this->db->order_by('stt','asc');
 			$this->db->where('dotthi',$dot);
-			$ds=$this->db->get('unix_diemthi',50,$index);
+			$ds=$this->db->get('unix_diemthi',50,$num);
 			return $ds->result();
 		}
 		
@@ -40,7 +39,6 @@
 		{
 			$this->db->where('dotthi',$dot);
 			$query=$this->db->get('unix_diemthi');
-			//var_dump($query->result());die();
 			return $query->result();
 		}
 		
@@ -49,12 +47,11 @@
 			$this->db->insert('unix_dotthi',array('dotthi'=>$dot));		
 		}
 		
-		function CountFull()
+		function CountFull($dot)
 		{
-			$ds=$this->db->get('unix_diemthi');
-			$count=$ds->num_rows();
-			$ds->free_result();
-			return $count;
+			$this->db->where('dotthi',$dot);
+			$query=$this->db->get('unix_diemthi');
+			return $query->num_rows();
 		}
 		
 		function countDotThi($dot)
@@ -75,5 +72,21 @@
 			$this->db->where('dotthi',$dot);
 			$this->db->delete('unix_dotthi');
 		}
+		
+		function getIdDot($dot)
+		{
+			$this->db->where('dotthi',$dot);
+			$query=$this->db->get('unix_dotthi');
+			$data['query']=$query->row();
+			return $data['query']->id;
+		}
+		
+		function getTenDot($id)
+		{
+			$this->db->where('id',$id);
+			$query=$this->db->get('unix_dotthi');
+			$data['query']=$query->row();
+			return $data['query']->dotthi;
+		}	
 	}
 ?>

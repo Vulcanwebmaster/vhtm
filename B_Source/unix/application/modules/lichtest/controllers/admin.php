@@ -55,7 +55,7 @@
 				{
 					$pathToFile = 'assets/upload/'.$upload['file_name'];
 
-					$dulieu = new Spreadsheet_Excel_Reader($pathToFile);
+					$dulieu = new Spreadsheet_Excel_Reader($pathToFile,false,'UTF-8');
 					for ($i = 2; $i <= $dulieu->sheets[0]['numRows']; $i++) 
 						    {
 						    	$ten			=	$dulieu->sheets[0]['cells'][$i][1];

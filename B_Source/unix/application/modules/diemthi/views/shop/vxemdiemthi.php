@@ -17,14 +17,15 @@
 		<div id="" style=" margin-left:-35px;background:url('<?php echo base_url();?>assets/unix/images/gioithieu-bg.png') no-repeat; min-height:500px">
 
 <!--content-->
+		
 		<div style="padding-left:27%">
-		<form method="post" action="<?php echo base_url()?>index.php/diemthi/index">
+		<form method="post" action="<?php echo base_url()?>index.php/diemthi/">
 		<div style="padding:20px">
 			<span>(*) Chọn ngày thi : </span>
 			<select name="dot" class="ngaythi">
 				<?php foreach($dotthi as $dot):?>
-					<option value="<?php echo $dot->dotthi;?>"><?php echo $dot->dotthi;?></option>
-					<?php endforeach?>
+					<option value="<?php echo $dot->id;?>"><?php echo $dot->dotthi;?></option>
+				<?php endforeach?>
 			</select>
 			<input type="submit" value="Hiển thị"/>
 		</div>
@@ -34,7 +35,7 @@
 		{
 			?>
 		<table border="1" id="tablesorter" class="tablesorter" width="100%">
-			<caption class='table1' style="color:blue;padding-bottom:10px"><h2><?php echo $this->session->userdata('bang');?></h2></caption>
+			<caption class='table1' style="color:blue;padding-bottom:10px"><h2><?php echo $tendot;?></h2></caption>
 			<tr>
 				<th class='table1'><strong>STT</strong></th>
 				<th class='table1'><strong>Học sinh</strong></th>

@@ -594,6 +594,20 @@ class MKaimonokago extends Base_model
 			$query=$this->db->get('unix_danhmuc',100,3);
 			return $query->result();
 		}
+
+		function getSlide()
+		{
+			$this->db->select('noidung');
+			$query=$this->db->get('unix_slide');
+			return $query->result();
+		}
+		
+		function getListChuyenMuc($danhmuc)
+		{
+			$this->db->where('danhmuc',$danhmuc);
+			$query=$this->db->get('unix_chuyenmuc');
+			return $query->result();
+		}
 }
 
 ?>

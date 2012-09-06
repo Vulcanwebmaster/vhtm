@@ -18,7 +18,7 @@
 	<span>(*) Chọn đợt thi : </span>
 	<select name="dot" >
 		<?php foreach($dotthi as $dot):?>
-			<option value="<?php echo $dot->dotthi;?>"><?php echo $dot->dotthi;?></option>
+			<option value="<?php echo $dot->id;?>"><?php echo $dot->dotthi;?></option>
 			<?php endforeach?>
 	</select>
 	<input type="submit" name="submit" value="Hiển thị"/>
@@ -31,7 +31,7 @@
 {
 	?>
 <table border="1" id="tablesorter" class="tablesorter" width="100%">
-	<caption class="table1 cap"><h2><?php echo $this->session->userdata('bangdiem');?></h2></caption>
+	<caption class="table1 cap"><h2><?php echo $tendot;?></h2></caption>
 	<tr>
 		<th class='table1'>STT</th>
 		<th class='table1'>Học sinh</th>

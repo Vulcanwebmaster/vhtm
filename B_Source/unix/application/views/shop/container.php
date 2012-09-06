@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title><?php echo $tieude;?></title>
-		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<!-- ========SLIDE============= -->
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/unix/css/style.css" type="text/css" media="screen" />
 	    <link rel="stylesheet"  href="<?php echo base_url(); ?>assets/unix/css/table/table.css" type="text/css" media="screen"/>
@@ -64,6 +64,29 @@
 	<body>
 		<script type="text/javascript">
 			$(document).ready(function(){
+				$('#laai').hide();
+				$('#viewlaai').click(function(){
+					$('#laai').slideDown(1000);
+				});
+				$('#laaiClose').click(function(){
+					$('#laai').slideUp(1000);
+				});
+				
+				$('#lamgi').hide();
+				$('#viewlamgi').click(function(){
+					$('#lamgi').slideDown(1000);
+				});
+				$('#lamgiClose').click(function(){
+					$('#lamgi').slideUp(1000);
+				});
+				
+				$('#dangcauhoi').hide();
+				$('#viewdangcauhoi').click(function(){
+					$('#dangcauhoi').slideDown(1000);
+				});
+				$('#dangcauhoiClose').click(function(){
+					$('#dangcauhoi').slideUp(1000);
+				});
 				
 				$('#mask').hide();
 				$('#register').click(function(){

@@ -83,6 +83,7 @@ $lang['backendpro_ql_lichhoc']='Lịch học từng khóa';
 $lang['backendpro_ql_hoidap']='Quản lý hỏi đáp';
 $lang['backendpro_ql_sukien']='Quản lý sự kiện';
 $lang['backendpro_ql_diemthi']='Quản lý điểm thi';
+$lang['backendpro_ql_slide']='Quản lý Slide';
 
 
 
@@ -171,6 +172,9 @@ $lang['kogo_edit_hoidap']='Trả lời câu hỏi';
 $lang['kago_create_diemthi']='Nhập điểm thi';
 $lang['kago_view_diemthi']='Xem điểm thi';
 $lang['kago_create_danhmuc']='Tạo danh mục mới';
+$lang['kago_create_chuyenmuc']='Tạo chuyên mục mới';
+$lang['kago_edit_chuyenmuc']='Sửa thông tin chuyên mục';
+$lang['kago_list_chuyenmuc']='Danh sách chuyên mục';
 
 /* End of file shop_lang.php */
 /* Location: ./system/application/language/english/shop_lang.php */

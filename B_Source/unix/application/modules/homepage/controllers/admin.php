@@ -71,11 +71,23 @@ class Admin extends Shop_Admin_Controller
 
     function _fields($muc_id)
     {
-    	$tmp = $this->input->post('dulieu_'.$muc_id,TRUE);
+    	if($muc_id==1 | $muc_id==2 | $muc_id==3 | $muc_id==7 | $muc_id==8)
+		{
+			$tmp	=	$this->input->post('noidung_'.$muc_id);
+			$tmp 	= 	str_replace("@$%#@", 'style="color: ',$tmp);
+	    	$tmp 	= 	str_replace("&$%#@", 'style="background-color: ',$tmp);
+		}
+		
+		if($muc_id==6)
+		{
+			$tmp = $this->input->post('dulieu_'.$muc_id);
+		}
+		
 		$tenmuc=$this->input->post('tenmuc_'.$muc_id,true);
 
     	if ($muc_id==4 || $muc_id == 5)
     	{
+    		$tmp = $this->input->post('dulieu_'.$muc_id,true);
     		$matches = array();
     		$temp = array();
 	    	preg_match_all( '/src="([^"]*)"/i', $tmp, $matches ) ;

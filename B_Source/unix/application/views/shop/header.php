@@ -16,8 +16,8 @@
 					<li class="menuitem"><a href="<?php echo base_url();?>index.php/khoahoc"><img src="<?php echo base_url();?>assets/unix/images/khoa hoc.png" alt=""/>Khóa học</a></li>
 					<li class="menuitem"><a href="<?php echo base_url();?>index.php/thuvien"><img src="<?php echo base_url();?>assets/unix/images/thu vien.png" alt=""/>Thư viện</a></li>
 					<li class="menuitem">
-						<a id="abc" href=""><img src="<?php echo base_url();?>assets/unix/images/news-icon.png" alt=""/>Sự kiện</a>
-						<div style="background-color: blue;color:white" id="xyz">
+						<a id="abc" href="<?php echo base_url();?>index.php/tintuc"><img src="<?php echo base_url();?>assets/unix/images/news-icon.png" alt=""/>Sự kiện</a>
+						<div style="background-color: #E3E3E7;color:white" id="xyz">
                                     <a href="<?php echo base_url();?>index.php/tintuc">Tin tức</a><hr />
                                     <a href="<?php echo base_url();?>index.php/hoidap">Hỏi đáp</a><hr />
                                     <a href="<?php echo base_url();?>index.php/diemthi">Xem điểm thi</a>

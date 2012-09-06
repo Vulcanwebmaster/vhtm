@@ -10,28 +10,36 @@
 	<a href="http://localhost/unix/index.php/danhmuc/admin/addChuyenMuc">
     <img src="http://localhost/unix/assets/icons/add.png" alt="add">    Tạo chuyên mục mới    </a>
 </div>
-<div class="buttons">
-	<a href="http://localhost/unix/index.php/danhmuc/admin/listChuyenMuc">
-    <img src="http://localhost/unix/assets/icons/add.png" alt="add">    Sửa thông tin chuyên mục    </a>
-</div>
-<form action="<?php echo base_url()?>index.php/danhmuc/admin/update" method="post">
-<table id="preference_form">
+
+<table id="preference_form" style="padding-top:10px">
 	<tr>
-		<th>&nbsp;</th>
-		<th>&nbsp;</th>
+		<th>ID</th>
+		<th>Tên chuyên mục</th>
+		<th>Nội dung</th>
+		<th>Loại danh mục</th>
+		<th>Ngày đăng</th>
+		<th>Sửa / Xóa</th>
 	</tr>
 <?php
-	foreach($danhmuc as $dm)
+	foreach($chuyenmuc as $cm)
 	{
 		?>
 			<tr>
-				<td class="label"><label>(*) Danh mục <?php echo $dm->id; ?> : </label></td>
-				<td><input type="text" name="danhmuc_<?php echo $dm->id; ?>" class="text" value="<?php echo $dm->ten; ?>"/></td>
+				<td><?php echo $cm->id; ?></td>
+				<td><?php echo $cm->ten; ?></td>
+				<td><?php echo $cm->noidung; ?></td>
+				<td><?php echo $cm->danhmuc; ?></td>
+				<td><?php echo $cm->ngaydang; ?></td>
+				<td>
+					<?php
+						echo anchor('danhmuc/admin/editChuyenMuc/'.$cm->id,$this->bep_assets->icon('pencil'));
+				        echo anchor('danhmuc/admin/deleteChuyenMuc/'.$cm->id,$this->bep_assets->icon('delete'),array("onclick"=>"return confirmSubmit('".$cm->id."')"));
+					?>
+				</td>
 			</tr>
-		<?php
+	<?php
 	}
-?>
-
+	?>
 </table>
 
 <input name = "mota_backup" id = "mota_backup" type = "hidden"/>
@@ -46,4 +54,3 @@
     <?php print $this->lang->line('general_cancel');?>
     </a>
 </div>
-</form>

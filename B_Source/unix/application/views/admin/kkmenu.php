@@ -33,6 +33,7 @@
         <?php print anchor('hoidap/admin',$this->lang->line('backendpro_ql_hoidap'),array('class'=>'icon_television'))?></li><?php echo "\n";?><br/>
         <?php print anchor('sukien/admin',$this->lang->line('backendpro_ql_sukien'),array('class'=>'icon_television'))?></li><?php echo "\n";?><br/>
 		<?php print anchor('diemthi/admin',$this->lang->line('backendpro_ql_diemthi'),array('class'=>'icon_television'))?></li><?php echo "\n";?><br/>
+		<?php print anchor('slide/admin',$this->lang->line('backendpro_ql_slide'),array('class'=>'icon_television'))?></li><?php echo "\n";?><br/>
 
     </ul>
 </li>

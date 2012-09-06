@@ -54,6 +54,28 @@
 				</form>
 			</center>
 		</div>
+		
+		<div id="laai" style="display:none;text-align:center;padding: 20px; text-shadow: black 0px -1px 0px; color: white; position: fixed; width: 600px; height: auto; margin-top: 0; margin-left:350px; background-color: rgb(90, 90, 90); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index: 9; border: 4px solid rgb(182, 182, 181); display: block; ">
+			<div style="width:30px; cursor:pointer; border-radius:10px; background-color:white; padding:5px; color:black; float:right" align="right"><span id="laaiClose">Thoát</span></div>
+			<?php 
+				$content=$this->MKaimonokago->homepageLoadNoiDung(7);
+				?>
+					<center style="font-weight:bold;text-transform: uppercase;">
+						<?php echo $content->tenmuc; ?>
+					</center>
+				<span style="align:left"><?php echo $content->dulieu;?></span>
+		</div>
+		
+		<div id="lamgi" style="display:none;text-align:center;padding: 20px; text-shadow: black 0px -1px 0px; color: white; position: fixed; width: 600px; height: auto; margin-top: 0; margin-left:350px; background-color: rgb(90, 90, 90); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; z-index: 9; border: 4px solid rgb(182, 182, 181); display: block; ">
+			<div style="width:30px; cursor:pointer; border-radius:10px; background-color:white; padding:5px; color:black; float:right" align="right"><span id="lamgiClose">Thoát</span></div>
+			<?php 
+				$content=$this->MKaimonokago->homepageLoadNoiDung(8);
+				?>
+					<center style="font-weight:bold;text-transform: uppercase;">
+						<?php echo $content->tenmuc; ?>
+					</center>
+				<span style="align:left"><?php echo $content->dulieu;?></span>
+		</div>
 		<!--
 	    <div id="banner-left">
 	    	<ul>
@@ -73,29 +95,13 @@
 <div id="mainbottom">
 		<div id="bottom-left">
 			<div style="height:55px"></div>
-			<marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll" direction="left" scrollamount=5>
-				<?php if ($this->MKaimonokago->homepageLoadNoiDung(5))
-				{
-					$images=$this->MKaimonokago->homepageLoadNoiDung(5);
-					foreach(explode(',', $images->dulieu) as $item)
-					{
-						$offset=0;
-						while ($item[$offset]=='.' || $item[$offset]=='/')
-							$offset++;
-						$item=substr(trim($item),$offset);
-						if (strpos(trim($item),'photobucket')!=count(trim($item)))
-						echo '<a><img alt="" src="'.trim($item).'" height="150px"/></a>';
-						else echo '<a><img alt="" src="'.base_url().trim($item).'" height="150px"/></a>';
-					}
-				}?>
-				<a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/1.jpg" height="150px"/></a>
-				<a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/2.jpg" height="150px"/></a>
-				<a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/3.jpg" height="150px"/></a>
-				<a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/4.jpg" height="150px"/></a>
-				<a><img alt="" src="<?php echo base_url();?>assets/unix/images/slide-bottom/5.jpg" height="150px"/></a -->
+			<marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll" direction="left" scrollamount="5">
+				<a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0596.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0601.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0616.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/1123MaxWidth640MaxHeight480.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/7.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0341.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0364MaxWidth1024MaxHeight768.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0350.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/33MaxWidth640MaxHeight480.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0770.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0704.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0719.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/IMG_3318MaxWidth640MaxHeight480.jpg" height="150px"></a>				<!-- a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/1.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/2.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/3.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/4.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/5.jpg" height="150px"/></a -->
 			</marquee>
-			
-			
 		</div>
 		<div id="bottom-right">
 			<div style="height:40px"></div>
@@ -248,6 +254,19 @@
 			</div>
 	</div>
 	
+	<div id="mainbottom">
+		<div id="bottom-left">
+			<div style="height:55px"></div>
+			<marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll" direction="left" scrollamount="5">
+				<a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0596.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0601.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0616.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/1123MaxWidth640MaxHeight480.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/7.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0341.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0364MaxWidth1024MaxHeight768.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0350.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/33MaxWidth640MaxHeight480.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0770.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0704.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0719.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/IMG_3318MaxWidth640MaxHeight480.jpg" height="150px"></a>				<!-- a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/1.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/2.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/3.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/4.jpg" height="150px"/></a>
+				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/5.jpg" height="150px"/></a -->
+			</marquee>
+		</div>
+	</div>
+	
 	
 	<div class="clear" style="clear:both"></div>
 	<div id="maincenter" style="margin-left:40px;">
@@ -260,7 +279,7 @@
 
 
 <div id="detail-panel">
-	<div class="detail">
+	<div id="viewlaai" class="detail">
 		<?php if($this->MKaimonokago->homepageLoadNoiDung(7)){?>
 		<h4><?php echo $this->MKaimonokago->homepageLoadNoiDung(7)->tenmuc?></h4>
 		<p>
@@ -268,10 +287,10 @@
 				$content=$this->MKaimonokago->homepageLoadNoiDung(7)->dulieu;
 				echo word_limiter($content, 37);
 			}?>
-			<a style="font-style:italic; text-decoration:underline" href="<?php echo base_url();?>index.php/welcome/detail/7">Chi tiết</a>
+			<span style="font-style:italic; text-decoration:underline">Chi tiết</span>
 		</p>
 	</div>
-	<div class="detail" style="float:right">
+	<div id="viewlamgi" class="detail" style="float:right">
 		<?php if($this->MKaimonokago->homepageLoadNoiDung(8)){?>
 		<h4><?php echo $this->MKaimonokago->homepageLoadNoiDung(8)->tenmuc?></h4>
 		<p>
@@ -279,7 +298,7 @@
 				$content=$this->MKaimonokago->homepageLoadNoiDung(8)->dulieu;
 				echo word_limiter($content, 35);
 			}?>
-			<a style="font-style:italic; text-decoration:underline" href="<?php echo base_url();?>index.php/welcome/detail/8">Chi tiết</a>
+			<span style="font-style:italic; text-decoration:underline">Chi tiết</span>
 		</p>
 	</div>
 </div>

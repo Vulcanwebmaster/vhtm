@@ -23,27 +23,25 @@
 			if ($this->input->post('submit'))
 			{
 				$this->load->library('form_validation');
-				$this->form_validation->set_rules('hoten','Họ tên','required|trim');
-				$this->form_validation->set_rules('dienthoai','Điện thoại','required|trim|numeric');
+				$this->form_validation->set_rules('hoten','Họ tên','required');
+				$this->form_validation->set_rules('dienthoai','Điện thoại','required');
 				$this->form_validation->set_message('required','%s không được để trống');
 				if (!$this->form_validation->run())
 				{
 					$this->form_validation->output_errors();
+					echo "<script type='text/javascript'>
+						alert('Đăng ký không thành công');
+					</script>";
+					$this->index();
 				}
 				else if ($this->Mdangky->register())
 				{
 					echo "<script type='text/javascript'>
 						alert('Đăng ký thành công');
-					</script>";
-				}
-				else 
-				{
-					echo "<script type='text/javascript'>
-						alert('Đăng ký không thành công');
-					</script>";
+					</script>";	
+					$this->index();				
 				}
 			}
-			$this->index();
 		}
 	}
 ?>

@@ -270,14 +270,18 @@ else{?>
 		</div>
 		<div class="list-left">
 			<ul>
+				<?php
+					$listchuyenmuc=$this->MKaimonokago->getListChuyenMuc($danhmuc->ten);
+					foreach($listchuyenmuc as $chuyenmuc)
+					{
+				?>
 				<li>
 					<img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
-					<a style="color:#5A5A5A" href="<?php echo base_url()?>index.php/hoidap">Hỏi đáp</a>
+					<a style="color:#5A5A5A" href="<?php echo base_url()?>index.php/danhmuc/page/<?php echo $chuyenmuc->id; ?>"><?php echo $chuyenmuc->ten; ?></a>
 				</li>
-				<li>
-					<img alt="" src="<?php echo base_url();?>assets/unix/images/arrow.png" width="9px" style="margin-right:10px"/>
-					<a style="color:#5A5A5A" href="<?php echo base_url()?>index.php/diemthi">Xem điểm thi</a>
-				</li>
+				<?php
+					}
+				?>
 			</ul>
 		</div>
 <?php

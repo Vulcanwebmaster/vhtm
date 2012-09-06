@@ -37,7 +37,7 @@ img{border-style:none}
 #content-slide-left{width:4000px }
 .myslide{ float:left; width:750px;}
 #slide-left{ float:left; height:100%; width:75%; margin-top:-21px; overflow:hidden;}
-#slide-right{ float:left; width:25%; height:100%; margin-top:-21px;}
+#slide-right{ float:left; width:25%; height:100%; margin-top:-24px;}
 #h3{ margin:-3px;}
 .r{font-size: 12px;height:49px;padding:13px 15px 0px 15px; border:1px solid #b6ddf8; text-align:center;}
 .r a{color:#FFF; font-weight:normal;}
@@ -59,10 +59,10 @@ img{border-style:none}
 .field-right{width:300px; float:left; padding-top:10px}
 .field-right .field-image-panel{text-align:left;height:220px; background-image:url('../images/img-bg-right.png')}
 
-#mainbottom{height:230px; background-image:url('../images/image-video-panel.png'); clear:both;margin-left:13%; width:1000px;}
+#mainbottom{height:230px; background-image:url('../images/image-video-panel.png'); clear:both; width:1000px;margin-left: 13%;}
 
 #bottom-left{float:left; width:64%;padding-left:11px}
-#bottom-right{float:right;width:26%;margin-right:4%}
+#bottom-right{float:right;width:26%;margin-right:5%}
 
 #detail-panel{width:1050px; margin:auto auto 10px auto; background:url('../images/daixanh.png') no-repeat; height:135px; padding:10px 0}
 .detail{float:left; color:white; width:45%}
@@ -73,9 +73,11 @@ img{border-style:none}
 #menu-panel{ height:53px; margin-right:-24px; text-align:right}
 #menu-book{height:100%; width:313px; background:url('../images/thuvien-type-list.png'); float:right}
 #menu-book p{line-height:62px; margin:0}
-#quangcao{float:left}
-#quangcao marquee{width:450px; padding-top:10px}
-#quangcao marquee p{font-size:12px;color:#fd4403; width:550px}
+.quangcao{float:left}
+.quangcao marquee{width:450px; padding-top:10px}
+.quangcao marquee p{font-size:12px;color:#fd4403; width:550px}
+
+
 #book-name{height:77%}
 #book-name a{text-transform:uppercase; font-size:10px; text-align:justify;color:#6a6a6a}
 #book-information{height:20%; background-color:black; border-radius:5px; opacity:0.7; padding-top:5px}
@@ -83,7 +85,7 @@ img{border-style:none}
 
 					/*PAGES*/
 #title-panel{height:50px; width:100%; margin:auto; background:url('../images/title-panel.png') repeat-x}
-#title{width:100%; margin:auto;margin-left: 9%;}
+#title{width:100%; margin:auto;margin-left: 13%;}
 #title-left, #title-right, #title-center{width:34px; height:50px; float:left}
 #title-left{background:url('../images/title-left.png')}
 #title-right{background:url('../images/title-right.png')}
@@ -127,3 +129,9 @@ img{border-style:none}
 #show-contact ul{margin-left:-40px;}
 #show-contact ul li{ float:left; line-height:25px; display:inline; margin:0 7px 0 7px;}
 /*====================== END FOOTER ===============================*/
+#xyz{position:absolute; z-index:999; background-color:#909090; width:100px; text-transform:uppercase; top:98px; color:#FFF; padding-left:5px;}
+#xyz a{ cursor:pointer; height:25px; width:100px;}
+#xyz a:hover{ background-color:#999; color:#FFF;
+
+	
+}

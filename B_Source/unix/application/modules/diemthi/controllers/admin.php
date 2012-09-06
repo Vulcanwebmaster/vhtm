@@ -30,6 +30,7 @@
 				$data['dotthi']=$this->Mdiemthi->getDotThi();
 				$data['diemthi']=$this->Mdiemthi->get_diemthi($dot);
 				
+				$data['tendot']='Bảng '.$this->Mdiemthi->getTenDot($dot);
 				$this->session->set_userdata('bangdiem','Bảng '.$dot);
 				$data['header'] = $this->lang->line('backendpro_access_control');
 		        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_diemthi_home";
@@ -107,11 +108,13 @@
 				}
 				else
 				{
+						$this->Mdiemthi->insert_dotthi($dot);
+						$dotthi=$this->Mdiemthi->getIdDot($dot);
 						$upload=$this->upload->data();
 						
 						$pathToFile = 'assets/upload/'.$upload['file_name'];
 		
-						$dulieu = new Spreadsheet_Excel_Reader($pathToFile);
+						$dulieu = new Spreadsheet_Excel_Reader($pathToFile,false,'UTF-8');
 						//echo $dulieu->sheets[0]['numRows'];die();	
 						for ($i = 1; $i <= $dulieu->sheets[0]['numRows']; $i++) 
 								    {
@@ -126,11 +129,9 @@
 										echo $diem.'<br>';
 										echo $dot.'<br>';
 										die();*/
-								        $this->Mdiemthi->insert_diemthi($hs,$ph,$lop,$diem,$dot,$stt);
+								        $this->Mdiemthi->insert_diemthi($hs,$ph,$lop,$diem,$dotthi,$stt);
 								    }
 						
-							$this->Mdiemthi->insert_dotthi($dot);
-							
 							if(file_exists($pathToFile))
 								unlink($pathToFile);
 								

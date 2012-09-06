@@ -26,6 +26,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-family:inherit;
 	vertical-align:baseline;
 }*/
+.myslide p img{
+	width:750px !important;height:250px !important;
+}
+
+.myslide p{
+	margin:0;
+}
+
 body {
 	line-height:1;
 	color:black;
