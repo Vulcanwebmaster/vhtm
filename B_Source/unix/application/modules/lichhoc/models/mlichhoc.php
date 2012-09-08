@@ -6,7 +6,7 @@
 			parent::__construct();
 			$this->load->database();
 			$this->load->helper('date');
-		}
+		}	
 		
 		function get_lichhoc() 
 		{
