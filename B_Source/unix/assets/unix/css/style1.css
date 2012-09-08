@@ -85,7 +85,7 @@ img{border-style:none}
 
 					/*PAGES*/
 #title-panel{height:50px; width:100%; margin:auto; background:url('../images/title-panel.png') repeat-x}
-#title{width:100%; margin:auto;margin-left: 13%;}
+#title{width:100%; margin:auto;margin-left: 11%;}
 #title-left, #title-right, #title-center{width:34px; height:50px; float:left}
 #title-left{background:url('../images/title-left.png')}
 #title-right{background:url('../images/title-right.png')}

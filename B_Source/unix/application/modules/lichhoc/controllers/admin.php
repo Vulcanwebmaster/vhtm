@@ -54,11 +54,11 @@
 				if($this->Mlichhoc->delete_lichhoc()==true)
 				{
 					$pathToFile = 'assets/upload/'.$upload['file_name'];
-
-					$dulieu = new Spreadsheet_Excel_Reader($pathToFile,false,'UTF-8');
+					$dulieu = new Spreadsheet_Excel_Reader($pathToFile,true,"UTF-8");
 					for ($i = 2; $i <= $dulieu->sheets[0]['numRows']; $i++) 
 						    {
 						    	$khoa=$dulieu->sheets[0]['cells'][$i][1];
+								echo $khoa;die();
 								$thoigian=$dulieu->sheets[0]['cells'][$i][2];
 								$diadiem=$dulieu->sheets[0]['cells'][$i][3];
 								$giangvien=$dulieu->sheets[0]['cells'][$i][4];

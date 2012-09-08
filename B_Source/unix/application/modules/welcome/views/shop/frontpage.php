@@ -120,12 +120,12 @@
 	<div id="icon-menu"><p>Lịch hội thảo</p></div>
 	<div id="main-table">
 		<table border="0px" style="width:100%">
-			<tr id="tr1" class="tr-td">
-				<td style="width:27%"><b>Sự kiện</b></td>
-				<td style="width:15%"><b>Thời gian</b></td>
-				<td style="width:27%"><b>Địa điểm</b></td>
-				<td style="width:15%"><b>Đơn vị tổ chức</b></td>
-				<td style="width:15%"><b>Tình trạng</b></td>
+			<tr id="tr1" class="tr-th">
+				<td style="width:27%;padding-left:11%"><b>Sự kiện</b></td>
+				<td style="width:15%;padding-left: 4%"><b>Thời gian</b></td>
+				<td style="width:27%;padding-left: 10%;"><b>Địa điểm</b></td>
+				<td style="width:15%;padding-left: 2%;"><b>Đơn vị tổ chức</b></td>
+				<td style="width:15%;padding-left:4%"><b>Tình trạng</b></td>
 			</tr>
 			<?php 
 				$lichhoithao=$this->MKaimonokago->get_lichhoithao();
@@ -149,11 +149,11 @@
 	<div id="icon-menu"><p>Lịch kiểm tra đầu vào</p></div>
 	<div id="main-table">
 		<table border="0px" style="width:100%">
-			<tr id="tr1" class="tr-td">
-				<td style="width:15%"><b>Tên lịch</b></td>
-				<td style="width:20%"><b>Thời gian</b></td>
-				<td style="width:20%"><b>Địa điểm</b></td>
-				<td style="width:15%"><b>Đơn vị tổ chức</b></td>
+			<tr id="tr1" class="tr-th">
+				<td style="width:15%;padding-left: 9%;"><b>Tên lịch</b></td>
+				<td style="width:20%;padding-left:11%"><b>Thời gian</b></td>
+				<td style="width:20%;padding-left:11%"><b>Địa điểm</b></td>
+				<td style="width:15%;padding-left:5%"><b>Đơn vị tổ chức</b></td>
 			</tr>
 			<?php 
 				$lichtest=$this->MKaimonokago->get_lichtest();
@@ -176,11 +176,11 @@
 	<div id="icon-menu"><p>Lịch học từng khóa</p></div>
 	<div id="main-table">
 		<table border="0px" style="width:100%">
-			<tr id="tr1" class="tr-td">
-				<td style="width:27%"><b>Khóa</b></td>
-				<td style="width:15%"><b>Thời gian</b></td>
-				<td style="width:27%"><b>Địa điểm</b></td>
-				<td style="width:15%"><b>Giảng viên</b></td>
+			<tr id="tr1" class="tr-th">
+				<td style="width:10%;padding-left:6%"><b>Khóa</b></td>
+				<td style="width:15%;padding-left:8%"><b>Thời gian</b></td>
+				<td style="width:27%;padding-left:16%"><b>Địa điểm</b></td>
+				<td style="width:15%;padding-left:8%"><b>Giảng viên</b></td>
 			</tr>
 			<?php 
 				$lichhoc=$this->MKaimonokago->get_lichhoc();
@@ -252,21 +252,7 @@
 						?>										
 				</div>
 			</div>
-	</div>
-	
-	<div id="mainbottom">
-		<div id="bottom-left">
-			<div style="height:55px"></div>
-			<marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll" direction="left" scrollamount="5">
-				<a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0596.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0601.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0616.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/1123MaxWidth640MaxHeight480.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/7.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0341.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0364MaxWidth1024MaxHeight768.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0350.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/33MaxWidth640MaxHeight480.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0770.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0704.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/DSC_0719.jpg" height="150px"></a><a><img alt="" src="http://i1168.photobucket.com/albums/r484/manhtienunix/Slide anh-trang chu/IMG_3318MaxWidth640MaxHeight480.jpg" height="150px"></a>				<!-- a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/1.jpg" height="150px"/></a>
-				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/2.jpg" height="150px"/></a>
-				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/3.jpg" height="150px"/></a>
-				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/4.jpg" height="150px"/></a>
-				<a><img alt="" src="http://unix.vn/assets/unix/images/slide-bottom/5.jpg" height="150px"/></a -->
-			</marquee>
-		</div>
-	</div>
-	
+	</div>	
 	
 	<div class="clear" style="clear:both"></div>
 	<div id="maincenter" style="margin-left:40px;">

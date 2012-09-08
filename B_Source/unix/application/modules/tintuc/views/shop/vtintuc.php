@@ -1,3 +1,4 @@
+<?php $this->load->helper('text');?>
 <div id="title-panel">
 	<div id="title">
 		<div id="title-left"></div>
@@ -28,11 +29,13 @@
 						<table>
 							<tr>
 								<td>
-									<a href="<?php echo base_url();?>index.php/tintuc/detail/<?php echo $item->alias;?>"><img src="<?php if ($item->anhdaidien!='') echo base_url().substr($item->anhdaidien,3); else echo base_url().'assets/unix/images/logo2.png';?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
+									<a href="<?php echo base_url();?>index.php/tintuc/detail/<?php echo $item->alias;?>"><img src="<?php $pathThFile=$item->anhdaidien; if(file_exists($pathToFile)) {if ($pathToFile!='') echo base_url().substr($item->anhdaidien,3);} else echo base_url().'assets/unix/images/logo2.png';?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
 								</td>
 								<td style="padding:0 10px; text-align:justify; vertical-align:0">
 									<a href="<?php echo base_url();?>index.php/tintuc/detail/<?php echo $item->alias;?>"><h3 style="margin:0;color:#0158a1"><?php echo $item->tieude;?></h3></a>
-									<?php echo substr($item->noidung,0,200).' ...';?>
+									<?php 
+										echo word_limiter($item->noidung,30);
+									?>
 									<a href="<?php echo base_url();?>index.php/tintuc/detail/<?php echo $item->alias;?>" style="font-style:italic">Xem thêm</a>
 								</td>
 							</tr>

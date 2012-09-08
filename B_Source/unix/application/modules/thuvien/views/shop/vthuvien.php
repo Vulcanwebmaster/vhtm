@@ -66,7 +66,7 @@
 						<table>
 							<tr>
 								<td>
-									<a href="<?php echo base_url();?>index.php/thuvien/detail/<?php echo $item->sach_id;?>"><img src="<?php if ($item->anhdaidien!='') echo base_url().$item->anhdaidien; else echo base_url().'assets/unix/images/logo2.png';?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
+									<a href="<?php echo base_url();?>index.php/thuvien/detail/<?php echo $item->sach_id;?>"><img src="<?php $pathToFile=base_url().$item->anhdaidien ; if(file_exists($pathToFile)) echo $pathToFile; else echo base_url().'assets/unix/images/logo2.png';?>" height="100px" width="130px" style="float:left; border:double 4px silver"/></a>
 								</td>
 								<td style="padding:0 10px; text-align:justify; vertical-align:0">
 									<a href="<?php echo base_url();?>index.php/thuvien/detail/<?php echo $item->sach_id;?>"><h3 style="margin:0;color:#0158a1"><?php echo $item->tensach;?></h3></a>

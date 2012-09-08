@@ -1,5 +1,9 @@
 <?php
 /**
+ * Edit by cuong.ngo
+ * simple.vn
+ */
+/**
  * A class for reading Microsoft Excel (97/2003) Spreadsheets.
  *
  * Version 2.21
@@ -13,16 +17,11 @@
  * DOCUMENTATION
  * =============
  *   http://code.google.com/p/php-excel-reader/wiki/Documentation
- *
- * CHANGE LOG
- * ==========
  *   http://code.google.com/p/php-excel-reader/wiki/ChangeHistory
  *
  * DISCUSSION/SUPPORT
  * ==================
  *   http://groups.google.com/group/php-excel-reader-discuss/topics
- *
- * --------------------------------------------------------------------------
  *
  * Originally developed by Vadim Tkachenko under the name PHPExcelReader.
  * (http://sourceforge.net/projects/phpexcelreader)
@@ -76,7 +75,7 @@ function GetInt4d($data, $pos) {
 // http://uk.php.net/manual/en/function.getdate.php
 function gmgetdate($ts = null){
 	$k = array('seconds','minutes','hours','mday','wday','mon','year','yday','weekday','month',0);
-	return(array_comb($k,split(":",gmdate('s:i:G:j:w:n:Y:z:l:F:U',is_null($ts)?time():$ts))));
+	return(array_comb($k,explode(":",gmdate('s:i:G:j:w:n:Y:z:l:F:U',is_null($ts)?time():$ts))));
 	} 
 
 // Added for PHP4 compatibility
@@ -98,9 +97,7 @@ class OLERead {
 
 	function read($sFileName){
 		// check if file exist and is readable (Darko Miljanovic)
-		
 		if(!is_readable($sFileName)) {
-			
 			$this->error = 1;
 			return false;
 		}
@@ -843,7 +840,7 @@ class Spreadsheet_Excel_Reader {
 
 		// Custom pattern can be POSITIVE;NEGATIVE;ZERO
 		// The "text" option as 4th parameter is not handled
-		$parts = split(";",$format);
+		$parts = explode(";",$format);
 		$pattern = $parts[0];
 		// Negative pattern
 		if (count($parts)>2 && $num==0) {
@@ -914,7 +911,7 @@ class Spreadsheet_Excel_Reader {
 	 *
 	 * Some basic initialisation
 	 */
-	function Spreadsheet_Excel_Reader($file='',$store_extended_info=true,$outputEncoding='') {
+	function __construct($file='',$store_extended_info=true,$outputEncoding='') {
 		$this->_ole = new OLERead();
 		$this->setUTFEncoder('iconv');
 		if ($outputEncoding != '') { 
@@ -1119,8 +1116,8 @@ class Spreadsheet_Excel_Reader {
 								$spos += $len;
 							}
 						}
-						$retstr = ($asciiEncoding) ? $retstr : $this->_encodeUTF16($retstr);
-
+						//$retstr = ($asciiEncoding) ? $retstr : $this->_encodeUTF16($retstr);
+						$retstr = ($asciiEncoding) ? mb_convert_encoding($retstr, "UTF-8" ) : $this->_encodeUTF16($retstr);
 						if ($richString){
 							$spos += 4 * $formattingRuns;
 						}
@@ -1736,4 +1733,3 @@ class Spreadsheet_Excel_Reader {
 
 }
 
-?>

@@ -6,5 +6,6 @@ body {
 #main-table{ border:1px solid #D3D4D4; background-color:#f0f0f0;}
 #tr1{ background:url('../../images/bg-table.png') repeat-x;}
 #tr1 td{padding-top:25px; font-weight:bold; padding:16px 0 10px 0;}
-.tr-td td{border-bottom:1px solid #d3d3d3; text-align:center;}
+.tr-td td{border-bottom:1px solid #d3d3d3; text-align:center;height:45px}
+.tr-td-th{border-bottom:1px solid #d3d3d3; text-align:center;}
 p{ margin-left:22px; font-weight:bold;}

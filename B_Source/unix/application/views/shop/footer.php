@@ -18,7 +18,7 @@
 					<li>|</li>
 					<li><a style="color:white" href="<?php echo base_url(); ?>index.php/tintuc">Tin tức</a></li>
 					<li>|</li>
-					<li><a style="color:white" href="<?php echo base_url(); ?>index.php/lienhe">Liên hệ</a></li>
+					<li><a style="color:white" href="<?php echo base_url(); ?>index.php/gopy">Góp ý</a></li>
 				</ul><br clear="both"/>
 			</div>
 			<div id="show-contact">

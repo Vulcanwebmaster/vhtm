@@ -24,7 +24,7 @@
                         </div> 
 					</li>
 					<li class="menuitem"><a href="<?php echo base_url();?>index.php/camnhan"><img src="<?php echo base_url();?>assets/unix/images/cam nhan.png" alt=""/>Cảm nhận</a></li>
-					<li class="menuitem"><a href="<?php echo base_url();?>index.php/lienhe"><img src="<?php echo base_url();?>assets/unix/images/lien he.png" alt=""/>Góp ý</a></li>
+					<li class="menuitem"><a href="<?php echo base_url();?>index.php/gopy"><img src="<?php echo base_url();?>assets/unix/images/lien he.png" alt=""/>Góp ý</a></li>
 
 					<li class="menuitem-foot"><a></a></li>
 				</ul>

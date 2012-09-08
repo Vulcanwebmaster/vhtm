@@ -30,7 +30,7 @@
 		function upload()
 		{
 			$config['upload_path'] ='./assets/upload/';
-			$config['allowed_types'] = 'xls|xlsx';
+			$config['allowed_types'] = '*';
 			$config['max_size']	= '0';
 			$config['max_width']  = '0';
 			$config['max_height']  = '0';
@@ -56,6 +56,7 @@
 					$pathToFile = 'assets/upload/'.$upload['file_name'];
 
 					$dulieu = new Spreadsheet_Excel_Reader($pathToFile,false,'UTF-8');
+					
 					for ($i = 2; $i <= $dulieu->sheets[0]['numRows']; $i++) 
 						    {
 						    	$ten			=	$dulieu->sheets[0]['cells'][$i][1];
