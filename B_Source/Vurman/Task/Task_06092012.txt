@@ -29,3 +29,11 @@ Table Custodian:
 - Coumn custodian tương ứng với CUSTODIAN
 - Column biccust tương ứng với BIC (CUSTODIAN)
 - Column cpacwithcust tương ứng với SELLER/BUYER A/C WITH CUST
+
+
+
+Ghi chú:
+Task: Thêm vào fiel gettseller.php trong thu muc ajax
+Them vao doan code xu ly tim kiem ky tu ' trong isn_id trong file tranfef_BLL.php
+Them vao bang custody voi client tuong ung
+

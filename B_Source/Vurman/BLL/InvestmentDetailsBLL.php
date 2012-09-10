@@ -150,7 +150,8 @@ Class InvestmentDetailsClass extends ChildCoreClass
 	function InsertInvestment_details()
 	{
 		$InsArr=$this->investment_detailsArr;
-		$InsArr['id']=$this->id;
+		//$InsArr['id']=$this->id; Hoang Add value for ID=NULL help insert data sucessfully;
+		$InsArr['id']="NULL";
 		$InsArr['initial_minimum_investment']=$this->initial_minimum_investment;
 		$InsArr['minimum_investment']=$this->minimum_investment;
 		$InsArr['minimum_units_investment']=$this->minimum_units_investment;
@@ -169,9 +170,9 @@ Class InvestmentDetailsClass extends ChildCoreClass
 		$InsArr['add_info_a']=$this->add_info_a;
 		$InsArr['add_info_b']=$this->add_info_b;
 		$InsArr['funds_id']=$this->funds_id;
-		
+		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully InsertInvestmentDetails.";
 		else $msg="Failed.";
 		return $msg;
 	}

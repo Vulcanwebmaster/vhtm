@@ -1,18 +1,19 @@
 <?php 
-if(isset($_POST['custodianid']) && $_POST['custodianid']!="")
+if(isset($_POST['sellerid']) && $_POST['sellerid']!="")
 {
 	require_once('../core/connect.php');
 	require_once('../core/CoreClass.php');
 	require_once('../BLL/CustodianBLL.php');
 	
-	$custodianid=$_POST['custodianid'];
+	$cpid=$_POST['sellerid'];
 	
 	$objCustodian=new CustodianClass($db);
-	$objCustodian->custodianid=$custodianid;
+	$objCustodian->cpid=$cpid;
 	$arrCustodian=$objCustodian->SearchCustodian();
 	if(sizeof($arrCustodian)>0)
 	{
-		echo $arrCustodian[0]['custodian']."|".$arrCustodian[0]['biccust']."|".$arrCustodian[0]['cpacwithcust'];
+		
+		echo $arrCustodian[0]['counterparty']."|".$arrCustodian[0]['biccp'];
 		//echo $arrCustodian[0]['custodian']."|".$arrCustodian[0]['biccustodian']."|".$arrCustodian[0]['acwithcust']."|".$arrCustodian[0]['transferagent']."|".$arrCustodian[0]['bicta']."|".$arrCustodian[0]['acwithta'];
 	}
 	else

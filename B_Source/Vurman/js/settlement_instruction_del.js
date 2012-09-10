@@ -366,8 +366,9 @@ function showCustodianInfo()
 			//alert(resArr);
 			setValueFromId('Custodian',resArr[0]);
 			setValueFromId('Custodian_BIC',resArr[1]);
-			/*setValueFromId('client_ac_cust',resArr[2]);
-			setValueFromId('TA_Name',resArr[3]);
+			setValueFromId('client_ac_cust',resArr[2]);
+			 
+			/*setValueFromId('TA_Name',resArr[3]);
 			setValueFromId('TA_BIC',resArr[4]);
 			setValueFromId('cust_ac_ta',resArr[5]);*/
 		}
@@ -446,13 +447,14 @@ function showCustodianBICInfo()
 
 function GetSeller()
 {
-	var custodian=getValueFromId('sellerid');
-	
-	if(custodian!="")
+	//var custodian=getValueFromId('sellerid');
+	var sellerid=getValueFromId('sellerid');
+	if(sellerid!="")
 	{
 		getAJaxReqest();
-		var url="ajaxfiles/getclientinfo.php";
-		var queryString="clientid="+custodian;
+		//var url="ajaxfiles/getclientinfo.php";
+		var url="ajaxfiles/getseller.php";
+		var queryString="sellerid="+sellerid;
 		$('#loading-dialog').dialog('open');
 		req.open("POST", url, true); 
 		req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
