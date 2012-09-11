@@ -38,6 +38,7 @@
 		    				<th>Thông tin kỹ thuật (V)</th>
 		    				<th>Thông tin kỹ thuật (E)</th>
 		    				<th>Hình ảnh</th>
+		    				<th>Mới</th>
 		    				<th>Action</th>
 						</tr> 
 					</thead> 
@@ -53,6 +54,7 @@
 			    				<td><?php echo cutString($item->technical_infov);?></td>
 			    				<td><?php echo cutString($item->technical_infoe);?></td> 
 			    				<td><?php echo $item->image;?></td> 
+			    				<td><?php echo $item->is_new;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>sanpham/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 				    				<a href="<?php echo base_url()?>sanpham/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

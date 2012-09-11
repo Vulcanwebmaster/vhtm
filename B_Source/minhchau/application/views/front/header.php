@@ -9,8 +9,8 @@
 			<li><a href="#" class="but5">Liên hệ</a></li>
 		</ul>
 		<div id="img-language">
-			<a href=""><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>
-			<a href=""><img src="<?php echo base_url();?>assets/minhchau/images/el.jpg"/></a>
+			<a href="<?php echo base_url();?>changelang/change/vn/<?php echo uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>
+			<a href="<?php echo base_url();?>changelang/change/en/<?php echo uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/el.jpg"/></a>
 		</div>
 	</div>
 	

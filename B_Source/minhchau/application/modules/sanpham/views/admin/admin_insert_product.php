@@ -48,6 +48,13 @@
 					<label>Hình ảnh</label>
 					<?php echo $this->ckeditor->editor('image','',$config);?>
 				</fieldset>
+				<fieldset>
+					<label>Sản phẩm mới</label>
+					<select name="is_new">
+						<option value="1" selected="selected">Có</option>
+						<option value="0">Không</option>
+					</select>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">
