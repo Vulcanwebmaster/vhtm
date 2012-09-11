@@ -8,5 +8,10 @@
 			<li><a href="#" class="but4">Dịch vụ</a></li>
 			<li><a href="#" class="but5">Liên hệ</a></li>
 		</ul>
+		<div id="img-language">
+			<a href=""><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>
+			<a href=""><img src="<?php echo base_url();?>assets/minhchau/images/el.jpg"/></a>
+		</div>
 	</div>
+	
 </div>
