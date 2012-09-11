@@ -100,6 +100,18 @@ overflow:hidden;
 float:left;
 width:752px;
 }
+
+.content{
+padding:13px 0 0 0;
+width:100%;
+float:left;
+margin:0 29px 0 0;
+}
+
+.content p{
+padding:5px 0 0 12px;
+}
+
 .about{
 padding:13px 0 0 0;
 width:450px;
@@ -109,6 +121,7 @@ margin:0 29px 0 0;
 .about p{
 padding:5px 0 0 12px;
 }
+
 .about a{
 display:block;
 color:#547223;

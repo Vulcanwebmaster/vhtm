@@ -1,5 +1,5 @@
 <?php
-	class Gioithieu extends NIW_Controller
+	class Dichvu extends NIW_Controller
 	{
 		private $module;
 		function __construct()
@@ -7,7 +7,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Mgioithieu');
+			$this->load->model('Mdichvu');
 			$this->load->library('session');
 		}
 		
@@ -17,18 +17,18 @@
 			
 			if($this->session->userdata('lang')=='en')
 			{
-				$data['query'] = $this->Mgioithieu->getOne()->contente;
-				$data['title'] = 'About us';
+				$data['query'] = $this->Mdichvu->getOne()->contente;
+				$data['title'] = 'Our Services';
 			}
 			elseif ($this->session->userdata('lang')=='vn')
 			{
-				$data['query'] = $this->Mgioithieu->getOne()->contentv;
-				$data['title'] = 'Giới thiệu';
+				$data['query'] = $this->Mdichvu->getOne()->contentv;
+				$data['title'] = 'Dịch vụ';
 			}
-			$data['listcate']=$this->Mgioithieu->getListByColumn('mc_category','parent_id',0);
-			$data['list']=$this->Mgioithieu->getListFull('mc_about_us');
+			$data['listcate']=$this->Mdichvu->getListByColumn('mc_category','parent_id',0);
+			$data['list']=$this->Mdichvu->getListFull('mc_about_us');
 			$data['module']=$this->module;
-			$data['page']='vgioithieu';
+			$data['page']='vdichvu';
 			$this->load->view('front/container',$data);
 		}
 	}

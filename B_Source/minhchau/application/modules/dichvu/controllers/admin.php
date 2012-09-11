@@ -7,7 +7,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Mgioithieu');
+			$this->load->model('Mdichvu');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 		}
@@ -18,19 +18,12 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
-			$data['info'] = $this->Mgioithieu->getRowByColumn('mc_about_us','id',1);
-			$data['title'] = 'Sửa giới thiệu';
-			$data['bcCurrent'] = 'Giới thiệu';
+			$data['info'] = $this->Mdichvu->getOne();
+			$data['title'] = 'Sửa dịch vụ';
+			$data['bcCurrent'] = 'Dịch vụ';
 			$data['module'] = $this->module;
-			$data['page'] = 'admin_edit_aboutus';
+			$data['page'] = 'admin_edit_services';
 			$this->load->view('admin/container',$data);
-		}
-		
-		function _input()
-		{
-			$input = array('contentv'=>$this->input->post('contentv'),
-						'contente'=>$this->input->post('contente'));
-			return $input;
 		}
 		
 		function edit($id=1)
@@ -41,8 +34,7 @@
 			
 			if ($this->form_validation->run())
 			{
-				$input=$this->_input();
-				if ($this->Mgioithieu->updateRowByColumn('mc_about_us','id',$id,$input))
+				if ($this->Mdichvu->updateDichVu())
 				{
 					$this->session->set_userdata('result','Cập nhật thành công');
 				}
