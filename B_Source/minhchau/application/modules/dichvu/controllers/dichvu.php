@@ -13,7 +13,7 @@
 		
 		function index()
 		{
-			$this->session->set_userdata('lang','vn');
+			//$this->session->set_userdata('lang','vn');
 			
 			if($this->session->userdata('lang')=='en')
 			{
