@@ -9,11 +9,13 @@ class Homepage extends NIW_controller {
 		$this->module = strtolower(get_class());
 		
 		$this->load->model('Mhomepage');
+		$this->load->library('session');
+		$this->setLang();
 	}
 	
 	public function index()
 	{
-		$data['list-cate']=$this->Mhomepage->getListByColumn('mc_category','parent_id',0);
+		$data['listcate']=$this->Mhomepage->getListByColumn('mc_category','parent_id',0);
 		$data['title']='[Name Defined] | Home';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
