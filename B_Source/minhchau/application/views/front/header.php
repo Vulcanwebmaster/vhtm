@@ -6,7 +6,7 @@
 			<li><a href="<?php echo base_url(); ?>gioithieu" class="but2">Giới thiệu</a></li>
 			<li><a href="#" class="but3">Sản phẩm</a></li>
 			<li><a href="<?php echo base_url(); ?>dichvu" class="but4">Dịch vụ</a></li>
-			<li><a href="#" class="but5">Liên hệ</a></li>
+			<li><a href="<?php echo base_url(); ?>lienhe" class="but5">Liên hệ</a></li>
 		</ul>
 		<div id="img-language">
 			<a href="<?php echo base_url();?>changelang/change/vn/<?php echo uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>
