@@ -73,7 +73,7 @@
                 <p class="menutitle">
                     MANAGEMENT</p>                    
                 <a class="menu" href="user.php" onfocus="blur()">USER</a>    
-                <a class="menu" href="custodian.php" onfocus="blur()">COUNTERPARTY</a>
+                <a class="menu" href="counterparty.php" onfocus="blur()">COUNTERPARTY</a>
             </div>
             <div class="menucontainer">
                 <p class="menutitle">
