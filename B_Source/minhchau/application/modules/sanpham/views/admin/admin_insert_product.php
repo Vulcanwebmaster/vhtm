@@ -29,6 +29,10 @@
 					</select>
 				</fieldset>
 				<fieldset>
+					<label>Giá (VNĐ)</label>
+					<input type="text" name="price" style="width:95%"/>
+				</fieldset>
+				<fieldset>
 					<label>Chức năng (Việt)</label>
 					<?php echo $this->ckeditor->editor('usesv','',$config);?>
 				</fieldset>

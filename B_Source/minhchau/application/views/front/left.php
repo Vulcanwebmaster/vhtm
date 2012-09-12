@@ -26,22 +26,5 @@
 						<?php }
 					}
 				?>
-				<li class="color"><a href="#">Illum secundum</a></li>
-				<li><a href="#">Tamen causa ut diam</a></li>
-				<li class="color"><a href="#">Appellatio vel hos autem</a></li>
-				<li><a href="#">Consequat</a></li>
-				<li class="color"><a href="#">Nibh valde tincidunt</a></li>
-				<li><a href="#">Illum secundum</a></li>
-				<li class="color"><a href="#">Appellatio vel</a></li>
-				<li><a href="#">Illum secundum</a></li>
-				<li class="color"><a href="#">Nibh valde</a></li>
-				<li><a href="#">Consequat</a></li>
-				<li class="color"><a href="#">Nibh valde tincidunt</a></li>
-				<li><a href="#">Appellatio vel</a></li>
-				<li class="color"><a href="#">Illum secundum</a></li>
-				<li><a href="#">Consequat</a></li>
-				<li class="color"><a href="#">Appellatio vel</a></li>
-				<li><a href="#">Illum secundum</a></li>
-				<li class="color"><a href="#">Nibh valde</a></li>
 			</ul>
 		</div>

@@ -33,6 +33,7 @@
 		    				<th>Tên (V)</th>
 		    				<th>Tên (E)</th> 
 		    				<th>Mã danh mục</th>
+		    				<th>Giá</th>
 		    				<th>Công dụng (V)</th>
 		    				<th>Công dụng (E)</th>
 		    				<th>Thông tin kỹ thuật (V)</th>
@@ -48,7 +49,8 @@
 					 		<tr>  
 			    				<td><?php echo $item->namev;?></td>
 			    				<td><?php echo $item->namee;?></td> 
-			    				<td><?php echo $item->category_id;?></td> 
+			    				<td><?php echo $item->category_id;?></td>
+			    				<td><?php echo $item->price;?></td> 
 			    				<td><?php echo cutString($item->usesv);?></td>
 			    				<td><?php echo cutString($item->usese);?></td> 
 			    				<td><?php echo cutString($item->technical_infov);?></td>

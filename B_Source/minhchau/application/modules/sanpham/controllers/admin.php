@@ -27,6 +27,7 @@
 			$input=array('namev'=>$this->input->post('namev'),
 						'namee'=>$this->input->post('namee'),
 						'category_id'=>$this->input->post('category_id'),
+						'price'=>$this->input->post('price'),
 						'usesv'=>$this->input->post('usesv'),
 						'usese'=>$this->input->post('usese'),
 						'technical_infov'=>$this->input->post('technical_infov'),
