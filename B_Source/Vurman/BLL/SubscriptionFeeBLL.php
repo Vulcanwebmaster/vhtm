@@ -74,7 +74,8 @@ Class SubscriptionFeeClass extends ChildCoreClass
 	function InsertSubscriptionFee()
 	{
 		$InsArr=$this->subscription_feeArr;
-		$InsArr['id']=$this->id;
+		//$InsArr['id']=$this->id;
+		$InsArr['id']="NULL";
 		$InsArr['funds_id']=$this->funds_id;
 		$InsArr['minimum_front_end_fee']=$this->minimum_front_end_fee;
 		$InsArr['maximum_front_end_fee']=$this->maximum_front_end_fee;
@@ -83,6 +84,7 @@ Class SubscriptionFeeClass extends ChildCoreClass
 		$InsArr['additional_information']=$this->additional_information;
 		
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
+		echo $this->InsertQuery($InsArr);
 		if(mysql_affected_rows()>0)$msg="Added Successfully.";
 		else $msg="Failed.";
 		return $msg;

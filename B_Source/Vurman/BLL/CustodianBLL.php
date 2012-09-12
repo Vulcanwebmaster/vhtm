@@ -78,7 +78,7 @@ Class CustodianClass extends ChildCoreClass
 		
 		$SearchQuery="select * from ".$this->TableName;
 		if($whereQuery!="") $SearchQuery.=" where " .$whereQuery;
-		echo $SearchQuery;
+		//echo $SearchQuery;
 		$result=$this->ExcuteQuery($SearchQuery);
 		return $result;
 	}
@@ -123,9 +123,9 @@ Class CustodianClass extends ChildCoreClass
 		$InsArr['custodian']="'".$this->custodian."'";
 		$InsArr['biccust']="'".$this->biccust."'";
 		$InsArr['cpacwithcust']="'".$this->cpacwithcust."'";
-		
+		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully Into Custodian.";
 		else $msg="Failed.";
 		return $msg;
 	}

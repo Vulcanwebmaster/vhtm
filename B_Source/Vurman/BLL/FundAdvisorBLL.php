@@ -86,7 +86,8 @@ Class FundAdvisorClass extends ChildCoreClass
 	function InsertFundAdvisor()
 	{
 		$InsArr=$this->fund_advisorArr;
-		$InsArr['id']=$this->id;
+		//$InsArr['id']=$this->id;
+		$InsArr['id']="NULL";
 		$InsArr['fund_advisor']=$this->fund_advisor;
 		$InsArr['postal_address_adv']=$this->postal_address_adv;
 		$InsArr['postal_address_adv_I']=$this->postal_address_adv_I;
@@ -95,9 +96,9 @@ Class FundAdvisorClass extends ChildCoreClass
 		$InsArr['fax_number_adv']=$this->fax_number_adv;
 		$InsArr['additional_information_adv']=$this->additional_information_adv;
 		$InsArr['zip_city_adv']=$this->zip_city_adv;
-		
+		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully FundAdvisor.";
 		else $msg="Failed.";
 		return $msg;
 	}

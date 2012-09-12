@@ -218,6 +218,8 @@ Class TransferClass extends ChildCoreClass
 		{
 			$whereQuery.=$and."created_at =".$this->created_at;
 			$and=" and ";
+		}		else {
+						$this->comment=NULL;
 		}
 		if($this->types!="")
 		{
@@ -305,7 +307,7 @@ Class TransferClass extends ChildCoreClass
 		
 		$InsArr['id_client']=$this->id_client;
 		$InsArr['client_reference']="'".$this->client_reference."'";
-		$InsArr['id_isin']="'".$this->id_isin."'";
+				// Hoang - Add check charater ' if already in id . we have to update it to '' because mysql dont' understand		if(strlen(strstr($this->id_isin,"'"))>0)		{			//$sub=explode("'",$this->id_isin);			$sub=str_replace("'", "''", $this->id_isin);			echo $sub;			$this->id_isin=$sub;		} 		// End - Add		$InsArr['id_isin']="'".$this->id_isin."'";
 		$InsArr['fund_name']="'".$this->fund_name."'";
 		$InsArr['isin_reference']="'".$this->isin_reference."'";
 		$InsArr['currency']=$this->currency;
@@ -327,12 +329,11 @@ Class TransferClass extends ChildCoreClass
 		$InsArr['created_at']="now()";
 		$InsArr['types']="'".$this->types."'";
 		$InsArr['status']="'".$this->status."'";
-		$InsArr['transaction_type']="'".$this->transaction_type."'";
-		
+		$InsArr['transaction_type']="'".$this->transaction_type."'";
 		unset($InsArr['settled_by']);
 		unset($InsArr['settled_date']);
 		
-		//echo $this->InsertQuery($InsArr);
+		echo $this->InsertQuery($InsArr);
 		
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
 		if(mysql_affected_rows()>0)$msg="Your order was added successfully";
@@ -520,7 +521,7 @@ Class TransferClass extends ChildCoreClass
 		$InsArr['transfer_agent']="'".$this->transfer_agent."'";
 		$InsArr['bic_ta']="'".$this->bic_ta."'";
 		$InsArr['cust_ac_ta']="'".$this->cust_ac_ta."'";
-		$InsArr['comment']="'".$this->comment."'";
+		$InsArr['comment']=" '".$this->comment."' ";
 		$InsArr['created_at']="'".$this->created_at."'";
 		$InsArr['types']=$this->types;
 		$InsArr['status']=$this->status;

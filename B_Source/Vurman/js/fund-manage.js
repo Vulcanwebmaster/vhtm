@@ -115,7 +115,7 @@ function verifyManage()
 			}
 			
 	// TABLE 2 INVESTMENT DETAILS		
-	message=message+"<br/><br/>";
+	message=message+"SS";
 	if(getValueFromId('initial_minimum_investment')==""){ message+=newline+" INITIAL MINIMUM INVESTMENT";	newline=', '; 
 				if(focusfield=='') focusfield='initial_minimum_investment';
 			}
@@ -180,6 +180,176 @@ function verifyManage()
 	if(getValueFromId('funds_id')==""){ message+=newline+"FUNDS ID";	newline=', '; 
 				if(focusfield=='') focusfield='funds_id';
 			}
+			
+	// Check erro for talbe subcription details
+	message=message+"";
+	if(getValueFromId('funds_id_sub')==""){ message+=newline+"FUNDS ID";	newline=', '; 
+				if(focusfield=='') focusfield='funds_id_sub';
+			}
+	if(getValueFromId('minimum_front_end_fee')==""){ message+=newline+"MINIMUM FRONT END FEE";	newline=', '; 
+				if(focusfield=='') focusfield='minimum_front_end_fee';
+			}
+	if(getValueFromId('maximum_front_end_fee')==""){ message+=newline+"MAXIMUM FRONT END FEE";	newline=', '; 
+				if(focusfield=='') focusfield='maximum_front_end_fee';
+			}
+	if(getValueFromId('management_fee')==""){ message+=newline+"MANAGEMENT FEE";	newline=', '; 
+				if(focusfield=='') focusfield='management_fee';
+			}
+	if(getValueFromId('additional_information')==""){ message+=newline+"ADDITIONAL INFORMATION";	newline=', '; 
+				if(focusfield=='') focusfield='additional_information';
+			}
+	if(getValueFromId('performance_fee')==""){ message+=newline+"PERFORMACE FEE";	newline=', '; 
+				if(focusfield=='') focusfield='performance_fee';
+			}
+	//Check erro not entry  insert into RedemptionFees
+	if(getValueFromId('funds_id_red')==""){ message+=newline+"FUNDS ID RED";	newline=', '; 
+				if(focusfield=='') focusfield='funds_id_red';
+			}
+	if(getValueFromId('minimum_amount')==""){ message+=newline+"MINIMUM AMOUNT";	newline=', '; 
+				if(focusfield=='') focusfield='minimum_amount';
+			}
+	if(getValueFromId('notice_period')==""){ message+=newline+"NOTICE PERIOD";	newline=', '; 
+				if(focusfield=='') focusfield='notice_period';
+			}
+	if(getValueFromId('trading_date')!=""){
+		 	if(!reZip.test(getValueFromId('trading_date'))){
+		  		message += newline + 'TRADING FORMAT MUST BE YYYY-MM-DD !';	
+				newline=', ';
+				if(focusfield=='') focusfield='trading_date';
+			}
+		  }
+		   else if(getValueFromId('trading_date')==""){
+				message += newline + 'TRANDING DATE';	
+				newline=', ';
+				if(focusfield=='') focusfield='trading_date';
+		  }
+	if(getValueFromId('settlement_cycle')==""){ message+=newline+"SETTLEMENT CYCLE";	newline=', '; 
+				if(focusfield=='') focusfield='settlement_cycle';
+			}
+	if(getValueFromId('minimum_units')==""){ message+=newline+"MINIMUM UNITS ";	newline=', '; 
+				if(focusfield=='') focusfield='minimum_units';
+			}
+	if(getValueFromId('trading_frequency')==""){ message+=newline+"TRADING FREQUENCY";	newline=', '; 
+				if(focusfield=='') focusfield='trading_frequency';
+			}
+	if(getValueFromId('cut_of_time')==""){ message+=newline+"CUT OF TIME";	newline=', '; 
+				if(focusfield=='') focusfield='cut_of_time';
+			}
+	if(getValueFromId('additional_information_red')==""){ message+=newline+"ADDITIONAL INFORMATION";	newline=', '; 
+				if(focusfield=='') focusfield='additional_information_red';
+			}
+			
+	// Check erro Insert Into RedemptionFee
+	if(getValueFromId('redemption_details_id')==""){ message+=newline+"Redemption details id";	newline=', '; 
+				if(focusfield=='') focusfield='redemption_details_id';
+			}
+	if(getValueFromId('minimum_back_end_fee')==""){ message+=newline+"Minimum back end fee ";	newline=', '; 
+				if(focusfield=='') focusfield='minimum_back_end_fee';
+			}
+	if(getValueFromId('early_withdrawal_fee')==""){ message+=newline+"Early withdrawal fee";	newline=', '; 
+				if(focusfield=='') focusfield='early_withdrawal_fee';
+			}
+	if(getValueFromId('maximum_back_end_fee')==""){ message+=newline+"Maximum back end fee";	newline=', '; 
+				if(focusfield=='') focusfield='maximum_back_end_fee';
+			}
+	if(getValueFromId('additional_information_redfee')==""){ message+=newline+"ADDITIONAL INFORMATION";	newline=', '; 
+				if(focusfield=='') focusfield='additional_information_redfee';
+			}
+				
+	// Check erro Insert Into TRansferAgent
+	if(getValueFromId('transfer_agent')==""){ message+=newline+"Transfer Agent";	newline=', '; 
+				if(focusfield=='') focusfield='transfer_agent';
+			}
+	if(getValueFromId('postal_address')==""){ message+=newline+"Postal address ";	newline=', '; 
+				if(focusfield=='') focusfield='postal_address';
+			}
+	if(getValueFromId('postal_address_I')==""){ message+=newline+"Postal address I";	newline=', '; 
+				if(focusfield=='') focusfield='postal_address_I';
+			}
+	if(getValueFromId('phone_number')==""){ message+=newline+"Phone number";	newline=', '; 
+				if(focusfield=='') focusfield='phone_number';
+			}
+	if(getValueFromId('account_number')==""){ message+=newline+"Account number";	newline=', '; 
+				if(focusfield=='') focusfield='account_number';
+			}
+	if(getValueFromId('key_contact_persons')==""){ message+=newline+"Key contact persons";	newline=', '; 
+				if(focusfield=='') focusfield='key_contact_persons';
+			}
+	if(getValueFromId('email_address')==""){ message+=newline+"Email address";	newline=', '; 
+				if(focusfield=='') focusfield='email_address';
+			}
+	if(getValueFromId('fax_no')==""){ message+=newline+"Fax no";	newline=', '; 
+				if(focusfield=='') focusfield='fax_no';
+			}
+	if(getValueFromId('additional_information_transferagent')==""){ message+=newline+"Additional information";	newline=', '; 
+				if(focusfield=='') focusfield='additional_information_transferagent';
+			}
+	if(getValueFromId('zip')==""){ message+=newline+"ZIP";	newline=', '; 
+				if(focusfield=='') focusfield='zip';
+			}
+	
+	// Check erro Insert Into Custodian
+		if(getValueFromId('cpid_cus')==""){ message+=newline+"Cpid";	newline=', '; 
+				if(focusfield=='') focusfield='cpid_cus';
+			}
+	if(getValueFromId('custid_cus')==""){ message+=newline+"Custid";	newline=', '; 
+				if(focusfield=='') focusfield='custid_cus';
+			}
+	
+	
+	// Check erro Insert Into fundadvisor
+	if(getValueFromId('fund_advisor_adv')==""){ message+=newline+"Fund advisort adv";	newline=', '; 
+				if(focusfield=='') focusfield='fund_advisor_adv';
+			}
+	if(getValueFromId('postal_address_adv')==""){ message+=newline+"Postal address ";	newline=', '; 
+				if(focusfield=='') focusfield='postal_address_adv';
+			}
+	if(getValueFromId('postal_address_adv_I')==""){ message+=newline+"Postal address I";	newline=', '; 
+				if(focusfield=='') focusfield='postal_address_adv_I';
+			}
+	if(getValueFromId('phone_number_adv')==""){ message+=newline+"Phone number";	newline=', '; 
+				if(focusfield=='') focusfield='phone_number_adv';
+			}
+	if(getValueFromId('email_address_adv')==""){ message+=newline+"Email address";	newline=', '; 
+				if(focusfield=='') focusfield='email_address_adv';
+			}
+	if(getValueFromId('fax_number_adv')==""){ message+=newline+"Fax number";	newline=', '; 
+				if(focusfield=='') focusfield='fax_number_adv';
+			}
+	if(getValueFromId('additional_information_adv')==""){ message+=newline+"Additional information";	newline=', '; 
+				if(focusfield=='') focusfield='additional_information_adv';
+			}
+	if(getValueFromId('zip_city_adv')==""){ message+=newline+"Fax no";	newline=', '; 
+				if(focusfield=='') focusfield='zip_city_adv';
+			}
+			
+			
+	// Check erro Insert Into fundauditor
+	if(getValueFromId('fund_auditor_fau')==""){ message+=newline+"Fund auditor";	newline=', '; 
+				if(focusfield=='') focusfield='fund_auditor_fau';
+			}
+	if(getValueFromId('postal_address_fau')==""){ message+=newline+"Postal address auditor ";	newline=', '; 
+				if(focusfield=='') focusfield='postal_address_fau';
+			}
+	if(getValueFromId('postal_address_fau_I')==""){ message+=newline+"Postal address auditor";	newline=', '; 
+				if(focusfield=='') focusfield='postal_address_fau_I';
+			}
+	if(getValueFromId('phone_number_fau')==""){ message+=newline+"Phone number";	newline=', '; 
+				if(focusfield=='') focusfield='phone_number_fau';
+			}
+	if(getValueFromId('email_address_fau')==""){ message+=newline+"Email address fau";	newline=', '; 
+				if(focusfield=='') focusfield='email_address_fau';
+			}
+	if(getValueFromId('fax_number_fau')==""){ message+=newline+"Fax number fau";	newline=', '; 
+				if(focusfield=='') focusfield='fax_number_fau';
+			}
+	if(getValueFromId('additional_information_fau')==""){ message+=newline+"Additional information fau";	newline=', '; 
+				if(focusfield=='') focusfield='additional_information_fau';
+			}
+	if(getValueFromId('zip_city_fau')==""){ message+=newline+"Zip city fau";	newline=', '; 
+				if(focusfield=='') focusfield='zip_city_fau';
+			}
+	
 	if(message=="")
 	{
 		
@@ -191,7 +361,214 @@ function verifyManage()
 		document.getElementById('errorMana').innerHTML="<p style='color:red;'>"+message+"</p>";
 		if(focusfield!='') focusId(focusfield);
 		  return false;
+	}	  
+}
+function GetTransferAgent()
+{
+	var transfer_agent_id=getValueFromId('id_transfer');
+	//alert("Co getJaxRequest");
+	if(transfer_agent_id!="")
+	{
+		getAJaxReqest();
+		var url="ajaxfiles/gettransferagent.php";
+		var queryString="transfer_agent_id="+transfer_agent_id;
+		//alert(queryString);
+		req.open("POST", url, true); 
+		//alert("Chay vao trong NA");
+		req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
+		req.send(queryString); 
+		req.onreadystatechange=showTransferAgentInfo;
 	}
-	
-		  
+	else
+		alert("Can't not value");
+}
+function showTransferAgentInfo()
+{
+	if(req.readyState==4){
+		var result=req.responseText;
+		//alert(result);
+		if(result!="Not Found")
+		{
+			var resArr=result.split("|");
+			//alert(resArr);
+			setValueFromId('transfer_agent',resArr[0]);
+			setValueFromId('postal_address',resArr[1]);
+			setValueFromId('postal_address_I',resArr[2]);
+			setValueFromId('phone_number',resArr[3]);
+			setValueFromId('account_number',resArr[4]);
+			setValueFromId('key_contact_persons',resArr[5]);
+			setValueFromId('email_address',resArr[6]);
+			setValueFromId('fax_no',resArr[7]);
+			setValueFromId('additional_information_transferagent',resArr[8]);
+			setValueFromId('zip',resArr[9]);
+		}
+		else
+		{
+			setValueFromId('transfer_agent','');
+			setValueFromId('postal_address','');
+			setValueFromId('postal_address_I','');
+			setValueFromId('phone_number','');
+			setValueFromId('account_number','');
+			setValueFromId('key_contact_persons','');
+			setValueFromId('email_address','');
+			setValueFromId('fax_no','');
+			setValueFromId('additional_information_transferagent','');
+			setValueFromId('zip','');
+				
+		}
+	}
+}
+function GetCustodian_cus()
+{
+	var id=getValueFromId('custodian_id_cus');
+	//alert("getJaxRequest");
+	if(id!="0")
+	{
+		getAJaxReqest();
+		var url="ajaxfiles/getcustodianpersonal.php";
+		var queryString="id_cus="+id;
+		//alert(queryString);
+		req.open("POST", url, true); 
+		//alert("Chay vao trong NA");
+		req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
+		req.send(queryString); 
+		req.onreadystatechange=showCustodian_cus;
+	}
+	else
+		{
+			
+			setValueFromId('cpid_cus','');
+			setValueFromId('counterparty_cus','');
+			setValueFromId('biccp_cus','');
+			setValueFromId('custid_cus','');
+			setValueFromId('custodian_cus','');
+			setValueFromId('biccust_cus','');
+			setValueFromId('cpacwithcust_cus','');
+			
+		}
+}
+function showCustodian_cus()
+{
+	if(req.readyState==4){
+		var result=req.responseText;
+		//alert(result);
+		if(result!="Not Found")
+		{
+			var resArr=result.split("|");
+			//alert(resArr);
+			setValueFromId('cpid_cus',resArr[0]);
+			setValueFromId('counterparty_cus',resArr[1]);
+			setValueFromId('biccp_cus',resArr[2]);
+			setValueFromId('custid_cus',resArr[3]);
+			setValueFromId('custodian_cus',resArr[4]);
+			setValueFromId('biccust_cus',resArr[5]);
+			setValueFromId('cpacwithcust_cus',resArr[6]);
+			
+		}
+		
+	}
+}
+function GetFundAdvisor()
+{
+	var id=getValueFromId('fund_advisor_id_adv');
+	//alert("getJaxRequest");
+	if(id!="0")
+	{
+		getAJaxReqest();
+		var url="ajaxfiles/getFundAdvisor.php";
+		var queryString="id="+id;
+		//alert(queryString);
+		req.open("POST", url, true); 
+		//alert("Chay vao trong NA");
+		req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
+		req.send(queryString); 
+		req.onreadystatechange=showFundAdvisor;
+	}
+	else
+		{
+			
+			setValueFromId('fund_advisor_adv','');
+			setValueFromId('postal_address_adv','');
+			setValueFromId('postal_address_adv_I','');
+			setValueFromId('phone_number_adv','');
+			setValueFromId('email_address_adv','');
+			setValueFromId('fax_number_adv','');
+			setValueFromId('additional_information_adv','');
+			setValueFromId('zip_city_adv','');
+			
+		}
+}
+function showFundAdvisor()
+{
+	if(req.readyState==4){
+		var result=req.responseText;
+		//alert(result);
+		if(result!="Not Found")
+		{
+			var resArr=result.split("|");
+			//alert(resArr);
+			setValueFromId('fund_advisor_adv',resArr[0]);
+			setValueFromId('postal_address_adv',resArr[1]);
+			setValueFromId('postal_address_adv_I',resArr[2]);
+			setValueFromId('phone_number_adv',resArr[3]);
+			setValueFromId('email_address_adv',resArr[4]);
+			setValueFromId('fax_number_adv',resArr[5]);
+			setValueFromId('additional_information_adv',resArr[6]);
+			setValueFromId('zip_city_adv',resArr[7]);
+			
+		}
+		
+	}
+}
+function GetFundAuditor()
+{
+	var id=getValueFromId('fund_auditor_id_fau');
+	//alert("getJaxRequest");
+	if(id!="0")
+	{
+		getAJaxReqest();
+		var url="ajaxfiles/getFundAuditor.php";
+		var queryString="id="+id;
+		//alert(queryString);
+		req.open("POST", url, true); 
+		//alert("Chay vao trong NA");
+		req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
+		req.send(queryString); 
+		req.onreadystatechange=showFundAuditor;
+	}
+	else
+		{
+			
+			setValueFromId('fund_auditor_fau','');
+			setValueFromId('postal_address_fau','');
+			setValueFromId('postal_address_fau_I','');
+			setValueFromId('phone_number_fau','');
+			setValueFromId('email_address_fau','');
+			setValueFromId('fax_number_fau','');
+			setValueFromId('additional_information_fau','');
+			setValueFromId('zip_city_fau','');
+			
+		}
+}
+function showFundAuditor()
+{
+	if(req.readyState==4){
+		var result=req.responseText;
+		//alert(result);
+		if(result!="Not Found")
+		{
+			var resArr=result.split("|");
+			//alert(resArr);
+			setValueFromId('fund_auditor_fau',resArr[0]);
+			setValueFromId('postal_address_fau',resArr[1]);
+			setValueFromId('postal_address_fau_I',resArr[2]);
+			setValueFromId('phone_number_fau',resArr[3]);
+			setValueFromId('email_address_fau',resArr[4]);
+			setValueFromId('fax_number_fau',resArr[5]);
+			setValueFromId('additional_information_fau',resArr[6]);
+			setValueFromId('zip_city_fau',resArr[7]);
+			
+		}
+		
+	}
 }

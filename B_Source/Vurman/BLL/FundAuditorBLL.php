@@ -86,7 +86,8 @@ Class FundAuditorClass extends ChildCoreClass
 	function InsertFundAuditor()
 	{
 		$InsArr=$this->fund_auditorArr;
-		$InsArr['id']=$this->id;
+		//$InsArr['id']=$this->id;
+		$InsArr['id']="NULL";
 		$InsArr['fund_auditor']=$this->fund_auditor;
 		$InsArr['postal_address_fau']=$this->postal_address_fau;
 		$InsArr['postal_address_fau_I']=$this->postal_address_fau_I;
@@ -95,9 +96,9 @@ Class FundAuditorClass extends ChildCoreClass
 		$InsArr['fax_number_fau']=$this->fax_number_fau;
 		$InsArr['additional_information_fau']=$this->additional_information_fau;
 		$InsArr['zip_city_fau']=$this->zip_city_fau;
-		
+		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully FundAuditor.";
 		else $msg="Failed.";
 		return $msg;
 	}

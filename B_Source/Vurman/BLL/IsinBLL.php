@@ -13,7 +13,9 @@ Class IsinClass extends ChildCoreClass
 	public $nav;
 	public $date_nav;
 	public $unique_id;
-	
+	// Hoang Add properties
+	public $transferagent;
+	public $bicta;
 	function __construct($db)
 	{
 		$tabName="isin"; 
@@ -131,19 +133,23 @@ Class IsinClass extends ChildCoreClass
 	function InsertIsin()
 	{
 		$InsArr=$this->isinArr;
-		$InsArr['id']=$this->id;
-		$InsArr['code']=$this->code;
-		$InsArr['name']=$this->name;
-		$InsArr['id_currency']=$this->id_currency;
-		$InsArr['limit1']=$this->limit1;
-		$InsArr['limit2']=$this->limit2;
-		$InsArr['limit3']=$this->limit3;
-		$InsArr['name_fund']=$this->name_fund;
-		$InsArr['nav']=$this->nav;
-		$InsArr['date_nav']=$this->date_nav;
-		$InsArr['unique_id']=$this->unique_id;
+		$InsArr['id']="NULL";
+
 		
+		$InsArr['code']="'".$this->code."'";
+		$InsArr['name']="'".$this->name."'";
+		$InsArr['id_currency']="'".$this->id_currency."'";
+		//$InsArr['limit1']=$this->limit1;
+		//$InsArr['limit2']=$this->limit2;
+		//$InsArr['limit3']=$this->limit3;
+		$InsArr['name_fund']="'".$this->name_fund."'";
+		$InsArr['nav']="'".$this->code."'";
+		$InsArr['date_nav']="'".$this->date_nav."'";
+		$InsArr['unique_id']="'".$this->unique_id."'";
+		$InsArr['transferagent']="'".$this->transferagent."'";
+		$InsArr['bicta']="'".$this->bicta."'";
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
+		print $this->InsertQuery($InsArr);
 		if(mysql_affected_rows()>0)$msg="Added Successfully.";
 		else $msg="Failed.";
 		return $msg;

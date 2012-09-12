@@ -98,7 +98,8 @@ Class TransferAgentClass extends ChildCoreClass
 	function InsertTransferAgent()
 	{
 		$InsArr=$this->transfer_agentArr;
-		$InsArr['id']=$this->id;
+		//$InsArr['id']=$this->id;
+		$InsArr['id']="NULL";
 		$InsArr['transfer_agent']=$this->transfer_agent;
 		$InsArr['postal_address']=$this->postal_address;
 		$InsArr['postal_address_I']=$this->postal_address_I;
@@ -109,9 +110,9 @@ Class TransferAgentClass extends ChildCoreClass
 		$InsArr['fax_no']=$this->fax_no;
 		$InsArr['additional_information']=$this->additional_information;
 		$InsArr['zip']=$this->zip;
-		
+		echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully TransferAgent.";
 		else $msg="Failed.";
 		return $msg;
 	}

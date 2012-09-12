@@ -68,15 +68,15 @@ Class RedemptionFeesClass extends ChildCoreClass
 	function InsertRedemptionFees()
 	{
 		$InsArr=$this->redemption_feesArr;
-		$InsArr['id']=$this->id;
+		$InsArr['id']="NULL";
 		$InsArr['redemption_details_id']=$this->redemption_details_id;
 		$InsArr['minimum_back_end_fee']=$this->minimum_back_end_fee;
 		$InsArr['early_withdrawal_fee']=$this->early_withdrawal_fee;
 		$InsArr['maximum_back_end_fee']=$this->maximum_back_end_fee;
 		$InsArr['additional_information']=$this->additional_information;
-		
+		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully RedemptionFees.";
 		else $msg="Failed.";
 		return $msg;
 	}

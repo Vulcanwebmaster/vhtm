@@ -102,9 +102,9 @@ Class Redemption_detailsClass extends ChildCoreClass
 		$InsArr['trading_frequency']=$this->trading_frequency;
 		$InsArr['cut_of_tiime']=$this->cut_of_tiime;
 		$InsArr['additional_information']=$this->additional_information;
-		
+		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
+		if(mysql_affected_rows()>0)$msg="Added Successfully Redemption details.";
 		else $msg="Failed.";
 		return $msg;
 	}
