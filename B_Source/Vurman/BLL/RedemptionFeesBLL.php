@@ -77,7 +77,7 @@ Class RedemptionFeesClass extends ChildCoreClass
 		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
 		if(mysql_affected_rows()>0)$msg="Added Successfully RedemptionFees.";
-		else $msg="Failed.";
+		else $msg="Failed table redemptionFees.";
 		return $msg;
 	}
 	function UpdateRedemptionFees()

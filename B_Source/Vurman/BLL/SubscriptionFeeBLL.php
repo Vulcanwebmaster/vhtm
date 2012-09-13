@@ -84,9 +84,9 @@ Class SubscriptionFeeClass extends ChildCoreClass
 		$InsArr['additional_information']=$this->additional_information;
 		
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		echo $this->InsertQuery($InsArr);
-		if(mysql_affected_rows()>0)$msg="Added Successfully.";
-		else $msg="Failed.";
+		//echo $this->InsertQuery($InsArr);
+		if(mysql_affected_rows()>0)$msg="Added Successfully SubscriptionFee.";
+		else $msg="Failed table SubscriptionFee.";
 		return $msg;
 	}
 	function UpdateSubscriptionFee()

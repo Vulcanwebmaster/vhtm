@@ -264,7 +264,7 @@ Class FundClass extends ChildCoreClass
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
 		//print $this->InsertQuery($InsArr);
 		if(mysql_affected_rows()>0)$msg="Added Successfully Fund.";
-		else $msg="Failed.";
+		else $msg="Failed table Fund";
 		return $msg;
 	}
 	function UpdateFund()

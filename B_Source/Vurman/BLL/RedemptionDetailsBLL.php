@@ -105,7 +105,7 @@ Class Redemption_detailsClass extends ChildCoreClass
 		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
 		if(mysql_affected_rows()>0)$msg="Added Successfully Redemption details.";
-		else $msg="Failed.";
+		else $msg="Failed Redemption details.";
 		return $msg;
 	}
 	function UpdateRedemption_details()

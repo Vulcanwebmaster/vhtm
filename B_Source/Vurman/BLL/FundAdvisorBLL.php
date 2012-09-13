@@ -99,7 +99,7 @@ Class FundAdvisorClass extends ChildCoreClass
 		//echo $this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
 		if(mysql_affected_rows()>0)$msg="Added Successfully FundAdvisor.";
-		else $msg="Failed.";
+		else $msg="Failed table FundAdvisor.";
 		return $msg;
 	}
 	function UpdateFundAdvisor()
