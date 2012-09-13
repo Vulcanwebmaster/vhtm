@@ -67,6 +67,7 @@ float:left
 padding:18px 12px 50px 21px;
 float:left;
 margin-top:-45px;
+
 }
 #content p{
 padding:3px 0 0 5px;
@@ -79,6 +80,7 @@ padding-top:25px;
 .stuff{
 margin:15px 0 0 0;
 float:left;
+width:542px;
 }
 .item{
 width:240px;
@@ -422,3 +424,7 @@ background:url(../images/bg1.gif);}
 #ml{ margin-top:0px; padding:5px; }
 #ml1{ margin-top:30px;margin-left:-15px; padding:5px; }
 #ml a,#ml1 a{ color:#333}
+#stuff-left{ border:1px solid #CCC; width:50%; float:left;}
+#stuff-right{ float:left; width:40%; padding:0 15px; margin-top:-10px}
+#stuff-map{ float:left; width:230px;}
+#stuff-location{ float:left; margin:5px;}
