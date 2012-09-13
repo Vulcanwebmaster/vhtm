@@ -5,7 +5,8 @@
 		function __construct()
 		{
 			parent::__construct();
-			$this->module=strtolower(get_class());
+			$this->module=basename(dirname(dirname(__FILE__)));
+			$this->module = strtolower(get_class());
 			
 			$this->load->model('Mlienhe');
 			$this->load->library('session');
@@ -20,18 +21,7 @@
 		
 		function index()
 		{
-			$this->session->set_userdata('lang','vn');
-			
-			if($this->session->userdata('lang')=='en')
-			{
-				$data['query'] = $this->Mlienhe->getOne()->contente;
-				$data['title'] = 'About us';
-			}
-			elseif ($this->session->userdata('lang')=='vn')
-			{
-				$data['query'] = $this->Mlienhe->getOne()->contentv;
-				$data['title'] = 'Liên Hệ';
-			}
+			$data['query']=$this->Mlienhe->getRowByColumn('mc_contact_us','id',1);
 			$data['listcate']=$this->Mlienhe->getListByColumn('mc_category','parent_id',0);
 			$data['list']=$this->Mlienhe->getListFull('mc_contact_us');
 			$data['module']=$this->module;

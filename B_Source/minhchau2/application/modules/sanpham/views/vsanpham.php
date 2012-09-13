@@ -1,29 +1,79 @@
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#menu-sanpham').addClass('but1_active');
-	});
-</script>
-<?php $lang=$this->session->userdata('lang');?>
-<div id="main_block">
-	<style>
-		.item p img{width:202px !important; height:160px !important}
-	</style>
-	<?php if (isset($category))
-			if ($lang=='vn')
-				echo "<h2>".$category->namev."</h2>";
-			else echo "<h2>".$category->namee."</h2>";?>
-	<div id="items">
-		<?php foreach ($list as $item)
-		{?>
-			<div class="item">
-				<h3 style="margin-top:15px; margin-left:25px; text-transform:capitalize; color:#6c6c6c">
-					<?php if ($lang=='vn') echo $item->namev;
-					else echo $item->namee;?>
-				</h3>
-				<?php echo $item->image;?>
-				<span><?php echo $item->price;?> VNĐ</span>
-				<a href="<?php echo base_url();?>sanpham/chiTiet/<?php echo $item->id;?>" class="view">Chi tiết</a>
+<?php
+	$lang=$this->session->userdata('lang');
+?>
+<div id="container1">
+      <!---------------begin center----------------------->																																																																																																																																																																										
+	  
+      
+      <!---------------begin left----------------------->
+	  <div id="left1" class="column">
+      
+      	<?php $this->load->view('front/left1');?>
+	  	
+	  </div>
+      <div id="center1" class="column">
+           
+       <!--------------begin content center----------------------->
+	  	<div id="content1">
+        	<div id="ml">
+        	<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a>>> 
+        	<a href="<?php echo base_url() ?>sanpham"><?php echo $this->lang->line('content-sanpham'); ?> </a>
+        	<?php if(isset($query))
+			{
+				?>
+	        	>> 
+	        	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $query->id; ?>">
+	        		<?php
+	        			if($lang=='vn')
+							echo $query->namev;
+						else echo $query->namee;
+	        		?>
+	        	</a>
+        		<?php
+       		}
+        	?>
+        	</div>
+			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px; color:#26a1cc; font-weight:bold;">
+				<?php 
+					if(isset($query))
+					{
+						if($lang=='vn')
+							echo $query->namev;
+						else echo $query->namee;
+					}
+					else echo $this->lang->line('content-sanpham'); 
+					
+				?>
+			</p>
+			<div class="stuff">
+				<?php
+					foreach($items as $item)
+					{
+						?>
+							<div class="item">
+								<img src="<?php echo base_url()?>assets/minhchau2/images/sp1.jpg" alt="" width="124" height="90" />
+								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name">
+									<?php
+										if($lang=='vn') 
+											echo $item->namev;
+										else echo $item->namee;  
+									?>
+								</a>
+								<span>
+									<?php echo $item->price; ?>
+								</span>
+							</div>
+						<?php
+					}
+				?>
+				
 			</div>
-		<?php }?>
+		</div>
+        <!---------------end content center----------------------->
+	  </div>
+      <!--------------end center----------------------->
+      <!---------------end đối tác---------------------->
+      
+      <!---------------begin right----------------------->
+       <!---------------end right----------------------->
 	</div>
-</div>

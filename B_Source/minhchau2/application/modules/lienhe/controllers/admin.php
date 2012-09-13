@@ -15,7 +15,7 @@
 		function index()
 		{
 			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau/ckeditor/", 'outPut' => true));                             
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau2/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
 			$data['info']=$this->Mlienhe->getRowByColumn('mc_contact_us','id',1);

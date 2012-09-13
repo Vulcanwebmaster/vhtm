@@ -2,7 +2,6 @@
 	$newModel=new CI_Model();
 	$lang=$this->session->userdata('lang');
 ?>
-<div id="left" class="column">
 	  	<div class="block">
         
 			<div id="danhmuc">
@@ -57,7 +56,7 @@
 							else 
 							{
 								?>
-									<li id="color" class="sub-item">
+									<li id="color" class="sub-item"> 
 									<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parent->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
 										<?php
 											if($lang=='vn') 
@@ -75,7 +74,7 @@
 			</ul>
             
 		</div>
-        <img src="<?php echo base_url()?>assets/minhchau2/images/bot_bg.gif" alt="" width="170" height="10" style="margin-bottom:5px" />
+        <img src="<?php echo base_url()?>assets/images/bot_bg.gif" alt="" width="170" height="10" style="margin-bottom:5px" />
         <!--------------end danh mục----------------------->
         
         <!---------------begin đối tác----------------------->
@@ -87,4 +86,3 @@
             </div>
         </div>
         <img src="<?php echo base_url()?>assets/minhchau2/images/bot_bg.gif" alt="" width="170" height="10" />
-	  </div>

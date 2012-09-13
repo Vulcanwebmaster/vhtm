@@ -21,7 +21,8 @@ class Homepage extends NIW_controller {
 	
 	public function index()
 	{
-		$data['title']='[Name Defined] | Home';
+		$data['items']=$this->Mhomepage->getListByColumn('mc_product','is_new',1);
+		$data['parents']=$this->Mhomepage->getListByColumn('mc_category','parent_id',0);
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);

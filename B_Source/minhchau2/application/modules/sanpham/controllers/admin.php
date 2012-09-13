@@ -40,7 +40,7 @@
 		function insert()
 		{
 			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau/ckeditor/", 'outPut' => true));                             
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau2/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor();
 			//=============================================
 			if (!$this->input->post('namev'))
@@ -84,7 +84,7 @@
 		function edit($id=0)
 		{
 			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau/ckeditor/", 'outPut' => true));                             
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau2/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor();
 			//=============================================
 			if (!$this->input->post('namev'))

@@ -1,4 +1,10 @@
 <div id="footer">
-		<a href="index.html">Trang chủ</a>  |  <a href="index2.html">Sản phẩm mới</a>  |  <a href="index2.html">Ưu đãi đặc biệt</a>  |  <a href="index2.html">Tài khoản của tôi</a>  |  <a href="index2.html">Địa chỉ</a>  |  <a href="index2.html">FAQ</a>  |  <a href="index2.html">Liên hệ</a>  
+		<a href="index.html"><?php echo $this->lang->line('footer-trangchu'); ?></a>  |  
+		<a href="index2.html"><?php echo $this->lang->line('footer-sanphammoi'); ?></a>  |  
+		<a href="index2.html"><?php echo $this->lang->line('footer-uudai'); ?></a>  |  
+		<a href="index2.html"><?php echo $this->lang->line('footer-taikhoan'); ?></a>  |  
+		<a href="index2.html"><?php echo $this->lang->line('footer-diachi'); ?></a>  |  
+		<a href="index2.html">FAQ</a>  |  
+		<a href="index2.html"><?php echo $this->lang->line('footer-lienhe'); ?></a>  
 		<p>Copyright ©. All rights reserved. Design by <a href="http://niw.com.vn/" target="_blank" id="bft" title="NIW">NIW</a>     </p>																																																																																																																																									
 	</div>
