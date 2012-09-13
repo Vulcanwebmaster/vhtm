@@ -3,19 +3,19 @@
 			<div id="danhmuc"><img src="<?php echo base_url()?>assets/minhchau2/images/top_dm.gif" alt="" width="170" height="12"><p style="padding-top:6px">Danh mục sản phẩm</p></div>
 			<ul id="navigation">
 				<li id="color" class="sub-item"> <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">Chẩn đoán hình ảnh</a>
-                	<div class="item" style="display: none; ">
-                    	<a href="#">Máy siêu âm</a><br>
-                        <a href="#">Máy X- Quang</a><br>
-                        <a href="#">Phụ kiện X-Quang</a>
+                	<div class="main-item" style="display: none; ">
+                    	<a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Máy siêu âm</a><br>
+                        <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Máy X- Quang</a><br>
+                        <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Phụ kiện X-Quang</a>
                     </div>
                 </li>
 				<li class="sub-item"><a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">Gây mê hồi sức</a>
-                	<div class="item" style="display: none; ">
-                    	<a href="#">Máy thở- Máy gây mê</a><br>
-                        <a href="#">Máy sốc tim</a><br>
-                        <a href="#">Bộ hồi sức cấp cứu</a><br>
-                        <a href="#">Máy tạo ôxy</a><br>
-                        <a href="#">Buồng ooxxy cao áp</a>
+                	<div class="main-item" style="display: none; ">
+                    	<a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Máy thở- Máy gây mê</a><br>
+                        <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Máy sốc tim</a><br>
+                        <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Bộ hồi sức cấp cứu</a><br>
+                        <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Máy tạo ôxy</a><br>
+                        <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">Buồng ooxxy cao áp</a>
                     </div>
                 </li>
 				<li id="color"><a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">Khoa mắt</a></li>

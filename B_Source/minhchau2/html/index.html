@@ -17,19 +17,20 @@
         $('#slider').nivoSlider();
     });
 	$(document).ready(function(){
-		$('.item').hide();
+		$('.main-item').hide();
 		$('.sub-item').click(function(){
-			$(this).children('.item').slideDown();
-			$(this).children('')
+			$(this).children('.main-item').slideDown();
+			
 			});
-		$('.sub-item').mouseenter(function(){
-			$(this).children('.item').slideUp();
+		$('.sub-item').mouseleave(function(){
+			$(this).children('.main-item').slideUp();
 			});
 		});
 </script>
 </head>
 
 <body>
+<!---------------begin header----------------------->
 	<div id="header">
 		<a href="index.html" class="float"><img src="images/logo.jpg" alt="" width="171" height="73" /></a>																																																		
 	  <div class="topblock1">
@@ -48,6 +49,7 @@
 			<img src="images/shopping.gif" alt="" width="24" height="24" class="shopping" />																																																																									
 		 	<p>Shopping cart</p> <p><strong>0</strong> <span>items</span></p>
 		</div>
+        <!---------------begin menu----------------------->
 		<ul id="menu">
 		
 			<li><a href="index.html">TRANG CHỦ</a></li>
@@ -57,11 +59,15 @@
             <li><a href="#">Dịch vụ</a></li>
             <li><a href="#">Liên hệ</a></li>
 		</ul>
+        <!---------------end menu----------------------->
 	</div>
-	
+<!---------------end header----------------------->	
+
+<!---------------begin main----------------------->
 	<div id="container">
-      																																																																																																																																																																										
+      <!---------------begin center----------------------->																																																																																																																																																																										
 	  <div id="center" class="column">
+      <!---------------begin slider----------------------->
       <div class="slider-wrapper theme-default">	
       	<div id="slider" class="nivoSlider">
   		  <img src="images/slide5.jpg" />
@@ -70,6 +76,9 @@
           <img src="images/slide6.jpg" />
         </div>
        </div>
+       <!---------------end slider----------------------->
+       
+       <!--------------begin content center----------------------->
 	  	<div id="content">
         
         	<p style=" font-size:20px;">Giới thiệu</p>
@@ -117,25 +126,30 @@ Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi �
 				</div>
 			</div>
 		</div>
+        <!---------------end content center----------------------->
 	  </div>
+      <!--------------end center----------------------->
+      
+      <!---------------begin left----------------------->
 	  <div id="left" class="column">
 	  	<div class="block">
+        <!---------------begin danh mục----------------------->
 			<div id="danhmuc"><img src="images/top_dm.gif" alt="" width="170" height="12" /><p style="padding-top:6px">Danh mục sản phẩm</p></div>
 			<ul id="navigation">
 				<li id="color" class="sub-item"> <a href="#"><img src="images/tamgiac.gif">Chẩn đoán hình ảnh</a>
-                	<div class="item">
-                    	<a href="#">Máy siêu âm</a><br/>
-                        <a href="#">Máy X- Quang</a><br/>
-                        <a href="#">Phụ kiện X-Quang</a>
+                	<div class="main-item">
+                    	<a href="#"><img src="images/arrow12.gif">Máy siêu âm</a><br/>
+                        <a href="#"><img src="images/arrow12.gif">Máy X- Quang</a><br/>
+                        <a href="#"><img src="images/arrow12.gif">Phụ kiện X-Quang</a>
                     </div>
                 </li>
 				<li  class="sub-item"><a href="#"><img src="images/tamgiac.gif">Gây mê hồi sức</a>
-                	<div class="item">
-                    	<a href="#">Máy thở- Máy gây mê</a><br/>
-                        <a href="#">Máy sốc tim</a><br/>
-                        <a href="#">Bộ hồi sức cấp cứu</a><br/>
-                        <a href="#">Máy tạo ôxy</a><br/>
-                        <a href="#">Buồng ooxxy cao áp</a>
+                	<div class="main-item">
+                    	<a href="#"><img src="images/arrow12.gif">Máy thở- Máy gây mê</a><br/>
+                        <a href="#"><img src="images/arrow12.gif">Máy sốc tim</a><br/>
+                        <a href="#"><img src="images/arrow12.gif">Bộ hồi sức cấp cứu</a><br/>
+                        <a href="#"><img src="images/arrow12.gif">Máy tạo ôxy</a><br/>
+                        <a href="#"><img src="images/arrow12.gif">Buồng ooxxy cao áp</a>
                     </div>
                 </li>
 				<li id="color"><a href="#"><img src="images/tamgiac.gif">Khoa mắt</a></li>
@@ -161,6 +175,9 @@ Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi �
             
 		</div>
         <img src="images/bot_bg.gif" alt="" width="170" height="10" style="margin-bottom:5px" />
+        <!--------------end danh mục----------------------->
+        
+        <!---------------begin đối tác----------------------->
 		<div  id="doitac">
         	<div id="danhmuc" ><img src="images/top_dm.gif" alt="" width="170" height="12" /><p style="padding-top:6px">Đối tác</p></div>
             <div style="margin-top:5px">
@@ -170,10 +187,13 @@ Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi �
         </div>
         <img src="images/bot_bg.gif" alt="" width="170" height="10" />
 	  </div>
+      <!---------------end đối tác---------------------->
+      
+      <!---------------begin right----------------------->
 	  <div id="right" class="column">
 	  	<a href="#"><img src="images/banner2.jpg" alt="" width="237" height="216" /></a><br />
 		<div class="rightblock">
-        	
+        	<!---------------begin hỗ trợ trực tuyến----------------------->
 			<div class="blocks">
 				<img src="images/top_bg.gif" alt="" width="218" height="12" />
                 <div id="support">Hỗ trợ trực tuyến</div>
@@ -185,6 +205,8 @@ Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi �
                 </div>
 				<img src="images/bot_bg.gif" alt="" width="218" height="10" /><br />
 			</div>
+            <!---------------end hỗ trợ trực tuyến----------------------->
+            <!---------------bein tin mới----------------------->
 			<div class="blocks">
 				<img src="images/top_bg.gif" alt="" width="218" height="12" />
 				<div>
@@ -197,6 +219,7 @@ Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi �
 				</div>
 				<img src="images/bot_bg.gif" alt="" width="218" height="10" /><br />
 			</div>
+            <!---------------end tin mới----------------------->
 		</div>
 	  </div>
 	</div>

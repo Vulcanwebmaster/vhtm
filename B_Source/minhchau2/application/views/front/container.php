@@ -10,21 +10,19 @@
 		
 		<script type="text/javascript" src="<?php echo base_url();?>assets/minhchau2/js/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>assets/minhchau2/js/jquery.nivo.slider.js"></script>
-		<style type="text/css">
-			.icon{ background:url(<?php echo base_url()?>assets/minhchau2/images/tamgiac1.png)}
-    	</style>
+		
     	<script type="text/javascript">
 		    $(window).load(function() {
 		        $('#slider').nivoSlider();
 		    });
 			$(document).ready(function(){
-				$('.item').hide();
+				$('.main-item').hide();
 				$('.sub-item').click(function(){
-					$(this).children('.item').slideDown();
-					$(this).children('')
+					$(this).children('.main-item').slideDown();
+					
 					});
-				$('.sub-item').mouseenter(function(){
-					$(this).children('.item').slideUp();
+				$('.sub-item').mouseleave(function(){
+					$(this).children('.main-item').slideUp();
 					});
 				});
 		</script>
