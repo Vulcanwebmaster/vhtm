@@ -6,6 +6,15 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/minhchau/css/style.css" />
 		<script type="text/javascript" src="<?php echo base_url();?>assets/minhchau/js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>assets/minhchau/js/myjs.js"></script>
+		
+		<!-- UNIFORM -->
+		<script type="text/javascript" src="<?php echo base_url();?>assets/minhchau/js/jquery.uniform.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/css/uniform.default.css" type="text/css" media="screen" charset="utf-8" />
+		<script type="text/javascript">	
+			$(function() {
+				$("input, textarea").uniform();
+			});
+		</script>
 	</head>
 	
 	<body>

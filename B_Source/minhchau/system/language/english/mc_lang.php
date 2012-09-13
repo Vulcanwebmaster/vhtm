@@ -16,7 +16,8 @@
 	//============= ORDER ==================
 	$lang['order-ten']='Name';
 	$lang['order-diachi']='Adress';
-	$lang['order-phone']='Phone number';
+	$lang['order-dt']='Phone number';
 	$lang['order-email']='Email';
-	$lang['order-order']='Order';
+	$lang['order-noidung']='Content';
+	$lang['order-dathang']='Order';
 ?>
