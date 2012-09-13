@@ -136,6 +136,18 @@ class CI_Model {
 	 		return true;
 	 	else return false;
 	 }
+	 
+	 function cutString($str,$offset=100)
+	 {
+	 	$length=strlen($str);
+	 	if ($length>$offset)
+	 	{
+	 		while ($str[$offset]!=' ' && $offset<$length)
+	 			$offset++;
+	 	}
+	 	else $offset=$length;
+	 	return substr($str,0, $offset);
+	 }
 }
 // END Model Class
 

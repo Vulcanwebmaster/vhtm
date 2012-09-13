@@ -22,6 +22,8 @@ class Homepage extends NIW_controller {
 	public function index()
 	{
 		$data['listcate']=$this->Mhomepage->getListByColumn('mc_category','parent_id',0);
+		$data['aboutus']=$this->Mhomepage->getRowByColumn('mc_about_us','id',1);
+		$data['listnew']=$this->Mhomepage->getListByColumn('mc_product','is_new',1);
 		$data['title']='[Name Defined] | Home';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';

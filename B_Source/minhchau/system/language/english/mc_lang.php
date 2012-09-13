@@ -1,4 +1,5 @@
 <?php
+	$lang['xemthem']='More...';
 	//============= MENU ==================
 	$lang['menu-trangchu']='Home';
 	$lang['menu-gioithieu']='About us';
@@ -8,4 +9,14 @@
 	
 	//============= LEFT ==================
 	$lang['left-danhmuc']='Categories';
+	
+	//============= HOME ==================
+	$lang['home-spmoi']='New products';
+	
+	//============= ORDER ==================
+	$lang['order-ten']='Name';
+	$lang['order-diachi']='Adress';
+	$lang['order-phone']='Phone number';
+	$lang['order-email']='Email';
+	$lang['order-order']='Order';
 ?>

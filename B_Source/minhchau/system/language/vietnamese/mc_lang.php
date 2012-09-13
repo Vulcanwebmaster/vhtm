@@ -1,4 +1,5 @@
 <?php
+	$lang['xemthem']='Xem thêm...';
 	//============= MENU ==================
 	$lang['menu-trangchu']='Trang chủ';
 	$lang['menu-gioithieu']='Giới thiệu';
@@ -8,4 +9,14 @@
 	
 	//============= LEFT ==================
 	$lang['left-danhmuc']='Danh mục';
+	
+	//============= HOME ==================
+	$lang['home-spmoi']='Sản phẩm mới';
+	
+	//============= ORDER ==================
+	$lang['order-ten']='Họ tên';
+	$lang['order-diachi']='Địa chỉ';
+	$lang['order-phone']='Điện thoại';
+	$lang['order-email']='Email';
+	$lang['order-order']='Đặt hàng';
 ?>
