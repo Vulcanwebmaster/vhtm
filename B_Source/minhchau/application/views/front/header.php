@@ -2,15 +2,15 @@
 	<div id="header_inside">
 		<img src="<?php echo base_url();?>assets/minhchau/images/header.jpg" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 		<ul id="menu">
-			<li><a href="<?php echo base_url();?>" class="but1_active">Trang chủ</a></li>
-			<li><a href="<?php echo base_url();?>gioithieu" class="but2">Giới thiệu</a></li>
-			<li><a href="<?php echo base_url();?>sanpham" class="but3">Sản phẩm</a></li>
-			<li><a href="<?php echo base_url(); ?>dichvu" class="but4">Dịch vụ</a></li>
-			<li><a href="<?php echo base_url(); ?>lienhe" class="but5">Liên hệ</a></li>
+			<li><a id="menu-trangchu" href="<?php echo base_url();?>" class="but1"><?php echo $this->lang->line('menu-trangchu');?></a></li>
+			<li><a id="menu-gioithieu" href="<?php echo base_url();?>gioithieu" class="but1"><?php echo $this->lang->line('menu-gioithieu');?></a></li>
+			<li><a id="menu-sanpham" href="<?php echo base_url();?>sanpham" class="but1"><?php echo $this->lang->line('menu-sanpham');?></a></li>
+			<li><a id="menu-dichvu" href="<?php echo base_url(); ?>dichvu" class="but1"><?php echo $this->lang->line('menu-dichvu');?></a></li>
+			<li><a id="menu-lienhe" href="<?php echo base_url(); ?>lienhe" class="but1"><?php echo $this->lang->line('menu-lienhe');?></a></li>
 		</ul>
 		<div id="img-language">
-			<a href="<?php echo base_url();?>changelang/change/vn/<?php echo uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>
-			<a href="<?php echo base_url();?>changelang/change/en/<?php echo uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/el.jpg"/></a>
+			<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>
+			<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/el.jpg"/></a>
 		</div>
 	</div>
 	

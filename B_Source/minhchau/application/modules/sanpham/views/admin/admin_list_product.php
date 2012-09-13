@@ -27,7 +27,7 @@
 
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
-				<table class="tablesorter" cellspacing="0" style="width:1000px"> 
+				<table class="tablesorter" cellspacing="0" style="width:1500px"> 
 					<thead> 
 						<tr>
 		    				<th>Tên (V)</th>

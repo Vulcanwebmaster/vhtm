@@ -11,6 +11,12 @@ class Homepage extends NIW_controller {
 		$this->load->model('Mhomepage');
 		$this->load->library('session');
 		$this->setLang();
+		
+		if ($this->session->userdata('lang')=='vn')
+		{
+			$this->lang->load('mc','vietnamese');
+		}
+		else $this->lang->load('mc','english');
 	}
 	
 	public function index()

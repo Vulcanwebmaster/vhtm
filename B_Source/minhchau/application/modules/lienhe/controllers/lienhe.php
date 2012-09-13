@@ -9,6 +9,13 @@
 			
 			$this->load->model('Mlienhe');
 			$this->load->library('session');
+			$this->setLang();
+			
+			if ($this->session->userdata('lang')=='vn')
+			{
+				$this->lang->load('mc','vietnamese');
+			}
+			else $this->lang->load('mc','english');
 		}
 		
 		function index()

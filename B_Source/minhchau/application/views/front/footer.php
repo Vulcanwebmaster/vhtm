@@ -1,14 +1,13 @@
 <div id="footer">
 		<div id="footer_inside">
 			<ul class="footer_menu">
-				<li><a href="#">Home Page</a>|</li>
-				<li><a href="#">About Us</a>|</li>
-				<li><a href="#">News &amp; Events</a>|</li>
-				<li><a href="#">Services</a>|</li>
-				<li><a href="#">My Account</a>|</li>
-				<li><a href="#">Contacts</a></li>
+				<li><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>|</li>
+				<li><a href="<?php echo base_url();?>gioithieu"><?php echo $this->lang->line('menu-gioithieu');?></a>|</li>
+				<li><a href="<?php echo base_url();?>sanpham"><?php echo $this->lang->line('menu-sanpham');?></a>|</li>
+				<li><a href="<?php echo base_url();?>dichvu"><?php echo $this->lang->line('menu-dichvu');?></a>|</li>
+				<li><a href="<?php echo base_url();?>lienhe"><?php echo $this->lang->line('menu-lienhe');?></a>|</li>
 			</ul><br /><br />
-			<p>Copyright &copy;. All rights reserved. Design by <a href="#">BFT</a></p>																																																											
+			<p>Copyright &copy; 2012. All rights reserved. Design by <a href="http://niw.com.vn">NIW</a></p>																																																											
 		</div>
 	</div>
     <map name="Map">
