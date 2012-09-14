@@ -7,7 +7,7 @@
        
        <!--------------begin content center----------------------->
        <style>
-	.menu-visited{ background:url(<?php echo base_url(); ?>assets/minhchau2/images/but4.gif">);}
+	.menu-visited{ background:url(<?php echo base_url(); ?>assets/minhchau2/images/but4.gif);}
 </style>
 <script>
 	$(document).ready(function() {
