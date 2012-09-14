@@ -21,6 +21,7 @@
 		
 		function index()
 		{
+			$data['parents']=$this->Mlienhe->getListByColumn('mc_category','parent_id',0);
 			$data['query']=$this->Mlienhe->getRowByColumn('mc_contact_us','id',1);
 			$data['listcate']=$this->Mlienhe->getListByColumn('mc_category','parent_id',0);
 			$data['list']=$this->Mlienhe->getListFull('mc_contact_us');

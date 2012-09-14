@@ -12,7 +12,7 @@
 <div id="container">
       <!---------------begin center----------------------->																																																																																																																																																																										
 	  <div id="center" class="column">
-     
+	  		
        <!--------------begin content center----------------------->
 	  	<div id="content2">
         	<div id="ml1">
@@ -36,7 +36,7 @@
 			<table>
 			<tr ><td><label > <?php echo $this->lang->line('contact-tendaydu'); ?> :</label></td>
             <td><input type="text" name="contact_fullname" id="contact_fullname" class="Textbox Field200" value=""></td></tr><br/><br/>
-            <tr><td><label  ><span class="Required">*</span> <?php echo $this->lang->line('contact-email'); ?>:</label></td>
+            <tr><td><label  ><span class="Required"></span> <?php echo $this->lang->line('contact-email'); ?> (*):</label></td>
 			<td><input type="text" name="contact_email" id="contact_email" class="Textbox Field200" value=""></td></tr>
 			<tr><td><label  > <?php echo $this->lang->line('contact-tencongty'); ?> :</label></td>
 			<td><input type="text" name="contact_companyname" id="contact_companyname" class="Textbox Field200" value=""></td></tr>
@@ -46,7 +46,7 @@
 			<td><input type="text" name="contact_orderno" id="contact_orderno" class="Textbox Field200" value=""></td></tr>
 			<tr><td><label > <?php echo $this->lang->line('contact-maRMA'); ?>:</label></td>
 			<td><input type="text" name="contact_rma" id="contact_rma" class="Textbox Field200" value=""></td></tr>
-			<tr><td><label ><span class="Required">*</span> <?php echo $this->lang->line('contact-chitiet'); ?>:</label></td>
+			<tr><td><label ><span class="Required"></span> <?php echo $this->lang->line('contact-chitiet'); ?> (*):</label></td>
 			<td><textarea name="contact_question" id="contact_question" class="Field300" rows="5" cols="50"></textarea></td></tr>
 			</table>
             <p class="Submit" style="text-align:center;">
@@ -57,12 +57,6 @@
 		</div>
         <!---------------end content center----------------------->
 	  </div>
-      <!--------------end center----------------------->
-      
-      <!---------------begin left----------------------->
 	  <?php $this->load->view('front/left');?>
-      <!---------------end đối tác---------------------->
-      
-      <!---------------begin right----------------------->
 	  <?php $this->load->view('front/right');?>
 	</div>

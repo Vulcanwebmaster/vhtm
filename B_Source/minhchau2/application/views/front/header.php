@@ -10,8 +10,8 @@
 		    <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/flag3.gif" alt="" width="19" height="11" /></a>
 		    <a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/flag6.gif" alt="" width="19" height="11" /></a>-->
 		    
-		    <a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url()?>assets/minhchau2/images/vn.jpg" alt="" width="19" height="11" /></a>
-		    <a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url()?>assets/minhchau2/images/el.jpg" alt="" width="19" height="11" /></a>
+		    <a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url()?>assets/minhchau2/images/vn.jpg" alt="" width="19" height="11" /></a>
+		    <a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url()?>assets/minhchau2/images/el.jpg" alt="" width="19" height="11" /></a>
 		    
 		</div>
 		<!--<div class="topblock2">
@@ -20,7 +20,6 @@
 		</div>
         <!---------------begin menu----------------------->
 		<ul id="menu">
-		
 			<li id="m-trangchu"><a id="menu-trangchu" href="<?php echo base_url() ?>"><?php echo $this->lang->line('menu-trangchu')?></a></li>
 			<li id="m-sanpham"><a id="menu-sanpham" href="<?php echo base_url() ?>sanpham"><?php echo $this->lang->line('menu-sanpham')?></a></li>
             <li id="m-gioithieu"><a id="menu-gioithieu" href="<?php echo base_url() ?>gioithieu"><?php echo $this->lang->line('menu-gioithieu')?></a></li>
