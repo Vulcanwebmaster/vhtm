@@ -19,7 +19,7 @@
       	<?php $this->load->view('front/left1');?>
 	  	
 	  </div>
-      <div style="margin-top:-6px;margin-left:6px" id="center1" class="column">
+      <div id="center1" class="column">
            
        <!--------------begin content center----------------------->
 	  	<div id="content1">
