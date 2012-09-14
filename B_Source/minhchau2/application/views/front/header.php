@@ -14,7 +14,7 @@
 		    <a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url()?>assets/minhchau2/images/el.jpg" alt="" width="19" height="11" /></a>
 		    
 		</div>
-		<div class="topblock2">
+		<!--<div class="topblock2">
 			<img src="<?php echo base_url()?>assets/minhchau2/images/shopping.gif" alt="" width="24" height="24" class="shopping" />																																																																									
 		 	<p>Shopping cart</p> <p><strong>0</strong> <span>items</span></p>
 		</div>
