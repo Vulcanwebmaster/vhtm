@@ -39,6 +39,7 @@
 	$lang['content-trangchu']='Trang chủ';
 	$lang['content-thongso']='Thông số kỹ thuật';
 	$lang['content-gia']='Giá';
+	$lang['right-docthem']='Xem tiếp';
 	
 	//=========== CONTACT US =============
 	$lang['contact-tendaydu']='Tên đầy đủ';
