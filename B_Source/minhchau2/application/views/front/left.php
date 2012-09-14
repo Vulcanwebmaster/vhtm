@@ -22,71 +22,127 @@
 							//$num=$newModel->getListByColumn('mc_category','parent_id',$parent->id);
 							if($i%2==0)
 							{
-								?>
-									<li id="color" class="sub-item"> 
-									<a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+								$num=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
+								if(count($num)>0)
+								{
+									?>
+										<li id="color" class="sub-item"> 
+										<a><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+											<?php
+												if ($lang=='vn') 
+													echo $parents[$i]->namev;
+												else echo $parents[$i]->namee;
+											?>
+										</a>
 										<?php
-											if ($lang=='vn') 
-												echo $parents[$i]->namev;
-											else echo $parents[$i]->namee;
-										?>
-									</a>
-									<?php
-										$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
-										if (isset($childs))
-										{
-											foreach($childs as $child)
-											{ 
-												?>
-								                	<div class="main-item">
-								                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">
-								                    		<?php
-								                    			if ($lang=='vn') 
-								                    				echo $child->namev;
-																else echo $child->namee;
-								                    		?>
-								                    	</a><br/>
-								                    </div>
-					                			<?php
+											$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
+											if (isset($childs))
+											{
+												foreach($childs as $child)
+												{ 
+													?>
+									                	<div class="main-item">
+									                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">
+									                    		<?php
+									                    			if ($lang=='vn') 
+									                    				echo $child->namev;
+																	else echo $child->namee;
+									                    		?>
+									                    	</a><br/>
+									                    </div>
+						                			<?php
+												}
 											}
-										}
-				                	?>
-			                		</li>
-		            			<?php
+					                	?>
+				                		</li>
+			            			<?php
+		            			}
+								else
+								{
+									?>
+										<li id="color" class="sub-item"> 
+											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+												<?php
+													if ($lang=='vn') 
+														echo $parents[$i]->namev;
+													else echo $parents[$i]->namee;
+												?>
+											</a>
+				                		</li>
+			            			<?php	
+								}
 		            		}
 							else
 							{
-								?>
-									<li class="sub-item"> 
-									<a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
-										<?php
-											if ($lang=='vn') 
-												echo $parents[$i]->namev;
-											else echo $parents[$i]->namee;
-										?>
-									</a>
-									<?php
-										$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
-										if (isset($childs))
-										{
-											foreach($childs as $child)
-											{ 
+								$num=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
+								if(count($num)>0)
+								{
+									?>
+										<li class="sub-item"> 
+											<a><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+												<?php
+													if ($lang=='vn') 
+														echo $parents[$i]->namev;
+													else echo $parents[$i]->namee;
 												?>
-								                	<div class="main-item">
-								                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">
-								                    		<?php
-								                    			if ($lang=='vn') 
-								                    				echo $child->namev;
-																else echo $child->namee;
-								                    		?>
-								                    	</a><br/>
-								                    </div>
-					                			<?php
-											}
-										}
-				                	?>
-			                		</li>
-		            			<?php
+											</a>
+											<?php
+												$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
+												if (isset($childs))
+												{
+													foreach($childs as $child)
+													{ 
+														?>
+										                	<div class="main-item">
+										                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">
+										                    		<?php
+										                    			if ($lang=='vn') 
+										                    				echo $child->namev;
+																		else echo $child->namee;
+										                    		?>
+										                    	</a><br/>
+										                    </div>
+							                			<?php
+													}
+												}
+						                	?>
+			                			</li>
+		            				<?php
+								}
+								else
+								{
+									?>
+										<li class="sub-item"> 
+											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+												<?php
+													if ($lang=='vn') 
+														echo $parents[$i]->namev;
+													else echo $parents[$i]->namee;
+												?>
+											</a>
+											<?php
+												$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
+												if (isset($childs))
+												{
+													foreach($childs as $child)
+													{ 
+														?>
+										                	<div class="main-item">
+										                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">
+										                    		<?php
+										                    			if ($lang=='vn') 
+										                    				echo $child->namev;
+																		else echo $child->namee;
+										                    		?>
+										                    	</a><br/>
+										                    </div>
+							                			<?php
+													}
+												}
+						                	?>
+			                			</li>
+		            				<?php
+								}
 							}
 							
 						}
