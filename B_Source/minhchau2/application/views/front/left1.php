@@ -95,7 +95,7 @@
 			</ul>
             
 		</div>
-        <img src="<?php echo base_url()?>assets/images/bot_bg.gif" alt="" width="170" height="10" style="margin-bottom:5px" />
+        <img src="<?php echo base_url()?>assets/minhchau2/images/bot_bg.gif" alt="" width="170" height="10" style="margin-bottom:5px" />
         <!--------------end danh mục----------------------->
         
         <!---------------begin đối tác----------------------->
