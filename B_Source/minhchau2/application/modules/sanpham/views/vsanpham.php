@@ -60,7 +60,7 @@
 						?>
 							<div class="item">
 								<img src="<?php echo base_url()?>assets/minhchau2/images/sp1.jpg" alt="" width="124" height="90" />
-								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name">
+								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name" style="width:111px;">
 									<?php
 										if($lang=='vn') 
 											echo $item->namev;
