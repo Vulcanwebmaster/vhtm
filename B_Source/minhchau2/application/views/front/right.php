@@ -1,5 +1,5 @@
 <div id="right" class="column">
-	<a href="#"><img src="<?php echo base_url()?>assets/minhchau2/images/banner2.jpg" alt="" width="237" height="216" /></a><br />
+	<a href="#" style="float:right"><img src="<?php echo base_url()?>assets/minhchau2/images/banner2.jpg" alt="" width="234" height="216" /></a><br />
 		<div class="rightblock">
         	<!---------------begin hỗ trợ trực tuyến----------------------->
 			<div class="blocks">

@@ -1,4 +1,4 @@
-<div class="slider-wrapper theme-default">	
+<div class="slider-wrapper theme-default" style="margin-left:2px">	
       	<div id="slider" class="nivoSlider">
   		  <img src="<?php echo base_url()?>assets/minhchau2/images/slide5.jpg" />
             <img src="<?php echo base_url()?>assets/minhchau2/images/slide2.jpg"/>

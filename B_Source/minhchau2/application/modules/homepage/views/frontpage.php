@@ -19,7 +19,7 @@
         	<p style=" font-size:20px;"><?php echo $this->lang->line('content-gioithieu'); ?></p>
 			<p>Công ty thiết bị y tế Minh Châu
 
-					Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi được phát triển theo hướng đa dạng hoá sản phẩm. Chúng tôi nhắm tới đối tượng khách hàng là các công ty kinh doanh thiết bị y tế, các cơ sở y tế và đặc biệt là các phòng khám, bệnh viện tư nhân. Chúng tôi có hàng ngàn sản phẩm với đủ mọi chủng loại khác nhau, hầu như bao quát đầy đủ các nhu cầu về thiết bị và dụng cụ y tế. <br /></p>
+					Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi được phát triển theo hướng đa dạng hoá sản phẩm. Chúng tôi nhắm tới đối tượng khách hàng là các công ty kinh doanh thiết bị y tế, các cơ sở y tế và đặc biệt là các phòng khám, bệnh viện tư nhân. Chúng tôi có hàng ngàn sản phẩm với đủ mọi chủng loại khác nhau, hầu như bao quát đầy đủ các nhu cầu về thiết bị và dụng cụ y tế.<a href="#" class="more" style="float: right; margin-top: 5px;">Xem tiếp</a><br/></p>
 	
 			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px">
 				<?php echo $this->lang->line('content-sanphammoi'); ?>

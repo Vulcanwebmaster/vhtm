@@ -19,7 +19,7 @@
 	//============== RIGHT ================
 	$lang['right-hotro']='Hỗ trợ online';
 	$lang['right-tinmoi']='Tin mới';
-	$lang['right-docthem']='Đọc thêm';
+	$lang['right-docthem']='Xem tiếp';
 	
 	//============= FOOTER ================
 	$lang['footer-trangchu']='Trang chủ';
