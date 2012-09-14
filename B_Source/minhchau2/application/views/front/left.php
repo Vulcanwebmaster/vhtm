@@ -27,7 +27,7 @@
 								{
 									?>
 										<li id="color" class="sub-item"> 
-										<a><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+										<a style="cursor:pointer"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
 											<?php
 												if ($lang=='vn') 
 													echo $parents[$i]->namev;
@@ -79,7 +79,7 @@
 								{
 									?>
 										<li class="sub-item"> 
-											<a><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
+											<a style="cursor:pointer"><img src="<?php echo base_url()?>assets/minhchau2/images/tamgiac.gif">
 												<?php
 													if ($lang=='vn') 
 														echo $parents[$i]->namev;
