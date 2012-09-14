@@ -6,6 +6,14 @@
        <!---------------end slider----------------------->
        
        <!--------------begin content center----------------------->
+       <style>
+	.menu-visited{ background:url(<?php echo base_url(); ?>assets/minhchau2/images/but4.gif">);}
+</style>
+<script>
+	$(document).ready(function() {
+	  $('#m-trangchu').addClass('menu-visited');
+	});
+</script>
 	  	<div id="content">
         
         	<p style=" font-size:20px;"><?php echo $this->lang->line('content-gioithieu'); ?></p>

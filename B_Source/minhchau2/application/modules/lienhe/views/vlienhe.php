@@ -1,6 +1,14 @@
 <?php
 	$lang=$this->session->userdata('lang');
 ?>
+<style>
+	.menu-visited{ background:url(<?php echo base_url(); ?>assets/minhchau2/images/but4.gif">);}
+</style>
+<script>
+	$(document).ready(function() {
+	  $('#m-lienhe').addClass('menu-visited');
+	});
+</script>
 <div id="container">
       <!---------------begin center----------------------->																																																																																																																																																																										
 	  <div id="center" class="column">
@@ -25,22 +33,22 @@
                     </div>
                   </div> 
                  <div class="FormContainer HorizontalFormContainer">
-		
-			<label  style="margin-left:29px"> <?php echo $this->lang->line('contact-tendaydu'); ?> :</label>
-            <input type="text" name="contact_fullname" id="contact_fullname" class="Textbox Field200" value=""><br/><br/>
-            <label  style="margin-left:16px"><span class="Required">*</span> <?php echo $this->lang->line('contact-email'); ?>:</label>
-			<input type="text" name="contact_email" id="contact_email" class="Textbox Field200" value=""><br/><br/>
-			<label  style="margin-left:27px"> <?php echo $this->lang->line('contact-tencongty'); ?> :</label>
-			<input type="text" name="contact_companyname" id="contact_companyname" class="Textbox Field200" value=""><br/><br/>
-			<label  style="margin-left:22px"> <?php echo $this->lang->line('contact-sodienthoai'); ?>:</label>
-			<input type="text" name="contact_phone" id="contact_phone" class="Textbox Field200" value=""><br/><br/>
-			<label style="margin-left:8px"> <?php echo $this->lang->line('contact-madonhang'); ?>:</label>
-			<input type="text" name="contact_orderno" id="contact_orderno" class="Textbox Field200" value=""><br/><br/>
-			<label style="margin-left:30px"> <?php echo $this->lang->line('contact-maRMA'); ?>:</label>
-			<input type="text" name="contact_rma" id="contact_rma" class="Textbox Field200" value=""><br/><br/>
-			<label style="margin-left:20px"><span class="Required">*</span> <?php echo $this->lang->line('contact-chitiet'); ?>:</label>
-			<textarea name="contact_question" id="contact_question" class="Field300" rows="5" cols="50"></textarea><br/><br/><div id="SearchResults"></div>
-			
+			<table>
+			<tr ><td><label > <?php echo $this->lang->line('contact-tendaydu'); ?> :</label></td>
+            <td><input type="text" name="contact_fullname" id="contact_fullname" class="Textbox Field200" value=""></td></tr><br/><br/>
+            <tr><td><label  ><span class="Required">*</span> <?php echo $this->lang->line('contact-email'); ?>:</label></td>
+			<td><input type="text" name="contact_email" id="contact_email" class="Textbox Field200" value=""></td></tr>
+			<tr><td><label  > <?php echo $this->lang->line('contact-tencongty'); ?> :</label></td>
+			<td><input type="text" name="contact_companyname" id="contact_companyname" class="Textbox Field200" value=""></td></tr>
+			<tr><td><label > <?php echo $this->lang->line('contact-sodienthoai'); ?>:</label></td>
+			<td><input type="text" name="contact_phone" id="contact_phone" class="Textbox Field200" value=""></td></tr>
+			<tr><td><label > <?php echo $this->lang->line('contact-madonhang'); ?>:</label></td>
+			<td><input type="text" name="contact_orderno" id="contact_orderno" class="Textbox Field200" value=""></td></tr>
+			<tr><td><label > <?php echo $this->lang->line('contact-maRMA'); ?>:</label></td>
+			<td><input type="text" name="contact_rma" id="contact_rma" class="Textbox Field200" value=""></td></tr>
+			<tr><td><label ><span class="Required">*</span> <?php echo $this->lang->line('contact-chitiet'); ?>:</label></td>
+			<td><textarea name="contact_question" id="contact_question" class="Field300" rows="5" cols="50"></textarea></td></tr>
+			</table>
             <p class="Submit" style="text-align:center;">
                 <input type="submit" value="Gửi mẫu" class="ContactButton">
             </p>

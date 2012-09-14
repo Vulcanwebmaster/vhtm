@@ -25,6 +25,7 @@
         		?>
         	</a></div>
 			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px; color:#26a1cc; font-weight:bold;">
+				
 				<?php
         			if($lang=='vn')
 						echo $product->namev;

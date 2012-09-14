@@ -1,6 +1,14 @@
 <?php
 	$lang=$this->session->userdata('lang');
 ?>
+<style>
+	.menu-visited{ background:url(<?php echo base_url(); ?>assets/minhchau2/images/but4.gif">);}
+</style>
+<script>
+	$(document).ready(function() {
+	  $('#m-sanpham').addClass('menu-visited');
+	});
+</script>
 <div id="container1">
       <!---------------begin center----------------------->																																																																																																																																																																										
 	  
@@ -33,7 +41,7 @@
        		}
         	?>
         	</div>
-			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px; color:#26a1cc; font-weight:bold;">
+			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px; color:#26a1cc; font-weight:bold;margin-left:15px">
 				<?php 
 					if(isset($query))
 					{

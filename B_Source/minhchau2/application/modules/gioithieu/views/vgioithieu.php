@@ -1,6 +1,14 @@
 <?php
 	$lang=$this->session->userdata('lang');
 ?>
+<style>
+	.menu-visited{ background:url(<?php echo base_url(); ?>assets/minhchau2/images/but4.gif">);}
+</style>
+<script>
+	$(document).ready(function() {
+	  $('#m-gioithieu').addClass('menu-visited');
+	});
+</script>
 <div id="container">
 	  <div id="center" class="column">       
 	  	<div style="margin-top:-21px;padding-top: 0px;width:133%" id="content">

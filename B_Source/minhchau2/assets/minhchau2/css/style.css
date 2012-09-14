@@ -36,8 +36,8 @@ background:url(../images/but3.gif) repeat-x;
 float:left; line-height:30px; font-weight:bold; color:#FFF; text-transform:uppercase; list-style:none; padding:0 25px 0 25px;
 }
 #menu li a{ color:#FFF; text-decoration: none;}
-#menu li:hover{ background:url(../images/but3.gif);}
-#menu li:active{ background:url(../images/but3.gif);}
+#menu li:hover{ background:url(../images/but4.gif);}
+.menu-visited{ background:url(../images/but4.gif);}
 #container {
 padding-left: 172px; 
 padding-right: 238px;
@@ -427,7 +427,7 @@ font-size:11px
 padding:1px 1px 14px 1px;
 
 background:url(../images/bg1.gif);}
-#ml{ margin-top:0px; padding:5px; }
+#ml{ margin-top:15px; padding:5px; }
 #ml1{ margin-top:30px;margin-left:-15px; padding:5px; }
 #ml a,#ml1 a{ color:#333}
 #stuff-left{ border:1px solid #CCC; width:50%; float:left;}
