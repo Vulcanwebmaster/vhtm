@@ -53,7 +53,7 @@
 					
 				?>
 			</p>
-			<div class="stuff">
+			<div class="stuff1">
 				<?php
 					foreach($items as $item)
 					{
