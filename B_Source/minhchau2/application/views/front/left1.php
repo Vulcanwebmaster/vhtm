@@ -119,26 +119,6 @@
 													else echo $parents[$i]->namee;
 												?>
 											</a>
-											<?php
-												$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
-												if (isset($childs))
-												{
-													foreach($childs as $child)
-													{ 
-														?>
-										                	<div class="main-item">
-										                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>"><img src="<?php echo base_url()?>assets/minhchau2/images/arrow12.gif">
-										                    		<?php
-										                    			if ($lang=='vn') 
-										                    				echo $child->namev;
-																		else echo $child->namee;
-										                    		?>
-										                    	</a><br/>
-										                    </div>
-							                			<?php
-													}
-												}
-						                	?>
 			                			</li>
 		            				<?php
 								}
