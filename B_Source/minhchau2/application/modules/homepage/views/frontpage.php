@@ -1,3 +1,8 @@
+<?php
+	$newModel=new CI_Model(); 
+	$this->load->helper('text');
+	$lang=$this->session->userdata('lang');
+?>
 <div id="container">
       <!---------------begin center----------------------->																																																																																																																																																																										
 	  <div id="center" class="column">
@@ -17,9 +22,16 @@
 	  	<div id="content">
         
         	<p style=" font-size:20px;"><?php echo $this->lang->line('content-gioithieu'); ?></p>
-			<p>Công ty thiết bị y tế Minh Châu
-
-					Là một nhà nhập khẩu chuyên nghiệp, Công ty Minh Châu chúng tôi được phát triển theo hướng đa dạng hoá sản phẩm. Chúng tôi nhắm tới đối tượng khách hàng là các công ty kinh doanh thiết bị y tế, các cơ sở y tế và đặc biệt là các phòng khám, bệnh viện tư nhân. Chúng tôi có hàng ngàn sản phẩm với đủ mọi chủng loại khác nhau, hầu như bao quát đầy đủ các nhu cầu về thiết bị và dụng cụ y tế.<a href="#" class="more" style="float: right; margin-top: 5px;"><?php echo $this->lang->line('right-docthem'); ?></a><br/></p>
+			<p>
+				<?php 
+					$about=$newModel->getRowByColumn('mc_about_us','id',1);
+					if($lang=='vn')
+						echo word_limiter($about->contentv,70);
+					else echo word_limiter($about->contente,50);
+				?>
+				<a href="<?php echo base_url() ?>gioithieu" class="more" style="float: right; margin-top: 5px;"><?php echo $this->lang->line('right-docthem'); ?></a>
+				<br/>
+			</p>
 	
 			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px">
 				<?php echo $this->lang->line('content-sanphammoi'); ?>
