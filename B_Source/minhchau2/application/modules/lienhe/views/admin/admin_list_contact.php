@@ -31,8 +31,9 @@
 			    				<td><?php echo $item->phone;?></td>
 			    				<td><?php echo $item->ordercode;?></td>
 			    				<td><?php echo $item->rmacode;?></td>
-			    				<td><?php echo $item->detail;?></td> 
+			    				<td><?php echo word_limiter($item->detail,3);?></td> 
 			    				<td>
+			    					<a href="<?php echo base_url()?>lienhe/admin/detail/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 				    				<a href="<?php echo base_url()?>lienhe/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>

@@ -71,5 +71,19 @@
 				$this->view();
 			else $this->view();
 		}
+		
+		function detail($id)
+		{
+			//=============================================
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau2/ckeditor/", 'outPut' => true));                             
+			$data['config'] = $this->setupCKEditor('97%','200px');
+			//=============================================
+			$data['query'] = $this->Mlienhe->getRowByColumn('mc_list_contact','id',$id);
+			$data['title']='Chi tiết liên hệ';
+			$data['bcCurrent']='Chi tiết liên hệ';
+			$data['module']=$this->module;
+			$data['page']='admin_view_contact';
+			$this->load->view('admin/container',$data);
+		}
 	}
 ?>
