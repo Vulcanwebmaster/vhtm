@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 14, 2012 at 12:11 PM
+-- Generation Time: Sep 15, 2012 at 05:39 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -298,6 +298,34 @@ INSERT INTO `n_mc_contact_us` (`id`, `contentv`, `contente`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_mc_list_contact`
+--
+
+CREATE TABLE IF NOT EXISTS `n_mc_list_contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `email` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `company` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `phone` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `ordercode` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `rmacode` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `detail` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `n_mc_list_contact`
+--
+
+INSERT INTO `n_mc_list_contact` (`id`, `name`, `email`, `company`, `phone`, `ordercode`, `rmacode`, `detail`) VALUES
+(1, 'Nguyễn Đức Tiến', 'tiendn1010@gmail.com', 'NIW', '0987384249', '001', '001', 'Nội dung chi tiết'),
+(2, 'Nguyễn Đức Tiến', 'tiendn1010@gmail.com', 'NIW', '0987384249', '001', '001', 'Nội dung chi tiết'),
+(3, 'Nguyễn Đức Tiến', 'tiendn1010@gmail.com', 'NIW', '0987384249', '001', '001', 'Nội dung'),
+(4, 'Nguyễn Đức Tiến', 'tiendn1010@gmail.com', 'NIW', '0987384249', '001', '001', 'Nội dung');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_mc_order`
 --
 
@@ -497,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-09-14 05:25:34', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-09-15 05:16:36', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
