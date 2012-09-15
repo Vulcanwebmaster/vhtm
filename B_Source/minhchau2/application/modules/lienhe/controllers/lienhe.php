@@ -10,6 +10,7 @@
 			
 			$this->load->model('Mlienhe');
 			$this->load->library('session');
+			$this->load->library('form_validation');
 			$this->setLang();
 			
 			if ($this->session->userdata('lang')=='vn')
@@ -29,6 +30,28 @@
 					
 			$data['page'] = 'vlienhe';
 			$this->load->view('front/container',$data);
+		}
+		
+		function send()
+		{
+			$this->form_validation->set_rules('contact_email',$this->lang->line('contact-email'),'required');
+			$this->form_validation->set_rules('contact_question',$this->lang->line('contact-chitiet'),'required');
+			$this->form_validation->set_message('required','%s '.$this->lang->line('contact-notice'));
+			if($this->form_validation->run()==false)
+			{
+				$this->index();
+			}
+			else 
+			{
+				if($this->Mlienhe->insertContact())
+				{
+					echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">';
+					echo "<script type='text/javascript'>
+						alert('".$this->lang->line('contact-send')."');
+					</script>";
+					redirect(base_url().'lienhe','refresh');
+				}
+			}
 		}
 	}
 ?>

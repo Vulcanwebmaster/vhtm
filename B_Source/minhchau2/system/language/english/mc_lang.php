@@ -47,4 +47,7 @@
 	$lang['contact-madonhang']='Order code';
 	$lang['contact-maRMA']='RMA code';
 	$lang['contact-chitiet']='Details';
+	$lang['contact-notice'] = 'is required';
+	$lang['contact-send'] = 'Send request success !';
+	
 ?>

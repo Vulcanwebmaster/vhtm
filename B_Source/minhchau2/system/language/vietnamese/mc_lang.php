@@ -49,4 +49,8 @@
 	$lang['contact-madonhang']='Mã số đơn hàng';
 	$lang['contact-maRMA']='Mã RMA';
 	$lang['contact-chitiet']='Các chi tiết';
+	$lang['contact-notice'] = 'không được để trống';
+	$lang['contact-send'] = 'Gửi yêu cầu thành công !';
+	
+
 ?>

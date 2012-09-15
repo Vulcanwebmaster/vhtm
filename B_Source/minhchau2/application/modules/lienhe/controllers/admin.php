@@ -54,5 +54,22 @@
 				$this->index();
 			}
 		}
+		
+		function view()
+		{
+			$data['list'] = $this->Mlienhe->getListFull('mc_list_contact');
+			$data['title']='Danh sách liên hệ';
+			$data['bcCurrent']='Danh sách liên hệ';
+			$data['module']=$this->module;
+			$data['page']='admin_list_contact';
+			$this->load->view('admin/container',$data);
+		}
+		
+		function delete($id)
+		{
+			if($this->Mlienhe->deleteContact($id))
+				$this->view();
+			else $this->view();
+		}
 	}
 ?>
