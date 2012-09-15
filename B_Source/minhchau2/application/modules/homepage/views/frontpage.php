@@ -26,8 +26,8 @@
 				<?php 
 					$about=$newModel->getRowByColumn('mc_about_us','id',1);
 					if($lang=='vn')
-						echo word_limiter($about->contentv,70);
-					else echo word_limiter($about->contente,50);
+						echo word_limiter($about->contentv,80);
+					else echo word_limiter($about->contente,60);
 				?>
 				<a href="<?php echo base_url() ?>gioithieu" class="more" style="float: right; margin-top: 5px;"><?php echo $this->lang->line('right-docthem'); ?></a>
 				<br/>
