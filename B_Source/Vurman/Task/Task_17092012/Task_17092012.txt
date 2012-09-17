@@ -1,0 +1,6 @@
+﻿1. Em update lại DB mới nhất, KH đã thay đổi một số thứ, trong đó có add thêm bảng settlement_instruction
+2. Qua mấy lần trao đổi với KH thì anh đang hiểu là dữ liệu từ 2 chức năng TO RECEIVE FUND / TO DELIVER FUND sẽ được lưu vào bảng settlement_instruction 
+(thay cho bảng transfer_new như trước đây) và việc này sẽ ảnh hưởng đến rất nhiều file, do đó KH bảo KH sẽ sửa những file bị ảnh hưởng này, đó là lý do trong thư mục
+Changed_Files có nhiều file đã được chỉnh sửa (những chỗ được bôi màu đỏ)
+3. Ở trên chỉ là dự đoán của anh, vì KH ko nói rõ ràng. Vậy nên task của em ngày hnay là kiểm tra lại xem các file mà KH sửa có đúng là như anh đang hiểu ở trên hay ko?
+4. Nếu như đúng như anh đang hiểu (dùng bảng settlement_instruction thay cho bảng transfer_new, thì việc chỉnh sửa này sẽ mất bao lâu, ảnh hưởng đến các file như thế nào?
