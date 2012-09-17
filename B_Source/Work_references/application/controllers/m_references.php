@@ -7,22 +7,20 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			$this->load->model('Mreferences');
+			
+			include("mojmojster_database.php");
+			$CI->load->helper("requesting");	
 		}
 		
 		function index()
 		{
-			$this->singleReference();
+			$this->showReferences();
 		}
 		
-		function singleReference($id=0)
+		function showReferences($referenceId=0)
 		{
-			$data['info']=$this->Mreferences->getRowByColumn('references','id',$id);
-			$this->load->view('vsingle',$data);
-		}
-		
-		function scrollableGallery()
-		{
-			$this->load->view('vscrollable');
+			$ref['pictureId']=$CraftsmanReferences->returnReferencePictureId($referenceId);
+			$ref['pictureId']=$CraftsmanReferences->returnReferencePictureId($referenceId);
 		}
 	}
 ?>
