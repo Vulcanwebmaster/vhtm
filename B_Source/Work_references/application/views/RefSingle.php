@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/work_references/assets/css/style.css"/>
 <script type="text/javascript" src="/work_references/assets/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/work_references/assets/js/myjs.js"></script>
+<script type="text/javascript" src="/work_references/assets/js/js-references.js"></script>
 <div id="body">
 	<div class="reference">
 		<!-- img class="picture" alt="" src=""/ -->

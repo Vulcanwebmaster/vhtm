@@ -42,5 +42,20 @@
 			$ref['pictures']=$pictures;
 			$this->load->view('RefGallery',$ref);
 		}
+		
+		function showCategoriedReferences($craftsmanId='0',$categoryId='0')
+		{
+			include("mojmojster_database.php");
+			
+			$ref['listReferences']=$CraftsmanReferences->returnReferencesList($craftsmanId,$categoryId);
+			$pictures=array();
+			foreach ($ref['listReferences'] as $item)
+			{
+				$pictures[]=$Files->returnFileName($item->file_id);
+			}
+			$ref['pictures']=$pictures;
+			$ref['listCategories']=$Craftsman->returnCraftsmanCategories($craftsmanId);
+			$this->load->view('RefList',$ref);
+		}
 	}
 ?>
