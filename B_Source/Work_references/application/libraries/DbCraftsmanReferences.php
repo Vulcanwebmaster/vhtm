@@ -13,7 +13,7 @@ class dbCraftsmanReferences {
 	
 	function returnReferencesList($craftsmanId, $categoryId = '-1')
 	{
-		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna množica.
+		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mnoï¿½ica.
 		
 		$CI =& get_instance();
 		$query = $CI->db->query("SELECT * FROM mojmojster.references where craftsman_id = '$craftsmanId' AND category_id = '$categoryId' ORDER BY file_id DESC, timestamp DESC, comment DESC");
@@ -32,7 +32,7 @@ class dbCraftsmanReferences {
 			
 			
 	
-		return false; //èe ni obstojeè podatek, vrne false.
+		return false; //ï¿½e ni obstojeï¿½ podatek, vrne false.
 	}
 	
 	function returnReferenceTitle($referenceId)
@@ -43,7 +43,7 @@ class dbCraftsmanReferences {
 		foreach ($query->result() as $row)
 			return $row->title;
 			
-		return false; //èe ni obstojeè podatek, vrne false.
+		return false; //ï¿½e ni obstojeï¿½ podatek, vrne false.
 	}
 	
 	function returnReferenceText($referenceId)
@@ -54,7 +54,7 @@ class dbCraftsmanReferences {
 		foreach ($query->result() as $row)
 			return $row->text;
 	
-		return false; //èe ni obstojeè podatek, vrne false.
+		return false; //ï¿½e ni obstojeï¿½ podatek, vrne false.
 	}
 	
 	function returnReferenceComment($referenceId)
@@ -65,7 +65,7 @@ class dbCraftsmanReferences {
 		foreach ($query->result() as $row)
 			return $row->comment;
 			
-		return false; //èe ni obstojeè podatek, vrne false.
+		return false; //ï¿½e ni obstojeï¿½ podatek, vrne false.
 	}
 	
 	function returnReferenceCommentAuthor($referenceId)
@@ -74,9 +74,9 @@ class dbCraftsmanReferences {
 		$query = $CI->db->query("SELECT comment_author FROM mojmojster.references where id = '$referenceId'");
 		
 		foreach ($query->result() as $row)
-			return $row->comment;
+			return $row->comment_author;
 			
-		return false; //èe ni obstojeè podatek, vrne false.
+		return false; //ï¿½e ni obstojeï¿½ podatek, vrne false.
 	}
 	
 	function returnReferenceRatings($referenceId)
@@ -168,6 +168,16 @@ class dbCraftsmanReferences {
 		$query = $CI->db->query("INSERT INTO reports VALUES('','refcom','$referenceId')");
 	}
 	
+	//=============================== EXTEND FUNCTION ===============================
+	function returnReferencesListFull()
+	{
+		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mnoï¿½ica.
+		
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT * FROM mojmojster.references ORDER BY file_id DESC, timestamp DESC, comment DESC");
+		
+		return $query->result();
+	}
 }
 
 ?>

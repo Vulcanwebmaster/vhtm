@@ -29,9 +29,22 @@ class DbFiles
 		}
 		
 	}
-
-
-
+	
+	//===================== MY FUNCTION ===========================
+	function returnFileName($fileId)
+	{
+		
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT filename FROM mojmojster.files WHERE mojmojster.files.id = '$fileId'");
+		
+		foreach ($query->result() as $row)
+			return $row->filename;
+			
+			
+	
+		return false; //�e ni obstoje� podatek, vrne false.
+	}
+	//================================================================
 
 	function hasRightToLoad($userId, $fileId)
 	{	//TODO: IMPLEMENT SECURITY.

@@ -7,13 +7,15 @@
 .info-path{padding:10px; border:solid 1px #787878; border-width: 0 1px; background-color:#e8e8e8}
 .info-path:last-child{border-bottom:solid 1px #787878}
 .content{border-bottom:solid 1px #787878;}
-.comment p:first-child{font-style:italic; margin:0; float:left}
+.comment{float:left}
+.comment p:first-child{font-style:italic; margin:0}
 .rate{float:right; border-left:solid 1px #787878; padding:0 10px}
 .rate ul{list-style-type:none; padding:0}
 .rate ul li img{display:inline; float:left; height:13px}
 .small-text{font-size:10px !important; margin-left:5px}
 .none-small-text{margin-left:5px}
 .both{clear:both}
+.author{text-align:right}
 
 #gallery{height:230px; border:solid 1px #787878}
 .prev img, .next img{height:230px; width:50px}
@@ -23,4 +25,4 @@
 .list ul{padding-left:0; list-style-type:none;  height:230px; margin:0}
 .list ul li{display:inline; float:left}
 .list ul li img{height:200px; width:300px}
-.list ul li p{text-transform:uppercase; text-align:center; font-weight:bold}
+.list ul li p{text-transform:uppercase; text-align:center; font-weight:bold; margin:0; line-height:30px}
