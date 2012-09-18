@@ -10,9 +10,11 @@
 		
 		function index()
 		{
-			$this->showSingle();
+			//$this->showSingle();
+			$this->load->view('RefListUncategoried');
 		}
 		
+		//===== METHOD 1 ===========
 		function showSingle($referenceId=0)
 		{
 			include("mojmojster_database.php");
@@ -28,6 +30,7 @@
 			$this->load->view('RefSingle',$ref);
 		}
 		
+		//===== METHOD 2 ===========
 		function showScrollableGallery()
 		{
 			include("mojmojster_database.php");
@@ -43,6 +46,7 @@
 			$this->load->view('RefGallery',$ref);
 		}
 		
+		//===== METHOD 4 ===========
 		function showCategoriedReferences($craftsmanId='0',$categoryId='0')
 		{
 			include("mojmojster_database.php");
@@ -55,7 +59,22 @@
 			}
 			$ref['pictures']=$pictures;
 			$ref['listCategories']=$Craftsman->returnCraftsmanCategories($craftsmanId);
-			$this->load->view('RefList',$ref);
+			$this->load->view('RefListCategoried',$ref);
 		}
+		
+		//===== METHOD 5 ===========
+		public function showUncategoriedReferencesWithoutEdit()
+		{
+			include("mojmojster_database.php");
+			$data['ds']=$CraftsmanReferences->returnReferencesListCategoryId($categoryId = '-1');
+			
+			$this->load->view('vtrungnt',$data);		
+		}
+		public function showCategoriedReferencesWithoutEdit(){
+			include("mojmojster_database.php");
+			$data['ds']=$CraftsmanReferences->returnReferencesListFull();
+			
+			$this->load->view('vtrungnt',$data);
+	}
 	}
 ?>

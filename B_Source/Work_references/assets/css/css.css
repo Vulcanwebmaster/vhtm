@@ -22,3 +22,5 @@
 #add_reference, #add_category{cursor:pointer}
 #input2{ margin-left:128px}
 .exit{text-align:right; margin:-15px -10px; cursor:pointer}
+.column{float:left}
+.column .reference{margin:3px}
