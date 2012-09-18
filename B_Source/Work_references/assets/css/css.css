@@ -10,8 +10,8 @@
 #category{ float:left; width:32%; padding-left:10px}
 #category a{border:2px solid #666; padding:0 20px 0 20px; color:#000; text-decoration:none }
 .div-list{ width:100%;}
-#list{ width:315px; margin:0 2px 10px 10px; float:left; border:1px solid #666; height:325px;}
-#list img { width:275px; height:200px; padding:10px 20px;}
+.list{ width:315px; margin:0 2px 10px 10px; float:left; border:1px solid #666; height:325px; display:none}
+.list img { width:275px; height:200px; padding:10px 20px;}
 #del{ float:right; padding:5px 5px 0 5px; font-size:12px;}
 #title{ margin:5px; float:left; clear:both}
 #form{ font-size:12px;}
@@ -24,3 +24,4 @@
 .exit{text-align:right; margin:-15px -10px; cursor:pointer}
 .column{float:left}
 .column .reference{margin:3px}
+.category{cursor:pointer}

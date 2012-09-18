@@ -11,7 +11,6 @@
 				<p class="date">Date</p>
 			</div>
 			<div class="info-path content">
-				<p>Content</p>
 				<div>
 					<p><?php echo $content;?></p>
 				</div>

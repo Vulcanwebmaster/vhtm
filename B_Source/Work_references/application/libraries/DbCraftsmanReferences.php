@@ -167,17 +167,6 @@ class dbCraftsmanReferences {
 		$CI =& get_instance();
 		$query = $CI->db->query("INSERT INTO reports VALUES('','refcom','$referenceId')");
 	}
-	
-	//=============================== EXTEND FUNCTION ===============================
-	function returnReferencesListFull()
-	{
-		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mno�ica.
-		
-		$CI =& get_instance();
-		$query = $CI->db->query("SELECT * FROM mojmojster.references ORDER BY file_id DESC, timestamp DESC, comment DESC");
-		
-		return $query->result();
-	}
 }
 
 ?>

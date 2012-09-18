@@ -7,7 +7,7 @@
 .info-path{padding:10px; border:solid 1px #787878; border-width: 0 1px; background-color:#e8e8e8}
 .info-path:last-child{border-bottom:solid 1px #787878}
 .content{border-bottom:solid 1px #787878;}
-.comment{float:left}
+.comment{float:left; width:50%}
 .comment p:first-child{font-style:italic; margin:0}
 .rate{float:right; border-left:solid 1px #787878; padding:0 10px}
 .rate ul{list-style-type:none; padding:0}

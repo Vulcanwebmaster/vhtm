@@ -47,7 +47,16 @@
 		}
 		
 		//===== METHOD 4 ===========
-		function showCategoriedReferences($craftsmanId='0',$categoryId='0')
+		function showCategoriedReferences($craftsmanId='0', $craftsmanId='0')
+		{
+			include("mojmojster_database.php");
+			
+			$ref['listCategories']=$Craftsman->returnCraftsmanCategories($craftsmanId);
+			$ref['craftsmanId']=$craftsmanId;
+			$this->load->view('RefListCategoried',$ref);
+		}
+		
+		function showListCategoried($craftsmanId='0',$categoryId='0')
 		{
 			include("mojmojster_database.php");
 			
@@ -58,8 +67,8 @@
 				$pictures[]=$Files->returnFileName($item->file_id);
 			}
 			$ref['pictures']=$pictures;
-			$ref['listCategories']=$Craftsman->returnCraftsmanCategories($craftsmanId);
-			$this->load->view('RefListCategoried',$ref);
+			
+			$this->load->view('RefList',$ref);
 		}
 		
 		//===== METHOD 5 ===========

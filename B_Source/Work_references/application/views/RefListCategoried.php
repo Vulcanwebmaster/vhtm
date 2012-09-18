@@ -3,6 +3,16 @@
 <script type="text/javascript" src="/work_references/assets/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/work_references/assets/js/js-list.js"></script>
 
+<script type="text/javascript">
+	//AJAX:
+	$(document).ready(function(){
+		$('.category').click(function(){
+			$categoryId=$(this).children('input').val();
+			$('.div-list').load("/work_references/index.php/m_references/showListCategoried/"+<?php echo $craftsmanId;?>+"/"+$categoryId);
+		});
+	});
+</script>
+
 <?php $this->load->view('RefAddCategory');
 	$this->load->view('RefAddReference');
 ?>
@@ -22,7 +32,7 @@
           						else echo '<td></td>';
           						for ($j=0; $j<5; $j++)
           							if ($i+$j<$count)
-          								echo '<td>'.$listCategories[$i+$j]->category.'</td>';
+          								echo '<td class="category"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category.'</td>';
           					?>
           				</tr>
           			<?php }?>
@@ -36,20 +46,7 @@
                 <div id="category" style="font-size:14px; text-align:right;"><a id="add_reference">Add reference</a></div>
             </div>
       		<div class="div-list">
-      			<?php for ($i=0; $i<count($pictures); $i++)
-      			{?>
-      				<div id="list">
-		               	<div style="border-bottom:1px solid #666;">
-		               		<span id="del">Delete reference</span>
-		                    <?php echo $pictures[$i];?>
-		                </div>
-		                <div>
-		                 	<span id="title" style="font-size:12px;">Title: <strong><?php echo $listReferences[$i]->title;?></strong></span>
-		                 	<br/>
-		                    <span id="title">Description: <span><?php echo $listReferences[$i]->text;?></span></span>
-		                </div>   
-	               </div>
-      			<?php }?>
+      			
 			</div>
 				
         </div>

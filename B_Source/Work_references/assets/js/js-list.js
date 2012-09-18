@@ -30,4 +30,6 @@ $(document).ready(function(){
 		$(this).parent('td').parent('tr').parent('tbody').parent('.mask').slideUp();
 		$(this).parent('.mask2').slideUp();
 	});
+	
+	
 });
