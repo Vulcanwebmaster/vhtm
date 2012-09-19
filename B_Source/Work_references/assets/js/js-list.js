@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 $(document).ready(function(){
 	$width=$(window).width();
 	$height=$(window).height();

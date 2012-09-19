@@ -27,21 +27,30 @@ class Tiennd extends CI_Controller{
 		$this->load->view('view_method_3',$data);
 	}
 	
-	public function method_3()
+	public function method_3($craftsmanId='1',$categoryId = '-1')
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
 		include("mojmojster_database.php");
 		
-		$data['categories'] = $CraftsmanReferences->returnAllCategories();
-		$data['references'] = $CraftsmanReferences->returnReferencesListUncategorized();
+		$data['listCategories'] = $Craftsman->returnCraftsmanCategories($craftsmanId);
+		$data['references'] = $CraftsmanReferences->returnReferencesList($craftsmanId, $categoryId);
 		
 		$pictures=array();
 		foreach ($data['references'] as $item)
 		{
-			$pictures[]=$CraftsmanReferences->returnFile($item->file_id);
+			$pictures[]=$Files->returnFileName($item->file_id);
 		}
-		$data['files'] = $pictures;
+		$data['pictures'] = $pictures;
+		
+		$ref['listReferences']=$CraftsmanReferences->returnReferencesList($craftsmanId,$categoryId);
+			$pictures=array();
+			foreach ($ref['listReferences'] as $item)
+			{
+				$pictures[]=$Files->returnFileName($item->file_id);
+			}
+			$ref['pictures']=$pictures;
+		
 		$data['count']=count($data['references']);
 		$this->load->view('view_method_3',$data);
 	}
@@ -53,20 +62,20 @@ class Tiennd extends CI_Controller{
 		include("mojmojster_database.php");
 		
 		$CraftsmanReferences->deleteMyReference($referenceId);
-		redirect(base_url().'index.php/M_references/showCategoriedReferences','refresh');
+		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
 	
-	public function addCategory($craftsmanId)
+	public function addCategory($craftsmanId='1')
 	{
 		$this->load->helper('url');
 		include("mojmojster_database.php");
 		
 		$categoryTitle = $this->input->post('category_title');
  		$CraftsmanReferences->setProductCategory($craftsmanId, $categoryTitle, $categoryId = false);
-		redirect(base_url().'index.php/M_references/showCategoriedReferences','refresh');
+		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
 	
-	public function upload()
+	public function upload($craftsmanId='1')
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
@@ -74,6 +83,7 @@ class Tiennd extends CI_Controller{
 		
 		$title = $this->input->post('title');
 		$text = $this->input->post('text');
+		$categoryId = $this->input->post('category_id');
 		
 		$config['upload_path'] = 'assets/images/references/';
 		$config['allowed_types'] = 'jpg|png';
@@ -96,11 +106,10 @@ class Tiennd extends CI_Controller{
 			$data = $this->upload->data();
 			$fileFieldName = 'userfile';
 			$Files->storeFile($fileFieldName, $type='file');
-			//$Files->storeMyFile($data['file_ext'],'Image',$data['file_name']);
 			$image = $Files->returnFileId($data['file_name']);
-			$CraftsmanReferences->setReference($craftsmanId=1,'',$image,$title,$text,$comment='',$comment_author='',$categoryId = -1);
+			$CraftsmanReferences->setReference($craftsmanId,'',$image,$title,$text,$comment='',$comment_author='',$categoryId);
 		}
-		redirect(base_url().'index.php/M_references/showCategoriedReferences','refresh');
+		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
 
 		function showCategoriedReferences($craftsmanId='1')

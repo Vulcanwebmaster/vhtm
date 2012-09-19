@@ -21,13 +21,6 @@ class dbCraftsmanReferences {
 		$this->Files->deleteMyFile($fileId);
 		$query = $CI->db->query("DELETE FROM mojmojster.references WHERE id = '$referenceId'");
 	}
-	
-	function returnAllCategories()
-	{
-		$CI =& get_instance();
-		$query = $CI->db->query("SELECT * FROM mojmojster.categories ORDER BY id asc");
-		return $query->result();
-	}
 	 
 	function returnReferencesListUncategorized ($categoryId = '-1')
 	{
@@ -43,7 +36,7 @@ class dbCraftsmanReferences {
 		return $query->row();
 	}
 	
-	function returnReferencesList($craftsmanId, $categoryId = '-1')
+	function returnReferencesList($craftsmanId, $categoryId='-1')
 	{
 		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mno�ica.
 		
@@ -129,8 +122,9 @@ class dbCraftsmanReferences {
 	}
 	
 
-	function setReference($craftsmanId, $timestamp, $image, $title, $text, $comment, $commentAuthor, $categoryId = -1)
+	function setReference($craftsmanId, $timestamp, $image, $title, $text, $comment, $commentAuthor, $categoryId)
 	{
+		//echo $image;die();
 		$CI =& get_instance();
 		$query = $CI->db->query("INSERT INTO mojmojster.references VALUES('','$timestamp','$image','$title','$text','$comment','$commentAuthor','$craftsmanId','$categoryId')");
 		

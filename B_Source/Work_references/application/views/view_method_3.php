@@ -8,12 +8,12 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-				$('#body1').hide();
+				$('#form').hide();
 				$('#category').click(function(){
-					$('#body1').slideDown();
+					$('#form').slideDown();
 					});
-				$('#Close').click(function(){
-					$('#body1').slideUp();
+				$('.exit').click(function(){
+					$('#form').slideUp();
 					});
 		});
 	</script>
@@ -34,7 +34,7 @@
 		?>
 		<div class="reference">
 			<a href="/Work_references/index.php/tiennd/deleteRef/<?php echo $references[$i]->id;?>" style="float:right">Delete reference</a>
-			<img class="picture" alt="" src="/Work_references/assets/images/references/<?php echo $files[$i]->filename; ?>"/>
+			<img class="picture" alt="" src="/Work_references/assets/images/references/<?php echo $pictures[$i]; ?>"/>
 			<div class="info">
 				<div class="info-path">
 					<h4 class="title"><?php echo $references[$i]->title; ?></h4>
@@ -97,7 +97,7 @@
 		?>
 		<div class="reference">
 			<a href="/Work_references/index.php/tiennd/deleteRef/<?php echo $references[$i]->id;?>" style="float:right">Delete reference</a>
-			<img class="picture" alt="" src="/Work_references/assets/images/references/<?php echo $files[$i]->filename; ?>"/>
+			<img class="picture" alt="" src="/Work_references/assets/images/references/<?php echo $pictures[$i]; ?>"/>
 			<div class="info">
 				<div class="info-path">
 					<h4 class="title"><?php echo $references[$i]->title; ?></h4>
@@ -155,4 +155,7 @@
 		?>
 	</div>
 </div>
-<?php $this->load->view('RefAddReference');?>
+<?php 
+	$data['listCategories'] = $listCategories;
+	$this->load->view('RefAddReference-tiennd',$data);
+?>

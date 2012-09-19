@@ -10,7 +10,7 @@ class DbFiles
 		{
 			$fileName = $_FILES["$fileFieldName"]["name"];
 		  	$fileType = $_FILES["$fileFieldName"]["type"];
-	
+			
 			$CI =& get_instance();
 			$query = $CI->db->query("INSERT INTO files VALUES('','$fileType','$type','$fileName')");
 			$fileId = $CI->db->insert_id();
@@ -19,7 +19,6 @@ class DbFiles
 			if (!move_uploaded_file($tmpLocation, $CI->config->item('files_dir').$fileId.".sav"))
 				$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
 		}
-		die();
 	}
 	
 	//===================== MY FUNCTION ===========================
@@ -28,24 +27,14 @@ class DbFiles
 		if ($fileId != -1)
 		{
 			$CI =& get_instance();
-			$filepath = 'assets/images/references/'.$this->returnFile($fileId);
-			//var_dump(file_exists($filepath));die();
+			$filepath = 'assets/images/references/'.$this->returnFileName($fileId);
 			if(file_exists($filepath))
 			{
 				unlink($filepath);
 			}
+			$this->deleteFile($fileId);
 			$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
 		}
-	}
-	
-	function returnFile($fileId)
-	{
-		$CI =& get_instance();
-		$query = $CI->db->query("SELECT * FROM mojmojster.files WHERE mojmojster.files.id = '$fileId'");
-		
-		foreach ($query->result() as $row)
-			return $row->filename.$row->filetype;
-		return false; 
 	}
 	
 	function returnFileName($fileId)
@@ -65,7 +54,7 @@ class DbFiles
 		$query = $CI->db->query("SELECT id FROM mojmojster.files WHERE mojmojster.files.filename = '$filename'");
 		foreach ($query->result() as $row)
 			return $row->id;
-		return false; 
+		return false;
 	}
 	
 	function storeMyFile($fileType,$type,$fileName)
@@ -107,7 +96,7 @@ class DbFiles
 	
 	function deleteFile($fileId)
 	{	//TODO: IMPLEMENT SECURITY. SEE hasRightToDelete(...)
-		$filesDir = "assets/images/references/";
+		$filesDir = "savedfiles/";
 		
 		if ($fileId != -1)
 		{
