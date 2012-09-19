@@ -2,6 +2,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/css.css"/>
 	
+	<script type="text/javascript" src="<?php echo base_url() ?>assets/js/js-list.js.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/js/myjs.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/js/ajax-base.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-1.7.2.min.js"></script>
