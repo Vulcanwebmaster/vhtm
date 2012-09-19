@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/mojmojster/';
+$config['base_url']	= 'http://localhost/Work_references/';
 
 $config['load_question_constant'] = 5;
 $config['recaptcha_public_key'] = '6LeD2dUSAAAAAF1BliHqhVB1a4WP-grD8hYjvowP';

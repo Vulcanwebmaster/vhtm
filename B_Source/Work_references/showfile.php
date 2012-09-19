@@ -1,7 +1,7 @@
 <?php
 $DB_HOST = "localhost";
 $DB_USERNAME = "root";
-$DB_PASSWORD = "khongcopass";
+$DB_PASSWORD = "";
 $DB_DATABASE = "mojmojster";	
 $FILES_DIR = "savedfiles/";
 

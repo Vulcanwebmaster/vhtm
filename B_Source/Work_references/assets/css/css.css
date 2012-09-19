@@ -25,3 +25,4 @@
 .column{float:left}
 .column .reference{margin:3px}
 .category{cursor:pointer}
+.body {background:red !important}

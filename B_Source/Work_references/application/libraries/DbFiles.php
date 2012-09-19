@@ -3,20 +3,13 @@
 
 class DbFiles
 {
-
 	function storeFile($fileFieldName, $type='file')
 	{	//TODO: IMPELEMNT SECURITY. SEE hasRightToStore(...).
-		
-		
 		global $_FILES;
-		
 		if (isset($_FILES["$fileFieldName"]) && $_FILES["$fileFieldName"]["error"] == 0)
 		{
-			
 			$fileName = $_FILES["$fileFieldName"]["name"];
 		  	$fileType = $_FILES["$fileFieldName"]["type"];
-		  	
-			
 	
 			$CI =& get_instance();
 			$query = $CI->db->query("INSERT INTO files VALUES('','$fileType','$type','$fileName')");
@@ -25,24 +18,60 @@ class DbFiles
 			$tmpLocation = $_FILES["$fileFieldName"]["tmp_name"];
 			if (!move_uploaded_file($tmpLocation, $CI->config->item('files_dir').$fileId.".sav"))
 				$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
-			
 		}
-		
+		die();
 	}
 	
 	//===================== MY FUNCTION ===========================
+	function deleteMyFile($fileId)
+	{
+		if ($fileId != -1)
+		{
+			$CI =& get_instance();
+			$filepath = 'assets/images/references/'.$this->returnFile($fileId);
+			//var_dump(file_exists($filepath));die();
+			if(file_exists($filepath))
+			{
+				unlink($filepath);
+			}
+			$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
+		}
+	}
+	
+	function returnFile($fileId)
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT * FROM mojmojster.files WHERE mojmojster.files.id = '$fileId'");
+		
+		foreach ($query->result() as $row)
+			return $row->filename.$row->filetype;
+		return false; 
+	}
+	
 	function returnFileName($fileId)
 	{
 		
 		$CI =& get_instance();
-		$query = $CI->db->query("SELECT filename FROM mojmojster.files WHERE mojmojster.files.id = '$fileId'");
+		$query = $CI->db->query("SELECT * FROM mojmojster.files WHERE mojmojster.files.id = '$fileId'");
 		
 		foreach ($query->result() as $row)
 			return $row->filename;
-			
-			
+		return false; 
+	}
 	
-		return false; //�e ni obstoje� podatek, vrne false.
+	function returnFileId($filename)
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT id FROM mojmojster.files WHERE mojmojster.files.filename = '$filename'");
+		foreach ($query->result() as $row)
+			return $row->id;
+		return false; 
+	}
+	
+	function storeMyFile($fileType,$type,$fileName)
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query("INSERT INTO files VALUES('','$fileType','$type','$fileName')");
 	}
 	//================================================================
 
@@ -78,7 +107,7 @@ class DbFiles
 	
 	function deleteFile($fileId)
 	{	//TODO: IMPLEMENT SECURITY. SEE hasRightToDelete(...)
-		$filesDir = "savedfiles/";
+		$filesDir = "assets/images/references/";
 		
 		if ($fileId != -1)
 		{

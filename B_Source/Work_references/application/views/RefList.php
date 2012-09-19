@@ -8,7 +8,7 @@
       				<div class="list">
 		               	<div style="border-bottom:1px solid #666;">
 		               		<span id="del">Delete reference</span>
-		                    <?php echo $pictures[$i];?>
+		                    <img alt="" src="/Work_references/assets/images/references/<?php echo $pictures[$i]; ?>"/>
 		                </div>
 		                <div>
 		                 	<span id="title" style="font-size:12px;">Title: <strong><?php echo $listReferences[$i]->title;?></strong></span>

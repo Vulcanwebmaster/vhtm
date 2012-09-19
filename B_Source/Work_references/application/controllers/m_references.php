@@ -8,9 +8,8 @@
 			$this->module=strtolower(get_class());
 		}
 		
-		function index()
+		public function index()
 		{
-			//$this->showSingle();
 			$this->load->view('RefListUncategoried');
 		}
 		
@@ -40,24 +39,27 @@
 			
 			foreach ($ref['references'] as $item)
 			{
-				$pictures[]=$Files->returnFileName($item->file_id);
+				$pictures[]=$CraftsmanReferences->returnFileName($item->file_id);
 			}
 			$ref['pictures']=$pictures;
 			$this->load->view('RefGallery',$ref);
 		}
 		
 		//===== METHOD 4 ===========
-		function showCategoriedReferences($craftsmanId='0', $craftsmanId='0')
+		function showCategoriedReferences($craftsmanId='1')
 		{
+			$this->load->helper('url');
+			$this->load->helper('form');
 			include("mojmojster_database.php");
 			
 			$ref['listCategories']=$Craftsman->returnCraftsmanCategories($craftsmanId);
 			$ref['craftsmanId']=$craftsmanId;
-			$this->load->view('RefListCategoried',$ref);
+			$this->load->view('RefListCategoried-tiennd',$ref);
 		}
 		
-		function showListCategoried($craftsmanId='0',$categoryId='0')
+		function showListCategoried($craftsmanId='1',$categoryId='0')
 		{
+			$this->load->helper('url');
 			include("mojmojster_database.php");
 			
 			$ref['listReferences']=$CraftsmanReferences->returnReferencesList($craftsmanId,$categoryId);

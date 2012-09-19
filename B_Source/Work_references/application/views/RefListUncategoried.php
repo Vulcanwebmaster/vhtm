@@ -1,6 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/work_references/assets/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="/work_references/assets/css/css.css"/>
 
+<div id="category" style="font-size:14px;float:left;margin-left:32%">
+   		<a style="cursor:pointer">Add reference</a>
+    </div>
 <div id="body">
 	<div id="column1" class="column">
 		<div class="reference">

@@ -11,15 +11,47 @@ class dbCraftsmanReferences {
 		$this->Files = $Files;
 	}
 	
+	//====== My Function ==========//
+	
+	
+	function deleteMyReference($referenceId)
+	{
+		$CI =& get_instance();
+		$fileId = $this->returnReferencePictureId($referenceId);
+		$this->Files->deleteMyFile($fileId);
+		$query = $CI->db->query("DELETE FROM mojmojster.references WHERE id = '$referenceId'");
+	}
+	
+	function returnAllCategories()
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT * FROM mojmojster.categories ORDER BY id asc");
+		return $query->result();
+	}
+	 
+	function returnReferencesListUncategorized ($categoryId = '-1')
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT * FROM mojmojster.references where category_id = '$categoryId' ORDER BY file_id DESC, timestamp DESC, comment DESC");
+		return $query->result();
+	}
+	
+	function returnFile($fileId)
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT * FROM mojmojster.files where id = '$fileId'");
+		return $query->row();
+	}
+	
 	function returnReferencesList($craftsmanId, $categoryId = '-1')
 	{
 		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mno�ica.
 		
 		$CI =& get_instance();
 		$query = $CI->db->query("SELECT * FROM mojmojster.references where craftsman_id = '$craftsmanId' AND category_id = '$categoryId' ORDER BY file_id DESC, timestamp DESC, comment DESC");
-		
 		return $query->result();
 	}
+	//====== My Function ==========//
 	
 	function returnReferencePictureId($referenceId)
 	{
@@ -97,7 +129,7 @@ class dbCraftsmanReferences {
 	}
 	
 
-	function setReference($craftsmanId, $timestamp, $image = -1, $title, $text, $comment, $commentAuthor, $categoryId = -1)
+	function setReference($craftsmanId, $timestamp, $image, $title, $text, $comment, $commentAuthor, $categoryId = -1)
 	{
 		$CI =& get_instance();
 		$query = $CI->db->query("INSERT INTO mojmojster.references VALUES('','$timestamp','$image','$title','$text','$comment','$commentAuthor','$craftsmanId','$categoryId')");
