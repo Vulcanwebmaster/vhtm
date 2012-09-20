@@ -2,6 +2,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/css.css"/>
 	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/js/js-list.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-1.7.2.min.js"></script>
 	
@@ -56,7 +57,7 @@
           						else echo '<td></td>';
           						for ($j=0; $j<5; $j++)
           							if ($i+$j<$count)
-          								echo '<td class="category"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category.'</td>';
+          								echo '<td class="category1"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category.'</td>';
           					?>
           				</tr>
           			<?php }?>
@@ -66,7 +67,7 @@
         <!---------begin Category------->
         <div>
         	<div id="cat">
-            	<div id="category" style="font-size:14px">Category</div><div id="category">contents</div>
+            	<div class="category" style="font-size:14px">Category</div><div class="category">contents</div>
                 <div id="category" style="font-size:14px; text-align:right;"><a id="add_reference">Add reference</a></div>
             </div>
       		<div class="div-list">

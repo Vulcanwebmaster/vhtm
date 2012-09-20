@@ -1,18 +1,30 @@
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('div#uploading').hide();
-	});
+		$('#upload').click(function(){
+			alert('uploading');
+			$('#uploading').show(1000);
+		)};
+	)};
 	
-	function showUploading()
+	function sleep(milliseconds) 
 	{
-		$('div#uploading').show();
+  		var start = new Date().getTime();
+ 		for (var i = 0; i < 1e7; i++) 
+		{
+    			if ((new Date().getTime() - start) > milliseconds)
+			{
+     				break;
+    			}
+ 		}
 	}
-
+}
 </script>
-
+<div id="uploading" style="left: 517px; top: 146px;display:none">Uploading...</div>
 <div class="mask" id="form" style="left: 517px; top: 146px; display: none;">
-	<div id="uploading">Uploading...</div>
-		<?php echo form_open_multipart('/tiennd/upload/');?>
+		<?php 
+			$js = array('onsubmit' =>'$("#uploading").show();'); 
+			echo form_open_multipart('/tiennd/upload/',$js);
+		?>
 		<table>
 			<tr>
 				<td colspan="2"><p class="exit">X</p></td>
@@ -46,7 +58,7 @@
               </tr>
               <tr>
                 <td></td>
-                <td><a href="javascript:showUploading();"><input id="Add_reference" type="submit" name="Addreference" value="Add reference" /></a></td>
+                <td><a id="upload"><input type="submit" name="Addreference" value="Add reference"/></a></td>
             </tr>
         </table>
         </form>

@@ -36,6 +36,15 @@ class dbCraftsmanReferences {
 		return $query->row();
 	}
 	
+	function returnReferencesListLimit($craftsmanId, $categoryId='-1')
+	{
+		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mno�ica.
+		
+		$CI =& get_instance();
+		$query = $CI->db->query("SELECT * FROM mojmojster.references where craftsman_id = '$craftsmanId' AND category_id = '$categoryId' ORDER BY file_id DESC, timestamp DESC, comment DESC limit 10");
+		return $query->result();
+	}
+	
 	function returnReferencesList($craftsmanId, $categoryId='-1')
 	{
 		//vrne seznam id-jev referenc nekega mojstra. lahko je to prazna mno�ica.

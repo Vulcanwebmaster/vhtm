@@ -27,7 +27,7 @@ class Tiennd extends CI_Controller{
 		$this->load->view('view_method_3',$data);
 	}
 	
-	public function method_3($craftsmanId='1',$categoryId = '-1')
+	public function showmore($craftsmanId='1',$categoryId = '-1')
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
@@ -43,13 +43,25 @@ class Tiennd extends CI_Controller{
 		}
 		$data['pictures'] = $pictures;
 		
-		$ref['listReferences']=$CraftsmanReferences->returnReferencesList($craftsmanId,$categoryId);
-			$pictures=array();
-			foreach ($ref['listReferences'] as $item)
-			{
-				$pictures[]=$Files->returnFileName($item->file_id);
-			}
-			$ref['pictures']=$pictures;
+		$data['count']=count($data['references']);
+		$this->load->view('showmore',$data);
+	}
+	
+	public function method_3($craftsmanId='1',$categoryId = '-1')
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		include("mojmojster_database.php");
+		
+		$data['listCategories'] = $Craftsman->returnCraftsmanCategories($craftsmanId);
+		$data['references'] = $CraftsmanReferences->returnReferencesListLimit($craftsmanId, $categoryId);
+		
+		$pictures=array();
+		foreach ($data['references'] as $item)
+		{
+			$pictures[]=$Files->returnFileName($item->file_id);
+		}
+		$data['pictures'] = $pictures;
 		
 		$data['count']=count($data['references']);
 		$this->load->view('view_method_3',$data);

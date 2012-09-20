@@ -15,17 +15,11 @@
 				$('.exit').click(function(){
 					$('#form').slideUp();
 					});
-				$('.show-more').click(function(){
-					$('#body').hide();
-					$('.list-more').load("<?php echo base_url();?>index.php/tiennd/showmore/");
-				});
+				$('#body1').fadeIn(1000);
 		});
 	</script>
-
-<div id="category" style="font-size:14px;float:left;margin-left:32%;">
-	<a style="cursor:pointer;">Add reference</a>
-</div>			
-<div id="body">
+		
+<div id="body1">
 	<div id="column1" class="column">
 		<?php
 		if($count>0)
@@ -38,7 +32,6 @@
 		?>
 		<div class="reference">
 			<a href="/Work_references/index.php/tiennd/deleteRef/<?php echo $references[$i]->id;?>" style="float:right">Delete reference</a>
-			<img class="picture" alt="" src="/Work_references/assets/images/references/<?php echo $pictures[$i]; ?>"/>
 			<div class="info">
 				<div class="info-path">
 					<h4 class="title"><?php echo $references[$i]->title; ?></h4>
@@ -101,7 +94,6 @@
 		?>
 		<div class="reference">
 			<a href="/Work_references/index.php/tiennd/deleteRef/<?php echo $references[$i]->id;?>" style="float:right">Delete reference</a>
-			<img class="picture" alt="" src="/Work_references/assets/images/references/<?php echo $pictures[$i]; ?>"/>
 			<div class="info">
 				<div class="info-path">
 					<h4 class="title"><?php echo $references[$i]->title; ?></h4>
@@ -159,10 +151,6 @@
 		?>
 	</div>
 </div>
-<div class="list-more">
-	
-</div>
-<div class="show-more" style="text-align:center;margin:auto;clear:both"><a style="cursor: pointer">Show more references</a></div>
 <?php 
 	$data['listCategories'] = $listCategories;
 	$this->load->view('RefAddReference-tiennd',$data);

@@ -1,6 +1,7 @@
 @CHARSET "ISO-8859-1";
 .picture{width:300px; height:170px}
 #body{text-align:left; width:1005px; margin:auto; font-family:Arial; font-size:11px;}
+#body1{text-align:left; width:1005px; margin:auto; font-family:Arial; font-size:11px;}
 .title{font-weight:normal; float:left; margin:0; font-size:15px !important}
 .date{text-align:right; float:right; margin:0}
 .reference{width:300px; margin:auto}
