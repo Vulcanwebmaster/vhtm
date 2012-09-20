@@ -87,6 +87,11 @@ class Tiennd extends CI_Controller{
 		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
 	
+	public function showMessage()
+	{
+		$this->load->view('uploading');
+	}
+	
 	public function upload($craftsmanId='1')
 	{
 		$this->load->helper('url');
@@ -104,7 +109,7 @@ class Tiennd extends CI_Controller{
 		$config['max_height']  = '0';
 
 		$this->load->library('upload', $config);
-
+		
 		if ( ! $this->upload->do_upload())
 		{
 			$error = $this->upload->display_errors();

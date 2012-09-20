@@ -32,8 +32,9 @@
 					});
 				$('.exit').click(function(){
 					$('#vaddCategory').slideUp();
-					});
+					});			
 		});
+
 	</script>
 <?php
 	$data['listCategories'] = $listCategories;
