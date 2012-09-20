@@ -7,7 +7,6 @@
       			{?>
       				<div class="list">
 		               	<div style="border-bottom:1px solid #666;">
-		               		<a href="<?php echo base_url() ?>index.php/tiennd/deleteRef/<?php echo $listReferences[$i]->id;?>" id="del">Delete reference</a>
 		                    <p>
 		                    	<img alt="" src="<?php echo base_url();?>assets/images/references/<?php echo $pictures[$i];?>"/>
 		                    </p>

@@ -6,6 +6,7 @@
 		{
 			parent::__construct();
 			$this->module=strtolower(get_class());
+			$this->load->helper('url');
 		}
 		
 		public function index()
@@ -30,23 +31,35 @@
 		}
 		
 		//===== METHOD 2 ===========
-		function showScrollableGallery()
+		function showScrollableGallery($craftsmanId='0')
 		{
 			include("mojmojster_database.php");
 			
-			$ref['references']=$CraftsmanReferences->returnReferencesListFull();
+			$listCategory=$Craftsman->returnCraftsmanCategories($craftsmanId);
 			$pictures=array();
-			
-			foreach ($ref['references'] as $item)
+			$references=array();
+			foreach ($listCategory as $category)
 			{
-				$pictures[]=$CraftsmanReferences->returnFileName($item->file_id);
+				$listReferences=$CraftsmanReferences->returnReferencesList($craftsmanId, $category->id);
+				foreach ($listReferences as $item)
+				{
+					$references[]=$item;
+					$pictures[]=$Files->returnFileName($item->file_id);
+				}
+			}
+			$listUncategoried=$CraftsmanReferences->returnReferencesList($craftsmanId);
+			foreach ($listUncategoried as $item)
+			{
+				$references[]=$item;
+				$pictures[]=$Files->returnFileName($item->file_id);
 			}
 			$ref['pictures']=$pictures;
+			$ref['references']=$references;
 			$this->load->view('RefGallery',$ref);
 		}
 		
 		//===== METHOD 4 ===========
-		function showCategoriedReferences($craftsmanId='1')
+		function showCategoriedReferences($craftsmanId='0')
 		{
 			$this->load->helper('url');
 			$this->load->helper('form');
@@ -74,18 +87,45 @@
 		}
 		
 		//===== METHOD 5 ===========
-		public function showUncategoriedReferencesWithoutEdit()
+		public function showUncategoriedReferencesWithoutEdit($craftsmanId='0')
 		{
 			include("mojmojster_database.php");
-			$data['ds']=$CraftsmanReferences->returnReferencesListCategoryId($categoryId = '-1');
-			
-			$this->load->view('vtrungnt',$data);		
+			$data['ds']=$CraftsmanReferences->returnReferencesList($craftsmanId, $categoryId = '-1');
+			$pictures=array();
+			$rates=array();
+			foreach ($data['ds'] as $item)
+			{
+				$pictures[]=$Files->returnFileName($item->file_id);
+				$rates[]=$CraftsmanReferences->returnReferenceRatings($item->id);
+			}
+			$data['pictures']=$pictures;
+			$data['rates']=$rates;
+			$this->load->view('RefListUncategoriedWithoutEdit',$data);		
 		}
-		public function showCategoriedReferencesWithoutEdit(){
+		
+		//===== METHOD 6 ===========
+		public function showCategoriedReferencesWithoutEdit($craftsmanId='0'){
 			include("mojmojster_database.php");
-			$data['ds']=$CraftsmanReferences->returnReferencesListFull();
+		
+			$data['listCategories']=$Craftsman->returnCraftsmanCategories($craftsmanId);
+			$data['craftsmanId']=$craftsmanId;
+			$this->load->view('RefListCategoriedWithoutEdit',$data);
+		}
+		
+		function showListCategoriedWithoutEdit($craftsmanId='1',$categoryId='0')
+		{
+			$this->load->helper('url');
+			include("mojmojster_database.php");
 			
-			$this->load->view('vtrungnt',$data);
-	}
+			$ref['listReferences']=$CraftsmanReferences->returnReferencesList($craftsmanId,$categoryId);
+			$pictures=array();
+			foreach ($ref['listReferences'] as $item)
+			{
+				$pictures[]=$Files->returnFileName($item->file_id);
+			}
+			$ref['pictures']=$pictures;
+			
+			$this->load->view('RefListWithoutEdit',$ref);
+		}
 	}
 ?>

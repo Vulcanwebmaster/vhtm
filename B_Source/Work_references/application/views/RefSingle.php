@@ -1,10 +1,10 @@
-<link rel="stylesheet" type="text/css" href="/work_references/assets/css/style.css"/>
-<script type="text/javascript" src="/work_references/assets/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/work_references/assets/js/js-references.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css"/>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/js-references.js"></script>
 <div id="body">
 	<div class="reference">
 		<!-- img class="picture" alt="" src=""/ -->
-		<?php echo $pictureName;?>
+		<p><img alt="" src="<?php echo base_url();?>assets/images/references/<?php echo $pictureName;?>"/></p>
 		<div class="info">
 			<div class="info-path">
 				<h4 class="title"><?php echo $title;?></h4>
@@ -26,27 +26,49 @@
 				<div class="rate">
 					<ul>
 						<li>
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle2.png">
-							<img alt="" src="/work_references/assets/images/circle2.png">
+							<?php if (isset($rate[0])) $count=$rate[0]->rating;
+							else $count=0;
+							{
+								for ($i=0;$i<$count; $i++)
+								{
+									echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
+								}
+								for ($i=0;$i<5-$count; $i++)
+								{
+									echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
+								}
+							}?>
 							<span class="small-text">price</span>
 						</li>
 						<li>
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
+							<?php 
+								if (isset($rate[1])) $count=$rate[1]->rating;
+							else $count=0;
+								{
+									for ($i=0;$i<$count; $i++)
+									{
+										echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
+									}
+									for ($i=0;$i<5-$count; $i++)
+									{
+										echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
+									}
+								}?>
 							<span class="small-text">quality</span>
 						</li>
 						<li>
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle1.png">
-							<img alt="" src="/work_references/assets/images/circle2.png">
-							<img alt="" src="/work_references/assets/images/circle2.png">
+							<?php if (isset($rate[2])) $count=$rate[2]->rating;
+							else $count=0;
+							{
+								for ($i=0;$i<$count; $i++)
+								{
+									echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
+								}
+								for ($i=0;$i<5-$count; $i++)
+								{
+									echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
+								}
+							}?>
 							<span  class="none-small-text">speed</span>
 						</li>
 					</ul>

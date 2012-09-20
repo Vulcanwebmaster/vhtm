@@ -36,7 +36,8 @@
 			<ul>
 				<?php for ($i=0;$i<count($references);$i++)
 				{?>
-					<li><?php echo $pictures[$i];?>
+					<li>
+						<p><img alt="" src="<?php echo base_url();?>assets/images/references/<?php echo $pictures[$i];?>"/></p>
 						<p><?php echo $references[$i]->title;?></p>
 					</li>
 				<?php }?>

@@ -39,7 +39,6 @@ class DbFiles
 	
 	function returnFileName($fileId)
 	{
-		
 		$CI =& get_instance();
 		$query = $CI->db->query("SELECT * FROM mojmojster.files WHERE mojmojster.files.id = '$fileId'");
 		
