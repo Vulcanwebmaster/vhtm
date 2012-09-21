@@ -22,7 +22,7 @@ $objUser=new UserClass($db);
 <head>
     <title>Vurman - Spectrum Funds</title>
     <meta name="keywords" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
-    <meta name="description" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
+    <meta name="JOB_DESCRIPTION" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <link rel="Stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/redmond/jquery-ui-1.7.2.custom.css" />
@@ -63,9 +63,9 @@ $objUser=new UserClass($db);
 	if(isset($_POST['Search']) && $_POST['Search']=="Search")
 	{
 	$objTransfer=new TransferClass($db);
-	$objTransfer->transaction_type="deliver";
+	//$objTransfer->transaction_type="deliver";
 	$objTransfer->status="cancelled";
-	$objTransfer->types="outgoing";
+	$objTransfer->types="to deliver";
 	
 	if(isset($_POST['client_id']) && $_POST['client_id']!="")
 	{

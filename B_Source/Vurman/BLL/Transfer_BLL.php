@@ -3,42 +3,41 @@ Class TransferClass extends ChildCoreClass
 {
 	public $transfers_newArr;
 	public $id;
-	public $id_client;
-	public $client_reference;
-	public $id_isin;
+	public $client_id;
+	public $reference;		public $client_name;
+	public $isin;		public $currency;
 	public $fund_name;
-	public $isin_reference;
-	public $currency;
-	public $amount;
+	public $unknown_isin;
+	public $quantity;
 	public $custody_ac;
 	public $trade_date;
-	public $settlement_date;
-	public $sellerid;
-	public $seller;
-	public $bic_seller;
-	public $custodianid;
-	public $custodian;
+	public $value_date;
+	public $counterparty_id;
+	public $counterparty_name;
+	public $bic_counterparty;
+	public $custodian_id;
+	public $custodian_name;
 	public $bic_custodian;
-	public $seller_ac_cust;
-	public $transfer_agent;
-	public $bic_ta;
-	public $cust_ac_ta;
-	public $comment;
+	public $counterparty_ac_custodian;
+	public $transfer_agent_name;
+	public $bic_transfer_agent;
+	public $custodian_ac_transfer_agent;
+	//public $comment;
 	public $created_at;
 	public $types;
 	public $status;
-	public $transaction_type;
-	public $settled_by;
-	public $settled_date;
+	//public $transaction_type;
+	//public $settled_by;
+	//public $settled_date;
 	
 	public $from_date;
 	public $to_date;
 	
-	public $status_settle;
+	//public $status_settle;
 	
 	function __construct($db)
 	{
-		$tabName="transfers_new"; 
+		$tabName="settlement_instruction"; 
 		$this->ChildCoreClass($tabName,$db);
 		$this->SetFieldName($db);
 		$arr=array();
@@ -64,33 +63,33 @@ Class TransferClass extends ChildCoreClass
 		{
 			$JsonStr.=$comma."{";
 			$JsonStr.="\"id\":\"".$item['id']."\",";
-			$JsonStr.="\"id_client\":\"".$item['id_client']."\",";
-			$JsonStr.="\"client_reference\":\"".$item['client_reference']."\",";
-			$JsonStr.="\"id_isin\":\"".$item['id_isin']."\",";
+			$JsonStr.="\"id_client\":\"".$item['client_id']."\",";
+			$JsonStr.="\"client_reference\":\"".$item['reference']."\",";						$JsonStr.="\"client_name\":\"".$item['client_name']."\",";
+			$JsonStr.="\"id_isin\":\"".$item['isin']."\",";
 			$JsonStr.="\"fund_name\":\"".$item['fund_name']."\",";
 			$JsonStr.="\"currency\":\"".$item['currency']."\",";
-			$JsonStr.="\"amount\":\"".$item['amount']."\",";
+			$JsonStr.="\"amount\":\"".$item['quantity']."\",";
 			$JsonStr.="\"custody_ac\":\"".$item['custody_ac']."\",";
 			$JsonStr.="\"trade_date\":\"".$item['trade_date']."\",";
-			$JsonStr.="\"settlement_date\":\"".$item['settlement_date']."\",";
-			$JsonStr.="\"sellerid\":\"".$item['sellerid']."\",";
-			$JsonStr.="\"seller\":\"".$item['seller']."\",";
-			$JsonStr.="\"bic_seller\":\"".$item['bic_seller']."\",";
-			$JsonStr.="\"custodianid\":\"".$item['custodianid']."\",";
-			$JsonStr.="\"custodian\":\"".$item['custodian']."\",";
+			$JsonStr.="\"settlement_date\":\"".$item['value_date']."\",";
+			$JsonStr.="\"sellerid\":\"".$item['counterparty_id']."\",";
+			$JsonStr.="\"seller\":\"".$item['counterparty_name']."\",";
+			$JsonStr.="\"bic_seller\":\"".$item['bic_counterparty']."\",";
+			$JsonStr.="\"custodianid\":\"".$item['custodian_id']."\",";
+			$JsonStr.="\"custodian\":\"".$item['custodian_name']."\",";
 			$JsonStr.="\"bic_custodian\":\"".$item['bic_custodian']."\",";
-			$JsonStr.="\"seller_ac_cust\":\"".$item['seller_ac_cust']."\",";
-			$JsonStr.="\"transfer_agent\":\"".$item['transfer_agent']."\",";
-			$JsonStr.="\"bic_ta\":\"".$item['bic_ta']."\",";
-			$JsonStr.="\"cust_ac_ta\":\"".$item['cust_ac_ta']."\",";
-			$JsonStr.="\"comment\":\"".$item['comment']."\",";
+			$JsonStr.="\"seller_ac_cust\":\"".$item['counterparty_ac_custodian']."\",";
+			$JsonStr.="\"transfer_agent\":\"".$item['transfer_agent_name']."\",";
+			$JsonStr.="\"bic_ta\":\"".$item['bic_transfer_agent']."\",";
+			$JsonStr.="\"cust_ac_ta\":\"".$item['custodian_ac_transfer_agent']."\",";
+			//$JsonStr.="\"comment\":\"".$item['comment']."\",";
 			$JsonStr.="\"created_at\":\"".$item['created_at']."\",";
-			$JsonStr.="\"types\":\"".$item['types']."\",";
+			//$JsonStr.="\"types\":\"".$item['types']."\",";
 			$JsonStr.="\"status\":\"".$item['status']."\",";
-			$JsonStr.="\"transaction_type\":\"".$item['transaction_type']."\",";
-			$JsonStr.="\"settled_by\":\"".$item['settled_by']."\",";
-			$JsonStr.="\"settled_date\":\"".$item['settled_date']."\",";
-			$JsonStr.="\"isin_reference\":\"".$item['isin_reference']."\"";
+			$JsonStr.="\"types\":\"".$item['types']."\",";
+			//$JsonStr.="\"settled_by\":\"".$item['settled_by']."\",";
+			//$JsonStr.="\"settled_date\":\"".$item['settled_date']."\",";
+			$JsonStr.="\"comment\":\"".$item['unknown_isin']."\"";
 			$JsonStr.="}";
 			$comma=",";
 		}
@@ -109,19 +108,19 @@ Class TransferClass extends ChildCoreClass
 			$whereQuery.=$and."id =".$this->id;
 			$and=" and ";
 		}
-		if($this->id_client!="")
+		if($this->client_id!="")
 		{
-			$whereQuery.=$and."id_client =".$this->id_client;
+			$whereQuery.=$and."client_id =".$this->client_id;
 			$and=" and ";
 		}
-		if($this->client_reference!="")
+		if($this->reference!="")
 		{
-			$whereQuery.=$and."client_reference =".$this->client_reference;
+			$whereQuery.=$and."reference =".$this->reference;
 			$and=" and ";
-		}
-		if($this->id_isin!="")
+		}				if($this->client_name!="")		{			$whereQuery.=$and."client_name=".$this->client_name;			$and=" and ";		}
+		if($this->isin!="")
 		{
-			$whereQuery.=$and."id_isin like '".$this->id_isin."%'";
+			$whereQuery.=$and."isin like '".$this->isin."%'";
 			$and=" and ";
 		}
 		if($this->fund_name!="")
@@ -129,9 +128,9 @@ Class TransferClass extends ChildCoreClass
 			$whereQuery.=$and."fund_name =".$this->fund_name;
 			$and=" and ";
 		}
-		if($this->isin_reference!="")
+		if($this->unknown_isin!="")
 		{
-			$whereQuery.=$and."isin_reference =".$this->isin_reference;
+			$whereQuery.=$and."unknown_isin =".$this->unknown_isin;
 			$and=" and ";
 		}
 		if($this->currency!="")
@@ -139,9 +138,9 @@ Class TransferClass extends ChildCoreClass
 			$whereQuery.=$and."currency =".$this->currency;
 			$and=" and ";
 		}
-		if($this->amount!="")
+		if($this->quantity!="")
 		{
-			$whereQuery.=$and."amount =".$this->amount;
+			$whereQuery.=$and."quantity =".$this->quantity;
 			$and=" and ";
 		}
 		if($this->custody_ac!="")
@@ -154,34 +153,34 @@ Class TransferClass extends ChildCoreClass
 			$whereQuery.=$and."trade_date =".$this->trade_date;
 			$and=" and ";
 		}
-		if($this->settlement_date!="")
+		if($this->value_date!="")
 		{
-			$whereQuery.=$and."settlement_date =".$this->settlement_date;
+			$whereQuery.=$and."value_date =".$this->value_date;
 			$and=" and ";
 		}
-		if($this->sellerid!="")
+		if($this->counterparty_id!="")
 		{
-			$whereQuery.=$and."sellerid =".$this->sellerid;
+			$whereQuery.=$and."counterparty_id =".$this->counterparty_id;
 			$and=" and ";
 		}
-		if($this->seller!="")
+		if($this->counterparty_name!="")
 		{
-			$whereQuery.=$and."seller =".$this->seller;
+			$whereQuery.=$and."counterparty_name =".$this->counterparty_name;
 			$and=" and ";
 		}
-		if($this->bic_seller!="")
+		if($this->bic_counterparty!="")
 		{
-			$whereQuery.=$and."bic_seller =".$this->bic_seller;
+			$whereQuery.=$and."bic_counterparty =".$this->bic_counterparty;
 			$and=" and ";
 		}
-		if($this->custodianid!="")
+		if($this->custodian_id!="")
 		{
-			$whereQuery.=$and."custodianid =".$this->custodianid;
+			$whereQuery.=$and."custodian_id =".$this->custodian_id;
 			$and=" and ";
 		}
-		if($this->custodian!="")
+		if($this->custodian_name!="")
 		{
-			$whereQuery.=$and."custodian =".$this->custodian;
+			$whereQuery.=$and."custodian_name =".$this->custodian_name;
 			$and=" and ";
 		}
 		if($this->bic_custodian!="")
@@ -189,38 +188,38 @@ Class TransferClass extends ChildCoreClass
 			$whereQuery.=$and."bic_custodian =".$this->bic_custodian;
 			$and=" and ";
 		}
-		if($this->seller_ac_cust!="")
+		if($this->counterparty_ac_custodian!="")
 		{
-			$whereQuery.=$and."seller_ac_cust =".$this->seller_ac_cust;
+			$whereQuery.=$and."counterparty_ac_custodian =".$this->counterparty_ac_custodian;
 			$and=" and ";
 		}
-		if($this->transfer_agent!="")
+		if($this->transfer_agent_name!="")
 		{
-			$whereQuery.=$and."transfer_agent =".$this->transfer_agent;
+			$whereQuery.=$and."transfer_agent_name =".$this->transfer_agent_name;
 			$and=" and ";
 		}
-		if($this->bic_ta!="")
+		if($this->bic_transfer_agent!="")
 		{
-			$whereQuery.=$and."bic_ta =".$this->bic_ta;
+			$whereQuery.=$and."bic_transfer_agent =".$this->bic_transfer_agent;
 			$and=" and ";
 		}
-		if($this->cust_ac_ta!="")
+		if($this->custodian_ac_transfer_agent!="")
 		{
-			$whereQuery.=$and."cust_ac_ta =".$this->cust_ac_ta;
+			$whereQuery.=$and."custodian_ac_transfer_agent =".$this->custodian_ac_transfer_agent;
 			$and=" and ";
 		}
-		if($this->comment!="")
+		/*if($this->comment!="")
 		{
 			$whereQuery.=$and."comment =".$this->comment;
 			$and=" and ";
-		}
+		}*/
 		if($this->created_at!="")
 		{
 			$whereQuery.=$and."created_at =".$this->created_at;
 			$and=" and ";
-		}		else {
+		}		/*else {
 						$this->comment=NULL;
-		}
+		}*/
 		if($this->types!="")
 		{
 			$whereQuery.=$and."types ='".$this->types."'";
@@ -231,7 +230,7 @@ Class TransferClass extends ChildCoreClass
 			$whereQuery.=$and."status ='".$this->status."'";
 			$and=" and ";
 		}
-		if($this->transaction_type!="")
+		/*if($this->transaction_type!="")
 		{
 			$whereQuery.=$and."transaction_type ='".$this->transaction_type."'";
 			$and=" and ";
@@ -245,32 +244,34 @@ Class TransferClass extends ChildCoreClass
 		{
 			$whereQuery.=$and."settled_date =".$this->settled_date;
 			$and=" and ";
-		}
+		}*/
 		
 		if($this->from_date!="" && $this->to_date!="")
 		{
-			$whereQuery.=$and." settlement_date between '".$this->from_date."' and '".$this->to_date."'";
+			$whereQuery.=$and." value_date between '".$this->from_date."' and '".$this->to_date."'";
 			$and=" and ";
 		}
 		else if($this->from_date!="" && $this->to_date=="")
 		{
-			$whereQuery.=$and." settlement_date >= '".$this->from_date."'";
+			$whereQuery.=$and." value_date >= '".$this->from_date."'";
 			$and=" and ";
 		}
 		else if($this->from_date=="" && $this->to_date!="")
 		{
-			$whereQuery.=$and." settlement_date <= '".$this->to_date."'";
+			$whereQuery.=$and." value_date <= '".$this->to_date."'";
 			$and=" and ";
 		}
 		
-		if($this->status_settle!="" && $this->status_settle!=null)
+		/*if($this->status!="" && $this->status!=null)
 		{
 			$whereQuery.=$and." (status = 'pending' or status = 'completed') ";
 			$and=" and ";
-		}
+		}*/
 		
 		$SearchQuery="select * from ".$this->TableName;
-		if($whereQuery!="") $SearchQuery.=" where " .$whereQuery;
+		if($whereQuery!="") 		{			$SearchQuery.=" where " .$whereQuery;					}		if($this->types=="to deliver")		{			// Hoang Add order by created_at for sort data			$SearchQuery.="order by created_at asc";		}		else {
+			// Hoang Add order by created_at for sort data			$SearchQuery.="order by created_at desc";
+		}
 		echo $SearchQuery;
 		$result=$this->ExcuteQuery($SearchQuery);
 		return $result;
@@ -281,15 +282,15 @@ Class TransferClass extends ChildCoreClass
 		$this->GetNewID();
 		$InsArr['id']=$this->id;
 		
-		if($this->id_client=="")
+		if($this->client_id=="")
 		{
 			return "Please Enter Client Id";
 		}
-		else if($this->client_reference== ""){
+		else if($this->reference== ""){
 			return "Reference cannot blank.";
 		}
-		else if($this->id_isin=="" || $this->id_isin==null){
-			if($this->isin_reference=="")
+		else if($this->isin=="" || $this->isin==null){
+			if($this->unknown_isin=="")
 			{
 				return "Please select id ISIN or Reference Number";
 			}
@@ -298,45 +299,45 @@ Class TransferClass extends ChildCoreClass
 		{
 			return "Please select Custodian AC";
 		}
-		else if($this->amount=="") return "Amount cannot be blank.";
+		else if($this->quantity=="") return "Amount cannot be blank.";
 		else if($this->trade_date=="") return "Please enter a trade date.";
-		else if($this->settlement_date=="") return "Please enter a settlement date.";
-		else if($this->seller=="") return "Seller cannot be blank.";
-		else if($this->custodian=="") return "Custodian cannot be blank.";
+		else if($this->value_date=="") return "Please enter a settlement date.";
+		else if($this->counterparty_name=="") return "Seller cannot be blank.";
+		else if($this->custodian_name=="") return "Custodian cannot be blank.";
 		
 		
-		$InsArr['id_client']=$this->id_client;
-		$InsArr['client_reference']="'".$this->client_reference."'";
-				// Hoang - Add check charater ' if already in id . we have to update it to '' because mysql dont' understand		if(strlen(strstr($this->id_isin,"'"))>0)		{			//$sub=explode("'",$this->id_isin);			$sub=str_replace("'", "''", $this->id_isin);			echo $sub;			$this->id_isin=$sub;		} 		// End - Add		$InsArr['id_isin']="'".$this->id_isin."'";
+		$InsArr['client_id']=$this->client_id;
+		$InsArr['reference']="'".$this->reference."'";
+				// Hoang - Add check charater ' if already in id . we have to update it to '' because mysql dont' understand		if(strlen(strstr($this->isin,"'"))>0)		{			//$sub=explode("'",$this->isin);			$sub=str_replace("'", "''", $this->isin);			echo $sub;			$this->isin=$sub;		} 		// End - Add		$InsArr['isin']="'".$this->isin."'";		$InsArr['client_name']="'".$this->client_name."'";		
 		$InsArr['fund_name']="'".$this->fund_name."'";
-		$InsArr['isin_reference']="'".$this->isin_reference."'";
+		$InsArr['unknown_isin']="'".$this->unknown_isin."'";
 		$InsArr['currency']=$this->currency;
-		$InsArr['amount']=$this->amount;
+		$InsArr['quantity']=$this->quantity;
 		$InsArr['custody_ac']=$this->custody_ac;
 		$InsArr['trade_date']="'".$this->trade_date."'";
-		$InsArr['settlement_date']="'".$this->settlement_date."'";
-		$InsArr['sellerid']="'".$this->sellerid."'";
-		$InsArr['seller']="'".$this->seller."'";
-		$InsArr['bic_seller']="'".$this->bic_seller."'";
-		$InsArr['custodianid']="'".$this->custodianid."'";
-		$InsArr['custodian']="'".$this->custodian."'";
+		$InsArr['value_date']="'".$this->value_date."'";
+		$InsArr['counterparty_id']="'".$this->counterparty_id."'";
+		$InsArr['counterparty_name']="'".$this->counterparty_name."'";
+		$InsArr['bic_counterparty']="'".$this->bic_counterparty."'";
+		$InsArr['custodian_id']="'".$this->custodian_id."'";
+		$InsArr['custodian_name']="'".$this->custodian_name."'";
 		$InsArr['bic_custodian']="'".$this->bic_custodian."'";
-		$InsArr['seller_ac_cust']="'".$this->seller_ac_cust."'";
-		$InsArr['transfer_agent']="'".$this->transfer_agent."'";
-		$InsArr['bic_ta']="'".$this->bic_ta."'";
-		$InsArr['cust_ac_ta']="'".$this->cust_ac_ta."'";
-		$InsArr['comment']="'".$this->comment."'";
+		$InsArr['counterparty_ac_custodian']="'".$this->counterparty_ac_custodian."'";
+		$InsArr['transfer_agent_name']="'".$this->transfer_agent_name."'";
+		$InsArr['bic_transfer_agent']="'".$this->bic_transfer_agent."'";
+		$InsArr['custodian_ac_transfer_agent']="'".$this->custodian_ac_transfer_agent."'";
+		//$InsArr['comment']="'".$this->comment."'";
 		$InsArr['created_at']="now()";
 		$InsArr['types']="'".$this->types."'";
 		$InsArr['status']="'".$this->status."'";
-		$InsArr['transaction_type']="'".$this->transaction_type."'";
-		unset($InsArr['settled_by']);
-		unset($InsArr['settled_date']);
-		
-		echo $this->InsertQuery($InsArr);
+		//$InsArr['transaction_type']="'".$this->transaction_type."'";
+		//unset($InsArr['settled_by']);
+		//unset($InsArr['settled_date']);
+				// Print Result query for testing
+		//echo $this->InsertQuery($InsArr);
 		
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)$msg="Your order was added successfully";
+		if(mysql_affected_rows()>0)		{		$msg="Your order was added successfully<br/>";		$msg=$msg."		WELL DONE, BROTHER! (THIS IS A CLOSE MALE FRIEND)<br/>						WELL DONE, SISTER! (THIS IS A CLOSE FEMALE FRIEND)</br>";				}
 		else $msg="SORRY, YOUR ORDER FAILED. PLEASE CONTACT HELP DESK.";
 		return $msg;
 	}
@@ -346,44 +347,43 @@ Class TransferClass extends ChildCoreClass
 	{
 		$InsArr=$this->transfers_newArr;
 		$InsArr['id']=$this->id;
-		$InsArr['seller_ac_cust']="'".$this->seller_ac_cust."'";
-		$InsArr['transfer_agent']="'".$this->transfer_agent."'";
-		$InsArr['bic_ta']="'".$this->bic_ta."'";
-		$InsArr['cust_ac_ta']="'".$this->cust_ac_ta."'";
-		
-		unset($InsArr['id_client']);
-		unset($InsArr['client_reference']);
-		unset($InsArr['id_isin']);
+		$InsArr['counterparty_ac_custodian']="'".$this->counterparty_ac_custodian."'";
+		$InsArr['transfer_agent_name']="'".$this->transfer_agent_name."'";
+		$InsArr['bic_transfer_agent']="'".$this->bic_transfer_agent."'";
+		$InsArr['custodian_ac_transfer_agent']="'".$this->custodian_ac_transfer_agent."'";
+		$InsArr['status']="'".$this->status."'";
+		unset($InsArr['client_id']);
+		unset($InsArr['reference']);
+		unset($InsArr['isin']);
 		unset($InsArr['fund_name']);
-		unset($InsArr['isin_reference']);
+		unset($InsArr['unknown_isin']);
 		unset($InsArr['currency']);
-		unset($InsArr['amount']);
+		unset($InsArr['quantity']);
 		unset($InsArr['custody_ac']);
 		unset($InsArr['trade_date']);
-		unset($InsArr['settlement_date']);
-		unset($InsArr['sellerid']);
-		unset($InsArr['seller']);
-		unset($InsArr['bic_seller']);
-		unset($InsArr['custodianid']);
-		unset($InsArr['custodian']);
+		unset($InsArr['value_date']);
+		unset($InsArr['counterparty_id']);
+		unset($InsArr['counterparty_name']);
+		unset($InsArr['bic_counterparty']);
+		unset($InsArr['custodian_id']);
+		unset($InsArr['custodian_name']);
 		unset($InsArr['bic_custodian']);
-		unset($InsArr['settled_by']);
-		unset($InsArr['settled_date']);
-		unset($InsArr['comment']);
+		//unset($InsArr['settled_by']);
+		//unset($InsArr['settled_date']);
+		//unset($InsArr['comment']);
 		unset($InsArr['created_at']);
 		unset($InsArr['types']);
-		unset($InsArr['status']);
-		unset($InsArr['transaction_type']);
+		unset($InsArr['status']);				unset($InsArr['client_name']);
+		//unset($InsArr['transaction_type']);
 
 		
 		$updateArr=$InsArr;
 		
-		unset($updateArr['bic_ta']);
-		unset($updateArr['seller_ac_cust']);
-		unset($updateArr['transfer_agent']);
-		unset($updateArr['cust_ac_ta']);
-		
-		//echo $this->UpdateQuery($InsArr,$updateArr);
+		unset($updateArr['bic_transfer_agent']);
+		unset($updateArr['counterparty_ac_custodian']);
+		unset($updateArr['transfer_agent_name']);
+		unset($updateArr['custodian_ac_transfer_agent']);
+				//echo $this->UpdateQuery($InsArr,$updateArr);
 		$result=$this->ExcuteQueryOnly($this->UpdateQuery($InsArr,$updateArr));
 		if(mysql_affected_rows()>0)$msg="Updated Successfully";
 		else $msg="Failed.";
@@ -395,40 +395,39 @@ Class TransferClass extends ChildCoreClass
 		$InsArr=$this->transfers_newArr;
 		$InsArr['id']=$this->id;
 		$InsArr['status']="'".$this->status."'";
-		$InsArr['settled_by']=$this->settled_by;
-		$InsArr['settled_date']="now()";
-		
-		unset($InsArr['id_client']);
-		unset($InsArr['client_reference']);
-		unset($InsArr['id_isin']);
+		//$InsArr['settled_by']=$this->settled_by;
+		//$InsArr['settled_date']="now()";
+		unset($InsArr['client_id']);
+		unset($InsArr['reference']);
+		unset($InsArr['isin']);
 		unset($InsArr['fund_name']);
-		unset($InsArr['isin_reference']);
+		unset($InsArr['unknown_isin']);
 		unset($InsArr['currency']);
-		unset($InsArr['amount']);
+		unset($InsArr['quantity']);
 		unset($InsArr['custody_ac']);
 		unset($InsArr['trade_date']);
-		unset($InsArr['settlement_date']);
-		unset($InsArr['sellerid']);
-		unset($InsArr['seller']);
-		unset($InsArr['bic_seller']);
-		unset($InsArr['custodianid']);
-		unset($InsArr['custodian']);
+		unset($InsArr['value_date']);
+		unset($InsArr['counterparty_id']);
+		unset($InsArr['counterparty_name']);
+		unset($InsArr['bic_counterparty']);
+		unset($InsArr['custodian_id']);
+		unset($InsArr['custodian_name']);
 		unset($InsArr['bic_custodian']);
-		unset($InsArr['seller_ac_cust']);
-		unset($InsArr['transfer_agent']);
-		unset($InsArr['bic_ta']);
-		unset($InsArr['cust_ac_ta']);
+		unset($InsArr['counterparty_ac_custodian']);
+		unset($InsArr['transfer_agent_name']);
+		unset($InsArr['bic_transfer_agent']);
+		unset($InsArr['custodian_ac_transfer_agent']);
 		unset($InsArr['comment']);
 		unset($InsArr['created_at']);
-		unset($InsArr['types']);
-		unset($InsArr['transaction_type']);
+		unset($InsArr['types']);				unset($InsArr['client_name']);
+		//unset($InsArr['transaction_type']);
 
 		
 		$updateArr=$InsArr;
 		
 		unset($updateArr['status']);
-		unset($updateArr['settled_by']);
-		unset($updateArr['settled_date']);
+		//unset($updateArr['settled_by']);
+		//unset($updateArr['settled_date']);
 		
 		//echo $this->UpdateQuery($InsArr,$updateArr);
 		$result=$this->ExcuteQueryOnly($this->UpdateQuery($InsArr,$updateArr));
@@ -441,59 +440,59 @@ Class TransferClass extends ChildCoreClass
 	{
 		$InsArr=$this->transfers_newArr;
 		$InsArr['id']=$this->id;
-		$InsArr['id_client']=$this->id_client;
-		$InsArr['client_reference']="'".$this->client_reference."'";
-		$InsArr['id_isin']="'".$this->id_isin."'";
+		$InsArr['client_id']=$this->client_id;
+		$InsArr['reference']="'".$this->reference."'";				$InsArr['client_name']="'".$this->client_name."'";
+		$InsArr['isin']="'".$this->isin."'";
 		$InsArr['fund_name']="'".$this->fund_name."'";
-		$InsArr['isin_reference']="'".$this->isin_reference."'";
+		$InsArr['unknown_isin']="'".$this->unknown_isin."'";
 		$InsArr['currency']=$this->currency;
-		$InsArr['amount']=$this->amount;
+		$InsArr['quantity']=$this->quantity;
 		$InsArr['custody_ac']=$this->custody_ac;
 		$InsArr['trade_date']="'".$this->trade_date."'";
-		$InsArr['settlement_date']="'".$this->settlement_date."'";
-		$InsArr['seller']="'".$this->seller."'";
-		$InsArr['bic_seller']="'".$this->bic_seller."'";
-		$InsArr['custodian']="'".$this->custodian."'";
+		$InsArr['value_date']="'".$this->value_date."'";
+		$InsArr['counterparty_name']="'".$this->counterparty_name."'";
+		$InsArr['bic_counterparty']="'".$this->bic_counterparty."'";
+		$InsArr['custodian_name']="'".$this->custodian_name."'";
 		$InsArr['bic_custodian']="'".$this->bic_custodian."'";
-		$InsArr['seller_ac_cust']="'".$this->seller_ac_cust."'";
-		$InsArr['transfer_agent']="'".$this->transfer_agent."'";
-		$InsArr['bic_ta']="'".$this->bic_ta."'";
-		$InsArr['cust_ac_ta']="'".$this->cust_ac_ta."'";
-		$InsArr['comment']="'".$this->comment."'";
+		$InsArr['counterparty_ac_custodian']="'".$this->counterparty_ac_custodian."'";
+		$InsArr['transfer_agent_name']="'".$this->transfer_agent_name."'";
+		$InsArr['bic_transfer_agent']="'".$this->bic_transfer_agent."'";
+		$InsArr['custodian_ac_transfer_agent']="'".$this->custodian_ac_transfer_agent."'";
+		//$InsArr['comment']="'".$this->comment."'";
 		$InsArr['created_at']="'".$this->created_at."'";
-		$InsArr['types']=$this->types;
+		//$InsArr['types']=$this->types;
 		$InsArr['status']=$this->status;
-		$InsArr['transaction_type']=$this->transaction_type;
-		$InsArr['settled_by']=$this->settled_by;
-		$InsArr['settled_date']="'".$this->settled_date."'";
+		//$InsArr['transaction_type']=$this->transaction_type;
+		//$InsArr['settled_by']=$this->settled_by;
+		//$InsArr['settled_date']="'".$this->settled_date."'";
 		
 		$updateArr=$InsArr;
 		unset($updateArr['id']);
-		unset($updateArr['id_client']);
-		unset($updateArr['client_reference']);
-		unset($updateArr['id_isin']);
+		unset($updateArr['client_id']);
+		unset($updateArr['reference']);
+		unset($updateArr['isin']);
 		unset($updateArr['fund_name']);
-		unset($updateArr['isin_reference']);
+		unset($updateArr['unknown_isin']);
 		unset($updateArr['currency']);
-		unset($updateArr['amount']);
+		unset($updateArr['quantity']);
 		unset($updateArr['custody_ac']);
 		unset($updateArr['trade_date']);
-		unset($updateArr['settlement_date']);
-		unset($updateArr['seller']);
-		unset($updateArr['bic_seller']);
-		unset($updateArr['custodian']);
+		unset($updateArr['value_date']);
+		unset($updateArr['counterparty_name']);
+		unset($updateArr['bic_counterparty']);
+		unset($updateArr['custodian_name']);
 		unset($updateArr['bic_custodian']);
-		unset($updateArr['seller_ac_cust']);
-		unset($updateArr['transfer_agent']);
-		unset($updateArr['bic_ta']);
-		unset($updateArr['cust_ac_ta']);
-		unset($updateArr['comment']);
+		unset($updateArr['counterparty_ac_custodian']);
+		unset($updateArr['transfer_agent_name']);
+		unset($updateArr['bic_transfer_agent']);
+		unset($updateArr['custodian_ac_transfer_agent']);
+		//unset($updateArr['comment']);
 		unset($updateArr['created_at']);
 		unset($updateArr['types']);
 		unset($updateArr['status']);
-		unset($updateArr['transaction_type']);
-		unset($updateArr['settled_by']);
-		unset($updateArr['settled_date']);
+		//unset($updateArr['transaction_type']);
+		//unset($updateArr['settled_by']);
+		//unset($updateArr['settled_date']);
 		$result=$this->ExcuteQueryOnly($this->UpdateQuery($InsArr,$updateArr));
 		if(mysql_affected_rows()>0)$msg="Updated Successfully.";
 		else $msg="Failed.";
@@ -503,58 +502,58 @@ Class TransferClass extends ChildCoreClass
 	{
 		$InsArr=$this->transfers_newArr;
 		$InsArr['id']=$this->id;
-		$InsArr['id_client']=$this->id_client;
-		$InsArr['client_reference']="'".$this->client_reference."'";
-		$InsArr['id_isin']=$this->id_isin;
+		$InsArr['client_id']=$this->client_id;
+		$InsArr['reference']="'".$this->reference."'";
+		$InsArr['isin']=$this->isin;
 		$InsArr['fund_name']="'".$this->fund_name."'";
-		$InsArr['isin_reference']="'".$this->isin_reference."'";
+		$InsArr['unknown_isin']="'".$this->unknown_isin."'";
 		$InsArr['currency']=$this->currency;
-		$InsArr['amount']=$this->amount;
+		$InsArr['quantity']=$this->quantity;
 		$InsArr['custody_ac']=$this->custody_ac;
 		$InsArr['trade_date']="'".$this->trade_date."'";
-		$InsArr['settlement_date']="'".$this->settlement_date."'";
-		$InsArr['seller']="'".$this->seller."'";
-		$InsArr['bic_seller']="'".$this->bic_seller."'";
-		$InsArr['custodian']="'".$this->custodian."'";
+		$InsArr['value_date']="'".$this->value_date."'";
+		$InsArr['counterparty_name']="'".$this->counterparty_name."'";
+		$InsArr['bic_counterparty']="'".$this->bic_counterparty."'";
+		$InsArr['custodian_name']="'".$this->custodian_name."'";
 		$InsArr['bic_custodian']="'".$this->bic_custodian."'";
-		$InsArr['seller_ac_cust']="'".$this->seller_ac_cust."'";
-		$InsArr['transfer_agent']="'".$this->transfer_agent."'";
-		$InsArr['bic_ta']="'".$this->bic_ta."'";
-		$InsArr['cust_ac_ta']="'".$this->cust_ac_ta."'";
-		$InsArr['comment']=" '".$this->comment."' ";
+		$InsArr['counterparty_ac_custodian']="'".$this->counterparty_ac_custodian."'";
+		$InsArr['transfer_agent_name']="'".$this->transfer_agent_name."'";
+		$InsArr['bic_transfer_agent']="'".$this->bic_transfer_agent."'";
+		$InsArr['custodian_ac_transfer_agent']="'".$this->custodian_ac_transfer_agent."'";
+		//$InsArr['comment']=" '".$this->comment."' ";
 		$InsArr['created_at']="'".$this->created_at."'";
-		$InsArr['types']=$this->types;
+		//$InsArr['types']=$this->types;
 		$InsArr['status']=$this->status;
-		$InsArr['transaction_type']=$this->transaction_type;
-		$InsArr['settled_by']=$this->settled_by;
-		$InsArr['settled_date']="'".$this->settled_date."'";
+		//$InsArr['transaction_type']=$this->transaction_type;
+		//$InsArr['settled_by']=$this->settled_by;
+		//$InsArr['settled_date']="'".$this->settled_date."'";
 		
 		unset($InsArr['id']);
-		unset($InsArr['id_client']);
-		unset($InsArr['client_reference']);
-		unset($InsArr['id_isin']);
+		unset($InsArr['client_id']);
+		unset($InsArr['reference']);
+		unset($InsArr['isin']);
 		unset($InsArr['fund_name']);
-		unset($InsArr['isin_reference']);
+		unset($InsArr['unknown_isin']);
 		unset($InsArr['currency']);
-		unset($InsArr['amount']);
+		unset($InsArr['quantity']);
 		unset($InsArr['custody_ac']);
 		unset($InsArr['trade_date']);
-		unset($InsArr['settlement_date']);
-		unset($InsArr['seller']);
-		unset($InsArr['bic_seller']);
-		unset($InsArr['custodian']);
+		unset($InsArr['value_date']);
+		unset($InsArr['counterparty_name']);
+		unset($InsArr['bic_counterparty']);
+		unset($InsArr['custodian_name']);
 		unset($InsArr['bic_custodian']);
-		unset($InsArr['seller_ac_cust']);
-		unset($InsArr['transfer_agent']);
-		unset($InsArr['bic_ta']);
-		unset($InsArr['cust_ac_ta']);
-		unset($InsArr['comment']);
+		unset($InsArr['counterparty_ac_custodian']);
+		unset($InsArr['transfer_agent_name']);
+		unset($InsArr['bic_transfer_agent']);
+		unset($InsArr['custodian_ac_transfer_agent']);
+		//unset($InsArr['comment']);
 		unset($InsArr['created_at']);
-		unset($InsArr['types']);
+		//unset($InsArr['types']);
 		unset($InsArr['status']);
-		unset($InsArr['transaction_type']);
-		unset($InsArr['settled_by']);
-		unset($InsArr['settled_date']);
+		//unset($InsArr['transaction_type']);
+		//unset($InsArr['settled_by']);
+		//unset($InsArr['settled_date']);
 		$result=$this->ExcuteQueryOnly($this->DeleteQuery($InsArr));
 		if(mysql_affected_rows()>0)$msg="Deleted Successfully.";
 		else $msg="Failed.";

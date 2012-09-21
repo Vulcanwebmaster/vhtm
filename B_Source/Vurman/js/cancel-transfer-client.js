@@ -101,7 +101,7 @@ function pageselectCallbackCity(page_index, jq){
 		
 		newcontent+="<tr class='result' style='background-color:"+color+";  margin:10px;'>";
 			newcontent += '<td>' + JSONTransfer[i].created_at + '</td>';
-			newcontent += '<td> <a style=\'text-decoration:underline;\' onclick=ViewTransfer(' + JSONTransfer[i].id + ')>'+getUser(JSONTransfer[i].id_client)+'</a></td>';
+		newcontent += '<td> <a style=\'text-decoration:underline;\' onclick=ViewTransfer('+JSONTransfer[i].id+')>'+getUser(JSONTransfer[i].id_client)+'</a></td>';
 			newcontent += '<td>' + getCustodyAC(JSONTransfer[i].custody_ac) + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].client_reference + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].status + '</td>';
@@ -186,6 +186,7 @@ function getUser(id)
 
 function ViewTransfer(id)
 {
+	//alert("Hello hoang"+id);
 	for(var i=0;i<JSONTransfer.length;i++)
 	{
 		if(id==JSONTransfer[i]['id'])
@@ -224,17 +225,16 @@ function ViewTransfer(id)
 			hidebyId('TA_Name_txt');
 			hidebyId('TA_BIC_txt');
 			hidebyId('cust_ac_ta_txt');
-			hidebyId('update_details');
-			hidebyId('cancel_details');
-			hidebyId('edit_details');
+			//hidebyId('update_details');
+			//hidebyId('cancel_details');
+			//hidebyId('edit_details');
 			
 			$("#dialog").dialog("open");
-			
 			/*if(JSONTransfer[i].status!="completed")
-			{*/
-				showButtonDialog('dialog','SETTLED',false);
-				showButtonDialog('dialog','CANCELLED',false);
-			/*}
+			{
+				//showButtonDialog('dialog','SETTLED',false);
+				//showButtonDialog('dialog','CANCELLED',false);
+			}
 			else if(JSONTransfer[i].status=="pending")
 			{
 				showButtonDialog('dialog','SETTLED',true);

@@ -81,8 +81,8 @@ function showNewAppointment()
 	
 	for(var i=0;i<JSONAppointments.length;i++)
 	{
-		var tempStartDt=JSONAppointments[i].fromdate;
-		var tempEndDt=JSONAppointments[i].todate;
+		var tempStartDt=JSONAppointments[i].START_DATE;
+		var tempEndDt=JSONAppointments[i].END_DATE;
 		
 		var tempStartArr=tempStartDt.split('-');
 		var tempEndArr=tempEndDt.split('-');
@@ -100,7 +100,7 @@ function showNewAppointment()
 			document.getElementById('startdate').value=tempStartArr[2];
 			document.getElementById('enddate').value=tempEndArr[2];
 			
-			var dsc=JSONAppointments[i].description;
+			var dsc=JSONAppointments[i].JOB_DESCRIPTION;
 			//alert(dsc);
 			for(var i=0;i<2;i++)
 			{
@@ -146,8 +146,8 @@ function deleteNewAppointment()
 				for(var i=0;i<JSONAppointments.length;i++){
 						if(appointment_id==JSONAppointments[i].appointmentid){
 							//alert("Found");
-							var tmp1=JSONAppointments[i].fromdate;
-							var tmp2=JSONAppointments[i].todate;
+							var tmp1=JSONAppointments[i].START_DATE;
+							var tmp2=JSONAppointments[i].END_DATE;
 							
 							var tmpArr1=tmp1.split('-');
 							var tmpArr2=tmp2.split('-');
@@ -200,8 +200,8 @@ function showApproveAppointment(ob)
 	
 			document.getElementById('appointment_id').innerHTML=JSONAppointments[i].appointmentid;
 			
-			var tmp1=JSONAppointments[i].fromdate;
-			var tmp2=JSONAppointments[i].todate;
+			var tmp1=JSONAppointments[i].START_DATE;
+			var tmp2=JSONAppointments[i].END_DATE;
 			
 			var tmpArr1=tmp1.split('-');
 			var tmpArr2=tmp2.split('-');
@@ -209,7 +209,7 @@ function showApproveAppointment(ob)
 			document.getElementById('startdate').value=tmpArr1[2];
 			document.getElementById('enddate').value=tmpArr2[2];
 			
-			var dsc=JSONAppointments[i].description;
+			var dsc=JSONAppointments[i].JOB_DESCRIPTION;
 			//alert(dsc);
 			for(var i=0;i<2;i++)
 			{
@@ -244,8 +244,8 @@ function showAppointment(ob)
 	
 			document.getElementById('appointment_id').innerHTML=JSONAppointments[i].appointmentid;
 			
-			var tmp1=JSONAppointments[i].fromdate;
-			var tmp2=JSONAppointments[i].todate;
+			var tmp1=JSONAppointments[i].START_DATE;
+			var tmp2=JSONAppointments[i].END_DATE;
 			
 			var tmpArr1=tmp1.split('-');
 			var tmpArr2=tmp2.split('-');
@@ -253,7 +253,7 @@ function showAppointment(ob)
 			document.getElementById('startdate').value=tmpArr1[2];
 			document.getElementById('enddate').value=tmpArr2[2];
 			
-			var dsc=JSONAppointments[i].description;
+			var dsc=JSONAppointments[i].JOB_DESCRIPTION;
 			//alert(dsc);
 			for(var i=0;i<2;i++)
 			{
@@ -315,9 +315,9 @@ function Save()
 				}
 						JSONAppointments[JSONAppointments.length]={
 							"appointmentid":result,
-							"fromdate":globalYear+"-"+globalMonth+"-"+getValueFromId('startdate'),
-							"todate":globalYear+"-"+globalMonth+"-"+getValueFromId('enddate'),
-							"description":dsc
+							"START_DATE":globalYear+"-"+globalMonth+"-"+getValueFromId('startdate'),
+							"END_DATE":globalYear+"-"+globalMonth+"-"+getValueFromId('enddate'),
+							"JOB_DESCRIPTION":dsc
 						};
 
 						var temp=document.getElementById('appointment_id').innerHTML;
@@ -391,9 +391,9 @@ function Update()
 				
 				for(var i=0;i<JSONAppointments.length;i++){
 						if(appointment_id==JSONAppointments[i].appointmentid){
-							JSONAppointments[i].fromdate=globalYear+"-"+globalMonth+"-"+getValueFromId('startdate');
-							JSONAppointments[i].todate=globalYear+"-"+globalMonth+"-"+getValueFromId('enddate');;
-							JSONAppointments[i].description=dsc;
+							JSONAppointments[i].START_DATE=globalYear+"-"+globalMonth+"-"+getValueFromId('startdate');
+							JSONAppointments[i].END_DATE=globalYear+"-"+globalMonth+"-"+getValueFromId('enddate');;
+							JSONAppointments[i].JOB_DESCRIPTION=dsc;
 							//JSONAppointments[i].cust_ac_ta=getValueFromId('cust_ac_ta_txt');
 							break;
 						}

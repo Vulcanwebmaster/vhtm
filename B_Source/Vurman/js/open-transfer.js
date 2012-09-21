@@ -54,10 +54,10 @@ function changeStatus(obStatus)
 							changeStatus("cancelled");
 							
 						},
-						'COMPLETED':function()
+						/*'COMPLETED':function()
 						{
 							changeStatus("completed");
-						},
+						},*/
 						'SETTLED':function()
 						{
 							changeStatus("settled");
@@ -68,6 +68,7 @@ function changeStatus(obStatus)
 						},
 						'update':function()
 						{
+							//Hoang();
 							UpdateEdit();
 						}
 					}
@@ -231,7 +232,10 @@ function ShowEdit()
 	replaceValuefromSpan('TA_Name','TA_Name_txt');
 	replaceValuefromSpan('client_ac_cust','client_ac_cust_txt');
 }
-
+function Hoang()
+{
+	alert("Hello");
+}
 function UpdateEdit()
 {
 	var transfer_id=document.getElementById('transfer_id').value;
@@ -241,6 +245,8 @@ function UpdateEdit()
 	var temp4=getValueFromId('client_ac_cust_txt');
 	
 	var queryString="id="+transfer_id+"&seller_ac_cust="+temp4+"&transfer_agent="+temp3+"&bic_ta="+temp2+"&cust_ac_ta="+temp1;
+	//alert(temp1+temp2+temp3+temp4);
+	//alert(queryString);
 	var url="ajaxfiles/updateorderdetails.php";
 	
 	req=null;
@@ -252,8 +258,10 @@ function UpdateEdit()
 	req.onreadystatechange=function()
 	{
 		var transfer_id=document.getElementById('transfer_id').value;
-		if(req.readyState==4){
+		if(req.readyState==4)
+		{
 			var result=req.responseText;
+			//alert(result);
 			if(result=="Updated Successfully")
 			{
 				for(var i=0;i<JSONTransfer.length;i++){
@@ -289,7 +297,6 @@ function UpdateEdit()
 		}
 	}
 }
-
 function CancelEdit()
 {
 	hidebyId('client_ac_cust_txt');

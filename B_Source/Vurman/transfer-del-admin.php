@@ -76,7 +76,7 @@ $msg="";
 
 		$objTransfer->fund_name=$_POST['Name'];
 
-		$objTransfer->unknown_isin=$_POST['comment'];
+		//$objTransfer->unknown_isin=$_POST['comment'];
 
 		$objTransfer->quantity=$_POST['Quantity'];
 

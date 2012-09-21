@@ -20,7 +20,8 @@ $(function() {
 		
 		function verify() 
 		{
-			
+			var x=getValueFromId('custody-ac');
+			//alert(x);
 			var message = '';
 			var newline='';
 			var focusfield='';

@@ -13,10 +13,10 @@ if(isset($_POST['id']) && $_POST['id']!="")
 	
 	$objTransfer=new TransferClass($db);
 	$objTransfer->id=$id;
-	$objTransfer->seller_ac_cust=$seller_ac_cust;
-	$objTransfer->transfer_agent=$transfer_agent;
-	$objTransfer->bic_ta=$bic_ta;
-	$objTransfer->cust_ac_ta=$cust_ac_ta;
+	$objTransfer->counterparty_ac_custodian=$seller_ac_cust;
+	$objTransfer->transfer_agent_name=$transfer_agent;
+	$objTransfer->bic_transfer_agent=$bic_ta;
+	$objTransfer->custodian_ac_transfer_agent=$cust_ac_ta;
 	$msg=$objTransfer->UpdateTransferDetails();
 	
 	echo $msg;

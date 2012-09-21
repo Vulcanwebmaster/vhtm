@@ -10,10 +10,9 @@ if(isset($_POST['id']) && $_POST['id']!="")
 	
 	$objTransfer=new TransferClass($db);
 	$objTransfer->id=$id;
-	$objTransfer->settled_by=$_SESSION['login'];
+	//$objTransfer->settled_by=$_SESSION['login'];
 	$objTransfer->status=$status;
 	$msg=$objTransfer->UpdateTransferStatus();
-	
 	echo $msg;
 }
 ?>

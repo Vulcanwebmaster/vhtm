@@ -71,7 +71,7 @@ function pageselectCallbackCity(page_index, jq){
 	// Get number of elements per pagionation page from form
 	var items_per_page = 20;
 	var max_elem = Math.min((page_index+1) * items_per_page, JSONTransfer.length);
-	var newcontent = '';
+	var newcontent = "";
 	
 	// Iterate through a selection of the content and build an HTML string
 	 
@@ -79,7 +79,6 @@ function pageselectCallbackCity(page_index, jq){
 	 
 	for(var i=page_index*items_per_page;i<max_elem;i++)
 	{
-		//alert(i);
 		
 		if(color=="#f5f5f5") color="#cccccc";
 		else if(color=="#cccccc")	color="#f5f5f5";
@@ -89,33 +88,35 @@ function pageselectCallbackCity(page_index, jq){
 			newcontent += '<td align=\'center\' style=\'text-align:center; padding-right:5px;\'>' + JSONTransfer[i].amount + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].id_isin + '</td>';
 			newcontent += '<td colspan=\'3\' style=\'text-align:center; padding-left:5px;\'>' + JSONTransfer[i].fund_name + '</td>';
-		newcontent+="</tr>";
-		
-		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
+			newcontent+="</tr>";
+			newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";
 			newcontent += '<td>' + JSONTransfer[i].seller + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].cust_ac_ta + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].custodian + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].trade_date + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].settlement_date + '</td>';
-		newcontent+="</tr>";
+			newcontent+="</tr>";
 		
-		newcontent+="<tr class='result' style='background-color:"+color+";  margin:10px;'>";
+			newcontent+="<tr class='result' style='background-color:"+color+";  margin:10px;'>";
 			newcontent += '<td>' + JSONTransfer[i].created_at + '</td>';
+			
 			newcontent += '<td> <a style=\'text-decoration:underline;\' onclick=ViewTransfer(' + JSONTransfer[i].id + ')>'+getUser(JSONTransfer[i].id_client)+'</a></td>';
-			newcontent += '<td>' + getCustodyAC(JSONTransfer[i].custody_ac) + '</td>';
+			
+			newcontent += '<td>' +getCustodyAC(JSONTransfer[i].custody_ac) + '</td>';
+			
 			newcontent += '<td>' + JSONTransfer[i].client_reference + '</td>';
 			newcontent += '<td>' + JSONTransfer[i].status + '</td>';
 		newcontent+="</tr>";
 	}
-	
 	// Replace old content with new content
 	if(temp<2){
-		//alert(temp);
+		//alert("Chay vao temp <0");
 		$('#Citys').append(newcontent);
 		
 	}
 	else
 	{
+		//alert("Chay vao temp lon hon 2");
 		//alert("else");
 		//alert($('#Citys').length);
 		$('#Citys tbody tr').remove();
@@ -183,9 +184,9 @@ function getUser(id)
 	}
 	return username;
 }
-
 function ViewTransfer(id)
 {
+	//alert("Hello ViewTransfer");
 	for(var i=0;i<JSONTransfer.length;i++)
 	{
 		if(id==JSONTransfer[i]['id'])
@@ -198,7 +199,6 @@ function ViewTransfer(id)
 			$("#id_type").text(JSONTransfer[i].types);
 			$("#id_status").text(JSONTransfer[i].status);
 			$("#id_trans_type").text(JSONTransfer[i].transaction_type);
-			
 			$("#id_isin").text(JSONTransfer[i].id_isin);
 			$("#id_currency").text(getCurrency(JSONTransfer[i].currency));
 			$("#id_fundname").text(JSONTransfer[i].fund_name);
@@ -229,8 +229,8 @@ function ViewTransfer(id)
 			
 			/*if(JSONTransfer[i].status!="completed")
 			{*/
-				showButtonDialog('dialog','SETTLED',false);
-				showButtonDialog('dialog','CANCELLED',false);
+				//showButtonDialog('dialog','SETTLED',false);
+				//showButtonDialog('dialog','CANCELLED',false);
 			/*}
 			else if(JSONTransfer[i].status=="pending")
 			{

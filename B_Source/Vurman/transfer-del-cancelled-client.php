@@ -22,7 +22,7 @@ $objUser=new UserClass($db);
 <head>
     <title>Vurman - Spectrum Funds</title>
     <meta name="keywords" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
-    <meta name="description" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
+    <meta name="JOB_DESCRIPTION" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <link rel="Stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/redmond/jquery-ui-1.7.2.custom.css" />
@@ -63,13 +63,13 @@ $objUser=new UserClass($db);
 	if(isset($_POST['Search']) && $_POST['Search']=="Search")
 	{
 	$objTransfer=new TransferClass($db);
-	$objTransfer->transaction_type="deliver";
+	//$objTransfer->transaction_type="deliver";
 	$objTransfer->status="cancelled";
-	$objTransfer->types="outgoing";
+	$objTransfer->types="to deliver";
 	
 	if(isset($_POST['client_id']) && $_POST['client_id']!="")
 	{
-		$objTransfer->id_client=$_POST['client_id'];
+		$objTransfer->client_id=$_POST['client_id'];
 	}
 	
 	if(isset($_POST['currency']) && $_POST['currency']>0)
@@ -79,11 +79,11 @@ $objUser=new UserClass($db);
 	
 	if(isset($_POST['security1']) && $_POST['security1']>0)
 	{
-		$objTransfer->id_isin=$_POST['security1'];
+		$objTransfer->isin=$_POST['security1'];
 	}
 	if(isset($_POST['quantity']) && $_POST['quantity']!="")
 	{
-		$objTransfer->amount=$_POST['quantity'];
+		$objTransfer->quantity=$_POST['quantity'];
 	}
 	
 	if(isset($_POST['from_date']) && $_POST['from_date']!="")
