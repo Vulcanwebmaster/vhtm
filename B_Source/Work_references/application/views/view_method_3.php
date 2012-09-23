@@ -17,7 +17,7 @@
 					});
 				$('.show-more').click(function(){
 					$('#body').hide();
-					$('.list-more').load("<?php echo base_url();?>index.php/tiennd/showmore/");
+					$('.list-more').load("<?php echo base_url();?>index.php/tiennd/showmore/"+<?php echo $craftsmanId;?>);
 				});
 		});
 	</script>

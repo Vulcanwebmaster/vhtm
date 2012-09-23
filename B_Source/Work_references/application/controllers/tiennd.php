@@ -28,7 +28,7 @@ class Tiennd extends CI_Controller{
 	}
 	
 	//======= METHOD 3 =======//
-	public function showmore($craftsmanId='1',$categoryId = '-1')
+	public function showmore($craftsmanId,$categoryId = '-1')
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
