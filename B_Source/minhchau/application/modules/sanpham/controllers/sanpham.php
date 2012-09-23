@@ -23,7 +23,7 @@
 			$data['list']=$this->Msanpham->getListFull('mc_product');
 			$data['module']=$this->module;
 			$data['page']='vsanpham';
-			$this->load->view('front/container',$data);			
+			$this->load->view('front/container',$data);
 		}
 		
 		function chiTiet($id=0)
