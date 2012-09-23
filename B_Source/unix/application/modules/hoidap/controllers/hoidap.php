@@ -52,10 +52,10 @@
 				{
 					$this->Mhoidap->insert();
 
-						$this->email->from('manhnt@niw.com.vn',$this->input->post('hoten') );
-						$this->email->to('tiendn1010@gmail.com'); 
+						$this->email->from('tiennd@niw.com.vn',$this->input->post('hoten') );
+						$this->email->to('unix.group.vn@gmail.com'); 
 					
-						$this->email->subject($this->input->post('dienthoai'));
+						$this->email->subject('[Hỏi đáp] V/v có câu hỏi cần giải đáp');
 						$this->email->message($this->input->post('noidung'));	
 						$this->email->send();					
 					

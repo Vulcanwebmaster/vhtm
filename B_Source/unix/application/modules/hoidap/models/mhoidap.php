@@ -9,6 +9,12 @@
 			$this->load->library('session');
 		}
 		
+		function num_rows()
+		{
+			$query=$this->db->get('unix_hoidap');
+			return $query->num_rows();
+		}
+		
 		function insert()
 		{
 			$data=array(

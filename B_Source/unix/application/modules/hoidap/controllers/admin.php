@@ -20,7 +20,9 @@
 	        $data['title']='Danh sách câu hỏi';
 	        $data['listContact']=$this->Mhoidap->getListContact();
 	        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_hoidap_home";
-			flashMsg('success','Tải thông tin các câu hỏi thành công');
+			if($this->Mhoidap->num_rows()>0)
+				flashMsg('success','Tải thông tin các câu hỏi thành công');
+			else flashMsg('notice','Danh sách câu hỏi hiện đang trống');
 	        $this->load->view($this->_container,$data);
 	    }
 	    
