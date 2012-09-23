@@ -27,6 +27,7 @@ class Tiennd extends CI_Controller{
 		$this->load->view('view_method_3',$data);
 	}
 	
+	//======= METHOD 3 =======//
 	public function showmore($craftsmanId='1',$categoryId = '-1')
 	{
 		$this->load->helper('url');
@@ -87,11 +88,6 @@ class Tiennd extends CI_Controller{
 		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
 	
-	public function showMessage()
-	{
-		$this->load->view('uploading');
-	}
-	
 	public function upload($craftsmanId='1')
 	{
 		$this->load->helper('url');
@@ -128,7 +124,8 @@ class Tiennd extends CI_Controller{
 		}
 		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
-
+	
+	//======= METHOD 4 =======//
 		function showCategoriedReferences($craftsmanId='1')
 		{
 			$this->load->helper('url');
