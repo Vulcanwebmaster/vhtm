@@ -63,7 +63,7 @@ class Tiennd extends CI_Controller{
 			$pictures[]=$Files->returnFileName($item->file_id);
 		}
 		$data['pictures'] = $pictures;
-		
+		$data['craftsmanId'] = $craftsmanId;
 		$data['count']=count($data['references']);
 		$this->load->view('view_method_3',$data);
 	}
@@ -78,7 +78,7 @@ class Tiennd extends CI_Controller{
 		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
 	}
 	
-	public function addCategory($craftsmanId='1')
+	public function addCategory($craftsmanId)
 	{
 		$this->load->helper('url');
 		include("mojmojster_database.php");
@@ -122,7 +122,11 @@ class Tiennd extends CI_Controller{
 			$image = $Files->returnFileId($data['file_name']);
 			$CraftsmanReferences->setReference($craftsmanId,'',$image,$title,$text,$comment='',$comment_author='',$categoryId);
 		}
-		redirect(base_url().'index.php/tiennd/showCategoriedReferences','refresh');
+		
+		if ($categoryId==-1)
+			redirect(base_url().'index.php/tiennd/method_3/'.$craftsmanId.'/'.$categoryId,'refresh');
+		else
+			redirect(base_url().'index.php/tiennd/showCategoriedReferences/'.$craftsmanId,'refresh');
 	}
 	
 	//======= METHOD 4 =======//
@@ -137,12 +141,12 @@ class Tiennd extends CI_Controller{
 			$this->load->view('RefListCategoried-tiennd',$ref);
 		}
 		
-		function showListCategoried($craftsmanId='1',$categoryId='0')
+		function showListCategoried($craftsmanId='1',$categoryId)
 		{
 			$this->load->helper('url');
 			include("mojmojster_database.php");
 			
-			$ref['listReferences']=$CraftsmanReferences->returnReferencesList($craftsmanId,$categoryId);
+			$ref['listReferences']=$CraftsmanReferences->returnReferencesList_1($craftsmanId,$categoryId);
 			$pictures=array();
 			foreach ($ref['listReferences'] as $item)
 			{

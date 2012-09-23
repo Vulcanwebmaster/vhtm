@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 		//AJAX:
 		$(document).ready(function(){
-			$('.category').click(function(){
+			$('.category1').click(function(){
 				$categoryId=$(this).children('input').val();
 				$('.div-list').load("<?php echo base_url();?>index.php/tiennd/showListCategoried/"+<?php echo $craftsmanId;?>+"/"+$categoryId);
 			});
