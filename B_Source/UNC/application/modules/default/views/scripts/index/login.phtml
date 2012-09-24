@@ -1,0 +1,12 @@
+<div>
+<?php if (isset($this->error)) echo $this->error;?>
+<?php
+	if (isset($this->user))
+		echo 'Tên đăng nhập: '.$this->user;
+	if (isset($this->pass))
+		echo 'Mật khẩu: '.$this->pass;
+?>
+<?php  
+	echo $this->form;?>
+
+</div>
