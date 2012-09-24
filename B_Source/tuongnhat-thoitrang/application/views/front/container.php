@@ -26,6 +26,9 @@
 	    
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/thoitrang/css/main.css-build=0.css" />
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/thoitrang/css/main.css" />
+	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/thoitrang/css/item.css">
+	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/thoitrang/css/prodbrowser.css">
+	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/thoitrang/css/searchresult.css">
 	    
 	</head>
 	<body id="subhomeVALENTINO">

@@ -130,7 +130,7 @@
                         	<?php }?>
                         </div>
                     </li>
-                            <li id="accessories" class="mpa"><a href="" class="selected">Phụ kiện</a>
+                            <li id="accessories" class="mpa"><a href="<?php echo base_url() ?>phukien" class="selected">Phụ kiện</a>
                             	<div id="pap" class="subMenu3">
                                 	<?php foreach($phukienmenu as $item)
 		                        	{?>
