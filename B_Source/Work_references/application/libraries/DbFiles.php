@@ -24,6 +24,7 @@ class DbFiles
 	//===================== MY FUNCTION ===========================
 	function deleteMyFile($fileId)
 	{
+		$filesDir = "savedfiles/";
 		if ($fileId != -1)
 		{
 			$CI =& get_instance();
@@ -33,6 +34,7 @@ class DbFiles
 				unlink($filepath);
 			}
 			$this->deleteFile($fileId);
+			unlink($CI->config->item('files_dir').$fileId.".sav");
 			$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
 		}
 	}
