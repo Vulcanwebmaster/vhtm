@@ -48,7 +48,7 @@ Class Custody_ACClass extends ChildCoreClass
 		$SearchQuery="select * from ".$this->TableName;
 		if($whereQuery!="") $SearchQuery.=" where " .$whereQuery;
 		$result=$this->ExcuteQuery($SearchQuery);
-		echo $SearchQuery;
+		//echo $SearchQuery;
 		return $result;
 	}
 	

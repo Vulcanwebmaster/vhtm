@@ -269,9 +269,8 @@ Class TransferClass extends ChildCoreClass
 		}*/
 		
 		$SearchQuery="select * from ".$this->TableName;
-		if($whereQuery!="") 		{			$SearchQuery.=" where " .$whereQuery;					}		if($this->types=="to deliver")		{			// Hoang Add order by created_at for sort data			$SearchQuery.="order by created_at asc";		}		else {
-			// Hoang Add order by created_at for sort data			$SearchQuery.="order by created_at desc";
-		}
+		if($whereQuery!="") 		{			$SearchQuery.=" where " .$whereQuery;					}				$SearchQuery.=" order by created_at desc";
+
 		echo $SearchQuery;
 		$result=$this->ExcuteQuery($SearchQuery);
 		return $result;
@@ -307,8 +306,7 @@ Class TransferClass extends ChildCoreClass
 		
 		
 		$InsArr['client_id']=$this->client_id;
-		$InsArr['reference']="'".$this->reference."'";
-				// Hoang - Add check charater ' if already in id . we have to update it to '' because mysql dont' understand		if(strlen(strstr($this->isin,"'"))>0)		{			//$sub=explode("'",$this->isin);			$sub=str_replace("'", "''", $this->isin);			echo $sub;			$this->isin=$sub;		} 		// End - Add		$InsArr['isin']="'".$this->isin."'";		$InsArr['client_name']="'".$this->client_name."'";		
+		$InsArr['reference']="'".$this->reference."'";		$InsArr['isin']='"'.$this->isin.'"';		$InsArr['client_name']="'".$this->client_name."'";		
 		$InsArr['fund_name']="'".$this->fund_name."'";
 		$InsArr['unknown_isin']="'".$this->unknown_isin."'";
 		$InsArr['currency']=$this->currency;
@@ -337,7 +335,7 @@ Class TransferClass extends ChildCoreClass
 		//echo $this->InsertQuery($InsArr);
 		
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		if(mysql_affected_rows()>0)		{		$msg="Your order was added successfully<br/>";		$msg=$msg."		WELL DONE, BROTHER! (THIS IS A CLOSE MALE FRIEND)<br/>						WELL DONE, SISTER! (THIS IS A CLOSE FEMALE FRIEND)</br>";				}
+		if(mysql_affected_rows()>0)		{		$msg="Your order was added successfully<br/>";				}
 		else $msg="SORRY, YOUR ORDER FAILED. PLEASE CONTACT HELP DESK.";
 		return $msg;
 	}
@@ -442,7 +440,7 @@ Class TransferClass extends ChildCoreClass
 		$InsArr['id']=$this->id;
 		$InsArr['client_id']=$this->client_id;
 		$InsArr['reference']="'".$this->reference."'";				$InsArr['client_name']="'".$this->client_name."'";
-		$InsArr['isin']="'".$this->isin."'";
+		$InsArr['isin']='"'.$this->isin.'"';
 		$InsArr['fund_name']="'".$this->fund_name."'";
 		$InsArr['unknown_isin']="'".$this->unknown_isin."'";
 		$InsArr['currency']=$this->currency;

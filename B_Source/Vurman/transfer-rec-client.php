@@ -74,10 +74,8 @@ $msg="";
 
 		$objTransfer->quantity=$_POST['Quantity'];
 
-		/*$objTransfer->custody_ac=$_POST['client'];*/
-
 		$objTransfer->custody_ac=$_POST['custody-ac'];
-		//$objTransfer->custody_ac=1;
+
 		$objTransfer->trade_date=$_POST['Trade_Date'];
 
 		$objTransfer->value_date=$_POST['Settlement_Date'];
@@ -390,7 +388,7 @@ if(isset($msg) && $msg!=""){
 
 				{?>
 
-					<option value="<?php print $arrCustodyAC[$i]['id']?> "><?php print $arrCustodyAC[$i]['name']; ?></option>";
+					<option value="<?php print $arrCustodyAC[$i]['id']?> "><?php print $arrCustodyAC[$i]['name']; ?></option>
 
 				<?php }
 

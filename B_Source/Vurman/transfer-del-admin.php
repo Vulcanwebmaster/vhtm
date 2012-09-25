@@ -67,6 +67,8 @@ $msg="";
 		$objTransfer=new TransferClass($db);
 
 		$objTransfer->client_id=$arrUser[0]['id'];
+		
+		$objTransfer->client_name=$_POST['Client'];
 
 		$objTransfer->reference=$_POST['Reference'];
 
@@ -83,6 +85,8 @@ $msg="";
 		/*$objTransfer->custody_ac=$_POST['client'];*/
 
 		$objTransfer->custody_ac=$_POST['custody-ac'];
+		
+		echo $_POST['custody-ac'];
 
 		$objTransfer->trade_date=$_POST['Trade_Date'];
 
@@ -326,24 +330,24 @@ if(isset($msg) && $msg!=""){
 
        <td><select name="custody-ac" id="custody-ac" class="dropdown">
 
-        <option value="" >select</option>
+        <option value="">select</option>
 
        <?php 
 
 			if(isset($arrCustodyAC))
 
 			{
-
 				for($i=0;$i<sizeof($arrCustodyAC);$i++)
 
 				{?>
 
-					<option value=<? print $arrCustodyAC[$i]['id'];?><? print $arrCustodyAC[$i]['name'] ?></option>
+					<option value="<?php print $arrCustodyAC[$i]['id']?> "><?php print $arrCustodyAC[$i]['name']; ?></option>
 
 				<?php }
 
 			}
-
+			//echo "<option value=1>Test1 </option>";
+			//echo "<option value=1>Test2 </option>";
 		?>
 
        </select>
