@@ -9,7 +9,7 @@
 		
 		function isExistAccount($username,$password)
 		{
-			$query=$this->db->query('select * from user where username="'.$username.'" and password="'.$password.'"');
+			$query=$this->db->query('select * from unc_user where user_login="'.$username.'" and user_pass="'.$password.'"');
 			if (count($query->fetchAll())>0)
 				return true;
 			else return false;

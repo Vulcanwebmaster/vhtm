@@ -16,8 +16,8 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$mphongvien=new Admin_Model_Mphongvien;
-			$this->view->list=$mphongvien->getListPV();
+			$mphongvien=new Admin_Model_Muser;
+			$this->view->list=$mphongvien->getListByRole('2');
 			$this->view->title="Phóng viên";
 		}
 	}
