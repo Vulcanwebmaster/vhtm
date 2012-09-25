@@ -1,0 +1,52 @@
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/danhmuc/edit?id=<?php echo $this->query['category_id']; ?>">
+		<div class="module_content">
+			<fieldset style="width:50%">
+				<label>Tên danh mục</label>
+				<input style="width:93%" type="text" name="category_name" value="<?php echo $this->query['category_name']; ?>"/>
+			</fieldset><div class="clear"></div>
+			<fieldset style="width:50%">
+				<label>Danh mục cha</label>
+				<select name="category_parent_id">
+					<option value="0"></option>
+					<?php
+						foreach($this->list as $item)
+						{
+					?>
+							<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_name']; ?></option>	
+					<?php 
+						}
+					?>
+				</select>
+			</fieldset><div class="clear"></div>
+			<fieldset style="width:50%">
+				<label>Kích hoạt</label>
+				<select name="is_active">
+				<?php
+					if($this->query['is_active']==1)
+					{
+						?>
+							<option value="1">Bật</option>
+							<option value="0">Tắt</option>
+						<?php
+					}
+					else 
+					{
+						?>
+							<option value="0">Tắt</option>
+							<option value="1">Bật</option>
+						<?php
+					}
+				?>
+				</select>
+			</fieldset><div class="clear"></div>
+		</div>
+			<footer>
+					<div class="submit_link">
+						<input type="submit" name="submit" value="Update" class="alt_btn">
+					</div>
+				
+			</footer>
+	</form>
+</article>
