@@ -7,10 +7,35 @@ class Admin_IndexController extends Zend_Controller_Action
 	      $option = array ('layout' => 'index', 
 	                   'layoutPath' => $layoutPath );
 	      Zend_Layout::startMvc ( $option );
+	      
+	      session_start();
 	}
 	public function indexAction()
 	{
-		
+		if (!isset($_SESSION['user']))
+		{
+			$this->_helper->layout()->disableLayout();
+		}
+		else $this->_redirect($this->view->baseUrl().'/../admin/index/home');
+	}
+	
+	public function checkAction()
+	{
+		$username=$this->_request->getParam('username');
+		$password=$this->_request->getParam('password');
+		$mAdmin=new Admin_Model_Madmin();
+		if ($mAdmin->isExistAccount($username,$password))
+		{
+			$_SESSION['user']=$username;
+			$this->_redirect($this->view->baseUrl().'/../admin/index/home');
+		}
+		else $this->_redirect($this->view->baseUrl().'/../admin');
+	}
+	
+	public function logoutAction()
+	{
+		unset($_SESSION['user']);
+		$this->_redirect($this->view->baseUrl().'/../admin');
 	}
 	
 	public function homeAction()

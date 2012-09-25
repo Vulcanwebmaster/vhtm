@@ -47,7 +47,9 @@
 	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
-		<li class="icn_application"><a href="#">Trang chủ</a></li>
+		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/tintuc">Tin tức</a></li>
+		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/phongvien">Phóng viên</a></li>
+		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/truongban">Trưởng ban</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">
@@ -61,7 +63,7 @@
 	<ul class="toggle">
 		<!-- <li class="icn_settings"><a href="#">System Info</a></li> -->
 		<!-- <li class="icn_security"><a href="#">Security</a></li> -->
-		<li class="icn_jump_back"><a href="#">Logout</a></li>
+		<li class="icn_jump_back"><a href="<?php echo $this->baseUrl();?>/admin/index/logout">Logout</a></li>
 	</ul>
 		<footer>
 	<hr />
