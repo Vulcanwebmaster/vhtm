@@ -1,0 +1,5 @@
+﻿1. Em update lại Source code
+2. Add bảng mới vào DB trading_execution
+3. Làm task theo lời KH bên dưới
+I created a new table called trading_execution in phpMyAdmin _gajendra.
+In there must be stored information concerning TRADING / EXECUTION - SUBSCRIPTION ORDER, REDEMPTION ORDER and SWITCH ORDER.
