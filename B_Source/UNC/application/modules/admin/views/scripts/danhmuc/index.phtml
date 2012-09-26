@@ -1,6 +1,5 @@
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
-	<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/danhmuc/add">
 	<div class="tab_container">
 		<div id="tab1" class="tab_content">
 			<table class="tablesorter" cellspacing="0">
@@ -20,10 +19,10 @@
 		    				<td><?php echo $item['category_id'];?></td> 
 		    				<td><?php echo $item['category_name'];?></td>
 		    				<td><?php echo $item['category_parent_id'];?></td>
-		    				<td><?php echo $item['is_active'];?></td> 
+		    				<td><?php if ($item['is_active']=='1') echo 'Bật'; else echo 'Tắt';?></td>
 		    				<td>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/edit?id=<?php echo $item['category_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/del?id=<?php echo $item['category_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/edit/category_id/<?php echo $item['category_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/del/category_id/<?php echo $item['category_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>
@@ -33,9 +32,8 @@
 		<footer>
 			<form>
 				<div class="submit_link">
-					<input type="submit" name="submit" value="Add new" class="alt_btn">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/danhmuc/insert');?>">Thêm mới</a>
 				</div>
-			</form>
 		</footer>
 	</div>
 	</form>

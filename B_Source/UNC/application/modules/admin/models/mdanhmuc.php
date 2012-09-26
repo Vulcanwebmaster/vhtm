@@ -13,29 +13,31 @@
 			return $query->fetchAll();
 		}
 		
-		function getOne($id)
+		function deleteDm($id)
 		{
-			$query=$this->db->select()
-						->from('unc_category')
-						->where('category_id=?',$id);
-			return $this->db->fetchRow($query);
+			$query=$this->db->query('delete from unc_category where category_id="'.$id.'"');
+			return $query;
 		}
 		
-		public function edit($id,$data)
+		function insertDm($input)
 		{
-			$where="category_id=".$id;
-			$this->db->update('unc_category',$data,$where); 
+			$query=$this->db->query('insert into unc_category values ("","'.$input['category_name'].'","'.$input['category_parent_id'].'","'.$input['is_active'].'")');
+			return $query;
 		}
 		
-		public function add($data)
+		function getDmById($id)
 		{
-			$this->db->insert('unc_category',$data);
+			$query=$this->db->query('select * from unc_category where category_id="'.$id.'"');
+			$list=$query->fetchAll();
+			return $list[0];
 		}
 		
-		public function del($id)
+		function editDm($id,$input)
 		{
-			$where="category_id=".$id;
-			$this->db->delete('unc_category',$where);
+			$query=$this->db->query('update unc_category 
+									set category_name="'.$input['category_name'].'", category_parent_id="'.$input['category_parent_id'].'", is_active="'.$input['is_active'].'" 
+									where category_id="'.$id.'"');
+			return $query;
 		}
 	}
 ?>
