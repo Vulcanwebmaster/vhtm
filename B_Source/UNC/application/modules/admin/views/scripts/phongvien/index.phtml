@@ -1,3 +1,11 @@
+<?php if (isset($_SESSION['result']))
+{
+	echo '<p class="message">';
+	echo $_SESSION['result'];
+	echo '</p>';
+	unset($_SESSION['result']);
+}
+?>
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
@@ -11,17 +19,22 @@
 	    				<th>Email</th>
 	    				<th>Địa chỉ</th>
 	    				<th>Kích hoạt</th>
+	    				<th>Tùy chọn</th>
 					</tr> 
 				</thead>
 				<tbody>
 				 	<?php foreach ($this->list as $item)
 				 	{?>
 				 		<tr>  
-		    				<td><?php echo $item->name;?></td> 
-		    				<td><?php echo $item->birthday;?></td> 
+		    				<td><?php echo $item['user_login'];?></td> 
+		    				<td><?php echo $item['user_pass'];?></td> 
+		    				<td><?php echo $item['user_fullname'];?></td>
+		    				<td><?php echo $item['user_email'];?></td>
+		    				<td><?php echo $item['user_address'];?></td>
+		    				<td><?php echo $item['is_active'];?></td>
 		    				<td>
-		    					<a href="#" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				<a href="#" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $item['user_id']?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				<a href="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/<?php echo $item['user_id']?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>
@@ -30,7 +43,7 @@
 		</div>
 		<footer>
 			<div class="submit_link">
-				<input type="submit" name="submit" value="Add new" class="alt_btn">
+				<a class="alt_btn" href="<?php echo $this->baseUrl('admin/phongvien/insert');?>">Thêm mới</a>
 			</div>
 		</footer>
 	</div>

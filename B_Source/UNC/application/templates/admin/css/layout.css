@@ -924,3 +924,7 @@ font-size: 14px;}
 
 .fieldset-lv1{padding:15px}
 .fieldset-lv1 legend{text-transform:uppercase; font-weight:bold; font-size:18px !important; color:#1F1F20 !important}
+
+.message{color:red; margin-left:15px}
+
+.tab_content{padding:15px}
