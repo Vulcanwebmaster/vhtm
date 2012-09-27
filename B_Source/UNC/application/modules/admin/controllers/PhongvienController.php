@@ -134,6 +134,7 @@
 		
 		function editAction()
 		{
+			$this->view->title='Chỉnh sửa phóng viên';
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
