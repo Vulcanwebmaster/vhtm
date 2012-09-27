@@ -22,7 +22,7 @@
 			$user_login->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
 			
 			$user_pass = new Zend_Form_Element_Text('user_pass');
-			$user_pass->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
+			$user_pass->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 			
 			$user_fullname = new Zend_Form_Element_Text('user_fullname');
 			$user_email = new Zend_Form_Element_Text('user_email');
