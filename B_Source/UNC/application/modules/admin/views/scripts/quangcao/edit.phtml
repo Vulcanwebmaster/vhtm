@@ -1,0 +1,60 @@
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/jquery.ui.all.css">
+		<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
+		<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
+		<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
+		<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.datepicker.js"></script>
+		<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/demos.css">
+		<script>
+		$(function() {
+			$( ".datepicker" ).datepicker();
+		});
+		</script>
+	</head>
+
+	<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/quangcao/edit?id=<?php echo $this->query['ads_id']; ?>">
+		<div class="module_content">
+			
+			<fieldset style="width:50%">
+				<label>Biểu ngữ</label>
+				<input style="width:93%" type="text" name="ads_banner" value="<?php echo $this->query['ads_banner']; ?>"/>
+			</fieldset><div class="clear"></div>
+			
+			<fieldset style="width:50%">
+				<label>Vị trí</label>
+				<input style="width:93%" type="text" name="ads_position" value="<?php echo $this->query['ads_position']; ?>"/>
+			</fieldset><div class="clear"></div>
+			
+			<fieldset style="width:50%">
+				<label>Tên</label>
+				<input style="width:93%" type="text" name="ads_name" value="<?php echo $this->query['ads_name']; ?>"/>
+			</fieldset><div class="clear"></div>
+			
+			<fieldset style="width:50%">
+				<label>Đường dẫn</label>
+				<input style="width:93%" type="text" name="ads_link" value="<?php echo $this->query['ads_link']; ?>"/>
+			</fieldset><div class="clear"></div>
+			
+			<fieldset style="width:50%" class="demo">
+				<label>Ngày bắt đầu</label>					
+				<input style="width:93%" type="text" class="datepicker" name="ads_start_date" value="<?php echo $this->query['ads_start_date']; ?>">
+			</fieldset><div class="clear"></div>
+			
+			<fieldset style="width:50%">
+				<label>Ngày hết hạn</label>
+				<input style="width:93%" type="text" class="datepicker" name="ads_end_date" value="<?php echo $this->query['ads_end_date']; ?>">
+			</fieldset><div class="clear"></div>
+		</div>
+			<footer>
+					<div class="submit_link">
+						<input type="submit" name="submit" value="Update" class="alt_btn">
+					</div>
+					<div class="submit_link">
+						<input type="reset" value="Làm lại" class="alt_btn">
+					</div>
+			</footer>
+	</form>
+</article>
