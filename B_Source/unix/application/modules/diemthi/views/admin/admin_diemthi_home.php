@@ -11,19 +11,25 @@
     <?php print "Nhập điểm thi"; ?>
     </a>
 </div>
+<div class="buttons">
+	<a href="<?php echo base_url(); ?>index.php/diemthi/admin/del" class="negative">
+    <img src="<?php echo base_url(); ?>assets/icons/cross.png" alt="cross">Xóa điểm thi</a>
+</div>
 <div class="clearboth">&nbsp;</div>
 
 <form method="post" action="<?php echo base_url()?>index.php/diemthi/admin/index">
-<div style="padding:20px">
-	<span>(*) Chọn đợt thi : </span>
-	<select name="dot" >
-		<?php foreach($dotthi as $dot):?>
-			<option value="<?php echo $dot->id;?>"><?php echo $dot->dotthi;?></option>
-			<?php endforeach?>
-	</select>
-	<input type="submit" name="submit" value="Hiển thị"/>
+	<div style="padding:20px">
+		<span>(*) Chọn đợt thi : </span>
+		<select name="dot" >
+			<?php foreach($dotthi as $dot):?>
+				<option value="<?php echo $dot->id;?>"><?php echo $dot->dotthi;?></option>
+				<?php endforeach?>
+		</select>
+		&nbsp;&nbsp;&nbsp;
+		<input type="submit" name="submit" value="Hiển thị"/>
+	</div>
 </form>
-</div>
+
 
 
 

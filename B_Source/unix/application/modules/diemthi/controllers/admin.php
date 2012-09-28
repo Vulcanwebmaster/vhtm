@@ -70,7 +70,7 @@
 		        $data['header'] = $this->lang->line('backendpro_access_control');
 		        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_diemthi_create";
 				$this->bep_site->set_crumb($this->lang->line('kago_create_diemthi'));
-				flashMsg('notice','Mời bạn nhập thông tin điểm thi');
+				flashMsg('success','Mời bạn nhập thông tin điểm thi');
 		        $this->load->view($this->_container,$data);
 		}
 
@@ -121,7 +121,9 @@
 								    	$hs=$dulieu->sheets[0]['cells'][$i][2];
 										$ph=$dulieu->sheets[0]['cells'][$i][3];
 										$lop=$dulieu->sheets[0]['cells'][$i][4];
-										$diem=$dulieu->sheets[0]['cells'][$i][5];
+										if($dulieu->sheets[0]['cells'][$i][5]=='')
+											$diem='Chưa test';
+										else $diem=$dulieu->sheets[0]['cells'][$i][5];
 										$stt=$dulieu->sheets[0]['cells'][$i][1];
 										/*echo $hs.'<br>';
 										echo $ph.'<br>';
@@ -134,10 +136,10 @@
 						
 							if(file_exists($pathToFile))
 								unlink($pathToFile);
-								
+							
 							$data['title'] = "Nhập điểm thi";
 							$data['page'] = $this->config->item('backendpro_template_admin') . "admin_diemthi_create";
-							$data['diemthi']=$this->Mdiemthi->get_diemthi($dot);
+							$data['diemthi']=$this->Mdiemthi->get_diemthi($dotthi);
 							flashMsg('success','Nhập điểm '.$dot.' thành công');
 							$this->load->view($this->_container,$data);
 				} 
@@ -153,6 +155,35 @@
 		}
 		//end upload
 		
+		function del()
+		{
+			if($this->input->post('submit'))
+			{
+				$dotthi = $this->input->post('dot');
+				$this->Mdiemthi->deleteDotThi($dotthi);
+				$this->Mdiemthi->deleteDiemThi($dotthi);
+				$data['module'] = $this->module;
+			    $data['title'] = "Quản lý điểm thi";
+			    $data['header'] = $this->lang->line('backendpro_access_control');
+				$data['dotthi']=$this->Mdiemthi->getDotThi();
+			    $data['page'] = $this->config->item('backendpro_template_admin') . "admin_diemthi_home";
+				$this->bep_site->set_crumb($this->lang->line('kago_view_diemthi'));
+				flashMsg('success','Xóa '.$dotthi.' thành công');
+			    $this->load->view($this->_container,$data);
+				
+			}
+			else 
+			{
+				$data['module'] = $this->module;
+		        $data['title'] = "Quản lý điểm thi";
+		        $data['header'] = $this->lang->line('backendpro_access_control');
+				$data['dotthi']=$this->Mdiemthi->getDotThi();
+		        $data['page'] = $this->config->item('backendpro_template_admin') . "admin_diemthi_xoadotthi";
+				$this->bep_site->set_crumb($this->lang->line('kago_del_dotthi'));
+				flashMsg('success','Chọn đợt thi để xóa');
+		        $this->load->view($this->_container,$data);
+			}
+		}
 		
 	}
 ?>

@@ -171,6 +171,7 @@ $lang['kago_edit_sukien']='Sửa sự kiện';
 $lang['kogo_edit_hoidap']='Trả lời câu hỏi';
 $lang['kago_create_diemthi']='Nhập điểm thi';
 $lang['kago_view_diemthi']='Xem điểm thi';
+$lang['kago_del_dotthi']='Xóa điểm thi';
 $lang['kago_create_danhmuc']='Tạo danh mục mới';
 $lang['kago_create_chuyenmuc']='Tạo chuyên mục mới';
 $lang['kago_edit_chuyenmuc']='Sửa thông tin chuyên mục';

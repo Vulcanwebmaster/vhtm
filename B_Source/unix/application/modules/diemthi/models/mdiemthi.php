@@ -64,13 +64,15 @@
 		function deleteDiemThi($dot)
 		{
 			$this->db->where('dotthi',$dot);
-			$this->db->delete('unix_diemthi');
+			if($this->db->delete('unix_diemthi')) return true;
+			else return false;
 		}
 
-		function deleteDotThi($dot)
+		function deleteDotThi($id)
 		{
-			$this->db->where('dotthi',$dot);
-			$this->db->delete('unix_dotthi');
+			$this->db->where('id',$id);
+			if($this->db->delete('unix_dotthi')) return true;
+			else return false;
 		}
 		
 		function getIdDot($dot)
@@ -88,5 +90,6 @@
 			$data['query']=$query->row();
 			return $data['query']->dotthi;
 		}	
+		
 	}
 ?>

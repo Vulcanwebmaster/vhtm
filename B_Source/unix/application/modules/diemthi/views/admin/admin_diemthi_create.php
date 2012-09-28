@@ -11,6 +11,10 @@
     <?php print "Xem điểm thi"; ?>
     </a>
 </div>
+<div class="buttons">
+	<a href="<?php echo base_url(); ?>index.php/diemthi/admin/del" class="negative">
+    <img src="<?php echo base_url(); ?>assets/icons/cross.png" alt="cross">Xóa điểm thi</a>
+</div>
 <div class="clearboth">&nbsp;</div>
 
 
@@ -26,6 +30,7 @@
 	?>
 <table border="1" id="tablesorter" class="tablesorter" width="100%">
 	<tr>
+		<th class='table1'>STT</th>
 		<th class='table1'>Học sinh</th>
 		<th class='table1'>Phụ huynh</th>
 		<th class='table1'>Lớp Unix</th>
@@ -34,6 +39,7 @@
 	<?php
 		foreach ($diemthi as $diem){ ?>
 				<tr>
+					<td class='table1'><?php echo $diem->stt; ?></td>
 					<td class='table1'><?php echo $diem->hocsinh; ?></td>
 					<td class='table1'><?php echo $diem->phuhuynh; ?></td>
 					<td class='table1'><?php echo $diem->lop; ?></td>
