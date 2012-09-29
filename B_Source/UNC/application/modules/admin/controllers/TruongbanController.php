@@ -131,7 +131,7 @@
 				if($form->isValid($_POST))
 				{
 					$input=$this->_getInput($form);
-					if ($this->mUser->editUser($id, $input))
+					if ($this->mUser->editUser($userId, $input))
 					{
 						$_SESSION['result']='Cập nhật thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/truongban');

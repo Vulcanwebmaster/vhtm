@@ -124,12 +124,12 @@
 					if ($this->mDanhmuc->editDm($category_id, $input))
 					{
 						$_SESSION['result']='Cập nhật thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						$this->_redirect($this->view->baseUrl().'/../admin/danhmuc');
 					}
 					else 
 					{
 						$_SESSION['result']='Thêm mới không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						$this->_redirect($this->view->baseUrl().'/../admin/danhmuc');
 						//$this->view->error=$form->getMessage();
 						//$this->view->form=$form;
 					}
