@@ -1,6 +1,5 @@
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
-	<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/quangcao/add">
 	<div class="tab_container">
 		<div id="tab1" class="tab_content">
 			<table class="tablesorter" cellspacing="0">
@@ -13,6 +12,7 @@
 	    				<th>Đường dẫn</th>
 	    				<th>Ngày bắt đầu</th>
 	    				<th>Ngày hết hạn</th>
+	    				<th>ID_DM</th>
 	    				<th>Actions</th>
 					</tr> 
 				</thead>
@@ -27,6 +27,7 @@
 		    				<td><?php echo $item['ads_link'];?></td> 
 		    				<td><?php echo $item['ads_start_date'];?></td> 
 		    				<td><?php echo $item['ads_end_date'];?></td> 
+		    				<td><?php echo $item['category_id'];?></td>
 		    				<td>
 		    				<a href="<?php echo $this->baseUrl(); ?>/admin/quangcao/edit?id=<?php echo $item['ads_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
 		    				<a href="<?php echo $this->baseUrl(); ?>/admin/quangcao/del?id=<?php echo $item['ads_id']; ?>" title="Delete"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
@@ -38,12 +39,9 @@
 			</table>
 		</div>
 		<footer>
-			<form>
 				<div class="submit_link">
-					<input type="submit" name="submit" value="Add new" class="alt_btn">
+					<a class="alt_btn" href="<?php echo $this->baseUrl(); ?>/admin/quangcao/add">Thêm mới</a>
 				</div>
-			</form>
 		</footer>
 	</div>
-	</form>
 </article>

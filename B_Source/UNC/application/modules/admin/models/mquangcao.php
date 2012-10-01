@@ -12,15 +12,21 @@ class Admin_Model_Mquangcao extends Zend_Db_Table_Abstract{
 			return $query->fetchAll();
 		}
 		
+		function getListDM()
+		{
+			$query=$this->db->query('select * from unc_category');
+			return $query->fetchAll();
+		}
+		
 		function getOne($id)
 		{
 			$query=$this->db->select()->from('unc_ads')->where('ads_id=?',$id);
 			return $this->db->fetchRow($query);
 		}
 				
-		public function add($data)
+		public function add($input)
 		{
-			$this->db->insert('unc_ads',$data);
+			$this->db->insert('unc_ads',$input);
 		}
 		
 		public function edit($id,$data)

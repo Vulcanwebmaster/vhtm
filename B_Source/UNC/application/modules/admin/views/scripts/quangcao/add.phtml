@@ -14,6 +14,7 @@
 			$( ".datepicker" ).datepicker();
 		});
 		</script>
+
 	</head>
 	
 	<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/quangcao/add">
@@ -21,22 +22,26 @@
 			
 			<fieldset style="width:50%">
 				<label>Biểu ngữ</label>
-				<input style="width:93%" type="text" name="ads_banner"/>
+				<!--<input style="width:93%" type="text" name="ads_banner"/>-->
+				<?php echo $this->form->getElement('ads_banner');?>
 			</fieldset><div class="clear"></div>
 			
 			<fieldset style="width:50%">
 				<label>Vị trí</label>
-				<input style="width:93%" type="text" name="ads_position"/>
+				<!--<input style="width:93%" type="text" name="ads_position"/>-->
+				<?php echo $this->form->getElement('ads_position');?>
 			</fieldset><div class="clear"></div>
 			
 			<fieldset style="width:50%">
 				<label>Tên</label>
-				<input style="width:93%" type="text" name="ads_name"/>
+				<!--<input style="width:93%" type="text" name="ads_name"/>-->
+				<?php echo $this->form->getElement('ads_name');?>
 			</fieldset><div class="clear"></div>
 			
 			<fieldset style="width:50%">
 				<label>Đường dẫn</label>
-				<input style="width:93%" type="text" name="ads_link"/>
+				<!--<input style="width:93%" type="text" name="ads_link"/>-->
+				<?php echo $this->form->getElement('ads_link');?>
 			</fieldset><div class="clear"></div>
 			
 			<fieldset style="width:50%">
@@ -48,7 +53,21 @@
 				<label>Ngày hết hạn</label>
 				<input style="width:93%" type="text" name="ads_end_date" class="datepicker"/>
 			</fieldset><div class="clear"></div>
-
+				
+			<fieldset style="width:50%">
+				<label>id Danh mục : </label>
+				<select name="category_id">
+					<option value="0"></option>
+					<?php
+						foreach($this->listdm as $item)
+						{
+							?>
+								<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_id']; ?></option>
+							<?php 
+						}
+					?>
+				</select>
+			</fieldset><div class="clear"></div>
 		</div>
 			<footer>
 					<div class="submit_link">
