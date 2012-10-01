@@ -1,0 +1,46 @@
+<?php $i=0;?>
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<table class="tablesorter" cellspacing="0">
+				<thead> 
+					<tr>
+						<th>STT</th>
+	    				<th>Tiêu đề</th> 
+	    				<th>Mô tả</th>
+	    				<th>Liên kết</th>
+	    				<th>News_ID</th>
+					</tr> 
+				</thead>
+				<tbody>
+				 	<?php foreach ($this->list as $video)
+				 	{
+				 		$i++;
+				 		?>
+				 		<tr>  
+				 			<td><?php echo $i; ?></td>
+		    				<td><?php echo $video['video_title'];?></td>
+		    				<td><?php echo $video['video_description'];?></td>
+		    				<td><a href="http://www.youtube.com/watch?v=<?php echo $video['video_link']; ?>">http://www.youtube.com/watch?v=<?php echo $video['video_link']; ?></a></td> 
+							<td>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/edit/video_link/<?php echo $video['video_link']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/del/video_link/<?php echo $video['video_link']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    				</td>
+						</tr>
+				 	<?php }?>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+			<form>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>
+				</div>
+				<?php 
+			       echo $this->paginationControl($this->list, 'Sliding' , 'uploadvideo/pagination.phtml'); 
+				?>
+		</footer>
+	</div>
+	</form>
+</article>

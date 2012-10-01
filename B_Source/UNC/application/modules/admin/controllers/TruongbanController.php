@@ -52,7 +52,12 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$this->view->list=$this->mUser->getListByRole('1');
+			$paginator = Zend_Paginator::factory($this->mUser->getListByRole('1'));
+        	$paginator->setItemCountPerPage(6);        
+        	$paginator->setPageRange(3);
+        	$currentPage = $this->_request->getParam('page',1);
+         	$paginator->setCurrentPageNumber($currentPage);
+        	$this->view->list=$paginator;
 			$this->view->title="Trưởng ban";
 		}
 		

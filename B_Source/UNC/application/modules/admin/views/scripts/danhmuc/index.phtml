@@ -30,11 +30,12 @@
 			</table>
 		</div>
 		<footer>
-			<form>
 				<div class="submit_link">
 					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/danhmuc/insert');?>">Thêm mới</a>
 				</div>
+				<?php 
+			       echo $this->paginationControl($this->list, 'Sliding' , 'danhmuc/pagination.phtml'); 
+				?>
 		</footer>
 	</div>
-	</form>
 </article>

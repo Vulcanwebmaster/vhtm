@@ -46,8 +46,12 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$mdanhmuc=new Admin_Model_Mdanhmuc;
-			$this->view->list=$mdanhmuc->getListDM();
+			$paginator = Zend_Paginator::factory($this->mDanhmuc->getListDM());
+        	$paginator->setItemCountPerPage(6);        
+        	$paginator->setPageRange(3);
+        	$currentPage = $this->_request->getParam('page',1);
+         	$paginator->setCurrentPageNumber($currentPage);
+        	$this->view->list=$paginator;
 			$this->view->title="Quản lý danh mục";
 		}
 		

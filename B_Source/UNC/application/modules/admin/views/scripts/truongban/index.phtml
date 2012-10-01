@@ -5,6 +5,7 @@
 	echo '</p>';
 	unset($_SESSION['result']);
 }
+$i=0;
 ?>
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
@@ -12,7 +13,8 @@
 		<div id="tab1" class="tab_content">
 			<table class="tablesorter" cellspacing="0">
 				<thead> 
-					<tr> 
+					<tr>
+						<th>STT</th> 
 	    				<th>Tên đăng nhập</th> 
 	    				<th>Mật khẩu</th>
 	    				<th>Họ và tên</th>
@@ -24,8 +26,11 @@
 				</thead>
 				<tbody>
 				 	<?php foreach ($this->list as $item)
-				 	{?>
-				 		<tr>  
+				 	{
+				 		$i++;
+				 		?>
+				 		<tr>
+				 			<td><?php echo $i; ?></td>  
 		    				<td><?php echo $item['user_login'];?></td>
 		    				<td><?php echo $item['user_pass'];?></td>
 		    				<td><?php echo $item['user_fullname'];?></td> 
@@ -34,7 +39,7 @@
 		    				<td><?php if ($item['is_active']=='1') echo 'Đã kích hoạt'; else echo 'Chưa kích hoạt';?></td> 
 		    				<td>
 		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/delete/userid/<?php echo $item['user_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/delete/userid/<?php echo $item['user_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>
@@ -46,6 +51,9 @@
 				<div class="submit_link">
 					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/truongban/insert');?>">Thêm mới</a>
 				</div>
+				<?php 
+			       echo $this->paginationControl($this->list, 'Sliding' , 'truongban/pagination.phtml'); 
+				?>
 		</footer>
 	</div>
 	</form>

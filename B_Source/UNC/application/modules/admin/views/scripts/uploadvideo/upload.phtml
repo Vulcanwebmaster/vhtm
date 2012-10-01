@@ -1,0 +1,26 @@
+<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/upload" enctype="multipart/form-data">
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<fieldset>
+				<label>Chọn video</label>
+				<input type="file" name="file"/>
+			</fieldset>
+			<fieldset>
+				<label>Tiêu đề</label>
+				<input type="text" name="title"/>
+			</fieldset>
+			<fieldset>
+				<label>Mô tả</label>
+				<input type="text" name="description"/>
+			</fieldset>
+		</div>
+	</div>
+	<footer>
+			<div class="submit_link">
+				<input type="submit" name="submit" value="Upload" class="alt_btn">
+			</div>
+		</footer>
+</article>
+</form>
