@@ -1,6 +1,55 @@
+<?php if (isset($_SESSION['result']))
+{
+	echo '<p class="message">';
+	echo $_SESSION['result'];
+	echo '</p>';
+	unset($_SESSION['result']);
+}
+?>
+
 <article class="module width_full">
-	<header><h3>Stats</h3></header>
-	<div class="module_content">
-		<?php echo $this->content;?>
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<table class="tablesorter" cellspacing="0">
+				<thead> 
+					<tr> 
+	    				<th>Tiêu đề</th> 
+	    				<th>Tóm tắt</th> 
+	    				<th>Nội dung</th>
+	    				<th>Tác giả</th>
+	    				<th>Ngày đăng</th>
+	    				<th>Ngày chỉnh sửa</th>
+	    				<th>Trạng thái</th>
+	    				<th>Chuyên mục</th>
+	    				<th>Tùy chọn</th>
+					</tr> 
+				</thead>
+				<tbody>
+				 	<?php foreach ($this->list as $item)
+				 	{?>
+				 		<tr> 
+		    				<td><?php echo $this->cutString($item['news_title'], 150);?></td> 
+		    				<td><?php echo $this->cutString($item['news_summary'],150);?></td> 
+		    				<td><?php echo $this->cutString($item['news_content'],150);?></td>
+		    				<td><?php echo $item['news_author'];?></td>
+		    				<td><?php echo $item['news_post_date'];?></td>
+		    				<td><?php echo $item['news_modified_date'];?></td>
+		    				<td><?php echo $item['news_status'];?></td>
+		    				<td><?php echo $item['category_id'];?></td>
+		    				<td>
+		    					<a href="<?php echo $this->baseUrl();?>/admin/tintuc/edit/newsid/<?php echo $item['news_id']?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				<a href="<?php echo $this->baseUrl();?>/admin/tintuc/delete/newsid/<?php echo $item['news_id']?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    				</td>
+						</tr>
+				 	<?php }?>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+			<div class="submit_link">
+				<a class="alt_btn" href="<?php echo $this->baseUrl('admin/tintuc/insert');?>">Thêm mới</a>
+			</div>
+		</footer>
 	</div>
 </article>

@@ -1,0 +1,47 @@
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset>
+					<label>Tiêu đề</label>
+					<?php echo $this->form->getElement('news_title');?>
+				</fieldset>
+				<fieldset>
+					<label>Tóm tắt</label>
+					<?php echo $this->form->getElement('news_summary');?>
+				</fieldset>
+				<fieldset>
+					<label>Nội dung</label>
+					<?php echo $this->form->getElement('news_content');?>
+				</fieldset>
+				<fieldset>
+					<label>Tác giả</label>
+					<?php echo $this->form->getElement('news_author');?>
+				</fieldset>
+				<fieldset>
+					<label>Ngày đăng</label>
+					<?php echo $this->form->getElement('news_post_date');?>
+				</fieldset>
+				<fieldset>
+					<label>Ngày sửa</label>
+					<?php echo $this->form->getElement('news_modified_date');?>
+				</fieldset>
+				<fieldset>
+					<label>Trạng thái</label>
+					<?php echo $this->form->getElement('news_status');?>
+				</fieldset>
+				<fieldset>
+					<label>Danh mục</label>
+					<?php echo $this->form->getElement('category_id');?>
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link">
+				<input type="submit" name="submit" value="Thêm" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>
