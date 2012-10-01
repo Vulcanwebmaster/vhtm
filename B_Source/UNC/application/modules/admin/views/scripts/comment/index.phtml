@@ -1,0 +1,45 @@
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<table class="tablesorter" cellspacing="0">
+				<thead> 
+					<tr> 
+	    				<th>STT</th> 
+	    				<th>Nội dung</th> 
+	    				<th>News ID</th>
+	    				<th>Reader ID</th>
+	    				<th>Actions</th>
+					</tr> 
+				</thead>
+				<tbody>
+				 	<?php 
+				 	$i=0;  
+				 	foreach ($this->list as $item)
+				 	{
+				 		$i++;
+				 		?>
+				 		<tr>  
+				 			<td><?php echo $i; ?></td>
+		    				<td><?php echo $item['comment_content'];?></td>
+		    				<td><?php echo $item['news_id'];?></td>
+		    				<td><?php echo $item['reader_id'];?></td>
+		    				<td>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/comment/edit/comment_id/<?php echo $item['comment_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				<a href="<?php echo $this->baseUrl(); ?>/admin/comment/del/comment_id/<?php echo $item['comment_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    				</td>
+						</tr>
+				 	<?php }?>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/comment/insert');?>">Thêm mới</a>
+				</div>
+				<?php 
+			       echo $this->paginationControl($this->list, 'Sliding' , 'comment/pagination.phtml'); 
+				?>
+		</footer>
+	</div>
+</article>

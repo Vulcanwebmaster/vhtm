@@ -47,7 +47,7 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$paginator = Zend_Paginator::factory($this->mDanhmuc->getListDM());
-        	$paginator->setItemCountPerPage(6);        
+        	$paginator->setItemCountPerPage(5);        
         	$paginator->setPageRange(3);
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);

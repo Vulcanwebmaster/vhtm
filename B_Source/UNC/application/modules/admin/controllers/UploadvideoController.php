@@ -24,7 +24,7 @@
 		    $youtube  = new Zend_Gdata_YouTube();
 		 
 		    try {
-		        $feed = $youtube->getUserUploads('tiendn1010');
+		        $feed = $youtube->getUserUploads('unc811');
 				foreach ($feed as $video)
 				 	{
 				 		$video_link = $video->getVideoId();
@@ -45,7 +45,7 @@
 		    }
 		 	
 			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
-        	$paginator->setItemCountPerPage(6);        
+        	$paginator->setItemCountPerPage(5);        
         	$paginator->setPageRange(3);
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
@@ -58,8 +58,8 @@
 			$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
 						Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
 						$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-							              $username = 'tiendn1010@gmail.com',
-							              $password = 'Tiendnit2',
+							              $username = 'unc.video@gmail.com',
+							              $password = 'khongcopass',
 							              $service 	= 'youtube',
 							              $client 	= null,
 							              $source 	= 'NIWApp', // a short string identifying your application
@@ -184,7 +184,6 @@
 				
 				if($input['video_title'] !=null & $input['video_description']!=null)
 				{
-					$this->mVideo->editVideo($input);
 					try 
 					{
 						$httpClient = $this->_httpClient();
@@ -196,7 +195,8 @@
 		                $putUrl = $video->getEditLink()->getHref(); 
 						$video->setVideoTitle($input['video_title']);
 						$video->setVideoDescription($input['video_description']);
-		                $yt->updateEntry($video, $putUrl); 
+		                if($yt->updateEntry($video, $putUrl))
+							$this->mVideo->editVideo($input); 
 				    }
 				    catch (Exception $ex) {
 				        echo $ex->getMessage();

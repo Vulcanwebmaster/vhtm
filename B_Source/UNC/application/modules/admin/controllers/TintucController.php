@@ -159,7 +159,7 @@
 			$form->addElement($el);
 			
 			$el=$form->createElement("select","category_id",array(
-                                                   "multioptions"=> array()));
+                                                 "multioptions"=> array()));
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
@@ -168,13 +168,13 @@
 		
 		function _getInput($form)
 		{
-			$input=array('news_title'=>$form->getValue('news_title'),
-						'news_summary'=>$form->getValue('news_summary'),
-						'news_content'=>$form->getValue('news_content'),
-						'news_author'=>$form->getValue('news_author'),
-						'news_post_date'=>$form->getValue('news_post_date'),
-						'news_modified_date'=>$form->getValue('news_modified_date'),
-						'news_status'=>$form->getValue('news_status'),
+			$input=array('news_title'		=>	$form->getValue('news_title'),
+						'news_summary'		=>	$form->getValue('news_summary'),
+						'news_content'		=>	$form->getValue('news_content'),
+						'news_author'		=>	$form->getValue('news_author'),
+						'news_post_date'	=>	$form->getValue('news_post_date'),
+						'news_modified_date'=>	$form->getValue('news_modified_date'),
+						'news_status'		=>	$form->getValue('news_status'),
 						'category_id'=>$form->getValue('category_id'));
 			return $input;
 		}

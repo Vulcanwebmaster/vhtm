@@ -1,0 +1,38 @@
+<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/comment/edit/comment_id/<?php echo $this->comment['comment_id'] ?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset>
+					<label>Nội dung</label>
+					<input type="text" name="comment_content" value="<?php echo $this->comment['comment_content']; ?>"/>
+				</fieldset>
+				
+				<fieldset>
+					<label>News ID</label>
+					<select name="news_id">
+						<option value="<?php echo $this->comment['news_id']; ?>"><?php echo $this->comment['news_id']; ?></option>
+						<?php
+						foreach($this->list as $item)
+						{
+							?>
+								<option value="<?php echo $item['news_id']; ?>"><?php echo $item['news_id']; ?></option>
+							<?php
+						}
+						?>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label>Reader ID</label>
+					<input type="text" name="reader_id" value="<?php echo $this->comment['reader_id']; ?>"
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link">
+				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>
