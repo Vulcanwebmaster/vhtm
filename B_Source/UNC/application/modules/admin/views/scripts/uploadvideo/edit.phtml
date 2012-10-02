@@ -1,4 +1,4 @@
-<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/edit/video_link/<?php echo $this->video['video_link']; ?>">
+<form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
 		<div class="tab_container">
@@ -6,11 +6,11 @@
 				<?php echo $this->error;?>
 				<fieldset>
 					<label>Tiêu đề </label>
-					<input type="text" name="video_title" value="<?php echo $this->video['video_title'] ?>"/>
+					<?php echo $this->form->getElement('title');?>
 				</fieldset>
 				<fieldset>
 					<label>Mô tả</label>
-					<input type="text" name="video_description" value="<?php echo $this->video['video_description']?>"
+					<?php echo $this->form->getElement('description');?>
 				</fieldset>
 				<fieldset>
 			</div>

@@ -33,7 +33,7 @@
 							'comment_id'		=> $this->_request->getParam('comment_id'),
 							'comment_content'	=> $this->_request->getPost('comment_content'),
 							'news_id'			=> $this->_request->getPost('news_id'),
-							'reader_id'			=> $this->_request->getPost('reader_id')
+							'user_id'			=> $this->_request->getPost('user_id')
 			);
 			return $input;
 		}

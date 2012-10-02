@@ -23,7 +23,7 @@ class Admin_IndexController extends Zend_Controller_Action
 	{
 		$username=$this->_request->getParam('username');
 		$password=$this->_request->getParam('password');
-		$mAdmin=new Admin_Model_Madmin();
+		$mAdmin=new Admin_Model_Madmin;
 		if ($mAdmin->isExistAccount($username,$password))
 		{
 			$_SESSION['user']=$username;
@@ -42,7 +42,8 @@ class Admin_IndexController extends Zend_Controller_Action
 	{
 		$this->view->headTitle('UNC - Website');
 		$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-		$this->view->headscript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js',"text/javascript");
-		$this->view->headscript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js',"text/javascript");
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js',"text/javascript");
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js',"text/javascript");
 	}
 }
+?>

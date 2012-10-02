@@ -18,12 +18,7 @@
 			$query=$this->db->query('delete from unc_comment where comment_id="'.$id.'"');
 			return $query;
 		}
-		
-		function insertComment($input)
-		{
-			$query=$this->db->query('insert into unc_comment values ("","'.$input['category_content'].'","'.$input['category_parent_id'].'","'.$input['is_active'].'")');
-			return $query;
-		}
+
 		
 		function getCommentById($id)
 		{
@@ -35,7 +30,7 @@
 		function editComment($input)
 		{
 			$query=$this->db->query('update unc_comment 
-									set comment_content="'.$input['comment_content'].'", news_id="'.$input['news_id'].'", reader_id="'.$input['reader_id'].'" 
+									set comment_content="'.$input['comment_content'].'", news_id="'.$input['news_id'].'", user_id="'.$input['user_id'].'" 
 									where comment_id="'.$input['comment_id'].'"');
 			return $query;
 		}

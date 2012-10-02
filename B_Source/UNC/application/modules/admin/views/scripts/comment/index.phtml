@@ -23,7 +23,7 @@
 				 			<td><?php echo $i; ?></td>
 		    				<td><?php echo $item['comment_content'];?></td>
 		    				<td><?php echo $item['news_id'];?></td>
-		    				<td><?php echo $item['reader_id'];?></td>
+		    				<td><?php echo $item['user_id'];?></td>
 		    				<td>
 		    					<a href="<?php echo $this->baseUrl(); ?>/admin/comment/edit/comment_id/<?php echo $item['comment_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
 		    				<a href="<?php echo $this->baseUrl(); ?>/admin/comment/del/comment_id/<?php echo $item['comment_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>

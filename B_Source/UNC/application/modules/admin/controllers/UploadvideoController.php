@@ -70,19 +70,40 @@
 			return $httpClient;
 		}
 		
+		function setForm()
+		{
+			$form = new Zend_Form;
+			$form->setMethod('post')->setAction('');
+			$title = new Zend_Form_Element_Text('title');
+			$title ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));
+			
+			$description = new Zend_Form_Element_Text('description');
+			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
+			
+			$title->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$description->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			
+			$form->addElements(array($title,$description));
+			return $form;
+			
+		}
+		
 		function uploadAction()
 		{
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+
+			$form = $this->setForm();
+			$this->view->form = $form;
 			
 			if($this->_request->isPost())
-			{
-				$title = $this->_request->getPost('title');
-				$description = $this->_request->getPost('description');
-				if($title !=null & $description!=null)
+			{	
+				if($form->isValid($_POST))
 				{
+					$title =  $form->getValue('title');
+					$description = $form->getValue('description');
 					if ($_FILES["file"]["name"]!='')
 					{
 						$dir = dirname($_FILES["file"]["tmp_name"]);
@@ -97,8 +118,8 @@
 						$myVideoEntry = new Zend_Gdata_YouTube_VideoEntry();
 						
 						$filesource = $yt->newMediaFileSource($destination);
-					    $filesource->setContentType('video/quicktime');
-					    $filesource->setSlug($destination);
+					        $filesource->setContentType('video/quicktime');
+					        $filesource->setSlug($destination);
 						
 						$myVideoEntry->setMediaSource($filesource);
 						$myVideoEntry->setVideoTitle($title);
@@ -125,8 +146,8 @@
 						    echo $e->getMessage();
 						}
 						
-						//if(file_exists($destination))
-							//unlink($destination);
+						if(file_exists($destination))
+							unlink($destination);
 						echo '<script type="text/javascript">alert("Video đang được upload trên YOUTUBE !");</script>';
 						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 					}
@@ -134,7 +155,7 @@
 				}
 				else 
 				{
-					echo '<script type="text/javascript">alert("Vui lòng nhập đầy đủ thông tin !");</script>';
+					$form->populate($_POST);
 				}
 				
 			}
@@ -169,21 +190,29 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$this->view->title = 'Sửa thông tin video';
 			$video_link =  $this->_request->getParam('video_link');
+			$info = $this->mVideo->getVideoByVideoLink($video_link);
+			
+			$form = $this->setForm();
+			$form->setAction($this->view->baseUrl().'/admin/uploadvideo/edit/video_link/'.$video_link);
+			
+			$form->getElement('title')->setValue($info['video_title']);
+			$form->getElement('description')->setValue($info['video_description']);
+			
+			$this->view->form = $form;
+			$this->view->title = 'Sửa thông tin video';			
 			
 			if($this->_request->isPost())
-			{
-				$input =  array(
-								'video_link'		=> $video_link,
-								'video_title'		=> $this->_request->getPost('video_title'),
-								'video_description' => $this->_request->getPost('video_description'),
-				);
-				//echo $input['video_link'].' '.$input['video_title'].' '.$input['video_description'];die();
-				$youtube  = new Zend_Gdata_YouTube();
-				
-				if($input['video_title'] !=null & $input['video_description']!=null)
+			{				
+				if($form->isValid($_POST))
 				{
+					$input = array(
+							'video_link'			=> $this->_request->getParam('video_link'),
+							'video_title'			=> $form->getValue('title'),
+							'video_description'		=> $form->getValue('description')
+					);
+					
+					//var_dump($input);die();
 					try 
 					{
 						$httpClient = $this->_httpClient();
@@ -192,55 +221,25 @@
 					 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
 						
 						$video = $yt->getFullVideoEntry($input['video_link']);
-		                $putUrl = $video->getEditLink()->getHref(); 
+		                		$putUrl = $video->getEditLink()->getHref(); 
 						$video->setVideoTitle($input['video_title']);
 						$video->setVideoDescription($input['video_description']);
-		                if($yt->updateEntry($video, $putUrl))
-							$this->mVideo->editVideo($input); 
+		                		$yt->updateEntry($video, $putUrl);
+						$this->mVideo->editVideo($input); 
 				    }
 				    catch (Exception $ex) {
 				        echo $ex->getMessage();
 				        exit;
 				    }
-					
-					$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+				    
+				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+				
 				}
 				else 
 				{
-					echo '<script type="text/javascript">alert("Vui lòng nhập đầy đủ thông tin !");</script>'; 
+					$form->populate($_POST); 
 				}
 			}
-			
-			$this->view->video = $this->mVideo->getVideoByVideoLink($video_link);
 		}
-		/*
-		function getAuthSubRequestUrl()
-		{
-			//echo 'abc';die();
-		    $next = 'http://niw.com.vn';
-		    $scope = 'http://gdata.youtube.com';
-		    $secure = false;
-		    $session = true;
-		    return Zend_Gdata_AuthSub::getAuthSubTokenUri($next, $scope, $secure, $session);
-		}
-		
-		function getAuthSubHttpClient()
-		{
-			//echo 'abc';die();
-		    if (!isset($_SESSION['sessionToken']) && !isset($_GET['token']) ){
-		    	//echo 'abc';die();
-		        echo '<a href="' . $this->getAuthSubRequestUrl() . '">Login!</a>';
-				//echo 'abc';die();
-		        return;
-		    } else if (!isset($_SESSION['sessionToken']) && isset($_GET['token'])) {
-		    	//echo 'abc';die();
-		      $_SESSION['sessionToken'] = Zend_Gdata_AuthSub::getAuthSubSessionToken($_GET['token']);
-		    }
-		
-		    $httpClient = Zend_Gdata_AuthSub::getHttpClient($_SESSION['sessionToken']);
-		    return $httpClient;
-		}
-		 */
 		 
 	}
-?>

@@ -145,8 +145,6 @@
 					{
 						$_SESSION['result']='Thêm mới không thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
-						//$this->view->error=$form->getMessage();
-						//$this->view->form=$form;
 					}
 				}
 				else 
