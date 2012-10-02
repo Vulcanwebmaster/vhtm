@@ -10,7 +10,7 @@
 		      Zend_Layout::startMvc ( $option );
 		      
 		      session_start();
-			  $this->mVideo = new Admin_Model_Mvideo;
+			  $this->mVideo = new Admin_Model_Mvideo();
 			  
 		}
 		
@@ -45,11 +45,11 @@
 		    }
 		 	
 			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
-        	$paginator->setItemCountPerPage(5);        
-        	$paginator->setPageRange(3);
-        	$currentPage = $this->_request->getParam('page',1);
-         	$paginator->setCurrentPageNumber($currentPage);
-        	$this->view->list=$paginator;
+        		$paginator->setItemCountPerPage(5);        
+        		$paginator->setPageRange(3);
+        		$currentPage = $this->_request->getParam('page',1);
+         		$paginator->setCurrentPageNumber($currentPage);
+        		$this->view->list=$paginator;
 			$this->view->title = 'Quản lý video';
 		}
 		
@@ -104,6 +104,7 @@
 				{
 					$title =  $form->getValue('title');
 					$description = $form->getValue('description');
+					
 					if ($_FILES["file"]["name"]!='')
 					{
 						$dir = dirname($_FILES["file"]["tmp_name"]);
@@ -159,7 +160,7 @@
 				}
 				
 			}
-			$this->view->title = 'Upload video';
+			$this->view->title = 'Tải lên video';
 		}
 		
 		function delAction()
@@ -173,7 +174,7 @@
 						Zend_Loader::loadClass('Zend_Gdata_YouTube');
 					 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
 						
-						$video = $yt->getFullVideoEntry($input['video_link']);
+						$video = $yt->getFullVideoEntry($video_link);
 		                $yt->delete($video);
 				    }
 				    catch (Exception $ex) {
@@ -203,13 +204,14 @@
 			$this->view->title = 'Sửa thông tin video';			
 			
 			if($this->_request->isPost())
-			{				
+			{	
+						
 				if($form->isValid($_POST))
 				{
 					$input = array(
 							'video_link'			=> $this->_request->getParam('video_link'),
 							'video_title'			=> $form->getValue('title'),
-							'video_description'		=> $form->getValue('description')
+							'video_description'	=> $form->getValue('description')
 					);
 					
 					//var_dump($input);die();
@@ -243,3 +245,4 @@
 		}
 		 
 	}
+?>

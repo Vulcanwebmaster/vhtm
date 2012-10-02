@@ -7,7 +7,6 @@
 			$this->db=Zend_Registry::get('db');
 		}
 		
-		
 		function insertVideo($input)
 		{
 			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","0")');
@@ -43,6 +42,11 @@
 			return $list[0];
 		}
 		
+		function delVideo($video_link)
+		{
+			$query=$this->db->query('delete from unc_video where video_link="'.$video_link.'"');
+			return $query;
+		}
 	}
 ?>
 		
