@@ -5,6 +5,7 @@ require_once('core/CoreClass.php');
 require_once('BLL/IsinBLL.php');
 require_once('BLL/CurrencyBLL.php');
 require_once('BLL/FundBLL.php');
+require_once('BLL/Fund_DatabaseBLL.php');
 require_once('BLL/FundAuditorBLL.php');
 require_once('BLL/FundAdvisorBLL.php');
 require_once('BLL/InvestmentDetailsBLL.php');
@@ -32,7 +33,7 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
   <head>
    <title>Vurman - Spectrum Funds</title>
     <meta name="keywords" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
-    <meta name="description" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
+    <meta name="JOB_DESCRIPTION" content="Fund Services, Fund Settlement, Hedge Funds, Offshore Funds, Subscription, Redemption">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <link rel="Stylesheet" href="css/styles.css" />
     <script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
@@ -191,669 +192,813 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
 	$message="";
 	if(isset($_POST['Insert_Fund']))
 	{
-		
-			// Coment for test insert below table
-			$objFund->ISIN=$_POST['ISIN'];
-			$objFund->currency=$_POST['currency'];
-			$objFund->fund_name=$_POST['fund_name'];
-			$objFund->fund_company=$_POST['fund_company'];
-			$objFund->fund_category=$_POST['fund_category'];
-			$objFund->fund_status=$_POST['fund_status'];
-			$objFund->domicile=$_POST['domicile'];
-			$objFund->nav_value=$_POST['nav_value'];
-			$objFund->nav_date=$_POST['nav_date'];
-			$objFund->fund_strategy=$_POST['fund_strategy'];
-			$objFund->primary_strategy=$_POST['primary_strategy'];
-			$objFund->secondary_strategy=$_POST['secondary_strategy'];
-			$objFund->investment_objectives_a=$_POST['investment_objectives_a'];
-			$objFund->investment_objectives_b=$_POST['investment_objectives_b'];
-			$objFund->investment_objectives_c=$_POST['investment_objectives_c'];
-			$objFund->unique_feature_a=$_POST['unique_feature_a'];
-			$objFund->unique_feature_b=$_POST['unique_feature_b'];
-			$objFund->inception_date=$_POST['inception_date'];
-			$objFund->current_assets=$_POST['current_assets'];
-			$objFund->benchmark=$_POST['benchmark'];
-			$objFund->risk_appetite=$_POST['risk_appetite'];
-			$objFund->geographical_exposure=$_POST['geographical_exposure'];
-			$objFund->last_audit=$_POST['last_audit'];
-			$objFund->add_info_a=$_POST['add_info_a'];
-			$objFund->add_info_b=$_POST['add_info_b'];
-			$objFund->transfer_agent_id=$_POST['transfer_agent_id'];
-			$objFund->custodian_id=$_POST['custodian_id'];
-			$objFund->fund_advisor_id=$_POST['fund_advisor_id'];
-			$objFund->fund_auditor_id=$_POST['fund_auditor_id'];
-			$objFund->unique_id=$_POST['unique_id'];
-			$msg1=$objFund->InsertFund();
-			echo $msg1;
-			echo ";";
-			// Insert insvetment details
-			$objInvestmentDTCL=new InvestmentDetailsClass($db);
-			$objInvestmentDTCL->initial_minimum_investment=$_POST['initial_minimum_investment'];
-			$objInvestmentDTCL->minimum_investment=$_POST['minimum_investment'];
-			$objInvestmentDTCL->minimum_units_investment=$_POST['minimum_units_investment'];
-			$objInvestmentDTCL->lockup_period=$_POST['lockup_period'];
-			$objInvestmentDTCL->notice_period_i=$_POST['notice_period_i'];
-			$objInvestmentDTCL->trading_frequency_i=$_POST['trading_frequency_i'];
-			$objInvestmentDTCL->trading_date_i=$_POST['trading_date_i'];
-			$objInvestmentDTCL->cut_off_time=$_POST['cut_off_time'];
-			$objInvestmentDTCL->settlement_cycle_i=$_POST['settlement_cycle_i'];
-			$objInvestmentDTCL->administration_fee=$_POST['administration_fee'];
-			$objInvestmentDTCL->accepted_investor_types=$_POST['accepted_investor_types'];
-			$objInvestmentDTCL->performance_since_start=$_POST['performance_since_start'];
-			$objInvestmentDTCL->performance_ytd=$_POST['performance_ytd'];
-			$objInvestmentDTCL->high_water_mark=$_POST['high_water_mark'];
-			$objInvestmentDTCL->hurdle_rate=$_POST['hurdle_rate'];
-			$objInvestmentDTCL->add_info_a=$_POST['add_info_a'];
-			$objInvestmentDTCL->add_info_b=$_POST['add_info_b'];
-			$objInvestmentDTCL->funds_id=$_POST['funds_id'];
-			$msg2=$objInvestmentDTCL->InsertInvestment_details();
-			echo $msg2;
-			echo ";";
-			// Insert subcription fee
-			$objSubscriptionFee=new SubscriptionFeeClass($db);
-			$objSubscriptionFee ->funds_id=$_POST['funds_id_sub'];
-			$objSubscriptionFee ->minimum_front_end_fee=$_POST['minimum_front_end_fee'];
-			$objSubscriptionFee ->maximum_front_end_fee=$_POST['maximum_front_end_fee'];
-			$objSubscriptionFee ->management_fee=$_POST['management_fee'];
-			$objSubscriptionFee ->performance_fee=$_POST['performance_fee'];
-			$objSubscriptionFee ->additional_information=$_POST['additional_information'];
-			$msg3=$objSubscriptionFee->InsertSubscriptionFee();
-			echo $msg3;
-			echo ";";
-			
-			// Insert RedemptionDetails
-			$objRedemption_detailsClass=new Redemption_detailsClass($db);
-			$objRedemption_detailsClass->funds_id=$_POST['funds_id_red'];
-			$objRedemption_detailsClass->minimum_amount=$_POST['minimum_amount'];
-			$objRedemption_detailsClass->notice_period=$_POST['notice_period'];
-			$objRedemption_detailsClass->trading_date=$_POST['trading_date'];
-			$objRedemption_detailsClass->settlement_cycle=$_POST['settlement_cycle'];
-			$objRedemption_detailsClass->minimum_units=$_POST['minimum_units'];
-			$objRedemption_detailsClass->trading_frequency=$_POST['trading_frequency'];
-			$objRedemption_detailsClass->cut_of_tiime=$_POST['cut_of_time'];
-			$objRedemption_detailsClass->additional_information=$_POST['additional_information_red'];
-			$msg4=$objRedemption_detailsClass->InsertRedemption_details();
-			echo $msg4;
-			echo ";";
-			//Insert Into RedemptionFeesClass
-			$objRedemptionFeesClass = new RedemptionFeesClass($db);
-			$objRedemptionFeesClass->redemption_details_id=$_POST['redemption_details_id'];
-			$objRedemptionFeesClass->minimum_back_end_fee=$_POST['minimum_back_end_fee'];
-			$objRedemptionFeesClass->early_withdrawal_fee=$_POST['early_withdrawal_fee'];
-			$objRedemptionFeesClass->maximum_back_end_fee=$_POST['maximum_back_end_fee'];
-			$objRedemptionFeesClass->additional_information=$_POST['additional_information_redfee'];
-			$msg5=$objRedemptionFeesClass->InsertRedemptionFees();
-			echo $msg5;
-			echo ";";
-			// Insert Into TransferAgent
-			$objTransferAgentClass=new TransferAgentClass($db);
-			$objTransferAgentClass->transfer_agent=$_POST['transfer_agent'];
-			$objTransferAgentClass->postal_address=$_POST['postal_address'];
-			$objTransferAgentClass->postal_address_I=$_POST['postal_address_I'];
-			$objTransferAgentClass->phone_number=$_POST['phone_number'];
-			$objTransferAgentClass->account_number=$_POST['account_number'];
-			$objTransferAgentClass->key_contact_persons=$_POST['key_contact_persons'];
-			$objTransferAgentClass->email_address=$_POST['email_address'];
-			$objTransferAgentClass->fax_no=$_POST['fax_no'];
-			$objTransferAgentClass->additional_information=$_POST['additional_information_transferagent'];
-			$objTransferAgentClass->zip=$_POST['zip'];
-			$msg6=$objTransferAgentClass->InsertTransferAgent();
-			echo $msg6;
-			echo ";";
-			//Insert Into Custodian
-			$objCustodian->cpid=$_POST['cpid_cus'];
-			$objCustodian->counterparty=$_POST['counterparty_cus'];
-			$objCustodian->biccp=$_POST['biccp_cus'];
-			$objCustodian->custid=$_POST['custid_cus'];
-			$objCustodian->custodian=$_POST['custodian_cus'];
-			$objCustodian->biccust=$_POST['biccust_cus'];
-			$objCustodian->cpacwithcust=$_POST['cpacwithcust_cus'];
-			$msg7=$objCustodian->InsertCustodian();
-			echo $msg7;
-			echo ";";
-			// Insert Into Fund Addvisor
-			$objFundAdvisor->fund_advisor=$_POST['fund_advisor_adv'];
-			$objFundAdvisor->postal_address_adv=$_POST['postal_address_adv'];
-			$objFundAdvisor->postal_address_adv_I=$_POST['postal_address_adv_I'];
-			$objFundAdvisor->phone_number_adv=$_POST['phone_number_adv'];
-			$objFundAdvisor->email_address_adv=$_POST['email_address_adv'];
-			$objFundAdvisor->fax_number_adv=$_POST['fax_number_adv'];
-			$objFundAdvisor->additional_information_adv=$_POST['additional_information_adv'];
-			$objFundAdvisor->zip_city_adv=$_POST['zip_city_adv'];
-			$msg8=$objFundAdvisor->InsertFundAdvisor();
-			echo $msg8;
-			echo ";";
-			// Insert Into auditor
-			$objFundAuditorClass->fund_auditor=$_POST['fund_auditor_fau'];
-			$objFundAuditorClass->postal_address_fau=$_POST['postal_address_fau'];
-			$objFundAuditorClass->postal_address_fau_I=$_POST['postal_address_fau_I'];
-			$objFundAuditorClass->phone_number_fau=$_POST['phone_number_fau'];
-			$objFundAuditorClass->email_address_fau=$_POST['email_address_fau'];
-			$objFundAuditorClass->fax_number_fau=$_POST['fax_number_fau'];
-			$objFundAuditorClass->additional_information_fau=$_POST['additional_information_fau'];
-			$objFundAuditorClass->zip_city_fau=$_POST['zip_city_fau'];
-			$msg9=$objFundAuditorClass->InsertFundAuditor();
-			echo $msg9;
-			echo ";";
+		echo "Test In database";
+		$objFund_Database =new Fund_DatabaseClass($db);
+		//$objFund_Database->Test();
+		$objFund_Database->isin=$_POST['isin'];
+		$objFund_Database->currency=$_POST['currency'];
+		$objFund_Database->fund_name=$_POST['fund_name'];
+		$objFund_Database->fund_company=$_POST['fund_company'];
+		$objFund_Database->fund_category=$_POST['fund_category'];
+		$objFund_Database->fund_status=$_POST['fund_status'];
+		$objFund_Database->domicile=$_POST['domicile'];
+		$objFund_Database->net_asset_value=$_POST['net_asset_value'];
+		$objFund_Database->nav_date=$_POST['nav_date'];
+		$objFund_Database->performance_start=$_POST['performance_start'];
+		$objFund_Database->performance_ytd=$_POST['performance_ytd'];
+		$objFund_Database->fund_strategy=$_POST['fund_strategy'];
+		$objFund_Database->primary_strategy=$_POST['primary_strategy'];
+		$objFund_Database->secondary_strategy=$_POST['secondary_strategy'];
+		$objFund_Database->investment_objectives=$_POST['investment_objectives'];
+		$objFund_Database->unique_feature=$_POST['unique_feature'];
+		$objFund_Database->inception_date=$_POST['inception_date'];
+		$objFund_Database->current_assets=$_POST['current_assets'];
+		$objFund_Database->benchmark=$_POST['benchmark'];
+		$objFund_Database->risk_appetite=$_POST['risk_appetite'];
+		$objFund_Database->geographical_exposure=$_POST['geographical_exposure'];
+		$objFund_Database->last_audit=$_POST['last_audit'];
+		$objFund_Database->add_info=$_POST['add_info'];
+		$objFund_Database->initial_min_investment=$_POST['initial_min_investment'];
+		$objFund_Database->min_investment=$_POST['min_investment'];
+		$objFund_Database->min_units_investment=$_POST['min_units_investment'];
+		$objFund_Database->lockup_period_sub=$_POST['lockup_period_sub'];
+		$objFund_Database->trade_frequency_sub=$_POST['trade_frequency_sub'];
+		$objFund_Database->notice_period_sub=$_POST['notice_period_sub'];
+		$objFund_Database->trade_date_sub=$_POST['trade_date_sub'];
+		$objFund_Database->cutoff_time_sub=$_POST['cutoff_time_sub'];
+		$objFund_Database->settlement_cycle_sub=$_POST['settlement_cycle_sub'];
+		$objFund_Database->add_info_1=$_POST['add_info_1'];
+		$objFund_Database->min_frontend_fee=$_POST['min_frontend_fee'];
+		$objFund_Database->max_frontend_fee=$_POST['max_frontend_fee'];
+		$objFund_Database->add_info_2=$_POST['add_info_2'];
+		$objFund_Database->min_amount_red=$_POST['min_amount_red'];
+		$objFund_Database->min_units_red=$_POST['min_units_red'];
+		$objFund_Database->trade_frequency_red=$_POST['trade_frequency_red'];
+		$objFund_Database->notice_period_red=$_POST['notice_period_red'];
+		$objFund_Database->trade_date_red=$_POST['trade_date_red'];
+		$objFund_Database->cutoff_time_red=$_POST['cutoff_time_red'];
+		$objFund_Database->settlement_cycle_red=$_POST['settlement_cycle_red'];
+		$objFund_Database->add_info_3=$_POST['add_info_3'];
+		$objFund_Database->min_backend_fee=$_POST['min_backend_fee'];
+		$objFund_Database->max_backend_fee=$_POST['max_backend_fee'];
+		$objFund_Database->early_withdrawal_fee=$_POST['early_withdrawal_fee'];
+		$objFund_Database->add_info_4=$_POST['add_info_4'];
+		$objFund_Database->management_fee=$_POST['management_fee'];
+		$objFund_Database->performance_fee=$_POST['performance_fee'];
+		$objFund_Database->add_info_5=$_POST['add_info_5'];
+		$objFund_Database->accepted_investor_types=$_POST['accepted_investor_types'];
+		$objFund_Database->high_water_mark=$_POST['high_water_mark'];
+		$objFund_Database->hurdle_rate=$_POST['hurdle_rate'];
+		$objFund_Database->custodian_name=$_POST['custodian_name'];
+		$objFund_Database->postal_address_c1=$_POST['postal_address_c1'];
+		$objFund_Database->postal_address_c2=$_POST['postal_address_c2'];
+		$objFund_Database->postal_address_c3=$_POST['postal_address_c3'];
+		$objFund_Database->postal_address_c4=$_POST['postal_address_c4'];
+		$objFund_Database->key_contact_c=$_POST['key_contact_c'];
+		$objFund_Database->email_c=$_POST['email_c'];
+		$objFund_Database->phone_c=$_POST['phone_c'];
+		$objFund_Database->fax_c=$_POST['fax_c'];
+		$objFund_Database->transfer_agent_name=$_POST['transfer_agent_name'];
+		$objFund_Database->postal_address_ta1=$_POST['postal_address_ta1'];
+		$objFund_Database->postal_address_ta2=$_POST['postal_address_ta2'];
+		$objFund_Database->postal_address_ta3=$_POST['postal_address_ta3'];
+		$objFund_Database->postal_address_ta4=$_POST['postal_address_ta4'];
+		$objFund_Database->key_contact_ta=$_POST['key_contact_ta'];
+		$objFund_Database->email_ta=$_POST['email_ta'];
+		$objFund_Database->phone_ta=$_POST['phone_ta'];
+		$objFund_Database->fax_ta=$_POST['fax_ta'];
+		$objFund_Database->fund_advisor_name=$_POST['fund_advisor_name'];
+		$objFund_Database->postal_address_adv1=$_POST['postal_address_adv1'];
+		$objFund_Database->postal_address_adv2=$_POST['postal_address_adv2'];
+		$objFund_Database->postal_address_adv3=$_POST['postal_address_adv3'];
+		$objFund_Database->postal_address_adv4=$_POST['postal_address_adv4'];
+		$objFund_Database->key_contact_adv=$_POST['key_contact_adv'];
+		$objFund_Database->email_adv=$_POST['email_adv'];
+		$objFund_Database->phone_adv=$_POST['phone_adv'];
+		$objFund_Database->fax_adv=$_POST['fax_adv'];
+		$objFund_Database->fund_auditor_name=$_POST['fund_auditor_name'];
+		$objFund_Database->postal_address_aud1=$_POST['postal_address_aud1'];
+		$objFund_Database->postal_address_aud2=$_POST['postal_address_aud2'];
+		$objFund_Database->postal_address_aud3=$_POST['postal_address_aud3'];
+		$objFund_Database->postal_address_aud4=$_POST['postal_address_aud4'];
+		$objFund_Database->key_contact_aud=$_POST['key_contact_aud'];
+		$objFund_Database->email_aud=$_POST['email_aud'];
+		$objFund_Database->phone_aud=$_POST['phone_aud'];
+		$objFund_Database->fax_aud=$_POST['fax_aud'];
+		$mgs=$objFund_Database->InsertFund_Database();
+		echo $mgs;
+				
 	}
-	
-
  ?>
 
 <form name="insert_form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	<div id="errorLable" style="text-align: left;"></div>
-	<div id="errorMana" style="text-align:left;"></div>
 	<div id="errortbl1" style="text-align:left;" ></div>
-    <fieldset class="fldset">
-   <legend>Identification of Fund</legend><br>
+           <fieldset class="fldset">
+   <legend>IDENTIFICATION OF FUND</legend><br>
+       <table width="590px" border="0">
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">ISIN</div>
+             <div class="tbl_input">
+               <input size="57"  name="isin" id="isin" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">CURRENCY</div>
+             <div class="tbl_input">
+			              <select name="currency" id="currency" class="dropdown">
+			      			<option value=""> please select</option>
+				            <?php 
+								for($i=0;$i<sizeof($arrayCurrency);$i++)
+								{?>
+								<option value="<?php print $arrayCurrency[$i]['id'] ?>"><?php print $arrayCurrency[$i]['name'] ?></option>
+								<?php }
+							?>
+									       				
+			            </select>
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">FUND NAME</div>
+             <div class="tbl_input">
+               <input size="57"  name="fund_name" id="fund_name" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">FUND COMPANY</div>
+             <div class="tbl_input">
+               <input size="57"  name="fund_company" id="fund_company" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">FUND CATEGORY</div>
+             <div class="tbl_input">
+               <input size="57"  name="fund_category" id="fund_category" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">FUND STATUS</div>
+             <div class="tbl_input">
+               <input size="57"  name="fund_status" id="fund_status" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">DOMICILE</div>
+             <div class="tbl_input">
+               <input size="57"  name="domicile" id="domicile" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">N.A.V.</div>
+             <div class="tbl_input">
+               <input size="57"  name="net_asset_value" id="net_asset_value" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">N.A.V. DATE</div>
+             <div class="tbl_input">
+               <input size="57"  name="nav_date" id="nav_date" value="">
+             </div></td>
+         </tr>
+          <tr>
+      <td class="fieldset"><div class="tbl_lbl">PERFORMANCE START</div><div class="tbl_input">
+      	<input size="57"  name="performance_start" id="performance_start" value="">
+      		</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">PERFORMANCE YTD</div><div class="tbl_input">
+      	<input size="57"  name="performance_ytd" id="performance_ytd" value="">
+      	</div></td>
+     </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">FUND STRATEGY</div>
+             <div class="tbl_input">
+               <input size="57"  name="fund_strategy" id="fund_strategy" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">PRIMARY STRATEGY</div>
+             <div class="tbl_input">
+               <input size="57"  name="primary_strategy" id="primary_strategy" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">SECONDARY STRATEGY</div>
+             <div class="tbl_input">
+               <input size="57"  name="secondary_strategy" id="secondary_strategy" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">INVESTMENT OBJECTIVES</div>
+             <div class="tbl_input">
+               <input size="57"  name="investment_objectives" id="investment_objectives" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">UNIQUE FEATURE</div>
+             <div class="tbl_input">
+               <input size="57"  name="unique_feature" id="unique_feature" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">INCEPTION DATE</div>
+             <div class="tbl_input">
+               <input size="57"  name="inception_date" id="inception_date" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">CURRENT ASSETS</div>
+             <div class="tbl_input">
+               <input size="57"  name="current_assets" id="current_assets" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">BENCHMARK</div>
+             <div class="tbl_input">
+               <input size="57"  name="benchmark" id="benchmark" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">RISK APPETITE</div>
+             <div class="tbl_input">
+               <input size="57"  name="risk_appetite" id="risk_appetite" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">GEOGRAPHICAL EXPOSURE</div>
+             <div class="tbl_input">
+               <input size="57"  name="geographical_exposure" id="geographical_exposure" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">LAST AUDIT</div>
+             <div class="tbl_input">
+               <input size="57"  name="last_audit" id="last_audit" value="">
+             </div></td>
+         </tr>
+         <tr>
+           <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+             <div class="tbl_input">
+               <input size="57"  name="add_info" id="add_info" value="">
+            </div></td>
+         </tr>
+       </table>
+       </fieldset>
+<div id="errortbl2" style="text-align:left;" ></div>
+  <fieldset class="fldset">
+   <legend>INVESTMENT DETAILS (SUBSCRIPTION)</legend><br>
     <table width="590px" border="0">
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">ISIN</div><div class="tbl_input"><input size="57"  name="ISIN" id="ISIN" value=""></div></td>
+      <td class="fieldset"><div class="tbl_lbl">INITIAL MIN. INVESTMENT</div>
+        <div class="tbl_input">
+        	<input size="57"  name="initial_min_investment" id="initial_min_investment" value="">
+        	</div></td>
      </tr>
-
+ 
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Currency</div><div class="tbl_input">
-            <select name="currency" id="currency" class="dropdown">
-      <option value=""> please select</option>
-            <?php 
-				for($i=0;$i<sizeof($arrayCurrency);$i++)
-				{?>
-				<option value="<?php print $arrayCurrency[$i]['id'] ?>"><?php print $arrayCurrency[$i]['name'] ?></option>
-				<?php }
-			?>
-						       				
-            </select>
-      
+      <td class="fieldset"><div class="tbl_lbl">MIN. INVEST. THEREAFTER</div>
+        <div class="tbl_input">
+        	<input size="57"  name="min_investment" id="min_investment" value="">
+        	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MIN. UNITS INVESTMENT</div>
+        <div class="tbl_input">
+        	<input size="57"  name="min_units_investment" id="min_units_investment" value="">
+        	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">LOCK-UP PERIOD</div>
+        <div class="tbl_input">
+        	<input size="57"  name="lockup_period_sub" id="lockup_period_sub" value="">
+        	</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">TRADING FREQUENCY SUB</div>
+      	<div class="tbl_input">
+		<input size="57"  name="trade_frequency_sub" id="trade_frequency_sub" value="">	
+      	</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">NOTICE PERIOD</div><div class="tbl_input">
+      	<input size="57"  name="notice_period_sub" id="notice_period_sub" value="">
+      	</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">TRADING DATE</div><div class="tbl_input">
+      	<input size="57"  name="trade_date_sub" id="trade_date_sub" value="">
+      	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">CUT-OFF TIME</div><div class="tbl_input">
+      	<input size="57"  name="cutoff_time_sub" id="cutoff_time_sub" value="">
+      	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">SETTLEMENT CYCLE</div><div class="tbl_input">
+      	<input size="57"  name="settlement_cycle_sub" id="settlement_cycle_sub" value="">
+      	</div></td>
+     </tr>
+    <!-- Additional Information-->
+      <tr>
+      <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="add_info_1" id="add_info_1" value="">
+      	</div>
+      </td>
+     </tr>
+     <!--<tr>
+      <td class="fieldset"><div class="tbl_lbl">ADMINISTRATION FEE</div><div class="tbl_input"><?php //if(isset($investment_detail) && sizeof($investment_detail)>0)  echo $investment_detail[0]["administration_fee"]; ?></div></td>
+     </tr>-->
+     <!--Additional Information-->
+      </table>
+       </fieldset>
+<div id="errortbl3" style="text-align:left;" ></div>
+  <fieldset class="fldset">
+   <legend>SUBSCRIPTION FEES</legend><br>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MIN. FRONT END FEE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="min_frontend_fee" id="min_frontend_fee" value="">
+      	</div></td>
+     </tr>
+ 
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MAX. FRONT END FEE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="max_frontend_fee" id="max_frontend_fee" value="">
+      		</div></td>
+     </tr>
+     <!--Additional Information-->
+       <tr>
+     <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+     <div class="tbl_input">
+     	<input size="57"  name="add_info_2" id="add_info_2" value="">
+     	</div>
+     </td>
+     </tr>
+    <!-- <tr>
+      <td class="fieldset"><div class="tbl_lbl">MANAGEMENT FEE</div><div class="tbl_input"><?php //if(isset($subArr) && sizeof($subArr)>0) echo $subArr[0]["management_fee"]; ?></div></td>
+     </tr>-->
+      <!--Additional Information-->
+      </table>
+       </fieldset>
+<div id="errortbl4" style="text-align:left;" ></div>
+  <fieldset class="fldset">
+   <legend>REDEMPTION DETAILS</legend><br>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MIN. AMOUNT</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="min_amount_red" id="min_amount_red" value="">
+      		</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MIN. UNITS</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="min_units_red" id="min_units_red" value="">
       </div></td>
      </tr>
- 
+          
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Name</div><div class="tbl_input"><input size="57"  name="fund_name" id="fund_name" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Company</div><div class="tbl_input"><input size="57"  name="fund_company" id="fund_company" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Category</div><div class="tbl_input"><input size="57"  name="fund_category" id="fund_category" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Status</div><div class="tbl_input"><input size="57"  name="fund_status" id="fund_status" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Domicile</div><div class="tbl_input"><input size="57"  name="domicile" id="domicile" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">N.A.V.</div><div class="tbl_input"><input size="57"  name="nav_value" id="nav_value" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">N.A.V. Date</div><div class="tbl_input"><input size="57"  name="nav_date" id="nav_date" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Strategy</div><div class="tbl_input"><input size="57"  name="fund_strategy" id="fund_strategy" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Primary Strategy</div><div class="tbl_input"><input size="57"  name="primary_strategy" id="primary_strategy" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Secondary Strategy</div><div class="tbl_input"><input size="57"  name="secondary_strategy" id="secondary_strategy" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Investment Objectives</div><div class="tbl_input"><input size="57"  name="investment_objectives_a" id="investment_objectives_a" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Investment Objectives</div><div class="tbl_input"><input size="57"  name="investment_objectives_b" id="investment_objectives_b" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Investment Objectives</div><div class="tbl_input"><input size="57"  name="investment_objectives_c" id="investment_objectives_c" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Unique Feature</div><div class="tbl_input"><input size="57"  name="unique_feature_a" id="unique_feature_a" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Unique Feature</div><div class="tbl_input"><input size="57"  name="unique_feature_b" id="unique_feature_b" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Inception Date</div><div class="tbl_input"><input size="57"  name="inception_date" id="inception_date" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Current Assets</div><div class="tbl_input"><input size="57"  name="current_assets" id="current_assets" value=""></div></td>
-     </tr>     
- 
-     <tr> 
-      <td class="fieldset"><div class="tbl_lbl">Benchmark</div><div class="tbl_input"><input size="57"  name="benchmark" id="benchmark" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Risk Appetite</div><div class="tbl_input"><input size="57"  name="risk_appetite" id="risk_appetite" value=""></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Geographical Exposure</div><div class="tbl_input"><input size="57"  name="geographical_exposure" id="geographical_exposure" value=""></div></td>
-     </tr>     
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Last Audit</div><div class="tbl_input"><input size="57"  name="last_audit" id="last_audit" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Additional Information</div><div class="tbl_input"><input size="57"  name="add_info_a" id="add_info_a" value=""></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Additional Information</div><div class="tbl_input"><input size="57"  name="add_info_b" id="add_info_b" value=""></div></td>
-     </tr>
-       <tr>
-      <td class="fieldset"><div class="tbl_lbl">TRANSFER AGENT</div><div class="tbl_input"><input size="57"  name="transfer_agent_id" id="transfer_agent_id" value=""></div></td>
-     </tr>
-       <tr>
-      <td class="fieldset"><div class="tbl_lbl">CUSTODIAN</div><div class="tbl_input"><input size="57"  name="custodian_id" id="custodian_id" value=""></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">FUND ADVISOR</div><div class="tbl_input"><input size="57"  name="fund_advisor_id" id="fund_advisor_id" value=""></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">FUND AUDITOR</div><div class="tbl_input"><input size="57"  name="fund_auditor_id" id="fund_auditor_id" value=""></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">UNIQUE</div><div class="tbl_input"><input size="57"  name="unique_id" id="unique_id" value=""></div></td>
-     </tr>
-      </table>
-    </fieldset>
-
-
-    <div id="errortbl2" style="text-align:left;" ></div>
-    <fieldset class="fldset">
-   <legend>Investment Details (Subscription)</legend><br>
-    <table border="0" width="590px">
-     <tbody><tr>
-      <td class="fieldset"><div class="tbl_lbl">Initial Minimum Investment</div><div class="tbl_input"><input size="57" name="initial_minimum_investment" id="initial_minimum_investment"></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Minimum Investment thereafter</div><div class="tbl_input"><input size="57" name="minimum_investment" id="minimum_investment"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Minimum Units Investment</div><div class="tbl_input"><input size="57" name="minimum_units_investment" id="minimum_units_investment"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Lockup Period</div><div class="tbl_input"><input size="57" name="lockup_period" id="lockup_period"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Notice Period</div><div class="tbl_input"><input size="57" name="notice_period_i" id="notice_period_i"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Trading Frequency</div><div class="tbl_input"><input size="57" name="trading_frequency_i" id="trading_frequency_i"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Trading Date</div><div class="tbl_input"><input size="57" name="trading_date_i" id="trading_date_i"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Cut-off Time</div><div class="tbl_input"><input size="57" name="cut_off_time" id="cut_off_time"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Settlement Cycle</div><div class="tbl_input"><input size="57" name="settlement_cycle_i" id="settlement_cycle_i"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Administration Fee</div><div class="tbl_input"><input size="57" name="administration_fee" id="administration_fee"></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Accepted Investor Types</div><div class="tbl_input"><input size="57" name="accepted_investor_types" id="accepted_investor_types"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Performance since Start</div><div class="tbl_input"><input size="57" name="performance_since_start" id="performance_since_start"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Performance ytd</div><div class="tbl_input"><input size="57" name="performance_ytd" id="performance_ytd"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">High Water Mark</div><div class="tbl_input"><input size="57" name="high_water_mark" id="high_water_mark"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Hurdle Rate</div><div class="tbl_input"><input size="57" name="hurdle_rate" id="hurdle_rate"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Add Info a</div><div class="tbl_input"><input size="57" name="add_info_a" id="add_info_a"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Add Info b</div><div class="tbl_input"><input size="57" name="add_info_b" id="add_info_b"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Funds ID</div><div class="tbl_input"><input size="57" name="funds_id" id="funds_id"></div></td>
-     </tr>
-      </tbody></table>
-       </fieldset>
-       
-       
-   	<div id="errortbl3" style="text-align:left;" ></div>
-       <fieldset class="fldset">
-   <legend>Fees (Subscription)</legend><br>
-    <table border="0" width="590px">
-     <tbody>
-   <tr>
-      <td class="fieldset"><div class="tbl_lbl">Funds ID</div><div class="tbl_input"><input size="57" name="funds_id_sub" id="funds_id_sub"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Minimum Front End Fee</div><div class="tbl_input"><input size="57" name="minimum_front_end_fee" id="minimum_front_end_fee"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Maximum Front End Fee</div><div class="tbl_input"><input size="57" name="maximum_front_end_fee" id="maximum_front_end_fee"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Management Fee</div><div class="tbl_input"><input size="57" name="management_fee" id="management_fee"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Additional information</div><div class="tbl_input"><input size="57" name="additional_information" id="additional_information"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Performance fee</div><div class="tbl_input"><input size="57" name="performance_fee" id="performance_fee"></div></td>
-     </tr>
-      </tbody></table>
-       </fieldset>
-		<br/>
-		
-		
-	<div id="errortbl4" style="text-align:left;" ></div>		
-<fieldset class="fldset">
-   <legend>Redemption Details</legend><br>
-    <table border="0" width="590px">
-     <tbody>
-     	<tr>
-      <td class="fieldset"><div class="tbl_lbl">FUND ID</div><div class="tbl_input"><input size="57" name="funds_id_red" id="funds_id_red"></div></td>
-     </tr>
-     	<tr>
-      <td class="fieldset"><div class="tbl_lbl">Minimum Amount</div><div class="tbl_input"><input size="57" name="minimum_amount" id="minimum_amount"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Minimum Units</div><div class="tbl_input"><input size="57" name="minimum_units" id="minimum_units"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Notice Period</div><div class="tbl_input"><input size="57" name="notice_period" id="notice_period"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Trading Frequency</div><div class="tbl_input"><input size="57" name="trading_frequency" id="trading_frequency"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Trading Date</div><div class="tbl_input"><input size="57" name="trading_date" id="trading_date"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Cut-Off Time</div><div class="tbl_input"><input size="57" name="cut_of_time" id="cut_of_time"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Settlement Cycle</div><div class="tbl_input"><input size="57" name="settlement_cycle" id="settlement_cycle"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">TRADING FREQUENCY</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="trade_frequency_red" id="trade_frequency_red" value="">
+      	</div></td>
      </tr>
       <tr>
-      <td class="fieldset"><div class="tbl_lbl">Additional Information</div><div class="tbl_input"><input size="57" name="additional_information_red" id="additional_information_red"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">NOTICE PERIOD</div>
+      	<div class="tbl_input">
+      	<input size="57"  name="notice_period_red" id="notice_period_red" value="">
+      	</div></td>
      </tr>
-      </tbody></table>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">TRADING DATE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="trade_date_red" id="trade_date_red" value="">
+      		</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">CUT-OFF TIME</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="cutoff_time_red" id="cutoff_time_red" value="">
+      	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">SETTLEMENT CYCLE</div>
+      	<div class="tbl_input">
+			<input size="57"  name="settlement_cycle_red" id="settlement_cycle_red" value="">
+      		</div></td>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+      <div class="tbl_input">
+      		<input size="57"  name="add_info_3" id="add_info_3" value="">
+      	</div>
+      </td>
+     </tr>
+      </table>
        </fieldset>
-       
+
+  <fieldset class="fldset">
+   <legend>REDEMPTION FEES</legend><br>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MIN. BACK END FEE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="min_backend_fee" id="min_backend_fee" value="">
+      		</div></td>
+     </tr>
+ 
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MAX. BACK END FEE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="max_backend_fee" id="max_backend_fee" value="">
+      	</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">EARLY WITHDRAWAL FEE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="early_withdrawal_fee" id="early_withdrawal_fee" value="">
+      	</div></td>
+     </tr>
+      <tr>
+     <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+     	<div class="tbl_input">
+     		<input size="57"  name="add_info_4" id="add_info_4" value="">
+     		</div></td>
+     </tr>
+      </table>
+       </fieldset>
+
+  <fieldset class="fldset">
+   <legend>FEES</legend>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MANAGEMENT FEE</div><div class="tbl_input">
+      	<input size="57"  name="management_fee" id="management_fee" value="">
+      </div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">PERFORMANCE FEE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="performance_fee" id="performance_fee" value="">
+      	</div></td>
+     </tr>
+     <!--<tr>
+      <td class="fieldset"><div class="tbl_lbl">MINIMUM FRONT END FEE</div><div class="tbl_input"><?php //if(isset($subArr) && sizeof($subArr)>0) echo $subArr[0]['minimum_front_end_fee']; ?></div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">MAXIMUM FRONT END FEE</div><div class="tbl_input"><?php //if(isset($subArr) && sizeof($subArr)>0) echo $subArr[0]['maximum_front_end_fee']; ?></div></td>
+     </tr>-->
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="add_info_5" id="add_info_5" value="">
+      	</div></td>
+     </tr>
+      </table>
+       </fieldset>
+ 
+<fieldset class="fldset">
+	<legend>MISCELLANEOUS</legend>
+    <table width="590PX" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">ACCEPTED INVESTOR TYPES</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="accepted_investor_types" id="accepted_investor_types" value="">
+      	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">HIGH WATER MARK</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="high_water_mark" id="high_water_mark" value="">
+      		</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">HURDLE RATE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="hurdle_rate" id="hurdle_rate" value="">
+      	</div></td>
+     </tr>
+    </table>
+</fieldset>
 <div id="errortbl5" style="text-align:left;" ></div>
   <fieldset class="fldset">
-   <legend>Fees (Redemption)</legend><br>
-    <table border="0" width="590px">
-     <tbody>
+   <legend>CUSTODIAN INFORMATION</legend><br>
+    <table width="590px" border="0">
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Redemption details id</div><div class="tbl_input"><input size="57" name="redemption_details_id" id="redemption_details_id"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">CUSTODIAN NAME</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="custodian_name" id="custodian_name" value="">
+      	</div></td>
      </tr>
  
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Minimum Back End Fee</div><div class="tbl_input"><input size="57" name="minimum_back_end_fee" id="minimum_back_end_fee"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Maximum Back End Fee</div><div class="tbl_input"><input size="57" name="maximum_back_end_fee" id="maximum_back_end_fee"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Early Withdrawal Fee</div><div class="tbl_input"><input size="57" name="early_withdrawal_fee" id="early_withdrawal_fee"></div></td>
-     </tr>
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Additional information</div><div class="tbl_input"><input size="57" name="additional_information_redfee" id="additional_information_redfee"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 1</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_c1" id="postal_address_c1" value="">
+      	</div></td>
      </tr>
      
-      </tbody></table>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 2</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_c2" id="postal_address_c2" value="">
+      	</div></td>
+     </tr> 
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 3</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_c3" id="postal_address_c3" value="">
+      	</div></td>
+     </tr> 
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 4</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_c4" id="postal_address_c4" value="">
+      	</div></td>
+     </tr> 
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">KEY CONTACT PERSON</div><div class="tbl_input">
+      	<input size="57"  name="key_contact_c" id="key_contact_c" value="">
+      </div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">E-MAIL ADDRESS</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="email_c" id="email_c" value="">
+      </div></td>
+     </tr>
+     
+     <!--<tr>
+      <td class="fieldset"><div class="tbl_lbl">KEY CONTACT PERSON</div><div class="tbl_input"></div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">E-MAIL ADDRESS</div><div class="tbl_input"></div></td>
+     </tr>-->
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">PHONE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="phone_c" id="phone_c" value="">
+      	</div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">FAX</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="fax_c" id="fax_c" value="">
+      	</div></td>
+     </tr>
+     <!-- <tr>
+      <td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div></td>
+     </tr>-->
+    <!-- <tr>
+      <td class="fieldset"><div class="tbl_lbl">A/C  NO.</div><div class="tbl_input"><?php //if(isset($custArr) && sizeof($custArr)>0) echo $custArr[0]["account_number"]; ?></div></td>
+     </tr>-->
+     
+    <!-- <tr>
+      <td class="fieldset"><div class="tbl_lbl">SETTLEMENT DETAILS</div><div class="tbl_input"><?php //if(isset($custArr) && sizeof($custArr)>0) echo $custArr[0]["settlement_details_a"]; ?></div></td>
+     </tr>-->
+     
+     <!--<tr>
+      <td class="fieldset"><div class="tbl_lbl">SETTLEMENT DETAILS</div><div class="tbl_input"><?php //if(isset($custArr) && sizeof($custArr)>0) echo $custArr[0]["settlement_details_b"]; ?></div></td>
+     </tr>
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">SETTLEMENT DETAILS</div><div class="tbl_input"><?php //if(isset($custArr) && sizeof($custArr)>0) echo $custArr[0]["settlement_details_c"]; ?></div></td>
+     </tr>-->
+      </table>
        </fieldset>
- <br/>
- 
- 	<div id="errortbl6" style="text-align:left;" ></div>
+ <div id="errortbl6" style="text-align:left;" ></div>
  <fieldset class="fldset">
-   <legend>Transfer Agent and A/C Details</legend><br>
-   <select name="id_transfer" id="id_transfer" onchange="GetTransferAgent();">
-	<option selected="selected" value="0">Create transfer agent</option>
-		<?php
-			for ($i=0;$i<sizeof($arrayTransferAgent);$i++)
-			{?>
-						<option value="<? print $arrayTransferAgent[$i]['id'];?>"><? print $arrayTransferAgent[$i]['id'];?></option>
-			<?}
-	 ?>
-</select>
-    <table border="0" width="590px">
-     <tbody><tr>
-      <td class="fieldset"><div class="tbl_lbl">Transfer Agent</div><div class="tbl_input"><input size="57" name="transfer_agent" id="transfer_agent"></div></td>
+   <legend>TRANSFER AGENT INFORMATION</legend><br>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">TRANSFER AGENT NAME</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="transfer_agent_name" id="transfer_agent_name" value="">
+      		</div></td>
      </tr>
  
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Postal Address</div><div class="tbl_input"><input size="57" name="postal_address" id="postal_address"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 1</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_ta1" id="postal_address_ta1" value="">
+      		</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Postal Address</div><div class="tbl_input"><input size="57" name="postal_address_I" id="postal_address_I"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 2</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_ta2" id="postal_address_ta2" value="">
+      		</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 3</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_ta3" id="postal_address_ta3" value="">
+      		</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 4</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_ta4" id="postal_address_ta4" value="">
+      		</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">KEY CONTACT PERSON</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="key_contact_ta" id="key_contact_ta" value="">
+      </div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">ZIP / City</div><div class="tbl_input"><input size="57" name="zip" id="zip"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">E-MAIL ADDRESS</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="email_ta" id="email_ta" value="">
+      </div></td>
+     </tr>
+     
+     <!--<tr>
+      <td class="fieldset"><div class="tbl_lbl">KEY CONTACT PERSON</div><div class="tbl_input"></div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Key Contact Person</div><div class="tbl_input"><input size="57" name="key_contact_persons" id="key_contact_persons"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">E-MAIL ADDRESS</div><div class="tbl_input"></div></td>
+     </tr>-->
+     
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">PHONE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="phone_ta" id="phone_ta" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">E-mail Address</div><div class="tbl_input"><input size="57" name="email_address" id="email_address"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">FAX</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="fax_ta" id="fax_ta" value="">
+      	</div></td>
      </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Additional information</div><div class="tbl_input"><input size="57" name="additional_information_transferagent" id="additional_information_transferagent"></div></td>
+      <tr>
+      <!--<td class="fieldset"><div class="tbl_lbl">ADDITIONAL INFORMATION</div>
+      <div class="tbl_input"><?php //if(isset($transferArr) && sizeof($transferArr)>0) echo $transferArr[0]["additional_information"]; ?></div>
+      </td>-->
      </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Phone</div><div class="tbl_input"><input size="57" name="phone_number" id="phone_number"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fax</div><div class="tbl_input"><input size="57" name="fax_no" id="fax_no"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">A/C  No.</div><div class="tbl_input"><input size="57" name="account_number" id="account_number"></div></td>
-     </tr>
-      </tbody></table>
+     <!--<tr>
+      <td class="fieldset"><div class="tbl_lbl">A/C  NO.</div><div class="tbl_input"><?php //if(isset($transferArr) && sizeof($transferArr)>0) echo $transferArr[0]["account_number"]; ?></div></td>
+     </tr>-->
+      </table>
        </fieldset>
-       
-<div id="errortbl7" style="text-align:left;" ></div>       
-<fieldset class="fldset">
-   <legend>Custodian</legend><br>
-   
-<select name="custodian_id_cus" id="custodian_id_cus" onchange="GetCustodian_cus();">
-<option selected="selected" value="0">Create custodian</option>
-	<?php for($i=0;$i<sizeof($arrayCustodian);$i++)
-	{?>
-		<option value="<?php print $arrayCustodian[$i]['id'] ?>"><?php print $arrayCustodian[$i]['id'];?></option>	
-	<?} ?>
-</select>
-   
-    <table border="0" width="590px">
-     <tbody><tr>
-      <td class="fieldset"><div class="tbl_lbl">Custodian ID</div><div class="tbl_input"><input size="57" name="cpid_cus" id="cpid_cus"></div></td>
+ <div id="errortbl7" style="text-align:left;" ></div>
+  <fieldset class="fldset">
+   <legend>FUND ADVISOR INFORMATION</legend><br>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">FUND ADVISOR NAME</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="fund_advisor_name" id="fund_advisor_name" value="">
+      	</div></td>
      </tr>
  
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Counterparty</div><div class="tbl_input"><input size="57" name="counterparty_cus" id="counterparty_cus"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 1</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_adv1" id="postal_address_adv1" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Biccp</div><div class="tbl_input"><input size="57" name="biccp_cus" id="biccp_cus"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 2</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_adv2" id="postal_address_adv2" value="">
+      	</div></td>
+     </tr>
+     <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 3</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_adv3" id="postal_address_adv3" value="">
+      	</div></td>
+     </tr>
+     <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 4</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_adv4" id="postal_address_adv4" value="">
+      	</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">KEY CONTACT PERSON</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="key_contact_adv" id="key_contact_adv" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Custid</div><div class="tbl_input"><input size="57" name="custid_cus" id="custid_cus"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">E-MAIL ADDRESS</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="email_adv" id="email_adv" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Custodian</div><div class="tbl_input"><input size="57" name="custodian_cus" id="custodian_cus"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">PHONE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="phone_adv" id="phone_adv" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Biccust</div><div class="tbl_input"><input size="57" name="biccust_cus" id="biccust_cus"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">FAX</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="fax_adv" id="fax_adv" value="">
+      	</div></td>
      </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Cpacwithcust</div><div class="tbl_input"><input size="57" name="cpacwithcust_cus" id="cpacwithcust_cus"></div></td>
-     </tr>
-      </tbody></table>
+      </table>
        </fieldset>
-       
-       
-<div id="errortbl8" style="text-align:left;" ></div>      
- <fieldset class="fldset">
-   <legend>Fund Advisor</legend><br>
-   
-<select name="fund_advisor_id_adv" id="fund_advisor_id_adv" onchange="GetFundAdvisor();">
-<option selected="selected" value="0">Create fund_advisor</option>
-<?php
-	for($i=0;$i<sizeof($arrayFundAdvisor);$i++)
-	{?>
-		<option value="<? print $arrayFundAdvisor[$i]['id'] ?>"><? print $arrayFundAdvisor[$i]['id'] ?></option>
-	<?}
- ?>
-</select>
-   
-    <table border="0" width="590px">
-     <tbody><tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Advisor</div><div class="tbl_input"><input size="57" name="fund_advisor_adv" id="fund_advisor_adv"></div></td>
+<div id="errortbl8" style="text-align:left;" ></div>
+  <fieldset class="fldset">
+   <legend>FUND AUDITOR INFORMATION</legend><br>
+    <table width="590px" border="0">
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">FUND AUDITOR NAME</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="fund_auditor_name" id="fund_auditor_name" value="">
+      	</div></td>
      </tr>
  
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Postal Address</div><div class="tbl_input"><input size="57" name="postal_address_adv" id="postal_address_adv"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 1</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_aud1" id="postal_address_aud1" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Postal Address</div><div class="tbl_input"><input size="57" name="postal_address_adv_I" id="postal_address_adv_I"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 2</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_aud2" id="postal_address_aud2" value="">
+      	</div></td>
+     </tr>
+     
+    <tr>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 3</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_aud3" id="postal_address_aud3" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">ZIP / City</div><div class="tbl_input"><input size="57" name="zip_city_adv" id="zip_city_adv"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">POSTAL ADDRESS 4</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="postal_address_aud4" id="postal_address_aud4" value="">
+      	</div></td>
+     </tr>
+     <tr>
+      <td class="fieldset"><div class="tbl_lbl">KEY CONTACT PERSON</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="key_contact_aud" id="key_contact_aud" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Key Contact Person</div><div class="tbl_input"><input size="57" name="additional_information_adv" id="additional_information_adv"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">E-MAIL ADDRESS</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="email_aud" id="email_aud" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">E-mail Address</div><div class="tbl_input"><input size="57" name="email_address_adv" id="email_address_adv"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">PHONE</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="phone_aud" id="phone_aud" value="">
+      	</div></td>
      </tr>
      
      <tr>
-      <td class="fieldset"><div class="tbl_lbl">Phone</div><div class="tbl_input"><input size="57" name="phone_number_adv" id="phone_number_adv"></div></td>
+      <td class="fieldset"><div class="tbl_lbl">FAX</div>
+      	<div class="tbl_input">
+      		<input size="57"  name="fax_aud" id="fax_aud" value="">
+      	</div></td>
      </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fax</div><div class="tbl_input"><input size="57" name="fax_number_adv" id="fax_number_adv"></div></td>
-     </tr>
-      </tbody></table>
+      </table>
        </fieldset>
+ 
  <br>
  
-<div id="errortbl9" style="text-align:left;" ></div>
- <fieldset class="fldset">
-   <legend>Fund Auditor</legend><br>
 
-<select name="fund_auditor_id_fau" id="fund_auditor_id_fau" onchange="GetFundAuditor();">
-<option selected="selected" value="0">Create fund_auditor</option>
-<?php for($i=0;$i<sizeof($arrayFundAuditorClass);$i++)
-{?>		
-		<option value="<?php print $arrayFundAuditorClass[$i]['id']; ?>"><?php print $arrayFundAuditorClass[$i]['id']; ?></option>
-<?}
- ?>
-
-</select>
-   
-   
-    <table border="0" width="590px">
-     <tbody><tr>
-      <td class="fieldset"><div class="tbl_lbl">Fund Auditor</div><div class="tbl_input"><input size="57" name="fund_auditor_fau" id="fund_auditor_fau"></div></td>
-     </tr>
- 
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Postal Address</div><div class="tbl_input"><input size="57" name="postal_address_fau" id="postal_address_fau"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Postal Address</div><div class="tbl_input"><input size="57" name="postal_address_fau_I" id="postal_address_fau_I"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">ZIP / City</div><div class="tbl_input"><input size="57" name="zip_city_fau" id="zip_city_fau"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Key Contact Person</div><div class="tbl_input"><input size="57" name="additional_information_fau" id="additional_information_fau"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">E-mail Address</div><div class="tbl_input"><input size="57" name="email_address_fau" id="email_address_fau"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Phone</div><div class="tbl_input"><input size="57" name="phone_number_fau" id="phone_number_fau"></div></td>
-     </tr>
-     
-     <tr>
-      <td class="fieldset"><div class="tbl_lbl">Fax</div><div class="tbl_input"><input size="57" name="fax_number_fau" id="fax_number_fau"></div></td>
-     </tr>
-      </tbody></table>
-       </fieldset>
- 
- <br>
- 
-
-			<input type="submit" name="Insert_Fund" id="Insert_Fund" value="Add" onclick="return verifyManage();"/>
+			<input type="submit" name="Insert_Fund" id="Insert_Fund" value="Add" onclick=" return verifyManage();"/>
 </form>
 
 </div>
