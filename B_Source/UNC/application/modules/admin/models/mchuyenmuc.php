@@ -42,7 +42,9 @@
 		{
 			$query=$this->db->query('select * from unc_category where category_id="'.$id.'"');
 			$list=$query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 		
 		function editCm($id,$input)

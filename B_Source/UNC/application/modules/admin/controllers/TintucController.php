@@ -2,7 +2,26 @@
 	class Admin_TintucController extends Zend_Controller_Action
 	{
 		private $mtintuc;
-		public $dantri=array('http://www.dantri.com.vn/trangchu.rss');
+		private $mdanhmuc;
+		public $dantri=array('http://www.dantri.com.vn/trangchu.rss',
+							'http://www.dantri.com.vn/chinh-tri.rss',
+							'http://www.dantri.com.vn/phongsu.rss',
+							'http://www.dantri.com.vn/moi-truong.rss',
+							'http://www.dantri.com.vn/donga.rss',
+							'http://www.dantri.com.vn/eu.rss',
+							'http://www.dantri.com.vn/tgchaumy.rss',
+							'http://www.dantri.com.vn/tgdiemnong.rss',
+							'http://www.dantri.com.vn/kieubao.rss',
+							'http://www.dantri.com.vn/tet-viet-xa-xu.rss',
+							'http://www.dantri.com.vn/bongtrongnuoc.rss',
+							'http://www.dantri.com.vn/bongquocte.rss',
+							'http://www.dantri.com.vn/cupchauau.rss',
+							'http://www.dantri.com.vn/bongdaanh.rss',
+							'http://www.dantri.com.vn/bongdaitalia.rss',
+							'http://www.dantri.com.vn/bongdataybannha.rss',
+							'http://www.dantri.com.vn/tennis_duaxe.rss',
+							'http://www.dantri.com.vn/cacmonkhac.rss',
+							'http://www.dantri.com.vn/sea-games-26.rss');
 		
 		private $title;
 		private $description;
@@ -26,6 +45,7 @@
 			                   'layoutPath' => $layoutPath );
 			Zend_Layout::startMvc ( $option );
 			$this->mtintuc=new Admin_Model_Mtintuc();
+			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
 		}
 		
 		function indexAction()
@@ -36,11 +56,21 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			// ADD TIN TỰ ĐỘNG:================================
-			$this->autoGetnews();
+			//$this->autoGetnews();
 			//===============================================
 			$this->view->title='Tin tức';
 			$this->view->list=$this->mtintuc->getListNews();
-			
+			$categoriesId=array();
+			foreach ($this->mtintuc->getListNews() as $new)
+			{
+				$category=$this->mdanhmuc->getCmById($new['category_id']);
+				if ($category)
+				{
+					$categoriesId[]=$category['category_name'];
+				}
+				else $categoriesId[]=' ';
+			}
+			$this->view->categoriesid=$categoriesId;
 			$youtube=new Zend_Gdata_YouTube();
 		}
 		
@@ -119,8 +149,6 @@
 		
 		function setForm()
 		{
-			$listCategories=$this->mtintuc->getListCategories();
-			
 			$form=new Zend_Form();
 			$form->setMethod('post');
 			$form->setName('insertForm');
@@ -133,11 +161,13 @@
 			
 			$el=$form->createElement('textarea','news_summary', array('style'=>'height:100px'));
 			$el->setOrder(1)->setRequired(true);
+			$el->setAttrib('id', 'news_summary');
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
 			$el=$form->createElement('textarea','news_content', array('style'=>'height:300px'));
 			$el->setOrder(2)->setRequired(true);
+			$el->setAttrib('id', 'news_content');
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
@@ -147,10 +177,12 @@
 			
 			$form->addElement('text','news_post_date');
 			$el=$form->getElement('news_post_date');
+			$el->setAttrib('class', 'datepicker');
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$form->addElement('text','news_modified_date');
 			$el=$form->getElement('news_modified_date');
+			$el->setAttrib('class', 'datepicker');
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$el=$form->createElement('select', 'news_status', array('multioptions'=>array('private'=>'Chưa duyệt',
@@ -158,8 +190,14 @@
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
+			$listCategories=$this->mdanhmuc->getListCM();
+			$listarray=array();
+			foreach ($listCategories as $category)
+			{
+				$listarray[$category['category_id']]=$category['category_name'];
+			}
 			$el=$form->createElement("select","category_id",array(
-                                                 "multioptions"=> array()));
+                                                 "multioptions"=> $listarray));
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
