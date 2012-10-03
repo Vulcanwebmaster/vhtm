@@ -1,0 +1,26 @@
+<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/insert" enctype="multipart/form-data">
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<fieldset>
+				<label>Liên kết</label>
+				<?php echo $this->form->getElement('link');?>
+			</fieldset>
+			<fieldset>
+				<label>Tiêu đề</label>
+				<?php echo $this->form->getElement('title');?>
+			</fieldset>
+			<fieldset>
+				<label>Mô tả</label>
+				<?php echo $this->form->getElement('description');?>
+			</fieldset>
+		</div>
+	</div>
+	<footer>
+			<div class="submit_link">
+				<input type="submit" name="submit" value="Thêm mới" class="alt_btn">
+			</div>
+		</footer>
+</article>
+</form>

@@ -1,0 +1,43 @@
+<?php ?>
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<table class="tablesorter" cellspacing="0">
+				<thead> 
+					<tr> 
+	    				<th align="center">STT</th> 
+	    				<th align="center">Tên chuyên mục</th> 
+	    				<th align="center">Chuyên mục cha</th>
+	    				<th align="center">Kích hoạt</th>
+	    				<th align="center">Action</th>
+					</tr> 
+				</thead>
+				<tbody>
+				 	<?php $i=0; foreach ($this->list as $item)
+				 	{
+				 		?>
+				 		<tr>  
+				 			<td align="center"><?php echo $i+1; ?></td>
+		    				<td align="center"><?php echo $item['category_name'];?></td>
+		    				<td align="center"><?php if($item['category_parent_id']!='0') echo $this->listParent[$i];?></td>
+		    				<td align="center"><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td>
+		    				<td align="center">
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/chuyenmuc/edit/category_id/<?php echo $item['category_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				</td>
+						</tr>
+				 	<?php $i++;
+					}?>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/chuyenmuc/insert');?>">Thêm mới</a>
+				</div>
+				<?php 
+			       echo $this->paginationControl($this->list, 'Sliding' , 'chuyenmuc/pagination.phtml'); 
+				?>
+		</footer>
+	</div>
+</article>

@@ -25,14 +25,20 @@
 			$user_pass->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 			
 			$user_fullname = new Zend_Form_Element_Text('user_fullname');
+			$user_fullname->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên người dùng không được để trống'));
+			
 			$user_email = new Zend_Form_Element_Text('user_email');
+			$user_email->addValidator('EmailAddress',true,array('messages'=>'Địa chỉ email không hợp lệ'));
+			$user_email->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Email không được để trống'));
+			
 			$user_address = new Zend_Form_Element_Text('user_address');
+			$user_address->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Địa chỉ không được để trống'));
 			
 			$is_active = $form->createElement("select","is_active",array(
                                                         "label" => "Kích hoạt",
                                                    "multioptions"=> array(
-                                                                      "0" => "Chưa kích hoạt",
-                                                                      "1" => "Đã kích hoạt")));
+                                                                      "0" => "Không",
+                                                                      "1" => "Có")));
 
 			$user_login->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$user_pass->removeDecorator('HtmlTag')->removeDecorator('Label');
@@ -143,7 +149,7 @@
 					}
 					else 
 					{
-						$_SESSION['result']='Thêm mới không thành công';
+						$_SESSION['result']='Cập nhật không thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 					}
 				}

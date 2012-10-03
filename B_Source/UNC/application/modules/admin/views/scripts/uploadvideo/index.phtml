@@ -22,9 +22,22 @@
 				 			<td><?php echo $i; ?></td>
 		    				<td><?php echo $video['video_title'];?></td>
 		    				<td><?php echo $video['video_description'];?></td>
-		    				<td><a href="http://www.youtube.com/watch?v=<?php echo $video['video_link']; ?>">http://www.youtube.com/watch?v=<?php echo $video['video_link']; ?></a></td> 
+		    				<td><a href="<?php echo $video['video_full_link']; ?>"><?php echo $video['video_full_link']; ?></a></td> 
 							<td>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/edit/video_link/<?php echo $video['video_link']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    					<?php
+		    					if($video['video_link']!=null)
+								{
+									?>
+										<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/edit/video_link/<?php echo $video['video_link']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+									<?php
+								}
+								else 
+								{
+									?>
+										<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/update/video_id/<?php echo $video['video_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+									<?php
+								}
+		    					?>
 		    					<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/del/video_link/<?php echo $video['video_link']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
@@ -34,6 +47,9 @@
 		</div>
 		<footer>
 			<form>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới</a>
+				</div>
 				<div class="submit_link">
 					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>
 				</div>

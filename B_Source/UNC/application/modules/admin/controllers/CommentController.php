@@ -63,7 +63,7 @@
 				}
 				else 
 				{
-					$_SESSION['result']='Thêm mới không thành công';
+					$_SESSION['result']='Cập nhật không thành công';
 					$this->_redirect($this->view->baseUrl().'/../admin/comment');
 				}
 				

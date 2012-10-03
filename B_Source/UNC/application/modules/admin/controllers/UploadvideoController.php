@@ -74,10 +74,15 @@
 		{
 			$form = new Zend_Form;
 			$form->setMethod('post')->setAction('');
+			
+			$link = new Zend_Form_Element_Text('link');
+			$link ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Liên kết không được để trống'));
+			
 			$title = new Zend_Form_Element_Text('title');
 			$title ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));
 			
-			$description = new Zend_Form_Element_Text('description');
+			$description = new Zend_Form_Element_Textarea('description');
+			$description->setAttrib('rows', '5');
 			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
 			
 			$title->removeDecorator('HtmlTag')->removeDecorator('Label');	
@@ -86,6 +91,115 @@
 			$form->addElements(array($title,$description));
 			return $form;
 			
+		}
+		
+		function _getInput($form)
+		{
+			$input = array(
+						'video_full_link'			=> $form->getValue('link'),
+						'video_title'				=> $form->getValue('title'),
+						'video_description'			=> $form->getValue('description')
+						);
+			return $input;
+		}
+		
+		function updateAction()
+		{
+			$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			
+			$form=$this->formInsert();
+			$video_id=$this->_request->getParam('video_id');
+			$info=$this->mVideo->getVideoById($video_id);
+			
+			$form->setAction($this->view->baseUrl().'/admin/uploadvideo/update/video_id/'.$video_id);
+			$form->getElement('link')->setValue($info['video_full_link']);
+			$form->getElement('title')->setValue($info['video_title']);
+			$form->getElement('description')->setValue($info['video_description']);
+			$this->view->form=$form;
+			$this->view->title="Sửa thông tin video";
+			
+			if($this->_request->isPost())
+			{
+				if($form->isValid($_POST))
+				{
+					$input=$this->_getInput($form);
+					if ($this->mVideo->updateVideo($video_id,$input))
+					{
+						$_SESSION['result']='Cập nhật thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+					}
+					else 
+					{
+						$_SESSION['result']='Cập nhật không thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+					}
+				}
+				else 
+				{
+					$form->populate($_POST);
+				}
+			}
+			
+		}
+		
+		function insertAction()
+		{
+			$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			
+			$form = $this->formInsert();
+			$this->view->title = 'Thêm video mới';
+			$this->view->form = $form;
+			
+			if($this->_request->isPost())
+			{
+				if($form->isValid($_POST))
+				{
+					$input=$this->_getInput($form);
+					if ($this->mVideo->insertVideoLink($input))
+					{
+						$_SESSION['result']='Thêm mới thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+					}
+					else 
+					{
+						$_SESSION['result']='Thêm mới không thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+					}
+				}
+				else 
+				{
+					$form->populate($_POST);
+				}
+			}
+		}
+		
+		function formInsert()
+		{
+			$form = new Zend_Form;
+			$form->setMethod('post')->setAction('');
+			
+			$link = new Zend_Form_Element_Text('link');
+			$link ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Liên kết không được để trống'));
+			
+			$title = new Zend_Form_Element_Text('title');
+			$title ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));
+			
+			$description = new Zend_Form_Element_Textarea('description');
+			$description->setAttrib('rows', '5');
+			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
+			
+			$link->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$title->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$description->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			
+			$form->addElements(array($link,$title,$description));
+			return $form;
 		}
 		
 		function uploadAction()
@@ -194,9 +308,10 @@
 			$video_link =  $this->_request->getParam('video_link');
 			$info = $this->mVideo->getVideoByVideoLink($video_link);
 			
-			$form = $this->setForm();
+			$form = $this->formInsert();
 			$form->setAction($this->view->baseUrl().'/admin/uploadvideo/edit/video_link/'.$video_link);
 			
+			$form->getElement('link')->setValue($info['video_full_link']);
 			$form->getElement('title')->setValue($info['video_title']);
 			$form->getElement('description')->setValue($info['video_description']);
 			
@@ -204,17 +319,16 @@
 			$this->view->title = 'Sửa thông tin video';			
 			
 			if($this->_request->isPost())
-			{	
-						
+			{				
 				if($form->isValid($_POST))
 				{
 					$input = array(
 							'video_link'			=> $this->_request->getParam('video_link'),
 							'video_title'			=> $form->getValue('title'),
-							'video_description'	=> $form->getValue('description')
+							'video_description'		=> $form->getValue('description'),
+							
 					);
-					
-					//var_dump($input);die();
+
 					try 
 					{
 						$httpClient = $this->_httpClient();

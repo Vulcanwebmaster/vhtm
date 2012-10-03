@@ -95,4 +95,3 @@ $(document).ready(function () {
  $('#spanYear').html(new Date().getFullYear()); 
  
 // END -----------------------------  6 
-  

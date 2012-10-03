@@ -7,9 +7,15 @@
 			$this->db=Zend_Registry::get('db');
 		}
 		
+		function insertVideoLink($input)
+		{
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'",null,"1","'.$input['video_full_link'].'",null)');
+			return $query;
+		}
+		
 		function insertVideo($input)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","0")');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","1","http://www.youtube.com/watch?v='.$input['video_link'].'","")');
 			return $query;
 		}
 		
@@ -27,12 +33,27 @@
 			return $query->fetchAll();
 		}
 		
+		function updateVideo($video_id,$input)
+		{
+			$query=$this->db->query('update unc_video 
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" 
+									where video_id="'.$video_id.'"');
+			return $query;
+		}
+		
 		function editVideo($input)
 		{
 			$query=$this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="0" 
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1",video_full_link="'.$input['video_full_link'].'" 
 									where video_link="'.$input['video_link'].'"');
 			return $query;
+		}
+		
+		function getVideoById($video_id)
+		{
+			$query = $this->db->query('select * from unc_video where video_id="'.$video_id.'"');
+			$list = $query->fetchAll();
+			return $list[0];
 		}
 		
 		function getVideoByVideoLink($video_link)

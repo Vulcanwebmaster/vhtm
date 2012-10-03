@@ -9,7 +9,7 @@
 		
 		function getListByRole($role)
 		{
-			$query=$this->db->query('select * from unc_user where role_id="'.$role.'"');
+			$query=$this->db->query('select * from unc_user where role_id="'.$role.'" order by is_active desc, user_id desc');
 			return $query->fetchAll();
 		}
 		

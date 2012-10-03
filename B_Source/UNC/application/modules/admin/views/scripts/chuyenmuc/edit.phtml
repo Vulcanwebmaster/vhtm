@@ -5,16 +5,27 @@
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
 				<fieldset>
-					<label>Liên kết </label>
-					<?php echo $this->form->getElement('link');?>
+					<label>Tên chuyên mục : </label>
+					<?php echo $this->form->getElement('category_name');?>
+				</fieldset>
+				
+				<fieldset>
+					<label>Chuyên mục cha : </label>
+					<select name="category_parent_id">
+					<option value="0"></option>
+					<?php
+						foreach($this->list as $item)
+						{
+							?>
+								<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_name']; ?></option>	
+							<?php 
+						}
+					?>
+				</select>
 				</fieldset>
 				<fieldset>
-					<label>Tiêu đề </label>
-					<?php echo $this->form->getElement('title');?>
-				</fieldset>
-				<fieldset>
-					<label>Mô tả</label>
-					<?php echo $this->form->getElement('description');?>
+					<label>Kích hoạt : </label>
+					<?php echo $this->form->getElement('is_active');?>
 				</fieldset>
 			</div>
 		</div>
