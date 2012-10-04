@@ -2,6 +2,8 @@
 	class Admin_UploadvideoController extends Zend_Controller_Action
 	{
 		protected $mVideo;
+		protected $mYoutube;
+		protected $user,$pass,$gallery;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -11,11 +13,33 @@
 		      
 		      session_start();
 			  $this->mVideo = new Admin_Model_Mvideo();
-			  
+			  $this->mYoutube = new Admin_Model_Myoutube();
+			  $account = $this->mYoutube->getAccountSelected();
+			  $this->user = $account['youtube_username'];
+			  $this->pass = $account['password'];
+			  $this->gallery = $account['youtube_gallery'];
+		}
+		
+		function _httpClient()
+		{
+			$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
+			Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+			$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
+							              $username = $this->user,
+							              $password = $this->pass,
+							              $service 	= 'youtube',
+							              $client 	= null,
+							              $source 	= 'NIWApp', 
+							              $loginToken 	= null,
+							              $loginCaptcha = null,
+							              $authenticationURL
+							           );
+			return $httpClient;
 		}
 		
 		function indexAction()
 		{
+			echo $this->user.' - '.$this->pass.' - '.$this->gallery;
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -24,7 +48,7 @@
 		    $youtube  = new Zend_Gdata_YouTube();
 		 
 		    try {
-		        $feed = $youtube->getUserUploads('unc811');
+		        $feed = $youtube->getUserUploads($this->gallery);
 				foreach ($feed as $video)
 				 	{
 				 		$video_link = $video->getVideoId();
@@ -35,7 +59,7 @@
 											'video_description' => $video->getVideoDescription(),
 											'video_link'		=> $video_link
 							);
-							$this->mVideo->insertVideo($input);
+							$this->mVideo->insertVideo($input,$this->user,$this->pass);
 						}
 					}
 		    }
@@ -51,23 +75,6 @@
          		$paginator->setCurrentPageNumber($currentPage);
         		$this->view->list=$paginator;
 			$this->view->title = 'Quản lý video';
-		}
-		
-		function _httpClient()
-		{
-			$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
-						Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
-						$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-							              $username = 'unc.video@gmail.com',
-							              $password = 'khongcopass',
-							              $service 	= 'youtube',
-							              $client 	= null,
-							              $source 	= 'NIWApp', // a short string identifying your application
-							              $loginToken 	= null,
-							              $loginCaptcha = null,
-							              $authenticationURL
-							           );
-			return $httpClient;
 		}
 		
 		function setForm()
@@ -204,6 +211,7 @@
 		
 		function uploadAction()
 		{
+			echo $this->user.' - '.$this->pass.' - '.$this->gallery;
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -279,11 +287,28 @@
 		
 		function delAction()
 		{
-			$video_link =  $this->_request->getParam('video_link');
-			$this->mVideo->delVideo($video_link);
+			$video_id = $this->_request->getParam('video_id');
+			$video = $this->mVideo->getVideoById($video_id);
+			$video_link = $video['video_link'];
+			$user = $video['youtube_username'];
+			$pass = $video['password'];
+			$this->mVideo->delVideo($video_id);
+			if($video_link != null)
+			{
 				try 
 					{
-						$httpClient = $this->_httpClient();
+						$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
+						Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+						$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
+										              $username = $user,
+										              $password = $pass,
+										              $service 	= 'youtube',
+										              $client 	= null,
+										              $source 	= 'NIWApp', 
+										              $loginToken 	= null,
+										              $loginCaptcha = null,
+										              $authenticationURL
+										           );
 									   
 						Zend_Loader::loadClass('Zend_Gdata_YouTube');
 					 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
@@ -295,6 +320,7 @@
 				        echo $ex->getMessage();
 				        exit;
 				    }
+			}
 			$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 		}
 		
@@ -316,7 +342,7 @@
 			$form->getElement('description')->setValue($info['video_description']);
 			
 			$this->view->form = $form;
-			$this->view->title = 'Sửa thông tin video';			
+			$this->view->title = 'Sửa thông tin video';		
 			
 			if($this->_request->isPost())
 			{				
@@ -328,10 +354,26 @@
 							'video_description'		=> $form->getValue('description'),
 							
 					);
-
+					
+					$account = $this->mVideo->getVideoByVideoLink($video_link);
+					$user = $account['youtube_username'];
+					$pass = $account['password'];
+					
+					$this->mVideo->editVideo($input);
 					try 
 					{
-						$httpClient = $this->_httpClient();
+						$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
+						Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+						$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
+										              $username = $user,
+										              $password = $pass,
+										              $service 	= 'youtube',
+										              $client 	= null,
+										              $source 	= 'NIWApp', 
+										              $loginToken 	= null,
+										              $loginCaptcha = null,
+										              $authenticationURL
+										           );
 									   
 						Zend_Loader::loadClass('Zend_Gdata_YouTube');
 					 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');

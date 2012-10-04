@@ -1,0 +1,67 @@
+<?php if (isset($_SESSION['result']))
+{
+	echo '<p class="message">';
+	echo $_SESSION['result'];
+	echo '</p>';
+	unset($_SESSION['result']);
+}
+$i=0;
+?>
+<script type="text/javascript" language="javascript">
+	function confirmDelete()
+	{
+		return confirm('Bạn có chắc rằng muốn xóa tài khoản này?');
+	}
+</script>
+
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<table class="tablesorter" cellspacing="0">
+				<thead> 
+					<tr>
+						<th align="center">STT</th> 
+	    				<th align="center">Tên tài khoản</th>
+	    				<th align="center">Tên album</th>
+	    				<th align="center">Kích hoạt</th>
+	    				<th align="center">Tùy chọn</th>
+					</tr> 
+				</thead>
+				<tbody>
+				 	<?php foreach ($this->list as $item)
+				 	{
+				 		$i++;
+				 		?>
+				 		<tr>
+				 			<td align="center"><?php echo $i; ?></td>  
+		    				<td align="center"><?php echo $item['youtube_username'];?></td>
+		    				<td align="center"><?php echo $item['youtube_gallery'];?></td> 
+		    				<td align="center"><?php echo $item['is_selected'];?></td> 
+		    				<td align="center">
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/youtube/edit/id/<?php echo $item['youtube_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/youtube/delete/id/<?php echo $item['youtube_id']; ?>" onclick="return confirmDelete();" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    				</td>
+						</tr>
+				 	<?php }?>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+			<form>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/youtube/insert');?>">Thêm tài khoản mới</a>
+				</div>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới video</a>
+				</div>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>
+				</div>
+				<?php 
+			       echo $this->paginationControl($this->list, 'Sliding' , 'youtube/pagination.phtml'); 
+				?>
+		</footer>
+	</div>
+	</form>
+</article>

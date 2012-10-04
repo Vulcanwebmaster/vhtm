@@ -6,11 +6,11 @@
 			<table class="tablesorter" cellspacing="0">
 				<thead> 
 					<tr>
-						<th>STT</th>
-	    				<th>Tiêu đề</th> 
-	    				<th>Mô tả</th>
-	    				<th>Liên kết</th>
-	    				<th>Action</th>
+						<th align="center">STT</th>
+	    				<th align="center">Tiêu đề</th> 
+	    				<th align="center">Mô tả</th>
+	    				<th align="center">Liên kết</th>
+	    				<th align="center">Action</th>
 					</tr> 
 				</thead>
 				<tbody>
@@ -19,11 +19,11 @@
 				 		$i++;
 				 		?>
 				 		<tr>  
-				 			<td><?php echo $i; ?></td>
-		    				<td><?php echo $video['video_title'];?></td>
-		    				<td><?php echo $video['video_description'];?></td>
-		    				<td><a href="<?php echo $video['video_full_link']; ?>"><?php echo $video['video_full_link']; ?></a></td> 
-							<td>
+				 			<td align="center"><?php echo $i; ?></td>
+		    				<td style="padding-left: 40px;"><?php echo $video['video_title'];?></td>
+		    				<td style="padding-left: 40px;"><?php echo $video['video_description'];?></td>
+		    				<td align="center"><a href="<?php echo $video['video_full_link']; ?>"><?php echo $video['video_full_link']; ?></a></td> 
+							<td align="center">
 		    					<?php
 		    					if($video['video_link']!=null)
 								{
@@ -38,7 +38,7 @@
 									<?php
 								}
 		    					?>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/del/video_link/<?php echo $video['video_link']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/del/video_id/<?php echo $video['video_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>
@@ -48,7 +48,10 @@
 		<footer>
 			<form>
 				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới</a>
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/youtube');?>">Quản lý tài khoản Youtube</a>
+				</div>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới video</a>
 				</div>
 				<div class="submit_link">
 					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>

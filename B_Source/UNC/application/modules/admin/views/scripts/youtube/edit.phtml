@@ -1,0 +1,31 @@
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset>
+					<label>Tên tài khoản</label>
+					<?php echo $this->form->getElement('youtube_username');?>
+				</fieldset>
+				<fieldset>
+					<label>Mật khẩu</label>
+					<?php echo $this->form->getElement('password');?>
+				</fieldset>
+				<fieldset>
+					<label>Tên album</label>
+					<?php echo $this->form->getElement('youtube_gallery');?>
+				</fieldset>
+				<fieldset>
+					<label>Kích hoạt</label>
+					<?php echo $this->form->getElement('is_selected');?>
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link">
+				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>
