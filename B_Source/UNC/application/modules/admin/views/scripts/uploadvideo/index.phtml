@@ -48,13 +48,11 @@
 		<footer>
 			<form>
 				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/youtube');?>">Quản lý tài khoản Youtube</a>
-				</div>
-				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới video</a>
-				</div>
-				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>
+					<a class="alt_btn" style="margin-left: 10px;" href="<?php echo $this->baseUrl('admin/youtube');?>">Quản lý tài khoản Youtube</a>
+
+					<a class="alt_btn" style="margin-left: 10px;" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới video</a>
+			
+					<a class="alt_btn" style="margin-left: 10px;" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>
 				</div>
 				<?php 
 			       echo $this->paginationControl($this->list, 'Sliding' , 'uploadvideo/pagination.phtml'); 
