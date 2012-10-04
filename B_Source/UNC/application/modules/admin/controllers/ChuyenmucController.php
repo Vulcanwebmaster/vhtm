@@ -133,7 +133,7 @@
 			
 			$this->view->form=$form;
 			$this->view->title="Sửa thông tin chuyên mục";
-			$this->view->list = $this->mChuyenmuc->getListCM();
+			$this->view->list = $this->mChuyenmuc->getListCmParent();
 			
 			if($this->_request->isPost())
 			{
