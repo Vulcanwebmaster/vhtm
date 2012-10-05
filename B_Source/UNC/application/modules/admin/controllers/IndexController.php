@@ -9,9 +9,7 @@ class Admin_IndexController extends Zend_Controller_Action
 	                   'layoutPath' => $layoutPath );
 	      Zend_Layout::startMvc ( $option );
 	      
-	      session_start();
-		  $this->mAdmin = new Admin_Model_Madmin();
-		  
+	      session_start();		  
 	}
 	public function indexAction()
 	{
@@ -26,10 +24,10 @@ class Admin_IndexController extends Zend_Controller_Action
 	{
 		$username=$this->_request->getParam('username');
 		$password=$this->_request->getParam('password');
-		if ($this->mAdmin->isExistAccount($username,$password))
+		if ($mAdmin->isExistAccount($username,$password))
 		{
 			$_SESSION['user'] = $username;
-			$_SESSION['role'] = $this->mAdmin->getRoleByUser($username);
+			$_SESSION['role'] = $mAdmin->getRoleByUser($username);
 			$this->_redirect($this->view->baseUrl().'/../admin/index/home');
 		}
 		else $this->_redirect($this->view->baseUrl().'/../admin');

@@ -39,12 +39,4 @@
 									where user_id="'.$id.'"');
 			return $query;
 		}
-		
-		function isExitsUsername($username)
-		{
-			$query=$this->db->query('select * from unc_user where user_login="'.$username.'"');
-			if (count($query->fetchAll())>0)
-				return true;
-			else return false;
-		}
 	}

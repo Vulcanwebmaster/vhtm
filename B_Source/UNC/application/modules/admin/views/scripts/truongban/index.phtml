@@ -26,7 +26,14 @@ $i=0;
 	    				<th align="center">Họ và tên</th>
 	    				<th align="center">Email</th>
 	    				<th align="center">Kích hoạt</th>
-	    				<th align="center">Action</th>
+	    				<?php 
+	    				if($this->role !="2")
+						{
+	    				?>
+	    					<th align="center">Action</th>
+	    				<?php 
+						}
+	    				?>
 					</tr> 
 				</thead>
 				<tbody>
@@ -40,13 +47,14 @@ $i=0;
 		    				<td align="center"><?php echo $item['user_fullname'];?></td> 
 		    				<td align="center"><?php echo $item['user_email'];?></td>
 		    				<td align="center"><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td> 
-		    				<td align="center">
-		    				<?php
+		    				<?php 
 		    					//Khi 1 trưởng ban đăng nhập thì chỉ được sửa thông tin của mình
 		    					if($item['user_login'] == $this->user & $this->role == "1")
 								{
 		    				?>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    					<td align="center">
+		    						<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    					</td>
 		    				<?php
 								}
 								
@@ -54,12 +62,14 @@ $i=0;
 								if($this->role == "0")
 								{
 		    				?>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/delete/userid/<?php echo $item['user_id']; ?>" onclick="return confirmDelete();" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<td align="center">
+			    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+			    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/delete/userid/<?php echo $item['user_id']; ?>" onclick="return confirmDelete();" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					</td>
 		    				<?php
 								}
 		    				?>
-		    				</td>
+		    				
 						</tr>
 				 	<?php }?>
 				</tbody>

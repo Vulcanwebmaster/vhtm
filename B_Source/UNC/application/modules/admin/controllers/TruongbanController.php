@@ -1,9 +1,10 @@
 <?php
 	class Admin_TruongbanController extends Zend_Controller_Action
 	{
+		protected $mTruongban;
 		protected $mUser;
+		
 		protected $role;
-		protected $user;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -12,7 +13,8 @@
 		      Zend_Layout::startMvc ( $option );
 		      
 		      session_start();
-		      $this->mUser = new Admin_Model_Muser();
+			  $this->mTruongban = new Admin_Model_Mtruongban();
+			  
 			  $this->role = $_SESSION['role'];
 			  $this->user = $_SESSION['user'];
 		}
@@ -62,7 +64,29 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$paginator = Zend_Paginator::factory($this->mUser->getListByRole('1'));
+			//echo $this->role;die();
+			if($this->role == "2")
+			{
+				$user_id = $this->mTruongban->getIdByUsername($this->user);
+				$category_id = $this->mTruongban->getCategoryIdByUserId($user_id);
+				//echo $this->role.' --- '.$category_id.' --- '.$user_id;die();
+				$listUser = $this->mTruongban->getListUserIdByCategoryId($category_id,$user_id);
+				$listTruongBan = array();
+				
+				foreach($listUser as $list)
+				{
+					if($this->mTruongban->isTruongban($list['user_id']))
+					{
+						$listTruongBan[] = $this->mTruongban->getUserById($list['user_id']);
+					}
+				}
+				$paginator = Zend_Paginator::factory($listTruongBan);
+			}
+			else 
+			{
+				$paginator = Zend_Paginator::factory($this->mTruongban->getListByRole('1'));
+			}
+			
         	$paginator->setItemCountPerPage(5);        
         	$paginator->setPageRange(3);
         	$currentPage = $this->_request->getParam('page',1);
@@ -104,13 +128,13 @@
 				{
 					$input=$this->_getInput($form);
 					
-					if($this->mUser->isExitsUsername($input['user_login']))
+					if($this->mTruongban->isExitsUsername($input['user_login']))
 					{
 						$_SESSION['result']='Tên đăng nhập đã tồn tại !';
 					}
 					else 
 					{
-						if ($this->mUser->insertUser($input))
+						if ($this->mTruongban->insertUser($input))
 						{
 							$_SESSION['result']='Thêm mới thành công';
 							$this->_redirect($this->view->baseUrl().'/../admin/truongban');
@@ -140,7 +164,7 @@
 			
 			$form=$this->setForm();
 			$userId=$this->_request->getParam('userid');
-			$info=$this->mUser->getUserById($userId);
+			$info=$this->mTruongban->getUserById($userId);
 			//echo $this->role.' --- '.$this->user.' --- '.$info['user_login'];die();
 			if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
 			{
@@ -161,7 +185,7 @@
 						$input=$this->_getInput($form);
 						if($info['user_login']==$input['user_login'])
 						{
-							if ($this->mUser->editUser($userId, $input))
+							if ($this->mTruongban->editUser($userId, $input))
 							{
 								$_SESSION['result']='Cập nhật thành công';
 								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
@@ -174,7 +198,7 @@
 						}
 						else 
 						{
-							if($this->mUser->isExitsUsername($input['user_login']))
+							if($this->mTruongban->isExitsUsername($input['user_login']))
 							{
 								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
 							}
@@ -199,7 +223,7 @@
 			$userid=$this->_request->getParam('userid');
 			if($this->role == "0")
 			{
-				if ($this->mUser->deleteUser($userid))
+				if ($this->mTruongban->deleteUser($userid))
 					$_SESSION['result']='Xóa thành công';
 				else $_SESSION['result']='Xóa không thành công';
 			}
