@@ -71,15 +71,23 @@
 				$category_id = $this->mTruongban->getCategoryIdByUserId($user_id);
 				//echo $this->role.' --- '.$category_id.' --- '.$user_id;die();
 				$listUser = $this->mTruongban->getListUserIdByCategoryId($category_id,$user_id);
+				//var_dump($listUser);die();
+				$allTruongban = $this->mTruongban->getListByRole('1');
+				//var_dump($allTruongban);die();
 				$listTruongBan = array();
-				
-				foreach($listUser as $list)
+				//echo $count;die();
+				foreach($allTruongban as $truongBan)
 				{
-					if($this->mTruongban->isTruongban($list['user_id']))
+					foreach($listUser as $user)
 					{
-						$listTruongBan[] = $this->mTruongban->getUserById($list['user_id']);
+						if($truongBan['user_id']==$user['user_id'])
+						{
+							$listTruongBan[]=$truongBan;
+						}
 					}
 				}
+				
+				//var_dump($listTruongBan);die();
 				$paginator = Zend_Paginator::factory($listTruongBan);
 			}
 			else 
