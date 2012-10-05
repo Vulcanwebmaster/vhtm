@@ -2,6 +2,8 @@
 	class Admin_TruongbanController extends Zend_Controller_Action
 	{
 		protected $mUser;
+		protected $role;
+		protected $user;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -10,7 +12,9 @@
 		      Zend_Layout::startMvc ( $option );
 		      
 		      session_start();
-		      $this->mUser=new Admin_Model_Muser();
+		      $this->mUser = new Admin_Model_Muser();
+			  $this->role = $_SESSION['role'];
+			  $this->user = $_SESSION['user'];
 		}
 		
 		function setForm()
@@ -65,6 +69,9 @@
          	$paginator->setCurrentPageNumber($currentPage);
         	$this->view->list=$paginator;
 			$this->view->title="Trưởng ban";
+			
+			$this->view->role = $this->role;
+			$this->view->user = $this->user;
 		}
 		
 		function _getInput($form)
@@ -96,15 +103,23 @@
 				if($form->isValid($_POST))
 				{
 					$input=$this->_getInput($form);
-					if ($this->mUser->insertUser($input))
+					
+					if($this->mUser->isExitsUsername($input['user_login']))
 					{
-						$_SESSION['result']='Thêm mới thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						$_SESSION['result']='Tên đăng nhập đã tồn tại !';
 					}
 					else 
 					{
-						$_SESSION['result']='Thêm mới không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						if ($this->mUser->insertUser($input))
+						{
+							$_SESSION['result']='Thêm mới thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						}
+						else 
+						{
+							$_SESSION['result']='Thêm mới không thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						}
 					}
 				}
 				else 
@@ -126,37 +141,55 @@
 			$form=$this->setForm();
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mUser->getUserById($userId);
-			
-			$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
-			$form->getElement('user_login')->setValue($info['user_login']);
-			$form->getElement('user_pass')->setValue($info['user_pass']);
-			$form->getElement('user_fullname')->setValue($info['user_fullname']);
-			$form->getElement('user_email')->setValue($info['user_email']);
-			$form->getElement('user_address')->setValue($info['user_address']);
-			$form->getElement('is_active')->setValue($info['is_active']);
-			$this->view->form=$form;
-			$this->view->title="Sửa thông tin trưởng ban";
-			
-			if($this->_request->isPost())
+			//echo $this->role.' --- '.$this->user.' --- '.$info['user_login'];die();
+			if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
 			{
-				if($form->isValid($_POST))
+				$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
+				$form->getElement('user_login')->setValue($info['user_login']);
+				$form->getElement('user_pass')->setValue($info['user_pass']);
+				$form->getElement('user_fullname')->setValue($info['user_fullname']);
+				$form->getElement('user_email')->setValue($info['user_email']);
+				$form->getElement('user_address')->setValue($info['user_address']);
+				$form->getElement('is_active')->setValue($info['is_active']);
+				$this->view->form=$form;
+				$this->view->title="Sửa thông tin trưởng ban";
+				
+				if($this->_request->isPost())
 				{
-					$input=$this->_getInput($form);
-					if ($this->mUser->editUser($userId, $input))
+					if($form->isValid($_POST))
 					{
-						$_SESSION['result']='Cập nhật thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						$input=$this->_getInput($form);
+						if($info['user_login']==$input['user_login'])
+						{
+							if ($this->mUser->editUser($userId, $input))
+							{
+								$_SESSION['result']='Cập nhật thành công';
+								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+							}
+							else 
+							{
+								$_SESSION['result']='Cập nhật không thành công';
+								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+							}
+						}
+						else 
+						{
+							if($this->mUser->isExitsUsername($input['user_login']))
+							{
+								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
+							}
+						}
 					}
 					else 
 					{
-						$_SESSION['result']='Cập nhật không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+						$form->populate($_POST);
 					}
 				}
-				else 
-				{
-					$form->populate($_POST);
-				}
+			}
+			else
+			{
+				$_SESSION['result']='Bạn không có quyền sửa mục này !';
+				$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 			}
 			
 		}
@@ -164,11 +197,16 @@
 		function deleteAction()
 		{
 			$userid=$this->_request->getParam('userid');
-			
-			if ($this->mUser->deleteUser($userid))
-				$_SESSION['result']='Xóa thành công';
-			else $_SESSION['result']='Xóa không thành công';
-			
+			if($this->role == "0")
+			{
+				if ($this->mUser->deleteUser($userid))
+					$_SESSION['result']='Xóa thành công';
+				else $_SESSION['result']='Xóa không thành công';
+			}
+			else 
+			{
+				$_SESSION['result']='Bạn không có quyền sửa mục này !';
+			}
 			$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 		}
 	}

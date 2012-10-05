@@ -41,8 +41,24 @@ $i=0;
 		    				<td align="center"><?php echo $item['user_email'];?></td>
 		    				<td align="center"><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td> 
 		    				<td align="center">
+		    				<?php
+		    					//Khi 1 trưởng ban đăng nhập thì chỉ được sửa thông tin của mình
+		    					if($item['user_login'] == $this->user & $this->role == "1")
+								{
+		    				?>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				<?php
+								}
+								
+								//Nếu là admin thì full quyền
+								if($this->role == "0")
+								{
+		    				?>
 		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/edit/userid/<?php echo $item['user_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
 		    					<a href="<?php echo $this->baseUrl(); ?>/admin/truongban/delete/userid/<?php echo $item['user_id']; ?>" onclick="return confirmDelete();" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    				<?php
+								}
+		    				?>
 		    				</td>
 						</tr>
 				 	<?php }?>

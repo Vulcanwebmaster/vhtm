@@ -7,6 +7,14 @@
 				<fieldset>
 					<label>Tên đăng nhập</label>
 					<?php echo $this->form->getElement('user_login');?>
+					<?php if (isset($_SESSION['result']))
+					{
+						echo '<p class="message">';
+						echo $_SESSION['result'];
+						echo '</p>';
+						unset($_SESSION['result']);
+					}
+					?>
 				</fieldset>
 				<fieldset>
 					<label>Mật khẩu</label>

@@ -6,5 +6,6 @@
 		{
 			$this->db=Zend_Registry::get('db');
 		}
+		
 	}
 ?>
