@@ -77,10 +77,15 @@ $i=0;
 		</div>
 		<footer>
 			<form>
+				<?php
+				if($this->role == "0")
+				{
+				?>
 				<div class="submit_link">
 					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/truongban/insert');?>">Thêm mới</a>
 				</div>
 				<?php 
+				}
 			       echo $this->paginationControl($this->list, 'Sliding' , 'truongban/pagination.phtml'); 
 				?>
 		</footer>
