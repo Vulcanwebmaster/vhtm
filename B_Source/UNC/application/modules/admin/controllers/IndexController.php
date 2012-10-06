@@ -26,8 +26,12 @@ class Admin_IndexController extends Zend_Controller_Action
 		$password=$this->_request->getParam('password');
 		if ($mAdmin->isExistAccount($username,$password))
 		{
-			$_SESSION['user'] = $username;
+			$account=$mAdmin->getAccountByUser($username);
+			$_SESSION['role_id']=$account['role_id'];
+			$_SESSION['user']=$username;
 			$_SESSION['role'] = $mAdmin->getRoleByUser($username);
+			
+			$_SESSION['user_id']=$account['user_id'];
 			$this->_redirect($this->view->baseUrl().'/../admin/index/home');
 		}
 		else $this->_redirect($this->view->baseUrl().'/../admin');
@@ -36,6 +40,8 @@ class Admin_IndexController extends Zend_Controller_Action
 	public function logoutAction()
 	{
 		unset($_SESSION['user']);
+		unset($_SESSION['role_id']);
+		unset($_SESSION['user_id']);
 		unset($_SESSION['role']);
 		$this->_redirect($this->view->baseUrl().'/../admin');
 	}

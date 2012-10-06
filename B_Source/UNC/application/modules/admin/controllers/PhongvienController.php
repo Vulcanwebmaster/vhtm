@@ -20,7 +20,12 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$this->view->list=$this->mUser->getListByRole('2');
+			$paginator= Zend_Paginator::factory($this->mUser->getListByRole('2'));//($adapter);
+			$paginator->setItemCountPerPage(6);
+			$current=$this->_request->getParam('page',1);
+			$paginator->setCurrentPageNumber($current);
+			
+			$this->view->list=$paginator;
 			$this->view->title="Phóng viên";
 		}
 		
@@ -49,19 +54,12 @@
 			
 			$form->addElement('text','user_login');
 			$user_login=$form->getElement('user_login');
-			$user_login->setOrder(1)->setRequired(true);
+			$user_login->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
 			$user_login->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$form->addElement('text','user_pass');
 			$el=$form->getElement('user_pass');
-			$el->setOrder(2)->setRequired(true);
-			$el->setLabel('Tên đăng nhập');
-			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
-			
-			$form->addElement('text','user_pass');
-			$el=$form->getElement('user_pass');
-			$el->setOrder(2)->setRequired(true);
-			$el->setLabel('Mật khẩu');
+			$el->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$form->addElement('text','user_fullname');
@@ -71,6 +69,7 @@
 			
 			$form->addElement('text','user_email');
 			$el=$form->getElement('user_email');
+			$el->addValidator('EmailAddress', true , array('messages'=>'Email phải nhập đúng định dạng'));
 			$el->setLabel('Email');
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
@@ -82,8 +81,8 @@
 			$el=$form->createElement("select","is_active",array(
                                                         "label" => "Kích hoạt",
                                                    "multioptions"=> array(
-                                                                      "0" => "Chưa kích hoạt",
-                                                                      "1" => "Đã kích hoạt")));
+                                                                      "0" => "Không",
+                                                                      "1" => "Có")));
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
@@ -112,24 +111,28 @@
 			$this->view->title="Thêm phóng viên";
 			
 			$form=$this->setForm();
-			if (!$form->isValid($_POST))
+			if ($this->_request->isPost())
 			{
-				$this->view->form=$this->setForm($form);
-			}
-			else
-			{
-				$input=$this->_getInput($form);
-				if ($this->mUser->insertUser($input))
+				if (!$form->isValid($_POST))
 				{
-					$_SESSION['result']='Thêm mới thành công';
-					$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+					$this->view->form=$this->setForm($form);
 				}
-				else 
+				else
 				{
-					$this->view->error=$form->getMessage();
-					$this->view->form=$form;
+					$input=$this->_getInput($form);
+					if ($this->mUser->insertUser($input))
+					{
+						$_SESSION['result']='Thêm mới thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+					}
+					else 
+					{
+						$this->view->error=$form->getMessage();
+						
+					}
 				}
 			}
+			$this->view->form=$form;
 		}
 		
 		function editAction()
@@ -141,35 +144,54 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$form=$this->setForm();
-			if (!$form->isValid($_POST))
+			
+			if ($this->_request->isPost())
 			{
-				$userId=$this->_request->getParam('userid');
-				$info=$this->mUser->getUserById($userId);
-				
-				$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
-				$form->getElement('user_login')->setValue($info['user_login']);
-				$form->getElement('user_pass')->setValue($info['user_pass']);
-				$form->getElement('user_fullname')->setValue($info['user_fullname']);
-				$form->getElement('user_email')->setValue($info['user_email']);
-				$form->getElement('user_address')->setValue($info['user_address']);
-				$form->getElement('is_active')->setValue($info['is_active']);
-				
-				$this->view->form=$form;
+				if (!$form->isValid($_POST))
+				{
+					$userId=$this->_request->getParam('userid');
+					$info=$this->mUser->getUserById($userId);
+					
+					$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
+					$form->getElement('user_login')->setValue($info['user_login']);
+					$form->getElement('user_pass')->setValue($info['user_pass']);
+					$form->getElement('user_fullname')->setValue($info['user_fullname']);
+					$form->getElement('user_email')->setValue($info['user_email']);
+					$form->getElement('user_address')->setValue($info['user_address']);
+					$form->getElement('is_active')->setValue($info['is_active']);
+					
+					$this->view->form=$form;
+				}
+				else
+				{
+					$id=$this->_request->getParam('userid');
+					$input=$this->_getInput($form);
+					if ($this->mUser->editUser($id, $input))
+					{
+						$_SESSION['result']='Cập nhật thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+					}
+					else 
+					{
+						$this->view->error=$form->getMessage();
+						$this->view->form=$form;
+					}
+				}
 			}
 			else
 			{
-				$id=$this->_request->getParam('userid');
-				$input=$this->_getInput($form);
-				if ($this->mUser->editUser($id, $input))
-				{
-					$_SESSION['result']='Cập nhật thành công';
-					$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
-				}
-				else 
-				{
-					$this->view->error=$form->getMessage();
+				$userId=$this->_request->getParam('userid');
+					$info=$this->mUser->getUserById($userId);
+					
+					$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
+					$form->getElement('user_login')->setValue($info['user_login']);
+					$form->getElement('user_pass')->setValue($info['user_pass']);
+					$form->getElement('user_fullname')->setValue($info['user_fullname']);
+					$form->getElement('user_email')->setValue($info['user_email']);
+					$form->getElement('user_address')->setValue($info['user_address']);
+					$form->getElement('is_active')->setValue($info['is_active']);
+					
 					$this->view->form=$form;
-				}
 			}
 		}
 	}

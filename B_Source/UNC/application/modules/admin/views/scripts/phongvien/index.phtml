@@ -1,3 +1,24 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa người dùng này?");
+					if (r==true)
+					{
+						var uri="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/"+value;
+						window.location=uri;
+					}
+					else 
+					{	
+					}
+				}
+</script>
+<style>
+	.del_button{cursor:pointer}
+	.yui3-datatable-table{width:100% !important}
+</style>
+
 <?php if (isset($_SESSION['result']))
 {
 	echo '<p class="message">';
@@ -9,41 +30,122 @@
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
-		<div id="tab1" class="tab_content">
+		<!-- div id="tab1" class="tab_content">
 			<table class="tablesorter" cellspacing="0">
 				<thead> 
 					<tr> 
+						<th>Số thứ tự</th>
 	    				<th>Tên đăng nhập</th> 
-	    				<th>Mật khẩu</th> 
 	    				<th>Tên</th>
 	    				<th>Email</th>
-	    				<th>Địa chỉ</th>
 	    				<th>Kích hoạt</th>
 	    				<th>Tùy chọn</th>
 					</tr> 
 				</thead>
 				<tbody>
-				 	<?php foreach ($this->list as $item)
+				 	<?php 
+				 	$count=1;
+				 	foreach ($this->list as $item)
 				 	{?>
 				 		<tr>  
+				 			<td><?php echo $count; $count++;?></td>
 		    				<td><?php echo $item['user_login'];?></td> 
-		    				<td><?php echo $item['user_pass'];?></td> 
 		    				<td><?php echo $item['user_fullname'];?></td>
 		    				<td><?php echo $item['user_email'];?></td>
-		    				<td><?php echo $item['user_address'];?></td>
-		    				<td><?php echo $item['is_active'];?></td>
+		    				<td><?php 
+		    					if ($item['is_active']=='1')
+		    						echo 'Có';
+		    					else echo 'Không';?></td>
 		    				<td>
 		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $item['user_id']?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				<a href="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/<?php echo $item['user_id']?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/<?php echo $item['user_id']?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>
 				</tbody>
 			</table>
+		</div -->
+		
+		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			YUI().use('datatable', function (Y) {
+				var data = [
+								<?php 
+								$count=1;
+								foreach ($this->list as $item)
+								{?>
+									{ order: '<?php echo $count;?>', 
+										user_login: '<?php echo $item['user_login'];?>',   
+										user_fullname: '<?php echo $item['user_fullname'];?>',
+										user_email: '<?php echo $item['user_email'];?>',
+										is_active: '<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>',
+										option: '<?php echo $item['user_id']?>'
+									},
+								<?php $count++;}?>
+							];
+				
+				var count=1;
+				
+				var table = new Y.DataTable({
+					columns: [{
+								key: 'order',
+								label: 'Số thứ tự',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'user_login',
+								label: 'Tên đăng nhập',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true 
+							},
+							{
+								key: 'user_fullname',
+								label: 'Họ tên',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'user_email',
+								label:'Email',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'is_active',
+								label:'Kích hoạt',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'option',
+								label:'Tùy chọn',
+								formatter: '<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/{value}" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a><a class="del_button" onclick="confirmDel({value})" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>',
+								allowHTML: true
+							}],
+					data: data,
+				});
+	
+				table.render("#listnews");
+			});
+		</script>
+		<div class="yui3-skin-sam">
+			<div class="example yui3-skin-sam" id="listnews">
+			</div>
 		</div>
+		
 		<footer>
 			<div class="submit_link">
 				<a class="alt_btn" href="<?php echo $this->baseUrl('admin/phongvien/insert');?>">Thêm mới</a>
+				<?php echo $this->paginationControl($this->list,
+                                    'Sliding',
+                                    'tintuc/pagination.phtml');?>
 			</div>
 		</footer>
 	</div>

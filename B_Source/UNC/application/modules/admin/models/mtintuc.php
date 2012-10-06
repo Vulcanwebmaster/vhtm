@@ -19,15 +19,64 @@
 	{
 		if (!$this->isExist($input['news_title']))
 		{
-			$query=$this->db->query("insert into unc_news (news_title, news_summary, news_content,  news_post_date) values('".$input['news_title']."','".$input['news_summary']."','".$input['news_content']."','".gmdate('Y-m-d h:i:s')."')");
+			$query=$this->db->query("insert into unc_news (news_title, news_summary, news_content,  news_post_date, category_id) values('".$input['news_title']."','".$input['news_summary']."','".$input['news_content']."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".$input['category_id']."')");
 			return $query;
 		}
+	}
+	
+	function getCategoryIDByUserId($userid)
+	{
+		$query=$this->db->query("select * from unc_manage_category where user_id='".$userid."'");
+		$list=$query->fetchAll();
+		$categoriesId=array();
+		foreach ($list as $item)
+		{
+			$count=0;
+			foreach ($categoriesId as $ctId)
+			{
+				if ($ctId==$item['category_id'])
+				{
+					$count++;
+					break;
+				}
+			}
+			if ($count==0)
+				$categoriesId[]=$item['category_id'];
+		}
+		return $categoriesId;
 	}
 	
 	function getListNews()
 	{
 		$query=$this->db->query("select * from unc_news");
 		return $query->fetchAll();
+	} 
+	
+	function getListNewsByUserId($userid)
+	{
+		$categoriesId = $this->getCategoryIDByUserId($userid);
+		$result=array();
+		foreach ($categoriesId as $categoryId)
+		{
+			$query=$this->db->query("select * from unc_news where category_id='".$categoryId."'");
+			$list=$query->fetchAll();
+			foreach ($list as $item)
+			{
+				$result[]=$item;
+			}
+		}
+		return $result;
+	} 
+	
+	function getCategoryById($categoryId)
+	{
+		$query=$this->db->query("select * from unc_category where category_id='".$categoryId."'");
+		$list=$query->fetchAll();
+		if (count($list)>0)
+		{
+			return $list[0];
+		}
+		return false;
 	} 
 	
 	function deleteNews($id)

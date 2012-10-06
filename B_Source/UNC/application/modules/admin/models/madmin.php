@@ -14,7 +14,16 @@
 				return true;
 			else return false;
 		}
-		
+	
+		function getAccountByUser($username)
+		{
+			$query=$this->db->query('select * from unc_user where user_login="'.$username.'"');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
+	
 		function getRoleByUser($user)
 		{
 			$query = $this->db->query('select role_id from unc_user where user_login="'.$user.'"');
