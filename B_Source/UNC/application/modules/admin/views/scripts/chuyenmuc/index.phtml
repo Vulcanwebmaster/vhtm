@@ -1,43 +1,95 @@
-<?php ?>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<style>
+	.del_button{cursor:pointer}
+	.yui3-datatable-table{width:100% !important}
+</style>
+
+<?php if (isset($_SESSION['result']))
+{
+	echo '<p class="message">';
+	echo $_SESSION['result'];
+	echo '</p>';
+	unset($_SESSION['result']);
+}
+?>
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
-		<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="0">
-				<thead> 
-					<tr> 
-	    				<th align="center">STT</th> 
-	    				<th align="center">Tên chuyên mục</th> 
-	    				<th align="center">Chuyên mục cha</th>
-	    				<th align="center">Kích hoạt</th>
-	    				<th align="center">Action</th>
-					</tr> 
-				</thead>
-				<tbody>
-				 	<?php $i=0; foreach ($this->list as $item)
-				 	{
-				 		?>
-				 		<tr>  
-				 			<td align="center"><?php echo $i+1; ?></td>
-		    				<td align="center"><?php echo $item['category_name'];?></td>
-		    				<td align="center"><?php if($item['category_parent_id']!='0') echo $this->listParent[$i];?></td>
-		    				<td align="center"><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td>
-		    				<td align="center">
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/chuyenmuc/edit/category_id/<?php echo $item['category_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				</td>
-						</tr>
-				 	<?php $i++;
-					}?>
-				</tbody>
-			</table>
+		
+		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			YUI().use('datatable', function (Y) {
+				var data = [
+								<?php 
+								$count=1;
+								foreach ($this->list as $item)
+								{?>
+									{ 
+										order: "<?php echo $count;?>", 
+										category_name: "<?php echo $item['category_name'];?>",   
+										category_parent_id: "<?php if($item['category_parent_id']!='0') echo $this->listParent[$count-1];?>",
+										is_active: "<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>",
+										option: "<?php echo $item['category_id'];?>"
+									},
+								<?php $count++;}?>
+							];
+				
+				var count=1;
+				
+				var table = new Y.DataTable({
+					columns: [{
+								key: 'order',
+								label: 'Số thứ tự',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'category_name',
+								label: 'Tên chuyên mục',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true 
+							},
+							{
+								key: 'category_parent_id',
+								label: 'Chuyên mục cha',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'is_active',
+								label:'Kích hoạt',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'option',
+								label:'Tùy chọn',
+								formatter: '<a href="<?php echo $this->baseUrl();?>/admin/chuyenmuc/edit/category_id/{value}" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>',
+								allowHTML: true
+							}],
+					data: data,
+				});
+	
+				table.render("#listnews");
+			});
+		</script>
+		<div class="yui3-skin-sam">
+			<div class="example yui3-skin-sam" id="listnews">
+			</div>
 		</div>
+		
 		<footer>
-				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/chuyenmuc/insert');?>">Thêm mới</a>
-				</div>
-				<?php 
-			       echo $this->paginationControl($this->list, 'Sliding' , 'chuyenmuc/pagination.phtml'); 
-				?>
+			<div class="submit_link">
+				<a class="alt_btn" href="<?php echo $this->baseUrl('admin/chuyenmuc/insert');?>">Thêm mới</a>
+				<?php echo $this->paginationControl($this->list,
+                                    'Sliding',
+                                    'tintuc/pagination.phtml');?>
+			</div>
 		</footer>
 	</div>
 </article>

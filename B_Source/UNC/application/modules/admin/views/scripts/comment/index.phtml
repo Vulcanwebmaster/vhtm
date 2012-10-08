@@ -1,45 +1,107 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa bình luận này ?");
+					if (r==true)
+					{
+						var uri="<?php echo $this->baseUrl();?>/admin/comment/del/comment_id/"+value;
+						window.location=uri;
+					}
+					else 
+					{	
+					}
+				}
+</script>
+<style>
+	.del_button{cursor:pointer}
+	.yui3-datatable-table{width:100% !important}
+</style>
+
+<?php if (isset($_SESSION['result']))
+{
+	echo '<p class="message">';
+	echo $_SESSION['result'];
+	echo '</p>';
+	unset($_SESSION['result']);
+}
+?>
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
-		<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="0">
-				<thead> 
-					<tr> 
-	    				<th>STT</th> 
-	    				<th>Nội dung</th> 
-	    				<th>News ID</th>
-	    				<th>Reader ID</th>
-	    				<th>Actions</th>
-					</tr> 
-				</thead>
-				<tbody>
-				 	<?php 
-				 	$i=0;  
-				 	foreach ($this->list as $item)
-				 	{
-				 		$i++;
-				 		?>
-				 		<tr>  
-				 			<td><?php echo $i; ?></td>
-		    				<td><?php echo $item['comment_content'];?></td>
-		    				<td><?php echo $item['news_id'];?></td>
-		    				<td><?php echo $item['user_id'];?></td>
-		    				<td>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/comment/edit/comment_id/<?php echo $item['comment_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				<a href="<?php echo $this->baseUrl(); ?>/admin/comment/del/comment_id/<?php echo $item['comment_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
-		    				</td>
-						</tr>
-				 	<?php }?>
-				</tbody>
-			</table>
+		
+		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			YUI().use('datatable', function (Y) {
+				var data = [
+								<?php 
+								$count=1;
+								foreach ($this->list as $item)
+								{?>
+									{ order: "<?php echo $count;?>", 
+										comment_content: "<?php echo $item['comment_content'];?>",   
+										news_id: "<?php echo $item['news_id'];?>",
+										reader_id: "<?php echo $item['reader_id'];?>",
+										option: "<?php echo $item['comment_id']?>"
+									},
+								<?php $count++;}?>
+							];
+				
+				var count=1;
+				
+				var table = new Y.DataTable({
+					columns: [{
+								key: 'order',
+								label: 'Số thứ tự',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'comment_content',
+								label: 'Nội dung bình luận',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true 
+							},
+							{
+								key: 'news_id',
+								label: 'Tin tức',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'reader_id',
+								label:'Người đọc',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'option',
+								label:'Tùy chọn',
+								formatter: '<a href="<?php echo $this->baseUrl();?>/admin/comment/edit/comment_id/{value}" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a><a class="del_button" onclick="confirmDel({value})" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>',
+								allowHTML: true
+							}],
+					data: data,
+				});
+	
+				table.render("#listnews");
+			});
+		</script>
+		<div class="yui3-skin-sam">
+			<div class="example yui3-skin-sam" id="listnews">
+			</div>
 		</div>
 		<footer>
-				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/comment/insert');?>">Thêm mới</a>
-				</div>
-				<?php 
-			       echo $this->paginationControl($this->list, 'Sliding' , 'comment/pagination.phtml'); 
-				?>
+			<div class="submit_link">
+				<?php echo $this->paginationControl($this->list,
+                                    'Sliding',
+                                    'tintuc/pagination.phtml');?>
+			</div>
 		</footer>
 	</div>
 </article>

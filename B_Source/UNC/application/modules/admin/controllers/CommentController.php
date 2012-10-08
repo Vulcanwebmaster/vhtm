@@ -27,13 +27,43 @@
 			$this->view->title="Quản lý comment";
 		}
 		
-		function _getInput()
+		function setForm()
+		{
+			$form = new Zend_Form;
+			$form->setAction('')->setMethod('post');
+			
+			$comment_content = new Zend_Form_Element_Textarea('comment_content');
+			$comment_content->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Nội dung bình luận không được để trống'));
+			$comment_content->setAttrib('rows', '5');
+			
+			$news_id = new Zend_Form_Element_Select('news_id');
+			
+			foreach($this->mComment->getListNews() as $news)
+			{
+				$news_id->addMultiOption($news['news_id'],$news['news_title']);
+			}
+			
+			$reader_id = new Zend_Form_Element_Select('reader_id');
+			$reader_id->addMultiOption('0', '');
+			foreach($this->mComment->getListReader() as $reader)
+			{
+				$reader_id->addMultiOption($reader['comment_user_id'],$reader['comment_user_fullname']);
+			}
+			
+			$comment_content->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$news_id->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$reader_id->removeDecorator('HtmlTag')->removeDecorator('Label');
+			
+			$form->addElements(array($comment_content,$news_id,$reader_id));
+			return $form;
+		}
+		
+		function _getInput($form)
 		{
 			$input = array(	
-							'comment_id'		=> $this->_request->getParam('comment_id'),
-							'comment_content'	=> $this->_request->getPost('comment_content'),
-							'news_id'			=> $this->_request->getPost('news_id'),
-							'user_id'			=> $this->_request->getPost('user_id')
+							'comment_content'	=> $form->getValue('comment_content'),
+							'news_id'			=> $form->getValue('news_id'),
+							'reader_id'			=> $form->getValue('reader_id')
 			);
 			return $input;
 		}
@@ -45,29 +75,42 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$comment_id=$this->_request->getParam('comment_id');
-			$comment=$this->mComment->getCommentById($comment_id);
+			$comment_id = $this->_request->getParam('comment_id');
+			$info = $this->mComment->getCommentById($comment_id);
 			
-			$this->view->comment = $comment;
-			$this->view->list = $this->mComment->getNewsOtherId($comment['news_id']);
+			$form = $this->setForm();
+			$form->setAction($this->view->baseUrl().'/admin/comment/edit/comment_id/'.$comment_id);
+			$form->getElement('comment_content')->setValue($info['comment_content']);
+			$form->getElement('news_id')->setValue($info['news_id']);
+			$form->getElement('reader_id')->setValue($info['reader_id']);
+			
 			$this->view->title="Sửa comment";
+			$this->view->form = $form;
 			
 			if($this->_request->isPost())
 			{
-				
-				$input=$this->_getInput();
-				if ($this->mComment->editComment($input))
+				if($form->isValid($_POST))
 				{
-					$_SESSION['result']='Cập nhật thành công';
-					$this->_redirect($this->view->baseUrl().'/../admin/comment');
+					$input = $this->_getInput($form);
+					//var_dump($input);die();
+					if ($this->mComment->editComment($comment_id,$input))
+					{
+						$_SESSION['result']='Cập nhật thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/comment');
+					}
+					else 
+					{
+						$_SESSION['result']='Cập nhật không thành công';
+						$this->_redirect($this->view->baseUrl().'/../admin/comment');
+					}
 				}
 				else 
 				{
-					$_SESSION['result']='Cập nhật không thành công';
-					$this->_redirect($this->view->baseUrl().'/../admin/comment');
+					$form->populate($_POST);
 				}
 				
 			}
+			
 		}
 		
 		function delAction()

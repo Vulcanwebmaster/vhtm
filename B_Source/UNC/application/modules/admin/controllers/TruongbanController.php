@@ -3,7 +3,7 @@
 	{
 		protected $mTruongban;
 		protected $mUser;
-		
+		protected $user;
 		protected $role;
 		function init()
 		{
@@ -237,7 +237,7 @@
 			}
 			else 
 			{
-				$_SESSION['result']='Bạn không có quyền sửa mục này !';
+				$_SESSION['result']='Bạn không có quyền xóa mục này !';
 			}
 			$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 		}

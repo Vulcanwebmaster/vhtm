@@ -4,6 +4,8 @@
 		protected $mVideo;
 		protected $mYoutube;
 		protected $user,$pass,$gallery;
+		protected $role;
+		protected $user_login;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -18,6 +20,8 @@
 			  $this->user = $account['youtube_username'];
 			  $this->pass = $account['password'];
 			  $this->gallery = $account['youtube_gallery'];
+			  $this->role = $_SESSION['role'];
+			  $this->user_login = $_SESSION['user'];
 		}
 		
 		function _httpClient()
@@ -37,15 +41,9 @@
 			return $httpClient;
 		}
 		
-		function indexAction()
+		function refresh()
 		{
-			echo $this->user.' - '.$this->pass.' - '.$this->gallery;
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-		    $youtube  = new Zend_Gdata_YouTube();
+			$youtube  = new Zend_Gdata_YouTube();
 		 
 		    try {
 		        $feed = $youtube->getUserUploads($this->gallery);
@@ -57,7 +55,8 @@
 							$input = array(
 											'video_title'		=> $video->getVideoTitle(),
 											'video_description' => $video->getVideoDescription(),
-											'video_link'		=> $video_link
+											'video_link'		=> $video_link,
+											'user_upload'		=> $this->user_login
 							);
 							$this->mVideo->insertVideo($input,$this->user,$this->pass);
 						}
@@ -67,14 +66,29 @@
 		        echo $ex->getMessage();
 		        exit;
 		    }
-		 	
+			
+			$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+		}
+		
+		function indexAction()
+		{
+			//echo $this->user.' - '.$this->pass.' - '.$this->gallery;
+			$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			
 			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
-        		$paginator->setItemCountPerPage(5);        
-        		$paginator->setPageRange(3);
-        		$currentPage = $this->_request->getParam('page',1);
-         		$paginator->setCurrentPageNumber($currentPage);
-        		$this->view->list=$paginator;
+        	$paginator->setItemCountPerPage(5);        
+        	$currentPage = $this->_request->getParam('page',1);
+         	$paginator->setCurrentPageNumber($currentPage);
+			
+			//var_dump($this->mVideo->getListVideo());die();
+        	$this->view->list = $paginator;
 			$this->view->title = 'Quản lý video';
+			
+			$this->view->role = $this->role;
+			$this->view->user_login = $this->user_login;
 		}
 		
 		function setForm()
@@ -105,7 +119,8 @@
 			$input = array(
 						'video_full_link'			=> $form->getValue('link'),
 						'video_title'				=> $form->getValue('title'),
-						'video_description'			=> $form->getValue('description')
+						'video_description'			=> $form->getValue('description'),
+						'user_upload'				=> $this->user_login
 						);
 			return $input;
 		}
@@ -211,7 +226,7 @@
 		
 		function uploadAction()
 		{
-			echo $this->user.' - '.$this->pass.' - '.$this->gallery;
+			//echo $this->user.' - '.$this->pass.' - '.$this->gallery;
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -287,41 +302,49 @@
 		
 		function delAction()
 		{
-			$video_id = $this->_request->getParam('video_id');
 			$video = $this->mVideo->getVideoById($video_id);
-			$video_link = $video['video_link'];
-			$user = $video['youtube_username'];
-			$pass = $video['password'];
-			$this->mVideo->delVideo($video_id);
-			if($video_link != null)
+			if($this->role=="0" | ($this->user_login==$video['user_upload']))
 			{
-				try 
-					{
-						$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
-						Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
-						$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-										              $username = $user,
-										              $password = $pass,
-										              $service 	= 'youtube',
-										              $client 	= null,
-										              $source 	= 'NIWApp', 
-										              $loginToken 	= null,
-										              $loginCaptcha = null,
-										              $authenticationURL
-										           );
-									   
-						Zend_Loader::loadClass('Zend_Gdata_YouTube');
-					 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
-						
-						$video = $yt->getFullVideoEntry($video_link);
-		                $yt->delete($video);
-				    }
-				    catch (Exception $ex) {
-				        echo $ex->getMessage();
-				        exit;
-				    }
+				$video_id = $this->_request->getParam('video_id');
+				$video_link = $video['video_link'];
+				$user = $video['youtube_username'];
+				$pass = $video['password'];
+				$this->mVideo->delVideo($video_id);
+				if($video_link != null)
+				{
+					try 
+						{
+							$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
+							Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+							$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
+											              $username = $user,
+											              $password = $pass,
+											              $service 	= 'youtube',
+											              $client 	= null,
+											              $source 	= 'NIWApp', 
+											              $loginToken 	= null,
+											              $loginCaptcha = null,
+											              $authenticationURL
+											           );
+										   
+							Zend_Loader::loadClass('Zend_Gdata_YouTube');
+						 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
+							
+							$video = $yt->getFullVideoEntry($video_link);
+			                $yt->delete($video);
+					    }
+					    catch (Exception $ex) {
+					        echo $ex->getMessage();
+					        exit;
+					    }
+				}
+				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 			}
-			$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+			else
+			{
+				$_SESSION['result']='Bạn không có quyền xóa mục này !';
+				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+			}
 		}
 		
 		function editAction()
@@ -331,72 +354,97 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$video_link =  $this->_request->getParam('video_link');
-			$info = $this->mVideo->getVideoByVideoLink($video_link);
+			$video_id = $this->_request->getParam('video_id');
+			$video_link = $this->mVideo->getVideoLinkById($video_id);
 			
+			$info = $this->mVideo->getVideoById($video_id);
 			$form = $this->formInsert();
-			$form->setAction($this->view->baseUrl().'/admin/uploadvideo/edit/video_link/'.$video_link);
 			
-			$form->getElement('link')->setValue($info['video_full_link']);
-			$form->getElement('title')->setValue($info['video_title']);
-			$form->getElement('description')->setValue($info['video_description']);
-			
-			$this->view->form = $form;
-			$this->view->title = 'Sửa thông tin video';		
-			
-			if($this->_request->isPost())
-			{				
-				if($form->isValid($_POST))
-				{
-					$input = array(
-							'video_link'			=> $this->_request->getParam('video_link'),
-							'video_title'			=> $form->getValue('title'),
-							'video_description'		=> $form->getValue('description'),
-							
-					);
-					
-					$account = $this->mVideo->getVideoByVideoLink($video_link);
-					$user = $account['youtube_username'];
-					$pass = $account['password'];
-					
-					$this->mVideo->editVideo($input);
-					try 
-					{
-						$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
-						Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
-						$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-										              $username = $user,
-										              $password = $pass,
-										              $service 	= 'youtube',
-										              $client 	= null,
-										              $source 	= 'NIWApp', 
-										              $loginToken 	= null,
-										              $loginCaptcha = null,
-										              $authenticationURL
-										           );
-									   
-						Zend_Loader::loadClass('Zend_Gdata_YouTube');
-					 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
-						
-						$video = $yt->getFullVideoEntry($input['video_link']);
-		                		$putUrl = $video->getEditLink()->getHref(); 
-						$video->setVideoTitle($input['video_title']);
-						$video->setVideoDescription($input['video_description']);
-		                		$yt->updateEntry($video, $putUrl);
-						$this->mVideo->editVideo($input); 
-				    }
-				    catch (Exception $ex) {
-				        echo $ex->getMessage();
-				        exit;
-				    }
-				    
-				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+			if($this->role=="0" | ($this->role=="1" & $this->user_login==$info['user_upload']))
+			{
+				$form->setAction($this->view->baseUrl().'/admin/uploadvideo/edit/video_id/'.$video_id);
 				
+				$form->getElement('link')->setValue($info['video_full_link']);
+				$form->getElement('title')->setValue($info['video_title']);
+				$form->getElement('description')->setValue($info['video_description']);
+				
+				$this->view->form = $form;
+				$this->view->title = 'Sửa thông tin video';		
+				
+				if($this->_request->isPost())
+				{				
+					if($form->isValid($_POST))
+					{
+						$input = array(
+								'video_link'			=> $video_link,
+								'video_title'			=> $form->getValue('title'),
+								'video_description'		=> $form->getValue('description'),
+								
+						);
+						
+						if($input['video_link'] != null)
+						{
+							$account = $this->mVideo->getAccountByVideoLink($video_id);
+							$user = $account['youtube_username'];
+							$pass = $account['password'];
+							
+							$this->mVideo->editVideo($input);
+							try 
+							{
+								$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
+								Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+								$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
+												              $username = $user,
+												              $password = $pass,
+												              $service 	= 'youtube',
+												              $client 	= null,
+												              $source 	= 'NIWApp', 
+												              $loginToken 	= null,
+												              $loginCaptcha = null,
+												              $authenticationURL
+												           );
+											   
+								Zend_Loader::loadClass('Zend_Gdata_YouTube');
+							 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
+								
+								$video = $yt->getFullVideoEntry($input['video_link']);
+				                		$putUrl = $video->getEditLink()->getHref(); 
+								$video->setVideoTitle($input['video_title']);
+								$video->setVideoDescription($input['video_description']);
+				                		$yt->updateEntry($video, $putUrl);
+								$this->mVideo->editVideo($input); 
+						    }
+						    catch (Exception $ex) {
+						        echo $ex->getMessage();
+						        exit;
+						    }
+							$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+						}
+						else
+						{
+							$input=$this->_getInput($form);
+							if ($this->mVideo->updateVideo($video_id,$input))
+							{
+								$_SESSION['result']='Cập nhật thành công';
+								$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+							}
+							else 
+							{
+								$_SESSION['result']='Cập nhật không thành công';
+								$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+							}
+						}
+					}
+					else 
+					{
+						$form->populate($_POST); 
+					}
 				}
-				else 
-				{
-					$form->populate($_POST); 
-				}
+			}
+			else
+			{
+				$_SESSION['result']='Bạn không có quyền sửa mục này !';
+				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 			}
 		}
 		 

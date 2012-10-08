@@ -24,6 +24,7 @@ class Admin_IndexController extends Zend_Controller_Action
 	{
 		$username=$this->_request->getParam('username');
 		$password=$this->_request->getParam('password');
+		$mAdmin = new Admin_Model_Madmin;
 		if ($mAdmin->isExistAccount($username,$password))
 		{
 			$account=$mAdmin->getAccountByUser($username);

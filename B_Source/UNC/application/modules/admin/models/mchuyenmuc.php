@@ -13,6 +13,12 @@
 			return $query->fetchAll();
 		}
 		
+		function getListParentSubOne($id)
+		{
+			$query = $this->db->query('select * from unc_category where category_parent_id=0 and category_id !="'.$id.'"');
+			return $query->fetchAll();
+		}
+		
 		function getListCmParent()
 		{
 			$query=$this->db->query('select * from unc_category where category_parent_id=0');
@@ -44,6 +50,15 @@
 			$list=$query->fetchAll();
 			if (count($list)>0)
 				return $list[0];
+			else return false;
+		}
+		
+		function isParent($id)
+		{
+			$query = $this->db->query('select * from unc_category where category_id="'.$id.'" and category_parent_id=0');
+			$list = $query->fetchAll();
+			if(count($list)>0)
+				return true;
 			else return false;
 		}
 		

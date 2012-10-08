@@ -11,17 +11,7 @@
 				
 				<fieldset>
 					<label>Chuyên mục cha : </label>
-					<select name="category_parent_id">
-					<option value="0"></option>
-					<?php
-						foreach($this->list as $item)
-						{
-							?>
-								<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_name']; ?></option>	
-							<?php 
-						}
-					?>
-				</select>
+					<?php echo $this->form->getElement('category_parent_id');?>
 				</fieldset>
 				<fieldset>
 					<label>Kích hoạt : </label>

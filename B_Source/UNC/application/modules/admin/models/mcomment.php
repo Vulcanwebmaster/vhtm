@@ -18,7 +18,18 @@
 			$query=$this->db->query('delete from unc_comment where comment_id="'.$id.'"');
 			return $query;
 		}
-
+		
+		function getListReader()
+		{
+			$query = $this->db->query('select * from unc_comment_user');
+			return $query->fetchAll();
+		}
+		
+		function getListNews()
+		{
+			$query = $this->db->query('select * from unc_news');
+			return $query->fetchAll();
+		}
 		
 		function getCommentById($id)
 		{
@@ -27,11 +38,11 @@
 			return $list[0];
 		}
 		
-		function editComment($input)
+		function editComment($id,$input)
 		{
 			$query=$this->db->query('update unc_comment 
-									set comment_content="'.$input['comment_content'].'", news_id="'.$input['news_id'].'", user_id="'.$input['user_id'].'" 
-									where comment_id="'.$input['comment_id'].'"');
+									set comment_content="'.$input['comment_content'].'", news_id="'.$input['news_id'].'", reader_id="'.$input['reader_id'].'" 
+									where comment_id="'.$id.'"');
 			return $query;
 		}
 		

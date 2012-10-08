@@ -9,13 +9,13 @@
 		
 		function insertVideoLink($input)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'",null,"1","'.$input['video_full_link'].'",null,null)');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'",null,"1","'.$input['video_full_link'].'",null,null,"'.$input['user_upload'].'")');
 			return $query;
 		}
 		
 		function insertVideo($input,$user,$pass)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","1","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$user.'","'.$pass.'")');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","1","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$user.'","'.$pass.'","'.$input['user_upload'].'")');
 			return $query;
 		}
 		
@@ -49,6 +49,13 @@
 			return $query;
 		}
 		
+		function getVideoLinkById($video_id)
+		{
+			$query = $this->db->query('select video_link from unc_video where video_id="'.$video_id.'"');
+			$list = $query->fetchAll();
+			return $list[0]['video_link'];
+		}
+		
 		function getVideoById($video_id)
 		{
 			$query = $this->db->query('select * from unc_video where video_id="'.$video_id.'"');
@@ -56,9 +63,9 @@
 			return $list[0];
 		}
 		
-		function getVideoByVideoLink($video_link)
+		function getAccountByVideoLink($video_id)
 		{
-			$query = $this->db->query('select * from unc_video where video_link="'.$video_link.'"');
+			$query = $this->db->query('select * from unc_video where video_id="'.$video_id.'"');
 			$list = $query->fetchAll();
 			return $list[0];
 		}
