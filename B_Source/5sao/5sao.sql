@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 08, 2012 at 05:45 AM
+-- Generation Time: Oct 08, 2012 at 07:23 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -393,6 +393,7 @@ CREATE TABLE IF NOT EXISTS `n_sanpham` (
   `chitiet_e` text COLLATE utf8_unicode_ci,
   `hinhanh` varchar(2000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `danhmuc_id` int(11) NOT NULL,
+  `moi` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
@@ -400,8 +401,8 @@ CREATE TABLE IF NOT EXISTS `n_sanpham` (
 -- Dumping data for table `n_sanpham`
 --
 
-INSERT INTO `n_sanpham` (`id`, `ten_v`, `ten_e`, `mota_v`, `mota_e`, `chitiet_v`, `chitiet_e`, `hinhanh`, `danhmuc_id`) VALUES
-(6, 'ádasd', 'ádasd', '', '', '', '', '', 1);
+INSERT INTO `n_sanpham` (`id`, `ten_v`, `ten_e`, `mota_v`, `mota_e`, `chitiet_v`, `chitiet_e`, `hinhanh`, `danhmuc_id`, `moi`) VALUES
+(6, 'ádasd', 'ádasd', '', '', '', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -456,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-10-08 05:42:50', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-10-08 16:57:21', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
