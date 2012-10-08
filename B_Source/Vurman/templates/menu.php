@@ -10,7 +10,22 @@
 <body>
     <div id="main_cont">
         <div id="title">
-            <img src="ZEIT8.jpg" alt="" /></div>
+        	<?php 
+
+			if($_SESSION['usertype']=="user")
+
+			{
+
+			?>
+            	<img src="logo_client.jpg" alt="" /></div>
+            <?php 
+			} else {
+            ?>
+            
+            	<img src="logo.jpg" alt="" /></div>
+            <?php 
+            }
+            ?>
         <div id="left">
            <?php require_once('include/menu-left-client.php'); ?>
         </div>
