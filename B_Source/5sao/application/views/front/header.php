@@ -1,0 +1,1 @@
+<h1>This is Header (appilication/views/front/header.php)</h1>
