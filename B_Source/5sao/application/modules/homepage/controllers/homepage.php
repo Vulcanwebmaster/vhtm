@@ -23,7 +23,7 @@ class Homepage extends NIW_controller {
 
 	public function index()
 	{
-		$data['list']=$this->Mhomepage->getListByColumn('trangchu','moi','1');
+		$data['list']=$this->Mhomepage->getListByColumn('sanpham','moi','1');
 		$data['title']='5saoviet | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
