@@ -47,16 +47,16 @@
                         <div class="title2"><h4 style="padding-top:10px">Sản phẩm bán chạy</h4></div>
                         <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="300"  width="182" style="margin:10px 0 5px 0">
                            <div class="pr-img">
-                            <img src="images/s1.GIF" width="170" height="131"/>
+                            <img src="<?php echo base_url();?>assets/5sao/images/s1.GIF" width="170" height="131"/>
                             <h4 style="text-align:center; font-weight:bold; margin:5px">Máy bếp</h4>
                            </div>
-                            <div class="pr-img"><img src="images/s2.jpg" width="170" height="131"/>
+                            <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s2.jpg" width="170" height="131"/>
                                 <h4 style="text-align:center; font-weight:bold; margin:5px">Máy bếp</h4>
                             </div>
-                            <div class="pr-img"><img src="images/s3.jpg" width="170" height="131"/>
+                            <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s3.jpg" width="170" height="131"/>
                                 <h4 style="text-align:center; font-weight:bold; margin:5px">Máy bếp</h4>
                             </div>
-                            <div class="pr-img"><img src="images/s4.jpg" width="170" height="131"/>
+                            <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" width="170" height="131"/>
                                 <h4 style="text-align:center; font-weight:bold; margin:5px">Máy bếp</h4>
                             </div>
                         </marquee>

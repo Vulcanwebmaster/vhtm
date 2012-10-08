@@ -5,7 +5,7 @@ padding:0px;
 img{border:0px}
 html{
 height:100%;
-background-image:url(images/top_bg.jpg);
+background-image:url(../images/top_bg.jpg);
 background-position:top center;
 background-repeat:no-repeat;
 width:100%;
@@ -38,7 +38,7 @@ height:100%;
 margin:0 0 87px 0;
 padding:0 0 48px 0;
 overflow:hidden;
-background-image:url(images/bottom.gif);
+background-image:url(../images/bottom.gif);
 background-position:bottom left;
 background-repeat:no-repeat;
 }
@@ -47,7 +47,7 @@ position:absolute;
 bottom:0px;
 height:87px;
 width:100%;
-background-image:url(images/bot_bg.jpg);
+background-image:url(../images/bot_bg.jpg);
 background-position:top left;
 background-repeat:repeat-x;
 }
@@ -140,7 +140,7 @@ text-decoration:none
 #left{
 width:201px;
 float:left;
-/*background-image:url(images/left_bg.jpg);*/
+/*background-image:url(../images/left_bg.jpg);*/
 background-position:top left;
 background-repeat:no-repeat;
 }
@@ -155,7 +155,7 @@ font-weight:bold;
 }
 .title1{
 padding:9px 0 0px 0px;
-background-image:url(images/h4.png);
+background-image:url(../images/h4.png);
 background-repeat:no-repeat;
 text-align:center;
 margin:10px 0 -6px 11px;
@@ -179,11 +179,11 @@ width:163px;
 padding-left:19px;
 margin:0 0 1px 0
 }
-.type1{background-image:url(images/oarrow.gif);}
-.type2{background-image:url(images/garrow.gif);}
-.type3{background-image:url(images/oarrowdown.gif);}
+.type1{background-image:url(../images/oarrow.gif);}
+.type2{background-image:url(../images/garrow.gif);}
+.type3{background-image:url(../images/oarrowdown.gif);}
 #inside{
-background-image:url(images/ul_bg.gif);
+background-image:url(../images/ul_bg.gif);
 background-position:top left;
 background-repeat:repeat-y;
 width:174px;
@@ -194,7 +194,7 @@ border-top:1px solid #E1E1E2;
 }
 #list #inside a{
 color:#000000;
-background-image:url(images/arrow.gif);
+background-image:url(../images/arrow.gif);
 background-position:0px 8px;
 background-repeat:no-repeat;
 text-decoration:underline
@@ -202,14 +202,14 @@ text-decoration:underline
 #list #inside a:visited{text-decoration:underline}
 #list #inside a:hover{text-decoration:none}
 .title2{
-background-image:url(images/h4.png);
+background-image:url(../images/h4.png);
 background-repeat:no-repeat;
 padding:0 0 14px 8px;
 margin:-1 0 12px 10px;
 text-align:center;
 }
 .title3{
-background-image:url(images/h4.png);
+background-image:url(../images/h4.png);
 background-repeat:no-repeat;
 padding:0 0 14px 0px;
 margin:12px 0 12px 0px;
@@ -223,7 +223,7 @@ padding:0 0 18px 11px;
 }
 .news span{
 display:block;
-background-image:url(images/date_bg.gif);
+background-image:url(../images/date_bg.gif);
 background-position:top left;
 background-repeat:no-repeat;
 width:175px;
@@ -260,7 +260,7 @@ float:left;
 background-color:#3e3e3e;
 }
 #photo{
-background-image:url(images/photo.jpg);
+background-image:url(../images/photo.jpg);
 background-position:top left;
 background-repeat:no-repeat;
 width:578px;
@@ -297,7 +297,7 @@ display:block;
 width:162px;
 line-height:34px;
 padding:0 0 0 18px;
-background:url(images/name.jpg) repeat-x;
+background:url(../images/name.jpg) repeat-x;
 background-position:top left;
 font-family:Arial, Helvetica, sans-serif;
 font-size:11px;
@@ -447,7 +447,7 @@ text-decoration:none
 }
 .color{background-color:#E6E6E6}
 #background{
-background-image:url(images/bg.gif);
+background-image:url(../images/bg.gif);
 background-position:top left;
 background-repeat:repeat-y;
 overflow:hidden;

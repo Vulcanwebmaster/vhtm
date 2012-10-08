@@ -1,6 +1,6 @@
 <div id="header">
 			<ul class="top_menu">
-				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="<?php echo base_url();?>">Trang chủ</a></li>
 				<li><a href="#">Forum</a></li>
 				<li><a href="#">Giới thiệu</a></li>
 				<li><a href="#">Sản phẩm</a></li>
@@ -22,10 +22,10 @@
 						<option>Agatha</option>
 						<option>Anna Sui</option>
 					</select>
-					<a href="#"><img src="images/ok.jpg" alt="setalpm" width="44" height="23" />
+					<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/ok.jpg" alt="setalpm" width="44" height="23" />
                     </a>																																																																																								
 				</form>
 			</div>
-			<div id="language"><a href="#"><img src="images/vn.jpg"/></a><a href="#"><img src="images/el.jpg"/></a></div>
+			<div id="language"><a href="#"><img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/></a><a href="#"><img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/></a></div>
             <div id="tel">TELEPHONE:0123456789</div>
 		</div>
