@@ -7,11 +7,24 @@ class Homepage extends NIW_controller {
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
+		$this->load->model('Mhomepage');
+		$this->loadLang();
 	}
 	
+	function loadLang()
+	{
+		$lang=$this->session->userdata('lang');
+		if ($lang=='vn')
+		{
+			$this->lang->load('5sao','vietnamese');
+		}
+		else $this->lang->load('5sao','english');
+	}
+
 	public function index()
 	{
-		$data['title']='[Name Defined] | Home';
+		$data['list']=$this->Mhomepage->getListByColumn('trangchu','moi','1');
+		$data['title']='5saoviet | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);
