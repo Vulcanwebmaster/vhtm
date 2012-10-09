@@ -8,6 +8,7 @@
                           </div>
 					</div>
 					<div id="items">
+						<p id="newpr">Sản phẩm mới</p>
 					  <?php foreach ($list as $item)
 						{?>
 							<div class="item">
