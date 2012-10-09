@@ -1,1 +1,0 @@
-Transfer was successfully updated!

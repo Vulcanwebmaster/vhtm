@@ -1,1 +1,0 @@
-Isin was successfully created!

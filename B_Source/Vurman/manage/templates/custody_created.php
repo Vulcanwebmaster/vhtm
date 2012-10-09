@@ -1,1 +1,0 @@
-You have created custody account successfully!
