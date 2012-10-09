@@ -5,7 +5,7 @@
                         	
                         	<h1>0988.999.687</h1>
                         	<a href="ymsgr:sendim?bonghongxanh_9x">        		
-                            <img src="<?php echo base_url();?>assets/5sao/images/online.gif"/><img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
+                            <img src="<?php echo base_url();?>assets/5sao/images/online1.gif" width="63" height="16"/><img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
                            
                         </div>
                         <div class="support">
