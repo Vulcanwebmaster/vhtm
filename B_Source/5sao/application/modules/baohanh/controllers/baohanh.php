@@ -25,6 +25,9 @@ class Baohanh extends NIW_controller {
 
 	public function index()
 	{
+		$data['list_gioithieumenu']=$this->Mbaohanh->getListFull('gioithieu');
+		$data['categories']=$this->Mbaohanh->getListByColumn('danhmuc','parent_id','0');
+		
 		$data['lang']=$this->session->userdata('lang');
 		$data['list']=$this->Mbaohanh->getRowByColumn('baohanh','id','1');
 		$data['title']='5saoviet | Bảo hành - bảo trì';

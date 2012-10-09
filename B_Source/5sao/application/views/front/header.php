@@ -1,6 +1,6 @@
 <div id="header">
 			<div id="search">
-				Tìm kiếm<br />																																																							
+				<?php echo $this->lang->line('menu-timkiem');?><br />																																																							
 				<form action="#">
 					<select>
 						<option>Category</option>
@@ -18,38 +18,30 @@
                     </a>																																																																																								
 				</form>
 			</div>
-			<div id="language"><a href="#"><img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/></a><a href="#"><img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/></a></div>
-            <div id="tel">TELEPHONE:0123456789</div>
+			<div id="language">
+				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/></a>
+				<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/></a>
+			</div>
+            <div id="tel"><?php echo $this->lang->line('menu-dienthoai');?>:0123456789</div>
             <ul class="top_menu">
-				<li class="submenu"><a href="<?php echo base_url();?>">Trang chủ</a>
+				<li class="submenu"><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
                 	<div class="itemmenu">
                     	<a href="#">Hotlline 24/24 : 0988.999.687</a><hr/>
                         <a href="#">Tel: 04.37 633 594</a><hr/>                       
                     </div>
                 </li>
-				<li class="submenu"><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a>
+				<li class="submenu"><a href="<?php echo base_url();?>gioithieu"><?php echo $this->lang->line('menu-gioithieu');?></a>
                 	<div class="itemmenu">
-                    	<a href="#">Giới thiệu chung</a><hr/>
-                        <a href="#">Tầm nhìn</a><hr/>
-                        <a href="#">Hồ sơ năng lực</a><hr/>
+                		<?php foreach ($list_gioithieumenu as $menu)
+                		{?>
+                			<a href="<?php echo base_url();?>gioithieu/detail/<?php echo $menu->id;?>"><?php if ($lang=="vn") echo $menu->tieude_v; else echo $menu->tieude_e;?></a><hr/>
+                		<?php }?>
                     </div>
                 </li>
-				<li  class="submenu"><a href="<?php echo base_url();?>sanpham">Sản phẩm</a>
-                	<div class="itemmenu">
-                    	<a href="#">Thiết bị bếp chính</a><hr/>
-                        <a href="#">Thiết bị chế biến</a><hr/>
-                        <a href="#">Thiết bị làm bánh</a><hr/>
-                        <a href="#">Thiết bị bảo quản</a><hr/>
-                        <a href="#">Thiết bị làm bánh</a><hr/>
-                        <a href="#">Thiết bị bảo quản</a><hr/>
-                        <a href="#">Thiết bị xử lý môi trường nhà bếp</a><hr/>
-                        <a href="#">Thiết bị phụ trợ</a><hr/>
-                        <a href="#">Thiết bị nhà hàng - khách sạn</a><hr/>
-                        <a href="#">Gia công cơ khí</a><hr/>
-                    </div>
+				<li  class="submenu"><a href="<?php echo base_url();?>sanpham"><?php echo $this->lang->line('menu-sanpham');?></a>
                 </li>
-				<li><a href="<?php echo base_url();?>baohanh">Bảo hành - Bảo trì</a></li>
-				<li class="submenu"><a href="<?php echo base_url();?>tintuc">Tin tức - Sự kiện</a>
+				<li><a href="<?php echo base_url();?>baohanh"><?php echo $this->lang->line('menu-baohanh');?></a></li>
+				<li class="submenu"><a href="<?php echo base_url();?>tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
                 	<div class="itemmenu">
                     	 <a href="#">Hình ảnh</a><hr/>
                     	<a href="#">Tin tức - Sự kiện</a><hr/>

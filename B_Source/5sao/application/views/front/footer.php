@@ -1,14 +1,12 @@
 <div id="footer">
 		<div>
 			<ul>
-				<li><a href="index.html">Trang chủ</a>|</li>
-				<li><a href="#">Forum</a>|</li>
-				<li><a href="#">Giới thiệu</a>|</li>
-				<li><a href="#">Sản phẩm</a>|</li>
-				<li><a href="#">Bảo hành - Bảo trì</a>|</li>
-				<li><a href="#">Tin tức - Sự kiện</a>|</li>
-               <li><a href="#">Liên hệ</a>&nbsp;</li>
-
+				<li><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>|</li>
+				<li><a href="<?php echo base_url();?>gioithieu"><?php echo $this->lang->line('menu-gioithieu');?></a>|</li>
+				<li><a href="<?php echo base_url();?>sanpham"><?php echo $this->lang->line('menu-sanpham');?></a>|</li>
+				<li><a href="<?php echo base_url();?>baohanh"><?php echo $this->lang->line('menu-baohanh');?></a>|</li>
+				<li><a href="<?php echo base_url();?>tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>|</li>
+               	<li><a href="#"><?php echo $this->lang->line('menu-lienhe');?></a>&nbsp;</li>
 			</ul>
 			<p id="bft">Copyright &copy;. All rights reserved. Design by <a href="http://niw.com.vn/" target="_blank" title="Best Free Templaes">NIW</a></p>																																																																																			
 		</div>

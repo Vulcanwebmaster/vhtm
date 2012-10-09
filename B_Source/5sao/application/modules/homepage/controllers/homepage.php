@@ -23,6 +23,9 @@ class Homepage extends NIW_controller {
 
 	public function index()
 	{
+		$data['list_gioithieumenu']=$this->Mhomepage->getListFull('gioithieu');
+		$data['categories']=$this->Mhomepage->getListByColumn('danhmuc','parent_id','0');
+		
 		$data['lang']=$this->session->userdata('lang');
 		$data['list']=$this->Mhomepage->getListByColumn('sanpham','moi','1');
 		$data['title']='5saoviet | Trang chủ';

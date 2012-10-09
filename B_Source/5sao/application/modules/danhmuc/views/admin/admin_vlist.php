@@ -3,10 +3,10 @@
 <form action="<?php echo base_url()?>danhmuc/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
-			<h3><?php echo $this->lang->line('danhmuc-admin-column1'); ?></h3>			
+			<h3><?php echo $title; ?></h3>			
 		</header>
 		<div class="tab_container">
-			<div id="tab1" class="tab_content">
+			<div id="tab1" class="tab_content" style="height:500px; overflow:auto">
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
@@ -25,7 +25,7 @@
 					 		<tr>  
 			    				<td><?php echo $item->ten_v;?></td> 
 			    				<td><?php echo $item->ten_e;?></td>
-			    				<td><?php if($parentsName[$count]) echo $item->parent_id;?></td> 
+			    				<td><?php if($parentsName[$count]) echo $parentsName[$count];?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    				</td>
@@ -33,7 +33,7 @@
 			    					<a href="<?php echo base_url()?>danhmuc/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
-					 	<?php }?>
+					 	<?php $count++;}?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->

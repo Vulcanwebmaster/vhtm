@@ -22,6 +22,9 @@ class Tintuc extends NIW_Controller
 	
 	function index()
 	{
+		$data['list_gioithieumenu']=$this->Mtintuc->getListFull('gioithieu');
+		$data['categories']=$this->Mtintuc->getListByColumn('danhmuc','parent_id','0');
+		
 		$data['title']='5saoviet | Tin tức';
 		$data['lang']=$this->session->userdata("lang");
 		$data['list_tintuc']=$this->Mtintuc->getListFull('tintuc');
@@ -32,6 +35,9 @@ class Tintuc extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$data['list_gioithieumenu']=$this->Mtintuc->getListFull('gioithieu');
+		$data['categories']=$this->Mtintuc->getListByColumn('danhmuc','parent_id','0');
+		
 		$data['lang']=$this->session->userdata("lang");
 		$data['title']='5saoviet | Giới thiệu';
 		$data['detail']=$this->Mtintuc->getRowByColumn('tintuc','id',$id);

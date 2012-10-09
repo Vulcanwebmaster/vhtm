@@ -1,50 +1,44 @@
+<?php $newmodel=new CI_Model();?>
 <div id="left">
-					<h4 class="title1">Danh mục sản phẩm</h4>
+					<h4 class="title1"><?php echo $this->lang->line('left-danhmuc');?></h4>
 					<ul id="list">
-						<li class="slidecontrol"><a href="#" class="type1">Accessories</a>
-                        	 <div class="slidemove">
-                                <ul id="inside">
-                                    <li><a href="#">Bracelets</a></li>
-                                    <li><a href="#">Earrings</a></li>
-                                    <li><a href="#">Necklaces</a></li>
-                                    <li><a href="#">Rings</a></li>
-                                </ul>
-                            </div>
-                        </li>
-						<li><a href="#" class="type2">Bottoms</a></li>
-						<li><a href="#" class="type2">Denim</a></li>
-						<li><a href="#" class="type2">Dresses</a></li>
-						<li><a href="#" class="type1">Eyewear</a></li>
-						<li><a href="#" class="type2">Footwear</a></li>
-						<li><a href="#" class="type1">Handwear</a></li>
-						<li class="slidecontrol"><a href="#" class="type2">Knitwear</a>
-                        	  <div class="slidemove">
-                                <ul id="inside">
-                                    <li><a href="#">Bracelets</a></li>
-                                    <li><a href="#">Earrings</a></li>
-                                    <li><a href="#">Necklaces</a></li>
-                                    <li><a href="#">Rings</a></li>
-                                </ul>
-                            </div>
-                        </li>
-						<li class="slidecontrol">
-							<a href="#" class="type1">Jewellery</a>
-                            <div class="slidemove">
-                                <ul id="inside">
-                                    <li><a href="#">Bracelets</a></li>
-                                    <li><a href="#">Earrings</a></li>
-                                    <li><a href="#">Necklaces</a></li>
-                                    <li><a href="#">Rings</a></li>
-                                </ul>
-                            </div>
-						</li>
-						<li><a href="#" class="type2">Outerwear</a></li>
-						<li><a href="#" class="type2">Playsuits</a></li>
-						<li><a href="#" class="type1">Swimwear</a></li>
-						<li><a href="#" class="type2">Tops</a></li>
+						<?php foreach ($categories as $category)
+						{
+							if ($lang=="vn") 
+							{?>
+								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/category/'.$category->id.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
+									<div class="slidemove">
+										<ul id="inside">
+											<?php 
+												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);
+												foreach ($listlevel2 as $level2)
+												{?>
+													<li><a href="<?php echo base_url()?>sanpham/category/<?php echo $category->id?>"><?php echo $level2->ten_v;?></a></li>
+												<?php }
+											?>
+										</ul>
+									</div>
+								</li>
+							<?php }
+							else {?>
+								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/category/'.$category->id.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_e;?></a>
+									<div class="slidemove">
+										<ul id="inside">
+											<?php $newmodel=new CI_Model();
+												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);
+												foreach ($listlevel2 as $level2)
+												{?>
+													<li><a href="<?php echo base_url()?>sanpham/category/<?php echo $category->id?>"><?php echo $level2->ten_e;?></a></li>
+												<?php }
+											?>
+										</ul>
+									</div>
+								</li>
+								<?php }
+						}?>
 					</ul>
                     <div class="bodermove" id="prnew">
-                        <div class="title2"><h4 style="padding-top:10px">Sản phẩm bán chạy</h4></div>
+                        <div class="title2"><h4 style="padding-top:10px"><?php echo $this->lang->line('left-spbanchay');?></h4></div>
                         <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="350"  width="182" style="margin:4px 0 10px 0">
                            <div class="pr-img">
                             <img src="<?php echo base_url();?>assets/5sao/images/s1.GIF" width="170" height="131"/>

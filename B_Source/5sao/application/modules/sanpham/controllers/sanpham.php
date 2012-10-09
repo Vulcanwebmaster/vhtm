@@ -29,6 +29,9 @@ class Sanpham extends NIW_Controller
 	
 	function page($index=0)
 	{
+		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
+		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
+		
 		$config['base_url']=base_url().'sanpham/page/'.$index;
 		$config['per_page']=9;
 		$config['uri_segment']=4;
@@ -44,6 +47,9 @@ class Sanpham extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
+		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
+		
 		$data['detail']=$this->Msanpham->getRowByColumn('sanpham','id',$id);
 		$data['lang']=$this->session->userdata('lang');
 		$data['module']=$this->module;
@@ -57,6 +63,9 @@ class Sanpham extends NIW_Controller
 	
 	function category($id=0, $index=0)
 	{
+		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
+		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
+		
 		$config['base_url']=base_url().'sanpham/category/'.$index;
 		$config['per_page']=9;
 		$config['uri_segment']=4;

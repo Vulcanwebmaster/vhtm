@@ -47,6 +47,7 @@
 		{
 			if (!$this->input->post('ten_v'))
 			{
+				$data['listParents']=$this->Mdanhmuc->getListByColumn('danhmuc','parent_id','0');
 				$data['config'] = $this->setupCKEditor('97%','200px');
 				$data['title']='Thêm danh mục';
 				$data['bcCurrent']='Danh mục';
