@@ -11,7 +11,8 @@ class Mtintuc extends CI_Model
 	function CountFull()
 	{
 		$list=$this->db->get('tintuc');
-		return $list->num_rows();
+		return $list->row();
 	}
+
 }
 ?>

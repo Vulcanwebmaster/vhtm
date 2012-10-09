@@ -1,4 +1,4 @@
-<div id="header">			
+<div id="header">
 			<div id="search">
 				Tìm kiếm<br />																																																							
 				<form action="#">
