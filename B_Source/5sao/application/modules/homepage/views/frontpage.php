@@ -19,6 +19,6 @@
 								</div>
 					            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 							</div>
-						<?php }?>
+						<?php }?><br clear="both"/>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 <div id="right">
-                	<div>
-                    	<h4 class="title3"  style="padding-top:10px; margin-left:10px">Liên hệ và Hỗ trợ</h4>
+                	<div class="bodermove" style="margin-left:9px; padding-bottom:1px;">
+                    	<h4 class="title3"  style="padding-top:10px; ">Liên hệ và Hỗ trợ</h4>
                         <div class="support">
                         	<h1>0988.999.687</h1>
                             <img src="<?php echo base_url();?>assets/5sao/images/online.gif"/><img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
@@ -63,7 +63,8 @@
                    </div>                  
                 </div>	
                  <div id="mainmap"  class="bodermove">
-                   		<h4 class="title3" style=" margin-top:10px; padding-top:10px">Bản đồ</h4>
+                   		<h4 class="title3" style=" margin-top:0px; padding-top:10px">Bản đồ</h4>
                         <div id="map"><img src="<?php echo base_url();?>assets/5sao/images/map.jpg" width="170" height="145"/></div>
+                        <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                    </div>			
 				</div>

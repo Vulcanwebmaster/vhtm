@@ -60,6 +60,7 @@
                                 <h4 style="text-align:center; font-weight:bold; margin:5px">Máy bếp</h4>
                             </div>
                         </marquee>
+                        <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                       </div>
 					
 				</div>
