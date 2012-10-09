@@ -512,6 +512,9 @@ h1{font-family:Arial;  font-size:1.5em; padding:10px}
 .aboutus-item img,.aboutus-item h3{float:left}
 .aboutus-item h3{line-height:96px; padding:0 10px}
 .aboutus-item h3 a{color:black}
-.aboutus-item h5 a{color:black}
+/*--------------------Trung--------------------------*/
+.aboutus-item h5 a{color:black; text-decoration: none;}
+.aboutus-item h5 a:hover{text-decoration: underline;}
+/*-----------------End Trung-------------------------*/
 .gioithieu-title{margin:20px 0 10px 0}
 #aboutus-menu{margin-top:15px; list-style-type:none}
