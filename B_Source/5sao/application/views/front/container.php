@@ -10,23 +10,27 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery.nivo.slider.js"></script>
 	 <script type="text/javascript">
-
-	 $(document).ready(function(){
-		  $('.slidemove').hide();
-				$('.slidecontrol').click(function(){
-					$(this).children('.slidemove').slideDown();
-					});
-				$('.slidecontrol').mouseleave(function(){
-					$(this).children('.slidemove').slideUp();
-					});
-		});
-			$(window).load(function() {
-				$('#slider').nivoSlider();
-				//$('.nivo-control').hide();		
-				
+		 $(document).ready(function(){
+			  $('.slidemove').hide();
+					$('.slidecontrol').click(function(){
+						$(this).children('.slidemove').slideDown();
+						});
+					$('.slidecontrol').mouseleave(function(){
+						$(this).children('.slidemove').slideUp();
+						});
+				$('.itemmenu').hide();
+					$('.submenu').mouseenter(function(){
+						$(this).children('.itemmenu').slideDown();
+						});
+					$('.submenu, .itemmenu').mouseleave(function(){
+						$(this).children('.itemmenu').slideUp();
+						});
 			});
-			
-			
+				$(window).load(function() {
+					$('#slider').nivoSlider();
+					//$('.nivo-control').hide();		
+					
+				});
 	</script>
 </head>
 <body>

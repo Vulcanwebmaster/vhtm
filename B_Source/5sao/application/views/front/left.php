@@ -43,9 +43,9 @@
 						<li><a href="#" class="type1">Swimwear</a></li>
 						<li><a href="#" class="type2">Tops</a></li>
 					</ul>
-                    <div class="bodermove" style="margin-left:10px">
+                    <div class="bodermove" id="prnew">
                         <div class="title2"><h4 style="padding-top:10px">Sản phẩm bán chạy</h4></div>
-                        <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="300"  width="182" style="margin:10px 0 5px 0">
+                        <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="350"  width="182" style="margin:10px 0 10px 0">
                            <div class="pr-img">
                             <img src="<?php echo base_url();?>assets/5sao/images/s1.GIF" width="170" height="131"/>
                             <h4 style="text-align:center; font-weight:bold; margin:5px">Máy bếp</h4>
