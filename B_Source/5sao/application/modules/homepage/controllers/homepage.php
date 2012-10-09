@@ -23,6 +23,7 @@ class Homepage extends NIW_controller {
 
 	public function index()
 	{
+		$data['lang']=$this->session->userdata('lang');
 		$data['list']=$this->Mhomepage->getListByColumn('sanpham','moi','1');
 		$data['title']='5saoviet | Trang chủ';
 		$data['module'] = $this->module;

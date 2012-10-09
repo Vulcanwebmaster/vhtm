@@ -84,7 +84,7 @@ class NIW_Controller extends CI_Controller {
 	{
 		if (!$this->session->userdata('lang'))
 		{
-			$this->session->userdata('lang','vn');
+			$this->session->set_userdata('lang','vn');
 		}
 	}
 }

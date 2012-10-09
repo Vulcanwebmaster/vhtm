@@ -14,41 +14,16 @@
                           </div>
 					</div>
 					<div id="items">
-					  <div class="item">							
-							<div class="itemimage">
-								<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" alt="" width="169" height="200px" /></a><br />								
+					  <?php foreach ($list as $item)
+						{?>
+							<div class="item">
+								<div class="itemimage">
+									<a href="<?php echo base_url();?>sanpham/detail/<?php echo $item->id;?>">
+										<?php echo $item->hinhanh;?>
+									</a><br />								
+								</div>
+					            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 							</div>
-                            <div class="itemh5">Tủ bát sấy đĩa</div>							
-						</div>
-						<div class="item">							
-							<div class="itemimage">
-								<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" alt="" width="169" height="200px" /></a><br />								
-							</div>
-                            <div class="itemh5">Tủ bát sấy đĩa</div>							
-						</div>
-						<div class="item">							
-							<div class="itemimage">
-								<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" alt="" width="169" height="200px" /></a><br />								
-							</div>
-                            <div class="itemh5">Tủ bát sấy đĩa</div>							
-						</div>
-						<div class="item">							
-							<div class="itemimage">
-								<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" alt="" width="169" height="200px" /></a><br />								
-							</div>
-                            <div class="itemh5">Tủ bát sấy đĩa</div>							
-						</div>
-						<div class="item">							
-							<div class="itemimage">
-								<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" alt="" width="169" height="200px" /></a><br />								
-							</div>
-                            <div class="itemh5">Tủ bát sấy đĩa</div>							
-						</div>
-						<div class="item">							
-							<div class="itemimage">
-								<a href="#"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" alt="" width="169" height="200px" /></a><br />								
-							</div>
-                            <div class="itemh5">Tủ bát sấy đĩa</div>							
-						</div>
+						<?php }?>
 					</div>
 				</div>

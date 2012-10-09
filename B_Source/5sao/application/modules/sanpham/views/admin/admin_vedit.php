@@ -24,7 +24,7 @@
 				</fieldset>
 				<fieldset>
 					<label>Mô tả (Anh)</label>
-					<?php echo $this->ckeditor->editor('mota_e',$info->mota_v,$config);?>
+					<?php echo $this->ckeditor->editor('mota_e',$info->mota_e,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Chi tiết (Việt)</label>

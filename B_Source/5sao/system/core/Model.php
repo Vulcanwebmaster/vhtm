@@ -103,6 +103,19 @@ class CI_Model {
 	 	return $list;
 	 }
 	 
+	function getListByColumnOffset($tableName='',$columnName='',$value='', $index='', $offset='')
+	 {
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get($tableName,$offset,$index);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
 	 function insertNewRow($tableName='',$input)
 	 {
 	 	if ($this->db->insert($tableName,$input))

@@ -23,6 +23,7 @@ class Gioithieu extends NIW_Controller
 	function index()
 	{
 		$data['title']='5saoviet | Giới thiệu';
+		$data['lang']=$this->session->userdata("lang");
 		$data['list_gioithieu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['module']=$this->module;
 		$data['page']='vgioithieu';
@@ -31,10 +32,11 @@ class Gioithieu extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$data['lang']=$this->session->userdata("lang");
 		$data['title']='5saoviet | Giới thiệu';
 		$data['detail']=$this->Mgioithieu->getRowByColumn('gioithieu','id',$id);
 		$data['module']=$this->module;
-		$data['page']='vchitiet';
+		$data['page']='vdetail';
 		$this->load->view('front/container',$data);		
 	}
 }

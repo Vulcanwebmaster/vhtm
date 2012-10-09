@@ -257,7 +257,7 @@ margin:19px 0 0 0
 #center{
 width:578px;
 float:left;
-background-color:#3e3e3e;
+background-color:#f7f6f6;
 }
 #photo{
 background-image:url(../images/photo.jpg);
@@ -286,7 +286,7 @@ padding:3px 0 0 8px
 .item{
 border:1px solid #42424B;
 width:180px;
-height:236px;
+height:auto;
 background-color:#FFF;
 float:left;
 margin-right:8px;
@@ -479,3 +479,18 @@ font-size:11px
 #language a{padding-left:2px;}
 .pr-img{ margin-left:5px; border-bottom:1px solid #CCC}
 .bodermove{margin-top:10px; width:182px; background-color:#CCC}
+
+/* --------------------- MANH ---------------------*/
+.itemimage a img{width:169px !important; height:200px !important}
+.clear{clear:both}
+.pagination-control{text-align:center; margin-top:10px}
+.pagination-control *{color:white}
+h1{font-family:Arial;  font-size:1.5em; padding:10px}
+.product_image, .product_description{float:left}
+.product_image p img{width:250px !important; height:170px !important; margin:10px}
+.product_detail{clear:both; padding:15px}
+.aboutus-item img,.aboutus-item h3{float:left}
+.aboutus-item h3{line-height:96px; padding:0 10px}
+.aboutus-item h3 a{color:black}
+.gioithieu-title{margin:20px 0 10px 0}
+#aboutus-menu{margin-top:15px; list-style-type:none}
