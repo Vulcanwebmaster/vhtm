@@ -31,6 +31,30 @@
 			return $query->fetchAll();
 		}
 		
+		function getListCategoryId($user_id)
+		{
+			$query = $this->db->query('select * from unc_manage_category where user_id="'.$user_id.'"');
+			return $query->fetchAll();
+		}
+		
+		function getNewsByCategoryId($category_id)
+		{
+			$query = $this->db->query('select news_id from unc_news where category_id="'.$category_id.'"');
+			return $query->fetchAll();
+		}
+		
+		function getCommentByNewsId($news_id)
+		{
+			$query = $this->db->query('select * from unc_comment where news_id="'.$news_id.'"');
+			return $query->fetchAll();
+		}
+		
+		function getListNewsByAuthor($news_author)
+		{
+			$query = $this->db->query('select news_id from unc_news where news_author="'.$news_author.'"');
+			return $query->fetchAll();
+		}
+		
 		function getCommentById($id)
 		{
 			$query=$this->db->query('select * from unc_comment where comment_id="'.$id.'"');
@@ -50,6 +74,28 @@
 		{
 			$query=$this->db->query('select news_id from unc_news where news_id !="'.$news_id.'"');
 			return $query->fetchAll();
+		}
+		
+		function getNewsTitleByNewsId($news_id)
+		{
+			$query=$this->db->query('select news_title from unc_news where news_id="'.$news_id.'"');
+			$list=$query->fetchAll();
+			return $list[0]['news_title'];
+		}
+		
+		function getNewsByNewsId($news_id)
+		{
+			$query=$this->db->query('select news_id from unc_news where news_id="'.$news_id.'"');
+			$list=$query->fetchAll();
+			return $list[0];
+		}
+		
+		function getReaderNameByReaderId($reader_id)
+		{
+			$query=$this->db->query('select comment_user_fullname from unc_comment_user where comment_user_id="'.$reader_id.'"');
+			$list=$query->fetchAll();
+			//echo $list[0]['comment_user_fullname'];die();
+			return $list[0]['comment_user_fullname'];
 		}
 	}
 ?>

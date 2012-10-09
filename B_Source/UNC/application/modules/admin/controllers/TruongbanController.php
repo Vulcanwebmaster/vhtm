@@ -27,7 +27,7 @@
 			$user_login = new Zend_Form_Element_Text('user_login');
 			$user_login->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
 			
-			$user_pass = new Zend_Form_Element_Text('user_pass');
+			$user_pass = new Zend_Form_Element_Password('user_pass');
 			$user_pass->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 			
 			$user_fullname = new Zend_Form_Element_Text('user_fullname');
@@ -178,6 +178,7 @@
 			{
 				$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
 				$form->getElement('user_login')->setValue($info['user_login']);
+				
 				$form->getElement('user_pass')->setValue($info['user_pass']);
 				$form->getElement('user_fullname')->setValue($info['user_fullname']);
 				$form->getElement('user_email')->setValue($info['user_email']);

@@ -2,6 +2,9 @@
 	class Admin_CommentController extends Zend_Controller_Action
 	{
 		protected $mComment;
+		protected $role;
+		protected $user;
+		protected $user_id;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -9,22 +12,100 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mComment = new Admin_Model_Mcomment();
+			  session_start();
+			  $this->role = $_SESSION['role'];
+			  $this->user_id = $_SESSION['user_id'];
 		}
 		
 		function indexAction()
 		{
+			//echo $this->user_id.' --- '.$this->role;die();
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$paginator = Zend_Paginator::factory($this->mComment->getListComment());
+			$listNewsTitle = array();
+			$listReaderName = array();
+			$listComments = array();
+			$listNewsId = array();
+			
+			if($this->role =="0")
+			{
+				$listComments = $this->mComment->getListComment();
+				//Nếu là admin thì lấy ra danh sách tất cả các comment
+				$paginator = Zend_Paginator::factory($listComments);
+			}
+			else if($this->role =="1")	
+			{
+				//Nếu là trưởng ban
+				//Lấy ra danh sách chuyên mục mà trưởng ban đó quản lý
+				$listCategoryId = $this->mComment->getListCategoryId($this->user_id);
+				$listNews = $this->mComment->getListNews();
+				$comments = $this->mComment->getListComment();
+				
+				foreach($listCategoryId as $CategoryId)
+				{
+					//Lấy ra danh sách các tin thuộc các chuyên mục mà trưởng ban đó quản lý
+					foreach($listNews as $news)
+					{
+						if($news['category_id'] == $CategoryId['category_id'])
+						{
+							//Danh sách ID của tin tức thuộc các chuyên mục mà trưởng ban đó quản lý
+							$listNewsId[] = $this->mComment->getNewsByNewsId($news['news_id']);
+						}
+					}
+				}
+				
+				foreach($comments as $comment)
+				{
+					foreach($listNewsId as $newsId)
+					{
+						if($newsId['news_id'] == $comment['news_id'])
+						{
+							$listComments[] = $this->mComment->getCommentById($comment['comment_id']);
+						}
+					}
+				}
+				//var_dump($listComments);die();
+				$paginator = Zend_Paginator::factory($listComments);
+			}
+			else if($this->role == "2")
+			{
+				$comments = $this->mComment->getListComment();
+				//Nếu là phóng viên 
+				//Lấy ra danh sách tin tức mà phóng viên đó viết
+				$listNewsId = $this->mComment->getListNewsByAuthor($this->user_id);
+				
+				foreach($comments as $comment)
+				{
+					foreach($listNewsId as $newsId)
+					{
+						if($newsId['news_id'] == $comment['news_id'])
+						{
+							$listComments[] = $this->mComment->getCommentById($comment['comment_id']);
+						}
+					}
+				}
+				
+				$paginator = Zend_Paginator::factory($listComments);
+			}
+			
+			//var_dump($listComments);die();
+			
+			foreach($listComments as $comments)
+			{
+				$listNewsTitle[] = $this->mComment->getNewsTitleByNewsId($comments['news_id']);
+				$listReaderName[] = $this->mComment->getReaderNameByReaderId($comments['reader_id']);
+			}
+			
         	$paginator->setItemCountPerPage(5);        
-        	$paginator->setPageRange(3);
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
         	$this->view->list=$paginator;
 			$this->view->title="Quản lý comment";
+			$this->view->listNewsTitle = $listNewsTitle;
+			$this->view->listReaderName = $listReaderName;
 		}
 		
 		function setForm()
@@ -91,6 +172,7 @@
 			{
 				if($form->isValid($_POST))
 				{
+					//var_dump($this->mComment->editComment($comment_id,$input));die();
 					$input = $this->_getInput($form);
 					//var_dump($input);die();
 					if ($this->mComment->editComment($comment_id,$input))

@@ -39,11 +39,24 @@
 								<?php 
 								$count=1;
 								foreach ($this->list as $item)
-								{?>
+								{
+									?>
 									{ order: "<?php echo $count;?>", 
-										comment_content: "<?php echo $item['comment_content'];?>",   
-										news_id: "<?php echo $item['news_id'];?>",
-										reader_id: "<?php echo $item['reader_id'];?>",
+										comment_content: "<?php echo $item['comment_content'];?>",									
+										news_id: "<?php 
+											$string = $this->listNewsTitle[$count-1];
+											if(strlen($string)<30) echo $string;
+											else 
+											{
+												if(strpos($string,' ',30) > 30)
+												{
+													$limit = strpos($string,' ',30);
+													$string_new = substr($string,0,$limit);
+												}
+												echo $string_new.' ...';
+											}
+										 ?>",
+										reader_id: "<?php echo $this->listReaderName[$count-1];?>",
 										option: "<?php echo $item['comment_id']?>"
 									},
 								<?php $count++;}?>
