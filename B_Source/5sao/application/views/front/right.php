@@ -1,6 +1,6 @@
 <div id="right">
-                	<div class="bodermove" style="margin-left:9px; padding-bottom:1px;">
-                    	<h4 class="title3"  style="padding-top:10px; ">Liên hệ và Hỗ trợ</h4>
+                	<div class="bodermove" style="margin-left:9px; padding-bottom:2px;">
+                    	<h4 class="title3"  style="padding-top:10px; margin-bottom: 4px; ">Liên hệ và Hỗ trợ</h4>
                         <div class="support">
                         	
                         	<h1>0988.999.687</h1>
@@ -23,7 +23,7 @@
                     </div>
                   <div>
 					<h4 class="title3"  style="padding-top:10px; margin-left:10px">Tin tức</h4>
-                    <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="250">
+                    <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="250" style="margin-top:-8px;">
                       	<ul class="brands">
 						<li class="color"><a href="#">Aeffe S.P.A</a></li>
 						<li><a href="#">Agatha</a></li>
@@ -60,14 +60,14 @@
                    </div>
                    <div  class="bodermove" style="margin-left:9px">
                     <h4 class="title3" style=" margin-top:10px; padding-top:10px">Thư viện ảnh</h4>
-                	<div>
-                	 <marquee direction="down" behavior="alternate" scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="250" style="margin:0 0 5px 0">
+                	
+                	 <marquee direction="down" behavior="alternate" scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="250" style="margin:-8px 0 5px 0">
                         <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s1.gif" width="170" height="131"/></div>
                         <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s2.jpg" width="170" height="131"/></div>
                         <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s3.jpg" width="170" height="131"/></div>
                         <div class="pr-img"><img src="<?php echo base_url();?>assets/5sao/images/s4.jpg" width="170" height="131"/></div>
                     </marquee>
-                   </div>                  
+                                
                 </div>	
                  <div id="mainmap"  class="bodermove">
                    		<h4 class="title3" style=" margin-top:0px; padding-top:10px">Bản đồ</h4>
