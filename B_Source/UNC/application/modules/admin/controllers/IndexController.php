@@ -28,15 +28,10 @@ class Admin_IndexController extends Zend_Controller_Action
 
 		if ($this->mAdmin->isExistAccount($username,$password))
 		{
-<<<<<<< .mine
-			$account = $mAdmin->getAccountByUser($username);
-			$_SESSION['role_id'] = $account['role_id'];
-			$_SESSION['user']= $username;
-=======
 			$account=$this->mAdmin->getAccountByUser($username);
 			$_SESSION['role_id']=$account['role_id'];
 			$_SESSION['user']=$username;
->>>>>>> .r784
+
 			$_SESSION['role'] = $this->mAdmin->getRoleByUser($username);
 			
 			$_SESSION['user_id']=$account['user_id'];

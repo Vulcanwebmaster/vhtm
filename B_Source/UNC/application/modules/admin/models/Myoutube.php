@@ -27,7 +27,7 @@
 		
 		function getAccountSelected()
 		{
-			$query=$this->db->query('select youtube_username,password,youtube_gallery from unc_youtube_account where is_selected=1');
+			$query=$this->db->query('select youtube_id,youtube_username,password,youtube_gallery from unc_youtube_account where is_selected=1');
 			$list=$query->fetchAll();
 			return $list[0];
 		}
