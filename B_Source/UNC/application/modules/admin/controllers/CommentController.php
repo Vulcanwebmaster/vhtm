@@ -13,8 +13,16 @@
 		      Zend_Layout::startMvc ( $option );
 			  $this->mComment = new Admin_Model_Mcomment();
 			  session_start();
-			  $this->role = $_SESSION['role'];
-			  $this->user_id = $_SESSION['user_id'];
+			  if(isset($_SESSION['role']))
+			  	$this->role = $_SESSION['role'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
+			  if(isset($_SESSION['user_id']))
+			 	 $this->user_id = $_SESSION['user_id'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
 		}
 		
 		function indexAction()
@@ -102,6 +110,7 @@
         	$paginator->setItemCountPerPage(5);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
+			
         	$this->view->list=$paginator;
 			$this->view->title="Quản lý comment";
 			$this->view->listNewsTitle = $listNewsTitle;

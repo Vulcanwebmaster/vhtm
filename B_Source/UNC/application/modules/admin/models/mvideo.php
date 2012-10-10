@@ -13,9 +13,9 @@
 			return $query;
 		}
 		
-		function insertVideo($input,$user,$pass)
+		function insertVideo($input,$id_youtube)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","1","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$user.'","'.$pass.'","'.$input['user_upload'].'")');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","1","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$id_youtube.'","'.$input['user_upload'].'")');
 			return $query;
 		}
 		

@@ -8,15 +8,23 @@
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-		      $option = array ('layout' => 'index', 
+		    $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
-		      Zend_Layout::startMvc ( $option );
+		    Zend_Layout::startMvc ($option);
 		      
-		      session_start();
-			  $this->mTruongban = new Admin_Model_Mtruongban();
+		    session_start();
+			$this->mTruongban = new Admin_Model_Mtruongban();
 			  
-			  $this->role = $_SESSION['role'];
-			  $this->user = $_SESSION['user'];
+			if(isset($_SESSION['role']))
+			  	$this->role = $_SESSION['role'];
+			else {
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			if(isset($_SESSION['user']))
+				$this->user = $_SESSION['user'];
+			else {
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
 		}
 		
 		function setForm()
@@ -69,13 +77,10 @@
 			{
 				$user_id = $this->mTruongban->getIdByUsername($this->user);
 				$category_id = $this->mTruongban->getCategoryIdByUserId($user_id);
-				//echo $this->role.' --- '.$category_id.' --- '.$user_id;die();
 				$listUser = $this->mTruongban->getListUserIdByCategoryId($category_id,$user_id);
-				//var_dump($listUser);die();
 				$allTruongban = $this->mTruongban->getListByRole('1');
-				//var_dump($allTruongban);die();
 				$listTruongBan = array();
-				//echo $count;die();
+				
 				foreach($allTruongban as $truongBan)
 				{
 					foreach($listUser as $user)
@@ -96,7 +101,6 @@
 			}
 			
         	$paginator->setItemCountPerPage(5);        
-        	$paginator->setPageRange(3);
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
         	$this->view->list=$paginator;

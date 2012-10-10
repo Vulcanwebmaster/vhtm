@@ -3,12 +3,13 @@
 	{
 		protected $mVideo;
 		protected $mYoutube;
-		protected $user,$pass,$gallery;
+		protected $user_youtube,$pass_youtube,$gallery,$id_youtube;
 		protected $role;
 		protected $user_login;
+		
 		function init()
 		{
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
+			  $layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
@@ -17,11 +18,21 @@
 			  $this->mVideo = new Admin_Model_Mvideo();
 			  $this->mYoutube = new Admin_Model_Myoutube();
 			  $account = $this->mYoutube->getAccountSelected();
-			  $this->user = $account['youtube_username'];
-			  $this->pass = $account['password'];
+			  $this->id_youtube = $account['youtube_id'];
+			  $this->user_youtube = $account['youtube_username'];
+			  $this->pass_youtube = $account['password'];
 			  $this->gallery = $account['youtube_gallery'];
-			  $this->role = $_SESSION['role'];
-			  $this->user_login = $_SESSION['user'];
+			  
+			  if(isset($_SESSION['role']))
+			  	$this->role = $_SESSION['role'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
+			  if(isset($_SESSION['user']))
+			 	 $this->user_login = $_SESSION['user'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
 		}
 		
 		function _httpClient()
@@ -29,8 +40,8 @@
 			$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
 			Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
 			$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-							              $username = $this->user,
-							              $password = $this->pass,
+							              $username = $this->user_youtube,
+							              $password = $this->pass_youtube,
 							              $service 	= 'youtube',
 							              $client 	= null,
 							              $source 	= 'NIWApp', 
@@ -41,8 +52,48 @@
 			return $httpClient;
 		}
 		
-		function refresh()
+		function refreshAction()
 		{
+			$youtube  = new Zend_Gdata_YouTube();
+		 
+		    try {
+		        $feed = $youtube->getUserUploads($this->gallery);
+				foreach ($feed as $video)
+				 	{
+				 		$video_link = $video->getVideoId();
+				 		if($this->mVideo->exitsVideo($video_link)==false)
+						{
+							$input = array(
+											'video_title'		=> $video->getVideoTitle(),
+											'video_description' => $video->getVideoDescription(),
+											'video_link'		=> $video_link,
+											'user_upload'		=> $this->user_login
+							);
+							$this->mVideo->insertVideo($input,$this->id_youtube);
+						}
+					}
+		    }
+		    catch (Exception $ex) {
+		        echo $ex->getMessage();
+		        exit;
+		    }
+			
+			$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+		}
+		
+		function indexAction()
+		{
+			echo $this->user_youtube.' - '.$this->pass_youtube.' - '.$this->gallery;
+			$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			
+			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
+        	$paginator->setItemCountPerPage(5);        
+        	$currentPage = $this->_request->getParam('page',1);
+         	$paginator->setCurrentPageNumber($currentPage);
+			
 			$youtube  = new Zend_Gdata_YouTube();
 		 
 		    try {
@@ -66,22 +117,6 @@
 		        echo $ex->getMessage();
 		        exit;
 		    }
-			
-			$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
-		}
-		
-		function indexAction()
-		{
-			//echo $this->user.' - '.$this->pass.' - '.$this->gallery;
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
-        	$paginator->setItemCountPerPage(5);        
-        	$currentPage = $this->_request->getParam('page',1);
-         	$paginator->setCurrentPageNumber($currentPage);
 			
 			//var_dump($this->mVideo->getListVideo());die();
         	$this->view->list = $paginator;
@@ -286,14 +321,14 @@
 						
 						if(file_exists($destination))
 							unlink($destination);
-						echo '<script type="text/javascript">alert("Video đang được upload trên YOUTUBE !");</script>';
+						
+						echo '<script type="text/javascript">
+							alert("Video đang được upload trên YOUTUBE !");
+						</script>';
+						
 						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 					}
 					else echo '<script type="text/javascript">alert("Vui lòng chọn file !");</script>';
-				}
-				else 
-				{
-					$form->populate($_POST);
 				}
 				
 			}
