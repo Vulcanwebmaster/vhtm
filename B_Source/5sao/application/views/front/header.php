@@ -1,4 +1,4 @@
-<div id="header">
+<div id="header">			
 			<div id="search">
 				<?php echo $this->lang->line('menu-timkiem');?><br />																																																							
 				<form action="#">
