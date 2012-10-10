@@ -17,43 +17,37 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-		    				<th>Tên (Việt)</th> 
-		    				<th>Tên (Anh)</th>
-		    				<th>Danh mục cha</th> 
-		    				<th>Sửa</th>
+		    				<th>Họ tên</th> 
+		    				<th>Email</th>
+		    				<th>Điện thoại</th> 
+		    				<th>Tiêu đề</th>
+		    				<th>Nội dung</th>
+		    				<th>Ngày tháng</th>
 		    				<th>Xóa</th>
 						</tr> 
 					</thead> 
 					<tbody>
 					 	<?php 
-					 	$count=0;
 					 	foreach ($list as $item)
 					 	{?>
 					 		<tr>  
-			    				<td><?php echo $item->ten_v;?></td> 
-			    				<td><?php echo $item->ten_e;?></td>
-			    				<td><?php if($parentsName[$count]) echo $parentsName[$count];?></td> 
-			    				<td>
-			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    				</td>
-			    				<td>
-			    					<a href="<?php echo base_url()?>danhmuc/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
-			    				</td>
+			    				<td><?php echo '<a href="'.base_url().'lienhe/admin/detail/'.$item->id.'">'.$item->hoten.'</a>';?></td> 
+			    				<td><?php echo $item->email;?></td>
+			    				<td><?php echo $item->dienthoai;?></td>
+			    				<td><?php echo $item->tieude;?></td> 
+			    				<td><?php echo $item->noidung;?></td> 
+			    				<td><?php echo $item->ngaythang;?></td> 
+			    				<td><a href="<?php echo base_url()?>lienhe/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a></td>
 							</tr>
-					 	<?php $count++;}?>
+					 	<?php }?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->
 			<center style="font-size: 15px;color:red">
 				<?php echo $this->pagination->create_links();?>
 			</center>
-				<footer>
-						
-						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>danhmuc/admin/insert">Thêm mới</a>
-						</div>
-				</footer>
-						
+			<footer>
+			</footer>
 		</div>
 	</article>
 </form>	

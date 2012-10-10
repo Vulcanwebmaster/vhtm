@@ -1,3 +1,10 @@
+<?php if ($this->session->userdata('result')!='')
+{
+	echo '<p style="color:red; padding-left:30px">';
+	echo $this->session->userdata('result');
+	$this->session->unset_userdata('result');
+	echo '</p>';
+}?>
 <section id="main" class="column" style="width:100%;">	
 	
 <form action="<?php echo base_url()?>gioithieu/admin/saveColumn1" method="post">    

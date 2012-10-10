@@ -49,5 +49,6 @@
                        
                     </div>
                 </li>
+                <li><a href="<?php echo base_url();?>lienhe"><?php echo $this->lang->line('menu-lienhe');?></a></li>
 			</ul>
 		</div>
