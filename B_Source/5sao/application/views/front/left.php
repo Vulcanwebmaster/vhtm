@@ -41,7 +41,7 @@
 					<div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
 				</div>
                     <div class="bodermove" id="prnew">
-                        <div class="title2"><h4 style="padding-top:10px"><?php echo $this->lang->line('left-spbanchay');?></h4></div>
+                        <div class="title2"><h4><?php echo $this->lang->line('left-spbanchay');?></h4></div>
                         <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="300"  width="182" style="margin:4px 0 10px 0">
                            <div class="pr-img">
                             <img src="<?php echo base_url();?>assets/5sao/images/s1.GIF" width="170" height="131"/>

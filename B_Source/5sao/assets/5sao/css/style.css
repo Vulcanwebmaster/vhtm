@@ -164,6 +164,7 @@ font-weight:normal;
 text-transform:uppercase;
 font-weight:bold;
 margin-top:0px;
+padding-top:8px;
 }
 .title1{
 padding:0px 0 10px 0px;
@@ -510,7 +511,7 @@ text-align: left;}
 .pagination-control{text-align:center; margin-top:10px}
 .pagination-control *{color:white}
 h1{font-family:Arial;  font-size:1.5em; padding:10px}
-.product_image, .product_description{float:left}
+.product_image, .product_description{float:left; font-size:12px; margin-top:20px}
 .product_image p img{width:250px !important; height:170px !important; margin:10px}
 .product_detail{clear:both; padding:15px}
 .aboutus-item{clear:both; padding:15px 0}
@@ -525,3 +526,4 @@ h1{font-family:Arial;  font-size:1.5em; padding:10px}
 /*-----------------End Trung-------------------------*/
 .gioithieu-title{margin:20px 0 10px 0}
 #aboutus-menu{margin-top:15px; list-style-type:none}
+#pr2{ background-image:url(../images/pr2.jpg)}
