@@ -12,4 +12,7 @@
 			$query=$this->db->query('select * from phongvien');
 			return $query->fetchAll();
 		}
+		
+
+
 	}

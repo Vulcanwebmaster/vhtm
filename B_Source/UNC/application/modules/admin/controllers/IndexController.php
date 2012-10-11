@@ -28,6 +28,7 @@ class Admin_IndexController extends Zend_Controller_Action
 
 		if ($this->mAdmin->isExistAccount($username,$password))
 		{
+
 			$account=$this->mAdmin->getAccountByUser($username);
 			$_SESSION['role_id']=$account['role_id'];
 			$_SESSION['user']=$username;

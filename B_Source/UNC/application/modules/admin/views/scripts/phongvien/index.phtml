@@ -80,7 +80,17 @@
 										user_fullname: '<?php echo $item['user_fullname'];?>',
 										user_email: '<?php echo $item['user_email'];?>',
 										is_active: '<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>',
-										option: '<?php echo $item['user_id']?>'
+										option: 
+										'<?php 
+												if($this->role =="0")
+													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a><a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												
+												else if($this->role =="1") 
+													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+												
+												else if($this->role =="2" & $item['user_login']==$this->user) 
+													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+										?>'
 									},
 								<?php $count++;}?>
 							];
@@ -126,7 +136,7 @@
 							{
 								key: 'option',
 								label:'Tùy chọn',
-								formatter: '<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/{value}" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a><a class="del_button" onclick="confirmDel({value})" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>',
+								formatter: '<span>{value}</span>',
 								allowHTML: true
 							}],
 					data: data,
@@ -142,10 +152,14 @@
 		
 		<footer>
 			<div class="submit_link">
-				<a class="alt_btn" href="<?php echo $this->baseUrl('admin/phongvien/insert');?>">Thêm mới</a>
-				<?php echo $this->paginationControl($this->list,
-                                    'Sliding',
-                                    'tintuc/pagination.phtml');?>
+				<?php
+				if($this->role=="0")
+				{
+				?>
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/phongvien/insert');?>">Thêm mới</a>
+				<?php
+				}
+				echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 			</div>
 		</footer>
 	</div>
