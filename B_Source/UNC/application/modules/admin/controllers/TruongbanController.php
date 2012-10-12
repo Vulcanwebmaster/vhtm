@@ -217,7 +217,7 @@
 							if($this->mTruongban->isExitsUsername($input['user_login']))
 							{
 								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
-<<<<<<< .mine
+
 							}
 							else 
 							{
@@ -231,21 +231,7 @@
 									$_SESSION['result']='Cập nhật không thành công';
 									$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 								}
-=======
 							}
-						else {
-							if ($this->mTruongban->editUser($userId, $input))
-							{
-								$_SESSION['result']='Cập nhật thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
-							}
-							else 
-							{
-								$_SESSION['result']='Cập nhật không thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
->>>>>>> .r790
-							}
-						}
 						}
 					}
 					else 
