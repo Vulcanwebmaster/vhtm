@@ -26,21 +26,6 @@
 			}
 		}
 		
-		function sort($list)
-		{
-			for($i=0;$i<count($list)-1;$i++)
-			{
-	        	for($j=$i+1;$j<count($list);$j++)
-				{
-		            if($list[$i]<$list[$j])
-		            {
-		                $tg=$list[$i]; $list[$i]=$list[$j]; $list[$j]=$tg;
-		            }
-				}
-			}
-			return $list;
-		}
-		
 		function indexAction()
 		{
 			$this->view->headTitle('UNC - Admin website');
@@ -54,7 +39,7 @@
 				$paginator = Zend_Paginator::factory($this->mUser->getListByRole('2'));
 			}
 			
-			if($this->role == "1")
+			if($this->role == "1" | $this->role == "2")
 			{
 				//Nếu là trưởng ban
 				$user_id = $this->mUser->getIdByUsername($this->user);
@@ -63,27 +48,29 @@
 				
 				$listUser = array();
 				$listUserId = array();
+				
 				$category_id = $this->mUser->getCategoryIdByUserId1($user_id);
 				
 				foreach ($category_id as $category)
 				{
 					foreach($this->mUser->getUserIdByCategoryId($category['category_id']) as $user)
 					{
-						if($user['user_id'] != $user_id)
+						if($this->role == "1")
 						{
-							//echo $user['user_id'].'<br>';
+							if($user['user_id'] != $user_id)
+							{
+								//echo $user['user_id'].'<br>';
+								$listUser[] = $user['user_id'] ;
+							}
+						}
+						else if($this->role == "2")
+						{
 							$listUser[] = $user['user_id'] ;
 						}
 					}
 				}
 				$listUser = $this->sort($listUser);
-				for($i=0;$i<count($listUser)-1;$i++)
-				{
-					if($listUser[$i] == $listUser[$i+1])
-					{
-						$listUser[$i] = null;
-					}
-				}
+				$listUser = $this->setNull($listUser);
 				
 				foreach($listUser as $user)
 				{
@@ -109,58 +96,43 @@
 				$paginator = Zend_Paginator::factory($listPhongvien);
 			}
 			
-			if($this->role =="2")
-			{
-				// Nếu là phóng viên, hiển thị tất cả các phóng viên.
-				$paginator = Zend_Paginator::factory($this->mUser->getListByRole('2'));
-			}
-			/*else if($this->role == "2")
-			{
-				//Nếu là phóng viên
-				$user_id = $this->mUser->getIdByUsername($this->user);
-				
-				//Danh sách category mà phóng viên đó đảm nhiệm
-				$category_id = $this->mUser->getCategoryIdByUserId($user_id);
-				//echo $category_id;die();
-				//Danh sách tất cả phóng viên và trưởng ban cùng quản lý các chuyên mục đó
-				$listUser = $this->mUser->getListUserIdByCategoryId($category_id,$user_id);
-				//var_dump($listUser);die();
-				//Danh sách tất cả các phóng viên trong bảng unc_user
-				$allUser = $this->mUser->getListByRole('2');
-				
-				//Danh sách phóng viên cân hiển thị
-				$listUser1 = array();
-				
-				//Duyệt tất cả các phóng viên trong bảng unc_user
-				foreach($allUser as $User1)
-				{
-					//Duyệt tất cả các phóng viên và trưởng ban cùng quản lý các chuyên muc đó
-					foreach($listUser as $user)
-					{
-						//Nếu phóng viên đó có user_id = user_id của phóng viên trong unc_user thì thêm vào danh sách
-						if($User1['user_id']==$user['user_id'])
-						{
-							$listUser1[]=$User1;
-						}
-					}
-				}
-				
-				//var_dump($listUser1);die();
-				$paginator = Zend_Paginator::factory($listUser1);
-			}
-			/*	else 
-			{
-				$paginator = Zend_Paginator::factory($this->mUser->getListByRole('2'));
-			}*/
 			
 			$paginator->setItemCountPerPage(6);
-			$current=$this->_request->getParam('page',1);
+			$current = $this->_request->getParam('page',1);
 			$paginator->setCurrentPageNumber($current);			
-			$this->view->list=$paginator;
-			$this->view->title="Phóng viên";
+			$this->view->list = $paginator;
+			$this->view->title = "Phóng viên";
 			
 			$this->view->role = $this->role;
 			$this->view->user = $this->user;
+		}
+		
+		function setNull($list)
+		{
+			for($i=0;$i<count($list)-1;$i++)
+				{
+					if($list[$i] == $list[$i+1])
+					{
+						$list[$i] = null;
+					}
+				}
+				
+			return $list;
+		}
+		
+		function sort($list)
+		{
+			for($i=0;$i<count($list)-1;$i++)
+			{
+	        	for($j=$i+1;$j<count($list);$j++)
+				{
+		            if($list[$i]<$list[$j])
+		            {
+		                $tg=$list[$i]; $list[$i]=$list[$j]; $list[$j]=$tg;
+		            }
+				}
+			}
+			return $list;
 		}
 		
 		function deleteAction()
@@ -297,6 +269,7 @@
 			
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mUser->getUserById($userId);
+			
 			if($this->role =="0" |$this->role =="1" | ($this->role == "2" & $this->user == $info['user_login']))
 			{
 				$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
