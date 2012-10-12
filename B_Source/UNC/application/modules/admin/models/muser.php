@@ -13,11 +13,13 @@
 			return $query->fetchAll();
 		}
 		
-		function getListUserIdByCategoryId($category_id,$user_id)
+		function getUserIdByCategoryId($category_id)
 		{
-			$query=$this->db->query('select * from unc_manage_category where category_id="'.$category_id.'" order by user_id desc');
+			$query=$this->db->query('select distinct user_id from unc_manage_category where category_id="'.$category_id.'" order by user_id asc');
 			return $query->fetchAll();
 		}
+		
+		
 		
 		function getListUserIdByCategoryId1($category_id)
 		{

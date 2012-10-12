@@ -26,6 +26,21 @@
 			}
 		}
 		
+		function sort($list)
+		{
+			for($i=0;$i<count($list)-1;$i++)
+			{
+	        	for($j=$i+1;$j<count($list);$j++)
+				{
+		            if($list[$i]<$list[$j])
+		            {
+		                $tg=$list[$i]; $list[$i]=$list[$j]; $list[$j]=$tg;
+		            }
+				}
+			}
+			return $list;
+		}
+		
 		function indexAction()
 		{
 			$this->view->headTitle('UNC - Admin website');
@@ -33,7 +48,6 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			//$paginator= Zend_Paginator::factory($this->mUser->getListByRole('2'));//($adapter);
 			if($this->role =="0")
 			{
 				// Nếu là admin, hiển thị tất cả các phóng viên.
@@ -46,40 +60,38 @@
 				$user_id = $this->mUser->getIdByUsername($this->user);
 				
 				$allPhongvien = $this->mUser->getListByRole('2');
-				$listDistinctUser = $this->mUser->getListDistinctUser();
-				$listUser = $this->mUser->getListUser();
-				$allUser = array();
 				
-				foreach($listUser as $user)
-				{
-					foreach($listDistinctUser as $user1)
-					{
-						if($user['user_id'] == $user1['user_id'])
-						{
-							$allUser[] = $user;
-						}
-					}
-				}
-				
-				//var_dump($allUser);die();
-				
+				$listUser = array();
 				$listUserId = array();
 				$category_id = $this->mUser->getCategoryIdByUserId1($user_id);
-				//var_dump($category_id);die();
 				
 				foreach ($category_id as $category)
 				{
-					foreach($listUser as $user)
+					foreach($this->mUser->getUserIdByCategoryId($category['category_id']) as $user)
 					{
-						if($category['category_id'] == $user['category_id'])
+						if($user['user_id'] != $user_id)
 						{
-							$listUserId[] = 
-							var_dump($listUserId);die();
+							//echo $user['user_id'].'<br>';
+							$listUser[] = $user['user_id'] ;
 						}
 					}
 				}
+				$listUser = $this->sort($listUser);
+				for($i=0;$i<count($listUser)-1;$i++)
+				{
+					if($listUser[$i] == $listUser[$i+1])
+					{
+						$listUser[$i] = null;
+					}
+				}
 				
-				//var_dump($listUserId);die();
+				foreach($listUser as $user)
+				{
+					if($user != null)
+					{
+						$listUserId[] = $user;
+					}
+				}
 				
 				$listPhongvien = array();
 				
@@ -87,14 +99,13 @@
 				{
 					foreach($listUserId as $user)
 					{
-						if($phongvien['user_id'] == $user['user_id'])
+						if($phongvien['user_id'] == $user)
 						{
 							$listPhongvien[] = $phongvien;
 						}
 					}
 				}
 				
-				//var_dump($listPhongvien);die();
 				$paginator = Zend_Paginator::factory($listPhongvien);
 			}
 			
