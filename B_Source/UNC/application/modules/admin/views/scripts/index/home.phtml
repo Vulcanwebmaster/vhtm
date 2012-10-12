@@ -1,3 +1,12 @@
+<?php if (isset($_SESSION['result']))
+{
+	echo '<p class="message">';
+	echo $_SESSION['result'];
+	echo '</p>';
+	unset($_SESSION['result']);
+}
+?>
+
 <article class="module width_full">
 	<header><h3>Stats</h3></header>
 	<div class="module_content">
