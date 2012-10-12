@@ -1,0 +1,1 @@
+Isin was successfully updated.
