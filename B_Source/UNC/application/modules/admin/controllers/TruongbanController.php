@@ -178,6 +178,7 @@
 			$form=$this->setForm();
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mTruongban->getUserById($userId);
+			//var_dump($info);die();
 			//echo $this->role.' --- '.$this->user.' --- '.$info['user_login'];die();
 			if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
 			{
@@ -196,6 +197,7 @@
 				{
 					if($form->isValid($_POST))
 					{
+						//echo 'abc';die();
 						$input=$this->_getInput($form);
 						if($info['user_login']==$input['user_login'])
 						{
@@ -215,6 +217,21 @@
 							if($this->mTruongban->isExitsUsername($input['user_login']))
 							{
 								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
+<<<<<<< .mine
+							}
+							else 
+							{
+								if ($this->mTruongban->editUser($userId, $input))
+								{
+									$_SESSION['result']='Cập nhật thành công';
+									$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+								}
+								else 
+								{
+									$_SESSION['result']='Cập nhật không thành công';
+									$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+								}
+=======
 							}
 						else {
 							if ($this->mTruongban->editUser($userId, $input))
@@ -226,6 +243,7 @@
 							{
 								$_SESSION['result']='Cập nhật không thành công';
 								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+>>>>>>> .r790
 							}
 						}
 						}
