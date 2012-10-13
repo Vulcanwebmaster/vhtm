@@ -2,9 +2,11 @@
 	class Admin_TruongbanController extends Zend_Controller_Action
 	{
 		protected $mTruongban;
+		protected $mChuyenmuc;
 		protected $mUser;
 		protected $user;
 		protected $role;
+		protected $listParent,$listChild;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -14,7 +16,12 @@
 		      
 		    session_start();
 			$this->mTruongban = new Admin_Model_Mtruongban();
-			  
+			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+			
+			$this->listParent = $this->mChuyenmuc->getListParent();
+			$this->listChild = $this->mChuyenmuc->getListChild();
+			
+			
 			if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			else {
@@ -30,12 +37,14 @@
 		function setForm()
 		{
 			$form=new Zend_Form;
+			 
 			$form->setMethod('post')->setAction('');
 			
 			$user_login = new Zend_Form_Element_Text('user_login');
 			$user_login->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
 			
 			$user_pass = new Zend_Form_Element_Password('user_pass');
+			$user_pass->setAttrib('renderPassword', true);
 			$user_pass->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 			
 			$user_fullname = new Zend_Form_Element_Text('user_fullname');
@@ -132,6 +141,9 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$this->view->title="Thêm trưởng ban";
+			$this->view->listParent = $this->listParent;
+			$this->view->listChild = $this->listChild;
+			//var_dump($this->listParent);die();
 			$form = $this->setForm();
 			
 			if($this->_request->isPost())
@@ -147,8 +159,17 @@
 					}
 					else 
 					{
+						
+						
 						if ($this->mTruongban->insertUser($input))
 						{
+							$user_id = $this->mTruongban->getUserIdByUserLogin($input['user_login']);
+							//echo $user_id;die();
+							foreach($_POST['checkbox'] as $check)
+							{
+								$this->mChuyenmuc->insertUserForCategory($user_id,$check);
+							}
+							//die();
 							$_SESSION['result']='Thêm mới thành công';
 							$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 						}
@@ -177,19 +198,25 @@
 			
 			$form=$this->setForm();
 			$userId=$this->_request->getParam('userid');
+			
+			$this->view->listParent = $this->listParent;
+			$this->view->listChild = $this->listChild;
+			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
+			
 			$info=$this->mTruongban->getUserById($userId);
+			//echo $info['user_pass'];die();
 			//var_dump($info);die();
 			//echo $this->role.' --- '.$this->user.' --- '.$info['user_login'];die();
 			if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
 			{
 				$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
 				$form->getElement('user_login')->setValue($info['user_login']);
-				
 				$form->getElement('user_pass')->setValue($info['user_pass']);
 				$form->getElement('user_fullname')->setValue($info['user_fullname']);
 				$form->getElement('user_email')->setValue($info['user_email']);
 				$form->getElement('user_address')->setValue($info['user_address']);
 				$form->getElement('is_active')->setValue($info['is_active']);
+				
 				$this->view->form=$form;
 				$this->view->title="Sửa thông tin trưởng ban";
 				
@@ -201,8 +228,15 @@
 						$input=$this->_getInput($form);
 						if($info['user_login']==$input['user_login'])
 						{
-							if ($this->mTruongban->editUser($userId, $input))
+							if($this->mTruongban->editUser($userId, $input))
 							{
+								if($this->mChuyenmuc->delManageCategoryByUserId($userId))
+								{
+									foreach($_POST['checkbox'] as $check)
+									{
+										$this->mChuyenmuc->insertUserForCategory($userId,$check);
+									}
+								}
 								$_SESSION['result']='Cập nhật thành công';
 								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 							}

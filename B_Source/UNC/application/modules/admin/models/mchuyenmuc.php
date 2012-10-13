@@ -69,5 +69,36 @@
 									where category_id="'.$id.'"');
 			return $query;
 		}
+		
+		function getListParent()
+		{
+			$query =  $this->db->query('select * from unc_category where category_parent_id=0 and is_active=1');
+			return $query->fetchAll();
+			//var_dump($query->fetchAll());die();
+		}
+
+		function getListChild()
+		{
+			$query = $this->db->query('select * from unc_category where category_parent_id!=0 and is_active=1');
+			return $query->fetchAll();
+		}
+		
+		function insertUserForCategory($user_id,$category_id)
+		{
+			$query = $this->db->query('insert into unc_manage_category values ("'.$user_id.'","'.$category_id.'")');
+			return $query;
+		}
+		
+		function getListCategoryIdByUserId($user_id)
+		{
+			$query = $this->db->query('select distinct category_id from unc_manage_category where user_id="'.$user_id.'"');
+			return $query->fetchAll();
+		}
+
+		function delManageCategoryByUserId($user_id)
+		{
+			$query = $this->db->query('delete from unc_manage_category where user_id="'.$user_id.'"');
+			return $query;
+		}
 	}
 ?>

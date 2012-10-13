@@ -39,6 +39,54 @@
 					<label>Kích hoạt</label>
 					<?php echo $this->form->getElement('is_active');?>
 				</fieldset>
+				<fieldset>
+					<label style="width:300px">Các chuyên mục được phân quyền</label>
+					<?php 
+					foreach($this->listParent as $parent)
+					{
+					?>
+						<p style="text-transform: uppercase;margin-left: 50px"><?php echo $parent['category_name']; ?></p>
+						<?php
+							foreach($this->listChild as $child)
+							{
+								$check = 0;
+								if($child['category_parent_id'] == $parent['category_id'])
+								{
+									foreach($this->listCategoryId as $categoryId)
+									{
+										
+										if($categoryId['category_id'] == $child['category_id'])
+										{
+											$check = 1; break;
+										}
+									}
+									if($check == 1)
+									{
+										?>
+										<div style="margin-left:100px">
+											<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
+											<span><?php echo $child['category_name']; ?></span>
+										</div>
+											<br/>
+										<?php
+									}
+									else
+									{
+										?>
+										<div style="margin-left:100px">
+											<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+											<span><?php echo $child['category_name']; ?></span>
+										</div>
+											<br/>
+										<?php
+									}
+								}
+							}
+						?>
+					<?php
+					}
+					?>
+				</fieldset>
 			</div>
 		</div>
 		<footer>

@@ -1,18 +1,22 @@
 <?php
 	class Admin_PhongvienController extends Zend_Controller_Action
 	{
-		protected $mUser;
+		protected $mUser,$listParent,$listChild,$mChuyenmuc;
 		protected $user;
 		protected $role;
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-		      $option = array ('layout' => 'index', 
+		    $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
-		      Zend_Layout::startMvc ( $option );
+		    Zend_Layout::startMvc ( $option );
 		      
-		      session_start();
-		      $this->mUser=new Admin_Model_Muser();
+		    session_start();
+		    $this->mUser=new Admin_Model_Muser();
+			
+			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+			$this->listParent = $this->mChuyenmuc->getListParent();
+			$this->listChild = $this->mChuyenmuc->getListChild();
 			  
 			if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
@@ -159,46 +163,41 @@
 		
 		function setForm()
 		{
-			$form=new Zend_Form();
-			$form->setMethod('post');
-			$form->setName('insertForm');
-			$form->setAction($this->view->baseUrl().'/admin/phongvien/insert');
+			$form=new Zend_Form;
+			 
+			$form->setMethod('post')->setAction('');
 			
-			
-			$form->addElement('text','user_login');
-			$user_login=$form->getElement('user_login');
+			$user_login = new Zend_Form_Element_Text('user_login');
 			$user_login->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
-			$user_login->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElement('text','user_pass');
-			$el=$form->getElement('user_pass');
-			$el->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
-			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_pass = new Zend_Form_Element_Password('user_pass');
+			$user_pass->setAttrib('renderPassword', true);
+			$user_pass->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 			
-			$form->addElement('text','user_fullname');
-			$el=$form->getElement('user_fullname');
-			$el->setLabel('Họ tên');
-			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_fullname = new Zend_Form_Element_Text('user_fullname');
+			$user_fullname->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên người dùng không được để trống'));
 			
-			$form->addElement('text','user_email');
-			$el=$form->getElement('user_email');
-			$el->addValidator('EmailAddress', true , array('messages'=>'Email phải nhập đúng định dạng'));
-			$el->setLabel('Email');
-			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_email = new Zend_Form_Element_Text('user_email');
+			$user_email->addValidator('EmailAddress',true,array('messages'=>'Địa chỉ email không hợp lệ'));
+			$user_email->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Email không được để trống'));
 			
-			$form->addElement('text','user_address');
-			$el=$form->getElement('user_address');
-			$el->setLabel('Địa chỉ');
-			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_address = new Zend_Form_Element_Text('user_address');
+			$user_address->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Địa chỉ không được để trống'));
 			
-			$el=$form->createElement("select","is_active",array(
+			$is_active = $form->createElement("select","is_active",array(
                                                         "label" => "Kích hoạt",
                                                    "multioptions"=> array(
                                                                       "0" => "Không",
                                                                       "1" => "Có")));
-			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
-			$form->addElement($el);
+
+			$user_login->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$user_pass->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_fullname->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_email->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$user_address->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
+			$form->addElements(array($user_login,$user_pass,$user_fullname,$user_email,$user_address,$is_active));
 			return $form;
 		}
 		
@@ -222,6 +221,8 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$this->view->title="Thêm phóng viên";
+			$this->view->listParent = $this->listParent;
+			$this->view->listChild = $this->listChild;
 			
 			$form=$this->setForm();
 			if ($this->_request->isPost())
@@ -243,6 +244,12 @@
 					{
 							if ($this->mUser->insertUser($input))
 							{
+								$user_id = $this->mTruongban->getUserIdByUserLogin($input['user_login']);
+								//echo $user_id;die();
+								foreach($_POST['checkbox'] as $check)
+								{
+									$this->mChuyenmuc->insertUserForCategory($user_id,$check);
+								}
 								$_SESSION['result']='Thêm mới thành công';
 								$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 							}
@@ -270,6 +277,10 @@
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mUser->getUserById($userId);
 			
+			$this->view->listParent = $this->listParent;
+			$this->view->listChild = $this->listChild;
+			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
+			
 			if($this->role =="0" |$this->role =="1" | ($this->role == "2" & $this->user == $info['user_login']))
 			{
 				$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
@@ -292,6 +303,13 @@
 						{
 							if ($this->mUser->editUser($userId, $input))
 							{
+								if($this->mChuyenmuc->delManageCategoryByUserId($userId))
+								{
+									foreach($_POST['checkbox'] as $check)
+									{
+										$this->mChuyenmuc->insertUserForCategory($userId,$check);
+									}
+								}
 								$_SESSION['result']='Cập nhật thành công';
 								$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 							}
@@ -311,6 +329,13 @@
 							{
 								if ($this->mUser->editUser($userId, $input))
 								{
+									if($this->mChuyenmuc->delManageCategoryByUserId($userId))
+									{
+										foreach($_POST['checkbox'] as $check)
+										{
+											$this->mChuyenmuc->insertUserForCategory($userId,$check);
+										}
+									}
 									$_SESSION['result']='Cập nhật thành công';
 									$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 								}
@@ -377,7 +402,7 @@
 			}
 			else
 			{
-				$userId=$this->_request->getParam('userid');
+					$userId=$this->_request->getParam('userid');
 					$info=$this->mUser->getUserById($userId);
 					
 					$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
