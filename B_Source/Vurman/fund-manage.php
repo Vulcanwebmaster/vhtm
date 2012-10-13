@@ -39,11 +39,11 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
     <script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
-    <script src="js/fund-manage.js" type="text/javascript"></script>
-   <style type="text/css">body
+    <!--<script src="js/fund-manage.js" type="text/javascript"></script>-->
+   <style type="text/css">/*body
         {
             font-family: Arial,Verdana,Helvetica,sans-serif;
-            font-size: 12px;
+            font-size: 10px;
             background-color: #FFFFFF;
             text-align: center;
             margin: 0;
@@ -56,7 +56,7 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
         }
         pre
         {
-            font-size: 14px;
+            font-size: 12px;
             color: #FFFFFF;
             padding: 5px;
         }
@@ -160,6 +160,7 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
         }
         .tbl_input
         {
+        	border:1px solid;
         	float:right;
         	height:21px;
         	width:350px;
@@ -167,32 +168,36 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
         }
          .tbl_input input
          {
-         	height:15px;width:340px;margin-left:5px;display:inline;border:0;margin-top:1px;
-         }
+         	height:15px;
+         	width:340px;margin-left:5px;display:inline;margin-top:1px;
+         	border:1px solid;
+         	font-family: Arial,Helvetica,sans-serif;
+    		font-size: 11px;
+    		font-weight: normal;
+         }*/
          .tbl_lbl
          {
          	float:left;text-align:right;width:220px;
          }
         </style>
 </head>
-
-
 <body>
  <div id="main_cont">
   <div id="title">
-   <img src="logo.jpg" alt="" /></div>
+   <img src="logo.jpg" alt="" />
+   </div>
     <div id="left">
              <?php require_once('include/menu-left-client.php'); ?>
-        </div>
-        <div id="right">
+        </div> 
+     <div id="right">
              <?php require_once('include/menu-right-client.php'); ?>
-          </div>     
+          </div>   
  <div id="content">  
 <?php
 	$message="";
 	if(isset($_POST['Insert_Fund']))
 	{
-		echo "Test In database";
+		//echo "Test In database";
 		$objFund_Database =new Fund_DatabaseClass($db);
 		//$objFund_Database->Test();
 		$objFund_Database->isin=$_POST['isin'];
@@ -305,18 +310,26 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
          </tr>
          <tr>
            <td class="fieldset"><div class="tbl_lbl">CURRENCY</div>
-             <div class="tbl_input">
-			              <select name="currency" id="currency" class="dropdown">
-			      			<option value=""> please select</option>
+         			<div class="tbl_input" style="text-align: left; margin-left: 245px;">
+			        <select name="currency" id="currency">
 				            <?php 
 								for($i=0;$i<sizeof($arrayCurrency);$i++)
-								{?>
-								<option value="<?php print $arrayCurrency[$i]['id'] ?>"><?php print $arrayCurrency[$i]['name'] ?></option>
+								{
+									if($arrayCurrency[$i]['abbreviation']=="USD")
+									{?>
+										<option value="<?php print $arrayCurrency[$i]['id'] ?>" selected="true"><?php print $arrayCurrency[$i]['name'] ?></option>
+									<?php 
+									}
+									else
+									{?>
+									
+										<option value="<?php print $arrayCurrency[$i]['id'] ?>"><?php print $arrayCurrency[$i]['name'] ?></option>
 								<?php }
-							?>
-									       				
+								}
+							?>	       				
 			            </select>
-             </div></td>
+			           </div>
+            </td>
          </tr>
          <tr>
            <td class="fieldset"><div class="tbl_lbl">FUND NAME</div>
@@ -1016,9 +1029,8 @@ $arrayCustodian=$objCustodian->GetCustodianUsingArray();
  <br>
  
 
-			<input type="submit" name="Insert_Fund" id="Insert_Fund" value="Add" onclick=" return verifyManage();"/>
-</form>
-
+			<input style="width: 80px;" type="submit" name="Insert_Fund" id="Insert_Fund" value="ADD" onclick=" return verifyManage();" />
+</form> 
 </div>
  </body>
 </html>

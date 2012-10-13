@@ -85,6 +85,8 @@ $msg="";
 		$objTransfer->custodian_ac_transfer_agent=$_POST['cust_ac_ta'];
 
 		$objTransfer->status="pending";
+		
+		$objTransfer->company=$_POST['company'];
 
 		//$objTransfer->transaction_type="deliver";
 
@@ -205,7 +207,7 @@ if(isset($msg) && $msg!=""){
        <td colspan="4" align="left"><input name="Client" type="text" style="width:242px;"  id="Client" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name'].' '.$arrUser1[0]['last_name']."'";} ?> /></td>
 
        <td align="right">WORKER NAME</td>              
-       <td colspan="4" align="left"><input name="Client" type="text" id="Client" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name'].' '.$arrUser1[0]['last_name']."'";} ?> /></td> 
+       <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td> 
       </tr>
      </table>
     </fieldset>

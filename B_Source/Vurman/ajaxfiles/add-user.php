@@ -77,20 +77,20 @@ else{
 	return;
 }
 
-if(isset($_POST['officephone'])&&$_POST['officephone']!=""){
-	 $officephone=$_POST['officephone'];
-	 $objUser->gender=$officephone;
+if(isset($_POST['company'])&&$_POST['company']!=""){
+	 $company=$_POST['company'];
+	 $objUser->company=$company;
+}
+else{
+	 $objUser->company="";
+}
+
+if(isset($_POST['gender'])&&$_POST['gender']!=""){
+	 $gender=$_POST['gender'];
+	 $objUser->gender=$gender;
 }
 else{
 	 $objUser->gender="";
-}
-
-if(isset($_POST['cellphone'])&&$_POST['cellphone']!=""){
-	 $cellphone=$_POST['cellphone'];
-	 $objUser->cellphone=$cellphone;
-}
-else{
-	 $objUser->officephone="";
 }
 
 if(isset($_POST['phone'])&&$_POST['phone']!=""){
@@ -127,5 +127,5 @@ else
 {
 	$msg=$objUser->InsertUser();
 }
-echo $msg."|".$objUser->id;
+echo $msg."|".$objUser->id."|".$msg;
 ?>

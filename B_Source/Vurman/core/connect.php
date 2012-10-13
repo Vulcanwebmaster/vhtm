@@ -7,6 +7,6 @@
 else{
 	header('Location: index.php');
 }
-	$db=mysql_connect("localhost","web1244_gajendra","B~mC[oo,fTA@");
-	mysql_select_db('web1244_gajendra');	
+	$db=mysql_connect("localhost","root");
+	mysql_select_db('vurman1');	
 ?>

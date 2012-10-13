@@ -5,8 +5,8 @@ Class UserClass extends ChildCoreClass
 	public $id;
 	public $loginid;
 	public $password;
-	public $email;		public $gender;
-	
+	public $email;		
+	public $gender;
 	public $cellphone;
 	
 	public $phone;
@@ -14,6 +14,7 @@ Class UserClass extends ChildCoreClass
 	public $role;
 	public $active;
 	public $clientid;
+	public $company;
 	
 	function __construct($db)
 	{
@@ -47,11 +48,14 @@ Class UserClass extends ChildCoreClass
 			$JsonStr.="\"id\":\"".$item['id']."\",";						$JsonStr.="\"clientid\":\"".$item['client_id']."\",";
 			$JsonStr.="\"firstname\":\"".$item['first_name']."\",";
 			$JsonStr.="\"lastname\":\"".$item['last_name']."\",";
-			$JsonStr.="\"department\":\"".$item['department']."\",";						$JsonStr.="\"officephone\":\"".$item['gender']."\",";						$JsonStr.="\"cellphone\":\"".$item['cell']."\",";
+			$JsonStr.="\"gender\":\"".$item['gender']."\",";
+			$JsonStr.="\"company\":\"".$item['company']."\",";						$JsonStr.="\"officephone\":\"".$item['department']."\",";						$JsonStr.="\"cellphone\":\"".$item['cell']."\",";
 			$JsonStr.="\"email\":\"".$item['email']."\",";						$JsonStr.="\"phone\":\"".$item['phone']."\",";						$JsonStr.="\"loginid\":\"".$item['login_id']."\",";
 			$JsonStr.="\"password\":\"".$item['password']."\",";
 			$JsonStr.="\"active\":\"".$item['active']."\",";
+			//$JsonStr.="\"company\":\"".$item['company']."\"";
 			$JsonStr.="\"role\":\"".$item['role']."\"";
+			
 			$JsonStr.="}";
 			$comma=",";
 		}
@@ -121,6 +125,13 @@ Class UserClass extends ChildCoreClass
 			$and=" and ";
 		
 		}
+		if($this->company!="")
+		{
+			$whereQuery.=$and."company like '".$this->company."%'";
+		
+			$and=" and ";
+		
+		}
 		if($this->role!="")
 		{
 			$whereQuery.=$and."role like '".$this->role."%'";
@@ -156,6 +167,7 @@ Class UserClass extends ChildCoreClass
 		if($whereQuery!="") $SearchQuery.=" where " .$whereQuery;
 		//echo $SearchQuery;
 		$result=$this->ExcuteQuery($SearchQuery);
+		//echo $result[0]['company'];
 		return $result;
 	}
 	
@@ -170,8 +182,9 @@ Class UserClass extends ChildCoreClass
 		$InsArr['first_name']="'".$this->firstname."'";				$InsArr['last_name']="'".$this->lastname."'";				$InsArr['department']="'".$this->department."'";
 		$InsArr['role']="'".$this->role."'";
 		$InsArr['active']=$this->active;
-		$InsArr['client_id']=$this->clientid;
-				//echo $this->InsertUser($InsArr);
+		$InsArr['client_id']="'".$this->clientid."'";
+		$InsArr['company']="'".$this->company."'";
+				//echo $msg=$this->InsertQuery($InsArr);
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
 		if(mysql_affected_rows()>0)$msg="Added Successfully.";
 		else $msg="Failed.";
@@ -182,7 +195,32 @@ Class UserClass extends ChildCoreClass
 	{
 		$InsArr=$this->userArr;
 		$InsArr['id']=$this->id;
-		$InsArr['login_id']="'".$this->loginid."'";		$InsArr['password']="'".$this->password."'";		$InsArr['email']="'".$this->email."'";				$InsArr['gender']="'".$this->gender."'";				$InsArr['cell']="'".$this->cellphone."'";				$InsArr['phone']="'".$this->phone."'";		$InsArr['first_name']="'".$this->firstname."'";				$InsArr['last_name']="'".$this->lastname."'";				$InsArr['department']="'".$this->department."'";		$InsArr['role']="'".$this->role."'";		$InsArr['active']="'".$this->active."'";		$InsArr['client_id']=$this->clientid;		
+		$InsArr['login_id']="'".$this->loginid."'";		
+		
+		$InsArr['password']="'".$this->password."'";		
+		
+		$InsArr['email']="'".$this->email."'";		
+				
+		$InsArr['gender']="'".$this->gender."'";				
+		
+		$InsArr['client_id']="'".$this->clientid."'";
+		
+		$InsArr['cell']="'".$this->cellphone."'";				
+		
+		$InsArr['phone']="'".$this->phone."'";		
+		
+		$InsArr['first_name']="'".$this->firstname."'";				
+		
+		$InsArr['last_name']="'".$this->lastname."'";				
+		
+		$InsArr['department']="'".$this->department."'";		
+		
+		$InsArr['role']="'".$this->role."'";		
+		
+		$InsArr['active']="'".$this->active."'";		
+		
+		
+		$InsArr['company']="'".$this->company."'";
 		
 		$updateArr=$InsArr;
 		unset($updateArr['login_id']);
@@ -195,8 +233,9 @@ Class UserClass extends ChildCoreClass
 		unset($updateArr['first_name']);				unset($updateArr['last_name']);				unset($updateArr['department']);
 		unset($updateArr['role']);
 		unset($updateArr['active']);
+		unset($updateArr['company']);
 		unset($updateArr['client_id']);
-		//$msg=$this->UpdateQuery($InsArr,$updateArr);
+		//echo $this->UpdateQuery($InsArr,$updateArr);
 		$result=$this->ExcuteQueryOnly($this->UpdateQuery($InsArr,$updateArr));
 		if(mysql_affected_rows()>0)$msg="Updated Successfully.";
 		else $msg=" Update Failed.";

@@ -757,7 +757,7 @@ Class Fund_DatabaseClass extends ChildCoreClass
 		$InsArr['phone_aud']="'".$this->phone_aud."'";
 		$InsArr['fax_aud']="'".$this->fax_aud."'";
 		$result=$this->ExcuteQueryOnly($this->InsertQuery($InsArr));
-		echo $this->InsertQuery($InsArr);
+		//echo $this->InsertQuery($InsArr);
 		if(mysql_affected_rows()>0)$msg="Added Successfully Fund.";
 		else $msg="Failed table Fund";
 		return $msg;

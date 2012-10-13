@@ -26,6 +26,7 @@ Class TransferClass extends ChildCoreClass
 	public $created_at;
 	public $types;
 	public $status;
+	public $company;
 	//public $transaction_type;
 	//public $settled_by;
 	//public $settled_date;
@@ -338,6 +339,7 @@ Class TransferClass extends ChildCoreClass
 		$InsArr['created_at']="now()";
 		$InsArr['types']="'".$this->types."'";
 		$InsArr['status']="'".$this->status."'";
+		$InsArr['company']="'".$this->company."'";
 		//$InsArr['transaction_type']="'".$this->transaction_type."'";
 		//unset($InsArr['settled_by']);
 		//unset($InsArr['settled_date']);

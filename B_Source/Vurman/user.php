@@ -86,6 +86,9 @@ if(isset($_POST['Search']) && $_POST['Search']=="SEARCH"){	if(isset($_POST['sear
 		$objUser->phone=$_POST['search_phone'];
 	
 	}
+	if(isset($_POST['company']) && $_POST['company']!=""){
+		$objUser->company=$_POST['company'];
+	}
 	if(isset($_POST['search_loginid']) && $_POST['search_loginid']!=""){
 		$objUser->loginid=$_POST['search_loginid'];
 	}
@@ -140,7 +143,9 @@ function pageselectCallback(page_index, jq){
 		newcontent += '<td style="text-align:center;">  <a style=\'text-decoration:underline;  cursor:pointer;\' onclick=ViewUser(' + JSONUser[i].id+')>'+JSONUser[i].id + '</a></td>';
 		newcontent += '<td style="text-align:center;">' + JSONUser[i].clientid + '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].loginid + '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].password + '</td>';				newcontent+="</tr>";		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";		
 		newcontent += '<td style="text-align:center;">' + JSONUser[i].firstname + '</td>';
-		newcontent += '<td style="text-align:center;">' + JSONUser[i].lastname + '</td>';		newcontent += '<td style="text-align:center;" >' + JSONUser[i].department + '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].officephone + '</td>';				newcontent+="</tr>";
+		newcontent += '<td style="text-align:center;">' + JSONUser[i].lastname + '</td>';
+		//newcontent += '<td style="text-align:center;" >' + JSONUser[i].company + '</td>';		
+		newcontent += '<td style="text-align:center;" >' + JSONUser[i].company+ '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].officephone + '</td>';				newcontent+="</tr>";
 		newcontent+="<tr class='result' style='background-color:"+color+"; margin:10px;'>";				newcontent += '<td style="text-align:center;">' + JSONUser[i].cellphone + '</td>';				newcontent += '<td style="text-align:center;" >' + JSONUser[i].email + '</td>';				newcontent +='<td style="text-align:center;" >' + getActive(JSONUser[i].active) + '</td>';				newcontent += '<td style="text-align:center;">' + JSONUser[i].role + '</td>';				//newcontent += '<td>' + JSONUser[i].phone + '</td>';
 	}
 	
@@ -225,8 +230,12 @@ function pageselectCallback(page_index, jq){
              <tr>  					
               <th align="right" width="">GENDER</th>
                <td align="left">
-               	<input name="search_officephone" type="text" id="search_officephone" size="5" /></td>
-               		
+               	<!--<input name="search_officephone" type="text" id="search_officephone" size="5" /></td>-->
+               	<select name="search_officephone" id="search_officephone">
+               		<option value="">select</option>
+               		<option value="male">male</option>
+               		<option value="female">female</option>
+               	</select>
               <th align="right">PHONE</th>
                <td align="left">
                	<input name="search_phone" type="text" id="search_phone" size="15" /></td>
@@ -358,7 +367,13 @@ function pageselectCallback(page_index, jq){
              
             <tr>   
              <th align="right" valign="middle">GENDER<span class="red">*&nbsp;&nbsp;&nbsp;</span></th>
-              <td><input type="text" name="officephone" id="officephone" value="" class="text ui-widget-content ui-corner-all" /></td>
+              <td>
+              	<!--<input type="text" name="gender" id="gender" value="" class="text ui-widget-content ui-corner-all" />-->
+              	<select name="gender" id="gender" class="text ui-widget-content ui-corner-all">
+              		<option value="male">male</option>
+              		<option value="female">female</option>
+              	</select>
+              	</td>
              </tr>            
              
             <tr>
