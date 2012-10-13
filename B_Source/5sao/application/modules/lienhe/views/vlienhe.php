@@ -1,3 +1,7 @@
+<script type="text/javascript">
+	$('#menu-lienhe').css('color','#D9B24A');
+</script>
+
 <style>
 	td{font-size:12px; padding:5px 3px}
 	td input,td textarea{width:100%}

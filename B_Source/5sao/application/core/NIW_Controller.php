@@ -29,7 +29,8 @@ class NIW_Controller extends CI_Controller {
 
 		
 		// Load the SITE asset group
-		$this->bep_assets->load_asset_group('SITE');	
+		$this->bep_assets->load_asset_group('SITE');
+		$this->addVisiting();	
 	}
 	
 	function set_default_value($data=NULL, $value=NULL)
@@ -86,6 +87,30 @@ class NIW_Controller extends CI_Controller {
 		{
 			$this->session->set_userdata('lang','vn');
 		}
+	}
+	
+	function addVisiting()
+	{
+		if (!$this->session->userdata('isOldVisiting'))
+		{
+			$model=new CI_Model();
+			$today=date('Y-m-d',time()+7*3600);
+			if ($model->getRowByColumn('thongke','ngaythang',$today))
+			{
+				$currentVisitingNumber=$model->getRowByColumn('thongke','ngaythang',$today)->soluong;
+				$currentVisitingNumber+=1;
+				$input=array('ngaythang'=>$today,
+							'soluong'=>$currentVisitingNumber);
+				$model->updateRowByColumn('thongke','ngaythang',$today,$input);
+			}
+			else 
+			{
+				$input=array('ngaythang'=>$today,
+							'soluong'=>1);
+				$model->insertNewRow('thongke',$input);
+			}
+		}
+		else $this->session->set_userdata('isOldVisiting','true');
 	}
 }
 

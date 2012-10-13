@@ -10,6 +10,7 @@ class Sanpham extends NIW_Controller
 		$this->load->model('Msanpham');
 		$this->setLang();
 		$this->loadLang();
+		$this->addVisiting();
 	}
 	
 	function loadLang()
@@ -29,6 +30,9 @@ class Sanpham extends NIW_Controller
 	
 	function page($index=0)
 	{
+		$data['list_spbanchay']=$this->Msanpham->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
+		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
 		
@@ -38,6 +42,8 @@ class Sanpham extends NIW_Controller
 		$config['total_rows']=count($this->Msanpham->getListFull('sanpham'));
 		$this->pagination->initialize($config);
 		
+		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
+		$data['title']='5saoviet | Sản phẩm';
 		$data['list']=$this->Msanpham->getListOffset('sanpham',9,$index);
 		$data['lang']=$this->session->userdata('lang');
 		$data['module']=$this->module;
@@ -47,15 +53,20 @@ class Sanpham extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$data['list_spbanchay']=$this->Msanpham->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
+		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
 		
 		$data['detail']=$this->Msanpham->getRowByColumn('sanpham','id',$id);
 		$data['lang']=$this->session->userdata('lang');
+		$data['title']='5saoviet | Sản phẩm';		
 		$data['module']=$this->module;
 		
 		$category_id=$data['detail']->danhmuc_id;
-		$data['relates']=$this->Msanpham->getListByColumn('sanpham','danhmuc_id',$category_id);
+		$data['relates']=$this->Msanpham->getListByColumnOffset('sanpham','danhmuc_id',$category_id,0,6);
 		
 		$data['page']='vdetail';
 		$this->load->view('front/container',$data);
@@ -63,6 +74,12 @@ class Sanpham extends NIW_Controller
 	
 	function category($id=0, $index=0)
 	{
+		$data['list_spbanchay']=$this->Msanpham->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
+		$this->session->set_userdata('incategory','true');
+		$data['current_category']= $this->Msanpham->getRowByColumn('danhmuc','id',$id);
+		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
 		
@@ -72,6 +89,7 @@ class Sanpham extends NIW_Controller
 		$config['total_rows']=count($this->Msanpham->getListByColumn('sanpham','danhmuc_id',$id));
 		$this->pagination->initialize($config);
 		
+		$data['title']='5saoviet | Sản phẩm';		
 		$data['list']=$this->Msanpham->getListByColumnOffset('sanpham','danhmuc_id',$id,$index,9);
 		$data['lang']=$this->session->userdata('lang');
 		$data['module']=$this->module;

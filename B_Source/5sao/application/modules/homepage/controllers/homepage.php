@@ -8,7 +8,9 @@ class Homepage extends NIW_controller {
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
 		$this->load->model('Mhomepage');
+		$this->setLang();
 		$this->loadLang();
+		$this->addVisiting();
 	}
 	
 	function loadLang()
@@ -23,6 +25,11 @@ class Homepage extends NIW_controller {
 
 	public function index()
 	{
+		$data['list_spbanchay']=$this->Mhomepage->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Mhomepage->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
+		$data['list_tintuc_right']=$this->Mhomepage->getListOffset('tintuc',15,0);
+		$data['list_tintuc']=$this->Mhomepage->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mhomepage->getListFull('gioithieu');
 		$data['categories']=$this->Mhomepage->getListByColumn('danhmuc','parent_id','0');
 		

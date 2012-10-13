@@ -47,6 +47,20 @@
 						<?php }?>
 					</select>
 				</fieldset>
+				<fieldset>
+					<label>Sản phẩm mới</label>
+					<select name="moi">
+						<option value="0">Không</option>
+						<option value="1" selected="selected">Có</option>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label>Sản phẩm bán chạy</label>
+					<select name="banchay">
+						<option value="0">Không</option>
+						<option value="1">Có</option>
+					</select>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">

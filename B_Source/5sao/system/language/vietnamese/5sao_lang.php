@@ -1,5 +1,8 @@
 <?php
+	$lang['dsdoitac']='Danh sách đối tác';
 	$lang['xemthem']='Xem thêm...';
+	$lang['sanpham']='Sản phẩm';
+	$lang['tintuc']='Tin tức';
 	//============= MENU ==================
 	$lang['menu-trangchu']='Trang chủ';
 	$lang['menu-gioithieu']='Giới thiệu';
@@ -10,6 +13,9 @@
 	
 	$lang['menu-timkiem']='Tìm kiếm';
 	$lang['menu-dienthoai']='Điện thoại';
+	$lang['menu-hinhanh']='Hình ảnh';
+	$lang['menu-tin']='Tin tức';
+	$lang['menu-tuyendung']='Tuyển dụng';
 	
 	//============= LEFT ==================
 	$lang['left-danhmuc']='Danh mục sản phẩm';
@@ -23,3 +29,6 @@
 	
 	//============= HOME ==================
 	$lang['home-spmoi']='Sản phẩm mới';
+	
+	//============= PRODUCT ==================
+	$lang['detailpr-relates']='Sản phẩm liên quan';

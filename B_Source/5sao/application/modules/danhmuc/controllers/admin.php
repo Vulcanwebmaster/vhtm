@@ -73,6 +73,7 @@
 				}
 				else 
 				{
+					$data['listParents']=$this->Mdanhmuc->getListByColumn('danhmuc','parent_id','0');
 					$data['config'] = $this->setupCKEditor('97%','200px');
 					$data['title']='Thêm danh mục';
 					$data['bcCurrent']='danh mục';
@@ -116,6 +117,7 @@
 				}
 				else 
 				{
+					$data['listParents']=$this->Mdanhmuc->getListByColumn('danhmuc','parent_id','0');
 					$data['info']=$this->Mdanhmuc->getRowByColumn('danhmuc','id',$id);
 					$data['title']='Sửa danh mục';
 					$data['bcCurrent']='Danh mục';

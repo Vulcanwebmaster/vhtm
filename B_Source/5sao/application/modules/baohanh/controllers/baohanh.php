@@ -11,6 +11,7 @@ class Baohanh extends NIW_controller {
 		$this->load->library('session');
 		$this->setLang();
 	  	$this->loadLang();
+	  	$this->addVisiting();
 	}
 	
 	function loadLang()
@@ -25,6 +26,10 @@ class Baohanh extends NIW_controller {
 
 	public function index()
 	{
+		$data['list_spbanchay']=$this->Mbaohanh->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Mbaohanh->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Mbaohanh->getListFull('doitac');
+		$data['list_tintuc_right']=$this->Mbaohanh->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mbaohanh->getListFull('gioithieu');
 		$data['categories']=$this->Mbaohanh->getListByColumn('danhmuc','parent_id','0');
 		

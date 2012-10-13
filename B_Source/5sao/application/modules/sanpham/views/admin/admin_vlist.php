@@ -10,7 +10,7 @@
 <form action="<?php echo base_url()?>sanpham/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
-			<h3><?php echo $this->lang->line('sanpham-admin-column1'); ?></h3>			
+			<h3><?php echo $title; ?></h3>			
 		</header>
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
@@ -19,9 +19,9 @@
 						<tr> 
 		    				<th>Tên (Việt)</th> 
 		    				<th>Tên (Anh)</th>
-		    				<th>Mô tả (Việt)</th>
-		    				<th>Mô tả (Anh)</th>
 		    				<th>Danh mục</th>
+		    				<th>Mới</th>
+		    				<th>Bán chạy</th>
 		    				<th>Sửa</th>
 		    				<th>Xóa</th>
 						</tr> 
@@ -34,9 +34,9 @@
 					 		<tr>  
 			    				<td><?php echo $item->ten_v;?></td> 
 			    				<td><?php echo $item->ten_e;?></td> 
-			    				<td><?php echo $item->mota_v;?></td>
-			    				<td><?php echo $item->mota_e;?></td>
 			    				<td><?php echo $listCategories[$count]->ten_v;?></td>
+			    				<td><?php if ($item->moi=='0') echo 'Không'; else echo 'Có';?></td>
+			    				<td><?php if ($item->banchay=='0') echo 'Không'; else echo 'Có';?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>sanpham/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    				</td>

@@ -1,3 +1,7 @@
+<script type="text/javascript">
+	$('#menu-trangchu').css('color','#D9B24A');
+</script>
+
 <div id="center">
 					<div id="photo">
 						<div id="slideshow-wrapper">

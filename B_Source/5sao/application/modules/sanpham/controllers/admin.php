@@ -18,9 +18,20 @@
 		
 		function index()
 		{
+			$this->page();
+		}
+		
+		function page($index=0)
+		{
+			$config['base_url']=base_url().'sanpham/admin/page/';
+			$config['per_page']=12;
+			$config['total_rows']=count($this->Msanpham->getListFull('sanpham'));
+			$config['uri_segment']=4;
+			$this->pagination->initialize($config);
+			
 			$data['title']='Sản phẩm';
 			$data['bcCurrent']='Sản phẩm';
-			$data['list']=$this->Msanpham->getListFull('sanpham');
+			$data['list']=$this->Msanpham->getListOffset('sanpham',12,$index);
 			$listCategories=array();
 			foreach ($data['list'] as $item)
 			{
@@ -41,7 +52,9 @@
 						'chitiet_v'=>$this->input->post('chitiet_v'),
 						'chitiet_e'=>$this->input->post('chitiet_e'),
 						'hinhanh'=>$this->input->post('hinhanh'),
-						'danhmuc_id'=>$this->input->post('danhmuc_id'));
+						'danhmuc_id'=>$this->input->post('danhmuc_id'),
+						'moi'=>$this->input->post('moi'),
+						'banchay'=>$this->input->post('banchay'));
 			return $input;
 		}
 		
@@ -49,7 +62,16 @@
 		{
 			if (!$this->input->post('ten_v'))
 			{
-				$data['listCategories']=$this->Msanpham->getListFull('danhmuc');
+				$listFullCt=$this->Msanpham->getListFull('danhmuc');
+				$data['listCategories']=array();
+				foreach ($listFullCt as $ct)
+				{
+					if (count($this->Msanpham->getListByColumn('danhmuc','parent_id',$ct->id))==0)
+					{
+						$data['listCategories'][]=$ct;
+					}
+				}
+				
 				$data['config'] = $this->setupCKEditor('97%','200px');
 				$data['title']='Thêm sản phẩm';
 				$data['bcCurrent']='sản phẩm';
@@ -92,7 +114,15 @@
 			//=============================================
 			if (!$this->input->post('ten_v'))
 			{
-				$data['listCategories']=$this->Msanpham->getListFull('danhmuc');
+				$listFullCt=$this->Msanpham->getListFull('danhmuc');
+				$data['listCategories']=array();
+				foreach ($listFullCt as $ct)
+				{
+					if (count($this->Msanpham->getListByColumn('danhmuc','parent_id',$ct->id))==0)
+					{
+						$data['listCategories'][]=$ct;
+					}
+				}
 				$data['info']=$this->Msanpham->getRowByColumn('sanpham','id',$id);
 				$data['title']='Sửa sản phẩm';
 				$data['bcCurrent']='sản phẩm';

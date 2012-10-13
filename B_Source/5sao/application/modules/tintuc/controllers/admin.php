@@ -18,9 +18,20 @@
 		
 		function index()
 		{
+			$this->page();
+		}
+		
+		function page($index=0)
+		{
+			$config['base_url']=base_url().'tintuc/admin/page/';
+			$config['per_page']=15;
+			$config['total_rows']=count($this->Mtintuc->getListFull('tintuc'));
+			$config['uri_segment']=4;
+			$this->pagination->initialize($config);
+			
 			$data['title']='Tin tức';
 			$data['bcCurrent']='tin tức';
-			$data['list']=$this->Mtintuc->getListFull('tintuc');
+			$data['list']=$this->Mtintuc->getListOffset('tintuc',15,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);

@@ -9,6 +9,7 @@ class Lienhe extends NIW_Controller
 		$this->load->library('form_validation');
 		$this->setLang();
 		$this->loadLang();
+		$this->addVisiting();
 	}
 	
 	function loadLang()
@@ -23,6 +24,10 @@ class Lienhe extends NIW_Controller
 	
 	function index()
 	{
+		$data['list_spbanchay']=$this->Mlienhe->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Mlienhe->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Mlienhe->getListFull('doitac');
+		$data['list_tintuc_right']=$this->Mlienhe->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mlienhe->getListFull('gioithieu');
 		$data['categories']=$this->Mlienhe->getListByColumn('danhmuc','parent_id','0');
 		

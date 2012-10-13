@@ -11,12 +11,47 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery.nivo.slider.js"></script>
 	 <script type="text/javascript">
 		 $(document).ready(function(){
-			  $('.slidemove').hide();
+			 $('.slidemove').hide();
+			 var parent_ct;
+			 <?php if (isset($current_category))
+			 {?>
+			 	var list=document.getElementsByClassName('menuleft-lv2');
+
+			 	<?php if ($lang=="vn")
+			 	{?>
+			 		category='<?php echo $current_category->ten_v;?>';
+				<?php }
+				else {?>
+					category='<?php echo $current_category->ten_e;?>';
+				<?php }?>
+				for (var i=0;i<list.length;i++)
+				{
+					if (list[i].text==category)
+					{
+						item=list[i];
+						parent_ct=item.parentNode.parentNode.parentNode;
+						item.parentNode.parentNode.parentNode.style.display='block';
+						break;
+					}
+				}
+			 <?php }?>
+			 
+			  
 					$('.slidecontrol').click(function(){
 						$(this).children('.slidemove').slideDown();
 						});
 					$('.slidecontrol').mouseleave(function(){
-						$(this).children('.slidemove').slideUp();
+						if (parent_ct!=undefined)
+						{
+							var parent=parent_ct.parentNode;
+							var listChildren=parent.childNodes;
+						
+							if ($(this).children('a').text()!=listChildren[0].text)
+							{	
+								$(this).children('.slidemove').slideUp();
+							}
+						}
+						else $(this).children('.slidemove').slideUp();
 						});
 				$('.itemmenu').hide();
 					$('.submenu').mouseenter(function(){
@@ -42,6 +77,7 @@
 				<?php $this->load->view('front/content');?>
 				<?php $this->load->view('front/right');?>
 			</div>
+			<?php $this->load->view('front/doitac');?>
 		</div>
 	</div>
 	<?php $this->load->view('front/footer');?>

@@ -8,6 +8,7 @@ class Gioithieu extends NIW_Controller
 		$this->load->model('Mgioithieu');
 		$this->setLang();
 		$this->loadLang();
+		$this->addVisiting();
 	}
 	
 	function loadLang()
@@ -22,6 +23,10 @@ class Gioithieu extends NIW_Controller
 	
 	function index()
 	{
+		$data['list_spbanchay']=$this->Mgioithieu->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Mgioithieu->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
+		$data['list_tintuc_right']=$this->Mgioithieu->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['categories']=$this->Mgioithieu->getListByColumn('danhmuc','parent_id','0');
 		
@@ -35,6 +40,10 @@ class Gioithieu extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$data['list_spbanchay']=$this->Mgioithieu->getListByColumn('sanpham','banchay','1');
+		$data['list_thuvienanh']=$this->Mgioithieu->getListFull('thuvienanh');
+		$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
+		$data['list_tintuc_right']=$this->Mgioithieu->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['categories']=$this->Mgioithieu->getListByColumn('danhmuc','parent_id','0');
 		

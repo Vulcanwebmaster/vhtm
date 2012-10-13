@@ -1,17 +1,14 @@
-<h3>Home</h3>
-	<ul class="toggle">
-		<li class="icn_photo"><a href="#">Images Slider</a></li>
-		<li class="icn_edit_article"><a href="#">Article</a></li>
-		<li class="icn_categories"><a href="#">Categories</a></li>
-	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>sanpham/admin">Sản phẩm</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục sản phẩm</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>baohanh/admin">Bảo hành - bảo trì</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>thuvienanh/admin">Thư viện ảnh</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>tuyendung/admin">Tuyển dụng</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

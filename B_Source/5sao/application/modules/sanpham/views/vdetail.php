@@ -14,4 +14,13 @@
 			<?php if ($lang=='vn') echo $detail->chitiet_v; else echo $detail->chitiet_e;?>
 		</div>
 	</div>
+	<div id="relate_list">
+		<h4><?php echo $this->lang->line('detailpr-relates');?></h4>
+		<ul>
+			<?php foreach ($relates as $rl_item)
+			{?>
+				<li><a href="<?php echo base_url();?>sanpham/detail/<?php echo $rl_item->id;?>"><?php if ($lang=='vn') echo $rl_item->ten_v; else  echo $rl_item->ten_e;?></a></li>
+			<?php }?>
+		</ul>
+	</div>
 </div>

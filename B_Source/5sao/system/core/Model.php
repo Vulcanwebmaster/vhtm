@@ -78,9 +78,9 @@ class CI_Model {
 	 	return $list;
 	 }
 	 
-	 function getListOffset($tableName='',$offset='',$index='')
+	 function getListOffset($tableName='',$limit='',$index='')
 	 {
-	 	$ds=$this->db->get($tableName,$offset,$index);
+	 	$ds=$this->db->get($tableName,$limit,$index);
 	 	$list=array();
 	 	foreach($ds->result() as $item)
 	 	{
@@ -103,10 +103,10 @@ class CI_Model {
 	 	return $list;
 	 }
 	 
-	function getListByColumnOffset($tableName='',$columnName='',$value='', $index='', $offset='')
+	function getListByColumnOffset($tableName='',$columnName='',$value='', $index='', $limit='')
 	 {
 	 	$this->db->where($columnName,$value);
-	 	$ds=$this->db->get($tableName,$offset,$index);
+	 	$ds=$this->db->get($tableName,$limit,$index);
 	 	$list=array();
 	 	foreach($ds->result() as $item)
 	 	{
@@ -135,6 +135,54 @@ class CI_Model {
 	 	if ($this->db->update($tableName,$input,array($columnName=>$value)))
 	 		return true;
 	 	else return false;
+	 }
+	 
+	function getListByColumnLikeText($tableName='', $columnName='',$value='')
+	 {
+	 	echo '<meta charset="UTF-8"/>';
+	 	/*$this->db->like($columnName,$value);
+	 	$ds=$this->db->get($tableName);*/
+	 	mysql_set_charset('utf8');
+	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%'");
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListByColumnOffsetLikeText($tableName='', $columnName='',$value='', $index='', $limit='')
+	 {
+	 	echo '<meta charset="UTF-8"/>';
+	 	/*$this->db->like($columnName,$value);
+	 	$ds=$this->db->get($tableName,$limit,$index);*/
+	 	mysql_set_charset('utf8');
+	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%' limit ".$limit." offset ".$index);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListOrderByColumn($tableName='', $columnName='', $typeOrder='', $index='', $limit='')
+	 {
+	 	$this->db->order_by($columnName,$typeOrder);
+	 	$this->db->where($columnName,$value);
+	 	if ($limit!='')
+	 		$ds=$this->db->get($tableName,$limit,$index);
+	 	else $ds=$this->db->get($tableName);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
 	 }
 }
 // END Model Class

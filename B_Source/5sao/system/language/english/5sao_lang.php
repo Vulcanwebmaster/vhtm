@@ -1,5 +1,8 @@
 <?php
+	$lang['dsdoitac']='List of Partners';
 	$lang['xemthem']='Xem thêm...';
+	$lang['sanpham']='Product';
+	$lang['tintuc']='News';
 	//============= MENU ==================
 	$lang['menu-trangchu']='Home';
 	$lang['menu-gioithieu']='About us';
@@ -10,6 +13,9 @@
 	
 	$lang['menu-timkiem']='Search';
 	$lang['menu-dienthoai']='Phone number';
+	$lang['menu-hinhanh']='Images';
+	$lang['menu-tin']='News';
+	$lang['menu-tuyendung']='Recruitment';
 	
 	//============= LEFT ==================
 	$lang['left-danhmuc']='Categories';
@@ -24,3 +30,5 @@
 	//============= HOME ==================
 	$lang['home-spmoi']='Newest products';
 	
+	//============= PRODUCT ==================
+	$lang['detailpr-relates']='Relate items';

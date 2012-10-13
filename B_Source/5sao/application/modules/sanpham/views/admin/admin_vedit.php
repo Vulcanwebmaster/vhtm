@@ -54,6 +54,34 @@
 							}?>
 					</select>
 				</fieldset>
+				<fieldset>
+					<label>Sản phẩm mới</label>
+					<select name="moi">
+						<?php if ($info->moi=="0")
+						{?>
+							<option value="0" selected="selected">Không</option>
+							<option value="1">Có</option>
+						<?php }
+						else { ?>
+							<option value="0">Không</option>
+							<option value="1" selected="selected">Có</option>
+						<?php }?>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label>Sản phẩm bán chạy</label>
+					<select name="banchay">
+						<?php if ($info->banchay=="0")
+						{?>
+							<option value="0" selected="selected">Không</option>
+							<option value="1">Có</option>
+						<?php }
+						else { ?>
+							<option value="0">Không</option>
+							<option value="1" selected="selected">Có</option>
+						<?php }?>
+					</select>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">
