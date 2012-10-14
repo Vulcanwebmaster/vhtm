@@ -3,8 +3,13 @@ class IndexController extends Zend_Controller_Action
 {
 	public function indexAction()
 	{
-		$form=$this->getSignupForm();
-		$this->view->form=$form;
+		$layoutPath = APPLICATION_PATH  . '/templates/front';
+	      $option = array ('layout' => 'index', 
+	                   'layoutPath' => $layoutPath );
+	      Zend_Layout::startMvc ( $option );
+	      
+	      $this->mAdmin=new Admin_Model_Madmin();
+	      session_start();		  
 	}
 	
 	function getSignupForm()
