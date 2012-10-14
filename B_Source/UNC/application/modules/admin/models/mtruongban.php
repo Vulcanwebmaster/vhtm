@@ -17,15 +17,9 @@
 		{
 			$query=$this->db->query('select category_id from unc_manage_category where user_id="'.$user_id.'"');
 			$list=$query->fetchAll();
-			return $list[0]['category_id'];
+			return $list;
 		}
-		
-		function getListUserIdByCategoryId($category_id,$user_id)
-		{
-			$query=$this->db->query('select * from unc_manage_category where category_id="'.$category_id.'" and user_id !="'.$user_id.'" order by user_id desc');
-			return $query->fetchAll();
-		}
-		
+
 		function isExitsUsername($username)
 		{
 			$query=$this->db->query('select * from unc_user where user_login="'.$username.'"');
@@ -89,6 +83,12 @@
 			$query = $this->db->query('select user_id from unc_user where user_login="'.$user_login.'"');
 			$list = $query->fetchAll();
 			return $list[0]['user_id'];
+		}
+		
+		function getUserIdByCategoryId($category_id)
+		{
+			$query=$this->db->query('select distinct user_id from unc_manage_category where category_id="'.$category_id.'" order by user_id asc');
+			return $query->fetchAll();
 		}
 	}
 ?>

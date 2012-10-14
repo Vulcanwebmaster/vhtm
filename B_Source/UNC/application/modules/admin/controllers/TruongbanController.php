@@ -86,17 +86,42 @@
 			{
 				$user_id = $this->mTruongban->getIdByUsername($this->user);
 				$category_id = $this->mTruongban->getCategoryIdByUserId($user_id);
-				$listUser = $this->mTruongban->getListUserIdByCategoryId($category_id,$user_id);
+				
 				$allTruongban = $this->mTruongban->getListByRole('1');
+				$listUser = array();
+				$listUserId = array();
+				foreach($category_id as $category)
+				{
+					foreach($this->mTruongban->getUserIdByCategoryId($category['category_id']) as $user)
+					{
+						if($user['user_id'] != $user_id)
+						{
+							$listUser[] = $user['user_id'] ;
+						}
+					}
+				}
+				//var_dump($listUser);die();
+				
+				$listUser = $this->sort($listUser);
+				$listUser = $this->setNull($listUser);
+				
+				foreach($listUser as $user)
+				{
+					if($user != null)
+					{
+						$listUserId[] = $user;
+					}
+				}
+				//var_dump($listUserId);die();
 				$listTruongBan = array();
 				
-				foreach($allTruongban as $truongBan)
+				foreach($allTruongban as $truongban)
 				{
-					foreach($listUser as $user)
+					foreach($listUserId as $user)
 					{
-						if($truongBan['user_id']==$user['user_id'])
+						if($truongban['user_id'] == $user)
 						{
-							$listTruongBan[]=$truongBan;
+							$listTruongBan[] = $truongban;
 						}
 					}
 				}
@@ -117,6 +142,34 @@
 			
 			$this->view->role = $this->role;
 			$this->view->user = $this->user;
+		}
+		
+		function setNull($list)
+		{
+			for($i=0;$i<count($list)-1;$i++)
+				{
+					if($list[$i] == $list[$i+1])
+					{
+						$list[$i] = null;
+					}
+				}
+				
+			return $list;
+		}
+		
+		function sort($list)
+		{
+			for($i=0;$i<count($list)-1;$i++)
+			{
+	        	for($j=$i+1;$j<count($list);$j++)
+				{
+		            if($list[$i]<$list[$j])
+		            {
+		                $tg=$list[$i]; $list[$i]=$list[$j]; $list[$j]=$tg;
+		            }
+				}
+			}
+			return $list;
 		}
 		
 		function _getInput($form)
