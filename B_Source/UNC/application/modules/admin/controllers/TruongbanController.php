@@ -199,10 +199,11 @@
 			$form=$this->setForm();
 			$userId=$this->_request->getParam('userid');
 			
+			$this->view->role = $this->role;
 			$this->view->listParent = $this->listParent;
 			$this->view->listChild = $this->listChild;
 			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
-			
+		
 			$info=$this->mTruongban->getUserById($userId);
 			//echo $info['user_pass'];die();
 			//var_dump($info);die();
@@ -232,6 +233,7 @@
 							{
 								if($this->mChuyenmuc->delManageCategoryByUserId($userId))
 								{
+									die();
 									foreach($_POST['checkbox'] as $check)
 									{
 										$this->mChuyenmuc->insertUserForCategory($userId,$check);

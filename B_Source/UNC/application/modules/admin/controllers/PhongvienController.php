@@ -273,7 +273,8 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$form=$this->setForm();
-			
+			//echo $this->role;
+			$this->view->role = $this->role;
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mUser->getUserById($userId);
 			

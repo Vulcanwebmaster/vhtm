@@ -60,25 +60,40 @@
 											$check = 1; break;
 										}
 									}
-									if($check == 1)
+									if($this->role == "0")
 									{
-										?>
-										<div style="margin-left:100px">
-											<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
-											<span><?php echo $child['category_name']; ?></span>
-										</div>
-											<br/>
-										<?php
+										if($check == 1)
+										{
+											?>
+											<div style="margin-left:100px">
+												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
+												<span><?php echo $child['category_name']; ?></span>
+											</div>
+												<br/>
+											<?php
+										}
+										else
+										{
+											?>
+											<div style="margin-left:100px">
+												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+												<span><?php echo $child['category_name']; ?></span>
+											</div>
+												<br/>
+											<?php
+										}
 									}
 									else
 									{
-										?>
-										<div style="margin-left:100px">
-											<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
-											<span><?php echo $child['category_name']; ?></span>
-										</div>
-											<br/>
-										<?php
+										if($check == 1)
+										{
+											?>
+											<div style="margin-left:100px">
+												<span><?php echo $child['category_name']; ?></span>
+											</div>
+												<br/>
+											<?php
+										}
 									}
 								}
 							}
