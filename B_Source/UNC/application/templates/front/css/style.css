@@ -63,7 +63,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #p1{ color:#9d0aff; font-size:14px; font-weight:bold; text-transform:uppercase; margin:10px;}
 #p2{ color:#15bd00; font-size:30px; font-weight:bold; text-transform:uppercase; margin:0;}
 #tittles{ float:left; width:80%;}
-#text-ads{ clear:both; padding-top:15px; width:80%;}
+#text-ads{ clear:both; padding-top:15px; width:90%;}
 #right-ads{ width:200px;margin:5px; float:left; margin-left:40px;}
 #right-ads img { width:200px; height:150px;}
 /*----------------end ads-------------*/
