@@ -30,5 +30,26 @@
 			$list = $query->fetchAll();
 			return $list[0]['role_id'];
 		}
+		
+		function getCountingInMonth($month,$year)
+		{
+			$query = $this->db->query('select * from unc_counting where month='.$month.' and year='.$year);
+			$list = $query->fetchAll();
+			return $list;
+		}
+		
+		function getCountingInYear($year)
+		{
+			$query = $this->db->query('select sum(access), month from unc_counting where year='.$year.' group by month');
+			$list = $query->fetchAll();
+			return $list;
+		}
+		
+		function getListYear()
+		{
+			$query = $this->db->query('select year from unc_counting group by year');
+			$list = $query->fetchAll();
+			return $list;
+		}
 	}
 ?>

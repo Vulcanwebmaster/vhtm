@@ -10,6 +10,62 @@
 <article class="module width_full">
 	<header><h3>Stats</h3></header>
 	<div class="module_content">
-		<?php echo $this->content;?>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		    <script type="text/javascript">
+		      google.load("visualization", "1", {packages:["corechart"]});
+		      google.setOnLoadCallback(drawChart);
+		      function drawChart() {
+		        var data = google.visualization.arrayToDataTable([
+		          ['Ngày', 'Số lượng truy cập'],
+		          <?php 
+		          if (isset($this->countingCurrentMonth))
+			          if (count($this->countingCurrentMonth)>0)
+				          foreach ($this->countingCurrentMonth as $row)
+				          {
+				          	echo "['".$row['day']."',".$row['access']."],";
+				          }
+				      else echo "['',0]";
+				  else 
+				  {
+				  	if (count($this->countingCurrentYear)>0)
+				          foreach ($this->countingCurrentYear as $row)
+				          {
+				          	echo "['Tháng ".$row['month']."',".$row['sum(access)']."],";
+				          }
+				      else echo "['',0]";
+				  }?>
+		        ]);
+		
+		        var options = {
+		          title: 'Thống kế số lượng truy cập'			          
+		        };
+		
+		        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+		        chart.draw(data, options);
+		      }
+		    </script>
+		    <div id="chart_div">
+		    	
+		    </div>
+		    <div style="text-align:center">
+		    	<form method="post" action="<?php echo $this->baseUrl();?>/admin/index/home" name="counting-form">
+			    	<p>Thống kê theo 
+			    		<select name="month-selector" id="month-selector">
+			    			<option value="0">Cả năm</option>
+					    	<?php for ($i=1; $i<=12 ; $i++)
+					    	{?>
+					    		<option <?php if ($i==$this->monthSelected) echo 'selected="selected"'?> value="<?php echo $i?>">Tháng <?php echo $i;?></option>
+					    	<?php }?>
+					    </select>
+					    <select name="year-selector" id="year-selector">
+					    	<?php foreach ($this->listYear as $year)
+					    	{?>
+					    		<option <?php if ($year['year']==$this->yearSelected) echo 'selected="selected"'?> value="<?php echo $year['year'];?>">Năm <?php echo $year['year'];?></option>
+					    	<?php }?>
+					    </select>
+					    <input type="submit" value="Thống kê"/>
+			    	</p>
+		    	</form>
+		    </div>
 	</div>
 </article>

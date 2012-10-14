@@ -56,7 +56,29 @@ class Admin_IndexController extends Zend_Controller_Action
 		$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js',"text/javascript");
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js',"text/javascript");
+		
+		$today=date('Y-m-d',time()+7*3600);
+		$segments=explode('-', $today);
+		
+		if ($this->_request->isPost())
+		{
+			$month=$this->_request->getPost('month-selector');
+			$year=$this->_request->getPost('year-selector');
+		}
+		else 
+		{
+			$month=$segments[1];
+			$year=$segments[0];
+		}
+		$this->view->monthSelected=$month;
+		$this->view->yearSelected=$year;
+		if ($month>0)
+			$this->view->countingCurrentMonth=$this->mAdmin->getCountingInMonth($month, $year);
+		else 
+		{
+			$this->view->countingCurrentYear=$this->mAdmin->getCountingInYear($year);
+		}
+		$this->view->listYear=$this->mAdmin->getListYear();
 	}
-
 }
 ?>
