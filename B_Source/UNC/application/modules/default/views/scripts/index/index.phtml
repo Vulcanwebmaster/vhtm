@@ -1,3 +1,68 @@
-<div>
-	<?php echo $this->form;?>
+  <?php foreach($this->listParent as $parent)
+  {
+  ?>
+  <div class="item-news">
+                    <div class="van">
+                    	<div class="tittle-van"><p><?php echo $parent['category_name'] ?></p></div>                   
+                        <div class="border">
+                        	<ul>
+                        		<?php
+                        		foreach($this->listChild as $child)
+								{
+									if($child['category_parent_id'] == $parent['category_id'])
+									{
+                        		?>
+                            		<li><a href="#"><?php echo $child['category_name']; ?></a></li><li>|</li>
+                            	<?php
+									}
+								}
+                            	?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item-new-left">
+                    	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_63.png"/>
+                    	
+                        <p class="tittle">
+                        	 <?php
+                        		foreach($this->listNews[$parent['category_id']] as $childTintuc)
+                        	   
+                        	    {
+									{
+                        		?>
+                            		<?php echo $childTintuc['news_title']; ?>
+                            		</p>
+                        				<p><?php echo $childTintuc['news_summary']; ?></p>
+                            	<?php
+                            			break;
+									}
+								}
+                            	?>
+                        
+                    </div>
+                    <div class="item-new-right">
+                    	<ul>
+                        	
+                        		<?php
+                        		foreach($this->listNews[$parent['category_id']] as $tintuc)
+								{
+									{
+											?>
+												<li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/sao.png"/>
+											<?php
+		                            		echo $tintuc['news_title'];
+											?>
+											</li>
+											<?php
+									}
+								}
+                            	?>
+                        	
+                         
+                        </ul>
+      				</div>
+      				
 </div>
+<?php
+}
+?>
