@@ -174,7 +174,7 @@
 			$link=trim($link);
 			$content=file_get_contents($link);
 			$start=strpos($content, '<div class="fon34 mt3 mr2 fon43">');
-			$end=strpos($content, '<div itemscope="" itemtype="http://schema.org/webpage" style="display: none !important;">')-1;
+			$end=strpos($content, '<div itemscope')-1;
 			return substr($content, $start, $end-$start);
 		}
 		
@@ -246,7 +246,8 @@
 				$listCategories=$this->mdanhmuc->getListCM();
 				foreach ($listCategories as $category)
 				{
-					$listarray[$category['category_id']]=$category['category_name'];
+					if ($this->mtintuc->countChildById($category['category_id'])==0)
+						$listarray[$category['category_id']]=$category['category_name'];
 				}
 			}
 			else 
@@ -256,7 +257,8 @@
 				foreach ($categoriesId as $categoryId)
 				{
 					$category=$this->mtintuc->getCategoryById($categoryId);
-					$listarray[$category['category_id']]=$category['category_name'];
+					if ($this->mtintuc->countChildById($category['category_id'])==0)
+						$listarray[$category['category_id']]=$category['category_name'];
 				}
 			}
 			

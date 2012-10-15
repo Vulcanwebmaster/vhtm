@@ -120,4 +120,11 @@
 		return $query;
 		//set news_title="'.$news_title.'", news_summary="'.$news_summary.'", news_content="'.$news_content.'", news_author="'.$news_author.'", news_post_date="'.$news_post_date.'",news_modified_date="'.$news_modified_date.'",news_status="'.$news_status.'",category_id="'.$category_id.'"
 	}
+
+	function countChildById($category_id)
+	{
+		$query=$this->db->query("select * from unc_category where category_parent_id='".$category_id."'");
+		$list=$query->fetchAll();
+		return count($list);
+	}
 }
