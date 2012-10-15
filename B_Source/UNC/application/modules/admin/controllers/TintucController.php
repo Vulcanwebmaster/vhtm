@@ -69,7 +69,16 @@
 			elseif ($_SESSION['role_id']==1)
 			{
 				$userid=$_SESSION['user_id'];
-				$paginator= Zend_Paginator::factory($this->mtintuc->getListNewsByUserId($userid));	
+				$list1=$this->mtintuc->getListNewsByUserId($userid);
+				$list2=array();
+				foreach ($list1 as $item)
+				{
+					if ($item['news_status']!='Chưa duyệt')
+						$list2[]=$item;
+					elseif  ($item['news_author']==$_SESSION['user_id'])
+						$list2[]=$item;						
+				}
+				$paginator= Zend_Paginator::factory($list2);	
 			}
 			elseif ($_SESSION['role_id']==2)
 			{
@@ -259,7 +268,7 @@
 			$input=array('news_title'		=>	$form->getValue('news_title'),
 						'news_summary'		=>	$form->getValue('news_summary'),
 						'news_content'		=>	$form->getValue('news_content'),
-						'news_author'		=>	$form->getValue('news_author'),
+						'news_author'		=>	$_SESSION['user_id'],//$form->getValue('news_author'),
 						'news_post_date'	=>	$form->getValue('news_post_date'),
 						'news_modified_date'=>	$form->getValue('news_modified_date'),
 						'news_status'		=>	$form->getValue('news_status'),
@@ -274,7 +283,7 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$this->view->title="Thêm phóng viên";
+			$this->view->title="Thêm tin tức";
 			
 			$form=$this->setForm();
 			if ($this->_request->isPost())
@@ -303,7 +312,7 @@
 		
 		function editAction()
 		{
-			$this->view->title='Chỉnh sửa phóng viên';
+			$this->view->title='Chỉnh sửa tin tức';
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');

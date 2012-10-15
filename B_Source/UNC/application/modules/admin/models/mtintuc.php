@@ -19,7 +19,7 @@
 	{
 		if (!$this->isExist($input['news_title']))
 		{
-			$query=$this->db->query("insert into unc_news (news_title, news_summary, news_content,  news_post_date, category_id) values('".$input['news_title']."','".$input['news_summary']."','".$input['news_content']."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".$input['category_id']."')");
+			$query=$this->db->query("insert into unc_news (news_title, news_summary, news_content, news_author,  news_post_date, category_id) values('".$input['news_title']."','".$input['news_summary']."','".$input['news_content']."','".$input['news_author']."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".$input['category_id']."')");
 			return $query;
 		}
 	}
