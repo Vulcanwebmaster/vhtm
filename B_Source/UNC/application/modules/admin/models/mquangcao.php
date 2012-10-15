@@ -26,7 +26,8 @@ class Admin_Model_Mquangcao extends Zend_Db_Table_Abstract{
 				
 		public function add($input)
 		{
-			$this->db->insert('unc_ads',$input);
+			if($this->db->insert('unc_ads',$input)) return true;
+			else return FALSE;
 		}
 		
 		public function edit($id,$data)
@@ -37,8 +38,8 @@ class Admin_Model_Mquangcao extends Zend_Db_Table_Abstract{
 		
 		public function del($id)
 		{
-			$where="ads_id=".$id;
-			$this->db->delete('unc_ads',$where);
+			$query=$this->db->query('delete from unc_ads where ads_id="'.$id.'"');
+			return $query;
 		}
 }
 ?>

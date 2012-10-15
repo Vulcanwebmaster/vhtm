@@ -2,6 +2,8 @@
 class Admin_QuangcaoController extends Zend_Controller_Action{
 	
 		protected $mquangcao;
+		protected $role;
+		
 		function init()
 		{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -9,6 +11,17 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mquangcao=new Admin_Model_Mquangcao();
+			  session_start();
+			  if(isset($_SESSION['role']))
+			  	$this->role = $_SESSION['role'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
+			  if(isset($_SESSION['user_id']))
+			 	 $this->user_id = $_SESSION['user_id'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
 		}
 		
 		function setForm()
@@ -44,9 +57,22 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+
+			$listQuangcao = array();
+			//echo $this->role;die();
+			if($this->role =="0"| $this->role =="1"| $this->role =="2" )
+			{
+				$listQuangcao= $this->mquangcao->getListQC();
+				//var_dump($listQuangcao);die();
+				//Nếu là admin thì lấy ra danh sách tất cả các comment
+				$paginator = Zend_Paginator::factory($listQuangcao);
+				$paginator->setItemCountPerPage(5);        
+        	$currentPage = $this->_request->getParam('page',1);
+         	$paginator->setCurrentPageNumber($currentPage);
+        	$this->view->list=$paginator;
+			$this->view->role = 	$this->role;
+			}
 			
-			$mquangcao=new Admin_Model_Mquangcao;
-			$this->view->list=$mquangcao->getListQC();
 			$this->view->title="Quản lý mục quảng cáo";
 		}
 		
@@ -134,6 +160,16 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 		{
 			$mquangcao = new Admin_Model_Mquangcao;
 			$mquangcao->del($this->getRequest()->getParam('id'));
+			if($this->role == "0")
+			{
+				if ($this->mquangcao->del($id))
+				$_SESSION['result']='Xóa thành công';
+				else $_SESSION['result']='Xóa không thành công';
+			}
+			else 
+			{
+				$_SESSION['result']='Bạn không có quyền xóa mục này !';
+			}
 			$this->_redirect($this->view->baseUrl().'/../admin/quangcao');
 		}	
 		
