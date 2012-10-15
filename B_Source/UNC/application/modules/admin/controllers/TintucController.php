@@ -61,7 +61,7 @@
 			//$this->autoGetnews();
 			//===============================================
 			//$adapter=new Zend_Paginator_Adapter_DbSelect($this->mtintuc->getListNews());
-			
+			//echo $_SESSION['role_id'];die();
 			if ($_SESSION['role_id']==0)
 			{
 				$paginator= Zend_Paginator::factory($this->mtintuc->getListNews());
@@ -240,6 +240,15 @@
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
+			$is_hot = $form->createElement("select","is_hot",array(
+                                                        "label" => "Tin hot",
+                                                   "multioptions"=> array(
+                                                                      "0" => "Không",
+                                                                      "1" => "Có")));
+																	  
+			$is_hot->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$form->addElement($is_hot);
+			
 			$listarray=array();
 			if ($_SESSION['role_id']==0)
 			{
@@ -279,6 +288,7 @@
 						'news_post_date'	=>	$form->getValue('news_post_date'),
 						'news_modified_date'=>	$form->getValue('news_modified_date'),
 						'news_status'		=>	$form->getValue('news_status'),
+						'is_hot'			=> 	$form->getValue('is_hot'),
 						'category_id'		=>	$form->getValue('category_id'));
 			return $input;
 		}
@@ -297,12 +307,13 @@
 			{
 				if (!$form->isValid($_POST))
 				{
-					$this->view->form=$form;
+					$form->populate($_POST);
 				}
 				else
 				{
 					$input=$this->_getInput($form);
-					if ($this->mtintuc->insertNews($input))
+					//echo $input['news_status'];die();
+					if ($this->mtintuc->addNews($input))
 					{
 						$_SESSION['result']='Thêm mới thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/tintuc');
@@ -326,24 +337,27 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$form=$this->setForm();
+			$newsId=$this->_request->getParam('newsid');
+			$info=$this->mtintuc->getnewsById($newsId);
+			//var_dump($info);die();
+			$form->setAction($this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$newsId);
+			$form->getElement('news_title')->setValue($info['news_title']);
+			$form->getElement('news_summary')->setValue($info['news_summary']);
+			$form->getElement('news_content')->setValue($info['news_content']);
+			$form->getElement('news_author')->setValue($info['news_author']);
+			$form->getElement('news_post_date')->setValue($info['news_post_date']);
+			$form->getElement('news_modified_date')->setValue(gmdate('Y-m-d h:i:s',time() + 7*3600));
+			echo $info['news_status'];
+			$form->getElement('news_status')->setValue($info['news_status']);
+			$form->getElement('category_id')->setValue($info['category_id']);
+			$form->getElement('is_hot')->setValue($info['is_hot']);
+			
+			
 			if ($this->_request->isPost())
 			{
 				if (!$form->isValid($_POST))
 				{
-					$newsId=$this->_request->getParam('newsid');
-					$info=$this->mtintuc->getnewsById($newsId);
-					
-					$form->setAction($this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$newsId);
-					$form->getElement('news_title')->setValue($info['news_title']);
-					$form->getElement('news_summary')->setValue($info['news_summary']);
-					$form->getElement('news_content')->setValue($info['news_content']);
-					$form->getElement('news_author')->setValue($info['news_author']);
-					$form->getElement('news_post_date')->setValue($info['news_post_date']);
-					$form->getElement('news_modified_date')->setValue(gmdate('Y-m-d h:i:s',time() + 7*3600));
-					$form->getElement('news_status')->setValue($info['news_status']);
-					$form->getElement('category_id')->setValue($info['category_id']);
-					
-					$this->view->form=$form;
+					$form->populate($_POST);
 				}
 				else
 				{
@@ -361,24 +375,9 @@
 						$this->view->form=$form;
 					}
 				}
+				
 			}
-			else 
-			{
-					$newsId=$this->_request->getParam('newsid');
-					$info=$this->mtintuc->getnewsById($newsId);
-					
-					$form->setAction($this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$newsId);
-					$form->getElement('news_title')->setValue($info['news_title']);
-					$form->getElement('news_summary')->setValue($info['news_summary']);
-					$form->getElement('news_content')->setValue($info['news_content']);
-					$form->getElement('news_author')->setValue($info['news_author']);
-					$form->getElement('news_post_date')->setValue($info['news_post_date']);
-					$form->getElement('news_modified_date')->setValue(gmdate('Y-m-d h:i:s',time() + 7*3600));
-					$form->getElement('news_status')->setValue($info['news_status']);
-					$form->getElement('category_id')->setValue($info['category_id']);
-					
-					$this->view->form=$form;
-			}
+			
 			$this->view->form=$form;
 		}
 	}

@@ -49,13 +49,24 @@
 					<label>Ngày sửa</label>
 					<?php echo $this->form->getElement('news_modified_date');?>
 				</fieldset>
+				<?php
+					if($_SESSION['role_id'] == 0)
+					{
+				?>
 				<fieldset>
 					<label>Trạng thái</label>
 					<?php echo $this->form->getElement('news_status');?>
 				</fieldset>
+				<?php
+					}
+				?>
 				<fieldset>
 					<label>Danh mục</label>
 					<?php echo $this->form->getElement('category_id');?>
+				</fieldset>
+				<fieldset>
+					<label>Tin hot</label>
+					<?php echo $this->form->getElement('is_hot');?>
 				</fieldset>
 			</div>
 		</div>

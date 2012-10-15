@@ -14,7 +14,6 @@ class TintucController extends Zend_Controller_Action
 	    $this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 	    session_start();	
-		
 	}
 	
 	function detailAction()

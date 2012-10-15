@@ -56,12 +56,13 @@
 								{?>
 									{ news_title: '<?php echo $item['news_title'];?>', 
 										news_summary: '<?php echo $item['news_summary'];?>',   
-										news_author: '<?php echo $item['news_author'];?>',
-										news_modified_date: '<?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?>',
-										news_status: '<?php echo $item['news_status'];?>',
-										category_id: '<?php echo $this->categoriesid[$count]; ?>',
-										optionedit: '<?php echo $item['news_id'];?>',
-										optiondel: '<?php if ($item['news_author']!="") echo $item["news_id"]; else echo " ";?>'
+										news_author: "<?php echo $item['news_author'];?>",
+										news_modified_date: "<?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?>",
+										news_status: "<?php echo $item['news_status'];?>",
+										category_id: "<?php echo $this->categoriesid[$count]; ?>",
+										is_hot : "<?php if($item['is_hot'] == "1") echo 'Có'; else echo 'Không'; ?>",
+										optionedit: "<?php echo $item['news_id'];?>",
+										optiondel: "<?php if ($item['news_author']!="") echo $item["news_id"]; else echo " ";?>"
 									},
 								<?php $count++;}?>
 							];
@@ -107,6 +108,13 @@
 							{
 								key: 'category_id',
 								label:'Chuyên mục',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'is_hot',
+								label:'Tin hot',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true

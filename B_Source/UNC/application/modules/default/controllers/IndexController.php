@@ -20,14 +20,10 @@ class IndexController extends Zend_Controller_Action
 	}
 
 	public function indexAction()
-
 	{
-
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
-	
-	
 
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
