@@ -30,7 +30,7 @@
 										category_name: "<?php echo $item['category_name'];?>",   
 										category_parent_id: "<?php if($item['category_parent_id']!='0') echo $this->listParent[$count-1];?>",
 										is_active: "<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>",
-										option: "<?php echo $item['category_id'];?>"
+										sua: "<?php if($this->role == "0") echo '<a href="'.$this->baseUrl().'/admin/chuyenmuc/edit/category_id/'.$item['category_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?>"
 									},
 								<?php $count++;}?>
 							];
@@ -67,9 +67,9 @@
 								allowHTML: true
 							},
 							{
-								key: 'option',
-								label:'Tùy chọn',
-								formatter: '<a href="<?php echo $this->baseUrl();?>/admin/chuyenmuc/edit/category_id/{value}" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>',
+								key: 'sua',
+								label:'<center>Sửa</center>',
+								formatter: '<center>{value}</center>',
 								allowHTML: true
 							}],
 					data: data,
@@ -85,8 +85,13 @@
 		
 		<footer>
 			<div class="submit_link">
-				<a class="alt_btn" href="<?php echo $this->baseUrl('admin/chuyenmuc/insert');?>">Thêm mới</a>
-				<?php echo $this->paginationControl($this->list,
+				<?php if($this->role == "0")
+				{
+					?>
+					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/chuyenmuc/insert');?>">Thêm mới</a>
+					<?php
+				}
+				echo $this->paginationControl($this->list,
                                     'Sliding',
                                     'tintuc/pagination.phtml');?>
 			</div>

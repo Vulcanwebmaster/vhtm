@@ -63,8 +63,6 @@
 		
 		function indexAction()
 		{
-			if($this->role == "0")
-			{
 				$this->view->headTitle('UNC - Admin website');
 				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -91,10 +89,6 @@
 					}
 				}
 				$this->view->listParent = $listParent;
-			}
-			else {
-				$this->_redirect($this->view->baseUrl().'/../admin');
-			}
 		}
 		
 		function _getInput($form)

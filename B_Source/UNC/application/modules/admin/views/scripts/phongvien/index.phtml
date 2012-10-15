@@ -75,21 +75,21 @@
 								$count=1;
 								foreach ($this->list as $item)
 								{?>
-									{ order: '<?php echo $count;?>', 
+									{ 
+										order: '<?php echo $count;?>', 
 										user_login: '<?php echo $item['user_login'];?>',   
 										user_fullname: '<?php echo $item['user_fullname'];?>',
 										user_email: '<?php echo $item['user_email'];?>',
 										is_active: '<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>',
-										option: 
-										'<?php 
-												if($this->role =="0")
-													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a><a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
-												
-												else if($this->role =="1") 
+										sua: 
+											'<?php 
+												if($this->role =="0" | $this->role == "1" | ($this->role =="2" & $item['user_login']==$this->user))
 													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
-												
-												else if($this->role =="2" & $item['user_login']==$this->user) 
-													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+											?>',
+										xoa : 
+										'<?php
+											if($this->role =="0")
+												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 										?>'
 									},
 								<?php $count++;}?>
@@ -134,9 +134,15 @@
 								allowHTML: true
 							},
 							{
-								key: 'option',
-								label:'Tùy chọn',
-								formatter: '<span>{value}</span>',
+								key: 'sua',
+								label:'<center>Sửa</center>',
+								formatter: '<center>{value}</center>',
+								allowHTML: true
+							},
+							{
+								key: 'xoa',
+								label:'<center>Xóa</center>',
+								formatter: '<center>{value}</center>',
 								allowHTML: true
 							}],
 					data: data,

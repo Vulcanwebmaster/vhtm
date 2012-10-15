@@ -47,10 +47,14 @@
 										video_title: "<?php echo $item['video_title'];?>",   
 										video_description: "<?php echo $item['video_description'];?>",
 										video_full_link: '<a href="<?php echo $item['video_full_link'];?>"><?php echo $item['video_full_link'];?></a>',
-										option: '<?php
-											//echo $this->user_login.' --- '.$item['user_upload'];
+										sua: '<?php
 											if($this->role == "0" |(($this->role=="1" | $this->role=="2") & $this->user_login==$item['user_upload']))
-												echo '<a href="'.$this->baseUrl().'/admin/uploadvideo/edit/video_id/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a><a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												echo '<a href="'.$this->baseUrl().'/admin/uploadvideo/edit/video_id/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+										?>',
+										xoa : 
+										'<?php
+											if($this->role == "0" |(($this->role=="1" | $this->role=="2") & $this->user_login==$item['user_upload']))
+												echo '<a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 										?>'
 									},
 								<?php $count++;}?>
@@ -88,9 +92,15 @@
 								allowHTML: true
 							},
 							{
-								key: 'option',
-								label:'Tùy chọn',
-								formatter: '<span>{value}</span>',
+								key: 'sua',
+								label:'<center>Sửa</center>',
+								formatter: '<center>{value}</center>',
+								allowHTML: true
+							},
+							{
+								key: 'xoa',
+								label:'<center>Xóa</center>',
+								formatter: '<center>{value}</center>',
 								allowHTML: true
 							}],
 					data: data,

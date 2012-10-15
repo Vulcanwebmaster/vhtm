@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php echo $this->headScript();?>
 <link type="text/css" href="<?php echo $this->baseUrl();?>/application/templates/front/css/style.css" rel="stylesheet"/>
 <title>UNC</title>
 </head>
@@ -62,15 +63,76 @@
                 </div>
                 <div id="right-slide">
                 	<div id="rsl-1">
-                    	<div id="rs1"><div id="img"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_39.png" width="13" height="13"/></div><p>Nóng nhất</p></div>
-                        <div id="rs2"><p>Đọc nhiều nhất</p></div>
+                    	<div id="rs1"><div id="img"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_39.png" width="13" height="13"/></div>
+                    		<p onclick="toggle_view('col1','col2');">Nóng nhất</p>
+                    	</div>
+                        <div id="rs2" onclick="toggle_view('col2','col1');"><p>Đọc nhiều nhất</p></div>
                     </div>
-                    <div class="risl-2"></div>
-                    <div class="risl-2"></div>
-                    <div class="risl-2"></div>
-                    <div class="risl-2"></div>
-                    <div class="risl-2"></div>
-                    <div class="risl-2"></div>                    
+                    
+                   <div id="col1">
+                    <?php 
+                    foreach($this->listHotNews as $news)
+					{
+						?>
+							<div class="risl-2"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>">
+								<?php 
+									$charset = 'utf-8';
+									$len = 45;
+									$string = $news['news_title']; 
+									$string = html_entity_decode($string, ENT_QUOTES, $charset);
+									if(mb_strlen($string, $charset)> $len)
+									{
+										$arr = explode(' ', $string);
+										$string = mb_substr($string, 0, $len, $charset);
+										$arrRes = explode(' ', $string);
+										$last = $arr[count($arrRes)-1];
+									
+										unset($arr);
+										if(strcasecmp($arrRes[count($arrRes)-1], $last))
+										{
+											unset($arrRes[count($arrRes)-1]);
+										}
+										$string = implode(' ', $arrRes)."...";
+									}
+									echo $string;
+								?></a></div>
+						<?php
+					}
+                    ?>
+                    </div>
+                    
+                    <div id="col2" style="display:none">
+                    <?php 
+                    foreach($this->listNewsMostView as $news)
+					{
+						?>
+							<div class="risl-2"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>">
+								<?php 
+									$charset = 'utf-8';
+									$len = 45;
+									$string = $news['news_title']; 
+									$string = html_entity_decode($string, ENT_QUOTES, $charset);
+									if(mb_strlen($string, $charset)> $len)
+									{
+										$arr = explode(' ', $string);
+										$string = mb_substr($string, 0, $len, $charset);
+										$arrRes = explode(' ', $string);
+										$last = $arr[count($arrRes)-1];
+									
+										unset($arr);
+										if(strcasecmp($arrRes[count($arrRes)-1], $last))
+										{
+											unset($arrRes[count($arrRes)-1]);
+										}
+										$string = implode(' ', $arrRes)."...";
+									}
+									echo $string;
+								?></a></div>
+						<?php
+					}
+                    ?>
+                    </div>
+                    
                     <div class="risl-3">
                          <ul>
                             <li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_47.png" width="13" height="13"/></li>
@@ -138,9 +200,10 @@
         	<!------------begin tin tức------->
         	 <div id="news">
                 
-                <?php echo $this->layout()->content;?>
+                <?php echo$this->layout()->content;?>
                 
             </div>
+            
             <!------------end tin tức------->
             <!------------begin video------->
             <div id="video">
