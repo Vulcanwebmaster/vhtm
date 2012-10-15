@@ -75,7 +75,7 @@
 				{
 					if ($item['news_status']!='Chưa duyệt')
 						$list2[]=$item;
-					elseif  ($item['news_author']==$_SESSION['user_id'])
+					elseif  ($item['news_author']==$_SESSION['user'])
 						$list2[]=$item;						
 				}
 				$paginator= Zend_Paginator::factory($list2);	
@@ -88,6 +88,8 @@
 				foreach ($list1 as $item)
 				{
 					if ($item['news_status']=='Chưa duyệt')
+						$list2[]=$item;
+					elseif ($item['news_author']==$_SESSION['user'])
 						$list2[]=$item;
 				}
 				$paginator= Zend_Paginator::factory($list2);
@@ -123,7 +125,9 @@
 				{
 					$new=array('news_title'=>$this->title[$i],
 								'news_summary'=>$this->description[$i],
-								'news_content'=>$this->content[$i]);
+								'news_content'=>$this->content[$i],
+								'news_author'=>'',
+								'category_id'=>'0',);
 					$this->mtintuc->insertNews($new);
 				}
 			}
@@ -216,6 +220,7 @@
 			
 			$form->addElement('text','news_author');
 			$el=$form->getElement('news_author');
+			$el->setValue($_SESSION['user']);
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$form->addElement('text','news_post_date');
@@ -268,7 +273,7 @@
 			$input=array('news_title'		=>	$form->getValue('news_title'),
 						'news_summary'		=>	$form->getValue('news_summary'),
 						'news_content'		=>	$form->getValue('news_content'),
-						'news_author'		=>	$_SESSION['user_id'],//$form->getValue('news_author'),
+						'news_author'		=>	$form->getValue('news_author'),
 						'news_post_date'	=>	$form->getValue('news_post_date'),
 						'news_modified_date'=>	$form->getValue('news_modified_date'),
 						'news_status'		=>	$form->getValue('news_status'),
@@ -295,14 +300,14 @@
 				else
 				{
 					$input=$this->_getInput($form);
-					if ($this->mtintuc->insertnews($input))
+					if ($this->mtintuc->insertNews($input))
 					{
 						$_SESSION['result']='Thêm mới thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/tintuc');
 					}
 					else 
 					{
-						$this->view->error=$form->getMessage();
+						//$this->view->error=$form->getMessage();
 						$this->view->form=$form;
 					}
 				}
@@ -357,7 +362,7 @@
 			}
 			else 
 			{
-				$newsId=$this->_request->getParam('newsid');
+					$newsId=$this->_request->getParam('newsid');
 					$info=$this->mtintuc->getnewsById($newsId);
 					
 					$form->setAction($this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$newsId);
