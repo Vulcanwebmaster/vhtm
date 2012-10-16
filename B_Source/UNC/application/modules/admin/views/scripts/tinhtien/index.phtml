@@ -1,0 +1,54 @@
+<h2>Tính tiền hoa hồng cho bài báo</h2>
+<?php
+?>
+
+<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/tinhtien/index">
+	<p>Từ ngày: <input style="padding-left: 10px;" type="text" name="fromdate" id="fromdate"/>
+	Tới ngày: <input style=" padding-left: 10px;" type="text" name="todate" id="todate"/>
+	<input name="Search" value="Search" type="submit"/>
+	</p>
+</form>
+<table border="1" style="width: 600px;">
+	<tr>
+		<th>
+			STT
+		</th>
+		<th>
+			User_login
+		</th>
+		<th>
+			Số bài tạo mới
+		</th>
+		<th>
+			Số bài review
+		</th>
+		<th>
+			Tổng tiền
+		</th>
+	</tr>
+<?php
+$temp= $this->data;
+$tt = 0;
+	foreach($this->totalmoney as $entry)
+	{ $tt++;?>
+		<tr>
+			<td>
+				<?php echo $tt; ?>	
+			</td>
+			<td>
+				<?php echo $entry['news_author']; ?>
+				</td>
+			<td>
+				<?php echo $entry['Lay']; ?>
+			</td>
+			<td>
+				<?php echo $entry['TaoMoi']; ?>
+			</td>
+			<td>
+				<?php echo ($temp[0]['price']*$entry['TaoMoi'])+($temp[1]['price']*$entry['Lay'])  ?>
+			</td>
+		</tr>
+	<?php
+	}
+?>
+</table>

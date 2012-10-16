@@ -1,0 +1,42 @@
+<h2>Danh mục tiền hoa hồng cho bài báo</h2>
+<form method="post" name="editMoney" id="editMoney" action="<?php echo $this->baseUrl(); ?>/admin/tinhtien/danhmuctienluong">
+<table border="1" style="width: 400px;">
+	<tr>
+		<th>Mã loại</th>
+		<th>Tên loại</th>
+		<th>Đơn giá</th>
+	</tr>
+	<?php
+	foreach ($this->data as $entry)
+	{?>
+		<tr>
+			<td>
+				<?php echo $entry['id'] ?>
+			</td>
+			<td>
+				<?php echo $entry['description'] ?>
+			</td>
+			<td>
+				<input id="<?php echo $entry['id'];?>" name="<?php echo $entry['id'];?>" style="width: 50px;" type="text" value="<?php echo $entry['price'] ?>" />
+			</td>
+		</tr>
+	<?php }
+	?>
+</table>
+<br/>
+<input style=" margin-left: 300px;" type="submit" name="capnhat" value="Cập nhật"/>
+</form>
+<script type="text/javascript">
+	function kiemTra()
+	{
+		var checkCreate = document.forms["editMoney"]["create"].value;
+		var checkReview = document.forms["editMoney"]["review"].value;
+        var dkCreate = checkCreate >= 0;
+        var dkReview= checkReview>=0;
+        if(dkCreate==false||dkReview==false)
+        {
+        	alert("Bạn không được phép để đơn giá nhỏ hơn bằng 0");
+        	return false;
+		}
+	}
+</script>
