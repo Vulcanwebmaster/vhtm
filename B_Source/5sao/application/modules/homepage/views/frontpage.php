@@ -19,7 +19,7 @@
 								<div class="itemimage">
 									<a href="<?php echo base_url();?>sanpham/detail/<?php echo $item->id;?>">
 										<?php echo $item->hinhanh;?>
-									</a><br />								
+									</a>							
 								</div>
 					            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 							</div>

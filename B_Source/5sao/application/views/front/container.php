@@ -37,7 +37,7 @@
 			 <?php }?>
 			 
 			  
-					$('.slidecontrol').click(function(){
+				/*	$('.slidecontrol').click(function(){
 						$(this).children('.slidemove').slideDown();
 						});
 					$('.slidecontrol').mouseleave(function(){
@@ -52,7 +52,13 @@
 							}
 						}
 						else $(this).children('.slidemove').slideUp();
-						});
+						});*/
+								
+					$('.slidemove').hide();
+					$('.slidecontrol').click(function(){
+							$(this).children('.slidemove').slideToggle();
+						})
+						
 				$('.itemmenu').hide();
 					$('.submenu').mouseenter(function(){
 						$(this).children('.itemmenu').slideDown();

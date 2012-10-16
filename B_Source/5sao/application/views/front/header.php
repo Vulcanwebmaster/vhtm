@@ -1,23 +1,17 @@
 <div id="header">			
 			<div id="search">
-				<?php echo $this->lang->line('menu-timkiem');?><br />																																																							
-				<form action="<?php echo base_url();?>timkiem/doSearch" method="post">
-					<input type="text" name="search-text" style="float:left">
-					<select style="margin-left:10px" name="search-selector">
-						<option value="sp"><?php echo $this->lang->line('sanpham');?></option>
-						<option value="tt"><?php echo $this->lang->line('tintuc');?></option>
-					</select>
-					<input type="submit" value="OK" style="color:white; background:url('<?php echo base_url();?>assets/5sao/images/ok.jpg'); width:50px; height:23px"/>
-				</form>
+				<?php echo $this->lang->line('menu-timkiem');?><br />				
+					<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
+						<input class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
+						<input class="searchsubmit" type="submit" value="" />
+					</form>																																																			
 			</div>
 			<div id="language">
 				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">
-					<img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/>
-					<span>Vietnamese</span>
+					<img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/>					
 				</a>
 				<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>">
-					<img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/>
-					<span>English</span>	
+					<img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/>					
 				</a>
 			</div>
             <div id="tel"><?php echo $this->lang->line('menu-dienthoai');?>: <strong>0123456789</strong></div>
