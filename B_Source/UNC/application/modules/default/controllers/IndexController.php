@@ -21,6 +21,8 @@ class IndexController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
+		//$string="ádasdasd <a href='http://gôgle.com'>google</a> "."ádsdfsdf <a href='http://gôgle.com'>google</a> fsdfsdf";
+		//								  echo preg_match_all('#<a.*/a>#', $string); die();
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();

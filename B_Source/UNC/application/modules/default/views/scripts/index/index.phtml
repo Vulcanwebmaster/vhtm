@@ -21,8 +21,28 @@
                         </div>
                     </div>
                     <div class="item-new-left">
-                    	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_63.png"/>
-                    	
+                    	 <?php
+                        		foreach($this->listNews[$parent['category_id']] as $childTintuc)
+                        	   
+                        	    {
+                         ?>
+			                    	<!--<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_63.png"/>-->
+			                    	
+			                    	<?php $str = $childTintuc['news_summary']; 
+			                    		  $preg = preg_match_all('#<img.*/>#',$str,$match);
+										  if($preg > 0)
+										  {
+				                    	 	//$str = str_replace($match[0][0],"",$str);
+											echo $match[0][0];
+										  }
+										  else{ ?>
+			                    		<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.png"/>
+			                    		
+                          			<?php
+									}
+                            	break;
+								}
+                          ?>                    	
                         <p class="tittle">
                         	 <?php
                         		foreach($this->listNews[$parent['category_id']] as $childTintuc)
@@ -30,9 +50,20 @@
                         	    {
 									{
                         		?>
-                            		<?php echo $childTintuc['news_title']; ?>
+                            		<a href="#"><?php echo $childTintuc['news_title']; ?></a>
                             		</p>
-                        				<p><?php echo $childTintuc['news_summary']; ?></p>
+                        				<p><?php 
+										$str = $childTintuc['news_summary']; 
+										  $preg1 = preg_match_all('#<a.*/a>#',$str,$match);
+										  
+										  if($preg1 > 0)
+										  {
+				                    	 	$str = str_replace($match[0][0],"",$str);
+										  }
+										  echo $str;
+										 ?>                        					
+                        				</p>
+
                             	<?php
                             			break;
 									}
@@ -48,10 +79,8 @@
 								{
 									{
 											?>
-												<li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/sao.png"/>
-											<?php
-		                            		echo $tintuc['news_title'];
-											?>
+											<li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/sao.png"/>
+											<a href="#"><?php echo $tintuc['news_title'];?></a>
 											</li>
 											<?php
 									}

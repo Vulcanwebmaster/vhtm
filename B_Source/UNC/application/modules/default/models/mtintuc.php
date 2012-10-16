@@ -35,7 +35,7 @@
 										WHERE unc_news.category_id = unc_category.category_id
 										AND unc_category.category_parent_id="'.$category_parent_id.'"
 										AND unc_news.category_id !=0
-										ORDER BY news_post_date DESC limit 9');
+										ORDER BY news_post_date DESC limit 8');
 			return $query->fetchAll();
 		}
 

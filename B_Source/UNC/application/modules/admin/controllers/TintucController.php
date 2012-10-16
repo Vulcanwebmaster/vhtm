@@ -58,7 +58,7 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			// ADD TIN TỰ ĐỘNG:================================
-			//$this->autoGetnews();
+			$this->autoGetnews();
 			//===============================================
 			//$adapter=new Zend_Paginator_Adapter_DbSelect($this->mtintuc->getListNews());
 			//echo $_SESSION['role_id'];die();
