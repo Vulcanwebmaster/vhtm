@@ -26,6 +26,7 @@ class TintucController extends Zend_Controller_Action
 		$news_id = $this->_request->getParam('newsid');
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		$this->view->news = $news;
+		
 		/*
 		$str = $news['news_summary'];
 		//echo $str;die();
