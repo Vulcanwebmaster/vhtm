@@ -60,6 +60,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 	color: #BE0000;
 	font-weight: bold;
 }
+
 /*----------tiennd------------*/
 
 .risl-2{ background-color:#999999;border-bottom-left-radius:5px; border-top-left-radius:5px; width:304px; height:25px; clear:both; margin-bottom:7px; }
@@ -100,7 +101,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 .tittle-van{background-image:url(../images/NEN_21.png); background-repeat: no-repeat; float:left; color:#FFF; font-weight:bold; width:102px; height:21px;}
 .tittle-van p{ margin:5px;}
 .border{ border-bottom:2px solid #28667c; height:21px; color:#c7c7c7;}
-.border li{ list-style:none; float:left; padding:0 5px 0 5px;; line-height:23px; }
+.border li{ list-style:none; float:left; padding:0 5px 0 5px; line-height:23px; }
 .border li a{color:#000; text-decoration:none;}
 .tittle-vh{background-image:url(../images/NEN_18.png); background-repeat: no-repeat; float:left; color:#FFF; font-weight:bold; width:200px; height:21px;}
 .tittle-vh p{ margin:5px;}
@@ -129,4 +130,5 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #copyright{ clear:both; margin:10px 0 0 0px; padding-top:15px; text-align:center;}
 /*-------------end footer-------------*/
 
-
+h2 a:hover{color:red}
+h2 a{text-decoration:none;}

@@ -24,6 +24,54 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		
 		$news_id = $this->_request->getParam('newsid');
-		$this->view->news = $this->mTintuc->getNewsByNewsId($news_id);
+		$news = $this->mTintuc->getNewsByNewsId($news_id);
+		$this->view->news = $news;
+		/*
+		$str = $news['news_summary'];
+		//echo $str;die();
+		//$str = "<info>abc123</info>";
+		$ret = preg_match('#<br>.*</a>#',$str,$match);
+		if($ret>0)
+		{
+			$str = str_replace($match[0],"",$str);
+		}
+		echo $str;die();
+		echo $match[0];die();
+		var_dump($match);die();
+		 */
+	}
+	
+	function listAction()
+	{
+		$categoryId = $this->_request->getParam('categoryId');
+		if($this->mTintuc->isParent($categoryId))
+		{
+			$list = array();
+			$listNews = $this->mTintuc->getListNews();
+			$listCategoryId = $this->mTintuc->getListChildByParent($categoryId);
+			foreach($listCategoryId as $categoryId)
+			{
+				foreach($listNews as $news)
+				{
+					if($news['category_id'] == $categoryId['category_id'])
+					{
+						$list[] = $news;
+					}
+				}
+			}
+		}
+		else 
+		{
+			$list = $this->mTintuc->getListNewsByCategoryId($categoryId);
+		}
+		
+		$paginator = Zend_Paginator::factory($list);
+        $paginator->setItemCountPerPage(5);        
+        $currentPage = $this->_request->getParam('page',1);
+        $paginator->setCurrentPageNumber($currentPage);
+        $this->view->list=$paginator;
+		
+		$this->view->listHotNews = $this->mDefault->getListHotNews();
+		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 	}
 }

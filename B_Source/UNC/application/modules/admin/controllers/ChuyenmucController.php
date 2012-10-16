@@ -63,6 +63,7 @@
 		
 		function indexAction()
 		{
+			
 				$this->view->headTitle('UNC - Admin website');
 				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -74,6 +75,7 @@
 	         	$paginator->setCurrentPageNumber($currentPage);
 	        	$this->view->list=$paginator;
 				$this->view->title="Quản lý chuyên mục";
+				$this->view->role = $this->role;
 				
 				$listParent=array();
 				foreach($paginator as $parent)

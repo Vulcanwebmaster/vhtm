@@ -38,4 +38,31 @@
 										ORDER BY news_post_date DESC limit 9');
 			return $query->fetchAll();
 		}
+
+		function isParent($id)
+		{
+			$query = $this->db->query('select * from unc_category where category_id="'.$id.'" and category_parent_id=0');
+			$list = $query->fetchAll();
+			if(count($list)>0)
+				return true;
+			else return false;
+		}
+		
+		function getListChildByParent($parent)
+		{
+			$query = $this->db->query('select category_id from unc_category where category_parent_id = "'.$parent.'"');
+			return $query->fetchAll();
+		}
+		
+		function getListNewsByCategoryId($CategoryId)
+		{
+			$query = $this->db->query('select * from unc_news where category_id = "'.$CategoryId.'"');
+			return $query->fetchAll();
+		}
+
+		function getListNews()
+		{
+			$query = $this->db->query('select * from unc_news where category_id != 0');
+			return $query->fetchAll();
+		}
 	}
