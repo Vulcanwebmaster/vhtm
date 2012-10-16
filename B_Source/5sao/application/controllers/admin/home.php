@@ -26,7 +26,7 @@ class Home extends Admin_Controller {
 	
 	function counting()
 	{
-		$list=$this->model->getListFull('thongke');
+		/*$list=$this->model->getListFull('thongke');
 		$result= '';
 		$count=0;
 		foreach ($list as $item)
@@ -36,7 +36,9 @@ class Home extends Admin_Controller {
 			else $result=$result.','.$item->soluong;
 			$count++;
 		}
-		return $result;
+		return $result;*/
+		$list=$this->model->getListFull('thongke');
+		return $list;		
 	}
 }
 

@@ -11,10 +11,16 @@
 				</form>
 			</div>
 			<div id="language">
-				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/></a>
-				<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/></a>
+				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">
+					<img src="<?php echo base_url();?>assets/5sao/images/vn.jpg"/>
+					<span>Vietnamese</span>
+				</a>
+				<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>">
+					<img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/>
+					<span>English</span>	
+				</a>
 			</div>
-            <div id="tel"><?php echo $this->lang->line('menu-dienthoai');?>: 0123456789</div>
+            <div id="tel"><?php echo $this->lang->line('menu-dienthoai');?>: <strong>0123456789</strong></div>
             <ul class="top_menu">
 				<li class="submenu"><a id="menu-trangchu" href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
                 	<div class="itemmenu">

@@ -30,7 +30,7 @@ class NIW_Controller extends CI_Controller {
 		
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');
-		$this->addVisiting();	
+		//$this->addVisiting();	
 	}
 	
 	function set_default_value($data=NULL, $value=NULL)
@@ -90,11 +90,12 @@ class NIW_Controller extends CI_Controller {
 	}
 	
 	function addVisiting()
-	{
-		if (!$this->session->userdata('isOldVisiting'))
+	{			
+		session_start();		
+		if (!isset($_SESSION['isOldVisiting']))
 		{
 			$model=new CI_Model();
-			$today=date('Y-m-d',time()+7*3600);
+			$today=date('Y-m-d',time()+7*3600);			
 			if ($model->getRowByColumn('thongke','ngaythang',$today))
 			{
 				$currentVisitingNumber=$model->getRowByColumn('thongke','ngaythang',$today)->soluong;
@@ -109,8 +110,8 @@ class NIW_Controller extends CI_Controller {
 							'soluong'=>1);
 				$model->insertNewRow('thongke',$input);
 			}
+			 $_SESSION['isOldVisiting']='true';
 		}
-		else $this->session->set_userdata('isOldVisiting','true');
 	}
 }
 
