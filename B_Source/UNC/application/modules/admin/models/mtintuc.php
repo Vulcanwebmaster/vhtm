@@ -1,9 +1,11 @@
 <?php
  class Admin_Model_Mtintuc extends Zend_Db_Table_Abstract
 {
+	protected $_name="unc_news";
  	private $db;
 	function __construct()
 	{
+		parent::__construct();
 		$this->db=Zend_Registry::get('db');
 	}
 	
@@ -19,8 +21,9 @@
 	{
 		if (!$this->isExist($input['news_title']))
 		{
-			$query=$this->db->query('insert into unc_news (news_title, news_summary, news_content, news_author,  news_post_date, category_id,is_hot,viewer_number) values("'.$input['news_title'].'","'.$input['news_summary'].'","'.$input['news_content'].'","'.$input['news_author'].'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'","'.$input['category_id'].'","'.$input['is_hot'].'","")');
-			return $query;
+			$this->insert($input);
+			//$query=$this->db->query('insert into unc_news (news_title, news_summary, news_content, news_author,  news_post_date, category_id,is_hot,viewer_number) values("'.$input['news_title'].'","'.$input['news_summary'].'","'.$input['news_content'].'","'.$input['news_author'].'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'","'.$input['category_id'].'","'.$input['is_hot'].'","")');
+			//return $query;
 		}
 	}
 	

@@ -51,7 +51,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #rs1 p:hover{color:black;cursor:pointer;}
 #rs2 p:hover{color:red;cursor:pointer;}
 .risl-2 a:hover{ color:red;}
-.risl-2 a{ margin-left:15px;text-decoration:none; color:#FFF;cursor:pointer;}
+.risl-2 a{ margin-left:15px;text-decoration:none; color:#FFF;cursor:pointer; line-height:25px}
 #detail h1
 {
 	font-size: 24px;
