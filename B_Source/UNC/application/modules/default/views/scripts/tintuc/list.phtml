@@ -25,7 +25,7 @@
 	 			?>
 	 		
 	 		<div>
-	  			<h2 style="color:blue;margin-left:145px;margin-top:-92px"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h2>
+	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
 	  			<div style="margin-left:145px">
 	  				<?php
 	  				 	$str = $news['news_summary']; 
@@ -46,9 +46,11 @@
 						
 	  				?>
 	  			</div>
+	  			<br style="clear:both">
 	  			<a style="float:right" href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>">Xem tiếp</a>
 	 		</div>
 	 	</div>
+	 	
  	<?php
 		}
  	?>

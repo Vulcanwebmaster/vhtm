@@ -12,7 +12,7 @@
 									if($child['category_parent_id'] == $parent['category_id'])
 									{
                         		?>
-                            		<li><a href="#"><?php echo $child['category_name']; ?></a></li><li>|</li>
+                            		<li><a href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $child['category_id']; ?>"><?php echo $child['category_name']; ?></a></li><li>|</li>
                             	<?php
 									}
 								}

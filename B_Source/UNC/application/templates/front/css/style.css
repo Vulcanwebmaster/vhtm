@@ -135,5 +135,5 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #copyright{ clear:both; margin:10px 0 0 0px; padding-top:15px; text-align:center;}
 /*-------------end footer-------------*/
 
-h2 a:hover{color:red}
-h2 a{text-decoration:none;}
+h3 a:hover{color:red}
+h3 a{text-decoration:none;}
