@@ -4,8 +4,8 @@
 	<div id="search">
 		<?php echo $this->lang->line('menu-timkiem');?><br />				
 			<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
-				<input class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
-				<input class="searchsubmit" type="submit" value="" />
+				<input class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="search" value="Tìm kiếm sản phẩm …" />
+				<input class="searchsubmit" type="submit" value="" style="cursor: pointer"/>
 			</form>																																																			
 	</div>
 			<div  class="bodermove" style="margin-left:10px;">

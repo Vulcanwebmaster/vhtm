@@ -46,16 +46,28 @@
                       		}?>
                       		-->
                       		<li>
-                      			<h3>Năm Sao Việt thi công công trình cầu đi bộ .</h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công Công trình Cầu đi bộ.</p>
+                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
+                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
                       		</li>
                       		<li>
-                      			<h3>Năm Sao Việt thi công công trình cầu đi bộ .</h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công Công trình Cầu đi bộ.</p>
+                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
+                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
                       		</li>
                       		<li>
-                      			<h3>Năm Sao Việt thi công công trình cầu đi bộ .</h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công Công trình Cầu đi bộ.</p>
+                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
+                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
+                      		</li>
+                      		<li>
+                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
+                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công .</p>
+                      		</li>
+                      		<li>
+                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
+                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
+                      		</li>
+                      		<li>
+                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
+                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
                       		</li>
 						</ul>
                     </marquee>	
