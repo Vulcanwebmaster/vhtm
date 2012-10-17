@@ -59,10 +59,20 @@
 			$query = $this->db->query('select * from unc_news where category_id = "'.$CategoryId.'"');
 			return $query->fetchAll();
 		}
+		function getListAdsByCategoryId($CategoryId)
+		{
+			$query = $this->db->query('select * from unc_ads where category_id = "'.$CategoryId.'"');
+			return $query->fetchAll();
+		}
 
 		function getListNews()
 		{
 			$query = $this->db->query('select * from unc_news where category_id != 0');
+			return $query->fetchAll();
+		}
+		function getListAds()
+		{
+			$query = $this->db->query('select * from unc_ads where category_id != 0');
 			return $query->fetchAll();
 		}
 	}

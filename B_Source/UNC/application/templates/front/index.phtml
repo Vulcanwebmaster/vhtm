@@ -30,16 +30,30 @@
         <div id="top-menus">
         	<div><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_23.png" width="1000px" height="20px"/></div>
             <div id="top-menu">
-            	<ul>
+            	<ul id="nav">
                 	<li class="color-menu" id="home"><a href="#"><div style="margin:7px 5px 0 30px; float:left"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png"/></div> Tin tức</a></li><li></li>
-                    <li><a href="#">Văn Miếu</a></li><li>|</li>
-                    <li><a href="#">Võ Miếu</a></li><li>|</li>
-                    <li><a href="#">Văn hóa thể thao Unesco</a></li><li>|</li>
-                    <li><a href="#">Di Sản</a></li><li>|</li>
-                    <li><a href="#">Sức khỏe</a></li><li>|</li>
-                    <li><a href="#">Học bổng Unesco</a></li><li>|</li>
+                	  <?php foreach($this->listParent as $parent)
+					  {
+					  ?>
+                    <li class="top"><a href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $parent['category_id']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>
+                    	<ul class="sub">     
+                        		<?php
+                        		foreach($this->listChild as $child)
+								{
+									if($child['category_parent_id'] == $parent['category_id'])
+									{
+                        		?>
+                            		<li><a href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $child['category_id']; ?>"><?php echo $child['category_name']; ?>></a></li></br>
+                            	<?php
+									}
+								}
+                            	?>                   	
+                        </ul>
+                    </li><li>|</li>
+                    <?php }?>
                     <li><a href="#">Video</a></li><li>|</li>
                     <li><a href="#">Forum</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -225,10 +239,13 @@
 
 
                 </div>
-                <div class="img-tube"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_74.png"/></div>
-                <div class="img-tube"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_77.png"/></div>
-                <div class="img-tube"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_83.png"/></div>
-                <div class="img-tube"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_93.png"/></div>
+                <?php
+                       		foreach($this->listquangcao as $quangcao)
+								{
+									
+                        		?>
+                <div class="img-tube"><img src="<?php echo $quangcao['ads_link']; ?>"/></div>
+                <?php   } ?>
             </div>
             <!------------end video------->
         </div>
