@@ -46,7 +46,7 @@ $msg2="";
 		$objTransfer->value_date=$_POST['Settlement_Date'];
 		$objTransfer->status="pending";
 		$objTransfer->types="sell";
-		$objTransfer->company=$_POST['company'];
+		$objTransfer->workername=$_POST['company'];
 		
 		$msg1=$objTransfer->InsertTrading();
 		
@@ -65,7 +65,7 @@ $msg2="";
 		$objTransfer->value_date=$_POST['Settlement_Date1'];
 		$objTransfer->status="pending";
 		$objTransfer->types="purchase";
-		$objTransfer->company=$_POST['company'];
+		$objTransfer->workername=$_POST['company'];
 		
 		$msg2=$objTransfer->InsertTrading();
 		echo $msg2;
@@ -169,10 +169,10 @@ if(isset($msg1) && $msg1!=""){
       <table align="center">
        <tr>
         <td align="right">CLIENT NAME</td>              
-	<td colspan="4" align="left"><input name="Client" type="text" id="Client" style="width:200px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name']."'";} ?> /></td>
+	<td colspan="4" align="left"><input name="Client" type="text" id="Client" style="width:200px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td>
       
         <td align="right">WORKER NAME</td>              
-        <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td>
+        <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name'].' '.$arrUser1[0]['last_name']."'";} ?> /></td>
        </tr>
       </table>
      </fieldset>

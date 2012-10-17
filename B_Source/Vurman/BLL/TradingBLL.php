@@ -16,7 +16,7 @@ Class TradingClass extends ChildCoreClass
 	//public $created_at;
 	public $types;
 	public $status;
-	public $company;
+	public $workername;
 	//public $settled_by;
 	//public $settled_date;
 	//public $status_settle;
@@ -228,7 +228,7 @@ Class TradingClass extends ChildCoreClass
 		$InsArr['remarks_vurman']="'".$this->remarks_vurman."'";
 		$InsArr['trade_remarks']="'".$this->trade_remarks."'";
 		
-		$InsArr['company']="'".$this->company."'";
+		$InsArr['workername']="'".$this->workername."'";
 		$InsArr['client_name']="'".$this->client_name."'";
 		//$InsArr['created_at']="now()";
 		$InsArr['types']="'".$this->types."'";

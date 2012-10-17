@@ -13,7 +13,7 @@ if(isset($_POST['sellerid']) && $_POST['sellerid']!="")
 	if(sizeof($arrCustodian)>0)
 	{
 		
-		echo $arrCustodian[0]['counterparty']."|".$arrCustodian[0]['biccp'];
+		echo $arrCustodian[0]['counterparty_name']."|".$arrCustodian[0]['bic_counterparty'];
 		//echo $arrCustodian[0]['custodian']."|".$arrCustodian[0]['biccustodian']."|".$arrCustodian[0]['acwithcust']."|".$arrCustodian[0]['transferagent']."|".$arrCustodian[0]['bicta']."|".$arrCustodian[0]['acwithta'];
 	}
 	else

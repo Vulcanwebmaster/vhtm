@@ -164,8 +164,8 @@ function showClientInfo()
 		if(result!="Not Found")
 		{
 			var resArr=result.split('|');
-			
-			setValueFromId('Client',resArr[0]);
+			setValueFromId('company',resArr[0]);
+			setValueFromId('Client',resArr[1]);
 			showbyId('fieldsetSellerDetails');
 			showbyId('fieldsetFundDetails');
 			

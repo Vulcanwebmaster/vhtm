@@ -13,7 +13,7 @@ if(isset($_POST['clientid']) && $_POST['clientid']!="")
 	
 	if(sizeof($arrUser)>0)
 	{
-		echo $arrUser[0]['first_name']."".$arrUser[0]['last_name'];
+		echo $arrUser[0]['first_name']." ".$arrUser[0]['last_name']."|".$arrUser[0]['company'];
 	}
 	else{
 		echo "Not Found";

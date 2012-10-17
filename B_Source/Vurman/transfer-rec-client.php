@@ -81,7 +81,7 @@ $msg="";
 
 		$objTransfer->status="pending";
 		
-		$objTransfer->company=$_POST['company'];
+		$objTransfer->workername=$_POST['company'];
 
 		//$objTransfer->transaction_type="receive";
 
@@ -112,11 +112,11 @@ $arrUser1=$objUser1->SearchUser();
 $objCoustodyAC=new Custody_ACClass($db);
 
 $objCoustodyAC->id_client=$arrUser1[0]['id'];
-print $arrUser1[0]['id'];
+//print $arrUser1[0]['id'];
 
 $arrCustodyAC=$objCoustodyAC->SearchCustody_AC();
-print "Result: ";
-print sizeof($arrCustodyAC);
+//print "Result: ";
+//print sizeof($arrCustodyAC);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -200,10 +200,10 @@ if(isset($msg) && $msg!=""){
      <table align="center">
       <tr>
        <td align="right">CLIENT NAME</td>              
-       <td colspan="4" align="left"><input name="Client" type="text" id="Client" style="width:200px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name'].' '.$arrUser1[0]['last_name']."'";} ?> /></td>
+       <td colspan="4" align="left"><input name="Client" type="text" id="Client" style="width:200px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td>
 
        <td align="right">WORKER NAME</td>              
-       <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td>
+       <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name'].''.$arrUser1[0]['last_name']."'";} ?> /></td>
       </tr>
      </table>
     </fieldset>

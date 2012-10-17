@@ -68,7 +68,7 @@ $msg="";
 
 		$objTransfer->types="purchase";
 		
-		$objTransfer->company=$_POST['company'];
+		$objTransfer->workername=$_POST['company'];
 
 		
 
@@ -189,10 +189,10 @@ $arrCustodyAC=$objCoustodyAC->SearchCustody_AC();
      <table align="center">
       <tr>
        <td align="right">CLIENT NAME</td>              
-       <td colspan="4" align="left"><input name="Client" type="text" style="width:200px;" id="Client" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name']."'";} ?> /></td>
+       <td colspan="4" align="left"><input name="Client" type="text" style="width:200px;" id="Client" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td>
 
        <td align="right">WORKER NAME</td>              
-       <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['company']."'";} ?> /></td>
+       <td colspan="4" align="left"><input name="company" type="text" id="company" style="width:150px;" readonly="readonly" <?php if(sizeof($arrUser1)){ echo "value='".$arrUser1[0]['first_name'].'  '.$arrUser1[0]['last_name']."'";} ?> /></td>
       </tr>
      </table>
     </fieldset>   
