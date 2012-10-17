@@ -68,7 +68,7 @@ line-height:34px;
 padding-right:20px;
 }
 .top_menu{
-margin:40px 0px 0 78px;
+margin:108px 0px 0 78px;
 / margin:0 0px 0 39px;
 display:block;
 float:left;
@@ -103,9 +103,9 @@ font-family:Arial, Helvetica, sans-serif;
 font-size:12px;
 font-weight:bold;
 color:white;
-padding:20px 0 0 330px;
 float:left;
 line-height:25px;
+margin:-17px 0 10px 10px;
 }
 #search select{
 width:auto;
@@ -497,7 +497,7 @@ font-size:11px
 #language a{padding-left:0px;}
 .pr-img{ margin:5px; border-bottom:1px solid #CCC;}
 .pr-img h4{ color:#000000 !important; font-size:11px !important; text-transform:none !important;}
-.bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;}
+.bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;clear:both}
 #newpr{width:100%; height:30px; background-image:url(../images/prnew.jpg); background-repeat:repeat-x; margin-left:-4px; text-transform:uppercase; font-weight:bold; padding:10px 0 0 8px; color:white; margin-top:10px}
 .itemmenu{position: absolute; padding-left:5px; text-transform:none;
 z-index: 999;
@@ -515,6 +515,8 @@ text-align: left;}
 #statistics ul{margin:-10px 5px 10px 5px;}
 #statistics{font-weight:bold; font-size:11px}
 #statistics img{margin-bottom:-3px;}
+#textbaner{position:absolute; z-index:4444; left:315px; top:25px; color:#fff; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:32px; font-weight:bold; text-align:center;}
+#titletrust{ font-size:12px; text-transform:none; font-weight:none;}
 /* --------------------- MANH ---------------------*/
 .itemimage a img{width:169px !important; height:165px !important}
 .clear{clear:both}
@@ -540,7 +542,7 @@ height:24px;
 }
 .searchform input[type=text]
 {
-width:270px;
+width:141px;
 height:18px;
 border:0px;
 background:#ffffff;

@@ -1,6 +1,13 @@
 <?php $newmodel=new CI_Model();?>
 
 <div id="left">
+	<div id="search">
+		<?php echo $this->lang->line('menu-timkiem');?><br />				
+			<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
+				<input class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
+				<input class="searchsubmit" type="submit" value="" />
+			</form>																																																			
+	</div>
 			<div  class="bodermove" style="margin-left:10px;">
 					<h4 class="title1"><?php echo $this->lang->line('left-danhmuc');?></h4>
 					<ul id="list">
@@ -44,7 +51,7 @@
 				</div>
                     <div class="bodermove" id="prnew">
                         <div class="title2"><h4><?php echo $this->lang->line('left-spbanchay');?></h4></div>
-                        <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="250"  width="182" style="margin:4px 0 10px 0">
+                        <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="220"  width="182" style="margin:4px 0 10px 0">
                            <?php foreach ($list_spbanchay as $spbc)
                            {?>
                           		<div class="pr-img">

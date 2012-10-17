@@ -1,10 +1,9 @@
 <div id="header">			
-			<div id="search">
-				<?php echo $this->lang->line('menu-timkiem');?><br />				
-					<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
-						<input class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
-						<input class="searchsubmit" type="submit" value="" />
-					</form>																																																			
+			<div id="textbaner">
+				 
+					<p>Công ty TNHH Thái Dương</p>
+					<p id="titletrust">Your trust is our price</p>                          
+                 
 			</div>
 			<div id="language">
 				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">
