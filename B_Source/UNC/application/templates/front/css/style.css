@@ -31,14 +31,14 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #slides{ width:100%; height:auto; background-image:url(../images/NEN_103.png); background-repeat:repeat-x;}
 #slide{ height:250px; background-color:#333333; margin:0 15px 0 15px; padding:10px;}
 #item{ padding:10px; }
-#left-slide{ width:500px;background-color:#FFF; border:2px solid #000; height:245px; position:relative; float:left;}
+#left-slide{ width:690px;background-color:#FFF; height:300px; position:relative; float:left;}
 #items{ position:absolute; right:0; bottom:0; background:#000; height:25px; width:100%}
 #items ul,.risl-3 ul{margin-top:7px; }
 #items li{ list-style:none; float:right; padding:0 10px 0 0;}
 .risl-3 ul{ margin-left:-35px}
 .risl-3 li{ list-style:none; float:left; padding:0 10px 0 0;}
 #center-slide{ width:110px; height:70px; background-color:#FFF; border:1px solid red; margin:80px 15px 0 15px; float:left;}
-#right-slide{ width:304px; height:245px; float:left;}
+#right-slide{ width:309px; height:245px; float:left;}
 #rsl-1{ margin-bottom:35px;}
 
 #rs1{ background-color:red; border-bottom-left-radius:5px; border-top-left-radius:5px; width:152px; height:25px; float:left; line-height:10px}
@@ -51,7 +51,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #rs1 p:hover{color:black;cursor:pointer;}
 #rs2 p:hover{color:red;cursor:pointer;}
 .risl-2 a:hover{ color:red;}
-.risl-2 a{ margin-left:15px;text-decoration:none; color:#FFF;cursor:pointer; line-height:25px}
+.risl-2 a{ margin-left:15px;text-decoration:none; color:#FFF;cursor:pointer;}
 #detail h1
 {
 	font-size: 24px;
@@ -60,7 +60,6 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 	color: #BE0000;
 	font-weight: bold;
 }
-
 /*----------tiennd------------*/
 
 .risl-2{ background-color:#999999;border-bottom-left-radius:5px; border-top-left-radius:5px; width:304px; height:25px; clear:both; margin-bottom:7px; }
@@ -92,14 +91,10 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 .item-new-left{ width:50%; height:auto; padding:0 10px 10px 0; float:left; border-right:2px solid #c7c7c7; margin-top:10px; clear:both}
 .item-new-left img{ width:130px; height:75px; float:left; margin:0 10px 10px 0;}
 .tittle{ color:#00cbff; font-size:14px; font-weight:bold; margin:5px}
-.tittle a{ color:#00cbff; text-decoration:none}
-.tittle a:hover{ color:#00cbff; text-decoration:underline}
 #tittle-news p{ color:#FFF; font-weight:bold; margin-left:5px; padding-top:4px;}
 .item-new-right{ float:left; width:46%;}
 .item-new-right ul{ padding-left:15px;}
 .item-new-right ul li{ list-style:none;}
-.item-new-right ul li a{ color:#4169E1; text-decoration:none}
-.item-new-right ul li a:hover{ color:#2E74B2; text-decoration:underline}
 
 .van{ width:100%; height:21px;}
 .tittle-van{background-image:url(../images/NEN_21.png); background-repeat: no-repeat; float:left; color:#FFF; font-weight:bold; width:102px; height:21px;}
@@ -107,7 +102,6 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 .border{ border-bottom:2px solid #28667c; height:21px; color:#c7c7c7;}
 .border li{ list-style:none; float:left; padding:0 5px 0 5px; line-height:23px; }
 .border li a{color:#000; text-decoration:none;}
-.border li a:hover{color:#2E74B2; text-decoration:underline;}
 .tittle-vh{background-image:url(../images/NEN_18.png); background-repeat: no-repeat; float:left; color:#FFF; font-weight:bold; width:200px; height:21px;}
 .tittle-vh p{ margin:5px;}
 
@@ -134,7 +128,6 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #menu-footer li a:hover{ color:#333;}
 #copyright{ clear:both; margin:10px 0 0 0px; padding-top:15px; text-align:center;}
 /*-------------end footer-------------*/
-
 h3 a:hover{color:red}
 h3 a{text-decoration:none;}
 
