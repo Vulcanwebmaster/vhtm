@@ -13,6 +13,12 @@
 			return $query->fetchAll();
 		}
 		
+		function getListAds()
+		{
+			$query = $this->db->query('select * from unc_ads order by rand() limit 4');
+			return $query->fetchAll();
+		}
+		
 		function getListMostView()
 		{
 			$query = $this->db->query('select distinct news_title,news_id from unc_news order by viewer_number desc limit 6');

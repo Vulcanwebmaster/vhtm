@@ -71,7 +71,7 @@ class TintucController extends Zend_Controller_Action
 			{
 				foreach($listAds as $ads)
 				{
-					if($news['category_id'] == $categoryId['category_id'])
+					if($ads['category_id'] == $categoryId['category_id'])
 					{
 						$listquangcao[] = $ads;
 					}
