@@ -31,6 +31,10 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();
 		$this->view->listChild = $listChild;
+		
+		
+		$listquangcao = $this->mDefault->getListAds();
+		$this->view->listquangcao=$listquangcao;
 		/*
 		$str = $news['news_summary'];
 		//echo $str;die();

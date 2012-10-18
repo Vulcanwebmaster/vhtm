@@ -36,10 +36,11 @@ class IndexController extends Zend_Controller_Action
 			$listNews[$parent['category_id']]=$this->mTintuc->getTinTuc($parent['category_id']);
 		}
 			
-			$listquangcao = $this->mDefault->getListAds();
-		$this->view->listNews=$listNews;
-		//var_dump($this->mTintuc->getTinTuc());die();
+		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
+		
+		$this->view->listNews=$listNews;
+		
 	}
 
 
