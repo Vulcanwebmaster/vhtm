@@ -207,7 +207,7 @@
 			if($this->role == "0")
 			{
 				$category_id=$this->_request->getParam('category_id');
-			
+				
 				if ($this->mChuyenmuc->deleteCm($category_id))
 					$_SESSION['result']='Xóa thành công';
 				else $_SESSION['result']='Xóa không thành công';

@@ -4,7 +4,7 @@
 		private $db;
 		function __construct()
 		{
-			$this->db=Zend_Registry::get('db');
+			$this->db = Zend_Registry::get('db');
 		}
 		
 		function getListHotNews()

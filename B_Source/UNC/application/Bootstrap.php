@@ -15,5 +15,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         )));
 		
     }
+	
+	public function _initDbRegistry()
+    {
+        $this->bootstrap('multidb');
+        $multidb = $this->getPluginResource('multidb');
+        Zend_Registry::set('unc_website', $multidb->getDb('uncwebsite'));
+        Zend_Registry::set('unc_forum', $multidb->getDb('uncforum'));
+    }
+	
 }
 ?>

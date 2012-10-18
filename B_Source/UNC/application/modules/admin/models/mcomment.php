@@ -78,9 +78,10 @@
 		
 		function getNewsTitleByNewsId($news_id)
 		{
-			$query=$this->db->query('select news_title from unc_news where news_id="'.$news_id.'"');
-			$list=$query->fetchAll();
-			return $list[0]['news_title'];
+			$query = $this->db->query('select news_title from unc_news where news_id="'.$news_id.'"');
+			$list = $query->fetchAll();
+			if(isset($list[0]['news_title']))
+				return $list[0]['news_title'];
 		}
 		
 		function getNewsByNewsId($news_id)
@@ -94,7 +95,6 @@
 		{
 			$query=$this->db->query('select comment_user_fullname from unc_comment_user where comment_user_id="'.$reader_id.'"');
 			$list=$query->fetchAll();
-			//echo $list[0]['comment_user_fullname'];die();
 			return $list[0]['comment_user_fullname'];
 		}
 	}

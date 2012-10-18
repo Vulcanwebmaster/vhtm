@@ -4,7 +4,6 @@ class IndexController extends Zend_Controller_Action
 	protected $mDefault;
 	protected $mTintuc;
 	public function init()
-
 	{
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 

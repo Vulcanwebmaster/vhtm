@@ -54,6 +54,7 @@ class TintucController extends Zend_Controller_Action
 			$list = array();
 			$listNews = $this->mTintuc->getListNews();
 			$listCategoryId = $this->mTintuc->getListChildByParent($categoryId);
+			
 			foreach($listCategoryId as $categoryId)
 			{
 				foreach($listNews as $news)
