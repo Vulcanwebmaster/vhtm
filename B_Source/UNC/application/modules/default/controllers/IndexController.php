@@ -37,6 +37,7 @@ class IndexController extends Zend_Controller_Action
 		}
 		$this->view->listNews=$listNews;
 		//var_dump($this->mTintuc->getTinTuc());die();
+		
 	}
 
 
