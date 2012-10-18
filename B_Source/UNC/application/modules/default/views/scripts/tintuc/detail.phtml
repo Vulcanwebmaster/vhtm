@@ -1,5 +1,66 @@
 <div id="detail">
-	<h1><?php echo $this->news['news_title']; ?></h1>
+	<h2><?php echo $this->news['news_title']; ?></h2>
 	<p><?php echo $this->news['news_content']; ?></p>
-
+	<hr/>
+	<?php
+	if(isset($_SESSION['success']))
+	{
+		$_SESSION['news_id'] = $this->news['news_id'];
+		?>
+			<h3>Bạn đang đăng nhập bằng tài khoản <span style="color:red"><?php echo $_SESSION['success']; ?></span>&nbsp;&nbsp;&nbsp;
+			<a href="<?php echo $this->baseUrl(); ?>/tintuc/logout"><i>Thoát</i></a></h3>
+			<form method="post" action="<?php echo $this->baseUrl(); ?>/tintuc/addComment/readerId/<?php echo $_SESSION['reader_id']; ?>">
+				<div id="addComment">
+					<textarea name="comment_content" style="width:100%" rows="3"></textarea>
+					<input type="submit" name="submit" value="Gửi bình luận"/>
+				</div>
+			</form>
+				
+		<?php
+	}
+	//if(isset($_SESSION['fail']))
+	else 
+	{
+		?>
+			<form method="post" action="<?php echo $this->form->getAction();?>">
+			<div id="login">
+				<h3>Đăng nhập bằng tài khoản forum UNC để bình luận về tin tức này</h3>
+				<hr/>
+				<span>Tên đăng nhập : </span><?php echo $this->form->getElement('user_name'); ?><br/>
+				<span>Mật khẩu : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<?php echo $this->form->getElement('pass_word'); ?><br/>
+				<input style="margin-left:20%" type="submit" name="submit" value="Đăng nhập"/>
+			</div>
+			<?php
+			if(isset($_SESSION['fail'])) 
+			{
+				?>
+					<h3><i style="color:red"><?php echo $_SESSION['fail'];?></i></h3>
+				<?php
+			}
+			?>
+		</form>
+		<?php
+	}
+	?>	
+	
+	<div id="comment">
+		<hr/>
+		<h3>Danh sách bình luận</h3>
+		<hr/>
+		<?php
+		$count = 0;
+		foreach($this->listComment as $comment)
+		{
+		?>
+			<div>
+				<h3 style="margin-left:40px"><i><?php echo $this->listUser[$count]['username']; ?></i></h3>
+				<p style="margin-left:50px"><?php echo $comment['comment_content']; ?></p>
+			</div>
+			<hr/>
+		<?php
+		}
+		?>
+	</div>
+	
 </div>

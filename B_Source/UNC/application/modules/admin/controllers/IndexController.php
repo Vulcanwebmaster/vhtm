@@ -35,7 +35,7 @@ class Admin_IndexController extends Zend_Controller_Action
 
 			$_SESSION['role'] = $this->mAdmin->getRoleByUser($username);
 			
-			$_SESSION['user_id']=$account['user_id'];
+			$_SESSION['user_id'] = $account['user_id'];
 			$this->_redirect($this->view->baseUrl().'/../admin/index/home');
 		}
 		else $this->_redirect($this->view->baseUrl().'/../admin');

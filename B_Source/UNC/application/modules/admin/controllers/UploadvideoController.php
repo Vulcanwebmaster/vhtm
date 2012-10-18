@@ -6,6 +6,7 @@
 		protected $user_youtube,$pass_youtube,$gallery,$id_youtube;
 		protected $role;
 		protected $user_login;
+		protected $user_id;
 		
 		function init()
 		{
@@ -31,6 +32,12 @@
 			  }
 			  if(isset($_SESSION['user']))
 			 	 $this->user_login = $_SESSION['user'];
+			  else {
+				  $this->_redirect($this->view->baseUrl().'/../admin');
+			  }
+			  
+			  if(isset($_SESSION['user_id']))
+			  	$this->user_id = $_SESSION['user_id'];
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
@@ -62,6 +69,7 @@
 		
 		function indexAction()
 		{
+			//echo $this->user_login;die();
 			//echo $this->user_youtube.' - '.$this->pass_youtube.' - '.$this->gallery;
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
@@ -92,7 +100,28 @@
 		        exit;
 		    }
 			
-			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
+			if($this->role == "0" | $this->role == "2")
+			{
+				$listVideo = $this->mVideo->getListVideo();
+			}
+			if($this->role == "1")
+			{
+				$allVideo = $this->mVideo->getListVideo();
+				$listCategoryId = $this->mVideo->getCategoryIdByUserId($this->user_id);
+				$listVideo = array();
+				foreach($allVideo as $video)
+				{
+					foreach($listCategoryId as $categoryId)
+					{
+						if($video['category_id'] == $categoryId['category_id'])
+						{
+							$listVideo[] = $video;
+						}
+					}
+				}
+			}
+			//var_dump($listVideo);die();
+			$paginator = Zend_Paginator::factory($listVideo);
         	$paginator->setItemCountPerPage(5);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
@@ -117,7 +146,7 @@
 			$title ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));
 			
 			$description = new Zend_Form_Element_Textarea('description');
-			$description->setAttrib('rows', '5');
+			//$description->setAttrib('rows', '5');
 			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
 			
 			$title->removeDecorator('HtmlTag')->removeDecorator('Label');	
@@ -134,13 +163,16 @@
 						'video_full_link'			=> $form->getValue('link'),
 						'video_title'				=> $form->getValue('title'),
 						'video_description'			=> $form->getValue('description'),
-						'user_upload'				=> $this->user_login
+						'is_active'					=> $form->getValue('is_active'),
+						'user_upload'				=> $this->user_login,
+						'category_id'				=> $form->getValue('category_id')
 						);
 			return $input;
 		}
 		
 		function insertAction()
 		{
+			//echo $this->role;die();
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -149,7 +181,7 @@
 			$form = $this->formInsert();
 			$this->view->title = 'Thêm video mới';
 			$this->view->form = $form;
-			
+			$this->view->role = $this->role;
 			if($this->_request->isPost())
 			{
 				if($form->isValid($_POST))
@@ -188,11 +220,39 @@
 			$description->setAttrib('rows', '5');
 			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
 			
+			$is_active = $form->createElement("select","is_active",array(
+                                                        "label" => "Kích hoạt",
+                                                   "multioptions"=> array(
+                                                                      "0" => "Không",
+                                                                      "1" => "Có")));
+			if($this->role == "0")
+			{
+				$listCategoryId = $this->mVideo->getListCategory();
+			}
+			else 
+			{
+				$listCategoryId = $this->mVideo->getCategoryIdByUserId($this->user_id);
+			}
+			
+			$listCategory = array();
+			foreach($listCategoryId as $category)
+			{
+				$listCategory[] = $this->mVideo->getCategoryByCategoryId($category['category_id']);
+			}			
+			$categoryId = new Zend_Form_Element_Select('category_id');
+			
+			foreach($listCategory as $category)
+			{
+				$categoryId->addMultiOption($category['category_id'],$category['category_name']);
+			}
+			
 			$link->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$title->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$description->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$categoryId->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElements(array($link,$title,$description));
+			$form->addElements(array($link,$title,$description,$is_active,$categoryId));
 			return $form;
 		}
 		
@@ -330,7 +390,7 @@
 			
 			$video_id = $this->_request->getParam('video_id');
 			$video_link = $this->mVideo->getVideoLinkById($video_id);
-			
+			$this->view->role = $this->role;
 			$info = $this->mVideo->getVideoById($video_id);
 			$form = $this->formInsert();
 			
@@ -341,6 +401,8 @@
 				$form->getElement('link')->setValue($info['video_full_link']);
 				$form->getElement('title')->setValue($info['video_title']);
 				$form->getElement('description')->setValue($info['video_description']);
+				$form->getElement('is_active')->setValue($info['is_active']);
+				$form->getElement('category_id')->setValue($info['category_id']);
 				
 				$this->view->form = $form;
 				$this->view->title = 'Sửa thông tin video';		

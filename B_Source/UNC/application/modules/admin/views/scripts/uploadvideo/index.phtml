@@ -40,13 +40,14 @@
 			YUI().use('datatable', function (Y) {
 				var data = [
 								<?php 
-								$count=1;
+								$count = 1;
 								foreach ($this->list as $item)
 								{?>
 									{ 	order: "<?php echo $count;?>", 
 										video_title: "<?php echo $item['video_title'];?>",   
 										video_description: "<?php echo $item['video_description'];?>",
 										video_full_link: '<a href="<?php echo $item['video_full_link'];?>"><?php echo $item['video_full_link'];?></a>',
+										is_active: "<?php if($item['is_active'] == '1') echo 'Có'; else echo 'Không';?>",
 										sua: '<?php
 											if($this->role == "0" |(($this->role=="1" | $this->role=="2") & $this->user_login==$item['user_upload']))
 												echo '<a href="'.$this->baseUrl().'/admin/uploadvideo/edit/video_id/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
@@ -87,6 +88,13 @@
 							{
 								key: 'video_full_link',
 								label:'Liên kết',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'is_active',
+								label:'Kích hoạt',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true

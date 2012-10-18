@@ -2,9 +2,11 @@
 	class Default_Model_Mtintuc extends Zend_Db_Table_Abstract
 	{
 		private $db;
+		protected $forum;
 		function __construct()
 		{
-			$this->db=Zend_Registry::get('db');
+			$this->db = Zend_Registry::get('db');
+			$this->forum = Zend_Registry::get('unc_forum');
 		}
 		
 		function getNewsByNewsId($news_id)
@@ -75,4 +77,60 @@
 			$query = $this->db->query('select * from unc_ads where category_id != 0');
 			return $query->fetchAll();
 		}
+		
+		function getCommentByNewsId($news_id)
+		{
+			$query = $this->db->query('select * from unc_comment where news_id = "'.$news_id.'" order by comment_id desc');
+			return $query->fetchAll();
+		}
+		
+		function getListForumUser()
+		{
+			$query = $this->forum->query('select userid, username from user');
+			return $query->fetchAll();
+		}
+		
+		function getUserByUserId($userid)
+		{
+			$query = $this->forum->query('select username,password from user where userid = "'.$userid.'"');
+			$list = $query->fetchAll();
+			return $list[0];
+		}
+		
+		function isUserName($user_name)
+		{
+			$query = $this->forum->query('select * from user where username = "'.$user_name.'"');
+			$list = $query->fetchAll();
+			if(count($list)>0)
+				return true;
+			else return false;
+		}
+
+		function getSaltByUserName($user_name)
+		{
+			$query = $this->forum->query('select salt from user where username = "'.$user_name.'"');
+			$list = $query->fetchAll();
+			return $list[0]['salt'];
+		}
+		
+		function getPassWordByUserName($user_name)
+		{
+			$query = $this->forum->query('select password from user where username = "'.$user_name.'"');
+			$list = $query->fetchAll();
+			return $list[0]['password'];
+		}
+		
+		function getUserIdByUserNameForum($user_name)
+		{
+			$query = $this->forum->query('select userid from user where username = "'.$user_name.'"');
+			$list = $query->fetchAll();
+			return $list[0]['userid'];
+		}
+		
+		function insertComment($reader_id,$news_id,$comment_content)
+		{
+			$query=$this->db->query('insert into unc_comment value ("","'.$comment_content.'","'.$news_id.'","'.$reader_id.'")');
+			return $query;
+		}
+		
 	}
