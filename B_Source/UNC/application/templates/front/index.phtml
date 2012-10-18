@@ -64,31 +64,23 @@
     <div id="left-slide">
     <div id="sliderFrame">
         <div id="slider">
-            <a href="http://www.menucool.com/jquery-slider" target="_blank">
-                <img src="images/image-slider-1.jpg" alt="Welcome to jQuery Slider" />
-            </a>
-            <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-2.jpg" alt="Pure Javascript. No jQuery. No Flash." />
+            <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-2.jpg" alt="Hello!!!" />
             <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-3.jpg" />
             <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-4.jpg" />
         </div>
         <!--thumbnails-->               	
         <div id="thumbs">
+        	        <?php 
+                    foreach($this->listHotNewsJs as $news)
+					{
+					?>
             <div class="thumb">
-                <div class="thumb-content"><p>HTML Content</p>Thumbnails allows any HTML content</div>
+                <div class="thumb-content"><p><?php echo $news['news_title']; ?></p></div>
                 <div style="clear:both;"></div>
             </div>
-            <div class="thumb">
-                <div class="thumb-content"><p>Customizable</p>Thumbnail style is customizable</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="thumb-content"><p>Variety of Layouts</p>Just a CSS tweak.</div>
-                <div style="clear:both;"></div>
-            </div>
-			 <div class="thumb">
-                <div class="thumb-content"><p>Variety of Layouts</p>Just a CSS tweak.</div>
-                <div style="clear:both;"></div>
-            </div>
+            		<?php
+					}
+                    ?>
            </div>
 
         <!--clear above float:left elements. It is required if above #slider is styled as float:left. -->
@@ -244,7 +236,7 @@
 								{
 									
                         		?>
-                <div class="img-tube"><img src="<?php echo $quangcao['ads_link']; ?>"/></div>
+                <div class="img-tube"><a href="<?php echo $quangcao['ads_link']; ?>" target="_blank">   <?php echo $quangcao['ads_banner']; ?></a></div>
                 <?php   } ?>
             </div>
             <!------------end video------->
@@ -266,13 +258,12 @@
         </div>
         <div id="menu-footer">
         	<ul>
-            		<li><a href="#"> Tin tức</a></li><li>|</li>
-                    <li><a href="#">Văn Miếu</a></li><li>|</li>
-                    <li><a href="#">Võ Miếu</a></li><li>|</li>
-                    <li><a href="#">Văn hóa thể thao Unesco</a></li><li>|</li>
-                    <li><a href="#">Di Sản</a></li><li>|</li>
-                    <li><a href="#">Sức khỏe</a></li><li>|</li>
-                    <li><a href="#">Học bổng Unesco</a></li><li>|</li>
+            		<li><a href="<?php echo $this->baseUrl();?>"> Tin tức</a></li><li>|</li>
+					<?php foreach($this->listParent as $parent)
+					  {
+					  ?>
+                    <li><a href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $parent['category_id']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></li></a><li>|</li>
+					<?php } ?>
                     <li><a href="#">Video</a></li><li>|</li>
                     <li><a href="#">Forum</a></li></li>
             </ul>

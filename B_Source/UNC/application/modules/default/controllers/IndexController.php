@@ -23,6 +23,7 @@ class IndexController extends Zend_Controller_Action
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
+		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 
 		$listParents=$this->mTintuc->getListParent();
@@ -35,7 +36,7 @@ class IndexController extends Zend_Controller_Action
 		{
 			$listNews[$parent['category_id']]=$this->mTintuc->getTinTuc($parent['category_id']);
 		}
-			
+			//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
 		

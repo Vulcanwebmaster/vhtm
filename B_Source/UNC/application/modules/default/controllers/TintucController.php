@@ -59,6 +59,7 @@ class TintucController extends Zend_Controller_Action
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
+		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
 		$news_id = $this->_request->getParam('newsid');
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
@@ -192,6 +193,7 @@ class TintucController extends Zend_Controller_Action
 		//var_dump($listquangcao);die();
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
+		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;

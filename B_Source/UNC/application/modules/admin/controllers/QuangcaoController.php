@@ -30,7 +30,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$form=new Zend_Form;
 			$form->setMethod('post')->setAction('');
 			
-			$ads_banner = new Zend_Form_Element_Text('ads_banner');
+			$ads_banner = new Zend_Form_Element_Textarea('ads_banner');
 			$ads_banner->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Biểu ngữ không được để trống'));
 			
 			$ads_position = new Zend_Form_Element_Text('ads_position');
@@ -139,9 +139,10 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$this->view->list = $mquangcao->getListQC();
 			$this->view->query = $mquangcao->getOne($this->getRequest()->getParam('id'));
 			$this->view->title="Sửa thông tin quảng cáo";
-			
+			//var_dump($mquangcao->getOne($this->getRequest()->getParam('id')));die();
 			if($this->_request->isPost())
 			{
+				//$ret = preg_match('#<img.*/>#',$this->_request->getPost('ads_banner'),$match);
 				$data = array(
 					'ads_banner' => $this->_request->getPost('ads_banner'),
 					'ads_position' => $this->_request->getPost('ads_position'),
@@ -150,7 +151,8 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 					'ads_start_date' => $this->_request->getPost('ads_start_date'),
 					'ads_end_date' => $this->_request->getPost('ads_end_date'),
 				);
-						
+				
+			//var_dump($match);die();
 				$mquangcao->edit($this->getRequest()->getParam('id'),$data);
 				$this->_redirect($this->view->baseUrl().'/../admin/quangcao');
 			}
