@@ -30,6 +30,7 @@ class Thuvienanh extends NIW_Controller
 		$data['list_thuvienanhmenu']=$this->Mthuvienanh->getListFull('thuvienanh');
 		$data['categories']=$this->Mthuvienanh->getListByColumn('danhmuc','parent_id','0');
 		$data['list_gioithieumenu']=$this->Mthuvienanh->getListFull('gioithieu');
+		$data['counting']=$this->getCounting();
 		
 		$data['title']='5saoviet | Thư viện ảnh';
 		$data['lang']=$this->session->userdata("lang");

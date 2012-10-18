@@ -16,11 +16,19 @@
 	</div>
 	<div id="relate_list">
 		<h4><?php echo $this->lang->line('detailpr-relates');?></h4>
-		<ul>
-			<?php foreach ($relates as $rl_item)
+		<div id="items">
+			<?php foreach ($relates as $item)
 			{?>
-				<li><a href="<?php echo base_url();?>sanpham/detail/<?php echo $rl_item->id;?>"><?php if ($lang=='vn') echo $rl_item->ten_v; else  echo $rl_item->ten_e;?></a></li>
+				<div class="item">
+					<div class="itemimage">
+						<a href="<?php echo base_url();?>sanpham/detail/<?php echo $item->id;?>">
+							<?php echo $item->hinhanh;?>
+						</a><br />								
+					</div>
+		            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
+				</div>
 			<?php }?>
-		</ul>
+			<br class="clear"/>
+		</div>
 	</div>
 </div>

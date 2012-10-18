@@ -4,8 +4,8 @@
 	<div id="search">
 		<?php echo $this->lang->line('menu-timkiem');?><br />				
 			<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
-				<input class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="search" value="Tìm kiếm sản phẩm …" />
-				<input class="searchsubmit" type="submit" value="" style="cursor: pointer"/>
+				<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
+				<input class="searchsubmit" type="submit" value="" style="cursor:pointer"/>
 			</form>																																																			
 	</div>
 			<div  class="bodermove" style="margin-left:10px;">
@@ -71,10 +71,9 @@
                    		<h4 class="title3" style=" margin-top:0px;">Thống kê</h4>
                         <div id="statistics">
                         	<ul>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/online.png"/><label>Đang truy cập:</label> 9</li>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Hôm nay:</label> 19</li>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/month.png"/><label>Tháng hiện tại:</label> 119</li>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/statistics.png"/><label>Tổng lượt truy cập:</label> 1009</li>
+                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Hôm nay:</label> <?php echo $counting['today'];?></li>
+                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/month.png"/><label>Tháng hiện tại:</label> <?php echo $counting['month'];?></li>
+                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/statistics.png"/><label>Tổng lượt truy cập:</label> <?php echo $counting['total'];?></li>
                         	</ul>                        	
                         </div>
                         <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>

@@ -90,8 +90,9 @@ class NIW_Controller extends CI_Controller {
 	}
 	
 	function addVisiting()
-	{			
-		session_start();		
+	{	
+			
+		session_start();
 		if (!isset($_SESSION['isOldVisiting']))
 		{
 			$model=new CI_Model();
@@ -112,6 +113,34 @@ class NIW_Controller extends CI_Controller {
 			}
 			 $_SESSION['isOldVisiting']='true';
 		}
+	}
+	
+	function getCounting()
+	{
+		$today=date('Y-m-d',time()+7*3600);
+		$model=new CI_Model();
+		$today_counting=$model->getRowByColumn('thongke','ngaythang',$today)->soluong;
+		$data['today']=$today_counting;
+		
+		$segments=explode('-', $today);
+		$current_month= $segments[0].'-'.$segments[1];
+		$listByMonth=$model->getListByColumnLikeText('thongke','ngaythang',$current_month);
+		$month_count=0;
+		foreach ($listByMonth as $item)
+		{
+			$month_count+=$item->soluong;
+		}
+		$data['month']=$month_count;
+		
+		$listAll=$model->getListFull('thongke');
+		$total_count=0;
+		foreach ($listAll as $item)
+		{
+			$total_count+=$item->soluong;
+		}
+		$data['total']=$total_count;
+		
+		return $data;
 	}
 }
 

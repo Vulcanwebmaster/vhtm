@@ -21,7 +21,7 @@
                         <a href="#">Tel: 04.37 633 594</a><hr/>                       
                     </div>
                 </li>
-				<li class="submenu"><a id="menu-gioithieu" href="<?php echo base_url();?>gioithieu"><?php echo $this->lang->line('menu-gioithieu');?></a>
+				<li class="submenu"><a id="menu-gioithieu" href="<?php echo base_url();?>gioi-thieu"><?php echo $this->lang->line('menu-gioithieu');?></a>
                 	<div class="itemmenu">
                 		<?php foreach ($list_gioithieumenu as $menu)
                 		{?>
@@ -29,17 +29,17 @@
                 		<?php }?>
                     </div>
                 </li>
-				<li  class="submenu"><a id="menu-sanpham" href="<?php echo base_url();?>sanpham"><?php echo $this->lang->line('menu-sanpham');?></a>
+				<li  class="submenu"><a id="menu-sanpham" href="<?php echo base_url();?>san-pham"><?php echo $this->lang->line('menu-sanpham');?></a>
                 </li>
-				<li><a id="menu-baohanh" href="<?php echo base_url();?>baohanh"><?php echo $this->lang->line('menu-baohanh');?></a></li>
+				<li><a id="menu-baohanh" href="<?php echo base_url();?>bao-hanh"><?php echo $this->lang->line('menu-baohanh');?></a></li>
 				<li class="submenu"><a id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
                 	<div class="itemmenu">
-                    	 <a href="<?php echo base_url();?>thuvienanh"><?php echo $this->lang->line('menu-hinhanh');?></a><hr/>
-                    	<a href="<?php echo base_url();?>tintuc"><?php echo $this->lang->line('menu-tin');?></a><hr/>
-                        <a href="<?php echo base_url();?>tuyendung"><?php echo $this->lang->line('menu-tuyendung');?></a><hr/>
+                    	 <a href="<?php echo base_url();?>thu-vien-anh"><?php echo $this->lang->line('menu-hinhanh');?></a><hr/>
+                    	<a href="<?php echo base_url();?>tin-tuc"><?php echo $this->lang->line('menu-tin');?></a><hr/>
+                        <a href="<?php echo base_url();?>tuyen-dung"><?php echo $this->lang->line('menu-tuyendung');?></a><hr/>
                        
                     </div>
                 </li>
-                <li><a id="menu-lienhe" href="<?php echo base_url();?>lienhe"><?php echo $this->lang->line('menu-lienhe');?></a></li>
+                <li><a id="menu-lienhe" href="<?php echo base_url();?>lien-he"><?php echo $this->lang->line('menu-lienhe');?></a></li>
 			</ul>
 		</div>

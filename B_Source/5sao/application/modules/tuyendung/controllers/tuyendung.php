@@ -30,6 +30,7 @@ class tuyendung extends NIW_Controller
 		$data['list_tintuc_right']=$this->Mtuyendung->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mtuyendung->getListFull('gioithieu');
 		$data['categories']=$this->Mtuyendung->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['list_doitac']=$this->Mtuyendung->getListFull('doitac');
 		$data['title']='5saoviet | Sản phẩm';

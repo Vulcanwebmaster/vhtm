@@ -42,5 +42,12 @@ $route['default_controller'] = "homepage";
 $route['404_override'] = '';
 
 $route['admin'] = 'admin/home';
+$route['san-pham'] = 'sanpham';
+$route['gioi-thieu'] = 'gioithieu';
+$route['bao-hanh'] = 'baohanh';
+$route['thu-vien-anh'] = 'thuvienanh';
+$route['tin-tuc'] = 'tintuc';
+$route['lien-he'] = 'lienhe';
+$route['tuyen-dung'] = 'tuyendung';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

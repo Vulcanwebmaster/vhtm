@@ -30,6 +30,7 @@ class Lienhe extends NIW_Controller
 		$data['list_tintuc_right']=$this->Mlienhe->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mlienhe->getListFull('gioithieu');
 		$data['categories']=$this->Mlienhe->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['title']='5saoviet | Liên hệ';
 		$data['lang']=$this->session->userdata('lang');

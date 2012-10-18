@@ -140,8 +140,6 @@ class CI_Model {
 	function getListByColumnLikeText($tableName='', $columnName='',$value='')
 	 {
 	 	echo '<meta charset="UTF-8"/>';
-	 	/*$this->db->like($columnName,$value);
-	 	$ds=$this->db->get($tableName);*/
 	 	mysql_set_charset('utf8');
 	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%'");
 	 	$list=array();

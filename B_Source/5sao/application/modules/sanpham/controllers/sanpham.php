@@ -35,6 +35,7 @@ class Sanpham extends NIW_Controller
 		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$config['base_url']=base_url().'sanpham/page/'.$index;
 		$config['per_page']=9;
@@ -59,6 +60,7 @@ class Sanpham extends NIW_Controller
 		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['detail']=$this->Msanpham->getRowByColumn('sanpham','id',$id);
 		$data['lang']=$this->session->userdata('lang');
@@ -82,6 +84,7 @@ class Sanpham extends NIW_Controller
 		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$config['base_url']=base_url().'sanpham/category/'.$index;
 		$config['per_page']=9;

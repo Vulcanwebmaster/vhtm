@@ -41,6 +41,7 @@ class Tintuc extends NIW_Controller
 		$data['list_tintuc_right']=$this->Mtintuc->getListFull('tintuc');
 		$data['list_gioithieumenu']=$this->Mtintuc->getListFull('gioithieu');
 		$data['categories']=$this->Mtintuc->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['title']='5saoviet | Tin tức';
 		$data['lang']=$this->session->userdata("lang");
@@ -55,6 +56,7 @@ class Tintuc extends NIW_Controller
 		$data['list_tintuc_right']=$this->Mtintuc->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mtintuc->getListFull('gioithieu');
 		$data['categories']=$this->Mtintuc->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['list_spbanchay']=$this->Mtintuc->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mtintuc->getListFull('thuvienanh');

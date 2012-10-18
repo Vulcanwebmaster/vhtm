@@ -1,5 +1,13 @@
-<div id="right">
+<?php function cutString($str,$limit)
+{
+	$final_limit=0;
+	if ($str[$limit]!=' ')
+		while ($str[$limit]!=' ')
+			$limit++;
+	return substr($str,0, $limit);
+}?>
 
+<div id="right">
                 	<div class="bodermove" style="margin-left:9px;">
                     	<h4 class="title3"  style=" margin-bottom: 4px;"><?php echo $this->lang->line('right-lienhe');?></h4>
                         <div class="support">                        	
@@ -32,44 +40,25 @@
 						<div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                     </div>
                   <div class="bodermove" style="margin-left:9px">
-					<h4 class="title3" ><?php echo $this->lang->line('right-tintuc');?></h4>
+<h4 class="title3" ><?php echo $this->lang->line('right-tintuc');?></h4>
                     <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="306" style="margin-top:-8px;">
                       	<ul class="brands">
-                      		<!--
                       		<?php for ($i=0;$i<count($list_tintuc_right); $i++)
                       		{
-                      			if ($lang=="vn") $tieude=substr($list_tintuc_right[$i]->tieude_v,0,30).'...';
-                      			else $tieude=substr($list_tintuc_right[$i]->tieude_e,0,30).'...';
-                      			if ($i%2==0)
-                      				echo '<li class="color"><a href="'.base_url().'tintuc/detail/'.$list_tintuc_right[$i]->id.'">'.$tieude.'</a></li>';
-                      			else echo '<li><a href="'.base_url().'tintuc/detail/'.$list_tintuc_right[$i]->id.'">'.$tieude.'</a></li>';
+                      			if ($lang=="vn") $tieude=$list_tintuc_right[$i]->tieude_v;
+                      			else $tieude=$list_tintuc_right[$i]->tieude_e.'...';
+                      			?>
+                      				<li class="color">
+                      					<a href="<?php echo base_url().'/tintuc/detail/'.$list_tintuc_right[$i]->id?>">
+                      						<h3><?php echo $tieude;?></h3>
+                      						<i>
+                      						<?php if ($lang=="vn") echo cutString(strip_tags($list_tintuc_right[$i]->noidung_v),100).'...';
+                      							else echo cutString(strip_tags($list_tintuc_right[$i]->noidung_e),100).'...'?>
+                      							</i>
+                      					</a>
+                      				</li>
+                      			<?php 
                       		}?>
-                      		-->
-                      		<li>
-                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
-                      		</li>
-                      		<li>
-                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
-                      		</li>
-                      		<li>
-                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
-                      		</li>
-                      		<li>
-                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công .</p>
-                      		</li>
-                      		<li>
-                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
-                      		</li>
-                      		<li>
-                      			<h3><a href="#"> Sao Việt thi công công trình cầu đi bộ .</a></h3>
-                      			<p>Công ty cổ phần Thiết bị Năm Sao Việt đã tham gia thi công.</p>
-                      		</li>
-						</ul>
                     </marquee>	
                     <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                    </div>

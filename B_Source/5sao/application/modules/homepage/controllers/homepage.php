@@ -11,6 +11,7 @@ class Homepage extends NIW_controller {
 		$this->setLang();
 		$this->loadLang();
 		$this->addVisiting();
+		$this->load->library('pagination');
 	}
 	
 	function loadLang()
@@ -25,6 +26,17 @@ class Homepage extends NIW_controller {
 
 	public function index()
 	{
+		$this->page();
+	}
+	
+	public function page($index=0)
+	{
+		$config['base_url']=base_url().'homepage/page/';
+		$config['per_page']= 6;
+		$config['total_rows']=count($this->Mhomepage->getListByColumn('sanpham','moi','1'));
+		$config['uri_segment']=3;
+		$this->pagination->initialize($config);
+		
 		$data['list_spbanchay']=$this->Mhomepage->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mhomepage->getListFull('thuvienanh');
 		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
@@ -32,9 +44,10 @@ class Homepage extends NIW_controller {
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mhomepage->getListFull('gioithieu');
 		$data['categories']=$this->Mhomepage->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['lang']=$this->session->userdata('lang');
-		$data['list']=$this->Mhomepage->getListByColumn('sanpham','moi','1');
+		$data['list']=$this->Mhomepage->getListByColumnOffset('sanpham','moi','1',$index,6);
 		$data['title']='5saoviet | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';

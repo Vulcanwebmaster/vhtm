@@ -29,6 +29,7 @@ class Gioithieu extends NIW_Controller
 		$data['list_tintuc_right']=$this->Mgioithieu->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['categories']=$this->Mgioithieu->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['title']='5saoviet | Giới thiệu';
 		$data['lang']=$this->session->userdata("lang");
@@ -46,6 +47,7 @@ class Gioithieu extends NIW_Controller
 		$data['list_tintuc_right']=$this->Mgioithieu->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['categories']=$this->Mgioithieu->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['lang']=$this->session->userdata("lang");
 		$data['title']='5saoviet | Giới thiệu';

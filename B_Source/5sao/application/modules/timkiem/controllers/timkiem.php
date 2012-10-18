@@ -36,12 +36,12 @@ class Timkiem extends NIW_Controller
 			$value_search=$this->input->post('search-text');
 			$type_search=$this->input->post('search-selector');
 			
-			if ($type_search=='tt')
+			/*if ($type_search=='tt')
 			{
 				//redirect(base_url().'tintuc/search/'.$value_search,'refresh');
 				$this->search_tintuc($value_search);
 			}
-			else 
+			else*/ 
 			{
 				//redirect(base_url().'sanpham/search/'.$value_search,'refresh');
 				$this->search_sanpham($value_search);
@@ -56,6 +56,7 @@ class Timkiem extends NIW_Controller
 		$data['list_thuvienanh']=$this->Mtimkiem->getListFull('thuvienanh');
 		$data['lang']=$this->session->userdata('lang');
 		$data['list_doitac']=$this->Mtimkiem->getListFull('doitac');
+		$data['counting']=$this->getCounting();
 		
 		$config['base_url']=base_url().'sanpham/search/'.$value;
 		$config['per_page']=8;
@@ -83,6 +84,7 @@ class Timkiem extends NIW_Controller
 		$data['list_spbanchay']=$this->Mtimkiem->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mtimkiem->getListFull('thuvienanh');
 		$data['lang']=$this->session->userdata('lang');
+		$data['counting']=$this->getCounting();
 		
 		$config['base_url']=base_url().'tintuc/search/'.$value;
 		$config['per_page']=8;
