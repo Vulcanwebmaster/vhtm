@@ -3,6 +3,7 @@ class TintucController extends Zend_Controller_Action
 {
 	protected $mTintuc;
 	protected $mDefault;
+	protected $success;
 	
 	function init()
 	{
@@ -10,7 +11,10 @@ class TintucController extends Zend_Controller_Action
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
-	      
+		if(isset($_SESSION['success']))
+		{
+	    	$this->success = $_SESSION['success'];
+		}
 	    $this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 	    session_start();	
@@ -59,6 +63,7 @@ class TintucController extends Zend_Controller_Action
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		
+		$this->view->success = $this->success;
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
@@ -92,6 +97,8 @@ class TintucController extends Zend_Controller_Action
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
 		
+		if(isset($this->success)) $_SESSION['success'] = $this->success;
+		
 		$form = $this->setForm();
 		$this->view->form = $form;
 		if($this->_request->isPost())
@@ -112,6 +119,8 @@ class TintucController extends Zend_Controller_Action
 					{
 						//echo ' abc';die();
 						$_SESSION['success'] = $user_name;
+						$this->success = $user_name;
+						
 						$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
 					}		
 					else 
@@ -125,14 +134,9 @@ class TintucController extends Zend_Controller_Action
 				}
 			}
 		}
+		
 	}
 		
-	function logoutAction()
-	{
-		session_destroy();
-		//$this->_redirect($this->view->baseUrl().'/../tintuc/list/categoryId/1');
-	}
-	
 	function listAction()
 	{
 		$categoryId = $this->_request->getParam('categoryId');
