@@ -95,9 +95,6 @@ line-height:24px;
 }
 .top_menu a{font-size:13px; font-weight:bold;color:#FFF; line-height:30px}
 
-.top_menu a:hover{color:#D9B24A !important;}
-
-
 #search{
 font-family:Arial, Helvetica, sans-serif;
 font-size:12px;
@@ -213,7 +210,7 @@ background-position:0px 8px;
 background-repeat:no-repeat;
 text-decoration:underline
 }
-#list .inside a:visited{text-decoration:underline}
+#list .inside a{text-decoration:none}
 #list .inside a:hover{text-decoration:none}
 .title2{
 background-image:url(../images/h4.jpg);
@@ -499,13 +496,15 @@ font-size:11px
 .pr-img h4{ color:#000000 !important; font-size:11px !important; text-transform:none !important;}
 .bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;clear:both}
 #newpr{width:100%; height:30px; background-image:url(../images/prnew.jpg); background-repeat:repeat-x; margin-left:-4px; text-transform:uppercase; font-weight:bold; padding:10px 0 0 8px; color:white; margin-top:10px}
-.itemmenu{position: absolute; padding-left:5px; text-transform:none;
-z-index: 999;
-background-color:#7a7875;
+.itemmenu{position: absolute;padding-top:10px;z-index: 999}
+.itemmenu div{ padding-left:5px; text-transform:none;
+background-color:#3e3e3e;
 padding:0 10px;
 min-width: 150px;/*150px;*/
-text-align: left;}
-.itemmenu a{ cursor:pointer;}
+text-align: left;
+border-radius:5px}
+.itemmenu div hr{border-color:#656565; box-shadow:0px 1px 1px 0px #4a4a4a; border-width:1px; border-style: none none solid none}
+.itemmenu a{ cursor:pointer; font-weight:normal; font-size:12px}
 .support{ margin:5px 10px 5px 10px; padding:0 0 5px 10px; border-bottom:1px solid #ccc; background-color:#FFF;}
 #map{margin:-10px 0 10px 6px; padding-bottom:10px;}
 #mainmap{ height:auto; border-bottom-left-radius:5px; border-bottom-right-radius:5px; margin-left:9px; border:1px solid #E83D43; border-bottom:0;}
@@ -561,7 +560,7 @@ border-left:1px solid #ccc;
 width:33px;
 }
 
-
+.currentmenu,.hovermenu{background-color:#3e3e3e; color:#D9B24A}
 /*--------------------Trung--------------------------*/
 .aboutth-item h5 a{color:black; text-decoration: none;}
 .aboutth-item h5 a:hover{text-decoration: underline;}
