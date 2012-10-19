@@ -54,7 +54,8 @@
 						'hinhanh'=>$this->input->post('hinhanh'),
 						'danhmuc_id'=>$this->input->post('danhmuc_id'),
 						'moi'=>$this->input->post('moi'),
-						'banchay'=>$this->input->post('banchay'));
+						'banchay'=>$this->input->post('banchay'),
+						'alias'=>$this->getAliasByName($this->input->post('ten_v')));
 			return $input;
 		}
 		
@@ -87,13 +88,25 @@
 				
 				if ($this->form_validation->run())
 				{
-					$input=$this->_input();
-					if ($this->Msanpham->insertNewRow('sanpham',$input))
+					$ten_v=$this->input->post('ten_v');
+					if ($this->Msanpham->getRowByColumn('sanpham','ten_v',$ten_v))
 					{
-						$this->session->set_userdata('result','Thêm mới thành công');
+						echo '<meta charset="UTF-8"/>';
+						echo '<script language=javascript>
+							alert("Đã có sản phẩm tồn tại với tên: '.$ten_v.'");
+						</script>';
+						redirect(base_url().'sanpham/admin/insert','refresh');
 					}
-					else $this->session->set_userdata('result','Thêm mới không thành công');
-					$this->index();
+					else 
+					{
+						$input=$this->_input();
+						if ($this->Msanpham->insertNewRow('sanpham',$input))
+						{
+							$this->session->set_userdata('result','Thêm mới thành công');
+						}
+						else $this->session->set_userdata('result','Thêm mới không thành công');
+						$this->index();
+					}
 				}
 				else 
 				{
@@ -138,13 +151,25 @@
 				
 				if ($this->form_validation->run())
 				{
-					$input=$this->_input();
-					if ($this->Msanpham->updateRowByColumn('sanpham','id',$id,$input))
+					$current_name=$this->Msanpham->getRowByColumn('sanpham','id',$id)->ten_v;
+					$ten_v=$this->input->post('ten_v');
+					if ($this->Msanpham->getRowByColumn('sanpham','ten_v',$ten_v) && $ten_v!=$current_name)
 					{
-						$this->session->set_userdata('result','Cập nhật thành công');
+						echo '<meta charset="UTF-8"/>';
+						echo '<script language=javascript>
+							alert("Đã có sản phẩm tồn tại với tên: '.$ten_v.'");
+						</script>';
+						redirect(base_url().'sanpham/admin/edit/'.$id,'refresh');
 					}
-					else $this->session->set_userdata('result','Cập nhật không thành công');
-					$this->index();
+					else {
+						$input=$this->_input();
+						if ($this->Msanpham->updateRowByColumn('sanpham','id',$id,$input))
+						{
+							$this->session->set_userdata('result','Cập nhật thành công');
+						}
+						else $this->session->set_userdata('result','Cập nhật không thành công');
+						$this->index();
+					}
 				}
 				else 
 				{

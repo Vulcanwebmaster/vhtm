@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$('#menu-tintuc').css('color','#D9B24A');
+	$('#menu-tintuc').parent().addClass('currentmenu');
 </script>
 
 <div id="center">

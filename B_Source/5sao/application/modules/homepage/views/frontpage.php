@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$('#menu-trangchu').css('color','#D9B24A');
+	$('#menu-trangchu').parent().addClass('currentmenu');
 </script>
 
 <div id="center">

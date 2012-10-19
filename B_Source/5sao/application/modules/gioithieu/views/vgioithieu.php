@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$('#menu-gioithieu').css('color','#D9B24A');
+	$('#menu-gioithieu').parent().addClass('currentmenu');
 </script>
 <div id="center">
 	<ul id="aboutus-menu">

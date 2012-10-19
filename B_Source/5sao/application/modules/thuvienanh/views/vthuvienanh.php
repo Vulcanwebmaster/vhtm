@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$('#menu-sanpham').css('color','#D9B24A');
+	$('#menu-sanpham').parent().addClass('currentmenu');
 </script>
 
 <div id="center">

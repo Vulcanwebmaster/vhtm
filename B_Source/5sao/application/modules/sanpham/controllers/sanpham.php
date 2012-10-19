@@ -12,6 +12,7 @@ class Sanpham extends NIW_Controller
 		$this->loadLang();
 		$this->addVisiting();
 	}
+	
 	function _remap()
 	{
 		$arrayCategory = $this->Msanpham->DanhMuc();

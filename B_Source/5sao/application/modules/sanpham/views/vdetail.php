@@ -1,3 +1,7 @@
+<script type="text/javascript">
+	$('#menu-sanpham').parent().addClass('currentmenu');
+</script>
+
 <div id="center">
 	<p style="border-bottom: 1px solid #7a7875; font-size: 26px; font-weight: bold; margin-top:20px">Chi tiết sản phẩm</p>
 	<div>

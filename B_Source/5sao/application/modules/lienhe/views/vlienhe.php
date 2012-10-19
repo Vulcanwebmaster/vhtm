@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	$('#menu-lienhe').css('color','#D9B24A');
+	$('#menu-lienhe').parent().addClass('currentmenu');
 </script>
 
 <style>
