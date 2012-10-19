@@ -12,6 +12,7 @@
 		$( ".datepicker" ).datepicker();
 		setUpFCK('news_content',400,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 		setUpFCK('news_summary',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
+		setUpFCK('news_avatar',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 	});
 </script>
 
@@ -28,6 +29,10 @@
 				<fieldset>
 					<label>Tiêu đề</label>
 					<?php echo $this->form->getElement('news_title');?>
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện</label>
+					<?php echo $this->form->getElement('news_avatar');?>
 				</fieldset>
 				<fieldset>
 					<label>Tóm tắt</label>

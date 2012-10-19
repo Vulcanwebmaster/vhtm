@@ -30,6 +30,7 @@
 		
 		function getTinTuc($category_parent_id){
 			$query = $this->db->query('SELECT unc_news.news_id,unc_news.news_summary, 
+										unc_news.news_avatar, 
 										unc_news.news_title,
 										unc_news.news_post_date,
 										unc_category.category_parent_id

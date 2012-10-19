@@ -55,6 +55,7 @@
 								foreach ($this->list as $item)
 								{?>
 									{ news_title: '<?php echo $item['news_title'];?>', 
+										news_avatar: '<?php echo $item['news_avatar'];?>',
 										news_summary: '<?php echo $item['news_summary'];?>',   
 										news_author: "<?php echo $item['news_author'];?>",
 										news_modified_date: "<?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?>",
@@ -76,6 +77,13 @@
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true // Must be set or the html will be escaped
+							},
+							{
+								key: 'news_avatar',
+								label: 'Ảnh đại diện',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true 
 							},
 							{
 								key: 'news_summary',

@@ -4,7 +4,7 @@
 #sliderFrame 
 {
     width:645px;
-    margin:0 auto; /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
+    margin:5px auto; /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
     padding:20px;
     box-shadow: 0 0 5px #BBB;border:1px solid #CCC; background-color:#FFF;
 }

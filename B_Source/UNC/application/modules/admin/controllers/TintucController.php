@@ -206,6 +206,12 @@
 			$news_login->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));;
 			$news_login->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
+			$el=$form->createElement('textarea','news_avatar', array('style'=>'height:100px'));
+			$el->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Avatar không được để trống'));
+			$el->setAttrib('id', 'news_avatar');
+			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$form->addElement($el);
+			
 			$el=$form->createElement('textarea','news_summary', array('style'=>'height:100px'));
 			$el->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mục tóm tắt không được để trống'));
 			$el->setAttrib('id', 'news_summary');
@@ -282,6 +288,7 @@
 		function _getInput($form)
 		{
 			$input=array('news_title'		=>	$form->getValue('news_title'),
+						'news_avatar'		=>	$form->getValue('news_avatar'),
 						'news_summary'		=>	$form->getValue('news_summary'),
 						'news_content'		=>	$form->getValue('news_content'),
 						'news_author'		=>	$form->getValue('news_author'),
@@ -312,7 +319,8 @@
 				else
 				{
 					$input=$this->_getInput($form);
-					//echo $input['news_status'];die();
+					
+					//echo $input['news_avatar'];die();
 					if ($this->mtintuc->addNews($input))
 					{
 						$_SESSION['result']='Thêm mới thành công';
@@ -342,6 +350,7 @@
 			//var_dump($info);die();
 			$form->setAction($this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$newsId);
 			$form->getElement('news_title')->setValue($info['news_title']);
+			$form->getElement('news_avatar')->setValue($info['news_avatar']);
 			$form->getElement('news_summary')->setValue($info['news_summary']);
 			$form->getElement('news_content')->setValue($info['news_content']);
 			$form->getElement('news_author')->setValue($info['news_author']);

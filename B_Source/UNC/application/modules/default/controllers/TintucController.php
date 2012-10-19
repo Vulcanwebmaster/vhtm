@@ -92,13 +92,14 @@ class TintucController extends Zend_Controller_Action
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();
-		$this->view->listChild = $listChild;	
+
+		$this->view->listChild = $listChild;
 		
+
+
 		$listquangcao = $this->mDefault->getListAds();
-		$this->view->listquangcao=$listquangcao;
-		
-		if(isset($this->success)) $_SESSION['success'] = $this->success;
-		
+		$this->view->listquangcao=$listquangcao;	
+
 		$form = $this->setForm();
 		$this->view->form = $form;
 		if($this->_request->isPost())

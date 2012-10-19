@@ -28,14 +28,14 @@
     <div id="content">
     	<!----------------begin-menu------------>
         <div id="top-menus">
-        	<div><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_23.png" width="1000px" height="20px"/></div>
+        	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_23.png" width="1000px" height="20px"/>
             <div id="top-menu">
             	<ul id="nav">
-                	<li class="color-menu" id="home"><a href="<?php echo $this->baseUrl();?>"><div style="margin:7px 5px 0 30px; float:left"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png"/></div> Tin tức</a></li><li></li>
+                	<li class="top"><a class="top_link" href="<?php echo $this->baseUrl();?>"><div style="margin:7px 5px 0 30px; float:left"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png"/></div> Trang chủ</a></li>
                 	  <?php foreach($this->listParent as $parent)
 					  {
 					  ?>
-                    <li class="top"><a href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $parent['category_id']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>
+                    <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $parent['category_id']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>
                     	<ul class="sub">     
                         		<?php
                         		foreach($this->listChild as $child)
@@ -49,10 +49,10 @@
 								}
                             	?>                   	
                         </ul>
-                    </li><li>|</li>
+                    </li>
                     <?php }?>
-                    <li><a href="#">Video</a></li><li>|</li>
-                    <li><a href="#">Forum</a></li>
+                    <li class="top"><a class="top_link" href="#">Video</a></li>
+                    <li class="top"><a class="top_link" href="#">Forum</a></li>
                     
                 </ul>
             </div>
@@ -63,11 +63,20 @@
         <!----------------begin-slide------------>
     <div id="left-slide">
     <div id="sliderFrame">
+
         <div id="slider">
-            <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-2.jpg" alt="Hello!!!" />
+        	    	<?php 
+                    foreach($this->listHotNewsJs as $news)
+					{
+				      echo $news['news_avatar'];          	
+					}
+                    ?>
+            <!--<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-2.jpg" alt="Hello!!!" />
             <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-3.jpg" />
             <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-4.jpg" />
+            <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-3.jpg" />-->
         </div>
+
         <!--thumbnails-->               	
         <div id="thumbs">
         	        <?php 
@@ -258,7 +267,7 @@
         </div>
         <div id="menu-footer">
         	<ul>
-            		<li><a href="<?php echo $this->baseUrl();?>"> Tin tức</a></li><li>|</li>
+            		<li><a href="<?php echo $this->baseUrl();?>"> Trang chủ</a></li><li>|</li>
 					<?php foreach($this->listParent as $parent)
 					  {
 					  ?>

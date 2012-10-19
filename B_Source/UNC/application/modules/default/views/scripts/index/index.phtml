@@ -25,18 +25,21 @@
                         		foreach($this->listNews[$parent['category_id']] as $childTintuc)
 
                         	    {
+                        	    	//var_dump($childTintuc);die();
                          ?>
 			                    	<!--<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_63.png"/>-->
-
-			                    	<?php $str = $childTintuc['news_summary']; 
+										
+			                    	<?php $str = $childTintuc['news_avatar']; 
 			                    		  $preg = preg_match_all('#<img.*/>#',$str,$match);
 										  if($preg > 0)
 										  {
 				                    	 	//$str = str_replace($match[0][0],"",$str);
 											echo $match[0][0];
 										  }
-										  else{ ?>
+										  else{ 
+										  	?>
 			                    		<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.png"/>
+			                    		
 
                           			<?php
 									}

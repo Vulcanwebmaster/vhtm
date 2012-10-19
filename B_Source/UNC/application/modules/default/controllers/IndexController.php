@@ -24,6 +24,7 @@ class IndexController extends Zend_Controller_Action
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
+		//var_dump($this->mDefault->getListHotNewsJs());die();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 
 		$listParents=$this->mTintuc->getListParent();
