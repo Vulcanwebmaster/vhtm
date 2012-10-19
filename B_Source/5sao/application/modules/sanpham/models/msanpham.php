@@ -13,5 +13,10 @@ class Msanpham extends CI_Model
 		$list=$this->db->get('sanpham');
 		return $list->num_rows();
 	}
+	function DanhMuc()
+	{
+		$arrayList= $this->db->query('select * from  n_danhmuc');
+		return $arrayList->result_array();
+	}
 }
 ?>

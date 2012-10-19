@@ -15,14 +15,14 @@
 						{
 							if ($lang=="vn") 
 							{?>
-								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/category/'.$category->id.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
+								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
 									<div class="slidemove">
 										<ul class="inside">
 											<?php 
 												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);
 												foreach ($listlevel2 as $level2)
 												{?>
-													<li><a class="menuleft-lv2" href="<?php echo base_url()?>sanpham/category/<?php echo $level2->id?>"><?php echo $level2->ten_v;?></a></li>
+													<li><a class="menuleft-lv2" href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_v;?></a></li>
 												<?php }
 											?>
 										</ul>
@@ -30,15 +30,15 @@
 								</li>
 							<?php }
 							else {?>
-								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/category/'.$category->id.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_e;?></a>
+								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_e;?></a>
 									<div class="slidemove">
 										<ul class="inside">
 											
 											<?php $newmodel=new CI_Model();
-												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);
+												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->alias);
 												foreach ($listlevel2 as $level2)
 												{?>
-													<li><a class="menuleft-lv2"  href="<?php echo base_url()?>sanpham/category/<?php echo $level2->id?>"><?php echo $level2->ten_e;?></a></li>
+													<li><a class="menuleft-lv2"  href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_e;?></a></li>
 												<?php }
 											?>
 										</ul>
