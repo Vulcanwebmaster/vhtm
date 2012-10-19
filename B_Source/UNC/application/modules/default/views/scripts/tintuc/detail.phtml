@@ -1,3 +1,10 @@
+<script>
+function logout()
+  {
+  	<?php session_destroy();?>
+  	location.reload(true);
+  }
+</script>
 <div id="detail">
 	<h2><?php echo $this->news['news_title']; ?></h2>
 	<p><?php echo $this->news['news_content']; ?></p>
@@ -5,11 +12,12 @@
 	<?php
 	if(isset($_SESSION['success']))
 	{
-		$_SESSION['news_id'] = $this->news['news_id'];
+		//$_SESSION['news_id'] = $this->news['news_id'];
 		?>
 			<h3>Bạn đang đăng nhập bằng tài khoản <span style="color:red"><?php echo $_SESSION['success']; ?></span>&nbsp;&nbsp;&nbsp;
 			<a href="<?php echo $this->baseUrl(); ?>/tintuc/logout"><i>Thoát</i></a></h3>
-			<form method="post" action="<?php echo $this->baseUrl(); ?>/tintuc/addComment/readerId/<?php echo $_SESSION['reader_id']; ?>">
+			<input type="button" value="Thoát" onclick="logout()" />
+			<form method="post" action="<?php echo $this->baseUrl(); ?>/tintuc/addComment/readerId/<?php echo $_SESSION['reader_id']; ?>/newsId/<?php echo $this->news['news_id']; ?>">
 				<div id="addComment">
 					<textarea name="comment_content" style="width:100%" rows="3"></textarea>
 					<input type="submit" name="submit" value="Gửi bình luận"/>

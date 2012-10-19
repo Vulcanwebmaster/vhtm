@@ -47,10 +47,12 @@ class TintucController extends Zend_Controller_Action
 	
 	function addcommentAction()
 	{
+		$news_id = $this->_request->getParam('newsId');
 		$reader_id = $this->_request->getParam('readerId');
 		$comment_content = $this->_request->getPost('comment_content');
 		$this->mTintuc->insertComment($reader_id,$news_id,$comment_content);
-		$this->_redirect($this->view->baseUrl().'/../tintuc/detail/'.$news_id);
+		
+		$this->_redirect($this->view->baseUrl().'/../tintuc/detail/newsid/'.$news_id);
 	}	
 	
 	function detailAction()
@@ -62,6 +64,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
 		$news_id = $this->_request->getParam('newsid');
+		//echo $news_id;die();
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		
 		$this->view->news = $news;
@@ -84,65 +87,50 @@ class TintucController extends Zend_Controller_Action
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();
-		$this->view->listChild = $listChild;
-<<<<<<< .mine
-		
-		if(!isset($_SESSION['success']))
-=======
-		
+		$this->view->listChild = $listChild;	
 		
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
-		/*
-		$str = $news['news_summary'];
-		//echo $str;die();
-		//$str = "<info>abc123</info>";
-		$ret = preg_match('#<br>.*</a>#',$str,$match);
-		if($ret>0)
->>>>>>> .r845
+		
+		$form = $this->setForm();
+		$this->view->form = $form;
+		if($this->_request->isPost())
 		{
-			$form = $this->setForm();
-			$this->view->form = $form;
-			if($this->_request->isPost())
+			if($form->isValid($_POST))
 			{
-				if($form->isValid($_POST))
-				{
-					$user_name = $form->getValue('user_name');
-					$pass_word = $form->getValue('pass_word');
+				$user_name = $form->getValue('user_name');
+				$pass_word = $form->getValue('pass_word');
 					
-					if($this->mTintuc->isUserName($user_name))
-					{
-						$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
-						$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
+				if($this->mTintuc->isUserName($user_name))
+				{
+					$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
+					$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
 						
-						$pass_word = md5(md5($pass_word).$pass_word_salt);
-						//echo $pass_word;die();
-						if($pass_word == $pass_word_forum)	
-						{
-							//echo ' abc';die();
-							$_SESSION['success'] = $user_name;
-							$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
-						}		
-						else 
-						{
-							$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
-						}
-					}
+					$pass_word = md5(md5($pass_word).$pass_word_salt);
+					//echo $pass_word;die();
+					if($pass_word == $pass_word_forum)	
+					{
+						//echo ' abc';die();
+						$_SESSION['success'] = $user_name;
+						$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
+					}		
 					else 
 					{
-						$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
+						$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
 					}
+				}
+				else 
+				{
+					$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
 				}
 			}
 		}
-		
-		
 	}
-	
+		
 	function logoutAction()
 	{
 		session_destroy();
-		$this->_redirect($this->view->baseUrl().'/../tintuc/list/categoryId/1');
+		//$this->_redirect($this->view->baseUrl().'/../tintuc/list/categoryId/1');
 	}
 	
 	function listAction()
