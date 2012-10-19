@@ -18,5 +18,10 @@ class Msanpham extends CI_Model
 		$arrayList= $this->db->query('select * from  n_danhmuc');
 		return $arrayList->result_array();
 	}
+	function DanhSachSanPham()
+	{
+		$arrayList= $this->db->query('select * from  n_sanpham');
+		return $arrayList->result_array();
+	}
 }
 ?>

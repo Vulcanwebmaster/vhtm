@@ -15,12 +15,26 @@ class Sanpham extends NIW_Controller
 	function _remap()
 	{
 		$arrayCategory = $this->Msanpham->DanhMuc();
+		$arraySanPham = $this->Msanpham->DanhSachSanPham();
+		if($this->uri->segment(1)=="san-pham" and $this->uri->segment(2)=="")
+		{
+			$this->index($index=0);
+			return;
+		}
 		foreach($arrayCategory as $entry)
 		{
 			if($this->uri->segment(2) == $entry['alias'])
 			{
-			$this->category($entry['id'],$index=0);
+				$this->category($entry['id'],$index=0);
 			return;
+			}
+		}
+		foreach ($arraySanPham as $entry)
+		{	
+			if($this->uri->segment(2)==$entry['alias'])
+			{
+				$this->detail($entry['id']);
+				return;
 			}
 		}
 	}

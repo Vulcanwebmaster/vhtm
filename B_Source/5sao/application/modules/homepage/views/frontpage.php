@@ -17,7 +17,7 @@
 						{?>
 							<div class="item">
 								<div class="itemimage">
-									<a href="<?php echo base_url();?>sanpham/detail/<?php echo $item->id;?>">
+									<a href="<?php echo base_url();?>sanpham/<?php echo $item->alias;?>">
 										<?php echo $item->hinhanh;?>
 									</a>							
 								</div>
