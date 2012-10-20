@@ -1,9 +1,12 @@
-<div style="margin-top:10px">
+<style type="text/css">
+	.video{margin-top:10px}
+</style>
+<div class="video">
 	<?php 
 		foreach($this->list as $video)
 		{
 	?>
-		<div style="margin-top:10px">
+		<div class="video">
 			<a style="color:blue;" href="#" title="<?php echo $video['video_title']; ?>">
 				<img class="img130" src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg"/>
 			</a>
@@ -12,15 +15,15 @@
 	  			<div style="margin-left:145px">
 					<?php echo $video['video_description']; ?>
 	  			</div>
-	  			<br style="clear:both">
-	  			<a style="float:right" href="#">Xem chi tiết</a>
 	 		</div>
+	 		<br/><br/><br/>
+	 		<br style="clear:both">
 	 	</div>
 	 	
  	<?php
 		}
  	?>
 </div>
-<div style="margin-top:40px;float:right">
+<div style="margin:10px 0 10px 42%;">
 <?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 </div>
