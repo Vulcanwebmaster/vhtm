@@ -6,6 +6,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function init()
 	{
+		session_start();
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
@@ -13,7 +14,6 @@ class TintucController extends Zend_Controller_Action
 		
 	    $this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
-	    session_start();	
 	}
 	
 	function setForm1($newsId,$readerId)
@@ -35,7 +35,7 @@ class TintucController extends Zend_Controller_Action
 	{
 		$form=new Zend_Form;
 		//$this->view->baseUrl().'/tintuc/detail/newsid/'.$newsId
-		$form->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/detail/newsid/'.$news_id);
+		$form->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/login/newsid/'.$news_id);
 			
 		$user_name = new Zend_Form_Element_Text('user_name');
 		$user_name->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
@@ -99,7 +99,7 @@ class TintucController extends Zend_Controller_Action
 					//echo $pass_word;die();
 				if($pass_word == $pass_word_forum)	
 				{
-					$_SESSION['success'] = $user_name;
+					$_SESSION['logged'] = $user_name;
 					$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
 					}		
 				else 
@@ -122,6 +122,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
+		//unset($_SESSION['logged']);
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
@@ -154,50 +155,11 @@ class TintucController extends Zend_Controller_Action
 
 		$this->view->listChild = $listChild;
 		
-
-
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
 		
 		$form = $this->setForm($news_id);
 		$this->view->form = $form;
-		
-		$this->view->listquangcao=$listquangcao;	
-
-
-		if($this->_request->isPost())
-		{
-			if($form->isValid($_POST))
-			{
-				$user_name = $form->getValue('user_name');
-				$pass_word = $form->getValue('pass_word');
-						
-				if($this->mTintuc->isUserName($user_name))
-				{
-					$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
-					$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
-							
-					$pass_word = md5(md5($pass_word).$pass_word_salt);
-						//echo $pass_word;die();
-					if($pass_word == $pass_word_forum)	
-					{
-						$_SESSION['success'] = $user_name;
-						$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
-						$form1 = $this->setForm1($news_id,$this->mTintuc->getUserIdByUserNameForum($user_name));
-						$this->view->form1 = $form1;
-						}		
-					else 
-					{
-						$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
-					}
-				}
-				else 
-				{
-					$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
-				}
-			}
-		}
-		
 	}
 		
 	function listAction()
