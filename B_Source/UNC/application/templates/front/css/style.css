@@ -29,21 +29,21 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 /*--------------end- menu------------------*/
 /*----------------begin slide-------------*/
 #slides{ width:100%; height:auto; background-image:url(../images/NEN_103.png); background-repeat:repeat-x;}
-#slide{ height:250px; background-color:#333333; margin:0 15px 0 15px; padding:10px;}
+#slide{ height:292px; background-color:#333333; margin:0; padding:10px;}
 #item{ padding:10px; }
-#left-slide{ width:690px;background-color:#FFF; height:300px; position:relative; float:left;}
+#left-slide{ width:700px;background-color:#FFF; height:293px; position:relative; float:left;}
 #items{ position:absolute; right:0; bottom:0; background:#000; height:25px; width:100%}
 #items ul,.risl-3 ul{margin-top:7px; }
 #items li{ list-style:none; float:right; padding:0 10px 0 0;}
 .risl-3 ul{ margin-left:-35px}
 .risl-3 li{ list-style:none; float:left; padding:0 10px 0 0;}
 #center-slide{ width:110px; height:70px; background-color:#FFF; border:1px solid red; margin:80px 15px 0 15px; float:left;}
-#right-slide{ width:301px; height:245px; float:left; padding-left:9px; padding-top: 27px;}
+#right-slide{ width:273px; height:245px; float:left; padding-left:5px; padding-top: 5px;}
 #rsl-1{ margin-bottom:35px;}
 
-#rs1{ background-color:red; border-bottom-left-radius:5px; border-top-left-radius:5px; width:150px; height:25px; float:left; line-height:10px}
+#rs1{ background-color:red; border-bottom-left-radius:5px; border-top-left-radius:5px; width:135px; height:25px; float:left; line-height:10px}
 #rs1 p{margin-top:5px; text-transform:uppercase; color:#FFF;}
-#rs2{ background-color:#d9d9d9; width:150px; height:25px; float:left;}
+#rs2{ background-color:#d9d9d9; width:137px; height:25px; float:left;}
 #rs2 p{ margin:5px 0 0 5px; text-transform:uppercase;}
 #img {margin:5px 5px 0 5px; float:left;}
 
@@ -62,7 +62,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 }
 /*----------tiennd------------*/
 
-.risl-2{ background-color:#999999;border-bottom-left-radius:5px; border-top-left-radius:5px; width:300px; height:25px; clear:both; margin-bottom:7px; }
+.risl-2{ background-color:#999999;border-bottom-left-radius:5px; border-top-left-radius:5px; width:272px; height:25px; clear:both; margin-bottom:7px; }
 #note-slide{ height:300px;}
 
 #text-slide{ float:left; width:50%; height:auto; padding:10px;}
@@ -137,15 +137,19 @@ h3 a{text-decoration:none;}
 
 
 /*-------------Trungnt Menu-------------*/
-#nav {height:31px; background-color:#999999; position:relative; z-index:5;margin:0px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;}
-#nav li.top {float:left; display:inline; zoom:1; height:31px;line-height:31px;border-right:2px solid #d7d4d4;}
+#nav {height:31px; background-color:#333333; position:relative; z-index:5;margin:0px;}
+#nav li.top {float:left; display:inline; zoom:1; height:31px;line-height:31px;border-right:1px solid #d7d4d4;}
 #nav li.top a.top_link,#nav li.top a.current {display:block; display:inline-block; color:#fff; font-weight:bold; font-size:12px; padding:0 8px; cursor:pointer; text-decoration: none }
 #nav li.top:hover a.top_link {color:red ; text-decoration:none}
 #nav li.top a.no-pointer{ cursor:default}
+#nav li.top-fist {background-color:#999999; float:left; display:inline; zoom:1; height:31px;line-height:31px;border-right:1px solid #d7d4d4;}
+#nav li.top-fist a.top_link,#nav li.top-fist a.current {display:block; display:inline-block; color:#fff; font-weight:bold; font-size:12px; padding:0 8px; cursor:pointer; text-decoration: none }
+#nav li.top-fist:hover a.top_link {color:red ; text-decoration:none}
+#nav li.top-fist a.no-pointer{ cursor:default}
 
 #nav li:hover {position:relative; z-index:2}
 #nav li:hover ul.sub
-{left:0; top:31px; background:#999999; white-space:nowrap; width:150px; height:auto; z-index:3; border:1px solid #999999; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
+{left:0; top:31px; background:#333333; white-space:nowrap; width:150px; height:auto; z-index:3; border:1px solid #999999; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
 
 #nav li:hover ul.sub li
 {display:block; height:30px; position:relative; float:left; width:150px; font-weight:normal;}

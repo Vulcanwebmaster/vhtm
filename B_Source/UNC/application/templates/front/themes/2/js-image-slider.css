@@ -3,7 +3,7 @@
 /*slider frame*/
 #sliderFrame 
 {
-    width:645px;
+    width:649px;
     margin:5px auto; /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
     padding:20px;
     box-shadow: 0 0 5px #BBB;border:1px solid #CCC; background-color:#FFF;
@@ -80,8 +80,9 @@ div.navBulletsWrapper  {
 {
     border:1px solid #CCC;
     border-top:1px solid #FFF;
-    padding:11px 8px;
+    padding:5px 2px;
     background:#EEE;
+    height: 48px;
 }
 #thumbs .thumb-on 
 {
@@ -94,7 +95,7 @@ div.navBulletsWrapper  {
 #thumbs .thumb-content {float:left;width:110px;padding-left:18px;}
 
 /* Captions in #thumbs .thumb-content */
-#thumbs .thumb-content p {color:#BF5D9B; margin:0 0 3px;padding:0;}
+#thumbs .thumb-content p {color:#BF5D9B; margin:5px -40px 0px -13px;padding:0;}
 #thumbs .thumb-on .thumb-content p {color:#BB0000;}
 
 

@@ -31,7 +31,7 @@
         	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_23.png" width="1000px" height="20px"/>
             <div id="top-menu">
             	<ul id="nav">
-                	<li class="top"><a class="top_link" href="<?php echo $this->baseUrl();?>"><div style="margin:7px 5px 0 30px; float:left"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png"/></div> Trang chủ</a></li>
+                	<li id="home"  class="top-fist" ><a class="top_link" href="<?php echo $this->baseUrl();?>"><div style="margin:7px 5px 0 6px; float:left"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png"/></div> Trang chủ</a></li>
                 	  <?php foreach($this->listParent as $parent)
 					  {
 					  ?>
@@ -61,8 +61,11 @@
         
         <!----------------begin-maincontent------------>
         <!----------------begin-slide------------>
-    <div id="left-slide">
-    <div id="sliderFrame">
+    <div id="slides">
+    <div id="item">Danh nhân văn hóa - Thiên cổ hùng văn - Giới thiệu các tác phẩm đương đại nổi tiếng - Văn đàn</div>
+    <div id="slide">
+	    <div id="left-slide">
+	    <div id="sliderFrame">
 
         <div id="slider">
         	    	<?php 
@@ -172,6 +175,7 @@
         <!--clear above float:left elements. It is required if above #slider is styled as float:left. -->
         <div style="clear:both;height:0;"></div>
     </div>
+    </div>
             <div id="note-slide">
             	<div id="text-slide">
                 	<p class="tieude">Những sai lầm dễ mắc phải khi tập luyện</p>
@@ -200,6 +204,7 @@
                 </div>
             </div>
         </div>
+       </div>
         <!---------------end slide------------>
         <!---------------begin ads----------->
         <div id="ads">
