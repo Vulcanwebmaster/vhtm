@@ -5,20 +5,28 @@ function logout()
   	location.reload(true);
   }
 </script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=116608581828346";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div id="detail">
-	<h2><?php echo $this->news['news_title']; ?></h2>
+	<h2 style="color:blue"><?php echo $this->news['news_title']; ?></h2>
 	<p><?php echo $this->news['news_content']; ?></p>
+	<div id="fb-root"></div>
+	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="tahoma"></div>
 	<hr/>
 	<?php
 	if(isset($_SESSION['success']))
 	{
-		//$_SESSION['news_id'] = $this->news['news_id'];
 		?>
 			<h3>Bạn đang đăng nhập bằng tài khoản <span style="color:red"><?php echo $_SESSION['success']; ?></span>&nbsp;&nbsp;&nbsp;
 			<input type="button" value="Thoát" onclick="logout()" />
-			<form method="post" action="<?php echo $this->baseUrl(); ?>/tintuc/addComment/readerId/<?php echo $_SESSION['reader_id']; ?>/newsId/<?php echo $this->news['news_id']; ?>">
+			<form method="post" action="<?php echo $this->form1->getAction(); ?>">
 				<div id="addComment">
-					<textarea name="comment_content" style="width:100%" rows="3"></textarea>
+					<?php echo $this->form1->getElement('comment_content');?>					
 					<input type="submit" name="submit" value="Gửi bình luận"/>
 				</div>
 			</form>

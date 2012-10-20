@@ -1,0 +1,26 @@
+<div style="margin-top:10px">
+	<?php 
+		foreach($this->list as $video)
+		{
+	?>
+		<div style="margin-top:10px">
+			<a style="color:blue;" href="#" title="<?php echo $video['video_title']; ?>">
+				<img class="img130" src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg"/>
+			</a>
+	 		<div>
+	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><?php echo $video['video_title']; ?></h3>
+	  			<div style="margin-left:145px">
+					<?php echo $video['video_description']; ?>
+	  			</div>
+	  			<br style="clear:both">
+	  			<a style="float:right" href="#">Xem chi tiết</a>
+	 		</div>
+	 	</div>
+	 	
+ 	<?php
+		}
+ 	?>
+</div>
+<div style="margin-top:40px;float:right">
+<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+</div>

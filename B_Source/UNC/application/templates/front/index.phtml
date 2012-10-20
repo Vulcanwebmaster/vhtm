@@ -113,7 +113,7 @@
 							<div class="risl-2"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>">
 								<?php 
 									$charset = 'utf-8';
-									$len = 45;
+									$len = 40;
 									$string = $news['news_title']; 
 									$string = html_entity_decode($string, ENT_QUOTES, $charset);
 									if(mb_strlen($string, $charset)> $len)
@@ -145,7 +145,7 @@
 							<div class="risl-2"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>">
 								<?php 
 									$charset = 'utf-8';
-									$len = 45;
+									$len = 40;
 									$string = $news['news_title']; 
 									$string = html_entity_decode($string, ENT_QUOTES, $charset);
 									if(mb_strlen($string, $charset)> $len)

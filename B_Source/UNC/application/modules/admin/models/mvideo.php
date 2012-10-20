@@ -36,7 +36,7 @@
 		function updateVideo($video_id,$input)
 		{
 			$query=$this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" 
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" , is_active="'.$input['is_active'].'"
 									where video_id="'.$video_id.'"');
 			return $query;
 		}
@@ -44,7 +44,7 @@
 		function editVideo($input)
 		{
 			$query=$this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'" 
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="'.$input['is_active'].'" 
 									where video_link="'.$input['video_link'].'"');
 			return $query;
 		}

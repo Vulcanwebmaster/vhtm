@@ -411,21 +411,20 @@
 				{				
 					if($form->isValid($_POST))
 					{
-						$input = array(
+						if($video_link != null)
+						{
+							$input = array(
 								'video_link'			=> $video_link,
 								'video_title'			=> $form->getValue('title'),
 								'video_description'		=> $form->getValue('description'),
-								
-						);
-						
-						if($input['video_link'] != null)
-						{
+								'is_active'				=> $form->getValue('is_active')
+							);	
+							
 							$youtube_id = $this->mVideo->getYouTubeIdByVideoId($video_id);
 							$account = $this->mVideo->getAccountByYoutubeId($youtube_id);
 							$user = $account['youtube_username'];
 							$pass = $account['password'];
 							
-							$this->mVideo->editVideo($input);
 							try 
 							{
 								$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
@@ -440,21 +439,24 @@
 												              $loginCaptcha = null,
 												              $authenticationURL
 												           );
-											   
 								Zend_Loader::loadClass('Zend_Gdata_YouTube');
 							 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
-								
 								$video = $yt->getFullVideoEntry($input['video_link']);
 				                		$putUrl = $video->getEditLink()->getHref(); 
 								$video->setVideoTitle($input['video_title']);
 								$video->setVideoDescription($input['video_description']);
-				                		$yt->updateEntry($video, $putUrl);
-								$this->mVideo->editVideo($input); 
+				                $yt->updateEntry($video, $putUrl);
+								
+								if($this->mVideo->editVideo($input))
+								{
+									$_SESSION['result']='Cập nhật thành công';
+								}
 						    }
 						    catch (Exception $ex) {
 						        echo $ex->getMessage();
 						        exit;
 						    }
+							 
 							$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 						}
 						else

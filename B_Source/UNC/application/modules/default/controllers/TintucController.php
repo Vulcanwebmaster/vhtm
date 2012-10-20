@@ -3,7 +3,6 @@ class TintucController extends Zend_Controller_Action
 {
 	protected $mTintuc;
 	protected $mDefault;
-	protected $success;
 	
 	function init()
 	{
@@ -11,20 +10,31 @@ class TintucController extends Zend_Controller_Action
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
-		if(isset($_SESSION['success']))
-		{
-	    	$this->success = $_SESSION['success'];
-		}
+		
 	    $this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 	    session_start();	
 	}
 	
-	function setForm()
+	function setForm1($newsId,$readerId)
+	{
+		$form1 = new Zend_Form;
+			 
+		$form1->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/addcomment/newsid/'.$newsId.'/readerid/'.$readerId);
+			
+		$comment_content = new Zend_Form_Element_Text('comment_content',true,array('rows',"3"));
+		$comment_content->setAttrib('style',"width:100%");
+		$comment_content->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Vui lòng nhập nội dung bình luận'));
+		$comment_content->removeDecorator('HtmlTag')->removeDecorator('Label');
+		$form1->addElement($comment_content);
+		return $form1;
+	}
+	
+	function setForm($news_id)
 	{
 		$form=new Zend_Form;
-			 
-		$form->setMethod('post')->setAction('');
+		//$this->view->baseUrl().'/tintuc/detail/newsid/'.$newsId
+		$form->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/detail/newsid/'.$news_id);
 			
 		$user_name = new Zend_Form_Element_Text('user_name');
 		$user_name->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
@@ -51,25 +61,73 @@ class TintucController extends Zend_Controller_Action
 	
 	function addcommentAction()
 	{
-		$news_id = $this->_request->getParam('newsId');
-		$reader_id = $this->_request->getParam('readerId');
-		$comment_content = $this->_request->getPost('comment_content');
-		$this->mTintuc->insertComment($reader_id,$news_id,$comment_content);
-		
-		$this->_redirect($this->view->baseUrl().'/../tintuc/detail/newsid/'.$news_id);
+		$news_id = $this->_request->getParam('newsid');
+		$reader_id = $this->_request->getParam('readerid');
+		$form1 = $this->setForm1($news_id,$reader_id);
+		if($this->_request->isPost())
+		{
+			if($form1->isValid($_POST))
+			{
+				$comment_content = $form1->getValue('comment_content');
+				$this->mTintuc->insertComment($reader_id,$news_id,$comment_content);
+			}
+			else 
+			{
+				$form1->populate($_POST);
+			}
+			$this->_redirect($this->view->baseUrl().'/../tintuc/detail/newsid/'.$news_id);
+		}
 	}	
+	
+	function loginAction()
+	{
+		$news_id = $this->_request->getParam('newsid');
+		$form = $this->setForm($news_id);
+		
+		if($form->isValid($_POST))
+		{
+			$user_name = $form->getValue('user_name');
+			$pass_word = $form->getValue('pass_word');
+					
+			if($this->mTintuc->isUserName($user_name))
+			{
+				$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
+				$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
+						
+				$pass_word = md5(md5($pass_word).$pass_word_salt);
+					//echo $pass_word;die();
+				if($pass_word == $pass_word_forum)	
+				{
+					$_SESSION['success'] = $user_name;
+					$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
+					}		
+				else 
+				{
+					$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
+				}
+			}
+			else 
+			{
+				$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
+			}
+		}
+		else
+		{
+			$form->populate($_POST);
+		}
+		
+		$this->_redirect($this->view->baseUrl().'/../tintuc/detail/newsid/'.$news_id);	
+	}
 	
 	function detailAction()
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		
-		$this->view->success = $this->success;
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
-		
+
 		$news_id = $this->_request->getParam('newsid');
-		//echo $news_id;die();
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		
 		$this->view->news = $news;
@@ -98,32 +156,37 @@ class TintucController extends Zend_Controller_Action
 
 
 		$listquangcao = $this->mDefault->getListAds();
+<<<<<<< .mine
+		$this->view->listquangcao=$listquangcao;
+		
+		$form = $this->setForm($news_id);
+		$this->view->form = $form;
+		
+=======
 		$this->view->listquangcao=$listquangcao;	
 
-		$form = $this->setForm();
-		$this->view->form = $form;
+>>>>>>> .r856
 		if($this->_request->isPost())
 		{
 			if($form->isValid($_POST))
 			{
 				$user_name = $form->getValue('user_name');
 				$pass_word = $form->getValue('pass_word');
-					
+						
 				if($this->mTintuc->isUserName($user_name))
 				{
 					$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
 					$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
-						
+							
 					$pass_word = md5(md5($pass_word).$pass_word_salt);
-					//echo $pass_word;die();
+						//echo $pass_word;die();
 					if($pass_word == $pass_word_forum)	
 					{
-						//echo ' abc';die();
 						$_SESSION['success'] = $user_name;
-						$this->success = $user_name;
-						
 						$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
-					}		
+						$form1 = $this->setForm1($news_id,$this->mTintuc->getUserIdByUserNameForum($user_name));
+						$this->view->form1 = $form1;
+						}		
 					else 
 					{
 						$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
@@ -183,14 +246,12 @@ class TintucController extends Zend_Controller_Action
 		
         $this->view->list=$paginator;
 		$this->view->listquangcao=$listquangcao;
-		//var_dump($listquangcao);die();
+		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
-		$listParents=$this->mTintuc->getListParent();
-		$this->view->listParent = $listParents;
-		$listChild=$this->mTintuc->getListChild();
-		$this->view->listChild = $listChild;
+		$this->view->listParent = $this->mTintuc->getListParent();
+		$this->view->listChild = $this->mTintuc->getListChild();
 	}
 }
