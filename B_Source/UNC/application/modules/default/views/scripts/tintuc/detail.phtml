@@ -1,10 +1,3 @@
-
-<script type="text/javascript">
-function logout()
-  {
-  	
-  }
-</script>
 <script style="text/javascript">
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -23,11 +16,11 @@ function logout()
 	if(isset($_SESSION['logged']))
 	{
 		?>
-			<h3>Bạn đang đăng nhập bằng tài khoản <span style="color:red"><?php echo $_SESSION['logged']; ?></span>&nbsp;&nbsp;&nbsp;</h3>
-			<input type="button" value="Thoát" />
-			<form method="post" action="<?php echo $this->form1->getAction(); ?>">
+			<h3>Bạn đang đăng nhập bằng tài khoản <span style="color:red"><?php echo $_SESSION['logged']; ?></span>&nbsp;&nbsp;&nbsp;
+			<a style="text-decoration: none" href="<?php echo $this->baseUrl(); ?>/tintuc/logout"><i>Thoát</i></a></h3>
+			<form method="post" action="<?php $this->baseUrl();?>/tintuc/addcomment/newsid/<?php echo $this->news['news_id']; ?>/readerid/<?php echo $_SESSION['reader_id']; ?>">
 				<div id="addComment">
-					<?php echo $this->form1->getElement('comment_content');?>					
+					<textarea style="width:100%" rows="5"></textarea>
 					<input type="submit" name="submit" value="Gửi bình luận"/>
 				</div>
 			</form>

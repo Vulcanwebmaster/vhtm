@@ -101,7 +101,7 @@ class TintucController extends Zend_Controller_Action
 				{
 					$_SESSION['logged'] = $user_name;
 					$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
-					}		
+				}		
 				else 
 				{
 					$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
@@ -215,4 +215,12 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
 	}
+
+	function logoutAction()
+	{
+		session_destroy();
+		$this->_redirect($_SERVER['HTTP_REFERER']);
+		
+	}
+	
 }
