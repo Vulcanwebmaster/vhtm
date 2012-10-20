@@ -35,7 +35,7 @@
                 	  <?php foreach($this->listParent as $parent)
 					  {
 					  ?>
-                    <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $parent['category_id']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>
+                    <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $parent['category_id']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>|
                     	<ul class="sub">     
                         		<?php
                         		foreach($this->listChild as $child)
@@ -51,7 +51,7 @@
                         </ul>
                     </li>
                     <?php }?>
-                    <li class="top"><a class="top_link" href="#">Video</a></li>
+                    <li class="top"><a class="top_link" href="#">Video</a>|</li>
                     <li class="top"><a class="top_link" href="#">Forum</a></li>
                     
                 </ul>

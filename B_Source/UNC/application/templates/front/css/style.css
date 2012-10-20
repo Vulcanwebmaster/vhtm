@@ -138,11 +138,11 @@ h3 a{text-decoration:none;}
 
 /*-------------Trungnt Menu-------------*/
 #nav {height:31px; background-color:#333333; position:relative; z-index:5;margin:0px;}
-#nav li.top {float:left; display:inline; zoom:1; height:31px;line-height:31px;border-right:1px solid #d7d4d4;}
+#nav li.top {float:left; display:inline; zoom:1; height:31px;line-height:31px; color: #d7d4d4;}
 #nav li.top a.top_link,#nav li.top a.current {display:block; display:inline-block; color:#fff; font-weight:bold; font-size:12px; padding:0 8px; cursor:pointer; text-decoration: none }
 #nav li.top:hover a.top_link {color:red ; text-decoration:none}
 #nav li.top a.no-pointer{ cursor:default}
-#nav li.top-fist {background-color:#999999; float:left; display:inline; zoom:1; height:31px;line-height:31px;border-right:1px solid #d7d4d4;}
+#nav li.top-fist {background-color:#999999; float:left; display:inline; zoom:1; height:31px;line-height:31px;}
 #nav li.top-fist a.top_link,#nav li.top-fist a.current {display:block; display:inline-block; color:#fff; font-weight:bold; font-size:12px; padding:0 8px; cursor:pointer; text-decoration: none }
 #nav li.top-fist:hover a.top_link {color:red ; text-decoration:none}
 #nav li.top-fist a.no-pointer{ cursor:default}
