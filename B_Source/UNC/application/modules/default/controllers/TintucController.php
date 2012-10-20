@@ -22,7 +22,8 @@ class TintucController extends Zend_Controller_Action
 			 
 		$form1->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/addcomment/newsid/'.$newsId.'/readerid/'.$readerId);
 			
-		$comment_content = new Zend_Form_Element_Text('comment_content',true,array('rows',"3"));
+		$comment_content = new Zend_Form_Element_Textarea('comment_content');
+		$comment_content->setAttrib('rows',"5");
 		$comment_content->setAttrib('style',"width:100%");
 		$comment_content->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Vui lòng nhập nội dung bình luận'));
 		$comment_content->removeDecorator('HtmlTag')->removeDecorator('Label');
@@ -156,16 +157,14 @@ class TintucController extends Zend_Controller_Action
 
 
 		$listquangcao = $this->mDefault->getListAds();
-<<<<<<< .mine
 		$this->view->listquangcao=$listquangcao;
 		
 		$form = $this->setForm($news_id);
 		$this->view->form = $form;
 		
-=======
 		$this->view->listquangcao=$listquangcao;	
 
->>>>>>> .r856
+
 		if($this->_request->isPost())
 		{
 			if($form->isValid($_POST))
