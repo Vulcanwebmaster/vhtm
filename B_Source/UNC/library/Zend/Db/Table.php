@@ -49,6 +49,8 @@ class Zend_Db_Table extends Zend_Db_Table_Abstract
      *                             OR it can reference the name of a table
      * @param array|Zend_Db_Table_Definition $definition
      */
+     
+     
     public function __construct($config = array(), $definition = null)
     {
         if ($definition !== null && is_array($definition)) {
@@ -76,4 +78,16 @@ class Zend_Db_Table extends Zend_Db_Table_Abstract
 
         parent::__construct($config);
     }
+	/*
+	  public  function __construct($config = null)
+	  {
+      	//get Db, if empty DB return setDefaultDB.
+      	if(isset($this->_db))
+      	{
+           	$dbAdapters = Zend_Registry::get('Config');
+           	$config = $dbAdapters->getDb($this->_db);
+           	Zend_Db_Table::setDefaultAdapter($config);
+        }
+      	return parent::__construct($config);
+   	}*/
 }
