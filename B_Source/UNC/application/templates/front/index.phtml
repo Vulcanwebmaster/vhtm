@@ -71,7 +71,13 @@
         	    	<?php 
                     foreach($this->listHotNewsJs as $news)
 					{
-				      	echo $news['news_avatar'];          	
+				      	if($news['news_avatar'] != "") echo $news['news_avatar'];
+						else
+							{
+								?>
+									<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-3.jpg" alt="Hello!!!" />
+								<?php
+							}
 					}
                     ?>
             <!--<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/image-slider-2.jpg" alt="Hello!!!" />

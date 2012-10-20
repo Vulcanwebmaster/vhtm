@@ -62,7 +62,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 }
 /*----------tiennd------------*/
 
-.risl-2{ background-color:#999999;border-bottom-left-radius:5px; border-top-left-radius:5px; width:272px; height:25px; clear:both; margin-bottom:7px; }
+.risl-2{ background-color:#999999;border-bottom-left-radius:5px; border-top-left-radius:5px; width:272px; height:25px; clear:both; margin-bottom:7px; padding: 11px 0 0; }
 #note-slide{ height:300px;}
 
 #text-slide{ float:left; width:50%; height:auto; padding:10px;}
