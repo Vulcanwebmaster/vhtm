@@ -6,7 +6,8 @@ class TimkiemController extends Zend_Controller_Action
 	private $mTintuc;
 	function init()
 	{
-		
+		session_start();
+		$this->setAccess();
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 		$option = array ('layout' => 'index', 
                    'layoutPath' => $layoutPath );

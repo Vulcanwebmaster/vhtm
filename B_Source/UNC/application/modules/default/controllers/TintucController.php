@@ -14,7 +14,7 @@ class TintucController extends Zend_Controller_Action
 		
 	    $this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
-		
+		$this->setAccess();
 		unset($_SESSION['home']);
 	}
 	

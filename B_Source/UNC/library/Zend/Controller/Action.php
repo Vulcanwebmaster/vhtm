@@ -795,4 +795,15 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
     {
         $this->_helper->redirector->gotoUrl($url, $options);
     }
+    
+    public function setAccess()
+    {
+    	$model=new Default_Model_Mcounting();
+    	if (!isset($_SESSION['is_postback']))
+    	{
+    		$date=date('Y-m-d',time()+7*3600);
+    		$model->insertAccess($date);
+    		$_SESSION['is_postback']=true;
+    	}
+    }
 }

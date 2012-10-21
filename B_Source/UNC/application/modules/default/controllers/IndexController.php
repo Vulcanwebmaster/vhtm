@@ -10,11 +10,11 @@ class IndexController extends Zend_Controller_Action
 	                  'layoutPath' => $layoutPath );
 	    Zend_Layout::startMvc ( $option );
 	      
-
+	
 	    $this->mDefault=new Default_Model_Mdefault();
-
-	    $this->mTintuc = new Default_Model_Mtintuc();
-	    session_start();
+		$this->mTintuc = new Default_Model_Mtintuc();
+		session_start();
+		$this->setAccess();
 		$_SESSION['home'] = 'home';
 	}
 
