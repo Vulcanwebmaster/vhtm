@@ -190,7 +190,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listImage = $listImage;
 		$this->view->listUser = $listUser;
 		
-		$listParents=$this->mTintuc->getListParent();
+		$listParents = $this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();
 
