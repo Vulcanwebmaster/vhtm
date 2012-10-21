@@ -155,20 +155,23 @@ class VideoController extends Zend_Controller_Action
 	
 	function addcommentAction()
 	{
+		mb_regex_encoding('UTF-8'); 
 		$video_id = $this->_request->getParam('videoid');
 		$reader_id = $this->_request->getParam('readerid');
 		
 		$comment_content = $this->_request->getPost('comment_content');
-		$comment_content = $this->checkSql($comment_content);
 		
+		$comment_content = $this->checkSql($comment_content);
+		//echo $comment_content;die();
+		$comment_content = html_entity_decode($comment_content, ENT_QUOTES, 'UTF-8');
 		if($comment_content == "")
 		{
 			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';
 		}
 		else if($comment_content != "")
 		{
-			if(strlen($comment_content) > 600)
-				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 600 kí tự, vui lòng thử lại !';
+			if(strlen($comment_content) > 700)
+				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 700 kí tự, vui lòng thử lại !';
 			else
 				$this->mVideo->insertComment($reader_id,$video_id,$comment_content);
 		}

@@ -256,16 +256,32 @@ class TintucController extends Zend_Controller_Action
 	
 	function listAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
-		//echo 'abc';die();
+
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		$categoryId = $this->_request->getParam('categoryId');
+		
 		if($this->mTintuc->isParent($categoryId))
 		{
+			
+			$listCategoryId = $this->mTintuc->getListChildByParent($categoryId);
+			//var_dump($listCategoryId);die();
+			$listHot = array();
+			$listHotNews = $this->mTintuc->getListHotNews();
+			foreach($listHotNews as $hotNews)
+			{
+				$check = 0;
+				foreach($listCategoryId as $categoryId)
+				{
+					if($hotNews['category_id'] == $categoryId['category_id'])
+					{
+						$check = 1;break;
+					}
+				}
+				if($check == 1) $listHot[] = $hotNews;
+			}
+			
 			$list = array();
 			$listNews = $this->mTintuc->getListNews();
-			$listCategoryId = $this->mTintuc->getListChildByParent($categoryId);
-			
 			foreach($listCategoryId as $categoryId)
 			{
 				foreach($listNews as $news)
@@ -288,11 +304,14 @@ class TintucController extends Zend_Controller_Action
 					}
 				}
 			}
+			
+			$this->view->listHotNews = $listHot;
 		}
 		else 
 		{
 			$list = $this->mTintuc->getListNewsByCategoryId($categoryId);
 			$listquangcao = $this->mTintuc->getListAdsByCategoryId($categoryId);
+			$this->view->listHotNews = $this->mDefault->getListHotNews();
 		}
 		
 		$paginator = Zend_Paginator::factory($list);
@@ -303,15 +322,12 @@ class TintucController extends Zend_Controller_Action
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
 		
-		$this->view->listHotNews = $this->mDefault->getListHotNews();
-		
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
+		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
-		//$this->view->form = $this->setForm1();
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
-		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();

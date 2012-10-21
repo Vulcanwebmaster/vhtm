@@ -13,6 +13,12 @@
 			return $query->fetchAll();
 		}
 		
+		function getListHotNewsByCategoryId($category_id)
+		{
+			$query = $this->db->query('select * from unc_news where is_hot=1 and category_id ="'.$category_id.'" order by rand() limit 6');
+			return $query->fetchAll();
+		}
+		
 		function getListHotNewsJs()
 		{
 			$query = $this->db->query('select * from unc_news where is_hot=1 order by news_post_date DESC limit 4');

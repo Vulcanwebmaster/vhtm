@@ -9,6 +9,12 @@
 			$this->forum = Zend_Registry::get('unc_forum');
 		}
 		
+		function getListHotNews()
+		{
+			$query = $this->db->query('select * from unc_news where is_hot = "1" order by news_post_date desc');
+			return $query->fetchAll();
+		}
+		
 		function getNewsByNewsId($news_id)
 		{
 			$query = $this->db->query('select * from unc_news where news_id = "'.$news_id.'"');

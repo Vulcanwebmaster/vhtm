@@ -202,11 +202,17 @@
                     </div>
                     
                    <div id="col1">
-                    <?php 
+                    <?php
+                    $count = 0; 
                     foreach($this->listHotNews as $news)
 					{
+						$count++ ;
 						?>
-							<div class="risl-2"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
+							<div class="risl-2">
+								<?php if(isset($news['news_title']))
+								{
+								?>
+								<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
 								<?php 
 									$charset = 'utf-8';
 									$len = 35;
@@ -227,8 +233,14 @@
 										$string = implode(' ', $arrRes)."...";
 									}
 									echo $string;
-								?></a></div>
+								?>
+								</a>
+								<?php 
+								}
+								?>
+							</div>
 						<?php
+						if($count == 6) break;
 					}
                     ?>
                     </div>
@@ -350,14 +362,14 @@
                 	<?php 
                 		if(isset($this->video_default))
 						{
-	                		$video = $this->video_default;
-							$video = trim($video);
-							$video = str_replace("http://www.youtube.com/watch?v=","", $video);
-							$video = substr($video,0,11);
+	                		$video_default = $this->video_default;
+							$video_default = trim($video_default);
+							$video_default = str_replace("http://www.youtube.com/watch?v=","",$video_default);
+							$video_default = substr($video_default,0,11);
 						}
                 	?>
                 	<object width="300" height="230" style="margin-left:15px;">
-                		<iframe width="300" height="230" src="http://www.youtube.com/embed/<?php if(isset($video)) echo $video; ?>" frameborder="0" allowfullscreen></iframe>
+                		<iframe width="300" height="230" src="http://www.youtube.com/embed/<?php if(isset($video_default)) echo $video_default; ?>" frameborder="0" allowfullscreen></iframe>
                 	</object>
 
 					
