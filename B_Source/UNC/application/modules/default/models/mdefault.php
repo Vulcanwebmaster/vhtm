@@ -20,8 +20,36 @@
 		}
 		function getListAds()
 		{
-			$query = $this->db->query('select * from unc_ads order by rand() limit 3');
+			$query = $this->db->query('select * from unc_ads where ads_position=5 order by rand() limit 10');
 			return $query->fetchAll();
+		}
+		
+		function getListAds1()
+		{
+			$query = $this->db->query('select * from unc_ads where ads_position=1 order by ads_start_date DESC limit 1');
+			$list = $query->fetchAll();
+			return $list[0];
+		}
+		
+		function getListAds2()
+		{
+			$query = $this->db->query('select * from unc_ads where ads_position=2 order by ads_start_date DESC limit 1');
+			$list = $query->fetchAll();
+			return $list[0];
+		}
+		
+		function getListAds3()
+		{
+			$query = $this->db->query('select * from unc_ads where ads_position=3 order by ads_start_date DESC limit 1');
+			$list = $query->fetchAll();
+			return $list[0];
+		}
+		
+		function getListAds4()
+		{
+			$query = $this->db->query('select * from unc_ads where ads_position=4 order by ads_start_date DESC limit 1');
+			$list = $query->fetchAll();
+			return $list[0];
 		}
 		
 		function getListMostView()

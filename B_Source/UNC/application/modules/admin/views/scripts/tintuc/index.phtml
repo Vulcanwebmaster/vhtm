@@ -152,12 +152,12 @@
 		</div>
 		
 		<footer>
-			<div class="submit_link">
+			<div class="submit_link" style="float:right">
 				<a class="alt_btn" style="float:right" href="<?php echo $this->baseUrl('admin/tintuc/insert');?>">Thêm mới</a>
-				<?php echo $this->paginationControl($this->list,
-                                    'Sliding',
-                                    'tintuc/pagination.phtml');?>
 			</div>
+				<div class="submit_link" style="float:left; font-weight: bold;">
+					<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+				</div>
 		</footer>
 	</div>
 </article>

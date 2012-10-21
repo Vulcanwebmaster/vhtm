@@ -6,10 +6,10 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 /*----------------begin header------------------*/
 #header{ width:100%; height:120px; padding-top:20px;}
 #logo img{ width:210px; height:110px; float:left;}
-#right-header{ height:63px; width:auto; border:1px solid #bbbbbb; float:left; margin-top:37px; margin-left:160px; border-right:0;}
+#right-header{ height:110px; width:625px; border:1px solid #bbbbbb; float:left; margin-top:5px; margin-left:163px; border-right:0;}
 #right-header1{ height:64px; width:17px; background-image:url(../images/NEN_06.png); background-repeat:no-repeat; float:left;}
-.right-header2{ float:left; width:170px; padding:0 15px 0 15px; border-right:1px solid #bbbbbb; height:63px;}
-.img-header p img{ height:63px !important; float:left; width:63px;}
+.right-header2{ float:left; width:576px; padding:0 29px 0 1px; border-right:1px solid #bbbbbb; height:110px;}
+.img-header p img{ height:110px !important; float:left; width:604px;}
 #header p{ float:left; font-weight:bold; height:100%; width:100px; padding: 0 4px 0 0; margin: 0;}
 #header label{ color:red;}
 /*----------------end header------------------*/
@@ -87,7 +87,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #tittles{ float:left; width:80%;}
 #text-ads{ clear:both; padding-top:15px; width:90%;}
 #right-ads{ width:200px;margin:5px; float:left; margin-left:40px;}
-#right-ads img { width:200px; height:150px;}
+#right-ads img { width:200px; height:130px;}
 /*----------------end ads-------------*/
 /*----------------begin news-------------*/
 #news{ width:65%; float:left;}
@@ -180,3 +180,5 @@ h3 a{text-decoration:none;}
 #nav li:hover li:hover li:hover li:hover ul ul
 {position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
 /*-------------End Trungnt Menu---------*/
+#divAdRight img{width: 130px !important; height: 512px !important;}
+#divAdLeft img{width: 130px !important; height: 512px !important;}

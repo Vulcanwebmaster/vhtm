@@ -39,6 +39,20 @@ class VideoController extends Zend_Controller_Action
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;
 		$this->view->video = $this->mDefault->getVideoDefault();
+					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao = $this->mDefault->getListAds();
+		
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		$this->view->listquangcao = $listquangcao;
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+
+		$this->view->listquangcao = $listquangcao;
 	}
 	
 	function setForm($video_id)
@@ -106,6 +120,16 @@ class VideoController extends Zend_Controller_Action
 		$listquangcao = $this->mDefault->getListAds();
 		$listParents = $this->mTintuc->getListParent();
 		$listChild = $this->mTintuc->getListChild();
+					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+
 		
 		$this->view->listImage = $listImage;
 		$this->view->listParent = $listParents;

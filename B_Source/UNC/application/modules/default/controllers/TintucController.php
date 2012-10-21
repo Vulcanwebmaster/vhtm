@@ -199,6 +199,17 @@ class TintucController extends Zend_Controller_Action
 
 		$this->view->listChild = $listChild;
 		
+					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		$this->view->listquangcao = $listquangcao;
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
 		$this->view->video_default = $this->mDefault->getVideoDefault();
@@ -209,7 +220,17 @@ class TintucController extends Zend_Controller_Action
 	function timkiemAction()
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
-		
+					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+
+		$this->view->listquangcao = $listquangcao;
 		$this->view->listquangcao = $this->mDefault->getListAds();
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
@@ -235,6 +256,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function listAction()
 	{
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		//echo 'abc';die();
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		$categoryId = $this->_request->getParam('categoryId');
@@ -290,6 +312,20 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
 		$this->view->video_default = $this->mDefault->getVideoDefault();
+		
+					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao = $this->mDefault->getListAds();
+		
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		$this->view->listquangcao = $listquangcao;
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+
 	}
 
 	function logoutAction()

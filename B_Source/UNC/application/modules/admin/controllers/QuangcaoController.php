@@ -42,6 +42,14 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$ads_link = new Zend_Form_Element_Text('ads_link');
 			$ads_link->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Đường dẫn không được để trống'));
 			
+			$ads_position = $form->createElement("select","ads_position",array(
+                                                        "label" => "Vị trí",
+                                                   "multioptions"=> array(
+                                                                      "1" => "Trên",
+                                                                      "2" => "Giữa",
+                                                                      "3" => "Trái",
+																	  "4" => "Phải",
+																	  "5" => "Nội dung")));
 			$ads_banner->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$ads_position->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$ads_name->removeDecorator('HtmlTag')->removeDecorator('Label');
@@ -136,9 +144,11 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$mquangcao = new Admin_Model_Mquangcao;
+			$form=$this->setForm();
 			$this->view->list = $mquangcao->getListQC();
 			$this->view->query = $mquangcao->getOne($this->getRequest()->getParam('id'));
 			$this->view->title="Sửa thông tin quảng cáo";
+			$form->getElement('ads_position')->setValue($info['ads_position']);
 			//var_dump($mquangcao->getOne($this->getRequest()->getParam('id')));die();
 			if($this->_request->isPost())
 			{
@@ -152,10 +162,12 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 					'ads_end_date' => $this->_request->getPost('ads_end_date'),
 				);
 				
+				
 			//var_dump($match);die();
 				$mquangcao->edit($this->getRequest()->getParam('id'),$data);
 				$this->_redirect($this->view->baseUrl().'/../admin/quangcao');
 			}
+			$this->view->form=$form;
 		}
 
 		function delAction()

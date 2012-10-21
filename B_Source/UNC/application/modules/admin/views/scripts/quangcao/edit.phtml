@@ -29,13 +29,13 @@
 		<div class="module_content">
 			
 			<fieldset style="width:50%">
-				<label>Biểu ngữ</label>
+				<label>Nội dung</label>
 				<textarea style="width:93%" type="text" id="ads_banner" name="ads_banner"><?php echo $this->query['ads_banner']; ?></textarea>
 			</fieldset><div class="clear"></div>
 			
 			<fieldset style="width:50%">
 				<label>Vị trí</label>
-				<input style="width:93%" type="text" name="ads_position" value="<?php echo $this->query['ads_position']; ?>"/>
+				<?php echo $this->form->getElement('ads_position');?>
 			</fieldset><div class="clear"></div>
 			
 			<fieldset style="width:50%">
