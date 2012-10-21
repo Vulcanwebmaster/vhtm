@@ -11,7 +11,7 @@
 		<h2 style="color:blue"><?php echo $this->video['video_title']; ?></h2>
 	</div>
 	<div id="video" style="float:left;margin:0px 10px 10px 10px">
-		<iframe width="640" height="360" src="http://www.youtube.com/embed/5QlxJezCDOY" frameborder="0" allowfullscreen></iframe>
+		<iframe width="640" height="360" src="http://www.youtube.com/embed/<?php echo $this->video['video_link']; ?>" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<div style="margin-top:400px;margin-left:10px" id="video_description">
 		<h3>Mô tả : <i><?php echo $this->video['video_description']; ?></i></h3>
@@ -27,7 +27,7 @@
 			<a style="text-decoration: none" href="<?php echo $this->baseUrl(); ?>/tintuc/logout"><i>Thoát</i></a></h3>
 			<form method="post" action="<?php echo $this->baseUrl();?>/video/addcomment/videoid/<?php echo $this->video['video_id']; ?>/readerid/<?php echo $_SESSION['reader_id']; ?>">
 				<div id="addComment">
-					<textarea style="width:100%" rows="5"></textarea>
+					<textarea name="comment_content" style="width:100%" rows="5"></textarea>
 					<input type="submit" name="submit" value="Gửi bình luận"/>
 				</div>
 			</form>
@@ -63,20 +63,42 @@
 		<hr/>
 		<h3>Danh sách bình luận</h3>
 		<hr/>
-		<?php
+		<?php 
 		$count = 0;
-		if($this->listComment > 0)
+		if(count($this->listComment) > 0)
 		{
 			foreach($this->listComment as $comment)
 			{
-			?>
-				<div>
-					<h3 style="margin-left:40px"><i><?php echo $this->listUser[$count]['username']; ?></i></h3>
-					<p style="margin-left:50px"><?php echo $comment['comment_content']; ?></p>
+				if($this->listImage[$count] == 0)
+				{
+				?>
+					<img alt="" src="http://1.gravatar.com/avatar/b0eb17f97a5c244abfd54d0192e00a4d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G" class="avatar avatar-68 photo" height="68" width="68">
+				<?php 
+				}
+				else
+				{
+					?>
+						<img alt="" src="<?php echo $this->baseUrl(); ?>/forum/image.php?u=1&dateline=<?php echo $this->listImage[$count]; ?>" class="avatar avatar-68 photo" height="68" width="68">
+					<?php
+				}
+				
+				?>
+				<div style="#373737;background-color:#E4E4E4;margin-left:80px;margin-top:-67px;border-radius: 5px;border: 1px solid #ddd;padding: 10px;width:85%">
+					<div style="margin-left:10px">
+						<span style="color:blue;"><?php echo $this->listUser[$count]['username'] ?></span>   :   <span><?php echo $comment['comment_time']; ?></span> đã bình luận :
+					</div>
+					<div style="margin:20px">
+						<?php echo $comment['comment_content']; ?>
+					</div>
 				</div>
-				<hr/>
-			<?php
+				<br style="clear:both">
+			<?php 
+				$count++;
 			}
+		}
+		else 
+		{
+			echo 'Video này chưa có bình luận nào';
 		}
 		?>
 	</div>

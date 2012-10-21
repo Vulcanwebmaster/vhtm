@@ -9,7 +9,7 @@
 		
 		function insertVideoLink($input)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'",null,"'.$input['is_active'].'","'.$input['video_full_link'].'",null,"'.$input['user_upload'].'","'.$input['category_id'].'")');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'",null,"'.$input['is_active'].'","'.$input['video_full_link'].'",null,"'.$input['user_upload'].'","'.$input['category_id'].'","'.$input['is_default'].'")');
 			return $query;
 		}
 		
@@ -29,22 +29,22 @@
 		
 		function getListVideo()
 		{
-			$query=$this->db->query('select * from unc_video order by video_id desc, is_active desc, category_id desc');
+			$query=$this->db->query('select * from unc_video order by is_default desc, is_active desc, video_id desc');
 			return $query->fetchAll();
 		}
 		
 		function updateVideo($video_id,$input)
 		{
 			$query=$this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" , is_active="'.$input['is_active'].'"
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" , is_active="'.$input['is_active'].'", is_default="'.$input['is_default'].'"
 									where video_id="'.$video_id.'"');
 			return $query;
 		}
 		
 		function editVideo($input)
 		{
-			$query=$this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="'.$input['is_active'].'" 
+			$query = $this->db->query('update unc_video 
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="'.$input['is_active'].'" , is_default="'.$input['is_default'].'"
 									where video_link="'.$input['video_link'].'"');
 			return $query;
 		}
@@ -100,6 +100,12 @@
 		{
 			$query = $this->db->query('select * from unc_category where category_parent_id != 0');
 			return $query->fetchAll();
+		}
+		
+		function delDefaultVideo()
+		{
+			$query = $this->db->query('update unc_video set is_default = "0"');
+			return $query;
 		}
 	}
 		

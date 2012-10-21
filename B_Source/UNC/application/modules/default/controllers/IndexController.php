@@ -21,8 +21,7 @@ class IndexController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
-		
-		
+		//var_dump($this->mDefault->getVideoDefault());die();
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		//var_dump($this->mDefault->getListHotNewsJs());die();
@@ -40,10 +39,10 @@ class IndexController extends Zend_Controller_Action
 		}
 			//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
-		$this->view->listquangcao=$listquangcao;
+		$this->view->listquangcao = $listquangcao;
+		$this->view->listNews = $listNews;
 		
-		$this->view->listNews=$listNews;
-		
+		$this->view->video = $this->mDefault->getVideoDefault();
 	}
 
 

@@ -25,10 +25,10 @@
 					<label>Mô tả</label>
 					<?php echo $this->form->getElement('description');?>
 				</fieldset>
-				<fieldset>
+				<!--fieldset>
 					<label>Chuyên mục</label>
 					<?php echo $this->form->getElement('category_id');?>
-				</fieldset>
+				</fieldset-->
 				<?php 
 				if($this->role == "0")
 				{
@@ -40,6 +40,10 @@
 				<?php 
 				}
 				?>
+				<fieldset>
+					<label>Đặt làm mặc định</label>
+					<?php echo $this->form->getElement('is_default');?>
+				</fieldset>
 			</div>
 		</div>
 		<footer>

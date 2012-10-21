@@ -36,4 +36,11 @@
 			$list = $query->fetchAll();
 			return $list[0];
 		}
+		
+		function getVideoDefault()
+		{
+			$query = $this->db->query('select * from unc_video where is_default = "1"');
+			$list = $query->fetchAll();
+			return $list[0]['video_full_link'];
+		}
 	}

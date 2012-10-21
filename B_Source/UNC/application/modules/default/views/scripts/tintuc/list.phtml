@@ -1,3 +1,15 @@
+<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/jquery.ui.all.css">
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.datepicker.js"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/demos.css">
+
+<script>
+	$(function() {
+		$( ".datepicker" ).datepicker();
+	});
+</script>
 <div style="margin-top:10px">
 	<?php 
 	if(count($this->list) > 0)
@@ -65,6 +77,24 @@
 	}
  	?>
 </div>
-<div style="margin-top:40px;float:right">
+<div style="margin-top:30px;margin-left:20px" id="search">
+	<h3>Tìm kiếm tin tức theo ngày tháng</h3>
+	<form method="post" action="<?php echo $this->baseUrl(); ?>/tintuc/timkiem">
+	<table>
+		<tr>
+			<td style="padding-left: 10px;">Từ ngày : </td>
+			<td style="padding-left: 10px;"><input style="width: 207px;" type="text" name="start_time" class="datepicker"/></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 10px;">Đến ngày : </td>
+			<td style="padding-left: 10px;"><input style="width: 207px;" type="text" name="end_time" class="datepicker"/></td>
+		</tr>
+	</table>
+	<input style="margin-left:20%" type="submit" name="submit" value="Tìm kiếm" />
+	</form>
+	
+</div>
+
+<div style="margin-top:10px;float:right">
 <?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 </div>

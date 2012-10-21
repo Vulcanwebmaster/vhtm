@@ -18,25 +18,28 @@ class TintucController extends Zend_Controller_Action
 		unset($_SESSION['home']);
 	}
 	
-	function setForm1($newsId,$readerId)
+	function setForm1()
 	{
 		$form1 = new Zend_Form;
-			 
-		$form1->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/addcomment/newsid/'.$newsId.'/readerid/'.$readerId);
+		$form1->setMethod('post')->setAction('');
 			
-		$comment_content = new Zend_Form_Element_Textarea('comment_content');
-		$comment_content->setAttrib('rows',"5");
-		$comment_content->setAttrib('style',"width:100%");
-		$comment_content->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Vui lòng nhập nội dung bình luận'));
-		$comment_content->removeDecorator('HtmlTag')->removeDecorator('Label');
-		$form1->addElement($comment_content);
+		$start_time = new Zend_Form_Element_Text('start_time');
+		$start_time->setAttrib('class',"datepicker");
+		$start_time->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Vui lòng nhập ngày bắt đầu !'));
+		
+		$end_time = new Zend_Form_Element_Text('start_time');
+		$end_time->setAttrib('class',"datepicker");
+		$end_time->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Vui lòng nhập ngày kết thúc !'));
+		
+		$start_time->removeDecorator('HtmlTag')->removeDecorator('Label');
+		$end_time->removeDecorator('HtmlTag')->removeDecorator('Label');
+		$form1->addElement($start_time,$end_time);
 		return $form1;
 	}
 	
 	function setForm($news_id)
 	{
-		$form=new Zend_Form;
-		//$this->view->baseUrl().'/tintuc/detail/newsid/'.$newsId
+		$form = new Zend_Form;
 		$form->setMethod('post')->setAction('');
 			
 		$user_name = new Zend_Form_Element_Text('user_name');
@@ -148,7 +151,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
@@ -198,14 +201,43 @@ class TintucController extends Zend_Controller_Action
 		
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao=$listquangcao;
-		
+		$this->view->video_default = $this->mDefault->getVideoDefault();
 		$form = $this->setForm($news_id);
 		$this->view->form = $form;
 	}
+	
+	function timkiemAction()
+	{
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
+		$this->view->listquangcao = $this->mDefault->getListAds();
+		$this->view->listHotNews = $this->mDefault->getListHotNews();
+		$this->view->listNewsMostView = $this->mDefault->getListMostView();
+		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
+		$this->view->listParent = $this->mTintuc->getListParent();
+		$this->view->listChild = $this->mTintuc->getListChild();
+		$this->view->video_default = $this->mDefault->getVideoDefault();
+		
+		if($this->_request->isPost())
+		{
+			$start_time = $this->_request->getPost();
+			$end_time = $this->_request->getPost();
+			
+			$listNews = $this->mTintuc->getListNewsByDate($start_time,$end_time);
+			
+			$paginator = Zend_Paginator::factory($listNews);
+	        $paginator->setItemCountPerPage(5);        
+	        $currentPage = $this->_request->getParam('page',1);
+	        $paginator->setCurrentPageNumber($currentPage);
+			
+	        $this->view->list = $paginator;
+		}
+	}
+	
 	function listAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		//echo 'abc';die();
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		$categoryId = $this->_request->getParam('categoryId');
 		if($this->mTintuc->isParent($categoryId))
 		{
@@ -247,16 +279,18 @@ class TintucController extends Zend_Controller_Action
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		
-        $this->view->list=$paginator;
-		$this->view->listquangcao=$listquangcao;
+        $this->view->list = $paginator;
+		$this->view->listquangcao = $listquangcao;
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
+		//$this->view->form = $this->setForm1();
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
+		$this->view->video_default = $this->mDefault->getVideoDefault();
 	}
 
 	function logoutAction()

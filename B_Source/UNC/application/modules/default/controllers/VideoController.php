@@ -20,7 +20,12 @@ class VideoController extends Zend_Controller_Action
 	
 	function listAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		/*
+		$str = "http://www.youtube.com/watch?v=-wDcwDx6VBs";
+		$str = str_replace("http://www.youtube.com/watch?v=","", $str);
+		$str = substr($str,0,11);
+		echo $str;die();*/
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
@@ -33,6 +38,7 @@ class VideoController extends Zend_Controller_Action
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;
+		$this->view->video = $this->mDefault->getVideoDefault();
 	}
 	
 	function setForm($video_id)
@@ -56,7 +62,7 @@ class VideoController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
@@ -65,31 +71,72 @@ class VideoController extends Zend_Controller_Action
 		$video_id = $this->_request->getParam('videoid');
 		$this->view->video = $this->mVideo->getVideoByVideoId($video_id);
 		
+		$listComment = $this->mVideo->getListCommentByVideoId($video_id);
+		$listForumUser = $this->mVideo->getListForumUser();
+		
 		$listUser = array();
+		foreach($listComment as $comment)
+		{
+			foreach($listForumUser as $user)
+			{
+				if($comment['reader_id'] == $user['userid'])
+				{
+					$listUser[] = $user;
+				}
+			}
+		}
 		
-		$this->view->listUser = $listUser;
-		
-		$listParents=$this->mTintuc->getListParent();
-		$this->view->listParent = $listParents;
-		$listChild=$this->mTintuc->getListChild();
-
-		$this->view->listChild = $listChild;
-		
-		$listquangcao = $this->mDefault->getListAds();
-		$this->view->listquangcao=$listquangcao;
+		$listImage = array();
+		$listAvatar = $this->mVideo->getListAvatar();
+		foreach($listUser as $user)
+		{
+			$count = 0;
+			foreach($listAvatar as $avatar)
+			{
+				if($avatar['userid'] == $user['userid'])
+				{
+					$count = 1;break;
+				}
+			}
+			if($count == 1) $listImage[] = $avatar['dateline'];
+				else $listImage[] = 0;
+		}
 		
 		$form = $this->setForm($video_id);
+		$listquangcao = $this->mDefault->getListAds();
+		$listParents = $this->mTintuc->getListParent();
+		$listChild = $this->mTintuc->getListChild();
+		
+		$this->view->listImage = $listImage;
+		$this->view->listParent = $listParents;
+		$this->view->listChild = $listChild;
+		$this->view->listUser = $listUser;
+		$this->view->listquangcao = $listquangcao;
 		$this->view->form = $form;
+		$this->view->listComment = $listComment;
+		$this->view->video_default = $this->mDefault->getVideoDefault();
+	}
+	
+	function checkSql($data) 
+	{
+		$data = trim(htmlentities(strip_tags($data)));
+		
+		if (get_magic_quotes_gpc()) 
+			$data = stripslashes($data);
+		
+		$data = mysql_real_escape_string($data);
+		
+		return $data;
 	}
 	
 	function addcommentAction()
 	{
-		$video_id = $this->_request->getParam('newsid');
+		$video_id = $this->_request->getParam('videoid');
 		$reader_id = $this->_request->getParam('readerid');
 		
 		$comment_content = $this->_request->getPost('comment_content');
-		$comment_content = trim($comment_content);
-		//echo strlen($comment_content);die();
+		$comment_content = $this->checkSql($comment_content);
+		
 		if($comment_content == "")
 		{
 			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';
@@ -99,7 +146,7 @@ class VideoController extends Zend_Controller_Action
 			if(strlen($comment_content) > 600)
 				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 600 kí tự, vui lòng thử lại !';
 			else
-				$this->mTintuc->insertComment($reader_id,$video_id,$comment_content);
+				$this->mVideo->insertComment($reader_id,$video_id,$comment_content);
 		}
 		$this->_redirect($_SERVER['HTTP_REFERER']);	
 	}	

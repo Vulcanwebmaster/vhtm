@@ -165,7 +165,8 @@
 						'video_description'			=> $form->getValue('description'),
 						'is_active'					=> $form->getValue('is_active'),
 						'user_upload'				=> $this->user_login,
-						'category_id'				=> $form->getValue('category_id')
+						'category_id'				=> $form->getValue('category_id'),
+						'is_default'				=> $form->getValue('is_default')
 						);
 			return $input;
 		}
@@ -186,7 +187,11 @@
 			{
 				if($form->isValid($_POST))
 				{
-					$input=$this->_getInput($form);
+					$input = $this->_getInput($form);
+					if($input['is_default'] == "1")
+					{
+						$this->mVideo->delDefaultVideo();
+					}
 					if ($this->mVideo->insertVideoLink($input))
 					{
 						$_SESSION['result']='Thêm mới thành công';
@@ -224,7 +229,12 @@
                                                         "label" => "Kích hoạt",
                                                    "multioptions"=> array(
                                                                       "0" => "Không",
-                                                                      "1" => "Có")));
+            	                                                      "1" => "Có")));
+			$is_default = $form->createElement("select","is_default",array(
+                                                        "label" => "Mặc định",
+                                                   "multioptions"=> array(
+                                                                      "0" => "Không",
+            	                                                      "1" => "Có")));												
 			if($this->role == "0")
 			{
 				$listCategoryId = $this->mVideo->getListCategory();
@@ -233,6 +243,7 @@
 			{
 				$listCategoryId = $this->mVideo->getCategoryIdByUserId($this->user_id);
 			}
+			
 			
 			$listCategory = array();
 			foreach($listCategoryId as $category)
@@ -251,8 +262,9 @@
 			$description->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$categoryId->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$is_default->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElements(array($link,$title,$description,$is_active,$categoryId));
+			$form->addElements(array($link,$title,$description,$is_active,$categoryId,$is_default));
 			return $form;
 		}
 		
@@ -403,6 +415,7 @@
 				$form->getElement('description')->setValue($info['video_description']);
 				$form->getElement('is_active')->setValue($info['is_active']);
 				$form->getElement('category_id')->setValue($info['category_id']);
+				$form->getElement('is_default')->setValue($info['is_default']);
 				
 				$this->view->form = $form;
 				$this->view->title = 'Sửa thông tin video';		
@@ -417,8 +430,18 @@
 								'video_link'			=> $video_link,
 								'video_title'			=> $form->getValue('title'),
 								'video_description'		=> $form->getValue('description'),
-								'is_active'				=> $form->getValue('is_active')
+								'is_active'				=> $form->getValue('is_active'),
+								'is_default'			=> $form->getValue('is_default')
 							);	
+							
+							if($input['is_default'] == "1")
+							{
+								$this->mVideo->delDefaultVideo();
+							}
+							if($this->mVideo->editVideo($input))
+							{
+								$_SESSION['result']='Cập nhật thành công';
+							}
 							
 							$youtube_id = $this->mVideo->getYouTubeIdByVideoId($video_id);
 							$account = $this->mVideo->getAccountByYoutubeId($youtube_id);
@@ -446,11 +469,6 @@
 								$video->setVideoTitle($input['video_title']);
 								$video->setVideoDescription($input['video_description']);
 				                $yt->updateEntry($video, $putUrl);
-								
-								if($this->mVideo->editVideo($input))
-								{
-									$_SESSION['result']='Cập nhật thành công';
-								}
 						    }
 						    catch (Exception $ex) {
 						        echo $ex->getMessage();
@@ -461,7 +479,7 @@
 						}
 						else
 						{
-							$input=$this->_getInput($form);
+							$input = $this->_getInput($form);
 							if ($this->mVideo->updateVideo($video_id,$input))
 							{
 								$_SESSION['result']='Cập nhật thành công';

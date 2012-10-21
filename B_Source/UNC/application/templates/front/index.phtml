@@ -55,7 +55,7 @@
                         </ul>
                     </li>
                     <?php }?>
-                    <li class="top"><a class="top_link" href="#">Video</a>|</li>
+                    <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/video/list">Video</a>|</li>
                     <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/forum">Forum</a></li>
                     
                 </ul>
@@ -255,7 +255,7 @@
         	<!------------begin tin tức------->
         	 <div id="news">
                 
-                <?php echo$this->layout()->content;?>
+                <?php echo $this->layout()->content;?>
                 
             </div>
             
@@ -264,8 +264,17 @@
             <div id="video">
             	<div id="tube">
                 	<div id="vd">Video Clip</div>
+                	<?php 
+                		if(isset($this->video_default))
+						{
+	                		$video = $this->video_default;
+							$video = trim($video);
+							$video = str_replace("http://www.youtube.com/watch?v=","", $video);
+							$video = substr($video,0,11);
+						}
+                	?>
                 	<object width="300" height="230" style="margin-left:15px;">
-                		<iframe width="300" height="230" src="http://www.youtube.com/embed/QlvTZdlgfdU" frameborder="0" allowfullscreen></iframe>
+                		<iframe width="300" height="230" src="http://www.youtube.com/embed/<?php if(isset($video)) echo $video; ?>" frameborder="0" allowfullscreen></iframe>
                 	</object>
 
 					

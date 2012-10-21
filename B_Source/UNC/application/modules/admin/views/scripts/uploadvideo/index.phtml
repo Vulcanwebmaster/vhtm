@@ -48,6 +48,7 @@
 										video_description: "<?php echo $item['video_description'];?>",
 										video_full_link: '<a href="<?php echo $item['video_full_link'];?>"><?php echo $item['video_full_link'];?></a>',
 										is_active: "<?php if($item['is_active'] == '1') echo 'Có'; else echo 'Không';?>",
+										is_default: "<?php if($item['is_default'] == '1') echo 'Có'; else echo 'Không';?>",
 										sua: '<?php
 											if($this->role == "0" |(($this->role=="1" | $this->role=="2") & $this->user_login==$item['user_upload']))
 												echo '<a href="'.$this->baseUrl().'/admin/uploadvideo/edit/video_id/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
@@ -95,6 +96,13 @@
 							{
 								key: 'is_active',
 								label:'Kích hoạt',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'is_default',
+								label:'Mặc định',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true

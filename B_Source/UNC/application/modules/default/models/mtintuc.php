@@ -139,4 +139,9 @@
 			$query = $this->forum->query('select userid,dateline from customavatar');
 			return $query->fetchAll();
 		}
+		
+		function getListNewsByDate($start_time,$end_time)
+		{
+			$query = $this->db->query('select * from unc_news where news_post_date > "'.$start_time.'" and news_post_date < "'.$end_time.'"');
+		}
 	}

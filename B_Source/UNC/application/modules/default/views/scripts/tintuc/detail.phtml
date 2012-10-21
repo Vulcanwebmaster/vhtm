@@ -73,33 +73,40 @@
 		<hr/>
 		<?php 
 		$count = 0;
-		foreach($this->listComment as $comment)
+		if(count($this->listComment) > 0)
 		{
-			if($this->listImage[$count] == 0)
+			foreach($this->listComment as $comment)
 			{
-			?>
-				<img alt="" src="http://1.gravatar.com/avatar/b0eb17f97a5c244abfd54d0192e00a4d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G" class="avatar avatar-68 photo" height="68" width="68">
-			<?php 
-			}
-			else
-			{
+				if($this->listImage[$count] == 0)
+				{
 				?>
-					<img alt="" src="<?php echo $this->baseUrl(); ?>/forum/image.php?u=1&dateline=<?php echo $this->listImage[$count]; ?>" class="avatar avatar-68 photo" height="68" width="68">
-				<?php
+					<img alt="" src="http://1.gravatar.com/avatar/b0eb17f97a5c244abfd54d0192e00a4d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G" class="avatar avatar-68 photo" height="68" width="68">
+				<?php 
+				}
+				else
+				{
+					?>
+						<img alt="" src="<?php echo $this->baseUrl(); ?>/forum/image.php?u=1&dateline=<?php echo $this->listImage[$count]; ?>" class="avatar avatar-68 photo" height="68" width="68">
+					<?php
+				}
+				
+				?>
+				<div style="#373737;background-color:#E4E4E4;margin-left:80px;margin-top:-67px;border-radius: 5px;border: 1px solid #ddd;padding: 10px;width:85%">
+					<div style="margin-left:10px">
+						<span style="color:blue;"><?php echo $this->listUser[$count]['username'] ?></span>   :   <span><?php echo $comment['comment_time']; ?></span> đã bình luận :
+					</div>
+					<div style="margin:20px">
+						<?php echo $comment['comment_content']; ?>
+					</div>
+				</div>
+				<br style="clear:both">
+			<?php 
+				$count++;
 			}
-			
-			?>
-			<div style="#373737;background-color:#E4E4E4;margin-left:80px;margin-top:-67px;border-radius: 5px;border: 1px solid #ddd;padding: 10px;width:85%">
-				<div style="margin-left:10px">
-					<span style="color:blue;"><?php echo $this->listUser[$count]['username'] ?></span>   :   <span><?php echo $comment['comment_time']; ?></span> đã bình luận :
-				</div>
-				<div style="margin:20px">
-					<?php echo $comment['comment_content']; ?>
-				</div>
-			</div>
-			<br style="clear:both">
-		<?php 
-			$count++;
+		}
+		else 
+		{
+			echo 'Tin bài này chưa có bình luận nào';
 		}
 		?>
 	</div>
