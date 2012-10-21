@@ -97,6 +97,7 @@
 		{
 			$input = array(
 						'category_name' 		=> $form->getValue('category_name'),
+						'alias' 				=> $this->getAliasByName($form->getValue('category_name')),
 						'category_parent_id'	=> $form->getValue('category_parent_id'),
 						'is_active'				=> $form->getValue('is_active'),
 			);

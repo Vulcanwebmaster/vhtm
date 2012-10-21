@@ -16,11 +16,12 @@ class IndexController extends Zend_Controller_Action
 		session_start();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	}
 
 	public function indexAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();

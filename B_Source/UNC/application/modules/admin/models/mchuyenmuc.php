@@ -33,7 +33,7 @@
 		
 		function insertCm($input)
 		{
-			$query=$this->db->query('insert into unc_category values ("","'.$input['category_name'].'","'.$input['category_parent_id'].'","'.$input['is_active'].'")');
+			$query=$this->db->query('insert into unc_category values ("","'.$input['category_name'].'","'.$input['alias'].'","'.$input['category_parent_id'].'","'.$input['is_active'].'")');
 			return $query;
 		}
 		
@@ -65,7 +65,7 @@
 		function editCm($id,$input)
 		{
 			$query=$this->db->query('update unc_category 
-									set category_name="'.$input['category_name'].'", category_parent_id="'.$input['category_parent_id'].'", is_active="'.$input['is_active'].'" 
+									set category_name="'.$input['category_name'].'", alias="'.$input['alias'].'", category_parent_id="'.$input['category_parent_id'].'", is_active="'.$input['is_active'].'" 
 									where category_id="'.$id.'"');
 			return $query;
 		}

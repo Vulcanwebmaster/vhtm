@@ -124,6 +124,7 @@
 				for ($i=0; $i<$countNews; $i++)
 				{
 					$new=array('news_title'=>$this->title[$i],
+								'alias'=>$this->getAliasByName($this->title[$i]),
 								'news_summary'=>$this->description[$i],
 								'news_content'=>$this->content[$i],
 								'news_author'=>'',
@@ -288,6 +289,7 @@
 		function _getInput($form)
 		{
 			$input=array('news_title'		=>	$form->getValue('news_title'),
+						'alias'				=>	$this->getAliasByName($form->getValue('news_title')),
 						'news_avatar'		=>	$form->getValue('news_avatar'),
 						'news_summary'		=>	$form->getValue('news_summary'),
 						'news_content'		=>	$form->getValue('news_content'),

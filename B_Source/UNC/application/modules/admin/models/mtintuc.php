@@ -118,6 +118,7 @@
 	function editnews($id,$input)
 	{
 		$news_title=$input['news_title'];
+		$news_alias=$input['alias'];
 		$news_summary=$this->replaceChar("'",'"', $input['news_summary']);
 		$news_avatar=$this->replaceChar("'",'"', $input['news_avatar']);
 		$news_content=$this->replaceChar("'",'"', $input['news_content']);
@@ -129,7 +130,7 @@
 		$is_hot = $input['is_hot'];
 		
 		$query=$this->db->query("update unc_news 
-								set news_title='".$news_title."', news_summary='".$news_summary."', news_avatar='".$news_avatar."', news_content='".$news_content."', news_author='".$news_author."', news_post_date='".$news_post_date."',news_modified_date='".$news_modified_date."',news_status='".$news_status."',category_id='".$category_id."',is_hot='".$is_hot."'
+								set news_title='".$news_title."',  alias='".$news_alias."', news_summary='".$news_summary."', news_avatar='".$news_avatar."', news_content='".$news_content."', news_author='".$news_author."', news_post_date='".$news_post_date."',news_modified_date='".$news_modified_date."',news_status='".$news_status."',category_id='".$category_id."',is_hot='".$is_hot."'
 								where news_id='".$id."'");
 		return $query;
 		//set news_title="'.$news_title.'", news_summary="'.$news_summary.'", news_content="'.$news_content.'", news_author="'.$news_author.'", news_post_date="'.$news_post_date.'",news_modified_date="'.$news_modified_date.'",news_status="'.$news_status.'",category_id="'.$category_id.'"
