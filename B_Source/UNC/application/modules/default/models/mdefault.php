@@ -15,7 +15,7 @@
 		
 		function getListHotNewsJs()
 		{
-			$query = $this->db->query('select * from unc_news where is_hot=1 order by rand() limit 4');
+			$query = $this->db->query('select * from unc_news where is_hot=1 order by news_post_date DESC limit 4');
 			return $query->fetchAll();
 		}
 		function getListAds()

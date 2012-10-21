@@ -71,7 +71,11 @@
         	    	<?php 
                     foreach($this->listHotNewsJs as $news)
 					{
-				      	if($news['news_avatar'] != "") echo $news['news_avatar'];
+				      	if($news['news_avatar'] != ""){
+				    ?>
+				      		 <a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>"><?php echo $news['news_avatar']; ?> </a>
+				    <?php
+				      	}
 						else
 							{
 								?>
@@ -93,7 +97,7 @@
 					{
 					?>
             <div class="thumb">
-                <div class="thumb-content"><p><?php echo $news['news_title']; ?></p></div>
+                <div class="thumb-content"><p><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>"><?php echo $news['news_title']; ?></a></p></div>
                 <div style="clear:both;"></div>
             </div>
             		<?php

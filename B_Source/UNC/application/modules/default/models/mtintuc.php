@@ -78,7 +78,7 @@
 			$query = $this->db->query('select * from unc_ads where category_id != 0');
 			return $query->fetchAll();
 		}
-		
+
 		function getCommentByNewsId($news_id)
 		{
 			$query = $this->db->query('select * from unc_comment where news_id = "'.$news_id.'" order by comment_id desc');

@@ -164,6 +164,7 @@ class TintucController extends Zend_Controller_Action
 		
 	function listAction()
 	{
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		$categoryId = $this->_request->getParam('categoryId');
 		if($this->mTintuc->isParent($categoryId))
 		{
