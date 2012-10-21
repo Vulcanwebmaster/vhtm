@@ -142,6 +142,7 @@
 		
 		function getListNewsByDate($start_time,$end_time)
 		{
-			$query = $this->db->query('select * from unc_news where news_post_date > "'.$start_time.'" and news_post_date < "'.$end_time.'"');
+			$query = $this->db->query('select * from unc_news where news_post_date between "'.$start_time.'" and  "'.$end_time.'" order by news_post_date desc');
+			return $query->fetchAll();
 		}
 	}

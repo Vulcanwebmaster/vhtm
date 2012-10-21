@@ -220,11 +220,10 @@ class TintucController extends Zend_Controller_Action
 		
 		if($this->_request->isPost())
 		{
-			$start_time = $this->_request->getPost();
-			$end_time = $this->_request->getPost();
+			$start_time = $this->_request->getPost('start_time');
+			$end_time = $this->_request->getPost('end_time');
 			
 			$listNews = $this->mTintuc->getListNewsByDate($start_time,$end_time);
-			
 			$paginator = Zend_Paginator::factory($listNews);
 	        $paginator->setItemCountPerPage(5);        
 	        $currentPage = $this->_request->getParam('page',1);

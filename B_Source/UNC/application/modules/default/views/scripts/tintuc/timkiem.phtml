@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/jquery.ui.all.css">
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.datepicker.js"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/demos.css">
+
+<script>
+	$(function() {
+		$( ".datepicker" ).datepicker();
+	});
+</script>
+<div style="margin-top:10px">
+	<?php 
+	if(count($this->list) > 0)
+	{
+		foreach($this->list as $news)
+		{
+	?>
+		<div style="margin-top:10px">
+	 			<?php
+	 				$str = $news['news_summary'];
+					$preg = preg_match_all('#<img.*/>#',$str,$match);
+					if($preg > 0)
+					{
+						?>
+							<a style="color:blue;" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
+						<?php
+						echo $match[0][0].'</a>';
+					} 
+					else 
+					{
+						?>
+							<a style="color:blue;" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
+								<img class="img130" src="http://dantri21.vcmedia.vn/zoom/130_100/I3KdHJtU0B3ELPKGaTLe/Image/2012/10/bovien-97975.jpg" alt="Hãi hùng bò viên">
+							</a>
+						<?php
+					}
+	 			?>
+	 		
+	 		<div>
+	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
+	  			<div style="margin-left:145px">
+	  				<?php
+	  				 	$str = $news['news_summary']; 
+						
+						$preg1 = preg_match_all('#<img.*/>#',$str,$match);
+						if($preg1 > 0)
+						{
+							$str = str_replace($match[0][0],"", $str);
+						}
+						
+						$preg2 = preg_match('#<br>.*</a>#',$str,$match);
+						if($preg2 > 0)
+						{
+							$str = str_replace($match[0],"", $str);
+						}
+						
+						echo $str;						
+						
+	  				?>
+	  			</div>
+	  			
+	  			<a style="float:right" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">Xem tiếp</a>
+	 		</div>
+	 	</div>
+	 	<br style="clear:both">
+	 	
+ 	<?php
+		}
+	}
+	else 
+	{
+	?>
+		<h3 style="margin:10px;color:red"><i>Chuyên mục này chưa có tin bài nào</i></h3>
+	<?php
+	}
+ 	?>
+</div>
+<div style="margin-top:30px;margin-left:20px" id="search">
+	<h3>Tìm kiếm tin tức theo ngày tháng</h3>
+	<form method="post" action="<?php echo $this->baseUrl(); ?>/tin-tuc/tim-kiem">
+	<table>
+		<tr>
+			<td style="padding-left: 10px;">Từ ngày : </td>
+			<td style="padding-left: 10px;"><input style="width: 207px;" type="text" name="start_time" class="datepicker"/></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 10px;">Đến ngày : </td>
+			<td style="padding-left: 10px;"><input style="width: 207px;" type="text" name="end_time" class="datepicker"/></td>
+		</tr>
+	</table>
+	<input style="margin-left:20%" type="submit" name="submit" value="Tìm kiếm" />
+	</form>
+	
+</div>
+
+<div style="margin-top:10px;float:right">
+<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+</div>
