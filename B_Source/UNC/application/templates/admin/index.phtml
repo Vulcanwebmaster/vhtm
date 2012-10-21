@@ -43,7 +43,29 @@
 	<a href="<?php echo $this->baseUrl();?>/admin">Website Admin</a>
 		<div class="breadcrumb_divider"></div> <a class="current">Dash Broad</a>
 	</article>
-</div></section><!-- end of secondary bar -->	
+	<article style="float:right;margin-right:25px" class="breadcrumbs">
+		<?php
+		if($this->role == "0")
+		{
+			?>
+				<a href="<?php echo $this->baseUrl();?>/admin/edit/index/userid/<?php echo $_SESSION['user_id']; ?>">View Profiles</a>
+			<?php
+		}
+		else if($this->role == "1")
+		{
+			?>
+				<a href="<?php echo $this->baseUrl();?>/admin/truongban/edit/userid/<?php echo $_SESSION['user_id']; ?>">View Profiles</a>
+			<?php		
+		}
+		else if($this->role == "2")
+		{
+			?>
+				<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $_SESSION['user_id']; ?>">View Profiles</a>
+			<?php		
+		}
+		?>
+	</article>
+	</div></section><!-- end of secondary bar -->	
 	<aside id="sidebar" class="column">
 				<hr/>
 <h3>Pages</h3>

@@ -1,0 +1,66 @@
+<script type="text/javascript">
+	
+</script>
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+</style>
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<?php 
+					if (isset($_SESSION['failed']))
+					{
+						echo '<p class="message">';
+						echo $_SESSION['failed'];
+						echo '</p>';
+						unset($_SESSION['failed']);
+					}
+					if (isset($_SESSION['success']))
+					{
+						echo '<p class="message">';
+						echo $_SESSION['success'];
+						echo '</p>';
+						unset($_SESSION['success']);
+					}
+				?>
+				<fieldset>
+					<label>Tên đăng nhập</label>
+					<?php echo $this->form->getElement('user_login');?>
+					<?php if (isset($_SESSION['result']))
+					{
+						echo '<p class="message">';
+						echo $_SESSION['result'];
+						echo '</p>';
+						unset($_SESSION['result']);
+					}
+					?>
+				</fieldset>
+				<fieldset>
+					<label>Mật khẩu</label>
+					<?php echo $this->form->getElement('user_pass');?>
+				</fieldset>
+				<fieldset>
+					<label>Họ tên</label>
+					<?php echo $this->form->getElement('user_fullname');?>
+				</fieldset>
+				<fieldset>
+					<label>Email</label>
+					<?php echo $this->form->getElement('user_email');?>
+				</fieldset>
+				<fieldset>
+					<label>Địa chỉ</label>
+					<?php echo $this->form->getElement('user_address');?>
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>

@@ -2,15 +2,20 @@
 class Admin_IndexController extends Zend_Controller_Action
 {
 	protected $mAdmin;
+	protected $role,$user_id;
 	public function  init()
 	{
-	      $layoutPath = APPLICATION_PATH  . '/templates/admin';
-	      $option = array ('layout' => 'index', 
+	     	$layoutPath = APPLICATION_PATH  . '/templates/admin';
+	     	$option = array ('layout' => 'index', 
 	                   'layoutPath' => $layoutPath );
-	      Zend_Layout::startMvc ( $option );
-	      
-	      $this->mAdmin=new Admin_Model_Madmin();
-	      session_start();		  
+	    	Zend_Layout::startMvc ( $option );
+	      	
+	     	$this->mAdmin=new Admin_Model_Madmin();
+	     	session_start();
+			if(isset($_SESSION['role'])){
+				$this->role = $_SESSION['role'];
+				$this->view->role = $this->role;
+			}
 	}
 	public function indexAction()
 	{

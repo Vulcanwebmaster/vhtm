@@ -51,5 +51,28 @@
 			$list = $query->fetchAll();
 			return $list;
 		}
+		
+		function getUserByUserId($user_id)
+		{
+			$query = $this->db->query('select * from unc_user where user_id = "'.$user_id.'"');
+			$list = $query->fetchAll();
+			return $list[0];
+		}
+		
+		function editUser($id,$input)
+		{
+			$query=$this->db->query('update unc_user 
+									set user_login="'.$input['user_login'].'", user_pass="'.$input['user_pass'].'", user_fullname="'.$input['user_fullname'].'", user_email="'.$input['user_email'].'", user_address="'.$input['user_address'].'" 
+									where user_id="'.$id.'"');
+			return $query;
+		}
+		
+		function isExitsUsername($username)
+		{
+			$query=$this->db->query('select * from unc_user where user_login="'.$username.'"');
+			if (count($query->fetchAll())>0)
+				return true;
+			else return false;
+		}
 	}
 ?>

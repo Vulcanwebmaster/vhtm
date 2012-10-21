@@ -286,7 +286,6 @@
 							{
 								if($this->mChuyenmuc->delManageCategoryByUserId($userId))
 								{
-									die();
 									foreach($_POST['checkbox'] as $check)
 									{
 										$this->mChuyenmuc->insertUserForCategory($userId,$check);
