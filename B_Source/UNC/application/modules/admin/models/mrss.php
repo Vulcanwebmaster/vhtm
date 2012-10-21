@@ -1,7 +1,7 @@
 <?php
-	class Admin_Model_Mgetnews extends Zend_Db_Table_Abstract
+	class Admin_Model_Mrss extends Zend_Db_Table_Abstract
 	{
-		protected $_name='unc_campaign';
+		protected $_name='unc_rss';
 		private $db;
 		function __construct()
 		{
@@ -9,9 +9,9 @@
 			$this->db=Zend_Registry::get('db');
 		}
 		
-		function getListCampaigns()
+		function getListRssByCampaignId($campaign_id)
 		{
-			$query=$this->db->query("select * from unc_campaign");
+			$query=$this->db->query("select * from unc_rss where campaign_id='".$campaign_id."'");
 			return $query->fetchAll();
 		}
 		
@@ -33,6 +33,15 @@
 			$where="id='".$id."'";
 			$result=$this->update($data, $where);
 			return $result;
+		}
+		
+		function getCampaignByName($name)
+		{
+			$query=$this->db->query("select * from unc_campaign where name='".$name."'");
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 		
 		function getCampaignById($id)
