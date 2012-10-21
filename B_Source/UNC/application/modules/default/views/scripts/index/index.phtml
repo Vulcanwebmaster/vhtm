@@ -12,7 +12,7 @@
 									if($child['category_parent_id'] == $parent['category_id'])
 									{
                         		?>
-                            		<li><a href="<?php echo $this->baseUrl(); ?>/tintuc/list/categoryId/<?php echo $child['category_id']; ?>"><?php echo $child['category_name']; ?></a></li><li>|</li>
+                            		<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id']; ?>-<?php echo $child['alias']; ?>.html"><?php echo $child['category_name']; ?></a></li><li>|</li>
                             	<?php
 									}
 								}
@@ -53,7 +53,7 @@
                         	    {
 									{
                         		?>
-                            		<a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $childTintuc['news_id']; ?>"><?php echo $childTintuc['news_title']; ?></a>
+                            		<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $childTintuc['news_id']; ?>-<?php echo $childTintuc['alias']; ?>.html"><?php echo $childTintuc['news_title']; ?></a>
                             		</p>
                         				<p><?php 
 										$str = $childTintuc['news_summary']; 
@@ -105,7 +105,7 @@
 									{
 											?>
 											<li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/sao.png"/>
-											<a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $tintuc['news_id']; ?>"><?php echo $tintuc['news_title'];?></a>
+											<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $tintuc['news_id']; ?>-<?php echo $tintuc['alias']; ?>.html"><?php echo $tintuc['news_title'];?></a>
 											</li>
 											<?php
 									}

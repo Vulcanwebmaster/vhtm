@@ -26,7 +26,7 @@
 		
 		function getListMostView()
 		{
-			$query = $this->db->query('select distinct news_title,news_id from unc_news order by viewer_number desc limit 6');
+			$query = $this->db->query('select distinct news_title,news_id,alias from unc_news order by viewer_number desc limit 6');
 			return $query->fetchAll();
 		}
 		
