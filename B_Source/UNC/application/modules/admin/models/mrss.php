@@ -15,26 +15,6 @@
 			return $query->fetchAll();
 		}
 		
-		function insertCampaign($input)
-		{
-			$result=$this->insert($input);
-			return $result;
-		}
-		
-		function deleteCampaign($id)
-		{
-			$where="id='".$id."'";
-			$result=$this->delete($where);
-			return $result;
-		}
-		
-		function editCampaign($id,$data)
-		{
-			$where="id='".$id."'";
-			$result=$this->update($data, $where);
-			return $result;
-		}
-		
 		function getCampaignByName($name)
 		{
 			$query=$this->db->query("select * from unc_campaign where name='".$name."'");
@@ -51,5 +31,40 @@
 			if (count($list)>0)
 				return $list[0];
 			else return false;
+		}
+		
+		function getListCampaign()
+		{
+			$query=$this->db->query("select * from unc_campaign");
+			return $query->fetchAll();
+		}
+		
+		function insertRss($data)
+		{
+			$result=$this->insert($data);
+			return $result;
+		}
+		
+		function delRssById($id)
+		{
+			$where="id='".$id."'";
+			$result=$this->delete($where);
+			return $result;
+		}
+		
+		function getRssById($id)
+		{
+			$query=$this->db->query("select * from unc_rss where id='".$id."'");
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
+		
+		function updateRss($id, $data)
+		{
+			$where="id='".$id."'";
+			$result=$this->update($data, $where);
+			return $result;
 		}
 	}
