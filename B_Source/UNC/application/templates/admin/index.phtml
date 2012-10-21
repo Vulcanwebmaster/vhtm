@@ -45,19 +45,19 @@
 	</article>
 	<article style="float:right;margin-right:25px" class="breadcrumbs">
 		<?php
-		if($this->role == "0")
+		if($_SESSION['role'] == "0")
 		{
 			?>
 				<a href="<?php echo $this->baseUrl();?>/admin/edit/index/userid/<?php echo $_SESSION['user_id']; ?>">View Profiles</a>
 			<?php
 		}
-		else if($this->role == "1")
+		else if($_SESSION['role'] == "1")
 		{
 			?>
 				<a href="<?php echo $this->baseUrl();?>/admin/truongban/edit/userid/<?php echo $_SESSION['user_id']; ?>">View Profiles</a>
 			<?php		
 		}
-		else if($this->role == "2")
+		else if($_SESSION['role'] == "2")
 		{
 			?>
 				<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $_SESSION['user_id']; ?>">View Profiles</a>
