@@ -39,7 +39,7 @@
                 	  <?php foreach($this->listParent as $parent)
 					  {
 					  ?>
-                    <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-<?php echo $parent['alias']; ?>"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>|
+                    <li class="top"><a class="top_link" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-<?php echo $parent['alias']; ?>.html"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a>|
                     	<ul class="sub">     
                         		<?php
                         		foreach($this->listChild as $child)
