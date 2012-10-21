@@ -41,8 +41,8 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #right-slide{ width:273px; height:245px; float:left; padding-left:5px; padding-top: 5px;}
 #rsl-1{ margin-bottom:35px;}
 
-#rs1{ background-color:red; border-bottom-left-radius:5px; border-top-left-radius:5px; width:135px; height:25px; float:left; line-height:10px}
-#rs1 p{margin-top:5px; text-transform:uppercase; color:#FFF;}
+#rs1{ background-color:red; border-bottom-left-radius:5px; border-top-left-radius:5px; width:135px; height:25px; float:left}
+#rs1 p{text-transform:uppercase; color:#FFF;}
 #rs2{ background-color:#d9d9d9; width:137px; height:25px; float:left;}
 #rs2 p{ margin:5px 0 0 5px; text-transform:uppercase;}
 #img {margin:5px 5px 0 5px; float:left;}
