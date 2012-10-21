@@ -41,18 +41,20 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #right-slide{ width:273px; height:245px; float:left; padding-left:5px; padding-top: 5px;}
 #rsl-1{ margin-bottom:35px;}
 
-#rs1{ background-color:red; border-bottom-left-radius:5px; border-top-left-radius:5px; width:135px; height:25px; float:left}
-#rs1 p{text-transform:uppercase; color:#FFF;}
-#rs2{ background-color:#d9d9d9; width:137px; height:25px; float:left;}
+#rs1{ border-bottom-left-radius:5px; border-top-left-radius:5px; width:135px; height:25px; float:left;background-color:#d9d9d9}
+#rs1 p{text-transform:uppercase; color:black}
+#rs2{ background-color:#d9d9d9; width:137px; height:25px; float:left; cursor: pointer}
 #rs2 p{ margin:5px 0 0 5px; text-transform:uppercase;}
 #img {margin:5px 5px 0 5px; float:left;}
 
 /*----------tiennd------------*/
+.togger_view{background-color:red !important; cursor:pointer !important}
+.togger_view p{color:white !important;}
 #detail{font-size:12pt;font-family: times new roman;}
 .video a{text-decoration:none;}
-.video a:hover{color:red}
+/*.video a:hover{color:red}*/
 #rs1 p:hover{color:black;cursor:pointer;}
-#rs2 p:hover{color:red;cursor:pointer;}
+/*#rs2 p:hover{color:red;cursor:pointer;}*/
 .risl-2 a:hover{ color:red;}
 .risl-2 a{ margin-left:10px;text-decoration:none; color:#FFF;cursor:pointer;}
 #detail h1
