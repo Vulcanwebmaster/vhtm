@@ -7,11 +7,11 @@
 		{
 	?>
 		<div class="video">
-			<a style="color:blue;" href="#" title="<?php echo $video['video_title']; ?>">
+			<a style="color:blue;" href="<?php echo $this->baseUrl(); ?>/video/detail/videoid/<?php echo $video['video_id']; ?>" title="<?php echo $video['video_title']; ?>">
 				<img class="img130" src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg"/>
 			</a>
 	 		<div>
-	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><?php echo $video['video_title']; ?></h3>
+	  			<a href="<?php echo $this->baseUrl(); ?>/video/detail/videoid/<?php echo $video['video_id']; ?>"><h3 style="color:blue;margin-left:145px;margin-top:-92px"><?php echo $video['video_title']; ?></h3></a>
 	  			<div style="margin-left:145px">
 					<?php echo $video['video_description']; ?>
 	  			</div>

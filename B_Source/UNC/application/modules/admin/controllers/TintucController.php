@@ -119,7 +119,7 @@
 		{	
 			//foreach ($this->dantri as $linkrss)
 			{
-				 $this->getListByLink($this->dantri[0]);
+				$this->getListByLink($this->dantri[0]);
 				$countNews=count($this->title);
 				for ($i=0; $i<$countNews; $i++)
 				{

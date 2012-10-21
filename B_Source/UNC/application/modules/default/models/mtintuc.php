@@ -130,7 +130,7 @@
 		
 		function insertComment($reader_id,$news_id,$comment_content)
 		{
-			$query=$this->db->query('insert into unc_comment value ("","'.$comment_content.'","'.$news_id.'","'.$reader_id.'")');
+			$query = $this->db->query('insert into unc_comment value ("","'.$comment_content.'","'.$news_id.'","'.$reader_id.'")');
 			return $query;
 		}
 		

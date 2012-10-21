@@ -48,10 +48,13 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #img {margin:5px 5px 0 5px; float:left;}
 
 /*----------tiennd------------*/
+#detail{font-size:12pt;font-family: times new roman;}
+.video a{text-decoration:none;}
+.video a:hover{color:red}
 #rs1 p:hover{color:black;cursor:pointer;}
 #rs2 p:hover{color:red;cursor:pointer;}
 .risl-2 a:hover{ color:red;}
-.risl-2 a{ margin-left:15px;text-decoration:none; color:#FFF;cursor:pointer;}
+.risl-2 a{ margin-left:10px;text-decoration:none; color:#FFF;cursor:pointer;}
 #detail h1
 {
 	font-size: 24px;

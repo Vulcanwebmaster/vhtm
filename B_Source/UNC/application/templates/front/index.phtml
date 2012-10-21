@@ -126,7 +126,7 @@
 							<div class="risl-2"><a href="<?php echo $this->baseUrl(); ?>/tintuc/detail/newsid/<?php echo $news['news_id']; ?>">
 								<?php 
 									$charset = 'utf-8';
-									$len = 40;
+									$len = 35;
 									$string = $news['news_title']; 
 									$string = html_entity_decode($string, ENT_QUOTES, $charset);
 									if(mb_strlen($string, $charset)> $len)
@@ -186,6 +186,10 @@
         <div style="clear:both;height:0;"></div>
     </div>
     </div>
+    	<?php
+    		if(isset($_SESSION['home']))
+			{
+    	?>
             <div id="note-slide">
             	<div id="text-slide">
                 	<p class="tieude">Những sai lầm dễ mắc phải khi tập luyện</p>
@@ -213,6 +217,7 @@
                 	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/RUA.png" />                    
                 </div>
             </div>
+            
         </div>
        </div>
         <!---------------end slide------------>
@@ -235,6 +240,10 @@
             	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_52.png"/>
             </div>
         </div>
+        
+        <?php
+        }
+        ?>
         <!---------------end ads----------->
         
         <!---------------begin news---------->
@@ -251,9 +260,11 @@
             <div id="video">
             	<div id="tube">
                 	<div id="vd">Video Clip</div>
-                	<object width="300" height="230" style="margin-left:15px;"><param name="movie" value="http://www.youtube.com/watch?v=syPTDwFwEkk&feature=relmfu"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/watch?v=syPTDwFwEkk&feature=relmfu" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="300" height="230"></embed></object>
+                	<object width="300" height="230" style="margin-left:15px;">
+                		<iframe width="300" height="230" src="http://www.youtube.com/embed/QlvTZdlgfdU" frameborder="0" allowfullscreen></iframe>
+                	</object>
 
-
+					
                 </div>
                 <?php
                        		foreach($this->listquangcao as $quangcao)

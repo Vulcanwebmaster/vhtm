@@ -1,5 +1,7 @@
 <div style="margin-top:10px">
 	<?php 
+	if(count($this->list) > 0)
+	{
 		foreach($this->list as $news)
 		{
 	?>
@@ -54,6 +56,13 @@
 	 	
  	<?php
 		}
+	}
+	else 
+	{
+	?>
+		<h3 style="margin:10px;color:red"><i>Chuyên mục này chưa có tin bài nào</i></h3>
+	<?php
+	}
  	?>
 </div>
 <div style="margin-top:40px;float:right">

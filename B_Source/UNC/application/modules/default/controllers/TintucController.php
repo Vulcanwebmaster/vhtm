@@ -14,6 +14,8 @@ class TintucController extends Zend_Controller_Action
 		
 	    $this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
+		
+		unset($_SESSION['home']);
 	}
 	
 	function setForm1($newsId,$readerId)
@@ -35,13 +37,13 @@ class TintucController extends Zend_Controller_Action
 	{
 		$form=new Zend_Form;
 		//$this->view->baseUrl().'/tintuc/detail/newsid/'.$newsId
-		$form->setMethod('post')->setAction($this->view->baseUrl().'/tintuc/login/newsid/'.$news_id);
+		$form->setMethod('post')->setAction('');
 			
 		$user_name = new Zend_Form_Element_Text('user_name');
 		$user_name->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên đăng nhập không được để trống'));
 			
 		$pass_word = new Zend_Form_Element_Password('pass_word');
-		//$pass_word->setAttrib('renderPassword', true);
+		$pass_word->setAttrib('renderPassword', true);
 		$pass_word->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mật khẩu không được để trống'));
 		
 		$user_name->removeDecorator('HtmlTag')->removeDecorator('Label');	
@@ -64,60 +66,67 @@ class TintucController extends Zend_Controller_Action
 	{
 		$news_id = $this->_request->getParam('newsid');
 		$reader_id = $this->_request->getParam('readerid');
-		$form1 = $this->setForm1($news_id,$reader_id);
-		if($this->_request->isPost())
+		
+		$comment_content = $this->_request->getPost('comment_content');
+		$comment_content = trim($comment_content);
+		//echo strlen($comment_content);die();
+		if($comment_content == "")
 		{
-			if($form1->isValid($_POST))
-			{
-				$comment_content = $form1->getValue('comment_content');
-				$this->mTintuc->insertComment($reader_id,$news_id,$comment_content);
-			}
-			else 
-			{
-				$form1->populate($_POST);
-			}
-			$this->_redirect($this->view->baseUrl().'/../tintuc/detail/newsid/'.$news_id);
+			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';
 		}
+		else if($comment_content != "")
+		{
+			if(strlen($comment_content) > 600)
+				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 600 kí tự, vui lòng thử lại !';
+			else
+				$this->mTintuc->insertComment($reader_id,$news_id,$comment_content);
+		}
+		$this->_redirect($_SERVER['HTTP_REFERER']);	
 	}	
 	
 	function loginAction()
 	{
 		$news_id = $this->_request->getParam('newsid');
+		//echo $news_id;die();
 		$form = $this->setForm($news_id);
 		
-		if($form->isValid($_POST))
+		if($this->_request->isPost())
 		{
-			$user_name = $form->getValue('user_name');
-			$pass_word = $form->getValue('pass_word');
-					
-			if($this->mTintuc->isUserName($user_name))
+			if($form->isValid($_POST))
 			{
-				$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
-				$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
+				$user_name = $form->getValue('user_name');
+				$pass_word = $form->getValue('pass_word');
 						
-				$pass_word = md5(md5($pass_word).$pass_word_salt);
-					//echo $pass_word;die();
-				if($pass_word == $pass_word_forum)	
+				if($this->mTintuc->isUserName($user_name))
 				{
-					$_SESSION['logged'] = $user_name;
-					$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
-				}		
+					$pass_word_salt = $this->mTintuc->getSaltByUserName($user_name);
+					$pass_word_forum = $this->mTintuc->getPassWordByUserName($user_name);
+							
+					$pass_word = md5(md5($pass_word).$pass_word_salt);
+						//echo $pass_word;die();
+					if($pass_word == $pass_word_forum)	
+					{
+						$_SESSION['logged'] = $user_name;
+						$_SESSION['reader_id'] = $this->mTintuc->getUserIdByUserNameForum($user_name);
+					}		
+					else 
+					{
+						$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng !';	
+					}
+				}
 				else 
 				{
-					$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';	
+					$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng !';
 				}
 			}
-			else 
+			else
 			{
-				$_SESSION['fail'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
+				$_SESSION['fail'] = 'Vui lòng nhập đầy đủ thông tin !';
+				$form->populate($_POST);
 			}
 		}
-		else
-		{
-			$form->populate($_POST);
-		}
 		
-		$this->_redirect($this->view->baseUrl().'/../tintuc/detail/newsid/'.$news_id);	
+		$this->_redirect($_SERVER['HTTP_REFERER']);	
 	}
 	
 	function detailAction()
@@ -131,10 +140,10 @@ class TintucController extends Zend_Controller_Action
 
 		$news_id = $this->_request->getParam('newsid');
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
-		
+		  
 		$this->view->news = $news;
 		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
-		
+
 		$listUser = array();
 		foreach($this->mTintuc->getCommentByNewsId($news_id) as $comment)
 		{
@@ -146,7 +155,6 @@ class TintucController extends Zend_Controller_Action
 				}
 			}
 		}
-		
 		$this->view->listUser = $listUser;
 		
 		$listParents=$this->mTintuc->getListParent();
@@ -210,6 +218,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao=$listquangcao;
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
+		
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
@@ -221,7 +230,6 @@ class TintucController extends Zend_Controller_Action
 	{
 		session_destroy();
 		$this->_redirect($_SERVER['HTTP_REFERER']);
-		
 	}
 	
 }
