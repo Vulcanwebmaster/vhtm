@@ -123,7 +123,7 @@
 		</div>
 		
 		<footer>
-			<div class="submit_link">
+			<div class="submit_link" style="float:right">
 					<?php
 						if($this->role=="0")
 						{
@@ -135,8 +135,11 @@
 					<a class="alt_btn" style="margin-left: 10px;" href="<?php echo $this->baseUrl('admin/uploadvideo/insert');?>">Thêm mới video</a>
 			
 					<a class="alt_btn" style="margin-left: 10px;" href="<?php echo $this->baseUrl('admin/uploadvideo/upload');?>">Upload video</a>
-				<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+				?>
 			</div>
+			<div class="submit_link" style="float:left; font-weight: bold;">
+					<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+				</div>
 		</footer>
 	</div>
 </article>
