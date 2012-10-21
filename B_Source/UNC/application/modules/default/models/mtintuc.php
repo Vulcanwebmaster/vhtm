@@ -130,8 +130,13 @@
 		
 		function insertComment($reader_id,$news_id,$comment_content)
 		{
-			$query = $this->db->query('insert into unc_comment value ("","'.$comment_content.'","'.$news_id.'","'.$reader_id.'")');
+			$query = $this->db->query('insert into unc_comment value ("","'.$comment_content.'","'.$news_id.'","'.$reader_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
 			return $query;
 		}
 		
+		function getListAvatar()
+		{
+			$query = $this->forum->query('select userid,dateline from customavatar');
+			return $query->fetchAll();
+		}
 	}

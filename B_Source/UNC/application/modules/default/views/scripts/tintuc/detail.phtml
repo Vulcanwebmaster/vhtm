@@ -71,22 +71,36 @@
 		<hr/>
 		<h3>Danh sách bình luận</h3>
 		<hr/>
-		<?php
+		<?php 
 		$count = 0;
-		if($this->listComment > 0)
+		foreach($this->listComment as $comment)
 		{
-			foreach($this->listComment as $comment)
+			if($this->listImage[$count] == 0)
 			{
 			?>
-				<div>
-					<h3 style="margin-left:40px"><i><?php if(isset($this->listUser[$count])) echo $this->listUser[$count]['username']; else echo 'Người gửi đã bị xóa';?></i></h3>
-					<p style="margin-left:50px"><?php echo $comment['comment_content']; ?></p>
-				</div>
-				<hr/>
-			<?php
+				<img alt="" src="http://1.gravatar.com/avatar/b0eb17f97a5c244abfd54d0192e00a4d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G" class="avatar avatar-68 photo" height="68" width="68">
+			<?php 
 			}
+			else
+			{
+				?>
+					<img alt="" src="<?php echo $this->baseUrl(); ?>/forum/image.php?u=1&dateline=<?php echo $this->listImage[$count]; ?>" class="avatar avatar-68 photo" height="68" width="68">
+				<?php
+			}
+			
+			?>
+			<div style="#373737;background-color:#E4E4E4;margin-left:80px;margin-top:-67px;border-radius: 5px;border: 1px solid #ddd;padding: 10px;width:85%">
+				<div style="margin-left:10px">
+					<span style="color:blue;"><?php echo $this->listUser[$count]['username'] ?></span>   :   <span><?php echo $comment['comment_time']; ?></span> đã bình luận :
+				</div>
+				<div style="margin:20px">
+					<?php echo $comment['comment_content']; ?>
+				</div>
+			</div>
+			<br style="clear:both">
+		<?php 
+			$count++;
 		}
 		?>
 	</div>
-	
 </div>

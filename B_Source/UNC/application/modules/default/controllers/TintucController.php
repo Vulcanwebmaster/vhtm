@@ -62,14 +62,26 @@ class TintucController extends Zend_Controller_Action
 		var_dump($user);die();
 	}
 	
+	function checkSql($data) 
+	{
+		$data = trim(htmlentities(strip_tags($data)));
+		
+		if (get_magic_quotes_gpc()) 
+			$data = stripslashes($data);
+		
+		$data = mysql_real_escape_string($data);
+		
+		return $data;
+	}
+	
 	function addcommentAction()
 	{
 		$news_id = $this->_request->getParam('newsid');
 		$reader_id = $this->_request->getParam('readerid');
 		
 		$comment_content = $this->_request->getPost('comment_content');
-		$comment_content = trim($comment_content);
-		//echo strlen($comment_content);die();
+		$comment_content = $this->checkSql($comment_content);
+		
 		if($comment_content == "")
 		{
 			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';
@@ -79,7 +91,12 @@ class TintucController extends Zend_Controller_Action
 			if(strlen($comment_content) > 600)
 				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 600 kí tự, vui lòng thử lại !';
 			else
-				$this->mTintuc->insertComment($reader_id,$news_id,$comment_content);
+			{
+				if(!$this->mTintuc->insertComment($reader_id,$news_id,$comment_content))
+				{
+					$_SESSION['fail'] = 'Không thể chèn nội dung bình luận !';
+				}
+			}
 		}
 		$this->_redirect($_SERVER['HTTP_REFERER']);	
 	}	
@@ -131,7 +148,6 @@ class TintucController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
-		//unset($_SESSION['logged']);
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
@@ -155,6 +171,23 @@ class TintucController extends Zend_Controller_Action
 				}
 			}
 		}
+
+		$listImage = array();
+		$listAvatar = $this->mTintuc->getListAvatar();
+		foreach($listUser as $user)
+		{
+			$count = 0;
+			foreach($listAvatar as $avatar)
+			{
+				if($avatar['userid'] == $user['userid'])
+				{
+					$count = 1;break;
+				}
+			}
+			if($count == 1) $listImage[] = $avatar['dateline'];
+				else $listImage[] = 0;
+		}
+		$this->view->listImage = $listImage;
 		$this->view->listUser = $listUser;
 		
 		$listParents=$this->mTintuc->getListParent();
