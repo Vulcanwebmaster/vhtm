@@ -70,7 +70,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
         	$this->view->list=$paginator;
-			$this->view->role = 	$this->role;
+			$this->view->role = $this->role;
 			}
 			
 			$this->view->title="Quản lý mục quảng cáo";

@@ -9,8 +9,8 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #right-header{ height:63px; width:auto; border:1px solid #bbbbbb; float:left; margin-top:37px; margin-left:160px; border-right:0;}
 #right-header1{ height:64px; width:17px; background-image:url(../images/NEN_06.png); background-repeat:no-repeat; float:left;}
 .right-header2{ float:left; width:170px; padding:0 15px 0 15px; border-right:1px solid #bbbbbb; height:63px;}
-.img-header{ height:100%; float:left; width:63px;}
-#header p{ float:left; font-weight:bold; height:100%; width:100px; padding-left:5px;}
+.img-header p img{ height:63px !important; float:left; width:63px;}
+#header p{ float:left; font-weight:bold; height:100%; width:100px; padding: 0 4px 0 0; margin: 0;}
 #header label{ color:red;}
 /*----------------end header------------------*/
 

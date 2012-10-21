@@ -77,7 +77,7 @@
 							},
 							{
 								key: 'ads_banner',
-								label: 'Biểu ngữ',
+								label: 'Nội dung',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true 
@@ -106,7 +106,7 @@
 							},
 							{
 								key: 'Ngày kết thúc',
-								label:'Tên',
+								label:'Ngày kết thúc',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true
@@ -141,7 +141,7 @@
 			</div>
 		</div>
 		<footer>
-				<div class="submit_link">
+				<div class="submit_link" style="float:right">
 				<?php
 				if($this->role=="0")
 				{
@@ -150,7 +150,7 @@
 				<?php } ?>
 				</div>
 				
-				<div class="submit_link">
+				<div class="submit_link" style="float:left; font-weight: bold;">
 					<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 				</div>
 		</footer>
