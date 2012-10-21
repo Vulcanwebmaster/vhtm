@@ -147,6 +147,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$form=$this->setForm();
 			$this->view->list = $mquangcao->getListQC();
 			$this->view->query = $mquangcao->getOne($this->getRequest()->getParam('id'));
+			$info = $mquangcao->getOne($this->getRequest()->getParam('id'));
 			$this->view->title="Sửa thông tin quảng cáo";
 			$form->getElement('ads_position')->setValue($info['ads_position']);
 			//var_dump($mquangcao->getOne($this->getRequest()->getParam('id')));die();
