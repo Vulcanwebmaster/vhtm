@@ -18,25 +18,20 @@
 		{
 	?>
 		<div style="margin-top:10px">
+				<a class="news_avatar" style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
 	 			<?php
-	 				$str = $news['news_summary'];
-					$preg = preg_match_all('#<img.*/>#',$str,$match);
-					if($preg > 0)
+					if(isset($news['avatar']))
 					{
-						?>
-							<a style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
-						<?php
-						echo $match[0][0].'</a>';
+						echo $news['news_avatar'];
 					} 
 					else 
 					{
 						?>
-							<a style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
-								<img class="img130" src="http://dantri21.vcmedia.vn/zoom/130_100/I3KdHJtU0B3ELPKGaTLe/Image/2012/10/bovien-97975.jpg" alt="Hãi hùng bò viên">
-							</a>
+							<img src="<?php echo $this->baseUrl(); ?>/application/templates/front/images/logo.png" alt="Văn hóa thể thao"/>
 						<?php
 					}
 	 			?>
+	 			</a>
 	 		
 	 		<div style="float:right">
 	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a style="color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>

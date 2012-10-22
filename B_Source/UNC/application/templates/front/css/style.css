@@ -48,6 +48,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #img {margin:5px 5px 0 5px; float:left;}
 
 /*----------tiennd------------*/
+.news_avatar img{ width:135px !important;height:104px !important}
 .listNewest a:hover{color:red}
 .listNewest a{text-decoration:none;}
 .togger_view{background-color:red !important; cursor:pointer !important}
