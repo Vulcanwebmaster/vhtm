@@ -160,8 +160,6 @@ class VideoController extends Zend_Controller_Action
 		$comment_content = trim($comment_content);
 		$comment_content = $this->checkSql($comment_content);
 		
-		echo $comment_content;die();
-		//$comment_content = html_entity_decode($comment_content, ENT_QUOTES, 'UTF-8');
 		if($comment_content == "")
 		{
 			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';

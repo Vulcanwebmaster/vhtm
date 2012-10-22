@@ -10,7 +10,7 @@
 		$( ".datepicker" ).datepicker();
 	});
 </script>
-<div style="margin-top:10px">
+<div style="margin-top:30px">
 	<?php 
 	if(count($this->list) > 0)
 	{
@@ -55,7 +55,7 @@
 						{
 							$str = str_replace($match[0],"", $str);
 						}
-						
+						$str = strip_tags($str);
 						echo $str;						
 	  				?>
 	  			</div>

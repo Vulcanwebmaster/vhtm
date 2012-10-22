@@ -5,7 +5,7 @@
 	</style>
 <?php 
 	if (isset($this->previous)){
-  		echo '<a href="' . $this->url(array('page' => $this->previous)). '"> &lt; Previous</a>  ';
+  		echo '<a href="' . $this->url(array('page' => $this->previous)). '"> &lt; Trước</a>  ';
 	}
 	foreach ($this->pagesInRange as $page){
 	   if ($page != $this->current){
@@ -15,7 +15,7 @@
 	  }
    }
 	 if (isset($this->next)){
-		echo '<a href="' . $this->url(array('page' => $this->next)) . '">Next &gt;</a>';
+		echo '<a href="' . $this->url(array('page' => $this->next)) . '">Sau &gt;</a>';
   	 }
   ?>
 </div>
