@@ -157,6 +157,7 @@ class TintucController extends Zend_Controller_Action
 		$news_id = $this->_request->getParam('newsid');
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news_id);
+		
 		$parentId = $this->mTintuc->getParentByChild($categoryid);
 		$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
 		$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
@@ -224,11 +225,11 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
 	}
 	
+	
 	function timkiemAction()
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
-		$listquangcao = $this->mDefault->getListAds();
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
@@ -238,7 +239,6 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 
-		$this->view->listquangcao = $listquangcao;
 		$this->view->listquangcao = $this->mDefault->getListAds();
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
@@ -249,28 +249,32 @@ class TintucController extends Zend_Controller_Action
 		
 		if($this->_request->isPost())
 		{
-			$start_time = $this->_request->getPost('start_time');
-			$end_time = $this->_request->getPost('end_time');
-			
-			$listNews = $this->mTintuc->getListNewsByDate($start_time,$end_time);
+			$_SESSION['start_time'] = $this->_request->getPost('start_time');
+			$_SESSION['end_time'] = $this->_request->getPost('end_time');
+		}
+		
+		if(isset($_SESSION['start_time']))
+		{
+			$listNews = $this->mTintuc->getListNewsByDate($_SESSION['start_time'],$_SESSION['end_time']);
 			$paginator = Zend_Paginator::factory($listNews);
-	        $paginator->setItemCountPerPage(5);        
-	        $currentPage = $this->_request->getParam('page',1);
-	        $paginator->setCurrentPageNumber($currentPage);
-			
-	        $this->view->list = $paginator;
+			$paginator->setItemCountPerPage(5);        
+			$currentPage = $this->_request->getParam('page',1);
+			$paginator->setCurrentPageNumber($currentPage);
+					
+			$this->view->list = $paginator;
 		}
 	}
 	
 	function listAction()
 	{
-		$categoryId = $this->_request->getParam('categoryId');
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
+		$categoryid = $this->_request->getParam('categoryId');
 		$is_parent = 0;
 		
-		if($this->mTintuc->isParent($categoryId))
+		if($this->mTintuc->isParent($categoryid))
 		{
 			$is_parent = 1;
-			$listCategoryId = $this->mTintuc->getListChildByParent($categoryId);
+			$listCategoryId = $this->mTintuc->getListChildByParent($categoryid);
 			//var_dump($listCategoryId);die();
 			$listHot = array();
 			$listHotNews = $this->mTintuc->getListHotNews();
@@ -316,8 +320,8 @@ class TintucController extends Zend_Controller_Action
 		}
 		else 
 		{
-			$list = $this->mTintuc->getListNewsByCategoryId($categoryId);
-			$listquangcao = $this->mTintuc->getListAdsByCategoryId($categoryId);
+			$list = $this->mTintuc->getListNewsByCategoryId($categoryid);
+			$listquangcao = $this->mTintuc->getListAdsByCategoryId($categoryid);
 			$this->view->listHotNews = $this->mDefault->getListHotNews();
 		}
 		
@@ -327,9 +331,14 @@ class TintucController extends Zend_Controller_Action
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		
-		$parentId = $this->mTintuc->getParentByChild($categoryId);
-		$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryId);
-		$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
+		if($is_parent == "1") 
+			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
+		else 
+		{
+			$parentId = $this->mTintuc->getParentByChild($categoryid);
+			$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
+			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
+		}		
 		
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
@@ -353,7 +362,8 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao2 = $listquangcao2;
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
-
+		
+		//echo $is_parent;die();
 	}
 
 	function logoutAction()
