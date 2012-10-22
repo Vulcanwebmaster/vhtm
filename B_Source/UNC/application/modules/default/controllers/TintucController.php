@@ -319,7 +319,7 @@ class TintucController extends Zend_Controller_Action
 		}
 		
 		$paginator = Zend_Paginator::factory($list);
-        $paginator->setItemCountPerPage(5);        
+        $paginator->setItemCountPerPage(15);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		

@@ -49,7 +49,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 
 /*----------tiennd------------*/
 #comment{overflow-y: auto;overflow-x:hidden}
-#comment{height:450px}
+#comment{max-height:450px; min-height:150px}
 .news_avatar img{ width:135px !important;height:104px !important}
 .listNewest a:hover{color:red}
 .listNewest a{text-decoration:none;}
