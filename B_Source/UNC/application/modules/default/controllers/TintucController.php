@@ -217,12 +217,7 @@ class TintucController extends Zend_Controller_Action
 		$form = $this->setForm($news_id);
 		$this->view->form = $form;
 		
-		$paginator = Zend_Paginator::factory($this->mTintuc->getCommentByNewsId($news_id));
-	    $paginator->setItemCountPerPage(5);        
-	    $currentPage = $this->_request->getParam('page',1);
-	    $paginator->setCurrentPageNumber($currentPage);
-		
-		$this->view->listComment = $paginator;
+		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
 	}
 	
 	function timkiemAction()
