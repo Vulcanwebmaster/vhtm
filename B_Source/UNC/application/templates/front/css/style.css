@@ -182,3 +182,6 @@ h3 a{text-decoration:none;}
 /*-------------End Trungnt Menu---------*/
 #divAdRight img{width: 130px !important; height: 512px !important;}
 #divAdLeft img{width: 130px !important; height: 512px !important;}
+
+.img130{box-shadow:0 2px 5px 0 black}
+.img-tube img{border:solid 1px #686868}

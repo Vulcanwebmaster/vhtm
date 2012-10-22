@@ -11,7 +11,7 @@
 				<img class="img130" src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg"/>
 			</a>
 	 		<div>
-	  			<a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php echo $video['video_alias']; ?>.html"><h3 style="color:blue;margin-left:145px;margin-top:-92px"><?php echo $video['video_title']; ?></h3></a>
+	  			<a href="<?php echo $this->baseUrl(); ?>/video/detail/videoid/<?php echo $video['video_id']; ?>"><h3 style="color:#07506b;margin-left:145px;margin-top:-92px"><?php echo $video['video_title']; ?></h3></a>
 	  			<div style="margin-left:145px">
 					<?php echo $video['video_description']; ?>
 	  			</div>
@@ -24,6 +24,6 @@
 		}
  	?>
 </div>
-<div style="margin:10px 0 10px 42%;">
+<div style="margin-top:20px;">
 <?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 </div>

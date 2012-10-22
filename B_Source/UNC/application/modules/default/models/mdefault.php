@@ -83,7 +83,7 @@
 		{
 			$query = $this->db->query('select * from unc_video where is_default = "1"');
 			$list = $query->fetchAll();
-			if(count($list) > 0)
+			if (count($list)>0)
 				return $list[0]['video_full_link'];
 			else return false;
 		}
