@@ -287,8 +287,57 @@
     	?>
             <div id="note-slide">
             	<div id="text-slide">
-                	<p class="tieude">Những sai lầm dễ mắc phải khi tập luyện</p>
-                    <p>Hệ thống ngũ hình quyền với 5 con linh thú (Long, Hổ, Báo, Xà, Hạc) nằm trong chương trình luyện tập của một số dòng phái Vịnh Xuân quền tại Hà Nội, Việt Nam như Vĩnh Xuân Nội gia quyền, Vĩnh Xuân Ngô gia Hoàng pháp và hiện cũng đã được tập luyện tại Thành Phố Hồ Chí Minh.<br/> Không ai biết chính xác hệ thống này bắt đầu từ khi nào, nhưng chắc chắn nó có nguồn gốc từ Thiếu Lâm Tự. Rất có thể xuất phát từ Bạch Ngọc Phong đời nhà Nguyên Trung Hoa, khi ông nương theo bài La Hán Thập Bát Thủ gồm 18 thế tay của vị Phật A La Hán của Thiếu Lâm để chế ra Ngũ Hình quyền gồm các bài quyền dựa theo những con thú nói trên và một bài tổng hợp của 5 con thú.<br/> Sau này trải qua một tiến trình lịch sử dằng dặc, hệ thống ngũ hình đã được trau truốt, tinh lọc, sửa đổi rất nhiều. Đáng chú ý là sự bổ sung của hệ thống này vào kỹ pháp các dòng phái Vịnh.</p>
+            		<p class="tieude">
+                        	 <?php
+                        		foreach($this->listHotNews as $childTintuc)
+
+                        	    {
+									{
+                        		?>
+                            		<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $childTintuc['news_id']; ?>-<?php echo $childTintuc['alias']; ?>.html"><?php echo $childTintuc['news_title']; ?></a>
+                            		</p>
+                        				<p><?php 
+										$str = $childTintuc['news_summary']; 
+										  $preg1 = preg_match_all('#<.*>#',$str,$match);
+										  
+										  //var_dump($match);
+										  if($preg1 > 1)
+										  	$str = str_replace($match[0][0], "", $str);
+										 	$str = strip_tags($str);
+												$charset = 'utf-8';
+												$len = 300;
+												$str = html_entity_decode($str, ENT_QUOTES, $charset);
+												if(mb_strlen($str, $charset)> $len)
+												{
+													$arr = explode(' ', $str);
+													$str = mb_substr($str, 0, $len, $charset);
+													$arrRes = explode(' ', $str);
+													$last = $arr[count($arrRes)-1];
+												
+													unset($arr);
+													if(strcasecmp($arrRes[count($arrRes)-1], $last))
+													{
+														unset($arrRes[count($arrRes)-1]);
+													}
+													$str = implode(' ', $arrRes)."...";
+												}
+												
+											
+												
+										  if($preg1 > 0)
+										  {
+				                    	 	$str = str_replace($match[0][0],"",$str);
+										  }
+										 echo $str;
+										  
+										 ?>                        					
+                        				</p>
+
+                            	<?php
+                            			break;
+									}
+								}
+                            	?>
                     <div>
                     	<div class="imtext-slide">
                         	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/NEN_48.jpg"/>
