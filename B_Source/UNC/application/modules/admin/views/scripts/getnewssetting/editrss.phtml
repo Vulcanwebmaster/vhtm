@@ -1,0 +1,34 @@
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+</style>
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<fieldset>
+					<label>Link : </label>
+					<?php echo $this->form->getElement('link');?>
+				</fieldset>
+				<fieldset>
+					<label>Danh mục : </label>
+					<?php echo $this->form->getElement('campaign_id');?>
+				</fieldset>
+				<fieldset>
+					<label>Trạng thái : </label>
+					<?php echo $this->form->getElement('status');?>
+				</fieldset>
+				<fieldset>
+					<label>Nguồn : </label>
+					<?php echo $this->form->getElement('source');?>
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/getnewssetting/showlistrss/campaign_name/<?php echo $_SESSION['campaign_name']?>">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>

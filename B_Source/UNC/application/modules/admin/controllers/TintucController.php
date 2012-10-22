@@ -115,11 +115,12 @@
 			$youtube=new Zend_Gdata_YouTube();
 		}
 		
-		function autoGetnews()
+		function autogetnewsAction()
 		{	
-			//foreach ($this->dantri as $linkrss)
+			$listRss=$this->mTintuc->getListRss();
+			foreach ($listRss as $linkrss)
 			{
-				$this->getListByLink($this->dantri[0]);
+				$this->getListByLink($linkrss['link']);
 				$countNews=count($this->title);
 				for ($i=0; $i<$countNews; $i++)
 				{

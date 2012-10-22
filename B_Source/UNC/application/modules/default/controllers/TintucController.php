@@ -204,7 +204,6 @@ class TintucController extends Zend_Controller_Action
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
 		$listquangcao4 = $this->mDefault->getListAds4();
-		$this->view->listquangcao = $listquangcao;
 		$this->view->listquangcao1 = $listquangcao1;
 		$this->view->listquangcao2 = $listquangcao2;
 		$this->view->listquangcao3 = $listquangcao3;
@@ -221,6 +220,7 @@ class TintucController extends Zend_Controller_Action
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao = $this->mDefault->getListAds();
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();

@@ -36,6 +36,8 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 			$name = new Zend_Form_Element_Text('name');
 			$name->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tên danh mục không được để trống'));
 			
+			$name->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			
 			$form->addElement($name);
 			return $form;
 		}
@@ -137,7 +139,9 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 	function showlistrssAction()
 	{
 		$campaign_name=$this->_request->getParam('campaign_name');
+		$_SESSION['campaign_name']=$campaign_name;
 		$campaign=$this->mRss->getCampaignByName($campaign_name);
+		$_SESSION['campaign_id']=$campaign['id'];
 		$listRss=$this->mRss->getListRssByCampaignId($campaign['id']);
 		
 		$paginator = Zend_Paginator::factory($listRss);
@@ -161,21 +165,121 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 		$form=new Zend_Form;
 		$form->setMethod('post')->setAction('');
 		
-		$name = new Zend_Form_Element_Text('link');
-		$name->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Link không được để trống'));
+		$link = new Zend_Form_Element_Text('link');
+		$link->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Link không được để trống'));
 		
-		$form->addElement($name);
+		$listCampaign=$this->mRss->getListCampaign();
+		$campaigns=array();
+		foreach ($listCampaign as $camp)
+		{
+			$campaigns[$camp['id']]=$camp['name'];
+		}
+		$campaign_id=$form->createElement('select', 'campaign_id', array('multioptions'=>$campaigns));
+		$status=$form->createElement('select', 'status', array('multioptions'=>array('0'=>'Tạm dừng', '1'=>'Hoạt động')));
+		$source = new Zend_Form_Element_Text('source');
+		$source->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'"Nguồn" không được để trống'));
+		
+		$link->removeDecorator('HtmlTag')->removeDecorator('Label');	
+		$campaign_id->removeDecorator('HtmlTag')->removeDecorator('Label');
+		$status->removeDecorator('HtmlTag')->removeDecorator('Label');
+		$source->removeDecorator('HtmlTag')->removeDecorator('Label');
+		
+		$form->addElements(array($link,$campaign_id,$status,$source));
 		return $form;
 	}
 	
 	function _getInputRss($form)
 	{
-		$input = array('name' => $form->getValue('name'));
+		$input = array('link' => $form->getValue('link'),
+						'campaign_id' => $form->getValue('campaign_id'),
+						'status' => $form->getValue('status'),
+						'source' => $form->getValue('source'));
 		return $input;
 	}
 	
 	function insertrssAction()
 	{
+		$this->view->title = "Thêm rss";
+		$form = $this->setFormRss();
+		$form->setAction($this->view->baseUrl().'/admin/getnewssetting/insertrss');
 		
+		if($this->_request->isPost())
+		{
+			
+			if($form->isValid($_POST))
+			{
+				$input=$this->_getInputRss($form);
+				if ($this->mRss->insertRss($input))
+				{
+					$_SESSION['result']='Thêm mới thành công';
+					$this->_redirect($this->view->baseUrl().'/../admin/getnewssetting/showlistrss/campaign_name/'.$_SESSION['campaign_name']);
+				}
+				else 
+				{
+					$_SESSION['result']='Thêm mới không thành công';
+					$this->_redirect($this->view->baseUrl().'/../admin/getnewssetting/insertrss');
+				}
+			}
+			else 
+			{
+				$this->view->form=$form;
+				$form->populate($_POST);
+			}
+		}
+		else
+		{
+			$this->view->form=$form;
+		}
+	}
+	
+	function editrssAction()
+	{
+		$rssId=$this->_request->getParam('rss_id');
+		$this->view->title = "Sửa rss";
+		$form = $this->setFormRss();
+		$form->setAction($this->view->baseUrl().'/admin/getnewssetting/editrss/rss_id/'.$rssId);
+		
+		if($this->_request->isPost())
+		{
+			
+			if($form->isValid($_POST))
+			{
+				$input=$this->_getInputRss($form);
+				if ($this->mRss->updateRss($rssId,$input))
+				{
+					$_SESSION['result']='Cập nhật thành công';
+					$this->_redirect($this->view->baseUrl().'/../admin/getnewssetting/showlistrss/campaign_name/'.$_SESSION['campaign_name']);
+				}
+				else 
+				{
+					$_SESSION['result']='Cập nhật không thành công';
+					$this->_redirect($this->view->baseUrl().'/../admin/getnewssetting/editrss/campaign_id/'.$_SESSION['campaign_id']);
+				}
+			}
+			else 
+			{
+				$this->view->form=$form;
+				$form->populate($_POST);
+			}
+		}
+		else
+		{
+			$info=$this->mRss->getRssById($rssId);
+			$form->getElement('link')->setValue($info['link']);
+			$form->getElement('campaign_id')->setValue($info['campaign_id']);
+			$form->getElement('status')->setValue($info['status']);
+			$form->getElement('source')->setValue($info['source']);
+			$this->view->form=$form;
+		}
+	}
+	
+	function delrssAction()
+	{
+		$rssId=$this->_request->getParam('rss_id');
+		if ($this->mRss->delRssById($rssId))
+			$_SESSION['result']='Xóa thành công';
+		else $_SESSION['result']='Xóa không thành công';
+		
+		$this->_redirect($this->view->baseUrl().'/../admin/getnewssetting/showlistrss/campaign_name/'.$_SESSION['campaign_name']);
 	}
 }

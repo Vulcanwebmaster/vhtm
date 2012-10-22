@@ -34,28 +34,36 @@
 		{
 			$query = $this->db->query('select * from unc_ads where ads_position=1 order by ads_start_date DESC limit 1');
 			$list = $query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return  false;
 		}
 		
 		function getListAds2()
 		{
 			$query = $this->db->query('select * from unc_ads where ads_position=2 order by ads_start_date DESC limit 1');
 			$list = $query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 		
 		function getListAds3()
 		{
 			$query = $this->db->query('select * from unc_ads where ads_position=3 order by ads_start_date DESC limit 1');
 			$list = $query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return  false;
 		}
 		
 		function getListAds4()
 		{
 			$query = $this->db->query('select * from unc_ads where ads_position=4 order by ads_start_date DESC limit 1');
 			$list = $query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return  false;
 		}
 		
 		function getListMostView()

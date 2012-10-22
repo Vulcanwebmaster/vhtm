@@ -24,22 +24,22 @@
 					if($preg > 0)
 					{
 						?>
-							<a style="color:blue;" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
+							<a style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
 						<?php
 						echo $match[0][0].'</a>';
 					} 
 					else 
 					{
 						?>
-							<a style="color:blue;" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
+							<a style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
 								<img class="img130" src="http://dantri21.vcmedia.vn/zoom/130_100/I3KdHJtU0B3ELPKGaTLe/Image/2012/10/bovien-97975.jpg" alt="Hãi hùng bò viên">
 							</a>
 						<?php
 					}
 	 			?>
 	 		
-	 		<div>
-	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
+	 		<div style="float:right">
+	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a style="color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
 	  			<div style="margin-left:145px">
 	  				<?php
 	  				 	$str = $news['news_summary']; 
@@ -61,11 +61,10 @@
 	  				?>
 	  			</div>
 	  			
-	  			<a style="float:right" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">Xem tiếp</a>
+	  			<a style="float:right; color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">Xem tiếp</a>
 	 		</div>
+	 		<br style="clear:both">
 	 	</div>
-	 	<br style="clear:both">
-	 	
  	<?php
 		}
 	}
@@ -76,6 +75,10 @@
 	<?php
 	}
  	?>
+</div>
+
+<div style="margin-top:10px; text-align:center">
+	<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 </div>
 
 <div style="margin-top:30px;margin-left:20px" id="search">
@@ -93,8 +96,4 @@
 	
 	</form>
 	
-</div>
-
-<div style="margin-top:10px;float:right">
-<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 </div>

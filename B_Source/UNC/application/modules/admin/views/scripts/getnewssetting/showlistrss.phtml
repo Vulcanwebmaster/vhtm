@@ -44,7 +44,9 @@
 									{ 
 										order: "<?php echo $count;?>", 
 										link: "<?php echo $item['link'];?>",
-										campaign: "<?php echo $this->listCampaign[$count-1];?>",   
+										campaign: "<?php echo $this->listCampaign[$count-1];?>", 
+										status: "<?php if ($item['status']=='0') echo 'Tạm dừng'; else echo 'Hoạt động';?>",
+										source: "<?php echo $item['source'];?>", 
 										edit: "<?php echo $item['id']?>",
 										delete: "<?php echo $item['id']?>"
 									},
@@ -58,7 +60,7 @@
 								key: 'order',
 								label: 'Số thứ tự',
 								sortable:true,
-								formatter: '<span>{value}</span>',
+								formatter: '<center>{value}</center>',
 								allowHTML: true
 							},
 							{
@@ -71,6 +73,21 @@
 							{
 								key: 'campaign',
 								label:'<center>Danh mục</center>',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'status',
+								label:'<center>Trạng thái</center>',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true
+							},
+							{
+								key: 'source',
+								label:'<center>Nguồn</center>',
+								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true
 							},

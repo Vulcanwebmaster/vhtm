@@ -630,14 +630,13 @@ color: #333333;
 }
 
 .alt_btn {
+	float:right;
 background: #D0D1D4 url(../images/btn_submit_2.png) repeat-x !important;
 border: 1px solid#30B0C8 !important;
 -webkit-box-shadow: 0 1px 0 #fff !important;
 -moz-box-shadow: 0 1px 0 #fff !important;
 box-shadow: 0 1px 0 #fff !important;
 font-weight: bold !important;
-line-height: 27px !important;
-height:27px;
 -webkit-border-radius: 5px !important;
 -moz-border-radius: 5px !important;
 border-radius: 5px !important;
