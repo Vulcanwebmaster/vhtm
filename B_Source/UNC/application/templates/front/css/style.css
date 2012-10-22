@@ -80,7 +80,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 #rua-images{ float:left;}
 #rua-images img{ width:445px; height:300px; margin-left:20px; margin-top:10px;}
 .tieude{ color:#00ccff; font-size:17px; font-weight:bold; margin:0px;}
-.tieude a{ color:#00ccff; font-size:20px; font-weight:bold; margin:0px; text-decoration: none}
+.tieude a{ color:#00ccff; font-size:17px; font-weight:bold; margin:0px; text-decoration: none}
 .tieude a:hover{ color:#00ccff; font-size:20px; font-weight:bold; margin:0px; text-decoration: underline}
 .imtext-slide{ position:relative; float:left; margin-right:10px;}
 .imtext-slide img{ width:115px; height:99px;}

@@ -299,7 +299,7 @@
                             		</p>
                         				<p><?php 
 										$str = $childTintuc['news_summary']; 
-										  $preg1 = preg_match_all('#<img.*/>#',$str,$match);
+										  $preg1 = preg_match_all('#<*>#',$str,$match);
 										  
 										  //var_dump($match);
 										  if($preg1 > 1)
