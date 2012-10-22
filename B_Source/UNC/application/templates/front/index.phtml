@@ -298,12 +298,12 @@
                             		</p>
                         				<p><?php 
 										$str = $childTintuc['news_summary']; 
-										  $preg1 = preg_match_all('#<.*>#',$str,$match);
+										  $preg1 = preg_match_all('#<img.*/>#',$str,$match);
 										  
 										  //var_dump($match);
 										  if($preg1 > 1)
 										  	$str = str_replace($match[0][0], "", $str);
-										 	$str = strip_tags($str);
+										 	//$str = strip_tags($str);
 												$charset = 'utf-8';
 												$len = 300;
 												$str = html_entity_decode($str, ENT_QUOTES, $charset);
