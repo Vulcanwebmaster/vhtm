@@ -57,7 +57,7 @@
                             		</p>
                         				<p><?php 
 										$str = $childTintuc['news_summary']; 
-										  $preg1 = preg_match_all('#<a.*</a>#',$str,$match);
+										  $preg1 = preg_match_all('#<.*>#',$str,$match);
 										  
 										  //var_dump($match);
 										  if($preg1 > 1)
@@ -108,7 +108,29 @@
 									{
 											?>
 											<li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/sao.png"/>
-											<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $tintuc['news_id']; ?>-<?php echo $tintuc['alias']; ?>.html"><?php echo $tintuc['news_title'];?></a>
+											<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $tintuc['news_id']; ?>-<?php echo $tintuc['alias']; ?>.html">
+												<?php 
+												$str = $tintuc['news_title'];
+												$charset = 'utf-8';
+												$len = 40;
+												$str = html_entity_decode($str, ENT_QUOTES, $charset);
+												if(mb_strlen($str, $charset)> $len)
+												{
+													$arr = explode(' ', $str);
+													$str = mb_substr($str, 0, $len, $charset);
+													$arrRes = explode(' ', $str);
+													$last = $arr[count($arrRes)-1];
+												
+													unset($arr);
+													if(strcasecmp($arrRes[count($arrRes)-1], $last))
+													{
+														unset($arrRes[count($arrRes)-1]);
+													}
+													$str = implode(' ', $arrRes)."...";
+												}
+												echo $str;
+												?>
+											</a>
 											</li>
 											<?php
 									}
