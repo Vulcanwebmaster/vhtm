@@ -50,7 +50,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 /*----------tiennd------------*/
 #comment{overflow-y: auto;overflow-x:hidden}
 #comment{max-height:450px; min-height:150px}
-.news_avatar img{ width:135px !important;height:104px !important}
+.news_avatar img{ width:135px !important;height:104px !important; box-shadow:0 2px 5px 0 #323232}
 .listNewest a:hover{color:red}
 .listNewest a{text-decoration:none;}
 .togger_view{background-color:red !important; cursor:pointer !important}
@@ -62,6 +62,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 /*#rs2 p:hover{color:red;cursor:pointer;}*/
 .risl-2 a:hover{ color:red;}
 .risl-2 a{ margin-left:10px;text-decoration:none; color:#FFF;cursor:pointer;}
+#detail {text-align:justify}
 #detail h1
 {
 	font-size: 24px;
