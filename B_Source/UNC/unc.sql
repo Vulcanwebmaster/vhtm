@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2012 at 03:31 PM
+-- Generation Time: Oct 22, 2012 at 08:51 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -28,28 +28,53 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `unc_ads` (
   `ads_id` int(11) NOT NULL AUTO_INCREMENT,
-  `ads_banner` varchar(500) NOT NULL DEFAULT '',
-  `ads_position` varchar(60) NOT NULL DEFAULT '',
+  `ads_banner` text NOT NULL,
+  `ads_position` int(2) NOT NULL,
   `ads_name` varchar(100) NOT NULL DEFAULT '',
   `ads_link` varchar(200) NOT NULL DEFAULT '',
   `ads_start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ads_end_date` datetime NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`ads_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `unc_ads`
 --
 
 INSERT INTO `unc_ads` (`ads_id`, `ads_banner`, `ads_position`, `ads_name`, `ads_link`, `ads_start_date`, `ads_end_date`, `category_id`) VALUES
-(1, '<p><img width="267" height="200" src="/unc/userfiles/image/Desert.jpg" alt="" /></p>', '1', '2', 'http://hn.24h.com.vn/tin-tuc-trong-ngay/vui-buon-cho-tinh-osin-giua-sai-thanh-c46a491839.html', '2012-10-20 00:00:00', '2012-10-21 00:00:00', 1),
-(4, '<p><img width="267" height="200" alt="" src="/unc/userfiles/image/Penguins.jpg" /></p>', '2', 'hhhhhhhhhhhhh', 'http://www.saga.vn/Saga_Gallery/Thitruong/9cach01.gif', '2012-09-20 00:00:00', '2012-10-11 00:00:00', 2),
-(6, '<p><img width="267" height="200" src="/unc/userfiles/image/Koala.jpg" alt="" /></p>', '3', 'vsvd', 'http://gomm.com.vn/wp-content/uploads/2010/04/1246244209_social-networking.jpg', '2012-10-23 00:00:00', '2012-10-31 00:00:00', 1),
-(7, '<p><img width="267" height="200" alt="" src="/unc/userfiles/image/Jellyfish.jpg" /></p>', '4', 'tddddddd', 'http://bit.vn/assets/images/Giai%20phap/google-seo.jpg', '2012-10-03 00:00:00', '2012-10-24 00:00:00', 4),
-(8, '<p><img width="267" height="200" align="left" alt="" src="/unc/userfiles/image/Tulips.jpg" /></p>', '5', '4444444444444444444', 'http://www.misa.com.vn/Portals/0/Upload2012/gmailcom/Images/lam-the-nao-quang-cao-thu-hut.jpg', '2012-10-10 00:00:00', '2012-10-11 00:00:00', 11),
-(9, '<p><img width="267" height="200" alt="" src="/unc/userfiles/image/Lighthouse.jpg" /></p>', '6', '333333333333', 'http://www.petrotimes.vn/stores/news_dataimages/chudiepquynh/082012/29/09/8NTHYYT_95b13.jpg', '2012-10-24 00:00:00', '2012-10-23 00:00:00', 2),
-(10, '<p><img width="267" height="200" src="/unc/userfiles/image/Chrysanthemum.jpg" alt="" /></p>', 'cho nao cha dc', 'heeeeee', 'http://hn.24h.com.vn/tin-tuc-trong-ngay/cho-nguoi-hay-cho-tinh-c46a347764.html', '2012-10-18 00:00:00', '2012-10-25 00:00:00', 1);
+(1, '<p><img width="267" height="200" src="/unc/userfiles/image/Desert.jpg" alt="" /></p>', 2, '2', 'http://hn.24h.com.vn/tin-tuc-trong-ngay/vui-buon-cho-tinh-osin-giua-sai-thanh-c46a491839.html', '2012-10-20 00:00:00', '2012-10-21 00:00:00', 1),
+(4, '<p><img width="267" height="200" alt="" src="/unc/userfiles/image/Penguins.jpg" /></p>', 4, 'hhhhhhhhhhhhh', 'http://www.saga.vn/Saga_Gallery/Thitruong/9cach01.gif', '2012-09-20 00:00:00', '2012-10-11 00:00:00', 2),
+(6, '<p><img width="267" height="200" src="/unc/userfiles/image/Koala.jpg" alt="" /></p>', 5, 'vsvd', 'http://gomm.com.vn/wp-content/uploads/2010/04/1246244209_social-networking.jpg', '2012-10-23 00:00:00', '2012-10-31 00:00:00', 1),
+(7, '<p><img width="267" height="200" alt="" src="/unc/userfiles/image/Jellyfish.jpg" /></p>', 2, 'tddddddd', 'http://bit.vn/assets/images/Giai%20phap/google-seo.jpg', '2012-10-03 00:00:00', '2012-10-24 00:00:00', 4),
+(8, '<p><img width="267" height="200" align="left" alt="" src="/unc/userfiles/image/Tulips.jpg" /></p>', 1, '4444444444444444444', 'http://www.misa.com.vn/Portals/0/Upload2012/gmailcom/Images/lam-the-nao-quang-cao-thu-hut.jpg', '2012-10-10 00:00:00', '2012-10-11 00:00:00', 11),
+(9, '<p><img width="267" height="200" alt="" src="/unc/userfiles/image/Lighthouse.jpg" /></p>', 3, '333333333333', 'http://www.petrotimes.vn/stores/news_dataimages/chudiepquynh/082012/29/09/8NTHYYT_95b13.jpg', '2012-10-24 00:00:00', '2012-10-23 00:00:00', 2),
+(10, '<p><img width="267" height="200" src="/unc/userfiles/image/Chrysanthemum.jpg" alt="" /></p>', 5, 'heeeeee', 'http://hn.24h.com.vn/tin-tuc-trong-ngay/cho-nguoi-hay-cho-tinh-c46a347764.html', '2012-10-18 00:00:00', '2012-10-25 00:00:00', 1),
+(11, '<p><img width="300" height="225" src="/unc/userfiles/image/Koala.jpg" alt="" /></p>', 2, 'gau truc', 'google.com.vn', '2012-10-03 00:00:00', '2012-10-31 00:00:00', 13),
+(12, '<p><img src="/unc/userfiles/image/quangcaotren.jpg" width="669" height="91" align="left" alt="" />&nbsp;</p>', 1, 'quang cao test', 'http://hn.24h.com.vn/thoi-trang/nguoi-dep-viet-pho-dien-co-the-ben-motor-c78a492515.html', '2012-10-30 00:00:00', '2012-10-31 00:00:00', 11),
+(13, '<p><img width="700" height="533" src="/unc/userfiles/image/NEN_52.png" alt="" /></p>', 2, 'Banner giua', '#', '2012-10-30 11:50:59', '2012-10-31 00:00:00', 18),
+(14, '<p><img width="147" height="512" alt="" src="/unc/userfiles/image/bannerfpt.jpg" /></p>', 4, 'Banner FPT', 'http://www.fpt.vn/', '2012-10-03 00:00:00', '2012-10-24 00:00:00', 16),
+(15, '<p><img width="120" height="300" alt="" src="/unc/userfiles/image/DOJI-120x300.gif" /></p>', 3, 'Saleoff', 'http://shoptinhnhan.com/', '2012-10-31 00:00:00', '2012-10-31 00:00:00', 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unc_campaign`
+--
+
+CREATE TABLE IF NOT EXISTS `unc_campaign` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `unc_campaign`
+--
+
+INSERT INTO `unc_campaign` (`id`, `name`) VALUES
+(1, 'Tin thể thao'),
+(2, 'Tin văn hóa');
 
 -- --------------------------------------------------------
 
@@ -102,8 +127,27 @@ CREATE TABLE IF NOT EXISTS `unc_comment` (
   `comment_content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `news_id` int(11) DEFAULT NULL,
   `reader_id` int(11) DEFAULT NULL,
+  `comment_time` datetime NOT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+
+--
+-- Dumping data for table `unc_comment`
+--
+
+INSERT INTO `unc_comment` (`comment_id`, `comment_content`, `news_id`, `reader_id`, `comment_time`) VALUES
+(33, '1', 1, 1, '2012-10-21 04:38:26'),
+(34, '2\r\n', 1, 2, '2012-10-21 04:39:27'),
+(35, '3', 1, 2, '2012-10-21 07:01:44'),
+(36, 'nguyen tien manh', 23, 2, '2012-10-21 11:43:40'),
+(37, 'cái gì đó', 3, 1, '2012-10-22 04:27:32'),
+(38, 'không hiểu lý do tại sao', 3, 1, '2012-10-22 04:28:42'),
+(39, 'nguy&aacute;&raquo;', 3, 1, '2012-10-22 04:40:11'),
+(40, 'bình luận 1\r\n', 9, 2, '2012-10-22 08:57:16'),
+(41, 'bình luận 2', 9, 2, '2012-10-22 08:58:13'),
+(42, 'bình luận 3', 9, 2, '2012-10-22 08:58:20'),
+(43, 'bình luận 4', 9, 1, '2012-10-22 08:58:36'),
+(44, 'bình luận 5', 9, 1, '2012-10-22 08:58:43');
 
 -- --------------------------------------------------------
 
@@ -160,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `unc_counting` (
   `year` int(4) NOT NULL DEFAULT '0',
   `access` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `unc_counting`
@@ -171,7 +215,8 @@ INSERT INTO `unc_counting` (`id`, `day`, `month`, `year`, `access`) VALUES
 (2, 13, 10, 2012, 10),
 (3, 1, 11, 2012, 50),
 (4, 15, 11, 2012, 21),
-(5, 21, 10, 2012, 2);
+(5, 21, 10, 2012, 2),
+(6, 22, 10, 2012, 2);
 
 -- --------------------------------------------------------
 
@@ -349,6 +394,28 @@ CREATE TABLE IF NOT EXISTS `unc_rate` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unc_rss`
+--
+
+CREATE TABLE IF NOT EXISTS `unc_rss` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `campaign_id` int(11) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '1',
+  `source` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `unc_rss`
+--
+
+INSERT INTO `unc_rss` (`id`, `link`, `campaign_id`, `status`, `source`) VALUES
+(1, 'http://www.dantri.com.vn/The-Thao.rss', 1, 0, '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unc_user`
 --
 
@@ -383,6 +450,7 @@ INSERT INTO `unc_user` (`user_id`, `user_login`, `user_pass`, `user_fullname`, `
 CREATE TABLE IF NOT EXISTS `unc_video` (
   `video_id` int(11) NOT NULL AUTO_INCREMENT,
   `video_title` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `video_alias` varchar(2000) NOT NULL,
   `video_description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `video_link` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `is_active` int(1) DEFAULT NULL,
@@ -390,23 +458,55 @@ CREATE TABLE IF NOT EXISTS `unc_video` (
   `youtube_id` int(11) DEFAULT NULL,
   `user_upload` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `category_id` int(5) NOT NULL,
+  `is_default` int(1) NOT NULL,
   PRIMARY KEY (`video_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=112 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=121 ;
 
 --
 -- Dumping data for table `unc_video`
 --
 
-INSERT INTO `unc_video` (`video_id`, `video_title`, `video_description`, `video_link`, `is_active`, `video_full_link`, `youtube_id`, `user_upload`, `category_id`) VALUES
-(103, 'Wish you were here - Avril Lavigne', 'Wish you were here - Avril Lavigne', '2wBDSfoFuyI', 0, 'http://www.youtube.com/watch?v=2wBDSfoFuyI', 2, '', 0),
-(104, 'Just the way you are - Matt Cardle', 'Just the way you are - Matt Cardle', '5QlxJezCDOY', 1, 'http://www.youtube.com/watch?v=5QlxJezCDOY', 2, '', 0),
-(105, 'Nhạc không lời hay', 'Nhạc không lời hay', 'H8KWgXi5J8U', 1, 'http://www.youtube.com/watch?v=H8KWgXi5J8U', 2, '', 0),
-(106, 'He''s a pirate', 'He''s a pirate', 'CKl8lididFI', 1, 'http://www.youtube.com/watch?v=CKl8lididFI', 2, '', 0),
-(107, 'If I Open Up My Heart To You', 'If I Open Up My Heart To You', 'JT5Omg2feF4', 1, 'http://www.youtube.com/watch?v=JT5Omg2feF4', 2, '', 0),
-(108, 'the voice', 'the voice', 'LpdaSov8tss', 1, 'http://www.youtube.com/watch?v=LpdaSov8tss', 2, '', 0),
-(109, 'A song for mama', 'A song for mama', 'QbrJTH6BOiY', 1, 'http://www.youtube.com/watch?v=QbrJTH6BOiY', 2, '', 0),
-(110, 'Without you - TBN', 'Without you - TBN', 'pP1AzOKBPIw', 1, 'http://www.youtube.com/watch?v=pP1AzOKBPIw', 2, '', 0),
-(111, 'Never change', 'never change', '-wDcwDx6VBs', 1, 'http://www.youtube.com/watch?v=-wDcwDx6VBs', 2, '', 0);
+INSERT INTO `unc_video` (`video_id`, `video_title`, `video_alias`, `video_description`, `video_link`, `is_active`, `video_full_link`, `youtube_id`, `user_upload`, `category_id`, `is_default`) VALUES
+(112, 'Wish you were here - Avril Lavigne', 'Wish-you-were-here---Avril-Lavigne', 'Wish you were here - Avril Lavigne', '2wBDSfoFuyI', 1, 'http://www.youtube.com/watch?v=2wBDSfoFuyI', 2, '', 0, 0),
+(113, 'Just the way you are - Matt Cardle', 'Just-the-way-you-are---Matt-Cardle', 'Just the way you are - Matt Cardle', '5QlxJezCDOY', 1, 'http://www.youtube.com/watch?v=5QlxJezCDOY', 2, '', 0, 0),
+(114, 'Nhạc không lời hay', 'Nhac-khong-loi-hay', 'Nhạc không lời hay', 'H8KWgXi5J8U', 1, 'http://www.youtube.com/watch?v=H8KWgXi5J8U', 2, '', 0, 0),
+(115, 'He''s a pirate', 'He''s-a-pirate', 'He''s a pirate', 'CKl8lididFI', 1, 'http://www.youtube.com/watch?v=CKl8lididFI', 2, '', 0, 0),
+(116, 'If I Open Up My Heart To You', 'If-I-Open-Up-My-Heart-To-You', 'If I Open Up My Heart To You', 'JT5Omg2feF4', 1, 'http://www.youtube.com/watch?v=JT5Omg2feF4', 2, '', 0, 0),
+(117, 'the voice', 'the-voice', 'the voice', 'LpdaSov8tss', 1, 'http://www.youtube.com/watch?v=LpdaSov8tss', 2, '', 0, 0),
+(118, 'A song for mama', 'A-song-for-mama', 'A song for mama', 'QbrJTH6BOiY', 0, 'http://www.youtube.com/watch?v=QbrJTH6BOiY', 2, '', 0, 1),
+(119, 'Without you - TBN', 'Without-you---TBN', 'Without you - TBN', 'pP1AzOKBPIw', 1, 'http://www.youtube.com/watch?v=pP1AzOKBPIw', 2, '', 0, 0),
+(120, 'Never change', 'Never-change', 'never change', '-wDcwDx6VBs', 1, 'http://www.youtube.com/watch?v=-wDcwDx6VBs', 2, '', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unc_video_comment`
+--
+
+CREATE TABLE IF NOT EXISTS `unc_video_comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_content` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `video_id` int(11) DEFAULT NULL,
+  `reader_id` int(11) DEFAULT NULL,
+  `comment_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `unc_video_comment`
+--
+
+INSERT INTO `unc_video_comment` (`comment_id`, `comment_content`, `video_id`, `reader_id`, `comment_time`) VALUES
+(1, 'comment test 1', 111, 1, '0000-00-00 00:00:00'),
+(2, 'comment comment', 106, 2, '2012-10-21 10:41:17'),
+(3, 'tiennd tiennd tiennd tiennd', 106, 1, '2012-10-21 10:41:48'),
+(4, 'never change', 111, 2, '2012-10-22 04:22:04'),
+(5, 'nguyễn thành trung', 111, 1, '2012-10-22 04:23:39'),
+(6, 'nguyễn đức tiến', 111, 1, '2012-10-22 04:25:42'),
+(10, 'Ä', 106, 1, '2012-10-22 04:49:56'),
+(11, 'tiáº¿n', 106, 1, '2012-10-22 04:55:41'),
+(12, 'nguyeenx duc tien', 106, 1, '2012-10-22 04:56:44'),
+(13, 'nguyá»', 106, 1, '2012-10-22 04:56:53');
 
 -- --------------------------------------------------------
 
@@ -431,13 +531,6 @@ INSERT INTO `unc_youtube_account` (`youtube_id`, `youtube_username`, `password`,
 (1, 'tiendn1010', 'Tiendnit2', 'tiendn1010', 0),
 (2, 'unc.video', 'khongcopass', 'UNC811', 1);
 
-CREATE TABLE IF NOT EXISTS `unc_video_comment` (
-  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `comment_content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `video_id` int(11) NOT NULL,
-  `reader_id` int(11) NOT NULL,
-  PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

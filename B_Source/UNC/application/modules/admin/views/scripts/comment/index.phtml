@@ -43,7 +43,8 @@
 									?>
 									{ 
 										order: "<?php echo $count;?>", 
-										comment_content: "<?php echo $item['comment_content'];?>",									
+										comment_content: "<?php $content= str_replace(array("\n", "\r"), ' ', strip_tags($item['comment_content']));
+														echo substr($content, 0, 400);?>",									
 										news_id: "<?php 
 											$string = $this->listNewsTitle[$count-1];
 											$charset = 'utf-8';

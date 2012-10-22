@@ -56,7 +56,8 @@
 								{?>
 									{ news_title: '<?php echo $item['news_title'];?>', 
 										news_avatar: '<?php echo $item['news_avatar'];?>',
-										news_summary: '<?php echo $item['news_summary'];?>',   
+										news_summary: '<?php $summ= str_replace(array("\n", "\r"), ' ', strip_tags($item['news_summary']));
+														echo substr($summ, 0, 400);?>',   
 										news_author: "<?php echo $item['news_author'];?>",
 										news_modified_date: "<?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?>",
 										news_status: "<?php echo $item['news_status'];?>",

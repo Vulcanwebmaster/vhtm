@@ -21,6 +21,7 @@ class IndexController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
+		$this->view->video_default = $this->mDefault->getVideoDefault();
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		//var_dump($this->mDefault->getListHotNewsJs());die();

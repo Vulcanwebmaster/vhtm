@@ -28,7 +28,7 @@ $config['Database']['dbtype'] = 'mysql';
 	//	****** DATABASE NAME ******
 	//	This is the name of the database where your vBulletin will be located.
 	//	This must be created by your webhost.
-$config['Database']['dbname'] = 'forum';
+$config['Database']['dbname'] = 'niwvietn_forum';
 
 	//	****** TABLE PREFIX ******
 	//	Prefix that your vBulletin tables have in the database.
@@ -56,8 +56,8 @@ $config['MasterServer']['port'] = 3306;
 	//	****** MASTER DATABASE USERNAME & PASSWORD ******
 	//	This is the username and password you use to access MySQL.
 	//	These must be obtained through your webhost.
-$config['MasterServer']['username'] = 'root';
-$config['MasterServer']['password'] = 'khongcopass';
+$config['MasterServer']['username'] = 'niwvietn_manhnt';
+$config['MasterServer']['password'] = 'daquang';
 
 	//	****** MASTER DATABASE PERSISTENT CONNECTIONS ******
 	//	This option allows you to turn persistent connections to MySQL on or off.
