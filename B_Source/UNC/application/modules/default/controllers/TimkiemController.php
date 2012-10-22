@@ -15,6 +15,7 @@ class TimkiemController extends Zend_Controller_Action
 		$this->mTimkiem=new Default_Model_Mtimkiem();
 		$this->mDefault=new Default_Model_Mdefault();
 		$this->mTintuc=new Default_Model_Mtintuc();
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	}
 	
 	function indexAction()
@@ -24,8 +25,14 @@ class TimkiemController extends Zend_Controller_Action
 		{
 			$value_search=$this->_request->getPost('search-text');
 			$list=$this->mTimkiem->getNewsByKey($value_search);
-			$this->view->list=$list;
 			
+			$paginator = Zend_Paginator::factory($list);
+	        $paginator->setItemCountPerPage(15);        
+	        $currentPage = $this->_request->getParam('page',1);
+	        $paginator->setCurrentPageNumber($currentPage);
+	        
+	        $this->view->list=$paginator;
+        
 			//---------Thêm template vào các chuyên mục----
 			$listquangcao = $this->mDefault->getListAds();
 			$this->view->listquangcao=$listquangcao;

@@ -17,8 +17,8 @@
 			<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->child['category_id']; ?>-<?php echo $this->child['alias']; ?>.html"><?php echo $this->child['category_name']; ?></a>
 		</h3>
 	</h4>
-	<h2 style="color:blue;margin-left:10px"><?php echo $this->news['news_title']; ?></h2>
-	<h4 style="margin-left: 10px;margin-top: -8px;margin-bottom:0px;"><?php echo $this->news['news_post_date']; ?></h4>
+	<h2 style="color:#07506b;margin-left:10px"><?php echo $this->news['news_title']; ?></h2>
+	<h4 style="margin-left: 10px;margin-top: -8px;margin-bottom:0px;color:#323232; font-weight:normal; font-style:italic">Ngày đăng: <?php echo $this->news['news_post_date']; ?></h4>
 	<p style="margin-left:10px"><?php echo $this->news['news_content']; ?></p>
 	<div id="fb-root"></div>
 	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/" data-send="true" data-width="450" data-show-faces="true"></div>
@@ -134,7 +134,7 @@
 				?>
                  <li>
                   	<img src="/unc/application/templates/front/images/sao.png">
-					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['news_alias']; ?>.html">
+					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
 					 	<?php echo $news['news_title']; ?>											
 					</a>
 				</li>
@@ -157,7 +157,7 @@
 				?>
                  <li>
                   	<img src="/unc/application/templates/front/images/sao.png">
-					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['news_alias']; ?>.html">
+					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
 					 	<?php echo $news['news_title']; ?>											
 					</a>
 				</li>

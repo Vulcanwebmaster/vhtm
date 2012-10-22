@@ -170,7 +170,8 @@
 		function getNewsPosted($categoryid)
 		{
 			$query = $this->db->query('select * from unc_news where category_id = "'.$categoryid.'" order by news_post_date desc limit 5');
-			return $query->fetchAll();
+			$list=$query->fetchAll();
+			return $list;
 		}
 		
 		function getParentByChild($categoryid)

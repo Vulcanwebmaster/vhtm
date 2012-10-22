@@ -16,6 +16,7 @@ class TintucController extends Zend_Controller_Action
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->setAccess();
 		unset($_SESSION['home']);
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	}
 	
 	function setForm1()
@@ -263,8 +264,6 @@ class TintucController extends Zend_Controller_Action
 	
 	function listAction()
 	{
-
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		$categoryId = $this->_request->getParam('categoryId');
 		$is_parent = 0;
 		
