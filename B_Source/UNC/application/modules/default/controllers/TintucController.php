@@ -155,7 +155,10 @@ class TintucController extends Zend_Controller_Action
 		
 		$news_id = $this->_request->getParam('newsid');
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
-		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news);
+		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news_id);
+		$parentId = $this->mTintuc->getParentByChild($categoryid);
+		$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
+		$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
 		
 		$this->view->listNewestNews = $this->mTintuc->getNewestNews();
 		$this->view->listNewsPosted = $this->mTintuc->getNewsPosted($categoryid);
@@ -263,10 +266,11 @@ class TintucController extends Zend_Controller_Action
 
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		$categoryId = $this->_request->getParam('categoryId');
+		$is_parent = 0;
 		
 		if($this->mTintuc->isParent($categoryId))
 		{
-			
+			$is_parent = 1;
 			$listCategoryId = $this->mTintuc->getListChildByParent($categoryId);
 			//var_dump($listCategoryId);die();
 			$listHot = array();
@@ -318,10 +322,15 @@ class TintucController extends Zend_Controller_Action
 			$this->view->listHotNews = $this->mDefault->getListHotNews();
 		}
 		
+		$this->view->is_parent = $is_parent;
 		$paginator = Zend_Paginator::factory($list);
         $paginator->setItemCountPerPage(15);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
+		
+		$parentId = $this->mTintuc->getParentByChild($categoryId);
+		$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryId);
+		$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
 		
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;

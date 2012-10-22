@@ -10,7 +10,34 @@
 		$( ".datepicker" ).datepicker();
 	});
 </script>
-<div style="margin-top:30px">
+
+<div style="margin-top:20px;">
+	<h3 style="display: inline">
+		<a href="<?php echo $this->baseUrl(); ?>">Trang chủ</a> >>
+		<?php 
+		if($this->is_parent == "1")
+		{
+		?>
+			<h2 style="display: inline;"> 
+				<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->parent['category_id']; ?>-<?php if(isset($this->parent['alias'])) echo $this->parent['alias']; ?>.html"><?php echo $this->parent['category_name']; ?></a>
+			</h2>
+		<?php
+		}
+		else 
+		{
+			?>
+				<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->parent['category_id']; ?>-<?php if(isset($this->parent['alias'])) echo $this->parent['alias']; ?>.html"><?php echo $this->parent['category_name']; ?></a>
+				 >> 
+				<h2 style="display: inline">
+					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->child['category_id']; ?>-<?php if(isset($this->child['alias'])) echo $this->child['alias']; ?>.html"><?php echo $this->child['category_name']; ?></a>
+				</h2>
+			<?php
+		} 
+		?>
+	</h3>
+</div>
+
+<div style="margin-top:15px">
 	<?php 
 	if(count($this->list) > 0)
 	{
@@ -34,7 +61,7 @@
 	 			</a>
 	 		
 	 		<div style="float:right">
-	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a style="color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
+	  			<h3 style="color:blue;margin-left:145px;margin-top:-109px"><a style="color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
 	  			<div style="margin-left:145px">
 	  				<?php
 	  				 	$str = $news['news_summary']; 

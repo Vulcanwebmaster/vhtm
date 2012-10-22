@@ -172,4 +172,22 @@
 			$query = $this->db->query('select * from unc_news where category_id = "'.$categoryid.'" order by news_post_date desc limit 5');
 			return $query->fetchAll();
 		}
+		
+		function getParentByChild($categoryid)
+		{
+			$query = $this->db->query('select category_parent_id from unc_category where category_id = "'.$categoryid.'"');
+			$list = $query->fetchAll();
+			if(count($list) > 0)
+				return $list[0]['category_parent_id'];
+			else return false;
+		}
+		
+		function getCategoryNameByCategoryId($categoryid)
+		{
+			$query = $this->db->query('select * from unc_category where category_id = "'.$categoryid.'"');
+			$list = $query->fetchAll();
+			if(count($list) > 0)
+				return $list[0];
+			else return false;
+		}
 	}

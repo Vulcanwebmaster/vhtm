@@ -55,7 +55,7 @@ body{ font-family:Verdana, Geneva, sans-serif; font-size:11px; margin:auto; back
 .listNewest a{text-decoration:none;}
 .togger_view{background-color:red !important; cursor:pointer !important}
 .togger_view p{color:white !important;}
-#detail{font-size:12pt;font-family: times new roman;}
+#detail{font-size:12pt;font-family: times new roman;margin-top: 10px;}
 .video a{text-decoration:none;}
 /*.video a:hover{color:red}*/
 #rs1 p:hover{color:black;cursor:pointer;}
