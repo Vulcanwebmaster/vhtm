@@ -9,13 +9,13 @@
 		
 		function insertVideoLink($input)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'",null,"'.$input['is_active'].'","'.$input['video_full_link'].'",null,"'.$input['user_upload'].'","'.$input['category_id'].'","'.$input['is_default'].'")');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'",null,"'.$input['is_active'].'","'.$input['video_full_link'].'",null,"'.$input['user_upload'].'","'.$input['category_id'].'","'.$input['is_default'].'")');
 			return $query;
 		}
 		
 		function insertVideo($input,$id_youtube)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_description'].'","'.$input['video_link'].'","0","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$id_youtube.'","",0)');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","0","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$id_youtube.'","","",0)');
 			return $query;
 		}
 		

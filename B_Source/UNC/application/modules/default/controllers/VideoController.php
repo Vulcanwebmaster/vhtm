@@ -20,11 +20,6 @@ class VideoController extends Zend_Controller_Action
 	
 	function listAction()
 	{
-		/*
-		$str = "http://www.youtube.com/watch?v=-wDcwDx6VBs";
-		$str = str_replace("http://www.youtube.com/watch?v=","", $str);
-		$str = substr($str,0,11);
-		echo $str;die();*/
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
@@ -38,7 +33,8 @@ class VideoController extends Zend_Controller_Action
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;
-		$this->view->video = $this->mDefault->getVideoDefault();
+		if($this->mDefault->getVideoDefault() != false)
+			$this->view->video_default = $this->mDefault->getVideoDefault();
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 		
@@ -143,7 +139,7 @@ class VideoController extends Zend_Controller_Action
 	
 	function checkSql($data) 
 	{
-		$data = trim(htmlentities(strip_tags($data)));
+		//$data = trim(htmlentities(strip_tags($data)));
 		
 		if (get_magic_quotes_gpc()) 
 			$data = stripslashes($data);
@@ -155,15 +151,17 @@ class VideoController extends Zend_Controller_Action
 	
 	function addcommentAction()
 	{
-		mb_regex_encoding('UTF-8'); 
+		echo '<meta charset="UTF-8"/>';
+		
 		$video_id = $this->_request->getParam('videoid');
 		$reader_id = $this->_request->getParam('readerid');
 		
 		$comment_content = $this->_request->getPost('comment_content');
-		
+		$comment_content = trim($comment_content);
 		$comment_content = $this->checkSql($comment_content);
-		//echo $comment_content;die();
-		$comment_content = html_entity_decode($comment_content, ENT_QUOTES, 'UTF-8');
+		
+		echo $comment_content;die();
+		//$comment_content = html_entity_decode($comment_content, ENT_QUOTES, 'UTF-8');
 		if($comment_content == "")
 		{
 			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';

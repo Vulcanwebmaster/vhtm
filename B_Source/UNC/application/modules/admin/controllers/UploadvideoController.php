@@ -87,10 +87,12 @@
 						{
 							$input = array(
 											'video_title'		=> $video->getVideoTitle(),
+											'video_alias'		=> $this->getAliasByName($video->getVideoTitle()),
 											'video_description' => $video->getVideoDescription(),
 											'video_link'		=> $video_link,
 											'user_upload'		=> $this->user_login
 							);
+							//var_dump($input);die();
 							$this->mVideo->insertVideo($input,$this->id_youtube);
 						}
 					}
@@ -162,6 +164,7 @@
 			$input = array(
 						'video_full_link'			=> $form->getValue('link'),
 						'video_title'				=> $form->getValue('title'),
+						'video_alias'				=> $this->getAliasByName($form->getValue('title')),
 						'video_description'			=> $form->getValue('description'),
 						'is_active'					=> $form->getValue('is_active'),
 						'user_upload'				=> $this->user_login,
