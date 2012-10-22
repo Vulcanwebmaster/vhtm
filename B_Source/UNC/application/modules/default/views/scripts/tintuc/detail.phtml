@@ -114,4 +114,53 @@
 		}
 		?>
 	</div>
+	<div style="margin-top:10px; text-align:center">
+		<?php echo $this->paginationControl($this->listComment,'Sliding','tintuc/pagination.phtml');?>
+	</div>
+	
+	<div style="margin-top:10px;margin-left:0px;border: 1px solid;border-radius: 5px;background-color:#F8F8F8;width:100%">
+		<div style="padding-left:10px">
+			<h3>Các tin mới đăng</h3>
+			<hr/>
+			<ul class="listNewest" style="list-style-type: none">
+				<?php if(isset($this->listNewestNews))
+				{
+					foreach($this->listNewestNews as $news)
+					{
+				?>
+                 <li>
+                  	<img src="/unc/application/templates/front/images/sao.png">
+					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['news_alias']; ?>.html">
+					 	<?php echo $news['news_title']; ?>											
+					</a>
+				</li>
+				<?php
+				}}
+				?>
+             </ul>
+		</div>
+	</div><br/>
+	
+	<div style="margin-top:10px;margin-left:0px;border: 1px solid;border-radius: 5px;background-color:#F8F8F8;width:100%">
+		<div style="padding-left:10px">
+			<h3>Các tin đã đăng</h3>
+			<hr/>
+			<ul class="listNewest" style="list-style-type: none">
+                <?php if(isset($this->listNewsPosted))
+				{
+					foreach($this->listNewsPosted as $news)
+					{
+				?>
+                 <li>
+                  	<img src="/unc/application/templates/front/images/sao.png">
+					<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['news_alias']; ?>.html">
+					 	<?php echo $news['news_title']; ?>											
+					</a>
+				</li>
+				<?php
+				}}
+				?>
+             </ul>
+		</div>
+	</div>
 </div>

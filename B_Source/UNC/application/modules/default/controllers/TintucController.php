@@ -67,7 +67,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function checkSql($data) 
 	{
-		$data = trim(htmlentities(strip_tags($data)));
+		//$data = trim(htmlentities(strip_tags($data)));
 		
 		if (get_magic_quotes_gpc()) 
 			$data = stripslashes($data);
@@ -153,15 +153,17 @@ class TintucController extends Zend_Controller_Action
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
+		$news_id = $this->_request->getParam('newsid');
+		$news = $this->mTintuc->getNewsByNewsId($news_id);
+		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news);
+		
+		$this->view->listNewestNews = $this->mTintuc->getNewestNews();
+		$this->view->listNewsPosted = $this->mTintuc->getNewsPosted($categoryid);
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 
-		$news_id = $this->_request->getParam('newsid');
-		$news = $this->mTintuc->getNewsByNewsId($news_id);
-		  
 		$this->view->news = $news;
-		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
 
 		$listUser = array();
 		foreach($this->mTintuc->getCommentByNewsId($news_id) as $comment)
@@ -214,6 +216,13 @@ class TintucController extends Zend_Controller_Action
 		$this->view->video_default = $this->mDefault->getVideoDefault();
 		$form = $this->setForm($news_id);
 		$this->view->form = $form;
+		
+		$paginator = Zend_Paginator::factory($this->mTintuc->getCommentByNewsId($news_id));
+	    $paginator->setItemCountPerPage(5);        
+	    $currentPage = $this->_request->getParam('page',1);
+	    $paginator->setCurrentPageNumber($currentPage);
+		
+		$this->view->listComment = $paginator;
 	}
 	
 	function timkiemAction()

@@ -151,4 +151,25 @@
 			$query = $this->db->query('select * from unc_news where news_post_date between "'.$start_time.'" and  "'.$end_time.'" order by news_post_date desc');
 			return $query->fetchAll();
 		}
+
+		function getNewestNews()
+		{
+			$query = $this->db->query('select * from unc_news order by news_post_date desc limit 5');
+			return $query->fetchAll();
+		}
+		
+		function getCategoryIdByNewsId($news_id)
+		{
+			$query = $this->db->query('select category_id from unc_news where news_id = "'.$news_id.'"');
+			$list = $query->fetchAll();
+			if(count($list) > 0)
+				return $list[0]['category_id'];
+			else return false;
+		}
+		
+		function getNewsPosted($categoryid)
+		{
+			$query = $this->db->query('select * from unc_news where category_id = "'.$categoryid.'" order by news_post_date desc limit 5');
+			return $query->fetchAll();
+		}
 	}

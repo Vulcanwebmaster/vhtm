@@ -135,6 +135,13 @@ class VideoController extends Zend_Controller_Action
 		$this->view->form = $form;
 		$this->view->listComment = $listComment;
 		$this->view->video_default = $this->mDefault->getVideoDefault();
+		
+		$paginator = Zend_Paginator::factory($this->mVideo->getListCommentByVideoId($video_id));
+	    $paginator->setItemCountPerPage(5);        
+	    $currentPage = $this->_request->getParam('page',1);
+	    $paginator->setCurrentPageNumber($currentPage);
+		
+		$this->view->listComment = $paginator;
 	}
 	
 	function checkSql($data) 
