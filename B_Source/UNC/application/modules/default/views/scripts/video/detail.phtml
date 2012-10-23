@@ -27,7 +27,7 @@ if(isset($this->video['video_full_link']))
 		<h3>Mô tả : <i><?php echo $this->video['video_description']; ?></i></h3>
 	</div>
 	<div id="fb-root"></div>
-	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/" data-send="true" data-width="450" data-show-faces="true"></div>
+	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/video/detail/videoid/<?php echo $this->video['video_id']; ?>" data-send="true" data-width="450" data-show-faces="true"></div>
 	<hr/>
 	<?php
 	if(isset($_SESSION['logged']))

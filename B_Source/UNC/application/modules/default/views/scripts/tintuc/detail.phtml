@@ -21,7 +21,7 @@
 	<h4 style="margin-left: 10px;margin-top: -8px;margin-bottom:0px;color:#323232; font-weight:normal; font-style:italic">Ngày đăng: <?php echo $this->news['news_post_date']; ?></h4>
 	<p style="margin-left:10px; text-align:justify"><?php echo $this->news['news_content']; ?></p>
 	<div id="fb-root"></div>
-	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/" data-send="true" data-width="450" data-show-faces="true"></div>
+	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/tintuc/detail/newsid/<?php echo $this->news['news_id']; ?>" data-send="true" data-width="450" data-show-faces="true"></div>
 	<hr/>
 	<?php
 	if(isset($_SESSION['logged']))
