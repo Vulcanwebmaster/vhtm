@@ -151,7 +151,7 @@ a:hover{text-decoration: underline}
 #menu-left ul li:hover{border:1px; border-bottom-style:dotted; background-color:#0c68ae; margin-right:6px}
 #nav{ width:auto; font-weight: bold; text-align: left; padding-left: 1px }
         #nav li.item{display:inline-block;padding:9px 8px; color: #5E5648;}
-        li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 11px !important; }
+        li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 12px !important; }
         li .a-style:hover{ font-weight: bold;  }
         #nav li.item:hover,#nav li.item.selected{background:#003399;}
         #nav li.item a{color:White;text-decoration:none; font-size:14px; margin-right: 5px;  }
