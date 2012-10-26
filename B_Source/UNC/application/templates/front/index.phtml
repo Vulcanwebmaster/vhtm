@@ -10,14 +10,71 @@
 <body>
 	 <!-----------begin header-------------->
 	<div id="header">
-    	<div id="subpage_logo_search">
+    	<div id="center-header">
         	<div id="subpage_logo"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.gif"/></div>
             <div id="subpage_search">
             	<form class="searchform" action="" method="post">
 				<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
 				<input class="searchsubmit" type="submit" value="" style="cursor:pointer">
 			</form>
-            </div>            
+            </div>  
+            			<!--------Menu-Top------>
+			<div id="menu-top">
+				<ul id="nav">
+			        <li class="item ">
+			            <a title="#" href="#">Tin tức</a>
+			            <ul class="sub">
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Doanh nhân văn hóa</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Thiên cổ hùng văn</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Tác phẩm đương đại</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Văn đàn</a>|
+			                </li>
+			            </ul>
+			        </li>
+			        <li class="item">
+			            <a title="#" href="#">Văn miếu</a>
+			            <ul class="sub">
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Danh nhân</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Văn học</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Thiên cổ</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Văn đàn</a>|
+			                </li>
+			            </ul>
+			        </li>
+			        <li class="item">
+			            <a title="#" href="#">Võ miếu</a>
+			            <ul class="sub">
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Võ học</a>|
+			                </li>
+			                <li class="itemSub">
+			                    <a class="a-style" title="#" href="#">Võ tướng</a>|
+			                </li>
+			            </ul>
+			        </li>
+			        <li class="item">
+			            <a title="#" href="#">Văn hóa thể thao Unesco</a>
+			        </li>
+			        <li class="item">
+			            <a title="#" href="#">Di sản</a>
+			        </li>
+			    </ul>
+       </div>
+        <!-----------end menu---------------> 	          
         </div>
         <!-----------begin menu--------------->
         <script type="text/ecmascript" language="javascript">
@@ -39,44 +96,6 @@
 				})
         </script>
         
-        <div id="subpage_menu">
-            	<ul>
-            		<?php foreach ($this->listParent as $parent)
-                	{?>
-                		<li class="subpage_menu_move"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><?php echo $parent['category_name'] ?></a>
-							<div class="subpage_menu_down">
-								<?php
-                        		foreach($this->listChild as $child)
-								{
-									if($child['category_parent_id'] == $parent['category_id'])
-									{
-                        		?>
-                        			<div class="children_down"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id'];?>-1-<?php echo $child['alias'];?>.html" style="color:#5e5648;  font-weight:bold"><?php echo $child['category_name']; ?></a></div><div class="children_down">|</div>
-                        		<?php }
-								}?>
-							</div>
-                		</li>
-                	<?php }?>
-                	<!-- li class="subpage_menu_move"><a href="#">Tin Tức</a>
-                    	<div class="subpage_menu_down">
-                    		
-                        	<div class="children_down"><a href="#" style="color:#5e5648;  font-weight:bold">Danh nhân văn hóa</a></div><div class="children_down">|</div>
-                            <div class="children_down"><a href="#" style="color:#5e5648">Thiên cổ hùng văn</a></div><div class="children_down">|</div>
-                            <div class="children_down"><a href="#" style="color:#5e5648">Tác phẩm đương đại</a></div><div class="children_down">|</div>
-                            <div class="children_down"><a href="#" style="color:#5e5648">Văn đàn</a></div>
-                        </div>
-                    </li>
-                    <li class="subpage_menu_move"><a href="#">Văn Miếu</a>
-                    </li>
-                    <li><a href="#">Võ Miếu</a></li>
-                    <li><a href="#">Văn hóa thể thao Unesco</a></li>
-                    <li><a href="#">Sức khỏe</a></li>
-                    <li><a href="#">Học bổng Unesco</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Forum</a></li -->
-                </ul>
-       </div>
-        <!-----------end menu--------------->       
      
     </div>
         <!-----------end header-------------->
