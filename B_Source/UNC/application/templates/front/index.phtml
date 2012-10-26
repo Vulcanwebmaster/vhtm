@@ -22,68 +22,31 @@
             			<!--------Menu-Top------>
 			<div id="menu-top">
 				<ul id="nav">
-			        <li class="item ">
-			            <a title="#" href="#">Tin tức</a>
-			            <ul class="sub">
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Doanh nhân văn hóa</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Thiên cổ hùng văn</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Tác phẩm đương đại</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Văn đàn</a>|
-			                </li>
-			            </ul>
+					<?php foreach($this->listParent as $parent)
+					  {
+					  ?>
+					  	<li class="item ">
+				            <a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><?php echo $parent['category_name'] ?></a>
+				            <ul class="sub">
+				            	<?php
+                        		foreach($this->listChild as $child)
+								{
+									if($child['category_parent_id'] == $parent['category_id'])
+									{
+                        		?>
+                        			<li class="itemSub">
+					                    <a class="a-style" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id'];?>-1-<?php echo $child['alias'];?>.html"><?php echo $child['category_name']; ?></a>|
+					                </li>
+                        		<?php }
+									}?>
+				            </ul>
+				        </li>
+					  <?php }?>
+			        <li class="item">
+			            <a href="<?php echo $this->baseUrl(); ?>/video/danh-sach/1-trang.html">Video</a>
 			        </li>
 			        <li class="item">
-			            <a title="#" href="#">Văn miếu</a>
-			            <ul class="sub">
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Danh nhân</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Văn học</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Thiên cổ</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Văn đàn</a>|
-			                </li>
-			            </ul>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Võ miếu</a>
-			            <ul class="sub">
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Võ học</a>|
-			                </li>
-			                <li class="itemSub">
-			                    <a class="a-style" title="#" href="#">Võ tướng</a>|
-			                </li>
-			            </ul>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Văn hóa thể thao Unesco</a>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Di sản</a>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Sức khỏe</a>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Học bổng Unesco</a>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Video</a>
-			        </li>
-			        <li class="item">
-			            <a title="#" href="#">Forum</a>
+			            <a href="<?php echo $this->baseUrl(); ?>/forum">Forum</a>
 			        </li>
 			    </ul>
        </div>
@@ -109,131 +72,17 @@
 				})
         </script>
         
+        <!-----------end menu--------------->       
      
     </div>
         <!-----------end header-------------->
          <!-----------begin main-------------->
        <div id="subpage_home">
-       		<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png" />  <a href="#">Home</a> > Subpage
+       		<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/home.png" />  <a href="<?php echo $this->baseUrl();?>">Home</a> > Subpage
        </div>
     <div id="subpage_wapper">
     	<div class="subpage_wapper_left_detail">
-            <div class="left"> <!-----------Left--------------->
-			<div class="content-left1">
-				<div class="sliders-left">
-					<div style="height: auto; width: 401px; float: left; padding: 12px 0px 0 10px">
-					<img class="img1" src="<?php echo $this->baseUrl();?>/application/templates/front/images/slide_1.gif">
-					<a class="a-title" href="#">Manchester United vs Stoke City: Quỷ Đỏ tự tin </a>
-					<p class="p-datetime">08:00 12/11/2012</p>
-					<p>Các con số thống kê cho thấy, chỉ tính riêng trong 6 trận đấu đầu tiên tại Premier League năm nay, MU đã có tới 5 trận đấu </p>
-					</div>
-					<div style="margin-left: 405px">
-					<img class="img2" src="<?php echo $this->baseUrl();?>/application/templates/front/images/slide_2.gif">
-					<img class="img2" src="<?php echo $this->baseUrl();?>/application/templates/front/images/slide_3.gif">
-					<img class="img2" src="<?php echo $this->baseUrl();?>/application/templates/front/images/slide_1.gif">
-					<img class="img2" src="<?php echo $this->baseUrl();?>/application/templates/front/images/slide_2.gif">
-					<img class="img2" src="<?php echo $this->baseUrl();?>/application/templates/front/images/slide_3.gif">
-					<div class="clear"> </div>
-				</div>
-				</div>
-				<div class="sliders-right">
-					<img class="img3" src="<?php echo $this->baseUrl();?>/application/templates/front/images/rua_vanmieu.gif">
-					<p>Văn Miếu trước đây bao gồm 20 công trình lớn, nhỏ nhưng đến nay chỉ còn lại vài ba công trình.</p>
-					<img class="img3" src="<?php echo $this->baseUrl();?>/application/templates/front/images/rua_vomieu.gif">
-					<p>Võ Miếu được lập ra cũng để tôn vinh những công thần đã đóng góp</p>
-				</div>
-			</div>
-			<div id="ads-left">
-				Ads Left
-			</div>
-			<div id="content-left">
-					<div class="children_down-title"><a href="#">Văn miếu</a></div>
-				     <div class="subpage_wapper_left_top">
-				     		
-			            	<div class="children_down2"><a href="#">Danh nhân văn hóa</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Thiên cổ hùng văn</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Tác phẩm đương đại</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Văn đàn</a></div>
-           			 </div>
-				<div class="gioithieu-img">
-					<img  src="<?php echo $this->baseUrl();?>/application/templates/front/images/video_1.gif">
-					<a class="a-title" href="#"> bên đều sở hữu hàng công</a>
-				</div>
-				<div class="gioithieu-img">
-					<img  src="<?php echo $this->baseUrl();?>/application/templates/front/images/video_2.gif">
-					<a class="a-title" href="#"> bên đều sở hữu hàng công</a>
-				</div>
-				<div class="gioithieu-img">
-					<img  src="<?php echo $this->baseUrl();?>/application/templates/front/images/video_3.gif">
-					<a class="a-title" href="#"> bên đều sở hữu hàng công</a>
-				</div>
-				<div class="gioithieu-img">
-					<img  src="<?php echo $this->baseUrl();?>/application/templates/front/images/video_4.gif">
-					<a class="a-title" href="#"> bên đều sở hữu hàng công</a>
-				</div>
-			</div>
-			 <div class="news">
-             <!--------begin bản tin-------->
-                <div class="item-news">
-                	<div class="children_down-title" style="margin-top:0px"><a href="#">Văn miếu</a></div>
-                	<div class="subpage_wapper_left_top">
-			            	<div class="children_down2"><a href="#">Danh nhân văn hóa</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Thiên cổ hùng văn</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Tác phẩm đương đại</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Văn đàn</a></div>
-           			 </div>
-                    <div class="item-new-left">
-                    	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/anh_xem_nhieu4.gif"/>
-                        <p class="tittle"><a href="#">Việt Nam tích cực vận động đăng cai ASIAD 2019 </a></p>
-                        <p>Không hứng thú tập luyện: Một số người cho rằng, tập luyện chẳng có gì thú vị, thường phải đối mặt với những thiết bị tập luyện, khô khốc, lạnh lùng, các chuyên gai kiến nghị: nên tập luyện cùng với bạn bè và người thân, như cùng nhau xem phim hoặc ăn cơm vậy.<br/> Vội về hiệu quả: rất nhiều người hy vọng chỉ cần tập luyện ít  mà có thể thu được hiệu quả rõ rệt. Chuyên gia kiến ngị tiêu chuẩn tập luyện là mỗi</p>
-                    </div>
-                    <div class="item-new-right">
-                    	<ul>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                        </ul>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="clear"> </div>
-                </div>
-                <div class="clear"> </div>
-               <!---------end bản tin------->
-               </div>
-               
-               <div class="news">
-                 <!--------begin bản tin-------->
-                <div class="item-news">
-                	<div class="children_down-title" style="margin-top:0px"><a href="#">Văn miếu</a></div>
-                	 <div class="subpage_wapper_left_top">
-			            	<div class="children_down2"><a href="#">Danh nhân văn hóa</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Thiên cổ hùng văn</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Tác phẩm đương đại</a></div><div class="children_down">|</div>
-			                <div class="children_down2"><a href="#">Văn đàn</a></div>
-           			 </div>
-                    <div class="item-new-left">
-                    	<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/anh_xem_nhieu4.gif"/>
-                        <p class="tittle"><a href="#">Việt Nam tích cực vận động đăng cai ASIAD 2019 </a></p>
-                        <p>Không hứng thú tập luyện: Một số người cho rằng, tập luyện chẳng có gì thú vị, thường phải đối mặt với những thiết bị tập luyện, khô khốc, lạnh lùng, các chuyên gai kiến nghị: nên tập luyện cùng với bạn bè và người thân, như cùng nhau xem phim hoặc ăn cơm vậy.<br/> Vội về hiệu quả: rất nhiều người hy vọng chỉ cần tập luyện ít  mà có thể thu được hiệu quả rõ rệt. Chuyên gia kiến ngị tiêu chuẩn tập luyện là mỗi</p>
-                    </div>
-                    <div class="item-new-right">
-                    	<ul>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                            <li><img class="img4" src="<?php echo $this->baseUrl();?>/application/templates/front/images/cham_tintuc.gif"/><a href="#">Những điều bạn nên chú ý cho sức khỏe gia đình</a></li>
-                         
-                        </ul>
-                    </div>
-                    <div class="clear"> </div>
-                </div>
-                <div class="clear"> </div>
-               <!---------end bản tin------->
-               </div>
-               
-			<div class="clear"> </div>
-			</div> <!----End LEFT-------->
+    		<?php echo $this->layout()->content;?>
         </div>
     	<div class="subpage_wapper_right">
         	<div id="news">
