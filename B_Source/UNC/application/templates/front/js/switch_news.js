@@ -1,10 +1,10 @@
 $(document).ready(function () {
-	$('.news1').addClass('togger_background');
+	$('.news1').addClass('togger_background_1');
 	$('.news2').addClass('togger_border');
 	$('.news1').click(function(){
-		$('.news1').addClass('togger_background');
+		$('.news1').addClass('togger_background_1');
 		$('.news1').removeClass('togger_border');
-		$('.news2').removeClass('togger_background');
+		$('.news2').removeClass('togger_background_2');
 		$('.news2').addClass('togger_border');
 		var col1 = document.getElementById('col1');
 		var col2 = document.getElementById('col2');
@@ -12,9 +12,9 @@ $(document).ready(function () {
 		col2.style.display = 'none';
 	})
 	$('.news2').click(function(){
-		$('.news1').removeClass('togger_background');
+		$('.news1').removeClass('togger_background_1');
 		$('.news1').addClass('togger_border');
-		$('.news2').addClass('togger_background');
+		$('.news2').addClass('togger_background_2');
 		$('.news2').removeClass('togger_border');
 		var col1 = document.getElementById('col1');
 		var col2 = document.getElementById('col2');
