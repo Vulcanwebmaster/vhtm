@@ -39,8 +39,8 @@ body{width:100%; height:auto; margin:0; padding:0; font-family:Verdana, Geneva, 
 .text_new{ float:left; width:488px; height:auto; padding: 0 10px}
 .text_new p{ margin:0; padding:0 0 8px 0;}
 .title{ font-weight:bold;}
-.news1{ background-image:url('../images/new1.gif'); float:left !important; width:43% !important; height:26px !important; color:#FFF}
-.news2{ border:1px solid #ccc; float:left !important; width:49% !important; height:18px !important;}
+.news1{width:43% !important;float:left !important; color:#FFF}
+.news2{width:49% !important;float:left !important; width:49% !important;}
 .news_title{ height:31px;}
 .news_title p{ margin:0; padding:5px 0 0 5px !important; text-align:center; font-weight:bold;}
 .subpage_wapper_right li{ list-style:url('../images/list.png'); padding-top:10px;}
@@ -239,3 +239,6 @@ a:hover{text-decoration: underline}
 /*----------------end Content--------------*/
 
 /*------------End CSS Trung------------*/
+
+.togger_background{height: 26px !important;color: white;background-image: url('../images/new1.gif');}
+.togger_border{height: 18px !important;border: 1px solid #CCC;color:black}

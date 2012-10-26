@@ -5,6 +5,7 @@
 <title>UNC subpage</title>
 <link href="<?php echo $this->baseUrl();?>/application/templates/front/css/style.css" type="text/css" rel="stylesheet" />
 <script src="<?php echo $this->baseUrl();?>/application/templates/front/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/front/js/switch_news.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -225,19 +226,33 @@
     	<div class="subpage_wapper_right">
         	<div id="news">
             	<div class="news_title">
-                	<p class="news1">Mới nhất</p>
-                    <p class="news2">Đọc nhiều nhất</p>
+                	<p onclick="toggle_view('col1','col2');" class="news1">Mới nhất</p>
+                    <p onclick="toggle_view('col2','col1');" class="news2">Đọc nhiều nhất</p>
                 </div>
-                <ul>
-                	<li><a href="#">Duesseldorf - Bayern: Xác lập kỷ lục? </a></li>
-                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-                    <li><a href="#">Người hâm mộ vẫn đang chờ "bữa tiệc bóng đá" của ĐT Việt Nam </a></li>
-                    <li><a href="#">Liverpool - Reading: Dài cổ chờ chiến thắng ở Anfield</a></li>
-                    <li><a href="#">Norwich City - Arsenal: Không còn dễ tổn thương khi xa Emirates</a></li>
-                    <li><a href="#">Giải taekwondo quân sự thế giới: Việt Nam hy vọng nội dung quyền.</a></li>
-                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-                </ul>
-                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+                <span id="col1">
+	                <ul>
+	                	<li><a href="#">Duesseldorf - Bayern: Xác lập kỷ lục? </a></li>
+	                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
+	                    <li><a href="#">Người hâm mộ vẫn đang chờ "bữa tiệc bóng đá" của ĐT Việt Nam </a></li>
+	                    <li><a href="#">Liverpool - Reading: Dài cổ chờ chiến thắng ở Anfield</a></li>
+	                    <li><a href="#">Norwich City - Arsenal: Không còn dễ tổn thương khi xa Emirates</a></li>
+	                    <li><a href="#">Giải taekwondo quân sự thế giới: Việt Nam hy vọng nội dung quyền.</a></li>
+	                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+                </span>
+                <span id="col2" style="display:none">
+	                <ul>
+	                	<li><a href="#">1</a></li>
+	                    <li><a href="#">2</a></li>
+	                    <li><a href="#">3</a></li>
+	                    <li><a href="#">4</a></li>
+	                    <li><a href="#">5</a></li>
+	                    <li><a href="#">6</a></li>
+	                    <li><a href="#">7</a></li>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+                </span>
             </div>
             <div id="news" class="bgnews">
             	<div class="news_title2">

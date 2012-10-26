@@ -1,8 +1,25 @@
 $(document).ready(function () {
-	$('#rs1').addClass('togger_view');
-	$('.rs').click(function(){
-		$('.rs').removeClass('togger_view');
-		$(this).addClass('togger_view');
+	$('.news1').addClass('togger_background');
+	$('.news2').addClass('togger_border');
+	$('.news1').click(function(){
+		$('.news1').addClass('togger_background');
+		$('.news1').removeClass('togger_border');
+		$('.news2').removeClass('togger_background');
+		$('.news2').addClass('togger_border');
+		var col1 = document.getElementById('col1');
+		var col2 = document.getElementById('col2');
+		col1.style.display = 'block';
+		col2.style.display = 'none';
+	})
+	$('.news2').click(function(){
+		$('.news1').removeClass('togger_background');
+		$('.news1').addClass('togger_border');
+		$('.news2').addClass('togger_background');
+		$('.news2').removeClass('togger_border');
+		var col1 = document.getElementById('col1');
+		var col2 = document.getElementById('col2');
+		col2.style.display = 'block';
+		col1.style.display = 'none';
 	})
 })
 
