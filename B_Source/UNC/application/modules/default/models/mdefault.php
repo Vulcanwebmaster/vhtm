@@ -90,6 +90,12 @@
 			else return false;
 		}
 		
+		function getListVideoByLimit($limit)
+		{
+			$query=$this->db->query("select * from unc_video limit ".$limit);
+			return $query->fetchAll();
+		}
+
 		function getListThread()
 		{
 			$query = $this->forum->query('select * from thread limit 6');

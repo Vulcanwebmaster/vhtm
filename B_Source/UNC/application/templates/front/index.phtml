@@ -12,12 +12,12 @@
 	 <!-----------begin header-------------->
 	<div id="header">
     	<div id="center-header">
-        	<div id="subpage_logo"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.gif"/></div>
+        	<div id="subpage_logo"><a href="<?php echo $this->baseUrl();?>"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.gif"/></a></div>
             <div id="subpage_search">
-            	<form class="searchform" action="" method="post">
-				<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
-				<input class="searchsubmit" type="submit" value="" style="cursor:pointer">
-			</form>
+            	<form class="search-form" action="<?php echo $this->baseUrl();?>/timkiem" method="post">
+					<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
+					<input class="searchsubmit" type="submit" value="" style="cursor:pointer">
+				</form>
             </div>  
             			<!--------Menu-Top------>
 			<div id="menu-top">
@@ -91,48 +91,56 @@
                     <p onclick="toggle_view('col2','col1');" class="news2">Đọc nhiều nhất</p>
                 </div>
                 <span id="col1">
-                	<?php
-                	if(count($this->listHotNews) > 0)
-					{
-					?>
-	                		<ul>
+                	<ul>
 	                	<?php
-	                		
-						foreach($this->listHotNews  as $news)
+	                    $count = 0; 
+	                    foreach($this->listHotNews as $news)
 						{
-						?>
-								<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
-						<?php
+							$count++ ;
+							?>
+									<?php if(isset($news['news_title']))
+									{
+									?>
+									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
+									<?php 
+										echo $news['news_title']
+									?>
+									</a></li>
+									<?php 
+									}
+									?>
+							<?php
+							if($count == 6) break;
 						}
-						?>
-							</ul>
-							<p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
-					<?php
-					}
-	                ?>
-	                
+	                    ?>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
                 </span>
                 <span id="col2" style="display:none">
-                	<?php
-                	if(count($this->listNewsMostView) > 0)
-					{
-								?>
-	                	<ul>
-	                	<?php
-	                		
-								foreach($this->listNewsMostView  as $news)
-								{
+	                <ul>
+	                	<?php 
+	                	$count = 0; 
+	                    foreach($this->listNewsMostView as $news)
+						{
+							$count++ ;
+							?>
+									<?php if(isset($news['news_title']))
+									{
 									?>
-										<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
-									<?php
-								}
-						?>
-						</ul>
-						<p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
-					<?php
-					}
-	                ?>
-	                
+									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
+									<?php 
+										echo $news['news_title'];
+									?>
+									</a></li>
+									<?php 
+									}
+									?>
+							<?php
+							if($count == 6) break;
+						}
+	                    ?>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
                 </span>
             </div>
             <div id="news" class="bgnews">
@@ -173,7 +181,19 @@
                 <br clear="both" />
             </div>
 			<div id="ads-right">
-				<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.gif"/>
+				<div id="video">
+	                <?php
+	                       		foreach($this->listquangcao as $quangcao)
+									{
+										
+	                        		?>
+	                <div class="img-tube">
+	                	<center>
+	                		<a href="<?php echo $quangcao['ads_link']; ?>" target="_blank">   <?php echo $quangcao['ads_banner']; ?></a>
+	                	</center>	
+	                </div>
+	                <?php   } ?>
+            	</div>
 			</div>
         </div>      
 
@@ -185,12 +205,11 @@
         	<div class="content_subpage_footer_bottom">
                 <div class="ul_footer" id="ul1">
                     <ul class="ul1">
-                        <li><a href="#">Tin tức</a></li>
-                        <li><a href="#">Văn Miếu</a></li>
-                        <li><a href="#">Võ Miếu</a></li>
-                        <li><a href="#">VHTT Unesco</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                        <li><a href="#">Quảng cáo</a></li>
+                    	<?php foreach($this->listParent as $parent)
+						  {
+						  ?>
+	                    <li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></li></a>
+						<?php } ?>
                     </ul>
                 </div>
                 <div class="ul_footer" id="ul2">
@@ -221,6 +240,7 @@
                        </li>                       
                     </ul>
                 </div>
+             	<br style="clear:both"/>
              </div>
         </div>
          <div id="copy">

@@ -24,6 +24,7 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listThread = $this->mDefault->getListThread();
 		
 		$this->view->video_default = $this->mDefault->getVideoDefault();
+		$this->view->listVideo=$this->mDefault->getListVideoByLimit(4);
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		//var_dump($this->mDefault->getListHotNewsJs());die();
