@@ -1,121 +1,54 @@
-<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/jquery.ui.all.css">
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.datepicker.js"></script>
-<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/demos.css">
-
-<script>
-	$(function() {
-		$( ".datepicker" ).datepicker();
-	});
-</script>
-
-<div style="margin-top:20px;">
-	<h3 style="display: inline">
-		<a href="<?php echo $this->baseUrl(); ?>">Trang chủ</a> >
-		<?php 
-		
-		if($this->is_parent == "1")
-		{
-		?>
-			<h2 style="display: inline;"> 
-				<a style="text-decoration: none" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->parent['category_id']; ?>-1-<?php echo $this->parent['alias']; ?>.html"><?php echo $this->parent['category_name']; ?></a>
-			</h2>
-		<?php
-		}
-		else 
-		{
-			?>
-				<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->parent['category_id']; ?>-1-<?php echo $this->parent['alias']; ?>.html"><?php echo $this->parent['category_name']; ?></a>
-				 >
-				<h2 style="display: inline;">
-					<a style="text-decoration: none" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->child['category_id']; ?>-1-<?php if(isset($this->child['alias'])) echo $this->child['alias']; ?>.html"><?php echo $this->child['category_name']; ?></a>
-				</h2>
-			<?php
-		} 
-		?>
-	</h3>
-</div>
-
-<div style="margin-top:15px">
-	<?php 
-	if(count($this->list) > 0)
-	{
-		foreach($this->list as $news)
-		{
-	?>
-		<div style="margin-top:10px">
-				<a class="news_avatar" style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
-	 			<?php
-					if(isset($news['news_avatar']))
+		<div class="element_detail">
+			<div class="children_down-title"><a href="#">Văn miếu</a></div>
+        	<div class="subpage_wapper_left_top">
+            	<div class="children_down2"><a href="#">Danh nhân văn hóa</a></div><div class="children_down">|</div>
+                <div class="children_down2"><a href="#">Thiên cổ hùng văn</a></div><div class="children_down">|</div>
+                <div class="children_down2"><a href="#">Tác phẩm đương đại</a></div><div class="children_down">|</div>
+                <div class="children_down2"><a href="#">Văn đàn</a></div>
+            </div>
+            <?php 
+            	if(count($this->list) > 0)
+				{
+					foreach($this->list as $news)
 					{
-						echo $news['news_avatar'];
-					} 
-					else 
-					{
-						?>
-							<img src="<?php echo $this->baseUrl(); ?>/application/templates/front/images/logo.png" alt="Văn hóa thể thao"/>
-						<?php
+            ?>
+            <div class="subpage_new">
+            	<div class="img_new">
+            		<?php
+            			if($news['news_avatar'] != "")
+						{
+							$str = $news['news_avatar'];
+							$preg1 = preg_match_all('#<img.*>#',$str,$match);
+							echo $match[0][0];
+						}
+						else {
+							?>
+								<img src="<?php echo $this->baseUrl()?>/application/templates/front/images/new.gif">
+							<?php
+						}
+            		?>
+                </div>
+                <div class="text_new">
+                	<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a>
+                    <p class="date"><?php echo $news['news_post_date'] ?></p>
+                    <p class="text"><?php echo strip_tags($news['news_summary'])?></p>
+                </div>
+            </div><br/>
+           <?php
 					}
-	 			?>
-	 			</a>
-	 		
-	 		<div style="float:right">
-	  			<h3 style="color:blue;margin-left:145px;margin-top:-109px"><a style="color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
-	  			<div style="margin-left:145px">
-	  				<?php
-	  				 	$str = $news['news_summary']; 
-						
-						$preg1 = preg_match_all('#<img.*/>#',$str,$match);
-						if($preg1 > 0)
-						{
-							$str = str_replace($match[0][0],"", $str);
-						}
-						
-						$preg2 = preg_match('#<br>.*</a>#',$str,$match);
-						if($preg2 > 0)
-						{
-							$str = str_replace($match[0],"", $str);
-						}
-						$str = strip_tags($str);
-						echo $str;						
-	  				?>
-	  			</div>
-	  			
-	  			<a style="float:right; color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">Xem tiếp</a>
-	 		</div>
-	 		<br style="clear:both">
-	 	</div>
- 	<?php
-		}
-	}
-	else 
-	{
-	?>
-		<h3 style="margin:10px;color:red"><i>Chuyên mục này chưa có tin bài nào</i></h3>
-	<?php
-	}
- 	?>
-</div>
-
-<div style="margin-top:10px; text-align:center">
-	<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
-</div>
-
-<div style="margin-top:30px;margin-left:20px" id="search">
-	<h3>Tìm kiếm tin tức theo ngày tháng</h3>
-	<form method="post" action="<?php echo $this->baseUrl(); ?>/tintuc/timkiem">
-	<table>
-		<tr>
-			<td style="padding-left: 10px;">Từ ngày : </td>
-			<td style="padding-left: 10px;"><input style="width:150px;" type="text" name="start_time" class="datepicker"/></td>
-			<td style="padding-left: 10px;">Đến ngày : </td>
-			<td style="padding-left: 10px;"><input style="width:150px;" type="text" name="end_time" class="datepicker"/></td>
-			<td><input style="margin-left:40%" type="submit" name="submit" value="Tìm kiếm" /></td>
-		</tr>
-	</table>
-	
-	</form>
-	
-</div>
+				}
+				else {
+					echo 'Chuyên mục này chưa có tin bài nào';
+				}
+           ?>
+           <div class="page_video" style="margin-left:15px;">
+				<ul id="page_video">
+					<li style=" margin-right:30px"><a href="#">Trang</a></li><li>  </li>
+					<li><a href="#">1</a></li><li>|</li>
+					<li><a href="#">2</a></li><li>|</li>
+					<li><a href="#">....</a></li><li>|</li>
+					<li><a href="#">10</a></li>
+				</ul>
+			</div> <br clear="both">
+			</div>
+			<div class="detail_add"></div>

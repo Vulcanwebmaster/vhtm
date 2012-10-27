@@ -206,7 +206,7 @@ class TintucController extends Zend_Controller_Action
 
 		$this->view->listChild = $listChild;
 		
-					//Lấy ra ảnh quảng cáo ngẫu nhiên
+		//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
@@ -223,6 +223,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->form = $form;
 		
 		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
+		$this->view->listThread = $this->mDefault->getListThread();
 	}
 	
 	
@@ -327,7 +328,7 @@ class TintucController extends Zend_Controller_Action
 		
 		$this->view->is_parent = $is_parent;
 		$paginator = Zend_Paginator::factory($list);
-        $paginator->setItemCountPerPage(15);        
+        $paginator->setItemCountPerPage(8);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		
@@ -352,7 +353,6 @@ class TintucController extends Zend_Controller_Action
 		
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
-		
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
@@ -363,7 +363,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 		
-		//echo $is_parent;die();
+		$this->view->listThread = $this->mDefault->getListThread();
 	}
 
 	function logoutAction()

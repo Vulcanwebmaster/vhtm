@@ -34,7 +34,7 @@ body{width:100%; height:auto; margin:0; padding:0; font-family:Verdana, Geneva, 
 .subpage_wapper_left_top{ background-image:url('../images/thanhnhon_con.gif'); height:31px; width:100%; background-repeat:no-repeat; margin-top:10px; padding:10px 0 0 110px;}
 .children_down2 a{ text-decoration:none; color:black}
 .children_down2 a:hover{text-decoration: underline}
-.subpage_new{ width:100%; height:115px; margin:15px}
+.subpage_new{ width:100%; height:115px;}
 .img_new{ float:left; width:152px; height:auto;}
 .text_new{ float:left; width:488px; height:auto; padding: 0 10px}
 .text_new p{ margin:0; padding:0 0 8px 0;}
@@ -78,7 +78,7 @@ body{width:100%; height:auto; margin:0; padding:0; font-family:Verdana, Geneva, 
 
 /*------------------subpage detail-------------------*/
 
-.subpage_wapper_left_top_detail{height:31px; width:94%; background-color:#e9e9e9; margin:10px 10px 0 10px; padding:10px; font-weight:bold; font-size:18px;}
+.subpage_wapper_left_top_detail{height:auto; width:94%; background-color:#e9e9e9; margin:10px 10px 0 10px; padding:10px; font-weight:bold; font-size:18px;}
 .subpage_new_detail ul{ padding:0;}
 .subpage_new_detail{ border-bottom:1px solid #ededed; height:20px}
 .subpage_new_detail ul li{ float:left; list-style:none; padding:0 10px 0 10px}
@@ -93,8 +93,9 @@ body{width:100%; height:auto; margin:0; padding:0; font-family:Verdana, Geneva, 
 #content_detail p{ font-size:12px;}
 #ul_detail_lk li{ float:left; list-style:none; padding-right:5px;}
 .detail_add{ width:100%; height:80px; background-color:#d4cec4; margin:20px 0}
-.subpage_wapper_left_detail{width:70%; float:left; height:auto;}
-.element_detail{background-color:#fff; height:auto; padding-top:10px}
+/*width:70%;*/
+.subpage_wapper_left_detail{ width:70%;float:left; height:auto;}
+.element_detail{background-color:#fff; height:auto; padding-top:10px;padding-left:15px}
 .element_detail2{ background-color:#fff; height:auto; padding:15px}
 .n, .e{height:30px; width:70%; background-color:#e8e8e8; border:0; padding-left:10px; margin-top:15px}
 .m{height:120px; width:70%; background-color:#e8e8e8; border:0; padding-left:10px; margin-top:15px; padding-top:10px}
@@ -247,3 +248,4 @@ a:hover{text-decoration: underline}
 .togger_background_2{height: 26px !important;color: white;background-image: url('../images/new2.gif');}
 .togger_border{height: 18px !important;border: 1px solid #CCC;color:black}
 .news_title p {cursor:pointer}
+.img_new img{width:152px !important;height:107px !important}

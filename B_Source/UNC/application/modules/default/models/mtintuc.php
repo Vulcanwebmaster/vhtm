@@ -191,4 +191,10 @@
 				return $list[0];
 			else return false;
 		}
+		
+		function getListThread()
+		{
+			$query = $this->forum->query('select * from thread limit 6');
+			return $query->fetchAll();
+		}
 	}

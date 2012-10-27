@@ -2,9 +2,11 @@
 	class Default_Model_Mdefault extends Zend_Db_Table_Abstract
 	{
 		private $db;
+		protected $forum;
 		function __construct()
 		{
 			$this->db = Zend_Registry::get('db');
+			$this->forum = Zend_Registry::get('unc_forum');
 		}
 		
 		function getListHotNews()
@@ -86,5 +88,11 @@
 			if (count($list)>0)
 				return $list[0]['video_full_link'];
 			else return false;
+		}
+		
+		function getListThread()
+		{
+			$query = $this->forum->query('select * from thread limit 6');
+			return $query->fetchAll();
 		}
 	}

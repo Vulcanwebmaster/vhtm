@@ -46,7 +46,7 @@
 			            <a href="<?php echo $this->baseUrl(); ?>/video/danh-sach/1-trang.html">Video</a>
 			        </li>
 			        <li class="item">
-			            <a href="<?php echo $this->baseUrl(); ?>/forum">Forum</a>
+			            <a href="<?php echo $this->baseUrl(); ?>/forum/forum.php">Forum</a>
 			        </li>
 			    </ul>
        </div>
@@ -91,28 +91,48 @@
                     <p onclick="toggle_view('col2','col1');" class="news2">Đọc nhiều nhất</p>
                 </div>
                 <span id="col1">
-	                <ul>
-	                	<li><a href="#">Duesseldorf - Bayern: Xác lập kỷ lục? </a></li>
-	                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-	                    <li><a href="#">Người hâm mộ vẫn đang chờ "bữa tiệc bóng đá" của ĐT Việt Nam </a></li>
-	                    <li><a href="#">Liverpool - Reading: Dài cổ chờ chiến thắng ở Anfield</a></li>
-	                    <li><a href="#">Norwich City - Arsenal: Không còn dễ tổn thương khi xa Emirates</a></li>
-	                    <li><a href="#">Giải taekwondo quân sự thế giới: Việt Nam hy vọng nội dung quyền.</a></li>
-	                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-	                </ul>
-	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+                	<?php
+                	if(count($this->listHotNews) > 0)
+					{
+					?>
+	                		<ul>
+	                	<?php
+	                		
+						foreach($this->listHotNews  as $news)
+						{
+						?>
+								<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
+						<?php
+						}
+						?>
+							</ul>
+							<p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+					<?php
+					}
+	                ?>
+	                
                 </span>
                 <span id="col2" style="display:none">
-	                <ul>
-	                	<li><a href="#">Norwich City - Arsenal: Không còn dễ tổn thương khi xa Emirates</a></li>
-	                    <li><a href="#">Giải taekwondo quân sự thế giới: Việt Nam hy vọng nội dung quyền.</a></li>
-	                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-	                	<li><a href="#">Duesseldorf - Bayern: Xác lập kỷ lục? </a></li>
-	                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-	                    <li><a href="#">Người hâm mộ vẫn đang chờ "bữa tiệc bóng đá" của ĐT Việt Nam </a></li>
-	                    <li><a href="#">Liverpool - Reading: Dài cổ chờ chiến thắng ở Anfield</a></li>
-	                </ul>
-	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+                	<?php
+                	if(count($this->listNewsMostView) > 0)
+					{
+								?>
+	                	<ul>
+	                	<?php
+	                		
+								foreach($this->listNewsMostView  as $news)
+								{
+									?>
+										<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
+									<?php
+								}
+						?>
+						</ul>
+						<p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+					<?php
+					}
+	                ?>
+	                
                 </span>
             </div>
             <div id="news" class="bgnews">
@@ -120,14 +140,17 @@
                 	Forum
                 </div>
                 <ul>
-                	<li><a href="#">Duesseldorf - Bayern: Xác lập kỷ lục? </a></li>
-                    <li><a href="#">Giải thưởng văn học: Không đơn thuần là vinh danh tác phẩm.</a></li>
-                    <li><a href="#">Người hâm mộ vẫn đang chờ "bữa tiệc bóng đá" của ĐT Việt Nam </a></li>
-                    <li><a href="#">Liverpool - Reading: Dài cổ chờ chiến thắng ở Anfield</a></li>
-                    <li><a href="#">Norwich City - Arsenal: Không còn dễ tổn thương khi xa Emirates</a></li>
-                    <li><a href="#">Giải taekwondo quân sự thế giới: Việt Nam hy vọng nội dung quyền.
-</a></li>
-
+                	<?php
+                	if(count($this->listThread) > 0)
+					{
+						foreach($this->listThread as $thread)
+						{
+                		?>
+                			<li><a href="<?php echo $this->baseUrl() ?>/forum/showthread.php?<?php echo $thread['threadid'] ?>"><?php echo $thread['title'] ?></a></li>
+                		<?php
+						}
+					}
+                	?>
                 </ul>
                 <p class="read_add"><a href="#">Xem thêm</a></p>
                 <br clear="both" />
