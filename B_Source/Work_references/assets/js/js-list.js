@@ -25,7 +25,7 @@ $(document).ready(function(){
 		$('.mask2').slideDown();
 	});
 	$('.exit').click(function(){
-		$(this).parent('td').parent('tr').parent('tbody').parent('.mask').slideUp();
+		$(this).parent('td').parent('tr').parent('tbody').parent('table').parent('form').parent('.mask').slideUp();
 		$(this).parent('.mask2').slideUp();
 	});
 	

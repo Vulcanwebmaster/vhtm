@@ -19,25 +19,7 @@ class DbFiles
 			if (!move_uploaded_file($tmpLocation, $CI->config->item('files_dir').$fileId.".sav"))
 				$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
 		}
-	}
-	
-	//===================== MY FUNCTION ===========================
-	function deleteMyFile($fileId)
-	{
-		$filesDir = "savedfiles/";
-		if ($fileId != -1)
-		{
-			$CI =& get_instance();
-			$filepath = 'assets/images/references/'.$this->returnFileName($fileId);
-			if(file_exists($filepath))
-			{
-				unlink($filepath);
-			}
-			$this->deleteFile($fileId);
-			unlink($CI->config->item('files_dir').$fileId.".sav");
-			$query = $CI->db->query("DELETE FROM files WHERE id = '$fileId'");
-		}
-	}
+	}	
 	
 	function returnFileName($fileId)
 	{
@@ -58,13 +40,6 @@ class DbFiles
 		return false;
 	}
 	
-	function storeMyFile($fileType,$type,$fileName)
-	{
-		$CI =& get_instance();
-		$query = $CI->db->query("INSERT INTO files VALUES('','$fileType','$type','$fileName')");
-	}
-	//================================================================
-
 	function hasRightToLoad($userId, $fileId)
 	{	//TODO: IMPLEMENT SECURITY.
 		return true;

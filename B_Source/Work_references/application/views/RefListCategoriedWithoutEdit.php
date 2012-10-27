@@ -30,7 +30,7 @@
           					<?php 
           						for ($j=0; $j<5; $j++)
           							if ($i+$j<$count)
-          								echo '<td class="category"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category.'</td>';
+          								echo '<td class="category" style="cursor:pointer"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category_title.'</td>';
           					?>
           				</tr>
           			<?php }?>

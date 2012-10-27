@@ -2,12 +2,12 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/css.css"/>
 <div id="body">
 	<div id="column1" class="column">
-		<?php 			
-		for($count=0;$count<(count($ds))/2;$count++){
+		<?php 
+		for($count=0;$count<intval(count($ds)/2);$count++){
+			 
         ?>
 			<div class="reference">
-				<!--<img class="picture" alt="" src="<?php echo base_url();?>assets/images/references/f1.jpeg"/>-->
-				<img class="picture" src="<?php echo base_url();?>assets/images/references/<?php echo $pictures[$count];?>"/>
+				<img class="picture" src="<?php echo base_url();?>savedfiles/<?php echo $pictures[$count];?>"/>
 				<div class="info">
 					<div class="info-path">
 						<h4 class="title"><?php echo $ds[$count]->title ?></h4>
@@ -29,25 +29,11 @@
 						</div>
 						<div class="rate">
 							<ul>
-								<li>
-									<?php if (isset($rates[$count][0])) $count2=$rates[$count][0]->rating;
-									else $count2=0;
-									{
-										for ($i=0;$i<$count2; $i++)
-										{
-											echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
-										}
-										for ($i=0;$i<5-$count2; $i++)
-										{
-											echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
-										}
-									}?>
-									<span class="small-text">price</span>
-								</li>
-								<li>
-									<?php 
-										if (isset($rates[$count][1])) $count2=$rates[$count][1]->rating;
-									else $count=0;
+								<?php if ($rates[$count])
+								{?>
+									<li>
+										<?php if ($rates[$count][0]) $count2=$rates[$count][0]->rating;
+										else $count2=0;
 										{
 											for ($i=0;$i<$count2; $i++)
 											{
@@ -58,24 +44,43 @@
 												echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
 											}
 										}?>
-									<span class="small-text">quality</span>
-								</li>
-								<li>
-									<?php 
-									if (isset($rates[$count][2])) $count2=$rates[$count][2]->rating;
-									else $count2=0;
-									{
-										for ($i=0;$i<$count2; $i++)
+										<span class="small-text">price</span>
+									</li>
+									<li>
+										<?php 
+											if ($rates[$count][1])
+													$count2=$rates[$count][1]->rating;
+												else $count2=0;
+											{
+												for ($i=0;$i<$count2; $i++)
+												{
+													echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
+												}
+												for ($i=0;$i<5-$count2; $i++)
+												{
+													echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
+												}
+											}?>
+										<span class="small-text">quality</span>
+									</li>
+									<li>
+										<?php 
+										if ($rates[$count][2]) 
+											$count2=$rates[$count][2]->rating;
+										else $count2=0;
 										{
-											echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
-										}
-										for ($i=0;$i<5-$count2; $i++)
-										{
-											echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
-										}
-									}?>
-									<span  class="none-small-text">speed</span>
-								</li>
+											for ($i=0;$i<$count2; $i++)
+											{
+												echo '<img alt="" src="'.base_url().'assets/images/circle1.png">';
+											}
+											for ($i=0;$i<5-$count2; $i++)
+											{
+												echo '<img alt="" src="'.base_url().'assets/images/circle2.png">';
+											}
+										}?>
+										<span  class="none-small-text">speed</span>
+									</li>
+								<?php }?>
 							</ul>
 						</div>
 						<br class="both"/>
@@ -83,18 +88,18 @@
 				</div>
 			</div>
 		
-		<?php 
+		<?php
 		}
 		 ?>
 		</div>
 		
 		<div id="column2" class="column">
 		<?php 			
-		for($count==(count($ds))/2;$count<count($ds);$count++){
+		for($count=intval(count($ds)/2);$count<count($ds);$count++){
         ?>
 		
 		<div class="reference">
-			<img class="picture" alt="" src="/Work_references/assets/images/references/f1.jpeg"/>
+			<img class="picture" src="<?php echo base_url();?>savedfiles/<?php echo $pictures[$count];?>"/>
 			<div class="info">
 				<div class="info-path">
 					<h4 class="title"><?php echo $ds[$count]->title ?></h4>
@@ -116,8 +121,10 @@
 					</div>
 					<div class="rate">
 						<ul>
+							<?php if ($rates[$count])
+							{?>
 								<li>
-									<?php if (isset($rates[$count][0])) $count2=$rates[$count][0]->rating;
+									<?php if ($rates[$count][0]) $count2=$rates[$count][0]->rating;
 									else $count2=0;
 									{
 										for ($i=0;$i<$count2; $i++)
@@ -133,8 +140,9 @@
 								</li>
 								<li>
 									<?php 
-										if (isset($rates[$count][1])) $count2=$rates[$count][1]->rating;
-									else $count=0;
+										if ($rates[$count][1])
+												$count2=$rates[$count][1]->rating;
+											else $count2=0;
 										{
 											for ($i=0;$i<$count2; $i++)
 											{
@@ -149,7 +157,8 @@
 								</li>
 								<li>
 									<?php 
-									if (isset($rates[$count][2])) $count2=$rates[$count][2]->rating;
+									if ($rates[$count][2]) 
+										$count2=$rates[$count][2]->rating;
 									else $count2=0;
 									{
 										for ($i=0;$i<$count2; $i++)
@@ -163,14 +172,17 @@
 									}?>
 									<span  class="none-small-text">speed</span>
 								</li>
-							</ul>
+							<?php }?>
+						</ul>
 					</div>
 					<br class="both"/>
 				</div>
 			</div>
 		</div>
 	
-	<?php } ?>
+	<?php 
+		
+		} ?>
 </div>
 
 </div>

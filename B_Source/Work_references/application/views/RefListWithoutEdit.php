@@ -8,7 +8,7 @@
       				<div class="list">
 		               	<div style="border-bottom:1px solid #666;">
 		                    <p>
-		                    	<img alt="" src="<?php echo base_url();?>assets/images/references/<?php echo $pictures[$i];?>"/>
+		                    	<img alt="" src="<?php echo base_url();?>savedfiles/<?php echo $pictures[$i];?>"/>
 		                    </p>
 		                </div>
 		                <div>

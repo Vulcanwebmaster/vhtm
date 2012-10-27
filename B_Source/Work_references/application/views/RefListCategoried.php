@@ -1,21 +1,19 @@
-<link rel="stylesheet" type="text/css" href="/work_references/assets/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="/work_references/assets/css/css.css"/>
-<script type="text/javascript" src="/work_references/assets/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/work_references/assets/js/js-list.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/css.css"/>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/js-list.js"></script>
 
 <script type="text/javascript">
 	//AJAX:
 	$(document).ready(function(){
 		$('.category').click(function(){
 			$categoryId=$(this).children('input').val();
-			$('.div-list').load("/work_references/index.php/m_references/showListCategoried/"+<?php echo $craftsmanId;?>+"/"+$categoryId);
+			$('.div-list').load("<?php echo base_url();?>index.php/m_references/showListCategoried/"+<?php echo $craftsmanId;?>+"/"+$categoryId);
 		});
+
+		$('.div-list').load("<?php echo base_url();?>index.php/m_references/showListCategoried/"+<?php echo $craftsmanId;?>+"/"+<?php echo $default_categoryId;?>);
 	});
 </script>
-
-<?php $this->load->view('RefAddCategory');
-	$this->load->view('RefAddReference');
-?>
 
 <div id="body">
     	<!------------begin add catagory---------->
@@ -23,6 +21,16 @@
         	<table id="table" cellpadding="0" border="0">
           		<?php 
           			$count=count($listCategories);
+          			if ($count==0)
+          			{
+          				echo '<td style=" padding-left:10px; width:150px "><a id="add_category">Add category</a></td>';
+          				echo '<td></td>';
+          				echo '<td></td>';
+          				echo '<td></td>';
+          				echo '<td></td>';
+          			}
+          			else 
+          			{
           			for ($i=0; $i<$count; $i+=5)
           			{?>
           				<tr>
@@ -32,10 +40,10 @@
           						else echo '<td></td>';
           						for ($j=0; $j<5; $j++)
           							if ($i+$j<$count)
-          								echo '<td class="category"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category.'</td>';
+          								echo '<td class="category" style="cursor:pointer"><input type="hidden" value="'.$listCategories[$i+$j]->id.'"/>'.$listCategories[$i+$j]->category_title.'</td>';
           					?>
           				</tr>
-          			<?php }?>
+          			<?php }}?>
             </table>
         </div>
         <!-----------end add catagory-------->

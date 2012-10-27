@@ -189,13 +189,6 @@ class DbCraftsman {
 		foreach ($query->result() as $employee)
 			return $employee;
 	}
-	
-	//=================== EXTENDS FUNCTION========================================================
-	function addCategory($newCategory)
-	{
-		$CI =& get_instance();
-		$query = $CI->db->query("INSERT INTO categories WHERE category = '$newCategory'");
-	}
 }
 
 ?>

@@ -11,16 +11,6 @@ class dbCraftsmanReferences {
 		$this->Files = $Files;
 	}
 	
-	//====== My Function ==========//
-	
-	
-	function deleteMyReference($referenceId)
-	{
-		$CI =& get_instance();
-		$fileId = $this->returnReferencePictureId($referenceId);
-		$this->Files->deleteMyFile($fileId);
-		$query = $CI->db->query("DELETE FROM mojmojster.references WHERE id = '$referenceId'");
-	}
 	 
 	function returnReferencesListUncategorized ($categoryId = '-1')
 	{
@@ -62,7 +52,6 @@ class dbCraftsmanReferences {
 		$query = $CI->db->query("SELECT * FROM mojmojster.references where craftsman_id = '$craftsmanId' AND category_id = '$categoryId' ORDER BY file_id DESC, timestamp DESC, comment DESC");
 		return $query->result();
 	}
-	//====== My Function ==========//
 	
 	function returnReferencePictureId($referenceId)
 	{
@@ -72,9 +61,6 @@ class dbCraftsmanReferences {
 		
 		foreach ($query->result() as $row)
 			return $row->file_id;
-			
-			
-	
 		return false; //�e ni obstoje� podatek, vrne false.
 	}
 	

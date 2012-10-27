@@ -3,13 +3,24 @@
 		$('.list').fadeIn(1000);
 	//);
 </script>
-<?php for ($i=0; $i<count($pictures); $i++)
+<?php $this->load->view('RefAddCategory');
+	$this->load->view('RefAddReference');
+?>
+<?php
+	for ($i=0; $i<count($pictures); $i++)
       			{?>
       				<div class="list">
 		               	<div style="border-bottom:1px solid #666;">
-		               		<a href="<?php echo base_url() ?>index.php/tiennd/deleteRef/<?php echo $listReferences[$i]->id;?>" id="del">Delete reference</a>
+		               		<?php if ($_SESSION['categoried']==true)
+		               		{?>
+		               			<a href="<?php echo base_url() ?>index.php/m_references/deleteRef/<?php echo $listReferences[$i]->id;?>/true" id="del">Delete reference</a>
+		               		<?php }
+		               		else 
+		               		{?>
+		               			<a href="<?php echo base_url() ?>index.php/m_references/deleteRef/<?php echo $listReferences[$i]->id;?>/false" id="del">Delete reference</a>
+		               		<?php }?>
 		                    <p>
-		                    	<img alt="" src="<?php echo base_url();?>assets/images/references/<?php echo $pictures[$i];?>"/>
+		                    	<img alt="" src="<?php echo base_url();?>savedfiles/<?php echo $pictures[$i];?>"/>
 		                    </p>
 		                </div>
 		                <div>

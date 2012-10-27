@@ -3,8 +3,13 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/js-references.js"></script>
 <div id="body">
 	<div class="reference">
+		<?php if (isset($message))
+		{?>
+			<p><?php echo $message;?></p>
+		<?php }
+		else {?>
 		<!-- img class="picture" alt="" src=""/ -->
-		<p><img alt="" src="<?php echo base_url();?>assets/images/references/<?php echo $pictureName;?>"/></p>
+		<p><img alt="" src="<?php echo base_url();?>savedfiles/<?php echo $pictureName;?>"/></p>
 		<div class="info">
 			<div class="info-path">
 				<h4 class="title"><?php echo $title;?></h4>
@@ -76,5 +81,6 @@
 				<br class="both"/>
 			</div>
 		</div>
+		<?php }?>
 	</div>
 </div>
