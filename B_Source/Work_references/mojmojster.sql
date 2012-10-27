@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 10, 2012 at 12:46 PM
+-- Generation Time: Oct 27, 2012 at 08:52 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -80,7 +80,8 @@ CREATE TABLE IF NOT EXISTS `craftsmen` (
 --
 
 INSERT INTO `craftsmen` (`id`, `profileviews`, `last_visit`, `name`, `work_type`, `email`, `phone`, `vision`, `more_about`, `basic_about`, `map_location`, `web_pages`, `address`, `bg_file_id`, `logo_file_id`, `certificates`) VALUES
-(1, 0, 0, 'manh nguyen tien', '', '', '', '', '', '', '', '', '', 0, 0, '');
+(1, 0, 0, 'manh nguyen tien', '', '', '', '', '', '', '', '', '', 0, 0, ''),
+(10, 0, 0, 'new craftmen', '', '', '', '', '', '', '', '', '', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -134,31 +135,15 @@ CREATE TABLE IF NOT EXISTS `files` (
   `type` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `filename` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=52 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `files`
 --
 
 INSERT INTO `files` (`id`, `filetype`, `type`, `filename`) VALUES
-(44, 'image/jpeg', 'file', 'wallpaper-4353.jpg'),
-(45, 'image/jpeg', 'file', 'beautiful_lake_wallpaper_146f9.jpg'),
-(42, 'image/jpeg', 'file', 'Koala.jpg'),
-(43, 'image/jpeg', 'file', 'Desert.jpg'),
-(30, 'jpeg', '', 'f3.jpg'),
-(46, 'image/jpeg', 'file', 'Picture 481.jpg'),
-(31, 'jpeg', '', 'f4.jpg'),
-(32, 'jpeg', '', 'f5.jpg'),
-(41, 'image/jpeg', 'file', 'Jellyfish.jpg'),
-(33, 'jpeg', '', 'f6.jpeg'),
-(34, 'jpeg', '', 'f7.jpg'),
-(39, 'image/jpeg', 'file', 'Penguins.jpg'),
-(35, 'jpeg', '', 'f8.jpg'),
-(38, 'image/jpeg', 'file', 'Lighthouse.jpg'),
-(36, 'jpeg', '', 'f9.jpg'),
-(51, 'image/jpeg', 'file', 'Best-top-desktop-green-grass-wallpapers-hd-grass-wallpaper-pictures-photos-16.jpg'),
-(48, 'image/jpeg', 'file', 'Picture 385.jpg'),
-(49, 'image/jpeg', 'file', 'wallpaper-4353.jpg');
+(1, 'image/jpeg', 'file', 'IMG_2551.jpg'),
+(3, 'image/jpeg', 'file', 'IMG_2554.jpg');
 
 -- --------------------------------------------------------
 
@@ -232,18 +217,7 @@ CREATE TABLE IF NOT EXISTS `productcategories` (
   `craftsman_id` int(11) NOT NULL,
   `category_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=240 ;
-
---
--- Dumping data for table `productcategories`
---
-
-INSERT INTO `productcategories` (`id`, `craftsman_id`, `category_title`) VALUES
-(235, 1, '2'),
-(236, 1, 'manh'),
-(237, 1, 'manh'),
-(238, 1, 'Natural pictures'),
-(239, 1, 'my images');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -309,27 +283,14 @@ CREATE TABLE IF NOT EXISTS `references` (
   `craftsman_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=259 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `references`
 --
 
 INSERT INTO `references` (`id`, `timestamp`, `file_id`, `title`, `text`, `comment`, `comment_author`, `craftsman_id`, `category_id`) VALUES
-(250, 0, 43, 'title7', '', '', '', 1, 235),
-(237, 2000, 30, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 235),
-(238, 2000, 31, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 236),
-(239, 2000, 32, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 236),
-(240, 2000, 33, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 237),
-(241, 2000, 34, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 237),
-(242, 2000, 35, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 235),
-(243, 2000, 36, 'tieude1', 'ádasdasdasd', 'ádasdasd', 'manh', 1, 236),
-(249, 0, 42, 'title6', '', '', '', 1, 237),
-(258, 0, 51, 'abc', '', '', '', 1, -1),
-(246, 0, 39, 'title3', '', '', '', 1, -1),
-(248, 0, 41, 'title5', '', '', '', 1, -1),
-(251, 0, 44, 'title9', '', '', '', 1, -1),
-(252, 0, 45, 'titel11', '', '', '', 1, -1);
+(16, 0, 3, 'ádasd', '', '', '', 10, -1);
 
 -- --------------------------------------------------------
 
