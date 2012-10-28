@@ -1,14 +1,24 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
+	.uploading_inline{display:inline}
 </style>
-<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/upload" enctype="multipart/form-data">
+<script type="text/javascript">
+	function showLoading()
+	{
+		var uploading = document.getElementById('uploading');
+		uploading.style.display = 'block';
+		$('.uploading').addClass('uploading_inline');
+		$('.file').addClass('uploading_inline');
+	}
+</script>
+<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/uploadvideo/upload" enctype="multipart/form-data" onsubmit="showLoading();">
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
 		<div id="tab1" class="tab_content">
 			<fieldset>
 				<label>Chọn video</label>
-				<input type="file" name="file"/>
+				<input class="file" id="file" type="file" name="file"/><img class="uploading" id="uploading" style="display:none" src="<?php echo $this->baseUrl() ?>/application/templates/admin/images/uploading.gif"/>
 			</fieldset>
 			<fieldset>
 				<label>Tiêu đề</label>

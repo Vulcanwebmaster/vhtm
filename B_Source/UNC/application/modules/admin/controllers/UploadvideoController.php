@@ -14,7 +14,6 @@
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
-		      
 		      session_start();
 			  $this->mVideo = new Admin_Model_Mvideo();
 			  $this->mYoutube = new Admin_Model_Myoutube();
@@ -148,7 +147,7 @@
 			$title ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));
 			
 			$description = new Zend_Form_Element_Textarea('description');
-			//$description->setAttrib('rows', '5');
+			$description->setAttrib('rows', '10');
 			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
 			
 			$title->removeDecorator('HtmlTag')->removeDecorator('Label');	
@@ -286,9 +285,9 @@
 			{	
 				if($form->isValid($_POST))
 				{
-					$title =  $form->getValue('title');
-					$description = $form->getValue('description');
-					
+					$title =  $this->_request->getPost('title');
+					$description = $this->_request->getPost('description');
+					//echo $title.$description;die();
 					if ($_FILES["file"]["name"]!='')
 					{
 						$dir = dirname($_FILES["file"]["tmp_name"]);
@@ -303,8 +302,8 @@
 						$myVideoEntry = new Zend_Gdata_YouTube_VideoEntry();
 						
 						$filesource = $yt->newMediaFileSource($destination);
-					        $filesource->setContentType('video/quicktime');
-					        $filesource->setSlug($destination);
+					    $filesource->setContentType('video/quicktime');
+					    $filesource->setSlug($destination);
 						
 						$myVideoEntry->setMediaSource($filesource);
 						$myVideoEntry->setVideoTitle($title);
@@ -337,14 +336,16 @@
 						echo '<script type="text/javascript">
 							alert("Video đang được upload trên YOUTUBE !");
 						</script>';
-						
 						$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+						
+						//
 					}
 					else echo '<script type="text/javascript">alert("Vui lòng chọn file !");</script>';
 				}
 				
-			}
+			//}
 			$this->view->title = 'Tải lên video';
+			}
 		}
 		
 		function delAction()
@@ -547,6 +548,11 @@
 					$form->populate($_POST);
 				}
 			}
+			
+		}
+
+		function uploadvideo()
+		{
 			
 		}
 		 
