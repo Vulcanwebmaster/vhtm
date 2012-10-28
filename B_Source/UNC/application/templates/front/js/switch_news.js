@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	$('.news1').addClass('togger_background_1');
 	$('.news2').addClass('togger_border');
+	$('.comment_name').push('name');
+	
 	$('.news1').click(function(){
 		$('.news1').addClass('togger_background_1');
 		$('.news1').removeClass('togger_border');

@@ -87,7 +87,7 @@
 
 		function getCommentByNewsId($news_id)
 		{
-			$query = $this->db->query('select * from unc_comment where news_id = "'.$news_id.'" order by comment_id desc');
+			$query = $this->db->query('select * from unc_comment where news_id = "'.$news_id.'" order by comment_time desc');
 			return $query->fetchAll();
 		}
 		
@@ -134,9 +134,9 @@
 			return $list[0]['userid'];
 		}
 		
-		function insertComment($reader_id,$news_id,$comment_content)
+		function insertComment($news_id,$input)
 		{
-			$query = $this->db->query('insert into unc_comment value ("","'.$comment_content.'","'.$news_id.'","'.$reader_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
+			$query = $this->db->query('insert into unc_comment value ("","'.$input['comment_name'].'","'.$input['comment_email'].'","'.$input['comment_content'].'","'.$news_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
 			return $query;
 		}
 		

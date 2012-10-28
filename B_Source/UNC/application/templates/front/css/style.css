@@ -252,4 +252,8 @@ a:hover{text-decoration: underline}
 .togger_background_2{height: 26px !important;color: white;background-image: url('../images/new2.gif');}
 .togger_border{height: 18px !important;border: 1px solid #CCC;color:black}
 .news_title p {cursor:pointer}
+
+.img_new img{width:152px !important;height:107px !important}
+.captcha_image1{background-color: #E8E8E8;height:30px;width:40%;border: 0;padding-left: 10px;}
 .img-tube img,.img-tube p{width:255px !important}
+

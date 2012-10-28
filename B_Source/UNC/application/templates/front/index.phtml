@@ -154,7 +154,7 @@
 						foreach($this->listThread as $thread)
 						{
                 		?>
-                			<li><a href="<?php echo $this->baseUrl() ?>/forum/showthread.php?<?php echo $thread['threadid'] ?>"><?php echo $thread['title'] ?></a></li>
+                			<li><a href="<?php echo $this->baseUrl() ?>/forum/showthread.php?<?php echo substr($thread,0,1) ?>"><?php echo substr($thread,1); ?></a></li>
                 		<?php
 						}
 					}
