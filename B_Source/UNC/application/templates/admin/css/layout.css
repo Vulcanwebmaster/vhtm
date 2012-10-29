@@ -959,5 +959,5 @@ font-size: 14px;}
 
 .message{color:red; margin-left:15px}
 
-.tab_content{padding:15px; max-height:400px; overflow:auto}
+.tab_content{padding:15px;  overflow:auto}
 .paginationControl a{line-height:27px}

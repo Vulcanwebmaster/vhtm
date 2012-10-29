@@ -11,7 +11,7 @@ class Admin_IndexController extends Zend_Controller_Action
 	    	Zend_Layout::startMvc ( $option );
 	      	
 	     	$this->mAdmin=new Admin_Model_Madmin();
-	     	session_start();
+	     	@session_start();
 			if(isset($_SESSION['role'])){
 				$this->role = $_SESSION['role'];
 				$this->view->role = $this->role;

@@ -7,7 +7,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function init()
 	{
-		session_start();
+		@session_start();
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
@@ -304,6 +304,7 @@ class TintucController extends Zend_Controller_Action
 			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
 		}		
 		
+		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
 		

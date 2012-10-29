@@ -10,7 +10,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
-			  session_start();
+			  @session_start();
 			  
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
@@ -49,11 +49,13 @@
 				$category_parent_id->addMultiOption($item['category_id'],$item['category_name']);
 			}
 			
-			$is_active = $form->createElement("select","is_active",array(
-                                                        "label" => "Kích hoạt",
-                                                   "multioptions"=> array(
+			$is_active= new Zend_Form_Element_Radio('is_active');
+			$is_active->setRequired(true)
+				->setLabel('Are you sure?')
+				->setMultiOptions(array(
                                                                       "1" => "Có",
-                                                                      "0" => "Không")));
+                                                                      "0" => "Không"));
+			
 			$category_name->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');
 			

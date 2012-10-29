@@ -15,10 +15,15 @@
         	<div id="subpage_logo"><a href="<?php echo $this->baseUrl();?>"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/logo.gif"/></a></div>
             <div id="subpage_search">
             	<form class="search-form" action="<?php echo $this->baseUrl();?>/timkiem" method="post">
-					<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
-					<input class="searchsubmit" type="submit" value="" style="cursor:pointer">
+					<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …"/>
+					<input class="searchsubmit" type="submit" value="" style="cursor:pointer"/>
 				</form>
-            </div>  
+            </div>
+            <div id="top-ad">
+            	<a href="<?php echo $this->listquangcao1['ads_link']; ?>" target="_blank">
+                		<?php echo $this->listquangcao1['ads_banner']; ?>
+                	</a>
+            </div>
             			<!--------Menu-Top------>
 			<div id="menu-top">
 				<ul id="nav">
@@ -85,7 +90,7 @@
     		<?php echo $this->layout()->content;?>
         </div>
     	<div class="subpage_wapper_right">
-        	<div id="news">
+        	<div class="right-boxs">
             	<div class="news_title">
                 	<p onclick="toggle_view('col1','col2');" class="news1">Mới nhất</p>
                     <p onclick="toggle_view('col2','col1');" class="news2">Đọc nhiều nhất</p>
@@ -114,7 +119,7 @@
 						}
 	                    ?>
 	                </ul>
-	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
                 </span>
                 <span id="col2" style="display:none">
 	                <ul>
@@ -140,10 +145,10 @@
 						}
 	                    ?>
 	                </ul>
-	                <p class="read_add"><a href="#">Xem thêm</a></p> <br clear="both" />
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
                 </span>
             </div>
-            <div id="news" class="bgnews">
+            <div class="right-boxs" class="bgnews">
             	<div class="news_title2">
                 	Forum
                 </div>
@@ -161,9 +166,9 @@
                 	?>
                 </ul>
                 <p class="read_add"><a href="#">Xem thêm</a></p>
-                <br clear="both" />
+                <br style="clear:both" />
             </div>
-              <div id="news" class="bgnews2">
+              <div class="right-boxs bgnews2">
             	<div class="news_title2">
                 	Ảnh đẹp
                 </div>
@@ -178,9 +183,9 @@
 
                 </ul>
                 <p class="read_add"><a href="#">Xem thêm</a></p>
-                <br clear="both" />
+                <br style="clear:both" />
             </div>
-			<div id="ads-right">
+			<div id="ads-right" class="right-boxs">
 				<div id="video">
 	                <?php
 	                       		foreach($this->listquangcao as $quangcao)
@@ -197,7 +202,7 @@
 			</div>
         </div>      
 
-    </div><br clear="both" />
+    </div><br style="clear:both" />
      <!-----------end main-------------->
     <div id="subpage_footer">
     	<div id="subpage_footer_top"></div>
@@ -208,7 +213,7 @@
                     	<?php foreach($this->listParent as $parent)
 						  {
 						  ?>
-	                    <li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></li></a>
+	                    <li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><span> <?php echo $parent['category_name'] ?><!--Lấy ra danh mục cha--></span></a></li>
 						<?php } ?>
                     </ul>
                 </div>

@@ -14,7 +14,7 @@
 		                   'layoutPath' => $layoutPath );
 		    Zend_Layout::startMvc ($option);
 		      
-		    session_start();
+		    @session_start();
 			$this->mTruongban = new Admin_Model_Mtruongban();
 			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			

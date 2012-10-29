@@ -47,7 +47,7 @@
 			$this->mtintuc=new Admin_Model_Mtintuc();
 			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
 			
-			session_start();
+			@session_start();
 		}
 		
 		function indexAction()

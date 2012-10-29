@@ -10,7 +10,7 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 	      Zend_Layout::startMvc ( $option );
 		  $this->mGetnews = new Admin_Model_Mgetnews();
 		  $this->mRss= new Admin_Model_Mrss();
-		  session_start();
+		  @session_start();
 		  
 		  $this->view->headTitle('UNC - Admin website');
 		$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');

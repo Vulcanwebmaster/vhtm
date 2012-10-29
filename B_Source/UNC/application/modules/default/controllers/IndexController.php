@@ -10,10 +10,9 @@ class IndexController extends Zend_Controller_Action
 	                  'layoutPath' => $layoutPath );
 	    Zend_Layout::startMvc ( $option );
 	      
-		session_start();
+		@session_start();
 	    $this->mDefault=new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
-		session_start();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");

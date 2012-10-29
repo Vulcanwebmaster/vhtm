@@ -12,7 +12,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mComment = new Admin_Model_Mcomment();
-			  session_start();
+			  @session_start();
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {

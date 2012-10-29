@@ -11,7 +11,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mquangcao=new Admin_Model_Mquangcao();
-			  session_start();
+			  @session_start();
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {

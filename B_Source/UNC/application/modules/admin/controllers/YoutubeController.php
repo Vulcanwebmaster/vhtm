@@ -10,7 +10,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 		      
-		      session_start();
+		      @session_start();
 		      $this->mYoutube=new Admin_Model_Myoutube();
 			  $this->role = $_SESSION['role'];
 		}

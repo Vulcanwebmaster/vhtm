@@ -9,7 +9,7 @@
 		    $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		    Zend_Layout::startMvc ($option);
-		    session_start();
+		    @session_start();
 			$this->mAdmin = new Admin_Model_Madmin();
 			if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];

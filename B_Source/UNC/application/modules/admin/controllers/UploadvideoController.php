@@ -14,7 +14,7 @@
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
-		      session_start();
+		      @session_start();
 			  $this->mVideo = new Admin_Model_Mvideo();
 			  $this->mYoutube = new Admin_Model_Myoutube();
 			  $account = $this->mYoutube->getAccountSelected();
