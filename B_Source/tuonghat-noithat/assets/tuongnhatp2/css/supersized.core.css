@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { background:red; }
+	img{border:none;}
+	
+	#supersized-loader { position: absolute; top: 49.5%; left: 49.5%; z-index: 10; width: 24px; height: 24px; text-indent: -999em;}
+	
+	#supersized { position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
+	#supersized img{ position:relative; outline:none; border:none; -ms-interpolation-mode:bicubic; image-rendering: optimizeQuality; }

@@ -1,0 +1,607 @@
+@import "fullprices.css"/*tpa=http://static.zarahome.net/8/static/css/fullprices.css*/;
+
+<!-- Inglés -->
+
+#spot1 {
+  position: absolute; 
+  top: 10%;
+  background-position:right;
+  right: 6%; 
+/*	margin-right:5%;*/
+	padding-right:25px;
+  width:150px; 
+  height: 150px; 
+  z-index: 100;
+}
+#spot1 .lnk {
+  position: absolute;
+  width: 100%;
+  /*left: 0;*/
+  display:block; 
+  background: transparent url("envio_gratis_usa_en.png-20121009.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/envio_gratis_usa_en.png?20121009*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot1 #lnk1 {
+/*  left: 68%; */  
+  right: 33px;
+  *right: -55px;
+  top: 10%;
+  width:150px; 
+  height: 150px; 
+}
+/*#spot2 #lnk1:hover {
+  background-position: -1px bottom;
+
+}*/
+#spot2 {
+  position: fixed; 
+  bottom: 10px; 
+  right: 700px; 
+  width:50px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot2 .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("topovideoblanco.png-20120815.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/topovideoblanco.png?20120815*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot2 #lnk2 {
+  left: 270px;
+  height:110px;
+  width: 50px;
+  background-position: -1px top;
+}
+#spot2 #lnk2:hover {
+  background-position: -1px bottom;
+
+}
+#spot3 {
+  position: fixed; 
+  bottom: 12px; 
+  right: 250px; 
+  width:350px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot3 .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("topovideoblanco.png-20120815.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/topovideoblanco.png?20120815*/ no-repeat left top;
+}
+#spot3 #lnk3 {
+  left: 310px;
+  width:450px; 
+  height: 110px; 
+  background-position: 0px top;
+}
+#spot3 #lnk3:hover {
+ /* background-position: 0px bottom;*/
+}
+
+<!-- Español -->
+
+#spot1_es {
+  position: absolute; 
+  top: 10%;
+  background-position:right;
+  right: 6%; 
+/*	margin-right:5%;*/
+	padding-right:25px;
+  width:150px; 
+  height: 150px; 
+  z-index: 100;
+}
+#spot1_es .lnk {
+  position: absolute;
+  width: 100%;
+  /*left: 0;*/
+  display:block; 
+  background: transparent url("envio_gratis_usa_es.png-20121009.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/envio_gratis_usa_es.png?20121009*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot1_es #lnk1 {
+/*  left: 68%; */  
+  right: 33px;
+  *right: -55px;
+  top: 10%;
+  width:150px; 
+  height: 150px; 
+}
+/*#spot2 #lnk1:hover {
+  background-position: -1px bottom;
+
+}*/
+#spot2_es {
+  position: fixed; 
+  bottom: 10px; 
+  right: 700px; 
+  width:50px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot2_es .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("topovideoblanco.png-20120815.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/topovideoblanco.png?20120815*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot2_es #lnk2 {
+  left: 270px;
+  height:110px;
+  width: 50px;
+  background-position: -1px top;
+}
+#spot2_es #lnk2:hover {
+  background-position: -1px bottom;
+
+}
+#spot3_es {
+  position: fixed; 
+  bottom: 12px; 
+  right: 250px; 
+  width:350px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot3_es .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("topovideoblanco.png-20120815.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/topovideoblanco.png?20120815*/ no-repeat left top;
+}
+#spot3_es #lnk3 {
+  left: 310px;
+  width:450px; 
+  height: 110px; 
+  background-position: 0px top;
+}
+#spot3_es #lnk3:hover {
+ /* background-position: 0px bottom;*/
+}
+
+<!-- Alemán -->
+
+#spot1_de {
+  position: absolute; 
+  top: 10%;
+  background-position:right;
+  right: 6%; 
+/*	margin-right:5%;*/
+	padding-right:25px;
+  width:150px; 
+  height: 150px; 
+  z-index: 100;
+}
+#spot1_de .lnk {
+  position: absolute;
+  width: 100%;
+  /*left: 0;*/
+  display:block; 
+  background: transparent url("05_boton_envio_gratis_de.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/05_boton_envio_gratis_de.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot1_de #lnk1 {
+/*  left: 68%; */  
+  right: 33px;
+  *right: -55px;
+  top: 10%;
+  width:150px; 
+  height: 150px; 
+}
+/*#spot2 #lnk1:hover {
+  background-position: -1px bottom;
+
+}*/
+#spot2_de {
+  position: fixed; 
+  bottom: 10px; 
+  right: 600px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot2_de .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_newsletter.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_newsletter.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot2_de #lnk2 {
+  left: 270px;
+  height:110px;
+  width: 320px;
+  background-position: -1px top;
+}
+#spot2_de #lnk2:hover {
+  background-position: -1px bottom;
+
+}
+#spot3_de {
+  position: fixed; 
+  bottom: 10px; 
+  right: 100px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot3_de .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_xmas_en.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_xmas_en.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;
+}
+#spot3 #lnk1 {
+  left: 80px;
+  top: 0;
+  height:99px;
+  width: 242px;
+}
+#spot3 #lnk1:hover {
+  background-position: -1px bottom;
+
+}
+#spot3 #lnk2 {
+  left: 270px;
+  height:99px;
+  width: 387px;
+  background-position: -225px top;
+}
+#spot3 #lnk2:hover {
+  background-position: -225px bottom;*/
+}
+#spot3_de #lnk3 {
+  left: 100px;
+  width:320px; 
+  height: 110px; 
+  background-position: -1px top;
+}
+#spot3_de #lnk3:hover {
+  background-position: -1px bottom;
+}
+
+<!-- Italiano -->
+
+#spot1_it {
+  position: absolute; 
+  top: 10%;
+  background-position:right;
+  right: 6%; 
+/*	margin-right:5%;*/
+	padding-right:25px;
+  width:150px; 
+  height: 150px; 
+  z-index: 100;
+}
+#spot1_it .lnk {
+  position: absolute;
+  width: 100%;
+  /*left: 0;*/
+  display:block; 
+  background: transparent url("05_boton_envio_gratis_it.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/05_boton_envio_gratis_it.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot1_it #lnk1 {
+/*  left: 68%; */  
+  right: 33px;
+  *right: -55px;
+  top: 10%;
+  width:150px; 
+  height: 150px; 
+}
+/*#spot2 #lnk1:hover {
+  background-position: -1px bottom;
+
+}*/
+#spot2_it {
+  position: fixed; 
+  bottom: 10px; 
+  right: 600px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot2_it .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_newsletter.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_newsletter.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot2_it #lnk2 {
+  left: 270px;
+  height:110px;
+  width: 320px;
+  background-position: -1px top;
+}
+#spot2_it #lnk2:hover {
+  background-position: -1px bottom;
+
+}
+#spot3_it {
+  position: fixed; 
+  bottom: 10px; 
+  right: 100px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot3_it .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_xmas_en.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_xmas_en.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;
+}
+#spot3 #lnk1 {
+  left: 80px;
+  top: 0;
+  height:99px;
+  width: 242px;
+}
+#spot3 #lnk1:hover {
+  background-position: -1px bottom;
+
+}
+#spot3 #lnk2 {
+  left: 270px;
+  height:99px;
+  width: 387px;
+  background-position: -225px top;
+}
+#spot3 #lnk2:hover {
+  background-position: -225px bottom;*/
+}
+#spot3_it #lnk3 {
+  left: 100px;
+  width:320px; 
+  height: 110px; 
+  background-position: -1px top;
+}
+#spot3_it #lnk3:hover {
+  background-position: -1px bottom;
+}
+
+<!-- Francés -->
+
+#spot1_fr {
+  position: absolute; 
+  top: 10%;
+  background-position:right;
+  right: 6%; 
+/*	margin-right:5%;*/
+	padding-right:25px;
+  width:150px; 
+  height: 150px; 
+  z-index: 100;
+}
+#spot1_fr .lnk {
+  position: absolute;
+  width: 100%;
+  /*left: 0;*/
+  display:block; 
+  background: transparent url("05_boton_envio_gratis_fr.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/05_boton_envio_gratis_fr.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot1_fr #lnk1 {
+/*  left: 68%; */  
+  right: 33px;
+  *right: -55px;
+  top: 10%;
+  width:150px; 
+  height: 150px; 
+}
+/*#spot2 #lnk1:hover {
+  background-position: -1px bottom;
+
+}*/
+#spot2_fr {
+  position: fixed; 
+  bottom: 10px; 
+  right: 600px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot2_fr .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_newsletter.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_newsletter.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot2_fr #lnk2 {
+  left: 270px;
+  height:110px;
+  width: 320px;
+  background-position: -1px top;
+}
+#spot2_fr #lnk2:hover {
+  background-position: -1px bottom;
+
+}
+#spot3_fr {
+  position: fixed; 
+  bottom: 10px; 
+  right: 100px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot3_fr .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_xmas_en.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_xmas_en.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;
+}
+#spot3 #lnk1 {
+  left: 80px;
+  top: 0;
+  height:99px;
+  width: 242px;
+}
+#spot3 #lnk1:hover {
+  background-position: -1px bottom;
+
+}
+#spot3 #lnk2 {
+  left: 270px;
+  height:99px;
+  width: 387px;
+  background-position: -225px top;
+}
+#spot3 #lnk2:hover {
+  background-position: -225px bottom;*/
+}
+#spot3_fr #lnk3 {
+  left: 100px;
+  width:320px; 
+  height: 110px; 
+  background-position: -1px top;
+}
+#spot3_fr #lnk3:hover {
+  background-position: -1px bottom;
+}
+
+<!-- Portugués -->
+
+#spot1_pt {
+  position: absolute; 
+  top: 10%;
+  background-position:right;
+  right: 6%; 
+/*	margin-right:5%;*/
+	padding-right:25px;
+  width:150px; 
+  height: 150px; 
+  z-index: 100;
+}
+#spot1_pt .lnk {
+  position: absolute;
+  width: 100%;
+  /*left: 0;*/
+  display:block; 
+  background: transparent url("05_boton_envio_gratis_pt.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/05_boton_envio_gratis_pt.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot1_pt #lnk1 {
+/*  left: 68%; */  
+  right: 33px;
+  *right: -55px;
+  top: 10%;
+  width:150px; 
+  height: 150px; 
+}
+/*#spot2 #lnk1:hover {
+  background-position: -1px bottom;
+
+}*/
+#spot2_pt {
+  position: fixed; 
+  bottom: 10px; 
+  right: 600px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot2_pt .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_newsletter.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_newsletter.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;*/
+}
+#spot2_pt #lnk2 {
+  left: 270px;
+  height:110px;
+  width: 320px;
+  background-position: -1px top;
+}
+#spot2_pt #lnk2:hover {
+  background-position: -1px bottom;
+
+}
+#spot3_pt {
+  position: fixed; 
+  bottom: 10px; 
+  right: 100px; 
+  width:320px; 
+  height: 110px; 
+  z-index: 100;
+}
+#spot3_pt .lnk {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: inline; 
+  background: transparent url("spot_xmas_en.png-20111128.png")/*tpa=http://static.zarahome.net/8/static/images/marketing/spot_xmas_en.png?20111128*/ no-repeat left top;
+/* background: transparent url('./spot2.png?20111128') no-repeat left top;
+}
+#spot3 #lnk1 {
+  left: 80px;
+  top: 0;
+  height:99px;
+  width: 242px;
+}
+#spot3 #lnk1:hover {
+  background-position: -1px bottom;
+
+}
+#spot3 #lnk2 {
+  left: 270px;
+  height:99px;
+  width: 387px;
+  background-position: -225px top;
+}
+#spot3 #lnk2:hover {
+  background-position: -225px bottom;*/
+}
+#spot3_pt #lnk3 {
+  left: 100px;
+  width:320px; 
+  height: 110px; 
+  background-position: -1px top;
+}
+#spot3_pt #lnk3:hover {
+  background-position: -1px bottom;
+}
+
+
+
+
+
+
+.fullPrices{
+	position:absolute;
+}
+.fullPrices div {
+                        position:absolute;
+                        font-size:14px;
+                        line-height:13px;
+                        color: #000000
+}
+.fullPrices .price{
+	font-weight:bold;
+	display:block;
+}
+a {
+    color: #000000;
+}

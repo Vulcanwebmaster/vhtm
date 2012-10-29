@@ -1,0 +1,739 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow: hidden;
+	background:#fff;
+	width: 100%;
+	height: 100%;
+}
+
+#private, #admin {
+	overflow: visible;
+}
+
+#home #image {
+	position: absolute;
+	z-index: -200;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#home #image #img2 {
+	display: none;
+}
+
+#privatehome #fotos li {
+	display: none;
+	list-style: none;
+	position: absolute;
+	overflow: hidden;
+}
+
+div.fieldset {
+	border:  1px solid #afe14c;
+	margin: 10px 0;
+	padding: 20px 10px;
+}
+div.fieldset span.legend {
+	position: relative;
+	background-color: #FFF;
+	padding: 3px;
+	top: -30px;
+	font: 700 14px Arial, Helvetica, sans-serif;
+	color: #73b304;
+}
+
+div.flash {
+	width: 375px;
+	margin: 10px 5px;
+	border-color: #D9E4FF;
+
+	-moz-border-radius-topleft : 5px;
+	-webkit-border-top-left-radius : 5px;
+    -moz-border-radius-topright : 5px;
+    -webkit-border-top-right-radius : 5px;
+    -moz-border-radius-bottomleft : 5px;
+    -webkit-border-bottom-left-radius : 5px;
+    -moz-border-radius-bottomright : 5px;
+    -webkit-border-bottom-right-radius : 5px;
+
+}
+
+#listshowroom #fotos {
+	width: 99%;
+	height: 500px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+}
+
+#listshowroom #fotos ul li{
+	display: block;
+	float: left;
+	height: 600px;
+	position: relative;
+	margin-right: 5px;
+}
+
+#listshowroom #fotos #links{
+	display: none;
+}
+
+#listshowroom #fotos li.big #links{
+	display: block;
+	*width: 300px;
+}
+
+#listshowroom #fotos.cat_2 li.big #links{
+	*width: 610px;
+}
+
+#listshowroom #fotos ul li img {
+	margin-top: 280px;
+	cursor: pointer;
+}
+
+#listshowroom #fotos ul li.big img{
+	margin-top: 65px;
+	cursor: auto;
+}
+
+#fileUpload #fotos li {
+	display: block;
+	float: left;
+}
+
+#clear {
+	clear: both;
+}
+
+/* Fran */ 
+
+#menu {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+
+#menuPrivate { 
+	text-align: right;
+	width: 100px;
+}
+
+#menuPrivate li{ 
+	list-style: none; 
+	display: inline;
+}
+
+#menuPrivate li, #menuPrivate li a{  
+	font-size:10px; color:#999; text-decoration: none;
+	font-weight: bold;
+}
+
+#menuPrivate li.active a{  
+	color:#666;
+	text-decoration: none;
+}
+
+#logo {
+	position: absolute;
+	left: 100px;
+	top: 50px;
+	z-index: 1000;
+}
+
+#logo a img {
+	border: none;
+}
+
+a {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.acciones a{font-size:11px; color:#999; text-decoration: none; font-style:italic;}
+
+.errorMessage {
+	font: 14px Arial, Helvetica, sans-serif;
+	color: #3c3c3c;
+}
+
+#home {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	text-align: left;
+	background-image:url(../images/blanco.png); 
+	padding:10px;
+}
+
+#home #logo {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-bottom: 10px;
+}
+
+#home label {
+	display: block;
+}
+
+#home input {
+	margin-bottom: 10px;
+}
+
+#login {
+	font: 12px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #000000;
+	width: 300px;
+}
+
+#usuario, #password {
+	font: 15px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #7b7b7b;
+	border: 1px #7b7b7b solid;
+}
+
+#acepto{
+	float: left;
+	margin-right: 8px;
+	width: 12px;
+}
+
+#l_acepto {
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #7d7d7d;
+	width: 300px;
+	height: 30px;
+}
+
+#submitLogin{
+	font: bold 11px Arial,Helvetica,sans-serif; 
+	color: white; 
+	background-color:#666; 
+	border: 0px solid; 
+	height: 20px; 
+	padding-left: 29px; 
+	padding-right: 29px; 
+	cursor:pointer;
+}
+
+#exclusivo {
+	font: 17px Arial, Helvetica, sans-serif;
+	color:#666;
+	margin-top: 100px;
+}
+
+#exclusivo div {
+	width: 270px;
+}
+
+.contacta  {
+	font: 14px Arial, Helvetica, sans-serif;
+	color:#666;
+}
+
+.pais {
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	margin-top: 25px;
+}
+
+#copyright {
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #7d7d7d;
+	margin-top: 25px;
+}
+
+#private #logo{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 3000;
+}
+
+#logo_seccion{
+	margin-bottom: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:200px;
+}
+
+#temporada {
+	top:20px;
+	position: absolute;
+	display: block;
+	width: 300px;
+	left:390px;
+}
+
+#temporada span.verano{
+	width: 210px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: 0pt 0pt;
+	float: left;
+}
+	
+#temporada span.invierno{
+	display: block;
+	width:210px;
+	height:30px;
+	background-repeat:no-repeat;
+	background-position:0 -100px;
+	float: left;
+}
+
+#temporada.es span.invierno, #temporada.es span.verano {
+	background-image:url(../images/temporada_es.png);
+}
+
+#temporada.en span.invierno, #temporada.en span.verano {
+	background-image:url(../images/temporada_en.png);
+}
+
+#temporada .year {
+	font-family: normal 14px "Times New Roman", Times, serif;
+	margin: 8px;
+	display: block;
+	margin: 4px;
+	display: block;
+	font-size:21px;
+}
+
+#principal {  
+	list-style: none outside none; text-align: center; text-transform: uppercase; height: 27px;background: url('../images/base_pestanas.png') repeat-x 0pt 25px transparent;
+}
+
+#principal li {
+	background: url('../images/bg_tabs.png') repeat-x scroll 0% 0% transparent; font: bold 12px/27px Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); float: left; display: block; height: 25px; margin-left: 10px; border:1px solid #898989; padding:0 10px 0 10px;  margin-top: -1px;
+	}
+
+#principal li:hover { cursor: pointer; color:#000;}
+#principal li.selected { background-image:none; display: block; color: rgb(0, 0, 0); margin-top: -1px; border-bottom:1px solid #fff; }
+
+#principal li.primero {
+	margin-left: 20px;
+}
+
+#contenido_seccion {
+	position: absolute;
+	top: 75px;
+	left: 20px;
+	text-align: left;
+	z-index: 1000;
+}
+
+
+#pais, #seccion, #idCategoria, #idCategoria2 {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #7b7b7b;
+	border: 1px #dcdcdc solid;
+	display: block;
+	height: 20px;
+	margin-bottom: 10px;
+}
+
+#selector { 
+	margin-top: 18px; 
+	display: block; 
+	width: 100%;
+}
+
+#selector select, #selector input, .botonEntrar { 
+	display: inline;
+	margin-right: 10px;
+}
+
+#entrar{
+	font: bold 11px Arial,Helvetica,sans-serif; 
+	color: white; 
+	background-color:#666; 
+	border: 0px solid; 
+	height: 20px; 
+	padding-left: 29px; 
+	padding-right: 29px; 
+	cursor:pointer;
+	*position: relative;
+	*top: -10px;
+}
+
+#listshowroom #entrar{
+	position: absolute;
+	right: 0;
+	top: 45px;
+	display: block;
+	width: 194px;
+}
+
+#item_es, #item_en{
+	position: absolute;
+	right:5px;
+	top: -4px;
+}
+
+#item_es span, #item_en span{
+	float:left;
+	width:300px;
+	height:42px;
+	background-image:url(../images/item.png);
+	background-repeat:no-repeat;
+}
+
+#item_en span{
+	background-image:url(../images/item_en.png);
+}
+	
+#item_es span.catalogo, #item_en span.catalogo{ background-position:0 0;}
+#item_es span.showroom, #item_en span.showroom{background-position:0 -100px;}
+#item_es span.lookbook, #item_en span.lookbook{background-position:0 -200px;}
+#item_es span.pressnote, #item_en span.pressnote{ background-position:0 -300px;}
+
+#imprimir {
+	display: none;
+	/*display: block;
+	width: 20px;
+	height: 20px;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(../images/boton_impresora.png) no-repeat;*/
+}
+
+#descargar {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 7px;
+	
+	width: 20px;
+	height: 20px;
+	/*float: left;*/
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(../images/boton_descargar.png) no-repeat;
+}
+
+#copyright {
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #7d7d7d;
+	margin-top: 25px;
+}
+
+#legalAdvise {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: underline;
+}
+
+#imagen_categoria {
+	position: absolute;
+	top: 130px;
+	left: 10%;
+	width: 80%;
+	height: 32px;
+	
+	text-align: right;
+	border-bottom: 1px solid #d8d8d8;
+	
+	display: none;
+}
+
+#privatehome {
+	/* codigo insertado pq sino en IE7 se sube el contenido */
+	width: 100%;
+	height: 100%;
+}
+
+#privatehome #contenido_seccion {
+	width: 98%;
+	height: 85%;
+	display: block;
+}
+
+#listshowroom #contenido_seccion {
+	width: 98%;
+}
+
+#privatehome #selector {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#privatehome #fotos.s_3 {
+	position: absolute;
+	left: 50%;
+	top: 57%;
+	margin-top: -200px;
+	margin-left: -160px;
+}
+
+#privatehome #fotos.s_2 {
+	position: absolute;
+	left: 50%;
+	top: 57%;
+	margin-top: -200px;
+	margin-left: -315px;
+}
+
+#privatehome #fotos.s_2 li {
+	background: url(../images/marco_fotos_lookbook.gif) no-repeat;
+	width: 631px;
+	height: 320px;
+}
+
+#privatehome #fotos.s_3 li {
+	background: url(../images/marco_fotos_showroom.gif) no-repeat;
+	width: 320px;
+	height: 320px;
+}
+
+#privatehome #fotos.s_2 li div{
+	overflow: hidden;
+	margin: 17px;
+	width: 596px;
+	height: 286px;
+}
+
+#privatehome #fotos.s_3 li div {
+	overflow: hidden;
+	margin: 17px;
+	width: 286px;
+	height: 286px;
+}
+
+#privatehome #fotos li img {
+	/*margin: 17px;*/
+}
+
+#list-press{
+	margin:20px 0px 10px 0;
+	float:left;
+	display:inline;
+	width:100%;
+	}
+
+ul.notas{ float:left; display:inline; list-style:none; width:100%; }
+ul.notas li{float:left; display:inline; list-style:none; font: 12px Arial,Helvetica,sans-serif; margin:0 10px 30px 0; padding:3px; width:45%;border:1px solid #ffffff;    }
+ul.notas li:hover{ cursor:pointer; border:1px solid #7b7b7b;  }
+
+ul.notas li .fecha{ color:#000000; float:left; display:inline;  font-family:Georgia, "Times New Roman", Times, serif; font-style:italic; font-weight:bold; font-size:12px; margin:0 0 5px 0; }
+
+ul.notas li .titular{float:left; clear:both; font-size:12px;  width:100%; height:40px;}
+
+ul.notas li a{float:left;  clear:both; margin:5px 0 0 0; text-transform:uppercase; text-decoration:none; color:#FFFFFF; background-color:#666666; font-size:11px; padding:3px 5px 3px 5px;}
+ul.notas li a:hover{ background-color:#000000;}
+
+#resultado {
+	margin-top: 18px;
+	font: normal Arial, Helvetica, sans-serif;
+}
+
+#resultado .nombre {
+	color: #737372;
+	font-size: 18px;
+}
+
+#resultado .cargo {
+	color: #000;
+	font-size: 14px;
+}
+
+#resultado .mail, #resultado .telefono{
+	color: #757373;
+	font-size: 12px;
+}
+
+#home li {
+	list-style: none;
+}
+
+#home .errorMessage {
+	font: normal Arial, Helvetica, sans-serif;
+	color: #757373;
+	font-size: 10px;
+	margin: 10px 0 10px 0;
+	color: red;
+}
+
+/* Inicio referencias artĂ­culos ---------------------- */
+
+#listshowroom #ref {
+	font-family: Arial, Helvetica, san-serif; 
+	font-size: 20px;
+	color: #a0a0a0;
+	text-align: center;
+	
+}
+
+#listshowroom #observacion {
+	font-family: Arial, Helvetica, san-serif; 
+	font-size: 12px;
+	color: #a0a0a0;
+	text-align: center;
+	width: 100%;
+	overflow: hidden;
+	
+}
+
+/* Inicio pie ---------------------------------------- */
+
+#footer {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	font-size: 10px;
+	color: #666;
+	padding: 0;
+}
+
+#footer div {
+	display: inline;
+}
+
+/* Inicio Cambio Password ----------------------- */
+
+#cambiarPassword {
+    position: relative;
+    top: 80px;
+    left: 20px;
+    border: 2px solid #ddd;
+    padding: 9px;
+    background: #FFF;
+    width: 260px;
+    background-color: #eee;
+    font-size: 12px;
+}
+
+#cambiarPassword label {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    line-height: 20px;
+    margin: 6px 0 2px 0;
+    color: #989797;
+}
+
+#cambiarPassword input {
+    border: 1px solid #ddd;
+    background-color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #646464;
+    padding: 2px 3px;
+    width: 250px;
+    /*float: left;*/
+    margin: 0 10px 0 0;
+}
+
+#cambiarPassword #submitPassword {
+    font: bold 11px Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    border: 0px solid;
+    height: 25px;
+    padding-left: 29px;
+    padding-right: 29px;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+}
+
+/* Fin Cambio Password ----------------------- */
+
+div#zoom p {
+    font:13px arial, helvetica, clean, sans-serif;
+    line-height:1.6;
+}
+#zoom {
+	   z-index: 8000;
+}
+
+.uploadifyQueueItem {
+	font: 11px Verdana, Geneva, sans-serif;
+	border: 2px solid #E5E5E5;
+	background-color: #F5F5F5;
+	margin-top: 5px;
+	padding: 10px;
+	width: 350px;
+}
+.uploadifyError {
+	border: 2px solid #FBCBBC !important;
+	background-color: #FDE5DD !important;
+}
+.uploadifyQueueItem .cancel {
+	float: right;
+}
+.uploadifyProgress {
+	background-color: #FFFFFF;
+	border-top: 1px solid #808080;
+	border-left: 1px solid #808080;
+	border-right: 1px solid #C5C5C5;
+	border-bottom: 1px solid #C5C5C5;
+	margin-top: 10px;
+	width: 100%;
+}
+.uploadifyProgressBar {
+	background-color: #0099FF;
+	width: 1px;
+	height: 3px;
+}
+
+/* Imprimir ---------------------------------------- */
+
+@media print {
+	#menu {
+		display: none;
+	}
+	
+	#menuPrivate {
+		display: none;
+	}
+	
+	#imagen_categoria {
+		display: none;
+	}
+	
+	#contenido_seccion {
+		display: none;
+	}
+	
+	#contenido_seccion {
+		display: none;
+	}
+	
+	#fotos li img {
+		display: none;
+	}
+	
+	#fotos #thumbs li.big img{
+		display: block;
+	}
+	
+	#descargar {
+		display: none;
+	}
+	
+	#imprimir {
+		display: none;
+	}
+	
+	#footer {
+		display: none;
+	}
+}

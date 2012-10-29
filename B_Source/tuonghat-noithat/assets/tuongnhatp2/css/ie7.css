@@ -1,0 +1,158 @@
+@charset "utf-8";
+.head .line{
+	text-align:left;
+}
+.breadcrumb .listH li.divider{
+	margin:0 4px;
+}
+.main .body{
+	width:100%;
+}
+.body .line{
+	width:100%;
+}
+.article_page .article_links li{
+	width:16px;
+	margin-left:2px;
+}
+.article_page .article_links a{
+	font-size: 0;
+	text-indent:0;
+}
+.sc_cant_wrp{
+	*display:inline;
+	*zoom:1;
+	vertical-align:top;
+}
+.article_agotado_cant{
+	*margin-top:21px;
+}
+.filters{
+	position:static;
+}
+#ctas_wrap{
+	top:105px;
+	left:-2px;
+}
+#color_wrap{
+	top:105px;
+	left:118px;
+}
+#talla_wrap{
+	top:105px;
+	left:182px;
+}
+#precio_wrap{
+	top:105px;
+	left:260px;
+	width:20px;
+	height:160px;
+	background-color:#fff;
+}
+.slider_wrap{
+	width:20px;
+	height:160px;
+	background-color:#fff;
+}
+
+.filters .sliderWrap div{
+	*display:inline;
+	*zoom:1;
+}
+.listProducts li .multicolor{
+	left:0;
+}
+tr.total td, tr.order_total td{
+	white-space:nowrap;
+	 width:auto !important;
+}
+a.sc_link_regalo{
+	white-space:nowrap;
+	display:block;	
+	background-position:left 50%;
+}
+#frm_codigo_promocional .button{
+	zoom:1;
+	display:inline;
+}
+#frm_codigo_promocional{
+	width:300px;
+	margin-left:0;
+	padding-left:10px;
+}
+.total br{
+	line-height:1px;
+}
+.country_select .countries table{
+	width:auto;
+}
+.country_select .countries a{
+	margin-left:0 !important;
+	background-position:left top !important;
+}
+.listProducts li .price .rebaja br{
+	display:none;
+}
+.listProducts li .price .rebaja .old{
+	display:block;
+}
+.subLevelhero a{
+	zoom:1;
+	display:inline;
+	height:16px;
+	width:1px;
+}
+.article_page .article_order td.quantity input{
+	padding-top:0;
+	padding-bottom:4px;
+}
+
+#slider{
+	position:absolute;
+}
+.line .size1of2{
+	width:49.9%;
+}
+
+.modalContent .article_page {
+	padding-left:10px;
+}
+
+.article_drops > .listH > li > a{
+	text-transform:uppercase;
+	background-image:url("arrow_down.png")/*tpa=http://static.zarahome.net/wcsstore/ZaraHomeStorefrontAssetStore/images/arrow_down.png*/;
+	background-repeat:no-repeat;
+	background-position:97% 45%;
+	padding-right:14px;
+	height:15px;
+	line-height:15px;
+	display:block;
+	padding-left:2px;
+	padding-top:1px;
+	width: 110px;
+}
+
+.listProducts li a, .selectionProds li a{clear: both;
+    overflow: hidden;
+    margin-top:-18px;
+    text-decoration: none;
+    width: 100%;
+    position:static !important;}
+    
+.article_image .seco_ph .listH li {
+    float: left;
+    height: 85px;
+    margin-right: 5px;
+    width: 80px;
+}
+.new{
+	top: 166px;
+}
+
+.popupAccountClass #updatableContent {
+	width: auto !important;
+}
+
+.popupAccountClass #storeLocatorDiv .size2of3 {
+	width: 350px !important;
+}

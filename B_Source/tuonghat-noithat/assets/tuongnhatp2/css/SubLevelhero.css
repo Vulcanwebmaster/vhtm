@@ -1,0 +1,27 @@
+
+.subLevelhero {
+	margin-top:5px;
+	margin-left:10px;
+}
+.subLevelhero li{
+	text-transform:none;
+	font-size:13px;
+	display:inline-block;
+	*zoom:1;
+	*display:inline;
+}
+.subLevelhero a.facebook {
+	background-image:url(../images/ico_fb.png)!important;
+	background-repeat:no-repeat;
+	padding-left:25px;
+}
+.subLevelhero a.twitter {
+	background-image:url(../images/ico_tw.png)/*tpa=http://static.zarahome.net/8/static/NavigateMenu/ico_tw.png*/;
+	background-repeat:no-repeat;
+	padding-left:25px;
+}
+.subLevelhero a.movil {
+	background-image:url(../images/ico_ph.png);
+	background-repeat:no-repeat;
+	padding-left:25px;
+}

@@ -1,0 +1,15 @@
+@charset "utf-8";
+#ctas_wrap, #color_wrap, #talla_wrap{
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=135, strength=2);
+	border:1px solid #888;
+}
+.smallShopBagCont {
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=135, strength=2);
+	border:1px solid #888;
+}
+.listH > li{
+	white-space:nowrap;
+}
+.listH li ul li{
+	white-space:normal;
+}
