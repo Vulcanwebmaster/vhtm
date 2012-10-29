@@ -2,6 +2,7 @@
 	class Admin_TintucController extends Zend_Controller_Action
 	{
 		private $mtintuc;
+		private $mtimkiem;
 		private $mdanhmuc;
 		public $dantri=array('http://www.dantri.com.vn/trangchu.rss');
 							/*'http://www.dantri.com.vn/chinh-tri.rss',
@@ -46,7 +47,7 @@
 			Zend_Layout::startMvc ( $option );
 			$this->mtintuc=new Admin_Model_Mtintuc();
 			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
-			
+			$this->mtimkiem=new Admin_Model_Mtimkiem();
 			@session_start();
 		}
 		
@@ -114,6 +115,30 @@
 			$this->view->categoriesid=$categoriesId;
 			$youtube=new Zend_Gdata_YouTube();
 		}
+		
+	function timkiemAction()
+	{
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		if ($this->_request->isPost())
+		{
+			$value_search=$this->_request->getPost('search-text');
+			$list=$this->mtimkiem->getNewsByKey($value_search);
+			
+			$paginator = Zend_Paginator::factory($list);
+	        $paginator->setItemCountPerPage(15);        
+	        $currentPage = $this->_request->getParam('page',1);
+	        $paginator->setCurrentPageNumber($currentPage);
+	        
+	        $this->view->list=$paginator;
+        
+        //---------Thêm template vào các chuyên mục----
+        	$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+		//---------End Thêm template vào các chuyên mục----
+		}
+	}
 		
 		function autogetnewsAction()
 		{	
