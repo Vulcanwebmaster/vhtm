@@ -83,7 +83,7 @@
 										is_active: '<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>',
 										sua: 
 											'<?php 
-												if($this->role =="0" | $this->role == "1" | ($this->role =="2" & $item['user_login']==$this->user))
+												if($this->role =="0" | ($this->role =="2" & $item['user_login']==$this->user))
 													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
 											?>',
 										xoa : 

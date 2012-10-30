@@ -241,7 +241,7 @@
 					{
 							if ($this->mUser->insertUser($input))
 							{
-								$user_id = $this->mTruongban->getUserIdByUserLogin($input['user_login']);
+								$user_id = $this->mUser->getUserIdByUserLogin($input['user_login']);
 								foreach($_POST['checkbox'] as $check)
 								{
 									$this->mChuyenmuc->insertUserForCategory($user_id,$check);
@@ -277,7 +277,7 @@
 			$this->view->listChild = $this->listChild;
 			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
 			
-			if($this->role =="0" |$this->role =="1" | ($this->role == "2" & $this->user == $info['user_login']))
+			if($this->role =="0" | ($this->role == "2" & $this->user == $info['user_login']))
 			{
 				$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
 				$form->getElement('user_login')->setValue($info['user_login']);

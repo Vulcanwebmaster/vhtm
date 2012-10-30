@@ -1,9 +1,25 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
+
+<script type="text/javascript">
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+</script>
+<form method="post" action="<?php echo $this->form->getAction();?>">
+
 <script type="text/javascript">
 //<!-----------Check all----->
-function Check(chk)
+functioheck(chk)
 {
     // Nếu checkbox có tên checkAll được check
     if(document.fcheck.checkAll.checked==true){
@@ -16,16 +32,7 @@ function Check(chk)
 }
 //<!-----------Check all----->
 </script>
-<form method="post" name="fcheck" id="fcheck" action="<?php echo $this->form->getAction();?>">
-	<article class="module width_full">
-		<header><h3><?php echo $this->title;?></h3></header>
-		<div class="tab_container">
-			<div id="tab1" class="tab_content">
-				<?php echo $this->error;?>
-				<fieldset class="fieldset" style="float:left">
-					<label>Tên đăng nhập</label>
-					<?php echo $this->form->getElement('user_login');?>
-					<?php if (isset($_SESSION['result']))
+<?php if (isset($_SESSION['result']))
 					{
 						echo '<p class="message">';
 						echo $_SESSION['result'];
@@ -33,6 +40,16 @@ function Check(chk)
 						unset($_SESSION['result']);
 					}
 					?>
+<form method="post" name="fcheck" id="fcheck" action="<?php echo $this->form->getAction();?>">
+
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset class="fieldset" style="float:left">
+					<label>Tên đăng nhập</label>
+					<?php echo $this->form->getElement('user_login');?>					
 				</fieldset>
 				<fieldset class="fieldset" style="float:right">
 					<label>Mật khẩu</label>
@@ -61,6 +78,12 @@ function Check(chk)
 					<?php 
 					foreach($this->listParent as $parent)
 					{
+					?>
+						<div style="margin-left:50px;margin-bottom:10px">
+							<input type="checkbox" name="check_object" onclick="checkall('item_<?php echo $parent['category_id'] ?>',this);"/>
+							<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
+						</div>
+						<?php
 					$check = 0;
 						//-------Chuyên mục cha-----
 								foreach($this->listCategoryId as $categoryId)
@@ -119,7 +142,7 @@ function Check(chk)
 											?>
 
 											<div style="margin-left:100px">
-												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
+												<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
 												<span><?php echo $child['category_name']; ?></span>
 											</div>
 												<br/>
@@ -129,7 +152,7 @@ function Check(chk)
 										{
 											?>
 											<div style="margin-left:100px">
-												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+												<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
 												<span><?php echo $child['category_name']; ?></span>
 											</div>
 												<br/>

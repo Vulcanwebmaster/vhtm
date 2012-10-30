@@ -6,7 +6,29 @@ $(document).ready(function() {
 	var check = document.getElementById('is_active-1');
 	check.checked = true;
 });
+
+function checkall(class_name, obj){
+	var items = document.getElementsByClassName(class_name);
+	if(obj.checked == true){
+		for(i=0;i<items.length;i++)
+		items[i].checked = true;
+	}
+	else{
+		for(i=0;i<items.length;i++)
+		items[i].checked = false;
+	}
+}
+
 </script>
+<?php if (isset($_SESSION['result']))
+					{
+						echo '<br/>';
+						echo '<p class="message">';
+						echo $_SESSION['result'];
+						echo '</p>';
+						unset($_SESSION['result']);
+					}
+					?>
 <form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
@@ -16,15 +38,6 @@ $(document).ready(function() {
 				<fieldset class="fieldset" style="float:left">
 					<label>Tên đăng nhập</label>
 					<?php echo $this->form->getElement('user_login');?>
-					<?php if (isset($_SESSION['result']))
-					{
-						echo '<br/>';
-						echo '<p class="message">';
-						echo $_SESSION['result'];
-						echo '</p>';
-						unset($_SESSION['result']);
-					}
-					?>
 				</fieldset>
 				<fieldset class="fieldset" style="float:right">
 					<label>Mật khẩu</label>
@@ -48,13 +61,14 @@ $(document).ready(function() {
 						<?php echo $this->form->getElement('is_active');?>
 					</div>
 				</fieldset>
-				<fieldset style="margin-left:-1px">
+				<fieldset style="margin-left:-1px"  id="checkboxes">
 					<label style="width:300px">Các chuyên mục được phân quyền</label>
 					<?php 
 					foreach($this->listParent as $parent)
 					{
 					?>
-						<p style="text-transform: uppercase;margin-left: 50px"><?php echo $parent['category_name']; ?></p>
+						<input type="checkbox" onclick="checkall('item_<?php echo $parent['category_id']; ?>',this);" name="check_object/>
+						<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
 						<?php
 							foreach($this->listChild as $child)
 							{
@@ -62,10 +76,9 @@ $(document).ready(function() {
 								{
 									?>
 									<div style="margin-left:100px">
-										<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+										<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" class="item_<?php echo $parent['category_id'] ?>"/>
 										<span><?php echo $child['category_name']; ?></span>
-									</div>
-										<br/>
+										</div>
 									<?php
 								}
 							}

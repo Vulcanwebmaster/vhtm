@@ -93,4 +93,11 @@
 			return $query->fetchAll();
 		}
 		
+		function getUserIdByUserLogin($user_login)
+		{
+			$query = $this->db->query('select user_id from unc_user where user_login="'.$user_login.'"');
+			$list = $query->fetchAll();
+			return $list[0]['user_id'];
+		}
+		
 	}
