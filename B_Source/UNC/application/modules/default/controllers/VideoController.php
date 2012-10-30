@@ -14,7 +14,11 @@ class VideoController extends Zend_Controller_Action
 		$this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mVideo = new Default_Model_Mvideo();
-	    @session_start();	
+		@session_start();
+		$this->setAccess();
+		$_SESSION['home'] = 'home';
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
+	
 		unset($_SESSION['home']);
 	}
 	
