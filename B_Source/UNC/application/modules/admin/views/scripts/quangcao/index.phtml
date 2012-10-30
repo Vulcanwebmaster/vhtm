@@ -44,11 +44,24 @@
 									{ 
 										order: "<?php echo $count;?>", 
 										ads_banner: '<?php echo $item['ads_banner'];?>',	
-										ads_position: "<?php echo $item['ads_position'];?>",
+										ads_position: "<?php 
+										 if ($item['ads_position']=='1') {
+											 echo "Trên";
+										 } else if($item['ads_position']=='2') {
+											 echo "Giữa";
+										 } else if($item['ads_position']=='3') {
+											 echo "Trái";
+										 } else if($item['ads_position']=='4') {
+											 echo "Phải";
+										 } else {
+											 echo "Nội dung";
+										 }
+										 
+										 ?>",
 										ads_name: "<?php echo $item['ads_name'];?>",
 										
 										ads_start_date: "<?php echo $item['ads_start_date'];?>",
-										category_id: "<?php echo $item['category_id'];?>",
+										category_name: "<?php echo $item['category_name'];?>",
 										sua: 
 											'<?php 
 											//echo "string";
@@ -104,8 +117,8 @@
 								allowHTML: true
 							},
 							{
-								key: 'category_id',
-								label:'ID chuyên mục',
+								key: 'category_name',
+								label:'Chuyên mục',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true

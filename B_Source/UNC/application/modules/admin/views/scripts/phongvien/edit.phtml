@@ -1,7 +1,22 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
-<form method="post" action="<?php echo $this->form->getAction();?>">
+<script type="text/javascript">
+//<!-----------Check all----->
+function Check(chk)
+{
+    // Nếu checkbox có tên checkAll được check
+    if(document.fcheck.checkAll.checked==true){
+        for (i = 0; i < chk.length; i++) // chạy vòng lặp để check tất cả
+            chk[i].checked = true ;
+    }else{
+        for (i = 0; i < chk.length; i++) // chạy vòng lặp để uncheck tất cả
+            chk[i].checked = false ;
+    }
+}
+//<!-----------Check all----->
+</script>
+<form method="post" name="fcheck" id="fcheck" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
 		<div class="tab_container">
@@ -46,9 +61,44 @@
 					<?php 
 					foreach($this->listParent as $parent)
 					{
-					?>
-						<p style="text-transform: uppercase;margin-left: 50px"><?php echo $parent['category_name']; ?></p>
-						<?php
+					$check = 0;
+						//-------Chuyên mục cha-----
+								foreach($this->listCategoryId as $categoryId)
+									{
+										
+										if($categoryId['category_id'] == $parent['category_id'])
+										{
+											$check = 1; break;
+										}
+									}
+								if($this->role == "0")
+									{
+										if($check == 1)
+										{
+											?>
+												<input type="checkbox" name="checkbox[]" value="<?php echo $parent['category_id']; ?>" checked="checked"/>
+												<span><?php echo $parent['category_name']; ?></span>
+											<?php
+										}
+										else
+										{
+											?>
+											<input type="checkbox" name="checkbox[]" value="<?php echo $parent['category_id']; ?>/>
+											<p style="text-transform: uppercase;margin-left: 50px"><?php echo $parent['category_name']; ?></p>
+											<?php
+										}
+									}
+									else
+									{
+										if($check == 1)
+										{
+											?>
+												<span><?php echo $child['category_name']; ?></span>
+											<?php
+										}
+									}
+									
+									//-------End Chuyên mục cha-----
 							foreach($this->listChild as $child)
 							{
 								$check = 0;
@@ -67,6 +117,7 @@
 										if($check == 1)
 										{
 											?>
+
 											<div style="margin-left:100px">
 												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
 												<span><?php echo $child['category_name']; ?></span>

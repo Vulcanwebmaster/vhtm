@@ -63,14 +63,14 @@
 			</fieldset><div class="clear"></div>
 				
 			<fieldset style="width:50%">
-				<label>id Danh mục : </label>
+				<label>chuyên mục : </label>
 				<select name="category_id">
 					<option value="0"></option>
 					<?php
 						foreach($this->listdm as $item)
 						{
 							?>
-								<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_id']; ?></option>
+								<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_name']; ?></option>
 							<?php 
 						}
 					?>

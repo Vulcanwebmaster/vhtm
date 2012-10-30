@@ -8,7 +8,17 @@ class Admin_Model_Mquangcao extends Zend_Db_Table_Abstract{
 		
 		function getListQC()
 		{
-			$query=$this->db->query('select * from unc_ads');
+			$query=$this->db->query('SELECT unc_ads.*, unc_category.category_name
+										FROM unc_ads, unc_category
+										WHERE unc_ads.category_id = unc_category.category_id');
+			return $query->fetchAll();
+		}
+		
+		function getListcategory_name()
+		{
+			$query=$this->db->query('SELECT unc_ads.category_id, unc_category.category_name
+										FROM unc_ads, unc_category
+										WHERE unc_ads.category_id = unc_category.category_id');
 			return $query->fetchAll();
 		}
 		

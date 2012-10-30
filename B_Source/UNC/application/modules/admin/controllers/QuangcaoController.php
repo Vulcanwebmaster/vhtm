@@ -145,6 +145,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			
 			$mquangcao = new Admin_Model_Mquangcao;
 			$form=$this->setForm();
+			$this->view->listdm = $mquangcao->getListDM();
 			$this->view->list = $mquangcao->getListQC();
 			$this->view->query = $mquangcao->getOne($this->getRequest()->getParam('id'));
 			$info = $mquangcao->getOne($this->getRequest()->getParam('id'));
@@ -161,6 +162,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 					'ads_link' => $this->_request->getPost('ads_link'),
 					'ads_start_date' => $this->_request->getPost('ads_start_date'),
 					'ads_end_date' => $this->_request->getPost('ads_end_date'),
+					'category_id' => $this->_request->getPost('category_id'),
 				);
 				
 				

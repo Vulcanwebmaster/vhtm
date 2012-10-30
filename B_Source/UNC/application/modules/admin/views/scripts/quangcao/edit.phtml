@@ -57,6 +57,21 @@
 				<label>Ngày hết hạn</label>
 				<input style="width:93%" type="text" class="datepicker" name="ads_end_date" value="<?php echo $this->query['ads_end_date']; ?>">
 			</fieldset><div class="clear"></div>
+			
+			<fieldset style="width:50%">
+				<label>chuyên mục : </label>
+				<select name="category_id">
+					<option value="0"></option>
+					<?php
+						foreach($this->listdm as $item)
+						{
+							?>
+								<option value="<?php echo $item['category_id']; ?>"><?php echo $item['category_name']; ?></option>
+							<?php 
+						}
+					?>
+				</select>
+			</fieldset><div class="clear"></div>
 		</div>
 			<footer>
 					<div class="submit_link" style="float:right">
