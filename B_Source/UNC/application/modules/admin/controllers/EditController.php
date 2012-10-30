@@ -10,7 +10,7 @@
 		                   'layoutPath' => $layoutPath );
 		    Zend_Layout::startMvc ($option);
 			$this->mAdmin = new Admin_Model_Madmin();
-			session_start();
+			@session_start();
 			if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			else {

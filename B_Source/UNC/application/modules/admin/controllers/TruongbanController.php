@@ -19,7 +19,7 @@
 			$this->listParent = $this->mChuyenmuc->getListParent();
 			$this->listChild = $this->mChuyenmuc->getListChild();
 			
-			session_start();
+			@session_start();
 			if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			else {

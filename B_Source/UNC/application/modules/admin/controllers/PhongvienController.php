@@ -11,7 +11,7 @@
 		                   'layoutPath' => $layoutPath );
 		    Zend_Layout::startMvc ( $option );
 		    $this->mUser=new Admin_Model_Muser();
-			session_start();
+			@session_start();
 			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			$this->listParent = $this->mChuyenmuc->getListParent();
 			$this->listChild = $this->mChuyenmuc->getListChild();

@@ -40,7 +40,7 @@
 			$this->date=array();
 			$this->source=array();
 			$this->content=array();
-			session_start();
+			@session_start();
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
 			$option = array ('layout' => 'index', 
 			                   'layoutPath' => $layoutPath );
