@@ -184,11 +184,12 @@
 			$user_address = new Zend_Form_Element_Text('user_address');
 			$user_address->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Địa chỉ không được để trống'));
 			
-			$is_active = $form->createElement("select","is_active",array(
-                                                        "label" => "Kích hoạt",
-                                                   "multioptions"=> array(
+			$is_active=new Zend_Form_Element_Radio('is_active');
+			$is_active->setRequired(true)
+					->setLabel('Is active?')
+					->setMultiOptions(array(
                                                                       "0" => "Không",
-                                                                      "1" => "Có")));
+                                                                      "1" => "Có"));
 
 			$user_login->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$user_pass->removeDecorator('HtmlTag')->removeDecorator('Label');

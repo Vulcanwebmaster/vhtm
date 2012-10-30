@@ -137,6 +137,7 @@ class TintucController extends Zend_Controller_Action
 		$news_id = $this->_request->getParam('newsid');
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news_id);
+		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
 		
 		$parentId = $this->mTintuc->getParentByChild($categoryid);
 		$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
@@ -294,7 +295,7 @@ class TintucController extends Zend_Controller_Action
         $paginator->setItemCountPerPage(8);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
-		
+        
 		if($is_parent == "1") 
 			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
 		else 
@@ -326,7 +327,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao2 = $listquangcao2;
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
-		
+		//echo $this->_request->getParam('page');die();
 		$this->view->listThread = $this->mDefault->getListThread();
 	}
 

@@ -14,7 +14,7 @@ class VideoController extends Zend_Controller_Action
 		$this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mVideo = new Default_Model_Mvideo();
-	    session_start();	
+	    @session_start();	
 		unset($_SESSION['home']);
 	}
 	
@@ -29,7 +29,7 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listChild = $this->mTintuc->getListChild();	
 		
 		$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
-        $paginator->setItemCountPerPage(5);        
+        $paginator->setItemCountPerPage(12);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;

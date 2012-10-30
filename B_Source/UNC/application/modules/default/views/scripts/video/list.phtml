@@ -1,30 +1,55 @@
-<style type="text/css">
-	.video{margin-top:10px}
-</style>
-
-<div style="margin-top:30px;margin-left:30px">
-	<?php 
-		foreach($this->list as $video)
-		{
-	?>
-		<div class="video">
-			<a style="color: #07506B;" href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html" title="<?php echo $video['video_title']; ?>">
-				<img class="img130" src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg"/>
-			</a>
-	 		<div>
-	  			<a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php echo $video['video_alias']; ?>.html"><h3 style="color:#07506b;margin-left:145px;margin-top:-92px"><?php echo $video['video_title']; ?></h3></a>
-	  			<div style="margin-left:145px">
-					<?php echo $video['video_description']; ?>
-	  			</div>
-	 		</div>
-	 		<br/><br/><br/>
-	 		<br style="clear:both">
-	 	</div>
-	 	
- 	<?php
-		}
- 	?>
-</div>
-<div style="margin-top:20px;">
-<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
-</div>
+<?php function cutString($str,$limit)
+{
+	if (strlen($str)>$limit)
+	{
+		while ($str[$limit]!=' ' && $limit<strlen($str)-1)
+			$limit++;
+	}
+	else $limit=strlen($str);
+	if ($limit<strlen($str))
+		return substr($str, 0, $limit).'...';
+	else return substr($str, 0, $limit);
+}?>	
+<div class="subpage_wapper_left">
+	<div class="subpage_wapper_left_top_video">
+            	video clips
+            </div>
+            <div class="subpage_new" style="margin:15px">
+            	<div id="videp_left">
+                	<form class="searchform" action="" method="post">
+                        <input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
+                        <input class="searchsubmit" type="submit" value="" style="cursor:pointer">
+                    </form>
+                    <ul id="ul_video_left">
+                    	<li><a href="#">Tất cả</a></li>
+                        <li><a href="#">Xã hội</a></li>
+                        <li><a href="#">Thế giới</a></li>
+                        <li style="background-color:#0c68ae"><a href="#" style="color:#fff">Văn hóa</a></li>
+                        <li><a href="#">Thể thao</a></li>
+                        <li><a href="#">Gia đình</a></li>
+                        <li><a href="#">Sức khỏe</a></li>
+                        <li><a href="#">Pháp luật</a></li>
+                    </ul>
+                </div>
+                <div id="video_right">
+                	<ul>
+                		<?php 
+							foreach($this->list as $video)
+							{
+						?>
+							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
+	                        	<div>
+									<img class="img130" src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
+								</div>
+	                            <p><?php echo cutString($video['video_title'],20); ?></p>
+	                        </a></li>
+						<?php
+							}
+					 	?>
+                    </ul>
+                    <div class="page_video" style="clear:both; padding-top:100px; margin-bottom:15px">
+                    	<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+                    </div>
+                </div>
+            </div>
+</div>          

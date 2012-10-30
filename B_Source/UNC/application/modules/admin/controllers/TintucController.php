@@ -273,11 +273,12 @@
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
-			$is_hot = $form->createElement("select","is_hot",array(
-                                                        "label" => "Tin hot",
-                                                   "multioptions"=> array(
+			$is_hot= new Zend_Form_Element_Radio('is_hot');
+			$is_hot->setRequired(true)
+				->setLabel('Is hot?')
+				->setMultiOptions(array(
                                                                       "0" => "Không",
-                                                                      "1" => "Có")));
+                                                                      "1" => "Có"));
 																	  
 			$is_hot->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($is_hot);

@@ -2,12 +2,12 @@
 {
 	if (strlen($str)>$limit)
 	{
-		while ($str[$limit]!=' ')
+		while ($str[$limit]!=' ' && $limit<strlen($str)-1)
 			$limit++;
 	}
 	else $limit=strlen($str);
 	return substr($str, 0, $limit);
-}?>		
+}?>	
 		<div class="element_detail">
 			<div class="children_down-title" style="margin-top:0px"><a><?php echo $this->current_category['category_name'];?></a></div>
         	<div class="subpage_wapper_left_top" style="margin-bottom:10px">
@@ -63,14 +63,14 @@
 					echo 'Chuyên mục này chưa có tin bài nào';
 				}
            ?>
-           <div class="page_video" style="margin-left:15px;">
-				<ul id="page_video">
-					<li style=" margin-right:30px"><a href="#">Trang</a></li><li>  </li>
-					<li><a href="#">1</a></li><li>|</li>
-					<li><a href="#">2</a></li><li>|</li>
-					<li><a href="#">....</a></li><li>|</li>
-					<li><a href="#">10</a></li>
-				</ul>
-			</div> <br clear="both">
+           <div class="page_video">
+				<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+			</div> <br style="clear:both">
 			</div>
-			<div class="detail_add"></div>
+			<div class="detail_add">
+				<a href="<?php echo $this->listquangcao2['ads_link']; ?>" target="_blank">
+		            <?php
+		            	echo $this->listquangcao2['ads_banner']; 
+		            ?>
+		        </a>
+			</div>

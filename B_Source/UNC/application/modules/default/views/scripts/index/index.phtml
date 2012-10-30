@@ -10,12 +10,16 @@ function cutString($str,$limit)
 {
 	if (strlen($str)>$limit)
 	{
-		while ($str[$limit]!=' ')
+		while ($str[$limit]!=' ' && $limit<strlen($str)-1)
 			$limit++;
 	}
 	else $limit=strlen($str);
 	return substr($str, 0, $limit);
 }?>
+<style>
+	#subpage_home{display:none}
+	#subpage_wapper{padding-top:15px}
+</style>
 <div class="left"> <!-----------Left--------------->
 	<div class="content-left1">
 		<?php $hotestNews = $this->listHotNews[0];?>

@@ -1,21 +1,23 @@
 <?php if ($this->pageCount > 1): ?>
-<div class="paginationControl" align="center" style=" margin-left: 25px; font-weight: normal; color:black">
+<div class="paginationControl" align="left" style=" margin-left: 0; font-weight: normal; color:#2877b3">
 	<style>
 		.paginationControl{font-weight: bold; font-size:15px}
+		.paginationControl *{color:#2877b3 !important}
 	</style>
+	Trang
 <?php 
 	if (isset($this->previous)){
-  		echo '<a href="' . $this->url(array('page' => $this->previous)). '"> &lt; Trước</a>  ';
+  		echo ' <a href="' . $this->url(array('page' => $this->previous)). '"> &lt; Trước</a>  |';
 	}
 	foreach ($this->pagesInRange as $page){
 	   if ($page != $this->current){
-	   		echo  '<a href="' . $this->url(array('page' => $page)). '">' . $page . '</a>  ';
+	   		echo  ' <a href="' . $this->url(array('page' => $page)). '">' . $page . '</a>  |';
 	  }else{
-	  	echo $page . '  ';
+	  	echo '<strong>'.$page . '</strong>  |';
 	  }
    }
 	 if (isset($this->next)){
-		echo '<a href="' . $this->url(array('page' => $this->next)) . '">Sau &gt;</a>';
+		echo ' <a href="' . $this->url(array('page' => $this->next)) . '">Sau &gt;</a>';
   	 }
   ?>
 </div>
