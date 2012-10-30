@@ -27,12 +27,23 @@
 	unset($_SESSION['result']);
 }
 ?>
+<?php
+	function word_limiter($str,$limit)
+	{
+		if (strlen($str)>$limit)
+		{
+		 	while ($str[$limit] != ' ')
+		   	$limit++;
+		}
+		else $limit = strlen($str);
+ 		return substr($str, 0, $limit);
+	}
+?>
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
 		
-		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
-		
+		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>	
 		<script type="text/javascript">
 			YUI().use('datatable', function (Y) {
 				var data = [
@@ -43,30 +54,16 @@
 									?>
 									{ 
 										order: "<?php echo $count;?>", 
-										comment_content: "<?php $content= str_replace(array("\n", "\r"), ' ', strip_tags($item['comment_content']));
-														echo substr($content, 0, 400);?>",									
+										comment_content: "<?php $content = str_replace(array("\n", "\r"), ' ', strip_tags($item['comment_content']));
+														if(strlen($content) > 100)
+															echo word_limiter($content, 100).' ...';	
+														else echo word_limiter($content, 100);	?>",							
 										news_id: "<?php 
 											$string = $this->listNewsTitle[$count-1];
-											$charset = 'utf-8';
-											$len = 45;
-											$string = html_entity_decode($string, ENT_QUOTES, $charset);
-											if(mb_strlen($string, $charset)> $len)
-											{
-												$arr = explode(' ', $string);
-												$string = mb_substr($string, 0, $len, $charset);
-												$arrRes = explode(' ', $string);
-												$last = $arr[count($arrRes)-1];
-											
-												unset($arr);
-												if(strcasecmp($arrRes[count($arrRes)-1], $last))
-												{
-													unset($arrRes[count($arrRes)-1]);
-												}
-												$string = implode(' ', $arrRes)."...";
-											}
-											echo $string;
+											if(strlen($string) > 100)
+												echo word_limiter($string, 100).' ...';	
+											else echo word_limiter($string, 100);
 										 ?>",
-										reader_id: "<?php echo $this->listReaderName[$count-1];?>",
 										sua: "<?php echo $item['comment_id']?>",
 										xoa: "<?php echo $item['comment_id']?>"
 									},
@@ -93,13 +90,6 @@
 							{
 								key: 'news_id',
 								label: 'Tin tức',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'reader_id',
-								label:'Người đọc',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true

@@ -65,7 +65,7 @@
 		function editComment($id,$input)
 		{
 			$query=$this->db->query('update unc_comment 
-									set comment_content="'.$input['comment_content'].'", news_id="'.$input['news_id'].'", reader_id="'.$input['reader_id'].'" 
+									set comment_content="'.$input['comment_content'].'", news_id="'.$input['news_id'].'"
 									where comment_id="'.$id.'"');
 			return $query;
 		}
@@ -91,11 +91,5 @@
 			return $list[0];
 		}
 		
-		function getReaderNameByReaderId($reader_id)
-		{
-			$query=$this->db->query('select comment_user_fullname from unc_comment_user where comment_user_id="'.$reader_id.'"');
-			$list=$query->fetchAll();
-			return $list[0]['comment_user_fullname'];
-		}
 	}
 ?>

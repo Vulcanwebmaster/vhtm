@@ -1,14 +1,19 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	var check = document.getElementById('is_active-1');
+	check.checked = true;
+});
+</script>
 <form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset>
+				<fieldset class="fieldset" style="float:left">
 					<label>Tên đăng nhập</label>
 					<?php echo $this->form->getElement('user_login');?>
 					<?php if (isset($_SESSION['result']))
@@ -21,27 +26,29 @@
 					}
 					?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right">
 					<label>Mật khẩu</label>
 					<?php echo $this->form->getElement('user_pass');?>
-				</fieldset>
-				<fieldset>
+				</fieldset >
+				<fieldset class="fieldset" style="float:left">
 					<label>Họ tên</label>
 					<?php echo $this->form->getElement('user_fullname');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right">
 					<label>Email</label>
 					<?php echo $this->form->getElement('user_email');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:left">
 					<label>Địa chỉ</label>
 					<?php echo $this->form->getElement('user_address');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right">
 					<label>Kích hoạt</label>
-					<?php echo $this->form->getElement('is_active');?>
+					<div style="margin-left: 84px;margin-top: -29px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
 				</fieldset>
-				<fieldset>
+				<fieldset style="margin-left:-1px">
 					<label style="width:300px">Các chuyên mục được phân quyền</label>
 					<?php 
 					foreach($this->listParent as $parent)
@@ -77,3 +84,5 @@
 		</footer>
 	</article>
 </form>
+<!--input style="margin-top: 10px;margin-left:60px" type="radio" name="is_active" id="is_active-1" value="1" class="is_active" checked="checked">Có
+						<input type="radio" name="is_active" id="is_active-0" value="0" class="is_active">Không

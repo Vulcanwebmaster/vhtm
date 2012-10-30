@@ -10,10 +10,8 @@
 		    $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		    Zend_Layout::startMvc ( $option );
-		      
-		    @session_start();
 		    $this->mUser=new Admin_Model_Muser();
-			
+			session_start();
 			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			$this->listParent = $this->mChuyenmuc->getListParent();
 			$this->listChild = $this->mChuyenmuc->getListChild();
@@ -187,10 +185,9 @@
 			$is_active=new Zend_Form_Element_Radio('is_active');
 			$is_active->setRequired(true)
 					->setLabel('Is active?')
-					->setMultiOptions(array(
-                                                                      "0" => "Không",
-                                                                      "1" => "Có"));
-
+					->setMultiOptions(array( "1" => "Có","0" => "Không"));
+			$is_active->setSeparator('');
+			
 			$user_login->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$user_pass->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$user_fullname->removeDecorator('HtmlTag')->removeDecorator('Label');
@@ -234,10 +231,9 @@
 				}
 				else
 				{
-					$input=$this->_getInput($form);
+					$input = $this->_getInput($form);
 					if($this->mUser->isExitsUsername($input['user_login']))
 					{
-						//echo 'abc';die();
 						$_SESSION['result']='Tên đăng nhập đã tồn tại !';
 						
 					}
@@ -246,7 +242,6 @@
 							if ($this->mUser->insertUser($input))
 							{
 								$user_id = $this->mTruongban->getUserIdByUserLogin($input['user_login']);
-								//echo $user_id;die();
 								foreach($_POST['checkbox'] as $check)
 								{
 									$this->mChuyenmuc->insertUserForCategory($user_id,$check);
@@ -274,7 +269,6 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$form=$this->setForm();
-			//echo $this->role;
 			$this->view->role = $this->role;
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mUser->getUserById($userId);
@@ -360,62 +354,7 @@
 				$_SESSION['result']='Bạn không có quyền sửa mục này !';
 				$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 			}
-			
-		/*	if ($this->_request->isPost())
-			{
-				if (!$form->isValid($_POST))
-				{
-					$userId=$this->_request->getParam('userid');
-					$info=$this->mUser->getUserById($userId);
-					
-					$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
-					$form->getElement('user_login')->setValue($info['user_login']);
-					$form->getElement('user_pass')->setValue($info['user_pass']);
-					$form->getElement('user_fullname')->setValue($info['user_fullname']);
-					$form->getElement('user_email')->setValue($info['user_email']);
-					$form->getElement('user_address')->setValue($info['user_address']);
-					$form->getElement('is_active')->setValue($info['is_active']);
-					
-					$this->view->form=$form;
-				}
-				else
-				{
-					$id=$this->_request->getParam('userid');
-					$input=$this->_getInput($form);
-						if($this->mUser->isExitsUsername($input['user_login']))
-							{
-								//echo 'a';die();	
-								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
-								//echo 'b';die();
-							}
-						else {
-							if ($this->mUser->editUser($id, $input))
-							{
-								$_SESSION['result']='Cập nhật thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
-							}
-							else 
-							{
-								$this->view->error=$form->getMessage();
-								//$this->view->form=$form;
-							}
-						}
-				}
-			}
-			else
-			{
-					$userId=$this->_request->getParam('userid');
-					$info=$this->mUser->getUserById($userId);
-					
-					$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
-					$form->getElement('user_login')->setValue($info['user_login']);
-					$form->getElement('user_pass')->setValue($info['user_pass']);
-					$form->getElement('user_fullname')->setValue($info['user_fullname']);
-					$form->getElement('user_email')->setValue($info['user_email']);
-					$form->getElement('user_address')->setValue($info['user_address']);
-					$form->getElement('is_active')->setValue($info['is_active']);
-					
-					$this->view->form=$form;
-			}*/
 		}
+
+
 	}

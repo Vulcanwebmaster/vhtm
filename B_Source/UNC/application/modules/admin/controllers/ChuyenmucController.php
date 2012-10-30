@@ -11,7 +11,6 @@
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			  @session_start();
-			  
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {
@@ -34,7 +33,6 @@
 			
 			$category_parent_id = new Zend_Form_Element_Select('category_parent_id');
 			$category_parent_id->addMultiOption('0', '');
-			$category_parent_id->setAttrib('style','width:101%;margin-left:-29px');
 			
 			if($check==1)
 			{
@@ -57,6 +55,7 @@
                                                                       "0" => "Không"));
 			
 			$category_name->removeDecorator('HtmlTag')->removeDecorator('Label');	
+			$category_parent_id->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$form->addElements(array($category_name,$category_parent_id,$is_active));

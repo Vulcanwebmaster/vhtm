@@ -1,18 +1,24 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	var check = document.getElementById('is_active-1');
+	check.checked = true;
+});
+</script>
 <form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset>
+				<fieldset class="fieldset">
 					<label>Tên chuyên mục : </label>
 					<?php echo $this->form->getElement('category_name');?>
 				</fieldset>
 				
-				<fieldset>
+				<fieldset class="fieldset">
 					<label>Chuyên mục cha : </label>
 					<select name="category_parent_id">
 					<option value="0"></option>
@@ -26,9 +32,11 @@
 					?>
 				</select>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right;margin-top: -154px;padding-bottom: 43px;">
 					<label>Kích hoạt : </label>
-					<?php echo $this->form->getElement('is_active');?>
+					<div style="margin-left: 80px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
 				</fieldset>
 			</div>
 		</div>

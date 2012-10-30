@@ -13,15 +13,15 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset>
+				<fieldset  class="fieldset" style="float:left">
 					<label>Liên kết </label>
 					<?php echo $this->form->getElement('link');?>
 				</fieldset>
-				<fieldset>
+				<fieldset  class="fieldset" style="float:right">
 					<label>Tiêu đề </label>
 					<?php echo $this->form->getElement('title');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset1" style="float:left">
 					<label>Mô tả</label>
 					<?php echo $this->form->getElement('description');?>
 				</fieldset>
@@ -33,17 +33,19 @@
 				if($this->role == "0")
 				{
 				?>
-					<fieldset>
+					<fieldset class="fieldset" style="float:right">
 						<label>Kích hoạt</label>
-						<?php echo $this->form->getElement('is_active');?>
+						<div style="margin-top: 26px;margin-left:82px">
+							<?php echo $this->form->getElement('is_active');?>
+						</div>
 					</fieldset>
 				<?php 
 				}
 				?>
-				<fieldset>
+				<!--fieldset>
 					<label>Đặt làm mặc định</label>
 					<?php echo $this->form->getElement('is_default');?>
-				</fieldset>
+				</fieldset-->
 			</div>
 		</div>
 		<footer>

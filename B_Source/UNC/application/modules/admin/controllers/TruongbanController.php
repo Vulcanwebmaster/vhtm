@@ -13,15 +13,13 @@
 		    $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		    Zend_Layout::startMvc ($option);
-		      
-		    @session_start();
 			$this->mTruongban = new Admin_Model_Mtruongban();
 			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			
 			$this->listParent = $this->mChuyenmuc->getListParent();
 			$this->listChild = $this->mChuyenmuc->getListChild();
 			
-			
+			session_start();
 			if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			else {

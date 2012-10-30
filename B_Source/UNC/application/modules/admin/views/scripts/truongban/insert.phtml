@@ -1,6 +1,12 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	var check = document.getElementById('is_active-1');
+	check.checked = true;
+});
+</script>
 <form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>

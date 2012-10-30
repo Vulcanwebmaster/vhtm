@@ -12,7 +12,6 @@
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			  @session_start();
-			  
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {

@@ -40,7 +40,7 @@
 			$this->date=array();
 			$this->source=array();
 			$this->content=array();
-			
+			session_start();
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
 			$option = array ('layout' => 'index', 
 			                   'layoutPath' => $layoutPath );
@@ -48,7 +48,6 @@
 			$this->mtintuc=new Admin_Model_Mtintuc();
 			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
 			$this->mtimkiem=new Admin_Model_Mtimkiem();
-			@session_start();
 		}
 		
 		function indexAction()

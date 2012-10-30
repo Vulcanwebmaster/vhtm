@@ -9,6 +9,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mDanhmuc = new Admin_Model_Mdanhmuc();
+			  session_start();
 		}
 		
 		function setForm()

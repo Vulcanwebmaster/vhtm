@@ -8,6 +8,12 @@
 		setUpFCK('description',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 	});
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var check = document.getElementById('is_active-1');
+	check.checked = true;
+});
+</script>
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
@@ -16,11 +22,11 @@
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
 		<div id="tab1" class="tab_content">
-			<fieldset>
+			<fieldset class="fieldset">
 				<label>Liên kết</label>
 				<?php echo $this->form->getElement('link');?>
 			</fieldset>
-			<fieldset>
+			<fieldset class="fieldset">
 				<label>Tiêu đề</label>
 				<?php echo $this->form->getElement('title');?>
 			</fieldset>
@@ -28,7 +34,7 @@
 				<label>Mô tả</label>
 				<?php echo $this->form->getElement('description');?>
 			</fieldset>
-			<!--fieldset>
+			<!--fieldset class="fieldset">
 				<label>Chuyên mục</label>
 				<?php echo $this->form->getElement('category_id');?>
 			</fieldset-->
@@ -36,17 +42,19 @@
 				if($this->role == "0")
 				{
 			?>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right;margin-top:-416px;padding-bottom: 47px;">
 					<label>Kích hoạt</label>
-					<?php echo $this->form->getElement('is_active');?>
+					<div style="margin-left: 82px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
 				</fieldset>
 			<?php 
 				}
 			?>
-			<fieldset>
+			<!--fieldset class="fieldset">
 					<label>Đặt làm mặc định</label>
 					<?php echo $this->form->getElement('is_default');?>
-				</fieldset>
+			</fieldset-->
 		</div>
 	</div>
 	<footer>

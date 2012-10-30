@@ -7,18 +7,20 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset>
+				<fieldset class="fieldset">
 					<label>Tên chuyên mục : </label>
 					<?php echo $this->form->getElement('category_name');?>
 				</fieldset>
 				
-				<fieldset>
+				<fieldset class="fieldset">
 					<label>Chuyên mục cha : </label>
 					<?php echo $this->form->getElement('category_parent_id');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right;margin-top: -154px;padding-bottom: 43px;">
 					<label>Kích hoạt : </label>
-					<?php echo $this->form->getElement('is_active');?>
+					<div style="margin-left: 80px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
 				</fieldset>
 			</div>
 		</div>

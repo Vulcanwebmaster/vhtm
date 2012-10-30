@@ -227,12 +227,12 @@
 			$description->setAttrib('rows', '5');
 			$description->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Mô tả không được để trống'));
 			
-			$is_active = $form->createElement("select","is_active",array(
+			$is_active = $form->createElement("radio","is_active",array(
                                                         "label" => "Kích hoạt",
                                                    "multioptions"=> array(
-                                                                      "0" => "Không",
-            	                                                      "1" => "Có")));
-			$is_default = $form->createElement("select","is_default",array(
+                                                                      "1" => "Có",
+            	                                                      "0" => "Không")));
+			$is_default = $form->createElement("radio","is_default",array(
                                                         "label" => "Mặc định",
                                                    "multioptions"=> array(
                                                                       "0" => "Không",

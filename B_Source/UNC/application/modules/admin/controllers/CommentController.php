@@ -104,7 +104,6 @@
 			foreach($listComments as $comments)
 			{
 				$listNewsTitle[] = $this->mComment->getNewsTitleByNewsId($comments['news_id']);
-				$listReaderName[] = $this->mComment->getReaderNameByReaderId($comments['reader_id']);
 			}
 			
         	$paginator->setItemCountPerPage(5);        
@@ -133,18 +132,10 @@
 				$news_id->addMultiOption($news['news_id'],$news['news_title']);
 			}
 			
-			$reader_id = new Zend_Form_Element_Select('reader_id');
-			$reader_id->addMultiOption('0', '');
-			foreach($this->mComment->getListReader() as $reader)
-			{
-				$reader_id->addMultiOption($reader['comment_user_id'],$reader['comment_user_fullname']);
-			}
-			
 			$comment_content->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$news_id->removeDecorator('HtmlTag')->removeDecorator('Label');
-			$reader_id->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElements(array($comment_content,$news_id,$reader_id));
+			$form->addElements(array($comment_content,$news_id));
 			return $form;
 		}
 		
@@ -153,7 +144,6 @@
 			$input = array(	
 							'comment_content'	=> $form->getValue('comment_content'),
 							'news_id'			=> $form->getValue('news_id'),
-							'reader_id'			=> $form->getValue('reader_id')
 			);
 			return $input;
 		}
@@ -172,7 +162,6 @@
 			$form->setAction($this->view->baseUrl().'/admin/comment/edit/comment_id/'.$comment_id);
 			$form->getElement('comment_content')->setValue($info['comment_content']);
 			$form->getElement('news_id')->setValue($info['news_id']);
-			$form->getElement('reader_id')->setValue($info['reader_id']);
 			
 			$this->view->title="Sửa comment";
 			$this->view->form = $form;

@@ -961,3 +961,9 @@ font-size: 14px;}
 
 .tab_content{padding:15px;  overflow:auto}
 .paginationControl a{line-height:27px}
+
+.fieldset{width:49%}
+.fieldset1{width:49%}
+.fieldset input[type=text]{width:94%}
+.fieldset input[type=password]{width:94%}
+.fieldset1 textarea{width:94%}

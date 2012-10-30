@@ -16,15 +16,15 @@
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
 		<div id="tab1" class="tab_content">
-			<fieldset>
+			<fieldset class="fieldset">
 				<label>Chọn video</label>
 				<input class="file" id="file" type="file" name="file"/><img class="uploading" id="uploading" style="display:none" src="<?php echo $this->baseUrl() ?>/application/templates/admin/images/uploading.gif"/>
 			</fieldset>
-			<fieldset>
+			<fieldset class="fieldset">
 				<label>Tiêu đề</label>
 				<?php echo $this->form->getElement('title');?>
 			</fieldset>
-			<fieldset>
+			<fieldset class="fieldset1">
 				<label>Mô tả</label>
 				<?php echo $this->form->getElement('description');?>
 			</fieldset>
