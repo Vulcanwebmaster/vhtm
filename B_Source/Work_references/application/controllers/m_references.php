@@ -54,14 +54,14 @@
 				foreach ($listReferences as $item)
 				{
 					$references[]=$item;
-					$pictures[]=$Files->returnFileName($item->file_id);
+					$pictures[]=$item->file_id;
 				}
 			}
 			$listUncategoried=$CraftsmanReferences->returnReferencesList($craftsmanId);
 			foreach ($listUncategoried as $item)
 			{
 				$references[]=$item;
-				$pictures[]=$Files->returnFileName($item->file_id);
+				$pictures[]=$item->file_id.".sav";
 			}
 			$ref['pictures']=$pictures;
 			$ref['references']=$references;
@@ -81,7 +81,7 @@
 			$rates=array();
 			foreach ($data['references'] as $item)
 			{
-				$pictures[]=$Files->returnFileName($item->file_id);
+				$pictures[]=$item->file_id.".sav";
 				$rates[]=$CraftsmanReferences->returnReferenceRatings($item->file_id);
 			}
 			$data['pictures'] = $pictures;
@@ -112,7 +112,7 @@
 			}
 			$data['pictures'] = $pictures;
 			$data['rates']=$rates;
-			$data['craftmanId']=$craftsmanId;
+			$data['craftsmanId']=$craftsmanId;
 			
 			$this->load->view('RefListUncategoried',$data);
 		}
@@ -188,7 +188,7 @@
 			$pictures=array();
 			foreach ($ref['listReferences'] as $item)
 			{
-				$pictures[]=$Files->returnFileName($item->file_id);
+				$pictures[]=$item->file_id.".sav";
 			}
 			$ref['pictures']=$pictures;
 			
@@ -237,7 +237,7 @@
 			$pictures=array();
 			foreach ($ref['listReferences'] as $item)
 			{
-				$pictures[]=$Files->returnFileName($item->file_id);
+				$pictures[]=$item->file_id.".sav";
 			}
 			$ref['pictures']=$pictures;
 			

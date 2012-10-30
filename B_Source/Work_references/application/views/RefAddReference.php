@@ -1,5 +1,5 @@
 <div class="mask" id="form" style="left: 517px; top: 146px; display: none;">
-		<form action="<?php echo base_url() ?>index.php/m_references/upload/<?php if (isset($craftmanId)) echo $craftmanId;?>" method="POST" enctype="multipart/form-data" onsubmit="$('#loading').show();">
+		<form action="<?php echo base_url() ?>index.php/m_references/upload/<?php if (isset($craftsmanId)) echo $craftsmanId;?>" method="POST" enctype="multipart/form-data" onsubmit="$('#loading').show();">
 		<table>
 			<tr>
 				<td colspan="2"><p class="exit">X</p></td>

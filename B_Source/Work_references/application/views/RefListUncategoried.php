@@ -17,7 +17,7 @@
 					});
 				$('.show-more').click(function(){
 					$('#body').hide();
-					$('.list-more').load("<?php echo base_url();?>index.php/m_references/showmore/<?php echo $craftmanId;?>");
+					$('.list-more').load("<?php echo base_url();?>index.php/m_references/showmore/<?php echo $craftsmanId;?>");
 				});
 		});
 	</script>
