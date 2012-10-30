@@ -6,7 +6,7 @@ $(document).ready(function() {
 	var check = document.getElementById('is_active-1');
 	check.checked = true;
 });
-
+//----------Hàm check  all--------
 function checkall(class_name, obj){
 	var items = document.getElementsByClassName(class_name);
 	if(obj.checked == true){
@@ -18,7 +18,7 @@ function checkall(class_name, obj){
 		items[i].checked = false;
 	}
 }
-
+//-------End Hàm check  all--------
 </script>
 <?php if (isset($_SESSION['result']))
 					{

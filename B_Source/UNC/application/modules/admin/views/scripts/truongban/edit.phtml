@@ -1,6 +1,31 @@
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
+
+<script type="text/javascript">
+//<!-----------Check all----->
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+//<!-------End Check all----->
+</script>
+
+					<?php if (isset($_SESSION['result']))
+					{
+						echo '<p class="message">';
+						echo $_SESSION['result'];
+						echo '</p>';
+						unset($_SESSION['result']);
+					}
+					?>
 <form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
@@ -10,14 +35,6 @@
 				<fieldset>
 					<label>Tên đăng nhập</label>
 					<?php echo $this->form->getElement('user_login');?>
-					<?php if (isset($_SESSION['result']))
-					{
-						echo '<p class="message">';
-						echo $_SESSION['result'];
-						echo '</p>';
-						unset($_SESSION['result']);
-					}
-					?>
 				</fieldset>
 				<fieldset>
 					<label>Mật khẩu</label>
@@ -45,7 +62,10 @@
 					foreach($this->listParent as $parent)
 					{
 					?>
-						<p style="text-transform: uppercase;margin-left: 50px"><?php echo $parent['category_name']; ?></p>
+						<div style="margin-left:50px;margin-bottom:10px">
+							<input type="checkbox" name="check_object" onclick="checkall('item_<?php echo $parent['category_id'] ?>',this);"/>
+							<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
+						</div>
 						<?php
 							foreach($this->listChild as $child)
 							{
@@ -65,8 +85,9 @@
 										if($check == 1)
 										{
 											?>
+
 											<div style="margin-left:100px">
-												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
+												<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
 												<span><?php echo $child['category_name']; ?></span>
 											</div>
 												<br/>
@@ -76,7 +97,7 @@
 										{
 											?>
 											<div style="margin-left:100px">
-												<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+												<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
 												<span><?php echo $child['category_name']; ?></span>
 											</div>
 												<br/>
