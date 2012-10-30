@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title><?php if (isset($title)) echo $title; else '5saoviet';?></title>
@@ -39,11 +38,11 @@
 							$(this).children('.slidemove').slideToggle();
 						});
 						
-				$('.itemmenu').children('div').css('opacity','0');
-					$('.submenu').mouseenter(function(){
-						$(this).addClass('hovermenu');
+				$('.itemmenu').children('div').css('opacity','0');//.animate({opacity:0},300);
+					$('.menu-text').mouseenter(function(){
+						$(this).parent().addClass('hovermenu');
 						//$(this).children('.itemmenu').children('div').slideDown(300);
-						$(this).children('.itemmenu').children('div').animate({opacity:1,height:'100%'},300);
+						$(this).parent().children('.itemmenu').children('div').animate({opacity:1,height:'100%'},300);
 						});
 					$('.submenu').mouseleave(function(){
 						$(this).removeClass('hovermenu');

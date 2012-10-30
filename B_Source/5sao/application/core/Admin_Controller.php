@@ -81,18 +81,22 @@ class Admin_Controller extends NIW_Controller
 	
 	function getAliasByName($name)
 	{
+		$name=trim($name);
+		
 		$name=str_replace('á', 'a', $name);
 		$name=str_replace('à', 'a', $name);
 		$name=str_replace('ạ', 'a', $name);
 		$name=str_replace('ả', 'a', $name);
 		$name=str_replace('ã', 'a', $name);
 		
+		$name=str_replace('ă', 'a', $name);
 		$name=str_replace('ắ', 'a', $name);
 		$name=str_replace('ằ', 'a', $name);
 		$name=str_replace('ặ', 'a', $name);
 		$name=str_replace('ẳ', 'a', $name);
 		$name=str_replace('ẵ', 'a', $name);
 		
+		$name=str_replace('â', 'a', $name);
 		$name=str_replace('ấ', 'a', $name);
 		$name=str_replace('ầ', 'a', $name);
 		$name=str_replace('ậ', 'a', $name);
@@ -105,12 +109,15 @@ class Admin_Controller extends NIW_Controller
 		$name=str_replace('ỏ', 'o', $name);
 		$name=str_replace('õ', 'o', $name);
 		
+		$name=str_replace('ô', 'o', $name);
 		$name=str_replace('ố', 'o', $name);
 		$name=str_replace('ồ', 'o', $name);
 		$name=str_replace('ộ', 'o', $name);
 		$name=str_replace('ổ', 'o', $name);
 		$name=str_replace('ỗ', 'o', $name);
+		$name=str_replace('ô', 'o', $name);
 		
+		$name=str_replace('ơ', 'o', $name);
 		$name=str_replace('ớ', 'o', $name);
 		$name=str_replace('ờ', 'o', $name);
 		$name=str_replace('ợ', 'o', $name);
@@ -123,6 +130,7 @@ class Admin_Controller extends NIW_Controller
 		$name=str_replace('ẻ', 'e', $name);
 		$name=str_replace('ẽ', 'e', $name);
 		
+		$name=str_replace('ê', 'e', $name);
 		$name=str_replace('ế', 'e', $name);
 		$name=str_replace('ề', 'e', $name);
 		$name=str_replace('ệ', 'e', $name);
@@ -146,6 +154,7 @@ class Admin_Controller extends NIW_Controller
 		$name=str_replace('ự', 'u', $name);
 		$name=str_replace('ử', 'u', $name);
 		$name=str_replace('ữ', 'u', $name);
+		$name=str_replace('ư', 'u', $name);
 		
 		$name=str_replace(' ', '-', $name);
 		$name=str_replace('đ', 'd', $name);

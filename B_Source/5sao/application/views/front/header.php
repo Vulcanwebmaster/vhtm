@@ -15,7 +15,7 @@
 			</div>
             <div id="tel"><?php echo $this->lang->line('menu-dienthoai');?>: <strong>0123456789</strong></div>
             <ul class="top_menu">
-				<li class="submenu"><a id="menu-trangchu" href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
+				<li class="submenu"><a class="menu-text" style="display:block" id="menu-trangchu" href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
                 	<div class="itemmenu">
                 		<div>
 	                    	<a href="#">Hotline 24/24 : 0988.999.687</a><hr/>
@@ -23,7 +23,7 @@
                         </div>                    
                     </div>
                 </li>
-				<li class="submenu"><a id="menu-gioithieu" href="<?php echo base_url();?>gioi-thieu"><?php echo $this->lang->line('menu-gioithieu');?></a>
+				<li class="submenu"><a class="menu-text" style="display:block" id="menu-gioithieu" href="<?php echo base_url();?>gioi-thieu"><?php echo $this->lang->line('menu-gioithieu');?></a>
                 	<div class="itemmenu">
                 		<div>
 	                		<?php foreach ($list_gioithieumenu as $menu)
@@ -33,10 +33,10 @@
                 		</div>
                     </div>
                 </li>
-				<li  class="submenu"><a id="menu-sanpham" href="<?php echo base_url();?>san-pham"><?php echo $this->lang->line('menu-sanpham');?></a>
+				<li  class="submenu"><a class="menu-text" style="display:block" id="menu-sanpham" href="<?php echo base_url();?>san-pham"><?php echo $this->lang->line('menu-sanpham');?></a>
                 </li>
-				<li class="submenu"><a id="menu-baohanh" href="<?php echo base_url();?>bao-hanh"><?php echo $this->lang->line('menu-baohanh');?></a></li>
-				<li class="submenu"><a id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
+				<li class="submenu"><a class="menu-text" style="display:block" id="menu-baohanh" href="<?php echo base_url();?>bao-hanh"><?php echo $this->lang->line('menu-baohanh');?></a></li>
+				<li class="submenu"><a class="menu-text" style="display:block" id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
                 	<div class="itemmenu">
                 		<div>
 	                    	<a href="<?php echo base_url();?>thu-vien-anh"><?php echo $this->lang->line('menu-hinhanh');?></a><hr/>
@@ -45,6 +45,6 @@
                    		</div>
                     </div>
                 </li>
-                <li class="submenu"><a id="menu-lienhe" href="<?php echo base_url();?>lien-he"><?php echo $this->lang->line('menu-lienhe');?></a></li>
+                <li class="submenu"><a class="menu-text" style="display:block" id="menu-lienhe" href="<?php echo base_url();?>lien-he"><?php echo $this->lang->line('menu-lienhe');?></a></li>
 			</ul>
 		</div>
