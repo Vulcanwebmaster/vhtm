@@ -1,3 +1,13 @@
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/fckeditor.js" type="text/javascript"></script>
+<script language='javascript' type='text/javascript' src='<?php echo $this->baseUrl();?>/application/templates/admin/js/customs.js'></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript">
+	$(function() {
+		setUpFCK('image_link',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
+	});
+</script>
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>
@@ -17,11 +27,8 @@
 	}
 //<!-------End Check all----->
 </script>
-<form method="post" action="<?php echo $this->form->getAction();?>">
 
-<script type="text/javascript">
-</script>
-<?php if (isset($_SESSION['result']))
+					<?php if (isset($_SESSION['result']))
 					{
 						echo '<p class="message">';
 						echo $_SESSION['result'];
@@ -29,53 +36,37 @@
 						unset($_SESSION['result']);
 					}
 					?>
-<form method="post" name="fcheck" id="fcheck" action="<?php echo $this->form->getAction();?>">
-
+<form method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
 				<fieldset class="fieldset" style="float:left">
-					<label>Tên đăng nhập</label>
-					<?php echo $this->form->getElement('user_login');?>					
-				</fieldset>
-				<fieldset class="fieldset" style="float:right">
-					<label>Mật khẩu</label>
-					<?php echo $this->form->getElement('user_pass');?>
-				</fieldset>
-				<fieldset class="fieldset" style="float:left">
-					<label>Họ tên</label>
-					<?php echo $this->form->getElement('user_fullname');?>
-				</fieldset>
-				<fieldset class="fieldset" style="float:right">
-					<label>Email</label>
-					<?php echo $this->form->getElement('user_email');?>
-				</fieldset>
-				<fieldset class="fieldset" style="float:left">
-					<label>Địa chỉ</label>
-					<?php echo $this->form->getElement('user_address');?>
+					<label>Tên ảnh</label>
+					<?php echo $this->form->getElement('image_name');?>
 				</fieldset>
 				<fieldset class="fieldset" style="float:right">
 					<label>Kích hoạt</label>
-					<div style="margin-left: 84px;margin-top: -29px;">
+					<div style="margin-left: 82px;margin-top: -26px;">
 						<?php echo $this->form->getElement('is_active');?>
 					</div>
 				</fieldset>
-				<fieldset style="margin-left:-1px">
-					<label style="width:300px">Các chuyên mục được phân quyền</label>
+				<fieldset style="width:100%">
+					<label>Hình ảnh</label>
+					<?php echo $this->form->getElement('image_link');?>
+				</fieldset>
+				<fieldset>
+					<label style="width:300px">Danh sách chuyên mục</label>
 					<?php 
-					foreach($this->listParent as $parent)
+						foreach($this->listParent as $parent)
 						{
 						?>
 							<div style="margin-left:50px;margin-bottom:10px">
-								<?php if($this->role == "0"){?>
 								<input type="checkbox" name="check_object" onclick="checkall('item_<?php echo $parent['category_id'] ?>',this);"/>
-								<?php }?>
 								<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
 							</div>
 							<?php
-						$check = 0;
 								foreach($this->listChild as $child)
 								{
 									$check = 0;
@@ -89,8 +80,6 @@
 												$check = 1; break;
 											}
 										}
-										if($this->role == "0")
-										{
 											if($check == 1)
 											{
 												?>
@@ -112,19 +101,6 @@
 													<br/>
 												<?php
 											}
-										}
-										else
-										{
-											if($check == 1)
-											{
-												?>
-												<div style="margin-left:100px">
-													<span><?php echo $child['category_name']; ?></span>
-												</div>
-													<br/>
-												<?php
-											}
-										}
 									}
 								}
 							?>
@@ -136,7 +112,7 @@
 		</div>
 		<footer>
 			<div class="submit_link" style="float:right">
-				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/phongvien">Hủy bỏ</a>
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/truongban">Hủy bỏ</a>
 				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
 			</div>
 		</footer>

@@ -3,7 +3,7 @@
 || #################################################################### ||
 || # vBulletin 4.0.5
 || # ---------------------------------------------------------------- # ||
-|| # All PHP code in this file is ©2000-2010 vBulletin Solutions Inc. # ||
+|| # All PHP code in this file is ï¿½2000-2010 vBulletin Solutions Inc. # ||
 || # This file may not be redistributed in whole or significant part. # ||
 || # ---------------- VBULLETIN IS NOT FREE SOFTWARE ---------------- # ||
 || # 
@@ -28,7 +28,7 @@ $config['Database']['dbtype'] = 'mysql';
 	//	****** DATABASE NAME ******
 	//	This is the name of the database where your vBulletin will be located.
 	//	This must be created by your webhost.
-$config['Database']['dbname'] = 'niwvietn_forum';
+$config['Database']['dbname'] = 'forum';
 
 	//	****** TABLE PREFIX ******
 	//	Prefix that your vBulletin tables have in the database.
@@ -56,8 +56,8 @@ $config['MasterServer']['port'] = 3306;
 	//	****** MASTER DATABASE USERNAME & PASSWORD ******
 	//	This is the username and password you use to access MySQL.
 	//	These must be obtained through your webhost.
-$config['MasterServer']['username'] = 'niwvietn_manhnt';
-$config['MasterServer']['password'] = 'daquang';
+$config['MasterServer']['username'] = 'root';
+$config['MasterServer']['password'] = 'khongcopass';
 
 	//	****** MASTER DATABASE PERSISTENT CONNECTIONS ******
 	//	This option allows you to turn persistent connections to MySQL on or off.

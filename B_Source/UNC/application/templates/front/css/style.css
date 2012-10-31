@@ -261,7 +261,7 @@ a:hover{text-decoration: underline}
 .news_title p {cursor:pointer}
 
 .img_new img{width:152px !important;height:91px !important}
-.captcha_image1{background-color: #E8E8E8;height:30px;width:40%;border: 0;padding-left: 10px;}
+.captcha_image1{background-color: #E8E8E8;height:30px;width:39%;border: 0;padding-left: 10px;}
 .img-tube img,.img-tube p{width:255px !important}
 .children_down-title{margin-right:20px}
 .category-more{float:right; line-height:31px; margin-right:20px}

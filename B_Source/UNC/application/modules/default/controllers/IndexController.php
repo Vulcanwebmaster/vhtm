@@ -3,6 +3,7 @@ class IndexController extends Zend_Controller_Action
 {
 	protected $mDefault;
 	protected $mTintuc;
+	protected $listThreadTitle;
 	public function init()
 	{
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
@@ -16,11 +17,20 @@ class IndexController extends Zend_Controller_Action
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
+	
+		$listThreadForum = $this->mDefault->getListThread();
+		$this->listThreadTitle = array();
+		foreach($listThreadForum as $thread)
+		{
+			$content = file_get_contents('http://localhost/unc/forum/showthread.php?'.$thread['threadid']);
+			$preg1 = preg_match_all('#<span class="threadtitle">.*</span>#',$content,$match);
+			$this->listThreadTitle[] = $thread['threadid'].strip_tags($match[0][0]);
+		}
 	}
 
 	public function indexAction()
 	{
-		$this->view->listThread = $this->mDefault->getListThread();
+		$this->view->listThread = $this->listThreadTitle;
 		
 		$this->view->video_default = $this->mDefault->getVideoDefault();
 		$this->view->listVideo=$this->mDefault->getListVideoByLimit(4);

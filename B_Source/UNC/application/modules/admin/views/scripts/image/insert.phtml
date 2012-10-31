@@ -1,0 +1,98 @@
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/fckeditor.js" type="text/javascript"></script>
+<script language='javascript' type='text/javascript' src='<?php echo $this->baseUrl();?>/application/templates/admin/js/customs.js'></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript">
+	$(function() {
+		setUpFCK('image_link',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
+	});
+</script>
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	var check = document.getElementById('is_active-1');
+	check.checked = true;
+});
+	//----------Hàm check  all--------
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+	//-------End Hàm check  all--------
+
+</script>
+					<?php if (isset($_SESSION['result']))
+					{
+						echo '<br/>';
+						echo '<p class="message">';
+						echo $_SESSION['result'];
+						echo '</p>';
+						unset($_SESSION['result']);
+					}
+					?>
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset class="fieldset" style="float:left">
+					<label>Tên ảnh</label>
+					<?php echo $this->form->getElement('image_name');?>
+				</fieldset>
+				<fieldset class="fieldset" style="float:right">
+					<label>Kích hoạt</label>
+					<div style="margin-left: 82px;margin-top: -26px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
+				</fieldset>
+				<fieldset style="width:100%">
+					<label>Hình ảnh</label>
+					<?php echo $this->form->getElement('image_link');?>
+				</fieldset>
+				<fieldset style="margin-left:-1px" id="checkboxes">
+					<label style="width:300px">Danh sách chuyên mục</label>
+					<?php 
+					foreach($this->listParent as $parent)
+					{
+						?>
+						<input type="checkbox" onclick="checkall('item_<?php echo $parent['category_id']; ?>',this);" name="check_object/>
+						<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
+						<?php
+							foreach($this->listChild as $child)
+							{
+								if($child['category_parent_id'] == $parent['category_id'])
+								{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" class="item_<?php echo $parent['category_id'] ?>"/>
+										<span><?php echo $child['category_name']; ?></span>
+									</div>
+									<?php
+								}
+							}
+						?>
+					<?php
+					}
+					?>
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link" style="float:right">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/truongban">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Thêm mới" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>

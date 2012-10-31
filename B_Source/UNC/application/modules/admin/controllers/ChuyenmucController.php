@@ -74,7 +74,7 @@
 	        	$paginator->setItemCountPerPage(5);        
 	        	$currentPage = $this->_request->getParam('page',1);
 	         	$paginator->setCurrentPageNumber($currentPage);
-	        	$this->view->list=$paginator;
+	        	$this->view->list = $paginator;
 				$this->view->title="Quản lý chuyên mục";
 				$this->view->role = $this->role;
 				
