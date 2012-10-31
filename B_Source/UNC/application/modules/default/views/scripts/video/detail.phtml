@@ -1,123 +1,75 @@
-<script style="text/javascript">
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=116608581828346";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<?php
-if(isset($this->video['video_full_link']))
-{
-	$video = $this->video['video_full_link'];
-	$video = trim($video);
-	$video = str_replace("http://www.youtube.com/watch?v=","", $video);
-	$video = substr($video,0,11);
-}
-?>
-<div id="detail">
-	<div style="margin:10px" id="video_title">
-		<h2 style="color:#202020"><?php echo $this->video['video_title']; ?></h2>
-	</div>
-	<div id="video" style="float:left;margin:0px 10px 10px 10px">
-		<iframe width="640" height="360" src="http://www.youtube.com/embed/<?php if(isset($video)) echo $video; ?>" frameborder="0" allowfullscreen></iframe>
-	</div>
-	<div style="margin-top:400px;margin-left:10px" id="video_description">
-		<h3>Mô tả : <i><?php echo $this->video['video_description']; ?></i></h3>
-	</div>
-	<div id="fb-root"></div>
-	<div class="fb-like" data-href="http://www.niwvietnam.info/unc/video/detail/videoid/<?php echo $this->video['video_id']; ?>" data-send="true" data-width="450" data-show-faces="true"></div>
-	<hr/>
-	<?php
-	if(isset($_SESSION['logged']))
-	{
-		?>
-			<h3>Bạn đang đăng nhập bằng tài khoản <span style="color:red"><?php echo $_SESSION['logged']; ?></span>&nbsp;&nbsp;&nbsp;
-			<a style="text-decoration: none" href="<?php echo $this->baseUrl(); ?>/tintuc/logout"><i>Thoát</i></a></h3>
-			<form method="post" action="<?php echo $this->baseUrl();?>/video/addcomment/videoid/<?php echo $this->video['video_id']; ?>/readerid/<?php echo $_SESSION['reader_id']; ?>">
-				<div id="addComment">
-					<textarea name="comment_content" style="width:100%" rows="5"></textarea>
-					<input type="submit" name="submit" value="Gửi bình luận"/>
-				</div>
-			</form>
+<div class="element_detail">
+        	<div class="subpage_wapper_left_top_detail">
+            	<?php echo $this->video['video_title']; ?>
+            </div>
+            <div class="subpage_new_detail">            
+                	<ul>
+                    	<li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/date.png" /> 08:00, 21/10/2012</li>
+                        <li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/bl.png" /> <?php echo count($this->listComment)?> Bình luận</li>
+                        <li><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/print.png" /> Bản in</li>
+                        <li>Chia sẻ:
+                        	<ul id="share">
+                            	<li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/mail.png" /></a></li>
+                                <li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/tt.png" /></a></li>
+                                <li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/fb.png" /></a></li>
+                                <li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/sb.png" /></a></li>
+                            </ul>
+                        </li>
+                    </ul>               
+            </div>	
+            <div id="content_detail">
+					<object width="560" height="315" style="margin-left:40px;">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/<?php if(isset($this->video)) echo $this->video['video_link']; ?>" frameborder="0" allowfullscreen></iframe>
+					</object>
+                <p><?php echo $this->video['video_description']; ?></p>
 				
-		<?php
-	}
-	else 
-	{
-		?>
-			<form method="post" action="<?php echo $this->baseUrl(); ?>/video/login/videoid/<?php echo $this->video['video_id']; ?>">
-				<div id="login">
-					<h3>Đăng nhập bằng tài khoản forum UNC để bình luận về video này</h3>
-					<hr/>
-					<table>
-						<tr>
-							<td>Tên đăng nhập : </td>
-							<td><?php echo $this->form->getElement('user_name'); ?></td>
-						</tr>
-						<tr>
-							<td>Mật khẩu : </td>
-							<td><?php echo $this->form->getElement('pass_word'); ?></td>
-						</tr>
-					</table>
-					<input style="margin-left:20%" type="submit" name="submit" value="Đăng nhập"/>
-				</div>
-				<?php
-				if(isset($_SESSION['fail'])) 
-				{
+                <ul id="ul_detail_lk">
+                	<li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/like.png" /></a></li>
+                   <li style="background-image:url('<?php echo $this->baseUrl();?>/application/templates/front/images/14.png'); background-repeat:no-repeat"><a href="#">12</a></li>
+                   <li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/twett.png" /></a></li>
+                   <li style="background-image:url('<?php echo $this->baseUrl();?>/application/templates/front/images/12.png'; background-repeat:no-repeat)"><a href="#">5</a></li>
+                   <li><a href="#"><img src="<?php echo $this->baseUrl();?>/application/templates/front/images/g.png" /></a></li>
+                   <li style="background-image:url('<?php echo $this->baseUrl();?>/application/templates/front/images/13.png'); background-repeat:no-repeat"><a href="#">1</a></li>
+                </ul>
+           </div><br style="clear:both" />
+</div>
+<div class="detail_add">
+	<a href="<?php echo $this->listquangcao2['ads_link']; ?>" target="_blank">
+            <?php
+            	echo $this->listquangcao2['ads_banner']; 
+            ?>
+        </a>
+</div>
+<div class="element_detail2">
+           		<div style=" border-bottom:1px solid #e9e9e9">
+                	<p class="p_detail">Ý kiến bạn đọc (12)</p> 
+                </div>
+                <div style="border-bottom:1px solid #e9e9e9">
+                	<?php 
+					if(count($this->listComment) > 0)
+					{
+						foreach($this->listComment as $comment)
+						{
+							?>
+							<div class="comment-div" style="line-height:15px">
+								<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
+			                    <p><?php echo $comment['comment_time']; ?></p>
+			                    <p><?php echo $comment['comment_content']; ?></p>
+		                    </div>
+						<?php }
+					}
 					?>
-						<h3><i style="color:red"><?php echo $_SESSION['fail'];unset($_SESSION['fail']);?></i></h3>
-					<?php
-				}
-				?>
-			</form>
-		<?php
-	}
-	?>	
-	
-	<div id="comment">
-		<hr/>
-		<h3>Danh sách bình luận</h3>
-		<hr/>
-		<?php 
-		$count = 0;
-		if(count($this->listComment) > 0)
-		{
-			foreach($this->listComment as $comment)
-			{
-				if($this->listImage[$count] == 0)
-				{
-				?>
-					<img alt="" src="http://1.gravatar.com/avatar/b0eb17f97a5c244abfd54d0192e00a4d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G" class="avatar avatar-68 photo" height="68" width="68">
-				<?php 
-				}
-				else
-				{
-					?>
-						<img alt="" src="<?php echo $this->baseUrl(); ?>/forum/image.php?u=1&dateline=<?php echo $this->listImage[$count]; ?>" class="avatar avatar-68 photo" height="68" width="68">
-					<?php
-				}
-				
-				?>
-				<div style="#373737;background-color:#E4E4E4;margin-left:80px;margin-top:-67px;border-radius: 5px;border: 1px solid #ddd;padding: 10px;width:85%">
-					<div style="margin-left:10px">
-						<span style="color:blue;"><?php echo $this->listUser[$count]['username'] ?></span>   :   <span><?php echo $comment['comment_time']; ?></span> đã bình luận :
+					<div>
+						<!-- ?php echo $this->paginationControl($this->listComment,'Sliding','tintuc/pagination.phtml');? -->
 					</div>
-					<div style="margin:20px">
-						<?php echo $comment['comment_content']; ?>
-					</div>
-				</div>
-				<br style="clear:both">
-			<?php 
-				$count++;
-			}
-		}
-		else 
-		{
-			echo 'Video này chưa có bình luận nào';
-		}
-		?>
-	</div>
-	
+                </div>
+                <div>
+                	<p class="p_detail">Ý kiến của bạn</p>
+                    <form action="<?php echo $this->baseUrl();?>/video/addcomment/videoid/<?php echo $this->video['video_id']; ?>" method="post">
+                        <input name="name" class="n" onfocus="if (this.value == 'name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'name';}" type="text" value="name"><br />
+                        <input name="email" class="e" onfocus="if (this.value == 'email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'email';}" type="text" value="email"><br />
+                         <textarea name="comment_content" class="m" onfocus="if (this.value == 'message') {this.value = '';}" onblur="if (this.value == '') {this.value = 'message';}">message</textarea><br />
+                         <input type="submit" class="submit_detail" value="submit" style="cursor:pointer" />
+                    </form>
+                </div>
 </div>

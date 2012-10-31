@@ -40,9 +40,9 @@
 			return $query->fetchAll();
 		}
 
-		function insertComment($reader_id,$video_id,$comment_content)
+		function insertComment($name,$email,$video_id,$comment_content)
 		{
-			$query = $this->db->query('insert into unc_video_comment value ("","'.$comment_content.'","'.$video_id.'","'.$reader_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
+			$query = $this->db->query('insert into unc_video_comment value ("","'.$name.'","'.$email.'","'.$comment_content.'","'.$video_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
 			return $query;
 		}
 	}

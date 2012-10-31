@@ -31,6 +31,7 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();	
+		$this->view->current_category=array('category_name'=>'Video');
 		
 		$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
         $paginator->setItemCountPerPage(12);        
@@ -81,6 +82,7 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
+		$this->view->current_category=array('category_name'=>'Video');
 		
 		$video_id = $this->_request->getParam('videoid');
 		$this->view->video = $this->mVideo->getVideoByVideoId($video_id);
@@ -88,33 +90,8 @@ class VideoController extends Zend_Controller_Action
 		$listComment = $this->mVideo->getListCommentByVideoId($video_id);
 		$listForumUser = $this->mVideo->getListForumUser();
 		
-		$listUser = array();
-		foreach($listComment as $comment)
-		{
-			foreach($listForumUser as $user)
-			{
-				if($comment['reader_id'] == $user['userid'])
-				{
-					$listUser[] = $user;
-				}
-			}
-		}
-		
 		$listImage = array();
 		$listAvatar = $this->mVideo->getListAvatar();
-		foreach($listUser as $user)
-		{
-			$count = 0;
-			foreach($listAvatar as $avatar)
-			{
-				if($avatar['userid'] == $user['userid'])
-				{
-					$count = 1;break;
-				}
-			}
-			if($count == 1) $listImage[] = $avatar['dateline'];
-				else $listImage[] = 0;
-		}
 		
 		$form = $this->setForm($video_id);
 		$listquangcao = $this->mDefault->getListAds();
@@ -130,22 +107,20 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 
-		
 		$this->view->listImage = $listImage;
 		$this->view->listParent = $listParents;
 		$this->view->listChild = $listChild;
-		$this->view->listUser = $listUser;
 		$this->view->listquangcao = $listquangcao;
 		$this->view->form = $form;
 		$this->view->listComment = $listComment;
 		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
-		$paginator = Zend_Paginator::factory($this->mVideo->getListCommentByVideoId($video_id));
+		/*$paginator = Zend_Paginator::factory($this->mVideo->getListCommentByVideoId($video_id));
 	    $paginator->setItemCountPerPage(5);        
 	    $currentPage = $this->_request->getParam('page',1);
 	    $paginator->setCurrentPageNumber($currentPage);
 		
-		$this->view->listComment = $paginator;
+		$this->view->listComment = $paginator;*/
 	}
 	
 	function checkSql($data) 
@@ -165,7 +140,8 @@ class VideoController extends Zend_Controller_Action
 		echo '<meta charset="UTF-8"/>';
 		
 		$video_id = $this->_request->getParam('videoid');
-		$reader_id = $this->_request->getParam('readerid');
+		$name = $this->_request->getPost('name');
+		$email = $this->_request->getPost('email');
 		
 		$comment_content = $this->_request->getPost('comment_content');
 		$comment_content = trim($comment_content);
@@ -180,7 +156,7 @@ class VideoController extends Zend_Controller_Action
 			if(strlen($comment_content) > 700)
 				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 700 kí tự, vui lòng thử lại !';
 			else
-				$this->mVideo->insertComment($reader_id,$video_id,$comment_content);
+				$this->mVideo->insertComment($name,$email,$video_id,$comment_content);
 		}
 		$this->_redirect($_SERVER['HTTP_REFERER']);	
 	}	
