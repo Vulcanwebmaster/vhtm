@@ -128,7 +128,7 @@
 				if(count($listTruongBan) > 0)
 					$paginator = Zend_Paginator::factory($listTruongBan);
 				else
-					$paginator = Zend_Paginator::factory($this->mTruongban->getUserByUserId($user_id));
+					$paginator = Zend_Paginator::factory($this->mUser->getUserByUserId($user_id));
 			}
 			
         	$paginator->setItemCountPerPage(5);        
