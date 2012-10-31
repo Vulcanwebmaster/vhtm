@@ -250,7 +250,6 @@
 			
 			$form=$this->setForm();
 			$userId=$this->_request->getParam('userid');
-			
 			$this->view->role = $this->role;
 			$this->view->listParent = $this->listParent;
 			$this->view->listChild = $this->listChild;
