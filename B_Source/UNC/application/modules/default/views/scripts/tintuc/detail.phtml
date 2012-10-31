@@ -13,8 +13,10 @@
                         <li>Chia sẻ:
                         	<ul id="share">
                             	<li><a href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/mail.png"></a></li>
-                                <li><a href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/tt.png"></a></li>
-                                <li><a href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/fb.png"></a></li>
+                                <li><a href="https://twitter.com/share" ><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/tt.png"></a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								</li>
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $this->baseUrl()?>/tin-tuc/chi-tiet/<?php echo $this->news['news_id']?>-<?php echo $this->news['alias'];?>.html"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/fb.png"></a></li>
                                 <li><a href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/sb.png"></a></li>
                             </ul>
                         </li>
