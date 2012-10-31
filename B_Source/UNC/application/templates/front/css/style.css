@@ -116,7 +116,7 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 #ul_video_left li{ list-style:none; padding:10px 0 10px 10px; border-bottom:1px dotted #E9E9E9}
 #ul_video_left li a{ text-decoration:none; color:black; font-weight:bold}
 .subpage_wapper_left_top_video{background-image:url('../images/topmenu.gif'); height:31px; width:100%; background-repeat:no-repeat; margin:10px 10px 0 10px; padding:8px 0 0 12px; color:#fff; font-weight:bold}
-#video_right li{ float:left; list-style:none; width:152px; margin:0 5px 0 10px;}
+#video_right li{ float:left; list-style:none; width:145px; margin:0 5px 0 10px;}
 #video_right a{ text-decoration:none; color:black}
 #video_right ul{ margin:0; padding:0}
 #page_video{ margin:0; padding:0}
