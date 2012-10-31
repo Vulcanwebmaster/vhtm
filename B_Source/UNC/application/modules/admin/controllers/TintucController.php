@@ -1,7 +1,7 @@
 <?php
 	class Admin_TintucController extends Zend_Controller_Action
 	{
-		private $mtintuc;
+		private $mtintuc, $listParent,$listChild,$mChuyenmuc;
 		private $mtimkiem;
 		private $mdanhmuc;
 		public $dantri=array('http://www.dantri.com.vn/trangchu.rss');
@@ -45,6 +45,9 @@
 			$option = array ('layout' => 'index', 
 			                   'layoutPath' => $layoutPath );
 			Zend_Layout::startMvc ( $option );
+			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+			$this->listParent = $this->mChuyenmuc->getListParent();
+			$this->listChild = $this->mChuyenmuc->getListChild();
 			$this->mtintuc=new Admin_Model_Mtintuc();
 			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
 			$this->mtimkiem=new Admin_Model_Mtimkiem();
@@ -153,7 +156,8 @@
 								'news_summary'=>$this->description[$i],
 								'news_content'=>$this->content[$i],
 								'news_author'=>'',
-								'category_id'=>'0',);
+								'category_id'=>'0',
+								);
 					$this->mtintuc->insertNews($new);
 				}
 			}
@@ -323,8 +327,9 @@
 						'news_post_date'	=>	$form->getValue('news_post_date'),
 						'news_modified_date'=>	$form->getValue('news_modified_date'),
 						'news_status'		=>	$form->getValue('news_status'),
-						'is_hot'			=> 	$form->getValue('is_hot'),
-						'category_id'		=>	$form->getValue('category_id'));
+						'is_hot'			=> 	$form->getValue('is_hot')
+						//'category_id'		=>	$form->getValue('category_id')
+						);
 			return $input;
 		}
 		
@@ -336,29 +341,36 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$this->view->title="Thêm tin tức";
-			
+			$this->view->listParent = $this->listParent;
+			$this->view->listChild = $this->listChild;
 			$form=$this->setForm();
+			$newsid=$this->_request->getParam('newsid');
 			if ($this->_request->isPost())
 			{
+				
 				if (!$form->isValid($_POST))
 				{
+					
 					$form->populate($_POST);
 				}
 				else
 				{
 					$input=$this->_getInput($form);
+					$checkbox ="";
+					foreach($_POST['checkbox'] as $check)
+					{
+						$checkbox = $checkbox.$check.',';
+					}
+					$_SESSION['result']='Thêm mới thành công';
 					
-					//echo $input['news_avatar'];die();
-					if ($this->mtintuc->addNews($input))
+					if($this->mtintuc->addNews($input,$checkbox))
 					{
 						$_SESSION['result']='Thêm mới thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/tintuc');
 					}
-					else 
-					{
-						//$this->view->error=$form->getMessage();
-						$this->view->form=$form;
+					else{
+						$_SESSION['result']='Thêm mới không thành công';
 					}
+					$this->_redirect($this->view->baseUrl().'/../admin/tintuc');					
 				}
 			}
 			$this->view->form=$form;
@@ -375,6 +387,9 @@
 			$form=$this->setForm();
 			$newsId=$this->_request->getParam('newsid');
 			$info=$this->mtintuc->getnewsById($newsId);
+			$this->view->listParent = $this->listParent;
+			$this->view->listChild = $this->listChild;
+			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($newsId);
 			//var_dump($info);die();
 			$form->setAction($this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$newsId);
 			$form->getElement('news_title')->setValue($info['news_title']);
@@ -384,12 +399,18 @@
 			$form->getElement('news_author')->setValue($info['news_author']);
 			$form->getElement('news_post_date')->setValue($info['news_post_date']);
 			$form->getElement('news_modified_date')->setValue(gmdate('Y-m-d h:i:s',time() + 7*3600));
-			echo $info['news_status'];
+			//echo $info['news_status'];
 			$form->getElement('news_status')->setValue($info['news_status']);
-			$form->getElement('category_id')->setValue($info['category_id']);
+			//$form->getElement('category_id')->setValue($info['category_id']);
 			$form->getElement('is_hot')->setValue($info['is_hot']);
-			
-			
+			$category_id = explode(",",$info['category_id']);
+			//var_dump($category_id);die();
+			$listCategory = array();
+			foreach($category_id as $category)
+			{
+				if($category != "") $listCategory[] = $category;
+			}
+			$this->view->listCategory = $listCategory;
 			if ($this->_request->isPost())
 			{
 				if (!$form->isValid($_POST))
@@ -398,10 +419,16 @@
 				}
 				else
 				{
-					$id=$this->_request->getParam('newsid');
-					$input=$this->_getInput($form);
+					$id = $this->_request->getParam('newsid');
+					$input = $this->_getInput($form);
 					
-					if ($this->mtintuc->editnews($id, $input))
+					$checkbox = "";
+						foreach($_POST['checkbox'] as $check)
+						{
+							$checkbox = $checkbox.$check.',';
+						}
+					
+					if ($this->mtintuc->editnews($id, $input,$checkbox))
 					{
 						$_SESSION['result']='Cập nhật thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/tintuc');

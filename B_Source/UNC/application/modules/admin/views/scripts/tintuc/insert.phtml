@@ -14,6 +14,20 @@
 		setUpFCK('news_summary',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 		setUpFCK('news_avatar',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 	});
+	
+	//----------Hàm check  all--------
+		function checkall(class_name, obj){
+			var items = document.getElementsByClassName(class_name);
+			if(obj.checked == true){
+				for(i=0;i<items.length;i++)
+				items[i].checked = true;
+			}
+			else{
+				for(i=0;i<items.length;i++)
+				items[i].checked = false;
+			}
+		}
+	//-------End Hàm check  all--------
 </script>
 
 <style>
@@ -67,7 +81,29 @@
 				?>
 				<fieldset>
 					<label>Danh mục</label>
-					<?php echo $this->form->getElement('category_id');?>
+										<?php 
+					foreach($this->listParent as $parent)
+					{
+						?>
+						<input type="checkbox" onclick="checkall('item_<?php echo $parent['category_id']; ?>',this);" name="check_object/>
+						<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
+						<?php
+							foreach($this->listChild as $child)
+							{
+								if($child['category_parent_id'] == $parent['category_id'])
+								{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" class="item_<?php echo $parent['category_id'] ?>"/>
+										<span><?php echo $child['category_name']; ?></span>
+										</div>
+									<?php
+								}
+							}
+						?>
+					<?php
+					}
+					?>
 				</fieldset>
 				<fieldset>
 					<label>Tin hot</label>

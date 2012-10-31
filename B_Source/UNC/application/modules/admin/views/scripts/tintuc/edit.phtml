@@ -14,6 +14,20 @@
 		setUpFCK('news_summary',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 		setUpFCK('news_avatar',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 	});
+	
+	//<!-----------Check all----->
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+//<!-------End Check all----->
 </script>
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
@@ -65,7 +79,57 @@
 				?>
 				<fieldset>
 					<label>Danh mục</label>
-					<?php echo $this->form->getElement('category_id');?>
+					<fieldset style="margin-left:-1px">
+					<?php 
+						foreach($this->listParent as $parent)
+						{
+						?>
+							<div style="margin-left:50px;margin-bottom:10px">
+								<input type="checkbox" name="check_object" onclick="checkall('item_<?php echo $parent['category_id'] ?>',this);"/>
+								<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
+							</div>
+							<?php
+						$check = 0;
+								foreach($this->listChild as $child)
+								{
+									$check = 0;
+									if($child['category_parent_id'] == $parent['category_id'])
+									{
+										foreach($this->listCategory as $categoryId)
+										{
+											
+											if($categoryId == $child['category_id'])
+											{
+												$check = 1; break;
+											}
+										}
+											if($check == 1)
+											{
+												?>
+	
+												<div style="margin-left:100px">
+													<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
+													<span><?php echo $child['category_name']; ?></span>
+												</div>
+													<br/>
+												<?php
+											}
+											else
+											{
+												?>
+												<div style="margin-left:100px">
+													<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+													<span><?php echo $child['category_name']; ?></span>
+												</div>
+													<br/>
+												<?php
+											}
+									}
+								}
+							?>
+						<?php
+						}
+					?>
 				</fieldset>
 				<fieldset>
 					<label>Tin hot</label>

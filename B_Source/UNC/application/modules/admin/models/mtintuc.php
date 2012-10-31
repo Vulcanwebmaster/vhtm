@@ -27,11 +27,11 @@
 		}
 	}
 	
-	function addNews($input)
+	function addNews($input,$checkbox)
 	{
 		if (!$this->isExist($input['news_title']))
 		{
-			$query=$this->db->query("insert into unc_news (news_title, news_summary, news_avatar, news_content, news_author,  news_post_date,news_modified_date,news_status, category_id,is_hot,viewer_number) values('".$input['news_title']."','".$input['news_summary']."', '".$input['news_avatar']."','".$input['news_content']."','".$input['news_author']."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".$input['news_status']."','".$input['category_id']."','".$input['is_hot']."','')");
+			$query=$this->db->query("insert into unc_news (news_title, news_summary, news_avatar, news_content, news_author,  news_post_date,news_modified_date,news_status, category_id,is_hot,viewer_number) values('".$input['news_title']."','".$input['news_summary']."', '".$input['news_avatar']."','".$input['news_content']."','".$input['news_author']."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".gmdate('Y-m-d h:i:s',time() + 7*3600)."','".$input['news_status']."','".$checkbox."','".$input['is_hot']."','')");
 			return $query;
 		}
 	}
@@ -115,7 +115,7 @@
 		return str_replace($char1, $char2, $string);
 	}
 	
-	function editnews($id,$input)
+	function editnews($id,$input,$checkbox)
 	{
 		$news_title=$input['news_title'];
 		$news_alias=$input['alias'];
@@ -126,11 +126,11 @@
 		$news_post_date=$input['news_post_date'];
 		$news_modified_date=$input['news_modified_date'];
 		$news_status=$input['news_status'];
-		$category_id=$input['category_id'];
+		//$category_id=$input['category_id'];
 		$is_hot = $input['is_hot'];
 		
 		$query=$this->db->query("update unc_news 
-								set news_title='".$news_title."',  alias='".$news_alias."', news_summary='".$news_summary."', news_avatar='".$news_avatar."', news_content='".$news_content."', news_author='".$news_author."', news_post_date='".$news_post_date."',news_modified_date='".$news_modified_date."',news_status='".$news_status."',category_id='".$category_id."',is_hot='".$is_hot."'
+								set news_title='".$news_title."',  alias='".$news_alias."', news_summary='".$news_summary."', news_avatar='".$news_avatar."', news_content='".$news_content."', news_author='".$news_author."', news_post_date='".$news_post_date."',news_modified_date='".$news_modified_date."',news_status='".$news_status."',category_id='".$checkbox."',is_hot='".$is_hot."'
 								where news_id='".$id."'");
 		return $query;
 		//set news_title="'.$news_title.'", news_summary="'.$news_summary.'", news_content="'.$news_content.'", news_author="'.$news_author.'", news_post_date="'.$news_post_date.'",news_modified_date="'.$news_modified_date.'",news_status="'.$news_status.'",category_id="'.$category_id.'"

@@ -21,6 +21,7 @@ class TintucController extends Zend_Controller_Action
 		
 		$listThreadForum = $this->mDefault->getListThread();
 		$this->listThreadTitle = array();
+		//var_dump($listThreadForum);die();
 		foreach($listThreadForum as $thread)
 		{
 			$content = file_get_contents('http://localhost/unc/forum/showthread.php?'.$thread['threadid']);
