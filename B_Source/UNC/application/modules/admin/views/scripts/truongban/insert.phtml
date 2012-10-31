@@ -36,31 +36,33 @@ $(document).ready(function() {
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset>
+				<fieldset class="fieldset" style="float:left">
 					<label>Tên đăng nhập</label>
 					<?php echo $this->form->getElement('user_login');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right">
 					<label>Mật khẩu</label>
 					<?php echo $this->form->getElement('user_pass');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:left">
 					<label>Họ tên</label>
 					<?php echo $this->form->getElement('user_fullname');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right">
 					<label>Email</label>
 					<?php echo $this->form->getElement('user_email');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:left">
 					<label>Địa chỉ</label>
 					<?php echo $this->form->getElement('user_address');?>
 				</fieldset>
-				<fieldset>
+				<fieldset class="fieldset" style="float:right">
 					<label>Kích hoạt</label>
-					<?php echo $this->form->getElement('is_active');?>
+					<div style="margin-left: 84px;margin-top: -29px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
 				</fieldset>
-				<fieldset style="margin-left:-1px"  id="checkboxes">
+				<fieldset style="margin-left:-1px" id="checkboxes">
 					<label style="width:300px">Các chuyên mục được phân quyền</label>
 					<?php 
 					foreach($this->listParent as $parent)

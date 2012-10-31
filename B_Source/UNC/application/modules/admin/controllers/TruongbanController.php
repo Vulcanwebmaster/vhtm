@@ -80,27 +80,26 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			//echo $this->role;die();
-			if($this->role == "2")
+			$allTruongban = $this->mTruongban->getListByRole('1');
+			if($this->role == "0")
+			{
+				$paginator = Zend_Paginator::factory($allTruongban);
+			}
+			else
 			{
 				$user_id = $this->mTruongban->getIdByUsername($this->user);
 				$category_id = $this->mTruongban->getCategoryIdByUserId($user_id);
-				
-				$allTruongban = $this->mTruongban->getListByRole('1');
+			
 				$listUser = array();
 				$listUserId = array();
 				foreach($category_id as $category)
 				{
 					foreach($this->mTruongban->getUserIdByCategoryId($category['category_id']) as $user)
 					{
-						if($user['user_id'] != $user_id)
-						{
-							$listUser[] = $user['user_id'] ;
-						}
+						$listUser[] = $user['user_id'] ;
 					}
 				}
-				//var_dump($listUser);die();
-				
+			
 				$listUser = $this->sort($listUser);
 				$listUser = $this->setNull($listUser);
 				
@@ -111,26 +110,25 @@
 						$listUserId[] = $user;
 					}
 				}
-				//var_dump($listUserId);die();
 				$listTruongBan = array();
 				
 				foreach($allTruongban as $truongban)
 				{
+					$check = 0;
 					foreach($listUserId as $user)
 					{
 						if($truongban['user_id'] == $user)
 						{
-							$listTruongBan[] = $truongban;
+							$check = 1;break;
 						}
 					}
+					if($check == 1)
+						$listTruongBan[] = $truongban;
 				}
-				
-				//var_dump($listTruongBan);die();
-				$paginator = Zend_Paginator::factory($listTruongBan);
-			}
-			else 
-			{
-				$paginator = Zend_Paginator::factory($this->mTruongban->getListByRole('1'));
+				if(count($listTruongBan) > 0)
+					$paginator = Zend_Paginator::factory($listTruongBan);
+				else
+					$paginator = Zend_Paginator::factory($this->mTruongban->getUserByUserId($user_id));
 			}
 			
         	$paginator->setItemCountPerPage(5);        

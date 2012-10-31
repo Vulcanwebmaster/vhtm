@@ -87,7 +87,7 @@
 		
 		function getUserIdByCategoryId($category_id)
 		{
-			$query=$this->db->query('select distinct user_id from unc_manage_category where category_id="'.$category_id.'" order by user_id asc');
+			$query = $this->db->query('select distinct user_id from unc_manage_category where category_id="'.$category_id.'" order by user_id asc');
 			return $query->fetchAll();
 		}
 	}

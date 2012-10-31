@@ -37,13 +37,10 @@
 			
 			if($this->role =="0")
 			{
-				// Nếu là admin, hiển thị tất cả các phóng viên.
 				$paginator = Zend_Paginator::factory($this->mUser->getListByRole('2'));
 			}
-			
-			if($this->role == "1" | $this->role == "2")
+			else
 			{
-				//Nếu là trưởng ban
 				$user_id = $this->mUser->getIdByUsername($this->user);
 				
 				$allPhongvien = $this->mUser->getListByRole('2');
@@ -52,23 +49,11 @@
 				$listUserId = array();
 				
 				$category_id = $this->mUser->getCategoryIdByUserId1($user_id);
-				
 				foreach ($category_id as $category)
 				{
 					foreach($this->mUser->getUserIdByCategoryId($category['category_id']) as $user)
 					{
-						if($this->role == "1")
-						{
-							if($user['user_id'] != $user_id)
-							{
-								//echo $user['user_id'].'<br>';
-								$listUser[] = $user['user_id'] ;
-							}
-						}
-						else if($this->role == "2")
-						{
-							$listUser[] = $user['user_id'] ;
-						}
+						$listUser[] = $user['user_id'] ;
 					}
 				}
 				$listUser = $this->sort($listUser);
@@ -81,7 +66,6 @@
 						$listUserId[] = $user;
 					}
 				}
-				
 				$listPhongvien = array();
 				
 				foreach($allPhongvien as $phongvien)
@@ -94,8 +78,9 @@
 						}
 					}
 				}
-				
-				$paginator = Zend_Paginator::factory($listPhongvien);
+				if(count($listPhongvien) > 0)
+					$paginator = Zend_Paginator::factory($listPhongvien);
+				else $paginator = Zend_Paginator::factory($this->mUser->getUserByUserId($user_id));
 			}
 			
 			

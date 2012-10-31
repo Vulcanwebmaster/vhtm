@@ -100,4 +100,9 @@
 			return $list[0]['user_id'];
 		}
 		
+		function getUserByUserId($user_id)
+		{
+			$query = $this->db->query('select * from unc_user where user_id = "'.$user_id.'"');
+			return $query->fetchAll();
+		}
 	}
