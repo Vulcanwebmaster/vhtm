@@ -1,0 +1,68 @@
+<article class="module width_full" onload="abc()">
+	<div class="tab_container">
+		<table id="listTinTucTable">
+			<thead>
+				<tr>
+					<th width="10%" style="text-align: left">Tiêu đề</th>
+					<th width="10%" style="text-align: left">Ảnh đại diện</th>
+					<th width="20%" style="text-align: left">Tóm tắt</th>
+					<th width="10%" style="text-align: left">Tác giả</th>
+					<th width="10%" style="text-align: left">Ngày chính sửa</th>
+					<th width="10%" style="text-align: left">Trạng thái</th>
+					<th width="10%" style="text-align: left">Chuyên mục</th>
+					<th width="10%" style="text-align: left">Tin hot</th>
+					<th width="10%" style="text-align: left">Sửa</th>
+					<th width="10%" style="text-align: left">Xóa</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			<tfoot>
+				<tr>
+					<th style="text-align: left">Tiêu đề</th>
+					<th style="text-align: left">Ảnh đại diện</th>
+					<th style="text-align: left">Tóm tắt</th>
+					<th style="text-align: left">Tác giả</th>
+					<th style="text-align: left">Ngày chính sửa</th>
+					<th style="text-align: left">Trạng thái</th>
+					<th style="text-align: left">Chuyên mục</th>
+					<th style="text-align: left">Tin hot</th>
+					<th style="text-align: left">Sửa</th>
+					<th style="text-align: left">Xóa</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</article>
+<!--Script Area---->
+
+<!-------------- Start listTinTucTable script ----------->
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		var oTable = $('#listTinTucTable').dataTable( {
+			"bJQueryUI": true,
+			"sPaginationType": "full_numbers",			
+			"bProcessing": true,
+			"sAjaxSource": "<?php echo $this->baseUrl('admin/datajson/tintuc-source')?>",
+			"oLanguage": {
+				"sUrl": "<?php echo $this->baseUrl('userfiles/dataTables.vn.txt')?>"
+			},
+			"aoColumns": [
+				{ "mData": "Tiêu đề" },
+				{ "mData": "Ảnh đại diện" },
+				{ "mData": "Tóm tắt" },
+				{ "mData": "Tác giả" },
+				{ "mData": "Ngày chính sửa" },
+				{ "mData": "Trạng thái" },
+				{ "mData": "Chuyên mục" },
+				{ "mData": "Tin hot" },
+				{ "mData": "Sửa" },
+				{ "mData": "Xóa" }
+			]			
+		} );
+	} );
+</script>
+<!-------------- End listTinTucTable script ----------->
+
+<!--End Script Area---->

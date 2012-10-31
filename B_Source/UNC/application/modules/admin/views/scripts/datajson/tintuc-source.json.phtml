@@ -1,0 +1,25 @@
+<?php
+$data = array();
+foreach ($this->list as $key => $value) {
+	$edit = "Sửa";
+	$del = "Xóa";
+	$summ= str_replace(array("\n", "\r"), ' ', strip_tags($value['news_summary']));
+	$summ = substr($summ, 0, 400);
+	//set data to return
+	 $data[] = array(
+        'Tiêu đề' => $value['news_title'],
+        'Ảnh đại diện' => $value['news_avatar'],
+        'Tóm tắt' => $summ,
+        'Tác giả' => $value['news_author'],
+        'Ngày chính sửa' => $value['news_modified_date'],
+        'Trạng thái' => $value['news_status'],
+        'Chuyên mục' => $value['category_id'],
+        'Tin hot' => $value['is_hot'],
+        'Xóa' => $del,
+        'Sửa' => $edit,
+    );	
+}
+$data = array(
+	'aaData' => $data
+);
+echo Zend_Json::encode($data);
