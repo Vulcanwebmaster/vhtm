@@ -59,70 +59,77 @@
 				<fieldset>
 					<label style="width:300px">Các chuyên mục được phân quyền</label>
 					<?php 
-					foreach($this->listParent as $parent)
+					if(count($this->listCategoryId) > 0)
 					{
-					?>
-						<div style="margin-left:50px;margin-bottom:10px">
-							<?php if($this->role == "0"){?>
-							<input type="checkbox" name="check_object" onclick="checkall('item_<?php echo $parent['category_id'] ?>',this);"/>
-							<?php }?>
-							<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
-						</div>
-						<?php
-							foreach($this->listChild as $child)
-							{
-								$check = 0;
-								if($child['category_parent_id'] == $parent['category_id'])
+						foreach($this->listParent as $parent)
+						{
+						?>
+							<div style="margin-left:50px;margin-bottom:10px">
+								<?php if($this->role == "0"){?>
+								<input type="checkbox" name="check_object" onclick="checkall('item_<?php echo $parent['category_id'] ?>',this);"/>
+								<?php }?>
+								<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
+							</div>
+							<?php
+								foreach($this->listChild as $child)
 								{
-									foreach($this->listCategoryId as $categoryId)
+									$check = 0;
+									if($child['category_parent_id'] == $parent['category_id'])
 									{
-										
-										if($categoryId['category_id'] == $child['category_id'])
+										foreach($this->listCategoryId as $categoryId)
 										{
-											$check = 1; break;
+											
+											if($categoryId['category_id'] == $child['category_id'])
+											{
+												$check = 1; break;
+											}
 										}
-									}
-									if($this->role == "0")
-									{
-										if($check == 1)
+										if($this->role == "0")
 										{
-											?>
-
-											<div style="margin-left:100px">
-												<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
-												<span><?php echo $child['category_name']; ?></span>
-											</div>
-												<br/>
-											<?php
+											if($check == 1)
+											{
+												?>
+	
+												<div style="margin-left:100px">
+													<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" checked="checked"/>
+													<span><?php echo $child['category_name']; ?></span>
+												</div>
+													<br/>
+												<?php
+											}
+											else
+											{
+												?>
+												<div style="margin-left:100px">
+													<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
+													<span><?php echo $child['category_name']; ?></span>
+												</div>
+													<br/>
+												<?php
+											}
 										}
-										else
+										if($this->role == "1")
 										{
-											?>
-											<div style="margin-left:100px">
-												<input class="item_<?php echo $parent['category_id'] ?>" type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>"/>
-												<span><?php echo $child['category_name']; ?></span>
-											</div>
-												<br/>
-											<?php
-										}
-									}
-									if($this->role == "1")
-									{
-										if($check == 1)
-										{
-											?>
-											<div style="margin-left:100px">
-												<span><?php echo $child['category_name']; ?></span>
-											</div>
-												<br/>
-											<?php
+											if($check == 1)
+											{
+												?>
+												<div style="margin-left:100px">
+													<span><?php echo $child['category_name']; ?></span>
+												</div>
+													<br/>
+												<?php
+											}
 										}
 									}
 								}
-							}
-						?>
-					<?php
+							?>
+						<?php
+						}
 					}
+					else{
+						echo 'Trưởng ban này chưa được phân quyền';
+					}
+						
 					?>
 				</fieldset>
 			</div>

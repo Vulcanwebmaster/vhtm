@@ -253,11 +253,10 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$form=$this->setForm();
+			$form = $this->setForm();
 			$this->view->role = $this->role;
 			$userId=$this->_request->getParam('userid');
 			$info=$this->mUser->getUserById($userId);
-			
 			$this->view->listParent = $this->listParent;
 			$this->view->listChild = $this->listChild;
 			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);

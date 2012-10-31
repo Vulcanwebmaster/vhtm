@@ -15,7 +15,7 @@
 		    Zend_Layout::startMvc ($option);
 			$this->mTruongban = new Admin_Model_Mtruongban();
 			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
-			
+			$this->mUser=new Admin_Model_Muser();
 			$this->listParent = $this->mChuyenmuc->getListParent();
 			$this->listChild = $this->mChuyenmuc->getListChild();
 			
@@ -254,9 +254,6 @@
 			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
 		
 			$info=$this->mTruongban->getUserById($userId);
-			//echo $info['user_pass'];die();
-			//var_dump($info);die();
-			//echo $this->role.' --- '.$this->user.' --- '.$info['user_login'];die();
 			if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
 			{
 				$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
@@ -274,7 +271,6 @@
 				{
 					if($form->isValid($_POST))
 					{
-						//echo 'abc';die();
 						$input=$this->_getInput($form);
 						if($info['user_login']==$input['user_login'])
 						{
