@@ -56,7 +56,11 @@ function cutString($str,$limit)
 	</div>
                 <div class="news">
                 	<div class="children_down-title"><a>Video</a></div>
-                	<div class="subpage_wapper_left_top" style="margin-bottom:10px"></div>
+                	<div class="subpage_wapper_left_top" style="margin-bottom:10px">
+						<ul style="margin:0 0 0 20px; list-style-type:none">
+							<li class="category-more"><a>Xem tất cả</a></li>
+						</ul>					
+					</div>
                 	<?php foreach ($this->listVideo as $video)
                 	{?>
                 		<div class="gioithieu-img">
@@ -89,7 +93,7 @@ function cutString($str,$limit)
 													}
 												}
 			                            	?>
-			                            	<li class="category-more"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html">Xem tiếp</a></li>
+			                            	<li class="category-more"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html">Xem tất cả</a></li>
 				                         </ul>
 				           			</div>
 				                    <div class="item-new-left">
