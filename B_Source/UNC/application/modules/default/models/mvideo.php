@@ -15,6 +15,18 @@
 			return $query->fetchAll();
 		}
 		
+		function getListNewsVideo()
+		{
+			$query = $this->db->query('select * from unc_video where is_active = "1"  order by video_id desc limit 6');
+			return $query->fetchAll();
+		}
+		
+		function getListMostVideo()
+		{
+			$query = $this->db->query('select * from unc_video where is_active = "1"  order by viewer_number desc limit 6');
+			return $query->fetchAll();
+		}
+		
 		function getVideoByVideoId($video_id)
 		{
 			$query = $this->db->query('select * from unc_video where video_id = "'.$video_id.'"');

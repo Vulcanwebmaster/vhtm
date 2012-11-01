@@ -31,10 +31,17 @@
                         <li><a href="#">Pháp luật</a></li>
                     </ul>
                 </div>
-                <div id="video_right">
+                	
+    <!---------Tìm kiếm------->
+    <div id="video_right" style="width: 500px" >
+		<?php 
+	if(count($this->listvideo) > 0)
+	{
+	?>
+                
                 	<ul>
                 		<?php 
-							foreach($this->list as $video)
+							foreach($this->listvideo as $video)
 							{
 						?>
 							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
@@ -46,8 +53,21 @@
 					 	?>
                     </ul>
                     <div class="page_video" style="clear:both; padding-top:100px; margin-bottom:15px">
-                    	<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+                    	<?php echo $this->paginationControl($this->listvideo,'Sliding','tintuc/pagination.phtml');?>
                     </div>
-                </div>
+                
+                
+		 	<?php
+			}
+			else 
+			{
+			?>
+				<h3 style="margin:10px;color:red"><i>Không tìm thấy kết quả</i></h3>
+			<?php
+			}
+		?>
+		<div class="clear"> </div>
+		</div>
+			<!---------End Tìm kiếm------->
             </div>
 </div>          

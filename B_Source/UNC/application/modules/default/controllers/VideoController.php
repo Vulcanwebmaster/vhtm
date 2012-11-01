@@ -33,16 +33,19 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listChild = $this->mTintuc->getListChild();	
 		$this->view->current_category=array('category_name'=>'Video');
 		
+		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
+		$this->view->listvideo = $this->mVideo->getListNewsVideo();
 		$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
         $paginator->setItemCountPerPage(12);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;
+		
 		if($this->mDefault->getVideoDefault() != false)
 			$this->view->video_default = $this->mDefault->getVideoDefault();
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
-		
+
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
@@ -87,6 +90,8 @@ class VideoController extends Zend_Controller_Action
 		$video_id = $this->_request->getParam('videoid');
 		$this->view->video = $this->mVideo->getVideoByVideoId($video_id);
 		
+		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
+		$this->view->listvideo = $this->mVideo->getListNewsVideo();
 		$listComment = $this->mVideo->getListCommentByVideoId($video_id);
 		$listForumUser = $this->mVideo->getListForumUser();
 		

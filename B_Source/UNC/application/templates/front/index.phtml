@@ -91,7 +91,59 @@
     		<?php echo $this->layout()->content;?>
         </div>
     	<div class="subpage_wapper_right">
-        	<div class="right-boxs">
+    		<!-------Code lấy ra URI và cắt chuỗi :D:D -------->
+    		<?php
+			  	$strvideo = substr($_SERVER["REQUEST_URI"],5,5);
+				if(strcmp($strvideo,"video")==0){
+		    ?>
+ 			<!-------End Code lấy ra URI và cắt chuỗi :D:D -------->
+        	<div id="news_video">
+        		<!------- Video mới, Video xem nhiều------>
+            	<div class="news_title">
+                	<p onclick="toggle_view('col1','col2');" class="news1">Mới nhất</p>
+                    <p onclick="toggle_view('col2','col1');" class="news2">Xem nhiều nhất</p>
+                </div>
+                <span id="col1">
+                	<ul>
+	                	<?php 
+							foreach($this->listvideo as $video)
+							{
+						?>
+							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
+									<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
+	                            <p><?php echo $video['video_title']; ?></p>
+	                        </a></li>
+						<?php
+							}
+					 	?>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
+                </span>
+                <span id="col2" style="display:none">
+	                <ul>
+	                	<?php 
+							foreach($this->listNewsMostVideo as $video)
+							{
+						?>
+							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
+									<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
+	                            <p><?php echo $video['video_title']; ?></p>
+	                        </a></li>
+						<?php
+							}
+					 	?>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
+                </span>
+                <!-------End Video mới, Video xem nhiều------>
+            </div>
+            
+            <?php
+            }else{
+            ?>
+
+            <div class="right-boxs">
+        		<!------- Tin nóng, tin xem nhiều------>
             	<div class="news_title">
                 	<p onclick="toggle_view('col1','col2');" class="news1">Mới nhất</p>
                     <p onclick="toggle_view('col2','col1');" class="news2">Đọc nhiều nhất</p>
@@ -148,7 +200,11 @@
 	                </ul>
 	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
                 </span>
+                <!-------End Tin nóng, tin xem nhiều------>
             </div>
+            
+            <?php } ?>
+            
             <div class="right-boxs" class="bgnews">
             	<div class="news_title2">
                 	Forum

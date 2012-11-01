@@ -1,7 +1,7 @@
 <?php
 class IndexController extends Zend_Controller_Action
 {
-	protected $mDefault;
+	protected $mDefault, $mVideo;
 	protected $mTintuc;
 	protected $listThreadTitle;
 	public function init()
@@ -12,6 +12,7 @@ class IndexController extends Zend_Controller_Action
 	    Zend_Layout::startMvc ( $option );
 	      
 		@session_start();
+		$this->mVideo=new Default_Model_Mvideo();
 	    $this->mDefault=new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->setAccess();
@@ -38,7 +39,8 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		//var_dump($this->mDefault->getListHotNewsJs());die();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
-
+		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
+		
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();

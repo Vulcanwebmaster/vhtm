@@ -14,4 +14,9 @@ class Default_Model_Mtimkiem extends Zend_Db_Table_Abstract
 		$data=$this->db->query('select * from unc_news where news_title like "%'.$key.'%"');
 	    return $data->fetchAll();
 	}
+	function getNewsByKeyVideo($key)
+	{
+		$data=$this->db->query('select * from unc_video where video_title like "%'.$key.'%"');
+	    return $data->fetchAll();
+	}
 }
