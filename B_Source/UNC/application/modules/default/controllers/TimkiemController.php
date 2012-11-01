@@ -51,6 +51,8 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 			//---------END Thêm template vào các chuyên mục----
 		}
+		//Header title
+		$this->view->headTitle('UNC - Tìm kiếm');		
 	}
 
 	function searchvideoAction()
@@ -87,5 +89,7 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 			//---------END Thêm template vào các chuyên mục----
 		}
+		//Header title
+		$this->view->headTitle('UNC - Tìm kiếm video');
 	}
 }

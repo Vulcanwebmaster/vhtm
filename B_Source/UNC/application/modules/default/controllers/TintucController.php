@@ -175,6 +175,8 @@ class TintucController extends Zend_Controller_Action
 		$mask = APPLICATION_PATH."/templates/front/captcha/*.png"; 
         array_map("unlink",glob($mask));
 		
+		//Header title
+		$this->view->headTitle('UNC - '.$news['news_title']);
 		if($this->_request->isPost())
 		{
 			if($form->isValid($_POST)){
@@ -230,6 +232,8 @@ class TintucController extends Zend_Controller_Action
 					
 			$this->view->list = $paginator;
 		}
+		//Header title
+		$this->view->headTitle('UNC - Tìm kiếm tin tức');		
 	}
 	
 	function listAction()
@@ -331,6 +335,9 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao4 = $listquangcao4;
 		//echo $this->_request->getParam('page');die();
 		$this->view->listThread = $this->mDefault->getListThread();
+		
+		//Header title
+		$this->view->headTitle('UNC - '.$this->view->current_category['category_name']);		
 	}
 
 	function logoutAction()
