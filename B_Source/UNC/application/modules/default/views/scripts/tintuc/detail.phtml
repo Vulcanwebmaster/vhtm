@@ -1,3 +1,7 @@
+<div style="display: block" id="sendemailstatus">
+	
+</div>
+
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
 </style>        
@@ -95,3 +99,17 @@
            	  	?>
               </ul>
            </div>
+<!-------------- Start Script Area ------------>
+<script>
+	function formSendMail() {
+		var x;
+		var email=prompt("Nhập email mà bạn muốn chia sẻ trang web này","someone@example.com");
+		var url = document.URL;
+		if (email!=null) {
+			$('#sendemailstatus').load('<?php echo $this->baseUrl('/dataajax/sendmail/format/html?email=')?>'+email+"&url="+url);
+		} else {
+			alert("Bạn phải nhập một email"); 
+		}
+	}
+</script>
+<!-------------- End Script Area ------------>

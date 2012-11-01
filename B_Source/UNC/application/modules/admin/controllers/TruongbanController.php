@@ -84,6 +84,8 @@
 			if($this->role == "0")
 			{
 				$paginator = Zend_Paginator::factory($allTruongban);
+			} else if ($this->role == "1") {
+				$paginator = Zend_Paginator::factory($allTruongban);
 			}
 			else
 			{
