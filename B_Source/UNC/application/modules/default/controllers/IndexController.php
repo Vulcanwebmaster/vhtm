@@ -58,13 +58,13 @@ class IndexController extends Zend_Controller_Action
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
 		$listquangcao4 = $this->mDefault->getListAds4();
+		//var_dump($listquangcao3);die();
 		$this->view->listquangcao = $listquangcao;
 		$this->view->listquangcao1 = $listquangcao1;
 		$this->view->listquangcao2 = $listquangcao2;
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 
-		$this->view->listquangcao = $listquangcao;
 		$this->view->listNews = $listNews;
 
 		$this->view->listNews = $listNews;

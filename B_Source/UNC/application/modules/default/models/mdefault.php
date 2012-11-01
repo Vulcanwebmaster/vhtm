@@ -52,20 +52,14 @@
 		
 		function getListAds3()
 		{
-			$query = $this->db->query('select * from unc_ads where ads_position=3 order by ads_start_date DESC limit 1');
-			$list = $query->fetchAll();
-			if (count($list)>0)
-				return $list[0];
-			else return  false;
+			$query = $this->db->query('select * from unc_ads where ads_position=3 order by ads_start_date DESC limit 2');
+			return $query->fetchAll();
 		}
 		
 		function getListAds4()
 		{
-			$query = $this->db->query('select * from unc_ads where ads_position=4 order by ads_start_date DESC limit 1');
-			$list = $query->fetchAll();
-			if (count($list)>0)
-				return $list[0];
-			else return  false;
+			$query = $this->db->query('select * from unc_ads where ads_position=4 order by ads_start_date DESC limit 2');
+			return $query->fetchAll();
 		}
 		
 		function getListMostView()

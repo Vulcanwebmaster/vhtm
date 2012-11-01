@@ -138,6 +138,8 @@ a:hover{text-decoration: underline}
 .a-title:hover{text-decoration: underline; color: #006699 }
 .p-datetime{ font-style:oblique;  }
 
+.img-ads-scrol img{width: 147px; height: 200px}
+
 /*----------------begin header------------------*/
 #header{ width:100%; height:200px; padding-top:20px;background:url(../images/bg_top.gif) repeat-x top; }
 #center-header{ width:1000px; height:200px; padding-top:0; margin: auto; }
