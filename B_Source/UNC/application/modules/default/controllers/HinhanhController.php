@@ -26,6 +26,7 @@ class HinhanhController extends Zend_Controller_Action
 		$this->view->listImageLeft = $this->mHinhanh->getListImageLeft();
 		$this->view->listCategory = $this->mHinhanh->getListCategory();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 	}
 }
 ?>

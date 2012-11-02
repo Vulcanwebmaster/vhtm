@@ -206,7 +206,7 @@
                         <?php 
                         foreach ($this->listdiachi as $listdiachi) {
                         ?>
-                        <li>Địa chỉ: <?php echo $listdiachi['address'] ?> </li>
+                        <li>Địa chỉ: <?php echo $listdiachi['noidung'] ?> </li>
                         <?php } ?>
                       
                     </ul>
@@ -215,9 +215,9 @@
                    	<ul>
                     	<li><a href="#" style="color:#a9a9a9"> Liên hệ Quảng cáo</a></li>
                     	<?php 
-                        foreach ($this->listdiachi as $listdiachi) {
+                        foreach ($this->listlienhe as $listlienhe) {
                         ?>
-                        <li><?php echo $listdiachi['contact'] ?> </li>
+                        <li><?php echo $listlienhe['noidung'] ?> </li>
                         <?php } ?>
                     </ul>
                 </div>

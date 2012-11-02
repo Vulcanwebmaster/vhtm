@@ -33,17 +33,16 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$list=$this->mDiachi->getListDiachi();
-			//var_dump($list);die();
 			$this->view->list = $list;
-			//var_dump($list);die();
 			$this->view->title = "Quản lý địa chỉ";
 			$this->view->role = $this->role;
 		}
 		function _getInput($form)
 		{
 			$input = array(	
-							'address'	=> $form->getValue('address'),
-							'contact'			=> $form->getValue('contact'),
+							'danhmuc'	=> $form->getValue('danhmuc'),
+							'noidung'	=> $form->getValue('noidung'),
+							'lienket'	=> $form->getValue('lienket'),
 			);
 			return $input;
 		}

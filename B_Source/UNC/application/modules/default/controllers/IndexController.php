@@ -40,6 +40,9 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
+		$this->view->listvanmieu = $this->mDiachi->getListVanmieu();
+		$this->view->listvomieu = $this->mDiachi->getListVomieu();
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();

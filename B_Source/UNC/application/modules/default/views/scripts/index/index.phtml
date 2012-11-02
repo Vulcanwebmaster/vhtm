@@ -41,10 +41,19 @@ function cutString($str,$limit)
 			</div>
 		</div>
 		<div class="sliders-right">
-			<img class="img3" src="<?php echo $this->baseUrl();?>/application/templates/front/images/rua_vanmieu.gif">
-			<p>Văn Miếu trước đây bao gồm 20 công trình lớn, nhỏ nhưng đến nay chỉ còn lại vài ba công trình.</p>
-			<img class="img3" src="<?php echo $this->baseUrl();?>/application/templates/front/images/rua_vomieu.gif">
-			<p>Võ Miếu được lập ra cũng để tôn vinh những công thần đã đóng góp</p>
+			<?php 
+                 foreach ($this->listvanmieu as $listvanmieu) {
+            ?>
+				 <a href="<?php echo $listvanmieu['lienket'] ?>"><img class="img3" src="<?php echo $this->baseUrl();?>/application/templates/front/images/rua_vanmieu.gif"></a>
+				 <p> <li><?php echo $listvanmieu['noidung'] ?> </li> </p>
+            <?php } ?>
+            
+ 			<?php 
+                  foreach ($this->listvomieu as $listvomieu) {
+            ?>           
+				  <a href="<?php echo $listvomieu['lienket'] ?>"><img class="img3" src="<?php echo $this->baseUrl();?>/application/templates/front/images/rua_vomieu.gif"></a>
+				  <p><li><?php echo $listvomieu['noidung'] ?> </li></p>
+			 <?php } ?>
 		</div>
 	</div>
 	<div id="ads-left">

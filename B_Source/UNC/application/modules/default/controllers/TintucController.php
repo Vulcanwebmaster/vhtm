@@ -151,6 +151,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$this->view->news = $news;
 
 		$listParents = $this->mTintuc->getListParent();
@@ -215,6 +216,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		
 		if($this->_request->isPost())
 		{
@@ -321,6 +323,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 		$listquangcao1 = $this->mDefault->getListAds1();

@@ -165,7 +165,7 @@ a:hover{text-decoration: underline}
         #nav li.item a{color:White;text-decoration:none; font-size:14px; margin-right: 5px; padding:9px 10px;}
         #nav li.item:hover ul.sub,#nav li.item.selected ul.sub{display:block; position:absolute; top:185px;left:auto; width:auto;list-style:none; height:30px;}        
         #nav li.item.selected .itemSub li:hover ul.sub li.itemSub,#nav li.item:hover ul.sub li.itemSub{display:inline-block;padding:8px 0px;font-size:12px;  height:12px; line-height:20px;}        
-		#nav ul.sub{display:none; padding-left: 1px; margin-left: -11px }
+		#nav ul.sub{display:none; padding-left: 1px; margin-left: 0px }
 		.itemSub a{ font-family: Tahoma; }
 		.itemSub a:hover{ background: #02528f; color: #FFFFFF !important; }
 /*----------------end menu------------------*/

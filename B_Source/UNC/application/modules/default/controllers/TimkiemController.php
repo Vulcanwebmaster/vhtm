@@ -48,6 +48,7 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listChild = $listChild;
 			
 			$this->view->listdiachi = $this->mDiachi->getListDiachi();
+			$this->view->listlienhe = $this->mDiachi->getListLienhe();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
 			$this->view->listNewsMostView = $this->mDefault->getListMostView();
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
@@ -92,7 +93,6 @@ class TimkiemController extends Zend_Controller_Action
 			//---------Thêm template vào các chuyên mục----
 			$listquangcao = $this->mDefault->getListAds();
 			$this->view->listquangcao=$listquangcao;
-			
 			$listParents=$this->mTintuc->getListParent();
 			$this->view->listParent = $listParents;
 			$listChild=$this->mTintuc->getListChild();
@@ -101,6 +101,7 @@ class TimkiemController extends Zend_Controller_Action
 //			$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 	//		$this->view->listvideo = $this->mVideo->getListNewsVideo();
 			$this->view->listdiachi = $this->mDiachi->getListDiachi();
+			$this->view->listlienhe = $this->mDiachi->getListLienhe();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
 			$this->view->listNewsMostView = $this->mDefault->getListMostView();
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();

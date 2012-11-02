@@ -1,7 +1,7 @@
 <?php
 class VideoController extends Zend_Controller_Action
 {
-	protected $mTintuc;
+	protected $mTintuc, $mDiachi;
 	protected $mDefault;
 	protected $mVideo;
 	function init()
@@ -14,6 +14,7 @@ class VideoController extends Zend_Controller_Action
 		$this->mDefault = new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mVideo = new Default_Model_Mvideo();
+		$this->mDiachi = new Default_Model_Mdiachi();
 		@session_start();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
@@ -43,6 +44,8 @@ class VideoController extends Zend_Controller_Action
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 
+		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
 		$listquangcao3 = $this->mDefault->getListAds3();
