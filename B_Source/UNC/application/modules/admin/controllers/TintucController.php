@@ -1,7 +1,7 @@
 <?php
 	class Admin_TintucController extends Zend_Controller_Action
 	{
-		private $mtintuc, $listParent,$listChild,$mChuyenmuc;
+		private $mtintuc, $listParent,$listChild,$mChuyenmuc, $mRss;
 		private $mtimkiem;
 		private $mdanhmuc;
 		public $dantri=array('http://www.dantri.com.vn/trangchu.rss');
@@ -49,6 +49,7 @@
 			$this->listParent = $this->mChuyenmuc->getListParent();
 			$this->listChild = $this->mChuyenmuc->getListChild();
 			$this->mtintuc=new Admin_Model_Mtintuc();
+			$this->mRss=new Admin_Model_Mrss();
 			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
 			$this->mtimkiem=new Admin_Model_Mtimkiem();
 		}
@@ -98,8 +99,9 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
+			$viewtype=$this->_request->getParam('viewtype');
 			// ADD TIN TỰ ĐỘNG:================================
-			$this->autoGetnews();
+			//$this->autoGetnews();
 			//===============================================
 			//$adapter=new Zend_Paginator_Adapter_DbSelect($this->mtintuc->getListNews());
 			//echo $_SESSION['role_id'];die();
@@ -228,10 +230,9 @@
 		
 		function autogetnews()
 		{	
-			//$listRss=$this->mTintuc->getListRss();
-			//foreach ($listRss as $linkrss)
+			$listRss=$this->mTintuc->getListRss();
+			foreach ($listRss as $linkrss)
 			{
-				$linkrss['link']='http://www.dantri.com.vn/trangchu.rss';
 				$this->getListByLink($linkrss['link']);
 				$countNews=count($this->title);
 				for ($i=0; $i<$countNews; $i++)

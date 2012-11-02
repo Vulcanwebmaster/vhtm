@@ -67,4 +67,10 @@
 			$result=$this->update($data, $where);
 			return $result;
 		}
+		
+		function getListRss()
+		{
+			$query=$this->db->query("select * from unc_rss");
+			return $query->fetchAll();
+		}
 	}

@@ -83,13 +83,14 @@
                 </div>
                 <ul>
                 	<?php 
-                		foreach($this->listImage as $image)
-						{
-							$preg = preg_match_all('#<img.*/>#',$image['image_link'],$match);
-							?>
-								<li  class="even"><a href="#"><?php echo $match[0][0]; ?></a></li>
-							<?php
-						}
+                		if ($this->listImage!=NULL)
+	                		foreach($this->listImage as $image)
+							{
+								$preg = preg_match_all('#<img.*/>#',$image['image_link'],$match);
+								?>
+									<li  class="even"><a href="#"><?php echo $match[0][0]; ?></a></li>
+								<?php
+							}
                 	?>
                 
                 </ul>

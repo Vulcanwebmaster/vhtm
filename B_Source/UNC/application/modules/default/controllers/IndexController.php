@@ -33,7 +33,7 @@ class IndexController extends Zend_Controller_Action
 	public function indexAction()
 	{
 		$this->view->listThread = $this->listThreadTitle;
-		
+		$this->view->headTitle = "UNC - Trang chủ";
 		$this->view->listVideo=$this->mDefault->getListVideoByLimit(4);
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();

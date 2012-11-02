@@ -33,8 +33,8 @@ function cutString($str,$limit)
 			<div id="avt-hot-list" style="margin-left: 405px">
 				<?php for ($i=1;$i<=5;$i++)
 				{?>
-					<a title="<?php if (isset($hotestNews)) echo $this->listHotNews[$i]['news_title']?>" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->listHotNews[$i]['news_id']; ?>-<?php echo $this->listHotNews[$i]['alias']; ?>.html">
-						<?php if (isset($hotestNews)) echo $this->listHotNews[$i]['news_avatar'];?>
+					<a title="<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_title']?>" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->listHotNews[$i]['news_id']; ?>-<?php echo $this->listHotNews[$i]['alias']; ?>.html">
+						<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_avatar'];?>
 					</a>
 				<?php }?>
 				<div class="clear"> </div>
@@ -67,7 +67,7 @@ function cutString($str,$limit)
                 	<div class="children_down-title"><a>Video</a></div>
                 	<div class="subpage_wapper_left_top" style="margin-bottom:10px">
 						<ul style="margin:0 0 0 20px; list-style-type:none">
-							<li class="category-more"><a>Xem tất cả</a></li>
+							<li class="category-more"><a><strong>Xem tất cả</strong></a></li>
 						</ul>					
 					</div>
                 	<?php foreach ($this->listVideo as $video)
@@ -102,7 +102,7 @@ function cutString($str,$limit)
 													}
 												}
 			                            	?>
-			                            	<li class="category-more"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html">Xem tất cả</a></li>
+			                            	<li class="category-more"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><strong>Xem tất cả</strong></a></li>
 				                         </ul>
 				           			</div>
 				                    <div class="item-new-left">

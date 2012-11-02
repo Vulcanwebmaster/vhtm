@@ -146,7 +146,7 @@ a:hover{text-decoration: underline}
 #logo img{ width:230px; height:102px; float:left;}
 .right-header{ float:right;}
 .img-header p img{ height:110px !important; float:left; width:604px;}
-#header p{ float:left; font-weight:bold; height:100%;  padding: 0 4px 0 0; margin: 0;}
+#header p{ float:left; font-weight:bold; height:90px;  padding: 0 4px 0 0; margin: 0;}
 #header label{ color:red;}
 /*----------------end header------------------*/
 
