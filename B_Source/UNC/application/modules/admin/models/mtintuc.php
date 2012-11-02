@@ -122,7 +122,12 @@
 		$news_summary=$this->replaceChar("'",'"', $input['news_summary']);
 		$news_avatar=$this->replaceChar("'",'"', $input['news_avatar']);
 		$news_content=$this->replaceChar("'",'"', $input['news_content']);
-		$news_author=$input['news_author'];
+		//$news_author=$input['news_author'];
+		if ($input['news_status'] != "Chưa duyệt") {
+			$news_author=$input['news_author'];
+		} else {
+			$news_author="";
+		}		
 		$news_post_date=$input['news_post_date'];
 		$news_modified_date=$input['news_modified_date'];
 		$news_status=$input['news_status'];

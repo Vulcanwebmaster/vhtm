@@ -106,7 +106,25 @@
 			$list2=array();
 			if ($_SESSION['role_id']==0)
 			{
-				$list2=$this->mtintuc->getListNews();
+				$list1 = $this->mtintuc->getListNews();
+				$list2=array();
+				foreach ($list1 as $item)
+				{
+					if ($viewtype == 1) {
+						$list2[]=$item;
+					} else if ($viewtype == 2) {
+						
+						if ($item['news_status']!='Đã duyệt' && $item['news_status']!='Chưa duyệt') {
+							$list2[]=$item;
+						}
+						
+					} else if ($viewtype == 3) {
+
+						if ($item['news_status']=='Đã duyệt' || $item['news_status']=='Chưa duyệt') {
+							$list2[]=$item;
+						}
+					}					
+				}				
 				$paginator= Zend_Paginator::factory($list2);
 			}
 			elseif ($_SESSION['role_id']==1)
@@ -116,10 +134,23 @@
 				
 				foreach ($list1 as $item)
 				{
-					if ($item['news_status']!='Chưa duyệt')
-						$list2[]=$item;
-					elseif  ($item['news_author']==$_SESSION['user'])
-						$list2[]=$item;						
+					if ($viewtype == 1) {
+						if ($item['news_status']!='Chưa duyệt')
+							$list2[]=$item;
+						elseif  ($item['news_author']==$_SESSION['user'])
+							$list2[]=$item;	
+					} else if ($viewtype == 2) {
+						
+						if ($item['news_status']!='Đã duyệt' && $item['news_status']!='Chưa duyệt') {
+							$list2[]=$item;
+						}
+						
+					} else if ($viewtype == 3) {
+
+						if ($item['news_status']=='Đã duyệt') {
+							$list2[]=$item;
+						}
+					}					
 				}
 				$paginator= Zend_Paginator::factory($list2);	
 			}
@@ -129,10 +160,24 @@
 				$list1=$this->mtintuc->getListNewsByUserId($userid);
 				foreach ($list1 as $item)
 				{
-					if ($item['news_status']=='Chưa duyệt')
-						$list2[]=$item;
-					elseif ($item['news_author']==$_SESSION['user'])
-						$list2[]=$item;
+					if ($viewtype == 1) {
+						if ($item['news_status']=='Chưa duyệt')
+							$list2[]=$item;
+						elseif ($item['news_author']==$_SESSION['user'])
+							$list2[]=$item;
+					} else if ($viewtype == 2) {
+						
+						if ($item['news_status']!='Đã duyệt' && $item['news_author']==$_SESSION['user'])
+							$list2[]=$item;
+												
+					} else if ($viewtype == 3) {
+						
+						if (($item['news_status']=='Đã duyệt' && $item['news_author']==$_SESSION['user'])
+							|| $item['news_status']=='Chưa duyệt') {
+							$list2[]=$item;
+						}						
+						
+					}
 				}
 				$paginator= Zend_Paginator::factory($list2);
 			}
@@ -445,7 +490,12 @@
 			$form->getElement('news_avatar')->setValue($info['news_avatar']);
 			$form->getElement('news_summary')->setValue($info['news_summary']);
 			$form->getElement('news_content')->setValue($info['news_content']);
-			$form->getElement('news_author')->setValue($info['news_author']);
+			//$form->getElement('news_author')->setValue($info['news_author']);
+			if ($info['news_author'] != "") {
+				$form->getElement('news_author')->setValue($info['news_author']);
+			} else {
+				$form->getElement('news_author')->setValue($_SESSION['user']);
+			}			
 			$form->getElement('news_post_date')->setValue($info['news_post_date']);
 			$form->getElement('news_modified_date')->setValue(gmdate('Y-m-d h:i:s',time() + 7*3600));
 			//echo $info['news_status'];
