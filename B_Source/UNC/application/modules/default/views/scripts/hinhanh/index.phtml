@@ -1,0 +1,63 @@
+<div class="subpage_wapper_left_detail">
+            <div class="left"> <!-----------Left--------------->
+
+			<div id="content-left">
+					<div class="children_down-title"><a href="#">Văn miếu</a></div>
+				     <div class="subpage_wapper_left_top">
+			            	<div class="children_down2"><a href="#">Danh nhân văn hóa</a></div><div class="children_down">|</div>
+			                <div class="children_down2"><a href="#">Thiên cổ hùng văn</a></div><div class="children_down">|</div>
+			                <div class="children_down2"><a href="#">Tác phẩm đương đại</a></div><div class="children_down">|</div>
+			                <div class="children_down2"><a href="#">Văn đàn</a></div>
+           			 </div>
+           			 
+				 <div id="videp_left">
+                	<form class="searchform" action="" method="post">
+                        <input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
+                        <input class="searchsubmit" type="submit" value="" style="cursor:pointer">
+                    </form>
+                    <ul id="ul_video_left">
+                    	<li><a href="<?php echo $this->baseUrl(); ?>/hinhanh">Tất cả</a></li>
+                    	<?php
+                    	if(count($this->listCategory) > 0)
+						{
+							foreach($this->listCategory as $category)
+							{
+								?>
+									<li><a href="#"><?php echo $category['category_name'] ?></a></li>
+								<?php
+							}
+						}
+                    	?>
+                    </ul>
+                </div>
+				
+				<div id="gioithieu">
+					<?php 
+						if(count($this->listImageLeft) > 0)
+						{
+							foreach($this->listImageLeft as $imageLeft)
+							{
+								$preg = preg_match_all('#<img.*/>#',$imageLeft['image_link'],$match);
+								?>
+									<div class="gioithieu-img">
+										<?php echo $match[0][0];?>
+										<a href="#"><?php echo $imageLeft['image_name'] ?></a>
+									</div>
+								<?php
+							}
+						}
+						else echo 'Chuyên mục này chưa có hình ảnh nào';
+					?>
+					
+					<div class="clear"> </div>
+				</div> <!------End gioi thieu------>
+			</div>
+			<div id="ads-left">
+				Ads Left
+			</div>
+               
+               
+			<div class="clear"> </div>
+			</div> <!----End LEFT-------->
+		
+        </div>
