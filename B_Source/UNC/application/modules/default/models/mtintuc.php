@@ -11,13 +11,13 @@
 		
 		function getListHotNews()
 		{
-			$query = $this->db->query('select * from unc_news where is_hot = "1" order by news_post_date desc');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and is_hot = "1" order by news_post_date desc');
 			return $query->fetchAll();
 		}
 		
 		function getNewsByNewsId($news_id)
 		{
-			$query = $this->db->query('select * from unc_news where news_id = "'.$news_id.'"');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and news_id = "'.$news_id.'"');
 			$list = $query->fetchAll();
 			return $list[0];
 		}
@@ -44,6 +44,7 @@
 										WHERE unc_news.category_id = unc_category.category_id
 										AND unc_category.category_parent_id="'.$category_parent_id.'"
 										AND unc_news.category_id !=0
+										AND unc_news.news_status="Công khai"
 										ORDER BY news_post_date DESC limit 8');
 			return $query->fetchAll();
 		}
@@ -76,7 +77,7 @@
 
 		function getListNews()
 		{
-			$query = $this->db->query('select * from unc_news where category_id != 0');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id != 0');
 			return $query->fetchAll();
 		}
 		function getListAds()
@@ -154,13 +155,13 @@
 
 		function getNewestNews()
 		{
-			$query = $this->db->query('select * from unc_news order by news_post_date desc limit 5');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" order by news_post_date desc limit 5');
 			return $query->fetchAll();
 		}
 		
 		function getCategoryIdByNewsId($news_id)
 		{
-			$query = $this->db->query('select category_id from unc_news where news_id = "'.$news_id.'"');
+			$query = $this->db->query('select category_id from unc_news where news_status="Công khai" and news_id = "'.$news_id.'"');
 			$list = $query->fetchAll();
 			if(count($list) > 0)
 				return $list[0]['category_id'];
@@ -169,7 +170,7 @@
 		
 		function getNewsPosted($categoryid)
 		{
-			$query = $this->db->query('select * from unc_news where category_id = "'.$categoryid.'" order by news_post_date desc limit 5');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id = "'.$categoryid.'" order by news_post_date desc limit 5');
 			$list=$query->fetchAll();
 			return $list;
 		}
