@@ -269,10 +269,19 @@
 			$el->setAttrib('class', 'datepicker');
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$el=$form->createElement('select', 'news_status', array('multioptions'=>array('Chưa duyệt'=>'Chưa duyệt',
+			if ($_SESSION['role_id']==0) {
+				$el=$form->createElement('select', 'news_status', array('multioptions'=>array('Chưa duyệt'=>'Chưa duyệt',
 																						'Đã duyệt'=>'Đã duyệt',
 																						'Riêng tư'=>'Riêng tư',
 																						'Công khai'=>'Công khai')));
+			} else if ($_SESSION['role_id']==1) {
+				$el=$form->createElement('select', 'news_status', array('multioptions'=>array(	'Đã duyệt'=>'Đã duyệt',
+																								'Riêng tư'=>'Riêng tư',
+																								'Công khai'=>'Công khai')));
+			} else {
+				$el=$form->createElement('select', 'news_status', array('multioptions'=>array(	'Chưa duyệt'=>'Chưa duyệt',
+																								'Đã duyệt'=>'Đã duyệt')));
+			}
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$form->addElement($el);
 			
