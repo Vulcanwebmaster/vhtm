@@ -181,13 +181,8 @@
     		<?php echo $this->layout()->content;?>
         </div>
 		<?php
-			if (isset($_SESSION['page']))
-			{ 
-				if($_SESSION['page'] == 'tintuc')
 					echo $this->render("tintuc.phtml");
-				if($_SESSION['page'] == 'hinhanh')
 					echo $this->render("hinhanh.phtml");
-			}  
 		?>
 	</div>
 	<br style="clear:both"/>	
