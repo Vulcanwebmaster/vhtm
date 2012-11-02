@@ -15,11 +15,11 @@ class IndexController extends Zend_Controller_Action
 		$this->mVideo=new Default_Model_Mvideo();
 	    $this->mDefault=new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
-		$this->mDiachi = new Admin_Model_Mdiachi();
+		$this->mDiachi = new Default_Model_Mdiachi();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
-		$_SESSION['page'] = 'tintuc';
+	
 		$listThreadForum = $this->mDefault->getListThread();
 		$this->listThreadTitle = array();
 		foreach($listThreadForum as $thread)
@@ -69,7 +69,6 @@ class IndexController extends Zend_Controller_Action
 
 		$this->view->listNews = $listNews;
 
-		$this->view->listImage = $this->mDefault->getListImage();
 	}
 
 

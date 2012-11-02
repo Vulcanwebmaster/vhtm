@@ -18,7 +18,6 @@ class TintucController extends Zend_Controller_Action
 		$this->mDiachi = new Default_Model_Mdiachi();
 		$this->setAccess();
 		unset($_SESSION['home']);
-		$_SESSION['page'] = 'tintuc';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$listThreadForum = $this->mDefault->getListThread();
@@ -152,7 +151,6 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
-
 		$this->view->news = $news;
 
 		$listParents = $this->mTintuc->getListParent();
@@ -217,7 +215,6 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
-		
 		
 		if($this->_request->isPost())
 		{
@@ -324,7 +321,6 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
-		
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 		$listquangcao1 = $this->mDefault->getListAds1();
@@ -337,7 +333,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 		//echo $this->_request->getParam('page');die();
-		$this->view->listThread = $this->listThreadTitle;
+		$this->view->listThread = $this->mDefault->getListThread();
 		
 		//Header title
 		$this->view->headTitle('UNC - '.$this->view->current_category['category_name']);		

@@ -1,9 +1,9 @@
 <?php
 class TimkiemController extends Zend_Controller_Action
 {
-	private $mTimkiem, $mDiachi;
+	private $mTimkiem;
 	private $mDefault;
-	private $mTintuc;
+	private $mTintuc, $mDiachi;
 	function init()
 	{
 		@session_start();
@@ -46,10 +46,25 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listParent = $listParents;
 			$listChild=$this->mTintuc->getListChild();
 			$this->view->listChild = $listChild;
+			
 			$this->view->listdiachi = $this->mDiachi->getListDiachi();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
 			$this->view->listNewsMostView = $this->mDefault->getListMostView();
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
+						//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao = $this->mDefault->getListAds();
+		
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		//var_dump($listquangcao3);die();
+		$this->view->listquangcao = $listquangcao;
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+			
 			//---------END Thêm template vào các chuyên mục----
 		}
 		//Header title
@@ -89,6 +104,20 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
 			$this->view->listNewsMostView = $this->mDefault->getListMostView();
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
+						//Lấy ra ảnh quảng cáo ngẫu nhiên
+		$listquangcao = $this->mDefault->getListAds();
+		
+		$listquangcao1 = $this->mDefault->getListAds1();
+		$listquangcao2 = $this->mDefault->getListAds2();
+		$listquangcao3 = $this->mDefault->getListAds3();
+		$listquangcao4 = $this->mDefault->getListAds4();
+		//var_dump($listquangcao3);die();
+		$this->view->listquangcao = $listquangcao;
+		$this->view->listquangcao1 = $listquangcao1;
+		$this->view->listquangcao2 = $listquangcao2;
+		$this->view->listquangcao3 = $listquangcao3;
+		$this->view->listquangcao4 = $listquangcao4;
+			
 			//---------END Thêm template vào các chuyên mục----
 		}
 		//Header title
