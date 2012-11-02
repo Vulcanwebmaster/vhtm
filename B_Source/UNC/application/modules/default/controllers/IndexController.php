@@ -37,7 +37,6 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listVideo=$this->mDefault->getListVideoByLimit(4);
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
-		//var_dump($this->mDefault->getListHotNewsJs());die();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();

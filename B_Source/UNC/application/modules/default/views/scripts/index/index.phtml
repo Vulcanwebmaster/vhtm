@@ -22,19 +22,19 @@ function cutString($str,$limit)
 </style>
 <div class="left"> <!-----------Left--------------->
 	<div class="content-left1">
-		<?php $hotestNews = $this->listHotNews[0];?>
+		<?php if (count($this->listHotNews)>0) $hotestNews = $this->listHotNews[0];?>
 		<div class="sliders-left">
 			<div id="thumbnail-hotestnews" style="height: auto; width: 401px; float: left; padding: 12px 0px 0 10px">
-				<?php echo $hotestNews['news_avatar'];?>
-				<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $hotestNews['news_id']; ?>-<?php echo $hotestNews['alias']; ?>.html"><?php echo $hotestNews['news_title']?></a>
-				<p class="p-datetime"><?php echo $hotestNews['news_post_date']?></p>
-				<p><?php echo cutString(strip_tags($hotestNews['news_summary']), 200);?></p>
+				<?php if (isset($hotestNews)) echo $hotestNews['news_avatar'];?>
+				<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php if (isset($hotestNews)) echo $hotestNews['news_id']; ?>-<?php if (isset($hotestNews)) echo $hotestNews['alias']; ?>.html"><?php if (isset($hotestNews)) echo $hotestNews['news_title']?></a>
+				<p class="p-datetime"><?php if (isset($hotestNews)) echo $hotestNews['news_post_date']?></p>
+				<p><?php if (isset($hotestNews)) echo cutString(strip_tags($hotestNews['news_summary']), 200);?></p>
 			</div>
 			<div id="avt-hot-list" style="margin-left: 405px">
 				<?php for ($i=1;$i<=5;$i++)
 				{?>
-					<a title="<?php echo $this->listHotNews[$i]['news_title']?>" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->listHotNews[$i]['news_id']; ?>-<?php echo $this->listHotNews[$i]['alias']; ?>.html">
-						<?php echo $this->listHotNews[$i]['news_avatar'];?>
+					<a title="<?php if (isset($hotestNews)) echo $this->listHotNews[$i]['news_title']?>" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->listHotNews[$i]['news_id']; ?>-<?php echo $this->listHotNews[$i]['alias']; ?>.html">
+						<?php if (isset($hotestNews)) echo $this->listHotNews[$i]['news_avatar'];?>
 					</a>
 				<?php }?>
 				<div class="clear"> </div>
@@ -98,6 +98,8 @@ function cutString($str,$limit)
 				           			</div>
 				                    <div class="item-new-left">
 				                    	<?php $list=$this->listNews[$parent['category_id']];
+				                    	if (count($list)>0)
+				                    	{
 				                    	$childTintuc=$list[0];
 				                    	$str = $childTintuc['news_avatar']; 
 				                    		  $preg = preg_match_all('#<img.*/>#',$str,$match);
@@ -112,6 +114,7 @@ function cutString($str,$limit)
 				                        <p class="tittle"><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $childTintuc['news_id']; ?>-<?php echo $childTintuc['alias']; ?>.html"><?php echo $childTintuc['news_title']; ?></a></p>
 				                        <p><?php $summary=strip_tags($childTintuc['news_summary']);
 				                        	echo str_replace(array("\n","\r"),"",cutString($summary, 500));?></p>
+				                        	<?php }?>
 				                    </div>
 				                    <div class="item-new-right">
 				                    	<ul>

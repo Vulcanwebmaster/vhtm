@@ -151,18 +151,18 @@ a:hover{text-decoration: underline}
 /*----------------end header------------------*/
 
 /*----------------Menu------------------*/
-#menu-top{ width:998px; margin:auto; padding-top:27px; float: none; clear: both }
+#menu-top{ width:998px; margin:auto; padding-top:36px; float: none; clear: both }
 #menu-left{ width: 165px; float: left; padding: auto; }
 #menu-left ul li a { margin-left:3px; font-weight: bold }
 #menu-left ul li a:hover { color: white ; margin-left:3px; font-weight: bold; }
 #menu-left ul li{border:1px; border-bottom: 1px dotted #E9E9E9; margin-right:6px;padding-top:10px}
 #menu-left ul li:hover{border:1px; border-bottom-style:dotted; background-color:#0c68ae; margin-right:6px}
 #nav{ width:auto; font-weight: bold; text-align: left; padding-left: 1px; font-family:Tahoma }
-        #nav li.item{display:inline-block;padding:9px 10px; color: #5E5648;}
+        #nav li.item{display:inline-block; color: #5E5648;}
         li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 12px !important; padding: 7px; border-bottom-right-radius: 2px;border-bottom-left-radius: 2px }
         li .a-style:hover{ font-weight: bold;  }
-        #nav li.item:hover,#nav li.item.selected{background:#02528f;}
-        #nav li.item a{color:White;text-decoration:none; font-size:14px; margin-right: 5px;  }
+        #nav li.item a:hover,#nav li.item.selected{background:#02528f;}
+        #nav li.item a{color:White;text-decoration:none; font-size:14px; margin-right: 5px; padding:9px 10px;}
         #nav li.item:hover ul.sub,#nav li.item.selected ul.sub{display:block; position:absolute; top:185px;left:auto; width:auto;list-style:none; height:30px;}        
         #nav li.item.selected .itemSub li:hover ul.sub li.itemSub,#nav li.item:hover ul.sub li.itemSub{display:inline-block;padding:8px 0px;font-size:12px;  height:12px; line-height:20px;}        
 		#nav ul.sub{display:none; padding-left: 1px; margin-left: -11px }

@@ -53,27 +53,19 @@
 			$this->mtimkiem=new Admin_Model_Mtimkiem();
 		}
 		
-		function indexAction()
+		function getlistAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			// ADD TIN TỰ ĐỘNG:================================
-			//$this->autoGetnews();
-			//===============================================
-			//$adapter=new Zend_Paginator_Adapter_DbSelect($this->mtintuc->getListNews());
-			//echo $_SESSION['role_id'];die();
+			$list2=array();
 			if ($_SESSION['role_id']==0)
 			{
-				$paginator= Zend_Paginator::factory($this->mtintuc->getListNews());
+				$list2=$this->mtintuc->getListNews();
+				$paginator= Zend_Paginator::factory($list2);
 			}
 			elseif ($_SESSION['role_id']==1)
 			{
 				$userid=$_SESSION['user_id'];
 				$list1=$this->mtintuc->getListNewsByUserId($userid);
-				$list2=array();
+				
 				foreach ($list1 as $item)
 				{
 					if ($item['news_status']!='Chưa duyệt')
@@ -87,7 +79,6 @@
 			{
 				$userid=$_SESSION['user_id'];
 				$list1=$this->mtintuc->getListNewsByUserId($userid);
-				$list2=array();
 				foreach ($list1 as $item)
 				{
 					if ($item['news_status']=='Chưa duyệt')
@@ -97,15 +88,63 @@
 				}
 				$paginator= Zend_Paginator::factory($list2);
 			}
+			return $list2;
+		}
+		
+		function indexAction()
+		{
+			$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
+			// ADD TIN TỰ ĐỘNG:================================
+			$this->autoGetnews();
+			//===============================================
+			//$adapter=new Zend_Paginator_Adapter_DbSelect($this->mtintuc->getListNews());
+			//echo $_SESSION['role_id'];die();
+			$list2=array();
+			if ($_SESSION['role_id']==0)
+			{
+				$list2=$this->mtintuc->getListNews();
+				$paginator= Zend_Paginator::factory($list2);
+			}
+			elseif ($_SESSION['role_id']==1)
+			{
+				$userid=$_SESSION['user_id'];
+				$list1=$this->mtintuc->getListNewsByUserId($userid);
+				
+				foreach ($list1 as $item)
+				{
+					if ($item['news_status']!='Chưa duyệt')
+						$list2[]=$item;
+					elseif  ($item['news_author']==$_SESSION['user'])
+						$list2[]=$item;						
+				}
+				$paginator= Zend_Paginator::factory($list2);	
+			}
+			elseif ($_SESSION['role_id']==2)
+			{
+				$userid=$_SESSION['user_id'];
+				$list1=$this->mtintuc->getListNewsByUserId($userid);
+				foreach ($list1 as $item)
+				{
+					if ($item['news_status']=='Chưa duyệt')
+						$list2[]=$item;
+					elseif ($item['news_author']==$_SESSION['user'])
+						$list2[]=$item;
+				}
+				$paginator= Zend_Paginator::factory($list2);
+			}
 			$paginator->setItemCountPerPage(6);
 			$current=$this->_request->getParam('page',1);
 			$paginator->setCurrentPageNumber($current);
 				
 			$this->view->title='Tin tức';
-			$this->view->list=$paginator;
+			//echo count($list2);die();
+			$this->view->list=$list2;//$paginator;
 			$categoriesId=array();
-			foreach ($paginator as $new)
+			foreach (/*$paginator*/$list2 as $new)
 			{
 				$category=$this->mdanhmuc->getCmById($new['category_id']);
 				if ($category)
@@ -142,11 +181,12 @@
 		}
 	}
 		
-		function autogetnewsAction()
+		function autogetnews()
 		{	
-			$listRss=$this->mTintuc->getListRss();
-			foreach ($listRss as $linkrss)
+			//$listRss=$this->mTintuc->getListRss();
+			//foreach ($listRss as $linkrss)
 			{
+				$linkrss['link']='http://www.dantri.com.vn/trangchu.rss';
 				$this->getListByLink($linkrss['link']);
 				$countNews=count($this->title);
 				for ($i=0; $i<$countNews; $i++)
