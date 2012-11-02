@@ -75,15 +75,6 @@
 			return $list[0];
 		}
 		
-		function getVideoDefault()
-		{
-			$query = $this->db->query('select * from unc_video where is_default = "1"');
-			$list = $query->fetchAll();
-			if (count($list)>0)
-				return $list[0]['video_full_link'];
-			else return false;
-		}
-		
 		function getListVideoByLimit($limit)
 		{
 			$query=$this->db->query("select * from unc_video limit ".$limit);
@@ -94,5 +85,13 @@
 		{
 			$query = $this->forum->query('select * from thread limit 6');
 			return $query->fetchAll();
+		}
+		
+		function getListImage()
+		{
+			$query = $this->db->query('select * from unc_images where is_active = 1 order by image_id desc');
+			$list = $query->fetchAll();
+			if(count($list) > 0) return $list;
+			else return false;
 		}
 	}

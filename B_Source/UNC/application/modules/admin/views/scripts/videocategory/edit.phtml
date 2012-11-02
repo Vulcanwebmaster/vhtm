@@ -1,0 +1,29 @@
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+</style>
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset class="fieldset">
+					<label>Tên chuyên mục : </label>
+					<?php echo $this->form->getElement('category_name');?>
+				</fieldset>
+				<fieldset class="fieldset">
+					<label>Kích hoạt : </label>
+					<div style="margin-left: 80px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link" style="float:right">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/imagecategory">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>

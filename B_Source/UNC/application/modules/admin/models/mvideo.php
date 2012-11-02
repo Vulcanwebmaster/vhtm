@@ -9,13 +9,13 @@
 		
 		function insertVideoLink($input)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'",null,"'.$input['is_active'].'","'.$input['video_full_link'].'",null,"'.$input['user_upload'].'","'.$input['category_id'].'","'.$input['is_default'].'")');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'",null,"'.$input['is_active'].'","'.$input['video_full_link'].'",null,"'.$input['user_upload'].'","'.$input['category_id'].'","")');
 			return $query;
 		}
 		
 		function insertVideo($input,$id_youtube)
 		{
-			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","0","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$id_youtube.'","","",0)');
+			$query=$this->db->query('insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","0","http://www.youtube.com/watch?v='.$input['video_link'].'","'.$id_youtube.'","","","")');
 			return $query;
 		}
 		
@@ -27,24 +27,24 @@
 			else return false; 
 		}
 		
-		function getListVideo()
-		{
-			$query=$this->db->query('select * from unc_video order by is_default desc, is_active desc, video_id desc');
-			return $query->fetchAll();
-		}
-		
 		function updateVideo($video_id,$input)
 		{
 			$query=$this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" , is_active="'.$input['is_active'].'", is_default="'.$input['is_default'].'"
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="1", video_full_link="'.$input['video_full_link'].'" , is_active="'.$input['is_active'].'", category_id="'.$input['category_id'].'"
 									where video_id="'.$video_id.'"');
 			return $query;
+		}
+		
+		function getListVideo()
+		{
+			$query=$this->db->query('select * from unc_video order by is_active desc, video_id desc');
+			return $query->fetchAll();
 		}
 		
 		function editVideo($input)
 		{
 			$query = $this->db->query('update unc_video 
-									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="'.$input['is_active'].'" , is_default="'.$input['is_default'].'"
+									set video_title="'.$input['video_title'].'", video_description="'.$input['video_description'].'", is_active="'.$input['is_active'].'" , category_id="'.$input['category_id'].'"
 									where video_link="'.$input['video_link'].'"');
 			return $query;
 		}
@@ -102,10 +102,12 @@
 			return $query->fetchAll();
 		}
 		
-		function delDefaultVideo()
+		function getListVideoCategory()
 		{
-			$query = $this->db->query('update unc_video set is_default = "0"');
-			return $query;
+			$query = $this->db->query('select * from unc_video_category where is_active = 1');
+			$list = $query->fetchAll();
+			if(count($list) > 0) return $list;
+			else return false;
 		}
 	}
 		

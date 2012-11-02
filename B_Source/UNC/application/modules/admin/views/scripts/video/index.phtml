@@ -1,12 +1,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-		function confirmDel(value)
+				function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa hình ảnh này?");
+					var r=confirm("Bạn muốn xóa video này?");
 					if (r==true)
 					{
-						var uri="<?php echo $this->baseUrl();?>/admin/image/delete/imageid/"+value;
+						var uri="<?php echo $this->baseUrl();?>/admin/video/del/videoid/"+value;
 						window.location=uri;
 					}
 					else 
@@ -28,7 +28,10 @@
 }
 ?>
 <article class="module width_full">
-	<header><h3><?php echo $this->title;?></h3></header>
+	<header>
+		<h3><?php echo $this->title;?></h3>
+		<!--a class="alt_btn" style="float:right;margin-top: -3%;margin-right: 3px;" href="<?php echo $this->baseUrl('admin/uploadvideo/refresh');?>">Làm mới</a-->
+	</header>
 	<div class="tab_container">
 		
 		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
@@ -37,22 +40,21 @@
 			YUI().use('datatable', function (Y) {
 				var data = [
 								<?php 
-								$count=1;
+								$count = 1;
 								foreach ($this->list as $item)
 								{?>
-									{ order: '<?php echo $count;?>', 
-										image_name: "<?php echo $item['image_name'];?>",   
-										image_link: '<?php echo $item["image_link"];?>',
-										image_date_create: "<?php echo $item['image_date_create'];?>",
-										is_active: "<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>",
-										sua: 
-											'<?php 
-												echo '<a href="'.$this->baseUrl().'/admin/image/edit/imageid/'.$item['image_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
-											?>',
-										xoa: 
-											'<?php
-												echo '<a class="del_button" onclick="confirmDel('.$item['image_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
-											?>'
+									{ 	order: "<?php echo $count;?>", 
+										video_title: "<?php echo $item['video_title'];?>",   
+										video_description: "<?php echo $item['video_description'];?>",
+										user_upload: '<?php echo $item['user_upload'];?></a>',
+										is_active: "<?php if($item['is_active'] == '1') echo 'Có'; else echo 'Không';?>",
+										sua: '<?php
+												echo '<a href="'.$this->baseUrl().'/admin/video/edit/videoid/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+										?>',
+										xoa : 
+										'<?php
+												echo '<a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+										?>'
 									},
 								<?php $count++;}?>
 							];
@@ -61,29 +63,29 @@
 				
 				var table = new Y.DataTable({
 					columns: [{
-								key: 'order',
+								key: "order",
 								label: 'Số thứ tự',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true
 							},
 							{
-								key: 'image_name',
-								label: 'Tên ảnh',
+								key: 'video_title',
+								label: 'Tiêu đề',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true 
 							},
 							{
-								key: 'image_link',
-								label: 'Liên kết',
+								key: 'video_description',
+								label: 'Mô tả',
 								sortable:true,
-								formatter: '<center>{value}</center>',
+								formatter: '<span>{value}</span>',
 								allowHTML: true
 							},
 							{
-								key: 'image_date_create',
-								label:'Ngày tạo',
+								key: 'user_upload',
+								label:'Thành viên',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true
@@ -120,16 +122,9 @@
 		
 		<footer>
 			<div class="submit_link" style="float:right">
-				<?php
-				if($this->role=="0")
-				{
-				?>
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/image/insert');?>">Thêm mới</a>
-				<?php
-				}
-				?>
+					<a class="alt_btn" style="margin-left: 10px;" href="<?php echo $this->baseUrl('admin/video/upload');?>">Upload</a>
 			</div>
-				<div class="submit_link" style="float:left; font-weight: bold;">
+			<div class="submit_link" style="float:left; font-weight: bold;">
 					<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
 				</div>
 		</footer>

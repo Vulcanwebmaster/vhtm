@@ -9,7 +9,7 @@
 		
 		function getList()
 		{
-			$query = $this->db->query('select * from unc_images');
+			$query = $this->db->query('select * from unc_images order by is_active desc, image_id desc');
 			return $query->fetchAll();
 		}
 		
@@ -29,7 +29,7 @@
 		
 		function insertImageForCategory($image_id,$category_id)
 		{
-			$query = $this->db->query('insert into unc_images_category value ("'.$image_id.'","'.$category_id.'")');
+			$query = $this->db->query('insert into unc_manage_images_category value ("'.$image_id.'","'.$category_id.'")');
 			return $query;
 		}
 		
@@ -68,8 +68,23 @@
 		
 		function delManageCategoryByImageId($image_id)
 		{
-			$query = $this->db->query('delete from unc_images_category where image_id = "'.$image_id.'"');
+			$query = $this->db->query('delete from unc_manage_images_category where image_id = "'.$image_id.'"');
 			return $query;
+		}
+		
+		function getListCategoryImage()
+		{
+			$query = $this->db->query('select * from unc_images_category');
+			$list = $query->fetchAll();
+			if(count($list) > 0)
+				return $list;
+			else return false;
+		}
+		
+		function getListImageCategoryByImageId($image_id)
+		{
+			$query = $this->db->query('select category_id from unc_manage_images_category where image_id = "'.$image_id.'"');
+			return $query->fetchAll();
 		}
 	}
 ?>

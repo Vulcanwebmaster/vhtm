@@ -1,0 +1,94 @@
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+	.uploading_inline{display:inline}
+</style>
+<script type="text/javascript">
+	function showLoading()
+	{
+		var uploading = document.getElementById('uploading');
+		uploading.style.display = 'block';
+		$('.uploading').addClass('uploading_inline');
+		$('.file').addClass('uploading_inline');
+	}
+</script>
+<form method="post" action="<?php echo $this->form->getAction(); ?>" onsubmit="showLoading();">
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<fieldset class="fieldset">
+				<label>Tiêu đề</label>
+				<input type="text" name="video_title" value="<?php echo $this->video['video_title'] ?>"/><img class="uploading" id="uploading" style="display:none" src="<?php echo $this->baseUrl() ?>/application/templates/admin/images/uploading.gif"/>
+			</fieldset>
+			<fieldset class="fieldset">
+				<label>Mô tả</label>
+				<input type="text" name="video_description" value="<?php echo $this->video['video_description'] ?>"/>
+			</fieldset>
+			<fieldset class="fieldset">
+					<label>Kích hoạt : </label>
+					<div style="margin-left: 80px;">
+						<?php
+							if($this->video['is_active'] == "1")
+							{
+								?>
+									<input type="radio" name="is_active" id="is_active-1" value="1" checked="checked"> <b>CÓ</b> <br><br>
+									<input type="radio" name="is_active" id="is_active-0" value="0"> <b>Không</b>
+								<?php
+							}
+							elseif($this->video['is_active'] == "0")
+							{
+								?>
+								<input type="radio" name="is_active" id="is_active-1" value="1"> <b>CÓ</b> <br><br>
+								<input type="radio" name="is_active" id="is_active-0" value="0" checked="checked"> <b>KHÔNG</b> 
+						<?php
+							}
+						?>
+					</div>
+			</fieldset>
+			<fieldset class="fieldset" id="checkboxes">
+					<label style="width:300px">Danh sách chuyên mục</label>
+						<div style="margin-left:60px;margin-bottom:10px">
+							<input type="checkbox" onclick="checkall('item',this);" name="check_object"/>
+							<span style="text-transform: uppercase">Chọn tất cả</span>
+						</div>
+						<?php
+							foreach($this->listCategory as $allCategory)
+							{
+								$check = 0 ;
+								foreach($this->listCategoryId as $category)
+								{
+									if($allCategory['category_id'] == $category)
+									{
+										$check = 1;break;
+									}
+								}
+								if($check == 1)
+								{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $allCategory['category_id']; ?>" class="item" checked="checked"/>
+										<span><?php echo $allCategory['category_name']; ?></span>
+									</div>
+									<?php
+								}
+								else{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $allCategory['category_id']; ?>" class="item"/>
+										<span><?php echo $allCategory['category_name']; ?></span>
+									</div>
+									<?php
+								}
+							}
+						?>
+			</fieldset>
+		</div>
+	</div>
+	<footer>
+			<div class="submit_link" style="float:right">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/video">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Upload" class="alt_btn">
+			</div>
+		</footer>
+</article>
+</form>

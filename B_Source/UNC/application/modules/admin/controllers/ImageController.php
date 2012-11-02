@@ -81,20 +81,17 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$this->view->title="Thêm ảnh";
-			$this->view->listParent = $this->listParent;
-			$this->view->listChild = $this->listChild;
 			$form = $this->setForm();
+			$this->view->listCategory = $this->mImage->getListCategoryImage();
 			
 			if($this->_request->isPost())
 			{
 				if($form->isValid($_POST))
 				{
 					$input = $this->_getInput($form);
-					//var_dump($input);die();
 						if($this->mImage->insertImage($input))
 						{
 							$image_id = $this->mImage->getImageIdNewest();
-							//echo $image_id;die();
 							foreach($_POST['checkbox'] as $check)
 							{
 								$this->mImage->insertImageForCategory($image_id,$check);
@@ -136,9 +133,8 @@
 			
 			$form = $this->setForm();
 			$image_id = $this->_request->getParam('imageid');
-			$this->view->listParent = $this->listParent;
-			$this->view->listChild = $this->listChild;
-			$this->view->listCategoryId = $this->mImage->getListCategoryIdByImage($image_id);
+			$this->view->listAllImageCategory = $this->mImage->getListCategoryImage();
+			$this->view->listImageCategory = $this->mImage->getListImageCategoryByImageId($image_id);
 			
 			$info = $this->mImage->getImageById($image_id);
 			$form->setAction($this->view->baseUrl().'/admin/image/edit/imageid/'.$image_id);
@@ -153,12 +149,13 @@
 			{
 				if($form->isValid($_POST))
 				{
+					//echo $image_id;die();
 					$input = $this->_getInput($form);
-					//var_dump($input);die();
 					if($this->mImage->editImage($image_id, $input))
 					{
 						if($this->mImage->delManageCategoryByImageId($image_id))
 						{
+							//var_dump($_POST['checkbox']);die();
 							foreach($_POST['checkbox'] as $check)
 							{
 								$this->mImage->insertImageForCategory($image_id,$check);

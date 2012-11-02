@@ -199,7 +199,7 @@ a:hover{text-decoration: underline}
 #content-left img{ padding: 9px 0px 5px 0px; float: left; }
 #gioithieu{width: 500px; height: auto; margin-left: 165px}
 .gioithieu-img{ width: 152px; height: 150px; float: left; padding: 0 8px 5px 0;}
-.gioithieu-img img{width: 150px; height: 107px;}
+.gioithieu-img img{width: 150px !important; height: 107px !important;}
 #chitiet{width: 495px; height: auto; margin-left: 165px}
 #content-right{background-color:#fdfefe !important; width: 300px; padding:5px; float: right; height: auto; margin-top: 15px }
 #content-right1{background-color:#fdfefe !important; width: 300px; padding:5px; float: right; height: auto; margin-top: 15px; }
@@ -276,3 +276,7 @@ a:hover{text-decoration: underline}
 .img130{width:150px; height:107px}
 .comment-div{margin-bottom:20px}
 .comment-div p{margin:0; line-height:20px}
+
+
+/*--------------Image-------------------*/
+.even a img{width:114px !important;height:108px !important}

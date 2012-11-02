@@ -1,0 +1,82 @@
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+	.uploading_inline{display:inline}
+</style>
+<script type="text/javascript">
+	function showLoading()
+	{
+		var uploading = document.getElementById('uploading');
+		uploading.style.display = 'block';
+		$('.uploading').addClass('uploading_inline');
+		$('.file').addClass('uploading_inline');
+	}
+	
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var check = document.getElementById('is_active-1');
+	check.checked = true;
+});
+</script>
+<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/video/upload" enctype="multipart/form-data" onsubmit="showLoading();">
+<article class="module width_full">
+	<header><h3><?php echo $this->title;?></h3></header>
+	<div class="tab_container">
+		<div id="tab1" class="tab_content">
+			<fieldset class="fieldset">
+				<label>Chọn video</label>
+				<?php echo $this->form->getElement('video_file'); ?><img class="uploading" id="uploading" style="display:none" src="<?php echo $this->baseUrl() ?>/application/templates/admin/images/uploading.gif"/>
+			</fieldset>
+			<fieldset class="fieldset">
+				<label>Tiêu đề</label>
+				<?php echo $this->form->getElement('video_title');?>
+			</fieldset>
+			<fieldset class="fieldset1">
+				<label>Mô tả</label>
+				<?php echo $this->form->getElement('video_description');?>
+			</fieldset>
+			<fieldset class="fieldset" style="padding-bottom: 50px;float:right;margin-top: -333px;">
+					<label>Kích hoạt : </label>
+					<div style="margin-left: 80px;">
+						<?php echo $this->form->getElement('is_active');?>
+					</div>
+			</fieldset>
+			<fieldset class="fieldset" style="float:right;margin-top: -172px;" id="checkboxes">
+					<label style="width:300px">Danh sách chuyên mục</label>
+						<div style="margin-left:60px;margin-bottom:10px">
+							<input type="checkbox" onclick="checkall('item',this);" name="check_object"/>
+							<span style="text-transform: uppercase">Chọn tất cả</span>
+						</div>
+						<?php
+							foreach($this->listCategory as $category)
+							{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $category['category_id']; ?>" class="item"/>
+										<span><?php echo $category['category_name']; ?></span>
+									</div>
+									<?php
+							}
+						?>
+				</fieldset>
+		</div>
+	</div>
+	<footer>
+			<div class="submit_link" style="float:right">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/video">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Upload" class="alt_btn">
+			</div>
+		</footer>
+</article>
+</form>

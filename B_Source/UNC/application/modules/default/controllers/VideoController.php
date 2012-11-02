@@ -40,9 +40,6 @@ class VideoController extends Zend_Controller_Action
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;
-		
-		if($this->mDefault->getVideoDefault() != false)
-			$this->view->video_default = $this->mDefault->getVideoDefault();
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 
@@ -118,7 +115,6 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listquangcao = $listquangcao;
 		$this->view->form = $form;
 		$this->view->listComment = $listComment;
-		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
 		/*$paginator = Zend_Paginator::factory($this->mVideo->getListCommentByVideoId($video_id));
 	    $paginator->setItemCountPerPage(5);        

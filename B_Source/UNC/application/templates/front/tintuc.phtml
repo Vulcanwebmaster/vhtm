@@ -1,0 +1,114 @@
+<div class="subpage_wapper_right">
+        	<div class="right-boxs">
+            	<div class="news_title">
+                	<p onclick="toggle_view('col1','col2');" class="news1">Mới nhất</p>
+                    <p onclick="toggle_view('col2','col1');" class="news2">Đọc nhiều nhất</p>
+                </div>
+                <span id="col1">
+                	<ul>
+	                	<?php
+	                    $count = 0; 
+	                    foreach($this->listHotNews as $news)
+						{
+							$count++ ;
+							?>
+									<?php if(isset($news['news_title']))
+									{
+									?>
+									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
+									<?php 
+										echo $news['news_title']
+									?>
+									</a></li>
+									<?php 
+									}
+									?>
+							<?php
+							if($count == 6) break;
+						}
+	                    ?>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
+                </span>
+                <span id="col2" style="display:none">
+	                <ul>
+	                	<?php 
+	                	$count = 0; 
+	                    foreach($this->listNewsMostView as $news)
+						{
+							$count++ ;
+							?>
+									<?php if(isset($news['news_title']))
+									{
+									?>
+									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
+									<?php 
+										echo $news['news_title'];
+									?>
+									</a></li>
+									<?php 
+									}
+									?>
+							<?php
+							if($count == 6) break;
+						}
+	                    ?>
+	                </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
+                </span>
+            </div>
+            <div class="right-boxs" class="bgnews">
+            	<div class="news_title2">
+                	Forum
+                </div>
+                <ul>
+                	<?php
+                	if(count($this->listThread) > 0)
+					{
+						foreach($this->listThread as $thread)
+						{
+                		?>
+                			<li><a href="<?php echo $this->baseUrl() ?>/forum/showthread.php?<?php echo substr($thread,0,1) ?>"><?php echo substr($thread,1); ?></a></li>
+                		<?php
+						}
+					}
+                	?>
+                </ul>
+                <p class="read_add"><a href="#">Xem thêm</a></p>
+                <br style="clear:both" />
+            </div>
+              <div class="right-boxs bgnews2">
+            	<div class="news_title2">
+                	Ảnh đẹp
+                </div>
+                <ul>
+                	<?php 
+                		foreach($this->listImage as $image)
+						{
+							$preg = preg_match_all('#<img.*/>#',$image['image_link'],$match);
+							?>
+								<li  class="even"><a href="#"><?php echo $match[0][0]; ?></a></li>
+							<?php
+						}
+                	?>
+                
+                </ul>
+                <p class="read_add"><a href="<?php echo $this->baseUrl() ?>/hinhanh">Xem thêm</a></p>
+                <br style="clear:both" />
+            </div>
+			<div id="ads-right" class="right-boxs">
+				<div id="video">
+	                <?php
+	                       		foreach($this->listquangcao as $quangcao)
+									{
+										
+	                        		?>
+	                <div class="img-tube">
+	                	<center>
+	                		<a href="<?php echo $quangcao['ads_link']; ?>" target="_blank">   <?php echo $quangcao['ads_banner']; ?></a>
+	                	</center>	
+	                </div>
+	                <?php   } ?>
+            	</div>
+			</div>
+        </div>

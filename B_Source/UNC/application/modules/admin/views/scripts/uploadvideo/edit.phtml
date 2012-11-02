@@ -42,6 +42,43 @@
 				<?php 
 				}
 				?>
+				<fieldset class="fieldset" id="checkboxes">
+					<label style="width:300px">Danh sách chuyên mục</label>
+						<div style="margin-left:60px;margin-bottom:10px">
+							<input type="checkbox" onclick="checkall('item',this);" name="check_object"/>
+							<span style="text-transform: uppercase">Chọn tất cả</span>
+						</div>
+						<?php
+							foreach($this->listCategory as $allCategory)
+							{
+								$check = 0 ;
+								foreach($this->listCategoryId as $category)
+								{
+									if($allCategory['category_id'] == $category)
+									{
+										$check = 1;break;
+									}
+								}
+								if($check == 1)
+								{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $allCategory['category_id']; ?>" class="item" checked="checked"/>
+										<span><?php echo $allCategory['category_name']; ?></span>
+									</div>
+									<?php
+								}
+								else{
+									?>
+									<div style="margin-left:100px">
+										<input type="checkbox" name="checkbox[]" value="<?php echo $allCategory['category_id']; ?>" class="item"/>
+										<span><?php echo $allCategory['category_name']; ?></span>
+									</div>
+									<?php
+								}
+							}
+						?>
+			</fieldset>
 				<!--fieldset>
 					<label>Đặt làm mặc định</label>
 					<?php echo $this->form->getElement('is_default');?>

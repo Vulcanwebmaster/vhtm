@@ -158,7 +158,7 @@
 			
 		}
 		
-		function _getInput($form)
+		function _getInput($form,$listCategoryId)
 		{
 			$input = array(
 						'video_full_link'			=> $form->getValue('link'),
@@ -167,15 +167,13 @@
 						'video_description'			=> $form->getValue('description'),
 						'is_active'					=> $form->getValue('is_active'),
 						'user_upload'				=> $this->user_login,
-						'category_id'				=> $form->getValue('category_id'),
-						'is_default'				=> $form->getValue('is_default')
+						'category_id'				=> $listCategoryId,
 						);
 			return $input;
 		}
 		
 		function insertAction()
 		{
-			//echo $this->role;die();
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -185,15 +183,20 @@
 			$this->view->title = 'Thêm video mới';
 			$this->view->form = $form;
 			$this->view->role = $this->role;
+			$this->view->listCategory = $this->mVideo->getListVideoCategory();
 			if($this->_request->isPost())
 			{
 				if($form->isValid($_POST))
 				{
-					$input = $this->_getInput($form);
-					if($input['is_default'] == "1")
+					$listCategoryId = "";
+					foreach($_POST['checkbox'] as $check)
 					{
-						$this->mVideo->delDefaultVideo();
+						if($listCategoryId == "")
+									$listCategoryId = $check;
+						else $listCategoryId = $listCategoryId.','.$check;
 					}
+					$listCategoryId = str_replace("", "", $listCategoryId);
+					$input = $this->_getInput($form,$listCategoryId);
 					if ($this->mVideo->insertVideoLink($input))
 					{
 						$_SESSION['result']='Thêm mới thành công';
@@ -232,11 +235,6 @@
                                                    "multioptions"=> array(
                                                                       "1" => "Có",
             	                                                      "0" => "Không")));
-			$is_default = $form->createElement("radio","is_default",array(
-                                                        "label" => "Mặc định",
-                                                   "multioptions"=> array(
-                                                                      "0" => "Không",
-            	                                                      "1" => "Có")));												
 			if($this->role == "0")
 			{
 				$listCategoryId = $this->mVideo->getListCategory();
@@ -264,9 +262,8 @@
 			$description->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$categoryId->removeDecorator('HtmlTag')->removeDecorator('Label');	
 			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');
-			$is_default->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElements(array($link,$title,$description,$is_active,$categoryId,$is_default));
+			$form->addElements(array($link,$title,$description,$is_active,$categoryId));
 			return $form;
 		}
 		
@@ -409,6 +406,8 @@
 			$this->view->role = $this->role;
 			$info = $this->mVideo->getVideoById($video_id);
 			$form = $this->formInsert();
+			$this->view->listCategoryId = explode(",", $info['category_id']);
+			$this->view->listCategory = $this->mVideo->getListVideoCategory();
 			
 			if($this->role=="0" | ($this->role=="1" & $this->user_login==$info['user_upload']))
 			{
@@ -418,14 +417,21 @@
 				$form->getElement('title')->setValue($info['video_title']);
 				$form->getElement('description')->setValue($info['video_description']);
 				$form->getElement('is_active')->setValue($info['is_active']);
-				$form->getElement('category_id')->setValue($info['category_id']);
-				$form->getElement('is_default')->setValue($info['is_default']);
 				
 				$this->view->form = $form;
 				$this->view->title = 'Sửa thông tin video';		
 				
 				if($this->_request->isPost())
-				{				
+				{
+					$listCategoryId = "";
+					foreach($_POST['checkbox'] as $check)
+					{
+						if($listCategoryId == "")
+									$listCategoryId = $check;
+						else $listCategoryId = $listCategoryId.','.$check;
+					}
+					$listCategoryId = str_replace("", "", $listCategoryId);
+									
 					if($form->isValid($_POST))
 					{
 						if($video_link != null)
@@ -435,13 +441,9 @@
 								'video_title'			=> $form->getValue('title'),
 								'video_description'		=> $form->getValue('description'),
 								'is_active'				=> $form->getValue('is_active'),
-								'is_default'			=> $form->getValue('is_default')
+								'category_id'			=> $listCategoryId
 							);	
 							
-							if($input['is_default'] == "1")
-							{
-								$this->mVideo->delDefaultVideo();
-							}
 							if($this->mVideo->editVideo($input))
 							{
 								$_SESSION['result']='Cập nhật thành công';
@@ -483,7 +485,7 @@
 						}
 						else
 						{
-							$input = $this->_getInput($form);
+							$input = $this->_getInput($form,$listCategoryId);
 							if ($this->mVideo->updateVideo($video_id,$input))
 							{
 								$_SESSION['result']='Cập nhật thành công';

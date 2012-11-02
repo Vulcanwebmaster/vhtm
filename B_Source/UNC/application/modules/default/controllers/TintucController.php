@@ -17,6 +17,7 @@ class TintucController extends Zend_Controller_Action
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->setAccess();
 		unset($_SESSION['home']);
+		$_SESSION['page'] = 'tintuc';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$listThreadForum = $this->mDefault->getListThread();
@@ -166,7 +167,6 @@ class TintucController extends Zend_Controller_Action
 
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao = $listquangcao;
-		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
 		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
 		$this->view->listThread = $this->listThreadTitle;
@@ -214,7 +214,6 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
-		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
 		if($this->_request->isPost())
 		{
@@ -317,7 +316,6 @@ class TintucController extends Zend_Controller_Action
 		
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
-		$this->view->video_default = $this->mDefault->getVideoDefault();
 		
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();
@@ -334,7 +332,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 		//echo $this->_request->getParam('page');die();
-		$this->view->listThread = $this->mDefault->getListThread();
+		$this->view->listThread = $this->listThreadTitle;
 		
 		//Header title
 		$this->view->headTitle('UNC - '.$this->view->current_category['category_name']);		
