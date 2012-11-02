@@ -1,7 +1,7 @@
 <?php
 class IndexController extends Zend_Controller_Action
 {
-	protected $mDefault, $mVideo;
+	protected $mDefault, $mVideo, $mDiachi;
 	protected $mTintuc;
 	protected $listThreadTitle;
 	public function init()
@@ -15,6 +15,7 @@ class IndexController extends Zend_Controller_Action
 		$this->mVideo=new Default_Model_Mvideo();
 	    $this->mDefault=new Default_Model_Mdefault();
 		$this->mTintuc = new Default_Model_Mtintuc();
+		$this->mDiachi = new Admin_Model_Mdiachi();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
@@ -40,11 +41,12 @@ class IndexController extends Zend_Controller_Action
 		//var_dump($this->mDefault->getListHotNewsJs());die();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
-		
+		$this->view->listdiachi = $this->mDiachi->getListDiachi();
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();
 		$this->view->listChild = $listChild;
+		
 		
 		$listNews=array();
 		foreach ($listParents as $parent)

@@ -368,16 +368,22 @@
                 <div class="ul_footer" id="ul2">
                     <ul class="ul2">
                         <li><a href="#" style="color:#a9a9a9">Địa chỉ</a></li>
-                        <li>123, street name landmark,California 123</li>
-                        <li>Tel: 123-456-7890</li>
-                        <li>Fax. +123-456-7890</li>                 
+                        <?php 
+                        foreach ($this->listdiachi as $listdiachi) {
+                        ?>
+                        <li>Địa chỉ: <?php echo $listdiachi['address'] ?> </li>
+                        <?php } ?>
                       
                     </ul>
                 </div>
                   <div class="ul_footer" id="ul3">
                    	<ul>
                     	<li><a href="#" style="color:#a9a9a9"> Liên hệ Quảng cáo</a></li>
-                        <li>Proin enim velit, fermentum at malesuada in, porta vel ipsum. Pellentesque a erat sit amet lorem rutrum venenatis sed laoreet dui.</li>
+                    	<?php 
+                        foreach ($this->listdiachi as $listdiachi) {
+                        ?>
+                        <li><?php echo $listdiachi['contact'] ?> </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="ul_footer" id="ul4">
