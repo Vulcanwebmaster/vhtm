@@ -11,7 +11,7 @@
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
-			  $this->mDiachi = new Admin_Model_Mdiachi();
+			  $this->mDiachi = new Default_Model_Mdiachi();
 			  @session_start();
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];

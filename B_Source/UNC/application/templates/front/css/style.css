@@ -35,7 +35,7 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 .children_down2{display:inline; line-height:31px; margin-right:5px; color:#5e5648; font-weight:normal; }
 .subpage_wapper_left_top{ background:url('../images/thanhnhon_con.gif') 100% 0; height:31px; width:100%; background-repeat:no-repeat; padding:0;}
 .children_down2 a{ text-decoration:none; color:black}
-.children_down2 a:hover{text-decoration: underline; color: #006699 }
+.children_down2 a:hover{text-decoration: underline; color: #FFFFFF; background: #0a65ab; padding: 6px; border-radius: 1px }
 .subpage_new{ width:100%; height:115px; clear:both; margin-bottom:20px}
 .img_new{ float:left; width:152px; height:auto;}
 .img_new img{box-shadow:0 2px 5px 0 #323232}
@@ -159,15 +159,15 @@ a:hover{text-decoration: underline}
 #menu-left ul li:hover{border:1px; border-bottom-style:dotted; background-color:#0c68ae; margin-right:6px}
 #nav{ width:auto; font-weight: bold; text-align: left; padding-left: 1px; font-family:Tahoma }
         #nav li.item{display:inline-block;padding:9px 10px; color: #5E5648;}
-        li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 12px !important; }
+        li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 12px !important; padding: 7px; border-bottom-right-radius: 2px;border-bottom-left-radius: 2px }
         li .a-style:hover{ font-weight: bold;  }
         #nav li.item:hover,#nav li.item.selected{background:#02528f;}
         #nav li.item a{color:White;text-decoration:none; font-size:14px; margin-right: 5px;  }
         #nav li.item:hover ul.sub,#nav li.item.selected ul.sub{display:block; position:absolute; top:185px;left:auto; width:auto;list-style:none; height:30px;}        
-        #nav li.item.selected ul.sub li.itemSub,#nav li.item:hover ul.sub li.itemSub{display:inline-block;padding:8px 0px;font-size:12px; font-family: Microsoft Sans Serif,airal; height:12px; line-height:20px;}        
-		#nav ul.sub{display:none; padding-left: 1px }
+        #nav li.item.selected .itemSub li:hover ul.sub li.itemSub,#nav li.item:hover ul.sub li.itemSub{display:inline-block;padding:8px 0px;font-size:12px;  height:12px; line-height:20px;}        
+		#nav ul.sub{display:none; padding-left: 1px; margin-left: -11px }
 		.itemSub a{ font-family: Tahoma; }
-		.itemSub a:hover{ color: #006699 }
+		.itemSub a:hover{ background: #02528f; color: #FFFFFF !important; }
 /*----------------end menu------------------*/
 
 /*----------------Content------------------*/

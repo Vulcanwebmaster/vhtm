@@ -1,7 +1,7 @@
 <?php
 class TimkiemController extends Zend_Controller_Action
 {
-	private $mTimkiem;
+	private $mTimkiem, $mDiachi;
 	private $mDefault;
 	private $mTintuc;
 	function init()
@@ -18,6 +18,7 @@ class TimkiemController extends Zend_Controller_Action
 		$this->mTimkiem=new Default_Model_Mtimkiem();
 		$this->mDefault=new Default_Model_Mdefault();
 		$this->mTintuc=new Default_Model_Mtintuc();
+		$this->mDiachi=new Default_Model_Mdiachi();
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	}
 	
@@ -45,7 +46,7 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listParent = $listParents;
 			$listChild=$this->mTintuc->getListChild();
 			$this->view->listChild = $listChild;
-			
+			$this->view->listdiachi = $this->mDiachi->getListDiachi();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
 			$this->view->listNewsMostView = $this->mDefault->getListMostView();
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
@@ -84,6 +85,7 @@ class TimkiemController extends Zend_Controller_Action
 			
 //			$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 	//		$this->view->listvideo = $this->mVideo->getListNewsVideo();
+			$this->view->listdiachi = $this->mDiachi->getListDiachi();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
 			$this->view->listNewsMostView = $this->mDefault->getListMostView();
 			$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();

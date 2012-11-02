@@ -1,5 +1,5 @@
 <?php
-	class Admin_Model_Mdiachi extends Zend_Db_Table_Abstract
+	class Default_Model_Mdiachi extends Zend_Db_Table_Abstract
 	{
 		private $db;
 		function __construct()
