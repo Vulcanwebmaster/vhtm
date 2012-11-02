@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2012 at 04:25 AM
+-- Generation Time: Nov 02, 2012 at 12:12 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -27,16 +27,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `unc_address` (
-  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `contact` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+  `danhmuc` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `noidung` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `lienket` varchar(300) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `unc_address`
 --
 
-INSERT INTO `unc_address` (`address`, `contact`) VALUES
-('123, street name landmark, California 123... Tel:123-456-7890 Fax.+123-456-7890', 'Proin enim velit, fermentum at malesuada in, porta vel ipsum. Pellentesque a erat sit amet lorem rutrum venenatis sed laoreet dui.');
+INSERT INTO `unc_address` (`danhmuc`, `noidung`, `lienket`) VALUES
+('diachi', '123, street name landmark, California 123... Tel:123-456-7890 Fax.+123-456-7890 ', 'a'),
+('lienhequangcao', 'Proin enim velit, fermentum at malesuada in, porta vel ipsum. Pellentesque a erat sit amet lorem rutrum venenatis sed laoreet dui. ', '123'),
+('vanmieu', 'Văn Miếu trước đây bao gồm 20 công trình lớn, nhỏ nhưng đến nay chỉ còn lại vài ba công trình.', 'http://localhost/unc/tin-tuc/chuyen-muc/2-1-van-mieu.html'),
+('vomieu', 'Võ Miếu được lập ra cũng để tôn vinh những công thần đã đóng góp', 'http://localhost/unc/tin-tuc/chuyen-muc/3-1-vo-mieu.html');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

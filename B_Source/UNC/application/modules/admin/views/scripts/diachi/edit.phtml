@@ -21,15 +21,18 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset class="fieldset" style="float:left">
-					<label>Địa chỉ</label>
-					<?php echo $this->form->getElement('address');?>
+				<fieldset class="fieldset" disabled="disabled" >
+					<label>Danh mục</label>
+					<?php echo $this->form->getElement('danhmuc');?>
 				</fieldset>
-				<fieldset class="fieldset" style="float:right">
-					<label>Liên hệ quảng cáo</label>
-					<div style="margin-left: 82px;margin-top: -26px;">
-						<?php echo $this->form->getElement('contact');?>
-					</div>
+				<fieldset class="fieldset" >
+					<label>Nội dung</label>
+					<?php echo $this->form->getElement('noidung');?>
+				</fieldset>
+				<fieldset class="fieldset" >
+					<label>Liên kết</label>
+					<?php echo $this->form->getElement('lienket');?>
+				</fieldset>
 			</div>
 		</div>
 		<footer>

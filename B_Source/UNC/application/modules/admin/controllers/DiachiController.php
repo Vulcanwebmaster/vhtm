@@ -32,7 +32,7 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
-			$list=$this->mDiachi->getListDiachi();
+			$list=$this->mDiachi->getListAllDiachi();
 			$this->view->list = $list;
 			$this->view->title = "Quản lý địa chỉ";
 			$this->view->role = $this->role;
@@ -53,15 +53,17 @@
 			 
 			$form->setMethod('post')->setAction('');
 			
-			$address = new Zend_Form_Element_Text('address');
-			$address->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Địa chỉ không được để trống'));
-			$contact = new Zend_Form_Element_Text('contact');
-			$contact->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Liên hệ không được để trống'));
+			$danhmuc = new Zend_Form_Element_Text('danhmuc');
+			$noidung = new Zend_Form_Element_Text('noidung');
+			$noidung->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Nội dung không được để trống'));
+			$lienket = new Zend_Form_Element_Text('lienket');
+			$lienket->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Liên kết không được để trống'));
 																	  
-			$address->removeDecorator('HtmlTag')->removeDecorator('Label');
-			$contact->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$danhmuc->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$noidung->removeDecorator('HtmlTag')->removeDecorator('Label');
+			$lienket->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElements(array($address,$contact));
+			$form->addElements(array($danhmuc,$noidung,$lienket));
 			return $form;
 		}
 		
@@ -73,12 +75,13 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$form = $this->setForm();
-			$address = $this->_request->getParam('address');
+			$danhmuc = $this->_request->getParam('danhmuc');
 			
-			$info = $this->mDiachi->getListDiachibyAddress($address);
-			$form->setAction($this->view->baseUrl().'/admin/image/edit/address/'.$address);
-			$form->getElement('address')->setValue($info['address']);
-			$form->getElement('contact')->setValue($info['contact']);
+			$info = $this->mDiachi->getListDiachibyAddress($danhmuc);
+			$form->setAction($this->view->baseUrl().'/admin/diachi/edit/danhmuc/'.$danhmuc);
+			$form->getElement('danhmuc')->setValue($info['danhmuc']);
+			$form->getElement('noidung')->setValue($info['noidung']);
+			$form->getElement('lienket')->setValue($info['lienket']);
 				
 			$this->view->form = $form;
 			$this->view->title = "Sửa thông tin địa chỉ";
@@ -89,7 +92,7 @@
 				{
 					$input = $this->_getInput($form);
 					//var_dump($input);die();
-					if($this->mDiachi->editDiachi($address, $input))
+					if($this->mDiachi->editDiachi($danhmuc, $input))
 					{
 						$_SESSION['result']='Cập nhật thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/diachi');

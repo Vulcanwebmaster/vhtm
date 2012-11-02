@@ -7,22 +7,22 @@
 			$this->db=Zend_Registry::get('db');
 		}
 		
-		function getListDiachi()
+		function getListAllDiachi()
 		{
 			$query=$this->db->query('select * from unc_address');
 			return $query->fetchAll();
 		}
-		function getListDiachibyAddress($address)
+		function getListDiachibyAddress($danhmuc)
 		{
-			$query = $this->db->query('select * from unc_images where address = "'.$address.'"');
+			$query = $this->db->query('select * from unc_address where danhmuc = "'.$danhmuc.'"');
 			$list = $query->fetchAll();
 			return $list[0];
 		}
-		function editDiachi($address,$input)
+		function editDiachi($danhmuc,$input)
 		{
 			$query=$this->db->query('update unc_address 
-									set address="'.$input['address'].'", contact="'.$input['contact'].'"
-									where address="'.$address.'"');
+									set noidung="'.$input['noidung'].'", lienket="'.$input['lienket'].'"
+									where danhmuc="'.$danhmuc.'"');
 			return $query;
 		}
 	}
