@@ -17,6 +17,16 @@
 	<script src="<?php echo $this->baseUrl();?>/application/templates/front/js/slide-hotnews.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			//remove end lines
+			var listSubmenu=document.getElementsByClassName("sub");
+			for (var i=0;i<listSubmenu.length;i++)
+			{
+				var listLine=listSubmenu[i].getElementsByClassName("line");
+				var count=listLine.length;
+				var target=listLine[count-1];
+				listSubmenu[i].removeChild(target);
+			}
+			//hightlight selected class
 			$(".selected").children("a").css('background-color','#02528f');
 			$(".selected").children(".sub").css('display','block');
 			//menu
@@ -164,6 +174,7 @@
                         			<li class="itemSub">
 					                    <a class="a-style" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id'];?>-1-<?php echo $child['alias'];?>.html"><?php echo $child['category_name']; ?></a>
 					                </li>
+					                <li class="itemSub line">&iota;</li>
                         		<?php } 
 									}?>
 				            </ul>
