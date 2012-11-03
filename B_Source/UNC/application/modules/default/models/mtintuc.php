@@ -135,10 +135,12 @@
 			return $list[0]['userid'];
 		}
 		
-		function insertComment($news_id,$input)
+		function insertComment($input)
 		{
-			$query = $this->db->query('insert into unc_comment value ("","'.$input['comment_name'].'","'.$input['comment_email'].'","'.$input['comment_content'].'","'.$news_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
-			return $query;
+			//$query = $this->db->query('insert into  unc_comment value ("","'.$input['comment_name'].'","'.$input['comment_email'].'","'.$input['comment_content'].'","'.$news_id.'","'.gmdate('Y-m-d h:i:s',time() + 7*3600).'")');
+			$db = Zend_Registry::get('db');
+			$db->insert('unc_comment',$input);
+			//return $query;
 		}
 		
 		function getListAvatar()

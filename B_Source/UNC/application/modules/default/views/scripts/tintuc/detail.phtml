@@ -1,11 +1,17 @@
+<link href="<?php echo $this->baseUrl();?>/application/templates/front/css/print.css" type="text/css" rel="stylesheet" media="print"/>
 <div style="display: block" id="sendemailstatus">
 	
 </div>
 
 <style>
 	.errors{list-style-type:none; color: red; padding:10px}
-</style>        
-        <div class="element_detail">
+	
+	
+</style>
+       <div id="sendemailstatus">
+       	
+       </div>
+        <div class="element_detail print">
         	<div class="subpage_wapper_left_top_detail">
             	<?php echo $this->news['news_title']?>
             </div>
@@ -13,10 +19,10 @@
                 	<ul>
                     	<li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/date.png"> <?php echo $this->news['news_post_date'] ?></li>
                         <li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/bl.png"> <?php echo count($this->listComment) ?> Bình luận</li>
-                        <li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/print.png"> Bản in</li>
+                        <li><a href="javascript:window.print();return false;"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/print.png"> Bản in</a></li>
                         <li>Chia sẻ:
                         	<ul id="share">
-                            	<li><a href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/mail.png"></a></li>
+                            	<li><a onclick="return formSendMail()" href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/mail.png"></a></li>
                                 <li><a href="https://twitter.com/share" ><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/tt.png"></a>
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 								</li>
@@ -70,18 +76,37 @@
 					}
                 	?>
                 	</div>
-                <div>
-                	<p class="p_detail">Ý kiến của bạn</p>
-                    <form action="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->news['news_id'] ?>-<?php echo $this->news['alias'] ?>.html" method="post">
-                         <?php 
-                         	echo $this->form->getElement('comment_name');
-							echo $this->form->getElement('comment_email');
-							echo $this->form->getElement('comment_content');
-							echo $this->form->getElement('comment_captcha');
-                         ?>
-                         <br/>
-                         <input type="submit" class="submit_detail" value="Gửi bình luận" style="cursor:pointer">
-                    </form>
+               	
+               	<script type="text/javascript">               		
+               		$('#show').show();               		
+            		$(document).ready(function(){
+            			$('#hide').click(function(){
+            				$('#form_comment,#hide').hide();
+            				$('#show').show();
+            				
+            			});
+            			$('#show').click(function(){
+            				$('#form_comment,#hide').show();
+            				$('#show').hide();
+            			});
+            		})
+            	</script>
+                	<button id="hide" style="display: none; cursor: pointer">Ẩn ý kiến người dùng</button>
+                	<button id="show" style="cursor: pointer">Hiện thị ý kiến người dùng</button>
+                	<div id="form_comment" style="display: none">
+	                	<p class="p_detail">Ý kiến của bạn</p>
+	                    <form action="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->news['news_id'] ?>-<?php echo $this->news['alias'] ?>.html" method="post">
+	                         <?php 
+	                         	echo $this->form->getElement('comment_name');
+								echo $this->form->getElement('comment_email');
+								echo $this->form->getElement('comment_content');
+								echo $this->form->getElement('comment_captcha');
+								echo '<input type="hidden" name="news_id_commented" id="news_id_commented" type="" value="'.$this->news_id.'" >'
+	                         ?>
+	                         <br/>
+	                         <input type="submit" class="submit_detail" value="Gửi bình luận" style="cursor:pointer">
+	                    </form>
+                    </div>
                 </div>
            </div>
            <div class="detail_ul">

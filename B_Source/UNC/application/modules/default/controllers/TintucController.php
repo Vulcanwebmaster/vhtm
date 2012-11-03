@@ -137,6 +137,7 @@ class TintucController extends Zend_Controller_Action
 	{
 		$form = $this->setForm();
 		$news_id = $this->_request->getParam('newsid');
+		$this->view->news_id = $news_id;
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news_id);
 		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
@@ -182,13 +183,17 @@ class TintucController extends Zend_Controller_Action
 		{
 			if($form->isValid($_POST)){
 				$comment_captcha = $this->_request->getPost('comment_captcha');
+				$news_id_comment = $this->_request->getPost('news_id_commented');
+				$comment_time = gmdate('Y-m-d h:i:s',time() + 7*3600);
 				$input = array(
 						'comment_name'		=> $form->getValue('comment_name'),
-						'comment_email'		=> $form->getValue('comment_email'),
+						'reader_email'		=> $form->getValue('comment_email'),
+						'comment_time'		=> $comment_time,
+						'news_id'			=> $news_id_comment,
 						'comment_content'	=> $form->getValue('comment_content')
 				);
 				//var_dump($input);die();
-				$this->mTintuc->insertComment($news_id,$input);
+				$this->mTintuc->insertComment($input);
 				$_SESSION['addComment'] = 'Gửi bình luận thành công';
 				$this->_redirect($_SERVER['HTTP_REFERER']);	
 			}
