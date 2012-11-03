@@ -15,11 +15,30 @@
 	<script src="<?php echo $this->baseUrl();?>/application/templates/front/js/jquery-1.7.2.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->baseUrl();?>/application/templates/front/js/switch_news.js" type="text/javascript"></script>
 	<script src="<?php echo $this->baseUrl();?>/application/templates/front/js/slide-hotnews.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".selected").children("a").css('background-color','#02528f');
+			$(".selected").children(".sub").css('display','block');
+			//menu
+			$('.item').children('a').mouseenter(function(){
+				$('.sub').css('display','none');
+				$(this).parent().children('.sub').css('display','block');
+				$(this).parent().children('.sub').css('position','absolute');
+				$(this).parent().children('.sub').css('top','185px');
+			});
+			$('.item').mouseleave(function(){
+				$(this).children('.sub').css('display','none');
+				$(".selected").children(".sub").css('display','block');
+			});
+
+		})
+	</script>
 </head>
 <body>
 	<div id="abc">
 	    <div id="divAdRight" style="display: none; position: absolute; top: 0px">
 		                <?php
+		                if (isset($this->listquangcao4))
 		                       		foreach($this->listquangcao4 as $quangcao)
 										{
 		                        		?>
