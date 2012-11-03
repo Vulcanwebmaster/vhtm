@@ -3,6 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<?php echo $this->headTitle() ?>
+<script>
+	$('')
+</script>
 
 	<!------------script-------------->
     
@@ -22,7 +25,7 @@
 		                        		?>
 		                <div class="img-ads-scrol">
 		                	<center>
-		                		<a href="<?php echo $quangcao['ads_link']; ?>" target="_blank">   <?php echo $quangcao['ads_banner']; ?></a>
+		                		<a href="<?php echo $quangcao['ads_link']; ?>" target="_blank"> <?php echo $quangcao['ads_banner']; ?></a>
 		                	</center>	
 		                </div>
 		                <?php   } ?>    
@@ -121,9 +124,16 @@
 					<?php foreach($this->listParent as $parent)
 					  {
 					  ?>
-					  	<li class="item ">
+					  	<li class="item <?php 
+					  	if(isset($this->categoryid)) {
+						  	if(($parent['category_id']==$this->categoryid)) {
+						  		echo 'selected';
+							}
+						}  
+					  	?>">
 				            <a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $parent['category_id']; ?>-1-<?php echo $parent['alias']; ?>.html"><?php echo $parent['category_name'] ?></a>
-				            <ul class="sub">
+				            
+				            <ul class="sub " id="sub_1">
 								<?php
                         		foreach($this->listChild as $child)
 								{
@@ -181,7 +191,9 @@
     		<?php echo $this->layout()->content;?>
         </div>
 		<?php
+				if($_SESSION['page'] = 'tintuc')
 					echo $this->render("tintuc.phtml");
+				if($_SESSION['page'] = 'hinhanh')
 					echo $this->render("hinhanh.phtml");
 		?>
 	</div>

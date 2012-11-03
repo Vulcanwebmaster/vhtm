@@ -19,7 +19,7 @@ class TintucController extends Zend_Controller_Action
 		$this->setAccess();
 		unset($_SESSION['home']);
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
-		
+		$_SESSION['page'] ='tintuc';
 		$listThreadForum = $this->mDefault->getListThread();
 		$this->listThreadTitle = array();
 		//var_dump($listThreadForum);die();
@@ -240,8 +240,10 @@ class TintucController extends Zend_Controller_Action
 	
 	function listAction()
 	{
+		//var_dump($this->listThreadTitle);die();
 		$this->view->listThread = $this->listThreadTitle;
 		$categoryid = $this->_request->getParam('categoryId');
+		$this->view->categoryid = $categoryid;
 		$is_parent = 0;
 		
 		if($this->mTintuc->isParent($categoryid))
@@ -336,7 +338,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 		//echo $this->_request->getParam('page');die();
-		$this->view->listThread = $this->mDefault->getListThread();
+		$this->view->listThread = $this->listThreadTitle;
 		
 		//Header title
 		$this->view->headTitle('UNC - '.$this->view->current_category['category_name']);		
