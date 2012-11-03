@@ -28,10 +28,11 @@ function cutString($str,$limit)
 				<?php for ($i=0;$i<5;$i++)
 				{?>
 					<div class="hotestnews-div" id="hotestnews-div<?php echo $i;?>" style="<?php if ($i>0) echo 'display:none';?>">
-						<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_avatar'];?>
+						<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_id']; ?>-<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['alias']; ?>.html">
+							<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_avatar'];?>
+						</a>
 						<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_id']; ?>-<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['alias']; ?>.html"><?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_title']?></a>
-						<p class="p-datetime"><?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_post_date']?></p>
-						<p><?php if (isset($this->listHotNews[$i])) echo cutString(strip_tags($this->listHotNews[$i]['news_summary']), 200);?></p>
+						<p><?php if (isset($this->listHotNews[$i])) echo cutString(strip_tags($this->listHotNews[$i]['news_summary']), 600);?></p>
 					</div>
 				<?php }?>
 			</div>

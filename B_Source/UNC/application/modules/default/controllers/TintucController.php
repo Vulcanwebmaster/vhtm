@@ -13,11 +13,12 @@ class TintucController extends Zend_Controller_Action
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
 		
-	    $this->mDefault = new Default_Model_Mdefault();
+	    $this->mDefault = new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mDiachi = new Default_Model_Mdiachi();
 		$this->setAccess();
 		unset($_SESSION['home']);
+		$_SESSION['page'] = 'tintuc';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		$_SESSION['page'] ='tintuc';
 		$listThreadForum = $this->mDefault->getListThread();

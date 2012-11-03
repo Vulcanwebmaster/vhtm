@@ -9,7 +9,7 @@ class HinhanhController extends Zend_Controller_Action
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
 		
-		$this->mDefault = new Default_Model_Mdefault();
+		$this->mDefault = new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mHinhanh = new Default_Model_Mhinhanh();
 		$this->mDiachi = new Default_Model_Mdiachi();

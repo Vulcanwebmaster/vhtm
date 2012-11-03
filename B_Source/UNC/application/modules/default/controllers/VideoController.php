@@ -11,7 +11,7 @@ class VideoController extends Zend_Controller_Action
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
 		
-		$this->mDefault = new Default_Model_Mdefault();
+		$this->mDefault = new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mVideo = new Default_Model_Mvideo();
 		$this->mDiachi = new Default_Model_Mdiachi();

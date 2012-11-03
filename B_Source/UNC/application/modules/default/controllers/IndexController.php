@@ -19,6 +19,7 @@ class IndexController extends Zend_Controller_Action
 		
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
+		$_SESSION['page'] = 'tintuc';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	
 		$listThreadForum = $this->mDefault->getListThread();

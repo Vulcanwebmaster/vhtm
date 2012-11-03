@@ -33,6 +33,7 @@
 	</div>
     <div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px">
 	                <?php
+	                if (isset($this->listquangcao3))
 	                       		foreach($this->listquangcao3 as $quangcao)
 									{
 	                        		?>
@@ -121,6 +122,7 @@
             			<!--------Menu-Top------>
 			<div id="menu-top">
 				<ul id="nav">
+					<li class="item"><a href="<?php echo $this->baseUrl();?>">Trang chủ</a></li>
 					<?php foreach($this->listParent as $parent)
 					  {
 					  ?>
@@ -191,10 +193,10 @@
     		<?php echo $this->layout()->content;?>
         </div>
 		<?php
-				if($_SESSION['page'] = 'tintuc')
-					echo $this->render("tintuc.phtml");
-				if($_SESSION['page'] = 'hinhanh')
-					echo $this->render("hinhanh.phtml");
+					if($_SESSION['page'] == 'tintuc')
+				     echo $this->render("tintuc.phtml");
+				    elseif($_SESSION['page'] == 'hinhanh')
+				     echo $this->render("hinhanh.phtml");
 		?>
 	</div>
 	<br style="clear:both"/>	

@@ -9,6 +9,7 @@ class TimkiemController extends Zend_Controller_Action
 		@session_start();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
+		$_SESSION['page'] = 'tintuc';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
