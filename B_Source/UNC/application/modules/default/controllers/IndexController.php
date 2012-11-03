@@ -13,9 +13,10 @@ class IndexController extends Zend_Controller_Action
 	      
 		@session_start();
 		$this->mVideo=new Default_Model_Mvideo();
-	    $this->mDefault=new Default_Model_Mdefault();
+	    $this->mDefault=new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mDiachi = new Default_Model_Mdiachi();
+		
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");

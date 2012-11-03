@@ -1,10 +1,11 @@
-﻿<?php
-	class Default_Model_Mdefault extends Zend_Db_Table_Abstract
+<?php
+	class Default_Model_Mdf extends Zend_Db_Table_Abstract
 	{
 		private $db;
-		protected $forum;
+		protected $forum,$_name="unc_news";
 		function __construct()
 		{
+			parent::__construct();
 			$this->db = Zend_Registry::get('db');
 			$this->forum = Zend_Registry::get('unc_forum');
 		}
