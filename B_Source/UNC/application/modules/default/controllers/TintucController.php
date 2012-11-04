@@ -250,6 +250,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listThread = $this->listThreadTitle;
 		$categoryid = $this->_request->getParam('categoryId');
 		$this->view->categoryid = $categoryid;
+		$this->view->current_parent=$this->mTintuc->getParentByChild($categoryid);
 		$is_parent = 0;
 		
 		if($this->mTintuc->isParent($categoryid))
