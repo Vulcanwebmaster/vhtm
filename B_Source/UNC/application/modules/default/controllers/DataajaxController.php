@@ -5,12 +5,19 @@ class DataajaxController extends Zend_Controller_Action
 	{	
 		$this->_helper->ajaxContext->addActionContext('sendemail', 'html')
                                		->initContext();
+		$this->_helper->ajaxContext->addActionContext('likecomment', 'html')
+                               		->initContext();
+		$this->_helper->ajaxContext->addActionContext('viphamcomment', 'html')
+                               		->initContext();																		
 									  
 	}	
 	public function indexAction()
 	{
 	}
 	
+	/**
+	 * Action send 1 news for 1 email (input by client)
+	 */
 	public function sendmailAction()
 	{
 		$email = $this->getRequest()->getParam('email');
@@ -25,5 +32,30 @@ class DataajaxController extends Zend_Controller_Action
 		$headers = "From:" . $from;
 		mail($to,$subject,$message,$headers);
 		$this->_helper->layout->disableLayout();
+	}
+	
+	/**
+	 * Action +1 for like (for 1 comment in 1 news)
+	 */
+	public function likecommentAction ()
+	{
+		$idcomment = $this->getRequest()->getParam('idcomment');
+		$idnews = $this->getRequest()->getParam('idnews');
+		$mTinTuc = new Default_Model_Mtintuc();
+		
+		$mTinTuc->likeComment($idcomment);
+		$this->view->listComment = $mTinTuc->getCommentByNewsId($idnews);
+	}
+	
+	/**
+	 * Action +1 for vipham (for 1 comment in 1 news)
+	 */
+	public function viphamcommentAction()
+	{
+		$idcomment = $this->getRequest()->getParam('idcomment');
+		$idnews = $this->getRequest()->getParam('idnews');
+		$mTinTuc = new Default_Model_Mtintuc();
+		$mTinTuc->viphamComment($idcomment);
+		$this->view->listComment = $mTinTuc->getCommentByNewsId($idnews);		
 	}
 }

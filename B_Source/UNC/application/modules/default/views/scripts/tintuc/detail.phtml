@@ -53,25 +53,20 @@
                 	<p class="p_detail">Ý kiến bạn đọc (<?php echo count($this->listComment) ?>)</p> 
                 </div>
                 	<?php if(count($this->listComment) > 0) { ?>
-						<div style="border-bottom:1px solid #e9e9e9">
+						<div id="lstComment" style="border-bottom:1px solid #e9e9e9">
 							<?php foreach($this->listComment as $comment) { ?>
 									<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
 				                    <p><?php echo $comment['comment_time'] ?></p>
 				                    <p><?php echo $comment['comment_content'] ?></p>
-				                    <p style="text-align:right"><a>Thích</a></p>
+				                    <p style="text-align:right"><a href="#" onclick="return likeClick(<?php echo $comment['comment_id']?>);">Thích (<?php echo $comment['like']?>)</a> | <a href="#" onclick="return viphamClick(<?php echo $comment['comment_id']?>);">Báo cáo vi phạm (<?php echo $comment['vipham']?>)</a></p>
+				                    <hr>
 				            <?php } ?>
 						</div>
-					<?php }
-					else {
-						?>
+					<?php } else { ?>
 							<div style="border-bottom:1px solid #e9e9e9;">
 								Tin bài này chưa có bình luận nào
 							</div>								
-						<?php
-					}
-                	?>
-                	
-                
+					<?php } ?>
                	<script type="text/javascript">               		
                		$('#show').show();               		
             		$(document).ready(function(){
@@ -134,6 +129,20 @@
 		} else {
 			alert("Bạn phải nhập một email"); 
 		}
+	}
+</script>
+
+<script>
+	function likeClick(idcomment) {
+		$('#lstComment').load('<?php echo $this->baseUrl('/dataajax/likecomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
+		return false;
+	}
+</script>
+
+<script>
+	function viphamClick(idcomment) {
+		$('#lstComment').load('<?php echo $this->baseUrl('/dataajax/viphamcomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
+		return false;
 	}
 </script>
 <!-------------- End Script Area ------------>

@@ -78,6 +78,9 @@
 		function getListNews()
 		{
 			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id != 0');
+			echo "<pre>";
+			print_r($query->fetchAll());
+			echo "</pre>";
 			return $query->fetchAll();
 		}
 		function getListAds()
@@ -242,4 +245,46 @@
 			$query = $this->forum->query('select * from thread limit 6');
 			return $query->fetchAll();
 		}
+
+		/**
+		 * Increase like when people click Like
+		 */
+		public function likeComment($idcomment) 
+		{
+			
+			$db = Zend_Registry::get('db');
+			$select = $db	->select()
+							->from('unc_comment', array('like'))
+							->where('comment_id = ?', $idcomment);
+			$result = $db->fetchAll($select);
+			foreach ($result as $key => $value) {
+				$like = $value['like'];
+			}
+			
+			$like = $like + 1;
+			$data = array ('like' => $like);
+			$where = "comment_id = ".$idcomment;
+			$db->update('unc_comment', $data, $where); 						
+		}
+		
+		/**
+		 * Increase vipham when people click vipham
+		 */
+		public function viphamComment($idcomment) 
+		{
+			
+			$db = Zend_Registry::get('db');
+			$select = $db	->select()
+							->from('unc_comment', array('vipham'))
+							->where('comment_id = ?', $idcomment);
+			$result = $db->fetchAll($select);
+			foreach ($result as $key => $value) {
+				$vipham = $value['vipham'];
+			}
+			
+			$vipham = $vipham + 1;
+			$data = array ('vipham' => $vipham);
+			$where = "comment_id = ".$idcomment;
+			$db->update('unc_comment', $data, $where); 						
+		}		
 	}
