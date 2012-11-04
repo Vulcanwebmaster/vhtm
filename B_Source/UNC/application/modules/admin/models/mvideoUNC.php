@@ -9,13 +9,13 @@
 		
 		function getList()
 		{
-			$query  = $this->db->query('select * from unc_video where video_extension != "" order by is_active desc,video_id desc');
+			$query  = $this->db->query('select * from unc_video order by is_active desc,video_id desc');
 			return $query->fetchAll();
 		}
 		
 		function insertVideo($input)
 		{
-			$str = 'insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","'.$input['is_active'].'",null,null,"'.$input['user_upload'].'","'.$input['category_id'].'","'.$input['video_extension'].'")';
+			$str = 'insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","'.$input['is_active'].'",null,null,"'.$input['user_upload'].'","'.$input['category_id'].'","0","")';
 			$query = $this->db->query($str);
 			return $query;
 		}
@@ -37,7 +37,7 @@
 		
 		function editAbc()
 		{
-			$query = $this->db->query('update unc_video set video_extension = "" where video_extension = 0');
+			//$query = $this->db->query('update unc_video set video_extension = "" where video_extension = 0');
 		}
 		
 		function delVideo($video_id)

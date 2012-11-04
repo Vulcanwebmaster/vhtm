@@ -13,7 +13,9 @@
 						?>
 							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
 								<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
-	                            <p><?php echo cutString($video['video_title'],50); ?></p>
+	                            <p><?php if (count($video['video_title'])>50) echo cutString($video['video_title'],50); 
+	                            	else echo $video['video_title'];
+	                            ?></p>
 	                        </a></li>
 						<?php
 							}

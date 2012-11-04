@@ -66,18 +66,27 @@
 			return $form;
 		}
 		
-		function _getInput($form,$newFileName,$listCategoryId,$fileExtension)
+		function _getInput($form,$newFileName,$listCategoryId)
 		{
-			$link = APPLICATION_PATH.'/../video/'.$newFileName;
+			$link = $this->view->baseUrl().'/video/'.$newFileName;
+			$link = str_replace('\\', '/', $link);
+			$segment=explode('/', $link);
+			$filename=$segment[count($segment)-1];
+			
+			$command = "ffmpeg -y -itsoffset -{1} " . 
+                "-i {http://localhost".$link."} -vcodec mjpeg " . 
+                "-vframes 1 -an -f rawvideo {".$this->view->baseUrl()."/video/thumbnail/".$filename.".jpg}";
+			exec($command);
+			
+			
 			$input = array(
 										'video_title' 		=> $form->getValue('video_title'),
 										'video_alias'		=> $this->getAliasByName($form->getValue('video_title')),
 										'video_description' => $form->getValue('video_description'),
-										'video_link'		=> str_replace('\\', '/', $link),
+										'video_link'		=> $link,
 										'user_upload'		=> $this->user,
 										'is_active'			=> $this->_request->getPost('is_active'),
-										'category_id'		=> $listCategoryId,
-										'video_extension'	=> $fileExtension
+										'category_id'		=> $listCategoryId
 								);
 			return $input;
 		}
@@ -120,8 +129,9 @@
 								else $listCategoryId = $listCategoryId.','.$check;
 							}
 							$listCategoryId = str_replace("", "", $listCategoryId);
-							$input = $this->_getInput($form,$newFileName,$listCategoryId,$fileExtension);
+							$input = $this->_getInput($form,$newFileName,$listCategoryId);
 							//var_dump($input);die();
+							
 							if($this->mVideo->insertVideo($input)){
 								$_SESSION['result']='Upload thành công';
 								$this->_redirect($this->view->baseUrl().'/../admin/video');

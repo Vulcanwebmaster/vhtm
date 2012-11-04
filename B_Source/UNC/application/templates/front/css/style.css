@@ -35,7 +35,7 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 .children_down2{display:inline; line-height:31px; margin-right:5px; color:#5e5648; font-weight:normal; }
 .subpage_wapper_left_top{ background:url('../images/thanhnhon_con.gif') 100% 0; height:31px; width:100%; background-repeat:no-repeat; padding:0;}
 .children_down2 a{ text-decoration:none; color:black}
-.children_down2 a:hover{text-decoration: underline; color: #FFFFFF; background: #0a65ab; padding: 6px; border-radius: 1px }
+.children_down2 a:hover{ color: #FFFFFF; background: #0a65ab; padding: 6px; border-radius: 1px }
 .subpage_new{ width:100%; height:115px; clear:both; margin-bottom:20px}
 .img_new{ float:left; width:152px; height:auto;}
 .img_new img{box-shadow:0 2px 5px 0 #323232}
@@ -133,7 +133,6 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 
 /*----------------CSS Trung------------*/
 a{ text-decoration: none }
-a:hover{text-decoration: underline}
 .a-title{ font-weight: bold; color: black; text-decoration: none; font-size: 13px }
 .a-title:hover{text-decoration: underline; color: #006699 }
 .p-datetime{ font-style:oblique;  }
