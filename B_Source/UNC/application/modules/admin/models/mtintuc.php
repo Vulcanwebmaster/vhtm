@@ -147,4 +147,33 @@
 		$list=$query->fetchAll();
 		return count($list);
 	}
+
+		function getListAllThamdo()
+		{
+			$query=$this->db->query("select * from unc_polls");
+			return $query->fetchAll();
+		}
+		function getListThamdobyid($polls_id)
+		{
+			$query = $this->db->query('select * from unc_polls where polls_id = "'.$polls_id.'"');
+			$list = $query->fetchAll();
+			return $list[0];
+		}
+		function editThamdo($polls_id,$input)
+		{
+			$query=$this->db->query('update unc_polls 
+									set polls_content="'.$input['polls_content'].'"
+									where polls_id="'.$polls_id.'"');
+			return $query;
+		}	
+		public function insertthamdo($input)
+		{
+			if($this->db->insert('unc_polls',$input)) return true;
+			else return FALSE;
+		}
+		public function deletethamdo($polls_id)
+		{
+			$query=$this->db->query('delete from unc_polls where polls_id="'.$polls_id.'"');
+			return $query;
+		}
 }

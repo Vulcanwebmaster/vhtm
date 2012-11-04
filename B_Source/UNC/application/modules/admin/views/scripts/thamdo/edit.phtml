@@ -1,0 +1,58 @@
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/fckeditor.js" type="text/javascript"></script>
+<script language='javascript' type='text/javascript' src='<?php echo $this->baseUrl();?>/application/templates/admin/js/customs.js'></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
+<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript">
+	$(function() {
+		setUpFCK('image_link',200,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
+	});
+</script>
+<style>
+	.errors{list-style-type:none; color: red; padding:10px}
+</style>
+
+<script type="text/javascript">
+//<!-----------Check all----->
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+//<!-------End Check all----->
+</script>
+
+					<?php if (isset($_SESSION['result']))
+					{
+						echo '<p class="message">';
+						echo $_SESSION['result'];
+						echo '</p>';
+						unset($_SESSION['result']);
+					}
+					?>
+<form method="post" action="<?php echo $this->form->getAction();?>">
+	<article class="module width_full">
+		<header><h3><?php echo $this->title;?></h3></header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<?php echo $this->error;?>
+				<fieldset class="fieldset" style="float:left">
+					<label>Nội dung</label>
+					<?php echo $this->form->getElement('polls_content');?>
+				</fieldset> 
+			</div>
+		</div>
+		<footer>
+			<div class="submit_link" style="float:right">
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/thamdo">Hủy bỏ</a>
+				<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+			</div>
+		</footer>
+	</article>
+</form>
