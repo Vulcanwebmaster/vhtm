@@ -141,6 +141,9 @@ class TintucController extends Zend_Controller_Action
 		$this->view->news_id = $news_id;
 		$news = $this->mTintuc->getNewsByNewsId($news_id);
 		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news_id);
+		// Get first categoryid in list 
+		$first_categoryid = $this->mTintuc->getFirstCategoryIdByNewsId($news_id);
+		
 		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
 		
 		$parentId = $this->mTintuc->getParentByChild($categoryid);
@@ -149,6 +152,10 @@ class TintucController extends Zend_Controller_Action
 		
 		$this->view->listNewestNews = $this->mTintuc->getNewestNews();
 		$this->view->listNewsPosted = $this->mTintuc->getNewsPosted($categoryid);
+		
+		// Get Relate News with first category id of news
+		$this->view->listNewsRelate = $this->mTintuc->getNewsRelate($first_categoryid);
+		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();

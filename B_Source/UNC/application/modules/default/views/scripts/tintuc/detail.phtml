@@ -19,7 +19,7 @@
                 	<ul>
                     	<li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/date.png"> <?php echo $this->news['news_post_date'] ?></li>
                         <li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/bl.png"> <?php echo count($this->listComment) ?> Bình luận</li>
-                        <li><a href="javascript:window.print();return false;"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/print.png"> Bản in</a></li>
+                        <li><a href="javascript:window.print();"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/print.png"> Bản in</a></li>
                         <li>Chia sẻ:
                         	<ul id="share">
                             	<li><a onclick="return formSendMail()" href="#"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/mail.png"></a></li>
@@ -112,13 +112,17 @@
            <div class="detail_ul">
            	  <ul>
            	  	<?php
-           	  	if(count($this->listNewestNews) > 0)
+           	  	if(count($this->listNewsRelate) > 0)
 				{
-					foreach($this->listNewestNews as $news)
+					foreach($this->listNewsRelate as $news)
 					{
+						if ($news['news_id'] != $this->news_id) {
 						?>
 							<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
 						<?php
+						} else {
+							
+						}
 					}
 				}
            	  	?>
