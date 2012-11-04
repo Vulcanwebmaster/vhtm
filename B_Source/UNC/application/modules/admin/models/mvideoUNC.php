@@ -1,9 +1,11 @@
 <?php
 	class Admin_Model_MvideoUNC extends Zend_Db_Table_Abstract
 	{
+		protected $_name='unc_video';
 		private $db;
 		function __construct()
 		{
+			parent::__construct();
 			$this->db=Zend_Registry::get('db');
 		}
 		
@@ -15,8 +17,11 @@
 		
 		function insertVideo($input)
 		{
-			$str = 'insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","'.$input['is_active'].'",null,null,"'.$input['user_upload'].'","'.$input['category_id'].'","0","")';
-			$query = $this->db->query($str);
+			//echo $input['thumbnail']; die(); 
+			//$str = 'insert into unc_video values ("","'.$input['video_title'].'","'.$input['video_alias'].'","'.$input['video_description'].'","'.$input['video_link'].'","'.$input['thumbnail'].'","'.$input['is_active'].'",null,null,"'.$input['user_upload'].'","'.$input['category_id'].'","0","")';
+			
+			//$query = $this->db->query($str);
+			$query=$this->insert($input);
 			return $query;
 		}
 		

@@ -44,9 +44,12 @@
 			//$file->setAttrib('class','file');
 			$file->setLabel('video_file');
            	$file->setRequired(true);
-			
+           	
 			$video_title = new Zend_Form_Element_Text('video_title');
 			$video_title ->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Tiêu đề không được để trống'));
+			
+			$video_thumbnail=new Zend_Form_Element_Textarea('video_thumbnail');
+			$video_thumbnail->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$video_description = new Zend_Form_Element_Textarea('video_description');
 			$video_description->setAttrib('rows','7');
@@ -62,7 +65,7 @@
 			$video_description->removeDecorator('HtmlTag')->removeDecorator('Label');
 			$is_active->removeDecorator('HtmlTag')->removeDecorator('Label');		
 			
-			$form->addElements(array($file,$video_title,$video_description,$is_active));
+			$form->addElements(array($file,$video_title,$video_description,$is_active,$video_thumbnail));
 			return $form;
 		}
 		
@@ -70,14 +73,6 @@
 		{
 			$link = $this->view->baseUrl().'/video/'.$newFileName;
 			$link = str_replace('\\', '/', $link);
-			$segment=explode('/', $link);
-			$filename=$segment[count($segment)-1];
-			
-			$command = "ffmpeg -y -itsoffset -{1} " . 
-                "-i {http://localhost".$link."} -vcodec mjpeg " . 
-                "-vframes 1 -an -f rawvideo {".$this->view->baseUrl()."/video/thumbnail/".$filename.".jpg}";
-			exec($command);
-			
 			
 			$input = array(
 										'video_title' 		=> $form->getValue('video_title'),
@@ -85,6 +80,7 @@
 										'video_description' => $form->getValue('video_description'),
 										'video_link'		=> $link,
 										'user_upload'		=> $this->user,
+										'thumbnail'			=> $form->getValue('video_thumbnail'),
 										'is_active'			=> $this->_request->getPost('is_active'),
 										'category_id'		=> $listCategoryId
 								);
@@ -104,7 +100,7 @@
 			$this->view->form = $form;
 			$this->_upload = new Zend_File_Transfer;
         	$this->_upload->setDestination(APPLICATION_PATH.'/../video/');
-			$this->_upload->addValidator('Extension', false, array('swf', 'flv'));
+			$this->_upload->addValidator('Extension', false, array('swf','mp4', 'flv'));
 			$this->_upload->addValidator('FilesSize',false,array('min' => '10kB', 'max' => '100MB'));
 			if($this->_request->isPost())
 			{
@@ -183,6 +179,7 @@
 								'video_title'		=> $this->_request->getPost('video_title'),
 								'video_alias'		=> $this->getAliasByName($this->_request->getPost('video_title')),
 								'video_description'	=> $this->_request->getPost('video_description'),
+								'thumbnail'			=> $this->_request->getPost('video_thumbnail'),
 								'is_active'			=> $this->_request->getPost('is_active'),
 								'category_id'		=> $listCategoryId
 				);

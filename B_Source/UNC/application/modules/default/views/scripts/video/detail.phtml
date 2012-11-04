@@ -18,7 +18,12 @@
                     </ul>               
             </div>	
             <div id="content_detail">
-            	<?php if (isset($this->video))
+            	<?php 
+            	$thumbnail=$this->video['thumbnail'];
+            	$a=preg_match_all('#/.*g" #',$thumbnail,$src);
+            	$source=substr($src[0][0], 0, strlen($src[0][0])-2);
+            	
+            	if (isset($this->video))
             	if ($this->video['video_full_link']!='')
             	{?>
 					<object width="560" height="315" style="margin-left:40px;">
@@ -36,7 +41,7 @@
 								bgcolor: "#000000",
 								allowScriptAccess: "always",
 								allowFullScreen: "true",
-								wmode: "transparent",				flashvars: "fichier=http://localhost<?php echo $this->video['video_link'];?>&apercu=http://localhost<?php echo $this->baseUrl();?>/video/thumbnail/thumbnail.jpg"
+								wmode: "transparent",				flashvars: "fichier=http://localhost<?php echo $this->video['video_link'];?>&apercu=http://localhost<?php echo $source;?>"
 							};
 						var attributes_4151 = {};
 				        flashObject("http://flash.webestools.com/flv_player/v1_27.swf", "object-video", "620", "405", "8", false, flashvars_4151, params_4151, attributes_4151);
