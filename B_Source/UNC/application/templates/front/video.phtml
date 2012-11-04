@@ -1,0 +1,98 @@
+<div class="subpage_wapper_right">
+	<div id="news_video">
+        	<div class="right-boxs">
+            	<div class="news_title">
+                	<p onclick="toggle_view('col1','col2');" class="news1">Mới nhất</p>
+                    <p onclick="toggle_view('col2','col1');" class="news2">Xem nhiều nhất</p>
+                </div>
+                <span id="col1">
+                	 <ul>
+                		<?php 
+							foreach($this->listvideo as $video)
+							{
+						?>
+							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
+								<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
+	                            <p><?php echo cutString($video['video_title'],50); ?></p>
+	                        </a></li>
+						<?php
+							}
+					 	?>
+                    </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
+                </span>
+                <span id="col2" style="display:none">
+                	 <ul>
+                		<?php 
+							foreach($this->listNewsMostVideo as $video)
+							{
+						?>
+							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
+								<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
+	                            <p><?php echo cutString($video['video_title'],50); ?></p>
+	                        </a></li>
+						<?php
+							}
+					 	?>
+                    </ul>
+	                <p class="read_add"><a href="#">Xem thêm</a></p> <br style="clear:both" />
+                </span>
+            </div>
+            </div>
+            <div class="right-boxs" class="bgnews">
+            	<div class="news_title2">
+                	Forum
+                </div>
+                <ul>
+                	<?php
+                	if(count($this->listThread) > 0)
+					{
+						foreach($this->listThread as $thread)
+						{
+                		?>
+                			<li><a href="<?php echo $this->baseUrl() ?>/forum/showthread.php?<?php echo substr($thread,0,1) ?>"><?php echo substr($thread,1); ?></a></li>
+                		<?php
+						}
+					}
+                	?>
+                </ul>
+                <p class="read_add"><a href="#">Xem thêm</a></p>
+                <br style="clear:both" />
+            </div>
+              <div class="right-boxs bgnews2">
+            	<div class="news_title2">
+                	Ảnh đẹp
+                </div>
+                <ul>
+                	<?php 
+                		if ($this->listImage!=NULL)
+	                		foreach($this->listImage as $image)
+							{
+								$preg = preg_match_all('#<img.*/>#',$image['image_link'],$match);
+								?>
+									<li  class="even"><a href="#"><?php echo $match[0][0]; ?></a></li>
+								<?php
+							}
+                	?>
+                
+                </ul>
+                <p class="read_add"><a href="<?php echo $this->baseUrl() ?>/hinhanh">Xem thêm</a></p>
+                <br style="clear:both" />
+            </div>
+			<div id="ads-right" class="right-boxs">
+				<div id="video">
+	                <?php
+	                       		foreach($this->listquangcao as $quangcao)
+									{
+										
+	                        		?>
+	                <div class="img-tube">
+	                	<center>
+	                		<a href="<?php echo $quangcao['ads_link']; ?>" target="_blank">   <?php echo $quangcao['ads_banner']; ?></a>
+	                	</center>	
+	                </div>
+	                <?php   } ?>
+            	</div>
+			</div>
+
+        </div>

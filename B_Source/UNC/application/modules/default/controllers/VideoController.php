@@ -18,6 +18,7 @@ class VideoController extends Zend_Controller_Action
 		@session_start();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
+		$_SESSION['page'] = 'video';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	
 		unset($_SESSION['home']);
@@ -36,8 +37,9 @@ class VideoController extends Zend_Controller_Action
 		
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 		$this->view->listvideo = $this->mVideo->getListNewsVideo();
+		//var_dump($this->listvideo);die();
 		$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
-        $paginator->setItemCountPerPage(12);        
+        $paginator->setItemCountPerPage(12);
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;

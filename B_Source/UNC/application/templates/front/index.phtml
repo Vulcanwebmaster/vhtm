@@ -224,9 +224,18 @@
         </div>
 		<?php
 					if($_SESSION['page'] == 'tintuc')
+					{
 				     echo $this->render("tintuc.phtml");
+					}
 				    elseif($_SESSION['page'] == 'hinhanh')
+					{
 				     echo $this->render("hinhanh.phtml");
+					}
+					elseif($_SESSION['page'] == 'video')
+					{
+				     echo $this->render("video.phtml");
+					}
+					
 		?>
 	</div>
 	<br style="clear:both"/>	

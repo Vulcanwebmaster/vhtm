@@ -123,7 +123,7 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 #page_video{ margin:0; padding:0}
 #page_video li{ list-style:none; float:left; padding-right:5px !important; width:7px !important; line-height:45px;}
 #page_video a{ text-decoration:none;  color:#2877b3 !important}
-#news_video{ padding:10px; background-color:#fff; margin-bottom: 15px}
+#news_video{  background-color:#fff; margin-bottom: 15px}
 #news_video img{ float:left; width:42%; height: 80px }
 #news_video p{ float:right; width:54%; margin:0; padding:0; font-weight:bold }
 #news_video ul{ margin:0; padding:0}

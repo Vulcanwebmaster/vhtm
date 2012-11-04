@@ -41,7 +41,7 @@
                 
                 	<ul>
                 		<?php 
-							foreach($this->listvideo as $video)
+							foreach($this->list as $video)
 							{
 						?>
 							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
@@ -53,7 +53,7 @@
 					 	?>
                     </ul>
                     <div class="page_video" style="clear:both; padding-top:100px; margin-bottom:15px">
-                    	<?php echo $this->paginationControl($this->listvideo,'Sliding','tintuc/pagination.phtml');?>
+                    	<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
                     </div>
                 
                 

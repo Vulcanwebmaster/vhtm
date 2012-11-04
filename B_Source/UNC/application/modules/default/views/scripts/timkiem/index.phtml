@@ -1,11 +1,12 @@
-<div style="margin-top:10px">
+<div class="element_detail">
 	<?php 
 	if(count($this->list) > 0)
 	{
 		foreach($this->list as $news)
 		{
 	?>
-		<div style="margin-top:10px">
+		<div style="border-bottom: 1px dotted #CCCCCC" class="subpage_new">
+			<div class="img_new">
 				<a class="news_avatar" style="color:blue; float:left" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>">
 	 			<?php
 					if(isset($news['news_avatar']))
@@ -20,10 +21,10 @@
 					}
 	 			?>
 	 			</a>
-	 		
-	 		<div style="float:right">
-	  			<h3 style="color:blue;margin-left:145px;margin-top:-92px"><a style="color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
-	  			<div style="margin-left:145px">
+	 		</div>
+	 		<div class="text_new" style="margin-top: 10px">
+	  			<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
+	  			<p class="text">
 	  				<?php
 	  				 	$str = $news['news_summary']; 
 						
@@ -41,13 +42,10 @@
 						$str = strip_tags($str);
 						echo $str;						
 	  				?>
-	  			</div>
-	  			
-	  			<a style="float:right; color:#07506b" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">Xem tiếp</a>
+	  			</p>
 	 		</div>
 	 		<br style="clear:both">
 	 	</div>
-	 	
  	<?php
 		}
 	}

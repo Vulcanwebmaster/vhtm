@@ -1,15 +1,17 @@
 <?php
 class TimkiemController extends Zend_Controller_Action
 {
-	private $mTimkiem;
+	private $mTimkiem, $mVideo;
 	private $mDefault;
 	private $mTintuc, $mDiachi;
+	
 	function init()
 	{
 		@session_start();
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$_SESSION['page'] = 'tintuc';
+		$_SESSION['page'] = 'video';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
@@ -17,9 +19,10 @@ class TimkiemController extends Zend_Controller_Action
                    'layoutPath' => $layoutPath );
 		Zend_Layout::startMvc ( $option );
 		$this->mTimkiem=new Default_Model_Mtimkiem();
-		$this->mDefault=new Default_Model_Mdefault();
+		$this->mDefault=new Default_Model_Mdf();
 		$this->mTintuc=new Default_Model_Mtintuc();
 		$this->mDiachi=new Default_Model_Mdiachi();
+		$this->mVideo = new Default_Model_Mvideo();
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 	}
 	
@@ -80,16 +83,18 @@ class TimkiemController extends Zend_Controller_Action
 		{
 			
 			$value_search=$this->_request->getPost('search-text');
-			$listvideo = $this->mTimkiem->getNewsByKeyVideo($value_search);
+			$list = $this->mTimkiem->getNewsByKeyVideo($value_search);
+			$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
+			$this->view->listvideo = $this->mVideo->getListNewsVideo();
 			//echo count($listvideo);die();
-			if(count($listvideo) > 0)
+			if(count($list) > 0)
 			{
-				$paginator = Zend_Paginator::factory($listvideo);
+				$paginator = Zend_Paginator::factory($list);
 		        $paginator->setItemCountPerPage(15);
 		        $currentPage = $this->_request->getParam('page',1);
 		        $paginator->setCurrentPageNumber($currentPage);
 		        
-		        $this->view->listvideo = $paginator;
+		        $this->view->list = $paginator;
 			}
 			//---------Thêm template vào các chuyên mục----
 			$listquangcao = $this->mDefault->getListAds();
@@ -100,7 +105,6 @@ class TimkiemController extends Zend_Controller_Action
 			$this->view->listChild = $listChild;
 			
 //			$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
-	//		$this->view->listvideo = $this->mVideo->getListNewsVideo();
 			$this->view->listdiachi = $this->mDiachi->getListDiachi();
 			$this->view->listlienhe = $this->mDiachi->getListLienhe();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
