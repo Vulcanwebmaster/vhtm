@@ -52,31 +52,25 @@
            		<div style="border-bottom:1px solid #e9e9e9">
                 	<p class="p_detail">Ý kiến bạn đọc (<?php echo count($this->listComment) ?>)</p> 
                 </div>
-                
-                	<?php
-                	if(count($this->listComment) > 0)
-					{
-						?>
-							<div style="border-bottom:1px solid #e9e9e9;height:200px;overflow: auto">
-						<?php
-						foreach($this->listComment as $comment)
-						{
-							?>
-								<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
-			                    <p><?php echo $comment['comment_time'] ?></p>
-			                    <p><?php echo $comment['comment_content'] ?></p>
-							<?php
-						}
-					}
+                	<?php if(count($this->listComment) > 0) { ?>
+						<div style="border-bottom:1px solid #e9e9e9">
+							<?php foreach($this->listComment as $comment) { ?>
+									<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
+				                    <p><?php echo $comment['comment_time'] ?></p>
+				                    <p><?php echo $comment['comment_content'] ?></p>
+				            <?php } ?>
+						</div>
+					<?php }
 					else {
 						?>
 							<div style="border-bottom:1px solid #e9e9e9;">
 								Tin bài này chưa có bình luận nào
+							</div>								
 						<?php
 					}
                 	?>
-                	</div>
-               	
+                	
+                
                	<script type="text/javascript">               		
                		$('#show').show();               		
             		$(document).ready(function(){
@@ -91,42 +85,42 @@
             			});
             		})
             	</script>
-                	<button id="hide" style="display: none; cursor: pointer">Ẩn ý kiến người dùng</button>
-                	<button id="show" style="cursor: pointer">Hiện thị ý kiến người dùng</button>
-                	<div id="form_comment" style="display: none">
-	                	<p class="p_detail">Ý kiến của bạn</p>
-	                    <form action="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->news['news_id'] ?>-<?php echo $this->news['alias'] ?>.html" method="post">
-	                         <?php 
-	                         	echo $this->form->getElement('comment_name');
-								echo $this->form->getElement('comment_email');
-								echo $this->form->getElement('comment_content');
-								echo $this->form->getElement('comment_captcha');
-								echo '<input type="hidden" name="news_id_commented" id="news_id_commented" type="" value="'.$this->news_id.'" >'
-	                         ?>
-	                         <br/>
-	                         <input type="submit" class="submit_detail" value="Gửi bình luận" style="cursor:pointer">
-	                    </form>
-                    </div>
-                </div>
+            	<button id="hide" style="display: none; cursor: pointer">Ẩn ý kiến người dùng</button>
+            	<button id="show" style="cursor: pointer">Hiện thị ý kiến người dùng</button>
+            	<div id="form_comment" style="display: none">
+                	<p class="p_detail">Ý kiến của bạn</p>
+                    <form action="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->news['news_id'] ?>-<?php echo $this->news['alias'] ?>.html" method="post">
+                         <?php 
+                         	echo $this->form->getElement('comment_name');
+							echo $this->form->getElement('comment_email');
+							echo $this->form->getElement('comment_content');
+							echo $this->form->getElement('comment_captcha');
+							echo '<input type="hidden" name="news_id_commented" id="news_id_commented" type="" value="'.$this->news_id.'" >'
+                         ?>
+                         <br/>
+                         <input type="submit" class="submit_detail" value="Gửi bình luận" style="cursor:pointer">
+                    </form>
+                </div>                
            </div>
-           <div class="detail_ul">
-           	  <ul>
-           	  	<?php
-           	  	if(count($this->listNewsRelate) > 0)
-				{
-					foreach($this->listNewsRelate as $news)
-					{
-						if ($news['news_id'] != $this->news_id) {
-						?>
-							<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
-						<?php
-						} else {
-							
+           <div class="detail_ul" style="border-top:solid;background-color: #FFFFFF;padding: 15px;">
+				<p class="p_detail">Các tin liên quan:</p>           		
+					<ul>
+					  	<?php
+					  	if(count($this->listNewsRelate) > 0)
+						{
+							foreach($this->listNewsRelate as $news)
+							{
+								if ($news['news_id'] != $this->news_id) {
+								?>
+									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a></li>
+								<?php
+								} else {
+									
+								}
+							}
 						}
-					}
-				}
-           	  	?>
-              </ul>
+					  	?>
+					</ul>
            </div>
 <!-------------- Start Script Area ------------>
 <script>
