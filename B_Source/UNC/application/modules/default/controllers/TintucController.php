@@ -178,6 +178,7 @@ class TintucController extends Zend_Controller_Action
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao = $listquangcao;
 		
+		
 		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
 		$this->view->listThread = $this->listThreadTitle;
 		$this->view->form = $form;

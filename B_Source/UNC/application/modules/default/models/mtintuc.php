@@ -247,7 +247,42 @@
 		}
 
 		/**
+		 * Get list comment by news id (only query command)
+		 * 
+		 * @param int $news_id
+		 * @return string (query command)
+		 */
+		public function getLstCommentByNewID($news_id)
+		{
+			$db = Zend_Registry::get('db');
+			$select = $db	->select()
+							->from('unc_comment')
+							->where('news_id = ?', $news_id)
+							->order(array('comment_time desc'));
+			return $select;			
+		}
+		
+		/**
+		 * Get info of a comment 
+		 * 
+		 * @param int $idcomment
+		 * @return array
+		 */
+		public function getInfoComment($idcomment)
+		{
+			$db = Zend_Registry::get('db');
+			$select = $db	->select()
+							->from('unc_comment')
+							->where('comment_id = ?', $idcomment);
+			$result = $db->fetchAll($select);
+			return $result; 		
+		} 
+		 
+		/**
 		 * Increase like when people click Like
+		 * 
+		 * @param int $idcomment
+		 * @return none (update for table unc_comment)
 		 */
 		public function likeComment($idcomment) 
 		{
@@ -269,6 +304,9 @@
 		
 		/**
 		 * Increase vipham when people click vipham
+		 * 
+		 * @param int $idcomment
+		 * @return none (update for table unc_comment)
 		 */
 		public function viphamComment($idcomment) 
 		{

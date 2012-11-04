@@ -44,7 +44,7 @@ class DataajaxController extends Zend_Controller_Action
 		$mTinTuc = new Default_Model_Mtintuc();
 		
 		$mTinTuc->likeComment($idcomment);
-		$this->view->listComment = $mTinTuc->getCommentByNewsId($idnews);
+		$this->view->comment = $mTinTuc->getInfoComment($idcomment);
 	}
 	
 	/**
@@ -55,7 +55,8 @@ class DataajaxController extends Zend_Controller_Action
 		$idcomment = $this->getRequest()->getParam('idcomment');
 		$idnews = $this->getRequest()->getParam('idnews');
 		$mTinTuc = new Default_Model_Mtintuc();
+		
 		$mTinTuc->viphamComment($idcomment);
-		$this->view->listComment = $mTinTuc->getCommentByNewsId($idnews);		
+		$this->view->comment = $mTinTuc->getInfoComment($idcomment);		
 	}
 }

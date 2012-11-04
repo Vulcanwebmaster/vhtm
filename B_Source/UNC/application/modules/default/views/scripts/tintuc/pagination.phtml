@@ -6,8 +6,11 @@
 	</style>
 	Trang
 <?php 
+
 	if (isset($this->previous)){
+		
   		echo ' <a href="' . $this->url(array('page' => $this->previous)). '"> &lt; Trước</a>  |';
+		
 	}
 	foreach ($this->pagesInRange as $page){
 	   if ($page != $this->current){

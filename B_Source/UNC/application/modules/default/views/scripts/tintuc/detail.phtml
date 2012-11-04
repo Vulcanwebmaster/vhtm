@@ -54,12 +54,15 @@
                 </div>
                 	<?php if(count($this->listComment) > 0) { ?>
 						<div id="lstComment" style="border-bottom:1px solid #e9e9e9">
+							
 							<?php foreach($this->listComment as $comment) { ?>
+								<div id="comment-<?php echo $comment['comment_id']?>">
 									<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
 				                    <p><?php echo $comment['comment_time'] ?></p>
 				                    <p><?php echo $comment['comment_content'] ?></p>
 				                    <p style="text-align:right"><a href="#" onclick="return likeClick(<?php echo $comment['comment_id']?>);">Thích (<?php echo $comment['like']?>)</a> | <a href="#" onclick="return viphamClick(<?php echo $comment['comment_id']?>);">Báo cáo vi phạm (<?php echo $comment['vipham']?>)</a></p>
 				                    <hr>
+								</div>				                    
 				            <?php } ?>
 						</div>
 					<?php } else { ?>
@@ -134,14 +137,16 @@
 
 <script>
 	function likeClick(idcomment) {
-		$('#lstComment').load('<?php echo $this->baseUrl('/dataajax/likecomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
+		id = '#comment-'+idcomment;
+		$(id).load('<?php echo $this->baseUrl('/dataajax/likecomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
 		return false;
 	}
 </script>
 
 <script>
 	function viphamClick(idcomment) {
-		$('#lstComment').load('<?php echo $this->baseUrl('/dataajax/viphamcomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
+		id = '#comment-'+idcomment;
+		$(id).load('<?php echo $this->baseUrl('/dataajax/viphamcomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
 		return false;
 	}
 </script>
