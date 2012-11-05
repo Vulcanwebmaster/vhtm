@@ -270,7 +270,7 @@ class TintucController extends Zend_Controller_Action
 				$check = 0;
 				foreach($listCategoryId as $categoryId)
 				{
-					if($hotNews['category_id'] == $categoryId['category_id'])
+					if(strpos($hotNews['category_id'], ','.$categoryId['category_id'].',')!==false)
 					{
 						$check = 1;break;
 					}
@@ -312,7 +312,12 @@ class TintucController extends Zend_Controller_Action
 		{
 			$list = $this->mTintuc->getListNewsByCategoryId($categoryid);
 			$listquangcao = $this->mTintuc->getListAdsByCategoryId($categoryid);
-			$this->view->listHotNews = $this->mDefault->getListHotNews();
+			$listHotNews = array();
+			foreach ($list as $news)
+			{
+				if ($news['is_hot']=='1') $listHotNews[]=$news;
+			}
+			$this->view->listHotNews = $listHotNews;
 		}
 		
 		$this->view->is_parent = $is_parent;
@@ -338,7 +343,11 @@ class TintucController extends Zend_Controller_Action
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
 		
-		$this->view->listNewsMostView = $this->mDefault->getListMostView();
+		$listNewsMostView=array();
+		for ($i=0; $i<6; $i++)
+			if (isset($list[$i]))
+				$listNewsMostView[]=$list[$i];
+		$this->view->listNewsMostView=$list;
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
 		$this->view->listParent = $this->mTintuc->getListParent();

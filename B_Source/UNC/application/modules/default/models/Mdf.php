@@ -63,9 +63,9 @@
 			return $query->fetchAll();
 		}
 		
-		function getListMostView()
+		function getListMostView($category_id)
 		{
-			$query = $this->db->query('select distinct news_title,news_id,alias from unc_news where news_status="Công khai" order by viewer_number desc limit 6');
+			$query = $this->db->query('select distinct news_title,news_id,alias from unc_news where news_status="Công khai" and category_id like "%,'.$category_id.',%" order by viewer_number desc limit 6');
 			return $query->fetchAll();
 		}
 		

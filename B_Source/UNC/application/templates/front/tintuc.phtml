@@ -6,9 +6,9 @@
                 </div>
                 <span id="col1">
                 	<ul>
-	                	<?php
-	                    $count = 0; 
-	                    foreach($this->listHotNews as $news)
+                		<?php 
+	                	$count = 0; 
+	                    foreach($this->listNewsMostView as $news)
 						{
 							$count++ ;
 							?>
@@ -17,7 +17,7 @@
 									?>
 									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
 									<?php 
-										echo $news['news_title']
+										echo $news['news_title'];
 									?>
 									</a></li>
 									<?php 
@@ -32,9 +32,9 @@
                 </span>
                 <span id="col2" style="display:none">
 	                <ul>
-	                	<?php 
-	                	$count = 0; 
-	                    foreach($this->listNewsMostView as $news)
+	                	<?php
+	                    $count = 0; 
+	                    foreach($this->listHotNews as $news)
 						{
 							$count++ ;
 							?>
@@ -43,7 +43,7 @@
 									?>
 									<li><a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias']; ?>.html">
 									<?php 
-										echo $news['news_title'];
+										echo $news['news_title']
 									?>
 									</a></li>
 									<?php 
