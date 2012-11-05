@@ -36,23 +36,27 @@
             ?>
             <div style="border-bottom: 1px dotted #CCCCCC" class="subpage_new">
             	<div class="img_new">
-            		<?php
-            			if($news['news_avatar'] != "")
-						{
-							$str = $news['news_avatar'];
-							$preg1 = preg_match_all('#<img.*>#',$str,$match);
-							echo $match[0][0];
-						}
-						else {
-							?>
-								<img src="<?php echo $this->baseUrl()?>/application/templates/front/images/new.gif">
-							<?php
-						}
-            		?>
+            		<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">
+	            		<?php
+	            			if($news['news_avatar'] != "")
+							{
+								$str = $news['news_avatar'];
+								$preg1 = preg_match_all('#<img.*>#',$str,$match);
+								echo $match[0][0];
+							}
+							else {
+								?>
+									<img src="<?php echo $this->baseUrl()?>/application/templates/front/images/new.gif">
+								<?php
+							}
+	            		?>
+            		</a>
                 </div>
                 <div class="text_new">
                 	<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a>
-                    <p class="date"><?php echo $news['news_post_date'] ?></p>
+                    <p class="date"><?php if ($news['news_modified_date']=="0000-00-00 00:00:00") 
+                    						echo $news['news_post_date'];
+                    					else  echo $news['news_modified_date'];?></p>
                     <p class="text"><?php echo cutString(strip_tags($news['news_summary']),400)?>...</p>
                 </div>
             </div>

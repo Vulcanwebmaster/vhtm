@@ -192,7 +192,7 @@
 			$list = $query->fetchAll();
 			if(count($list) > 0) {
 				$pieces = explode(",", $list[0]['category_id']);
-				return $pieces[0];
+				return $pieces[1];
 			} else { 
 				return false;
 			}
@@ -207,17 +207,9 @@
 		 */
 		function getNewsRelate($categoryid)
 		{
-			$db = Zend_Registry::get('db');
-			$select = $db	->select()
-							->from('unc_news', array('news_id','news_title','alias'))
-							->where('FIND_IN_SET (?,category_id)', $categoryid)
-							->where("news_status = 'Công khai'")
-							->order(array('news_post_date desc'))
-							->limit(5);
-			$query  = $db->fetchAll($select);
-			//$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id = "'.$categoryid.'" order by news_post_date desc limit 5');
-			//$list=$query->fetchAll();
-			return $query;
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id like "%'.$categoryid.'%" order by news_post_date desc limit 5');
+			$list=$query->fetchAll();
+			return $list;
 		}
 		
 		function getParentByChild($categoryid)
