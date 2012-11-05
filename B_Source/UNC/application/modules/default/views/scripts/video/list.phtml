@@ -38,7 +38,17 @@
 							{
 						?>
 							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
+							<?php if ($video['thumbnail']=='')
+							{?>
 								<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
+							<?php }
+							else
+							{
+								$thumbnail=$video['thumbnail'];
+				            	$a=preg_match_all('#/.*g" #',$thumbnail,$src);
+				            	$source=substr($src[0][0], 0, strlen($src[0][0])-2); ?>
+				            	<img src="<?php echo $source;?>" style="box-shadow:0 2px 5px 0 #505050"/>
+							<?php }?>
 	                            <p><?php echo cutString($video['video_title'],20); ?></p>
 	                        </a></li>
 						<?php

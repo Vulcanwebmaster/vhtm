@@ -73,7 +73,7 @@ function cutString($str,$limit)
                 	<div class="children_down-title"><a>Video</a></div>
                 	<div class="subpage_wapper_left_top" style="margin-bottom:10px">
 						<ul style="margin:0 0 0 20px; list-style-type:none">
-							<li class="category-more"><a><strong>Xem tất cả</strong></a></li>
+							<li class="category-more"><a href="<?php echo $this->baseUrl();?>/video/danh-sach/1-trang.html"><strong>Xem tất cả</strong></a></li>
 						</ul>					
 					</div>
                 	<?php foreach ($this->listVideo as $video)
@@ -153,28 +153,5 @@ function cutString($str,$limit)
 				               <!---------end bản tin------->
 				               </div>  
 				<?php }?>
- <div class="news" style="width: 640px;">
-			<!--Câu hỏi-->
-		<p><?php
-		foreach($this->listcauhoi as $listcauhoi)
-		{
-			echo $listcauhoi['polls_content'];
-		}
-		?></p>
-			<!--End Câu hỏi-->
-			<!--Trả lời-->
-		<p>
-		<?php
-		foreach($this->listtraloi as $listtraloi)
-		{
-		?>
-			<input type="radio" name="question" />
-		<?php
-			echo $listtraloi['polls_content'];
-		}
-		?></p>
-		<input type="submit" name="submit" value="Bình chọn" class="alt_btn">
-			<!--End Trả lời-->
-</div>
-
+ 			<?php echo $this->render('index/binhchon.phtml')?>
 </div>

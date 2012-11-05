@@ -1,9 +1,9 @@
 <?php
 class TimkiemController extends Zend_Controller_Action
 {
-	private $mTimkiem, $mVideo;
-	private $mDefault;
-	private $mTintuc, $mDiachi;
+	protected $mTimkiem, $mVideo;
+	protected $mDefault;
+	protected $mTintuc, $mDiachi;
 	
 	function init()
 	{
@@ -28,7 +28,7 @@ class TimkiemController extends Zend_Controller_Action
 	
 	function indexAction()
 	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		/*$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		if ($this->_request->isPost())
 		{
 			
@@ -73,7 +73,7 @@ class TimkiemController extends Zend_Controller_Action
 			//---------END Thêm template vào các chuyên mục----
 		}
 		//Header title
-		$this->view->headTitle('UNC - Tìm kiếm');		
+		$this->view->headTitle('UNC - Tìm kiếm');		*/
 	}
 
 	function searchvideoAction()

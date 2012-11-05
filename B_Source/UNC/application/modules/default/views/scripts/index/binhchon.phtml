@@ -1,0 +1,33 @@
+<div class="news" style="width: 640px;">
+	<?php if (!isset($_SESSION['voted']))
+	{?>
+	<form action="<?php echo $this->baseUrl()?>/index/binhchon" method="post" name="bc-form">
+			<!--Câu hỏi-->
+		<p style="float:left">
+		<?php
+		foreach($this->listcauhoi as $listcauhoi)
+		{
+			echo $listcauhoi['polls_content'];
+		}
+		?></p>
+			<!--End Câu hỏi-->
+			<!--Trả lời-->
+		<ul style="float:left; list-style-type:none">
+			<?php
+			foreach($this->listtraloi as $listtraloi)
+			{
+			?>
+				<li>
+				<input type="radio" name="answer" value="<?php echo $listtraloi['polls_id'];?>"/>
+			<?php
+				echo $listtraloi['polls_content'];
+				echo '</li>';
+			}
+			?>
+			<li><input type="submit" value="Bình chọn" name="submit"/></li>
+		</ul>
+		
+	</form>
+	<?php }
+	else echo '<p>Bạn đã bình chọn lần này.</p>';?>
+</div>

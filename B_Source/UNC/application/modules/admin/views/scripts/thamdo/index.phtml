@@ -42,6 +42,7 @@
 								{?>
 									{ order: '<?php echo $count;?>', 
 										polls_content: "<?php echo $item['polls_content'];?>",
+										polls_status: "<?php if ($item['polls_status']==0) echo 'Câu hỏi'; else echo 'Câu trả lời';?>",
 										polls_vote:	   "<?php echo $item['polls_vote'];?>",
 										sua: 
 											'<?php 
@@ -68,6 +69,13 @@
 							{
 								key: 'polls_content',
 								label: 'Nội dung',
+								sortable:true,
+								formatter: '<span>{value}</span>',
+								allowHTML: true 
+							},
+							{
+								key: 'polls_status',
+								label: 'Thể loại',
 								sortable:true,
 								formatter: '<span>{value}</span>',
 								allowHTML: true 

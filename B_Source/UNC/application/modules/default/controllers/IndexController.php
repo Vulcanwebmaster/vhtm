@@ -1,7 +1,7 @@
 <?php
 class IndexController extends Zend_Controller_Action
 {
-	protected $mDefault, $mVideo, $mDiachi;
+	protected $mDefault, $mVideo, $mDiachi, $mPoll;
 	protected $mTintuc;
 	protected $listThreadTitle;
 	function init()
@@ -15,6 +15,7 @@ class IndexController extends Zend_Controller_Action
 	    $this->mDefault=new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mDiachi = new Default_Model_Mdiachi();
+		$this->mPoll=new Default_Model_Mpoll();
 		
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
@@ -79,5 +80,17 @@ class IndexController extends Zend_Controller_Action
 		$this->view->headTitle('UNC - Trang chủ');
 	}
 
-
+	public function binhchonAction()
+	{
+		if ($this->_request->isPost())
+		{
+			$answer=$this->_request->getPost('answer');
+			$result=$this->mPoll->increasePollById($answer);
+			if ($result)
+			{
+				$_SESSION['voted']='true';
+			}
+		}
+		$this->_redirect($this->view->baseUrl().'/../');
+	}
 }

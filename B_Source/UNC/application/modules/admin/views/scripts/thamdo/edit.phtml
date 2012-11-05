@@ -42,9 +42,12 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<?php echo $this->error;?>
-				<fieldset class="fieldset" style="float:left">
+				<fieldset class="fieldset">
 					<label>Nội dung</label>
 					<?php echo $this->form->getElement('polls_content');?>
+				</fieldset> 
+				<fieldset class="fieldset">
+					<label>Thể loại: <?php if ($this->type="0") echo 'Câu hỏi'; else echo 'Câu trả lời';?></label>
 				</fieldset> 
 			</div>
 		</div>

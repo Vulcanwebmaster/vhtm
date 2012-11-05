@@ -115,6 +115,7 @@
 			$info = $this->mTintuc->getListThamdobyid($polls_id);
 			$form->setAction($this->view->baseUrl().'/admin/thamdo/edit/pollsid/'.$polls_id);
 			$form->getElement('polls_content')->setValue($info['polls_content']);
+			$this->view->type=$info['polls_status'];
 				
 			$this->view->form = $form;
 			$this->view->title = "Sửa thông tin thăm dò";

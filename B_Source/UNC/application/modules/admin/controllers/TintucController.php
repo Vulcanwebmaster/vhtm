@@ -523,11 +523,11 @@
 					$input = $this->_getInput($form);
 					
 					$checkbox = "";
-						foreach($_POST['checkbox'] as $check)
-						{
-							$checkbox = $checkbox.$check.',';
-						}
-					
+					foreach($_POST['checkbox'] as $check)
+					{
+						$checkbox = $checkbox.$check.',';
+					}
+					$checkbox=','.$checkbox;
 					if ($this->mtintuc->editnews($id, $input,$checkbox))
 					{
 						$_SESSION['result']='Cập nhật thành công';

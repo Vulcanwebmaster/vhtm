@@ -264,7 +264,6 @@ class TintucController extends Zend_Controller_Action
 		{
 			$is_parent = 1;
 			$listCategoryId = $this->mTintuc->getListChildByParent($categoryid);
-			//var_dump($listCategoryId);die();
 			$listHot = array();
 			$listHotNews = $this->mTintuc->getListHotNews();
 			foreach($listHotNews as $hotNews)
@@ -321,7 +320,9 @@ class TintucController extends Zend_Controller_Action
         $paginator->setCurrentPageNumber($currentPage);
         
 		if($is_parent == "1") 
+		{
 			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
+		}
 		else 
 		{
 			$parentId = $this->mTintuc->getParentByChild($categoryid);
@@ -330,6 +331,8 @@ class TintucController extends Zend_Controller_Action
 		}		
 		
 		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
+		$parent_current_category_id=$this->mTintuc->getParentByChild($categoryid);
+		$this->view->parent_current_category=$this->mTintuc->getCategoryNameByCategoryId($parent_current_category_id);
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
 		

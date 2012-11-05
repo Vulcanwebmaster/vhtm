@@ -5,6 +5,7 @@
 		protected $forum;
 		function __construct()
 		{
+			parent::__construct();
 			$this->db = Zend_Registry::get('db');
 			$this->forum = Zend_Registry::get('unc_forum');
 		}
@@ -66,7 +67,7 @@
 		
 		function getListNewsByCategoryId($CategoryId)
 		{
-			$query = $this->db->query('select * from unc_news where category_id = "'.$CategoryId.'"');
+			$query = $this->db->query('select * from unc_news where category_id like "%,'.$CategoryId.',%"');
 			return $query->fetchAll();
 		}
 		function getListAdsByCategoryId($CategoryId)
