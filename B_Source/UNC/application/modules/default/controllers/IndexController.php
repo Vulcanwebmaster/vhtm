@@ -1,7 +1,7 @@
 <?php
 class IndexController extends Zend_Controller_Action
 {
-	protected $mDefault, $mVideo, $mDiachi, $mPoll;
+	protected $mDefault, $mVideo, $mDiachi, $mPoll, $mHinhanh;
 	protected $mTintuc;
 	protected $listThreadTitle;
 	function init()
@@ -16,6 +16,7 @@ class IndexController extends Zend_Controller_Action
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mDiachi = new Default_Model_Mdiachi();
 		$this->mPoll=new Default_Model_Mpoll();
+		$this->mHinhanh= new Default_Model_Mhinhanh();
 		
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
@@ -34,6 +35,7 @@ class IndexController extends Zend_Controller_Action
 
 	public function indexAction()
 	{
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		$this->view->listThread = $this->listThreadTitle;
 		$this->view->headTitle = "UNC - Trang chủ";
 		$this->view->listVideo=$this->mDefault->getListVideoByLimit(4);
@@ -51,12 +53,23 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();
 		$this->view->listChild = $listChild;
+		$this->view->listNewsMostView=$this->mDefault->getListMostView();
 		
 		
 		$listNews=array();
 		foreach ($listParents as $parent)
 		{
-			$listNews[$parent['category_id']]=$this->mTintuc->getTinTuc($parent['category_id']);
+			$listChild=$this->mTintuc->getListChildByParent($parent['category_id']);
+			$listChildNews=array();
+			foreach ($listChild as $child)
+			{
+				$newlist=$this->mTintuc->getListNewsByCategoryId($child['category_id']);
+				foreach($newlist as $newNews)
+				{
+					$listChildNews[]=$newNews;
+				}
+			}
+			$listNews[$parent['category_id']]=$listChildNews;
 		}
 			//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();

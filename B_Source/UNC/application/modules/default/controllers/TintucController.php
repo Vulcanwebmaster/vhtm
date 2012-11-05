@@ -1,7 +1,7 @@
 <?php
 class TintucController extends Zend_Controller_Action
 {
-	protected $mTintuc, $mDiachi;
+	protected $mTintuc, $mDiachi, $mHinhanh;
 	protected $mDefault;
 	protected $listThreadTitle;
 	
@@ -15,6 +15,7 @@ class TintucController extends Zend_Controller_Action
 	    $this->mDefault = new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();
 		$this->mDiachi = new Default_Model_Mdiachi();
+		$this->mHinhanh= new Default_Model_Mhinhanh();
 		$this->setAccess();
 		unset($_SESSION['home']);
 		$_SESSION['page'] = 'tintuc';
@@ -135,6 +136,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		$form = $this->setForm();
 		$news_id = $this->_request->getParam('newsid');
 		$this->view->news_id = $news_id;
@@ -210,6 +212,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function timkiemAction()
 	{
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao1 = $this->mDefault->getListAds1();
 		$listquangcao2 = $this->mDefault->getListAds2();
@@ -251,6 +254,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function listAction()
 	{
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		//var_dump($this->listThreadTitle);die();
 		$this->view->listThread = $this->listThreadTitle;
 		$categoryid = $this->_request->getParam('categoryId');
