@@ -9,18 +9,18 @@
 
 	if (isset($this->previous)){
 		
-  		echo ' <a href="' . $this->url(array('page' => $this->previous)). '"> &lt; Trước</a>  |';
+  		echo ' <a class="prev-bt" href="' . $this->url(array('page' => $this->previous)). '"> &lt; Trước</a>  |';
 		
 	}
 	foreach ($this->pagesInRange as $page){
 	   if ($page != $this->current){
-	   		echo  ' <a href="' . $this->url(array('page' => $page)). '">' . $page . '</a>  |';
+	   		echo  ' <a class="number-bt" href="' . $this->url(array('page' => $page)). '">' . $page . '</a>  |';
 	  }else{
 	  	echo '<strong>'.$page . '</strong>  |';
 	  }
    }
 	 if (isset($this->next)){
-		echo ' <a href="' . $this->url(array('page' => $this->next)) . '">Sau &gt;</a>';
+		echo ' <a class="next-bt" href="' . $this->url(array('page' => $this->next)) . '">Sau &gt;</a>';
   	 }
   ?>
 </div>

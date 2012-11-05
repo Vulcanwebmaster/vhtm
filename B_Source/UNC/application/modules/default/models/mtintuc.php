@@ -79,9 +79,6 @@
 		function getListNews()
 		{
 			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id != 0');
-			echo "<pre>";
-			print_r($query->fetchAll());
-			echo "</pre>";
 			return $query->fetchAll();
 		}
 		function getListAds()

@@ -1,0 +1,36 @@
+
+<?php if(count($this->listComment) > 0) { ?>
+						<div style="border-bottom:1px solid #e9e9e9">
+							<?php foreach($this->listComment as $comment) { ?>
+									<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
+				                    <p><?php echo $comment['comment_time'] ?></p>
+				                    <p><?php echo $comment['comment_content'] ?></p>
+				                    <p style="text-align:right" class="thich-button"><a>Thích</a></p>
+				            <?php } ?>
+						</div>
+						<div>
+							<?php echo $this->paginationControl($this->listComment,'Sliding','tintuc/pagination.phtml');?>
+						</div>
+					<?php }
+					else {
+						?>
+							<div style="border-bottom:1px solid #e9e9e9;">
+								Tin bài này chưa có bình luận nào
+							</div>								
+						<?php
+					}
+                	?>
+<script type="text/javascript">
+		$(".paginationControl .number-bt").click(function(){
+			var page= parseInt($(this).text());
+			$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
+			return false;
+		});
+		$(".paginationControl .next-bt, .paginationControl .prev-bt").click(function(){
+			var url= $(this).attr('href');
+			var segments=url.split('/');
+			var page=segments[segments.length-1];
+			$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
+			return false;
+		})
+</script>                	

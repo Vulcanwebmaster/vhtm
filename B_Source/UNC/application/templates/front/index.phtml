@@ -159,7 +159,7 @@
             			<!--------Menu-Top------>
 			<div id="menu-top">
 				<ul id="nav">
-					<li class="item"><a href="<?php echo $this->baseUrl();?>">Trang chủ</a></li>
+					<li class="item" id="home-menu"><a href="<?php echo $this->baseUrl();?>">Trang chủ</a></li>
 					<?php 
 					if (isset($this->listParent))
 					foreach($this->listParent as $parent)
@@ -200,7 +200,7 @@
 				            </ul>
 				        </li>
 					  <?php }?>
-			        <li class="item">
+			        <li class="item" id="video-menu">
 			            <a href="<?php echo $this->baseUrl(); ?>/video/danh-sach/1-trang.html">Video</a>
 			        </li>
 			        <li class="item">

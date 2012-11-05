@@ -177,8 +177,7 @@ class TintucController extends Zend_Controller_Action
 		$listquangcao = $this->mDefault->getListAds();
 		$this->view->listquangcao = $listquangcao;
 		
-		
-		$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
+		//$this->view->listComment = $this->mTintuc->getCommentByNewsId($news_id);
 		$this->view->listThread = $this->listThreadTitle;
 		$this->view->form = $form;
 		
@@ -208,7 +207,6 @@ class TintucController extends Zend_Controller_Action
 		}
 		
 	}
-	
 	
 	function timkiemAction()
 	{
@@ -264,6 +262,7 @@ class TintucController extends Zend_Controller_Action
 		{
 			$is_parent = 1;
 			$listCategoryId = $this->mTintuc->getListChildByParent($categoryid);
+			//var_dump($listCategoryId);die();
 			$listHot = array();
 			$listHotNews = $this->mTintuc->getListHotNews();
 			foreach($listHotNews as $hotNews)
@@ -280,19 +279,22 @@ class TintucController extends Zend_Controller_Action
 			}
 			
 			$list = array();
-			$listNews = $this->mTintuc->getListNews();
+			$listNewsId=',';
 			foreach($listCategoryId as $categoryId)
 			{
-				foreach($listNews as $news)
+				$subList=$this->mTintuc->getListNewsByCategoryId($categoryId['category_id']);
+				foreach ($subList as $news)
 				{
-					if($news['category_id'] == $categoryId['category_id'])
+					if (strpos($listNewsId, ','.$news['news_id'].',')===false)
 					{
 						$list[] = $news;
+						$listNewsId=$listNewsId.$news['news_id'].',';
 					}
 				}
 			}
 			$listquangcao = array();
 			$listAds = $this->mTintuc->getListAds();
+			
 			foreach($listCategoryId as $categoryId)
 			{
 				foreach($listAds as $ads)
@@ -358,7 +360,7 @@ class TintucController extends Zend_Controller_Action
 		$this->view->listThread = $this->listThreadTitle;
 		
 		//Header title
-		$this->view->headTitle('UNC - '.$this->view->current_category['category_name']);		
+		$this->view->headTitle('UNC - '.$this->view->current_category['category_name']);
 	}
 
 	function logoutAction()
@@ -367,4 +369,17 @@ class TintucController extends Zend_Controller_Action
 		$this->_redirect($_SERVER['HTTP_REFERER']);
 	}
 	
+	function loadcommentAction()
+	{
+		$this->_helper->layout()->disableLayout();
+		$news_id = $this->_request->getParam('newsid');
+		$listComment = $this->mTintuc->getCommentByNewsId($news_id);
+		$paginator = Zend_Paginator::factory($listComment);
+        $paginator->setItemCountPerPage(8);        
+        $currentPage = $this->_request->getParam('page',1);
+        $paginator->setCurrentPageNumber($currentPage);
+        
+        $this->view->listComment=$paginator;
+        $this->view->news_id=$news_id;
+	}
 }

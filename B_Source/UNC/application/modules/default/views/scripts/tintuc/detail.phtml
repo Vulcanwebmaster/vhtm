@@ -52,24 +52,33 @@
            		<div style="border-bottom:1px solid #e9e9e9">
                 	<p class="p_detail">Ý kiến bạn đọc (<?php echo count($this->listComment) ?>)</p> 
                 </div>
-                	<?php if(count($this->listComment) > 0) { ?>
-						<div id="lstComment" style="border-bottom:1px solid #e9e9e9">
-							
+                	<!--<?php if(count($this->listComment) > 0) { ?>
+						<div style="border-bottom:1px solid #e9e9e9">
 							<?php foreach($this->listComment as $comment) { ?>
-								<div id="comment-<?php echo $comment['comment_id']?>">
 									<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
 				                    <p><?php echo $comment['comment_time'] ?></p>
 				                    <p><?php echo $comment['comment_content'] ?></p>
-				                    <p style="text-align:right"><a href="#" onclick="return likeClick(<?php echo $comment['comment_id']?>);">Thích (<?php echo $comment['like']?>)</a> | <a href="#" onclick="return viphamClick(<?php echo $comment['comment_id']?>);">Báo cáo vi phạm (<?php echo $comment['vipham']?>)</a></p>
-				                    <hr>
-								</div>				                    
+				                    <p style="text-align:right"><a>Thích</a></p>
 				            <?php } ?>
 						</div>
-					<?php } else { ?>
+					<?php }
+					else {
+						?>
 							<div style="border-bottom:1px solid #e9e9e9;">
 								Tin bài này chưa có bình luận nào
 							</div>								
-					<?php } ?>
+						<?php
+					}
+                	?>-->
+                <div id="comment-panel" style="margin-bottom:15px">
+                	
+                </div>
+                <script type="text/javascript">
+					$(document).ready(function(){
+						$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>");
+					});
+				</script>
+                
                	<script type="text/javascript">               		
                		$('#show').show();               		
             		$(document).ready(function(){
@@ -84,8 +93,8 @@
             			});
             		})
             	</script>
-            	<button id="hide" style="display: none; cursor: pointer">Ẩn ý kiến người dùng</button>
-            	<button id="show" style="cursor: pointer">Hiện thị ý kiến người dùng</button>
+            	<button id="hide" style="display: none; cursor: pointer">Ẩn giao diện đăng nhập</button>
+            	<button id="show" style="cursor: pointer">Hiển thị giao diện đăng nhập</button>
             	<div id="form_comment" style="display: none">
                 	<p class="p_detail">Ý kiến của bạn</p>
                     <form action="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->news['news_id'] ?>-<?php echo $this->news['alias'] ?>.html" method="post">
@@ -132,22 +141,6 @@
 		} else {
 			alert("Bạn phải nhập một email"); 
 		}
-	}
-</script>
-
-<script>
-	function likeClick(idcomment) {
-		id = '#comment-'+idcomment;
-		$(id).load('<?php echo $this->baseUrl('/dataajax/likecomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
-		return false;
-	}
-</script>
-
-<script>
-	function viphamClick(idcomment) {
-		id = '#comment-'+idcomment;
-		$(id).load('<?php echo $this->baseUrl('/dataajax/viphamcomment/format/html/idnews/'.$this->news_id.'?idcomment=')?>'+idcomment);
-		return false;
 	}
 </script>
 <!-------------- End Script Area ------------>
