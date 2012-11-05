@@ -4,13 +4,12 @@ class IndexController extends Zend_Controller_Action
 	protected $mDefault, $mVideo, $mDiachi;
 	protected $mTintuc;
 	protected $listThreadTitle;
-	public function init()
+	function init()
 	{
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 
-	                  'layoutPath' => $layoutPath );
-	    Zend_Layout::startMvc ( $option );
-	      
+	                  'layoutPath' => $layoutPath);
+	    Zend_Layout::startMvc ($option);
 		@session_start();
 		$this->mVideo=new Default_Model_Mvideo();
 	    $this->mDefault=new Default_Model_Mdf();
@@ -21,7 +20,7 @@ class IndexController extends Zend_Controller_Action
 		$_SESSION['home'] = 'home';
 		$_SESSION['page'] = 'tintuc';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
-	
+		
 		$listThreadForum = $this->mDefault->getListThread();
 		$this->listThreadTitle = array();
 		foreach($listThreadForum as $thread)
@@ -45,6 +44,8 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$this->view->listvanmieu = $this->mDiachi->getListVanmieu();
 		$this->view->listvomieu = $this->mDiachi->getListVomieu();
+		$this->view->listcauhoi = $this->mDefault->getListPolls();
+		$this->view->listtraloi = $this->mDefault->getListPolls1();
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();

@@ -95,4 +95,21 @@
 			if(count($list) > 0) return $list;
 			else return false;
 		}
+		
+		function getListPolls()
+		{
+			$query = $this->db->query('SELECT * FROM unc_polls
+												WHERE polls_status =0
+												ORDER BY polls_id DESC
+												LIMIT 1 ');
+			return $query->fetchAll();
+		}
+		function getListPolls1()
+		{
+			$query = $this->db->query('SELECT * FROM unc_polls
+												WHERE polls_status =1
+												ORDER BY polls_id DESC
+												LIMIT 5 ');
+			return $query->fetchAll();
+		}
 	}
