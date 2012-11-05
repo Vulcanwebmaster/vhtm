@@ -153,4 +153,28 @@ function cutString($str,$limit)
 				               <!---------end bản tin------->
 				               </div>  
 				<?php }?>
+ <div class="news" style="width: 640px;">
+			<!--Câu hỏi-->
+		<p><?php
+		foreach($this->listcauhoi as $listcauhoi)
+		{
+			echo $listcauhoi['polls_content'];
+		}
+		?></p>
+			<!--End Câu hỏi-->
+			<!--Trả lời-->
+		<p>
+		<?php
+		foreach($this->listtraloi as $listtraloi)
+		{
+		?>
+			<input type="radio" name="question" />
+		<?php
+			echo $listtraloi['polls_content'];
+		}
+		?></p>
+		<input type="submit" name="submit" value="Bình chọn" class="alt_btn">
+			<!--End Trả lời-->
+</div>
+
 </div>
