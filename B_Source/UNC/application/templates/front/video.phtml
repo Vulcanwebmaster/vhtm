@@ -69,17 +69,18 @@
                 	Ảnh đẹp
                 </div>
                 <ul>
-                	<?php 
-                		if ($this->listImage!=NULL)
-	                		foreach($this->listImage as $image)
-							{
-								$preg = preg_match_all('#<img.*/>#',$image['image_link'],$match);
-								?>
-									<li  class="even"><a href="#"><?php echo $match[0][0]; ?></a></li>
-								<?php
-							}
+                	<?php
+                	if(count($this->listImageRight) > 0)
+					{
+						foreach($this->listImageRight as $imageRight)
+						{
+							$preg = preg_match_all('#<img.*/>#',$imageRight['image_link'],$match);
+							?>
+								<li class="even"><a href="#"><?php echo $match[0][0]; ?></a></li>
+							<?php
+						}
+					}
                 	?>
-                
                 </ul>
                 <p class="read_add"><a href="<?php echo $this->baseUrl() ?>/hinhanh">Xem thêm</a></p>
                 <br style="clear:both" />

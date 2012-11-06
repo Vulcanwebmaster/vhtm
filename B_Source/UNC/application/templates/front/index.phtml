@@ -35,7 +35,7 @@
 				}
 			}
 			//hightlight selected class
-			$(".selected").children("a").css('background-color','#02528f');
+			$(".selected").children("a").css('background-color','#03599B');
 			$(".selected").children(".sub").css('display','block');
 			//menu
 			$('.item').children('a').mouseenter(function(){
@@ -139,7 +139,7 @@
         } 
     </script>
     <script>
-    	document.write("<script type='text/javascript' language='javascript'>MainContentW = 1030;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 1;RightAdjust = -10;TopAdjust = 10;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
+    	document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 1;RightAdjust = -10;TopAdjust = 10;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
     </script>
 	 <!-----------begin header-------------->
 	<div id="header">
@@ -191,8 +191,8 @@
 									if($child['category_parent_id'] == $parent['category_id'])
 									{
                         		?>
-                        			<li class="itemSub">
-					                    <a class="a-style" <?php if($child['category_id']==$this->categoryid) echo "style='font-weight:bold'"?> href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id'];?>-1-<?php echo $child['alias'];?>.html"><?php echo $child['category_name']; ?></a>
+                        			<li  class="itemSub">
+					                    <a style="padding: 8px 10px" class="a-style" <?php if($child['category_id']==$this->categoryid) echo "style='font-weight:bold'"?> href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id'];?>-1-<?php echo $child['alias'];?>.html"><?php echo $child['category_name']; ?></a>
 					                </li>
 					                <li class="itemSub line">&iota;</li>
                         		<?php } 
@@ -241,12 +241,14 @@
 			<?php if (isset($this->parent_current_category))
 			if ($this->parent_current_category) 
 			{ ?> 
-				> <a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->parent_current_category['category_id']; ?>-1-<?php echo $this->parent_current_category['alias']; ?>.html"><?php echo $this->parent_current_category['category_name']?></a>
+			<img src="<?php echo $this->baseUrl();?>/application/templates/front/images/icon_li.gif" />
+			<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->parent_current_category['category_id']; ?>-1-<?php echo $this->parent_current_category['alias']; ?>.html"><?php echo $this->parent_current_category['category_name']?></a>
 			<?php }?>
        		<?php if (isset($this->current_category))
        		if ($this->current_category)
        		{?>
-       		 > <a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->current_category['category_id']; ?>-1-<?php echo $this->current_category['alias']; ?>.html"><?php echo $this->current_category['category_name']?></a>
+       		 <img src="<?php echo $this->baseUrl();?>/application/templates/front/images/icon_li.gif" /> 
+       		 <a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $this->current_category['category_id']; ?>-1-<?php echo $this->current_category['alias']; ?>.html"><?php echo $this->current_category['category_name']?></a>
        		 <?php }?>
        </div>
     <div id="subpage_wapper">

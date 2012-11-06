@@ -39,7 +39,7 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 .subpage_new{ width:650px; height:115px; clear:both; margin-bottom:20px}
 .img_new{ float:left; width:152px; height:auto;}
 .img_new img{box-shadow:0 2px 5px 0 #323232}
-.text_new{ float:left; width:485px; height:auto; padding: 0 10px}
+.text_new{ float:left; width:485px; height:auto; padding: 0 0px 0 10px}
 .text_new p{ margin:0; padding:0 0 8px 0;}
 .title{ font-weight:bold;}
 .news1{width:43% !important;float:left !important; color:#FFF}
@@ -159,10 +159,10 @@ a{ text-decoration: none }
 #menu-left ul li:hover{border:1px; border-bottom-style:dotted; background-color:#0c68ae; margin-right:6px}
 #nav{ width:auto; font-weight: bold; text-align: left; padding-left: 1px; font-family:Tahoma; list-style-type:none }
         #nav li.item{float:left; color: #5E5648;}
-        li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 12px !important; padding: 7px; border-bottom-right-radius: 2px;border-bottom-left-radius: 2px }
+        li .a-style{  color: #5E5648 !important; font-weight: normal; font-size: 12px !important; padding: 7px; }
         li .a-style:hover{ font-weight: bold;  }
-        #nav li.item a:hover{background:#02528f;}
-        #nav li.item a:first-child{color:White;text-decoration:none; font-size:14px; margin-right: 0px; padding:11px 10px 12px 10px;}
+        #nav li.item a:hover{background:#03599B;}
+        #nav li.item a:first-child{color:White;text-decoration:none; font-size:14px; margin-right: 0px; padding:11px 10px 10px 10px;}
         .selected .sub{display:block; position:absolute; top:185px;left:auto; width:auto;list-style:none; height:30px;}
         li.item.selected li{float:left}        
         #nav li.item.selected .itemSub li:hover ul.sub li.itemSub,#nav li.item:hover ul.sub li.itemSub{display:inline-block;padding:8px 0px;font-size:12px;  height:12px; line-height:20px;}        

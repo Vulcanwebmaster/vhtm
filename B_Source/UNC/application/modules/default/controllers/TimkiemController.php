@@ -4,6 +4,7 @@ class TimkiemController extends Zend_Controller_Action
 	protected $mTimkiem, $mVideo;
 	protected $mDefault;
 	protected $mTintuc, $mDiachi;
+	protected $listThreadTitle, $mHinhanh;
 	
 	function init()
 	{
@@ -23,7 +24,18 @@ class TimkiemController extends Zend_Controller_Action
 		$this->mTintuc=new Default_Model_Mtintuc();
 		$this->mDiachi=new Default_Model_Mdiachi();
 		$this->mVideo = new Default_Model_Mvideo();
+		$this->mHinhanh = new Default_Model_Mhinhanh();
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
+		
+		$listThreadForum = $this->mDefault->getListThread();
+				$this->listThreadTitle = array();
+		//var_dump($listThreadForum);die();
+		foreach($listThreadForum as $thread)
+		{
+			$content = file_get_contents('http://localhost/unc/forum/showthread.php?'.$thread['threadid']);
+			$preg1 = preg_match_all('#<span class="threadtitle">.*</span>#',$content,$match);
+			$this->listThreadTitle[] = $thread['threadid'].strip_tags($match[0][0]);
+		}
 	}
 	
 	function indexAction()
@@ -69,6 +81,10 @@ class TimkiemController extends Zend_Controller_Action
 		$this->view->listquangcao2 = $listquangcao2;
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
+		
+				/*--------Lấy ra forum và hình ảnh--------*/
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
+		$this->view->listThread = $this->listThreadTitle;
 			
 			//---------END Thêm template vào các chuyên mục----
 		}
@@ -127,6 +143,9 @@ class TimkiemController extends Zend_Controller_Action
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
 			
+				/*--------Lấy ra forum và hình ảnh--------*/
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
+		$this->view->listThread = $this->listThreadTitle;
 			//---------END Thêm template vào các chuyên mục----
 		}
 		//Header title

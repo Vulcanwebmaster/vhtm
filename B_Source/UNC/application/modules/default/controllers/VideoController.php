@@ -1,8 +1,9 @@
 <?php
 class VideoController extends Zend_Controller_Action
 {
-	protected $mTintuc, $mDiachi;
+	protected $mTintuc, $mDiachi, $mHinhanh;
 	protected $mDefault;
+	protected $listThreadTitle;
 	protected $mVideo;
 	function init()
 	{
@@ -10,18 +11,27 @@ class VideoController extends Zend_Controller_Action
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
-		
-		$this->mDefault = new Default_Model_Mdf();
-		$this->mTintuc = new Default_Model_Mtintuc();
-		$this->mVideo = new Default_Model_Mvideo();
-		$this->mDiachi = new Default_Model_Mdiachi();
 		@session_start();
+		$this->mDefault = new Default_Model_Mdf();
+		$this->mTintuc  = new Default_Model_Mtintuc();
+		$this->mVideo	= new Default_Model_Mvideo();
+		$this->mDiachi  = new Default_Model_Mdiachi();
+		$this->mHinhanh = new Default_Model_Mhinhanh();
+		
 		$this->setAccess();
 		$_SESSION['home'] = 'home';
 		$_SESSION['page'] = 'video';
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
-	
 		unset($_SESSION['home']);
+		$listThreadForum = $this->mDefault->getListThread();
+				$this->listThreadTitle = array();
+		//var_dump($listThreadForum);die();
+		foreach($listThreadForum as $thread)
+		{
+			$content = file_get_contents('http://localhost/unc/forum/showthread.php?'.$thread['threadid']);
+			$preg1 = preg_match_all('#<span class="threadtitle">.*</span>#',$content,$match);
+			$this->listThreadTitle[] = $thread['threadid'].strip_tags($match[0][0]);
+		}
 	}
 	
 	function listAction()
@@ -36,6 +46,8 @@ class VideoController extends Zend_Controller_Action
 		$this->view->current_category=array('category_name'=>'Video');
 		//var_dump($this->mVideo->getVideoByCategoryId('1'));die();
 		
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
+		$this->view->listThread = $this->listThreadTitle;
 		$this->view->menuvideo = $this->mVideo->getVideoByCategoryName();
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 		$this->view->listvideo = $this->mVideo->getListNewsVideo();
@@ -89,6 +101,10 @@ class VideoController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
+		/*--------Lấy ra forum và hình ảnh--------*/
+		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
+		$this->view->listThread = $this->listThreadTitle;
+		
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
@@ -128,6 +144,8 @@ class VideoController extends Zend_Controller_Action
 		$this->view->form = $form;
 		$this->view->listComment = $listComment;
 		
+		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		/*$paginator = Zend_Paginator::factory($this->mVideo->getListCommentByVideoId($video_id));
 	    $paginator->setItemCountPerPage(5);        
 	    $currentPage = $this->_request->getParam('page',1);
