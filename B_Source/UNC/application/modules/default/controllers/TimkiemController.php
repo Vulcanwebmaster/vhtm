@@ -28,7 +28,7 @@ class TimkiemController extends Zend_Controller_Action
 	
 	function indexAction()
 	{
-		/*$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 		if ($this->_request->isPost())
 		{
 			
@@ -73,7 +73,7 @@ class TimkiemController extends Zend_Controller_Action
 			//---------END Thêm template vào các chuyên mục----
 		}
 		//Header title
-		$this->view->headTitle('UNC - Tìm kiếm');		*/
+		$this->view->headTitle('UNC - Tìm kiếm');	
 	}
 
 	function searchvideoAction()
@@ -85,8 +85,11 @@ class TimkiemController extends Zend_Controller_Action
 			$value_search=$this->_request->getPost('search-text');
 			$list = $this->mTimkiem->getNewsByKeyVideo($value_search);
 			$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
+			//var_dump($this->mVideo->getListNewsVideo());die();
 			$this->view->listvideo = $this->mVideo->getListNewsVideo();
+			$this->view->menuvideo = $this->mVideo->getVideoByCategoryName();
 			//echo count($listvideo);die();
+			
 			if(count($list) > 0)
 			{
 				$paginator = Zend_Paginator::factory($list);

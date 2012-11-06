@@ -24,38 +24,34 @@
                         <input class="searchsubmit" type="submit" value="" style="cursor:pointer">
                     </form>
                     <ul id="ul_video_left">
-                    	<li><a href="#">Tất cả</a></li>
-                        <li><a href="#">Xã hội</a></li>
-                        <li><a href="#">Thế giới</a></li>
-                        <li><a href="#">Văn hóa</a></li>
-                        <li><a href="#">Thể thao</a></li>
-                        <li><a href="#">Gia đình</a></li>
-                        <li><a href="#">Sức khỏe</a></li>
-                        <li><a href="#">Pháp luật</a></li>
+                    	<?php 
+							foreach($this->menuvideo as $menuvideo)
+							{
+						?>
+                    	<li><a href="<?php echo $this->baseUrl(); ?>/video/danh-sach/<?php echo $menuvideo['category_id']; ?>-1-<?php if(isset($menuvideo['video_alias'])) echo $menuvideo['video_alias']; ?>.html"><?php echo $menuvideo['category_name']; ?></a></li>
+                    	<?php
+							}
+					 	?>
                     </ul>
                 </div>
                 <div id="video_right">
                 	<ul>
                 		<?php 
+                		if(count($this->list) > 0)
+						{
 							foreach($this->list as $video)
 							{
 						?>
 							<li><a href="<?php echo $this->baseUrl(); ?>/video/<?php echo $video['video_id']; ?>-<?php if(isset($video['video_alias'])) echo $video['video_alias']; ?>.html">
-							<?php if ($video['thumbnail']=='')
-							{?>
 								<img src="http://img.youtube.com/vi/<?php echo $video['video_link']; ?>/1.jpg" style="box-shadow:0 2px 5px 0 #505050"/>
-							<?php }
-							else
-							{
-								$thumbnail=$video['thumbnail'];
-				            	$a=preg_match_all('#/.*g" #',$thumbnail,$src);
-				            	$source=substr($src[0][0], 0, strlen($src[0][0])-2); ?>
-				            	<img src="<?php echo $source;?>" style="box-shadow:0 2px 5px 0 #505050"/>
-							<?php }?>
 	                            <p><?php echo cutString($video['video_title'],20); ?></p>
 	                        </a></li>
 						<?php
 							}
+							}
+							else {
+								echo 'Chuyên mục này chưa có Video nào';
+								}
 					 	?>
                     </ul>
                     <div class="page_video" style="clear:both; padding-top:100px; margin-bottom:15px">

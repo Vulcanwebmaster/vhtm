@@ -34,18 +34,25 @@ class VideoController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();	
 		$this->view->current_category=array('category_name'=>'Video');
+		//var_dump($this->mVideo->getVideoByCategoryId('1'));die();
 		
+		$this->view->menuvideo = $this->mVideo->getVideoByCategoryName();
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
 		$this->view->listvideo = $this->mVideo->getListNewsVideo();
-		//var_dump($this->listvideo);die();
-		$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
+		
+		//------Gọi ra  video---------
+		$category_id = $this->_request->getParam('category_id');
+		if ($category_id != 0)
+			$paginator = Zend_Paginator::factory($this->mVideo->getVideoByCategoryId($category_id));
+		else 
+			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
         $paginator->setItemCountPerPage(12);
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->list = $paginator;
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
-
+		
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
 		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$listquangcao1 = $this->mDefault->getListAds1();

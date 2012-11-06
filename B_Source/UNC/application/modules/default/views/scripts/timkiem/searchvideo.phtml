@@ -14,31 +14,30 @@
 	<div class="subpage_wapper_left_top_video">
             	video clips
             </div>
-            <div class="subpage_new" style="margin:10px">
+            <div class="subpage_new" style="margin:10px 5px 5px 2px">
             	<div id="videp_left">
                 	<form class="searchform" action="<?php echo $this->baseUrl();?>/timkiem/searchvideo" method="post">
                         <input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
                         <input class="searchsubmit" type="submit" value="" style="cursor:pointer">
                     </form>
                     <ul id="ul_video_left">
-                    	<li><a href="#">Tất cả</a></li>
-                        <li><a href="#">Xã hội</a></li>
-                        <li><a href="#">Thế giới</a></li>
-                        <li><a href="#">Văn hóa</a></li>
-                        <li><a href="#">Thể thao</a></li>
-                        <li><a href="#">Gia đình</a></li>
-                        <li><a href="#">Sức khỏe</a></li>
-                        <li><a href="#">Pháp luật</a></li>
+                    	<?php 
+							foreach($this->menuvideo as $menuvideo)
+							{
+						?>
+                    	<li><a href="<?php echo $this->baseUrl(); ?>/video/danh-sach/<?php echo $menuvideo['category_id']; ?>-1-<?php if(isset($menuvideo['video_alias'])) echo $menuvideo['video_alias']; ?>.html"><?php echo $menuvideo['category_name']; ?></a></li>
+                    	<?php
+							}
+					 	?>
                     </ul>
                 </div>
                 	
     <!---------Tìm kiếm------->
-    <div id="video_right" style="width: 500px" >
+    <div id="video_right" style="width: 486px" >
 		<?php 
-	if(count($this->listvideo) > 0)
+	if($this->list != NULL)
 	{
 	?>
-                
                 	<ul>
                 		<?php 
 							foreach($this->list as $video)
@@ -53,10 +52,9 @@
 					 	?>
                     </ul>
                     <div class="page_video" style="clear:both; padding-top:100px; margin-bottom:15px">
+                    	
                     	<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
                     </div>
-                
-                
 		 	<?php
 			}
 			else 

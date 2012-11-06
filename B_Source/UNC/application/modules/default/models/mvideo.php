@@ -34,6 +34,23 @@
 			return $list[0];
 		}
 		
+		function getVideoByCategoryName()
+		{
+			$query = $this->db->query('select * from unc_video_category');
+			return $query->fetchAll();
+		}
+		function getVideoByCategoryId($category_id)
+		{
+			$query = $this->db->query('SELECT unc_video.*, unc_video_category.category_name
+										FROM unc_video, unc_video_category
+										WHERE unc_video.category_id = unc_video_category.category_id
+										AND unc_video.is_active = "1"
+										AND unc_video.category_id = "'.$category_id.'"');
+						
+										
+			return $query->fetchAll();
+		}
+		
 		function getListForumUser()
 		{
 			$query = $this->forum->query('select userid, username from user');
