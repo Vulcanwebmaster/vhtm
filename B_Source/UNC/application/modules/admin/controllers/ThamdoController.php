@@ -1,7 +1,7 @@
 <?php
 	class Admin_ThamdoController extends Zend_Controller_Action
 	{
-		protected $mDiachi, $mTintuc;
+		protected $mDiachi, $mTintuc, $mThamdo;
 		protected $role;
 		protected $user;
 		protected $user_id;
@@ -13,6 +13,7 @@
 		      Zend_Layout::startMvc ( $option );
 			  $this->mDiachi = new Admin_Model_Mdiachi();
 			  $this->mTintuc = new Admin_Model_Mtintuc();
+			  $this->mThamdo = new Admin_Model_Mthamdo();
 			  @session_start();
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
@@ -45,7 +46,7 @@
 			$input = array(	
 							'polls_id'	=> $form->getValue('polls_id'),
 							'polls_content'	=> $form->getValue('polls_content'),
-							//'polls_vote'	=> $form->getValue('polls_vote'),
+							'polls_status'	=> $form->getValue('type'),
 			);
 			return $input;
 		}
@@ -58,10 +59,17 @@
 			
 			$noidung = new Zend_Form_Element_Text('polls_content');
 			$noidung->setRequired(true)->addValidator('NotEmpty',true,array('messages'=>'Nội dung không được để trống'));
-																	  
 			$noidung->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$form->addElements(array($noidung));
+			$questionEnum=$this->mThamdo->countQuestion();
+			if ($questionEnum==0)
+				$selector=array("0"=>"Câu hỏi",
+								"1"=>"Trả lời",);
+			else $selector=array("1"=>"Trả lời");
+			$type=$form->createElement("select", "type", array('multioptions'=>$selector));
+			$type->removeDecorator('HtmlTag')->removeDecorator('Label');
+			
+			$form->addElements(array($noidung,$type));
 			return $form;
 		}
 		
