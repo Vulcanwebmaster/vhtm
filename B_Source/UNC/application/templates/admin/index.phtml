@@ -38,24 +38,34 @@
 	<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/event-delegate/event-delegate-min.js"></script>
 	<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/datatable/datatable-min.js"></script>
 	<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".submenu").slideUp();
+			$(".icn_application").css("cursor","pointer");
+			$(".icn_application").click(function(){
+				$(this).children(".submenu").slideToggle();
+			});
+		});
+	</script>
 </head>
 
 
 <body>
 	<header id="header">
 	<hgroup>
-		<h1 class="site_title"><a href="<?php echo $this->baseUrl();?>/admin">Website Admin</a></h1>
-		<h2 class="section_title">Dash Broad</h2><div class="btn_view_site"><a href="<?php echo $this->baseUrl();?>">View Site</a></div>
+		<h1 class="site_title"><a href="<?php echo $this->baseUrl();?>/admin">Trang quản trị</a></h1>
+		<h2 class="section_title">Bảng điều khiển</h2><div class="btn_view_site"><a href="<?php echo $this->baseUrl();?>">Hiển thị web</a></div>
 	</hgroup>
 </header> <!-- end of header bar -->
 <section id="secondary_bar">
 	<div class="user">
-	<p>Administrator</p>
-	<a class="logout_user" href="#" title="Logout">Logout</a>
+	<p>Quản trị viên</p>
+	<a class="logout_user" href="#" title="Đăng xuất">Đăng xuất</a>
 </div>	<div class="breadcrumbs_container">
 	<article class="breadcrumbs">
 	<a href="<?php echo $this->baseUrl();?>/admin">Website Admin</a>
-		<div class="breadcrumb_divider"></div> <a class="current">Dash Broad</a>
+		<div class="breadcrumb_divider"></div> <a class="current">Bảng điều khiển</a>
 	</article>
 	<article style="float:right;margin-right:49px" class="breadcrumbs">
 		<?php
@@ -84,32 +94,44 @@
 				<hr/>
 <h3>Pages</h3>
 	<ul class="toggle">
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/tintuc/index/viewtype/1">Tin tức</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/phongvien">Phóng viên</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/truongban">Trưởng ban</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/chuyenmuc">Chuyên mục tin tức</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/imagecategory">Chuyên mục ảnh</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/videocategory">Chuyên mục Video</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/uploadvideo">Tải video lên Youtube</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/video">Tải video lên UNC</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/quangcao">Quảng cáo</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/comment">Bình luận</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/image">Hình ảnh</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/tinhtien">Nhuận bút</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/diachi">Thông tin</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/thamdo">Thăm dò ý kiến</a></li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/getnewssetting">Cài đặt lấy tin tự động</a></li>
+		<li class="icn_application"><a>Quản lý chung</a>
+			<ul class="submenu">
+				<li><a href="<?php echo $this->baseUrl();?>/admin/phongvien">Phóng viên</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/truongban">Trưởng ban</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/tinhtien">Nhuận bút</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/thamdo">Thăm dò ý kiến</a></li>
+			</ul>
+		</li>
+		<li class="icn_application"><a>Quản lý tin tức</a>
+			<ul class="submenu">
+				<li><a href="<?php echo $this->baseUrl();?>/admin/tintuc/index/viewtype/1">Tin tức</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/chuyenmuc">Chuyên mục tin tức</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/getnewssetting">Cài đặt lấy tin tự động</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/comment">Bình luận</a></li>
+			</ul>
+		</li>
+		<li class="icn_application"><a>Quản lý video</a>
+			<ul class="submenu">
+				<li><a href="<?php echo $this->baseUrl();?>/admin/videocategory">Chuyên mục Video</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/uploadvideo">Tải video lên Youtube</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/video">Tải video lên UNC</a></li>
+			</ul>
+		</li>
+		<li class="icn_application"><a>Quản lý ảnh</a>
+			<ul class="submenu">
+				<li><a href="<?php echo $this->baseUrl();?>/admin/imagecategory">Chuyên mục ảnh</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/quangcao">Quảng cáo</a></li>
+				<li><a href="<?php echo $this->baseUrl();?>/admin/image">Hình ảnh</a></li>
+			</ul>
+		</li>
+		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/diachi">Địa chỉ liên kết</a></li>
 	</ul>
-<h3>System</h3>
+<h3>Hệ thống</h3>
 	<ul class="toggle">
-		<!-- <li class="icn_settings"><a href="#">System Info</a></li> -->
-		<!-- <li class="icn_security"><a href="#">Security</a></li> -->
-		<li class="icn_jump_back"><a href="<?php echo $this->baseUrl();?>/admin/index/logout">Logout</a></li>
+		<li class="icn_jump_back"><a href="<?php echo $this->baseUrl();?>/admin/index/logout">Đăng xuất</a></li>
 	</ul>
 		<footer>
 	<hr />
-	<p><strong>Copyright &copy; 2011 NIW Admin</strong></p>
-	<p>Theme by <a href="http://www.niw.com.vn">NIW</a></p>
 </footer>	</aside><!-- end of sidebar -->
 
 	<section id="main" class="column">

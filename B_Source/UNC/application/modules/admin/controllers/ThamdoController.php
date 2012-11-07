@@ -123,6 +123,7 @@
 			$info = $this->mTintuc->getListThamdobyid($polls_id);
 			$form->setAction($this->view->baseUrl().'/admin/thamdo/edit/pollsid/'.$polls_id);
 			$form->getElement('polls_content')->setValue($info['polls_content']);
+			$form->getElement('type')->setValue($info['polls_status']);
 			$this->view->type=$info['polls_status'];
 				
 			$this->view->form = $form;
