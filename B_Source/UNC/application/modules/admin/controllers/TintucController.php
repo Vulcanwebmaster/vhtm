@@ -99,6 +99,7 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
+			$this->view->listCategories=$this->mChuyenmuc->getListCM();
 			$viewtype=$this->_request->getParam('viewtype');
 			// ADD TIN TỰ ĐỘNG:================================
 			//$this->autoGetnews();
@@ -123,6 +124,11 @@
 					} else if ($viewtype == 3) {
 
 						if ($item['news_status']=='Đã duyệt' || $item['news_status']=='Chưa duyệt') {
+							$list2[]=$item;
+						}
+					} elseif ($viewtype > 3){
+						$real_id=$viewtype-3;
+						if (strpos($item['category_id'], ','.$real_id.',')!==false) {
 							$list2[]=$item;
 						}
 					}					
@@ -152,6 +158,11 @@
 						if ($item['news_status']=='Đã duyệt') {
 							$list2[]=$item;
 						}
+					}elseif ($viewtype > 3){
+						$real_id=$viewtype-3;
+						if (strpos($item['category_id'], ','.$real_id.',')!==false) {
+							$list2[]=$item;
+						}
 					}					
 				}
 				$paginator= Zend_Paginator::factory($list2);	
@@ -163,23 +174,25 @@
 				foreach ($list1 as $item)
 				{
 					if ($viewtype == 1) {
-						if ($item['news_status']=='Chưa duyệt')
+						if ($item['news_status']=='Chưa duyệt' || $item['news_author']==$_SESSION['user'])
 							$list2[]=$item;
-						elseif ($item['news_author']==$_SESSION['user'])
-							$list2[]=$item;
-					} else if ($viewtype == 2) {
+					} elseif ($viewtype == 2) {
 						
 						if ($item['news_status']!='Đã duyệt' && $item['news_author']==$_SESSION['user'])
 							$list2[]=$item;
 												
-					} else if ($viewtype == 3) {
+					} elseif ($viewtype == 3) {
 						
 						if (($item['news_status']=='Đã duyệt' && $item['news_author']==$_SESSION['user'])
 							|| $item['news_status']=='Chưa duyệt') {
 							$list2[]=$item;
 						}						
-						
-					}
+					}elseif ($viewtype > 3){
+						$real_id=$viewtype-3;
+						if (strpos($item['category_id'], ','.$real_id.',')!==false) {
+							$list2[]=$item;
+						}
+					}	
 				}
 				$paginator= Zend_Paginator::factory($list2);
 			}

@@ -67,7 +67,7 @@
 		
 		function getListNewsByCategoryId($CategoryId)
 		{
-			$query = $this->db->query('select * from unc_news where category_id like "%,'.$CategoryId.',%"');
+			$query = $this->db->query('select * from unc_news where category_id like "%,'.$CategoryId.',%" order by news_id desc');
 			return $query->fetchAll();
 		}
 		function getListAdsByCategoryId($CategoryId)

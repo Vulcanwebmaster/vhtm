@@ -1,36 +1,33 @@
 <?php
 	class Admin_Model_Mtinhtien extends Zend_Db_Table_Abstract
 	{
+		protected $_name='unc_royalty';
 		private $db;
 		function __construct()
 		{
+			parent::__construct();
 			$this->db=Zend_Registry::get('db');
 		}
-		public function getlist()
+
+		public function getListUser()
 		{
-			$query=$this->db->query('select * from  unc_commission');
+			$query=$this->db->query("select * from unc_user where role_id='1' or role_id='2'");
 			return $query->fetchAll();
 		}
-		public function tinhtien($fromdate,$todate)
+		
+		public function updatePriceById($id,$input)
 		{
-			$sub='SELECT DISTINCT news_author, SUM( review_id ) AS "Lay", (COUNT( news_author ) - SUM( review_id )) AS "TaoMoi"
-				FROM unc_news WHERE (news_author != NULL OR news_author != "") AND (news_post_date BETWEEN "'.$fromdate.'" AND "'.$todate.'")
-				AND (news_status="Đã duyệt")
-				GROUP BY news_author';	
-			$query=$this->db->query($sub);
-			return $query->fetchAll();
+			$result=$this->update($input, "id='".$id."'");
+			return $result;
 		}
-		public function tinhtienover()
+		
+		public function getPriceById($id)
 		{
-			$sub='SELECT DISTINCT news_author, SUM( review_id ) AS "Lay", (COUNT( news_author ) - SUM( review_id )) AS "TaoMoi"
-			FROM unc_news WHERE (news_author != NULL OR news_author != "") and (news_status="Đã duyệt")
-			GROUP BY news_author';
-			$query=$this->db->query($sub);
-			return $query->fetchAll();
+			$query=$this->db->query("select * from unc_royalty where id='".$id."'");
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
-		public function updategia($id,$price)
-		{
-			$this->db->query('update unc_commission set price="'.$price.'" where id="'.$id.'"');
-		}	
 	}
 ?>

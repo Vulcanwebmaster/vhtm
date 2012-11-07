@@ -36,7 +36,7 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 .subpage_wapper_left_top{ background:url('../images/thanhnhon_con.gif') 100% 0; height:31px; width:100%; background-repeat:no-repeat; padding:0;}
 .children_down2 a{ text-decoration:none; color:black}
 .children_down2 a:hover{ color: #FFFFFF; background: #0a65ab; padding: 6px; border-radius: 1px }
-.subpage_new{ width:650px; height:115px; clear:both; margin-bottom:20px}
+.subpage_new{ height:115px; clear:both; margin-bottom:20px}
 .img_new{ float:left; width:152px; height:auto;}
 .img_new img{box-shadow:0 2px 5px 0 #323232}
 .text_new{ float:left; width:485px; height:auto; padding: 0 0px 0 10px}

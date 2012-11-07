@@ -1,7 +1,7 @@
 <?php
 	class Admin_TinhTienController extends Zend_Controller_Action
 	{
-		
+		private $mTinhtien,$mTintuc;
 		function init()
 		{
 			$this->view->headTitle('UNC - Admin website');
@@ -11,6 +11,8 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+			  $this->mTinhtien = new Admin_Model_Mtinhtien();
+			  $this->mTintuc = new Admin_Model_Mtintuc();
 			  @session_start();
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
@@ -25,49 +27,63 @@
 		}
 		function indexAction()
 		{
-			  $obj=new Admin_Model_Mtinhtien();
-			  if($this->_request->isPost())
-			  {
-			  	$fromdate = $this->_request->getParam('fromdate');
-				$todate = $this->_request->getParam('todate');
-				if($fromdate==""&&$todate=="")
-				{
-					$this->view->totalmoney= $obj->tinhtienover();
-				}
-				else
-				{
-					if($fromdate!=""&&$todate=="")
-					{
-						$this->view->totalmoney= $obj->tinhtien($fromdate,Zend_Date::now());
-					}
-					else
-					{
-						$this->view->totalmoney= $obj->tinhtien($fromdate,$todate);	
-					}
-							
-				}
-					
-			  }
-			  else
-			  {
-					$this->view->totalmoney= $obj->tinhtienover(); 	  
-			  }
-			  $this->view->data=$obj->getlist();
-			  
+			  $this->_redirect($this->view->baseUrl().'/../admin/tinhtien/thongke');
 		}
-		function danhmuctienluongAction()
+		
+		function thongkeAction()
 		{
-			$obj= new Admin_Model_Mtinhtien();
-			$this->view->data= $obj->getlist();
-			if($this->_request->isPost())
+			$price_post=$this->mTinhtien->getPriceById(1);
+			$price_review=$this->mTinhtien->getPriceById(2);
+			$this->view->price_post=$price_post;
+			$this->view->price_review=$price_review;
+			if ($this->_request->isPost())
 			{
-				$create= $this->_request->getParam('create');
-				$obj->updategia('create',$create);
-				$review= $this->_request->getParam('review');
-				$obj->updategia('review',$review);
-				$this->view->data= $obj->getlist();
+				$from_date=$this->_request->getPost('fromdate');
+				$to_date=$this->_request->getPost('todate');
+				$_SESSION['from_date']=$from_date;
+				$_SESSION['to_date']=$to_date;
 				
+				$listUser=$this->mTinhtien->getListUser();
+				$listNews=$this->mTintuc->getListNews();
+				$listMoney=array();
+				foreach($listUser as $user)
+				{
+					$money=0;
+					$userId=$user['user_id'];
+					foreach ($listNews as $news)
+					{
+						if ($news['review_id']==$userId)
+						{
+							if ($from_date<str_replace('-', '/', $news['news_modified_date']) && str_replace('-', '/', $news['news_modified_date'])<=$to_date
+								&& $news['news_status']=='Công khai')
+								$money+=$price_review['price'];
+						}
+						elseif ($news['user_id']==$userId)
+						{
+							if ($from_date<=str_replace('-', '/',$news['news_post_date']) && str_replace('-', '/',$news['news_post_date'])<=$to_date
+								&& $news['news_status']=='Công khai')
+								$money+=$price_post['price'];
+						}
+					}
+					$listMoney[]=$money;
+				}
+				$this->view->listMoney=$listMoney;
+				$this->view->listUser=$listUser;
 			}
+			else 
+			{
+				$this->view->listMoney=array();
+				$this->view->listUser=array();
+			}
+		}
+		
+		function priceAction()
+		{
+			$price_post=$this->_request->getPost('new-post-price');
+			$price_review=$this->_request->getPost('review-price');
+			$this->mTinhtien->updatePriceById('1', array('price'=>$price_post));
+			$this->mTinhtien->updatePriceById('2', array('price'=>$price_review));
+			$this->_redirect($this->view->baseUrl().'/../admin/tinhtien/thongke');
 		}
 	}
 ?>

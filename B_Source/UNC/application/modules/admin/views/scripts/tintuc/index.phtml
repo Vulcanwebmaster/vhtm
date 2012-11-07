@@ -47,15 +47,20 @@
             	<form class="search-form" action="<?php echo $this->baseUrl("admin/tintuc/timkiem");?>" method="post">
 					<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …"/>
 					<input class="searchsubmit" type="submit" value="Tìm kiếm" style="cursor:pointer; height: 21px; padding-bottom:1px"/>
-					<select id="viewtype" onchange="return selectViewChange(this.selectedIndex);" style="float: right">
-						<option value="">Chọn kiểu view</option>
+					<select id="viewtype" onchange="return selectViewChange();" style="float: right">
+						<option value="">Lọc theo ...</option>
 						<option value="1">Xem tất cả</option>
 						<option value="2">Những tin tức được xác nhận</option>
 						<option value="3">Những tin tức chưa được xác nhận</option>
+						<?php foreach($this->listCategories as $cat)
+						{?>
+							<option value="<?php echo 3+$cat['category_id'];?>"><?php echo $cat['category_name']?></option>	
+						<?php }?>
 					</select>
 				</form>
 				<script>
-				function selectViewChange(go) {
+				function selectViewChange() {
+					var go=$("#viewtype").val();
 				  window.location = '<?php echo $this->baseUrl("admin/tintuc/index/viewtype/");?>'+go;
 				}
 				</script>				

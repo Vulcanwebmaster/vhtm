@@ -70,15 +70,31 @@
 		$result=array();
 		foreach ($categoriesId as $categoryId)
 		{
-			$query=$this->db->query("select * from unc_news where category_id='".$categoryId."'");
+			$query=$this->db->query("select * from unc_news where category_id like '%,".$categoryId.",%'");
 			$list=$query->fetchAll();
 			foreach ($list as $item)
 			{
-				$result[]=$item;
+				if (!$this->isContain($result, $item))
+					$result[]=$item;
 			}
 		}
 		return $result;
 	} 
+	
+	function isContain($list, $item)
+	{
+		$count=0;
+		foreach($list as $element)
+		{
+			if ($element['news_id']==$item['news_id'])
+			{
+				$count++;
+				break;
+			}
+		}
+		if ($count>0) return true;
+		else return false;
+	}
 	
 	function getCategoryById($categoryId)
 	{

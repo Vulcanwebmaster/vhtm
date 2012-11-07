@@ -144,8 +144,13 @@ class TintucController extends Zend_Controller_Action
 		$categoryid = $this->mTintuc->getCategoryIdByNewsId($news_id);
 		// Get first categoryid in list 
 		$first_categoryid = $this->mTintuc->getFirstCategoryIdByNewsId($news_id);
-		
-		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
+		$this->view->current_parent=$this->mTintuc->getParentByChild($first_categoryid);
+		$this->view->categoryid=$first_categoryid;
+		//====breadcrum=====
+		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($first_categoryid);
+		$parent_current_category_id=$this->mTintuc->getParentByChild($first_categoryid);
+		$this->view->parent_current_category=$this->mTintuc->getCategoryNameByCategoryId($parent_current_category_id);
+		//=======================
 		
 		$parentId = $this->mTintuc->getParentByChild($categoryid);
 		$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
@@ -186,6 +191,19 @@ class TintucController extends Zend_Controller_Action
 		$mask = APPLICATION_PATH."/templates/front/captcha/*.png"; 
         array_map("unlink",glob($mask));
 		
+        // Hotest and Newest===========================
+        $list = $this->mTintuc->getListNewsByCategoryId($first_categoryid);
+        $listNewsMostView=array();
+		for ($i=0; $i<6; $i++)
+			if (isset($list[$i]))
+				$listNewsMostView[]=$list[$i];
+        $this->view->listNewsMostView=$listNewsMostView;
+		$listHotNews = array();
+		foreach ($list as $news)
+		{
+			if ($news['is_hot']=='1') $listHotNews[]=$news;
+		}
+		$this->view->listHotNews = $listHotNews;
 		//Header title
 		$this->view->headTitle('UNC - '.$news['news_title']);
 		if($this->_request->isPost())
@@ -341,9 +359,11 @@ class TintucController extends Zend_Controller_Action
 			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
 		}		
 		
+		//====breadcrum=====
 		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
 		$parent_current_category_id=$this->mTintuc->getParentByChild($categoryid);
 		$this->view->parent_current_category=$this->mTintuc->getCategoryNameByCategoryId($parent_current_category_id);
+		//=======================
         $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
 		
@@ -351,7 +371,7 @@ class TintucController extends Zend_Controller_Action
 		for ($i=0; $i<6; $i++)
 			if (isset($list[$i]))
 				$listNewsMostView[]=$list[$i];
-		$this->view->listNewsMostView=$list;
+		$this->view->listNewsMostView=$listNewsMostView;
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		
 		$this->view->listParent = $this->mTintuc->getListParent();

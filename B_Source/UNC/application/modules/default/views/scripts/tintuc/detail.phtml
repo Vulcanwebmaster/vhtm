@@ -17,7 +17,7 @@
             </div>
             <div class="subpage_new_detail">            
                 	<ul>
-                    	<li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/date.png"> <?php echo $this->news['news_post_date'] ?></li>
+                    	<li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/date.png"> <?php if($this->news['news_modified_date']=="0000-00-00 00:00:00") echo $this->news['news_post_date']; else echo $this->news['news_modified_date'];?></li>
                         <li><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/bl.png"> <?php echo count($this->listComment) ?> Bình luận</li>
                         <li><a href="javascript:window.print();"><img src="<?php echo $this->baseUrl()?>/application/templates/front/images/print.png"> Bản in</a></li>
                         <li>Chia sẻ:
