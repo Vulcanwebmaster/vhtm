@@ -2,7 +2,7 @@
             <div class="left"> <!-----------Left--------------->
 
 			<div id="content-left">
-				<div class="children_down-title" style="margin-top:10px"><a href="#">Văn miếu</a></div>
+				<div class="children_down-title" style="margin-top:10px"><a href="#">Hình ảnh</a></div>
 				     <div class="subpage_wapper_left_top" style="margin-top:10px">
            			 </div>
            			 
@@ -37,7 +37,9 @@
 								?>
 									<div class="gioithieu-img">
 										<?php echo $match[0][0];?>
-										<a href="#"><?php echo $imageLeft['image_name'] ?></a>
+										<a href="<?php echo $this->baseUrl(); ?>/hinhanh/
+												 <?php echo $imageLeft['image_id']; ?>.html">
+													<?php echo $imageLeft['image_name'] ?></a>
 									</div>
 								<?php
 							}

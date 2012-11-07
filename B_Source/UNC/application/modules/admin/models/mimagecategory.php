@@ -33,7 +33,8 @@
 		
 		function insertCm($input)
 		{
-			$query=$this->db->query('insert into unc_images_category values ("","'.$input['category_name'].'","'.$input['alias'].'","'.$input['is_active'].'")');
+			$query=$this->db->query('insert into unc_images_category(`is_active`, `category_name`, `alias`) values 
+			("'.$input['is_active'].'","'.$input['category_name'].'","'.$input['alias'].'")');
 			return $query;
 		}
 		

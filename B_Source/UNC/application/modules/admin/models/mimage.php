@@ -15,7 +15,9 @@
 		
 		function insertImage($input)
 		{
-			$query = $this->db->query("insert into unc_images value ('','".$input['image_name']."','".$input['image_link']."','".gmdate("Y-m-d h:i:s",time() + 7*3600)."','".$input['is_active']."')");
+			$query = $this->db->query("insert into unc_images(`image_name`, `image_link`, `image_date_create`, `is_active`) 
+										values ('".$input['image_name']."','".$input['image_link']."',
+												'".gmdate("Y-m-d h:i:s",time() + 7*3600)."','".$input['is_active']."')");
 			return $query;
 		}
 		
@@ -27,9 +29,9 @@
 			else return false;
 		}
 		
-		function insertImageForCategory($image_id,$category_id)
+		function insertImageForCategory($image_id)
 		{
-			$query = $this->db->query('insert into unc_manage_images_category value ("'.$image_id.'","'.$category_id.'")');
+			$query = $this->db->query('insert into unc_images_category values ("'.$image_id.'")');
 			return $query;
 		}
 		
@@ -68,7 +70,7 @@
 		
 		function delManageCategoryByImageId($image_id)
 		{
-			$query = $this->db->query('delete from unc_manage_images_category where image_id = "'.$image_id.'"');
+			$query = $this->db->query('delete from unc_images_category where image_id = "'.$image_id.'"');
 			return $query;
 		}
 		
@@ -83,7 +85,7 @@
 		
 		function getListImageCategoryByImageId($image_id)
 		{
-			$query = $this->db->query('select category_id from unc_manage_images_category where image_id = "'.$image_id.'"');
+			$query = $this->db->query('select category_id from unc_images_category where image_id = "'.$image_id.'"');
 			return $query->fetchAll();
 		}
 	}

@@ -32,5 +32,10 @@
 			if(count($list) > 0) return $list;
 			else return false;
 		}
+		function getListVideo()
+		{
+			$query = $this->db->query('select * from unc_video where is_active = "1" order by video_id desc');
+			return $query->fetchAll();
+		}
 	}
 ?>
