@@ -1,7 +1,7 @@
 <?php
 	class Admin_ImagecategoryController extends Zend_Controller_Action
 	{
-		protected $mChuyenmuc,$user,$role;
+		protected $mChuyenmuc,$user,$role, $mImage;
 		
 		function init()
 		{
@@ -10,6 +10,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mimagecategory();
+			  $this->mImage = new Admin_Model_Mimage();
 			  @session_start();
 		}
 		
@@ -44,7 +45,7 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
 				$paginator = Zend_Paginator::factory($this->mChuyenmuc->getListCM());
-	        	$paginator->setItemCountPerPage(5);        
+	        	$paginator->setItemCountPerPage(25);        
 	        	$currentPage = $this->_request->getParam('page',1);
 	         	$paginator->setCurrentPageNumber($currentPage);
 	        	$this->view->list = $paginator;
@@ -140,6 +141,15 @@
 				}
 		}
 		
+		function deleteAction()
+		{
+			$category_id = $this->_request->getParam('categoryid');
+			$this->mImage->delImageInCategory1($category_id);
+			if($this->mImage->delImage1($id))
+				$_SESSION['result']='Xóa thành công';
+			else $_SESSION['result']='Xóa không thành công';
+			$this->_redirect($this->view->baseUrl().'/../admin/imagecategory');
+		}
 		
 	}
 ?>

@@ -455,7 +455,6 @@
 			$newsid=$this->_request->getParam('newsid');
 			if ($this->_request->isPost())
 			{
-				
 				if (!$form->isValid($_POST))
 				{
 					

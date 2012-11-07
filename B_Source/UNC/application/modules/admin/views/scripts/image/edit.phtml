@@ -66,11 +66,13 @@
 							foreach($this->listAllImageCategory as $allCategory)
 							{
 								$check = 0 ;
-								foreach($this->listImageCategory as $category)
+								foreach ($this->listCategory as $category)
 								{
-									if($allCategory['category_id'] == $category['category_id'])
+									
+									if($allCategory['category_id'] == $category)
 									{
-										$check = 1;break;
+										$check = 1;
+										break;
 									}
 								}
 								if($check == 1)
@@ -78,6 +80,7 @@
 									?>
 									<div style="margin-left:100px">
 										<input type="checkbox" name="checkbox[]" value="<?php echo $allCategory['category_id']; ?>" class="item" checked="checked"/>
+										
 										<span><?php echo $allCategory['category_name']; ?></span>
 									</div>
 									<?php

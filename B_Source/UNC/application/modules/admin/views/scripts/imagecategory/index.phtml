@@ -1,4 +1,19 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa mục này?");
+					if (r==true)
+					{
+						var uri="<?php echo $this->baseUrl();?>/admin/imagecategory/delete/categoryid/"+value;
+						window.location=uri;
+					}
+					else 
+					{	
+					}
+				}
+</script>
 <style>
 	.del_button{cursor:pointer}
 	.yui3-datatable-table{width:100% !important}
@@ -29,7 +44,15 @@
 										order: "<?php echo $count;?>", 
 										category_name: "<?php echo $item['category_name'];?>",   
 										is_active: "<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>",
-										sua: '<?php echo '<a href="'.$this->baseUrl().'/admin/imagecategory/edit/category_id/'.$item['category_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?>'
+										sua: 
+										'<?php 
+												echo '<a href="'.$this->baseUrl().'/admin/imagecategory/edit/category_id/'.$item['category_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+										?>',
+										xoa: 
+										'<?php
+												echo '<a class="del_button" onclick="confirmDel('.$item['category_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+										?>'
+										
 									},
 								<?php $count++;}?>
 							];
@@ -63,7 +86,14 @@
 								label:'<center>Sửa</center>',
 								formatter: '<center>{value}</center>',
 								allowHTML: true
-							}],
+							},
+							{
+								key: 'xoa',
+								label:'<center>Xóa</center>',
+								formatter: '<center>{value}</center>',
+								allowHTML: true
+							}
+							],
 					data: data,
 				});
 	

@@ -1,9 +1,11 @@
 <?php
 	class Admin_Model_Mimage extends Zend_Db_Table_Abstract
 	{
+		protected $_name='unc_images';
 		private $db;
 		function __construct()
 		{
+			parent::__construct();
 			$this->db=Zend_Registry::get('db');
 		}
 		
@@ -13,11 +15,13 @@
 			return $query->fetchAll();
 		}
 		
-		function insertImage($input)
+		function insertImage($input,$checkbox)
 		{
-			$query = $this->db->query("insert into unc_images(`image_name`, `image_link`, `image_date_create`, `is_active`) 
+			
+			$query = $this->db->query("insert into unc_images(`image_name`, `image_link`, `image_date_create`, `is_active`, `category_id`) 
 										values ('".$input['image_name']."','".$input['image_link']."',
-												'".gmdate("Y-m-d h:i:s",time() + 7*3600)."','".$input['is_active']."')");
+												'".gmdate("Y-m-d h:i:s",time() + 7*3600)."','".$input['is_active']."',
+												'".$checkbox."')");
 			return $query;
 		}
 		
@@ -28,19 +32,29 @@
 			if(count($list) > 0) return $list[0]['image_id'];
 			else return false;
 		}
-		
-		function insertImageForCategory($image_id)
+
+		function insertImageForCategory($image_id,$category_id)
 		{
-			$query = $this->db->query('insert into unc_images_category values ("'.$image_id.'")');
+			$query = $this->db->query('insert into unc_images values ("'.$image_id.'","'.$category_id.'")');
 			return $query;
 		}
 		
-		function delImageInCategory($image_id)
+		function delImageInCategory($category_id)
 		{
-			$query = $this->db->query('delete from unc_images_category where image_id = "'.$image_id.'"');
+			$query = $this->db->query('delete from unc_images_category where category_id = "'.$category_id.'"');
+			return $query;
+		}
+		function delImageInCategory1($category_id)
+		{
+			$query = $this->db->query('delete from unc_images_category where category_id = "'.$category_id.'"');
 			return $query;
 		}
 		
+		function delImage1($id)
+		{
+			$query = $this->db->query('delete from unc_images_category where category_id = "'.$id.'"');
+			return $query;
+		}
 		function delImage($image_id)
 		{
 			$query = $this->db->query('delete from unc_images where image_id = "'.$image_id.'"');
@@ -60,10 +74,11 @@
 			return $list[0];
 		}
 		
-		function editImage($id,$input)
+		function editImage($id,$input,$checkbox)
 		{
 			$query=$this->db->query("update unc_images 
-									set image_name='".$input['image_name']."', image_link='".$input['image_link']."', is_active='".$input['is_active']."'
+									set image_name='".$input['image_name']."', image_link='".$input['image_link']."',
+									 is_active='".$input['is_active']."',category_id='".$checkbox."'
 									where image_id='".$id."'");
 			return $query;
 		}
@@ -76,7 +91,7 @@
 		
 		function getListCategoryImage()
 		{
-			$query = $this->db->query('select * from unc_images_category');
+			$query = $this->db->query('SELECT * FROM unc_images_category where is_active = "1"');
 			$list = $query->fetchAll();
 			if(count($list) > 0)
 				return $list;
@@ -85,7 +100,7 @@
 		
 		function getListImageCategoryByImageId($image_id)
 		{
-			$query = $this->db->query('select category_id from unc_images_category where image_id = "'.$image_id.'"');
+			$query = $this->db->query('select category_id from unc_images where image_id = "'.$image_id.'"');
 			return $query->fetchAll();
 		}
 	}

@@ -68,7 +68,8 @@
 			$data = array(
 						'image_name'	=> $form->getValue('image_name'),
 						'image_link'    => $form->getValue('image_link'),
-						'is_active'		=> $form->getValue('is_active')
+						'is_active'		=> $form->getValue('is_active'),
+						'category_id'		=> $form->getValue('category_id')
 			);
 			return $data;
 		}
@@ -86,28 +87,31 @@
 			
 			if($this->_request->isPost())
 			{
-				if($form->isValid($_POST))
+								if (!$form->isValid($_POST))
 				{
-					$input = $this->_getInput($form);
-						if($this->mImage->insertImage($input))
-						{
-							$image_id = $this->mImage->getImageIdNewest();
-							foreach($_POST['checkbox'] as $check)
-							{
-								$this->mImage->insertImageForCategory($image_id,$check);
-							}
-							$_SESSION['result']='Thêm mới thành công';
-							$this->_redirect($this->view->baseUrl().'/../admin/image');
-						}
-						else 
-						{
-							$_SESSION['result']='Thêm mới không thành công';
-							$this->_redirect($this->view->baseUrl().'/../admin/image');
-						}
-				}
-				else 
-				{
+					
 					$form->populate($_POST);
+				}
+				else
+				{
+					$input=$this->_getInput($form);
+					$checkbox ="";
+					foreach($_POST['checkbox'] as $check)
+					{
+						//echo "$check + ';'";
+						$checkbox = $checkbox.$check.',';
+					}
+					//die();
+					$_SESSION['result']='Thêm mới thành công';
+					//var_dump($checkbox);die();
+					if($this->mImage->insertImage($input,$checkbox))
+					{
+						$_SESSION['result']='Thêm mới thành công';
+					}
+					else{
+						$_SESSION['result']='Thêm mới không thành công';
+					}
+					$this->_redirect($this->view->baseUrl().'/../admin/image');					
 				}
 			}
 			
@@ -134,47 +138,55 @@
 			$form = $this->setForm();
 			$image_id = $this->_request->getParam('imageid');
 			$this->view->listAllImageCategory = $this->mImage->getListCategoryImage();
-			$this->view->listImageCategory = $this->mImage->getListImageCategoryByImageId($image_id);
 			
 			$info = $this->mImage->getImageById($image_id);
+			$category_id = explode(",",$info['category_id']);
+			//echo $category_id[0];die();
+			//var_dump($info);die();
+			//------- Truyền giá trị vào------------
 			$form->setAction($this->view->baseUrl().'/admin/image/edit/imageid/'.$image_id);
 			$form->getElement('image_name')->setValue($info['image_name']);
 			$form->getElement('image_link')->setValue($info['image_link']);
 			$form->getElement('is_active')->setValue($info['is_active']);
-				
+			
+			//-------End Truyền giá trị vào------------	
 			$this->view->form = $form;
 			$this->view->title = "Sửa thông tin hình ảnh";
-				
+			//--- Vòng lặp mảng đã qua xử lý bỏ dấu ','
+			
+			$this->view->listCategory = $category_id;
+			//---End Vòng lặp mảng đã qua xử lý bỏ dấu ','
+			
 			if($this->_request->isPost())
 			{
-				if($form->isValid($_POST))
+				if (!$form->isValid($_POST))
 				{
-					//echo $image_id;die();
+					$form->populate($_POST);
+				}
+				else
+				{
+					$id = $this->_request->getParam('imageid');
 					$input = $this->_getInput($form);
-					if($this->mImage->editImage($image_id, $input))
+					
+					$checkbox = "";
+					foreach($_POST['checkbox'] as $check)
 					{
-						if($this->mImage->delManageCategoryByImageId($image_id))
-						{
-							//var_dump($_POST['checkbox']);die();
-							foreach($_POST['checkbox'] as $check)
-							{
-								$this->mImage->insertImageForCategory($image_id,$check);
-							}
-						}
+						$checkbox = $checkbox.$check.',';
+					}
+					$checkbox=','.$checkbox;
+					if ($this->mImage->editImage($id, $input,$checkbox))
+					{
 						$_SESSION['result']='Cập nhật thành công';
 						$this->_redirect($this->view->baseUrl().'/../admin/image');
 					}
 					else 
 					{
-						$_SESSION['result']='Cập nhật không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/image');
+						$this->view->error=$form->getMessage();
+						$this->view->form=$form;
 					}
 				}
-				else 
-				{
-					$form->populate($_POST);
-				}
 			}
+			$this->view->form=$form;
 		}
 
 	}

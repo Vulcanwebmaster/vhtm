@@ -71,7 +71,8 @@ $(document).ready(function() {
 							{
 									?>
 									<div style="margin-left:100px">
-										<input type="checkbox" name="checkbox[]" value="<?php echo $category['category_id']; ?>" class="item"/>
+										<input type="checkbox" name="checkbox[]" value="<?php echo $category['category_id']; ?>" 
+										class="item"/>
 										<span><?php echo $category['category_name']; ?></span>
 									</div>
 									<?php
@@ -82,7 +83,7 @@ $(document).ready(function() {
 		</div>
 		<footer>
 			<div class="submit_link" style="float:right">
-				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/truongban">Hủy bỏ</a>
+				<a class="alt_btn" style="margin-left:10px" href="<?php echo $this->baseUrl(); ?>/admin/image">Hủy bỏ</a>
 				<input type="submit" name="submit" value="Thêm mới" class="alt_btn">
 			</div>
 		</footer>
