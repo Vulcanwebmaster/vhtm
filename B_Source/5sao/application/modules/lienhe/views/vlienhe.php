@@ -20,10 +20,10 @@
 	
 	<p style="font-weight:bold; font-size:13px; margin-top:30px; margin-left:20px; margin-bottom:15px">Xin hãy điền đầy đủ các thông tin dưới đây:</p>
 	<form name="lienhe-form" action="<?php echo base_url();?>lienhe/send" method="post">
-		<table style="margin-left:170px">
+		<table style="width:300px">
 			<tr>
-				<td>Họ tên</td>
-				<td><input name="hoten" type="text"/></td>
+				<td style="width: 30%">Họ tên</td>
+				<td style="width:70%"><input name="hoten" type="text"/></td>
 			</tr>
 			<tr>
 				<td>Email</td>
@@ -42,7 +42,11 @@
 				<td><textarea name="noidung" style="height:100px"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input name="submit" type="submit" value="Gửi" style="height:20px"/></td>
+				<td colspan="2" align="center">
+					<center>
+						<input name="submit" type="submit" value="Gửi" style="height:25px; width:70px; margin:auto ;text-align: center"/>
+					</center>
+				</td>
 			</tr>
 		</table>
 	</form>

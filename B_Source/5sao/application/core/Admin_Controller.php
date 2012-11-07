@@ -81,8 +81,6 @@ class Admin_Controller extends NIW_Controller
 	
 	function getAliasByName($name)
 	{
-		$name=trim($name);
-		
 		$name=str_replace('á', 'a', $name);
 		$name=str_replace('à', 'a', $name);
 		$name=str_replace('ạ', 'a', $name);

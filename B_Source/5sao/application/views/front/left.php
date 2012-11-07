@@ -2,13 +2,13 @@
 
 <div id="left">
 	<div id="search">
-		<?php echo $this->lang->line('menu-timkiem');?><br />				
+		<?php echo $this->lang->line('menu-timkiem');?>			
 			<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
 				<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
 				<input class="searchsubmit" type="submit" value="" style="cursor:pointer"/>
 			</form>																																																			
 	</div>
-			<div  class="bodermove" style="margin-left:10px;">
+			<div  class="bodermove" style="margin-top:0px; text-align: left;">
 					<h4 class="title1"><?php echo $this->lang->line('left-danhmuc');?></h4>
 					<ul id="list">
 						<?php foreach ($categories as $category)
@@ -16,10 +16,12 @@
 							if ($lang=="vn") 
 							{?>
 								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
+									<?php $listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);?>
+									<?php if (count($listlevel2)>0)
+									{?>
 									<div class="slidemove">
 										<ul class="inside">
-											<?php 
-												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);
+											<?php 												
 												foreach ($listlevel2 as $level2)
 												{?>
 													<li><a class="menuleft-lv2" href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_v;?></a></li>
@@ -27,20 +29,19 @@
 											?>
 										</ul>
 									</div>
+									<?php }?>
 								</li>
 							<?php }
 							else {?>
 								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_e;?></a>
 									<div class="slidemove">
-										<ul class="inside">
-											
+										<ul class="inside">										
 											<?php $newmodel=new CI_Model();
 												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->alias);
 												foreach ($listlevel2 as $level2)
 												{?>
-													<li><a class="menuleft-lv2"  href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_e;?></a></li>
-												<?php }
-											?>
+													<li><a class="menuleft-lv2"  href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_e;?></a></li><br/>
+												<?php }											?>
 										</ul>
 									</div>
 								</li>
@@ -51,7 +52,7 @@
 				</div>
                     <div class="bodermove" id="prnew">
                         <div class="title2"><h4><?php echo $this->lang->line('left-spbanchay');?></h4></div>
-                        <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="220"  width="182" style="margin:4px 0 10px 0">
+                        <marquee direction="down" behavior="alternate"  scrollamount="2"  loop="-1" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="220"  width="182" style="margin:4px 0 10px 0">&nbsp;
                            <?php foreach ($list_spbanchay as $spbc)
                            {?>
                           		<div class="pr-img">
@@ -69,7 +70,7 @@
                    	 </div>		
                    	  <div id="mainmap"  class="bodermove">
                    		<h4 class="title3" style=" margin-top:0px;">Thống kê</h4>
-                        <div id="statistics">
+                        <div id="statistics" style="text-align: left">
                         	<ul>
                         	<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Hôm nay:</label> <?php echo $counting['today'];?></li>
                         	<li><img src="<?php echo base_url(); ?>assets/5sao/images/month.png"/><label>Tháng hiện tại:</label> <?php echo $counting['month'];?></li>

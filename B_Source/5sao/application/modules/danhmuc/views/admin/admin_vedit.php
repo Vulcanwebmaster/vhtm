@@ -34,6 +34,24 @@
 							}?>
 					</select>
 				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện 1</label>
+					<center>
+						<?php echo $this->ckeditor->editor('anhdaidien1',$info->anhdaidien1,$config);?>
+					</center>
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện 2</label>
+					<center>
+						<?php echo $this->ckeditor->editor('anhdaidien2',$info->anhdaidien2,$config);?>
+					</center>
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện 3</label>
+					<center>
+						<?php echo $this->ckeditor->editor('anhdaidien3',$info->anhdaidien3,$config);?>
+					</center>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">

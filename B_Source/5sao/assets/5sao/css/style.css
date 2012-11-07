@@ -516,7 +516,7 @@ font-size:11px
 #language a{padding-left:0px;}
 .pr-img{ margin:5px; border-bottom:1px solid #CCC;}
 .pr-img h4{ color:#000000 !important; font-size:11px !important; text-transform:none !important;}
-.bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;clear:both}
+.bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;clear:both; behavior:url(PIE/PIE.htc)}
 #newpr{width:100%; line-height:30px; background-image:url(../images/prnew.jpg); background-repeat:repeat-x; text-transform:uppercase; font-weight:bold; text-align:center !important; padding:auto !important; color:white; margin:10px 0 0 -4px !important;}
 .itemmenu{position: absolute;padding-top:10px;z-index: 999}
 span a{ text-decoration:none}
@@ -619,3 +619,7 @@ td, input, textarea{ text-align:left}
 #aboutus-menu{margin:15px 0 0 0; list-style-type:none; padding:0; width:98%; padding: 0;}
 .aboutth-item h5 a{ text-align: left;}
 #pr2{ background-image:url(../images/pr2.jpg)}
+.back_link li:first-child{margin-left:120px}
+#breadcrum li{display:inline; color:#383838}
+#breadcrum li *{color:#383838;text-decoration:none; font-size:15px; display:inline}
+#breadcrum{list-style-type:none; padding:0; text-align:left; border-bottom:solid 1px black; margin-top:5px;}

@@ -13,10 +13,10 @@
 		</div>		
 		<div class="boxfooter_main">            
 			<p style="text-align: center; margin:0; padding:0">	
-				<span style="font-size:18px;line-height:40px; margin:0; padding-top:0">Công Ty TNHH Thái Dương</span><br>	
-				<span style="font-size: 13px;">Cụm công nghiệp vừa và nhỏ Từ Liêm, Km21 - Đường 70 - Xuân Phương - Từ Liêm - Hà Nội<br>	
-					Tel :(04) 37.633.594 - Fax: (04) 37.633.595 - </span>Hotline : 0988.999.687<br>	
-				<span style="font-size:13px;"> Bản quyền thuộc về Công Ty TNHH Thái Dương</span>
+				<span style="font-size:18px;line-height:40px; margin:0; padding-top:0">Công ty cổ phần thiết bị Thái Dương</span><br>	
+				<span style="font-size: 13px;">Số 29/3, Khu Cầu Đơ 4, Phường Hà Cầu, Quận Hà Đông, Thành phố Hà Nội<br>	
+					Tel/ Fax: 0466861137  - </span>Hotline : 0985.534.534<br>	
+				<span style="font-size:13px;"> Bản quyền thuộc về Công ty cổ phần thiết bị Thái Dương</span>
 			</p>            
 			<ul class="back_link">   
 				<?php 

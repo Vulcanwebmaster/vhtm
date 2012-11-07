@@ -32,7 +32,7 @@ class Homepage extends NIW_controller {
 	public function page($index=0)
 	{
 		$config['base_url']=base_url().'homepage/page/';
-		$config['per_page']= 3;
+		$config['per_page']= 12;
 		$config['total_rows']=count($this->Mhomepage->getListByColumn('sanpham','moi','1'));
 		$config['uri_segment']=3;
 		$this->pagination->initialize($config);
@@ -47,7 +47,7 @@ class Homepage extends NIW_controller {
 		$data['counting']=$this->getCounting();
 		
 		$data['lang']=$this->session->userdata('lang');
-		$data['list']=$this->Mhomepage->getListByColumnOffset('sanpham','moi','1',$index,3);
+		$data['list']=$this->Mhomepage->getListByColumnOffset('sanpham','moi','1',$index,12);
 		$data['title']='5saoviet | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';

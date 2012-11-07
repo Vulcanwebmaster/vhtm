@@ -8,14 +8,15 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/5sao/css/default.css">
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/getElementsByClassName-1.0.1.js"></script>	
 	 <script type="text/javascript">
-		 $(document).ready(function(){
+		 $(document).ready(function(){		 	
 			 $('.slidemove').hide();
-			 var parent_ct;
+			 
+			 var parent_ct;			 
 			 <?php if (isset($current_category))
-			 {?>
-			 	var list=document.getElementsByClassName('menuleft-lv2');
-
+			 {?>			 
+			 	var list=getElementsByClassName('menuleft-lv2');
 			 	<?php if ($lang=="vn")
 			 	{?>
 			 		category='<?php echo $current_category->ten_v;?>';
@@ -33,22 +34,34 @@
 						break;
 					}
 				}
-			 <?php }?>
+			 <?php }?>	
 					$('.slidecontrol').click(function(){
 							$(this).children('.slidemove').slideToggle();
 						});
-						
-				$('.itemmenu').children('div').css('opacity','0');//.animate({opacity:0},300);
+										
+				/*$('.bg_itemmenu').children('ul').css('opacity','0');//.animate({opacity:0},300);				
 					$('.menu-text').mouseenter(function(){
 						$(this).parent().addClass('hovermenu');
 						//$(this).children('.itemmenu').children('div').slideDown(300);
-						$(this).parent().children('.itemmenu').children('div').animate({opacity:1,height:'100%'},300);
+						$(this).parent().children('.bg_itemmenu').children('ul').animate({opacity:1,height:'100%'},300);
 						});
 					$('.submenu').mouseleave(function(){
 						$(this).removeClass('hovermenu');
 						//$(this).children('.itemmenu').children('div').slideUp(300);
-						$(this).children('.itemmenu').children('div').animate({opacity:0,height:'0'},300);
+						//$(this).children('.bg_itemmenu').children('ul').animate({opacity:0,height:'0'},300);
 						});
+			*/
+				$('.bg_itemmenu').hide();				
+				$('.submenu').mouseenter(function(){
+					$(this).children('.bg_itemmenu').show();
+					$(this).children('.bg_itemmenu').css('z-index','111');
+					$(this).addClass('hovermenu');
+				})
+				$('.submenu').mouseleave(function(){
+					$(this).children('.bg_itemmenu').hide();
+					$(this).removeClass('hovermenu');
+					$(this).children('.bg_itemmenu').css('z-index','10');
+				});				
 			});
 				$(window).load(function() {
 					$('#slider').nivoSlider();

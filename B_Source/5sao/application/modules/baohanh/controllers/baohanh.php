@@ -32,6 +32,7 @@ class Baohanh extends NIW_controller {
 		$data['list_tintuc_right']=$this->Mbaohanh->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mbaohanh->getListFull('gioithieu');
 		$data['categories']=$this->Mbaohanh->getListByColumn('danhmuc','parent_id','0');
+		$data['counting']=$this->getCounting();
 		
 		$data['lang']=$this->session->userdata('lang');
 		$data['list']=$this->Mbaohanh->getRowByColumn('baohanh','id','1');

@@ -1,0 +1,8 @@
+[22-Oct-2012 20:29:53] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 128194561 bytes) in /home3/niwvietn/public_html/5sao/system/core/Exceptions.php on line 185
+[22-Oct-2012 20:30:40] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 128194561 bytes) in /home3/niwvietn/public_html/5sao/system/core/Exceptions.php on line 185
+[22-Oct-2012 20:31:28] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 128194561 bytes) in /home3/niwvietn/public_html/5sao/system/core/Exceptions.php on line 185
+[22-Oct-2012 20:32:14] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 128194561 bytes) in /home3/niwvietn/public_html/5sao/system/core/Exceptions.php on line 185
+[22-Oct-2012 20:34:29] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 128194561 bytes) in /home3/niwvietn/public_html/5sao/system/core/Exceptions.php on line 185
+[28-Oct-2012 22:22:42] PHP Parse error:  syntax error, unexpected $end in /home3/niwvietn/public_html/5sao/application/views/front/right.php on line 49
+[29-Oct-2012 00:18:20] PHP Fatal error:  Call to a member function getListByColumn() on a non-object in /home3/niwvietn/public_html/5sao/application/views/front/footer.php on line 25
+[29-Oct-2012 00:18:30] PHP Fatal error:  Call to a member function getListByColumn() on a non-object in /home3/niwvietn/public_html/5sao/application/views/front/footer.php on line 25

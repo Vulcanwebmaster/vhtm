@@ -31,6 +31,18 @@
 							}?>
 					</select>
 				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện 1</label>
+					<?php echo $this->ckeditor->editor('anhdaidien1','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện 2</label>
+					<?php echo $this->ckeditor->editor('anhdaidien2','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện 3</label>
+					<?php echo $this->ckeditor->editor('anhdaidien3','',$config);?>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">

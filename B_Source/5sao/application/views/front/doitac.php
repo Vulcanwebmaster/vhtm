@@ -26,4 +26,4 @@
 		</tbody>
 	</table>
 </marquee>
-<p style="text-align:center; margin-top:15px; font-size:12px"><?php echo $this->lang->line('dsdoitac');?></p>
+<!--<p style="text-align:center; margin-top:15px; font-size:12px"><?php echo $this->lang->line('dsdoitac');?></p>-->

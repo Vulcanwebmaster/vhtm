@@ -39,7 +39,10 @@
 		{
 			$input=array('ten_v'=>$this->input->post('ten_v'),
 						'ten_e'=>$this->input->post('ten_e'),
-						'parent_id'=>$this->input->post('parent_id'));
+						'parent_id'=>$this->input->post('parent_id'),
+						'anhdaidien1'=>$this->input->post('anhdaidien1'),
+						'anhdaidien2'=>$this->input->post('anhdaidien2'),
+						'anhdaidien3'=>$this->input->post('anhdaidien3'));
 			return $input;
 		}
 		
