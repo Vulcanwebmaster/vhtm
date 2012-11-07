@@ -46,11 +46,11 @@
 										polls_vote:	   "<?php echo $item['polls_vote'];?>",
 										sua: 
 											'<?php 
-												echo '<a href="'.$this->baseUrl().'/admin/thamdo/edit/pollsid/'.$item['polls_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+												echo '<a href="'.$this->baseUrl().'/admin/thamdo/edit/pollsid/'.$item['polls_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
 											?>',
 										xoa: 
 											'<?php
-												echo '<a class="del_button" onclick="confirmDel('.$item['polls_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												echo '<a class="del_button" onclick="confirmDel('.$item['polls_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 											?>'
 									},
 								<?php $count++;}?>

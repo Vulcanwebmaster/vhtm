@@ -23,8 +23,8 @@
 		    				<td><?php echo $item['category_parent_id'];?></td>
 		    				<td><?php if ($item['is_active']=='1') echo 'Bật'; else echo 'Tắt';?></td>
 		    				<td>
-		    					<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/edit/category_id/<?php echo $item['category_id']; ?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    				<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/del/category_id/<?php echo $item['category_id']; ?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/edit/category_id/<?php echo $item['category_id']; ?>" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    				<a href="<?php echo $this->baseUrl(); ?>/admin/danhmuc/del/category_id/<?php echo $item['category_id']; ?>" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>

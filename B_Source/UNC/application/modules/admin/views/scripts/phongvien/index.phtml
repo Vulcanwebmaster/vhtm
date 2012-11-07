@@ -57,8 +57,8 @@
 		    						echo 'Có';
 		    					else echo 'Không';?></td>
 		    				<td>
-		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $item['user_id']?>" title="Edit"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/<?php echo $item['user_id']?>" title="Del"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
+		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $item['user_id']?>" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
+		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/<?php echo $item['user_id']?>" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
 		    				</td>
 						</tr>
 				 	<?php }?>
@@ -84,12 +84,12 @@
 										sua: 
 											'<?php 
 												if($this->role =="0" | ($this->role =="2" & $item['user_login']==$this->user))
-													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
 											?>',
 										xoa : 
 										'<?php
 											if($this->role =="0")
-												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 										?>'
 									},
 								<?php $count++;}?>

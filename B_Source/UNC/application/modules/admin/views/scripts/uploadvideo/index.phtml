@@ -50,12 +50,12 @@
 										is_active: "<?php if($item['is_active'] == '1') echo 'Có'; else echo 'Không';?>",
 										sua: '<?php
 											if($this->role == "0" |(($this->role=="1" | $this->role=="2") & $this->user_login==$item['user_upload']))
-												echo '<a href="'.$this->baseUrl().'/admin/uploadvideo/edit/video_id/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+												echo '<a href="'.$this->baseUrl().'/admin/uploadvideo/edit/video_id/'.$item['video_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
 										?>',
 										xoa : 
 										'<?php
 											if($this->role == "0" |(($this->role=="1" | $this->role=="2") & $this->user_login==$item['user_upload']))
-												echo '<a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												echo '<a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 										?>'
 									},
 								<?php $count++;}?>

@@ -48,12 +48,12 @@
 										sua: 
 											'<?php 
 												if($this->role =="0" | ($this->role =="1" & $item['user_login']==$this->user))
-													echo '<a href="'.$this->baseUrl().'/admin/truongban/edit/userid/'.$item['user_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+													echo '<a href="'.$this->baseUrl().'/admin/truongban/edit/userid/'.$item['user_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
 											?>',
 										xoa: 
 										'<?php
 											if($this->role == "0")
-												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 										?>'
 									},
 								<?php $count++;}?>

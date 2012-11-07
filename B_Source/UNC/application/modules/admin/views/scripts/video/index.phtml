@@ -49,11 +49,11 @@
 										user_upload: '<?php echo $item['user_upload'];?></a>',
 										is_active: "<?php if($item['is_active'] == '1') echo 'Có'; else echo 'Không';?>",
 										sua: '<?php
-												echo '<a href="'.$this->baseUrl().'/admin/video/edit/videoid/'.$item['video_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+												echo '<a href="'.$this->baseUrl().'/admin/video/edit/videoid/'.$item['video_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
 										?>',
 										xoa : 
 										'<?php
-												echo '<a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Del"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+												echo '<a class="del_button" onclick="confirmDel('.$item['video_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 										?>'
 									},
 								<?php $count++;}?>

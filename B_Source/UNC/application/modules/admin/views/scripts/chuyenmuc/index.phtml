@@ -30,7 +30,7 @@
 										category_name: "<?php echo $item['category_name'];?>",   
 										category_parent_id: "<?php if($item['category_parent_id']!='0') echo $this->listParent[$count-1];?>",
 										is_active: "<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>",
-										sua: '<?php if($this->role == "0") echo '<a href="'.$this->baseUrl().'/admin/chuyenmuc/edit/category_id/'.$item['category_id'].'" title="Edit"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?>'
+										sua: '<?php if($this->role == "0") echo '<a href="'.$this->baseUrl().'/admin/chuyenmuc/edit/category_id/'.$item['category_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?>'
 									},
 								<?php $count++;}?>
 							];
