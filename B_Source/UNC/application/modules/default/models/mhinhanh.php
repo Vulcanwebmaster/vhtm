@@ -37,5 +37,26 @@
 			$query = $this->db->query('select * from unc_video where is_active = "1" order by video_id desc');
 			return $query->fetchAll();
 		}
+		
+		function getImagesByCategoryId($category_id)
+		{
+			$query = $this->db->query('select * from unc_images where category_id like "%,'.$category_id.',%" order by image_id desc');
+			return $query->fetchAll();
+		}
+		
+		function getListImagesAll()
+		{
+			$query = $this->db->query('select * from unc_images order by image_id desc');
+			return $query->fetchAll();
+		}
+		
+		function getImageById($image_id)
+		{
+			$query = $this->db->query('select * from unc_images where image_id="'.$image_id.'"');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
 	}
 ?>

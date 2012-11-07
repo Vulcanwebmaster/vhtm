@@ -2,6 +2,7 @@
 class HinhanhController extends Zend_Controller_Action
 {
 	protected $mDefault,$mTintuc,$mHinhanh, $mDiachi;
+	private $listThreadTitle;
 	function init()
 	{
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
@@ -18,14 +19,6 @@ class HinhanhController extends Zend_Controller_Action
 		$_SESSION['page'] = 'hinhanh';
 	}
 	
-	function indexAction()
-	{
-		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
-		$this->view->listImageLeft = $this->mHinhanh->getListImageLeft();
-		$this->view->listCategory = $this->mHinhanh->getListCategory();
-		$this->view->listdiachi = $this->mDiachi->getListDiachi();
-		$this->view->listlienhe = $this->mDiachi->getListLienhe();
-	}
 	function listAction()
 	{
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
@@ -33,22 +26,22 @@ class HinhanhController extends Zend_Controller_Action
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();	
 		$this->view->current_category=array('category_name'=>'Hinhanh');
-		//var_dump($this->mVideo->getVideoByCategoryId('1'));die();
 		
 		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
-		$this->view->listThread = $this->listThreadTitle;
-		$this->view->menuvideo = $this->mVideo->getVideoByCategoryName();
+		$this->view->listCategory = $this->mHinhanh->getListCategory();
+		$this->view->listdiachi = $this->mDiachi->getListDiachi();
+		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		
 		//------Gọi ra  Hình ảnh---------
 		$category_id = $this->_request->getParam('category_id');
 		if ($category_id != 0)
-			$paginator = Zend_Paginator::factory($this->mVideo->getVideoByCategoryId($category_id));
+			$paginator = Zend_Paginator::factory($this->mHinhanh->getImagesByCategoryId($category_id));
 		else 
-			$paginator = Zend_Paginator::factory($this->mVideo->getListVideo());
+			$paginator = Zend_Paginator::factory($this->mHinhanh->getListImagesAll());
         $paginator->setItemCountPerPage(12);
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
-		$this->view->list = $paginator;
+		$this->view->listImageLeft = $paginator;
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 		
@@ -63,8 +56,17 @@ class HinhanhController extends Zend_Controller_Action
 		$this->view->listquangcao2 = $listquangcao2;
 		$this->view->listquangcao3 = $listquangcao3;
 		$this->view->listquangcao4 = $listquangcao4;
-
-		$this->view->listquangcao = $listquangcao;
+		
+		//=== set current category ============
+		$this->view->current_category_id=$category_id;
+	}
+	
+	function detailAction()
+	{
+		$this->_helper->layout()->disableLayout();
+		//===== get content ===============================
+		$image_id=$this->_request->getParam('image_id');
+		$info=$this->mHinhanh->getImageById($image_id);
+		$this->view->info=$info;
 	}
 }
-?>

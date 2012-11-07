@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2012 at 08:01 AM
+-- Generation Time: Nov 07, 2012 at 05:18 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -238,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `unc_counting` (
   `year` int(4) NOT NULL DEFAULT '0',
   `access` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `unc_counting`
@@ -262,7 +262,8 @@ INSERT INTO `unc_counting` (`id`, `day`, `month`, `year`, `access`) VALUES
 (15, 3, 11, 2012, 29),
 (16, 4, 11, 2012, 133),
 (17, 5, 11, 2012, 217),
-(18, 6, 11, 2012, 190);
+(18, 6, 11, 2012, 190),
+(19, 7, 11, 2012, 19);
 
 -- --------------------------------------------------------
 
@@ -273,19 +274,26 @@ INSERT INTO `unc_counting` (`id`, `day`, `month`, `year`, `access`) VALUES
 CREATE TABLE IF NOT EXISTS `unc_images` (
   `image_id` int(11) NOT NULL AUTO_INCREMENT,
   `image_name` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `image_link` text,
+  `image_link` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `image_date_create` datetime DEFAULT NULL,
   `is_active` int(1) DEFAULT NULL,
+  `category_id` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `unc_images`
 --
 
-INSERT INTO `unc_images` (`image_id`, `image_name`, `image_link`, `image_date_create`, `is_active`) VALUES
-(16, 'ảnh 1', '<p><img src="/unc/userfiles/image/1%20(1).jpg" width="200" height="200" alt="" /></p>', '2012-10-31 05:15:41', 1),
-(17, 'abc', '<p><img src="/unc/userfiles/image/Chrysanthemum.jpg" width="1024" height="768" alt="" />&nbsp;</p>', '2012-11-07 02:01:34', 1);
+INSERT INTO `unc_images` (`image_id`, `image_name`, `image_link`, `image_date_create`, `is_active`, `category_id`) VALUES
+(16, 'ảnh 1', '<p><img src="/unc/userfiles/image/1%20(1).jpg" width="200" height="200" alt="" /></p>', '2012-10-31 05:15:41', 1, ',1,3,'),
+(17, 'abc', '<p><img src="/unc/userfiles/image/Chrysanthemum.jpg" width="1024" height="768" alt="" />&nbsp;</p>', '2012-11-07 02:01:34', 1, ',2,4,11'),
+(18, 'anhlinhtinh', '<p><img width="116" height="108" src="/unc/userfiles/image/anh_xem_nhieu4.gif" alt="" /></p>', '2012-11-07 02:37:53', 1, ',3,'),
+(21, 'anh 2', '<p><img width="116" height="108" src="/unc/userfiles/image/3.gif" alt="" /></p>', '2012-11-07 02:52:38', 1, ',11,3,'),
+(24, 'anh 1234', '\r\n<p>\r\n<img width="116" height="108" alt="" src="/unc/userfiles/image/5.gif"/>\r\n</p>\r\n', '2012-11-07 03:16:11', 0, ',1,4,'),
+(25, 'hinhanh01', '<p><img width="116" height="108" src="/unc/userfiles/image/5.gif" alt="" /></p>', '2012-11-07 03:20:42', 1, ',2,11,'),
+(27, 'Thiên nhiên 1', '<p><img src="/unc/userfiles/image/beautiful_lake_wallpaper_15e9c.jpg" width="1440" height="900" alt="" />&nbsp;</p>', '2012-11-07 10:21:55', 1, '4,'),
+(28, 'Thiên nhiên đẹp', '<p><img src="/unc/userfiles/image/wallpaper-4353.jpg" width="1920" height="1200" alt="" />&nbsp;</p>', '2012-11-07 10:23:50', 1, '4,');
 
 -- --------------------------------------------------------
 
@@ -294,10 +302,24 @@ INSERT INTO `unc_images` (`image_id`, `image_name`, `image_link`, `image_date_cr
 --
 
 CREATE TABLE IF NOT EXISTS `unc_images_category` (
-  `image_id` int(11) DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `is_active` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_active` int(1) NOT NULL,
+  `category_name` varchar(300) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `alias` varchar(300) NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `unc_images_category`
+--
+
+INSERT INTO `unc_images_category` (`category_id`, `is_active`, `category_name`, `alias`) VALUES
+(1, 1, 'Xã hội', 'Xa-hoi'),
+(2, 1, 'Thể thao', 'The-thao'),
+(3, 1, 'Hoang dại', 'Hoang-dai'),
+(4, 1, 'Thiên nhiên hoang dã', 'Thien-nhien-hoang-da'),
+(11, 1, 'Người đẹp', 'Nguoi-dep'),
+(12, 1, 'Ảnh nghệ thuật', '?nh-nghe-thuat');
 
 -- --------------------------------------------------------
 

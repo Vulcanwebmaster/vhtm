@@ -110,6 +110,8 @@ font-smoothing: antialiased;width:100%; height:auto; margin:0; padding:0; font:5
 #videp_left{ float:left; width:160px; margin-top: 7px}
 #videp_left li:hover{background: #0c68ae}
 #videp_left a:hover{color: white}
+#videp_left .current{background: #0c68ae}
+#videp_left .current a{color:white !important}
 #video_right { float:left; width:75%}
 #ul_video_left{ clear:both}
 #ul_video_left{margin:0; padding-left:0}
@@ -141,7 +143,7 @@ a{ text-decoration: none }
 .img-ads-scrol img{width: 147px; height: 200px}
 
 /*----------------begin header------------------*/
-#header{ width:100%; height:200px; padding-top:20px;background:url(../images/bg_top.gif) repeat-x top; }
+#header{ width:960px; margin:auto; height:200px; padding-top:20px;background:url(../images/bg_top.gif) repeat-x top; }
 #center-header{ width:980px; height:200px; padding-top:0; margin: auto; }
 #logo img{ width:230px; height:102px; float:left;}
 .right-header{ float:right;}
@@ -198,10 +200,10 @@ a{ text-decoration: none }
 .content-video ul li{border:1px; border-bottom-style:dotted; margin-right:6px;padding-top:10px}
 .title-video{}
 /*------------End Video-----------*/
-#content-left img{ padding: 9px 0px 5px 0px; float: left; }
-#gioithieu{width: 500px; height: auto; margin-left: 165px}
-.gioithieu-img{ width: 152px; height: 150px; float: left; padding: 0 8px 5px 0;}
-.gioithieu-img img{width: 150px !important; height: 107px !important;}
+#content-left img{ float: left; }
+#gioithieu{width: 500px; height: auto; margin-left: 175px}
+.gioithieu-img{ width: 152px; height: auto; float: left; padding: 8px 8px 5px 0;}
+.gioithieu-img img{cursor:pointer; width: 140px !important; height: 140px !important; border:solid 3px white; box-shadow:0 2px 5px 0 #232323}
 #chitiet{width: 495px; height: auto; margin-left: 165px}
 #content-right{background-color:#fdfefe !important; width: 300px; padding:5px; float: right; height: auto; margin-top: 15px }
 #content-right1{background-color:#fdfefe !important; width: 300px; padding:5px; float: right; height: auto; margin-top: 15px; }
@@ -284,3 +286,8 @@ a{ text-decoration: none }
 .even a img{width:114px !important;height:108px !important}
 .hotestnews-div p{margin-bottom:0}
 .thich-button{color:#2176bf; cursor:pointer}
+#detail-image-panel{position:fixed}
+#detail-image-panel img{border:solid 4px white; width:500px !important; height:350px !important}
+.pop-up{display:none; position:fixed; background:url('../images/popupbg.png') repeat}
+.pop-up img{box-shadow:0 0 15px 0 black; border:solid 5px white !important}
+#popup-close{margin:15px; color:white; cursor:pointer; font-size:16px; text-decoration:underline; text-align:right}

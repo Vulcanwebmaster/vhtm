@@ -1,0 +1,116 @@
+<script language="javascript" type="text/javascript" src="<?php echo $this->baseUrl();?>/application/templates/front/js/jquery.slidingGallery-1.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$screen_width=$(window).width();
+		$screen_height=$(window).height();
+		
+		$(".gioithieu-img").children("img").click(function(){
+			$item_width=$('.pop-up').width();
+			$item_height=$('.pop-up').height();
+			$('.pop-up').css('width',$screen_width+'px');
+			$('.pop-up').css('height',$screen_height+'px');
+			$('.pop-up').css('left','0');
+			$('.pop-up').css('top','0');
+			$('.pop-up').show();
+			$('div.pop-up img').slidingGallery({ useCaptions: true });
+		});
+		$("#popup-close").click(function(){
+			$(".pop-up").hide();
+		});
+	});
+</script>
+
+<style type="text/css">
+        .pop-up img 
+        {
+        	border: solid 1px white;
+        }
+    </style>
+
+<div class="subpage_wapper_left">
+            <div class="left"> <!-----------Left--------------->
+
+			<div id="content-left" style="padding-bottom:15px">
+				<div class="children_down-title" style="margin-top:10px"><a href="#">Hình ảnh</a></div>
+				     <div class="subpage_wapper_left_top" style="margin-top:10px">
+           			 </div>
+           			 
+				 <div id="videp_left">
+                	<form class="searchform" action="" method="post">
+                        <input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …">
+                        <input class="searchsubmit" type="submit" value="" style="cursor:pointer">
+                    </form>
+                    <ul id="ul_video_left">
+                    	<li <?php if ($this->current_category_id=='0') echo "selected='current'"?>><a href="<?php echo $this->baseUrl(); ?>/hinhanh">Tất cả</a></li>
+                    	<?php
+                    	if($this->listCategory && count($this->listCategory) > 0)
+						{
+							foreach($this->listCategory as $category)
+							{
+								?>
+									<li <?php if ($this->current_category_id==$category['category_id']) echo "class='current'"?>><a href="<?php echo $this->baseUrl(); ?>/hinhanh/list/category_id/<?php echo $category['category_id']?>"><?php echo $category['category_name'] ?></a></li>
+								<?php
+							}
+						}
+                    	?>
+                    </ul>
+                </div>
+				
+				<div id="gioithieu">
+					<?php 
+						if(count($this->listImageLeft) > 0)
+						{
+							foreach($this->listImageLeft as $imageLeft)
+							{
+								$preg = preg_match_all('#<img.*/>#',$imageLeft['image_link'],$match);
+								?>
+									<div class="gioithieu-img">
+										<input type="hidden" value="<?php echo $imageLeft['image_id']?>"/>
+										<?php if (isset($match[0][0])) echo $match[0][0];?>
+										<a style="color:#013b47; line-height:30px" href="<?php echo $this->baseUrl(); ?>/hinhanh/
+												 <?php echo $imageLeft['image_id']; ?>.html">
+													<?php echo $imageLeft['image_name'] ?></a>
+									</div>
+								<?php
+							}
+						}
+						else echo 'Chuyên mục này chưa có hình ảnh nào';
+					?>
+					
+					<div class="clear"> </div>
+				</div> <!------End gioi thieu------>
+				
+				<div class="detail_add" style="clear:both; margin:auto !important">
+		           	<a href="<?php echo $this->listquangcao2['ads_link']; ?>" target="_blank">
+			            <?php
+			            	echo $this->listquangcao2['ads_banner']; 
+			            ?>
+			        </a>
+	           </div>
+			</div>
+			
+			<div class="clear"> </div>
+			</div> <!----End LEFT-------->
+		
+        </div>
+        
+		<div class="pop-up">
+			<p id="popup-close"><strong>Thoát</strong></p>
+			<?php 
+						if(count($this->listImageLeft) > 0)
+						{
+							$count=0;
+							foreach($this->listImageLeft as $imageLeft)
+							{
+								if ($count==0) $rep=" class='start' caption='".$imageLeft['image_name']."'/>";
+								else $rep=" caption='".$imageLeft['image_name']."'/>";
+								$preg = preg_match_all('#<img.*/>#',$imageLeft['image_link'],$match);
+								$match[0][0]=str_replace("/>", $rep, $match[0][0]);
+								?>
+										<?php if (isset($match[0][0])) echo $match[0][0];?>
+								<?php
+								$count++;
+							}
+						}
+					?>
+		</div>
