@@ -1,7 +1,7 @@
 <div id="header">			
 			<div id="textbaner">				 
 					<p>Công ty TNHH Thái Dương</p>
-					<p id="titletrust">Your trust is our price</p>   
+					<p id="titletrust">Your trust is our pride</p>   
 			</div>
 			<div id="language">
 				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">

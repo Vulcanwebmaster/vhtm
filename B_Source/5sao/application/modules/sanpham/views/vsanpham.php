@@ -1,7 +1,3 @@
-<ul id="breadcrum">
-	<li><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a></li>
-	<li>> <h1><?php if(isset($current_breadcrum)) echo $current_breadcrum;?></h1></li>
-</ul>
 
 <script type="text/javascript">
 	$('#menu-sanpham').parent().addClass('currentmenu');
@@ -33,7 +29,11 @@
         </div>
 	</div>
 	<?php }?>
-	
+	<ul id="breadcrum">
+	<li><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a></li>
+	<li>> <h1><?php if(isset($current_breadcrum)) echo $current_breadcrum;?></h1></li>
+</ul>
+
 	<div id="items">
 		<?php foreach ($list as $item)
 		{?>
