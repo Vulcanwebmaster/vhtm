@@ -12,7 +12,7 @@
 		$('.uploading').addClass('uploading_inline');
 		$('.file').addClass('uploading_inline');
 	}
-	
+	//-----------Check all-------------
 	function checkall(class_name, obj){
 		var items = document.getElementsByClassName(class_name);
 		if(obj.checked == true){
@@ -24,6 +24,7 @@
 			items[i].checked = false;
 		}
 	}
+	//------End Check all------
 	$(function() {
 		setUpFCK('video_thumbnail',400,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 	});

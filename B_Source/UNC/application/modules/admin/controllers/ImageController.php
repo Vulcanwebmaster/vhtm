@@ -69,7 +69,7 @@
 						'image_name'	=> $form->getValue('image_name'),
 						'image_link'    => $form->getValue('image_link'),
 						'is_active'		=> $form->getValue('is_active'),
-						'category_id'		=> $form->getValue('category_id')
+						'category_id'	=> $form->getValue('category_id')
 			);
 			return $data;
 		}
@@ -87,7 +87,7 @@
 			
 			if($this->_request->isPost())
 			{
-								if (!$form->isValid($_POST))
+				if (!$form->isValid($_POST))
 				{
 					
 					$form->populate($_POST);

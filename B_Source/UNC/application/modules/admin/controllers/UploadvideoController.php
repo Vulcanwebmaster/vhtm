@@ -123,7 +123,7 @@
 			}
 			//var_dump($listVideo);die();
 			$paginator = Zend_Paginator::factory($listVideo);
-        	$paginator->setItemCountPerPage(5);        
+        	$paginator->setItemCountPerPage(15);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
 			

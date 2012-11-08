@@ -27,7 +27,7 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
 			$paginator = Zend_Paginator::factory($this->mVideo->getList());
-	        $paginator->setItemCountPerPage(5);        
+	        $paginator->setItemCountPerPage(15);        
 	        $currentPage = $this->_request->getParam('page',1);
 	        $paginator->setCurrentPageNumber($currentPage);
 	        $this->view->list = $paginator;
@@ -82,7 +82,9 @@
 										'user_upload'		=> $this->user,
 										'thumbnail'			=> $form->getValue('video_thumbnail'),
 										'is_active'			=> $this->_request->getPost('is_active'),
+										
 										'category_id'		=> $listCategoryId
+										
 								);
 			return $input;
 		}
@@ -117,6 +119,7 @@
 	   					$this->_upload->addFilter('Rename',$options,$file_name);
 					 	if($this->_upload->receive($file_name))
 						{
+							//gọi biến checkbox
 							$listCategoryId = "";
 							foreach($_POST['checkbox'] as $check)
 							{

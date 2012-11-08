@@ -13,6 +13,19 @@
 		$('.uploading').addClass('uploading_inline');
 		$('.file').addClass('uploading_inline');
 	}
+	//-----------Check all-------------
+	function checkall(class_name, obj){
+		var items = document.getElementsByClassName(class_name);
+		if(obj.checked == true){
+			for(i=0;i<items.length;i++)
+			items[i].checked = true;
+		}
+		else{
+			for(i=0;i<items.length;i++)
+			items[i].checked = false;
+		}
+	}
+	//------End Check all------
 	$(function() {
 		setUpFCK('video_thumbnail',400,'<?php echo $this->baseUrl();?>/application/templates/admin/js/fckeditor/');
 	});
