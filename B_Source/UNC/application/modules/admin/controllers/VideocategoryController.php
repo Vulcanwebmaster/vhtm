@@ -44,7 +44,7 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
 				$paginator = Zend_Paginator::factory($this->mChuyenmuc->getListCM());
-	        	$paginator->setItemCountPerPage(15);        
+	        	$paginator->setItemCountPerPage(5);        
 	        	$currentPage = $this->_request->getParam('page',1);
 	         	$paginator->setCurrentPageNumber($currentPage);
 	        	$this->view->list = $paginator;
@@ -139,7 +139,4 @@
 					}
 				}
 		}
-		
-		
 	}
-?>

@@ -7,7 +7,7 @@ class TintucController extends Zend_Controller_Action
 	
 	function init()
 	{
-		//session_start();
+		//@session_start();
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
@@ -414,5 +414,18 @@ class TintucController extends Zend_Controller_Action
         
         $this->view->listComment=$paginator;
         $this->view->news_id=$news_id;
+	}
+	
+	function likeAction()
+	{
+		session_start();
+		$this->_helper->layout()->disableLayout();
+		$comment_id=$this->_request->getParam('comment_id');
+		$this->mTintuc->likeComment($comment_id);
+		$this->view->comment=$this->mTintuc->getCommentByCommentId($comment_id);
+		
+		if (isset($_SESSION['liked']))
+			$_SESSION['liked']=$_SESSION['liked'].$comment_id.',';
+		else $_SESSION['liked']=','.$comment_id.',';
 	}
 }

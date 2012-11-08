@@ -5,7 +5,26 @@
 									<p class="p_detail"><?php echo $comment['comment_name'] ?></p>
 				                    <p><?php echo $comment['comment_time'] ?></p>
 				                    <p><?php echo $comment['comment_content'] ?></p>
-				                    <p style="text-align:right" class="thich-button"><a>Thích</a></p>
+				                    <div class="thich-button">
+				                    	<p style="text-align:right">
+				                    		<?php 
+				                    		if (isset($_SESSION['liked']))
+				                    		{
+				                    			echo $_SESSION['liked']; die();
+				                    			if (strpos($_SESSION['liked'], ','.$comment['comment_id'].',')!==false)
+				                    			{?>
+				                    				<a>Thích</a>
+				                    			<?php }
+				                    			else {?>
+				                    				<a class="click" href="<?php echo $this->baseUrl();?>/tintuc/like/comment_id/<?php echo $comment['comment_id']?>">Thích</a>
+				                    			<?php }
+			                    			}
+			                    			else {?>
+			                    				<a class="click" href="<?php echo $this->baseUrl();?>/tintuc/like/comment_id/<?php echo $comment['comment_id']?>">Thích</a>
+			                    			<?php }?>
+				                    		<span> (<?php echo $comment['like'] ?>)</span>
+			                    		</p>
+				                    </div>
 				            <?php } ?>
 						</div>
 						<div>
@@ -21,16 +40,27 @@
 					}
                 	?>
 <script type="text/javascript">
+		var root="http://localhost";
 		$(".paginationControl .number-bt").click(function(){
 			var page= parseInt($(this).text());
-			$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
+			$("#comment-panel").load(root+"<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
 			return false;
 		});
 		$(".paginationControl .next-bt, .paginationControl .prev-bt").click(function(){
 			var url= $(this).attr('href');
 			var segments=url.split('/');
 			var page=segments[segments.length-1];
-			$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
+			$("#comment-panel").load(root+"<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
 			return false;
 		})
+		
+		//like===========
+		$(".thich-button .click").click(function(){
+			var href=$(this).attr('href');
+			var segment=href.split('/');
+			var id=segment[segment.length-1];
+
+			$(this).parent().parent().load(root+"<?php echo $this->baseUrl();?>/tintuc/like/comment_id/"+id);
+			return false;
+		});
 </script>                	

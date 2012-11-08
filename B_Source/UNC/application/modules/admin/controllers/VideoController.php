@@ -14,8 +14,9 @@
 			  if(isset($_SESSION['user']))
 			 	 $this->user = $_SESSION['user'];
 			  else {
-				  $this->_redirect($this->view->baseUrl().'/../admin');
+				  $this->_redirect($this->view->baseUrl().'/../admin',array('prependBase' => false));
 			  }
+			 			 
 		}
 		
 		function indexAction()
@@ -100,7 +101,7 @@
 			$this->view->title = 'Tải lên video';
 			$this->view->listCategory = $this->mVideo->getListVideoCategory();
 			$this->view->form = $form;
-			$this->_upload = new Zend_File_Transfer;
+			$this->_upload = new Zend_File_Transfer_Adapter_Http();
         	$this->_upload->setDestination(APPLICATION_PATH.'/../video/');
 			$this->_upload->addValidator('Extension', false, array('swf','mp4', 'flv'));
 			$this->_upload->addValidator('FilesSize',false,array('min' => '10kB', 'max' => '100MB'));
@@ -215,7 +216,7 @@
 				if(file_exists($video['video_link']))
 					@unlink($video['video_link']);
 				$_SESSION['result']='Xóa video thành công';
-				$this->_redirect($this->view->baseUrl().'/../admin/video');
+				$this->_redirect($this->view->baseUrl().'/admin/video',array('prependBase' => false));
 			}
 		}
 	}

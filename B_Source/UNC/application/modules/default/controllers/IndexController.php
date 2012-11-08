@@ -86,9 +86,6 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listquangcao4 = $listquangcao4;
 
 		$this->view->listNews = $listNews;
-
-		$this->view->listNews = $listNews;
-		
 		//Header title
 		$this->view->headTitle('UNC - Trang chủ');
 	}

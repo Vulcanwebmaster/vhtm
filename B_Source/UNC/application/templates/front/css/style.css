@@ -203,7 +203,7 @@ a{ text-decoration: none }
 #content-left img{ float: left; }
 #gioithieu{width: 500px; height: auto; margin-left: 175px}
 .gioithieu-img{ width: 152px; height: auto; float: left; padding: 8px 8px 5px 0;}
-.gioithieu-img img{cursor:pointer; width: 140px !important; height: 140px !important; border:solid 3px white; box-shadow:0 2px 5px 0 #232323}
+.gioithieu-img img{cursor:pointer; width: 147px; height: 100px; }
 #chitiet{width: 495px; height: auto; margin-left: 165px}
 #content-right{background-color:#fdfefe !important; width: 300px; padding:5px; float: right; height: auto; margin-top: 15px }
 #content-right1{background-color:#fdfefe !important; width: 300px; padding:5px; float: right; height: auto; margin-top: 15px; }
@@ -285,7 +285,7 @@ a{ text-decoration: none }
 /*--------------Image-------------------*/
 .even a img{width:114px !important;height:108px !important}
 .hotestnews-div p{margin-bottom:0}
-.thich-button{color:#2176bf; cursor:pointer}
+.thich-button .click{color:#2176bf; cursor:pointer}
 #detail-image-panel{position:fixed}
 #detail-image-panel img{border:solid 4px white; width:500px !important; height:350px !important}
 .pop-up{display:none; position:fixed; background:url('../images/popupbg.png') repeat}

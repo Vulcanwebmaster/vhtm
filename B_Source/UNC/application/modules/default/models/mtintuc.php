@@ -20,7 +20,9 @@
 		{
 			$query = $this->db->query('select * from unc_news where news_status="Công khai" and news_id = "'.$news_id.'"');
 			$list = $query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 		
 		function getListParent()
@@ -67,7 +69,7 @@
 		
 		function getListNewsByCategoryId($CategoryId)
 		{
-			$query = $this->db->query('select * from unc_news where category_id like "%,'.$CategoryId.',%" order by news_id desc');
+			$query = $this->db->query('select * from unc_news where category_id like "%,'.$CategoryId.',%" and news_status="Công khai" order by news_id desc');
 			return $query->fetchAll();
 		}
 		function getListAdsByCategoryId($CategoryId)
@@ -192,7 +194,9 @@
 			$list = $query->fetchAll();
 			if(count($list) > 0) {
 				$pieces = explode(",", $list[0]['category_id']);
-				return $pieces[1];
+				if (isset($pieces[1]))
+					return $pieces[1];
+				else return false;
 			} else { 
 				return false;
 			}
@@ -314,5 +318,17 @@
 			$data = array ('vipham' => $vipham);
 			$where = "comment_id = ".$idcomment;
 			$db->update('unc_comment', $data, $where); 						
-		}		
+		}
+		
+		/**
+		 * Get comment by comment id
+		 */
+		public function getCommentByCommentId($id)
+		{
+			$query=$this->db->query("select * from unc_comment where comment_id='".$id."'");
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
 	}
