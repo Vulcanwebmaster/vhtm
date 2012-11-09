@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2012 at 11:01 AM
+-- Generation Time: Nov 09, 2012 at 09:45 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -494,7 +494,9 @@ INSERT INTO `n_thongke` (`ngaythang`, `soluong`) VALUES
 ('2012-10-20', 1),
 ('2012-10-27', 1),
 ('2012-10-29', 2),
-('2012-10-30', 1);
+('2012-10-30', 1),
+('2012-11-02', 1),
+('2012-11-07', 1);
 
 -- --------------------------------------------------------
 
@@ -607,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-10-30 06:56:48', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-11-07 09:35:15', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
