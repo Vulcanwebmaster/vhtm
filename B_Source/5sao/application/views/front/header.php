@@ -11,7 +11,13 @@
 					<img src="<?php echo base_url();?>assets/5sao/images/el.jpg"/>					
 				</a>
 			</div>
-            <div id="tel"><?php echo $this->lang->line('menu-dienthoai');?>: <strong>0123456789</strong></div>
+            <div id="tel">
+            	<strong>
+            		<?php foreach($list_hotline as $hotline){ ?>
+	                        	Tel: <?php echo $hotline->sdt;?></li>  
+	                        	<?php } ?>
+            	
+            	</strong></div>
             <ul class="top_menu">
 				<li class="submenu"><a class="menu-text" style="display:block" id="menu-trangchu" href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
                 	

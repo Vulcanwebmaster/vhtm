@@ -58,7 +58,14 @@
 					<label>Giá bán(Anh)</label>
 					<input type="text" name="giabane" style="width:92%"/>
 				</fieldset>
-
+				<fieldset>
+					<label>Mô tả (Việt)</label>
+					<?php echo $this->ckeditor->editor('mota_v','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Mô tả (Anh)</label>
+					<?php echo $this->ckeditor->editor('mota_e','',$config);?>
+				</fieldset>
 				<fieldset>
 					<label>Chi tiết (Việt)</label>
 					<?php echo $this->ckeditor->editor('chitiet_v','',$config);?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2012 at 05:38 AM
+-- Generation Time: Nov 11, 2012 at 05:53 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `n_hotro` (
 --
 
 INSERT INTO `n_hotro` (`id`, `hotline`, `sdt`, `skype`, `yahoo`) VALUES
-(1, '', '0165608560444', 'inox5saoviet_hotro01', 'bonghongxanh_9x8'),
-(2, '', '04.37 633 5948', 'inox5saoviet_hotro02', 'bonghongxanh_9x8'),
-(3, '04.37 633 594', '04.37 633 594', 'inox5saoviet_hotro03', 'bonghongxanh_9x'),
-(5, '04.37 633 594', '04.37 633 594', '', '');
+(1, '', '0988.999.687', 'inox5saoviet_hotro01', 'bonghongxanh_9x8'),
+(2, '', '0986.519.994', 'inox5saoviet_hotro02', 'bonghongxanh_9x8'),
+(3, '', '0973.929.547', 'inox5saoviet_hotro03', 'bonghongxanh_9x'),
+(5, '0988.999.687', '04.37 633 594', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

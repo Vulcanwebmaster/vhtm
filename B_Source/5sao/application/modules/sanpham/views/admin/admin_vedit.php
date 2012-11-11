@@ -60,6 +60,14 @@
 				</fieldset>
 
 				<fieldset>
+					<label>Mô tả (Việt)</label>
+					<?php echo $this->ckeditor->editor('mota_v',$info->mota_v,$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Mô tả (Anh)</label>
+					<?php echo $this->ckeditor->editor('mota_e',$info->mota_e,$config);?>
+				</fieldset>
+				<fieldset>
 					<label>Chi tiết (Việt)</label>
 					<?php echo $this->ckeditor->editor('chitiet_v',$info->chitiet_v,$config);?>
 				</fieldset>

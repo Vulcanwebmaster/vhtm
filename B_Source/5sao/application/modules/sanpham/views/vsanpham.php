@@ -4,17 +4,9 @@
 </script>
 
 <div id="center">
-						<div id="photo">
-						<div id="slideshow-wrapper">
-                            <div id="slider" class="nivoSlider">		
-	                            <img src="<?php echo base_url();?>assets/5sao/images/slide1.jpg" tppabs="" alt="" /><img src="<?php echo base_url();?>assets/5sao/images/slide3.jpg" tppabs="" alt=""  />
-	                            <img src="<?php echo base_url();?>assets/5sao/images/slide2.jpg"/> <img src="<?php echo base_url();?>assets/5sao/images/slide4.jpg"/>
-                            </div>                           
-                          </div>
-					</div>
 	
 	<?php 
-	if (isset($current_category))
+	if (isset($current_category)){
 	if ($current_category->anhdaidien1!='' || $current_category->anhdaidien2!='' || $current_category->anhdaidien3!='')
 	{?>
 	<div id="photo" style="margin-top:10px">
@@ -29,7 +21,16 @@
             </div>                           
         </div>
 	</div>
-	<?php }?>
+	<?php } } else{?>
+						<div id="photo">
+						<div id="slideshow-wrapper">
+                            <div id="slider" class="nivoSlider">		
+	                            <img src="<?php echo base_url();?>assets/5sao/images/slide1.jpg" tppabs="" alt="" /><img src="<?php echo base_url();?>assets/5sao/images/slide3.jpg" tppabs="" alt=""  />
+	                            <img src="<?php echo base_url();?>assets/5sao/images/slide2.jpg"/> <img src="<?php echo base_url();?>assets/5sao/images/slide4.jpg"/>
+                            </div>                           
+                          </div>
+						</div>		
+	<?php } ?>
 	<ul id="breadcrum">
 	<li><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a></li>
 	<li>> <h1><?php if(isset($current_breadcrum)) echo $current_breadcrum;?></h1></li>

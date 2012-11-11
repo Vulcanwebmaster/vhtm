@@ -20,7 +20,7 @@
 			                           <a href="skype:<?php echo $hotro->skype;?>?call">
 			                           	<img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
 			                           </a>
-		                	 	<?php }?>                     	
+		                	 	<?php }?>   
                         </div>
 						<div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                     </div>

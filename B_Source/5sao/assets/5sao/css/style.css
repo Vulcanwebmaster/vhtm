@@ -81,7 +81,7 @@ list-style-type:none;
 display:inline;
 padding:0 20px;
 float:left;
-height:35px;
+height:33px;
 margin-top:-4px;
 padding-top:2px;
 text-transform:uppercase;
@@ -493,7 +493,6 @@ width:980px;
 #discount{
 position:absolute;
 top:335px;
-/ top:429px;
 left:873px;
 z-index:10000000;
 }
@@ -540,7 +539,7 @@ border-radius:5px}
 #statistics{font-weight:bold; font-size:11px}
 #statistics img{margin-bottom:-3px;}
 #textbaner{position:absolute; z-index:4444; left:315px; top:25px; color:#fff; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:32px; font-weight:bold; text-align:center;}
-#textbaner p{ margin:0; padding:0;}
+#textbaner p{ margin-left:-37px; padding:0;}
 #titletrust{ font-size:12px; text-transform:none; font-weight:none;}
 .itemimage p{margin:0; padding:0}
 .bg_itemmenu{height:31px; background-color:#a0a09f; width:981px; position:absolute; top:139px; left:0; z-index: 10;}
@@ -568,7 +567,8 @@ h2{font-family:Arial;  font-size:1.2em;}
 #relate_list{padding-left:0; margin-top:20px}
 #relate_list h4{padding:0 0 0 10px; text-align:left; border-bottom:1px solid #7A7875; margin:0 0 10px 0;}
 #relate_list ul{list-style-type:none; font-size:12px; padding-left:15px}
-#mota_detail, #mota_detail span{ text-align:left;}
+#mota_detail, #mota_detail span{ text-align:left; font-family: Tahoma }
+#mota_detail p{ padding-right: 10px }
 #detail_desp{ border-top:2px solid #d4d4d4; width:100%; height:auto; clear:both;  position:relative;}
 #detail_desp a{ text-decoration:none; color:black; cursor:pointer;}
 #desp_dt, #param_dt{ float:left; width:140px; text-align:center }

@@ -60,6 +60,7 @@ class Sanpham extends NIW_Controller
 		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
 		$data['list_hotro']=$this->Msanpham->getListFull('hotro');
 		$data['list_hotline']=$this->Msanpham->gethotline('hotro');
+		
 		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Msanpham->getListFull('gioithieu');
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');

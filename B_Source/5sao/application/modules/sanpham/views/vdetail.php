@@ -27,7 +27,9 @@
 <div id="center">
 	<div style="height:270px; margin-bottom: 50px">
 		<div class="product_image">
-			<?php echo $detail->hinhanh;?>
+			
+			<?php
+			 echo $detail->hinhanh;?>
 		</div>
 		<div class="product_description">
 			<h3 style="font-size: 22px; font-weight: bold; color: red; text-align: left;margin:0; padding:0"><?php if ($lang=='vn') echo $detail->ten_v; else echo $detail->ten_e;?></h3>
@@ -39,8 +41,14 @@
 					<p style="font-weight: bold;  float: left ">Bảo hành : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->baohanh ?></p> </br>
 					<p style="font-weight: bold;  float: left ">Kho hàng : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->khohang ?></p> </br>
 					<p style="font-weight: bold;  float: left ">Giá bán : </p>		 <p style="font-weight: bold; color:red "> <?php echo $detail->giaban ?></p> </br>
-				<?php }
-						else echo $detail->mota_e;?>
+				<?php } else { ?>
+					</br>
+					<p style="font-weight: bold;  float: left ">Model : </p> 		     <p style="font-weight: bold; color:red "><?php echo $detail->modele ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Manufacturer :</p>  	 <p style="font-weight: bold; color:red "><?php echo $detail->hangsxe ?></p></br> 
+					<p style="font-weight: bold;  float: left ">warranty : </p>		 	 <p style="font-weight: bold; color:red "><?php echo $detail->baohanhe ?></p> </br>
+					<p style="font-weight: bold;  float: left ">warehouse : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->khohange ?></p> </br>
+					<p style="font-weight: bold;  float: left ">sale price : </p>		 <p style="font-weight: bold; color:red "> <?php echo $detail->giabane ?></p> </br>
+					<?php } ?>
 			</div>
 		</div>			
 	</div>
@@ -52,13 +60,7 @@
 			<?php if ($lang=='vn') echo $detail->chitiet_v; else echo $detail->chitiet_e;?>
 		</div>			
 		<div class="desptext">
-			1、Máy sử dụng nguyên lý thành hình cắt bánh bằng khay dao,sp thành hình một lần,tất cả sp to nhỏ như nhau.bánh sau khi được thành hình thông qua băng tải ra ngoài,từ đó giảm thiểu được tình trạng tổn thất bánh.<br/>
-
-			2、Thiết bị sử dụng biến tần điều tốc vô cấp và đưa nhân ,đưa bột dạng nằm,bánh bao to nho ra bột ra nhân có thể điều chỉnh tùy ý.do vậy,nguyên liệu bột đưa ra ổn định,hệ thống nhân cũng ổn định.tốc độ ra nhân nhanh,áp lực nhỏ,ổn định ,thích hợp càng nhiều loại nhân.<br/>
-			
-			3、Đầu đùn sử dụng kỹ thuật tiên tiến,có thể điều tiết độ dày mỏng của bột.<br/>
-			
-			4、thiết bị hoạt động tương đương với 8-12 người làm việc,đầu tư thấp hiệu quả cao,tiết kiệm vốn đầu tư<br/>
+			<?php if ($lang=='vn') echo $detail->mota_v; else echo $detail->mota_e;?><br/>
 		</div>
 	</div>
 	<div id="relate_list">

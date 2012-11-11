@@ -47,6 +47,8 @@
 		{
 			$input=array('ten_v'=>$this->input->post('ten_v'),
 						'ten_e'=>$this->input->post('ten_e'),
+						'mota_v'=>$this->input->post('mota_v'),
+						'mota_e'=>$this->input->post('mota_e'),
 						'chitiet_v'=>$this->input->post('chitiet_v'),
 						'chitiet_e'=>$this->input->post('chitiet_e'),
 						'hinhanh'=>$this->input->post('hinhanh'),
