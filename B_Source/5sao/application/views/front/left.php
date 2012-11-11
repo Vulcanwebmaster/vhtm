@@ -56,8 +56,10 @@
                            <?php foreach ($list_spbanchay as $spbc)
                            {?>
                           		<div class="pr-img">
+                          			<a href="<?php echo base_url();?>sanpham/<?php echo $spbc->alias;?>">
                           			<?php echo $spbc->hinhanh;?>
                           			<h4 style="text-align:center; font-weight:bold; margin:5px"><?php if ($lang=="vn") echo $spbc->ten_v; else echo $spbc->ten_e;?></h4>
+                          			</a>
 	                           </div>
                            <?php }?>
                         </marquee>

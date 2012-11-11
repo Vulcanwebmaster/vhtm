@@ -9,8 +9,8 @@
 		
 		function change($lang='vn',$uri_string='')
 		{
-			$this->session->set_userdata('lang',$lang);
-			redirect(base_url().$uri_string,'refresh');
+			//$this->session->set_userdata('lang',$lang);
+			redirect("homepage/index");
 		}
 	}
 ?>

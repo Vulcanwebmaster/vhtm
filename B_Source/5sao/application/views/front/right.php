@@ -10,32 +10,17 @@
 <div id="right">
                 	<div class="bodermove">
                     	<h4 class="title3"  style=" margin-bottom: 4px;"><?php echo $this->lang->line('right-lienhe');?></h4>
-                        <div class="support">                        	
-                        	<p>0988.999.687</p>
-                        	<a href="ymsgr:sendim?bonghongxanh_9x">        		
-                            <img src="http://opi.yahoo.com/online?u=inox5saoviet_hotro02&amp;m=g&amp;t=2&amp;l=us" width="63" height="16"/>
-                           </a>
-                           <a href="skype:inox5saoviet_hotro02?call">
-                           	<img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
-                           </a>
-                        </div>
-                        <div class="support">
-                        	<p>0986.519.994</p>
-                        	<a href="ymsgr:sendim?bonghongxanh_9x">
-                            <img src="http://opi.yahoo.com/online?u=inox5saoviet_hotro01&amp;m=g&amp;t=2&amp;l=us" width="63" height="16"/>
-                             </a>
-                             <a href="skype:inox5saoviet_hotro01?call">
-	                           	<img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
-	                           </a>
-                        </div>
-                        <div class="support">
-                        	<p>0973.929.547</p>
-                        	<a href="ymsgr:sendim?bonghongxanh_9x">
-                            <img src="http://opi.yahoo.com/online?u=inox5saoviet_hotro03&amp;m=g&amp;t=2&amp;l=us" width="63" height="16"/>
-                             </a>
-                             <a href="skype:inox5saoviet_hotro03?call">
-	                           	<img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
-	                           </a>
+                        <div class="support">   
+		                        <?php foreach ($list_hotro as $hotro)
+		                	 	{ ?>
+		                	 		   <p><?php echo $hotro->sdt;?></p>
+		                	 		   <a href="ymsgr:sendim?<?php echo $hotro->yahoo;?>">        		
+			                            <img src="http://opi.yahoo.com/online?u=inox5saoviet_hotro02&amp;m=g&amp;t=2&amp;l=us" width="63" height="16"/>
+			                           </a>
+			                           <a href="skype:<?php echo $hotro->skype;?>?call">
+			                           	<img src="<?php echo base_url();?>assets/5sao/images/skype.jpg" height="20" width="75"/>
+			                           </a>
+		                	 	<?php }?>                     	
                         </div>
 						<div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                     </div>
@@ -208,7 +193,7 @@
                 	 	<?php foreach ($list_thuvienanh as $tva)
                 	 	{ ?>
                 	 		<div class="pr-img">
-                	 			<?php echo $tva->file;?>
+                	 			<a href="<?php echo base_url();?>thuvienanh/"><?php echo $tva->file;?></a>
                 	 		</div>
                 	 	<?php }?>
                     </marquee>

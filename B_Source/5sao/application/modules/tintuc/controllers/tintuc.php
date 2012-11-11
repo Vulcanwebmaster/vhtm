@@ -37,13 +37,15 @@ class Tintuc extends NIW_Controller
 		
 		$data['list_spbanchay']=$this->Mtintuc->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mtintuc->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mtintuc->getListFull('hotro');
+		$data['list_hotline']=$this->Mtintuc->gethotline('hotro');
 		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 		$data['list_tintuc_right']=$this->Mtintuc->getListFull('tintuc');
 		$data['list_gioithieumenu']=$this->Mtintuc->getListFull('gioithieu');
 		$data['categories']=$this->Mtintuc->getListByColumn('danhmuc','parent_id','0');
 		$data['counting']=$this->getCounting();
 		
-		$data['title']='5saoviet | Tin tức';
+		$data['title']='thaiduong | Tin tức';
 		$data['lang']=$this->session->userdata("lang");
 		$data['list_tintuc']=$this->Mtintuc->getListOffset('tintuc',8,$index);
 		$data['module']=$this->module;
@@ -60,9 +62,11 @@ class Tintuc extends NIW_Controller
 		
 		$data['list_spbanchay']=$this->Mtintuc->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mtintuc->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mtintuc->getListFull('hotro');
+		$data['list_hotline']=$this->Mtintuc->gethotline('hotro');
 		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 		$data['lang']=$this->session->userdata("lang");
-		$data['title']='5saoviet | Tin tức';
+		$data['title']='thaiduong | Tin tức';
 		$data['detail']=$this->Mtintuc->getRowByColumn('tintuc','id',$id);
 		$data['module']=$this->module;
 		$data['page']='vdetail';

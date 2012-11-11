@@ -39,6 +39,8 @@ class Homepage extends NIW_controller {
 		
 		$data['list_spbanchay']=$this->Mhomepage->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mhomepage->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mhomepage->getListFull('hotro');
+		$data['list_hotline']=$this->Mhomepage->gethotline('hotro');
 		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
 		$data['list_tintuc_right']=$this->Mhomepage->getListOffset('tintuc',15,0);
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('tintuc',15,0);
@@ -48,7 +50,7 @@ class Homepage extends NIW_controller {
 		
 		$data['lang']=$this->session->userdata('lang');
 		$data['list']=$this->Mhomepage->getListByColumnOffset('sanpham','moi','1',$index,12);
-		$data['title']='5saoviet | Trang chủ';
+		$data['title']='thaiduong | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);

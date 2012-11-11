@@ -54,6 +54,8 @@ class Timkiem extends NIW_Controller
 		echo '<meta charset="UTF-8"/>';
 		$data['list_spbanchay']=$this->Mtimkiem->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mtimkiem->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mtimkiem->getListFull('hotro');
+		$data['list_hotline']=$this->Mtimkiem->gethotline('hotro');
 		$data['lang']=$this->session->userdata('lang');
 		$data['list_doitac']=$this->Mtimkiem->getListFull('doitac');
 		$data['counting']=$this->getCounting();

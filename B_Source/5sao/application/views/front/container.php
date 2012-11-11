@@ -72,7 +72,8 @@
 </head>
 <body>
 	<div id="content">
-		<?php $this->load->view('front/header');?>
+		<?php 
+		$this->load->view('front/header');?>
 		<div id="wrapper">
 			<div id="background">
 				<?php $this->load->view('front/left');?>

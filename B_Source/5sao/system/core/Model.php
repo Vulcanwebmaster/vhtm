@@ -182,8 +182,11 @@ class CI_Model {
 	 	$ds->free_result();
 	 	return $list;
 	 }
+	 function gethotline(){
+		  $query= $this->db->query("SELECT * FROM n_hotro where id='5'");
+		  return $query->result();
+	 }
 }
 // END Model Class
-
 /* End of file Model.php */
 /* Location: ./system/core/Model.php */

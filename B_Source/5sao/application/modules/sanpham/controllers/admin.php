@@ -47,14 +47,22 @@
 		{
 			$input=array('ten_v'=>$this->input->post('ten_v'),
 						'ten_e'=>$this->input->post('ten_e'),
-						'mota_v'=>$this->input->post('mota_v'),
-						'mota_e'=>$this->input->post('mota_e'),
 						'chitiet_v'=>$this->input->post('chitiet_v'),
 						'chitiet_e'=>$this->input->post('chitiet_e'),
 						'hinhanh'=>$this->input->post('hinhanh'),
 						'danhmuc_id'=>$this->input->post('danhmuc_id'),
 						'moi'=>$this->input->post('moi'),
 						'banchay'=>$this->input->post('banchay'),
+						'model'=>$this->input->post('model'),
+						'hangsx'=>$this->input->post('hangsx'),
+						'baohanh'=>$this->input->post('baohanh'),
+						'khohang'=>$this->input->post('khohang'),
+						'giaban'=>$this->input->post('giaban'),
+						'modele'=>$this->input->post('modele'),
+						'hangsxe'=>$this->input->post('hangsxe'),
+						'baohanhe'=>$this->input->post('baohanhe'),
+						'khohange'=>$this->input->post('khohange'),
+						'giabane'=>$this->input->post('giabane'),
 						'alias'=>$this->getAliasByName($this->input->post('ten_v')));
 			return $input;
 		}

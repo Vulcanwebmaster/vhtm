@@ -27,12 +27,14 @@ class Lienhe extends NIW_Controller
 		$data['counting']=$this->getCounting();
 		$data['list_spbanchay']=$this->Mlienhe->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mlienhe->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mlienhe->getListFull('hotro');
+		$data['list_hotline']=$this->Mlienhe->gethotline('hotro');
 		$data['list_doitac']=$this->Mlienhe->getListFull('doitac');
 		$data['list_tintuc_right']=$this->Mlienhe->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mlienhe->getListFull('gioithieu');
 		$data['categories']=$this->Mlienhe->getListByColumn('danhmuc','parent_id','0');
 				
-		$data['title']='5saoviet | Liên hệ';
+		$data['title']='thaiduong | Liên hệ';
 		$data['lang']=$this->session->userdata('lang');
 		$data['module']=$this->module;
 		$data['page']='vlienhe';

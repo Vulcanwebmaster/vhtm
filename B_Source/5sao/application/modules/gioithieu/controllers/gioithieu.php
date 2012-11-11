@@ -25,13 +25,15 @@ class Gioithieu extends NIW_Controller
 	{
 		$data['list_spbanchay']=$this->Mgioithieu->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mgioithieu->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mgioithieu->getListFull('hotro');
+		$data['list_hotline']=$this->Mgioithieu->gethotline('hotro');
 		$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 		$data['list_tintuc_right']=$this->Mgioithieu->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['categories']=$this->Mgioithieu->getListByColumn('danhmuc','parent_id','0');
 		$data['counting']=$this->getCounting();
 		
-		$data['title']='5saoviet | Giới thiệu';
+		$data['title']='thaiduong | Giới thiệu';
 		$data['lang']=$this->session->userdata("lang");
 		$data['list_gioithieu']=$this->Mgioithieu->getListFull('gioithieu');
 		$data['module']=$this->module;
@@ -43,6 +45,8 @@ class Gioithieu extends NIW_Controller
 	{
 		$data['list_spbanchay']=$this->Mgioithieu->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mgioithieu->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mgioithieu->getListFull('hotro');
+		$data['list_hotline']=$this->Mgioithieu->gethotline('hotro');
 		$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 		$data['list_tintuc_right']=$this->Mgioithieu->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mgioithieu->getListFull('gioithieu');
@@ -50,7 +54,7 @@ class Gioithieu extends NIW_Controller
 		$data['counting']=$this->getCounting();
 		
 		$data['lang']=$this->session->userdata("lang");
-		$data['title']='5saoviet | Giới thiệu';
+		$data['title']='thaiduong | Giới thiệu';
 		$data['detail']=$this->Mgioithieu->getRowByColumn('gioithieu','id',$id);
 		$data['module']=$this->module;
 		$data['page']='vdetail';

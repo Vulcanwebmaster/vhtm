@@ -19,13 +19,46 @@
 					<input type="text" name="ten_e" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Mô tả (Việt)</label>
-					<?php echo $this->ckeditor->editor('mota_v','',$config);?>
+					<label>Model</label>
+					<input type="text" name="model" style="width:92%" />
 				</fieldset>
 				<fieldset>
-					<label>Mô tả (Anh)</label>
-					<?php echo $this->ckeditor->editor('mota_e','',$config);?>
+					<label>Hãng sx</label>
+					<input type="text" name="hangsx" style="width:92%"/>
 				</fieldset>
+				<fieldset>
+					<label>Bảo hành</label>
+					<input type="text" name="baohanh" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Kho hàng</label>
+					<input type="text" name="khohang" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Giá bán</label>
+					<input type="text" name="giaban" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+				<label>Model(Anh)</label>
+					<input type="text" name="modele" style="width:92%" />
+				</fieldset>
+				<fieldset>
+					<label>Hãng sx(Anh)</label>
+					<input type="text" name="hangsxe" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Bảo hành(Anh)</label>
+					<input type="text" name="baohanhe" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Kho hàng(Anh)</label>
+					<input type="text" name="khohange" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Giá bán(Anh)</label>
+					<input type="text" name="giabane" style="width:92%"/>
+				</fieldset>
+
 				<fieldset>
 					<label>Chi tiết (Việt)</label>
 					<?php echo $this->ckeditor->editor('chitiet_v','',$config);?>

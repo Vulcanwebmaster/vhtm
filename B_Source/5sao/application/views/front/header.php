@@ -1,7 +1,7 @@
 <div id="header">			
 			<div id="textbaner">				 
-					<p>Công ty TNHH Thái Dương</p>
-					<p id="titletrust">Your trust is our pride</p>   
+					<p>Công ty cổ phần thiết bị Thái Dương</p>
+					<p id="titletrust">trust is our pride</p>   
 			</div>
 			<div id="language">
 				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">
@@ -17,8 +17,10 @@
                 	
                 		<div class="bg_itemmenu" id="bg_itemmenu_1">
                 			<ul>
-	                    	<li><a href="#">Hotline 24/24 : 0988.999.687</a></li>
-	                        <li><a href="#">Tel: 04.37 633 594</a></li>  
+                				<?php foreach($list_hotline as $hotline){ ?>
+	                    		<li><a href="#">Hotline 24/24 : <?php echo $hotline->hotline;?></a></li>
+	                        	<li><a href="#">Tel: <?php echo $hotline->sdt;?></a></li>  
+	                        	<?php } ?>
 	                        </ul>
                         </div>                    
                   

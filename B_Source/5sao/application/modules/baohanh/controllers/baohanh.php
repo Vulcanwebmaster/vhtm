@@ -28,6 +28,8 @@ class Baohanh extends NIW_controller {
 	{
 		$data['list_spbanchay']=$this->Mbaohanh->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mbaohanh->getListFull('thuvienanh');
+		$data['list_hotro']=$this->Mbaohanh->getListFull('hotro');
+		$data['list_hotline']=$this->Mbaohanh->gethotline('hotro');
 		$data['list_doitac']=$this->Mbaohanh->getListFull('doitac');
 		$data['list_tintuc_right']=$this->Mbaohanh->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mbaohanh->getListFull('gioithieu');
@@ -36,7 +38,7 @@ class Baohanh extends NIW_controller {
 		
 		$data['lang']=$this->session->userdata('lang');
 		$data['list']=$this->Mbaohanh->getRowByColumn('baohanh','id','1');
-		$data['title']='5saoviet | Bảo hành - bảo trì';
+		$data['title']='thaiduong | Bảo hành - bảo trì';
 		$data['module'] = $this->module;
 		$data['page'] = 'vbaohanh';
 		$this->load->view('front/container',$data);

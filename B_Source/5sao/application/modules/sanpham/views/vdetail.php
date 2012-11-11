@@ -32,7 +32,15 @@
 		<div class="product_description">
 			<h3 style="font-size: 22px; font-weight: bold; color: red; text-align: left;margin:0; padding:0"><?php if ($lang=='vn') echo $detail->ten_v; else echo $detail->ten_e;?></h3>
 			<div id="mota_detail">
-				<?php if ($lang=='vn') echo $detail->mota_v; else echo $detail->mota_e;?>
+				<?php if ($lang=='vn') { ?>
+				</br>
+					<p style="font-weight: bold;  float: left ">Model : </p> 		 <p style="font-weight: bold; color:red "><?php echo $detail->model ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Hãng sản xuất : </p> <p style="font-weight: bold; color:red "><?php echo $detail->hangsx ?></p></br> 
+					<p style="font-weight: bold;  float: left ">Bảo hành : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->baohanh ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Kho hàng : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->khohang ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Giá bán : </p>		 <p style="font-weight: bold; color:red "> <?php echo $detail->giaban ?></p> </br>
+				<?php }
+						else echo $detail->mota_e;?>
 			</div>
 		</div>			
 	</div>
