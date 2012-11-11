@@ -15,12 +15,13 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 		$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+		$_SESSION["backend_current_menu"]="menu-quanlytin";
 	}
 	
 	function indexAction()
 	{
 		$paginator = Zend_Paginator::factory($this->mGetnews->getListCampaigns());
-        $paginator->setItemCountPerPage(15);        
+        $paginator->setItemCountPerPage(25);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
         $this->view->list=$paginator;

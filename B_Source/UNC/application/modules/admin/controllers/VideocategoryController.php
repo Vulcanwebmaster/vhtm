@@ -11,6 +11,7 @@
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mvideocategory();
 			  @session_start();
+			  $_SESSION["backend_current_menu"]="menu-quanlyvideo";
 		}
 		
 		function setForm()
@@ -44,7 +45,7 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
 				$paginator = Zend_Paginator::factory($this->mChuyenmuc->getListCM());
-	        	$paginator->setItemCountPerPage(5);        
+	        	$paginator->setItemCountPerPage(25);        
 	        	$currentPage = $this->_request->getParam('page',1);
 	         	$paginator->setCurrentPageNumber($currentPage);
 	        	$this->view->list = $paginator;

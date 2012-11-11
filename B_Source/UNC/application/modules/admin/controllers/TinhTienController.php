@@ -24,6 +24,7 @@
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
+			  $_SESSION['backend_current_menu']="menu-quanlychung";
 		}
 		function indexAction()
 		{

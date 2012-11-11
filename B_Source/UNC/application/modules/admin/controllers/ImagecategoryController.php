@@ -12,6 +12,7 @@
 			  $this->mChuyenmuc = new Admin_Model_Mimagecategory();
 			  $this->mImage = new Admin_Model_Mimage();
 			  @session_start();
+			  $_SESSION["backend_current_menu"]="menu-quanlyanh";
 		}
 		
 		function setForm()

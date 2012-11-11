@@ -15,6 +15,7 @@ class Admin_IndexController extends Zend_Controller_Action
 				$this->role = $_SESSION['role'];
 				$this->view->role = $this->role;
 			}
+			unset($_SESSION['backend_current_menu']);
 	}
 	public function indexAction()
 	{

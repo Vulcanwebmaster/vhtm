@@ -9,20 +9,54 @@
 			$this->forum = Zend_Registry::get('unc_forum');
 		}
 		
+		function getCategoryByCategoryId($id)
+		{
+			$query = $this->db->query('select * from unc_images_category where category_id = "'.$id.'"');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
+		
+		function isActive($listCategoriesid)
+		{
+			$count=0;
+			foreach($listCategoriesid as $id)
+			{
+				$cate=$this->getCategoryByCategoryId($id);
+				if ($cate['is_active']=='1')
+					$count++;
+			}
+			if ($count>0) return true;
+			else return false;
+		}
+		
 		function getListImageRight()
 		{
 			$query = $this->db->query('select * from unc_images where is_active = 1 order by image_id desc limit 6');
-			$list = $query->fetchAll();
-			if(count($list) > 0) return $list;
-			else return false;
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $img)
+			{
+				$listCategoriesid=explode(',', $img['category_id']);
+				if ($this->isActive($listCategoriesid))
+					$result[]=$img;
+			}
+			return $result;
 		}
 		
 		function getListImageLeft()
 		{
 			$query = $this->db->query('select * from unc_images where is_active = 1 order by image_id desc');
-			$list = $query->fetchAll();
-			if(count($list) > 0) return $list;
-			else return false;
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $img)
+			{
+				$listCategoriesid=explode(',', $img['category_id']);
+				if ($this->isActive($listCategoriesid))
+					$result[]=$img;
+			}
+			return $result;
 		}
 		
 		function getListCategory()
@@ -46,8 +80,16 @@
 		
 		function getListImagesAll()
 		{
-			$query = $this->db->query('select * from unc_images order by image_id desc');
-			return $query->fetchAll();
+			$query = $this->db->query('select * from unc_images where is_active="1" order by image_id desc');
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $img)
+			{
+				$listCategoriesid=explode(',', $img['category_id']);
+				if ($this->isActive($listCategoriesid))
+					$result[]=$img;
+			}
+			return $result;
 		}
 		
 		function getImageById($image_id)
@@ -59,4 +101,3 @@
 			else return false;
 		}
 	}
-?>

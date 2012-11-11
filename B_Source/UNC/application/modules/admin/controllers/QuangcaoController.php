@@ -22,6 +22,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
+			  $_SESSION["backend_current_menu"]="menu-quanlyanh";
 		}
 		
 		function setForm()
@@ -74,7 +75,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 				//var_dump($listQuangcao);die();
 				//Nếu là admin thì lấy ra danh sách tất cả các comment
 				$paginator = Zend_Paginator::factory($listQuangcao);
-				$paginator->setItemCountPerPage(5);        
+				$paginator->setItemCountPerPage(25);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
         	$this->view->list=$paginator;
@@ -156,7 +157,7 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			{
 				//$ret = preg_match('#<img.*/>#',$this->_request->getPost('ads_banner'),$match);
 				$data = array(
-					'ads_banner' => $this->_request->getPost('ads_banner'),
+					'ads_banner' => str_replace('\\','',$this->_request->getPost('ads_banner')),
 					'ads_position' => $this->_request->getPost('ads_position'),
 					'ads_name' => $this->_request->getPost('ads_name'),
 					'ads_link' => $this->_request->getPost('ads_link'),

@@ -32,5 +32,14 @@
 			$query=$this->db->query('SELECT noidung, lienket FROM unc_address WHERE danhmuc = "vomieu" LIMIT 1');
 			return $query->fetchAll();
 		}
+		
+		function getRecordByName($name)
+		{
+			$query=$this->db->query('SELECT noidung, lienket FROM unc_address WHERE danhmuc = "'.$name.'" LIMIT 1');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
 	}
 ?>

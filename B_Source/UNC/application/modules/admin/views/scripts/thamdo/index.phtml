@@ -12,7 +12,13 @@
 					else 
 					{	
 					}
-				}
+				};
+		$(document).ready(function(){
+			var active=<?php echo $this->isshow;?>;
+			if (active==0)
+				$("#n").attr("checked","checked");
+			else $("#y").attr("checked","checked");
+		});
 </script>
 <style>
 	.del_button{cursor:pointer}
@@ -30,7 +36,14 @@
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
-		
+		<div style="margin: 10px ">
+			<form method="post" action="<?php echo $this->baseUrl();?>/admin/thamdo/active">
+				<span>Hiển thị:</span>
+				<label><input type="radio" name="isshow" id="n" value="0"/> Không</label>
+				<label><input type="radio" name="isshow" id="y" value="1"/> Có</label>
+				<input type="submit" value="Lưu"/>
+			</form>
+		</div>
 		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
 		
 		<script type="text/javascript">

@@ -23,6 +23,7 @@
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
+			  $_SESSION["backend_current_menu"]="menu-quanlytin";
 		}
 		
 		function indexAction()
@@ -106,7 +107,7 @@
 				$listNewsTitle[] = $this->mComment->getNewsTitleByNewsId($comments['news_id']);
 			}
 			
-        	$paginator->setItemCountPerPage(5);        
+        	$paginator->setItemCountPerPage(25);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
 			

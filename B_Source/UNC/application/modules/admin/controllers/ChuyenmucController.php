@@ -21,6 +21,7 @@
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
+			  $_SESSION["backend_current_menu"]="menu-quanlytin";
 		}
 		
 		function setForm($check,$id)
@@ -71,7 +72,7 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
 				$paginator = Zend_Paginator::factory($this->mChuyenmuc->getListCM());
-	        	$paginator->setItemCountPerPage(5);        
+	        	$paginator->setItemCountPerPage(25);        
 	        	$currentPage = $this->_request->getParam('page',1);
 	         	$paginator->setCurrentPageNumber($currentPage);
 	        	$this->view->list = $paginator;

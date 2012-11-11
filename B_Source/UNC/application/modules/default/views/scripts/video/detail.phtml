@@ -24,7 +24,9 @@
             	<?php 
             	$thumbnail=$this->video['thumbnail'];
             	$a=preg_match_all('#/.*g" #',$thumbnail,$src);
-            	$source=substr($src[0][0], 0, strlen($src[0][0])-2);
+            	if (isset($src[0][0]))
+            		$source=substr($src[0][0], 0, strlen($src[0][0])-2);
+            	else $source='';
             	
             	if (isset($this->video))
             	if ($this->video['video_full_link']!='')
@@ -72,7 +74,7 @@
 </div>
 <div class="element_detail2">
            		<div style=" border-bottom:1px solid #e9e9e9">
-                	<p class="p_detail">Ý kiến bạn đọc (12)</p> 
+                	<p class="p_detail">Ý kiến bạn đọc (<?php echo count($this->listComment);?>)</p> 
                 </div>
                 <div style="border-bottom:1px solid #e9e9e9">
                 	<?php 

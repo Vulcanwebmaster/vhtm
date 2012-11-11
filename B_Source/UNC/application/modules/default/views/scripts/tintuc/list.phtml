@@ -52,7 +52,7 @@
 	            		?>
             		</a>
                 </div>
-                <div class="text_new">
+                <div class="text_new" style="margin-top:0 !important">
                 	<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title'] ?></a>
                     <p class="date"><?php if ($news['news_modified_date']=="0000-00-00 00:00:00") 
                     						echo $news['news_post_date'];
@@ -64,7 +64,7 @@
 					}
 				}
 				else {
-					echo 'Chuyên m?c này chua có tin bài nào';
+					echo 'Chuyên mục này chưa có tin bài nào';
 				}
            ?>
            <div class="page_video">

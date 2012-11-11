@@ -11,9 +11,9 @@
 						{
 							$preg = preg_match_all('#<img.*/>#',$imageRight['image_link'],$match);
 							?>
-								<li class="even"><a href="<?php echo $this->baseUrl(); ?>/hinhanh/
-															<?php echo $imageRight['image_id']; ?>.html">
-															<?php echo $match[0][0]; ?></a></li>
+								<li class="even">
+									<?php echo $match[0][0]; ?>
+								</li>
 							<?php
 						}
 					}

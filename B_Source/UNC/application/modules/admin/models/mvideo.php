@@ -37,7 +37,7 @@
 		
 		function getListVideo()
 		{
-			$query=$this->db->query('select * from unc_video order by is_active desc, video_id desc');
+			$query=$this->db->query('select * from unc_video where video_full_link like "%youtube%" order by is_active desc, video_id desc');
 			return $query->fetchAll();
 		}
 		

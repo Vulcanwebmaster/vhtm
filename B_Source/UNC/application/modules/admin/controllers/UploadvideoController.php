@@ -40,6 +40,7 @@
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
+			  $_SESSION["backend_current_menu"]="menu-quanlyvideo";
 		}
 		
 		function _httpClient()
@@ -123,7 +124,7 @@
 			}
 			//var_dump($listVideo);die();
 			$paginator = Zend_Paginator::factory($listVideo);
-        	$paginator->setItemCountPerPage(15);        
+        	$paginator->setItemCountPerPage(25);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
 			

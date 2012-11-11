@@ -22,6 +22,7 @@ function cutString($str,$limit)
 <style>
 	#subpage_home{display:none}
 	#subpage_wapper{padding-top:15px}
+	#poll-panel{display:block}
 </style>
 <div class="left"> <!-----------Left--------------->
 	<div class="content-left1">
@@ -31,7 +32,7 @@ function cutString($str,$limit)
 				<?php for ($i=0;$i<5;$i++)
 				{?>
 					<div class="hotestnews-div" id="hotestnews-div<?php echo $i;?>" style="<?php if ($i>0) echo 'display:none';?>">
-						<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_id']; ?>-<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['alias']; ?>.html">
+						<a title="<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_title']?>"  href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_id']; ?>-<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['alias']; ?>.html">
 							<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_avatar'];?>
 						</a>
 						<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_id']; ?>-<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['alias']; ?>.html"><?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_title']?></a>
@@ -39,11 +40,12 @@ function cutString($str,$limit)
 					</div>
 				<?php }?>
 			</div>
-			<div id="avt-hot-list" style="margin-left: 405px">
+			<div id="avt-hot-list" style="float: right">
 				<?php for ($i=0;$i<5;$i++)
 				{?>
-					<a class="avt-hot-list-a" id="avt-hot-list-<?php echo $i;?>" title="<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_title']?>" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->listHotNews[$i]['news_id']; ?>-<?php echo $this->listHotNews[$i]['alias']; ?>.html">
+					<a class="avt-hot-list-a" id="avt-hot-list-<?php echo $i;?>" title="<?php if (isset($this->listHotNews[$i])) echo str_replace('"', '', $this->listHotNews[$i]['news_title'])?>" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $this->listHotNews[$i]['news_id']; ?>-<?php echo $this->listHotNews[$i]['alias']; ?>.html">
 						<?php if (isset($this->listHotNews[$i])) echo $this->listHotNews[$i]['news_avatar'];?>
+						<br style="clear:both"/>
 					</a>
 				<?php }?>
 				<div class="clear"> </div>
@@ -76,7 +78,7 @@ function cutString($str,$limit)
                 	<div class="children_down-title"><a>Video</a></div>
                 	<div class="subpage_wapper_left_top" style="margin-bottom:10px">
 						<ul style="margin:0 0 0 20px; list-style-type:none">
-							<li class="category-more"><a href="<?php echo $this->baseUrl();?>/video/danh-sach/1-trang.html"><strong>Xem tất cả</strong></a></li>
+							<li class="category-more"><a href="<?php echo $this->baseUrl();?>/video/danh-sach/0-1-trang.html"><strong>Xem tất cả</strong></a></li>
 						</ul>					
 					</div>
                 	<?php foreach ($this->listVideo as $video)
@@ -156,5 +158,4 @@ function cutString($str,$limit)
 				               <!---------end bản tin------->
 				               </div>  
 				<?php }?>
- 			<?php echo $this->render('index/binhchon.phtml')?>
 </div>

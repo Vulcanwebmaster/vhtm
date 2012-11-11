@@ -136,6 +136,10 @@ class TintucController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		$form = $this->setForm();
 		$news_id = $this->_request->getParam('newsid');
@@ -228,8 +232,30 @@ class TintucController extends Zend_Controller_Action
 		
 	}
 	
+	function receivecommentAction()
+	{
+		$this->_helper->layout()->disableLayout();
+		//$comment_captcha = $this->_request->getPost('comment_captcha');
+		$news_id_comment = $this->_request->getParam('news_id_commented');
+		$comment_time = gmdate('Y-m-d h:i:s',time() + 7*3600);
+		$input = array(
+				'comment_name'		=> $this->_request->getPost('comment_name'),
+				'reader_email'		=> $this->_request->getPost('comment_email'),
+				'comment_time'		=> $comment_time,
+				'news_id'			=> $news_id_comment,
+				'comment_content'	=> $this->_request->getPost('comment_content')
+		);
+		//var_dump($input);die();
+		$this->mTintuc->insertComment($input);
+		$_SESSION['addComment'] = 'Gửi bình luận thành công';
+	}
+	
 	function timkiemAction()
 	{
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao1 = $this->mDefault->getListAds1();
@@ -272,67 +298,110 @@ class TintucController extends Zend_Controller_Action
 	
 	function listAction()
 	{
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		//var_dump($this->listThreadTitle);die();
 		$this->view->listThread = $this->listThreadTitle;
 		$categoryid = $this->_request->getParam('categoryId');
 		$this->view->categoryid = $categoryid;
 		$this->view->current_parent=$this->mTintuc->getParentByChild($categoryid);
-		$is_parent = 0;
 		
-		if($this->mTintuc->isParent($categoryid))
+		if ($categoryid)
 		{
-			$is_parent = 1;
-			$listCategoryId = $this->mTintuc->getListChildByParent($categoryid);
-			//var_dump($listCategoryId);die();
-			$listHot = array();
-			$listHotNews = $this->mTintuc->getListHotNews();
-			foreach($listHotNews as $hotNews)
+			$is_parent = 0;
+			
+			if($this->mTintuc->isParent($categoryid))
 			{
-				$check = 0;
+				$is_parent = 1;
+				$listCategoryId = $this->mTintuc->getListChildByParent($categoryid);
+				//var_dump($listCategoryId);die();
+				$listHot = array();
+				$listHotNews = $this->mTintuc->getListHotNews();
+				foreach($listHotNews as $hotNews)
+				{
+					$check = 0;
+					foreach($listCategoryId as $categoryId)
+					{
+						if(strpos($hotNews['category_id'], ','.$categoryId['category_id'].',')!==false)
+						{
+							$check = 1;break;
+						}
+					}
+					if($check == 1) $listHot[] = $hotNews;
+				}
+				
+				$list = array();
+				$listNewsId=',';
 				foreach($listCategoryId as $categoryId)
 				{
-					if(strpos($hotNews['category_id'], ','.$categoryId['category_id'].',')!==false)
+					$subList=$this->mTintuc->getListNewsByCategoryId($categoryId['category_id']);
+					foreach ($subList as $news)
 					{
-						$check = 1;break;
+						if (strpos($listNewsId, ','.$news['news_id'].',')===false)
+						{
+							$list[] = $news;
+							$listNewsId=$listNewsId.$news['news_id'].',';
+						}
 					}
 				}
-				if($check == 1) $listHot[] = $hotNews;
-			}
-			
-			$list = array();
-			$listNewsId=',';
-			foreach($listCategoryId as $categoryId)
-			{
-				$subList=$this->mTintuc->getListNewsByCategoryId($categoryId['category_id']);
-				foreach ($subList as $news)
+				$listquangcao = array();
+				$listAds = $this->mTintuc->getListAds();
+				
+				foreach($listCategoryId as $categoryId)
 				{
-					if (strpos($listNewsId, ','.$news['news_id'].',')===false)
+					foreach($listAds as $ads)
 					{
-						$list[] = $news;
-						$listNewsId=$listNewsId.$news['news_id'].',';
+						if($ads['category_id'] == $categoryId['category_id'])
+						{
+							$listquangcao[] = $ads;
+						}
 					}
 				}
+				
+				$this->view->listHotNews = $listHot;
 			}
-			$listquangcao = array();
-			$listAds = $this->mTintuc->getListAds();
-			
-			foreach($listCategoryId as $categoryId)
+			else 
 			{
-				foreach($listAds as $ads)
+				$list = $this->mTintuc->getListNewsByCategoryId($categoryid);
+				$listquangcao = $this->mTintuc->getListAdsByCategoryId($categoryid);
+				$listHotNews = array();
+				foreach ($list as $news)
 				{
-					if($ads['category_id'] == $categoryId['category_id'])
-					{
-						$listquangcao[] = $ads;
-					}
+					if ($news['is_hot']=='1') $listHotNews[]=$news;
 				}
+				$this->view->listHotNews = $listHotNews;
 			}
 			
-			$this->view->listHotNews = $listHot;
+			$this->view->is_parent = $is_parent;
+			$paginator = Zend_Paginator::factory($list);
+	        $paginator->setItemCountPerPage(8);        
+	        $currentPage = $this->_request->getParam('page',1);
+	        $paginator->setCurrentPageNumber($currentPage);
+	        
+			if($is_parent == "1") 
+			{
+				$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
+			}
+			else 
+			{
+				$parentId = $this->mTintuc->getParentByChild($categoryid);
+				$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
+				$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
+			}		
+			
+			//====breadcrum=====
+			$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
+			$parent_current_category_id=$this->mTintuc->getParentByChild($categoryid);
+			$this->view->parent_current_category=$this->mTintuc->getCategoryNameByCategoryId($parent_current_category_id);
+			//=======================
+	        $this->view->list = $paginator;
 		}
 		else 
 		{
-			$list = $this->mTintuc->getListNewsByCategoryId($categoryid);
+			$list = $this->mTintuc->getListNewsFull();
 			$listquangcao = $this->mTintuc->getListAdsByCategoryId($categoryid);
 			$listHotNews = array();
 			foreach ($list as $news)
@@ -340,31 +409,16 @@ class TintucController extends Zend_Controller_Action
 				if ($news['is_hot']=='1') $listHotNews[]=$news;
 			}
 			$this->view->listHotNews = $listHotNews;
+			$paginator = Zend_Paginator::factory($list);
+	        $paginator->setItemCountPerPage(8);        
+	        $currentPage = $this->_request->getParam('page',1);
+	        $paginator->setCurrentPageNumber($currentPage);
+	        
+	        $this->view->list = $paginator;
+	        $this->view->current_category=array("category_name"=>"Tin tức",
+	        									"category_id"=>"0",
+	        									"alias"=>"",);
 		}
-		
-		$this->view->is_parent = $is_parent;
-		$paginator = Zend_Paginator::factory($list);
-        $paginator->setItemCountPerPage(8);        
-        $currentPage = $this->_request->getParam('page',1);
-        $paginator->setCurrentPageNumber($currentPage);
-        
-		if($is_parent == "1") 
-		{
-			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
-		}
-		else 
-		{
-			$parentId = $this->mTintuc->getParentByChild($categoryid);
-			$this->view->child = $this->mTintuc->getCategoryNameByCategoryId($categoryid);
-			$this->view->parent = $this->mTintuc->getCategoryNameByCategoryId($parentId);
-		}		
-		
-		//====breadcrum=====
-		$this->view->current_category=$this->mTintuc->getCategoryNameByCategoryId($categoryid);
-		$parent_current_category_id=$this->mTintuc->getParentByChild($categoryid);
-		$this->view->parent_current_category=$this->mTintuc->getCategoryNameByCategoryId($parent_current_category_id);
-		//=======================
-        $this->view->list = $paginator;
 		$this->view->listquangcao = $listquangcao;
 		
 		$listNewsMostView=array();
@@ -414,6 +468,7 @@ class TintucController extends Zend_Controller_Action
         
         $this->view->listComment=$paginator;
         $this->view->news_id=$news_id;
+        $this->view->amount=count($listComment);
 	}
 	
 	function likeAction()
@@ -428,4 +483,5 @@ class TintucController extends Zend_Controller_Action
 			$_SESSION['liked']=$_SESSION['liked'].$comment_id.',';
 		else $_SESSION['liked']=','.$comment_id.',';
 	}
+	
 }

@@ -798,6 +798,8 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
     
 	function getAliasByName($name)
 	{
+		$name=str_replace('"', '', $name);
+		$name=str_replace("'", "", $name);
 		$name=str_replace('á', 'a', $name);
 		$name=str_replace('à', 'a', $name);
 		$name=str_replace('ạ', 'a', $name);

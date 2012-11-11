@@ -9,22 +9,68 @@
 			$this->forum = Zend_Registry::get('unc_forum');
 		}
 		
+		function getCategoryByCategoryId($id)
+		{
+			$query = $this->db->query('select * from unc_video_category where category_id = "'.$id.'"');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
+		}
+		
+		function isActive($listCategoriesid)
+		{
+			$count=0;
+			foreach($listCategoriesid as $id)
+			{
+				$cate=$this->getCategoryByCategoryId($id);
+				if ($cate['is_active']=='1')
+					$count++;
+			}
+			if ($count>0) return true;
+			else return false;
+		}
+		
 		function getListVideo()
 		{
 			$query = $this->db->query('select * from unc_video where is_active = "1" order by video_id desc');
-			return $query->fetchAll();
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $video)
+			{
+				$listCategoriesid=explode(',', $video['category_id']);
+				if ($this->isActive($listCategoriesid))
+					$result[]=$video;
+			}
+			return $result;
 		}
 		
 		function getListNewsVideo()
 		{
 			$query = $this->db->query('select * from unc_video where is_active = "1"  order by video_id desc limit 6');
-			return $query->fetchAll();
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $video)
+			{
+				$listCategoriesid=explode(',', $video['category_id']);
+				if ($this->isActive($listCategoriesid))
+					$result[]=$video;
+			}
+			return $result;
 		}
 		
 		function getListMostVideo()
 		{
 			$query = $this->db->query('select * from unc_video where is_active = "1"  order by viewer_number desc limit 6');
-			return $query->fetchAll();
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $video)
+			{
+				$listCategoriesid=explode(',', $video['category_id']);
+				if ($this->isActive($listCategoriesid))
+					$result[]=$video;
+			}
+			return $result;
 		}
 		
 		function getVideoByVideoId($video_id)
@@ -36,7 +82,7 @@
 		
 		function getVideoByCategoryName()
 		{
-			$query = $this->db->query('select * from unc_video_category');
+			$query = $this->db->query('select * from unc_video_category where is_active="1"');
 			return $query->fetchAll();
 		}
 		function getVideoByCategoryId($category_id)

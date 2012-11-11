@@ -1,16 +1,17 @@
 <?php
 class ThamdoController extends Zend_Controller_Action
 {
-	protected $mDefault;
+	protected $mDefault, $mPoll;
 	function init()
 	{
+		@session_start();
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 
 	                  'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
 		
 		$this->mDefault = new Default_Model_Mdf();
-		@session_start();
+		$this->mPoll=new Default_Model_Mpoll();
 		$_SESSION['home'] = 'home';
 		$_SESSION['page'] = 'thamdo';
 	}
@@ -19,6 +20,20 @@ class ThamdoController extends Zend_Controller_Action
 	{
 		$this->view->listcauhoi = $this->mDefault->getListPolls();
 		$this->view->listtraloi = $this->mDefault->getListPolls1();
+	}
+	
+	public function binhchonAction()
+	{
+		if ($this->_request->isPost())
+		{
+			$answer=$this->_request->getPost('answer');
+			$result=$this->mPoll->increasePollById($answer);
+			if ($result)
+			{
+				$_SESSION['voted']='true';
+			}
+		}
+		$this->_redirect($this->view->baseUrl().'/../');
 	}
 }
 ?>

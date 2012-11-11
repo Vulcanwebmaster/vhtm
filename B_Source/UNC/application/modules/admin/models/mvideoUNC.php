@@ -11,7 +11,7 @@
 		
 		function getList()
 		{
-			$query  = $this->db->query('select * from unc_video order by is_active desc,video_id desc');
+			$query  = $this->db->query('select * from unc_video where youtube_id="0" order by is_active desc,video_id desc');
 			return $query->fetchAll();
 		}
 		
@@ -40,11 +40,6 @@
 			return $query;
 		}
 		
-		function editAbc()
-		{
-			//$query = $this->db->query('update unc_video set video_extension = "" where video_extension = 0');
-		}
-		
 		function delVideo($video_id)
 		{
 			$query = $this->db->query('delete from unc_video where video_id = "'.$video_id.'"');
@@ -58,6 +53,4 @@
 			if(count($list) > 0) return $list;
 			else return false;
 		}
-	}
-?>
-		
+	}	

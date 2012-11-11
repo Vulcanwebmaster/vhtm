@@ -35,6 +35,7 @@
 		
 		function getListAds1()
 		{
+			$today=date('Y-m-d',time()+7*3600);
 			$query = $this->db->query('select * from unc_ads where ads_position=1 order by ads_start_date DESC limit 1');
 			$list = $query->fetchAll();
 			if (count($list)>0)

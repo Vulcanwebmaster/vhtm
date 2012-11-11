@@ -32,7 +32,7 @@
             <div class="left"> <!-----------Left--------------->
 
 			<div id="content-left" style="padding-bottom:15px">
-				<div class="children_down-title" style="margin-top:10px"><a href="#">Hình ảnh</a></div>
+				<div class="children_down-title" style="margin-top:10px"><a href="#" title="Hình ảnh">Hình ảnh</a></div>
 				     <div class="subpage_wapper_left_top" style="margin-top:10px">
            			 </div>
            			 
@@ -42,14 +42,14 @@
                         <input class="searchsubmit" type="submit" value="" style="cursor:pointer">
                     </form>
                     <ul id="ul_video_left">
-                    	<li <?php if ($this->current_category_id=='0') echo "selected='current'"?>><a href="<?php echo $this->baseUrl(); ?>/hinhanh">Tất cả</a></li>
+                    	<li <?php if ($this->current_category_id=='0') echo "selected='current'"?>><a href="<?php echo $this->baseUrl(); ?>/hinhanh/list/category_id/0" title="Tất cả">Tất cả</a></li>
                     	<?php
                     	if($this->listCategory && count($this->listCategory) > 0)
 						{
 							foreach($this->listCategory as $category)
 							{
 								?>
-									<li <?php if ($this->current_category_id==$category['category_id']) echo "class='current'"?>><a href="<?php echo $this->baseUrl(); ?>/hinhanh/list/category_id/<?php echo $category['category_id']?>"><?php echo $category['category_name'] ?></a></li>
+									<li <?php if ($this->current_category_id==$category['category_id']) echo "class='current'"?>><a href="<?php echo $this->baseUrl(); ?>/hinhanh/list/category_id/<?php echo $category['category_id']?>" title="<?php echo $category['category_name'] ?>"><?php echo $category['category_name'] ?></a></li>
 								<?php
 							}
 						}
@@ -68,8 +68,7 @@
 									<div class="gioithieu-img">
 										<input type="hidden" value="<?php echo $imageLeft['image_id']?>"/>
 										<?php if (isset($match[0][0])) echo $match[0][0];?>
-										<a style="color:#013b47; line-height:30px" href="<?php echo $this->baseUrl(); ?>/hinhanh/
-												 <?php echo $imageLeft['image_id']; ?>.html">
+										<a style="color:#013b47; line-height:30px" title="<?php echo $imageLeft['image_name'] ?>">
 													<?php echo $imageLeft['image_name'] ?></a>
 									</div>
 								<?php

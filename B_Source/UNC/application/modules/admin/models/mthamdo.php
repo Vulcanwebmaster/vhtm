@@ -15,4 +15,18 @@
 		$list=$query->fetchAll();
 		return count($list);
 	}
+	
+	function getActiveIndex()
+	{
+		$query=$this->db->query("select * from unc_polls where polls_id='1'");
+		$list=$query->fetchAll();
+		$target=$list[0];
+		return $target['polls_content'];
+	}
+	
+	function updateActive($input)
+	{
+		$result=$this->update($input, "polls_id='1'");
+		return $result;
+	}
 }

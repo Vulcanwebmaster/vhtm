@@ -3,11 +3,21 @@
 	{
 		private $db;
 		protected $forum;
+		protected $_name="unc_news2";
 		function __construct()
 		{
 			parent::__construct();
 			$this->db = Zend_Registry::get('db');
 			$this->forum = Zend_Registry::get('unc_forum');
+		}
+		
+		function getCategoryByCategoryId($id)
+		{
+			$query = $this->db->query('select * from unc_news where category_id = "'.$id.'"');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 		
 		function getListHotNews()
@@ -49,7 +59,15 @@
 										AND unc_news.category_id !=0
 										AND unc_news.news_status="Công khai"
 										ORDER BY news_post_date DESC limit 8');
-			return $query->fetchAll();
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $news)
+			{
+				$category=$this->getCategoryByCategoryId($news['category_id']);
+				if ($category['is_active']=='1')
+					$result[]=$news;
+			}
+			return $result;
 		}
 
 		function isParent($id)
@@ -81,7 +99,15 @@
 		function getListNews()
 		{
 			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id != 0');
-			return $query->fetchAll();
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $news)
+			{
+				$category=$this->getCategoryByCategoryId($news['category_id']);
+				if ($category['is_active']=='1')
+					$result[]=$news;
+			}
+			return $result;
 		}
 		function getListAds()
 		{
@@ -161,6 +187,12 @@
 		function getNewestNews()
 		{
 			$query = $this->db->query('select * from unc_news where news_status="Công khai" order by news_post_date desc limit 5');
+			return $query->fetchAll();
+		}
+		
+		function getNewestNewsByCategory($categoryId)
+		{
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id="'.$categoryId.'" order by news_post_date desc limit 5');
 			return $query->fetchAll();
 		}
 		
@@ -317,7 +349,7 @@
 			$vipham = $vipham + 1;
 			$data = array ('vipham' => $vipham);
 			$where = "comment_id = ".$idcomment;
-			$db->update('unc_comment', $data, $where); 						
+			$db->update('unc_comment', $data, $where);
 		}
 		
 		/**
@@ -330,5 +362,12 @@
 			if (count($list)>0)
 				return $list[0];
 			else return false;
+		}
+		
+		function getListNewsFull()
+		{
+			$query=$this->db->query("select * from unc_news where news_status='Công khai'");
+			$list=$query->fetchAll();
+			return $list;
 		}
 	}

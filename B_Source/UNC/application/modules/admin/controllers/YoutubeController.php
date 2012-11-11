@@ -24,7 +24,7 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
 				$paginator = Zend_Paginator::factory($this->mYoutube->getListAccount());
-	        	$paginator->setItemCountPerPage(5);        
+	        	$paginator->setItemCountPerPage(25);        
 	        	$currentPage = $this->_request->getParam('page',1);
 	         	$paginator->setCurrentPageNumber($currentPage);
 	        	$this->view->list=$paginator;

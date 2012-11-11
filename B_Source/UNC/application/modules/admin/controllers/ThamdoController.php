@@ -25,6 +25,7 @@
 			  else {
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
+			  $_SESSION['backend_current_menu']="menu-quanlychung";
 		}
 		
 		function indexAction()
@@ -34,12 +35,13 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			$paginator = Zend_Paginator::factory($this->mTintuc->getListAllThamdo());
-	        $paginator->setItemCountPerPage(5);        
+	        $paginator->setItemCountPerPage(25);        
 	        $currentPage = $this->_request->getParam('page',1);
 	        $paginator->setCurrentPageNumber($currentPage);
 	        $this->view->list = $paginator;
 			$this->view->title = "Quản lý thăm dò";
 			$this->view->role = $this->role;
+			$this->view->isshow=$this->mThamdo->getActiveIndex();
 		}
 		function _getInput($form)
 		{
@@ -138,12 +140,12 @@
 					if($this->mTintuc->editThamdo($polls_id, $input))
 					{
 						$_SESSION['result']='Cập nhật thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+						$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
 					}
 					else 
 					{
 						$_SESSION['result']='Cập nhật không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+						$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
 					}
 				}
 				else 
@@ -159,6 +161,14 @@
 			if($this->mTintuc->deletethamdo($polls_id))
 				$_SESSION['result']='Xóa thành công';
 			else $_SESSION['result']='Xóa không thành công';
-			$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+			$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+		}
+		
+		function activeAction()
+		{
+			$value=$this->_request->getPost('isshow');
+			$input=array("polls_content"=>$value);
+			$this->mThamdo->updateActive($input);
+			$this->_redirect($this->view->baseUrl().'/admin/thamdo',array('prependBase' => false));
 		}
 	}

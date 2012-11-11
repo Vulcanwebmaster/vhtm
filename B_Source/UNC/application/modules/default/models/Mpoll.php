@@ -23,4 +23,16 @@
 			}
 			else return false;
 		}
+		
+		function showOrHidden()
+		{
+			$query=$this->db->query("select * from unc_polls where polls_id='1'");
+			$list=$query->fetchAll();
+			if (count($list)>0)
+			{
+				$target=$list[0];
+				return $target['polls_content'];
+			}
+			else return false;
+		}
 	}

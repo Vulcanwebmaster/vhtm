@@ -36,6 +36,10 @@ class VideoController extends Zend_Controller_Action
 	
 	function listAction()
 	{
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/switch_news.js',"text/javascript");
 		
 		$this->view->listHotNews = $this->mDefault->getListHotNews();
@@ -101,6 +105,10 @@ class VideoController extends Zend_Controller_Action
 	
 	function detailAction()
 	{
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		/*--------Lấy ra forum và hình ảnh--------*/
 		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		$this->view->listThread = $this->listThreadTitle;
@@ -168,28 +176,28 @@ class VideoController extends Zend_Controller_Action
 	
 	function addcommentAction()
 	{
-		echo '<meta charset="UTF-8"/>';
-		
+		$this->_helper->layout()->disableLayout();
 		$video_id = $this->_request->getParam('videoid');
 		$name = $this->_request->getPost('name');
 		$email = $this->_request->getPost('email');
 		
 		$comment_content = $this->_request->getPost('comment_content');
+		
 		$comment_content = trim($comment_content);
-		$comment_content = $this->checkSql($comment_content);
+		//$comment_content = $this->checkSql($comment_content);
 		
 		if($comment_content == "")
 		{
 			$_SESSION['fail'] = 'Vui lòng nhập nội dung bình luận !';
 		}
-		else if($comment_content != "")
+		else
 		{
 			if(strlen($comment_content) > 700)
 				$_SESSION['fail'] = 'Nội dung bình luận giới hạn 700 kí tự, vui lòng thử lại !';
-			else
+			else				
 				$this->mVideo->insertComment($name,$email,$video_id,$comment_content);
 		}
-		$this->_redirect($_SERVER['HTTP_REFERER']);	
+		$this->view->direct=$_SERVER['HTTP_REFERER'];
 	}	
 	
 	function loginAction()

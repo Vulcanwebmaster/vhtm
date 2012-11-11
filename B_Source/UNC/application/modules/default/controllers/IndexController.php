@@ -27,7 +27,7 @@ class IndexController extends Zend_Controller_Action
 		$this->listThreadTitle = array();
 		foreach($listThreadForum as $thread)
 		{
-			$content = file_get_contents('http://localhost/unc/forum/showthread.php?'.$thread['threadid']);
+			$content = file_get_contents('http://localhost'.$this->view->baseUrl().'/../forum/showthread.php?'.$thread['threadid']);
 			$preg1 = preg_match_all('#<span class="threadtitle">.*</span>#',$content,$match);
 			$this->listThreadTitle[] = $thread['threadid'].strip_tags($match[0][0]);
 		}
@@ -43,6 +43,11 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listHotNewsJs = $this->mDefault->getListHotNewsJs();
 		$this->view->listNewsMostView = $this->mDefault->getListMostView();
 		$this->view->listNewsMostVideo = $this->mVideo->getListMostVideo();
+		
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
 		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$this->view->listvanmieu = $this->mDiachi->getListVanmieu();
@@ -59,6 +64,7 @@ class IndexController extends Zend_Controller_Action
 		$listNews=array();
 		foreach ($listParents as $parent)
 		{
+			$got=',';
 			$listChild=$this->mTintuc->getListChildByParent($parent['category_id']);
 			$listChildNews=array();
 			foreach ($listChild as $child)
@@ -66,7 +72,11 @@ class IndexController extends Zend_Controller_Action
 				$newlist=$this->mTintuc->getListNewsByCategoryId($child['category_id']);
 				foreach($newlist as $newNews)
 				{
-					$listChildNews[]=$newNews;
+					if (strpos($got, ','.$newNews['news_id'].',')===false)
+					{
+						$listChildNews[]=$newNews;
+						$got=$got.$newNews['news_id'].',';
+					}
 				}
 			}
 			$listNews[$parent['category_id']]=$listChildNews;
@@ -86,6 +96,7 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listquangcao4 = $listquangcao4;
 
 		$this->view->listNews = $listNews;
+		$this->view->showpoll=$this->mPoll->showOrHidden();
 		//Header title
 		$this->view->headTitle('UNC - Trang chủ');
 	}

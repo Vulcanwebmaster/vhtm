@@ -45,6 +45,11 @@ class TimkiemController extends Zend_Controller_Action
 		{
 			
 			$value_search=$this->_request->getPost('search-text');
+			$_SESSION['key-search']=$value_search;
+		}
+		else $value_search=$_SESSION['key-search'];
+		$this->view->current_category=array('category_name'=>'Tìm kiếm');
+		$this->view->key=$value_search;
 			$list=$this->mTimkiem->getNewsByKey($value_search);
 			
 			$paginator = Zend_Paginator::factory($list);
@@ -63,6 +68,10 @@ class TimkiemController extends Zend_Controller_Action
 			$listChild=$this->mTintuc->getListChild();
 			$this->view->listChild = $listChild;
 			
+			//===== Social Network ==============================================
+			$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+			$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+			//===================================================================
 			$this->view->listdiachi = $this->mDiachi->getListDiachi();
 			$this->view->listlienhe = $this->mDiachi->getListLienhe();
 			$this->view->listHotNews=$this->mDefault->getListHotNews();
@@ -87,7 +96,6 @@ class TimkiemController extends Zend_Controller_Action
 		$this->view->listThread = $this->listThreadTitle;
 			
 			//---------END Thêm template vào các chuyên mục----
-		}
 		//Header title
 		$this->view->headTitle('UNC - Tìm kiếm');	
 	}

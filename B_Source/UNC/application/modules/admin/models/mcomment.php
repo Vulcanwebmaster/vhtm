@@ -2,8 +2,10 @@
 	class Admin_Model_Mcomment extends Zend_Db_Table_Abstract
 	{
 		private $db;
+		protected $_name="unc_comment";
 		function __construct()
 		{
+			parent::__construct();
 			$this->db=Zend_Registry::get('db');
 		}
 		
@@ -91,5 +93,11 @@
 			return $list[0];
 		}
 		
+		function delCommentByNewsid($newsId)
+		{
+			$where="news_id = '".$newsId."'";
+			$result=$this->delete($where);
+			return $result;
+		}
 	}
 ?>

@@ -109,7 +109,7 @@
 	
 	function deleteNews($id)
 	{
-		$query=$this->db->query('delete from unc_news where news_id="'.$id.'"');
+		$query=$this->delete('news_id="'.$id.'"');
 		return $query;
 	}
 	

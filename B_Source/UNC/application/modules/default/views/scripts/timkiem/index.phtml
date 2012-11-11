@@ -1,4 +1,5 @@
 <div class="element_detail">
+	<p style="text-decoration:underline">Kết quả tìm kiếm với từ khóa: <i><?php if (isset($this->key)) echo $this->key;?></i></p>
 	<?php 
 	if(count($this->list) > 0)
 	{
@@ -22,7 +23,7 @@
 	 			?>
 	 			</a>
 	 		</div>
-	 		<div class="text_new" style="margin-top: 10px">
+	 		<div class="text_new" style="margin-top:0px">
 	  			<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['news_title']; ?>"><?php echo $news['news_title']; ?></a></h3>
 	  			<p class="text">
 	  				<?php

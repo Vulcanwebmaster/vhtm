@@ -1,0 +1,46 @@
+<?php 
+if ($this->showpoll=='1')
+	{?>
+		<div class="right-boxs bgnews2" id="poll-panel">
+			<div class="news_title2">
+                	Thăm dò ý kiến
+                </div>
+			<?php 
+			
+				if (!isset($_SESSION['voted']))
+				{?>
+				<form action="<?php echo $this->baseUrl()?>/thamdo/binhchon" method="post" name="bc-form">
+						<!--Câu hỏi-->
+					<p><strong>
+					<?php
+					foreach($this->listcauhoi as $listcauhoi)
+					{
+						echo $listcauhoi['polls_content'];
+					}
+					?></strong></p>
+						<!--End Câu hỏi-->
+						<!--Trả lời-->
+					<ul style="list-style-type:none">
+						<?php
+						foreach($this->listtraloi as $listtraloi)
+						{
+						?>
+							<li style="float:none">
+							<input type="radio" name="answer" value="<?php echo $listtraloi['polls_id'];?>"/>
+						<?php
+							echo $listtraloi['polls_content'];
+							echo '</li>';
+						}
+						?>
+						<li style="float:none">
+							<center>
+								<input style="width:93px; height:21px; border-style:none; cursor:pointer; background: url('<?php echo $this->baseUrl()?>/application/templates/front/images/poll-bt-bg.png') repeat" type="submit" value="Bình chọn" name="submit"/>
+							</center>	
+						</li>
+					</ul>
+					
+				</form>
+				<?php }
+				else echo '<p>Bạn đã bình chọn lần này.</p>';?>
+		</div>
+<?php }?>

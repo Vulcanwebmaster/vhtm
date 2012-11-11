@@ -26,6 +26,7 @@
 			else {
 				$this->_redirect($this->view->baseUrl().'/../admin');
 			}
+			$_SESSION['backend_current_menu']="menu-quanlychung";
 		}
 		
 		function indexAction()
@@ -84,7 +85,7 @@
 			}
 			
 			
-			$paginator->setItemCountPerPage(6);
+			$paginator->setItemCountPerPage(25);
 			$current = $this->_request->getParam('page',1);
 			$paginator->setCurrentPageNumber($current);			
 			$this->view->list = $paginator;

@@ -25,7 +25,7 @@ class HinhanhController extends Zend_Controller_Action
 		
 		$this->view->listParent = $this->mTintuc->getListParent();
 		$this->view->listChild = $this->mTintuc->getListChild();	
-		$this->view->current_category=array('category_name'=>'Hinhanh');
+		$this->view->current_category=array('category_name'=>'Hình ảnh');
 		
 		$this->view->listImageRight = $this->mHinhanh->getListImageRight();
 		$this->view->listCategory = $this->mHinhanh->getListCategory();
@@ -38,13 +38,17 @@ class HinhanhController extends Zend_Controller_Action
 			$paginator = Zend_Paginator::factory($this->mHinhanh->getImagesByCategoryId($category_id));
 		else 
 			$paginator = Zend_Paginator::factory($this->mHinhanh->getListImagesAll());
-        $paginator->setItemCountPerPage(12);
+        $paginator->setItemCountPerPage(25);
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
 		$this->view->listImageLeft = $paginator;
 					//Lấy ra ảnh quảng cáo ngẫu nhiên
 		$listquangcao = $this->mDefault->getListAds();
 		
+		//===== Social Network ==============================================
+		$this->view->facebook = $this->mDiachi->getRecordByName('facebook');
+		$this->view->twitter = $this->mDiachi->getRecordByName('twitter');
+		//===================================================================
 		$this->view->listdiachi = $this->mDiachi->getListDiachi();
 		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$listquangcao1 = $this->mDefault->getListAds1();
@@ -59,14 +63,5 @@ class HinhanhController extends Zend_Controller_Action
 		
 		//=== set current category ============
 		$this->view->current_category_id=$category_id;
-	}
-	
-	function detailAction()
-	{
-		$this->_helper->layout()->disableLayout();
-		//===== get content ===============================
-		$image_id=$this->_request->getParam('image_id');
-		$info=$this->mHinhanh->getImageById($image_id);
-		$this->view->info=$info;
 	}
 }

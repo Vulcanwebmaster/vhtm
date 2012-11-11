@@ -52,4 +52,3 @@ class Admin_Model_Mquangcao extends Zend_Db_Table_Abstract{
 			return $query;
 		}
 }
-?>

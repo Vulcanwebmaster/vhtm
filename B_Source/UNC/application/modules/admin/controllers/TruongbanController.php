@@ -30,6 +30,7 @@
 			else {
 				$this->_redirect($this->view->baseUrl().'/../admin');
 			}
+			$_SESSION['backend_current_menu']="menu-quanlychung";
 		}
 		
 		function setForm()
@@ -133,7 +134,7 @@
 					$paginator = Zend_Paginator::factory($this->mUser->getUserByUserId($user_id));
 			}
 			
-        	$paginator->setItemCountPerPage(5);        
+        	$paginator->setItemCountPerPage(25);        
         	$currentPage = $this->_request->getParam('page',1);
          	$paginator->setCurrentPageNumber($currentPage);
         	$this->view->list=$paginator;

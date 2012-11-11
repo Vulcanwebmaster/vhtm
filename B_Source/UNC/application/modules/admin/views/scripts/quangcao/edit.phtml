@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		var cate="<?php echo $this->query['category_id'];?>";
+		$("#category_id").val("<?php echo $this->query['category_id'];?>");
+	});
+</script>
+
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<head>
@@ -60,7 +67,7 @@
 			
 			<fieldset style="width:50%">
 				<label>chuyên mục : </label>
-				<select name="category_id">
+				<select name="category_id" id="category_id">
 					<option value="0"></option>
 					<?php
 						foreach($this->listdm as $item)

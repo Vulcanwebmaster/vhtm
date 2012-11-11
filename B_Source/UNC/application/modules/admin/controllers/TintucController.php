@@ -52,6 +52,12 @@
 			$this->mRss=new Admin_Model_Mrss();
 			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
 			$this->mtimkiem=new Admin_Model_Mtimkiem();
+			
+			$this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			$_SESSION["backend_current_menu"]="menu-quanlytin";
 		}
 		
 		function getlistAction()
@@ -94,18 +100,23 @@
 		
 		function indexAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$this->view->listCategories=$this->mChuyenmuc->getListCM();
 			$viewtype=$this->_request->getParam('viewtype');
+			$_SESSION['current_view_type']=$viewtype;
 			// ADD TIN TỰ ĐỘNG:================================
 			//$this->autoGetnews();
 			//===============================================
 			//$adapter=new Zend_Paginator_Adapter_DbSelect($this->mtintuc->getListNews());
 			//echo $_SESSION['role_id'];die();
+			//echo $_SESSION['current_view_type']; die();
+			if ($_SESSION['current_view_type'])
+				$this->_redirect($this->view->baseUrl().'/admin/tintuc/filter/viewtype/'.$viewtype,array('prependBase' => false));
+			else $this->_redirect($this->view->baseUrl().'/admin/tintuc/filter/viewtype/1',array('prependBase' => false));
+		}
+		
+		function filterAction()
+		{
+			$this->view->listCategories=$this->mChuyenmuc->getListCM();
+			$viewtype=$this->_request->getParam('viewtype');
 			$list2=array();
 			if ($_SESSION['role_id']==0)
 			{
@@ -122,7 +133,7 @@
 						}
 						
 					} else if ($viewtype == 3) {
-
+	
 						if ($item['news_status']=='Đã duyệt' || $item['news_status']=='Chưa duyệt') {
 							$list2[]=$item;
 						}
@@ -154,7 +165,7 @@
 						}
 						
 					} else if ($viewtype == 3) {
-
+	
 						if ($item['news_status']=='Đã duyệt') {
 							$list2[]=$item;
 						}
@@ -196,7 +207,7 @@
 				}
 				$paginator= Zend_Paginator::factory($list2);
 			}
-			$paginator->setItemCountPerPage(6);
+			$paginator->setItemCountPerPage(25);
 			$current=$this->_request->getParam('page',1);
 			$paginator->setCurrentPageNumber($current);
 				
@@ -216,37 +227,38 @@
 			$this->view->categoriesid=$categoriesId;
 			$youtube=new Zend_Gdata_YouTube();
 		}
-		
-	function timkiemAction()
-	{
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
-		if ($this->_request->isPost())
-		{
-			$value_search=$this->_request->getPost('search-text');
-			$list=$this->mtimkiem->getNewsByKey($value_search);
 			
-			$paginator = Zend_Paginator::factory($list);
-	        $paginator->setItemCountPerPage(15);        
-	        $currentPage = $this->_request->getParam('page',1);
-	        $paginator->setCurrentPageNumber($currentPage);
+		function timkiemAction()
+		{
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
+			if ($this->_request->isPost())
+			{
+				$value_search=$this->_request->getPost('search-text');
+				$list=$this->mtimkiem->getNewsByKey($value_search);
+				
+				$paginator = Zend_Paginator::factory($list);
+		        $paginator->setItemCountPerPage(15);        
+		        $currentPage = $this->_request->getParam('page',1);
+		        $paginator->setCurrentPageNumber($currentPage);
+		        
+		        $this->view->list=$paginator;
 	        
-	        $this->view->list=$paginator;
-        
-        //---------Thêm template vào các chuyên mục----
-        	$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-		//---------End Thêm template vào các chuyên mục----
+	        //---------Thêm template vào các chuyên mục----
+	        	$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			//---------End Thêm template vào các chuyên mục----
+			}
 		}
-	}
-		
+			
 		function autogetnews()
 		{	
-			$listRss=$this->mTintuc->getListRss();
-			foreach ($listRss as $linkrss)
+			$listRss=$this->mRss->getListRss();
+			//foreach ($listRss as $linkrss)
 			{
-				$this->getListByLink($linkrss['link']);
+				//$this->getListByLink($linkrss['link']);
+				$this->getListByLink('http://www.dantri.com.vn/trangchu.rss');
 				$countNews=count($this->title);
 				for ($i=0; $i<$countNews; $i++)
 				{
@@ -303,7 +315,7 @@
 			$link=trim($link);
 			$content=file_get_contents($link);
 			$start=strpos($content, '<div class="fon34 mt3 mr2 fon43">');
-			$end=strpos($content, '<div itemscope')-1;
+			$end=strpos($content, '<div itemscope')-8;
 			return substr($content, $start, $end-$start);
 		}
 		
@@ -317,10 +329,14 @@
 			
 			$newsid=$this->_request->getParam('newsid');
 			if ($this->mtintuc->deletenews($newsid))
-				$_SESSION['result']='Xóa thành công';
+			{
+				if ($this->mComment->delCommentByNewsid($newsid)!==false)
+					$_SESSION['result']='Xóa thành công';
+				else $_SESSION['result']='Đã xóa tin. Không thể xóa bình luận';
+			}
 			else $_SESSION['result']='Xóa không thành công';
 			
-			$this->_redirect($this->view->baseUrl().'/../admin/tintuc');
+			$this->_redirect($this->view->baseUrl().'/../admin/tintuc/index/viewtype/'.$_SESSION['current_view_type']);
 		}
 		
 		function setForm()
@@ -426,11 +442,17 @@
 		
 		function _getInput($form)
 		{
+			$avt=str_replace('\\', '', $form->getValue('news_avatar'));
+			$avt=str_replace('&quot;', '', $form->getValue('news_avatar'));
+			$summary=str_replace('\\', '', $form->getValue('news_summary'));
+			$summary=str_replace('&quot;', '', $form->getValue('news_summary'));
+			$content=str_replace('\\', '', $form->getValue('news_content'));
+			$content=str_replace('&quot;', '', $form->getValue('news_content'));
 			$input=array('news_title'		=>	$form->getValue('news_title'),
 						'alias'				=>	$this->getAliasByName($form->getValue('news_title')),
-						'news_avatar'		=>	$form->getValue('news_avatar'),
-						'news_summary'		=>	$form->getValue('news_summary'),
-						'news_content'		=>	$form->getValue('news_content'),
+						'news_avatar'		=>	str_replace('&nbsp;', '', $avt),
+						'news_summary'		=>	str_replace('&nbsp;', '', $summary),
+						'news_content'		=>	str_replace('&nbsp;', '', $content),
 						'news_author'		=>	$form->getValue('news_author'),
 						'news_post_date'	=>	$form->getValue('news_post_date'),
 						'news_modified_date'=>	$form->getValue('news_modified_date'),

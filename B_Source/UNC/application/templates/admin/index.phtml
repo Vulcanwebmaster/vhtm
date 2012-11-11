@@ -41,11 +41,16 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$(".submenu").slideUp();
 			$(".icn_application").css("cursor","pointer");
 			$(".icn_application").click(function(){
 				$(this).children(".submenu").slideToggle();
 			});
+
+			<?php if (isset($_SESSION['backend_current_menu']))
+			{?>
+				$(".submenu").slideUp();
+				$("#<?php echo $_SESSION['backend_current_menu']?>").click();
+			<?php }?>
 		});
 	</script>
 </head>
@@ -93,7 +98,7 @@
 				<hr/>
 <h3>Mục quản lý</h3>
 	<ul class="toggle">
-		<li class="icn_application"><a>Quản lý chung</a>
+		<li class="icn_application" id="menu-quanlychung"><a>Quản lý chung</a>
 			<ul class="submenu">
 				<li><a href="<?php echo $this->baseUrl();?>/admin/phongvien">Phóng viên</a></li>
 				<li><a href="<?php echo $this->baseUrl();?>/admin/truongban">Trưởng ban</a></li>
@@ -101,7 +106,7 @@
 				<li><a href="<?php echo $this->baseUrl();?>/admin/thamdo">Thăm dò ý kiến</a></li>
 			</ul>
 		</li>
-		<li class="icn_application"><a>Quản lý tin tức</a>
+		<li class="icn_application" id="menu-quanlytin"><a>Quản lý tin tức</a>
 			<ul class="submenu">
 				<li><a href="<?php echo $this->baseUrl();?>/admin/tintuc/index/viewtype/1">Tin tức</a></li>
 				<li><a href="<?php echo $this->baseUrl();?>/admin/chuyenmuc">Chuyên mục tin tức</a></li>
@@ -109,21 +114,21 @@
 				<li><a href="<?php echo $this->baseUrl();?>/admin/comment">Bình luận</a></li>
 			</ul>
 		</li>
-		<li class="icn_application"><a>Quản lý video</a>
+		<li class="icn_application" id="menu-quanlyvideo"><a>Quản lý video</a>
 			<ul class="submenu">
 				<li><a href="<?php echo $this->baseUrl();?>/admin/videocategory">Chuyên mục Video</a></li>
 				<li><a href="<?php echo $this->baseUrl();?>/admin/uploadvideo">Tải video lên Youtube</a></li>
 				<li><a href="<?php echo $this->baseUrl();?>/admin/video">Tải video lên UNC</a></li>
 			</ul>
 		</li>
-		<li class="icn_application"><a>Quản lý ảnh</a>
+		<li class="icn_application" id="menu-quanlyanh"><a>Quản lý ảnh</a>
 			<ul class="submenu">
 				<li><a href="<?php echo $this->baseUrl();?>/admin/imagecategory">Chuyên mục ảnh</a></li>
 				<li><a href="<?php echo $this->baseUrl();?>/admin/quangcao">Quảng cáo</a></li>
 				<li><a href="<?php echo $this->baseUrl();?>/admin/image">Hình ảnh</a></li>
 			</ul>
 		</li>
-		<li class="icn_application"><a href="<?php echo $this->baseUrl();?>/admin/diachi">Địa chỉ liên kết</a></li>
+		<li class="icn_application" id="menu-diachilienket"><a href="<?php echo $this->baseUrl();?>/admin/diachi">Địa chỉ liên kết</a></li>
 	</ul>
 <h3>Hệ thống</h3>
 	<ul class="toggle">
