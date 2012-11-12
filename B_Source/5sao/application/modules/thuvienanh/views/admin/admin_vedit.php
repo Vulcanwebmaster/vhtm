@@ -17,7 +17,7 @@
 			
 			<footer style="float:left">
 					<div class="submit_link">
-						<input type="submit" name="submit" value="Thêm mới" class="alt_btn">
+						<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
 					</div>
 			</footer>
 		</div><!-- end of .tab_container -->

@@ -80,7 +80,12 @@
                         <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                    	 </div>		
                    	  <div id="mainmap"  class="bodermove">
-                   		<h4 class="title3" style=" margin-top:0px;">Thống kê</h4>
+                   	<?php if ($_SESSION['lang']=="vn"){?>
+                    	<h4 class="title3" style=" margin-top:0px;">Thống kê</h4>
+                    <?php } else{ ?>
+                    	<h4 class="title3" style=" margin-top:0px;">Statistics</h4>
+                    <?php } ?>	
+                   		
                         <div id="statistics" style="text-align: left">
                         	<ul>
                         	<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Hôm nay:</label> <?php echo $counting['today'];?></li>

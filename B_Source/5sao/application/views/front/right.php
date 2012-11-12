@@ -183,7 +183,11 @@
                     <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                    </div>
                    <div  class="bodermove">
-                    <h4 class="title3" style=" padding-top:10px">Thư viện ảnh</h4>
+                    <?php if ($_SESSION['lang']=="vn"){?>
+                    	<h4 class="title3" style=" padding-top:10px">Thư viện ảnh</h4>
+                    <?php } else{ ?>
+                    	<h4 class="title3" style=" padding-top:10px">Images</h4>
+                    <?php } ?>	
                 	
                 	<style>
                 		.pr-img p img{width:170px !important; height:131px !important}
