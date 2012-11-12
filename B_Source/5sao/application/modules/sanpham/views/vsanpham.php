@@ -1,4 +1,4 @@
-
+<?php $newmodel=new CI_Model();?>
 <script type="text/javascript">
 	$('#menu-sanpham').parent().addClass('currentmenu');
 </script>
@@ -38,7 +38,8 @@
 
 	<div id="items">
 		<?php foreach ($list as $item)
-		{?>
+		{
+			?>
 			<div class="item">
 				<div class="itemimage">
 					<a href="<?php echo base_url();?>sanpham/<?php echo $item->alias;?>">
@@ -47,7 +48,7 @@
 				</div>
 	            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 			</div>
-		<?php }?>
+		<?php  }?>
 		<br class="clear"/>
 	</div>
 	<div class="pagination-control"><?php echo $this->pagination->create_links();?></div>

@@ -186,6 +186,19 @@ class CI_Model {
 		  $query= $this->db->query("SELECT * FROM n_hotro where id='5'");
 		  return $query->result();
 	 }
+	 
+	 function getSpByParentID($id){
+		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
+										FROM n_sanpham, n_danhmuc
+										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
+		  return $query->result();
+	 }
+	 function isParent($id){
+	 	$query= $this->db->query("SELECT * FROM n_danhmuc WHERE parent_id ='".$id."'");
+		if($query->num_rows()>0)
+			return true;
+		else return false;
+	 }
 }
 // END Model Class
 /* End of file Model.php */

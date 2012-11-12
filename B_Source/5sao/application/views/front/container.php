@@ -35,11 +35,8 @@
 					}
 				}
 			 <?php }?>	
-					$('.slidecontrol').mouseenter(function(){
-							$(this).children('.slidemove').show();
-						});
-					$('.slidecontrol,.slidemove,.type2').mouseleave(function(){
-							$(this).children('.slidemove').hide();
+					$('.slidecontrol').hover(function(){
+							$(this).children('.slidemove').slideToggle();
 						});
 										
 				/*$('.bg_itemmenu').children('ul').css('opacity','0');//.animate({opacity:0},300);				

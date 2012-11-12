@@ -62,6 +62,9 @@ class Sanpham extends NIW_Controller
 	function page($index=0)
 	{
 		$data['list_spbanchay']=$this->Msanpham->getListByColumn('sanpham','banchay','1');
+		
+		//$data['list_spparentid']=$this->Msanpham->getSpByParentID('.$id.');
+		
 		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
 		$data['list_hotro']=$this->Msanpham->getListFull('hotro');
 		$data['list_hotline']=$this->Msanpham->gethotline('hotro');
@@ -81,6 +84,8 @@ class Sanpham extends NIW_Controller
 		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
 		$data['title']='thaiduong | Sản phẩm';
 		$data['list']=$this->Msanpham->getListOffset('sanpham',9,$index);
+
+			
 		$data['lang']=$this->session->userdata('lang');
 		//echo $data['lang']; die();
 		$data['module']=$this->module;
@@ -140,7 +145,15 @@ class Sanpham extends NIW_Controller
 		$this->pagination->initialize($config);
 		
 		$data['title']='thaiduong | Sản phẩm';		
-		$data['list']=$this->Msanpham->getListByColumnOffset('sanpham','danhmuc_id',$id,$index,9);
+		//var_dump($this->Msanpham->getSp('sanpham'));die();
+		
+		if (!$this->Msanpham->isParent($id)){
+			$data['list']=$this->Msanpham->getListByColumnOffset('sanpham','danhmuc_id',$id,$index,9);	
+		}
+		else{
+			$data['list']=$this->Msanpham->getSpByParentID($id);
+		}
+		
 		$data['lang']=$this->session->userdata('lang');
 		$data['module']=$this->module;
 		$data['page']='vsanpham';
