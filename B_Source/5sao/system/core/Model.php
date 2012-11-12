@@ -188,6 +188,7 @@ class CI_Model {
 	 }
 	 
 	 function getSpByParentID($id){
+	 	// Gọi ra các sản phẩm của các danh mục con có 
 		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
 										FROM n_sanpham, n_danhmuc
 										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
