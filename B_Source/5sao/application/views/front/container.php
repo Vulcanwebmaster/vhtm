@@ -35,7 +35,7 @@
 					}
 				}
 			 <?php }?>	
-					$('.slidecontrol').click(function(){
+					$('.slidecontrol').hover(function(){
 							$(this).children('.slidemove').slideToggle();
 						});
 										

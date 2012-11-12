@@ -15,7 +15,9 @@
 						{
 							if ($lang=="vn") 
 							{?>
-								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
+								<li class="slidecontrol"><a <?php 
+									echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer">
+									<?php echo $category->ten_v; ?></a>	
 									<?php $listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);?>
 									<?php if (count($listlevel2)>0)
 									{?>
