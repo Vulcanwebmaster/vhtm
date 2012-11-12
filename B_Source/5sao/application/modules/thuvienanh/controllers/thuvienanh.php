@@ -13,8 +13,13 @@ class Thuvienanh extends NIW_Controller
 	
 	function loadLang()
 	{
-		$lang=$this->session->userdata('lang');
-		if ($lang=='vn')
+		session_start();
+        if(isset($_SESSION['lang']))
+		{
+		   $lang=$_SESSION['lang'];
+                }
+                else $lang = 'vn';
+                if ($lang=='vn')
 		{
 			$this->lang->load('5sao','vietnamese');
 		}

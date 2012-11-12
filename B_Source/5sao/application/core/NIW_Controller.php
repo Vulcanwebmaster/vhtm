@@ -92,7 +92,6 @@ class NIW_Controller extends CI_Controller {
 	function addVisiting()
 	{	
 			
-		session_start();
 		if (!isset($_SESSION['isOldVisiting']))
 		{
 			$model=new CI_Model();

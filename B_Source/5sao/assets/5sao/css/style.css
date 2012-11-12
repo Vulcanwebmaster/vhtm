@@ -608,8 +608,8 @@ width:33px;
 }
 #center p{ background-color:#fff;}
 td, input, textarea{ text-align:left}
-.back_link{ width:1000px !important; margin:10px auto 0 auto !important; padding:0; text-align:left;}
-.back_link li{ float:left !important; padding-right:5px !important; line-height:24px !important; list-style:none}
+.back_link{ width:1100px !important; margin:10px auto 0 auto !important; padding:0; text-align:left;}
+.back_link li{ float:left !important; padding-right:0px !important; line-height:24px !important; list-style:none}
 .currentmenu,.hovermenu{background-color:#3e3e3e; color:#D9B24A}
 /*--------------------Trung--------------------------*/
 .aboutth-item h5 a{color:black; text-decoration: none;}
