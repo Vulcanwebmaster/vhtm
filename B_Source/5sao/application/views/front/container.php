@@ -35,8 +35,11 @@
 					}
 				}
 			 <?php }?>	
-					$('.slidecontrol').hover(function(){
-							$(this).children('.slidemove').slideToggle();
+					$('.slidecontrol').mouseenter(function(){
+							$(this).children('.slidemove').show();
+						});
+					$('.slidecontrol,.slidemove,.type2').mouseleave(function(){
+							$(this).children('.slidemove').hide();
 						});
 										
 				/*$('.bg_itemmenu').children('ul').css('opacity','0');//.animate({opacity:0},300);				
