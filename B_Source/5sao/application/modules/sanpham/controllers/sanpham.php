@@ -82,6 +82,7 @@ class Sanpham extends NIW_Controller
 		$data['title']='thaiduong | Sản phẩm';
 		$data['list']=$this->Msanpham->getListOffset('sanpham',9,$index);
 		$data['lang']=$this->session->userdata('lang');
+		//echo $data['lang']; die();
 		$data['module']=$this->module;
 		$data['page']='vsanpham';
 		$this->load->view('front/container',$data);

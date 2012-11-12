@@ -36,7 +36,7 @@
                 		<ul>
 	                		<?php foreach ($list_gioithieumenu as $menu)
 	                		{?>
-	                			<li><a href="<?php echo base_url();?>gioithieu/detail/<?php echo $menu->id;?>"><?php if ($lang=="vn") echo $menu->tieude_v; else echo $menu->tieude_e;?></a></li>
+	                			<li><a href="<?php echo base_url();?>gioithieu/detail/<?php echo $menu->id;?>"><?php if ($_SESSION['lang']=="vn") echo $menu->tieude_v; else echo $menu->tieude_e;?></a></li>
 	                		<?php }?>
 	                		</ul>
                 		</div>

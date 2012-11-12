@@ -11,9 +11,10 @@
 			<div  class="bodermove" style="margin-top:0px; text-align: left;">
 					<h4 class="title1"><?php echo $this->lang->line('left-danhmuc');?></h4>
 					<ul id="list">
-						<?php foreach ($categories as $category)
+						<?php 
+						foreach ($categories as $category)
 						{
-							if ($lang=="vn") 
+							if ($_SESSION['lang']=="vn") 
 							{?>
 								<li class="slidecontrol"><a <?php 
 									echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer">
@@ -35,17 +36,23 @@
 								</li>
 							<?php }
 							else {?>
-								<li class="slidecontrol"><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer"><?php echo $category->ten_e;?></a>
+								<li class="slidecontrol"><a <?php 
+									echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer">
+									<?php echo $category->ten_e; ?></a>	
+									<?php $listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);?>
+									<?php if (count($listlevel2)>0)
+									{?>
 									<div class="slidemove">
-										<ul class="inside">										
-											<?php $newmodel=new CI_Model();
-												$listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->alias);
+										<ul class="inside">
+											<?php 												
 												foreach ($listlevel2 as $level2)
 												{?>
-													<li><a class="menuleft-lv2"  href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_e;?></a></li><br/>
-												<?php }											?>
+													<li><a class="menuleft-lv2" href="<?php echo base_url()?>sanpham/<?php echo $level2->alias?>"><?php echo $level2->ten_e;?></a></li>
+												<?php }
+											?>
 										</ul>
 									</div>
+									<?php }?>
 								</li>
 								<?php }
 						}?>
