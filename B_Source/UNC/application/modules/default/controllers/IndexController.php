@@ -27,9 +27,12 @@ class IndexController extends Zend_Controller_Action
 		$this->listThreadTitle = array();
 		foreach($listThreadForum as $thread)
 		{
-			$content = file_get_contents('http://localhost'.$this->view->baseUrl().'/../forum/showthread.php?'.$thread['threadid']);
+			//$content = file_get_contents('http://localhost'.$this->view->baseUrl().'/../forum/showthread.php?'.$thread['threadid']);
+			$content = file_get_contents('http://localhost/unc/forum/showthread.php?'.$thread['threadid']);
 			$preg1 = preg_match_all('#<span class="threadtitle">.*</span>#',$content,$match);
+			if(isset($match)==0){
 			$this->listThreadTitle[] = $thread['threadid'].strip_tags($match[0][0]);
+			}
 		}
 	}
 
