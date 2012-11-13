@@ -244,68 +244,54 @@
 		
 		function editAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$form=$this->setForm();
-			$userId=$this->_request->getParam('userid');
-			$this->view->role = $this->role;
-			$this->view->listParent = $this->listParent;
-			$this->view->listChild = $this->listChild;
-			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
-		
-			$info=$this->mTruongban->getUserById($userId);
-			if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
+			if ($_SESSION['role_id']!=0)
 			{
-				$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
-				$form->getElement('user_login')->setValue($info['user_login']);
-				$form->getElement('user_pass')->setValue($info['user_pass']);
-				$form->getElement('user_fullname')->setValue($info['user_fullname']);
-				$form->getElement('user_email')->setValue($info['user_email']);
-				$form->getElement('user_address')->setValue($info['user_address']);
-				$form->getElement('is_active')->setValue($info['is_active']);
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
-				$this->view->form=$form;
-				$this->view->title="Sửa thông tin trưởng ban";
-				
-				if($this->_request->isPost())
+				$form=$this->setForm();
+				$userId=$this->_request->getParam('userid');
+				$this->view->role = $this->role;
+				$this->view->listParent = $this->listParent;
+				$this->view->listChild = $this->listChild;
+				$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
+			
+				$info=$this->mTruongban->getUserById($userId);
+				if($this->role =="0" | ($this->role == "1" & $this->user == $info['user_login']))
 				{
-					if($form->isValid($_POST))
+					$form->setAction($this->view->baseUrl().'/admin/truongban/edit/userid/'.$userId);
+					$form->getElement('user_login')->setValue($info['user_login']);
+					$form->getElement('user_pass')->setValue($info['user_pass']);
+					$form->getElement('user_fullname')->setValue($info['user_fullname']);
+					$form->getElement('user_email')->setValue($info['user_email']);
+					$form->getElement('user_address')->setValue($info['user_address']);
+					$form->getElement('is_active')->setValue($info['is_active']);
+					
+					$this->view->form=$form;
+					$this->view->title="Sửa thông tin trưởng ban";
+					
+					if($this->_request->isPost())
 					{
-						$input=$this->_getInput($form);
-						if($info['user_login']==$input['user_login'])
+						if($form->isValid($_POST))
 						{
-							if($this->mTruongban->editUser($userId, $input))
+							$input=$this->_getInput($form);
+							if($info['user_login']==$input['user_login'])
 							{
-								if($this->mChuyenmuc->delManageCategoryByUserId($userId))
+								if($this->mTruongban->editUser($userId, $input))
 								{
-									foreach($_POST['checkbox'] as $check)
+									if($this->mChuyenmuc->delManageCategoryByUserId($userId))
 									{
-										$this->mChuyenmuc->insertUserForCategory($userId,$check);
+										foreach($_POST['checkbox'] as $check)
+										{
+											$this->mChuyenmuc->insertUserForCategory($userId,$check);
+										}
 									}
-								}
-								$_SESSION['result']='Cập nhật thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
-							}
-							else 
-							{
-								$_SESSION['result']='Cập nhật không thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/truongban');
-							}
-						}
-						else 
-						{
-							if($this->mTruongban->isExitsUsername($input['user_login']))
-							{
-								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
-
-							}
-							else 
-							{
-								if ($this->mTruongban->editUser($userId, $input))
-								{
 									$_SESSION['result']='Cập nhật thành công';
 									$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 								}
@@ -315,20 +301,40 @@
 									$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 								}
 							}
+							else 
+							{
+								if($this->mTruongban->isExitsUsername($input['user_login']))
+								{
+									$_SESSION['result']='Tên đăng nhập đã tồn tại !';
+	
+								}
+								else 
+								{
+									if ($this->mTruongban->editUser($userId, $input))
+									{
+										$_SESSION['result']='Cập nhật thành công';
+										$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+									}
+									else 
+									{
+										$_SESSION['result']='Cập nhật không thành công';
+										$this->_redirect($this->view->baseUrl().'/../admin/truongban');
+									}
+								}
+							}
+						}
+						else 
+						{
+							$form->populate($_POST);
 						}
 					}
-					else 
-					{
-						$form->populate($_POST);
-					}
+				}
+				else
+				{
+					$_SESSION['result']='Bạn không có quyền sửa mục này !';
+					$this->_redirect($this->view->baseUrl().'/../admin/truongban');
 				}
 			}
-			else
-			{
-				$_SESSION['result']='Bạn không có quyền sửa mục này !';
-				$this->_redirect($this->view->baseUrl().'/../admin/truongban');
-			}
-			
 		}
 
 		function deleteAction()

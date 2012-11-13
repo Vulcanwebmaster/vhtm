@@ -248,65 +248,45 @@
 		
 		function editAction()
 		{
-			$this->view->title='Chỉnh sửa phóng viên';
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$form = $this->setForm();
-			$this->view->role = $this->role;
-			$userId=$this->_request->getParam('userid');
-			$info=$this->mUser->getUserById($userId);
-			$this->view->listParent = $this->listParent;
-			$this->view->listChild = $this->listChild;
-			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
-			
-			if($this->role =="0" | ($this->role == "2" & $this->user == $info['user_login']))
+			if ($_SESSION['role_id']!=0)
 			{
-				$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
-				$form->getElement('user_login')->setValue($info['user_login']);
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$this->view->title='Chỉnh sửa phóng viên';
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
-				$form->getElement('user_pass')->setValue($info['user_pass']);
-				$form->getElement('user_fullname')->setValue($info['user_fullname']);
-				$form->getElement('user_email')->setValue($info['user_email']);
-				$form->getElement('user_address')->setValue($info['user_address']);
-				$form->getElement('is_active')->setValue($info['is_active']);
-				$this->view->form=$form;
-				$this->view->title="Sửa thông tin phóng viên";
+				$form = $this->setForm();
+				$this->view->role = $this->role;
+				$userId=$this->_request->getParam('userid');
+				$info=$this->mUser->getUserById($userId);
+				$this->view->listParent = $this->listParent;
+				$this->view->listChild = $this->listChild;
+				$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($userId);
 				
-				if($this->_request->isPost())
+				if($this->role =="0" | ($this->role == "2" & $this->user == $info['user_login']))
 				{
-					if($form->isValid($_POST))
+					$form->setAction($this->view->baseUrl().'/admin/phongvien/edit/userid/'.$userId);
+					$form->getElement('user_login')->setValue($info['user_login']);
+					
+					$form->getElement('user_pass')->setValue($info['user_pass']);
+					$form->getElement('user_fullname')->setValue($info['user_fullname']);
+					$form->getElement('user_email')->setValue($info['user_email']);
+					$form->getElement('user_address')->setValue($info['user_address']);
+					$form->getElement('is_active')->setValue($info['is_active']);
+					$this->view->form=$form;
+					$this->view->title="Sửa thông tin phóng viên";
+					
+					if($this->_request->isPost())
 					{
-						$input=$this->_getInput($form);
-						if($info['user_login']==$input['user_login'])
+						if($form->isValid($_POST))
 						{
-							if ($this->mUser->editUser($userId, $input))
-							{
-								if($this->mChuyenmuc->delManageCategoryByUserId($userId))
-								{
-									foreach($_POST['checkbox'] as $check)
-									{
-										$this->mChuyenmuc->insertUserForCategory($userId,$check);
-									}
-								}
-								$_SESSION['result']='Cập nhật thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
-							}
-							else 
-							{
-								$_SESSION['result']='Cập nhật không thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
-							}
-						}
-						else 
-						{
-							if($this->mUser->isExitsUsername($input['user_login']))
-							{
-								$_SESSION['result']='Tên đăng nhập đã tồn tại !';
-							}
-							else 
+							$input=$this->_getInput($form);
+							if($info['user_login']==$input['user_login'])
 							{
 								if ($this->mUser->editUser($userId, $input))
 								{
@@ -326,18 +306,45 @@
 									$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 								}
 							}
+							else 
+							{
+								if($this->mUser->isExitsUsername($input['user_login']))
+								{
+									$_SESSION['result']='Tên đăng nhập đã tồn tại !';
+								}
+								else 
+								{
+									if ($this->mUser->editUser($userId, $input))
+									{
+										if($this->mChuyenmuc->delManageCategoryByUserId($userId))
+										{
+											foreach($_POST['checkbox'] as $check)
+											{
+												$this->mChuyenmuc->insertUserForCategory($userId,$check);
+											}
+										}
+										$_SESSION['result']='Cập nhật thành công';
+										$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+									}
+									else 
+									{
+										$_SESSION['result']='Cập nhật không thành công';
+										$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+									}
+								}
+							}
+						}
+						else 
+						{
+							$form->populate($_POST);
 						}
 					}
-					else 
-					{
-						$form->populate($_POST);
-					}
 				}
-			}
-			else
-			{
-				$_SESSION['result']='Bạn không có quyền sửa mục này !';
-				$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+				else
+				{
+					$_SESSION['result']='Bạn không có quyền sửa mục này !';
+					$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+				}
 			}
 		}
 

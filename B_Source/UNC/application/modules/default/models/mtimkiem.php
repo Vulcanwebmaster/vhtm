@@ -8,16 +8,30 @@ class Default_Model_Mtimkiem extends Zend_Db_Table_Abstract
 		parent::__construct();
 		$this->db=Zend_Registry::get('db');
 	}
+
+        function isGetted($list, $item)
+        {
+             $count=0;
+			foreach ($list as $news)
+			{
+			 if ($item['news_id']==$news['news_id']) $count++;
+			}
+			if ($count>0) return true;
+			else return false;
+        }
 	
 	function getNewsByKey($key)
 	{
+
 		$data=$this->db->query('select * from unc_news where news_status="Công khai" and news_title like "%'.$key.'%"');
 	    $list1=$data->fetchAll();
+	    	    
 	    $data=$this->db->query('select * from unc_news where news_status="Công khai" and news_summary like "%'.$key.'%"');
 	    $list2=$data->fetchAll();
 		foreach($list2 as $item)
 		{
-			$list1[]=$item;
+            if ($this->isGetted($list1,$item)===false)
+				$list1[]=$item;
 		}
 		return $list1;
 	}

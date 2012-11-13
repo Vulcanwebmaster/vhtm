@@ -13,7 +13,7 @@
 		
 		function getCategoryByCategoryId($id)
 		{
-			$query = $this->db->query('select * from unc_news where category_id = "'.$id.'"');
+			$query = $this->db->query('select * from unc_category where category_id = "'.$id.'"');
 			$list=$query->fetchAll();
 			if (count($list)>0)
 				return $list[0];
@@ -82,6 +82,12 @@
 		function getListChildByParent($parent)
 		{
 			$query = $this->db->query('select category_id from unc_category where category_parent_id = "'.$parent.'"');
+			return $query->fetchAll();
+		}
+		
+		function getMostViewNews()
+		{
+			$query = $this->db->query('select * from unc_news order by viewer_number desc');
 			return $query->fetchAll();
 		}
 		
@@ -192,7 +198,13 @@
 		
 		function getNewestNewsByCategory($categoryId)
 		{
-			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id="'.$categoryId.'" order by news_post_date desc limit 5');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id like "%,'.$categoryId.',%" order by news_post_date desc');
+			return $query->fetchAll();
+		}
+		
+		function getMostViewNewsByCategory($categoryId)
+		{
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and category_id like "%,'.$categoryId.',%" order by viewer_number desc');
 			return $query->fetchAll();
 		}
 		

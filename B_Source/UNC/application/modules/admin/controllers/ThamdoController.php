@@ -77,91 +77,112 @@
 		
 		function insertAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-
-			//$mquangcao = new Admin_Model_Mquangcao;
-			//$this->view->listdm = $mquangcao->getListDM();
-			$this->view->title="Thêm nội dung";
-			$form = $this->setForm();
-			
-			if($this->_request->isPost())
+			if ($_SESSION['role_id']!=0)
 			{
-				if($form->isValid($_POST))
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+	
+				//$mquangcao = new Admin_Model_Mquangcao;
+				//$this->view->listdm = $mquangcao->getListDM();
+				$this->view->title="Thêm nội dung";
+				$form = $this->setForm();
+				
+				if($this->_request->isPost())
 				{
-					$input=$this->_getInput($form);
-					if ($this->mTintuc->insertthamdo($input))
+					if($form->isValid($_POST))
 					{
-						$_SESSION['result']='Thêm mới thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+						$input=$this->_getInput($form);
+						if ($this->mTintuc->insertthamdo($input))
+						{
+							$_SESSION['result']='Thêm mới thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+						}
+						else 
+						{
+							$_SESSION['result']='Thêm mới Thất bại';
+							$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+						}
 					}
 					else 
 					{
-						$_SESSION['result']='Thêm mới Thất bại';
-						$this->_redirect($this->view->baseUrl().'/../admin/thamdo');
+						$form->populate($_POST);
 					}
 				}
-				else 
-				{
-					$form->populate($_POST);
-				}
+				
+				$this->view->form=$form;
 			}
-			
-			$this->view->form=$form;
 		}
 		
 		function editAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$form = $this->setForm();
-			$polls_id = $this->_request->getParam('pollsid');
-			
-			$info = $this->mTintuc->getListThamdobyid($polls_id);
-			$form->setAction($this->view->baseUrl().'/admin/thamdo/edit/pollsid/'.$polls_id);
-			$form->getElement('polls_content')->setValue($info['polls_content']);
-			$form->getElement('type')->setValue($info['polls_status']);
-			$this->view->type=$info['polls_status'];
-				
-			$this->view->form = $form;
-			$this->view->title = "Sửa thông tin thăm dò";
-				
-			if($this->_request->isPost())
+			if ($_SESSION['role_id']!=0)
 			{
-				if($form->isValid($_POST))
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				
+				$form = $this->setForm();
+				$polls_id = $this->_request->getParam('pollsid');
+				
+				$info = $this->mTintuc->getListThamdobyid($polls_id);
+				$form->setAction($this->view->baseUrl().'/admin/thamdo/edit/pollsid/'.$polls_id);
+				$form->getElement('polls_content')->setValue($info['polls_content']);
+				$form->getElement('type')->setValue($info['polls_status']);
+				$this->view->type=$info['polls_status'];
+					
+				$this->view->form = $form;
+				$this->view->title = "Sửa thông tin thăm dò";
+					
+				if($this->_request->isPost())
 				{
-					$input = $this->_getInput($form);
-					//var_dump($input);die();
-					if($this->mTintuc->editThamdo($polls_id, $input))
+					if($form->isValid($_POST))
 					{
-						$_SESSION['result']='Cập nhật thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+						$input = $this->_getInput($form);
+						//var_dump($input);die();
+						if($this->mTintuc->editThamdo($polls_id, $input))
+						{
+							$_SESSION['result']='Cập nhật thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+						}
+						else 
+						{
+							$_SESSION['result']='Cập nhật không thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+						}
 					}
 					else 
 					{
-						$_SESSION['result']='Cập nhật không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+						$form->populate($_POST);
 					}
-				}
-				else 
-				{
-					$form->populate($_POST);
 				}
 			}
 		}
 
 		function deleteAction()
 		{
-			$polls_id = $this->_request->getParam('pollsid');
-			if($this->mTintuc->deletethamdo($polls_id))
-				$_SESSION['result']='Xóa thành công';
-			else $_SESSION['result']='Xóa không thành công';
-			$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+			if ($_SESSION['role_id']!=0)
+			{
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$polls_id = $this->_request->getParam('pollsid');
+				if($this->mTintuc->deletethamdo($polls_id))
+					$_SESSION['result']='Xóa thành công';
+				else $_SESSION['result']='Xóa không thành công';
+				$this->_redirect($this->view->baseUrl().'/../admin/thamdo',array('prependBase' => false));
+			}
 		}
 		
 		function activeAction()

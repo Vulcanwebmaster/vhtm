@@ -83,16 +83,40 @@
 			return $query->fetchAll();
 		}
 		
+		function getListChildByParentId($parentId)
+		{
+			$query=$this->db->query('select * from unc_category where category_parent_id="'.$parentId.'"');
+			$list=$query->fetchAll();
+			return $list;
+		}
+		
 		function insertUserForCategory($user_id,$category_id)
 		{
 			$query = $this->db->query('insert into unc_manage_category values ("'.$user_id.'","'.$category_id.'")');
 			return $query;
 		}
 		
+		function getLastCategoryId()
+		{
+			$query = $this->db->query('select * from unc_category');
+			$list=$query->fetchAll();
+			$max=count($list);
+			return $list[$max-1]['category_id'];
+		}
+		
 		function getListCategoryIdByUserId($user_id)
 		{
 			$query = $this->db->query('select distinct category_id from unc_manage_category where user_id="'.$user_id.'"');
 			return $query->fetchAll();
+		}
+		
+		function getUserByCategoryIdUserId($categoryId,$userId)
+		{
+			$query = $this->db->query('select user_id from unc_manage_category where category_id="'.$categoryId.'" and user_id="'.$userId.'"');
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 
 		function delManageCategoryByUserId($user_id)

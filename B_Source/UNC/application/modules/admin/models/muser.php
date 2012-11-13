@@ -93,6 +93,12 @@
 			return $query->fetchAll();
 		}
 		
+		function getListAll()
+		{
+			$query = $this->db->query('select * from unc_user order by user_id asc');
+			return $query->fetchAll();
+		}
+		
 		function getUserIdByUserLogin($user_login)
 		{
 			$query = $this->db->query('select user_id from unc_user where user_login="'.$user_login.'"');

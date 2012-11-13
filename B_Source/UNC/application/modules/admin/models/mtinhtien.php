@@ -29,5 +29,19 @@
 				return $list[0];
 			else return false;
 		}
+		
+		public function getListUserFilterByName($name)
+		{
+			$query=$this->db->query("select * from unc_user where role_id='1' or role_id='2'");
+			$list=$query->fetchAll();
+			$result=array();
+			foreach ($list as $item)
+			{
+				if (strpos($item['user_fullname'], $name)!==false)
+				{
+					$result[]=$item;
+				}
+			}
+			return $result;
+		}
 	}
-?>

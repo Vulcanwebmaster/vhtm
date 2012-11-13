@@ -151,47 +151,53 @@
 		
 		function editAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$comment_id = $this->_request->getParam('comment_id');
-			$info = $this->mComment->getCommentById($comment_id);
-			
-			$form = $this->setForm();
-			$form->setAction($this->view->baseUrl().'/admin/comment/edit/comment_id/'.$comment_id);
-			$form->getElement('comment_content')->setValue($info['comment_content']);
-			$form->getElement('news_id')->setValue($info['news_id']);
-			
-			$this->view->title="Sửa comment";
-			$this->view->form = $form;
-			
-			if($this->_request->isPost())
+			if ($_SESSION['role_id']=='2')
 			{
-				if($form->isValid($_POST))
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				
+				$comment_id = $this->_request->getParam('comment_id');
+				$info = $this->mComment->getCommentById($comment_id);
+				
+				$form = $this->setForm();
+				$form->setAction($this->view->baseUrl().'/admin/comment/edit/comment_id/'.$comment_id);
+				$form->getElement('comment_content')->setValue($info['comment_content']);
+				$form->getElement('news_id')->setValue($info['news_id']);
+				
+				$this->view->title="Sửa comment";
+				$this->view->form = $form;
+				
+				if($this->_request->isPost())
 				{
-					//var_dump($this->mComment->editComment($comment_id,$input));die();
-					$input = $this->_getInput($form);
-					//var_dump($input);die();
-					if ($this->mComment->editComment($comment_id,$input))
+					if($form->isValid($_POST))
 					{
-						$_SESSION['result']='Cập nhật thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/comment');
+						//var_dump($this->mComment->editComment($comment_id,$input));die();
+						$input = $this->_getInput($form);
+						//var_dump($input);die();
+						if ($this->mComment->editComment($comment_id,$input))
+						{
+							$_SESSION['result']='Cập nhật thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/comment');
+						}
+						else 
+						{
+							$_SESSION['result']='Cập nhật không thành công';
+							$this->_redirect($this->view->baseUrl().'/../admin/comment');
+						}
 					}
 					else 
 					{
-						$_SESSION['result']='Cập nhật không thành công';
-						$this->_redirect($this->view->baseUrl().'/../admin/comment');
+						$form->populate($_POST);
 					}
+					
 				}
-				else 
-				{
-					$form->populate($_POST);
-				}
-				
 			}
-			
 		}
 		
 		function delAction()

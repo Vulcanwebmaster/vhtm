@@ -1,7 +1,7 @@
 <?php
 	class Admin_ChuyenmucController extends Zend_Controller_Action
 	{
-		protected $mChuyenmuc,$user,$role;
+		protected $mChuyenmuc,$mUser,$user,$role;
 		
 		function init()
 		{
@@ -10,6 +10,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+			  $this->mUser=new Admin_Model_Muser();
 			  @session_start();
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
@@ -126,6 +127,41 @@
 						$input=$this->_getInput($form);
 						if ($this->mChuyenmuc->insertCm($input))
 						{
+							$newestId=$this->mChuyenmuc->getLastCategoryId();
+							$parent_id=$input['category_parent_id'];
+							
+							$listUser=$this->mUser->getListAll();
+							foreach ($listUser as $subUser)
+							{
+								if ($parent_id!=0)
+								{
+									$listChild=$this->mChuyenmuc->getListChildByParentId($parent_id);
+									if (count($listChild)>0)
+									{
+										
+											$firstUserId=$subUser['user_id'];
+											$count=0;
+											foreach ($listChild as $child)
+											{
+												if ($this->mChuyenmuc->getUserByCategoryIdUserId($child['category_id'],$firstUserId))
+													$count++;
+											}
+											if ($count==count($listChild)-1)
+											{
+												$userId=$firstUserId;
+											}
+											else $userId=false;
+									}
+									else 
+									{
+										$userId=$this->mChuyenmuc->getUserByCategoryId($parent_id);
+									}
+									if ($userId)
+									{
+										$this->mChuyenmuc->insertUserForCategory($userId,$newestId);
+									}
+								}
+							}
 							$_SESSION['result']='Thêm mới thành công';
 							$this->_redirect($this->view->baseUrl().'/../admin/chuyenmuc');
 						}
@@ -185,6 +221,44 @@
 						$input=$this->_getInput($form);
 						if ($this->mChuyenmuc->editCm($category_id, $input))
 						{
+							$newestId=$category_id;
+							$parent_id=$input['category_parent_id'];
+							
+							$listUser=$this->mUser->getListAll();
+							foreach ($listUser as $subUser)
+							{
+								if ($parent_id!=0)
+								{
+									$listChild=$this->mChuyenmuc->getListChildByParentId($parent_id);
+									if (count($listChild)>0)
+									{
+										
+											$firstUserId=$subUser['user_id'];
+											$count=0;
+											foreach ($listChild as $child)
+											{
+												if ($this->mChuyenmuc->getUserByCategoryIdUserId($child['category_id'],$firstUserId))
+													$count++;
+											}
+											if ($count==count($listChild)-1)
+											{
+												$userId=$firstUserId;
+											}
+											else 
+											{
+												$userId=false;
+											}
+									}
+									else 
+									{
+										$userId=$this->mChuyenmuc->getUserByCategoryId($parent_id);
+									}
+									if ($userId)
+									{
+										$this->mChuyenmuc->insertUserForCategory($userId,$newestId);
+									}
+								}
+							}
 							$_SESSION['result']='Cập nhật thành công';
 							$this->_redirect($this->view->baseUrl().'/../admin/chuyenmuc');
 						}
@@ -224,4 +298,3 @@
 		
 		
 	}
-?>

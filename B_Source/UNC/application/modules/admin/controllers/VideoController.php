@@ -152,69 +152,83 @@
 
 		function editAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$videoId = $this->_request->getParam('videoid');
-			$form = $this->setForm();
-			$this->view->title = 'Sửa thông tin video';
-			$video = $this->mVideo->getVideoById($videoId);
-			$this->view->video = $video;
-			$this->view->listCategory = $this->mVideo->getListVideoCategory();
-			$this->view->listCategoryId =  explode(",", $video['category_id']);
-			
-			if($this->_request->isPost())
+			if ($_SESSION['role_id']!=0)
 			{
-				$listCategoryId = "";
-				foreach($_POST['checkbox'] as $check)
-				{
-					if($listCategoryId == "")
-						$listCategoryId = $check;
-					else $listCategoryId = $listCategoryId.','.$check;
-				}
-				$listCategoryId = str_replace("", "", $listCategoryId);
-				
-				$input = array(
-								'video_id'			=> $videoId,
-								'video_title'		=> $this->_request->getPost('video_title'),
-								'video_alias'		=> $this->getAliasByName($this->_request->getPost('video_title')),
-								'video_description'	=> $this->_request->getPost('video_description'),
-								'thumbnail'			=> $this->_request->getPost('video_thumbnail'),
-								'is_active'			=> $this->_request->getPost('is_active'),
-								'category_id'		=> $listCategoryId
-				);
-				
-				if(trim($input['video_title']) != "" | trim($input['video_title']) != "")
-				{
-					
-					if($this->mVideo->editVideo($input)){
-						$_SESSION['result']='Cập nhật thành công';
-					}else{
-						$_SESSION['result']='Cập nhật không thành công';
-					}
-					$this->_redirect($this->view->baseUrl().'/../admin/video');
-				}
-				else{
-					echo '<script>
-						alert("Vui lòng nhập đầy đủ thông tin !");
-					</script>';
-				}
+				$this->_redirect($this->view->baseUrl().'/../admin');
 			}
-			$this->view->form = $form;
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				
+				$videoId = $this->_request->getParam('videoid');
+				$form = $this->setForm();
+				$this->view->title = 'Sửa thông tin video';
+				$video = $this->mVideo->getVideoById($videoId);
+				$this->view->video = $video;
+				$this->view->listCategory = $this->mVideo->getListVideoCategory();
+				$this->view->listCategoryId =  explode(",", $video['category_id']);
+				
+				if($this->_request->isPost())
+				{
+					$listCategoryId = "";
+					foreach($_POST['checkbox'] as $check)
+					{
+						if($listCategoryId == "")
+							$listCategoryId = $check;
+						else $listCategoryId = $listCategoryId.','.$check;
+					}
+					$listCategoryId = str_replace("", "", $listCategoryId);
+					
+					$input = array(
+									'video_id'			=> $videoId,
+									'video_title'		=> $this->_request->getPost('video_title'),
+									'video_alias'		=> $this->getAliasByName($this->_request->getPost('video_title')),
+									'video_description'	=> $this->_request->getPost('video_description'),
+									'thumbnail'			=> $this->_request->getPost('video_thumbnail'),
+									'is_active'			=> $this->_request->getPost('is_active'),
+									'category_id'		=> $listCategoryId
+					);
+					
+					if(trim($input['video_title']) != "" | trim($input['video_title']) != "")
+					{
+						
+						if($this->mVideo->editVideo($input)){
+							$_SESSION['result']='Cập nhật thành công';
+						}else{
+							$_SESSION['result']='Cập nhật không thành công';
+						}
+						$this->_redirect($this->view->baseUrl().'/../admin/video');
+					}
+					else{
+						echo '<script>
+							alert("Vui lòng nhập đầy đủ thông tin !");
+						</script>';
+					}
+				}
+				$this->view->form = $form;
+			}
 		}
 
 		function delAction()
 		{
-			$videoId = $this->_request->getParam('videoid');
-			$video = $this->mVideo->getVideoById($videoId);
-			if($this->mVideo->delVideo($videoId))
+			if ($_SESSION['role_id']!=0)
 			{
-				if(file_exists($video['video_link']))
-					@unlink($video['video_link']);
-				$_SESSION['result']='Xóa video thành công';
-				$this->_redirect($this->view->baseUrl().'/admin/video',array('prependBase' => false));
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$videoId = $this->_request->getParam('videoid');
+				$video = $this->mVideo->getVideoById($videoId);
+				if($this->mVideo->delVideo($videoId))
+				{
+					if(file_exists($video['video_link']))
+						@unlink($video['video_link']);
+					$_SESSION['result']='Xóa video thành công';
+					$this->_redirect($this->view->baseUrl().'/admin/video',array('prependBase' => false));
+				}
 			}
 		}
 	}

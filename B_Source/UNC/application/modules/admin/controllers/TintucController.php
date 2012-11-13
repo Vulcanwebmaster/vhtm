@@ -230,25 +230,66 @@
 			
 		function timkiemAction()
 		{
+			$userid=$_SESSION['user_id'];
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/front/js/tiennd.js',"text/javascript");
 			if ($this->_request->isPost())
 			{
 				$value_search=$this->_request->getPost('search-text');
-				$list=$this->mtimkiem->getNewsByKey($value_search);
+				//$list1=$this->mtimkiem->getNewsByKey($value_search);
+				$list1=$this->mtintuc->getListNewsByUserId($userid);
+				$list2=array();
+				if ($_SESSION['role_id']==0)
+				{
+					$list1 = $this->mtintuc->getListNews();
+					$list2=array();
+					foreach ($list1 as $item)
+					{
+							$list2[]=$item;
+					}				
+				}
+				elseif ($_SESSION['role_id']==1)
+				{
+					$userid=$_SESSION['user_id'];
+					$list1=$this->mtintuc->getListNewsByUserId($userid);
+					
+					foreach ($list1 as $item)
+					{
+							if ($item['news_status']!='Chưa duyệt')
+								$list2[]=$item;
+							elseif  ($item['news_author']==$_SESSION['user'])
+								$list2[]=$item;	
+					}
+				}
+				elseif ($_SESSION['role_id']==2)
+				{
+					$userid=$_SESSION['user_id'];
+					$list1=$this->mtintuc->getListNewsByUserId($userid);
+					foreach ($list1 as $item)
+					{
+							if ($item['news_status']=='Chưa duyệt' || $item['news_author']==$_SESSION['user'])
+								$list2[]=$item;
+					}
+				}
+				$result=array();
+				foreach ($list2 as $item)
+				{
+					if (strpos($item['news_title'],$value_search)!==false)
+						$result[]=$item;
+				}
 				
-				$paginator = Zend_Paginator::factory($list);
+				$paginator= Zend_Paginator::factory($result);
 		        $paginator->setItemCountPerPage(15);        
 		        $currentPage = $this->_request->getParam('page',1);
 		        $paginator->setCurrentPageNumber($currentPage);
 		        
 		        $this->view->list=$paginator;
-	        
-	        //---------Thêm template vào các chuyên mục----
+		        
+		        //---------Thêm template vào các chuyên mục----
 	        	$this->view->headTitle('UNC - Admin website');
 				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			//---------End Thêm template vào các chuyên mục----
+				//---------End Thêm template vào các chuyên mục----
 			}
 		}
 			

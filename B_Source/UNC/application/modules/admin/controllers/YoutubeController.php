@@ -12,6 +12,9 @@
 		      @session_start();
 		      $this->mYoutube=new Admin_Model_Myoutube();
 			  $this->role = $_SESSION['role'];
+			  
+			  if ($_SESSION['role']!=0)
+			  	$this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function indexAction()

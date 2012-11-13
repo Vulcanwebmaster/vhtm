@@ -25,56 +25,82 @@
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
 			  $_SESSION['backend_current_menu']="menu-quanlychung";
+			  
+			  $this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 		}
 		function indexAction()
 		{
-			  $this->_redirect($this->view->baseUrl().'/../admin/tinhtien/thongke');
+			$price_post=$this->mTinhtien->getPriceById(1);
+			$price_review=$this->mTinhtien->getPriceById(2);
+			$this->view->price_post=$price_post;
+			$this->view->price_review=$price_review;
+			  //$this->_redirect($this->view->baseUrl().'/../admin/tinhtien/thongke');
 		}
 		
 		function thongkeAction()
 		{
 			$price_post=$this->mTinhtien->getPriceById(1);
 			$price_review=$this->mTinhtien->getPriceById(2);
-			$this->view->price_post=$price_post;
-			$this->view->price_review=$price_review;
-			if ($this->_request->isPost())
-			{
-				$from_date=$this->_request->getPost('fromdate');
-				$to_date=$this->_request->getPost('todate');
+			$this->_helper->layout()->disableLayout();
+			$name=$this->_request->getParam("name");
+				$from_date=$this->_request->getParam('fromdate');
+				$to_date=$this->_request->getParam('todate');
 				$_SESSION['from_date']=$from_date;
 				$_SESSION['to_date']=$to_date;
-				
-				$listUser=$this->mTinhtien->getListUser();
+			$from_date=str_replace('-', '/',$from_date);
+			$to_date=str_replace('-', '/',$to_date);
+			if ($from_date && $to_date)
+			{
+				if (!$name)
+					$listUser=$this->mTinhtien->getListUser();
+				else 
+				{
+					$name=str_replace("***", " ", $name);
+					$listUser=$this->mTinhtien->getListUserFilterByName($name);	
+				}
+				//echo count($listUser); die();
 				$listNews=$this->mTintuc->getListNews();
 				$listMoney=array();
+				$listPost=array();
+				$listCheck=array();
 				foreach($listUser as $user)
 				{
 					$money=0;
+					$post=0;
+					$check=0;
 					$userId=$user['user_id'];
 					foreach ($listNews as $news)
 					{
 						if ($news['review_id']==$userId)
 						{
+							$check++;
+							echo ($from_date<$to_date); die();
 							if ($from_date<str_replace('-', '/', $news['news_modified_date']) && str_replace('-', '/', $news['news_modified_date'])<=$to_date
 								&& $news['news_status']=='Công khai')
 								$money+=$price_review['price'];
 						}
 						elseif ($news['user_id']==$userId)
 						{
+							$post++;
 							if ($from_date<=str_replace('-', '/',$news['news_post_date']) && str_replace('-', '/',$news['news_post_date'])<=$to_date
 								&& $news['news_status']=='Công khai')
 								$money+=$price_post['price'];
 						}
 					}
 					$listMoney[]=$money;
+					$listPost[]=$post;
+					$listCheck[]=$check;
 				}
 				$this->view->listMoney=$listMoney;
 				$this->view->listUser=$listUser;
+				$this->view->listPost=$listPost;
+				$this->view->listCheck=$listCheck;
 			}
 			else 
 			{
-				$this->view->listMoney=array();
-				$this->view->listUser=array();
+				$this->view->error="Hãy chọn ngày bắt đầu và kết thúc.";
 			}
 		}
 		
@@ -87,4 +113,3 @@
 			$this->_redirect($this->view->baseUrl().'/../admin/tinhtien/thongke');
 		}
 	}
-?>

@@ -128,10 +128,15 @@
 		var email=prompt("Nhập email mà bạn muốn chia sẻ trang web này","someone@example.com");
 		var url = document.URL;
 		if (email!=null) {
-			$('#sendemailstatus').load('<?php echo $this->baseUrl('/dataajax/sendmail/format/html?email=')?>'+email+"&url="+url);
-		} else {
-			alert("Bạn phải nhập một email"); 
+			if (email.indexOf("@")>-1 && email.indexOf(".")>-1 && email.indexOf("@")<email.indexOf("."))
+				$('#sendemailstatus').load('<?php echo $this->baseUrl('/dataajax/sendmail/format/html?email=')?>'+email+"&url="+url);
+			else
+			{
+				alert("Địa chỉ email không hợp lệ");
+				formSendMail();
+			}
 		}
+		else return false;
 	}
 </script>
 <!-------------- End Script Area ------------>

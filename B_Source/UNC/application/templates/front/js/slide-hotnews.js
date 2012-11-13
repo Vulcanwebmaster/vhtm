@@ -1,6 +1,9 @@
 /**
  * 
  */
+
+
+
 $(document).ready(function(){
 	var list=$(".avt-hot-list-a");//document.getElementsByClassName("avt-hot-list-a");
 	var sum=list.length;
@@ -21,9 +24,21 @@ $(document).ready(function(){
 			}
 		if (current_index<sum-1) count=current_index+1;
 		else count=0;
-	})
+	});
 	
-	window.setInterval(function(){
+	function interval(){
+		play=setInterval(function(){
+			$("#avt-hot-list-"+count+" img").mouseenter();
+		},6000);
+	};
+	interval();
+	$(".hotestnews-div").mouseenter(function(){
+		clearInterval(play);
+	});
+	$(".hotestnews-div").mouseleave(function(){
+		interval();
+	});
+	/*window.setInterval(function(){
 		$("#avt-hot-list-"+count+" img").mouseenter();
-	},6000);
+	},6000);*/
 });

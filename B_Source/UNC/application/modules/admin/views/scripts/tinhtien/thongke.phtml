@@ -1,37 +1,7 @@
-<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/jquery.ui.all.css">
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/jquery-1.8.0.js"></script>
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.core.js"></script>
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.widget.js"></script>
-<script src="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/ui/jquery.ui.datepicker.js"></script>
-<link rel="stylesheet" href="<?php echo $this->baseUrl();?>/application/templates/admin/datepicker/themes/base/demos.css">
-<script type="text/javascript">
-	$(function() {
-		$( ".datepicker" ).datepicker();
-	});
-</script>
-<fieldset style="margin:15px; padding:15px; width:20%; float:right">
-	<form action="<?php echo $this->baseUrl()?>/admin/tinhtien/price" method="post">
-		<h2>Giá tiền nhuận bút</h2>
-		<p>Viết bài mới: <input style="width:auto !important" type="text" name="new-post-price" id="new-post-price" value="<?php echo $this->price_post['price'];?>"/></p>
-		<br/>
-		<p>Duyệt bài: <input style="width:auto !important" type="text" name="review-price" id="review-price" value="<?php echo $this->price_review['price'];?>"/></p>
-		<br/>
-		<br/>
-		<input type="submit" value="Cập nhật"/>
-	</form>
-</fieldset>
-<div style="float:left; padding:0 15px">
-	<h2>Tính tiền hoa hồng cho bài báo</h2>
-	<?php
-	?>
-
-	<form method="post" action="<?php echo $this->baseUrl(); ?>/admin/tinhtien/thongke">
-		<p>Từ ngày: <input style="padding-left: 10px;" type="text" name="fromdate" id="fromdate" class="datepicker" value="<?php if (isset($_SESSION['from_date'])) echo $_SESSION['from_date']?>"/>
-		Tới ngày: <input style=" padding-left: 10px;" type="text" name="todate" id="todate" class="datepicker" value="<?php if (isset($_SESSION['to_date'])) echo $_SESSION['to_date']?>"/>
-		<input name="Search" value="Search" type="submit"/>
-		</p>
-	</form>
-	<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
+<?php if (isset($this->error)) echo $this->error;
+else 
+{?>
+<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
 			<script type="text/javascript">
 				YUI().use("datatable-sort",'datatable','gallery-paginator-view', 'gallery-datatable-paginator', function (Y) {
 					var data = [
@@ -43,7 +13,9 @@
 																username: '<?php echo $this->listUser[$count]['user_login'];?>',
 																ho_ten: '<?php echo $this->listUser[$count]['user_fullname'];?>',
 																chuc_vu: '<?php if ($this->listUser[$count]['role_id']==1) echo 'Trưởng ban'; else echo 'Phóng viên';?>',
-																so_tien: '<?php echo $this->listMoney[$count];?>'
+																so_tien: '<?php echo $this->listMoney[$count];?>',
+																post: '<?php echo $this->listPost[$count];?>',
+																check: '<?php echo $this->listCheck[$count];?>'
 															},
 														<?php $count++;}?>
 													];
@@ -82,6 +54,20 @@
 									sortable:true,
 									formatter: '<span>{value}</span>',
 									allowHTML: true 
+								},
+								{
+									key: 'post',
+									label: 'Bài viết mới',
+									sortable:true,
+									formatter: '<span>{value}</span>',
+									allowHTML: true 
+								},
+								{
+									key: 'check',
+									label: 'Bài duyệt',
+									sortable:true,
+									formatter: '<span>{value}</span>',
+									allowHTML: true 
 								}];
 					var table = new Y.DataTable({
 						columns: cols,
@@ -107,4 +93,4 @@
 				<div class="example yui3-skin-sam" id="listnews">
 				</div>
 			</div>
-</div>		
+	<?php }?>

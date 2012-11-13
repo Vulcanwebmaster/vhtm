@@ -348,114 +348,25 @@
 		
 		function delAction()
 		{
-			$video = $this->mVideo->getVideoById($video_id);
-			if($this->role == "0" | ($this->user_login == $video['user_upload']))
+			if ($_SESSION['role_id']!=0)
 			{
-				$video_id = $this->_request->getParam('video_id');
-				$video_link = $video['video_link'];
-				$youtube_id = $video['youtube_id'];
-				$account = $this->mVideo->getAccountByYoutubeId($youtube_id);
-				$user = $account['youtube_username'];
-				$pass = $account['password'];
-				$this->mVideo->delVideo($video_id);
-				if($video_link != null)
-				{
-					try 
-						{
-							$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
-							Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
-							$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-											              $username = $user,
-											              $password = $pass,
-											              $service 	= 'youtube',
-											              $client 	= null,
-											              $source 	= 'NIWApp', 
-											              $loginToken 	= null,
-											              $loginCaptcha = null,
-											              $authenticationURL
-											           );
-										   
-							Zend_Loader::loadClass('Zend_Gdata_YouTube');
-						 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
-							
-							$video = $yt->getFullVideoEntry($video_link);
-			                $yt->delete($video);
-					    }
-					    catch (Exception $ex) {
-					        echo $ex->getMessage();
-					        exit;
-					    }
-				}
-				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+				$this->_redirect($this->view->baseUrl().'/../admin');
 			}
-			else
+			else 
 			{
-				$_SESSION['result']='Bạn không có quyền xóa mục này !';
-				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
-			}
-		}
-		
-		function editAction()
-		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$video_id = $this->_request->getParam('video_id');
-			$video_link = $this->mVideo->getVideoLinkById($video_id);
-			$this->view->role = $this->role;
-			$info = $this->mVideo->getVideoById($video_id);
-			$form = $this->formInsert();
-			$this->view->listCategoryId = explode(",", $info['category_id']);
-			$this->view->listCategory = $this->mVideo->getListVideoCategory();
-			
-			if($this->role=="0" | ($this->role=="1" & $this->user_login==$info['user_upload']))
-			{
-				$form->setAction($this->view->baseUrl().'/admin/uploadvideo/edit/video_id/'.$video_id);
-				
-				$form->getElement('link')->setValue($info['video_full_link']);
-				$form->getElement('title')->setValue($info['video_title']);
-				$form->getElement('description')->setValue($info['video_description']);
-				$form->getElement('is_active')->setValue($info['is_active']);
-				
-				$this->view->form = $form;
-				$this->view->title = 'Sửa thông tin video';		
-				
-				if($this->_request->isPost())
+				$video = $this->mVideo->getVideoById($video_id);
+				if($this->role == "0" | ($this->user_login == $video['user_upload']))
 				{
-					$listCategoryId = "";
-					foreach($_POST['checkbox'] as $check)
+					$video_id = $this->_request->getParam('video_id');
+					$video_link = $video['video_link'];
+					$youtube_id = $video['youtube_id'];
+					$account = $this->mVideo->getAccountByYoutubeId($youtube_id);
+					$user = $account['youtube_username'];
+					$pass = $account['password'];
+					$this->mVideo->delVideo($video_id);
+					if($video_link != null)
 					{
-						if($listCategoryId == "")
-									$listCategoryId = $check;
-						else $listCategoryId = $listCategoryId.','.$check;
-					}
-					$listCategoryId = str_replace("", "", $listCategoryId);
-									
-					if($form->isValid($_POST))
-					{
-						if($video_link != null)
-						{
-							$input = array(
-								'video_link'			=> $video_link,
-								'video_title'			=> $form->getValue('title'),
-								'video_description'		=> $form->getValue('description'),
-								'is_active'				=> $form->getValue('is_active'),
-								'category_id'			=> $listCategoryId
-							);	
-							
-							if($this->mVideo->editVideo($input))
-							{
-								$_SESSION['result']='Cập nhật thành công';
-							}
-							
-							$youtube_id = $this->mVideo->getYouTubeIdByVideoId($video_id);
-							$account = $this->mVideo->getAccountByYoutubeId($youtube_id);
-							$user = $account['youtube_username'];
-							$pass = $account['password'];
-							
-							try 
+						try 
 							{
 								$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
 								Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
@@ -469,46 +380,149 @@
 												              $loginCaptcha = null,
 												              $authenticationURL
 												           );
+											   
 								Zend_Loader::loadClass('Zend_Gdata_YouTube');
 							 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
-								$video = $yt->getFullVideoEntry($input['video_link']);
-				                		$putUrl = $video->getEditLink()->getHref(); 
-								$video->setVideoTitle($input['video_title']);
-								$video->setVideoDescription($input['video_description']);
-				                $yt->updateEntry($video, $putUrl);
+								
+								$video = $yt->getFullVideoEntry($video_link);
+				                $yt->delete($video);
 						    }
 						    catch (Exception $ex) {
 						        echo $ex->getMessage();
 						        exit;
 						    }
-							 
-							$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
-						}
-						else
-						{
-							$input = $this->_getInput($form,$listCategoryId);
-							if ($this->mVideo->updateVideo($video_id,$input))
-							{
-								$_SESSION['result']='Cập nhật thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
-							}
-							else 
-							{
-								$_SESSION['result']='Cập nhật không thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
-							}
-						}
 					}
-					else 
-					{
-						$form->populate($_POST); 
-					}
+					$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+				}
+				else
+				{
+					$_SESSION['result']='Bạn không có quyền xóa mục này !';
+					$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 				}
 			}
-			else
+		}
+		
+		function editAction()
+		{
+			if ($_SESSION['role_id']!=0)
 			{
-				$_SESSION['result']='Bạn không có quyền sửa mục này !';
-				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+				$this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				
+				$video_id = $this->_request->getParam('video_id');
+				$video_link = $this->mVideo->getVideoLinkById($video_id);
+				$this->view->role = $this->role;
+				$info = $this->mVideo->getVideoById($video_id);
+				$form = $this->formInsert();
+				$this->view->listCategoryId = explode(",", $info['category_id']);
+				$this->view->listCategory = $this->mVideo->getListVideoCategory();
+				
+				if($this->role=="0" | ($this->role=="1" & $this->user_login==$info['user_upload']))
+				{
+					$form->setAction($this->view->baseUrl().'/admin/uploadvideo/edit/video_id/'.$video_id);
+					
+					$form->getElement('link')->setValue($info['video_full_link']);
+					$form->getElement('title')->setValue($info['video_title']);
+					$form->getElement('description')->setValue($info['video_description']);
+					$form->getElement('is_active')->setValue($info['is_active']);
+					
+					$this->view->form = $form;
+					$this->view->title = 'Sửa thông tin video';		
+					
+					if($this->_request->isPost())
+					{
+						$listCategoryId = "";
+						foreach($_POST['checkbox'] as $check)
+						{
+							if($listCategoryId == "")
+										$listCategoryId = $check;
+							else $listCategoryId = $listCategoryId.','.$check;
+						}
+						$listCategoryId = str_replace("", "", $listCategoryId);
+										
+						if($form->isValid($_POST))
+						{
+							if($video_link != null)
+							{
+								$input = array(
+									'video_link'			=> $video_link,
+									'video_title'			=> $form->getValue('title'),
+									'video_description'		=> $form->getValue('description'),
+									'is_active'				=> $form->getValue('is_active'),
+									'category_id'			=> $listCategoryId
+								);	
+								
+								if($this->mVideo->editVideo($input))
+								{
+									$_SESSION['result']='Cập nhật thành công';
+								}
+								
+								$youtube_id = $this->mVideo->getYouTubeIdByVideoId($video_id);
+								$account = $this->mVideo->getAccountByYoutubeId($youtube_id);
+								$user = $account['youtube_username'];
+								$pass = $account['password'];
+								
+								try 
+								{
+									$authenticationURL= 'https://www.google.com/accounts/ClientLogin';
+									Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+									$httpClient = Zend_Gdata_ClientLogin::getHttpClient(
+													              $username = $user,
+													              $password = $pass,
+													              $service 	= 'youtube',
+													              $client 	= null,
+													              $source 	= 'NIWApp', 
+													              $loginToken 	= null,
+													              $loginCaptcha = null,
+													              $authenticationURL
+													           );
+									Zend_Loader::loadClass('Zend_Gdata_YouTube');
+								 	$yt = new Zend_Gdata_YouTube($httpClient, 'NIW-App-1.0', '661085061264.apps.googleusercontent.com', 'AI39si4UPUxw1FE5hqSi0Z-B-5z3PIVovbBWKmqiMI3cXJ7lhvjJcABV-eqimb2EeSiuedWK8N9OGOdB1namX1CqqYki8jEfSQ');
+									$video = $yt->getFullVideoEntry($input['video_link']);
+					                		$putUrl = $video->getEditLink()->getHref(); 
+									$video->setVideoTitle($input['video_title']);
+									$video->setVideoDescription($input['video_description']);
+					                $yt->updateEntry($video, $putUrl);
+							    }
+							    catch (Exception $ex) {
+							        echo $ex->getMessage();
+							        exit;
+							    }
+								 
+								$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+							}
+							else
+							{
+								$input = $this->_getInput($form,$listCategoryId);
+								if ($this->mVideo->updateVideo($video_id,$input))
+								{
+									$_SESSION['result']='Cập nhật thành công';
+									$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+								}
+								else 
+								{
+									$_SESSION['result']='Cập nhật không thành công';
+									$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+								}
+							}
+						}
+						else 
+						{
+							$form->populate($_POST); 
+						}
+					}
+				}
+				else
+				{
+					$_SESSION['result']='Bạn không có quyền sửa mục này !';
+					$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
+				}
 			}
 		}
 
