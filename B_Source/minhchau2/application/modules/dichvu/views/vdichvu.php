@@ -24,4 +24,6 @@
 				?>
 			</div>
 </div
+<div id="ja-col">
 <?php $this->load->view('front/left');?>
+</div>

@@ -9,27 +9,16 @@
 	  $('#m-sanpham').addClass('menu-visited');
 	});
 </script>
-<div id="container1">
-      <!---------------begin center----------------------->																																																																																																																																																																										
-	  
-      
-      <!---------------begin left----------------------->
-	  <div id="left1" class="column">
-      
-      	<?php $this->load->view('front/left1');?>
-	  	
-	  </div>
-      <div id="center1" class="column">
-           
-       <!--------------begin content center----------------------->
-	  	<div id="content1">
-        	<div id="ml">
-        	<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a>>> 
-        	<a href="<?php echo base_url() ?>sanpham"><?php echo $this->lang->line('content-sanpham'); ?> </a>
+<div id="ja-mainbody" class="clearfix">
+        	<div id="ja-pathway">
+        	<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a><img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt="">
+        	<a href="<?php echo base_url() ?>sanpham">  
+        	<?php echo $this->lang->line('content-sanpham'); ?>
         	<?php if(isset($query))
 			{
 				?>
-	        	>> 
+			</a>
+	        	<img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt="">
 	        	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $query->id; ?>">
 	        		<?php
 	        			if($lang=='vn')
@@ -76,12 +65,6 @@
 				?>
 				
 			</div>
-		</div>
-        <!---------------end content center----------------------->
-	  </div>
-      <!--------------end center----------------------->
-      <!---------------end đối tác---------------------->
-      
-      <!---------------begin right----------------------->
-       <!---------------end right----------------------->
+
 	</div>
+	<?php $this->load->view('front/left');?>

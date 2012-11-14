@@ -2,19 +2,6 @@
 	$newModel=new CI_Model();
 	$lang=$this->session->userdata('lang');
 ?>
-		<script type="text/javascript">
-			$(document).ready(function(){
-			
-				$('.menu1').hide();
-				
-				$('.menu0').click(function(){
-				
-					$(this).children('.menu1').slideToggle();
-					
-				});
-				
-			})
-		</script>
 	<div id="ja-col">
 	  	<div class="moduletable_menuhilite">
         <h3><span>Danh mục sản phẩm</span> </h3>
@@ -38,7 +25,7 @@
 													echo $parents[$i]->namev;
 												else echo $parents[$i]->namee;
 											?>
-										</a>
+										</a>	</li>
 										<?php
 											$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
 											if (isset($childs))
@@ -59,7 +46,7 @@
 												}
 											}
 					                	?>
-				                		</li>
+				                	
 			            			<?php
 		            			}
 								else
@@ -134,9 +121,7 @@
 						}
 					}
 		            ?>
-				
 			</ul>
-            
 		</div>
         
         <!--------------end danh mục----------------------->
@@ -175,3 +160,16 @@
         </div>
         
 	  </div>
+	  <script type="text/javascript">
+			$(document).ready(function(){
+			
+				$('.menu1').hide();
+				
+				$('.menu0').click(function(){
+				
+					$(this).children('.menu1').slideToggle();
+					
+				});
+				
+			});
+		</script>

@@ -2,8 +2,10 @@
 	<ul class="toggle">
 		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>sanpham/admin">Sản phẩm</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>dichvu/admin">Dịch vụ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin/view">Danh sách liên hệ</a></li>
 	</ul>

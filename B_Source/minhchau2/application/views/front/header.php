@@ -20,7 +20,9 @@
 					<li><a class="menu-item1" id="menu71" href="<?php echo base_url() ?>sanpham">
 						<span class="menu-title"><?php echo $this->lang->line('menu-sanpham')?></span></a>
 					</li> 
-					<li><a class="menu-item2" id="menu58" href="#"  title="Tin tức"><span class="menu-title">Tin tức</span></a></li> 
+					<li><a class="menu-item2" id="menu58" href="<?php echo base_url() ?>tintuc">
+						<span class="menu-title"><?php echo $this->lang->line('menu-tintuc')?></span></a>
+					</li> 
 					<li><a class="menu-item3" id="menu53" href="<?php echo base_url() ?>gioithieu">
 						<span class="menu-title"><?php echo $this->lang->line('menu-gioithieu')?></span></a>
 					</li> 
