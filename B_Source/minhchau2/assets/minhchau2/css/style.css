@@ -12,7 +12,7 @@ height:100%;
 }
 body{
 min-width: 412px;  
-width:985px;
+/*width:985px;*/
 margin:0 auto;
 font-family:Tahoma;
 font-size:11px;
@@ -441,3 +441,150 @@ background:url(../images/bg1.gif);}
 #stuff-right{ float:left; width:40%; padding:0 15px; margin-top:-10px}
 #stuff-map{ float:left; width:230px;}
 #stuff-location{ float:left; margin:5px;}
+
+
+/*/<!-----CSS Trung---->*/
+.tube .container .ja-innerdiv{
+	border-bottom: none;
+}
+
+.tube .ja-tabswrap div.ja-tab-content {	
+	width: 95%;
+}
+
+
+.vmAttribChildDetail {  /* Product Attributes Styling */
+	border-bottom:1px dotted #CCCCCC;
+	padding-bottom:5px;
+	padding-left:5px;
+	padding-top:5px;
+	text-align:left;
+	width: 280px;
+}
+	
+.ja-tabswrap div.ja-tab-subcontent {
+	padding: 5px !important;
+	border-bottom:1px solid #BFBFBF;
+	border-left:1px solid #BFBFBF;
+	border-right:1px solid #BFBFBF;
+}
+
+/* JA Tabs top*/
+.tube .ja-tabs-title-top {
+	background: #FFFFFF;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.tube .ja-tabs-title-top ul.ja-tabs-title {
+	padding: 0;
+	display: block;
+	left: 0;
+	top: 0;
+}
+
+.tube .ja-tabs-title-top ul.ja-tabs-title li {
+	margin-right: 2px;
+	padding: 0 0 0 10px;
+	background: url(../images/tabs-l.gif) no-repeat top left !important;
+}
+
+.tube .ja-tabs-title-top ul.ja-tabs-title li h3 {
+	background: url(../images/tabs-r.gif) no-repeat top right;
+	font-size: 100%;
+	font-weight: normal;
+	padding: 5px 10px 4px 0;
+	margin: 0;
+	line-height: normal;
+	letter-spacing: normal;
+	text-transform: none;
+	float: left;
+}
+
+.tube .ja-tabs-title-top ul.ja-tabs-title li h3 span {
+	background: none;
+}
+
+.tube .ja-tabs-title-top ul.ja-tabs-title li.hover,
+.tube .ja-tabs-title-top ul.ja-tabs-title li.firsthover,
+.tube .ja-tabs-title-top ul.ja-tabs-title li.lasthover {
+}
+
+.tube .ja-tabs-title-top ul.ja-tabs-title li.active,
+.tube .ja-tabs-title-top ul.ja-tabs-title li.firstactive,
+.tube .ja-tabs-title-top ul.ja-tabs-title li.lastactive {
+	background: url(../images/tabs-active-l.gif) no-repeat top left !important;
+}
+
+.tube .ja-tabs-title-top ul li.active h3,
+.tube .ja-tabs-title-top ul li.firstactive h3,
+.tube .ja-tabs-title-top ul li.lastactive h3 {
+	background: url(../images/tabs-active-r.gif) no-repeat top right;
+	border-bottom: none;
+	padding: 5px 10px 5px 0;
+	font-weight: bold;
+}
+
+/* JA Tabs bottom */
+.ja-tab-panels-bottom .ja-tab-content div.ja-tab-subcontent {
+	
+}
+
+.tube .ja-tabs-title-bottom {
+	background: #FFFFFF;
+	position: relative;
+	z-index: 3;
+	width: 100%;
+	border-top: 1px solid #DDDDDD;
+	height: 28px;
+}
+
+.tube .ja-tabs-title-bottom ul.ja-tabs-title {
+	padding: 0;
+	top: -1px;
+	left: 0;
+	display: block;
+}
+
+.tube .ja-tabs-title-bottom ul.ja-tabs-title li {
+	background: url(../images/tabs-bl.gif) no-repeat left bottom !important;
+	margin-right: 2px;
+	padding: 0 0 0 10px;
+}
+
+.tube .ja-tabs-title-bottom ul.ja-tabs-title li h3 {
+	background: url(../images/tabs-br.gif) no-repeat right bottom;
+	float: left;
+	font-size: 100%;
+	font-weight: bold !important;
+	letter-spacing: normal;
+	line-height: normal;
+	margin: 0;
+	padding: 9px 10px 4px 0;
+	text-transform: uppercase;
+}
+
+.tube .ja-tabs-title-bottom ul.ja-tabs-title li h3 span {
+	background: none !important;
+}
+
+.tube .ja-tabs-title-bottom ul.ja-tabs-title li.active,
+.tube .ja-tabs-title-bottom ul.ja-tabs-title li.firstactive,
+.tube .ja-tabs-title-bottom ul.ja-tabs-title li.lastactive {
+	background: url(../images/tabs-active-bl.gif) no-repeat left bottom !important;
+}
+
+.tube .ja-tabs-title-bottom ul li.active h3,
+.tube .ja-tabs-title-bottom ul li.firstactive h3,
+.tube .ja-tabs-title-bottom ul li.lastactive h3 {
+	background: url(../images/tabs-active-br.gif) no-repeat right bottom;
+	border-bottom: none;
+	padding: 9px 10px 5px 0;
+}
+
+.tube .ja-tab-panels-bottom {
+	left: 0;
+	background: url(../images/tab-panels-bottom.gif) no-repeat right top;
+}
+/*/<!-----End CSS Trung---->*/

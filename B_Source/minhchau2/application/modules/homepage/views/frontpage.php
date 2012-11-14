@@ -3,7 +3,7 @@
 	$this->load->helper('text');
 	$lang=$this->session->userdata('lang');
 ?>
-<div id="container">
+<div id="ja-mainbody">
       <!---------------begin center----------------------->																																																																																																																																																																										
 	  <div id="center" class="column">
       <!---------------begin slider----------------------->
@@ -19,9 +19,10 @@
 	  $('#m-trangchu').addClass('menu-visited');
 	});
 </script>
-	  	<div id="content">
-        
-        	<p style=" font-size:20px;"><?php echo $this->lang->line('content-gioithieu'); ?></p>
+<!-- BEGIN: FEATURE PRODUCTS -->
+	  	<div id="ja-topsl3">
+        	<div class="moduletable">
+        	<h3><span><?php echo $this->lang->line('content-gioithieu'); ?></span></h3>
 			<p>
 				<?php 
 					$about=$newModel->getRowByColumn('mc_about_us','id',1);
@@ -55,9 +56,11 @@
 				?>
 				
 			</div>
+			</div>
 		</div>
         <!---------------end content center----------------------->
 	  </div>
+</div>
       <!--------------end center----------------------->
       
       <!---------------begin left----------------------->
@@ -66,8 +69,5 @@
 	  	
       <!---------------end đối tác---------------------->
       
-      <!---------------begin right----------------------->
-	  
-	  	 <?php $this->load->view('front/right');?>
+
 	  	 
-	</div

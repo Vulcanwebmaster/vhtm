@@ -9,13 +9,13 @@
 	  $('#m-dichvu').addClass('menu-visited');
 	});
 </script>
-<div id="container">
-	  <div id="center" class="column">       
-	  	<div style="margin-top:-21px;padding-top: 0px;width:133%" id="content">
-	  		<div id="ml1">
-        		<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a>>> <a href="<?php echo base_url() ?>dichvu"><?php echo $this->lang->line('content-dichvu'); ?> </a>
+<div id="ja-mainbody" class="clearfix">
+	  		<div id="ja-pathway">
+        		<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a>
+					<img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt=""> <a href="<?php echo base_url() ?>dichvu">
+					<?php echo $this->lang->line('content-dichvu'); ?> </a>
         	</div>
-        	<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px; color:#26a1cc; font-weight:bold;"><?php echo $this->lang->line('content-dichvu'); ?></p>
+        	<h2 class="contentheading"><?php echo $this->lang->line('content-dichvu'); ?></h2>
 			<div style="padding-left: 20px;padding-top:10px">
 				<?php
 					if($lang=='vn')
@@ -23,7 +23,5 @@
 					else echo $query->contente;
 				?>
 			</div>
-		</div>
-	  </div>
-	  	<?php $this->load->view('front/left');?>
 </div
+<?php $this->load->view('front/left');?>

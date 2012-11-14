@@ -1,4 +1,4 @@
-<div id="vcontent">
+
 	<?php 
 		//   print displayStatus();
 		print (isset($content)) ? $content : NULL; 
@@ -14,4 +14,3 @@
 			}
 		}
 	?>
-</div>

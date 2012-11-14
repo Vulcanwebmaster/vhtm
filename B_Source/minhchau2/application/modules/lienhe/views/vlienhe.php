@@ -9,16 +9,16 @@
 	  $('#m-lienhe').addClass('menu-visited');
 	});
 </script>
-<div id="container">
+<div id="ja-mainbody" class="clearfix">
       <!---------------begin center----------------------->																																																																																																																																																																										
-	  <div id="center" class="column">
 	  		
        <!--------------begin content center----------------------->
-	  	<div id="content2">
-        	<div id="ml1">
-        		<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a>>> <a href="<?php echo base_url() ?>lienhe"><?php echo $this->lang->line('content-lienhe'); ?> </a>
+        	<div id="ja-pathway">
+        		<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a>
+					<img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt="">
+					 <a href="<?php echo base_url() ?>lienhe"><?php echo $this->lang->line('content-lienhe'); ?> </a>
         	</div>
-			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px; color:#26a1cc; font-weight:bold;"><?php echo $this->lang->line('content-lienhe'); ?></p>
+			<h2 class="contentheading"><?php echo $this->lang->line('content-lienhe'); ?></h2>
 			<div class="stuff">
 				  <div id="stuff-contact">
                   	<div id="stuff-location">
@@ -60,9 +60,8 @@
           
 			</div>       
 			</div>
-		</div>
         <!---------------end content center----------------------->
-	  </div>
-	  <?php $this->load->view('front/left');?>
-	  <?php $this->load->view('front/right');?>
+	 
 	</div>
+	
+ <?php $this->load->view('front/left');?>
