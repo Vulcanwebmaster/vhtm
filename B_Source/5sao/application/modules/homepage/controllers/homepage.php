@@ -9,24 +9,31 @@ class Homepage extends NIW_controller {
 		$this->module = strtolower(get_class());
 		$this->load->model('Mhomepage');
 		$this->setLang();
+		
 		$this->loadLang();
+		
 		$this->addVisiting();
 		$this->load->library('pagination');
 	}
 	
 	function loadLang()
 	{
+		
 		session_start();
-                if(isset($_SESSION['lang']))
-		{
+        if(isset($_SESSION['lang'])) {
 		   $lang=$_SESSION['lang'];
-                }
-                else $lang = 'vn';
-                if ($lang=='vn')
-		{
+        } else {
+        	$lang = 'vn';
+		} 
+		
+        if ($lang=='vn') {
+        	$_SESSION['lang']='vn';
 			$this->lang->load('5sao','vietnamese');
+			
+		} else {
+			$this->lang->load('5sao','english');
+			$_SESSION['lang']='en';
 		}
-		else $this->lang->load('5sao','english');
 	}
 
 	public function index()
