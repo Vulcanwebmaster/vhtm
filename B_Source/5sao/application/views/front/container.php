@@ -17,24 +17,46 @@
 			 <?php if (isset($current_category))
 			 {?>			 
 			 	var list=getElementsByClassName('menuleft-lv2');
-			 	<?php if ($lang=="vn")
+				var category;
+			 	<?php if ($_SESSION["lang"]=="vn")
 			 	{?>
 			 		category='<?php echo $current_category->ten_v;?>';
 				<?php }
 				else {?>
 					category='<?php echo $current_category->ten_e;?>';
 				<?php }?>
-				for (var i=0;i<list.length;i++)
+				
+				var i=0;
+				for (i=0;i<list.length;i++)
 				{
 					if (list[i].text==category)
 					{
 						item=list[i];
 						parent_ct=item.parentNode.parentNode.parentNode;
 						item.parentNode.parentNode.parentNode.style.display='block';
+                                                $current=$(item.parentNode.parentNode.parentNode.parentNode);
 						break;
 					}
+					else if (list[i].parentNode.parentNode.parentNode.parentNode.childNodes[0].text==category)
+					{
+					     item=list[i];
+					     item.parentNode.parentNode.parentNode.style.display='block';
+					     $current=$(item.parentNode.parentNode.parentNode.parentNode);
+					     break;
+					}
 				}
+				$current.addClass("cannotclose");
+
 			 <?php }?>	
+
+					/*$('.slidecontrol').mouseenter(function(){
+							$(this).children('.slidemove').slideDown();
+					});
+                    $('.slidecontrol').mouseleave(function(){
+							var classname=$(this).attr("class");
+                            if (classname.indexOf("cannotclose")==-1)
+								$(this).children('.slidemove').slideUp();*/
+
 					$('.slidecontrol').hover(function(){
 							$(this).children('.slidemove').slideToggle("slow");
 						});
