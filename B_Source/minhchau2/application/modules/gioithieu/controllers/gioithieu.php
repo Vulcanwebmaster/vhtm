@@ -24,6 +24,9 @@
 			$data['query']=$this->Mgioithieu->getRowByColumn('mc_about_us','id',1);
 			$data['items']=$this->Mgioithieu->getListByColumn('mc_product','is_new',1);
 			$data['parents']=$this->Mgioithieu->getListByColumn('mc_category','parent_id',0);
+			$data['list_hotro']=$this->Mgioithieu->getListFull('hotro');
+			$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
+			
 			$data['module']=$this->module;
 			$data['page']='vgioithieu';
 			$this->load->view('front/container',$data);

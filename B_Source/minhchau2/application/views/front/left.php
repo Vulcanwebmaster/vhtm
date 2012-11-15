@@ -129,36 +129,23 @@
         <div class="moduletable">
 			<h3><span>HỖ TRỢ TRƯC TUYẾN</span></h3>
 			<div align="center">
-				<a href="ymsgr:sendIM?vnthaibinh&m=SupportYahoo-namdomedical.vn"><img border="0" src="<?php echo base_url()?>assets/minhchau2/images/online" vspace="5"></a><br>
-				<strong>Mr Bình</strong><br> 0979345268<br> 
-				<a href="ymsgr:sendIM?dkadoption&m=SupportYahoo-namdomedical.vn"><img border="0" src="<?php echo base_url()?>assets/minhchau2/images//online(1)" vspace="5"></a><br>  
-				<strong>Mr Trung</strong><br> 0916138183<br>
+				<?php foreach ($list_hotro as $hotro)
+		        { ?>
+				<a href="ymsgr:sendIM?<?php echo $hotro->yahoo;?>"><img border="0" src="<?php echo base_url()?>assets/minhchau2/images/online" vspace="5"></a><br>
+				<strong><?php echo $hotro->ten;?></strong><br><?php echo $hotro->sdt;?><br> 
+				<?php }?> 
 				<style>#pah{display:block; text-indent:-9999px; height:1px;}</style>
-				<div id="pah">
-					<a href="#" title="den san khau">den san khau</a>, 
-					<a href="#" title="thue xe">thue xe</a>, 
-					<a href="#" title="am thanh anh sang">am thanh anh sang</a>, 
-					<a href="#" title="anh sang san khau">anh sang san khau</a>, 
-					<a href="#" title="d�n led, den led">den led</a>
-				</div>
 			</div>		
 		</div>
 		<!---------------End Hỗ trợ trực tuyến----------------------->
         <!---------------begin đối tác----------------------->
 		<div class="moduletable_menuhilite">
         	<h3><span>Đối tác</span></h3>
-            	<p><a href="#" target="_blank"><img src="<?php echo base_url()?>assets/minhchau2/images/bionic3.png" 
-            					border="0" width="164" height="64"/></a></p>
-               	<p><a href="#" target="_blank"><img src="<?php echo base_url()?>assets/minhchau2/images/edan3.png" 
-               					border="0" width="164" height="64"/></a></p>
-               	<p><a href="#" target="_blank"><img src="<?php echo base_url()?>assets/minhchau2/images/hadeco3.png" 
-               					border="0" width="164" height="64"/></a></p>
-               	<p><a href="#" target="_blank"><img src="<?php echo base_url()?>assets/minhchau2/images/mindray3.png" 
-               					border="0" width="164" height="64"/></a></p>
-                <p><a href="#" target="_blank"><img src="<?php echo base_url()?>assets/minhchau2/images/nopa3.png" 
-               					border="0" width="164" height="64"/></a></p>
+        	        	<?php foreach($list_doitac as $doitac){ ?>
+            	<p><a href="<?php echo $doitac->link ?>" target="_blank">
+            				<?php echo $doitac->logo;?></a></p>
+         		 <?php  } ?>
         </div>
-        
 	  </div>
 	  <script type="text/javascript">
 			$(document).ready(function(){
