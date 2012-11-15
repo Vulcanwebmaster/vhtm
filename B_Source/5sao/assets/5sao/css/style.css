@@ -538,7 +538,7 @@ border-radius:5px}
 #statistics ul{margin:-10px 5px 10px 5px; padding:0;}
 #statistics{font-weight:bold; font-size:11px}
 #statistics img{margin-bottom:-3px;}
-#textbaner{position:absolute; z-index:4444; left:315px; top:25px; color:#FDFDFD; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:29px; font-weight:bold; text-align:center;}
+#textbaner{ width:650px; position:absolute; z-index:4444; left:315px; top:25px; color:#FDFDFD; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:29px; font-weight:bold; text-align:center;}
 #textbaner p{ margin-left:-37px; padding:0; margin-top: 11px }
 #titletrust{ font-size:12px; text-transform:none; font-weight:none;}
 .itemimage p{margin:0; padding:0}
@@ -608,7 +608,7 @@ width:33px;
 }
 #center p{ background-color:#fff;}
 td, input, textarea{ text-align:left}
-.back_link{ width:1100px !important; margin:10px auto 0 auto !important; padding:0; text-align:left;}
+.back_link{ width:1000px !important; margin:10px auto 0 auto !important; padding:0; }
 .back_link li{ float:left !important; padding-right:0px !important; line-height:24px !important; list-style:none}
 .currentmenu,.hovermenu{background-color:#3e3e3e; color:#D9B24A}
 /*--------------------Trung--------------------------*/
