@@ -188,13 +188,14 @@ class CI_Model {
 	 }
 	 
 	 function getSpByParentID($id){
-	 	// Gọi ra các sản phẩm của các danh mục con có 
+	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
 		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
 										FROM n_sanpham, n_danhmuc
 										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
 		  return $query->result();
 	 }
 	 function isParent($id){
+	 	// Kiểm tra danh có tồn tại danh mục cha hay không...
 	 	$query= $this->db->query("SELECT * FROM n_danhmuc WHERE parent_id ='".$id."'");
 		if($query->num_rows()>0)
 			return true;

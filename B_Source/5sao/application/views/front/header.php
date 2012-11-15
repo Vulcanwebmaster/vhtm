@@ -1,7 +1,11 @@
 <div id="header">			
-			<div id="textbaner">				 
+			<div id="textbaner">	
+				<?php if ($_SESSION['lang']=="vn") 
+							{?>			 
 					<p>Công ty cổ phần thiết bị Thái Dương</p>
-					<p id="titletrust">trust is our pride</p>   
+					<?php } else{ ?>
+					<p>THAI DUONG EQUIPMENT JOINT STOCK COMPANY</p>	
+					<?php } ?>
 			</div>
 			<div id="language">
 				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">

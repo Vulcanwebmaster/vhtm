@@ -36,11 +36,11 @@
 			<div id="mota_detail">
 				<?php if ($lang=='vn') { ?>
 				</br>
-					<p style="font-weight: bold;  float: left ">Model : </p> 		 <p style="font-weight: bold; color:red "><?php echo $detail->model ?></p> </br>
-					<p style="font-weight: bold;  float: left ">Hãng sản xuất : </p> <p style="font-weight: bold; color:red "><?php echo $detail->hangsx ?></p></br> 
-					<p style="font-weight: bold;  float: left ">Bảo hành : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->baohanh ?></p> </br>
-					<p style="font-weight: bold;  float: left ">Kho hàng : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->khohang ?></p> </br>
-					<p style="font-weight: bold;  float: left ">Giá bán : </p>		 <p style="font-weight: bold; color:red "> <?php echo $detail->giaban ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Model</p> 		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->model ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Hãng sản xuất</p> <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->hangsx ?></p></br> 
+					<p style="font-weight: bold;  float: left ">Bảo hành</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->baohanh ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Kho hàng</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->khohang ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Giá bán</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->giaban ?></p> </br>
 				<?php } else { ?>
 					</br>
 					<p style="font-weight: bold;  float: left ">Model : </p> 		     <p style="font-weight: bold; color:red "><?php echo $detail->modele ?></p> </br>

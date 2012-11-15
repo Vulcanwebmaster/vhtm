@@ -36,7 +36,7 @@
 				}
 			 <?php }?>	
 					$('.slidecontrol').hover(function(){
-							$(this).children('.slidemove').slideToggle();
+							$(this).children('.slidemove').slideToggle("slow");
 						});
 										
 				$('.bg_itemmenu').children('ul').css('opacity','0');//.animate({opacity:0},300);				

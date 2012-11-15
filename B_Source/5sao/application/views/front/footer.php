@@ -14,7 +14,7 @@
 		<div class="boxfooter_main">            
 			<p style="text-align: center; margin:0; padding:0">	
 				<span style="font-size:18px;line-height:40px; margin:0; padding-top:0">Công ty cổ phần thiết bị Thái Dương</span><br>	
-				<span style="font-size: 13px;">Số 29/3, Khu Cầu Đơ 4, Phường Hà Cầu, Quận Hà Đông, Thành phố Hà Nội<br>	
+				<span style="font-size: 13px;">Số 39/3, Khu Cầu Đơ 4, Phường Hà Cầu, Quận Hà Đông, Thành phố Hà Nội<br>	
 					Tel/ Fax: 0466861137  - Hotline : 0985.534.534</span><br>	
 				<span style="font-size:13px;"> Bản quyền thuộc về Công ty cổ phần thiết bị Thái Dương</span>
 			</p>            

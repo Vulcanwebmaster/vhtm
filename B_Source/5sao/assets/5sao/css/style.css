@@ -515,7 +515,7 @@ font-size:11px
 #language a{padding-left:0px;}
 .pr-img{ margin:5px; border-bottom:1px solid #CCC;}
 .pr-img h4{ color:#000000 !important; font-size:11px !important; text-transform:none !important;}
-.bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;clear:both; behavior:url(PIE/PIE.htc)}
+.bodermove{margin-top:10px; width:182px; border-radius:5px;  border:1px solid #E83D43; border-bottom:0;clear:both;}
 #newpr{width:100%; line-height:30px; background-image:url(../images/prnew.jpg); background-repeat:repeat-x; text-transform:uppercase; font-weight:bold; text-align:center !important; padding:auto !important; color:white; margin:10px 0 0 -4px !important;}
 .itemmenu{position: absolute;padding-top:10px;z-index: 999}
 span a{ text-decoration:none}
@@ -538,8 +538,8 @@ border-radius:5px}
 #statistics ul{margin:-10px 5px 10px 5px; padding:0;}
 #statistics{font-weight:bold; font-size:11px}
 #statistics img{margin-bottom:-3px;}
-#textbaner{position:absolute; z-index:4444; left:315px; top:25px; color:#fff; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:32px; font-weight:bold; text-align:center;}
-#textbaner p{ margin-left:-37px; padding:0;}
+#textbaner{position:absolute; z-index:4444; left:315px; top:25px; color:#FDFDFD; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:29px; font-weight:bold; text-align:center;}
+#textbaner p{ margin-left:-37px; padding:0; margin-top: 11px }
 #titletrust{ font-size:12px; text-transform:none; font-weight:none;}
 .itemimage p{margin:0; padding:0}
 .bg_itemmenu{height:31px; background-color:#a0a09f; width:981px; position:absolute; top:139px; left:0; z-index: 10;}

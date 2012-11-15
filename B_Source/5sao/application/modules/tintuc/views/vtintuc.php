@@ -11,7 +11,7 @@
 	            <div class="aboutth-item" style="float:left; width:76%; height: 86px;">
 	            	<h5><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->id;?>"><?php if ($lang=="vn") echo strip_tags($item->tieude_v); else echo strip_tags($item->tieude_e);?></a></h5>
 	            </div>
-	  	</li>
+	  	    </li>
 	  			<?php }?>
 	</ul>
 	<div style="text-align:center; clear:both; padding-top: 10px"><?php echo $this->pagination->create_links();?></div>
