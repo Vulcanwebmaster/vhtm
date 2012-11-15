@@ -1,26 +1,49 @@
 <?php
 class Admin_GetnewssettingController extends Zend_Controller_Action
 {
-	private $mGetnews,$mRss;
+	private $mGetnews,$mRss,$mChuyenmuc;
 	function init()
 	{
-		$layoutPath = APPLICATION_PATH  . '/templates/admin';
-	      $option = array ('layout' => 'index', 
-	                   'layoutPath' => $layoutPath );
-	      Zend_Layout::startMvc ( $option );
-		  $this->mGetnews = new Admin_Model_Mgetnews();
-		  $this->mRss= new Admin_Model_Mrss();
-		  @session_start();
-		  $this->view->headTitle('UNC - Admin website');
-		$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-		$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-		$_SESSION["backend_current_menu"]="menu-quanlytin";
+		@session_start();
+		if (isset($_SESSION['role_id']))
+		{
+			if ($_SESSION['role_id']=='2')
+				$this->_redirect($this->view->baseUrl().'/../admin');
+				
+			$layoutPath = APPLICATION_PATH  . '/templates/admin';
+		      $option = array ('layout' => 'index', 
+		                   'layoutPath' => $layoutPath );
+		      Zend_Layout::startMvc ( $option );
+			  $this->mGetnews = new Admin_Model_Mgetnews();
+			  $this->mRss= new Admin_Model_Mrss();
+			  $this->mChuyenmuc=new Admin_Model_Mchuyenmuc();
+			  
+			  $this->view->headTitle('UNC - Admin website');
+			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			$_SESSION["backend_current_menu"]="menu-quanlytin";
+		}
+		else $this->_redirect($this->view->baseUrl().'/../admin');
 	}
 	
 	function indexAction()
 	{
-		$paginator = Zend_Paginator::factory($this->mGetnews->getListCampaigns());
+		if ($_SESSION['role_id']=='0')
+			$list=$this->mChuyenmuc->getListChildFull();
+		elseif ($_SESSION['role_id']=='1')
+		{
+			$listUserCate=$this->mChuyenmuc->getListCategoryIdByUserId($_SESSION['user_id']);
+			$list=array();
+			foreach ($listUserCate as $userCate)
+			{
+				$item=$this->mChuyenmuc->getCmById($userCate['category_id']);
+				if ($item)
+					$list[]=$item;
+			}
+		}
+		
+		$paginator = Zend_Paginator::factory($list);
         $paginator->setItemCountPerPage(25);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
@@ -138,17 +161,16 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 	
 	function showlistrssAction()
 	{
-		$campaign_name=$this->_request->getParam('campaign_name');
-		$_SESSION['campaign_name']=$campaign_name;
-		$campaign=$this->mRss->getCampaignByName($campaign_name);
-		$_SESSION['campaign_id']=$campaign['id'];
-		$listRss=$this->mRss->getListRssByCampaignId($campaign['id']);
+		$campaign_id=$this->_request->getParam('campaign_id');
+		$campaign=$this->mChuyenmuc->getCmById($campaign_id);
+		$_SESSION['campaign_id']=$campaign_id;
+		$listRss=$this->mRss->getListRssByCampaignId($campaign_id);
 		
 		$paginator = Zend_Paginator::factory($listRss);
         $paginator->setItemCountPerPage(15);        
         $currentPage = $this->_request->getParam('page',1);
         $paginator->setCurrentPageNumber($currentPage);
-		$this->view->title="Danh mục RSS: ".$campaign['name'];
+		$this->view->title="Danh mục RSS: ".$campaign['category_name'];
 		
 		$this->view->list=$paginator;
 		$listCampaign=array();

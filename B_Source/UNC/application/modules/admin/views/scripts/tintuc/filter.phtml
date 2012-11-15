@@ -13,20 +13,6 @@
 					{	
 					}
 				}
-		
-
-		/*function abc()
-		{
-			var listDel=document.getElementsByClassName('del_button');
-			for (var i=0;i<listDel.length;i++)
-			{
-				var onclick=listDel[i].getAttribute("onclick");
-				if (onclick=='confirmDel( )')
-				{
-					listDel[i].setAttribute("style","display:none");
-				}
-			}
-		}*/
 </script>
 <style>
 	.del_button{cursor:pointer}
@@ -50,11 +36,33 @@
 					<select id="viewtype" onchange="return selectViewChange();" style="float: right">
 						<option value="0">Lọc theo ...</option>
 						<option value="1">Xem tất cả</option>
-						<option value="2">Những tin tức được xác nhận</option>
-						<option value="3">Những tin tức chưa được xác nhận</option>
-						<?php foreach($this->listCategories as $cat)
+						<?php if ($_SESSION['role_id']=="2")
 						{?>
-							<option value="<?php echo 3+$cat['category_id'];?>"><?php echo $cat['category_name']?></option>	
+							<option value="2">Tin tự động đã xác nhận</option>
+							<option value="3">Tin tự động đã review, chưa xác nhận</option>
+							<option value="4">Tin viết đã xác nhận</option>
+							<option value="5">Tin viết đã review, chưa xác nhận</option>
+							<option value="6">Tin viết chưa submit</option>
+							<option value="7">Tin tự động chưa review</option>
+						<?php }
+						elseif ($_SESSION['role_id']=="1")
+						{?>
+							<option value="2">Tin theo chuyên mục phụ trách</option>
+							<option value="3">Tin viết đã review, chưa duyệt</option>
+							<option value="4">Tin tự động đã review, chưa duyệt</option>
+							<option value="5">Tin viết đã xác nhận</option>
+							<option value="6">Tin tự động đã xác nhận</option>
+						<?php }?>
+						<?php 
+						$incres=0;
+						if ($_SESSION['role_id']=="2") $increase=7;
+						elseif ($_SESSION['role_id']=="1") $increase=6;
+						elseif ($_SESSION['role_id']=="0") $increase=1;
+						
+						if ($_SESSION['role_id']=="2" || $_SESSION['role_id']=="1")
+						foreach($this->listCategories as $cat)
+						{?>
+							<option value="<?php echo $increase+$cat['category_id'];?>"><?php echo $cat['category_name']?></option>	
 						<?php }?>
 					</select>
 				</form>
@@ -66,114 +74,55 @@
 				</script>				
             </div>
     </header>
-    <div class="yui3-skin-sam">
-			<div class="example yui3-skin-sam" id="listnews">
-			</div>
-		</div>
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table_jui.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_page.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables_themeroller.css"/>
+	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$('#listnews').dataTable({
+			"sPaginationType": "full_numbers",
+			"iDisplayLength": 25
+		});
+		});
+	</script>
+	<style type="text/css">
+		.paging_full_numbers{float:none !important; width:auto !important; margin-top:15px !important}
+	</style>
 	<div class="tab_container">
-		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			YUI().use("datatable-sort",'datatable','gallery-paginator-view', 'gallery-datatable-paginator', function (Y) {
-				var data = [
-											<?php 
-													$count=0;
-													foreach ($this->list as $item)
-													{?>
-														{ news_title: '<?php echo $item['news_title'];?>', 
-															news_avatar: '<?php echo $item['news_avatar'];?>',
-															news_summary: '<?php $summ= str_replace(array("\n", "\r"), ' ', strip_tags($item['news_summary']));
-																			echo substr($summ, 0, 400);?>',   
-															news_author: "<?php echo $item['news_author'];?>",
-															news_modified_date: "<?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?>",
-															news_status: "<?php echo $item['news_status'];?>",
-															category_id: "<?php echo $this->categoriesid[$count]; ?>",
-															is_hot : "<?php if($item['is_hot'] == "1") echo 'Có'; else echo 'Không'; ?>",
-															optionedit: "<?php echo $item['news_id'];?>",
-															optiondel: "<?php  echo $item["news_id"]; ?>"
-														},
-													<?php $count++;}?>
-												];
-				var pagModel = new Y.PaginatorModel({itemsPerPage:25});
-				var cols=[{
-								key: 'news_title',
-								label: 'Tiêu đề',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true // Must be set or the html will be escaped
-							},
-							{
-								key: 'news_avatar',
-								label: 'Ảnh đại diện',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true 
-							},
-							{
-								key: 'news_summary',
-								label: 'Tóm tắt',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true 
-							},
-							{
-								key: 'news_author',
-								label: 'Tác giả',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'news_modified_date',
-								label:'Ngày sửa',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'news_status',
-								label:'Trạng thái',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'is_hot',
-								label:'Tin hot',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'optiondel',
-								label:'Xóa',
-								formatter: '<a class="del_button" onclick="confirmDel({value})" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>',
-								allowHTML: true
-							},
-							{
-								key: 'optionedit',
-								label:'Sửa',
-								formatter: '<a href="<?php echo $this->baseUrl();?>/admin/tintuc/edit/newsid/{value}" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>',
-								allowHTML: true
-							}];
-				var table = new Y.DataTable({
-					columns: cols,
-					data: data,
-					paginator: new Y.PaginatorView({
-			            model:          pagModel,
-			            sortable: true,
-			            dynamicData:true,
-			            sortedBy : {key:"news_title"},
-			            container:      '#pagContainerBar',
-			            paginatorTemplate:  '<a href="#" data-pglink="first" class="{pageLinkClass}" title="First Page">First</a> | '+
-                        '<a href="#" data-pglink="prev" class="{pageLinkClass}" title="Prior Page">Prev</a> | '+
-                        '{pageLinks} | <a href="#" data-pglink="next" class="{pageLinkClass}" title="Next Page">Next</a> | '+
-                        '<a href="#" data-pglink="last" class="{pageLinkClass}" title="Last Page">Last</a> &nbsp; Rows/Page: {selectRowsPerPage}'}),
-			        resizePaginator: true
-				});
-	
-				table.render("#listnews");
-			});
-		</script>
+		<table id="listnews">
+			<thead>
+				<th style="width:106px">Tiêu đề</th>
+				<th style="width:121px">Ảnh đại diện</th>
+				<th style="width:342px">Tóm tắt</th>
+				<th style="width:76px">Tác giả</th>
+				<th style="width:89px">Ngày sửa</th>
+				<th style="width:91px">Trạng thái</th>
+				<th  style="width:73px">Tin hot</th>
+				<th style="background:transparent">Sửa</th>
+				<th style="background:transparent">Xóa</th>
+			</thead>
+			<tbody>
+				<?php foreach ($this->list as $item)
+				{?>
+					<tr>
+						<td><?php echo $item['news_title'];?></td>
+						<td><?php echo $item['news_avatar'];?></td>
+						<td><?php $summ= str_replace(array("\n", "\r"), ' ', strip_tags($item['news_summary']));
+							echo substr($summ, 0, 400);?></td>
+						<td><?php echo $item['news_author'];?></td>
+						<td><?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?></td>
+						<td><?php echo $item['news_status'];?></td>
+						<td><?php if ($item['is_hot']=='1') echo 'Có'; else echo 'Không'?></td>
+						<td><a href="<?php echo $this->baseUrl();?>/admin/tintuc/edit/newsid/<?php echo $item['news_id']?>" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a></td>
+						<td><a class="del_button" onclick="confirmDel(<?php echo $item['news_id']?>)" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a></td>
+					</tr>
+				<?php }?>
+			</tbody>
+		</table>
 		<footer>
 				<div class="submit_link" style="float:right">
 					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/tintuc/insert');?>">Thêm mới</a>

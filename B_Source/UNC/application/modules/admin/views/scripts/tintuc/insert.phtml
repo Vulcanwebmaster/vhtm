@@ -68,24 +68,17 @@
 					<label>Ngày sửa</label>
 					<?php echo $this->form->getElement('news_modified_date');?>
 				</fieldset>
-				<?php
-					if($_SESSION['role_id'] == 0)
-					{
-				?>
 				<fieldset>
 					<label>Trạng thái</label>
 					<?php echo $this->form->getElement('news_status');?>
 				</fieldset>
-				<?php
-					}
-				?>
 				<fieldset>
 					<label>Danh mục</label>
 										<?php 
 					foreach($this->listParent as $parent)
 					{
 						?>
-						<input type="checkbox" onclick="checkall('item_<?php echo $parent['category_id']; ?>',this);" name="check_object/>
+						<input type="checkbox" onclick="checkall('item_<?php echo $parent['category_id']; ?>',this);" name="check_object"/>
 						<span style="text-transform: uppercase"><?php echo $parent['category_name']; ?></span>
 						<?php
 							foreach($this->listChild as $child)

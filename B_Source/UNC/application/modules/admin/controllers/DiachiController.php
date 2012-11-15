@@ -7,6 +7,8 @@
 		protected $user_id;
 		function init()
 		{
+			if (isset($_SESSION['role_id']))
+			{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
@@ -24,6 +26,8 @@
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
 			  $_SESSION["backend_current_menu"]="menu-diachilienket";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function indexAction()

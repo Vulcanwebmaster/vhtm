@@ -23,7 +23,7 @@ class Admin_DatajsonController extends Zend_Controller_Action
 		
 	}
 	
-	public function tintucSourceAction()
+	public function tintucsourceAction()
 	{
 		$mTinTuc = new Admin_Model_Mtintuc();
 		$this->view->list = $mTinTuc->getListNews();

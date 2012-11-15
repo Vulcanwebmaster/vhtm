@@ -24,10 +24,23 @@ class ThamdoController extends Zend_Controller_Action
 	
 	public function binhchonAction()
 	{
+		$result=false;
 		if ($this->_request->isPost())
 		{
-			$answer=$this->_request->getPost('answer');
-			$result=$this->mPoll->increasePollById($answer);
+			$selectType=$this->getParam("select-type");
+			if ($selectType=='0')
+			{
+				$answer=$this->_request->getPost('answer');
+				$result=$this->mPoll->increasePollById($answer);
+			}
+			elseif ($selectType=='1')
+			{
+				foreach ($_POST['answer'] as $answer)
+				{
+					$result=$this->mPoll->increasePollById($answer);
+				}
+			}
+			
 			if ($result)
 			{
 				$_SESSION['voted']='true';
@@ -36,4 +49,3 @@ class ThamdoController extends Zend_Controller_Action
 		$this->_redirect($this->view->baseUrl().'/../');
 	}
 }
-?>

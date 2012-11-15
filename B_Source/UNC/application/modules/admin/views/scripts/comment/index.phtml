@@ -54,15 +54,15 @@
 									?>
 									{ 
 										order: "<?php echo $count;?>", 
-										comment_content: "<?php $content = str_replace(array("\n", "\r"), ' ', strip_tags($item['comment_content']));
+										comment_content: "<?php $content = str_replace(array("\n", "\r"), ' ', strip_tags(str_replace('"',"'",$item['comment_content'])));
 														if(strlen($content) > 100)
 															echo word_limiter($content, 100).' ...';	
 														else echo word_limiter($content, 100);	?>",							
-										news_id: "<?php 
-											$string = $this->listNewsTitle[$count-1];
+										news_id: "<?php 											
+											$string = $this->listNewsTitle[($this->page-1)*25+$count-1];
 											if(strlen($string) > 100)
-												echo word_limiter($string, 100).' ...';	
-											else echo word_limiter($string, 100);
+												echo str_replace('"',"'",word_limiter($string, 100)).' ...';	
+											else echo str_replace('"',"'",word_limiter($string, 100));
 										 ?>",
 										sua: "<?php echo $item['comment_id']?>",
 										xoa: "<?php echo $item['comment_id']?>"

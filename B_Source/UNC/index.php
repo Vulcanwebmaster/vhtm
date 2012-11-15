@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
 //KHAI BÁO ĐƯỜNG DẪN VẬT LÝ
 defined('APPLICATION_PATH')

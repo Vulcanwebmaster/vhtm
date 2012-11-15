@@ -5,13 +5,17 @@
 		
 		function init()
 		{
+			@session_start();
+			
+			if (isset($_SESSION['role_id']))
+			{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
 			  $this->mUser=new Admin_Model_Muser();
-			  @session_start();
+			  
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {
@@ -23,6 +27,8 @@
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
 			  $_SESSION["backend_current_menu"]="menu-quanlytin";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function setForm($check,$id)

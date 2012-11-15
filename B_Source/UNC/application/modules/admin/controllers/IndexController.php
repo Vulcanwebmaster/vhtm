@@ -37,6 +37,7 @@ class Admin_IndexController extends Zend_Controller_Action
 			$account=$this->mAdmin->getAccountByUser($username);
 			$_SESSION['role_id']=$account['role_id'];
 			$_SESSION['user']=$username;
+			$_SESSION['fullname']=$account['user_fullname'];
 
 			$_SESSION['role'] = $this->mAdmin->getRoleByUser($username);
 			

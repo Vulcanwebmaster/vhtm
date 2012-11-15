@@ -294,3 +294,9 @@ a{ text-decoration: none }
 .pop-up img{box-shadow:0 0 15px 0 black; border:solid 5px white !important}
 #popup-close{margin:15px; color:white; cursor:pointer; font-size:16px; text-decoration:underline; text-align:right}
 #poll-panel{display:none}
+
+/*---------------- Video ---------------*/
+.play-button{position: absolute;
+background: url('../images/play-button.png') 50% 50% no-repeat;
+width: 115px;
+height: 90px;}

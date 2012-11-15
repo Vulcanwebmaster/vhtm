@@ -5,16 +5,20 @@
 		protected $role;
 		function init()
 		{
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
+				$layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
-		      @session_start();
 		      $this->mYoutube=new Admin_Model_Myoutube();
 			  $this->role = $_SESSION['role'];
 			  
 			  if ($_SESSION['role']!=0)
 			  	$this->_redirect($this->view->baseUrl().'/../admin');
+		  	}
+			else $this->_redirect($this->view->baseUrl().'/../admin');	 
 		}
 		
 		function indexAction()

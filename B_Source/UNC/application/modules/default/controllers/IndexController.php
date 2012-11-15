@@ -55,8 +55,10 @@ class IndexController extends Zend_Controller_Action
 		$this->view->listlienhe = $this->mDiachi->getListLienhe();
 		$this->view->listvanmieu = $this->mDiachi->getListVanmieu();
 		$this->view->listvomieu = $this->mDiachi->getListVomieu();
+		//======================== THAM DO================================
 		$this->view->listcauhoi = $this->mDefault->getListPolls();
 		$this->view->listtraloi = $this->mDefault->getListPolls1();
+		//===============================================================
 		$listParents=$this->mTintuc->getListParent();
 		$this->view->listParent = $listParents;
 		$listChild=$this->mTintuc->getListChild();

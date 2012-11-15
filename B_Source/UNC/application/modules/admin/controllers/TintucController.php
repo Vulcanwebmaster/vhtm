@@ -1,28 +1,10 @@
 <?php
 	class Admin_TintucController extends Zend_Controller_Action
 	{
-		private $mtintuc, $listParent,$listChild,$mChuyenmuc, $mRss;
+		private $mtintuc, $listParent,$listChild,$mChuyenmuc, $mRss, $mComment;
 		private $mtimkiem;
 		private $mdanhmuc;
 		public $dantri=array('http://www.dantri.com.vn/trangchu.rss');
-							/*'http://www.dantri.com.vn/chinh-tri.rss',
-							'http://www.dantri.com.vn/phongsu.rss',
-							'http://www.dantri.com.vn/moi-truong.rss',
-							'http://www.dantri.com.vn/donga.rss',
-							'http://www.dantri.com.vn/eu.rss',
-							'http://www.dantri.com.vn/tgchaumy.rss',
-							'http://www.dantri.com.vn/tgdiemnong.rss',
-							'http://www.dantri.com.vn/kieubao.rss',
-							'http://www.dantri.com.vn/tet-viet-xa-xu.rss',
-							'http://www.dantri.com.vn/bongtrongnuoc.rss',
-							'http://www.dantri.com.vn/bongquocte.rss',
-							'http://www.dantri.com.vn/cupchauau.rss',
-							'http://www.dantri.com.vn/bongdaanh.rss',
-							'http://www.dantri.com.vn/bongdaitalia.rss',
-							'http://www.dantri.com.vn/bongdataybannha.rss',
-							'http://www.dantri.com.vn/tennis_duaxe.rss',
-							'http://www.dantri.com.vn/cacmonkhac.rss',
-							'http://www.dantri.com.vn/sea-games-26.rss');*/
 		
 		private $title;
 		private $description;
@@ -33,31 +15,38 @@
 		
 		function init()
 		{
-			//=======clear array ====================
-			$this->title=array();
-			$this->description=array();
-			$this->link=array();
-			$this->date=array();
-			$this->source=array();
-			$this->content=array();
 			@session_start();
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-			$option = array ('layout' => 'index', 
-			                   'layoutPath' => $layoutPath );
-			Zend_Layout::startMvc ( $option );
-			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
-			$this->listParent = $this->mChuyenmuc->getListParent();
-			$this->listChild = $this->mChuyenmuc->getListChild();
-			$this->mtintuc=new Admin_Model_Mtintuc();
-			$this->mRss=new Admin_Model_Mrss();
-			$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
-			$this->mtimkiem=new Admin_Model_Mtimkiem();
 			
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			$_SESSION["backend_current_menu"]="menu-quanlytin";
+			if (isset($_SESSION['role_id']))
+			{
+				//=======clear array ====================
+				$this->title=array();
+				$this->description=array();
+				$this->link=array();
+				$this->date=array();
+				$this->source=array();
+				$this->content=array();
+				
+				$layoutPath = APPLICATION_PATH  . '/templates/admin';
+				$option = array ('layout' => 'index', 
+				                   'layoutPath' => $layoutPath );
+				Zend_Layout::startMvc ( $option );
+				$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+				$this->listParent = $this->mChuyenmuc->getListParent();
+				$this->listChild = $this->mChuyenmuc->getListChild();
+				$this->mtintuc=new Admin_Model_Mtintuc();
+				$this->mRss=new Admin_Model_Mrss();
+				$this->mdanhmuc=new Admin_Model_Mchuyenmuc();
+				$this->mtimkiem=new Admin_Model_Mtimkiem();
+				$this->mComment=new Admin_Model_Mcomment();
+				
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				$_SESSION["backend_current_menu"]="menu-quanlytin";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function getlistAction()
@@ -118,104 +107,108 @@
 			$this->view->listCategories=$this->mChuyenmuc->getListCM();
 			$viewtype=$this->_request->getParam('viewtype');
 			$list2=array();
+			
 			if ($_SESSION['role_id']==0)
 			{
 				$list1 = $this->mtintuc->getListNews();
-				$list2=array();
+				$list2=$list1;
+			}
+			elseif ($_SESSION['role_id']==1)
+			{
+				$list1 = $this->mtintuc->getListNewsByUserId($_SESSION['user_id']);
+				foreach ($list1 as $item)
+				{
+					if ($viewtype == 1){
+						$list2[]=$item;
+					}
+					elseif ($viewtype == 2){
+						$list2[]=$item;
+					}
+					elseif ($viewtype == 3){
+						if ($item['news_status']=="Đã duyệt" && $item['user_id']!="0")
+						$list2[]=$item;
+					}
+					elseif ($viewtype == 4){
+						if ($item['news_status']=="Đã duyệt" && $item['user_id']=="0")
+						$list2[]=$item;
+					}
+					elseif ($viewtype == 5){
+						if ($item['news_status']=="Công khai" && $item['user_id']!="0")
+						$list2[]=$item;
+					}
+					elseif ($viewtype == 6){
+						if ($item['news_status']=="Công khai" && $item['user_id']=="0")
+						$list2[]=$item;
+					}
+					elseif ($viewtype > 6){
+						$real_id=$viewtype-6;
+						if ($this->mtintuc->countChildById($real_id)==0)
+						{
+							if (strpos($item['category_id'], ','.$real_id.',')!==false) {
+								$list2[]=$item;
+							}
+						}
+						else 
+						{
+							$list2=$this->mtintuc->getListNewsByParentId($real_id);	
+						}
+					}		
+				}
+			}
+			elseif ($_SESSION['role_id']==2)
+			{
+				$list1 = $this->mtintuc->getListNewsByAuthor($_SESSION['user_id']);
 				foreach ($list1 as $item)
 				{
 					if ($viewtype == 1) {
 						$list2[]=$item;
 					} else if ($viewtype == 2) {
-						
-						if ($item['news_status']!='Đã duyệt' && $item['news_status']!='Chưa duyệt') {
+						if ($item['news_status']=='Công khai' && $item['user_id']=='0') {
 							$list2[]=$item;
 						}
-						
 					} else if ($viewtype == 3) {
-	
-						if ($item['news_status']=='Đã duyệt' || $item['news_status']=='Chưa duyệt') {
+						if ($item['news_status']=='Đã duyệt' && $item['user_id']=='0') {
 							$list2[]=$item;
 						}
-					} elseif ($viewtype > 3){
-						$real_id=$viewtype-3;
-						if (strpos($item['category_id'], ','.$real_id.',')!==false) {
+					}else if ($viewtype == 4) {
+						if ($item['news_status']=='Công khai' && $item['user_id']!='0') {
 							$list2[]=$item;
 						}
-					}					
-				}				
-				$paginator= Zend_Paginator::factory($list2);
-			}
-			elseif ($_SESSION['role_id']==1)
-			{
-				$userid=$_SESSION['user_id'];
-				$list1=$this->mtintuc->getListNewsByUserId($userid);
-				
-				foreach ($list1 as $item)
-				{
-					if ($viewtype == 1) {
-						if ($item['news_status']!='Chưa duyệt')
-							$list2[]=$item;
-						elseif  ($item['news_author']==$_SESSION['user'])
-							$list2[]=$item;	
-					} else if ($viewtype == 2) {
-						
-						if ($item['news_status']!='Đã duyệt' && $item['news_status']!='Chưa duyệt') {
+					}
+					else if ($viewtype == 5) {
+						if ($item['news_status']=='Đã duyệt' && $item['user_id']!='0') {
 							$list2[]=$item;
 						}
-						
-					} else if ($viewtype == 3) {
-	
-						if ($item['news_status']=='Đã duyệt') {
+					}
+					else if ($viewtype == 7) {
+						if ($item['news_status']=='Chưa duyệt' && $item['user_id']=='0') {
 							$list2[]=$item;
 						}
-					}elseif ($viewtype > 3){
-						$real_id=$viewtype-3;
-						if (strpos($item['category_id'], ','.$real_id.',')!==false) {
-							$list2[]=$item;
+					} elseif ($viewtype > 7){
+						$real_id=$viewtype-7;
+						if ($this->mtintuc->countChildById($real_id)==0)
+						{
+							if (strpos($item['category_id'], ','.$real_id.',')!==false) {
+								$list2[]=$item;
+							}
+						}
+						else 
+						{
+							$list2=$this->mtintuc->getListNewsByParentId($real_id);	
 						}
 					}					
 				}
-				$paginator= Zend_Paginator::factory($list2);	
 			}
-			elseif ($_SESSION['role_id']==2)
-			{
-				$userid=$_SESSION['user_id'];
-				$list1=$this->mtintuc->getListNewsByUserId($userid);
-				foreach ($list1 as $item)
-				{
-					if ($viewtype == 1) {
-						if ($item['news_status']=='Chưa duyệt' || $item['news_author']==$_SESSION['user'])
-							$list2[]=$item;
-					} elseif ($viewtype == 2) {
-						
-						if ($item['news_status']!='Đã duyệt' && $item['news_author']==$_SESSION['user'])
-							$list2[]=$item;
-												
-					} elseif ($viewtype == 3) {
-						
-						if (($item['news_status']=='Đã duyệt' && $item['news_author']==$_SESSION['user'])
-							|| $item['news_status']=='Chưa duyệt') {
-							$list2[]=$item;
-						}						
-					}elseif ($viewtype > 3){
-						$real_id=$viewtype-3;
-						if (strpos($item['category_id'], ','.$real_id.',')!==false) {
-							$list2[]=$item;
-						}
-					}	
-				}
-				$paginator= Zend_Paginator::factory($list2);
-			}
+			
+			$paginator= Zend_Paginator::factory($list2);
 			$paginator->setItemCountPerPage(25);
 			$current=$this->_request->getParam('page',1);
 			$paginator->setCurrentPageNumber($current);
 				
 			$this->view->title='Tin tức';
-			//echo count($list2);die();
-			$this->view->list=$list2;//$paginator;
+			$this->view->list=$list2;
 			$categoriesId=array();
-			foreach (/*$paginator*/$list2 as $new)
+			foreach ($list2 as $new)
 			{
 				$category=$this->mdanhmuc->getCmById($new['category_id']);
 				if ($category)
@@ -296,10 +289,11 @@
 		function autogetnews()
 		{	
 			$listRss=$this->mRss->getListRss();
-			//foreach ($listRss as $linkrss)
+			foreach ($listRss as $linkrss)
 			{
-				//$this->getListByLink($linkrss['link']);
-				$this->getListByLink('http://www.dantri.com.vn/trangchu.rss');
+				$category_id=$linkrss['campaign_id'];
+				$this->getListByLink($linkrss['link']);
+				//$this->getListByLink('http://www.dantri.com.vn/trangchu.rss');
 				$countNews=count($this->title);
 				for ($i=0; $i<$countNews; $i++)
 				{
@@ -308,7 +302,7 @@
 								'news_summary'=>$this->description[$i],
 								'news_content'=>$this->content[$i],
 								'news_author'=>'',
-								'category_id'=>'0',
+								'category_id'=>$category_id,
 								);
 					$this->mtintuc->insertNews($new);
 				}
@@ -418,6 +412,7 @@
 			$form->addElement('text','news_post_date');
 			$el=$form->getElement('news_post_date');
 			$el->setAttrib('class', 'datepicker');
+			$el->setValue(date("Y-m-d",time()+7*3600));
 			$el->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
 			$form->addElement('text','news_modified_date');
@@ -499,13 +494,30 @@
 						'news_modified_date'=>	$form->getValue('news_modified_date'),
 						'news_status'		=>	$form->getValue('news_status'),
 						'is_hot'			=> 	$form->getValue('is_hot')
+						
 						//'category_id'		=>	$form->getValue('category_id')
 						);
+			if ($form->getValue('news_status')=="Đã duyệt" && $_SESSION['role_id']=="2")	
+			{					
+				if (isset($_SESSION['reviewing']))
+				{
+					$input['review_id']=$_SESSION['user_id'];
+					$input['user_id']="0";
+					}
+				else 
+				{
+					$input['review_id']="0";
+					$input['user_id']=$_SESSION['user_id'];								 
+					}
+			}
+			else {								
+			}
 			return $input;
 		}
 		
 		function insertAction()
 		{
+			unset($_SESSION['reviewing']);
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -526,12 +538,11 @@
 				else
 				{
 					$input=$this->_getInput($form);
-					$checkbox ="";
+					$checkbox =",";
 					foreach($_POST['checkbox'] as $check)
 					{
 						$checkbox = $checkbox.$check.',';
 					}
-					$_SESSION['result']='Thêm mới thành công';
 					
 					if($this->mtintuc->addNews($input,$checkbox))
 					{
@@ -557,6 +568,12 @@
 			$form=$this->setForm();
 			$newsId=$this->_request->getParam('newsid');
 			$info=$this->mtintuc->getnewsById($newsId);
+			
+			if ($info['review_id']=='0' && $info['user_id']=='0')
+				$_SESSION['reviewing']='1';
+			else unset($_SESSION['reviewing']);
+			
+			
 			$this->view->listParent = $this->listParent;
 			$this->view->listChild = $this->listChild;
 			$this->view->listCategoryId = $this->mChuyenmuc->getListCategoryIdByUserId($newsId);

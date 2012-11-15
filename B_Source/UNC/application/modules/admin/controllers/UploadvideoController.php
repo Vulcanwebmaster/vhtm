@@ -10,11 +10,13 @@
 		
 		function init()
 		{
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
 			  $layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
-		      @session_start();
 			  $this->mVideo = new Admin_Model_Mvideo();
 			  $this->mYoutube = new Admin_Model_Myoutube();
 			  $account = $this->mYoutube->getAccountSelected();
@@ -41,6 +43,8 @@
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
 			  $_SESSION["backend_current_menu"]="menu-quanlyvideo";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function _httpClient()
@@ -406,7 +410,7 @@
 		{
 			if ($_SESSION['role_id']!=0)
 			{
-				$this->_redirect($this->view->baseUrl().'/../admin');
+				$this->_redirect($this->view->baseUrl().'/../admin/uploadvideo');
 			}
 			else 
 			{

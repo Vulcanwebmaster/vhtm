@@ -43,9 +43,8 @@
 								{?>
 									{ 
 										order: "<?php echo $count;?>", 
-										name: "<?php echo $item['name'];?>",   
-										edit: "<?php echo $item['id']?>",
-										delete: "<?php echo $item['id']?>"
+										name: "<?php echo $item['category_name'];?>",   
+										edit: "<?php echo $item['category_id']?>"
 									},
 								<?php $count++;}?>
 							];
@@ -64,19 +63,13 @@
 								key: 'name',
 								label: 'Tên danh mục',
 								sortable:true,
-								formatter: '<a style="text-decoration:underline" href="<?php echo $this->baseUrl();?>/admin/getnewssetting/showlistrss/campaign_name/{value}">{value}</a>',
+								formatter: '<span>{value}</span>',//<a style="text-decoration:underline" href="<?php echo $this->baseUrl();?>/admin/getnewssetting/showlistrss/campaign_name/{value}">{value}</a>,
 								allowHTML: true 
 							},
 							{
 								key: 'edit',
-								label:'<center>Sửa</center>',
-								formatter: '<center><a href="<?php echo $this->baseUrl();?>/admin/getnewssetting/edit/campaign_id/{value}" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a></center>',
-								allowHTML: true
-							},
-							{
-								key: 'delete',
-								label:'<center>Xóa</center>',
-								formatter: '<center><a class="del_button" onclick="confirmDel({value})" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a></center>',
+								label:'<center>Chi tiết</center>',
+								formatter: '<center><a href="<?php echo $this->baseUrl();?>/admin/getnewssetting/showlistrss/campaign_id/{value}" title="Chi tiết"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a></center>',
 								allowHTML: true
 							}],
 					data: data,

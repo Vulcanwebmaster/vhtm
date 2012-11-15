@@ -41,7 +41,9 @@
 		{
 			$query=$this->db->query('select category_name from unc_category where category_id="'.$id.'"');
 			$list=$query->fetchAll();
-			return $list[0];
+			if (count($list)>0)
+				return $list[0];
+			else return false;
 		}
 		
 		function getCmById($id)
@@ -87,6 +89,19 @@
 		{
 			$query=$this->db->query('select * from unc_category where category_parent_id="'.$parentId.'"');
 			$list=$query->fetchAll();
+			return $list;
+		}
+		
+		function getListChildFull()
+		{
+			$query=$this->db->query('select * from unc_category');
+			$listFull=$query->fetchAll();
+			$list=array();
+			foreach ($listFull as $cate)
+			{
+				if (count($this->getListChildByParentId($cate['category_id']))==0)
+					$list[]=$cate;
+			}
 			return $list;
 		}
 		

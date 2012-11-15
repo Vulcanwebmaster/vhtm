@@ -13,20 +13,25 @@ if ($this->showpoll=='1')
 						<!--Câu hỏi-->
 					<p><strong>
 					<?php
-					foreach($this->listcauhoi as $listcauhoi)
-					{
-						echo $listcauhoi['polls_content'];
-					}
+					if (count($this->listcauhoi)>0)
+						$selectType=$this->listcauhoi[0]['multiselect'];
+					else $selectType=false;
+					if ($selectType)
+						foreach($this->listcauhoi as $listcauhoi)
+						{
+							echo $listcauhoi['polls_content'];
+						}
 					?></strong></p>
 						<!--End Câu hỏi-->
 						<!--Trả lời-->
+					<input type="hidden" value="<?php echo $selectType?>" name="select-type"/>
 					<ul style="list-style-type:none">
 						<?php
 						foreach($this->listtraloi as $listtraloi)
 						{
 						?>
 							<li style="float:none">
-							<input type="radio" name="answer" value="<?php echo $listtraloi['polls_id'];?>"/>
+							<input type="<?php if ($selectType=='0') echo 'radio'; else echo 'checkbox'?>" name="answer[]" value="<?php echo $listtraloi['polls_id'];?>"/>
 						<?php
 							echo $listtraloi['polls_content'];
 							echo '</li>';

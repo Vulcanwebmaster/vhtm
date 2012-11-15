@@ -29,6 +29,7 @@
 	
 	function addNews($input,$checkbox)
 	{
+		$input['category_id']=$checkbox;
 		if (!$this->isExist($input['news_title']))
 		{
 			$query=$this->insert($input);
@@ -80,6 +81,25 @@
 		}
 		return $result;
 	} 
+	
+	function getListNewsByAuthor($userId)
+	{
+		$query=$this->db->query("select * from unc_news where user_id='".$userId."'");
+		$list=$query->fetchAll();
+		$mChuyenmuc=new Admin_Model_Mchuyenmuc();
+		$listCategories=$mChuyenmuc->getListCategoryIdByUserId($userId);
+		foreach ($listCategories as $category)
+		{
+			$moreList=$this->getNewsByCategoryId($category['category_id']);
+			foreach ($moreList as $item)
+			{
+				if ($item['news_status']=="Chưa duyệt" && $item['user_id']!=$userId)
+					if (!$this->isContain($list, $item))
+						$list[]=$item;
+			}
+		}
+		return $list;
+	}
 	
 	function isContain($list, $item)
 	{
@@ -135,26 +155,14 @@
 	{
 		$news_title=$input['news_title'];
 		$news_alias=$input['alias'];
-		$news_summary=$this->replaceChar("'",'"', $input['news_summary']);
-		$news_avatar=$this->replaceChar("'",'"', $input['news_avatar']);
-		$news_content=$this->replaceChar("'",'"', $input['news_content']);
-		//$news_author=$input['news_author'];
-		if ($input['news_status'] != "Chưa duyệt") {
-			$news_author=$input['news_author'];
-		} else {
-			$news_author="";
+		$input['news_summary']=$this->replaceChar("'",'"', $input['news_summary']);
+		$input['news_avatar']=$this->replaceChar("'",'"', $input['news_avatar']);
+		$input['news_content']=$this->replaceChar("'",'"', $input['news_content']);
+		if ($input['news_status'] == "Chưa duyệt") {
+			$input['news_author']='';
 		}		
-		$news_post_date=$input['news_post_date'];
-		$news_modified_date=$input['news_modified_date'];
-		$news_status=$input['news_status'];
-		//$category_id=$input['category_id'];
-		$is_hot = $input['is_hot'];
-		
-		$query=$this->db->query("update unc_news 
-								set news_title='".$news_title."',  alias='".$news_alias."', news_summary='".$news_summary."', news_avatar='".$news_avatar."', news_content='".$news_content."', news_author='".$news_author."', news_post_date='".$news_post_date."',news_modified_date='".$news_modified_date."',news_status='".$news_status."',category_id='".$checkbox."',is_hot='".$is_hot."'
-								where news_id='".$id."'");
+		$query=$this->update($input,"news_id='".$id."'");
 		return $query;
-		//set news_title="'.$news_title.'", news_summary="'.$news_summary.'", news_content="'.$news_content.'", news_author="'.$news_author.'", news_post_date="'.$news_post_date.'",news_modified_date="'.$news_modified_date.'",news_status="'.$news_status.'",category_id="'.$category_id.'"
 	}
 
 	function countChildById($category_id)
@@ -164,32 +172,45 @@
 		return count($list);
 	}
 
-		function getListAllThamdo()
-		{
-			$query=$this->db->query("select * from unc_polls");
-			return $query->fetchAll();
-		}
-		function getListThamdobyid($polls_id)
-		{
-			$query = $this->db->query('select * from unc_polls where polls_id = "'.$polls_id.'"');
-			$list = $query->fetchAll();
+	function getListAllThamdo()
+	{
+		$query=$this->db->query("select * from unc_polls where polls_type!='2'");
+		return $query->fetchAll();
+	}
+	function getListThamdobyid($polls_id)
+	{
+		$query = $this->db->query('select * from unc_polls where polls_id = "'.$polls_id.'"');
+		$list = $query->fetchAll();
+		if (count($list)>0)
 			return $list[0];
-		}
-		function editThamdo($polls_id,$input)
+		else return false;
+	}
+	public function deletethamdo($polls_id)
+	{
+		$query=$this->db->query('delete from unc_polls where polls_id="'.$polls_id.'"');
+		return $query;
+	}
+	
+	public function getListNewsByParentId($parent_id)
+	{
+		$result=array();
+		$query1=$this->db->query("select * from unc_category where category_parent_id='".$parent_id."'");
+		$listChilds=$query1->fetchAll();
+		foreach ($listChilds as $child)
 		{
-			$query=$this->db->query('update unc_polls 
-									set polls_content="'.$input['polls_content'].'"
-									where polls_id="'.$polls_id.'"');
-			return $query;
-		}	
-		public function insertthamdo($input)
-		{
-			if($this->db->insert('unc_polls',$input)) return true;
-			else return FALSE;
+			$currentList=$this->getNewsByCategoryId($child['category_id']);
+			foreach ($currentList as $item)
+			{
+				if (!$this->isContain($result, $item))
+					$result[]=$item;
+			}
 		}
-		public function deletethamdo($polls_id)
-		{
-			$query=$this->db->query('delete from unc_polls where polls_id="'.$polls_id.'"');
-			return $query;
-		}
+		return $result;
+	}
+	
+	public function getNewsByCategoryId($category_id)
+	{
+		$query1=$this->db->query("select * from unc_news where category_id like '%,".$category_id.",%'");
+		return $query1->fetchAll();
+	}
 }

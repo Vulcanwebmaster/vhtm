@@ -11,7 +11,7 @@
 		
 		function getListComment()
 		{
-			$query=$this->db->query('select * from unc_comment');
+			$query=$this->db->query('select * from unc_comment order by comment_id desc');
 			return $query->fetchAll();
 		}
 		

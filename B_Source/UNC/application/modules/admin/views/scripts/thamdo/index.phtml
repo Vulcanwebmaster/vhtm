@@ -55,8 +55,10 @@
 								{?>
 									{ order: '<?php echo $count;?>', 
 										polls_content: "<?php echo $item['polls_content'];?>",
-										polls_status: "<?php if ($item['polls_status']==0) echo 'Câu hỏi'; else echo 'Câu trả lời';?>",
+										polls_status: "<?php if ($item['polls_type']==0) echo 'Câu hỏi'; else echo 'Câu trả lời';?>",
 										polls_vote:	   "<?php echo $item['polls_vote'];?>",
+										multiselect:	   "<?php if ($item['polls_type']=='0') if ($item['multiselect']=='0') echo "Không"; else echo "Có"?>",
+										is_active:	   "<?php if ($item['is_active']=='0') echo "Không"; else echo "Có"?>",
 										sua: 
 											'<?php 
 												echo '<a href="'.$this->baseUrl().'/admin/thamdo/edit/pollsid/'.$item['polls_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
@@ -100,6 +102,21 @@
 								formatter: '<center>{value}</center>',
 								allowHTML: true
 							},
+							{
+								key: 'multiselect',
+								label: 'Chọn nhiều',
+								sortable:true,
+								formatter: '<center>{value}</center>',
+								allowHTML: true
+							},
+							{
+								key: 'is_active',
+								label: 'Kích hoạt',
+								sortable:true,
+								formatter: '<center>{value}</center>',
+								allowHTML: true
+							}<?php if ($_SESSION['role_id']=="0")
+							{?>,
 							
 							{
 								key: 'sua',
@@ -112,7 +129,7 @@
 								label:'<center>Xóa</center>',
 								formatter: '<center>{value}</center>',
 								allowHTML: true
-							}],
+							}<?php }?>],
 					data: data,
 				});
 	

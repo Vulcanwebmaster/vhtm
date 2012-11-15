@@ -6,23 +6,27 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 		
 		function init()
 		{
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-		      $option = array ('layout' => 'index', 
-		                   'layoutPath' => $layoutPath );
-		      Zend_Layout::startMvc ( $option );
-			  $this->mquangcao=new Admin_Model_Mquangcao();
-			  @session_start();
-			  if(isset($_SESSION['role']))
-			  	$this->role = $_SESSION['role'];
-			  else {
-				  $this->_redirect($this->view->baseUrl().'/../admin');
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
+				$layoutPath = APPLICATION_PATH  . '/templates/admin';
+			      $option = array ('layout' => 'index', 
+			                   'layoutPath' => $layoutPath );
+			      Zend_Layout::startMvc ( $option );
+				  $this->mquangcao=new Admin_Model_Mquangcao();
+				  if(isset($_SESSION['role']))
+				  	$this->role = $_SESSION['role'];
+				  else {
+					  $this->_redirect($this->view->baseUrl().'/../admin');
+				  }
+				  if(isset($_SESSION['user_id']))
+				 	 $this->user_id = $_SESSION['user_id'];
+				  else {
+					  $this->_redirect($this->view->baseUrl().'/../admin');
+				  }
+				  $_SESSION["backend_current_menu"]="menu-quanlyanh";
 			  }
-			  if(isset($_SESSION['user_id']))
-			 	 $this->user_id = $_SESSION['user_id'];
-			  else {
-				  $this->_redirect($this->view->baseUrl().'/../admin');
-			  }
-			  $_SESSION["backend_current_menu"]="menu-quanlyanh";
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function setForm()

@@ -30,132 +30,57 @@
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
-		<!-- div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="0">
-				<thead> 
-					<tr> 
-						<th>Số thứ tự</th>
-	    				<th>Tên đăng nhập</th> 
-	    				<th>Tên</th>
-	    				<th>Email</th>
-	    				<th>Kích hoạt</th>
-	    				<th>Tùy chọn</th>
-					</tr> 
-				</thead>
-				<tbody>
-				 	<?php 
-				 	$count=1;
-				 	foreach ($this->list as $item)
-				 	{?>
-				 		<tr>  
-				 			<td><?php echo $count; $count++;?></td>
-		    				<td><?php echo $item['user_login'];?></td> 
-		    				<td><?php echo $item['user_fullname'];?></td>
-		    				<td><?php echo $item['user_email'];?></td>
-		    				<td><?php 
-		    					if ($item['is_active']=='1')
-		    						echo 'Có';
-		    					else echo 'Không';?></td>
-		    				<td>
-		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/edit/userid/<?php echo $item['user_id']?>" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a>
-		    					<a href="<?php echo $this->baseUrl();?>/admin/phongvien/delete/userid/<?php echo $item['user_id']?>" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a>
-		    				</td>
-						</tr>
-				 	<?php }?>
-				</tbody>
-			</table>
-		</div -->
-		
-		<script src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js" type="text/javascript"></script>
-		
-		<script type="text/javascript">
-			YUI().use('datatable', function (Y) {
-				var data = [
-								<?php 
-								$count=1;
-								foreach ($this->list as $item)
-								{?>
-									{ 
-										order: '<?php echo $count;?>', 
-										user_login: '<?php echo $item['user_login'];?>',   
-										user_fullname: '<?php echo $item['user_fullname'];?>',
-										user_email: '<?php echo $item['user_email'];?>',
-										is_active: '<?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?>',
-										sua: 
-											'<?php 
-												if($this->role =="0" | ($this->role =="2" & $item['user_login']==$this->user))
+		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table_jui.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_page.css"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables_themeroller.css"/>
+	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$('#listnews').dataTable({
+			"sPaginationType": "full_numbers",
+			"iDisplayLength": 25
+		});
+		});
+	</script>
+	<style type="text/css">
+		.paging_full_numbers{float:none !important; width:auto !important; margin-top:15px !important}
+	</style>
+	<div class="tab_container">
+		<table id="listnews">
+			<thead>
+				<th>Thứ tự</th>
+				<th>Tên đăng nhập</th>
+				<th>Họ tên</th>
+				<th>Email</th>
+				<th>Kích hoạt</th>
+				<th style="background:transparent">Sửa</th>
+				<th style="background:transparent">Xóa</th>
+			</thead>
+			<tbody>
+				<?php 
+				$count=1;
+				foreach ($this->list as $item)
+				{?>
+					<tr>
+						<td><?php echo $count;?></td>
+						<td><?php echo $item['user_login'];?></td>
+						<td><?php echo $item['user_fullname'];?></td>
+						<td><?php echo $item['user_email'];?></td>
+						<td><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td>
+						<td><?php if($this->role =="0" | ($this->role =="2" & $item['user_login']==$this->user))
 													echo '<a href="'.$this->baseUrl().'/admin/phongvien/edit/userid/'.$item['user_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
-											?>',
-										xoa : 
-										'<?php
-											if($this->role =="0")
+											?></td>
+						<td><?php if($this->role =="0")
 												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
-										?>'
-									},
-								<?php $count++;}?>
-							];
+										?></td>
+					</tr>
+				<?php $count++; }?>
+			</tbody>
+		</table>
 				
-				var count=1;
-				
-				var table = new Y.DataTable({
-					columns: [{
-								key: 'order',
-								label: 'Số thứ tự',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'user_login',
-								label: 'Tên đăng nhập',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true 
-							},
-							{
-								key: 'user_fullname',
-								label: 'Họ tên',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'user_email',
-								label:'Email',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'is_active',
-								label:'Kích hoạt',
-								sortable:true,
-								formatter: '<span>{value}</span>',
-								allowHTML: true
-							},
-							{
-								key: 'sua',
-								label:'<center>Sửa</center>',
-								formatter: '<center>{value}</center>',
-								allowHTML: true
-							},
-							{
-								key: 'xoa',
-								label:'<center>Xóa</center>',
-								formatter: '<center>{value}</center>',
-								allowHTML: true
-							}],
-					data: data,
-				});
-	
-				table.render("#listnews");
-			});
-		</script>
-		<div class="yui3-skin-sam">
-			<div class="example yui3-skin-sam" id="listnews">
-			</div>
-		</div>
-		
 		<footer>
 			<div class="submit_link" style="float:right"">
 				<?php

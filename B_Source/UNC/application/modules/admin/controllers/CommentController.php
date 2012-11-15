@@ -7,12 +7,15 @@
 		protected $user_id;
 		function init()
 		{
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mComment = new Admin_Model_Mcomment();
-			  @session_start();
+			  
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {
@@ -24,6 +27,8 @@
 				  $this->_redirect($this->view->baseUrl().'/../admin');
 			  }
 			  $_SESSION["backend_current_menu"]="menu-quanlytin";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function indexAction()
@@ -41,11 +46,11 @@
 			
 			if($this->role =="0")
 			{
-				$listComments = $this->mComment->getListComment();
+				$listComments = $this->mComment->getListComment();				
 				//Nếu là admin thì lấy ra danh sách tất cả các comment
 				$paginator = Zend_Paginator::factory($listComments);
 			}
-			else if($this->role =="1")	
+			elseif($this->role =="1")	
 			{
 				//Nếu là trưởng ban
 				//Lấy ra danh sách chuyên mục mà trưởng ban đó quản lý
@@ -79,7 +84,7 @@
 				//var_dump($listComments);die();
 				$paginator = Zend_Paginator::factory($listComments);
 			}
-			else if($this->role == "2")
+			elseif($this->role == "2")
 			{
 				$comments = $this->mComment->getListComment();
 				//Nếu là phóng viên 
@@ -103,15 +108,16 @@
 			//var_dump($listComments);die();
 			
 			foreach($listComments as $comments)
-			{
+			{				
 				$listNewsTitle[] = $this->mComment->getNewsTitleByNewsId($comments['news_id']);
-			}
+			}			
 			
-        	$paginator->setItemCountPerPage(25);        
-        	$currentPage = $this->_request->getParam('page',1);
-         	$paginator->setCurrentPageNumber($currentPage);
-			
-        	$this->view->list=$paginator;
+	        	$paginator->setItemCountPerPage(25);        
+	        	$currentPage = $this->_request->getParam('page',1);
+	         	$paginator->setCurrentPageNumber($currentPage);
+				
+			$this->view->page=$currentPage;
+	        	$this->view->list=$paginator;
 			$this->view->title="Quản lý comment";
 			$this->view->listNewsTitle = $listNewsTitle;
 			$this->view->listReaderName = $listReaderName;
@@ -153,7 +159,7 @@
 		{
 			if ($_SESSION['role_id']=='2')
 			{
-				$this->_redirect($this->view->baseUrl().'/../admin');
+				$this->_redirect($this->view->baseUrl().'/../admin/comment');
 			}
 			else 
 			{

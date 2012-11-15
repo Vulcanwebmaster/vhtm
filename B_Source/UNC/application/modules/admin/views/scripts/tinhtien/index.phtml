@@ -13,6 +13,11 @@
 		$("#thongke-form").submit(function(){
 			var from=$("#fromdate").val().replace('/','-').replace('/','-');
 			var to=$("#todate").val().replace('/','-').replace('/','-');
+			if (from=='' || to=='')
+			{
+				alert("Hãy chọn ngày bắt đầu và ngày kết thúc");
+				return false;
+			}
 			var name=$(this).val();
 			if (name!='')
 				$("#datatable").load("<?php echo $this->baseUrl();?>/admin/tinhtien/thongke/name/"+name+"/fromdate/"+from+"/todate/"+to);
@@ -45,14 +50,17 @@
 	});
 </script>
 <fieldset style="margin:15px; padding:15px; width:20%; float:right">
-	<form action="<?php echo $this->baseUrl()?>/admin/tinhtien/price" method="post">
+	<form action="<?php echo $this->baseUrl()?>/admin/tinhtien/price" method="post" name="price-form" id="price-form">
 		<h2>Giá tiền nhuận bút</h2>
 		<p>Viết bài mới: <input style="width:auto !important" type="text" name="new-post-price" id="new-post-price" value="<?php echo $this->price_post['price'];?>"/></p>
 		<br/>
 		<p>Duyệt tin tự động: <input style="width:auto !important" type="text" name="review-price" id="review-price" value="<?php echo $this->price_review['price'];?>"/></p>
 		<br/>
 		<br/>
-		<input type="submit" value="Cập nhật"/>
+		<?php if ($_SESSION['role_id']=='0')
+		{?>
+			<input type="submit" value="Cập nhật"/>
+		<?php }?>
 	</form>
 </fieldset>
 <div style="float:left; padding:0 15px">

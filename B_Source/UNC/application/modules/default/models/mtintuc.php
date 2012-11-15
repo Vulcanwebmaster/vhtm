@@ -123,7 +123,7 @@
 
 		function getCommentByNewsId($news_id)
 		{
-			$query = $this->db->query('select * from unc_comment where news_id = "'.$news_id.'" order by comment_time desc');
+			$query = $this->db->query('select * from unc_comment where news_id = "'.$news_id.'" order by comment_id desc');
 			return $query->fetchAll();
 		}
 		

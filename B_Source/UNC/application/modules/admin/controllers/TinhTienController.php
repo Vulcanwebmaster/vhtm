@@ -4,31 +4,39 @@
 		private $mTinhtien,$mTintuc;
 		function init()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-		      $option = array ('layout' => 'index', 
-		                   'layoutPath' => $layoutPath );
-		      Zend_Layout::startMvc ( $option );
-			  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
-			  $this->mTinhtien = new Admin_Model_Mtinhtien();
-			  $this->mTintuc = new Admin_Model_Mtintuc();
-			  @session_start();
-			  if(isset($_SESSION['role']))
-			  	$this->role = $_SESSION['role'];
-			  else {
-				  $this->_redirect($this->view->baseUrl().'/../admin');
-			  }
-			  if(isset($_SESSION['user']))
-			 	 $this->user = $_SESSION['user'];
-			  else {
-				  $this->_redirect($this->view->baseUrl().'/../admin');
-			  }
-			  $_SESSION['backend_current_menu']="menu-quanlychung";
-			  
-			  $this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
+				if ($_SESSION['role_id']!='2')
+				{
+					$this->view->headTitle('UNC - Admin website');
+					$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+					$layoutPath = APPLICATION_PATH  . '/templates/admin';
+				      $option = array ('layout' => 'index', 
+				                   'layoutPath' => $layoutPath );
+				      Zend_Layout::startMvc ( $option );
+					  $this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+					  $this->mTinhtien = new Admin_Model_Mtinhtien();
+					  $this->mTintuc = new Admin_Model_Mtintuc();
+					  if(isset($_SESSION['role']))
+					  	$this->role = $_SESSION['role'];
+					  else {
+						  $this->_redirect($this->view->baseUrl().'/../admin');
+					  }
+					  if(isset($_SESSION['user']))
+					 	 $this->user = $_SESSION['user'];
+					  else {
+						  $this->_redirect($this->view->baseUrl().'/../admin');
+					  }
+					  $_SESSION['backend_current_menu']="menu-quanlychung";
+					  
+					  $this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+					$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+					$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				}
+				else $this->_redirect($this->view->baseUrl().'/../admin');
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		function indexAction()
 		{
@@ -74,19 +82,22 @@
 					foreach ($listNews as $news)
 					{
 						if ($news['review_id']==$userId)
-						{
-							$check++;
-							echo ($from_date<$to_date); die();
+						{							
 							if ($from_date<str_replace('-', '/', $news['news_modified_date']) && str_replace('-', '/', $news['news_modified_date'])<=$to_date
 								&& $news['news_status']=='Công khai')
+							{
+								$check++;
 								$money+=$price_review['price'];
+							}
 						}
 						elseif ($news['user_id']==$userId)
-						{
-							$post++;
+						{							
 							if ($from_date<=str_replace('-', '/',$news['news_post_date']) && str_replace('-', '/',$news['news_post_date'])<=$to_date
 								&& $news['news_status']=='Công khai')
+							{
+								$post++;
 								$money+=$price_post['price'];
+							}
 						}
 					}
 					$listMoney[]=$money;
@@ -100,16 +111,18 @@
 			}
 			else 
 			{
-				$this->view->error="Hãy chọn ngày bắt đầu và kết thúc.";
 			}
 		}
 		
 		function priceAction()
 		{
-			$price_post=$this->_request->getPost('new-post-price');
-			$price_review=$this->_request->getPost('review-price');
-			$this->mTinhtien->updatePriceById('1', array('price'=>$price_post));
-			$this->mTinhtien->updatePriceById('2', array('price'=>$price_review));
-			$this->_redirect($this->view->baseUrl().'/../admin/tinhtien/thongke');
+			if ($_SESSION['role_id']=='0')
+			{
+				$price_post=$this->_request->getPost('new-post-price');
+				$price_review=$this->_request->getPost('review-price');
+				$this->mTinhtien->updatePriceById('1', array('price'=>$price_post));
+				$this->mTinhtien->updatePriceById('2', array('price'=>$price_review));
+			}
+			$this->_redirect($this->view->baseUrl().'/../admin/tinhtien');
 		}
 	}

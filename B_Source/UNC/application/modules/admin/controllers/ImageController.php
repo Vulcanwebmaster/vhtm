@@ -6,20 +6,24 @@
 		function init()
 		{
 			@session_start();
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-		    $option = array ('layout' => 'index', 
-		                   'layoutPath' => $layoutPath );
-		    Zend_Layout::startMvc ( $option );
-			$this->mImage = new Admin_Model_Mimage();
-			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
-			$this->listParent = $this->mChuyenmuc->getListParent();
-			$this->listChild = $this->mChuyenmuc->getListChild();
-			if(isset($_SESSION['role']))
-			  	$this->role = $_SESSION['role'];
-			  else {
-				  $this->_redirect($this->view->baseUrl().'/../admin');
-			  }
-			$_SESSION["backend_current_menu"]="menu-quanlyanh";
+			if (isset($_SESSION['role_id']))
+			{
+				$layoutPath = APPLICATION_PATH  . '/templates/admin';
+			    $option = array ('layout' => 'index', 
+			                   'layoutPath' => $layoutPath );
+			    Zend_Layout::startMvc ( $option );
+				$this->mImage = new Admin_Model_Mimage();
+				$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+				$this->listParent = $this->mChuyenmuc->getListParent();
+				$this->listChild = $this->mChuyenmuc->getListChild();
+				if(isset($_SESSION['role']))
+				  	$this->role = $_SESSION['role'];
+				  else {
+					  $this->_redirect($this->view->baseUrl().'/../admin');
+				  }
+				$_SESSION["backend_current_menu"]="menu-quanlyanh";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function indexAction()
@@ -95,7 +99,7 @@
 				else
 				{
 					$input=$this->_getInput($form);
-					$checkbox ="";
+					$checkbox =",";
 					foreach($_POST['checkbox'] as $check)
 					{
 						//echo "$check + ';'";

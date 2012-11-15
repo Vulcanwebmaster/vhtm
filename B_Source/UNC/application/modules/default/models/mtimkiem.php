@@ -22,7 +22,7 @@ class Default_Model_Mtimkiem extends Zend_Db_Table_Abstract
 	
 	function getNewsByKey($key)
 	{
-
+		$key=strtolower($key);
 		$data=$this->db->query('select * from unc_news where news_status="Công khai" and news_title like "%'.$key.'%"');
 	    $list1=$data->fetchAll();
 	    	    

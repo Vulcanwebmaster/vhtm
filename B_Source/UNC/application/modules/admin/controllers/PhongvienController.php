@@ -6,36 +6,40 @@
 		protected $role;
 		function init()
 		{
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
-		    $option = array ('layout' => 'index', 
-		                   'layoutPath' => $layoutPath );
-		    Zend_Layout::startMvc ( $option );
-		    $this->mUser=new Admin_Model_Muser();
 			@session_start();
-			$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
-			$this->listParent = $this->mChuyenmuc->getListParent();
-			$this->listChild = $this->mChuyenmuc->getListChild();
-			  
-			if(isset($_SESSION['role']))
-			  	$this->role = $_SESSION['role'];
-			else {
-				$this->_redirect($this->view->baseUrl().'/../admin');
+			if (isset($_SESSION['role_id']))
+			{
+				$layoutPath = APPLICATION_PATH  . '/templates/admin';
+			    $option = array ('layout' => 'index', 
+			                   'layoutPath' => $layoutPath );
+			    Zend_Layout::startMvc ( $option );
+			    $this->mUser=new Admin_Model_Muser();
+				$this->mChuyenmuc = new Admin_Model_Mchuyenmuc();
+				$this->listParent = $this->mChuyenmuc->getListParent();
+				$this->listChild = $this->mChuyenmuc->getListChild();
+				  
+				if(isset($_SESSION['role']))
+				  	$this->role = $_SESSION['role'];
+				else {
+					$this->_redirect($this->view->baseUrl().'/../admin');
+				}
+				if(isset($_SESSION['user']))
+					$this->user = $_SESSION['user'];
+				else {
+					$this->_redirect($this->view->baseUrl().'/../admin');
+				}
+				$_SESSION['backend_current_menu']="menu-quanlychung";
+				
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			}
-			if(isset($_SESSION['user']))
-				$this->user = $_SESSION['user'];
-			else {
-				$this->_redirect($this->view->baseUrl().'/../admin');
-			}
-			$_SESSION['backend_current_menu']="menu-quanlychung";
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function indexAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
 			if($this->role =="0")
 			{
 				$paginator = Zend_Paginator::factory($this->mUser->getListByRole('2'));
@@ -125,24 +129,25 @@
 		
 		function deleteAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$userid=$this->_request->getParam('userid');
-			if($this->role == "0")
+			if ($_SESSION['role_id']!='0')
 			{
-				if ($this->mUser->deleteUser($userid))
-					$_SESSION['result']='Xóa thành công';
-				else $_SESSION['result']='Xóa không thành công';
+				$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 			}
-			else 
 			{
-				$_SESSION['result']='Bạn không có quyền xóa mục này !';
+				$userid=$this->_request->getParam('userid');
+				if($this->role == "0")
+				{
+					if ($this->mUser->deleteUser($userid))
+						$_SESSION['result']='Xóa thành công';
+					else $_SESSION['result']='Xóa không thành công';
+				}
+				else 
+				{
+					$_SESSION['result']='Bạn không có quyền xóa mục này !';
+				}
+				
+				$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 			}
-			
-			$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 		}
 		
 		function setForm()
@@ -199,58 +204,65 @@
 		
 		function insertAction()
 		{
-			$this->view->headTitle('UNC - Admin website');
-			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
-			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			
-			$this->view->title="Thêm phóng viên";
-			$this->view->listParent = $this->listParent;
-			$this->view->listChild = $this->listChild;
-			
-			$form=$this->setForm();
-			if ($this->_request->isPost())
+			if ($_SESSION['role_id']!='0')
 			{
-				if (!$form->isValid($_POST))
-				{
-					$this->view->form=$this->setForm($form);
-				}
-				else
-				{
-					$input = $this->_getInput($form);
-					if($this->mUser->isExitsUsername($input['user_login']))
-					{
-						$_SESSION['result']='Tên đăng nhập đã tồn tại !';
-						
-					}
-					else 
-					{
-							if ($this->mUser->insertUser($input))
-							{
-								$user_id = $this->mUser->getUserIdByUserLogin($input['user_login']);
-								foreach($_POST['checkbox'] as $check)
-								{
-									$this->mChuyenmuc->insertUserForCategory($user_id,$check);
-								}
-								$_SESSION['result']='Thêm mới thành công';
-								$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
-							}
-							else 
-							{
-								$this->view->error=$form->getMessage();
-								
-							}
-					}
-				}
+				$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 			}
-			$this->view->form=$form;
+			else 
+			{
+				$this->view->headTitle('UNC - Admin website');
+				$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
+				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
+				
+				$this->view->title="Thêm phóng viên";
+				$this->view->listParent = $this->listParent;
+				$this->view->listChild = $this->listChild;
+				
+				$form=$this->setForm();
+				if ($this->_request->isPost())
+				{
+					if (!$form->isValid($_POST))
+					{
+						$this->view->form=$this->setForm($form);
+					}
+					else
+					{
+						$input = $this->_getInput($form);
+						if($this->mUser->isExitsUsername($input['user_login']))
+						{
+							$_SESSION['result']='Tên đăng nhập đã tồn tại !';
+							
+						}
+						else 
+						{
+								if ($this->mUser->insertUser($input))
+								{
+									$user_id = $this->mUser->getUserIdByUserLogin($input['user_login']);
+									foreach($_POST['checkbox'] as $check)
+									{
+										$this->mChuyenmuc->insertUserForCategory($user_id,$check);
+									}
+									$_SESSION['result']='Thêm mới thành công';
+									$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
+								}
+								else 
+								{
+									$this->view->error=$form->getMessage();
+									
+								}
+						}
+					}
+				}
+				$this->view->form=$form;
+			}
 		}
 		
 		function editAction()
 		{
 			if ($_SESSION['role_id']!=0)
 			{
-				$this->_redirect($this->view->baseUrl().'/../admin');
+				$this->_redirect($this->view->baseUrl().'/../admin/phongvien');
 			}
 			else 
 			{

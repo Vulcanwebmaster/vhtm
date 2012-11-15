@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: http://niwvietnam.info'); ?>
 <link href="<?php echo $this->baseUrl();?>/application/templates/front/css/print.css" type="text/css" rel="stylesheet" media="print"/>
 <div style="display: block" id="sendemailstatus">
 	
@@ -64,6 +65,9 @@
 									function(){
 										$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>");
 									} );
+							$("#comment_name").val('');
+							$("#comment_email").val('');
+							$("#comment_content").val('');
 							return false;
 						});
 					});

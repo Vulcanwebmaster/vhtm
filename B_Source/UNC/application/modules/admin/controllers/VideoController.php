@@ -5,12 +5,14 @@
 		
 		function init()
 		{
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mVideo = new Admin_Model_MvideoUNC();
-			  @session_start();
 			  if(isset($_SESSION['user']))
 			 	 $this->user = $_SESSION['user'];
 			  else {
@@ -20,7 +22,9 @@
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			$_SESSION["backend_current_menu"]="menu-quanlyvideo";		 
+			$_SESSION["backend_current_menu"]="menu-quanlyvideo";	
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');	 
 		}
 		
 		function indexAction()
@@ -154,7 +158,7 @@
 		{
 			if ($_SESSION['role_id']!=0)
 			{
-				$this->_redirect($this->view->baseUrl().'/../admin');
+				$this->_redirect($this->view->baseUrl().'/../admin/video');
 			}
 			else 
 			{

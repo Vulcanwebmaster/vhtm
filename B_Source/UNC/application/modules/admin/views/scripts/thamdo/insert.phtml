@@ -15,6 +15,16 @@
 $(document).ready(function() {
 	var check = document.getElementById('is_active-1');
 	check.checked = true;
+
+	$("#question_id").hide();
+	$("#polls_type-0").click(function(){
+		$("#question_id").hide();
+		$("#multiselect").show();
+	});
+	$("#polls_type-1").click(function(){
+		$("#question_id").show();
+		$("#multiselect").hide();
+	});
 });
 
 </script>
@@ -36,10 +46,22 @@ $(document).ready(function() {
 				<fieldset class="fieldset">
 					<label>Nội dung</label>
 					<?php echo $this->form->getElement('polls_content');?>
-				</fieldset>
+				</fieldset> 
 				<fieldset class="fieldset">
 					<label>Thể loại</label>
-					<?php echo $this->form->getElement('type');?>
+					<?php echo $this->form->getElement('polls_type');?>
+				</fieldset>
+				<fieldset class="fieldset" id="question_id">
+					<label>Câu hỏi</label>
+					<?php echo $this->form->getElement('question_id');?>
+				</fieldset>
+				<fieldset class="fieldset" id="multiselect">
+					<label>Chọn nhiều</label>
+					<?php echo $this->form->getElement('multiselect');?>
+				</fieldset>
+				<fieldset class="fieldset">
+					<label>Kích hoạt</label>
+					<?php echo $this->form->getElement('is_active');?>
 				</fieldset>
 			</div>
 		</div>

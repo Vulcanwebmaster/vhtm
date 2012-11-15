@@ -1,0 +1,80 @@
+<?php function cutString($str,$limit)
+{
+	if (strlen($str)>$limit)
+	{
+		while ($str[$limit]!=' ' && $limit<strlen($str)-1)
+			$limit++;
+	}
+	else $limit=strlen($str);
+	return substr($str, 0, $limit);
+}?>
+		<div class="element_detail">
+			<div class="children_down-title" style="margin-top:0px"><a><?php echo $this->current_category['category_name'];?></a></div>
+        	<div class="subpage_wapper_left_top" style="margin-bottom:10px">
+                		<ul style="margin:0 0 0 20px; list-style-type:none">
+                			<?php
+                        		foreach($this->listChild as $child)
+								{
+									if($child['category_parent_id'] == $this->current_category['category_id'])
+									{
+                        		?>
+                        			<li class="children_down2">
+										<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chuyen-muc/<?php echo $child['category_id']; ?>-1-<?php echo $child['alias']; ?>.html"><?php echo $child['category_name']; ?></a>
+									</li>
+									<li class="children_down2 line">|</li>
+                        		<?php
+										}
+									}
+                            	?>
+	                         </ul>
+	           			</div>
+            <?php 
+            	if(count($this->list) > 0)
+				{
+					foreach($this->list as $news)
+					{
+            ?>
+            <div style="border-bottom: 1px dotted #CCCCCC" class="subpage_new">
+            	<div class="img_new">
+            		<a href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html">
+	            		<?php
+	            			if($news['news_avatar'] != "")
+							{
+								$str = $news['news_avatar'];
+								$preg1 = preg_match_all('#<img.*>#',$str,$match);
+								echo $match[0][0];
+							}
+							else {
+								?>
+									<img src="<?php echo $this->baseUrl()?>/application/templates/front/images/new.gif">
+								<?php
+							}
+	            		?>
+            		</a>
+                </div>
+                <div class="text_new" style="margin-top:0 !important">
+                	<a class="a-title" href="<?php echo $this->baseUrl(); ?>/tin-tuc/chi-tiet/<?php echo $news['news_id']; ?>-<?php echo $news['alias'];?>.html" title="<?php echo $news['alias']; ?>"><?php echo $news['news_title'] ?></a>
+                    <p class="date"><?php if ($news['news_modified_date']=="0000-00-00 00:00:00") 
+                    						echo $news['news_post_date'];
+                    					else  echo $news['news_modified_date'];?></p>
+                    <p class="text"><?php echo cutString(strip_tags($news['news_summary']),400)?>...</p>
+                </div>
+            </div>
+           <?php
+					}
+				}
+				else {
+					echo 'Chuyên mục này chưa có tin bài nào';
+				}
+           ?>
+           <div class="page_video">
+				<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+			</div> <br style="clear:both">
+			</div>
+			<div class="detail_add">
+				<a href="<?php echo $this->listquangcao2['ads_link']; ?>" target="_blank">
+		            <?php
+		            	echo $this->listquangcao2['ads_banner']; 
+		            ?>
+		        </a>
+			</div>

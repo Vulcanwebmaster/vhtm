@@ -100,17 +100,27 @@
 		function getListPolls()
 		{
 			$query = $this->db->query('SELECT * FROM unc_polls
-												WHERE polls_status =0
+												WHERE polls_type =0 and is_active="1"
 												ORDER BY polls_id DESC
 												LIMIT 1 ');
 			return $query->fetchAll();
 		}
 		function getListPolls1()
 		{
-			$query = $this->db->query('SELECT * FROM unc_polls
-												WHERE polls_status =1
-												ORDER BY polls_id DESC
-												LIMIT 5 ');
-			return $query->fetchAll();
+			$query=$this->db->query("select * from unc_polls
+												where polls_type ='0' and is_active='1'");
+			$list=$query->fetchAll();
+			if (count($list)>0)
+				$question=$list[0];
+			else $question= false;
+			if ($question)
+			{
+				$query = $this->db->query('SELECT * FROM unc_polls
+													WHERE polls_type =1 and is_active="1" and question_id="'.$question['polls_id'].'"
+													ORDER BY polls_id DESC
+													LIMIT 5 ');
+				return $query->fetchAll();
+			}
+			else return false;
 		}
 	}

@@ -39,5 +39,9 @@
 									where category_id="'.$id.'"');
 			return $query;
 		}
+	
+		function getListChildFull()
+		{
+		}
 	}
 ?>

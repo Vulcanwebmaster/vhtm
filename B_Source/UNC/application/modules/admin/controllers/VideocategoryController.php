@@ -5,13 +5,17 @@
 		
 		function init()
 		{
-			$layoutPath = APPLICATION_PATH  . '/templates/admin';
+			@session_start();
+			if (isset($_SESSION['role_id']))
+			{
+				$layoutPath = APPLICATION_PATH  . '/templates/admin';
 		      $option = array ('layout' => 'index', 
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mChuyenmuc = new Admin_Model_Mvideocategory();
-			  @session_start();
 			  $_SESSION["backend_current_menu"]="menu-quanlyvideo";
+			}
+			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}
 		
 		function setForm()
