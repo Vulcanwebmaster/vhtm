@@ -14,7 +14,7 @@
 
 			<div id="ja-mainnav">
 				<ul id="ja-cssmenu" class="clearfix">
-					<li><a class="menu-item0 active first-item" id="menu1" title="TRANG CHỦ" href="<?php echo base_url() ?>">
+					<li class="active"><a class="menu-item0 active first-item" id="menu1" title="TRANG CHỦ" href="<?php echo base_url() ?>">
 						<span class="menu-title"><?php echo $this->lang->line('menu-trangchu')?></span></a>
 					</li> 
 					<li><a class="menu-item1" id="menu71" href="<?php echo base_url() ?>sanpham">

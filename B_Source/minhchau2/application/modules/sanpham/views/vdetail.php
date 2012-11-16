@@ -2,7 +2,6 @@
 	$newModel=new CI_Model();
 	$lang=$this->session->userdata('lang');
 ?>
-?>
 <!-----<?php if ($lang=='vn') echo $product->technical_infov; else echo $product->technical_infove;?>------>
 <div id="ja-mainbody" class="clearfix">
         	<div id="ja-pathway">
@@ -55,11 +54,11 @@
 									<td rowspan="2" align="center" valign="top" width="160">
 										<div class="image_detail">
 											<a href="#">
-											<img alt="."/>
+											
 											<?php echo $product->image ?>
 										</div><br><br>        
 									</td>
-									<td valign="top" width="280">
+									<td valign="top" width="280" style="vertical-align: top">
 										<div style="text-align: center;">
 										<span style="font-style: italic;"></span>
 											<div class="vmCartContainer">					
@@ -84,22 +83,24 @@
 											<span style="font-style: italic;"></span>
 										</div>
 									</td>
-									<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px;">     
+									<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px; vertical-align: top; width: 300px">
 										<table border="0" cellpadding="5" cellspacing="0" width="100%">     
 										<?php foreach ($relates as $item)
-										{?>	   
+										{?>	  
 											<tr align="left">
-												<td width="1" class="sectiontableentry3"></td>
-												<td class="sectiontableentry2">
-													<span><a style="font-weight:bold;color:#033B7F;" title="" href="#"><?php if ($lang=="vn") echo $item->namev; else echo $item->namee ?></a></span>
+												<td width="1" class="sectiontableentry3" style="padding:5px" ></td>
+												<td class="sectiontableentry2" style="text-transform:uppercase; padding:5px"> 
+												<span><a style="font-weight:bold;color:#033B7F;" title="" href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>">
+													<?php if ($lang=="vn") echo $item->namev; else echo $item->namee ?>
+													</a></span></td>
+												</tr>
+												<tr align="left">
+													<td </td>
+													<td  class="sectiontableentry1" style="padding:5px">
+												<span style="font-weight:bold;color:#E04139;">Price: <?php echo $item->price ?></span>
 												</td>
-											</tr>
-											<tr align="left">
-												<td></td>
-												<td class="sectiontableentry1"><span style="font-weight:bold;color:#E04139;">Price: <?php echo $item->price ?></span></td>
-											</tr>		
-											<?php }?>
-													 
+												</tr>
+										<?php }?>
 										</table>
 									</td>
 								</tr>        
