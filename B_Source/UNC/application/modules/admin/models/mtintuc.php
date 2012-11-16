@@ -99,7 +99,7 @@
 			}
 		}
 		return $list;
-	}
+	}	
 	
 	function isContain($list, $item)
 	{
@@ -158,6 +158,7 @@
 		$input['news_summary']=$this->replaceChar("'",'"', $input['news_summary']);
 		$input['news_avatar']=$this->replaceChar("'",'"', $input['news_avatar']);
 		$input['news_content']=$this->replaceChar("'",'"', $input['news_content']);
+		$input['category_id']=$checkbox;
 		if ($input['news_status'] == "Chưa duyệt") {
 			$input['news_author']='';
 		}		
@@ -181,9 +182,19 @@
 	{
 		$query = $this->db->query('select * from unc_polls where polls_id = "'.$polls_id.'"');
 		$list = $query->fetchAll();
-		if (count($list)>0)
-			return $list[0];
-		else return false;
+		return $list[0];
+	}
+	function editThamdo($polls_id,$input)
+	{
+		$query=$this->db->query('update unc_polls 
+								set polls_content="'.$input['polls_content'].'"
+								where polls_id="'.$polls_id.'"');
+		return $query;
+	}	
+	public function insertthamdo($input)
+	{
+		if($this->db->insert('unc_polls',$input)) return true;
+		else return FALSE;
 	}
 	public function deletethamdo($polls_id)
 	{

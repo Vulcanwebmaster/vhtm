@@ -86,11 +86,9 @@
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 			
 			$allTruongban = $this->mTruongban->getListByRole('1');
-			if($this->role == "0")
+			if($this->role == "0" || $this->role == "1")
 			{
-				$paginator = Zend_Paginator::factory($allTruongban);
-			} else if ($this->role == "1") {
-				$paginator = Zend_Paginator::factory($allTruongban);
+				$list = $allTruongban;
 			}
 			else
 			{
@@ -133,15 +131,12 @@
 						$listTruongBan[] = $truongban;
 				}
 				if(count($listTruongBan) > 0)
-					$paginator = Zend_Paginator::factory($listTruongBan);
+					$list = $listTruongBan;
 				else
-					$paginator = Zend_Paginator::factory($this->mUser->getUserByUserId($user_id));
+					$list = $this->mUser->getUserByUserId($user_id);
 			}
 			
-        	$paginator->setItemCountPerPage(25);        
-        	$currentPage = $this->_request->getParam('page',1);
-         	$paginator->setCurrentPageNumber($currentPage);
-        	$this->view->list=$paginator;
+        	$this->view->list=$list;
 			$this->view->title="Trưởng ban";
 			
 			$this->view->role = $this->role;

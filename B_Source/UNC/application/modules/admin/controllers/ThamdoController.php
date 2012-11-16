@@ -47,12 +47,8 @@
 				$question[]=$curent_quest;
 			}
 			
-			$paginator = Zend_Paginator::factory($list);
-	        $paginator->setItemCountPerPage(25);        
-	        $currentPage = $this->_request->getParam('page',1);
-	        $paginator->setCurrentPageNumber($currentPage);
 	        $this->view->questList=$question;
-	        $this->view->list = $paginator;
+	        $this->view->list = $list;
 			$this->view->title = "Quản lý thăm dò";
 			$this->view->role = $this->role;
 			$this->view->isshow=$this->mThamdo->getActiveIndex();

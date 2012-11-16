@@ -32,11 +32,8 @@
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-			$paginator = Zend_Paginator::factory($this->mImage->getList());
-	        $paginator->setItemCountPerPage(25);        
-	        $currentPage = $this->_request->getParam('page',1);
-	        $paginator->setCurrentPageNumber($currentPage);
-	        $this->view->list = $paginator;
+
+			$this->view->list = $this->mImage->getList();
 			$this->view->title = "Quản lý hình ảnh";
 			$this->view->role = $this->role;
 		}
@@ -194,4 +191,3 @@
 		}
 
 	}
-?>

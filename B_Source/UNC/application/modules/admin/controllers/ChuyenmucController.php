@@ -78,16 +78,13 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
-				$paginator = Zend_Paginator::factory($this->mChuyenmuc->getListCM());
-	        	$paginator->setItemCountPerPage(25);        
-	        	$currentPage = $this->_request->getParam('page',1);
-	         	$paginator->setCurrentPageNumber($currentPage);
-	        	$this->view->list = $paginator;
+				$list=$this->mChuyenmuc->getListCM();
+	        	$this->view->list = $list;
 				$this->view->title="Quản lý chuyên mục";
 				$this->view->role = $this->role;
 				
 				$listParent=array();
-				foreach($paginator as $parent)
+				foreach($list as $parent)
 				{
 					if($parent['category_parent_id']!='0')
 					{

@@ -7,6 +7,7 @@
 		protected $user_id;
 		function init()
 		{
+			@session_start();
 			if (isset($_SESSION['role_id']))
 			{
 			$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -14,7 +15,7 @@
 		                   'layoutPath' => $layoutPath );
 		      Zend_Layout::startMvc ( $option );
 			  $this->mDiachi = new Admin_Model_Mdiachi();
-			  @session_start();
+			  
 			  if(isset($_SESSION['role']))
 			  	$this->role = $_SESSION['role'];
 			  else {

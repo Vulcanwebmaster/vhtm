@@ -43,11 +43,7 @@ class Admin_GetnewssettingController extends Zend_Controller_Action
 			}
 		}
 		
-		$paginator = Zend_Paginator::factory($list);
-        $paginator->setItemCountPerPage(25);        
-        $currentPage = $this->_request->getParam('page',1);
-        $paginator->setCurrentPageNumber($currentPage);
-        $this->view->list=$paginator;
+        $this->view->list=$list;
 		$this->view->title="Cài đặt lấy tin tự động";
 	}
 	

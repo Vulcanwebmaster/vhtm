@@ -48,7 +48,6 @@
 			{
 				$listComments = $this->mComment->getListComment();				
 				//Nếu là admin thì lấy ra danh sách tất cả các comment
-				$paginator = Zend_Paginator::factory($listComments);
 			}
 			elseif($this->role =="1")	
 			{
@@ -82,7 +81,6 @@
 					}
 				}
 				//var_dump($listComments);die();
-				$paginator = Zend_Paginator::factory($listComments);
 			}
 			elseif($this->role == "2")
 			{
@@ -102,7 +100,6 @@
 					}
 				}
 				
-				$paginator = Zend_Paginator::factory($listComments);
 			}
 			
 			//var_dump($listComments);die();
@@ -112,12 +109,7 @@
 				$listNewsTitle[] = $this->mComment->getNewsTitleByNewsId($comments['news_id']);
 			}			
 			
-	        	$paginator->setItemCountPerPage(25);        
-	        	$currentPage = $this->_request->getParam('page',1);
-	         	$paginator->setCurrentPageNumber($currentPage);
-				
-			$this->view->page=$currentPage;
-	        	$this->view->list=$paginator;
+	        	$this->view->list=$listComments;
 			$this->view->title="Quản lý comment";
 			$this->view->listNewsTitle = $listNewsTitle;
 			$this->view->listReaderName = $listReaderName;

@@ -126,14 +126,9 @@
 					}
 				}
 			}
-			//var_dump($listVideo);die();
-			$paginator = Zend_Paginator::factory($listVideo);
-        	$paginator->setItemCountPerPage(25);        
-        	$currentPage = $this->_request->getParam('page',1);
-         	$paginator->setCurrentPageNumber($currentPage);
 			
 			//var_dump($this->mVideo->getListVideo());die();
-        	$this->view->list = $paginator;
+        	$this->view->list = $listVideo;
 			$this->view->title = 'Quản lý video';
 			
 			$this->view->role = $this->role;

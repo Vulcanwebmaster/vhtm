@@ -7,8 +7,6 @@
 			@session_start();
 			if (isset($_SESSION['role_id']))
 			{
-				if ($_SESSION['role_id']!='2')
-				{
 					$this->view->headTitle('UNC - Admin website');
 					$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 					$layoutPath = APPLICATION_PATH  . '/templates/admin';
@@ -33,8 +31,6 @@
 					  $this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 					$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 					$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
-				}
-				else $this->_redirect($this->view->baseUrl().'/../admin');
 			}
 			else $this->_redirect($this->view->baseUrl().'/../admin');
 		}

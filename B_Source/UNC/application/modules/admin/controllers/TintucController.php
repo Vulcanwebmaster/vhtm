@@ -510,7 +510,12 @@
 					$input['user_id']=$_SESSION['user_id'];								 
 					}
 			}
-			else {								
+			else {
+				if (isset($_SESSION['inserting']))
+				{
+					$input['review_id']="0";
+					$input['user_id']=$_SESSION['user_id'];	
+				}							
 			}
 			return $input;
 		}
@@ -518,6 +523,7 @@
 		function insertAction()
 		{
 			unset($_SESSION['reviewing']);
+			$_SESSION['inserting']='1';
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
@@ -559,6 +565,7 @@
 		
 		function editAction()
 		{
+			unset($_SESSION['inserting']);
 			$this->view->title='Chỉnh sửa tin tức';
 			$this->view->headTitle('UNC - Admin website');
 			$this->view->headLink()->appendStylesheet($this->view->baseUrl().'/application/templates/admin/css/layout.css');

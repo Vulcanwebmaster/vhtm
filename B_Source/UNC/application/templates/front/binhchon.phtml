@@ -16,7 +16,7 @@ if ($this->showpoll=='1')
 					if (count($this->listcauhoi)>0)
 						$selectType=$this->listcauhoi[0]['multiselect'];
 					else $selectType=false;
-					if ($selectType)
+					if ($selectType!==false)
 						foreach($this->listcauhoi as $listcauhoi)
 						{
 							echo $listcauhoi['polls_content'];

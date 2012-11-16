@@ -72,18 +72,11 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 			$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 
 			$listQuangcao = array();
-			//echo $this->role;die();
 			if($this->role =="0"| $this->role =="1"| $this->role =="2" )
 			{
 				$listQuangcao= $this->mquangcao->getListQC();
-				//var_dump($listQuangcao);die();
-				//Nếu là admin thì lấy ra danh sách tất cả các comment
-				$paginator = Zend_Paginator::factory($listQuangcao);
-				$paginator->setItemCountPerPage(25);        
-        	$currentPage = $this->_request->getParam('page',1);
-         	$paginator->setCurrentPageNumber($currentPage);
-        	$this->view->list=$paginator;
-			$this->view->role = $this->role;
+	        	$this->view->list=$listQuangcao;
+				$this->view->role = $this->role;
 			}
 			
 			$this->view->title="Quản lý mục quảng cáo";
@@ -196,4 +189,3 @@ class Admin_QuangcaoController extends Zend_Controller_Action{
 		}	
 		
 }
-?>

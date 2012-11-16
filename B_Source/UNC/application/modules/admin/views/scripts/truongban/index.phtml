@@ -30,74 +30,73 @@
 <article class="module width_full">
 	<header><h3><?php echo $this->title;?></h3></header>
 	<div class="tab_container">
-		
 		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables.css"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table_jui.css"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table.css"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_page.css"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables_themeroller.css"/>
-	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.js"></script>
-	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.dataTables.js"></script>
-    <script type="text/javascript">
-	$(document).ready(function() {
-		$('#listnews').dataTable({
-			"sPaginationType": "full_numbers",
-			"iDisplayLength": 25
-		});
-		});
-	</script>
-	<style type="text/css">
-		.paging_full_numbers{float:none !important; width:auto !important; margin-top:15px !important}
-	</style>
-	<div class="tab_container">
-		<table id="listnews">
-			<thead>
-				<th style="width:106px">Số thứ tự</th>
-				<th style="width:121px">Tên đăng nhập</th>
-				<th style="width:342px">Họ tên</th>
-				<th style="width:76px">Email</th>
-				<th style="width:89px">Kích hoạt</th>
-				<th style="background:transparent">Sửa</th>
-				<th style="background:transparent">Xóa</th>
-			</thead>
-			<tbody>
-				<?php 
-				$count=1;
-				foreach ($this->list as $item)
-				{?>
-					<tr>
-						<td><?php echo $count;?></td>
-						<td><?php echo $item['user_login'];?></td>
-						<td><?php echo $item['user_fullname'];?></td>
-						<td><?php echo $item['user_email'];?></td>
-						<td><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td>
-						<td><?php 
-												if($this->role =="0" | ($this->role =="1" & $item['user_login']==$this->user))
-													echo '<a href="'.$this->baseUrl().'/admin/truongban/edit/userid/'.$item['user_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table_jui.css"/>
+		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_table.css"/>
+		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/demo_page.css"/>
+		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/css/jquery.dataTables_themeroller.css"/>
+		<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.js"></script>
+		<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.dataTables.js"></script>
+	    <script type="text/javascript">
+			$(document).ready(function() {
+				$('#listnews').dataTable({
+					"sPaginationType": "full_numbers",
+					"iDisplayLength": 25
+				});
+			});
+		</script>
+		<style type="text/css">
+			.paging_full_numbers{float:none !important; width:auto !important; margin-top:15px !important}
+		</style>
+		<div class="tab_container">
+			<table id="listnews">
+				<thead>
+					<th style="width:106px">Số thứ tự</th>
+					<th style="width:121px">Tên đăng nhập</th>
+					<th style="width:342px">Họ tên</th>
+					<th style="width:76px">Email</th>
+					<th style="width:89px">Kích hoạt</th>
+					<th style="background:transparent">Sửa</th>
+					<th style="background:transparent">Xóa</th>
+				</thead>
+				<tbody>
+					<?php 
+					$count=1;
+					foreach ($this->list as $item)
+					{?>
+						<tr>
+							<td><?php echo $count;?></td>
+							<td><?php echo $item['user_login'];?></td>
+							<td><?php echo $item['user_fullname'];?></td>
+							<td><?php echo $item['user_email'];?></td>
+							<td><?php if ($item['is_active']=='1') echo 'Có'; else echo 'Không';?></td>
+							<td><?php 
+													if($this->role =="0" | ($this->role =="1" & $item['user_login']==$this->user))
+														echo '<a href="'.$this->baseUrl().'/admin/truongban/edit/userid/'.$item['user_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+												?></td>
+							<td><?php
+												if($this->role == "0")
+													echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
 											?></td>
-						<td><?php
-											if($this->role == "0")
-												echo '<a class="del_button" onclick="confirmDel('.$item['user_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
-										?></td>
-					</tr>
-				<?php $count++;}?>
-			</tbody>
-		</table>
+						</tr>
+					<?php $count++;}?>
+				</tbody>
+			</table>
 		
-		<footer>
-			<div class="submit_link" style="float:right">
-				<?php
-				if($this->role=="0")
-				{
-				?>
-					<a class="alt_btn" href="<?php echo $this->baseUrl('admin/truongban/insert');?>">Thêm mới</a>
-				<?php
-				}
-				?>
-			</div>
-				<div class="submit_link" style="float:left; font-weight: bold;">
-					<?php echo $this->paginationControl($this->list,'Sliding','tintuc/pagination.phtml');?>
+			<footer>
+				<div class="submit_link" style="float:right">
+					<?php
+					if($this->role=="0")
+					{
+					?>
+						<a class="alt_btn" href="<?php echo $this->baseUrl('admin/truongban/insert');?>">Thêm mới</a>
+					<?php
+					}
+					?>
 				</div>
-		</footer>
+					<div class="submit_link" style="float:left; font-weight: bold;">
+					</div>
+			</footer>
+		</div>
 	</div>
 </article>

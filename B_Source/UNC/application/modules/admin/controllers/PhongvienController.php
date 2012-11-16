@@ -42,7 +42,7 @@
 		{
 			if($this->role =="0")
 			{
-				$paginator = Zend_Paginator::factory($this->mUser->getListByRole('2'));
+				$list=$this->mUser->getListByRole('2');
 			}
 			else
 			{
@@ -84,15 +84,12 @@
 					}
 				}
 				if(count($listPhongvien) > 0)
-					$paginator = Zend_Paginator::factory($listPhongvien);
-				else $paginator = Zend_Paginator::factory($this->mUser->getUserByUserId($user_id));
+					$list=$listPhongvien;
+				else $list = $this->mUser->getUserByUserId($user_id);
 			}
 			
 			
-			$paginator->setItemCountPerPage(25);
-			$current = $this->_request->getParam('page',1);
-			$paginator->setCurrentPageNumber($current);			
-			$this->view->list = $paginator;
+			$this->view->list = $list;
 			$this->view->title = "Phóng viên";
 			
 			$this->view->role = $this->role;

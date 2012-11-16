@@ -50,11 +50,7 @@
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/jquery-1.7.2.min.js','text/javascript');
 				$this->view->headScript()->appendFile($this->view->baseUrl().'/application/templates/admin/js/hideshow.js','text/javascript');
 				
-				$paginator = Zend_Paginator::factory($this->mChuyenmuc->getListCM());
-	        	$paginator->setItemCountPerPage(25);        
-	        	$currentPage = $this->_request->getParam('page',1);
-	         	$paginator->setCurrentPageNumber($currentPage);
-	        	$this->view->list = $paginator;
+	        	$this->view->list = $this->mChuyenmuc->getListCM();
 				$this->view->title="Quản lý chuyên mục hình ảnh";
 				$this->view->role = $this->role;
 		}
