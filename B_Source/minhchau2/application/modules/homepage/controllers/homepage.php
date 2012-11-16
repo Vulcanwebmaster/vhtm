@@ -23,6 +23,9 @@ class Homepage extends NIW_controller {
 	{
 		$data['items']=$this->Mhomepage->getListByColumn('mc_product','is_new',1);
 		$data['parents']=$this->Mhomepage->getListByColumn('mc_category','parent_id',0);
+		$data['list_lienhe']=$this->Mhomepage->getListFull('mc_contact_us');
+			$data['list_hotro']=$this->Mhomepage->getListFull('hotro');
+			$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);

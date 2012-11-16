@@ -26,11 +26,31 @@
 <!-- BEGIN: FEATURE PRODUCTS -->
 	  	<div id="ja-topsl3">
         	<div class="moduletable">
-        	<h3><span><?php echo $this->lang->line('content-gioithieu'); ?></span></h3>
-	
 			<p  style=" font-size:20px; border-bottom:1px solid #999; padding-top:20px">
 				<?php echo $this->lang->line('content-sanphammoi'); ?>
 			</p>
+			<!--<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+					<?php
+					if(isset($items))
+					{
+						foreach($items as $item)
+						{
+					?>
+						<td width="7%" align="center" class="trangchuhehe"> 
+							<span style="font-weight:bold;"><?php echo $item->namev; ?></span>
+							<br>
+							<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name">
+								<?php echo $item->image; ?>
+							</a>
+							<br>
+						</td>
+				<?php
+					}
+					}
+				?>
+						</tr>
+			</table>---->
 			<div class="stuff">
 				<?php
 					if(isset($items))
@@ -38,11 +58,13 @@
 						foreach($items as $item)
 						{
 					?>
-							<div class="item">
-								<img src="<?php echo base_url()?>assets/minhchau2/images/pic1.jpg" alt="" width="124" height="90" />
-								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name"><?php echo $item->namev; ?></a>
-								<span><?php echo $item->price; ?></span>
-								
+							<div class="trangchuhehe">
+								<span style="font-weight:bold;"><?php echo $item->namev; ?></span>
+								<br>
+								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name">
+								<?php echo $item->image; ?>
+								</a>
+								<br>
 							</div>
 					<?php
 					}

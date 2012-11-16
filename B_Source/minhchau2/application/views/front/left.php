@@ -5,19 +5,18 @@
 	<div id="ja-col">
 	  	<div class="moduletable_menuhilite">
         <h3><span>Danh mục sản phẩm</span> </h3>
-			<ul class="menu0">
+        
+			
 				<?php
 					if(isset($parents))
 					{ 
 						for ($i=0;$i<count($parents);$i++)
 						{
 							//$num=$newModel->getListByColumn('mc_category','parent_id',$parent->id);
-							if($i%2==0)
-							{
 								$num=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
 								if(count($num)>0)
 								{
-									?>
+									?><ul class="menu0">
 										<li> 
 										<a style="cursor:pointer">
 											<?php
@@ -25,7 +24,8 @@
 													echo $parents[$i]->namev;
 												else echo $parents[$i]->namee;
 											?>
-										</a>	</li>
+										</a>	
+										</li>
 										<?php
 											$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
 											if (isset($childs))
@@ -40,18 +40,21 @@
 									                    				echo $child->namev;
 																	else echo $child->namee;
 									                    		?>
-									                    	</a></li>
+									                    		 </a>
+									                    	</li>
 									                    </ul>
 						                			<?php
 												}
 											}
 					                	?>
-				                	
-			            			<?php
+				                </ul>
+				                
+			            		<?php
 		            			}
-								else
+		            			else
 								{
 									?>
+									<ul class="menu0">
 										<li> 
 											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->id ?>">
 												<?php
@@ -61,67 +64,15 @@
 												?>
 											</a>
 				                		</li>
+				                	</ul>
 			            			<?php	
 								}
-		            		}
-							else
-							{
-								$num=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
-								if(count($num)>0)
-								{
-									?>
-										<li> 
-											<a style="cursor:pointer">
-												<?php
-													if ($lang=='vn') 
-														echo $parents[$i]->namev;
-													else echo $parents[$i]->namee;
-												?>
-											</a>
-											<?php
-												$childs=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
-												if (isset($childs))
-												{
-													foreach($childs as $child)
-													{ 
-														?>
-										                	<ul class="menu1">
-										                    	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>">
-										                    		<?php
-										                    			if ($lang=='vn') 
-										                    				echo $child->namev;
-																		else echo $child->namee;
-										                    		?>
-										                    	</a><br/>
-										                    </ul>
-							                			<?php
-													}
-												}
-						                	?>
-			                			</li>
-		            				<?php
-								}
-								else
-								{
-									?>
-										<li> 
-											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->id ?>">
-												<?php
-													if ($lang=='vn') 
-														echo $parents[$i]->namev;
-													else echo $parents[$i]->namee;
-												?>
-											</a>
-											
-			                			</li>
-		            				<?php
-								}
-							}
+		            			
 							
 						}
 					}
 		            ?>
-			</ul>
+			
 		</div>
         
         <!--------------end danh mục----------------------->

@@ -23,6 +23,11 @@
 		<div class="tab_container">
 			
 			<div id="tab1" class="tab_content">
+				
+				<fieldset>
+					<label>Ảnh đại diện</label>
+					<?php echo $this->ckeditor->editor('anh',$info->anh,$config);?>
+				</fieldset>
 				<fieldset>
 					<label>Tiêu đề (Việt)</label>
 					<input type="text" name="tieude_v" style="width:92%" value="<?php echo $info->tieude_v;?>"/>

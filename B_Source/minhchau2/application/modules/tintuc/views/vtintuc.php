@@ -12,13 +12,18 @@
     		<div id="ja-content" class="clearfix">
 				<h1 class="componentheading">Tin tức </h1>
 				<table class="blog" cellpadding="0" cellspacing="0">
-					<tr>
-						<td valign="top">
-									<br>
-							<br>
-						</td>
-					</tr>
-					<tr>
+						<ul class="aboutus-menu">
+							<?php foreach($list_tintuc as $item)
+							{?>
+								<li style="width:100%; float:left; border:1px solid #ddd; padding:5px 5px; margin:5px 0px;">
+									<?php echo $item->anh;?>
+						            <div class="aboutth-item" style="float:left; width:76%; height: 86px;">
+						            	<h3><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->id;?>"><?php if ($lang=="vn") echo strip_tags($item->tieude_v); else echo strip_tags($item->tieude_e);?></a></h3>
+						            </div>
+						  	    </li>
+						  	<?php }?>
+						</ul>
+					<!------<tr>
 						<td valign="top">
 									<?php foreach($list_tintuc as $item)
 										{?>
@@ -35,7 +40,7 @@
 										</div>
 									</div>
 									<div class="article-content">
-										<p><span style="font-size: 12pt;">
+										<p><span style="font-size: 12pt !important ">
 												<?php 
 													if($lang=='vn')
 														echo $item->noidung_v;
@@ -51,12 +56,7 @@
 						<?php }?>
 					</td>
 				</tr>
-<tr>
-	<td valign="top" align="center"></td>
-</tr>
-<tr>
-	<td valign="top" align="center"></td>
-</tr>
+				------------->
 </table>
 
 </div>	

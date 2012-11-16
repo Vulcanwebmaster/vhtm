@@ -2,12 +2,15 @@
 
 	<div id="ja-footer" class="clearfix">	
 		<div class="sublogo">
-			<a href="#" title="Công ty XNK Nam Đô"><span>Công ty XNK Nam Đô</span></a>
+			<a href="<?php echo base_url() ?>" title="Công ty thiết bị y tế Minh Châu"><span>Minh Châu shop</span></a>
 		</div>
 		<div class="copyright">		
-			<small>Copyright © 2012 Bản quyền thuộc về Công ty XNK Nam Đô. Designed by 
-			<a href="#" title="Visit HongTra.com!" target="blank">HongTra.com</a>.</small>
-
+			<?php foreach ($list_lienhe as $lienhe) { ?>
+				<small>
+					<?php echo $lienhe->contentv ?>
+				</small>
+			<?php } ?>
+			
 		</div>	
 		<div class="foot-rss">
 		

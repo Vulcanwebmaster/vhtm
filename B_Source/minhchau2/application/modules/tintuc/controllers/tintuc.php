@@ -51,7 +51,9 @@ class Tintuc extends NIW_Controller
 	{
 		$data['items']=$this->Mtintuc->getListByColumn('mc_product','is_new',1);
 		$data['parents']=$this->Mtintuc->getListByColumn('mc_category','parent_id',0);
-		
+			$data['list_hotro']=$this->Mtintuc->getListFull('hotro');
+			$data['list_lienhe']=$this->Mtintuc->getListFull('mc_contact_us');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');		
 		$data['title']='minhchau2 | Tin tức';
 		$data['lang']=$this->session->userdata("lang");
 		$data['list_tintuc']=$this->Mtintuc->getListOffset('tintuc',8,$index);
@@ -64,7 +66,9 @@ class Tintuc extends NIW_Controller
 	{
 		$data['items']=$this->Mtintuc->getListByColumn('mc_product','is_new',1);
 		$data['parents']=$this->Mtintuc->getListByColumn('mc_category','parent_id',0);
-		
+		$data['list_lienhe']=$this->Mtintuc->getListFull('mc_contact_us');
+			$data['list_hotro']=$this->Mtintuc->getListFull('hotro');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');		
 		$data['lang']=$this->session->userdata("lang");
 		$data['title']='minhchau2 | Tin tức';
 		$data['detail']=$this->Mtintuc->getRowByColumn('tintuc','id',$id);

@@ -25,7 +25,6 @@
 }
 
 .ja-tabswrap div.ja-tab-content {
-	position: absolute;	
 	border: none;
 	z-index: 100;
 	padding: 0;

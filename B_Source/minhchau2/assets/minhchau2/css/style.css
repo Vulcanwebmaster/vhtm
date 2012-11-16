@@ -1,11 +1,23 @@
 *{
 margin:0px;
 padding:0px;
-
 }
+.trangchuhehe {
+	width: 24%; float: left; 
+	border-bottom: 1px dotted #CCCCCC; 
+	border-right: 1px dotted #CCCCCC; 
+	padding: 5px 0px 0px 5p
+}
+.trangchuhehe img{ height: 120px !important; width: 110px  !important; text-shadow: black 2px 2px -2px !important }
 img{
 border:0px;
 }
+.image_detail img{
+	height: 120px !important; 
+	width: 145px  !important;
+}
+
+.aboutus-menu li img{ width: 122px !important; height: 86px !important; float:left !important; margin-right:10px !important; }
 html{
 width:100%;
 height:100%;
@@ -29,7 +41,6 @@ width:985px;
 list-style-type:none;
 padding:0px;
 margin:12px 0 12px -47px;
-/ margin:-5px 0 6px -23px;
 background:url(../images/but3.gif) repeat-x;
 }
 #menu li{
@@ -57,7 +68,6 @@ float: left;
 #center{
 width: 100%;
 position:relative;
-/ border-left:1px solid white
 }
 .banner{
 margin:0 2px 0 1px;
@@ -86,7 +96,7 @@ padding-top:25px;
 .stuff{
 margin:15px 0 0 0;
 float:left;
-width:542px;
+width:100%;
 }
 .stuff1{
 margin:15px 0 0 0;
@@ -126,13 +136,12 @@ padding:7px 0 12px 5px
 width: 172px;
 right: 172px;   
 margin-left: -100%;
-/ left: 238px;
 }
 #left1 {
 width: 172px;
 
 margin-left: 0px;
-/ left: 238px;}
+}
 .block{
 width:168px;
 /*border:1px solid #C5C5C5;*/

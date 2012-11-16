@@ -26,6 +26,9 @@
 			$data['query']=$this->Mlienhe->getRowByColumn('mc_contact_us','id',1);
 			$data['listcate']=$this->Mlienhe->getListByColumn('mc_category','parent_id',0);
 			$data['list']=$this->Mlienhe->getListFull('mc_contact_us');
+			$data['list_lienhe']=$this->Mlienhe->getListFull('mc_contact_us');
+			$data['list_hotro']=$this->Mlienhe->getListFull('hotro');
+			$data['list_doitac']=$this->Mlienhe->getListFull('doitac');			
 			$data['module']=$this->module;
 					
 			$data['page'] = 'vlienhe';

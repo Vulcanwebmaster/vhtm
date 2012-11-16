@@ -12,12 +12,11 @@
 <div id="ja-mainbody" class="clearfix">
         	<div id="ja-pathway">
         	<a href="<?php echo base_url() ?>"><?php echo $this->lang->line('content-trangchu'); ?> </a><img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt="">
-        	<a href="<?php echo base_url() ?>sanpham">  
         	<?php echo $this->lang->line('content-sanpham'); ?>
         	<?php if(isset($query))
 			{
 				?>
-			</a>
+			
 	        	<img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt="">
 	        	<a href="<?php echo base_url() ?>sanpham/view/<?php echo $query->id; ?>">
 	        		<?php
@@ -42,12 +41,26 @@
 					
 				?>
 			</p>
-			<div class="stuff1">
+			<div class="stuff">
 				<?php
 					foreach($items as $item)
 					{
 						?>
-							<div class="item">
+							<div class="trangchuhehe">
+								<span style="font-weight:bold;">
+									<?php
+										if($lang=='vn') 
+											echo $item->namev;
+										else echo $item->namee;  
+									?>
+								</span>
+								<br>
+								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name">
+								<?php echo $item->image; ?>
+								</a>
+								<br>
+							</div>
+							<!--<div class="item">
 								<img src="<?php echo base_url()?>assets/minhchau2/images/sp1.jpg" alt="" width="124" height="90" />
 								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name" style="width:111px;">
 									<?php
@@ -59,7 +72,7 @@
 								<span>
 									<?php echo $item->price; ?>
 								</span>
-							</div>
+							</div>-->
 						<?php
 					}
 				?>
