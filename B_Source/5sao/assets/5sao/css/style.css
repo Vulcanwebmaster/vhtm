@@ -10,7 +10,7 @@ background-position:top center;
 background-repeat:no-repeat;
 width:100%;
 min-width:980px;
-background-color:#ccc;
+background-color:#3E3E3E;
 font-family:Arial, Helvetica, sans-serif;
 }
 body{
@@ -79,11 +79,9 @@ color:#FFF;
 .top_menu li{
 list-style-type:none;
 display:inline;
-padding:0 20px;
 float:left;
 height:33px;
 margin-top:-4px;
-padding-top:2px;
 text-transform:uppercase;
 }
 .top_menu a, #footer li a{
@@ -94,8 +92,9 @@ text-decoration:none;
 line-height:24px;
 }
 .footer_top_add a{font-size:12px !important;}
-.top_menu a{font-size:13px; font-weight:bold;color:#FFF; line-height:30px}
-
+.top_menu a{font-size:13px; font-weight:bold;color:#FFF; line-height:30px; padding:2px 20px 0;}
+.top_menu1 a{font-size:12px; font-weight:bold;color:#FFF; line-height:30px; padding:10px 10px 0;}
+.top_menu1 a:hover{text-decoration: underline}
 #search{
 font-family:Arial, Helvetica, sans-serif;
 font-size:12px;
@@ -228,7 +227,7 @@ text-align:left !important;
 .inside li{margin-bottom:0; clear: both; text-align:center}
 .inside a{ text-align:left}
 #list .inside a{text-decoration:none}
-#list .inside a:hover{text-decoration:none}
+#list .inside a:hover{text-decoration:none; color: #292933; font-weight: bold}
 .title2{
 background-image:url(../images/h4.jpg);
 background-repeat:repeat-x;
@@ -538,13 +537,13 @@ border-radius:5px}
 #statistics ul{margin:-10px 5px 10px 5px; padding:0;}
 #statistics{font-weight:bold; font-size:11px}
 #statistics img{margin-bottom:-3px;}
-#textbaner{ width:650px; position:absolute; z-index:4444; left:315px; top:25px; color:#FDFDFD; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:29px; font-weight:bold; text-align:center;}
-#textbaner p{ margin-left:-37px; padding:0; margin-top: 11px }
+#textbaner{ margin-left:-92px; width:650px; position:absolute; z-index:4444; left:315px; top:25px; color:#FDFDFD; text-transform:uppercase; text-shadow:black 0.1em 0.1em 0.2em; font-size:22px; font-weight:bold; text-align:center;}
+#textbaner p{ padding:0; margin-top: 2px }
 #titletrust{ font-size:12px; text-transform:none; font-weight:none;}
 .itemimage p{margin:0; padding:0}
 .bg_itemmenu{height:31px; background-color:#a0a09f; width:981px; position:absolute; top:139px; left:0; z-index: 10;}
 .bg_itemmenu ul{margin:0; padding-left:110px; width:100%; height:30px;}
-.bg_itemmenu ul li{ float:left; padding-left:10px}
+.bg_itemmenu ul li{ float:left; padding-left:10px; padding-top: 5px}
 .breadcumpr{border-bottom: 1px solid #7a7875; margin:20px 0 0 0; text-align:left; padding:0 0 0 10px;}
 .breadcumpr a{ text-decoration:none; color:black;}
 /* --------------------- MANH ---------------------*/

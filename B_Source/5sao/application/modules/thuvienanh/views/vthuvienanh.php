@@ -3,11 +3,6 @@
 </script>
 
 <div id="center">
-	<?php 
-		if ($lang=="vn")
-			echo '<h2>Danh sách hình ảnh:</h2>';
-		else echo '<h2>Images gallery:</h2>';
-	?>	
 	<div id="items">
 		<?php foreach ($list as $item)
 		{?>

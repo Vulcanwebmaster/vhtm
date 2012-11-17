@@ -23,6 +23,8 @@
 		<div class="tab_container">
 			
 			<div id="tab1" class="tab_content">
+				
+
 				<fieldset>
 					<label>Tiêu đề (Việt)</label>
 					<input type="text" name="tieude_v" style="width:92%"/>

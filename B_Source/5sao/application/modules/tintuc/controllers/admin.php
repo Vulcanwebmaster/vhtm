@@ -39,7 +39,9 @@
 		
 		function _input()
 		{
-			$input=array('tieude_v'=>$this->input->post('tieude_v'),
+			$input=array(
+						
+						'tieude_v'=>$this->input->post('tieude_v'),
 						'tieude_e'=>$this->input->post('tieude_e'),
 						'noidung_v'=>$this->input->post('noidung_v'),
 						'noidung_e'=>$this->input->post('noidung_e'),

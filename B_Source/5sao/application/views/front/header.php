@@ -1,11 +1,11 @@
 <div id="header">			
 			<div id="textbaner">	
-				<?php if ($_SESSION['lang']=="vn") 
-							{?>			 
-					<p>Công ty cổ phần thiết bị Thái Dương</p>
-					<?php } else{ ?>
+				<!--<?php if ($_SESSION['lang']=="vn") 
+							{?>	
+					<p>Công ty cổ phần thiết bị Thái Dương</br> THAI DUONG EQUIPMENT JOINT STOCK COMPANY</p>
+					<!--<?php } else{ ?>
 					<p>THAI DUONG EQUIPMENT JOINT STOCK COMPANY</p>	
-					<?php } ?>
+					<!--<?php } ?>-->
 			</div>
 			<div id="language">
 				<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>">
@@ -28,8 +28,8 @@
                 		<div class="bg_itemmenu" id="bg_itemmenu_1">
                 			<ul>
                 				<?php foreach($list_hotline as $hotline){ ?>
-	                    		<li><a href="#">Hotline 24/24 : <?php echo $hotline->hotline;?></a></li>
-	                        	<li><a href="#">Tel: <?php echo $hotline->sdt;?></a></li>  
+	                    		<li class="top_menu1"><a href="#">Hotline 24/24 : <?php echo $hotline->hotline;?></a></li>
+	                        	<li class="top_menu1"><a href="#">Tel: <?php echo $hotline->sdt;?></a></li>  
 	                        	<?php } ?>
 	                        </ul>
                         </div>                    
@@ -40,7 +40,7 @@
                 		<ul>
 	                		<?php foreach ($list_gioithieumenu as $menu)
 	                		{?>
-	                			<li><a href="<?php echo base_url();?>gioithieu/detail/<?php echo $menu->id;?>"><?php if ($_SESSION['lang']=="vn") echo $menu->tieude_v; else echo $menu->tieude_e;?></a></li>
+	                			<li class="top_menu1"><a href="<?php echo base_url();?>gioithieu/detail/<?php echo $menu->id;?>"><?php if ($_SESSION['lang']=="vn") echo $menu->tieude_v; else echo $menu->tieude_e;?></a></li>
 	                		<?php }?>
 	                		</ul>
                 		</div>
@@ -56,9 +56,9 @@
                 
                 		<div class="bg_itemmenu" id="bg_itemmenu_3">
                 			<ul>
-	                    	<li><a href="<?php echo base_url();?>thu-vien-anh"><?php echo $this->lang->line('menu-hinhanh');?></a></li>
-	                    	<li><a href="<?php echo base_url();?>tin-tuc"><?php echo $this->lang->line('menu-tin');?></a></li>
-	                        <li><a href="<?php echo base_url();?>tuyen-dung"><?php echo $this->lang->line('menu-tuyendung');?></a></li>
+		                    	<li class="top_menu1"><a href="<?php echo base_url();?>thu-vien-anh"><?php echo $this->lang->line('menu-hinhanh');?></a></li>
+		                    	<li class="top_menu1"><a href="<?php echo base_url();?>tin-tuc"><?php echo $this->lang->line('menu-tin');?></a></li>
+		                        <li class="top_menu1"><a href="<?php echo base_url();?>tuyen-dung"><?php echo $this->lang->line('menu-tuyendung');?></a></li>
 	                        </ul>
                    		</div>
                  
