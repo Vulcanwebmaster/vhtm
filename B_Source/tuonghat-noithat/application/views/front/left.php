@@ -3,8 +3,12 @@
         <div class="line">
             <div class="unit">
                 <div class="navMenu">
-                    <ul class="menuLevel1">                        
-                                    <li class=""><a href="html/halloween.htm">HALLOWEEN</a></li>                        
+                    <ul class="menuLevel1">            
+                    	<?php foreach ($listCategories as $category)
+                    	{?>
+                    		<li class=""><a href="html/halloween.htm"><?php echo $category->category_name;?></a></li>
+                    	<?php }?>            
+                                    <!-- li class=""><a href="html/halloween.htm">HALLOWEEN</a></li>                        
                                     <li class="divider"></li>                        
                                     <li class=""><a href="#">Phòng ngủ</a></li>                        
                                     <li class=""><a href="#">Phòng tắm</a></li>                        
@@ -16,7 +20,7 @@
                                     <li class=""><a href="#">FILM</a></li>
                                     <li class=""><a href="#">Danh mục</a></li>                        
                                     <li class=""><a href="#">LOOKBOOK</a></li>
-                                    <li class=""><a href="#">Ý tưởng quà tặng</a></li>
+                                    <li class=""><a href="#">Ý tưởng quà tặng</a></li -->
                         <!-- Begin ItxContentSpotDisplay.jsp (ZH_ESpot_GiftCardMenu) --><!-- End ItxContentSpotDisplay.jsp (ZH_ESpot_GiftCardMenu) -->        
                     </ul>
                 </div>

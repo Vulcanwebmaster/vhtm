@@ -1,7 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Homepage extends NIW_controller {
-	
 	function __construct()
 	{
 		parent::__construct();
@@ -11,10 +10,10 @@ class Homepage extends NIW_controller {
 	
 	public function index()
 	{
-		$data['title']='Tường Nhật | Home';
-		$data['module'] = $this->module;
-		$data['page'] = 'frontpage';
-		$this->load->view('front/container',$data);
+		$this->data['title']='Tường Nhật | Home';
+		$this->data['module'] = $this->module;
+		$this->data['page'] = 'frontpage';
+		$this->load->view('front/container',$this->data);
 	}
 }
 

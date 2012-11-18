@@ -4,6 +4,7 @@ class NIW_Controller extends CI_Controller {
 	
 	private $_container;
 	private $module;
+	protected $data=array();
 	
 	function __construct()
 	{
@@ -30,6 +31,8 @@ class NIW_Controller extends CI_Controller {
 		
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');	
+		
+		$this->data['listCategories']=$this->getListCategoties();
 	}
 	
 	function set_default_value($data=NULL, $value=NULL)
@@ -78,6 +81,13 @@ class NIW_Controller extends CI_Controller {
 				$this->$error = '';
 			}
 		}
+	}
+	
+	function getListCategoties()
+	{
+		$model=new CI_Model();
+		$list=$model->getListFull('tn_categories');
+		return $list;
 	}
 }
 

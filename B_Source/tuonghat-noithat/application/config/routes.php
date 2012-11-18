@@ -39,6 +39,7 @@
 */
 $route['welcome/(:any)'] = "welcome/index/$1";
 $route['default_controller'] = "homepage";
+$route['danh-muc/(:any)'] = "danhmuc/$1";
 $route['404_override'] = '';
 
 $route['admin'] = 'admin/home';
