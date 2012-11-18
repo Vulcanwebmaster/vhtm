@@ -40,8 +40,10 @@
 											</h1>
 										</div>
 									</td>
-									<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px;"><b>Các sản phẩm khác</b>
+								<!--	<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px;">
+										<b>Các sản phẩm khác</b>
 									</td>
+								-->
 									<td>
 									</td>
 								</tr>
@@ -69,11 +71,24 @@
 															<input type="hidden" name="prod_id[]" value="128">
 															<div class="vmCartAttributes">
 																<div class="vmAttribChildDetail">
-																		<label style="color:#000000;font-weight:bold;">Giá tiền :</label>
-																		<label style="color:#e04139;font-weight:bold;"><?php echo $product->price ?> VNĐ</label>
+																		<label style="color:#000000;font-weight:bold;">Model </label>
+																		<label style="color:#e04139;font-weight:bold; margin-left: 53px;">: <?php echo $product->model ?></label>
 																</div>
 																<div class="vmAttribChildDetail">
-																	<label style="color:#e04139;font-weight:bold;">Chứng chỉ:</label>
+																		<label style="color:#000000;font-weight:bold;">Hãng sản xuất </label>
+																		<label style="color:#e04139;font-weight:bold;">: <?php echo $product->hangsx ?></label>
+																</div>
+																<div class="vmAttribChildDetail">
+																		<label style="color:#000000;font-weight:bold;">Bảo hành </label>
+																		<label style="color:#e04139;font-weight:bold;  margin-left: 30px;">: <?php echo $product->baohanh ?></label>
+																</div>
+																<div class="vmAttribChildDetail">
+																		<label style="color:#000000;font-weight:bold;">Kho hàng </label>
+																		<label style="color:#e04139;font-weight:bold; margin-left: 30px;">: <?php echo $product->khohang ?></label>
+																</div>
+																<div class="vmAttribChildDetail">
+																		<label style="color:#000000;font-weight:bold;">Giá tiền </label>
+																		<label style="color:#e04139;font-weight:bold; margin-left: 41px;">: <?php echo $product->price ?> VNĐ</label>
 																</div>
 															</div>
 														</div>	 
@@ -83,7 +98,7 @@
 											<span style="font-style: italic;"></span>
 										</div>
 									</td>
-									<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px; vertical-align: top; width: 300px">
+									<!--<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px; vertical-align: top; width: 300px">
 										<table border="0" cellpadding="5" cellspacing="0" width="100%">     
 										<?php foreach ($relates as $item)
 										{?>	  
@@ -102,7 +117,7 @@
 												</tr>
 										<?php }?>
 										</table>
-									</td>
+									</td>----->
 								</tr>        
 								<tr>
 									<td valign="bottom" align="center">
@@ -131,8 +146,6 @@
 													
 												</ul>
 											</div>
-														
-											
 												<div class="ja-tab-content" id="id_move1">
 													<div class="ja-tab-subcontent">
 														<p><span style="font-size: 12pt;">
@@ -187,6 +200,25 @@
 							  <td colspan="3"><br></td>
 							</tr>
 						</table>
+						
+	<div id="relate_list">
+		<p style="font-weight: bold; font-size: 15px"> Sản phẩm liên quan</p>
+		<h4><?php echo $this->lang->line('detailpr-relates');?></h4>
+		<div id="items">
+			<?php foreach ($relates as $item)
+			{?>
+				<div class="item12">
+					<div class="itemimage">
+						<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id."-".$item->id."-".$item->alias ?>">
+							<?php echo $item->image;?>
+						</a><br />								
+					</div>
+		            <div class="itemh5"><?php if ($lang=="vn") echo $item->namev; else echo $item->namee;?></div>
+				</div>
+			<?php }?>
+			<br class="clear"/>
+		</div>
+	</div>
 					</div>
 				</div>
 		
@@ -198,7 +230,6 @@
 	  <?php $this->load->view('front/left');?>
 	  
 	<script type="text/javascript">
-        
           $(document).ready(function(){
            $('#id_move1').show();
            $('#id_move2').hide();
@@ -217,6 +248,6 @@
             $('.first').removeClass('firstactive');
             })
            });
-                                    </script> 
+    </script> 
 			
   

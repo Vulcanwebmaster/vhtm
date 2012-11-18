@@ -5,7 +5,6 @@
 	<div id="ja-col">
 	  	<div class="moduletable_menuhilite">
         <h3><span>Danh mục sản phẩm</span> </h3>
-        
 			
 				<?php
 					if(isset($parents))
@@ -34,7 +33,7 @@
 												{ 
 													?>
 									                	<ul class="menu1">
-									                    	<li><a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id ?>">
+									                    	<li><a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->id."-".$child->alias ?>">
 									                    		<?php
 									                    			if ($lang=='vn') 
 									                    				echo $child->namev;
@@ -56,7 +55,7 @@
 									?>
 									<ul class="menu0">
 										<li> 
-											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->id ?>">
+											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->id."-".$parents[$i]->alias ?>">
 												<?php
 													if ($lang=='vn') 
 														echo $parents[$i]->namev;
@@ -67,12 +66,9 @@
 				                	</ul>
 			            			<?php	
 								}
-		            			
-							
 						}
 					}
 		            ?>
-			
 		</div>
         
         <!--------------end danh mục----------------------->

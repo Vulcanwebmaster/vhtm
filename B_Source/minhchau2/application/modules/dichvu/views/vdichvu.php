@@ -23,7 +23,6 @@
 					else echo $query->contente;
 				?>
 			</div>
-</div
-<div id="ja-col">
-<?php $this->load->view('front/left');?>
+
 </div>
+<?php $this->load->view('front/left');?>

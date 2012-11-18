@@ -26,6 +26,7 @@
 		{
 			$input=array('namev'=>$this->input->post('namev'),
 						'namee'=>$this->input->post('namee'),
+						'alias'=>$this->getAliasByName($this->input->post('namev')),/*getAliasByName Lấy từ Controller mà nó kế thừa*/
 						'parent_id'=>$this->input->post('parent_id'));
 			return $input;
 		}

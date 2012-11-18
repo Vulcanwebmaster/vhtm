@@ -33,6 +33,23 @@
 						<?php }}?>
 					</select>
 				</fieldset>
+				
+				<fieldset>
+					<label>Model</label>
+					<input type="text" name="model" style="width:95%" value="<?php echo $info->model;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Hãng sản xuất</label>
+					<input type="text" name="hangsx" style="width:95%" value="<?php echo $info->hangsx;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Bảo hành</label>
+					<input type="text" name="baohanh" style="width:95%" value="<?php echo $info->baohanh;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Kho hàng</label>
+					<input type="text" name="khohang" style="width:95%" value="<?php echo $info->khohang;?>"/>
+				</fieldset>
 				<fieldset>
 					<label>Giá (VNĐ)</label>
 					<input type="text" name="price" style="width:95%" value="<?php echo $info->price;?>"/>

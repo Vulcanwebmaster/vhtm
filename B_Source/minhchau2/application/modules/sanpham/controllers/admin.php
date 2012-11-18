@@ -27,13 +27,19 @@
 			$input=array('namev'=>$this->input->post('namev'),
 						'namee'=>$this->input->post('namee'),
 						'category_id'=>$this->input->post('category_id'),
+						'model'=>$this->input->post('model'),
+						'hangsx'=>$this->input->post('hangsx'),
+						'baohanh'=>$this->input->post('baohanh'),
+						'khohang'=>$this->input->post('khohang'),
 						'price'=>$this->input->post('price'),
 						'usesv'=>$this->input->post('usesv'),
 						'usese'=>$this->input->post('usese'),
 						'technical_infov'=>$this->input->post('technical_infov'),
 						'technical_infoe'=>$this->input->post('technical_infoe'),
 						'image'=>$this->input->post('image'),
-						'is_new'=>$this->input->post('is_new'));
+						'is_new'=>$this->input->post('is_new'),
+						'alias'=>$this->getAliasByName($this->input->post('namev')),
+						);
 			return $input;
 		}
 		

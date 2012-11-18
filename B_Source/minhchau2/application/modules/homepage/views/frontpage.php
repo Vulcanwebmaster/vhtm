@@ -61,7 +61,7 @@
 							<div class="trangchuhehe">
 								<span style="font-weight:bold;"><?php echo $item->namev; ?></span>
 								<br>
-								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>" class="name">
+								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id."-".$item->id."-".$item->alias ?>" class="name">
 								<?php echo $item->image; ?>
 								</a>
 								<br>

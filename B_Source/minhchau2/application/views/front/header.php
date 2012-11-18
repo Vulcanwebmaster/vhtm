@@ -34,18 +34,5 @@
 					</li> 
 				</ul>
 			</div>				
-			<div id="ja-search">
-			<!--BEGIN Search Box --> 
-				<form action="" method="post">
-
-					<!--<p><label for="keyword">Tìm kiếm</label></p>-->
-					<p>
-						<input name="keyword" type="text" title="Tìm kiếm" class="inputbox" id="keyword">
-						<!--<input class="button" type="submit" name="Search" value="Tìm kiếm" />-->
-						<input class="buttonSearch" type="submit" name="Search" value="">
-					</p>
-				</form>
-	<!-- End Search Box --> 
-			</div>		
 		</div>
 <!-- END: MAIN NAVIGATION -->
