@@ -32,11 +32,11 @@
 			</div>
 		</div>
 		<style type="text/css">
-        .nav {
-           background-image:url(<?php echo base_url()?>assets/tuongnhatp2/images/fondomenu.png); 
-           background-repeat:repeat-y;
-           padding: 15px 1px 15px 4px;      
-        }
+	        .nav {
+	           background-image:url(<?php echo base_url()?>assets/tuongnhatp2/images/fondomenu.png); 
+	           background-repeat:repeat-y;
+	           padding: 15px 1px 15px 4px;      
+	        }
         </style>
 		<div class="line moreInfo">
 			<div class="unit">
