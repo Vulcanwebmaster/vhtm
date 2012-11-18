@@ -1,8 +1,8 @@
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	$(document).ready(function(){
 		$('#menu-lienhe').addClass('but1_active');
 	});
-</script>
+</script>-->
 
 <div id="main_block">
 	<div class="content">

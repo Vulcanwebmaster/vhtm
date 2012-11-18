@@ -26,8 +26,13 @@
 			$this->load->view('front/container',$data);
 		}
 		
-		function chiTiet($id=0)
+		function chiTiet($alias)
 		{
+			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
+			$temp = explode("-", $alias);
+			if (isset($temp)){
+				$id = $temp[0];
+			}
 			$data['listcate']=$this->Msanpham->getListByColumn('mc_category','parent_id',0);
 			$data['info']=$this->Msanpham->getRowByColumn('mc_product','id',$id);
 			$data['module']=$this->module;

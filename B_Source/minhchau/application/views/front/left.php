@@ -12,7 +12,8 @@ $lang=$this->session->userdata('lang');?>
 						{?>
 							<li class="color">
 								<a <?php $childs=$newModel->getListByColumn('mc_category','parent_id',$listcate[$i]->id);
-										if (count($childs)==0) echo 'href="'.base_url().'sanpham/danhMuc/'.$listcate[$i]->id.'"';
+										if (count($childs)==0) 
+											echo 'href="'.base_url().'sanpham/danhMuc/'.$listcate[$i]->id.'-'.$listcate[$i]->alias.'"';
 									?>>
 									<?php if ($lang=='vn') 
 												echo $listcate[$i]->namev; 
@@ -25,8 +26,8 @@ $lang=$this->session->userdata('lang');?>
 											foreach ($childs as $item)
 											{
 												if ($lang=='vn')
-													echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'">'.$item->namev.'</a></li>';
-												else echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'">'.$item->namee.'</a></li>';
+													echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namev.'</a></li>';
+												else echo'<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namee.'</a></li>';
 											}
 										?>
 									</ul>
@@ -36,7 +37,7 @@ $lang=$this->session->userdata('lang');?>
 						else {?>
 							<li>
 								<a <?php $childs=$newModel->getListByColumn('mc_category','parent_id',$listcate[$i]->id);
-										if (count($childs)==0) echo 'href="'.base_url().'sanpham/danhMuc/'.$listcate[$i]->id.'"';
+										if (count($childs)==0) echo 'href="'.base_url().'sanpham/danhMuc/'.$listcate[$i]->id.'-'.$listcate[$i]->alias.'"';
 									?>>
 									<?php if ($lang=='vn') 
 												echo $listcate[$i]->namev; 
@@ -49,8 +50,8 @@ $lang=$this->session->userdata('lang');?>
 											foreach ($childs as $item)
 											{
 												if ($lang=='vn')
-													echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'">'.$item->namev.'</a></li>';
-												else echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'">'.$item->namee.'</a></li>';
+													echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namev.'</a></li>';
+												else echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namee.'</a></li>';
 											}
 										?>
 									</ul>
