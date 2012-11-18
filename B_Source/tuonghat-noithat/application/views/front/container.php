@@ -66,44 +66,51 @@
 								<div class="unit size1of2">
 									<div class="rPadded login_message">
 										<div class="title">Existing <strong>ZARAHOME.COM </strong>customer  </div>
-										<p>Nhập <strong>email</strong> và <strong>mật khẩu </strong>để đăng nhập:</p>	               
-										<ul>
-											<li class="formControl">
-												<span class="labelLeft">E-mail<em class="required"></em></span>
-												<br>
-												<input class="text logon  msgPos:'msgPosUL1'" style="width: 200px;" type="text" id="email" name="logonId" maxlength="60" value="">
-												<span class="inputTip tipWarn" id="msgPosUL1" style="display: none; visibility: hidden; zoom: 1; opacity: 0; "><img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_warn.png" alt="warning"></span>
-												<span class="inputTip tipOk" style="display: inline; visibility: visible; zoom: 1; opacity: 1; "><img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_ok.png" alt="ok"></span>
-											</li>
-											<li class="formControl">
-												<span class="labelLeft">Mật khẩu <em class="required"></em></span>
-												<br>
-												<input class="text  msgPos:'msgPosUL2'" style="width: 200px;" type="password" id="password" name="logonPassword" maxlength="35">
-												<span class="inputTip tipWarn" id="msgPosUL2"><img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_warn.png" alt="warning"></span>
-												<span class="inputTip tipOk"><img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_ok.png" alt="ok"></span>
-											</li>
-											<li class="formControl" id="check_acept_priv_login" style="position:static; display:none; ">
-												<input type="checkbox" name="privacyPolicy" id="privacyLogin">
-												<span id="privatePolicyError" class="hidden"> Bạn phải chấp nhận quy định của <strong>zarahome.com</strong>. </span> <span>I accept the&nbsp;</span> 
-												<a href="#S" class="showLinkInPopUpWindow linkLabel">Quy định</a><br>
-											</li>
-											<li class="formControl">
-												
-												<div class="lnk_forgot_pw">
-												<a id="forgetPasswordLink" class="lnk_forgot_pw gaPage" data-ga-page-event="click" data-ga-page-logic="/Identificate/Contrasena_Olvidada/Formulario" style="" href="#">
-													Bạn quên mật khẩu
-												</a>
-												</div>
-											</li>				
-										</ul>
-								
-										<div class="actions sc_checkout" style="text-align:left;">
-											<button id="loginBt" type="submit" class="button2" value="Enter">
-												<span>
-													Đồng ý
-												</span>
-											</button>
-										</div>
+										<p>Nhập <strong>email</strong> và <strong>mật khẩu </strong>để đăng nhập:</p>
+										<form name="login-form" id="login-form" method="post" action="">
+											<ul>
+												<li class="formControl">
+													<span class="labelLeft">E-mail<em class="required"></em></span>
+													<br/>
+													<input class="text logon  msgPos:'msgPosUL1'" style="width: 200px;" type="text" id="email" name="logonId" maxlength="60" value=""/>
+													<span class="inputTip tipWarn" id="msgPosUL1" style="display: none; visibility: hidden; zoom: 1; opacity: 0; ">
+														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_warn.png" alt="warning"/>
+													</span>
+													<span class="inputTip tipOk" style="display: inline; visibility: visible; zoom: 1; opacity: 1; ">
+														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_ok.png" alt="ok"/>
+													</span>
+												</li>
+												<li class="formControl">
+													<span class="labelLeft">Mật khẩu <em class="required"></em></span>
+													<br/>
+													<input class="text  msgPos:'msgPosUL2'" style="width: 200px;" type="password" id="password" name="logonPassword" maxlength="35"/>
+													<span class="inputTip tipWarn" id="msgPosUL2">
+														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_warn.png" alt="warning"/>
+													</span>
+													<span class="inputTip tipOk">
+														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_ok.png" alt="ok"/>
+													</span>
+												</li>
+												<li class="formControl" id="check_acept_priv_login" style="position:static; display:none; ">
+													<input type="checkbox" name="privacyPolicy" id="privacyLogin"/>
+													<span id="privatePolicyError" class="hidden"> Bạn phải chấp nhận quy định của <strong>zarahome.com</strong>. </span> <span>I accept the&nbsp;</span> 
+													<a href="#S" class="showLinkInPopUpWindow linkLabel">Quy định</a>
+													<br/>
+												</li>
+												<li class="formControl">
+													
+													<div class="lnk_forgot_pw">
+													<a id="forgetPasswordLink" class="lnk_forgot_pw gaPage" data-ga-page-event="click" data-ga-page-logic="/Identificate/Contrasena_Olvidada/Formulario" style="" href="#">
+														Bạn quên mật khẩu
+													</a>
+													</div>
+												</li>				
+											</ul>
+									
+											<div class="actions sc_checkout" style="text-align:left;">
+												<input style="font-size:14px; font-weight:bold; text-transform:uppercase; padding:5px 10px; color:white; background:black" type="submit" name="submit" value="Đồng ý"/>
+											</div>
+										</form>
 									</div>
 								</div>
 								<div class="unit size1of2 lastUnit">

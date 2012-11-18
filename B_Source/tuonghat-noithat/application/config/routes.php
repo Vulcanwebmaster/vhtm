@@ -35,7 +35,6 @@
 |
 | This route will tell the Router what URI segments to use if those provided
 | in the URL cannot be matched to a valid route.
-|
 */
 $route['welcome/(:any)'] = "welcome/index/$1";
 $route['default_controller'] = "homepage";
