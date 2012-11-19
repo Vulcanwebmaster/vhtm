@@ -72,7 +72,20 @@
 				?>
 				
 			</div>
+			
 			</div>
+							<!-- BEGIN: BOTTOM SPOTLIGHT -->
+		<div id="ja-botsl" class="clearfix">
+		
+			<div class="ja-box-full" style="width: 99.5%;">
+				<div class="moduletable">
+					<h3><span>Latest</span> News</h3>
+						<ul class="latestnews">
+						</ul>		
+				</div>	
+			</div>
+		</div>
+		<!-- END: BOTTOM SPOTLIGHT -->
 		</div>
         <!---------------end content center----------------------->
 	  </div>
