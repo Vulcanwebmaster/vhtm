@@ -33,6 +33,7 @@
 						'technical_infov'=>$this->input->post('technical_infov'),
 						'technical_infoe'=>$this->input->post('technical_infoe'),
 						'image'=>$this->input->post('image'),
+						'alias'=>$this->getAliasByName($this->input->post('namev')),
 						'is_new'=>$this->input->post('is_new'));
 			return $input;
 		}

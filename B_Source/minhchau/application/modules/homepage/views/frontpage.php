@@ -31,7 +31,7 @@
 				</h3>
 				<?php echo $item->image;?>
 				<span><?php echo $item->price;?> VNĐ</span>
-				<a href="<?php echo base_url();?>sanpham/chiTiet/<?php echo $item->id;?>" class="view">Chi tiết</a>
+				<a href="<?php echo base_url();?>sanpham/chiTiet/<?php echo $item->id."-".$item->alias;?>" class="view">Chi tiết</a>
 			</div>
 		<?php }?>
 	</div>
