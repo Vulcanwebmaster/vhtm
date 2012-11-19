@@ -1931,8 +1931,8 @@ list-style-type: circle;
 .selectionProds li img{
 	/*width:206px;
 	height:206px;*/
-	width:298px;
-	height:298px;
+	width:298px !important;
+	height:298px !important;
 }
 
 .selectionProds li p {

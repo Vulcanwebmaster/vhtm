@@ -23,7 +23,7 @@
 		<?php $this->load->view('front/header')?>
 		<div id="homeBackground" class="fullScreen mktSpotCont" style="height: 667px;">
 		
-	    <div class="fullScreen" style="height: 667px; ">
+	    <div class="fullScreen" id="background-image" style="height: 667px; ">
 	        <img src="<?php echo base_url()?>assets/tuongnhatp2/images/usa1_home_a_16-9.jpg" alt="" class="fullImage" id="16-9" style="display: block; height: 771px; width: 1366px; left: 0px; top: -52px; "/>
 		</div>	
 		</div> 
@@ -31,10 +31,6 @@
 		<!--page-->
 			
 		<?php $this->load->view('front/left');?>
-		<div id="content">
-			<?php $this->load->view('front/content');?>
-		</div>
-		  
 		<!----------------bein login------------->
 		<div id="pupPanellogin" class="modal sbox-window" style="visibility: visible; zoom: 1; opacity: 1; top: 128px; z-index: 1000; left: 298px; display: none; ">
 			<div class="sbox-bg-wrap">

@@ -36,15 +36,16 @@
                                      	<div id="miniShopCart" class="unit size1of1">                                        	
                                             	<a id="shoppingCartBar" href="#"><img id="bag" src="<?php echo base_url()?>assets/tuongnhatp2/images/ico_shopping_bag.png">Basket <span>(<span id="miniShopCartItems">0</span><span id="miniShopCartItemsQuantity">Items)</span></span></a>                                 
                                       	</div>
-                                     </li>                                
+                                     </li>   
                                 </ul>
-                            </div>
-                            <div class="freeship">
-                            	<img src="<?php echo base_url()?>assets/tuongnhatp2/images/envio_gratis_usa_en.png-20121009.png">
                             </div>
                         </div>
                     </div>
                 </div>											           		                       
 		    </div>				
+		
+			<div class="body">
+				<?php $this->load->view('front/content');?>
+			</div>
 		</div>
 	</div>
