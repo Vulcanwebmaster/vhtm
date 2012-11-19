@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 29, 2012 at 04:36 PM
+-- Generation Time: Nov 19, 2012 at 12:39 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `tuongnhatp2`
+-- Database: `tuongnhat-noithat`
 --
 
 -- --------------------------------------------------------
@@ -351,6 +351,7 @@ INSERT INTO `n_tn_accounts` (`account_id`, `account_fullname`, `account_address`
 CREATE TABLE IF NOT EXISTS `n_tn_categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category_alias` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `category_parent_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
@@ -359,14 +360,14 @@ CREATE TABLE IF NOT EXISTS `n_tn_categories` (
 -- Dumping data for table `n_tn_categories`
 --
 
-INSERT INTO `n_tn_categories` (`category_id`, `category_name`, `category_parent_id`) VALUES
-(1, 'Danh mục 1', 0),
-(2, 'Danh mục 2', 0),
-(3, 'Danh mục 3', 0),
-(4, 'Danh mục 4', 0),
-(6, 'Danh mục con 1', 2),
-(8, 'Danh mục 6', 1),
-(9, 'Danh mục 7', 0);
+INSERT INTO `n_tn_categories` (`category_id`, `category_name`, `category_alias`, `category_parent_id`) VALUES
+(1, 'Danh mục 1', 'danh-muc-1', 0),
+(2, 'Danh mục 2', 'danh-muc-2', 0),
+(3, 'Danh mục 3', 'danh-muc-3', 0),
+(4, 'Danh mục 4', 'danh-muc-4', 0),
+(6, 'Danh mục con 1', 'danh-muc-con-1', 2),
+(8, 'Danh mục 6', 'danh-muc-6', 1),
+(9, 'Danh mục 7', 'danh-muc-7', 0);
 
 -- --------------------------------------------------------
 
@@ -401,9 +402,10 @@ INSERT INTO `n_tn_contacts` (`contact_id`, `contact_name`, `contact_email`, `cat
 
 CREATE TABLE IF NOT EXISTS `n_tn_products` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(100) DEFAULT NULL,
-  `product_price` varchar(30) DEFAULT NULL,
-  `product_image` text,
+  `product_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `product_alias` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `product_price` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `product_image` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `product_date_create` datetime DEFAULT NULL,
   `product_date_edit` datetime DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -415,9 +417,9 @@ CREATE TABLE IF NOT EXISTS `n_tn_products` (
 -- Dumping data for table `n_tn_products`
 --
 
-INSERT INTO `n_tn_products` (`product_id`, `product_name`, `product_price`, `product_image`, `product_date_create`, `product_date_edit`, `category_id`, `is_new`) VALUES
-(2, '2', '2', '<p>\r\n	100111</p>\r\n', '2012-10-08 00:00:00', '2012-10-23 18:18:31', 4, 0),
-(3, 'ten san pham', 'gia', '<p>\r\n	<img alt="" src="/tuongnhatp2/assets/tuongnhatp2/images/images/Untitled.jpg" style="width: 502px; height: 517px; " /></p>\r\n', '2012-10-23 15:14:31', '2012-10-25 10:46:57', 1, 1);
+INSERT INTO `n_tn_products` (`product_id`, `product_name`, `product_alias`, `product_price`, `product_image`, `product_date_create`, `product_date_edit`, `category_id`, `is_new`) VALUES
+(2, '2', '', '2', '<p>\r\n	<img alt="" src="/tuongnhatp2/assets/tuongnhatp2/images/images/Best-top-desktop-green-grass-wallpapers-hd-grass-wallpaper-pictures-photos-29.jpg" style="width: 1600px; height: 900px; " /></p>\r\n', '2012-10-08 00:00:00', '2012-11-18 03:05:09', 4, 0),
+(3, 'ten san pham', '', 'gia', '<p>\r\n	<img alt="" src="/tuongnhatp2/assets/tuongnhatp2/images/images/beautiful_lake_wallpaper_15e9c.jpg" style="width: 1440px; height: 900px; " /></p>\r\n', '2012-10-23 15:14:31', '2012-11-18 03:04:40', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -448,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-10-29 16:33:44', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-11-19 10:24:49', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
