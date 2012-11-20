@@ -1,26 +1,19 @@
 <?php
-class Danhmuc extends NIW_Controller
-{
-	function __construct()
+	class Danhmuc extends NIW_Controller
 	{
-		parent::__construct();
-		$this->module=strtolower(get_class());
-		$this->load->model('Mdanhmuc');
-	}
-	
-	function _remap($alias)
-	{
-		$category=$this->Mdanhmuc->getRowByColumn('tn_categories','category_alias',$alias);
-		$this->detailCategory($category->category_id);
-	}
-	
-	function detailCategory($categoryId='0')
-	{
-		$list=$this->Mdanhmuc->getListByColumn('tn_products','category_id',$categoryId);
-		$this->data['listProducts']=$list;
-		$this->data['page']='front/vdetail';
-		$this->data['module']=$this->module;
+		private $module;
+		function __construct()
+		{
+			parent::__construct();
+			$this->module=strtolower(get_class());
+			
+			$this->load->model('Mdanhmuc');
+		}
 		
-		$this->load->view('front/container',$this->data);
+		function index()
+		{
+			$data['list']=$this->Mdanhmuc->getListFull('tn_categories');
+			$data['module']=$this->module;
+		}
 	}
-}
+?>

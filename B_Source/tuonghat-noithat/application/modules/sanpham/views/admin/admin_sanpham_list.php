@@ -22,11 +22,9 @@
 			<thead> 
 				<tr>
 					<th align="center">STT</th> 
-    				<th align="center">Ảnh đại diện</th> 
     				<th align="center">Tên sản phẩm</th>
     				<th align="center">Giá</th> 
     				<th align="center">Ngày tạo</th> 
-    				<th align="center">Ngày sửa</th> 
     				<th align="center">Sản phẩm mới</th>
     				<th align="center">Danh mục</th>
     				<th align="center">Actions</th> 
@@ -40,11 +38,9 @@
 			?>
 				<tr>
 					<td align="center"><?php echo $count+1; ?></td>
-    				<td align="center" style="padding: 0px;"><?php echo $row->product_image ?></td> 
     				<td><?php echo $row->product_name?></td>
     				<td align="center"><?php echo $row->product_price ?></td>  
     				<td align="center"><?php echo $row->product_date_create?></td> 
-    				<td align="center"><?php echo $row->product_date_edit ?></td>
     				<td align="center"><?php if($row->is_new == 0) echo 'Không'; else echo 'Có';?></td>
     				<td align="center"><?php echo $listCategory[$count]?></td>
     				<td align="center">

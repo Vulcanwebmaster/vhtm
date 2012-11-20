@@ -1,115 +1,123 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-	class Admin extends Admin_Controller {
-	
+<?php
+	class Admin extends Admin_Controller
+	{
+		private $module;
 		function __construct()
 		{
 			parent::__construct();
-			$this->module = basename(dirname(dirname(__FILE__))); 
-			$this->module = strtolower(get_class());
-			//Load model
+			$this->module=strtolower(get_class());
+			
 			$this->load->model('Mdanhmuc');
-			$this->load->library('pagination');
-			$this->load->library('session');
-			$this->load->helper('url');
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('category_name', 'Tên danh mục', 'required');
-			$this->form_validation->set_message('required','%s không được để trống');
+			$this->load->library('session');
 		}
 		
 		function index()
 		{
-			$config['base_url'] = base_url().'danhmuc/admin/index';
-			$config['uri_segment'] = 4;
-			$config['total_rows'] = $this->Mdanhmuc->count();
-			$config['per_page'] = 2; 
-			$this->pagination->initialize($config); 
-			$data['listpaging'] = $this->Mdanhmuc->getList($config['per_page'],$this->uri->segment(4));
-			
-			$listParent = array();
-			foreach($data['listpaging'] as $row)
-			{
-				if($row->category_parent_id == 0)
-					$listParent[] = "";
-				else $listParent[] = $this->Mdanhmuc->getCategoryNameById($row->category_parent_id); 
-			}
-			
-			$data['listParent'] = $listParent;
-			$data['page'] = 'admin_danhmuc_list';
-			$data['title'] = 'Quản lý danh mục';
-			$data['bcCurrent'] = 'Quản lý danh mục';
-			$data['module'] = $this->module;
-			$this->load->view('admin/container',$data);		
+			$data['title']='Danh mục';
+			$data['bcCurrent']='Danh mục';
+			$data['list']=$this->Mdanhmuc->getListFull('tn_categories');
+			$data['module']=$this->module;
+			$data['page']='admin_list_category';
+			$this->load->view('admin/container',$data);
+		}
+		
+		function _input()
+		{
+			$input=array('category_name'=>$this->input->post('category_name'),
+						'alias'=>$this->getAliasByName($this->input->post('category_name')),/*getAliasByName Lấy từ Controller mà nó kế thừa*/
+						'category_parent_id'=>$this->input->post('category_parent_id'));
+			return $input;
 		}
 		
 		function insert()
 		{
-			$data['listParent'] = $this->Mdanhmuc->getlistParent();
-			if($this->input->post('submit')){
-				if($this->form_validation->run()){
-					if($this->Mdanhmuc->insert())
-						$this->session->set_userdata('session','Thêm mới thành công');
-					else $this->session->set_userdata('session','Thêm mới không thành công');
-					redirect(base_url().'danhmuc/admin', 'refresh');
+			if (!$this->input->post('category_name'))
+			{
+				$data['list']=$this->Mdanhmuc->getListByColumn('tn_categories','category_parent_id','0');
+				$data['title']='Thêm danh mục';
+				$data['bcCurrent']='Danh mục';
+				$data['module']=$this->module;
+				$data['page']='admin_insert_category';
+				$this->load->view('admin/container',$data);
+			}
+			else 
+			{
+				$this->form_validation->set_rules('category_name','Tên','required|trim');
+				
+				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				
+				if ($this->form_validation->run())
+				{
+					$input=$this->_input();
+					if ($this->Mdanhmuc->insertNewRow('tn_categories',$input))
+					{
+						$this->session->set_userdata('result','Thêm mới thành công');
+					}
+					else $this->session->set_userdata('result','Thêm mới không thành công');
+					$this->index();
 				}
-				else {
-					$data['page'] = 'admin_danhmuc_insert';
-					$data['bcCurrent'] = 'Thêm danh mục';
-					$data['title'] = 'Thêm danh mục';
-					$data['module'] = $this->module;
+				else 
+				{
+					$data['list']=$this->Mdanhmuc->getListByColumn('tn_categories','category_parent_id','>0');
+					$data['title']='Thêm danh mục';
+					$data['bcCurrent']='Danh mục';
+					$data['module']=$this->module;
+					$data['page']='admin_insert_category';
 					$this->load->view('admin/container',$data);
 				}
-			}
-			else {
-				$data['page'] = 'admin_danhmuc_insert';
-				$data['bcCurrent'] = 'Thêm danh mục';
-				$data['title'] = 'Thêm danh mục';
-				$data['module'] = $this->module;
-				$this->load->view('admin/container',$data);
 			}
 		}
 		
-		function edit($product_id)
+		function edit($id=0)
 		{
-			$data['listParent'] = $this->Mdanhmuc->getlistParent();
-			if($this->input->post('submit')){
-				if($this->form_validation->run()){
-					if($this->Mdanhmuc->edit($this->uri->segment(4))){
-						$this->session->set_userdata('session','Cập nhật thành công');
+			if (!$this->input->post('category_name'))
+			{
+				$data['list']=$this->Mdanhmuc->getListByColumn('tn_categories','category_parent_id','0');
+				$data['info']=$this->Mdanhmuc->getRowByColumn('tn_categories','category_id',$id);
+				$data['title']='Sửa danh mục';
+				$data['bcCurrent']='Danh mục';
+				$data['module']=$this->module;
+				$data['page']='admin_edit_category';
+				$this->load->view('admin/container',$data);
+			}
+			else 
+			{
+				$this->form_validation->set_rules('category_name','Tên','required|trim');
+				
+				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				
+				if ($this->form_validation->run())
+				{
+					$input=$this->_input();
+					if ($this->Mdanhmuc->updateRowByColumn('tn_categories','category_id',$id,$input))
+					{
+						$this->session->set_userdata('result','Cập nhật thành công');
 					}
-					else{
-						$this->session->set_userdata('session','Cập nhật không thành công');
-					}
-					redirect(base_url().'danhmuc/admin', 'refresh');
+					else $this->session->set_userdata('result','Cập nhật không thành công');
+					$this->index();
 				}
-				else{
-					$data['query'] = $this->Mdanhmuc->getRowById('n_tn_categories','category_id',$this->uri->segment(4));
-					$data['page'] = 'admin_danhmuc_edit';
-					$data['bcCurrent'] = 'Cập nhật thông tin danh mục';
-					$data['title'] = 'Cập nhật thông tin danh mục';
-					$data['module'] = $this->module;
+				else 
+				{
+					$data['list']=$this->Mdanhmuc->getListByColumn('tn_categories','category_parent_id','>0');
+					$data['info']=$this->Mdanhmuc->getRowByColumn('tn_categories','category_id',$id);
+					$data['title']='Sửa danh mục';
+					$data['bcCurrent']='Danh mục';
+					$data['module']=$this->module;
+					$data['page']='admin_edit_category';
 					$this->load->view('admin/container',$data);
 				}
 			}
-			else {
-				$data['query'] = $this->Mdanhmuc->getRowById('n_tn_categories','category_id',$this->uri->segment(4));
-				$data['page'] = 'admin_danhmuc_edit';
-				$data['bcCurrent'] = 'Cập nhật thông tin danh mục';
-				$data['title'] = 'Cập nhật thông tin danh mục';
-				$data['module'] = $this->module;
-				$this->load->view('admin/container',$data);
-			}
 		}
-
-		function del($category_id)
+		
+		function delete($id=0)
 		{
-			if($this->Mdanhmuc->del($this->uri->segment(4))){
-				$this->session->set_userdata('session','Xóa thành công');
+			if ($this->Mdanhmuc->deleteRowByColumn('tn_categories','category_id',$id))
+			{
+				$this->session->set_userdata('result','Xóa thành công');
 			}
-			else{
-				$this->session->set_userdata('session','Xóa không thành công');
-			}
-			redirect(base_url().'danhmuc/admin', 'refresh');
+			else $this->session->set_userdata('result','Xóa không thành công');		
+			$this->index();
 		}
 	}
 ?>
