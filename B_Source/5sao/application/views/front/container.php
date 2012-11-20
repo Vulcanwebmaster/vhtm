@@ -16,7 +16,7 @@
 			 var parent_ct;			 
 			 <?php if (isset($current_category))
 			 {?>			 
-			 	var list=getElementsByClassName('menuleft-lv2');
+			 	var list=$('.menuleft-lv2');
 				var category;
 			 	<?php if ($_SESSION["lang"]=="vn")
 			 	{?>
@@ -27,6 +27,7 @@
 				<?php }?>
 				
 				var i=0;
+				$current=$();
 				for (i=0;i<list.length;i++)
 				{
 					if (list[i].text==category)
@@ -39,11 +40,14 @@
 					}
 					else if (list[i].parentNode.parentNode.parentNode.parentNode.childNodes[0].text==category)
 					{
+						
 					     item=list[i];
 					     item.parentNode.parentNode.parentNode.style.display='block';
 					     $current=$(item.parentNode.parentNode.parentNode.parentNode);
 					     break;
 					}
+					else
+					alert(list[i]);
 				}
 				$current.addClass("cannotclose");
 

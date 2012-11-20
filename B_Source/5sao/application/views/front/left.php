@@ -16,7 +16,7 @@
 						{
 							if ($_SESSION['lang']=="vn") 
 							{?>
-								<li class="slidecontrol"><a <?php 
+								<li class="slidecontrol" style="display:inline"><a <?php 
 									echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> class="type2" style="cursor:pointer">
 									<?php echo $category->ten_v; ?></a>	
 									<?php $listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);?>
@@ -43,7 +43,7 @@
 									<?php if (count($listlevel2)>0)
 									{?>
 									<div class="slidemove">
-										<ul class="inside">
+										<ul class="inside" style="display:none">
 											<?php 												
 												foreach ($listlevel2 as $level2)
 												{?>
