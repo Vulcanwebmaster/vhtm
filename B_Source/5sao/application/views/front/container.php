@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/jquery.nivo.slider.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/getElementsByClassName-1.0.1.js"></script>	
+	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/detect_browser.js"></script>	
 	 <script type="text/javascript">
 		 $(document).ready(function(){		 	
 			 $('.slidemove').hide();
@@ -17,37 +18,61 @@
 			 <?php if (isset($current_category))
 			 {?>			 
 			 	var list=$('.menuleft-lv2');
-				var category;
+			 	var category;
 			 	<?php if ($_SESSION["lang"]=="vn")
 			 	{?>
 			 		category='<?php echo $current_category->ten_v;?>';
 				<?php }
 				else {?>
-					category='<?php echo $current_category->ten_e;?>';
+					category='<?php echo $current_category->ten_v;?>';
 				<?php }?>
 				
-				var i=0;
-				$current=$();
-				for (i=0;i<list.length;i++)
+				if (BrowserDetect.browser!="Explorer")
 				{
-					if (list[i].text==category)
+					var i=0;
+					$current=$();
+					
+					for (i=0;i<list.length;i++)
 					{
-						item=list[i];
-						parent_ct=item.parentNode.parentNode.parentNode;
-						item.parentNode.parentNode.parentNode.style.display='block';
-                                                $current=$(item.parentNode.parentNode.parentNode.parentNode);
-						break;
+						if (list[i].text==category)
+						{
+							item=list[i];
+							parent_ct=item.parentNode.parentNode.parentNode;
+							item.parentNode.parentNode.parentNode.style.display='block';
+	                                                $current=$(item.parentNode.parentNode.parentNode.parentNode);
+							break;
+						}
+						else if (list[i].parentNode.parentNode.parentNode.parentNode.childNodes[0].text.trim()==category)
+						{
+							
+						     item=list[i];
+						     item.parentNode.parentNode.parentNode.style.display='block';
+						     $current=$(item.parentNode.parentNode.parentNode.parentNode);
+						     break;
+						}
 					}
-					else if (list[i].parentNode.parentNode.parentNode.parentNode.childNodes[0].text==category)
+				}
+				else 
+				{
+					var i=0;
+					$current=$();
+					
+					for (i=0;i<list.length;i++)
 					{
-						
-					     item=list[i];
-					     item.parentNode.parentNode.parentNode.style.display='block';
-					     $current=$(item.parentNode.parentNode.parentNode.parentNode);
-					     break;
+						if ($(list[i]).text()==category)
+						{
+							$(list[i]).parent().parent().parent().css('display','block');
+                            $current=$(list[i]).parent().parent().parent().parent();
+							break;
+						}
+						else if ($(list[i]).parent().parent().parent().parent().children(".type2").text()==category)
+						{
+							
+						     $(list[i]).parent().parent().parent().css('display','block');
+						     $current=$(list[i]).parent().parent().parent().parent();
+						     break;
+						}
 					}
-					else
-					alert(list[i]);
 				}
 				$current.addClass("cannotclose");
 
