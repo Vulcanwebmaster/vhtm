@@ -32,7 +32,8 @@ class NIW_Controller extends CI_Controller {
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');	
 		
-		$this->data['listCategories']=$this->getListCategoties();
+		$model=new CI_Model();
+		$this->data['parents']=$model->getListByColumn('tn_categories','category_parent_id',0);
 	}
 	
 	function set_default_value($data=NULL, $value=NULL)
@@ -81,13 +82,6 @@ class NIW_Controller extends CI_Controller {
 				$this->$error = '';
 			}
 		}
-	}
-	
-	function getListCategoties()
-	{
-		$model=new CI_Model();
-		$list=$model->getListFull('tn_categories');
-		return $list;
 	}
 }
 

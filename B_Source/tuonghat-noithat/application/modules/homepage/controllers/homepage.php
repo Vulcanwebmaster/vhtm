@@ -11,8 +11,6 @@ class Homepage extends NIW_controller {
 	
 	public function index()
 	{
-	
-		$this->data['parents']=$this->Mhomepage->getListByColumn('tn_categories','category_parent_id',0);
 		$this->data['title']='Tường Nhật | Home';
 		$this->data['module'] = $this->module;
 		$this->data['page'] = 'frontpage';

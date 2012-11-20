@@ -10,10 +10,24 @@
 			$this->load->model('Mdanhmuc');
 		}
 		
-		function index()
+		function _remap($alias)
 		{
-			$data['list']=$this->Mdanhmuc->getListFull('tn_categories');
-			$data['module']=$this->module;
+			$segments=explode('-', $alias);
+			$realAlias;
+			$categoryId=$segments[0];
+			$this->detailCategory($categoryId);
+		}
+		
+		/*
+		 * Get detail of category
+		 * $categoryId: id number of target category.
+		 */
+		function detailCategory($categoryId='0')
+		{
+			$this->data['module']=$this->module;
+			$this->data['page']='front/vdetail';
+			$this->data['listProducts']=$this->Mdanhmuc->getListByColumn('tn_products','category_id',$categoryId);
+			
+			$this->load->view('front/container',$this->data);
 		}
 	}
-?>

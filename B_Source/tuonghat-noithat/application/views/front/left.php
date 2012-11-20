@@ -13,30 +13,19 @@
 					{
 						for ($i=0;$i<count($parents);$i++)
 						{
-								$num=$newModel->getListByColumn('tn_categories','category_parent_id',$parents[$i]->category_id);
-								if(count($num)>0)
+								$listChildren=$newModel->getListByColumn('tn_categories','category_parent_id',$parents[$i]->category_id);
+								if(count($listChildren)>0)
 								{
 									?>
 										<li class="menuLevel1"> 
-											<?php 
-											$listChildren = $model->getListByColumn('tn_categories','category_parent_id',$parents[$i]->category_id);
-											if (count($listChildren) == 0)
-											{?>
-											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias ?>">
-												<?php echo $parents[$i]->category_name; ?>
-											</a>
-											<?php }
-											else {?>
 											<a><?php echo $parents[$i]->category_name; ?></a>
-											<?php }?>	
-										
 										<?php
 											if (isset($listChildren))
 											{ ?>
 												<ul class="menuLevel2">
 										<?php	foreach($listChildren as $child)
 												{ ?>
-									            	<li><a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->category_id."-".$child->alias ?>">
+									            	<li><a href="<?php echo base_url() ?>danh-muc/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias.'.htm' ?>">
 									                    		<?php echo $child->category_name; ?>
 									                    </a>
 									                </li>
@@ -49,8 +38,8 @@
 		            			else
 								{
 									?>
-										<li> 
-											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias ?>">
+										<li class="menuLevel1"> 
+											<a href="<?php echo base_url() ?>danh-muc/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias.'.htm' ?>">
 												<?php echo $parents[$i]->category_name; ?>
 											</a>
 				                		</li>
