@@ -49,7 +49,7 @@
 			$data['listCategory'] = $this->Msanpham->getListCategory();
 			if($this->input->post('submit')){
 				if($this->form_validation->run()){
-					if($this->Msanpham->editSanpham($this->uri->segment(4))){
+					if($this->Msanpham->editSanpham($product_id, $this->_input("edit"))){
 						$this->session->set_userdata('session','Cập nhật thành công');
 					}
 					else{
@@ -83,13 +83,28 @@
 			}
 		}
 		
+		function _input($type="")
+		{
+			$data = array(
+								'product_name'	=> $this->input->post('product_name'),
+								'product_price'	=> $this->input->post('product_price'),
+								'product_image'	=> $this->input->post('product_image'),
+								'category_id'	=> $this->input->post('category_id'),
+								'is_new'		=> $this->input->post('is_new')
+				);
+			if ($type=="insert")
+				$data['product_date_create']= date('Y-m-d',time()+7*3600);
+			elseif ($type=="edit")
+				$data['product_date_edit']= date('Y-m-d',time()+7*3600);
+			return $data;
+		}
 		
 		function insert()
 		{
 			$data['listCategory'] = $this->Msanpham->getListCategory();
 			if($this->input->post('submit')){
 				if($this->form_validation->run()){
-					if($this->Msanpham->insertSanpham())
+					if($this->Msanpham->insertSanpham($this->_input("insert")))
 						$this->session->set_userdata('session','Thêm mới thành công');
 					else $this->session->set_userdata('session','Thêm mới không thành công');
 					redirect(base_url().'sanpham/admin', 'refresh');

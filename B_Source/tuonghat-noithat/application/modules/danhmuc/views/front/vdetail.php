@@ -1,3 +1,10 @@
+<script type="text/javascript">
+       $(document).ready(function(){
+       $('.arrow').click(function(){
+       	$(this).children('.filterBox').slideToggle();
+       });
+       });
+</script>
 <style type="text/css">
 	#background-image{display:none}
 </style>
@@ -11,7 +18,7 @@
 						<div class="filters">
             				<ul class="listH">            				
 		              					<li class="filter checkFilter" filterid="feature" id="ctas">
-											<a href="#" id="drop_ctas" class="filterTitle arrow" style="font-weight: normal; ">Đặc điểm</a>
+											<a id="drop_ctas" class="filterTitle arrow" style="font-weight: normal; ">Đặc điểm</a>
 									 	<div id="ctas_wrap" class="filterBox">
 											<form action="#" method="post">
 												<ul>
@@ -48,7 +55,7 @@
 										</div>	
 										</li>								
 										<li class="filter checkFilter" filterid="color" id="color">
-											<a class="filterTitle arrow" href="#content" id="drop_color" style="font-weight: normal; ">Màu sắc</a>
+											<a class="filterTitle arrow" id="drop_color" style="font-weight: normal; ">Màu sắc</a>
 						<div id="color_wrap" class="filterBox">												
 							<form action="#" method="post">												
 									<ul>														
@@ -67,7 +74,7 @@
 						</div>													
 						</li>									
 				<li class="filter sliderFilter" filterid="price" id="price">
-                	<a class="arrow filterTitle" id="drop_precio" href="#" style="font-weight: normal; ">Giá</a>
+                	<a class="arrow filterTitle" id="drop_precio" style="font-weight: normal; ">Giá</a>
                     <div id="precio_wrap" class="filterBox">
 						<div class="sliderWrap">
 							<div id="slider">

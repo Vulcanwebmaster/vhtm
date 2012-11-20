@@ -7341,6 +7341,9 @@ a#full-slider-nav-right-kids span {
 	border-top: 1px solid #E5E5E5; /*(falta l�nea superior)*/
 	padding-top:15px;
 	z-index:99;
+	position:absolute;
+	left:0;
+	right:0
 }
 .listH li ul li{
 	display:list-item;
@@ -10514,3 +10517,4 @@ a.twitter {
 	
 }
 .freeship{ position:absolute; top:20px; right:0;}
+.arrow{cursor:pointer}

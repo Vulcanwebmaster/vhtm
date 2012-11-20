@@ -29,31 +29,15 @@
 			return $query->row(0);
 		}
 		
-		function editSanpham($product_id)
+		function editSanpham($product_id, $input)
 		{
-			$data = array(
-							'product_name'	=> $this->input->post('product_name'),
-							'product_price'	=> $this->input->post('product_price'),
-							'product_image'	=> $this->input->post('product_image'),
-							'category_id'	=> $this->input->post('category_id'),
-							'is_new'		=> $this->input->post('is_new')
-			);
-			$this->db->set('product_date_edit','now()',false);
-			$this->db->where('product_id',$product_id);
-			if($this->db->update('tn_products',$data)) return true;
+			if($this->db->update('tn_products',$input,array('product_id'=>$product_id))) return true;
 			else return false;
 		}
 		
 		function insertSanpham()
 		{
-			$data = array(
-							'product_name'	=> $this->input->post('product_name'),
-							'product_price'	=> $this->input->post('product_price'),
-							'product_image'	=> $this->input->post('product_image'),
-							'category_id'	=> $this->input->post('category_id'),
-							'is_new'		=> $this->input->post('is_new')
-			);
-			$this->db->set('product_date_create','now()',false);
+			
 			if($this->db->insert('tn_products',$data)) return true;
 			else return false;
 		}

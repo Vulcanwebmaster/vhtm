@@ -73,6 +73,7 @@ class Admin_Controller extends NIW_Controller
 		/*  -------Bỏ dấu làm Alias------------ */
 	function getAliasByName($name)
 	{
+		$name = strtolower($name);
 		$name=str_replace('á', 'a', $name);
 		$name=str_replace('à', 'a', $name);
 		$name=str_replace('ạ', 'a', $name);
@@ -145,6 +146,17 @@ class Admin_Controller extends NIW_Controller
 		$name=str_replace('ử', 'u', $name);
 		$name=str_replace('ữ', 'u', $name);
 		$name=str_replace('ư', 'u', $name);
+		
+		$name=str_replace('ý', 'y', $name);
+		$name=str_replace('ỳ', 'y', $name);
+		$name=str_replace('ỷ', 'y', $name);
+		$name=str_replace('ỹ', 'y', $name);
+		$name=str_replace('ỵ', 'y', $name);
+		
+		$name=str_replace('*', '', $name);
+		$name=str_replace('"', '', $name);
+		$name=str_replace("'", '', $name);
+		$name=str_replace('?', '', $name);
 		
 		$name=str_replace(' ', '-', $name);
 		$name=str_replace('đ', 'd', $name);
