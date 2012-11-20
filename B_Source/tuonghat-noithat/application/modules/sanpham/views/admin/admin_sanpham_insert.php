@@ -1,5 +1,5 @@
 <section id="main" class="column" style="width:100%;">
-<form action="<? echo base_url()?>sanpham/admin/insert" method="post">
+<form action="<?php echo base_url()?>sanpham/admin/insert" method="post">
 	<article class="module width_full" style="width:95%;">
 		<header><h3>Nhập thông tin sản phẩm</h3></header>
 			<div class="module_content" style="max-height:400px;overflow: auto">
@@ -45,7 +45,7 @@
 			</div>
 				<footer>
 					<div class="submit_link">
-						<input type="submit" name="submit" value="Update" class="alt_btn">
+						<input type="submit" name="submit" value="Thêm" class="alt_btn">
 					</div>
 				</footer>
 

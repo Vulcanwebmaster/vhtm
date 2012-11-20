@@ -1,5 +1,5 @@
 <section id="main" class="column" style="width:100%;">
-<form action="<? echo base_url()?>sanpham/admin/edit/<?php echo $query->product_id ?>" method="post">
+<form action="<?php echo base_url();?>sanpham/admin/edit/<?php echo $query->product_id ?>" method="post">
 	<article class="module width_full" style="width:95%;">
 		<header><h3>Thông tin sản phẩm</h3></header>
 			<div class="module_content" style="max-height:400px;overflow: auto">
