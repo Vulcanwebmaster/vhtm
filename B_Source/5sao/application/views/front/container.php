@@ -49,23 +49,21 @@
 
 			 <?php }?>	
 
-					/*$('.slidecontrol').mouseenter(function(){
-							$(this).children('.slidemove').slideDown();
+					$('.slidecontrol').children('a').mouseenter(function(){
+							$(this).parent().children('.slidemove').slideDown();
 					});
                     $('.slidecontrol').mouseleave(function(){
 							var classname=$(this).attr("class");
                             if (classname.indexOf("cannotclose")==-1)
-								$(this).children('.slidemove').slideUp();*/
+								$(this).children('.slidemove').slideUp();
+								});
 
-					$('.slidecontrol').hover(function(){
-							$(this).children('.slidemove').slideToggle("slow");
-						});
-										
 				$('.bg_itemmenu').children('ul').css('opacity','0');//.animate({opacity:0},300);				
 					$('.menu-text').mouseenter(function(){
 						$(this).parent().addClass('hovermenu');
 						//$(this).children('.itemmenu').children('div').slideDown(300);
 						$(this).parent().children('.bg_itemmenu').children('ul').animate({opacity:1,height:'100%'},300);
+						$(".styleshow").css('display','none !important');
 						});
 					$('.submenu').mouseleave(function(){
 						$(this).removeClass('hovermenu');
@@ -80,9 +78,12 @@
 					$(this).addClass('hovermenu');
 				})
 				$('.submenu').mouseleave(function(){
-					$(this).children('.bg_itemmenu').hide();
-					$(this).removeClass('hovermenu');
-					$(this).children('.bg_itemmenu').css('z-index','10');
+					if ($(this).attr('class')!='submenu cannotmodify')
+					{
+						$(this).children('.bg_itemmenu').hide();
+						$(this).removeClass('hovermenu');
+						$(this).children('.bg_itemmenu').css('z-index','10');
+					}
 				});				
 			});
 				$(window).load(function() {

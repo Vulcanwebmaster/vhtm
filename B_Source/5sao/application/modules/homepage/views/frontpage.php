@@ -1,7 +1,3 @@
-<script type="text/javascript">
-	$('#menu-trangchu').parent().addClass('currentmenu');
-	$('#bg_itemmenu_1').addClass('styleshow');
-</script>
 
 <div id="center">
 					<div id="photo">
@@ -30,3 +26,11 @@
 						<?php echo $this->pagination->create_links();?>
 					</div>
 				</div>
+				
+
+<script type="text/javascript">
+	$('#menu-trangchu').parent().addClass('currentmenu');
+	$('#bg_itemmenu_1').addClass('styleshow');
+	
+	
+</script>

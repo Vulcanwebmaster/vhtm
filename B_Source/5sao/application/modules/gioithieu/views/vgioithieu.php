@@ -3,7 +3,13 @@
 	<li>> <h1><?php echo $this->lang->line('menu-gioithieu');?></h1></li>
 </ul>
 <script type="text/javascript">
-	$('#menu-gioithieu').parent().addClass('currentmenu');	$('#bg_itemmenu_2').addClass('styleshow');
+	$(document).ready(function(){
+		$('#bg_itemmenu_2').parent().addClass('hovermenu');	
+		$('#bg_itemmenu_2').parent().addClass('cannotmodify');	
+		$('#bg_itemmenu_2').css('display','block');
+		$('#bg_itemmenu_2').css('z-index','111');
+		$('#bg_itemmenu_2').children('ul').css('opacity','1');
+	});
 </script>
 <div id="center">
 	<ul id="aboutus-menu">
@@ -16,3 +22,4 @@
 		<?php }?>
 	</ul>
 </div>
+

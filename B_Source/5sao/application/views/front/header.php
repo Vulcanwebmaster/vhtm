@@ -26,7 +26,7 @@
 				<li class="submenu"><a class="menu-text" style="display:block" id="menu-trangchu" href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a>
                 	
                 		<div class="bg_itemmenu" id="bg_itemmenu_1">
-                			<ul>
+                			<ul style="opacity:initial !important">
                 				<?php foreach($list_hotline as $hotline){ ?>
 	                    		<li class="top_menu1"><a href="#">Hotline 24/24 : <?php echo $hotline->hotline;?></a></li>
 	                        	<li class="top_menu1"><a href="#">Tel: <?php echo $hotline->sdt;?></a></li>  
@@ -52,7 +52,7 @@
 				<li class="submenu"><a class="menu-text" style="display:block" id="menu-baohanh" href="<?php echo base_url();?>bao-hanh"><?php echo $this->lang->line('menu-baohanh');?></a>
 					<div class="bg_itemmenu" id="bg_itemmenu_2"></div>
 				</li>
-				<li class="submenu"><a class="menu-text" style="display:block" id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
+				<li class="submenu"><a href="" class="menu-text" style="display:block" id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
                 
                 		<div class="bg_itemmenu" id="bg_itemmenu_3">
                 			<ul>
