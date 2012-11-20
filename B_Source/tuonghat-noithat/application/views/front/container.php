@@ -17,6 +17,7 @@
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jsadd.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>
+	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/myjs.js" type="text/javascript" language="javascript"></script>
 	</head>
 	
 	<body>

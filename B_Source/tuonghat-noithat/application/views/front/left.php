@@ -7,8 +7,7 @@
             <div class="unit">
                 <div class="navMenu">
                     <ul class="menuLevel1">            
-<!------<<<<<<< .mine Trung-------->
-					<?php
+					<?php $model=new CI_Model();
 					//var_dump($parents);die();
 					if(isset($parents))
 					{
@@ -18,19 +17,24 @@
 								if(count($num)>0)
 								{
 									?>
-										<li> 
-										<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias ?>">
-											<?php
-													echo $parents[$i]->category_name;
-											?>
-										</a>	
+										<li class="menuLevel1"> 
+											<?php 
+											$listChildren = $model->getListByColumn('tn_categories','category_parent_id',$parents[$i]->category_id);
+											if (count($listChildren) == 0)
+											{?>
+											<a href="<?php echo base_url() ?>sanpham/view/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias ?>">
+												<?php echo $parents[$i]->category_name; ?>
+											</a>
+											<?php }
+											else {?>
+											<a><?php echo $parents[$i]->category_name; ?></a>
+											<?php }?>	
 										
 										<?php
-											$childs=$newModel->getListByColumn('tn_categories','category_parent_id',$parents[$i]->category_id);
-											if (isset($childs))
+											if (isset($listChildren))
 											{ ?>
 												<ul class="menuLevel2">
-										<?php	foreach($childs as $child)
+										<?php	foreach($listChildren as $child)
 												{ ?>
 									            	<li><a href="<?php echo base_url() ?>sanpham/view/<?php echo $child->category_id."-".$child->alias ?>">
 									                    		<?php echo $child->category_name; ?>
@@ -55,14 +59,6 @@
 						}
 					}
 		            ?>          
-<!-- End Trung=======-->
-<!---------- A Mạnh
-                    	<?php foreach ($listCategories as $category)
-                    	{?>
-                    		<li class=""><a href="html/halloween.htm"><?php echo $category->category_name;?></a></li>
-                    	<?php }?>            
-                        <!-- Begin ItxContentSpotDisplay.jsp (ZH_ESpot_GiftCardMenu) --><!-- End ItxContentSpotDisplay.jsp (ZH_ESpot_GiftCardMenu) -->        
-<!--r1086------------>
                     </ul>
                 </div>
             </div>
