@@ -3,11 +3,10 @@
 <html xmlns:wairole="http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" xmlns:waistate="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<title><?php echo $title; ?></title>
+		<title><?php if(isset($title)) echo $title; ?></title>
 		<link rel="apple-touch-icon" href="<?php echo base_url()?>assets/tuongnhatp2/images/apple-touch-icon.png"/>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/standard.css"/>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/SqueezeBox.css"/>
-		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/specialdate.css"/>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/mystyle.css"/>
 		<link media="screen" href="<?php echo base_url()?>assets/tuongnhatp2/css/calendar-eightysix-v1.1-default.css" type="text/css" rel="stylesheet"/>
 		<link media="screen" href="<?php echo base_url()?>assets/tuongnhatp2/css/calendar-eightysix-v1.1-vista.css" type="text/css" rel="stylesheet"/>
@@ -18,6 +17,15 @@
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jsadd.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/myjs.js" type="text/javascript" language="javascript"></script>
+	    <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/tuongnhatp2/css/consolidated_common.css"/>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/tuongnhatp2/js/livevalidation_standalone.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var email2 = new LiveValidation( "email", { validMessage: "Địa chỉ hợp lệ", wait: 500 } );//, { validMessage: "Địa chỉ hợp lệ!", wait: 500 } );
+				email2.add( Validate.Email, 
+			              { failureMessage: "Địa chỉ không hợp lệ"});
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -62,31 +70,19 @@
 							<div id="logonPanel" class="infoLogin logonPanel" style="height: 241px; ">
 								<div class="unit size1of2">
 									<div class="rPadded login_message">
-										<div class="title">Existing <strong>ZARAHOME.COM </strong>customer  </div>
+										<div class="title">Bạn đã có tài khoản <strong style="text-transform:uppercase">Tường Nhật </strong></div>
 										<p>Nhập <strong>email</strong> và <strong>mật khẩu </strong>để đăng nhập:</p>
-										<form name="login-form" id="login-form" method="post" action="">
+										<form name="login-form" id="login-form" method="post" action="<?php echo base_url()?>dangnhap/checkAccount">
 											<ul>
 												<li class="formControl">
 													<span class="labelLeft">E-mail<em class="required"></em></span>
 													<br/>
 													<input class="text logon  msgPos:'msgPosUL1'" style="width: 200px;" type="text" id="email" name="logonId" maxlength="60" value=""/>
-													<span class="inputTip tipWarn" id="msgPosUL1" style="display: none; visibility: hidden; zoom: 1; opacity: 0; ">
-														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_warn.png" alt="warning"/>
-													</span>
-													<span class="inputTip tipOk" style="display: inline; visibility: visible; zoom: 1; opacity: 1; ">
-														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_ok.png" alt="ok"/>
-													</span>
 												</li>
 												<li class="formControl">
 													<span class="labelLeft">Mật khẩu <em class="required"></em></span>
 													<br/>
 													<input class="text  msgPos:'msgPosUL2'" style="width: 200px;" type="password" id="password" name="logonPassword" maxlength="35"/>
-													<span class="inputTip tipWarn" id="msgPosUL2">
-														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_warn.png" alt="warning"/>
-													</span>
-													<span class="inputTip tipOk">
-														<img src="<?php echo base_url()?>assets/tuongnhatp2/images/tip_ok.png" alt="ok"/>
-													</span>
 												</li>
 												<li class="formControl" id="check_acept_priv_login" style="position:static; display:none; ">
 													<input type="checkbox" name="privacyPolicy" id="privacyLogin"/>
@@ -112,9 +108,9 @@
 								</div>
 								<div class="unit size1of2 lastUnit">
 									<div class="rPadded login_message">
-										<div class="title">New <strong>ZARAHOME.COM</strong> customer</div>
+										<div class="title">Tạo tài khoản <strong style="text-transform: uppercase">Tường Nhật</strong></div>
 										<p>
-											If you still don't have a <strong>ZARAHOME.COM</strong> user account, use this option to access the registration form. 
+											Nếu bạn chưa có tài khoản <strong>Tường Nhật</strong>, hãy sử dụng tùy chọn này để đăng ký. 
 										</p>
 										<p>
 											Yêu cầu bạn nhập thông tin để thuận lợi cho quá trình mua hàng
@@ -123,7 +119,7 @@
 											
 											<form id="userRegister" action="" method="post">
 												<button id="registerBt" style="text-align:left;" type="submit" value="Create account" class="button2">
-													<span>Create account</span>
+													<span>Đăng ký</span>
 												</button>
 											</form>
 										</div>

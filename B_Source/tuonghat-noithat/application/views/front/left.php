@@ -25,7 +25,7 @@
 												<ul class="menuLevel2">
 										<?php	foreach($listChildren as $child)
 												{ ?>
-									            	<li><a href="<?php echo base_url() ?>danh-muc/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias.'.htm' ?>">
+									            	<li><a href="<?php echo base_url() ?>danh-muc/<?php echo $child->category_id."-".$child->alias.'.htm' ?>">
 									                    		<?php echo $child->category_name; ?>
 									                    </a>
 									                </li>

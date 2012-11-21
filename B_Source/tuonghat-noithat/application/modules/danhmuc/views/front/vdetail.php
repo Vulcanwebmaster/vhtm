@@ -54,7 +54,7 @@
 											</form>					
 										</div>	
 										</li>								
-										<li class="filter checkFilter" filterid="color" id="color">
+										<li class="filter checkFilter" id="color">
 											<a class="filterTitle arrow" id="drop_color" style="font-weight: normal; ">Màu sắc</a>
 						<div id="color_wrap" class="filterBox">												
 							<form action="#" method="post">												
@@ -93,7 +93,7 @@
 		<div class="numSearchResult">
 			<ul class="listH">
 				<li>
-					<span class="totalProducts" style="visibility: visible; zoom: 1; opacity: 1; ">5</span>
+					<span class="totalProducts" style="visibility: visible; zoom: 1; opacity: 1; "><?php if ($listProducts) echo count($listProducts)?></span>
 					<span class="totalProductsText">
 						Items
 					</span>
@@ -121,6 +121,10 @@
 				<!-- img alt="<?php echo $product->product_name?>" src="../images/5958000700_1_1_3.jpg"/ -->
 				<?php echo $product->product_image;?>
 				<span class="express" >Quick<br>purchase</span>
+				<?php if ($product->is_new=='1')
+				{?>
+				<span class="new" style="background-image:url(<?php echo base_url()?>assets/tuongnhatp2/images/nuevo_flag_home_en.gif)"></span>
+				<?php }?>
 			</a>
 			<a class="descArt productName pLink" href="#"><?php echo $product->product_name?></a>
 			<p class="price"><?php echo $product->product_price;?></p>

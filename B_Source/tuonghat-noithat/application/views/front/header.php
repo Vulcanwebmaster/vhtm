@@ -30,7 +30,15 @@
                                      </div>
                                      <li><a class="menuUserCountry" href="#">UNITED STATES</a></li>
                                    	 <li>|</li> 
-                                     <li><a class="logonLinkNoAjax" href="#">Đăng nhập</a></li> 
+                                     <li>
+                                     	<?php if (isset($_SESSION['front_user_name']))
+                                     	{?>
+                                     		<a href="<?php echo base_url();?>dangnhap/logOut">Đăng xuất</a>
+                                     	<?php }
+                                     	else {?>
+                                     		<a class="logonLinkNoAjax" style="cursor:pointer">Đăng nhập</a>
+                                     	<?php }?>
+                                     </li> 
                                      <li>|</li> 
                                      <li id="basket" class="basket">
                                      	<div id="miniShopCart" class="unit size1of1">                                        	

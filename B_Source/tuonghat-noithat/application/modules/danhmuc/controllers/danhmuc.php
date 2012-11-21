@@ -8,6 +8,7 @@
 			$this->module=strtolower(get_class());
 			
 			$this->load->model('Mdanhmuc');
+			$this->data['title'] = 'Nội thất Tường Nhật | Danh mục sản phẩm';
 		}
 		
 		function _remap($alias)
