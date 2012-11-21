@@ -129,8 +129,8 @@ margin:0 9px;
 display:block;
 overflow:auto;
 width:850px;
-padding:5px 0;
-margin-left:152px;
+padding:5px 0 0 20px;
+margin-left:170px;
 }
 #footer li a{text-decoration:none}
 #footer li a:visited{text-decoration:none}
@@ -621,4 +621,4 @@ td, input, textarea{ text-align:left}
 .back_link li:first-child{margin-left:-7px}
 #breadcrum li{display:inline; color:#383838}
 #breadcrum li *{color:#383838;text-decoration:none; font-size:15px; display:inline}
-#breadcrum{list-style-type:none; padding:0; text-align:left; border-bottom:solid 1px black; margin-top:5px;}
+#breadcrum{list-style-type:none; padding:0; text-align:left; border-bottom:solid 1px black; margin-top:5px; margin-left: 0}
