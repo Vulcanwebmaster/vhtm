@@ -45,7 +45,7 @@
 		var root="http://localhost";
 		$(".paginationControl .number-bt").click(function(){
 			var page= parseInt($(this).text());
-			$("#comment-panel").load(root+"<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
+			$("#comment-panel").load("<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>/page/"+page);
 			return false;
 		});
 		$(".paginationControl .next-bt, .paginationControl .prev-bt").click(function(){

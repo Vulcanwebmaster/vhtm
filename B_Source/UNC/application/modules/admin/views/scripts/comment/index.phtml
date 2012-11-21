@@ -52,7 +52,10 @@
 	$(document).ready(function() {
 		$('#listnews').dataTable({
 			"sPaginationType": "full_numbers",
-			"iDisplayLength": 25
+			"iDisplayLength": 25,
+			"bProcessing": true,
+	        "bServerSide": true,
+	        "sAjaxSource": "<?php echo $this->baseUrl();?>/admin/comment/loaddata/viewtype/1"
 		});
 		});
 	</script>
@@ -62,32 +65,15 @@
 	<div class="tab_container">
 		<table id="listnews">
 			<thead>
-				<th>Thứ tự</th>
 				<th>Nội dung bình luận</th>
-				<th>Tin tức</th>
+				<th style="background:transparent">Tin tức</th>
 				<th style="background:transparent">Sửa</th>
 				<th style="background:transparent">Xóa</th>
 			</thead>
 			<tbody>
-				<?php 
-				$count=1;
-				foreach ($this->list as $item)
-				{?>
-					<tr>
-						<td><?php echo $count;?></td>
-						<td><?php $content = str_replace(array("\n", "\r"), ' ', strip_tags(str_replace('"',"'",$item['comment_content'])));
-														if(strlen($content) > 100)
-															echo word_limiter($content, 100).' ...';	
-														else echo word_limiter($content, 100);	?></td>
-						<td><?php $string = $this->listNewsTitle[$count-1];
-											if(strlen($string) > 100)
-												echo str_replace('"',"'",word_limiter($string, 100)).' ...';	
-											else echo str_replace('"',"'",word_limiter($string, 100));
-										 ?></td>
-						<td><center><a href="<?php echo $this->baseUrl();?>/admin/comment/edit/comment_id/<?php echo $item['comment_id']?>" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a></center></td>
-						<td><center><a class="del_button" onclick="confirmDel(<?php echo $item['comment_id']?>)" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a></center></td>
-					</tr>
-				<?php $count++; }?>
+				<tr>
+					<td colspan="5" class="dataTables_empty">Loading data from server</td>
+				</tr>
 			</tbody>
 		</table>
 		

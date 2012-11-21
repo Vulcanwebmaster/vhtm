@@ -31,10 +31,9 @@
 	<header><h3 style="width: 35%"><?php echo $this->title;?></h3>             
 		<div id="subpage_search" style="padding-top:5px" >
             	<form class="search-form" action="<?php echo $this->baseUrl("admin/tintuc/timkiem");?>" method="post">
-					<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …"/>
-					<input class="searchsubmit" type="submit" value="Tìm kiếm" style="cursor:pointer; height: 21px; padding-bottom:1px"/>
+					<!-- input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm …';}" type="text" value="Tìm kiếm …"/>
+					<input class="searchsubmit" type="submit" value="Tìm kiếm" style="cursor:pointer; height: 21px; padding-bottom:1px"/ -->
 					<select id="viewtype" onchange="return selectViewChange();" style="float: right">
-						<option value="0">Lọc theo ...</option>
 						<option value="1">Xem tất cả</option>
 						<?php if ($_SESSION['role_id']=="2")
 						{?>
@@ -85,7 +84,11 @@
 	$(document).ready(function() {
 		$('#listnews').dataTable({
 			"sPaginationType": "full_numbers",
-			"iDisplayLength": 25
+			"iDisplayLength": 25,
+			"bLengthChange": false,
+			"bProcessing": true,
+	        "bServerSide": true,
+	        "sAjaxSource": "<?php echo $this->baseUrl();?>/admin/tintuc/loaddata/viewtype/1"
 		});
 		});
 	</script>
@@ -106,21 +109,9 @@
 				<th style="background:transparent">Xóa</th>
 			</thead>
 			<tbody>
-				<?php foreach ($this->list as $item)
-				{?>
-					<tr>
-						<td><?php echo $item['news_title'];?></td>
-						<td><?php echo $item['news_avatar'];?></td>
-						<td><?php $summ= str_replace(array("\n", "\r"), ' ', strip_tags($item['news_summary']));
-							echo substr($summ, 0, 400);?></td>
-						<td><?php echo $item['news_author'];?></td>
-						<td><?php if ($item['news_modified_date']!='0000-00-00 00:00:00') echo $item['news_modified_date'];?></td>
-						<td><?php echo $item['news_status'];?></td>
-						<td><?php if ($item['is_hot']=='1') echo 'Có'; else echo 'Không'?></td>
-						<td><a href="<?php echo $this->baseUrl();?>/admin/tintuc/edit/newsid/<?php echo $item['news_id']?>" title="Sửa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_edit.png"></a></td>
-						<td><a class="del_button" onclick="confirmDel(<?php echo $item['news_id']?>)" title="Xóa"><img src="<?php echo $this->baseUrl();?>/application/templates/admin/images/icn_trash.png"></a></td>
-					</tr>
-				<?php }?>
+				<tr>
+					<td colspan="5" class="dataTables_empty">Loading data from server</td>
+				</tr>
 			</tbody>
 		</table>
 		<footer>

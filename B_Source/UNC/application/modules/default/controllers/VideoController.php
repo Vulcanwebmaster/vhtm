@@ -32,6 +32,7 @@ class VideoController extends Zend_Controller_Action
 			$preg1 = preg_match_all('#<span class="threadtitle">.*</span>#',$content,$match);
 			$this->listThreadTitle[] = $thread['threadid'].strip_tags($match[0][0]);
 		}
+		$this->view->headTitle('UNC - Video');
 	}
 	
 	function listAction()

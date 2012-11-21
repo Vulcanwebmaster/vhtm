@@ -26,14 +26,26 @@
 		}
 	}
 	$(document).ready(function(){
-		$("#question_id").hide();
+		var type= "<?php echo $this->form->getElement('polls_type')->getValue();?>";
+		if (type=="0")
+			$("#question").hide();
+		else $("#multiselect").hide();
 		$("#polls_type-0").click(function(){
-			$("#question_id").hide();
+			$("#question").hide();
 			$("#multiselect").show();
 		});
 		$("#polls_type-1").click(function(){
-			$("#question_id").show();
+			$("#question").show();
 			$("#multiselect").hide();
+		});
+
+		$("#poll-form").submit(function(){
+			var quest_id=$("#question_id").val();
+			if (type=='1' && quest_id=='0')
+			{
+				alert("Xin hãy chọn câu hỏi cho câu trả lời");
+				return false;
+			}
 		});
 	});
 //<!-------End Check all----->
@@ -47,7 +59,7 @@
 						unset($_SESSION['result']);
 					}
 					?>
-<form method="post" action="<?php echo $this->form->getAction();?>">
+<form name="poll-form" id="poll-form" method="post" action="<?php echo $this->form->getAction();?>">
 	<article class="module width_full">
 		<header><h3><?php echo $this->title;?></h3></header>
 		<div class="tab_container">
@@ -61,7 +73,7 @@
 					<label>Thể loại</label>
 					<?php echo $this->form->getElement('polls_type');?>
 				</fieldset>
-				<fieldset class="fieldset" id="question_id">
+				<fieldset class="fieldset" id="question">
 					<label>Câu hỏi</label>
 					<?php echo $this->form->getElement('question_id');?>
 				</fieldset>

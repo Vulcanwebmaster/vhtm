@@ -105,17 +105,64 @@
 		function filterAction()
 		{
 			$this->view->listCategories=$this->mChuyenmuc->getListCM();
+			$youtube=new Zend_Gdata_YouTube();
+		}
+		
+		function loaddataAction()
+		{
+			//paging======================
+			if (isset($_GET['iDisplayStart']))
+			{
+				$offset=$_GET['iDisplayStart'];
+			}
+			else $offset='';
+			if (isset($_GET['iDisplayLength']))
+			{
+				$limit=$_GET['iDisplayLength'];
+			}
+			else $limit='';
+			//sort======================
+			$aColumns=array('news_title','news_avatar','news_summary','news_author','news_modified_date','news_status','is_hot');
+			if ( isset( $_GET['iSortCol_0'] ) )
+			{
+				$sOrder=' order by ';
+				for ( $i=0 ; $i<intval( $_GET['iSortingCols'] ) ; $i++ )
+				{
+					if ( $_GET[ 'bSortable_'.intval($_GET['iSortCol_'.$i]) ] == "true" )
+					{
+						$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ]." ".$_GET['sSortDir_'.$i];
+					}
+				}
+			}
+			else $sOrder='';
+			
+			//Filter==========================
+			$sWhere = "";
+			if ( isset($_GET['sSearch']) && $_GET['sSearch'] != "" )
+			{
+				$sWhere = "WHERE (";
+				for ( $i=0 ; $i<count($aColumns) ; $i++ )
+				{
+					if ($i<count($aColumns)-1)
+						$sWhere .= " ".$aColumns[$i]." LIKE '%".$_GET['sSearch']."%' OR ";
+					else $sWhere .= " ".$aColumns[$i]." LIKE '%".$_GET['sSearch']."%'";
+				}
+				$sWhere .= ')';
+			}
+			
 			$viewtype=$this->_request->getParam('viewtype');
 			$list2=array();
 			
 			if ($_SESSION['role_id']==0)
 			{
-				$list1 = $this->mtintuc->getListNews();
+				$list1 = $this->mtintuc->getListNews($sWhere,$offset,$limit,$sOrder);
 				$list2=$list1;
+				$listFull=$this->mtintuc->getListNews($sWhere, '','','');
 			}
 			elseif ($_SESSION['role_id']==1)
 			{
-				$list1 = $this->mtintuc->getListNewsByUserId($_SESSION['user_id']);
+				$list1 = $this->mtintuc->getListNewsByUserId($_SESSION['user_id'],$sWhere,$offset,$limit,$sOrder);
+				$listFull=$this->mtintuc->getListNewsByUserId($_SESSION['user_id'],$sWhere, '','','');
 				foreach ($list1 as $item)
 				{
 					if ($viewtype == 1){
@@ -157,7 +204,8 @@
 			}
 			elseif ($_SESSION['role_id']==2)
 			{
-				$list1 = $this->mtintuc->getListNewsByAuthor($_SESSION['user_id']);
+				$list1 = $this->mtintuc->getListNewsByAuthor($_SESSION['user_id'],$sWhere,$offset,$limit,$sOrder);
+				$listFull = $this->mtintuc->getListNewsByAuthor($_SESSION['user_id'],$sWhere,'','','');
 				foreach ($list1 as $item)
 				{
 					if ($viewtype == 1) {
@@ -199,26 +247,35 @@
 					}					
 				}
 			}
-			
-			$paginator= Zend_Paginator::factory($list2);
-			$paginator->setItemCountPerPage(25);
-			$current=$this->_request->getParam('page',1);
-			$paginator->setCurrentPageNumber($current);
-				
-			$this->view->title='Tin tức';
-			$this->view->list=$list2;
-			$categoriesId=array();
-			foreach ($list2 as $new)
+			$aaData=array();
+			foreach ($list2 as $item)
 			{
-				$category=$this->mdanhmuc->getCmById($new['category_id']);
-				if ($category)
-				{
-					$categoriesId[]=$category['category_name'];
-				}
-				else $categoriesId[]=' ';
+				$newarray=array();
+				$newarray[]=$item['news_title'];
+				$newarray[]=$item['news_avatar'];
+				$summ= str_replace(array("\n", "\r"), ' ', strip_tags($item['news_summary']));
+				$newarray[]=substr($summ, 0, 400);
+				$newarray[]=$item['news_author'];
+				if ($item['news_modified_date']!='0000-00-00 00:00:00') 
+					 $newarray[]=$item['news_modified_date'];
+				else $newarray[]='';
+				$newarray[]=$item['news_status'];
+				if ($item['is_hot']=='1') 
+					$newarray[]='Có'; 
+				else $newarray[]= 'Không';
+				$newarray[]='<a href="'.$this->view->baseUrl().'/admin/tintuc/edit/newsid/'.$item['news_id'].'" title="Sửa"><img src="'.$this->view->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';
+				$newarray[]='<a class="del_button" onclick="confirmDel('.$item['news_id'].')" title="Xóa"><img src="'.$this->view->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';
+				
+				$aaData[]=$newarray;
 			}
-			$this->view->categoriesid=$categoriesId;
-			$youtube=new Zend_Gdata_YouTube();
+			
+			
+			
+			$result=array("sEcho"=> intval($_GET['sEcho']),
+						  "iTotalRecords"=> ''.count($listFull).'',
+						  "iTotalDisplayRecords"=> ''.count($listFull).'',
+						  "aaData"=>$aaData);
+			echo json_encode( $result );die();
 		}
 			
 		function timkiemAction()
@@ -286,7 +343,7 @@
 			}
 		}
 			
-		function autogetnews()
+		function autogetnewsAction()
 		{	
 			$listRss=$this->mRss->getListRss();
 			foreach ($listRss as $linkrss)

@@ -40,14 +40,19 @@
 		function indexAction()
 		{
 			$list=$this->mTintuc->getListAllThamdo();
-			$question=array();
+			$questionList=array();
+			$answerList=array();
 			foreach ($list as $item)
 			{
-				$curent_quest=$this->mThamdo->getQuestionById($item['question_id']);
-				$question[]=$curent_quest;
+				if ($item['polls_type']=='0')
+				{
+					$questionList[] = $item;
+					$answers=$this->mThamdo->getAnswersByQuestionId($item['polls_id']);
+					$answerList[]=$answers;
+				}
 			}
-			
-	        $this->view->questList=$question;
+	        $this->view->questList=$questionList;
+	        $this->view->ansList=$answerList;
 	        $this->view->list = $list;
 			$this->view->title = "Quản lý thăm dò";
 			$this->view->role = $this->role;
@@ -91,8 +96,8 @@
 			$question_id=$form->createElement("select", "question_id", array('multioptions'=>$listQuestionsContent));
 			$question_id->removeDecorator('HtmlTag')->removeDecorator('Label');
 			
-			$selector=array("0"=>"Không",
-							"1"=>"Có",);
+			$selector=array("0"=>"Không  (Hiển thị radio button)",
+							"1"=>"Có  (Hiển thị checkbox)",);
 			$multiselect = $form->createElement("radio", "multiselect", array('multioptions'=>$selector));
 			
 			$multiselect->removeDecorator('HtmlTag')->removeDecorator('Label');

@@ -65,7 +65,7 @@
 					$listUser=$this->mTinhtien->getListUserFilterByName($name);	
 				}
 				//echo count($listUser); die();
-				$listNews=$this->mTintuc->getListNews();
+				$listNews=$this->mTintuc->getListNews('','','','');
 				$listMoney=array();
 				$listPost=array();
 				$listCheck=array();

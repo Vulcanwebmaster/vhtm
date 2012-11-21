@@ -83,4 +83,10 @@
 		$query=$this->insert($input);
 		return $query;
 	}
+	
+	function getAnswersByQuestionId($questionId)
+	{
+		$query=$this->db->query("select * from unc_polls where question_id = '".$questionId."'");
+		return $query->fetchAll();
+	}
 }

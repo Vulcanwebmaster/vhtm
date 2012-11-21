@@ -61,7 +61,7 @@ function checkall(class_name, obj){
 						<?php echo $this->form->getElement('is_active');?>
 					</div>
 				</fieldset>
-				<fieldset style="margin-left:-1px"  id="checkboxes">
+				<fieldset style="margin-left:-1px; clear:both"  id="checkboxes">
 					<label style="width:300px">Các chuyên mục được phân quyền</label>
 					<?php 
 					foreach($this->listParent as $parent)
@@ -78,7 +78,7 @@ function checkall(class_name, obj){
 									<div style="margin-left:100px">
 										<input type="checkbox" name="checkbox[]" value="<?php echo $child['category_id']; ?>" class="item_<?php echo $parent['category_id'] ?>"/>
 										<span><?php echo $child['category_name']; ?></span>
-										</div>
+									</div>
 									<?php
 								}
 							}

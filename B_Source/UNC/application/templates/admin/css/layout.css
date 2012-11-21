@@ -745,7 +745,7 @@ margin: 10px 0;
 fieldset label {
 display: block;
 /*float: left;*/
-width: 200px;
+width: auto;
 height: 25px;
 line-height: 25px;
 text-shadow: 0 1px 0 #fff;
@@ -971,3 +971,4 @@ font-size: 14px;}
 .fieldset input[type=text]{width:94%}
 .fieldset input[type=password]{width:94%}
 .fieldset1 textarea{width:94%}
+

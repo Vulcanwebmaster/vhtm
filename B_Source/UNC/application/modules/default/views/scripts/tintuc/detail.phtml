@@ -55,7 +55,7 @@
                 </div>
                 <script type="text/javascript">
 					$(document).ready(function(){
-						$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>");
+						$("#comment-panel").load("<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>");
 						$("#comment-form").submit(function(){
 							var comment_name=$("#comment_name").val();
 							var comment_email=$("#comment_email").val();
@@ -63,7 +63,7 @@
 							$.post("<?php echo $this->baseUrl()?>/tintuc/receivecomment/news_id_commented/<?php echo $this->news['news_id'] ?>", 
 									{ comment_name: comment_name, comment_email: comment_email, comment_content: comment_content },
 									function(){
-										$("#comment-panel").load("http://localhost<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>");
+										$("#comment-panel").load("<?php echo $this->baseUrl();?>/tintuc/loadcomment/newsid/<?php echo $this->news_id?>");
 									} );
 							$("#comment_name").val('');
 							$("#comment_email").val('');

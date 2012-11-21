@@ -9,9 +9,48 @@
 			$this->db=Zend_Registry::get('db');
 		}
 		
-		function getListComment()
+		function getListComment($where,$offset,$limit,$order)
 		{
-			$query=$this->db->query('select * from unc_comment order by comment_id desc');
+			if ($where=='')
+				$where=" WHERE unc_news.news_id = unc_comment.news_id ";
+			else $where.=" AND unc_news.news_id = unc_comment.news_id ";
+			$query=$this->db->query('select unc_comment.*, unc_news.news_title from unc_comment, unc_news '.$where.$order.$limit.$offset);
+			return $query->fetchAll();
+		}
+		
+		function getListCommentByUserRole2($userId, $where, $offset, $limit, $order)
+		{
+			if ($where=='')
+				$where=' WHERE unc_news.user_id='.$userId.' AND unc_comment.news_id=unc_news.news_id ';
+			else $where.=' AND unc_news.user_id='.$userId.' AND unc_comment.news_id=unc_news.news_id ';
+			$query=$this->db->query("SELECT unc_comment.comment_content,unc_comment.comment_id, unc_news.news_title
+									FROM unc_news, unc_comment".$where.$order.$limit.$offset);
+			return $query->fetchAll();
+		}
+		
+		function getListCommentByUserRole1($userId,$listCateId, $where, $offset, $limit, $order)
+		{
+			$whereLike=' AND ';
+			$count=0;
+			foreach ($listCateId as $categoryId)
+			{
+				if ($count==0)
+					$whereLike.='(unc_news.category_id LIKE "%,'.$categoryId.',%" ';
+				else
+				{
+					$whereLike.='OR unc_news.category_id LIKE "%,'.$categoryId.',%" ';
+				}
+				$count++;
+			}
+			$whereLike.=") ";
+			
+			if ($where=='')
+				$where=' WHERE (unc_news.news_id = unc_comment.news_id'.$whereLike.' 
+								AND unc_manage_category.user_id = '.$userId.')';
+			else $where.=' AND unc_news.news_id = unc_comment.news_id'.$whereLike.' 
+								AND unc_manage_category.user_id = '.$userId.' ';
+			$query=$this->db->query("SELECT DISTINCT unc_comment.*, unc_news.news_title
+									FROM unc_comment, unc_manage_category, unc_news".$where.$order.$limit.$offset);
 			return $query->fetchAll();
 		}
 		
@@ -100,4 +139,3 @@
 			return $result;
 		}
 	}
-?>

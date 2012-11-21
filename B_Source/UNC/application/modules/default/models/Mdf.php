@@ -12,7 +12,7 @@
 		
 		function getListHotNews()
 		{
-			$query = $this->db->query('select * from unc_news where news_status="Công khai" and is_hot=1 order by rand() limit 6');
+			$query = $this->db->query('select * from unc_news where news_status="Công khai" and is_hot=1 order by news_id desc limit 6');
 			return $query->fetchAll();
 		}
 		

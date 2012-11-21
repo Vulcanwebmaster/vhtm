@@ -17,6 +17,7 @@ class HinhanhController extends Zend_Controller_Action
 		
 		@session_start();
 		$_SESSION['page'] = 'hinhanh';
+		$this->view->headTitle('UNC - Hình ảnh');
 	}
 	
 	function listAction()

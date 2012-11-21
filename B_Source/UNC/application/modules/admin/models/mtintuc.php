@@ -59,19 +59,27 @@
 		return $categoriesId;
 	}
 	
-	function getListNews()
+	function getListNews($where,$offset,$limit,$order)
 	{
-		$query=$this->db->query("select * from unc_news");
+		if ($offset!='' && $limit!='')
+			$query=$this->db->query("select * from unc_news ".$where.$order." limit ".$limit." offset ".$offset);
+		else $query=$this->db->query("select * from unc_news".$order);
 		return $query->fetchAll();
 	} 
 	
-	function getListNewsByUserId($userid)
+	function getListNewsByUserId($userid,$where,$offset,$limit,$order)
 	{
 		$categoriesId = $this->getCategoryIDByUserId($userid);
 		$result=array();
 		foreach ($categoriesId as $categoryId)
 		{
-			$query=$this->db->query("select * from unc_news where category_id like '%,".$categoryId.",%'");
+			if ($where=='')
+				$where=' where category_id like "%,'.$categoryId.',%" ';
+			else $where.=' and category_id like "%,'.$categoryId.',%" ';
+			
+			if ($offset!='' && $limit!='')
+				$query=$this->db->query("select * from unc_news ".$where.$order." limit ".$limit." offset ".$offset);
+			else $query=$this->db->query("select * from unc_news ".$where.$order);
 			$list=$query->fetchAll();
 			foreach ($list as $item)
 			{
@@ -82,9 +90,13 @@
 		return $result;
 	} 
 	
-	function getListNewsByAuthor($userId)
+	function getListNewsByAuthor($userId,$where,$offset,$limit,$order)
 	{
-		$query=$this->db->query("select * from unc_news where user_id='".$userId."'");
+		if ($where=='')
+				$where=' where user_id like "%,'.$userId.',%" ';
+			else $where.=' and user_id like "%,'.$userId.',%" ';
+			
+		$query=$this->db->query("select * from unc_news".$where.$order);
 		$list=$query->fetchAll();
 		$mChuyenmuc=new Admin_Model_Mchuyenmuc();
 		$listCategories=$mChuyenmuc->getListCategoryIdByUserId($userId);
@@ -98,7 +110,15 @@
 						$list[]=$item;
 			}
 		}
-		return $list;
+		$result=array();
+		if ($offset!='' && $limit!='')
+			for ($i=intval($offset); $i<intval($limit)+intval($offset); $i++)
+			{
+				if (isset($list[$i]))
+					$result[]=$list[$i];
+			}
+		else $result=$list;
+		return $result;
 	}	
 	
 	function isContain($list, $item)

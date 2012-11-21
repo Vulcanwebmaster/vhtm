@@ -53,9 +53,15 @@
 	<script type="text/javascript" src="<?php echo $this->baseUrl()?>/application/templates/admin/datatable/js/jquery.dataTables.js"></script>
     <script type="text/javascript">
 		$(document).ready(function() {
-			$('#listnews').dataTable({
+			$('.listnews').dataTable({
+				"bLengthChange": false,
 				"sPaginationType": "full_numbers",
 				"iDisplayLength": 25
+			});
+
+			$(".table-container").slideUp();
+			$(".question-title").click(function(){
+				$(this).parent().children(".table-container").slideToggle();
 			});
 		});
 	</script>
@@ -63,35 +69,49 @@
 		.paging_full_numbers{float:none !important; width:auto !important; margin-top:15px !important}
 	</style>
 	
-	<table id="listnews">
-		<thead>
-			<th>Thứ tự</th>
-			<th>Nội dung</th>
-			<th>Thể loại</th>
-			<th>Lượt bình chọn</th>
-			<th>Chọn nhiều</th>
-			<th>Kích hoạt</th>
-			<th style="background:transparent">Sửa</th>
-			<th style="background:transparent">Xóa</th>
-		</thead>
-		<tbody>
-			<?php 
-			$count=1;
-			foreach ($this->list as $item)
-			{?>
-				<tr>
-					<td><?php echo $count;?></td>
-					<td><?php echo $item['polls_content'];?></td>
-					<td><?php if ($item['polls_type']==0) echo 'Câu hỏi'; else echo 'Câu trả lời';?></td>
-					<td><?php echo $item['polls_vote'];?></td>
-					<td><?php if ($item['polls_type']=='0') if ($item['multiselect']=='0') echo "Không"; else echo "Có"?></td>
-					<td><?php if ($item['is_active']=='0') echo "Không"; else echo "Có";?></td>
-					<td><?php echo '<a href="'.$this->baseUrl().'/admin/thamdo/edit/pollsid/'.$item['polls_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?></td>
-					<td><?php echo '<a class="del_button" onclick="confirmDel('.$item['polls_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';?></td>
-				</tr>
-			<?php $count++;}?>
-		</tbody>
-	</table>
+	<ul>
+		<?php 
+		$stt=0;
+		foreach ($this->questList as $quest)
+		{?>
+			<li style="margin-top:15px"><strong class="question-title" style="cursor:pointer"><?php echo $quest['polls_content']?></strong>
+				<?php if ($quest['is_active']=="1") echo "<i>(Hiển thị)</i>"?>
+				<?php echo '<a style="margin-left:15px" href="'.$this->baseUrl().'/admin/thamdo/edit/pollsid/'.$quest['polls_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?>
+				<div class="table-container">
+					<table class="listnews">
+						<thead>
+							<th>Thứ tự</th>
+							<th>Nội dung</th>
+							<th>Thể loại</th>
+							<th>Lượt bình chọn</th>
+							<th>Chọn nhiều</th>
+							<th>Kích hoạt</th>
+							<th style="background:transparent">Sửa</th>
+							<th style="background:transparent">Xóa</th>
+						</thead>
+						<tbody>
+							<?php 
+							$count=1;
+							foreach ($this->ansList[$stt] as $item)
+							{?>
+								<tr>
+									<td><?php echo $count;?></td>
+									<td><?php echo $item['polls_content'];?></td>
+									<td><?php if ($item['polls_type']==0) echo 'Câu hỏi'; else echo 'Câu trả lời';?></td>
+									<td><?php echo $item['polls_vote'];?></td>
+									<td><?php if ($item['polls_type']=='0') if ($item['multiselect']=='0') echo "Không"; else echo "Có"?></td>
+									<td><?php if ($item['is_active']=='0') echo "Không"; else echo "Có";?></td>
+									<td><?php echo '<a href="'.$this->baseUrl().'/admin/thamdo/edit/pollsid/'.$item['polls_id'].'" title="Sửa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_edit.png"></a>';?></td>
+									<td><?php echo '<a class="del_button" onclick="confirmDel('.$item['polls_id'].')" title="Xóa"><img src="'.$this->baseUrl().'/application/templates/admin/images/icn_trash.png"></a>';?></td>
+								</tr>
+							<?php $count++;}?>
+						</tbody>
+					</table>
+				</div>
+			</li>
+		<?php $stt++;}?>
+	</ul>
+	
 	<footer>
 		<div class="submit_link" style="float:right">
 			<?php
