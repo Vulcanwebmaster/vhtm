@@ -21,6 +21,7 @@ textarea.LV_invalid_field:active,
 .LV_validation_message{
     font-weight:bold;
     margin:0 0 0 5px;
+    position:absolute
 }
 
 .LV_invalid {

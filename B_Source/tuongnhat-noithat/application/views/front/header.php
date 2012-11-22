@@ -2,7 +2,7 @@
 	<!--logo-->
 	<div class="logo">		
 		<h1>
-            <a href="index.htm" title="ZARA HOME">
+            <a href="<?php echo base_url();?>" title="Tường Nhật">
                 <span class="offleft">ZARA HOME</span>
                 <img src="<?php echo base_url()?>assets/tuongnhatp2/images/logo_Zara_Home.png" alt="HOME">
             </a>
@@ -19,21 +19,17 @@
                         	<div>
                             	<ul class="listH">
                                 	<div class="search">
-                                    	<form method="get" action="" name="CatalogSearchForm">
-                                        	<input type="hidden" name="storeId" value="84009527">
-                                            <input type="hidden" name="catalogId" value="80279977">
-                                            <input type="hidden" name="langId" value="-15">
-                                            <input type="hidden" name="usarCookie" value="0">
-                                            <input type="text" class="textField searchTextField placeholder" id="search" name="searchTerm" size="18">
-                                            <input type="submit" id="WC_searchForm_button_1" name="searchBtn" class="button searchButton" value="">
+                                    	<form method="get" action="<?php echo base_url()?>sanpham/timkiem/0" name="CatalogSearchForm">
+                                            <input type="text" class="textField searchTextField placeholder" id="search" name="searchTerm" size="18"/>
+                                            <input type="submit" id="searchBtn" name="searchBtn" class="button searchButton" value=" "/>
                                        </form>
                                      </div>
-                                     <li><a class="menuUserCountry" href="#">UNITED STATES</a></li>
-                                   	 <li>|</li> 
                                      <li>
-                                     	<?php if (isset($_SESSION['front_user_name']))
+                                     	<?php if (isset($_SESSION['front_user_fullname']))
                                      	{?>
-                                     		<a href="<?php echo base_url();?>dangnhap/logOut">Đăng xuất</a>
+                                     		<p style="padding:0">Xin chào <strong><?php echo $_SESSION['front_user_fullname'];?></strong> &ndash;
+                                     			<a href="<?php echo base_url();?>dangnhap/logOut">Đăng xuất</a>
+                                     		</p>
                                      	<?php }
                                      	else {?>
                                      		<a class="logonLinkNoAjax" style="cursor:pointer">Đăng nhập</a>

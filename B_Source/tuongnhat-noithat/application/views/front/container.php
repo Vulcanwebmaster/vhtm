@@ -26,6 +26,14 @@
 			              { failureMessage: "Địa chỉ không hợp lệ"});
 			});
 		</script>
+		
+		<!-- -------- Load date picker resource ---------- -->
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/tuongnhatp2/datepicker/themes/base/jquery.ui.all.css"/>
+		<script src="<?php echo base_url();?>assets/tuongnhatp2/datepicker/jquery-1.8.0.js"></script>
+		<script src="<?php echo base_url();?>assets/tuongnhatp2/datepicker/ui/jquery.ui.core.js"></script>
+		<script src="<?php echo base_url();?>assets/tuongnhatp2/datepicker/ui/jquery.ui.widget.js"></script>
+		<script src="<?php echo base_url();?>assets/tuongnhatp2/datepicker/ui/jquery.ui.datepicker.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/tuongnhatp2/datepicker/themes/base/demos.css"/>
 	</head>
 	
 	<body>
@@ -116,12 +124,7 @@
 											Yêu cầu bạn nhập thông tin để thuận lợi cho quá trình mua hàng
 										</p>
 										<div class="actions sc_checkout" style="text-align:left;">
-											
-											<form id="userRegister" action="" method="post">
-												<button id="registerBt" style="text-align:left;" type="submit" value="Create account" class="button2">
-													<span>Đăng ký</span>
-												</button>
-											</form>
+											<a class="regist-button" href="<?php echo base_url()?>dangnhap/registAccount">Đăng ký</a>
 										</div>
 									</div>
 								</div>

@@ -3,6 +3,7 @@
 class Homepage extends NIW_controller {
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());

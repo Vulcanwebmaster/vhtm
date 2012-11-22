@@ -1,3 +1,8 @@
 @CHARSET "ISO-8859-1";
 #content{position:absolute; z-index:10; left:270px; top:100px;  width:820px}
 #subcontent{background:white; padding:15px;}
+.regist-button {font-size: 14px; font-weight: bold; text-transform: uppercase; padding: 5px 10px; color: white; background: black;}
+.body {font-size:14px}
+#register-form td{padding:5px 10px}
+#register-form {margin-left: 200px}
+.red {color:red}

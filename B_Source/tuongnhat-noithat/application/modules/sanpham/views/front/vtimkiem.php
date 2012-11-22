@@ -1,15 +1,23 @@
+<script type="text/javascript" src="<?php echo base_url();?>assets/tuongnhatp2/js/highlight-product.js"></script>
 <script type="text/javascript">
-       $(document).ready(function(){
-       $('.arrow').click(function(){
-       	$(this).children('.filterBox').slideToggle();
-       });
-       });
+	$(document).ready(function(){
+		//-- set up pagination --
+		$("#pagination-control a").click(function(){
+			var page = parseInt($(this).text());
+			var index = 0;
+			if (page != 1)
+				index += (page-1)*<?php echo $per_page;?>;
+			
+			window.location = "<?php echo base_url();?>sanpham/timkiem/"+index+"?searchTerm=<?php echo $_SESSION['keySearch']?>&searchBtn=+";
+			return false;
+		});
+	});
 </script>
+
 <style type="text/css">
 	#background-image{display:none}
 </style>
 
-<script type="text/javascript" src="<?php echo base_url();?>assets/tuongnhatp2/js/highlight-product.js"></script>
 <!--/line - breadcrumbs-->				
 <input type="hidden" id="sliderMaxPrice" value="500"/>
 <input type="hidden" id="stepSliderPrice" value="50"/>				
@@ -76,9 +84,9 @@
 	</div>
 </div>
 				<!--/line-->
-<div>
-        	<?php echo $this->pagination->create_links();?>
-        </div>
+<div id="pagination-control">
+	<?php echo $this->pagination->create_links();?>
+</div>
 		
 		<div class="line mod">
         	<div class="unit size2of3">

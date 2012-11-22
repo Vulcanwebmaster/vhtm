@@ -93,9 +93,7 @@
 								<div class="actions sc_checkout" style="text-align:left;">
 									
 									<form id="userRegister" action="" method="post">
-										<button id="registerBt" style="text-align:left;" type="submit" value="Create account" class="button2">
-											<span>Đăng ký</span>
-										</button>
+										<a href="<?php echo base_url()?>dangnhap/registAccount" class="regist-button">Đăng ký</a>
 									</form>
 								</div>
 							</div>
