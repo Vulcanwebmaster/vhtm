@@ -60,7 +60,7 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-$baseUrl = '/tuongnhatp2/assets/tuongnhatp2/images/';
+$baseUrl = '/tuongnhat-noithat/assets/tuongnhatp2/images/';
 /*
 $baseDir : the path to the local directory (in the server) which points to the
 above $baseUrl URL. This is the path used by CKFinder to handle the files in

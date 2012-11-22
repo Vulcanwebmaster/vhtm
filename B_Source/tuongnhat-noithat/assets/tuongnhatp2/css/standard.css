@@ -4,8 +4,20 @@ html {
     background: #FFF;
 	
 }
-
-
+.anhbody p img{
+	width: 350px !important;
+	height: 350px !important;	
+}
+.item p img{
+	float:left;
+	margin-right:7px;
+	width: 60px !important;
+	height: 60px !important;
+}
+.viewSmall ul li img{
+	width: 80px !important;
+	height: 80px !important;
+}
 .leftWindow, .rightWindow  {
 	border-color:black;
 	border-style:solid;
@@ -2320,8 +2332,8 @@ list-style-type: circle;
 }
 
 .listProds li img{
-    width:80px;
-	height:80px;
+    width:80px !important;
+	height:80px !important;
 }
 
 /*box promo*/
@@ -8230,6 +8242,7 @@ table.sc_order_step3 .order_tax td{
 	width: 60px;
 	height: 60px;
 }
+
 
 .article_bundle .item .miniImageZoom{
 	cursor:pointer;

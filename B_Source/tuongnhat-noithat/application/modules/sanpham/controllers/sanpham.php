@@ -5,7 +5,7 @@ class Sanpham extends NIW_Controller
 	{
 		parent::__construct();
 		$this->module=strtolower(get_class());
-		
+
 		$this->load->model('Msanpham');
 		$this->load->library('pagination');
 	}
@@ -17,6 +17,11 @@ class Sanpham extends NIW_Controller
 			$index = $this->uri->segment(3);
 			$this->timKiem($index);
 		}
+		elseif ($function == 'chitiet')
+		{
+			$input=$this->uri->segment(3);
+			$this->chitiet($input);
+		}
 		elseif ($function == 'index')
 			$this->index();
 	}
@@ -24,6 +29,31 @@ class Sanpham extends NIW_Controller
 	function index()
 	{
 		redirect(base_url(), 'refresh');
+	}
+	
+	function chitiet($alias)
+	{
+		// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
+		$temp = explode("-", $alias);
+		if (isset($temp)){
+			$category_id = $temp[0];
+			$product_id = $temp[1];
+		}
+		
+		$data['category']=$this->Msanpham->getRowByColumn('tn_categories','category_id',$category_id);
+		$data['product']=$this->Msanpham->getRowByColumn('tn_products','product_id',$product_id);
+		//var_dump($data['product']);die();
+		$data['parents']=$this->Msanpham->getListByColumn('tn_categories','category_parent_id',0);
+		$data['detail']=$this->Msanpham->getRowByColumn('tn_products','product_id',$product_id);
+		
+		$model=new CI_Model();
+		
+		$data['module']=$this->module;
+		$category_id1=$data['detail']->category_id;
+		$data['relates']=$this->Msanpham->getListByColumnOffset('tn_products','category_id',$category_id1,0,6);
+		
+		$data['page']='vdetail';
+		$this->load->view('front/container',$data);
 	}
 	
 	/*

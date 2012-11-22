@@ -8,11 +8,18 @@
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/standard.css"/>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/SqueezeBox.css"/>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/mystyle.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url()?>assets/tuongnhatp2/css/cloud-zoom.css" />
+		
 		<link media="screen" href="<?php echo base_url()?>assets/tuongnhatp2/css/calendar-eightysix-v1.1-default.css" type="text/css" rel="stylesheet"/>
 		<link media="screen" href="<?php echo base_url()?>assets/tuongnhatp2/css/calendar-eightysix-v1.1-vista.css" type="text/css" rel="stylesheet"/>
 		<link media="screen" href="<?php echo base_url()?>assets/tuongnhatp2/css/calendar-eightysix-v1.1-osx-dashboard.css" type="text/css" rel="stylesheet"/>
 	    <link href="<?php echo base_url()?>assets/tuongnhatp2/css/SubLevelhero.css" type="text/css"/>
 	    <link href="<?php echo base_url()?>assets/tuongnhatp2/css/spot_home_us_i_2012.css" media="all" type="text/css" rel="stylesheet"/>
+	    
+	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.8.2.js" type="text/javascript" language="javascript"></script>
+	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/collection.js"   type="text/javascript" language="javascript"></script>
+	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery.min.js"   type="text/javascript"></script>
+	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/cloud-zoom.1.0.2.js" type="text/javascript" </script>
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jsadd.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>
