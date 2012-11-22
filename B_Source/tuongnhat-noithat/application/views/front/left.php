@@ -82,12 +82,12 @@
                 	<li><a href="#">Chính sách bảo mật</a></li>   
                      <li><span>Liên hệ cho chúng tôi</span>
                         <ul class="subLevelhero">
-							//Tuyet
+							
 	                           	<li><a href="http://fcebook.com.vn" class="facebook"></a></li>
 	                            <li><a href="http://movil.com.vn" class="twitter"></a></li>                   
 	                            <li><a href="http://twitter.com.vn" class="movil"></a></li> 
 	                            <center><span class="telefono"><?php echo $telefonoInfo->info_content ?></center>    
-							//end Tuyet
+							
                         </ul>
                     </li>  
                 </ul>
