@@ -73,7 +73,7 @@
 				<div class="nav_spots navMenu navMenuEspecialGeneric infodown" style="display: none; ">
 					<ul class="menuLevel1">       
                         <li><a href="#">Đăng ký</a></li>
-                    	<li><a id="myStaticShopGuideLink" href="#">Liên hệ</a></li>
+                    	<li><a id="myStaticShopGuideLink" href="<?php echo base_url() ?>lienhe/sent/">Liên hệ</a></li>
                         <li><a href="#">Cửa hàng</a></li>                    
                     	<li><a id="myStaticShopGuideLink" href="#">Báo chí</a></li>                     
                     </ul>
