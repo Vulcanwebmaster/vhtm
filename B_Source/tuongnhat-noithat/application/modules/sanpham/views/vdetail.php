@@ -1,6 +1,9 @@
 <?php
 	$newModel=new CI_Model();
 ?>
+<style type="text/css">
+	#background-image{display:none}
+</style>
         <!--------------beginbody----------->
         <div class="body">
 	<div class="line">
