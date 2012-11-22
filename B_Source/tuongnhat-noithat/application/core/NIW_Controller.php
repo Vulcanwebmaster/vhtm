@@ -34,6 +34,13 @@ class NIW_Controller extends CI_Controller {
 		
 		$model=new CI_Model();
 		$this->data['parents']=$model->getListByColumn('tn_categories','category_parent_id',0);
+		
+		// tuyet get facebook, twitter info,content tel
+		$this->data['faceInfo']=$model->getRowByColumn('tn_info', 'info_name', 'facebook');
+		$this->data['twitterInfo']=$model->getRowByColumn('tn_info', 'info_name', 'twitter');
+		$this->data['movilInfo']=$model->getRowByColumn('tn_info', 'info_name', 'movil');
+		$this->data['telefonoInfo']=$model->getRowByColumn('tn_info', 'info_name', 'telefono');
+		// end tuyet
 	}
 	
 	function set_default_value($data=NULL, $value=NULL)

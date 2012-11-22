@@ -7,8 +7,7 @@
             <div class="unit">
                 <div class="navMenu">
                     <ul class="menuLevel1">            
-					<?php $model=new CI_Model();
-					//var_dump($parents);die();
+					 <?php
 					if(isset($parents))
 					{
 						for ($i=0;$i<count($parents);$i++)
@@ -47,7 +46,7 @@
 								}
 						}
 					}
-		            ?>          
+		            ?> 	
                     </ul>
                 </div>
             </div>
@@ -83,14 +82,14 @@
                 	<li><a href="#">Chính sách bảo mật</a></li>   
                      <li><span>Liên hệ cho chúng tôi</span>
                         <ul class="subLevelhero">
-                       
-                            <li><a href="#" class="facebook" target="_blank"></a></li>
-                            <li><a href="#" class="twitter" target="_blank"></a></li>                    
-                            <li><a href="#" class="movil"></a></li>  
-                            <li><span class="telefono">TEL: 1-877-550-1107</span></li>              
-                      
+							//Tuyet
+	                           	<li><a href="http://fcebook.com.vn" class="facebook"></a></li>
+	                            <li><a href="http://movil.com.vn" class="twitter"></a></li>                   
+	                            <li><a href="http://twitter.com.vn" class="movil"></a></li> 
+	                            <center><span class="telefono"><?php echo $telefonoInfo->info_content ?></center>    
+							//end Tuyet
                         </ul>
-                    </li>              
+                    </li>  
                 </ul>
 			</div>
         </div>
