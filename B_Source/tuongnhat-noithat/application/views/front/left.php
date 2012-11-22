@@ -17,7 +17,8 @@
 								{
 									?>
 										<li class="menuLevel1"> 
-											<a><?php echo $parents[$i]->category_name; ?></a>
+											<a><?php if ($_SESSION['lang'] == 'en') echo $parents[$i]->category_name_e;
+													else echo $parents[$i]->category_name_v; ?></a>
 										<?php
 											if (isset($listChildren))
 											{ ?>
@@ -25,7 +26,8 @@
 										<?php	foreach($listChildren as $child)
 												{ ?>
 									            	<li><a href="<?php echo base_url() ?>danh-muc/<?php echo $child->category_id."-".$child->alias.'.htm' ?>">
-									                    		<?php echo $child->category_name; ?>
+								                    		<?php if ($_SESSION['lang'] == 'en') echo $child->category_name_e;
+																else echo $child->category_name_v; ?>
 									                    </a>
 									                </li>
 						                  <?php }?>
@@ -39,7 +41,8 @@
 									?>
 										<li class="menuLevel1"> 
 											<a href="<?php echo base_url() ?>danh-muc/<?php echo $parents[$i]->category_id."-".$parents[$i]->alias.'.htm' ?>">
-												<?php echo $parents[$i]->category_name; ?>
+												<?php if ($_SESSION['lang'] == 'en') echo $parents[$i]->category_name_e;
+																else echo $parents[$i]->category_name_v; ?>
 											</a>
 				                		</li>
 			            			<?php	
@@ -51,15 +54,6 @@
                 </div>
             </div>
         </div>
-		<div class="line">
-			<div class="unit">
-				<div id="ZH_KIDS_US">
-					<a href="html/80289977.htm" title="">
-						<img src="<?php echo base_url()?>assets/tuongnhatp2/images/zara_home_kids_button.png">
-					</a>
-				</div>
-			</div>
-		</div>
 		<style type="text/css">
 	        .nav {
 	           background-image:url(<?php echo base_url()?>assets/tuongnhatp2/images/fondomenu.png); 

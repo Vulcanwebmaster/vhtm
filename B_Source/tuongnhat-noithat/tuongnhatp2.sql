@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 19, 2012 at 12:39 PM
+-- Generation Time: Nov 22, 2012 at 03:39 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -350,24 +350,28 @@ INSERT INTO `n_tn_accounts` (`account_id`, `account_fullname`, `account_address`
 
 CREATE TABLE IF NOT EXISTS `n_tn_categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `category_alias` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `category_name_v` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `category_name_e` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `category_parent_id` int(11) DEFAULT NULL,
+  `alias` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `n_tn_categories`
 --
 
-INSERT INTO `n_tn_categories` (`category_id`, `category_name`, `category_alias`, `category_parent_id`) VALUES
-(1, 'Danh mục 1', 'danh-muc-1', 0),
-(2, 'Danh mục 2', 'danh-muc-2', 0),
-(3, 'Danh mục 3', 'danh-muc-3', 0),
-(4, 'Danh mục 4', 'danh-muc-4', 0),
-(6, 'Danh mục con 1', 'danh-muc-con-1', 2),
-(8, 'Danh mục 6', 'danh-muc-6', 1),
-(9, 'Danh mục 7', 'danh-muc-7', 0);
+INSERT INTO `n_tn_categories` (`category_id`, `category_name_v`, `category_name_e`, `category_parent_id`, `alias`) VALUES
+(1, 'Phòng ngủ', '0', 0, 'Phong-ngu'),
+(2, 'Phòng tắm', '0', 0, 'Phong-tam'),
+(3, 'Bộ đồ ăn', '0', 0, 'Bo-do-an'),
+(4, 'Phòng khách', '0', 0, 'Phong-khach'),
+(6, 'Khăn tắm', '0', 2, 'Khan-tam'),
+(8, 'Gối', '0', 1, 'Goi'),
+(9, 'Trang trí', '0', 0, 'Trang-tri'),
+(10, 'Ý tưởng quà tặng', '0', 0, 'Ý-tuong-qua-tang'),
+(11, 'Bộ đồ giường', '0', 1, 'Bo-do-giuong'),
+(12, 'Chăn bông', '0', 1, 'Chan-bong');
 
 -- --------------------------------------------------------
 
@@ -397,29 +401,91 @@ INSERT INTO `n_tn_contacts` (`contact_id`, `contact_name`, `contact_email`, `cat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_tn_info`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_info` (
+  `info_id` int(11) NOT NULL,
+  `info_name` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `info_content` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`info_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `n_tn_info`
+--
+
+INSERT INTO `n_tn_info` (`info_id`, `info_name`, `info_content`) VALUES
+(1, 'facebook', 'http://facebook.com.vn'),
+(2, 'twitter', 'http://twitter.com.vn'),
+(3, 'movil', 'http://movil.com.vn'),
+(4, 'telefono', 'TEL: 1-877-550-1107');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_tn_products`
 --
 
 CREATE TABLE IF NOT EXISTS `n_tn_products` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `product_alias` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `product_name_v` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `product_name_e` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `alias` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `product_price` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `product_image` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `product_image` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `product_image2` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `product_date_create` datetime DEFAULT NULL,
   `product_date_edit` datetime DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   `is_new` int(1) DEFAULT NULL,
+  `mota` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `thanhphan` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `care` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `product_ma` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `size` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `n_tn_products`
 --
 
-INSERT INTO `n_tn_products` (`product_id`, `product_name`, `product_alias`, `product_price`, `product_image`, `product_date_create`, `product_date_edit`, `category_id`, `is_new`) VALUES
-(2, '2', '', '2', '<p>\r\n	<img alt="" src="/tuongnhatp2/assets/tuongnhatp2/images/images/Best-top-desktop-green-grass-wallpapers-hd-grass-wallpaper-pictures-photos-29.jpg" style="width: 1600px; height: 900px; " /></p>\r\n', '2012-10-08 00:00:00', '2012-11-18 03:05:09', 4, 0),
-(3, 'ten san pham', '', 'gia', '<p>\r\n	<img alt="" src="/tuongnhatp2/assets/tuongnhatp2/images/images/beautiful_lake_wallpaper_15e9c.jpg" style="width: 1440px; height: 900px; " /></p>\r\n', '2012-10-23 15:14:31', '2012-11-18 03:04:40', 1, 1);
+INSERT INTO `n_tn_products` (`product_id`, `product_name_v`, `product_name_e`, `alias`, `product_price`, `product_image`, `product_image2`, `product_date_create`, `product_date_edit`, `category_id`, `is_new`, `mota`, `thanhphan`, `care`, `product_ma`, `size`) VALUES
+(2, 'gối', '0', 'goi', '200.000', '<p>\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/5958000700_1_1_2.jpg" style="width: 1000px; height: 1000px;" /></p>\n', '<p>\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/5958000700_2_1_2.jpg" style="width: 1000px; height: 1000px;" /></p>\n', '2012-10-08 00:00:00', '2012-11-22 00:00:00', 6, 1, 'Fiber cushion filling.', '100% POLYPROPYLENE', ' Không giặt tẩy</br>\nKhông giặt tẩy</br>\nGiặt với PERCHLOROETHYLENE ', 'KT912-M1', '12 x 19,5 in '),
+(3, 'Bộ gối đẹp', '0', 'bo-goi-dep', '500.000.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/0887000999_1_1_2.jpg" style="width: 350px; height: 350px;" /></p>\r\n', '<p>\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/5958000700_2_1_2.jpg" style="width: 1000px; height: 1000px;" /></p>\n', '2012-10-23 15:14:31', '2012-11-22 00:00:00', 6, 1, 'Fiber cushion filling.', '35% POLYPROPYLENE', ' Không giặt tẩy\nKhông giặt tẩy\nGiặt với PERCHLOROETHYLENE ', 'KT912-M1', '12 x 19,5 in '),
+(4, 'Giường nguyên bộ', '0', 'giuong-nguyen-bo', '25.000.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/0916000802_1_1_5.jpg" style="width: 1000px; height: 1000px;" /></p>\r\n', '', '2012-11-20 17:25:48', '2012-11-22 00:00:00', 11, 1, 'Fiber cushion filling.', '58% POLYESTER, 4% COTTON, 34% ACETATE, 4% NYLON', ' MACHINE WASH MAX 40ºC SHORT SPIN\nKhông giặt tẩy\nKhông giặt tẩy ', 'KT912-M1', '12 x 19,5 in '),
+(5, 'Chăn bông', '0', 'chan-bong', '500.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/100324_07_Chanbongthiennhien.JPG" style="width: 680px; height: 485px;" /></p>\r\n', '', '2012-11-20 17:32:30', '2012-11-22 00:00:00', 12, 0, 'Fiber cushion filling.', '90% POLYESTER, 4% COTTON, 34% ACETATE, 4% NYLON', ' MACHINE WASH MAX 40ºC SHORT SPIN\nKhông giặt tẩy\nKhông giặt tẩy ', 'KT912-M1', '12 x 19,5 in '),
+(6, 'gối hoa', '0', 'goi-hoa', '35.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/5846000999_1_1_3.jpg" style="width: 350px; height: 350px;" /></p>\r\n', '', '2012-11-20 17:34:08', '2012-11-22 00:00:00', 8, 0, 'Fiber cushion filling.', '100% POLYPROPYLENE', ' MACHINE WASH MAX 40ºC SHORT SPIN\nKhông giặt tẩy\nKhông giặt tẩy ', 'KT912-M1', '12 x 19,5 in '),
+(7, ' lõi gối', '0', 'loi-goi', '44.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/1826007307_1_1_3.jpg" style="width: 350px; height: 350px;" /></p>\r\n', '', '2012-11-20 17:34:52', '2012-11-22 00:00:00', 8, 1, 'Fiber cushion filling.', '100% POLYPROPYLENE', ' MACHINE WASH MAX 40ºC SHORT SPIN\nKhông giặt tẩy\nKhông giặt tẩy ', 'KT912-M1', '12 x 19,5 in '),
+(8, 'Lõi gối hàn quốc', '0', 'loi-goi-han-quoc', '70.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/1826007307_1_1_3.jpg" style="width: 350px; height: 350px;" /></p>\r\n', '', '2012-11-20 17:35:37', NULL, 8, 1, 'Fiber cushion filling.', '58% POLYESTER, 70% COTTON,E, 4% NYLON', ' MACHINE WASH MAX 40ºC SHORT SPIN\nKhông giặt tẩy\nKhông giặt tẩy ', 'KT912-M1', '12 x 19,5 in '),
+(9, 'Gối caro', '0', 'goi-caro', '75.000', '<p>\r\n	<img alt="" src="/tuongnhat-noithat/assets/tuongnhatp2/images/images/5996000999_1_1_3.jpg" style="width: 350px; height: 350px;" /></p>\r\n', '', '2012-11-20 17:36:22', NULL, 0, 0, 'Fiber cushion filling.', '11% POLYPROPYLENE', ' Không giặt tẩy\nKhông giặt tẩy\nGiặt với PERCHLOROETHYLENE ', 'KT912-M1', '12 x 19,5 in ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_tn_user`
+--
+
+CREATE TABLE IF NOT EXISTS `n_tn_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `fullname` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `gender` int(1) NOT NULL,
+  `address` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `n_tn_user`
+--
+
+INSERT INTO `n_tn_user` (`id`, `email`, `password`, `fullname`, `birthday`, `gender`, `address`, `phone`) VALUES
+(1, 'mooncavalier110205@gmail.com', 'daquang', 'Nguyễn Tiến Mạnh', '1989-04-27', 0, 'Hà Nội', '841692253134'),
+(3, 'manhnt@niw.com.vn', 'daquang', 'Manh Nguyen Tien', '0000-00-00', 0, '', '841692253134');
 
 -- --------------------------------------------------------
 
@@ -450,7 +516,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-11-19 10:24:49', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-11-22 15:22:32', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------

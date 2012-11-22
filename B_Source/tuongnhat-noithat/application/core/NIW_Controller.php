@@ -32,8 +32,12 @@ class NIW_Controller extends CI_Controller {
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');	
 		
+		// Get list parent categories
 		$model=new CI_Model();
 		$this->data['parents']=$model->getListByColumn('tn_categories','category_parent_id',0);
+		
+		//set lang (auto)
+		$this->setLang();
 		
 		// tuyet get facebook, twitter info,content tel
 		$this->data['faceInfo']=$model->getRowByColumn('tn_info', 'info_name', 'facebook');
@@ -92,9 +96,9 @@ class NIW_Controller extends CI_Controller {
 	}
 	function setLang()
 	{
-		if (!$this->session->userdata('lang'))
+		if (!isset($_SESSION['lang']))
 		{
-			$this->session->set_userdata('lang','vn');
+			$_SESSION['lang'] = 'vn';
 		}
 	}
 }

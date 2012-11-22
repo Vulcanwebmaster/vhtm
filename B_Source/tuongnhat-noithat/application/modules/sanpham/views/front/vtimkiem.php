@@ -64,14 +64,16 @@
 				{?>
 					<li class="filteredItem">
 						<a href="#" class="mainProductLink pLink">
-							<!-- img alt="<?php echo $product->product_name?>" src="../images/5958000700_1_1_3.jpg"/ -->
 							<?php echo $product->product_image;?>
 							<?php if ($product->is_new=='1')
 							{?>
 							<span class="new" style="background-image:url(<?php echo base_url()?>assets/tuongnhatp2/images/nuevo_flag_home_en.gif)"></span>
 							<?php }?>
 						</a>
-						<a class="descArt productName pLink" href="#"><?php echo $product->product_name?></a>
+						<a class="descArt productName pLink" href="#">
+							<?php if ($_SESSION['lang'] == 'en') echo $product->product_name_e;
+							else echo $product->product_name_v;?>
+						</a>
 						<p class="price"><?php echo $product->product_price;?></p>
 					</li>
 				<?php }?>

@@ -19,7 +19,7 @@
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.8.2.js" type="text/javascript" language="javascript"></script>
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/collection.js"   type="text/javascript" language="javascript"></script>
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery.min.js"   type="text/javascript"></script>
-	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/cloud-zoom.1.0.2.js" type="text/javascript" </script>
+	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/cloud-zoom.1.0.2.js" type="text/javascript"></script>
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jsadd.js" type="text/javascript" language="javascript"></script>  
 	    <script src="<?php echo base_url()?>assets/tuongnhatp2/js/jquery-1.7.2.min.js" type="text/javascript" language="javascript"></script>
