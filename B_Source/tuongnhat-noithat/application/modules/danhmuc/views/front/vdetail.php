@@ -20,14 +20,17 @@
 			<ul class="listH">            				
 				<li class="filter sliderFilter" id="price">
 					<a class="arrow filterTitle" id="drop_precio" style="font-weight: normal; ">Giá</a>
-                    <select name="price-filter" id="price-filter">
-                    	<option value="0">Tất cả</option>
-                    	<?php foreach ($filter as $price)
-                    	{
-                    		$value = $price->price_min.'-'.$price->price_max;?>
-                    		<option value="<?php echo $value?>"><?php echo $value?></option>
-                    	<?php }?>
-                    </select>
+					<form method="post" action="<?php echo base_url()?>danh-muc/<?php echo $info->category_id?>-<?php echo $info->alias?>" name="filter-form">
+	                    <select name="price-filter" id="price-filter">
+	                    	<option value="0">Tất cả</option>
+	                    	<?php foreach ($filter as $price)
+	                    	{
+	                    		$value = $price->price_min.'-'.$price->price_max;?>
+	                    		<option value="<?php echo $value?>"><?php echo $value?></option>
+	                    	<?php }?>
+	                    </select>
+	                    <input type="submit" name="filter-submit" id="filter-submit" value="Lọc"/>
+                    </form>
                 </li>
 			</ul>
 		</div>

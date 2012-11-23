@@ -27,7 +27,7 @@
 		 */
 		function filterByPrices()
 		{
-			$value
+			$valueFilter = $this->input->post("");
 		}
 		
 		/*
@@ -60,6 +60,7 @@
 				else $this->data['where']		=	$categoryInfo->category_name_v;
 				$this->data['totalProducts']	=	count($listFullByCategoryId);
 				$this->data['filter']			=	$listPrices;
+				$this->data['info']				=	$categoryInfo;
 				$this->data['module']			=	$this->module;
 				$this->data['page']				=	'front/vdetail';
 				$this->data['listProducts'] = $listProducts;
