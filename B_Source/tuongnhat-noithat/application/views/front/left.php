@@ -1,6 +1,9 @@
 <?php 
 	$newModel=new CI_Model();
 ?>
+<style>
+	
+</style>
 <div class="nav">
 		<!--menu vertical desplegable-->
         <div class="line">
@@ -73,7 +76,7 @@
                      <li><span><?php echo $this->lang->line('menu-thongtin');?></span>
                         <ul class="subLevelhero">
 							
-	                           	<li><a href="http://fcebook.com.vn" class="facebook"></a></li>
+	                           	<li><a href="http://facebook.com.vn" class="facebook"></a></li>
 	                            <li><a href="http://twitter.com.vn" class="twitter"></a></li>                   
 	                            <li><a href="http://movil.com.vn" class="movil"></a></li> 
 	                            <center><span class="telefono"><?php if($telefonoInfo) echo $telefonoInfo->info_content ?></center>    

@@ -39,6 +39,7 @@ class NIW_Controller extends CI_Controller {
 		$this->setLang();
 		
 		// tuyet get facebook, twitter info,content tel
+		//$this->data['$cateProduct']=$model->getRowByColumn('tn_contact','category_name','')
 		$this->data['faceInfo']=$model->getRowByColumn('tn_info', 'info_name', 'facebook');
 		$this->data['twitterInfo']=$model->getRowByColumn('tn_info', 'info_name', 'twitter');
 		$this->data['movilInfo']=$model->getRowByColumn('tn_info', 'info_name', 'movil');

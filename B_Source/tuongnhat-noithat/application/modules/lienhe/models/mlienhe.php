@@ -14,6 +14,26 @@
 			return $query->result();
 		}
 		
+		//get list category
+		
+		//Tuyet
+		function insertContact()
+		{
+			$data=array(
+						'contact_name'		=> $this->input->post('name'),
+						'contact_name'		=> $this->input->post('sername'),
+						'contact_email'		=> $this->input->post('email'),
+						
+						'contact_subject'		=> $this->input->post('subject'),
+						'contact_message'	=> $this->input->post('note'),
+					
+						
+						);
+			if($this->db->insert('tn_contacts',$data))
+				return true;
+			else return false;
+		}
+		
 		function count()
 		{
 			$query = $this->db->get('tn_contacts');
@@ -22,6 +42,24 @@
 			else return false;
 		}
 		
+
+		function edit($contact_id)
+		{
+			$data = array(
+							'contact_name'		=> $this->input->post('contact_name'),
+							'contact_email'		=> $this->input->post('contact_email'),
+							'contact_subject'	=> $this->input->post('contact_subject'),
+							'contact_message'	=> $this->input->post('contact_message')
+			);
+			//$this->db->where('contact_id',$contact_id);
+			//if($this->db->update('tn_contacts',$data)) return true;
+			//else return false;
+			if($this->db->insert('tn_contacts',$data))
+				return true;
+			else return false;
+		}
+		
+
 		function del($contact_id)
 		{
 			$this->db->where('contact_id',$contact_id);
