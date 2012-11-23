@@ -14,6 +14,7 @@ class ThamdoController extends Zend_Controller_Action
 		$this->mPoll=new Default_Model_Mpoll();
 		$_SESSION['home'] = 'home';
 		$_SESSION['page'] = 'thamdo';
+		$this->setAccess();
 	}
 	
 	function indexAction()
