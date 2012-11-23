@@ -55,7 +55,7 @@
 				<?php foreach ($listProducts as $product)
 				{?>
 					<li class="filteredItem">
-						<a href="#" class="mainProductLink pLink">
+						<a href="<?php echo base_url();?>sanpham/chitiet/-<?php echo $product->product_id;?>-<?php echo $product->alias;?>" class="mainProductLink pLink">
 							<?php echo $product->product_image;?>
 							<?php if ($product->is_new=='1')
 							{?>

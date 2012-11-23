@@ -46,8 +46,15 @@
 								</div>
 								-->
 								<div class="zoom-small-image viewImgBig2"> 
-									<a href='<?php echo base_url()?>assets/tuongnhatp2/images/images/5958000700_2_1_3.jpg' class = 'cloud-zoom'  id='zoom1' rel="adjustX: 10, adjustY:-4">								   
-									<img src="<?php echo base_url()?>assets/tuongnhatp2/images/images/5958000700_2_1_2.jpg" title="" alt='' width="350" height="350"/></a>
+									<a href='<?php 
+												$preg = preg_match_all('#/tuongnhat.*jpg#',$product->product_image2,$match);
+												echo $match[0][0]; 
+											 ?>' 
+										class = 'cloud-zoom' id='zoom1' rel="adjustX: 10, adjustY:-4">									   
+									<?php if(isset($product->product_image2)){ ?>
+									<div class="anhbody"><?php echo $product->product_image2; ?></div>
+									<?php } ?>
+									</a>
 								</div>
 								<!--<img itemprop="image" src="<?php echo base_url()?>assets/tuongnhatp2/images/images/5958000700_1_1_2.jpg" class="viewImgBig1 cloudzoom" width="350" height="350"/>
 								<img itemprop="image" src="<?php echo base_url()?>assets/tuongnhatp2/images/images/5958000700_2_1_2.jpg" class="viewImgBig2 cloudzoom" width="350" height="350"/>
@@ -157,7 +164,15 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 									<input type="hidden" class="pAux" value="">
 									<input type="hidden" class="pAuxZoom" value="">
 									<input type="hidden" class="pAuxMZoom" value="">   									
-									<h3 class="article_title"><?php echo $item->product_name ?></h3>											
+									<h3 class="article_title">
+										<?php
+										if ($_SESSION['lang'] == 'en'){
+											echo $product->product_name_e;
+										}else{
+											echo $item->product_name_v;
+										}
+										  
+										?></h3>											
 									<div class="article_desc_fields" style="z-index:998">
 							        	<ul>								        	
 								          	<li><span class="field_name">
@@ -283,7 +298,7 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 					<?php foreach ($relates as $item)
 					{?>
 						<li>				
-							<a href="#" class="gaSource" data-ga-source-event="click" data-ga-source-value="UltimosProductosVistos">
+							<a href="<?php echo base_url();?>sanpham/chitiet/-<?php echo $item->product_id;?>-<?php echo $item->alias;?>" class="gaSource" data-ga-source-event="click" data-ga-source-value="UltimosProductosVistos">
 								<?php echo $item->product_image ?>
 							</a>
 						</li>

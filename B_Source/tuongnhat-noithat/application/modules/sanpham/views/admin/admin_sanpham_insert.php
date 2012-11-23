@@ -4,9 +4,14 @@
 		<header><h3>Nhập thông tin sản phẩm</h3></header>
 			<div class="module_content" style="max-height:400px;overflow: auto">
 				<fieldset>
-					<label>Tên sản phẩm</label>
-					<input type="text" name="product_name">
-					<span class="validate"><?php echo form_error('product_name');?></span>
+					<label>Tên sản phẩm(Việt)</label>
+					<input type="text" name="product_name_v">
+					<span class="validate"><?php echo form_error('product_name_v');?></span>
+				</fieldset>
+				<fieldset>
+					<label>Tên sản phẩm(Anh)</label>
+					<input type="text" name="product_name_e">
+					<span class="validate"><?php echo form_error('product_name_e');?></span>
 				</fieldset>
 				<fieldset>
 					<label>Giá</label>
@@ -14,9 +19,19 @@
 					<span class="validate"><?php echo form_error('product_price');?></span>
 				</fieldset>
 				<fieldset>
-					<label>Ảnh đại diện</label>
+					<label>Ảnh đại diện (1)</label>
 					<?php echo $this->ckeditor->editor('product_image',"",$config);?>
 					<span class="validate_ckeditor"><?php echo form_error('product_image');?></span>
+				</fieldset>
+				<fieldset>
+					<label>Ảnh đại diện (2)</label>
+					<?php echo $this->ckeditor->editor('product_image2',"",$config);?>
+					<span class="validate_ckeditor"><?php echo form_error('product_image2');?></span>
+				</fieldset>
+				<fieldset>
+					<label>Mô tả</label>
+					<?php echo $this->ckeditor->editor('mota',"",$config);?>
+					<span class="validate_ckeditor"><?php echo form_error('mota');?></span>
 				</fieldset>
 				<fieldset>
 					<label>Sản phẩm mới</label>
@@ -24,6 +39,26 @@
 						<option value="0">Không</option>
 						<option value="1">Có</option>
 					</select>
+				</fieldset>
+				<fieldset>
+					<label>Thành phần</label>
+					<input type="text" name="thanhphan">
+					<span class="validate"><?php echo form_error('thanhphan');?></span>
+				</fieldset>
+				<fieldset>
+					<label>care</label>
+					<input type="text" name="care">
+					<span class="validate"><?php echo form_error('care');?></span>
+				</fieldset>
+				<fieldset>
+					<label>Mã sp</label>
+					<input type="text" name="product_ma">
+					<span class="validate"><?php echo form_error('product_ma');?></span>
+				</fieldset>
+				<fieldset>
+					<label>size</label>
+					<input type="text" name="size">
+					<span class="validate"><?php echo form_error('size');?></span>
 				</fieldset>
 				<fieldset>
 					<label>Danh mục</label>
@@ -35,7 +70,7 @@
 							foreach($listCategory as $category)
 							{
 								?>
-									<option value="<?php echo $category->category_id ?>"><?php echo $category->category_name ?></option>
+									<option value="<?php echo $category->category_id ?>"><?php echo $category->category_name_v ?></option>
 								<?php
 							}
 						}?>

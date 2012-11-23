@@ -38,7 +38,7 @@
 			?>
 				<tr>
 					<td align="center"><?php echo $count+1; ?></td>
-    				<td><?php echo $row->product_name?></td>
+    				<td><?php echo $row->product_name_v?></td>
     				<td align="center"><?php echo $row->product_price ?></td>  
     				<td align="center"><?php echo $row->product_date_create?></td> 
     				<td align="center"><?php if($row->is_new == 0) echo 'Không'; else echo 'Có';?></td>

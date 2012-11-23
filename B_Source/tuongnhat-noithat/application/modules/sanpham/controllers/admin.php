@@ -13,7 +13,7 @@
 			$this->load->library('session');
 			$this->load->helper('url');
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('product_name', 'Tên sản phẩm', 'required');
+			$this->form_validation->set_rules('product_name_v', 'Tên sản phẩm', 'required');
 			$this->form_validation->set_rules('product_price', 'Giá sản phẩm', 'required');
 			$this->form_validation->set_rules('product_image', 'Ảnh đại diện', 'required');
 			$this->form_validation->set_message('required','%s không được để trống');
@@ -23,7 +23,7 @@
 		{
 			$config['base_url'] = base_url().'sanpham/admin/index';
 			$config['total_rows'] = $this->Msanpham->countSanpham();
-			$config['per_page'] = 6; 
+			$config['per_page'] = 15; 
 			$this->pagination->initialize($config); 
 			$data['listpaging']=$this->Msanpham->getListSanpham($config['per_page'],$this->uri->segment(4));
 			$data['paging'] = $this->pagination->create_links();
@@ -86,12 +86,21 @@
 		function _input($type="")
 		{
 			$data = array(
-								'product_name'	=> $this->input->post('product_name'),
+								'product_name_v'	=> $this->input->post('product_name_v'),
+								'product_name_e'=> $this->input->post('product_name_e'),
 								'product_price'	=> $this->input->post('product_price'),
 								'product_image'	=> $this->input->post('product_image'),
 								'category_id'	=> $this->input->post('category_id'),
-								'is_new'		=> $this->input->post('is_new')
+								'product_image2'=> $this->input->post('product_image2'),
+								'mota'			=> $this->input->post('mota'),
+								'thanhphan'		=> $this->input->post('thanhphan'),
+								'care'			=> $this->input->post('care'),
+								'size'			=> $this->input->post('size'),
+								'product_ma'	=> $this->input->post('product_ma'),
+								'is_new'		=> $this->input->post('is_new'),
+								'alias'=>$this->getAliasByName($this->input->post('product_name_v')),
 				);
+				
 			if ($type=="insert")
 				$data['product_date_create']= date('Y-m-d',time()+7*3600);
 			elseif ($type=="edit")
@@ -143,4 +152,4 @@
 			redirect(base_url().'sanpham/admin', 'refresh');
 		}
 	}
-?>	
+

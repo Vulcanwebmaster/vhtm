@@ -35,9 +35,8 @@
 			else return false;
 		}
 		
-		function insertSanpham()
+		function insertSanpham($data)
 		{
-			
 			if($this->db->insert('tn_products',$data)) return true;
 			else return false;
 		}
@@ -62,9 +61,8 @@
 			$this->db->where('category_id',$category_id);
 			$query = $this->db->get('tn_categories');
 			if(count($query->num_rows()) > 0)
-				return $query->row(0)->category_name;
+				return $query->row(0)->category_name_v;
 			else return "";
 		}
 	}
-?>
 	

@@ -80,7 +80,7 @@ class Sanpham extends NIW_Controller
 			$_SESSION['keySearch'] = $searchValue;
 			
 			//get all relate products
-			$listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name', $searchValue);
+			$listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name_v', $searchValue);
 			
 			if (count($listFull) > 0)
 			{
@@ -91,7 +91,7 @@ class Sanpham extends NIW_Controller
 				$this->_setupPagination($base_url, $per_page, $total_rows);
 				
 				//get some products for one page.
-				$listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name', $searchValue, $index, $per_page);
+				$listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_v', $searchValue, $index, $per_page);
 				
 				$this->data['per_page'] = $per_page;
 				$this->data['module'] = $this->module;
