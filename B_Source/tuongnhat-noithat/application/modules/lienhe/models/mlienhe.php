@@ -22,19 +22,6 @@
 			else return false;
 		}
 		
-		function edit($contact_id)
-		{
-			$data = array(
-							'contact_name'		=> $this->input->post('contact_name'),
-							'contact_email'		=> $this->input->post('contact_email'),
-							'contact_subject'	=> $this->input->post('contact_subject'),
-							'contact_message'	=> $this->input->post('contact_message')
-			);
-			$this->db->where('contact_id',$contact_id);
-			if($this->db->update('tn_contacts',$data)) return true;
-			else return false;
-		}
-		
 		function del($contact_id)
 		{
 			$this->db->where('contact_id',$contact_id);

@@ -45,10 +45,9 @@ if($this->session->userdata('session'))
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_email ?></td>
     				<td align="center" style="padding: 0px;"><?php echo $listCategory[$count]->category_name_v ?></td>  
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_subject ?></td> 
-    				<td align="center" style="padding: 0px;"><?php echo word_limiter($row->contact_message,4); ?></td> 
+    				<td align="center" style="padding: 0px;"><?php echo word_limiter($row->contact_message); ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_date_create ?></td>
     				<td align="center">
-    					<a href="<?php echo base_url()?>lienhe/admin/edit/<?php echo $row->contact_id?>" title="View"><img src="<?php echo base_url()?>assets/admin/images/icn_view.png"></a>
     					<a href="<?php echo base_url()?>lienhe/admin/del/<?php echo $row->contact_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
     				</td>
     			</tr> 

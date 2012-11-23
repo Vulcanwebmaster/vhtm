@@ -35,6 +35,7 @@
 												$preg = preg_match_all('#/tuongnhat.*jpg#',$product->product_image,$match);
 												echo $match[0][0]; 
 											 ?>' 
+											 target="_blank"
 										class = 'cloud-zoom' id='zoom1' rel="adjustX: 10, adjustY:-4">								   
 									<div class="anhbody"><?php echo $product->product_image; ?></div>
 									</a>
@@ -50,7 +51,7 @@
 												$preg = preg_match_all('#/tuongnhat.*jpg#',$product->product_image2,$match);
 												echo $match[0][0]; 
 											 ?>' 
-										class = 'cloud-zoom' id='zoom1' rel="adjustX: 10, adjustY:-4">									   
+										class = 'cloud-zoom' id='zoom1' rel="adjustX: 10, adjustY:-4" target="_blank">									   
 									<?php if(isset($product->product_image2)){ ?>
 									<div class="anhbody"><?php echo $product->product_image2; ?></div>
 									<?php } ?>
