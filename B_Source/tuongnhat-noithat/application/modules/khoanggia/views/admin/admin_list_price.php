@@ -32,7 +32,7 @@
 			    				<td><?php echo $item->price_id;?></td> 
 			    				<td><?php echo $item->price_min;?></td>
 			    				<td><?php echo $item->price_max;?></td> 
-			    				<td><?php echo $item->is_active;?></td> 
+			    				<td><?php if ($item->is_active == '0') echo 'Không'; else echo 'Có';?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>khoanggia/admin/edit/<?php echo $item->price_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 				    				<a href="<?php echo base_url()?>khoanggia/admin/delete/<?php echo $item->price_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

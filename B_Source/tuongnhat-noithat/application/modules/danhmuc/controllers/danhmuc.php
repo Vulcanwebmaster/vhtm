@@ -23,6 +23,14 @@
 		}
 		
 		/*
+		 * Filter arrays by min and max price
+		 */
+		function filterByPrices()
+		{
+			$value
+		}
+		
+		/*
 		 * Get detail of category
 		 * $categoryId: id number of target category.
 		 */
@@ -33,24 +41,28 @@
 			$listFullByCategoryId = $this->Mdanhmuc->getListByColumn('tn_products', 'category_id', $categoryId);
 			if ($categoryInfo)
 			{
-				//get list product by category id
-				$listCategories = $this->Mdanhmuc->getListByColumnOffset('tn_products','category_id',$categoryId, $index, 21);
+				//get list products by category id
+				$listProducts = $this->Mdanhmuc->getListByColumnOffset('tn_products','category_id',$categoryId, $index, 21);
+				
+				//get list prices for filter
+				$listPrices = $this->Mdanhmuc->getListByColumn('tn_price', 'is_active', '1');
 				
 				//set up pagination
-				$config['base_url'] = base_url().'danh-muc/'.$categoryId.'-'.$categoryInfo->alias;
-				$config['per_page'] = 21;
-				$config['total_rows'] = count($listFullByCategoryId);
-				$config['uri_segment'] = 3;
+				$config['base_url']		=	base_url().'danh-muc/'.$categoryId.'-'.$categoryInfo->alias;
+				$config['per_page']		=	21;
+				$config['total_rows']	=	count($listFullByCategoryId);
+				$config['uri_segment']	=	3;
 				$this->pagination->initialize($config);
 				
 				//--------
 				if ($_SESSION['lang'] == 'en')
-					$this->data['where']	=	$categoryInfo->category_name_e;
-				else $this->data['where']	=	$categoryInfo->category_name_v;
+					$this->data['where']		=	$categoryInfo->category_name_e;
+				else $this->data['where']		=	$categoryInfo->category_name_v;
 				$this->data['totalProducts']	=	count($listFullByCategoryId);
+				$this->data['filter']			=	$listPrices;
 				$this->data['module']			=	$this->module;
 				$this->data['page']				=	'front/vdetail';
-				$this->data['listProducts'] = $listCategories;
+				$this->data['listProducts'] = $listProducts;
 				
 				$this->load->view('front/container',$this->data);
 			}

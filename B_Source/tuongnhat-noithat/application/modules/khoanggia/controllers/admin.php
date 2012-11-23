@@ -24,16 +24,15 @@
 		
 		function _input()
 		{
-			$input=array('category_name_v' => $this->input->post('category_name_v'),
-						'category_name_e' => $this->input->post('category_name_e'),
-						'alias' => $this->getAliasByName($this->input->post('category_name_v')),/*getAliasByName Lấy từ Controller mà nó kế thừa*/
-						'category_parent_id' => $this->input->post('category_parent_id'));
+			$input=array('price_min'	=>	$this->input->post('price_min'),
+						'price_max'		=>	$this->input->post('price_max'),
+						'is_active'		=>	$this->input->post('is_active'));
 			return $input;
 		}
 		
 		function insert()
 		{
-			if (!$this->input->post('category_name_v'))
+			if (!$this->input->post('price_min'))
 			{
 				$data['title']='Thêm danh mục';
 				$data['bcCurrent']='Khoảng giá';
@@ -60,7 +59,6 @@
 				}
 				else 
 				{
-					$data['list']=$this->Mkhoanggia->getListByColumn('tn_price','category_parent_id','>0');
 					$data['title']='Thêm danh mục';
 					$data['bcCurrent']='Khoảng giá';
 					$data['module']=$this->module;
@@ -72,9 +70,8 @@
 		
 		function edit($id=0)
 		{
-			if (!$this->input->post('category_name_v'))
+			if (!$this->input->post('price_min'))
 			{
-				$data['list']=$this->Mkhoanggia->getListByColumn('tn_price','category_parent_id','0');
 				$data['info']=$this->Mkhoanggia->getRowByColumn('tn_price','price_id',$id);
 				$data['title']='Sửa khoảng giá';
 				$data['bcCurrent']='Khoảng giá';
@@ -84,7 +81,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('category_name_v','Tên','required|trim');
+				$this->form_validation->set_rules('price_min','Tên','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				

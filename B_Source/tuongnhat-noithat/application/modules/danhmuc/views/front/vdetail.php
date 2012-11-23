@@ -20,7 +20,14 @@
 			<ul class="listH">            				
 				<li class="filter sliderFilter" id="price">
 					<a class="arrow filterTitle" id="drop_precio" style="font-weight: normal; ">Giá</a>
-                    <select></select>
+                    <select name="price-filter" id="price-filter">
+                    	<option value="0">Tất cả</option>
+                    	<?php foreach ($filter as $price)
+                    	{
+                    		$value = $price->price_min.'-'.$price->price_max;?>
+                    		<option value="<?php echo $value?>"><?php echo $value?></option>
+                    	<?php }?>
+                    </select>
                 </li>
 			</ul>
 		</div>
