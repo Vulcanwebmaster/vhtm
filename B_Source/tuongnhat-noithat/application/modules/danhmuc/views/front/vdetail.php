@@ -19,8 +19,8 @@
 		<div class="filters">
 			<ul class="listH">            				
 				<li class="filter sliderFilter" id="price">
-					<a class="arrow filterTitle" id="drop_precio" style="font-weight: normal; ">Giá</a>
-					<form method="post" action="<?php echo base_url()?>danh-muc/<?php echo $info->category_id?>-<?php echo $info->alias?>" name="filter-form">
+					<a class="arrow filterTitle" id="drop_precio" style="font-weight: normal; "><?php echo $this->lang->line('loc');?></a>
+					<form style="display: inline" method="post" action="<?php echo base_url()?>danh-muc/<?php echo $info->category_id?>-<?php echo $info->alias?>" name="filter-form">
 	                    <select name="price-filter" id="price-filter">
 	                    	<option value="0">Tất cả</option>
 	                    	<?php foreach ($filter as $price)

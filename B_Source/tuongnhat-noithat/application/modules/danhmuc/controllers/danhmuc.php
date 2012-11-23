@@ -23,11 +23,31 @@
 		}
 		
 		/*
-		 * Filter arrays by min and max price
+		 * Filter a list products by min and max price
 		 */
-		function filterByPrices()
+		function filterByPrices($list)
 		{
-			$valueFilter = $this->input->post("");
+			if ($this->input->post("price-filter"))
+			{
+				if ($this->input->post("price-filter") != '0')
+				{
+					$valueFilter	=	$this->input->post("price-filter");
+					$segments		=	explode('-', $valueFilter);
+					$valueMin		=	$segments[0];
+					$valueMax		=	$segments[1];
+					$result			=	array();
+					
+					foreach ($list as $item)
+					{
+						if ($item->product_price > $valueMin && $item->product_price < $valueMax)
+							$result[]	=	$item;
+					}
+				}
+				else $result	=	$list;
+			}
+			else $result	=	$list;
+			
+			return $result;
 		}
 		
 		/*
@@ -37,12 +57,15 @@
 		function detailCategory($categoryId='0', $index='0')
 		{
 			//get category info by id
-			$categoryInfo = $this->Mdanhmuc->getRowByColumn('tn_categories','category_id', $categoryId);
-			$listFullByCategoryId = $this->Mdanhmuc->getListByColumn('tn_products', 'category_id', $categoryId);
+			$categoryInfo			=	$this->Mdanhmuc->getRowByColumn('tn_categories','category_id', $categoryId);
+			$listFullByCategoryId	=	$this->Mdanhmuc->getListByColumn('tn_products', 'category_id', $categoryId);
+			$listFullByCategoryId	=	$this->filterByPrices($listFullByCategoryId);// filter by price
 			if ($categoryInfo)
 			{
 				//get list products by category id
-				$listProducts = $this->Mdanhmuc->getListByColumnOffset('tn_products','category_id',$categoryId, $index, 21);
+				$listProducts		=	$this->Mdanhmuc->getListByColumnOffset('tn_products','category_id',$categoryId, $index, 21);
+				$listProducts		=	$this->filterByPrices($listProducts);// filter by price
+				//check filter
 				
 				//get list prices for filter
 				$listPrices = $this->Mdanhmuc->getListByColumn('tn_price', 'is_active', '1');
