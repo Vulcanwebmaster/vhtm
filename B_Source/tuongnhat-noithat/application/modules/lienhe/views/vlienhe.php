@@ -63,7 +63,7 @@
 						</li>
 						<li class="formControl textAreaEmail">
 							<label class="labelLeft labelTextarea" for="message">Message<em class="required">*</em></label>
-							<span><textarea class="textArea" name="note"></textarea></span>
+							<span><textarea style="height: 200px;" class="textArea" name="note"></textarea></span>
 																	
 						</li>
 						<div>
