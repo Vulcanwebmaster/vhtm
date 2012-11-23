@@ -33,6 +33,7 @@
 		{
 			if($this->input->post='submit'){
 				$this->form_validation->set_rules('name','Name','required');
+				//$this->form_validation->set_message('required','please input Name ');
 				$this->form_validation->set_rules('email','E-mail','required');
 				$this->form_validation->set_rules('subject','Subject','required');
 				$this->form_validation->set_rules('note','Message','required');

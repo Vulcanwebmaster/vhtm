@@ -1,7 +1,9 @@
 <style type="text/css">
 	#background-image{display:none}
+	
 </style>
-			
+
+	
         <br>
         <br><br>
 					<form method="post" action="<?php echo base_url() ?>lienhe/send" id="formContact"> 
@@ -40,54 +42,6 @@
 							</span>											
 						</li>						
 						<li class="formControl">
-							<label for="comboTopic" class="labelLeft">Category<em class="required">*</em></label>	
-														
-						<div class="select seletTopic" id="comboTopic" tabindex="100">
-															
-									<select style="width:261px; background-color:#eee; border:1px solid #ccc">
-										<?php 
-										foreach ($parents as $category) 
-										{ ?>
-											<option><?php echo $category->category_name_v ?></option>
-										<?php } ?>
-                                    	
-                                    </select>
-								<style>
-									
-									
-								</style>
-								<div class="selectChild temaformEmail">
-									<div class="lt"></div>
-									<div class="rt"></div>
-									<div class="lb"></div>
-									<div class="rb"></div>
-									<div class="selectChildCont temaformEmail warselectEmail">
-										<ul>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Customer Service" class="offleft"><span>Customer Service</span></a>
-											</li>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Online orders" class="offleft"><span>Online orders</span></a>
-											</li>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Picture Catalogue" class="offleft"><span>Picture Catalogue</span></a>
-											</li>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Technical questions" class="offleft"><span>Technical questions</span></a>
-											</li>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Zara Home Shops" class="offleft"><span>Zara Home Shops</span></a>
-											</li>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Professional opportunities" class="offleft"><span>Professional opportunities</span></a>
-											</li>
-											<li>
-												<a href="javascript:void(0);"><input type="radio" name="radTopic" value="Wedding gift list" class="offleft"><span>Wedding gift list</span></a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
 
 							<input type="text" name="comboTopicHidden" id="comboTopicHidden" class="offleft required msgPos:'msgPosOt2'" value="">					
 							<span class="inputTip tipHelp">
@@ -109,7 +63,7 @@
 						</li>
 						<li class="formControl textAreaEmail">
 							<label class="labelLeft labelTextarea" for="message">Message<em class="required">*</em></label>
-							<textarea class="textArea" name="note" maxlength></textarea>
+							<span><textarea class="textArea" name="note"></textarea></span>
 																	
 						</li>
 						<div>
