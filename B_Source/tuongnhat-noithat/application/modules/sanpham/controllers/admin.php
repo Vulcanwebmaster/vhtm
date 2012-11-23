@@ -13,7 +13,8 @@
 			$this->load->library('session');
 			$this->load->helper('url');
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('product_name_v', 'Tên sản phẩm', 'required');
+
+			$this->form_validation->set_rules('product_name_v', 'Tên sản phẩm (Việt)', 'required');
 			$this->form_validation->set_rules('product_price', 'Giá sản phẩm', 'required');
 			$this->form_validation->set_rules('product_image', 'Ảnh đại diện', 'required');
 			$this->form_validation->set_message('required','%s không được để trống');
@@ -87,7 +88,7 @@
 		{
 			$data = array(
 								'product_name_v'	=> $this->input->post('product_name_v'),
-								'product_name_e'=> $this->input->post('product_name_e'),
+								'product_name_e'	=> $this->input->post('product_name_e'),
 								'product_price'	=> $this->input->post('product_price'),
 								'product_image'	=> $this->input->post('product_image'),
 								'category_id'	=> $this->input->post('category_id'),

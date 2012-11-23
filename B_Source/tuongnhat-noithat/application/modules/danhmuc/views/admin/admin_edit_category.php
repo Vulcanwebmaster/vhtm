@@ -9,8 +9,12 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên danh mục</label>
-					<input type="text" name="category_name" style="width:92%" value="<?php echo $info->category_name;?>"/>
+					<label>Tên danh mục (Việt)</label>
+					<input type="text" name="category_name_v" style="width:92%" value="<?php echo $info->category_name_v;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Tên danh mục (Anh)</label>
+					<input type="text" name="category_name_e" style="width:92%" value="<?php echo $info->category_name_e;?>"/>
 				</fieldset>
 				<fieldset>
 					<label>Danh mục cha</label>
@@ -20,10 +24,10 @@
 						{
 							if ($item->category_id==$info->category_parent_id)
 							{?>
-								<option value="<?php echo $item->category_id?>" selected="selected"><?php echo $item->category_name;?></option>
+								<option value="<?php echo $item->category_id?>" selected="selected"><?php echo $item->category_name_v;?></option>
 							<?php }
 							else {?>
-								<option value="<?php echo $item->category_id?>"><?php echo $item->category_name;?></option>
+								<option value="<?php echo $item->category_id?>"><?php echo $item->category_name_v;?></option>
 						<?php }}?>
 					</select>
 				</fieldset>

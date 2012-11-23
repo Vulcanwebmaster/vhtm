@@ -66,21 +66,17 @@
 				<div class="navMenu navMenuInfo info"><li><a href="#">+ INFO</a></li></div>
 				<div class="nav_spots navMenu navMenuEspecialGeneric infodown" style="display: none; ">
 					<ul class="menuLevel1">       
-                        <li><a href="#">Đăng ký</a></li>
-                    	<li><a id="myStaticShopGuideLink" href="<?php echo base_url() ?>lienhe/send/">Liên hệ</a></li>
-                        <li><a href="#">Cửa hàng</a></li>                    
-                    	<li><a id="myStaticShopGuideLink" href="#">Báo chí</a></li>                     
+                        <li><a href="<?php echo base_url()?>dangnhap/registAccount"><?php echo $this->lang->line('dangky');?></a></li>
+                    	<li><a id="myStaticShopGuideLink" href="<?php echo base_url() ?>lienhe/send/"><?php echo $this->lang->line('menu-lienhe');?></a></li>
                     </ul>
                 <ul class="menuLevel1">   
-                   <li><a id="myStaticShopGuideLink" href="#">Hướng dẫn mua hàng</a></li>
-                	<li><a href="#">Chính sách bảo mật</a></li>   
-                     <li><span>Liên hệ cho chúng tôi</span>
+                     <li><span><?php echo $this->lang->line('menu-thongtin');?></span>
                         <ul class="subLevelhero">
 							
 	                           	<li><a href="http://fcebook.com.vn" class="facebook"></a></li>
 	                            <li><a href="http://twitter.com.vn" class="twitter"></a></li>                   
 	                            <li><a href="http://movil.com.vn" class="movil"></a></li> 
-	                            <center><span class="telefono"><?php echo $telefonoInfo->info_content ?></center>    
+	                            <center><span class="telefono"><?php if($telefonoInfo) echo $telefonoInfo->info_content ?></center>    
 							
                         </ul>
                     </li>  

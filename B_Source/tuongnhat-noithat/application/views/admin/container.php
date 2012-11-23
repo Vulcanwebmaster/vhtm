@@ -27,12 +27,16 @@
         $('.column').equalHeight();
     });
     </script>
-    
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/tuongnhatp2/css/consolidated_common.css"/>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/tuongnhatp2/js/livevalidation_standalone.js"></script>
 
 </head>
 
 
 <body>
+	<style type="text/css">
+		.LV_validation_message{position: relative !important}
+	</style>
 	<?php $this->load->view('admin/header');?>	
 	<aside id="sidebar" class="column">
 		<?php //$this->load->view('admin/searchbox')?>

@@ -27,7 +27,7 @@ class Dangnhap extends NIW_Controller
 				$account = $relateAccounts[0];
 				$_SESSION['front_user_fullname'] = $account->fullname;
 				$_SESSION['front_user_id'] = $account->id;
-
+				$_SESSION['basket'] = array(); //creat basket online for user
 				redirect(base_url(),'refresh');
 			}
 			else 

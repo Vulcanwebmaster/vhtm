@@ -3,7 +3,6 @@
 	<div class="logo">		
 		<h1>
             <a href="<?php echo base_url();?>" title="Tường Nhật">
-                <span class="offleft">ZARA HOME</span>
                 <img src="<?php echo base_url()?>assets/tuongnhatp2/images/logo_Zara_Home.png" alt="HOME">
             </a>
 		</h1>		
@@ -28,17 +27,23 @@
                                      	<?php if (isset($_SESSION['front_user_fullname']))
                                      	{?>
                                      		<p style="padding:0">Xin chào <strong><?php echo $_SESSION['front_user_fullname'];?></strong> &ndash;
-                                     			<a href="<?php echo base_url();?>dangnhap/logOut">Đăng xuất</a>
+                                     			<a href="<?php echo base_url();?>dangnhap/logOut"><?php echo $this->lang->line('header-dangxuat');?></a>
                                      		</p>
                                      	<?php }
                                      	else {?>
-                                     		<a class="logonLinkNoAjax" style="cursor:pointer">Đăng nhập</a>
+                                     		<a class="logonLinkNoAjax" style="cursor:pointer"><?php echo $this->lang->line('header-dangnhap');?></a>
                                      	<?php }?>
                                      </li> 
                                      <li>|</li> 
                                      <li id="basket" class="basket">
                                      	<div id="miniShopCart" class="unit size1of1">                                        	
-                                            	<a id="shoppingCartBar" href="#"><img id="bag" src="<?php echo base_url()?>assets/tuongnhatp2/images/ico_shopping_bag.png">Basket <span>(<span id="miniShopCartItems">0</span><span id="miniShopCartItemsQuantity">Items)</span></span></a>                                 
+                                            	<a id="shoppingCartBar" href="#">
+                                            		<img id="bag" src="<?php echo base_url()?>assets/tuongnhatp2/images/ico_shopping_bag.png">
+                                            		<?php echo $this->lang->line('header-giohang');?> 
+                                            		<span>(<span id="miniShopCartItems"><?php if (isset($_SESSION['basket'])) echo count($_SESSION['basket']);?></span>
+                                            		<span id="miniShopCartItemsQuantity">Items)</span>
+                                            		</span>
+                                            	</a>                                 
                                       	</div>
                                      </li>   
                                 </ul>

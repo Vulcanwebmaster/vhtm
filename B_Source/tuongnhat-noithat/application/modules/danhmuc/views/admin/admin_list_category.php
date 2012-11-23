@@ -20,6 +20,7 @@
 						<tr>
 							<th>ID</th> 
 		    				<th>Tên (Việt)</th>
+		    				<th>Tên (Anh)</th>
 		    				<th>Danh mục cha</th> 
 		    				<th>Action</th>
 						</tr> 
@@ -29,7 +30,8 @@
 					 	{?>
 					 		<tr>  
 			    				<td><?php echo $item->category_id;?></td> 
-			    				<td><?php echo $item->category_name;?></td> 
+			    				<td><?php echo $item->category_name_v;?></td>
+			    				<td><?php echo $item->category_name_e;?></td> 
 			    				<td><?php echo $item->category_parent_id;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>

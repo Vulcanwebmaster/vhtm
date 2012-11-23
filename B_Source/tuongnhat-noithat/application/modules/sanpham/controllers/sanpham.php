@@ -3,6 +3,7 @@ class Sanpham extends NIW_Controller
 {
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=strtolower(get_class());
 
@@ -24,6 +25,13 @@ class Sanpham extends NIW_Controller
 		}
 		elseif ($function == 'index')
 			$this->index();
+		elseif ($function == 'themgiohang')
+		{
+			$productId = $this->uri->segment(3);
+			$this->insertBasket($productId);
+		}
+		elseif ($function == 'xemgiohang')
+			$this->showBasket();
 	}
 	
 	function index()
@@ -80,7 +88,9 @@ class Sanpham extends NIW_Controller
 			$_SESSION['keySearch'] = $searchValue;
 			
 			//get all relate products
-			$listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name_v', $searchValue);
+			if ($_SESSION['lang'] == 'en')
+				$listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name_e', $searchValue);
+			else $listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name_v', $searchValue);
 			
 			if (count($listFull) > 0)
 			{
@@ -91,8 +101,11 @@ class Sanpham extends NIW_Controller
 				$this->_setupPagination($base_url, $per_page, $total_rows);
 				
 				//get some products for one page.
-				$listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_v', $searchValue, $index, $per_page);
+				if ($_SESSION['lang'] == 'en')
+					$listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_e', $searchValue, $index, $per_page);
+				else $listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_v', $searchValue, $index, $per_page);
 				
+				$this->data['where'] = 'Kết quả tìm kiếm'; 
 				$this->data['per_page'] = $per_page;
 				$this->data['module'] = $this->module;
 				$this->data['page'] = 'front/vtimkiem';
@@ -100,6 +113,94 @@ class Sanpham extends NIW_Controller
 				$this->data['totalProducts'] = count($listFull);
 				$this->load->view('front/container', $this->data);
 			}
+		}
+		else redirect(base_url());
+	}
+
+	/*
+	 * use 'basket' session for storing id numbers of selected products 
+	 */
+	/*
+	 * check exist of a id in current basket
+	 */
+	function isExistInBasket($productId)
+	{
+		foreach ($_SESSION['basket'] as $item)
+		{
+			if ($item['id'] == $productId)
+				return true;
+		}
+		return false;
+	}
+	
+	/*
+	 * insert a new product id in user basket online
+	 */
+	function insertBasket($productId)
+	{
+		echo '<meta charset="UTF-8"/>';
+		if (isset($_SESSION['basket']))
+		{
+			if ($this->isExistInBasket($productId))
+			{
+				// if this id is exist in current basket, increase amount of it
+				$count=0;
+				foreach ($_SESSION['basket'] as $item)
+				{
+					if ($item['id'] == $productId)
+					{
+						$_SESSION['basket'][$count]['amount']++;
+						break;
+					}
+					$count++;
+				}
+			}
+			else 
+			{
+				// if this id isn't exist in current basket, insert new item
+				$newItem = array('id'	=>	$productId,
+								'amount'	=>	1);
+				$_SESSION['basket'][] = $newItem;
+			}
+			
+			echo '<script language = javascript>
+					alert("Đã thêm vào giỏ hàng");		
+				</script>';
+		}
+		else 
+		{
+			echo '<script language = javascript>
+				alert("Lỗi: Giỏ hàng không tồn tại.");		
+			</script>';
+			redirect(base_url(), 'refresh');
+		}
+	}
+	
+	/*
+	 * List all items in current basket
+	 */
+	function showBasket()
+	{
+		if (isset($_SESSION['basket']))
+		{
+			$currentBasket	=	$_SESSION['basket'];
+			
+			//for each id in current basket, get a product in database
+			$listProducts	=	array();
+			$amount			=	array();
+			foreach ($currentBasket as $product)
+			{
+				$currentProduct	=	$this->Msanpham->getRowByColumn('tn_products', 'product_id', $product['id']);
+				$listProducts[]	=	$currentProduct; // put that product into a list
+				$amount[]		=	$product['amount']; //put amount into list
+			}
+			
+			$this->data['amount']		=	$amount;
+			$this->data['listProducts']	=	$listProducts;
+			$this->data['page']			= 'front/vgiohang';
+			$this->data['module']		= $this->module;
+			$this->data['where']		= 'Giỏ hàng của bạn';
+			$this->load->view('front/container', $this->data);
 		}
 		else redirect(base_url());
 	}

@@ -44,9 +44,12 @@
 				$this->pagination->initialize($config);
 				
 				//--------
-				$this->data['totalProducts'] = count($listFullByCategoryId);
-				$this->data['module'] = $this->module;
-				$this->data['page'] = 'front/vdetail';
+				if ($_SESSION['lang'] == 'en')
+					$this->data['where']	=	$categoryInfo->category_name_e;
+				else $this->data['where']	=	$categoryInfo->category_name_v;
+				$this->data['totalProducts']	=	count($listFullByCategoryId);
+				$this->data['module']			=	$this->module;
+				$this->data['page']				=	'front/vdetail';
 				$this->data['listProducts'] = $listCategories;
 				
 				$this->load->view('front/container',$this->data);

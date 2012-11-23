@@ -24,15 +24,16 @@
 		
 		function _input()
 		{
-			$input=array('category_name'=>$this->input->post('category_name'),
-						'alias'=>$this->getAliasByName($this->input->post('category_name')),/*getAliasByName Lấy từ Controller mà nó kế thừa*/
-						'category_parent_id'=>$this->input->post('category_parent_id'));
+			$input=array('category_name_v' => $this->input->post('category_name_v'),
+						'category_name_e' => $this->input->post('category_name_e'),
+						'alias' => $this->getAliasByName($this->input->post('category_name_v')),/*getAliasByName Lấy từ Controller mà nó kế thừa*/
+						'category_parent_id' => $this->input->post('category_parent_id'));
 			return $input;
 		}
 		
 		function insert()
 		{
-			if (!$this->input->post('category_name'))
+			if (!$this->input->post('category_name_v'))
 			{
 				$data['list']=$this->Mdanhmuc->getListByColumn('tn_categories','category_parent_id','0');
 				$data['title']='Thêm danh mục';
@@ -43,7 +44,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('category_name','Tên','required|trim');
+				$this->form_validation->set_rules('category_name_v','Tên','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
@@ -71,7 +72,7 @@
 		
 		function edit($id=0)
 		{
-			if (!$this->input->post('category_name'))
+			if (!$this->input->post('category_name_v'))
 			{
 				$data['list']=$this->Mdanhmuc->getListByColumn('tn_categories','category_parent_id','0');
 				$data['info']=$this->Mdanhmuc->getRowByColumn('tn_categories','category_id',$id);
@@ -83,7 +84,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('category_name','Tên','required|trim');
+				$this->form_validation->set_rules('category_name_v','Tên','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
@@ -120,4 +121,3 @@
 			$this->index();
 		}
 	}
-?>

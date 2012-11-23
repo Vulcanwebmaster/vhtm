@@ -27,7 +27,6 @@ class NIW_Controller extends CI_Controller {
 		$this->load->library('page/Page');
 		
 		$this->load->library('auth/userlib');
-
 		
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');	
@@ -94,12 +93,18 @@ class NIW_Controller extends CI_Controller {
 			}
 		}
 	}
+	
+	/*
+	 * extend by Manhnt
+	 */
 	function setLang()
 	{
 		if (!isset($_SESSION['lang']))
-		{
 			$_SESSION['lang'] = 'vn';
-		}
+		
+		if ($_SESSION['lang'] == 'vn')
+			$this->lang->load('tn','vietnamese');
+		else $this->lang->load('tn','english');
 	}
 }
 

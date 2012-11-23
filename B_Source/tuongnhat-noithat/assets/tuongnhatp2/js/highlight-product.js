@@ -3,8 +3,6 @@ $(document).ready(function(){
 		$(".filteredItem").mouseenter(function(){
 			$(this).addClass('highlight');
 			$(this).animate({opacity:1});
-			$(this).css('box-shadow', '0 0 20px #2e2e2e');
-			$(this).css('border','solid 10px #fdfdfd');
 			var list = $(".filteredItem");
 			for (var i=0; i<list.length; i++)
 			{
@@ -16,9 +14,7 @@ $(document).ready(function(){
 		});
 
 		$(".filteredItem").mouseleave(function(){
-			$(".filteredItem").css('border','solid 10px white');
 			$(".filteredItem").removeClass("highlight");
-			$(".filteredItem").css("box-shadow","none");
 		});
 
 		$("#catProdsContainer").mouseleave(function(){

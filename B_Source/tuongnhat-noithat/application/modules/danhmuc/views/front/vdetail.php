@@ -42,7 +42,8 @@
 	<div class="unit size1of1">						
 	</div>
 </div>
-								
+<?php if (isset($where))
+	echo '<h2>'.$where.'</h2>'?>			
 				<!--line-->
 <div id="categoryProducts" class="line pp">
 	<div class="unit size1of1 lastUnit">

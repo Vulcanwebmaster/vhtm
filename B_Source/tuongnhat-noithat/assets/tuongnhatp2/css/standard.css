@@ -832,7 +832,7 @@ p.entry {
 	background-image:url(../images/search_transp.png);
 	color:#666;
 	margin-top:-2px;
-	font-size:9px;
+	font-size:11px;
 }
 
 .menuUser .searchTextField {
@@ -7933,10 +7933,10 @@ table.new_shopping_cart td {
 table.new_shopping_cart td:first-child {
 	width:75px;
 }
-table.new_shopping_cart .image{
+table.new_shopping_cart p img{
 	vertical-align:middle;
-	width: 60px;
-	height: 60px;
+	width: 60px !important;
+	height: 60px !important;
 }
 table.new_shopping_cart .name{
 	font-size:14px;
@@ -8021,9 +8021,6 @@ table.new_shopping_cart .total{
 table.shopping_cart .total td,table.shopping_cart .disccount td{
 	border-bottom:none;
 }
-table.new_shopping_cart .total td,table.new_shopping_cart .disccount td{
-	border-bottom:none;
-}
 table.shopping_cart .total td {
 	padding:0;
 }
@@ -8073,11 +8070,11 @@ table.new_shopping_cart .sc_total{
 	text-align: left;
 }
 .sc_th_price{
-	width:54px;
+	width:auto;
 	text-align: right;
 }
 .sc_th_quantity{
-	width:69px;
+	width:auto;
 	text-align: right;
 }
 .sc_th_total{

@@ -10,6 +10,7 @@
 		<li class="icn_application"><a href="<?php echo base_url(); ?>sanpham/admin">Sản phẩm</a></li>
 		<li class="icn_application"><a href="<?php echo base_url(); ?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url(); ?>taikhoan/admin">Tài khoản</a></li>
+		<li class="icn_application"><a href="<?php echo base_url(); ?>khoanggia/admin">Bộ lọc giá</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

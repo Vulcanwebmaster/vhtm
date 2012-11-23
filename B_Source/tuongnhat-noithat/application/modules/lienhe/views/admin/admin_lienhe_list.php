@@ -43,7 +43,7 @@ if($this->session->userdata('session'))
 					<td align="center"><?php echo $count+1; ?></td>
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_name ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_email ?></td>
-    				<td align="center" style="padding: 0px;"><?php echo $listCategory[$count]->category_name ?></td>  
+    				<td align="center" style="padding: 0px;"><?php echo $listCategory[$count]->category_name_v ?></td>  
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_subject ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo word_limiter($row->contact_message,4); ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_date_create ?></td>

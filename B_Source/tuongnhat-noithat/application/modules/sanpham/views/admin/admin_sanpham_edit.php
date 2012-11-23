@@ -4,13 +4,13 @@
 		<header><h3>Thông tin sản phẩm</h3></header>
 			<div class="module_content" style="max-height:400px;overflow: auto">
 				<fieldset>
-					<label>Tên sản phẩm(Việt)</label>
-					<input type="text" name="product_name_v" value="<?php echo $query->product_name_v?>">
+					<label>Tên sản phẩm (Việt)</label>
+					<input type="text" name="product_name_v" value="<?php echo $query->product_name_v?>"/>
 					<span class="validate"><?php echo form_error('product_name_v');?></span>
 				</fieldset>
 				<fieldset>
-					<label>Tên sản phẩm(Anh)</label>
-					<input type="text" name="product_name_e" value="<?php echo $query->product_name_e?>">
+					<label>Tên sản phẩm (Anh)</label>
+					<input type="text" name="product_name_e" value="<?php echo $query->product_name_e?>"/>
 					<span class="validate"><?php echo form_error('product_name_e');?></span>
 				</fieldset>
 				<fieldset>
