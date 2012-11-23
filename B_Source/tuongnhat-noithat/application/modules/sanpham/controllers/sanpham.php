@@ -48,20 +48,20 @@ class Sanpham extends NIW_Controller
 			$product_id = $temp[1];
 		}
 		
-		$data['category']=$this->Msanpham->getRowByColumn('tn_categories','category_id',$category_id);
-		$data['product']=$this->Msanpham->getRowByColumn('tn_products','product_id',$product_id);
+		$this->data['category']=$this->Msanpham->getRowByColumn('tn_categories','category_id',$category_id);
+		$this->data['product']=$this->Msanpham->getRowByColumn('tn_products','product_id',$product_id);
 		//var_dump($data['product']);die();
-		$data['parents']=$this->Msanpham->getListByColumn('tn_categories','category_parent_id',0);
-		$data['detail']=$this->Msanpham->getRowByColumn('tn_products','product_id',$product_id);
+		$this->data['parents']=$this->Msanpham->getListByColumn('tn_categories','category_parent_id',0);
+		$this->data['detail']=$this->Msanpham->getRowByColumn('tn_products','product_id',$product_id);
 		
 		$model=new CI_Model();
 		
-		$data['module']=$this->module;
-		$category_id1=$data['detail']->category_id;
-		$data['relates']=$this->Msanpham->getListByColumnOffset('tn_products','category_id',$category_id1,0,6);
+		$this->data['module']=$this->module;
+		$category_id1=$this->data['detail']->category_id;
+		$this->data['relates']=$this->Msanpham->getListByColumnOffset('tn_products','category_id',$category_id1,0,6);
 		
-		$data['page']='vdetail';
-		$this->load->view('front/container',$data);
+		$this->data['page']='vdetail';
+		$this->load->view('front/container',$this->data);
 	}
 	
 	/*
