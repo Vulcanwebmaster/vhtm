@@ -12,7 +12,7 @@ font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 background: #F8F8F8;
 font-size: 12px;
 }
-
+.thuva p img{width:100px !important; height: 150px !important }
 .clear {
 clear: both;
 }

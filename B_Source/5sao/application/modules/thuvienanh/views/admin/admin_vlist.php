@@ -30,7 +30,7 @@
 					 	{?>
 					 		<tr>  
 			    				<td><?php echo $item->id;?></td> 
-			    				<td><?php echo $item->file;?></td>
+			    				<td class="thuva"><?php echo $item->file;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>thuvienanh/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    				</td>
