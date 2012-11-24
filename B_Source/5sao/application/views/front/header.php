@@ -52,7 +52,7 @@
 				<li class="submenu"><a class="menu-text" style="display:block" id="menu-baohanh" href="<?php echo base_url();?>bao-hanh"><?php echo $this->lang->line('menu-baohanh');?></a>
 					<div class="bg_itemmenu" id="bg_itemmenu_2"></div>
 				</li>
-				<li class="submenu"><a href="" class="menu-text" style="display:block" id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
+				<li class="submenu"><a href="<?php echo base_url();?>tin-tuc" class="menu-text" style="display:block" id="menu-tintuc"><?php echo $this->lang->line('menu-tintuc');?></a>
                 
                 		<div class="bg_itemmenu" id="bg_itemmenu_3">
                 			<ul>

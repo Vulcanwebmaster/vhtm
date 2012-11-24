@@ -42,7 +42,7 @@
 			?>
 			<div class="item">
 				<div class="itemimage">
-					<a href="<?php echo base_url();?>sanpham/<?php echo $item->alias;?>">
+					<a href="<?php echo base_url();?>sanpham/detail/<?php echo $item->danhmuc_id."-".$item->id."-".$item->alias;?>">
 						<?php echo $item->hinhanh;?>
 					</a><br />								
 				</div>

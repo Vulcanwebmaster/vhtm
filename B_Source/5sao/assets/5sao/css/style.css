@@ -549,7 +549,7 @@ border-radius:5px}
 /* --------------------- MANH ---------------------*/
 .itemimage a img{width:169px !important; height:165px !important}
 .clear{clear:both}
-.pagination-control{text-align:center; padding-top:10px}
+.pagination-control{text-align:center; padding:15px}
 .pagination-control *{color:white}
 h2{font-family:Arial;  font-size:1.2em;}
 .product_image, .product_description{float:left; font-size:12px; margin:20px 10px 10px 10px; width:265px;}

@@ -29,12 +29,12 @@
 							{
 								if ($lang=="vn") 
 								{?>
-									<li <?php if ($count==0) ?>><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
+									<li <?php if ($count==0) ?>><a <?php echo 'href="'.base_url().'sanpham/category/'.$category->id."-".$category->alias.'"';?> style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
 									</li>
 									<?php if ($count<6) echo "<li>|</li>";?>
 								<?php }
 								else {?>
-									<li <?php if ($count==0) echo "style='margin-left:120px'"?>><a <?php if (count($newmodel->getListByColumn('danhmuc','parent_id',$category->id))==0) echo 'href="'.base_url().'sanpham/'.$category->alias.'"';?> style="cursor:pointer"><?php echo $category->ten_e;?></a>
+									<li <?php if ($count==0) ?> style='margin-left:120px'><a <?php  echo 'href="'.base_url().'sanpham/category/'.$category->id."-".$category->alias.'"';?> style="cursor:pointer"><?php echo $category->ten_e; ?></a>	
 									</li>
 									<?php if ($count<5) echo "<li>|</li>";?>
 									<?php }
