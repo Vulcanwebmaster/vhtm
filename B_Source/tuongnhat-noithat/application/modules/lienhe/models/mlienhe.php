@@ -21,13 +21,9 @@
 		{
 			$data=array(
 						'contact_name'		=> $this->input->post('name'),
-						'contact_name'		=> $this->input->post('sername'),
 						'contact_email'		=> $this->input->post('email'),
-						
 						'contact_subject'		=> $this->input->post('subject'),
 						'contact_message'	=> $this->input->post('note'),
-					
-						
 						);
 			if($this->db->insert('tn_contacts',$data))
 				return true;

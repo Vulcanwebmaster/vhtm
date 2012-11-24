@@ -17,14 +17,26 @@
 						<li class="formControl formEmail">
 							<label class="labelLeft" for="name">Name<em class="required">*</em></label>
 							<input class="required msgPos:'msgPos01'" id="name" name="name" maxlength="">
-							
-														
+							<span class="inputTip tipOk">
+								<img src="../images/tip_ok.png" alt="ok">
+							</span>	
+							<span class="inputTip tipWarn" id="msgPos01">
+								<img alt="warning" src="../images/tip_warn.png">
+								
+							</span>								
 						</li>
+					
 						
 						<li class="formControl formEmail">
 							<label class="labelLeft" for="email">E-mail<em class="required">*</em></label>
 							<input class="required validate-email  msgPos:'msgPos03'" id="email" name="email" maxlength="">
-																	
+							<span class="inputTip tipOk">
+								<img src="../images/tip_ok.png" alt="ok">
+							</span>	
+							<span class="inputTip tipWarn" id="msgPos03">
+								<img alt="../images/tip_warn.png">
+								
+							</span>											
 						</li>						
 						<li class="formControl">
 
@@ -48,7 +60,7 @@
 						</li>
 						<li class="formControl textAreaEmail">
 							<label class="labelLeft labelTextarea" for="message">Message<em class="required">*</em></label>
-							<span><textarea style="height: 150px;" class="textArea" name="note"></textarea></span>
+							<span><textarea style="height: 200px;" class="textArea" name="note"></textarea></span>
 																	
 						</li>
 						<div>
