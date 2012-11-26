@@ -33,6 +33,7 @@
 			return $input;
 		}
 		
+		//sua--tuyet
 		function edit($id=1)
 		{
 			$this->form_validation->set_rules('contentv','Nội dung (Việt)','required|trim');
@@ -55,6 +56,7 @@
 			}
 		}
 		
+		//liet ke danh sach contact
 		function view()
 		{
 			$data['list'] = $this->Mlienhe->getListFull('oto_list_contact');
@@ -64,13 +66,16 @@
 			$data['page']='admin_list_contact';
 			$this->load->view('admin/container',$data);
 		}
+		//end--liet ke
 		
+		//xoa theo id
 		function delete($id)
 		{
 			if($this->Mlienhe->deleteContact($id))
 				$this->view();
 			else $this->view();
 		}
+		//end xoa
 		
 		function detail($id)
 		{
@@ -78,7 +83,7 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
-			$data['query'] = $this->Mlienhe->getRowByColumn('mc_list_contact','id',$id);
+			$data['query'] = $this->Mlienhe->getRowByColumn('oto_list_contact','id',$id);
 			$data['title']='Chi tiết liên hệ';
 			$data['bcCurrent']='Chi tiết liên hệ';
 			$data['module']=$this->module;

@@ -33,6 +33,7 @@
 			return $input;
 		}
 		
+		//sua--tuyet
 		function edit($id=1)
 		{
 			$this->form_validation->set_rules('contentv','Nội dung','required|trim');
@@ -54,4 +55,5 @@
 				$this->index();
 			}
 		}
+		//end--sua
 	}
