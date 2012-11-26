@@ -509,6 +509,7 @@ width: 100%;
 margin: -5px 0 0 0;
 }
 
+.tablesorter p img{height:80px !important; width:100px !important}
 .tablesorter td{
 margin: 0;
 padding: 0;
@@ -620,21 +621,21 @@ input[type=submit]:hover {
 color: #333333;
 }
 
-input[type=submit].alt_btn {
-background: #D0D1D4 url(../images/btn_submit_2.png) repeat-x;
-border: 1px solid#30B0C8;
--webkit-box-shadow: 0 1px 0 #fff;
--moz-box-shadow: 0 1px 0 #fff;
-box-shadow: 0 1px 0 #fff;
-font-weight: bold;
-height: 22px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-padding: 0 10px;
-color: #003E49;
-text-shadow: 0 1px 0 #6CDCF9;
-cursor: pointer;
+.alt_btn {
+background: #D0D1D4 url(../images/btn_submit_2.png) repeat-x !important;
+border: 1px solid#30B0C8 !important;
+-webkit-box-shadow: 0 1px 0 #fff !important;
+-moz-box-shadow: 0 1px 0 #fff !important;
+box-shadow: 0 1px 0 #fff !important;
+font-weight: bold !important;
+height: 22px !important;
+-webkit-border-radius: 5px !important;
+-moz-border-radius: 5px !important;
+border-radius: 5px !important;
+padding: 0 10px !important;
+color: #003E49 !important;
+text-shadow: 0 1px 0 #6CDCF9 !important;
+cursor: pointer !important;
 }
 
 input[type=submit].alt_btn:hover {
@@ -732,7 +733,7 @@ margin: 10px 0;
 fieldset label {
 display: block;
 /*float: left;*/
-width: 200px;
+width: auto;
 height: 25px;
 line-height: 25px;
 text-shadow: 0 1px 0 #fff;
@@ -917,3 +918,9 @@ color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
+
+.tab_content{
+	padding:0 0; max-height:500px; overflow-y:auto	
+}
+
+.error{color:red}
