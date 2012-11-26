@@ -30,7 +30,7 @@
 				<table class="tablesorter" cellspacing="0" style="width:100%"> 
 					<thead> 
 						<tr>
-		    				<th>Tên (V)</th>
+		    				<th>Tên</th>
 		    				<th>Hãng sản xuất</th>
 		    				<th>Giá</th>
 		    				<th>Hình ảnh</th>

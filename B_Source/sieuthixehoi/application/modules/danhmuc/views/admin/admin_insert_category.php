@@ -11,7 +11,7 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên danh mục (Việt)</label>
+					<label>Tên danh mục</label>
 					<input type="text" name="namev" style="width:92%"/>
 				</fieldset>
 				<fieldset>

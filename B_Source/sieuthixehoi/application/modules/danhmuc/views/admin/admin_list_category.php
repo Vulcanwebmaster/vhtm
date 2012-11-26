@@ -19,7 +19,7 @@
 					<thead> 
 						<tr>
 							<th>ID</th> 
-		    				<th>Tên (Việt)</th>
+		    				<th>Tên</th>
 		    				<th>Danh mục cha</th> 
 		    				<th>Action</th>
 						</tr> 

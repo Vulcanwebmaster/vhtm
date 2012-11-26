@@ -11,7 +11,7 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên (Việt)</label>
+					<label>Tên</label>
 					<input type="text" name="namev" style="width:95%" value="<?php echo $info->namev;?>"/>
 				</fieldset>
 				<fieldset>
@@ -38,7 +38,7 @@
 					<input type="text" name="price" style="width:95%" value="<?php echo $info->price;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Mô tả (Việt)</label>
+					<label>Mô tả</label>
 					<?php echo $this->ckeditor->editor('mota',$info->mota,$config);?>
 				</fieldset>
 				<fieldset>
