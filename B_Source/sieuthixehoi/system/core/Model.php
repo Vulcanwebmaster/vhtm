@@ -123,6 +123,80 @@ class CI_Model {
 	 		return true;
 	 	else return false;
 	 }
+	 
+	 	function getListByColumnLikeText($tableName='', $columnName='',$value='')
+	 {
+	 	echo '<meta charset="UTF-8"/>';
+	 	mysql_set_charset('utf8');
+	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%'");
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListByColumnOffsetLikeText($tableName='', $columnName='',$value='', $index='', $limit='')
+	 {
+	 	echo '<meta charset="UTF-8"/>';
+	 	/*$this->db->like($columnName,$value);
+	 	$ds=$this->db->get($tableName,$limit,$index);*/
+	 	mysql_set_charset('utf8');
+	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%' limit ".$limit." offset ".$index);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListByColumnOffset($tableName='',$columnName='',$value='', $index='', $limit='')
+		 {
+		 	$this->db->where($columnName,$value);
+		 	$ds=$this->db->get($tableName,$limit,$index);
+		 	$list=array();
+		 	foreach($ds->result() as $item)
+		 	{
+		 		$list[]=$item;
+		 	}
+		 	$ds->free_result();
+		 	return $list;
+		 }
+	 
+	 function getListOrderByColumn($tableName='', $columnName='', $typeOrder='', $index='', $limit='')
+	 {
+	 	$this->db->order_by($columnName,$typeOrder);
+	 	$this->db->where($columnName,$value);
+	 	if ($limit!='')
+	 		$ds=$this->db->get($tableName,$limit,$index);
+	 	else $ds=$this->db->get($tableName);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getSpByParentID($id){
+	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
+		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
+										FROM n_sanpham, n_danhmuc
+										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
+		  return $query->result();
+	 }
+	 function isParent($id){
+	 	// Kiểm tra danh có tồn tại danh mục cha hay không...
+	 	$query= $this->db->query("SELECT * FROM n_danhmuc WHERE parent_id ='".$id."'");
+		if($query->num_rows()>0)
+			return true;
+		else return false;
+	 }
 }
 // END Model Class
 
