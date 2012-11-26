@@ -18,10 +18,6 @@
 					<label>Nội dung (Việt)</label>
 					<?php echo $this->ckeditor->editor('contentv',$info->contentv,$config);?>
 				</fieldset>
-				<fieldset>
-					<label>Nội dung (Anh)</label>
-					<?php echo $this->ckeditor->editor('contente',$info->contente,$config);?>
-				</fieldset>
 			</div>
 			
 			<footer style="float:left">

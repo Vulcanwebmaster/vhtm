@@ -15,10 +15,10 @@
 		function index()
 		{
 			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau2/ckeditor/", 'outPut' => true));                             
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
-			$data['info']=$this->Mlienhe->getRowByColumn('mc_contact_us','id',1);
+			$data['info']=$this->Mlienhe->getRowByColumn('oto_contacts','id',1);
 			$data['title']='Sửa liên hệ';
 			$data['bcCurrent']='Liên hệ';
 			$data['module']=$this->module;
@@ -42,7 +42,7 @@
 			if ($this->form_validation->run())
 			{
 				$input=$this->_input();
-				if ($this->Mlienhe->updateRowByColumn('mc_contact_us','id',$id,$input))
+				if ($this->Mlienhe->updateRowByColumn('oto_contacts','id',$id,$input))
 				{
 					$this->session->set_userdata('result','Cập nhật thành công');
 				}
@@ -57,7 +57,7 @@
 		
 		function view()
 		{
-			$data['list'] = $this->Mlienhe->getListFull('mc_list_contact');
+			$data['list'] = $this->Mlienhe->getListFull('oto_list_contact');
 			$data['title']='Danh sách liên hệ';
 			$data['bcCurrent']='Danh sách liên hệ';
 			$data['module']=$this->module;
@@ -75,7 +75,7 @@
 		function detail($id)
 		{
 			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/minhchau2/ckeditor/", 'outPut' => true));                             
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
 			$data['query'] = $this->Mlienhe->getRowByColumn('mc_list_contact','id',$id);
