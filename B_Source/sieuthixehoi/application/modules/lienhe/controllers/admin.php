@@ -1,94 +1,60 @@
-<?php
-	class Admin extends Admin_Controller
-	{
-		private $module;
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+	class Admin extends Admin_Controller {
+	
 		function __construct()
 		{
 			parent::__construct();
-			$this->module=strtolower(get_class());
-			
+			$this->module = basename(dirname(dirname(__FILE__))); 
+			$this->module = strtolower(get_class());
+			//Load model
 			$this->load->model('Mlienhe');
-			$this->load->library('form_validation');
+			$this->load->library('pagination');
 			$this->load->library('session');
+			$this->load->helper('url');
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true)); 
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('contact_name', 'Tên liên hệ', 'required');
+			$this->form_validation->set_rules('contact_email', 'Địa chỉ email', 'required');
+			$this->form_validation->set_rules('category_id', 'Tên danh mục', 'required');
+			$this->form_validation->set_rules('contact_subject', 'Tiêu đề', 'required');
+			$this->form_validation->set_rules('contact_message', 'Nội dung', 'required');
+			$this->form_validation->set_message('required','%s không được để trống');
 		}
 		
 		function index()
 		{
-			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
-			$data['config'] = $this->setupCKEditor('97%','200px');
-			//=============================================
-			$data['info']=$this->Mlienhe->getRowByColumn('oto_contacts','id',1);
-			$data['title']='Sửa liên hệ';
-			$data['bcCurrent']='Liên hệ';
-			$data['module']=$this->module;
-			$data['page']='admin_edit_contactus';
-			$this->load->view('admin/container',$data);
-		}
-		
-		function _input()
-		{
-			$input=array('contentv'=>$this->input->post('contentv'),
-						'contente'=>$this->input->post('contente'));
-			return $input;
-		}
-		
-		//sua--tuyet
-		function edit($id=1)
-		{
-			$this->form_validation->set_rules('contentv','Nội dung (Việt)','required|trim');
+			$config['base_url'] = base_url().'lienhe/admin/index';
+			$config['total_rows'] = $this->Mlienhe->count();
+			$config['uri_segment'] = 4;
+			$config['per_page'] = 6; 
+			$this->pagination->initialize($config); 
+			$data['listpaging'] = $this->Mlienhe->getList($config['per_page'],$this->uri->segment(4));
 			
-			$this->form_validation->set_message('required','Mục %s không được bỏ trống');
-			
-			if ($this->form_validation->run())
+			$listCategory = array();
+			foreach($data['listpaging'] as $contact)
 			{
-				$input=$this->_input();
-				if ($this->Mlienhe->updateRowByColumn('oto_contacts','id',$id,$input))
-				{
-					$this->session->set_userdata('result','Cập nhật thành công');
-				}
-				else $this->session->set_userdata('result','Cập nhật không thành công');
-				$this->index();
+				if($contact->category_id == 0) $listCategory[] = "";
+				else $listCategory[] = $this->Mlienhe->getRowById('oto_categories','category_id',$contact->category_id);
 			}
-			else 
-			{
-				$this->index();
+			$data['listCategory'] = $listCategory;
+			$data['page'] = 'admin_lienhe_list';
+			$data['title'] = 'Liên hệ';
+			$data['bcCurrent'] = 'Danh sách liên hệ';
+			$data['module'] = $this->module;
+			$this->load->view('admin/container',$data);	
+		}
+		
+
+		function del($id)
+		{
+			if($this->Mlienhe->deleteContact($this->uri->segment(4))){
+				$this->session->set_userdata('session','Xóa thành công');
 			}
-		}
-		
-		//liet ke danh sach contact
-		function view()
-		{
-			$data['list'] = $this->Mlienhe->getListFull('oto_list_contact');
-			$data['title']='Danh sách liên hệ';
-			$data['bcCurrent']='Danh sách liên hệ';
-			$data['module']=$this->module;
-			$data['page']='admin_list_contact';
-			$this->load->view('admin/container',$data);
-		}
-		//end--liet ke
-		
-		//xoa theo id
-		function delete($id)
-		{
-			if($this->Mlienhe->deleteContact($id))
-				$this->view();
-			else $this->view();
-		}
-		//end xoa
-		
-		function detail($id)
-		{
-			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
-			$data['config'] = $this->setupCKEditor('97%','200px');
-			//=============================================
-			$data['query'] = $this->Mlienhe->getRowByColumn('oto_list_contact','id',$id);
-			$data['title']='Chi tiết liên hệ';
-			$data['bcCurrent']='Chi tiết liên hệ';
-			$data['module']=$this->module;
-			$data['page']='admin_view_contact';
-			$this->load->view('admin/container',$data);
+			else{
+				$this->session->set_userdata('session','Xóa không thành công');
+			}
+			redirect(base_url().'lienhe/admin', 'refresh');
 		}
 	}
 ?>
