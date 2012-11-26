@@ -36,14 +36,14 @@
 								</li>
 							<?php }
 							else {?>
-								<li class="slidecontrol"><a <?php 
+								<li class="slidecontrol" style="display:inline"><a <?php 
 									echo 'href="'.base_url().'sanpham/category/'.$category->id."-".$category->alias.'"';?> class="type2" style="cursor:pointer">
 									<?php echo $category->ten_e; ?></a>	
 									<?php $listlevel2=$newmodel->getListByColumn('danhmuc','parent_id',$category->id);?>
 									<?php if (count($listlevel2)>0)
 									{?>
 									<div class="slidemove">
-										<ul class="inside" style="display:none">
+										<ul class="inside">
 											<?php 												
 												foreach ($listlevel2 as $level2)
 												{?>
@@ -67,7 +67,7 @@
                           		<div class="pr-img">
                           			<a href="<?php echo base_url();?>sanpham/detail/<?php echo $spbc->danhmuc_id."-".$spbc->id."-".$spbc->alias;?>">
                           			<?php echo $spbc->hinhanh;?>
-                          			<h4 style="text-align:center; font-weight:bold; margin:5px"><?php if ($lang=="vn") echo $spbc->ten_v; else echo $spbc->ten_e;?></h4>
+                          			<h4 style="text-align:center; font-weight:bold; margin:5px"><?php if ($_SESSION['lang']=="vn") echo $spbc->ten_v; else echo $spbc->ten_e;?></h4>
                           			</a>
 	                           </div>
                            <?php }?>

@@ -107,6 +107,11 @@ class Sanpham extends NIW_Controller
 		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
 		$this->session->set_userdata('incategory','true');
 		$data['current_category']= $this->Msanpham->getRowByColumn('danhmuc','id',$id);
+/*		if ($this->session->userdata('lang')=='vn'){
+			$data['current_category']->ten_v;
+		}else{
+			$data['current_category']->ten_e;
+		}*/
 		if ($this->session->userdata('lang')=='vn')
 			$data['current_breadcrum']=$data['current_category']->ten_v;
 		else $data['current_breadcrum']=$data['current_category']->ten_e;

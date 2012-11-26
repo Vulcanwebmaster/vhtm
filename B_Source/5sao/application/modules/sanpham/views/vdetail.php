@@ -32,9 +32,9 @@
 			 echo $detail->hinhanh;?>
 		</div>
 		<div class="product_description">
-			<h3 style="font-size: 22px; font-weight: bold; color: red; text-align: left;margin:0; padding:0"><?php if ($lang=='vn') echo $detail->ten_v; else echo $detail->ten_e;?></h3>
+			<h3 style="font-size: 22px; font-weight: bold; color: red; text-align: left;margin:0; padding:0"><?php if ($_SESSION['lang']=="vn") echo $detail->ten_v; else echo $detail->ten_e;?></h3>
 			<div id="mota_detail">
-				<?php if ($lang=='vn') { ?>
+				<?php if ($_SESSION['lang']=="vn") { ?>
 				</br>
 					<p style="font-weight: bold;  float: left ">Model</p> 		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->model ?></p> </br>
 					<p style="font-weight: bold;  float: left ">Hãng sản xuất</p> <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->hangsx ?></p></br> 
@@ -57,10 +57,10 @@
 		<div id="desp_dt"><a>Mô tả chung</a></div>
 		<div id="param_dt"><a>Thông số kỹ thuật</a></div>	
 		<div class="product_detail">
-			<?php if ($lang=='vn') echo $detail->chitiet_v; else echo $detail->chitiet_e;?>
+			<?php if ($_SESSION['lang']=="vn") echo $detail->chitiet_v; else echo $detail->chitiet_e;?>
 		</div>			
 		<div class="desptext">
-			<?php if ($lang=='vn') echo $detail->mota_v; else echo $detail->mota_e;?><br/>
+			<?php if ($_SESSION['lang']=="vn") echo $detail->mota_v; else echo $detail->mota_e;?><br/>
 		</div>
 	</div>
 	<div id="relate_list">
@@ -74,7 +74,7 @@
 							<?php echo $item->hinhanh;?>
 						</a><br />								
 					</div>
-		            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
+		            <div class="itemh5"><?php if ($_SESSION['lang']=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 				</div>
 			<?php }?>
 			<br class="clear"/>

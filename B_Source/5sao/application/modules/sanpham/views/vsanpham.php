@@ -37,7 +37,7 @@
 </ul>
 
 	<div id="items">
-		<?php foreach ($list as $item)
+		<?php  foreach ($list as $item)
 		{
 			?>
 			<div class="item">
@@ -46,7 +46,7 @@
 						<?php echo $item->hinhanh;?>
 					</a><br />								
 				</div>
-	            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
+	            <div class="itemh5"><?php if ($_SESSION['lang']=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 			</div>
 		<?php  }?>
 		<br class="clear"/>

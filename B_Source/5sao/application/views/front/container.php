@@ -11,9 +11,8 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/getElementsByClassName-1.0.1.js"></script>	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/5sao/js/detect_browser.js"></script>	
 	 <script type="text/javascript">
-		 $(document).ready(function(){		 	
+		 $(document).ready(function(){		
 			 $('.slidemove').hide();
-			 
 			 var parent_ct;			 
 			 <?php if (isset($current_category))
 			 {?>			 
@@ -24,7 +23,7 @@
 			 		category='<?php echo $current_category->ten_v;?>';
 				<?php }
 				else {?>
-					category='<?php echo $current_category->ten_v;?>';
+					category='<?php echo $current_category->ten_e;?>';
 				<?php }?>
 				
 				if (BrowserDetect.browser!="Explorer")
@@ -39,6 +38,7 @@
 							item=list[i];
 							parent_ct=item.parentNode.parentNode.parentNode;
 							item.parentNode.parentNode.parentNode.style.display='block';
+							item.parentNode.parentNode.style.display='block';
 	                                                $current=$(item.parentNode.parentNode.parentNode.parentNode);
 							break;
 						}
@@ -47,6 +47,7 @@
 							
 						     item=list[i];
 						     item.parentNode.parentNode.parentNode.style.display='block';
+						     item.parentNode.parentNode.style.display='block';
 						     $current=$(item.parentNode.parentNode.parentNode.parentNode);
 						     break;
 						}
@@ -56,7 +57,6 @@
 				{
 					var i=0;
 					$current=$();
-					
 					for (i=0;i<list.length;i++)
 					{
 						if ($(list[i]).text()==category)
