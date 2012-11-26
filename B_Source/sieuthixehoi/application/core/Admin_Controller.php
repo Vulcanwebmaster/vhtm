@@ -60,15 +60,16 @@ class Admin_Controller extends NIW_Controller
 			        array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
 			        array( 'Image', 'Link', 'Unlink', 'Anchor' )
 			);
-		$config['filebrowserBrowseUrl'] = base_url()."assets/sieuthixehoi/ckeditor/ckfinder/ckfinder.html";
-		$config['filebrowserImageBrowseUrl'] = base_url()."assets/sieuthixehoi/ckeditor/ckfinder/ckfinder.html?type=Images";
-		$config['filebrowserUploadUrl'] = base_url()."assets/sieuthixehoi/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
-		$config['filebrowserImageUploadUrl'] = base_url()."assets/sieuthixehoi/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
+		$config['filebrowserBrowseUrl'] = base_url()."assets/minhchau2/ckeditor/ckfinder/ckfinder.html";
+		$config['filebrowserImageBrowseUrl'] = base_url()."assets/minhchau2/ckeditor/ckfinder/ckfinder.html?type=Images";
+		$config['filebrowserUploadUrl'] = base_url()."assets/minhchau2/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
+		$config['filebrowserImageUploadUrl'] = base_url()."assets/minhchau2/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
 		$config['toolbar']='Full';
 		$config['width']=$width;
 		$config['height']=$height;
 		return $config;
 	}
+	
 	/*  -------Bỏ dấu làm Alias------------ */
 	function getAliasByName($name)
 	{
