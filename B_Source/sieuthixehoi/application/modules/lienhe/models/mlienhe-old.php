@@ -8,10 +8,10 @@
 		}
 		
 		//,$number, $offset
-		function getList($number, $offset)
+		function getList()
 		{
-			$query = $this->db->get('oto_contacts',$number, $offset);
-			return $query->result();
+			$query = $this->db->get('oto_contacts');
+			return $query->result_array();
 		}
 		
 		
@@ -42,3 +42,4 @@
 			else return false;
 		}
 	}
+?>
