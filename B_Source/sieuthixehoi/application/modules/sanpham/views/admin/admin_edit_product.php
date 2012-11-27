@@ -26,7 +26,7 @@
 							<?php }
 							else {?>
 								<option value="<?php echo $item->id?>"><?php echo $item->namev;?></option>
-						<?php }}?>
+						<?php }} ?>
 					</select>
 				</fieldset>
 				<fieldset>
