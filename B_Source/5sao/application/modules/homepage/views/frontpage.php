@@ -1,12 +1,25 @@
 
 <div id="center">
 					<div id="photo">
-						<div id="slideshow-wrapper">
+						<!--<div id="slideshow-wrapper">
                             <div id="slider" class="nivoSlider">		
-	                            <img src="<?php echo base_url();?>assets/5sao/images/slide1.jpg" tppabs="" alt="" /><img src="<?php echo base_url();?>assets/5sao/images/slide3.jpg" tppabs="" alt=""  />
-	                            <img src="<?php echo base_url();?>assets/5sao/images/slide2.jpg"/> <img src="<?php echo base_url();?>assets/5sao/images/slide4.jpg"/>
+	                            <img src="<?php echo base_url();?>assets/5sao/images/slide1.jpg" tppabs="" alt="" />
+	                            <img src="<?php echo base_url();?>assets/5sao/images/slide3.jpg" tppabs="" alt=""  />
+	                            <img src="<?php echo base_url();?>assets/5sao/images/slide2.jpg"/> 
+	                            <img src="<?php echo base_url();?>assets/5sao/images/slide4.jpg"/>
                             </div>                           
-                          </div>
+                       </div>-->
+                       		<div id="slideshow-wrapper">
+					        	<div id="slider" class="nivoSlider">	
+					        		<?php foreach ($list_slide as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+									}?>
+					            </div>                           
+					        </div>
 					</div>
 					<div id="items">
 						<p id="newpr">Sản phẩm mới</p>

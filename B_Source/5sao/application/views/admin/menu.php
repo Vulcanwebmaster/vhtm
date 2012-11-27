@@ -8,6 +8,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>thuvienanh/admin">Thư viện ảnh</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide ảnh</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>tuyendung/admin">Tuyển dụng</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Hỗ trợ</a></li>
 	</ul>

@@ -51,6 +51,7 @@ class Homepage extends NIW_controller {
 		
 		$data['list_spbanchay']=$this->Mhomepage->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Mhomepage->getListFull('thuvienanh');
+		$data['list_slide']=$this->Mhomepage->getListFull('slide');
 		$data['list_hotro']=$this->Mhomepage->getListFull('hotro');
 		$data['list_hotline']=$this->Mhomepage->gethotline('hotro');
 		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
