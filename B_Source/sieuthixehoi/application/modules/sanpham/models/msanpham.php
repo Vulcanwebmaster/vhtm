@@ -18,7 +18,7 @@
 		{
 			$this->db->where('id',$id);
 			$query=$this->db->get('xh_product');
-			return $query->row();
+			return $query->row(0);
 		}
 		
 		function CountFull()

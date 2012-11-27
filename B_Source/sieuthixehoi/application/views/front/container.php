@@ -10,17 +10,17 @@
 		
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="assets/sieuthixehoi/images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="<?php echo base_url()?>assets/sieuthixehoi/images/favicon.ico" type="image/x-icon" />
 
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="assets/sieuthixehoi/css/main-stylesheet.css" type="text/css" />
-		<link rel="stylesheet" href="assets/sieuthixehoi/css/sexy-slider.css" type="text/css" />
-		<link rel="stylesheet" href="assets/sieuthixehoi/css/shortcodes.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/sieuthixehoi/css/main-stylesheet.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/sieuthixehoi/css/sexy-slider.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/sieuthixehoi/css/shortcodes.css" type="text/css" />
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="css/ie7-main-stylesheet.css" type="text/css">
 			<link rel="stylesheet" href="css/ie7-sexy-slider.css" type="text/css">
 		<![endif]-->
-		<link rel="stylesheet" href="assets/sieuthixehoi/css/color.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/sieuthixehoi/css/color.css" type="text/css" />
 
 		<!-- JavaScripts -->
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.min.js" type="text/javascript" language="javascript"></script>
@@ -84,7 +84,12 @@
 	<?php $this->load->view('front/header');?>
 	<?php $this->load->view('front/menu');?>
 	<?php $this->load->view('front/slide');?>
-	<?php $this->load->view('front/noidung')?>
+	<!-- BEGIN .homepage-title -->
+						<div align="center" class="homepage-title">
+							<p>Etiam ac ultricies sem. In lobortis urna a nulla tristique ut rutrum eros scelerisque.</p>
+							<p>Morbi vehicula accumsan neque, tempor sollicitudin nulla auctor eu. Duis volutpat lacinia neque, sit amet viverra dui euismod.</p>
+						<!-- END .homepage-title -->
+						</div>
 	<?php $this->load->view('front/content')?>
 	<?php $this->load->view('front/footer');?>
 </body>

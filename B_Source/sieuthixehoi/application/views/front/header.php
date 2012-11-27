@@ -7,7 +7,7 @@
 					<!-- BEGIN .feedback-wrapper -->
 					<div class="feedback-wrapper">
 						<!-- BEGIN .feedback -->
-						<div class="feedback" style="background: url(assets/sieuthixehoi/images/header-product-image-1.png) top right no-repeat;">
+						<div class="feedback" style="background: url(<?php echo base_url()?>assets/sieuthixehoi/images/header-product-image-1.png) top right no-repeat;">
 							<table>
 								<tr>
 									<td>
@@ -19,7 +19,7 @@
 						<!-- END .feedback -->
 						</div>
 						<!-- BEGIN .feedback -->
-						<div class="feedback" style="background: url(assets/sieuthixehoi/images/header-product-image-2.png) top right no-repeat;">
+						<div class="feedback" style="background: url(<?php echo base_url()?>assets/sieuthixehoi/images/header-product-image-2.png) top right no-repeat;">
 							<table>
 								<tr>
 									<td>
@@ -31,7 +31,7 @@
 						<!-- END .feedback -->
 						</div>
 						<!-- BEGIN .feedback -->
-						<div class="feedback" style="background: url(assets/sieuthixehoi/images/header-product-image-3.png) top right no-repeat;">
+						<div class="feedback" style="background: url(<?php echo base_url()?>assets/sieuthixehoi/images/header-product-image-3.png) top right no-repeat;">
 							<table>
 								<tr>
 									<td>
@@ -47,7 +47,7 @@
 
 					<!-- BEGIN .logo -->
 					<div class="logo"> 
-						<a href="#"><img src="assets/sieuthixehoi/images/logo-radial-1.png" alt="" width="226" height="87" /></a>
+						<a href="#"><img src="<?php echo base_url()?>assets/sieuthixehoi/images/logo-radial-1.png" alt="" width="226" height="87" /></a>
 					<!-- END .logo -->
 					</div>
 
