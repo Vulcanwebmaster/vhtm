@@ -100,6 +100,7 @@ class Sanpham extends NIW_Controller
 
 	function category($id=0, $index=0)
 	{
+		
 		$data['list_spbanchay']=$this->Msanpham->getListByColumn('sanpham','banchay','1');
 		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
 		$data['list_hotro']=$this->Msanpham->getListFull('hotro');
@@ -107,11 +108,6 @@ class Sanpham extends NIW_Controller
 		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
 		$this->session->set_userdata('incategory','true');
 		$data['current_category']= $this->Msanpham->getRowByColumn('danhmuc','id',$id);
-/*		if ($this->session->userdata('lang')=='vn'){
-			$data['current_category']->ten_v;
-		}else{
-			$data['current_category']->ten_e;
-		}*/
 		if ($_SESSION['lang']=="vn") 
 			$data['current_breadcrum']=$data['current_category']->ten_v;
 		else $data['current_breadcrum']=$data['current_category']->ten_e;
@@ -120,7 +116,7 @@ class Sanpham extends NIW_Controller
 		$data['categories']=$this->Msanpham->getListByColumn('danhmuc','parent_id','0');
 		$data['counting']=$this->getCounting();
 		
-		$config['base_url']=base_url().'sanpham/category/'.$index;
+		$config['base_url']=base_url().'sanpham/category/'.$id;
 		$config['per_page']=9;
 		$config['uri_segment']=4;
 		$config['total_rows']=count($this->Msanpham->getListByColumn('sanpham','danhmuc_id',$id));

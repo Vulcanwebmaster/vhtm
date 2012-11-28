@@ -48,7 +48,7 @@
 				</div>
 	            <div class="itemh5"><?php if ($_SESSION['lang']=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 			</div>
-		<?php  }?>
+		<?php  } ?>
 		<br class="clear"/>
 	</div>
 	<div class="pagination-control"><?php echo $this->pagination->create_links();?></div>
