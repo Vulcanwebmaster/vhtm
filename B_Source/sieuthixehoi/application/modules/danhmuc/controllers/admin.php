@@ -14,7 +14,7 @@
 		
 		function index()
 		{
-			$data['title']='Danh mục';
+			$data['title']='Hãng xe';
 			$data['bcCurrent']='Danh mục';
 			$data['list']=$this->Mdanhmuc->getListFull('xh_category');
 			$data['module']=$this->module;
@@ -35,7 +35,7 @@
 			if (!$this->input->post('namev'))
 			{
 				$data['list']=$this->Mdanhmuc->getListByColumn('xh_category','parent_id','0');
-				$data['title']='Thêm danh mục';
+				$data['title']='Thêm hãng xe';
 				$data['bcCurrent']='Danh mục';
 				$data['module']=$this->module;
 				$data['page']='admin_insert_category';
@@ -60,7 +60,7 @@
 				else 
 				{
 					$data['list']=$this->Mdanhmuc->getListByColumn('xh_category','parent_id','>0');
-					$data['title']='Thêm danh mục';
+					$data['title']='Thêm hãng xe';
 					$data['bcCurrent']='Danh mục';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_category';
@@ -75,7 +75,7 @@
 			{
 				$data['list']=$this->Mdanhmuc->getListByColumn('xh_category','parent_id','0');
 				$data['info']=$this->Mdanhmuc->getRowByColumn('xh_category','id',$id);
-				$data['title']='Sửa danh mục';
+				$data['title']='Sửa hãng xe';
 				$data['bcCurrent']='Danh mục';
 				$data['module']=$this->module;
 				$data['page']='admin_edit_category';
@@ -101,7 +101,7 @@
 				{
 					$data['list']=$this->Mdanhmuc->getListByColumn('xh_category','parent_id','>0');
 					$data['info']=$this->Mdanhmuc->getRowByColumn('xh_category','id',$id);
-					$data['title']='Sửa danh mục';
+					$data['title']='Sửa hãng xe';
 					$data['bcCurrent']='Danh mục';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_category';
@@ -112,6 +112,7 @@
 		
 		function delete($id=0)
 		{
+			
 			if ($this->Mdanhmuc->deleteRowByColumn('xh_category','id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');

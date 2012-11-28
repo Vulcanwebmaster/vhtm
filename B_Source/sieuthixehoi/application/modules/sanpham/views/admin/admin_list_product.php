@@ -5,7 +5,24 @@
 	$this->session->unset_userdata('result');
 	echo '</p>';
 }?>
-
+<style>
+	.del_button{cursor:pointer}
+</style>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa tin tức này?");
+					if (r==true)
+					{
+						var uri="<?php echo base_url()?>sanpham/admin/delete/"+value;
+						window.location=uri;
+					}
+					else 
+					{
+					}
+				}
+</script>
 <?php function cutString($str)
 {
 	$offset=200;
@@ -30,24 +47,26 @@
 				<table class="tablesorter" cellspacing="0" style="width:100%"> 
 					<thead> 
 						<tr>
+							<th>STT</th>
+							<th>Hình ảnh</th>
 		    				<th>Tên</th>
-		    				<th>Hãng sản xuất</th>
+		    				<th>Dòng xe</th>
 		    				<th>Giá</th>
-		    				<th>Hình ảnh</th>
-		    				<th>Action</th>
+		    				<th>Sửa/Xóa</th>
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php foreach ($list as $item)
-					 	{?>
+					 	<?php $i=0; foreach ($list as $item)
+					 	{     $i++; ?>
 					 		<tr>  
+					 			<td><?php echo $i;?></td>
+					 			<td><?php echo $item->image;?></td> 
 			    				<td><?php echo $item->namev;?></td>
 			    				<td><?php echo $item->hangsx;?></td>
 			    				<td><?php echo $item->price;?></td> 
-			    				<td><?php echo $item->image;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>sanpham/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-				    				<a href="<?php echo base_url()?>sanpham/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
 					 	<?php }?>

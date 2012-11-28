@@ -11,11 +11,11 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên danh mục</label>
+					<label>Dòng xe</label>
 					<input type="text" name="namev" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục cha</label>
+					<label>Hãng xe</label>
 					<select name="parent_id">
 						<option></option>
 						<?php foreach ($list as $item)

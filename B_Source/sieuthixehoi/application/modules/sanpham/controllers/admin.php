@@ -6,17 +6,23 @@
 		{
 			parent::__construct();
 			$this->module=strtolower(get_class());
-			
+			$this->load->library('pagination');
 			$this->load->model('Msanpham');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 		}
 		
-		function index()
+		function index($index=0)
 		{
-			$data['title']='sản phẩm';
+			$config['base_url']=base_url().'sanpham/admin/page/';
+			$config['per_page']=1;
+			$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
+			$config['uri_segment']=4;
+			$this->pagination->initialize($config);
+			
+			$data['title']='Thông tin xe';
 			$data['bcCurrent']='sản phẩm';
-			$data['list']=$this->Msanpham->getListFull('xh_product');
+			$data['list']=$this->Msanpham->getListOffset('xh_product',1,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_list_product';
 			$this->load->view('admin/container',$data);
@@ -44,7 +50,7 @@
 			if (!$this->input->post('namev'))
 			{
 				$data['list']=$this->Msanpham->getListFull('xh_category');
-				$data['title']='Thêm sản phẩm';
+				$data['title']='Thêm thông tin xe';
 				$data['bcCurrent']='sản phẩm';
 				$data['module']=$this->module;
 				$data['page']='admin_insert_product';
@@ -53,7 +59,7 @@
 			else 
 			{
 				$this->form_validation->set_rules('namev','Tên','required|trim');
-				$this->form_validation->set_rules('category_id','Danh mục','required|trim');
+				$this->form_validation->set_rules('category_id','Hãng xe','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
@@ -70,7 +76,7 @@
 				else 
 				{
 					$data['list']=$this->Msanpham->getListFull('xh_category');
-					$data['title']='Thêm sản phẩm';
+					$data['title']='Thêm thông tin xe';
 					$data['bcCurrent']='sản phẩm';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_product';
@@ -89,7 +95,7 @@
 			{
 				$data['list']=$this->Msanpham->getListFull('xh_category');
 				$data['info']=$this->Msanpham->getRowByColumn('xh_product','id',$id);
-				$data['title']='Sửa sản phẩm';
+				$data['title']='Sửa thông tin xe';
 				$data['bcCurrent']='sản phẩm';
 				$data['module']=$this->module;
 				$data['page']='admin_edit_product';
@@ -98,7 +104,7 @@
 			else 
 			{
 				$this->form_validation->set_rules('namev','Tên','required|trim');
-				$this->form_validation->set_rules('category_id','Danh mục','required|trim');
+				$this->form_validation->set_rules('category_id','Hãng xe','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
@@ -116,7 +122,7 @@
 				{
 					$data['list']=$this->Msanpham->getListFull('xh_category');
 					$data['info']=$this->Msanpham->getRowByColumn('xh_product','id',$id);
-					$data['title']='Sửa sản phẩm';
+					$data['title']='Sửa thông tin xe';
 					$data['bcCurrent']='sản phẩm';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_product';

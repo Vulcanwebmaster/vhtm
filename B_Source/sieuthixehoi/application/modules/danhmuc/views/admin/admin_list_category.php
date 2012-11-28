@@ -5,7 +5,24 @@
 	$this->session->unset_userdata('result');
 	echo '</p>';
 }?>
-
+<style>
+	.del_button{cursor:pointer}
+</style>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa tin tức này?");
+					if (r==true)
+					{
+						var uri="<?php echo base_url()?>danhmuc/admin/delete/"+value;
+						window.location=uri;
+					}
+					else 
+					{
+					}
+				}
+</script>
 <form method="post" action="<?php echo base_url();?>danhmuc/admin">
 <article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
@@ -18,22 +35,22 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr>
-							<th>ID</th> 
-		    				<th>Tên</th>
-		    				<th>Danh mục cha</th> 
-		    				<th>Action</th>
+							<th>STT</th> 
+		    				<th>Dòng xe</th>
+		    				<th>Hãng xe</th> 
+		    				<th>Sửa/Xóa</th>
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php foreach ($list as $item)
-					 	{?>
+					 	<?php $i=0; foreach ($list as $item)
+					 	{  	  $i++;	?>
 					 		<tr>  
-			    				<td><?php echo $item->id;?></td> 
+			    				<td><?php echo $i;?></td> 
 			    				<td><?php echo $item->namev;?></td> 
 			    				<td><?php echo $item->parent_id;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-				    				<a href="<?php echo base_url()?>danhmuc/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+				    				<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
 					 	<?php }?>

@@ -9,11 +9,11 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên danh mục</label>
+					<label>Tên hãng xe</label>
 					<input type="text" name="namev" style="width:92%" value="<?php echo $info->namev;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục cha</label>
+					<label>Hãng xe cha</label>
 					<select name="parent_id">
 						<option></option>
 						<?php foreach ($list as $item)

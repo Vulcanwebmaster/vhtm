@@ -15,7 +15,7 @@
 					<input type="text" name="namev" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục</label>
+					<label>Dòng xe</label>
 					<select name="category_id">
 						<option></option>
 						<?php foreach ($list as $item)
