@@ -18,9 +18,18 @@
 		$this->session->unset_userdata('lienhe_result');
 	?>
 	
-	<p style="font-weight:bold; font-size:13px; margin-top:30px; margin-left:20px; margin-bottom:15px">Xin hãy điền đầy đủ các thông tin dưới đây:</p>
+	<p style="font-weight:bold; font-size:13px; margin-top:30px; margin-left:20px; margin-bottom:15px">
+		<?php if ($_SESSION['lang']=="vn") 
+		{?>
+			Xin hãy điền đầy đủ các thông tin dưới đây:
+		<?php }else{ ?>
+			Please complete the information below:
+		<?php } ?>
+	</p>
 	<form name="lienhe-form" action="<?php echo base_url();?>lienhe/send" method="post">
 		<table style="width:300px">
+			<?php if ($_SESSION['lang']=="vn") 
+				{?>
 			<tr>
 				<td style="width: 30%">Họ tên</td>
 				<td style="width:70%"><input name="hoten" type="text"/></td>
@@ -48,6 +57,35 @@
 					</center>
 				</td>
 			</tr>
+			<?php }else{ ?>
+						<tr>
+				<td style="width: 30%">Name</td>
+				<td style="width:70%"><input name="hoten" type="text"/></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input name="email" type="text"/></td>
+			</tr>
+			<tr>
+				<td>Phone </td>
+				<td><input name="dienthoai" type="text"/></td>
+			</tr>
+			<tr>
+				<td> Threads</td>
+				<td><input name="tieude" type="text"/></td>
+			</tr>
+			<tr>
+				<td style="vertical-align:top"> Content </td>
+				<td><textarea name="noidung" style="height:100px"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<center>
+						<input name="submit" type="submit" value="Send" style="height:25px; width:70px; margin:auto ;text-align: center"/>
+					</center>
+				</td>
+			</tr>	
+			<?php } ?>
 		</table>
 	</form>
 </div>

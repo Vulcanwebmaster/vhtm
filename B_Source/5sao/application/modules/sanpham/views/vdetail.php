@@ -43,19 +43,24 @@
 					<p style="font-weight: bold;  float: left ">Giá bán</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->giaban ?></p> </br>
 				<?php } else { ?>
 					</br>
-					<p style="font-weight: bold;  float: left ">Model : </p> 		     <p style="font-weight: bold; color:red "><?php echo $detail->modele ?></p> </br>
-					<p style="font-weight: bold;  float: left ">Manufacturer :</p>  	 <p style="font-weight: bold; color:red "><?php echo $detail->hangsxe ?></p></br> 
-					<p style="font-weight: bold;  float: left ">warranty : </p>		 	 <p style="font-weight: bold; color:red "><?php echo $detail->baohanhe ?></p> </br>
-					<p style="font-weight: bold;  float: left ">warehouse : </p>		 <p style="font-weight: bold; color:red "><?php echo $detail->khohange ?></p> </br>
-					<p style="font-weight: bold;  float: left ">sale price : </p>		 <p style="font-weight: bold; color:red "> <?php echo $detail->giabane ?></p> </br>
-					<?php } ?>
+					<p style="font-weight: bold;  float: left ">Model</p> 		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->modele ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Manufacturer</p> <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->hangsxe ?></p></br> 
+					<p style="font-weight: bold;  float: left ">warranty</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->baohanhe ?></p> </br>
+					<p style="font-weight: bold;  float: left ">warehouse</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->khohange ?></p> </br>
+					<p style="font-weight: bold;  float: left ">sale price</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->giabane ?></p> </br>
+				<?php } ?>
 			</div>
 		</div>			
 	</div>
 	
 	<div id="detail_desp">	
-		<div id="desp_dt"><a>Mô tả chung</a></div>
-		<div id="param_dt"><a>Thông số kỹ thuật</a></div>	
+		<?php if ($_SESSION['lang']=="vn") { ?>
+			<div id="desp_dt"><a>Mô tả chung</a></div>
+			<div id="param_dt"><a>Thông số kỹ thuật</a></div>	
+		<?php } else { ?>
+			<div id="desp_dt"><a>Description</a></div>
+			<div id="param_dt"><a>Specificaction</a></div>
+		<?php } ?>
 		<div class="product_detail">
 			<?php if ($_SESSION['lang']=="vn") echo $detail->chitiet_v; else echo $detail->chitiet_e;?>
 		</div>			

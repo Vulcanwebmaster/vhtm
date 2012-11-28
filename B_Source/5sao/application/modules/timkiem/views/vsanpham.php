@@ -5,7 +5,7 @@
 <div id="center">
 	<?php if (isset($current_category))
 	{
-		if ($lang=="vn")
+		if ($_SESSION['lang']=="vn")
 			echo '<h2>Danh mục sản phẩm: '.$current_category->ten_v.'</h2>';
 		else echo '<h2>Danh mục sản phẩm: '.$current_category->ten_e.'</h2>';
 	}
@@ -20,7 +20,7 @@
 						<?php echo $item->hinhanh;?>
 					</a><br />								
 				</div>
-	            <div class="itemh5"><?php if ($lang=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
+	            <div class="itemh5"><?php if ($_SESSION['lang']=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
 			</div>
 		<?php }?>
 		<br class="clear"/>

@@ -18,8 +18,8 @@
 	$lang['menu-tuyendung']='Recruitment';
 	
 	//============= LEFT ==================
-	$lang['left-danhmuc']='Categories';
-	$lang['left-spbanchay']='Hots';
+	$lang['left-danhmuc']='PRODUCT CATEGORIES';
+	$lang['left-spbanchay']='HOT PRODUCT';
 	
 	//============= RIGHT ==================
 	$lang['right-lienhe']='Support';

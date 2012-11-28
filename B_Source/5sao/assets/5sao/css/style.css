@@ -1,6 +1,8 @@
 *{
 margin:auto;text-align:center;font-size:62,5%;
 }
+.omaica a{ text-decoration: none; color: #F6F6F6 }
+.omaica a:hover{ text-decoration: underline }
 img{border:0px}
 .support p{ font-size:20px; font-weight:bold; padding:0; margin:0;}
 html{
@@ -125,7 +127,7 @@ margin:80px 17px 0 0
 #footer li a{
 margin:0 9px;
 }
-#footer ul{
+#footer #footer_ul1{
 display:block;
 overflow:auto;
 width:850px;
@@ -144,6 +146,8 @@ padding:0;
 color: #fff;
 font-size:11px;
 margin:0;
+clear: both;
+text-align:center;
 }
 #bft a{
 color:#B08A24;
@@ -213,7 +217,7 @@ border-bottom:1px solid #E1E1E2;
 border-top:1px solid #E1E1E2;
 }
 .menuleft-lv2{text-align:left !important;}
-#list li{ padding:0; margin:0; margin-bottom:0; }
+#list li{ padding:0px 0px 1px 0; margin:0; margin-bottom:0; }
 #list .inside a{
 color:#000000;
 background-image:url(../images/arrow.gif);
@@ -607,7 +611,7 @@ width:33px;
 }
 #center p{ background-color:#fff;}
 td, input, textarea{ text-align:left}
-.back_link{ margin:10px 75px 0 !important; padding:0; }
+.back_link{ margin:10px auto!important; padding:0; }
 .back_link li{ float:left !important; padding-right:0px !important; line-height:24px !important; list-style:none}
 .currentmenu,.hovermenu{background-color:#3e3e3e; color:#D9B24A}
 /*--------------------Trung--------------------------*/

@@ -87,7 +87,7 @@ class Sanpham extends NIW_Controller
 		$data['lang']=$this->session->userdata('lang');
 		$data['title']='thaiduong | Sản phẩm';		
 		$data['module']=$this->module;
-		if ($this->session->userdata('lang')=='vn')
+		if ($_SESSION['lang']=="vn") 
 			$data['current_breadcrum']=$data['detail']->ten_v;
 		else $data['current_breadcrum']=$data['detail']->ten_e;
 		
@@ -112,7 +112,7 @@ class Sanpham extends NIW_Controller
 		}else{
 			$data['current_category']->ten_e;
 		}*/
-		if ($this->session->userdata('lang')=='vn')
+		if ($_SESSION['lang']=="vn") 
 			$data['current_breadcrum']=$data['current_category']->ten_v;
 		else $data['current_breadcrum']=$data['current_category']->ten_e;
 		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);

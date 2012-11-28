@@ -4,7 +4,12 @@
 	<div id="search">
 		<?php echo $this->lang->line('menu-timkiem');?>			
 			<form class="searchform" action="<?php echo base_url();?>timkiem/doSearch" method="post">
+				<?php if ($_SESSION['lang']=="vn") 
+				{?>
 				<input name="search-text" class="t" onfocus="if (this.value == 'Tìm kiếm sản phẩm …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm …';}" type="text" name="s" value="Tìm kiếm sản phẩm …" />
+				<?php }else{ ?>
+				<input name="search-text" class="t" onfocus="if (this.value == 'Search …') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search …';}" type="text" name="s" value="Search …" />
+				<?php } ?>
 				<input class="searchsubmit" type="submit" value="" style="cursor:pointer"/>
 			</form>																																																			
 	</div>
@@ -76,7 +81,13 @@
                       </div>
                       <div id="mainmap"  class="bodermove">
                    		<h4 class="title3" style=" margin-top:0px;"><?php echo $this->lang->line('right-bando');?></h4>
-                        <div id="map"><iframe width="170" height="145" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16" style="color:#0000FF;text-align:left">Xem Bản đồ cỡ lớn hơn</a></small></div>
+                        <div id="map"><iframe width="170" height="145" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16" style="color:#0000FF;text-align:left">
+                        	<?php if ($_SESSION['lang']=="vn"){?>
+                        		Xem Bản đồ cỡ lớn hơn
+                         	<?php } else{ ?>
+                         		View larger map
+                         	<?php } ?>	
+                        </a></small></div>
                         <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
                    	 </div>		
                    	  <div id="mainmap"  class="bodermove">
@@ -88,9 +99,15 @@
                    		
                         <div id="statistics" style="text-align: left">
                         	<ul>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Hôm nay:</label> <?php echo $counting['today'];?></li>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/month.png"/><label>Tháng hiện tại:</label> <?php echo $counting['month'];?></li>
-                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/statistics.png"/><label>Tổng lượt truy cập:</label> <?php echo $counting['total'];?></li>
+                        		<?php if ($_SESSION['lang']=="vn"){?>
+		                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Hôm nay:</label> <?php echo $counting['today'];?></li>
+		                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/month.png"/><label>Tháng hiện tại:</label> <?php echo $counting['month'];?></li>
+		                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/statistics.png"/><label>Tổng lượt truy cập:</label> <?php echo $counting['total'];?></li>
+                        		<?php } else{ ?>
+                        			<li><img src="<?php echo base_url(); ?>assets/5sao/images/time.png"/><label>Today:</label> <?php echo $counting['today'];?></li>
+		                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/month.png"/><label>Months:</label> <?php echo $counting['month'];?></li>
+		                        	<li><img src="<?php echo base_url(); ?>assets/5sao/images/statistics.png"/><label>Visitors:</label> <?php echo $counting['total'];?></li>
+                        		<?php } ?>
                         	</ul>                        	
                         </div>
                         <div class="bottomh4"><img src="<?php echo base_url();?>assets/5sao/images/bth4.jpg" /></div>
