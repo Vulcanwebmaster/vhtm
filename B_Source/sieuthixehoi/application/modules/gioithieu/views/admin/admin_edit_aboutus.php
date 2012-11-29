@@ -15,6 +15,10 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<fieldset>
+					<label> Tiêu đề</label>
+					<input type="text" name="title" style="width:92%" value="<?php echo $info->title;?>"/>
+				</fieldset>
+				<fieldset>
 					<label>Nội dung (Việt)</label>
 					<?php echo $this->ckeditor->editor('contentv',$info->contentv,$config);?>
 				</fieldset>

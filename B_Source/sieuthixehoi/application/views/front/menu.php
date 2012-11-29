@@ -15,7 +15,7 @@
 											<li><a href="assets/sieuthixehoi/images/homepage-style-2.html">Homepage style 2</a></li>
 										</ul>-->
 									</li>
-									<li><a href="shortcodes-contact-form.html">Giới thiệu</a></li>
+									<li><a href="<?php echo base_url("gioithieu");?>">Giới thiệu</a></li>
 									<li>
 										<a href="<?php echo base_url("sanpham");?>"><span>Sản phẩm</span></a>
 										<ul>
@@ -34,7 +34,7 @@
 											<?php } ?>
 										</ul>
 									</li>
-									<li><a href="shortcodes-contact-form.html">Liên hệ</a></li>
+									<li><a href="<?php echo base_url("lienhe");?>">Liên hệ</a></li>
 								</ul>
 							</td>
 						</tr>

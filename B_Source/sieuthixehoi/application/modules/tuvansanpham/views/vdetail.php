@@ -9,15 +9,14 @@
 
 							<!-- BEGIN .main-title -->
 							<div class="main-title">
-								<span><b>Full width title</b></span>
+								<span><b><h3><?php echo $detail->title ?></h3></b></span>
 								<a href="#">show all</a>
 							<!-- END .main-title -->
 							</div>
 
 							<!-- BEGIN .full-width -->
 							<div class="full-width">
-								<h3><?php echo $detail->title ?></h3>
-								<p class="caps"><?php $detail->content ?></p>
+								<p class="caps"><?php echo $detail->content ?></p>
 							<!-- END .full-width -->
 							</div>
 

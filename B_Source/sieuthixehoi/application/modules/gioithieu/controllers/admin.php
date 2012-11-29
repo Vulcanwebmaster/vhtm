@@ -29,7 +29,7 @@
 		function _input()
 		{
 			$input = array('contentv'=>$this->input->post('contentv'),
-						'contente'=>$this->input->post('contente'));
+						'title'=>$this->input->post('title'));
 			return $input;
 		}
 		
