@@ -7,14 +7,17 @@
 							<td class="menu">
 								<ul>
 									<li>
+										<a href="<?php echo base_url();?>"><span>Trang Chủ</span></a>
+										<!--
 										<a href="assets/sieuthixehoi/images/homepage-style-1.html"><span>Homepage</span></a>
 										<ul>
 											<li><a href="assets/sieuthixehoi/images/homepage-style-1.html">Homepage style 1</a></li>
 											<li><a href="assets/sieuthixehoi/images/homepage-style-2.html">Homepage style 2</a></li>
 										</ul>
+										-->
 									</li>
 									<li>
-										<a href="blog-style-1.html"><span>Blog</span></a>
+										<a href="<?php echo base_url("sanpham");?>"><span>Sản Phẩm</span></a>
 										<ul>
 											<li><a href="blog-style-1.html">Blog list style 1</a></li>
 											<li><a href="blog-style-2.html">Blog list style 2</a></li>

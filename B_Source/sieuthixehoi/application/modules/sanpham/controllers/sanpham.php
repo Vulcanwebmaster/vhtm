@@ -14,6 +14,7 @@
 
 		function index()
 		{
+			$this->load->helper('text');
 			$data['parents']=$this->Msanpham->getListByColumn('xh_category','parent_id',0);
 			$data['items']=$this->Msanpham->getListFull('xh_product');		
 			$data['module']=$this->module;
