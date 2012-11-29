@@ -25,7 +25,6 @@ $(document).pngFix( );
 
 	<!-- start logo -->
 	<div id="logo-login">
-		<img src="<?php echo base_url()?>assets/admin/images/logo.png" width="156" height="40" alt="" />
 	</div>
 	<!-- end logo -->
 	

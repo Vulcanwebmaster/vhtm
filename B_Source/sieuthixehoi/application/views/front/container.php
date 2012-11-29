@@ -25,8 +25,6 @@
 		<!-- JavaScripts -->
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.min.js" type="text/javascript" language="javascript"></script>
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.sexyslider.js" type="text/javascript" language="javascript"></script>
-		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/cufon-yui.js" type="text/javascript" language="javascript"></script>
-		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/cufon-replace.js" type="text/javascript" language="javascript"></script>
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/titillium.font.js" type="text/javascript" language="javascript"></script>
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.innerfade.js" type="text/javascript" language="javascript"></script>
 
@@ -84,12 +82,6 @@
 	<?php $this->load->view('front/header');?>
 	<?php $this->load->view('front/menu');?>
 	<?php $this->load->view('front/slide');?>
-	<!-- BEGIN .homepage-title -->
-						<div align="center" class="homepage-title">
-							<p>Etiam ac ultricies sem. In lobortis urna a nulla tristique ut rutrum eros scelerisque.</p>
-							<p>Morbi vehicula accumsan neque, tempor sollicitudin nulla auctor eu. Duis volutpat lacinia neque, sit amet viverra dui euismod.</p>
-						<!-- END .homepage-title -->
-						</div>
 	<?php $this->load->view('front/content')?>
 	<?php $this->load->view('front/footer');?>
 </body>
