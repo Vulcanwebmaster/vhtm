@@ -24,12 +24,14 @@
 			$parents=array();
 			foreach ($data['list'] as $item)
 			{
+				//var_dump($this->Mdanhmuc->getRowByColumn('danhmuc','id',$item->parent_id));die();
 				$ctparent=$this->Mdanhmuc->getRowByColumn('danhmuc','id',$item->parent_id);
 				if ($ctparent)
 					$parents[]=$ctparent->ten_v;
 				else $parents[]=false;
 			}
 			$data['parentsName']=$parents;
+			//var_dump($data['parentsName']);die();
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);

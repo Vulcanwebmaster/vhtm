@@ -70,21 +70,20 @@ class Timkiem extends NIW_Controller
 		$data['list_doitac']=$this->Mtimkiem->getListFull('doitac');
 		$data['counting']=$this->getCounting();
 		
-		$config['base_url']=base_url().'sanpham/search/'.$value;
-		$config['per_page']=8;
+		$config['base_url']=base_url().'sanpham/doSearch/';
+		$config['per_page']=9;
 		if ($data['lang']=="vn")
 			$config['total_rows']=count($this->Mtimkiem->getListByColumnLikeText('sanpham','ten_v',$value));
 		else $config['total_rows']=count($this->Mtimkiem->getListByColumnLikeText('sanpham','ten_e',$value));
-		$config['uri_segment']=4;
+		$config['uri_segment']=5;
 		$this->pagination->initialize($config);
 		
-		$data['list_tintuc_right']=$this->Mtimkiem->getListOffset('tintuc',15,0);
 		$data['list_gioithieumenu']=$this->Mtimkiem->getListFull('gioithieu');
 		$data['categories']=$this->Mtimkiem->getListByColumn('danhmuc','parent_id','0');
 		
 		if ($this->session->userdata('lang')=="vn")
-			$data['list']=$this->Mtimkiem->getListByColumnOffsetLikeText('sanpham','ten_v',$value,$index,8);
-		else $data['list']=$this->Mtimkiem->getListByColumnOffsetLikeText('sanpham','ten_e',$value,$index,8);
+			$data['list']=$this->Mtimkiem->getListByColumnOffsetLikeText('sanpham','ten_v',$value,$index,9);
+		else $data['list']=$this->Mtimkiem->getListByColumnOffsetLikeText('sanpham','ten_e',$value,$index,9);
 		$data['module']=$this->module;
 		$data['page']='vsanpham';
 		$this->load->view('front/container',$data);

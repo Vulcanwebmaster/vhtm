@@ -25,5 +25,5 @@
 		<?php }?>
 		<br class="clear"/>
 	</div>
-	<div class="pagination-control"><?php echo $this->pagination->create_links();?></div>
+	<!--<div class="pagination-control"><?php echo $this->pagination->create_links();?></div>-->
 </div>
