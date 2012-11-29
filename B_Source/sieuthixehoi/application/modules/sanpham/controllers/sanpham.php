@@ -14,6 +14,7 @@
 
 		function index()
 		{
+			$data['list_tuvan']=$this->Msanpham->getListFull('tuvansanpham');
 			$this->load->helper('text');
 			$data['parents']=$this->Msanpham->getListByColumn('xh_category','parent_id',0);
 			$data['items']=$this->Msanpham->getListFull('xh_product');		
@@ -30,7 +31,7 @@
 				$category_id = $temp[0];
 				$product_id = $temp[1];
 			}
-
+			$data['list_tuvan']=$this->Msanpham->getListFull('tuvansanpham');
 			$data['category']=$this->Msanpham->getRowByColumn('xh_category','id',$category_id);
 			$data['product']=$this->Msanpham->getRowByColumn('xh_product','id',$product_id);
 			$data['parents']=$this->Msanpham->getListByColumn('xh_category','parent_id',0);

@@ -7,7 +7,7 @@
 							<td class="menu">
 								<ul>
 									<li>
-										<a href="<?php echo base_url();?>"><span>Trang chu</span></a>
+										<a href="<?php echo base_url();?>">Trang chu</a>
 										<!--
 										<a href="assets/sieuthixehoi/images/homepage-style-1.html"><span>Homepage</span></a>
 										<ul>
@@ -19,9 +19,8 @@
 									<li>
 										<a href="<?php echo base_url("sanpham");?>"><span>San pham</span></a>
 										<ul>
-											<li><a href="blog-style-1.html">Blog list style 1</a></li>
-											<li><a href="blog-style-2.html">Blog list style 2</a></li>
-											<li><a href="#"><span>Single post</span></a><ul><li><a href="post-style-1.html">Single post style 1</a></li><li><a href="post-style-2.html">Single post style 2</a></li><li><a href="post-no-slider.html">Single post without slider</a></li><li><a href="post-car-listings.html">Car listing post</a></li></ul></li>
+											<li><a href="#">Chevrolet</a></li>
+											<li><a href="#">Hyundai</a></li>
 										</ul>
 									</li>
 									<li>

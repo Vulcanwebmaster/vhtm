@@ -1,5 +1,5 @@
 <?php
-class Tintuc extends NIW_Controller
+class Tuvansanpham extends NIW_Controller
 {
 	function __construct()
 	{
@@ -7,7 +7,7 @@ class Tintuc extends NIW_Controller
 		$this->module=strtolower(get_class());
 		$this->load->model('Mtuvansanpham');
 		$this->load->library('pagination');
-		$this->addVisiting();
+		//$this->addVisiting();
 	}
 	
 	function index()
@@ -26,7 +26,6 @@ class Tintuc extends NIW_Controller
 		$data['counting']=$this->getCounting();
 		
 		$data['title']='sieuthioto | Tư vấn sản phẩm';
-		$data['lang']=$this->session->userdata("lang");
 		$data['list_tuvansanpham']=$this->Mtuvansanpham->getListOffset('tuvansanpham',8,$index);
 		$data['module']=$this->module;
 		$data['page']='vtuvansanpham';
@@ -35,7 +34,7 @@ class Tintuc extends NIW_Controller
 	
 	function detail($id=0)
 	{
-		$data['list_tuvan']=$this->Mhomepage->getListFull('tuvansanpham');
+		$data['list_tuvan']=$this->Mtuvansanpham->getListFull('tuvansanpham');
 	//	$data['counting']=$this->getCounting();
 		
 		$data['title']='sieuthioto | Tư vấn sản phẩm';
