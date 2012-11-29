@@ -17,6 +17,18 @@
 			$data['title']='Hãng xe';
 			$data['bcCurrent']='Danh mục';
 			$data['list']=$this->Mdanhmuc->getListFull('xh_category');
+			$parents=array();
+			
+			foreach ($data['list'] as $item)
+			{
+				//var_dump($this->Mdanhmuc->getRowByColumn('xh_category','id',$item->parent_id));die();
+				$ctparent=$this->Mdanhmuc->getRowByColumn('xh_category','id',$item->parent_id);
+				if ($ctparent)
+					$parents[]=$ctparent->namev;
+				else $parents[]=false;
+			}
+			$data['parentsName']=$parents;
+			//var_dump($data['parentsName']);die();
 			$data['module']=$this->module;
 			$data['page']='admin_list_category';
 			$this->load->view('admin/container',$data);

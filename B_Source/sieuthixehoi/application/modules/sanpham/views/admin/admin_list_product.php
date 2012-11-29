@@ -56,20 +56,20 @@
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php $i=0; foreach ($list as $item)
+					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{     $i++; ?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
 					 			<td><?php echo $item->image;?></td> 
 			    				<td><?php echo $item->namev;?></td>
-			    				<td><?php echo $item->hangsx;?></td>
+			    				<td><?php echo $listCategories[$count]->namev;?></td>
 			    				<td><?php echo $item->price;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>sanpham/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
-					 	<?php }?>
+					 	<?php $count++; }?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->

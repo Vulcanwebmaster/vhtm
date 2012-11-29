@@ -42,18 +42,18 @@
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php $i=0; foreach ($list as $item)
-					 	{  	  $i++;	?>
+					 	<?php $i=0;  $count=0;  foreach ($list as $item)
+					 	{     $i++;	?>
 					 		<tr>  
 			    				<td><?php echo $i;?></td> 
-			    				<td><?php echo $item->namev;?></td> 
-			    				<td><?php echo $item->parent_id;?></td> 
+			    				<td><?php echo $item->namev;?></td>
+			    				<td><?php if($parentsName[$count]) echo $parentsName[$count];?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 				    				<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
-					 	<?php }?>
+					 	<?php  $count++; }?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->

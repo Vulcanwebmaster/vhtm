@@ -12,17 +12,27 @@
 			$this->load->library('session');
 		}
 		
-		function index($index=0)
+		function index()
+		{
+			$this->page();
+		}
+		function page($index=0)
 		{
 			$config['base_url']=base_url().'sanpham/admin/page/';
-			$config['per_page']=1;
+			$config['per_page']=15;
 			$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
 			$data['title']='Thông tin xe';
 			$data['bcCurrent']='sản phẩm';
-			$data['list']=$this->Msanpham->getListOffset('xh_product',1,$index);
+			$data['list']=$this->Msanpham->getListOffset('xh_product',15,$index);
+			$listCategories=array();
+			foreach ($data['list'] as $item)
+			{
+				$listCategories[]=$this->Msanpham->getRowByColumn('xh_category','id',$item->category_id);
+			}
+			$data['listCategories']=$listCategories;
 			$data['module']=$this->module;
 			$data['page']='admin_list_product';
 			$this->load->view('admin/container',$data);
