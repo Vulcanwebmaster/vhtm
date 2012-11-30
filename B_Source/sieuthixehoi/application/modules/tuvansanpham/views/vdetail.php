@@ -10,7 +10,6 @@
 							<!-- BEGIN .main-title -->
 							<div class="main-title">
 								<span><b><h3><?php echo $detail->title ?></h3></b></span>
-								<a href="#">show all</a>
 							<!-- END .main-title -->
 							</div>
 

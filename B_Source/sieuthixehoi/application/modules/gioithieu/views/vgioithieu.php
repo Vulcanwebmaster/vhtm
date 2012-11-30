@@ -1,16 +1,12 @@
 				<!-- BEGIN .content -->
 				<div class="content">
-
-
 					<!-- BEGIN .full-width-content-wrapper -->
 					<div class="full-width-content-wrapper">
 						<!-- BEGIN .main-content -->
 						<div class="main-content">
-
 							<!-- BEGIN .main-title -->
 							<div class="main-title">
-								<span><b><?php echo $list_gioithieu->title;?></b></span>
-								<a href="#">show all</a>
+								<span><b><?php echo $title;?></b></span>
 							<!-- END .main-title -->
 							</div>
 
