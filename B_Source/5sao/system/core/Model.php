@@ -92,6 +92,7 @@ class CI_Model {
 	 
 	 function getListByColumn($tableName='',$columnName='',$value='')
 	 {
+	 	//echo $value;die();
 	 	$this->db->where($columnName,$value);
 	 	$ds=$this->db->get($tableName);
 	 	$list=array();
@@ -187,11 +188,27 @@ class CI_Model {
 		  return $query->result();
 	 }
 	 
-	 function getSpByParentID($id){
+	function getSpByParentID($id){
 	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
 		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
 										FROM n_sanpham, n_danhmuc
 										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
+		  return $query->result();
+	 }
+ 	 function getSpByParentIDOffset($id, $index='', $offset=''){
+ 	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
+		$query1= $this->db->query("SELECT id FROM n_danhmuc where parent_id = $id");
+		foreach($query1->result() as $dm){
+			$mang[] = $dm->id;
+		}
+		$list  = implode(",", $mang);
+	 	$select = "SELECT * FROM n_sanpham WHERE danhmuc_id IN ( $list ) limit $index, $offset ";
+		  $query= $this->db->query($select);
+		  
+		  /*echo "<pre>";
+		  print_r($query->result());
+		  echo "</pre>";
+		  die();*/
 		  return $query->result();
 	 }
 	 function isParent($id){

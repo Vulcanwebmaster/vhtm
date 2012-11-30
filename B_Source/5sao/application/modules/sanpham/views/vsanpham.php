@@ -22,14 +22,14 @@
         </div>
 	</div>
 	<?php } } else{?>
-						<div id="photo">
-						<div id="slideshow-wrapper">
-                            <div id="slider" class="nivoSlider">		
-	                            <img src="<?php echo base_url();?>assets/5sao/images/slide1.jpg" tppabs="" alt="" /><img src="<?php echo base_url();?>assets/5sao/images/slide3.jpg" tppabs="" alt=""  />
-	                            <img src="<?php echo base_url();?>assets/5sao/images/slide2.jpg"/> <img src="<?php echo base_url();?>assets/5sao/images/slide4.jpg"/>
-                            </div>                           
-                          </div>
-						</div>		
+			<div id="photo">
+			<div id="slideshow-wrapper">
+                <div id="slider" class="nivoSlider">		
+                    <img src="<?php echo base_url();?>assets/5sao/images/slide1.jpg" tppabs="" alt="" /><img src="<?php echo base_url();?>assets/5sao/images/slide3.jpg" tppabs="" alt=""  />
+                    <img src="<?php echo base_url();?>assets/5sao/images/slide2.jpg"/> <img src="<?php echo base_url();?>assets/5sao/images/slide4.jpg"/>
+                </div>                           
+              </div>
+			</div>		
 	<?php } ?>
 	<ul id="breadcrum">
 	<li><a href="<?php echo base_url();?>"><?php echo $this->lang->line('menu-trangchu');?></a></li>
