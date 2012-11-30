@@ -8,12 +8,6 @@
 								<ul>
 									<li>
 										<a href="<?php echo base_url();?>">Trang chủ</a>
-										<!--
-										<a href="assets/sieuthixehoi/images/homepage-style-1.html"><span>Homepage</span></a>
-										<ul>
-											<li><a href="assets/sieuthixehoi/images/homepage-style-1.html">Homepage style 1</a></li>
-											<li><a href="assets/sieuthixehoi/images/homepage-style-2.html">Homepage style 2</a></li>
-										</ul>-->
 									</li>
 									<li><a href="<?php echo base_url("gioithieu");?>">Giới thiệu</a></li>
 									<li>

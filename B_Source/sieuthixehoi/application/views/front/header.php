@@ -11,8 +11,8 @@
 							<table>
 								<tr>
 									<td>
-										<p class="text"><span>&quot;Awesome V10 engined road monster&quot;</span></p>
-										<p class="name"><span>Audi R8 V10</span><i>$ 87,000</i></p>
+										<p class="text"><span>&quot;Chuyên nghiệp &amp; sang trọng&quot;</span></p>
+										<p class="name"><span>Audi R8 V10</span><i>$87,000</i></p>
 									</td>
 								</tr>
 							</table>
@@ -23,7 +23,7 @@
 							<table>
 								<tr>
 									<td>
-										<p class="text"><span>&quot;Beauty, elegance, power &amp; design&quot;</span></p>
+										<p class="text"><span>&quot;Sức mạnh &amp; thiết kế&quot;</span></p>
 										<p class="name"><span>Aston Martin Virage</span><i> $ 150,000</i></p>
 									</td>
 								</tr>
@@ -35,7 +35,7 @@
 							<table>
 								<tr>
 									<td>
-										<p class="text"><span>&quot;Retro styling with classic American muscle!&quot;</span></p>
+										<p class="text"><span>&quot;Cổ điển &amp; Quyến rũ!&quot;</span></p>
 										<p class="name"><span>Ford Mustang</span><i>$ 60,000</i></p>
 									</td>
 								</tr>

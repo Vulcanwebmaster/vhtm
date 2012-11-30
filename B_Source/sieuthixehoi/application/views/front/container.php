@@ -4,7 +4,7 @@
 	<head>
 
 		<!-- Title -->
-		<title>Radial - Premium Automotive WordPress Theme</title>
+		<title>Siêu thị xe hơi Việt Nam</title>
 
 		<!-- Meta Tags -->
 		
@@ -26,6 +26,8 @@
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.min.js" type="text/javascript" language="javascript"></script>
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.sexyslider.js" type="text/javascript" language="javascript"></script>
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/titillium.font.js" type="text/javascript" language="javascript"></script>
+		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/cufon-yui.js" type="text/javascript" language="javascript"></script>
+		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/cufon-replace.js" type="text/javascript" language="javascript"></script>
 		<script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.innerfade.js" type="text/javascript" language="javascript"></script>
 
 		<script type="text/javascript">
@@ -46,9 +48,6 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-				// hide #back-top first
-				// $("#back-top").hide();
-				// fade in #back-top
 				$(function () {
 					$(window).scroll(function () { });
 					// scroll body to 0px on click

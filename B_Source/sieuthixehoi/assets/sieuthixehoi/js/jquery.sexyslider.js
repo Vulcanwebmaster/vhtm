@@ -211,8 +211,8 @@
     // add events
     if (params.navigation)
     {
-      var prev = $('<a href="#" class="sexyslider-prev"><span>Previous</span></a>');
-      var next = $('<a href="#" class="sexyslider-next"><span>Next</span></a>');
+      var prev = $('<a href="#" class="sexyslider-prev"><span>Trước</span></a>');
+      var next = $('<a href="#" class="sexyslider-next"><span>Sau</span></a>');
 
       prev.click($.proxy(function(event) { this.transition("prev"); event.preventDefault(); }, this));
       next.click($.proxy(function(event) { this.transition("next"); event.preventDefault(); }, this));
