@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2012 at 10:44 AM
+-- Generation Time: Dec 01, 2012 at 09:59 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -222,14 +222,15 @@ CREATE TABLE IF NOT EXISTS `n_lienhe` (
   `noidung` text COLLATE utf8_unicode_ci NOT NULL,
   `ngaythang` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `n_lienhe`
 --
 
 INSERT INTO `n_lienhe` (`id`, `hoten`, `email`, `dienthoai`, `tieude`, `noidung`, `ngaythang`) VALUES
-(4, 'trung', 'trungnt@gmail.com', '0123456789', 'tiêu đề liên hệ', 'trang này đẹp', '2012-11-28');
+(4, 'trung', 'trungnt@gmail.com', '0123456789', 'tiêu đề liên hệ', 'trang này đẹp', '2012-11-28'),
+(5, 'Nguyễn Thành Trung', 'trungnth@gmail.com', '0123456789', 'Liên hệ liên hệ liên hệaaaaa', 'acs', '2012-11-30');
 
 -- --------------------------------------------------------
 
@@ -239,18 +240,17 @@ INSERT INTO `n_lienhe` (`id`, `hoten`, `email`, `dienthoai`, `tieude`, `noidung`
 
 CREATE TABLE IF NOT EXISTS `n_oto_about_us` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `contentv` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `contente` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `contentv` text COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `n_oto_about_us`
 --
 
-INSERT INTO `n_oto_about_us` (`id`, `contentv`, `contente`) VALUES
-(1, '<p>\r\n	tểtrterttrttttttttttttt</p>', '0'),
-(2, 'Ô to giá rẻ', 'Đang khuyến mãi');
+INSERT INTO `n_oto_about_us` (`id`, `contentv`, `title`) VALUES
+(1, '<p>\r\n	<strong>Hyundai Ngọc Kh&aacute;nh cung cấp c&aacute;c dịch vụ:</strong><br />\r\n	- Cung cấp c&aacute;c loại xe Hyundai du lịch nhập khẩu nguy&ecirc;n chiếc.<br />\r\n	- Bảo h&agrave;nh, bảo dưỡng c&aacute;c xe &ocirc; t&ocirc; du lịch hiệu Hyundai theo ti&ecirc;u chuẩn to&agrave;n cầu của H&atilde;ng Hyundai.<br />\r\n	- Cung cấp c&aacute;c dịch vụ sửa chữa, thay thế phụ t&ugrave;ng xe Hyundai.<br />\r\n	- Cung cấp phụ t&ugrave;ng ch&iacute;nh hiệu Hyundai.</p>', 'Showroom Bán Xe Hyundai Uy Tín  hehe');
 
 -- --------------------------------------------------------
 
@@ -426,24 +426,49 @@ INSERT INTO `n_preferences` (`name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_slide`
+--
+
+CREATE TABLE IF NOT EXISTS `n_slide` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `anh1` text COLLATE utf8_unicode_ci NOT NULL,
+  `anh2` text COLLATE utf8_unicode_ci NOT NULL,
+  `anh3` text COLLATE utf8_unicode_ci NOT NULL,
+  `anh4` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `n_slide`
+--
+
+INSERT INTO `n_slide` (`id`, `anh1`, `anh2`, `anh3`, `anh4`) VALUES
+(1, '<p>\r\n	<img alt="" src="/sieuthixehoi/assets/sieuthixehoi/upload/images/Spack-van-docopy.png" style="width: 992px; height: 345px;" /></p>', '<p>\r\n	<img alt="" src="/sieuthixehoi/assets/sieuthixehoi/upload/images/Cruze_black.jpg" style="width: 992px; height: 325px;" /></p>\r\n', '<p>\r\n	<img alt="" src="/sieuthixehoi/assets/sieuthixehoi/upload/images/newlacetti.jpg" style="width: 949px; height: 365px;" /></p>\r\n', '<p>\r\n	<img alt="" src="/5sao/assets/upload/images/slide4.jpg" style="width: 578px; height: 280px;" /></p>\r\n');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_tuvansanpham`
 --
 
 CREATE TABLE IF NOT EXISTS `n_tuvansanpham` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
   `sub_menu_title` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `n_tuvansanpham`
 --
 
-INSERT INTO `n_tuvansanpham` (`id`, `sub_menu_title`, `title`, `content`) VALUES
-(1, 'TƯ VẤN MUA XE', 'Hyundai Eon: Nếu bạn chỉ cần che nắng che mưa á a', '<p>\r\n	Hyundai Eon: Nếu bạn chỉ cần &quot;che nắng, che mưa&quot; Mục ti&ecirc;u l&agrave; kh&aacute;ch h&agrave;ng cần một chiếc xe nhỏ, thuận tiện để di chuyển trong phố với c&aacute;c chức năng đơn giản v&agrave; tiết kiệm nhi&ecirc;n liệu. Hyundai Eon l&agrave; chiếc xe như vậy? Ch&uacute;ng ta từng biết đến những mẫu xe nhỏ gọn được tạo ra với mục đ&iacute;ch tiện lợi để di chuyển trong nội th&agrave;nh v&agrave; ở Việt Nam c&oacute; kh&ocirc;ng &iacute;t những ứng cử vi&ecirc;n s&aacute;ng gi&aacute;, c&oacute; doanh số b&aacute;n h&agrave;ng cao như Chevrolet Spark (trước kia l&agrave; Daewoo Matiz), Kia với New Morning hay Huyndai c&oacute; i10 v&agrave; i20. Thế nhưng c&ograve;n một ph&acirc;n cấp xe nhỏ hơn m&agrave; vốn mới chỉ c&oacute; c&aacute;c h&atilde;ng xe đến từ Trung Quốc tấn c&ocirc;ng đến những người c&oacute; thu nhập thấp, c&oacute; cơ hội tiếp cận với &ocirc; t&ocirc; như Chery đang được li&ecirc;n doanh &ocirc; t&ocirc; H&ograve;a B&igrave;nh ph&acirc;n phối c&oacute; gi&aacute; b&aacute;n khoảng 200 triệu đồng, BYD F0 với kiểu d&aacute;ng kh&ocirc;ng kh&aacute;c g&igrave; Toyota Aygo c&oacute; mức gi&aacute; khoảng 250 triệu đồng.</p>\r\n'),
-(5, 'Tư vấn mua xe', 'Với ngân sách chưa tới 400', '<p>\r\n	<span style="font-size: medium;"><span style="font-family: times new roman;"><strong>(VTC News) - Với ng&acirc;n s&aacute;ch chưa tới 400 triệu đồng v&agrave; mong muốn t&igrave;m một chiếc xe tiết kiệm nhi&ecirc;n liệu, người ti&ecirc;u d&ugrave;ng Việt sẽ chọn g&igrave; trong bộ ba xe nhỏ đến từ H&agrave;n Quốc Kia Morning, Chevrolet Spark v&agrave; mẫu xe sắp ra mắt Hyundai Eon.</strong></span></span></p>\r\n');
+INSERT INTO `n_tuvansanpham` (`id`, `parent_id`, `sub_menu_title`, `title`, `content`) VALUES
+(1, 1, 'Tư vấn mua xe', 'Chọn xe nào khi có dưới 400 triệu đồng?', '<p>\r\n	ccccccccccccccccccccccccccccccc aaaaaaaaaaaaa cccccccccccccc</p>\r\n'),
+(5, 0, 'Tư vấn nội thất', 'Showroom Bán Xe Hyundai Uy Tín  a', '<p>\r\n	ccccccccccc aaaaaa vvvvvvv</p>\r\n'),
+(6, 1, 'Đăng ký đăng kiểm', 'Showroom Bán Xe Hyundai Uy Tín ', '<p>\r\n	chưa c&oacute; nội dung</p>\r\n'),
+(7, 0, 'Nội thất xe đẹp', 'Nội thất xe đẹp', '<p>\r\n	Nội thất xe đẹp Nội thất xe đẹp</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -474,7 +499,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-11-29 01:09:08', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-11-29 16:39:54', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
