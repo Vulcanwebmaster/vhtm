@@ -56,8 +56,10 @@
 											<?php foreach ($items as $value): ?>
 												<table class="item">
 													<tr>
-														<td class="image"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>" class="tTip" title="&lt;img src=&quot;<?php echo base_url() ?>assets/sieuthixehoi/images/image-110.jpg&quot; alt=&quot;&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;">
-															<img src="<?php echo base_url();?>assets/sieuthixehoi/images/image-108.jpg" alt="" width="54" height="54"  /></a></td>
+														<td class="image"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>">
+															<!--<img src="<?php echo base_url();?>assets/sieuthixehoi/images/image-108.jpg" alt="" width="54" height="54"  />-->
+																		<?php echo $value->image ?>
+																		</a></td>
 														<td class="text">
 															<p class="title"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>"><?php echo $value->namev?></a></p>
 															<p class="description"><?php echo word_limiter($value->mota, 20)?></p>
