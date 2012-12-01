@@ -62,10 +62,11 @@
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
 					 			<td><?php if($item->parent_id==2){ ?>
-			    						CHEVROLET
-			    				<?php }else{ ?>
 			    						HYUNDAI
+			    				<?php }else{ ?>
+			    						CHEVROLET
 			    				<?php } ?>
+			    				
 			    				</td>
 					 			<td><?php echo $item->image;?></td> 
 			    				<td><?php echo $item->namev;?></td>

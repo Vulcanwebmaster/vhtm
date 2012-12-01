@@ -21,21 +21,28 @@
 		
 		function page($index=0)
 		{
-			$this->load->helper('string');
-			if($index==0){
-				$data['items']=$this->Msanpham->getListFull('xh_product');
-			}else{
-				$data['items']=$this->Msanpham->getListByColumn('xh_product','parent_id',$index);
-			}
-			$config['base_url']=base_url().'sanpham/page/'.$index;
-			$config['per_page']=4;
-			$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
-			$config['uri_segment']=4;
-			$this->pagination->initialize($config);
+				if($index==1)
+				{
+					$data['items']=$this->Msanpham->getListByColumn('xh_product','parent_id',$index);
+				}
+				if($index==2)
+				{
+					$data['items']=$this->Msanpham->getListByColumn('xh_product','parent_id',$index);
+				}
+				$config['base_url']=base_url().'sanpham/page/';
+				$config['per_page']= 3;
+				$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
+				$config['uri_segment']=3;
+				$this->pagination->initialize($config);
+				$data['data']=$this->Msanpham->list_all($config['per_page'],$this->uri->segment(2));
+				//phai limit de lay so trang can phan
+				$this->load->helper('text');
+				$data['items']=$this->Msanpham->getListOffset('xh_product',3,$index);
 		 	 
-			$data['module']=$this->module;
-			$data['page']='vsanpham';
-			$this->load->view('front/container',$data);	
+				$data['module']=$this->module;
+				$data['page']='vsanpham';
+				$this->load->view('front/container',$data);	
+				
 		}
 		
 		

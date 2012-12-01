@@ -29,6 +29,13 @@
 					<input type="text" name="hangsx" style="width:95%"/>
 				</fieldset>
 				<fieldset>
+					<label>Tên Hãng</label>
+					<select name="parent_id">
+						<option value="2">HYUNDAI</option>
+						<option value="1">CHEVROLET</option>
+					</select>
+				</fieldset>
+				<fieldset>
 					<label>Giá (VNĐ)</label>
 					<input type="text" name="price" style="width:95%"/>
 				</fieldset>

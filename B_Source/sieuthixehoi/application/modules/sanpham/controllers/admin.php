@@ -38,9 +38,11 @@
 			$this->load->view('admin/container',$data);
 		}
 		
+		
 		function _input()
 		{
-			$input=array('namev'=>$this->input->post('namev'),
+			$input=array('parent_id'=>$this->input->post('parent_id'),
+						'namev'=>$this->input->post('namev'),
 						'category_id'=>$this->input->post('category_id'),
 						'hangsx'=>$this->input->post('hangsx'),
 						'price'=>$this->input->post('price'),
