@@ -20,12 +20,14 @@
 									<li>
 										<a href="#"><span>Tư vấn sản phẩm</span></a>
 										<ul>
-											<?php foreach ($list_tuvan as $tuvan){ ?>
-												<li><a href="<?php echo base_url();?>tuvansanpham/detail/<?php echo $tuvan->id;?>">
-													<?php echo $tuvan->sub_menu_title ?>
-													</a>
-												</li>
-											<?php } ?>
+											<li><a href="<?php echo base_url();?>tuvansanpham/page/">
+												Tư vấn mua xe
+												</a>
+											</li>
+											<li><a href="<?php echo base_url();?>tuvansanpham/page/1">
+												Tư vấn nội thất
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li><a href="<?php echo base_url("lienhe");?>">Liên hệ</a></li>

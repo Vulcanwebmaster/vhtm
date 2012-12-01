@@ -25,6 +25,7 @@
 		function _input()
 		{
 			$input=array(
+						'parent_id'=>$this->input->post('parent_id'),
 						'sub_menu_title'=>$this->input->post('sub_menu_title'),
 						'title'=>$this->input->post('title'),
 						'content'=>$this->input->post('content'),

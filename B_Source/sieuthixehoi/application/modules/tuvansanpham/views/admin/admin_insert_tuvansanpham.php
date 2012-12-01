@@ -19,6 +19,13 @@
 					<input type="text" name="title" style="width:95%"/>
 				</fieldset>
 				<fieldset>
+					<label>Danh mục cha</label>
+					<select name="parent_id">
+						<option value="0">Tư vấn nội thất</option>
+						<option value="1">Tư vấn mua xe</option>
+					</select>
+				</fieldset>
+				<fieldset>
 					<label>Nội dung</label>
 					<?php echo $this->ckeditor->editor('content','',$config);?>
 				</fieldset>
