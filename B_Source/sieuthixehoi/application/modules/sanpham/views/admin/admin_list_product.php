@@ -48,6 +48,7 @@
 					<thead> 
 						<tr>
 							<th>STT</th>
+							<th>Hãng</th>
 							<th>Hình ảnh</th>
 		    				<th>Tên</th>
 		    				<th>Dòng xe</th>
@@ -60,6 +61,12 @@
 					 	{     $i++; ?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
+					 			<td><?php if($item->parent_id==2){ ?>
+			    						CHEVROLET
+			    				<?php }else{ ?>
+			    						HYUNDAI
+			    				<?php } ?>
+			    				</td>
 					 			<td><?php echo $item->image;?></td> 
 			    				<td><?php echo $item->namev;?></td>
 			    				<td><?php echo $listCategories[$count]->namev;?></td>
