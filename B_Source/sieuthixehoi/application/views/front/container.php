@@ -78,6 +78,7 @@
 
 	
 <body>
+	<?php $this->load->view('front/vertical-banner');?>
 	<?php $this->load->view('front/header');?>
 	<?php $this->load->view('front/menu');?>
 	<?php $this->load->view('front/slide');?>
