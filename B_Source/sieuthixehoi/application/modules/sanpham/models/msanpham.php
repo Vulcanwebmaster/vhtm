@@ -21,6 +21,11 @@
 			return $query->row(0);
 		}
 		
+		//lay du lieu theo tung phan
+        function list_all($number,$offset){ 
+            $query =  $this->db->get('xh_product',$number,$offset); 
+            return $query->result_array(); 
+        } 
 		function CountFull()
 		{
 			$list=$this->db->get('xh_product');
@@ -37,6 +42,18 @@
 			return $arrayList->result_array();
 		}
 		
+		function getListByColumnOff($tableName='',$columnName='', $index='', $limit='')
+		{
+			$this->db->where($columnName);
+	 		$ds=$this->db->get($tableName);
+	 		if ($ds->num_rows()>0)
+	 		{
+	 		$item=$ds->row(0);
+	 		$ds->free_result();
+	 		return $item;
+	 		}
+	 	else return false;
+		}
 		function getListByColumnOffset($tableName='',$columnName='',$value='', $index='', $limit='')
 		 {
 		 	$this->db->where($columnName,$value);

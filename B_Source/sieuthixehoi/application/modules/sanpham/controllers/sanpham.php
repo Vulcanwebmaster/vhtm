@@ -8,20 +8,45 @@
 			$this->module=basename(dirname(dirname(__FILE__)));
 			$this->module = strtolower(get_class());
 			$this->load->library('pagination');
+			$this->load->helper('url');
 			$this->load->model('Msanpham');
 			$this->load->library('session');
 		}
 
 		function index()
 		{
-			$data['list_tuvan']=$this->Msanpham->getListFull('tuvansanpham');
-			$this->load->helper('text');
-			$data['parents']=$this->Msanpham->getListByColumn('xh_category','parent_id',0);
-			$data['items']=$this->Msanpham->getListFull('xh_product');		
-			$data['module']=$this->module;
-			$data['page']='vsanpham';
-			$this->load->view('front/container',$data);			
+			$this->page();		
 		}
+
+		
+		function page($index=0)
+		{
+			
+			 
+	  			$config['base_url']=base_url().'sanpham/page/';
+				$config['per_page']= 4;
+				$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
+				$config['uri_segment']=3;
+				$this->pagination->initialize($config);
+				$data['data']=$this->Msanpham->list_all($config['per_page'],$this->uri->segment(2));
+				//phai limit de lay so trang can phan
+				$this->load->helper('text');
+				$data['items']=$this->Msanpham->getListOffset('xh_product',4,$index);
+			 
+		  		//$config['base_url']=base_url().'sanpham/page/';
+				//$config['per_page']= 2;
+				//$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
+				//$config['uri_segment']=3;
+				//$this->pagination->initialize($config);
+				//$this->load->helper('text');
+				//$data['data']=$this->Msanpham->list_all($config['per_page'],$this->uri->segment(2));
+		   		//$data['items']=$this->Msanpham->getListByColumnOff('xh_product','parent_id',$index,3);
+		 	 
+				$data['module']=$this->module;
+				$data['page']='vsanpham';
+				$this->load->view('front/container',$data);	
+		}
+		
 		
 		function chitiet($alias)
 		{

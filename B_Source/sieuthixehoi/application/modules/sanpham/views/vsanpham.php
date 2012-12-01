@@ -34,6 +34,7 @@
 		</div>
 		<div class="filter">
 		</div>
+		
 			<table class="menu-card">
 				<tr>
 					<td class="menu-card-content-wrapper">
@@ -52,10 +53,11 @@
 										<!-- BEGIN .left-side -->
 										<div class="left-side">
 											<h3></h3>
-											<?php foreach ($items as $key => $value): ?>
+											<?php foreach ($items as $value): ?>
 												<table class="item">
 													<tr>
-														<td class="image"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>" class="tTip" title="&lt;img src=&quot;images/image-110.jpg&quot; alt=&quot;&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;"><img src="images/image-108.jpg" alt="" width="54" height="54"  /></a></td>
+														<td class="image"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>" class="tTip" title="&lt;img src=&quot;<?php echo base_url() ?>assets/sieuthixehoi/images/image-110.jpg&quot; alt=&quot;&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;">
+															<img src="<?php echo base_url();?>assets/sieuthixehoi/images/image-108.jpg" alt="" width="54" height="54"  /></a></td>
 														<td class="text">
 															<p class="title"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>"><?php echo $value->namev?></a></p>
 															<p class="description"><?php echo word_limiter($value->mota, 20)?></p>
@@ -73,7 +75,7 @@
 											<h3></h3>
 											<table class="item">
 												<tr>
-													<td class="image"><a href="post-car-listings.html" class="tTip" title="&lt;img src=&quot;images/image-127.jpg&quot; alt=&quot;&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;"><img src="images/image-126.jpg" alt="" width="54" height="54" /></a></td>
+													<td class="image"><a href="post-car-listings.html" class="tTip" title="&lt;img src=&quot;<?php echo base_url() ?>assets/sieuthixehoi/images/image-127.jpg&quot; alt=&quot;&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-126.jpg" alt="" width="54" height="54" /></a></td>
 													<td class="text">
 														<p class="title"><a href="#">Citroen C1</a></p>
 														<p class="description">1.3 L 4 cylinder engine, 6 speed transmission, two door, dual clutch, 140 HP at 7,000 RPM, 160 Nm torque</p>
@@ -87,6 +89,7 @@
 									</div>
 									<!-- END .card-page -->
 								</div>
+								
 								<!-- END .card-slider -->
 							</div>
 							<!-- END .card-container -->
@@ -94,6 +97,7 @@
 						<!-- END .content-wrapper -->				
 					</td>
 				</tr>
+				<div><?php echo $this->pagination->create_links();?></div>
 			</table>
 		</div>
 </div>

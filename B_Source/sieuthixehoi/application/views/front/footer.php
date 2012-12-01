@@ -8,14 +8,14 @@
 				<div class="contact-information">
 					<h3>Thông tin liên lạc</h3>
 					<div class="address">
-						<p><span>NIW Vietnam Ltd</span></p>
-						<p> Tòa nhà CT5B - Mễ Trì Thượng - Từ Liêm - Hà Nội</p>
+						<p><span>TIEN DAT AUTO</span></p>
+						<p align="center"> Office:Hoang Minh Giam - Nam Trung Yen Cau Giay Dist., Ha Noi</p>
 					</div>
 					<div class="phone">
-						<p> (+84) 85898964</p>
+						<p> 0912 892 683</p>
 					</div>
 					<div class="email">
-						<p><a href="#">support@niw.com.vn</a></p>
+						<p><a href="#">tiendatautohd@gmail.com</a></p>
 					</div>
 				<!-- END .contact-information -->
 				</div>
