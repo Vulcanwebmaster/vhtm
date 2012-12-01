@@ -11,17 +11,13 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Menu tiêu đề</label>
-					<input type="text" name="sub_menu_title" style="width:92%" value="<?php echo $info->sub_menu_title;?>"/>
-				</fieldset>
-				<fieldset>
 					<label>Tiêu đề</label>
 					<input type="text" name="title" style="width:92%" value="<?php echo $info->title;?>"/>
 				</fieldset>
 				<fieldset>
 					<label>Danh mục cha</label>
 					<select name="parent_id">
-						<option value="0">Tư vấn nội thất</option>
+						<option value="2">Tư vấn nội thất</option>
 						<option value="1">Tư vấn mua xe</option>
 					</select>
 				</fieldset>

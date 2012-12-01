@@ -18,13 +18,13 @@
 										</ul>
 									</li>
 									<li>
-										<a href="#"><span>Tư vấn sản phẩm</span></a>
+										<a href="<?php echo base_url();?>tuvansanpham/"><span>Tư vấn sản phẩm</span></a>
 										<ul>
-											<li><a href="<?php echo base_url();?>tuvansanpham/page/">
+											<li><a href="<?php echo base_url();?>tuvansanpham/page/1">
 												Tư vấn mua xe
 												</a>
 											</li>
-											<li><a href="<?php echo base_url();?>tuvansanpham/page/1">
+											<li><a href="<?php echo base_url();?>tuvansanpham/page/2">
 												Tư vấn nội thất
 												</a>
 											</li>

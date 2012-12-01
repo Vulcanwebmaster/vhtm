@@ -15,7 +15,7 @@
 
 							<!-- BEGIN .full-width -->
 							<div class="full-width">
-								<ul>
+								<ul style="clear: both">
 									<?php foreach ($list as $tuvan){ ?>
 										<li><a href="<?php echo base_url();?>tuvansanpham/detail/<?php echo $tuvan->id;?>">
 											<?php echo $tuvan->title ?>
@@ -25,9 +25,13 @@
 								</ul>
 							<!-- END .full-width -->
 							</div>
-
+			<!-- <center style="font-size: 15px;color:red">
+				<?php echo $this->pagination->create_links();?>
+			</center>
+			-->
 						<!-- END .main-content -->
 						</div>
+						
 						<div class="main-content-bottom">&nbsp;</div>
 					<!-- END .full-width-content-wrapper -->
 					</div>

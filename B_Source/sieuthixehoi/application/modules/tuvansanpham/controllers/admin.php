@@ -26,7 +26,6 @@
 		{
 			$input=array(
 						'parent_id'=>$this->input->post('parent_id'),
-						'sub_menu_title'=>$this->input->post('sub_menu_title'),
 						'title'=>$this->input->post('title'),
 						'content'=>$this->input->post('content'),
 						);
@@ -39,9 +38,9 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor();
 			//=============================================
-			if (!$this->input->post('sub_menu_title'))
+			if (!$this->input->post('title'))
 			{
-				$data['title']='Thêm sản phẩm';
+				$data['title']='Thêm tư vấn sản phẩm';
 				$data['bcCurrent']='sản phẩm';
 				$data['module']=$this->module;
 				$data['page']='admin_insert_tuvansanpham';
@@ -49,7 +48,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('sub_menu_title','Tên','required|trim');
+				$this->form_validation->set_rules('title','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
@@ -64,7 +63,7 @@
 				}
 				else 
 				{
-					$data['title']='Thêm sản phẩm';
+					$data['title']='Thêm tư vấn sản phẩm';
 					$data['bcCurrent']='sản phẩm';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_tuvansanpham';
@@ -79,10 +78,10 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/sieuthixehoi/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor();
 			//=============================================
-			if (!$this->input->post('sub_menu_title'))
+			if (!$this->input->post('title'))
 			{
 				$data['info']=$this->Mtuvansanpham->getRowByColumn('tuvansanpham','id',$id);
-				$data['title']='Sửa sản phẩm';
+				$data['title']='Sửa tư vấn sản phẩm';
 				$data['bcCurrent']='sản phẩm';
 				$data['module']=$this->module;
 				$data['page']='admin_edit_tuvansanpham';
@@ -90,7 +89,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('sub_menu_title','Tên','required|trim');
+				$this->form_validation->set_rules('title','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
@@ -106,7 +105,7 @@
 				else 
 				{
 					$data['info']=$this->Mtuvansanpham->getRowByColumn('tuvansanpham','id',$id);
-					$data['title']='Sửa sản phẩm';
+					$data['title']='Sửa tư vấn sản phẩm';
 					$data['bcCurrent']='sản phẩm';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_tuvansanpham';

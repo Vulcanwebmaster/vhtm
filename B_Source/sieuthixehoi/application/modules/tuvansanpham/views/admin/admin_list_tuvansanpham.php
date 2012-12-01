@@ -48,7 +48,7 @@
 					<thead> 
 						<tr>
 							<th>STT</th>
-		    				<th>Menu Hiển thị</th>
+		    				<th>Danh mục</th>
 		    				<th>Tiêu đề</th>
 		    				<th>Sửa/Xóa</th>
 						</tr> 
@@ -58,7 +58,13 @@
 					 	{	  $i++;	?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td> 
-			    				<td><?php echo $item->sub_menu_title;?></td>
+			    				<td><?php if($item->parent_id==2){ ?>
+			    						Tư vấn nội thất
+			    				<?php }else{ ?>
+			    						Tư vấn mua xe
+			    				<?php } ?>
+			    				</td>
+			    				
 			    				<td><?php echo $item->title;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>tuvansanpham/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>

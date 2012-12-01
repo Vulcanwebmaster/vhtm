@@ -49,7 +49,7 @@ table, tr, td { margin: 0; padding: 0; border-collapse: collapse; }
 
 img { border: none; }
 
-a { color: #c81300; text-decoration: underline; border: none; }
+a { color: #c81300; text-decoration: none; border: none; }
 a:hover { color: #ff1800; text-decoration: none; }
 a:focus { outline: 0; }
 
