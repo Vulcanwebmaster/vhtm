@@ -48,6 +48,7 @@
 					<thead> 
 						<tr>
 							<th>STT</th>
+							<th>Hãng</th>
 							<th>Hình ảnh</th>
 		    				<th>Tên</th>
 		    				<th>Giá</th>
