@@ -11,33 +11,54 @@
 			$this->load->helper('url');
 			$this->load->model('Msanpham');
 			$this->load->library('session');
+			$this->load->helper('text');
 		}
 
-		function index()
+		function index($index=0)
 		{
-			$this->page();		
+				$config['base_url'] = base_url().'sanpham/index';
+				$config['per_page'] = 4;
+				$config['total_rows'] = count($this->Msanpham->getListFull('xh_product'));
+				$this->pagination->initialize($config);
+				
+				//phai limit de lay so trang can phan
+				$data['items'] = $this->Msanpham->getListOffset('xh_product',4,$index);
+				$data['module'] = $this->module;
+				$data['page'] ='vsanpham';
+				$this->load->view('front/container',$data);	
 		}
 
 		
-		function page($index=0)
+		function chevrolet($index=0)
 		{
-			
-				$config['base_url']=base_url().'sanpham/page/';
-				$config['per_page']= 9;
-				//var_dump($index);die();
-				$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
-				$config['uri_segment']=3;
+				
+				$config['base_url']=base_url().'sanpham/chevrolet/';
+				$config['per_page']= 4;
+				$config['total_rows']=count($this->Msanpham->getListByColumn('xh_product','hangsx','Chevrolet'));
+				//var_dump($config['total_rows']);die();
 				$this->pagination->initialize($config);
-				//$category_id1=$data['detail']->category_id;
-				$data['data']=$this->Msanpham->list_all($config['per_page'],$this->uri->segment(2));
-				//phai limit de lay so trang can phan
-				$this->load->helper('text');
-				$data['items']=$this->Msanpham->getListOffset('xh_product',9,$index);
-		 	 
+				
+				$data['items']=$this->Msanpham->getListByColumnOffsetsp('xh_product','hangsx','Chevrolet',$index,4);
+				//var_dump($data['items']);die();	
 				$data['module']=$this->module;
 				$data['page']='vsanpham';
 				$this->load->view('front/container',$data);	
+		}
+		
+		function hyundai($index=0)
+		{
 				
+				$config['base_url']=base_url().'sanpham/hyundai/';
+				$config['per_page']= 4;
+				$config['total_rows']=count($this->Msanpham->getListByColumn('xh_product','hangsx','Hyundai'));
+				//var_dump($config['total_rows']);die();
+				$this->pagination->initialize($config);
+				
+				$data['items']=$this->Msanpham->getListByColumnOffsetsp('xh_product','hangsx','Hyundai',$index,4);
+				//var_dump($data['items']);die();	
+				$data['module']=$this->module;
+				$data['page']='vsanpham';
+				$this->load->view('front/container',$data);	
 		}
 		
 		function chitiet($alias)

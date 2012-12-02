@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?php echo base_url()?>assets/sieuthixehoi/css/content-slider.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo base_url()?>assets/sieuthixehoi/css/jquery.fancybox-1.3.4.css" type="text/css" />
 <script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.menucardslider.js" type="text/javascript" language="javascript"></script>
 <script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.contentslider.js" type="text/javascript" language="javascript"></script>
 <script src="<?php echo base_url()?>assets/sieuthixehoi/js/jquery.tinytips.js" type="text/javascript" language="javascript"></script>
@@ -24,14 +23,10 @@
 	<div class="main-content">
 		<!-- BEGIN .main-title -->
 		<div class="main-title">
-			<span><b>Car listings</b></span>
+			<span><b>Danh sách sản phẩm:</b></span>
 		<!-- END .main-title -->
 		</div>
 		
-		<div class="menu-card-navigation">
-			<a href="#" class="previous" id="card-prev"><span>Previous page</span></a>
-			<a href="#" class="next" id="card-next"><span>Next page</span></a>
-		</div>
 		<div class="filter">
 		</div>
 		

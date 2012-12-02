@@ -13,8 +13,8 @@
 									<li>
 										<a href="<?php echo base_url("sanpham");?>"><span>Sản phẩm</span></a>
 										<ul>
-											<li><a href="<?php echo base_url();?>sanpham/page/1">Chevrolet</a></li>
-											<li><a href="<?php echo base_url();?>sanpham/page/2">Hyundai</a></li>
+											<li><a href="<?php echo base_url();?>sanpham/chevrolet">Chevrolet</a></li>
+											<li><a href="<?php echo base_url();?>sanpham/hyundai">Hyundai</a></li>
 										</ul>
 									</li>
 									<li>

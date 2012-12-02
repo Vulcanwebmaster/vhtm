@@ -14,6 +14,19 @@
 			return $query->row();
 		}
 		
+	 	function getListByColumnOffsetsp($tableName='',$columnName='',$value='', $index='', $limit='')
+		{
+		 	$this->db->where($columnName,$value);
+		 	$ds=$this->db->get($tableName,$limit,$index);
+		 	$list=array();
+		 	foreach($ds->result() as $item)
+		 	{
+		 		$list[]=$item;
+		 	}
+		 	$ds->free_result();
+		 	return $list;
+		}
+		
 		function getProduct($id)
 		{
 			$this->db->where('id',$id);
