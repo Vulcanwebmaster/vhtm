@@ -66,7 +66,7 @@
 						<div class="main-title">
 							<span><b>Sản phẩm liên quan</b></span>
 						</div>						
-						<?php foreach ($relates as $key => $item): ?>
+						<?php foreach ($relates as $item): ?>
 						<!-- BEGIN .item -->
 						<div class="item">
 							<h5><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id."-".$item->id."-".$item->alias ?>"><?php echo $item->namev;?></a></h5>
