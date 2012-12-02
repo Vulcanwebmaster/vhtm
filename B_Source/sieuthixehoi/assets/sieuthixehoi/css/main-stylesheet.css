@@ -243,7 +243,7 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 		.main-footer-wrapper .footer li { list-style-type: none; }
 		.main-footer-wrapper .footer a { color: #c5c5c5; text-decoration: none; }
 
-	.main-footer-wrapper .contact-information { width: 257px; padding: 0 110px 0 0; float: left; background: url(../images/footer-spacer-1.png) 310px top no-repeat; min-height:200px}
+	.main-footer-wrapper .contact-information { width: 257px; padding: 0 40px 0 0; float: left; background: url(../images/footer-spacer-1.png) 310px top no-repeat; min-height:200px}
 		.main-footer-wrapper .contact-information .address { padding: 0 0 0 47px; margin: 0 0 31px 0; background: url(../images/ico-company-1.png) 0 0 no-repeat; }
 			.main-footer-wrapper .contact-information .address span { font-size: 20px; font-weight: normal; }
 			.main-footer-wrapper .contact-information .address p { margin: 0 0 4px 0; font-weight: normal; }
@@ -252,7 +252,7 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 			.main-footer-wrapper .contact-information .email a { text-decoration: underline; }
 			.main-footer-wrapper .contact-information .email a:hover { text-decoration: none; }
 
-	.main-footer-wrapper .social-networks { padding: 0 109px 0 0; float: left; background: url(../images/footer-spacer-1.png) 270px top no-repeat; }
+	.main-footer-wrapper .social-networks { padding: 0 94px 0 0; float: left; background: url(../images/footer-spacer-1.png) 270px top no-repeat; }
 		.main-footer-wrapper .social-networks ul { margin: -5px 0 0 0; }
 		.main-footer-wrapper .social-networks a:hover { text-decoration: underline; }
 		.main-footer-wrapper .social-networks .twitter { background: url(../images/footer-social-icons.png) 0 0 no-repeat; }

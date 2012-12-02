@@ -28,7 +28,7 @@
 				</div>
 				
 				<!-- BEGIN .contact-information -->
-				<div class="list-categories">
+				<div class="contact-information">
 					<h3>Thông tin liên lạc</h3>
 					<div class="phone">
 						<p> 0912 892 683</p>
@@ -38,7 +38,7 @@
 					</div>
 					<div class="address">
 						<p><span>TIEN DAT AUTO</span></p>
-						<p align="center"> Office:Hoang Minh Giam - Nam Trung Yen Cau Giay Dist., Ha Noi</p>
+						<p> Office:Hoang Minh Giam - Nam Trung Yen Cau Giay Dist., Ha Noi</p>
 					</div>
 				<!-- END .contact-information -->
 				</div>
