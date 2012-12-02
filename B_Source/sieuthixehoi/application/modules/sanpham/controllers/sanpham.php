@@ -61,6 +61,7 @@
 				$this->load->view('front/container',$data);	
 		}
 		
+		
 		function chitiet($alias)
 		{
 			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"

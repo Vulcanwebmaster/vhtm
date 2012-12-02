@@ -27,17 +27,6 @@
 				<?php echo $product->mota ?>
 				<br>
 				<div class="post-menu-card">
-					<div class="photos">
-						<h3>More photos</h3>
-						<a href="#"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-140.jpg" alt="" width="393" height="260" id="largeimg" /></a>
-						<div class="thumbs">
-							<a href="<?php echo base_url() ?>assets/sieuthixehoi/images/image-140.jpg" class="thumbnail"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-145.jpg" alt="" width="60" height="60" /></a>
-							<a href="<?php echo base_url() ?>assets/sieuthixehoi/images/image-142.jpg" class="thumbnail"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-147.jpg" alt="" width="60" height="60" /></a>
-							<a href="<?php echo base_url() ?>assets/sieuthixehoi/images/image-149.jpg" class="thumbnail"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-148.jpg" alt="" width="60" height="60" /></a>
-							<a href="<?php echo base_url() ?>assets/sieuthixehoi/images/image-151.jpg" class="thumbnail"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-150.jpg" alt="" width="60" height="60" /></a>
-							<a href="<?php echo base_url() ?>assets/sieuthixehoi/images/image-153.jpg" class="thumbnail"><img src="<?php echo base_url() ?>assets/sieuthixehoi/images/image-152.jpg" alt="" width="60" height="60" /></a>
-						</div>
-					</div>
 					<div class="specification">
 						<h3>Specification</h3>
 						<div>

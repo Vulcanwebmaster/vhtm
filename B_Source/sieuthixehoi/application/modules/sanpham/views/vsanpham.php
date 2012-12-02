@@ -63,8 +63,9 @@
 													</tr>
 												</table>												
 											<?php endforeach ?>
-								
-										</div>							
+										
+										</div>	
+																
 										<!-- END .left-side -->
 										
 										<!-- BEGIN .right-side -->

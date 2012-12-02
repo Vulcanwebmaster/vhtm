@@ -7,9 +7,16 @@
 			$this->load->database();
 		}
 		
+		//lay hangsx tu category
 		function getCategory($id)
 		{
-			$this->db->where('id',$id);
+			$this->db->where('hangsx','$id');
+			$this->db->select('hangsx','category_id');
+			$this->db->from('xh_category');
+			$this->db->where(array('hangsx' => Chevrolet));
+			$this->db->join('xh_product','xh_product.category_id=xh_category.category_id');
+			//var_dump($this->db->join('xh_product','xh_product.category_id=xh_category.category_id'));
+			 //die();
 			$query=$this->db->get('xh_category');
 			return $query->row();
 		}
