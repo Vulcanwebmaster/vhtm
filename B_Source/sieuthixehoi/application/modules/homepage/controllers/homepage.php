@@ -27,19 +27,19 @@ class Homepage extends NIW_controller {
 			$data['title']='[Name Defined] | Home';
 		
 		// list products
-			$config['base_url']=base_url().'homepage/chevrolet/';
+			/*$config['base_url']=base_url().'homepage/chevrolet/';
 			$config['per_page']= 4;
+			$config['total_rows']=count($this->Mhomepage->getListByColumn('xh_product','hangsx','Chevrolet'));
+			//var_dump($config['total_rows']);die();
+			$this->pagination->initialize($config);*/
+			
+			$config['base_url']=base_url().'homepage/chevrolet/';
+			$config['per_page']= 15;
 			$config['total_rows']=count($this->Mhomepage->getListByColumn('xh_product','hangsx','Chevrolet'));
 			//var_dump($config['total_rows']);die();
 			$this->pagination->initialize($config);
 			
-			$config['base_url']=base_url().'homepage/chevrolet/';
-			$config['per_page']= 4;
-			$config['total_rows']=count($this->Mhomepage->getListByColumn('xh_product','hangsx','Chevrolet'));
-			//var_dump($config['total_rows']);die();
-			$this->pagination->initialize($config);
-			
-			$data['items']=$this->Mhomepage->getListByColumnOffset('xh_product','hangsx','Chevrolet',$index,4);
+			$data['items']=$this->Mhomepage->getListByColumnOffset('xh_product','hangsx','Chevrolet',$index,15);
 			//var_dump($data['items']);die();	
 			$data['module']=$this->module;
 			$data['page']='frontpage';
