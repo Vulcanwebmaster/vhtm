@@ -48,7 +48,7 @@
 					<!-- BEGIN .logo -->
 					<div class="logo"> 
 						<a href="<?php echo base_url();?>">
-							<img src="<?php echo base_url()?>assets/sieuthixehoi/images/logo-radial-1.png" alt="" width="226" height="87" />
+							<img src="<?php echo base_url()?>assets/sieuthixehoi/images/logo-radial-1.png" alt="" width="226" height="130" />
 						</a>
 					<!-- END .logo -->
 					</div>
