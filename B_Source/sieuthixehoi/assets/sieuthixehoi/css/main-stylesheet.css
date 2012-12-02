@@ -207,8 +207,8 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 	.homepage-title p { margin: 0; padding: 0; }
 
 .homepage-columns-1 { margin: 0 0 35px 0; overflow: hidden; }
-	.homepage-columns-1 .item { width: 302px; margin: 0 0 0 22px; float: left; }
-	.homepage-columns-1 .item:first-child { margin: 0; }
+	.homepage-columns-1 .item { width: 302px; margin: 0 7px 0 7px; float: left; }
+	/*.homepage-columns-1 .item:first-child { margin: 0; }*/
 		.homepage-columns-1 .item h3 { margin: 0 0 15px 0; }
 			.homepage-columns-1 .item h3 a { color: #fff; text-decoration: none; }
 			.homepage-columns-1 .item h3 a:hover { color: #ff1800; text-decoration: none; }

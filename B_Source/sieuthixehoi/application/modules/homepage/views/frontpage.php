@@ -17,14 +17,14 @@
 						<div class="homepage-columns-1 homepage-columns-1-spacer">
 							<!-- BEGIN .item -->
 							<?php foreach ($items as $value){ ?>
-							<div class="item">
+							<div class="item" style="height: 350px">
 								<h3><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>">
 									<?php echo $value->namev?>
 									</a></h3>
 								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>" class="image12345" style="background: url(images/image-6.jpg) center center no-repeat;"><span class="glass">&nbsp;</span>
 									<?php echo $value->image ?>
 								</a>
-								<p><?php echo word_limiter($value->mota, 25)?></p>
+								<p><?php echo word_limiter(strip_tags($value->mota), 25)?></p>
 								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>" class="more-link">Read more</a>
 							<!-- END .item -->
 							</div>
