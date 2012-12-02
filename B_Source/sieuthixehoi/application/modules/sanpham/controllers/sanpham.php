@@ -57,6 +57,7 @@
 				//var_dump($data['items']);die();	
 				$data['module']=$this->module;
 				$data['page']='vsanpham';
+				$data['flagslide']='slide1';
 				$this->load->view('front/container',$data);	
 		}
 

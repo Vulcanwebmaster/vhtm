@@ -8,7 +8,6 @@
 
 		<!-- Meta Tags -->
 		
-
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="<?php echo base_url()?>assets/sieuthixehoi/images/favicon.ico" type="image/x-icon" />
 
@@ -87,13 +86,12 @@
 		$this->load->view('front/slide');
 	}elseif($page == 'vsanpham')
 	{
-		if($module.'/'.$page == 'hyundai/vsanpham')
+		if(isset($flagslide))
 		{
 			$this->load->view('front/slide1');
 		}else{
 			$this->load->view('front/slide');
 		}
-		
 	}
 	?>
 	
