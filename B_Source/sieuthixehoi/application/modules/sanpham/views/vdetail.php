@@ -58,7 +58,7 @@
 						<?php foreach ($relates as $item): ?>
 						<!-- BEGIN .item -->
 						<div class="item">
-							<h5><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id."-".$item->id."-".$item->alias ?>"><?php echo $item->namev;?></a></h5>
+							<h5><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->id."-".$item->alias ?>"><?php echo $item->namev;?></a></h5>
 						<!-- END .item -->
 						</div>						
 						<?php endforeach ?>					

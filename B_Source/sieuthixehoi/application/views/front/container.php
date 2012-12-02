@@ -75,13 +75,28 @@
 
 	<!-- END head -->
 	<meta charset="UTF-8"></head>
-
 	
 <body>
 	<?php $this->load->view('front/vertical-banner');?>
 	<?php $this->load->view('front/header');?>
 	<?php $this->load->view('front/menu');?>
-	<?php $this->load->view('front/slide');?>
+	
+	<?php
+	if($page == 'frontpage')
+	{
+		$this->load->view('front/slide');
+	}elseif($page == 'vsanpham')
+	{
+		if($module.'/'.$page == 'hyundai/vsanpham')
+		{
+			$this->load->view('front/slide1');
+		}else{
+			$this->load->view('front/slide');
+		}
+		
+	}
+	?>
+	
 	<?php $this->load->view('front/content')?>
 	<?php $this->load->view('front/footer');?>
 </body>

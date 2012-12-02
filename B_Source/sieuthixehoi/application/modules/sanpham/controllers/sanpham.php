@@ -28,7 +28,6 @@
 				$this->load->view('front/container',$data);	
 		}
 
-		
 		function chevrolet($index=0)
 		{
 				
@@ -44,7 +43,7 @@
 				$data['page']='vsanpham';
 				$this->load->view('front/container',$data);	
 		}
-		
+
 		function hyundai($index=0)
 		{
 				
@@ -60,7 +59,7 @@
 				$data['page']='vsanpham';
 				$this->load->view('front/container',$data);	
 		}
-		
+
 		
 		function chitiet($alias)
 		{
@@ -72,7 +71,7 @@
 			}
 			$data['list_tuvan']=$this->Msanpham->getListFull('tuvansanpham');
 			//$data['category']=$this->Msanpham->getRowByColumn('xh_category','id',$category_id);
-			//$data['product']=$this->Msanpham->getRowByColumn('xh_product','id',$product_id);
+			$data['product']=$this->Msanpham->getRowByColumn('xh_product','id',$product_id);
 			//$data['parents']=$this->Msanpham->getListByColumn('xh_category','parent_id',0);
 			//$data['list_lienhe']=$this->Msanpham->getListFull('mc_contact_us');
 			//$data['list_hotro']=$this->Msanpham->getListFull('hotro');
@@ -85,7 +84,7 @@
 			// Lấy dl từ $data['detail'] (dòng trên)
 			//$category_id1=$data['detail']->category_id;
 			//var_dump($data['detail']->category_id);die();
-			//$data['relates']=$this->Msanpham->getListByColumnOffset('xh_product','category_id',$category_id1,0,6);
+			$data['relates']=$this->Msanpham->getListByColumnOffset('xh_product','id',$product_id,0,6);
 			
 			$data['page']='vdetail';
 			$this->load->view('front/container',$data);
