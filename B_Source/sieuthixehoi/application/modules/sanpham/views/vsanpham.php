@@ -51,12 +51,12 @@
 											<?php foreach ($items as $value): ?>
 												<table class="item">
 													<tr>
-														<td class="image"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>">
+														<td class="image"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>">
 															<!--<img src="<?php echo base_url();?>assets/sieuthixehoi/images/image-108.jpg" alt="" width="54" height="54"  />-->
 																		<?php echo $value->image ?>
 																		</a></td>
 														<td class="text">
-															<p class="title"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->category_id."-".$value->id."-".$value->alias ?>"><?php echo $value->namev?></a></p>
+															<p class="title"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>"><?php echo $value->namev?></a></p>
 															<p class="description"><?php echo word_limiter($value->mota, 20)?></p>
 														</td>
 														<td class="menu-price"><p><?php echo $value->price. ' VND'?></p></td>

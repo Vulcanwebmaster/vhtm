@@ -28,10 +28,6 @@
 			$data['bcCurrent']='sản phẩm';
 			$data['list']=$this->Msanpham->getListOffset('xh_product',15,$index);
 			$listCategories=array();
-			foreach ($data['list'] as $item)
-			{
-				$listCategories[]=$this->Msanpham->getRowByColumn('xh_category','id',$item->category_id);
-			}
 			$data['listCategories']=$listCategories;
 			$data['module']=$this->module;
 			$data['page']='admin_list_product';
@@ -41,9 +37,10 @@
 		
 		function _input()
 		{
-			$input=array('parent_id'=>$this->input->post('parent_id'),
+			$input=array(
+						//'parent_id'=>$this->input->post('parent_id'),
 						'namev'=>$this->input->post('namev'),
-						'category_id'=>$this->input->post('category_id'),
+						//'hangsx'=>$this->input->post('hangsx'),
 						'hangsx'=>$this->input->post('hangsx'),
 						'price'=>$this->input->post('price'),
 						'image'=>$this->input->post('image'),
@@ -71,7 +68,7 @@
 			else 
 			{
 				$this->form_validation->set_rules('namev','Tên','required|trim');
-				$this->form_validation->set_rules('category_id','Hãng xe','required|trim');
+				$this->form_validation->set_rules('hangsx','Hãng xe','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
@@ -116,7 +113,7 @@
 			else 
 			{
 				$this->form_validation->set_rules('namev','Tên','required|trim');
-				$this->form_validation->set_rules('category_id','Hãng xe','required|trim');
+				$this->form_validation->set_rules('hangsx','Hãng xe','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				

@@ -15,6 +15,13 @@
 					<input type="text" name="namev" style="width:95%" value="<?php echo $info->namev;?>"/>
 				</fieldset>
 				<fieldset>
+					<label>Hãng sản xuất</label>
+					<select name="hangsx">
+						<option value="Hyundai">HYUNDAI</option>
+						<option value="Chevrolet">CHEVROLET</option>
+					</select>
+				</fieldset>
+				<!--<fieldset>
 					<label>Dòng xe</label>
 					<select name="category_id">
 						<option></option>
@@ -28,11 +35,7 @@
 								<option value="<?php echo $item->id?>"><?php echo $item->namev;?></option>
 						<?php }} ?>
 					</select>
-				</fieldset>
-				<fieldset>
-					<label>Hãng sản xuất</label>
-					<input type="text" name="hangsx" style="width:95%" value="<?php echo $info->hangsx;?>"/>
-				</fieldset>
+				</fieldset>-->
 				<fieldset>
 					<label>Giá (VNĐ)</label>
 					<input type="text" name="price" style="width:95%" value="<?php echo $info->price;?>"/>

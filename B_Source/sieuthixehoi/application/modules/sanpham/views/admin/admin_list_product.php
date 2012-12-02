@@ -50,7 +50,6 @@
 							<th>STT</th>
 							<th>Hình ảnh</th>
 		    				<th>Tên</th>
-		    				<th>Dòng xe</th>
 		    				<th>Giá</th>
 		    				<th>Sửa/Xóa</th>
 						</tr> 
@@ -60,10 +59,18 @@
 					 	{     $i++; ?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
-					 			
+					 			<!--<td><?php if($item->parent_id==2){ ?>
+			    						HYUNDAI
+			    				<?php }else{ ?>
+			    						CHEVROLET
+			    				<?php } ?>
+			    				
+			    				</td>-->
+			    				<td><?php echo $item->hangsx;?></td>
+
 					 			<td><?php echo $item->image;?></td> 
 			    				<td><?php echo $item->namev;?></td>
-			    				<td><?php echo $listCategories[$count]->namev;?></td>
+			    				<!--<td><?php echo $listCategories[$count]->namev;?></td>-->
 			    				<td><?php echo $item->price;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>sanpham/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
