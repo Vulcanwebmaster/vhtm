@@ -21,15 +21,22 @@
 		
 		function page($index=0)
 		{
+			
 				$config['base_url']=base_url().'sanpham/page/';
 				$config['per_page']= 9;
+				//var_dump($index);die();
+				if($index==0){
 				$config['total_rows']=count($this->Msanpham->getListFull('xh_product'));
-				$config['uri_segment']=3;
+				}else{
+				$config['total_rows']=count($this->Msanpham->getListByColumn('xh_product','parent_id',$index));
+				//var_dump($config['total_rows']);die();
+				}
+				$config['uri_segment']=4;
 				$this->pagination->initialize($config);
 				$data['data']=$this->Msanpham->list_all($config['per_page'],$this->uri->segment(2));
 				//phai limit de lay so trang can phan
 				$this->load->helper('text');
-				$data['items']=$this->Msanpham->getListOffset('xh_product',9,$index);
+				$data['items']=$this->Msanpham->getListByColumn('xh_product','parent_id',$index);
 		 	 
 				$data['module']=$this->module;
 				$data['page']='vsanpham';
