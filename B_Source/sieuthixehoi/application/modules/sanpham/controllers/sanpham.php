@@ -37,13 +37,13 @@
 				//var_dump($config['total_rows']);die();
 				$this->pagination->initialize($config);
 				
-				$data['items']=$this->Msanpham->getListByColumnOffsetsp('xh_product','hangsx','Chevrolet',$index,4);
+				$data['items']=$this->Msanpham->getListByColumnOffset('xh_product','hangsx','Chevrolet',$index,4);
 				//var_dump($data['items']);die();	
 				$data['module']=$this->module;
 				$data['page']='vsanpham';
 				$this->load->view('front/container',$data);	
 		}
-
+		
 		function hyundai($index=0)
 		{
 				

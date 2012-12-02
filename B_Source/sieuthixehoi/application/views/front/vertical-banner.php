@@ -1,18 +1,20 @@
 <div id="abc">
 	    <div id="divAdRight" style="display: none; position: absolute; top: 0px; z-index:405">
 		                <img src="<?php echo base_url()?>assets/sieuthixehoi/images/vertical-banner1.jpg" alt=""/>
-		                <div class="img-ads-scrol">
+		                <div class="img-ads-scrol" style="color: white; width: 150px">
 		                	<center>
-		                		<a href="" target="_blank"></a>
+		                		<p>0912 892 683</p>
+		                		<p>tiendatautohd@gmail.com</p>
 		                	</center>	
 		                </div>
 	    </div>
 	</div>
     <div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px; z-index:405">
 	                <img src="<?php echo base_url()?>assets/sieuthixehoi/images/vertical-banner1.jpg" alt=""/>
-	                <div class="img-ads-scrol">
+	                <div class="img-ads-scrol" style="color: white; width: 150px">
 	                	<center>
-	                		<a href="" target="_blank"></a>
+	                		<p><strong>TIEN DAT AUTO</strong></p>
+	                		<p>Hoang Minh Giam - Nam Trung Yen Cau Giay Dist., Ha Noi</p>
 	                	</center>	
 	                </div>
     </div>

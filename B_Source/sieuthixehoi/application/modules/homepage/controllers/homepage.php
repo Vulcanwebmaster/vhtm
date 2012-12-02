@@ -9,6 +9,7 @@ class Homepage extends NIW_controller {
 		$this->module = strtolower(get_class());
 		$this->load->model('Mhomepage');
 		$this->load->library('session');
+		
 		$this->load->helper('text');
 		$this->load->library('pagination');
 		$this->load->helper('url');
@@ -16,19 +17,34 @@ class Homepage extends NIW_controller {
 	
 	public function index($index=0)
 	{
-		$config['base_url'] = base_url().'index';
-		$config['per_page'] = 18;
-		$config['total_rows'] = count($this->Mhomepage->getListFull('xh_product'));
-		$this->pagination->initialize($config);
-		
-		//phai limit de lay so trang can phan
-		$data['items'] = $this->Mhomepage->getListOffset('xh_product',18,$index);
-		
-		$data['title']='[Name Defined] | Home';
-		$data['module'] = $this->module;
-		$data['page'] = 'frontpage';
-		$this->load->view('front/container',$data);
+		$this->chevrolet();		
 	}
+	
+	function chevrolet($index=0)
+		{
+			$data['list_tuvan']=$this->Mhomepage->getListFull('tuvansanpham');
+		
+			$data['title']='[Name Defined] | Home';
+		
+		// list products
+			$config['base_url']=base_url().'homepage/chevrolet/';
+			$config['per_page']= 4;
+			$config['total_rows']=count($this->Mhomepage->getListByColumn('xh_product','hangsx','Chevrolet'));
+			//var_dump($config['total_rows']);die();
+			$this->pagination->initialize($config);
+			
+			$config['base_url']=base_url().'homepage/chevrolet/';
+			$config['per_page']= 4;
+			$config['total_rows']=count($this->Mhomepage->getListByColumn('xh_product','hangsx','Chevrolet'));
+			//var_dump($config['total_rows']);die();
+			$this->pagination->initialize($config);
+			
+			$data['items']=$this->Mhomepage->getListByColumnOffset('xh_product','hangsx','Chevrolet',$index,4);
+			//var_dump($data['items']);die();	
+			$data['module']=$this->module;
+			$data['page']='frontpage';
+			$this->load->view('front/container',$data);	
+		}
 }
 
 /* End of file welcome.php */
