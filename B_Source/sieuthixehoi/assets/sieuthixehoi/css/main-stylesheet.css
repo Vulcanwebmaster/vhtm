@@ -35,7 +35,7 @@ All files, unless otherwise stated, are released under the GNU General Public Li
 /* 0.0 Reset */
 .image img{ width: 54px !important ; height: 54px !important }
 html, body { height: 100%; }
-
+.image12345 img{ width: 302px !important ; height: 186px !important }
 body { margin: 0; padding: 0; font: 12px/18px Arial, serif; color: #2d2d2d; background: url(../images/main-body-bg.jpg) top center repeat-y; }
 
 h1, h2, h3, h4, h5, h6, span, p, form, input, ul, li, ol { margin: 0; padding: 0; }
@@ -248,7 +248,7 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 			.main-footer-wrapper .contact-information .address span { font-size: 20px; font-weight: normal; }
 			.main-footer-wrapper .contact-information .address p { margin: 0 0 4px 0; font-weight: normal; }
 		.main-footer-wrapper .contact-information .phone { padding: 3px 0 1px 47px; margin: 0 0 14px 0; font-size: 22px; font-weight: normal; line-height: 28px; background: url(../images/ico-phone-1.png) 0 0 no-repeat; }
-		.main-footer-wrapper .contact-information .email { padding: 1px 0 5px 47px; font-weight: bold; line-height: 21px; background: url(../images/ico-email-1.png) 0 0 no-repeat; }
+		.main-footer-wrapper .contact-information .email { padding: 1px 0 25px 47px; font-weight: bold; line-height: 21px; background: url(../images/ico-email-1.png) 0 0 no-repeat; }
 			.main-footer-wrapper .contact-information .email a { text-decoration: underline; }
 			.main-footer-wrapper .contact-information .email a:hover { text-decoration: none; }
 
