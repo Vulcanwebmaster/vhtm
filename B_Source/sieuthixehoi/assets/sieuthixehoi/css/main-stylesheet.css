@@ -516,11 +516,14 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 
 	.menu-card-content-wrapper .content-wrapper { width: 944px; min-height: 176px; background: url(../images/car-listings-bg.png) 0 0 repeat-y; }
 	.menu-card-content-wrapper .content { width: 890px; padding: 20px 0 22px 0; margin: 0; position: relative; z-index: 4; }
-		.menu-card-content-wrapper .content .left-side { width: 428px; margin: 0 48px 0 0; float: left; }
+		.menu-card-content-wrapper .content .left-side { width: 100%; margin: 0 48px 0 0; float: left; }
 		.menu-card-content-wrapper .content .right-side { width: 428px; margin: 0; padding: 0; float: left; overflow: hidden; }
 
 	.menu-card h3 { margin: 10px 0 20px 0; color: #af0600; }
-	.menu-card .item { margin: 0 0 20px 0; }
+	.menu-card .item {float: left;
+					    margin: 0 15px 20px 20px;
+					    width: 46%;
+					    height: 27px; }
 		.menu-card .item td { vertical-align: top; }
 		.menu-card .item .image { padding: 0 20px 0 0; }
 			.menu-card .item .image a { display: block; }
@@ -540,8 +543,8 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 		.menu-card-navigation .next span { padding: 0 9px 0 0; background: url(../images/bullet-1.png) right -24px no-repeat; }
 
 #card-container { width: 946px; position: relative; overflow: hidden; z-index: 200; }
-#card-slider { width: 100000px; }
-.card-page { width: 904px; margin: 0; margin: 0 26px 0 20px; float: left; overflow: hidden; }
+#card-slider { width: 100%; }
+.card-page { width: 100%; margin: 0; float: left; overflow: hidden; }
 
 .tinyTip { width: 218px; height: 218px; }
 	.tinyTip .content { width: 200px; height: 200px; padding: 18px 0 0 18px; background: url(../images/tinytip-content-bg.png) 0 0 no-repeat; }

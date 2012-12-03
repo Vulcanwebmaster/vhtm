@@ -59,7 +59,6 @@
 															<p class="title"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>"><?php echo $value->namev?></a></p>
 															<p class="description"><?php echo word_limiter($value->mota, 20)?></p>
 														</td>
-														<td class="menu-price"><p><?php echo $value->price. ' VND'?></p></td>
 													</tr>
 												</table>												
 											<?php endforeach ?>
@@ -69,7 +68,7 @@
 										<!-- END .left-side -->
 										
 										<!-- BEGIN .right-side -->
-										<div class="right-side">
+									<!--	<div class="right-side">
 											<h3></h3>
 											<table class="item">
 												<tr>
@@ -81,7 +80,7 @@
 													<td class="menu-price"><p>$9,000</p></td>
 												</tr>
 											</table>							
-										</div>
+									</div>-->
 										<!-- END .right-side -->
 										<div class="clear"></div>
 									</div>
