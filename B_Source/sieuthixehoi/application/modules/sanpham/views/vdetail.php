@@ -30,7 +30,7 @@
 					<div class="specification">
 						<h3>Specification</h3>
 						<div>
-							<span class="price"><?php echo $product->price ?> VND</span>
+							<span class="price"><?php echo $product->price ?></span>
 							<ul>
 								<li>Tên Sản Phẩm: <b><?php echo $product->namev ?></b></li>
 								<li>Hãng sản xuất: <b><?php echo $product->hangsx ?></b></li>

@@ -520,10 +520,7 @@ code { margin: 0 40px 25px 40px; padding: 20px 23px; color: #004a7b; border: 1px
 		.menu-card-content-wrapper .content .right-side { width: 428px; margin: 0; padding: 0; float: left; overflow: hidden; }
 
 	.menu-card h3 { margin: 10px 0 20px 0; color: #af0600; }
-	.menu-card .item {float: left;
-					    margin: 0 15px 20px 20px;
-					    width: 46%;
-					    height: 27px; }
+	.menu-card .item {float: left; margin: 0 15px 20px 20px; width: 46%; height: 27px; }
 		.menu-card .item td { vertical-align: top; }
 		.menu-card .item .image { padding: 0 20px 0 0; }
 			.menu-card .item .image a { display: block; }
