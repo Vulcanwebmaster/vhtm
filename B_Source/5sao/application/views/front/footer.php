@@ -21,7 +21,7 @@
 					<span style="font-size:13px;"> Bản quyền thuộc về Công ty cổ phần thiết bị Thái Dương</span>
 				<?php } else{ ?>
 					<span style="font-size:18px;line-height:40px; margin:0; padding-top:0">THAI DUONG EQUIPMENT JOINT STOCK COMPANY</span><br>	
-					<span style="font-size: 13px;"> 39/3, Cau Do 4, Ha Cau Ward, Ha Dong District, HaNoi<br>	
+					<span style="font-size: 13px;"> 39/3, Cau Do 4, Ha Cau Ward, Ha Dong District, Ha Noi<br>	
 					Tel/ Fax: 0466861137  - Hotline : 0985.534.534</span><br>	
 					<span style="font-size:13px;"> Copyright by: THAI DUONG EQUIPMENT JOINT STOCK COMPANY</span>
 				<?php } ?>
@@ -38,12 +38,13 @@
 								if ($_SESSION['lang']=="vn") 
 								{?>
 									<a <?php echo 'href="'.base_url().'sanpham/category/'.$category->id."-".$category->alias.'"';?> style="cursor:pointer"><?php echo $category->ten_v; ?></a>	
-									<?php if ($count<6) echo "|";?>
+									<?php if ($count<5) echo "|";?>
 								<?php }
 								else {?>
 									<a <?php  echo 'href="'.base_url().'sanpham/category/'.$category->id."-".$category->alias.'"';?> style="cursor:pointer"><?php echo $category->ten_e; ?></a>	
-									<?php if ($count<6) echo "|";?>
+									<?php if ($count<5) echo "|";?>
 									<?php }
+								if ($count==5) echo "</br>";
 							}
 							$count++;
 						}?>  

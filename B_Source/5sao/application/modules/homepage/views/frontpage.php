@@ -22,7 +22,12 @@
 					        </div>
 					</div>
 					<div id="items">
+					<?php if ($_SESSION['lang']=="vn") 
+						{?>
 						<p id="newpr">Sản phẩm mới</p>
+					<?php } else {?>
+						<p id="newpr">New Product</p>
+					<?php } ?>
 					  <?php foreach ($list as $item)
 						{?>
 							<div class="item">

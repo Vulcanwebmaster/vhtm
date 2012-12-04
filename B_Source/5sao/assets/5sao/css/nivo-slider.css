@@ -16,6 +16,7 @@
 	overflow: hidden;
 }
 .nivoSlider img {
+	height:280px !important; width:578px !important;
 	position:absolute;
 	top:0px;
 	left:0px;

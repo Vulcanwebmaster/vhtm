@@ -46,6 +46,7 @@ class Sanpham extends NIW_Controller
 		$this->pagination->initialize($config);
 		
 		$data['list_spbanchay']=$this->Msanpham->getListByColumn('sanpham','banchay','1');
+		$data['list_slide']=$this->Msanpham->getListFull('slide');
 		$data['list_thuvienanh']=$this->Msanpham->getListFull('thuvienanh');
 		$data['list_hotro']=$this->Msanpham->getListFull('hotro');
 		$data['list_hotline']=$this->Msanpham->gethotline('hotro');
@@ -112,6 +113,7 @@ class Sanpham extends NIW_Controller
 		$data['list_hotro']=$this->Msanpham->getListFull('hotro');
 		$data['list_hotline']=$this->Msanpham->gethotline('hotro');
 		$data['list_doitac']=$this->Msanpham->getListFull('doitac');
+		$data['list_slide']=$this->Msanpham->getListFull('slide');
 		$this->session->set_userdata('incategory','true');
 		$data['current_category']= $this->Msanpham->getRowByColumn('danhmuc','id',$id);
 		if ($_SESSION['lang']=="vn") 

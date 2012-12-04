@@ -45,9 +45,9 @@
 					</br>
 					<p style="font-weight: bold;  float: left ">Model</p> 		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->modele ?></p> </br>
 					<p style="font-weight: bold;  float: left ">Manufacturer</p> <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->hangsxe ?></p></br> 
-					<p style="font-weight: bold;  float: left ">warranty</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->baohanhe ?></p> </br>
-					<p style="font-weight: bold;  float: left ">warehouse</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->khohange ?></p> </br>
-					<p style="font-weight: bold;  float: left ">sale price</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->giabane ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Warranty</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->baohanhe ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Warehouse</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->khohange ?></p> </br>
+					<p style="font-weight: bold;  float: left ">Sale price</p>		 <p style="font-weight: bold; color:red; margin-left: 108px ">: <?php echo $detail->giabane ?></p> </br>
 				<?php } ?>
 			</div>
 		</div>			

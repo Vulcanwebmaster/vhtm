@@ -39,8 +39,7 @@
 									</div>
 									<?php }?>
 								</li>
-							<?php }
-							else {?>
+							<?php } else {?>
 								<li class="slidecontrol" style="display:inline"><a <?php 
 									echo 'href="'.base_url().'sanpham/category/'.$category->id."-".$category->alias.'"';?> class="type2" style="cursor:pointer">
 									<?php echo $category->ten_e; ?></a>	
@@ -81,7 +80,7 @@
                       </div>
                       <div id="mainmap"  class="bodermove">
                    		<h4 class="title3" style=" margin-top:0px;"><?php echo $this->lang->line('right-bando');?></h4>
-                        <div id="map"><iframe width="170" height="145" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16" style="color:#0000FF;text-align:left">
+                        <div id="map"><iframe width="170" height="145" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16&amp;output=embed"></iframe><br /><small><a  href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=vi&amp;geocode=&amp;q=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,+ph%C6%B0%E1%BB%9Dng+Ph%C3%BA+La,+qu%E1%BA%ADn+H%C3%A0+%C4%90%C3%B4ng,+th%C3%A0nh+ph%E1%BB%91+H%C3%A0+N%E1%BB%99i+&amp;aq=&amp;sll=20.967153,105.756518&amp;sspn=0.022481,0.042272&amp;g=La+kh%C3%AA+10+h%C3%A0+%C4%91%C3%B4ng+h%C3%A0+n%E1%BB%99i&amp;ie=UTF8&amp;hq=Khu+%C4%91%C3%B4+th%E1%BB%8B+V%C4%83n+Ph%C3%BA,&amp;hnear=Ph%C3%BA+La,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam&amp;t=m&amp;ll=20.959115,105.765209&amp;spn=0.002906,0.003626&amp;z=16" target="_blank" style="color:#0000FF;text-align:left">
                         	<?php if ($_SESSION['lang']=="vn"){?>
                         		Xem Bản đồ cỡ lớn hơn
                          	<?php } else{ ?>
