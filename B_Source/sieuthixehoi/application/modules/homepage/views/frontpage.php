@@ -25,7 +25,7 @@
 									<?php echo $value->image ?>
 								</a>
 								<p><?php echo word_limiter(strip_tags($value->mota), 25)?></p>
-								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>" class="more-link">Xem tiếp</a>
+								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>" class="more-link">Xem thêm</a>
 							<!-- END .item -->
 							</div>
 							<?php } ?>
