@@ -17,6 +17,7 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
+							<th>STT</th>
 		    				<th>Tiêu đề (Việt)</th> 
 		    				<th>Tóm tắt</th>
 		    				<th>Nội dung</th>
@@ -26,9 +27,9 @@
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php foreach ($list as $item)
-					 	{?>
-					 		<tr>  
+					 	<?php $i=0; $count=0; foreach ($list as $item)
+					 	{ $i++; ?>
+					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->news_title;?></td> 
 			    				<td><?php echo $item->news_summary;?></td> 
 			    				<td><?php echo $item->news_content;?></td> 
@@ -40,7 +41,7 @@
 			    					<a href="<?php echo base_url()?>tintuc/admin/delete/<?php echo $item->news_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
-					 	<?php }?>
+					 	<?php $count++; }  ?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->

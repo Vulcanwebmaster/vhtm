@@ -9,7 +9,7 @@
 	});
 </script>
 		
-<form method="post" action="<?php echo base_url();?>quangcao/admin/edit/<?php echo $info->id;?>">	
+<form method="post" action="<?php echo base_url();?>quangcao/admin/edit/<?php echo $info->ads_id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		
@@ -19,20 +19,22 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Ảnh đại diện</label>
-					<?php echo $this->ckeditor->editor('anh',$info->anh,$config);?>
+					<label>Ảnh quảng cáo</label>
+					<?php echo $this->ckeditor->editor('ads_banner',$info->ads_banner,$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Tiêu đề (Việt)</label>
-					<input type="text" name="tieude" style="width:92%" value="<?php echo $info->tieude;?>"/>
+					<label>Tên quảng cáo</label>
+					<input type="text" name="ads_name" style="width:92%" value="<?php echo $info->ads_name;?>"/>
 				</fieldset>
+				
 				<fieldset>
-					<label>Nội dung (Việt)</label>
-					<?php echo $this->ckeditor->editor('noidung',$info->noidung,$config);?>
+					<label>Start date</label>
+					<input type="text" name="ads_start_date" id="ads_start_date" value="<?php echo $info->ads_start_date;?>"/>
 				</fieldset>
+				
 				<fieldset>
-					<label>Ngày tháng</label>
-					<input type="text" name="ngaythang" id="ngaythang" value="<?php echo $info->ngaythang;?>"/>
+					<label>End date</label>
+					<input type="text" name="ads_end_date" id="ads_end_date" value="<?php echo $info->ads_end_date;?>"/>
 				</fieldset>
 			</div>
 			

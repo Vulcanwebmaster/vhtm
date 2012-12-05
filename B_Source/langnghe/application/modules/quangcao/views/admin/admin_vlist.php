@@ -17,24 +17,27 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-		    				<th>Tiêu đề (Việt)</th> 
+							<th>STT</th>
+		    				<th>Tên quảng cáo</th> 
+		    				<th>Ảnh đại diện</th>
 		    				<th>Sửa</th>
 		    				<th>Xóa</th>
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php foreach ($list as $item)
-					 	{?>
-					 		<tr>  
-			    				<td><?php echo $item->tieude;?></td> 
+					 	<?php $i=0; $count=0; foreach ($list as $item)
+					 	{ $i++; ?>
+					 		<tr><td><?php echo $i; ?></td>
+			    				<td><?php echo $item->ads_name;?></td> 
+			    				<td><?php echo $item->ads_banner;?></td>
 			    				<td>
-			    					<a href="<?php echo base_url()?>quangcao/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a href="<?php echo base_url()?>quangcao/admin/edit/<?php echo $item->ads_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    				</td>
 			    				<td>
-			    					<a href="<?php echo base_url()?>quangcao/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>quangcao/admin/delete/<?php echo $item->ads_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
-					 	<?php }?>
+					 	<?php $count++; }?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->

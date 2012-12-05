@@ -56,7 +56,7 @@
 					 	{     $i++; ?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
-			    				</td>-->
+			    				</td>
 			    				<td><?php echo $item->village_name;?></td>
 					 			<td><?php echo $item->village_description;?></td> 
 			    				<td>

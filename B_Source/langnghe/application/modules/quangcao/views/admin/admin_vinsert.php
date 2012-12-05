@@ -18,16 +18,24 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Ảnh đại diện</label>
-					<?php echo $this->ckeditor->editor('anh','',$config);?>
+					<label>Ảnh quảng cáo</label>
+					<?php echo $this->ckeditor->editor('ads_banner','',$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Tiêu đề (Việt)</label>
-					<input type="text" name="tieude" style="width:92%"/>
+					<label>Link Web</label>
+					<input type="text" name="ads_link" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Nội dung (Việt)</label>
-					<?php echo $this->ckeditor->editor('noidung','',$config);?>
+					<label>Tên quảng cáo</label>
+					<?php echo $this->ckeditor->editor('ads_name','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Start date</label>
+					<input type="text" name="ads_start_date" id="ads_start_date" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
+				</fieldset>
+				<fieldset>
+					<label>End date</label>
+					<input type="text" name="ads_start_date" id="ads_end_date" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
 				</fieldset>
 			</div>
 			

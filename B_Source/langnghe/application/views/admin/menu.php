@@ -6,13 +6,11 @@
 	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
-		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>langnghe/admin">Làng nghề</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>dulich/admin">Du lịch</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Quảng cáo</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>langnghe/admin">Làng nghề</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Quảng cáo</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

@@ -41,7 +41,6 @@
 		{
 			$input=array(
 						'ads_banner'=>$this->input->post('ads_banner'),
-						'ads_position'=>$this->input->post('ads_position'),
 						'ads_name'=>$this->input->post('ads_name'),
 						'ads_link'=>$this->input->post('ads_link'),
 						'ads_start_date'=>$this->input->post('ads_start_date'),
@@ -69,7 +68,7 @@
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mln_ads->insertNewRow('ln_ads',$input))
+					if ($this->Mquangcao->insertNewRow('ln_ads',$input))
 					{
 						$this->session->set_userdata('result','Thêm mới thành công');
 					}
@@ -111,7 +110,7 @@
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mln_ads->updateRowByColumn('ln_ads','id',$id,$input))
+					if ($this->Mquangcao->updateRowByColumn('ln_ads','ads_id',$id,$input))
 					{
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
@@ -132,7 +131,7 @@
 		
 		function delete($id=0)
 		{
-			if ($this->Mln_ads->deleteRowByColumn('ln_ads','ads_id',$id))
+			if ($this->Mquangcao->deleteRowByColumn('ln_ads','ads_id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');
 			}
