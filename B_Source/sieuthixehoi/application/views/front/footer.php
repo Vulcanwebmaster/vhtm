@@ -38,7 +38,7 @@
 					</div>
 					<div class="address">
 						<p><span>TIEN DAT AUTO</span></p>
-						<p> Office:Hoang Minh Giam - Nam Trung Yen Cau Giay Dist., Ha Noi</p>
+						<p> Hoàng Minh Giám - Thanh Xuân - Hà Nội</p>
 					</div>
 				<!-- END .contact-information -->
 				</div>
