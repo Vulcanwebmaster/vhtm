@@ -18,23 +18,24 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr>
-							<th>ID</th> 
+							<th>STT</th> 
 		    				<th>Tên danh mục</th>
+		    				<th>Kích hoạt</th>
 		    				<th>Action</th>
 						</tr> 
 					</thead> 
 					<tbody>
-					 	<?php foreach ($list as $item)
-					 	{?>
-					 		<tr>  
-			    				<td><?php echo $item->category_id;?></td> 
+					 	<?php $i=0; $count=0; foreach ($list as $item)
+					 	{     $i++;	?>
+					 		<tr> <td><?php echo $i++; ?></td>
 			    				<td><?php echo $item->category_name;?></td> 
+			    				<td><?php if($activeName[$count]) echo $activeName[$count];?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 				    				<a href="<?php echo base_url()?>danhmuc/admin/delete/<?php echo $item->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
-					 	<?php }?>
+					 	<?php $count++; }?>
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->

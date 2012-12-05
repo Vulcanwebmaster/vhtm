@@ -14,6 +14,13 @@
 					<label>Tên danh mục </label>
 					<input type="text" name="category_name" style="width:92%"/>
 				</fieldset>
+				<fieldset>
+					<label>Kích hoạt</label>
+					<select name="is_active">
+								<option value="0" selected="selected">Chưa kích hoạt</option>
+								<option value="1">Đã kích hoạt</option>
+					</select>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">

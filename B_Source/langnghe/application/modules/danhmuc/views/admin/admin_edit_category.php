@@ -9,8 +9,16 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên danh mục (Việt)</label>
+					<label>Tên danh mục </label>
 					<input type="text" name="category_name" style="width:92%" value="<?php echo $info->category_name;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Kích hoạt </label>
+					
+					<select name="is_active">
+								<option value="0" selected="selected">Chưa kích hoạt</option>
+								<option value="1">Đã kích hoạt</option>
+					</select>
 				</fieldset>
 			</div>
 			
