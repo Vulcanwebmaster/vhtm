@@ -1,14 +1,14 @@
 <!-- BEGIN .main-header-wrapper -->
 			<div class="main-header-wrapper">
-
 				<!-- BEGIN .header -->
 				<div class="header">
 
 					<!-- BEGIN .feedback-wrapper -->
+					
 					<div class="feedback-wrapper">
 						<!-- BEGIN .feedback -->
 						<div class="feedback" style="background: url(<?php echo base_url()?>assets/sieuthixehoi/images/header-product-image-1.png) top right no-repeat;">
-							<table>
+							<!--<table>
 								<tr>
 									<td>
 										<p class="text"><span>&quot;Chuyên nghiệp &amp; sang trọng&quot;</span></p>
@@ -20,7 +20,7 @@
 						</div>
 						<!-- BEGIN .feedback -->
 						<div class="feedback" style="background: url(<?php echo base_url()?>assets/sieuthixehoi/images/header-product-cruze1.png) top right no-repeat;">
-							<table>
+							<!--<table>
 								<tr>
 									<td>
 										<p class="text"><span>&quot;Sức mạnh &amp; thiết kế&quot;</span></p>
@@ -32,7 +32,7 @@
 						</div>
 						<!-- BEGIN .feedback -->
 						<div class="feedback" style="background: url(<?php echo base_url()?>assets/sieuthixehoi/images/header-product-image-3.png) top right no-repeat;">
-							<table>
+						<!--	<table>
 								<tr>
 									<td>
 										<p class="text"><span>&quot;Cổ điển &amp; Quyến rũ!&quot;</span></p>
