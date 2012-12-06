@@ -27,9 +27,15 @@
 					<tbody>
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{     $i++;	?>
-					 		<tr> <td><?php echo $i++; ?></td>
+					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->category_name;?></td> 
-			    				<td><?php if($activeName[$count]) echo $activeName[$count];?></td>
+			    				<td><?php if($item->is_active==0)
+			    							{
+			    								 echo 'Đã kích hoạt';
+			    							}else{
+			    								echo 'Chưa kích hoạt';
+			    							}?>
+			    				</td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 				    				<a href="<?php echo base_url()?>danhmuc/admin/delete/<?php echo $item->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

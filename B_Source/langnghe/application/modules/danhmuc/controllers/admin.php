@@ -17,16 +17,7 @@
 			$data['title']='Danh mục';
 			$data['bcCurrent']='Danh mục';
 			$data['list']=$this->Mdanhmuc->getListFull('ln_category');
-			$active=array();
-			
-			foreach ($data['list'] as $item)
-			{
-				$ctparent=$this->Mdanhmuc->getRowByColumn('ln_category','category_id',$item->is_active);
-				if ($ctparent)
-					$active[]=$ctparent->is_active;
-				else $active[]=false;
-			}
-			$data['activeName']=$active;
+			$data['active']=$this->Mdanhmuc->getActive('ln_category');
 			$data['module']=$this->module;
 			$data['page']='admin_list_category';
 			$this->load->view('admin/container',$data);

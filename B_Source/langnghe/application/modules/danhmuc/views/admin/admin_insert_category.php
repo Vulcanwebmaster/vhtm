@@ -17,8 +17,8 @@
 				<fieldset>
 					<label>Kích hoạt</label>
 					<select name="is_active">
-								<option value="0" selected="selected">Chưa kích hoạt</option>
-								<option value="1">Đã kích hoạt</option>
+								<option value="0" selected="selected"> Đã kích hoạt</option>
+								<option value="1">Chưa kích hoạt</option>
 					</select>
 				</fieldset>
 			</div>

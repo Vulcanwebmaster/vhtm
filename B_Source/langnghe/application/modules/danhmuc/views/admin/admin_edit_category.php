@@ -13,11 +13,10 @@
 					<input type="text" name="category_name" style="width:92%" value="<?php echo $info->category_name;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Kích hoạt </label>
-					
+					<label>Kích hoạt</label>
 					<select name="is_active">
-								<option value="0" selected="selected">Chưa kích hoạt</option>
-								<option value="1">Đã kích hoạt</option>
+								<option value="0" selected="selected"> Đã kích hoạt</option>
+								<option value="1">Chưa kích hoạt</option>
 					</select>
 				</fieldset>
 			</div>
