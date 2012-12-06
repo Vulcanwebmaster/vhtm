@@ -13,7 +13,7 @@
 			<!-- BEGIN .main-title -->
 			<div class="main-title">
 				<span><b>Chi tiết</b></span>
-				<a href="#">Trở về trang chủ</a>
+				<a href="<?php echo base_url();?>">Trở về trang chủ</a>
 			</div>
 			<!-- END .main-title -->
 			

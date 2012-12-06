@@ -12,7 +12,6 @@
 							<p>Các loại xe nổi bật</p>
 						<!-- END .homepage-title -->
 						</div>
-
 						<!-- BEGIN .homepage-columns-1 -->
 						<div class="homepage-columns-1 homepage-columns-1-spacer">
 							<!-- BEGIN .item -->

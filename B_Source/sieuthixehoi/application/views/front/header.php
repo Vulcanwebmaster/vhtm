@@ -12,7 +12,7 @@
 								<tr>
 									<td>
 										<p class="text"><span>&quot;Chuyên nghiệp &amp; sang trọng&quot;</span></p>
-										<p class="name"><span>Spark Van Blue</span><i>$87,000</i></p>
+										<p class="name"><span>Spark Van Blue</span></p>
 									</td>
 								</tr>
 							</table>
@@ -24,7 +24,7 @@
 								<tr>
 									<td>
 										<p class="text"><span>&quot;Sức mạnh &amp; thiết kế&quot;</span></p>
-										<p class="name"><span>Cruze Black</span><i> $ 150,000</i></p>
+										<p class="name"><span>Cruze Black</span></p>
 									</td>
 								</tr>
 							</table>
@@ -36,7 +36,7 @@
 								<tr>
 									<td>
 										<p class="text"><span>&quot;Cổ điển &amp; Quyến rũ!&quot;</span></p>
-										<p class="name"><span>New Lacetti</span><i>$ 60,000</i></p>
+										<p class="name"><span>New Lacetti</span></p>
 									</td>
 								</tr>
 							</table>

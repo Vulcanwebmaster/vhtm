@@ -17,8 +17,8 @@
 				<fieldset>
 					<label>Hãng sản xuất</label>
 					<select name="hangsx">
-						<option value="Hyundai">HYUNDAI</option>
 						<option value="Chevrolet">CHEVROLET</option>
+						<option value="Hyundai">HYUNDAI</option>
 					</select>
 				</fieldset>
 				<!--<fieldset>

@@ -1,3 +1,4 @@
+
 <!-- BEGIN .main-footer-wrapper -->
 		<div class="main-footer-wrapper">
 
@@ -15,8 +16,8 @@
 				<div class="social-networks">
 					<h3>Mạng xã hội</h3>
 					<ul>
-						<li class="twitter"><a href="#">Kết nối với chúng tôi trên Twitter</a></li>
-						<li class="facebook"><a href="#">Kết bạn với chúng tôi trên Facebook</a></li>
+						<li class="twitter"><a href="https://www.facebook.com/">Kết nối với chúng tôi trên Twitter</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/">Kết bạn với chúng tôi trên Facebook</a></li>
 					</ul>
 					<div class="map-wrapper">
 						<h3>Địa chỉ</h3>
