@@ -18,7 +18,7 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tiêu đề (Việt)</th> 
+		    				<th>Tiêu đề</th> 
 		    				<th>Tóm tắt</th>
 		    				<th>Nội dung</th>
 		    				<th>Ngày tháng</th>

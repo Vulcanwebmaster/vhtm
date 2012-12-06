@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2012 at 04:31 AM
+-- Generation Time: Dec 06, 2012 at 11:54 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -312,9 +312,7 @@ CREATE TABLE IF NOT EXISTS `n_ln_ads` (
 --
 
 INSERT INTO `n_ln_ads` (`ads_id`, `ads_banner`, `ads_position`, `ads_name`, `ads_link`, `ads_start_date`, `ads_end_date`) VALUES
-(1, '<p>\r\n	<img alt="" src="/langnghe/assets/langnghe/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', 0, '<p>	tuyêt</p>', '0', '2012-01-05 00:00:00', '2012-01-05 00:00:00'),
-(2, '<p>\r\n	wwwwwwwwww</p>\r\n', 0, '<p>\r\n	wwwwwwwwwwwwww</p>', 'wwwwwwwwwww', '2012-12-05 00:00:00', '0000-00-00 00:00:00'),
-(3, '<p>\r\n	aaaa</p>\r\n', 0, '<p>\r\n	aaaaaaaaaaaaa</p>', 'aaaaaaaaaaaaaaaaaaa', '2012-12-05 00:00:00', '0000-00-00 00:00:00');
+(1, '<p>\r\n	<img alt="" src="/langnghe/assets/langnghe/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', 0, '<p>	tuyêt</p>', '0', '2012-01-05 00:00:00', '2012-01-05 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -328,18 +326,15 @@ CREATE TABLE IF NOT EXISTS `n_ln_category` (
   `alias` varchar(1000) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `n_ln_category`
 --
 
 INSERT INTO `n_ln_category` (`category_id`, `category_name`, `alias`, `is_active`) VALUES
-(6, 'em ga ha ha', 'em-ga-ha-ha', 0),
-(12, 'Thi truong', 'Thi-truong', 0),
-(17, 'Tuyet ga', 'Tuyet-ga', 1),
-(18, 'chứng khoán', 'chung-khoan', 0),
-(19, 'gaga', 'gaga', 0);
+(20, 'Danh mục làng nghề', 'Danh-muc-lang-nghe', 0),
+(21, 'Danh mục sản phẩm', 'Danh-muc-san-pham', 1);
 
 -- --------------------------------------------------------
 
@@ -356,18 +351,14 @@ CREATE TABLE IF NOT EXISTS `n_ln_news` (
   `news_author` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `news_post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `n_ln_news`
 --
 
 INSERT INTO `n_ln_news` (`news_id`, `news_title`, `alias`, `news_summary`, `news_content`, `news_author`, `news_post_date`) VALUES
-(2, 'wwwwwww', 'tin tức mới nhất', '<p>\r\n	t&oacute;m tắt tin</p>\r\n', '<p>\r\n	tuyet tuyet</p>\r\n', 'tuyet', '2012-12-28 00:00:00'),
-(3, 'tuyet', '', '<p>\r\n	tuyt summary</p>\r\n', '<p>\r\n	content</p>\r\n', 'tuyet', '2012-12-05 00:00:00'),
-(4, 'aiti', '', '<p>\r\n	aiti</p>\r\n', '<p>\r\n	sddddd</p>\r\n', 'ssssss', '2012-06-05 00:00:00'),
-(5, 'aaaaaaaaaaa', '', '<p>\r\n	ssssssssssss</p>\r\n', '<p>\r\n	ssssssssssss</p>\r\n', 'sssssssssssss', '2012-12-05 00:00:00'),
-(6, 'aaaaaaaaaaa', '', '<p>\r\n	ssssssssssss</p>\r\n', '<p>\r\n	ssssssssssss</p>\r\n', 'sssssssssssss', '2012-12-05 00:00:00');
+(9, 'tin nóng', '', '<p>\r\n	tsgdshgdhsgds</p>\r\n', '<p>\r\n	sdfdsfđf</p>\r\n', 'sdsdsds', '2012-01-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -400,16 +391,16 @@ CREATE TABLE IF NOT EXISTS `n_ln_village` (
   `village_description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(5) NOT NULL,
   PRIMARY KEY (`village_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `n_ln_village`
 --
 
 INSERT INTO `n_ln_village` (`village_id`, `village_name`, `alias`, `village_description`, `category_id`) VALUES
-(1, 'làng gốm sứ1111', 'lang-gom-su1111', '<p>\r\n	l&agrave;ng gốm sứ nhiều loại rất đẹp v&agrave; đăc biệt</p>\r\n', 0),
+(1, 'Làng gốm', 'Lang-gom', '<p>\r\n	l&agrave;ng gốm sứ nhiều loại rất đẹp v&agrave; đăc biệt</p>\r\n', 0),
 (2, 'làng gốm sứ', 'lang-gom-su', '<p>\r\n	sđaaaaaaaaaaaaaaaaaa</p>\r\n', 0),
-(3, 'làng gốm sứ hay hay', 'lang-gom-su-hay-hay', '<p>\r\n	sđaaaaaaaaaaaaaaaaaa</p>\r\n', 0);
+(4, 'Dệt chiếu', 'Det-chieu', '<p>\r\n	dệt chiếu đẹp tại Nga Sơn</p>\r\n', 0);
 
 -- --------------------------------------------------------
 
@@ -595,7 +586,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-12-06 03:17:10', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2012-12-06 11:14:00', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------

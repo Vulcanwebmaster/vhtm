@@ -25,8 +25,8 @@
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Thông làng nghề';
-			$data['bcCurrent']='làng nghề';
+			$data['title']='Làng nghề';
+			$data['bcCurrent']='Làng nghề';
 			$data['list']=$this->Mlangnghe->getListOffset('ln_village',15,$index);
 			$listCategories=array();
 			$data['listCategories']=$listCategories;
