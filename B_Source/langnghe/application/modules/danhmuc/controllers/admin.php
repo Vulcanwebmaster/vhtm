@@ -6,8 +6,8 @@
 		{
 			parent::__construct();
 			$this->module=strtolower(get_class());
-			
 			$this->load->model('Mdanhmuc');
+			$this->load->library('pagination');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 		}

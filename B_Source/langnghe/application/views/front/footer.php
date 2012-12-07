@@ -40,11 +40,11 @@
 							 </font></p>
 			<p style="padding-top:20px">
 				<font face="Arial" style="font-size: 9pt">
-					<img title="Follow Us on Facebook" alt="Follow Us on Facebook" src="images/facebook_32.png">
-					<img title="Follow Us on Flickr" alt="Follow Us on Flickr" src="images/flickr_32.png">
-					<img title="Follow Us on Skype" alt="Follow Us on Skype" src="images/skype_32.png">
-					<img title="Follow Us on Twitter" alt="Follow Us on Twitter" src="images/twitter_32.png">
-					<img title="Follow Us on YouTube" alt="Follow Us on YouTube" src="images/youtube_32.png">
+					<img title="Follow Us on Facebook" alt="Follow Us on Facebook" src="<?php echo base_url() ?>assets/langnghe/images/facebook_32.png">
+					<img title="Follow Us on Flickr" alt="Follow Us on Flickr" src="<?php echo base_url() ?>assets/langnghe/images/flickr_32.png">
+					<img title="Follow Us on Skype" alt="Follow Us on Skype" src="<?php echo base_url() ?>assets/langnghe/images/skype_32.png">
+					<img title="Follow Us on Twitter" alt="Follow Us on Twitter" src="<?php echo base_url() ?>assets/langnghe/images/twitter_32.png">
+					<img title="Follow Us on YouTube" alt="Follow Us on YouTube" src="<?php echo base_url();?>assets/langnghe/images/youtube_32.png">
 				</font>
 			</p>
 			<p style="line-height: 150%"><b>

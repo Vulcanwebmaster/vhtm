@@ -5,8 +5,35 @@
 	$this->session->unset_userdata('result');
 	echo '</p>';
 }?>
-<section id="main" class="column" style="width:100%;">	
-	
+<style>
+	.del_button{cursor:pointer}
+</style>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa tin tức này này?");
+					if (r==true)
+					{
+						var uri="<?php echo base_url()?>tintuc/admin/delete/"+value;
+						window.location=uri;
+					}
+					else 
+					{
+					}
+				}
+</script>
+<?php function cutString($str)
+{
+	$offset=200;
+	if (strlen($str)>200)
+	{
+		while ($str[$offset]!=' ')
+			$offset++;
+	}
+	else $offset==strlen($str);
+	return substr($str, 0, $offset);
+}?>
 <form action="<?php echo base_url()?>tintuc/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
@@ -22,8 +49,8 @@
 		    				<th>Tóm tắt</th>
 		    				<th>Nội dung</th>
 		    				<th>Ngày tháng</th>
-		    				<th>Sửa</th>
-		    				<th>Xóa</th>
+		    				<th>Sửa|Xóa</th>
+		    				
 						</tr> 
 					</thead> 
 					<tbody>
@@ -36,10 +63,9 @@
 			    				<td><?php echo $item->news_post_date;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>tintuc/admin/edit/<?php echo $item->news_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->news_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
-			    				<td>
-			    					<a href="<?php echo base_url()?>tintuc/admin/delete/<?php echo $item->news_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
-			    				</td>
+			    				
 							</tr>
 					 	<?php $count++; }  ?>
 					</tbody> 

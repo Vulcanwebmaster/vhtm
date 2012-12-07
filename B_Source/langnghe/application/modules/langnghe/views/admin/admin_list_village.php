@@ -48,6 +48,7 @@
 							<th>STT</th>
 							<th>Tên làng nghề</th>
 							<th>Mô tả</th>
+							<th>Loại làng nghề</th>
 		    				<th>Sửa/Xóa</th>
 						</tr> 
 					</thead> 
@@ -56,9 +57,10 @@
 					 	{     $i++; ?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
-			    				</td>
+			    				
 			    				<td><?php echo $item->village_name;?></td>
 					 			<td><?php echo $item->village_description;?></td> 
+					 			<td><?php echo $item->category_id;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>langnghe/admin/edit/<?php echo $item->village_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->village_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

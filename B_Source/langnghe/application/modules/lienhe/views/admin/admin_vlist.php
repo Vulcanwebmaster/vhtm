@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa tin tức này?");
+					var r=confirm("Bạn muốn xóa liên hệ này?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>lienhe/admin/delete/"+value;

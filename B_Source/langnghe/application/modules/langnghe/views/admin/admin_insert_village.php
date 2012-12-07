@@ -13,9 +13,23 @@
 							<input type="text" name="village_name" style="width:92%"/>
 						</fieldset>
 						<fieldset>
+					<label>Loại làng nghề</label>
+					<select name="category_name">
+						
+						<?php  foreach ($list as $item)
+					 	{      ?>
+						<option value="<?php echo $item->category_id;?>"><?php echo $item->category_name;?></option>
+						
+						<?php } ?>
+					</select>
+					
+					
+				</fieldset>
+						<fieldset>
 							<label>Mô tả</label>
 							<?php echo $this->ckeditor->editor('village_description','',$config);?>
 						</fieldset>
+						
 					</div>
 					
 			<footer style="float:left">

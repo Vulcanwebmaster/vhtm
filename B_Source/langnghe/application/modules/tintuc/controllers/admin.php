@@ -24,14 +24,14 @@
 		function page($index=0)
 		{
 			$config['base_url']=base_url().'tintuc/admin/page/';
-			$config['per_page']=15;
+			$config['per_page']=3;
 			$config['total_rows']=count($this->Mtintuc->getListFull('ln_news'));
-			$config['uri_segment']=4;
+			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
 			$data['title']='Tin tức';
 			$data['bcCurrent']='tin tức';
-			$data['list']=$this->Mtintuc->getListOffset('ln_news',15,$index);
+			$data['list']=$this->Mtintuc->getListOffset('ln_news',3,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);

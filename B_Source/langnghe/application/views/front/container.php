@@ -31,13 +31,17 @@
 <body class="first ">
 	<div class="body-top">
 		<div class="main">
-		<?php $this->load->view('front/header');?>
-		<?php $this->load->view('front/left');?>
-		<div class="container">
-			<?php $this->load->view('front/slide')?>
-			<?php $this->load->view('front/content')?>
-		</div>
-		<?php $this->load->view('front/footer');?>
+			<?php $this->load->view('front/header');?>
+			<div id="content">
+				<div class="wrapper2">
+					<?php $this->load->view('front/left');?>
+				</div>
+				<div class="container">
+					<?php $this->load->view('front/slide');?>
+					
+			<div class="clear"></div>
+			</div>
+			<?php $this->load->view('front/footer');?>
 		</div>
 	</div>	
 </body>

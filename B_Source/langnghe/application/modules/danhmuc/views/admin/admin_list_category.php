@@ -5,7 +5,38 @@
 	$this->session->unset_userdata('result');
 	echo '</p>';
 }?>
+<style>
+	.del_button{cursor:pointer}
+</style>
+<script type="text/javascript">
+		function confirmDel(value)
+				{
+					var x;
+					var r=confirm("Bạn muốn xóa danh mục này này?");
+					if (r==true)
+					{
+						var uri="<?php echo base_url()?>danhmuc/admin/delete/"+value;
+						window.location=uri;
+					}
+					else 
+					{
+					}
+				}
+</script>
+<?php function cutString($str)
+{
+	$offset=200;
+	if (strlen($str)>200)
+	{
+		while ($str[$offset]!=' ')
+			$offset++;
+	}
+	else $offset==strlen($str);
+	return substr($str, 0, $offset);
+}?>
+<?php echo validation_errors(); ?>
 
+<?php echo form_open('form'); ?>
 <form method="post" action="<?php echo base_url();?>danhmuc/admin">
 <article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
@@ -21,7 +52,7 @@
 							<th>STT</th> 
 		    				<th>Tên danh mục</th>
 		    				<th>Kích hoạt</th>
-		    				<th>Action</th>
+		    				<th>Sửa|Xóa</th>
 						</tr> 
 					</thead> 
 					<tbody>
@@ -38,7 +69,8 @@
 			    				</td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->category_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-				    				<a href="<?php echo base_url()?>danhmuc/admin/delete/<?php echo $item->category_id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+				    				
+				    				<a class="del_button" onclick="confirmDel(<?php echo $item->category_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 							</tr>
 					 	<?php $count++; }?>

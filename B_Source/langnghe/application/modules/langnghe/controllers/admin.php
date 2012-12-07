@@ -20,14 +20,15 @@
 		function page($index=0)
 		{
 			$config['base_url']=base_url().'langnghe/admin/page/';
-			$config['per_page']=15;
+			$config['per_page']=3;
 			$config['total_rows']=count($this->Mlangnghe->getListFull('ln_village'));
-			$config['uri_segment']=4;
+			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
 			$data['title']='Làng nghề';
 			$data['bcCurrent']='Làng nghề';
-			$data['list']=$this->Mlangnghe->getListOffset('ln_village',15,$index);
+			$data['list']=$this->Mlangnghe->getListOffset('ln_village',3,$index);
+			//$data['list']=$this->Mlangnghe->getListFull('ln_village');
 			$listCategories=array();
 			$data['listCategories']=$listCategories;
 			$data['module']=$this->module;
@@ -63,6 +64,7 @@
 			else 
 			{
 				$this->form_validation->set_rules('village_name','Tên','required|trim');
+				$this->form_validation->set_rules('village_description','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				if ($this->form_validation->run())
 				{
@@ -105,6 +107,9 @@
 			else 
 			{
 				$this->form_validation->set_rules('village_name','Tên','required|trim');
+				
+				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				$this->form_validation->set_rules('village_description','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				if ($this->form_validation->run())
 				{
