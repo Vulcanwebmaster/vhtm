@@ -35,12 +35,14 @@
 			<div id="content">
 				<div class="wrapper2">
 					<?php $this->load->view('front/left');?>
-				</div>
+				
 				<div class="container">
 					<?php $this->load->view('front/slide');?>
 					
-			<div class="clear"></div>
-			</div>
+					
+				</div>
+				<div class="clear"></div>
+				</div>
 			<?php $this->load->view('front/footer');?>
 		</div>
 	</div>	
