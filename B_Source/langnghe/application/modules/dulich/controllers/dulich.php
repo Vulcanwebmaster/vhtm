@@ -1,12 +1,12 @@
 <?php
-class Tintuc extends NIW_Controller
+class Dulich extends NIW_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
-		$this->load->model('Mtintuc');
+		$this->load->model('Mdulich');
 		$this->load->library('session');
 		$this->load->helper('text');
 	}
@@ -17,11 +17,11 @@ class Tintuc extends NIW_Controller
 	
 	function page($index=0)
 	{
-		$data['items']=$this->Mtintuc->getListByColumn('ln_news','news_title',1);
+		$data['items']=$this->Mdulich->getListByColumn('dulich','tieude',1);
 		$data['title']='langnghe | Tin tức';
-		$data['list_tintuc']=$this->Mtintuc->getListOffset('ln_news',8,$index);
+		$data['list_dulich']=$this->Mdulich->getListOffset('dulich',8,$index);
 		$data['module']=$this->module;
-		$data['page']='vtintuc';
+		$data['page']='vdulich';
 		$this->load->view('front/container',$data);
 	}
 	
@@ -34,7 +34,7 @@ class Tintuc extends NIW_Controller
 				//$category_id = $temp[0];
 				$news_id = $temp[0];
 			}
-			$data['news']=$this->Mtintuc->getRowByColumn('ln_news','news_id',$news_id);
+			$data['dulich']=$this->Mdulich->getRowByColumn('dulich','id',$id);
 			$model=new CI_Model();
 			$data['module']=$this->module;
 			$data['page']='vdetail';

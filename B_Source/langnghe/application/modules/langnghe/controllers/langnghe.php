@@ -26,4 +26,6 @@
 				$data['page'] ='vlangnghe';
 				$this->load->view('front/container',$data);	
 		}
+	
+	
 	}

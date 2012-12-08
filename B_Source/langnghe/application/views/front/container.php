@@ -34,9 +34,9 @@
 						<div id="content">
 								<div class="wrapper2">
 									<?php $this->load->view('front/left');?>
-								
+									<div>
 									<?php $this->load->view('front/content');?>
-									
+									</div>
 								<div class="clear"></div>
 								</div>
 						</div>

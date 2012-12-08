@@ -5,7 +5,8 @@
 										<div class="boxIndent">
 											<div class="wrapper">
 							<!--BEGIN Search Box -->
-												<form action="" method="get">
+												
+												<form action="<?php echo base_url();?>timkiem/doSearch" method="post">
 													<div class="search_search">
 													<input name="keyword" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="80" value="Tìm kiếm..." onblur="if(this.value=='') this.value='Tìm kiếm...';" onfocus="if(this.value=='Tìm kiếm...') this.value='';"><input type="submit" value="Tìm kiếm" class="button" onclick="this.form.keyword.focus();"></div>
 													<input type="hidden" name="limitstart" value="0">
@@ -20,7 +21,7 @@
 										 <div class="boxIndent">
 											<h3 style="text-align:center"><span><span>Đăng nhập</span></span></h3>
 											<div class="wrapper">
-												<form action="" method="post" id="login-form">
+												<form action="<?php echo base_url() ?>login/dangnhap" method="post">
 													<p id="form-login-username">
 														<label for="modlgn-username">Tài khoản</label>
 														<input id="modlgn-username" type="text" name="username" class="inputbox" size="18" value="" onblur="" onfocus="">
@@ -34,7 +35,7 @@
 															<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes">
 															<label for="modlgn-remember">Ghi nhớ đăng nhập</label>
 														</p>
-														<input type="submit" name="Submit" class="button" value="Log in">
+														<input type="submit" name="submit" class="button" value="Log in">
 														<input type="hidden" name="option" value="com_users">
 														<input type="hidden" name="task" value="user.login">
 														<input type="hidden" name="return" value="aW5kZXgucGhwP0l0ZW1pZD00MzU=">

@@ -11,6 +11,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Quảng cáo</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>dulich/admin">Du lịch</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

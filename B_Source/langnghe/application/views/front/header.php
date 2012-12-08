@@ -13,11 +13,11 @@
 						<div id="topmenu">
 							<div class="moduletable-nav">					
 								<ul class="menu">
-										<li class="item-444"><a href="#">Trang chủ</a></li>
-										<li class="item-207"><a href="<?php echo base_url();?>assets/langnghe/html/news.htm">Tin tức</a></li>
-										<li class="item-471"><a href="<?php echo base_url();?>assets/langnghe/html/langnghe.htm">Làng nghề</a></li>
-										<li class="item-472"><a href="<?php echo base_url();?>assets/langnghe/html/sanpham.htm">Sản phẩm làng nghề</a></li>
-										<li class="item-470"><a href="<?php echo base_url();?>assets/langnghe/html/dulich.htm">Du lịch làng nghề</a></li>
+										<li class="item-444"><a href="<?php echo base_url();?>homepage">Trang chủ</a></li>
+										<li class="item-207"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
+										<li class="item-471"><a href="<?php echo base_url();?>langnghe">Làng nghề</a></li>
+										<li class="item-472"><a href="<?php echo base_url();?>sanpham">Sản phẩm làng nghề</a></li>
+										<li class="item-470"><a href="<?php echo base_url();?>dulich">Du lịch làng nghề</a></li>
 										<li class="item-472"><a href="<?php echo base_url();?>assets/langnghe/html/register.htm">Đăng ký gian hàng</a></li>
 										<li class="item-470"><a href="<?php echo base_url();?>assets/langnghe/html/anh.htm">Ảnh làng nghề</a></li>
 								</ul>
