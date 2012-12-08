@@ -26,6 +26,10 @@
 					<?php echo $this->ckeditor->editor('news_summary','',$config);?>
 				</fieldset>
 				<fieldset>
+					<label>Ảnh </label>
+					<?php echo $this->ckeditor->editor('news_image','',$config);?>
+				</fieldset>
+				<fieldset>
 					<label>Nội dung </label>
 					<?php echo $this->ckeditor->editor('news_content','',$config);?>
 				</fieldset>

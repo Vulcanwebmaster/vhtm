@@ -44,7 +44,8 @@
 						'news_summary'=>$this->input->post('news_summary'),
 						'news_content'=>$this->input->post('news_content'),
 						'news_post_date'=>$this->input->post('news_post_date'),
-						'news_author'=>$this->input->post('news_author'));
+						'news_author'=>$this->input->post('news_author'),
+						'news_image'=>$this->input->post('news_image'));
 			return $input;
 		}
 		

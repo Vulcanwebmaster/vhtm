@@ -63,8 +63,6 @@
 					<center>
 						<input name="submit" type="submit" value="Gửi đi" style="height:25px; width:70px; margin:auto ;text-align: center"/>
 					</center>
-					<!--<p class="show-all"><a href="javascript:{}" onclick="return Validate(); submitform();" 
-						class="btn-1 btn-1-color-default"><span>Gửi đi</span></a></p>-->
 				</td>
 			</tr>
 		</table>

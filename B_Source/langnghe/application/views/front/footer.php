@@ -1,5 +1,4 @@
-<!---------------------begin footer----------------------------->
-	<div id="foot">		
+<div id="foot">		
 		<div class="wrapper">
 			<div class="moduletable" id="menu_footer">
 				<p align="center" style="padding:10px; border-bottom: 1px solid #E2E2E2"><font face="Arial" style="font-size: 9pt">
@@ -40,10 +39,10 @@
 							 </font></p>
 			<p style="padding-top:20px">
 				<font face="Arial" style="font-size: 9pt">
-					<img title="Follow Us on Facebook" alt="Follow Us on Facebook" src="<?php echo base_url() ?>assets/langnghe/images/facebook_32.png">
-					<img title="Follow Us on Flickr" alt="Follow Us on Flickr" src="<?php echo base_url() ?>assets/langnghe/images/flickr_32.png">
-					<img title="Follow Us on Skype" alt="Follow Us on Skype" src="<?php echo base_url() ?>assets/langnghe/images/skype_32.png">
-					<img title="Follow Us on Twitter" alt="Follow Us on Twitter" src="<?php echo base_url() ?>assets/langnghe/images/twitter_32.png">
+					<img title="Follow Us on Facebook" alt="Follow Us on Facebook" src="<?php echo base_url();?>assets/langnghe/images/facebook_32.png">
+					<img title="Follow Us on Flickr" alt="Follow Us on Flickr" src="<?php echo base_url();?>assets/langnghe/images/flickr_32.png">
+					<img title="Follow Us on Skype" alt="Follow Us on Skype" src="<?php echo base_url();?>assets/langnghe/images/skype_32.png">
+					<img title="Follow Us on Twitter" alt="Follow Us on Twitter" src="<?php echo base_url();?>assets/langnghe/images/twitter_32.png">
 					<img title="Follow Us on YouTube" alt="Follow Us on YouTube" src="<?php echo base_url();?>assets/langnghe/images/youtube_32.png">
 				</font>
 			</p>

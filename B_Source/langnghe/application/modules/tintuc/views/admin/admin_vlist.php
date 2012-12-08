@@ -47,6 +47,7 @@
 							<th>STT</th>
 		    				<th>Tiêu đề</th> 
 		    				<th>Tóm tắt</th>
+		    				<th>Ảnh</th>
 		    				<th>Nội dung</th>
 		    				<th>Ngày tháng</th>
 		    				<th>Sửa|Xóa</th>
@@ -59,6 +60,7 @@
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->news_title;?></td> 
 			    				<td><?php echo $item->news_summary;?></td> 
+			    				<td><?php echo $item->news_image;?></td>
 			    				<td><?php echo $item->news_content;?></td> 
 			    				<td><?php echo $item->news_post_date;?></td>
 			    				<td>

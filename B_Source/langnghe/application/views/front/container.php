@@ -27,23 +27,21 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/langnghe/css/style2.css" type="text/css" media="screen" />
 		
 </head>
-
 <body class="first ">
 	<div class="body-top">
 		<div class="main">
-			<?php $this->load->view('front/header');?>
-			<div id="content">
-				<div class="wrapper2">
-					<?php $this->load->view('front/left');?>
-				
-				<div class="container">
-					<?php $this->load->view('front/slide');?>
-					
-					
-				</div>
-				<div class="clear"></div>
-				</div>
-			<?php $this->load->view('front/footer');?>
+						<?php $this->load->view('front/header');?>
+						<div id="content">
+								<div class="wrapper2">
+									<?php $this->load->view('front/left');?>
+								
+									<?php $this->load->view('front/content');?>
+									
+								<div class="clear"></div>
+								</div>
+						</div>
+						<div class="clear"></div>
+						<?php $this->load->view('front/footer');?>
 		</div>
 	</div>	
 </body>

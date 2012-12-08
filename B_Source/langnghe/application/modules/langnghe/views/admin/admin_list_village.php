@@ -54,13 +54,14 @@
 					</thead> 
 					<tbody>
 					 	<?php $i=0; $count=0; foreach ($list as $item)
-					 	{     $i++; ?>
+					 	{
+							     $i++; ?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td>
 			    				
 			    				<td><?php echo $item->village_name;?></td>
 					 			<td><?php echo $item->village_description;?></td> 
-					 			<td><?php echo $item->category_id;?></td>
+					 			<td><?php echo $item->category_name;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>langnghe/admin/edit/<?php echo $item->village_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->village_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

@@ -12,8 +12,8 @@ class Lienhe extends NIW_Controller
 	
 	function index()
 	{
-		$data['list_tuvan']=$this->Mlienhe->getListFull('tuvansanpham');		
-		$data['title']='Sieuthixe | Liên hệ';
+		$data['list_tuvan']=$this->Mlienhe->getListFull('lienhe');		
+		$data['title']='langnghe | Liên hệ';
 		$data['module']=$this->module;
 		$data['page']='vlienhe';
 		$this->load->view('front/container',$data);

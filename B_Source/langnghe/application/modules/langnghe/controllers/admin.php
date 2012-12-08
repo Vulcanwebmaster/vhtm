@@ -27,8 +27,8 @@
 			
 			$data['title']='Làng nghề';
 			$data['bcCurrent']='Làng nghề';
-			$data['list']=$this->Mlangnghe->getListOffset('ln_village',3,$index);
-			//$data['list']=$this->Mlangnghe->getListFull('ln_village');
+			//$data['list']=$this->Mlangnghe->getListOffset('ln_village',3,$index);
+			$data['list']=$this->Mlangnghe->getListFull('ln_village');
 			$listCategories=array();
 			$data['listCategories']=$listCategories;
 			$data['module']=$this->module;
