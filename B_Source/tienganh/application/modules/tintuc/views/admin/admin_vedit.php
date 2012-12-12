@@ -23,6 +23,15 @@
 					<input type="text" name="news_title" style="width:92%" value="<?php echo $info->news_title;?>"/>
 				</fieldset>
 				<fieldset>
+					<label>Mục tin tức</label>
+					<select name="news_category">
+						<?php  foreach ($list as $item)
+					 	{      ?>
+						<option value="<?php echo $item->news_category;?>"><?php echo $item->news_category;?></option>
+						<?php } ?>
+					</select>
+				</fieldset>
+				<fieldset>
 					<label>Nội dung </label>
 					<?php echo $this->ckeditor->editor('news_content',$info->news_content,$config);?>
 				</fieldset>

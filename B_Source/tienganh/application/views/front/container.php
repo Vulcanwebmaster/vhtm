@@ -11,14 +11,12 @@
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/nivo-slider.css" type="text/css" media="screen" />
 	  	 <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.1.min.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.nivo.slider.js"></script>
-	    <script type="text/javascript">
+	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jsadd.js"></script>
+	        <script type="text/javascript">
 	    $(window).load(function() {
 	        $('#slider').nivoSlider();
 	    });
     </script>
-     <style>
-     #slider img{ width:960px; height:400px !important;}
-    </style>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('.submenu').hide();
@@ -33,6 +31,7 @@
 			});
 		</script>
 	</head>
+	</head>
 	<body>
 		<div id="wapper">
 			<!--------------begin header---------------->
@@ -45,4 +44,16 @@
 			<?php $this->load->view('front/footer');?>
 		</div>
 	</body>
+	<script type="text/javascript">
+		        		$(document).ready(function(){		        			
+		        			$(".prev12").click(function(){
+						  $(".slideimage").animate({"left": "+=311px"}, "slow");
+							});
+							
+							$(".next12").click(function(){
+								
+							  $(".slideimage").animate({"left": "-=311px"}, "slow");
+							});
+		        		});
+					</script>
 </html>

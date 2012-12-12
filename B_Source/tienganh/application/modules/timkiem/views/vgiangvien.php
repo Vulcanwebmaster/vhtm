@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	$('#menu-sanpham').css('color','#D9B24A');
+</script>
+<style>
+	.inputsearch{
+		height: 23px;
+	}
+</style>
+<div id="center">
+	<?php if (isset($current_category))
+	{
+		if ($_SESSION['lang']=="vn")
+			echo '<h2>Mục giảng viên: '.$current_category->ten_v.'</h2>';
+		else echo '<h2>Danh mục giảng viên: '.$current_category->ten_e.'</h2>';
+	}
+	else echo '<h2>Danh sách giảng viên</h2>';?>
+	
+	<div id="items">
+		<?php foreach ($list as $item)
+		{?>
+			<div class="item">
+				<div class="itemimage">
+					<a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->danhmuc_id."-".$item->id."-".$item->alias;?>">
+						<?php echo $item->hinhanh;?>
+					</a><br />								
+				</div>
+	            <div class="itemh5"><?php if ($_SESSION['lang']=="vn") echo $item->ten_v; else echo $item->ten_e;?></div>
+			</div>
+		<?php }?>
+		<br class="clear"/>
+	</div>
+	<!--<div class="pagination-control"><?php echo $this->pagination->create_links();?></div>-->
+</div>

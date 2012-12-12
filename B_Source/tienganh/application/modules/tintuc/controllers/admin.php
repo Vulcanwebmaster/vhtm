@@ -41,6 +41,7 @@
 		{
 			$input=array(
 						'news_title'=>$this->input->post('news_title'),
+						'news_category'=>$this->input->post('news_category'),
 						'news_content'=>$this->input->post('news_content'),
 						'news_post_date'=>$this->input->post('news_post_date'),
 						'news_author'=>$this->input->post('news_author'),
@@ -53,6 +54,7 @@
 		{
 			if (!$this->input->post('news_title'))
 			{
+				$data['list']=$this->Mtintuc->getListFull('ta_news');
 				$data['config'] = $this->setupCKEditor('97%','200px');
 				$data['title']='Thêm tin tức';
 				$data['bcCurrent']='Tin tức';
@@ -77,6 +79,7 @@
 				}
 				else 
 				{
+					$data['list']=$this->Mtintuc->getListFull('ta_news');
 					$data['config'] = $this->setupCKEditor('97%','200px');
 					$data['title']='Thêm tin tức';
 					$data['bcCurrent']='tin tức';
@@ -94,6 +97,7 @@
 			//=============================================
 			if (!$this->input->post('news_title'))
 			{
+				$data['list']=$this->Mtintuc->getListFull('ta_news');
 				$data['info']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
 				$data['title']='Sửa tin tức';
 				$data['bcCurrent']='Tin tức';
@@ -118,6 +122,7 @@
 				}
 				else 
 				{
+					$data['list']=$this->Mtintuc->getListFull('ta_news');
 					$data['info']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
 					$data['title']='Sửa tin tức';
 					$data['bcCurrent']='Tin tức';

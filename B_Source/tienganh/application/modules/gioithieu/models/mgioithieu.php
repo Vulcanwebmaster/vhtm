@@ -1,10 +1,16 @@
 <?php
-class Mgioithieu extends CI_Model
-{
-	function __construct()
+	class Mgioithieu extends CI_Model
 	{
-		parent::__construct();
-		$this->load->database();
-		$this->load->helper('date');
+		function __construct()
+		{
+			parent::__construct();
+			$this->load->database();
+		}
+		
+		function getOne()
+		{
+			$this->db->where('about_id',1);
+			$query = $this->db->get('ta_about_us');
+			return $query->row();
+		}
 	}
-}

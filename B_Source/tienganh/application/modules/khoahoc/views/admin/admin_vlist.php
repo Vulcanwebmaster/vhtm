@@ -12,10 +12,10 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa giới thiệu này?");
+					var r=confirm("Bạn muốn xóa khóa học này?");
 					if (r==true)
 					{
-						var uri="<?php echo base_url()?>gioithieu/admin/delete/"+value;
+						var uri="<?php echo base_url()?>khoahoc/admin/delete/"+value;
 						window.location=uri;
 					}
 					else 
@@ -34,7 +34,7 @@
 	else $offset==strlen($str);
 	return substr($str, 0, $offset);
 }?>
-<form action="<?php echo base_url()?>gioithieu/admin/saveColumn1" method="post">    
+<form action="<?php echo base_url()?>khoahoc/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
 			<h3><?php echo $title; ?></h3>			
@@ -45,8 +45,9 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tiêu đề</th> 
-		    				<th>Ảnh</th>
+		    				<th>Tên khóa học</th> 
+		    				<th>Loại khóa học</th>
+		    				<th>Ngày tháng</th>
 		    				<th>Nội dung</th>
 		    				<th>Sửa|Xóa</th>
 		    				
@@ -56,12 +57,13 @@
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
-			    				<td><?php echo $item->about_title;?></td> 
-			    				<td><?php echo $item->about_image;?></td>
-			    				<td><?php echo $item->about_content;?></td> 
+			    				<td><?php echo $item->courses_name;?></td> 
+			    				<td><?php echo $item->courses_category;?></td>
+			    				<td><?php echo $item->courses_date;?></td>
+			    				<td><?php echo $item->courses_content;?></td> 
 			    				<td>
-			    					<a href="<?php echo base_url()?>gioithieu/admin/edit/<?php echo $item->about_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->about_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>khoahoc/admin/edit/<?php echo $item->courses_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->courses_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -75,7 +77,7 @@
 				<footer>
 						
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>gioithieu/admin/insert">Thêm mới</a>
+							<a class="alt_btn" href="<?php echo base_url();?>khoahoc/admin/insert">Thêm mới</a>
 						</div>
 				</footer>
 						

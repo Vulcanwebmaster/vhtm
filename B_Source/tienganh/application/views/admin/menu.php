@@ -10,6 +10,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>giangvien/admin">Giảng viên</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>info/admin">Thông tin</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>khoahoc/admin">Khóa học</li>
 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</li>
 	</ul>
 <h3>Users</h3>

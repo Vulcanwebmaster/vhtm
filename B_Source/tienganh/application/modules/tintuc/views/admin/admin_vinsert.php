@@ -22,6 +22,15 @@
 					<input type="text" name="news_title" style="width:92%"/>
 				</fieldset>
 				<fieldset>
+					<label>Loại tin tức</label>
+					<select name="news_category">
+						<?php  foreach ($list as $item)
+					 	{      ?>
+						<option value="<?php echo $item->news_category;?>"><?php echo $item->news_category;?></option>
+						<?php } ?>
+					</select>
+				</fieldset>
+				<fieldset>
 					<label>Ảnh </label>
 					<?php echo $this->ckeditor->editor('news_image','',$config);?>
 				</fieldset>

@@ -4,19 +4,32 @@ class Homepage extends NIW_controller {
 	
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
+		$this->load->model('Mhomepage');
+		$this->load->library('pagination');
+		
+		//var_dump($_SESSION['front_user_fullname']); die();
 	}
 	
 	public function index()
 	{
-		$data['title']='[Name Defined] | Home';
+		$this->page();
+	}
+	
+	public function page($index=0)
+	{
+		//$data['items'] = $this->Mhomepage->getListOffset('ln_village',4,$index);
+		$data['list_tintuc']=$this->Mhomepage->getListOffset('ta_news',3,0);
+		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);
+		//$data['product']=$this->Mhomepage->getListOffset('ln_product',5,0);
+		//$data['product_timkiem']=$this->Mhomepage->getListOffset('ln_product',5,0);
+		
+		$data['title']='tienganh | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
