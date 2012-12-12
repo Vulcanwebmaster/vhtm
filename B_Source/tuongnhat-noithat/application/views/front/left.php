@@ -66,7 +66,7 @@
         </style>
 		<div class="line moreInfo">
 			<div class="unit">
-				<div class="navMenu navMenuInfo info"><li><a href="#">+ INFO</a></li></div>
+				<div class="navMenu navMenuInfo info"><li><a style="cursor: pointer">+ INFO</a></li></div>
 				<div class="nav_spots navMenu navMenuEspecialGeneric infodown" style="display: none; ">
 					<ul class="menuLevel1">       
                         <li><a href="<?php echo base_url()?>dangnhap/registAccount"><?php echo $this->lang->line('dangky');?></a></li>

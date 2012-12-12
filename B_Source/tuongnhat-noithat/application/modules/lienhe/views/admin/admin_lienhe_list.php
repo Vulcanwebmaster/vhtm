@@ -26,7 +26,6 @@ if($this->session->userdata('session'))
 					<th align="center">STT</th> 
     				<th align="center">Tên người gửi</th> 
     				<th align="center">Địa chỉ email</th>
-    				<th align="center">Tên danh mục</th>
     				<th align="center">Tiêu đề</th>
     				<th align="center">Nội dung</th>
     				<th align="center">Ngày gửi</th>
@@ -43,7 +42,6 @@ if($this->session->userdata('session'))
 					<td align="center"><?php echo $count+1; ?></td>
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_name ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_email ?></td>
-    				<td align="center" style="padding: 0px;"><?php echo $listCategory[$count]->category_name_v ?></td>  
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_subject ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo word_limiter($row->contact_message); ?></td> 
     				<td align="center" style="padding: 0px;"><?php echo $row->contact_date_create ?></td>

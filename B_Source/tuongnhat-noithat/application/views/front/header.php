@@ -26,7 +26,7 @@
                                      <li>
                                      	<?php if (isset($_SESSION['front_user_fullname']))
                                      	{?>
-                                     		<p style="padding:0">Xin chào <strong><?php echo $_SESSION['front_user_fullname'];?></strong> &ndash;
+                                     		<p style="padding:0"><?php echo $this->lang->line('header-xinchao');?> <strong><?php echo $_SESSION['front_user_fullname'];?></strong> &ndash;
                                      			<a href="<?php echo base_url();?>dangnhap/logOut"><?php echo $this->lang->line('header-dangxuat');?></a>
                                      		</p>
                                      	<?php }
@@ -37,7 +37,7 @@
                                      <li>|</li> 
                                      <li id="basket" class="basket">
                                      	<div id="miniShopCart" class="unit size1of1">                                        	
-                                            	<a id="shoppingCartBar" href="#">
+                                            	<a id="shoppingCartBar" href="<?php echo base_url()?>sanpham/xemgiohang">
                                             		<img id="bag" src="<?php echo base_url()?>assets/tuongnhatp2/images/ico_shopping_bag.png">
                                             		<?php echo $this->lang->line('header-giohang');?> 
                                             		<span>(<span id="miniShopCartItems"><?php if (isset($_SESSION['basket'])) echo count($_SESSION['basket']);?></span>
@@ -45,7 +45,16 @@
                                             		</span>
                                             	</a>                                 
                                       	</div>
-                                     </li>   
+                                     </li> 
+                                     <li>|</li>
+                                     <li>
+                                     	<a href="<?php echo base_url();?>changelang/change/vn">
+                                     		<img src="<?php echo base_url()?>assets/tuongnhatp2/images/vn.png" alt="Vietnamese" class="lang-selector"/>
+                                     	</a>
+                                     	<a href="<?php echo base_url();?>changelang/change/en">
+                                     		<img src="<?php echo base_url()?>assets/tuongnhatp2/images/en.jpg" alt="Vietnamese" class="lang-selector"/>
+                                     	</a>
+                                     </li>  
                                 </ul>
                             </div>
                         </div>

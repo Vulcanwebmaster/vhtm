@@ -29,7 +29,7 @@
 	                    		<option value="<?php echo $value?>"><?php echo $value?></option>
 	                    	<?php }?>
 	                    </select>
-	                    <input type="submit" name="filter-submit" id="filter-submit" value="Lọc"/>
+	                    <input type="submit" name="filter-submit" id="filter-submit" value="Lọc" style="cursor:pointer"/>
                     </form>
                 </li>
 			</ul>

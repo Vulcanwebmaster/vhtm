@@ -6,3 +6,7 @@
 #register-form td{padding:5px 10px}
 #register-form {margin-left: 200px}
 .red {color:red}
+.lang-selector {height:20px; width:35px; box-shadow: 0 2px 3px 0 #5c5c5c}
+#order-info, #order-deadline{float:left; margin-left:100px}
+.clear{clear: both}
+#order{padding:25px; box-shadow:0 0 20px 0 #868686; margin-bottom:15px}

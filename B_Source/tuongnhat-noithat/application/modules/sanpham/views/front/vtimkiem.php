@@ -25,12 +25,6 @@
 <div class="line">
 	<div class="unit size3of4">
 		<div class="filters">
-			<ul class="listH">            				
-				<li class="filter sliderFilter" id="price">
-					<a class="arrow filterTitle" id="drop_precio" style="font-weight: normal; ">Giá</a>
-                    <select></select>
-                </li>
-			</ul>
 		</div>
 	</div>
 	<div class="unit size1of4">
@@ -64,7 +58,7 @@
 				<?php foreach ($listProducts as $product)
 				{?>
 					<li class="filteredItem">
-						<a href="#" class="mainProductLink pLink">
+						<a href="<?php echo base_url();?>sanpham/chitiet/-<?php echo $product->product_id;?>-<?php echo $product->alias;?>" class="mainProductLink pLink">
 							<?php echo $product->product_image;?>
 							<?php if ($product->is_new=='1')
 							{?>

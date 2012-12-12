@@ -85,7 +85,7 @@ class NIW_Controller extends CI_Controller {
 
 		foreach($this->_fields as $key => $val)
 		{
-			$this->$key = ( ! isset($_POST[$key])) ? '' : $this->prep_for_form($_POST[$key]);
+			$this->$key	= ( ! isset($_POST[$key])) ? '' : $this->prep_for_form($_POST[$key]);
 
 			$error = $key.'_error';
 			if ( ! isset($this->$error))

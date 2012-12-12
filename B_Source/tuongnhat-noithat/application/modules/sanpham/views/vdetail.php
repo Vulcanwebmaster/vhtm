@@ -1,30 +1,25 @@
 <?php
 	$newModel=new CI_Model();
 ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#button_submit").click(function(){
+			$("#addbasket").load("<?php echo base_url();?>sanpham/themgiohang/<?php echo $product->product_id?>");
+		});
+	});
+</script>
 <style type="text/css">
 	#background-image{display:none}
 </style>
         <!--------------beginbody----------->
-        <div class="body">
-	<div class="line">
-		<div class="line">
-        	<div id="pagination" class="unit size1of2">
-				<div class="back back_cat"><a href="#">&nbsp;</a></div>
-				<div class="passProduct">
-					<a class="prev previous disabled" href="#" data-href-template="#">&nbsp;</a>
-					<a class="next " href="#" data-href-template="#">&nbsp;</a>
-				</div>
-			</div>
-            <div class="unit size1of2">&nbsp;
-            </div>
-        </div>
-	</div>		
-	<div class="principal"></div>
+<div class="principal"></div>
  <div class="line">  
  	<div class="unit size1of1">  							
 		<div class="line article_wrap" id="article_wrap" style="z-index:997;">
 			<!-- Imagen -->							
-			<div class="unit size1of2">	
+			<div class="unit size1of2">
+				<h2><?php if($_SESSION['lang'] == 'en') echo $product->product_name_e;
+				else echo $product->product_name_v;?></h2>
 				<div class="article_image">
 
 					<div class="main_ph">
@@ -40,12 +35,6 @@
 									<div class="anhbody"><?php echo $product->product_image; ?></div>
 									</a>
 								</div>
-								<!--<div class="zoom-small-image viewImgBig1"> 
-									<a href='<?php echo base_url()?>assets\tuongnhatp2\images\images<?php echo $product->product_image ?>' class = 'cloud-zoom' id='zoom1' rel="adjustX: 10, adjustY:-4">								   
-										<?php echo $product->product_image ?>
-									</a>
-								</div>
-								-->
 								<div class="zoom-small-image viewImgBig2"> 
 									<a href='<?php 
 												$preg = preg_match_all('#/tuongnhat.*jpg#',$product->product_image2,$match);
@@ -69,15 +58,22 @@
                 <div class="line seco_ph">
                     <div class="unit size1of1">
                         <div class="viewSmall">
-                           <ul class="listH productImage">                                                
+                           <ul class="listH productImage"> 
+								<?php if ($product->product_image != '')
+								{?>
 								<li class="auxImageLi selected prodAuxImg_0">
 									<a href="">
 										<?php echo $product->product_image; ?>
 									</a>                                                                                                  
 								</li>
+								<?php }?>
+								
+								<?php if ($product->product_image2 != '')
+								{?>
 								<li class="auxImageLi selected prodAuxImg_1">
 									<?php echo $product->product_image2; ?>                                                   
-								</li>                                                    
+								</li>
+								<?php }?>                                              
 							</ul>
                         </div>			
                     </div>
@@ -90,33 +86,18 @@
 							$('#sharedown').hide();
 							$('#shareButton').mouseenter(function(){
 								$('#sharedown').show('slow');
-								})
+								});
 							$('#shareButton').mouseleave(function(){
 								$('#sharedown').hide('slow');
-								})	
-						})
+								});
+						});
 						</script>		
-						<div class="social" style="top:230px;">							
-							<input id="socialShare" type="hidden" value="">
-							<a id="shareButton" class="share_btn shareButton" href="#">Chia sẻ</a>
-							<ul class="listH socialLinks" id="sharedown">
-								<li><a class="fb" title="Facebook"><span class="offleft">Facebook</span></a></li>
-								<li><a class="tw" title="Twitter"><span class="offleft">Twitter</span></a></li>
-								<li><a class="mail gaPage" data-ga-page-event="click" data-ga-page-logic="/Enviar_a_Amigo/Formulario" href="#" title="E-Mail"><span class="offleft">E-Mail</span></a></li>
-								<li id="idPrintButton"><a class="print" href="#print" title="Print"><span class="offleft">Print</span></a></li>
-								<li>
-									<div style="height: 15px; width: 24px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; " id="___plusone_0"></div>
-							
-								</li>
-							</ul>									
-						</div>
-							
 				</div>
 			</div>
 			
 			<div class="unit size1of2 lastUnit">
 				<div class="article_page">
-					<h2 class="article_title">Rines Pillow </h2>
+					<p class="article_title" style="padding-bottom:0"><?php echo $this->lang->line('splienquan');?></p>
 				 	<div class="article_description"> 			 	</div>			
 					<div id="glossary_wrap" style="position: absolute; ">
 						<div class="title">Glossary</div>
@@ -159,25 +140,23 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 							<?php foreach ($relates as $item)
 							{?>
 								<div class="item" style="z-index:998">									
-										<!--<img onclick="" src="<?php echo base_url()?>assets/tuongnhatp2/images/images/5958008700_1_1_5.jpg">-->									
-									<?php echo $item->product_image ?>	
-									
+									<a href="<?php echo base_url();?>sanpham/chitiet/-<?php echo $item->product_id;?>-<?php echo $item->alias;?>">
+										<?php echo $item->product_image ?>	
+									</a>
 									<input type="hidden" class="pAux" value="">
 									<input type="hidden" class="pAuxZoom" value="">
 									<input type="hidden" class="pAuxMZoom" value="">   									
 									<h3 class="article_title">
-										<?php
+										<a href="<?php echo base_url();?>sanpham/chitiet/-<?php echo $item->product_id;?>-<?php echo $item->alias;?>"><?php
 										if ($_SESSION['lang'] == 'en'){
 											echo $product->product_name_e;
 										}else{
 											echo $item->product_name_v;
-										}
-										  
-										?></h3>											
+										}?></a></h3>											
 									<div class="article_desc_fields" style="z-index:998">
 							        	<ul>								        	
 								          	<li><span class="field_name">
-													Mã:
+													<?php echo $this->lang->line('ma')?>:
 												</span>
 												<span>&nbsp;</span>
 												<span>
@@ -190,20 +169,20 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 									   		<div class="article_drops_bg "></div>
 											<ul class="listH">
 												<li>
-													<a href="#content">Thông tin sản phẩm</a>
+													<a href="#content"><?php echo $this->lang->line('thongtinsp');?></a>
 													<div class="dropdownClass cuidados_wrap">
 															
-															<div class="title">Mô tả</div>
+															<div class="title"><?php echo $this->lang->line('detail-mota');?></div>
 										                    <div class="container article_description" style="white-space: normal !important;">
 										                    	<?php echo $item->mota ?>	
 										                    </div>
 									                    
-									                    	<div class="title">Thành phần:</div>
+									                    	<div class="title"><?php echo $this->lang->line('detail-thanhphan');?></div>
 															
 																<div class="container">
 																<?php echo $item->thanhphan ?>	
 																</div>
-															<div class="title">Care</div>
+															<div class="title"><?php echo $this->lang->line('detail-baoquan');?></div>
 															<div class="container">
 									                 			<ul>
 																	<li>
@@ -236,17 +215,8 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 																</td>		
 																<td class="price price_7000000000000000563">
 																	
-																			<p class="price  pPrice_7000000000000000563" id="pPrice">$35<span class="decimal">.90</span></p>	
+																			<p class="price  pPrice_7000000000000000563" id="pPrice"><?php echo $item->product_price;?> VNĐ</p>	
 																</td>
-																
-													                <td class="quantity" id="quantity_7000000000000000563_1">
-													                 	<input readonly="readonly" id="units_7000000000000000563_1" value="0" name="units_7000000000000000563_1" class="units_7000000000000000563_1" size="2">
-													                </td>
-													                <td class="sc_cant">
-													                    <div id="units_7000000000000000563_1" class="sc_cant_wrp">
-													                    <div class="sc_cant_up"></div><div class="sc_cant_down"></div></div>
-													                </td>
-												                
 									                 		</tr>
 									                 		<input type="hidden" id="quantity_7000000000000000563_1" class="quantity_7000000000000000563_1">
 									                 		<input type="hidden" id="f_itemId_7000000000000000563_1" class="f_itemId_7000000000000000563_1">
@@ -264,18 +234,22 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 								<div class="line">
 									<div class="actions">
 										<table>
-											
-												<tbody><tr>
+											<tbody>
+												<tr>
 													<td width="50%">
-															<button id="button_submit" type="button" value="Añadir a cesta" class="button butBlack butAddCart"><span>Thêm vào giỏ hàng</span></button>
+															<a id="button_submit" class="button butBlack butAddCart">
+																<span><?php echo $this->lang->line('themgiohang');?></span>
+															</a>
 													</td>
 													<td width="50%">
-															<a id="buyButton" href="#" class="button butBlack buyButton"><span>Giỏ hàng</span></a>
+															<a id="buyButton" href="<?php echo base_url()?>sanpham/xemgiohang" class="button butBlack buyButton">
+																<span><?php echo $this->lang->line('xemgiohang');?></span>
+															</a>
 													</td>
 												</tr>								
-											
-									
-										</tbody></table>			
+											</tbody>
+										</table>
+										<div id="addbasket"></div>			
 									</div>
 								</div>
 							
@@ -288,29 +262,7 @@ To arrange a return, use the contact form or call our Customer Service Departmen
 </div>
 		
 <!-- End - JSP File Name:  ItxMerchandisingAssociationsDisplay.jsp --><!-- Puedes ponerlo con .... -->
-		<div id="divId_lastRecentlyViewed" style="visibility: visible; zoom: 1; opacity: 1; "><div><!-- Start - JSP File Name:  ItxLastViewProductsDisplay.jsp -->
-	<div class="line mod_up" style="margin-top:50px;">
-		<div class="unit size1of1">
-			<div class="section listProds">
-				
-				<p class="titleSection">Sản phẩm tương tự:</p>
-			
-				<ul class="listH">
-					<?php foreach ($relates as $item)
-					{?>
-						<li>				
-							<a href="<?php echo base_url();?>sanpham/chitiet/-<?php echo $item->product_id;?>-<?php echo $item->alias;?>" class="gaSource" data-ga-source-event="click" data-ga-source-value="UltimosProductosVistos">
-								<?php echo $item->product_image ?>
-							</a>
-						</li>
-					<?php } ?>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div></div>
 	<!-- Últimos productos vistos: -->
 	
 	<!-- End - JSP File Name:  ItxCachedBundleProductView.jsp -->
-			</div>
 <!-------------end body--------------->		

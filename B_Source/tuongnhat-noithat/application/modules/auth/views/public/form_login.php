@@ -22,13 +22,6 @@ $(document).pngFix( );
  
 <!-- Start: login-holder -->
 <div id="login-holder">
-
-	<!-- start logo -->
-	<div id="logo-login">
-		<img src="<?php echo base_url()?>assets/admin/images/logo.png" width="156" height="40" alt="" />
-	</div>
-	<!-- end logo -->
-	
 	<div class="clear"></div>
 <?php print form_open('auth/login',array('class'=>'horizontal'))?>	
 	<!--  start loginbox ................................................................................. -->

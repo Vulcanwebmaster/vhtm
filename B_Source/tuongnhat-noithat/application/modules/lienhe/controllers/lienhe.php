@@ -4,6 +4,7 @@
 		private $module;
 		function __construct()
 		{
+			@session_start();
 			parent::__construct();
 			$this->module=basename(dirname(dirname(__FILE__)));
 			$this->module = strtolower(get_class());
@@ -32,7 +33,7 @@
 				$this->form_validation->set_rules('name','Name','required');
 				$this->form_validation->set_rules('email','E-mail','required');
 				$this->form_validation->set_rules('subject','Subject','required');
-				$this->form_validation->set_rules('note','Message','required');
+				$this->form_validation->set_rules('message','Message','required');
 				$this->form_validation->set_message('required','%s please other one ');
 				if($this->form_validation->run()==false)
 				{
@@ -56,4 +57,3 @@
 		//end Tuyet
 		
 	}
-	

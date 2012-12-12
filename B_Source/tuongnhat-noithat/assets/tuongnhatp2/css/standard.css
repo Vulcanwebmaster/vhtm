@@ -4364,7 +4364,6 @@ button::-moz-focus-inner {
     line-height: 21px;
     margin: 0;
     padding-left: 17px;
-    padding-top: 0;
 }
 
 .actions .butWhite2:hover{
@@ -7957,7 +7956,7 @@ table.new_shopping_cart .price{
 }
 input {
 	border:1px #ccc solid;
-	padding:3px 2px 2px 10px;
+	padding: 5px 10px;
 }
 input[type="checkbox"],input[type="radio"] {
 	border:0;

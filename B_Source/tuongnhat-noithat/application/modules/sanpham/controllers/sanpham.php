@@ -9,6 +9,7 @@ class Sanpham extends NIW_Controller
 
 		$this->load->model('Msanpham');
 		$this->load->library('pagination');
+		$this->load->library('recaptcha');
 	}
 	
 	function _remap($function)
@@ -32,6 +33,20 @@ class Sanpham extends NIW_Controller
 		}
 		elseif ($function == 'xemgiohang')
 			$this->showBasket();
+		elseif ($function == 'xoasanphamgiohang')
+		{
+			$id=$this->uri->segment(3);
+			$this->removeFromBasket($id);
+		}
+		elseif ($function == 'updateQuantity')
+		{
+			$productId	=	$this->uri->segment(3);
+			$quantity	=	$this->uri->segment(4);
+			
+			$this->updateQuantityBasket($productId, $quantity);
+		}
+		elseif ($function == 'computeTotal')
+			$this->computeTotalBasketPrice();
 	}
 	
 	function index()
@@ -92,27 +107,24 @@ class Sanpham extends NIW_Controller
 				$listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name_e', $searchValue);
 			else $listFull = $this->Msanpham->getListByColumnLikeText('tn_products', 'product_name_v', $searchValue);
 			
-			if (count($listFull) > 0)
-			{
-				// if there are some relate products, 
-				$base_url = base_url().'sanpham/timKiem';
-				$total_rows = count($listFull);
-				$per_page = 15;
-				$this->_setupPagination($base_url, $per_page, $total_rows);
-				
-				//get some products for one page.
-				if ($_SESSION['lang'] == 'en')
-					$listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_e', $searchValue, $index, $per_page);
-				else $listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_v', $searchValue, $index, $per_page);
-				
-				$this->data['where'] = 'Kết quả tìm kiếm'; 
-				$this->data['per_page'] = $per_page;
-				$this->data['module'] = $this->module;
-				$this->data['page'] = 'front/vtimkiem';
-				$this->data['listProducts'] = $listRelateProducts;
-				$this->data['totalProducts'] = count($listFull);
-				$this->load->view('front/container', $this->data);
-			}
+			// if there are some relate products, 
+			$base_url = base_url().'sanpham/timKiem';
+			$total_rows = count($listFull);
+			$per_page = 15;
+			$this->_setupPagination($base_url, $per_page, $total_rows);
+			
+			//get some products for one page.
+			if ($_SESSION['lang'] == 'en')
+				$listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_e', $searchValue, $index, $per_page);
+			else $listRelateProducts = $this->Msanpham->getListByColumnOffsetLikeText('tn_products', 'product_name_v', $searchValue, $index, $per_page);
+			
+			$this->data['where'] = 'Kết quả tìm kiếm'; 
+			$this->data['per_page'] = $per_page;
+			$this->data['module'] = $this->module;
+			$this->data['page'] = 'front/vtimkiem';
+			$this->data['listProducts'] = $listRelateProducts;
+			$this->data['totalProducts'] = count($listFull);
+			$this->load->view('front/container', $this->data);
 		}
 		else redirect(base_url());
 	}
@@ -149,7 +161,7 @@ class Sanpham extends NIW_Controller
 				{
 					if ($item['id'] == $productId)
 					{
-						$_SESSION['basket'][$count]['amount']++;
+						$_SESSION['basket'][$item['id']]['amount']++;
 						break;
 					}
 					$count++;
@@ -160,7 +172,7 @@ class Sanpham extends NIW_Controller
 				// if this id isn't exist in current basket, insert new item
 				$newItem = array('id'	=>	$productId,
 								'amount'	=>	1);
-				$_SESSION['basket'][] = $newItem;
+				$_SESSION['basket'][$productId] = $newItem;
 			}
 			
 			echo '<script language = javascript>
@@ -197,11 +209,68 @@ class Sanpham extends NIW_Controller
 			
 			$this->data['amount']		=	$amount;
 			$this->data['listProducts']	=	$listProducts;
-			$this->data['page']			= 'front/vgiohang';
-			$this->data['module']		= $this->module;
-			$this->data['where']		= 'Giỏ hàng của bạn';
+			$this->data['page']			= 	'front/vgiohang';
+			$this->data['module']		= 	$this->module;
+			$this->data['where']		= 	'Giỏ hàng của bạn';
+			$this->data['captcha']		=	$this->recaptcha->recaptcha_get_html();
 			$this->load->view('front/container', $this->data);
 		}
 		else redirect(base_url());
+	}
+
+	/*
+	 * Remove a item from current basket
+	 * $productId: id number of the product which you want to remove
+	 */
+	function removeFromBasket($productId)
+	{
+		$count = 0;
+		foreach ($_SESSION['basket'] as $item)
+		{
+			if ($item['id'] == $productId)
+			{
+				unset($_SESSION['basket'][$productId]);//($_SESSION['basket'][$count]);
+				break;
+			}
+			$count++;
+		}
+		redirect(base_url().'sanpham/xemgiohang');
+	}
+	
+	/*
+	 * update quantity for one product in current basket
+	 */
+	function updateQuantityBasket($productId, $quantity)
+	{
+		//get product info
+		$productInfo	=	$this->Msanpham->getRowByColumn('tn_products', 'product_id', $productId);
+		
+		foreach ($_SESSION['basket'] as $item)
+		{
+			if ($item['id'] == $productId)
+			{
+				$_SESSION['basket'][$productId]['amount'] = $quantity; //update quantity
+				break;
+			}
+		}
+		echo intval($productInfo->product_price) * $quantity.' VNĐ'; die(); 
+	}
+	
+	/*
+	 * Compute total money for current basket
+	 */
+	function computeTotalBasketPrice()
+	{
+		$money = 0;
+		foreach ($_SESSION['basket'] as $item)
+		{
+			// get product info
+			$productInfo	=	$this->Msanpham->getRowByColumn('tn_products', 'product_id', $item['id']);
+			
+			$perMoney		=	intval($productInfo->product_price) * $item['amount']; //compute money for each product
+			$money			+=	$perMoney; 	//compute total money for basket
+		}
+		
+		echo $money.' VNĐ'; die();
 	}
 }

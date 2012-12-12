@@ -12,6 +12,19 @@ class Dangnhap extends NIW_Controller
 	}
 	
 	/*
+	 * creat sessions when login successful
+	 */
+	function creatUserSessions($account)
+	{
+		$_SESSION['front_user_fullname']	=	$account->fullname;
+		$_SESSION['front_user_id']			=	$account->id;
+		$_SESSION['front_user_address']		=	$account->address;
+		$_SESSION['front_user_email']		=	$account->email;
+		$_SESSION['front_user_phone']		=	$account->phone;
+		$_SESSION['basket']					=	array(); //creat basket online for user
+	}
+	
+	/*
 	 * check exist account
 	 */
 	function checkAccount()
@@ -23,11 +36,8 @@ class Dangnhap extends NIW_Controller
 			$relateAccounts = $this->Mdangnhap->getAccountByUserPass($email, $password);
 			if (count($relateAccounts) > 0)
 			{
-				//if this account is exist, login succesful and redirect to homepage.
-				$account = $relateAccounts[0];
-				$_SESSION['front_user_fullname'] = $account->fullname;
-				$_SESSION['front_user_id'] = $account->id;
-				$_SESSION['basket'] = array(); //creat basket online for user
+				$account = $relateAccounts[0]; //if this account is exist, login succesful and redirect to homepage.
+				$this->creatUserSessions($account); // creat sessions for user when login successful
 				redirect(base_url(),'refresh');
 			}
 			else 
@@ -97,9 +107,9 @@ class Dangnhap extends NIW_Controller
 				$input = $this->_getInput();
 				if ($this->Mdangnhap->insertNewRow('tn_user',$input))
 				{
+					$account	=	$this->Mdangnhap->getRowByColumn('tn_user', 'id', mysql_insert_id());
 					//auto login with that account
-					$_SESSION['front_user_fullname'] = $input['fullname'];
-					$_SESSION['front_user_id'] = mysql_insert_id();;
+					$this->creatUserSessions($account); //creat sessions for user when register successful
 					
 					redirect(base_url(),'refresh');
 				}
