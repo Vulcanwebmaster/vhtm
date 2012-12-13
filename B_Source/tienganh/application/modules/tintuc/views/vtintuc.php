@@ -1,43 +1,42 @@
 <div id="content">
-	
 				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
-				
 				 <div id="content_left">
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<?php foreach ($list_tintuc as $item) 
-				 			{
-							 ?>
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id ?>"><?php echo $item->news_category ?></a></li>
-				 			<?php } ?>
+				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
+				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
+				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 
 				 <style>				
-				 	#slider img{ width:568px !important; height:235px!important;}
+				 	#slider img{ width:663px !important; height:235px!important;}
 				 </style>
 				 <div id="content_right">
 				 	<div class="slidegv">
 				 		<div class="slider-wrapper theme-default">
 				            <div id="slider" class="nivoSlider">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">		                
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-		        			</div>
-				 		</div>
+				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="images/slide1.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">		                
+				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="images/slide2.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
+				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
+				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="images/slide4.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
+		        		</div>
+				 	</div>
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url();?>tintuc/detail/">Tin tức</a></p>
+				 			<p><a href="<?php echo base_url();?>tintuc">Tin tức</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="<?php echo $item->news_id?><?php echo $item->news_category?>"></a></p>
+				 			<p><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></p>
 				 		</div>
 				 		
 				 		<div id="contentmaingv">
+				 			<?php foreach ($items as $item) 
+									{ ?>
 				 			<div id="contenttt">
-				 				<p class="ttTitle"><?php echo $item->news_id?><?php echo $item->news_title ?></p>
+				 				<p class="ttTitle"><?php echo $item->news_title ?></p>
 				 				<div id="content2">
 				 					<?php echo $item->news_content ?><br>
 				 					<br>
@@ -47,9 +46,8 @@
 				 					<br><br><br><br>
 				 				</div>
 				 			</div>
-				 		
+				 		<?php } ?>
 				 		</div>
-				 		
 					 <!----------------------------->
 					 <div id="contentbotomgv" style="">
 					 	<div>
@@ -216,6 +214,7 @@
 			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
 			        		</div>
 			        		</div>
+			        		
 			        		
 			        	</div>
 			        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"></div>

@@ -4,10 +4,9 @@
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<?php foreach ($lecturers as $item)
-							 {?>
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>giangvien/detail<?php echo $item->lecturers_id?>"><?php echo $item->lecturers_category ?></a></li>
-				 			<?php } ?>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 
@@ -27,16 +26,24 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url();?>giangvien">Giảng viên</a></p>
+				 			<p><a href="#">Giảng viên</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="<?php echo base_url();?>giangvien/detail<?php echo $lecturers->lecturers_id?>"><?php echo $lecturers->lecturers_category?></a></p>
+				 			<p><a href="#"><?php echo $list_chitiet->lecturers_category ?></a></p>
 				 		</div>
 				 		<div id="contentmaindtgv">
 				 			<p id="anhgv">Nước Anh</p>
 				 			<p id="notegv">Tôi còn những lời hứa phải giữ, những chặng <br>đường phải đi trước khi ngủ</p>	
 				 			<div id="contetntitlegv">
 				 				<div id="imggv"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/pr.png"></div>
-				 				<div id="ltgv"><?php $lecturers->lecturers->content?>
+				 				<div id="ltgv">Học viên Việt Nam gọi Khalid bằng nhiều cái tên
+									thân thiện, như Mr. Hello (ông Xin Chào),
+									Mr. Golden Bell (ông Rung chuông vàng),
+									hay Celebrity Teacher (ông giáo viên nổi tiếng),…
+									Đó là kết quả sau nhiều năm cống hiến và quảng
+									bá việc học tập và rèn luyện tiếng Anh tại Việt
+									Nam thông qua các chương trình trò chơi truyền
+									hình mà Khalid từng xuất hiện, như Rung chuông
+									vàng hay Đường lên đỉnh Olympia.
 								</div>
 				 			</div>
 				 			<div class="videogvdt">

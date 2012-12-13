@@ -133,22 +133,49 @@
 				            </div>		           
 		        		</div>
 				 	</div>
+			 		<script type="text/javascript">
+	        		$(document).ready(function(){		        			
+	        			$(".prev121").click(function(){
+					  $(".slideimgimg").animate({"left": "+=433px"}, "slow");
+						});
+						
+						$(".next121").click(function(){
+							
+						  $(".slideimgimg").animate({"left": "-=433px"}, "slow");
+						});
+						$('#zoom').click(function(){
+							$('.slideimgimg img').addClass('zoomimg');
+							$('#divzomm').addClass('zoomdiv');
+						});
+						$('.slideimgimg img').click(function(){
+							$('.slideimgimg img').removeClass('zoomimg');
+							$('#divzomm').removeClass('zoomdiv');
+						});
+	        		});
+					</script>
 				 	<div id="contentgv">
-				 		<div id="titlecontentgv">
+				 		<div id="titlecontentgv"style="overflow: hidden;">
 				 			<p style="margin-top:-20px"><img src="../images/iconimg.png"/></p>
 				 			<p><a href="#" style="color:#1b75bb">Khóa học 1 <label style="color:#f6921e">(10)</label></a></p>
 				 			<p style="margin-top:8px"><img src="../images/iconimgvd.png"/></p>
 				 			<p class="bgvdimgimg"></p>
 				 		</div>
-				 		<div id="contentmainvd">
+				 		<div id="contentmainvd" style="overflow: hidden">
 				 			<div id="titledtimg">
 				 				<div id="contetntitledtimg">
-				 					<div class="ctdtimg"><a href="#"><img src="../images/iconnext.png"/></a></div>
-				 					<div class="ctdtimg"><a href="#"><img src="../images/iconpr.png"/></a></div>
-				 					<div class="ctdtimg"><p><a href="#">chuyển ảnh</a></p></div>				 					
-				 					<div class="ctdtimg"><a href="#"><img src="../images/zoom.png"/></a></div>
+				 					<div class="ctdtimg next121"><img src="../images/iconnext.png"/></div>
+				 					<div class="ctdtimg prev121"><img src="../images/iconpr.png"/></div>
+				 					<div class="ctdtimg"><p>chuyển ảnh</p></div>				 					
+				 					<div class="ctdtimg" id="zoom"><a href="#"><img src="../images/zoom.png"/></a></div>
 				 					<div class="ctdtimg"><a href="#"><img src="../images/icondown.png"/></a></div>
 				 				</div>
+				 			</div>
+				 			<div style="overflow: hidden; width:433px; margin:0 auto; height:357px; position:relative" id="divzomm">
+				 			<div class="slideimgimg" style="width:1400px; position:absolute">
+				 				<img src="../images/trang-thu-vien_1-anh_17.png"/>
+				 				<img src="../images/slide1.jpg"/>
+				 				<img src="../images/slide31.jpg"/>
+				 			</div>
 				 			</div>
 					 	</div>
 					 <!----------------------------->

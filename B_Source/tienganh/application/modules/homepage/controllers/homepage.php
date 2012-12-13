@@ -10,7 +10,7 @@ class Homepage extends NIW_controller {
 		$this->module = strtolower(get_class());
 		$this->load->model('Mhomepage');
 		$this->load->library('pagination');
-		
+		$this->load->helper('text');
 		//var_dump($_SESSION['front_user_fullname']); die();
 	}
 	
@@ -22,6 +22,7 @@ class Homepage extends NIW_controller {
 	public function page($index=0)
 	{
 		//$data['items'] = $this->Mhomepage->getListOffset('ln_village',4,$index);
+		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('ta_news',3,0);
 		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);
 		//$data['product']=$this->Mhomepage->getListOffset('ln_product',5,0);

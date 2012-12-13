@@ -10,8 +10,12 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>giangvien/admin">Giảng viên</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>info/admin">Thông tin</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>khoahoc/admin">Khóa học</li>
-		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</li>
+		<li class="icn_application"><a href="<?php echo base_url()?>khoahoc/admin">Khóa học</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Hỗ trợ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>anh/admin">Hình ảnh</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Vedio</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

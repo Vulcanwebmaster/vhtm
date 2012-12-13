@@ -50,9 +50,9 @@
 					<div id="menutop">
 						<ul>
 							<li class="home"><a href="<?php echo base_url();?>homepage">Home</a></li>
-							<li><a href="#">Giới thiệu</a></li>
+							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
-							<li class="menu_move"><a href="#">Khóa học</a>
+							<li class="menu_move"><a href="<?php echo base_url();?>homepage">Khóa học</a>
 								<div class="submenu">
 									<div>Tiếng Anh cho mầm non
 										<ul>

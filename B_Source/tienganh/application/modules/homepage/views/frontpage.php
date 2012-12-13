@@ -19,10 +19,10 @@
 			        				<?php echo $item->news_image ?>
 			        			</div>
 			        			<div class="text_main">
-			        				<p class="title"><a href="<?php echo base_url() ?>tintuc/detail/<?php echo $item->news_id;?>">
+			        				<p class="title"><a href="<?php echo base_url() ?>tintuc">
 															<?php echo $item->news_title ?>
 														  </a></p>
-			        				<p><?php echo $item->news_summary ?><img src="<?php echo base_url() ?>tintuc/detail/<? echo $item->news_id;?><?php echo base_url();?><img src="assets/trungtam-tienganh/images/icon19.png"/></a></p>
+			        				<p><?php echo word_limiter($item->news_content, 30)?><img src="assets/trungtam-tienganh/images/icon19.png"/></a></p>
 									
 			        			</div>
 			        		</div>
@@ -40,7 +40,7 @@
 		        			</div>
 		        			<div class="text_main2">
 		        				<p class="title"><?php echo $item->courses_name ?></p>
-		        				<p><?php echo $item->courses_summary ?><img src="assets/trungtam-tienganh/images/icon19.png"/></a></p>
+		        				<p><?php echo word_limiter($item->courses_content, 30)?><img src="assets/trungtam-tienganh/images/icon19.png"/></a></p>
 		        			</div>
 		        		</div>
 		        		<?php } ?>

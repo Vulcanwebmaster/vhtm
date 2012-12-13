@@ -10,10 +10,7 @@
 					</div>
 					<div class="ft1">
 						<p>Đối tác</p>
-						<ul>
-							<li><a href="#">Trường mầm non A</a></li>
-							<li><a href="#">Trường mầm non B</a></li>							
-						</ul>
+					
 					</div>
 					<div class="ft1">
 						<p>Giáo viên</p>

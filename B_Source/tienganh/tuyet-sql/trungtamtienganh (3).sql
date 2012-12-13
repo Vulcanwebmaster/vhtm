@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 13, 2012 at 12:25 AM
+-- Generation Time: Dec 13, 2012 at 03:26 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -163,6 +163,28 @@ INSERT INTO `n_be_acl_resources` (`id`, `lft`, `rgt`, `name`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `n_doitac`
+--
+
+CREATE TABLE IF NOT EXISTS `n_doitac` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `n_doitac`
+--
+
+INSERT INTO `n_doitac` (`id`, `ten`) VALUES
+(1, 'Trường mầm non A'),
+(2, 'Trường mầm non B'),
+(3, 'Trường mầm non C'),
+(4, 'Trường mầm non C');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `n_example_contactus_info`
 --
 
@@ -206,6 +228,27 @@ INSERT INTO `n_example_contactus_message_info` (`id`, `name`, `email`, `subject`
 (17, 'Xuân Lê tiến', 'lexuantien0311@gmail.com', 'Ni hao', 'Ni hao!!!!', '2012-07-16 12:53:17'),
 (18, 'Le Tien', 'lexuantien0311@gmail.com', 'Tesstttt', 'Hellooooo!', '2012-07-16 13:03:15'),
 (19, 'Xuân Lê tiến', 'lexuantien0311@gmail.com', 'Ni hao', 'Ni hao!!!!', '2012-07-16 12:53:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_hotro`
+--
+
+CREATE TABLE IF NOT EXISTS `n_hotro` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `sdt` int(13) NOT NULL,
+  `yahoo` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `n_hotro`
+--
+
+INSERT INTO `n_hotro` (`id`, `ten`, `sdt`, `yahoo`) VALUES
+(1, 'Văn phòng học viện Jennifer', 0, 'mo_tuyet_tinh');
 
 -- --------------------------------------------------------
 
@@ -324,16 +367,31 @@ CREATE TABLE IF NOT EXISTS `n_ta_about_us` (
   `about_content` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `about_category` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`about_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `n_ta_about_us`
 --
 
 INSERT INTO `n_ta_about_us` (`about_id`, `about_content`, `about_category`) VALUES
-(1, '<p>\r\n	&nbsp;tiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng a', ''),
-(2, '<p>\r\n	sdsds</p>\r\n', ''),
-(3, '<p>\r\n	eeeeeeeeeeeeeeee</p>\r\n', '');
+(1, '<p>\r\n	&nbsp;tiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng anh cao cấp noi dung gioi thieutiếng a', 'Sứ mệnh'),
+(2, '<p>\r\n	sdsdssdasdsd</p>', 'Tầm nhìn'),
+(5, 'sdsdssssssssssssssss', 'Văn hóa công ty'),
+(6, '<p>\r\n	aaaaaaaaaaaaaaaaaaaaaaa</p>', 'Văn hóa công ty');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_ta_category`
+--
+
+CREATE TABLE IF NOT EXISTS `n_ta_category` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `name` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  `alias` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  `parent_id` int(12) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -350,16 +408,18 @@ CREATE TABLE IF NOT EXISTS `n_ta_contact_us` (
   `contact_phone` int(13) NOT NULL,
   `contact_content` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `contact_name` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  `check` int(11) NOT NULL DEFAULT '0',
+  `lecturers_category` int(12) NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `n_ta_contact_us`
 --
 
-INSERT INTO `n_ta_contact_us` (`contact_id`, `contact_email`, `contact_title`, `create_date`, `contact_address`, `contact_phone`, `contact_content`, `contact_name`) VALUES
-(1, 'tuyetapt@gmail.com', 'Tiếng anh cấp tốc', '2012-12-04', 'Hà Nội', 1234545, '', ''),
-(2, '2012-12-12', 'tiếng anh giao tiếp', '0000-00-00', '0', 3543, 'dsfsdfdsf', 'nam');
+INSERT INTO `n_ta_contact_us` (`contact_id`, `contact_email`, `contact_title`, `create_date`, `contact_address`, `contact_phone`, `contact_content`, `contact_name`, `check`, `lecturers_category`) VALUES
+(1, 'tuyetapt@gmail.com', 'Tiếng anh cấp tốc', '2012-12-04', 'Hà Nội', 1234545, '', '', 0, 0),
+(2, '2012-12-12', 'tiếng anh giao tiếp', '0000-00-00', '0', 3543, 'dsfsdfdsf', 'nam', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -374,7 +434,6 @@ CREATE TABLE IF NOT EXISTS `n_ta_courses` (
   `courses_category` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
   `courses_content` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `courses_date` datetime NOT NULL,
-  `courses_summary` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`courses_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
@@ -382,10 +441,30 @@ CREATE TABLE IF NOT EXISTS `n_ta_courses` (
 -- Dumping data for table `n_ta_courses`
 --
 
-INSERT INTO `n_ta_courses` (`courses_id`, `courses_name`, `parent_id`, `courses_category`, `courses_content`, `courses_date`, `courses_summary`) VALUES
-(1, 'tiếng anh cho trẻ em', 1, 'Một tuổi', 'zxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', '2012-12-11 00:00:00', 'Mô tả ngắn về khóa học'),
-(2, 'tiếng anh cấp 1', 1, '9 Tuổi', 'ádddddddd', '2012-12-18 00:00:00', 'Mô tả ngắn về khóa học'),
-(3, 'khóa học tiếng anh cấp 3', 3, 'cấp 3', 'sdffffffffffff', '2012-12-11 00:00:00', 'mô tả ngắn mô tả ngắn');
+INSERT INTO `n_ta_courses` (`courses_id`, `courses_name`, `parent_id`, `courses_category`, `courses_content`, `courses_date`) VALUES
+(1, 'tiếng anh cho trẻ em', 1, 'Một tuổi', 'zxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', '2012-12-11 00:00:00'),
+(2, 'tiếng anh cấp 1', 1, '9 Tuổi', 'ádddddddd', '2012-12-18 00:00:00'),
+(3, 'khóa học tiếng anh cấp 3', 3, 'cấp 3', 'sdffffffffffff', '2012-12-11 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_ta_image`
+--
+
+CREATE TABLE IF NOT EXISTS `n_ta_image` (
+  `image_id` int(12) NOT NULL,
+  `image_category` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `image_album` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `image_name` varchar(123) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `n_ta_image`
+--
+
+INSERT INTO `n_ta_image` (`image_id`, `image_category`, `image_album`, `image_name`) VALUES
+(0, '0', '<p>\r\n	sdfsdfdsfđfdfdf</p>\r\n', 'dsfd');
 
 -- --------------------------------------------------------
 
@@ -418,8 +497,9 @@ CREATE TABLE IF NOT EXISTS `n_ta_lecturers` (
   `lecturers_category` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
   `lecturers_content` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `alias` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `lecturers_image` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `lecturers_title` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  `create_date` datetime NOT NULL,
+  `lecturers_image` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`lecturers_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
@@ -427,26 +507,10 @@ CREATE TABLE IF NOT EXISTS `n_ta_lecturers` (
 -- Dumping data for table `n_ta_lecturers`
 --
 
-INSERT INTO `n_ta_lecturers` (`lecturers_id`, `lecturers_category`, `lecturers_content`, `alias`, `lecturers_image`, `lecturers_title`) VALUES
-(1, 'Thầy giáo', '<p>\r\n	lecturers english new lecturers english new lecturers english new</p>', '', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>', 'Giảng viên'),
-(2, 'Cô giáo', '<p>\r\n	lecturers english old lecturers english old lecturers english old</p>', '', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>', 'Giảng viên'),
-(3, 'Trợ giảng', '<p>\r\n	lecturers english finish lecturers english finish lecturers english finish</p>', '', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>', 'Giảng viên'),
-(4, 'Tất cả', '<p>\r\n	tuyet</p>', '', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>', 'Giảng viên');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `n_ta_library`
---
-
-CREATE TABLE IF NOT EXISTS `n_ta_library` (
-  `library_image` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `library_center` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `library_events` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `vedio_courses` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `library_id` int(12) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`library_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+INSERT INTO `n_ta_lecturers` (`lecturers_id`, `lecturers_category`, `lecturers_content`, `alias`, `lecturers_title`, `create_date`, `lecturers_image`) VALUES
+(1, 'Thầy giáo', '<p>\r\n	lecturers english new lecturers english new lecturers english new</p>', '', 'Giảng viên', '0000-00-00 00:00:00', ''),
+(2, 'Cô giáo', '<p>\r\n	lecturers english old lecturers english old lecturers english old</p>', '', 'Giáo viên cấp cao', '0000-00-00 00:00:00', ''),
+(3, 'Trợ giảng', '<p>\r\n	lecturers english finish lecturers english finish lecturers english finish</p>', '', 'Giáo viên hành chính', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -463,7 +527,6 @@ CREATE TABLE IF NOT EXISTS `n_ta_news` (
   `news_image` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `alias` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
   `news_category` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
-  `news_summary` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`news_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
@@ -471,12 +534,12 @@ CREATE TABLE IF NOT EXISTS `n_ta_news` (
 -- Dumping data for table `n_ta_news`
 --
 
-INSERT INTO `n_ta_news` (`news_id`, `news_title`, `news_content`, `news_author`, `news_post_date`, `news_image`, `alias`, `news_category`, `news_summary`) VALUES
-(2, 'Tại sao cần phải cho trẻ học sớm từ 5 tuổi?', '<p>   nội dung nội dung nội dung nội dung nội dung nội dung tốt nh&eacute;</p>', 'ánh tuyết', '2012-12-10', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng anh trẻ em', 'Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin khi nói chuyện với người nước ngoài, phát tr'),
-(3, 'tiếng anh nâng cao', '<p>\r\n	nọi dung tiếng anh cấp tốc</p>\r\n', 'tuyet ngo', '2012-12-10', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng anh tiểu học', 'Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin khi nói chuyện với người nước ngoài, phát tr'),
-(4, 'tin hàng ngày', '<p>\r\n	noi dung hay lắm m&agrave;</p>\r\n', 'hehe', '2012-12-10', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng anh cho sinh viên', 'Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin khi nói chuyện với người nước ngoài, phát tr'),
-(5, 'tin cô giáo', '<p>\r\n	sadasdas</p>\r\n', 'sda', '2012-12-11', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng anh cho người đi làm', 'Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin khi nói chuyện với người nước ngoài, phát tr'),
-(6, 'Tại sao cần phải cho trẻ học sớm từ 5 tuổi?', '<p>\r\n	tin trong nước,thời sự quốc tế</p>\r\n', 'minh minh', '2012-12-12', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', '', '');
+INSERT INTO `n_ta_news` (`news_id`, `news_title`, `news_content`, `news_author`, `news_post_date`, `news_image`, `alias`, `news_category`) VALUES
+(2, 'Tại sao cần phải cho trẻ học sớm từ 5 tuổi?', '<p>   nội dung nội dung nội dung nội dung nội dung nội dung tốt nh&eacute;</p>', 'ánh tuyết', '2012-12-10', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng Anh mầm non'),
+(3, 'tiếng anh nâng cao', '<p>\r\n	nọi dung tiếng anh cấp tốc</p>\r\n', 'tuyet ngo', '2012-12-10', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng Anh tiểu học'),
+(4, 'tin hàng ngày', '<p>\r\n	noi dung hay lắm m&agrave;</p>\r\n', 'hehe', '2012-12-10', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng Anh cho sinh viên'),
+(5, 'tin cô giáo', '<p>\r\n	sadasdas</p>\r\n', 'sda', '2012-12-11', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', 'Tiếng Anh cho người đi làm'),
+(6, 'Tại sao cần phải cho trẻ học sớm từ 5 tuổi?', '<p>\r\n	tin trong nước,thời sự quốc tế</p>\r\n', 'minh minh', '2012-12-12', '<p>\r\n	<img alt="" src="/trungtam-tienganh/assets/trungtam-tienganh/upload/images/_20-11.jpg" style="width: 100px; height: 100px;" /></p>\r\n', '', '');
 
 -- --------------------------------------------------------
 
@@ -494,6 +557,27 @@ CREATE TABLE IF NOT EXISTS `n_ta_user` (
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_ta_vedio`
+--
+
+CREATE TABLE IF NOT EXISTS `n_ta_vedio` (
+  `vedio_id` int(12) NOT NULL AUTO_INCREMENT,
+  `vedio_title` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  `link_vedio` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`vedio_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `n_ta_vedio`
+--
+
+INSERT INTO `n_ta_vedio` (`vedio_id`, `vedio_title`, `link_vedio`) VALUES
+(1, 'facebook', 'facebook.com.vn'),
+(2, 'facebook', 'facebook.com.vn');
 
 -- --------------------------------------------------------
 

@@ -4,10 +4,9 @@
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<?php foreach ($list_giangvien as $item)
-							 {?>
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>giangvien/detail<?php echo $item->lecturers_id?>"><?php echo $item->lecturers_category ?></a></li>
-				 			<?php } ?>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 
@@ -28,35 +27,23 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="#">Giảng viên</a></p>
+				 			<p><a href="<?php echo base_url() ?>">Giảng viên</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="#">Thầy giáo</a></p>
+				 			<p><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></p>
+				 			
 				 		</div>
 				 		<div id="contentmaingv">
-				 			<div class="ctgv">				 			
-			 					<div class="divgv"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-giang-vien_30.png"></div>
+				 			<?php foreach ($items as $item) 
+									{ ?>
+				 			<div class="ctgv">	
+				 							 			
+			 					<div class="divgv"><?php $item->lecturers_image ?></div>
 			 					<div class="divgv2">
-			 						<p class="tittlegv">Ông Trương Đình Tuyển</p>
-			 						<p><i>Nguyên trưởng bộ trưởng CÔng thương, trưởng đoàn CP đàm phám kinh tế và thương mại quốc tế</i></p>
-			 						<p class="reamororgv"><a href="#">Chi tiết</a></p>
+			 						<p class="tittlegv"><a href="<?php echo base_url() ?>giangvien/detail/<?php echo $item->lecturers_id;?>"><?php echo $item->lecturers_title ?></a></p>
+			 						<p><i><?php echo $item->lecturers_content ?></i></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url() ?>giangvien/detail/<?php echo $item->lecturers_id;?>">Chi tiết</a></p>
 			 					</div>
-				 			</div>			
-				 			<div class="ctgv">				 			
-			 					<div class="divgv"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-giang-vien_30.png"></div>
-			 					<div class="divgv2">
-			 						<p class="tittlegv">Ông Trương Đình Tuyển</p>
-			 						<p><i>Nguyên trưởng bộ trưởng CÔng thương, trưởng đoàn CP đàm phám kinh tế và thương mại quốc tế</i></p>
-			 						<p class="reamororgv"><a href="#">Chi tiết</a></p>
-			 					</div>
-				 			</div>		
-				 			<div class="ctgv">				 			
-			 					<div class="divgv"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-giang-vien_30.png"></div>
-			 					<div class="divgv2">
-			 						<p class="tittlegv">Ông Trương Đình Tuyển</p>
-			 						<p><i>Nguyên trưởng bộ trưởng CÔng thương, trưởng đoàn CP đàm phám kinh tế và thương mại quốc tế</i></p>
-			 						<p class="reamororgv"><a href="#">Chi tiết</a></p>
-			 					</div>
-				 			</div>		 		
+				 			</div>	<?php } ?>		
 					 </div>
 					 <!----------------------------->
 					 <div id="contentbotomgv">

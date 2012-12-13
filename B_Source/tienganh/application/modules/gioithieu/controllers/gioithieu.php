@@ -1,36 +1,29 @@
 <?php
-	class Gioithieu extends NIW_Controller
+class Gioithieu extends NIW_Controller
+{
+	function __construct()
 	{
-		private $module;
-		function __construct()
-		{
-			parent::__construct();
-			$this->module=basename(dirname(dirname(__FILE__)));
-			$this->module = strtolower(get_class());
-			
-			$this->load->model('Mgioithieu');
-			$this->load->library('session');
-			$this->setLang();
-			
-			if ($this->session->userdata('lang')=='vn')
-			{
-				$this->lang->load('mc','vietnamese');
-			}
-			else $this->lang->load('mc','english');
-		}
-		
-		function index()
-		{
-			$data['query']=$this->Mgioithieu->getRowByColumn('mc_about_us','id',1);
-			$data['items']=$this->Mgioithieu->getListByColumn('mc_product','is_new',1);
-			$data['parents']=$this->Mgioithieu->getListByColumn('mc_category','parent_id',0);
-			$data['list_lienhe']=$this->Mgioithieu->getListFull('mc_contact_us');
-			$data['list_hotro']=$this->Mgioithieu->getListFull('hotro');
-			$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
-			
-			$data['module']=$this->module;
-			$data['page']='vgioithieu';
-			$this->load->view('front/container',$data);
-		}
+		@session_start();
+		parent::__construct();
+		$this->module=basename(dirname(dirname(__FILE__)));
+		$this->module = strtolower(get_class());
+		$this->load->model('Mgioithieu');
+		$this->load->library('session');
+		$this->load->helper('text');
 	}
-?>
+	function index()
+	{
+		$this->page();
+	}
+	
+	function page($index=0)
+	{
+		//$data['product']=$this->Mgiangvien->getListOffset('ln_product',5,0);
+		$data['items']=$this->Mgioithieu->getListByColumn('ta_about_us','about_category',1);
+		$data['title']='tienganh | Giới thiệu';
+		$data['list_gioithieu']=$this->Mgioithieu->getListOffset('ta_about_us',3,$index);
+		$data['module']=$this->module;
+		$data['page']='vgioithieu';
+		$this->load->view('front/container',$data);
+	}
+}
