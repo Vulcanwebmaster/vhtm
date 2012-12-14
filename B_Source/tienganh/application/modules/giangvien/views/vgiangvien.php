@@ -4,9 +4,9 @@
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
-				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
-				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
+				 			<li id="li_leftgv2" <?php if ($index == 1) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
+				 			<li id="li_leftgv2" <?php if ($index == 2) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
+				 			<li id="li_leftgv2" <?php if ($index == 0) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 
@@ -29,92 +29,36 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url() ?>">Giảng viên</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></p>
+				 			<p><a href="<?php echo base_url();?>giangvien/thaygiao">
+				 				<?php if ($index == 1) echo 'Thầy giáo';
+				 						elseif ($index == 2) echo 'Cô giáo';
+										elseif ($index == 0) echo 'Trợ giảng';
+				 				?>
+				 				
+				 			</a></p>
 				 			
 				 		</div>
-				 		<div id="contentmaingv">
-				 			<?php foreach ($items as $item) 
-									{ ?>
-				 			<div class="ctgv">	
-				 							 			
-			 					<div class="divgv"><?php $item->lecturers_image ?></div>
-			 					<div class="divgv2">
-			 						<p class="tittlegv"><a href="<?php echo base_url() ?>giangvien/detail/<?php echo $item->lecturers_id;?>"><?php echo $item->lecturers_title ?></a></p>
-			 						<p><i><?php echo $item->lecturers_content ?></i></p>
-			 						<p class="reamororgv"><a href="<?php echo base_url() ?>giangvien/detail/<?php echo $item->lecturers_id;?>">Chi tiết</a></p>
-			 					</div>
-				 			</div>	<?php } ?>		
-					 </div>
-					 <!----------------------------->
-					 <div id="contentbotomgv">
-					 		<div id="share">
-					 		<p>Cùng chia sẻ bài viết này:</p>
-					 		<ul>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/inshare.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter23.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/z.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/pinit.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/sharethis.png"></a></li>
-					 		</ul>
-					 		<div id="shareg">
-					 			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/g1.png">
-					 			<p style="padding:5px">Đề xuất này trên google</p>
-					 		</div>
-					 		<ul style="padding:0">
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/sharr.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/line.png"></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/send.png"></a></li>
-					 			<li style="padding-top:10px"><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/faceicon.png"></a></li>
-					 			<li style="padding-top:7px"><a href="#">loanguyen</a> like this</li>
-					 			
-					 		</ul>
-					 		<div id="comment">
-					 		
-			 					<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/pr anh.png">
-			 					<div class="formcm">
-			 						<form>
-			 							<textarea></textarea><br>
-			 							<div class="submit">Posting as Biết ơn cuộc sống (Not now)?<input type="submit" value="Comment"></div>
-			 							<div class="check"><input type="checkbox">Post to facebook</div>
-			 						</form>
-			 					</div>	
-			 							 				
-					 			<br clear="both">
-					 		</div>
-					 		
-					 	</div>
-					 	<div class="plupgin" style="margin-top:5px">
-					        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif">
-					        		<p style="font-size: 13px">Plugin xã hội của Facebook</p>
-					        	</div>
-					 	<style>
-					 		.prev12{left:-10px;}
-					 		#clickslide{ margin-left:20px; width:94%}
-					 		.next12, .prev12{ width:3%;}
-					 		.next12{right:0}
-					 		.slideimage img{margin:0 25px 0 -5px;}
-					 	</style>
-					 	<div class="contentbot" style="margin: 80px 0">
-		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"></div>
-			        	<div id="clickslide">
-			        		
-			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
-			        		<div class="slideimage">
-			        			
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
+					 						<!--------------begin Tin tức---------------->
+			        	<div class="textmaincontent1">
+			        		<?php foreach ($items as $item) 
+							{ ?>
+			        		<div class="idmain">
+			        			<div class="img_main1">
+			        				<?php echo $item->lecturers_image ?>
+			        			</div>
+			        			<div class="text_main">
+			        				<p class="title"><?php echo $item->lecturers_title ?></p>
+			        				<p><?php echo word_limiter(strip_tags($item->lecturers_content), 40)?> 
+									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->lecturers_id;?>">
+										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
+									
+			        			</div>
 			        		</div>
-			        		</div>
+			        		<?php } ?>
 			        	</div>
-			        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"></div>
-			        	
-		        	</div>
-					 </div>
+			        		
+			        	<!--------------End begin Tin tức---------------->
+					 <!----------------------------->
 				</div>
 				<!-----------end share------------>
 			</div>

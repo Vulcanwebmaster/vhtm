@@ -4,10 +4,10 @@
 				 	
 				 <div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>gioithieu/sumenh">Sứ mệnh</a></li>
-				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>gioithieu/tamnhin">Tầm nhìn</a></li>
-				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>gioithieu/giatri">Giá trị cốt lõi</a></li>
-				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>gioithieu/vanhoa">Văn hóa công ty</a></li>
+				 			<li id="li_leftgv1" <?php if ($index == 0) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>gioithieu/sumenh">Sứ mệnh</a></li>
+				 			<li id="li_leftgv2" <?php if ($index == 1) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>gioithieu/tamnhin">Tầm nhìn</a></li>
+				 			<li id="li_leftgv3" <?php if ($index == 2) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>gioithieu/giatri">Giá trị cốt lõi</a></li>
+				 			<li id="li_leftgv4" <?php if ($index == 3) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>gioithieu/vanhoa">Văn hóa công ty</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 

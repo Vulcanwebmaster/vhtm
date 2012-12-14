@@ -24,6 +24,7 @@ class Gioithieu extends NIW_Controller
 		$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 		$data['list_gioithieu']=$this->Mgioithieu->getListOffset('ta_about_us',3,$index);
 		$data['module']=$this->module;
+		$data['index'] = -1;
 		$data['page']='vgioithieu';
 		$this->load->view('front/container',$data);
 		}
@@ -33,6 +34,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Sứ mệnh',$index,4);
 				$data['module']=$this->module;
+				$data['index'] = 0;
 				$data['page']='vgioithieu';
 				$this->load->view('front/container',$data);	
 		}
@@ -43,6 +45,7 @@ class Gioithieu extends NIW_Controller
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Tầm nhìn',$index,4);
 				$data['module']=$this->module;
 				$data['page']='vgioithieu';
+				$data['index'] = 1;
 				$this->load->view('front/container',$data);	
 		}
 		
@@ -51,6 +54,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Giá trị cốt lõi',$index,4);
 				$data['module']=$this->module;
+				$data['index'] = 2;
 				$data['page']='vgioithieu';
 				$this->load->view('front/container',$data);	
 		}
@@ -60,6 +64,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Văn hóa công ty',$index,4);
 				$data['module']=$this->module;
+				$data['index'] = 3;
 				$data['page']='vgioithieu';
 				$this->load->view('front/container',$data);	
 		}
