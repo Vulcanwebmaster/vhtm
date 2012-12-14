@@ -25,10 +25,9 @@
 				<fieldset>
 					<label>Mục ảnh</label>
 					<select name="news_category">
-						<?php  foreach ($list as $item)
-					 	{      ?>
-						<option value="<?php echo $item->image_category;?>"><?php echo $item->image_category;?></option>
-						<?php } ?>
+						<option value="0">Hình ảnh trung tâm</option>
+						<option value="1">Hình ảnh khóa học</option>
+						<option value="2">Hình ảnh sự kiện</option>
 					</select>
 				</fieldset>
 				<fieldset>
