@@ -34,7 +34,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Sứ mệnh',$index,4);
 				$data['module']=$this->module;
-				$data['index'] = 0;
+				$data['index'] = 5;
 				$data['page']='vgioithieu';
 				$this->load->view('front/container',$data);	
 		}

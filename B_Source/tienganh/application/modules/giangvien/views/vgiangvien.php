@@ -49,7 +49,7 @@
 			        			<div class="text_main">
 			        				<p class="title"><?php echo $item->lecturers_title ?></p>
 			        				<p><?php echo word_limiter(strip_tags($item->lecturers_content), 40)?> 
-									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->lecturers_id;?>">
+									</br><a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id;?>">
 										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
 									
 			        			</div>
