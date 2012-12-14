@@ -1,3 +1,6 @@
+<style>
+					#slider img{ width:960px; height:400px !important;}
+				</style>
 <div id="content">
 <div class="slider-wrapper theme-default">
 		            <div id="slider" class="nivoSlider">

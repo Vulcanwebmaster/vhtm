@@ -64,28 +64,12 @@ class Tintuc extends NIW_Controller
 			$this->load->view('front/container',$data);	
 	}
 	
-	function detail($alias)
+	function detail($id=0)
 		{
-			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
-			$temp = explode("-", $alias);
-			if (isset($temp)){
-				//$category_id = $temp[0];
-				$id = $temp[0];
-			}
-			//$data['product']=$this->Mtintuc->getListOffset('ta_lecturers',5,0);
-			//$config['list_giangvien']=$this->Mtintuc->getListFull('ta_lecturers');
 			$data['list_chitiet']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
 			$model=new CI_Model();
 			$data['module']=$this->module;
 			$data['page']='vdetail';
-			$this->load->view('front/container',$data);
-		}
-	function listtintuc()
-		{
-			//echo "ddh";
-			$model=new CI_Model();
-			$data['module']=$this->module;
-			$data['page']='vtintuc-new';
 			$this->load->view('front/container',$data);
 		}
 }
