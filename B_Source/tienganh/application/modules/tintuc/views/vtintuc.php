@@ -31,23 +31,18 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
 				 		</div>
 				 		
-				 		<div id="contentmaingv">
-				 			<?php foreach ($items as $item) 
-									{ ?>
-				 			<div id="contenttt">
-				 				<p class="ttTitle"><?php echo $item->news_title ?></p>
-				 				<div id="content2">
-				 					<?php echo $item->news_content ?><br>
-				 					<br>
-				 					<br><br>
-				 					
-				 					<br>
-				 					<br><br><br><br>
-				 				</div>
-				 			</div>
-				 		<?php } ?>
-				 		</div>
-					 <!----------------------------->
+				 		
+					<!--------------begin Tin tức---------------->
+			        		<?php foreach ($items as $item) 
+							{ ?>
+								<li style="width:100%; float:left; border:1px solid #ddd; padding:5px 5px; margin:5px 0px;">
+									<?php echo $item->news_image ?>
+						            <div class="aboutth-item" style="float:left; width:76%; height: 86px;">
+						            	<h3><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>"><?php echo $item->news_title ?></a></h3>
+						            </div>
+						  	    </li>
+			        		<?php } ?>
+			        	<!--------------End begin Tin tức---------------->
 					 <div id="contentbotomgv" style="">
 					 	<div>
 					 			<script type="text/javascript">

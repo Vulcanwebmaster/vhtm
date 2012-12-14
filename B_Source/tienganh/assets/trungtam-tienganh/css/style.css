@@ -19,6 +19,18 @@ body{
 #right_topheader img{ float:left;}
 .textbold{ font-weight:bold}
 
+.aboutus-menu li p img{ width: 122px !important; height: 86px !important; float:left !important; margin-right:10px !important; }
+.aboutus-menu p {width: auto !important;}
+a {
+	text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+	color: #00A9DD;
+	text-decoration: none;
+}
+
+
 #header_logo{clear:both; margin-top:33px; position: relative; width:100%; height:120px;}
 #logo{float:left; width:50%;}
 #search{float:right; width:37%; margin-top:35px }
