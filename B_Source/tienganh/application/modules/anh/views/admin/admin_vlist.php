@@ -57,7 +57,9 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->image_name;?></td> 
-			    				<td><?php echo $item->image_category;?></td>
+			    				<td><?php if ($item->image_category == '0') echo 'Hình ảnh trung tâm';
+			    							elseif ($item->image_category == '1') echo 'Hình ảnh khóa học';
+			    							elseif ($item->image_category == '2') echo 'Hình ảnh sự kiện';?></td>
 			    				<td><?php echo $item->image_album;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>anh/admin/edit/<?php echo $item->image_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>

@@ -53,7 +53,7 @@ class CI_Model {
 	
 	//===================== MY FUNCTIONS ========================================
 	 
-	 function getRowByColumn($tableName='',$columnName='',$value='')
+function getRowByColumn($tableName='',$columnName='',$value='')
 	 {
 	 	$this->db->where($columnName,$value);
 	 	$ds=$this->db->get($tableName);
@@ -103,6 +103,19 @@ class CI_Model {
 	 	return $list;
 	 }
 	 
+	function getListWithOutColumn($tableName='',$columnName='',$value='')
+	 {
+	 	$this->db->where($columnName.' !=',$value);
+	 	$ds=$this->db->get($tableName);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
 	 function insertNewRow($tableName='',$input)
 	 {
 	 	if ($this->db->insert($tableName,$input))
@@ -122,6 +135,88 @@ class CI_Model {
 	 	if ($this->db->update($tableName,$input,array($columnName=>$value)))
 	 		return true;
 	 	else return false;
+	 }
+	 
+	 function cutString($str,$offset=100)
+	 {
+	 	$length=strlen($str);
+	 	if ($length>$offset)
+	 	{
+	 		while ($str[$offset]!=' ' && $offset<$length)
+	 			$offset++;
+	 	}
+	 	else $offset=$length;
+	 	return substr($str,0, $offset);
+	 }
+	 	function getListByColumnLikeText($tableName='', $columnName='',$value='')
+	 {
+	 	echo '<meta charset="UTF-8"/>';
+	 	mysql_set_charset('utf8');
+	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%'");
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListByColumnOffsetLikeText($tableName='', $columnName='',$value='', $index='', $limit='')
+	 {
+	 	echo '<meta charset="UTF-8"/>';
+	 	/*$this->db->like($columnName,$value);
+	 	$ds=$this->db->get($tableName,$limit,$index);*/
+	 	mysql_set_charset('utf8');
+	 	$ds=$this->db->query("select * from n_".$tableName." where ".$columnName." like '%".$value."%' limit ".$limit." offset ".$index);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
+	 function getListByColumnOffset($tableName='',$columnName='',$value='', $index='', $limit='')
+		 {
+		 	$this->db->where($columnName,$value);
+		 	$ds=$this->db->get($tableName,$limit,$index);
+		 	$list=array();
+		 	foreach($ds->result() as $item)
+		 	{
+		 		$list[]=$item;
+		 	}
+		 	$ds->free_result();
+		 	return $list;
+		 }
+	 
+	 function getListOrderByColumn($tableName='', $columnName='', $typeOrder='', $index='', $limit='')
+	 {
+	 	$this->db->order_by($columnName,$typeOrder);
+	 	$this->db->where($columnName,$value);
+	 	if ($limit!='')
+	 		$ds=$this->db->get($tableName,$limit,$index);
+	 	else $ds=$this->db->get($tableName);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 function gethotline(){
+		  $query= $this->db->query("SELECT * FROM n_hotro where id='5'");
+		  return $query->result();
+	 }
+	 
+	 function getSpByParentID($id){
+	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
+		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
+										FROM n_sanpham, n_danhmuc
+										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
+		  return $query->result();
 	 }
 }
 // END Model Class

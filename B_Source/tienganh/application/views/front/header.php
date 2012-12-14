@@ -98,7 +98,7 @@
 								</div>
 							</li>-->
 							<li><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
-							<li><a href="#">Thư viện</a></li>
+							<li><a href="<?php echo base_url();?>thuvien">Thư viện</a></li>
 							<li><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
 						</ul>
 					</div>
