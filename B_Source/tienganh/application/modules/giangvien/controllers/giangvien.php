@@ -20,6 +20,7 @@ class Giangvien extends NIW_Controller
 		{
 		$data['items']=$this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category',1);
 		$data['title']='tienganh | Giảng viên';
+		$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 		$data['list_giangvien']=$this->Mgiangvien->getListOffset('ta_lecturers',3,$index);
 		$data['module']=$this->module;
 		$data['page']='vgiangvien';
@@ -58,6 +59,7 @@ class Giangvien extends NIW_Controller
 				//$category_id = $temp[0];
 				$id = $temp[0];
 			}
+			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 			$data['chitiet']=$this->Mgiangvien->getRowByColumn('ta_lecturers','lecturers_id',$id);
 			$model=new CI_Model();
 			$data['module']=$this->module;

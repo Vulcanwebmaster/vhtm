@@ -13,7 +13,7 @@ class Lienhe extends NIW_Controller
 	
 	function index()
 	{
-		//$data['list_tuvan']=$this->Mlienhe->getListFull('ta_contact_us');		
+		$data['list_doitac']=$this->Mlienhe->getListFull('doitac');	
 		$data['title']='tienganh | Tiếng Anh';
 		$data['module']=$this->module;
 		$data['page']='vlienhe';
