@@ -18,11 +18,8 @@ class Tintuc extends NIW_Controller
 	
 	function page($index=0)
 	{
-		//$data['product']=$this->Mtintuc->getListOffset('ln_product',5,0);
-		//$data['items']=$this->Mtintuc->getListByColumn('ta_news','news_category',1);
 		//nho loi 
 		$data['items'] = $this->Mtintuc->getListOffset('ta_news',4,$index);
-		
 		$data['title']='tienganh | Tin tức';
 		$data['list_tintuc']=$this->Mtintuc->getListOffset('ta_news',3,$index);
 		$data['module']=$this->module;
@@ -60,7 +57,6 @@ class Tintuc extends NIW_Controller
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
-			//$data['flagslide']='slide1';
 			$this->load->view('front/container',$data);	
 	}
 	
