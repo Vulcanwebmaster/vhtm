@@ -50,7 +50,7 @@
 				 				<p> <span style="color:red">*</span>Các trường hợp bắt buộc </p>
 				 				<input type="submit" value="Gửi tin" class="submitlh">
 				 			</form>
-				 			<?php echo validation_errors('<p style="color:#f83d43">','</p>'); ?>
+				 			<?php echo validation_errors('','</p>'); ?>
 				 		</div>
 				 		<div id="lhrigh">
 				 			<p class="ttlh">Địa chỉ liên hệ</p>
