@@ -16,19 +16,10 @@
 		        		</div>
 				 	</div>
 				 	<div id="contentgv">
-				 		<?php $newmodel=new CI_Model();?>
-							<?php  foreach ($list as $item)
-							{
-								?>
-							<div class="item">
-								<div class="itemimage">
-									<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->category_id."-".$item->id."-".$item->alias;?>">
-										<?php echo $item->hinhanh;?>
-									</a><br />								
-								</div>
-					            <div class="itemh5"><?php echo $item->courses_name;?></div>
-							</div>
-							<?php  } ?>
+				 		<?php foreach ($list_cate as $value) { ?>
+							 <?php echo $value->courses_name ?>
+						<?php } ?>
+				 		
 						<br class="clear"/>
 	</div>
 
