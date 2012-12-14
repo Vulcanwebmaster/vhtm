@@ -19,8 +19,10 @@ class Tintuc extends NIW_Controller
 	function page($index=0)
 	{
 		//nho loi 
+		$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 		$data['items'] = $this->Mtintuc->getListOffset('ta_news',4,$index);
 		$data['title']='tienganh | Tin tức';
+		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 		$data['list_tintuc']=$this->Mtintuc->getListOffset('ta_news',3,$index);
 		$data['module']=$this->module;
 		$data['page']='vtintuc';
@@ -29,6 +31,8 @@ class Tintuc extends NIW_Controller
 	
 	function mamnon($index=0)
 	{
+			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh mầm non',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -37,6 +41,8 @@ class Tintuc extends NIW_Controller
 	
 	function tieuhoc($index=0)
 	{
+			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh tiểu học',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -45,6 +51,8 @@ class Tintuc extends NIW_Controller
 
 	function sinhvien($index=0)
 	{
+			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho sinh viên',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -54,6 +62,8 @@ class Tintuc extends NIW_Controller
 	
 	function dilam($index=0)
 	{
+			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -62,6 +72,8 @@ class Tintuc extends NIW_Controller
 	
 	function detail($id=0)
 		{
+			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['list_chitiet']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
 			$model=new CI_Model();
 			$data['module']=$this->module;

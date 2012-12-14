@@ -16,10 +16,23 @@
 		        		</div>
 				 	</div>
 				 	<div id="contentgv">
-				 		<div id="titlecontentgv">
-				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url();?>Khóa học</a></p>
-				 		</div>
+				 		<?php $newmodel=new CI_Model();?>
+							<?php  foreach ($list as $item)
+							{
+								?>
+							<div class="item">
+								<div class="itemimage">
+									<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->category_id."-".$item->id."-".$item->alias;?>">
+										<?php echo $item->hinhanh;?>
+									</a><br />								
+								</div>
+					            <div class="itemh5"><?php echo $item->courses_name;?></div>
+							</div>
+							<?php  } ?>
+						<br class="clear"/>
+	</div>
+
+</div>
 				 		
 					 <div id="contentbotomgv" style="">
 					 	<div>

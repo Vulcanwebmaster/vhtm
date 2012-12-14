@@ -2,12 +2,12 @@
 				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
 				 <div id="content_left">
 				 	
-				 	<div id="contentlefftgv">
+				 <div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<?php foreach ($list_gioithieu as $item) 
-									{ ?>
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url() ?>gioithieu/view/<?php echo $item->about_id;?>"><?php echo $item->about_category ?></a></li>
-				 			<?php } ?>
+				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>gioithieu/sumenh">Sứ mệnh</a></li>
+				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>gioithieu/tamnhin">Tầm nhìn</a></li>
+				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>gioithieu/giatri">Giá trị cốt lõi</a></li>
+				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>gioithieu/vanhoa">Văn hóa công ty</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 
@@ -29,15 +29,14 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="#">Giới thiệu</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="#">Tầm nhìn</a></p>
 				 		</div>
 				 		
 				 		<div id="contentmaingv">
-				 			<p>
-Bằng nỗ lực lao động và sáng tạo Học viện JENNIFER mong muốn trở thành một công ty 
-có dịch vụ được sử dụng phổ biến nhất trong nước và quốc tế, góp phần đưa nền giáo dục
-Việt Nam trở thành một quốc gia có thứ hạng cao trên bản đồ Công nghệ thông tin thế giới.</p>
-				 		<p align="center"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang gioi thieu.png"></p>				 		
+				 			<?php foreach ($items as $item) 
+									{ ?>
+				 					<?php echo $item->about_content ?>
+				 					
+				 		<?php } ?>		
 				 		</div>
 					 <!----------------------------->
 					 <div id="contentbotomgv" style="">

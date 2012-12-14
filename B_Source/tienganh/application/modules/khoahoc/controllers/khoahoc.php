@@ -1,69 +1,74 @@
 <?php
-	class Khoahoc extends NIW_Controller
+class Khoahoc extends NIW_Controller
+{
+	function __construct()
 	{
-		private $module;
-		function __construct()
-		{
-			parent::__construct();
-			$this->module=basename(dirname(dirname(__FILE__)));
-			$this->module = strtolower(get_class());
-			$this->load->model('Mkhoahoc');
-			$this->load->library('session');
-		}
-
-		function index()
-		{
-			$data['parents']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id',0);
-			$data['items']=$this->Mkhoahoc->getListFull('ta_courses');
-			$data['module']=$this->module;
-			$data['page']='vkhoahoc';
-			$this->load->view('front/container',$data);			
-		}
+		parent::__construct();
+		$this->module=strtolower(get_class());
+		$this->load->library('pagination');
 		
-		function view($category_id)
-		{
-			$data['query']=$this->Mkhoahoc->getRowByColumn('ta_category','id',$category_id);
-			$data['parents']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id',0);
-			$data['items']=$this->Mkhoahoc->getListByColumn('ta_courses','category_id',$category_id);
-			$data['module']=$this->module;
-			$data['page']='vkhoahoc';
-			$this->load->view('front/container',$data);
-		}
-		
-		function chitiet($alias)
-		{
+		$this->load->model('Mkhoahoc');
+	}
+	
+	function index()
+	{
+		$this->page();
+	}
+	
+	public function page($index=0)
+	{
+		$config['base_url']=base_url().'khoahoc/page/';
+		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
+		$data['categories']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id','0');
+		$data['list']=$this->Mkhoahoc->getListByColumn('ta_courses','courses_name','0');
+		$data['title']='tienganh | Trang chủ';
+		$data['module'] = $this->module;
+		$data['page'] = 'vkhoahoc';
+		$this->load->view('front/container',$data);
+	}
+	
+	function detail($alias)
+	{
 			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
 			$temp = explode("-", $alias);
 			if (isset($temp)){
 				$category_id = $temp[0];
-				$courses_id = $temp[1];
-			}
+				$id = $temp[1];
+			}		
+		
+		$data['list_hotro']=$this->Mkhoahoc->getListFull('hotro');
+		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
+		$data['categories']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id','0');
+		$data['detail']=$this->Mkhoahoc->getRowByColumn('ta_courses','id',$id);
+		$data['title']='tienganh | Tiếng anh';		
+		$data['module']=$this->module;
+		$data['current_breadcrum']=$data['detail']->courses_name;
+		$category_id=$data['detail']->category_id;
+		$data['relates']=$this->Mkhoahoc->getListByColumnOffset('ta_courses','danhmuc_id',$category_id,0,6);
+		
+		$data['page']='vdetail';
+		$this->load->view('front/container',$data);
+	}
 
-			$data['category']=$this->Mkhoahoc->getRowByColumn('ta_category','id',$category_id);
-			$data['courses']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$courses_id);
-			$data['parents']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id',0);
-			$data['detail']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$courses_id);
-			
-			$model=new CI_Model();
-			
-			$data['module']=$this->module;
-			// Lấy dl từ $data['detail'] (dòng trên)
-			$category_id1=$data['detail']->category_id;
-			//var_dump($data['detail']->category_id);die();
-			$data['relates']=$this->Mkhoahoc->getListByColumnOffset('ta_courses','category_id',$category_id1,0,6);
-			
-			$data['page']='vdetail';
-			$this->load->view('front/container',$data);
+	function category($id=0, $index=0)
+	{
+		
+		$data['list_hotro']=$this->Mkhoahoc->getListFull('hotro');
+		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
+		$data['current_category']= $this->Mkhoahoc->getRowByColumn('danhmuc','id',$id);
+			$data['current_breadcrum']=$data['current_category']->ten_v;
+		$data['categories']=$this->Mkhoahoc->getListByColumn('danhmuc','parent_id','0');
+		$data['title']='thaiduong | Sản phẩm';		
+		
+		if (!$this->Mkhoahoc->isParent($id)){
+			$data['list']=$this->Mkhoahoc->getListByColumnOffset('ta_courses','danhmuc_id',$id,$index,9);	
+		}
+		else{
+			$data['list']=$this->Mkhoahoc->getSpByParentID($id);
 		}
 		
-		function danhMuc($id_danhmuc=0)
-		{
-			$data['listcate']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id',0);
-			$data['list']=$this->Mkhoahoc->getListByColumn('ta_courses','category_id',$id_danhmuc);
-			$data['category']=$this->Mkhoahoc->getRowByColumn('ta_category','id',$id_danhmuc);
-			$data['module']=$this->module;
-			$data['page']='vkhoahoc';
-			$this->load->view('front/container',$data);
-		}
+		$data['module']=$this->module;
+		$data['page']='vkhoahoc';
+		$this->load->view('front/container',$data);
 	}
-?>
+}

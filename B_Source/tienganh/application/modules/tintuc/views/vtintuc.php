@@ -29,7 +29,6 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>tintuc">Tin tức</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></p>
 				 		</div>
 				 		
 				 		<div id="contentmaingv">

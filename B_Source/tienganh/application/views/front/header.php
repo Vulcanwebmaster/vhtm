@@ -52,8 +52,8 @@
 							<li class="home"><a href="<?php echo base_url();?>homepage">Home</a></li>
 							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
-							<li class="menu_move"><a href="<?php echo base_url();?>homepage">Khóa học</a>
-								<div class="submenu">
+							<li class="menu_move"><a href="#">Khóa học</a>
+								<div class="submenu" style="display: none;">
 									<div>Tiếng Anh cho mầm non
 										<ul>
 											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
@@ -68,6 +68,35 @@
 									</div>
 								</div>
 							</li>
+							<!--<li class="menu_move"><a href="<?php echo base_url();?>khoahoc">Khóa học</a>
+								<div class="submenu">
+									<ul id="list">
+					<?php 
+						foreach ($categories as $category)
+							{ ?>
+								<li><a <?php 
+									echo 'href="'.base_url().'khoahoc/category/'.$category->id."-".$category->alias.'"';?> class="type2" style="cursor:pointer">
+									<?php echo $category->name; ?></a>	
+									<?php $listlevel2=$newmodel->getListByColumn('ta_category','parent_id',$category->id);?>
+									<?php if (count($listlevel2)>0)
+									{?>
+									<div class="slidemove">
+										<ul class="inside">
+											<?php 												
+												foreach ($listlevel2 as $level2)
+												{?>
+													<li><a class="menuleft-lv2" href="<?php echo base_url()?>khoahoc/category/<?php echo $level2->id."-".$level2->alias?>"><?php echo $level2->name;?></a></li>
+												<?php }
+											?>
+										</ul>
+									</div>
+									<?php }?>
+								</li>
+							<?php } ?>
+					</ul>
+								
+								</div>
+							</li>-->
 							<li><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
 							<li><a href="#">Thư viện</a></li>
 							<li><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>

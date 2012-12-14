@@ -18,6 +18,7 @@ class Giangvien extends NIW_Controller
 	
 		function page($index=0)
 		{
+		$data['categories']=$this->Mgiangvien->getListByColumn('ta_category','parent_id','0');
 		$data['items']=$this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category',1);
 		$data['title']='tienganh | Giảng viên';
 		$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
@@ -29,6 +30,7 @@ class Giangvien extends NIW_Controller
 	
 		function trogiang($index=0)
 		{
+				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Trợ giảng',$index,4);
 				$data['module']=$this->module;
 				$data['page']='vgiangvien';
@@ -37,6 +39,7 @@ class Giangvien extends NIW_Controller
 		
 		function thaygiao($index=0)
 		{
+				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Thầy giáo',$index,4);
 				$data['module']=$this->module;
 				$data['page']='vgiangvien';
@@ -45,6 +48,7 @@ class Giangvien extends NIW_Controller
 	
 		function cogiao($index=0)
 		{
+				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Cô giáo',$index,4);
 				$data['module']=$this->module;
 				$data['page']='vgiangvien';
