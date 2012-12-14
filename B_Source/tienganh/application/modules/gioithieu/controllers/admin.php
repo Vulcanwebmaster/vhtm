@@ -24,14 +24,14 @@
 		function page($index=0)
 		{
 			$config['base_url']=base_url().'gioithieu/admin/page/';
-			$config['per_page']=3;
+			$config['per_page']=10;
 			$config['total_rows']=count($this->Mgioithieu->getListFull('ta_about_us'));
 			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
 			$data['title']='Giới thiệu';
 			$data['bcCurrent']='giới thiệu';
-			$data['list']=$this->Mgioithieu->getListOffset('ta_about_us',3,$index);
+			$data['list']=$this->Mgioithieu->getListOffset('ta_about_us',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
@@ -40,7 +40,7 @@
 		function _input()
 		{
 			$input=array(
-						'about_category'=>$this->input->post('about_category'),
+						//'about_category'=>$this->input->post('about_category'),
 						'about_content'=>$this->input->post('about_content'),
 						);
 			return $input;
@@ -94,7 +94,7 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/trungtam-tienganh/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor();
 			//=============================================
-			if (!$this->input->post('about_category'))
+			if (!$this->input->post('about_content'))
 			{
 				$data['list']=$this->Mgioithieu->getListFull('ta_about_us');
 				$data['info']=$this->Mgioithieu->getRowByColumn('ta_about_us','about_id',$id);

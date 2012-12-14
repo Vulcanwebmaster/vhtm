@@ -16,7 +16,7 @@
 		</header>
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
-				<fieldset>
+				<!--<fieldset>
 					<label>Giới thiệu</label>
 					<select name="about_category">
 						<?php  foreach ($list as $item)
@@ -25,7 +25,7 @@
 						
 						<?php } ?>
 					</select>
-				</fieldset>
+				</fieldset>-->
 				<fieldset>
 					<label>Nội dung </label>
 					<?php echo $this->ckeditor->editor('about_content',$info->about_content,$config);?>

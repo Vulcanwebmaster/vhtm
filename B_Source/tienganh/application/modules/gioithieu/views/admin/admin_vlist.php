@@ -46,8 +46,7 @@
 						<tr> 
 							<th>STT</th>
 		    				<th>Giới thiệu</th> 
-		    				<th>Nội dung</th>
-		    				<th>Sửa|Xóa</th>
+		    				<th>Sửa</th>
 		    				
 						</tr> 
 					</thead> 
@@ -56,10 +55,8 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->about_category;?></td> 
-			    				<td><?php echo $item->about_content;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>gioithieu/admin/edit/<?php echo $item->about_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->about_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -71,10 +68,6 @@
 				<?php echo $this->pagination->create_links();?>
 			</center>
 				<footer>
-						
-						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>gioithieu/admin/insert">Thêm mới</a>
-						</div>
 				</footer>
 						
 		</div>
