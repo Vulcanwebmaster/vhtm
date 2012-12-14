@@ -1,5 +1,5 @@
 body{
-	 font-size:13px; font-family:Times New Roman ; text-align:center; margin:0;padding:0;
+	 font-size:16px; font-family:Times New Roman ; text-align:center; margin:0;padding:0;
 }
 
 #wapper{
@@ -60,12 +60,16 @@ a:hover, a:active, a:focus {
 
 #manincontent{ background:url(../images/bg12.png) repeat-x scroll top left; min-height:500px; margin-top:-8px; padding:10px;}
 .textmaincontent{float:left; width:49%; margin-top:28px;}
+.textmaincontent1{float:left; width:100%; margin-top:28px;}
 .img_main{width:29%; float:left}
+.img_main1{width:19%; float:left}
+.img_main1 img {width: 102px !important; height: 85px !important }
 .img_main img{ width:120px; height:84px;}
 .text_main{width:71%; float:left}
-.text_main a, .text_main2 a {color:#4c4c4c; text-decoration:none}
+.text_main a, .text_main2 a {color:#000087; text-decoration:none}
 .title{font-weight:bold;}
 .idmain{clear:both; border-bottom:1px solid #c9c8c8; padding-top:10px; height:93px;}
+.idmain1{clear:both; border-bottom:1px solid #c9c8c8; padding-top:10px; height:93px;}
 .titlemain{background:url(../images/icon1.gif) no-repeat scroll 0px -1px; height:100%}
 .bgtitlemain{ background-color:#1b75bb; width:150px; height:30px}
 .bgtitlemain p{ margin:0; padding:4px 0 0 30px !important; font-size:18px; color:#fff; text-transform:uppercase}

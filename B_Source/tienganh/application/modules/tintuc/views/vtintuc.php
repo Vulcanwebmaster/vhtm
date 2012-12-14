@@ -4,7 +4,7 @@
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
+				 			<li id="li_leftgv1" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
 				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
 				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
 				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
@@ -45,25 +45,24 @@
 						            	<h3><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>"><?php echo $item->news_title ?></a></h3>
 						            </div>
 						  	</li>--->
-						  						<!--------------begin Tin tức---------------->
-			        	<div class="textmaincontent">
+						<!--------------begin Tin tức---------------->
+			        	<div class="textmaincontent1">
 			        		<?php foreach ($items as $item) 
 							{ ?>
 			        		<div class="idmain">
-			        			<div class="img_main">
+			        			<div class="img_main1">
 			        				<?php echo $item->news_image ?>
 			        			</div>
 			        			<div class="text_main">
 			        				<p class="title"><?php echo $item->news_title ?></p>
-			        				<p><?php echo $item->news_content ?> 
-									<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">
-										Tìm hiểu thêm về sự kiện này <img src="images/icon19.png"/></a></p>
+			        				<p><?php echo word_limiter(strip_tags($item->news_content), 40)?> 
+									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">
+										Xem thêm <img src="images/icon19.png"/></a></p>
 									
 			        			</div>
 			        		</div>
 			        		<?php } ?>
 			        	</div>
-			        	<!--------------End begin Tin tức---------------->
 			        		
 			        	<!--------------End begin Tin tức---------------->
 				</div>
