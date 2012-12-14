@@ -25,6 +25,7 @@ class Tintuc extends NIW_Controller
 		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 		$data['list_tintuc']=$this->Mtintuc->getListOffset('ta_news',3,$index);
 		$data['module']=$this->module;
+		$data['index'] = -1;
 		$data['page']='vtintuc';
 		$this->load->view('front/container',$data);
 	}
@@ -36,6 +37,7 @@ class Tintuc extends NIW_Controller
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh mầm non',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
+			$data['index'] = 0;
 			$this->load->view('front/container',$data);	
 	}
 	
@@ -45,6 +47,7 @@ class Tintuc extends NIW_Controller
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh tiểu học',$index,4);
 			$data['module']=$this->module;
+			$data['index'] = 1;
 			$data['page']='vtintuc';
 			$this->load->view('front/container',$data);	
 	}
@@ -56,6 +59,7 @@ class Tintuc extends NIW_Controller
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho sinh viên',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
+			$data['index'] = 2;
 			//$data['flagslide']='slide1';
 			$this->load->view('front/container',$data);	
 	}
@@ -67,6 +71,7 @@ class Tintuc extends NIW_Controller
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,4);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
+			$data['index'] = 3;
 			$this->load->view('front/container',$data);	
 	}
 	
@@ -78,6 +83,7 @@ class Tintuc extends NIW_Controller
 			$model=new CI_Model();
 			$data['module']=$this->module;
 			$data['page']='vdetail';
+			$data['index'] = -1;
 			$this->load->view('front/container',$data);
 		}
 }

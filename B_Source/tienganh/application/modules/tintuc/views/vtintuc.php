@@ -4,10 +4,10 @@
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<li id="li_leftgv1" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
-				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
-				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
-				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
+				 			<li id="li_leftgv5" <?php if ($index == 0) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
+				 			<li id="li_leftgv2" <?php if ($index == 1) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
+				 			<li id="li_leftgv3" <?php if ($index == 2) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
+				 			<li id="li_leftgv4" <?php if ($index == 3) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
 				 		</ul>
 				 	</div>
 				 </div>			 
@@ -57,7 +57,7 @@
 			        				<p class="title"><?php echo $item->news_title ?></p>
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 40)?> 
 									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">
-										Xem thêm <img src="images/icon19.png"/></a></p>
+										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
 									
 			        			</div>
 			        		</div>

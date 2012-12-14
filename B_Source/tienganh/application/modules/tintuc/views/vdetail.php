@@ -4,7 +4,7 @@
 				 	
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<li id="li_leftgv1" class="bgicongv"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
+				 			<li id="li_leftgv5" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
 				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
 				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
 				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
@@ -111,41 +111,6 @@
 				        		});
 				        		
 				        	</script>
-				        	<div class="video">		        		
-				            		<div class="contentvideo">	
-				            			<div style="height:280px;" id="id1"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen=""></iframe></div>
-				            			<div style="height: 280px; display: none;" id="id2">
-		            						<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen=""></iframe>
-		            					</div>	  
-		            					<div style="height: 280px; display: none;" id="id3">
-		            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen=""></iframe>
-		            					</div>
-				            			<div style="height: 280px; display: none;" id="id4">
-		            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen=""></iframe>
-		            					</div>	
-		            					<div style="height: 280px; display: none;" id="id5"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen=""></iframe></div>
-				            			<div style="height: 280px; display: none;" id="id6">
-		            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen=""></iframe>
-		            					</div>	                    			
-		            					<div style="height: 280px; display: none;" id="id7"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen=""></iframe></div>
-				            			<ul id="ul_video">
-				            				<li id="vd1" class="iconbg">		            					
-				            						            					
-				            				</li> 
-				            				<li id="vd2" class="iconbg2">		            					
-				            					
-				            				</li>
-				            				<li id="vd3" class="iconbg2">
-				            					
-				            				</li>
-				            				<li id="vd4" class="iconbg2"></li>
-				            				<li id="vd5" class="iconbg2"></li>
-				            				<li id="vd6" class="iconbg2"></li>
-				            				<li id="vd7" class="iconbg2"></li>
-				            			</ul>
-				            		</div>				       
-				        	</div>
-					 	</div>
 					 	<div id="share">
 					 		<p>Cùng chia sẻ bài viết này:</p>
 					 		<ul>
