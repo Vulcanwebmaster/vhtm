@@ -16,6 +16,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>hotroonline/admin">Hỗ trợ trực tuyến</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>anh/admin">Hình ảnh</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>album/admin">Album</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video</a></li>
 	</ul>
 <h3>Users</h3>

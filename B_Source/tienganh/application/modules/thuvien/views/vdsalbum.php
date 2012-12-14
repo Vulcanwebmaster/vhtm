@@ -1,6 +1,6 @@
 <div id="content">
 				<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv"/>
-				 <?php echo $this->load->view('front/menu-trai-thuvien');?> 
+				 <?php echo $this->load->view('front/menu-trai-thuvien');?>			 
 				 <style>				
 				 	#slider img{ width:663px !important; height:235px!important;}
 				 </style>
@@ -23,42 +23,20 @@
 				 			<p class="bgvdimgimg"></p>
 				 		</div>
 				 		<div id="contentmainvd">
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
+				 			<?php 
+				 			$count	=	0;
+				 			foreach ($list as $item)
+				 			{?>
+				 				<div class="bgvdcontentimg">
+					 				<!-- p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p -->
+					 				<?php echo $item->album_avatar?>
+					 				<p align="center">
+					 					<a href="#" style="color:#1b75bb"><?php echo $item->album_name?>
+					 						<label style="color:#f6921e">(<?php echo $counting[$count];?>)</label>
+					 					</a>
+					 				</p>
+					 			</div>
+				 			<?php $count++; }?>
 					 	</div>
 					 <!----------------------------->
 					 <div id="contentbotomgv">

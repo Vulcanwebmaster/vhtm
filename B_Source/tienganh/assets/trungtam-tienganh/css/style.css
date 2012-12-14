@@ -228,7 +228,8 @@ a:hover, a:active, a:focus {
 
 /*anh*/
 .bgvdcontentimg{float:left; background:url(../images/bgimage.png) no-repeat; width:170px; height:127px; margin:30px 24px}
-.bgvdcontentimg img{width:135px; height:106px; padding-top:6px;}
+.bgvdcontentimg img{width:135px !important; height:106px !important; padding-top: 9px; padding-left: 8px;}
+.bgvdcontentimg p{text-align:center}
 #contentmainvd{ clear:both; width:100%}
 .bgvdimgimg{background:url(../images/bgvd.png) repeat-x; width:67%; height:12px; margin-top:5px !important;}
 .bgvdcontentimg p{clear:both; padding:5px 0 !important; font-size:15px;}

@@ -34,13 +34,27 @@ class Thuvien extends NIW_Controller
 	{
 		$data['module']			=	$this->module;
 		$data['category_id']	=	$category_id;
-		$data['list']			=	$this->Mthuvienanh->getListByColumnOffset('ta_image', 'image_category',$category_id, $index, 6);
 		
-		if ($category_id < 3)
+		if ($category_id < 3) // if category is image category
 		{
-			$data['page']		=	'vdsanh';
+			// get list all of albums
+			$data['list']		=	$this->Mthuvienanh->getListByColumnOffset('ta_albums', 'category_id',$category_id, $index, 6);
+			$data['page']		=	'vdsalbum';
+			
+			$counting	=	array();
+			foreach ($data['list'] as $item)
+			{
+				$listImages	=	$this->Mthuvienanh->getListByColumn('ta_image','image_album', $item->album_id);
+				$counting[]	=	count($listImages); // count amount of images for each album
+			}
+			
+			$data['counting']	=	$counting;
 		}
-		else $data['page']		=	'vdsvideo';
+		else // if category is video category
+		{
+			$data['list']		=	$this->Mthuvienanh->getListOffset('ta_vedio', $index, 6);
+			$data['page']		=	'vdsvideo';
+		}
 		
 		$this->load->view('front/container', $data);
 	}

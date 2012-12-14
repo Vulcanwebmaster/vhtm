@@ -45,9 +45,9 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tên ảnh</th> 
-		    				<th>Album Ảnh</th>
-		    				<th>Ảnh</th>
+		    				<th>Tên Album</th>
+		    				<th>Danh mục</th> 
+		    				<th>Ảnh đại diện</th>
 		    				<th>Sửa|Xóa</th>
 		    				
 						</tr> 
@@ -56,14 +56,16 @@
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
-			    				<td><?php echo $item->image_name;?></td> 
-			    				<td><?php echo $item->image_album;?></td>
-			    				<td><?php echo $item->image_file;?></td>
+			    				<td><?php echo $item->album_name;?></td> 
+			    				<td><?php if ($item->category_id == '0') echo 'Hình ảnh trung tâm';
+			    							elseif ($item->category_id == '1') echo 'Hình ảnh khóa học';
+			    							elseif ($item->category_id == '2') echo 'Hình ảnh sự kiện';?></td>
+			    				<td><?php echo $item->album_avatar;?></td>
 			    				<td>
-			    					<a href="<?php echo base_url();?>anh/admin/edit/<?php echo $item->image_id?>" title="Edit">
+			    					<a href="<?php echo base_url();?>album/admin/edit/<?php echo $item->album_id?>" title="Edit">
 			    						<img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"/>
 		    						</a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->image_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"/></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->album_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"/></a>
 			    				</td>
 			    				
 							</tr>
@@ -77,7 +79,7 @@
 				<footer>
 						
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>anh/admin/insert">Thêm mới</a>
+							<a class="alt_btn" href="<?php echo base_url();?>album/admin/insert">Thêm mới</a>
 						</div>
 				</footer>
 						

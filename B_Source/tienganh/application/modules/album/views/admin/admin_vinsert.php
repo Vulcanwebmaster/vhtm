@@ -3,13 +3,7 @@
 			echo validation_errors('<div class="error">','</div>');
 		?>	
 		
-<script type="text/javascript">
-	$(function() {
-		$( "#ngaythang" ).datepicker();
-	});
-</script>
-		
-<form method="post" action="<?php echo base_url();?>anh/admin/insert">	
+<form method="post" action="<?php echo base_url();?>album/admin/insert">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		
@@ -18,21 +12,20 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên ảnh</label>
-					<input type="text" name="image_name" style="width:92%"/>
+					<label>Tên album</label>
+					<input type="text" name="album_name" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Album ảnh</label>
-					<select name="image_album">
-						<?php foreach ($listAlbums as $album)
-						{?>
-							<option value="<?php echo $album->album_id?>"><?php echo $album->album_name?></option>
-						<?php }?>
+					<label>Danh mục</label>
+					<select name="category_id" id="category_id">
+						<option value="0">Hình ảnh trung tâm</option>
+						<option value="1">Hình ảnh khóa học</option>
+						<option value="2">Hình ảnh sự kiện</option>
 					</select>
 				</fieldset>
 				<fieldset>
-					<label>Ảnh </label>
-					<?php echo $this->ckeditor->editor('image_file','',$config);?>
+					<label>Ảnh đại diện</label>
+					<?php echo $this->ckeditor->editor('album_avatar','',$config);?>
 				</fieldset>
 			</div>
 			

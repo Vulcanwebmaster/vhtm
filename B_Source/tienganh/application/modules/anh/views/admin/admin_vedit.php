@@ -3,12 +3,6 @@
 			echo validation_errors('<div class="error">','</div>');
 		?>	
 		
-<script type="text/javascript">
-	$(function() {
-		$( "#ngaythang" ).datepicker();
-	});
-</script>
-		
 <form method="post" action="<?php echo base_url();?>anh/admin/edit/<?php echo $info->image_id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
@@ -23,16 +17,18 @@
 					<input type="text" name="image_name" style="width:92%" value="<?php echo $info->image_name;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Mục ảnh</label>
-					<select name="news_category">
-						<option value="0">Hình ảnh trung tâm</option>
-						<option value="1">Hình ảnh khóa học</option>
-						<option value="2">Hình ảnh sự kiện</option>
+					<label>Album ảnh</label>
+					<select name="image_album">
+						<?php foreach ($listAlbums as $album)
+						{?>
+							<option <?php if ($album->album_id == $info->image_album) {
+									?> selected="selected" <?php }?> value="<?php echo $album->album_id?>"><?php echo $album->album_name?></option>
+						<?php }?>
 					</select>
 				</fieldset>
 				<fieldset>
 					<label>Ảnh </label>
-					<?php echo $this->ckeditor->editor('image_album',$info->image_album,$config);?>
+					<?php echo $this->ckeditor->editor('image_file',$info->image_file,$config);?>
 				</fieldset>
 			</div>
 			

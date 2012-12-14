@@ -206,10 +206,6 @@ function getRowByColumn($tableName='',$columnName='',$value='')
 	 	$ds->free_result();
 	 	return $list;
 	 }
-	 function gethotline(){
-		  $query= $this->db->query("SELECT * FROM n_hotro where id='5'");
-		  return $query->result();
-	 }
 	 
 	 function getSpByParentID($id){
 	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...

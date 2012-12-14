@@ -7,7 +7,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Manh');
+			$this->load->model('Malbum');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 			
@@ -18,9 +18,9 @@
 		
 		function index()
 		{
-			$data['title']		=	'Hình ảnh';
-			$data['bcCurrent']	=	'Hình ảnh';
-			$data['list']		=	$this->Manh->getListFull('ta_image');
+			$data['title']		=	'Album';
+			$data['bcCurrent']	=	'Album';
+			$data['list']		=	$this->Malbum->getListFull('ta_albums');
 			$data['module']		=	$this->module;
 			$data['page']		=	'admin_vlist';
 			
@@ -29,21 +29,20 @@
 		
 		function _input()
 		{
-			$input=array('image_name'		=>	$this->input->post('image_name'),
-						'image_album'		=>	$this->input->post('image_album'),
-						'image_file'		=>	$this->input->post('image_file'));
+			$input=array('category_id'	=>	$this->input->post('category_id'),
+						'album_name'		=>	$this->input->post('album_name'),
+						'album_avatar'		=>	$this->input->post('album_avatar'));
 		
 			return $input;
 		}
 		
 		function insert()
 		{
-			if (!$this->input->post('image_name'))
+			if (!$this->input->post('album_name'))
 			{
 				$data['config']		=	$this->setupCKEditor('97%','200px');
-				$data['title']		=	'Thêm hình ảnh';
-				$data['bcCurrent']	=	'Hình ảnh';
-				$data['listAlbums']	=	$this->Manh->getListFull('ta_albums');
+				$data['title']		=	'Thêm album';
+				$data['bcCurrent']	=	'Album';
 				$data['module']		=	$this->module;
 				$data['page']		=	'admin_vinsert';
 				
@@ -51,13 +50,13 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('image_name','Tên','required|trim');
+				$this->form_validation->set_rules('album_name','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Manh->insertNewRow('ta_image',$input))
+					if ($this->Malbum->insertNewRow('ta_albums',$input))
 					{
 						$this->session->set_userdata('result','Thêm mới thành công');
 					}
@@ -66,12 +65,12 @@
 				}
 				else 
 				{
-					$data['list']		=	$this->Manh->getListFull('ta_image');
-					$data['config'] 	=	$this->setupCKEditor('97%','200px');
-					$data['title']		=	'Thêm hình ảnh';
-					$data['bcCurrent']	=	'Hỉnh ảnh';
+					$data['config']		=	$this->setupCKEditor('97%','200px');
+					$data['title']		=	'Thêm album';
+					$data['bcCurrent']	=	'Album';
 					$data['module']		=	$this->module;
 					$data['page']		=	'admin_vinsert';
+					
 					$this->load->view('admin/container',$data);
 				}
 			}
@@ -82,27 +81,25 @@
 			//=============================================
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
-			if (!$this->input->post('image_name'))
+			if (!$this->input->post('album_name'))
 			{
-				$data['list']		=	$this->Manh->getListFull('ta_image');
-				$data['info']		=	$this->Manh->getRowByColumn('ta_image','image_id',$id);
-				$data['title']		=	'Sửa hình ảnh';
-				$data['bcCurrent']	=	'Hình ảnh';
-				$data['listAlbums']	=	$this->Manh->getListFull('ta_albums');
-				$data['module']		=	$this->module;
-				$data['page']		=	'admin_vedit';
+				$data['info']=$this->Malbum->getRowByColumn('ta_albums','album_id',$id);
+				$data['title']='Sửa album';
+				$data['bcCurrent']='album';
+				$data['module']=$this->module;
+				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('image_name','Tiêu đề (Việt)','required|trim');
+				$this->form_validation->set_rules('album_name','Tiêu đề (Việt)','required|trim');
 				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Manh->updateRowByColumn('ta_image','image_id',$id,$input))
+					if ($this->Malbum->updateRowByColumn('ta_albums','album_id',$id,$input))
 					{
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
@@ -111,10 +108,10 @@
 				}
 				else 
 				{
-					$data['list']=$this->Manh->getListFull('ta_image');
-					$data['info']=$this->Manh->getRowByColumn('ta_image','image_id',$id);
-					$data['title']='Sửa hình ảnh';
-					$data['bcCurrent']='Hình ảnh';
+					$data['list']=$this->Malbum->getListFull('ta_albums');
+					$data['info']=$this->Malbum->getRowByColumn('ta_albums','album_id',$id);
+					$data['title']='Sửa album';
+					$data['bcCurrent']='Album';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -124,7 +121,7 @@
 		
 		function delete($id=0)
 		{
-			if ($this->Manh->deleteRowByColumn('ta_image','image_id',$id))
+			if ($this->Malbum->deleteRowByColumn('ta_albums','album_id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');
 			}
