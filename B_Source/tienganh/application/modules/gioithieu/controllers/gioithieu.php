@@ -4,29 +4,29 @@ class Gioithieu extends NIW_Controller
 	
 		function __construct()
 		{
-		@session_start();
-		parent::__construct();
-		$this->module=basename(dirname(dirname(__FILE__)));
-		$this->module = strtolower(get_class());
-		$this->load->model('Mgioithieu');
-		$this->load->library('session');
-		$this->load->helper('text');
+			@session_start();
+			parent::__construct();
+			$this->module=basename(dirname(dirname(__FILE__)));
+			$this->module = strtolower(get_class());
+			$this->load->model('Mgioithieu');
+			$this->load->library('session');
+			$this->load->helper('text');
 		}
 		function index()
 		{
-		$this->page();
+			$this->sumenh();
 		}
 	
 		function page($index=0)
 		{
-		$data['items']=$this->Mgioithieu->getListByColumn('ta_about_us','about_category',1);
-		$data['title']='tienganh | Giới thiệu';
-		$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
-		$data['list_gioithieu']=$this->Mgioithieu->getListOffset('ta_about_us',3,$index);
-		$data['module']=$this->module;
-		$data['index'] = -1;
-		$data['page']='vgioithieu';
-		$this->load->view('front/container',$data);
+			$data['items']=$this->Mgioithieu->getListByColumn('ta_about_us','about_category',1);
+			$data['title']='tienganh | Giới thiệu';
+			$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
+			$data['list_gioithieu']=$this->Mgioithieu->getListOffset('ta_about_us',3,$index);
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vgioithieu';
+			$this->load->view('front/container',$data);
 		}
 	
 	function sumenh($index=0)
