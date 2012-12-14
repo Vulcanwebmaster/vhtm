@@ -10,7 +10,15 @@
 					</div>
 					<div class="ft1">
 						<p>Đối tác</p>
-					
+						
+							
+						
+						<ul>
+							<?php foreach ($list_doitac as $value) 
+							{ ?>
+								<li><a href="http://mamnon.com"><?php echo $value->ten ?></a></li>
+							<?php } ?>						
+						</ul>
 					</div>
 					<div class="ft1">
 						<p>Giáo viên</p>

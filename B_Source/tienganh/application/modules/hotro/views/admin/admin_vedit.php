@@ -2,7 +2,7 @@
 		<?php 
 			echo validation_errors('<div class="error">','</div>');
 		?>	
-<form method="post" action="<?php echo base_url();?>doitac/admin/edit/<?php echo $info->id;?>">	
+<form method="post" action="<?php echo base_url();?>hotro/admin/edit/<?php echo $info->id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		</header>
@@ -11,6 +11,10 @@
 				<fieldset>
 					<label>Tên</label>
 					<input type="text" name="ten" style="width:92%" value="<?php echo $info->ten;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Mobile</label>
+					<input type="text" name="sdt" style="width:92%" value="<?php echo $info->sdt;?>"/>
 				</fieldset>
 			</div>
 			

@@ -30,7 +30,7 @@
 		{
 			$input=array('ten'=>$this->input->post('ten'),
 							'sdt'=>$this->input->post('sdt'),
-							'yahoo'=>$this->input->post('yahoo'));
+							);
 			return $input;
 		}
 		

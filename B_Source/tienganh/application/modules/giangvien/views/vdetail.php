@@ -28,24 +28,10 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="#">Giảng viên</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="#"><?php echo $list_chitiet->lecturers_category ?></a></p>
+				 			<p><a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
 				 		</div>
 				 		<div id="contentmaindtgv">
-				 			<p id="anhgv">Nước Anh</p>
-				 			<p id="notegv">Tôi còn những lời hứa phải giữ, những chặng <br>đường phải đi trước khi ngủ</p>	
-				 			<div id="contetntitlegv">
-				 				<div id="imggv"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/pr.png"></div>
-				 				<div id="ltgv">Học viên Việt Nam gọi Khalid bằng nhiều cái tên
-									thân thiện, như Mr. Hello (ông Xin Chào),
-									Mr. Golden Bell (ông Rung chuông vàng),
-									hay Celebrity Teacher (ông giáo viên nổi tiếng),…
-									Đó là kết quả sau nhiều năm cống hiến và quảng
-									bá việc học tập và rèn luyện tiếng Anh tại Việt
-									Nam thông qua các chương trình trò chơi truyền
-									hình mà Khalid từng xuất hiện, như Rung chuông
-									vàng hay Đường lên đỉnh Olympia.
-								</div>
-				 			</div>
+								 <?php echo $chitiet->lecturers_content ?>
 				 			<div class="videogvdt">
 				 				<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen=""></iframe>
 				 			</div>

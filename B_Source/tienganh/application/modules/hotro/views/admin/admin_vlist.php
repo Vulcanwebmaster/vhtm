@@ -47,8 +47,7 @@
 					<thead> 
 						<tr> <th>STT</th>
 		    				<th>Tên</th> 
-		    				<th>SDT</th>
-		    				<th>Yahoo</th>
+		    				<th>Mobile</th>
 		    				<th>Sửa|Xóa</th>
 						</tr> 
 					</thead> 
@@ -60,7 +59,6 @@
 					 		<tr>  <td><?php echo $i; ?></td>
 			    				<td><?php echo $item->ten;?></td> 
 			    				<td><?php echo $item->sdt;?></td> 
-			    				<td><?php echo $item->yahoo;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>hotro/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a href="<?php echo base_url()?>hotro/admin/delete/<?php echo $item->id?>" title="Del"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

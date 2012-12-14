@@ -14,12 +14,8 @@
 					<input type="text" name="ten" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>sdt</label>
+					<label>Mobile</label>
 					<input type="text" name="sdt" style="width:92%"/>
-				</fieldset>
-				<fieldset>
-					<label>yahoo</label>
-					<input type="text" name="yahoo" style="width:92%"/>
 				</fieldset>
 			</div>
 			

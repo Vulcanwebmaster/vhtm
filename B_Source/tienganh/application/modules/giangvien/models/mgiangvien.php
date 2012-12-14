@@ -20,4 +20,8 @@ class Mgiangvien extends CI_Model
 		 	$ds->free_result();
 		 	return $list;
 		}
+		
+		function getlistGV(){
+			
+		}
 }
