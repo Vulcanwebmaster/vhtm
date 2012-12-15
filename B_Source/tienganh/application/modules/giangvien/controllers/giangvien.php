@@ -18,15 +18,15 @@ class Giangvien extends NIW_Controller
 	
 		function page($index=0)
 		{
-		$data['categories']=$this->Mgiangvien->getListByColumn('ta_category','parent_id','0');
-		$data['items']=$this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category',1);
-		$data['title']='tienganh | Giảng viên';
-		$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
-		$data['list_giangvien']=$this->Mgiangvien->getListOffset('ta_lecturers',3,$index);
-		$data['module']=$this->module;
-		$data['index'] = -1;
-		$data['page']='vgiangvien';
-		$this->load->view('front/container',$data);
+			$data['categories']=$this->Mgiangvien->getListByColumn('ta_category','parent_id','0');
+			$data['items']=$this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category',1);
+			$data['title']='tienganh | Giảng viên';
+			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
+			$data['items']=$this->Mgiangvien->getListOffset('ta_lecturers',3,$index);
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vgiangvien';
+			$this->load->view('front/container',$data);
 		}
 	
 		function trogiang($index=0)
