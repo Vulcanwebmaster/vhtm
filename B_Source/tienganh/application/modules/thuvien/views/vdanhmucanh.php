@@ -1,3 +1,17 @@
+<div id="fb-root"></div>
+<script>
+
+//------ like facebook button -------------
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
+
 <div id="content">
 				<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv"/>
 				 <?php echo $this->load->view('front/menu-trai-thuvien');?>			 
@@ -5,20 +19,16 @@
 				 	#slider img{ width:663px !important; height:235px!important;}
 				 </style>
 				 <div id="content_right">
-				 	<div class="slidegv">
-				 		<div class="slider-wrapper theme-default">
-				            <div id="slider" class="nivoSlider">
-				                <img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/slide1.jpg" data-thumb="images/slide1.jpg" alt="" />		                
-				                <img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/slide2.jpg" data-thumb="images/slide2.jpg" alt=""  />
-				                <img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" />
-				                <img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/slide4.jpg" data-thumb="images/slide4.jpg" alt="" />
-				            </div>		           
-		        		</div>
-				 	</div>
+				 	<?php echo $this->load->view('front/slide-thuvien')?>
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p style="margin-top:-20px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimg.png"/></p>
-				 			<p><a href="#" style="color:#1b75bb">Video khóa học</a></p>
+				 			<p><a style="color:#1b75bb"><?php if ($category_id == '0')
+				 															echo 'Hình ảnh trung tâm';
+				 														elseif ($category_id == '1')
+				 															echo 'Hình ảnh khóa học';
+				 														elseif ($category_id == '2')
+				 															echo 'Hình ảnh sự kiện';?></a></p>
 				 			<p style="margin-top:8px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimgvd.png"/></p>
 				 			<p class="bgvdimgimg"></p>
 				 		</div>
@@ -29,7 +39,7 @@
 				 			{?>
 				 				<div class="bgvdcontentimg">
 					 				<!-- p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p -->
-					 				<?php echo $item->album_avatar?>
+					 				<a href="<?php echo base_url()?>thuvien/album/<?php echo $item->album_id?>"><?php echo $item->album_avatar?></a>
 					 				<p align="center">
 					 					<a href="#" style="color:#1b75bb"><?php echo $item->album_name?>
 					 						<label style="color:#f6921e">(<?php echo $counting[$count];?>)</label>
@@ -55,11 +65,12 @@
 					 			<p style="padding:5px">Đề xuất này trên google</p>
 					 		</div>
 					 		<ul style="padding:0">
-					 			<li><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/sharr.png"/></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/line.png"/></a></li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/send.png"/></a></li>
-					 			<li style="padding-top:10px"><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/faceicon.png"/></a></li>
-					 			<li style="padding-top:7px"><a href="#">loanguyen</a> like this</li>
+					 			<li>
+								</li>
+					 			<li>
+					 				<div class="fb-like" data-href="http://localhost/tienganh/thuvien/category/0" data-send="true" data-layout="button_count" data-width="450" data-height="90" data-show-faces="true">
+					 				</div>
+					 			</li>
 					 			
 					 		</ul>
 					 		<div id="comment">

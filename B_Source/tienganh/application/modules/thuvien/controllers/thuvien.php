@@ -9,53 +9,67 @@
  */
 class Thuvien extends NIW_Controller
 {
+	private $data = array();
 	function __construct()
 	{
 		parent::__construct();
 		$this->module	=	strtolower(get_class());
 		
 		$this->load->model('Mthuvienanh');
+		$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
 	}
 	
 	function index()
 	{
-		$data['module']			=	$this->module;
-		$data['page']			=	'vthuvien';
-		$data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
+		$this->data['module']			=	$this->module;
+		$this->data['page']			=	'vthuvien';
 		
-		$this->load->view('front/container', $data);
+		$this->load->view('front/container', $this->data);
 	}
 	
 	/*
 	 * a function to get detail of a category by category id
-	 * $category_id: id number of category that will be got detail
+	 * $category_id: id number of the category that will be got detail
 	 */
 	function category($category_id = '0', $index = 0)
 	{
-		$data['module']			=	$this->module;
-		$data['category_id']	=	$category_id;
+		$this->data['module']		=	$this->module;
+		$this->data['category_id']	=	$category_id;
 		
 		if ($category_id < 3) // if category is image category
 		{
 			// get list all of albums
-			$data['list']		=	$this->Mthuvienanh->getListByColumnOffset('ta_albums', 'category_id',$category_id, $index, 6);
-			$data['page']		=	'vdsalbum';
+			$this->data['list']		=	$this->Mthuvienanh->getListByColumnOffset('ta_albums', 'category_id',$category_id, $index, 6);
+			$this->data['page']		=	'vdanhmucanh';
 			
 			$counting	=	array();
-			foreach ($data['list'] as $item)
+			foreach ($this->data['list'] as $item)
 			{
 				$listImages	=	$this->Mthuvienanh->getListByColumn('ta_image','image_album', $item->album_id);
 				$counting[]	=	count($listImages); // count amount of images for each album
 			}
 			
-			$data['counting']	=	$counting;
+			$this->data['counting']	=	$counting;
 		}
 		else // if category is video category
 		{
-			$data['list']		=	$this->Mthuvienanh->getListOffset('ta_vedio', $index, 6);
-			$data['page']		=	'vdsvideo';
+			$this->data['list']		=	$this->Mthuvienanh->getListOffset('ta_vedio', $index, 6);
+			$this->data['page']		=	'vdanhmucvideo';
 		}
 		
-		$this->load->view('front/container', $data);
+		$this->load->view('front/container', $this->data);
+	}
+	
+	/*
+	 * A function to get detail of a album
+	 * @album_id: id number of the album that will be got detail
+	 */
+	function album($album_id = '0')
+	{
+		$this->data['module']	=	$this->module;
+		$this->data['page']		=	'vchitietalbum';
+		$this->data['list']		=	$this->Mthuvienanh->getListByColumn('ta_image', 'image_album', $album_id);
+		
+		$this->load->view('front/container', $this->data);
 	}
 }

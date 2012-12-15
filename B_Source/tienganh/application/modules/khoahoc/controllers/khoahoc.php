@@ -1,6 +1,7 @@
 <?php
 class Khoahoc extends NIW_Controller
 {
+	private $data = array();
 	function __construct()
 	{
 		parent::__construct();
@@ -8,11 +9,25 @@ class Khoahoc extends NIW_Controller
 		$this->load->library('pagination');
 		
 		$this->load->model('Mkhoahoc');
+		$this->module	=	strtolower(get_class());
+		$this->data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
 	}
 	
 	function index()
 	{
-		$this->page();
+		$this->data['page']	=	'vkhoahoc';
+		$this->data['module']	=	$this->module;
+		
+		$this->load->view('front/container', $this->data);
+		//$this->page();
+	}
+	
+	function chitiet()
+	{
+		$this->data['page']	=	'vchitiet';
+		$this->data['module']	=	$this->module;
+		
+		$this->load->view('front/container', $this->data);
 	}
 	
 	public function page($index=0)

@@ -26,7 +26,7 @@
 			$config['base_url']=base_url().'khoahoc/admin/page/';
 			$config['per_page']=2;
 			$config['total_rows']=count($this->Mkhoahoc->getListFull('ta_courses'));
-			$config['uri_segment']=3;
+			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
 			$data['title']='Khóa học';

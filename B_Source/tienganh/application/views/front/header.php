@@ -52,7 +52,7 @@
 							<li class="home"><a href="<?php echo base_url();?>homepage">Home</a></li>
 							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
-							<li class="menu_move"><a href="#">Khóa học</a>
+							<li class="menu_move"><a href="<?php echo base_url();?>khoahoc">Khóa học</a>
 								<div class="submenu" style="display: none;">
 									<div>Tiếng Anh cho mầm non
 										<ul>

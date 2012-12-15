@@ -18,8 +18,8 @@
 		
 		function index()
 		{
-			$data['title']='Vedio';
-			$data['bcCurrent']='Vedio';
+			$data['title']='Video';
+			$data['bcCurrent']='Video';
 			$data['list']=$this->Mvedio->getListFull('ta_vedio');
 			//$data['list_anh']=$this->Mvedio->getListFull('ta_vedio');
 			$data['module']=$this->module;
