@@ -88,15 +88,15 @@
 		 			
 		 		</ul>
 		 		<div id="comment">
-		 		
- 					<img src="<?php echo base_url()?>assets/trungtam-tienganh/images/pr anh.png"/>
- 					<div class="formcm">
- 						<form>
- 							<textarea ></textarea><br/>
- 							<div class="submit">Posting as Biết ơn cuộc sống (Not now)?<input type="submit" value="Comment" /></div>
- 							<div class="check"><input type="checkbox" />Post to facebook</div>
- 						</form>
- 					</div>	
+		 		<script src=
+							"http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+							type="text/javascript"></script>
+							
+							<fb:comments></fb:comments>
+							
+							<script type="text/javascript">
+							FB.init("YOUR_API_KEY_HERE", "<path from web root>/xd_receiver.htm");
+							</script>
  							 				
 		 			<br clear="both"/>
 		 		</div>

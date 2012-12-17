@@ -6,7 +6,7 @@
 		{
 			parent::__construct();
 			$this->module=strtolower(get_class());
-			
+			$this->load->library('pagination');
 			$this->load->model('Mtintuc');
 			$this->load->library('form_validation');
 			$this->load->library('session');
@@ -24,14 +24,14 @@
 		function page($index=0)
 		{
 			$config['base_url']=base_url().'tintuc/admin/page/';
-			$config['per_page']=15;
+			$config['per_page']=4;
 			$config['total_rows']=count($this->Mtintuc->getListFull('ta_news'));
-			$config['uri_segment']=3;
+			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Tin tức';
+			$data['title']='Thông tin tin tức';
 			$data['bcCurrent']='tin tức';
-			$data['list']=$this->Mtintuc->getListOffset('ta_news',15,$index);
+			$data['list']=$this->Mtintuc->getListOffset('ta_news',4,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
@@ -48,91 +48,6 @@
 						'news_image'=>$this->input->post('news_image'));
 			return $input;
 		}
-		
-		
-		function insert()
-		{
-			if (!$this->input->post('news_title'))
-			{
-				$data['list']=$this->Mtintuc->getListFull('ta_news');
-				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Thêm tin tức';
-				$data['bcCurrent']='Tin tức';
-				$data['module']=$this->module;
-				$data['page']='admin_vinsert';
-				$this->load->view('admin/container',$data);
-			}
-			else 
-			{
-				$this->form_validation->set_rules('news_title','Tiêu đề ','required|trim');
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
-				
-				if ($this->form_validation->run())
-				{
-					$input=$this->_input();
-					if ($this->Mtintuc->insertNewRow('ta_news',$input))
-					{
-						$this->session->set_userdata('result','Thêm mới thành công');
-					}
-					else $this->session->set_userdata('result','Thêm mới không thành công');
-					$this->index();
-				}
-				else 
-				{
-					$data['list']=$this->Mtintuc->getListFull('ta_news');
-					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Thêm tin tức';
-					$data['bcCurrent']='tin tức';
-					$data['module']=$this->module;
-					$data['page']='admin_vinsert';
-					$this->load->view('admin/container',$data);
-				}
-			}
-		}
-		
-		function edit($id=0)
-		{
-			//=============================================
-			$data['config'] = $this->setupCKEditor('97%','200px');
-			//=============================================
-			if (!$this->input->post('news_title'))
-			{
-				$data['list']=$this->Mtintuc->getListFull('ta_news');
-				$data['info']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
-				$data['title']='Sửa tin tức';
-				$data['bcCurrent']='Tin tức';
-				$data['module']=$this->module;
-				$data['page']='admin_vedit';
-				$this->load->view('admin/container',$data);
-			}
-			else 
-			{
-				$this->form_validation->set_rules('news_title','Tiêu đề ','required|trim');
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
-				
-				if ($this->form_validation->run())
-				{
-					$input=$this->_input();
-					if ($this->Mtintuc->updateRowByColumn('ta_news','news_id',$id,$input))
-					{
-						$this->session->set_userdata('result','Cập nhật thành công');
-					}
-					else $this->session->set_userdata('result','Cập nhật không thành công');
-					$this->index();
-				}
-				else 
-				{
-					$data['list']=$this->Mtintuc->getListFull('ta_news');
-					$data['info']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
-					$data['title']='Sửa tin tức';
-					$data['bcCurrent']='Tin tức';
-					$data['module']=$this->module;
-					$data['page']='admin_vedit';
-					$this->load->view('admin/container',$data);
-				}
-			}
-		}
-		
 		
 		function delete($id=0)
 		{

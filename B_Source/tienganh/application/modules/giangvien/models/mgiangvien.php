@@ -17,6 +17,7 @@ class Mgiangvien extends CI_Model
 		 	{
 		 		$list[]=$item;
 		 	}
+			
 		 	$ds->free_result();
 		 	return $list;
 		}
@@ -24,4 +25,12 @@ class Mgiangvien extends CI_Model
 		function getlistGV(){
 			
 		}
+		
+		// đếm tổng số record trong table book 
+        function count_all(){
+			$where = "category_lecturers = 'Trợ giảng'";
+			$this->db->where($where);
+			$query=$this->db->from('ta_lecturers');
+			return $query;
+        }
 }

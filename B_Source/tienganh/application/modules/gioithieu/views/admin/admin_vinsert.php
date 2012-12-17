@@ -32,12 +32,6 @@
 				</fieldset>
 				
 			</div>
-			
-			<footer style="float:left">
-					<div class="submit_link">
-						<input type="submit" name="submit" value="Thêm" class="alt_btn">
-					</div>
-			</footer>
 		</div><!-- end of .tab_container -->
 				</article><!-- end of content manager article -->	
 </form>

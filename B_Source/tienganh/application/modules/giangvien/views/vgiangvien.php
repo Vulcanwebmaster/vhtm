@@ -44,7 +44,7 @@
 							{ ?>
 			        		<div class="idmain">
 			        			<div class="img_main1">
-			        				<?php echo $item->lecturers_image ?>
+			        				<!--<?php echo $item->lecturers_image ?>-->
 			        			</div>
 			        			<div class="text_main">
 			        				<p class="title"><?php echo $item->lecturers_title ?></p>
@@ -55,8 +55,9 @@
 			        			</div>
 			        		</div>
 			        		<?php } ?>
+			        		<div><?php echo $this->pagination->create_links();?></div>
 			        	</div>
-			        		
+			        	
 			        	<!--------------End begin Tin tức---------------->
 					 <!----------------------------->
 				</div>

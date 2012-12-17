@@ -72,19 +72,20 @@
 					 			<li><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/line.png"/></a></li>
 					 			<li><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/send.png"/></a></li>
 					 			<li style="padding-top:10px"><a href="#"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/faceicon.png"/></a></li>
-					 			<li style="padding-top:7px"><a href="#">loanguyen</a> like this</li>
+					 			<li style="padding-top:7px"><a href="#">ngotuyet</a> like this</li>
 					 			
 					 		</ul>
 					 		<div id="comment">
 					 		
-			 					<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/pr anh.png"/>
-			 					<div class="formcm">
-			 						<form>
-			 							<textarea ></textarea><br/>
-			 							<div class="submit">Posting as Biết ơn cuộc sống (Not now)?<input type="submit" value="Comment" /></div>
-			 							<div class="check"><input type="checkbox" />Post to facebook</div>
-			 						</form>
-			 					</div>	
+			 					<script src=
+							"http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+							type="text/javascript"></script>
+							
+							<fb:comments></fb:comments>
+							
+							<script type="text/javascript">
+							FB.init("YOUR_API_KEY_HERE", "<path from web root>/xd_receiver.htm");
+							</script>
 			 							 				
 					 			<br clear="both"/>
 					 		</div>
@@ -116,8 +117,6 @@
 			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_155.gif"/>
 			        		</div>
 			        		</div>
-			        		
-			        		
 			        	</div>
 			        	<div class="next12"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/icon8.gif"/></div>
 			        	
