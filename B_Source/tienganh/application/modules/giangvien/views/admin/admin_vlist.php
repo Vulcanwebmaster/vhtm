@@ -45,7 +45,7 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-							<th>Tiêu đề</th>
+							<th>Tên giảng viên</th>
 		    				<th>Giảng viên</th> 
 		    				<th>Nội dung</th>
 		    				<th>Sửa|Xóa</th>

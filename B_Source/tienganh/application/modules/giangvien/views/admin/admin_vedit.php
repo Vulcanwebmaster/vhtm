@@ -17,7 +17,7 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tiêu đề </label>
+					<label>Tên giảng viên </label>
 					<input type="text" name="lecturers_title" style="width:92%" value="<?php echo $info->lecturers_title;?>"/>
 				</fieldset>
 				<fieldset>
