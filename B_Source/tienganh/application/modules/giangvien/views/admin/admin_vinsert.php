@@ -18,12 +18,15 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Loại làng nghề</label>
+					<label>Tiêu đề </label>
+					<input type="text" name="lecturers_title" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Giảng viên</label>
 					<select name="lecturers_category">
-						<?php  foreach ($list as $item)
-					 	{      ?>
-						<option value="<?php echo $item->lecturers_category;?>"><?php echo $item->lecturers_category;?></option>
-						<?php } ?>
+						<option value="Thầy giáo">Thầy giáo</option>
+						<option value="Cô giáo">Cô giáo</option>
+						<option value="Trợ giảng">Trợ giảng</option>
 					</select>
 				</fieldset>
 				<fieldset>

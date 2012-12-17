@@ -45,9 +45,9 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
+							<th>Tiêu đề</th>
 		    				<th>Giảng viên</th> 
 		    				<th>Nội dung</th>
-		    				<th>Ảnh</th>
 		    				<th>Sửa|Xóa</th>
 		    				
 						</tr> 
@@ -56,9 +56,9 @@
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
+					 			<td><?php echo $item->lecturers_title;?></td>
 			    				<td><?php echo $item->lecturers_category;?></td> 
 			    				<td><?php echo $item->lecturers_content;?></td>
-			    				<td><?php echo $item->lecturers_image;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>giangvien/admin/edit/<?php echo $item->lecturers_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->lecturers_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

@@ -25,8 +25,9 @@
 		{
 			$config['base_url']=base_url().'giangvien/admin/page/';
 			$config['per_page']=3;
+			//var_dump($this->Mgiangvien->getListFull('ta_lecturers'));die();
 			$config['total_rows']=count($this->Mgiangvien->getListFull('ta_lecturers'));
-			$config['uri_segment']=3;
+			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
 			$data['title']='Giảng viên';
@@ -40,10 +41,11 @@
 		function _input()
 		{
 			$input=array(
+						'lecturers_title'=>$this->input->post('lecturers_title'),
 						'lecturers_category'=>$this->input->post('lecturers_category'),
 						'lecturers_content'=>$this->input->post('lecturers_content'),
 						'lecturers_image'=>$this->input->post('lecturers_image'),
-						'alias'=>$this->getAliasByName($this->input->post('lecturers_content')),
+						'alias'=>$this->getAliasByName($this->input->post('lecturers_title')),
 						);
 			return $input;
 		}
@@ -65,12 +67,11 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('lecturers_category','Tên','required|trim');
-				$this->form_validation->set_rules('lecturers_content','Tên','required|trim');
-				$this->form_validation->set_rules('lecturers_image','Tên','required|trim');
+				$this->form_validation->set_rules('lecturers_title','Tiêu đề','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				if ($this->form_validation->run())
 				{
+					// var_dump($this->input->post('lecturers_image'));die();
 					$input=$this->_input();
 					if ($this->Mgiangvien->insertNewRow('ta_lecturers',$input))
 					{
@@ -109,8 +110,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('lecturers_content','Tên','required|trim');
-				$this->form_validation->set_rules('lecturers_image','Tên','required|trim');
+				$this->form_validation->set_rules('lecturers_title','Tiêu đề','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				if ($this->form_validation->run())
 				{
