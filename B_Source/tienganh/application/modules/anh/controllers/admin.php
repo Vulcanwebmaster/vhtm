@@ -6,7 +6,7 @@
 		{
 			parent::__construct();
 			$this->module=strtolower(get_class());
-			
+			$this->load->library('pagination');
 			$this->load->model('Manh');
 			$this->load->library('form_validation');
 			$this->load->library('session');
@@ -16,11 +16,17 @@
 			//=============================================
 		}
 		
-		function index()
+		function index($index=0)
 		{
+			$config['base_url']=base_url().'anh/admin/page/';
+			$config['per_page']=2;
+			$config['total_rows']=count($this->Manh->getListFull('ta_image'));
+			$config['uri_segment']=4;
+			$this->pagination->initialize($config);
+			
 			$data['title']		=	'Hình ảnh';
 			$data['bcCurrent']	=	'Hình ảnh';
-			$data['list']		=	$this->Manh->getListFull('ta_image');
+			$data['list']=$this->Manh->getListOffset('ta_image',2,$index);
 			$data['module']		=	$this->module;
 			$data['page']		=	'admin_vlist';
 			
