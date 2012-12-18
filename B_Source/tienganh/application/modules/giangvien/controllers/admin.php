@@ -24,7 +24,7 @@
 		function page($index=0)
 		{
 			$config['base_url']=base_url().'giangvien/admin/page/';
-			$config['per_page']=4;
+			$config['per_page']=12;
 			//var_dump($this->Mgiangvien->getListFull('ta_lecturers'));die();
 			$config['total_rows']=count($this->Mgiangvien->getListFull('ta_lecturers'));
 			$config['uri_segment']=4;
@@ -32,7 +32,7 @@
 			
 			$data['title']='Thông tin giảng viên';
 			$data['bcCurrent']='giảng viên';
-			$data['list']=$this->Mgiangvien->getListOffset('ta_lecturers',4,$index);
+			$data['list']=$this->Mgiangvien->getListOffset('ta_lecturers',12,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);

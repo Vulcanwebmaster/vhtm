@@ -169,7 +169,7 @@ a:hover, a:active, a:focus {
 .reamororgv{background:url(../images/iconarrow.png) no-repeat scroll 2px 5px; padding-left:12px !important}
 .reamororgv a{color:#35a7dd; text-decoration:none;}
 .ctgv{float:left; width:49%; height:105px; margin:5px 3px 5px 3px; background-color:#f2f2f2}
-
+.ctgv img {width: 102px !important; height: 85px !important }
 /*detail giang vien*/
 #contentmaindtgv{ background:url(../images/bggvdetail.png) no-repeat left top; height: 660px; clear:both; position: relative; padding:150px 0 0 115px}
 #anhgv{ position:absolute; right:160px; top:38px; text-transform:uppercase; color:#fff; }

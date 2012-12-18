@@ -39,25 +39,36 @@
 				 			
 				 		</div>
 					 						<!--------------begin Tin tức---------------->
-			        	<div class="textmaincontent1">
+			        	<!-----<div class="textmaincontent1">
 			        		<?php foreach ($items as $item) 
 							{ ?>
 			        		<div class="idmain">
 			        			<div class="img_main1">
-			        				<!--<?php echo $item->lecturers_image ?>-->
+			        				<?php echo $item->lecturers_image ?>
 			        			</div>
 			        			<div class="text_main">
 			        				<p class="title"><?php echo $item->lecturers_title ?></p>
 			        				<p><?php echo word_limiter(strip_tags($item->lecturers_content), 40)?> 
 									</br><a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id;?>">
 										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
-									
 			        			</div>
 			        		</div>
 			        		<?php } ?>
 			        		<div><?php echo $this->pagination->create_links();?></div>
+			        	</div>--->
+			        	<div id="contentmaingv">
+			        	<?php foreach ($items as $item) 
+							{ ?>
+			        	<div class="ctgv">				 			
+			 					<div class="divgv"><?php echo $item->lecturers_image ?></div>
+			 					<div class="divgv2">
+			 						<p class="tittlegv"><?php echo $item->lecturers_title ?></p>
+			 						<p><i><?php echo word_limiter(strip_tags($item->lecturers_content), 10)?> </i></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id;?>">Chi tiết</a></p>
+			 					</div >
+				 			</div>	
+			        	<?php } ?>
 			        	</div>
-			        	
 			        	<!--------------End begin Tin tức---------------->
 					 <!----------------------------->
 				</div>

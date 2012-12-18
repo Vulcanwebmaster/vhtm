@@ -31,7 +31,7 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
 				 		</div>
 				 		
-			        	<div class="textmaincontent1">
+			        	<!------<div class="textmaincontent1">
 			        		<?php foreach ($items as $item) 
 							{ ?>
 			        		<div class="idmain">
@@ -48,6 +48,19 @@
 			        		</div>
 			        		<?php } ?>
 			        		<div><?php echo $this->pagination->create_links();?></div>
+			        	</div>------------>
+			        	<div id="contentmaingv">
+			        	<?php foreach ($items as $item) 
+							{ ?>
+			        	<div class="ctgv">				 			
+			 					<div class="divgv"><?php echo $item->news_image ?></div>
+			 					<div class="divgv2">
+			 						<p class="tittlegv"><?php echo $item->news_title ?></p>
+			 						<p><i><?php echo word_limiter(strip_tags($item->news_content), 10)?> </i></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">Chi tiết</a></p>
+			 					</div >
+				 			</div>	
+			        	<?php } ?>
 			        	</div>
 			        		
 			        	<!--------------End begin Tin tức---------------->
