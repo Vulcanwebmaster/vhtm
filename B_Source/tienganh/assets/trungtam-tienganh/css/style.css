@@ -176,6 +176,7 @@ a:hover, a:active, a:focus {
 #notegv{ position:absolute; top:60px; left:130px;}
 #contetntitlegv{}
 #imggv{float:left; width:21%;}
+#imggv img{ width:110px !important; height: 142px !important;}
 #ltgv{ float:left; width:50%; line-height: 25px; margin-bottom:40px}
 /*video*/
 .videogvdt iframe{ width:56%; height:23%; margin-left:35px;}

@@ -47,9 +47,7 @@
 							<th>STT</th>
 		    				<th>Tiêu đề</th> 
 		    				<th>Mục tin tức</th>
-		    				<th>Ảnh</th>
-		    				<th>Nội dung</th>
-		    				<th>Ngày tháng</th>
+		    				<th>Ngày đăng</th>
 		    				<th>Sửa</th>
 		    				
 						</tr> 
@@ -60,10 +58,9 @@
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->news_title;?></td> 
 			    				<td><?php echo $item->news_category;?></td>
-			    				<td><?php echo $item->news_image;?></td>
-			    				<td><?php echo $item->news_content;?></td> 
 			    				<td><?php echo $item->news_post_date;?></td>
 			    				<td>
+			    					<a href="<?php echo base_url()?>tintuc/admin/edit/<?php echo $item->news_id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->news_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
@@ -75,7 +72,11 @@
 			<center style="font-size: 15px;color:red">
 				<?php echo $this->pagination->create_links();?>
 			</center>
-						
+			<footer>
+				<div class="submit_link">
+					<a class="alt_btn" href="<?php echo base_url();?>tintuc/admin/insert">Thêm mới</a>
+				</div>
+			</footer>		
 		</div>
 	</article>
 </form>	

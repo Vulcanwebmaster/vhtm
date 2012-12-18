@@ -25,10 +25,10 @@
 				<fieldset>
 					<label>Mục tin tức</label>
 					<select name="news_category">
-						<?php  foreach ($list as $item)
-					 	{      ?>
-						<option value="<?php echo $item->news_category;?>"><?php echo $item->news_category;?></option>
-						<?php } ?>
+						<option value="Tiếng Anh mầm non">Tiếng Anh mầm non</option>
+						<option value="Tiếng Anh tiểu học">Tiếng Anh tiểu học</option>
+						<option value="Tiếng Anh cho sinh viên">Tiếng Anh cho sinh viên</option>
+						<option value="Tiếng Anh cho người đi làm">Tiếng Anh cho người đi làm</option>
 					</select>
 				</fieldset>
 				<fieldset>

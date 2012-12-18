@@ -47,8 +47,8 @@
 							<th>STT</th>
 							<th>Tên giảng viên</th>
 		    				<th>Giảng viên</th> 
-		    				<th>Nội dung</th>
-		    				<th>Sửa|Xóa</th>
+		    				<th>Sửa</th>
+		    				<th>Xóa</th>
 		    				
 						</tr> 
 					</thead> 
@@ -58,9 +58,10 @@
 					 		<tr><td><?php echo $i;?></td>
 					 			<td><?php echo $item->lecturers_title;?></td>
 			    				<td><?php echo $item->lecturers_category;?></td> 
-			    				<td><?php echo $item->lecturers_content;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>giangvien/admin/edit/<?php echo $item->lecturers_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    				</td>
+			    				<td>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->lecturers_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				

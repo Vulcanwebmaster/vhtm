@@ -20,15 +20,15 @@ class Tintuc extends NIW_Controller
 	function page($index=0)
 	{
 		$config['base_url'] = base_url().'tintuc/page';
-		$config['per_page'] = 3;
+		$config['per_page'] = 10;
 		$config['total_rows'] = count($this->Mtintuc->getListFull('ta_news'));
 		$this->pagination->initialize($config);
 		//nho loi 
 		$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
-		$data['items'] = $this->Mtintuc->getListOffset('ta_news',4,$index);
+		$data['items'] = $this->Mtintuc->getListOffset('ta_news',10,$index);
 		$data['title']='tienganh | Tin tức';
 		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
-		$data['list_tintuc']=$this->Mtintuc->getListOffset('ta_news',3,$index);
+		//$data['list_tintuc']=$this->Mtintuc->getListOffset('ta_news',10,$index);
 		$data['module']=$this->module;
 		$data['index'] = -1;
 		$data['page']='vtintuc';
@@ -38,12 +38,12 @@ class Tintuc extends NIW_Controller
 	function mamnon($index=0)
 	{
 			$config['base_url'] = base_url().'tintuc/mamnon';
-			$config['per_page'] = 2;
+			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh mầm non'));
 			$this->pagination->initialize($config);
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
-			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh mầm non',$index,2);
+			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh mầm non',$index,10);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
 			$data['index'] = 0;
@@ -53,12 +53,12 @@ class Tintuc extends NIW_Controller
 	function tieuhoc($index=0)
 	{
 			$config['base_url'] = base_url().'tintuc/tieuhoc';
-			$config['per_page'] = 2;
+			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh tiểu học'));
 			$this->pagination->initialize($config);
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
-			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh tiểu học',$index,2);
+			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh tiểu học',$index,10);
 			$data['module']=$this->module;
 			$data['index'] = 1;
 			$data['page']='vtintuc';
@@ -68,12 +68,12 @@ class Tintuc extends NIW_Controller
 	function sinhvien($index=0)
 	{
 			$config['base_url'] = base_url().'tintuc/sinhvien';
-			$config['per_page'] = 2;
+			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh cho sinh viên'));
 			$this->pagination->initialize($config);
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
-			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho sinh viên',$index,4);
+			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho sinh viên',$index,10);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
 			$data['index'] = 2;
@@ -84,12 +84,12 @@ class Tintuc extends NIW_Controller
 	function dilam($index=0)
 	{
 			$config['base_url'] = base_url().'tintuc/dilam';
-			$config['per_page'] = 2;
+			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh cho người đi làm'));
 			$this->pagination->initialize($config);
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
-			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,4);
+			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,10);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
 			$data['index'] = 3;

@@ -29,6 +29,11 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>tintuc">Tin tức</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
+				 			<p><?php if ($index == 0) echo 'Tiếng Anh mầm non';
+				 						elseif ($index == 1) echo 'Tiếng Anh tiểu học';
+										elseif ($index == 2) echo 'Tiếng Anh cho sinh viên';
+										elseif ($index == 3) echo 'Tiếng Anh cho người đi làm';
+				 				?></p>
 				 		</div>
 				 		
 			        	<!------<div class="textmaincontent1">
@@ -43,7 +48,6 @@
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 40)?> 
 									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">
 										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
-									
 			        			</div>
 			        		</div>
 			        		<?php } ?>
@@ -55,14 +59,17 @@
 			        	<div class="ctgv">				 			
 			 					<div class="divgv"><?php echo $item->news_image ?></div>
 			 					<div class="divgv2">
-			 						<p class="tittlegv"><?php echo $item->news_title ?></p>
+			 						<p class="tittlegv"><?php echo word_limiter(strip_tags($item->news_title), 6) ?></p>
+			 						<p><i><?php echo $item->news_post_date ?></i></p>
 			 						<p><i><?php echo word_limiter(strip_tags($item->news_content), 10)?> </i></p>
-			 						<p class="reamororgv"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">Chi tiết</a></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
+			 							Chi tiết</a>
+			 						</p>
 			 					</div >
 				 			</div>	
 			        	<?php } ?>
+			        	<div><?php echo $this->pagination->create_links();?></div>
 			        	</div>
-			        		
 			        	<!--------------End begin Tin tức---------------->
 				</div>
 				<!-----------end share------------>

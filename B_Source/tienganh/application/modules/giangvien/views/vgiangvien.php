@@ -34,11 +34,9 @@
 				 						elseif ($index == 2) echo 'Cô giáo';
 										elseif ($index == 0) echo 'Trợ giảng';
 				 				?>
-				 				
 				 			</a></p>
-				 			
 				 		</div>
-					 						<!--------------begin Tin tức---------------->
+					 	<!--------------begin Tin tức---------------->
 			        	<!-----<div class="textmaincontent1">
 			        		<?php foreach ($items as $item) 
 							{ ?>
@@ -64,10 +62,11 @@
 			 					<div class="divgv2">
 			 						<p class="tittlegv"><?php echo $item->lecturers_title ?></p>
 			 						<p><i><?php echo word_limiter(strip_tags($item->lecturers_content), 10)?> </i></p>
-			 						<p class="reamororgv"><a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id;?>">Chi tiết</a></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id."-".$item->alias;?>">Chi tiết</a></p>
 			 					</div >
 				 			</div>	
 			        	<?php } ?>
+			        	<div><?php echo $this->pagination->create_links();?></div>
 			        	</div>
 			        	<!--------------End begin Tin tức---------------->
 					 <!----------------------------->
