@@ -31,7 +31,7 @@
 				 			<p><a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
 				 		</div>
 				 			<div id="contentmaindtgv">
-				 			<p id="anhgv"></p>
+				 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
 				 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
 				 			<div id="contetntitlegv">
 				 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>

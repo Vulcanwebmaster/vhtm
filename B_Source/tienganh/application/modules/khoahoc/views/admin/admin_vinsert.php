@@ -24,10 +24,8 @@
 				<fieldset>
 					<label>Loại khóa học</label>
 					<select name="courses_category">
-						<?php  foreach ($list as $item)
-					 	{      ?>
-						<option value="<?php echo $item->courses_category;?>"><?php echo $item->courses_category;?></option>
-						<?php } ?>
+						<option value="Tiểu học">Tiểu học</option>
+						<option value="Mầm non">Mầm non</option>
 					</select>
 				</fieldset>
 				<fieldset>

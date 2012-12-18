@@ -26,7 +26,6 @@ class Khoahoc extends NIW_Controller
 	{
 		$this->data['page']	=	'vchitiet';
 		$this->data['module']	=	$this->module;
-		
 		$this->load->view('front/container', $this->data);
 	}
 	
@@ -64,7 +63,7 @@ class Khoahoc extends NIW_Controller
 		$data['list_hotro']=$this->Mkhoahoc->getListFull('hotro');
 		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
 		$data['categories']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id','0');
-		$data['detail']=$this->Mkhoahoc->getRowByColumn('ta_courses','id',$id);
+		$data['detail']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$id);
 		$data['title']='tienganh | Tiếng anh';		
 		$data['module']=$this->module;
 		$data['current_breadcrum']=$data['detail']->courses_name;
@@ -77,7 +76,6 @@ class Khoahoc extends NIW_Controller
 
 	function category($id=0, $index=0)
 	{
-		
 		$data['list_hotro']=$this->Mkhoahoc->getListFull('hotro');
 		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
 		$data['current_category']= $this->Mkhoahoc->getRowByColumn('danhmuc','id',$id);

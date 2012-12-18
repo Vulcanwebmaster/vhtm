@@ -48,7 +48,6 @@
 		    				<th>Tên khóa học</th> 
 		    				<th>Loại khóa học</th>
 		    				<th>Ngày tháng</th>
-		    				<th>Nội dung</th>
 		    				<th>Sửa|Xóa</th>
 		    				
 						</tr> 
@@ -60,7 +59,6 @@
 			    				<td><?php echo $item->courses_name;?></td> 
 			    				<td><?php echo $item->courses_category;?></td>
 			    				<td><?php echo $item->courses_date;?></td>
-			    				<td><?php echo $item->courses_content;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>khoahoc/admin/edit/<?php echo $item->courses_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->courses_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

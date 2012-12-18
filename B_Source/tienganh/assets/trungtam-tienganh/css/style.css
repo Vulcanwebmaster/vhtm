@@ -64,7 +64,7 @@ a:hover, a:active, a:focus {
 .img_main{width:29%; float:left}
 .img_main1{width:19%; float:left}
 .img_main1 img {width: 102px !important; height: 85px !important }
-.img_main img{ width:120px; height:84px;}
+.img_main img{ width:120px !important; height:84px !important;}
 .text_main{width:71%; float:left}
 .text_main a, .text_main2 a {color:#000087; text-decoration:none}
 .title{font-weight:bold;}
@@ -75,6 +75,7 @@ a:hover, a:active, a:focus {
 .bgtitlemain p{ margin:0; padding:4px 0 0 30px !important; font-size:18px; color:#fff; text-transform:uppercase}
 
 .img_main2{ width:17%;  height:100%; float:left}
+.img_main2 img{ width:120px !important; height:84px !important;}
 .img_main2 p{ width:70px;padding-top:15px !important; height:65px; float:left; background-color:#1b75bb; font-size:16px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
 .readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:20px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }

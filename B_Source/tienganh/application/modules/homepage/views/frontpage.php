@@ -22,32 +22,39 @@
 			        				<?php echo $item->news_image ?>
 			        			</div>
 			        			<div class="text_main">
-			        				<p class="title"><a href="<?php echo base_url() ?>tintuc">
+			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 															<?php echo $item->news_title ?>
 														  </a></p>
-			        				<p><?php echo word_limiter($item->news_content, 30)?><img src="assets/trungtam-tienganh/images/icon19.png"/></a></p>
+			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?>
+			        					<!---<img src="assets/trungtam-tienganh/images/icon19.png"/>--->
+			        				</p>
 									
 			        			</div>
 			        		</div>
 			        		<?php } ?>
-			        		<div class="readmore1"><a href="#">Xem thêm</a></div>
+			        		<!----<div class="readmore1"><a href="#">Xem thêm</a></div>--->
 			        	</div>
 			        	
 			        	<div class="textmaincontent" style="margin-left:2%;">
 		        		<div class="bgtitlemain"><p class="titlemain">Khóa học</p></div>
 		        		<?php foreach ($list_khoahoc as $item) 
-									{ ?>
+								{ ?>
 		        		<div class="idmain">
 		        			<div class="img_main2">
 		        				<p><?php echo $item->courses_date ?></p>
 		        			</div>
 		        			<div class="text_main2">
-		        				<p class="title"><?php echo $item->courses_name ?></p>
-		        				<p><?php echo word_limiter($item->courses_content, 30)?><img src="assets/trungtam-tienganh/images/icon19.png"/></a></p>
+		        				<p class="title">
+		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
+		        					<?php echo $item->courses_name ?>
+		        					</a></p>
+		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
+		        					<!----<img src="assets/trungtam-tienganh/images/icon19.png"/>---->
+		        				</p>
 		        			</div>
 		        		</div>
 		        		<?php } ?>
-		        		<div class="readmore"><a href="#">Xem thêm</a></div>
+		        		<!---<div class="readmore"><a href="#">Xem thêm</a></div>-->
 		        	</div>
 		        	</div>
 		        	<script type="text/javascript">

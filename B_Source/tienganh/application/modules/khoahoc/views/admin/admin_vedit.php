@@ -12,7 +12,6 @@
 <form method="post" action="<?php echo base_url();?>khoahoc/admin/edit/<?php echo $info->courses_id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
-		
 		</header>
 		<div class="tab_container">
 			
@@ -20,15 +19,13 @@
 				
 				<fieldset>
 					<label>Tên </label>
-					<input type="text" name="news_title" style="width:92%" value="<?php echo $info->courses_name;?>"/>
+					<input type="text" name="courses_name" style="width:92%" value="<?php echo $info->courses_name;?>"/>
 				</fieldset>
 				<fieldset>
 					<label>Loại khóa học</label>
 					<select name="courses_category">
-						<?php  foreach ($list as $item)
-					 	{      ?>
-						<option value="<?php echo $item->courses_category;?>"><?php echo $item->courses_category;?></option>
-						<?php } ?>
+						<option value="Tiểu học">Tiểu học</option>
+						<option value="Mầm non">Mầm non</option>
 					</select>
 				</fieldset>
 				<fieldset>
