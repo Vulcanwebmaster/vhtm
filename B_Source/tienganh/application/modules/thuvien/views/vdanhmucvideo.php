@@ -44,7 +44,8 @@
 					 			<p style="padding:5px">Đề xuất này trên google</p>
 					 		</div>
 					 		<ul style="padding:0">
-					 			<li><a href="#"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/sharr.png"/></a></li>
+					 			<li><a href="#"><script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+					 			<a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/sharr.png"></a></li>
 					 			<li><a href="#"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/line.png"/></a></li>
 					 			<li><a href="#"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/send.png"/></a></li>
 					 			<li style="padding-top:10px"><a href="#"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/faceicon.png"/></a></li>

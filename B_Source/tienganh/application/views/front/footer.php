@@ -44,7 +44,7 @@
 					<div class="copyright">Copyright©Học viện Jennifer - All Rights Reserved</div>
 					<div class="menubottom">
 						<ul>
-							<li class="home"><a href="#">Trang chủ</a></li>
+							<li class="home"><a href="<?php echo base_url();?>homepage">Trang chủ</a></li>
 							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
 							<li><a href="<?php echo base_url();?>khoahoc">Khóa học</a></li>

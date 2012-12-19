@@ -137,9 +137,9 @@
 		        		
 		        	</script>
 		        	
-		        	<div class="video">		        		
+		        	<div class="video">		
+		        		 		
 		            		<div class="contentvideo">	
-		            			
 		            			<div style="height:280px;" id="id1"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen></iframe></div>
 		            			<div style="height:280px;" id="id2">
             						<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen><span>1</span></iframe>
@@ -234,7 +234,7 @@
 	<div class="tab">
 		        		<ul id="ultop">
 		        			<li id="li1">
-		        				<a href-"#">
+		        				<a href="<?php echo base_url(); ?>http://facebook.com.vn">
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face1.png" class="show1"/>
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.png" class="show2"/>
 			        			</a>
@@ -244,8 +244,18 @@
 		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon3.gif"/>
 		        						</div>
 		        						<div class="texttopics">
+		        							 <script>
+										        // Load the SDK Asynchronously
+										        (function(d){
+										           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+										           if (d.getElementById(id)) {return;}
+										           js = d.createElement('script'); js.id = id; js.async = true;
+										           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+										           ref.parentNode.insertBefore(js, ref);
+										         }(document));
+										      </script>
+ 											 <fb:like href="<?php echo base_url();?>assets/trungtam-tienganh/images/like.gif" show_faces="false" width="280" font="tahoma"></fb:like>
 		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/like.gif"/>
 		        						</div>
 		        					</div>
 		        					<div class="like">
