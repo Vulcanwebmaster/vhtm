@@ -36,17 +36,18 @@
 						<div id="search">
 							<div class="input">
 								<form action="<?php echo base_url();?>timkiem/doSearch" method="post">
-					<!--				<div id="cse" style="width: 100%;">Loading</div>
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript">
-google.load('search', '1', {language : 'vi'});
-google.setOnLoadCallback(function() {
-var customSearchControl = new google.search.CustomSearchControl('trungtam-tienganh');
-customSearchControl.setResultSetSize(google.search .Search.FILTERED_CSE_RESULTSET);
-customSearchControl.draw('cse');
-}, true);
-</script>-->
-									
+									<!----------Search------------->
+									<div id="cse" style="width: 100%;">Loading</div>
+									<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+									<script type="text/javascript">
+									google.load('search', '1', {language : 'vi'});
+									google.setOnLoadCallback(function() {
+									var customSearchControl = new google.search.CustomSearchControl('http://niwvietnam.info/trungtam-tienganh/');
+									customSearchControl.setResultSetSize(google.search .Search.FILTERED_CSE_RESULTSET);
+									customSearchControl.draw('cse');
+									}, true);
+									</script>
+									<!----------------------------->
 									
 									<!--<input type="text" name="search-text" class="inputsearch"/>
 									<input type="submit" value="Search" id="search_bt" class="button" onclick="this.form.keyword.focus();">
