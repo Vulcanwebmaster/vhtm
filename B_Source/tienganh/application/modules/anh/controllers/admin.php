@@ -18,15 +18,15 @@
 		
 		function index($index=0)
 		{
-			$config['base_url']=base_url().'anh/admin/page/';
-			$config['per_page']=2;
+			$config['base_url']=base_url().'anh/admin/index/';
+			$config['per_page']=15;
 			$config['total_rows']=count($this->Manh->getListFull('ta_image'));
-			$config['uri_segment']=4;
+			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
-			$data['title']		=	'Hình ảnh';
-			$data['bcCurrent']	=	'Hình ảnh';
-			$data['list']=$this->Manh->getListOffset('ta_image',2,$index);
+			$data['title']='Thông tin ảnh';
+			$data['bcCurrent']='Hình ảnh';
+			$data['list']=$this->Manh->getListOffset('ta_image',15,$index);
 			$data['module']		=	$this->module;
 			$data['page']		=	'admin_vlist';
 			

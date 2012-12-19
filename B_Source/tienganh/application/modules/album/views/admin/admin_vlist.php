@@ -12,10 +12,10 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa ảnh này?");
+					var r=confirm("Bạn muốn xóa album ảnh này?");
 					if (r==true)
 					{
-						var uri="<?php echo base_url()?>anh/admin/delete/"+value;
+						var uri="<?php echo base_url()?>album/admin/delete/"+value;
 						window.location=uri;
 					}
 					else 
@@ -34,7 +34,7 @@
 	else $offset==strlen($str);
 	return substr($str, 0, $offset);
 }?>
-<form action="<?php echo base_url()?>anh/admin/saveColumn1" method="post">    
+<form action="<?php echo base_url()?>album/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
 			<h3><?php echo $title; ?></h3>			

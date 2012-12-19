@@ -16,12 +16,17 @@
 			//=============================================
 		}
 		
-		function index()
+		function index($index=0)
 		{
-			$data['title']='Video';
-			$data['bcCurrent']='Video';
-			$data['list']=$this->Mvedio->getListFull('ta_vedio');
-			//$data['list_anh']=$this->Mvedio->getListFull('ta_vedio');
+			$config['base_url']=base_url().'vedio/admin/index/';
+			$config['per_page']=15;
+			$config['total_rows']=count($this->Mvedio->getListFull('ta_vedio'));
+			$config['uri_segment']=3;
+			$this->pagination->initialize($config);
+			
+			$data['title']='Thông tin vedio';
+			$data['bcCurrent']='Vedio';
+			$data['list']=$this->Mvedio->getListOffset('ta_vedio',15,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);

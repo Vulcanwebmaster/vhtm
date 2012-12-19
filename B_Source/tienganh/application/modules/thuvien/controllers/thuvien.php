@@ -9,23 +9,23 @@
  */
 class Thuvien extends NIW_Controller
 {
-	private $data = array();
-	function __construct()
-	{
-		parent::__construct();
-		$this->module	=	strtolower(get_class());
-		
-		$this->load->model('Mthuvienanh');
-		$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
-	}
+		private $data = array();
+		function __construct()
+		{
+			parent::__construct();
+			$this->module	=	strtolower(get_class());
+			
+			$this->load->model('Mthuvienanh');
+			$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
+		}
 	
-	function index()
-	{
-		$this->data['module']			=	$this->module;
-		$this->data['page']			=	'vthuvien';
-		
-		$this->load->view('front/container', $this->data);
-	}
+		function index()
+		{
+			$this->data['module']			=	$this->module;
+			$this->data['page']			=	'vthuvien';
+			
+			$this->load->view('front/container', $this->data);
+		}
 	
 	/*
 	 * a function to get detail of a category by category id
@@ -53,13 +53,33 @@ class Thuvien extends NIW_Controller
 		}
 		else // if category is video category
 		{
-			$this->data['list']		=	$this->Mthuvienanh->getListOffset('ta_vedio', $index, 6);
+			$this->data['list']		=	$this->Mthuvienanh->getListOffset('ta_vedio', $index, 2);
 			$this->data['page']		=	'vdanhmucvideo';
+			//var_dump($this->data['list']); die();
 		}
 		
 		$this->load->view('front/container', $this->data);
 	}
 	
+	
+	function video($video_id=0)
+	{
+		$this->data['module'] = $this->module;
+		$this->data['page'] = 'vdanhmucvideo';
+		
+		$this->data['list'] = $this->Mthuvienanh->getListByColumn('ta_vedio', 'vedio_title', $video_id);
+		//var_dump($this->data['list']); die();
+		
+		$counting	=	array();
+			foreach ($this->data['list'] as $item)
+			{
+				$listVideo	=	$this->Mthuvienanh->getListByColumn('ta_vedio','vedio_title', $item->vedio_id);
+				$counting[]	=	count($listVideo); // count amount of images for each album
+			}
+			
+			$this->data['counting']	=	$counting;
+		$this->load->view('front/container', $this->data);
+	}
 	/*
 	 * A function to get detail of a album
 	 * @album_id: id number of the album that will be got detail

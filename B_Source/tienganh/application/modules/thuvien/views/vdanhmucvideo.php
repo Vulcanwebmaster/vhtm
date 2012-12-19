@@ -14,42 +14,18 @@
 				 			<p class="bgvdimg"></p>
 				 		</div>
 				 		<div id="contentmainvd">
-				 			<div class="bgvdcontent">
-				 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontent">
-				 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontent">
-				 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontent">
-				 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontent">
-				 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontent">
-				 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
+				 			<?php 
+				 			$count	=	0;
+				 			foreach ($list as $value)
+				 			{?>
+					 			<div class="bgvdcontent">
+					 				<p align="center"><iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo $value->link_vedio?>" frameborder="0" allowfullscreen></iframe></p>
+					 				<p align="center">
+					 					<a href="#" style="color:#1b75bb"><?php echo $value->vedio_title ?>
+					 						<label style="color:#f6921e">(<?php echo $counting[$count];?>)</label></a>
+					 				</p>
+					 			</div>	
+				 			<?php $count++; } ?>
 					 	</div>
 					 <!----------------------------->
 					 <div id="contentbotomgv">

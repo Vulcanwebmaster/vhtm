@@ -61,7 +61,6 @@
 			    					<a href="<?php echo base_url()?>vedio/admin/edit/<?php echo $item->vedio_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->vedio_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
-			    				
 							</tr>
 					 	<?php $count++; }  ?>
 					</tbody> 
@@ -71,7 +70,6 @@
 				<?php echo $this->pagination->create_links();?>
 			</center>
 				<footer>
-						
 						<div class="submit_link">
 							<a class="alt_btn" href="<?php echo base_url();?>vedio/admin/insert">Thêm mới</a>
 						</div>

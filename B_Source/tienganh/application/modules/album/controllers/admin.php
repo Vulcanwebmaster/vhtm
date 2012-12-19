@@ -16,11 +16,17 @@
 			//=============================================
 		}
 		
-		function index()
+		function index($index=0)
 		{
-			$data['title']		=	'Album';
-			$data['bcCurrent']	=	'Album';
-			$data['list']		=	$this->Malbum->getListFull('ta_albums');
+			$config['base_url']=base_url().'album/admin/index';
+			$config['per_page']=15;
+			$config['total_rows']=count($this->Malbum->getListFull('ta_albums'));
+			$config['uri_segment']=3;
+			$this->pagination->initialize($config);
+			
+			$data['title']='Thông album ảnh';
+			$data['bcCurrent']='Album ảnh';
+			$data['list']=$this->Malbum->getListOffset('ta_albums',15,$index);
 			$data['module']		=	$this->module;
 			$data['page']		=	'admin_vlist';
 			

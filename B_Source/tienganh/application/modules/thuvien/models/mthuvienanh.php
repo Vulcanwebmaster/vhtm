@@ -9,8 +9,8 @@
 		
 		function getOne()
 		{
-			$this->db->where('library_id',1);
-			$query = $this->db->get('ta_library');
+			$this->db->where('category_id',1);
+			$query = $this->db->get('ta_album');
 			return $query->row();
 		}
 		
