@@ -31,7 +31,8 @@
 			        			</div>
 			        			<div class="text_main">
 			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
-															<?php echo $item->news_title ?>
+															<?php echo $item->news_title ?><br>
+															(<?php echo $item->news_post_date ?>)
 														  </a></p>
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
@@ -57,7 +58,8 @@
 		        			<div class="text_main2">
 		        				<p class="title">
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-		        					<?php echo $item->courses_name ?>
+		        					<?php echo $item->courses_name ?><br>
+		        					(<?php echo $item->courses_date ?>)
 		        					</a></p>
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
 		        					<!----<img src="assets/trungtam-tienganh/images/icon19.png"/>---->
@@ -137,31 +139,26 @@
 		        	
 		        	<div class="video">		        		
 		            		<div class="contentvideo">	
+		            			
 		            			<div style="height:280px;" id="id1"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen></iframe></div>
 		            			<div style="height:280px;" id="id2">
-            						<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe>
+            						<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen><span>1</span></iframe>
             					</div>	  
             					<div style="height:280px;" id="id3">
-            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen></iframe>
+            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen><span>2</span></iframe>
             					</div>
 		            			<div style="height:280px;" id="id4">
-            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen></iframe>
+            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen><span>3</span></iframe>
             					</div>	
             					<div style="height:280px;" id="id5"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen></iframe></div>
 		            			<div style="height:280px;" id="id6">
-            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen></iframe>
+            						<iframe width="560" height="315" src="http://www.youtube.com/embed/bxfHVx7Vr8c" frameborder="0" allowfullscreen><span></span></iframe>
             					</div>	                    			
             					<div style="height:280px;" id="id7"><iframe width="560" height="315" src="http://www.youtube.com/embed/ALdPR6HjyI8" frameborder="0" allowfullscreen></iframe></div>
 		            			<ul id="ul_video">
-		            				<li id="vd1">		            					
-		            						            					
-		            				</li> 
-		            				<li id="vd2">		            					
-		            					
-		            				</li>
-		            				<li id="vd3">
-		            					
-		            				</li>
+		            				<li id="vd1"></li> 
+		            				<li id="vd2"></li>
+		            				<li id="vd3"></li>
 		            				<li id="vd4"></li>
 		            				<li id="vd5"></li>
 		            				<li id="vd6"></li>

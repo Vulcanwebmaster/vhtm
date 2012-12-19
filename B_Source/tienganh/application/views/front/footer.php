@@ -45,12 +45,12 @@
 					<div class="menubottom">
 						<ul>
 							<li class="home"><a href="#">Trang chủ</a></li>
-							<li><a href="#">Giới thiệu</a></li>
-							<li><a href="#">Tin tức</a></li>
-							<li><a href="#">Khóa học</a></li>
-							<li><a href="#">Giảng viên</a></li>
-							<li><a href="#">Thư viện</a></li>
-							<li><a href="#">Liên hệ</a></li>
+							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
+							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
+							<li><a href="<?php echo base_url();?>khoahoc">Khóa học</a></li>
+							<li><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
+							<li><a href="<?php echo base_url();?>thuvien">Thư viện</a></li>
+							<li><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
 						</ul>
 					</div>
 				</div>
