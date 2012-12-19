@@ -26,6 +26,7 @@ class Homepage extends NIW_controller {
 		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('ta_news',3,0);
 		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);
+		$data['list_slide']=$this->Mhomepage->getListFull('slide');
 		//$data['product']=$this->Mhomepage->getListOffset('ln_product',5,0);
 		//$data['product_timkiem']=$this->Mhomepage->getListOffset('ln_product',5,0);
 		

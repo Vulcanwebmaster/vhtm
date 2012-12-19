@@ -4,10 +4,18 @@
 <div id="content">
 <div class="slider-wrapper theme-default">
 		            <div id="slider" class="nivoSlider">
-		                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" alt="" />		                
+		                <!---<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" alt="" />		                
 		                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" alt=""  />
 		                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" alt="" />
 		                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" alt=""  />
+		           		-->
+		           		<?php foreach ($list_slide as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+									}?>
 		            </div>		           
 		        </div>
 		        <div id="manincontent">
@@ -25,14 +33,17 @@
 			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 															<?php echo $item->news_title ?>
 														  </a></p>
-			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?>
+			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
+			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
+			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
+			        					</a>
 			        					<!---<img src="assets/trungtam-tienganh/images/icon19.png"/>--->
 			        				</p>
-									
 			        			</div>
 			        		</div>
 			        		<?php } ?>
 			        		<!----<div class="readmore1"><a href="#">Xem thêm</a></div>--->
+			        		<div class="readmore1"><a href="<?php echo base_url();?>tintuc">Xem thêm</a></div>
 			        	</div>
 			        	
 			        	<div class="textmaincontent" style="margin-left:2%;">
@@ -55,6 +66,7 @@
 		        		</div>
 		        		<?php } ?>
 		        		<!---<div class="readmore"><a href="#">Xem thêm</a></div>-->
+		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
 		        	</div>
 		        	</div>
 		        	<script type="text/javascript">
