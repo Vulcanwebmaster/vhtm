@@ -21,8 +21,8 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
-		$data['categories']=$this->Mhomepage->getListByColumn('ta_category','parent_id','0');
-		//$data['items'] = $this->Mhomepage->getListOffset('ln_village',4,$index);
+		
+		$data['list']=$this->Mhomepage->getListByColumn('ta_vedio', 'vedio_title', 0);
 		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('ta_news',3,0);
 		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);

@@ -23,8 +23,6 @@ class Tintuc extends NIW_Controller
 		$config['per_page'] = 10;
 		$config['total_rows'] = count($this->Mtintuc->getListFull('ta_news'));
 		$this->pagination->initialize($config);
-		//nho loi 
-		$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 		$data['items'] = $this->Mtintuc->getListOffset('ta_news',10,$index);
 		$data['title']='tienganh | Tin tức';
 		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');

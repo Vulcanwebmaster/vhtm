@@ -17,9 +17,7 @@ class Khoahoc extends NIW_Controller
 	{
 		$this->data['page']	=	'vkhoahoc';
 		$this->data['module']	=	$this->module;
-		
 		$this->load->view('front/container', $this->data);
-		//$this->page();
 	}
 	
 	function chitiet()
@@ -27,19 +25,6 @@ class Khoahoc extends NIW_Controller
 		$this->data['page']	=	'vchitiet';
 		$this->data['module']	=	$this->module;
 		$this->load->view('front/container', $this->data);
-	}
-	
-	public function page($index=0)
-	{
-		$config['base_url']=base_url().'khoahoc/page/';
-		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
-		$data['categories']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id','0');
-		$data['list']=$this->Mkhoahoc->getListByColumn('ta_courses','courses_name','0');
-		$data['list_cate']=$this->Mkhoahoc->getListByColumn('ta_courses','category_id','1');
-		$data['title']='tienganh | Trang chủ';
-		$data['module'] = $this->module;
-		$data['page'] = 'vkhoahoc';
-		$this->load->view('front/container',$data);
 	}
 	
 	function listCourses()
@@ -59,7 +44,6 @@ class Khoahoc extends NIW_Controller
 				$category_id = $temp[0];
 				$id = $temp[1];
 			}		
-		
 		$data['list_hotro']=$this->Mkhoahoc->getListFull('hotro');
 		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
 		$data['categories']=$this->Mkhoahoc->getListByColumn('ta_category','parent_id','0');

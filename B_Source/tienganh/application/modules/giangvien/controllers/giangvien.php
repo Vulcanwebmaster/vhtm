@@ -23,7 +23,6 @@ class Giangvien extends NIW_Controller
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mgiangvien->getListFull('ta_lecturers'));
 			$this->pagination->initialize($config);
-			$data['categories']=$this->Mgiangvien->getListByColumn('ta_category','parent_id','0');
 			$data['items']=$this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category',1);
 			$data['title']='tienganh | Giảng viên';
 			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');

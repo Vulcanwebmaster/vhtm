@@ -28,7 +28,7 @@ class Mkhoahoc extends CI_Model
 	 	{
 	 	$this->db->select();
 		$this->db->from('ta_courses');
-		$this->db->join('ta_category','ta_category.id=ta_courses.category_id');
+		$this->db->join('ta_category','ta_category.id=ta_courses.courses_category');
 		
 	 	$ds=$this->db->get();
 		var_dump($ds);die();
