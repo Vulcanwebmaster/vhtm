@@ -10,7 +10,7 @@ class Mdulich extends CI_Model
 	
 	function CountFull()
 	{
-		$list=$this->db->get('dulich');
+		$list=$this->db->get('ln_dulich');
 		return $list->row();
 	}
 

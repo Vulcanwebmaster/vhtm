@@ -3,6 +3,7 @@ class Lienhe extends NIW_Controller
 {
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=strtolower(get_class());
 		$this->load->model('Mlienhe');
@@ -12,6 +13,7 @@ class Lienhe extends NIW_Controller
 	
 	function index()
 	{
+		$data['product']=$this->Mlienhe->getListOffset('ln_product',5,0);
 		$data['list_tuvan']=$this->Mlienhe->getListFull('lienhe');		
 		$data['title']='langnghe | Liên hệ';
 		$data['module']=$this->module;

@@ -16,9 +16,8 @@
 															<p align="left">
 															<font face="Arial" style="font-size: 9pt; ">
 															<img height="5" src="<?php echo base_url();?>" width="3" border="0"><span lang="en-us"><span class="Apple-converted-space">&nbsp;</span></span>
-															<a style="text-decoration: none" href="<?php echo base_url(); ?>"><?php echo $item->village_name;?></a></font></p></td>
+															<a style="text-decoration: none" href="<?php echo base_url();?>langnghe/detail/<?php echo $item->village_id;?>"><?php echo $item->village_name;?></a></font></p></td>
 															</tr>
-														
 														</tbody></table>
 			<?php } ?>
 	</div>

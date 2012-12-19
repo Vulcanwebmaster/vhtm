@@ -7,22 +7,25 @@
 			$this->load->database();
 		}
 		
-		/*t=array();
-	 	foreach($ds->result() as $item)
+		function getListFullsp($tableName='')
 	 	{
-	 		$list[]=$item;
-	 	}
-	 	$ds->free_result();
-	 	return $list;
-		 }*/
+		 	$this->db->select();
+			$this->db->from('ln_village');
+			$this->db->join('ln_category','ln_category.category_id=ln_village.category_id');
+		 	$ds=$this->db->get();
+			//var_dump($ds->result()); die();
+		 	$list=array();
+		 	foreach($ds->result() as $item)
+		 	{
+		 		$list[]=$item;
+		 	}
+		 	$ds->free_result();
+		 	return $list;
+		}
 		
-		function getListFull($tableName='')
+		function getListOffset($tableName='',$offset='',$index='')
 	 {
-	 	$this->db->select();
-		$this->db->from('ln_village');
-		$this->db->join('ln_category','ln_category.category_id=ln_village.category_id');
-	 	$ds=$this->db->get();
-		//var_dump($ds->result()); die();
+	 	$ds=$this->db->get($tableName,$offset,$index);
 	 	$list=array();
 	 	foreach($ds->result() as $item)
 	 	{
@@ -31,14 +34,4 @@
 	 	$ds->free_result();
 	 	return $list;
 	 }
-		
-		
-		function getListVillage()
-		 {
-		 	$this->db->select();
-			$this->db->from('ln_village');
-			$this->db->join('ln_category','ln_category.category_id=ln_village.category_id');
-		 	$ds=$this->db->get('ln_village');
-			
-		 }
 	}

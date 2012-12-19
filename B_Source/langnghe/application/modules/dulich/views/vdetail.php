@@ -8,13 +8,13 @@
 		</div>
 		
 		<div class="main_content_left2">
-			<p class="title_news"><a href="<?php echo base_url() ?>tintuc/detail/">
-									<?php echo $dulich->tieude ?>
+			<p class="title_news"><a href="<?php echo base_url() ?>dulich/detail/">
+									<?php echo $tourism->tieude ?>
 								  </a></p>
 			<div>
-					<?php echo $dulich->anh ?>
-					<?php echo $dulich->noidung ?><br>
-					<p align="right">Nguồn trích: <?php echo $dulich->nguon ?></p>
+					<?php echo $tourism->anh ?>
+					<?php echo $tourism->noidung ?><br>
+					<p align="right">Nguồn: <?php echo $tourism->nguon ?></p>
 			</div><br clear="both"/>
 		</div>
 		

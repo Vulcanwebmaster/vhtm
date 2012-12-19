@@ -3,6 +3,7 @@ class Tintuc extends NIW_Controller
 {
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
@@ -17,6 +18,7 @@ class Tintuc extends NIW_Controller
 	
 	function page($index=0)
 	{
+		$data['product']=$this->Mtintuc->getListOffset('ln_product',5,0);
 		$data['items']=$this->Mtintuc->getListByColumn('ln_news','news_title',1);
 		$data['title']='langnghe | Tin tức';
 		$data['list_tintuc']=$this->Mtintuc->getListOffset('ln_news',8,$index);
@@ -34,6 +36,7 @@ class Tintuc extends NIW_Controller
 				//$category_id = $temp[0];
 				$news_id = $temp[0];
 			}
+			$data['product']=$this->Mtintuc->getListOffset('ln_product',5,0);
 			$data['news']=$this->Mtintuc->getRowByColumn('ln_news','news_id',$news_id);
 			$model=new CI_Model();
 			$data['module']=$this->module;

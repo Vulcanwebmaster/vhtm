@@ -4,6 +4,7 @@
 		private $module;
 		function __construct()
 		{
+			@session_start();
 			parent::__construct();
 			$this->module=basename(dirname(dirname(__FILE__)));
 			$this->module = strtolower(get_class());
@@ -20,7 +21,7 @@
 				$config['per_page'] = 4;
 				$config['total_rows'] = count($this->Msanpham->getListFull('ln_product'));
 				$this->pagination->initialize($config);
-				
+				$data['product']=$this->Msanpham->getListOffset('ln_product',5,0);
 				$data['items'] = $this->Msanpham->getListOffset('ln_product',4,$index);
 				$data['module'] = $this->module;
 				$data['page'] ='vsanpham';
@@ -35,7 +36,8 @@
 				//$category_id = $temp[0];
 				$product_id = $temp[0];
 			}
-			$data['product']=$this->Msanpham->getRowByColumn('ln_product','product_id',$product_id);
+			$data['product']=$this->Msanpham->getListOffset('ln_product',5,0);
+			$data['product_detail']=$this->Msanpham->getRowByColumn('ln_product','product_id',$product_id);
 			$model=new CI_Model();
 			$data['module']=$this->module;
 			$data['page']='vdetail';

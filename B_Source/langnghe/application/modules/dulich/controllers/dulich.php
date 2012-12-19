@@ -3,6 +3,7 @@ class Dulich extends NIW_Controller
 {
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
@@ -17,9 +18,10 @@ class Dulich extends NIW_Controller
 	
 	function page($index=0)
 	{
-		$data['items']=$this->Mdulich->getListByColumn('dulich','tieude',1);
-		$data['title']='langnghe | Tin tức';
-		$data['list_dulich']=$this->Mdulich->getListOffset('dulich',8,$index);
+		$data['product']=$this->Mdulich->getListOffset('ln_product',5,0);
+		$data['items']=$this->Mdulich->getListByColumn('ln_dulich','tieude',1);
+		$data['title']='langnghe | Du lịch';
+		$data['list_dulich']=$this->Mdulich->getListOffset('ln_dulich',8,$index);
 		$data['module']=$this->module;
 		$data['page']='vdulich';
 		$this->load->view('front/container',$data);
@@ -32,9 +34,10 @@ class Dulich extends NIW_Controller
 			$temp = explode("-", $alias);
 			if (isset($temp)){
 				//$category_id = $temp[0];
-				$news_id = $temp[0];
+				$tourism_id = $temp[0];
 			}
-			$data['dulich']=$this->Mdulich->getRowByColumn('dulich','id',$id);
+			$data['product']=$this->Mdulich->getListOffset('ln_product',5,0);
+			$data['tourism']=$this->Mdulich->getRowByColumn('ln_dulich','id',$tourism_id);
 			$model=new CI_Model();
 			$data['module']=$this->module;
 			$data['page']='vdetail';

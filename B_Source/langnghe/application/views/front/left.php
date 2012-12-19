@@ -8,7 +8,7 @@
 												
 												<form action="<?php echo base_url();?>timkiem/doSearch" method="post">
 													<div class="search_search">
-													<input name="keyword" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="80" value="Tìm kiếm..." onblur="if(this.value=='') this.value='Tìm kiếm...';" onfocus="if(this.value=='Tìm kiếm...') this.value='';"><input type="submit" value="Tìm kiếm" class="button" onclick="this.form.keyword.focus();"></div>
+													<input name="search-text" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="80" value="Tìm kiếm..." onblur="if(this.value=='') this.value='Tìm kiếm...';" onfocus="if(this.value=='Tìm kiếm...') this.value='';"><input type="submit" value="Tìm kiếm" class="button" onclick="this.form.keyword.focus();"></div>
 													<input type="hidden" name="limitstart" value="0">
 													<input type="hidden" name="option" value="com_virtuemart">
 													<input type="hidden" name="view" value="category">
@@ -21,7 +21,7 @@
 										 <div class="boxIndent">
 											<h3 style="text-align:center"><span><span>Đăng nhập</span></span></h3>
 											<div class="wrapper">
-												<form action="<?php echo base_url() ?>login/dangnhap" method="post">
+												<form action="<?php echo base_url()?>dangnhap/checkAccount" method="post">
 													<p id="form-login-username">
 														<label for="modlgn-username">Tài khoản</label>
 														<input id="modlgn-username" type="text" name="username" class="inputbox" size="18" value="" onblur="" onfocus="">
@@ -40,11 +40,11 @@
 														<input type="hidden" name="task" value="user.login">
 														<input type="hidden" name="return" value="aW5kZXgucGhwP0l0ZW1pZD00MzU=">
 														<div class="create">
-														<a href="#">Tạo tài khoản mới</a>
-													</div>
+														<a href="<?php echo base_url() ?>dangnhap/registAccount/">Tạo tài khoản mới</a>
+														</div>
 													<input type="hidden" name="4f54e07b149526d7638e5e126d6c03e7" value="1">	<ul>
 													<li>
-														<a href="#">
+														<a href="<?php echo base_url() ?>lienhe/send/">
 														Quên mật khẩu ?</a>
 													</li>
 													
@@ -58,44 +58,13 @@
 								<div class="boxIndent">
 									<h3 style="text-align:center"><span><span>Sản phẩm làng nghề</span></span></h3>
 									<div class="wrapper">
-									<ul id="dropdown" class="list">
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat01_resized.jpg">Mây tre đan</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat02_resized.jpg">Gốm xứ, pha lê</a>
-										</li>
-										<li class="level0 parent"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat03_resized.jpg">Tranh nghệ thuật</a>
-										</li>
-										<li class="level1"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat16_resized.jpg">Đá mỹ nghệ</a>
-										</li>
-										<li class="level1"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat17_resized.jpg">Dâu tằm</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat04_resized.jpg">Thêu, dệt, lụa</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat05_resized.jpg">Đánh bắt, chế biến hải sản</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat15_resized.jpg">Đúc đồng, chạm bạc</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat06_resized.jpg">Đóng, sửa tàu thuyền</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat07_resized.jpg">Sản xuất hàng dân dụng</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat08_resized.jpg">Hoa, cây cảnh</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat09_resized.jpg">Làm chiếu</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat10_resized.jpg">Thủ công, mỹ nghệ</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat11_resized.jpg">Điêu khắc, chạm khảm gỗ</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat12_resized.jpg">Sơn mài</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat13_resized.jpg">Làm giấy</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat14_resized.jpg">Làm trống</a>
-										</li>
-										<li class="level0"><a class="screenshot" href="<?php echo base_url();?>" rel="<?php echo base_url();?>assets/langnghe/images/cat14_resized.jpg">Chế biến thực phẩm</a>
-										</li>
-									</ul>
+										<?php foreach($product as $item)
+										{?>
+											<ul id="dropdown" class="list">
+												<li class="level0"><a class="screenshot" href="<?php echo base_url();?>sanpham/detail/<?php echo $item->product_id;?>"><?php echo $item->product_name;?></a>
+												</li>
+											</ul>
+										<?php } ?>
 
 								</div>
 							</div>

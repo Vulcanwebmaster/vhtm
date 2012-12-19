@@ -8,10 +8,13 @@
 	<ul class="toggle">
 		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>langnghe/admin">Làng nghề</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>sanpham/admin">Sản phẩm</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Quảng cáo</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>dulich/admin">Du lịch</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>thuvienanh/admin">Quản lý ảnh</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide ảnh</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

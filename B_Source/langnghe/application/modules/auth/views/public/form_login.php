@@ -23,12 +23,7 @@ $(document).pngFix( );
 <!-- Start: login-holder -->
 <div id="login-holder">
 
-	<!-- start logo -->
-	<div id="logo-login">
-	</div>
-	<!-- end logo -->
 	
-	<div class="clear"></div>
 <?php print form_open('auth/login',array('class'=>'horizontal'))?>	
 	<!--  start loginbox ................................................................................. -->
 	<div id="loginbox">

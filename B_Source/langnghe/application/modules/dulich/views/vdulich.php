@@ -10,7 +10,7 @@
 		<?php foreach ($list_dulich as $item) 
 			{ ?>
 		<div class="main_content_left2">
-			<p class="title_news"><a href="<?php echo base_url() ?>tintuc/detail/<?php echo $item->id;?>">
+			<p class="title_news"><a href="<?php echo base_url() ?>dulich/detail/<?php echo $item->id;?>">
 									<?php echo $item->tieude ?>
 								  </a></p>
 			<div>
@@ -19,7 +19,7 @@
 				</div>
 				<div class="rightnew2">
 					<?php echo $item->tomtat ?>
-					<p class="readmoreadd"><a href="<?php echo base_url() ?>tintuc/detail/<?php echo $item->id;?>"> Chi tiết...</a></p>   
+					<p class="readmoreadd"><a href="<?php echo base_url() ?>dulich/detail/<?php echo $item->id;?>"> Chi tiết...</a></p>   
 				</div>
 			</div><br clear="both"/>
 		</div>

@@ -1,0 +1,37 @@
+<?php 
+			echo validation_errors('<div class="error">','</div>');
+?>
+<form method="post" action="<?php echo base_url();?>dangnhap/insert">	
+	<article class="module width_3_quarter" style="width:95%;">
+		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
+		</header>
+				<div class="tab_container">
+			
+					<div id="tab1" class="tab_content">
+						<fieldset>
+							<label>Tên làng nghề</label>
+							<input type="text" name="village_name" style="width:92%"/>
+						</fieldset>
+						<fieldset>
+					<label>Loại làng nghề</label>
+					<select name="category_name">
+						<option value="3">Trợ giảng</option>
+				 		<option value="1">Thầy giáo</option>
+				 		<option value="2">Cô giáo</option>
+					</select>
+					
+				</fieldset>
+						<fieldset>
+							<label>Mô tả</label>
+							<textarea name="mesage_content"></textarea>
+				</fieldset>
+					</div>
+					
+			<footer style="float:left">
+					<div class="submit_link">
+						<input type="submit" name="submit" value="Thêm" class="alt_btn">
+					</div>
+			</footer>
+		</div><!-- end of .tab_container -->
+	</article>
+</form>

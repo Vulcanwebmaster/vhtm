@@ -25,12 +25,10 @@
 			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Làng nghề';
-			$data['bcCurrent']='Làng nghề';
+			$data['title']='làng nghề';
+			$data['bcCurrent']='làng nghề';
 			//$data['list']=$this->Mlangnghe->getListOffset('ln_village',3,$index);
-			$data['list']=$this->Mlangnghe->getListFull('ln_village');
-			$listCategories=array();
-			$data['listCategories']=$listCategories;
+			$data['list']=$this->Mlangnghe->getListFullsp('ln_village');
 			$data['module']=$this->module;
 			$data['page']='admin_list_village';
 			$this->load->view('admin/container',$data);
@@ -39,6 +37,7 @@
 		function _input()
 		{
 			$input=array(
+						'category_id'=>$this->input->post('category_name'),
 						'village_name'=>$this->input->post('village_name'),
 						'village_description'=>$this->input->post('village_description'),
 						'alias'=>$this->getAliasByName($this->input->post('village_name')),
@@ -55,8 +54,8 @@
 			if (!$this->input->post('village_name'))
 			{
 				$data['list']=$this->Mlangnghe->getListFull('ln_category');
-				$data['title']='Thêm thông tin làng nghề';
-				$data['bcCurrent']='làng nghề';
+				$data['title']='Thêm thông sản phẩm';
+				$data['bcCurrent']='sản phẩm';
 				$data['module']=$this->module;
 				$data['page']='admin_insert_village';
 				$this->load->view('admin/container',$data);
@@ -64,8 +63,8 @@
 			else 
 			{
 				$this->form_validation->set_rules('village_name','Tên','required|trim');
-				$this->form_validation->set_rules('village_description','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
@@ -79,15 +78,16 @@
 				else 
 				{
 					$data['list']=$this->Mlangnghe->getListFull('ln_category');
-					$data['title']='Thêm thông tin làng nghề';
-					$data['bcCurrent']='làng nghề';
+					$data['title']='Thêm thông làng nghề';
+					$data['bcCurrent']='sản phẩm';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_village';
 					$this->load->view('admin/container',$data);
 				}
 			}
 		}
-
+		
+		
 		function edit($id=0)
 		{
 			//=============================================
@@ -107,9 +107,6 @@
 			else 
 			{
 				$this->form_validation->set_rules('village_name','Tên','required|trim');
-				
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
-				$this->form_validation->set_rules('village_description','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				if ($this->form_validation->run())
 				{
@@ -126,7 +123,7 @@
 					$data['list']=$this->Mlangnghe->getListFull('ln_category');
 					$data['info']=$this->Mlangnghe->getRowByColumn('ln_village','village_id',$id);
 					$data['title']='Sửa thông làng nghề';
-					$data['bcCurrent']='làng nghề';
+					$data['bcCurrent']='Sản phẩm làng nghề';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_village';
 					$this->load->view('admin/container',$data);
