@@ -10,9 +10,6 @@
 					</div>
 					<div class="ft1">
 						<p>Đối tác</p>
-						
-							
-						
 						<ul>
 							<?php foreach ($list_doitac as $value) 
 							{ ?>

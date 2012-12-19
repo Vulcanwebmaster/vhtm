@@ -65,22 +65,7 @@
 							<li class="home"><a href="<?php echo base_url();?>homepage">Home</a></li>
 							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
-							<li class="menu_move"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
-								<div class="submenu" style="display: none;">
-									<div>Tiếng Anh cho mầm non
-										<ul>
-											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
-											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
-										</ul>
-									</div>
-									<div>Tiếng Anh cho tiểu học
-										<ul>
-											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
-											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
+							<li><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
 							<li><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
 							<li><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>
 							<li><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>

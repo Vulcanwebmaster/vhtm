@@ -1,5 +1,5 @@
 body{
-	 font-size:13px; font-family:Times New Roman ; text-align:center; margin:0;padding:0;
+	 font-size:13px; font-family: Arial ; text-align:center; margin:0;padding:0;
 }
 
 #wapper{
@@ -43,7 +43,7 @@ a:hover, a:active, a:focus {
 #menutop ul{ float:right; margin:0; padding:0; font-size:13px; font-weight:bold}
 #menutop li{font-size:15px;list-style:none;line-height:20px; float:left; background:url(../images/icon11.gif) no-repeat scroll 10px 3px transparent; padding:0 25px; text-decoration:none}
 #menutop li a{text-decoration:none;}
-#menutop li a:hover{ color:red}
+#menutop li a:hover{ background:#ECFAFF; padding:5px; color:red}
 .home{background:url(../images/iconhome.gif) no-repeat scroll 10px 0px transparent !important;}
 .submenu{ position:absolute; z-index: 200;margin-left:-25px; background-color:#fff !important; width:175px; color:#4c4c4c; padding-top:10px; padding-left:5px; background:url(../images/icon15.png) repeat-x scroll top left;}
 .submenu a{color:#4c4c4c !important}
@@ -59,7 +59,7 @@ a:hover, a:active, a:focus {
 .contenttext{ min-height:405px;}
 
 #manincontent{ background:url(../images/bg12.png) repeat-x scroll top left; min-height:500px; margin-top:-8px; padding:10px;}
-.textmaincontent{float:left; width:49%; margin-top:28px;}
+.textmaincontent{float:left; width:49%; margin-top:28px; font-family: times new roman }
 .textmaincontent1{float:left; width:100%; margin-top:28px;}
 .img_main{width:29%; float:left}
 .img_main1{width:19%; float:left}
@@ -78,9 +78,11 @@ a:hover, a:active, a:focus {
 .img_main2 img{ width:120px !important; height:84px !important;}
 .img_main2 p{ width:70px;padding-top:15px !important; height:65px; float:left; background-color:#1b75bb; font-size:16px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
-.readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:20px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
+.readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:75px; height:20px;padding-top:5px; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore a, .readmore1 a{color:#fff;text-decoration:none;}
+.readmore1:hover{background-color:#4C4C4C}
+.readmore:hover{background-color:#4C4C4C}
 
 .tab{clear:both; margin-top:50px; height:210px; position:relative}
 #ultop {margin:0; padding:0;}
