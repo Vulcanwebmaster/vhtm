@@ -1,15 +1,21 @@
-<?php
+<!--<?php
 if (isset($_POST['sendmail']) && $_POST['sendmail']=="send")
 {
 $from=$_POST['trungnt20290@gmail.com'];
 $to=$_POST['to'];
-$subject=$_POST['Ðã hoàn tất dang ky nhan gui tin!'];
-$message=$_POST['Ban se duoc thong bao khi co ban tin moi'];
+$subject=$_POST['Ðã hoàn tất đăng ký gửi tin!'];
+$message=$_POST['Bạn sẽ được thông báo khi có bản tin mới'];
 $options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
 mail($to,$subject,$message,$options);
-echo"Ðã gui mail";
+echo"Ðã gửi mail";
 }
-?>
+?>-->
+	<?php if (validation_errors())
+	{
+		echo '<div class="error-panel">';
+		//echo validation_errors('<p style="color:#f83d43">','</p>');
+		echo '</div>';
+	}?>
 
 				<style>
 					#slider img{ width:960px; height:400px !important;}
@@ -40,7 +46,7 @@ echo"Ðã gui mail";
 			        			<div class="text_main">
 			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 															<?php echo $item->news_title ?><br>
-															(<?php echo $item->news_post_date ?>)
+															<?php echo ($item->news_post_date); ?>
 														  </a></p>
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
@@ -69,7 +75,9 @@ echo"Ðã gui mail";
 		        					(<?php echo $item->courses_date ?>)
 		        					</a></p>
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
-		        					<!----<img src="assets/trungtam-tienganh/images/icon19.png"/>---->
+		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
+			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
+			        					</a>
 		        				</p>
 		        			</div>
 		        		</div>
@@ -636,16 +644,15 @@ echo"Ðã gui mail";
 		        		</ul>
 		        		<div class="righttab">
 							<!-------- Gửi mail------------>
-							<form method="post">
-							<input name="to" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
-							<input type="submit" value="send" name="sendmail"/>
+							<?php 
+								echo '<p style="color:#f83d43; margin:10px;  font-size: 13px; font-weight: bold ">'.$this->session->userdata('lienhe_result').'</p>';
+								$this->session->unset_userdata('email_result');
+							?>
+							<form action="<?php echo base_url();?>homepage/send" method="post">
+							<input name="e_mail" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
+							<input type="submit" value="Send" name="sendmail">
 							</form>
-							<!----- End Gửi mail------------>
-		        			<!---<form>
-		        				<input name="keyword" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
-		        				<input type="submit" value="Subscribe" class="submitrighttab"/>
-		        			</form>
-		        			---->
+							<?php echo validation_errors('','</p>'); ?>
 		        		</div>
 		        	</div>
 		        	<div class="plupgin">

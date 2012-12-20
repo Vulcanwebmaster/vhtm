@@ -19,6 +19,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>album/admin">Album</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>email/admin">Email</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

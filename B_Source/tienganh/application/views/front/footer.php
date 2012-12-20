@@ -30,9 +30,8 @@
 						<ul>
 							<li><a href="#">Văn phòng học viện Jennifer<br/>(+84) 04 665 22 666</a></li>
 							<li><a href="#">Hỗ trực tuyến<br/>
-								Mss. Yến-123 456 789</a><br/>
-								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon10.gif" class="skype"/>
-								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconyaho.png"/>
+									<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon10.gif" class="skype"/></a>
+									<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconyaho.png"/></a>
 							</li>
 						</ul>
 					</div>
