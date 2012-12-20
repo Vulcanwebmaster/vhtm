@@ -1,5 +1,4 @@
-
-				<style>
+<style>
 					#slider img{ width:960px; height:400px !important;}
 				</style>
 <div id="content">
@@ -34,6 +33,7 @@
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
 			        					</a>
+			        					<!---<img src="assets/trungtam-tienganh/images/icon19.png"/>--->
 			        				</p>
 			        			</div>
 			        		</div>
@@ -66,32 +66,90 @@
 		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
 		        	</div>
 		        	</div>
-		        	<script>
-						// DOM Ready
-						$(function(){
-							$('#slidervideo').anythingSlider({
-								resizeContents      : true,
-								addWmodeToObject    : 'transparent',
-								navigationFormatter : function(index, panel){ // Format navigation labels with text
-									
-								}
-							});
-						});
-					</script>
+		        	<script type="text/javascript">
+		        		$(document).ready(function(){		        			
+		        			$('#id2, #id3, #id4, #id5, #id6,#id7').hide();	
+		        			$('#vd1').addClass('iconbg');	
+		        			$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');        			
+		        			$('#vd1').click(function(){
+		        				$('#id1').show();
+		        				$(this).addClass('iconbg');
+		        				$(this).removeClass('iconbg2');
+		        				$(this).parent().children('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+		        				$(this).parent().children('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id2,#id3, #id4, #id5, #id6,#id7').hide();
+		        				
+		        			});
+		        			$('#vd2').click(function(){
+		        				$('#id2').show();
+		        				$(this).addClass('iconbg');
+		        				$(this).removeClass('iconbg2');
+		        				$(this).parent().children('#vd1, #vd3, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+		        				$(this).parent().children('#vd1, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id1,#id3, #id4, #id5, #id6,#id7').hide();
+		        			});
+		        			$('#vd3').click(function(){
+		        				$('#id3').show();
+		        				$(this).addClass('iconbg');
+		        				$(this).removeClass('iconbg2');
+		        				$('#vd2, #vd1, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+		        				$('#vd2, #vd1, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id1,#id2, #id4, #id5, #id6,#id7').hide();
+		        			});
+		        			$('#vd4').click(function(){
+		        				$('#id4').show();
+		        				$(this).addClass('iconbg');
+		        				$(this).removeClass('iconbg2');
+		        				$('#vd2, #vd3, #vd1, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+		        				$('#vd2, #vd3, #vd1, #vd5, #vd6, #vd7').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id6,#id7').hide();
+		        			});
+		        			$('#vd5').click(function(){
+		        				$('#id5').show();
+		        				$(this).addClass('iconbg');
+		        				$(this).removeClass('iconbg2');
+		        				$('#vd2, #vd3, #vd4, #vd1, #vd6, #vd7').removeClass('iconbg'); 
+		        				$('#vd2, #vd3, #vd4, #vd1, #vd6, #vd7').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id1,#id3, #id2, #id4, #id6,#id7').hide();
+		        			});
+		        			$('#vd6').click(function(){
+		        				$('#id6').show();
+		        				$(this).removeClass('iconbg2');
+		        				$(this).addClass('iconbg');
+		        				$('#vd2, #vd3, #vd4, #vd5, #vd1, #vd7').removeClass('iconbg'); 
+		        				$('#vd2, #vd3, #vd4, #vd5, #vd1, #vd7').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id4,#id7').hide();
+		        			});
+		        			$('#vd7').click(function(){
+		        				$('#id7').show();
+		        				$(this).addClass('iconbg');
+		        				$(this).removeClass('iconbg2');
+		        				$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd1').removeClass('iconbg'); 
+		        				$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd1').addClass('iconbg2');
+		        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id6,#id4').hide();
+		        			});
+		        		});
+		        		
+		        	</script>
+		        	
 		        	<div class="video">		        		
 		            		<div class="contentvideo">	
-								<ul id="slidervideo">
+								<div class="anythingSlider anythingSlider-default activeSlider" style="width: 396px; height: 271px;"><div class="anythingWindow" style=""><ul id="slidervideo" class="anythingBase horizontal" style="width: 1980px; left: -396px;"><li class="panel3 cloned panel" style="width: 396px; height: 271px;">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;"></iframe>
+									</li>
 									<!-- YouTube: iframe -->
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc" frameborder="0" allowfullscreen></iframe>
+									<li class="panel3 panel activePage" style="width: 396px; height: 271px;">
+										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc?&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;playerapiid=asvideo0" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;" id="asvideo0"></iframe>
 									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/ulOb9gIGGd0" frameborder="0" allowfullscreen></iframe>
+									<li class="panel3 panel" style="width: 396px; height: 271px;">
+										<iframe src="http://www.youtube.com/embed/ulOb9gIGGd0?&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;playerapiid=asvideo1" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;" id="asvideo1"></iframe>
 									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
+									<li class="panel3 panel" style="width: 396px; height: 271px;">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U?&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;playerapiid=asvideo2" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;" id="asvideo2"></iframe>
 									</li>
-								</ul>
+								<li class="panel3 cloned panel" style="width: 396px; height: 271px;">
+										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;"></iframe>
+									</li></ul></div><div class="anythingControls" style="display: block;"><ul class="thumbNav" style=""><li class="first"></li><li></li><li class="last"></li></ul><a href="#" class="start-stop" style=""><span>Start</span></a></div><span class="arrow back" style=""><a href="#"><span>«</span></a></span><span class="arrow forward" style=""><a href="#"><span>»</span></a></span></div>
 		            		</div>				       
 		        	</div>
 		        	<script type="text/javascript">
@@ -162,7 +220,7 @@
 	<div class="tab">
 		        		<ul id="ultop">
 		        			<li id="li1">
-		        				<a href="#">
+		        				<a href="<?php echo base_url(); ?>http://facebook.com.vn">
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face1.png" class="show1"/>
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.png" class="show2"/>
 			        			</a>
@@ -262,7 +320,7 @@
 		        				</div>
 		        			</li>
 		        			<li id="li2">
-		        				<a href="#">
+		        				<a href-"#">
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter.png" class="show1"/>
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
 			        			</a>
@@ -631,7 +689,7 @@
 		        	</div>
 		        	<div class="plupgin">
 		        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif"/>
-		        		<span><a class="uiLinkSubtle" target="_blank" href="http://developers.facebook.com/plugins/?footer=1">Plugin xã hội của Facebook</a></span>
+		        		<p>Plugin xã hội của Facebook</p>
 		        	</div>
 		        	<script type="text/javascript">
 		        		$(document).ready(function(){		        			

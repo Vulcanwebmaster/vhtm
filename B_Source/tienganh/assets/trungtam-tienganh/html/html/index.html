@@ -1,69 +1,205 @@
-
-				<style>
-					#slider img{ width:960px; height:400px !important;}
-				</style>
-<div id="content">
-<div class="slider-wrapper theme-default">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" class="webkit safari  win">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+		<link type="text/css" href="css/style.css" media="screen" rel="stylesheet" />
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+	  	 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+		<script src="js/jquery.anythingslider.js"></script>
+		<link rel="stylesheet" href="css/anythingslider.css">
+	<!-- AnythingSlider video extension; optional, but needed to control video pause/play -->
+	<script src="js/jquery.anythingslider.video.js"></script>
+	    <script type="text/javascript">
+	    $(window).load(function() {
+	        $('#slider').nivoSlider();
+	    });
+    </script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.submenu').hide();
+				$('.menu_move').mouseenter(function(){
+					$('.submenu').show();
+					$('.menu_move').addClass('bgli');
+				});
+				$('.menu_move').mouseleave(function(){
+					$('.submenu').hide();
+					$('.menu_move').removeClass('bgli');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wapper">
+			<!--------------begin header---------------->
+			<div id="header">
+				<div class="content_header">
+					<div id="topheader">
+						<div id="left_topheader">
+							<div class="left_top">
+								<img src="images/star.gif"/>
+								<p>Bookmark us</p>
+							</div>
+							<div class="left_top">|</div>
+							<div class="left_top">
+								<img src="images/gif.gif" alt="">
+								<p>RSS</p>
+							</div>
+						</div>
+						<div id="right_topheader">
+							<img src="images/call.gif" alt=""/>
+							<p>Tư vấn và hỗ trợ trực tuyến</p> <p class="textbold">Call 0985320995</p>
+						</div>
+					</div>
+					<div id="absalute">
+						<a href="#"><img src="images/titwer.gif"/></a>
+						<a href="#"><img src="images/tube.gif" /></a>
+						<a href="#"><img src="images/face.gif"/></a>
+					</div>
+					<div id="header_logo">
+						<div id="logo">
+							<img src="images/logo.gif" alt="">				
+						</div>
+						<div id="search">
+							<div class="input">
+								<form>
+									<input type="text" name="search" class="inputsearch"/>
+									<label class="labelsearch">Search</label>
+								</form>
+							</div>
+							<div class="language">
+								<a href="#"><img src="images/language.gif"/></a>
+							</div>
+						</div>
+					</div>
+					
+					<div id="menutop">
+						<ul>
+							<li class="home"><a href="#">Trang chủ</a></li>
+							<li><a href="#">Giới thiệu</a></li>
+							<li><a href="#">Tin tức</a></li>
+							<li class="menu_move"><a href="#">Khóa học</a>
+								<div class="submenu">
+									<div>Tiếng Anh cho mầm non
+										<ul>
+											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
+											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
+										</ul>
+									</div>
+									<div>Tiếng Anh cho tiểu học
+										<ul>
+											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
+											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">Giảng viên</a></li>
+							<li><a href="#">Thư viện</a></li>
+							<li><a href="#">Liên hệ</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--------------end header---------------->
+			
+			<!--------------begin content---------------->
+			<div id="content">
+				 <div class="slider-wrapper theme-default">
 		            <div id="slider" class="nivoSlider">
-		           		<?php foreach ($list_slide as $slide)
-									{
-										 echo $slide->anh1;
-										 echo $slide->anh2;
-										 echo $slide->anh3;
-										 echo $slide->anh4;
-									}?>
+		                <img src="images/slide1.jpg" data-thumb="images/slide1.jpg" alt="" />		                
+		                <img src="images/slide2.jpg" data-thumb="images/slide2.jpg" alt=""  />
+		                <img src="images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" />
+		                <img src="images/slide4.jpg" data-thumb="images/slide4.jpg" alt=""  />
 		            </div>		           
 		        </div>
 		        <div id="manincontent">
 		        	<div class="contenttext">
 			        	<div class="textmaincontent">
 			        		<div class="bgtitlemain"><p class="titlemain">Tin tức</p></div>
-			        		
-			        		<?php foreach ($list_tintuc as $item) 
-									{ ?>
 			        		<div class="idmain">
 			        			<div class="img_main">
-			        				<?php echo $item->news_image ?>
+			        				<img src="images/trang-chu_155.gif"/>
 			        			</div>
 			        			<div class="text_main">
-			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
-															<?php echo $item->news_title ?><br>
-															(<?php echo $item->news_post_date ?>)
-														  </a></p>
-			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
-			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
-			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
-			        					</a>
-			        				</p>
+			        				<p class="title">Tiếng anh trẻ em: Tiếng Anh cho một khởi đầu vững chắc</p>
+			        				<p>Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin
+	khi nói chuyện với người nước ngoài, phát tri...
+	<a href="#">Tìm hiểu thêm về sự kiện này <img src="images/icon19.png"/></a></p>
+									
 			        			</div>
 			        		</div>
-			        		<?php } ?>
-			        		<!----<div class="readmore1"><a href="#">Xem thêm</a></div>--->
-			        		<div class="readmore1"><a href="<?php echo base_url();?>tintuc">Xem thêm</a></div>
+			        		<div class="idmain">
+			        			<div class="img_main">
+			        				<img src="images/trang-chu_155.gif"/>
+			        			</div>
+			        			<div class="text_main">
+			        				<p class="title">Tiếng anh trẻ em: Tiếng Anh cho một khởi đầu vững chắc</p>
+			        				<p>Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin
+	khi nói chuyện với người nước ngn...
+	<a href="#">Tìm hiểu thêm về sự kiện này <img src="images/icon19.png"/></a></p>
+									
+			        			</div>
+			        		</div>
+			        		<div class="idmain">
+			        			<div class="img_main">
+			        				<img src="images/trang-chu_155.gif"/>
+			        			</div>
+			        			<div class="text_main">
+			        				<p class="title">Tiếng anh trẻ em: Tiếng Anh cho một khởi đầu vững chắc</p>
+			        				<p>Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin
+	khi phát triển bốn kỹ năng tiếng Anh toàn...
+	<a href="#">Tìm hiểu thêm về sự kiện này <img src="images/icon19.png"/></a></p>
+									
+			        			</div>
+			        		</div>
+			        		<div class="readmore1"><a href="#">Xem thêm</a></div>
 			        	</div>
 			        	
 			        	<div class="textmaincontent" style="margin-left:2%;">
 		        		<div class="bgtitlemain"><p class="titlemain">Khóa học</p></div>
-		        		<?php foreach ($list_khoahoc as $item) 
-								{ ?>
 		        		<div class="idmain">
 		        			<div class="img_main2">
-		        				<p><?php echo $item->courses_date ?></p>
+		        				<p>14/11<br/>2012</p>
 		        			</div>
 		        			<div class="text_main2">
-		        				<p class="title">
-		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-		        					<?php echo $item->courses_name ?><br>
-		        					(<?php echo $item->courses_date ?>)
-		        					</a></p>
-		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
-		        					<!----<img src="assets/trungtam-tienganh/images/icon19.png"/>---->
-		        				</p>
+		        				<p class="title">Tiếng anh trẻ em: Tiếng Anh cho một khởi đầu vững chắc</p>
+		        				<p>Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin
+khi nói chuyện với người nước ngoài, phát triển bốn kỹ năng tiếng Anh toàn...
+<a href="#"> hiểu thêm về khóa học này <img src="images/icon19.png"/></a></p>
+								
 		        			</div>
 		        		</div>
-		        		<?php } ?>
-		        		<!---<div class="readmore"><a href="#">Xem thêm</a></div>-->
-		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
+		        		<div class="idmain">
+		        			<div class="img_main2">
+		        				<p>14/11<br/>2012</p>
+		        			</div>
+		        			<div class="text_main2">
+		        				<p class="title">Tiếng anh trẻ em: Tiếng Anh cho một khởi đầu vững chắc</p>
+		        				<p>Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin
+khi nói chuyện với người nước ngoài, phát triển bốn kỹ năng tiếng Anh toàn...
+<a href="#"> hiểu thêm về khóa học này <img src="images/icon19.png"/></a></p>
+								
+		        			</div>
+		        		</div>
+		        		<div class="idmain">
+		        			<div class="img_main2">
+		        				<p>14/11<br/>2012</p>
+		        			</div>
+		        			<div class="text_main2">
+		        				<p class="title">Tiếng anh trẻ em: Tiếng Anh cho một khởi đầu vững chắc</p>
+		        				<p>Chương trình tiếng Anh Trẻ em từ 4 đến 12 tuổi tại Apollo giúp trẻ thêm tự tin
+khi nói chuyện với người nước ngoài, phát triển bốn kỹ năng tiếng Anh toàn...
+<a href="#"> hiểu thêm về khóa học này <img src="images/icon19.png"/></a></p>
+								
+		        			</div>
+		        		</div>
+		        		<div class="readmore"><a href="#">Xem thêm</a></div>
 		        	</div>
 		        	</div>
 		        	<script>
@@ -159,117 +295,17 @@
 		        			});
 		        		})
 		        	</script>
-	<div class="tab">
+		        	<div class="tab">
 		        		<ul id="ultop">
 		        			<li id="li1">
-		        				<a href="#">
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face1.png" class="show1"/>
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.png" class="show2"/>
+		        				<a href-"#">
+			        				<img src="images/face1.png" class="show1"/>
+			        				<img src="images/face.png" class="show2"/>
 			        			</a>
 		        				<div class="children">
 		        					<div class="topics">
 		        						<div class="imgtopics">
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon3.gif"/>
-		        						</div>
-		        						<div class="texttopics">
-		        							 <script>
-										        // Load the SDK Asynchronously
-										        (function(d){
-										           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-										           if (d.getElementById(id)) {return;}
-										           js = d.createElement('script'); js.id = id; js.async = true;
-										           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-										           ref.parentNode.insertBefore(js, ref);
-										         }(document));
-										      </script>
- 											 <fb:like href="<?php echo base_url();?>assets/trungtam-tienganh/images/like.gif" show_faces="false" width="280" font="tahoma"></fb:like>
-		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
-		        						</div>
-		        					</div>
-		        					<div class="like">
-		        						<p style="padding:10px 0;">112 người thích<label style="font-weight:bold"> DEAL.com.sg-Singapore at Half the Price</label></p>
-		        						<ul class="peoplelike">
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_101.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_103.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_105.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_107.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_109.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_111.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_113.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_115.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_121.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_123.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        								<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_125.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_127.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_129.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>
-		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
-		        								<p align="center">Lisa</p>		        								
-		        							</a></li>		        							        							
-		        						</ul>
-		        					</div>
-		        				</div>
-		        			</li>
-		        			<li id="li2">
-		        				<a href="#">
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter.png" class="show1"/>
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
-			        			</a>
-			        				<div class="children">
-		        					<div class="topics">
-		        						<div class="imgtopics">
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon3.gif"/>
+		        							<img src="images/icon3.gif"/>
 		        						</div>
 		        						<div class="texttopics">
 		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
@@ -280,71 +316,161 @@
 		        						<p style="padding:10px 0;">112 người thích<label style="font-weight:bold"> DEAL.com.sg-Singapore at Half the Price</label></p>
 		        						<ul class="peoplelike">
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_101.gif"/>
+		        								<img src="images/trang-chu_101.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_103.gif"/>
+		        								<img src="images/trang-chu_103.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_105.gif"/>
+		        								<img src="images/trang-chu_105.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_107.gif"/>
+		        								<img src="images/trang-chu_107.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_109.gif"/>
+		        								<img src="images/trang-chu_109.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_111.gif"/>
+		        								<img src="images/trang-chu_111.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_113.gif"/>
+		        								<img src="images/trang-chu_113.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_115.gif"/>
+		        								<img src="images/trang-chu_115.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_121.gif"/>
+		        								<img src="images/trang-chu_121.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_123.gif"/>
+		        								<img src="images/trang-chu_123.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        								<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_125.gif"/>
+		        								<img src="images/trang-chu_125.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_127.gif"/>
+		        								<img src="images/trang-chu_127.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_129.gif"/>
+		        								<img src="images/trang-chu_129.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>		        							        							
+		        						</ul>
+		        					</div>
+		        				</div>
+		        			</li>
+		        			<li id="li2">
+		        				<a href-"#">
+			        				<img src="images/twiter.png" class="show1"/>
+			        				<img src="images/twiter1.png" class="show2"/>
+			        			</a>
+			        				<div class="children">
+		        					<div class="topics">
+		        						<div class="imgtopics">
+		        							<img src="images/icon3.gif"/>
+		        						</div>
+		        						<div class="texttopics">
+		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
+		        							<img src="images/like.gif"/>
+		        						</div>
+		        					</div>
+		        					<div class="like">
+		        						<p style="padding:10px 0;">112 người thích<label style="font-weight:bold"> DEAL.com.sg-Singapore at Half the Price</label></p>
+		        						<ul class="peoplelike">
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_101.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_103.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_105.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_107.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_109.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_111.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_113.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_115.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_117.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_119.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_121.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_123.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        								<li><a href="#">
+		        								<img src="images/trang-chu_125.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_127.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_129.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_117.gif"/>
+		        								<p align="center">Lisa</p>		        								
+		        							</a></li>
+		        							<li><a href="#">
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>		        							        							
 		        						</ul>
@@ -353,88 +479,88 @@
 		        			</li>
 		        			<li id="li3">
 		        				<a href-"#">
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/ytb.png" class="show1"/>
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/ytb1.png" class="show2"/>
+			        				<img src="images/ytb.png" class="show1"/>
+			        				<img src="images/ytb1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
 		        					<div class="topics">
 		        						<div class="imgtopics">
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon3.gif"/>
+		        							<img src="images/icon3.gif"/>
 		        						</div>
 		        						<div class="texttopics">
 		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/like.gif"/>
+		        							<img src="images/like.gif"/>
 		        						</div>
 		        					</div>
 		        					<div class="like">
 		        						<p style="padding:10px 0;">112 người thích<label style="font-weight:bold"> DEAL.com.sg-Singapore at Half the Price</label></p>
 		        						<ul class="peoplelike">
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_101.gif"/>
+		        								<img src="images/trang-chu_101.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_103.gif"/>
+		        								<img src="images/trang-chu_103.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_105.gif"/>
+		        								<img src="images/trang-chu_105.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_107.gif"/>
+		        								<img src="images/trang-chu_107.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_109.gif"/>
+		        								<img src="images/trang-chu_109.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_111.gif"/>
+		        								<img src="images/trang-chu_111.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_113.gif"/>
+		        								<img src="images/trang-chu_113.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_115.gif"/>
+		        								<img src="images/trang-chu_115.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_121.gif"/>
+		        								<img src="images/trang-chu_121.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_123.gif"/>
+		        								<img src="images/trang-chu_123.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        								<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_125.gif"/>
+		        								<img src="images/trang-chu_125.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_127.gif"/>
+		        								<img src="images/trang-chu_127.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_129.gif"/>
+		        								<img src="images/trang-chu_129.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>		        							        							
 		        						</ul>
@@ -443,88 +569,88 @@
 		        			</li>
 		        			<li id="li4">
 			        				<a href-"#">
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/zing.png" class="show1"/>
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/zing1.png" class="show2"/>
+			        				<img src="images/zing.png" class="show1"/>
+			        				<img src="images/zing1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
 		        					<div class="topics">
 		        						<div class="imgtopics">
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon3.gif"/>
+		        							<img src="images/icon3.gif"/>
 		        						</div>
 		        						<div class="texttopics">
 		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/like.gif"/>
+		        							<img src="images/like.gif"/>
 		        						</div>
 		        					</div>
 		        					<div class="like">
 		        						<p style="padding:10px 0;">112 người thích<label style="font-weight:bold"> DEAL.com.sg-Singapore at Half the Price</label></p>
 		        						<ul class="peoplelike">
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_101.gif"/>
+		        								<img src="images/trang-chu_101.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_103.gif"/>
+		        								<img src="images/trang-chu_103.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_105.gif"/>
+		        								<img src="images/trang-chu_105.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_107.gif"/>
+		        								<img src="images/trang-chu_107.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_109.gif"/>
+		        								<img src="images/trang-chu_109.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_111.gif"/>
+		        								<img src="images/trang-chu_111.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_113.gif"/>
+		        								<img src="images/trang-chu_113.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_115.gif"/>
+		        								<img src="images/trang-chu_115.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_121.gif"/>
+		        								<img src="images/trang-chu_121.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_123.gif"/>
+		        								<img src="images/trang-chu_123.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        								<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_125.gif"/>
+		        								<img src="images/trang-chu_125.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_127.gif"/>
+		        								<img src="images/trang-chu_127.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_129.gif"/>
+		        								<img src="images/trang-chu_129.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>		        							        							
 		        						</ul>
@@ -533,88 +659,88 @@
 		        			</li>
 		        			<li id="li5">
 		        				<a href-"#">
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/go.png" class="show1"/>
-			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/go1.png" class="show2"/>
+			        				<img src="images/go.png" class="show1"/>
+			        				<img src="images/go1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
 		        					<div class="topics">
 		        						<div class="imgtopics">
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon3.gif"/>
+		        							<img src="images/icon3.gif"/>
 		        						</div>
 		        						<div class="texttopics">
 		        							<p><label class="deal">DEAL.com.sg-Singapore at Half the Price !</label> trên face</p>
-		        							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/like.gif"/>
+		        							<img src="images/like.gif"/>
 		        						</div>
 		        					</div>
 		        					<div class="like">
 		        						<p style="padding:10px 0;">112 người thích<label style="font-weight:bold"> DEAL.com.sg-Singapore at Half the Price</label></p>
 		        						<ul class="peoplelike">
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_101.gif"/>
+		        								<img src="images/trang-chu_101.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_103.gif"/>
+		        								<img src="images/trang-chu_103.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_105.gif"/>
+		        								<img src="images/trang-chu_105.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_107.gif"/>
+		        								<img src="images/trang-chu_107.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_109.gif"/>
+		        								<img src="images/trang-chu_109.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_111.gif"/>
+		        								<img src="images/trang-chu_111.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_113.gif"/>
+		        								<img src="images/trang-chu_113.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_115.gif"/>
+		        								<img src="images/trang-chu_115.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_121.gif"/>
+		        								<img src="images/trang-chu_121.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_123.gif"/>
+		        								<img src="images/trang-chu_123.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        								<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_125.gif"/>
+		        								<img src="images/trang-chu_125.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_127.gif"/>
+		        								<img src="images/trang-chu_127.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_129.gif"/>
+		        								<img src="images/trang-chu_129.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_117.gif"/>
+		        								<img src="images/trang-chu_117.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>
 		        							<li><a href="#">
-		        								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_119.gif"/>
+		        								<img src="images/trang-chu_119.gif"/>
 		        								<p align="center">Lisa</p>		        								
 		        							</a></li>		        							        							
 		        						</ul>
@@ -630,8 +756,8 @@
 		        		</div>
 		        	</div>
 		        	<div class="plupgin">
-		        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif"/>
-		        		<span><a class="uiLinkSubtle" target="_blank" href="http://developers.facebook.com/plugins/?footer=1">Plugin xã hội của Facebook</a></span>
+		        		<img src="images/iconface.gif"/>
+		        		<p>Plugin xã hội của Facebook</p>
 		        	</div>
 		        	<script type="text/javascript">
 		        		$(document).ready(function(){		        			
@@ -646,24 +772,24 @@
 		        		});
 					</script>
 		        	<div class="contentbot">
-		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"/></div>
+		        		<div class="prev12"><img src="images/icon5.gif"/></div>
 			        	<div id="clickslide">
 			        		
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 			        		<div class="slideimage">
 			        			
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
+			        			<img src="images/trang-chu_152.gif"/>
+			        			<img src="images/trang-chu_155.gif"/>
+			        			<img src="images/trang-chu_152.gif"/>
+			        			<img src="images/trang-chu_155.gif"/>
+			        			<img src="images/trang-chu_152.gif"/>
+			        			<img src="images/trang-chu_155.gif"/>
 			        		</div>
 			        		</div>
 			        		
 			        		
 			        	</div>
-			        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"/></div>
+			        	<div class="next12"><img src="images/icon8.gif"/></div>
 			        	<div id="number">
 			        		<table class="table">
 			        			<tr>
@@ -672,19 +798,19 @@
 			        				</td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon6.gif"/></td>
+			        				<td><img src="images/icon6.gif"/></td>
 			        				<td>Đang truy cập : <label style="font-weight:bold;">1</label></td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon9.gif"/></td>
+			        				<td><img src="images/icon9.gif"/></td>
 			        				<td>Hôm nay: <label style="font-weight:bold;">1</label></td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon4.gif"/></td>
+			        				<td><img src="images/icon4.gif"/></td>
 			        				<td>Tháng hiện tại : <label style="font-weight:bold;">1</label></td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon7.gif"/></td>
+			        				<td><img src="images/icon7.gif"/></td>
 			        				<td>Tổng lượt truy cập : <label style="font-weight:bold;">1</label></td>
 			        			</tr>
 			        		</table>
@@ -692,3 +818,62 @@
 		        	</div>
 		        </div>
 			</div>
+			<!--------------end content---------------->
+			<div id="footer">
+				<div class="contentfooter">
+					<div class="ft1">
+						<p>Sản phẩm và dịch vụ</p>
+						<ul>
+							<li><a href="#">Tiếng anh cho mầm non</a></li>
+							<li><a href="#">Tiếng anh cho tiểu học</a></li>
+							<li><a href="#">Tiếng anh cho sinh viên</a></li>
+						</ul>
+					</div>
+					<div class="ft1">
+						<p>Đối tác</p>
+						<ul>
+							<li><a href="#">Trường mầm non A</a></li>
+							<li><a href="#">Trường mầm non B</a></li>							
+						</ul>
+					</div>
+					<div class="ft1">
+						<p>Giáo viên</p>
+						<ul>
+							<li><a href="#">Giáo viên học viện Jennifer</a></li>
+							<li><a href="#">Cảm nhận học viên</a></li>
+							<li><a href="#">Cảm nhận của phụ huynh</a></li>
+						</ul>
+					</div>
+					<div class="ft1" style="border:0">
+						<p>Hỗ trợ</p>
+						<ul>
+							<li><a href="#">Văn phòng học viện Jennifer<br/>(+84) 04 665 22 666</a></li>
+							<li><a href="#">Hỗ trực tuyến<br/>
+								Mss. Yến - (+84) 123 456 789</a><br/>
+								<img src="images/icon10.gif" class="skype"/>
+								<img src="images/iconyaho.png"/><br/>
+							<a href="#">Mr. Linh   - (+84) 123 456 789</a><br/>
+							<img src="images/icon10.gif" class="skype"/>
+								<img src="images/iconyaho.png"/><br/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footerbottom">
+					<div class="copyright">Copyright©Học viện Jennifer - All Rights Reserved</div>
+					<div class="menubottom">
+						<ul>
+							<li class="home"><a href="#">Trang chủ</a></li>
+							<li><a href="#">Giới thiệu</a></li>
+							<li><a href="#">Tin tức</a></li>
+							<li><a href="#">Khóa học</a></li>
+							<li><a href="#">Giảng viên</a></li>
+							<li><a href="#">Thư viện</a></li>
+							<li><a href="#">Liên hệ</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

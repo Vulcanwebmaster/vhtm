@@ -2,6 +2,7 @@
 <html  xmlns="http://www.w3.org/1999/xhtml" class="webkit safari  win">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+		
 		<link type="text/css" href="<?php echo base_url();?>assets/trungtam-tienganh/css/style.css" media="screen" rel="stylesheet" />
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/themes/default/default.css" type="text/css" media="screen" />
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/themes/light/light.css" type="text/css" media="screen" />
@@ -11,6 +12,9 @@
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.2.min.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.nivo.slider.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jsadd.js"></script>
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/anythingslider.css">
+	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.js"></script>
+	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.video.js"></script>
 	        <script type="text/javascript">
 	    $(window).load(function() {
 	        $('#slider').nivoSlider();
