@@ -1,3 +1,15 @@
+<?php
+if (isset($_POST['sendmail']) && $_POST['sendmail']=="send")
+{
+$from=$_POST['trungnt20290@gmail.com'];
+$to=$_POST['to'];
+$subject=$_POST['Ðã hoàn tất dang ky nhan gui tin!'];
+$message=$_POST['Ban se duoc thong bao khi co ban tin moi'];
+$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+mail($to,$subject,$message,$options);
+echo"Ðã gui mail";
+}
+?>
 
 				<style>
 					#slider img{ width:960px; height:400px !important;}
@@ -623,10 +635,17 @@
 		        			</li>
 		        		</ul>
 		        		<div class="righttab">
-		        			<form>
+							<!-------- Gửi mail------------>
+							<form method="post">
+							<input name="to" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
+							<input type="submit" value="send" name="sendmail"/>
+							</form>
+							<!----- End Gửi mail------------>
+		        			<!---<form>
 		        				<input name="keyword" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
 		        				<input type="submit" value="Subscribe" class="submitrighttab"/>
 		        			</form>
+		        			---->
 		        		</div>
 		        	</div>
 		        	<div class="plupgin">
