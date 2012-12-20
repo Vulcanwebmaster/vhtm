@@ -62,10 +62,10 @@
 					
 					<div id="menutop">
 						<ul>
-							<li class="home menu_move"><a href="<?php echo base_url();?>homepage">Home</a></li>
-							<li  class="li menu_move"><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
-							<li  class="li menu_move"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
-							<li  class="li menu_move"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
+							<li class="home menu_move" id="homehd"><a href="<?php echo base_url();?>homepage">Home</a></li>
+							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
+							<li  class="li menu_move" id="newshd"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
+							<li  class="li menu_move" id="coursehd"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
 								<div class="submenu">
 									<div>Tiếng Anh cho mầm non
 										<ul>
@@ -81,9 +81,9 @@
 									</div>
 								</div>
 							</li>
-							<li  class="li menu_move"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
-							<li  class="li menu_move"><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>
-							<li  class="li menu_move"><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
+							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
+							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>
+							<li  class="li menu_move" id="contactushd"><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
 						</ul>
 					</div>
 				</div>

@@ -207,3 +207,6 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 				<!-----------end share------------>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#newshd').addClass('bgli');
+			</script>

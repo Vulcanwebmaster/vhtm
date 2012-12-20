@@ -153,8 +153,10 @@ a:hover, a:active, a:focus {
 
 
 /*giangvien*/
-#imgleftgv{position:absolute; left:0}
-#content_left{float:left; width:28%; margin-top:120px; border:1px solid #c0c0c0; min-height:1000px;}
+#imgleftgv{position:absolute; right:0; background:url(../images/leffgv.png) no-repeat; width:464px; height:117px;}
+#imgleftgv p{ color:#fff; font-size:28px; margin:40px 0 0 170px}
+#content_left{float:left; width:28%;  position:relative}
+#contentlefftgv{margin-top:120px; border:1px solid #c0c0c0;  min-height:1000px;}
 #ul_leftgv li{ list-style:none; padding:0 10px; font-size: 16px; line-height:30px;}
 #ul_leftgv li a{color:#4d4d4d; text-decoration: none}
 .bgicongv2{background:url(../images/icongv.png) no-repeat scroll 2px 10px;}

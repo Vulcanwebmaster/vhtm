@@ -718,3 +718,6 @@ echo"Ðã gửi mail";
 		        	</div>
 		        </div>
 			</div>
+			<!--<script type="text/javascript">
+				$('#homehd').addClass('bgli');
+			</script>-->

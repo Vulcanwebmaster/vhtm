@@ -1,7 +1,7 @@
 <div id="content">
-				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
+			<!--	<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				 <div id="content_left">
-				 	
+				 	<div id="imgleftgv"><p align="center">Khóa học</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
 				 			<!--<li id="li_leftgv5" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
@@ -192,3 +192,6 @@
 				<!-----------end share------------>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#coursehd').addClass('bgli');
+			</script>

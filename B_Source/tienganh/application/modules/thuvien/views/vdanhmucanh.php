@@ -13,7 +13,7 @@
 </script>
 
 <div id="content">
-				<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv"/>
+				<!--<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv"/>-->
 				 <?php echo $this->load->view('front/menu-trai-thuvien');?>			 
 				 <style>				
 				 	#slider img{ width:663px !important; height:235px!important;}
@@ -126,3 +126,6 @@
 				<!-----------end share------------>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#libraryhd').addClass('bgli');
+			</script>

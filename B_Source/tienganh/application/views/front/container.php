@@ -48,20 +48,45 @@
 		</div>
 	</body>
 	<script type="text/javascript">
+	alert('123');
 		$(document).ready(function(){	
 			var left=$('.slideimage').css("left");	        			
-			$(".prev12").click(function(){
-		  $(".slideimage").animate({"left": "+=311px"}, "slow");
-			});
+			var right=$('.slideimage').css("right");
 			
-			$(".next12").click(function(){
+			if(left =='-1600px')
+			{			
+				 $(".prev12").click(function(){
+			 	 $(".slideimage").animate({"left": "-=311px"}, "slow");
+				});
 				
-			  $(".slideimage").animate({"left": "-=311px"}, "slow");
-			});
-			if(left <='-1600' and left >='1600')
-			{
-				  $(".slideimage").animate({"left": "-=0"}, "slow");
-			}
+				$(".next12").click(function(){
+					
+				  $(".slideimage").animate({"left": "=0"}, "slow");
+				});
+			
+			};
+			else{
+				if(right=='0'){
+					 $(".prev12").click(function(){
+				 	 $(".slideimage").animate({"right": "=0"}, "slow");
+					});
+					
+					$(".next12").click(function(){
+						
+					  $(".slideimage").animate({"left": "+=311px"}, "slow");
+					});alert('123456');
+				};
+				else{
+					$(".prev12").click(function(){
+				 	 $(".slideimage").animate({"left": "+=311px"}, "slow");
+					});
+					
+					$(".next12").click(function(){
+						
+					  $(".slideimage").animate({"left": "-=311px"}, "slow");
+					});alert('123789);
+				};
+			};
 		});
 	</script>
 </html>

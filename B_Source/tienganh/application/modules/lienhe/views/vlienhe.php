@@ -5,9 +5,9 @@
 		echo '</div>';
 	}?>
 <div id="content">
-				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
+				<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				 <div id="content_left">
-				 	
+				 	<div id="imgleftgv"><p align="center">Liên hệ</p></div>
 				 	<div id="contentlefftgv">
 				 	</div>
 				 </div>			 
@@ -66,3 +66,6 @@ Website: www.jennifer.edu.vn</p><br>
 				 	</div>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#contactushd').addClass('bgli');
+			</script>

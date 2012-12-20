@@ -1,7 +1,7 @@
 <div id="content">
-				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
+				<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				 <div id="content_left">
-				 	
+				 	<div id="imgleftgv"><p align="center">Giới thiệu</p></div>
 				 <div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
 				 			<li id="li_leftgv5" <?php if ($index == 0) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>gioithieu/sumenh">Sứ mệnh</a></li>
@@ -56,3 +56,6 @@
 				<!-----------end share------------>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#aboutushd').addClass('bgli');
+			</script>

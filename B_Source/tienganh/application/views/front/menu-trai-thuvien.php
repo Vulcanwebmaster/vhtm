@@ -1,4 +1,5 @@
 <div id="content_left">
+	<div id="imgleftgv"><p align="center">Thư viện</p></div>
  	<div id="contentlefftgv">
  		<ul id="ul_leftgv">
  			<li id="li_leftgv1"><a href="<?php echo base_url()?>thuvien/category/0">Hình ảnh trung tâm</a></li>

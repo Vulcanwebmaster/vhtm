@@ -1,7 +1,7 @@
 <div id="content">
-				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
+				<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				 <div id="content_left">
-				 	
+				 	<div id="imgleftgv"><p align="center">Giảng viên</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
 				 			<li id="li_leftgv2" <?php if ($index == 1) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
@@ -74,3 +74,6 @@
 				<!-----------end share------------>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#teacherhd').addClass('bgli');
+			</script>

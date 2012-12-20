@@ -222,3 +222,6 @@
 				<!-----------end share------------>
 			</div>
 			</div>
+			<script type="text/javascript">
+				$('#newshd').addClass('bgli');
+			</script>
