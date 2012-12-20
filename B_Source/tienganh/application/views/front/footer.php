@@ -37,10 +37,10 @@
 					</div>
 				</div>
 				<div class="footerbottom">
-					<div class="copyright">Copyright©Học viện Jennifer - All Rights Reserved</div>
+					<div class="copyright">Copyright©Học viện Jennifer - All Rights Reserved - Design by <a href="http://niw.com.vn/" style="color:#fff"> NIW</a></div>
 					<div class="menubottom">
 						<ul>
-							<li class="home"><a href="<?php echo base_url();?>homepage">Trang chủ</a></li>
+							<li class="homebottom"><a href="<?php echo base_url();?>homepage">Trang chủ</a></li>
 							<li><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
 							<li><a href="<?php echo base_url();?>khoahoc">Khóa học</a></li>

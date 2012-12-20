@@ -15,7 +15,7 @@
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/anythingslider.css">
 	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.js"></script>
 	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.video.js"></script>
-	        <script type="text/javascript">
+	    <script type="text/javascript">
 	    $(window).load(function() {
 	        $('#slider').nivoSlider();
 	    });
@@ -24,12 +24,12 @@
 			$(document).ready(function(){
 				$('.submenu').hide();
 				$('.menu_move').mouseenter(function(){
-					$('.submenu').show();
-					$('.menu_move').addClass('bgli');
+					$(this).children('.submenu').show();
+					$(this).addClass('bgli');
 				});
 				$('.menu_move').mouseleave(function(){
-					$('.submenu').hide();
-					$('.menu_move').removeClass('bgli');
+					$(this).children('.submenu').hide();
+					$(this).removeClass('bgli');
 				});
 			});
 		</script>
@@ -48,15 +48,20 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		        		$(document).ready(function(){		        			
-		        			$(".prev12").click(function(){
-						  $(".slideimage").animate({"left": "+=311px"}, "slow");
-							});
-							
-							$(".next12").click(function(){
-								
-							  $(".slideimage").animate({"left": "-=311px"}, "slow");
-							});
-		        		});
-					</script>
+		$(document).ready(function(){	
+			var left=$('.slideimage').css("left");	        			
+			$(".prev12").click(function(){
+		  $(".slideimage").animate({"left": "+=311px"}, "slow");
+			});
+			
+			$(".next12").click(function(){
+				
+			  $(".slideimage").animate({"left": "-=311px"}, "slow");
+			});
+			if(left=<'-1600' and left >='1600')
+			{
+				  $(".slideimage").animate({"left": "-=0"}, "slow");
+			}
+		});
+	</script>
 </html>

@@ -18,7 +18,7 @@ echo"Ðã gửi mail";
 	}?>
 
 				<style>
-					#slider img{ width:960px; height:400px !important;}
+					#slider img{ width:960px; height:354px !important;}
 				</style>
 <div id="content">
 <div class="slider-wrapper theme-default">
