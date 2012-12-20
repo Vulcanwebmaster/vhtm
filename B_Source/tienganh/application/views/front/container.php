@@ -58,7 +58,7 @@
 				
 			  $(".slideimage").animate({"left": "-=311px"}, "slow");
 			});
-			if(left=<'-1600' and left >='1600')
+			if(left <='-1600' and left >='1600')
 			{
 				  $(".slideimage").animate({"left": "-=0"}, "slow");
 			}

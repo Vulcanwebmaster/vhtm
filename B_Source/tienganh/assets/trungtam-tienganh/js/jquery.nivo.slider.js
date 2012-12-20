@@ -51,9 +51,9 @@
         });
          
         // If randomStart
-        //if(settings.randomStart){
-         //   settings.startSlide = Math.floor(Math.random() * vars.totalSlides);
-       // }
+        if(settings.randomStart){
+            settings.startSlide = Math.floor(Math.random() * vars.totalSlides);
+        }
         
         // Set startSlide
         if(settings.startSlide > 0){
@@ -635,7 +635,7 @@
     
     //Default settings
     $.fn.nivoSlider.defaults = {
-       // effect: 'random',
+        effect: 'random',
         slices: 15,
         boxCols: 8,
         boxRows: 4,
@@ -649,7 +649,7 @@
         manualAdvance: false,
         prevText: 'Prev',
         nextText: 'Next',
-       // randomStart: false,
+        randomStart: false,
         beforeChange: function(){},
         afterChange: function(){},
         slideshowEnd: function(){},
