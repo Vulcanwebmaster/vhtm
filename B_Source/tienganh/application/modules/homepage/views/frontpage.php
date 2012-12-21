@@ -46,8 +46,8 @@ echo"Ðã gửi mail";
 			        			<div class="text_main">
 			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 															<?php echo $item->news_title ?><br>
-															<?php echo ($item->news_post_date); ?>
 														  </a></p>
+														  <p>(<?php echo ($item->news_post_date); ?>)</p>
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
@@ -71,12 +71,12 @@ echo"Ðã gửi mail";
 		        			<div class="text_main2">
 		        				<p class="title">
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-		        					<?php echo $item->courses_name ?><br>
-		        					(<?php echo $item->courses_date ?>)
+		        					<?php echo $item->courses_name ?>
 		        					</a></p>
+		        					<p>(<?php echo $item->courses_date ?>)</br></p>
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
+			        						</br>Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
 			        					</a>
 		        				</p>
 		        			</div>

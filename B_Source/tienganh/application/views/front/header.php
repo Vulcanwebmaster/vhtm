@@ -66,7 +66,7 @@
 							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li  class="li menu_move" id="newshd"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
 							<li  class="li menu_move" id="coursehd"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
-								<div class="submenu">
+								<!---<div class="submenu">
 									<div>Tiếng Anh cho mầm non
 										<ul>
 											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
@@ -79,7 +79,7 @@
 											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
 										</ul>
 									</div>
-								</div>
+								</div>--->
 							</li>
 							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
 							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>

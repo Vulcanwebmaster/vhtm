@@ -9,6 +9,11 @@
 				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
 				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
 				 			---->
+				 			<?php foreach ($items as $item) 
+							{ ?>
+				 		<li id="li_leftgv2"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
+				 			<?php echo $item->courses_name ?></a></li>
+				 		<?php } ?>
 				 		</ul>
 				 	</div>
 				 </div>			 

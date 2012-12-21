@@ -8,6 +8,11 @@
 				 			<li id="li_leftgv2" <?php if ($index == 2) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
 				 			<li id="li_leftgv2" <?php if ($index == 0) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
 				 		-->
+				 		<?php foreach ($items as $item) 
+							{ ?>
+				 		<li id="li_leftgv2"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
+				 			<?php echo $item->courses_name ?></a></li>
+				 		<?php } ?>
 				 		</ul>
 				 	</div>
 				 </div>			 
@@ -46,7 +51,8 @@
 			 					<!--<div class="divgv"><?php echo $item->lecturers_image ?></div>--->
 			 					<div class="divgv2">
 			 						<p class="tittlegv"><?php echo $item->courses_name ?></p>
-			 						<p><i><?php echo word_limiter(strip_tags($item->courses_content), 25)?> </i></p>
+			 						<p>(<?php echo $item->courses_date ?>)</p>
+			 						<p><i><?php echo word_limiter(strip_tags($item->courses_content), 20)?> </i></p>
 			 						<p class="reamororgv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">Chi tiết</a></p>
 			 					</div >
 				 			</div>	

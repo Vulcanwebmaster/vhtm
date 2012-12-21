@@ -69,6 +69,7 @@ class Khoahoc extends NIW_Controller
 	function detail($id=0)
 	{
 		$data['list_doitac']=$this->Mkhoahoc->getListFull('doitac');
+		$data['items']=$this->Mkhoahoc->getListFull('ta_courses');
 		$data['list_chitiet']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$id);
 		$model=new CI_Model();
 		$data['module']=$this->module;
