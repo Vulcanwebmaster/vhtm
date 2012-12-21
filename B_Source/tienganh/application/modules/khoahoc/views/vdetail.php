@@ -131,10 +131,10 @@
 					 		<ul style="padding:0">
 					 			<li><a href="#"><script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
 					 			<a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" onclick="return fbs_click()" target="_blank"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/sharr.png"></a></li>
-					 			<iframe src="https://www.facebook.com/plugins/like.php?href=<?php echo base_url();?>assets/trungtam-tienganh/images/line.png"
+					 			<li><iframe src="https://www.facebook.com/plugins/like.php?href=<?php echo base_url();?>assets/trungtam-tienganh/images/line.png"
 							        scrolling="no" frameborder="0"
-							        style="border:none; width:450px; height:80px"></iframe>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/send.png"></a></li>
+							        style="border:none; width:450px; height:80px"></iframe></li>
+					 			<!--<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/send.png"></a></li>-->
 					 			<li style="padding-top:7px"><a href="#">loanguyen</a> like this</li>
 					 			
 					 		</ul>
@@ -161,7 +161,7 @@
 					        	</div>
 					 	<style>
 					 		.prev12{left:-10px;}
-					 		#clickslide{ margin-left:20px; width:94%}
+					 		#clickslide{ margin-left:40px; width:88%}
 					 		.next12, .prev12{ width:3%;}
 					 		.next12{right:0}
 					 		.slideimage img{margin:0 25px 0 -5px;}

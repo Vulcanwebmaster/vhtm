@@ -38,19 +38,22 @@
 /* Navigation buttons + start/stop button, default state */
 .anythingSlider-default .anythingControls a {
 	/* top shadow */
-	background: #777 url(../images/default.png) center -288px repeat-x;
+	background: url(../images/icon20.gif) top center no-repeat;
 	color: #000;
 	border-radius: 0 0 5px 5px;
 	-moz-border-radius: 0 0 5px 5px;
 	-webkit-border-radius: 0 0 5px 5px;
+	width:19px;
 }
+.anythingslidecontrols {background: url(../images/icon2.gif) top center no-repeat !important;}
+.thumbNav { margin-top:10px !important}
 /* Make sure navigation text is visible */
 .anythingSlider-default .anythingControls a span {
 	visibility: visible;
 }
 /* Navigation current button, default state */
 .anythingSlider-default .anythingControls a.cur {
-	background: #888;
+/*	background: #888;*/
 	color: #000;
 }
 
@@ -84,20 +87,21 @@
 }
 /* Navigation buttons, active state */
 .anythingSlider-default.activeSlider .anythingControls a {
-	/* background image = top shadow */
-	background-color: #7C9127;
+	/* background image = top shadow 
+	background-color: #7C9127;*/
 }
 /* Navigation current & hovered button, active state */
 .anythingSlider-default.activeSlider .anythingControls a.cur,
 .anythingSlider-default.activeSlider .anythingControls a:hover {
 	/* background image removed */
-	background: #7C9127;
+	/*background: #7C9127;*/
 }
 
 /* start-stop button, stopped, active state */
 .anythingSlider-default.activeSlider .anythingControls a.start-stop {
 	background-color: #080;
 	color: #fff;
+	background-image:none;
 }
 /* start-stop button, playing, active state */
 .anythingSlider-default.activeSlider .anythingControls a.start-stop.playing {

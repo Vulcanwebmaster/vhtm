@@ -87,12 +87,21 @@ echo"Ðã gửi mail";
 		        	</div>
 		        	</div>
 		        	<script>
-						// DOM Ready
+			        /*	$(document).ready(function(){
+			        		
+			        		$('.panel1 ').click(function(){
+			        			alert('123');
+			        			$(this).addClass('.anythingslidecontrols');
+			        			
+			        		});
+			        	});*/
+							// DOM Ready
 						$(function(){
 							$('#slidervideo').anythingSlider({
 								resizeContents      : true,
 								addWmodeToObject    : 'transparent',
 								navigationFormatter : function(index, panel){ // Format navigation labels with text
+									return ['', '', '', '', ''][index - 1];
 									
 								}
 							});
@@ -107,6 +116,12 @@ echo"Ðã gửi mail";
 									</li>
 									<li class="panel3">
 										<iframe src="http://www.youtube.com/embed/ulOb9gIGGd0" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
 									</li>
 									<li class="panel3">
 										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
@@ -659,7 +674,7 @@ echo"Ðã gửi mail";
 		        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif"/>
 		        		<span><a class="uiLinkSubtle" target="_blank" href="http://developers.facebook.com/plugins/?footer=1">Plugin xã hội của Facebook</a></span>
 		        	</div>
-		        	<script type="text/javascript">
+		        	<!--<script type="text/javascript">
 		        		$(document).ready(function(){		        			
 		        			$(".prev12").click(function(){
 						  $(".slideimage").animate({"left": "+=311px"}, "slow");
@@ -670,7 +685,7 @@ echo"Ðã gửi mail";
 							  $(".slideimage").animate({"left": "-=311px"}, "slow");
 							});
 		        		});
-					</script>
+					</script>-->
 		        	<div class="contentbot">
 		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"/></div>
 			        	<div id="clickslide">
