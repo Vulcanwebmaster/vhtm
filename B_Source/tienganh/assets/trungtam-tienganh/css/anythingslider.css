@@ -10,7 +10,7 @@
  *****************************/
 /* change the ID & dimensions to match your slider */
 #slidervideo {
-	width: 100%;
+	width: 124%;
 	height: 271px;
 	list-style: none;
 	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
@@ -45,8 +45,9 @@
 	-webkit-border-radius: 0 0 5px 5px;
 	width:19px;
 }
-.anythingslidecontrols {background: url(../images/icon2.gif) top center no-repeat !important;}
-.thumbNav { margin-top:10px !important}
+.anythingslidecontrols123 {background: url(../images/icon2.gif) top center no-repeat !important;}
+
+.thumbNav { margin:20px 0 0 100px !important}
 /* Make sure navigation text is visible */
 .anythingSlider-default .anythingControls a span {
 	visibility: visible;
@@ -175,6 +176,8 @@
 	float: right;
 	z-index: 100;
 	outline: 0;
+	margin-right:5px;
+	
 }
 
 /***********************
@@ -219,7 +222,7 @@
 .anythingSlider .anythingWindow {
 	overflow: hidden;
 	position: relative;
-	width: 100%;
+	width: 99%;
 	height: 100%;
 }
 /* anythingSlider base (original element) */

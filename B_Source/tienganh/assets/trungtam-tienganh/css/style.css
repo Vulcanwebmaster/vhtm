@@ -41,7 +41,7 @@ a:hover, a:active, a:focus {
 #absalute{ position:absolute; z-index: 100; top:28px; right:205px;}
 
 #menutop ul{ float:right; margin:0; padding:0; font-size:15px;}
-#menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:-5px; padding-top:4px; padding-bottom:3px;}
+#menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:-5px; padding-top:4px; padding-bottom:3px; cursor:pointer}
 .li{ background:url(../images/icon11.gif) no-repeat scroll 10px 7px transparent; }
 #menutop li a{text-decoration:none;}
 /*#menutop li:hover{ background:#fff !important;}
@@ -99,7 +99,7 @@ a:hover, a:active, a:focus {
 .deal{ font-weight:bold; font-size:14px; }
 .topics{ border-bottom:1px solid #ebeff4; height:45px;}
 .peoplelike{padding:0; margin:0;}
-.peoplelike li{float:left; list-style:none; padding:0 0 0 10px !important;}
+.peoplelike li{float:left; list-style:none; padding:0 0 0 10px !important; }
 .peoplelike a{text-decoration:none; color:#4c4c4c}
 .peoplelike img{width:45px; height:45px;}
 .like{border-bottom:1px solid #EBEFF4; height:103px;}
@@ -110,7 +110,7 @@ a:hover, a:active, a:focus {
 .inputbox{ color:#fff; background:url(../images/iconmail.gif) no-repeat scroll 5px 4px; padding-left:20px; background-color:#505050; width:250px; border-top:2px solid #262626 !important; border:0; border-radius:3px;}
 .submitrighttab{ background-color:#1b75bb; color:#fff; text-transform:uppercase; border:0; border-radius:3px;}
 
-.video{width:486px; height:273px; margin:20px auto;}
+.video{width:486px; height:300px; margin:20px auto;}
 .contentvideo{}
 .contentvideo iframe{width:486px !important; height:273px !important; }
 #ul_video li{ float:left; list-style:none; padding:0 10px;}
@@ -120,7 +120,7 @@ a:hover, a:active, a:focus {
 .iconbg{background-image:url(../images/icon2.gif); background-repeat:no-repeat; width:20px; height:20px}
 .iconbg2{background-image:url(../images/icon20.gif); background-repeat:no-repeat; width:20px; height:20px;}
 
-#clickslide{ clear:both; width:67%; position:relative; overflow: hidden; float:left; margin-bottom:30px; margin-left:49px;}
+#clickslide{ clear:both; width:67%; position:relative; overflow: hidden; float:left; margin-bottom:30px; margin-left:39px;}
 .slideimage, .prev,.next{float:left}
 .prev12,.next12{ width:4%; top:45px; position: absolute}
 .prev12{ left:0;}
@@ -189,7 +189,7 @@ a:hover, a:active, a:focus {
 #ltgv{ float:left; width:50%; line-height: 25px; margin-bottom:40px}
 /*video*/
 .videogvdt iframe{ width:56%; height:23%; margin-left:35px;}
-.bgvdimg{background:url(../images/bgvd.png) repeat-x; width:71%; height:12px; margin-top:5px !important;}
+.bgvdimg{background:url(../images/bgvd.png) repeat-x; width:68%; height:12px; margin-top:5px !important;}
 .bgvdcontent{float:left; background:url(../images/bgvideo.png) no-repeat; width:154px; height:96px; margin:30px}
 .bgvdcontent iframe{width:109px; height:81px; padding-top:6px;}
 #contentmainvd{ clear:both; width:100%}

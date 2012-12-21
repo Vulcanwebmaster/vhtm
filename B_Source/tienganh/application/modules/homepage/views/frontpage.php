@@ -85,23 +85,16 @@ echo"Ðã gửi mail";
 		        		<!---<div class="readmore"><a href="#">Xem thêm</a></div>-->
 		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
 		        	</div>
-		        	</div>
+		        	</div>		        	
 		        	<script>
-			        /*	$(document).ready(function(){
-			        		
-			        		$('.panel1 ').click(function(){
-			        			alert('123');
-			        			$(this).addClass('.anythingslidecontrols');
-			        			
-			        		});
-			        	});*/
+			       
 							// DOM Ready
 						$(function(){
 							$('#slidervideo').anythingSlider({
 								resizeContents      : true,
 								addWmodeToObject    : 'transparent',
 								navigationFormatter : function(index, panel){ // Format navigation labels with text
-									return ['', '', '', '', ''][index - 1];
+									return ['', '', '', '', '', '', ''][index - 1];
 									
 								}
 							});
@@ -126,9 +119,16 @@ echo"Ðã gửi mail";
 									<li class="panel3">
 										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
 									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/ognsGWAkvU8" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/XBTCLV86a3Y" frameborder="0" allowfullscreen></iframe>
+									</li>
 								</ul>
 		            		</div>				       
 		        	</div>
+		        
 		        	<script type="text/javascript">
 		        		$(document).ready(function(){
 		        			$('.show2').hide();		
@@ -192,6 +192,75 @@ echo"Ðã gửi mail";
 		        				$('#li1, #li2, #li3, #li4').removeClass('addli');
 		        				$('#li2, #li3, #li4, #li1').children('.children').hide();
 		        			});
+		        			/*=============videoslider===========*/
+		        			$('.panel1').addClass('anythingslidecontrols123');
+			        		$('.panel1 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel2 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel1, .panel3, .panel4, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel1, .panel3, .panel4, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel3 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel1, .panel4, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel1, .panel4, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel4 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel1, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel1, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel5').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel6').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel7, .panel5').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel7, .panel5').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel7').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel5').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel5').removeClass('anythingslidecontrols123');
+			        		});
+			        		 /*--đếm xem có bao nhiêu phần tử a trong thumbNav--*/
+								 /*   $size = $('.thumbNav').find('a').length;
+								 
+								    /*--đặt i=0--*/
+								  /*  i=0;
+								 	n=1;
+								  $(n).click(function(){
+								        $('.thumbNav').find('a').eq(n).addClass('anythingslidecontrols123');
+								 
+								        /*--tăng thêm i  1 đơn vị--*/
+								    /*    i++;
+								 
+								        /*--nếu n tăng bằng số tổng số phần tử a dừng hàm lại--*/
+								       /* if(i==n-1 || i==n+1) {
+								        	 $('.thumbNav').find('a').eq(i).removeClass('anythingControls');
+								        };
+								    }*/
+			        
 		        		})
 		        	</script>
 	<div class="tab">
