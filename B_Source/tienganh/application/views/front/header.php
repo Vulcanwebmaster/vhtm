@@ -35,8 +35,26 @@
 						</style>
 						<div id="search">
 							<div class="input">
-								<form action="<?php echo base_url();?>timkiem/doSearch" method="post">
-									<!----------Search------------->
+								<form action="http://www.google.com/search" method="get" target="_blank">
+									<input type="text" name="search" class="inputsearch"/>
+									<!--<label class="labelsearch">Search</label>-->
+									<input type="submit" value="Tìm kiếm" onclick="this.form.keyword.focus();"/>
+									<input value="niw.com.vn" name="sitesearch" style="opacity: 0">
+								</form>
+								<!--<form action="http://www.google.com/search" method="get" target="_blank">
+				                    <fieldset>
+				                    	<input type="text" name="search-text" class="inputsearch"/>
+										<input type="submit" value="Search" id="search_bt" class="button" onclick="this.form.keyword.focus();">
+										<label class="labelsearch">Search</label>
+				                        <legend class="visually-hidden">Search website</legend>
+				                        <label class="visually-hidden" for="search">Search</label>
+				                        <input type="text" value="Search" title="Enter keyword" size="23" name="query" class="field" id="search">
+				                        <button type="submit">Go</button>
+										<input value="niwvietnam.info/trungtam-tienganh" name="sitesearch">
+				                    </fieldset>
+				                </form>
+								<form action="<?php echo base_url();?>timkiem/doSearch" method="post">-->
+									<!----------Search-------------
 									<div id="cse" style="width: 100%;">Loading</div>
 									<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 									<script type="text/javascript">
@@ -47,12 +65,12 @@
 									customSearchControl.draw('cse');
 									}, true);
 									</script>
-									<!----------------------------->
+									----------------------------->
 									
 									<!--<input type="text" name="search-text" class="inputsearch"/>
 									<input type="submit" value="Search" id="search_bt" class="button" onclick="this.form.keyword.focus();">
-									<label class="labelsearch">Search</label>-->
-								</form>
+									<label class="labelsearch">Search</label>
+								</form>-->
 							</div>
 							<div class="language">
 								<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/language.gif"/></a>

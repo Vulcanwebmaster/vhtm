@@ -47,10 +47,25 @@ class Homepage extends NIW_controller {
 		if ($this->form_validation->run())
 		{
 			$input=$this->_input();
-			
 			$to = $input['e_mail'];
+			/*if (isset($_POST['send']))
+					{
+					$from="trungnt20290@gmail.com";
+					$to=$_POST['e_mail'];
+					$subject="Đăng ký nhận thông tin thành công";
+					$message="Email của bạn đã đăng ký nhận tin tức và thông tin khóa học thành công.";
+					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+					mail($to,$subject,$message,$options);
+					echo"Ðã gửi mail";
+					}*/
 			//var_dump($to); die();
-			mail($to,$subject,$message,$headers);
+			//mail($to,$subject,$message);
+			$from="trungnt20290@gmail.com";
+					$to=$_POST['e_mail'];
+					$subject="Đăng ký nhận thông tin thành công";
+					$message="Email của bạn đã đăng ký nhận tin tức và thông tin khóa học thành công.";
+					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+					mail($to,$subject,$message,$options);
 			if ($this->Mhomepage->insertNewRow('email',$input))
 			{
 				$this->session->set_userdata('email_result','Gửi thành công !');
@@ -64,12 +79,12 @@ class Homepage extends NIW_controller {
 	
 	function mail()
 	{
-		$to = "someone@example.com";
+		//$to = "someone@example.com";
 		$subject = "Test mail";
 		$message = "Hello! This is a simple email message.";
-		$from = "someonelse@example.com";
-		$headers = "From:" . $from;
-		mail($to,$subject,$message,$headers);
-		echo "Mail Sent.";
+		$from = "trungnt20290@gmail.com";
+		//$headers = "From:" . $from;
+		//mail($to,$subject,$message,$headers);
+		//echo "Mail Sent.";
 	}
 }
