@@ -12,7 +12,6 @@ class Homepage extends NIW_controller {
 		$this->load->library('pagination');
 		$this->load->helper('text');
 		$this->load->library('form_validation');
-		//var_dump($_SESSION['front_user_fullname']); die();
 	}
 	
 	public function index()
@@ -38,11 +37,7 @@ class Homepage extends NIW_controller {
 	function _input()
 	{
 		$input=array(
-					
 					'e_mail'=>$this->input->post('e_mail'));
-					
-					//var_dump($input);
-					//die();
 		return $input;
 	}
 	
@@ -52,13 +47,29 @@ class Homepage extends NIW_controller {
 		if ($this->form_validation->run())
 		{
 			$input=$this->_input();
+			
+			$to = $input['e_mail'];
+			//var_dump($to); die();
+			mail($to,$subject,$message,$headers);
 			if ($this->Mhomepage->insertNewRow('email',$input))
 			{
 				$this->session->set_userdata('email_result','Gửi thành công !');
 			}
 			else $this->session->set_userdata('email_result','Gửi không thành công !');
+			
 		}
 		
 		$this->page();
+	}
+	
+	function mail()
+	{
+		$to = "someone@example.com";
+		$subject = "Test mail";
+		$message = "Hello! This is a simple email message.";
+		$from = "someonelse@example.com";
+		$headers = "From:" . $from;
+		mail($to,$subject,$message,$headers);
+		echo "Mail Sent.";
 	}
 }

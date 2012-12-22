@@ -3,34 +3,34 @@ class Tintuc extends NIW_Controller
 {
 	function __construct()
 	{
-		@session_start();
-		parent::__construct();
-		$this->module=basename(dirname(dirname(__FILE__)));
-		$this->module = strtolower(get_class());
-		$this->load->library('pagination');
-		$this->load->model('Mtintuc');
-		$this->load->library('session');
-		$this->load->helper('text');
+			@session_start();
+			parent::__construct();
+			$this->module=basename(dirname(dirname(__FILE__)));
+			$this->module = strtolower(get_class());
+			$this->load->library('pagination');
+			$this->load->model('Mtintuc');
+			$this->load->library('session');
+			$this->load->helper('text');
 	}
+	
 	function index()
 	{
-		$this->page();
+			$this->page();
 	}
 	
 	function page($index=0)
 	{
-		$config['base_url'] = base_url().'tintuc/page';
-		$config['per_page'] = 10;
-		$config['total_rows'] = count($this->Mtintuc->getListFull('ta_news'));
-		$this->pagination->initialize($config);
-		$data['items'] = $this->Mtintuc->getListOffset('ta_news',10,$index);
-		$data['title']='tienganh | Tin tức';
-		$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
-		//$data['list_tintuc']=$this->Mtintuc->getListOffset('ta_news',10,$index);
-		$data['module']=$this->module;
-		$data['index'] = -1;
-		$data['page']='vtintuc';
-		$this->load->view('front/container',$data);
+			$config['base_url'] = base_url().'tintuc/page';
+			$config['per_page'] = 10;
+			$config['total_rows'] = count($this->Mtintuc->getListFull('ta_news'));
+			$this->pagination->initialize($config);
+			$data['items'] = $this->Mtintuc->getListOffset('ta_news',10,$index);
+			$data['title']='tienganh | Tin tức';
+			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vtintuc';
+			$this->load->view('front/container',$data);
 	}
 	
 	function mamnon($index=0)

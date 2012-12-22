@@ -1,21 +1,16 @@
 <div id="content">
-				<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
-				 <div id="content_left">
-				 	<div id="imgleftgv"><p align="center">Khóa học</p></div>
+				
+				<div id="content_left">
+					<div id="imgleftgv"><p align="center">Thư viện</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 		<!--	<li id="li_leftgv2" <?php if ($index == 1) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
-				 			<li id="li_leftgv2" <?php if ($index == 2) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
-				 			<li id="li_leftgv2" <?php if ($index == 0) echo 'class="bgicongv"'; else echo 'class="bgicongv2"';?>><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
-				 		-->
-				 		<?php foreach ($items as $item) 
-							{ ?>
-				 		<li id="li_leftgv2"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-				 			<?php echo $item->courses_name ?></a></li>
-				 		<?php } ?>
+				 			<?php foreach ($category as $value) 
+				 			{ ?>
+				 				<li id="li_leftgv4"><a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id?>"><?php echo $value->cate_name?></a></li>
+				 			<?php } ?>
 				 		</ul>
 				 	</div>
-				 </div>			 
+				 </div>		 
 				 <style>				
 				 	#slider img{ width:663px !important; height:235px!important;}
 				 </style>
@@ -27,23 +22,39 @@
 				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="images/slide2.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
 				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
 				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="images/slide4.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				           		           
 		        		</div>
 				 	</div>
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
-				 			<!--<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url() ?>">Giảng viên</a></p>
+				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
+				 			<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="<?php echo base_url();?>giangvien/thaygiao">
-				 				<?php if ($index == 1) echo 'Thầy giáo';
-				 						elseif ($index == 2) echo 'Cô giáo';
-										elseif ($index == 0) echo 'Trợ giảng';
-				 				?>
-				 			</a></p>
-				 			--->
+				 			<!--<p><?php if ($index == 0) echo 'Tiếng Anh mầm non';
+				 						elseif ($index == 1) echo 'Tiếng Anh tiểu học';
+										elseif ($index == 2) echo 'Tiếng Anh cho sinh viên';
+										elseif ($index == 3) echo 'Tiếng Anh cho người đi làm';
+				 				?></p>-->
 				 		</div>
-					 	<!--------------begin khóa học---------------->
+				 		
+			        	<!------<div class="textmaincontent1">
+			        		<?php foreach ($items as $item) 
+							{ ?>
+			        		<div class="idmain">
+			        			<div class="img_main1">
+			        				<?php echo $item->news_image ?>
+			        			</div>
+			        			<div class="text_main">
+			        				<p class="title"><?php echo $item->news_title ?></p>
+			        				<p><?php echo word_limiter(strip_tags($item->news_content), 40)?> 
+									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">
+										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
+			        			</div>
+			        		</div>
+			        		<?php } ?>
+			        		<div><?php echo $this->pagination->create_links();?></div>
+			        	</div>------------>
+			        	<!--------------begin khóa học---------------->
+			        	
 			        	<div id="contentmaingv">
 			        	<?php foreach ($items as $item) 
 							{ ?>
@@ -60,11 +71,11 @@
 			        	<div><?php echo $this->pagination->create_links();?></div>
 			        	</div>
 			        	<!--------------End khóa học---------------->
-					 <!----------------------------->
+			        	<!--------------End begin Tin tức---------------->
 				</div>
 				<!-----------end share------------>
 			</div>
 			</div>
-			<script type="text/javascript">
-				$('#coursehd').addClass('bgli');
+<script type="text/javascript">
+				$('#newshd').addClass('bgli');
 			</script>

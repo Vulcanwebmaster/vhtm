@@ -37,9 +37,11 @@
 			$this->load->view('admin/container',$data);
 		}
 		
+		
 		function _input()
 		{
 			$input=array(
+						
 						'courses_name'=>$this->input->post('courses_name'),
 						'courses_category'=>$this->input->post('courses_category'),
 						'courses_date'=>$this->input->post('courses_date'),

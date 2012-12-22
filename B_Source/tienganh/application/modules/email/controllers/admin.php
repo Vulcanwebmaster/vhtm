@@ -31,6 +31,8 @@
 			$this->load->view('admin/container',$data);
 		}
 		
+		
+		
 		function delete($id=0)
 		{
 			if ($this->Memail->deleteRowByColumn('email','id',$id))

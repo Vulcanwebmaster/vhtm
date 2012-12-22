@@ -1,15 +1,4 @@
-<!--<?php
-if (isset($_POST['sendmail']) && $_POST['sendmail']=="send")
-{
-$from=$_POST['trungnt20290@gmail.com'];
-$to=$_POST['to'];
-$subject=$_POST['Ðã hoàn tất đăng ký gửi tin!'];
-$message=$_POST['Bạn sẽ được thông báo khi có bản tin mới'];
-$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
-mail($to,$subject,$message,$options);
-echo"Ðã gửi mail";
-}
-?>-->
+
 	<?php if (validation_errors())
 	{
 		echo '<div class="error-panel">';
