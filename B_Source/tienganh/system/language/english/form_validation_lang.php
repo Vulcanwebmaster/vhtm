@@ -2,8 +2,8 @@
 
 $lang['required']			= "Trường %s không được để trống.";
 $lang['isset']				= "The %s field must have a value.";
-$lang['valid_email']		= "Trường %s không được để trống.";
-$lang['valid_emails']		= "Trường %s không được để trống.";
+$lang['valid_email']		= " %s không tồn tại.";
+$lang['valid_emails']		= " %s không tồn tại.";
 $lang['valid_url']			= "The %s field must contain a valid URL.";
 $lang['valid_ip']			= "The %s field must contain a valid IP.";
 $lang['min_length']			= "The %s field must be at least %s characters in length.";
