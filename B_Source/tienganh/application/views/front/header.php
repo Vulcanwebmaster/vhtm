@@ -38,7 +38,7 @@
 								<form action="http://www.google.com/search" method="get" target="_blank">
 									<input type="text" name="search" class="inputsearch"/>
 									<!--<label class="labelsearch">Search</label>-->
-									<input type="submit" value="Tìm kiếm" onclick="this.form.keyword.focus();"/>
+									<input type="submit" value="Tìm kiếm" onclick="this.form.keyword.focus();" class="submitsearch"/>
 									<input value="niw.com.vn" name="sitesearch" style="opacity: 0">
 								</form>
 							</div>
