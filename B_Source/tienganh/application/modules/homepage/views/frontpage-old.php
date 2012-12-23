@@ -1,5 +1,13 @@
-<style>
-					#slider img{ width:960px; height:400px !important;}
+
+	<?php if (validation_errors())
+	{
+		echo '<div class="error-panel">';
+		//echo validation_errors('<p style="color:#f83d43">','</p>');
+		echo '</div>';
+	}?>
+
+				<style>
+					#slider img{ width:960px; height:354px !important;}
 				</style>
 <div id="content">
 <div class="slider-wrapper theme-default">
@@ -27,13 +35,12 @@
 			        			<div class="text_main">
 			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 															<?php echo $item->news_title ?><br>
-															(<?php echo $item->news_post_date ?>)
 														  </a></p>
+														  <p>(<?php echo ($item->news_post_date); ?>)</p>
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
 			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
 			        					</a>
-			        					<!---<img src="assets/trungtam-tienganh/images/icon19.png"/>--->
 			        				</p>
 			        			</div>
 			        		</div>
@@ -53,11 +60,13 @@
 		        			<div class="text_main2">
 		        				<p class="title">
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-		        					<?php echo $item->courses_name ?><br>
-		        					(<?php echo $item->courses_date ?>)
+		        					<?php echo $item->courses_name ?>
 		        					</a></p>
+		        					<p>(<?php echo $item->courses_date ?>)</br></p>
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
-		        					<!----<img src="assets/trungtam-tienganh/images/icon19.png"/>---->
+		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
+			        						</br>Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
+			        					</a>
 		        				</p>
 		        			</div>
 		        		</div>
@@ -65,93 +74,50 @@
 		        		<!---<div class="readmore"><a href="#">Xem thêm</a></div>-->
 		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
 		        	</div>
-		        	</div>
-		        	<script type="text/javascript">
-		        		$(document).ready(function(){		        			
-		        			$('#id2, #id3, #id4, #id5, #id6,#id7').hide();	
-		        			$('#vd1').addClass('iconbg');	
-		        			$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');        			
-		        			$('#vd1').click(function(){
-		        				$('#id1').show();
-		        				$(this).addClass('iconbg');
-		        				$(this).removeClass('iconbg2');
-		        				$(this).parent().children('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
-		        				$(this).parent().children('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id2,#id3, #id4, #id5, #id6,#id7').hide();
-		        				
-		        			});
-		        			$('#vd2').click(function(){
-		        				$('#id2').show();
-		        				$(this).addClass('iconbg');
-		        				$(this).removeClass('iconbg2');
-		        				$(this).parent().children('#vd1, #vd3, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
-		        				$(this).parent().children('#vd1, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id1,#id3, #id4, #id5, #id6,#id7').hide();
-		        			});
-		        			$('#vd3').click(function(){
-		        				$('#id3').show();
-		        				$(this).addClass('iconbg');
-		        				$(this).removeClass('iconbg2');
-		        				$('#vd2, #vd1, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
-		        				$('#vd2, #vd1, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id1,#id2, #id4, #id5, #id6,#id7').hide();
-		        			});
-		        			$('#vd4').click(function(){
-		        				$('#id4').show();
-		        				$(this).addClass('iconbg');
-		        				$(this).removeClass('iconbg2');
-		        				$('#vd2, #vd3, #vd1, #vd5, #vd6, #vd7').removeClass('iconbg'); 
-		        				$('#vd2, #vd3, #vd1, #vd5, #vd6, #vd7').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id6,#id7').hide();
-		        			});
-		        			$('#vd5').click(function(){
-		        				$('#id5').show();
-		        				$(this).addClass('iconbg');
-		        				$(this).removeClass('iconbg2');
-		        				$('#vd2, #vd3, #vd4, #vd1, #vd6, #vd7').removeClass('iconbg'); 
-		        				$('#vd2, #vd3, #vd4, #vd1, #vd6, #vd7').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id1,#id3, #id2, #id4, #id6,#id7').hide();
-		        			});
-		        			$('#vd6').click(function(){
-		        				$('#id6').show();
-		        				$(this).removeClass('iconbg2');
-		        				$(this).addClass('iconbg');
-		        				$('#vd2, #vd3, #vd4, #vd5, #vd1, #vd7').removeClass('iconbg'); 
-		        				$('#vd2, #vd3, #vd4, #vd5, #vd1, #vd7').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id4,#id7').hide();
-		        			});
-		        			$('#vd7').click(function(){
-		        				$('#id7').show();
-		        				$(this).addClass('iconbg');
-		        				$(this).removeClass('iconbg2');
-		        				$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd1').removeClass('iconbg'); 
-		        				$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd1').addClass('iconbg2');
-		        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id6,#id4').hide();
-		        			});
-		        		});
-		        		
-		        	</script>
-		        	
+		        	</div>		        	
+		        	<script>
+			       
+							// DOM Ready
+						$(function(){
+							$('#slidervideo').anythingSlider({
+								resizeContents      : true,
+								addWmodeToObject    : 'transparent',
+								navigationFormatter : function(index, panel){ // Format navigation labels with text
+									return ['', '', '', '', '', '', ''][index - 1];
+									
+								}
+							});
+						});
+					</script>
 		        	<div class="video">		        		
 		            		<div class="contentvideo">	
-								<div class="anythingSlider anythingSlider-default activeSlider" style="width: 396px; height: 271px;"><div class="anythingWindow" style=""><ul id="slidervideo" class="anythingBase horizontal" style="width: 1980px; left: -396px;"><li class="panel3 cloned panel" style="width: 396px; height: 271px;">
-										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;"></iframe>
-									</li>
+								<ul id="slidervideo">
 									<!-- YouTube: iframe -->
-									<li class="panel3 panel activePage" style="width: 396px; height: 271px;">
-										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc?&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;playerapiid=asvideo0" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;" id="asvideo0"></iframe>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc" frameborder="0" allowfullscreen></iframe>
 									</li>
-									<li class="panel3 panel" style="width: 396px; height: 271px;">
-										<iframe src="http://www.youtube.com/embed/ulOb9gIGGd0?&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;playerapiid=asvideo1" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;" id="asvideo1"></iframe>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/ulOb9gIGGd0" frameborder="0" allowfullscreen></iframe>
 									</li>
-									<li class="panel3 panel" style="width: 396px; height: 271px;">
-										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U?&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;playerapiid=asvideo2" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;" id="asvideo2"></iframe>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
 									</li>
-								<li class="panel3 cloned panel" style="width: 396px; height: 271px;">
-										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%;"></iframe>
-									</li></ul></div><div class="anythingControls" style="display: block;"><ul class="thumbNav" style=""><li class="first"></li><li></li><li class="last"></li></ul><a href="#" class="start-stop" style=""><span>Start</span></a></div><span class="arrow back" style=""><a href="#"><span>«</span></a></span><span class="arrow forward" style=""><a href="#"><span>»</span></a></span></div>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/ognsGWAkvU8" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<li class="panel3">
+										<iframe src="http://www.youtube.com/embed/XBTCLV86a3Y" frameborder="0" allowfullscreen></iframe>
+									</li>
+								</ul>
 		            		</div>				       
 		        	</div>
+		        
 		        	<script type="text/javascript">
 		        		$(document).ready(function(){
 		        			$('.show2').hide();		
@@ -215,12 +181,81 @@
 		        				$('#li1, #li2, #li3, #li4').removeClass('addli');
 		        				$('#li2, #li3, #li4, #li1').children('.children').hide();
 		        			});
+		        			/*=============videoslider===========*/
+		        			$('.panel1').addClass('anythingslidecontrols123');
+			        		$('.panel1 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel2 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel1, .panel3, .panel4, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel1, .panel3, .panel4, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel3 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel1, .panel4, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel1, .panel4, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel4 ').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel1, .panel5, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel1, .panel5, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel5').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel7').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel7').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel6').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel7, .panel5').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel7, .panel5').removeClass('anythingslidecontrols123');
+			        		});
+			        		$('.panel7').click(function(){
+			        			
+			        			$(this).addClass('anythingslidecontrols123');
+			        			$(this).removeClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel5').addClass('anythingControls');
+			        			$('.panel2, .panel3, .panel4, .panel1, .panel6, .panel5').removeClass('anythingslidecontrols123');
+			        		});
+			        		 /*--đếm xem có bao nhiêu phần tử a trong thumbNav--*/
+								 /*   $size = $('.thumbNav').find('a').length;
+								 
+								    /*--đặt i=0--*/
+								  /*  i=0;
+								 	n=1;
+								  $(n).click(function(){
+								        $('.thumbNav').find('a').eq(n).addClass('anythingslidecontrols123');
+								 
+								        /*--tăng thêm i  1 đơn vị--*/
+								    /*    i++;
+								 
+								        /*--nếu n tăng bằng số tổng số phần tử a dừng hàm lại--*/
+								       /* if(i==n-1 || i==n+1) {
+								        	 $('.thumbNav').find('a').eq(i).removeClass('anythingControls');
+								        };
+								    }*/
+			        
 		        		})
 		        	</script>
 	<div class="tab">
 		        		<ul id="ultop">
 		        			<li id="li1">
-		        				<a href="<?php echo base_url(); ?>http://facebook.com.vn">
+		        				<a href="#">
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face1.png" class="show1"/>
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.png" class="show2"/>
 			        			</a>
@@ -320,7 +355,7 @@
 		        				</div>
 		        			</li>
 		        			<li id="li2">
-		        				<a href-"#">
+		        				<a href="#">
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter.png" class="show1"/>
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
 			        			</a>
@@ -681,17 +716,23 @@
 		        			</li>
 		        		</ul>
 		        		<div class="righttab">
-		        			<form>
-		        				<input name="keyword" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
-		        				<input type="submit" value="Subscribe" class="submitrighttab"/>
-		        			</form>
+							<!-------- Gửi mail------------>
+							<?php 
+								echo '<p style="color:#f83d43; margin:10px;  font-size: 13px; font-weight: bold ">'.$this->session->userdata('lienhe_result').'</p>';
+								$this->session->unset_userdata('email_result');
+							?>
+							<form action="<?php echo base_url();?>homepage/send" method="post">
+							<input name="e_mail" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
+							<input type="submit" value="Send" name="sendmail">
+							</form>
+							<?php echo validation_errors('','</p>'); ?>
 		        		</div>
 		        	</div>
 		        	<div class="plupgin">
 		        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif"/>
-		        		<p>Plugin xã hội của Facebook</p>
+		        		<span><a class="uiLinkSubtle" target="_blank" href="http://developers.facebook.com/plugins/?footer=1">Plugin xã hội của Facebook</a></span>
 		        	</div>
-		        	<script type="text/javascript">
+		        	<!--<script type="text/javascript">
 		        		$(document).ready(function(){		        			
 		        			$(".prev12").click(function(){
 						  $(".slideimage").animate({"left": "+=311px"}, "slow");
@@ -702,7 +743,7 @@
 							  $(".slideimage").animate({"left": "-=311px"}, "slow");
 							});
 		        		});
-					</script>
+					</script>-->
 		        	<div class="contentbot">
 		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"/></div>
 			        	<div id="clickslide">
@@ -750,3 +791,6 @@
 		        	</div>
 		        </div>
 			</div>
+			<!--<script type="text/javascript">
+				$('#homehd').addClass('bgli');
+			</script>-->

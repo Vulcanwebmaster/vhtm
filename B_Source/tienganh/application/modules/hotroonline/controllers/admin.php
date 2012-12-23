@@ -26,6 +26,7 @@
 			if ($this->input->post('sdt1')||$this->input->post('name1') || $this->input->post('skype1') || $this->input->post('yahoo1')
 			|| $this->input->post('sdt2')|| $this->input->post('name2')  || $this->input->post('skype2')  || $this->input->post('yahoo2')) 
 			{
+				//var_dump($this->input->post('name1')); die();
 					$input1 = $this->_input_hotro1();
 					$input2 = $this->_input_hotro2();
 					if ($this->Mhotroonline->updateRowByColumn('hotroonline','id',1,$input1)

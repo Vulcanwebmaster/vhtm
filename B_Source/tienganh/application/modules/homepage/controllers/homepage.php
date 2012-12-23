@@ -21,13 +21,15 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
-		
+		$data['list_courses'] = $this->Mhomepage->getListFull('ta_courses');
+		$data['list_courses_cate'] = $this->Mhomepage->getListFull('ta_courses_cate');
+		$data['category']  =  $this->Mhomepage->getListFullCategory('ta_courses');
 		$data['list']=$this->Mhomepage->getListByColumn('ta_vedio', 'vedio_title', 0);
 		$data['list_doitac']=$this->Mhomepage->getListFull('doitac');
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('ta_news',3,0);
 		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);
 		$data['list_slide']=$this->Mhomepage->getListFull('slide');
-		$data['hotro']=$this->Mhomepage->getListFull('hotroonline');
+		$data['hotro_online']=$this->Mhomepage->getListFull('hotroonline');
 		$data['title']='tienganh | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';

@@ -26,6 +26,9 @@ class Tintuc extends NIW_Controller
 			$this->pagination->initialize($config);
 			$data['items'] = $this->Mtintuc->getListOffset('ta_news',10,$index);
 			$data['title']='tienganh | Tin tức';
+			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -39,6 +42,9 @@ class Tintuc extends NIW_Controller
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh mầm non'));
 			$this->pagination->initialize($config);
+			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh mầm non',$index,10);
@@ -54,6 +60,9 @@ class Tintuc extends NIW_Controller
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh tiểu học'));
 			$this->pagination->initialize($config);
+			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh tiểu học',$index,10);
@@ -69,6 +78,9 @@ class Tintuc extends NIW_Controller
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh cho sinh viên'));
 			$this->pagination->initialize($config);
+			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho sinh viên',$index,10);
@@ -85,6 +97,9 @@ class Tintuc extends NIW_Controller
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh cho người đi làm'));
 			$this->pagination->initialize($config);
+			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,10);
@@ -96,6 +111,9 @@ class Tintuc extends NIW_Controller
 	
 	function detail($id=0)
 		{
+			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['list_chitiet']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);

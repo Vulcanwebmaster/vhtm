@@ -1,4 +1,5 @@
 <?php
+
 class Khoahoc extends NIW_Controller
 {
 	private $data = array();
@@ -19,6 +20,9 @@ class Khoahoc extends NIW_Controller
 			$config['total_rows']  =  count($this->Mkhoahoc->getListFull('ta_courses'));
 			$this->pagination->initialize($config);
 			$data['title']='tienganh | Khóa học';
+			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$data['module']  =  $this->module;
@@ -29,6 +33,8 @@ class Khoahoc extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mkhoahoc->getListFullCategory('ta_courses');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['list_chitiet']  =  $this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$index);
@@ -42,6 +48,8 @@ class Khoahoc extends NIW_Controller
 	
 	function category($index=0)
 	{
+			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);

@@ -53,22 +53,31 @@
 							<li class="home menu_move" id="homehd"><a href="<?php echo base_url();?>homepage">Home</a></li>
 							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
 							<li  class="li menu_move" id="newshd"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
-							<li  class="li menu_move" id="coursehd"><a href="<?php echo base_url()?>khoahoc/category">Khóa học</a>
-					<!---<div class="submenu">
-
-									<div>Tiếng Anh cho mầm non
-										<ul>
-											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
-											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
-										</ul>
-									</div>
-									<div>Tiếng Anh cho tiểu học
-										<ul>
-											<li><a href="#">Tiếng anh cho trẻ em 1</a></li>
-											<li><a href="#">Tiếng anh cho trẻ em 2</a></li>
-										</ul>
-
-								</div>-->
+							<li  class="li menu_move" id="coursehd"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
+					<div class="submenu">
+									<!--<?php foreach ($category as $key) { ?>
+										<div><?php echo $key->cate_name ?>
+											<ul>
+												<?php foreach ($category as $value) { ?>
+													<li><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $value->courses_id."-".$value->alias;?>"><?php echo $value->courses_name ?></a></li>
+												<?php } ?>
+											</ul>
+										</div>
+									<?php } ?>-->
+									<?php foreach ($list_courses_cate as $key) { ?>
+										<?php foreach ($list_courses as $value) {?>
+												<?php if($value->courses_category  ==  $key->id)
+															{?>
+																<div><?php echo $key->cate_name ?>
+																	<div class="slidemove">
+																		<ul class="inside">
+																		<li><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $value->courses_id."-".$value->alias;?>"><?php echo $value->courses_name ?></a></li>
+																		</ul>
+																	</div>
+																</div>
+															<?php } ?>
+															<?php } ?>
+														<?php } ?>
 							</li>
 							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
 							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>

@@ -30,9 +30,9 @@
 					<label>Số điện thoại:</label> 
 					<input type="text" name="sdt2" style="width:50%" value="<?php echo $info[1]->sdt;?>"/>
 				</br>
-					<label>Số điện thoại:</label> 
+					<label>Tên:</label> 
 				</br>
-					<input type="text" name="sdt2" style="width:50%" value="<?php echo $info[1]->sdt;?>"/>
+					<input type="text" name="name2" style="width:50%" value="<?php echo $info[1]->name;?>"/>
 				</br>
 					<label>Skype:</label>
 				</br>

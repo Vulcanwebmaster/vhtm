@@ -9,7 +9,7 @@
  */
 class Thuvien extends NIW_Controller
 {
-		private $data = array();
+		public $data = array();
 		function __construct()
 		{
 			parent::__construct();
@@ -17,13 +17,18 @@ class Thuvien extends NIW_Controller
 			
 			$this->load->model('Mthuvienanh');
 			$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
+			$this->data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
+			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		}
 	
 		function index()
 		{
 			$this->data['module']			=	$this->module;
 			$this->data['page']			=	'vthuvien';
-			
+			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
+			$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
+			$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 			$this->load->view('front/container', $this->data);
 		}
 	
@@ -34,8 +39,11 @@ class Thuvien extends NIW_Controller
 	function category($category_id = '0', $index = 0)
 	{
 		$this->data['module']		=	$this->module;
+		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
+		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
+		//var_dump($data['list_courses_cate']); die();
 		$this->data['category_id']	=	$category_id;
-		
+		$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 		if ($category_id < 3) // if category is image category
 		{
 			// get list all of albums
@@ -61,22 +69,28 @@ class Thuvien extends NIW_Controller
 		$this->load->view('front/container', $this->data);
 	}
 	
-	
+	/*Tuyetnt
+	 * A function to get list video 
+	 * @album_id: id number of the album that will be got detail
+	 */
 	function video($video_id=0)
 	{
+		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
+		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		$this->data['module'] = $this->module;
 		$this->data['page'] = 'vdanhmucvideo';
-		
+		$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 		$this->data['list'] = $this->Mthuvienanh->getListByColumn('ta_vedio', 'vedio_title', $video_id);
 		//var_dump($this->data['list']); die();
 		
 		$counting	=	array();
 			foreach ($this->data['list'] as $item)
 			{
+				$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 				$listVideo	=	$this->Mthuvienanh->getListByColumn('ta_vedio','vedio_title', $item->vedio_id);
 				$counting[]	=	count($listVideo); // count amount of images for each album
 			}
-			
+			$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 			$this->data['counting']	=	$counting;
 		$this->load->view('front/container', $this->data);
 	}
@@ -86,10 +100,12 @@ class Thuvien extends NIW_Controller
 	 */
 	function album($album_id = '0')
 	{
+		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
+		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		$this->data['module']	=	$this->module;
 		$this->data['page']		=	'vchitietalbum';
 		$this->data['list']		=	$this->Mthuvienanh->getListByColumn('ta_image', 'image_album', $album_id);
-		
+		$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 		$this->load->view('front/container', $this->data);
 	}
 }
