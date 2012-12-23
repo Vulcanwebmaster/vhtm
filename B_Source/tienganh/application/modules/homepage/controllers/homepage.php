@@ -21,6 +21,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['counting']=$this->getCounting();
 		$data['list_courses'] = $this->Mhomepage->getListFull('ta_courses');
 		$data['list_courses_cate'] = $this->Mhomepage->getListFull('ta_courses_cate');
 		$data['category']  =  $this->Mhomepage->getListFullCategory('ta_courses');
@@ -61,9 +62,7 @@ class Homepage extends NIW_controller {
 				$this->session->set_userdata('email_result','Gửi thành công !');
 			}
 			else $this->session->set_userdata('email_result','Gửi không thành công !');
-			
 		}
-		
 		$this->page();
 	}
 }
