@@ -129,7 +129,7 @@ a:hover, a:active, a:focus {
 .slideimage img{ float:left; width:284px; height: 119px; margin:0 25px 0 13px;}
 .contentbot{ clear:both; margin-top:40px; position:relative;}
 #number{float:right; width:20%}
-.table{float:right; border-left:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; }
+.table{float:right; border-left:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; font-size: 13px;}
 .bd{height:23px; text-transform:uppercase; background:url(../images/bgtd.png) repeat-x top left}
 .bd label{ margin-left:10px; background-color:#fff; padding:4px 2px 2px 2px; border-left:1px solid #d8d8d8; border-right:1px solid #d8d8d8; font-weight:bold }
 #footer{ background:url(../images/bgfooter.png) repeat-x; height:238px; clear:both;}
