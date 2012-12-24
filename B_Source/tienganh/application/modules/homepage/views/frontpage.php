@@ -418,15 +418,15 @@
 			        				</td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="images/icon9.gif"></td>
+			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon9.gif"></td>
 			        				<td>Hôm nay: <label style="font-weight:bold;"><?php echo $counting['today'];?></label></td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="images/icon4.gif"></td>
+			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon4.gif"></td>
 			        				<td>Tháng hiện tại : <label style="font-weight:bold;"><?php echo $counting['month'];?></label></td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="images/icon7.gif"></td>
+			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon7.gif"></td>
 			        				<td>Tổng lượt truy cập : <label style="font-weight:bold;"><?php echo $counting['total'];?></label></td>
 			        			</tr>
 			        		</tbody></table>
