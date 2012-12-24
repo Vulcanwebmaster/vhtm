@@ -1,7 +1,8 @@
 <div id="content">
-				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
+				
 				 <div id="content_left">
-				 	
+				 	<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
+				 	<div id="imgleftgv"><p align="center">Tin tức</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
 				 			<li id="li_leftgv5" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
