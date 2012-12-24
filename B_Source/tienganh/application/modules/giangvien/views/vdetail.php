@@ -1,26 +1,33 @@
 <div id="popup-bg"></div>
 <div id="popup">
-	<div id="popup-header">Header<span id="popup-close" title="Close">x</span></div>
+	<div id="popup-header">Email || Phone<span id="popup-close" title="Close">x</span></div>
+	    <script language=”javascript” type=”text/javascript”>
+	    function showWindow(url, isStatus, isResizeable, isScrollbars, isToolbar, isLocation, isFullscreen, isTitlebar, isCentered, width, height, top, left) {
+	    if (isCentered) {
+	    top = (screen.height – height) / 2;
+	    left = (screen.width – width) / 2;
+	    }
+	
+	    open(url, ‘_blank’, ‘status=’ + (isStatus ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘resizable=’ + (isResizeable ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘scrollbars=’ + (isScrollbars ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘toolbar=’ + (isToolbar ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘location=’ + (isLocation ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘fullscreen=’ + (isFullscreen ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘titlebar=’ + (isTitlebar ? ‘yes’ : ‘no’) + ‘,’
+	    + ‘height=’ + height + ‘,’ + ‘width=’ + width + ‘,’
+	    + ‘top=’ + top + ‘,’ + ‘left=’ + left);
+	    }
+	    function showDialog(url, width, height) {
+	    return showWindow(url, false, false, false, false, false, false, true, true, width, height, 0, 0);
+	    }
+	    function onResponseClick(articlid) {
+	    showDialog(‘<?php echo base_url();?>/sendmail.php?id=’ + articlid, 550, 620);
+	    }
+    </script>
+
     <div id="popup-content">
-    	<form action="<?php echo base_url();?>giangvien/sendMail" method="post">
-				 				<p style="text-transform: uppercase">Tên người gửi <span style="color:red">*</span></p>
-				 				<input type="text" name="contact_name">
-				 				<p style="text-transform: uppercase">Email người gửi <span style="color:red">*</span></p>
-				 				<input type="text" name="contact_email">
-				 				
-				 				<p style="text-transform: uppercase">Tên người nhận <span style="color:red">*</span></p>
-				 				<input type="text" name="contact_name">
-				 				<p style="text-transform: uppercase">Email người nhận <span style="color:red">*</span></p>
-				 				<input type="text" name="contact_email">
-				 				
-				 				
-				 				<input type="checkbox" class="checkbox" name="check"> <p class="chelh">Chọn nếu bạn muốn chúng tôi gọi lại cho bạn</p><br>
-				 				<p style="clear: both">Nội dung lời nhắn <span style="color:red">*</span></p>
-				 				<textarea name="mesage_content"></textarea>
-				 				<p> <span style="color:red">*</span>Các trường hợp bắt buộc </p>
-				 				<input type="submit" value="Gửi đi" class="submitlh">
-				 				<input type="submit" value="Đóng lại" class="submitlh">
-</form>
+    	<?php echo $this->load->view('sendmail')?>
     </div>
 </div>
 <div id="content">
@@ -67,7 +74,7 @@
 				 			</div>
 				 			<div id="contentdtbottom">
 				 				<div class="bottomcontentdt">
-				 					<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconcall.gif"/></a>
+				 					<a href="#" id="show-popup1"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconcall.gif"/></a>
 				 				</div>
 				 				<div class="bottomcontentdt">
 				 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
@@ -196,6 +203,11 @@ a#show-popup {
 	float:left;
 	text-decoration:none;
 }
+a#show-popup1 {
+	margin:20px 0 0 20px;
+	float:left;
+	text-decoration:none;
+}
 div#popup-bg {
 	position:absolute;
 	top:0;
@@ -257,6 +269,31 @@ $(document).ready(function(){
 	})(jQuery);
 	
 	$('a#show-popup').click(function(){
+		//Đặt biến cho các đối tượng để gọi dễ dàng
+		var bg=$('div#popup-bg');
+		var obj=$('div#popup');
+		var btnClose=obj.find('#popup-close');
+		//Hiện các đối tượng
+		bg.animate({opacity:0.2},0).fadeIn(1000); //cho nền trong suốt
+		obj.fadeIn(1000).draggable({cursor:'move',handle:'#popup-header'}).absoluteCenter(); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
+		//Đóng popup khi nhấn nút
+		btnClose.click(function(){
+			bg.fadeOut(1000);
+			obj.fadeOut(1000);
+		});
+		//Đóng popup khi nhấn background
+		bg.click(function(){
+			btnClose.click(); //Kế thừa nút đóng ở trên
+		});
+		//Đóng popup khi nhấn nút Esc trên bàn phím
+		$(document).keydown(function(e){
+			if(e.keyCode==27){
+				btnClose.click(); //Kế thừa nút đóng ở trên
+			}
+		});
+		return false;
+	});
+	$('a#show-popup1').click(function(){
 		//Đặt biến cho các đối tượng để gọi dễ dàng
 		var bg=$('div#popup-bg');
 		var obj=$('div#popup');

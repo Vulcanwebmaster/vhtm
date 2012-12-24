@@ -255,7 +255,7 @@
 	<div class="tab">
 						<ul id="ultop">
 		        			<li id="li1">
-		        				<a href="#">
+		        				<a href-"#">
 			        				<img src="assets/trungtam-tienganh/images/face1.png" class="show1"/>
 			        				<img src="assets/trungtam-tienganh/images/face.png" class="show2"/>
 			        			</a>
@@ -272,26 +272,13 @@
 		        				</div>
 		        			</li>
 		        			<li id="li2">
-		        				<a href="#">
+		        				<a href-"#">
 			        				<img src="assets/trungtam-tienganh/images/twiter.png" class="show1"/>
 			        				<img src="assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
-		        					<script src="http://platform.twitter.com/anywhere.js?id=YOUR_API_KEY&v=1" type="text/javascript"></script>
-									 <div id="tbox"></div>
-										<script type="text/javascript">
-									
-										  twttr.anywhere(function (T) {
-									
-											T("#tbox").tweetBox({
-											  height: 100,
-											  width: 400,
-											  defaultContent: "<Folow us on Switter>"
-											});
-									
-										  });
-									
-										</script>
+		        					<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @twitter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 									</div>
 		        			</li>
 		        			
@@ -314,27 +301,27 @@
 			        				<div class="children">
 			        					<div id="zme-root"></div>  
 
-				<script>(function(d, s, id) {
-				
-				          var js, fjs = d.getElementsByTagName(s)[0];
-				
-				           if (d.getElementById(id)) {return;}
-				
-				          js = d.createElement(s); js.id = id;
-				
-				          js.src = "http://static.me.zing.vn/sp/js/all-1.04.js#&appId=d713b962dbf19d2dea16124b293558d1&status=true";
-				
-				          fjs.parentNode.insertBefore(js, fjs);
-				
-				           }(document, 'script', 'zingme-jssdk'));
-				 </script>
-				 <style>
-				 	.zme-fan-box iframe{
-				 		height: 200px !important;
-				 	}
-				 </style>
+							<script>(function(d, s, id) {
+							
+							          var js, fjs = d.getElementsByTagName(s)[0];
+							
+							           if (d.getElementById(id)) {return;}
+							
+							          js = d.createElement(s); js.id = id;
+							
+							          js.src = "http://static.me.zing.vn/sp/js/all-1.04.js#&appId=d713b962dbf19d2dea16124b293558d1&status=true";
+							
+							          fjs.parentNode.insertBefore(js, fjs);
+							
+							           }(document, 'script', 'zingme-jssdk'));
+							 </script>
+							 <style>
+							 	.zme-fan-box iframe{
+							 		height: 200px !important;
+							 	}
+							 </style>
 
-<div class="zme-fan-box" data-profile="link" data-width="940" data-height="180" data-numoffan="16" data-pad-left="2" data-pad-right="8"></div>
+							<div class="zme-fan-box" data-profile="link" data-width="940" data-height="180" data-numoffan="16" data-pad-left="2" data-pad-right="8"></div>
 		        				</div>
 		        			</li>
 		        			<li id="li5">

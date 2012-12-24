@@ -1,4 +1,4 @@
-<form action="<?php echo base_url();?>giangvien/sendMail" method="post">
+<form action="<?php echo base_url();?>giangvien/send" method="post">
 				 				<p style="text-transform: uppercase">Tên người gửi <span style="color:red">*</span></p>
 				 				<input type="text" name="contact_name">
 				 				<p style="text-transform: uppercase">Email người gửi <span style="color:red">*</span></p>
