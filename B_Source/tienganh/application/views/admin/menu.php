@@ -6,6 +6,7 @@
 	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
+		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>giangvien/admin">Giảng viên</a></li>

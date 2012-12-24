@@ -23,9 +23,10 @@
 				</fieldset>
 				<fieldset>
 					<label>Loại khóa học</label>
-					<select name="courses_category">
-						<option value="Tiểu học">Tiểu học</option>
-						<option value="Mầm non">Mầm non</option>
+					<select name="lecturers_category">
+						<option value="Thầy giáo">Thầy giáo</option>
+						<option value="Cô giáo">Cô giáo</option>
+						<option value="Trợ giảng">Trợ giảng</option>
 					</select>
 				</fieldset>
 				<fieldset>

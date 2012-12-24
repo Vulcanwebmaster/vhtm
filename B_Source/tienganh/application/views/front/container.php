@@ -2,6 +2,7 @@
 <html  xmlns="http://www.w3.org/1999/xhtml" class="webkit safari  win">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+		<script type="text/javascript" src="http://api.go.vn/social-plugins/gconnect/all.min.js?v=123456789"></script>
 		<script type="text/javascript">var switchTo5x=true;</script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 		<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>

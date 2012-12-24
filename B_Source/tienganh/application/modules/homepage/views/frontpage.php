@@ -341,8 +341,22 @@
 		        				<a href-"#">
 			        				<img src="assets/trungtam-tienganh/images/go.png" class="show1"/>
 			        				<img src="assets/trungtam-tienganh/images/go1.png" class="show2"/>
+			        				
 			        			</a>
 			        				<div class="children">
+			        					<script type="text/javascript" src="http://api.go.vn/social-plugins/gconnect/all.min.js?v="></script>
+											<script type="text/javascript">
+											Go.commentbox({
+											appid : 1439184924,
+											num_rows : 5,
+											title : "test",
+											client_url : "http://example.com",
+											desc : "",
+											img : "",
+											template : "light",
+											widthifr :500
+											},"govn_cm");</script>
+											<div id="govn_cm" ></div>
 		        					</div>
 		        			</li>
 		        		</ul>
