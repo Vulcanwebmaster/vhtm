@@ -29,17 +29,16 @@
 						<p>Hỗ trợ</p>
 						<ul>
 							<!--<li><a href="#">Văn phòng học viện Jennifer<br/>(+84) 04 665 22 666</a></li>-->
-							<li>Hỗ trực tuyến<br>
 								<?php foreach ($hotro_online as $value) {?>
-									<?php echo $value->name ?></br> <?php echo $value->sdt ?></br>
+									<li><?php echo $value->name ?></br> <?php echo $value->sdt ?></br>
 									<a href="ymsgr:sendim?<?php echo $value->yahoo;?>">        		
 			                        <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconyaho.png"/>
 			                        </a>
 			                        <a href="skype:<?php echo $value->skype;?>?call">
 			                        <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon10.gif"/>
-			                        </a></br>
+			                        </a></br></li>
 							
-								<?php } ?></li>
+								<?php } ?>
 								
 						</ul>
 					</div>
