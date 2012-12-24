@@ -195,7 +195,13 @@ a:hover, a:active, a:focus {
 #contentmainvd{ clear:both; width:100%}
 .bgvdcontent p{clear:both; padding:5px 0 !important; font-size:15px;}
 .bgvdcontent a{text-decoration:none;}
-
+.bottomcontentdt{float:left; width:27%;}
+.bottomcontentdt li{float: left; list-style: none;}
+.bottomcontentdt1{float:left; padding-top:25px;}
+.bottomcontentdt1 p{font-size:7px;}
+.bottomcontentdt1 ul{margin:0; padding:0;}
+.bottomcontentdt1 li{list-style:none; float: left;}
+#contentdtbottom{ position:absolute; left:190px; bottom:33px; width:265px;}
 /*tin tuc*/
 #contenttt {
 	padding: 10px;

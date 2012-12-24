@@ -36,10 +36,28 @@
 				 			<div id="contetntitlegv">
 				 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
 				 				<div id="ltgv"><?php echo $chitiet->lecturers_content ?></div>
-				 			</div>
+				 			</div><br clear="both"/>
 				 			<div class="videogvdt">
 				 				<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe>
 				 			</div>
+				 			<div id="contentdtbottom">
+				 				<div class="bottomcontentdt">
+				 					<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconcall.gif"/></a>
+				 				</div>
+				 				<div class="bottomcontentdt">
+				 					<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
+				 				</div>
+				 				<div class="bottomcontentdt1">
+				 					<p>What people think about us</p>
+				 					<ul>
+				 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+				 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+				 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+				 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+				 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+				 					</ul>
+				 				</div>
+				 			</div><br clear="both" />
 					 	</div>
 				 			<!----------- <?php echo $chitiet->lecturers_content ?>--------------->
 					 <!----------------------------->
