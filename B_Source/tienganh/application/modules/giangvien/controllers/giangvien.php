@@ -25,6 +25,7 @@ class Giangvien extends NIW_Controller
 			$this->pagination->initialize($config);
 			$data['items']=$this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category',1);
 			$data['title']='tienganh | Giảng viên';
+			$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
 			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
@@ -42,7 +43,9 @@ class Giangvien extends NIW_Controller
 				$config['per_page'] = 10;
 				$config['total_rows']=count($this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category','Trợ giảng'));
 				$this->pagination->initialize($config);
-				
+				$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
+				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Trợ giảng',$index,10);
@@ -58,6 +61,9 @@ class Giangvien extends NIW_Controller
 				$config['per_page'] = 10;
 				$config['total_rows']=count($this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category','Thầy giáo'));
 				$this->pagination->initialize($config);
+				$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
+				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Thầy giáo',$index,10);
@@ -74,6 +80,9 @@ class Giangvien extends NIW_Controller
 				$config['per_page'] = 10;
 				$config['total_rows']=count($this->Mgiangvien->getListByColumn('ta_lecturers','lecturers_category','Cô giáo'));
 				$this->pagination->initialize($config);
+				$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
+				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Cô giáo',$index,10);
@@ -91,7 +100,10 @@ class Giangvien extends NIW_Controller
 				//$category_id = $temp[0];
 				$id = $temp[0];
 			}
+			$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
+			$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
+			$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 			$data['chitiet']=$this->Mgiangvien->getRowByColumn('ta_lecturers','lecturers_id',$id);
 			$model=new CI_Model();
@@ -99,5 +111,15 @@ class Giangvien extends NIW_Controller
 			$data['index'] = -1;
 			$data['page']='vdetail';
 			$this->load->view('front/container',$data);
+		}
+		
+		function showDialog($url, $width, $height) 
+		{
+			return showWindow(url, false, false, false, false, false, false, true, true, width, height, 0, 0);
+		}
+		//send mail
+		function onResponseClick($articlid) 
+		{
+			//showDialog(‘http://[tên miền của bạn]/sendmail.php?id=’ + $articlid, 550, 620);
 		}
 }

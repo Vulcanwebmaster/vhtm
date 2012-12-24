@@ -632,5 +632,7 @@ class NIW_Model extends CI_Model
 			$this->db->limit( (int) $params[0], (int) $params[1]);
 		}
 	}
+	
+	
 
 }

@@ -16,19 +16,20 @@ class Thuvien extends NIW_Controller
 			$this->module	=	strtolower(get_class());
 			
 			$this->load->model('Mthuvienanh');
+			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
 			$this->data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
-			$data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
+			$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		}
 	
 		function index()
 		{
 			$this->data['module']			=	$this->module;
 			$this->data['page']			=	'vthuvien';
+			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 			$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
-			$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 			$this->load->view('front/container', $this->data);
 		}
 	
@@ -39,11 +40,12 @@ class Thuvien extends NIW_Controller
 	function category($category_id = '0', $index = 0)
 	{
 		$this->data['module']		=	$this->module;
+		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
+		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		//var_dump($data['list_courses_cate']); die();
 		$this->data['category_id']	=	$category_id;
-		$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 		if ($category_id < 3) // if category is image category
 		{
 			// get list all of albums
@@ -75,8 +77,10 @@ class Thuvien extends NIW_Controller
 	 */
 	function video($video_id=0)
 	{
+		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
+		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
 		$this->data['module'] = $this->module;
 		$this->data['page'] = 'vdanhmucvideo';
 		$data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
@@ -100,6 +104,8 @@ class Thuvien extends NIW_Controller
 	 */
 	function album($album_id = '0')
 	{
+		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
+		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		$this->data['module']	=	$this->module;

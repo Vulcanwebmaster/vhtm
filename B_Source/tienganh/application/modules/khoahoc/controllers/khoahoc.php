@@ -20,6 +20,7 @@ class Khoahoc extends NIW_Controller
 			$config['total_rows']  =  count($this->Mkhoahoc->getListFull('ta_courses'));
 			$this->pagination->initialize($config);
 			$data['title']='tienganh | Khóa học';
+			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
@@ -33,6 +34,7 @@ class Khoahoc extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mkhoahoc->getListFullCategory('ta_courses');
@@ -48,6 +50,7 @@ class Khoahoc extends NIW_Controller
 	
 	function category($index=0)
 	{
+			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
