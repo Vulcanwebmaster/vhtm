@@ -63,7 +63,7 @@
 			        	<div class="ctgv">				 			
 			 					<!--<div class="divgv"><?php echo $item->lecturers_image ?></div>--->
 			 					<div class="img_main2" style="width: 23% ">
-		        				<p><?php echo $item->courses_date ?></p>
+		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."-".$date1[1]."</br>".$date1[0] ?></p>
 		        				</div>
 			 					<div class="divgv2" style="width: 72% ">
 			 						<p class="tittlegv"><?php echo $item->courses_name ?></p>

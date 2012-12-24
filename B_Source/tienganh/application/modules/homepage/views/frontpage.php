@@ -55,7 +55,7 @@
 								{ ?>
 		        		<div class="idmain">
 		        			<div class="img_main2">
-		        				<p><?php echo $item->courses_date ?></p>
+		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."-".$date1[1]."</br>".$date1[0] ?></p>
 		        			</div>
 		        			<div class="text_main2">
 		        				<p class="title">
@@ -66,7 +66,7 @@
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
 			        						</br>Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
-			        					</a>
+			        				</a>
 		        				</p>
 		        			</div>
 		        		</div>
