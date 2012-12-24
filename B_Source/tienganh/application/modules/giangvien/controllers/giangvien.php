@@ -121,13 +121,8 @@ class Giangvien extends NIW_Controller
 			$this->load->view('front/container',$data);
 		}
 		
-		function showDialog($url, $width, $height) 
+		function sendMail()
 		{
-			return showWindow(url, false, false, false, false, false, false, true, true, width, height, 0, 0);
-		}
-		//send mail
-		function onResponseClick($articlid) 
-		{
-			//showDialog(‘http://[tên miền của bạn]/sendmail.php?id=’ + $articlid, 550, 620);
+			
 		}
 }

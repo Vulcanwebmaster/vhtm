@@ -373,24 +373,6 @@
 							<?php echo validation_errors('','</p>'); ?>
 		        		</div>
 		        	</div>
-		        	<!-- <div class="plupgin">
-		        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif"/>
-		        		<span><a class="uiLinkSubtle" target="_blank" href="http://developers.facebook.com/plugins/?footer=1">Plugin xã hội của Facebook</a></span>
-		        	</div> -->
-		        	
-		        	
-		        	<!--<script type="text/javascript">
-		        		$(document).ready(function(){		        			
-		        			$(".prev12").click(function(){
-						  $(".slideimage").animate({"left": "+=311px"}, "slow");
-							});
-							
-							$(".next12").click(function(){
-								
-							  $(".slideimage").animate({"left": "-=311px"}, "slow");
-							});
-		        		});
-					</script>-->
 		        	<div class="contentbot">
 		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"/></div>
 			        	<div id="clickslide">

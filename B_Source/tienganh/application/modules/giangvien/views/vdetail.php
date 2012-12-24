@@ -1,3 +1,28 @@
+<div id="popup-bg"></div>
+<div id="popup">
+	<div id="popup-header">Header<span id="popup-close" title="Close">x</span></div>
+    <div id="popup-content">
+    	<form action="<?php echo base_url();?>giangvien/sendMail" method="post">
+				 				<p style="text-transform: uppercase">Tên người gửi <span style="color:red">*</span></p>
+				 				<input type="text" name="contact_name">
+				 				<p style="text-transform: uppercase">Email người gửi <span style="color:red">*</span></p>
+				 				<input type="text" name="contact_email">
+				 				
+				 				<p style="text-transform: uppercase">Tên người nhận <span style="color:red">*</span></p>
+				 				<input type="text" name="contact_name">
+				 				<p style="text-transform: uppercase">Email người nhận <span style="color:red">*</span></p>
+				 				<input type="text" name="contact_email">
+				 				
+				 				
+				 				<input type="checkbox" class="checkbox" name="check"> <p class="chelh">Chọn nếu bạn muốn chúng tôi gọi lại cho bạn</p><br>
+				 				<p style="clear: both">Nội dung lời nhắn <span style="color:red">*</span></p>
+				 				<textarea name="mesage_content"></textarea>
+				 				<p> <span style="color:red">*</span>Các trường hợp bắt buộc </p>
+				 				<input type="submit" value="Gửi đi" class="submitlh">
+				 				<input type="submit" value="Đóng lại" class="submitlh">
+</form>
+    </div>
+</div>
 <div id="content">
 				<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				 <div id="content_left">
@@ -45,7 +70,7 @@
 				 					<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconcall.gif"/></a>
 				 				</div>
 				 				<div class="bottomcontentdt">
-				 					<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
+				 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
 				 				</div>
 				 				<div class="bottomcontentdt1">
 				 					<p>What people think about us</p>
@@ -70,25 +95,25 @@
 									<script type="IN/Share"></script>
 					 				</a></li>
 					 			<li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					 			<li><script type="text/javascript">
-
-document.write('<div style="float:left; margin-left: 7px;"><a href="http://link.apps.zing.vn/share?u=' + location.href + '" target="_blank"><img src="http://sukienhay.com/images/icons/zing-icon.png" /></a></div>');
-
-</script></li>
-					 			<li><script type="text/javascript">
-
-document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a href="http://pinterest.com/pin/create/button/?url=' + location.href + '&media=http://ted.edu.vn/__data/assets/image/0003/793164/logo.png&description=H%E1%BB%8Dc%20vi%E1%BB%87n%20doanh%20nh%C3%A2n%20TED%3A%20Ted.Edu.Vn" class="pin-it-button" count-layout="none" target="_blank" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>');
-
-</script>&nbsp;</li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
-					 			<li><div style="margin-top:3px; float:left;"><a target="_blank" title="Share this page" href="http://www.sharethis.com/share?url=http://trungtam-tienganh.edu.vn&title=Trung Tâm Tiếng Anh&summary='Chia sẻ tri thức thành công'&img=http://trungtam-tienganh.edu.vn/__data/assets/image/0003/793164/logo.png&pageInfo=%7B%22hostname%22%3A%22http://trungtam-tienganh.edu.vn%22%2C%22publisher%22%3A%22%22%7D"><img width="86" height="25" alt="Share this page" src="http://w.sharethis.com/images/share-classic.gif"></a></div>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">
-    stLight.options({
-        publisher: '',
-        popup: 'true'
-    });
-</script></li>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+													 			<li><script type="text/javascript">
+								
+								document.write('<div style="float:left; margin-left: 7px;"><a href="http://link.apps.zing.vn/share?u=' + location.href + '" target="_blank"><img src="http://sukienhay.com/images/icons/zing-icon.png" /></a></div>');
+								
+								</script></li>
+													 			<li><script type="text/javascript">
+								
+								document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a href="http://pinterest.com/pin/create/button/?url=' + location.href + '&media=http://ted.edu.vn/__data/assets/image/0003/793164/logo.png&description=H%E1%BB%8Dc%20vi%E1%BB%87n%20doanh%20nh%C3%A2n%20TED%3A%20Ted.Edu.Vn" class="pin-it-button" count-layout="none" target="_blank" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>');
+								
+								</script>&nbsp;</li>
+													 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
+													 			<li><div style="margin-top:3px; float:left;"><a target="_blank" title="Share this page" href="http://www.sharethis.com/share?url=http://trungtam-tienganh.edu.vn&title=Trung Tâm Tiếng Anh&summary='Chia sẻ tri thức thành công'&img=http://trungtam-tienganh.edu.vn/__data/assets/image/0003/793164/logo.png&pageInfo=%7B%22hostname%22%3A%22http://trungtam-tienganh.edu.vn%22%2C%22publisher%22%3A%22%22%7D"><img width="86" height="25" alt="Share this page" src="http://w.sharethis.com/images/share-classic.gif"></a></div>
+								<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">
+								    stLight.options({
+								        publisher: '',
+								        popup: 'true'
+								    });
+								</script></li>
 					 		</ul>
 					 		<div id="shareg">
 					 			
@@ -160,3 +185,102 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 			<script type="text/javascript">
 				$('#teacherhd').addClass('bgli');
 			</script>
+			<style>
+* {
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+}
+a#show-popup {
+	margin:20px 0 0 20px;
+	float:left;
+	text-decoration:none;
+}
+div#popup-bg {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:99;
+	background:#000;
+	display:none;
+}
+div#popup {
+	width:680px;
+	height:480px;
+	border:solid 4px #000000;
+	z-index:999;
+	display:none;
+	background:#FFF;
+}
+div#popup-header {
+	position:relative;
+	float:left;
+	width:680px;
+	line-height:30px;
+	font-size:20px;
+	background:#000;
+	color:#FF0;
+	cursor:move;
+}
+span#popup-close {
+	cursor:pointer;
+	color:#FFF;
+	font-size:12px;
+	position:absolute;
+	top:-2px;
+	right:10px;
+	z-index:9999;
+}
+div#popup-content {
+	width:670px;
+	float:left;
+	padding:5px;
+}
+</style>
+
+<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	(function($){
+		//Căn giữa phần tử thuộc tính là absolute so với phần hiển thị của trình duyệt, chỉ dùng cho phần tử absolute đối với body
+		$.fn.absoluteCenter = function(){
+			this.each(function(){
+				var top = -($(this).outerHeight() / 2)+'px';
+				var left = -($(this).outerWidth() / 2)+'px';
+				$(this).css({'position':'absolute', 'position':'fixed', 'margin-top':top, 'margin-left':left, 'top':'50%', 'left':'50%'});
+				return this;
+			});
+		}
+	})(jQuery);
+	
+	$('a#show-popup').click(function(){
+		//Đặt biến cho các đối tượng để gọi dễ dàng
+		var bg=$('div#popup-bg');
+		var obj=$('div#popup');
+		var btnClose=obj.find('#popup-close');
+		//Hiện các đối tượng
+		bg.animate({opacity:0.2},0).fadeIn(1000); //cho nền trong suốt
+		obj.fadeIn(1000).draggable({cursor:'move',handle:'#popup-header'}).absoluteCenter(); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
+		//Đóng popup khi nhấn nút
+		btnClose.click(function(){
+			bg.fadeOut(1000);
+			obj.fadeOut(1000);
+		});
+		//Đóng popup khi nhấn background
+		bg.click(function(){
+			btnClose.click(); //Kế thừa nút đóng ở trên
+		});
+		//Đóng popup khi nhấn nút Esc trên bàn phím
+		$(document).keydown(function(e){
+			if(e.keyCode==27){
+				btnClose.click(); //Kế thừa nút đóng ở trên
+			}
+		});
+		return false;
+	});
+});
+</script>
+			
