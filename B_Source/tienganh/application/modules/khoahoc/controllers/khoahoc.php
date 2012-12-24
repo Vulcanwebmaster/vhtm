@@ -25,6 +25,8 @@ class Khoahoc extends NIW_Controller
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
+			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$data['module']  =  $this->module;
 			$data['index'] = -1;
@@ -39,6 +41,8 @@ class Khoahoc extends NIW_Controller
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mkhoahoc->getListFullCategory('ta_courses');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
+			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['list_chitiet']  =  $this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$index);
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$model=new CI_Model();
@@ -54,6 +58,8 @@ class Khoahoc extends NIW_Controller
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
+			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$data['module']  =  $this->module;

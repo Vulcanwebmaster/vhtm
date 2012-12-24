@@ -414,24 +414,20 @@
 			        		<table class="table">
 			        			<tbody><tr>
 			        				<td class="bd" colspan="2">
-			        					<label>Bộ đếm</label>
+			        					<label>Thống kê</label>
 			        				</td>
 			        			</tr>
 			        			<tr>
-			        				<td><img src="images/icon6.gif"></td>
-			        				<td>Đang truy cập : <label style="font-weight:bold;">1</label></td>
-			        			</tr>
-			        			<tr>
 			        				<td><img src="images/icon9.gif"></td>
-			        				<td>Hôm nay: <label style="font-weight:bold;">1</label></td>
+			        				<td>Hôm nay: <label style="font-weight:bold;"><?php echo $counting['today'];?></label></td>
 			        			</tr>
 			        			<tr>
 			        				<td><img src="images/icon4.gif"></td>
-			        				<td>Tháng hiện tại : <label style="font-weight:bold;">1</label></td>
+			        				<td>Tháng hiện tại : <label style="font-weight:bold;"><?php echo $counting['month'];?></label></td>
 			        			</tr>
 			        			<tr>
 			        				<td><img src="images/icon7.gif"></td>
-			        				<td>Tổng lượt truy cập : <label style="font-weight:bold;">1</label></td>
+			        				<td>Tổng lượt truy cập : <label style="font-weight:bold;"><?php echo $counting['total'];?></label></td>
 			        			</tr>
 			        		</tbody></table>
 			        	</div>

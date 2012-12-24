@@ -18,10 +18,13 @@
 				 	<div class="slidegv">
 				 		<div class="slider-wrapper theme-default">
 				            <div id="slider" class="nivoSlider">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="images/slide1.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">		                
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="images/slide2.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="images/slide4.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
+				            	<?php foreach ($list_slide as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+									}?>
 		        		</div>
 				 	</div>
 				 	<div id="contentgv">
@@ -54,16 +57,18 @@
 			        		<div><?php echo $this->pagination->create_links();?></div>
 			        	</div>------------>
 			        	<!--------------begin khóa học---------------->
-			        	
 			        	<div id="contentmaingv">
 			        	<?php foreach ($items as $item) 
 							{ ?>
 			        	<div class="ctgv">				 			
 			 					<!--<div class="divgv"><?php echo $item->lecturers_image ?></div>--->
-			 					<div class="divgv2">
+			 					<div class="img_main2" style="width: 23% ">
+		        				<p><?php echo $item->courses_date ?></p>
+		        				</div>
+			 					<div class="divgv2" style="width: 72% ">
 			 						<p class="tittlegv"><?php echo $item->courses_name ?></p>
 			 						<p>(<?php echo $item->courses_date ?>)</p>
-			 						<p><i><?php echo word_limiter(strip_tags($item->courses_content), 20)?> </i></p>
+			 						<p><i><?php echo word_limiter(strip_tags($item->courses_content), 15)?> </i></p>
 			 						<p class="reamororgv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">Chi tiết</a></p>
 			 					</div >
 				 			</div>	
@@ -71,7 +76,6 @@
 			        	<div><?php echo $this->pagination->create_links();?></div>
 			        	</div>
 			        	<!--------------End khóa học---------------->
-			        	<!--------------End begin Tin tức---------------->
 				</div>
 				<!-----------end share------------>
 			</div>

@@ -20,6 +20,7 @@ class Tintuc extends NIW_Controller
 	
 	function page($index=0)
 	{
+			
 			$config['base_url'] = base_url().'tintuc/page';
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mtintuc->getListFull('ta_news'));
@@ -31,6 +32,8 @@ class Tintuc extends NIW_Controller
 			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
 			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mtintuc->getListFull('slide');
 			$data['module']=$this->module;
 			$data['index'] = -1;
 			$data['page']='vtintuc';
@@ -49,6 +52,8 @@ class Tintuc extends NIW_Controller
 			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mtintuc->getListFull('slide');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh mầm non',$index,10);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -68,6 +73,8 @@ class Tintuc extends NIW_Controller
 			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mtintuc->getListFull('slide');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh tiểu học',$index,10);
 			$data['module']=$this->module;
 			$data['index'] = 1;
@@ -87,6 +94,8 @@ class Tintuc extends NIW_Controller
 			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mtintuc->getListFull('slide');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho sinh viên',$index,10);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -107,6 +116,8 @@ class Tintuc extends NIW_Controller
 			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mtintuc->getListFull('slide');
 			$data['items']=$this->Mtintuc->getListByColumnOffsetsp('ta_news','news_category','Tiếng Anh cho người đi làm',$index,10);
 			$data['module']=$this->module;
 			$data['page']='vtintuc';
@@ -122,6 +133,8 @@ class Tintuc extends NIW_Controller
 			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
 			$data['categories']=$this->Mtintuc->getListByColumn('ta_category','parent_id','0');
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
+			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
+			$data['list_slide']=$this->Mtintuc->getListFull('slide');
 			$data['list_chitiet']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
 			$model=new CI_Model();
 			$data['module']=$this->module;

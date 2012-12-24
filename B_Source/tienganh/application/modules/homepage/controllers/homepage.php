@@ -21,7 +21,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
-		//$data['counting']=$this->getCounting();
+		$data['counting']=$this->getCounting();
 		$data['list_courses'] = $this->Mhomepage->getListFull('ta_courses');
 		$data['list_courses_cate'] = $this->Mhomepage->getListFull('ta_courses_cate');
 		$data['category']  =  $this->Mhomepage->getListFullCategory('ta_courses');
@@ -31,7 +31,6 @@ class Homepage extends NIW_controller {
 		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);
 		$data['list_slide']=$this->Mhomepage->getListFull('slide');
 		$data['hotro_online']=$this->Mhomepage->getListFull('hotroonline');
-		//$data['counting']=$this->getCounting();
 		$data['title']='tienganh | Trang chủ';
 		$data['module'] = $this->module;
 		$data['page'] = 'frontpage';

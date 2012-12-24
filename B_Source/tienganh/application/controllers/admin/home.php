@@ -17,7 +17,6 @@ class Home extends Admin_Controller {
 		$data['bcCurrent'] = "Dash Broad";
 		
 		$data['counting']=$this->counting();
-		
 		$today=date('Y/m/d',time()+7*3600);
 		$data['today']=$this->model->getRowByColumn('thongke','ngaythang',$today);
 		$this->load->view("admin/container",$data);
