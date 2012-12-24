@@ -1,5 +1,5 @@
 <div id="content">
-				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">
+				<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				 <div id="content_left">
 				 	<div id="imgleftgv"><p align="center">Giảng viên</p></div>
 				 	<div id="contentlefftgv">
