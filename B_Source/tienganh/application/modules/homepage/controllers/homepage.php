@@ -44,6 +44,7 @@ class Homepage extends NIW_controller {
 		return $input;
 	}
 	
+	//send mai share this page
 	function send()
 	{
 		$this->form_validation->set_rules('e_mail','Địa chỉ mail','required|trim|valid_email');

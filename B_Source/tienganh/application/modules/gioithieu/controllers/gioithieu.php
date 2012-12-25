@@ -1,4 +1,12 @@
 <?php
+/**
+ * 
+ * This class is controller in front. 
+ * There are some functions to list images, videos and get detail of them...
+ * @author Tuyetnt
+ * @date 2012/12/15
+ *
+ */
 class Gioithieu extends NIW_Controller
 {
 	
@@ -22,6 +30,7 @@ class Gioithieu extends NIW_Controller
 	
 		function page($index=0)
 		{
+			
 			$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 			$data['items']=$this->Mgioithieu->getListByColumn('ta_about_us','about_category',1);
 			$data['title']='tienganh | Giới thiệu';
@@ -39,6 +48,8 @@ class Gioithieu extends NIW_Controller
 	
 	function sumenh($index=0)
 		{
+				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
@@ -52,6 +63,8 @@ class Gioithieu extends NIW_Controller
 		
 	function tamnhin($index=0)
 		{
+				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
@@ -65,6 +78,8 @@ class Gioithieu extends NIW_Controller
 		
 	function giatri($index=0)
 		{
+				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
@@ -78,6 +93,8 @@ class Gioithieu extends NIW_Controller
 		
 	function vanhoa($index=0)
 		{
+				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
+				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');

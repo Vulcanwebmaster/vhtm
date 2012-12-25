@@ -22,10 +22,13 @@
 					<input type="text" name="courses_name" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Loại khóa học</label>
+					<label>Danh mục</label>
 					<select name="courses_category">
-						<option value="Tiểu học">Tiểu học</option>
-						<option value="Mầm non">Mầm non</option>
+						<option></option>
+						<?php foreach ($list as $item)
+						{?>
+							<option value="<?php echo $item->courses_id?>"><?php echo $item->cate_name;?></option>							
+						<?php }?>
 					</select>
 				</fieldset>
 				<fieldset>

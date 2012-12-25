@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * 
+ * This class is controller of Courses in front. 
+ * There are some functions to list images, videos and get detail of them...
+ * @author Tuyetnt
+ * @date 2012/12/15
+ *
+ */
 class Khoahoc extends NIW_Controller
 {
 	private $data = array();

@@ -22,11 +22,18 @@
 					<input type="text" name="courses_name" style="width:92%" value="<?php echo $info->courses_name;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Loại khóa học</label>
-					<select name="lecturers_category">
-						<option value="Thầy giáo">Thầy giáo</option>
-						<option value="Cô giáo">Cô giáo</option>
-						<option value="Trợ giảng">Trợ giảng</option>
+					<label>Danh mục</label>
+					<select name="courses_category">
+						<option></option>
+						<?php foreach ($list as $item)
+						{
+							if ($item->courses_id==$info->courses_category)
+							{?>
+								<option value="<?php echo $item->courses_id?>" selected="selected"><?php echo $item->cate_name;?></option>
+							<?php }
+							else {?>
+								<option value="<?php echo $item->id?>"><?php echo $item->cate_name;?></option>
+						<?php }}?>
 					</select>
 				</fieldset>
 				<fieldset>

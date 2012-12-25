@@ -1,4 +1,13 @@
+
 <?php
+/**
+ * 
+ * This class is controller in front. 
+ * There are some functions to list images, videos and get detail of them...
+ * @author Tuyetnt
+ * @date 2012/12/15
+ *
+ */
 class Giangvien extends NIW_Controller
 {
 		function __construct()
@@ -99,7 +108,7 @@ class Giangvien extends NIW_Controller
 				$this->load->view('front/container',$data);	
 		}
 	
-		function detail($alias)
+	 function detail($alias)
 		{
 			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
 			$temp = explode("-", $alias);
@@ -121,35 +130,33 @@ class Giangvien extends NIW_Controller
 			$this->load->view('front/container',$data);
 		}
 		
-		function _input()
+	function _input()
 			{
-				$input=array('lecturers_category'=>$this->input->post('lecturers_category'),
-							'contact_name'=>$this->input->post('contact_name'),
-							'contact_phone'=>$this->input->post('contact_phone'),
-							'contact_content'=>$this->input->post('contact_content'),
-							'contact_email'=>date('Y-m-d',time()+7*3600));
-							//var_dump($input);
-							//die();
+				$input=array('name1'=>$this->input->post('name1'),
+							'email1'=>$this->input->post('email1'),
+							'name2'=>$this->input->post('name2'),
+							'email2'=>$this->input->post('email2'),
+							'mesage_content'=>date('Y-m-d',time()+7*3600));
 				return $input;
 			}
 			
-						
+	// function popup send mail				
 	function send()
 		{
-			$this->form_validation->set_rules('contact_name','Tên','required|trim');
-			$this->form_validation->set_rules('contact_email','Địa chỉ mail','required|trim|valid_email');
-			$this->form_validation->set_rules('contact_phone','Số mobile','required|trim|numeric');
-			//chu y
-			if ($this->form_validation->run())
-			{
-				
 				$input=$this->_input();
-				if ($this->Mlienhe->insertNewRow('ta_contact_us',$input))
+							
+				if ($input==TRUE)
 				{
-					$this->session->set_userdata('lienhe_result','Gửi thành công !');
-				}
-				else $this->session->set_userdata('lienhe_result','Gửi không thành công !');
-			}
+					$to = $input['email2'];
+					$from="tuyetapt@gmail.com";
+					$subject="Mot nguoi ban da gui....";
+					$message='Xin chao: '.$input['name2'].'<br>';
+					$message.='Mot nguoi ban co ten la: '.$input['name1'].'<br>';
+					$message.='Co dia chi email: '.$input['email1'];
+					$message.=$input['mesage_content'];
+					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+					mail($to,$subject,$message,$options);
+					}
 			
 			$this->index();
 		}

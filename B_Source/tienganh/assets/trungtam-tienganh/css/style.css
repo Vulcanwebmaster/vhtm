@@ -29,7 +29,15 @@ a:hover, a:active, a:focus {
 	color: #00A9DD;
 	text-decoration: none;
 }
+#li_leftgv4 a{
+	color: red;
+	text-decoration: none;
+}
 
+#li_leftgv4 a:hover{
+	color: blue;
+	text-decoration: none;
+}
 .submitsearch{ border:0; color:#fff; background:transparent}
 #header_logo{clear:both; margin-top:33px; position: relative; width:100%; height:120px;}
 #logo{float:left; width:50%;}

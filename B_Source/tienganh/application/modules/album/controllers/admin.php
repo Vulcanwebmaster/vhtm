@@ -1,4 +1,12 @@
 <?php
+/**
+ * 
+ * This class is controller in front. 
+ * There are some functions to list images, videos and get detail of them...
+ * @author Tuyetnt
+ * @date 2012/12/15
+ *
+ */
 	class Admin extends Admin_Controller
 	{
 		private $module;

@@ -65,7 +65,7 @@
 		{
 			if (!$this->input->post('courses_name'))
 			{
-				$data['list']=$this->Mkhoahoc->getListFull('ta_courses');
+				$data['list']=$this->Msanpham->getListFull('ta_courses_cate');
 				$data['config'] = $this->setupCKEditor('97%','200px');
 				$data['title']='Thêm khóa học';
 				$data['bcCurrent']='Khóa học';
@@ -90,7 +90,7 @@
 				}
 				else 
 				{
-					$data['list']=$this->Mkhoahoc->getListFull('ta_courses');
+					$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
 					$data['config'] = $this->setupCKEditor('97%','200px');
 					$data['title']='Thêm khóa học';
 					$data['bcCurrent']='khóa học';
@@ -110,6 +110,7 @@
 			//echo $this->input->post('courses_name');die();
 			if (!$this->input->post('courses_name'))
 			{
+				$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
 				$data['info']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$id);
 				$data['title']='Sửa khóa học';
 				$data['bcCurrent']='Khóa học';
@@ -134,6 +135,7 @@
 				}
 				else 
 				{
+					$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
 					$data['info']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$id);
 					$data['title']='Sửa Khóa học';
 					$data['bcCurrent']='Khóa học';
@@ -155,4 +157,3 @@
 			$this->index();
 		}
 	}
-?>
