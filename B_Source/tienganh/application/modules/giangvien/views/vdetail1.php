@@ -14,6 +14,12 @@
 	    	<?php echo $this->load->view('sendmail')?>
 	    </div>
 	</div>
+	<div id="popup1">
+		<div id="popup-header">Email<span id="popup-close" title="Close">x</span></div>
+	    <div id="popup-content">
+	    	<h1>Số điện thoại 0974675294</h1>
+	    </div>
+	</div>
 	<div id="content">
 					<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 					 <div id="content_left">
@@ -202,7 +208,7 @@
 		background:#000;
 		display:none;
 	}
-	div#popup {
+	div#popup,div#popup1 {
 		width:680px;
 		height:480px;
 		border:solid 4px #000000;
@@ -280,8 +286,8 @@
 		$('a#show-popup1').click(function(){
 			//Đặt biến cho các đối tượng để gọi dễ dàng
 			var bg=$('div#popup-bg');
-			var obj=$('div#popup');
-			var btnClose=obj.find('#popup-close');
+			var obj=$('div#popup1');
+			var btnClose=obj1.find('#popup-close');
 			//Hiện các đối tượng
 			bg.animate({opacity:0.2},0).fadeIn(1000); //cho nền trong suốt
 			obj.fadeIn(1000).draggable({cursor:'move',handle:'#popup-header'}).absoluteCenter(); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
