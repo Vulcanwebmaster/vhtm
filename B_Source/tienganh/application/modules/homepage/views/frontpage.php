@@ -388,7 +388,10 @@
 			        			</tr>
 			        			<tr>
 			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon9.gif"></td>
-			        				<td>Hôm nay: <label style="font-weight:bold;"><?php echo $counting['today'];?></label></td>
+			        				<td>Hôm nay: <label style="font-weight:bold;">
+			        					<?php if(isset($counting['today'])){
+			        						echo $counting['today'];
+			        					} ?></label></td>
 			        			</tr>
 			        			<tr>
 			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon4.gif"></td>

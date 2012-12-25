@@ -108,6 +108,7 @@ class NIW_Controller extends CI_Controller {
 	function getCounting()
 	{
 		$today=date('Y-m-d',time()+7*3600);
+		//var_dump($model->getRowByColumn('thongke','ngaythang',$today));die();
 		$model=new CI_Model();
 		$today_counting=$model->getRowByColumn('thongke','ngaythang',$today)->soluong;
 		$data['today']=$today_counting;
