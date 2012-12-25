@@ -11,6 +11,7 @@ class Homepage extends NIW_controller {
 		$this->load->model('Mhomepage');
 		$this->load->library('pagination');
 		$this->load->helper('text');
+		$this->addVisiting();
 		$this->load->library('form_validation');
 	}
 	
