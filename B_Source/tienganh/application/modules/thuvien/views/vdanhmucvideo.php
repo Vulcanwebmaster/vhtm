@@ -1,3 +1,8 @@
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.pngFix.pack.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.fancybox-1.0.0.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/swfobject.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/trungtam-tienganh/css/fancy.css">
 <div id="popup-bg"></div>
 	<style>
 		#popup-content{
@@ -7,20 +12,24 @@
 			float: left !important;	
 		}
 	</style>
-	<div id="popup" align="center">
-									<div id="popup-header">Video<span id="popup-close" title="Close">close</span></div>
-									   
-								    <div id="popup-content">
-								    	<form>
-								    		<?php foreach ($list as $value) {?>
-											<div class="children" align="center">
-												 <iframe width="400" height="300" frameborder="0" allowfullscreen="" src="http://www.youtube-nocookie.com/embed/<?php echo $value->link_vedio?>" style="padding-left:5px; padding-top: 10px;">
-												</iframe>
-											</div>
-											<?php } ?>
-										</form>
-								    </div>
-								</div>
+	
+	
+<!-- 	<div id="popup" align="center">
+			<div id="popup-header">Video<span id="popup-close" title="Close">close</span></div>
+			   
+		    <div id="popup-content">
+		    	<form>
+		    		<?php foreach ($list as $value) {?>
+					<div class="children" align="center">
+						 <iframe width="400" height="300" frameborder="0" allowfullscreen="" src="http://www.youtube-nocookie.com/embed/<?php echo $value->link_vedio?>" style="padding-left:5px; padding-top: 10px;">
+						</iframe>
+					</div>
+					<?php } ?>
+				</form>
+		    </div>
+		</div> -->
+		
+		
 	<div id="content">
 				<!--<img src="<?php echo base_url()?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv"/>-->
 				<?php echo $this->load->view('front/menu-trai-thuvien');?>
@@ -43,16 +52,27 @@
 				 			foreach ($list as $value)
 				 			{?>
 					 			<div class="bgvdcontent">
-					 				<ul style="list-style-type: none">
-					 					<li><a href="" id="show-popup">
-										<img src="http://img.youtube.com/vi/<?php echo $value->link_vedio?>/3.jpg">
-			                            <p><?php echo $value->vedio_title ?></p>
-			                        </a></li>
+					 				<ul style="list-style-type: none; margin:0; padding:0">
+					 					<li>
+						 					<a rel="fancyvideo" href="http://www.youtube.com/watch?v=<?php echo $value->link_vedio?>">
+												<img src="http://img.youtube.com/vi/<?php echo $value->link_vedio?>/3.jpg" style="margin:3px 17px">
+				                            <p align="center"><?php echo $value->vedio_title ?></p>
+				                        	</a>
+			                        	</li>
 					 				</ul>
 					 			</div>	
 				 			<?php $count++; } ?>
 					 	</div>
-					 
+					 	
+					 <script type="text/javascript">
+					        $(document).ready(function() {
+					            $("a[@rel*=fancyvideo]").fancybox({
+					                overlayShow: true,
+					                frameWidth:640,
+					                frameHeight:360
+					            });
+					        });
+					</script>
 					 <!----------------------------->
 					 <div id="contentbotomgv">
 					 		<div id="share">
@@ -63,25 +83,25 @@
 									<script type="IN/Share"></script>
 					 				</a></li>
 					 			<li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					 			<li><script type="text/javascript">
-
-document.write('<div style="float:left; margin-left: 7px;"><a href="http://link.apps.zing.vn/share?u=' + location.href + '" target="_blank"><img src="http://sukienhay.com/images/icons/zing-icon.png" /></a></div>');
-
-</script></li>
-					 			<li><script type="text/javascript">
-
-document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a href="http://pinterest.com/pin/create/button/?url=' + location.href + '&media=http://ted.edu.vn/__data/assets/image/0003/793164/logo.png&description=H%E1%BB%8Dc%20vi%E1%BB%87n%20doanh%20nh%C3%A2n%20TED%3A%20Ted.Edu.Vn" class="pin-it-button" count-layout="none" target="_blank" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>');
-
-</script>&nbsp;</li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
-					 			<li><div style="margin-top:3px; float:left;"><a target="_blank" title="Share this page" href="http://www.sharethis.com/share?url=http://trungtam-tienganh.edu.vn&title=Trung Tâm Tiếng Anh&summary='Chia sẻ tri thức thành công'&img=http://trungtam-tienganh.edu.vn/__data/assets/image/0003/793164/logo.png&pageInfo=%7B%22hostname%22%3A%22http://trungtam-tienganh.edu.vn%22%2C%22publisher%22%3A%22%22%7D"><img width="86" height="25" alt="Share this page" src="http://w.sharethis.com/images/share-classic.gif"></a></div>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">
-    stLight.options({
-        publisher: '',
-        popup: 'true'
-    });
-</script></li>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+														 			<li><script type="text/javascript">
+									
+									document.write('<div style="float:left; margin-left: 7px;"><a href="http://link.apps.zing.vn/share?u=' + location.href + '" target="_blank"><img src="http://sukienhay.com/images/icons/zing-icon.png" /></a></div>');
+									
+									</script></li>
+														 			<li><script type="text/javascript">
+									
+									document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a href="http://pinterest.com/pin/create/button/?url=' + location.href + '&media=http://ted.edu.vn/__data/assets/image/0003/793164/logo.png&description=H%E1%BB%8Dc%20vi%E1%BB%87n%20doanh%20nh%C3%A2n%20TED%3A%20Ted.Edu.Vn" class="pin-it-button" count-layout="none" target="_blank" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>');
+									
+									</script>&nbsp;</li>
+														 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
+														 			<li><div style="margin-top:3px; float:left;"><a target="_blank" title="Share this page" href="http://www.sharethis.com/share?url=http://trungtam-tienganh.edu.vn&title=Trung Tâm Tiếng Anh&summary='Chia sẻ tri thức thành công'&img=http://trungtam-tienganh.edu.vn/__data/assets/image/0003/793164/logo.png&pageInfo=%7B%22hostname%22%3A%22http://trungtam-tienganh.edu.vn%22%2C%22publisher%22%3A%22%22%7D"><img width="86" height="25" alt="Share this page" src="http://w.sharethis.com/images/share-classic.gif"></a></div>
+									<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">
+									    stLight.options({
+									        publisher: '',
+									        popup: 'true'
+									    });
+									</script></li>
 					 		</ul>
 					 		<div id="shareg">
 					 			
@@ -152,16 +172,13 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 			</script>
 			
 	<style>
-	* {
-		margin:0;
-		padding:0;
-		font-family:Arial, Helvetica, sans-serif;
-	}
+	
 	a#show-popup {
-		margin:20px 0 0 20px;
+		margin:5px 0 0 20px;
 		float:left;
 		text-decoration:none;
 	}
+	a#show-popup img{ width:114px; height:85px;}
 	a#show-popup1 {
 		margin:20px 0 0 20px;
 		float:left;
@@ -211,7 +228,7 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 	}
 	</style>
 	
-	<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<!-- <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 	<script language="javascript">
 	$(document).ready(function(){
@@ -253,5 +270,5 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 			return false;
 		});
 	});
-	</script>
+	</script> -->
 				

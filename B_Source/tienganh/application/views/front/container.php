@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html  xmlns="http://www.w3.org/1999/xhtml" class="webkit safari  win">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 		<script type="text/javascript" src="http://api.go.vn/social-plugins/gconnect/all.min.js?v=123456789"></script>
 		<script type="text/javascript">var switchTo5x=true;</script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -20,6 +20,7 @@
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/anythingslider.css">
 	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.js"></script>
 	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.video.js"></script>
+	    
 	    <script type="text/javascript">
 	    $(window).load(function() {
 	        $('#slider').nivoSlider();

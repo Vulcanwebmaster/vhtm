@@ -15,9 +15,10 @@
 	    </div>
 	</div>
 	<div id="popup1">
-		<div id="popup-header">Email<span id="popup-close" title="Close">x</span></div>
+		<div id="popup-header">Phone<span id="popup-close" title="Close">x</span></div>
 	    <div id="popup-content">
 	    	<h1>Số điện thoại 0974675294</h1>
+	    	<!--<h1>So dien thoai : <?php echo $items->sdt ?></h1>-->
 	    </div>
 	</div>
 	<div id="content">

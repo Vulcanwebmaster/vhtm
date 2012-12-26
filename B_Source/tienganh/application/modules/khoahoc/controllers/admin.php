@@ -50,7 +50,7 @@
 		function _input()
 		{
 			$input=array(
-						
+						'cate_name'=>$this->input->post('cate_name'),
 						'courses_name'=>$this->input->post('courses_name'),
 						'courses_category'=>$this->input->post('courses_category'),
 						'courses_date'=>$this->input->post('courses_date'),
