@@ -46,7 +46,9 @@
 						<tr> 
 							<th>STT</th>
 		    				<th>Tên khóa học</th> 
+		    				<th>Danh mục</th>
 		    				<th>Ngày tháng</th>
+		    				<th>Nội dung</th>
 		    				<th>Sửa|Xóa</th>
 		    				
 						</tr> 
@@ -56,7 +58,9 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->courses_name;?></td> 
+			    				<td><?php echo $item->cate_name;?></td>
 			    				<td><?php echo $item->courses_date;?></td>
+			    				<td><?php echo $item->courses_content;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>khoahoc/admin/edit/<?php echo $item->courses_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->courses_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
@@ -71,7 +75,6 @@
 				<?php echo $this->pagination->create_links();?>
 			</center>
 				<footer>
-						
 						<div class="submit_link">
 							<a class="alt_btn" href="<?php echo base_url();?>khoahoc/admin/insert">Thêm mới</a>
 						</div>

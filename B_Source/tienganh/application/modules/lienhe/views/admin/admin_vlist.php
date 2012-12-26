@@ -37,9 +37,10 @@
 						<tr> 
 							<th>STT</th>
 		    				<th>Tiêu đề</th> 
-		    				<th>Địa chỉ</th>
+		    				<th>Tên</th>
+		    				<th>Địa chỉ email</th>
 		    				<th>Phone</th> 
-		    				<th>Email</th>
+		    				<th>Nội dung</th>
 		    				<th>Ngày gửi</th>
 		    				<th>Xóa</th>
 						</tr> 

@@ -2,13 +2,6 @@
 		<?php 
 			echo validation_errors('<div class="error">','</div>');
 		?>	
-		
-<script type="text/javascript">
-	$(function() {
-		$( "#ngaythang" ).datepicker();
-	});
-</script>
-		
 <form method="post" action="<?php echo base_url();?>khoahoc/admin/insert">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
@@ -18,16 +11,16 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tiêu đề </label>
+					<label>Tên khóa học</label>
 					<input type="text" name="courses_name" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục</label>
+					<label>Mục khóa học</label>
 					<select name="courses_category">
 						<option></option>
 						<?php foreach ($list as $item)
 						{?>
-							<option value="<?php echo $item->courses_id?>"><?php echo $item->cate_name;?></option>							
+							<option value="<?php echo $item->id?>"><?php echo $item->cate_name;?></option>							
 						<?php }?>
 					</select>
 				</fieldset>

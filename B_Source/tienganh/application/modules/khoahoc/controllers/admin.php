@@ -1,13 +1,4 @@
-
 <?php
-/**
- * 
- * This class is controller of Thu vien in front. 
- * There are some functions to list images, videos and get detail of them...
- * @author Tuyetnt
- * @date 2012/12/15
- *
- */
 	class Admin extends Admin_Controller
 	{
 		private $module;
@@ -19,63 +10,49 @@
 			$this->load->model('Mkhoahoc');
 			$this->load->library('form_validation');
 			$this->load->library('session');
-			
-			//=============================================
-			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/trungtam-tienganh/ckeditor/", 'outPut' => true));                             
-			//=============================================
 		}
 		
 		function index()
 		{
-			$this->page();
-		}
-		
-		function page($index=0)
-		{
-			$config['base_url']=base_url().'khoahoc/admin/page/';
-			$config['per_page']=10;
-			$config['total_rows']=count($this->Mkhoahoc->getListFull('ta_courses'));
-			$config['uri_segment']=4;
-			$this->pagination->initialize($config);
-			
-			$data['title']='Khóa học';
+			$data['title']='khóa học';
 			$data['bcCurrent']='khóa học';
-			$data['list']=$this->Mkhoahoc->getListOffset('ta_courses',10,$index);
+			$data['list']=$this->Mkhoahoc->getListCategory('ta_courses');
 			$data['module']=$this->module;
-			$data['page']='admin_vlist';
+			$data['page']='admin_list_courses';
 			$this->load->view('admin/container',$data);
 		}
 		
-		
 		function _input()
 		{
-			$input=array(
-						'cate_name'=>$this->input->post('cate_name'),
-						'courses_name'=>$this->input->post('courses_name'),
-						'courses_category'=>$this->input->post('courses_category'),
+			$input=array('courses_name'=>$this->input->post('courses_name'),
 						'courses_date'=>$this->input->post('courses_date'),
+						
+						'courses_category'=>$this->input->post('courses_category'),
 						'courses_content'=>$this->input->post('courses_content'),
-						'alias'=>$this->getAliasByName($this->input->post('courses_name')),
 						);
 			return $input;
 		}
 		
-		
 		function insert()
 		{
+			//=============================================
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/trungtam-tienganh/ckeditor/", 'outPut' => true));                             
+			$data['config'] = $this->setupCKEditor();
+			//=============================================
 			if (!$this->input->post('courses_name'))
 			{
-				$data['list']=$this->Msanpham->getListFull('ta_courses_cate');
-				$data['config'] = $this->setupCKEditor('97%','200px');
+				$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
 				$data['title']='Thêm khóa học';
-				$data['bcCurrent']='Khóa học';
+				$data['bcCurrent']='khóa học';
 				$data['module']=$this->module;
-				$data['page']='admin_vinsert';
+				$data['page']='admin_insert_courses';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('courses_name','Tên ','required|trim');
+				$this->form_validation->set_rules('courses_name','Tên','required|trim');
+				$this->form_validation->set_rules('courses_category','Danh mục','required|trim');
+				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
@@ -91,36 +68,36 @@
 				else 
 				{
 					$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
-					$data['config'] = $this->setupCKEditor('97%','200px');
 					$data['title']='Thêm khóa học';
 					$data['bcCurrent']='khóa học';
 					$data['module']=$this->module;
-					$data['page']='admin_vinsert';
+					$data['page']='admin_insert_courses';
 					$this->load->view('admin/container',$data);
 				}
 			}
 		}
 		
-
 		function edit($id=0)
 		{
 			//=============================================
-			$data['config'] = $this->setupCKEditor('97%','200px');
+			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/trungtam-tienganh/ckeditor/", 'outPut' => true));                             
+			$data['config'] = $this->setupCKEditor();
 			//=============================================
-			//echo $this->input->post('courses_name');die();
 			if (!$this->input->post('courses_name'))
 			{
 				$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
 				$data['info']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$id);
 				$data['title']='Sửa khóa học';
-				$data['bcCurrent']='Khóa học';
+				$data['bcCurrent']='khóa học';
 				$data['module']=$this->module;
-				$data['page']='admin_vedit';
+				$data['page']='admin_edit_courses';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
 				$this->form_validation->set_rules('courses_name','Tên','required|trim');
+				$this->form_validation->set_rules('courses_category','Danh mục','required|trim');
+				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
@@ -137,15 +114,14 @@
 				{
 					$data['list']=$this->Mkhoahoc->getListFull('ta_courses_cate');
 					$data['info']=$this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$id);
-					$data['title']='Sửa Khóa học';
-					$data['bcCurrent']='Khóa học';
+					$data['title']='Sửa khóa học';
+					$data['bcCurrent']='khóa học';
 					$data['module']=$this->module;
-					$data['page']='admin_vedit';
+					$data['page']='admin_edit_courses';
 					$this->load->view('admin/container',$data);
 				}
 			}
 		}
-		
 		
 		function delete($id=0)
 		{

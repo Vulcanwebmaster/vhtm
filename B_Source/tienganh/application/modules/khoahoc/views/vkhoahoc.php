@@ -32,11 +32,12 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<!--<p><?php if ($index == 0) echo 'Tiếng Anh mầm non';
-				 						elseif ($index == 1) echo 'Tiếng Anh tiểu học';
-										elseif ($index == 2) echo 'Tiếng Anh cho sinh viên';
-										elseif ($index == 3) echo 'Tiếng Anh cho người đi làm';
-				 				?></p>-->
+				 			<p><a href="<?php echo base_url();?>khoahoc">
+				 				<?php if ($index == 1) echo 'Thầy giáo';
+				 						elseif ($index == 2) echo 'Cô giáo';
+										elseif ($index == 0) echo 'Trợ giảng';
+				 				?>
+				 			</a></p>
 				 		</div>
 				 		
 			        	<!------<div class="textmaincontent1">

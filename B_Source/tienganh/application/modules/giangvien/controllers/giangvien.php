@@ -23,7 +23,7 @@ class Giangvien extends NIW_Controller
 		}
 		function index()
 		{
-		$this->page();
+			$this->page();
 		}
 	
 		function page($index=0)
