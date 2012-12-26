@@ -36,7 +36,6 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tiêu đề</th> 
 		    				<th>Tên</th>
 		    				<th>Địa chỉ email</th>
 		    				<th>Phone</th> 
@@ -52,10 +51,10 @@
 					 	{ $i++;	?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td> 
-			    				<td><?php echo $item->contact_title;?></td> 
-			    				<td><?php echo $item->contact_address;?></td>
-			    				<td><?php echo $item->contact_phone;?></td>
+			    				<td><?php echo $item->contact_name;?></td>
 			    				<td><?php echo $item->contact_email;?></td> 
+			    				<td><?php echo $item->contact_phone;?></td>
+			    				<td><?php echo $item->contact_content;?></td>
 			    				<td><?php echo $item->create_date;?></td> 
 			    				<td>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->contact_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

@@ -21,15 +21,6 @@
 			$this->load->view('admin/container',$data);
 		}
 		
-		function detail($id=0)
-		{
-			$data['info']=$this->Mlienhe->getRowByColumn('ta_contact_us','contact_id',$id);
-			$data['title']='Sửa Liên hệ';
-			$data['bcCurrent']='Liên hệ';
-			$data['module']=$this->module;
-			$data['page']='admin_vdetail';
-			$this->load->view('admin/container',$data);
-		}
 		
 		function delete($id=0)
 		{

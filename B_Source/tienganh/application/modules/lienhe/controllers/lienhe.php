@@ -43,7 +43,6 @@ class Lienhe extends NIW_Controller
 		$this->form_validation->set_rules('contact_name','Tên','required|trim');
 		$this->form_validation->set_rules('contact_email','Địa chỉ mail','required|trim|valid_email');
 		$this->form_validation->set_rules('contact_phone','Số mobile','required|trim|numeric');
-		//chu y
 		if ($this->form_validation->run())
 		{
 			
