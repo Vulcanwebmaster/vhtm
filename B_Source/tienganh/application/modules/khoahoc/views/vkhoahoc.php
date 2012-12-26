@@ -4,7 +4,7 @@
 					<div id="imgleftgv"><p align="center">Thư viện</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<?php foreach ($category as $value) 
+				 			<?php var_dump($category); die(); ?><?php foreach ($category as $value) 
 				 			{ ?>
 				 				<li id="li_leftgv4"><a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id?>"><?php echo $value->cate_name?></a></li>
 				 			<?php } ?>
@@ -32,12 +32,12 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><a href="<?php echo base_url();?>khoahoc">
+				 			<!-- <p><a href="<?php echo base_url();?>khoahoc">
 				 				<?php if ($index == 1) echo 'Thầy giáo';
 				 						elseif ($index == 2) echo 'Cô giáo';
 										elseif ($index == 0) echo 'Trợ giảng';
 				 				?>
-				 			</a></p>
+				 			</a></p> -->
 				 		</div>
 				 		
 			        	<!------<div class="textmaincontent1">
