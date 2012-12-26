@@ -31,7 +31,7 @@
 		
 		function page($index=0)
 		{
-			$config['base_url']=base_url().'gioithieu/admin/page/';
+			$config['base_url']=base_url().'ta_about_us/admin/page/';
 			$config['per_page']=10;
 			$config['total_rows']=count($this->Mgioithieu->getListFull('ta_about_us'));
 			$config['uri_segment']=3;
@@ -52,6 +52,48 @@
 						'about_content'=>$this->input->post('about_content'),
 						);
 			return $input;
+		}
+		
+		function edit($id=0)
+		{
+			//=============================================
+			$data['config'] = $this->setupCKEditor('97%','200px');
+			//=============================================
+			if (!$this->input->post('about_content'))
+			{
+				$data['info']=$this->Mgioithieu->getRowByColumn('ta_about_us','about_id',$id);
+				$data['title']='Sửa giới thiệu';
+				$data['bcCurrent']='Giới thiệu';
+				$data['module']=$this->module;
+				$data['page']='admin_vedit';
+				$this->load->view('admin/container',$data);
+			}
+			else 
+			{
+				$this->form_validation->set_rules('about_content','Nội dung','required|trim');
+				
+				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				
+				if ($this->form_validation->run())
+				{
+					$input=$this->_input();
+					if ($this->Mgioithieu->updateRowByColumn('ta_about_us','about_id',$id,$input))
+					{
+						$this->session->set_userdata('result','Cập nhật thành công');
+					}
+					else $this->session->set_userdata('result','Cập nhật không thành công');
+					$this->index();
+				}
+				else 
+				{
+					$data['info']=$this->Mgioithieu->getRowByColumn('ta_about_us','about_id',$id);
+					$data['title']='Sửa giới thiệu';
+					$data['bcCurrent']='Giới thiệu';
+					$data['module']=$this->module;
+					$data['page']='admin_vedit';
+					$this->load->view('admin/container',$data);
+				}
+			}
 		}
 		
 		function delete($id=0)

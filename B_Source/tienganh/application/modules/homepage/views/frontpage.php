@@ -39,7 +39,7 @@
 														  <p>(<?php echo ($item->news_post_date); ?>)</p>
 			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
-			        						Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
+			        						Tìm hiểu thêm về sự kiện này <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
 			        					</a>
 			        				</p>
 			        			</div>
@@ -65,7 +65,7 @@
 		        					<p>(<?php echo $item->courses_date ?>)</br></p>
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-			        						</br>Tìm hiểu thêm về sự kiện này <img src="assets/trungtam-tienganh/images/icon19.png"/>
+			        						</br>Tìm hiểu thêm về sự kiện này <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
 			        				</a>
 		        				</p>
 		        			</div>
@@ -256,8 +256,8 @@
 						<ul id="ultop">
 		        			<li id="li1">
 		        				<a href-"#">
-			        				<img src="assets/trungtam-tienganh/images/face1.png" class="show1"/>
-			        				<img src="assets/trungtam-tienganh/images/face.png" class="show2"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face1.png" class="show1"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.png" class="show2"/>
 			        			</a>
 		        				<div class="children">
 		        					<div id="fb-root"></div>
