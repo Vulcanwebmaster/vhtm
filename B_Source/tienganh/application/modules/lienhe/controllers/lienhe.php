@@ -31,8 +31,8 @@ class Lienhe extends NIW_Controller
 		$input=array('lecturers_category'=>$this->input->post('lecturers_category'),
 					'contact_name'=>$this->input->post('contact_name'),
 					'contact_phone'=>$this->input->post('contact_phone'),
-					'contact_content'=>$this->input->post('contact_content'),
-					'contact_email'=>date('Y-m-d',time()+7*3600));
+					'mesage_content'=>$this->input->post('mesage_content'),
+					'contact_email'=>$this->input->post('contact_email'));
 					//var_dump($input);
 					//die();
 		return $input;

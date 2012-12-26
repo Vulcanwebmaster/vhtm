@@ -40,7 +40,6 @@
 		    				<th>Địa chỉ email</th>
 		    				<th>Phone</th> 
 		    				<th>Nội dung</th>
-		    				<th>Ngày gửi</th>
 		    				<th>Xóa</th>
 						</tr> 
 					</thead> 
@@ -54,8 +53,7 @@
 			    				<td><?php echo $item->contact_name;?></td>
 			    				<td><?php echo $item->contact_email;?></td> 
 			    				<td><?php echo $item->contact_phone;?></td>
-			    				<td><?php echo $item->contact_content;?></td>
-			    				<td><?php echo $item->create_date;?></td> 
+			    				<td><?php echo $item->mesage_content;?></td>
 			    				<td>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->contact_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
