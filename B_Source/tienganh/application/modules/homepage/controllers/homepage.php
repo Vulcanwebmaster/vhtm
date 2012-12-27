@@ -23,7 +23,7 @@ class Homepage extends NIW_controller {
 	public function page($index=0)
 	{
 		$data['counting']=$this->getCounting();
-		
+		$data['yt_fanpage']=$this->Mhomepage->getListFull('ta_vedio_fanpage');
 		$data['list_video_home']=$this->Mhomepage->getListFull('ta_vedio_home');
 		$data['list_dichvu']=$this->Mhomepage->getListFull('ta_dichvu');
 		$data['list_courses'] = $this->Mhomepage->getListFull('ta_courses');

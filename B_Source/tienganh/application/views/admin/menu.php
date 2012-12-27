@@ -21,6 +21,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>anh/admin">Hình ảnh</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>album/admin">Album</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio_home/admin">Video trang chủ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>video_fanpage/admin">Video Fan page</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video thư viện</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slidefooter/admin">Slide Footer</a></li>

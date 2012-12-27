@@ -35,7 +35,6 @@
 		function _input()
 		{
 			$input=array(
-						
 						'link_vedio'=>$this->input->post('link_vedio'));
 		
 			return $input;

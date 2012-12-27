@@ -93,30 +93,11 @@
 		            		<div class="contentvideo">	
 								<ul id="slidervideo">
 									<!-- YouTube: iframe -->
-									<!-- <li class="panel3">
-										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/ulOb9gIGGd0" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/Xdv83MFJd7U" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/ognsGWAkvU8" frameborder="0" allowfullscreen></iframe>
-									</li> -->
 									<?php foreach ($list_video_home as $key) {?>
-										<li class="panel3">
-										<iframe src="<?php echo $key->link_vedio?>" frameborder="0" allowfullscreen></iframe>
-										</li>
-									<?php } ?>
-									
+									 <li class="panel3">
+										<iframe src="http://www.youtube.com/embed/<?php echo substr($key->link_vedio,31)?>" frameborder="0" allowfullscreen></iframe>
+									</li>
+									<?php } ?> 
 								</ul>
 		            		</div>				       
 		        	</div>
@@ -291,8 +272,12 @@
 			        				<img src="assets/trungtam-tienganh/images/ytb1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
-		        						<iframe width="290" height="170" frameborder="0" allowfullscreen="" src="http://www.youtube-nocookie.com/embed/OLm1FZ6qDLs" style="padding-left:5px; padding-top: 10px;">
+			        					<?php foreach ($yt_fanpage as $value) {?>
+											
+										
+		        						<iframe width="290" height="170" frameborder="0" allowfullscreen="" src="http://www.youtube.com/embed/<?php echo substr($value->video_child,31)?>" style="padding-left:5px; padding-top: 10px;">
 										</iframe>
+										<?php }?>
 		        					</div>
 		        			</li>
 		        			
