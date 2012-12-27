@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa vedio này?");
+					var r=confirm("Bạn muốn xóa video này?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>vedio/admin/delete/"+value;

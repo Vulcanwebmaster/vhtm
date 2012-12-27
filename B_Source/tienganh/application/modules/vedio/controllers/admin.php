@@ -24,7 +24,7 @@
 			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Thông tin vedio';
+			$data['title']='Thông tin video';
 			$data['bcCurrent']='Vedio';
 			$data['list']=$this->Mvedio->getListOffset('ta_vedio',15,$index);
 			$data['module']=$this->module;
@@ -47,7 +47,7 @@
 			{
 				$data['list']=$this->Mvedio->getListFull('ta_vedio');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Thêm vedio';
+				$data['title']='Thêm video';
 				$data['bcCurrent']='Vedio';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
@@ -73,7 +73,7 @@
 				{
 					$data['list']=$this->Mvedio->getListFull('ta_vedio');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Thêm vedio';
+					$data['title']='Thêm video';
 					$data['bcCurrent']='Vedio';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
@@ -91,7 +91,7 @@
 			{
 				$data['list']=$this->Mvedio->getListFull('ta_vedio');
 				$data['info']=$this->Mvedio->getRowByColumn('ta_vedio','vedio_id',$id);
-				$data['title']='Sửa vedio';
+				$data['title']='Sửa video';
 				$data['bcCurrent']='vedio';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
@@ -117,7 +117,7 @@
 				{
 					$data['list']=$this->Mvedio->getListFull('ta_vedio');
 					$data['info']=$this->Mvedio->getRowByColumn('ta_vedio','vedio_id',$id);
-					$data['title']='Sửa vedio';
+					$data['title']='Sửa video';
 					$data['bcCurrent']='Vedio';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
