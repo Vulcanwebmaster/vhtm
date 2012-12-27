@@ -31,6 +31,7 @@ class Homepage extends NIW_controller {
 		$data['list_tintuc']=$this->Mhomepage->getListOffset('ta_news',3,0);
 		$data['list_khoahoc']=$this->Mhomepage->getListOffset('ta_courses',3,$index);
 		$data['list_slide']=$this->Mhomepage->getListFull('slide');
+		$data['list_slide1']=$this->Mhomepage->getListFull('slide1');
 		$data['hotro_online']=$this->Mhomepage->getListFull('hotroonline');
 		$data['title']='tienganh | Trang chủ';
 		$data['module'] = $this->module;

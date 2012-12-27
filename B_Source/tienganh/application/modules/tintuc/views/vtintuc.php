@@ -63,7 +63,8 @@
 			        	<div class="ctgv">				 			
 			 					<div class="divgv"><?php echo $item->news_image ?></div>
 			 					<div class="divgv2">
-			 						<p class="tittlegv"><?php echo word_limiter(strip_tags($item->news_title), 6) ?></p>
+			 						<p class="tittlegv"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
+			 							<?php echo word_limiter(strip_tags($item->news_title), 6) ?></a></p>
 			 						<p><i><?php echo $item->news_post_date ?></i></p>
 			 						<p><i><?php echo word_limiter(strip_tags($item->news_content), 8)?> </i></p>
 			 						<p class="reamororgv"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">

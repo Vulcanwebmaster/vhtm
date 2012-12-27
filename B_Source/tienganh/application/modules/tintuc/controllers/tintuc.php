@@ -135,6 +135,7 @@ class Tintuc extends NIW_Controller
 			$data['list_doitac']=$this->Mtintuc->getListFull('doitac');
 			$data['hotro_online']=$this->Mtintuc->getListFull('hotroonline');
 			$data['list_slide']=$this->Mtintuc->getListFull('slide');
+			$data['list_slide1']=$this->Mtintuc->getListFull('slide1');
 			$data['list_chitiet']=$this->Mtintuc->getRowByColumn('ta_news','news_id',$id);
 			$model=new CI_Model();
 			$data['module']=$this->module;

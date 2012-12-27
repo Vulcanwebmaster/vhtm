@@ -18,6 +18,7 @@ class Thuvien extends NIW_Controller
 			$this->load->model('Mthuvienanh');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
+			$this->data['list_slide1']=$this->Mthuvienanh->getListFull('slide1');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
 			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');

@@ -34,6 +34,7 @@ class Khoahoc extends NIW_Controller
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
+			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$data['module']  =  $this->module;
 			$data['index'] = -1;
@@ -50,6 +51,7 @@ class Khoahoc extends NIW_Controller
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
+			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['list_chitiet']  =  $this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$index);
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$model=new CI_Model();
@@ -59,17 +61,23 @@ class Khoahoc extends NIW_Controller
 			$this->load->view('front/container',$data);
 	}
 	
-	function category($index=0)
+	function category($id)
 	{
+		// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
+			$temp = explode("-", $id);
+			if (isset($temp)){
+				$id = $temp[0];
+			}
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
+			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
 			//var_dump($data['category']); die();
-			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
+			$data['items']=$this->Mkhoahoc->getListByColumn('ta_courses','courses_category',$id);
 			//var_dump($data['items']); die();
 			$data['module']  =  $this->module;
 			$data['page']  =  'vkhoahoc';

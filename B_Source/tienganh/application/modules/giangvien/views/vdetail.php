@@ -60,9 +60,9 @@
 					 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
 					 				<div id="ltgv"><?php echo $chitiet->lecturers_content ?></div>
 					 			</div><br clear="both"/>
-					 			<div class="videogvdt">
+					 			<!--<div class="videogvdt">
 					 				<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe>
-					 			</div>
+					 			</div>--->
 					 			<div id="contentdtbottom">
 					 				<div class="bottomcontentdt">
 					 					<a href="#" id="show-popup1"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconcall.gif"/></a>
@@ -70,7 +70,7 @@
 					 				<div class="bottomcontentdt">
 					 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
 					 				</div>
-					 				<div class="bottomcontentdt1">
+					 				<!--<div class="bottomcontentdt1">
 					 					<p>What people think about us</p>
 					 					<ul>
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
@@ -79,7 +79,7 @@
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
 					 					</ul>
-					 				</div>
+					 				</div>-->
 					 			</div><br clear="both" />
 						 	</div>
 					 			<!----------- <?php echo $chitiet->lecturers_content ?>--------------->
@@ -160,13 +160,14 @@
 				        		
 				        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 				        		<div class="slideimage">
-				        			
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
+				        			<?php foreach ($list_slide1 as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+										 echo $slide->anh5;
+									}?>
 				        		</div>
 				        		</div>
 				        		

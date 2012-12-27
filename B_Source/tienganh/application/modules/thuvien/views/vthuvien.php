@@ -129,12 +129,14 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 			        		<div class="slideimage">
 			        			
-			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_155.gif"/>
-			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_155.gif"/>
-			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-chu_155.gif"/>
+			        			<?php foreach ($list_slide1 as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+										 echo $slide->anh5;
+									}?>
 			        		</div>
 			        		</div>
 			        	</div>

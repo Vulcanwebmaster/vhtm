@@ -19,10 +19,13 @@
 				 	<div class="slidegv">
 				 		<div class="slider-wrapper theme-default">
 				            <div id="slider" class="nivoSlider">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="images/slide1.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">		                
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="images/slide2.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="images/slide4.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
+							<?php foreach ($list_slide as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+									}?>
 		        		</div>
 				 	</div>
 				 	<div id="contentgv">
@@ -190,13 +193,14 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 			        		
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 			        		<div class="slideimage">
-			        			
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
+			        			<?php foreach ($list_slide1 as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+										 echo $slide->anh5;
+									}?>
 			        		</div>
 			        		</div>
 			        		

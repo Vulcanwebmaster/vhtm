@@ -119,6 +119,7 @@ class Giangvien extends NIW_Controller
 			$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 			$data['list_slide']=$this->Mgiangvien->getListFull('slide');
+			$data['list_slide1']=$this->Mgiangvien->getListFull('slide1');
 			$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
