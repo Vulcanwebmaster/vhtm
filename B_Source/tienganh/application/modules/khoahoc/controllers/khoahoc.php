@@ -68,7 +68,9 @@ class Khoahoc extends NIW_Controller
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
+			//var_dump($data['category']); die();
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
+			//var_dump($data['items']); die();
 			$data['module']  =  $this->module;
 			$data['page']  =  'vkhoahoc';
 			$this->load->view('front/container',$data);

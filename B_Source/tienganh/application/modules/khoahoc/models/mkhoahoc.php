@@ -26,6 +26,20 @@ class Mkhoahoc extends CI_Model
 		
 	}
 	
+	function getListOffsetcate($tableName='',$offset='',$index='')
+	 {
+	 	$this->db->select();
+		$this->db->from('ta_courses');
+		$this->db->join('ta_courses_cate','ta_courses_cate.id=ta_courses.courses_category');
+	 	$ds=$this->db->get('ta_courses_cate',$offset,$index);
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
 	function CountFull()
 	{
 		$list=$this->db->get('ta_courses');

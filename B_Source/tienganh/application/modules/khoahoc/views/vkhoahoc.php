@@ -4,9 +4,17 @@
 					<div id="imgleftgv"><p align="center">Thư viện</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<?php var_dump($category); die(); ?><?php foreach ($category as $value) 
+				 			<!-- <?php foreach ($category as $value) 
 				 			{ ?>
 				 				<li id="li_leftgv4"><a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id?>"><?php echo $value->cate_name?></a></li>
+				 			<?php } ?> -->
+				 			<?php foreach ($list_courses_cate as $value) 
+				 			{ ?>
+				 				<li id="li_leftgv4">
+				 					<a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id?>"><?php echo $value->cate_name?>
+				 						
+				 					</a>
+				 				</li>
 				 			<?php } ?>
 				 		</ul>
 				 	</div>
@@ -39,30 +47,12 @@
 				 				?>
 				 			</a></p> -->
 				 		</div>
-				 		
-			        	<!------<div class="textmaincontent1">
-			        		<?php foreach ($items as $item) 
-							{ ?>
-			        		<div class="idmain">
-			        			<div class="img_main1">
-			        				<?php echo $item->news_image ?>
-			        			</div>
-			        			<div class="text_main">
-			        				<p class="title"><?php echo $item->news_title ?></p>
-			        				<p><?php echo word_limiter(strip_tags($item->news_content), 40)?> 
-									</br><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id;?>">
-										Xem thêm <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/></a></p>
-			        			</div>
-			        		</div>
-			        		<?php } ?>
-			        		<div><?php echo $this->pagination->create_links();?></div>
-			        	</div>------------>
-			        	<!--------------begin khóa học---------------->
+				 	
 			        	<div id="contentmaingv">
 			        	<?php foreach ($items as $item) 
 							{ ?>
 			        	<div class="ctgv">				 			
-			 					<!--<div class="divgv"><?php echo $item->lecturers_image ?></div>--->
+			 					
 			 					<div class="img_main2" style="width: 23% ">
 		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."-".$date1[1]."</br>".$date1[0] ?></p>
 		        				</div>
@@ -75,7 +65,7 @@
 				 			</div>	
 			        	<?php } ?>
 			        	<div><?php echo $this->pagination->create_links();?></div>
-			        	</div>
+			        	</div> 
 			        	<!--------------End khóa học---------------->
 				</div>
 				<!-----------end share------------>
