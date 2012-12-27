@@ -13,23 +13,6 @@
 		}
 	</style>
 	
-	
-<!-- 	<div id="popup" align="center">
-			<div id="popup-header">Video<span id="popup-close" title="Close">close</span></div>
-			   
-		    <div id="popup-content">
-		    	<form>
-		    		<?php foreach ($list as $value) {?>
-					<div class="children" align="center">
-						 <iframe width="400" height="300" frameborder="0" allowfullscreen="" src="http://www.youtube-nocookie.com/embed/<?php echo $value->link_vedio?>" style="padding-left:5px; padding-top: 10px;">
-						</iframe>
-					</div>
-					<?php } ?>
-				</form>
-		    </div>
-		</div> -->
-		
-		
 	<div id="content">
 				<!--<img src="<?php echo base_url()?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv"/>-->
 				<?php echo $this->load->view('front/menu-trai-thuvien');?>
@@ -54,8 +37,8 @@
 					 			<div class="bgvdcontent">
 					 				<ul style="list-style-type: none; margin:0; padding:0">
 					 					<li>
-						 					<a rel="fancyvideo" href="http://www.youtube.com/watch?v=<?php echo $value->link_vedio?>">
-												<img src="http://img.youtube.com/vi/<?php echo $value->link_vedio?>/3.jpg" style="margin:3px 17px">
+						 					<a rel="fancyvideo" href="<?php echo $value->link_vedio?>">
+												<img src="http://img.youtube.com/vi/<?php echo substr($value->link_vedio,31)?>/3.jpg" style="margin:3px 17px">
 				                            <p align="center"><?php echo $value->vedio_title ?></p>
 				                        	</a>
 			                        	</li>

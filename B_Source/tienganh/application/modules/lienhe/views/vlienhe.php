@@ -37,9 +37,9 @@
 				 			<p style="text-transform: uppercase">Bạn quan tâm dến</p>
 				 			<form action="<?php echo base_url();?>lienhe/send" method="post">
 				 				<select name="lecturers_category">
-				 					<option value="3">Trợ giảng</option>
-				 					<option value="1">Thầy giáo</option>
-				 					<option value="2">Cô giáo</option>
+				 					<option value="Trợ giảng">Trợ giảng</option>
+				 					<option value="Thầy giáo">Thầy giáo</option>
+				 					<option value="Cô giáo">Cô giáo</option>
 				 				</select>
 				 				<p style="text-transform: uppercase">Tên <span style="color:red">*</span></p>
 				 				<input type="text" name="contact_name">

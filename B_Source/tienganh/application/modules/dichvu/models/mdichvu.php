@@ -1,5 +1,5 @@
 <?php
-class Mdanhmuc extends CI_Model
+class Mdichvu extends CI_Model
 {
 	function __construct()
 	{

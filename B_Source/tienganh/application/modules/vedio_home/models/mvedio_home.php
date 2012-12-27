@@ -1,5 +1,5 @@
 <?php
-class Mdanhmuc extends CI_Model
+class Mvedio_home extends CI_Model
 {
 	function __construct()
 	{

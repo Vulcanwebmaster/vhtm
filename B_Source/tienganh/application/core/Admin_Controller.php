@@ -69,6 +69,7 @@ class Admin_Controller extends NIW_Controller
 		$config['toolbar']='Full';
 		$config['width']=$width;
 		$config['height']=$height;
+		$config['entities_latin'] = false;
 		return $config;
 	}
 	

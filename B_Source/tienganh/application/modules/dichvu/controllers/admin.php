@@ -16,7 +16,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Minfo');
+			$this->load->model('Mdichvu');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 			
@@ -32,15 +32,15 @@
 		
 		function page($index=0)
 		{
-			$config['base_url']=base_url().'info/admin/page/';
+			$config['base_url']=base_url().'dichvu/admin/page/';
 			$config['per_page']=10;
-			$config['total_rows']=count($this->Minfo->getListFull('n_'));
+			$config['total_rows']=count($this->Mdichvu->getListFull('ta_dichvu'));
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Danh mục';
-			$data['bcCurrent']='danh mục';
-			$data['list']=$this->Minfo->getListOffset('ta_courses_cate',10,$index);
+			$data['title']='Dịch vụ';
+			$data['bcCurrent']='dịch vụ';
+			$data['list']=$this->Mdichvu->getListOffset('ta_dichvu',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
@@ -50,8 +50,8 @@
 		function _input()
 		{
 			$input=array(
-						'cate_name'=>$this->input->post('cate_name'),
-						'alias'=>$this->getAliasByName($this->input->post('cate_name')),
+						'ten'=>$this->input->post('ten'),
+				
 						);
 			return $input;
 		}
@@ -59,25 +59,25 @@
 		
 		function insert()
 		{
-			if (!$this->input->post('cate_name'))
+			if (!$this->input->post('ten'))
 			{
-				$data['list']=$this->Minfo->getListFull('ta_courses_cate');
+				$data['list']=$this->Mdichvu->getListFull('ta_dichvu');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Thêm danh mục';
-				$data['bcCurrent']='Danh mục';
+				$data['title']='Thêm dịch vụ';
+				$data['bcCurrent']='Dịch vụ';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('cate_name','Tên ','required|trim');
+				$this->form_validation->set_rules('ten','Tên ','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Minfo->insertNewRow('ta_courses_cate',$input))
+					if ($this->Mdichvu->insertNewRow('ta_dichvu',$input))
 					{
 						$this->session->set_userdata('result','Thêm mới thành công');
 					}
@@ -86,10 +86,10 @@
 				}
 				else 
 				{
-					$data['list']=$this->Minfo->getListFull('ta_courses_cate');
+					$data['list']=$this->Mdichvu->getListFull('ta_dichvu');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Thêm danh mục';
-					$data['bcCurrent']='danh mục';
+					$data['title']='Thêm dịch vụ';
+					$data['bcCurrent']='dịch vụ';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -104,24 +104,24 @@
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
 			//echo $this->input->post('courses_name');die();
-			if (!$this->input->post('cate_name'))
+			if (!$this->input->post('ten'))
 			{
-				$data['info']=$this->Minfo->getRowByColumn('ta_courses_cate','id',$id);
-				$data['title']='Sửa danh mục';
-				$data['bcCurrent']='danh mục';
+				$data['info']=$this->Mdichvu->getRowByColumn('ta_dichvu','id',$id);
+				$data['title']='Sửa dịch vụ';
+				$data['bcCurrent']='dịch vụ';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('cate_name','Tên','required|trim');
+				$this->form_validation->set_rules('ten','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Minfo->updateRowByColumn('ta_courses_cate','id',$id,$input))
+					if ($this->Mdichvu->updateRowByColumn('ta_dichvu','id',$id,$input))
 					{
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
@@ -130,9 +130,9 @@
 				}
 				else 
 				{
-					$data['info']=$this->Minfo->getRowByColumn('ta_courses_cate','id',$id);
-					$data['title']='Sửa danh mục';
-					$data['bcCurrent']='danh mục';
+					$data['info']=$this->Mdichvu->getRowByColumn('ta_dichvu','id',$id);
+					$data['title']='Sửa dịch vụ';
+					$data['bcCurrent']='dịch vụ';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -143,7 +143,7 @@
 		
 		function delete($id=0)
 		{
-			if ($this->Minfo->deleteRowByColumn('ta_courses_cate','id',$id))
+			if ($this->Mdichvu->deleteRowByColumn('ta_dichvu','id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');
 			}

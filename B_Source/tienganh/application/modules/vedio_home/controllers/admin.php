@@ -1,13 +1,4 @@
-
 <?php
-/**
- * 
- * This class is controller of Thu vien in front. 
- * There are some functions to list images, videos and get detail of them...
- * @author Tuyetnt
- * @date 2012/12/15
- *
- */
 	class Admin extends Admin_Controller
 	{
 		private $module;
@@ -16,7 +7,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Minfo');
+			$this->load->model('Mvedio_home');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 			
@@ -25,59 +16,53 @@
 			//=============================================
 		}
 		
-		function index()
+		function index($index=0)
 		{
-			$this->page();
-		}
-		
-		function page($index=0)
-		{
-			$config['base_url']=base_url().'info/admin/page/';
-			$config['per_page']=10;
-			$config['total_rows']=count($this->Minfo->getListFull('n_'));
-			$config['uri_segment']=4;
+			$config['base_url']=base_url().'vedio_home/admin/index/';
+			$config['per_page']=15;
+			$config['total_rows']=count($this->Mvedio_home->getListFull('ta_vedio_home'));
+			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Danh mục';
-			$data['bcCurrent']='danh mục';
-			$data['list']=$this->Minfo->getListOffset('ta_courses_cate',10,$index);
+			$data['title']='Thông tin vedio';
+			$data['bcCurrent']='Vedio';
+			$data['list']=$this->Mvedio_home->getListOffset('ta_vedio_home',15,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
 		}
 		
-		
 		function _input()
 		{
 			$input=array(
-						'cate_name'=>$this->input->post('cate_name'),
-						'alias'=>$this->getAliasByName($this->input->post('cate_name')),
-						);
+						
+						'link_vedio'=>$this->input->post('link_vedio'));
+		
 			return $input;
 		}
 		
-		
 		function insert()
 		{
-			if (!$this->input->post('cate_name'))
+			if (!$this->input->post('link_vedio'))
 			{
-				$data['list']=$this->Minfo->getListFull('ta_courses_cate');
+				$data['list']=$this->Mvedio_home->getListFull('ta_vedio_home');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Thêm danh mục';
-				$data['bcCurrent']='Danh mục';
+				$data['title']='Thêm vedio';
+				$data['bcCurrent']='Vedio';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('cate_name','Tên ','required|trim');
+				$this->form_validation->set_rules('link_vedio','Tên','required|trim');
+				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Minfo->insertNewRow('ta_courses_cate',$input))
+					if ($this->Mvedio_home->insertNewRow('ta_vedio_home',$input))
 					{
 						$this->session->set_userdata('result','Thêm mới thành công');
 					}
@@ -86,10 +71,10 @@
 				}
 				else 
 				{
-					$data['list']=$this->Minfo->getListFull('ta_courses_cate');
+					$data['list']=$this->Mvedio_home->getListFull('ta_vedio_home');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Thêm danh mục';
-					$data['bcCurrent']='danh mục';
+					$data['title']='Thêm vedio';
+					$data['bcCurrent']='Vedio';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -97,31 +82,31 @@
 			}
 		}
 		
-
 		function edit($id=0)
 		{
 			//=============================================
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
-			//echo $this->input->post('courses_name');die();
-			if (!$this->input->post('cate_name'))
+			if (!$this->input->post('link_vedio'))
 			{
-				$data['info']=$this->Minfo->getRowByColumn('ta_courses_cate','id',$id);
-				$data['title']='Sửa danh mục';
-				$data['bcCurrent']='danh mục';
+				$data['list']=$this->Mvedio_home->getListFull('ta_vedio_home');
+				$data['info']=$this->Mvedio_home->getRowByColumn('ta_vedio_home','vedio_id',$id);
+				$data['title']='Sửa vedio';
+				$data['bcCurrent']='vedio';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('cate_name','Tên','required|trim');
+				$this->form_validation->set_rules('link_vedio','Tiêu đề (Việt)','required|trim');
+				
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Minfo->updateRowByColumn('ta_courses_cate','id',$id,$input))
+					if ($this->Mvedio_home->updateRowByColumn('ta_vedio_home','vedio_id',$id,$input))
 					{
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
@@ -130,9 +115,10 @@
 				}
 				else 
 				{
-					$data['info']=$this->Minfo->getRowByColumn('ta_courses_cate','id',$id);
-					$data['title']='Sửa danh mục';
-					$data['bcCurrent']='danh mục';
+					$data['list']=$this->Mvedio_home->getListFull('ta_vedio_home');
+					$data['info']=$this->Mvedio_home->getRowByColumn('ta_vedio_home','vedio_id',$id);
+					$data['title']='Sửa vedio';
+					$data['bcCurrent']='Vedio';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -140,10 +126,9 @@
 			}
 		}
 		
-		
 		function delete($id=0)
 		{
-			if ($this->Minfo->deleteRowByColumn('ta_courses_cate','id',$id))
+			if ($this->Mvedio_home->deleteRowByColumn('ta_vedio_home','vedio_id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');
 			}

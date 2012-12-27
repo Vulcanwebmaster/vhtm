@@ -36,6 +36,7 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
+							<th>Chủ đề</th>
 		    				<th>Tên</th>
 		    				<th>Địa chỉ email</th>
 		    				<th>Phone</th> 
@@ -50,6 +51,7 @@
 					 	{ $i++;	?>
 					 		<tr>  
 					 			<td><?php echo $i;?></td> 
+					 			<td><?php echo $item->lecturers_category;?></td>
 			    				<td><?php echo $item->contact_name;?></td>
 			    				<td><?php echo $item->contact_email;?></td> 
 			    				<td><?php echo $item->contact_phone;?></td>

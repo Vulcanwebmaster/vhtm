@@ -25,6 +25,7 @@ class Tintuc extends NIW_Controller
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mtintuc->getListFull('ta_news'));
 			$this->pagination->initialize($config);
+			$data['list_dichvu']=$this->Mtintuc->getListFull('ta_dichvu');
 			$data['items'] = $this->Mtintuc->getListOffset('ta_news',10,$index);
 			$data['title']='tienganh | Tin tức';
 			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
@@ -42,6 +43,7 @@ class Tintuc extends NIW_Controller
 	
 	function mamnon($index=0)
 	{
+			$data['list_dichvu']=$this->Mtintuc->getListFull('ta_dichvu');
 			$config['base_url'] = base_url().'tintuc/mamnon';
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh mầm non'));
@@ -63,6 +65,7 @@ class Tintuc extends NIW_Controller
 	
 	function tieuhoc($index=0)
 	{
+			$data['list_dichvu']=$this->Mtintuc->getListFull('ta_dichvu');
 			$config['base_url'] = base_url().'tintuc/tieuhoc';
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh tiểu học'));
@@ -84,6 +87,7 @@ class Tintuc extends NIW_Controller
 
 	function sinhvien($index=0)
 	{
+			$data['list_dichvu']=$this->Mtintuc->getListFull('ta_dichvu');
 			$config['base_url'] = base_url().'tintuc/sinhvien';
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh cho sinh viên'));
@@ -106,6 +110,7 @@ class Tintuc extends NIW_Controller
 	
 	function dilam($index=0)
 	{
+			$data['list_dichvu']=$this->Mtintuc->getListFull('ta_dichvu');
 			$config['base_url'] = base_url().'tintuc/dilam';
 			$config['per_page'] = 10;
 			$config['total_rows']=count($this->Mtintuc->getListByColumn('ta_news','news_category','Tiếng Anh cho người đi làm'));
@@ -127,6 +132,7 @@ class Tintuc extends NIW_Controller
 	
 	function detail($id=0)
 		{
+			$data['list_dichvu']=$this->Mtintuc->getListFull('ta_dichvu');
 			$data['list_courses'] = $this->Mtintuc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mtintuc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mtintuc->getListFullCategory('ta_courses');

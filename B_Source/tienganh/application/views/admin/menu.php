@@ -8,6 +8,7 @@
 	<ul class="toggle">
 		
 		<li class="icn_application"><a href="<?php echo base_url()?>tintuc/admin">Tin tức</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>dichvu/admin">Sản phẩm và Dịch vụ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>giangvien/admin">Giảng viên</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>info/admin">Thông tin</a></li>
@@ -19,7 +20,8 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>anh/admin">Hình ảnh</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>album/admin">Album</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>vedio_home/admin">Video trang chủ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video thư viện</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slidefooter/admin">Slide Footer</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>email/admin">Email</a></li>

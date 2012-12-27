@@ -27,6 +27,7 @@ class Khoahoc extends NIW_Controller
 			$config['total_rows']  =  count($this->Mkhoahoc->getListFull('ta_courses'));
 			$this->pagination->initialize($config);
 			$data['title']='tienganh | Khóa học';
+			$data['list_dichvu']=$this->Mkhoahoc->getListFull('ta_dichvu');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
@@ -44,6 +45,7 @@ class Khoahoc extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			$data['list_dichvu']=$this->Mkhoahoc->getListFull('ta_dichvu');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mkhoahoc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
@@ -63,6 +65,7 @@ class Khoahoc extends NIW_Controller
 	
 	function category($id)
 	{
+			$data['list_dichvu']=$this->Mkhoahoc->getListFull('ta_dichvu');
 		// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
 			$temp = explode("-", $id);
 			if (isset($temp)){

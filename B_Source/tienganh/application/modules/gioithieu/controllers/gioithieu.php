@@ -22,6 +22,7 @@ class Gioithieu extends NIW_Controller
 		}
 		function index()
 		{
+			$data['list_dichvu']=$this->Mgioithieu->getListFull('ta_dichvu');
 			$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
@@ -31,6 +32,7 @@ class Gioithieu extends NIW_Controller
 		function page($index=0)
 		{
 			
+			$data['list_dichvu']=$this->Mgioithieu->getListFull('ta_dichvu');
 			$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 			$data['items']=$this->Mgioithieu->getListByColumn('ta_about_us','about_category',1);
 			$data['title']='tienganh | Giới thiệu';
@@ -48,6 +50,7 @@ class Gioithieu extends NIW_Controller
 	
 	function sumenh($index=0)
 		{
+				$data['list_dichvu']=$this->Mgioithieu->getListFull('ta_dichvu');
 				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
@@ -63,6 +66,7 @@ class Gioithieu extends NIW_Controller
 		
 	function tamnhin($index=0)
 		{
+				$data['list_dichvu']=$this->Mgioithieu->getListFull('ta_dichvu');
 				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
@@ -78,6 +82,7 @@ class Gioithieu extends NIW_Controller
 		
 	function giatri($index=0)
 		{
+				$data['list_dichvu']=$this->Mgioithieu->getListFull('ta_dichvu');
 				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
@@ -93,6 +98,7 @@ class Gioithieu extends NIW_Controller
 		
 	function vanhoa($index=0)
 		{
+				$data['list_dichvu']=$this->Mgioithieu->getListFull('ta_dichvu');
 				$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');

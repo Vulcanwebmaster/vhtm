@@ -13,6 +13,7 @@ class Lienhe extends NIW_Controller
 	
 	function index()
 	{
+		$data['list_dichvu']=$this->Mlienhe->getListFull('ta_dichvu');
 		$data['list_doitac']=$this->Mlienhe->getListFull('doitac');	
 		$data['hotro_online']=$this->Mlienhe->getListFull('hotroonline');
 		$data['list_slide']=$this->Mlienhe->getListFull('slide');

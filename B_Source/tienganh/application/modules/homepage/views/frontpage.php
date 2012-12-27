@@ -93,7 +93,7 @@
 		            		<div class="contentvideo">	
 								<ul id="slidervideo">
 									<!-- YouTube: iframe -->
-									<li class="panel3">
+									<!-- <li class="panel3">
 										<iframe src="http://www.youtube.com/embed/ZnOAK04tJhc" frameborder="0" allowfullscreen></iframe>
 									</li>
 									<li class="panel3">
@@ -110,10 +110,13 @@
 									</li>
 									<li class="panel3">
 										<iframe src="http://www.youtube.com/embed/ognsGWAkvU8" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/XBTCLV86a3Y" frameborder="0" allowfullscreen></iframe>
-									</li>
+									</li> -->
+									<?php foreach ($list_video_home as $key) {?>
+										<li class="panel3">
+										<iframe src="<?php echo $key->link_vedio?>" frameborder="0" allowfullscreen></iframe>
+										</li>
+									<?php } ?>
+									
 								</ul>
 		            		</div>				       
 		        	</div>

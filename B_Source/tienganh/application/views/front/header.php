@@ -1,15 +1,44 @@
+
 <div id="header">
 				<div class="content_header">
 					<div id="topheader">
 						<div id="left_topheader">
-							<div class="left_top">
+							<!-- <div class="left_top">
 								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.gif"/>
-								<p>Bookmark us</p>
+								<p>
+									<script language="javascript">
+									<!--
+									function bookmarksite(title, url) {
+										if (document.all)
+											window.external.AddFavorite(url, title);
+										else if (window.sidebar)
+											alert("Press Ctrl D keys to bookmark our site");
+									}
+									
+								</script>
+									<li><a href="javascript:bookmarksite('Yoursite.com','http://www.yoursite.com')">Bookmark us</a></li>
+								</p>
+							</div> -->
+							<div class="left_top">
+								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.gif">
+								<!-- START BOOKMARK LINK -->
+								<script language="javascript">
+									
+									function bookmarksite(title, url) {
+										if (document.all)
+											window.external.AddFavorite(url, title);
+										else if (window.sidebar)
+											alert("Press Ctrl D keys to bookmark our site");
+									}
+								
+								</script>
+	<a href="javascript:bookmarksite('trungtam-tienganh.com','<?php echo base_url();?>homepage')">Bookmark Us</a>
+<!-- END BOOKMARK LINK -->
 							</div>
 							<div class="left_top">|</div>
 							<div class="left_top">
 								<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/gif.gif" alt="">
-								<p>RSS</p>
+								<a href="<?php echo base_url();?>rss"<p>RSS</p></a>
 							</div>
 						</div>
 						<div id="right_topheader">

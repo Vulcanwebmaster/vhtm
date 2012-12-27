@@ -3,9 +3,9 @@
 					<div class="ft1">
 						<p>Sản phẩm và dịch vụ</p>
 						<ul>
-							<li><a href="#">Tiếng anh cho mầm non</a></li>
-							<li><a href="#">Tiếng anh cho tiểu học</a></li>
-							<li><a href="#">Tiếng anh cho sinh viên</a></li>
+							<?php foreach ($list_dichvu as $key) {?>
+								<li><a href="<?php echo base_url();?>"><?php echo $key->ten ?></a></li>
+							<?php }?>
 						</ul>
 					</div>
 					<div class="ft1">

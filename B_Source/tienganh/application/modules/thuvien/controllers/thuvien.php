@@ -16,6 +16,7 @@ class Thuvien extends NIW_Controller
 			$this->module	=	strtolower(get_class());
 			
 			$this->load->model('Mthuvienanh');
+			$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
 			$this->data['list_slide1']=$this->Mthuvienanh->getListFull('slide1');
@@ -29,6 +30,7 @@ class Thuvien extends NIW_Controller
 		{
 			$this->data['module']			=	$this->module;
 			$this->data['page']			=	'vthuvien';
+			$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 			$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
@@ -42,6 +44,7 @@ class Thuvien extends NIW_Controller
 	function category($category_id = '0', $index = 0)
 	{
 		$this->data['module']		=	$this->module;
+		$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
@@ -79,6 +82,7 @@ class Thuvien extends NIW_Controller
 	 */
 	function video($video_id=0)
 	{
+		$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
@@ -106,6 +110,7 @@ class Thuvien extends NIW_Controller
 	 */
 	function album($album_id = '0')
 	{
+		$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
