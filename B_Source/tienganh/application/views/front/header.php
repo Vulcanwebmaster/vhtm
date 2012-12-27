@@ -18,9 +18,9 @@
 						</div>
 					</div>
 					<div id="absalute">
-						<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/titwer.gif"/></a>
-						<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/tube.gif" /></a>
-						<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.gif"/></a>
+						<a href="https://twitter.com/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/titwer.gif"/></a>
+						<a href="https://www.youtube.com/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/tube.gif" /></a>
+						<a href="http://www.facebook.com/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/face.gif"/></a>
 					</div>
 					<div id="header_logo">
 						<div id="logo">
@@ -33,10 +33,11 @@
 								cursor: pointer
 							}
 						</style>
+						<!------------Google Search---------->
 						<div id="search">
 							<div class="input">
 								<form action="http://www.google.com/search" method="get" target="_blank">
-									<input type="text" name="search" class="inputsearch"/>
+									<input type="text" name="query" class="inputsearch"/>
 									<!--<label class="labelsearch">Search</label>-->
 									<input type="submit" value="Tìm kiếm" onclick="this.form.keyword.focus();" class="submitsearch"/>
 									<input value="niw.com.vn" name="sitesearch" style="opacity: 0">
@@ -46,6 +47,7 @@
 								<a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/language.gif"/></a>
 							</div>
 						</div>
+						<!------------End Google Search---------->
 					</div>
 					
 					<div id="menutop">
@@ -83,7 +85,6 @@
 																	</div>
 																</div>
 														<?php } ?>
-										
 							</li>
 							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
 							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>
