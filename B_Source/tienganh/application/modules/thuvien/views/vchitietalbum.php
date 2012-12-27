@@ -37,7 +37,7 @@
         		});
 				</script>
 	 	<div id="contentgv">
-	 		<div id="titlecontentgv"style="overflow: hidden;">
+	 		<div id="titlecontentgv">
 	 			<p style="margin-top:-20px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconimg.png"/></p>
 	 			<p><a href="#" style="color:#1b75bb">Khóa học 1 <label style="color:#f6921e">(10)</label></a></p>
 	 			<p style="margin-top:8px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconimgvd.png"/></p>
@@ -58,7 +58,7 @@
 	 				<?php foreach ($list as $image)
 	 				{
 	 					$image_file	=	$image->image_file;
-	 					echo substr($image_file, 3, count($image_file)-7);
+	 					echo substr($image_file, 3, count($image_file)-6);
 	 				}?>
 	 			</div>
 	 			</div>
@@ -163,4 +163,4 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 </div>
 <script type="text/javascript">
 				$('#libraryhd').addClass('bgli');
-			</script>
+</script>

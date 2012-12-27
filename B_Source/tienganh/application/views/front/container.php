@@ -55,15 +55,16 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-
+		
 		$(document).ready(function(){	
 			var left=$('.slideimage').css("left");	        			
 			var right=$('.slideimage').css("right");			
-					
+					var a=0;
 				 $(".prev12").click(function(){
 				 	left=$('.slideimage').css("left");	        			
 					right=$('.slideimage').css("right");
 					//alert(parseInt(left) >=parseInt('0'));
+					a=1;
 				 	if(parseInt(left) < parseInt('0px'))
 					{	
 			 	 		//$(".slideimage").animate({"left": "=0"}, "slow");
@@ -80,6 +81,7 @@
 					left=$('.slideimage').css("left");	        			
 					right=$('.slideimage').css("right");
 					//alert(parseInt(left) + " " + parseInt('1500px'));
+					a=1;
 					if(parseInt(left) <= parseInt('-933px'))
 					{	
 						
