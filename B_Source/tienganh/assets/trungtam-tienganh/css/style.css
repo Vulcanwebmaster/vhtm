@@ -229,7 +229,8 @@ a:hover, a:active, a:focus {
 	margin: 20px 55px
 }
 #share {
-	margin-top: 55px; border-bottom:1px solid #ccc
+	margin-top: 55px; border-bottom:1px solid #ccc;
+	padding-top: 30px;
 }
 #share p{
 	color: #666;
