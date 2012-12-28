@@ -84,11 +84,11 @@ a:hover, a:active, a:focus {
 .idmain1{clear:both; border-bottom:1px solid #c9c8c8; padding-top:10px; height:93px;}
 .titlemain{background:url(../images/icon1.gif) no-repeat scroll 0px -1px; height:100%}
 .bgtitlemain{ background-color:#1b75bb; width:150px; height:30px}
-.bgtitlemain p{ margin:0; padding:4px 0 0 30px !important; font-size:18px; color:#fff; text-transform:uppercase}
+.bgtitlemain p{ margin:0; padding:4px 0 0 30px !important; font-size:21px; color:#fff; text-transform:uppercase}
 
 .img_main2{ width:17%;  height:100%; float:left}
 .img_main2 img{ width:120px !important; height:84px !important;}
-.img_main2 p{ width:70px;padding-top:15px !important; height:65px; float:left; background-color:#1b75bb; font-size:16px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
+.img_main2 p{ width:65px;padding-top:15px !important; height:57px; float:left; background-color:#4FD510; font-size:20px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
 .readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:75px; height:20px;padding-top:5px; text-align:center; margin-top:10px; border-radius:3px; }
@@ -263,7 +263,7 @@ a:hover, a:active, a:focus {
 .ctdtimg{float:right; padding:6px 5px 5px 5px}
 .ctdtimg a{}
 
-.slideimgimg img{ width:443px !important; height:357px !important; float:left;}
+.slideimgimg img{ width:443px; height:357px ; float:left;}
 .next121,.prev121{ cursor: pointer}
 .zoomimg{ width:663px !important; height:560px !important}
 .zoomdiv{ width:663px !important; height:560px !important;}

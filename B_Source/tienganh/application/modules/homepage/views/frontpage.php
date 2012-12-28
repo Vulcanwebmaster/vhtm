@@ -24,7 +24,7 @@
 		        <div id="manincontent">
 		        	<div class="contenttext">
 			        	<div class="textmaincontent">
-			        		<div class="bgtitlemain"><p class="titlemain">Tin tức</p></div>
+			        		<div class="bgtitlemain" style="width:122px;"><p class="titlemain">Tin tức</p></div>
 			        		
 			        		<?php foreach ($list_tintuc as $item) 
 									{ ?>

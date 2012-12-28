@@ -6,26 +6,33 @@
 	 </style>
 		 <div id="content_right">
 		 	<?php echo $this->load->view('front/slide-thuvien')?>
-	 		<script type="text/javascript">
-        		$(document).ready(function(){		        			
+	 		<!--<script type="text/javascript">
+        		$(document).ready(function(){		
+        				var next2=0;
+							var prev2=0;
+					window.setInterval(function(){ 
+						next2=0; prev2=0;        			
         			$(".prev121").click(function(){
             			$marginLeft = $(".slideimgimg").css("left");
             			if (parseInt($marginLeft)<0)
 				  			$(".slideimgimg").animate({"left": "+=443px"}, "slow");
+				  			prev2=1;
 					});
 					
 					$(".next121").click(function(){
 						// get list all of images
-            			var listImages	=	$(".slideimgimg").children("img");
-
+            			//var listImages	=	$(".slideimgimg").children("img");
             			// compute width follow above list
-            			var totalWidth	=	443 * listImages.length;
+            			//var totalWidth	=	443 * listImages.length;
+            			//var totalWidth	=	443 * 2;
 
             			var marginLeft =	$(".slideimgimg").css("left");
-            			if (marginLeft != 'auto') marginLeft	=	parseInt(marginLeft);
-            			if (-marginLeft < totalWidth || marginLeft=='auto')
+            			//if (marginLeft != 'auto') marginLeft	=	parseInt(marginLeft);
+            			if (marginLeft < -886px )
 					  		$(".slideimgimg").animate({"left": "-=443px"}, "slow");
-					});
+					  		next2=1;
+					})
+					}, 1000);
 					$('#zoom').click(function(){
 						$('.slideimgimg img').addClass('zoomimg');
 						$('#divzomm').addClass('zoomdiv');
@@ -34,8 +41,63 @@
 						$('.slideimgimg img').removeClass('zoomimg');
 						$('#divzomm').removeClass('zoomdiv');
 					});
+				
         		});
-				</script>
+				</script>-->
+				<script type="text/javascript">
+		
+	$(document).ready(function(){	
+		var next2=0;
+				var prev2=0;
+		window.setInterval(function(){ 
+			next2=0; prev2=0;
+			var left=$('.slideimage').css("left");	        			
+			var right=$('.slideimage').css("right");			
+				
+				
+				 $(".prev121").click(function(){
+				 	left=$('.slideimgimg').css("left");	        			
+					right=$('.slideimgimg').css("right");
+					//alert(parseInt(left) >=parseInt('0'));
+					if (next2==0)
+					 	if(parseInt(left) < parseInt('0px'))
+						{	
+				 	 		//$(".slideimage").animate({"left": "=0"}, "slow");
+				 	 		 $(".slideimgimg").animate({"left": "+=443px"}, "slow");
+				 	 		 next2=1;
+				 	 	}
+				});		
+				$(".next121").click(function(){
+					left=$('.slideimgimg').css("left");	        			
+					right=$('.slideimgimg').css("right");
+					//alert(parseInt(left) + " " + parseInt('1500px'));
+					//var listImages	=	$(".slideimgimg").children("img");
+            		//compute width follow above list
+            			//var totalWidth	=	443 * listImages.length;
+					if (prev2==0)
+					if(parseInt(left) <= parseInt('-886px'))
+					{	
+			 	 		 //$(".slideimage").animate({"left": "-=1500px"}, "slow");
+			 	 	}
+					else{										
+						 	 $(".slideimgimg").animate({"left": "-=443px"}, "slow");
+						 	 prev2=1;
+						
+						}
+					
+				});	
+				
+			}, 1000);
+				$('#zoom').click(function(){
+						$('.slideimgimg img').addClass('zoomimg');
+						$('#divzomm').addClass('zoomdiv');
+					});
+					$('.slideimgimg img').click(function(){
+						$('.slideimgimg img').removeClass('zoomimg');
+						$('#divzomm').removeClass('zoomdiv');
+					});
+		});
+	</script>
 	 	<div id="contentgv">
 	 		<div id="titlecontentgv">
 	 			<p style="margin-top:-20px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconimg.png"/></p>

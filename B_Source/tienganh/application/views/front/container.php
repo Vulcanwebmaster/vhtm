@@ -56,43 +56,46 @@
 	</body>
 	<script type="text/javascript">
 		
-		$(document).ready(function(){	
+	$(document).ready(function(){	
+		var next=0;
+				var prev=0;
+		window.setInterval(function(){ 
+			next=0; prev=0;
 			var left=$('.slideimage').css("left");	        			
 			var right=$('.slideimage').css("right");			
-					var a=0;
+				
+				
 				 $(".prev12").click(function(){
 				 	left=$('.slideimage').css("left");	        			
 					right=$('.slideimage').css("right");
 					//alert(parseInt(left) >=parseInt('0'));
-					a=1;
-				 	if(parseInt(left) < parseInt('0px'))
-					{	
-			 	 		//$(".slideimage").animate({"left": "=0"}, "slow");
-			 	 		 $(".slideimage").animate({"left": "+=311px"}, "slow");
-			 	 	}
-					else{
-											
-						 	
-						 
-					}	
-																
-				});				
+					if (next==0)
+					 	if(parseInt(left) < parseInt('0px'))
+						{	
+				 	 		//$(".slideimage").animate({"left": "=0"}, "slow");
+				 	 		 $(".slideimage").animate({"left": "+=311px"}, "slow");
+				 	 		 next=1;
+				 	 	}
+				});		
 				$(".next12").click(function(){
 					left=$('.slideimage').css("left");	        			
 					right=$('.slideimage').css("right");
 					//alert(parseInt(left) + " " + parseInt('1500px'));
-					a=1;
+					
+					if (prev==0)
 					if(parseInt(left) <= parseInt('-933px'))
 					{	
-						
 			 	 		 //$(".slideimage").animate({"left": "-=1500px"}, "slow");
 			 	 	}
 					else{										
 						 	 $(".slideimage").animate({"left": "-=311px"}, "slow");
+						 	 prev=1;
 						
-						}		
+						}
 					
 				});	
+				
+			}, 1000);
 		});
 	</script>
 </html>
