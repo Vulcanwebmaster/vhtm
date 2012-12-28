@@ -62,7 +62,9 @@
 			        	<div class="ctgv">				 			
 			 					<div class="divgv"><?php echo $item->lecturers_image ?></div>
 			 					<div class="divgv2">
-			 						<p class="tittlegv"><?php echo $item->lecturers_title ?></p>
+			 						<p class="tittlegv">
+			 							<a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id."-".$item->alias;?>">
+			 							<?php echo $item->lecturers_title ?></a></p>
 			 						<p><i><?php echo word_limiter(strip_tags($item->lecturers_content), 10)?> </i></p>
 			 						<p class="reamororgv"><a href="<?php echo base_url();?>giangvien/detail/<?php echo $item->lecturers_id."-".$item->alias;?>">Chi tiết</a></p>
 			 					</div >
