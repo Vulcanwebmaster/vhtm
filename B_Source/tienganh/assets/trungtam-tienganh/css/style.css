@@ -205,11 +205,11 @@ a:hover, a:active, a:focus {
 .bgvdcontent a{text-decoration:none;}
 .bottomcontentdt{float:left; width:27%;}
 .bottomcontentdt li{float: left; list-style: none;}
-.bottomcontentdt1{float:left; padding-top:25px;}
+.bottomcontentdt1{float:left; padding-top:82px; margin-left: -99px; }
 .bottomcontentdt1 p{font-size:7px;}
 .bottomcontentdt1 ul{margin:0; padding:0;}
 .bottomcontentdt1 li{list-style:none; float: left;}
-#contentdtbottom{ position:absolute; left:190px; bottom:33px; width:265px;}
+#contentdtbottom{ position:absolute; left:215px; bottom:33px; width:265px;}
 /*tin tuc*/
 #contenttt {
 	padding: 10px;

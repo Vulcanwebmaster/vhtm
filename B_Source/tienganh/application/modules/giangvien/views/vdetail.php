@@ -70,7 +70,7 @@
 					 				<div class="bottomcontentdt">
 					 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
 					 				</div>
-					 				<!--<div class="bottomcontentdt1">
+					 				<div class="bottomcontentdt1">
 					 					<p>What people think about us</p>
 					 					<ul>
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
@@ -79,7 +79,7 @@
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
 					 					</ul>
-					 				</div>-->
+					 				</div>
 					 			</div><br clear="both" />
 						 	</div>
 					 			<!----------- <?php echo $chitiet->lecturers_content ?>--------------->
