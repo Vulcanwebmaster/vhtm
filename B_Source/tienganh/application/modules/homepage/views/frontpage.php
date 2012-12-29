@@ -94,7 +94,7 @@
 								<ul id="slidervideo">
 									<!-- YouTube: iframe -->
 									<?php foreach ($list_video_home as $key) {?>
-									 <li class="panel3">
+									<li class="panel3">
 										<iframe src="http://www.youtube.com/embed/<?php echo substr($key->link_vedio,31)?>" frameborder="0" allowfullscreen></iframe>
 									</li>
 									<?php } ?> 

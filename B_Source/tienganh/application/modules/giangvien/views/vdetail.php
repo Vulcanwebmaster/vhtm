@@ -89,12 +89,13 @@
 							 					</ul>
 					 						</div>
 							 			</div><br clear="both" />
-					 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
+					 		<!---	<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
 					 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
+					 		
 					 			<div id="contetntitlegv">
 					 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
 					 				<div id="ltgv"><?php echo $chitiet->lecturers_content ?></div>
-					 			</div><br clear="both"/>
+					 			</div><br clear="both"/>--->
 					 			<!--<div class="videogvdt">
 					 				<iframe width="560" height="315" src="http://www.youtube.com/embed/lbw6_VdVWH8" frameborder="0" allowfullscreen></iframe>
 					 			</div>--->
