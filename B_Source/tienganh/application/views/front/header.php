@@ -82,7 +82,7 @@
 					<div id="menutop">
 						<ul>
 							<li class="home menu_move" id="homehd"><a href="<?php echo base_url();?>homepage">Home</a></li>
-							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu">Giới thiệu</a></li>
+							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu/sumenh">Giới thiệu</a></li>
 							<li  class="li menu_move" id="newshd"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
 							<li  class="li menu_move" id="coursehd"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
 					<div class="submenu">

@@ -52,12 +52,33 @@
 						'lecturers_title'=>$this->input->post('lecturers_title'),
 						'lecturers_category'=>$this->input->post('lecturers_category'),
 						'lecturers_content'=>$this->input->post('lecturers_content'),
+						'link_vedio' =>$this->strpos_content($this->input->post('lecturers_content')),
 						'lecturers_image'=>$this->input->post('lecturers_image'),
 						'alias'=>$this->getAliasByName($this->input->post('lecturers_title')),
 						);
 			return $input;
 		}
 		
+		function strpos_content($content)
+		{
+			        $start=strpos($content, 'http://youtube');
+			     //var_dump($stars); die();
+			     if ($start === FALSE)
+			      $start=strpos($content, 'http://www.youtube');
+			     
+			     if ($start !== FALSE)
+			      {
+			          $i=$start;
+			            //tang cho den khi lay dk gia tri
+			             while ($content[$i] != '<' && $i<strlen($content)-1) {
+			              //echo $content[$i];
+			                 $i++;
+			             }
+			       //die();
+			          return substr($content, $start,$i-$start);
+			         }
+			      else return FALSE;
+		}
 		function insert()
 		{
 			//=============================================

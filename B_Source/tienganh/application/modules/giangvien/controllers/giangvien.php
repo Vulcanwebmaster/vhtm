@@ -166,4 +166,6 @@ class Giangvien extends NIW_Controller
 			
 			$this->index();
 		}
+	
+	
 }

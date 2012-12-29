@@ -285,7 +285,7 @@
 			        				<a href-"#">
 			        				<img src="assets/trungtam-tienganh/images/zing.png" class="show1"/>
 			        				<img src="assets/trungtam-tienganh/images/zing1.png" class="show2"/>
-			        			</a>
+			        				</a>
 			        				<div class="children">
 			        					<div id="zme-root"></div>  
 
@@ -363,12 +363,6 @@
 										 echo $slide->anh4;
 										 echo $slide->anh5;
 									}?>
-			        			<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
-			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>-->
 			        		</div>
 			        		<!-- End Slide Footer---->
 			        		</div>

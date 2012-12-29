@@ -59,7 +59,7 @@ class Gioithieu extends NIW_Controller
 				$data['category']  =  $this->Mgioithieu->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Sứ mệnh',$index,4);
 				$data['module']=$this->module;
-				$data['index'] = 5;
+				$data['index'] = 0;
 				$data['page']='vgioithieu';
 				$this->load->view('front/container',$data);	
 		}
