@@ -1,3 +1,8 @@
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.pngFix.pack.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.fancybox-1.0.0.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/swfobject.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/trungtam-tienganh/css/fancy.css">
 	<div id="popup-bg"></div>
 	<style>
 		#popup-content{
@@ -15,7 +20,7 @@
 	    </div>
 	</div>
 	<div id="popup1">
-		<div id="popup-header">Phone<span id="popup-close" title="Close">x</span></div>
+		<div id="popup-header">Phone<span id="popup-close1" title="Close">x</span></div>
 	    <div id="popup-content">
 	    	<h1><?php echo $chitiet->lecturers_phone ?></h1>
 	    	<!--<h1>So dien thoai : <?php echo $items->sdt ?></h1>-->
@@ -54,8 +59,39 @@
 					 			<p><a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
 					 		</div>
 					 			<div id="contentmaindtgv">
-					 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
+							 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
+							 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
+							 			<div id="contetntitlegv">
+							 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
+							 				
+							 				<div id="ltgv"><?php echo $chitiet->lecturers_content ?></div>
+							 			</div><br clear="both"/>
+							 			<div class="videogvdt">
+							 				<a rel="fancyvideo" href="<?php echo $chitiet->link_vedio?>">
+							 					<img src="http://img.youtube.com/vi/<?php echo substr($chitiet->link_vedio,31)?>/2.jpg" style="margin:3px 17px; height: 200px" >
+							 				</a>
+							 			</div>
+							 			<div id="contentdtbottom">
+							 				<div class="bottomcontentdt">
+							 					<a href="#" id="show-popup1"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconcall.gif"/></a>
+							 				</div>
+							 				<div class="bottomcontentdt">
+							 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
+							 				</div>
+							 				<div class="bottomcontentdt1">
+							 					<p>What people think about us</p>
+							 					<ul>
+							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
+							 					</ul>
+					 						</div>
+							 			</div><br clear="both" />
+					 		<!---	<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
 					 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
+					 		
 					 			<div id="contetntitlegv">
 					 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
 					 				<div id="ltgv"><?php echo $chitiet->lecturers_content ?></div>
@@ -80,8 +116,17 @@
 					 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
 					 					</ul>
 					 				</div>
-					 			</div><br clear="both" />
+					 			</div><br clear="both" />--->
 						 	</div>
+						 <script type="text/javascript">
+											        $(document).ready(function() {
+											            $("a[@rel*=fancyvideo]").fancybox({
+											                overlayShow: true,
+											                frameWidth:640,
+											                frameHeight:360
+											            });
+											        });
+											</script>	 
 					 			<!----------- <?php echo $chitiet->lecturers_content ?>--------------->
 						 <!----------------------------->
 						 <div id="contentbotomgv">
@@ -160,13 +205,14 @@
 				        		
 				        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 				        		<div class="slideimage">
-				        			
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif">
-				        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif">
+				        			<?php foreach ($list_slide1 as $slide)
+									{
+										 echo $slide->anh1;
+										 echo $slide->anh2;
+										 echo $slide->anh3;
+										 echo $slide->anh4;
+										 echo $slide->anh5;
+									}?>
 				        		</div>
 				        		</div>
 				        		
@@ -193,6 +239,7 @@
 		margin:20px 0 0 20px;
 		float:left;
 		text-decoration:none;
+		
 	}
 	a#show-popup1 {
 		margin:20px 0 0 20px;
@@ -200,7 +247,7 @@
 		text-decoration:none;
 	}
 	div#popup-bg {
-		position:absolute;
+		position:fixed;
 		top:0;
 		bottom:0;
 		left:0;
@@ -208,6 +255,7 @@
 		z-index:99;
 		background:#000;
 		display:none;
+		opacity: 0.2;
 	}
 	div#popup,div#popup1 {
 		width:680px;
@@ -216,6 +264,8 @@
 		z-index:999;
 		display:none;
 		background:#FFF;
+		position: absolute;
+		left: 270px;
 	}
 	div#popup-header {
 		position:relative;
@@ -236,6 +286,15 @@
 		right:10px;
 		z-index:9999;
 	}
+	span#popup-close1 {
+		cursor:pointer;
+		color:#FFF;
+		font-size:12px;
+		position:absolute;
+		top:-2px;
+		right:10px;
+		z-index:9999;
+	}
 	div#popup-content {
 		width:670px;
 		float:left;
@@ -243,9 +302,9 @@
 	}
 	</style>
 	
-	<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
-	<script language="javascript">
+<!-- <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>  -->
+<script language="javascript">
 	$(document).ready(function(){
 		(function($){
 			//Căn giữa phần tử thuộc tính là absolute so với phần hiển thị của trình duyệt, chỉ dùng cho phần tử absolute đối với body
@@ -260,15 +319,19 @@
 		})(jQuery);
 		
 		$('a#show-popup').click(function(){
+			
 			//Đặt biến cho các đối tượng để gọi dễ dàng
 			var bg=$('div#popup-bg');
 			var obj=$('div#popup');
 			var btnClose=obj.find('#popup-close');
 			//Hiện các đối tượng
+			
 			bg.animate({opacity:0.2},0).fadeIn(1000); //cho nền trong suốt
-			obj.fadeIn(1000).draggable({cursor:'move',handle:'#popup-header'}).absoluteCenter(); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
+			obj.fadeIn(1000); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
 			//Đóng popup khi nhấn nút
-			btnClose.click(function(){
+			
+			$('#popup-close').click(function(){
+				alert("close");
 				bg.fadeOut(1000);
 				obj.fadeOut(1000);
 			});
@@ -285,15 +348,18 @@
 			return false;
 		});
 		$('a#show-popup1').click(function(){
+			
 			//Đặt biến cho các đối tượng để gọi dễ dàng
 			var bg=$('div#popup-bg');
 			var obj=$('div#popup1');
-			var btnClose=obj.find('#popup-close');
+			var btnClose=obj.find('#popup-close1');
 			//Hiện các đối tượng
 			bg.animate({opacity:0.2},0).fadeIn(1000); //cho nền trong suốt
-			obj.fadeIn(1000).draggable({cursor:'move',handle:'#popup-header'}).absoluteCenter(); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
-			//Đóng popup khi nhấn nút
-			btnClose.click(function(){
+			obj.fadeIn(1000); //căn giữa popup và thêm draggable của jquery UI cho phần header của popup
+			//Đóng popup khi nhấn nútalert("close");
+			
+			$('#popup-close1').click(function(){
+				
 				bg.fadeOut(1000);
 				obj.fadeOut(1000);
 			});
@@ -310,5 +376,5 @@
 			return false;
 		});
 	});
-	</script>
+	</script> 
 				
