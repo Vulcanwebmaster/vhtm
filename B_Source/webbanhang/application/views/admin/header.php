@@ -11,7 +11,7 @@
 
 <div id="wrapper">
     <div id="header">
-        <div id="site"><?php print $this->preference->item('site_name')?></div>
+        <div id="site">NIW Shopping Cart</div>
         <div id="info">
             
              <?php print anchor('',$this->lang->line('backendpro_view_website'),array('class'=>'icon_world_go','target'=>'_blank'))?>&nbsp;&nbsp;&nbsp;&nbsp;

@@ -10,6 +10,7 @@ if (count($listDangKy)){
     echo "<th>ID</th>\n
     	  <th>Họ tên</th>\n
     	  <th>Cửa hàng</th>\n
+    	  <th>Link</th>\n
     	  <th>Lĩnh vực</th>\n
 		  <th>Email</th>\n
 		  <th>Mật khẩu</th>\n
@@ -20,8 +21,20 @@ if (count($listDangKy)){
     foreach ($listDangKy as $list){
         echo "<tr valign='top'>\n";
         echo "<td align='center'>".$list->dangky_id."</td>\n";
-        echo "<td align='center'>".substr($list->hoten,0,40)."..."."</td>\n";
+        echo "<td align='center'>".$list->ngaythang."</td>\n";
+        echo '<td align="center"><a href="'.base_url().'dangky/admin/Detail/'.$list->dangky_id.'">'.substr($list->hoten,0,40).'...'.'</a></td>\n';
         echo "<td align='center'>".$list->tencuahang."..."."</td>\n"; 
+        
+        $this->load->model('Mdangky');
+        
+        if ($list->demo_id!='not set')
+        {
+	        $folder=$this->Mdangky->GetDemoById($list->demo_id)->demo_name;
+	        echo "<td align='center'> <a href='".base_url().$folder."'>".
+	        base_url().$folder
+	        ."</a></td>\n";
+        }
+        else echo "<td align='center'> <a>not set</a></td>\n";
 		echo "<td align='center'>".$list->id_linhvuc."..."."</td>\n"; 
 		echo "<td align='center'>".$list->email."..."."</td>\n";
 		echo "<td align='center'>".$list->matkhau."..."."</td>\n";

@@ -1,6 +1,6 @@
 <form name="dangky-form" id="dangky-form" method="post" action="<?php echo base_url();?>dangky/creatDangKy">
 	<div align="right">
-		<p id="closemash" style="margin: -20px -10px 0 0">X</p>
+		<p id="closemash" style="margin: -20px -10px 0 0">Close</p>
 	</div>
 	<table>
 		<tr>
@@ -68,11 +68,6 @@
 		</tr>
 		<tr>
 			<td style="height: 10px"></td>
-		</tr>
-		<tr>
-			<td>Địa chỉ website</td>
-			<td><input name="website" id="website" />
-				<p style="margin: 0; font-size: 11px">.niwshoppingcart.vn</p></td>
 		</tr>
 		<tr>
 			<td style="height: 10px"></td>

@@ -52,7 +52,17 @@
 				$('#dichvu5').parent('li').addClass('dichvu-current-menu');
 			});
 		});
-		$('#dichvu1').click();
+		$('#dichvu6').click(function(){
+			$('.dichvu-current-menu').removeClass('dichvu-current-menu');
+			$('#dichvu-content').fadeOut(200).fadeIn(200);
+			$('#dichvu-content').load('<?php echo base_url()?>dichvu/banggia', function(){
+				$height=$('#dichvu-content').css('height');
+				$('#dichvu-menu').css('height',$height);
+
+				$('#dichvu6').parent('li').addClass('dichvu-current-menu');
+			});
+		});
+		$('#dichvu2').click();
 	});
 </script>
 
@@ -77,9 +87,9 @@
 	</div>
 	<div id="dichvu-menu">
 		<ul>
-			<li>
+			<!-- li>
 				<a id="dichvu1">Đăng ký tên miền</a>
-			</li>
+			</li -->
 			<li>
 				<a id="dichvu2">Quảng cáo Google Awords</a>
 			</li>
@@ -91,6 +101,9 @@
 			</li>
 			<li>
 				<a id="dichvu5">Chương trình liên hết</a>
+			</li>
+			<li>
+				<a id="dichvu6">Bảng giá domain</a>
 			</li>
 		</ul>
 	</div>

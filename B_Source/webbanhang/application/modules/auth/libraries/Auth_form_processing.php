@@ -113,6 +113,8 @@ class Auth_form_processing
 		$this->CI->form_validation->set_rules($config);
 		if ( $this->CI->form_validation->run($this)== FALSE)
 		{
+			
+		
 			// Output any errors
 			//$this->CI->form_validation->output_errors();
 			$error=$this->CI->form_validation->error_string(' ',' ');

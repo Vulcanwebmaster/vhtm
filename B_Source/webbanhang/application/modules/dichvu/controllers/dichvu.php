@@ -41,5 +41,10 @@
 		{
 			$this->load->view('shop/quangcao');
 		}
+		
+		function banggia()
+		{
+			$this->load->view('shop/banggia');
+		}
 	}
 ?>

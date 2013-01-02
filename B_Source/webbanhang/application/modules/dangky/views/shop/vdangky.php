@@ -22,6 +22,17 @@
 			</div>
 		<?php }
 	?>
+	<?php
+		if ($this->session->userdata('error_message'))
+		{?>
+			<div style="background-color:#ffebe8; border:solid 1px #dd3c10; padding:10px; margin:15px; font-size:12px">
+			<?php 
+				echo $this->session->userdata('error_message');
+				$this->session->unset_userdata('error_message');
+			?>
+			</div>
+		<?php }
+	?>
 	<form style="margin-top:20px" name="dangky-form" id="dangky-form" method="post" action="<?php echo base_url();?>dangky/creatDangKy">
 		<center>
 			<table style="width:70%">
@@ -88,11 +99,6 @@
 				</tr>
 				<tr>
 					<td style="height: 10px"></td>
-				</tr>
-				<tr>
-					<td>Địa chỉ website</td>
-					<td><input name="website" id="website" />
-						<p style="margin: 0; font-size: 11px">.niwshoppingcart.vn</p></td>
 				</tr>
 				<tr>
 					<td style="height: 10px"></td>

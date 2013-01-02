@@ -44,6 +44,10 @@ $route['default_controller'] = "welcome";
 $route['scaffolding_trigger'] = "";
 
 $route['admin'] = 'admin/home';
+$route['tinh-nang']='tinhnang';
+$route['kho-giao-dien']='khogiaodien';
+$route['dich-vu']='dichvu';
+$route['lien-he']='lienhe';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

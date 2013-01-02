@@ -210,7 +210,6 @@ class Userlib
 		$user = $this->CI->user_model->getUsers(array('users.id'=>$id));
 		$user = $user->row_array();
 		$this->CI->session->set_userdata($user);
-
 		if( !$this->CI->session )
 		{
 			// Could not log user in, something went wrong

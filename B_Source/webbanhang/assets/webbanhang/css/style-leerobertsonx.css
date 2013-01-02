@@ -17,7 +17,7 @@ small { font-size: 10px; }
 ol { list-style: decimal; }
 li { margin-left: 0; }
 images { margin-bottom: 5px; }
-dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset,blockquote,article,p { margin-bottom: 20px; }
+/*dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset,blockquote,article,p { margin-bottom: 20px; }*/
 
 /* ---------------------------------------------------------------------- */
 /*	Basic Elements & Classes

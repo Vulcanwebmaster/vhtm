@@ -22,7 +22,7 @@
 	<li>Được cung cấp và tạo mọi điều kiện thuận lợi nhất để phát triển kinh doanh</li>
 	<li>Không mất bất kỳ khoản phí nào để trở thành đối tác của NIW Shopping Cart</li>
 	<li>Hợp tác với đơn vị cung cấp giải pháp Thương Mại điện tử hàng đầu Việt Nam</li>
-	<li>NIW Shopping Cart được tích hợp nhiều công cụ hỗ trợ khách hàng bán hàng như hệ thống: bizmail, vietclick, giasoc, hangtot, doanhnhan ...</li>
+	<li>NIW Shopping Cart được tích hợp nhiều công cụ hỗ trợ khách hàng bán hàng.</li>
 	<li>Mở rộng dịch vụ cung cấp hiện tại</li>
 	<li>Hưởng lợi ích từ việc phát triển của chúng tôi</li>
 </ul>

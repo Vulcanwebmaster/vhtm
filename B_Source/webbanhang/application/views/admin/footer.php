@@ -1,6 +1,6 @@
     <div id="footer">
         <div id="copyright">
-            <a href="http://www.cecilieokada.com/blog">Kaimonokago</a> &copy; Copyright <?php  echo date("Y"); ?> - <a href="http://www.cecilieokada.com/blog">Shin Okada</a> -  All rights Reserved
+            <a href="http://www.websitebanhang.net">NIW Shopping Cart</a> &copy; Copyright <?php  echo date("Y"); ?> - <a href="http://www.niw.com.vn">NIW</a> -  All rights Reserved
         </div>
         <div id="version">
             <a href="#top"><?php print $this->lang->line('general_top')?></a> |

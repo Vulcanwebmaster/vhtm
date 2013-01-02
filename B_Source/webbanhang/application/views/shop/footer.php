@@ -8,11 +8,11 @@
 			<nav id="footer-nav" class="clearfix" style="position:relative; left:0; width:auto">
 
 				<ul style="font-size:12px; padding-left:0">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Website</a></li>
-					<li><a href="#">Application</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Tính năng</a></li>
+					<li><a href="#">Kho giao diện</a></li>
+					<li><a href="#">Dịch vụ</a></li>
+					<li><a href="#">Liên hệ</a></li>
 				</ul>
 				
 			</nav>
@@ -20,7 +20,7 @@
 			<ul class="contact-info" style="font-size:12px; padding-left:0">
 				<li class="address">Tòa nhà CT5B - Mễ Trì Thượng - Từ Liêm - Hà Nội</li>
 				<li class="phone">(314) 570-3661</li>
-				<li class="email"><a href="mailto:contact@companyname.com">infot@leerobertsonx.com</a></li>
+				<li class="email"><a href="mailto:contact@companyname.com">support@niw.com.vn</a></li>
 			</ul>
 			
 		</div>

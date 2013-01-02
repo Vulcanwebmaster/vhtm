@@ -47,7 +47,7 @@
 <hr id="line1"/>
 
 <div id="preview-panel">
-	<div id="close" align="right">X</div>
+	<div id="close" align="right">Close</div>
 	<div id="image-preview">
 		<img src=""/>
 	</div>

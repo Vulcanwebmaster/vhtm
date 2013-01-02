@@ -20,10 +20,11 @@
         <nav>
             <ul class="menu">
                 <li id="trangchu"><a href="<?php echo base_url();?>">Trang chủ</a></li>
-                <li id="tinhnang"><a href="<?php echo base_url();?>tinhnang">Tính năng</a></li>
-                <li id="khogiaodien"><a href="<?php echo base_url();?>khogiaodien">Kho giao diện</a></li>
-                <li id="dichvu"><a href="<?php echo base_url();?>dichvu">Dịch vụ</a></li>
-                <li id="lienhe"><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
+                <li id="tinhnang"><a href="<?php echo base_url();?>tinh-nang">Tính năng</a></li>
+                <li id="khogiaodien"><a href="<?php echo base_url();?>kho-giao-dien">Kho giao diện</a></li>
+                <li id="banggia"><a href="<?php echo base_url();?>banggia">Bảng giá</a></li>
+                <li id="dichvu"><a href="<?php echo base_url();?>dich-vu">Dịch vụ</a></li>
+                <li id="lienhe"><a href="<?php echo base_url();?>lien-he">Liên hệ</a></li>
             </ul>
         </nav>
     </div>

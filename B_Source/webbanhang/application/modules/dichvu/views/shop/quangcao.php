@@ -1,6 +1,6 @@
 <h3>Quảng cáo Google Awords</h3>
 <p>
-	Dịch vụ quảng cáo Google chuyên nghiệp của Bizweb sẽ mang lại rất nhiều khách hàng cho bạn với hiệu quả và chi phí tối ưu nhất. 
+	Dịch vụ quảng cáo Google chuyên nghiệp của NIW Shopping Cart sẽ mang lại rất nhiều khách hàng cho bạn với hiệu quả và chi phí tối ưu nhất. 
 	Hãy để những chuyên gia quảng cáo hàng đầu của chúng tôi có cơ hội giúp bạn tăng doanh số. 
 	Chúng tôi sẽ liên hệ lại với bạn qua điện thoại hoặc email trong vòng 1h đồng hồ (giờ hành chính) để tư vấn và xác nhận thông tin đăng ký của bạn.
 </p>
@@ -22,7 +22,7 @@
 <h4>Bạn hãy xem video dưới trên để hiểu rõ hơn về dịch vụ quảng cáo trên Google</h4>
 <center><iframe width="420" height="315" src="http://www.youtube.com/embed/GR7YauSzNYY" frameborder="0" allowfullscreen></iframe></center>
 
-<h3>Khi bạn quảng cáo trên Google - Bizweb sẽ giúp bạn:</h3>
+<h3>Khi bạn quảng cáo trên Google - NIW Shopping Cart sẽ giúp bạn:</h3>
 <ul>
 	<li>
 		<strong>Tư vấn lập kế hoạch quảng cáo Google Adwords theo quy trình chuyên nghiệp:</strong> 

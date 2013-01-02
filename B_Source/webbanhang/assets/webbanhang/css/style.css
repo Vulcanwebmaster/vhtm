@@ -68,8 +68,8 @@ h1 {position:absolute; left:132px; top:0px; display:inline-block; z-index:100;}
 
 nav {border:solid 1px white; width:1000px; position:absolute; left:132px; bottom:0; z-index:100; background:url(../images/nav-bg.png) 0 0 repeat;}
 ul.menu {margin:0 29px 0 30px;}
-ul.menu li {float:left; line-height:35px; margin:0px 0 0px 0px; background:transparent;}
-ul.menu li a {font-size:25px; line-height:35px; color:black; display:block; padding: 8px 33px 8px 33px; }
+ul.menu li {text-shadow:0 1px 0 white;float:left; line-height:35px; margin:0px 0 0px 0px; background:transparent;}
+ul.menu li a {font-size:20px; line-height:35px; color:black; display:block; padding: 8px 33px 8px 33px; }
 ul.menu li:hover , ul.menu li.current {background:#2098f5;}
 
 /*********************************content*************************************/
@@ -98,7 +98,7 @@ ul.menu li:hover , ul.menu li.current {background:#2098f5;}
 .block-2>a {float:left; margin-right:20px; display:inline-block;}
 
 /****************************footer************************/
-#footer {border-top:solid 5px #7b7b7b;clear:both; width:100%; position:relative; overflow:hidden; text-align:center; padding:20px 0 0 0; background:#dfdddd;}
+#footer {clear:both; width:100%; position:relative; overflow:hidden; text-align:center; padding:20px 0 0 0; background:#dfdddd;}
 footer p, footer a {color:#939393;}
 footer a:hover {text-decoration:underline;}
 
@@ -117,7 +117,7 @@ dl dd a {}
 .btns a {display:inline-block; margin:0 20px 0 0px;}
 
 #slogan-panel{ padding:10px; border-radius:10px; height:auto}
-#line1{clear:both; margin-top:10px; border-style:none none solid none;}
+#line1{clear:both; margin-top:10px; border-style:none none solid none; border-color:#d2d1d1}
 #slogan-left{color:#2098F5; float:left; padding-top:0}
 
 .contact-online{color:#939393}
@@ -142,9 +142,9 @@ text-align:center;
 	padding: 15px;
 }
  #templatePage{}
- #preview-panel{position:fixed; margin-top:-400px; margin-left:400px; z-index:100; width:600px; height:500px; border:solid 1px silver; border-radius:5px}
+ #preview-panel{position:fixed; margin-top:-500px; margin-left:400px; z-index:100; width:600px; height:500px; border:solid 2px silver; border-radius:5px}
   #preview-panel img{width:100%}
-#close{ font-weight:bold; border-radius:5px; width:40px; cursor:pointer; width:100%; padding-right:10px; color:white}
+#close{text-shadow:0 1px 0 white;font-weight:bold; border-radius:5px; width:40px; cursor:pointer; width:97%; padding-right:10px; text-transform:uppercase}
 
 #tinhnang-panel{width:960px; margin:auto}
 .tinhnang-item{margin:40px 0; text-shadow:0 1px 0 white; text-align:justify; clear:both}
@@ -178,3 +178,51 @@ footer ul li{display:inline; margin:0 5px}
 #mash{padding:20px; width:auto; position:fixed; z-index:999; border-radius:10px; background:url('../images/mash-bg.png'); border:solid 4px #cfcece}
 #dangky-form td{padding:0 10px}
 #dangky-form td input, #dangky-form td select{width:90%}
+.tablebgtm{border-collapse: collapse;
+width: 100%;
+margin-left: 15px;}
+.tablebgtm td,.tablebgtm th{border:solid 1px gray; padding:5px; vertical-align:middle}
+.tablebgtm p{margin:5px}
+.txt_red{color:red; text-align:center}
+.center_align{text-align:center}
+#banggia-right{float:left}
+#banggia-right table{background-color:#ebebeb}
+#banggia-right table td, #banggia-right table th{border:solid 1px gray; padding:5px}
+#main-fream{width:960px; margin:auto}
+.grid_4{padding-bottom:15px}
+#footer .container::after {
+background: #F4F3F3;
+content: '';
+left: 50%;
+display: block;
+height: 15px;
+margin: 0 0 0 -7.5px;
+-webkit-transform: rotate(45deg);
+margin: 0 auto;
+position: relative;
+width: 940px;
+transform: rotate(45deg);
+position: absolute;
+top: -43px;
+width: 15px;
+}
+.bgtm_col1 {
+width: 115px;}
+
+.bgtm_col2 {
+width: 96px;
+}
+.bgtm_col3 {
+width: 95px;
+}
+.bgtm_col4 {
+width: 102px;
+}
+.type-domain
+{
+	margin-left: 15px;
+	margin-bottom: 7px;
+	float: left;
+	color: #2098F5;
+	font-weight: bold;
+}

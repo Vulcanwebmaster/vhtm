@@ -1,5 +1,8 @@
 <h2><?php print $header?></h2>
 
+<style type="text/css">
+	#rightsection{display:none}
+</style>
 <?php print $dashboard; ?>
 
 <div class="buttons" style="clear: both">
