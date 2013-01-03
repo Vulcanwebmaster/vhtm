@@ -11,7 +11,6 @@
 					{ 
 						for ($i=0;$i<count($parents);$i++)
 						{
-							//$num=$newModel->getListByColumn('mc_category','parent_id',$parent->id);
 								$num=$newModel->getListByColumn('mc_category','parent_id',$parents[$i]->id);
 								if(count($num)>0)
 								{
