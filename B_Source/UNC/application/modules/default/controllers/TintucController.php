@@ -10,7 +10,7 @@ class TintucController extends Zend_Controller_Action
 		//@session_start();
 		$layoutPath = APPLICATION_PATH  . '/templates/front';
 	    $option = array ('layout' => 'index', 
-	                  'layoutPath' => $layoutPath);
+	                  	 'layoutPath' => $layoutPath);
 	    Zend_Layout::startMvc ($option);
 	    $this->mDefault = new Default_Model_Mdf();
 		$this->mTintuc = new Default_Model_Mtintuc();

@@ -28,7 +28,9 @@ $config['Database']['dbtype'] = 'mysql';
 	//	****** DATABASE NAME ******
 	//	This is the name of the database where your vBulletin will be located.
 	//	This must be created by your webhost.
-$config['Database']['dbname'] = 'forum';
+
+$config['Database']['dbname'] = 'unc_forum';
+
 
 	//	****** TABLE PREFIX ******
 	//	Prefix that your vBulletin tables have in the database.
