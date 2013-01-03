@@ -116,7 +116,7 @@ class Sanpham extends NIW_Controller
 		$data['list_slide']=$this->Msanpham->getListFull('slide');
 		$this->session->set_userdata('incategory','true');
 		$data['current_category']= $this->Msanpham->getRowByColumn('danhmuc','id',$id);
-		if ($_SESSION['lang']=="vn") 
+		if ($_SESSION['lang']=="vn")
 			$data['current_breadcrum']=$data['current_category']->ten_v;
 		else $data['current_breadcrum']=$data['current_category']->ten_e;
 		$data['list_tintuc_right']=$this->Msanpham->getListOffset('tintuc',15,0);

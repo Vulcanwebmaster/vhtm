@@ -42,7 +42,7 @@
 </ul>
 
 	<div id="items">
-		<?php  foreach ($list as $item)
+		<?php  foreach ($items as $item)
 		{
 			?>
 			<div class="item">
