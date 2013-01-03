@@ -53,7 +53,7 @@
 														</a></td>
 														<td class="text">
 															<p class="title"><a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $value->id."-".$value->alias ?>"><?php echo $value->namev?></a></p>
-															<p class="description"><?php echo word_limiter($value->mota, 20)?></p>
+															<p class="description"><?php echo strip_tags(word_limiter($value->mota, 20))?></p>
 														</td>
 													</tr>
 												</table>												
