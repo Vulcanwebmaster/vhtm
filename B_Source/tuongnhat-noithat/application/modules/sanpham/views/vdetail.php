@@ -92,6 +92,23 @@
 								});
 						});
 						</script>		
+
+						<!--<div class="social" style="top:230px;">							
+							<input id="socialShare" type="hidden" value="">
+							<a id="shareButton" class="share_btn shareButton" href="#">Chia sẻ</a>
+							<ul class="listH socialLinks" id="sharedown">
+								<li><a class="fb" title="Facebook"><span class="offleft">Facebook</span></a></li>
+								<li><a class="tw" title="Twitter"><span class="offleft">Twitter</span></a></li>
+								<li><a class="mail gaPage" data-ga-page-event="click" data-ga-page-logic="/Enviar_a_Amigo/Formulario" href="#" title="E-Mail"><span class="offleft">E-Mail</span></a></li>
+								<li id="idPrintButton"><a class="print" href="#print" title="Print"><span class="offleft">Print</span></a></li>
+								<li>
+									<div style="height: 15px; width: 24px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; " id="___plusone_0"></div>
+							
+								</li>
+							</ul>									
+						</div>
+						-->	
+
 				</div>
 			</div>
 			
