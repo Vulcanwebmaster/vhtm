@@ -79,8 +79,23 @@
 		      		<div class="video">		        		
 		            		<div class="contentvideo">
 						      	 <div id="galleria">
-									<a href="http://www.youtube.com/watch?v=9bZkp7q19f0"><img></a>
+						      	 	<!-- YouTube: iframe -->
+									<?php foreach ($list_video_home as $key) {?>
+									<a href="<?php echo $key->link_vedio ?>"><img></a>
 						            <a href="#"></a>
+						            <?php } ?> 
+									<!--
+									<div class="video">		        		
+				            		<div class="contentvideo">	
+										<ul id="slidervideo">
+											<?php foreach ($list_video_home as $key) {?>
+											<li class="panel3">
+												<iframe src="http://www.youtube.com/embed/<?php echo substr($key->link_vedio,31)?>" frameborder="0" allowfullscreen></iframe>
+											</li>
+											<?php } ?> 
+										</ul>
+						            		</div>				       
+						        	</div>	
 									<a href="http://www.youtube.com/watch?v=dEnyE1V4v38"><img></a>
 						            <a href="#"></a>
 							         <a href="http://www.youtube.com/watch?v=XwqUcd-liWA"><img></a>
@@ -90,13 +105,13 @@
 									<a href="http://www.youtube.com/watch?v=dEnyE1V4v38"><img></a>
 						            <a href="#"></a>
 							         <a href="http://www.youtube.com/watch?v=XwqUcd-liWA"><img></a>
-						            <a href="#"></a> 
+						            <a href="#"></a> -->
 				        		</div>
 				        	</div>
 				       </div>
 		          <script>
 					    // Load the classic theme
-					    Galleria.loadTheme('assets/trungtam-tienganh/js/galleria.classic.min.js');
+					    Galleria.loadTheme('<?php echo base_url()?>assets/trungtam-tienganh/js/galleria.classic.min.js');
 					
 					    // Initialize Galleria
 					    Galleria.run('#galleria');				
@@ -257,8 +272,8 @@
 		        			</li>
 		        			<li id="li2">
 		        				<a href-"#">
-			        				<img src="assets/trungtam-tienganh/images/twiter.png" class="show1"/>
-			        				<img src="assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter.png" class="show1"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
 		        					<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @twitter</a>
@@ -268,8 +283,8 @@
 		        			
 		        			<li id="li3">
 		        				<a href-"#">
-			        				<img src="assets/trungtam-tienganh/images/ytb.png" class="show1"/>
-			        				<img src="assets/trungtam-tienganh/images/ytb1.png" class="show2"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/ytb.png" class="show1"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/ytb1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
 			        					<?php foreach ($yt_fanpage as $value) {?>
@@ -283,8 +298,8 @@
 		        			
 		        			<li id="li4">
 			        				<a href-"#">
-			        				<img src="assets/trungtam-tienganh/images/zing.png" class="show1"/>
-			        				<img src="assets/trungtam-tienganh/images/zing1.png" class="show2"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/zing.png" class="show1"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/zing1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
 			        					<div id="zme-root"></div>  
@@ -314,8 +329,8 @@
 		        			</li>
 		        			<li id="li5">
 		        				<a href-"#">
-			        				<img src="assets/trungtam-tienganh/images/go.png" class="show1"/>
-			        				<img src="assets/trungtam-tienganh/images/go1.png" class="show2"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/go.png" class="show1"/>
+			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/go1.png" class="show2"/>
 			        				
 			        			</a>
 			        				<div class="children">

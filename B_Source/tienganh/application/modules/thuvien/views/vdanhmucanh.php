@@ -1,4 +1,9 @@
 <div id="fb-root"></div>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.pngFix.pack.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.fancybox-1.0.0.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/swfobject.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/trungtam-tienganh/css/fancy.css">
 <script>
 
 //------ like facebook button -------------
@@ -58,25 +63,25 @@
 									<script type="IN/Share"></script>
 					 				</a></li>
 					 			<li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					 			<li><script type="text/javascript">
-
-document.write('<div style="float:left; margin-left: 7px;"><a href="http://link.apps.zing.vn/share?u=' + location.href + '" target="_blank"><img src="http://sukienhay.com/images/icons/zing-icon.png" /></a></div>');
-
-</script></li>
-					 			<li><script type="text/javascript">
-
-document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a href="http://pinterest.com/pin/create/button/?url=' + location.href + '&media=http://ted.edu.vn/__data/assets/image/0003/793164/logo.png&description=H%E1%BB%8Dc%20vi%E1%BB%87n%20doanh%20nh%C3%A2n%20TED%3A%20Ted.Edu.Vn" class="pin-it-button" count-layout="none" target="_blank" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>');
-
-</script>&nbsp;</li>
-					 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
-					 			<li><div style="margin-top:3px; float:left;"><a target="_blank" title="Share this page" href="http://www.sharethis.com/share?url=http://trungtam-tienganh.edu.vn&title=Trung Tâm Tiếng Anh&summary='Chia sẻ tri thức thành công'&img=http://trungtam-tienganh.edu.vn/__data/assets/image/0003/793164/logo.png&pageInfo=%7B%22hostname%22%3A%22http://trungtam-tienganh.edu.vn%22%2C%22publisher%22%3A%22%22%7D"><img width="86" height="25" alt="Share this page" src="http://w.sharethis.com/images/share-classic.gif"></a></div>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">
-    stLight.options({
-        publisher: '',
-        popup: 'true'
-    });
-</script></li>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+														 			<li><script type="text/javascript">
+									
+									document.write('<div style="float:left; margin-left: 7px;"><a href="http://link.apps.zing.vn/share?u=' + location.href + '" target="_blank"><img src="http://sukienhay.com/images/icons/zing-icon.png" /></a></div>');
+									
+									</script></li>
+														 			<li><script type="text/javascript">
+									
+									document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a href="http://pinterest.com/pin/create/button/?url=' + location.href + '&media=http://ted.edu.vn/__data/assets/image/0003/793164/logo.png&description=H%E1%BB%8Dc%20vi%E1%BB%87n%20doanh%20nh%C3%A2n%20TED%3A%20Ted.Edu.Vn" class="pin-it-button" count-layout="none" target="_blank" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>');
+									
+									</script>&nbsp;</li>
+														 			<li><a href="#"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconarrow1.png"></a></li>
+														 			<li><div style="margin-top:3px; float:left;"><a target="_blank" title="Share this page" href="http://www.sharethis.com/share?url=http://trungtam-tienganh.edu.vn&title=Trung Tâm Tiếng Anh&summary='Chia sẻ tri thức thành công'&img=http://trungtam-tienganh.edu.vn/__data/assets/image/0003/793164/logo.png&pageInfo=%7B%22hostname%22%3A%22http://trungtam-tienganh.edu.vn%22%2C%22publisher%22%3A%22%22%7D"><img width="86" height="25" alt="Share this page" src="http://w.sharethis.com/images/share-classic.gif"></a></div>
+									<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">
+									    stLight.options({
+									        publisher: '',
+									        popup: 'true'
+									    });
+									</script></li>
 					 		</ul>
 					 		<div id="shareg">
 					 			
@@ -109,7 +114,7 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 			<br clear="both">
 					 		</div>
 					 	<div class="plupgin" style="margin-top:5px">
-					        		<img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconface.gif"/>
+					        		<img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconface.gif"/>
 					        		<p style="font-size: 13px">Plugin xã hội của Facebook</p>
 					        	</div>
 					 	<style>
@@ -120,7 +125,7 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 		.slideimage img{margin:0 25px 0 -5px;}
 					 	</style>
 					 	<div class="contentbot" style="margin: 80px 0">
-		        		<div class="prev12"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/icon5.gif"/></div>
+		        		<div class="prev12"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/icon5.gif"/></div>
 			        	<div id="clickslide">
 			        		
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
@@ -135,10 +140,8 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 									}?>
 			        		</div>
 			        		</div>
-			        		
-			        		
 			        	</div>
-			        	<div class="next12"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/icon8.gif"/></div>
+			        	<div class="next12"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/icon8.gif"/></div>
 			        	
 		        	</div>
 					 </div>

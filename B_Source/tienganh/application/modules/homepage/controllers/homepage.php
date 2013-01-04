@@ -70,6 +70,6 @@ class Homepage extends NIW_controller {
 			}
 			else $this->session->set_userdata('email_result','Gửi không thành công !');
 		}
-		$this->page();
+		$this->index();
 	}
 }
