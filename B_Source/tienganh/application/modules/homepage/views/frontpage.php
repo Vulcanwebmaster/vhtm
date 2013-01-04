@@ -11,7 +11,7 @@
 				</style>
 <div id="content">
 <div class="slider-wrapper theme-default">
-		            <div id="slider" class="nivoSlider">
+		            <div id="slider" class="nivoSlider" style="height:354px;">
 		           		<?php foreach ($list_slide as $slide)
 									{
 										 echo $slide->anh1;

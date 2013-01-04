@@ -21,16 +21,12 @@
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/galleria.classic.css">
 	   <!-- <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.js"></script>
 	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.video.js"></script>
-	       <!-- load jQuery -->
+	       <!-- load jQuery 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
         <!-- load Galleria -->
         <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/galleria-1.2.8.min.js"></script>
         
-	    <script type="text/javascript">
-	    $(window).load(function() {
-	        $('#slider').nivoSlider();
-	    });
-    </script>
+	   
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('.submenu').hide();
@@ -58,6 +54,11 @@
 			<!--------------end content---------------->
 			<?php $this->load->view('front/footer');?>
 		</div>
+		 <script type="text/javascript">
+	    $(window).load(function() {
+	        $('#slider').nivoSlider();
+	    });
+    </script>
 	</body>
 	<script type="text/javascript">
 		
