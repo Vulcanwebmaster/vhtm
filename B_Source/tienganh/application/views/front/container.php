@@ -17,10 +17,15 @@
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.2.min.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.nivo.slider.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jsadd.js"></script>
-	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/anythingslider.css">
-	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.js"></script>
+	    <!--<link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/anythingslider.css">-->
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/galleria.classic.css">
+	   <!-- <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.js"></script>
 	    <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.anythingslider.video.js"></script>
-	    
+	       <!-- load jQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <!-- load Galleria -->
+        <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/galleria-1.2.8.min.js"></script>
+        
 	    <script type="text/javascript">
 	    $(window).load(function() {
 	        $('#slider').nivoSlider();

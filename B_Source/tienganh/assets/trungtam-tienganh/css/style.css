@@ -118,7 +118,7 @@ a:hover, a:active, a:focus {
 .inputbox{ color:#fff; background:url(../images/iconmail.gif) no-repeat scroll 5px 4px; padding-left:20px; background-color:#505050; width:250px; border-top:2px solid #262626 !important; border:0; border-radius:3px;}
 .submitrighttab{ background-color:#1b75bb; color:#fff; text-transform:uppercase; border:0; border-radius:3px;}
 
-.video{width:486px; height:300px; margin:20px auto;}
+.video{width:486px; height:320px; margin:20px auto;}
 .contentvideo{}
 .contentvideo iframe{width:486px !important; height:273px !important; }
 #ul_video li{ float:left; list-style:none; padding:0 10px;}
@@ -178,7 +178,7 @@ a:hover, a:active, a:focus {
 #contentmaingv{width:100%; clear:both}
 #contentmaingv ul{margin:0; padding:0}
 #contentmaingv  li{list-style:none; clear:both; width:50%}
-#titlecontentgv p{float:left; font-size:16px;padding:2px; margin-bottom:10px}
+#titlecontentgv p{float:left; font-weight:bold; font-size:16px;padding:2px; margin-bottom:10px}
 #titlecontentgv a{text-decoration:none; color:#4d4d4d}
 .divgv{float:left; width:34%;padding:10px 5px 1px 5px;}
 .divgv2{float:left; width:58%; padding:5px;}

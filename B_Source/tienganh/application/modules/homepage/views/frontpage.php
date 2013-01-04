@@ -75,33 +75,33 @@
 		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
 		        	</div>
 		        	</div>		        	
-		        	<script>
-			       
-							// DOM Ready
-						$(function(){
-							$('#slidervideo').anythingSlider({
-								resizeContents      : true,
-								addWmodeToObject    : 'transparent',
-								navigationFormatter : function(index, panel){ // Format navigation labels with text
-									return ['', '', '', '', '', '', ''][index - 1];
-									
-								}
-							});
-						});
-					</script>
-		        	<div class="video">		        		
-		            		<div class="contentvideo">	
-								<ul id="slidervideo">
-									<!-- YouTube: iframe -->
-									<?php foreach ($list_video_home as $key) {?>
-									<li class="panel3">
-										<iframe src="http://www.youtube.com/embed/<?php echo substr($key->link_vedio,31)?>" frameborder="0" allowfullscreen></iframe>
-									</li>
-									<?php } ?> 
-								</ul>
-		            		</div>				       
-		        	</div>
-		        
+		    
+		      		<div class="video">		        		
+		            		<div class="contentvideo">
+						      	 <div id="galleria">
+									<a href="http://www.youtube.com/watch?v=9bZkp7q19f0"><img></a>
+						            <a href="#"></a>
+									<a href="http://www.youtube.com/watch?v=dEnyE1V4v38"><img></a>
+						            <a href="#"></a>
+							         <a href="http://www.youtube.com/watch?v=XwqUcd-liWA"><img></a>
+						            <a href="#"></a> 
+						            <a href="http://www.youtube.com/watch?v=9bZkp7q19f0"><img></a>
+						            <a href="#"></a>
+									<a href="http://www.youtube.com/watch?v=dEnyE1V4v38"><img></a>
+						            <a href="#"></a>
+							         <a href="http://www.youtube.com/watch?v=XwqUcd-liWA"><img></a>
+						            <a href="#"></a> 
+				        		</div>
+				        	</div>
+				       </div>
+		          <script>
+					    // Load the classic theme
+					    Galleria.loadTheme('assets/trungtam-tienganh/js/galleria.classic.min.js');
+					
+					    // Initialize Galleria
+					    Galleria.run('#galleria');				
+				    </script>
+				    
 		        	<script type="text/javascript">
 		        		$(document).ready(function(){
 		        			$('.show2').hide();		
@@ -285,7 +285,7 @@
 			        				<a href-"#">
 			        				<img src="assets/trungtam-tienganh/images/zing.png" class="show1"/>
 			        				<img src="assets/trungtam-tienganh/images/zing1.png" class="show2"/>
-			        				</a>
+			        			</a>
 			        				<div class="children">
 			        					<div id="zme-root"></div>  
 
@@ -363,6 +363,12 @@
 										 echo $slide->anh4;
 										 echo $slide->anh5;
 									}?>
+			        			<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
+			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
+			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
+			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
+			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
+			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>-->
 			        		</div>
 			        		<!-- End Slide Footer---->
 			        		</div>
