@@ -263,7 +263,7 @@ a:hover, a:active, a:focus {
 .ctdtimg{float:right; padding:6px 5px 5px 5px}
 .ctdtimg a{}
 
-.slideimgimg img{ width:443px; height:357px ; float:left;}
+.slideimgimg img{ width:443px !important; height:357px !important; float:left;}
 .next121,.prev121{ cursor: pointer}
 .zoomimg{ width:663px !important; height:560px !important}
 .zoomdiv{ width:663px !important; height:560px !important;}
