@@ -98,7 +98,7 @@
 							        style="border:none; width:450px; height:80px"></iframe>
 					 			
 					 		</ul>
-					 		<div id="comment">
+					 		<!--<div id="comment">
 					 		
 							<script src=
 							"http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
@@ -109,7 +109,7 @@
 							<script type="text/javascript">
 							FB.init("YOUR_API_KEY_HERE", "<path from web root>/xd_receiver.htm");
 							</script>
-			 					</div>	
+			 			</div>	-->
 			 							 				
 					 			<br clear="both">
 					 		</div>
