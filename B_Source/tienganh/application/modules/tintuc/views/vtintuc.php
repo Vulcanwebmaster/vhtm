@@ -33,7 +33,7 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>tintuc">Tin tức</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><?php if ($index == 0) echo 'Tiếng Anh mầm non';
+				 			<p style="font-weight: normal"><?php if ($index == 0) echo 'Tiếng Anh mầm non';
 				 						elseif ($index == 1) echo 'Tiếng Anh tiểu học';
 										elseif ($index == 2) echo 'Tiếng Anh cho sinh viên';
 										elseif ($index == 3) echo 'Tiếng Anh cho người đi làm';

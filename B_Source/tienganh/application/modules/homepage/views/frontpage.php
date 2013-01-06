@@ -12,6 +12,7 @@
 <div id="content">
 <div class="slider-wrapper theme-default">
 		            <div id="slider" class="nivoSlider" style="height:354px;">
+		            	<a href="<?php echo base_url()?>khoahoc">
 		           		<?php foreach ($list_slide as $slide)
 									{
 										 echo $slide->anh1;
@@ -19,6 +20,7 @@
 										 echo $slide->anh3;
 										 echo $slide->anh4;
 									}?>
+						</a>
 		            </div>		           
 		        </div>
 		        <div id="manincontent">
@@ -55,7 +57,7 @@
 								{ ?>
 		        		<div class="idmain">
 		        			<div class="img_main2">
-		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."-".$date1[1]."</br>".$date1[0] ?></p>
+		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."/".$date1[1]."</br><i style='font-size: 17px'>".$date1[0] ?></i></p>
 		        			</div>
 		        			<div class="text_main2">
 		        				<p class="title">
@@ -65,7 +67,7 @@
 		        					<p>(<?php echo $item->courses_date ?>)</br></p>
 		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-			        						</br>Tìm hiểu thêm về sự kiện này <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
+			        						</br>Tìm hiểu thêm về khóa học này <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
 			        				</a>
 		        				</p>
 		        			</div>
@@ -370,6 +372,7 @@
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 			        		<!-- Slide Footer---->
 			        		<div class="slideimage">
+			        			<a href="<?php echo base_url();?>tintuc">
 			        			<?php foreach ($list_slide1 as $slide)
 									{
 										 echo $slide->anh1;
@@ -378,6 +381,7 @@
 										 echo $slide->anh4;
 										 echo $slide->anh5;
 									}?>
+								</a>
 			        			<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>
 			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_155.gif"/>
 			        			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/trang-chu_152.gif"/>

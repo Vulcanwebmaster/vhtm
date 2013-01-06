@@ -56,7 +56,7 @@
 					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 					 			<p><a href="#">Giảng viên</a></p>
 					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-					 			<p><a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
+					 			<p style="font-weight: normal "><a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
 					 		</div>
 					 			<div id="contentmaindtgv">
 							 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
@@ -68,7 +68,7 @@
 							 			</div><br clear="both"/>
 							 			<div class="videogvdt">
 							 				<a rel="fancyvideo" href="<?php echo $chitiet->link_vedio?>">
-							 					<img src="http://img.youtube.com/vi/<?php echo substr($chitiet->link_vedio,31)?>/2.jpg" style="margin:3px 17px; height: 200px" >
+							 					<img src="http://img.youtube.com/vi/<?php echo substr($chitiet->link_vedio,31)?>/2.jpg" style="margin:3px 50px; height: 200px" >
 							 				</a>
 							 			</div>
 							 			<div id="contentdtbottom">

@@ -40,6 +40,8 @@
 				 					<option value="Trợ giảng">Trợ giảng</option>
 				 					<option value="Thầy giáo">Thầy giáo</option>
 				 					<option value="Cô giáo">Cô giáo</option>
+				 					<option value="Trung tâm Jenny">Trung tâm Jenny</option>
+				 					<option value="Khóa học">Khóa học</option>
 				 				</select>
 				 				<p style="text-transform: uppercase">Tên <span style="color:red">*</span></p>
 				 				<input type="text" name="contact_name">

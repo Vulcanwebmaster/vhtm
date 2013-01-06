@@ -41,6 +41,7 @@ a:hover, a:active, a:focus {
 .submitsearch{ border:0; color:#fff; background:transparent}
 #header_logo{clear:both; margin-top:33px; position: relative; width:100%; height:120px;}
 #logo{float:left; width:50%;}
+#logo img{ width: 275px ; height: 84px ;}
 #search{float:right; width:37%; margin-top:35px }
 .input,.language{ float:left; width:auto}
 .input{ background-image:url(../images/search.png); background-repeat:no-repeat; width:283px;height:27px; margin-top:2px;}
@@ -88,7 +89,7 @@ a:hover, a:active, a:focus {
 
 .img_main2{ width:17%;  height:100%; float:left}
 .img_main2 img{ width:120px !important; height:84px !important;}
-.img_main2 p{ width:65px;padding-top:15px !important; height:57px; float:left; background-color:#4FD510; font-size:20px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
+.img_main2 p{ width:65px;padding-top:15px !important; height:57px; float:left; background-color:#8c9b1c; font-size:23px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
 .readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:75px; height:20px;padding-top:5px; text-align:center; margin-top:10px; border-radius:3px; }
@@ -196,7 +197,7 @@ a:hover, a:active, a:focus {
 #imggv img{ width:110px !important; height: 142px !important;}
 #ltgv{ float:left; width:50%; line-height: 25px; margin-bottom:40px}
 /*video*/
-.videogvdt iframe{ width:56%; height:23%; margin-left:35px;}
+.videogvdt iframe{ width:50%; height:23%; margin-left:35px;}
 .bgvdimg{background:url(../images/bgvd.png) repeat-x; width:68%; height:12px; margin-top:5px !important;}
 .bgvdcontent{float:left; background:url(../images/bgvideo.png) no-repeat; width:154px; height:96px; margin:30px}
 .bgvdcontent iframe{width:109px; height:81px; padding-top:6px;}

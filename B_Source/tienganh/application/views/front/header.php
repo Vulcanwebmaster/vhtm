@@ -53,7 +53,7 @@
 					</div>
 					<div id="header_logo">
 						<div id="logo">
-							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/logo.gif" alt="">				
+							<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/logo-jenny.png" alt="">				
 						</div>
 						<style>
 							#search_bt{
@@ -116,7 +116,7 @@
 														<?php } ?>
 							</li>
 							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
-							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/video">Thư viện</a></li>
+							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/category/0">Thư viện</a></li>
 							<li  class="li menu_move" id="contactushd"><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
 						</ul>
 					</div>

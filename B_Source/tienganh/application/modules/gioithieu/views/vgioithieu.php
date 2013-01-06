@@ -37,7 +37,7 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="#">Giới thiệu</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><?php if ($index == 0) echo 'Sứ mệnh';
+				 			<p style="font-weight: normal" ><?php if ($index == 0) echo 'Sứ mệnh';
 				 						elseif ($index == 1) echo 'Tầm nhìn';
 										elseif ($index == 2) echo 'Giá trị cốt lõi';
 										elseif ($index == 3) echo 'Văn hóa công ty';

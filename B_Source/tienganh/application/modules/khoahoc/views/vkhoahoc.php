@@ -54,14 +54,14 @@
 			        	<div class="ctgv">				 			
 			 			
 			 					<div class="img_main2" style="width: 23% ">
-		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."-".$date1[1]."</br>".$date1[0] ?></p>
+		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."/".$date1[1]."</br><i style='font-size: 17px'>".$date1[0] ?></i></p>
 		        				</div>
 			 					<div class="divgv2" style="width: 72% ">
 			 						<p class="tittlegv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
 			 							<?php echo $item->courses_name ?></a></p>
 			 						<p>(<?php echo $item->courses_date ?>)</p>
 			 						<p><i><?php echo word_limiter(strip_tags($item->courses_content), 15)?> </i></p>
-			 						<p class="reamororgv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">Chi tiết</a></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">Tìm hiểu thêm</a></p>
 			 					</div >
 				 		</div>	
 			        	<?php } ?>
