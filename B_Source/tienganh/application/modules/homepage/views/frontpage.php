@@ -28,13 +28,13 @@
 									{
 										
 												$preg = preg_match_all('#<img.*/>#',$slide->anh1,$match);
-												echo $match[0][0];
+												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
 												$preg = preg_match_all('#<img.*/>#',$slide->anh2,$match);
-												echo $match[0][0];
+												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
 												$preg = preg_match_all('#<img.*/>#',$slide->anh3,$match);
-												echo $match[0][0];
+												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
 												$preg = preg_match_all('#<img.*/>#',$slide->anh4,$match);
-												echo $match[0][0];
+												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
 											
 										 //echo $slide->anh1;
 										 //echo $slide->anh2;
