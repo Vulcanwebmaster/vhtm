@@ -23,9 +23,9 @@
 
 		            </div>	-->
 		            <div id="featured">		
-						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg"/>
-						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg"/>
-						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg"/>					
+						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg"/></a>
+						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg"/></a>
+						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg"/></a>					
 					</div>	           
 		       <!-- </div>-->
 		           
