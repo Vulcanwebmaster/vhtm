@@ -22,10 +22,29 @@
 									}?>
 
 		            </div>	-->
-		            <div id="featured">		
-						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg"/></a>
+		            <div id="featured">	
+		            	<!--<a href="<?php echo base_url()?>khoahoc"> -->
+		           		<?php foreach ($list_slide as $slide)
+									{
+										
+												$preg = preg_match_all('#<img.*/>#',$slide->anh1,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh2,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh3,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh4,$match);
+												echo $match[0][0];
+											
+										 //echo $slide->anh1;
+										 //echo $slide->anh2;
+										 //echo $slide->anh3;
+										 //echo $slide->anh4;
+									}?>	
+						<!--<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg"/></a>
 						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg"/></a>
-						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg"/></a>					
+						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg"/></a>
+						-->		
 					</div>	           
 		       <!-- </div>-->
 		           
