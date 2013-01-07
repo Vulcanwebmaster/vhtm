@@ -50,12 +50,12 @@ a:hover, a:active, a:focus {
 #absalute{ position:absolute; z-index: 100; top:28px; right:205px;}
 
 #menutop ul{ float:right; margin:0; padding:0; font-size:15px;}
-#menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:0px; padding-top:4px; padding-bottom:3px; cursor:pointer}
-.li{ background:url(../images/icon11.gif) no-repeat scroll 10px 7px transparent; }
+#menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:0px; padding-top:1px; padding-bottom:3px; cursor:pointer}
+.li{ background:url(../images/icon11.gif) no-repeat scroll 10px 3px transparent; }
 #menutop li a{text-decoration:none; font-size:15px; font-weight:normal;}
 /*#menutop li:hover{ background:#fff !important;}
 #menutop li:hover{color:#4C4C4C !important}*/
-.home{background:url(../images/iconhome.gif) no-repeat scroll 10px 5px transparent;}
+.home{background:url(../images/iconhome.gif) no-repeat scroll 10px 1px transparent;}
 .submenu{ position:absolute; z-index: 200;margin-left:-25px; background-color:#fff !important; width:175px; color:#4c4c4c; padding-top:10px; padding-left:5px; background:url(../images/icon15.png) repeat-x scroll top left;}
 .submenu a{color:#4c4c4c !important}
 .submenu a:hover{color:red !important}
@@ -91,12 +91,12 @@ a:hover, a:active, a:focus {
 .img_main2 img{ width:120px !important; height:84px !important;}
 .img_main2 p{ width:65px;padding-top:15px !important; height:57px; float:left; background-color:#8c9b1c; font-size:23px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
-.readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
-.readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:auto; height:17px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
+.readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px 4px ; text-align:center; margin-top:10px; border-radius:3px; }
+.readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:auto; height:17px;padding:5px 10px 4px ; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore a, .readmore1 a{color:#fff;text-decoration:none;}
 .readmore1:hover{background-color:#4C4C4C}
 .readmore:hover{background-color:#4C4C4C}
-
+.table td{line-height:13px; padding:5px;}
 .tab{clear:both; margin-top:50px; height:210px; position:relative}
 #ultop {margin:0; padding:0;}
 #ultop li{float:left; list-style:none; padding:0 2px 0 0; }
@@ -145,8 +145,8 @@ a:hover, a:active, a:focus {
 .contentfooter{ width:960px; height:auto; margin:0 auto;}
 .ft1{ float:left; width:22%;padding-right:10px; border-right:1px solid #5397cc;  margin:10px 0 0 18px; height:155px; margin-bottom:45px;}
 .ft1 ul{margin-top:5px;}
-.ft1 li{ color:#FFF6F6; padding:5px 0; border-bottom:1px solid #5397CC}
-.ft1 li a{color:#fff; text-decoration:none;}
+.ft1 li{ color:#FFF6F6; padding:5px 0; border-bottom:1px solid #5397CC; list-style:initial}
+.ft1 li a{color:#fff; text-decoration:none; font-weight:normal; font-size:13px;}
 .ft1 p{ text-transform:uppercase; color:#fff; margin-left:25px; margin-bottom:0; border-bottom:1px solid #5397CC; padding-bottom: 5px; margin-top:3px;}
 .ft1 img{ padding:2px}
 
