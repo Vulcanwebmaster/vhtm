@@ -10,8 +10,8 @@
 					#slider img{ width:960px; height:354px !important;}
 				</style>
 <div id="content">
-<div class="slider-wrapper theme-default">
-		            <div id="slider" class="nivoSlider" style="height:354px;">
+<!-- <div class="slider-wrapper theme-default">
+		           <div id="slider" class="nivoSlider" style="height:354px;">
 		            	<a href="<?php echo base_url()?>khoahoc">
 		           		<?php foreach ($list_slide as $slide)
 									{
@@ -20,9 +20,15 @@
 										 echo $slide->anh3;
 										 echo $slide->anh4;
 									}?>
-						</a>
-		            </div>		           
-		        </div>
+
+		            </div>	-->
+		            <div id="featured">		
+						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg"/>
+						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg"/>
+						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg"/>					
+					</div>	           
+		       <!-- </div>-->
+		           
 		        <div id="manincontent">
 		        	<div class="contenttext">
 			        	<div class="textmaincontent">

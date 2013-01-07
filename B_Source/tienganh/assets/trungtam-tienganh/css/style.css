@@ -50,8 +50,8 @@ a:hover, a:active, a:focus {
 #absalute{ position:absolute; z-index: 100; top:28px; right:205px;}
 
 #menutop ul{ float:right; margin:0; padding:0; font-size:15px;}
-#menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:-5px; padding-top:4px; padding-bottom:3px; cursor:pointer}
-.li{ background:url(../images/icon11.gif) no-repeat scroll 10px 7px transparent; }
+#menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:0px; padding-top:4px; padding-bottom:3px; cursor:pointer}
+.li{ background:url(../images/icon11.gif) no-repeat scroll 10px 5px transparent; }
 #menutop li a{text-decoration:none;}
 /*#menutop li:hover{ background:#fff !important;}
 #menutop li:hover{color:#4C4C4C !important}*/
@@ -91,8 +91,8 @@ a:hover, a:active, a:focus {
 .img_main2 img{ width:120px !important; height:84px !important;}
 .img_main2 p{ width:65px;padding-top:15px !important; height:57px; float:left; background-color:#8c9b1c; font-size:23px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
-.readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px; text-align:center; margin-top:10px; border-radius:3px; }
-.readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:75px; height:20px;padding-top:5px; text-align:center; margin-top:10px; border-radius:3px; }
+.readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:8px 10px 3px 10px; text-align:center; margin-top:10px; border-radius:3px; }
+.readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:auto; height:17px;padding:8px 10px 3px 10px; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore a, .readmore1 a{color:#fff;text-decoration:none;}
 .readmore1:hover{background-color:#4C4C4C}
 .readmore:hover{background-color:#4C4C4C}
@@ -156,7 +156,7 @@ a:hover, a:active, a:focus {
 .menubottom a{color:#fff;}
 .footerbottom {width:960px; margin:0 auto}
 .menubottom ul{ float:right; margin:0; padding:0; font-size:11px;}
-.menubottom li{font-size:12px;list-style:none;line-height:20px; float:left; background:url(../images/iconfooter.png) no-repeat scroll 5px 6px transparent; padding:0 15px; text-decoration:none}
+.menubottom li{font-size:12px;list-style:none;line-height:20px; float:left; background:url(../images/iconfooter.png) no-repeat scroll 5px 3px transparent; padding:0 15px; text-decoration:none}
 .menubottom li a{text-decoration:none;}
 .menubottom li a:hover{ color:red}
 .homebottom{background:url(../images/homefooter.png) no-repeat scroll 3px 4px transparent !important;}
@@ -268,7 +268,9 @@ a:hover, a:active, a:focus {
 .next121,.prev121{ cursor: pointer}
 .zoomimg{ width:663px !important; height:560px !important}
 .zoomdiv{ width:663px !important; height:560px !important;}
-
+.orbit-wrapper{margin-bottom:10px;}
+#featured{ width:960px; margin-bottom:10px;}
+#featured img{width:960px !important; height: 354px !important;}
 /*lienhe*/
 #lhlefft{float:left; width:42%; padding:10px}
  #lhrigh{ float:right; width:45%; padding:10px}

@@ -22,7 +22,7 @@
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/themes/dark/dark.css" type="text/css" media="screen" />
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/themes/bar/bar.css" type="text/css" media="screen" />
 	    <link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/nivo-slider.css" type="text/css" media="screen" />
-	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.2.min.js"></script>
+	   <!-- <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.2.min.js"></script>-->
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.nivo.slider.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jsadd.js"></script>
 	    <!--<link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/anythingslider.css">-->
@@ -33,6 +33,21 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
         <!-- load Galleria -->
         <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/galleria-1.2.8.min.js"></script>
+        
+        <!-- Attach our CSS -->
+	  	<link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/orbit-1.2.3.css">
+	  	<link rel="stylesheet" href="<?php echo base_url();?>assets/trungtam-tienganh/css/demo-style.css">
+	  	
+		<!-- Attach necessary JS 
+		<script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.5.1.min.js"></script>-->
+		<script type="text/javascript" src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.orbit-1.2.3.min.js"></script>	
+		
+			<!--[if IE]>
+			     <style type="text/css">
+			         .timer { display: none !important; }
+			         div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);zoom: 1; }
+			    </style>
+			<![endif]-->
         
 	   
 		<script type="text/javascript">
@@ -62,11 +77,16 @@
 			<!--------------end content---------------->
 			<?php $this->load->view('front/footer');?>
 		</div>
-		 <script type="text/javascript">
+		<!-- <script type="text/javascript">
 	    $(window).load(function() {
 	        $('#slider').nivoSlider();
 	    });
-    </script>
+  </script>-->
+  	<script type="text/javascript">
+			$(window).load(function() {
+				$('#featured').orbit();
+			});
+		</script>
 	</body>
 	<script type="text/javascript">
 		
