@@ -87,10 +87,10 @@ a:hover, a:active, a:focus {
 .bgtitlemain{ background-color:#1b75bb; width:150px; height:30px}
 .bgtitlemain p{ margin:0; padding:4px 0 0 30px !important; font-size:21px; color:#fff; text-transform:uppercase}
 
-.img_main2{ width:18%;  height:100%; float:left}
+.img_main2{ width:21%;  height:100%; float:left}
 .img_main2 img{ width:120px !important; height:84px !important;}
-.img_main2 p{ width:79px;padding-top:15px !important; height:67px; float:left; background-color:#8c9b1c; font-size:23px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
-.text_main2{ width:82%; float:left}
+.img_main2 p{ width:90px;padding-top:15px !important; height:70px; float:left; background-color:#8c9b1c; font-size:30px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
+.text_main2{ width:78%; float:left}
 .readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px 4px ; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:auto; height:17px;padding:5px 10px 4px ; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore a, .readmore1 a{color:#fff;text-decoration:none;}
@@ -136,7 +136,7 @@ a:hover, a:active, a:focus {
 .next12{right:200px;}
 .slideimage{ width:90%; margin-bottom:50px;}
 .slideimage img{ float:left; width:284px !important; height: 119px !important; margin:0 25px 0 13px;}
-.contentbot{ clear:both; margin-top:40px; position:relative;}
+.contentbot{ clear:both; margin-top:50px; position:relative;}
 #number{float:right; width:20%}
 .table{float:right; border-left:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; font-size: 13px;}
 .bd{height:23px; text-transform:uppercase; background:url(../images/bgtd.png) repeat-x top left}
@@ -184,6 +184,8 @@ a:hover, a:active, a:focus {
 .divgv{float:left; width:34%;padding:10px 5px 1px 5px;}
 .divgv2{float:left; width:58%; padding:5px;}
 .tittlegv{color:#35a7dd; font-weight:bold;}
+.tittlegv a{ color: #0000FF }
+.tittlegv a:hover{ color: #1B75BB }
 .reamororgv{background:url(../images/iconarrow.png) no-repeat scroll 2px 5px; padding-left:12px !important}
 .reamororgv a{color:#35a7dd; text-decoration:none;}
 .ctgv{float:left; width:49%; height:105px; margin:5px 3px 5px 3px; background-color:#f2f2f2}

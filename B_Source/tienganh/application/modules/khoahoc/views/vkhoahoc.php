@@ -60,9 +60,9 @@
 							{ ?>
 			        	<div class="ctgv" style="height: 95px">				 			
 			 					<div class="img_main2" style="width: 23% ">
-		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."/".$date1[1]."</br><i style='font-size: 17px'>".$date1[0] ?></i></p>
+		        				<p style="height: 79px; font-family: times new roman "><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."/".$date1[1]."</br><h style='font-size: 17px'>".$date1[0] ?></h></p>
 		        				</div>
-			 					<div class="divgv2" style="width: 72% ">
+			 					<div class="divgv2" style="width: 70%; margin-left: 12px ">
 			 						<p class="tittlegv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
 			 							<?php echo word_limiter(strip_tags($item->courses_name), 6)?></a></p>
 			 						<p>(<?php echo $item->courses_date ?>)</p>

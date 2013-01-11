@@ -53,10 +53,10 @@
 					 	</div>
 					 	<div id="contentgv">
 					 		<div id="titlecontentgv">
-					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-					 			<p><a href="#">Giảng viên</a></p>
-					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-					 			<p style="font-weight: normal "><a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
+					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif">
+					 			<a href="#">Giảng viên</a>
+					 			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png">
+					 			<a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
 					 		</div>
 					 			<div id="contentmaindtgv">
 							 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>

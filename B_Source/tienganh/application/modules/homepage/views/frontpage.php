@@ -78,7 +78,7 @@
 								{ ?>
 		        		<div class="idmain">
 		        			<div class="img_main2">
-		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."/".$date1[1]."</br><i style='font-size: 17px'>".$date1[0] ?></i></p>
+		        				<p><?php $date1 = explode("-", $item->courses_date); echo $date1[2]."/".$date1[1]."</br><h style='font-size: 17px'>".$date1[0] ?></h></p>
 		        			</div>
 		        			<div class="text_main2">
 		        				<p class="title">
@@ -311,10 +311,9 @@
 			        			</a>
 			        				<div class="children">
 			        					<?php foreach ($yt_fanpage as $value) {?>
-											
-										
 		        						<iframe width="290" height="170" frameborder="0" allowfullscreen="" src="http://www.youtube.com/embed/<?php echo substr($value->video_child,31)?>" style="padding-left:5px; padding-top: 10px;">
 										</iframe>
+											</br><a target="_blank" href="<?php echo $value->video_child ?>"><?php echo  $value->video_child ?></a>
 										<?php }?>
 		        					</div>
 		        			</li>

@@ -19,7 +19,8 @@
 			<div id="tab1" class="tab_content">
 				<fieldset>
 					<label>Tiêu đề </label>
-					<input type="text" name="news_title" style="width:92%"/>
+					<?php echo $this->ckeditor->editor('news_title','',$config);?>
+					<!--<input type="text" name="news_title" style="width:92%"/>-->
 				</fieldset>
 				<fieldset>
 					<label>Loại tin tức</label>

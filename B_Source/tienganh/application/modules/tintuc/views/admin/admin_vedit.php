@@ -20,7 +20,8 @@
 				
 				<fieldset>
 					<label>Tiêu đề </label>
-					<input type="text" name="news_title" style="width:92%" value="<?php echo $info->news_title;?>"/>
+					<?php echo $this->ckeditor->editor('news_title',$info->news_title,$config);?>
+					<!--<input type="text" name="news_title" style="width:92%" value="<?php echo $info->news_title;?>"/>-->
 				</fieldset>
 				<fieldset>
 					<label>Mục tin tức</label>

@@ -34,10 +34,10 @@
 				 	</div>
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
-				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url() ?>">Giảng viên</a></p>
-				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p style="font-weight: normal"><a href="<?php echo base_url();?>giangvien/thaygiao">
+				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif">
+				 			<a href="<?php echo base_url() ?>">Giảng viên</a>
+				 			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png">
+				 			<a href="<?php echo base_url();?>giangvien/thaygiao">
 				 				<?php if ($index == 1) echo 'Thầy giáo';
 				 						elseif ($index == 2) echo 'Cô giáo';
 										elseif ($index == 0) echo 'Trợ giảng';

@@ -69,7 +69,7 @@
 									<input type="text" name="query" class="inputsearch"/>
 									<!--<label class="labelsearch">Search</label>-->
 									<input type="submit" value="Tìm kiếm" onclick="this.form.keyword.focus();" class="submitsearch"/>
-									<input value="niw.com.vn" name="sitesearch" style="opacity: 0">
+									<input value="jenny.edu.vn" name="sitesearch" style="opacity: 0">
 								</form>
 							</div>
 							<div class="language">
@@ -81,7 +81,7 @@
 					
 					<div id="menutop">
 						<ul>
-							<li class="home menu_move" id="homehd"><a href="<?php echo base_url();?>homepage">Home</a></li>
+							<li class="home menu_move" id="homehd"><a href="<?php echo base_url();?>">Home</a></li>
 							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu/sumenh">Giới thiệu</a>
 								<div class="submenu">
 									<div>

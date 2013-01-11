@@ -46,7 +46,7 @@
 						'news_post_date'=>$this->input->post('news_post_date'),
 						'news_author'=>$this->input->post('news_author'),
 						'news_image'=>$this->input->post('news_image'),
-						'alias'=>$this->getAliasByName($this->input->post('news_title')),
+						'alias'=>$this->getAliasByName(strip_tags($this->input->post('news_title'))),
 						);
 			return $input;
 		}
