@@ -290,7 +290,7 @@
 										  js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
 										  fjs.parentNode.insertBefore(js, fjs);
 										}(document, 'script', 'facebook-jssdk'));</script>
-										<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam" data-width="940" data-height="190" data-show-faces="true" data-stream="false" data-header="false"></div>
+									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam" data-width="940" data-height="190" data-show-faces="true" data-stream="false" data-header="false"></div>
 		        				</div>
 		        			</li>
 		        			<li id="li2">
@@ -303,7 +303,6 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 									</div>
 		        			</li>
-		        			
 		        			<li id="li3">
 		        				<a href-"#">
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/ytb.png" class="show1"/>
@@ -311,9 +310,12 @@
 			        			</a>
 			        				<div class="children">
 			        					<?php foreach ($yt_fanpage as $value) {?>
+			        					<label style="margin-left: 5px">
+			        						<a target="_blank" href="<?php echo $value->video_child ?>"><?php echo  $value->video_child ?></a></br>
+			        					</label>
+			        					
 		        						<iframe width="290" height="170" frameborder="0" allowfullscreen="" src="http://www.youtube.com/embed/<?php echo substr($value->video_child,31)?>" style="padding-left:5px; padding-top: 10px;">
 										</iframe>
-											</br><a target="_blank" href="<?php echo $value->video_child ?>"><?php echo  $value->video_child ?></a>
 										<?php }?>
 		        					</div>
 		        			</li>
