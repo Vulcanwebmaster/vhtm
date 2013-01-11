@@ -82,40 +82,36 @@
 					<div id="menutop">
 						<ul>
 							<li class="home menu_move" id="homehd"><a href="<?php echo base_url();?>homepage">Home</a></li>
-							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu/sumenh">Giới thiệu</a></li>
+							<li  class="li menu_move" id="aboutushd"><a href="<?php echo base_url();?>gioithieu/sumenh">Giới thiệu</a>
+								<div class="submenu">
+									<div>
+										<a href="<?php echo base_url();?>gioithieu/sumenh">Sứ mệnh</a><br />
+										<a href="<?php echo base_url();?>gioithieu/tamnhin">Tầm nhìn</a><br />
+										<a href="<?php echo base_url();?>gioithieu/giatri">Giá trị cốt lõi</a>	<br />
+										<a href="<?php echo base_url();?>gioithieu/vanhoa">Văn hóa công ty</a>
+									</div>
+								</div>
+							</li>
 							<li  class="li menu_move" id="newshd"><a href="<?php echo base_url();?>tintuc">Tin tức</a></li>
 							<li  class="li menu_move" id="coursehd"><a href="<?php echo base_url()?>khoahoc">Khóa học</a>
-					<div class="submenu">
-									<!-- <?php foreach ($list_courses_cate as $key) { ?>
-										<?php foreach ($list_courses as $value) {?>
-												<?php if($value->courses_category  ==  $key->id)
-															{?>
-																<div><?php echo $key->cate_name ?>
-																	<div class="slidemove">
-																		<ul class="inside">
-																		<li><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $value->courses_id."-".$value->alias;?>"><?php echo $value->courses_name ?></a></li>
-																		</ul>
-																	</div>
-																</div>
-															<?php } ?>
-															<?php } ?>
-														<?php } ?> -->
-										<?php foreach ($list_courses_cate as $key) { ?>
-																<div><?php echo $key->cate_name ?>
-																	<div class="slidemove">
-																		<?php foreach ($list_courses as $value) {?>
-																		<?php if($value->courses_category  ==  $key->id)
-																					{?>
-																		<ul class="inside">
-																		<li><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $value->courses_id."-".$value->alias;?>"><?php echo $value->courses_name ?></a></li>
-																		</ul>
-																		<?php } ?>
-																		<?php } ?>
-																	</div>
-																</div>
-														<?php } ?>
+								<div class="submenu">
+								<?php foreach ($list_courses_cate as $key) { ?>
+										<div><a href="<?php echo base_url()?>khoahoc/category/<?php echo $key->id."-".$key->alias?>">
+											<?php echo $key->cate_name ?>
+											</a><br />
+										</div>
+								<?php } ?>
+								</div>
 							</li>
-							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a></li>
+							<li  class="li menu_move" id="teacherhd"><a href="<?php echo base_url();?>giangvien">Giảng viên</a>
+								<div class="submenu">
+									<div>
+										<a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a><br />
+										<a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a><br />
+										<a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a>	<br />
+									</div>
+								</div>
+							</li>
 							<li  class="li menu_move" id="libraryhd"><a href="<?php echo base_url()?>thuvien/category/0">Thư viện</a></li>
 							<li  class="li menu_move" id="contactushd"><a href="<?php echo base_url();?>lienhe">Liên hệ</a></li>
 						</ul>

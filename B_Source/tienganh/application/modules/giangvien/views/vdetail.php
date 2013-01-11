@@ -39,7 +39,7 @@
 					 	</div>
 					 </div>			 
 					 <style>				
-					 	#slider img{ width:663px !important; height:235px!important;}
+					 	#featured img{ width:663px !important; height:235px!important;}
 					 </style>
 					 <div id="content_right">
 					 	<div class="slidegv">

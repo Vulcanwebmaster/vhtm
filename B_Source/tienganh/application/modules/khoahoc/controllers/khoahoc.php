@@ -55,6 +55,8 @@ class Khoahoc extends NIW_Controller
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['list_chitiet']  =  $this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$index);
+			$current_breadcrum = $data['list_chitiet']->courses_category;
+			$data['breadcrum']  =  $this->Mkhoahoc->getRowByColumn('ta_courses_cate','id',$current_breadcrum);
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
 			$model=new CI_Model();
 			$data['module']  =  $this->module;
@@ -79,6 +81,10 @@ class Khoahoc extends NIW_Controller
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
+			//var_dump($data['category']);die();
+			$data['breadcrum1']  =  $this->Mkhoahoc->getRowByColumn('ta_courses_cate','id',$id);
+			//var_dump($breadcrum1);die();
+			//$data['breadcrum1']  = $breadcrum1->cate_name; 
 			//var_dump($data['category']); die();
 			$data['items']=$this->Mkhoahoc->getListByColumn('ta_courses','courses_category',$id);
 			//var_dump($data['items']); die();

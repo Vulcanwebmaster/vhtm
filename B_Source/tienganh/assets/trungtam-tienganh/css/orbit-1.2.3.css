@@ -158,7 +158,7 @@ div.slider-nav span {
 
 div.slider-nav span.right {
     background: url(orbit/right-arrow.png) no-repeat;
-    right: -50; }
+    right: -50px; }
 
 div.slider-nav span.left {
     background: url(orbit/left-arrow.png) no-repeat;

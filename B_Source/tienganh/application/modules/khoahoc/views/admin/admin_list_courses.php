@@ -63,7 +63,6 @@
 			    					<a href="<?php echo base_url()?>khoahoc/admin/edit/<?php echo $item->courses_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->courses_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
-			    				
 							</tr>
 					 	<?php $count++; }  ?>
 					</tbody> 

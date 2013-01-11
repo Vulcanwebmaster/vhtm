@@ -13,18 +13,24 @@
 				 	</div>
 				 </div>			 
 				 <style>				
-				 	#slider img{ width:663px !important; height:235px!important;}
+				 	#featured img{ width:663px !important; height:235px!important;}
 				 </style>
 				 <div id="content_right">
 				 	<div class="slidegv">
 				 		<div class="slider-wrapper theme-default">
-				            <div id="slider" class="nivoSlider">
-							<?php foreach ($list_slide as $slide)
+				            <div id="featured">	
+				            	<?php foreach ($list_slide as $slide)
 									{
-										 echo $slide->anh1;
-										 echo $slide->anh2;
-										 echo $slide->anh3;
-										 echo $slide->anh4;
+										
+												$preg = preg_match_all('#<img.*/>#',$slide->anh1,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh2,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh3,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh4,$match);
+												echo $match[0][0];
+											
 									}?>
 		        		</div>
 				 	</div>
@@ -33,6 +39,7 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>tintuc">Tin tức</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
+				 			<p><?php echo $list_chitiet->news_category ?></p>
 				 		</div>
 				 		
 				 		<div id="contentmaingv">

@@ -28,18 +28,14 @@
 									{
 										
 												$preg = preg_match_all('#<img.*/>#',$slide->anh1,$match);
-												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
+												echo '<a href="khoahoc">'.$match[0][0].'</a>';
 												$preg = preg_match_all('#<img.*/>#',$slide->anh2,$match);
-												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
+												echo '<a href="khoahoc">'.$match[0][0].'</a>';
 												$preg = preg_match_all('#<img.*/>#',$slide->anh3,$match);
-												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
+												echo '<a href="khoahoc">'.$match[0][0].'</a>';
 												$preg = preg_match_all('#<img.*/>#',$slide->anh4,$match);
-												echo '<a href="<?php echo base_url()?>khoahoc">'.$match[0][0].'</a>';
+												echo '<a href="khoahoc">'.$match[0][0].'</a>';
 											
-										 //echo $slide->anh1;
-										 //echo $slide->anh2;
-										 //echo $slide->anh3;
-										 //echo $slide->anh4;
 									}?>	
 						<!--<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg"/></a>
 						<a href="http://www.jenny.edu.vn/"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg"/></a>

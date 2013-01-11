@@ -51,7 +51,7 @@ a:hover, a:active, a:focus {
 
 #menutop ul{ float:right; margin:0; padding:0; font-size:15px;}
 #menutop li{font-size:15px;list-style:none;line-height:18px; float:left;padding:0 25px; text-decoration:none; margin-top:0px; padding-top:1px; padding-bottom:3px; cursor:pointer}
-.li{ background:url(../images/icon11.gif) no-repeat scroll 10px 3px transparent; }
+.li{ background:url(../images/icon13.gif) no-repeat scroll 10px 3px transparent; }
 #menutop li a{text-decoration:none; font-size:15px; font-weight:normal;}
 /*#menutop li:hover{ background:#fff !important;}
 #menutop li:hover{color:#4C4C4C !important}*/
@@ -62,7 +62,7 @@ a:hover, a:active, a:focus {
 .submenu ul{margin-left:0; padding-left:0}
 .submenu li{ background:url(../images/icon12.gif) no-repeat scroll 15px 8px transparent !important;}
 .menu_move{ padding-bottom:5px;}
-.bgli{ background-color:#fff !important}
+.bgli{ background:url(../images/icon11.gif) no-repeat scroll 10px 3px transparent; background-color:#fff !important}
 .bgli a{color:#4C4C4C !important}
 .bgli2{ background-color:#fff !important}
 .bgli2 a{color:#4C4C4C !important}
@@ -87,9 +87,9 @@ a:hover, a:active, a:focus {
 .bgtitlemain{ background-color:#1b75bb; width:150px; height:30px}
 .bgtitlemain p{ margin:0; padding:4px 0 0 30px !important; font-size:21px; color:#fff; text-transform:uppercase}
 
-.img_main2{ width:17%;  height:100%; float:left}
+.img_main2{ width:18%;  height:100%; float:left}
 .img_main2 img{ width:120px !important; height:84px !important;}
-.img_main2 p{ width:65px;padding-top:15px !important; height:57px; float:left; background-color:#8c9b1c; font-size:23px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
+.img_main2 p{ width:79px;padding-top:15px !important; height:67px; float:left; background-color:#8c9b1c; font-size:23px; text-align:center ; text-transform:uppercase; color:#fff; font-weight:bold;}
 .text_main2{ width:82%; float:left}
 .readmore{ background-color:#1b75bb; float:right; text-transform:uppercase; width:auto; height:17px;padding:5px 10px 4px ; text-align:center; margin-top:10px; border-radius:3px; }
 .readmore1{ background-color:#1b75bb; float:left; text-transform:uppercase; width:auto; height:17px;padding:5px 10px 4px ; text-align:center; margin-top:10px; border-radius:3px; }
@@ -143,7 +143,7 @@ a:hover, a:active, a:focus {
 .bd label{ margin-left:10px; background-color:#fff; padding:4px 2px 2px 2px; border-left:1px solid #d8d8d8; border-right:1px solid #d8d8d8; font-weight:bold }
 #footer{ background:url(../images/bgfooter.png) repeat-x; height:238px; clear:both;}
 .contentfooter{ width:960px; height:auto; margin:0 auto;}
-.ft1{ float:left; width:22%;padding-right:10px; border-right:1px solid #5397cc;  margin:10px 0 0 18px; height:155px; margin-bottom:45px;}
+.ft1{ float:left; width:22%;padding-right:10px; border-right:1px solid #5397cc;  margin:10px 0 0 16px; height:155px; margin-bottom:45px;}
 .ft1 ul{margin-top:5px;}
 .ft1 li{ color:#FFF6F6; padding:5px 0; border-bottom:1px solid #5397CC; list-style:initial}
 .ft1 li a{color:#fff; text-decoration:none; font-weight:normal; font-size:13px;}
@@ -179,7 +179,7 @@ a:hover, a:active, a:focus {
 #contentmaingv{width:100%; clear:both}
 #contentmaingv ul{margin:0; padding:0}
 #contentmaingv  li{list-style:none; clear:both; width:50%}
-#titlecontentgv p{float:left; font-weight:bold; font-size:16px;padding:2px; margin-bottom:10px}
+#titlecontentgv p{float:left; font-weight:normal; font-size:16px;padding:2px; margin-bottom:10px}
 #titlecontentgv a{text-decoration:none; color:#4d4d4d}
 .divgv{float:left; width:34%;padding:10px 5px 1px 5px;}
 .divgv2{float:left; width:58%; padding:5px;}
@@ -206,11 +206,11 @@ a:hover, a:active, a:focus {
 .bgvdcontent a{text-decoration:none;}
 .bottomcontentdt{float:left; width:27%;}
 .bottomcontentdt li{float: left; list-style: none;}
-.bottomcontentdt1{float:left; padding-top:82px; margin-left: -99px; }
+.bottomcontentdt1{float:left; padding-top:65px; }
 .bottomcontentdt1 p{font-size:7px;}
 .bottomcontentdt1 ul{margin:0; padding:0;}
 .bottomcontentdt1 li{list-style:none; float: left;}
-#contentdtbottom{ position:absolute; left:215px; bottom:33px; width:265px;}
+#contentdtbottom{ position:absolute; left:181px; bottom:33px; width:245px;}
 /*tin tuc*/
 #contenttt {
 	padding: 10px;

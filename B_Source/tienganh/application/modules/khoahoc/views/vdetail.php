@@ -13,16 +13,25 @@
 				 	</div>
 				 </div>		 	 
 				 <style>				
-				 	#slider img{ width:663px !important; height:235px!important;}
+				 	#featured img{ width:663px !important; height:235px!important;}
 				 </style>
 				 <div id="content_right">
 				 	<div class="slidegv">
 				 		<div class="slider-wrapper theme-default">
-				            <div id="slider" class="nivoSlider">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide1.jpg" data-thumb="images/slide1.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">		                
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide2.jpg" data-thumb="images/slide2.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide31.jpg" data-thumb="images/slide31.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
-				                <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/slide4.jpg" data-thumb="images/slide4.jpg" alt="" style="width: 663px; visibility: hidden; display: inline-block;">
+				        <div id="featured">	
+				            	<?php foreach ($list_slide as $slide)
+									{
+										
+												$preg = preg_match_all('#<img.*/>#',$slide->anh1,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh2,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh3,$match);
+												echo $match[0][0];
+												$preg = preg_match_all('#<img.*/>#',$slide->anh4,$match);
+												echo $match[0][0];
+											
+									}?>
 		        		</div>
 				 	</div>
 				 	<div id="contentgv">
@@ -30,6 +39,7 @@
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
 				 			<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
+				 			<p><?php echo $breadcrum->cate_name ?></p>
 				 		</div>
 				 		
 				 		<div id="contentmaingv">

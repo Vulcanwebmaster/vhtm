@@ -107,7 +107,7 @@
 					 	if(parseInt(left) < parseInt('0px'))
 						{	
 				 	 		//$(".slideimage").animate({"left": "=0"}, "slow");
-				 	 		 $(".slideimage").animate({"left": "+=311px"}, "slow");
+				 	 		 $(".slideimage").animate({"left": "+=321px"}, "slow");
 				 	 		 next=1;
 				 	 	}
 				});		
@@ -122,7 +122,7 @@
 			 	 		 //$(".slideimage").animate({"left": "-=1500px"}, "slow");
 			 	 	}
 					else{										
-						 	 $(".slideimage").animate({"left": "-=311px"}, "slow");
+						 	 $(".slideimage").animate({"left": "-=321px"}, "slow");
 						 	 prev=1;
 						
 						}
