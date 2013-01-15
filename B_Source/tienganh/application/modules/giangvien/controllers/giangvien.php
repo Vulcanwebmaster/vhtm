@@ -38,6 +38,7 @@ class Giangvien extends NIW_Controller
 			$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 			$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
+			$data['list_quangcao']=$this->Mgiangvien->getListFull('quangcao');
 			$data['list_slide']=$this->Mgiangvien->getListFull('slide');
 			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 			$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
@@ -60,6 +61,7 @@ class Giangvien extends NIW_Controller
 				$data['list_courses_cate'] = $this->Mgiangvien->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
+				$data['list_quangcao']=$this->Mgiangvien->getListFull('quangcao');
 				$data['list_slide']=$this->Mgiangvien->getListFull('slide');
 				$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Trợ giảng',$index,10);
@@ -81,6 +83,7 @@ class Giangvien extends NIW_Controller
 				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
+				$data['list_quangcao']=$this->Mgiangvien->getListFull('quangcao');
 				$data['list_slide']=$this->Mgiangvien->getListFull('slide');
 				$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Thầy giáo',$index,10);
@@ -103,6 +106,7 @@ class Giangvien extends NIW_Controller
 				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 				$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
 				$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
+				$data['list_quangcao']=$this->Mgiangvien->getListFull('quangcao');
 				$data['list_slide']=$this->Mgiangvien->getListFull('slide');
 				$data['category']  =  $this->Mgiangvien->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgiangvien->getListByColumnOffsetsp('ta_lecturers','lecturers_category','Cô giáo',$index,10);
@@ -123,6 +127,7 @@ class Giangvien extends NIW_Controller
 			$data['list_dichvu']=$this->Mgiangvien->getListFull('ta_dichvu');
 			$data['hotro_online']=$this->Mgiangvien->getListFull('hotroonline');
 			$data['list_doitac']=$this->Mgiangvien->getListFull('doitac');
+			$data['list_quangcao']=$this->Mgiangvien->getListFull('quangcao');
 			$data['list_slide']=$this->Mgiangvien->getListFull('slide');
 			$data['list_slide1']=$this->Mgiangvien->getListFull('slide1');
 			$data['list_courses'] = $this->Mgiangvien->getListFull('ta_courses');

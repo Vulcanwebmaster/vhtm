@@ -8,6 +8,7 @@ body{
 #header{
 	width:100%; background-image:url(../images/bg_header.gif); background-repeat:repeat-x; height:205px; color:#fff; background-color:red;
 }
+#divAds img{ width: 267px !important; height: 250px !important }
 #header a{color:#fff;}
 #topheader{width:100%; height:30px;}
 .content_header{ width:960px; margin:0 auto;}
@@ -167,7 +168,7 @@ a:hover, a:active, a:focus {
 #imgleftgv{position:absolute; right:0; background:url(../images/leffgv.png) no-repeat; width:464px; height:117px;}
 #imgleftgv p{ color:#fff; font-size:28px; margin:40px 0 0 170px}
 #content_left{float:left; width:28%;  position:relative}
-#contentlefftgv{margin-top:120px; border:1px solid #c0c0c0;  min-height:1000px;}
+#contentlefftgv{margin-top:120px; margin-bottom: 10px; border:1px solid #c0c0c0;  min-height:auto;}
 #ul_leftgv li{ list-style:none; padding:0 10px; font-size: 16px; line-height:30px;}
 #ul_leftgv li a{color:#4d4d4d; text-decoration: none}
 .bgicongv2{background:url(../images/icongv.png) no-repeat scroll 2px 10px;}
@@ -212,7 +213,7 @@ a:hover, a:active, a:focus {
 .bottomcontentdt1 p{font-size:7px;}
 .bottomcontentdt1 ul{margin:0; padding:0;}
 .bottomcontentdt1 li{list-style:none; float: left;}
-#contentdtbottom{ position:absolute; left:181px; bottom:33px; width:245px;}
+#contentdtbottom{ position:absolute; left:213px; bottom:33px; width:245px;}
 /*tin tuc*/
 #contenttt {
 	padding: 10px;

@@ -34,6 +34,7 @@ class Khoahoc extends NIW_Controller
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
+			$data['list_quangcao']=$this->Mkhoahoc->getListFull('quangcao');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['items']  =  $this->Mkhoahoc->getListOffset('ta_courses',10,$index);
@@ -52,6 +53,7 @@ class Khoahoc extends NIW_Controller
 			$data['category']  =  $this->Mkhoahoc->getListFullCategory('ta_courses');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
+			$data['list_quangcao']=$this->Mkhoahoc->getListFull('quangcao');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['list_chitiet']  =  $this->Mkhoahoc->getRowByColumn('ta_courses','courses_id',$index);
@@ -78,6 +80,7 @@ class Khoahoc extends NIW_Controller
 			$data['list_courses_cate'] = $this->Mkhoahoc->getListFull('ta_courses_cate');
 			$data['list_doitac']  =  $this->Mkhoahoc->getListFull('doitac');
 			$data['hotro_online']=$this->Mkhoahoc->getListFull('hotroonline');
+			$data['list_quangcao']=$this->Mkhoahoc->getListFull('quangcao');
 			$data['list_slide']=$this->Mkhoahoc->getListFull('slide');
 			$data['list_slide1']=$this->Mkhoahoc->getListFull('slide1');
 			$data['category']  =  $this->Mkhoahoc->getListCategory('ta_courses_cate');

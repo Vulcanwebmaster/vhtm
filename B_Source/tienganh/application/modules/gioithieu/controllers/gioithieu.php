@@ -37,6 +37,7 @@ class Gioithieu extends NIW_Controller
 			$data['items']=$this->Mgioithieu->getListByColumn('ta_about_us','about_category',1);
 			$data['title']='tienganh | Giới thiệu';
 			$data['list_slide']=$this->Mgioithieu->getListFull('slide');
+			$data['list_quangcao']=$this->Mgioithieu->getListFull('quangcao');
 			$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 			$data['list_courses'] = $this->Mgioithieu->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
@@ -55,6 +56,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
+				$data['list_quangcao']=$this->Mgioithieu->getListFull('quangcao');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['category']  =  $this->Mgioithieu->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Sứ mệnh',$index,4);
@@ -71,6 +73,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
+				$data['list_quangcao']=$this->Mgioithieu->getListFull('quangcao');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['category']  =  $this->Mgioithieu->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Tầm nhìn',$index,4);
@@ -87,6 +90,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
+				$data['list_quangcao']=$this->Mgioithieu->getListFull('quangcao');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['category']  =  $this->Mgioithieu->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Giá trị cốt lõi',$index,4);
@@ -103,6 +107,7 @@ class Gioithieu extends NIW_Controller
 				$data['list_courses_cate'] = $this->Mgioithieu->getListFull('ta_courses_cate');
 				$data['hotro_online']=$this->Mgioithieu->getListFull('hotroonline');
 				$data['list_slide']=$this->Mgioithieu->getListFull('slide');
+				$data['list_quangcao']=$this->Mgioithieu->getListFull('quangcao');
 				$data['list_doitac']=$this->Mgioithieu->getListFull('doitac');
 				$data['category']  =  $this->Mgioithieu->getListFullCategory('ta_courses');
 				$data['items']=$this->Mgioithieu->getListByColumnOffsetsp('ta_about_us','about_category','Văn hóa công ty',$index,4);

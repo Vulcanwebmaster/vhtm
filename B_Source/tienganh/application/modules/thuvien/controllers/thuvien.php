@@ -19,6 +19,7 @@ class Thuvien extends NIW_Controller
 			$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_doitac']	=	$this->Mthuvienanh->getListFull('doitac');
+			$this->data['list_quangcao']=$this->Mthuvienanh->getListFull('quangcao');
 			$this->data['list_slide1']=$this->Mthuvienanh->getListFull('slide1');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['category']  =  $this->Mthuvienanh->getListFullCategory('ta_courses');
@@ -33,6 +34,7 @@ class Thuvien extends NIW_Controller
 			$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 			$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 			$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
+			$this->data['list_quangcao']=$this->Mthuvienanh->getListFull('quangcao');
 			$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 			$this->load->view('front/container', $this->data);
 		}
@@ -47,6 +49,7 @@ class Thuvien extends NIW_Controller
 		$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
+		$this->data['list_quangcao']=$this->Mthuvienanh->getListFull('quangcao');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		//var_dump($data['list_courses_cate']); die();
@@ -86,6 +89,7 @@ class Thuvien extends NIW_Controller
 		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
+		$this->data['list_quangcao']=$this->Mthuvienanh->getListFull('quangcao');
 		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
 		$this->data['module'] = $this->module;
 		$this->data['page'] = 'vdanhmucvideo';
@@ -113,6 +117,7 @@ class Thuvien extends NIW_Controller
 		$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');
 		$this->data['hotro_online']=$this->Mthuvienanh->getListFull('hotroonline');
 		$this->data['list_doitac']=$this->Mthuvienanh->getListFull('doitac');
+		$this->data['list_quangcao']=$this->Mthuvienanh->getListFull('quangcao');
 		$this->data['list_courses'] = $this->Mthuvienanh->getListFull('ta_courses');
 		$this->data['list_courses_cate'] = $this->Mthuvienanh->getListFull('ta_courses_cate');
 		$this->data['module']	=	$this->module;

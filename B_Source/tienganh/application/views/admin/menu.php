@@ -23,6 +23,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio_home/admin">Video trang chủ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>video_fanpage/admin">Video Fan page</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video thư viện</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Banner</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slidefooter/admin">Slide Footer</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>email/admin">Email</a></li>

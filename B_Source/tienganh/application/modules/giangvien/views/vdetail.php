@@ -2,6 +2,7 @@
 <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.pngFix.pack.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery.fancybox-1.0.0.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/swfobject.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/trungtam-tienganh/css/fancy.css">
 	<div id="popup-bg"></div>
 	<style>
@@ -37,6 +38,20 @@
 					 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
 					 		</ul>
 					 	</div>
+					<!------Banner------->
+				 	<?php foreach ($list_quangcao as $quangcao)
+							{?>
+							<div id="divAds" >
+							<a target="_blank" href="<?php echo $quangcao->link1 ?>"><?php echo $quangcao->anh1 ?></a>
+							</div>
+					<?php 	}
+					foreach ($list_quangcao as $quangcao)
+							{?>
+							<div id="divAds" >
+							<a target="_blank" href="<?php echo $quangcao->link2 ?>"><?php echo $quangcao->anh2 ?></a>
+							</div>
+					<?php 	} ?>
+					<!------End Banner------->
 					 </div>			 
 					 <style>				
 					 	#featured img{ width:663px !important; height:235px!important;}
@@ -78,17 +93,143 @@
 							 				<div class="bottomcontentdt">
 							 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
 							 				</div>
-							 				<div class="bottomcontentdt1">
-							 					<p>What people think about us</p>
-							 					<ul>
-							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
-							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
-							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
-							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
-							 						<li><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconstar.gif"/></li>
-							 					</ul>
-					 						</div>
+							 				
 							 			</div><br clear="both" />
+
+			<script type="text/javascript">
+				$(document).ready(function(){													
+					var ispressed=0;  
+					var value = document.getElementById("value");
+					var ratingstarvalue = document.getElementById("ratingstarvalue");
+					var star1 = document.getElementById("star1");
+					var star2 = document.getElementById("star2");
+					var star3 = document.getElementById("star3");
+					var star4 = document.getElementById("star4");
+					var star5 = document.getElementById("star5");
+
+					value.innerHTML="...";
+
+					$("#star1").mouseenter(function(){
+						if (ispressed==0)
+						{
+							star2.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star3.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star4.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star5.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star1.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+						}
+					});
+					$("#star1").mouseleave(function(){
+						if (ispressed==0)
+						{
+							star1.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star2.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star3.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star4.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+							star5.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+						}
+					});
+
+					$("#star2").mouseenter(function(){
+						$("#star1").mouseenter();
+						if (ispressed==0)
+							star2.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+					});
+					$("#star2").mouseleave(function(){
+						$('#star1').mouseleave();
+					});
+					
+					$("#star3").mouseenter(function(){
+						$("#star2").mouseenter();
+						if (ispressed==0)
+							star3.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+					});
+					$("#star3").mouseleave(function(){
+						$('#star2').mouseleave();
+					});
+
+					$("#star4").mouseenter(function(){
+						$("#star3").mouseenter();
+						if (ispressed==0)
+							star4.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+					});
+					$("#star4").mouseleave(function(){
+						$('#star3').mouseleave();
+					});
+
+					$("#star5").mouseenter(function(){
+						$("#star4").mouseenter();
+						if (ispressed==0)
+							star5.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+					});
+					$("#star5").mouseleave(function(){
+						$('#star4').mouseleave();
+					});                                                    
+					
+					$("#star1").mousedown(function(){
+						ispressed=1;
+						star2.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+						star3.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+						star4.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+						star5.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png";
+						star1.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+						ratingstarvalue.value = 1;
+						value.innerHTML="Not good";
+					});
+
+					$("#star2").mousedown(function(){
+						$("#star1").mousedown();
+						star2.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+						ratingstarvalue.value = 2;
+						value.innerHTML="Needs That Special Something";
+					});
+
+					$("#star3").mousedown(function(){
+						$("#star2").mousedown();														
+						star3.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+						ratingstarvalue.value = 3;
+						value.innerHTML="Average, Ordinary";
+					});
+
+					$("#star4").mousedown(function(){	
+						$("#star3").mousedown();											
+						star4.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+						ratingstarvalue.value = 4;
+						value.innerHTML="That's Good Stuff";
+					});
+
+					$("#star5").mousedown(function(){
+						$("#star4").mousedown();
+							star5.src="<?php echo base_url();?>assets/trungtam-tienganh/images/star2.png";
+							ratingstarvalue.value = 5;
+							value.innerHTML="Perfect. It doesn't get any better";
+					});
+					
+				});
+					
+			</script>
+
+			<img id="star1" src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png" alt="" />
+			<img id="star2" src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png" alt="" />
+			<img id="star3" src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png" alt="" />
+			<img id="star4" src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png" alt="" />
+			<img id="star5" src="<?php echo base_url();?>assets/trungtam-tienganh/images/star.png" alt="" />
+			<label id="value" style=" margin-left:5px; width:50px">...</label>
+			<input type="hidden" name ="ratingstarvalue" id="ratingstarvalue" value=""/> 
+			
+			<script type="text/javascript">
+				$(document).ready(function(){
+					var sm=document.getElementById('Submit');
+					$('#Submit').mouseenter(function(){
+						$('#Submit').css('background-image','url(<?php echo base_url();?>assets/trungtam-tienganh/images/submitbt2.png)');
+						});
+					$('#Submit').mouseleave(function(){
+						$('#Submit').css('background-image','url(<?php echo base_url();?>assets/trungtam-tienganh/images/submitbt1.png)');
+						});
+					});
+			</script>
+			<input type="submit" value="Bình chọn" id="Submit" style="margin-left:30px"/>
+
 					 		<!---	<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
 					 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
 					 		
@@ -236,13 +377,13 @@
 		font-family:Arial, Helvetica, sans-serif;
 	}
 	a#show-popup {
-		margin:20px 0 0 20px;
+		padding:20px 0 0 20px;
 		float:left;
 		text-decoration:none;
 		
 	}
 	a#show-popup1 {
-		margin:20px 0 0 20px;
+		padding:20px 0 0 20px;
 		float:left;
 		text-decoration:none;
 	}

@@ -11,6 +11,20 @@
 				 			
 				 		</ul>
 				 	</div>
+				 	<!------Banner------->
+				 	<?php foreach ($list_quangcao as $quangcao)
+							{?>
+							<div id="divAds" >
+							<a target="_blank" href="<?php echo $quangcao->link1 ?>"><?php echo $quangcao->anh1 ?></a>
+							</div>
+					<?php 	}
+					foreach ($list_quangcao as $quangcao)
+							{?>
+							<div id="divAds" >
+							<a target="_blank" href="<?php echo $quangcao->link2 ?>"><?php echo $quangcao->anh2 ?></a>
+							</div>
+					<?php 	} ?>
+					<!------End Banner------->
 				 </div>		 	 
 				 <style>				
 				 	#featured img{ width:663px !important; height:235px!important;}
