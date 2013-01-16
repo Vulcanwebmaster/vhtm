@@ -46,6 +46,7 @@
 						<tr> 
 							<th>STT</th>
 							<th>Tên giảng viên</th>
+							<th>Bình chọn</th> 
 		    				<th>Giảng viên</th> 
 		    				<th>Sửa</th>
 		    				<th>Xóa</th>
@@ -57,6 +58,7 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 					 			<td><?php echo $item->lecturers_title;?></td>
+					 			<td><?php echo $item->vote;?></td> 
 			    				<td><?php echo $item->lecturers_category;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>giangvien/admin/edit/<?php echo $item->lecturers_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>

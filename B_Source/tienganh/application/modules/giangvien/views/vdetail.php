@@ -4,7 +4,31 @@
 <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/swfobject.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>assets/trungtam-tienganh/js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/trungtam-tienganh/css/fancy.css">
-	<div id="popup-bg"></div>
+<div id="popup-bg"></div>
+
+<?php	// Lấy chuỗi ký tự từ...
+	function strpos_content($content)
+	{
+	     $start=strpos($content, 'http://youtube');
+	     //var_dump($stars); die();
+	     if ($start === FALSE)
+	      $start=strpos($content, 'http://www.youtube');
+	     
+	     if ($start !== FALSE)
+	      {
+	          $i=$start;
+	            //tang cho den khi lay dk gia tri
+	             while ($content[$i] != '<' && $i<strlen($content)-1) {
+	              //echo $content[$i];
+	                 $i++;
+	             }
+	       //die();
+	          return substr($content, $start,$i-$start);
+	         }
+	      else return FALSE;
+}?>
+<!-------------End---------------->
+	
 	<style>
 		#popup-content{
 			padding: 20px !important;
@@ -79,12 +103,12 @@
 							 			<div id="contetntitlegv">
 							 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
 							 				
-							 				<div id="ltgv"><?php echo $chitiet->lecturers_content ?></div>
+							 				<div id="ltgv"><?php $tach = $chitiet->lecturers_content; 
+																echo str_replace(strpos_content($tach),"",$tach);
+															 ?></div>
 							 			</div><br clear="both"/>
 							 			<div class="videogvdt">
-							 				<a rel="fancyvideo" href="<?php echo $chitiet->link_vedio?>">
-							 					<img src="http://img.youtube.com/vi/<?php echo substr($chitiet->link_vedio,31)?>/2.jpg" style="margin:3px 50px; height: 200px" >
-							 				</a>
+							 				<iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo substr($chitiet->link_vedio,31)?>" frameborder="0" allowfullscreen></iframe>
 							 			</div>
 							 			<div id="contentdtbottom">
 							 				<div class="bottomcontentdt">
@@ -96,6 +120,8 @@
 							 				
 							 			</div><br clear="both" />
 
+<!----------- Binh chon------------>
+<form method="post" action="<?php echo base_url();?>giangvien/vote/<?php echo $chitiet->lecturers_id ?>">
 			<script type="text/javascript">
 				$(document).ready(function(){													
 					var ispressed=0;  
@@ -229,8 +255,9 @@
 					});
 			</script>
 			<input type="submit" value="Bình chọn" id="Submit" style="margin-left:30px"/>
-
-					 		<!---	<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
+</form>
+<!--- End Binh chon
+					 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
 					 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
 					 		
 					 			<div id="contetntitlegv">

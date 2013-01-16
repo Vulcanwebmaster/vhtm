@@ -48,17 +48,20 @@
 		
 		function _input()
 		{
+			//$tach = $this->input->post('lecturers_content');			// Tách chuỗi
+			//$tach1 = str_replace($this->strpos_content($tach),"",$tach);
+			//var_dump($tach1);die();
 			$input=array(
 						'lecturers_title'=>$this->input->post('lecturers_title'),
 						'lecturers_category'=>$this->input->post('lecturers_category'),
-						'lecturers_content'=>$this->input->post('lecturers_content'),
+						'lecturers_content'=> $this->input->post('lecturers_content'),
 						'link_vedio' =>$this->strpos_content($this->input->post('lecturers_content')),
 						'lecturers_image'=>$this->input->post('lecturers_image'),
 						'alias'=>$this->getAliasByName($this->input->post('lecturers_title')),
 						);
 			return $input;
 		}
-		
+		// Lấy chuỗi ký tự từ...
 		function strpos_content($content)
 		{
 			        $start=strpos($content, 'http://youtube');

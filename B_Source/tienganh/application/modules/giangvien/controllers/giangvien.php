@@ -121,7 +121,6 @@ class Giangvien extends NIW_Controller
 			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
 			$temp = explode("-", $alias);
 			if (isset($temp)){
-				//$category_id = $temp[0];
 				$id = $temp[0];
 			}
 			$data['list_dichvu']=$this->Mgiangvien->getListFull('ta_dichvu');
@@ -140,7 +139,41 @@ class Giangvien extends NIW_Controller
 			$data['page']='vdetail';
 			$this->load->view('front/container',$data);
 		}
+//<!--------- Bình chọn -------->
+	function _inputvote()
+			{
+				$input= $this->input->post('ratingstarvalue'); // Lấy giá trị từ vdetail truyền vào name="ratingstarvalue"
+				/*$input=array(
+							'vote_tb'=>$this->input->post('ratingstarvalue'),
+							);*/
+				return $input;
+			}
+	function vote($lecturers_id){
+		$input= $this->_inputvote();
+		//echo $input;die();
+					if ($input==TRUE)
+					{
+						$vote = $this->Mgiangvien->getRowByColumn('ta_lecturers','lecturers_id',$lecturers_id);
+						$vote_luot = (float) $vote->vote;
+						$vote_tb = (float) $vote->vote_tb;
+						$vote_tb1 =($vote_tb * $vote_luot + $input)/($vote_luot+1);
+						//echo (String)$vote_tb1 ;die();
+						$vote_tb2 =array(
+									'vote_tb'=> $vote_tb1, 		//Truyền vào db
+									'vote'	 => $vote_luot+1,	//Truyền vào db
+						);
+						//var_dump($vote_tb2) ;die();
+						
+						if ($this->Mgiangvien->updateRowByColumn('ta_lecturers','lecturers_id',$lecturers_id,$vote_tb2))
+						{
+							//$this->Mgiangvien->updateRowByColumn('ta_lecturers','lecturers_id',$lecturers_id,$vote_tb1)
+							$this->session->set_userdata('result','Bình chọn thành công');
+						}
+					}
+		$this->index();
+	}
 		
+//<!---------End Bình chọn -------->		
 	function _input()
 			{
 				$input=array('name1'=>$this->input->post('name1'),
@@ -167,7 +200,7 @@ class Giangvien extends NIW_Controller
 					$message.=$input['mesage_content'];
 					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
 					mail($to,$subject,$message,$options);
-					}
+				}
 			
 			$this->index();
 		}
