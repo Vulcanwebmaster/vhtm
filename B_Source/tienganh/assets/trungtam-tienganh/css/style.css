@@ -200,7 +200,7 @@ a:hover, a:active, a:focus {
 #imggv img{ width:110px !important; height: 142px !important;}
 #ltgv{ float:left; width:50%; line-height: 25px; margin-bottom:40px}
 /*video*/
-.videogvdt iframe{ width:50%; height:23%; margin-left:35px;}
+.videogvdt iframe{ width:57%; height:27%; margin-left:35px;}
 .bgvdimg{background:url(../images/bgvd.png) repeat-x; width:68%; height:12px; margin-top:5px !important;}
 .bgvdcontent{float:left; background:url(../images/bgvideo.png) no-repeat; width:154px; height:96px; margin:30px}
 .bgvdcontent iframe{width:109px; height:81px; padding-top:6px;}
