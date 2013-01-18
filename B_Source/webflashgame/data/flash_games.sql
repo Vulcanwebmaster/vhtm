@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2013 at 08:56 AM
+-- Generation Time: Jan 18, 2013 at 09:08 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -19,6 +19,316 @@ SET time_zone = "+00:00";
 --
 -- Database: `flash_games`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_be_acl_groups`
+--
+
+CREATE TABLE IF NOT EXISTS `n_be_acl_groups` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `lft` int(10) unsigned NOT NULL DEFAULT '0',
+  `rgt` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(254) NOT NULL,
+  `link` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `lft` (`lft`),
+  KEY `rgt` (`rgt`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `n_be_acl_groups`
+--
+
+INSERT INTO `n_be_acl_groups` (`id`, `lft`, `rgt`, `name`, `link`) VALUES
+(1, 1, 6, 'Member', NULL),
+(2, 4, 5, 'Administrator', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_be_acl_permissions`
+--
+
+CREATE TABLE IF NOT EXISTS `n_be_acl_permissions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `aro_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `aco_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `allow` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `aro_id` (`aro_id`),
+  KEY `aco_id` (`aco_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `n_be_acl_permissions`
+--
+
+INSERT INTO `n_be_acl_permissions` (`id`, `aro_id`, `aco_id`, `allow`) VALUES
+(1, 2, 1, 'Y'),
+(3, 1, 24, 'Y'),
+(4, 1, 27, 'N'),
+(5, 1, 6, 'N'),
+(6, 1, 3, 'N'),
+(7, 1, 12, 'N'),
+(8, 3, 24, 'Y'),
+(9, 3, 12, 'N'),
+(10, 3, 28, 'Y'),
+(11, 3, 36, 'Y'),
+(12, 3, 1, 'Y'),
+(13, 3, 3, 'N'),
+(14, 1, 32, 'Y');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_be_acl_permission_actions`
+--
+
+CREATE TABLE IF NOT EXISTS `n_be_acl_permission_actions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `access_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `axo_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `allow` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `access_id` (`access_id`),
+  KEY `axo_id` (`axo_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_be_acl_resources`
+--
+
+CREATE TABLE IF NOT EXISTS `n_be_acl_resources` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `lft` int(10) unsigned NOT NULL DEFAULT '0',
+  `rgt` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(254) NOT NULL,
+  `link` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `lft` (`lft`),
+  KEY `rgt` (`rgt`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+
+--
+-- Dumping data for table `n_be_acl_resources`
+--
+
+INSERT INTO `n_be_acl_resources` (`id`, `lft`, `rgt`, `name`, `link`) VALUES
+(1, 1, 78, 'Site', NULL),
+(2, 56, 77, 'Control Panel', NULL),
+(3, 57, 76, 'System', NULL),
+(4, 70, 71, 'Members', NULL),
+(5, 60, 69, 'Access Control', NULL),
+(6, 72, 73, 'Settings', NULL),
+(7, 74, 75, 'Utilities', NULL),
+(8, 67, 68, 'Permissions', NULL),
+(9, 65, 66, 'Groups', NULL),
+(10, 63, 64, 'Resources', NULL),
+(11, 61, 62, 'Actions', NULL),
+(12, 26, 55, 'General', 0),
+(13, 53, 54, 'Calendar', 0),
+(14, 51, 52, 'Category', 0),
+(15, 49, 50, 'Customers', 0),
+(16, 47, 48, 'Menus', 0),
+(17, 45, 46, 'Messages', 0),
+(18, 43, 44, 'Orders', 0),
+(19, 41, 42, 'Pages', 0),
+(20, 39, 40, 'Products', 0),
+(21, 37, 38, 'Subscribers', 0),
+(22, 35, 36, 'Admins', 0),
+(23, 33, 34, 'Filemanager', 0),
+(24, 18, 25, 'Customer Support', 0),
+(25, 23, 24, 'Purchase Support', 0),
+(26, 21, 22, 'Customer Record', 0),
+(27, 19, 20, 'Customers Admin', 0),
+(28, 12, 17, 'Project Panel', 0),
+(29, 15, 16, 'Project Spec', 0),
+(30, 13, 14, 'Project Home', 0),
+(32, 9, 10, 'Customer booking', 0),
+(33, 7, 8, 'Bookings', 0),
+(34, 3, 4, 'Courses', 0),
+(35, 5, 6, 'Trainers', 0),
+(36, 2, 11, 'Fitness', 0),
+(37, 31, 32, 'Multi languages', 0),
+(38, 29, 30, 'Slideshow', 0),
+(39, 27, 28, 'Playroom', 0),
+(40, 58, 59, 'Phpinfo', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_example_contactus_info`
+--
+
+CREATE TABLE IF NOT EXISTS `n_example_contactus_info` (
+  `slogan` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `address` text COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `fax` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `website` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `n_example_contactus_info`
+--
+
+INSERT INTO `n_example_contactus_info` (`slogan`, `address`, `phone`, `email`, `fax`, `website`) VALUES
+('We are champion', 'TC5B Me Tri Thuong, Tu Liem, Ha Noi', '+8490xxxxxxxx', 'tungns@niw.com.vn', '', 'niw.com.vn');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_example_contactus_message_info`
+--
+
+CREATE TABLE IF NOT EXISTS `n_example_contactus_message_info` (
+  `id` int(50) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `subject` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `yourmessage` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `n_example_contactus_message_info`
+--
+
+INSERT INTO `n_example_contactus_message_info` (`id`, `name`, `email`, `subject`, `yourmessage`, `date`) VALUES
+(17, 'Xuân Lê tiến', 'lexuantien0311@gmail.com', 'Ni hao', 'Ni hao!!!!', '2012-07-16 12:53:17'),
+(18, 'Le Tien', 'lexuantien0311@gmail.com', 'Tesstttt', 'Hellooooo!', '2012-07-16 13:03:15'),
+(19, 'Xuân Lê tiến', 'lexuantien0311@gmail.com', 'Ni hao', 'Ni hao!!!!', '2012-07-16 12:53:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_about_us`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_about_us` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_accounts`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_accounts` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `username` text COLLATE utf8_unicode_ci NOT NULL,
+  `password` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `authen_key` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `coin` int(11) NOT NULL,
+  `country` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `n_fg_accounts`
+--
+
+INSERT INTO `n_fg_accounts` (`id`, `username`, `password`, `email`, `status`, `authen_key`, `coin`, `country`) VALUES
+(1, 'tuyetyeuthuong', '123456', 'asdas', 1, 'xYcX53pL', 3, 'vietnam'),
+(2, 'sdsds', 'sdsds', 'sdsd', 1, 'sdfghjkl', 0, ''),
+(3, 'meme', '123', 'tuyetapt@gmail.com', 0, '', 0, ''),
+(4, 'admin@gmail.com', 'admin', '', 0, '', 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_ads`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_ads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `linkqc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `content` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_category`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` text COLLATE utf8_unicode_ci NOT NULL,
+  `alias` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `n_fg_category`
+--
+
+INSERT INTO `n_fg_category` (`id`, `category_name`, `alias`) VALUES
+(1, 'Twist Casino', 'Twist Casino'),
+(2, 'Card Games', 'Card Games'),
+(3, 'Board Games', 'Board Games'),
+(4, 'Arcade & Others\r\n', 'Arcade & Others'),
+(5, 'Sports Games', 'Sports Games'),
+(6, 'Browser Games', 'Browser Games');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_channel`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_channel` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `n_fg_channel`
+--
+
+INSERT INTO `n_fg_channel` (`id`, `name`) VALUES
+(1, 'Kênh games mới1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_chat`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_chat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `room_id` int(11) NOT NULL,
+  `account_id` int(11) NOT NULL,
+  `time` time NOT NULL,
+  `date` date NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `n_fg_chat`
+--
+
+INSERT INTO `n_fg_chat` (`id`, `room_id`, `account_id`, `time`, `date`, `content`) VALUES
+(1, 2, 2, '00:00:01', '2013-01-01', 'rất nhiều nội dung hay'),
+(3, 3, 3, '00:00:03', '2013-01-09', 'sadasda');
 
 -- --------------------------------------------------------
 
@@ -56,6 +366,257 @@ INSERT INTO `n_fg_games` (`id`, `image`, `name`, `rules`, `overview`, `statistic
 (10, '<p>\r\n	<img alt="" src="/flash_game/assets/flash_game/upload/images/game_97_logo_137x77_EN-US.png" style="width: 137px; height: 77px;" /></p>\r\n', 'Rummy', '<p>\r\n	&nbsp;</p>\r\n<h3 id="a_4110" style="margin: -10px 10px 31px 3px; padding: 45px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif;">\r\n	Rummy: Instructions</h3>\r\n<div class="container" style="margin: 0px; padding: 0px 11px 0px 15px; overflow: hidden; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<div style="margin: 0px; padding: 0px;">\r\n		<h3 style="margin: 38px -1px 31px -12px; padding: 0px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204);">\r\n			How to play</h3>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			A new game can be started by simply clicking &ldquo;New Game&ldquo;. The player may then define a number of settings to determine who may join the game, such as the opponents&rsquo; skill level, as well as the number of opponents. The player must decide whether the &quot;Knock&quot; button should be activated during the game. If this button is activated, the players will have the opportunity to take the card laying on the discard pile before the opponent can. The player may then take his/her turn as usual. Lastly, the player may set the point limit for the game, with a choice of 1, 50 or 100 points. 1 means that the game is over after one round. Alternatively, the player may join a game that has been set up by another player.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			A red exclamation mark signifies that it is the player&rsquo;s turn, while a green arrow points at the opponent who is making his/her move.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			The time remaining for the move is shown to the right of the table, as is the agreed maximum point total and other handy buttons such as &ldquo;Player Info.&rdquo; and &ldquo;Invite&rdquo;. The game chat is also located here. The player&rsquo;s own cards are shown face-up and his/her nickname and points total are displayed below. At the top left of the screen are two piles of cards.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			The pile facing upwards is the discard pile, while the other is the deck. A player may take a card from either pile. To do this, the player need only click on the desired card. To lay a card on the discard pile, the player can either click on the unwanted card or drag and drop it onto the pile. Jokers can normally only be laid by using the drag and drop method.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			Each player is shown a blended out &ldquo;Lay Cards&rdquo; button. As soon as the player has formed a group or sequence that can be laid, this button becomes active. The group or sequence that can be laid is highlighted by a blue line that stretches across all of the cards. The laid cards are shown in the middle of the table. To add cards to a group or sequence already laid, a player need only drag and drop the desired card into position. To make the order of the cards clear, a blue arrow shows the ends of the groups and sequences.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			The player has the opportunity to move the cards around in his/her hand. This is possible while other players are taking their turns and can be done by simply dragging and dropping the cards into the desired position.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			At the end of the round the point value of the cards that the player is still holding is shown. The player must then click &ldquo;Next&rdquo;. If the total exceeds the limit set at the start of the game, a red X appears next to the player&rsquo;s name and the button &ldquo;Exit&rdquo; is displayed. Clicking on this button takes the player back to the lobby. If the total is lower than the limit, he/she can click again on &ldquo;Next&rdquo; and join the next round.</p>\r\n		<h3 style="margin: 38px -1px 31px -12px; padding: 0px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204);">\r\n			Rules</h3>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			Rommé is a card game for two to four players. It is played with two decks of 52 cards and 6 Jokers. The Jokers can be used to complete groups or sequences. Before the game begins, a point limit is determined. If, during the game, a player exceeds this limit, he/she must sit out the remaining rounds.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			Each player receives 13 cards at the start of each round. The aim of the game is to lay all of the cards in the middle of the table in groups or sequences. At the beginning of a player&rsquo;s turn he/she must first take a card from either the deck or the card discarded by the previous player. Should the player have a recognised group or sequence of cards, he/she may lay it. Finally, the player must discard a card, irrespective of whether a group or sequence was laid. The turn is then over and the next player may go.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			A group consists of at least 3 cards of the same value, e.g. three 10s or four Aces. However, no card may appear twice in the group, meaning that a group of e.g. 10 of Diamonds, 10 of Clubs and 10 of Diamonds is not possible.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			A sequence is a number of consecutive, same suite cards in ascending order, e.g. 8 of Diamonds, 9 of Diamonds, 10 of Diamonds or 10 of Clubs, Jack of Clubs, Queen of Clubs. Aces can be either high or low, however one cannot lay a sequence consisting of a King, Ace and a 2. This is referred to as &ldquo;laying around the corner&rdquo;.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			While a player may lay a set of 3 cards, only one of the 3 may be a Joker. This means that Ace, Joker, Joker, for example, is not a valid combination, as it is unclear as to whether the cards form a group or a sequence.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			A player requires at least 30 points in hand to lay for the first time. If the player holds, for example, three 7s, he/she must wait as this group totals only 21 points. Once the player can lay a group or sequence of at least 30 points in value, the cards go into the middle of the table. Any player, who has already laid once in the round, may then add his/her own cards to the group or sequence already in the middle. E.g. A sequence consisting of 7 of Clubs, 8 of Clubs and 9 of Clubs has already been laid. A player who holds the 10 of Clubs may add this card to the sequence. The Jack of Clubs could then also be added, however the players must take care when a group is concerned as each card may only appear once.</p>\r\n		<h3 style="margin: 38px -1px 31px -12px; padding: 0px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204);">\r\n			Hint:</h3>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			If there is a group or sequence laid out on the table that includes a Joker, a player may exchange the card, which the Joker is standing in for, for the Joker itself.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			As soon as a player has laid all of his/her cards, the round is over. The values of the cards remaining in each player&rsquo;s hand are calculated to give the individual players a total. If this total exceeds the limit set at the start of the game, the player must sit out the remaining rounds. This sequence continues until only one player remains &ndash; the winner.</p>\r\n		<h3 style="margin: 38px -1px 31px -12px; padding: 0px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204);">\r\n			Points</h3>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			<strong style="font-style: inherit;">During the game the cards have the following values:</strong></p>\r\n		<ul style="margin: 1em 0px; padding-right: 0px; padding-left: 0px;">\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				Picture cards are worth 10 points</li>\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				Aces are worth 1 or 11 points depending on where they are used in a sequence</li>\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				All remaining cards are worth their face value</li>\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				Jokers assume the value of the card that they are replacing</li>\r\n		</ul>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			<strong style="font-style: inherit;">At the end of the game, the points for each player are determined as follows:</strong></p>\r\n		<ul style="margin: 1em 0px; padding-right: 0px; padding-left: 0px;">\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				Picture cards count as 10 points</li>\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				Aces count as 15 points</li>\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				Jokers count as 30 points</li>\r\n			<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n				All remaining cards are worth their face value.</li>\r\n		</ul>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			If a player manages to lay all of his/her cards at once, the negative points of the opponent&#39;s cards are doubled. This is referred to as playing &#39;straight from the hand&#39;.</p>\r\n	</div>\r\n</div>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	&nbsp;</p>\r\n<div style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<b><span style="font-size: 10pt;">Rummy&nbsp;</span></b><span style="font-size: 10pt;">is a card game for two to four players and belongs to a card game family with Jolly, Canasta, Chinchón and Gin Rummy. It is played with two 52-card decks with six jokers. At the start of the game each player receives 13 cards. The remaining cards form the deck.</span></div>\r\n<div style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	&nbsp;</div>\r\n<div style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<span style="font-size: 10pt;">The aim of the game is to lay your cards quicker than your opponent(s). The values of the cards still held by your opponent(s) at the end of a round are converted into negative points. If a player exceeds the 50 or 100 point limit, he/she loses. If there are 3 or more players, this player is knocked out, and the game continues until one player remains.</span></div>\r\n<div style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	&nbsp;</div>\r\n<div style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<span style="font-size: 10pt;">To lay the cards the players must form combinations. The combinations can be either groups (three or four cards of the same value, but different suits) or sequences (at least three like-suit, consecutive cards).</span></div>\r\n', '0', 2, '', 0),
 (11, '<p>\r\n	<img alt="" src="/flash_game/assets/flash_game/upload/images/game_123_logo_137x77_EN-US.png" style="width: 137px; height: 77px;" /></p>\r\n', 'Sizzling Hot', '<p>\r\n	&nbsp;</p>\r\n<h3 id="a_4039" style="margin: -10px 10px 31px 3px; padding: 45px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif;">\r\n	Sizzling Hot&trade; Deluxe: Instructions</h3>\r\n<div class="container" style="margin: 0px; padding: 0px 11px 0px 15px; overflow: hidden; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<div style="margin: 0px; padding: 0px;">\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			<b>&ldquo;Sizzling Hot Deluxe&rdquo;&nbsp;</b>is a slot machine or one-armed bandit. When the game starts you must select an amount of Twists that you would like to have available during the game. This amount will be displayed on the screen. You can use the +/- buttons to adjust your stake.<br />\r\n			<br />\r\n			The &ldquo;Paytable&rdquo; button lists the win possibilities and the symbols. Simply press the green &ldquo;Start&rdquo; button to begin the game. Click the &ldquo;Autoplay&rdquo; button to spin automatically. Another click on this button will deactivate the function.</p>\r\n		<br />\r\n		<br />\r\n		<h3 style="margin: 38px -1px 31px -12px; padding: 0px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204);">\r\n			Gamble</h3>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			The &ldquo;Gamble&rdquo; button will appear as soon as you have a win combination of at least two adjacent symbols from the left. In the &ldquo;Gamble Game&rdquo; you can double your Twists. Simply click the &ldquo;Gamble&rdquo; button and the game will begin. If you do not want to play the &ldquo;Gamble Game&rdquo;, you are free to carry on with the main game. You will be able to see the cards which you drew in the last &ldquo;Gamble Games&rdquo;.</p>\r\n	</div>\r\n</div>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">You have the best chances of winning at the</span><b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;&ldquo;Sizzling Hot Deluxe&rdquo;</b><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;slot machine. So, what are you waiting for? Get that win combination now. Five paylines across five reels in the regular game provide you with the perfect chance to win Twists.&nbsp;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">The aim of</span><b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;&ldquo;Sizzling Hot&rdquo;</b><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;is to achieve a line of 5 like symbols across the reels. In the regular game the win pattern starts at the first reel on the left and follows the payline across to the right. To win, the symbols must be adjacent (without any other symbols between them).</span></p>\r\n', '0', 1, '', 0),
 (12, '<p>\r\n	<img alt="" src="/flash_game/assets/flash_game/upload/images/up.jpg" style="width: 618px; height: 246px;" /></p>\r\n', 'Jolly-Star', '<p>\r\n	&nbsp;</p>\r\n<h3 id="a_6028" style="margin: -10px 10px 31px 3px; padding: 45px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif;">\r\n	Jolly Star: Getting Started</h3>\r\n<div class="container" style="margin: 0px; padding: 0px 11px 0px 15px; overflow: hidden; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<div style="margin: 0px; padding: 0px;">\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			Upon entering&nbsp;<strong style="font-style: inherit;">JollyStar</strong>, you will be prompted to determine how many Twists you would like to take with you to the machine. You can then determine your stake per payline with the &quot;+ / -&quot; symbols in-game.&nbsp; Click on the &quot;Start&quot; button to get the reels spinning. Clicking on the &quot;Autostart&quot; button activates automatic play.&nbsp; Click on the &quot;Autostart&quot; button a second time to end automatic play.</p>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			Click on the &quot;Paytable&quot; button at the bottom of the playing field to view the winnings summary table. Winnings are a multiplication of your stake. Refer to the table to learn which multiplication factor each winning combination brings.</p>\r\n		<h3 style="margin: 38px -1px 31px -12px; padding: 0px 0px 4px; font-size: 17px; color: rgb(51, 153, 204); font-style: italic; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgb(51, 153, 204);">\r\n			<strong style="font-style: inherit;">Gamble</strong></h3>\r\n		<p style="margin: 0px 0px 17px; padding: 0px;">\r\n			The &quot;Gamble&quot; button appears as soon as you have a winning combination of at least 2 consecutive symbols. You can choose to keep your winnings and continue playing by clicking &quot;Take&quot; or try to double your winnings with the gamble game. When gambling, you have the chance to double your winnings up to 7 times and - as long as you last the 8 rounds - cash in an extra bonus! Your chances of winning are always 50:50. If you would like to gamble simply press the &quot;Gamble&quot; button. If you win, the bar will light up. You can choose to continue gambling or walk away with your winnings at the end of every round.</p>\r\n	</div>\r\n</div>\r\n<p>\r\n	&nbsp;</p>\r\n', '<p>\r\n	&nbsp;</p>\r\n<p style="margin: 0px 0px 1em; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	This time the cheeky Harlequin isn&#39;t just getting up to mischief in card games, he has also doubled your luck in JollyStar; that&#39;s because the jester not only increases your chances of winning as the game joker, but can also bring you the jackpot if he appears in the right combination!<br />\r\n	<br />\r\n	JollyStar features 5 reels and 10 fixed paylines. Your aim is to land 5 identical symbols on an activated payline. In the regular game, winning combinations run left to right across the paylines. To land a win, a complete winning combination must occupy a payline, without any other symbols coming between the winning symbols.</p>\r\n<p style="margin: 0px 0px 1em; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	You can really make a killing with JollyStar, as there are 2 progressive jackpots up for grabs, which are always being fed by the stakes of ALL players! The main jackpot is all yours if you land 5 jolly symbols on a payline, and the smaller pot is given to those who land 5 star symbols on a payline.</p>\r\n', '0', 1, '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_helps`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_helps` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `title` text COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `type` text COLLATE utf8_unicode_ci NOT NULL,
+  `alias` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `n_fg_helps`
+--
+
+INSERT INTO `n_fg_helps` (`id`, `title`, `description`, `type`, `alias`) VALUES
+(3, 'GameTwist for free?', '<p>\r\n	&nbsp;</p>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	You can play all of the games on offer at GameTwist for free! You just have to sign up for an account - at no charge.</p>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	If you would like to receive more Twists than your fellow gamers, as well as have the ability to download 10 free games on your mobile phone and organise your own tournaments, then we recommend you pick up a Gold subscription. Details can be found in the&nbsp;<a href="http://www.gametwist.fr/help/id_topic~137/id_article~208/FAQs/Gold-Abo.html" style="color: rgb(51, 153, 204);">Gold subscription</a>&nbsp;FAQ.</p>\r\n', 'FAQs', ''),
+(4, 'Why subscribe to GameTwist?', '<p>\r\n	&nbsp;</p>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<b>Why get a GOLD subscription?</b><br />\r\n	<br />\r\n	GOLD subscribers</p>\r\n<ul style="margin: 1em 0px; padding-right: 0px; padding-left: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n		receive thousands of additional Twists free with every subscription</li>\r\n	<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n		can&nbsp;<b>organise their own tournaments</b></li>\r\n</ul>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<br />\r\n	<b>How much does a GOLD subscription cost?</b></p>\r\n<ul style="margin: 1em 0px; padding-right: 0px; padding-left: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n		1 month - &euro;8.50</li>\r\n	<li style="margin: 0px 0px 0px -11px; padding: 0px 0px 0px 16px; list-style: outside; background-image: url(http://static2.greentube.com/xsl_gamebase/_gametwist_2010/imgs/bullet_gametwist.png); background-attachment: scroll; background-color: transparent; background-position: 0px 4px; background-repeat: no-repeat no-repeat;">\r\n		1 year - &euro;72</li>\r\n</ul>\r\n', 'FAQs', ''),
+(5, 'Twists', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Playing games on the platform earns you additional Twists. Twists act as bonus points at GameTwist and are used for placing stakes in various games on the platform. As Twists are bonus points, you cannot redeem them for money.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Twists can be earnt by performing various activities on the platform (see table below). You can also buy Twist packs at the&nbsp;</span><a href="http://www.gametwist.fr/shop/shop_subscription.asp?page=2&amp;id_subscription=2" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">GameTwist Shop</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">.</span></p>\r\n', 'FAQs', ''),
+(6, 'Playing for Twists', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">You have the choice of playing for Twists or ranking list points in most of the games on the GameTwist website.&nbsp; You don&#39;t play for real money!&nbsp; Twists are the bonus points which you receive by doing things such as participating in a tournament or achieving certain goals in a game.&nbsp; You can also&nbsp;credit your&nbsp;account with&nbsp;Twists in the&nbsp;</span><a href="http://www.gametwist.fr/shop/shop_subscription.asp?page=2&amp;id_subscription=2" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">GameTwist Shop</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">You can decide whether you want to play for Twists or ranking list points before entering a game in the game lobby.&nbsp; To do so, simply click on either the &#39;Twists&#39; or &#39;Ranking List&#39; tab at the top of the game lobby window.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">You can only play for Twists when in the Casino Area.&nbsp; This is also true for Poker.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Collecting and betting Twists</b><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">You will receive Twists for participating in various activities on the GameTwist platform. For more details, please click on&nbsp;</span><a href="http://www.gametwist.fr/web/Help?id_topic=27&amp;id_article=5895" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Twists</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;in the Help section.&nbsp; You will also receive Twists if you subscribe to GameTwist.&nbsp; Sign up for a subscription in the</span><a href="http://www.gametwist.fr/shop/shop_subscription.asp" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Shop</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Alternatively, you can always&nbsp;credit your account with more Twists in the</span><a href="http://www.gametwist.fr/shop/shop_subscription.asp?page=2&amp;id_subscription=2" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">GameTwist Shop</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Playing for Twists</b><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Select the &#39;Twists&#39; tab in the game lobby before entering the game.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">When playing for Twists, players&#39; skill levels are not shown as you are only playing for Twists, which have no effect on your skill level.&nbsp; This is also the reason why all players are shown in white.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">When starting a new game, use the slider bar to set the Twist stakes.&nbsp; A small percentage of this stake will be deducted as a table charge.&nbsp; When looking to join a game, the Twist stakes for each game are shown under the participants in the table listings.&nbsp; You will be shown how many Twists you have won/lost in a summary table at the end of each game.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Playing for Twists has no effect on your position in the ranking list or your skill level!</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Playing for Ranking List Points&nbsp;&nbsp; &nbsp;</b><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Play for ranking list points by selecting the &#39;Ranking List&#39; tab in the game lobby.&nbsp; Playing for ranking list points has no effect on your Twists.</span></p>\r\n', 'FAQs', ''),
+(7, 'Country Selection', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">National flag symbols next to usernames are used to show a player&#39;s nationality. You can set your nationality in the same-named drop box on the &ldquo;Settings&rdquo; page. If a player has not chosen their nationality, a globe symbol will be shown next to their username as default.</span></p>\r\n', 'General Help', ''),
+(8, 'Player Evaluation', '<p>\r\n	<span class="HTMLTypewriter3" style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;"><span lang="EN-GB" style="font-family: Arial; color: black; font-size: 10pt;">Further information about player evaluation can be found under&nbsp;</span></span><a href="http://www.gametwist.fr/help/id_topic~88/id_article~360/Hilfe%20zur%20Website/Spielerbewertung/St%C3%A4rke.html" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Skill Level</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;and&nbsp;</span><a href="http://www.gametwist.fr/help/id_topic~87/id_article~191/Hilfe%20zur%20Website/Spielerbewertung/Rangliste.html" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Ranking</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">.</span></p>\r\n', 'General Help', ''),
+(9, 'User Tournament', '<p>\r\n	&nbsp;</p>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<b>Who may organise tournaments?</b></p>\r\n<ol style="margin: 1em 0px; padding-right: 0px; padding-left: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		Any player who has a GOLD subscription, which is valid at least until the end date of the tournament, may organise tournaments.</li>\r\n</ol>\r\n<p>\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n		<b>Who may participate in tournaments?</b></p>\r\n</p>\r\n<ol style="margin: 1em 0px; padding-right: 0px; padding-left: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		You must be on the tournament organiser&rsquo;s Friends List and you must receive an invitation to participate.</li>\r\n</ol>\r\n<p>\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n		<b>When may I organise tournaments?</b></p>\r\n</p>\r\n<ol style="margin: 1em 0px; padding-right: 0px; padding-left: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		You must have at least one friend in your Friends List.</li>\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		You may only have one tournament running or organised per game at any one time.</li>\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		Tournaments may be organised two weeks in advance at the earliest.</li>\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		A total of 10 tournaments may be organised per calendar month.</li>\r\n	<li style="margin: 0px; padding: 0px; list-style: decimal outside;">\r\n		The GOLD subscription must be valid at least until the end of the tournament.</li>\r\n</ol>\r\n', 'General Help', ''),
+(10, 'Loss of Connection', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">A loss of connection can have different effects on single and multiplayer games.&nbsp;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Single player games include Solitaire and Sugar!</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Multiplayer games include 8-Ball Pool and Yatzy.&nbsp;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Loss of connection - Single player games</b><br />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">In order for a player to receive credit for a game won, the game must be won in accordance with the rules.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">If the player loses the&nbsp;connection with the server, he/she is able rejoin the game within the remaining playing time. The playing time will still run whilst the player is experiencing a loss of connection. If the playing time runs out before the player re-establishes a connection with the game server, the points which the player had earned before the loss of connection will be awarded to his/her account.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<b style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Loss of connection - Multiplayer games</b><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">In order for a player to receive credit for a game won, the game must be won in accordance with the rules. Furthermore, the winner of the game must maintain a connection to the server for the entire course of play.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Should a player lose the connection with the server, he/she will be given 2 minutes to re-establish it. If he/she manages this, the loss of connection has no consequence on the game, as long as the player hasn&#39;t been thrown out of the game due to a time limit violation by his/her fellow players. Play will then continue as normal. Should, however, the player be thrown out of the game or if he/she fails to re-establish a connection with the server within 2 minutes, a computer player of average ability will take over the player&#39;s role for the rest of the game. In this case, the player is still able to rejoin the game at a later point in time.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Players who have rejoined the game after the 2-minute time limit, or have had their role taken over by the computer do not receive credit for a won game. Should both/all players lose their connection to the server, the result of the game will not be recorded at all.</span></p>\r\n', 'General Help', ''),
+(11, 'Black Game Window', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">Are you only shown a black playing field with a small &quot;x&quot; in the top right-hand corner when starting a game?</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">This probably means that you need to install Java on your computer. Click&nbsp;</span><a href="http://www.gametwist.fr/help/id_topic~424/id_article~2036/Hilfe%20zur%20Technik/Java%20Download.html" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" target="_blank">here</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;to learn all you need to know about installing Java. After you have successfully installed Java, set Java as your &quot;Client Technology&quot;. Click&nbsp;</span><a href="http://www.gametwist.fr/help/id_topic~294/id_article~1079/Hilfe%20zur%20Technik/Java/Flash.html" style="color: rgb(51, 153, 204); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" target="_blank">here</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">&nbsp;for exact instructions.</span></p>\r\n', 'Technical Help', ''),
+(12, 'Changing your Java and Flash settings', '<p>\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">You can choose whether your browser uses Java or Flash to display our games. If you are having problems with displaying games, changing this setting may solve them. Click on the &quot;Settings&quot; button (the wrench icon) near the logout button at the top of the page. Then click on the &quot;Game Settings&quot; link in the sub-menu on the left-hand side of the page. You will then notice a drop-down menu titled &quot;Client technology&quot;. Here you can specify &quot;Java&quot; or &quot;Flash&quot; or &quot;Automatic&quot; to let your browser decide. Click on &quot;Save&quot; to save your settings.</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;" />\r\n	<span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">From our experience, we recommend the use of Java.</span></p>\r\n', 'Technical Help', ''),
+(13, 'Java Download', '<p>\r\n	&nbsp;</p>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	You need to have Java installed in order for your computer to display our games. You can download a suitable version of Java by clicking on the link below:</p>\r\n<p style="margin: 10px 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;">\r\n	<a href="http://www.java.com/en/download/manual.jsp" style="color: rgb(51, 153, 204);" target="_blank">Java</a>&nbsp;<br />\r\n	<br />\r\n	You will be taken to the Java homepage by clicking on this link. Once the page has loaded, click on &quot;Free Java Download&quot;. You will then be taken to another page. Click on &quot;Begin download&quot; to initiate the download and the following installation.<br />\r\n	<br />\r\n	<b>Windows Vista users</b>&nbsp;- you must select &quot;Manual Download&quot; on the Java website. Then click on &quot;Offline Installation&quot;. Open the installer file once it has been downloaded.</p>\r\n', 'Technical Help', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_room`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_room` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `game_id` int(11) NOT NULL,
+  `account_id` tinyint(1) NOT NULL,
+  `player` varchar(123) COLLATE utf8_unicode_ci NOT NULL,
+  `slot` varchar(343) COLLATE utf8_unicode_ci NOT NULL,
+  `list_account_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `n_fg_room`
+--
+
+INSERT INTO `n_fg_room` (`id`, `game_id`, `account_id`, `player`, `slot`, `list_account_id`) VALUES
+(1, 1, 1, '3', '4', 0),
+(2, 2, 3, '5', '6', 0),
+(4, 5, 5, '5', '', 0),
+(6, 1, 1, '1', '', 0),
+(8, 5, 5, '5', '', 0),
+(9, 4, 4, '4', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_fg_tournaments`
+--
+
+CREATE TABLE IF NOT EXISTS `n_fg_tournaments` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `name` int(11) NOT NULL,
+  `overview` int(11) NOT NULL,
+  `game_id` int(11) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `rules` int(11) NOT NULL,
+  `account_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `n_fg_tournaments`
+--
+
+INSERT INTO `n_fg_tournaments` (`id`, `name`, `overview`, `game_id`, `start_date`, `end_date`, `rules`, `account_id`) VALUES
+(1, 0, 0, 1, '2013-01-07', '2013-01-01', 0, 0),
+(2, 0, 0, 1, '2013-01-16', '2013-01-16', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_preferences`
+--
+
+CREATE TABLE IF NOT EXISTS `n_preferences` (
+  `name` varchar(254) CHARACTER SET latin1 NOT NULL,
+  `value` text CHARACTER SET latin1 NOT NULL,
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `n_preferences`
+--
+
+INSERT INTO `n_preferences` (`name`, `value`) VALUES
+('default_user_group', '1'),
+('smtp_host', ''),
+('keep_error_logs_for', '30'),
+('email_protocol', 'sendmail'),
+('use_registration_captcha', '0'),
+('page_debug', '0'),
+('automated_from_name', 'admin@gmail.com'),
+('allow_user_registration', '1'),
+('use_login_captcha', '0'),
+('site_name', 'Kaimonokago 2.0'),
+('automated_from_email', 'admin@gmail.com'),
+('account_activation_time', '7'),
+('allow_user_profiles', '1'),
+('activation_method', 'email'),
+('autologin_period', '30'),
+('min_password_length', '4'),
+('smtp_user', ''),
+('smtp_pass', ''),
+('email_mailpath', '/usr/sbin/sendmail'),
+('smtp_port', '25'),
+('smtp_timeout', '5'),
+('email_wordwrap', '1'),
+('email_wrapchars', '76'),
+('email_mailtype', 'text'),
+('email_charset', 'utf-8'),
+('bcc_batch_mode', '0'),
+('bcc_batch_size', '200'),
+('login_field', 'email'),
+('main_module_name', 'welcome'),
+('categories_parent_id', '1'),
+('admin_email', ''),
+('webshop_slideshow', 'jmpress'),
+('slideshow_two', 'none'),
+('playroom_parent_id', '10'),
+('calendar', '1'),
+('category', '1'),
+('customers', '1'),
+('filemanager', '1'),
+('languages', '1'),
+('menus', '1'),
+('messages', '1'),
+('orders', '1'),
+('pages', '1'),
+('products', '1'),
+('slideshow', '1'),
+('subscribers', '1'),
+('multi_language', '0'),
+('website_language', 'english'),
+('security_method', 'question'),
+('security_question', '3+5='),
+('security_answer', '8'),
+('ga_tracking', ''),
+('ga_profile', ''),
+('ga_email', ''),
+('ga_password', ''),
+('dashboard_rss', 'http://feeds.feedburner.com/nettuts-summary'),
+('dashboard_rss_count', '5'),
+('company_name', ''),
+('company_address', ''),
+('frontend_multi_language', '1'),
+('company_post', '123-4567'),
+('company_city', 'Kobe'),
+('company_country', 'Japan'),
+('company_organization_number', '992591412'),
+('company_telephone', '+ 81 1122 3344'),
+('company_mobile', ''),
+('company_other_one', 'The contents of website are the copyright of Kaimonokago ? 2012. All rights reserved.  Web: Okada Design AS'),
+('company_other_two', ''),
+('category_menu_id', '16, 22'),
+('lilly_fairies_submenu_id', '1'),
+('parentid_other_illust', '27'),
+('quicksand_colorbox_cat_id', '11'),
+('sharethis_pub_key', ''),
+('sharethis_direction', 'vertical'),
+('sharethis_services', 'googleplus, facebook, twitter, yahoo, email, sharethis'),
+('sharethis_size', 'large'),
+('other_work_main', ''),
+('customer_registration', '0'),
+('twittername', ''),
+('twittercount', '20'),
+('gioithieu', '1'),
+('camnhan', '1'),
+('hoithao', '1'),
+('khoahoc', '1'),
+('loaisach', '1'),
+('sach', '1'),
+('thongtingioithieu', '1'),
+('homepage', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_users`
+--
+
+CREATE TABLE IF NOT EXISTS `n_users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `group` int(10) unsigned DEFAULT NULL,
+  `activation_key` varchar(32) DEFAULT NULL,
+  `last_visit` datetime DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  KEY `password` (`password`),
+  KEY `group` (`group`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `n_users`
+--
+
+INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2013-01-17 03:42:33', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_user_profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `n_user_profiles` (
+  `user_id` int(10) unsigned NOT NULL,
+  `company_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `full_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `web_address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `phone_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `post_code` int(10) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `n_user_profiles`
+--
+
+INSERT INTO `n_user_profiles` (`user_id`, `company_name`, `full_name`, `web_address`, `phone_number`, `address`, `city`, `post_code`) VALUES
+(1, '', '', '', '', '', '', 0),
+(2, '', '', '', '', '', '', 0),
+(14, '', '', '', '', '', '', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
