@@ -13,8 +13,12 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Tên ảnh </label>
+					<label>Tên ảnh(Việt) </label>
 					<input type="text" name="image_name" style="width:92%" value="<?php echo $info->image_name;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Tên ảnh(Anh) </label>
+					<input type="text" name="image_namee" style="width:92%" value="<?php echo $info->image_namee;?>"/>
 				</fieldset>
 				<fieldset>
 					<label>Album ảnh</label>

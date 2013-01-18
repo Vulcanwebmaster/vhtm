@@ -44,6 +44,7 @@
 		function _input()
 		{
 			$input=array('image_name'		=>	$this->input->post('image_name'),
+						'image_namee'		=>	$this->input->post('image_namee'),
 						'image_album'		=>	$this->input->post('image_album'),
 						'image_file'		=>	$this->input->post('image_file'));
 		

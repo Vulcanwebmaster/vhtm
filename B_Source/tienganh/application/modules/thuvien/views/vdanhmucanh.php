@@ -28,12 +28,25 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p style="margin-top:-20px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimg.png"/></p>
-				 			<p><a style="color:#1b75bb"><?php if ($category_id == '0')
-				 															echo 'Hình ảnh trung tâm';
-				 														elseif ($category_id == '1')
-				 															echo 'Hình ảnh khóa học';
-				 														elseif ($category_id == '2')
-				 															echo 'Hình ảnh sự kiện';?></a></p>
+				 			<p><a style="color:#1b75bb">
+				 			<?php 
+				 			 if ($_SESSION['lang']=="vn") 
+							 {		
+								 if ($category_id == '0')
+										echo 'Hình ảnh trung tâm';
+									elseif ($category_id == '1')
+										echo 'Hình ảnh khóa học';
+									elseif ($category_id == '2')
+										echo 'Hình ảnh sự kiện';
+							 } else{ 
+								 if ($category_id == '0')
+										echo 'Picture center';
+									elseif ($category_id == '1')
+										echo 'Picture courses';
+									elseif ($category_id == '2')
+										echo 'Picture events';
+							 } ?>
+				 			</a></p>
 				 			<p style="margin-top:8px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimgvd.png"/></p>
 				 			<p class="bgvdimgimg"></p>
 				 		</div>
@@ -46,7 +59,15 @@
 					 				<!-- p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p -->
 					 				<a href="<?php echo base_url()?>thuvien/album/<?php echo $item->album_id?>"><?php echo $item->album_avatar?></a>
 					 				<p align="center">
-					 					<a href="#" style="color:#1b75bb"><?php echo $item->album_name?>
+					 					<a href="#" style="color:#1b75bb">
+					 						<?php if ($_SESSION['lang']=="vn") 
+											{?>		
+												<?php echo $item->album_name?>
+											<?php } else{ ?>
+												<?php echo $item->album_namee?>
+											<?php } ?>
+
+					 						
 					 						<label style="color:#f6921e">(<?php echo $counting[$count];?>)</label>
 					 					</a>
 					 				</p>

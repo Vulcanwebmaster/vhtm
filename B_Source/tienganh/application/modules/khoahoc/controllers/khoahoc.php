@@ -12,6 +12,7 @@ class Khoahoc extends NIW_Controller
 	private $data = array();
 	function __construct()
 	{
+			@session_start();
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			$this->load->library('pagination');

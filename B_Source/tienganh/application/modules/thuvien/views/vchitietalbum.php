@@ -101,7 +101,16 @@
 	 	<div id="contentgv">
 	 		<div id="titlecontentgv">
 	 			<p style="margin-top:-20px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconimg.png"/></p>
-	 			<p><a href="#" style="color:#1b75bb">Khóa học 1 <label style="color:#f6921e">(10)</label></a></p>
+	 			<p><a href="#" style="color:#1b75bb">
+	 				Album:
+	 				<!--<?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							<?php echo $item->album_name?>
+						<?php } else{ ?>
+							<?php echo $item->album_namee?>
+						<?php } ?>
+						-->
+<label style="color:#f6921e">(3)</label></a></p>
 	 			<p style="margin-top:8px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconimgvd.png"/></p>
 	 			<p class="bgvdimgimg"></p>
 	 		</div>
@@ -110,7 +119,14 @@
 	 				<div id="contetntitledtimg">
 	 					<div class="ctdtimg next121"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconnext.png"/></div>
 	 					<div class="ctdtimg prev121"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconpr.png"/></div>
-	 					<div class="ctdtimg"><p>chuyển ảnh</p></div>				 					
+	 					<div class="ctdtimg"><p>
+	 						<?php if ($_SESSION['lang']=="vn") 
+{?>		
+	chuyển ảnh
+<?php } else{ ?>
+	transfer photos
+<?php } ?>
+ </p></div>				 					
 	 					<div class="ctdtimg" id="zoom"><a href="#"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/zoom.png"/></a></div>
 	 					<div class="ctdtimg"><a href="#"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/icondown.png"/></a></div>
 	 				</div>
@@ -128,7 +144,13 @@
 		 <!----------------------------->
 		 <div id="contentbotomgv">
 		 		<div id="share">
-					 		<p>Cùng chia sẻ bài viết này:</p>
+					 		<p><?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								Cùng chia sẻ bài viết này:
+							<?php } else{ ?>
+								Share this post:
+							<?php } ?>
+							</p>
 					 		<ul>
 					 			<li><a href="#">
 					 				<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
@@ -159,7 +181,13 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 			
 					 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 								<g:plusone></g:plusone>
-					 			<span class="kT XNa">Đề xuất url này trên Google</span>
+					 			<span class="kT XNa"><?php if ($_SESSION['lang']=="vn") 
+{?>		
+	Đề xuất url này trên Google
+<?php } else{ ?>
+	Proposed this url on Google
+<?php } ?>
+</span>
 					 		</div>
 					 		<ul style="padding:0">
 					 			
@@ -187,7 +215,13 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 		</div>
 		 	<div class="plupgin" style="margin-top:5px">
 		        		<img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconface.gif"/>
-		        		<p style="font-size: 13px">Plugin xã hội của Facebook</p>
+		        		<p style="font-size: 13px"><?php if ($_SESSION['lang']=="vn") 
+{?>		
+	Plugin xã hội của Facebook
+<?php } else{ ?>
+	Plugin Facebook
+<?php } ?>
+</p>
 		        	</div>
 		 	<style>
 		 		.prev12{left:-10px;}

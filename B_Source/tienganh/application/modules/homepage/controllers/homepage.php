@@ -11,8 +11,28 @@ class Homepage extends NIW_controller {
 		$this->load->model('Mhomepage');
 		$this->load->library('pagination');
 		$this->load->helper('text');
+		$this->setLang();
+		$this->loadLang();
 		$this->addVisiting();
 		$this->load->library('form_validation');
+	}
+	function loadLang()
+	{
+		//session_start();
+        if(isset($_SESSION['lang'])) {
+		   $lang=$_SESSION['lang'];
+        } else {
+        	$lang = 'vn';
+		} 
+		
+        if ($lang=='vn') {
+        	$_SESSION['lang']='vn';
+			$this->lang->load('tienganh','vietnamese');
+			
+		} else {
+			$this->lang->load('tienganh','english');
+			$_SESSION['lang']='en';
+		}
 	}
 	
 	public function index()
@@ -23,6 +43,7 @@ class Homepage extends NIW_controller {
 	public function page($index=0)
 	{
 		$data['counting']=$this->getCounting();
+		$data['lang']=$this->session->userdata("lang");
 		$data['yt_fanpage']=$this->Mhomepage->getListFull('ta_vedio_fanpage');
 		$data['list_video_home']=$this->Mhomepage->getListFull('ta_vedio_home');
 		$data['list_dichvu']=$this->Mhomepage->getListFull('ta_dichvu');

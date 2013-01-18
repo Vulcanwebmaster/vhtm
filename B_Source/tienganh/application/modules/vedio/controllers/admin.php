@@ -36,6 +36,7 @@
 		{
 			$input=array(
 						'vedio_title'=>$this->input->post('vedio_title'),
+						'vedio_titlee'=>$this->input->post('vedio_titlee'),
 						'link_vedio'=>$this->input->post('link_vedio'));
 		
 			return $input;

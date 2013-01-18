@@ -1,7 +1,15 @@
 <div id="content">
 				
 				<div id="content_left">
-					<div id="imgleftgv"><p align="center">Thư viện</p></div>
+					<div id="imgleftgv"><p align="center">
+						<?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Khóa học
+						<?php } else{ ?>
+							Course
+						<?php } ?>
+
+						</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
 				 			<!-- <?php foreach ($category as $value) 
@@ -11,8 +19,16 @@
 				 			<?php foreach ($list_courses_cate as $value) 
 				 			{ ?>
 				 				<li id="li_leftgv4">
-				 					<a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id."-".$value->alias?>"><?php echo $value->cate_name?>
-				 						
+				 					<a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id."-".$value->alias?>">
+				 						<?php
+				 						if(isset($_SESSION['lang'])){
+				 							if ($_SESSION['lang']=="vn") 
+											{	
+												 echo $value->cate_name;
+											 } else{ 
+												 echo $value->cate_namee;
+											 }
+				 						}?>
 				 					</a>
 				 				</li>
 				 			<?php } ?>
@@ -58,9 +74,25 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
+				 			<p><a href="<?php echo base_url();?>khoahoc">
+				 				<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									Khóa học
+								<?php } else{ ?>
+									Course
+								<?php } ?>
+
+				 				</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><?php if(isset($breadcrum1)){ echo $breadcrum1->cate_name; }  ?></p>
+				 			<p><?php if(isset($breadcrum1)){
+					 			 if ($_SESSION['lang']=="vn") 
+								 {	
+									echo $breadcrum1->cate_name; 
+								 } else{ 
+									echo $breadcrum1->cate_namee; 
+								 } 
+							
+				 			 }  ?></p>
 				 			<!-- <p><a href="<?php echo base_url();?>khoahoc">
 				 				<?php if ($index == 1) echo 'Thầy giáo';
 				 						elseif ($index == 2) echo 'Cô giáo';
@@ -78,10 +110,31 @@
 		        				</div>
 			 					<div class="divgv2" style="width: 70%; margin-left: 12px ">
 			 						<p class="tittlegv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-			 							<?php echo word_limiter(strip_tags($item->courses_name), 6)?></a></p>
+			 							<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											<?php echo word_limiter(strip_tags($item->courses_name), 6)?>
+										<?php } else{ ?>
+											<?php echo word_limiter(strip_tags($item->courses_namee), 6)?>
+										<?php } ?>
+			 							</a></p>
 			 						<p>(<?php echo $item->courses_date ?>)</p>
-			 						<p><i><?php echo word_limiter(strip_tags($item->courses_content), 15)?> </i></p>
-			 						<p class="reamororgv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">Tìm hiểu thêm</a></p>
+			 						<p><i>
+			 							<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											<?php echo word_limiter(strip_tags($item->courses_content), 15)?> 
+										<?php } else{ ?>
+											<?php echo word_limiter(strip_tags($item->courses_contente), 15)?> 
+										<?php } ?>
+
+			 							</i></p>
+			 						<p class="reamororgv"><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
+			 							<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											Tìm hiểu thêm
+										<?php } else{ ?>
+											Read more..
+										<?php } ?>
+			 							</a></p>
 			 					</div>
 				 		</div>	
 			        	<?php } ?>

@@ -30,7 +30,10 @@
 					<label>Nội dung </label>
 					<?php echo $this->ckeditor->editor('about_content','',$config);?>
 				</fieldset>
-				
+				<fieldset>
+					<label>Nội dung </label>
+					<?php echo $this->ckeditor->editor('about_contente','',$config);?>
+				</fieldset>
 			</div>
 		</div><!-- end of .tab_container -->
 				</article><!-- end of content manager article -->	

@@ -45,6 +45,7 @@ a:hover, a:active, a:focus {
 #logo img{ width: 275px ; height: 84px ;}
 #search{float:right; width:37%; margin-top:35px }
 .input,.language{ float:left; width:auto}
+.language img{ width: 20px !important; height: 20px !important; padding-top: 7px;}
 .input{ background-image:url(../images/search.png); background-repeat:no-repeat; width:283px;height:27px; margin-top:2px;}
 .inputsearch{border:0;  height:24px; margin:1px 0 0 10px; width:182px; }
 .labelsearch{ text-transform:uppercase; font-size: 12px; padding-left:10px}

@@ -51,6 +51,7 @@
 		{
 			$input=array(
 						'cate_name'=>$this->input->post('cate_name'),
+						'cate_namee'=>$this->input->post('cate_namee'),
 						'alias'=>$this->getAliasByName($this->input->post('cate_name')),
 						);
 			return $input;

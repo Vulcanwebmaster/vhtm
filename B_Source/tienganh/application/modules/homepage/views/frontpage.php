@@ -123,8 +123,14 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 		        <div id="manincontent">
 		        	<div class="contenttext">
 			        	<div class="textmaincontent">
-			        		<div class="bgtitlemain" style="width:122px;"><p class="titlemain">Tin tức</p></div>
-			        		
+			        		<div class="bgtitlemain" style="width:122px;">
+		        			<?php if ($_SESSION['lang']=="vn") 
+							{?>	
+			        			<p class="titlemain">Tin tức</p></div>
+			        		<?php } else{ ?>
+			        			<p class="titlemain">News</p></div>
+			        		<?php } ?>
+			        			
 			        		<?php foreach ($list_tintuc as $item) 
 									{ ?>
 			        		<div class="idmain">
@@ -133,23 +139,60 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 			        			</div>
 			        			<div class="text_main">
 			        				<p class="title"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
-															<?php echo $item->news_title ?><br>
+															<?php  
+															 if ($_SESSION['lang']=="vn") 
+															 {	
+																echo $item->news_title;
+															 } else{ 
+																echo $item->news_titlee;
+															 } 
+															
+															 ?><br>
 														  </a></p>
 														  <p>(<?php echo ($item->news_post_date); ?>)</p>
-			        				<p><?php echo word_limiter(strip_tags($item->news_content), 18)?></br>
+			        				<p><?php 
+			        					if ($_SESSION['lang']=="vn") 
+											{
+			        							echo word_limiter(strip_tags($item->news_content), 18);
+			        						 } else{ 
+												echo word_limiter(strip_tags($item->news_contente), 18);
+											 }
+			        							?></br>
 			        					<a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->news_id."-".$item->alias;?>">
-			        						Tìm hiểu thêm về sự kiện này <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
+			        						<?php if ($_SESSION['lang']=="vn") 
+											{?>
+			        							Tìm hiểu thêm về sự kiện này 
+			        						<?php } else{ ?>
+			        							Read more	
+			        						<?php } ?>
+			        						<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
 			        					</a>
 			        				</p>
 			        			</div>
 			        		</div>
 			        		<?php } ?>
 			        		<!----<div class="readmore1"><a href="#">Xem thêm</a></div>--->
-			        		<div class="readmore1"><a href="<?php echo base_url();?>tintuc">Xem thêm</a></div>
+			        		<div class="readmore1"><a href="<?php echo base_url();?>tintuc">
+			        			<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									Xem thêm
+								<?php } else{ ?>
+									Read more
+								<?php } ?>
+			        			
+			        		</a></div>
 			        	</div>
 			        	
 			        	<div class="textmaincontent" style="margin-left:2%;">
-		        		<div class="bgtitlemain"><p class="titlemain">Khóa học</p></div>
+		        		<div class="bgtitlemain"><p class="titlemain">
+		        			<?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								Khóa học
+							<?php } else{ ?>
+								Course
+							<?php } ?>
+
+		        			</p></div>
 		        		<?php foreach ($list_khoahoc as $item) 
 								{ ?>
 		        		<div class="idmain">
@@ -159,19 +202,50 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 		        			<div class="text_main2">
 		        				<p class="title">
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-		        					<?php echo $item->courses_name ?>
+		        					<?php
+		        					if ($_SESSION['lang']=="vn") 
+										{
+		        					 		echo $item->courses_name; 
+										}else {
+											echo $item->courses_namee;
+										}
+		        					 	?>
 		        					</a></p>
 		        					<p>(<?php echo $item->courses_date ?>)</br></p>
-		        				<p><?php echo word_limiter(strip_tags($item->courses_content), 18)?>
+		        				<p><?php
+		        					if ($_SESSION['lang']=="vn") 
+										{
+		        				 			echo word_limiter(strip_tags($item->courses_content), 18);
+										}else{
+											echo word_limiter(strip_tags($item->courses_contente), 18);
+										}
+		        				 		?>
+		        				 			
 		        					<a href="<?php echo base_url();?>khoahoc/detail/<?php echo $item->courses_id."-".$item->alias;?>">
-			        						</br>Tìm hiểu thêm về khóa học này <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
+			        						</br>
+			        						<?php if ($_SESSION['lang']=="vn") 
+											{?>		
+												Tìm hiểu thêm về khóa học này
+											<?php } else{ ?>
+												Read more
+											<?php } ?>
+
+			        						 <img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"/>
 			        				</a>
 		        				</p>
 		        			</div>
 		        		</div>
 		        		<?php } ?>
 		        		<!---<div class="readmore"><a href="#">Xem thêm</a></div>-->
-		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">Xem thêm</a></div>
+		        		<div class="readmore"><a href="<?php echo base_url()?>khoahoc">
+		        			<?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								Xem thêm
+							<?php } else{ ?>
+								Read more
+							<?php } ?>
+
+		        			</a></div>
 		        	</div>
 		        	</div>		        	
 		    
@@ -494,26 +568,53 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 			        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"/></div>
 			        	<div id="number">
 			        		<table class="table">
-			        			<tbody><tr>
+			        			<tbody>
+			        			<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<tr>
 			        				<td class="bd" colspan="2">
 			        					<label>Thống kê</label>
 			        				</td>
-			        			</tr>
-			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon9.gif"></td>
-			        				<td>Hôm nay: <label style="font-weight:bold;">
-			        					<?php if(isset($counting['today'])){
-			        						echo $counting['today'];
-			        					} ?></label></td>
-			        			</tr>
-			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon4.gif"></td>
-			        				<td>Tháng hiện tại : <label style="font-weight:bold;"><?php echo $counting['month'];?></label></td>
-			        			</tr>
-			        			<tr>
-			        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon7.gif"></td>
-			        				<td>Tổng lượt truy cập : <label style="font-weight:bold;"><?php echo $counting['total'];?></label></td>
-			        			</tr>
+				        			</tr>
+				        			<tr>
+				        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon9.gif"></td>
+				        				<td>Hôm nay: <label style="font-weight:bold;">
+				        					<?php if(isset($counting['today'])){
+				        						echo $counting['today'];
+				        					} ?></label></td>
+				        			</tr>
+				        			<tr>
+				        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon4.gif"></td>
+				        				<td>Tháng hiện tại : <label style="font-weight:bold;"><?php echo $counting['month'];?></label></td>
+				        			</tr>
+				        			<tr>
+				        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon7.gif"></td>
+				        				<td>Tổng lượt truy cập : <label style="font-weight:bold;"><?php echo $counting['total'];?></label></td>
+				        			</tr>
+								<?php } else{ ?>
+									<tr>
+			        				<td class="bd" colspan="2">
+			        					<label>Statistics</label>
+			        				</td>
+				        			</tr>
+				        			<tr>
+				        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon9.gif"></td>
+				        				<td>Today: <label style="font-weight:bold;">
+				        					<?php if(isset($counting['today'])){
+				        						echo $counting['today'];
+				        					} ?></label></td>
+				        			</tr>
+				        			<tr>
+				        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon4.gif"></td>
+				        				<td>Months : <label style="font-weight:bold;"><?php echo $counting['month'];?></label></td>
+				        			</tr>
+				        			<tr>
+				        				<td><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon7.gif"></td>
+				        				<td>Visitors : <label style="font-weight:bold;"><?php echo $counting['total'];?></label></td>
+				        			</tr>
+								<?php } ?>
+
+			        			
 			        		</tbody></table>
 			        	</div>
 			        		

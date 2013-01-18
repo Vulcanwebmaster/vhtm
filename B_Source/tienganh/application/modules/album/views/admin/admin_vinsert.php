@@ -12,8 +12,12 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên album</label>
+					<label>Tên album(Việt)</label>
 					<input type="text" name="album_name" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Tên album(Anh)</label>
+					<input type="text" name="album_namee" style="width:92%"/>
 				</fieldset>
 				<fieldset>
 					<label>Danh mục</label>

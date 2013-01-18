@@ -19,8 +19,13 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Tiêu đề </label>
+					<label>Tiêu đề(Việt) </label>
 					<?php echo $this->ckeditor->editor('news_title',$info->news_title,$config);?>
+					<!--<input type="text" name="news_title" style="width:92%" value="<?php echo $info->news_title;?>"/>-->
+				</fieldset>
+				<fieldset>
+					<label>Tiêu đề (Anh)</label>
+					<?php echo $this->ckeditor->editor('news_titlee',$info->news_titlee,$config);?>
 					<!--<input type="text" name="news_title" style="width:92%" value="<?php echo $info->news_title;?>"/>-->
 				</fieldset>
 				<fieldset>
@@ -33,8 +38,12 @@
 					</select>
 				</fieldset>
 				<fieldset>
-					<label>Nội dung </label>
+					<label>Nội dung (Việt)</label>
 					<?php echo $this->ckeditor->editor('news_content',$info->news_content,$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Nội dung (Anh)</label>
+					<?php echo $this->ckeditor->editor('news_contente',$info->news_contente,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Ảnh </label>

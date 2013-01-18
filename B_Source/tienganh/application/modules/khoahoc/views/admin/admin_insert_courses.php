@@ -11,8 +11,12 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên khóa học</label>
+					<label>Tên khóa học(Việt)</label>
 					<input type="text" name="courses_name" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Tên khóa học(Anh)</label>
+					<input type="text" name="courses_namee" style="width:92%"/>
 				</fieldset>
 				<fieldset>
 					<label>Mục khóa học</label>
@@ -29,8 +33,12 @@
 					<input type="text" name="courses_date" id="courses_date" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Nội dung </label>
+					<label>Nội dung(Việt) </label>
 					<?php echo $this->ckeditor->editor('courses_content','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Nội dung(Anh) </label>
+					<?php echo $this->ckeditor->editor('courses_contente','',$config);?>
 				</fieldset>
 			</div>
 			

@@ -36,7 +36,9 @@
 		
 		function _input()
 		{
-			$input=array('ten'=>$this->input->post('ten'));
+			$input=array('ten'=>$this->input->post('ten'),
+						 'tene'=>$this->input->post('tene'),
+			);
 			return $input;
 		}
 		

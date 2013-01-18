@@ -1,14 +1,26 @@
 <div id="content">
 			<!--	<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 				<div id="content_left">
-					<div id="imgleftgv"><p align="center">Thư viện</p></div>
+					<div id="imgleftgv"><p align="center">
+						<?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Khóa học
+						<?php } else{ ?>
+							Course
+						<?php } ?>
+						</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
 				 			<?php foreach ($list_courses_cate as $value) 
 				 			{ ?>
-				 				<li id="li_leftgv4"><a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id?>"><?php echo $value->cate_name?></a></li>
+				 				<li id="li_leftgv4"><a href="<?php echo base_url()?>khoahoc/category/<?php echo $value->id?>">
+				 					<?php if ($_SESSION['lang']=="vn") 
+									 {	
+										echo $value->cate_name;
+									 } else{ 
+										echo $value->cate_namee;
+									 } ?></a></li>
 				 			<?php } ?>
-				 			
 				 		</ul>
 				 	</div>
 				 	<!------Banner------->
@@ -51,16 +63,35 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
-				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><?php echo $breadcrum->cate_name ?></p>
+				 			<?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								<p><a href="<?php echo base_url();?>khoahoc">Khóa học</a></p>
+					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
+					 			<p><?php echo $breadcrum->cate_name ?></p>
+							<?php } else{ ?>
+								<p><a href="<?php echo base_url();?>khoahoc">Course</a></p>
+					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
+					 			<p><?php echo $breadcrum->cate_namee ?></p>
+							<?php } ?>
 				 		</div>
-				 		
 				 		<div id="contentmaingv">
 				 			<div id="contenttt">
-				 				<p class="ttTitle"><?php echo $list_chitiet->courses_name ?></p>
+				 				<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<p class="ttTitle"><?php echo $list_chitiet->courses_name ?></p>
+								<?php } else{ ?>
+									<p class="ttTitle"><?php echo $list_chitiet->courses_namee ?></p>
+								<?php } ?>
+
 				 				<div id="content2">
-				 					<?php echo $list_chitiet->courses_content ?><br>
+			 					<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<?php echo $list_chitiet->courses_content ?>
+								<?php } else{ ?>
+									<?php echo $list_chitiet->courses_contente ?>
+								<?php } ?>
+
+				 					<br>
 				 					<br>
 				 					<br><br>
 				 					<br>
@@ -137,7 +168,14 @@
 				        		
 				        	</script>
 					 	<div id="share">
-					 		<p>Cùng chia sẻ bài viết này:</p>
+					 		<?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								<p>Cùng chia sẻ bài viết này:</p>
+							<?php } else{ ?>
+								<p>Share this post:</p>
+							<?php } ?>
+
+					 		
 					 		<ul>
 					 			<li><a href="#">
 					 				<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
@@ -169,7 +207,14 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 			
 					 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 								<g:plusone></g:plusone>
-					 			<span class="kT XNa">Đề xuất url này trên Google</span>
+					 			<span class="kT XNa">
+					 				<?php if ($_SESSION['lang']=="vn") 
+									{?>		
+										Đề xuất url này trên Google
+									<?php } else{ ?>
+										Proposed this url on Google
+									<?php } ?>
+					 				</span>
 					 		</div>
 					 		<ul style="padding:0">
 					 			
@@ -199,8 +244,15 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 	</div>
 					 	<div class="plupgin" style="margin-top:5px">
 					        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif">
-					        		<p style="font-size: 13px">Plugin xã hội của Facebook</p>
-					        	</div>
+					        		<p style="font-size: 13px">
+					        			<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											Plugin xã hội của Facebook
+										<?php } else{ ?>
+											Plugin of Facebook
+										<?php } ?>
+					        			</p>
+					    </div>
 					 	<style>
 					 		.prev12{left:-10px;}
 					 		#clickslide{ margin-left:40px; width:88%}
@@ -211,7 +263,6 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 	<div class="contentbot" style="margin: 80px 0">
 		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"></div>
 			        	<div id="clickslide">
-			        		
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 			        		<div class="slideimage">
 			        			<?php foreach ($list_slide1 as $slide)
@@ -224,8 +275,6 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 									}?>
 			        		</div>
 			        		</div>
-			        		
-			        		
 			        	</div>
 			        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"></div>
 			        	

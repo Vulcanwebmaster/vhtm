@@ -2,14 +2,31 @@
 				
 				 <div id="content_left">
 				 	<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
-				 	<div id="imgleftgv"><p align="center">Tin tức</p></div>
+				 	<div id="imgleftgv"><p align="center">
+				 		<?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Tin tức
+						<?php } else{ ?>
+							News
+						<?php } ?>
+
+				 		</p></div>
 				 	<div id="contentlefftgv">
 				 		<ul id="ul_leftgv">
-				 			<li id="li_leftgv5" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
-				 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
-				 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
-				 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
-				 		</ul>
+				 			<?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								<li id="li_leftgv5" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">Tiếng Anh mầm non</a></li>
+					 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">Tiếng Anh tiểu học</a></li>
+					 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">Tiếng Anh cho sinh viên</a></li>
+					 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">Tiếng Anh cho người đi làm</a></li>
+							<?php } else{ ?>
+								<li id="li_leftgv5" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/mamnon">English preschool</a></li>
+					 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/tieuhoc">English elementary</a></li>
+					 			<li id="li_leftgv3" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/sinhvien">English for students</a></li>
+					 			<li id="li_leftgv4" class="bgicongv2"><a href="<?php echo base_url();?>tintuc/dilam">English for employees</a></li>
+							<?php } ?>
+
+				 			</ul>
 				 	</div>
 				 	<!------Banner------->
 				 	<?php foreach ($list_quangcao as $quangcao)
@@ -52,16 +69,49 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif"></p>
-				 			<p><a href="<?php echo base_url();?>tintuc">Tin tức</a></p>
+				 			<p><a href="<?php echo base_url();?>tintuc">
+				 				<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									Tin tức
+								<?php } else{ ?>
+									News
+								<?php } ?>
+				 				</a></p>
 				 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png"></p>
-				 			<p><?php echo $list_chitiet->news_category ?></p>
+				 			<p>
+				 				<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<?php echo $list_chitiet->news_category ?>
+								<?php } else{ 
+									if($list_chitiet->news_category=="Tiếng Anh mầm non"){echo "English preschool";}
+									elseif ($list_chitiet->news_category=="Tiếng Anh tiểu học") {echo "English elementary"; }
+									elseif ($list_chitiet->news_category=="Tiếng Anh cho sinh viên") {echo "English for students"; }
+									elseif ($list_chitiet->news_category=="Tiếng Anh cho người đi làm") {echo "English for employees"; }
+								 } ?>
+
+				 				</p>
 				 		</div>
 				 		
 				 		<div id="contentmaingv">
 				 			<div id="contenttt">
-				 				<p class="ttTitle"><?php echo $list_chitiet->news_title ?></p>
+				 				<p class="ttTitle">
+				 					<?php if ($_SESSION['lang']=="vn") 
+									{?>		
+										<?php echo $list_chitiet->news_title ?>
+									<?php } else{ ?>
+										<?php echo $list_chitiet->news_titlee ?>
+									<?php } ?>
+
+				 					</p>
 				 				<div id="content2">
-				 					<?php echo $list_chitiet->news_content ?><br>
+				 					<?php if ($_SESSION['lang']=="vn") 
+									{?>		
+										<?php echo $list_chitiet->news_content ?>
+									<?php } else{ ?>
+										<?php echo $list_chitiet->news_contente ?>
+									<?php } ?>
+
+				 					<br>
 				 					<br>
 				 					<br><br>
 				 					<br>
@@ -138,7 +188,12 @@
 				        		
 				        	</script>
 					 	<div id="share">
-					 		<p>Cùng chia sẻ bài viết này:</p>
+					 		<?php if ($_SESSION['lang']=="vn") 
+							{?>		
+								<p>Cùng chia sẻ bài viết này:</p>
+							<?php } else{ ?>
+								<p>Share this post:</p>
+							<?php } ?>
 					 		<ul>
 					 			<li><a href="#">
 					 				<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
@@ -170,7 +225,15 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 			
 					 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 								<g:plusone></g:plusone>
-					 			<span class="kT XNa">Đề xuất url này trên Google</span>
+					 			<span class="kT XNa">
+					 				<?php if ($_SESSION['lang']=="vn") 
+									{?>		
+										Đề xuất url này trên Google
+									<?php } else{ ?>
+										Proposed this url on Google
+									<?php } ?>
+
+					 				</span>
 					 		</div>
 					 		<ul style="padding:0">
 					 			
@@ -200,7 +263,15 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 	</div>
 					 	<div class="plupgin" style="margin-top:5px">
 					        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif">
-					        		<p style="font-size: 13px">Plugin xã hội của Facebook</p>
+					        		<p style="font-size: 13px">
+					        			<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											Plugin xã hội của Facebook
+										<?php } else{ ?>
+											Plugin Facebook
+										<?php } ?>
+
+					        			</p>
 					        	</div>
 					 	<style>
 					 		.prev12{left:-10px;}

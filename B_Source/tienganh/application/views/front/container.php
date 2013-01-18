@@ -1,6 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html  xmlns="http://www.w3.org/1999/xhtml" class="webkit safari  win">
 	<head>
+
+		<!-- Title -->
+		<title>Trung tâm tiếng anh JENNY</title>
+
+		<!-- Meta Tags -->
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="<?php echo base_url()?>assets/trungtam-tienganh/images/favicon.ico" type="image/x-icon" />
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 		<!------ Google Analitic------->
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
@@ -15,15 +25,6 @@
 		
 		</script>
 		<!------End Google Analitic------->
-		<!-- Title -->
-		<title>Trung tâm tiếng anh JENNY</title>
-
-		<!-- Meta Tags -->
-		
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="<?php echo base_url()?>assets/trungtam-tienganh/images/favicon.ico" type="image/x-icon" />
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 		<script type="text/javascript" src="http://api.go.vn/social-plugins/gconnect/all.min.js?v=123456789"></script>
 		<script type="text/javascript">var switchTo5x=true;</script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>

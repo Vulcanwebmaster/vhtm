@@ -11,7 +11,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>dichvu/admin">Sản phẩm và Dịch vụ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>giangvien/admin">Giảng viên</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>info/admin">Thông tin</a></li>
+		<!--<li class="icn_application"><a href="<?php echo base_url()?>info/admin">Thông tin</a></li>-->
 		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Danh mục khóa học</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>khoahoc/admin">Khóa học</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">Giới thiệu</a></li>

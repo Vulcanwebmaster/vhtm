@@ -50,6 +50,7 @@
 			$input=array(
 						//'about_category'=>$this->input->post('about_category'),
 						'about_content'=>$this->input->post('about_content'),
+						'about_contente'=>$this->input->post('about_contente'),
 						);
 			return $input;
 		}

@@ -18,8 +18,12 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tiêu đề</label>
+					<label>Tiêu đề(Việt)</label>
 					<input type="text" name="vedio_title" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Tiêu đề(Anh)</label>
+					<input type="text" name="vedio_titlee" style="width:92%"/>
 				</fieldset>
 				<fieldset>
 					<label>Link</label>

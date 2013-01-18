@@ -45,6 +45,7 @@
 		{
 			$input=array('category_id'	=>	$this->input->post('category_id'),
 						'album_name'		=>	$this->input->post('album_name'),
+						'album_namee'		=>	$this->input->post('album_namee'),
 						'album_avatar'		=>	$this->input->post('album_avatar'));
 		
 			return $input;

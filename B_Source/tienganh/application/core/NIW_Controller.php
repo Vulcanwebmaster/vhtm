@@ -26,7 +26,6 @@ class NIW_Controller extends CI_Controller {
 		$this->load->library('page/Page');
 		
 		$this->load->library('auth/userlib');
-
 		
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');	
@@ -79,6 +78,15 @@ class NIW_Controller extends CI_Controller {
 			}
 		}
 	}
+	
+	function setLang()
+	{
+		if (!$this->session->userdata('lang'))
+		{
+			$this->session->set_userdata('lang','vn');
+		}
+	}
+	
 	function addVisiting()
 	{	
 			//var_dump($model->getRowByColumn('thongke','ngaythang',$today));die();

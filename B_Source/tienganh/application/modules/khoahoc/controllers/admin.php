@@ -25,10 +25,11 @@
 		function _input()
 		{
 			$input=array('courses_name'=>$this->input->post('courses_name'),
+						'courses_namee'=>$this->input->post('courses_namee'),
 						'courses_date'=>$this->input->post('courses_date'),
-						
 						'courses_category'=>$this->input->post('courses_category'),
 						'courses_content'=>$this->input->post('courses_content'),
+						'courses_contente'=>$this->input->post('courses_contente'),
 						);
 			return $input;
 		}

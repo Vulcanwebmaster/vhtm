@@ -24,11 +24,17 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p style="margin-top:-20px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconvideovd.png"/></p>
-				 			<p><a href="#" style="color:#1b75bb">Video khóa học</a></p>
+				 			<p><a href="#" style="color:#1b75bb">
+				 				<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									Video khóa học
+								<?php } else{ ?>
+									Video Course
+								<?php } ?>
+								</a></p>
 				 			<p style="margin-top:8px"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconimgvd.png"/></p>
 				 			<p class="bgvdimg"></p>
 				 		</div>
-				 	
 				 		<div id="contentmainvd">
 				 			<?php 
 				 			$count	=	0;
@@ -39,7 +45,14 @@
 					 					<li>
 						 					<a rel="fancyvideo" href="<?php echo $value->link_vedio?>">
 												<img src="http://img.youtube.com/vi/<?php echo substr($value->link_vedio,31)?>/3.jpg" style="margin:3px 17px">
-				                            <p align="center"><?php echo $value->vedio_title ?></p>
+				                            <p align="center">
+				                            	<?php if ($_SESSION['lang']=="vn") 
+												 {		
+													 echo $value->vedio_title;
+												 } else{ 
+													echo $value->vedio_titlee ;
+												 } ?>
+				                            	</p>
 				                        	</a>
 			                        	</li>
 					 				</ul>
@@ -59,7 +72,12 @@
 					 <!----------------------------->
 					 <div id="contentbotomgv">
 					 		<div id="share">
-					 		<p>Cùng chia sẻ bài viết này:</p>
+					 			<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<p>Cùng chia sẻ bài viết này:</p>
+								<?php } else{ ?>
+									<p>Share this post:</p>
+								<?php } ?>
 					 		<ul>
 					 			<li><a href="#">
 					 				<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
@@ -90,7 +108,14 @@
 					 			
 					 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 								<g:plusone></g:plusone>
-					 			<span class="kT XNa">Đề xuất url này trên Google</span>
+					 			<span class="kT XNa">
+					 				<?php if ($_SESSION['lang']=="vn") 
+									{?>		
+										Đề xuất url này trên Google
+									<?php } else{ ?>
+										Proposed this url on Google
+									<?php } ?>
+									</span>
 					 		</div>
 					 		<ul style="padding:0">
 					 			
@@ -118,7 +143,14 @@
 					 		</div>
 					 	<div class="plupgin" style="margin-top:5px">
 					        		<img src="<?php echo base_url()?>assets/trungtam-tienganh/images/iconface.gif"/>
-					        		<p style="font-size: 13px">Plugin xã hội của Facebook</p>
+					        		<p style="font-size: 13px">
+					        			<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											Plugin xã hội của Facebook
+										<?php } else{ ?>
+											Plugin Facebook
+										<?php } ?>
+										</p>
 					        	</div>
 					 	<style>
 					 		.prev12{left:-10px;}

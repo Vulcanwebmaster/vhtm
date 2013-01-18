@@ -54,13 +54,28 @@
 	<div id="content">
 					<!--<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/leffgv.png" id="imgleftgv">-->
 					 <div id="content_left">
-					 	<div id="imgleftgv"><p align="center">Giảng viên</p></div>
+					 	<div id="imgleftgv"><p align="center">
+				 		<?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Giảng viên
+						<?php } else{ ?>
+							Lecturer
+						<?php } ?>
+						</p></div>
 					 	<div id="contentlefftgv">
 					 		<ul id="ul_leftgv" style="padding: 50px">
-					 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
-					 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
-					 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
-					 		</ul>
+					 			<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/thaygiao">Thầy giáo</a></li>
+						 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/cogiao">Cô giáo</a></li>
+						 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Trợ giảng</a></li>
+								<?php } else{ ?>
+									<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/thaygiao">Male teacher</a></li>
+						 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/cogiao">Felmale teacher</a></li>
+						 			<li id="li_leftgv2" class="bgicongv2"><a href="<?php echo base_url();?>giangvien/trogiang">Teaching assistant</a></li>
+								<?php } ?>
+
+					 			</ul>
 					 	</div>
 					<!------Banner------->
 				 	<?php foreach ($list_quangcao as $quangcao)
@@ -93,19 +108,50 @@
 					 	<div id="contentgv">
 					 		<div id="titlecontentgv">
 					 			<p><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon11.gif">
-					 			<a href="#">Giảng viên</a>
-					 			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png">
-					 			<a href="#"><?php echo $chitiet->lecturers_category ?></a></p>
+					 			<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									<a href="#">Giảng viên</a>
+						 			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png">
+						 			<a href="#"><?php echo $chitiet->lecturers_category ?></a>
+								<?php } else{ ?>
+									<a href="#">Lecturer</a>
+						 			<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon19.png">
+						 			<a href="#">
+						 				<?php if( $chitiet->lecturers_category=="Trợ giảng"){echo "Teaching assistant";}
+											  elseif( $chitiet->lecturers_category=="Thầy giáo"){echo "Male teacher";}
+											  elseif( $chitiet->lecturers_category=="Cô giáo"){echo "Felmale teacher";}
+										 ?></a>
+								<?php } ?>
+								</p>
 					 		</div>
 					 			<div id="contentmaindtgv">
-							 			<p id="anhgv"><?php echo $chitiet->lecturers_category ?></p>
-							 			<p id="notegv"><?php echo $chitiet->lecturers_title ?></p>	
+							 			<p id="anhgv">
+							 				<?php if ($_SESSION['lang']=="vn") 
+											{?>		
+												<?php echo $chitiet->lecturers_category ?>
+											<?php } else{ 
+										
+											 } ?>
+											</p>
+							 			<p id="notegv">
+												<?php echo $chitiet->lecturers_title ?>
+											</p>	
 							 			<div id="contetntitlegv">
 							 				<div id="imggv"><?php echo $chitiet->lecturers_image ?></div>
 							 				
-							 				<div id="ltgv"><?php $tach = $chitiet->lecturers_content; 
+							 				<div id="ltgv">
+							 					<?php if ($_SESSION['lang']=="vn") 
+												{?>		
+													<?php $tach = $chitiet->lecturers_content; 
 																echo str_replace(strpos_content($tach),"",$tach);
-															 ?></div>
+															 ?>
+												<?php } else{ ?>
+													<?php $tach = $chitiet->lecturers_contente; 
+																echo str_replace(strpos_content($tach),"",$tach);
+															 ?>
+												<?php } ?>
+
+							 					</div>
 							 			</div><br clear="both"/>
 							 			<div class="videogvdt">
 							 				<iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo substr($chitiet->link_vedio,31)?>" frameborder="0" allowfullscreen></iframe>
@@ -299,7 +345,13 @@
 						 <!----------------------------->
 						 <div id="contentbotomgv">
 						 		<div id="share">
-						 		<p>Cùng chia sẻ bài viết này:</p>
+						 		<p><?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									Cùng chia sẻ bài viết này:
+								<?php } else{ ?>
+									Share this post: 
+								<?php } ?>
+								</p>
 						 		<ul>
 						 			<li><a href="#">
 						 				<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
@@ -330,7 +382,14 @@
 						 			
 						 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 									<g:plusone></g:plusone>
-						 			<span class="kT XNa">Đề xuất url này trên Google</span>
+						 			<span class="kT XNa">
+						 				<?php if ($_SESSION['lang']=="vn") 
+										{?>		
+											Đề xuất url này trên Google
+										<?php } else{ ?>
+											Proposed this url on Google
+										<?php } ?>
+										</span>
 						 		</div>
 						 		<ul style="padding:0">
 						 			

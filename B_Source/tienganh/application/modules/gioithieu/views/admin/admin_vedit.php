@@ -27,8 +27,12 @@
 					</select>
 				</fieldset>-->
 				<fieldset>
-					<label>Nội dung </label>
+					<label>Nội dung (Việt)</label>
 					<?php echo $this->ckeditor->editor('about_content',$info->about_content,$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Nội dung (Anh)</label>
+					<?php echo $this->ckeditor->editor('about_contente',$info->about_contente,$config);?>
 				</fieldset>
 			</div>
 			

@@ -41,8 +41,10 @@
 		{
 			$input=array(
 						'news_title'=>$this->input->post('news_title'),
+						'news_titlee'=>$this->input->post('news_titlee'),
 						'news_category'=>$this->input->post('news_category'),
 						'news_content'=>$this->input->post('news_content'),
+						'news_contente'=>$this->input->post('news_contente'),
 						'news_post_date'=>$this->input->post('news_post_date'),
 						'news_author'=>$this->input->post('news_author'),
 						'news_image'=>$this->input->post('news_image'),

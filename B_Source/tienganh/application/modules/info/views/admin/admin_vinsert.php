@@ -18,8 +18,12 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên danh mục</label>
+					<label>Tên danh mục(Việt)</label>
 					<input type="text" name="cate_name" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Tên danh mục(Anh)</label>
+					<input type="text" name="cate_namee" style="width:92%"/>
 				</fieldset>
 			</div>
 			

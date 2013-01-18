@@ -16,10 +16,13 @@
 		<div class="tab_container">
 			
 			<div id="tab1" class="tab_content">
-				
 				<fieldset>
-					<label>Tên danh mục </label>
+					<label>Tên danh mục(Việt) </label>
 					<input type="text" name="cate_name" style="width:92%" value="<?php echo $info->cate_name;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Tên danh mục(Anh) </label>
+					<input type="text" name="cate_namee" style="width:92%" value="<?php echo $info->cate_namee;?>"/>
 				</fieldset>
 			</div>
 			

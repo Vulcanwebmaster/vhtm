@@ -53,8 +53,10 @@
 			//var_dump($tach1);die();
 			$input=array(
 						'lecturers_title'=>$this->input->post('lecturers_title'),
+						//'lecturers_titlee'=>$this->input->post('lecturers_titlee'),
 						'lecturers_category'=>$this->input->post('lecturers_category'),
 						'lecturers_content'=> $this->input->post('lecturers_content'),
+						'lecturers_contente'=> $this->input->post('lecturers_contente'),
 						'link_vedio' =>$this->strpos_content($this->input->post('lecturers_content')),
 						'lecturers_image'=>$this->input->post('lecturers_image'),
 						'alias'=>$this->getAliasByName($this->input->post('lecturers_title')),
