@@ -15,9 +15,12 @@
 					<div class="tournHelper"><h3><span>Tournaments today</span></h3>
 					<div class="container">
 						<ul style="width: 588px;margin-right:0;">
+							<?php foreach ($today as $item) 
+							{ ?>
 							<li class="">
+								
 								<div class="to1  rating3  medium gameId_53 tournId_32166 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32166"><span>Doppelkopf</span></a></h4>
+									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32166"><span><?php echo $key->name ?></span></a></h4>
 									<div class="to1_container">
 										<span class="backgroundColor" style="background-color: #ffdd00"></span>
 										<span class="to1_logo_3 to1_pos_13"></span>
@@ -40,32 +43,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32167"><span>Scopa</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #cfc29e"></span>
-										<span class="to1_logo_5 to1_pos_8"></span><span class="logo" style="display:block;background-image: url(http://static7.greentube.com/xsl_gamebase/assets/game_88/logo_137x77/game_88_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/web/Tournaments-Details?id_tourn=32167" class="">
-											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
-											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
-											<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-											<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;"><span class="register">Register now!</span></span>
-											<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-											<p style="color: #000000">08.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>08.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
+							<?php }?>
 						</ul>
 					</div>
 				</div>
@@ -75,9 +53,11 @@
 					<h3><span>Tournaments this week</span></h3>
 					<div class="container">
 						<ul style="width: 1176px;margin-right:0;">
+							<?php foreach ($week as $item) 
+							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_29 tournId_32168 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32168"><span>Sheepshead</span></a></h4>
+									<h4><a title="" href="#"><span><?php echo $item->name ?></span></a></h4>
 									<div class="to1_container">
 										<span class="backgroundColor" style="background-color: #AABB22"></span>
 										<span class="to1_logo_2 to1_pos_9"></span>
@@ -91,7 +71,7 @@
 										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
 										<p style="color: #000000">09.Jan&nbsp;19:00</p></a>
 										<div class="desc">
-											<span class="label">Start: </span>09.01.2013 19:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>
+											<span class="label">Start: </span><?php echo $item->start_date ?><abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>
 											<span class="funCurrencyContainer">
 												<span>Twists </span>1.000</span><br>
 												<span class="label">My status:	</span>Not registered!
@@ -103,160 +83,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos0">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos3">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos2">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos1">
-								<div class="to1  rating3  medium gameId_63 tournId_32169 tournStatus_2">
-									<h4><a title="" href="#"><span>Brisca</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #FF630F"></span>
-										<span class="to1_logo_4 to1_pos_3"></span><span class="logo" style="display:block;background-image: url(http://static6.greentube.com/xsl_gamebase/assets/game_63/logo_137x77/game_63_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="#" class=""><span>Twists 37.500</span>
-										<dl style="color: #ffffff"><dt><span>Playing now</span></dt><dd>292</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId0" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;"></span>
-										<p style="color: #ffffff">09.Jan&nbsp;21:00</p></a>
-										<div class="desc"><span class="label">Start: </span>09.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br><span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
+							<?php }?>
 						</ul>
 					</div>
 				</div>
@@ -274,9 +101,11 @@
 					<h3><span>Tournaments next week</span></h3>
 					<div style="height:243px;" class="container">
 						<ul class="slideimage" style="width: 1176px;margin-right:0; position:absolute">
+							<?php foreach ($nextweek as $item) 
+							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
+									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span><?php echo $item->title;?></span></a></h4>
 									<div class="to1_container">
 										<span class="backgroundColor" style="background-color: #F4D454"></span>
 										<span class="to1_logo_1 to1_pos_0"></span>
@@ -304,307 +133,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos0">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos1">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos2">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="gamePos3">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							
-							<li class="">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="">
-								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span>Spin7 Tournament</span></a></h4>
-									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
-										<span class="to1_logo_1 to1_pos_0"></span>
-										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
-										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
-										<a href="/#" class=""><strong class="static switchPrize"><span>Twists 18.400</span></strong>
-										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
-										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
-										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
-										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
-										<p style="color: #000000">14.Jan&nbsp;21:00</p>
-										</a>
-										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>
-											<span class="funCurrencyContainer">
-												<span>Twists </span>1.000</span><br>
-												<span class="label">My status:	</span>Not registered!
-										</div>
-										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
-											<p><span class="funCurrencyContainer"><span>Twists </span>18.400</span></p>
-										</div>
-									</div>
-								</div>
-							</li>
+						<?php } ?>
 						</ul>
 					</div>
 				</div>

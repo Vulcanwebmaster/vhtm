@@ -35,17 +35,29 @@ class Dangky extends NIW_Controller
 		return $input;
 	}
 	
+	function dangNhap()
+	{
+		$data['title']='flashgame | Flash games';
+		$data['module']=$this->module;
+		$data['index'] = -1;
+		//$relateAccounts = $this->Mdangky->getAccountByUserPass($nick, $password);
+		//var_dump($relateAccounts); die();
+		$data['page']='vdangnhap';
+		$this->load->view('front/container',$data);
+		
+	}
 		/*
 	 * check exist account
 	 */
 	function checkAccount()
 	{
-		//$this->data['product']=$this->Mdangnhap->getListOffset('ln_product',5,0);
+		//$this->data['product']=$this->Mdangky->getListOffset('fg_accounts',5,0);
+		//var_dump($this->data['product']); die();
 		if ($this->input->post('submit'))
 		{
-			$email = $this->input->post('nick');
+			$nick = $this->input->post('nick');
 			$password = $this->input->post('pass');
-			$relateAccounts = $this->Mdangky->getAccountByUserPass($email, $password);
+			$relateAccounts = $this->Mdangky->getAccountByUserPass($nick, $password);
 			if (count($relateAccounts) > 0)
 			{
 				//if this account is exist, login succesful and redirect to homepage.
@@ -54,7 +66,6 @@ class Dangky extends NIW_Controller
 				$_SESSION['front_user_id'] = $account->id;
 				//var_dump($_SESSION['front_user_fullname']); die();
 				redirect(base_url(),'refresh');
-				
 			}
 			else 
 			{
