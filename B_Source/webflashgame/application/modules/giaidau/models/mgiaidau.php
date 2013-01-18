@@ -28,7 +28,7 @@ class Mgiaidau extends CI_Model
 	}
 	
 	function gameToday(){
-		$this->db->where('end_date >' ,date("m-d-y h:i:s "));
+		$this->db->where('end_date >' ,date('Y-m-d'));
 		$this->db->where('end_date <' ,date('Y-m-d').' 23:59:59');
 		$this->db->select();
 		$this->db->from('fg_tournaments');
@@ -45,7 +45,7 @@ class Mgiaidau extends CI_Model
 	}
 	
 	function gameWeek(){
-		$this->db->where('start_date >' ,date("m-d-y h:i:s "));
+		$this->db->where('start_date >' ,date("Y-m-d h:i:s "));
 		$this->db->where('end_date <' ,date("Y-m-d", strtotime('next sunday')));
 		$this->db->select();
 		$this->db->from('fg_tournaments');
@@ -78,7 +78,7 @@ class Mgiaidau extends CI_Model
 	}
 	
 	function gamePast(){
-		$this->db->where('end_date >' ,date('m-d-y'));
+		$this->db->where('end_date <' ,date('Y-m-d'));
 		$this->db->select();
 		$this->db->from('fg_tournaments');
 		$ds=$this->db->get();
