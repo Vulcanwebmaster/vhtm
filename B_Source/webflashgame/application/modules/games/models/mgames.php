@@ -26,6 +26,13 @@ class Mgames extends CI_Model
 		
 	}
 	
+	function getCount(){
+		$this->db->select();
+		$this->db->from('fg_games');
+		$this->db->join('fg_category','fg_category.id=fg_games.category_id');
+		
+		$ds=$this->db->get();
+	}
 	function getListOffsetcate($tableName='',$offset='',$index='')
 	 {
 	 	$this->db->select();
@@ -68,5 +75,21 @@ class Mgames extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 		}
+	function TopGame($limit){
+		$this->db->select();
+		$this->db->from('fg_games');
+		$this->db->order_by("count_dem", "desc");
+		//$this->db->order_by("title", "desc"); 
+		$this->db->limit($limit);
+		$ds=$this->db->get();
 		
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+		//var_dump($list);die();
+	 	return $list;
+	}
 }

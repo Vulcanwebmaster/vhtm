@@ -40,8 +40,23 @@
 		//var_dump($list);die();
 	 	return $list;
 		}
+		
+		function getTopGame($limit){
+		$this->db->select();
+		$this->db->from('fg_games');
+		$this->db->order_by("count_dem", "desc");
+		$this->db->limit($limit);
+		$ds=$this->db->get();
+		
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+		//var_dump($list);die();
+	 	return $list;
+	}
 	}
 	
-	function getTopGame(){
-		
-	}
+	

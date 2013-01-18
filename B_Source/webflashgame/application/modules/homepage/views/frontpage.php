@@ -2,7 +2,9 @@
 				<div id="tipHolder"></div>
 				<div id="featureBoxesTop">
 					<div id="featureBox_1" class="featureBox  type_game gameId_110">
-						<h3><a target="_self" href="#"><span>Book of Ra&trade; Deluxe</span></a></h3>
+						<?php foreach ($top1 as $key) 
+						{ ?>
+						<h3><a target="_self" href="<?php echo base_url();?>helps/detail/<?php echo $key->id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h3>
 						<div class="container">
 							<div style="background-color: #561c00" class="backgroundColor">
 								<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featurebox_slots_screenshots_bookofra.jpg);" class="img"></span>
@@ -11,6 +13,7 @@
 							<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="featureStatus"></span>
 							<p class="desc">Pyramids, pharaohs and the Book of Ra! The mysterious slot machine awaits!</p>
 						</div>
+						<?php }?>
 					</div>
 					<div id="featureBox_2" class="featureBox  type_news">
 						<?php foreach ($list_category as $key) 
@@ -47,12 +50,12 @@
 						<p class="topGamesDesc">The best and most-loved games in one click.</p>
 						<ul class="gameList">
 							
-						<?php foreach ($list_games as $key) 
+						<?php foreach ($top_game as $key) 
 						{ ?>	
 						<li>
 							<div class=" so1_medium rating friendsOnline gameId_193">
 								<h4><a title="" href="<?php echo base_url();?>games/detail/<?php echo $key->id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h4>
-								<div class="so1_container" style="background-color: #87d2f8">
+								<!--<div class="so1_container" style="background-color: #87d2f8">
 									<p>Be the first to play all of your cards and become President!</p>
 									<dl><dt><span>Playing now</span></dt><dd>31</dd></dl>
 									<ul>
@@ -64,7 +67,7 @@
 											<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span></a>
 										</li>
 									</ul>
-								</div>
+								</div>-->
 							</div>
 						</li>
 						<?php } ?>
@@ -104,7 +107,7 @@
 						</ul>
 					</div>
 					<span class="showAll">
-						<a href="<?php echo base_url();?>games/category/<?php echo $key->id."-".$key->alias?>">Display all casino games</a></span>
+						<a href="<?php echo base_url();?>games/category">Display all casino games</a></span>
 				</div>
 				<?php }?>
 		</div>
