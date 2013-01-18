@@ -107,7 +107,7 @@
 						</ul>
 					</div>
 					<span class="showAll">
-						<a href="<?php echo base_url();?>games/category">Display all casino games</a></span>
+						<a href="<?php echo base_url();?>games/category/<?php echo $key->id."-".$key->alias?>">Display all casino games</a></span>
 				</div>
 				<?php }?>
 		</div>

@@ -63,9 +63,7 @@ class Games extends NIW_Controller
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['list_game_cate']  =  $this->Mgames->getListCategory('fg_category');
-			//var_dump($data['category']); die();
 			$data['items']=$this->Mgames->getListByColumn('fg_games','category_id',$id);
-			//var_dump($data['items']); die();
 			$data['module']  =  $this->module;
 			$data['page']  =  'vgames';
 			$this->load->view('front/container',$data);
