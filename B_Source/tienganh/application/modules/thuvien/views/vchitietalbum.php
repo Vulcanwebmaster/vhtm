@@ -228,7 +228,7 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 		 		#clickslide{ margin-left:20px; width:94%}
 		 		.next12, .prev12{ width:3%;}
 		 		.next12{right:0}
-		 		.slideimage img{margin:0 25px 0 -5px;}
+		 		/*.slideimage img{margin:0 25px 0 -5px;}*/
 		 	</style>
 		 	<div class="contentbot" style="margin: 80px 0">
         		<div class="prev12"><img src="<?php echo base_url()?>assets/trungtam-tienganh/images/icon5.gif"/></div>

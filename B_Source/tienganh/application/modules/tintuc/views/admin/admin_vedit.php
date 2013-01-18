@@ -17,7 +17,15 @@
 		<div class="tab_container">
 			
 			<div id="tab1" class="tab_content">
-				
+				<fieldset>
+					<label>Mục tin tức</label>
+					<select name="news_category">
+						<option value="Tiếng Anh mầm non">Tiếng Anh mầm non</option>
+						<option value="Tiếng Anh tiểu học">Tiếng Anh tiểu học</option>
+						<option value="Tiếng Anh cho sinh viên">Tiếng Anh cho sinh viên</option>
+						<option value="Tiếng Anh cho người đi làm">Tiếng Anh cho người đi làm</option>
+					</select>
+				</fieldset>
 				<fieldset>
 					<label>Tiêu đề(Việt) </label>
 					<?php echo $this->ckeditor->editor('news_title',$info->news_title,$config);?>
@@ -28,15 +36,7 @@
 					<?php echo $this->ckeditor->editor('news_titlee',$info->news_titlee,$config);?>
 					<!--<input type="text" name="news_title" style="width:92%" value="<?php echo $info->news_title;?>"/>-->
 				</fieldset>
-				<fieldset>
-					<label>Mục tin tức</label>
-					<select name="news_category">
-						<option value="Tiếng Anh mầm non">Tiếng Anh mầm non</option>
-						<option value="Tiếng Anh tiểu học">Tiếng Anh tiểu học</option>
-						<option value="Tiếng Anh cho sinh viên">Tiếng Anh cho sinh viên</option>
-						<option value="Tiếng Anh cho người đi làm">Tiếng Anh cho người đi làm</option>
-					</select>
-				</fieldset>
+				
 				<fieldset>
 					<label>Nội dung (Việt)</label>
 					<?php echo $this->ckeditor->editor('news_content',$info->news_content,$config);?>
