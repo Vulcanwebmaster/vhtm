@@ -47,31 +47,73 @@
 			<div class="contBox" id="gamesTopGames">
 					<h3>Top Games</h3>
 					<div class="container">
-						<p class="topGamesDesc">The best and most-loved games in one click.</p>
+						
 						<ul class="gameList">
-							
+							<p class="topGamesDesc">The best and most-loved games in one click.</p>
 						<?php foreach ($top_game as $key) 
 						{ ?>	
-						<li>
+						<li class="item">
 							<div class=" so1_medium rating friendsOnline gameId_193">
 								<h4><a title="" href="<?php echo base_url();?>games/detail/<?php echo $key->id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h4>
-								<!--<div class="so1_container" style="background-color: #87d2f8">
+								<div class="so1_container" style="background-color: #87d2f8">
 									<p>Be the first to play all of your cards and become President!</p>
 									<dl><dt><span>Playing now</span></dt><dd>31</dd></dl>
 									<ul>
 										<li>
-											<span class="border" style="display:block;background-image: url(images/gameSO1_med.png);"></span>
-											<span class="gameLogo pos_13" style="display:block;background-image: url(images/game_193_logo_137x77_EN-US.png);"></span>
-											<a href="#" class="room"><span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-											<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
+											<span class="border" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);"></span>
+											<span class="gameLogo pos_13" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_193_logo_137x77_EN-US.png);"></span>
+											<a href="#" class="room"><span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
+											<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
 											<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span></a>
 										</li>
 									</ul>
-								</div>-->
+								</div>
 							</div>
+							<div id="so2overlay" style=" top: -100px; left: -100px; display:none " class="friendsOnline type1">
+								<span class="top" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+								<div id="so2overlayTop">
+										<h3><span>Bingo</span></h3>
+										<div class="gameDesc"><p>12-35-75-9-4 ... BINGO! Who'll hit the jackpot?</p></div>
+										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
+										<ul id="so2nav">
+												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+												<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+												<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
+												<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li><
+												<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
+											</ul>
+											<dl><dt>Playing now</dt><dd>82</dd></dl>
+											<div id="topGame"></div>
+											<div id="so2rating" class=""></div>
+											<span class="overlayStatus" style=";background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
+											<div class="btnClose">
+												<a href="#close" data-gtt="close" title=""><span>close</span></a>
+											</div>
+										</div>
+										<span class="overlayBottom" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+										<div id="so2overlayBottom">
+											<div><p><span class="tournDate"></span>&nbsp;<strong>Jackpot:</strong>&nbsp;<span class="tournPrize"></span></p><a class="formLink" href="#"><span>To the Tournament</span></a>
+												
+												</div>
+											</div><span class="overlayPointer" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+										</div>
 						</li>
+						
+						
 						<?php } ?>
 					</ul>
+				<script type="text/javascript">
+							$(document).ready(function(){
+								$('#so2overlay').hide();
+								
+								$('.item').mouseenter(function(){
+									$(this).children('#so2overlay').show();
+								})
+									$('.item').mouseleave(function(){
+									$(this).children('#so2overlay').hide();
+								})
+							})
+				</script>
 				</div>
 			</div>
 			<div class="categories">
@@ -84,7 +126,7 @@
 							<?php foreach ($list_games as $value) {?>
 										<?php if($value->category_id  ==  $key->id)
 											{?>
-							<li class="">
+							<li class="item">
 								<div class=" so1_small rating friendsOnline gameId_110">
 									<h4><a href="<?php echo base_url();?>games/detail/<?php echo $value->id."-".$value->alias;?>" title=""><span><?php echo $value->name; ?></span></a></h4>
 									<div style="background-color: #561c00" class="so1_container">
@@ -101,6 +143,34 @@
 										</ul>
 									</div>
 								</div>
+								<div id="so2overlay" style=" top: -100px; left: -50px; display:none " class="friendsOnline type1">
+								<span class="top" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+								<div id="so2overlayTop">
+										<h3><span>Bingo</span></h3>
+										<div class="gameDesc"><p>12-35-75-9-4 ... BINGO! Who'll hit the jackpot?</p></div>
+										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
+										<ul id="so2nav">
+												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+												<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+												<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
+												<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
+												<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
+											</ul>
+											<dl><dt>Playing now</dt><dd>82</dd></dl>
+											<div id="topGame"></div>
+											<div id="so2rating" class=""></div>
+											<span class="overlayStatus" style=";background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
+											<div class="btnClose">
+												<a href="#close" data-gtt="close" title=""><span>close</span></a>
+											</div>
+										</div>
+										<span class="overlayBottom" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+										<div id="so2overlayBottom">
+											<div><p><span class="tournDate"></span>&nbsp;<strong>Jackpot:</strong>&nbsp;<span class="tournPrize"></span></p><a class="formLink" href="#"><span>To the Tournament</span></a>
+												
+												</div>
+											</div><span class="overlayPointer" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+										</div>
 							</li>
 							<?php } ?>
 							<?php } ?>

@@ -30,7 +30,7 @@ body.small{background-image:url(../images/backBodyRoom.jpg)}#wrapper{width:990px
 #favorit li a{text-indent:-9999px;display:block;width:20px;height:20px;background:url(../images/favorit_icon.gif) no-repeat 3px 2px}
 #favorit .favorit a:hover{background-position:3px -20px}#favorit .home{left:24px}
 #favorit .home a{background-position:-83px 2px}#favorit .home a:hover{background-position:-83px -20px}
-#main{background:url(../images/backContentTop.jpg) no-repeat;_zoom:1;overflow:hidden;padding:54px 24px 0 24px}
+#main{background:url(../images/backContentTop.jpg) no-repeat;_zoom:1;padding:54px 24px 0 24px}
 .small #main{margin-top:0;background:#fff;padding:25px;background:#fff;margin:10px 20px;border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;box-shadow:0 0 20px #E3E3E3;-moz-box-shadow:0 0 20px #E3E3E3;-webkit-box-shadow:0 0 20px #E3E3E3}
 .small #container{min-height:220px;_height:220px}body.hasSideBar #container{float:left;display:inline;width:628px;_margin-right:-3px;overflow:hidden}
 body.hasSideBar #sideBar{margin-left:628px;_margin-left:625px;_zoom:1;width:314px;overflow:hidden;position:relative}
@@ -121,9 +121,9 @@ body.mobile,body.mobile h1,body.mobile h2,body.mobile h3{color:#000;border-color
 .gamesHelpContent .listTable thead td.first,.gamesHelpContent .listTable thead td.last,.gamesHelpContent .listTable thead th.first,.gamesHelpContent .listTable thead th.last,.gamesHelpContent .formTable thead td.first,.gamesHelpContent .formTable thead td.last,.gamesHelpContent .formTable thead th.first,.gamesHelpContent .formTable thead th.last,.gamesHelpContent .listTable thead td:first-child,.gamesHelpContent .listTable thead td:last-child,.gamesHelpContent .listTable thead th:first-child,.gamesHelpContent .listTable thead th:last-child,.gamesHelpContent .formTable thead td:first-child,.gamesHelpContent .formTable thead td:last-child,.gamesHelpContent .formTable thead th:first-child,.gamesHelpContent .formTable thead th:last-child{background:none repeat scroll 0 0 #ACEAFF}
 .gamesHelpContent div.tableWrapper{overflow:hidden}.gamesHelpContent .helpPlayGame h3,.games_details #gamesHelpContent h3{padding-top:42px!important}
 .gamesHelpContent .playGames{border:medium none;clear:both;height:21px;margin:3em 0 1em;overflow:hidden}
-.games_details .gamesHelpContent .playGames li,.help .gamesHelpContent .playGames li{background:url("../../imgs/btnSprite.png") no-repeat scroll -20px -110px transparent;font-size:13px;list-style:none outside none;padding:0 0 0 5px}
-.gamesHelpContent .playGames li a{background:url("../../imgs/btnSprite.png") no-repeat scroll right -132px transparent;color:#fff;float:left;font-weight:bold;margin:0;padding:2px 5px 3px 0;text-decoration:none;text-shadow:0 0 1px #0c8ebf,0 0 3px #0c8ebf,0 0 5px #0c8ebf}
-.gamesHelpContent .playGame{float:left}.gamesHelpContent .playGames li.backToTop{background:url("../../imgs/btnSprite.png") no-repeat scroll left -351px transparent;display:block;float:right;height:21px;overflow:hidden;padding:0;width:21px}
+.games_details .gamesHelpContent .playGames li,.help .gamesHelpContent .playGames li{background:url("../images/btnSprite.png") no-repeat scroll -20px -110px transparent;font-size:13px;list-style:none outside none;padding:0 0 0 5px}
+.gamesHelpContent .playGames li a{background:url("../images/btnSprite.png") no-repeat scroll right -132px transparent;color:#fff;float:left;font-weight:bold;margin:0;padding:2px 5px 3px 0;text-decoration:none;text-shadow:0 0 1px #0c8ebf,0 0 3px #0c8ebf,0 0 5px #0c8ebf}
+.gamesHelpContent .playGame{float:left}.gamesHelpContent .playGames li.backToTop{background:url("../images/btnSprite.png") no-repeat scroll left -351px transparent;display:block;float:right;height:21px;overflow:hidden;padding:0;width:21px}
 .gamesHelpContent .playGames li.backToTop a{background:none repeat scroll 0 0 transparent;padding:21px 0 0 1px}
 .gamesHelpContent span.contImageRight{float:right;margin:4px 0 3px 20px}.gamesHelpContent span.contImageRight img{border:5px solid #ccf2fb;margin:0 0 3px}
 .gamesHelpContent span.contImageRight span.contImageDesc,.gamesHelpContent ul.imageListing li.imageListingDesc{display:block;font-size:11px;font-style:italic;text-align:center}
@@ -137,10 +137,10 @@ body.mobile,body.mobile h1,body.mobile h2,body.mobile h3{color:#000;border-color
 .doiBoxEmailConfirm .container{padding:0 320px 0 0!important;width:600px}
 #doiBox.doiBoxRegister .container{min-height:140px;padding-bottom:10px}#doiBox.doiBoxEmailConfirmSent .container{padding:10px 430px 20px 10px;width:480px}
 #doiBox.doiBoxEmailConfirmSuccess h3,#doiBox.doiBoxEmailConfirmSuccess .container{background-color:#F0FFE5;border-color:#C7F5A5;color:#719F11}
-#doiBox.doiBoxEmailConfirmSuccess h3 span{background:url("../../imgs/ok.gif") no-repeat scroll 9px 5px transparent}
+#doiBox.doiBoxEmailConfirmSuccess h3 span{background:url("../images/ok.gif") no-repeat scroll 9px 5px transparent}
 #doiBox.doiBoxEmailConfirmSuccess .container{padding:10px}#doiBox.doiBoxEmailConfirmSuccess .doiBoxBackground{display:none}
 #doiBox.doiBoxRegister .container p{margin:10px 10px 10px 110px}.doiBoxRegister #doiBoxRegisterBtn{padding-left:3px;margin-top:25px}
-#doiBoxContentDisabler{background:#fff}.contBox,.container{padding:10px}.contBox .container{overflow:hidden}body.help #container .container{background-color:transparent;overflow:visible;padding:0 11px 20px 15px}
+#doiBoxContentDisabler{background:#fff}.contBox,.container{padding:10px}.contBox .container{}body.help #container .container{background-color:transparent;overflow:visible;padding:0 11px 20px 15px}
 body.help .gamesHelpContent{padding:10px 30px}body.help #container .container p{margin:10px 0}
 body.help #container .container .heading{background-color:#C1F0FF;border-top:1px dotted #39C;border-bottom:1px dotted #39C;font-weight:bold;margin:0 -10px 10px;padding:10px}
 #trust,.prizeBox,#tagCloud{width:294px;margin:0 0 20px;background:url(../images/box_294_gray_top.png) 10px 10px no-repeat;_background-image:url(../images/box_294_gray_top.gif);zoom:1}
@@ -299,19 +299,19 @@ body.games ul.paging{width:440px;margin-left:0;padding-left:10px;background:url(
 .so1_small.statusNew .status{left:-350px;clip:rect(150px 400px 205px 350px)}
 .so1_small.statusUpdate .status{left:-400px;clip:rect(150px 450px 205px 400px)}
 .so1_small.statusBeta .status{left:-450px;clip:rect(150px 500px 205px 450px)}
-.so1_small.statusMobile .status{left:-500px;top:-155px;clip:rect(150px 550px 205px 500px);margin-left:-6px;margin-top:0}.categories{overflow:hidden;margin:0 -10px;zoom:1}.gameCat{width:461px;height:277px;background:url(../images/gameCat_Back.jpg?v=2) no-repeat -10px -10px;position:relative;float:left;padding:0;margin:10px;_margin:10px 5px;overflow:hidden}
+.so1_small.statusMobile .status{left:-500px;top:-155px;clip:rect(150px 550px 205px 500px);margin-left:-6px;margin-top:0}.categories{margin:0 -10px;zoom:1}.gameCat{width:461px;height:277px;background:url(../images/gameCat_Back.jpg?v=2) no-repeat -10px -10px;position:relative;float:left;padding:0;margin:10px;_margin:10px 5px;}
 .gameCat h3,.gameCat h2,.gameCatSort,.gameCat .container{position:absolute;display:block;padding:0}
 .gameCat h3,.gameCat h2{margin:0;left:12px;top:16px;height:22px;overflow:hidden;border:0}
 .gameCat h3 a,.gameCat h2 a{display:block;color:#666;text-decoration:none}
-.gameCat:hover h2 a{text-decoration:underline}.gameCat .container{left:7px;top:39px;padding-top:12px;width:448px;height:187px;overflow-x:hidden;overflow-y:hidden}
+.gameCat:hover h2 a{text-decoration:underline}.gameCat .container{left:7px;top:39px;padding-top:12px;width:448px;height:187px;}
 .static .gameCat .container{overflow-x:scroll}.gameCat .container ul{height:187px;width:880px;margin:0;border-left:none}
 .gameCat .container li{width:112px;height:91px;float:left;position:relative;left:0;background:0;padding:0;margin:0}
 .gameCat .container .gamePos0{margin-left:-448px}.gameCat .container .gamePos1{margin-left:-336px}
 .gameCat .container .gamePos2{margin-left:-224px}.gameCat .container .gamePos3{margin-left:-112px}
 .gameCat .container .gamePos0,.gameCat .container .gamePos1,.gameCat .container .gamePos2,.gameCat .container .gamePos3{margin-top:91px}.gameList,#gamesTopGames,#gamesTopGames .container{margin:0;padding:0;border-left:none;background:0}
-.gameList ul{margin:0;border-left:none}.gameList li{background:0;padding:0;margin:0;display:inline}
-#gamesTopGames{background:url(../images/backTopGames.jpg?v=2) no-repeat -10px -10px;overflow:hidden;position:relative;clear:both;zoom:1;margin:0 0 10px}
-#gamesTopGames .container{padding:0 0 6px;overflow:hidden;zoom:1}#gamesTopGames h3{color:#fff;line-height:28px;top:4px;left:12px;border:0;position:absolute}
+.gameList ul{margin:0;border-left:none}.gameList li{background:0;padding:0;margin:0;display:inline; position: relative}
+#gamesTopGames{background:url(../images/backTopGames.jpg?v=2) no-repeat -10px -10px;position:relative;clear:both;zoom:1;margin:0 0 10px}
+#gamesTopGames .container{padding:0 0 6px;zoom:1}#gamesTopGames h3{color:#fff;line-height:28px;top:4px;left:12px;border:0;position:absolute}
 body.uc #gamesTopGames h3{text-transform:capitalize}#gamesTopGames .topGamesDesc{left:12px;position:absolute;top:42px;width:137px;height:70px}
 #gamesTopGames .firstChild{margin-left:157px;_margin-left:78px}#sideBar div.gameList{padding:10px}
 #sideBar ul.gameList,#sideBar .gameList .container{overflow:visible}#sideBar .gameList p{margin:0 -10px 20px}
@@ -946,7 +946,7 @@ div#paymentToolTip div.footer{width:336px;height:9px;background:url(../images/sh
 #sideBar .footer a.more{background:url(../images/gameCat_C2A.png) no-repeat scroll right center transparent;float:right;padding-right:20px}
 #countryCurrencyFormContainer{background:#fff;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:1px #ccc solid;-moz-box-shadow:0 0 20px 0 #CCC;-webkit-box-shadow:0 0 20px 0 #CCC;box-shadow:0 0 20px 0 #CCC;position:absolute;top:50%;left:50%;width:450px;margin-left:-225px;margin-top:-95px;z-index:1000}
 #countryCurrencyFormContainer #formCloseBtn{width:14px;height:14px;position:absolute;right:11px;top:7px}
-#countryCurrencyFormContainer #formCloseBtn a{display:block;width:100%;height:100%;cursor:pointer;background:transparent url("../../imgs/walkthrough/walkthroughClose.gif") no-repeat}
+#countryCurrencyFormContainer #formCloseBtn a{display:block;width:100%;height:100%;cursor:pointer;background:transparent url("../images/walkthrough/walkthroughClose.gif") no-repeat}
 #countryCurrencyFormContainer #formCloseBtn a span{display:none}#countryCurrencyFormContainer #formCloseBtn a:hover{background-position:left bottom}
 .payment_ok #gamesTopGames,.payment_pending #gamesTopGames{background:0}.payment_ok #gamesTopGames h3{color:#666}
 #paymentDetails h4{border-bottom:1px dotted #39C;margin:0;padding-bottom:2px}
@@ -969,7 +969,7 @@ div#paymentToolTip div.footer{width:336px;height:9px;background:url(../images/sh
 .selectedItem .buyFriend a{float:left;margin-right:30px}.selectedItem .buyFriend select{margin-right:10px}
 #mbImage .contBox.friendslist h3{border-bottom:1px dotted #39C;color:#666;font-size:17px;font-style:italic;font-weight:bold;padding-bottom:2px;text-decoration:none}
 #mbImage .friendslist table{text-align:center}#mbCenter .friendslist button{float:none;width:200px}
-.shop_item #mbCloseLink{background:transparent url("../../imgs/walkthrough/walkthroughClose.gif") no-repeat;height:14px;position:absolute;right:14px;top:7px;width:14px}
+.shop_item #mbCloseLink{background:transparent url("../images/walkthrough/walkthroughClose.gif") no-repeat;height:14px;position:absolute;right:14px;top:7px;width:14px}
 .shop_item #mbCloseLink:hover{background-position:left bottom}#mbImage .contBox.friendslist a.formButton{margin:0 auto;color:#fff}
 .shopRegister{margin:-6px 10px 0}.shopLogin{margin:-15px 10px 0}.shopApp a.formButton{color:#fff}
 .shopApp a img{display:block;margin:10px 3px 10px auto}#paymentPagoForm select{width:209px;margin-right:5px}
@@ -987,7 +987,7 @@ body.shop #shopGutschein #subNav span{right:-6px}body.shop #shopGutschein button
 #voucherPaging .container ul li{background:0;width:568px;float:left;left:0;padding:0;margin:0;position:relative}
 #voucherPaging .container ul li div,#voucherPaging .container ul li form{padding:0 10px}
 body.shop #shopGutschein #voucherPaging .container ul li table{width:548px;margin:0}
-#voucherPaging ul.paging{position:absolute;bottom:-20px;background:url("../../imgs/gutscheinListPaging.png") no-repeat scroll 0 bottom transparent}
+#voucherPaging ul.paging{position:absolute;bottom:-20px;background:url("../images/gutscheinListPaging.png") no-repeat scroll 0 bottom transparent}
 #voucherPaging .voucherUsed ul .vertPos1,#voucherPaging .voucherUsed ul .vertPos2{margin-left:-568px}
 #voucherPaging .voucherUsed ul .vertPos1{margin-top:170px}#voucherPaging .voucherUsed ul .vertPos2{margin-top:340px}
 #voucherPaging .voucherLive ul .vertPos1,#voucherPaging .voucherLive ul .vertPos2{margin-left:-568px}
