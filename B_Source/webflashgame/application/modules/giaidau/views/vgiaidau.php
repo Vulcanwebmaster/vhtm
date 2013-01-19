@@ -105,9 +105,9 @@
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a title="" href="/web/Tournaments-Details?id_tourn=32180"><span><?php echo $item->title;?></span></a></h4>
+									<h4><a title="" href=""><span><?php echo $item->name;?></span></a></h4>
 									<div class="to1_container">
-										<span class="backgroundColor" style="background-color: #F4D454"></span>
+										<!--<span class="backgroundColor" style="background-color: #F4D454"></span>
 										<span class="to1_logo_1 to1_pos_0"></span>
 										<span class="logo" style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);"></span>
 										<span class="border" style="display:block;background-image: url(images//gameSO1_med.png);"></span>
@@ -116,11 +116,11 @@
 										<span class="link" style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);"></span>
 										<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">
 										<span class="register">Register now!</span></span>
-										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>
+										<span class="to1Status typeId1" style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;"></span>-->
 										<p style="color: #000000">14.Jan&nbsp;21:00</p>
 										</a>
 										<div class="desc">
-											<span class="label">Start: </span>14.01.2013 21:00 <abbr title="Central European Time">CET</abbr><br>
+											<span class="label">Start: </span><?php echo $item->start_date ?> <abbr title="Central European Time">CET</abbr><br>
 											<span class="label">Stake: </span>
 											<span class="funCurrencyContainer">
 												<span>Twists </span>1.000</span><br>

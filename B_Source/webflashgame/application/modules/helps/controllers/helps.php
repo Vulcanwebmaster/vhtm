@@ -32,6 +32,7 @@ class Helps extends NIW_Controller
 			$config['total_rows'] = count($this->Mhelps->getListFull('fg_helps'));
 			$this->pagination->initialize($config);
 			$data['title']='games | Flash-games';
+			$data['list_faq'] = $this->Mhelps->getListFull('fg_helps');
 			$data['items']=$this->Mhelps->getListOffset('fg_helps',10,$index);
 			$data['module']=$this->module;
 			$data['index'] = -1;
