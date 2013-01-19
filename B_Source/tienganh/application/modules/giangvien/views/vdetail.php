@@ -332,7 +332,7 @@
 					 				</div>
 					 			</div><br clear="both" />--->
 						 	</div>
-						 <script type="text/javascript">
+						<!-----------  <script type="text/javascript">
 											        $(document).ready(function() {
 											            $("a[@rel*=fancyvideo]").fancybox({
 											                overlayShow: true,
@@ -341,9 +341,76 @@
 											            });
 											        });
 											</script>	 
-					 			<!----------- <?php echo $chitiet->lecturers_content ?>--------------->
+					 			<?php echo $chitiet->lecturers_content ?>--------------->
 						 <!----------------------------->
 						 <div id="contentbotomgv">
+						 	
+						 	<script type="text/javascript">
+				        		$(document).ready(function(){		        			
+				        			$('#id2, #id3, #id4, #id5, #id6,#id7').hide();	
+				        			$('#vd1').addClass('iconbg');	
+				        			$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');        			
+				        			$('#vd1').click(function(){
+				        				$('#id1').show();
+				        				$(this).addClass('iconbg');
+				        				$(this).removeClass('iconbg2');
+				        				$(this).parent().children('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+				        				$(this).parent().children('#vd2, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id2,#id3, #id4, #id5, #id6,#id7').hide();
+				        				
+				        			});
+				        			$('#vd2').click(function(){
+				        				$('#id2').show();
+				        				$(this).addClass('iconbg');
+				        				$(this).removeClass('iconbg2');
+				        				$(this).parent().children('#vd1, #vd3, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+				        				$(this).parent().children('#vd1, #vd3, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id1,#id3, #id4, #id5, #id6,#id7').hide();
+				        			});
+				        			$('#vd3').click(function(){
+				        				$('#id3').show();
+				        				$(this).addClass('iconbg');
+				        				$(this).removeClass('iconbg2');
+				        				$('#vd2, #vd1, #vd4, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+				        				$('#vd2, #vd1, #vd4, #vd5, #vd6, #vd7').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id1,#id2, #id4, #id5, #id6,#id7').hide();
+				        			});
+				        			$('#vd4').click(function(){
+				        				$('#id4').show();
+				        				$(this).addClass('iconbg');
+				        				$(this).removeClass('iconbg2');
+				        				$('#vd2, #vd3, #vd1, #vd5, #vd6, #vd7').removeClass('iconbg'); 
+				        				$('#vd2, #vd3, #vd1, #vd5, #vd6, #vd7').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id6,#id7').hide();
+				        			});
+				        			$('#vd5').click(function(){
+				        				$('#id5').show();
+				        				$(this).addClass('iconbg');
+				        				$(this).removeClass('iconbg2');
+				        				$('#vd2, #vd3, #vd4, #vd1, #vd6, #vd7').removeClass('iconbg'); 
+				        				$('#vd2, #vd3, #vd4, #vd1, #vd6, #vd7').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id1,#id3, #id2, #id4, #id6,#id7').hide();
+				        			});
+				        			$('#vd6').click(function(){
+				        				$('#id6').show();
+				        				$(this).removeClass('iconbg2');
+				        				$(this).addClass('iconbg');
+				        				$('#vd2, #vd3, #vd4, #vd5, #vd1, #vd7').removeClass('iconbg'); 
+				        				$('#vd2, #vd3, #vd4, #vd5, #vd1, #vd7').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id4,#id7').hide();
+				        			});
+				        			$('#vd7').click(function(){
+				        				$('#id7').show();
+				        				$(this).addClass('iconbg');
+				        				$(this).removeClass('iconbg2');
+				        				$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd1').removeClass('iconbg'); 
+				        				$('#vd2, #vd3, #vd4, #vd5, #vd6, #vd1').addClass('iconbg2');
+				        				$(this).parent().parent().children('#id1,#id3, #id2, #id5, #id6,#id4').hide();
+				        			});
+				        		});
+				        		
+				        	</script>
+						 	
 						 		<div id="share">
 						 		<p><?php if ($_SESSION['lang']=="vn") 
 								{?>		
@@ -429,7 +496,6 @@
 						 	<div class="contentbot" style="margin: 80px 0">
 			        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"></div>
 				        	<div id="clickslide">
-				        		
 				        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 				        		<div class="slideimage">
 				        			<?php foreach ($list_slide1 as $slide)
@@ -442,8 +508,6 @@
 									}?>
 				        		</div>
 				        		</div>
-				        		
-				        		
 				        	</div>
 				        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"></div>
 				        	
@@ -528,7 +592,9 @@
 		padding:5px;
 	}
 	</style>
-	
+	<script type="text/javascript">
+		$('#libraryhd').addClass('bgli');
+	</script>
 <!-- <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>  -->
 <script language="javascript">

@@ -243,41 +243,40 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 					 		
 					 	</div>
 					 	<div class="plupgin" style="margin-top:5px">
-					        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif">
-					        		<p style="font-size: 13px">
-					        			<?php if ($_SESSION['lang']=="vn") 
-										{?>		
-											Plugin xã hội của Facebook
-										<?php } else{ ?>
-											Plugin of Facebook
-										<?php } ?>
-					        			</p>
+			        		<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconface.gif">
+			        		<p style="font-size: 13px">
+			        			<?php if ($_SESSION['lang']=="vn") 
+								{?>		
+									Plugin xã hội của Facebook
+								<?php } else{ ?>
+									Plugin of Facebook
+								<?php } ?>
+		        			</p>
 					    </div>
 					 	<style>
 					 		.prev12{left:-10px;}
 					 		#clickslide{ margin-left:40px; width:88%}
 					 		.next12, .prev12{ width:3%;}
 					 		.next12{right:0}
-					 		.slideimage img{margin:0 25px 0 -5px;}
+					 		.slideimage img{margin:0 25px 0 5px;}
 					 	</style>
 					 	<div class="contentbot" style="margin: 80px 0">
 		        		<div class="prev12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon5.gif"></div>
 			        	<div id="clickslide">
 			        		<div style="width:90%; overflow: hidden; height: 119px; margin:0 20px;">
 			        		<div class="slideimage">
-			        			<?php foreach ($list_slide1 as $slide)
-									{
-										 echo $slide->anh1;
-										 echo $slide->anh2;
-										 echo $slide->anh3;
-										 echo $slide->anh4;
-										 echo $slide->anh5;
-									}?>
+		        			<?php foreach ($list_slide1 as $slide)
+								{
+									 echo $slide->anh1;
+									 echo $slide->anh2;
+									 echo $slide->anh3;
+									 echo $slide->anh4;
+									 echo $slide->anh5;
+								}?>
 			        		</div>
 			        		</div>
 			        	</div>
 			        	<div class="next12"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/icon8.gif"></div>
-			        	
 		        	</div>
 					 </div>
 				</div>
