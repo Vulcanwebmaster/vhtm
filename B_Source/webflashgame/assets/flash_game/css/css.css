@@ -18,13 +18,13 @@ p,fieldset,table,pre{margin-bottom:1em}button,input[type="checkbox"],input[type=
 body{margin:0}th{text-align:left}html{background:transparent}body{background:#f6f6f6 url(../images/backBody.jpg) repeat-x 0 0;padding:0 0 20px;font-family:Verdana,Arial,Helvetica,sans-serif;color:#333}
 body.small{background-image:url(../images/backBodyRoom.jpg)}#wrapper{width:990px;margin:auto;position:relative;background:#fff url(../images/backMain.png) repeat-y}
 .small #wrapper{background:0;width:auto}#header{height:150px;background:#f6f6f6 url(../images/backBody.jpg) repeat-x;position:relative}
-.small #header{background-position:0 -52px;height:60px}#header h1{margin:0;padding:0;border:0;height:144px;background:url(../images/backHeader.jpg) no-repeat 24px 59px}
+.small #header{background-position:0 -52px;height:60px}#header h1{margin:0;padding:0;border:0;height:144px;/*background:url(../images/backHeader.jpg) no-repeat 24px 59px*/}
 .small #header h1{background:url(../images/backHeaderSmall.jpg) no-repeat scroll 0 0 transparent;background-position:24px 8px;height:60px}
-#header h1 a{position:absolute;margin:0;top:77px;left:30px;outline:0;cursor:pointer;display:block;background:url(../images/logo.jpg) no-repeat}
+#header h1 a{position:absolute;margin:0;top:50px;left:30px;outline:0;cursor:pointer;display:block;background:url(../images/skill7Logo.png) no-repeat}
 .rtl #header h1 a{background:url(../images/logo_beta_arabic.jpg) no-repeat}
 .small #header h1 a{height:57px;margin:0;width:170px;display:block;top:0;background:0;cursor:pointer;z-index:2000;_zoom:1}
 #header h1 span{width:190px;height:70px;display:block;text-indent:-9999px}
-.small #header h1 span{display:none}#header h2{margin:0;display:none}#presentation{height:222px;overflow:hidden;background:#f6f6f6 url(../images/backBody.jpg) repeat-x 0 -150px;position:relative}
+.small #header h1 span{display:none}#header h2{margin:0;display:none}#presentation{height:auto;overflow:hidden;background:#f6f6f6 url(../images/backBody.jpg) repeat-x 0 -150px;position:relative}
 #presentationWrapper{width:962px;margin:auto}#favorit{background:url(../images/favorit_icon.gif) no-repeat -28px -20px #38c2df;position:absolute;width:38px;height:22px;z-index:100;border:0;margin:0;padding:0;top:355px;left:24px}
 #favorit li{background:0;left:0;padding:0;margin:0;float:left;position:absolute}
 #favorit li a{text-indent:-9999px;display:block;width:20px;height:20px;background:url(../images/favorit_icon.gif) no-repeat 3px 2px}
@@ -1230,3 +1230,94 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 .landing_mobile_app #mobileInfoButtons #mobileInfoButtonsFooter{background:url(../images/box_294_blue_bottom.png) no-repeat 0 bottom transparent;margin-bottom:-20px}
 .landing_mobile_app #mobileInfoButtons .mobileLink{margin-left:30px}
 .element{ height:auto !important}
+
+/*==========================css add===========================*/
+#nav1{position:absolute;top:109px;right:0px;margin:0;z-index:99}#nav1.sticky{position:fixed;_position:absolute;top:-42px;left:0;right:auto;width:100%;min-width:942px;_width:942px;height:42px;background-color:#193255;border-bottom:1px solid #FFF;z-index:201;box-shadow:0 0 5px 0 #000;-moz-box-shadow:0 0 5px 0 #000;-webkit-box-shadow:0 0 5px 0 #000}
+#nav1.sticky .cufon{*top:-100px}#nav1 ul{margin:0;border:0}#nav1.sticky ul{width:942px;height:30px;padding-left:128px;background:transparent url(//static2.greentube.com/xsl_gamebase/_skill7_2010/imgs/navFixedBg.jpg) 6px 2px no-repeat;background-position:6px 2px;background-repeat:no-repeat;left:50%;top:0;padding-top:12px;position:absolute;margin-left:-472px}
+#nav1 li{float:left;list-style-type:none;background:url(../images/navSeparator.png) no-repeat right 0;padding:0 12px}
+#nav1.sticky li{width:30px;padding:0;overflow:hidden;background-color:#193255;*background-position:29px 0;margin-right:0}
+#nav1.sticky li:last-child{background-image:none}#nav1 a{color:#fff;display:block;font-size:15px;font-weight:bold;line-height:21px;padding:1px 5px 1px 25px;background:url(../images/navIconsDefault.gif) no-repeat left -20px;text-decoration:none;white-space:nowrap}
+.uc #nav1 a{text-transform:uppercase}#nav1.sticky a{margin-left:6px;outline:0}
+#nav1 a:hover,#nav1 a:focus{color:#ff1e00}#nav1 .game a{background-position:left -20px}
+#nav1 .game a:hover,#nav1 .game a:focus{background-position:left 3px}#nav1 .tournament a{background-position:-198px -20px}
+#nav1 .tournament a:hover,#nav1 .tournament a:focus{background-position:-198px 3px}
+#nav1 .help a{background-position:-396px -20px}#nav1 .help a:hover,#nav1 .help a:focus{background-position:-396px 3px}
+#nav1 .account a{background-position:-608px -20px;padding-left:24px}#nav1 .account a:hover,#nav1 .account a:focus{background-position:-608px 3px;padding-left:24px}
+#languages1 li{ background:none; width:150px}
+#languages1 .active1 span{ font-weight:normal !important; text-transform:none;}
+#languages1 .active1{}
+#languages1 .active a{ background:url(../images/languagebar_skill7.png)5px 5px no-repeat}
+#languages1 .active span{text-transform:uppercase; font-weight:bold !important;}
+#languages1 .active1 a{ background:#007599;}
+
+#status1{position:absolute;right:0;top:40px;font-size:11px;z-index:100;width:628px;height:38px;background-color:#3f5876;border-bottom:1px solid #68819a;border-left:1px solid #68819a;-moz-box-shadow:0 0 5px #10233F;-khtml-box-shadow:0 0 5px #10233F;-webkit-box-shadow:0 0 5px #10233F;box-shadow:0 0 5px #10233F}
+#status1 ul{margin:0;padding:0;border:0}#status1 li{list-style:none;float:left;padding:0; background:none; margin:0;}
+#status1 a{color:#fff;line-height:12px}#status1 a:hover{color:#ff1e00}#status1 .nick label,#status1 .password label{display:none;width:100px;background:#788A9F none repeat scroll 0 0}
+#lNick1,#lPass1{background:#788a9f;border:1px solid #788a9f;padding:1px 2px;font-family:"Trebuchet MS",Helvetica,Jamrul,sans-serif;margin:10px 3px 0;_margin:8px 3px 0;width:109px;height:15px;color:#fff}
+#lNick1{margin-left:10px}.ie9 #lNick1,.ie9 #lPass1{height:14px}#lNick1:hover,#lPass1:hover{background:#788a9f;border-color:#cfd5dd}
+#lNick1:focus,#lPass1:focus{background:#9facbb;border-color:#cfd5dd}#status1 button{display:block;height:18px;line-height:1px;z-index:1111;cursor:pointer;color:#fff;font-weight:bold;padding:0 22px 2px 0;margin:8px 21px 10px 0;font-size:12px;border:0}
+.ie9 #status1 button{padding-top:2px;padding-right:25px}#status1 .login .login button{background:#3F5876 url(../images/login.png) no-repeat scroll right top;padding-right:26px;margin:10px 10px 0 3px}
+.ie7 #status1 .login .login button span{margin-left:-15px}.uc #status1 button{text-transform:uppercase}
+#status1 button:hover{color:#ff1e00}#status1 .login button{text-align:right;*padding-top:2px;*padding-right:24px}
+#status1 .autologin{float:none}#status1 .autologin input{margin-top:4px;_margin-top:2px}
+#status1 .autologin label{position:relative;top:-3px;left:2px;text-decoration:underline}
+.opera #status1 .autologin label{top:1px}#status1 .autologin label:hover{text-decoration:none}
+#status1 .autologin a{display:block;margin-left:17px;_margin-left:23px}#status1 .passRecover{background:url(../images/statusSeparator.png) no-repeat left center;padding-left:10px;margin-top:8px;height:23px;line-height:20px}
+#status1 .passRecover a:hover{text-decoration:underline}#status1 .arrow{color:#f11d01;display:block;padding:0;width:128px;height:45px;text-decoration:none;margin:0}
+#status1 .arrow button{background:transparent url(../images/buttonHeader.png) no-repeat;_background:transparent}
+* html #arrow{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/buttonHeader.png',sizingMethod='crop');background:transparent;width:128px;height:45px;position:absolute;top:8px;right:-11px;z-index:-1}
+#status1 form.arrow{background-image:none;position:absolute;right:-11px;top:8px;width:128px;height:45px}
+#status1 form.arrow button:hover{color:#193255}#status1 .arrow span{display:block;margin:auto 10px auto 5px;width:100px;text-align:center;font-size:10px}
+#status1 .arrow span cufon{position:relative}#status1 .logged_in .button a{background:url(//static4.greentube.com/xsl_gamebase/_skill7_2010/imgs/buttonHeader.png) no-repeat scroll 0 0;top:-12px}
+#status1 .button a span{display:block;height:28px;padding:17px 27px 6px 0;text-align:center;_width:1px}
+#status1 .button a:hover{text-decoration:none}.uc #status1 h5{text-transform:uppercase}
+#status1 h5 a{text-decoration:none}#status1 .logged_in{position:relative}#status1 .logged_in h5{position:absolute;font-size:12px;padding:3px 8px}
+#status1 .logged_in a{text-decoration:none}#status1 .logged_in ul{_zoom:1;position:relative;top:20px}
+#status1 .logged_in ul li{padding:0 6px;background:url(../images/status1Separator.png) no-repeat right 0;display:block}
+#status1 .amountOfMoney a{padding-left:20px;background:url(../images/status1Sprite.png) no-repeat 0 2px;_background:url(../images/status1Sprite.gif) no-repeat 0 2px;display:block;float:left}
+#status1 .friendsOnline a{background:url(../images/status1Sprite.png) no-repeat -129px 2px;_background:url(../images/status1Sprite.gif) no-repeat -129px 2px;padding-left:18px}
+#status1 .friendsOnline a span{background:url(../images/status1Sprite.png) no-repeat 100% 1px;_background:url(../images/status1Sprite.gif) no-repeat 100% 1px;padding-right:13px}
+#status1 .inbox a{background:url(../images/status1Sprite.png) no-repeat -236px 1px;_background:url(../images/status1Sprite.gif) no-repeat -236px 1px;padding-left:18px}
+#status1 .logged_in ul li.settings,#status1 .logged_in ul li.mySkill7{background-image:none}
+#status1 .logged_in ul li.mySkill7 a{background:url(../images/status1Sprite.png) no-repeat -282px 2px;_background:url(../images/status1Sprite.gif) no-repeat -282px 2px;padding-left:25px}
+.ie9 #status1 .logged_in ul li.mySkill7 a,.ie9 #status1 .friendsOnline a{padding-top:1px;padding-bottom:2px}
+#status1 .logged_in ul li.mySkill7 a span{background:#3F5876}#status1 .logged_in .logout{background:0;position:absolute;top:-19px;left:0;width:100px;margin-left:234px;height:38px}
+#status1 .logged_in .logout button{display:block;font-weight:bold;background:url(//static4.greentube.com/xsl_gamebase/_skill7_2010/imgs/logout.png) no-repeat 100% 0;height:16px;line-height:12px;font-size:12px;margin:10px 0;padding:1px 33px 2px 0;_padding-top:0;float:right;white-space:nowrap;color:#fff}
+.uc #status1 .logged_in .logout button{text-transform:uppercase;white-space:nowrap}
+#status1 .logged_in .logout button:hover{color:#ff1e00}#status1 .logged_in .logout button span{position:relative;top:-2px;left:4px}
+.ie #status1 .logged_in .logout button span{position:relative;top:0;left:3px;font-style:normal}
+#status1 .logged_in dl{margin:0;position:absolute;left:360px;top:4px;background:url(../images/bonusprogram.png) no-repeat left -160px;padding-left:24px;overflow:hidden;height:33px}
+#status1 .logged_in dl.status10{background:url(../images/bonusprogram.png) no-repeat left -200px}
+#status1 .logged_in dl.status11{background:url(../images/bonusprogram.png) no-repeat left -160px}
+#status1 .logged_in dl.status12{background:url(../images/bonusprogram.png) no-repeat left -120px}
+#status1 .logged_in dl.status13{background:url(../images/bonusprogram.png) no-repeat left -80px}
+#status1 .logged_in dl.status14{background:url(../images/bonusprogram.png) no-repeat left -40px}
+#status1 .logged_in dl.status15{background:url(../images/bonusprogram.png) no-repeat left 0}
+#status1 .logged_in dd{margin:2px 0 0;position:relative;top:-15px;left:-30px}
+#status1 .logged_in dd a{color:#BAE3FF;padding:15px 0 0 30px;display:block}
+#status1 .logged_in dd a:hover{color:#ff1e00}#status1 #friendsOnlineBox{left:40px;top:35px;position:absolute;background-color:#193255;border:1px solid #68819a;visibility:hidden;opacity:0;display:none;padding:7px;width:230px;overflow:hidden}
+#status1 #friendsOnlineBox h4{border-bottom:1px solid #68819A;margin-bottom:1px;padding-bottom:3px}
+#status1 #friendsOnlineBox .container{height:20px;padding:0}#status1 #friendsOnlineBox .container table{margin-bottom:0;font-size:10px;width:100%}
+#status1 #friendsOnlineBox .container td{border-bottom:1px solid #68819a}#status1 #friendsOnlineBox .container th{font-size:11px}
+#status1 #friendsOnlineBox .container td{padding:3px 2px}#status1 #friendsOnlineBox .container a{font-weight:bold;text-decoration:none;padding-left:18px;background:transparent url(../images/friends.png) no-repeat scroll 0 0}
+#status1 #friendsOnlineBox .container .gameName{text-align:right;padding-left:15px}
+#status1 #friendsOnlineBox .container .gameName a{font-weight:normal;padding-left:0;background:0}
+#status1 #friendsOnlineBox .container .profile span{white-space:nowrap;zoom:1}
+#status1 #friendsOnlineBox .container .profile{cursor:pointer}#status1 #friendsOnlineBox ul{text-align:center}
+
+/*===============slideshow=================*/
+.contentslide{float:left; width:32%; }
+.slideshow{ position:relative; height:200px; margin:0 auto;}
+#contentslide1, #contentslide2{margin-right:14px}
+.slideshow img{width:317px; height:200px; position:absolute;}
+.contentsl{ background-color:rgb(203, 233, 248); width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
+.contentsl ul{}
+.contentsl li{list-style:decimal; padding:0; margin-left:15px; line-height:22px; border-bottom:1px solid #ccc;}
+.contentsl a{ text-decoration: none; color:#333;}
+.contentsl p{ text-transform:uppercase}
+#contentsl1 li{ background:none;}
+#contentsl2 li{ background:none;}
+#contentsl1 p{ background: url(../images/slct2.gif) no-repeat; padding-left:20px;}
+#contentsl2 p{ background: url(../images/slct1.gif) no-repeat; padding-left:25px;}
+.heightctsl{ height:250px !important;}
+

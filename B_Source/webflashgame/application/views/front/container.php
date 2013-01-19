@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/modernizr.custom.53451.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.gallery.js"></script>
-		<script type="text/javascript">
+		<!--<script type="text/javascript">
 			$(function() {
 				$('#dg-container').gallery({
 					autoplay	:	true
