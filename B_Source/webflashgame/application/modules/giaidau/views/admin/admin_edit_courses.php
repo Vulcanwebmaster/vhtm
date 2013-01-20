@@ -2,28 +2,21 @@
 		<?php 
 			echo validation_errors('<div class="error">','</div>');
 		?>	
-		
-<script type="text/javascript">
-	$(function() {
-		$( "#ngaythang" ).datepicker();
-	});
-</script>
-		
-<form method="post" action="<?php echo base_url();?>giaidau/admin/edit/<?php echo $info->id;?>">	
+<form method="post" action="<?php echo base_url();?>giaidau/admin/edit/<?php echo $info->tour_id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
+		
 		</header>
 		<div class="tab_container">
 			
 			<div id="tab1" class="tab_content">
-				
 				<fieldset>
 					<label>Tên Giải đấu </label>
-					<input type="text" name="name" style="width:92%" value="<?php echo $info->name;?>"/>
+					<input type="text" name="name_tour" style="width:92%" value="<?php echo $info->name_tour;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>overview</label>
-					<input type="text" name="overview" style="width:92%"/>
+					<label>Overview</label>
+					<?php echo $this->ckeditor->editor('overview',$info->overview,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Tên games</label>
@@ -31,12 +24,12 @@
 						<option></option>
 						<?php foreach ($list as $item)
 						{
-							if ($item->id == $info->game_id)
+							if ($item->game_id == $info->game_id)
 							{?>
-								<option value="<?php echo $item->id?>" selected="selected"><?php echo $item->name;?></option>
+								<option value="<?php echo $item->game_id?>" selected="selected"><?php echo $item->name;?></option>
 							<?php }
 							else {?>
-								<option value="<?php echo $item->id?>"><?php echo $item->name;?></option>
+								<option value="<?php echo $item->game_id?>"><?php echo $item->name;?></option>
 						<?php }}?>
 					</select>
 				</fieldset>

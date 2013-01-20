@@ -58,8 +58,8 @@
 			    				<td><?php echo $item->name;?></td>
 			    				<td><?php echo $item->category_name;?></td>
 			    				<td>
-			    					<a href="<?php echo base_url()?>games/admin/edit/<?php echo $item->id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>giaidau/admin/edit/<?php echo $item->game_id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->game_id;?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>

@@ -33,6 +33,7 @@ class Helps extends NIW_Controller
 			$this->pagination->initialize($config);
 			$data['title']='games | Flash-games';
 			$data['list_faq'] = $this->Mhelps->getListFull('fg_helps');
+			$data['list_category'] = $this->Mhelps->getListFull('fg_category');
 			$data['items']=$this->Mhelps->getListOffset('fg_helps',10,$index);
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -51,4 +52,6 @@ class Helps extends NIW_Controller
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}
+
+		
 }

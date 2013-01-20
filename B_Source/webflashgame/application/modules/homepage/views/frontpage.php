@@ -1,10 +1,105 @@
+<div id="presentation">
+	<div id="presentationWrapper">	
+		<div class="contentslide" id="contentslide1">					
+			<div class="slideshow" id="slideshow1">
+				<img alt="image01" src="<?php echo base_url();?>assets/flash_game/images/1.jpg">
+				<img alt="image013" src="<?php echo base_url();?>assets/flash_game/images/4.jpg">
+				<img alt="image011" src="<?php echo base_url();?>assets/flash_game/images/2.jpg">
+				<img alt="image012" src="<?php echo base_url();?>assets/flash_game/images/3.jpg">				
+			</div> 
+			<div id="contentsl1" class="contentsl">
+				<p>Top winners</p>
+				<ul class="1ct">
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>					
+				</ul>
+			</div>
+		</div>
+		<div class="contentslide" id="contentslide2">
+			<div class="slideshow" id="slideshow2">
+				<img alt="image010" src="<?php echo base_url();?>assets/flash_game/images/1.jpg">
+				<img alt="image015" src="<?php echo base_url();?>assets/flash_game/images/3.jpg">
+				<img alt="image014" src="<?php echo base_url();?>assets/flash_game/images/2.jpg">				
+				<img alt="image016" src="<?php echo base_url();?>assets/flash_game/images/4.jpg">
+			</div> 
+			<div id="contentsl2" class="contentsl">
+				<p>Top Tournaments</p>
+				<ul class="2ct">
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>					
+				</ul>
+			</div>
+		</div>
+		<div class="contentslide" id="contentslide3">
+			<div class="slideshow" id="slideshow3">				
+				<img alt="image018" src="<?php echo base_url();?>assets/flash_game/images/2.jpg">
+				<img alt="image019" src="<?php echo base_url();?>assets/flash_game/images/3.jpg">
+				<img alt="image017" src="<?php echo base_url();?>assets/flash_game/images/1.jpg">
+				<img alt="image0100" src="<?php echo base_url();?>assets/flash_game/images/4.jpg">
+			</div>
+			<div id="contentsl3" class="contentsl">
+				<p>Top winners</p>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		
+		$('#slideshow1 img:gt(0)').hide();
+		setInterval(function(){
+			$('#slideshow1 :first-child').slideDown()
+				.next('img').slideUp()
+				.end().appendTo('#slideshow1');},
+			7000);
+			$('#slideshow2 img:gt(0)').hide();
+		setInterval(function(){
+			$('#slideshow2 :first-child').slideDown()
+				.next('#slideshow2 img').slideUp('slow')
+				.end().appendTo('#slideshow2');},
+			7000);
+
+			$('#slideshow3 img:gt(0)').hide();
+		setInterval(function(){
+			$('#slideshow3 :first-child').slideDown()
+				.next('#slideshow3 img').slideUp()
+				.end().appendTo('#slideshow3');},
+			7000);
+		
+
+
+	})
+  </script>
+<div id="nav" class="">
+			<ul>
+				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
+				<li class="btnTourn"><a data-gtt="Tournaments" href="<?php echo base_url();?>giaidau" title=""><span>Tournaments</span></a></li>
+				<li class="btnCommunity"><a data-gtt="My GameTwist" href="<?php echo base_url();?>dangky/dangnhap" title=""><span>My GameTwist</span></a></li>
+				<li class="btnShop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>Shop</span></a></li>
+				<li class="btnRules"><a data-gtt="Help" href="<?php echo base_url();?>helps" title=""><span>Help</span></a></li>
+			</ul>
+			<a id="backToTop" href="#"></a>
+		</div>
+
+<div id="main">
 <div id="container">
 				<div id="tipHolder"></div>
 				<div id="featureBoxesTop">
 					<div id="featureBox_1" class="featureBox  type_game gameId_110">
 						<?php foreach ($top1 as $key) 
 						{ ?>
-						<h3><a target="_self" href="<?php echo base_url();?>helps/detail/<?php echo $key->id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h3>
+						<h3><a target="_self" href="<?php echo base_url();?>helps/detail/<?php echo $key->game_id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h3>
 						<div class="container">
 							<div style="background-color: #561c00" class="backgroundColor">
 								<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featurebox_slots_screenshots_bookofra.jpg);" class="img"></span>
@@ -54,7 +149,7 @@
 						{ ?>	
 						<li class="item">
 							<div class=" so1_medium rating friendsOnline gameId_193">
-								<h4><a title="" href="<?php echo base_url();?>games/detail/<?php echo $key->id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h4>
+								<h4><a title="" href="<?php echo base_url();?>games/detail/<?php echo $key->game_id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h4>
 								<div class="so1_container" style="background-color: #87d2f8">
 									<p>Be the first to play all of your cards and become President!</p>
 									<dl><dt><span>Playing now</span></dt><dd>31</dd></dl>
@@ -72,8 +167,8 @@
 							<div id="so2overlay" style=" top: -100px; left: -100px; display:none " class="friendsOnline type1">
 								<span class="top" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 								<div id="so2overlayTop">
-										<h3><span>Bingo</span></h3>
-										<div class="gameDesc"><p>12-35-75-9-4 ... BINGO! Who'll hit the jackpot?</p></div>
+										<h3><span><?php echo $key->name?></span></h3>
+										<div class="gameDesc"><p>12-35-75-9-4 ... <?php echo word_limiter($key->overview,4)?></p></div>
 										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
 										<ul id="so2nav">
 												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
@@ -128,7 +223,7 @@
 											{?>
 							<li class="item">
 								<div class=" so1_small rating friendsOnline gameId_110">
-									<h4><a href="<?php echo base_url();?>games/detail/<?php echo $value->id."-".$value->alias;?>" title=""><span><?php echo $value->name; ?></span></a></h4>
+									<h4><a href="<?php echo base_url();?>games/detail/<?php echo $value->game_id."-".$value->alias;?>" title=""><span><?php echo $value->name; ?></span></a></h4>
 									<div style="background-color: #561c00" class="so1_container">
 										<p>Pyramids, pharaohs and the Book of Ra! The mysterious slot machine awaits!</p>
 										<dl><dt><span>Playing now</span></dt><dd>500</dd></dl>
@@ -146,8 +241,8 @@
 								<div id="so2overlay" style=" top: -100px; left: -50px; display:none " class="friendsOnline type1">
 								<span class="top" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 								<div id="so2overlayTop">
-										<h3><span>Bingo</span></h3>
-										<div class="gameDesc"><p>12-35-75-9-4 ... BINGO! Who'll hit the jackpot?</p></div>
+										<h3><span><?php echo $value->name ?></span></h3>
+										<div class="gameDesc"><p><?php echo word_limiter($value->overview,6)?></p></div>
 										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
 										<ul id="so2nav">
 												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
@@ -216,3 +311,6 @@
 	</div>
 	
 	</div>
+	<div id="sideNav"></div>
+			<div id="sideBar"></div>
+		</div>

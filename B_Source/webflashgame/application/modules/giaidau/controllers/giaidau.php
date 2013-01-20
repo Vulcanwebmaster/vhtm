@@ -36,5 +36,16 @@ class Giaidau extends NIW_Controller
 			$this->load->view('front/container',$data);
 	}
 	
+	function past($index=0)
+	{
+			$data['past'] = $this->Mgiaidau->gamePast();
+			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
+			$data['title']='flashgame | Flash Games';
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vpast';
+			$this->load->view('front/container',$data);
+	}
+	
 	
 }

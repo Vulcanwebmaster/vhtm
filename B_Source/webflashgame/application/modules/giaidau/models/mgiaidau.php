@@ -13,7 +13,7 @@ class Mgiaidau extends CI_Model
 	{
 		$this->db->select();
 		$this->db->from('fg_tournaments');
-		$this->db->join('fg_games','fg_games.id=fg_tournaments.game_id');
+		$this->db->join('fg_games','fg_games.game_id=fg_tournaments.game_id');
 		
 		$ds=$this->db->get();
 		//var_dump($ds); die();
@@ -61,6 +61,18 @@ class Mgiaidau extends CI_Model
 	 	return $list;
 	}
 
+	 function getDayOfWeek($pTimezone)
+	{
+
+    $userDateTimeZone = new DateTimeZone($pTimezone);
+    $UserDateTime = new DateTime("now", $userDateTimeZone);
+
+    $offsetSeconds = $UserDateTime->getOffset(); 
+    //echo $offsetSeconds;
+
+    return gmdate("l", time() + $offsetSeconds);
+
+	}
 	function gameNextWeek(){
 		$this->db->where('start_date >' ,date("Y-m-d", strtotime('next sunday')));
 		$this->db->select();

@@ -18,12 +18,8 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên giải đấu</label>
-					<input type="text" name="name" style="width:92%"/>
-				</fieldset>
-				<fieldset>
-					<label>overview</label>
-					<?php echo $this->ckeditor->editor('overview','',$config);?>
+					<label>Tên giải đấu </label>
+					<input type="text" name="name_tour" style="width:92%"/>
 				</fieldset>
 				<fieldset>
 					<label>Tên games</label>
@@ -31,13 +27,17 @@
 						<option></option>
 						<?php foreach ($list as $item)
 						{?>
-							<option value="<?php echo $item->id?>"><?php echo $item->name;?></option>							
-						<?php }?> 
+							<option value="<?php echo $item->game_id?>"><?php echo $item->name;?></option>							
+						<?php }?>
 					</select>
 				</fieldset>
 				<fieldset>
-					<label>Rules</label>
+					<label>Rules </label>
 					<?php echo $this->ckeditor->editor('rules','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Overview </label>
+					<?php echo $this->ckeditor->editor('overview','',$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Start_date</label>
@@ -47,7 +47,6 @@
 					<label>End_date</label>
 					<input type="text" name="end_date" id="start_date" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
 				</fieldset>
-				
 			</div>
 			
 			<footer style="float:left">

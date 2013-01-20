@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa giải đấu này?");
+					var r=confirm("Bạn muốn xóa khóa học này?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>giaidau/admin/delete/"+value;
@@ -45,10 +45,8 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tên giải đấu</th>
-		    				<th>Overview</th>
-		    				<th>Rules</th>
-		    				<th>Tên games</th>
+		    				<th>Tên giải đấu</th> 
+		    				<th>tên game</th>
 		    				<th>Start date</th>
 		    				<th>End date</th>
 		    				<th>Sửa|Xóa</th>
@@ -59,16 +57,13 @@
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
+			    				<td><?php echo $item->name_tour;?></td> 
 			    				<td><?php echo $item->name;?></td>
-			    				<td><?php echo $item->overview;?></td>
-			    				<td><?php echo $item->rules;?></td>
-			    				<td><?php echo $item->name ?></td>
 			    				<td><?php echo $item->start_date;?></td> 
 			    				<td><?php echo $item->end_date;?></td>
-			    				
 			    				<td>
-			    					<a href="<?php echo base_url()?>giaidau/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>giaidau/admin/edit/<?php echo $item->tour_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->tour_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -80,7 +75,6 @@
 				<?php echo $this->pagination->create_links();?>
 			</center>
 				<footer>
-						
 						<div class="submit_link">
 							<a class="alt_btn" href="<?php echo base_url();?>giaidau/admin/insert">Thêm mới</a>
 						</div>

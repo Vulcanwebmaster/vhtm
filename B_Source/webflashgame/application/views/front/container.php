@@ -32,13 +32,8 @@
 				background-image: url(images/backContentTopTwister.jpg);
 			}
 		</style>
-		<?php $this->load->view('front/slide')?>
-		<?php $this->load->view('front/menu')?>
-		<div id="main">
-			<?php $this->load->view('front/content')?>
-			<div id="sideNav"></div>
-			<div id="sideBar"></div>
-		</div>
+		<?php $this->load->view('front/content')?>
+			
 		<?php $this->load->view('front/footer')?>
 		<?php $this->load->view('front/status-head')?>
 	</div>

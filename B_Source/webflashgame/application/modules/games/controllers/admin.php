@@ -87,7 +87,7 @@
 			if (!$this->input->post('name1'))
 			{
 				$data['list']=$this->Mgames->getListFull('fg_category');
-				$data['info']=$this->Mgames->getRowByColumn('fg_games','id',$id);
+				$data['info']=$this->Mgames->getRowByColumn('fg_games','game_id',$id);
 				$data['title']='Sửa games';
 				$data['bcCurrent']='games';
 				$data['module']=$this->module;
@@ -104,7 +104,7 @@
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mgames->updateRowByColumn('fg_games','id',$id,$input))
+					if ($this->Mgames->updateRowByColumn('fg_games','game_id',$id,$input))
 					{
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
@@ -114,7 +114,7 @@
 				else 
 				{
 					$data['list']=$this->Mgames->getListFull('fg_category');
-					$data['info']=$this->Mgames->getRowByColumn('fg_games','id',$id);
+					$data['info']=$this->Mgames->getRowByColumn('fg_games','game_id',$id);
 					$data['title']='Sửa games';
 					$data['bcCurrent']='games';
 					$data['module']=$this->module;
@@ -126,7 +126,7 @@
 		
 		function delete($id=0)
 		{
-			if ($this->Mgames->deleteRowByColumn('fg_games','id',$id))
+			if ($this->Mgames->deleteRowByColumn('fg_games','game_id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');
 			}
