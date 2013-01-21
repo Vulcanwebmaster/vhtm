@@ -46,6 +46,7 @@ class Helps extends NIW_Controller
 		
 		function detail($id)
 		{
+			$data['list_chitiet']  =  $this->Mhelps->getRowByColumn('fg_faqs','id',$id);
 			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
 			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
 			$data['list_category'] = $this->Mhelps->getListFull('fg_category');

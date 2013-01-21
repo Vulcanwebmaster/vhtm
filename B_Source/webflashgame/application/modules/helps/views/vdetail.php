@@ -36,12 +36,10 @@
 			<div class="contBox gamesHelpContent">
 				<div class="container">
 					<div>
-						<?php foreach ($list_faq as $item) 
-							{ ?>
-						<p><strong><?php $item->title ?></strong></p>
 						
-						<p><strong><?php $item->content ?></strong></p>
-						<?php }?>
+						<p><strong><?php echo $list_chitiet->title ?></strong></p>
+						
+						<p><strong><?php echo $list_chitiet->content ?></strong></p>
 					</div>
 				</div>
 			</div>
@@ -126,11 +124,11 @@
 		<div class="container" id="helpContainer1" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 				<ul>
-					<?php foreach ($list_general as $item) 
+						<?php foreach ($list_general as $item) 
 							{ ?>
-					<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php $item->title ?></span></a></li>
-					<?php }?>
-				</ul>
+						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<?php } ?>
+					</ul>
 			</div>
 		</div>
 	</div>

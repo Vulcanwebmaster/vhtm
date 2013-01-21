@@ -53,268 +53,22 @@ color: #333;
 				<div class="contBox gamesCategory">
 					<h3><span>Browser Games</span></h3>
 					<div class="container">
-						<ul id="browsergames" style="display: none;">
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<ul id="Sports" style="display: none;">
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<ul id="Arcade" style="display: none;">
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<ul id="Board" style="display: none;">
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
+						<?php foreach ($items as $item) 
+							{ ?>
 						<ul id="Card" style="">
 							<li>
 								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
+									<h4><a href="<?php echo base_url()?>games/detail/<?php echo $item->game_id."-".$item->alias?>" title=""><span><?php echo $item->name ?></span></a></h4>
 									<div class="so1_container" style="background-color: #898989">
 										<p></p>
 										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
 										<ul>
 											<li>
 												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
+												<span class="gameLogo pos_2" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/logosprite_102x54_4.png);"></span>
 												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
+													<span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
+													<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
 													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
 												</a>
 											</li>
@@ -323,62 +77,22 @@ color: #333;
 								</div>
 							</li>
 						</ul>
-						<ul id="TwistCasino" style="display: none;">
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="#" title=""><span>1100AD</span></a></h4>
-									<div class="so1_container" style="background-color: #898989">
-										<p></p>
-										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
-										<ul>
-											<li>
-												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(images/logosprite_102x54_4.png);"></span>
-												<a class="room" href="#">
-													<span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
-													<span class="status" style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);"></span>
-													<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
 			<div id="sideNav"></div>
+			
 			<div id="sideBar">
 				<div id="catList">
 					<ul>
-						<li id="category5"><a><span>Twist Casino</span></a></li>
-						<li id="category1" class="active"><a><span>Card Games</span></a></li>
-						<li id="category2"><a><span>Board Games</span></a></li>
-						<li id="category4"><a><span>Arcade &amp; Other</span></a></li>
-						<li id="category3"><a><span>Sports Games</span></a></li>
-						<li id="category8"><a><span>Browser Games</span></a></li>
+						
+						<?php foreach ($list_category as $value) 
+				 			{ ?>
+						<li id="category8"><a href="<?php echo base_url()?>games/category/<?php echo $value->id."-".$value->alias?>"><span><?php echo $value->category_name?></span></a></li>
+						<?php } ?>
 						<li id="skill7Button"><a target="_blank" href="#"><span>Skill7</span></a></li>
+						
 					</ul>
 				</div>
 			</div>

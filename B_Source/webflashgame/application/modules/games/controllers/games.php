@@ -26,6 +26,7 @@ class Games extends NIW_Controller
 			$config['total_rows'] = count($this->Mgames->getListFull('fg_games'));
 			$this->pagination->initialize($config);
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
+			$data['list_category'] = $this->Mkhoahoc->getListFull('fg_category');
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -62,10 +63,16 @@ class Games extends NIW_Controller
 			}
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
-			$data['list_game_cate']  =  $this->Mgames->getListCategory('fg_category');
 			$data['items']=$this->Mgames->getListByColumn('fg_games','category_id',$id);
 			$data['module']  =  $this->module;
 			$data['page']  =  'vgames';
+			$this->load->view('front/container',$data);
+	}
+	
+	function rules($index=0){
+			$data['list_chitiet'] = $this->Mgames->getListFull('fg_games');
+			$data['module']  =  $this->module;
+			$data['page']  =  'vdetaillogin';
 			$this->load->view('front/container',$data);
 	}
 }
