@@ -49,7 +49,130 @@
 			</div>
 			<div id="contentsl3" class="contentsl">
 				<p>Top winners</p>
+					<div class="playeronline">
+					<p>3333</p>
+					<p>Players Online</p>
+				</div>
+				<div class="countdownct">
+					<div id="expired" style="display:none;">
+						=
+					</div>
+					<div id="counter" class="counter">
+						<ul class="countdown">					
+							<li><div class="countdown_num" id="countdown_sec"></div></li>
+						</ul>
+					</div>
+					
+					
+				</div>
 				
+<style type="text/css">
+#expired{ width:85px; height: 90px;font-size:85px; color:#fff; position:absolute; top:200px;}
+.playeronline{float:left; text-align:center; width:50%;}
+.countdownct{float:left; width:50%; text-align:center}
+.countdownct li{ border-bottom:none;}
+.counter ul.countdown{
+	list-style-type: none;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin:0;
+}
+.counter ul.countdown li{
+	float: left;
+	background: url(digit.png) no-repeat;
+	height:53px;
+	width: 38px;
+	padding-top: 0px;
+	list-style:none;
+}
+.counter ul.countdown li {font-size: 65px}
+.counter ul.countdown label{ float:left; width:50px; height:50px}
+.counter ul.countdown li div{
+	font-size: 15px;
+}
+.counter ul.countdown li div.countdown_num{
+	font-size: 65px; cursor:pointer
+}
+.counter ul.countdown li.no_countdown{
+	padding-top:4px;
+	background:transparent;
+	height:53px;
+	width:38px;
+}
+</style>
+	
+<script type="text/javascript">
+	/*
+		Countdown Timer
+		Based on the "Count down until any date script" - By JavaScript Kit (www.javascriptkit.com)
+		Author: (c) 2009 Elbert Bautista
+		URL: http://www.egTheBlog.com
+		Licence : Open Source MIT Licence
+
+	*/
+	
+	var current="Expired"
+	var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+	function countdown(yr,m,d){
+		theyear=yr;themonth=m;theday=d
+		var today=new Date()
+		var todayy=today.getYear()
+		if (todayy < 1000)
+		todayy+=1900
+		var todaym=today.getMonth()
+		var todayd=today.getDate()
+		var todayh=today.getHours()
+		var todaymin=today.getMinutes()
+		var todaysec=today.getSeconds()
+		var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+		futurestring=montharray[m-1]+" "+d+", "+yr
+		dd=Date.parse(futurestring)-Date.parse(todaystring)
+		dday=Math.floor(dd/(60*60*1000*24)*999)
+		dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+		dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+		dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(8*1000))/1000*1)
+		if(dsec==-1){
+			/*document.getElementById('counter').style.display='none';
+			document.getElementById('expired').style.display='block';
+			return*/
+			//dsec=15;
+		}
+		else{
+			/*document.getElementById('countdown_day').innerHTML=dday;
+			document.getElementById('countdown_hour').innerHTML=dhour;
+			document.getElementById('countdown_min').innerHTML=dmin;*/
+			
+			document.getElementById('countdown_sec').innerHTML=dsec;
+			setTimeout("countdown(theyear,themonth,theday)",1000)
+		}
+		$('.countdownct').mouseenter(function(){
+				$('#countdown_sec').stop(true);
+				document.getElementById('counter').style.display='none';
+				document.getElementById('expired').style.display='block';
+				return
+			})
+			$('.countdownct').mouseleave(function(){
+				$('#countdown_sec').stop(false);
+				document.getElementById('counter').style.display='block';
+				document.getElementById('expired').style.display='none';
+				return
+					
+			})
+		
+	}
+
+			
+
+	var deadline=new Date();
+	deadline.setDate(deadline.getDate()+5);
+	var deadlineYear = deadline.getYear();
+	if (deadlineYear < 1000)
+	deadlineYear+=1900
+	//enter the count down date using the format year/month/day
+	countdown(deadlineYear, deadline.getMonth()+1, deadline.getDate());
+	</script>
 			</div>
 		</div>
 	</div>
@@ -174,7 +297,7 @@
 												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
 												<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
 												<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
-												<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li><
+												<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
 												<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
 											</ul>
 											<dl><dt>Playing now</dt><dd>82</dd></dl>
@@ -197,18 +320,7 @@
 						
 						<?php } ?>
 					</ul>
-				<script type="text/javascript">
-							$(document).ready(function(){
-								$('#so2overlay').hide();
-								
-								$('.item').mouseenter(function(){
-									$(this).children('#so2overlay').show();
-								})
-									$('.item').mouseleave(function(){
-									$(this).children('#so2overlay').hide();
-								})
-							})
-				</script>
+			
 				</div>
 			</div>
 			<div class="categories">
@@ -245,12 +357,12 @@
 										<div class="gameDesc"><p><?php echo word_limiter($value->overview,6)?></p></div>
 										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
 										<ul id="so2nav">
-												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
-												<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
-												<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
-												<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
-												<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
-											</ul>
+											<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+											<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+											<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
+											<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
+											<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
+										</ul>
 											<dl><dt>Playing now</dt><dd>82</dd></dl>
 											<div id="topGame"></div>
 											<div id="so2rating" class=""></div>
@@ -314,3 +426,15 @@
 	<div id="sideNav"></div>
 			<div id="sideBar"></div>
 		</div>
+			<script type="text/javascript">
+							$(document).ready(function(){
+								$('#so2overlay').hide();
+								
+								$('.item').mouseenter(function(){
+									$(this).children('#so2overlay').show();
+								})
+									$('.item').mouseleave(function(){
+									$(this).children('#so2overlay').hide();
+								})
+							})
+				</script>
