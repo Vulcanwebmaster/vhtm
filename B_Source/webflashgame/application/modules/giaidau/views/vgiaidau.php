@@ -93,7 +93,7 @@
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_29 tournId_32168 tournStatus_2">
-									<h4><a href="/web/Tournaments-Details?id_tourn=32168" title=""><?php echo $item->name_tour ?><span></span></a></h4>
+									<h4><a href="" title=""><?php echo $item->name_tour ?><span></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #AABB22" class="backgroundColor"></span>
 										<span class="to1_logo_2 to1_pos_9"></span>

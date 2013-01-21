@@ -25,6 +25,7 @@
 	<!-----------endslide---------->
 </head>
 <body class="games  uc  noLeaderBoard root firefox">
+	
 	<div id="wrapper">
 		<?php $this->load->view('front/header')?>
 		<style type="text/css">

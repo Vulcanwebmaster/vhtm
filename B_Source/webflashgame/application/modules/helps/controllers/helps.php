@@ -32,7 +32,10 @@ class Helps extends NIW_Controller
 			$config['total_rows'] = count($this->Mhelps->getListFull('fg_helps'));
 			$this->pagination->initialize($config);
 			$data['title']='games | Flash-games';
-			$data['list_faq'] = $this->Mhelps->getListFull('fg_helps');
+			$data['list_faq'] = $this->Mhelps->getListFull('fg_faqs');
+			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
+			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
+			//var_dump($data['list_general']); die();
 			$data['list_category'] = $this->Mhelps->getListFull('fg_category');
 			$data['items']=$this->Mhelps->getListOffset('fg_helps',10,$index);
 			$data['module']=$this->module;
@@ -43,6 +46,10 @@ class Helps extends NIW_Controller
 		
 		function detail($id)
 		{
+			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
+			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
+			$data['list_category'] = $this->Mhelps->getListFull('fg_category');
+			$data['list_faq'] = $this->Mhelps->getListFull('fg_faqs');
 			//$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','id',$index);
 			$data['list_help'] = $this->Mhelps->getListFull('fg_helps');
 			$data['items']=$this->Mhelps->getListOffset('fg_helps',10,$id);

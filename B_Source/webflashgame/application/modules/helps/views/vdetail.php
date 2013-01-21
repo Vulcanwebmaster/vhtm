@@ -36,9 +36,12 @@
 			<div class="contBox gamesHelpContent">
 				<div class="container">
 					<div>
+						<?php foreach ($list_faq as $item) 
+							{ ?>
 						<p><strong><?php $item->title ?></strong></p>
 						
 						<p><strong><?php $item->content ?></strong></p>
+						<?php }?>
 					</div>
 				</div>
 			</div>
@@ -113,20 +116,7 @@
 							</ul>
 							</li>
 						<?php }?>
-						<!--<?php foreach ($list_courses_cate as $key) { ?>
-																<div><?php echo $key->cate_name ?>
-																	<div class="slidemove">
-																		<?php foreach ($list_courses as $value) {?>
-																		<?php if($value->courses_category  ==  $key->id)
-																					{?>
-																		<ul class="inside">
-																		<li><a href="<?php echo base_url();?>khoahoc/detail/<?php echo $value->courses_id."-".$value->alias;?>"><?php echo $value->courses_name ?></a></li>
-																		</ul>
-																		<?php } ?>
-																		<?php } ?>
-																	</div>
-																</div>
-														<?php } ?>-->
+						
 				</ul>
 			</div>
 		</div>
@@ -136,14 +126,10 @@
 		<div class="container" id="helpContainer1" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 				<ul>
-					<li><a href="/help.asp?id_topic=257&amp;id_article=920"><span>Country Selection</span></a></li>
-					<li><a href="/help.asp?id_topic=86&amp;id_article=1290"><span>Player Evaluation</span></a></li>
-					<li><a href="/help.asp?id_topic=84&amp;id_article=204"><span>User Tournament</span></a></li>
-					<li><a href="/help.asp?id_topic=390&amp;id_article=1573"><span>Loss of Connection</span></a></li>
-					<li><a href="/help.asp?id_topic=23&amp;id_article=178"><span>Rules of Conduct</span></a></li>
-					<li><a href="/help.asp?id_topic=80&amp;id_article=1289"><span>Room System</span></a></li>
-					<li><a href="/help.asp?id_topic=814&amp;id_article=5896"><span>Games with ranking</span></a></li>
-					<li><a href="/help.asp?id_topic=128&amp;id_article=2845"><span>Tournaments</span></a></li>
+					<?php foreach ($list_general as $item) 
+							{ ?>
+					<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php $item->title ?></span></a></li>
+					<?php }?>
 				</ul>
 			</div>
 		</div>

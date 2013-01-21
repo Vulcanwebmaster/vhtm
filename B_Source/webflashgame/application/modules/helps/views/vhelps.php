@@ -150,15 +150,11 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 		<div class="container" id="helpContainer1" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 				<ul>
-					<li><a href="/help.asp?id_topic=257&amp;id_article=920"><span>Country Selection</span></a></li>
-					<li><a href="/help.asp?id_topic=86&amp;id_article=1290"><span>Player Evaluation</span></a></li>
-					<li><a href="/help.asp?id_topic=84&amp;id_article=204"><span>User Tournament</span></a></li>
-					<li><a href="/help.asp?id_topic=390&amp;id_article=1573"><span>Loss of Connection</span></a></li>
-					<li><a href="/help.asp?id_topic=23&amp;id_article=178"><span>Rules of Conduct</span></a></li>
-					<li><a href="/help.asp?id_topic=80&amp;id_article=1289"><span>Room System</span></a></li>
-					<li><a href="/help.asp?id_topic=814&amp;id_article=5896"><span>Games with ranking</span></a></li>
-					<li><a href="/help.asp?id_topic=128&amp;id_article=2845"><span>Tournaments</span></a></li>
-				</ul>
+						<?php foreach ($list_general as $item) 
+							{ ?>
+						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<?php } ?>
+					</ul>
 			</div>
 		</div>
 	</div>
@@ -167,11 +163,10 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 		<div class="container" id="helpContainer22" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 			<ul>
-				<li><a href="/help.asp?id_topic=425&amp;id_article=2035"><span>Black Game Window</span></a></li>
-				<li><a href="/help.asp?id_topic=294&amp;id_article=1079"><span>Java/Flash</span></a></li>
-				<li><a href="/help.asp?id_topic=424&amp;id_article=2036"><span>Java Download</span></a></li>
-				<li><a href="/help.asp?id_topic=426&amp;id_article=2037"><span>Flash Download</span></a></li>
-				<li><a href="/help.asp?id_topic=122&amp;id_article=5870"><span>Login</span></a></li>
+				<?php foreach ($list_technical as $item) 
+							{ ?>
+						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<?php } ?>
 			</ul>
 		</div>
 		</div>

@@ -47,5 +47,21 @@ class Giaidau extends NIW_Controller
 			$this->load->view('front/container',$data);
 	}
 	
+	function detail($alias)
+		{
+			// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
+			$temp = explode("-", $alias);
+			if (isset($temp)){
+				//$category_id = $temp[0];
+				$id = $temp[0];
+			}
+			$data['chitiet']=$this->Mgiangvien->getRowByColumn('fg_games','game_id',$id);
+			$model=new CI_Model();
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vdetail';
+			$this->load->view('front/container',$data);
+		}
+		
 	
 }

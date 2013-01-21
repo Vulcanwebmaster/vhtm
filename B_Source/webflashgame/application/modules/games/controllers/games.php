@@ -39,17 +39,17 @@ class Games extends NIW_Controller
 		//$this->Mgames->updateRowByColumn('fg_games','count',$count,array('count'=>$count));
 			$data['list_game_cate'] = $this->Mgames->getListFull('fg_category');
 			$data['category']  =  $this->Mgames->getListFullCategory('fg_games');
-			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','id',$index);
+			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
 			$count=$data['list_chitiet'];
 			$luotchoi=$count->count_dem +1; 
-			$this->Mgames->updateRowByColumn('fg_games','id',$index,array('count_dem'=>$luotchoi));
+			$this->Mgames->updateRowByColumn('fg_games','game_id',$index,array('count_dem'=>$luotchoi));
 			$data['topgame']  =  $this->Mgames->topGame(1);
 			//var_dump($data['topgame']); die();
 			$data['items']  =  $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$model=new CI_Model();
 			$data['module']  =  $this->module;
-			$data['page']  =  'vdetail';
+			$data['page']  =  'vdetaillogin';
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 	}

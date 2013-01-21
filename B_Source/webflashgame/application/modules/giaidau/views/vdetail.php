@@ -20,22 +20,9 @@
 			float: left;
 			width: 648px;
 		}
-			body.hasSideBar #sideBar {
-margin-left: 628px;
-_margin-left: 625px;
-_zoom: 1;
-width: 314px;
-overflow: hidden;
-position: relative;
-}
+			
+</style>
 
-</style>
-</style>
- <script type="text/javascript">
-    $(document).ready(function(){
-     $('body').addClass('games_details uc hasSideBar noLeaderBoard root chrome, game_uc').removeClass('game_default');
-    })
-   </script>
 <div id="nav" class="">
 			<ul>
 				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
@@ -138,7 +125,7 @@ position: relative;
 										<li>
 											<span class="border" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);"></span>
 											<span class="gameLogo pos_17" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_97_logo_137x77_EN-US.png);"></span>
-											<a class="room" href="#"><span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
+											<a class="room" href="#"><span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
 											<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
 											<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
 											</a>
