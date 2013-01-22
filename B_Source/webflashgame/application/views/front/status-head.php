@@ -36,7 +36,7 @@
 					<a href="#"><span>My Skill7</span></a>
 				</li>
 				<li class="logout">
-					<form method="post" enctype="application/x-www-form-urlencoded" action="/web/Login">
+					<form method="post" enctype="application/x-www-form-urlencoded" action="<?php echo base_url()?>dangky/logOut">
 						<button class="fbSubmit" id="logout" type="submit">
 							<span>
 								<cufon class="cufon cufon-canvas" alt="Log " style="width: 30px; height: 12px;">

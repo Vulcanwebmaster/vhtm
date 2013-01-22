@@ -96,6 +96,7 @@ class Dangky extends NIW_Controller
 			{
 				// if any items are exist, show error message
 				$_SESSION['front_register_error'] = "Email này đã được sử dụng. Vui lòng chọn email khác";
+				$this->session->set_userdata('result','Email is registered, please use another email!!');
 				$this->data['module'] = $this->module;
 				$this->data['page']	= 'vdangky';
 				
@@ -109,7 +110,10 @@ class Dangky extends NIW_Controller
 				{
 					//auto login with that account
 					$_SESSION['front_user_fullname'] = $input['username'];
-					$_SESSION['front_user_id'] = mysql_insert_id();;
+					$_SESSION['front_user_id'] = mysql_insert_id();
+					echo "<script language = 'JavaScript'>
+						alert ('registry successful!!');
+					</script>";
 					//var_dump($input); die();
 					redirect(base_url(),'refresh');
 				}

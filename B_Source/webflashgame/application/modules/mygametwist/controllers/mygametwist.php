@@ -26,6 +26,7 @@ class Mygametwist extends NIW_Controller
 		
 		function loadLogin()
 		{
+			//Kiem tra neu ton tai session trong dangky/checklogin thi...			
 			if(isset($_SESSION['front_user_id'])){
 				$id = $_SESSION['front_user_id'];
 				return $id;
@@ -47,7 +48,7 @@ class Mygametwist extends NIW_Controller
 			$data['page']='vmygametwist';
 			$this->load->view('front/container',$data);
 		}
-		
+		// vao giao dien cap nhat thong tin ca nhan
 		function personaldata()
 		{
 			$id = $_SESSION['front_user_id'];
@@ -59,7 +60,7 @@ class Mygametwist extends NIW_Controller
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}
-			
+		// vao giao dien doi pass
 		function changepass()
 		{
 			$id = $_SESSION['front_user_id'];
@@ -71,7 +72,72 @@ class Mygametwist extends NIW_Controller
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}
+		// Game Setting
+		function gamesetting()
+		{
+			$id = $_SESSION['front_user_id'];
+			$data['game_setting'] = $this->Mmygametwist->getRowByColumn('st_gamesetting','account_id',$id);
+			$model=new CI_Model();
+			$data['menuleft']  =  2;
+			$data['module']  =  $this->module;
+			$data['page']  =  'vgamesetting';
+			$data['index']  =  -1;
+			$this->load->view('front/container',$data);
+		}
+		// General Setting
+		function generalsetting()
+		{
+			//$id = $_SESSION['front_user_id'];
+			//$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			$model=new CI_Model();
+			$data['menuleft']  =  3;
+			$data['module']  =  $this->module;
+			$data['page']  =  'vgeneralsetting';
+			$data['index']  =  -1;
+			$this->load->view('front/container',$data);
+		}
+		// Currency Setting
+		function currencysetting()
+		{
+			//$id = $_SESSION['front_user_id'];
+			//$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			$model=new CI_Model();
+			$data['menuleft']  =  4;
+			$data['module']  =  $this->module;
+			$data['page']  =  'vcurrency';
+			$data['index']  =  -1;
+			$this->load->view('front/container',$data);
+		}
 		
+		
+		
+// *************** Cac function insert update ****************
+		// Lay du lieu tu form
+		function _inputGameSetting()
+		{
+			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
+			$input=array(
+						'play'=>$this->input->post('play'),
+						'technology'=>$this->input->post('technology'),
+						);
+			return $input;
+		}
+		// Update Game Setting
+		function updateGameSetting(){
+			$id = $_SESSION['front_user_id'];
+			$input= $this->_inputGameSetting();
+			//var_dump($input);die();
+			if($input == TRUE){
+				if ($this->Mmygametwist->updateRowByColumn('st_gamesetting','account_id',$id,$input))
+					{
+						$this->session->set_userdata('result','Update successful!!');
+					}
+					redirect(base_url().'mygametwist');
+			}
+			redirect(base_url().'mygametwist');
+		}
+
+		// Lay du lieu tu form
 		function _inputPassword()
 		{
 			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
@@ -80,9 +146,9 @@ class Mygametwist extends NIW_Controller
 						);
 			return $input;
 		}
-		
+		// Function doi pass
 		function updateNewPass(){
-				$id = $_SESSION['front_user_id'];
+			$id = $_SESSION['front_user_id'];
 			$list_account = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
 			$old_pass = $this->input->post('old_pass');
 			//echo "trung dep zdai";die();
@@ -98,7 +164,7 @@ class Mygametwist extends NIW_Controller
 					$this->changepass();
 				}
 		}
-		
+		//Lay dl tu form view
 		function _inputPersonaldata()
 		{
 			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
@@ -111,7 +177,7 @@ class Mygametwist extends NIW_Controller
 				);
 			return $input;
 		}
-		
+		// Function cap nhat thong tin
 		function updatePersonaldata(){
 			$id = $_SESSION['front_user_id'];
 			$input= $this->_inputPersonaldata();

@@ -15,7 +15,7 @@
 				<div class="left">
 					<div class="contBox" id="settingsGeneral">
 						<h3><span>Game settings</span></h3>
-						<form action="/web/Settings-Save" method="post" enctype="application/x-www-form-urlencoded" class="container">
+						<form action="<?php echo base_url();?>mygametwist/updateGameSetting/" method="post" enctype="application/x-www-form-urlencoded" class="container">
 							<table class="formTable">
 								<colgroup><col class="first"><col class="second"></colgroup>
 								<thead>
@@ -28,9 +28,17 @@
 									<tr>
 										<td class="inputNames"><label for="setting473">Play with guests?</label></td>
 										<td class="inputElements">
-											<select name="gl_473" id="setting473" class="ffSelect">
-												<option value="3550">Yes</option>
-												<option value="3551">No</option>
+											<select name="play" id="setting473" class="ffSelect">
+												<?php if(isset($game_setting->play)){ ?>
+													<option value="<?php echo $game_setting->play ?>"><?php if($game_setting->play=="1"){echo "Yes";}else{echo "No";} ?></option>
+													<?php if($game_setting->play=="1"){ ?>
+														<option value="0">No</option>
+													<?php }else{ ?>
+														<option value="1">Yes</option>
+												<?php } }else{ ?>
+													<option value="0">No</option>
+													<option value="1">Yes</option>
+												<?php } ?>
 											</select>
 										</td>
 									</tr>
@@ -39,10 +47,27 @@
 											<label for="setting476">Client technology</label>
 										</td>
 										<td class="inputElements">
-											<select name="gl_476" id="setting476" class="ffSelect">
-												<option value="3643">Automatic</option>
-												<option value="3644">Flash</option>
-												<option value="3645">Java</option>
+											<select name="technology" id="setting476" class="ffSelect">
+												<?php if(isset($game_setting->technology)){ ?>
+													<option value="<?php echo $game_setting->technology ?>"><?php echo $game_setting->technology ?></option>
+													<?php if($game_setting->technology=="Automatic"){ ?>
+														<option value="Flash">Flash</option>
+														<option value="Java">Java</option>
+													<?php }elseif($game_setting->technology=="Flash"){ ?>
+														<option value="Automatic">Automatic</option>
+														<option value="Java">Java</option>
+													<?php }elseif($game_setting->technology=="Java"){ ?>
+														<option value="Automatic">Automatic</option>
+														<option value="Flash">Flash</option>
+													<?php }else{ ?>
+														<option value="Automatic">Automatic</option>
+														<option value="Flash">Flash</option>
+														<option value="Java">Java</option>
+													<?php } }else{ ?>
+														<option value="Automatic">Automatic</option>
+														<option value="Flash">Flash</option>
+														<option value="Java">Java</option>
+													<?php } ?>
 											</select>
 										</td>
 									</tr>
@@ -60,7 +85,7 @@
 						</form>
 					</div>
 				</div>
-				</div>
+			</div>
 <!---------------------------Left------------------------->
 <?php $this->load->view('front/mygametwist_left')?>
 <!-------------End container--------------->

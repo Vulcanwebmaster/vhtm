@@ -5,10 +5,10 @@
 					<div class="container">
 						<ul>
 							<li id="btnSettingsPersonal" <?php if(isset($menuleft)){if($menuleft==0){ echo "class='active'"; }} ?> ><a href="<?php echo base_url();?>mygametwist/personaldata"><span>Personal data</span></a></li>
-							<li id="btnSettingsPassword" <?php if(isset($menuleft)){if($menuleft==1){ echo "class='active'"; }}  ?>><a href="<?php echo base_url();?>mygametwist/changepass"><span>Change password</span></a></li>
-							<li id="btnSettingsGlobal"><a href="#"><span>Game settings</span></a></li>
-							<li id="btnSettingsMessage"><a href="#"><span>General settings</span></a></li>
-							<li id="btnSettingsCurrency"><a href="#"><span>Currency</span></a></li>
+							<li id="btnSettingsPassword" <?php if(isset($menuleft)){if($menuleft==1){ echo "class='active'"; }} ?> ><a href="<?php echo base_url();?>mygametwist/changepass"><span>Change password</span></a></li>
+							<li id="btnSettingsGlobal" 	 <?php if(isset($menuleft)){if($menuleft==2){ echo "class='active'"; }} ?> ><a href="<?php echo base_url();?>mygametwist/gamesetting"><span>Game settings</span></a></li>
+							<li id="btnSettingsMessage"	 <?php if(isset($menuleft)){if($menuleft==3){ echo "class='active'"; }} ?> ><a href="<?php echo base_url();?>mygametwist/generalsetting"><span>General settings</span></a></li>
+							<li id="btnSettingsCurrency" <?php if(isset($menuleft)){if($menuleft==4){ echo "class='active'"; }} ?> ><a href="<?php echo base_url();?>mygametwist/currencysetting"><span>Currency</span></a></li>
 						</ul>
 					</div>
 				</div>

@@ -22,7 +22,14 @@
 		}
 			
 </style>
-
+<!-------------Check registry------------>
+	<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#fnRegister").validationEngine();
+		});
+	</script>
+<!-------------End Check registry------------>
 <div id="nav" class="">
 			<ul>
 				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
@@ -40,35 +47,36 @@
 					<h3><span>Register</span></h3>
 				</div>
 				<div id="register" class="contBox regContainer">
-					<form method="post" enctype="" name="fnRegister" class="container" id="fnRegister" action="/web/Register-Do">
+					<form method="post" enctype="" name="fnRegister" class="container" id="fnRegister" action="<?php echo base_url();?>dangky/registAccount">
 						<ol>
 							<li>
 								<fieldset>
 									<ol>
 										<li title="">
 											<label for="nick">Nickname</label>
-											<input name="nick" type="text" class="formField ffInput" id="nick" value="">
+											<input name="nick" type="text" class="formField ffInput validate[required] text-input" id="nick" value="">
 										</li>
+										
 										<li title="">
 											<label for="pass">Password</label>
-											<input name="pass" type="password" class="formField ffInput" id="pass" value="">
-											<div id="passwordVisualFeedback">
-												<div id="passwordVisualFeedbackBar">
-													<div class="feedbackPointer"></div>
-													<div class="feedbackItem01"></div>
-													<div class="feedbackItem02"></div>
-												</div>
-											</div>
+											<input name="pass" type="password" class="formField ffInput validate[required] text-input" id="pass" value="">
 										</li>
 										<li title="">
 											<label for="pass_conf">Repeat password</label>
-											<input name="pass_conf" type="password" class="formField ffInput" id="pass_conf" value="">
+											<input name="pass_conf" type="password" class="validate[required,equals[pass]] text-input formField ffInput" id="pass_conf" value="">
 										</li>
 										<li title="">
 											<label for="email">E-mail</label>
-											<input name="email" type="text" class="formField ffInput" id="email" value="">
+											<input name="email" type="text" class="formField ffInput validate[required] text-input" id="email" value="">
 											<span class="inputDescription">Important messages about the system and game results will be sent to this e-mail address.</span>
 										</li>
+										<?php if ($this->session->userdata('result')!='')
+										{
+											echo '<p style="color:red; padding-left:30px">';
+											echo $this->session->userdata('result');
+											$this->session->unset_userdata('result');
+											echo '</p>';
+										}?>
 									</ol>
 								</fieldset>
 							</li>
@@ -78,7 +86,7 @@
 										<li>Security code<img src="http://www.gametwist.fr/web/Captcha-Image/?bc=000000&amp;fc=188eae&amp;h=58&amp;w=258&amp;fill=ffffff" alt="captcha image" border="0" class="captcha"></li>
 										<li title="">
 											<label for="securecode">Enter security code</label>
-											<input type="text" class="formField ffInput" name="code" value="" id="securecode">
+											<input type="text" class="formField ffInput validate[required] text-input" name="code" value="" id="securecode">
 										</li>
 										<li id="regFormAgb">
 											<input name="agb" type="checkbox" id="agb" value="1" class="ffCheckbox">
