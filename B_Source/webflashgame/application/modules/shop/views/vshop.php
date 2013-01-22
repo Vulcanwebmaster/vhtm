@@ -32,10 +32,10 @@ font-family: Verdana,Arial,Helvetica,sans-serif;
 color: #333;
 }
 </style>
- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
-     $('body').addClass('games  uc  noLeaderBoard root firefox, game_uc').removeClass('game_default');
-    })
+     $('body').addClass('games,  uc,  noLeaderBoard, root, firefox').removeClass('game_default, game_detail, game_uc');
+    })					 
    </script>
 <div id="nav" class="">
 			<ul>
@@ -176,7 +176,7 @@ color: #333;
 							</tfoot>
 							<tbody>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="14.000 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="14.000 Twists"></td>
 									<td><span class="label">14.000 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -184,7 +184,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2039" type="submit" data-omn="shopitem" data-omnvalue="14000" data-omnname="2039" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="22.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="22.500 Twists"></td>
 									<td><span class="label">22.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -192,7 +192,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2043" type="submit" data-omn="shopitem" data-omnvalue="22500" data-omnname="2043" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="30.000 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="30.000 Twists"></td>
 									<td><span class="label">30.000 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -200,7 +200,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2020" type="submit" data-omn="shopitem" data-omnvalue="30000" data-omnname="2020" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="37.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
 									<td><span class="label">37.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -212,7 +212,7 @@ color: #333;
 									</td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="37.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
 									<td><span class="label">37.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -220,7 +220,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="37.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
 									<td><span class="label">37.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -228,7 +228,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="37.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
 									<td><span class="label">37.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -236,7 +236,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="37.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
 									<td><span class="label">37.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -244,7 +244,7 @@ color: #333;
 									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
 								</tr>
 								<tr>
-									<td><img src="images/twist.png" alt="" title="37.500 Twists"></td>
+									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
 									<td><span class="label">37.500 Twists</span></td>
 									<td class="regularPrice"></td>
 									<td class="sale"></td>
@@ -278,7 +278,7 @@ Note: Twists are the currency used at GameTwist. They cannot be paid out as real
 									</tfoot>
 									<tbody>
 										<tr>
-											<td><img src="images/abo_1_32x32.png" alt="" title="Gold Subscription - 1 month(s) (Twists: 52.500)"></td>
+											<td><img src="<?php echo base_url();?>assets/flash_game/images/abo_1_32x32.png" alt="" title="Gold Subscription - 1 month(s) (Twists: 52.500)"></td>
 											<td><span class="label">Gold Subscription - 1 month(s) (Twists: 52.500)</span></td>
 											<td class="regularPrice"></td>
 											<td class="sale"></td>
@@ -286,12 +286,12 @@ Note: Twists are the currency used at GameTwist. They cannot be paid out as real
 											<td class="cta"><button class="formButton fbSubmit " value="2001" type="submit" data-omn="shopitem" data-omnvalue="52500" data-omnname="2001" id=""><span>Deposit now</span></button></td>
 										</tr>
 										<tr>
-											<td><img src="images/abo_3_32x32.png" alt="" title="Gold Subscription - 3 month(s) (Twists: 157.500)"></td>
+											<td><img src="<?php echo base_url();?>assets/flash_game/images/abo_3_32x32.png" alt="" title="Gold Subscription - 3 month(s) (Twists: 157.500)"></td>
 											<td><span class="label">Gold Subscription - 3 month(s) (Twists: 157.500)</span></td><td class="regularPrice"></td><td class="sale"></td><td class="price">€ 22,50</td>
 											<td class="cta"><button class="formButton fbSubmit " value="2011" type="submit" data-omn="shopitem" data-omnvalue="157500" data-omnname="2011" id=""><span>Deposit now</span></button></td>
 										</tr>
 										<tr>
-											<td><img src="images/abo_12_32x32.png" alt="" title="Gold Subscription - 12 month(s) (Twists: 630.000)"></td>
+											<td><img src="<?php echo base_url();?>assets/flash_game/images/abo_12_32x32.png" alt="" title="Gold Subscription - 12 month(s) (Twists: 630.000)"></td>
 											<td><span class="label">Gold Subscription - 12 month(s) (Twists: 630.000)</span></td>
 											<td class="regularPrice"></td>
 											<td class="sale"></td>
@@ -325,25 +325,25 @@ Note: Twists are the currency used at GameTwist. They cannot be paid out as real
 								</tfoot>
 								<tbody>
 									<tr>
-										<td><img src="images/gt_mobilegames_shopicon.png" alt="" title=""></td>
+										<td><img src="<?php echo base_url();?>assets/flash_game/images/gt_mobilegames_shopicon.png" alt="" title=""></td>
 										<td><span class="label">GameTwist App for iOS</span></td>
 										<td class="regularPrice"></td>
 										<td class="sale"></td>
 										<td class="price">Free</td>
 										<td class="cta" style="text-align:center; height:72px">
 											<a href="http://wap.greentube.com/slots/market_forward.php?edition=com.funstage.gta_ios">
-											<img src="images/app_ios.png" alt="" title="" style="-moz-opacity:0.5;"></a>
+											<img src="<?php echo base_url();?>assets/flash_game/images/app_ios.png" alt="" title="" style="-moz-opacity:0.5;"></a>
 										</td>
 									</tr>
 									<tr>
-										<td><img src="images/gt_mobilegames_shopicon.png" alt="" title=""></td>
+										<td><img src="<?php echo base_url();?>assets/flash_game/images/gt_mobilegames_shopicon.png" alt="" title=""></td>
 										<td><span class="label">GameTwist App for Android</span></td>
 										<td class="regularPrice"></td>
 										<td class="sale"></td>
 										<td class="price">Free</td>
 										<td>
 											<a href="http://wap.greentube.com/slots/market_forward.php?edition=com.funstage.gta_android">
-											<img src="images/google_play.png" alt="" title=""></a>
+											<img src="<?php echo base_url();?>assets/flash_game/images/google_play.png" alt="" title=""></a>
 										</td>
 									</tr>
 								</tbody>
