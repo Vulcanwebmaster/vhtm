@@ -48,9 +48,9 @@
 				<img alt="image0100" src="<?php echo base_url();?>assets/flash_game/images/4.jpg">
 			</div>
 			<div id="contentsl3" class="contentsl">
-				<p>Top winners</p>
+			
 					<div class="playeronline">
-					<p>3333</p>
+					<p style="color:#fff; font-size: 20px; margin:25px 0 0 0; padding:0 0 10px 0; font-weight:bold">3333</p>
 					<p>Players Online</p>
 				</div>
 				<div class="countdownct">
@@ -58,18 +58,16 @@
 						=
 					</div>
 					<div id="counter" class="counter">
-						<ul class="countdown">					
-							<li><div class="countdown_num" id="countdown_sec"></div></li>
-						</ul>
+						
 					</div>
 					
 					
 				</div>
 				
 <style type="text/css">
-#expired{ width:85px; height: 90px;font-size:85px; color:#fff; position:absolute; top:200px;}
-.playeronline{float:left; text-align:center; width:50%;}
-.countdownct{float:left; width:50%; text-align:center}
+#expired{ width:85px; height: 90px;font-size:85px; color:#fff; position:absolute; top:200px; }
+.playeronline{float:left; text-align:center; width:45%; height:113px; border-right:1px solid #ccc}
+.countdownct{float:left; width:53%; text-align:center; font-size:70px; color:#fff}
 .countdownct li{ border-bottom:none;}
 .counter ul.countdown{
 	list-style-type: none;
@@ -100,107 +98,97 @@
 	height:53px;
 	width:38px;
 }
+#counter{cursor:pointer; }
 </style>
-	
-<script type="text/javascript">
-	/*
-		Countdown Timer
-		Based on the "Count down until any date script" - By JavaScript Kit (www.javascriptkit.com)
-		Author: (c) 2009 Elbert Bautista
-		URL: http://www.egTheBlog.com
-		Licence : Open Source MIT Licence
+		<script type="text/javascript">
 
-	*/
-	
-	var current="Expired"
-	var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
-
-	function countdown(yr,m,d){
-		theyear=yr;themonth=m;theday=d
-		var today=new Date()
-		var todayy=today.getYear()
-		if (todayy < 1000)
-		todayy+=1900
-		var todaym=today.getMonth()
-		var todayd=today.getDate()
-		var todayh=today.getHours()
-		var todaymin=today.getMinutes()
-		var todaysec=today.getSeconds()
-		var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
-		futurestring=montharray[m-1]+" "+d+", "+yr
-		dd=Date.parse(futurestring)-Date.parse(todaystring)
-		dday=Math.floor(dd/(60*60*1000*24)*999)
-		dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
-		dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
-		dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(8*1000))/1000*1)
-		if(dsec==-1){
-			/*document.getElementById('counter').style.display='none';
-			document.getElementById('expired').style.display='block';
-			return*/
-			//dsec=15;
-		}
-		else{
-			/*document.getElementById('countdown_day').innerHTML=dday;
-			document.getElementById('countdown_hour').innerHTML=dhour;
-			document.getElementById('countdown_min').innerHTML=dmin;*/
-			
-			document.getElementById('countdown_sec').innerHTML=dsec;
-			setTimeout("countdown(theyear,themonth,theday)",1000)
-		}
-		$('.countdownct').mouseenter(function(){
-				$('#countdown_sec').stop(true);
-				document.getElementById('counter').style.display='none';
-				document.getElementById('expired').style.display='block';
-				return
-			})
-			$('.countdownct').mouseleave(function(){
-				$('#countdown_sec').stop(false);
-				document.getElementById('counter').style.display='block';
-				document.getElementById('expired').style.display='none';
-				return
+			$(function () {
+				$('span .countdown_section:first').hide();
+					$('.countdown_section').parent('.countdown_amount').hide();
+					 
+					$('#counter').countdown({until: 8, 
+				    onTick: highlightLast5}); 
+				     
 					
-			})
-		
-	}
-
-			
-
-	var deadline=new Date();
-	deadline.setDate(deadline.getDate()+5);
-	var deadlineYear = deadline.getYear();
-	if (deadlineYear < 1000)
-	deadlineYear+=1900
-	//enter the count down date using the format year/month/day
-	countdown(deadlineYear, deadline.getMonth()+1, deadline.getDate());
-	</script>
+					$('#counter').mouseover(function() { 
+						$('#counter').countdown('option', {until: 8}); 
+						/*$('#expired').show();
+						$('#counter').hide();*/
+					}).mouseout(function() { 
+						$('#counter').countdown('option', {until: +8}); 
+						/*$('#expired').hide();
+						$('#counter').show();*/
+					});
+					function highlightLast5(periods) { 
+						if ($.countdown.periodsToSeconds(periods) == 0) { 			 
+							$('#counter').countdown('option', {until: +8}); 
+							//$('.countdown_amount').text(10);
+						}
+						
+					} 
+				 
+					
+				});
+			</script>	
 			</div>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-	$(function() {
-		
+	$(document).ready(function() {
+		var timeId1=0;
+		var timeId2=0;
+		var timeId3=0;
 		$('#slideshow1 img:gt(0)').hide();
-		setInterval(function(){
+		timeId1 = window.setInterval(function(){
 			$('#slideshow1 :first-child').slideDown()
 				.next('img').slideUp()
 				.end().appendTo('#slideshow1');},
 			7000);
 			$('#slideshow2 img:gt(0)').hide();
-		setInterval(function(){
+		timeId2 = window.setInterval(function(){
 			$('#slideshow2 :first-child').slideDown()
-				.next('#slideshow2 img').slideUp('slow')
+				.next('#slideshow2 img').slideUp()
 				.end().appendTo('#slideshow2');},
 			7000);
 
 			$('#slideshow3 img:gt(0)').hide();
-		setInterval(function(){
+		timeId3 = window.setInterval(function(){
 			$('#slideshow3 :first-child').slideDown()
 				.next('#slideshow3 img').slideUp()
 				.end().appendTo('#slideshow3');},
-			7000);
+			7000);				
+ 
+			 $('.slideshow,#counter').mouseover(function(){
+			 	/*$(this).parent().parent().parent().parent().children().children('#slideshow1').clearInterval(timeId1);			    
+			    $(this).parent().parent().parent().parent().children().children('#slideshow2').clearInterval(timeId2);
+			    $(this).parent().parent().parent().parent().children().children('#slideshow3').clearInterval(timeId3);*/
+			   clearInterval(timeId1);
+			   clearInterval(timeId2);
+			   clearInterval(timeId3);
+			   
+			 }).mouseout(function(){
+			    //timeId = setInterval(function(){ alert('hi!');}, 250) ;
+			    //$('#slideshow1 img:gt(0)').hide();
+				timeId1 = window.setInterval(function(){
+					$('#slideshow1 :first-child').slideDown()
+						.next('img').slideUp()
+						.end().appendTo('#slideshow1');},
+					7000);
+					//$('#slideshow2 img:gt(0)').hide();
+				timeId2 = window.setInterval(function(){
+					$('#slideshow2 :first-child').slideDown()
+						.next('#slideshow2 img').slideUp()
+						.end().appendTo('#slideshow2');},
+					7000);
 		
-
+					//$('#slideshow3 img:gt(0)').hide();
+				timeId3 = window.setInterval(function(){
+					$('#slideshow3 :first-child').slideDown()
+						.next('#slideshow3 img').slideUp()
+						.end().appendTo('#slideshow3');},
+					7000);
+			})
 
 	})
   </script>
@@ -389,7 +377,7 @@
 				<?php }?>
 		</div>
 	<div id="featureBox_4" class="featureBox statusSkill7 type_skill7">
-		<h3><a target="_blank" href="http://www.skill7.com/web/Display?page=landingpages/aktionen/201008_gametwist/page&p=98896298&lang=en&np=&cid=10988&pid=17&afid=featureBox:4"><span>Become a winner in no time!</span></a></h3>
+		<h3><a target="_blank" href="#"><span>Become a winner in no time!</span></a></h3>
 		<div class="container">
 			<div style="background-color: " class="backgroundColor">
 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/GT_Featurebox_Crossselling_Final.jpg);" class="img"></span>
