@@ -49,6 +49,7 @@
 										<td class="inputElements">
 											<table cellpadding="0" cellspacing="0" border="0" id="gender">
 												<tbody>
+													<?php if(isset($list_account->gender)){ ?>
 													<?php if($list_account->gender == "Male"){ ?>
 														<tr>
 															<td><input type="radio" id="male" name="gender" checked="true" value="Male" class="ffRadio"></td>
@@ -67,8 +68,16 @@
 															<td><input type="radio" id="female" name="gender" checked="true" value="Female" class="ffRadio"></td>
 															<td class="inputNames"><label for="female">Female</label></td>
 														</tr>	
+													<?php } }else{ ?>
+														<tr>
+															<td><input type="radio" id="male" name="gender" value="Male" class="ffRadio"></td>
+															<td class="inputNames"><label for="male">Male</label></td>
+														</tr>
+														<tr>
+															<td><input type="radio" id="female" name="gender" checked="true" value="Female" class="ffRadio"></td>
+															<td class="inputNames"><label for="female">Female</label></td>
+														</tr>	
 													<?php } ?>
-												
 											</tbody></table>
 										</td>
 									</tr>
@@ -85,7 +94,7 @@
 											<label for="city">City</label>
 										</td>
 										<td class="inputElements">
-											<input type="text" class="formField ffInput validate[required] text-input" name="city" id="city" value="<?php echo $list_account->city ?>">
+											<input type="text" class="formField ffInput validate[required] text-input" name="city" id="city" value="<?php if(isset($list_account->city)) echo $list_account->city ?>">
 										</td>
 									</tr>
 									<tr>

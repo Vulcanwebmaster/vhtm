@@ -76,7 +76,7 @@ class Mygametwist extends NIW_Controller
 		function gamesetting()
 		{
 			$id = $_SESSION['front_user_id'];
-			$data['game_setting'] = $this->Mmygametwist->getRowByColumn('st_gamesetting','account_id',$id);
+		//	$data['game_setting'] = $this->Mmygametwist->getRowByColumn('st_gamesetting','account_id',$id);
 			$model=new CI_Model();
 			$data['menuleft']  =  2;
 			$data['module']  =  $this->module;

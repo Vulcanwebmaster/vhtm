@@ -51,6 +51,7 @@ class Dangky extends NIW_Controller
 	 */
 	function checkAccount()
 	{
+		//var_dump($this->input->post('nick'));die();
 			$nick = $this->input->post('nick');
 			$password = $this->input->post('pass');
 			$relateAccounts = $this->Mdangky->getAccountByUserPass($nick, $password);
