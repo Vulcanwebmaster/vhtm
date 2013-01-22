@@ -55,7 +55,7 @@
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giadau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #cfc29e" class="backgroundColor"></span>
 										<span class="to1_logo_5 to1_pos_8"></span><span style="display:block;background-image: url(http://static7.greentube.com/xsl_gamebase/assets/game_88/logo_137x77/game_88_logo_137x77_EN-US.png);" class="logo"></span>
@@ -93,7 +93,7 @@
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_29 tournId_32168 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giadau/detail/<?php echo $item->tour_id?>" title=""><?php echo $item->name_tour ?><span></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><?php echo $item->name_tour ?><span></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #AABB22" class="backgroundColor"></span>
 										<span class="to1_logo_2 to1_pos_9"></span>
@@ -142,7 +142,7 @@
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giadau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #F4D454" class="backgroundColor"></span>
 										<span class="to1_logo_1 to1_pos_0"></span>

@@ -2,7 +2,7 @@
 		<?php 
 			echo validation_errors('<div class="error">','</div>');
 		?>	
-<form method="post" action="<?php echo base_url();?>games/admin/edit/<?php echo $info->id;?>">	
+<form method="post" action="<?php echo base_url();?>games/admin/edit/<?php echo $info->game_id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		

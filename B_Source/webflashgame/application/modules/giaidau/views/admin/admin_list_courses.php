@@ -47,6 +47,7 @@
 							<th>STT</th>
 		    				<th>Tên giải đấu</th> 
 		    				<th>tên game</th>
+		    				<th>Image</th>
 		    				<th>Start date</th>
 		    				<th>End date</th>
 		    				<th>Sửa|Xóa</th>
@@ -59,6 +60,7 @@
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->name_tour;?></td> 
 			    				<td><?php echo $item->name;?></td>
+			    				<td><?php echo $item->image;?></td>
 			    				<td><?php echo $item->start_date;?></td> 
 			    				<td><?php echo $item->end_date;?></td>
 			    				<td>

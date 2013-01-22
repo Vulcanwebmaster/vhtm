@@ -105,7 +105,7 @@ position: relative;
 				<div id="gameHeader" class="game_49">
 					<div class="rating5">
 						<span class="gameHeaderStars" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);"></span>rating: 5</div>
-						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_49_logo_220x100_EN-US.png);"></span>
+						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?><?php echo $list_chitiet->image ?>);"></span>
 						<dl>
 							<dt>Playing now:</dt>
 							<dd>48</dd>
@@ -175,20 +175,20 @@ position: relative;
 				<ul>
 					<li id="btnSo3Details" class="active"><a rel="ax:/info"><span>Game Overview</span></a></li>
 					<li id="btnSo3Stat" class=""><a rel="ax:/stats"><span>Statistics</span></a></li>
-					<li id="btnSo3Rules"><a rel="ax:/help"><span>Rules</span></a></li>
+					<li id="btnSo3Rules"><a rel="<?php echo base_url();?>games/rules"><span>Rules</span></a></li>
 				</ul>
 			</div>
 			<div class="contentTop"></div>
 			<div id="content" class="content1" style="">
 				<div class="contBox">
 					<div class="container">
-						<p></p>
-						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><b><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">Bingo </span></b><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">is played and loved the world over. Although there are many different variations, the general order of play is always the same. At GameTwist players have the opportunity to select between 1 and 60 Bingo cards, giving them a higher chance of winning.<o:p></o:p></span></p>
+						<p><?php echo $list_chitiet->overview ?></p>
+						<!--<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><b><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">Bingo </span></b><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">is played and loved the world over. Although there are many different variations, the general order of play is always the same. At GameTwist players have the opportunity to select between 1 and 60 Bingo cards, giving them a higher chance of winning.<o:p></o:p></span></p>
 						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt">
 						<span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt"><o:p>&nbsp;</o:p></span></p>
 						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">The following variations are available: 75-Ball and 90-Ball.<o:p></o:p></span></p>
 						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt"><o:p>&nbsp;</o:p></span></p><p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">Up to 50 players may play at a single Bingo table. The aim of the game is to mark off a certain pattern on the Bingo card with the numbers drawn at random. The player to achieve this first wins and the round comes to an end.<o:p></o:p></span></p>
-						<p></p>
+						<p></p>-->
 					</div>
 				</div>
 			</div>
@@ -204,7 +204,7 @@ position: relative;
 				<div class="contBox">
 					<div class="container">
 					<div class="gamesHelpContent contBox">
-						<h3 id="a_4163"><span>Bingo: Instructions</span></h3>
+						<h3 id="a_4163"><span><?php echo $list_chitiet->rules ?></span></h3>
 						<div class="container">
 							<div><p>In the Bingo lobby players can decide to play at either a 75-Ball table or 90-Ball table. It is not possible to set up new tables. Simply click on �Enter� to join the desired table.</p><p>Bingo cards are displayed on the playing field. All 60 Bingo cards can be viewed using the scroll bar. Select a card by clicking on it, then click �Buy� to purchase it. It is also possible to select more than one card at once by using the �Card Selector� option. The �Card Selector� can be set to a number from 1 to 60, allowing the player to mark the corresponding number of cards. For example, if the �Card Selector� is set to 10, 10 playing cards will be marked.</p><p>By clicking on �New� the cards, which have neither been marked nor bought, are replaced by new cards.</p><p>Alternatively, players can use the �Auto-Buy� function. Clicking on this button opens a new window, where the player can select how many cards he/she wants to have and for how many rounds, e.g.: 10 rounds with 5 cards each. The entered number of cards will then be bought automatically at the start of each round.</p><p>The �Auto-Sorting� function can be toggled during the draw. This function orders the player�s cards according to how close the card is to being completed. This is on at the start of the game by default.</p><p>Clicking on the �Bingo� button announces that you have achieved �Bingo�. If you forget to click on the button, your winnings will be awarded anyway. If a player loses his/her connection to the game before clicking on �Bingo�, the win will also be valid.</p><h3>Rules</h3><p>There are two variations of Bingo to choose from: 75-Ball and 90-Ball. Up to 50 players can play at one table. The aim of the game is to form a specific pattern on the Bingo card by crossing out the drawn numbers. The player, who first forms the corresponding pattern, wins and the round comes to an end.</p><p><b>75-Ball Bingo</b></p><p>In this version of the game, the field measures 5 by 5, filled with numbers from 1 to 75. The player who wins the round wins the pot.</p><p><b>90-Ball Bingo </b></p><p>In this version of the game, the field measures 9 by 3. Per line, 5 numbers ranging from 1 to 90 are shown. There are three ways to win. The first is by completing a row, meaning that all 5 numbers in any of the rows on a card are marked off. The second way is by completing 2 such rows. The main way to win comes when all 15 numbers on a card are marked off (a �Full House�). In the 90-Ball variation, the pot is divided according to a predefined formula.</p><h3>Order of play</h3><p>Bingo basically consists of two phases: the purchase phase and the draw phase. The game begins with the purchase phase. This lasts 90 seconds. During this time the players can select and purchase the desired number of Bingo cards. Players can buy cards as often as they want within the given time limit. Each card costs a defined amount. The player�s stake is therefore the sum of cards bought, multiplied by the stake per card. A share of the stake is added to the pot, while the rest constitutes the operating fee.</p><p>The draw phase follows. Every player, who has purchased at least one card, takes part in the draw. Only the purchased cards will then be displayed in the playing field. If a player didn�t buy any cards for the game, he/she has the opportunity to buy cards for the next round. For the players involved in the game, one number after the next is drawn. The drawn numbers, provided that they are shown on the card(s), are marked off. As soon as the round has been won, the winner is announced and the next purchase phase can begin.</p>
 							</div>

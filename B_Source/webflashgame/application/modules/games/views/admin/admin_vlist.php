@@ -47,6 +47,7 @@
 							<th>STT</th>
 		    				<th>Name game</th>
 		    				<th>Danh mục games</th>
+		    				<th>Image</th>
 		    				<th>Sửa | Xóa</th>
 		    				
 						</tr> 
@@ -57,8 +58,9 @@
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->name;?></td>
 			    				<td><?php echo $item->category_name;?></td>
+			    				<td><?php echo $item->image;?></td>
 			    				<td>
-			    					<a href="<?php echo base_url()?>giaidau/admin/edit/<?php echo $item->game_id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a href="<?php echo base_url()?>games/admin/edit/<?php echo $item->game_id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->game_id;?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				

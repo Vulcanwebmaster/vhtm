@@ -33,6 +33,7 @@
 						<?php }}?>
 					</select>
 				</fieldset>
+				
 				<fieldset>
 					<label>Rules</label>
 					<?php echo $this->ckeditor->editor('rules',$info->rules,$config);?>

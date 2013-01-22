@@ -116,7 +116,7 @@ position: relative;
 							<dt>Duration:</dt>
 							<dd>~ 3 min.</dd>
 						</dl>
-						<a class="room" href="#"><span>Play <?php echo $list_chitiet->name ?> online!</span></a>
+						<a class="room" href="<?php echo base_url();?>games/api"><span>Play <?php echo $list_chitiet->name ?> online!</span></a>
 					</div>
 					<div id="gameShot">
 						<a rel="lightbox[set1]" data-gtt="Bingo" href="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_780x480.jpg" title="">

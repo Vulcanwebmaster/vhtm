@@ -27,6 +27,7 @@
 		{
 			$input=array('name_tour'=>$this->input->post('name_tour'),
 						'game_id'=>$this->input->post('game_id'),
+						'image'=>$this->input->post('image'),
 						'rules'=>$this->input->post('rules'),
 						'overview'=>$this->input->post('overview'),
 						'end_date'=>$this->input->post('end_date'),

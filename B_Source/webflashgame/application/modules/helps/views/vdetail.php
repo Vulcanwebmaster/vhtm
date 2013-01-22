@@ -137,11 +137,10 @@
 		<div class="container" id="helpContainer22" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 			<ul>
-				<li><a href="/help.asp?id_topic=425&amp;id_article=2035"><span>Black Game Window</span></a></li>
-				<li><a href="/help.asp?id_topic=294&amp;id_article=1079"><span>Java/Flash</span></a></li>
-				<li><a href="/help.asp?id_topic=424&amp;id_article=2036"><span>Java Download</span></a></li>
-				<li><a href="/help.asp?id_topic=426&amp;id_article=2037"><span>Flash Download</span></a></li>
-				<li><a href="/help.asp?id_topic=122&amp;id_article=5870"><span>Login</span></a></li>
+				<?php foreach ($list_technical as $item) 
+							{ ?>
+						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<?php } ?>
 			</ul>
 		</div>
 		</div>

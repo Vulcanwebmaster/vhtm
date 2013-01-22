@@ -20,13 +20,16 @@ class Games extends NIW_Controller
 	
 	function page($index=0)
 	{
-			
+			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
+			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$config['base_url'] = base_url().'games/page';
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mgames->getListFull('fg_games'));
 			$this->pagination->initialize($config);
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
-			$data['list_category'] = $this->Mkhoahoc->getListFull('fg_category');
+			//var_dump($data['items']); die();
+			$data['list_category'] = $this->Mgames->getListFull('fg_category');
+			//var_dump($data['list_category']); die();
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -34,6 +37,15 @@ class Games extends NIW_Controller
 			$this->load->view('front/container',$data);
 	}
 	
+	function api($index=0){
+		
+			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
+			$data['title']='flashgame | Flash Games';
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vplay';
+			$this->load->view('front/container',$data);
+	}
 	function detail($index=0)
 	{
 		//$count++;
@@ -45,7 +57,6 @@ class Games extends NIW_Controller
 			$luotchoi=$count->count_dem +1; 
 			$this->Mgames->updateRowByColumn('fg_games','game_id',$index,array('count_dem'=>$luotchoi));
 			$data['topgame']  =  $this->Mgames->topGame(1);
-			//var_dump($data['topgame']); die();
 			$data['items']  =  $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$model=new CI_Model();
@@ -61,6 +72,8 @@ class Games extends NIW_Controller
 			if (isset($temp)){
 				$id = $temp[0];
 			}
+			$data['breadcrum1']  =  $this->Mgames->getRowByColumn('fg_category','id',$id);
+			//var_dump($data['breadcrum1']); die();
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items']=$this->Mgames->getListByColumn('fg_games','category_id',$id);

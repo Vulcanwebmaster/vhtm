@@ -48,14 +48,22 @@ color: #333;
 			<a id="backToTop" href="#"></a>
 		</div>
 <div id="main">
-			<div id="container">
+	
+		<div id="container">
 				<div id="tipHolder"></div>
 				<div class="contBox gamesCategory">
-					<h3><span>Browser Games</span></h3>
+					
+					<h3><span><?php if(isset($breadcrum1)){
+					 			
+									echo $breadcrum1->category_name; 
+								 
+							
+				 			 }  ?></span></h3>
 					<div class="container">
-						<?php foreach ($items as $item) 
-							{ ?>
+						
 						<ul id="Card" style="">
+							<?php foreach ($items as $item) 
+							{ ?>
 							<li>
 								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
 									<h4><a href="<?php echo base_url()?>games/detail/<?php echo $item->game_id."-".$item->alias?>" title=""><span><?php echo $item->name ?></span></a></h4>
@@ -76,11 +84,13 @@ color: #333;
 									</div>
 								</div>
 							</li>
+								<?php } ?>
 						</ul>
-						<?php } ?>
+					
 					</div>
 				</div>
 			</div>
+			
 			<div id="sideNav"></div>
 			
 			<div id="sideBar">

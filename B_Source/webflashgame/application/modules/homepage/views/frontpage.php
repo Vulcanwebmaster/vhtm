@@ -291,8 +291,8 @@
 								<span class="top" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 								<div id="so2overlayTop">
 										<h3><span><?php echo $key->name?></span></h3>
-										<div class="gameDesc"><p>12-35-75-9-4 ... <?php echo word_limiter($key->overview,4)?></p></div>
-										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
+										<div class="gameDesc"><p>12-35.. <?php echo word_limiter($key->overview,1)?></p></div>
+										<p class="gameShot"><?php echo $key->image;?></p>
 										<ul id="so2nav">
 												<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
 												<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
@@ -354,8 +354,8 @@
 								<span class="top" style="background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 								<div id="so2overlayTop">
 										<h3><span><?php echo $value->name ?></span></h3>
-										<div class="gameDesc"><p><?php echo word_limiter($value->overview,6)?></p></div>
-										<p class="gameShot"><img src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_113x70.jpg" width="113" height="70" alt=""></p>
+										<div class="gameDesc"><p><?php echo word_limiter($value->overview,2)?></p></div>
+										<p class="gameShot"><?php echo $value->image;?></p>
 										<ul id="so2nav">
 											<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
 											<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
@@ -384,7 +384,7 @@
 						</ul>
 					</div>
 					<span class="showAll">
-						<a href="<?php echo base_url();?>games/category/<?php echo $key->id."-".$key->alias?>">Display all casino games</a></span>
+						<a href="<?php echo base_url();?>games/category/<?php echo $key->id."-".$key->alias?>">Show all games</a></span>
 				</div>
 				<?php }?>
 		</div>
