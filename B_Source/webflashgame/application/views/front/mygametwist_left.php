@@ -1,5 +1,6 @@
+
 			<!---------------------------left-------------------->
-			<div id="sideNav">
+			<div id="sideNav" style="float:left;width:294px;margin-left:-942px;position:relative">
 				<div class="contBox sideNav">
 					<h4><span>Settings</span></h4>
 					<div class="container">

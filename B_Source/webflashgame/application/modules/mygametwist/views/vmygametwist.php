@@ -1,7 +1,12 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+     $('body').addClass('games,  uc, hasSideNav, noLeaderBoard, root, firefox, login').removeClass('');
+    })					 	 
+   </script>
 <!-------------------------Main----------------------->
 <?php $this->load->view('front/menu')?>
 <div id="main">
-			<div id="container">
+			<div id="container" style="float:left;margin-left:294px;position:relative;width:648px;_display:inline">
 				<div id="tipHolder"></div>
 				<div id="communityMarketing" class="contBox">
 					<?php if ($this->session->userdata('result')!='')

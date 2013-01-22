@@ -881,9 +881,9 @@ body.room .min #wrapper{margin-bottom:0;border-bottom-width:0;height:auto;positi
 body.room .min #footer{margin-top:0}body.room .min #tip{width:auto}body.room .xs #content,body.room #content,body.room .m #content,body.room .l #content,body.room .xl #content{padding:0;margin-top:0}
 body.room #main{padding:10px 0;position:static}body.room #footer{padding-top:0;position:static;z-index:100}
 body.room #skyscraper{width:160px;height:600px;overflow:hidden;float:right;margin:50px 5px 5px;background:transparent;background-position:center center;background-repeat:no-repeat}.shop #frm td p{display:inline}.backlink{padding:0}#additionalContentTop ul{overflow:hidden;zoom:1;border-left:none;margin:10px auto}
-#additionalContentTop li{float:left;overflow:hidden;zoom:1;margin:0;padding:0 20px 12px 33px;background:url(../images/shop/steps_sprite.png) no-repeat left -109px;color:#6c6c6c}
-#additionalContentTop li.active{font-weight:bold;background:url(../images/shop/steps_sprite.png) no-repeat left -49px;color:#333}
-#additionalContentTop li.visited{background:url(../images/shop/steps_sprite.png) no-repeat left 11px}
+#additionalContentTop li{float:left;overflow:hidden;zoom:1;margin:0;padding:0 20px 12px 33px;background:url(../images/steps_sprite.png) no-repeat left -109px;color:#6c6c6c}
+#additionalContentTop li.active{font-weight:bold;background:url(../images/steps_sprite.png) no-repeat left -49px;color:#333}
+#additionalContentTop li.visited{background:url(../images/steps_sprite.png) no-repeat left 11px}
 #additionalContentTop .contBox{position:relative}#additionalContentTop .backlink{position:absolute;right:10px;top:12px}
 .itemList,.paymentList,.itemGroup ul li{background:url(../images/box_451_gray_top.png) no-repeat scroll 10px 10px transparent;margin:0 0 20px;width:451px;float:left;position:relative}
 .itemGroup,.itemGroup .container{padding:0;clear:both}#sideBar .itemList,#sideBar .paymentList{float:none;width:auto;background-image:url(../images/box_294_gray_top.png)}
@@ -923,15 +923,15 @@ table.big tbody td{vertical-align:middle;padding:10px 5px}table.small tbody td{v
 .lastpayment dl{margin:17px 0 0}.lastpayment .itemContainer{position:relative}
 .lastpayment .formButton{position:absolute;bottom:14px;right:0}.itemTable .price,.paymentTable .price{text-align:right}
 .itemTable .regularPrice,#sideBar .regularPrice{color:#999;text-decoration:line-through;padding:0 5px 0 0;*clear:both}
-.sale_badge{display:block;position:absolute;right:0;top:0;background:url(../images/shop/big_pink_badge.png) no-repeat 50% 50%;width:62px;height:63px;font-size:17px;font-style:italic;font-weight:bold;color:#fff;text-align:center;line-height:60px;white-space:nowrap;text-shadow:0 1px 1px #f33d7f,-1px 1px 1px #f33d7f,-1px 0 1px #f33d7f,-1px -1px 1px #f33d7f,0 -1px 1px #f33d7f,1px -1px 1px #f33d7f,1px 0 1px #f33d7f,1px 1px 1px #f33d7f,0 1px 1px #f33d7f,-1px 1px 1px #f33d7f,-1px 0 1px #f33d7f,-1px -1px 1px #f33d7f,0 -1px 1px #f33d7f,1px -1px 1px #f33d7f,1px 0 1px #f33d7f,1px 1px 1px #f33d7f,0px 0 10px #f33d7f,0px 0 15px #f33d7f}
-td .sale_badge{position:relative;background:url(../images/shop/small_pink_badge.png) no-repeat 50% 50%;width:34px;height:34px;line-height:32px;font-size:11px;float:left;top:0;left:0}
+.sale_badge{display:block;position:absolute;right:0;top:0;background:url(../images/big_pink_badge.png) no-repeat 50% 50%;width:62px;height:63px;font-size:17px;font-style:italic;font-weight:bold;color:#fff;text-align:center;line-height:60px;white-space:nowrap;text-shadow:0 1px 1px #f33d7f,-1px 1px 1px #f33d7f,-1px 0 1px #f33d7f,-1px -1px 1px #f33d7f,0 -1px 1px #f33d7f,1px -1px 1px #f33d7f,1px 0 1px #f33d7f,1px 1px 1px #f33d7f,0 1px 1px #f33d7f,-1px 1px 1px #f33d7f,-1px 0 1px #f33d7f,-1px -1px 1px #f33d7f,0 -1px 1px #f33d7f,1px -1px 1px #f33d7f,1px 0 1px #f33d7f,1px 1px 1px #f33d7f,0px 0 10px #f33d7f,0px 0 15px #f33d7f}
+td .sale_badge{position:relative;background:url(../images/small_pink_badge.png) no-repeat 50% 50%;width:34px;height:34px;line-height:32px;font-size:11px;float:left;top:0;left:0}
 .paymentTable tbody tr.testphase td{background:#FFF2F2;border-color:red}span.testphase{background:red;color:#fff;display:block;margin:5px 0;padding:0 5px}
 .paymentList .container ul li.testphase{border:1px solid red}div#paymentToolTip{display:none;top:-9999;left:-9999}
-span.paymentToolTipToggler{margin-left:10px;font-weight:bold;font-style:italic;padding:0 5px;background:transparent url(../images/shop/payments_desc_i.png) no-repeat 0 0}
+span.paymentToolTipToggler{margin-left:10px;font-weight:bold;font-style:italic;padding:0 5px;background:transparent url(../images/payments_desc_i.png) no-repeat 0 0}
 span.paymentToolTipToggler span{display:none}div.paymentDescContainer{display:none}
 .shop_items .itemTable tbody tr:hover td,.shop_items .paymentTable tbody tr:hover td,.shop_payments .itemTable tbody tr:hover td,.shop_payments .paymentTable tbody tr:hover td{background-color:#C1F0FF}
-div#paymentToolTip{left:0;position:absolute;top:0;z-index:200}div#paymentToolTip div.toolTipText div.desc{width:288px;background:url(../images/shop/paymentOverlay.png) no-repeat left top;padding:12px 18px 10px 30px;margin:0;min-height:45px;color:#333;font-style:normal;text-align:left}
-div#paymentToolTip div.footer{width:336px;height:9px;background:url(../images/shop/paymentOverlay.png) no-repeat left bottom}
+div#paymentToolTip{left:0;position:absolute;top:0;z-index:200}div#paymentToolTip div.toolTipText div.desc{width:288px;background:url(../images/paymentOverlay.png) no-repeat left top;padding:12px 18px 10px 30px;margin:0;min-height:45px;color:#333;font-style:normal;text-align:left}
+div#paymentToolTip div.footer{width:336px;height:9px;background:url(../images/paymentOverlay.png) no-repeat left bottom}
 .paymentList{width:608px;float:none;background-image:url(../images/box_608_blue_top.png)}
 .paymentList .container{background-image:url(../images/box_608_blue_bottom.png)}
 .contItemsSide .itemTable{position:relative;overflow:hidden;margin:0;width:628px;float:left}

@@ -1,52 +1,8 @@
-<style>
-	#main{
-		background: url(<?php echo base_url();?>assets/flash_game/images/backContentTop.jpg) no-repeat;
-	_zoom: 1;
-	overflow: hidden;
-	padding: 54px 24px 0 24px;
-	
-	}
-	
-	#sideNav{
-				float: left;
-			    width: 294px;
-			}
-			 #container{
-				float: right;
-			   
-			    width: 648px;
-			}
-		#container{
-			float: left;
-			width: 648px;
-		}
-			.container ul {
-margin: 0;
-padding: 0 0 35px 3px;
-overflow: hidden;
-border-left: none;
-zoom: 1;
-}
-body {
-font-family: Verdana,Arial,Helvetica,sans-serif;
-color: #333;
-}
-</style>
 <script type="text/javascript">
     $(document).ready(function(){
-     $('body').addClass('games,  uc,  noLeaderBoard, root, firefox').removeClass('game_default, game_detail, game_uc');
+     $('body').addClass('games,  uc,  noLeaderBoard, root, firefox').removeClass('');
     })					 
    </script>
-<div id="nav" class="">
-			<ul>
-				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
-				<li class="btnTourn"><a data-gtt="Tournaments" href="<?php echo base_url();?>giaidau" title=""><span>Tournaments</span></a></li>
-				<li class="btnCommunity"><a data-gtt="My GameTwist" href="<?php echo base_url();?>dangky/dangnhap" title=""><span>My GameTwist</span></a></li>
-				<li class="btnShop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>Shop</span></a></li>
-				<li class="btnRules"><a data-gtt="Help" href="<?php echo base_url();?>helps" title=""><span>Help</span></a></li>
-			</ul>
-			<a id="backToTop" href="#"></a>
-		</div>
 <!-------------------Container------------>
 <!-------------Check Password------------>
 	<script>
@@ -56,7 +12,7 @@ color: #333;
 		});
 	</script>
 <!-------------End Check Password------------>
-
+<?php $this->load->view('front/menu')?> <!-- Menu -->
 <div id="main">
 			<div id="additionalContentTop">
 				<div class="contBox" id="shopSteps">

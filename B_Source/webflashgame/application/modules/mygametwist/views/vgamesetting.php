@@ -10,7 +10,7 @@
 
 <?php $this->load->view('front/menu')?> <!-- Menu -->
 <div id="main">
-			<div id="container">
+			<div id="container" style="float:left;margin-left:294px;position:relative;width:648px;_display:inline">
 				<div id="tipHolder"></div>
 				<div class="left">
 					<div class="contBox" id="settingsGeneral">
