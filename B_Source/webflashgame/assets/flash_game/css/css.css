@@ -152,7 +152,7 @@ body.help #container .container .heading{background-color:#C1F0FF;border-top:1px
 #trust .container .footer a.more,#tagCloud .container .footer a.more{float:right;display:inline;height:20px;line-height:20px;padding-right:20px;background:url(../images/gameCat_C2A.png) no-repeat right center}
 #tagCloud h3{margin-top:0}#tagCloud ul,#tagCloud .container ul li{display:inline;margin:0;margin-left:0;border:0;background-image:none;padding-left:0}
 #tagCloud a{text-decoration:none}#tagCloud .footer a{text-decoration:underline;line-height:18px}
-#tagCloud .footer a:hover{text-decoration:none}button{border:0}.formButton{background:url(../images/btnSprite.png) 0 -110px no-repeat;color:#fff;font-size:14px;font-weight:bold;font-family:verdana;font-family:arial,helvetica,clean,sans-serif;font-style:italic;margin:0;padding:0;border:0;overflow:visible;height:22px;line-height:22px;padding-left:5px;cursor:pointer;text-shadow:0 0 2px #0C8EBF,0 0 5px #0C8EBF,0 0 10px #0C8EBF;white-space:nowrap}
+#tagCloud .footer a:hover{text-decoration:none}button{border:0}.formButton{background:url(../images/btnSprite.png) 0 -110px no-repeat;color:#fff;font-size:14px;font-weight:bold;font-family:verdana;font-family:arial,helvetica,clean,sans-serif;font-style:italic;margin:0;padding:0;border:0;overflow:visible;height:23px;line-height:22px;padding-left:5px;cursor:pointer;text-shadow:0 0 2px #0C8EBF,0 0 5px #0C8EBF,0 0 10px #0C8EBF;white-space:nowrap}
 .formButton:hover{background-position:-20px -110px}.formButton span{background:url(../images/btnSprite.png) right -110px no-repeat;padding:0 35px 0 20px;height:22px;line-height:22px;display:block;position:relative}
 .firefox .formButton span{top:-1px}.ie7 .formButton span{padding-right:20px}
 .formButton span:after{content:"»";font-family:arial;font-size:16px;position:absolute;top:0}
@@ -164,10 +164,10 @@ body #wrapper a.formButton span{*display:inline-block;*padding:2px 10px;margin-l
 .firefox a.formButton span,.safari a.formButton span{top:0}.formButton[disabled],a.formButton.disabled{color:#999;text-shadow:0 0 3px #FFF;cursor:default}
 .formButton[disabled]:hover,a.formButton.disabled:hover{background-position:0 -110px}
 .formButton[disabled]:hover span,a.formButton.disabled:hover span{background-position:right -110px;text-shadow:0 0 3px #FFF;color:#999}
-#landingSend,#downloadMobileGame,.tournaments_add .formButton,.settings .formButton,.friends_invite .formButton,.register .formButton,.login .formButton,.pass_recover .formButton,.pass_reset .formButton,.community .formButton,.gamble .formButton,.unsubscribe_newsletter .formButton,#frm_b .formButton,#big_test_btn,#pickItemBtn,#playNow,#shopNextButtonActive,#email_confirm_wrapper .formButton,#interstitial .formButton,#landing .formButton,#doiBoxRegisterBtn{background:url(../images/btnSprite.png) 0 0 no-repeat;font-family:verdana;font-size:17px;height:48px;line-height:38px;padding-left:5px}
+#landingSend,#downloadMobileGame,.tournaments_add .formButton,.settings .formButton,.friends_invite .formButton,.register .formButton,.login .formButton,.pass_recover .formButton,.pass_reset .formButton,.community .formButton,.gamble .formButton,.unsubscribe_newsletter .formButton,#frm_b .formButton,#big_test_btn,#pickItemBtn,#playNow,#shopNextButtonActive,#email_confirm_wrapper .formButton,#interstitial .formButton,#landing .formButton,#doiBoxRegisterBtn{background:url(../images/btnSprite.png) 0 0 no-repeat;font-family:verdana;font-size:17px;height:50px;line-height:38px;padding-left:5px}
 .uc #landingSend,.uc #downloadMobileGame,.uc.tournaments_add .formButton,.uc.settings .formButton,.uc.friends_invite .formButton,.uc.register .formButton,.uc.login .formButton,.uc.pass_recover .formButton,.uc.pass_reset .formButton,.uc.community .formButton,.uc.gamble .formButton,.uc.unsubscribe_newsletter .formButton,.uc #frm_b .formButton,.uc #big_test_btn,.uc #playNow,.uc #shopNextButtonActive,.uc #email_confirm_wrapper .formButton,.uc #interstitial .formButton,.uc #landing .formButton,.uc #doiBoxRegisterBtn{text-transform:uppercase}
 #landingSend:hover,#downloadMobileGame:hover,.tournaments_add .formButton:hover,.settings .formButton:hover,.friends_invite .formButton:hover,.register .formButton:hover,.login .formButton:hover,.pass_recover .formButton:hover,.pass_reset .formButton:hover,.community .formButton:hover,.gamble .formButton:hover,.unsubscribe_newsletter .formButton:hover,#frm_b .formButton:hover,#big_test_btn:hover,#playNow:hover,#email_confirm_wrapper .formButton:hover,#landing .formButton:hover,#doiBoxRegisterBtn:hover{background-position:-20px 0}
-#landingSend span,#downloadMobileGame span,.tournaments_add .formButton span,.settings .formButton span,.friends_invite .formButton span,.register .formButton span,.login .formButton span,.pass_recover .formButton span,.pass_reset .formButton span,.community .formButton span,.gamble .formButton span,.unsubscribe_newsletter .formButton span,#frm_b .formButton span,#big_test_btn span,#pickItemBtn span,#playNow span,#shopNextButtonActive span,#email_confirm_wrapper .formButton span,#interstitial .formButton span,#landing .formButton span,#doiBoxRegisterBtn span{background:url(../images/btnSprite.png) right top no-repeat;padding:5px 35px 5px 20px;height:38px;line-height:38px}
+#landingSend span,#downloadMobileGame span,.tournaments_add .formButton span,.settings .formButton span,.friends_invite .formButton span,.register .formButton span,.login .formButton span,.pass_recover .formButton span,.pass_reset .formButton span,.community .formButton span,.gamble .formButton span,.unsubscribe_newsletter .formButton span,#frm_b .formButton span,#big_test_btn span,#pickItemBtn span,#playNow span,#shopNextButtonActive span,#email_confirm_wrapper .formButton span,#interstitial .formButton span,#landing .formButton span,#doiBoxRegisterBtn span{background:url(../images/btnSprite.png) right top no-repeat;padding:5px 35px 5px 20px;height:39px;line-height:38px}
 a#landingSend span,a#downloadMobileGame span,.tournaments_add a.formButton span,.settings a.formButton span,.friends_invite a.formButton span,.register a.formButton span,.login a.formButton span,.pass_recover a.formButton span,.pass_reset a.formButton span,.community a.formButton span,.gamble a.formButton span,.unsubscribe_newsletter a.formButton span,a#frm_b .formButton span,a#big_test_btn span,a#playNow span,a#shopNextButtonActive span,#email_confirm_wrapper a.formButton span,#interstitial a.formButton span,#landing a.formButton span,#doiBoxRegisterBtn span{*height:48px;*line-height:48px}
 .safari #landingSend span,.safari #downloadMobileGame span,.safari.tournaments_add .formButton span,.safari.settings .formButton span,.safari.friends_invite .formButton span,.safari.register .formButton span,.safari.login .formButton span,.safari.pass_recover .formButton span,.safari.pass_reset .formButton span,.safari.community .formButton span,.safari.gamble .formButton span,.safari.unsubscribe_newsletter .formButton span,.safari #frm_b .formButton span,.safari #big_test_btn span,.safari #playNow span,.safari #shopNextButtonActive span,.safari #email_confirm_wrapper .formButton span,.safari #interstitial .formButton span,.safari #landing .formButton span,.safari #doiBoxRegisterBtn span{top:0}
 #landingSend:hover span,#downloadMobileGame:hover span,.tournaments_add .formButton:hover span,.settings .formButton:hover span,.friends_invite .formButton:hover span,.register .formButton:hover span,.login .formButton:hover span,.pass_recover .formButton:hover span,.pass_reset .formButton:hover span,.community .formButton:hover span,.gamble .formButton:hover span,.unsubscribe_newsletter .formButton:hover span,#frm_b .formButton:hover span,#big_test_btn:hover span,#playNow:hover span,#email_confirm_wrapper .formButton:hover span,#landing .formButton:hover span,#doiBoxRegisterBtn:hover span{background-position:right -52px}
@@ -1233,7 +1233,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 
 /*==========================css add===========================*/
 #nav1{position:absolute;top:109px;right:0px;margin:0;z-index:99}#nav1.sticky{position:fixed;_position:absolute;top:-42px;left:0;right:auto;width:100%;min-width:942px;_width:942px;height:42px;background-color:#193255;border-bottom:1px solid #FFF;z-index:201;box-shadow:0 0 5px 0 #000;-moz-box-shadow:0 0 5px 0 #000;-webkit-box-shadow:0 0 5px 0 #000}
-#nav1.sticky .cufon{*top:-100px}#nav1 ul{margin:0;border:0}#nav1.sticky ul{width:942px;height:30px;padding-left:128px;background:transparent url(//static2.greentube.com/xsl_gamebase/_skill7_2010/imgs/navFixedBg.jpg) 6px 2px no-repeat;background-position:6px 2px;background-repeat:no-repeat;left:50%;top:0;padding-top:12px;position:absolute;margin-left:-472px}
+#nav1.sticky .cufon{*top:-100px}#nav1 ul{margin:0;border:0}#nav1.sticky ul{width:942px;height:30px;padding-left:128px;background:transparent url(../images/navFixedBg.jpg) 6px 2px no-repeat;background-position:6px 2px;background-repeat:no-repeat;left:50%;top:0;padding-top:12px;position:absolute;margin-left:-472px}
 #nav1 li{float:left;list-style-type:none;background:url(../images/navSeparator.png) no-repeat right 0;padding:0 12px}
 #nav1.sticky li{width:30px;padding:0;overflow:hidden;background-color:#193255;*background-position:29px 0;margin-right:0}
 #nav1.sticky li:last-child{background-image:none}#nav1 a{color:#fff;display:block;font-size:15px;font-weight:bold;line-height:21px;padding:1px 5px 1px 25px;background:url(../images/navIconsDefault.gif) no-repeat left -20px;text-decoration:none;white-space:nowrap}
@@ -1268,10 +1268,10 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 * html #arrow{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/buttonHeader.png',sizingMethod='crop');background:transparent;width:128px;height:45px;position:absolute;top:8px;right:-11px;z-index:-1}
 #status1 form.arrow{background-image:none;position:absolute;right:-11px;top:8px;width:128px;height:45px}
 #status1 form.arrow button:hover{color:#193255}#status1 .arrow span{display:block;margin:auto 10px auto 5px;width:100px;text-align:center;font-size:10px}
-#status1 .arrow span cufon{position:relative}#status1 .logged_in .button a{background:url(//static4.greentube.com/xsl_gamebase/_skill7_2010/imgs/buttonHeader.png) no-repeat scroll 0 0;top:-12px}
+#status1 .arrow span cufon{position:relative}#status1 .logged_in .button a{background:url(../images/buttonHeader.png) no-repeat scroll 0 0;top:-12px}
 #status1 .button a span{display:block;height:28px;padding:17px 27px 6px 0;text-align:center;_width:1px}
 #status1 .button a:hover{text-decoration:none}.uc #status1 h5{text-transform:uppercase}
-#status1 h5 a{text-decoration:none}#status1 .logged_in{position:relative}#status1 .logged_in h5{position:absolute;font-size:12px;padding:3px 8px}
+#status1 h5 a{text-decoration:none}#status1 .logged_in{position:relative}#status1 .logged_in h5{position:absolute;margin:0;font-size:12px;padding:3px 8px}
 #status1 .logged_in a{text-decoration:none}#status1 .logged_in ul{_zoom:1;position:relative;top:20px}
 #status1 .logged_in ul li{padding:0 6px;background:url(../images/status1Separator.png) no-repeat right 0;display:block}
 #status1 .amountOfMoney a{padding-left:20px;background:url(../images/status1Sprite.png) no-repeat 0 2px;_background:url(../images/status1Sprite.gif) no-repeat 0 2px;display:block;float:left}
@@ -1279,10 +1279,10 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 .friendsOnline a span{background:url(../images/status1Sprite.png) no-repeat 100% 1px;_background:url(../images/status1Sprite.gif) no-repeat 100% 1px;padding-right:13px}
 #status1 .inbox a{background:url(../images/status1Sprite.png) no-repeat -236px 1px;_background:url(../images/status1Sprite.gif) no-repeat -236px 1px;padding-left:18px}
 #status1 .logged_in ul li.settings,#status1 .logged_in ul li.mySkill7{background-image:none}
-#status1 .logged_in ul li.mySkill7 a{background:url(../images/status1Sprite.png) no-repeat -282px 2px;_background:url(../images/status1Sprite.gif) no-repeat -282px 2px;padding-left:25px}
+#status1 .logged_in ul li.mySkill7 a{background:url(../images/status1Sprite1.png) no-repeat -282px 2px;_background:url(../images/status1Sprite1.gif) no-repeat -282px 2px;padding-left:25px}
 .ie9 #status1 .logged_in ul li.mySkill7 a,.ie9 #status1 .friendsOnline a{padding-top:1px;padding-bottom:2px}
 #status1 .logged_in ul li.mySkill7 a span{background:#3F5876}#status1 .logged_in .logout{background:0;position:absolute;top:-19px;left:0;width:100px;margin-left:234px;height:38px}
-#status1 .logged_in .logout button{display:block;font-weight:bold;background:url(//static4.greentube.com/xsl_gamebase/_skill7_2010/imgs/logout.png) no-repeat 100% 0;height:16px;line-height:12px;font-size:12px;margin:10px 0;padding:1px 33px 2px 0;_padding-top:0;float:right;white-space:nowrap;color:#fff}
+#status1 .logged_in .logout button{display:block;font-weight:bold;background:url(../images/logout.png) no-repeat 100% 0;height:16px;line-height:12px;font-size:12px;margin:10px 0;padding:1px 33px 2px 0;_padding-top:0;float:right;white-space:nowrap;color:#fff}
 .uc #status1 .logged_in .logout button{text-transform:uppercase;white-space:nowrap}
 #status1 .logged_in .logout button:hover{color:#ff1e00}#status1 .logged_in .logout button span{position:relative;top:-2px;left:4px}
 .ie #status1 .logged_in .logout button span{position:relative;top:0;left:3px;font-style:normal}
@@ -1321,3 +1321,29 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #contentsl2 p{ background: url(../images/slct1.gif) no-repeat; padding-left:25px;}
 .heightctsl{ height:250px !important;}
 
+/*===========================logged-====================*/
+#status1 .logged_in{position:relative}#status .logged_in h5{position:absolute;font-size:12px;padding:3px 8px}
+#status1 .logged_in a{text-decoration:none}#status .logged_in ul{_zoom:1;position:relative;top:20px}
+#status1 .logged_in ul li{padding:0 6px;background:url(../images/statusSeparator.png) no-repeat right 0;display:block}
+#status1 .amountOfMoney a{padding-left:20px;background:url(../images/statusSprite.png) no-repeat 0 2px;_background:url(../images/statusSprite.gif) no-repeat 0 2px;display:block;float:left}
+#status1 .friendsOnline a{background:url(../images/statusSprite1.png) no-repeat -129px 2px;_background:url(../images/statusSprite1.gif) no-repeat -129px 2px;padding-left:18px}
+#status1 .friendsOnline a span{background:url(../images/statusSprite.png) no-repeat 100% 1px;_background:url(../images/statusSprite.gif) no-repeat 100% 1px;padding-right:13px}
+#status1 .inbox a{background:url(../images/statusSprite.png) no-repeat -236px 1px;_background:url(../images/statusSprite.gif) no-repeat -236px 1px;padding-left:18px}
+#status1 .logged_in ul li.settings,#status .logged_in ul li.mySkill7{background-image:none}
+#status1 .logged_in ul li.mySkill7 a{background:url(../images/statusSprite.png) no-repeat -282px 0px;_background:url(../images/statusSprite.gif) no-repeat -282px 2px;padding-left:25px}
+.ie9 #status1 .logged_in ul li.mySkill7 a,.ie9 #status .friendsOnline a{padding-top:1px;padding-bottom:2px}
+#status1 .logged_in ul li.mySkill7 a span{background:#3F5876}#status .logged_in .logout{background:0;position:absolute;top:-19px;left:0;width:100px;margin-left:234px;height:38px}
+#status1 .logged_in .logout button{display:block;font-weight:bold;background:url(../images/logout.png) no-repeat 100% 0;height:16px;line-height:12px;font-size:12px;margin:10px 0;padding:1px 33px 2px 0;_padding-top:0;float:right;white-space:nowrap;color:#fff}
+.uc #status .logged_in .logout button{text-transform:uppercase;white-space:nowrap}
+#status1 .logged_in .logout button:hover{color:#ff1e00}#status .logged_in .logout button span{position:relative;top:-2px;left:4px}
+.ie #status1 .logged_in .logout button span{position:relative;top:0;left:3px;font-style:normal}
+#status1 .logged_in dl{margin:0;position:absolute;left:360px;top:4px;background:url(../images/bonusprogram.png) no-repeat left -160px;padding-left:24px;overflow:hidden;height:33px}
+#status1 .logged_in dl.status0{background:url(../images/bonusprogram.png) no-repeat left -200px}
+#status1 .logged_in dl.status1{background:url(../images/bonusprogram.png) no-repeat left -160px}
+#status1 .logged_in dl.status2{background:url(../images/bonusprogram.png) no-repeat left -120px}
+#status1 .logged_in dl.status3{background:url(../images/bonusprogram.png) no-repeat left -80px}
+#status1 .logged_in dl.status4{background:url(../images/bonusprogram.png) no-repeat left -40px}
+#status1 .logged_in dl.status5{background:url(../images/bonusprogram.png) no-repeat left 0}
+#status1 .logged_in dd{margin:2px 0 0;position:relative;top:-15px;left:-30px}
+#status1 .logged_in dd a{color:#BAE3FF;padding:15px 0 0 30px;display:block}
+#status1 .logged_in dd a:hover{color:#ff1e00}#status #friendsOnlineBox{left:40px;top:35px;position:absolute;background-color:#193255;border:1px solid #68819a;visibility:hidden;opacity:0;display:none;padding:7px;width:230px;overflow:hidden}
