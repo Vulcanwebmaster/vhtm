@@ -150,6 +150,7 @@ function getRowByColumn($tableName='',$columnName='',$value='')
 	 
 	 function updateRowByColumn($tableName='',$columnName='',$value='',$input)
 	 {
+	 	//var_dump($input);die();
 	 	if ($this->db->update($tableName,$input,array($columnName=>$value)))
 	 		return true;
 	 	else return false;

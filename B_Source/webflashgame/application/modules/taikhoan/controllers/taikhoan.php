@@ -21,7 +21,6 @@ class Taikhoan extends NIW_Controller
 	
 	function page($index=0)
 	{
-			
 			$config['base_url'] = base_url().'taikhoan/page';
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mtaikhoan->getListFull('fg_account'));

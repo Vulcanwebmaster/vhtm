@@ -51,10 +51,6 @@ class Dangky extends NIW_Controller
 	 */
 	function checkAccount()
 	{
-		//$this->data['product']=$this->Mdangky->getListOffset('fg_accounts',5,0);
-		//var_dump($this->data['product']); die();
-		if ($this->input->post('submit'))
-		{
 			$nick = $this->input->post('nick');
 			$password = $this->input->post('pass');
 			$relateAccounts = $this->Mdangky->getAccountByUserPass($nick, $password);
@@ -64,18 +60,16 @@ class Dangky extends NIW_Controller
 				$account = $relateAccounts[0];
 				$_SESSION['front_user_fullname'] = $account->username;
 				$_SESSION['front_user_id'] = $account->id;
-				//var_dump($_SESSION['front_user_fullname']); die();
 				redirect(base_url(),'refresh');
 			}
 			else 
 			{
 				//if this account is not exist, login unsuccesful and redirect to login view.
-				$_SESSION['front_login_error'] = 'Tài khoản không tồn tại';
+				$_SESSION['front_login_error'] = 'input username and password.';
+				$this->session->set_userdata('result','username or password false.');
+				$this->dangNhap();
 			}
-		}
 		$this->data['module'] = $this->module;
-		$this->data['page'] = 'vwellcome';
-
 		$this->load->view('front/container',$this->data);
 	}
 	

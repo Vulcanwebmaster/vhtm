@@ -12,8 +12,15 @@
 	<!---------------------slider------------>
 	<!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/style.css" />
+	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/modernizr.custom.53451.js"></script>
+<!-------------- Bắt lỗi bằng js ------------>	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/validationEngine.jquery.css" />
+	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.validationEngine-en.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.validationEngine.js"></script>
+<!--------------End Bắt lỗi bằng js ------------>	
 		<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.gallery.js"></script>
 		<!--<script type="text/javascript">
 			$(function() {
@@ -24,14 +31,14 @@
 		</script/>
 	<!-----------endslide---------->
 </head>
-<body class="games  uc  noLeaderBoard root firefox">
+<body class="games  uc hasSideNav  noLeaderBoard root firefox login">
 	
 	<div id="wrapper">
 		<?php $this->load->view('front/header')?>
 		<style type="text/css">
 			#main {
 				background-image: url(images/backContentTopTwister.jpg);
-			}
+					}
 		</style>
 		<?php $this->load->view('front/content')?>
 			
@@ -39,6 +46,5 @@
 		<?php $this->load->view('front/status-head')?>
 	</div>
 	<?php $this->load->view('front/feetback')?>
-	
 </body>
 </html>

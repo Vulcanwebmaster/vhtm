@@ -22,17 +22,16 @@
 		}
 			
 </style>
+<!-------------Check Password------------>
+	<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#fnLogin").validationEngine();
+		});
+	</script>
+<!-------------End Check Password------------>
 
-<div id="nav" class="">
-			<ul>
-				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
-				<li class="btnTourn"><a data-gtt="Tournaments" href="<?php echo base_url();?>giaidau" title=""><span>Tournaments</span></a></li>
-				<li class="btnCommunity"><a data-gtt="My GameTwist" href="<?php echo base_url();?>dangky/dangnhap" title=""><span>My GameTwist</span></a></li>
-				<li class="btnShop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>Shop</span></a></li>
-				<li class="btnRules"><a data-gtt="Help" href="<?php echo base_url();?>helps" title=""><span>Help</span></a></li>
-			</ul>
-			<a id="backToTop" href="#"></a>
-		</div>
+<?php $this->load->view('front/menu')?>
 <div id="main">
 			<div id="container">	
 				<div id="tipHolder"></div>
@@ -41,7 +40,7 @@
 				</div>
 				<div class="left">
 					<div id="login" class="contBox">
-						<form method="post" enctype="application/x-www-form-urlencoded" name="fnLogin" class="container" id="fnLogin" action="/web/Login">
+						<form method="post" enctype="application/x-www-form-urlencoded" name="fnLogin" class="container" id="fnLogin" action="<?php echo base_url();?>dangky/checkAccount">
 							<table class="formTable">
 								<colgroup><col class="first"><col class="second"></colgroup>
 								<thead><tr><td class="first"></td><td class="last"></td></tr></thead>
@@ -49,12 +48,19 @@
 								<tbody>
 									<tr>
 										<td class="inputNames"><label for="nick">Nickname</label></td>
-										<td class="inputElements"><input name="nick" type="text" class="formField ffInput" id="nick" value=""></td>
+										<td class="inputElements"><input name="nick" type="text" class="formField ffInput validate[required] text-input" id="nick" value=""></td>
 									</tr>
 									<tr>
 										<td class="inputNames"><label for="pass">Password</label></td>
-										<td class="inputElements"><input name="pass" type="password" class="formField ffInput" id="pass" value=""></td>
+										<td class="inputElements"><input name="pass" type="password" class="formField ffInput validate[required] text-input" id="pass" value=""></td>
 									</tr>
+									<?php if ($this->session->userdata('result')!='')
+										{
+										echo '<p style="color:red; padding-left:30px">';
+										echo $this->session->userdata('result');
+										$this->session->unset_userdata('result');
+										echo '</p>';
+										}?>
 									<tr class="formTips" title="Stay logged in :: Remember log-in details">
 										<td id="fnLoginCheckbox" class="checkBoxTableCell inputElements">
 											<input name="autologin" type="checkbox" id="autologin" value="1" class="ffCheckbox">
