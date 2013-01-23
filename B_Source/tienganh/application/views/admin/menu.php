@@ -27,6 +27,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slidefooter/admin">Slide Footer</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>email/admin">Email</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>thongtinlienhe/admin">Thông tin liên hệ</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

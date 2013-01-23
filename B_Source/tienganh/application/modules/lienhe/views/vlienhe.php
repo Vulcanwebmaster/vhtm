@@ -107,30 +107,29 @@
 					 				<p> <span style="color:red">*</span>The case required </p>
 					 				<input type="submit" value="Send" class="submitlh">
 								<?php } ?>
-
-				 				
 				 			</form>
 				 			<?php echo validation_errors('','</p>'); ?>
 				 		</div>
 				 		<div id="lhrigh">
-				 			<?php if ($_SESSION['lang']=="vn") 
+				 			<?php foreach ($list_ttlienhe as $lienhe) {
+				 			 if ($_SESSION['lang']=="vn") 
 							{?>		
 								<p class="ttlh">Địa chỉ liên hệ</p>
-					 			<p style="padding-top:10px">TRUNG TÂM TIẾNG ANH JENNIFER<br>Thos mas - Nguyễn Ngọc Vũ - Hà Nội</p>
-					 			<p>Tel: 0123 456 789<br>
-									Email: info@jennifer.com<br>
-									Website: www.jennifer.edu.vn
+					 			<p style="padding-top:10px"><?php echo $lienhe->diachi ?></p>
+					 			<p>Tel: <?php echo $lienhe->sdt ?><br>
+									Email: <?php echo $lienhe->email ?><br>
+									Website: <?php echo $lienhe->website ?>
 								</p><br>
 									<p>Bản đồ chỉ dẫn đường đi:</p>
 							<?php } else{ ?>
 								<p class="ttlh">Contact address</p>
-					 			<p style="padding-top:10px">Office Institute JENNIFER<br>Thos Mas - Nguyen Ngoc Vu - Ha Noi</p>
-					 			<p>Tel: 0123 456 789<br>
-									Email: info@jennifer.com<br>
-									Website: www.jennifer.edu.vn
+					 			<p style="padding-top:10px"><?php echo $lienhe->diachie ?></p>
+					 			<p>Tel: <?php echo $lienhe->sdt ?><br>
+									Email: <?php echo $lienhe->email ?><br>
+									Website: <?php echo $lienhe->website ?>
 								</p><br>
 									<p>Map directions:</p>
-							<?php } ?>
+							<?php } } ?>
 
 				 			
 							<div>

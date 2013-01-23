@@ -17,6 +17,8 @@ class Lienhe extends NIW_Controller
 		$data['list_doitac']=$this->Mlienhe->getListFull('doitac');	
 		$data['hotro_online']=$this->Mlienhe->getListFull('hotroonline');
 		$data['list_slide']=$this->Mlienhe->getListFull('slide');
+		// var_dump($this->Mlienhe->getListFull('ttlienhe'));die();
+		$data['list_ttlienhe']=$this->Mlienhe->getListFull('ttlienhe');
 		$data['title']='tienganh | Tiếng Anh';
 		$data['hotro_online']=$this->Mlienhe->getListFull('hotroonline');
 		$data['list_courses'] = $this->Mlienhe->getListFull('ta_courses');
