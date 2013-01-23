@@ -76,19 +76,27 @@ class Mygametwist extends NIW_Controller
 		function gamesetting()
 		{
 			$id = $_SESSION['front_user_id'];
-		//	$data['game_setting'] = $this->Mmygametwist->getRowByColumn('st_gamesetting','account_id',$id);
+			$listTest = $this->Mmygametwist->getListByColumn('st_gamesetting', 'account_id', $id); 
+			if (count($listTest) > 0)
+			{
+				$data['game_setting'] = $this->Mmygametwist->getRowByColumn('st_gamesetting','account_id',$id);
+			}
 			$model=new CI_Model();
 			$data['menuleft']  =  2;
 			$data['module']  =  $this->module;
-			$data['page']  =  'vgamesetting';
+			$data['page']  	=  'vgamesetting';
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}
 		// General Setting
 		function generalsetting()
 		{
-			//$id = $_SESSION['front_user_id'];
-			//$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			$id = $_SESSION['front_user_id'];
+			$listTest = $this->Mmygametwist->getListByColumn('st_generalsetting', 'account_id', $id); 
+			if (count($listTest) > 0)
+			{
+				$data['general_setting'] = $this->Mmygametwist->getRowByColumn('st_generalsetting','account_id',$id);
+			}
 			$model=new CI_Model();
 			$data['menuleft']  =  3;
 			$data['module']  =  $this->module;
@@ -99,8 +107,12 @@ class Mygametwist extends NIW_Controller
 		// Currency Setting
 		function currencysetting()
 		{
-			//$id = $_SESSION['front_user_id'];
-			//$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			$id = $_SESSION['front_user_id'];
+			$listTest = $this->Mmygametwist->getListByColumn('st_currencysetting', 'account_id', $id); 
+			if (count($listTest) > 0)
+			{
+				$data['currency_setting'] = $this->Mmygametwist->getRowByColumn('st_currencysetting','account_id',$id);
+			}
 			$model=new CI_Model();
 			$data['menuleft']  =  4;
 			$data['module']  =  $this->module;
@@ -113,12 +125,82 @@ class Mygametwist extends NIW_Controller
 		
 // *************** Cac function insert update ****************
 		// Lay du lieu tu form
+		function _inputCurrencySetting()
+		{
+			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
+			$input=array(
+						'currency'=>$this->input->post('currency'),
+						'account_id'=> $_SESSION['front_user_id'],
+						);
+			return $input;
+		}
+		// Update Currency Setting
+		function updateCurrencySetting(){
+			$id = $_SESSION['front_user_id'];
+			$input= $this->_inputCurrencySetting();
+			//var_dump($input);die();
+			if($input == TRUE){
+				$listTest = $this->Mmygametwist->getListByColumn('st_currencysetting', 'account_id', $id); 
+				if (count($listTest) != 0)
+				{	
+					if ($this->Mmygametwist->updateRowByColumn('st_currencysetting','account_id',$id,$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'mygametwist');
+				}else {
+					if ($this->Mmygametwist->insertNewRow('st_currencysetting',$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'mygametwist');
+				}
+			}
+			redirect(base_url().'mygametwist');
+		}
+		
+		// Lay du lieu tu form
+		function _inputGeneralSetting()
+		{
+			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
+			$input=array(
+						'message'=>$this->input->post('message'),
+						'account_id'=> $_SESSION['front_user_id'],
+						);
+			return $input;
+		}
+		// Update general Setting
+		function updateGeneralSetting(){
+			$id = $_SESSION['front_user_id'];
+			$input= $this->_inputGeneralSetting();
+			//var_dump($input);die();
+			if($input == TRUE){
+				$listTest = $this->Mmygametwist->getListByColumn('st_generalsetting', 'account_id', $id); 
+				if (count($listTest) != 0)
+				{	
+					if ($this->Mmygametwist->updateRowByColumn('st_generalsetting','account_id',$id,$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'mygametwist');
+				}else {
+					if ($this->Mmygametwist->insertNewRow('st_generalsetting',$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'mygametwist');
+				}
+			}
+			redirect(base_url().'mygametwist');
+		}
+		// Lay du lieu tu form
 		function _inputGameSetting()
 		{
 			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
 			$input=array(
 						'play'=>$this->input->post('play'),
 						'technology'=>$this->input->post('technology'),
+						'account_id'=> $_SESSION['front_user_id'],
 						);
 			return $input;
 		}
@@ -128,15 +210,24 @@ class Mygametwist extends NIW_Controller
 			$input= $this->_inputGameSetting();
 			//var_dump($input);die();
 			if($input == TRUE){
-				if ($this->Mmygametwist->updateRowByColumn('st_gamesetting','account_id',$id,$input))
-					{
-						$this->session->set_userdata('result','Update successful!!');
-					}
-					redirect(base_url().'mygametwist');
+				$listTest = $this->Mmygametwist->getListByColumn('st_gamesetting', 'account_id', $id); 
+				if (count($listTest) != 0)
+				{	
+					if ($this->Mmygametwist->updateRowByColumn('st_gamesetting','account_id',$id,$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'mygametwist');
+				}else {
+					if ($this->Mmygametwist->insertNewRow('st_gamesetting',$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'mygametwist');
+				}
 			}
 			redirect(base_url().'mygametwist');
 		}
-
 		// Lay du lieu tu form
 		function _inputPassword()
 		{

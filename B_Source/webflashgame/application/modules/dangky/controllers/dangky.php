@@ -89,10 +89,11 @@ class Dangky extends NIW_Controller
 		if ($this->input->post("submit"))
 		{
 			$email = $this->input->post("email");
+			$username	=	$this->input->post("nick");
 			
 			//get list accounts which have email and password are received values
 			$listTest = $this->Mdangky->getListByColumn('fg_accounts', 'email', $email); 
-			
+			$listTest1 = $this->Mdangky->getListByColumn('fg_accounts', 'username', $username); 
 			if (count($listTest) > 0)
 			{
 				// if any items are exist, show error message
@@ -100,7 +101,12 @@ class Dangky extends NIW_Controller
 				$this->session->set_userdata('result','Email is registered, please use another email!!');
 				$this->data['module'] = $this->module;
 				$this->data['page']	= 'vdangky';
-				
+				$this->load->view('front/container', $this->data);
+			}elseif (count($listTest1) != 0) {
+				// if any items are exist, show error message
+				$this->session->set_userdata('result','username is registered, please use another username!!');
+				$this->data['module'] = $this->module;
+				$this->data['page']	= 'vdangky';
 				$this->load->view('front/container', $this->data);
 			}
 			else 

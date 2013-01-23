@@ -15,7 +15,7 @@
 			<div class="left">
 					<div class="contBox" id="settings_messages_via">
 						<h3><span>General settings</span></h3>
-						<form action="" method="post" enctype="" class="container" id="fnSettingsPersonal">
+						<form action="<?php echo base_url();?>mygametwist/updateGeneralSetting/" method="post" enctype="" class="container" id="fnSettingsPersonal">
 							<table class="formTable">
 								<colgroup><col class="first"><col class="second"></colgroup>
 								<thead>
@@ -25,10 +25,28 @@
 										<tr>
 											<td class="inputNames"><label for="info_type">Messages:</label></td>
 											<td class="inputElements">
-												<select class="formField" id="info_type" name="info_type">
-													<option value="1" selected="">here in your inbox</option>
-													<option value="2">via e-mail</option>
-													<option value="3">via e-mail and here in your inbox</option>
+												<select class="formField" id="info_type" name="message">
+													<?php if(isset($general_setting->message)){ ?>
+															<option value="<?php echo $general_setting->message ?>">
+														<?php if($general_setting->message=="1"){echo "here in your inbox";}elseif($general_setting->message=="2"){echo "via e-mail";}else{echo "via e-mail and here in your inbox";} ?></option>
+														<?php if($general_setting->message=="1"){ ?>
+															<option value="2">via e-mail</option>
+															<option value="3">via e-mail and here in your inbox</option>
+														<?php }elseif($general_setting->message=="2"){ ?>
+															<option value="1">here in your inbox</option>
+															<option value="3">via e-mail and here in your inbox</option>
+														<?php }elseif($general_setting->message=="3"){ ?>
+															<option value="1">here in your inbox</option>
+															<option value="2">via e-mail</option>
+														<?php }else{?>
+															<option value="1" selected="">here in your inbox</option>
+															<option value="2">via e-mail</option>
+															<option value="3">via e-mail and here in your inbox</option>
+													<?php } }else{ ?>
+														<option value="1" selected="">here in your inbox</option>
+														<option value="2">via e-mail</option>
+														<option value="3">via e-mail and here in your inbox</option>
+													<?php } ?>
 												</select>
 											</td>
 										</tr>

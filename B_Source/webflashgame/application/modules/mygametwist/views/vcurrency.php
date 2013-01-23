@@ -15,7 +15,7 @@
 			<div class="left">
 						<div class="contBox" id="settingsCurrency">
 							<h3><span>Choose a different currency here:</span></h3>
-							<form action="/web/Settings-Save" method="post" enctype="application/x-www-form-urlencoded" class="container">
+							<form action="<?php echo base_url();?>mygametwist/updateCurrencySetting/" method="post" enctype="application/x-www-form-urlencoded" class="container">
 								<table class="formTable">
 								<colgroup><col class="first"><col class="second"></colgroup>
 								<thead><tr><td></td><td></td></tr></thead>
@@ -24,19 +24,34 @@
 									<tr>
 										<td class="inputNames"><label for="id_curr">Currency:</label></td>
 										<td class="inputElements">
-											<select name="id_curr" id="id_curr" class="ffSelect">
-												<option value="10">Kn (HRK)</option>
-												<option value="7">Kc (CZK)</option>
-												<option value="1" selected=""> (EUR)</option>
-												<option value="6">Ft (HUF)</option>
-												<option value="8">zl (PLN)</option>
-												<option value="3">à(GBP)</option>
-												<option value="9">lei (RON)</option>
-												<option value="23">??? (RUB)</option>
-												<option value="4">Fr (CHF)</option>
-												<option value="24">à(TRY)</option>
-												<option value="2">$ (USD)</option>
-											</select>
+										<select id="id_curr" class="ffSelect" name="currency">
+											<?php if(isset($currency_setting->currency)){ ?>
+												<option selected="" value="<?php echo $currency_setting->currency ?>">(<?php echo $currency_setting->currency ?>)</option>
+												<option value="HRK">Kn (HRK)</option>
+												<option value="CZK">Kč (CZK)</option>
+												<option value="HUF">Ft (HUF)</option>
+												<option value="PLN">zł (PLN)</option>
+												<option value="EUR">€ (EUR)</option>
+												<option value="GBP">£ (GBP)</option>
+												<option value="RON">lei (RON)</option>
+												<option value="RUB">руб (RUB)</option>
+												<option value="CHF">Fr (CHF)</option>
+												<option value="TRY">₤ (TRY)</option>
+												<option value="USD">$ (USD)</option>
+											<?php }else{ ?>
+												<option value="HRK">Kn (HRK)</option>
+												<option value="CZK">Kč (CZK)</option>
+												<option value="HUF">Ft (HUF)</option>
+												<option value="PLN">zł (PLN)</option>
+												<option value="EUR">€ (EUR)</option>
+												<option value="GBP">£ (GBP)</option>
+												<option value="RON">lei (RON)</option>
+												<option value="RUB">руб (RUB)</option>
+												<option value="CHF">Fr (CHF)</option>
+												<option value="TRY">₤ (TRY)</option>
+												<option value="USD">$ (USD)</option>
+											<?php } ?>
+										</select>
 										</td>
 									</tr>
 									<tr>

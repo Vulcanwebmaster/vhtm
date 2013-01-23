@@ -50,6 +50,13 @@
 					<form method="post" enctype="" name="fnRegister" class="container" id="fnRegister" action="<?php echo base_url();?>dangky/registAccount">
 						<ol>
 							<li>
+								<?php if ($this->session->userdata('result')!='')
+										{
+											echo '<p style="color:red; padding-left:30px">';
+											echo $this->session->userdata('result');
+											$this->session->unset_userdata('result');
+											echo '</p>';
+										}?>
 								<fieldset>
 									<ol>
 										<li title="">
@@ -70,13 +77,7 @@
 											<input name="email" type="text" class="formField ffInput validate[required] text-input" id="email" value="">
 											<span class="inputDescription">Important messages about the system and game results will be sent to this e-mail address.</span>
 										</li>
-										<?php if ($this->session->userdata('result')!='')
-										{
-											echo '<p style="color:red; padding-left:30px">';
-											echo $this->session->userdata('result');
-											$this->session->unset_userdata('result');
-											echo '</p>';
-										}?>
+										
 									</ol>
 								</fieldset>
 							</li>
