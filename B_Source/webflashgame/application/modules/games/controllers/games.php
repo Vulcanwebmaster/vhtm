@@ -27,9 +27,7 @@ class Games extends NIW_Controller
 			$config['total_rows'] = count($this->Mgames->getListFull('fg_games'));
 			$this->pagination->initialize($config);
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
-			//var_dump($data['items']); die();
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
-			//var_dump($data['list_category']); die();
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -39,6 +37,7 @@ class Games extends NIW_Controller
 	
 	function api($index=0){
 		
+			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
@@ -48,8 +47,6 @@ class Games extends NIW_Controller
 	}
 	function detail($index=0)
 	{
-		//$count++;
-		//$this->Mgames->updateRowByColumn('fg_games','count',$count,array('count'=>$count));
 			$data['list_game_cate'] = $this->Mgames->getListFull('fg_category');
 			$data['category']  =  $this->Mgames->getListFullCategory('fg_games');
 			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
@@ -57,12 +54,24 @@ class Games extends NIW_Controller
 			$luotchoi=$count->count_dem +1; 
 			$this->Mgames->updateRowByColumn('fg_games','game_id',$index,array('count_dem'=>$luotchoi));
 			$data['topgame']  =  $this->Mgames->topGame(1);
+			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items']  =  $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$model=new CI_Model();
 			$data['module']  =  $this->module;
 			$data['page']  =  'vdetaillogin';
 			$data['index']  =  -1;
+			$this->load->view('front/container',$data);
+	}
+	
+	function gioithieu($index=0){
+		
+			$data['list_category'] = $this->Mgames->getListFull('fg_category');
+			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
+			$data['title']='flashgame | Flash Games';
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vgioithieu';
 			$this->load->view('front/container',$data);
 	}
 	function category($id)

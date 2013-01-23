@@ -1,19 +1,53 @@
-<script type="text/javascript">
+<style>
+	#main{
+		background: url(<?php echo base_url();?>assets/flash_game/images/backContentTop.jpg) no-repeat;
+	_zoom: 1;
+	overflow: hidden;
+	padding: 54px 24px 0 24px;
+	
+	}
+	
+	#sideNav{
+				float: left;
+			    width: 294px;
+			}
+			 #container{
+				float: right;
+			   
+			    width: 648px;
+			}
+		#container{
+			float: left;
+			width: 648px;
+		}
+			.container ul {
+margin: 0;
+padding: 0 0 35px 3px;
+overflow: hidden;
+border-left: none;
+zoom: 1;
+}
+body {
+font-family: Verdana,Arial,Helvetica,sans-serif;
+color: #333;
+}
+</style>
+ <script type="text/javascript">
     $(document).ready(function(){
-     $('body').addClass('games,  uc,  noLeaderBoard, root, firefox').removeClass('');
-    })					 
+     $('body').addClass('shop_items  uc  noLeaderBoard root chrome, game_uc').removeClass('game_default');
+    })
    </script>
-<!-------------------Container------------>
-<!-------------Check Password------------>
-	<script>
-		jQuery(document).ready(function(){
-			// binds form submission and fields to the validation engine
-			jQuery("#checkconfpass").validationEngine();
-		});
-	</script>
-<!-------------End Check Password------------>
-<?php $this->load->view('front/menu')?> <!-- Menu -->
-<div id="main">
+<div id="nav" class="">
+			<ul>
+				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
+				<li class="btnTourn"><a data-gtt="Tournaments" href="<?php echo base_url();?>giaidau" title=""><span>Tournaments</span></a></li>
+				<li class="btnCommunity"><a data-gtt="My GameTwist" href="<?php echo base_url();?>dangky/dangnhap" title=""><span>My GameTwist</span></a></li>
+				<li class="btnShop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>Shop</span></a></li>
+				<li class="btnRules"><a data-gtt="Help" href="<?php echo base_url();?>helps" title=""><span>Help</span></a></li>
+			</ul>
+			<a id="backToTop" href="#"></a>
+		</div>
+	<div id="main">
 			<div id="additionalContentTop">
 				<div class="contBox" id="shopSteps">
 					<h3><span>You're just 3 steps away from completing your purchase</span></h3>
@@ -87,13 +121,13 @@
 						});
 					});
 				</script>
-				<div class="contBox" id="countryCurrencyForm">
+				<div class="contBox" id="countryCurrencyForm" style="display: none;">
 					<div id="formCloseBtn"><a href="javascript:void(0)"><span>close</span></a></div>
 					<h3><span>Change country/currency</span></h3>
 					<div class="container">
 						<form name="setPaymentConstraint" id="setPaymentConstraint" action="" method="get">
 							<table class="formTable">
-								<tr>
+								<tbody><tr>
 									<td><label for="id_curr">Currency</label></td>
 									<td>	
 										<select name="id_curr" id="selectCurrency">
@@ -115,7 +149,7 @@
 									<td><input type="hidden" name="id_item" value=""></td>
 									<td class="inputElements last"><button value="Continue" class="formButton fbSubmit" type="submit"><span>Continue</span></button></td>
 								</tr>
-							</table>
+							</tbody></table>
 						</form>
 					</div>
 				</div>
@@ -207,7 +241,7 @@
 									<td class="price">€ 5,00</td>
 									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
 								</tr>
-							</table>
+							</tbody></table>
 						</form>
 						<div class="itemDescription">
 							<b>Let's Twist at GameTwist:</b> There's something for everyone at GameTwist, so get your Twist pack here and start gaming!<br><br>
@@ -299,7 +333,7 @@ Note: Twists are the currency used at GameTwist. They cannot be paid out as real
 										<td class="price">Free</td>
 										<td>
 											<a href="http://wap.greentube.com/slots/market_forward.php?edition=com.funstage.gta_android">
-											<img src="<?php echo base_url();?>assets/flash_game/images/google_play.png" alt="" title=""></a>
+											<img src="images/google_play.png" alt="" title=""></a>
 										</td>
 									</tr>
 								</tbody>

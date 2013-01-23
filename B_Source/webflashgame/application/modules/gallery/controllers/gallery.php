@@ -14,9 +14,6 @@ class Gallery extends NIW_Controller
 		}
 		//lay ten url tren file da duoc upload
 		$data['images'] = $this->Mgallery->get_images();
-		//var_dump($data['images']); die();
-		$image_data = $this->upload->data();
-		$this->Mgallery->updateRowByColumn('fg_games','game_id',$index,array('avarta'=> $image_data['file_name']));
 		$this->load->view("gallery_view",$data);	
 	}
 	

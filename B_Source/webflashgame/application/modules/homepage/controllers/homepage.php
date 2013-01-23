@@ -23,9 +23,7 @@ class Homepage extends NIW_controller {
 	{
 		$data['top1'] = $this->Mhomepage->getTopGame(1);
 		$data['top_game'] = $this->Mhomepage->getTopGame(11);
-		//var_dump($data['top_game']); die();
 		$data['list_category'] = $this->Mhomepage->getListFull('fg_category');
-		//var_dump($data['list_category']); die();
 		$data['list_games'] = $this->Mhomepage->getListFull('fg_games');
 		$data['list_game_cate']  =  $this->Mhomepage->getListFullCategory('fg_games');
 		$data['title']='flash_game | Flash game';

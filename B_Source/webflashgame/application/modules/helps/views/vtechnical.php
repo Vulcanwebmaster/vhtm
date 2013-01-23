@@ -27,23 +27,10 @@
 			<div class="contBox gamesHelpContent">
 				<div class="container">
 					<div>
-						<p><strong>In the help menu you will find;</strong></p>
-						<ul>
-							<li><strong>game instructions,</strong></li>
-							<li><strong>
-		an introduction to our website and</strong></li>
-							<li><strong>answers to frequently asked questions (FAQs)</strong></li>
-						</ul>
-						<strong>
-covering all games and functions available at GameTwist.<br><br>
-Should you have any further questions, please do not hesitate to contact our support team at <a href="#">support@gametwist.com</a>.<br><br>
-Our support hotline is available 7 days a week (excl. public holidays) from 8am to 10pm:<br>
-						<ul>
-							<li><b>Germany: </b><strong>0900 141 0 141</strong> (�1.80/min.)</li>
-							<li><b>Austria: 0900 499 944</b> (�1.80/min.)</li>
-						</ul><br>
-Prices given are from landline telephones. Prices for calls from cell phones may be higher.<br></strong>
-						<p></p>
+						
+						<p><strong><?php echo $list_technical1->title ?></strong></p>
+						
+						<p><strong><?php echo $list_technical1->content ?></strong></p>
 					</div>
 				</div>
 			</div>
@@ -103,27 +90,25 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 		</div>
 		<div class="contBox sideNav" id="contBox2">
 			<h4 class="toggler"><span>Rules</span></h4>
-			<div class="container" id="helpContainer303" style="display: block;">
+			<div class="container" id="helpContainer303" style="display: none;">
 				<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
+					
 					<ul>
-						<?php foreach ($list_category as $key) 
-						{ ?>
-						<li class="gameToggler active" style="cursor: default;"><span><?php echo $key->category_name;?></span>
-							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
-								<?php foreach ($list_games as $value) {?>
-										<?php if($value->category_id  ==  $key->id)
-											{?>
-								<li><a href="<?php echo base_url();?>helps/rules/<?php echo $value->game_id."-".$value->alias;?>"><span><?php echo $value->name; ?></span></a></li>
-								<?php } ?>
-							<?php } ?>
+						<?php foreach ($list_category as $item) 
+							{ ?>
+							<li class="gameToggler"><span><?php echo $item->category_name ?></span>
+							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
+								<?php foreach ($list_rule as $key) 
+								{ ?>
+								<li><a href=""><span><?php echo $key->name ?></span></a></li>
+								<?php }?>
 							</ul>
-						</li>
+							</li>
 						<?php }?>
 						
 				</ul>
 			</div>
 		</div>
-			
 	</div>
 	<div class="contBox sideNav" id="contBox3">
 		<h4 class="toggler"><span>General Help</span></h4>
@@ -154,6 +139,3 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 </div>
 <div id="sideBar"></div>
 </div>
-<script type="text/javascript">
-	$('#pagehelp').addClass('active')
-</script>

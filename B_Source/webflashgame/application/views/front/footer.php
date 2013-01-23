@@ -1,35 +1,33 @@
 <div id="footer">
 	<ul class="links">
 		<li class="first"><span>© 2013 Funstage</span></li>
-		<li><a href="#"><span>About Us</span></a></li>
-		<li><a href="#"><span>Terms &amp; Conditions</span></a></li>
-		<li><a href="#"><span>Privacy Policy</span></a></li>
-		<li><a href="#"><span>Affiliate Program</span></a></li>
-		<li><a href="#"><span>Mobile Version</span></a></li>
-		<li><a href="#"><span>Responsible gaming</span></a></li>
+		<li><a href="<?php echo base_url();?>gioithieu"><span>About Us</span></a></li>
+		<li><a href="<?php echo base_url();?>helps/dieukien"><span>Terms &amp; Conditions</span></a></li>
+		<li><a href="<?php echo base_url();?>helps/dieukien"><span>Privacy Policy</span></a></li>
+		<li><a href="<?php echo base_url();?>chuongtrinh"><span>Affiliate Program</span></a></li>
+		<li><a href="http://m.gametwist.com/"><span>Mobile Version</span></a></li>
+		<li><a href="<?php echo base_url();?>chuongtrinh"><span>Responsible gaming</span></a></li>
 	</ul>
 	<ul class="sitemap">
 		<li class="game">
 			<dl>
-				<dt><a href="#">Games</a></dt>
-				<dd><a href="#"><span>Twist Casino</span></a></dd>
-				<dd><a href="#"><span>Card Games</span></a></dd>
-				<dd><a href="#"><span>Board Games</span></a></dd>
-				<dd><a href="#"><span>Arcade &amp; Other</span></a></dd>
-				<dd><a href="#"><span>Sports Games</span></a></dd>
-				<dd><a href="#"><span>Browser Games</span></a></dd>
+				<dt><a href="<?php echo base_url();?>games">Games</a></dt>
+				<?php foreach ($list_category as $value) 
+				 { ?>
+				<dd><a href="<?php echo base_url()?>games/category/<?php echo $value->id."-".$value->alias?>"><span><?php echo $value->category_name ?></span></a></dd>
+				<?php } ?>
 			</dl>
 		</li>
 		<li class="tournaments">
 			<dl>
-				<dt><a href="#">Tournaments</a></dt>
+				<dt><a href="<?php echo base_url();?>giaidau">Tournaments</a></dt>
 			</dl>
 		</li>
 		<li>
-			<dl><dt><a href="#">Shop</a></dt></dl>
+			<dl><dt><a href="<?php echo base_url();?>shop">Shop</a></dt></dl>
 		</li>
 		<li>
-			<dl><dt><a href="#">Help</a></dt></dl>
+			<dl><dt><a href="<?php echo base_url();?>helps">Help</a></dt></dl>
 		</li>
 	</ul>
 	<div class="siteInfo">

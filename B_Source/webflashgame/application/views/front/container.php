@@ -40,6 +40,7 @@
 				background-image: url(images/backContentTopTwister.jpg);
 					}
 		</style>
+
 		<?php $this->load->view('front/content')?>
 			
 		<?php $this->load->view('front/footer')?>

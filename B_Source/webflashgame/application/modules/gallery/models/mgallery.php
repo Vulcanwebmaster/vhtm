@@ -30,8 +30,8 @@ class Mgallery extends CI_Model
 						"maintain_ration" => true,
 						"width" => '150',
 						"height" => "100");
-						echo "<pre>";
-						print_r($config);echo "</pre>"; die();
+						//echo "<pre>";
+						//print_r($config);echo "</pre>"; die();
 		$this->load->library("image_lib",$config);
 		$this->image_lib->resize();
 		//return ;

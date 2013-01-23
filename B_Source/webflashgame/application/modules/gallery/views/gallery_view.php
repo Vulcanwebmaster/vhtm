@@ -19,7 +19,6 @@
 			<div id="blank_gallery">Please Upload an Image</div>
 		<?php endif; ?>
 </div>
-
 <div id="upload">
 <form action="<?php base_url();?>gallery" method="post" enctype="multipart/form-data">   
 	<input type="file" name="img" />

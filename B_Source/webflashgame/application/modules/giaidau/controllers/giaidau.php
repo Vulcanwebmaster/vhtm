@@ -21,7 +21,9 @@ class Giaidau extends NIW_Controller
 	 
 	function page($index=0)
 	{
+			$data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			$data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
+			//var_dump($data['list_chitiet']); die();
 			$data['past'] = $this->Mgiaidau->gamePast();
 			$data['nextweek'] = $this->Mgiaidau->gameNextWeek();
 			$data['week'] = $this->Mgiaidau->gameWeek($index);
@@ -36,6 +38,7 @@ class Giaidau extends NIW_Controller
 	
 	function past($index=0)
 	{
+			$data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			$data['past'] = $this->Mgiaidau->gamePast();
 			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
 			$data['title']='flashgame | Flash Games';
@@ -47,7 +50,9 @@ class Giaidau extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			 $data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			 $data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
+			 //var_dump($data['list_chitiet']); die();
 			 $data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
 			 $data['items']  =  $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
 			 $data['list_tour'] = $this->Mgiaidau->getListFull('fg_tournaments');

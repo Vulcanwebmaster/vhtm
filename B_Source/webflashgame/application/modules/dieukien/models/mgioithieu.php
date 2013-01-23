@@ -1,5 +1,5 @@
 <?php
-class Mshop extends CI_Model
+class Mgioithieu extends CI_Model
 {
 	function __construct()
 	{
