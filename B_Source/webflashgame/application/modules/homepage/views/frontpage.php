@@ -335,8 +335,8 @@
 										<div class="gameDesc"><p><?php echo word_limiter($value->overview,2)?></p></div>
 										<p class="gameShot"><?php echo $value->image;?></p>
 										<ul id="so2nav">
-											<li class="btnPlay"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
-											<li class="btnHelp"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+											<li class="btnPlay" style="width:21px;"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+											<li class="btnHelp" style="width:21px; float:left;"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
 											<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
 											<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
 											<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>

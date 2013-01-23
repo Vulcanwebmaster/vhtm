@@ -756,14 +756,14 @@ body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,bod
 #so2overlayTop .gameDesc,#to2overlayTop .gameDesc{color:#666;font-size:11px;height:44px;left:137px;line-height:14px;margin:0;overflow:hidden;padding:0;position:absolute;top:29px;width:232px;cursor:default;border-bottom:1px dotted #2cbbed;z-index:2}
 #so2overlayTop .gameDesc p,#to2overlayTop .gameDesc p{color:#193255}#so2overlayTop .gameShot,#to2overlayTop .gameShot{height:auto;left:10px;margin:0;overflow:visible;padding:0;position:absolute;top:10px;width:auto}
 #so2overlayTop a img,#to2overlayTop a img{border:1px solid #999}#so2overlay dl,#to2overlay dl{padding:0;margin:0;position:relative}
-#so2overlay dd,#to2overlay dd{color:#666;cursor:default;font-size:12px;font-weight:bold;position:absolute;right:150px;text-align:center;top:7px;margin:0;width:42px}
-#so2overlay dt,#to2overlay dt{background:url(../images/overlayUser.png) no-repeat scroll 0 0;display:block;height:12px;position:absolute;right:190px;text-indent:-9999px;top:8px;width:10px;text-align:left}
+#so2overlay dd,#to2overlay dd{color:#666;cursor:default;font-size:12px;font-weight:bold;position:absolute;right:150px;text-align:center;top:-80px;margin:0;width:42px}
+#so2overlay dt,#to2overlay dt{background:url(../images/overlayUser.png) no-repeat scroll 0 0;display:block;height:12px;position:absolute;right:190px;text-indent:-9999px;top:-81px;width:10px;text-align:left}
 #so2overlay .rating5,#so2overlay .rating4,#so2overlay .rating3,#so2overlay .rating2,#so2overlay .rating1,#so2overlay .rating0,#to2overlay .rating5,#to2overlay .rating4,#to2overlay .rating3,#to2overlay .rating2,#to2overlay .rating1,#to2overlay .rating0{background:url(../images/overlayStars.gif);background-repeat:no-repeat;background-position:left 0;text-indent:-9999px;width:60px;height:9px;position:absolute;top:81px;left:137px}
 #so2overlay .rating4,#to2overlay .rating4{background-position:-12px 0}#so2overlay .rating3,#to2overlay .rating3{background-position:-24px 0}
 #so2overlay .rating2,#to2overlay .rating2{background-position:-36px 0}#so2overlay .rating1,#to2overlay .rating1{background-position:-48px 0}
 #so2overlay .rating0,#to2overlay .rating0{background-position:-60px 0}#so2nav,#to2nav{height:22px;overflow:hidden;position:absolute;top:76px;width:135px;margin:0;padding:0;right:148px;border-left:none}
 #to2nav{width:220px}#so2nav li,#to2nav li{list-style:none;float:right;padding:0;margin:0;background:0}
-#so2nav li a,#to2nav li a{display:block;text-indent:-9999px;width:21px;height:22px;background:url(../images/overlaySoToolsSprite.gif) no-repeat 0 0}
+#so2nav li a,#to2nav li a{display:block;text-indent:-9999px;width:21px;height:22px;background:url(../images/overlaySoToolsSprite.gif) no-repeat 0 0 !important}
 #to2nav li a{background:url(../images/overlayToToolsSprite.gif) no-repeat 0 0}
 #so2nav .btnMobile{display:none}.statusMobile #so2nav .btnMobile{display:block}
 #so2nav .btnMobile a,#to2nav .btnMobile a{background-position:-131px top}
@@ -772,7 +772,7 @@ body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,bod
 #so2nav .btnStats a{background-position:-31px top}#to2nav .btnStats a{background-position:-35px top}
 #so2nav .btnStats a:hover{background-position:-31px bottom}#to2nav .btnStats a:hover{background-position:-35px bottom}
 #so2nav .btnInfo a,#to2nav .btnInfo a{background-position:-56px top}#so2nav .btnInfo a:hover,#to2nav .btnInfo a:hover{background-position:-56px bottom}
-#so2nav .btnHelp a,#to2nav .btnHelp a{background-position:-77px top;width:21px}
+#so2nav .btnHelp a,#to2nav .btnHelp a{background-position:-77px top;width:97px}
 #so2nav .btnHelp a:hover,#to2nav .btnHelp a:hover{background-position:-77px bottom;width:21px}
 #so2nav .btnPlay a{background-position:-98px top;width:26px}#so2nav .btnPlay a:hover{background-position:-98px bottom;width:26px}
 #to2nav .btnPlay a{text-indent:0;background:url(../images/playArrow2.gif) no-repeat right 5px;text-decoration:none;color:#3CF;width:auto;_width:1px}
@@ -1349,3 +1349,4 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 .logged_in dd a:hover{color:#ff1e00}#status #friendsOnlineBox{left:40px;top:35px;position:absolute;background-color:#193255;border:1px solid #68819a;visibility:hidden;opacity:0;display:none;padding:7px;width:230px;overflow:hidden}
 
 #so2overlayTop img{ width:113px !important; height:70px !important;}
+#so2nav .btnPlay a{background-position:-98px top !important;width:26px !important}#so2nav .btnPlay a:hover{background-position:-98px bottom;width:26px}
