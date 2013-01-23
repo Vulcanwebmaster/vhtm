@@ -90,7 +90,7 @@
 	font-size: 15px;
 }
 .counter ul.countdown li div.countdown_num{
-	font-size: 65px; cursor:pointer
+	font-size: 85px; cursor:pointer;
 }
 .counter ul.countdown li.no_countdown{
 	padding-top:4px;
@@ -98,51 +98,46 @@
 	height:53px;
 	width:38px;
 }
-#counter{cursor:pointer; }
+#counter{cursor:pointer; font-weight:bold; font-size:85px;}
+.colorred{color:red !important}
 </style>
-		<script type="text/javascript">
-
-			$(function () {
-				$('span .countdown_section:first').hide();
-					$('.countdown_section').parent('.countdown_amount').hide();
-					 
-					$('#counter').countdown({until: 8, 
-				    onTick: highlightLast5}); 
-				     
-					
-					$('#counter').mouseover(function() { 
-						$('#counter').countdown('option', {until: 8}); 
-						/*$('#expired').show();
-						$('#counter').hide();*/
-					}).mouseout(function() { 
-						$('#counter').countdown('option', {until: +8}); 
-						/*$('#expired').hide();
-						$('#counter').show();*/
-					});
-					function highlightLast5(periods) { 
-						if ($.countdown.periodsToSeconds(periods) == 0) { 			 
-							$('#counter').countdown('option', {until: +8}); 
-							//$('.countdown_amount').text(10);
-						}
-						
-					} 
-				 
-					
-				});
-			</script>	
+		
 			</div>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
+		//$('span .countdown_section:first').hide();
+			$('.countdown_section').parent('.countdown_amount').hide();
+			 
+			$('#counter').countdown({until: 7, 
+		    onTick: highlightLast5}); 
+		   
+			
+			$('#counter').mouseover(function() { 
+				$('#counter').countdown('option', {until: 7}); 
+				
+			}).mouseout(function() { 
+				$('#counter').countdown('option', {until: +7}); 
+				
+			});
+			
+			function highlightLast5(periods) { 
+				if ($.countdown.periodsToSeconds(periods) == 0) { 			 
+					$('#counter').countdown('option', {until: +7}); 
+					
+				}		
+								
+			} 	
+					/*===================clock================*/
 		var timeId1=0;
 		var timeId2=0;
 		var timeId3=0;
 		$('#slideshow1 img:gt(0)').hide();
 		timeId1 = window.setInterval(function(){
 			$('#slideshow1 :first-child').slideDown()
-				.next('img').slideUp()
+				.next('#slideshow1 img').slideUp()
 				.end().appendTo('#slideshow1');},
 			7000);
 			$('#slideshow2 img:gt(0)').hide();
@@ -160,22 +155,23 @@
 			7000);				
  
 			 $('.slideshow,#counter').mouseover(function(){
-			 	/*$(this).parent().parent().parent().parent().children().children('#slideshow1').clearInterval(timeId1);			    
-			    $(this).parent().parent().parent().parent().children().children('#slideshow2').clearInterval(timeId2);
-			    $(this).parent().parent().parent().parent().children().children('#slideshow3').clearInterval(timeId3);*/
+			 	$('#counter').countdown('option', {until: 7});
+			 	$('#counter').countdown('pause'); 
 			   clearInterval(timeId1);
 			   clearInterval(timeId2);
 			   clearInterval(timeId3);
-			   
+			   $('#counter').addClass('colorred');
 			 }).mouseout(function(){
-			    //timeId = setInterval(function(){ alert('hi!');}, 250) ;
-			    //$('#slideshow1 img:gt(0)').hide();
+			 	$('#counter').removeClass('colorred');
+			 	$('#counter').countdown('resume'); 
 				timeId1 = window.setInterval(function(){
 					$('#slideshow1 :first-child').slideDown()
 						.next('img').slideUp()
-						.end().appendTo('#slideshow1');},
+						.end().appendTo('#slideshow1');
+						
+						},
 					7000);
-					//$('#slideshow2 img:gt(0)').hide();
+					
 				timeId2 = window.setInterval(function(){
 					$('#slideshow2 :first-child').slideDown()
 						.next('#slideshow2 img').slideUp()
@@ -188,8 +184,9 @@
 						.next('#slideshow3 img').slideUp()
 						.end().appendTo('#slideshow3');},
 					7000);
+					
 			})
-
+			
 	})
   </script>
 <div id="nav" class="">
@@ -417,7 +414,7 @@
 			<script type="text/javascript">
 							$(document).ready(function(){
 								$('#so2overlay').hide();
-								
+								$('#pagehome').addClass('active');
 								$('.item').mouseenter(function(){
 									$(this).children('#so2overlay').show();
 								})

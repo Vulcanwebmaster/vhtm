@@ -148,3 +148,6 @@
 </div>
 <div id="sideBar"></div>
 </div>
+<script type="text/javascript">
+	$('#pagehelp').addClass('active')
+</script>

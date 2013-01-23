@@ -174,3 +174,6 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 </div>
 <div id="sideBar"></div>
 </div>
+<script type="text/javascript">
+	$('#pagehelp').addClass('active')
+</script>

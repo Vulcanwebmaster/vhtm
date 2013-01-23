@@ -1255,7 +1255,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 a{color:#fff;line-height:12px}#status1 a:hover{color:#ff1e00}#status1 .nick label,#status1 .password label{display:none;width:100px;background:#788A9F none repeat scroll 0 0}
 #lNick1,#lPass1{background:#788a9f;border:1px solid #788a9f;padding:1px 2px;font-family:"Trebuchet MS",Helvetica,Jamrul,sans-serif;margin:10px 3px 0;_margin:8px 3px 0;width:109px;height:15px;color:#fff}
 #lNick1{margin-left:10px}.ie9 #lNick1,.ie9 #lPass1{height:14px}#lNick1:hover,#lPass1:hover{background:#788a9f;border-color:#cfd5dd}
-#lNick1:focus,#lPass1:focus{background:#9facbb;border-color:#cfd5dd}#status1 button{display:block;height:18px;line-height:1px;z-index:1111;cursor:pointer;color:#fff;font-weight:bold;padding:0 22px 2px 0;margin:8px 21px 10px 0;font-size:12px;border:0}
+#lNick1:focus,#lPass1:focus{background:#9facbb;border-color:#cfd5dd}#status1 button{display:block;height:18px !important;line-height:1px;z-index:1111;cursor:pointer;color:#fff;font-weight:bold;padding:0 22px 2px 0;margin:8px 21px 10px 0;font-size:12px;border:0}
 .ie9 #status1 button{padding-top:2px;padding-right:25px}#status1 .login .login button{background:#3F5876 url(../images/login.png) no-repeat scroll right top;padding-right:26px;margin:10px 10px 0 3px}
 .ie7 #status1 .login .login button span{margin-left:-15px}.uc #status1 button{text-transform:uppercase}
 #status1 button:hover{color:#ff1e00}#status1 .login button{text-align:right;*padding-top:2px;*padding-right:24px}
@@ -1263,7 +1263,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 .autologin label{position:relative;top:-3px;left:2px;text-decoration:underline}
 .opera #status1 .autologin label{top:1px}#status1 .autologin label:hover{text-decoration:none}
 #status1 .autologin a{display:block;margin-left:17px;_margin-left:23px}#status1 .passRecover{background:url(../images/statusSeparator.png) no-repeat left center;padding-left:10px;margin-top:8px;height:23px;line-height:20px}
-#status1 .passRecover a:hover{text-decoration:underline}#status1 .arrow{color:#f11d01;display:block;padding:0;width:128px;height:45px;text-decoration:none;margin:0}
+#status1 .passRecover a:hover{text-decoration:underline}#status1 .arrow{color:#f11d01;display:block;padding:0;width:128px;height:45px !important;text-decoration:none;margin:0}
 #status1 .arrow button{background:transparent url(../images/buttonHeader.png) no-repeat;_background:transparent}
 * html #arrow{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/buttonHeader.png',sizingMethod='crop');background:transparent;width:128px;height:45px;position:absolute;top:8px;right:-11px;z-index:-1}
 #status1 form.arrow{background-image:none;position:absolute;right:-11px;top:8px;width:128px;height:45px}
@@ -1279,7 +1279,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 .friendsOnline a span{background:url(../images/status1Sprite.png) no-repeat 100% 1px;_background:url(../images/status1Sprite.gif) no-repeat 100% 1px;padding-right:13px}
 #status1 .inbox a{background:url(../images/status1Sprite.png) no-repeat -236px 1px;_background:url(../images/status1Sprite.gif) no-repeat -236px 1px;padding-left:18px}
 #status1 .logged_in ul li.settings,#status1 .logged_in ul li.mySkill7{background-image:none}
-#status1 .logged_in ul li.mySkill7 a{background:url(../images/status1Sprite1.png) no-repeat -282px 2px;_background:url(../images/status1Sprite1.gif) no-repeat -282px 2px;padding-left:25px}
+#status1 .logged_in ul li.mySkill7 a{background:url(../images/statusSprite1.png) no-repeat -282px 0px !important;_background:url(../images/statusSprite1.gif) no-repeat -282px 0px !important;padding-left:25px}
 .ie9 #status1 .logged_in ul li.mySkill7 a,.ie9 #status1 .friendsOnline a{padding-top:1px;padding-bottom:2px}
 #status1 .logged_in ul li.mySkill7 a span{background:#3F5876}#status1 .logged_in .logout{background:0;position:absolute;top:-19px;left:0;width:100px;margin-left:234px;height:38px}
 #status1 .logged_in .logout button{display:block;font-weight:bold;background:url(../images/logout.png) no-repeat 100% 0;height:16px;line-height:12px;font-size:12px;margin:10px 0;padding:1px 33px 2px 0;_padding-top:0;float:right;white-space:nowrap;color:#fff}
@@ -1314,10 +1314,10 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 .contentsl ul{}
 .contentsl li{list-style:decimal; padding:0; margin-left:15px; line-height:22px; border-bottom:1px solid #ccc;}
 .contentsl a{ text-decoration: none; color:#333;}
-.contentsl p{ text-transform:uppercase}
+.contentsl p{ text-transform:uppercase; font-weight:bold; color:rgb(134, 132, 132); text-shadow:1px 1px 1px #fff}
 #contentsl1 li{ background:none;}
 #contentsl2 li{ background:none;}
-#contentsl1 p{ background: url(../images/slct2.gif) no-repeat; padding-left:20px;}
+#contentsl1 p{ background: url(../images/slct2.gif) no-repeat; padding-left:20px; }
 #contentsl2 p{ background: url(../images/slct1.gif) no-repeat; padding-left:25px;}
 .heightctsl{ height:250px !important;}
 
@@ -1326,7 +1326,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 .logged_in a{text-decoration:none}#status .logged_in ul{_zoom:1;position:relative;top:20px}
 #status1 .logged_in ul li{padding:0 6px;background:url(../images/statusSeparator.png) no-repeat right 0;display:block}
 #status1 .amountOfMoney a{padding-left:20px;background:url(../images/statusSprite.png) no-repeat 0 2px;_background:url(../images/statusSprite.gif) no-repeat 0 2px;display:block;float:left}
-#status1 .friendsOnline a{background:url(../images/statusSprite1.png) no-repeat -129px 2px;_background:url(../images/statusSprite1.gif) no-repeat -129px 2px;padding-left:18px}
+#status1 .friendsOnline a{background:url(../images/statusSprite1.png) no-repeat -129px 0px ;_background:url(../images/statusSprite1.gif) no-repeat -129px 2px;padding-left:18px}
 #status1 .friendsOnline a span{background:url(../images/statusSprite.png) no-repeat 100% 1px;_background:url(../images/statusSprite.gif) no-repeat 100% 1px;padding-right:13px}
 #status1 .inbox a{background:url(../images/statusSprite.png) no-repeat -236px 1px;_background:url(../images/statusSprite.gif) no-repeat -236px 1px;padding-left:18px}
 #status1 .logged_in ul li.settings,#status .logged_in ul li.mySkill7{background-image:none}

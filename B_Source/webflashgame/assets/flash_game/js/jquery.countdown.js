@@ -645,7 +645,7 @@ $.extend(Countdown.prototype, {
 		show[O] = (format.match('o') ? '?' : (format.match('O') ? '!' : null));
 		show[W] = (format.match('w') ? '?' : (format.match('W') ? '!' : null));
 		show[D] = (format.match('d') ? '?' : (format.match('D') ? '!' : null));
-		show[H] = (format.match('h') ? '?' : (format.match('H') ? '!' : null));
+		//show[H] = (format.match('h') ? '?' : (format.match('H') ? '!' : null));
 		show[M] = (format.match('m') ? '?' : (format.match('M') ? '!' : null));
 		show[S] = (format.match('s') ? '?' : (format.match('S') ? '!' : null));
 		return show;
