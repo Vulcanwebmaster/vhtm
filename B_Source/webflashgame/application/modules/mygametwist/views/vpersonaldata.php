@@ -150,3 +150,6 @@
 <?php $this->load->view('front/mygametwist_left')?>
 <!---------------------------End right-------------------->
 </div>
+<script type="text/javascript">
+	$('#pagemygametwist').addClass('active')
+</script>

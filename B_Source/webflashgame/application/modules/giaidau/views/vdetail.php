@@ -321,3 +321,6 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$('#pagetournament').addClass('active')
+</script>

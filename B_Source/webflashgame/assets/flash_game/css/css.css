@@ -1347,3 +1347,5 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 .logged_in dd{margin:2px 0 0;position:relative;top:-15px;left:-30px}
 #status1 .logged_in dd a{color:#BAE3FF;padding:15px 0 0 30px;display:block}
 #status1 .logged_in dd a:hover{color:#ff1e00}#status #friendsOnlineBox{left:40px;top:35px;position:absolute;background-color:#193255;border:1px solid #68819a;visibility:hidden;opacity:0;display:none;padding:7px;width:230px;overflow:hidden}
+
+#so2overlayTop img{ width:113px !important; height:70px !important;}

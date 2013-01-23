@@ -74,3 +74,6 @@
 <?php $this->load->view('front/mygametwist_left')?>
 <!-------------End container--------------->
 </div>
+<script type="text/javascript">
+	$('#pagemygametwist').addClass('active')
+</script>

@@ -250,7 +250,7 @@
 						{ ?>	
 						<li class="item">
 							<div class=" so1_medium rating friendsOnline gameId_193">
-								<h4><a title="" href="<?php echo base_url();?>games/detail/<?php echo $key->game_id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h4>
+								<h4><a title="Gameinfor" href="<?php echo base_url();?>games/detail/<?php echo $key->game_id."-".$key->alias;?>"><span><?php echo $key->name ?></span></a></h4>
 								<div class="so1_container" style="background-color: #87d2f8">
 									<p>Be the first to play all of your cards and become President!</p>
 									<dl><dt><span>Playing now</span></dt><dd>31</dd></dl>
@@ -313,7 +313,7 @@
 											{?>
 							<li class="item">
 								<div class=" so1_small rating friendsOnline gameId_110">
-									<h4><a href="<?php echo base_url();?>games/detail/<?php echo $value->game_id."-".$value->alias;?>" title=""><span><?php echo $value->name; ?></span></a></h4>
+									<h4><a title="Gameinfor" href="<?php echo base_url();?>games/detail/<?php echo $value->game_id."-".$value->alias;?>" title=""><span><?php echo $value->name; ?></span></a></h4>
 									<div style="background-color: #561c00" class="so1_container">
 										<p>Pyramids, pharaohs and the Book of Ra! The mysterious slot machine awaits!</p>
 										<dl><dt><span>Playing now</span></dt><dd>500</dd></dl>
@@ -408,11 +408,15 @@
 							$(document).ready(function(){
 								$('#so2overlay').hide();
 								$('#pagehome').addClass('active');
-								$('.item').mouseenter(function(){
-									$(this).children('#so2overlay').show();
+								$('.so1_container').mouseenter(function(){
+									$(this).parent().parent().children('#so2overlay').show();
 								})
 									$('.item').mouseleave(function(){
 									$(this).children('#so2overlay').hide();
+								})
+								$('.btnClose').click(function(){
+									$(this).parent().parent().parent().children('#so2overlay').css('display','none');
+									
 								})
 							})
 				</script>

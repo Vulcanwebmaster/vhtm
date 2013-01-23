@@ -179,3 +179,6 @@
 	<div id="sideNav"></div>
 	<div id="sideBar"></div>
 </div>
+<script type="text/javascript">
+	$('#pagetournament').addClass('active')
+</script>

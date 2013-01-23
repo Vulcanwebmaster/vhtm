@@ -29,7 +29,7 @@
 				<div id="tipHolder"></div>
 				<div id="subNav">
 				<ul>
-					<li class="active " id="now"><a href="<?php echo base_url();?>giaidau"><span>current</span></a></li>
+					<li class=" " id="now"><a href="<?php echo base_url();?>giaidau"><span>current</span></a></li>
 					<li class="" id="past"><a href="<?php echo base_url();?>giaidau/past"><span>past</span></a></li>
 					<li class="" id="mine"><a href="<?php echo base_url();?>dangky/dangnhap"><span>My tournaments</span></a></li>
 					<li class="" id="create"><a href="<?php echo base_url();?>dangky/dangnhap"><span>Create tournament</span></a></li>
@@ -80,3 +80,7 @@
 	<div id="sideNav"></div>
 	<div id="sideBar"></div>
 </div>
+<script type="text/javascript">
+	$('#pagetournament').addClass('active');
+	$('#past').addClass('active');
+</script>

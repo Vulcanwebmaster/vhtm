@@ -37,16 +37,7 @@ color: #333;
      $('body').addClass('shop_items  uc  noLeaderBoard root chrome, game_uc').removeClass('game_default');
     })
    </script>
-<div id="nav" class="">
-			<ul>
-				<li class="btnPlay first active"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>Home</span></a></li>
-				<li class="btnTourn"><a data-gtt="Tournaments" href="<?php echo base_url();?>giaidau" title=""><span>Tournaments</span></a></li>
-				<li class="btnCommunity"><a data-gtt="My GameTwist" href="<?php echo base_url();?>dangky/dangnhap" title=""><span>My GameTwist</span></a></li>
-				<li class="btnShop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>Shop</span></a></li>
-				<li class="btnRules"><a data-gtt="Help" href="<?php echo base_url();?>helps" title=""><span>Help</span></a></li>
-			</ul>
-			<a id="backToTop" href="#"></a>
-		</div>
+<?php $this->load->view('front/menu')?>
 	<div id="main">
 			<div id="additionalContentTop">
 				<div class="contBox" id="shopSteps">
@@ -349,3 +340,6 @@ Note: Twists are the currency used at GameTwist. They cannot be paid out as real
 				<div id="sideNav"></div>
 				<div id="sideBar"></div>
 			</div>
+<script type="text/javascript">
+	$('#pageshop').addClass('active')
+</script>
