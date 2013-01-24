@@ -450,7 +450,7 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 			        				<img src="<?php echo base_url();?>assets/trungtam-tienganh/images/twiter1.png" class="show2"/>
 			        			</a>
 			        				<div class="children">
-		        					<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @twitter</a>
+		        					<a href="<?php foreach ($list_ttlienhe as $lienhe) { echo $lienhe->twitter; }?>" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @twitter</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 									</div>
 		        			</li>
@@ -478,8 +478,8 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 			        			</a>
 			        				<div class="children">
 			        					<div id="zme-root"></div>  
-
-							<script>(function(d, s, id) {
+										<?php foreach ($list_ttlienhe as $lienhe) { echo $lienhe->zingme; }?>
+							<!--<script>(function(d, s, id) {
 							
 							          var js, fjs = d.getElementsByTagName(s)[0];
 							
@@ -492,7 +492,7 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 							          fjs.parentNode.insertBefore(js, fjs);
 							
 							           }(document, 'script', 'zingme-jssdk'));
-							 </script>
+							 </script>-->
 							 <style>
 							 	.zme-fan-box iframe{
 							 		height: 200px !important;
@@ -509,6 +509,7 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 			        				
 			        			</a>
 			        				<div class="children">
+			        					
 			        					<script type="text/javascript" src="http://api.go.vn/social-plugins/gconnect/all.min.js?v="></script>
 											<script type="text/javascript">
 											Go.commentbox({

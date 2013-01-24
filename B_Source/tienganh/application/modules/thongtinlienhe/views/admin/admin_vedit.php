@@ -41,6 +41,15 @@
 					<label>Face book</label>
 					<input type="text" name="linkface" style="width:92%" value="<?php echo $info->linkface;?>"/>
 				</fieldset>
+				<fieldset>
+					<label>Twitter</label>
+					<input type="text" name="twitter" style="width:92%" value="<?php echo $info->twitter;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Zing</label>
+					<input type="text" name="zingme" style="width:92%" value="<?php echo $info->zingme;?>"/>
+				</fieldset>
+				
 			</div>
 			<footer style="float:left">
 					<div class="submit_link">

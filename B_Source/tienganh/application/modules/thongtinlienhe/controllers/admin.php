@@ -37,6 +37,8 @@
 						 'email'=>$this->input->post('email'),
 						 'website'=>$this->input->post('website'),
 						 'linkface'=>$this->input->post('linkface'),
+						 'zingme'=>$this->input->post('zingme'),
+						 'twitter'=>$this->input->post('twitter'),
 						 );
 			return $input;
 		}
