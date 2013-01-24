@@ -768,17 +768,18 @@ body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,bod
 #so2nav .btnMobile{display:none}.statusMobile #so2nav .btnMobile{display:block}
 #so2nav .btnMobile a,#to2nav .btnMobile a{background-position:-131px top}
 #so2nav .btnMobile a:hover,#to2nav .btnMobile a:hover{background-position:-131px bottom}
-#so2nav .btnTourn a,#to2nav .btnTourn a{background-position:-4px top}#so2nav .btnTourn a:hover,#to2nav .btnTourn a:hover{background-position:-4px bottom}
+#so2nav .btnTourn a,#to2nav .btnTourn a{background-position:-4px top}
+/*#so2nav .btnTourn a:hover,#to2nav .btnTourn a:hover{background-position:-4px bottom}*/
 #so2nav .btnStats a{background-position:-31px top}#to2nav .btnStats a{background-position:-35px top}
-#so2nav .btnStats a:hover{background-position:-31px bottom}#to2nav .btnStats a:hover{background-position:-35px bottom}
+/*#so2nav .btnStats a:hover{background-position:-31px bottom}#to2nav .btnStats a:hover{background-position:-35px bottom}*/
 #so2nav .btnInfo a,#to2nav .btnInfo a{background-position:-56px top}#so2nav .btnInfo a:hover,#to2nav .btnInfo a:hover{background-position:-56px bottom}
 #so2nav .btnHelp a,#to2nav .btnHelp a{background-position:-77px top;width:97px}
-#so2nav .btnHelp a:hover,#to2nav .btnHelp a:hover{background-position:-77px bottom;width:21px}
+/*#so2nav .btnHelp a:hover,#to2nav .btnHelp a:hover{background-position:-77px bottom;width:21px}*/
 #so2nav .btnPlay a{background-position:-98px top;width:26px}#so2nav .btnPlay a:hover{background-position:-98px bottom;width:26px}
 #to2nav .btnPlay a{text-indent:0;background:url(../images/playArrow2.gif) no-repeat right 5px;text-decoration:none;color:#3CF;width:auto;_width:1px}
 #to2nav .btnPlay a span{display:block;width:24px;text-indent:-9999px}#to2nav .btnPlay a strong{font-size:12px;line-height:20px;padding-left:2px;padding-right:23px;white-space:nowrap;text-decoration:underline}
-#to2nav .btnPlay a:hover{background:url(../images/playArrow2.gif) no-repeat right -20px;text-shadow:0 -1px 1px #fff,0 1px 1px #fff,-1px 0 1px #fff,1px 0 1px #fff,1px -1px 1px #fff,-1px -1px 1px #fff,-1px 1px 1px #fff,1px 1px 1px #fff}
-#to2nav .btnPlay a:hover strong{text-decoration:none}#topGame{height:95px;top:4px;left:381px;overflow:hidden;position:absolute;width:139px}
+/*#to2nav .btnPlay a:hover{background:url(../images/playArrow2.gif) no-repeat right -20px;text-shadow:0 -1px 1px #fff,0 1px 1px #fff,-1px 0 1px #fff,1px 0 1px #fff,1px -1px 1px #fff,-1px -1px 1px #fff,-1px 1px 1px #fff,1px 1px 1px #fff}
+#to2nav .btnPlay a:hover strong{text-decoration:none}#topGame{height:95px;top:4px;left:381px;overflow:hidden;position:absolute;width:139px}*/
 #topGame h5{color:#fff;font-size:12px;line-height:21px;font-weight:bold;position:absolute;left:8px;top:11px;padding:0;margin:0;cursor:default;white-space:nowrap}
 .uc #topGame h5{text-transform:uppercase}#topGame ol{height:42px;left:22px;margin:0;overflow:visible;padding:0 0 0 30px;position:absolute;top:43px;border-left:1px solid #fff}
 #topGame ol li{line-height:15px;font-size:11px;overflow:visible;left:-26px;position:relative;top:-3px;color:#bae3ff;font-weight:bold;padding-left:11px;background:url(../images/overlaySoToolsSprite.gif) no-repeat -124px 6px}
