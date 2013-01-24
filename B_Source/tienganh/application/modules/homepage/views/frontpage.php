@@ -440,7 +440,8 @@ document.write("<script type='text/javascript' language='javascript'>MainContent
 										  js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
 										  fjs.parentNode.insertBefore(js, fjs);
 										}(document, 'script', 'facebook-jssdk'));</script>
-									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam" data-width="940" data-height="190" data-show-faces="true" data-stream="false" data-header="false"></div>
+									<div class="fb-like-box" data-href="<?php foreach ($list_ttlienhe as $lienhe) { echo $lienhe->linkface; }?>"
+										 data-width="940" data-height="190" data-show-faces="true" data-stream="false" data-header="false"></div>
 		        				</div>
 		        			</li>
 		        			<li id="li2">

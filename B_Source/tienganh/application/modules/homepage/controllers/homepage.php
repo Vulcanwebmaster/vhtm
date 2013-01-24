@@ -42,6 +42,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['list_ttlienhe']=$this->Mhomepage->getListFull('ttlienhe');
 		$data['counting']=$this->getCounting();
 		$data['lang']=$this->session->userdata("lang");
 		$data['yt_fanpage']=$this->Mhomepage->getListFull('ta_vedio_fanpage');

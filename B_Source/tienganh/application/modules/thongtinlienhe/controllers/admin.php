@@ -36,6 +36,7 @@
 						 'sdt'=>$this->input->post('sdt'),
 						 'email'=>$this->input->post('email'),
 						 'website'=>$this->input->post('website'),
+						 'linkface'=>$this->input->post('linkface'),
 						 );
 			return $input;
 		}

@@ -37,6 +37,10 @@
 					<label>Website</label>
 					<input type="text" name="website" style="width:92%" value="<?php echo $info->website;?>"/>
 				</fieldset>
+				<fieldset>
+					<label>Face book</label>
+					<input type="text" name="linkface" style="width:92%" value="<?php echo $info->linkface;?>"/>
+				</fieldset>
 			</div>
 			<footer style="float:left">
 					<div class="submit_link">
