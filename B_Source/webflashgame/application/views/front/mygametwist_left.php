@@ -17,11 +17,11 @@
 					<h4><span>My Account</span></h4>
 					<div class="container">
 						<ul>
-							<li><a href="#"><span>Twists overview</span></a></li>
-							<li><a href="#"><span>Subscription Overview</span></a></li>
-							<li><a href="#"><span>Statistics</span></a></li>
-							<li><a href="#"><span>Get Twists/Subscriptions</span></a></li>
-							<li><a href="#"><span>Voucher</span></a></li>
+							<li <?php if(isset($menuleft)){if($menuleft==5){ echo "class='active'"; }} ?>><a href="<?php echo base_url();?>mygametwist/twistsoverview"><span>Twists overview</span></a></li>
+							<li <?php if(isset($menuleft)){if($menuleft==6){ echo "class='active'"; }} ?>><a href="<?php echo base_url();?>mygametwist/subscriptionoverview"><span>Subscription Overview</span></a></li>
+							<li <?php if(isset($menuleft)){if($menuleft==7){ echo "class='active'"; }} ?>><a href="<?php echo base_url();?>mygametwist/statistics"><span>Statistics</span></a></li>
+							<li><a href="<?php echo base_url();?>shop"><span>Get Twists/Subscriptions</span></a></li>
+							<li <?php if(isset($menuleft)){if($menuleft==8){ echo "class='active'"; }} ?>><a href="<?php echo base_url();?>mygametwist/vouchers"><span>Voucher</span></a></li>
 						</ul>
 					</div>
 				</div>
