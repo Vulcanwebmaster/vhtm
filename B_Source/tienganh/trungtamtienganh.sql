@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 21, 2013 at 10:44 AM
+-- Generation Time: Jan 25, 2013 at 09:30 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -905,7 +905,35 @@ INSERT INTO `n_thongke` (`ngaythang`, `soluong`) VALUES
 ('2013-01-16', 4),
 ('2013-01-18', 7),
 ('2013-01-19', 2),
-('2013-01-21', 1);
+('2013-01-21', 1),
+('2013-01-23', 2),
+('2013-01-24', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_ttlienhe`
+--
+
+CREATE TABLE IF NOT EXISTS `n_ttlienhe` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `diachi` text COLLATE utf8_unicode_ci NOT NULL,
+  `sdt` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `website` text COLLATE utf8_unicode_ci NOT NULL,
+  `diachie` text COLLATE utf8_unicode_ci NOT NULL,
+  `linkface` text COLLATE utf8_unicode_ci NOT NULL,
+  `twitter` text COLLATE utf8_unicode_ci NOT NULL,
+  `zingme` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `n_ttlienhe`
+--
+
+INSERT INTO `n_ttlienhe` (`id`, `diachi`, `sdt`, `email`, `website`, `diachie`, `linkface`, `twitter`, `zingme`) VALUES
+(1, '<p>\r\n	<span style="color: rgb(76, 76, 76); font-family: Arial; font-size: 13px; line-height: 23px;">TRUNG TÂM TIẾNG ANH JENNIFER</span></p>\r\n<p style="margin: 0px; padding: 10px 0px 0px; color: rgb(76, 76, 76); font-family: Arial; font-size: 13px; line-height: 23px;">\r\n	Thos mas - Nguyễn Ngọc Vũ - Hà Nội</p>', '123456789', 'info@jennifer.com', 'www.jenny.edu.vn', '<p>\r\n	Office Institute JENNIFER Thos Mas - Nguyen Ngoc Vu - Ha Noi</p>\r\n', 'http://www.facebook.com/NiwVietNam', 'https://twitter.com/twitter', '<script>(function(d, s, id) { 							 							          var js, fjs = d.getElementsByTagName(s)[0]; 							 							           if (d.getElementById(id)) {return;} 							 							          js = d.createElement(s); js.id = id; 							 							          js.src = "http://static.me.zing.vn/sp/js/all-1.04.js#&appId=d713b962dbf19d2dea16124b293558d1&status=true"; 							 							          fjs.parentNode.insertBefore(js, fjs); 							 							           }(document, ''script'', ''zingme-jssdk'')); 							 </script>');
 
 -- --------------------------------------------------------
 
@@ -936,7 +964,7 @@ CREATE TABLE IF NOT EXISTS `n_users` (
 --
 
 INSERT INTO `n_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`) VALUES
-(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2013-01-21 03:21:50', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
+(1, 'admin', '0993abd18b04dce02cafde93878540f109592da5', 'admin@gmail.com', 1, 2, NULL, '2013-01-24 06:39:47', '2012-02-22 13:46:09', '2012-03-17 21:56:17'),
 (2, 'letien', '0993abd18b04dce02cafde93878540f109592da5', 'lexuantien0311@gmail.com', 1, 2, NULL, '2012-07-23 07:58:53', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
