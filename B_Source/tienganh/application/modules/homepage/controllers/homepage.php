@@ -16,24 +16,7 @@ class Homepage extends NIW_controller {
 		$this->addVisiting();
 		$this->load->library('form_validation');
 	}
-	function loadLang()
-	{
-		//session_start();
-        if(isset($_SESSION['lang'])) {
-		   $lang=$_SESSION['lang'];
-        } else {
-        	$lang = 'vn';
-		} 
-		
-        if ($lang=='vn') {
-        	$_SESSION['lang']='vn';
-			$this->lang->load('tienganh','vietnamese');
-			
-		} else {
-			$this->lang->load('tienganh','english');
-			$_SESSION['lang']='en';
-		}
-	}
+
 	
 	public function index()
 	{
