@@ -19,6 +19,7 @@ class Gioithieu extends NIW_Controller
 			$this->load->model('Mgioithieu');
 			$this->load->library('session');
 			$this->load->helper('text');
+			$this->loadLang();
 		}
 		function index()
 		{
