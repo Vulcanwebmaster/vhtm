@@ -16,6 +16,7 @@ class Khoahoc extends NIW_Controller
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			$this->load->library('pagination');
+			$this->loadLang();
 			$this->load->helper('text');
 			$this->load->model('Mkhoahoc');
 			$this->module	=	strtolower(get_class());

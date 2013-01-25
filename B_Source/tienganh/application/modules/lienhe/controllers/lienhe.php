@@ -8,6 +8,7 @@ class Lienhe extends NIW_Controller
 		$this->module=strtolower(get_class());
 		$this->load->model('Mlienhe');
 		$this->load->library('form_validation');
+		$this->loadLang();
 	}
 	
 	

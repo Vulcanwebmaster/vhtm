@@ -11,6 +11,7 @@ class Tintuc extends NIW_Controller
 			$this->load->model('Mtintuc');
 			$this->load->library('session');
 			$this->load->helper('text');
+			$this->loadLang();
 	}
 	
 	function index()

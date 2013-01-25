@@ -15,6 +15,7 @@ class Thuvien extends NIW_Controller
 			@session_start();
 			parent::__construct();
 			$this->module	=	strtolower(get_class());
+			$this->loadLang();
 			
 			$this->load->model('Mthuvienanh');
 			$this->data['list_dichvu']=$this->Mthuvienanh->getListFull('ta_dichvu');

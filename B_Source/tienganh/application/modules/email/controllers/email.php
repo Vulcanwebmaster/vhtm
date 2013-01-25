@@ -8,6 +8,7 @@ class Email extends NIW_Controller
 		$this->module=strtolower(get_class());
 		$this->load->model('Memail');
 		$this->load->library('form_validation');
+		$this->loadLang();
 	}
 	
 	
