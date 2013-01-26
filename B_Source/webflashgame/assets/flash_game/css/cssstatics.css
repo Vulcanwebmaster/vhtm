@@ -1,0 +1,1236 @@
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit}
+del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}
+legend{color:#000}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{*font-size:100%}body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small}
+select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif}
+table{font-size:inherit;font:100%}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%}
+body{margin:10px}h1{font-size:138.5%}h2{font-size:123.1%}h3{font-size:108%}
+h1,h2,h3{margin:1em 0}h1,h2,h3,h4,h5,h6,strong,dt{font-weight:bold}optgroup{font-weight:normal}
+abbr,acronym{border-bottom:1px dotted #000;cursor:help}em{font-style:italic}
+del{text-decoration:line-through}blockquote,ul,ol,dl{margin:1em}ol,ul,dl{margin-left:2em}
+ol li{list-style:decimal outside}ul li{list-style:disc outside}dl dd{margin-left:1em}
+th,td{border:1px solid #000;padding:.5em}th{font-weight:bold;text-align:center}
+caption{margin-bottom:.5em;text-align:center}sup{vertical-align:super}sub{vertical-align:sub}
+p,fieldset,table,pre{margin-bottom:1em}button,input[type="checkbox"],input[type="radio"],input[type="reset"],input[type="submit"]{padding:1px}
+body{margin:0}th{text-align:left}html{background:transparent}body{background:#f6f6f6 url(../images/backBody.jpg) repeat-x 0 0;padding:0 0 20px;font-family:Verdana,Arial,Helvetica,sans-serif;color:#333}
+body.small{background-image:url(../images/backBodyRoom.jpg)}#wrapper{width:990px;margin:auto;position:relative;background:#fff url(../images/backMain.png) repeat-y}
+.small #wrapper{background:0;width:auto}#header{height:150px;background:#f6f6f6 url(../images/backBody.jpg) repeat-x;position:relative}
+.small #header{background-position:0 -52px;height:60px}#header h1{margin:0;padding:0;border:0;height:144px;background:url(../images/backHeader.jpg) no-repeat 24px 59px}
+.small #header h1{background:url(../images/backHeaderSmall.jpg) no-repeat scroll 0 0 transparent;background-position:24px 8px;height:60px}
+#header h1 a{position:absolute;margin:0;top:77px;left:30px;outline:0;cursor:pointer;display:block;background:url(../images/logo.jpg) no-repeat}
+.rtl #header h1 a{background:url(../images/logo_beta_arabic.jpg) no-repeat}
+.small #header h1 a{height:57px;margin:0;width:170px;display:block;top:0;background:0;cursor:pointer;z-index:2000;_zoom:1}
+#header h1 span{width:190px;height:70px;display:block;text-indent:-9999px}
+.small #header h1 span{display:none}#header h2{margin:0;display:none}#presentation{height:222px;overflow:hidden;background:#f6f6f6 url(../images/backBody.jpg) repeat-x 0 -150px;position:relative}
+#presentationWrapper{width:962px;margin:auto}#favorit{background:url(../images/favorit_icon.gif) no-repeat -28px -20px #38c2df;position:absolute;width:38px;height:22px;z-index:100;border:0;margin:0;padding:0;top:355px;left:24px}
+#favorit li{background:0;left:0;padding:0;margin:0;float:left;position:absolute}
+#favorit li a{text-indent:-9999px;display:block;width:20px;height:20px;background:url(../images/favorit_icon.gif) no-repeat 3px 2px}
+#favorit .favorit a:hover{background-position:3px -20px}#favorit .home{left:24px}
+#favorit .home a{background-position:-83px 2px}#favorit .home a:hover{background-position:-83px -20px}
+#main{background:url(../images/backContentTop.jpg) no-repeat;_zoom:1;overflow:hidden;padding:54px 24px 0 24px}
+.small #main{margin-top:0;background:#fff;padding:25px;background:#fff;margin:10px 20px;border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;box-shadow:0 0 20px #E3E3E3;-moz-box-shadow:0 0 20px #E3E3E3;-webkit-box-shadow:0 0 20px #E3E3E3}
+.small #container{min-height:220px;_height:220px}body.hasSideBar #container{float:left;display:inline;width:628px;_margin-right:-3px;overflow:hidden}
+body.hasSideBar #sideBar{margin-left:628px;_margin-left:625px;_zoom:1;width:314px;overflow:hidden;position:relative}
+body.hasSideNav #container{float:left;margin-left:294px;position:relative;width:648px;_display:inline}
+body.hasSideNav #sideNav{float:left;width:294px;margin-left:-942px;position:relative}
+#sideNav h4{margin:0}#sideNav .contBox{padding-bottom:0}#sideNav .container,body.help #container .ulContainer{border-bottom:1px dotted #39c;border-top:1px dotted #39c;padding:1px 10px;overflow:hidden;zoom:1}
+body.help #container .ulContainer{background-color:#ACEAFF;clear:right;padding:1px 10px 1px 20px}
+body.help #container .ulContainer li.active a{color:#005374;font-weight:bold;text-decoration:none}
+.help #sideNav .container{border-bottom:0;padding:0 10px}.help #sideNav .opened{border-bottom:1px dotted #39c}
+#sideNav ul{margin:10px;zoom:1}#sideNav ul ul{margin:0}#sideNav ul ul li{margin-left:0}
+#sideNav a,#sideNav .active .gameElement a{padding-right:17px;color:#39C;text-decoration:underline;font-weight:normal}
+#sideNav a:hover,#sideNav .gameToggler span:hover,#sideNav .toggler:hover,#sideNav .active .gameElement a:hover{background-position:right -17px;text-decoration:none;color:#005374}
+#sideNav .active a,#sideNav .active .gameElement .active a{color:#005374;font-weight:bold;text-decoration:none}
+.gameToggler,.toggler{cursor:pointer}.small #main{position:relative}.small .ieCorner{position:absolute;height:20px;width:20px;background:transparent url(../images/ieSmallRoundedCorners.gif) 0 0 scroll no-repeat;zoom:1;clear:both}
+.small .lt{left:0;top:0;background-position:0 0}.small .lb{left:0;bottom:0;_bottom:-1px;background-position:0 -20px}
+.small .rt{right:0;_right:-1px;top:0;background-position:-20px 0}.small .rb{right:0;bottom:0;_right:-1px;_bottom:-1px;background-position:-20px -20px}
+.player_profile #wrapper{width:auto}.player_profile #main{padding:0 10px}
+#feedback a{position:fixed;*position:absolute;left:-10px;top:50%;width:49px;height:136px;margin-top:-68px;background:url(../images/feedback_btn.png);_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://static1.greentube.com/xsl_gamebase/_dev_gametwist/imgs/feedback_btn.png',sizingMethod='image');z-index:250}
+#feedback a span{display:none}#feedback a:hover{left:0}#mbCenter #mbImage{padding:20px}
+#mbImage h3{font-size:24px}#mbImage .contBox,#mbImage .contBox .container{padding:0}
+#mbImage .contBox h3{color:#F81E00;font-size:13px;padding:5px 0 0;margin-bottom:5px}
+#mbImage .navContainer{margin-top:40px;text-align:center}#mbImage .navContainer button{display:inline;float:none}
+#mbImage .navContainer #mbLandingSend{margin-right:7px}#mbImage #confirmEmailContainer form{overflow:hidden}
+#mbImage #confirmEmailContainer .formButton{margin:20px auto 0}.login #fnLoginCheckbox{padding-left:143px;*padding-left:0;*text-align:right}
+.login .left #login,.pass_recover #passRecover,.pass_reset #passReset{width:55%}
+.login #error,.pass_recover #error,.pass_recover #formOK{margin:5px 10px -10px}
+.messages #error,.shop #shopGutschein #error{margin:30px 20px 0}.stats #fnStats h3{padding-bottom:10px}
+.stats #heading h3{margin:10px 10px 0}.stats #gameStats h3{border-bottom:0}
+.stats #fnStats select{width:209px}.stats #fnStats select,.account_details #accountDetailsTable select{font-size:13px}
+.account_details #accountDetailsTable h3{padding-bottom:10px}.account_details #accountDetailsTable{padding:0 10px}
+.account_details #mySubscription{background:url(../images/box_608_blue_top.png) 10px 10px no-repeat transparent;margin:0 20px 25px 10px;width:620px}
+.account_details #mySubscription .container{background:url(../images/box_608_blue_bottom.png) no-repeat left bottom transparent;margin-bottom:-20px;padding:0}
+.account_details #mySubscription img{float:left}.account_details #mySubscription .abo{margin-left:150px;margin-top:30px}
+.account_details #mySubscription .abo p{margin-bottom:0}.account_details #mySubscription button{margin-top:15px}
+.redError{color:#f00}.lottery #sideBar .listTable thead .first{font-weight:bold}
+.infoBox #fnEmailConfirm .formTable{background:0;border:0}.infoBox #fnEmailConfirm .formTable td{background:0;border:0}
+#fnEmailConfirm .formButton{display:block;width:auto;min-width:208px}.messages #unmarkthemall{display:block;margin-top:2px}
+.checkAll,.unCheckAll,#markthemall,#unmarkthemall{margin-right:20px;background-image:url(../images/tableSprite.png);_background-image:url(../images/tableSprite.gif);background-position:-63px 0;background-repeat:no-repeat;padding-left:15px;text-decoration:none}
+.checkAll:hover,#markthemall:hover{background-position:-63px -20px}.unCheckAll,#unmarkthemall{background-position:-260px 2px}
+.unCheckAll:hover,#unmarkthemall:hover{background-position:-260px -18px}.ajax-address-spinner{background-color:#fff}
+.ajax-address-spinner .spinner-content{top:45px!important}.ajax-address-spinner .spinner-img{background:url(../images/loaderBig.gif) no-repeat 0 0;height:19px;width:220px}
+#downloadMobileGame span{*padding:2px 0}#mobileTeaserImgs{overflow:hidden;border:0 none}
+#mobileTeaserImgs li{display:inline;background:0}.settings #fnSettingsPersonal #fk_country,.settings #fnSettingsPersonal #securityQuestionTag,.settings #bankForm #bank_country{width:210px}
+body.warning_systemcheck #warningBox{text-align:center;background:url(../images/loaderBig.gif) no-repeat center bottom;margin-bottom:20px;padding-bottom:40px}
+.welcome_after_register #container #playNow{margin:50px auto 30px;display:table}
+body.ChooseTransferUserName #error{margin:10px 10px 0}body.socialGaming div#featureBoxesTop{overflow:hidden;position:absolute;top:170px}
+#featureBoxesTop{*overflow:hidden}body.socialGaming div#gamesTopGames{background:url(../images/backSocialGaming.jpg) no-repeat scroll -10px -10px transparent}html.browserUpdate body{padding-top:22px}html.browserUpdate body.noLeaderBoard{background-position:0 -18px}
+html.browserUpdate #nav.sticky{display:none!important}html.browserUpdate #peelSmall,html.browserUpdate #peelBig{padding-top:22px}
+html.browserUpdate #doiBoxContentDisabler{margin-top:22px}a{color:#39C;text-decoration:underline}h4.toggler{color:#39C;text-decoration:underline}
+a:hover,a:active,a:focus,h4.toggler:hover,h4.active{color:#005374;text-decoration:none}
+h1,h2,h3,h4,h5,h6,#catList a{color:#666;font-size:17px;font-style:italic;font-weight:bold;text-decoration:none;margin:1em 0;padding-bottom:2px}
+h1,h2,h3{border-bottom:1px dotted #39C}h3{margin:0}.login #heading h3,.pass_recover #heading h3,.pass_reset #heading h3{margin:10px 20px}
+ul{margin-left:11px}ul li{background:transparent url(../images/bullet_gametwist.png) no-repeat scroll 0 4px;list-style-type:none;padding-left:16px;margin-left:-11px}
+.formField,.captcha,select{background:#fff;width:200px;outline:0}textarea.formField{width:350px;height:200px}
+label{cursor:pointer;font-family:Verdana,Arial,Helvetica,sans-serif}.inputNames,body.content .formTable td:first-child{color:#333;text-align:right;width:150px}
+.inputDescription{color:#999}.inputDescriptionInfo{display:block;margin-top:3px;color:#999}
+.formField,input[type="text"],input[type="password"],select,textarea{background:#fff;border:1px solid #39c;padding:1px 2px;font-family:Verdana,Arial,Helvetica,sans-serif;color:#333;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
+.formField:focus,select:focus,.formError .ffInput:focus,.formOk .ffInput:focus{background:#fff;border:1px solid #91cae5}
+.error label,.formError label{color:#f00;font-weight:bold}.formError .ffInput{background:#fff2f2;border:1px solid #f00}
+.formOk label{color:#588f00;font-weight:bold}.formOk .ffInput{background-color:#fafff2;border:1px solid #588f00}
+#container tr.error td,#container tr.formError td{background-color:#FFEDEB}
+#container tr.error input,#container tr.formError input{background-color:#FFCEC7;border-color:#f00}
+.captcha{height:50px;border:1px solid #39C;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;padding:2px}
+#birthday_day,#birthday_month,#birthday_year{width:70px}#gender{margin:0}
+#gender td{text-align:left;border:0;padding:3px}#FormCheckbox{text-align:right}
+.funCurrencyContainer{background:url(../images/twist_sprite.png) no-repeat 0 0;_background:url(../images/twist_sprite.gif) no-repeat 0 0;display:inline;padding-left:20px}
+.funCurrencyContainer span{display:none}.topJackpot .funCurrencyContainer{background-position:0 3px;padding:0 5px 0 25px}
+.listRight{text-align:right}a[name="privacy"]{position:relative;top:-42px}
+u{text-decoration:none;font-weight:bold}body.mobile{background:transparent}
+body.mobile,body.mobile h1,body.mobile h2,body.mobile h3{color:#000;border-color:#000}
+}.games_details #gamesHelpNav,.games_details .gamesHelpContent{font-size:12px;margin:0;padding:0 10px 10px 10px}
+.gamesHelpContent .container{overflow:visible!important;padding:0 11px 0 15px}
+#gamesHelpNav .container{padding:0 10px 0 0}#gamesHelpNav #subLinks{clear:right;margin:0;padding:0 10px 0 20px}
+.gamesHelpContent h3{color:#39c;font-size:17px;margin:-10px 10px 31px 3px;padding:45px 0 4px}
+.gamesHelpContent .container h3{color:#39c;font-size:17px;margin:38px -1px 31px -12px;padding:0 0 4px}
+#gamesHelpNav h3{color:#39c;margin:0 0 0 3px;padding:0 0 4px}.gamesHelpContent h5,.gamesHelpContent h6.sectionHeader{border:0;color:#3A3E47;font-style:normal}
+.gamesHelpContent h4{color:#39c;font-size:17px;font-style:normal;margin:17px 0}
+.gamesHelpContent h5{font-size:15px;margin:0 0 5px;padding:0}.gamesHelpContent h6.sectionHeader{font-size:12px;margin:0 0 4px;padding:0}
+.gamesHelpContent p{margin:0 0 17px}.gamesHelpContent table,.gamesHelpContent ul,.gamesHelpContent ol{margin:1em 0}
+.gamesHelpContent ul.listingWithHeader li{margin:0 0 15px}.gamesHelpContent ul.listingWithHeader li h6{border:0;color:#3A3E47;font-size:12px;font-style:normal;margin:0}
+.gamesHelpContent div.infoBox{background:#CCF2FB;border:0;color:#193255;margin:0 14px 14px;min-height:10px;padding:5px;width:auto}
+.gamesHelpContent .listTable,.gamesHelpContent .listTableSmall,.gamesHelpContent .listTable tr,.gamesHelpContent .listTableSmall tr,.gamesHelpContent .listTable th,.gamesHelpContent .listTableSmall th,.gamesHelpContent .listTable td,.gamesHelpContent .listTableSmall td{border:none!important;border-collapse:collapse;margin:0 0 1em}
+.gamesHelpContent .listTable{width:100%}.gamesHelpContent .listTableSmall{align:left;width:auto}
+.gamesHelpContent .listTable th{background:none repeat scroll 0 0 #ACEAFF;border-bottom:1px solid #30CBFF!important;color:#333;padding-top:2px;width:20px}
+.gamesHelpContent .listTable thead .dark th,.gamesHelpContent .listTable thead .dark th.first,.gamesHelpContent .listTable thead .dark th.last,.gamesHelpContent .listTable thead .dark th:first-child,.gamesHelpContent .listTable thead .dark th:last-child,.gamesHelpContent .listTableSmall thead .dark th,.gamesHelpContent .listTableSmall thead .dark th.first,.gamesHelpContent .listTableSmall thead .dark th.last,.gamesHelpContent .listTableSmall thead .dark th:first-child,.gamesHelpContent .listTableSmall thead .dark th:last-child{background:none repeat scroll 0 0 #30CBFF;border-bottom:none!important;color:#FFF}
+.gamesHelpContent .listTable tbody>tr:nth-child(2n+1) td,.gamesHelpContent .listTableSmall tbody>tr:nth-child(2n+1) td{background-color:#E0F7FF}
+.gamesHelpContent .listTable td,.gamesHelpContent .listTable th,.gamesHelpContent .listTableSmall td,.gamesHelpContent .listTableSmall th{padding:3px 6px}
+.gamesHelpContent .listTable thead td.first,.gamesHelpContent .listTable thead td.last,.gamesHelpContent .listTable thead th.first,.gamesHelpContent .listTable thead th.last,.gamesHelpContent .formTable thead td.first,.gamesHelpContent .formTable thead td.last,.gamesHelpContent .formTable thead th.first,.gamesHelpContent .formTable thead th.last,.gamesHelpContent .listTable thead td:first-child,.gamesHelpContent .listTable thead td:last-child,.gamesHelpContent .listTable thead th:first-child,.gamesHelpContent .listTable thead th:last-child,.gamesHelpContent .formTable thead td:first-child,.gamesHelpContent .formTable thead td:last-child,.gamesHelpContent .formTable thead th:first-child,.gamesHelpContent .formTable thead th:last-child{background:none repeat scroll 0 0 #ACEAFF}
+.gamesHelpContent div.tableWrapper{overflow:hidden}.gamesHelpContent .helpPlayGame h3,.games_details #gamesHelpContent h3{padding-top:42px!important}
+.gamesHelpContent .playGames{border:medium none;clear:both;height:21px;margin:3em 0 1em;overflow:hidden}
+.games_details .gamesHelpContent .playGames li,.help .gamesHelpContent .playGames li{background:url("../../imgs/btnSprite.png") no-repeat scroll -20px -110px transparent;font-size:13px;list-style:none outside none;padding:0 0 0 5px}
+.gamesHelpContent .playGames li a{background:url("../../imgs/btnSprite.png") no-repeat scroll right -132px transparent;color:#fff;float:left;font-weight:bold;margin:0;padding:2px 5px 3px 0;text-decoration:none;text-shadow:0 0 1px #0c8ebf,0 0 3px #0c8ebf,0 0 5px #0c8ebf}
+.gamesHelpContent .playGame{float:left}.gamesHelpContent .playGames li.backToTop{background:url("../../imgs/btnSprite.png") no-repeat scroll left -351px transparent;display:block;float:right;height:21px;overflow:hidden;padding:0;width:21px}
+.gamesHelpContent .playGames li.backToTop a{background:none repeat scroll 0 0 transparent;padding:21px 0 0 1px}
+.gamesHelpContent span.contImageRight{float:right;margin:4px 0 3px 20px}.gamesHelpContent span.contImageRight img{border:5px solid #ccf2fb;margin:0 0 3px}
+.gamesHelpContent span.contImageRight span.contImageDesc,.gamesHelpContent ul.imageListing li.imageListingDesc{display:block;font-size:11px;font-style:italic;text-align:center}
+.gamesHelpContent ul.imageListing{list-style:none;margin:16px -50px 16px 0}
+.gamesHelpContent ul.imageListing li{background:0;list-style:none}.gamesHelpContent ul.imageListing li.imageListingItem{float:left;line-height:1px;margin:0 26px 7px 0;padding:0}
+.gamesHelpContent ul.imageListing li.imageListingDesc{clear:left;line-height:1.308em;padding:0 50px 0 0}
+.gamesHelpContent ul.imageListing li img{border:5px solid #ccf2fb}#doiBox{background:none repeat scroll 0 0 #FFF7D4;border-radius:10px 10px 10px 10px;-moz-border-radius:10px 10px 10px 10px;-webkit-border-radius:10px 10px 10px 10px}
+#doiBox form{padding:0}#doiBox .container{background:0}#doiBox .doiBoxBackground{background:url(../images/doiBoxBackground.png) no-repeat right bottom transparent}
+#doiBox table.formTable{margin:0}#doiBox table.formTable .checkBoxTableCell{text-align:right}
+#doiBox .inputNames,#doiBox .inputDescription{color:#b67200}#doiBox .listTable tbody,#doiBox .listTable tbody>tr td,#doiBox .formTable tbody,#doiBox .formTable tbody>tr td,#doiBox .listTable thead,#doiBox .listTable thead>tr td,#doiBox .formTable thead,#doiBox .formTable thead>tr td,#doiBox .listTable tfoot,#doiBox .listTable tfoot>tr td,#doiBox .formTable tfoot,#doiBox .formTable tfoot>tr td{background:none!important;border:none!important}
+.doiBoxEmailConfirm .container{padding:0 320px 0 0!important;width:600px}
+#doiBox.doiBoxRegister .container{min-height:140px;padding-bottom:10px}#doiBox.doiBoxEmailConfirmSent .container{padding:10px 430px 20px 10px;width:480px}
+#doiBox.doiBoxEmailConfirmSuccess h3,#doiBox.doiBoxEmailConfirmSuccess .container{background-color:#F0FFE5;border-color:#C7F5A5;color:#719F11}
+#doiBox.doiBoxEmailConfirmSuccess h3 span{background:url("../../imgs/ok.gif") no-repeat scroll 9px 5px transparent}
+#doiBox.doiBoxEmailConfirmSuccess .container{padding:10px}#doiBox.doiBoxEmailConfirmSuccess .doiBoxBackground{display:none}
+#doiBox.doiBoxRegister .container p{margin:10px 10px 10px 110px}.doiBoxRegister #doiBoxRegisterBtn{padding-left:3px;margin-top:25px}
+#doiBoxContentDisabler{background:#fff}.contBox,.container{padding:10px}.contBox .container{overflow:hidden}body.help #container .container{background-color:transparent;overflow:visible;padding:0 11px 20px 15px}
+body.help .gamesHelpContent{padding:10px 30px}body.help #container .container p{margin:10px 0}
+body.help #container .container .heading{background-color:#C1F0FF;border-top:1px dotted #39C;border-bottom:1px dotted #39C;font-weight:bold;margin:0 -10px 10px;padding:10px}
+#trust,.prizeBox,#tagCloud{width:294px;margin:0 0 20px;background:url(../images/box_294_gray_top.png) 10px 10px no-repeat;_background-image:url(../images/box_294_gray_top.gif);zoom:1}
+#trust h3,#container .prizeBox h3,#tagCloud h3{margin:0;padding:10px 10px 0 10px;border:0;color:#717171;cursor:default}
+.tournList h3{border-bottom:0}#trust .container,.prizeBox .container,#tagCloud .container{position:relative;margin-bottom:-20px;padding-bottom:0;background:url(../images/box_294_gray_footer.png) left bottom no-repeat;overflow:hidden;_background-image:url(../images/box_294_gray_footer.gif);zoom:1}
+#trust .container{background:url(../images/box_294_gray_bottom.png) no-repeat scroll left bottom transparent;padding-bottom:10px}
+#trust .trust{margin-bottom:10px;margin-left:-10px;padding:0 10px 90px;background:url(../images/privancy.png) no-repeat;background-position:3px 22px;zoom:1}
+#trust .container .footer,.prizeBox .container .footer,#tagCloud .container .footer{position:relative;bottom:10px;left:-9px;width:272px;margin:20px 0 0;_margin-right:-19px;padding:10px 10px 0;background-color:#ededed;overflow:hidden;zoom:1}
+#trust .container .footer a.more,#tagCloud .container .footer a.more{float:right;display:inline;height:20px;line-height:20px;padding-right:20px;background:url(../images/gameCat_C2A.png) no-repeat right center}
+#tagCloud h3{margin-top:0}#tagCloud ul,#tagCloud .container ul li{display:inline;margin:0;margin-left:0;border:0;background-image:none;padding-left:0}
+#tagCloud a{text-decoration:none}#tagCloud .footer a{text-decoration:underline;line-height:18px}
+#tagCloud .footer a:hover{text-decoration:none}button{border:0}.formButton{background:url(../images/btnSprite.png) 0 -110px no-repeat;color:#fff;font-size:14px;font-weight:bold;font-family:verdana;font-family:arial,helvetica,clean,sans-serif;font-style:italic;margin:0;padding:0;border:0;overflow:visible;height:22px;line-height:22px;padding-left:5px;cursor:pointer;text-shadow:0 0 2px #0C8EBF,0 0 5px #0C8EBF,0 0 10px #0C8EBF;white-space:nowrap}
+.formButton:hover{background-position:-20px -110px}.formButton span{background:url(../images/btnSprite.png) right -110px no-repeat;padding:0 35px 0 20px;height:21px;line-height:22px;display:block;position:relative}
+.firefox .formButton span{top:-1px}.ie7 .formButton span{padding-right:20px}
+.formButton span:after{font-family:arial;font-size:16px;position:absolute;top:0}
+.back_btn span:after,.delete_btn span:after{content:""}
+.back_btn span:before{content:"«";font-family:arial;font-size:16px;position:relative;top:0}
+.formButton:hover span{background-position:right -132px;text-shadow:0 0 2px #FFF,0 0 5px #FFF,0 0 10px #FFF;color:#0C8EBF}
+input.formButton,input.formButton span{background:0}a.formButton{display:table;text-decoration:none;*display:inline-block}
+body #wrapper a.formButton span{*display:inline-block;*padding:2px 10px;margin-left:5px;*padding-top:0;*padding-bottom:0}
+.firefox a.formButton span,.safari a.formButton span{top:0}.formButton[disabled],a.formButton.disabled{color:#999;text-shadow:0 0 3px #FFF;cursor:default}
+.formButton[disabled]:hover,a.formButton.disabled:hover{background-position:0 -110px}
+.formButton[disabled]:hover span,a.formButton.disabled:hover span{background-position:right -110px;text-shadow:0 0 3px #FFF;color:#999}
+#landingSend,#downloadMobileGame,.tournaments_add .formButton,.settings .formButton,.friends_invite .formButton,.register .formButton,.login .formButton,.pass_recover .formButton,.pass_reset .formButton,.community .formButton,.gamble .formButton,.unsubscribe_newsletter .formButton,#frm_b .formButton,#big_test_btn,#pickItemBtn,#playNow,#shopNextButtonActive,#email_confirm_wrapper .formButton,#interstitial .formButton,#landing .formButton,#doiBoxRegisterBtn{background:url(../images/btnSprite.png) 0 0 no-repeat;font-family:verdana;font-size:17px;height:47px;line-height:38px;padding-left:5px}
+.uc #landingSend,.uc #downloadMobileGame,.uc.tournaments_add .formButton,.uc.settings .formButton,.uc.friends_invite .formButton,.uc.register .formButton,.uc.login .formButton,.uc.pass_recover .formButton,.uc.pass_reset .formButton,.uc.community .formButton,.uc.gamble .formButton,.uc.unsubscribe_newsletter .formButton,.uc #frm_b .formButton,.uc #big_test_btn,.uc #playNow,.uc #shopNextButtonActive,.uc #email_confirm_wrapper .formButton,.uc #interstitial .formButton,.uc #landing .formButton,.uc #doiBoxRegisterBtn{text-transform:uppercase}
+#landingSend:hover,#downloadMobileGame:hover,.tournaments_add .formButton:hover,.settings .formButton:hover,.friends_invite .formButton:hover,.register .formButton:hover,.login .formButton:hover,.pass_recover .formButton:hover,.pass_reset .formButton:hover,.community .formButton:hover,.gamble .formButton:hover,.unsubscribe_newsletter .formButton:hover,#frm_b .formButton:hover,#big_test_btn:hover,#playNow:hover,#email_confirm_wrapper .formButton:hover,#landing .formButton:hover,#doiBoxRegisterBtn:hover{background-position:-20px 0}
+#landingSend span,#downloadMobileGame span,.tournaments_add .formButton span,.settings .formButton span,.friends_invite .formButton span,.register .formButton span,.login .formButton span,.pass_recover .formButton span,.pass_reset .formButton span,.community .formButton span,.gamble .formButton span,.unsubscribe_newsletter .formButton span,#frm_b .formButton span,#big_test_btn span,#pickItemBtn span,#playNow span,#shopNextButtonActive span,#email_confirm_wrapper .formButton span,#interstitial .formButton span,#landing .formButton span,#doiBoxRegisterBtn span{background:url(../images/btnSprite.png) right top no-repeat;padding:5px 35px 5px 20px;height:38px;line-height:38px}
+a#landingSend span,a#downloadMobileGame span,.tournaments_add a.formButton span,.settings a.formButton span,.friends_invite a.formButton span,.register a.formButton span,.login a.formButton span,.pass_recover a.formButton span,.pass_reset a.formButton span,.community a.formButton span,.gamble a.formButton span,.unsubscribe_newsletter a.formButton span,a#frm_b .formButton span,a#big_test_btn span,a#playNow span,a#shopNextButtonActive span,#email_confirm_wrapper a.formButton span,#interstitial a.formButton span,#landing a.formButton span,#doiBoxRegisterBtn span{*height:48px;*line-height:48px}
+.safari #landingSend span,.safari #downloadMobileGame span,.safari.tournaments_add .formButton span,.safari.settings .formButton span,.safari.friends_invite .formButton span,.safari.register .formButton span,.safari.login .formButton span,.safari.pass_recover .formButton span,.safari.pass_reset .formButton span,.safari.community .formButton span,.safari.gamble .formButton span,.safari.unsubscribe_newsletter .formButton span,.safari #frm_b .formButton span,.safari #big_test_btn span,.safari #playNow span,.safari #shopNextButtonActive span,.safari #email_confirm_wrapper .formButton span,.safari #interstitial .formButton span,.safari #landing .formButton span,.safari #doiBoxRegisterBtn span{top:0}
+#landingSend:hover span,#downloadMobileGame:hover span,.tournaments_add .formButton:hover span,.settings .formButton:hover span,.friends_invite .formButton:hover span,.register .formButton:hover span,.login .formButton:hover span,.pass_recover .formButton:hover span,.pass_reset .formButton:hover span,.community .formButton:hover span,.gamble .formButton:hover span,.unsubscribe_newsletter .formButton:hover span,#frm_b .formButton:hover span,#big_test_btn:hover span,#playNow:hover span,#email_confirm_wrapper .formButton:hover span,#landing .formButton:hover span,#doiBoxRegisterBtn:hover span{background-position:right -52px}
+#landingSend span:after,#downloadMobileGame span:after,.tournaments_add .formButton span:after,.settings .formButton span:after,.friends_invite .formButton span:after,.register .formButton span:after,.login .formButton span:after,.pass_recover .formButton span:after,.pass_reset .formButton span:after,.community .formButton span:after,.gamble .formButton span:after,.unsubscribe_newsletter .formButton span:after,#frm_b .formButton span:after,#big_test_btn span:after,#pickItemBtn span:after,#playNow span:after,#shopNextButtonActive span:after,#email_confirm_wrapper .formButton span:after,#interstitial .formButton span:after,#landing .formButton span:after,#doiBoxRegisterBtn span:after{/*content:"»"*/;font-family:arial;font-size:28px;position:absolute;top:3px}
+.ie9 #landingSend span:after,.ie9 #downloadMobileGame span:after,.ie9.tournaments_add .formButton span:after,.ie9.settings .formButton span:after,.ie9.friends_invite .formButton span:after,.ie9.register .formButton span:after,.ie9.login .formButton span:after,.ie9.pass_recover .formButton span:after,.ie9.pass_reset .formButton span:after,.ie9.shop .formButton span:after,.ie9.community .formButton span:after,.ie9.gamble .formButton span:after,.ie9.unsubscribe_newsletter .formButton span:after,.ie9 #frm_b .formButton span:after,.ie9 #big_test_btn span:after,.ie9 #playNow span:after,.ie9 #email_confirm_wrapper .formButton span:after,.ie9 #landing .formButton span:after,.ie9 #doiBoxRegisterBtn span:after{top:4px}
+.formTable .formButton{width:210px}.pinkButton,.highLight .formButton{background-position:left -273px}
+.pinkButton span,.highLight .formButton span{background-position:right -273px;text-shadow:0 0 2px #f33d7f,0 0 5px #f33d7f,0 0 10px #f33d7f}
+.pinkButton:hover,.highLight .formButton:hover{background-position:-20px -273px}
+.pinkButton:hover span,.highLight .formButton:hover span{background-position:right -295px;text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 10px #fff;color:#ef3475}
+.bigPinkButton,#pickItemBtn,#big_test_btn.bigPinkButton{background-position:left -163px}
+.bigPinkButton:hover,#pickItemBtn:hover,#big_test_btn.bigPinkButton:hover{background-position:-20px -163px}
+.bigPinkButton span,#pickItemBtn span,#big_test_btn.bigPinkButton span{background-position:right -163px;text-shadow:0 0 2px #f33d7f,0 0 5px #f33d7f,0 0 10px #f33d7f}
+.bigPinkButton:hover span,#pickItemBtn:hover span,#big_test_btn.bigPinkButton:hover span{background-position:right -215px;text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 10px #fff;color:#ef3475}
+body.rtl .formButton span:after,body.rtl #landingSend span:after,body.rtl #downloadMobileGame span:after,body.rtl .tournaments_add .formButton span:after,body.rtl .settings .formButton span:after,body.rtl .friends_invite .formButton span:after,body.rtl .register .formButton span:after,body.rtl .login .formButton span:after,body.rtl .pass_recover .formButton span:after,body.rtl .community .formButton span:after,body.rtl #frm_b .formButton span:after,body.rtl #big_test_btn span:after,body.rtl #pickItemBtn span:after,body.rtl #playNow span:after,body.rtl #shopNextButtonActive span:after,body.rtl #email_confirm_wrapper .formButton span:after,body.rtl #interstitial .formButton span:after,body.rtl #landing .formButton span:after,body.rtl #doiBoxRegisterBtn span:after{content:none}.listTable,.formTable{border:0;width:100%;max-width:900px;border-collapse:separate;*border-collapse:collapse}
+th,td,.listTable th,.formTable th,.listTable td,.formTable td{border:0;vertical-align:top;padding:6px 6px 8px}
+.listTable tbody>tr:nth-child(even) td,.listTable tbody>tr:nth-child(even) th,.formTable tbody>tr:nth-child(even) td,.formTable tbody>tr:nth-child(even) th{border:1px dotted #39c;border-left:none;border-right:0;background-color:#fff}
+.listTable tbody>tr:nth-child(odd) td,.listTable tbody>tr:nth-child(odd) th,.formTable tbody>tr:nth-child(odd) td,.formTable tbody>tr:nth-child(odd) th{border:1px solid #fff;border-left:none;border-right:0;background-color:#f0fbff}
+.listTable tr.even td,.listTable tr.even th,.formTable tr.even td,.formTable tr.even th{border-bottom:1px dotted #39c;background:#fff}
+.listTable tr.odd td,.listTable tr.odd th,.formTable tr.odd td,.formTable tr.odd th{border-bottom:1px dotted #39c;background-color:#f0fbff}
+.listTable thead td,.listTable thead th,.formTable thead td,.formTable thead th{border:1px dotted #39C;border-width:0 0 1px}
+.listTable tfoot,.formTable tfoot,.listTable thead,.formTable thead{height:10px;background-color:#C1F0FF}
+.listTable thead td.first,.listTable thead th.first,.formTable thead td.first,.formTable thead th.first,.listTable thead td:first-child,.listTable thead th:first-child,.formTable thead td:first-child,.formTable thead th:first-child{background:url(../images/blueCornerTopLeft.gif) no-repeat left top #C1F0FF}
+.listTable thead td:last-child,.listTable thead th:last-child,.formTable thead td:last-child,.formTable thead th:last-child{background:url(../images/blueCornerTopRight.gif) no-repeat right top #C1F0FF}
+.listTable tfoot td.first,.listTable tfoot th.first,.formTable tfoot td.first,.formTable tfoot th.first,.listTable tfoot td:first-child,.listTable tfoot th:first-child,.formTable tfoot td:first-child,.formTable tfoot th:first-child{background:url(../images/blueCornerBottomLeft.gif) no-repeat left bottom #C1F0FF}
+.listTable tfoot td:last-child,.listTable tfoot th:last-child,.formTable tfoot td:last-child,.formTable tfoot th:last-child{background:url(../images/blueCornerBottomRight.gif) no-repeat right bottom #C1F0FF}
+.listTable thead td.last,.listTable thead th.last,.formTable thead td.last,.formTable thead th.last{background:url(../images/blueCornerTopRight.gif) no-repeat right top #C1F0FF}
+.listTable tfoot td.last,.listTable tfoot th.last,.formTable tfoot td.last,.formTable tfoot th.last{background:url(../images/blueCornerBottomRight.gif) no-repeat right bottom #C1F0FF}
+.listTable tbody td.first,.listTable tbody th.first,.formTable tbody td.first,.formTable tbody th.first,.listTable tbody td.last,.listTable tbody th.last,.formTable tbody td.last,.formTable tbody th.last{background-image:none}.tipBox{color:#39c}.infoBox,#tipContainer{color:#b67200}.successBox,#formOk,#formOK{color:#719f11}
+.errorBox,#error{color:#f00}.tipBox h3,.infoBox h3,.errorBox h3,#error h3,#formOk h3,#formOK h3,#formOk h2,#formOK h2,#tipContainer h3{height:auto;margin:0;line-height:22px;background-color:#f0fbff;border:1px solid #c1f0ff;border-bottom-style:dotted;-moz-border-radius-topright:10px;-moz-border-radius-topleft:10px;-webkit-border-top-right-radius:10px;-webkit-border-top-left-radius:10px;border-top-right-radius:10px;border-top-left-radius:10px}
+.infoBox h3,#tipContainer h3{color:#b67200;border-color:#ffe67a;background-color:#fff7d4}
+.successBox h3,#formOk h3,#formOK h3,#formOk h2,#formOK h2{color:#719f11;border-color:#c7f5a5;background-color:#f0ffe5}
+.errorBox h3,#error h3,body.help #container .errorBox h3,body.help #container #error h3{border-color:#ffcec7;color:#f00;background-color:#ffedeb;margin:0}
+.tipBox h3 span,.infoBox h3 span,.errorBox h3 span,#error h3 span,#formOk h3 span,#formOK h3 span,#formOk h2 span,#formOK h2 span,#tipContainer h3 span{padding:5px 10px;display:block}
+.infoBox h3 span,#tipContainer h3 span{padding-left:42px;background:url(../images/tip.gif?v=2) no-repeat 8px 5px}
+.successBox h3 span,#formOk h3 span,#formOK h3 span,#formOk h2 span,#formOK h2 span{padding-left:42px;background:url(../images/ok.gif?v=2) no-repeat 9px 5px}
+.errorBox h3 span,#error h3 span{padding-left:42px;background:url(../images/error.gif?v=2) no-repeat 11px 5px}
+.tipBox div.container,.infoBox div.container,.errorBox div.container,#error div.container,#formOk div.container,#formOK div.container,#tipContainer div.container{border:1px solid #c1f0ff;border-top:0;background-color:#f0fbff;padding:0;overflow:hidden;-moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-bottom-left-radius:10px}
+.infoBox div.container,#tipContainer div.container{border-color:#ffe67a;background-color:#fff7d4}
+.successBox div.container,#formOk div.container,#formOK div.container{border-color:#c7f5a5;background-color:#f0ffe5}
+.errorBox div.container,#error div.container,body.help #error div.container,body.help .errorBox div.container{border-color:#ffcec7;background-color:#ffedeb}
+.tipBox p,.infoBox p,.successBox p,.errorBox p,#error p,#formOk p,#formOK p,#tipContainer p{margin:10px}
+.tipBox .next{text-align:right}.tipBox ul,.infoBox ul,.errorBox ul,#error ul,#formOk ul,#formOK ul,#tipContainer ul{padding:0;margin-left:25px;overflow:visible}
+.tipBox ul{border-color:#39c}.infoBox ul,#tipContainer ul{border-color:#b67200}
+.errorBox ul,#error ul{border-color:#ffcec7}.successBox ul,#formOk ul,#formOK ul{border-color:#c7f5a5}
+.tipBox ul li{background-image:url(../images/bulletTip.png)}.infoBox ul li,#tipContainer ul li{background-image:url(../images/bulletYellow.gif)}
+.errorBox ul li,#error ul li{background-image:url(../images/bulletRed.gif)}
+.successBox ul li,#formOk ul li,#formOK ul li{background-image:url(../images/bulletGreen.gif)}ul.paging{overflow:hidden;margin:0;_zoom:0}.paging ol{list-style-type:none;display:inline;float:left;margin:0}
+.paging li{display:inline;float:left;background-image:none;list-style-type:none;padding:0;margin:0}
+.paging a{float:left;display:inline;width:20px;height:20px;text-indent:-9999px;outline:0}
+.paging ol a{background-position:-67px top;background-image:url(../images/gameCat_NavSprite.png);width:18px;height:17px;margin-right:2px;padding:8px 0}
+.paging ol a:hover,.paging ol a:focus{background-position:-67px center}.paging ol .active a{background-position:-87px bottom}
+.paging ol .active a:hover,.paging ol .active a:focus{background-position:-87px center}
+.paging .prev a,.paging .prev.inactive{background-position:-38px top;background-image:url(../images/gameCat_NavSprite.png);padding:5px 0;width:22px;height:23px}
+.paging .prev{background-position:-5px top!important;margin-right:7px}.paging .prev a:hover,.paging .prev a:focus{background-position:-38px center}
+.paging .prev a.active{background-position:-38px bottom}.paging .inactive a{display:none}
+.paging .prev.inactive a:hover,.paging .prev.inactive a:focus{background-position:-5px center}
+.paging .next{background-image:none;margin-left:5px}.paging .next a,.paging .next.inactive{background-position:-111px top;background-image:url(../images/gameCat_NavSprite.png);padding:5px 0;width:22px;height:23px}
+.paging .next a:hover,.paging .next a:focus{background-position:-111px center}
+.paging .next a.active{background-position:-111px bottom}.paging .next.inactive{background-position:-144px top}
+.paging .next.inactive a:hover,.paging .next.inactive a:focus{background-position:-144px center}
+.paging .showAll a,span.showAll a{position:absolute;left:auto;top:8px;right:0;text-indent:0;width:auto;background:url(../images/gameCat_C2A.png) center right no-repeat;padding-right:15px;white-space:nowrap;font-size:10px;line-height:16px}
+#wrapper .gameCat .paging li.showAll{position:static}span.showAll{top:auto;bottom:23px;right:20px}
+body.games ul.paging{width:440px;margin-left:0;padding-left:10px;background:url(../images/gameCat_Back.jpg?v=2) no-repeat -10px -253px;bottom:0}
+.gameCat ul.paging{position:absolute}#friendsList .thPaging,#friendsList .container ul.paging{position:static;width:100%;padding:0}
+#friendsList ul.paging{background:#EDEDED;border-bottom:1px solid #D2D2D2;border-top:1px solid #FFF}
+#friendsList .thPaging .paging .prev{margin-left:5px}.games .contBox span.showAll{position:absolute;bottom:38px;right:auto;left:15px}
+.games .contBox span.showAll a{position:absolute;bottom:auto;right:auto;left:auto;font-size:13px;background-position:right 6px}.featureBox,.featureBox .container,.featureBox .container a,.featureBox .transparent,.featureBox .playnow,.featureBox .playnowSideBar{position:relative;display:block;width:314px;height:204px;margin:0;padding:0;top:0;left:0}
+.featureBox{overflow:hidden}.hasSideBar .featureBox,.games .featureBox{padding:0}
+.games .featureBox{float:left}#main .featureBox h3,#sideBar .featureBox h3{border-bottom:0;margin:0;padding:0;position:absolute;white-space:nowrap;word-spacing:-2px;font-size:15px;width:290px;overflow:hidden;left:12px;z-index:15;top:12px}
+.featureBox h3 a{text-decoration:none;display:block;position:relative;cursor:pointer;outline:0;overflow:hidden}
+.featureBox h3 a span,.featureBox h3 .fakeLink span{position:relative;display:block;padding:111px 0 42px;margin:0 6px;overflow:hidden;font-style:normal}
+.featureBox .img,.featureBox .logo{width:278px;height:100px;position:absolute;background-position:50% 50%;background-repeat:no-repeat;zoom:1}
+.featureBox .logo{width:220px;margin:0 29px}.featureBox .transparent{position:absolute;width:314px;height:194px}
+.featureBox .desc{margin:40px 0 0;margin:0;padding:43px 0 0;width:278px;left:18px;position:relative;height:32px;overflow:hidden;cursor:default}
+.featureBox .next{margin:0;position:absolute;bottom:30px;right:24px;float:right;font-size:10px;display:none}
+.featureBox .container p a{text-decoration:underline;background:transparent url(../images/go.gif) no-repeat scroll right 2px;display:inline;padding-right:18px;text-decoration:underline;outline:0}
+.featureBox .container p a:hover{background-position:right -20px}.featureBox .backgroundColor{width:278px;height:100px;position:relative;top:18px;left:18px}
+.featureBox .featureStatus{display:none!important}.statusTourn .featureStatus,.statusNew .featureStatus,.statusUpdate .featureStatus,.statusBeta .featureStatus,.statusSkill7 .featureStatus,.statusMobile .featureStatus,.statusSlot .featureStatus{display:block!important;width:700px;height:330px;top:-2px;position:absolute;z-index:10;background-repeat:no-repeat}
+.statusTourn .featureStatus{left:-2px;clip:rect(0px 130px 130px 0)}.statusNew .featureStatus{left:-148px;clip:rect(0px 280px 130px 150px)}
+.statusUpdate .featureStatus{left:-298px;clip:rect(0px 430px 130px 300px)}
+.statusBeta .featureStatus{left:-448px;clip:rect(0px 550px 130px 450px)}.statusMobile .featureStatus{left:-568px;clip:rect(0px 700px 130px 550px)}
+.statusSkill7 .featureStatus{width:127px;height:41px;left:2px;top:2px}.statusSlot .featureStatus{width:130px;height:130px;left:-2px;top:-2px}.so1_medium,.so1_medium .so1_container,.so1_medium ul,.so1_medium ul li,.so1_medium ul li a,.so1_medium .gameLogo,.so1_medium .border,.so1_medium .link,.so1_medium .status,.so1_small,.so1_small .so1_container,.so1_small ul,.so1_small ul li,.so1_small ul li a,.so1_small .gameLogo,.so1_small .border,.so1_small .link,.so1_small .status{position:absolute;display:block;width:157px;height:105px;margin:0;padding:0;left:0}
+.so1_medium,.so1_small{position:relative;height:118px;float:left;overflow:hidden}
+.so1_medium h4,.so1_small h4{position:absolute;padding:0;margin:0;left:10px;top:90px;font-size:10px;word-spacing:1px;z-index:20;font-style:normal}
+.so1_medium .so1_container,.so1_small .so1_container{top:16px;left:16px;width:125px;height:65px}
+.so1_medium .gameLogo,.so1_small .gameLogo{top:0;left:0;width:137px;height:77px}
+.so1_medium ul,.so1_small ul{top:-6px;left:-6px;width:137px;height:77px;overflow:visible}
+.so1_medium ul li,.so1_small ul li{width:137px;height:77px}.so1_medium .border,.so1_small .border{width:157px;height:97px;z-index:1;top:-10px;left:-10px;clip:rect(10px 147px 87px 10px)}
+.so1_medium ul li a,.so1_small ul li a{top:0;left:0;width:137px;height:77px;outline:0;z-index:16;font-weight:bold;text-decoration:none;text-align:center;color:#fff;font-size:12px;line-height:12px;text-shadow:#157BBC 1px 1px 3px,#015b93 0 0 5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;-moz-box-shadow:0 1px 3px #bbb;-webkit-box-shadow:0 1px 3px #bbb;box-shadow:0 1px 3px #bbb}
+.so1_medium ul li a span.c2a,.so1_small ul li a span.c2a{filter:progid:DXImageTransform.Microsoft.Glow(Color=#2b76ad,Strength=2);margin-left:-2px\9}
+.ie9 .so1_medium ul li a span.c2a,.ie9 .so1_small ul li a span.c2a{filter:none;margin-left:0}
+.uc .so1_medium ul li a,.uc .so1_small ul li a{text-transform:uppercase}.so1_medium ul li a:hover,.so1_small ul li a:hover{color:#fff;text-decoration:none;background-color:transparent;cursor:pointer}
+.so1_medium ul li a span,.so1_small ul li a span,.randomGame .so1_container a{display:block;text-indent:-9999px;overflow:hidden;height:32px;padding-top:45px}
+.so1_small ul li a span{height:21px;padding-top:32px}.so1_medium ul li a:hover span,.so1_medium ul li a.hover span,.so1_small ul li a:hover span,.so1_small ul li a.hover span{text-indent:0}
+.so1_medium ul li .link,.so1_small ul li .link{width:269px;height:133px;clip:rect(0px 147px 20px 10px);text-indent:0;top:51px;left:-10px}
+.so1_medium ul li a:hover .link,.so1_medium ul li a.hover .link,.so1_small ul li a:hover .link,.so1_small ul li a.hover .link{top:-46px;left:-10px;clip:rect(46px 147px 123px 10px)}
+.so1_medium dl,.so1_small dl{margin:0;z-index:2;position:relative}.so1_medium dd,.so1_small dd{color:#333;display:block;position:absolute;font-size:9px;font-weight:bold;padding:0;margin:0;right:-1px;top:-1px;cursor:default;width:27px;text-align:right}
+.so1_medium dt span,.so1_small dt span{display:block;position:absolute;top:0;right:25px;text-indent:-9999px;width:10px;height:11px;line-height:11px;background:transparent url(../images/gameSO1_PlayerIcon.png) no-repeat -3px -3px;*background:0}
+.so1_medium .so1Tourn,.so1_medium p,.so1_small .so1Tourn,.so1_small p{display:none}
+.so1_medium .status,.so1_small .status{display:none;text-indent:0;top:1000px}
+.statusTourn .status,.statusNew .status,.statusUpdate .status,.statusBeta .status{display:block;width:600px;height:330px;top:-160px;margin-left:-11px;z-index:10}
+.statusTourn .status{left:1px;clip:rect(150px 75px 195px 0)}.statusNew .status{left:-74px;clip:rect(150px 150px 195px 75px)}
+.statusUpdate .status{left:-149px;clip:rect(150px 225px 195 150px)}.statusBeta .status{left:-224px;clip:rect(150px 300px 195 225px)}
+.so1_medium .room:hover{background:transparent}.so1_small .so1_container,.so1_small ul,.so1_small ul li,.so1_small ul li a,.so1_small .so1Status{width:112px;height:64px;margin:0}
+.so1_small{width:112px;height:95px;margin:0;top:0;left:0}.so1_small h4{margin:0;left:5px;top:60px;width:102px}
+.so1_small .so1_container{left:10px;top:10px;width:92px;height:44px}.so1_small ul li a{top:0;left:0;font-size:10px;line-height:10px;width:102px;height:54px;z-index:20!important}
+.so1_small ul li a .link{position:absolute;width:269px;height:133px;top:24px;left:-162px;clip:rect(0px 263px 29px 163px)}
+.so1_small ul li a:hover .link,.so1_small ul li a.hover .link{clip:rect(42px 263px 94px 163px);top:-41px;left:-162px}
+.so1_small ul,.gameCat .container .so1_small ul{top:-5px;left:-5px;width:102px;height:54px;overflow:visible}
+.so1_small ul li,.gameCat .container .so1_small ul li{float:none;width:102px;height:54px;overflow:visible}
+.so1_small .border,.gameCat .container .so1_small .border{width:112px;height:64px;top:-5px;left:-5px;clip:rect(5px 107px 59px 5px)}
+.so1_small .gameLogo{top:0;left:0;width:102px;height:1080px}.so1_small .pos_1{top:0;clip:rect(0px 102px 54px 0)}
+.so1_small .pos_2{top:-54px;clip:rect(54px 102px 108px 0)}.so1_small .pos_3{top:-108px;clip:rect(108px 102px 162px 0)}
+.so1_small .pos_4{top:-162px;clip:rect(162px 102px 216px 0)}.so1_small .pos_5{top:-216px;clip:rect(216px 102px 270px 0)}
+.so1_small .pos_6{top:-270px;clip:rect(270px 102px 324px 0)}.so1_small .pos_7{top:-324px;clip:rect(324px 102px 378px 0)}
+.so1_small .pos_8{top:-378px;clip:rect(378px 102px 432px 0)}.so1_small .pos_9{top:-432px;clip:rect(432px 102px 486px 0)}
+.so1_small .pos_10{top:-486px;clip:rect(486px 102px 540px 0)}.so1_small .pos_11{top:-540px;clip:rect(540px 102px 594px 0)}
+.so1_small .pos_12{top:-594px;clip:rect(594px 102px 648px 0)}.so1_small .pos_13{top:-648px;clip:rect(648px 102px 702px 0)}
+.so1_small .pos_14{top:-702px;clip:rect(702px 102px 756px 0)}.so1_small .pos_15{top:-756px;clip:rect(756px 102px 810px 0)}
+.so1_small .pos_16{top:-810px;clip:rect(810px 102px 864px 0)}.so1_small .pos_17{top:-864px;clip:rect(864px 102px 918px 0)}
+.so1_small .pos_18{top:-918px;clip:rect(918px 102px 972px 0)}.so1_small .pos_19{top:-972px;clip:rect(972px 102px 1026px 0)}
+.so1_small .pos_0{top:-1026px;clip:rect(1026px 102px 1080px 0)}.so1_small dd{font-size:7px;height:7px;line-height:7px;right:-1px;top:-2px}
+.so1_small dt span{right:15px;top:-2px}.so1_small p{display:none}.so1_small .statusTourn .so1Status,.so1_small .statusNew .so1Status,.so1_small .statusUpdate .so1Status,.so1_small .statusBeta .so1Status{width:50px;height:50px;top:0;left:0;margin-left:-5px;margin-top:5px}
+.so1_small .statusNew .so1Status{background-position:-350px -150px}.so1_small .statusUpdate .so1Status{background-position:-400px -150px}
+.so1_small .statusBeta .so1Status{background-position:-450px -150px}.statusTourn .status,.statusNew .status,.statusUpdate .status,.statusBeta .status,.statusMobile .status{width:600px;width:700px;height:330px;position:absolute;top:-160px;margin-left:-11px;zoom:1}
+.statusTourn .status{left:1px;clip:rect(150px 75px 225px 0)}.statusNew .status{left:-74px;clip:rect(150px 150px 225px 75px)}
+.statusUpdate .status{left:-149px;clip:rect(150px 225px 225px 150px)}.statusBeta .status{left:-224px;clip:rect(150px 300px 225px 225px)}
+.statusMobile .status{left:-544px;clip:rect(150px 590px 225px 550px)}.so1_small.statusTourn .status,.so1_small.statusNew .status,.so1_small.statusUpdate .status,.so1_small.statusBeta .status,.so1_small.statusMobile .status{margin-left:-5px;margin-top:5px}
+.so1_small.statusTourn .status{left:-300px;clip:rect(150px 350px 205px 300px)}
+.so1_small.statusNew .status{left:-350px;clip:rect(150px 400px 205px 350px)}
+.so1_small.statusUpdate .status{left:-400px;clip:rect(150px 450px 205px 400px)}
+.so1_small.statusBeta .status{left:-450px;clip:rect(150px 500px 205px 450px)}
+.so1_small.statusMobile .status{left:-500px;top:-155px;clip:rect(150px 550px 205px 500px);margin-left:-6px;margin-top:0}.categories{overflow:hidden;margin:0 -10px;zoom:1}.gameCat{width:461px;height:277px;background:url(../images/gameCat_Back.jpg?v=2) no-repeat -10px -10px;position:relative;float:left;padding:0;margin:10px;_margin:10px 5px;overflow:hidden}
+.gameCat h3,.gameCat h2,.gameCatSort,.gameCat .container{position:absolute;display:block;padding:0}
+.gameCat h3,.gameCat h2{margin:0;left:12px;top:16px;height:22px;overflow:hidden;border:0}
+.gameCat h3 a,.gameCat h2 a{display:block;color:#666;text-decoration:none}
+.gameCat:hover h2 a{text-decoration:underline}.gameCat .container{left:7px;top:39px;padding-top:12px;width:448px;height:187px;overflow-x:hidden;overflow-y:hidden}
+.static .gameCat .container{overflow-x:scroll}.gameCat .container ul{height:187px;width:880px;margin:0;border-left:none}
+.gameCat .container li{width:112px;height:91px;float:left;position:relative;left:0;background:0;padding:0;margin:0}
+.gameCat .container .gamePos0{margin-left:-448px}.gameCat .container .gamePos1{margin-left:-336px}
+.gameCat .container .gamePos2{margin-left:-224px}.gameCat .container .gamePos3{margin-left:-112px}
+.gameCat .container .gamePos0,.gameCat .container .gamePos1,.gameCat .container .gamePos2,.gameCat .container .gamePos3{margin-top:91px}.gameList,#gamesTopGames,#gamesTopGames .container{margin:0;padding:0;border-left:none;background:0}
+.gameList ul{margin:0;border-left:none}.gameList li{background:0;padding:0;margin:0;display:inline}
+#gamesTopGames{background:url(../images/backTopGames.jpg?v=2) no-repeat -10px -10px;overflow:hidden;position:relative;clear:both;zoom:1;margin:0 0 10px}
+#gamesTopGames .container{padding:0 0 6px;overflow:hidden;zoom:1}#gamesTopGames h3{color:#fff;line-height:28px;top:4px;left:12px;border:0;position:absolute}
+body.uc #gamesTopGames h3{text-transform:capitalize}#gamesTopGames .topGamesDesc{left:12px;position:absolute;top:42px;width:137px;height:70px}
+#gamesTopGames .firstChild{margin-left:157px;_margin-left:78px}#sideBar div.gameList{padding:10px}
+#sideBar ul.gameList,#sideBar .gameList .container{overflow:visible}#sideBar .gameList p{margin:0 -10px 20px}
+#sideBar .gameList ul.gameList{margin:-20px}#xhrRanking,#xhrRanking .container{padding-top:0}#xhrRanking h3{display:none}
+.pageingTable,#ranking table{width:100%;font-size:11px;color:#717171}.pageingTable{margin:0}
+.pageingLinks{padding:0 2px}#pageingTableCount{text-align:center}#ranking table{border-top:1px dotted #717171;border-bottom:1px dotted #717171;border-collapse:separate}
+#ranking select{width:auto;margin-right:10px}#ranking button{font-size:14px!important}
+#rankingList .searchResult td{background-color:#7FFA7F}#rankingList .first{text-align:right}
+#rankingList .last{display:table-cell;float:none}#rankingList .strength{text-align:center;padding:2px;vertical-align:middle}
+#rankingList .strength strong{display:block;padding:0 10px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px}
+.rank_stats{text-align:center}#tournRanking .dark td{*background-color:#F0FBFF}
+#tournRanking .container{padding:10px 0}.barCol{background:#3CF;border-right:1px solid #39C;height:14px;overflow:hidden;-moz-box-shadow:0 8px 15px #DAF3FA inset;-webkit-box-shadow:0 8px 15px #DAF3FA inset;box-shadow:0 8px 15px #DAF3FA inset;-moz-border-radius-topleft:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:10px;border-bottom-left-radius:10px;-webkit-border-top-left-radius:10px;-webkit-border-bottom-left-radius:10px}
+.barAdd{background-color:#060;border-right:1px solid #090;overflow:hidden;-moz-box-shadow:0 8px 15px #9F0 inset;-webkit-box-shadow:0 8px 15px #9F0 inset;box-shadow:0 8px 15px #9F0 inset;-moz-border-radius-topleft:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:10px;border-bottom-left-radius:10px;-webkit-border-top-left-radius:10px;-webkit-border-bottom-left-radius:10px}
+.barRem{background-color:#600;border-right:1px solid #f00;overflow:hidden;-moz-box-shadow:0 8px 15px #F60 inset;-webkit-box-shadow:0 8px 15px #F60 inset;box-shadow:0 8px 15px #F60 inset;-moz-border-radius-topleft:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:10px;border-bottom-left-radius:10px;-webkit-border-top-left-radius:10px;-webkit-border-bottom-left-radius:10px}
+.barBack{background-color:#fff;border:1px solid #39C;overflow:hidden;-moz-box-shadow:0 0 5px #ccc,10px 5px 10px #C1F0FF inset;-webkit-box-shadow:0 0 5px #ccc,10px 5px 10px #C1F0FF inset;box-shadow:0 0 5px #ccc,10px 5px 10px #C1F0FF inset;-moz-border-radius:10px;border-radius:10px;-webkit-border-radius:10px;padding-right:10px}#status{position:absolute;left:14px;top:5px;font-size:10px;z-index:100}#status ul{margin:0;border-left:none}
+#status li{background:0}#status a{text-decoration:none;color:#3cf;outline:0}
+#status .formTable,#status .formTable tr,#status .formTable th,#status .formTable td{background:transparent;border-collapse:collapse;border:0;padding:0}
+#status .formTable{width:232px;position:relative}#status label{color:#3cf;padding:0 3px;position:relative;top:-2px}
+#status .nick label,#status .pass label{display:none;width:110px}#lNick,#lPass{border:1px solid #d0d0d0;padding:0 2px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;margin:0 0 5px;width:110px;*margin:-1px 0 4px;font-size:11px;height:13px}
+#lPass{width:80px;-moz-border-radius-topright:0;-moz-border-radius-bottomright:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-right-radius:0;border-top-right-radius:0;border-bottom-right-radius:0}
+#status .overTxtLabel{color:#333;font-size:11px;background:#fff;padding:0;top:1px;line-height:120%!important}
+#status .login{background:#32CBFE url(../images/btnSprite.png) no-repeat scroll right -326px;font-size:10px;position:absolute;right:116px;top:20px;width:70px!ie;height:15px;z-index:1111;cursor:pointer;color:#fff;font-weight:bold;padding:0 2px 2px;line-height:15px;font-size:11px;white-space:nowrap}
+#status #autoLoginContainer{position:absolute;padding:0;left:0;top:41px}#status .logged_in{width:230px}
+#status .logged_in ul{margin:0;text-align:right;margin-bottom:5px;top:22px;width:230px}
+#status .logged_in ul li{display:inline;text-align:right;padding:0;margin:0;background:0}
+#status .logged_in ul .logout{position:absolute;top:40px;left:-4px}#status .logged_in .twists{float:left}
+#status .logged_in .twists a{color:#FFF;font-size:10px;font-weight:bold}#status .logged_in .friends a{background:transparent url(../images/statusSprite.png) no-repeat scroll -6px -2px;_background-image:url(../images/statusSprite_ie6.gif);padding:0 3px 0 11px;color:#00c400;height:12px;zoom:1;vertical-align:top;display:inline-block}
+#status .logged_in .friends a:hover{color:#fff;background-position:-6px -32px}
+#status .logged_in .friendsOnline a{background-position:-6px -17px}#status .logged_in .friendsOnline a #dropDownArrow{background:transparent url(../images/statusSprite.png) no-repeat scroll -277px -2px;_background-image:url(../images/statusSprite_ie6.gif);display:inline-block;width:9px;height:12px;vertical-align:top;margin-left:2px}
+#status .logged_in .messages{margin-right:4px}#status .logged_in .messages a{background:transparent url(../images/statusSprite.png) no-repeat scroll -94px -2px;_background-image:url(../images/statusSprite_ie6.gif);border-left:1px solid #3cf;display:inline;height:12px;padding-left:18px;zoom:1;vertical-align:top;display:inline-block}
+#status .logged_in .messages a span,#status .logged_in .friends a span{margin-left:5px;display:none}
+#status .logged_in .messages a #newMsgCounter{display:inline}#status .logged_in .friendsOnline a #dropDownArrow{display:inline;padding-right:10px}
+#status .logged_in .messages a:hover{color:#fff;background-position:-94px -17px}
+#status .logged_in .settings a{background:transparent url(../images/statusSprite.png) no-repeat scroll -208px -2px;_background-image:url(../images/statusSprite_ie6.gif);height:12px;width:22px;border-left:1px solid #3cf;zoom:1;vertical-align:top;display:-moz-inline-block;display:inline-block}
+#status .logged_in .settings a:hover{background-position:-208px -17px}#status .logged_in .settings span{display:none}
+#status #walkthroughLink{position:absolute;right:165px;top:3px;text-align:right;display:none}
+#status #walkthroughLink a{color:#fff;font-size:11px;font-weight:bold;text-shadow:0 0 2px #0C8EBF,0 0 4px #0C8EBF,0 0 6px #0C8EBF;text-decoration:underline}
+#status .logout button{cursor:pointer;border:0;padding:0 0 0 4px;margin:0;width:auto;overflow:visible;white-space:nowrap;height:16px;line-height:16px;background:transparent url(../images/btnSprite.png) no-repeat scroll left -325px}
+#status .logout button span{text-align:center;display:block;height:16px;line-height:16px;margin:0;color:#fff;padding:0 5px 0 2px;background:transparent url(../images/btnSprite.png) no-repeat scroll right -325px;font-size:10px;font-style:normal;font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;font-weight:bold}
+.firefox #status .logout button span{top:-1px;margin-left:-4px;position:relative}
+.uc #status .logout button span{text-transform:uppercase}#status .passRecover a{display:block;left:119px;position:absolute;top:1px}
+#status .passRecover a:hover{text-decoration:underline;color:#fff}#status .logged_in h5{width:100%;background:transparent url(../images/statusSprite.png) repeat-x scroll 0 19px;_background-image:url(../images/statusSprite_ie6.gif);height:20px;line-height:20px;margin:0 0 3px;padding:0}
+#status .nick{color:#fff;font-size:11px}#status .register a{background:url(../images/btnRegister.png) no-repeat scroll 0 0;color:#fff;display:block;height:32px;left:120px;position:absolute;top:22px;width:99px;padding:8px 0 0 8px;text-align:center;cursor:pointer}
+#status .register a:hover{text-decoration:underline}#autoLoginContainer,#autoLoginContainer .container{padding:0;z-index:100}
+#languages{background-color:#0688AA;color:#FFF;right:5px;margin:0;position:absolute;top:-1px;overflow:hidden;height:20px;z-index:1112;display:none;padding-left:5px;-moz-border-radius-bottomleft:5px;-moz-border-radius-bottomright:5px;-webkit-border-radius-bottom-left:5px;-webkit-border-radius-bottom-right:5px;border-bottom-left-radius:5px;border-bottom-right-radius:5px}
+#languages li,#languages a,#languages span{line-height:12px;height:12px}#languages li{height:18px;padding:0;margin:0;background:0}
+#languages .active a{background:transparent url(../images/arrowDown.png) no-repeat scroll right 8px}
+#languages .active a:hover{background-color:transparent}#languages a{display:block;padding:2px 0;color:#fff;white-space:nowrap}
+#languages a:hover{background-color:#017BA0}#languages a:hover span{text-decoration:underline}
+#languages span{position:relative;padding-left:20px}#languages .active span{background:url(../images/languagebar_gametwist.png) top left no-repeat;height:16px;line-height:16px}
+#friendsOnlineBox{display:none;position:absolute;top:37px;left:10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-shadow:0 0 6px #444;-webkit-box-shadow:0 0 6px #444;box-shadow:0 0 6px #444;background-color:#fff}
+#friendsOnlineBox h4{margin:0;padding:0 0 4px 0;border:0 none;border-bottom:1px dotted #39c;color:#000;font-size:12px}
+#friendsOnlineBox table{width:200px}#friendsOnlineBox td{padding:4px 0;border:0 none;border-bottom:1px dotted #39c}
+#friendsOnlineBox td a{color:#000}#friendsOnlineBox td.gameName{text-align:right}
+#friendsOnlineBox td.gameName a{padding:0 18px 0 0;background:url(../images/go.gif) right 3px no-repeat}
+#friendsOnlineBox td a:hover{text-decoration:underline;background-position:right -19px}
+#leaderBoard{position:absolute;right:14px;top:5px;width:728px;height:90px;background:transparent}
+.noLeaderBoard #wrapper{margin-top:-40px}body.noLeaderBoard{background-position:0 -40px}
+.noLeaderBoard #leaderBoard{display:none}.noLeaderBoard #status{width:100%;top:65px;left:auto;right:auto}
+.noLeaderBoard #status .formTable{margin:0;width:100%}.noLeaderBoard #languages{right:14px;left:auto;background-color:#007599;display:inline!ie;border-left:medium none;padding:0 5px;color:#FFF;margin:0;height:20px;_width:77px}
+.noLeaderBoard #languages{top:25px;font-size:10px}.noLeaderBoard #status #languages{top:0}
+.noLeaderBoard .narrowWindow #languages{top:24px;font-size:10px}.noLeaderBoard .narrowWindow #languages{border-left:medium none}
+.noLeaderBoard #languages li{list-style:none outside none}.noLeaderBoard #languages a{text-decoration:none}
+.noLeaderBoard #lNick{left:250px;position:absolute;top:0}.noLeaderBoard #lPass{position:absolute;left:375px}
+.noLeaderBoard #status .formTable{position:static}.noLeaderBoard #status .overTxtLabel{top:1px!important}
+.noLeaderBoard #status .login{position:absolute;top:0;left:455px;right:auto;width:auto;width:70px!ie;padding:0 4px 2px}
+.noLeaderBoard #status .passRecover a{left:255px;top:20px}.noLeaderBoard #status .register a{left:387px;top:23px}
+.noLeaderBoard #status #autoLoginContainer{left:250px;top:18px;background:#016587;overflow:hidden;height:0}
+.noLeaderBoard #status #autoLoginContainer .container{margin:5px}.noLeaderBoard #status .logged_in{width:100%}
+.noLeaderBoard #status .logged_in h5{width:150px;position:absolute;top:0;left:260px;background-position:0 16px;height:17px;line-height:14px}
+.noLeaderBoard #status .logged_in ul{left:425px;position:absolute;top:2px;top:3px!ie;width:auto;height:15px}
+.noLeaderBoard #status .logged_in .settings{display:inline-block}.noLeaderBoard #status .logged_in ul .logout{position:static}
+.noLeaderBoard #status .logged_in ul .logout form{display:inline}.noLeaderBoard #friendsOnlineBox{left:400px;top:22px;_width:150px}
+.noLeaderBoard #status .logged_in .twists{margin-right:15px;float:none;*float:left}
+.noLeaderBoard #status .logged_in ul li{display:inline-block;height:15px;display:block!ie;float:left!ie}
+.noLeaderBoard #status #walkthroughLink{display:block}#status .twists .funCurrencyContainer{padding-top:1px;padding-bottom:1px}.to1,.to1 h4,.to1_container,.to1_container a,.to1_container span,.to1_container strong{position:absolute;display:block;width:137px;height:77px;margin:0;padding:0;left:0;top:0;zoom:1}
+.to1{position:relative;height:105px;width:157px}.to1 h4{left:10px;top:90px;width:137px;height:auto;font-size:10px;word-spacing:1px;font-style:normal;word-wrap:break-word}
+.to1 .to1_container{position:relative;height:77px;width:137px;left:10px;top:10px}
+.to1 .backgroundColor{top:6px;left:6px;width:125px;height:65px}.to1 .logo{width:137px;height:77px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;-moz-box-shadow:0 1px 3px #bbb;-webkit-box-shadow:0 1px 3px #bbb;box-shadow:0 1px 3px #bbb;opacity:.7}
+.tournStatus_5 .logo,.tournStatus_8 .logo{opacity:1}.tournStatus_7 .logo{opacity:.4}
+.to1 .border{width:157px;height:97px;top:-10px;left:-10px;clip:rect(10px 147px 87px 10px)}
+.to1_container a:link,.to1_container a:visited{top:0;left:0;width:137px;height:77px;outline:0;font-weight:bold;text-decoration:none;white-space:nowrap;text-align:left;text-align:center;font-size:9px;color:#999}
+.to1_container a:hover,.to1_container a.hover{color:#fff;text-decoration:none;background:0}
+.to1 dl{margin:0;position:relative;top:6px;text-shadow:none}.to1 dd{color:#666;display:block;position:absolute;font-size:9px;font-weight:bold;padding:0;margin:0;right:6px;top:-1px;cursor:default;width:24px;text-align:right}
+.to1 dt span{display:block;position:absolute;top:0;left:auto;right:30px;text-indent:-9999px;width:10px;height:11px;line-height:11px;background:url(../images/gameSO1_PlayerIcon.png) no-repeat -3px -3px}
+.to1_container span.link{width:822px;height:77px;clip:rect(0px 137px 80px 0)}
+.tournStatus_1 a:hover .link,.tournStatus_6 a:hover .link,.tournStatus_1 a.hover .link,.tournStatus_6 a.hover .link{clip:rect(0px 548px 80px 411px);left:-411px}
+.tournStatus_2 a:hover .link,.tournStatus_4 a:hover .link,.tournStatus_2 a.hover .link,.tournStatus_4 a.hover .link{clip:rect(0px 274px 80px 137px);left:-137px}
+.tournStatus_3 a:hover .link,.tournStatus_3 a.hover .link{clip:rect(0px 685px 80px 548px);left:-548px}
+.tournStatus_5 a:hover .link,.tournStatus_8 a:hover .link,.tournStatus_5 a.hover .link,.tournStatus_8 a.hover .link{clip:rect(0px 411px 80px 274px);left:-274px}
+.tournStatus_7 a:hover .link,.tournStatus_7 a.hover .link{clip:rect(0px 822px 80px 685px);left:-685px}
+.to1 strong.static{text-align:left;font-size:10px;width:104px;height:10px;top:61px;left:6px;padding-top:1px;background:#fff;text-shadow:1px 0 0 #999,-1px 0 0 #999,0px 1px 0 #999,0px -1px 0 #999,1px 1px 0 #bbb,-1px -1px 0 #bbb,1px -1px 0 #bbb,-1px 1px 0 #bbb,2px 0 0 #ddd,-2px 0 0 #ddd,0px 2px 0 #ddd,0px -2px 0 #ddd,1px 2px 0 #eee,2px 1px 0 #eee,2px -1px 0 #eee,1px -2px 0 #eee,-1px -2px 0 #eee,-2px -1px 0 #eee,-2px 1px 0 #eee,-1px 2px 0 #eee;color:#fff}
+.to1 strong.static span{display:inline;height:auto;width:auto;padding-top:1px;margin-top:-2px\9;margin-left:-2px\9;filter:progid:DXImageTransform.Microsoft.Glow(Color=#555555,Strength=2)}
+.tournStatus_2 strong.static,.tournStatus_4 strong.static{text-shadow:1px 0 0 #6ba2e9,-1px 0 0 #6ba2e9,0px 1px 0 #6ba2e9,0px -1px 0 #6ba2e9,1px 1px 0 #95c3ff,-1px -1px 0 #95c3ff,1px -1px 0 #95c3ff,-1px 1px 0 #95c3ff,2px 0 0 #cae1ff,-2px 0 0 #cae1ff,0px 2px 0 #cae1ff,0px -2px 0 #cae1ff,1px 2px 0 #e5f0ff,2px 1px 0 #e5f0ff,2px -1px 0 #e5f0ff,1px -2px 0 #e5f0ff,-1px -2px 0 #e5f0ff,-2px -1px 0 #e5f0ff,-2px 1px 0 #e5f0ff,-1px 2px 0 #e5f0ff}
+.tournStatus_2 strong.static span,.tournStatus_4 strong.static span{filter:progid:DXImageTransform.Microsoft.Glow(Color=#0069f1,Strength=2)}
+.tournStatus_3 strong.static,.tournStatus_5 strong.static,.tournStatus_8 strong.static{text-shadow:1px 0 0 #08ff08,-1px 0 0 #08ff08,0px 1px 0 #08ff08,0px -1px 0 #08ff08,1px 1px 0 #5bff5b,-1px -1px 0 #5bff5b,1px -1px 0 #5bff5b,-1px 1px 0 #5bff5b,2px 0 0 #adffad,-2px 0 0 #adffad,0px 2px 0 #adffad,0px -2px 0 #adffad,1px 2px 0 #d7ffd7,2px 1px 0 #d7ffd7,2px -1px 0 #d7ffd7,1px -2px 0 #d7ffd7,-1px -2px 0 #d7ffd7,-2px -1px 0 #d7ffd7,-2px 1px 0 #d7ffd7,-1px 2px 0 #d7ffd7}
+.tournStatus_3 strong.static span,.tournStatus_5 strong.static span,.tournStatus_8 strong.static span{filter:progid:DXImageTransform.Microsoft.Glow(Color=#00bb00,Strength=2)}
+.to1_container .c2a,.to1_container .c2a strong{background:transparent;color:#fff;text-shadow:0 1px 1px #999,-1px 1px 1px #999,-1px 0 1px #999,-1px -1px 1px #999,0px -1px 1px #999,1px -1px 1px #999,1px 0 1px #999,1px 1px 1px #999,0px 1px 1px #999,-1px 1px 1px #999,-1px 0 1px #999,-1px -1px 1px #999,0px -1px 1px #999,1px -1px 1px #999,1px 0 1px #999,1px 1px 1px #999;filter:progid:DXImageTransform.Microsoft.Glow(Color=#666666,Strength=2)}
+.to1_container .c2a .jackpotLabel,.to1_container .c2a .switchCountdown,.to1_container .c2a .winningsLabel,.to1_container .c2a strong.prize,.to1_container .c2a strong.countdownOver{padding-top:8px;height:auto;width:117px;left:8px;font-style:italic;filter:progid:DXImageTransform.Microsoft.Glow(Color=#666666,Strength=2)}
+.ie9 .to1_container .c2a .jackpotLabel,.ie9 .to1_container .c2a .switchCountdown,.ie9 .to1_container .c2a .winningsLabel,.ie9 .to1_container .c2a strong.prize,.ie9 .to1_container .c2a strong.countdownOver{filter:none}
+.to1_container .c2a .jackpotLabel,.to1_container .c2a .switchCountdown,.to1_container .c2a .winningsLabel{text-indent:20px}
+.to1_container .c2a strong.prize,.to1_container .c2a strong.countdownOver{padding-top:0;height:auto;top:22px;top:18px!ie;line-height:22px;text-align:center;font-size:20px;font-size:20px}
+.to1_container .c2a strong.prize .funCurrencyContainer,.to1 .to1_container .c2a strong .funCurrencyContainer,.to1 .to1_container .c2a strong .funCurrencyContainer span{position:relative;width:auto;height:auto;left:0;top:0;filter:progid:DXImageTransform.Microsoft.Glow(Color=#666666,Strength=2)}
+.ie9 .to1_container .c2a strong.prize .funCurrencyContainer,.ie9 .to1 .to1_container .c2a strong .funCurrencyContainer,.ie9 .to1 .to1_container .c2a strong .funCurrencyContainer span{filter:none}
+.to1_container .c2a strong.prize .funCurrencyContainer span{display:block;text-indent:20px}
+.to1_container .c2a .register,.to1_container .c2a .warmup,.to1_container .c2a .switchWarmup,.to1_container .c2a .switchPlay,.to1_container .c2a .play{padding-top:55px;height:auto;-ms-filter:"progid:DXImageTransform.Microsoft.Glow(Color=#666666,Strength=2)"}
+.tournStatus_3 strong.countdown,.tournStatus_5 strong.countdown,.tournStatus_8 strong.countdown{background:0;filter:progid:DXImageTransform.Microsoft.Glow(Color=#00bb00,Strength=2);-ms-filter:"progid:DXImageTransform.Microsoft.Glow(Color=#00bb00,Strength=2)";margin-top:-2px\9;margin-left:-2px\9}
+.to1_container .c2a .switchCountdown{padding-top:22px}.to1_container .c2a strong.countdownOver{top:36px;width:100%;left:0}
+.to1_container .c2a{display:none}.to1_container a:hover .c2a,.to1_container a.hover .c2a{text-indent:0;display:block}
+.tournStatus_3 .switchPlay,.tournStatus_3 .switchWarmup,.tournStatus_3 strong.switchPrize span,.tournStatus_5 .countdown,.tournStatus_5 .switchCountdown,.tournStatus_5 .switchWarmup,.tournStatus_5 a:hover .countdownOver,.tournStatus_5 a.hover .countdownOver,.tournStatus_7 strong.switchPrize span,.tournStatus_8 .switchPlay,.tournStatus_8 .switchCountdown,.tournStatus_8 strong.switchPrize span,.tournStatus_8 a:hover .countdownOver,.tournStatus_8 a.hover .countdownOver{display:none}
+body .tournStatus_3,body .tournStatus_5,body .tournStatus_8{background:url(../images/mineTourn.gif) no-repeat 7px 7px}
+.to1 .to1Status{width:460px;height:235px}.tournStatus_5 .typeId0,.tournStatus_8 .typeId0{clip:rect(75px 75px 150px 0)!important;top:-85px!important}
+.tournStatus_5 .typeId1,.tournStatus_8 .typeId1{clip:rect(75px 150px 150px 75px)!important;top:-85px!important;left:-85px!important}
+.tournStatus_5 .typeId2,.tournStatus_8 .typeId2{clip:rect(75px 225px 150px 140px)!important;top:-85px!important;left:-160px!important}
+.tournStatus_5 .typeId3,.tournStatus_8 .typeId3{clip:rect(75px 300px 150px 215px)!important;top:-85px!important;left:-235px!important}
+.to1 p,.to1 .desc,.to1 div.jackpot{display:none}.TransferUserSettings.hasSideNav #container{width:100%;margin:0}.TransferUserSettings .contBox,.TransferUserSettings .container{padding:0}
+#transferUserHeadline{padding:10px}.TransferUserSettings #settingsPersonal{float:right;width:452px;margin:10px 10px 10px 0}
+.TransferUserSettings #settingsCollage{float:left;overflow:hidden;width:452px;margin:10px 0 10px 10px;background-color:#F8FDFF}
+.TransferUserSettings .settingsCollageHeader{height:15px;background-color:#C1F0FF}
+.TransferUserSettings .settingsCollageContent{position:relative;margin:-10px 0 0;padding:17px 10px 270px 200px}
+.TransferUserSettings .collageTextWrapper{position:relative;z-index:5}.collageTextHeader{display:block;height:11px}
+.collageText{margin:0;padding:2px 20px 24px;font-weight:bold;line-height:15px;background-color:#F0FBFF}
+#collageCollageImage{position:absolute;width:571px;height:497px;bottom:-129px;right:-123px}
+#collageClientImage{position:absolute;width:324px;height:496px;left:-62px;top:-65px}
+#collageListing ul{position:relative;margin:0;border:0}#collageListing ul li{margin:0;padding:5px 0 10px 33px;list-style-type:none}
+.TransferUserSettings .formTable .formButton{width:auto;height:48px;padding-left:5px;background:transparent url(../images/btnSprite.png) scroll 0 0 no-repeat;font-family:Verdana;font-size:17px;line-height:38px}
+.TransferUserSettings .uc .formTable .formButton{text-transform:uppercase}
+.TransferUserSettings .formTable td.transferUserSettingsSubmit{text-align:center}
+.TransferUserSettings .formTable li{clear:left}.TransferUserSettings .formField{width:250px}
+.TransferUserSettings #birthday_day,.TransferUserSettings #birthday_month,.TransferUserSettings #birthday_year{width:62px;margin:0 5px 0 0}
+.TransferUserSettings #fk_country{width:256px}.TransferUserSettings .formButton:hover{background-position:-20px 0}
+.TransferUserSettings .formButton span{height:38px;padding:5px 35px 5px 12px;background:transparent url(../images/btnSprite.png) scroll right top no-repeat;line-height:38px}
+.TransferUserSettings .formButton:hover span{background-position:right -52px}
+.TransferUserSettings .formButton span:after{position:absolute;content:'»';top:4px;margin:0 0 0 3px;font-size:28px}
+.ChooseTransferUserName #sideBar .contBox{background:transparent url(../images/game_alarm/gametwist_collage.png) scroll right top no-repeat;min-height:550px}input.datepickerfield{background:url(../images/datePicker/datePickerIcon.png) 98% 1px no-repeat #fff;cursor:pointer}
+.datepicker{position:absolute;font-size:11px;width:200px;width:198px;padding:3px;height:224px;height:225px;background:url(../images/datePicker/dp-back.png) top left no-repeat;line-height:normal;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;-moz-box-shadow:0 1px 3px #bbb;-webkit-box-shadow:0 1px 3px #bbb;box-shadow:0 1px 3px #bbb}
+.datepicker .header{position:relative;height:21px;padding-top:4px;margin-bottom:4px}
+.datepicker .header .title{text-align:center;padding-top:1px;margin:0 42px 0 20px}
+.datepicker .header .titleText{color:#fff;font-weight:bold}.datepicker .header .next,.datepicker .header .previous,.datepicker .header .closeButton{position:absolute;width:15px;height:15px;background:#95cfec;color:#fff;text-align:center;top:5px;cursor:pointer;font-weight:bold;text-indent:-9999px}
+.datepicker .header .previous{background:url(../images/datePicker/previous.gif) top left no-repeat;left:5px}
+.datepicker .header .next{background:url(../images/datePicker/next.gif) top left no-repeat;right:28px}
+.datepicker .header .closeButton{right:5px;background:url(../images/datePicker/close.gif) top left no-repeat}
+.datepicker .header .closeButton:hover{background-position:bottom left}.datepicker .body{position:relative;top:0;left:3px;width:194px;height:196px;overflow:hidden;background:0}
+.datepicker .time{width:100%;height:100%}.datepicker .time .hour,.datepicker .time .separator,.datepicker .time .minutes{background:#fff;width:50px;font-size:28px;position:absolute;top:50px;text-align:center;padding:2px;font-family:verdana;font-style:italic;font-weight:bold;color:#666}
+.datepicker .time .hour{left:30px}.datepicker .time .separator{background:transparent;border:0;width:10px;left:91px}
+.datepicker .time .minutes{left:110px}.datepicker .time .ok{position:absolute;top:105px;width:136px;height:48px;left:30px;background:url(../images/datePicker/ok.gif) center no-repeat;border:0;font-size:17px;font-family:verdana;line-height:48px;text-shadow:0 0 2px #0C8EBF,0 0 5px #0C8EBF,0 0 10px #0C8EBF;color:#fff;font-style:italic;font-weight:bold;cursor:pointer}
+.uc .datepicker .time .ok{text-transform:uppercase}.datepicker .time .ok:hover{text-shadow:0 0 2px #FFF,0 0 5px #FFF,0 0 10px #FFF;color:#0C8EBF}
+.datepicker .days .day{float:left;background:url(../images/datePicker/dp-day.jpg) top left no-repeat;color:#fff;cursor:pointer;text-align:center;width:25px;height:25px;line-height:25px;overflow:hidden;margin:0 3px 3px 0;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
+.datepicker .days .day0{margin-right:0}.datepicker .days .week5 .day{margin-bottom:0}
+.datepicker .days .title{background:transparent;font-weight:bold;color:#333;cursor:default}
+.datepicker .days .otherMonth{color:#333}.datepicker .months .month{float:left;background:#fff!important;cursor:pointer;text-align:center;overflow:hidden;width:62px;height:31px;padding-top:15px;margin:0 3px 3px 0;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
+.datepicker .months .month.selected{color:#000!important}.datepicker .months .month3,.datepicker .months .month6,.datepicker .months .month9,.datepicker .months .month12{margin-right:0;width:64px}
+.datepicker .months .month10,.datepicker .months .month11,.datepicker .months .month12{margin-bottom:0}
+.datepicker .years .year{float:left;background:#F0FBFF;cursor:pointer;text-align:center;padding-top:11px;width:46px;overflow:hidden;height:25px;margin:0 3px 3px 0;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
+.datepicker .years .year.selected{background:#fff!important;color:#000!important}
+.datepicker .years .year3,.datepicker .years .year7,.datepicker .years .year11,.datepicker .years .year15,.datepicker .years .year19{margin-right:0;width:47px}
+.datepicker .years .year16,.datepicker .years .year17,.datepicker .years .year18,.datepicker .years .year19{margin-bottom:0;height:26px}
+.datepicker .selected{background:url(../images/datePicker/dp-selected.jpg) top left no-repeat!important;color:#fff!important}
+.datepicker .unavailable{background:#fff!important;color:#aaa!important;cursor:default!important}
+.datepicker .days .week .day.unavailable:hover{background:#fff!important;color:#aaa!important}
+.datepicker .days .week .day:hover,.datepicker .months .month:hover,.datepicker .years .year:hover{background:#5D6E95!important;background:#005374!important;color:#fff!important}
+.datepicker .time .hour.error,.datepicker .time .minutes.error{background:#FFCEC7;border-color:#f00}#footer{background:transparent url(../images/backFooter.jpg) left bottom no-repeat;height:240px;margin:0;padding:0 34px;position:relative;color:#fff;font-size:11px;clear:both}
+.small #footer{margin-top:0;color:#39C;background:0;height:auto;padding-top:10px}
+#footer ul{margin:0;border-left:none}#footer li{margin:0;padding:0;background:0}
+#footer .links{position:absolute;margin:0;font-size:11px;top:10px;color:#666}
+#footer .links li{float:left;list-style:none;border-left:1px solid #39c;line-height:14px}
+#footer .links .first{border-left:none}#footer .links span{display:block;padding:0 5px}
+#footer .links a span,#footer .links a:visited span{text-decoration:underline;float:left}
+#footer .links a:hover span,#footer .links a:active span{text-decoration:none;float:left;cursor:pointer}
+#footer .sitemap{position:absolute;margin:0;top:102px;left:40px;overflow:hidden}
+#footer .sitemap li{list-style:none;float:left}#footer .sitemap dl{margin:0}
+#footer .sitemap dt{border-bottom:1px dotted #fff}#footer .sitemap dt a{color:#3cf;font-size:12px;font-style:italic;font-weight:bold;text-decoration:none;padding:0 20px 0 0;line-height:19px;font-family:arial}
+.uc #footer .sitemap dt a{text-transform:uppercase}#footer .sitemap dd{margin:0;padding-right:10px;line-height:13px}
+#footer .sitemap dd a{text-decoration:none;font-size:10px}#footer .sitemap dd a:hover{text-decoration:underline}
+#footer .sitemap a{color:#fff}#footer p{margin:0;color:#fff}#footer .siteInfo{height:165px;position:relative;left:570px;top:56px;width:350px}
+#footer .phone{width:100%;border-collapse:collapse;border:0;margin-bottom:10px}
+#footer .phone td{vertical-align:top;text-align:center;border:0;padding:0 5px}
+#footer .phone h4{margin:0;color:#fff;font-size:12px;font-style:italic;font-weight:bold}
+#footer .phone b,#footer .email a{margin:0 0 5px 0;color:#ffde00;font-size:17px;font-style:italic;font-weight:bold;white-space:nowrap}
+#footer .email{border-bottom:1px dotted #fff;font-weight:bold;text-align:right;padding-bottom:8px;margin:8px 0}
+#footer .email i{float:left;display:block;padding-top:2px}#footer .email a{font-size:13px;font-family:arial;white-space:nowrap}
+#poweredBy,#poweredBy:visited{display:block;text-align:right;font-weight:bold;font-style:italic;text-decoration:none;font-size:14px;color:#3CF;font-family:arial}
+#poweredBy:hover{color:#3CF;text-decoration:underline}#friendsContent{float:left;display:inline;width:470px}#friendsContent a{outline:0}
+#friendsContent #error{margin-left:10px;margin-top:4px}#friendsContent #error h3{border-bottom:1px dotted #F99}
+#friendsList .listTable{margin:0}#friendsList .listTable td{font-weight:bold}
+#friendsList .listTable td a{text-decoration:none}#friendsList .listTable td a.profile{float:left;display:inline;overflow:hidden}
+#friendsList .listTable td.no-match{padding:1em 0;border:0;text-align:center;font-weight:bold}
+#friendsList .listTable td.no-match p{margin:0}#friendsList .listTable td.status{padding-right:0;padding-left:0;overflow:hidden}
+#friendsList .listTable td.status span.online,#friendsList .listTable td.status span.offline{float:left;display:block;width:13px;height:13px;margin:0 auto;background:url(../images/tableSprite.png) 0 -20px no-repeat;_background-image:url(../images/tableSprite.gif);overflow:hidden}
+#friendsList .listTable td.status span.offline{background-position:0 0}#friendsList .listTable td.status a.room{float:left;display:inline;overflow:hidden;white-space:nowrap;padding-left:5px}
+#friendsList .listTable td.action{padding-right:10px;padding-left:10px}#friendsList .listTable td.action a.add,#friendsList .listTable td.action a.ignore,#friendsList .listTable td.action a.delete{display:block;width:13px;height:13px;background:url(../images/tableSprite.png) -46px 0 no-repeat;_background-image:url(../images/tableSprite.gif)}
+#friendsList .listTable td.action a.ignore,#friendsList .listTable td.action a.add{background-position:-30px 0}
+#friendsList .listTable td.action a.add span,#friendsList .listTable td.action a.ignore span,#friendsList .listTable td.action a.delete span{display:block;text-indent:-9999em}
+#friendsList .listTable td.action a.delete:hover{background-position:-46px -20px}
+#friendsList .listTable td.action a.ignore:hover,#friendsList .listTable td.action a.add:hover{background-position:-30px -20px}
+#friendsList .listTable td.action a.add{float:left;overflow:hidden}#friendsList .listTable td.action a.ignore,#friendsList .listTable td.action a.delete{margin:0 auto;overflow:hidden}
+#friendsSideForms{float:left;display:inline;width:157px;margin:0 0 0 10px}
+#container #friendsSideForms .container{padding:10px;overflow:hidden;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;background:#c1f0ff}
+#friendsSideForms input.formField{width:111px}#main #friendsSideForms button{*width:117px}
+#main #friendsSideForms button span{padding:0 8px 0 0;text-align:center;width:101px}
+.ie9 #main #friendsSideForms button span{padding-left:3px}.friends #fnFriends,.friends_ignore #fnFriends{margin-top:10px}
+.friends #friendsSideForms input.formField,.friends_ignore #friendsSideForms input.formField{margin-top:5px}
+.friends #friendsSideForms button,.friends_ignore #friendsSideForms button{margin-top:7px}
+.friends_invite .formTable .first{width:100px}.friends_invite #friendsInvite p.success{background:#eefeee;border-top:1px dotted #588F00;border-bottom:1px dotted #588F00;margin:20px 0;padding:10px}
+.friends_invite #text1{width:420px;height:100px}#backgroundHack{position:absolute;top:0;width:942px;height:545px;z-index:-2;zoom:1}
+.detailsBackground{position:absolute;width:962px;height:556px;left:-10px;top:-10px;z-index:-1;zoom:1}
+.games_details h2{display:none}#playNow .container,#playNowSideBar .container{padding:0;overflow:hidden}
+#sideBar #sideBarLogin h3,#sideBar .register_form h3,#playNow h3,#playNowSideBar h3,#sideBar .tournStartIn{padding:0 0 4px;margin-bottom:10px;border-bottom:1px dotted #2cbbed;font-weight:bold;font-style:italic}
+#sideBar #fnLogin.container,#sideBar #fnRegister.container{padding:0;margin-top:10px}
+#sideBar #fnRegister form,#sideBar #fnLogin form,#playNow form,#playNowSideBar form{color:#717171;padding:0;font-size:11px}
+#sideBar #fnRegister table,#sideBar #fnLogin table,#playNow table,#playNowSideBar table{clear:both;width:100%}
+#sideBar #fnRegister td,#sideBar #fnLogin td,#playNow td,#playNowSideBar td{vertical-align:top;padding:0 0 5px}
+#sideBar .formField{width:136px;clear:both;border:0;margin:0;padding:2px 3px;color:#666;font-size:11px;border:1px solid #bbb;-webkit-box-shadow:inset 1px 1px 2px #ddd;-moz-box-shadow:inset 1px 1px 2px #ddd;box-shadow:inset 1px 1px 2px #ddd}
+#sideBar .formField:focus{border-color:#3cf}#sideBar #email,#sideBar #pass_conf{margin-top:5px}
+#sideBar #pass,#sideBar #pass_reg,#sideBar #pass_conf,#sideBar #securecode{float:right}
+#sideBar .ffCheckbox{margin-right:2px}#sideBar #fnRegister .captcha{width:138px;height:35px;border-color:#bbb}
+#sideBar .signonHelpers li{list-style-type:none}#sideBar .overTxtLabel{margin-top:2px;margin-top:1px\9;color:#666;font-size:11px;background-color:#FFF;width:136px}
+#sideBar #playNow,#sideBar #playNowSideBar{padding-bottom:32px;height:165px}
+#sideBar #tournamentSignOn{padding-bottom:25px}#tournamentSignOn .contBox{position:relative;overflow:hidden;height:162px}
+#sideBar #landingSend{width:100%;margin:14px 0}#playNow #landingSend,#playNowSideBar #landingSend{position:absolute;top:106px;width:294px}
+#sideBar #landingSend span{font-size:18px}#countdown{text-align:center;color:#fff;font-size:40px}
+#topWinner{float:left;width:294px;height:127px;padding-right:0;position:relative}
+#topWinner .container{padding:0;border-bottom:1px dotted #fff}body.games_details #topWinner table{background:transparent;width:100%;margin:2px 0 0 0;border:0}
+body.games_details #topWinner table th,body.games_details #topWinner table td{background:transparent;border:0}
+body.games_details #topWinner table,body.games_details #topWinner table{background:transparent;width:100%;margin:0;height:117px}
+#topWinner table.listTable tbody td,#topWinner table.listTable tbody th{background-color:transparent;border:0;vertical-align:middle;padding:0}
+.games_details #topWinner table.listTable tbody th{border-right:1px dotted #fff;font-size:17px;width:15px;font-style:italic}
+#topWinner .money{text-align:right;font-style:italic;color:#666}#topWinner a{font-style:italic}
+#topWinner a,#rankingList .profile{background:url(../images/userIcon.png) no-repeat 7px 2px;_background:url(../images/userIcon.gif) no-repeat 7px 2px;padding-left:25px}
+.games_details #relatedGames{margin-left:0;width:608px}.games_details #relatedGames.top3{margin-left:314px;_margin-left:311px;width:294px}
+#relatedGames .container{margin:0;padding:0 0 2px;overflow:visible;zoom:1}
+#relatedGames .gameList{margin:0 -10px;overflow:hidden;zoom:1}body.games_details #stats{display:none}
+body.games_details #main #container,body.tournaments_ #main #container{position:relative;padding:24px 0 0;z-index:100;overflow:visible}
+.games_details #sideBar,.tournaments_ #sideBar{z-index:100}#gamesDetailsHeader,#gamesDetailsHeader .container,#tournamentsDetailsHeader,#tournamentsDetailsHeader .container{padding:0;overflow:visible}
+#gameHeader{width:306px;height:160px;position:relative;float:left;_margin-right:-3px}
+#tournamentsDetailsHeader{position:relative;z-index:1}#gameHeader .gameHeaderMobile{display:none}
+#gamesDetailsHeader .rating0,#gamesDetailsHeader .rating1,#gamesDetailsHeader .rating2,#gamesDetailsHeader .rating3,#gamesDetailsHeader .rating4,#gamesDetailsHeader .rating5{text-indent:-9999px;position:absolute;top:7px;left:210px;width:85px;height:13px;z-index:101}
+#tournamentsDetailsHeader .rating0,#tournamentsDetailsHeader .rating1,#tournamentsDetailsHeader .rating2,#tournamentsDetailsHeader .rating3,#tournamentsDetailsHeader .rating4,#tournamentsDetailsHeader .rating5{display:none}
+#gamesDetailsHeader .rating0 .gameHeaderStars,#gamesDetailsHeader .rating1 .gameHeaderStars,#gamesDetailsHeader .rating2 .gameHeaderStars,#gamesDetailsHeader .rating3 .gameHeaderStars,#gamesDetailsHeader .rating4 .gameHeaderStars,#gamesDetailsHeader .rating5 .gameHeaderStars{width:170px;height:13px;clip:rect(0px 85px 13px 0);position:absolute;top:0;left:0;zoom:1}
+#gamesDetailsHeader .rating4 .gameHeaderStars{clip:rect(0px 102px 13px 17px);left:-17px}
+#gamesDetailsHeader .rating3 .gameHeaderStars{clip:rect(0px 119px 13px 34px);left:-34px}
+#gamesDetailsHeader .rating2 .gameHeaderStars{clip:rect(0px 136px 13px 51px);left:-51px}
+#gamesDetailsHeader .rating1 .gameHeaderStars{clip:rect(0px 153px 13px 68px);left:-68px}
+#gamesDetailsHeader .rating0 .gameHeaderStars{clip:rect(0px 170px 13px 85px);left:-85px}
+#gameHeader .gameHeaderLogo{width:220px;height:100px;position:absolute;top:-34px;left:38px;z-index:100;background-repeat:no-repeat}
+.games_details #gameHeader .gameHeaderLogo{left:0}#gameHeader dl,.tournDetails dl{margin:0;padding:63px 10px 0;cursor:default;font-weight:bold;c font-size:12px}
+#gameHeader dt,.tournDetails dt{margin:0;float:left;width:116px;font-weight:normal;white-space:nowrap;letter-spacing:-0.02em}
+#gameHeader dt,#gameHeader dt p,.tournDetails dt,.tournDetails dt p{overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap}
+#gameHeader dt{width:160px}#gameHeader dd,.tournDetails dd{margin:0 0 0 116px;padding:0 0 0 6px;font-weight:normal}
+#gameHeader dd{margin:0 0 0 160px;white-space:nowrap}#gameHeader .room,#tournDetails dd.link a{position:absolute;right:10px;bottom:4px;text-decoration:none;color:#fff;font-size:12px;z-index:10;margin-left:10px}
+#tournDetails dd.link a{bottom:auto;left:10px;margin:0;padding:0;right:auto;text-align:center;top:166px;width:280px}
+.uc #gameHeader .room,.uc #tournDetails dd.link a{text-transform:uppercase}
+#tournDetails dd a.admin{background:#f00;border:1px dotted #fff;position:relative;top:auto;left:auto}
+#gameHeader .room span,#tournDetails dd.link a span{padding-right:22px;font-style:italic;font-weight:bold;text-shadow:0 1px 3px #333,0 0 3px #10B6EE;font-size:14px;line-height:14px;font-family:helvetica;background:url(../images/c2a.png) no-repeat right 0;cursor:pointer}
+.ie #gameHeader .room span,.ie #tournDetails dd.link a span{background:0;padding-right:5px}
+.ie9 #gameHeader .room span,.ie9 #tournDetails dd.link a span{padding-bottom:1px;background-position:right -1px}
+#tournDetails .stake,#tournDetails .tournDetails dd.stake{font-weight:bold}
+#gameShot{position:relative;_zoom:1;overflow:hidden}.games_details #gameShot a{display:block;width:260px;height:164px;margin:0 auto}
+#gameShot a span{cursor:pointer}.tournaments_ #gameShot img{display:block;width:260px;height:160px;border:2px solid #fff;margin:0 auto}
+.games_details #subNav,.tournaments_ #subNav{padding:0 10px}body.games_details #subNav span{padding:6px 0;right:-10px;top:1px}
+.games_details #subNav li a span,.tournaments_ #subNav li a span{background:url(../images/tableIconSprite_3.gif) no-repeat 0 0}
+.games_details #subNav li.active a span,.games_details #subNav li a:hover span,.tournaments_ #subNav li.active a span,.tournaments_ #subNav li a:hover span{color:#000}
+#subNav #btnSo3Details a span{background:url(../images/tableIconSprite_3.gif) no-repeat -1px -44px;padding-left:15px}
+#subNav #btnSo3Ranking a span{background:url(../images/tableIconSprite_3.gif) no-repeat -2px -68px;padding-left:19px}
+#subNav #btnSo3Stat a span{background:url(../images/tableIconSprite_3.gif) no-repeat 0 -19px;padding-left:23px}
+#subNav #btnSo3Mobile a span{background:url(../images/tableIconSprite_3.gif) no-repeat -2px -118px;padding-left:15px}
+#subNav #btnSo3Rules a span{background:url(../images/tableIconSprite_3.gif) no-repeat -2px -143px;padding-left:13px}
+#subNav #btnSo3Help a span{background:url(../images/tabIconSprite.gif) no-repeat 5px -69px}
+#subNav #btnTo3Details a span{background:url(../images/tableIconSprite_3.gif) no-repeat -2px -44px;padding-left:15px}
+#subNav #btnTo3Rules a span{background:url(../images/tableIconSprite_3.gif) no-repeat -1px -143px;padding-left:17px}
+#subNav #btnTo3Ranking a span{background:url(../images/tableIconSprite_3.gif) no-repeat -1px 4px;padding-left:15px}
+#subNav #btnSo3Details.active a span,#subNav #btnSo3Details a:hover span,#subNav #btnSo3Details a:active span{background-position:-302px -44px}
+#subNav #btnSo3Ranking.active a span,#subNav #btnSo3Ranking a:hover span,#subNav #btnSo3Ranking a:active span{background-position:-301px -68px}
+#subNav #btnSo3Stat.active a span,#subNav #btnSo3Stat a:hover span,#subNav #btnSo3Stat a:active span{background-position:-298px -19px}
+#subNav #btnSo3Rules.active a span,#subNav #btnSo3Rules a:hover span,#subNav #btnSo3Rules a:active span{background-position:-305px -143px}
+#subNav #btnTo3Details.active a span,#subNav #btnTo3Details a:hover span,#subNav #btnTo3Details a:active span{background-position:-303px -44px}
+#subNav #btnSo3Mobile.active a span,#subNav #btnSo3Mobile a:hover span,#subNav #btnSo3Mobile a:active span{background-position:-305px -118px}
+#subNav #btnSo3Help.active a span,#subNav #btnSo3Help a:hover span,#subNav #btnSo3Help a:active span{background-position:-295px -69px}
+#subNav #btnTo3Rules.active a span,#subNav #btnTo3Rules a:hover span,#subNav #btnTo3Rules a:active span{background-position:-304px -143px}
+#subNav #btnTo3Ranking.active a span,#subNav #btnTo3Ranking a:hover span,#subNav #btnTo3Ranking a:active span{background-position:-301px 4px}
+#gameShot dl{width:260px;margin:0 auto;position:absolute;z-index:2;padding-top:20px;top:0;right:31px;color:#fff}
+.ie6 #gameShot dl,.ie7 #gameShot dl,.ie8 #gameShot dl{font-family:arial black;filter:progid:DXImageTransform.Microsoft.Shadow(color=#7F6E1F,Direction=135,Strength=4);width:298px}
+#gameShot dt,#gameShot dd,#countdown,#gameHeader .date strong{text-align:center;margin:0;font-style:italic;font-weight:bold;text-shadow:1.5px 1.5px 0 #aaa,-1.5px -1.5px 0 #aaa,1.5px -1.5px 0 #aaa,-1.5px 1.5px 0 #aaa,1.5px 0 0 #aaa,-1.5px 0 0 #aaa,0px 1.5px 0 #aaa,0px -1.5px 0 #aaa,0px 3px 0 #aaa,2px 3px 0 #aaa,3px 2px 0 #aaa,3px 0 0 #aaa,3px -2px 0 #aaa,2px -3px 0 #aaa,0px -3px 0 #aaa,-2px -3px 0 #aaa,-3px -2px 0 #aaa,-3px 0 0 #aaa,-3px 2px 0 #aaa,-2px 3px 0 #aaa,2px 1px 3px #fff,2px -1px 3px #fff,4px -4px 9px #fff,1px -2px 3px #fff,-1px -2px 3px #fff,-4px -4px 9px #fff,-2px -1px 3px #fff,-2px 1px 3px #fff,-4px 4px 9px #fff,-1px 2px 3px #fff,1px 2px 3px #fff,4px 4px 9px #fff;top:-4px\9;left:-4px\9;position:relative;opacity:1;filter:progid:DXImageTransform.Microsoft.Chroma(color=#656766) progid:DXImageTransform.Microsoft.Shadow(Color=#666666,Strength=3,Direction=135);zoom:1}
+.ie7 #gameHeader .date strong,.ie8 #gameHeader .date strong,.ie9 #gameHeader .date strong{background-color:#656766}
+.uc #gameShot dt,.uc #gameShot dd{text-transform:uppercase}#gameShot dt{font-size:34px}
+#gameShot dd .funCurrencyContainer{font-size:34px;background:url(../images/twist_sprite.png) no-repeat scroll 0 -43px transparent;_background:url(../images/twist_sprite.gif) no-repeat scroll 0 -43px transparent;padding-left:40px;float:none}
+#gameShot dd .funCurrencyContainer span{display:none}#tournDetails .tournDetails{float:left;margin:10px 0 20px;padding:0 0 0 10px;width:294px}
+#tournDetails .tournDetails dl{padding:0}#tournDetails .tournDetails dd{font-weight:normal}
+#tournDetails .tournDetails p{margin:0}.topJackpot,.statusDetails{width:294px;margin-left:314px;_margin:0}
+.tournDetails .container,.topJackpot .container,.statusDetails .container{padding:10px 0;border-bottom:1px dotted #fff}
+.topJackpot .container{padding:1px 0 0;height:139px;overflow-y:auto}.topJackpot .item{overflow:hidden;height:27px;line-height:27px;font-style:italic;border-bottom-style:dotted;border-bottom-width:1px}
+.topJackpot .pos_last{border-bottom:0}.tournaments_ .topJackpot strong,.topJackpot .container h3{padding:1px 6px}
+.topJackpot .container h3{float:left;border:0;margin:0 10px 0 0;width:25px}
+.topJackpot strong{text-decoration:none;padding-left:30px;font-size:17px;display:block;text-align:right}
+.games_details .gameCat{float:none;height:auto;width:auto;background:0;padding-bottom:5px;border-bottom:1px dotted #fff}
+#content{position:relative;min-height:200px;_height:200px;background:url(../images/landingMid.gif) repeat-y 0 0 #fff}
+.contentTop{background:url(../images/landingTop.png) no-repeat 0 0;_background:url(../images/landingTop.gif) no-repeat 0 0;height:20px;margin:0 10px}
+.contentBottom{background:url(../images/landingBottom.png) no-repeat 0 0;_background:url(../images/landingBottom.gif) no-repeat 0 0;height:20px;margin:0 10px}
+.games_details #content,.tournaments_ #content,.games_details .subNav,.tournaments_ .subNav{margin:0 10px}
+.games_details #content,.tournaments_ #content{word-wrap:break-word}#gameHeader .date{position:absolute;top:80px;width:304px;overflow:hidden;border-top:1px dotted #fff;border-bottom:1px dotted #fff}
+#gameHeader .date strong{display:block;float:left;padding-right:4px;font-style:normal;font-size:40px;color:#fff;bottom:0;text-align:left}
+.ie #gameHeader .date strong{font-size:40px}body.opera #gameHeader .date strong{bottom:0}
+#gameHeader .date div{background:#32cbff;padding:0 1px 1px;*padding:1px;border:3px solid #fff;width:26px;text-align:center;color:#fff;float:left;font-size:10px;font-weight:bold;line-height:10px;margin:10px 10px 10px 64px;_margin:10px 5px 10px 32px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
+.uc #gameHeader .date div{text-transform:uppercase}#gameHeader .date div span{display:block;width:100%;background:#fff;color:#32cbff;font-size:14px;line-height:14px;height:16px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px}
+#tournamentsDetailsStatus{left:0;top:0;position:absolute;z-index:10;width:75px;height:75px}
+#tournamentsDetailsStatus .to1Status{display:block;width:460px;height:235px;position:absolute}
+.tournStatus_8 dl .tournStartIn,.tournStatus_5 dl .tournStartIn{display:none}
+.tournStatus_2 #tournamentSignOn .countdown,.tournStatus_4 #tournamentSignOn .countdown,.tournStatus_5 #tournamentSignOn .countdown{display:none}
+.tournStatus_8 dd .warmup{display:inline}.tournStatus_5 dd .warmup{display:none}
+.tournStatus_5 dd .playnow{display:inline}.buttonHolder{display:none}.tournStatus_2 .buttonHolder,.tournStatus_4 .buttonHolder,.tournStatus_8 .buttonHolder,.tournStatus_5 .buttonHolder{display:block}
+.tournStatus_1 #tournamentSignOn,.tournStatus_6 #tournamentSignOn,.tournStatus_7 #tournamentSignOn{display:none}
+.statusSmallDesc{position:relative;top:138px;font-weight:bold;text-align:center}.gamesCategory{background:url(../images/box_608_gray_top.png) no-repeat 10px 10px;margin:0 0 20px;position:relative;zoom:1}
+.gamesCategory h3{border:0;padding:10px}.gamesCategory h3 a{text-decoration:none;cursor:pointer}
+.gameCat:hover h2 a{text-decoration:underline}.gamesCategory h3 span,.topGamesCategory h3 span{border:0;color:#666}
+.gamesCategory .container{background:url(../images/box_608_gray_footer.png) no-repeat right bottom;margin-bottom:-20px;overflow:hidden}
+.gamesCategory .container ul{margin:0;padding:0 0 35px 3px;overflow:hidden;border-left:none;zoom:1}
+.gamesCategory .container ul ul{overflow:visible}.gamesCategory .container ul li{background:0;display:inline;margin:0;padding-left:0;_zoom:1}
+.gamesCategory .container ul li .so1_small{padding-left:5px}#catList ul{margin:10px 0 0 10px;border-left:none}
+#catList li{list-style-type:none;padding:0;margin-bottom:10px;margin-left:0}
+#catList a{display:block;height:22px;width:254px;padding:10px 20px;background:url(../images/catList.png) no-repeat 0 0;outline:0;margin:0}
+#catList a:hover,#catList li.active a,#catList li.active a:hover{background-position:0 -42px;color:#000;text-shadow:2px 0 1px #fff,0 2px 1px #fff,-2px 0 1px #fff,0 -2px 1px #fff}
+#catList li.active a,#catList li.active a:hover{background-position:0 -42px;cursor:default}
+#skill7Button a{background-position:0 -126px}#skill7Button a:hover{background-position:0 -126px}
+.topGamesCategory .next{position:absolute;right:40px;bottom:3px;margin:0}.helpPlayGame h3,#gamesHelpContent h3{padding-top:42px!important}.playGames{border:medium none;clear:both;margin:1em 0;overflow:hidden}
+.contBox .playGames li{background:0;list-style-type:none;margin:0;padding-left:0;width:50%}
+.playGame{float:left}.backToTop{float:right;text-align:right}.gamesHelpContent .container table h3{margin:0;border:0}
+.gamesHelpContent .container table tr:first-child td{border-bottom:1px dotted #39C}#prize1{width:608px;background:url(../images/box_608_gray_top.png) no-repeat 10px 10px;_background:url(../images/box_608_gray_top.gif) no-repeat 10px 10px}
+#prize1 .container{background:url(../images/box_608_gray_footer.png) no-repeat left bottom;_background:url(../images/box_608_gray_footer.gif) no-repeat left bottom}
+.lottery h3,.lottery #container h3{margin:10px}.lottery #container h3 small{font-size:12px;color:#999}
+.lottery #container .prizeBox h3{margin:0;border:0;height:auto;_zoom:1}.prizeBox .desc{margin:0}
+.prizeBox .footer p{margin:0}.prizeBox .img{text-align:center;margin:20px 0;_width:274px}
+.prizeBox img{max-width:274px}#prize1 .img{float:left;width:303px;text-align:center;position:relative;overflow:hidden;z-index:5}
+.prizeBox{float:left;width:294px}#prize1 .desc{margin-left:303px}#prize1 .footer{padding-left:313px;width:283px;clear:both}
+.lottery #container .contBox{float:left}.prizeBox .grandPrize{position:absolute;z-index:10;left:22px;bottom:22px;width:110px;height:112px}
+.lottery #sideBar li.active a{font-weight:bold;color:#005374}p.info,p.success{color:#666;cursor:default;padding-top:3px;background:url(../images/lotteryInfo.gif) no-repeat right bottom;padding-right:20px}
+p.info a{color:#666}p.success{color:#588f00;font-weight:bold;background:url(../images/lotterySuccess.gif) no-repeat right bottom}
+.over,.over .img{opacity:.5;filter:alpha(opacity=50)}.lotteryTable{opacity:1;filter:alpha(opacity=100)}
+.over .container{filter:alpha(opacity=50)}.over .grandPrize{zoom:1}.over .prizeBox,#container .over h3{color:#bbb}
+.prizeBox .img{overflow:hidden}.win .prizeBox{color:#333}#container .win h3{color:#588f00}
+.win .img,.win .grandPrize{opacity:1;filter:alpha(opacity=100)}.win_ticket{padding:0 3px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background:#588f00;font-weight:bold;color:#fff;text-shadow:none}
+.lottery #container div.lost{float:none;display:block;clear:both}.listTable small{font-size:10px}
+.listTable .lotteryCupon1,.listTable .lotteryCupon2{padding:0}.myNumbers{overflow:hidden}
+.showAllNums{padding-left:3px;color:#70A7EE;cursor:pointer;overflow:hidden}
+.listTable .num{display:block;background:url(../images/lotteryCuponSprite.png) no-repeat right 0;line-height:28px;height:28px;width:94px;padding-left:20px;text-align:center;cursor:default}
+.lotteryCupon1 .num{background:url(../images/lotteryCuponSprite.png) no-repeat right -28px}
+.boughtToday{font-weight:bold;color:#333}.over .num{background:url(../images/lotteryCuponSprite.png) no-repeat right -56px;color:#bbb}
+.over .lotteryCupon1 .num{background:url(../images/lotteryCuponSprite.png) no-repeat right -84px}
+.over .win{background:url(../images/lotteryCuponSprite.png) no-repeat right -112px;color:#fff;font-weight:bold}
+.win,.win .img{opacity:1;filter:alpha(opacity=50)}.over .lotteryCupon1 .win{background:url(../images/lotteryCuponSprite.png) no-repeat right -140px}
+.over .winPrize{font-weight:bold;color:#333}.lotteryTable thead th{white-space:nowrap;text-transform:capitalize}
+.lotteryTable td{vertical-align:middle}#mbOverlay{position:fixed;z-index:9998;top:0;left:0;width:100%;height:100%;background-color:#ccc;cursor:pointer}
+#mbOverlay.mbOverlayFF{background:transparent url(../images/mediabox../images/80.png) repeat}
+#mbOverlay.mbOverlayIE{position:absolute}#mbCenter{position:absolute;z-index:9999;left:50%;overflow:hidden;background-color:#fff;-moz-border-radius:10px;-webkit-border-radius:10px;-moz-box-shadow:0 10px 40px rgba(0,0,0,0.70);-webkit-box-shadow:0 10px 40px rgba(0,0,0,0.70);-o-border-radius:10px;-o-box-shadow:0 10px 40px rgba(0,0,0,0.70);border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.70)}
+#mbCenter h3{color:#717171;font-size:24px;border-bottom:1px dotted;text-shadow:none}
+#mbCenter button{float:left}#mbCenter.mbLoading{background:#fff url(../images/spinner.gif) no-repeat center;-moz-box-shadow:none;-webkit-box-shadow:none}
+#mbImage{position:relative;left:0;top:0;font-family:Verdana,Arial,Helvetica,sans-serif;line-height:20px;font-size:12px;color:#595959;text-align:left;background-position:center center;background-repeat:no-repeat;padding:10px}
+#mbImage a,#mbImage a:link,#mbImage a:visited{color:#ddd}#mbImage a:hover,#mbImage a:active{color:#595959}
+#mbBottom{min-height:20px;font-family:Verdana,Arial,Helvetica,sans-serif;line-height:20px;font-size:12px;color:#999;text-align:left;padding:0 10px 10px}
+#mbTitle{display:inline;color:#595959;font-weight:bold;line-height:20px;font-size:12px}
+#mbNumber{display:inline;color:#999;line-height:14px;font-size:10px;margin:auto 10px}
+#mbCaption{display:block;color:#999;line-height:14px;font-size:10px}#mbPrevLink,#mbNextLink,#mbCloseLink{display:block;float:right;height:20px;width:15px;margin:0;outline:0}
+#mbPrevLink{background:transparent url(../images/mediabox../images/galleryNav.gif) no-repeat top left;position:relative;right:20px}
+#mbNextLink{background:transparent url(../images/mediabox../images/galleryNav.gif) no-repeat top right;position:relative;right:10px}
+#mbCloseLink{width:30px;background:transparent url(../images/mediabox../images/close.jpg) no-repeat center}
+.tournaments_details #mbCloseLink{position:relative;top:-233px;left:-2px;width:15px}
+.games_details #mbCloseLink{position:relative;left:-2px;width:15px}.testseite #mbCenter #mbImage{padding:8px}
+.testseite #mbBottom{display:none}#mbError{position:relative;font-family:Verdana,Arial,Helvetica,sans-serif;line-height:20px;font-size:12px;color:#595959;text-align:center;border:10px solid #700;padding:10px 10px 10px;margin:20px;-moz-border-radius:5px;-webkit-border-radius:5px}
+#mbError a,#mbError a:link,#mbError a:visited,#mbError a:hover,#mbError a:active{color:#d00;font-weight:bold;text-decoration:underline}.messageSubject span{background-image:url(../images/tableSprite.png);display:block;float:left;background-position:-13px 0;height:11px;width:15px;margin-right:15px;margin-top:4px}
+.messageSubject .read{background-position:-13px 20px;height:18px;margin-right:15px;margin-top:0;width:15px}
+.messageSubject span span{display:none}tr.unread td{font-weight:bold}#newMessages .continueLink{text-align:right}
+#newMessages .continueLink a{background:url(../images/go.gif) no-repeat scroll right 5px transparent;padding-right:17px}
+#newMessages .continueLink a:hover{background-position:right -17px}#messagesViewMessage .container p{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border:1px solid #39C;color:#333;font-family:Verdana,Arial,Helvetica,sans-serif;padding:10px 15px}
+#messagesViewMessage .container .listTable tfoot .last form,#messagesViewMessage .container .listTable tfoot tr td:last-child form{float:right}
+#messageReceivedContent{height:auto;background-color:#f5f5f5}#messagesNewMessage .listTable{position:relative;line-height:20px}
+#messagesNewMessage #recipient,#messagesNewMessage #subject{position:absolute;left:100px}
+#messagesNewMessage #recipient{width:auto}#messagesNewMessage #subject{width:283px}
+#messagesNewMessage #messageContent,#messageReceivedContent{width:60%}.messageSubject,.messageBody{max-width:460px;display:block;word-wrap:break-word}#nav{display:block;position:absolute;*width:989px;*overflow:hidden}#nav ul{width:100%;display:block;margin:0;padding:13px 13px 0;border:0;overflow:hidden}
+#nav li{display:block;float:left;margin-left:0;padding:0 0 0 20px;text-align:center;background:url(../images/navSprite2.png) left -104px no-repeat;_background:url(../images/navSprite2.gif) left -104px no-repeat;border-bottom:1px solid #d7d7d7}
+#nav li:hover,#nav li:active{background-position:left 0}#nav li.active{background-position:left -104px;border-bottom:1px solid #fff}
+#nav.sticky li.active{border-bottom:0}#nav li.first{border-bottom:0}.games #nav li.first{border-bottom:0;height:60px}
+#nav li.first a{border-bottom:1px solid #d7d7d7}.games #nav li.first a{border-bottom:1px solid #fff}
+#nav.sticky li.first a,.games #nav.sticky li.first a{border-bottom:0}#nav li a{float:left;text-decoration:none;color:#6C6C6C;font-family:Arial,sans-serif;font-size:12px;font-style:normal;font-weight:bold;line-height:30px;white-space:nowrap;background:url(../images/navSprite2.png) right -51px no-repeat;_background:url(../images/navSprite2.gif) right -51px no-repeat;outline:0}
+#nav li a:hover,#nav li a:active{cursor:pointer;color:#000;background-position:right 0;text-shadow:2px 0 1px #FFF,0 2px 1px #FFF,-2px 0 1px #FFF,0 -2px 1px #FFF}
+#nav li.active a{background-position:right -104px}#nav li span{display:block;position:relative;height:30px;_float:left;padding-left:35px;padding-right:0;text-align:left;left:-20px;min-width:68px;_width:68px}
+#nav .btnHome span,#nav .btnPlay span,#nav .btnTourn span,#nav .btnCommunity span,#nav .btnPrize span,#nav .btnShop span,#nav .btnRules span{background-image:url(../images/navIconSprite.gif);background-position:top left;background-repeat:no-repeat}
+#nav .btnPlay span{background-position:-289px 4px}#nav .btnPlay a:hover span{background-position:-289px -35px}
+#nav .btnTourn span{background-position:-138px 4px}#nav .btnTourn li:hover span{background-position:-138px -35px}
+#nav .btnCommunity span{background-position:-889px 4px}#nav .btnCommunity li:hover span{background-position:-889px -35px}
+#nav .btnPrize span{background-position:-435px 4px}#nav .btnPrize a:hover span{background-position:-435px -35px}
+#nav .btnShop span{background-position:-590px 3px}#nav .btnShop a:hover span{background-position:-590px -36px}
+#nav .btnRules span{background-position:-733px 4px}#nav .btnRules a:hover span{background-position:-733px -35px}
+#nav.sticky,body.games #nav.sticky{position:fixed;_position:absolute;top:0;left:0;width:100%;height:60px;min-width:942px;_width:942px;background:url(../images/sticky_bg2.png) 0 0 repeat-x;_background:url(../images/sticky_bg.png) 0 0 repeat-x;z-index:201;_overflow:hidden;margin:0;display:block}
+#nav.sticky ul{position:absolute;width:942px;height:32px;padding:12px 0 0 220px;left:50%;top:0;background:url(../images/logo_sticky.png) 0 0 no-repeat;margin-left:-472px;margin-top:0;margin-bottom:0}
+#nav.sticky li,body.games #nav.sticky li{background:0;width:30px}#nav.sticky .btnHome,#nav.sticky .btnPlay,#nav.sticky .btnTourn,#nav.sticky .btnCommunity,#nav.sticky .btnPrize,#nav.sticky .btnShop,#nav.sticky .btnRules,#nav.sticky .btnHome a,#nav.sticky .btnPlay a,#nav.sticky .btnTourn a,#nav.sticky .btnCommunity a,#nav.sticky .btnPrize a,#nav.sticky .btnShop a,#nav.sticky .btnRules a{background:0;margin:0;padding:0;border-bottom:0}
+#nav.sticky .btnHome a span,#nav.sticky .btnPlay a span,#nav.sticky .btnTourn a span,#nav.sticky .btnCommunity a span,#nav.sticky .btnPrize a span,#nav.sticky .btnShop a span,#nav.sticky .btnRules a span{left:0;min-width:29px;width:29px;height:22px;margin:0;padding:0;border:0;border-left:1px solid #3cf;text-indent:-9999em;background-image:url(../images/stickyNavIcons.png);background-position:-211px 0;_overflow:hidden}
+#nav.sticky .btnHome a span{background-position:-211px 0}#nav.sticky .btnTourn a span{background-position:-61px 0}
+#nav.sticky .btnCommunity a span{background-position:-91px 0}#nav.sticky .btnPrize a span{background-position:-121px 0}
+#nav.sticky .btnShop a span{background-position:-151px 0}#nav.sticky .btnRules a span{background-position:-181px 0}
+#nav.sticky .btnHome a:hover span{background-position:-211px -22px}#nav.sticky .btnPlay a:hover span{background-position:-211px -22px}
+#nav.sticky .btnTourn a:hover span{background-position:-61px -22px}#nav.sticky .btnCommunity a:hover span{background-position:-91px -22px}
+#nav.sticky .btnPrize a:hover span{background-position:-121px -22px}#nav.sticky .btnShop a:hover span{background-position:-151px -22px}
+#nav.sticky .btnRules a:hover span{background-position:-181px -22px}.games #nav.sticky .btnHome a span{background-position:-211px -44px;height:22px}
+.games_category #nav.sticky .btnPlay a span{background-position:-31px -44px;height:22px}
+.tournaments #nav.sticky .btnTourn a span{background-position:-61px -44px}
+.friends #nav.sticky .btnCommunity a span{background-position:-91px -44px}
+.lottery #nav.sticky .btnPrize a span{background-position:-121px -44px}.siteshop #nav.sticky .btnShop a span{background-position:-151px -44px}
+.help #nav.sticky .btnRules a span{background-position:-181px -44px}#nav #backToTop{position:absolute;top:0;left:50%;width:200px;height:44px;margin-left:-472px;display:none;background-image:none}
+#nav.sticky #backToTop{display:block}#nav.sticky li.active:first-child a{border-bottom:0}
+#subNav{clear:both}#subNav ul{margin:0;position:relative;bottom:-1px;_zoom:1;z-index:2;border-left:none;overflow:hidden}
+#subNav li{float:left;background:url(../images/subNavSprite.png) no-repeat right -111px;_background-image:url(../images/subNavSprite.gif);padding:0 20px 0 0;padding-right:15px;margin:0 1px 0 0}
+body.tournaments #subNav li{padding-right:20px}#subNav a{display:block;color:#6C6C6C;cursor:pointer;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;text-decoration:none;margin-right:1px;outline:0;background:url(../images/subNavSprite.png) no-repeat left -37px;_background-image:url(../images/subNavSprite.gif)}
+#subNav span{display:block;padding:6px 19px 6px 26px;border-bottom:0;position:relative;right:-15px}
+#subNav a:hover span{color:#000;text-shadow:2px 0 1px #fff,0 2px 1px #fff,-2px 0 1px #fff,0 -2px 1px #fff;_background-image:url(../images/subNavSprite.gif)}
+#subNav li.active{background:url(../images/subNavSprite.png) no-repeat right -74px;_background-image:url(../images/subNavSprite.gif)}
+#subNav li.active a{background:url(../images/subNavSprite.png) no-repeat left 0;_background-image:url(../images/subNavSprite.gif)}
+#subNav li.active span{border-bottom:1px solid #fff;margin-left:1px}#subNav #now span,#subNav #past span{text-transform:capitalize}
+#subNav #now span,#subNav #past span,#subNav #mine span,#subNav #create span{background:url(../images/tournNavIconSprite.png) no-repeat 0 3px}
+#subNav #past span{background:url(../images/tournNavIconSprite.png) no-repeat 0 -30px;padding-left:29px}
+#subNav #mine span{background:url(../images/tournNavIconSprite.png) no-repeat 0 -62px}
+#subNav #create span{background:url(../images/tournNavIconSprite.png) no-repeat 0 -97px}
+#subNav #now a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -275px 3px}
+#subNav #past a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -275px -30px}
+#subNav #mine a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -275px -62px}
+#subNav #create a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -276px -97px}
+#fbLikeBtn{position:absolute;right:0;padding-top:20px}#so2overlay,#to2overlay{z-index:200;position:absolute;top:0;left:0}#so2overlayTop,#to2overlayTop{width:529px;height:98px;position:relative}
+body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,body.opera #so2overlayBottom .formButton,body.opera #to2overlayTop .btnClose a,body.opera #to2nav{z-index:10}
+#so2overlay .top,#to2overlay .top{width:529px;height:160px;position:absolute;top:0;clip:rect(0px 529px 99px 0);_zoom:1}
+#so2overlay.type1 #so2overlayBottom,#so2overlay.type2 #so2overlayBottom,#so2overlay.type3 #so2overlayBottom,#so2overlay.type4 #so2overlayBottom{width:529px;height:8px;padding:0 4px 0 33px;position:relative;width:492px}
+#so2overlay.type3 #so2overlayBottom,#so2overlay.type4 #so2overlayBottom,#to2overlay.type3 #so2overlayBottom,#to2overlay.type4 #so2overlayBottom{height:25px}
+#so2overlay.type1 .overlayBottom,#so2overlay.type2 .overlayBottom,#so2overlay.type3 .overlayBottom,#so2overlay.type4 .overlayBottom,#to2overlay.type1 .overlayBottom,#to2overlay.type2 .overlayBottom,#to2overlay.type3 .overlayBottom,#to2overlay.type4 .overlayBottom{width:529px;height:160px;position:absolute;top:-27px;clip:rect(126px 529px 135px 0);_zoom:1}
+#so2overlay.type3 .overlayBottom,#so2overlay.type4 .overlayBottom,#to2overlay.type3 .overlayBottom,#to2overlay.type4 .overlayBottom{top:1px;clip:rect(98px 529px 125px 0)}
+.type1 .overlayPointer,.type2 .overlayPointer,.type3 .overlayPointer,.type4 .overlayPointer{width:529px;height:160px;position:absolute;top:-37px;left:30px;clip:rect(135px 60px 158px 36px);_zoom:1}
+.type2 .overlayPointer{clip:rect(135px 529px 154px 503px);left:-30px;top:-34px}
+.type3 .overlayPointer{clip:rect(135px 25px 154px 0);left:30px;top:-13px}
+.type4 .overlayPointer{clip:rect(135px 529px 154px 503px);left:-30px;top:-13px}
+.overlayStatus{display:none}.statusTourn .overlayStatus,.statusNew .overlayStatus,.statusUpdate .overlayStatus,.statusBeta .overlayStatus,.statusMobile .overlayStatus{display:block;width:700px;height:330px;position:absolute;_zoom:1;left:-130px;top:-240px;clip:rect(227px 175px 324px 110px)}
+.statusUpdate .overlayStatus{left:-240px;top:-240px;clip:rect(227px 295px 324px 230px)}
+.statusBeta .overlayStatus{left:-355px;top:-240px;clip:rect(227px 395px 324px 340px)}
+.statusMobile .overlayStatus{left:-460px;top:-240px;clip:rect(227px 505px 324px 450px)}
+.statusTourn .overlayStatus{clip:rect(227px 105px 324px 0);left:-13px;top:-238px}
+.gameinfo{padding:10px 0 0 10px;width:371px;position:absolute}#so2overlayTop h3,#to2overlayTop h3{color:#39c;font-style:normal;font-size:14px;height:18px;*height:19px;left:137px;line-height:16px;margin:0;overflow:hidden;padding:5px 5px 5px 0;position:absolute;cursor:default;top:4px;border-bottom:0;background:url(../images/overlayBackSprite.png?v2) repeat scroll -106px -31px;z-index:1;max-width:238px}
+#so2overlayTop .gameDesc,#to2overlayTop .gameDesc{color:#666;font-size:11px;height:44px;left:137px;line-height:14px;margin:0;overflow:hidden;padding:0;position:absolute;top:29px;width:232px;cursor:default;border-bottom:1px dotted #2cbbed;z-index:2}
+#so2overlayTop .gameDesc p,#to2overlayTop .gameDesc p{color:#193255}#so2overlayTop .gameShot,#to2overlayTop .gameShot{height:auto;left:10px;margin:0;overflow:visible;padding:0;position:absolute;top:10px;width:auto}
+#so2overlayTop a img,#to2overlayTop a img{border:1px solid #999}#so2overlay dl,#to2overlay dl{padding:0;margin:0;position:relative}
+#so2overlay dd,#to2overlay dd{color:#666;cursor:default;font-size:12px;font-weight:bold;position:absolute;right:150px;text-align:center;top:7px;margin:0;width:42px}
+#so2overlay dt,#to2overlay dt{background:url(../images/overlayUser.png) no-repeat scroll 0 0;display:block;height:12px;position:absolute;right:190px;text-indent:-9999px;top:8px;width:10px;text-align:left}
+#so2overlay .rating5,#so2overlay .rating4,#so2overlay .rating3,#so2overlay .rating2,#so2overlay .rating1,#so2overlay .rating0,#to2overlay .rating5,#to2overlay .rating4,#to2overlay .rating3,#to2overlay .rating2,#to2overlay .rating1,#to2overlay .rating0{background:url(../images/overlayStars.gif);background-repeat:no-repeat;background-position:left 0;text-indent:-9999px;width:60px;height:9px;position:absolute;top:81px;left:137px}
+#so2overlay .rating4,#to2overlay .rating4{background-position:-12px 0}#so2overlay .rating3,#to2overlay .rating3{background-position:-24px 0}
+#so2overlay .rating2,#to2overlay .rating2{background-position:-36px 0}#so2overlay .rating1,#to2overlay .rating1{background-position:-48px 0}
+#so2overlay .rating0,#to2overlay .rating0{background-position:-60px 0}#so2nav,#to2nav{height:22px;overflow:hidden;position:absolute;top:76px;width:135px;margin:0;padding:0;right:148px;border-left:none}
+#to2nav{width:220px}#so2nav li,#to2nav li{list-style:none;float:right;padding:0;margin:0;background:0}
+#so2nav li a,#to2nav li a{display:block;text-indent:-9999px;width:21px;height:22px;background:url(../images/overlaySoToolsSprite.gif) no-repeat 0 0}
+#to2nav li a{background:url(../images/overlayToToolsSprite.gif) no-repeat 0 0}
+#so2nav .btnMobile{display:none}.statusMobile #so2nav .btnMobile{display:block}
+#so2nav .btnMobile a,#to2nav .btnMobile a{background-position:-131px top}
+#so2nav .btnMobile a:hover,#to2nav .btnMobile a:hover{background-position:-131px bottom}
+#so2nav .btnTourn a,#to2nav .btnTourn a{background-position:-4px top}#so2nav .btnTourn a:hover,#to2nav .btnTourn a:hover{background-position:-4px bottom}
+#so2nav .btnStats a{background-position:-31px top}#to2nav .btnStats a{background-position:-35px top}
+#so2nav .btnStats a:hover{background-position:-31px bottom}#to2nav .btnStats a:hover{background-position:-35px bottom}
+#so2nav .btnInfo a,#to2nav .btnInfo a{background-position:-56px top}#so2nav .btnInfo a:hover,#to2nav .btnInfo a:hover{background-position:-56px bottom}
+#so2nav .btnHelp a,#to2nav .btnHelp a{background-position:-77px top;width:21px}
+#so2nav .btnHelp a:hover,#to2nav .btnHelp a:hover{background-position:-77px bottom;width:21px}
+#so2nav .btnPlay a{background-position:-98px top;width:26px}#so2nav .btnPlay a:hover{background-position:-98px bottom;width:26px}
+#to2nav .btnPlay a{text-indent:0;background:url(../images/playArrow2.gif) no-repeat right 5px;text-decoration:none;color:#3CF;width:auto;_width:1px}
+#to2nav .btnPlay a span{display:block;width:24px;text-indent:-9999px}#to2nav .btnPlay a strong{font-size:12px;line-height:20px;padding-left:2px;padding-right:23px;white-space:nowrap;text-decoration:underline}
+#to2nav .btnPlay a:hover{background:url(../images/playArrow2.gif) no-repeat right -20px;text-shadow:0 -1px 1px #fff,0 1px 1px #fff,-1px 0 1px #fff,1px 0 1px #fff,1px -1px 1px #fff,-1px -1px 1px #fff,-1px 1px 1px #fff,1px 1px 1px #fff}
+#to2nav .btnPlay a:hover strong{text-decoration:none}#topGame{height:95px;top:4px;left:381px;overflow:hidden;position:absolute;width:139px}
+#topGame h5{color:#fff;font-size:12px;line-height:21px;font-weight:bold;position:absolute;left:8px;top:11px;padding:0;margin:0;cursor:default;white-space:nowrap}
+.uc #topGame h5{text-transform:uppercase}#topGame ol{height:42px;left:22px;margin:0;overflow:visible;padding:0 0 0 30px;position:absolute;top:43px;border-left:1px solid #fff}
+#topGame ol li{line-height:15px;font-size:11px;overflow:visible;left:-26px;position:relative;top:-3px;color:#bae3ff;font-weight:bold;padding-left:11px;background:url(../images/overlaySoToolsSprite.gif) no-repeat -124px 6px}
+#topGame ol .friendsOnline{background:url(../images/overlaySoToolsSprite.gif) no-repeat -124px -10px}
+#topGame ol li a{font-size:10px;color:#fff;line-height:12px;padding-right:38px;font-weight:normal;font-style:normal}
+#overlayJackpot{position:absolute;top:0;left:381px;width:142px;height:78px;overflow:hidden;padding-top:20px}
+.ie #overlayJackpot{font-family:arial black;left:375px;width:148px}#overlayJackpot h4{margin:0;padding:0 15px;font-size:22px;line-height:24px;color:#fff;text-shadow:0 0 4px #fff,0 0 3px #fff}
+.ie #overlayJackpot h4{zoom:1;*filter:none}.ie #overlayJackpot h4 span{zoom:1}
+.uc #overlayJackpot h4{text-transform:uppercase}#overlayJackpot p{margin:1px 0 10px;padding:0 15px;font-size:18px;color:#CFEDFA;line-height:22px;font-weight:bold}
+ie #overlayJackpot p{zoom:1}#overlayJackpot .funCurrencyContainer{background-position:0 5px}
+#so2overlay .btnClose a,#to2overlay .btnClose a{display:block;height:13px;width:13px;line-height:13px;position:absolute;right:9px;text-indent:-9999px;top:5px;background:url(../images/closetooltip.png) no-repeat 0 -13px}
+#so2overlay .btnClose a:hover,#to2overlay .btnClose a:hover{background-position:0 0}
+#so2overlayBottom div{color:#FFF;float:left;font-size:11px;height:15px;margin:0;overflow:hidden;padding:0;position:absolute;top:5px;width:491px;cursor:default}
+.type1 #so2overlayBottom div,.type2 #so2overlayBottom div{display:none}#so2overlayBottom .funCurrencyContainer{display:inline-block}
+#so2overlayBottom .funCurrencyContainer{display:inline-block}#so2overlayBottom p{float:left}
+#so2overlay .formLink,#to2overlay .formLink{background:url(../images/overlayArrow.gif) no-repeat scroll right 0;border:0;color:#FFF;cursor:pointer;display:block;float:left;font-size:10px;font-weight:bold;height:16px;line-height:14px;padding:0 25px 0 2px;position:absolute;right:6px;top:-1px}
+.uc #so2overlay .formLink,.uc #to2overlay .formLink{text-transform:uppercase}
+#so2overlay .formLink:hover,#to2overlay .formLink:hover{color:#ff7100;background-position:right -17px}
+.type1 #so2overlayBottom button,.type2 #so2overlayBottom button{display:none}
+#so2overlay a,#so2overlay a:visited,#to2overlay a,#to2overlay a:visited{outline:0}
+#so2overlayTop .spinner,#to2overlayTop .spinner{position:absolute}#so2overlayTop .spinner-img,#to2overlayTop .spinner-img{width:16px;height:16px;background:url(../images/spinner_white.gif) 0 0 no-repeat}html.print,body.print{height:auto}body.print{background:#fff;color:#000;font-family:"trebuchet ms",arial,tahoma,verdana;font-size:101%}
+.print h1,.print h2,.print h3,.print h4{color:#000;page-break-after:avoid}
+.print h2,.print h3,.print h4,.print #printTable,.print #printTable td{border:0}
+.print h2,.print #topLine,.print .contBox ol ul li{margin:0}.print h3{margin:1em 0 .5em}
+.print h4{margin:1em 0 .5em}.print p{color:#000}.print p,.print li{text-align:justify}
+.print p,.print ul,.print ol{page-break-inside:avoid}.print .contBox ol ul li{list-style-type:circle;padding:0}
+.print a:link,.print a:visited{color:#00f}.print #printTable{width:100%}.print #printHeader{display:table-header-group}
+.print #printFooter{display:table-footer-group}.print #printHeader td{padding-bottom:2em}
+.print #printFooter td{color:#444;text-align:right;font-size:11px}.print #printFooter td p{padding-top:2em;border-top:1px solid #ddd;text-align:right;color:#666}
+.print #heading,.print #subNav,.print #startGame,.print #gamesDetailsHelpArticles,.print .help #fnHelp,.print .help #subLinks,.print .tipBox,.print .ulContainer,.print #printLink{display:none}
+.print #printContent h3:first-child{margin-top:0}.print tfoot td,.print thead th{background:#fff}
+#printLink{float:right;margin:1em 1em 0}body.print.rtl{direction:rtl}.regContainer ol,.regContainer li{background:0;border:0 none;margin:0;padding:0;list-style:none;overflow:hidden;_zoom:1;_position:relative}
+.regContainer ol ol li,.regContainer ol li{list-style:none}.regContainer ol li{float:left;display:inline;width:260px;margin-right:34px;_zoom:1;_overflow:hidden}
+.regContainer ol li li{margin-right:0;display:block;float:none}.regContainer li{margin-bottom:8px}
+.regContainer .signonHelpers li{margin-bottom:0;background:url(../images/bullet.png) no-repeat scroll 0 5px transparent;list-style:none outside none;margin-left:-11px;padding-left:16px}
+.regContainer li .formField{display:block;width:250px}.regContainer li .formText{display:block;width:250px;padding:5px 3px;color:#8492A4;font-weight:bold}
+.regContainer li select.formField{width:260px}.regContainer #gender{width:auto;display:block}
+.regContainer #regFormBirthday label{display:block}.regContainer #regFormBirthday .formField{display:inline;width:auto}
+.regContainer li span.info{font-size:11px;color:#8492A4}.regContainer li .ffCheckbox{margin-right:3px}
+.regContainer li .formButton{width:260px}.regContainer li #securecode{width:254px}
+.regContainer li .captcha{width:auto;height:auto;padding:0}.regContainer #newsletterDescription{border-top:1px dotted #39C;padding-top:10px;margin-top:10px;font-size:11px;clear:left}
+.regContainer .last{margin:0}.regContainer #regFormZip,.regContainer #regFormPlace{float:left;width:66px}
+.regContainer #regFormPlace{width:190px;margin-left:4px}.regContainer #regFormZip input{width:56px}
+.regContainer #regFormPlace input{width:180px}.regContainer #hasSecurityAnswerChecked{margin-right:3px;float:left}
+.regContainer .ffCheckbox{float:left}.regContainer #regFormNewsletter label,.regContainer #regFormAgb label{display:block;margin:0 0 0 22px;vertical-align:middle}
+.regContainer acronym{border:0;cursor:pointer}body.register #error{margin:10px 10px 0}
+body.register #heading h3{margin:10px 20px 0 10px}body.register #linkToLogin{padding:0 20px;text-align:right}
+body.optional_data label{display:block}#formTip{display:none;position:absolute;top:0;left:0;width:220px;border:1px solid #afcbd7;background-color:#fff;z-index:15;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:2px 2px 4px #999;-moz-box-shadow:2px 2px 4px #999;-webkit-box-shadow:2px 2px 4px #999}
+#formTip .arrow{display:block;width:11px;height:13px;position:absolute;top:0;left:-11px;background:url(../images/formTipArrow.png) left center no-repeat;_background-image:url(../images/formTipArrow.gif)}
+#formTip div{margin:0;padding:10px;font-size:11px;line-height:1.4em}#formTip h3{font-size:11px}
+#formTip ul{margin:0 0 0 11px}#formTip li,#formTip li.error{background:url(../images/checkSprite.png) 0 -34px no-repeat;color:#bfbfbf;line-height:15px;margin:0 0 1px -12px;padding:2px 0 0 22px}
+#formTip li.success{background:url(../images/checkSprite.png) 0 0 no-repeat;color:#000}
+#passwordVisualFeedback{height:13px;margin:2px 0 0;padding:5px 0;position:relative;width:256px}
+.settings #passwordVisualFeedback{width:206px}#passwordVisualFeedback .feedbackPointer{background:url(../images/password_strength_sprite.png) 0 0 repeat-x;height:22px;left:16%;margin:0;position:absolute;top:1px;-webkit-transition:left .3s ease-out 0s;-o-transition:left .3s ease-out 0s;-moz-transition:left .3s ease-out 0s;transition:left .3s ease-out 0s;width:7px}
+#passwordVisualFeedback .feedbackItem01,#passwordVisualFeedback .feedbackItem02{background:url(../images/password_strength_sprite.png) 0 0 repeat-x;float:left;height:100%;width:33%}
+#passwordVisualFeedback .feedbackItem01{background-position:0 -23px}#passwordVisualFeedback .feedbackItem02{background-position:0 -37px}
+#passwordVisualFeedbackBar{background:url(../images/password_strength_sprite.png) 0 -51px repeat-x;height:100%}
+#passwordVisualFeedbackBar.minimumSatisfaction .feedbackPointer{left:49%}
+#passwordVisualFeedbackBar.satisfaction1Up .feedbackPointer{left:82%}#passwordVisualFeedbackBar.satisfaction2Up .feedbackPointer{left:82%}
+.shopRegister{margin:-6px 10px 0}body.room{background-image:url(../images/backBodyRoom.jpg);background-position:0 0}
+body.room{overflow:hidden;overflow-y:scroll;overflow-x:auto;*overflow-y:auto;margin-bottom:0;padding:0}
+body.room #header{height:144px;width:805px;margin:0 0 4px 0;position:relative;background:url(../images/backUserSmall.png) bottom right no-repeat}
+body.room #nav{background:0;height:30px;position:static}body.room div#nav.sticky{position:absolute;top:-42px;height:42px;margin-left:0;min-width:800px;z-index:100;background-image:url(../images/roomNavSticky.gif)}
+body.room #nav ul{padding-top:3px;margin-left:0}body.room #nav li{background:url(../images/roomNavLi.gif) no-repeat top right}
+body.room #nav a{background:url(../images/roomNavA.gif) no-repeat top left}
+body.room #nav li.btnPrize{margin-left:0}body.room .sizeX{width:997px;height:850px}
+body.room #footer{background:0;border:0;margin:0;padding:10px;height:auto;color:#39C}
+body.room #main{background-image:none;background-color:transparent;background-color:#fff;margin:0;-moz-border-radius:0;-moz-box-shadow:none;-webkit-border-radius:0;-webkit-box-shadow:none;border-radius:0;box-shadow:none}
+#ad{width:728px;height:90px;overflow:hidden;position:absolute;left:15px;top:7px}
+body.room #header .contBox{padding:0 0 0 163px;margin:0;margin-right:25px;height:144px;float:left;background:url(../images/backUserSmallLeft.png) left bottom no-repeat}
+body.room #header .top3 .contBox{width:289px;margin-right:0}body.room #header .container{width:100%;height:47px;padding:4px 0;border-width:1px 0 1px 0;border-style:dotted;border-color:#2CBBED}
+body.room #header h1{display:block;position:absolute;top:8px;left:0;text-indent:-9999px;width:182px;height:46px;z-index:10;background:url(../images/backHeaderSmall.jpg) 0 0 no-repeat}
+body.room #header h1 a{position:static;top:0;left:0;background:0}body.room #header h1 a span{height:43px}
+body.room #header #topWinner{padding:0 0 0 20px;background:0}body.room #header #topWinner .container{padding:0;height:55px}
+body.room #header #topWinner .listTable{height:56px;padding:1px 0}body.room h3{margin:60px 0 0;border-bottom:0}
+body.room #header p.gameShot{position:absolute;left:15px;top:65px;width:131px;_width:119px;height:71px;_height:59px}
+body.room #header p.gameShot span{position:absolute;left:-7px;_left:-13px;top:-7px;_top:-13px;width:147px;height:87px;display:block;overflow:hidden;background-repeat:no-repeat;background-position:center center}
+body.room .voting{display:none}#windowSizes{position:absolute;right:10px;top:20px;width:62px;height:19px;display:block;margin:0;margin-left:0;border-left:none;overflow:visible;z-index:100}
+#windowSizes li{list-style-type:none;background-image:none;display:inline;margin-left:0;padding:0}
+body.room #windowSizes a{height:19px;background-image:url(../images/windowSizeSprite.png);float:left;text-indent:-9999px}
+body.room #windowSizes #sizeS a{width:14px;margin-right:4px}body.room #windowSizes #sizeS a:hover,body.room #windowSizes #sizeS.active a{background-position:0 -19px}
+body.room #windowSizes #sizeS a{width:14px;margin-right:4px}body.room #windowSizes #sizeS a:hover{background-position:0 -19px}
+body.room #windowSizes #sizeS.active a{background-position:0 -38px}body.room #windowSizes #sizeM a{width:17px;margin-right:4px;background-position:-18px 0}
+body.room #windowSizes #sizeM a:hover{background-position:-18px -19px}body.room #windowSizes #sizeM.active a{background-position:-18px -38px}
+body.room #windowSizes #sizeL a{width:19px;background-position:-39px 0}body.room #windowSizes #sizeL a:hover{background-position:-39px -19px}
+body.room #windowSizes #sizeL.active a{background-position:-39px -38px}body.room #tip{width:760px;margin:0 auto 15px}
+body.room #main{text-align:left;position:relative;padding:7px 0 0 0;width:833px;margin:0 auto 0 auto;border:0;overflow:visible!important}
+body.room #gameFrame{border:0;display:block;margin:auto;position:relative;top:0;left:0;overflow:visible}
+body.room #ajaxContainer{position:absolute;top:-42px;bottom:-34px;margin:0;padding:42px 0 34px 0;overflow-y:scroll}
+body.room .s #ajaxContainer{width:818px}body.room .m #ajaxContainer{width:974px}
+body.room .l #ajaxContainer{width:1276px}body.room #wrapper{padding-bottom:0;background:0}
+body.room #wrapper.s,body.room .s #main,body.room .s #content,body.room .s #header,body.room .s #nav.sticky{width:800px}
+body.room .s #footer,body.room .s #nav{width:780px}body.room #wrapper.m,body.room .m #main,body.room .m #content,body.room .m #header,body.room .m #nav.sticky{width:956px}
+body.room .m #footer,body.room .m #nav{width:936px}body.room #wrapper.l,body.room .l #main,body.room .l #content,body.room .l #header,body.room .l #nav.sticky{width:1268px}
+body.room .l #footer,body.room .l #nav{width:1248px}body.room #missingTemplates{display:none}
+body.room .min #playersOnline{top:30px;display:none}body.room #playersOnline p{margin:0}
+body.room .min #gameSettings{font-size:11px;color:#fff;position:absolute;padding:0;top:45px;right:27px;_right:10px;margin:0}
+body.room #gameSettings select{font-size:11px;margin-left:5px}body.room .min #content{margin-bottom:0;background:#FAF9F5;margin-top:0;padding:0 12px}
+body.room .min #wrapper{margin-bottom:0;border-bottom-width:0;height:auto;position:static;_zoom:1}
+body.room .min #footer{margin-top:0}body.room .min #tip{width:auto}body.room .xs #content,body.room #content,body.room .m #content,body.room .l #content,body.room .xl #content{padding:0;margin-top:0}
+body.room #main{padding:10px 0;position:static}body.room #footer{padding-top:0;position:static;z-index:100}
+body.room #skyscraper{width:160px;height:600px;overflow:hidden;float:right;margin:50px 5px 5px;background:transparent;background-position:center center;background-repeat:no-repeat}.shop #frm td p{display:inline}.backlink{padding:0}#additionalContentTop ul{overflow:hidden;zoom:1;border-left:none;margin:10px auto}
+#additionalContentTop li{float:left;overflow:hidden;zoom:1;margin:0;padding:0 20px 12px 33px;background:url(../images/steps_sprite.png) no-repeat left -109px;color:#6c6c6c}
+#additionalContentTop li.active{font-weight:bold;background:url(../images/steps_sprite.png) no-repeat left -49px;color:#333}
+#additionalContentTop li.visited{background:url(../images/steps_sprite.png) no-repeat left 11px}
+#additionalContentTop .contBox{position:relative}#additionalContentTop .backlink{position:absolute;right:10px;top:12px}
+.itemList,.paymentList,.itemGroup ul li{background:url(../images/box_451_gray_top.png) no-repeat scroll 10px 10px transparent;margin:0 0 20px;width:451px;float:left;position:relative}
+.itemGroup,.itemGroup .container{padding:0;clear:both}#sideBar .itemList,#sideBar .paymentList{float:none;width:auto;background-image:url(../images/box_294_gray_top.png)}
+.itemList h3,.paymentList h3{border:0;color:#717171;cursor:default;margin:0;padding:10px 50px 0 10px}
+.itemList .container,.paymentList .container,.itemGroup .itemContainer{background:url(../images/box_451_gray_bottom.png) no-repeat scroll left bottom;margin-bottom:-20px;padding-bottom:20px;padding:0}
+#sideBar .itemList .container,#sideBar .paymentList .container{background-image:url(../images/box_294_gray_bottom.png)}
+.itemGroup .itemContainer{padding:10px;margin-bottom:-20px;overflow:hidden;zoom:1}
+.paymentList .itemContainer{overflow:hidden;zoom:1}.itemList ul,.paymentList ul,.itemGroup ul{border:0;margin:0;overflow:hidden;zoom:1}
+.itemList ul li,.paymentList ul li,.itemGroup ul li{border:0;background:0;padding:10px;margin:0}
+.itemList ul li{overflow:hidden;zoom:1}.itemList .container ul li,.paymentList .container ul li{border-bottom:1px solid #d1d1d1}
+.itemList .container ul li.last,.paymentList .container ul li.last,.itemGroup .container ul li.last{border-bottom:0}
+.itemList img,.paymentList img,.itemGroup img{float:left;padding-right:10px}
+.itemList .itemContainer{overflow:hidden}#sideBar .itemList dl{width:200px;margin:0}
+#sideBar .itemList .sale dt{width:160px}.itemList dl,.paymentList dl,.itemGroup dl,.itemList dd,.paymentList dd{margin:0;overflow:hidden;zoom:1}
+.sale dl{margin-right:40px}.itemList dt,.paymentList dt,.itemGroup dt{float:left;margin-bottom:10px;width:200px}
+.itemGroup dt{width:160px}.itemList .regularPrice,.itemGroup .regularPrice{float:left}
+.itemList .price,.itemList button,.paymentList button,.itemGroup .price,.itemGroup button{float:right}
+.itemTable .fbSubmit,.itemList .fbSubmit,.paymentTable .fbSubmit,.paymentList .fbSubmit{*overflow:visible}
+.itemList a,.itemGroup a{float:left}.highLight{background-image:url(../images/box_451_blue_top.png)}
+.highLight .container{background-image:url(../images/box_451_blue_bottom.png)}
+.highLight h3{color:#39c}body.hasSideBar #shop .itemList,.itemGroup ul li{background-image:url(../images/box_294_gray_top.png);width:294px}
+.itemGroup ul li{background-position:10px 10px;background-repeat:no-repeat;margin-bottom:20px}
+body.hasSideBar #shop .itemList .container,.itemGroup .itemContainer{background-image:url(../images/box_294_gray_bottom.png)}
+body.hasSideBar #shop .highLight{background-image:url(../images/box_294_blue_top.png)}
+body.hasSideBar #shop .highLight .container{background-image:url(../images/box_294_blue_bottom.png)}
+.containerItem{overflow:hidden;padding:10px;border-bottom:1px solid #d1d1d1;float:none;zoom:1}
+.shop .gameLogoSmall{height:54px;width:102px;display:block;overflow:hidden;margin:3px auto}
+.itemTable,.paymentTable{margin:10px 0;overflow:hidden;max-width:920px}.itemTable thead,.paymentTable thead{font-weight:bold}
+table.itemTable td,table.paymentTable td{vertical-align:middle;padding:5px}
+table.big tbody td{vertical-align:middle;padding:10px 5px}table.small tbody td{vertical-align:middle;padding:0 5px}
+.itemTable tbody .first,.paymentTable tbody .first,.itemTable tbody td:first-child,.paymentTable tbody td:first-child{width:70px;text-align:center}
+.itemTable .last,.paymentTable .last{width:1px;*width:auto}.itemTable td:last-child,.paymentTable td:last-child{width:1px}
+.itemTable .last button,.paymentTable .last button,.itemTable td:last-child button,.paymentTable td:last-child button{float:right}
+.itemTable img,.paymentTable img{display:block;margin:0 auto}td.price,td.sale,td.regularPrice{white-space:nowrap}
+.itemTable td.price,.itemTable td.sale,.itemTable td.regularPrice{width:0}
+.itemTable .label,.paymentTable .label,.lastpayment dd{font-weight:bold}.lastpayment dl,.lastpayment dd{float:left}
+.lastpayment dl{margin:17px 0 0}.lastpayment .itemContainer{position:relative}
+.lastpayment .formButton{position:absolute;bottom:14px;right:0}.itemTable .price,.paymentTable .price{text-align:right}
+.itemTable .regularPrice,#sideBar .regularPrice{color:#999;text-decoration:line-through;padding:0 5px 0 0;*clear:both}
+.sale_badge{display:block;position:absolute;right:0;top:0;background:url(../images/big_pink_badge.png) no-repeat 50% 50%;width:62px;height:63px;font-size:17px;font-style:italic;font-weight:bold;color:#fff;text-align:center;line-height:60px;white-space:nowrap;text-shadow:0 1px 1px #f33d7f,-1px 1px 1px #f33d7f,-1px 0 1px #f33d7f,-1px -1px 1px #f33d7f,0 -1px 1px #f33d7f,1px -1px 1px #f33d7f,1px 0 1px #f33d7f,1px 1px 1px #f33d7f,0 1px 1px #f33d7f,-1px 1px 1px #f33d7f,-1px 0 1px #f33d7f,-1px -1px 1px #f33d7f,0 -1px 1px #f33d7f,1px -1px 1px #f33d7f,1px 0 1px #f33d7f,1px 1px 1px #f33d7f,0px 0 10px #f33d7f,0px 0 15px #f33d7f}
+td .sale_badge{position:relative;background:url(../images/small_pink_badge.png) no-repeat 50% 50%;width:34px;height:34px;line-height:32px;font-size:11px;float:left;top:0;left:0}
+.paymentTable tbody tr.testphase td{background:#FFF2F2;border-color:red}span.testphase{background:red;color:#fff;display:block;margin:5px 0;padding:0 5px}
+.paymentList .container ul li.testphase{border:1px solid red}div#paymentToolTip{display:none;top:-9999;left:-9999}
+span.paymentToolTipToggler{margin-left:10px;font-weight:bold;font-style:italic;padding:0 5px;background:transparent url(../images/payments_desc_i.png) no-repeat 0 0}
+span.paymentToolTipToggler span{display:none}div.paymentDescContainer{display:none}
+.shop_items .itemTable tbody tr:hover td,.shop_items .paymentTable tbody tr:hover td,.shop_payments .itemTable tbody tr:hover td,.shop_payments .paymentTable tbody tr:hover td{background-color:#C1F0FF}
+div#paymentToolTip{left:0;position:absolute;top:0;z-index:200}div#paymentToolTip div.toolTipText div.desc{width:288px;background:url(../images/paymentOverlay.png) no-repeat left top;padding:12px 18px 10px 30px;margin:0;min-height:45px;color:#333;font-style:normal;text-align:left}
+div#paymentToolTip div.footer{width:336px;height:9px;background:url(../images/paymentOverlay.png) no-repeat left bottom}
+.paymentList{width:608px;float:none;background-image:url(../images/box_608_blue_top.png)}
+.paymentList .container{background-image:url(../images/box_608_blue_bottom.png)}
+.contItemsSide .itemTable{position:relative;overflow:hidden;margin:0;width:628px;float:left}
+.contItemsSide .itemTable thead td.last,.contItemsSide .itemTable tfoot td.last{background:#C1F0FF}
+.contItemsSide .itemTable thead td:last-child,.contItemsSide .itemTable tfoot td:last-child{background-image:none}
+.contItemsSide{clear:both;margin:10px 0;padding-bottom:0;background:url(../images/box_294_gray_half_top.png) no-repeat scroll 638px 10px transparent;zoom:1}
+.contItemsSide .container{padding:0;background:url(../images/box_294_gray_half_bottom.png) no-repeat scroll right bottom transparent}
+.itemDescription{position:relative;padding:30px;margin-left:628px}.contItemsSide table{border-right:1px solid #d1d1d1}
+#sideBar .itemList{width:294px;background-image:url(../images/box_294_gray_top.png)}
+#sideBar .itemList .container{background-image:url(../images/box_294_gray_bottom.png)}
+#sideBar .container ul li{border-bottom:0}#sideBar .footer{bottom:10px;left:-9px;margin:20px 0 0;overflow:hidden;padding:10px 10px 0;position:relative}
+#sideBar .footer a.more{background:url(../images/gameCat_C2A.png) no-repeat scroll right center transparent;float:right;padding-right:20px}
+#countryCurrencyFormContainer{background:#fff;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:1px #ccc solid;-moz-box-shadow:0 0 20px 0 #CCC;-webkit-box-shadow:0 0 20px 0 #CCC;box-shadow:0 0 20px 0 #CCC;position:absolute;top:50%;left:50%;width:450px;margin-left:-225px;margin-top:-95px;z-index:1000}
+.countryCurrencyFormContainer{background:#fff;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:1px #ccc solid;-moz-box-shadow:0 0 20px 0 #CCC;-webkit-box-shadow:0 0 20px 0 #CCC;box-shadow:0 0 20px 0 #CCC;position:absolute;top:15%;left:50%;width:450px;margin-left:-225px;margin-top:-95px;z-index:1000}
+#countryCurrencyFormContainer #formCloseBtn{width:14px;height:14px;position:absolute;right:11px;top:7px}
+#countryCurrencyFormContainer #formCloseBtn a{display:block;width:100%;height:100%;cursor:pointer;background:transparent url("../images/walkthroughClose.gif") no-repeat}
+#countryCurrencyFormContainer #formCloseBtn a span{display:none}#countryCurrencyFormContainer #formCloseBtn a:hover{background-position:left bottom}
+.countryCurrencyFormContainer #formCloseBtn{width:14px;height:14px;position:absolute;right:11px;top:7px}
+.countryCurrencyFormContainer #formCloseBtn a{display:block;width:100%;height:100%;cursor:pointer;background:transparent url("../images/walkthroughClose.gif") no-repeat}
+.countryCurrencyFormContainer #formCloseBtn a span{display:none}.countryCurrencyFormContainer #formCloseBtn a:hover{background-position:left bottom}
+.payment_ok #gamesTopGames,.payment_pending #gamesTopGames{background:0}.payment_ok #gamesTopGames h3{color:#666}
+#paymentDetails h4{border-bottom:1px dotted #39C;margin:0;padding-bottom:2px}
+#paymentDetails img{float:left;padding:0 20px 20px 0}#paymentInProgress,#shopPayment,#parentsPermission{margin-bottom:42px}
+.shopSidebar .container h3{border-top:1px dotted #39C}#shopPayment #shopNextButtonActive{display:table;margin:20px auto}
+.payment #paymentPagoForm #months{margin-bottom:15px}.shop_mobilegames #mobileOfferTable .headerTwists{text-align:center}
+.shop_mobilegames #teaserImgs{border:none 0}.shop_mobilegames #teaserImgs li{background:0;float:left}
+.shop_mobilegames #selectMobilePhone .mobilePrefix{width:30px}.selectedItem{background:url(../images/box_922_blue_top.png) no-repeat scroll 10px 10px transparent;margin-bottom:20px;position:relative}
+.selectedItem .container{background:url(../images/box_922_blue_bottom.png) no-repeat scroll bottom left transparent;margin-bottom:-10px}
+.selectedItem ul{border:0}.selectedItem ul li{background:0}.selectedItem .item{margin-left:150px}
+.selectedItem dl{margin-right:150px;margin-left:0}.selectedItem dd{margin-left:0}
+.selectedItem dt{font-size:17px;font-weight:bold;float:left}.selectedItem .price,.selectedItem .regularPrice{font-size:17px;font-weight:bold}
+.selectedItem .price{float:right;text-align:right;margin-left:40px}.selectedItem .regularPrice{color:#999;text-decoration:line-through;text-align:left}
+.selectedItem .sale_badge{right:100px;top:22px}.selectedItem .desc{clear:right;padding-top:10px}
+.selectedItem .itemContainer .itemImage{min-height:150px;float:left}.selectedItem .itemContainer img{float:left;padding-right:30px}
+.selectedItem .formButton{background-image:url(../images/btnSmallPinkLeftSprite.png)}
+.selectedItem .formButton span{background-image:url(../images/btnSmallPinkRightSprite.png);background-position:right 1px;text-shadow:0 0 2px #f33d7f,0 0 5px #f33d7f,0 0 10px #f33d7f}
+.selectedItem .formButton:hover{background-position:-20px center}.selectedItem .formButton:hover span{text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 10px #fff;color:#ef3475;background-position:right -21px}
+.selectedItem .itemGutschein{margin-left:0}.selectedItem .buyFriend{line-height:30px}
+.selectedItem .buyFriend a{float:left;margin-right:30px}.selectedItem .buyFriend select{margin-right:10px}
+#mbImage .contBox.friendslist h3{border-bottom:1px dotted #39C;color:#666;font-size:17px;font-style:italic;font-weight:bold;padding-bottom:2px;text-decoration:none}
+#mbImage .friendslist table{text-align:center}#mbCenter .friendslist button{float:none;width:200px}
+.shop_item #mbCloseLink{background:transparent url("../images/walkthroughClose.gif") no-repeat;height:14px;position:absolute;right:14px;top:7px;width:14px}
+.shop_item #mbCloseLink:hover{background-position:left bottom}#mbImage .contBox.friendslist a.formButton{margin:0 auto;color:#fff}
+.shopRegister{margin:-6px 10px 0}.shopLogin{margin:-15px 10px 0}.shopApp a.formButton{color:#fff}
+.shopApp a img{display:block;margin:10px 3px 10px auto}#paymentPagoForm select{width:209px;margin-right:5px}
+#paymentPagoForm #expMonth,#paymentPagoForm #expYear{width:100px}.payment_ok .voucherNotavailable button{float:right}
+.payment .mask{padding:4px 0;background-color:#F0FBFF;opacity:.7;filter:Alpha(opacity=70);z-index:42}
+.shop_gutschein_success .heading{background:url(../images/GT_voucher_success.jpg) repeat scroll 0 0 transparent;width:922px;height:247px;margin:10px}
+.shop_gutschein_success #wrapper a.formButton span{margin-left:0;text-shadow:none}
+.shop_gutschein_success .gutscheinSuccess thead td{text-align:left}.shop_gutschein_success .gutscheinSuccess td{text-align:right}
+.shop_gutschein_success .gutscheinSuccess .inputNames{width:300px;text-align:left}
+.shop_gutschein_success .gutscheinSuccess{width:50%}body.shop #shopGutschein #subNav{padding:0 10px;margin-top:10px}body.shop #shopGutschein #content{margin:0 10px}
+body.shop #shopGutschein #content table{margin:0 10px 15px 10px;max-width:590px}
+body.shop #shopGutschein #subNav span{right:-6px}body.shop #shopGutschein button.sendcode{width:156px}
+#voucherPaging{width:608px;position:relative;padding:0}#voucherPaging .container{padding:0;position:absolute;width:568px;left:20px;height:537px}
+#voucherPaging .voucherLive{height:711px}#voucherPaging .container ul{border-left:none;margin:0}
+#voucherPaging .container ul li{background:0;width:568px;float:left;left:0;padding:0;margin:0;position:relative}
+#voucherPaging .container ul li div,#voucherPaging .container ul li form{padding:0 10px}
+body.shop #shopGutschein #voucherPaging .container ul li table{width:548px;margin:0}
+#voucherPaging ul.paging{position:absolute;bottom:-20px;background:url("../../imgs/gutscheinListPaging.png") no-repeat scroll 0 bottom transparent}
+#voucherPaging .voucherUsed ul .vertPos1,#voucherPaging .voucherUsed ul .vertPos2{margin-left:-568px}
+#voucherPaging .voucherUsed ul .vertPos1{margin-top:170px}#voucherPaging .voucherUsed ul .vertPos2{margin-top:340px}
+#voucherPaging .voucherLive ul .vertPos1,#voucherPaging .voucherLive ul .vertPos2{margin-left:-568px}
+#voucherPaging .voucherLive ul .vertPos1{margin-top:240px}#voucherPaging .voucherLive ul .vertPos2{margin-top:480px}.tooltip{padding:2px 5px;border:1px solid #3499cc;font-size:12px;font-weight:bold;color:#000;background-color:#fff;z-index:1001;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-shadow:0 0 10px #999;-khtml-box-shadow:0 0 10px #999;-webkit-box-shadow:0 0 10px #999;box-shadow:0 0 10px #999}
+.tooltip .tip{max-width:220px!important}#tournToday .tournHelper,#tournWeek1 .tournHelper,#tournWeek2 .tournHelper,#tournWeek3 .tournHelper,#tournPast .tournHelper,#getAbos .helper,#mobilGames .helper{padding:0 10px 0 0}
+#tournToday .container,#tournWeek1 .container,#tournWeek2 .container,#tournPast .container,#tournWeek3 .container,#getAbos .container,#mobilGames .container{width:588px;padding:0;padding:0 0 20px}
+.tournList,#getAbos,#mobilGames{width:617px;position:relative;padding:0;margin:0 0 20px;background:url(../images/tournListBottom.jpg) no-repeat 0 bottom;width:598px}
+.tournList .tournHelper,#mobilGames .helper,#getAbos .helper{background:url(../images/tournListTop.jpg) no-repeat 0 top;width:589px}
+.tournList .container,#mobilGames .container,#getAbos .container{position:relative;display:block;overflow-x:hidden;overflow-y:hidden}
+.tournList h3{margin:0;height:20px;overflow:hidden;position:relative;padding:10px;font-weight:bold;font-style:italic;color:#666;text-decoration:none;cursor:default}
+.tournList ul,#tournToday ul,#mobilGames ul{border:0;margin:none}.tournList ul. li,#getAbos ul. li,#mobilGames ul. li{display:inline;background-image:none;left:0}
+.static .tournList .container{overflow-x:scroll}.tournList .container ul{width:3289px;margin:0;border:0}
+.tournList .container ul ul{height:80px;width:137px;margin:0;padding:0}.tournList .container ul li,.siteshopMobileGames .container ul li{width:157px;height:108px;float:left;list-style-type:none;position:relative;display:block;_overflow:hidden;margin-left:0;margin-right:-10px;padding:0;background-image:none;width:157px;left:0}
+.tournList .container ul li ul li{float:left;list-style-type:none;position:relative;display:block;overflow:visible;padding:0;width:137px;height:80px;top:0;left:0;margin:0}
+.tournList .container .gamePos0,.siteshopMobileGames .container .gamePos0{margin-left:-588px}
+.tournList .container .gamePos1,.siteshopMobileGames .container .gamePos1{margin-left:-441px}
+.tournList .container .gamePos2,.siteshopMobileGames .container .gamePos2{margin-left:-294px}
+.tournList .container .gamePos3,.siteshopMobileGames .container .gamePos3{margin-left:-147px}
+.tournList .container .gamePos0,.tournList .container .gamePos1,.tournList .container .gamePos2,.tournList .container .gamePos3,.siteshopMobileGames .container .gamePos0,.siteshopMobileGames .container .gamePos1,.siteshopMobileGames .container .gamePos2,.siteshopMobileGames .container .gamePos3{margin-top:115px}
+.contBox ul.paging{border:0;_zoom:0;background:url(../images/tournListPaging.png) no-repeat 0 bottom;left:0;padding-left:20px;padding-bottom:1px;width:588px;top:auto;bottom:0}
+.tournaments_details .contBox ul.paging,.tournaments_trules .contBox ul.paging,.tournaments_ranking .contBox ul.paging{position:absolute;bottom:-20px;background-image:url(../images/detailsListPaging.jpg)}
+.contBox ul.paging ol{float:left;display:inline;margin:0}.contBox ul.paging li{float:left;display:inline;background-image:none;list-style-type:none;padding-left:0;left:0;margin:0}
+.contBox ul.paging a{float:left;display:inline;width:20px;height:20px;text-indent:-9999px;outline:0}
+.contBox ul.paging ol a{background-position:-67px top;background-image:url(../images/gameCat_NavSprite.png);width:18px;height:17px;margin-right:2px;padding:8px 0}
+.contBox .paging ol a:hover,.contBox .paging ol a:focus{background-position:-67px center}
+.contBox .paging ol .active a{background-position:-87px bottom}.contBox .paging ol .active a:hover,.contBox .paging ol .active a:focus{background-position:-87px center}
+.contBox .paging .prev a,.contBox .paging .prev.inactive{background-position:-38px top;background-image:url(../images/gameCat_NavSprite.png);padding:5px 0;width:22px;height:23px}
+.contBox .paging .prev{background-position:-5px top!important;margin-right:7px}
+.contBox .paging .prev a:hover,.contBox .paging .prev a:focus{background-position:-38px center}
+.contBox .paging .prev a.active{background-position:-38px bottom}.contBox .paging .inactive a{display:none}
+.contBox .paging .prev.inactive a:hover,.contBox .paging .prev.inactive a:focus{background-position:-5px center}
+.contBox .paging .next{background-image:none;margin-left:5px}.contBox .paging .next a,.contBox .paging .next.inactive{background-position:-111px top;background-image:url(../images/gameCat_NavSprite.png);padding:5px 0;width:22px;height:23px}
+.contBox .paging .next a:hover,.contBox .paging .next a:focus{background-position:-111px center}
+.contBox .paging .next a.active{background-position:-111px bottom}.contBox .paging .next.inactive{background-position:-144px top}
+.contBox .paging .next.inactive a:hover,.contBox .paging .next.inactive a:focus{background-position:-144px center}
+.contBox .paging .showAll a,.contBox span.showAll a{position:absolute;left:auto;top:8px;right:0;text-indent:0;width:auto;padding-right:15px;white-space:nowrap;font-size:10px;line-height:16px}
+#wrapper .contBox .paging li.showAll{position:static}.contBox span.showAll{top:auto;bottom:23px;right:20px}
+.contBox .paging li.total{padding:10px 0 0 4px;font-size:11px}#tournContainer,#siteShop{padding:10px;border:1px solid #D1D1D1;width:598px;position:relative}
+.helperTopRight,.helperTopLeft,.helperBottomRight,.helperBottomLeft{background-color:#fff;background-image:url(../images/tournListBottomRight.png);_background-image:url(../images/tournListBottomRight.gif);width:20px;height:20px;position:absolute;right:-1px;_right:-2px;bottom:-1px}
+.helperBottomLeft{background-image:url(../images/tournListBottomLeft.png);_background-image:url(../images/tournListBottomLeft.gif);right:auto;left:-1px}
+.helperTopRight{background-image:url(../images/tournListTopRight.png);_background-image:url(../images/tournListTopRight.gif);bottom:auto;top:-1px}
+.helperTopLeft{background-image:url(../images/tournListTopLeft.png);_background-image:url(../images/tournListTopLeft.gif);bottom:auto;top:-1px;right:auto;left:-1px}
+body.tournaments_details #content,body.tournaments_trules #content,body.tournaments_ranking #content{padding:0 10px}
+body.tournaments #subNav,body.tournaments_add #subNav{margin-top:10px}#tournAddFirst,#tournAddSecond,#tournAddThird,.tournaments_add form{padding:10px 0 0}
+.tournaments_add .successBox form{padding:0}#tournAddFirst input,#tournAddFirst textarea{width:200px}
+#tournAddFirst textarea{margin-bottom:6px}.tournaments_add #showCharacters{font-size:10px}
+#tournAddFirst select,#tournAddFirst button,#tournAddSecond button{width:206px}
+#tournContainer #tipContainer,#tournContainer #formOk,#tournContainer #error{margin:0 -10px}.unsubscribe_newsletter table{width:100%}.unsubscribe_newsletter td{vertical-align:bottom}
+.unsubscribe_newsletter textarea{width:400px;height:80px}.unsubscribe_newsletter .backLink{text-align:right;white-space:nowrap}#walkthroughContainer #wtCloseBtn{width:14px;height:14px;position:absolute;right:26px;top:18px}
+#walkthroughContainer #wtCloseBtn a{display:block;background:transparent url(../images/walkthrough/walkthroughClose.gif) no-repeat;width:100%;height:100%;cursor:pointer}
+#walkthroughContainer #wtCloseBtn a:hover{background-position:left bottom}
+#walkthroughContainer{background:transparent url(../images/walkthrough/walkthrough_bg.png) no-repeat 0 0;_background:transparent url(../images/walkthrough/walkthrough_bg.gif) no-repeat 0 0}.warning_email #emailConfirm .formTable{width:100%}.warning_email #container{overflow:visible;padding-right:314px;min-height:370px}
+.warning_email #container #playNow{display:block;margin:30px auto;display:table}
+.warning_email #playLink{background:url(../images/GTw_EmailBestaetigung.jpg) no-repeat scroll right top transparent;width:294px;height:390px;display:block;text-indent:-9999px;position:absolute;top:25px;right:25px}.warning_guest #container h3{margin:0 10px}.warning_guest #fnLoginCheckbox{text-align:right}
+.warning_guest .formTable{width:450px}.warning_guest #warningBox p{margin:0}
+.warning_guest #container h3 a{text-decoration:none}.warning_guest .formTable{width:390px}
+#warningBox,#testGameBox{float:left;overflow:hidden;padding:0;zoom:1}#warningBox .container,#warningBox #fnLogin{padding:0}
+body.warning_guest #wrapper{min-width:825px;_width:825px}#testGameBox .gameHeaderGlow{display:none}
+.warning_guest #warningBox .container{padding:10px}.warning_subscription #warningBox{margin:20px 0 0}.warning_subscription #warningBox h3{border:0 none}
+.warning_subscription #warningBox .container{height:10px;position:absolute;width:10px}.interstitial #interstitialPlay{text-align:right}.interstitial #playersOnline{display:none}body.rtl{direction:rtl}body.rtl.ie8 span{font-style:normal!important}.rtl .formTable tfoot,.rtl .listTable tfoot,.rtl .formTable thead,.rtl .listTable thead{background:0}
+.rtl .listTable td,.rtl .formTable td,.rtl .listTable th,.rtl .formTable th{background-color:#C1F0FF}
+.rtl .listTable thead td.last,.rtl .formTable thead td.last,.rtl .listTable tfoot td.last,.rtl .formTable tfoot td.last{background-image:none}
+.rtl .listTable thead td.first,.rtl .listTable thead th.first,.rtl .formTable thead td.first,.rtl .formTable thead th.first,.rtl .listTable thead th:first-child,.rtl .listTable thead td:first-child,.rtl .formTable thead th:first-child,.rtl .formTable thead td:first-child{border-radius:0 12px 0 0;background:#C1F0FF}
+.rtl .listTable thead td.last .rtl .listTable thead td.last,.rtl .listTable thead th.last,.rtl .formTable thead td.last,.rtl .formTable thead th.last,.rtl .listTable thead th:last-child,.rtl .listTable thead td:last-child,.rtl .formTable thead th:last-child,.rtl .formTable thead td:last-child{border-radius:12px 0 0 0;background-color:#C1F0FF;background-image:none}
+.rtl .listTable tfoot td.first,.rtl .formTable tfoot td.first,.rtl .listTable tfoot td:first-child,.rtl .formTable tfoot td:first-child{border-radius:0 0 12px 0;background:#C1F0FF}
+.rtl .listTable tfoot .last,.rtl .formTable tfoot .last,.rtl .listTable tfoot td:last-child,.rtl .formTable tfoot td:last-child{border-radius:0 0 0 12px;background:#C1F0FF}
+.ie9.rtl .listTable thead td.first,.ie9.rtl .listTable thead th.first,.ie9.rtl .formTable thead td.first,.ie9.rtl .formTable thead th.first,.ie9.rtl .listTable thead th:first-child,.ie9.rtl .listTable thead td:first-child,.ie9.rtl .formTable thead th:first-child,.ie9.rtl .formTable thead td:first-child{border-radius:12px 0 0 0}
+.ie9.rtl .listTable thead th:last-child,.ie9.rtl .listTable thead td:last-child,.ie9.rtl .formTable thead th:last-child,.ie9.rtl .formTable thead td:last-child{border-radius:0 12px 0 0}
+.ie9.rtl .listTable tfoot td:first-child,.ie9.rtl .formTable tfoot td:first-child{border-radius:0 0 0 12px}
+.ie9.rtl .listTable tfoot td:last-child,.ie9.rtl .formTable tfoot td:last-child{border-radius:0 0 12px 0}
+.rtl .inputNames,.rtl #FormCheckbox,.rtl body.content .formTable td:first-child{text-align:left}
+.rtl .tipBox ul,.rtl .infoBox ul,.rtl .errorBox ul,.rtl #error ul,.rtl #formOk ul,.rtl #formOK ul,.rtl #tipContainer ul{margin-left:0;margin-right:25px}
+.rtl .regContainer .signonHelpers li{overflow:visible;margin:0;list-style-image:url(../images/bullet.png);padding:0;background:0}
+.rtl ul li{margin-left:0;margin-right;11px}.rtl ul li{background:url(../images/rtl/bullet_gametwist_rtl.png) no-repeat scroll right 4px transparent;margin-left:0;margin-right:-11px;padding-left:0;padding-right:16px;overflow:hidden}
+.rtl ul li a{overflow:hidden;display:block}.rtl #sideNav a,.rtl #sideNav .active .gameElement a{padding-right:0;padding-left:17px}
+.rtl .errorBox ul li,.rtl #error ul li{background-image:url(../images/rtl/bulletRed_rtl.gif)}
+.rtl .errorBox h3 span,.rtl #error h3 span{background-position:right 5px;padding-right:31px;margin-right:11px}
+.rtl .tipBox ul li{background-image:url(../images/bulletTip.png)}.rtl .successBox ul li,.rtl #formOk ul li,.rtl #formOK ul li{background-image:url(../images/bulletGreen.gif)}
+.rtl .successBox h3 span,.rtl #formOK h2 span{background-position:right 5px;padding-right:31px;margin-right:11px}
+.rtl .infoBox ul li,.rtl #tipContainer ul li{background-image:url(../images/bulletYellow.gif)}
+.rtl .infoBox h3 span,.rtl #tipContainer h3 span{background-position:right 5px;padding-right:31px;margin-right:11px}
+.rtl .statusSlot .featureStatus{right:-3px;left:auto}.rtl .featureBox .backgroundColor{right:18px;left:auto}
+.rtl .featureBox .desc{right:18px;left:auto}.rtl .statusSkill7 .featureStatus{right:2px;left:auto}
+.rtl .gameCat h3,.rtl .gameCat h2{right:12px;left:auto}.rtl .contBox .paging .showAll a,.rtl .contBox span.showAll a{left:0;right:auto;padding-right:0;padding-left:15px}
+.rtl .games .contBox span.showAll a{background-position:left 6px}.rtl #gamesTopGames .topGamesDesc{right:12px;left:auto}
+.rtl #gamesTopGames h3{right:12px;left:auto}.rtl #gamesTopGames .firstChild{margin-right:157px;margin-left:0}
+.rtl .so1_medium,.rtl .so1_small{float:right}.rtl .topGamesCategory .next{left:40px;right:auto}
+.rtl.ie7 #gamesTopGames{background-position:6px -10px}.rtl #catList li{list-style:none}
+.rtl #catList a{background-image:url(../images/rtl/catList_rtl.jpg)}.rtl #main{background-image:url(../images/rtl/backContentTop_rtl.jpg)}
+.rtl.games #main{background-image:url(../images/backContentTopTwister.jpg)}
+.rtl #status li{list-style:none;list-style-image:none}.rtl #printLink{float:left}
+.rtl #subNav li{float:right;list-style:none;margin:0 0 0 1px}body.rtl.hasSideBar #sideBar{margin-right:628px;margin-left:auto}
+body.rtl.hasSideBar #container{float:right}.rtl #footer .siteInfo{right:570px;left:0}
+.rtl #footer .sitemap{right:40px;left:0}.rtl #footer .sitemap li{float:right}
+.rtl #footer .email i{float:right}.rtl #footer .email{text-align:left}.rtl #poweredBy,#poweredBy:visited{text-align:left}
+body.rtl.hasSideNav #container{float:right;margin-right:294px;margin-left:0}
+body.rtl.hasSideNav #sideNav{float:right;margin-right:-942px;margin-left:0}
+.rtl #languages .active span{background-position:right top}.rtl #languages span{padding-right:20px;padding-left:0;*display:block}
+.rtl #footer{background:url(../images/rtl/backFooter_rtl.jpg) no-repeat left bottom}
+.rtl #footer .sitemap dt a{padding:0 0 0 20px}body.help.rtl #container .ulContainer{padding:1px 20px 1px 10px}
+.rtl #friendsOnlineBox td.gameName a{background-position:left 3px;padding:0 0 0 18px}
+.rtl #friendsOnlineBox td.gameName{text-align:left}.rtl #additionalContentTop li{float:right}
+.rtl .selectedItem .itemContainer img{float:right;padding-left:30px}.rtl .selectedItem .item{margin-right:150px;margin-left:0}
+.rtl .itemList .container,.rtl .paymentList .container,.rtl .itemGroup .itemContainer{padding:10px}
+.rtl .itemList img,.rtl .paymentList img,.rtl .itemGroup img{float:right;padding-left:10px;padding-right:0}
+.rtl .itemList dt,.rtl .paymentList dt,.rtl .itemGroup dt{float:right}.rtl .itemList .price,.rtl .itemList button,.rtl .paymentList button,.rtl .itemGroup .price,.rtl .itemGroup button{float:left}
+.rtl .itemList,.rtl .paymentList,.rtl .itemGroup ul li{float:right}.rtl .contItemsSide{background:url(../images/rtl/box_294_gray_half_top_rtl.png) no-repeat 10px 10px transparent}
+.rtl .contItemsSide .itemTable{float:right;border-left:1px solid #d1d1d1;border-right:0}
+.rtl .itemDescription{margin-left:0;margin-right:628px}.rtl .contItemsSide .itemTable thead td:last-child,.rtl .contItemsSide .itemTable tfoot td:last-child{border-radius:inherit}
+.rtl .contItemsSide .container{background:url(../images/rtl/box_294_gray_half_bottom_rtl.png) no-repeat left bottom transparent}
+.rtl #additionalContentTop .backlink{left:10px;right:auto}.rtl .selectedItem ul li{list-style:none}
+.rtl .selectedItem dl{margin-left:150px;margin-right:0}.rtl .selectedItem dt{float:right}
+.rtl .selectedItem .price{float:left;margin-right:40px;text-align:left}.rtl .selectedItem .desc{clear:left}
+.rtl .selectedItem .buyFriend a{float:right;margin-left:30px;margin-right:0}
+.rtl #countryCurrencyFormContainer #formCloseBtn{left:11px;right:auto}.rtl .paymentList{float:none}
+.rtl .itemList h3,.rtl .paymentList h3{padding:10px 10px 0 50px}.rtl .lastpayment dl,.rtl .lastpayment dd{float:right}
+.rtl .lastpayment .formButton{right:auto;left:0}.rtl .itemList ul li,.rtl .paymentList ul li,.rtl .itemGroup ul li{margin:0}
+.rtl #paymentDetails img{float:right;padding:0 0 20px 20px}.rtl #friendsContent{float:right}
+.rtl #doiBox .doiBoxBackground{background-position:left bottom}.rtl.warning_email #container{padding-left:314px;padding-right:0}
+.rtl.warning_email #playLink{background-position:left top;left:25px;right:auto}
+.rtl #nav.sticky .btnHome a span,.rtl #nav.sticky .btnPlay a span,.rtl #nav.sticky .btnTourn a span,.rtl #nav.sticky .btnCommunity a span,.rtl #nav.sticky .btnPrize a span,.rtl #nav.sticky .btnShop a span,.rtl #nav.sticky .btnRules a span{text-indent:100%;white-space:nowrap;overflow:hidden}
+.rtl #nav li{float:right}.rtl #nav{margin-right:20px}.rtl #nav li.first{border-bottom:1px solid #D7D7D7}
+.rtl #nav li.first.active{border-bottom:1px solid #FFF}.rtl #nav li.first a{border-bottom:0}
+.rtl #nav li.first.active a{border-bottom:1px solid #FFF}.rtl.games #nav li.first{height:auto;border-bottom:0}
+.rtl #nav ul li{margin:0}.rtl .gameList li{margin:0;background:0;display:inline;padding:0}
+.rtl #header h1{background-position:right 59px;margin-right:30px}.rtl #header h1 a{left:auto;right:53px}
+.rtl #languages{left:14px;right:auto}.rtl.noLeaderBoard #status .logged_in h5{right:260px;left:auto}
+.rtl.noLeaderBoard #status .logged_in ul{right:425px;left:auto}.rtl #status #walkthroughLink{left:165px;right:auto}
+.rtl #languages .active a{background-position:left 8px}.rtl #playersOnline{left:20px;right:auto}
+.rtl.noLeaderBoard #lNick{right:250px;left:auto}.rtl.noLeaderBoard #lPass{right:375px;left:auto}
+.rtl .overTxtLabel{left:533px;right:auto}.rtl.noLeaderBoard #status #autoLoginContainer{right:250px;left:auto;display:block}
+.rtl.noLeaderBoard #status .passRecover a{right:255px;left:auto}.rtl #status .login{background-position:left -326px}
+.rtl.noLeaderBoard #status .login{right:455px;left:auto}.rtl #status .register a{background-image:url(../images/rtl/btnRegister_rtl.png)}
+.rtl.noLeaderBoard #status .register a{right:387px;left:auto}.rtl #status .nick label,.rtl #status .pass label{width:75px}
+.rtl.noLeaderBoard #status .logged_in .twists{margin-left:15px;margin-right:0;*float:right}
+.rtl #status .logged_in ul li{text-align:left}.rtl.ie.noLeaderBoard #status .logged_in ul li{display:block!ie;float:right!ie}
+.rtl.ie7.noLeaderBoard #status .logged_in ul{width:300px}.rtl #status .logged_in .settings a{border-left:none}
+.rtl #status .logged_in .friends a{border-left:1px solid #3cf;padding:0 11px 0 3px;background-position:-2px -2px}
+.rtl #status .logged_in .friends a:hover{background-position:-2px -32px}.rtl #status .logged_in .friendsOnline a{background-position:15px -17px}
+.rtl #status .logged_in .friendsOnline a{padding:0 11px 0 0}.rtl #status .logged_in .friendsOnline a:hover{background-position:15px -32px}
+.rtl #status .logged_in .friendsOnline a #dropDownArrow{padding-left:10px;padding-right:0;background-position:-286px -2px}
+.rtl .funCurrencyContainer{background:url(../images/rtl/twist_sprite_rtl.png) no-repeat right 0;padding:0 20px 0 0;overflow:hidden}
+.rtl.ie7 .funCurrencyContainer{display:block}.rtl #overlayJackpot .funCurrencyContainer{background-position:right 5px}
+.rtl #status .logged_in ul li{text-align:left}.rtl #nav #backToTop{margin-right:-472px;margin-left:0;right:50%;left:auto}
+.rtl #nav li a:hover,.rtl #nav li a:active{text-shadow:none}.rtl #nav.sticky ul{background-position:right 0;padding:12px 220px 0 0;right:50%;left:auto;margin-right:-472px;margin-left:0}
+.rtl #nav.sticky ul li a span{border-left:none;border-right:1px #3CF solid}
+.rtl #nav.sticky li.first{border-bottom:0}.rtl #nav.sticky li.first.active a{border-bottom:0}
+.rtl .detailsBackground{right:-10px;left:auto}.rtl #gameHeader{float:right}
+.rtl #gamesDetailsHeader .rating0,.rtl #gamesDetailsHeader .rating1,.rtl #gamesDetailsHeader .rating2,.rtl #gamesDetailsHeader .rating3,.rtl #gamesDetailsHeader .rating4,.rtl #gamesDetailsHeader .rating5{right:210px;left:auto}
+.rtl.games_details #gameHeader .gameHeaderLogo{right:0;left:auto}.rtl #gameHeader dt,.rtl .tournDetails dt{float:right}
+.rtl #gameHeader dd{margin:0 160px 0 0}.rtl #gameHeader .room,.rtl #tournDetails dd.link a{margin-right:10px;margin-left:0;left:10px;right:auto}
+.rtl.games_details #topWinner table.listTable tbody th{text-align:right;border-left:1px dotted #fff;border-right:0}
+.rtl #topWinner a,#rankingList .profile{padding-right:25px;padding-left:0;margin-right:7px;background-position:right 2px}
+.rtl #topWinner .money{text-align:left}.rtl .so1_medium h4,.rtl .so1_small h4{right:10px;left:0}
+.rtl #trust .container .footer,.rtl .prizeBox .container .footer,.rtl #tagCloud .container .footer{left:auto;right:-9px}
+.rtl #trust .container .footer a.more,.rtl #tagCloud .container .footer a.more{float:left;padding-left:20px;padding-right:0;background:url(../images/rtl/gameCat_C2A_rtl.png) no-repeat scroll left center transparent}
+.rtl #sideBar .ffCheckbox{margin-left:2px;margin-right:0}.rtl .contentTop{background:url(../images/rtl/landingTop_rtl.png) no-repeat 0 0 transparent}
+.rtl .so1_medium dd,.rtl .so1_small dd{left:-1px;right:auto;text-align:left}
+.rtl .so1_medium dt span,.rtl .so1_small dt span{left:25px;right:auto}.rtl .so1_medium ul li .link{right:-10px;left:auto}
+.rtl .so1_small ul li .link{left:auto;right:-162px}.rtl .so1_medium ul li a:hover .link,.rtl .so1_medium ul li a.hover .link,.rtl .so1_small ul li a:hover .link,.rtl .so1_small ul li a.hover .link{clip:rect(45px 258px 122px 0);right:-10px;top:-46px}
+.rtl .so1_small ul li a:hover .link,.rtl .so1_small ul li a.hover .link{clip:rect(0px 106px 95px 6px);right:-162px;top:-41px}
+.rtl .so1_small ul li a .link{clip:rect(0px 23px 26px 4px)}.rtl #so2overlay.type1 .overlayBottom,.rtl #so2overlay.type2 .overlayBottom,.rtl #so2overlay.type3 .overlayBottom,.rtl #so2overlay.type4 .overlayBottom,.rtl #to2overlay.type1 .overlayBottom,.rtl #to2overlay.type2 .overlayBottom,.rtl #to2overlay.type3 .overlayBottom,.rtl #to2overlay.type4 .overlayBottom{right:0}
+.rtl .topJackpot .container h3{float:right}.rtl .topJackpot strong{text-align:left}
+.rtl #gameHeader dd,.rtl .tournDetails dd{margin:0 116px 0 0}.rtl .helperTopRight{background-image:url(../images/rtl/tournListTopLeft.png);left:-1px;right:auto}
+.rtl #overlayJackpot .funCurrencyContainer{background-position:right 5px}
+.rtl #overlayJackpot{right:381px;left:auto}body.rtl.tournaments #subNav li{display:block}
+.rtl .tournList .tournHelper,.rtl #mobilGames .helper,.rtl #getAbos .helper{background-position:right top}
+.rtl #tournToday .tournHelper,.rtl #tournWeek1 .tournHelper,.rtl #tournWeek2 .tournHelper,.rtl #tournWeek3 .tournHelper,.rtl #tournPast .tournHelper,.rtl #getAbos .helper,.rtl #mobilGames .helper{padding:0 0 0 10px}
+.rtl .tournList .container ul li,.rtl .siteshopMobileGames .container ul li{float:right;left:auto;right:0;margin-left:-10px;margin-right:0}
+.rtl .to1,.rtl .to1 h4,.rtl .to1_container,.rtl .to1_container a,.rtl .to1_container span,.rtl .to1_container strong{left:auto;right:0}
+.rtl .to1 .to1_container{right:10px}.rtl .to1 .backgroundColor{right:6px;left:auto}
+.rtl .to1 .border{left:auto;right:-10px}.rtl .to1_container a:link,.rtl .to1_container a:visited{left:auto;right:0}
+.rtl .to1 dt span{left:30px;right:auto}.rtl .to1 dd{left:6px;right:auto;text-align:left}
+.rtl .to1 strong.static{right:6px}.rtl .to1 h4{right:10px;left:auto}.rtl .to1_container .c2a .jackpotLabel,.rtl .to1_container .c2a .switchCountdown,.rtl .to1_container .c2a .winningsLabel,.rtl .to1_container .c2a strong.prize,.rtl .to1_container .c2a strong.countdownOver{right:8px;left:auto}
+.rtl .tournList .container .gamePos0,.rtl .siteshopMobileGames .container .gamePos0{margin-right:-588px}
+.rtl .tournList .container .gamePos1,.rtl .siteshopMobileGames .container .gamePos1{margin-right:-441px}
+.rtl .tournList .container .gamePos2,.rtl .siteshopMobileGames .container .gamePos2{margin-right:-294px}
+.rtl .tournList .container .gamePos3,.rtl .siteshopMobileGames .container .gamePos3{margin-right:-147px}
+.rtl .to1_container span.link{clip:rect(0px 820px 80px 690px)}.rtl .tournStatus_1 a:hover .link,.rtl .tournStatus_6 a:hover .link,.rtl .tournStatus_1 a.hover .link,.rtl .tournStatus_6 a.hover .link{clip:rect(0px 410px 80px 275px);right:-411px}
+.rtl .tournStatus_2 a:hover .link,.rtl .tournStatus_4 a:hover .link,.rtl .tournStatus_2 a.hover .link,.rtl .tournStatus_4 a.hover .link{clip:rect(0px 684px 80px 548px);right:-137px}
+.rtl .tournStatus_3 a:hover .link,.rtl .tournStatus_3 a.hover .link{clip:rect(0px 273px 80px 138px);right:-548px}
+.rtl .tournStatus_5 a:hover .link,.rtl .tournStatus_8 a:hover .link,.rtl .tournStatus_5 a.hover .link,.rtl .tournStatus_8 a.hover .link{clip:rect(0px 548px 80px 411px);right:-274px}
+.rtl .tournStatus_7 a:hover .link,.rtl .tournStatus_7 a.hover .link{clip:rect(0px 136px 80px 0);right:-685px}
+.rtl .tournStatus_5 .typeId0,.rtl .tournStatus_8 .typeId0{clip:rect(75px 382px 150px 382px)!important;top:-85px!important;right:-85px!important}
+.rtl .tournStatus_5 .typeId1,.rtl .tournStatus_8 .typeId1{clip:rect(75px 382px 150px 320px)!important;top:-85px!important;right:-85px!important}
+.rtl .tournStatus_5 .typeId2,.rtl .tournStatus_8 .typeId2{clip:rect(75px 306px 150px 244px)!important;top:-85px!important;right:-160px!important}
+.rtl .tournStatus_5 .typeId3,.rtl .tournStatus_8 .typeId3{clip:rect(75px 232px 150px 168px)!important;top:-85px!important;right:-235px!important}
+.rtl input.datepickerfield{background-position:3px 1px}.rtl.small #header h1{background-position:right 8px}
+.rtl.small #main{background-image:none}.rtl.small #footer{background:0}.rtl #so2overlayTop h3,.rtl #to2overlayTop h3{right:137px;left:auto}
+.rtl #so2overlayTop .gameDesc,.rtl #to2overlayTop .gameDesc{right:137px;left:auto}
+.rtl #so2overlayTop .gameShot,.rtl #to2overlayTop .gameShot{left:auto;right:10px}
+.rtl #so2nav,.rtl #to2nav{left:148px;right:auto}.rtl #so2nav li,.rtl #to2nav li{float:left}
+.rtl #so2overlay dt,.rtl #to2overlay dt{left:190px;right:auto;text-align:right;text-indent:100%;overflow:hidden;white-space:nowrap}
+.rtl #so2overlay dd,.rtl #to2overlay dd{left:150px;right:auto}.rtl #topGame{right:381px;left:auto}
+.rtl #so2overlay .btnClose a,.rtl #to2overlay .btnClose a{left:9px;right:auto}
+.rtl #so2overlayBottom div{float:right}.rtl #so2overlayBottom p{float:right}
+.rtl #so2overlay .formLink,.rtl #to2overlay .formLink{float:right;left:6px;right:auto}
+.rtl .type1 .overlayPointer,.rtl .type2 .overlayPointer,.rtl .type3 .overlayPointer,.rtl .type4 .overlayPointer{left:30px;right:auto;top:-34px;clip:rect(135px 27px 155px 0)}
+.rtl .type2 .overlayPointer{left:0;top:-37px;clip:rect(134px 494px 157px 468px)}
+.rtl .so1_small dt span{left:15px}.rtl.account_details #mySubscription{background-position:right 10px;margin:0 10px 25px 20px}
+.rtl.account_details #mySubscription .container{background-position:right bottom;margin-right:-10px}
+.rtl.account_details #mySubscription img{float:right;margin-right:10px}.rtl.account_details #mySubscription .abo{margin:30px 150px 0 0}
+.rtl #voucherPaging .container ul li{list-style-image:none}.rtl .contBox ul.paging{right:0;left:auto;padding-right:20px;padding-left:0;background-position:right bottom}
+.rtl .contBox ul.paging li{float:right;left:auto;right:0}.rtl .contBox ul.paging ol{float:right;overflow:hidden}
+.rtl #voucherPaging .container ul li{float:right}.rtl #voucherPaging .voucherLive ul .vertPos1,.rtl #voucherPaging .voucherLive ul .vertPos2{margin-right:-568px;margin-left:0}
+.rtl #voucherPaging .voucherUsed ul .vertPos1,.rtl #voucherPaging .voucherUsed ul .vertPos2{margin-right:-568px;margin-left:0}
+.rtl .contBox .paging .next a,.rtl .contBox .paging .next.inactive{background-position:-38px top}
+.rtl .contBox .paging .next a:hover,.rtl .contBox .paging .next a:focus{background-position:-38px center}
+.rtl .contBox .paging .next a.active{background-position:-38px bottom}.rtl .contBox .paging .next.inactive{background-position:-177px top}
+.rtl .contBox .paging .next.inactive a:hover,.rtl .contBox .paging .next.inactive a:focus{background-position:-144px center}
+.rtl .contBox .paging .prev a,.rtl .contBox .paging .prev.inactive{background-position:-111px top}
+.rtl .contBox .paging .prev{background-position:-142px top!important}.rtl .contBox .paging .prev a:hover,.rtl .contBox .paging .prev a:focus{background-position:-111px center}
+.rtl .contBox .paging .prev a.active{background-position:-111px bottom}.rtl .contBox .paging .inactive a{display:none}
+.rtl .contBox .paging .prev.inactive a:hover,.rtl .contBox .paging .prev.inactive a:focus{background-position:-111px center}
+.ie7.rtl .contBox .paging .next.inactive{background-position:167px bottom}
+.ie7.rtl .contBox .paging .next a,.ie7.rtl .contBox .paging .next.inactive{background-position:177px top}
+.ie7.rtl .contBox .paging .next a:hover{background-position:177px center}
+.ie7.rtl .contBox .paging .prev{background-position:-143px top!important}
+.ie7.rtl .contBox .paging .prev a{background-position:-146px top}.rtl .contBox ul.paging ol a{margin-left:2px;margin-right:0}
+.rtl .contBox ul.paging a{text-indent:100%;white-space:nowrap;overflow:hidden}
+.rtl #formTip .arrow{right:-11px;left:auto;background:url(../images/rtl/formTipArrow_rtl.png) no-repeat left center transparent}
+.rtl #formTip li,.rtl #formTip li.error{list-style-image:none;list-style:none;margin:0 12px 1px 0;padding:2px 22px 0 0;background-position:right -33px;text-align:left}
+.rtl #formTip li.success{background-position:right 0}.rtl .regContainer ol li{float:right;margin-left:34px;margin-right:0}
+.rtl #mbImage{text-align:right}.rtl.shop_item #mbCloseLink{left:14px;right:auto}
+.rtl #feedback a{right:-10px;left:auto;background:url(../images/rtl/feedback_btn_rtl.png) repeat scroll 0 0 transparent}
+.rtl #feedback a:hover{right:0;left:auto}.rtl.ie7 #feedback{display:none;visibility:hidden}
+.rtl.shop_gutschein_success .gutscheinSuccess thead td,.rtl.shop_gutschein_success .gutscheinSuccess .inputNames{text-align:right}
+.rtl.shop_gutschein_success .gutscheinSuccess td{text-align:left}.rtl.shop_items .contItemsSide .container .itemDescription,.rtl .selectedItem,.rtl .selectedItem,.rtl.tournaments #subNav li span,.rtl.shop #shopGutschein #subNav li a span,.rtl #subNav a span{overflow:hidden}
+.rtl #newMessages .continueLink a{background-position:left 5px;padding-left:17px;padding-right:0;display:block}
+.rtl #newMessages .continueLink a:hover{background-position:left -17px}.rtl #newMessages .continueLink{text-align:left}
+.rtl #passwordVisualFeedbackBar{background-position:0 -23px}.rtl #passwordVisualFeedback .feedbackItem01{background-position:0 -51px}
+.rtl #passwordVisualFeedback .feedbackPointer{left:82%}.rtl #passwordVisualFeedbackBar.satisfaction1Up .feedbackPointer{left:16%}
+.rtl.games .contBox span.showAll a{background-position:left 6px}.rtl #gameHeader .room span,.rtl #tournDetails dd.link a span{background:url(../images/rtl/c2a_rtl.png) no-repeat scroll left 0 transparent;padding-left:22px;padding-right:0}
+.rtl .gamesHelpContent .playGame{float:right}.rtl .gamesHelpContent .playGames li.backToTop{float:left}
+body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowSizes{left:10px;right:auto}
+.rtl #windowSizes li{margin:0}.landing_mobile_app #headerImg{margin-left:-30px;margin-top:-54px}.landing_mobile_app #mobileInfo{background:url(../images/box_608_gray_top.gif) no-repeat 10px 10px transparent;margin-bottom:20px;width:608px;float:left}
+.landing_mobile_app #mobileInfo #mobileInfoFooter{background:url(../images/box_608_gray_bottom.png) no-repeat 0 bottom transparent;margin-bottom:-10px}
+.landing_mobile_app #mobileInfo .container h3,.landing_mobile_app #mobileInfoButtons .container h3{border:medium none;color:#717171;cursor:default;margin:0;padding:10px 50px 0 10px}
+.landing_mobile_app #mobileInfoButtons .container h3{color:#39C}.landing_mobile_app #mobileInfoButtons{background:url(../images/box_294_blue_top.png) no-repeat 10px 10px transparent;margin-bottom:20px;width:294px;float:left}
+.landing_mobile_app #mobileInfoButtons #mobileInfoButtonsFooter{background:url(../images/box_294_blue_bottom.png) no-repeat 0 bottom transparent;margin-bottom:-20px}
+.landing_mobile_app #mobileInfoButtons .mobileLink{margin-left:30px}
