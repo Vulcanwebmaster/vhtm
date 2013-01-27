@@ -25,23 +25,13 @@
 									Top winners
 								<?php } ?></p>
 				<ul class="1ct">
-						<li>
-							<a href="#">lament</a>
-							<label class="label">$ 890</label>
-					</li>
-					<li>
-						<a href="#">lament</a>
-						<label class="label">$ 890</label>
-					</li>
-					<li>
-						<a href="#">lament</a>
-						<label class="label">$ 890</label>
-					</li>
-					<li>
-						<a href="#">lament</a>
-						<label class="label">$ 890</label>
-					</li>
-							
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>					
 				</ul>
 			</div>
 		</div>
@@ -60,16 +50,18 @@
 									Top Tournaments
 								<?php } ?></p>
 				<ul class="2ct">
-
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>
-					<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/iconlich.png" /><label>13:00</label>  lament</a></li>			
-								
-
+					<li><a href="#"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									lamentation
+								<?php } else{ ?>
+									lament
+								<?php } ?></a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>
+					<li><a href="#">lament</a></li>					
 				</ul>
 			</div>
 		</div>
@@ -443,7 +435,8 @@
 				</div>
 				<?php }?>
 		</div><br clear="both" />
-		<marquee direction="left" behavior="alternate" width="940" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="auto" align="left">
+
+	<marquee direction="left" behavior="alternate" width="950" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="auto" align="left">
 			<table style="width:1280px;">
 				<tr>
 					<td>
