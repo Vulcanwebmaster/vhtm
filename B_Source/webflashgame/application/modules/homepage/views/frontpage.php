@@ -443,7 +443,9 @@
 				</div>
 				<?php }?>
 		</div><br clear="both" />
+
 		<marquee direction="left" behavior="alternate" width="940" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="auto" align="left">
+
 			<table style="width:1280px;">
 				<tr>
 					<td>

@@ -45,11 +45,11 @@
 		<div class="email">
 			<p>
 				<i>E-mail Support: </i>
-				<a href="mailto:support@gametwist.com">support@gametwist.com</a>
+				<a href="mailto:support@gametwist.com">support@carresdas.com</a>
 			</p>
 		</div>
 		<a href="#" id="poweredBy" target="_blank">
-					Games powered by GREENTUBE
+					Games powered by CARRESDAS
 		</a>
 	</div>
 	</div>
