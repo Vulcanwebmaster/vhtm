@@ -71,7 +71,7 @@
     }
 </script>
 <script>
-document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 30;RightAdjust = 5;TopAdjust = 300;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
+document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 40;RightAdjust = 5;TopAdjust = 300;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
 </script>
 <!---
 MainContentW = 1000 : chiều rộng trang web

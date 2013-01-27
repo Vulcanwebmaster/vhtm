@@ -56,7 +56,7 @@
 				<!--  Form Login -->
 			<div class="login">
 	          <form method="post" enctype="application/x-www-form-urlencoded" action="<?php echo base_url()?>dangky/checkAccount">
-	            <ul class="styleul">
+	            <ul class="styleul" id="ullogin">
 	              <li class="nick">Username: <input type="text" name="nick" id="lNick1" title="Nickname" value="Nickname" onblur="if(this.value=='') this.value='Nickname';" onfocus="if(this.value=='Nickname') this.value='';"></li>
 	              <li class="password">Password: <input type="password" name="pass" id="lPass1" title="Password" value="Password" onblur="if(this.value=='') this.value='Password';" onfocus="if(this.value=='Password') this.value='';"></li>
 	              <li class="login"><button type="submit" class="fbSubmit123"><span>Login</span></button></li>
@@ -206,7 +206,7 @@
 			
 	})
   </script>
-<?php $this->load->view('front/menu')?>
+
 <div id="main">
 <div id="container">
 				<div id="tipHolder"></div>
@@ -380,47 +380,69 @@
 				</div>
 				<?php }?>
 		</div><br clear="both" />
-	<div id="featureBox_4" class="featureBox statusSkill7 type_skill7">
-		<h3><a target="_blank" href="#"><span>Become a winner in no time!</span></a></h3>
-		<div class="container">
-			<div style="background-color: " class="backgroundColor">
-<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/CASINO.gif);"  class="img"></span> -->
-			<img class="img" src="<?php echo base_url();?>assets/flash_game/images/CASINO.gif" />
+		<marquee direction="left" behavior="alternate" width="950" onmouseover="this.stop()" scrollamount="2" onmouseout="this.start()" height="auto" align="left">
+			<table style="width:1280px;">
+				<tr>
+					<td>
+						
+					
+		<div id="featureBox_4" class="featureBox statusSkill7 type_skill7">
+			<h3><a target="_blank" href="#"><span>Become a winner in no time!</span></a></h3>
+			<div class="container">
+				<div style="background-color: " class="backgroundColor">
+	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/CASINO.gif);"  class="img"></span> -->
+				<img class="img" src="<?php echo base_url();?>assets/flash_game/images/CASINO.gif" />
+				</div>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBoxSkill7.png);" class="transparent"></span>
+	<!-- 			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/feature_skill7Status.png);" class="featureStatus"></span> -->
+				<p class="desc">You are just one click away from becoming a real money winner! Do it now!</p>
 			</div>
-			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBoxSkill7.png);" class="transparent"></span>
-<!-- 			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/feature_skill7Status.png);" class="featureStatus"></span> -->
-			<p class="desc">You are just one click away from becoming a real money winner! Do it now!</p>
 		</div>
-	</div>
-	<div id="featureBox_5" class="featureBox  type_news">
-		<h3><a target="_self" href="<?php echo base_url();?>taikhoan"><span>My GameTwist</span></a></h3>
-		<div class="container">
-			<div style="background-color: " class="backgroundColor">
-<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
-			<img class="img" src="<?php echo base_url();?>assets/flash_game/images/Poker-gif.gif" />
+		<div id="featureBox_5" class="featureBox  type_news">
+			<h3><a target="_self" href="<?php echo base_url();?>taikhoan"><span>My GameTwist</span></a></h3>
+			<div class="container">
+				<div style="background-color: " class="backgroundColor">
+	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
+				<img class="img" src="<?php echo base_url();?>assets/flash_game/images/Poker-gif.gif" />
+				</div>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBox.png);" class="transparent"></span>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="featureStatus"></span>
+				<p class="desc">Your friends, messages, vouchers  and more on one page.</p>
 			</div>
-			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBox.png);" class="transparent"></span>
-			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="featureStatus"></span>
-			<p class="desc">Your friends, messages, vouchers  and more on one page.</p>
 		</div>
-	</div>
-	<div id="featureBox_5" class="featureBox  type_news">
-		<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameTwist</span></a></h3>
-		<div class="container">
-			<div style="background-color: " class="backgroundColor">
-<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
-			<img class="img" src="<?php echo base_url();?>assets/flash_game/images/poker-night.gif" />
+		<div id="featureBox_5" class="featureBox  type_news">
+			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameTwist</span></a></h3>
+			<div class="container">
+				<div style="background-color: " class="backgroundColor">
+	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
+				<img class="img" src="<?php echo base_url();?>assets/flash_game/images/poker-night.gif" />
+				</div>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBox.png);" class="transparent"></span>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="featureStatus"></span>
+				<p class="desc">Your friends, messages, vouchers  and more on one page.</p>
 			</div>
-			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBox.png);" class="transparent"></span>
-			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="featureStatus"></span>
-			<p class="desc">Your friends, messages, vouchers  and more on one page.</p>
 		</div>
-	</div>
-	<br clear="both" />
-	</div>
+		<div id="featureBox_5" class="featureBox  type_news">
+			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameTwist</span></a></h3>
+			<div class="container">
+				<div style="background-color: " class="backgroundColor">
+	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
+				<img class="img" src="<?php echo base_url();?>assets/flash_game/images/poker-night.gif" />
+				</div>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/featureBox.png);" class="transparent"></span>
+				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="featureStatus"></span>
+				<p class="desc">Your friends, messages, vouchers  and more on one page.</p>
+			</div>
+		</div>
+		</td>
+				</tr>
+			</table> 
+		</marquee>
+		<br clear="both" />
+		</div>
 	<div id="sideNav"></div>
 			<div id="sideBar"></div>
-		</div><br clear="both" />
+		</div>
 			<script type="text/javascript">
 							$(document).ready(function(){
 								$('#so2overlay').hide();

@@ -26,13 +26,13 @@ body.small{background-image:url(../images/backBodyRoom.jpg)}
 .rtl #header h1 a{background:url(../images/logo_beta_arabic.jpg) no-repeat}
 .small #header h1 a{height:57px;margin:0;width:170px;display:block;top:0;background:0;cursor:pointer;z-index:2000;_zoom:1}
 #header h1 span{width:230px;height:100px;display:block;text-indent:-9999px}
-.small #header h1 span{display:none}#header h2{margin:0;display:none}#presentation{height:auto;overflow:hidden;background:#f6f6f6 url(../images/backBody.jpg) repeat-x 0 -150px;position:relative}
+.small #header h1 span{display:none}#header h2{margin:0;display:none}#presentation{height:auto;overflow:hidden;background:#fff;position:relative; border-top-right-radius:5px; border-top-left-radius:5px; padding-top:10px}
 #presentationWrapper{width:962px;margin:auto}#favorit{background:url(../images/favorit_icon.gif) no-repeat -28px -20px #38c2df;position:absolute;width:38px;height:22px;z-index:100;border:0;margin:0;padding:0;top:355px;left:24px}
 #favorit li{background:0;left:0;padding:0;margin:0;float:left;position:absolute}
 #favorit li a{text-indent:-9999px;display:block;width:20px;height:20px;background:url(../images/favorit_icon.gif) no-repeat 3px 2px}
 #favorit .favorit a:hover{background-position:3px -20px}#favorit .home{left:24px}
 #favorit .home a{background-position:-83px 2px}#favorit .home a:hover{background-position:-83px -20px}
-#main{background: #f2f3f5/*url(../images/backContentTop.jpg) no-repeat*/;_zoom:1;padding:54px 24px 0 24px}
+#main{background: #fff/*url(../images/backContentTop.jpg) no-repeat*/;_zoom:1;padding:5px 24px 0 24px; }
 .small #main{margin-top:0;background:#fff;padding:25px;background:#fff;margin:10px 20px;border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;box-shadow:0 0 20px #E3E3E3;-moz-box-shadow:0 0 20px #E3E3E3;-webkit-box-shadow:0 0 20px #E3E3E3}
 .small #container{min-height:220px;_height:220px}body.hasSideBar #container{float:left;display:inline;width:628px;_margin-right:-3px;overflow:hidden}
 body.hasSideBar #sideBar{margin-left:628px;_margin-left:625px;_zoom:1;width:314px;overflow:hidden;position:relative}
@@ -304,7 +304,7 @@ body.games ul.paging{width:440px;margin-left:0;padding-left:10px;background:url(
 .so1_small.statusMobile .status{left:-500px;top:-155px;clip:rect(150px 550px 205px 500px);margin-left:-6px;margin-top:0}.categories{margin:0 -10px;zoom:1}.gameCat{width:461px;height:277px;background:url(../images/gameCat_Back.jpg?v=2) no-repeat -10px -10px;position:relative;float:left;padding:0;margin:10px;_margin:10px 5px;}
 .gameCat h3,.gameCat h2,.gameCatSort,.gameCat .container{position:absolute;display:block;padding:0}
 .gameCat h3,.gameCat h2{margin:0;left:12px;top:16px;height:22px;overflow:hidden;border:0}
-.gameCat h3 a,.gameCat h2 a{display:block;color:#666;text-decoration:none}
+.gameCat h3 a,.gameCat h2 a{display:block;color:#ff520d;text-decoration:none}
 .gameCat:hover h2 a{text-decoration:underline}.gameCat .container{left:7px;top:39px;padding-top:12px;width:448px;height:187px;}
 .static .gameCat .container{overflow-x:scroll}.gameCat .container ul{height:187px;width:880px;margin:0;border-left:none}
 .gameCat .container li{width:112px;height:91px;float:left;position:relative;left:0;background:0;padding:0;margin:0}
@@ -476,7 +476,7 @@ body .tournStatus_3,body .tournStatus_5,body .tournStatus_8{background:url(../im
 .datepicker .days .week .day.unavailable:hover{background:#fff!important;color:#aaa!important}
 .datepicker .days .week .day:hover,.datepicker .months .month:hover,.datepicker .years .year:hover{background:#5D6E95!important;background:#005374!important;color:#fff!important}
 .datepicker .time .hour.error,.datepicker .time .minutes.error{background:#FFCEC7;border-color:#f00}
-#footer{background:#f2f3f5 url(../images/backFooter.jpg) left bottom no-repeat;height:240px;margin:0;padding:0 34px;position:relative;color:#fff;font-size:11px;clear:both}
+#footer{background:#fff url(../images/backFooter.jpg) left bottom no-repeat;height:240px;margin:0;padding:0 34px;position:relative;color:#fff;font-size:11px;clear:both; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
 .small #footer{margin-top:0;color:#39C;background:0;height:auto;padding-top:10px}
 #footer ul{margin:0;border-left:none}#footer li{margin:0;padding:0;background:0}
 #footer .links{position:absolute;margin:0;font-size:11px;top:10px;color:#666}
@@ -1245,24 +1245,25 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #nav1.sticky li{width:30px;padding:0;overflow:hidden;background-color:#193255;*background-position:29px 0;margin-right:0}
 #nav1.sticky li:last-child{background-image:none}#nav1 a{color:#fff;display:block;font-size:15px;font-weight:bold;line-height:21px;padding:1px 5px 1px 15px;/*background:url(../images/navIconsDefault.gif) no-repeat left -20px;*/text-decoration:none;white-space:nowrap}
 .uc #nav1 a{text-transform:uppercase}#nav1.sticky a{margin-left:6px;outline:0}
-#nav1 a:hover,#nav1 a:focus{color:#ff1e00}#nav1 .game a{background-position:left -20px}
+#nav1 a:hover,#nav1 a:focus{color:#fff; opacity:0.5;}#nav1 .game a{background-position:left -20px}
 #nav1 .game a:hover,#nav1 .game a:focus{background-position:left 3px}#nav1 .tournament a{background-position:-198px -20px}
 #nav1 .tournament a:hover,#nav1 .tournament a:focus{background-position:-198px 3px}
 #nav1 .help a{background-position:-396px -20px}#nav1 .help a:hover,#nav1 .help a:focus{background-position:-396px 3px}
 #nav1 .account a{background-position:-608px -20px;padding-left:24px}#nav1 .account a:hover,#nav1 .account a:focus{background-position:-608px 3px;padding-left:24px}
 #languages1 li{ background:none; width:150px; line-height:22px!important; height:22px;}
-#languages1 li:hover{ background:#207d0e;width:143px; line-height:22px!important; height:auto !important;}
+#languages1{background:#207d0e; width:155px;}
+#menulaguages{background-image:none !important}
 #languages1 .active1 span{ font-weight:normal !important; text-transform:none;}
 #languages1 .active1{}
 #languages1 .active a{/* background:url(../images/languagebar_skill7.png)5px 5px no-repeat*/}
 #languages1 .active span{text-transform:uppercase; font-weight:bold !important;}
 #languages1 .active1 a{ background:#207d0e;}
 .fbSubmit123:hover{color: #000000 }
-.fbSubmit123{ margin: 1px; background: url(../images/btnSprite.png) no-repeat scroll right -110px transparent; color: rgb(255, 255, 255); width: 70px; text-shadow: 0px 0px 2px rgb(12, 142, 191), 0px 0px 5px rgb(12, 142, 191), 0px 0px 10px rgb(12, 142, 191); font-weight: bold; border-radius: 2px 2px 2px 2px; cursor: pointer; }
+.fbSubmit123{ margin: 1px;/* background: url(../images/btnSprite.png) no-repeat scroll right -110px transparent;*/ color: rgb(255, 255, 255); width: 70px; text-shadow: 0px 0px 2px #ccc; box-shadow:1px 2px 1px #f65709; background-color:#ff520d ;font-weight: bold; border-radius: 2px 2px 2px 2px; cursor: pointer; }
 #status1{position:absolute;right:0;top:40px;font-size:11px;z-index:100;width:628px;height:38px;background-color:#3f5876;border-bottom:1px solid #68819a;border-left:1px solid #68819a;-moz-box-shadow:0 0 5px #10233F;-khtml-box-shadow:0 0 5px #10233F;-webkit-box-shadow:0 0 5px #10233F;box-shadow:0 0 5px #10233F}
 #status1 ul{margin:0;padding:0;border:0}#status1 li{list-style:none;float:left;padding:0; background:none; margin:0;}
 #status1 a{color:#fff;line-height:12px}#status1 a:hover{color:#ff1e00}#status1 .nick label,#status1 .password label{display:none;width:100px;background:#788A9F none repeat scroll 0 0}
-#lNick1,#lPass1{background:#3D8EFA;border:1px solid #FFFFFF;padding:1px 2px;font-family:"Trebuchet MS",Helvetica,Jamrul,sans-serif;margin:10px 3px 0;_margin:8px 3px 0;width:109px;height:15px;color:#fff}
+#lNick1,#lPass1{background:#cfd5dd;border:1px solid #FFFFFF;padding:1px 2px;font-family:"Trebuchet MS",Helvetica,Jamrul,sans-serif;margin:10px 3px 0;_margin:8px 3px 0;width:109px;height:15px;color:#fff}
 #lNick1{margin-left:18px}#lPass1{margin-left:19px}.ie9 #lNick1,.ie9 #lPass1{height:14px}#lNick1:hover,#lPass1:hover{background:#788a9f;border-color:#cfd5dd}
 #lNick1:focus,#lPass1:focus{background:#9facbb;border-color:#cfd5dd}#status1 button{display:block;height:18px !important;line-height:1px;z-index:1111;cursor:pointer;color:#fff;font-weight:bold;padding:0 22px 2px 0;margin:8px 21px 10px 0;font-size:12px;border:0}
 .ie9 #status1 button{padding-top:2px;padding-right:25px}#status1 .login .login button{background:#3F5876 url(../images/login.png) no-repeat scroll right top;padding-right:26px;margin:10px 10px 0 3px}
@@ -1313,17 +1314,18 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #status1 #friendsOnlineBox .container .gameName a{font-weight:normal;padding-left:0;background:0}
 #status1 #friendsOnlineBox .container .profile span{white-space:nowrap;zoom:1}
 #status1 #friendsOnlineBox .container .profile{cursor:pointer}#status1 #friendsOnlineBox ul{text-align:center}
+#ullogin li{border-bottom:0 !important;}
 
 /*===============slideshow=================*/
 .contentslide{float:left; width:32%; }
 .slideshow{ position:relative; height:200px; margin:0 auto;}
 #contentslide1, #contentslide2{margin-right:14px}
 .slideshow img{width:317px; height:200px; position:absolute;}
-.contentsl{ background-color:#0039A4; color:#FFFFFF; width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
+.contentsl{ /*background-color:#0039A4;*/ background-color:rgb(85, 164, 0); color:#FFFFFF; width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
 .contentsl ul{}
 .contentsl li{list-style:decimal; padding:0; margin-left:15px; line-height:22px; border-bottom:1px solid #ccc;}
 .contentsl a{ text-decoration: none; color:#FFFFFF;}
-.contentsl p{ text-transform:uppercase; font-weight:bold; color:#FFFFFF; text-shadow:1px 1px 1px #fff}
+.contentsl p{ text-transform:uppercase; font-weight:bold; color:#FFFFFF; /*text-shadow:1px 1px 1px #fff*/}
 #contentsl1 li{ background:none;}
 #contentsl2 li{ background:none;}
 #contentsl1 p{ background: url(../images/slct2.gif) no-repeat; padding-left:20px; }
