@@ -1,4 +1,5 @@
 <div id="footer">
+	<div id="footer123">
 	<ul class="links">
 		<li class="first"><span>© 2013 Funstage</span></li>
 		<li><a href="<?php echo base_url();?>gioithieu"><span>About Us</span></a></li>
@@ -8,6 +9,7 @@
 		<li><a href="http://m.gametwist.com/"><span>Mobile Version</span></a></li>
 		<li><a href="<?php echo base_url();?>chuongtrinh"><span>Responsible gaming</span></a></li>
 	</ul>
+	<img src="<?php echo base_url();?>/assets/flash_game/images/logo.png" height="50" style="position: absolute; top:50px;"/>
 	<ul class="sitemap">
 		<li class="game">
 			<dl>
@@ -49,5 +51,6 @@
 		<a href="#" id="poweredBy" target="_blank">
 					Games powered by GREENTUBE
 		</a>
+	</div>
 	</div>
 </div>

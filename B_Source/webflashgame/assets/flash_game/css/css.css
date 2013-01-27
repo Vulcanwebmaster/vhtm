@@ -59,6 +59,7 @@ body.help #container .ulContainer li.active a{color:#005374;font-weight:bold;tex
 #mbImage #confirmEmailContainer .formButton{margin:20px auto 0}.login #fnLoginCheckbox{padding-left:143px;*padding-left:0;*text-align:right}
 .login .left #login,.pass_recover #passRecover,.pass_reset #passReset{width:55%}
 .login #error,.pass_recover #error,.pass_recover #formOK{margin:5px 10px -10px}
+.item a{ font-weight:normal !important; color:#39C}
 .messages #error,.shop #shopGutschein #error{margin:30px 20px 0}.stats #fnStats h3{padding-bottom:10px}
 .stats #heading h3{margin:10px 10px 0}.stats #gameStats h3{border-bottom:0}
 .stats #fnStats select{width:209px}.stats #fnStats select,.account_details #accountDetailsTable select{font-size:13px}
@@ -81,7 +82,7 @@ body.warning_systemcheck #warningBox{text-align:center;background:url(../images/
 body.ChooseTransferUserName #error{margin:10px 10px 0}body.socialGaming div#featureBoxesTop{overflow:hidden;position:absolute;top:170px}
 #featureBoxesTop{*overflow:hidden}body.socialGaming div#gamesTopGames{background:url(../images/backSocialGaming.jpg) no-repeat scroll -10px -10px transparent}html.browserUpdate body{padding-top:22px}html.browserUpdate body.noLeaderBoard{background-position:0 -18px}
 html.browserUpdate #nav.sticky{display:none!important}html.browserUpdate #peelSmall,html.browserUpdate #peelBig{padding-top:22px}
-html.browserUpdate #doiBoxContentDisabler{margin-top:22px}a{color:#39C;text-decoration:underline}h4.toggler{color:#39C;text-decoration:underline}
+html.browserUpdate #doiBoxContentDisabler{margin-top:22px}a{color:#ff520d;text-decoration:underline}h4.toggler{color:#39C;text-decoration:underline}
 a:hover,a:active,a:focus,h4.toggler:hover,h4.active{color:#005374;text-decoration:none}
 h1,h2,h3,h4,h5,h6,#catList a{color:#666;font-size:17px;font-style:italic;font-weight:bold;text-decoration:none;margin:1em 0;padding-bottom:2px}
 h1,h2,h3{border-bottom:1px dotted #39C}h3{margin:0}.login #heading h3,.pass_recover #heading h3,.pass_reset #heading h3{margin:10px 20px}
@@ -476,7 +477,8 @@ body .tournStatus_3,body .tournStatus_5,body .tournStatus_8{background:url(../im
 .datepicker .days .week .day.unavailable:hover{background:#fff!important;color:#aaa!important}
 .datepicker .days .week .day:hover,.datepicker .months .month:hover,.datepicker .years .year:hover{background:#5D6E95!important;background:#005374!important;color:#fff!important}
 .datepicker .time .hour.error,.datepicker .time .minutes.error{background:#FFCEC7;border-color:#f00}
-#footer{background:#fff url(../images/backFooter.jpg) left bottom no-repeat;height:240px;margin:0;padding:0 34px;position:relative;color:#fff;font-size:11px;clear:both; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
+#footer{background:#fff; margin:0;padding:0 15px 15px 15px;position:relative;color:#fff;font-size:11px; height:240px; clear:both; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
+#footer123{background:#fff url(../images/bgfooter.jpg) left bottom repeat-x; padding:0 34px; height:240px; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
 .small #footer{margin-top:0;color:#39C;background:0;height:auto;padding-top:10px}
 #footer ul{margin:0;border-left:none}#footer li{margin:0;padding:0;background:0}
 #footer .links{position:absolute;margin:0;font-size:11px;top:10px;color:#666}
@@ -486,7 +488,7 @@ body .tournStatus_3,body .tournStatus_5,body .tournStatus_8{background:url(../im
 #footer .links a:hover span,#footer .links a:active span{text-decoration:none;float:left;cursor:pointer}
 #footer .sitemap{position:absolute;margin:0;top:102px;left:40px;overflow:hidden}
 #footer .sitemap li{list-style:none;float:left}#footer .sitemap dl{margin:0}
-#footer .sitemap dt{border-bottom:1px dotted #fff}#footer .sitemap dt a{color:#3cf;font-size:12px;font-style:italic;font-weight:bold;text-decoration:none;padding:0 20px 0 0;line-height:19px;font-family:arial}
+#footer .sitemap dt{border-bottom:1px dotted #fff}#footer .sitemap dt a{color:#fff;font-size:12px;font-style:italic;font-weight:bold;text-decoration:none;padding:0 20px 0 0;line-height:19px;font-family:arial}
 .uc #footer .sitemap dt a{text-transform:uppercase}#footer .sitemap dd{margin:0;padding-right:10px;line-height:13px}
 #footer .sitemap dd a{text-decoration:none;font-size:10px}#footer .sitemap dd a:hover{text-decoration:underline}
 #footer .sitemap a{color:#fff}#footer p{margin:0;color:#fff}#footer .siteInfo{height:165px;position:relative;left:570px;top:56px;width:350px}
@@ -496,8 +498,8 @@ body .tournStatus_3,body .tournStatus_5,body .tournStatus_8{background:url(../im
 #footer .phone b,#footer .email a{margin:0 0 5px 0;color:#ffde00;font-size:17px;font-style:italic;font-weight:bold;white-space:nowrap}
 #footer .email{border-bottom:1px dotted #fff;font-weight:bold;text-align:right;padding-bottom:8px;margin:8px 0}
 #footer .email i{float:left;display:block;padding-top:2px}#footer .email a{font-size:13px;font-family:arial;white-space:nowrap}
-#poweredBy,#poweredBy:visited{display:block;text-align:right;font-weight:bold;font-style:italic;text-decoration:none;font-size:14px;color:#3CF;font-family:arial}
-#poweredBy:hover{color:#3CF;text-decoration:underline}#friendsContent{float:left;display:inline;width:470px}#friendsContent a{outline:0}
+#poweredBy,#poweredBy:visited{display:block;text-align:right;font-weight:bold;font-style:italic;text-decoration:none;font-size:14px;color:#fff;font-family:arial}
+#poweredBy:hover{color:#fff;text-decoration:underline}#friendsContent{float:left;display:inline;width:470px}#friendsContent a{outline:0}
 #friendsContent #error{margin-left:10px;margin-top:4px}#friendsContent #error h3{border-bottom:1px dotted #F99}
 #friendsList .listTable{margin:0}#friendsList .listTable td{font-weight:bold}
 #friendsList .listTable td a{text-decoration:none}#friendsList .listTable td a.profile{float:left;display:inline;overflow:hidden}
@@ -755,7 +757,7 @@ body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,bod
 .statusBeta .overlayStatus{left:-355px;top:-240px;clip:rect(227px 395px 324px 340px)}
 .statusMobile .overlayStatus{left:-460px;top:-240px;clip:rect(227px 505px 324px 450px)}
 .statusTourn .overlayStatus{clip:rect(227px 105px 324px 0);left:-13px;top:-238px}
-.gameinfo{padding:10px 0 0 10px;width:371px;position:absolute}#so2overlayTop h3,#to2overlayTop h3{color:#39c;font-style:normal;font-size:14px;height:18px;*height:19px;left:137px;line-height:16px;margin:0;overflow:hidden;padding:5px 5px 5px 0;position:absolute;cursor:default;top:4px;border-bottom:0;background:url(../images/overlayBackSprite.png?v2) repeat scroll -106px -31px;z-index:1;max-width:238px}
+.gameinfo{padding:10px 0 0 10px;width:371px;position:absolute}#so2overlayTop h3,#to2overlayTop h3{color:#ff520d;font-style:normal;font-size:14px;height:18px;*height:19px;left:137px;line-height:16px;margin:0;overflow:hidden;padding:5px 5px 5px 0;position:absolute;cursor:default;top:4px;border-bottom:0;background:url(../images/overlayBackSprite.png?v2) repeat scroll -106px -31px;z-index:1;max-width:238px}
 #so2overlayTop .gameDesc,#to2overlayTop .gameDesc{color:#666;font-size:11px;height:44px;left:137px;line-height:14px;margin:0;overflow:hidden;padding:0;position:absolute;top:29px;width:232px;cursor:default;border-bottom:1px dotted #2cbbed;z-index:2}
 #so2overlayTop .gameDesc p,#to2overlayTop .gameDesc p{color:#193255}#so2overlayTop .gameShot,#to2overlayTop .gameShot{height:auto;left:10px;margin:0;overflow:visible;padding:0;position:absolute;top:10px;width:auto}
 #so2overlayTop a img,#to2overlayTop a img{border:1px solid #999}#so2overlay dl,#to2overlay dl{padding:0;margin:0;position:relative}
@@ -1321,7 +1323,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 .slideshow{ position:relative; height:200px; margin:0 auto;}
 #contentslide1, #contentslide2{margin-right:14px}
 .slideshow img{width:317px; height:200px; position:absolute;}
-.contentsl{ /*background-color:#0039A4;*/ background-color:rgb(85, 164, 0); color:#FFFFFF; width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
+.contentsl{ /*background-color:#0039A4;*/ background-color:rgb(33, 164, 0); color:#FFFFFF; width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
 .contentsl ul{}
 .contentsl li{list-style:decimal; padding:0; margin-left:15px; line-height:22px; border-bottom:1px solid #ccc;}
 .contentsl a{ text-decoration: none; color:#FFFFFF;}
@@ -1331,6 +1333,8 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #contentsl1 p{ background: url(../images/slct2.gif) no-repeat; padding-left:20px; }
 #contentsl2 p{ background: url(../images/slct1.gif) no-repeat; padding-left:25px;}
 .heightctsl{ height:250px !important;}
+#contentsl2 label{ margin:0 5px;}
+#contentsl1 .label{ margin-left:150px;}
 
 /*===========================logged-====================*/
 #status1 .logged_in{position:relative}#status .logged_in h5{position:absolute;font-size:12px;padding:3px 8px}
