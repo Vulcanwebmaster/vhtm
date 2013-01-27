@@ -46,7 +46,9 @@
 						<tr> 
 							<th>STT</th>
 		    				<th>Tiêu đề</th> 
-		    				<th>Mục helps</th>
+		    				<th>Tiêu đề (fr)</th>
+		    				<th>Mục helps </th>
+		    				
 		    				<th>Sửa</th>
 		    				
 						</tr> 
@@ -56,6 +58,7 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->title;?></td> 
+			    				<td><?php echo $item->titlefr;?></td> 
 			    				<td><?php echo $item->type;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>helps/admin/edit/<?php echo $item->id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>

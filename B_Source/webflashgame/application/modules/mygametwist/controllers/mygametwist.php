@@ -21,6 +21,7 @@ class Mygametwist extends NIW_Controller
 		$this->load->library('session');
 		$this->load->helper('text');
 		$this->loadLogin();
+		$this->loadLang();
 		}
 		
 		function loadLogin()

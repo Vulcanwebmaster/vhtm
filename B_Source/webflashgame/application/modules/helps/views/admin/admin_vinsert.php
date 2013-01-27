@@ -22,6 +22,10 @@
 					<input type="text" name="title" style="width:92%"/>
 				</fieldset>
 				<fieldset>
+					<label>Tiêu đề (fr) </label>
+					<input type="text" name="titlefr" style="width:92%"/>
+				</fieldset>
+				<fieldset>
 					<label>Loại helps</label>
 					<select name="type">
 						<option value="Rules">Rules</option>
@@ -34,6 +38,10 @@
 				<fieldset>
 					<label>Mô tả </label>
 					<?php echo $this->ckeditor->editor('description','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Mô tả (fr)</label>
+					<?php echo $this->ckeditor->editor('descriptionfr','',$config);?>
 				</fieldset>
 			</div>
 			
