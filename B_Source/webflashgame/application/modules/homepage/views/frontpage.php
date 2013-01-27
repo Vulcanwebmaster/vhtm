@@ -464,7 +464,7 @@
 			</div>
 		</div>
 		<div id="featureBox_5" class="featureBox  type_news">
-			<h3><a target="_self" href="<?php echo base_url();?>taikhoan"><span>My GameTwist</span></a></h3>
+			<h3><a target="_self" href="<?php echo base_url();?>taikhoan"><span>My GameCarresdas</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
@@ -476,7 +476,7 @@
 			</div>
 		</div>
 		<div id="featureBox_5" class="featureBox  type_news">
-			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameTwist</span></a></h3>
+			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameCarresdas</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
@@ -488,7 +488,7 @@
 			</div>
 		</div>
 		<div id="featureBox_5" class="featureBox  type_news">
-			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameTwist</span></a></h3>
+			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameCarresdas</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->

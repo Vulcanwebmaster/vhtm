@@ -1,5 +1,5 @@
 <div id="header">
-			<h1><a href="#"><span>GameTwist</span></a></h1>
+			<h1><a href="#"><span>Games</span></a></h1>
 			<h2>Play Poker, Backgammon, Skat and many more games online FOR FREE!</h2>
 			<div id="nav1">
 				<ul>
@@ -46,7 +46,7 @@
 									Tournaments
 								<?php } ?></span></a></li>
 					<li class="btnCommunity" id="pagemygametwist"><a data-gtt="My GameTwist" href="<?php echo base_url();?>mygametwist" title=""><span>
-						My GameTwist</span></a></li>
+						My Games</span></a></li>
 					<li class="btnShop" id="pageshop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
