@@ -1,4 +1,4 @@
-<div id="divAdRight" style="display: block; position: fixed;">
+<div id="divAdRight" style="display: block; position: fixed; top: 43px">
 <a href="<?php echo base_url();?>">
 	<img src="<?php echo base_url();?>assets/flash_game/images/0006.gif" width="150"; height="165px" /></br>
 </a>
@@ -10,7 +10,7 @@
 </a>
 
 </div>
-<div id="divAdLeft" style="display: block; position: fixed;">
+<div id="divAdLeft" style="display: block; position: fixed; top:43px">
 <a href=" <?php echo base_url();?>">
 	<img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /></br>
 </a>
@@ -80,7 +80,7 @@
     }
 </script>
 <script>
-document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 40;RightAdjust = 5;TopAdjust = 300;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
+document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 40;RightAdjust = 5;TopAdjust = 10;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
 </script>
 <!---
 MainContentW = 1000 : chiều rộng trang web
