@@ -11,7 +11,7 @@
 	<img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /></br>
 </a>
 <a href=" <?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/mario.gif" width="150"; height="165px" />
+	<img src="<?php echo base_url();?>assets/flash_game/images/Hinh-03(3).jpg" width="150"; height="165px" />
 </a>
 </div>
 <script>

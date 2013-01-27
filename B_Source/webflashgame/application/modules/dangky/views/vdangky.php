@@ -1,6 +1,6 @@
 <style>
 	#main{
-		background: url(<?php echo base_url();?>assets/flash_game/images/backContentTop.jpg) no-repeat;
+/*		background: url(<?php echo base_url();?>assets/flash_game/images/backContentTop.jpg) no-repeat;*/
 	_zoom: 1;
 	overflow: hidden;
 	padding: 54px 24px 0 24px;
