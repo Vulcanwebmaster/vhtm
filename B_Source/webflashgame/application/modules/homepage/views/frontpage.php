@@ -5,10 +5,10 @@
 	<div id="presentationWrapper">	
 		<div class="contentslide" id="contentslide1">					
 			<div class="slideshow" id="slideshow1">
-				<img alt="image01" src="<?php echo base_url();?>assets/flash_game/images/1.jpg">
-				<img alt="image013" src="<?php echo base_url();?>assets/flash_game/images/4.jpg">
-				<img alt="image011" src="<?php echo base_url();?>assets/flash_game/images/2.jpg">
-				<img alt="image012" src="<?php echo base_url();?>assets/flash_game/images/3.jpg">				
+				<img alt="image01" src="<?php echo base_url();?>assets/flash_game/images/banner_455x155_playcasino.jpg">
+				<img alt="image013" src="<?php echo base_url();?>assets/flash_game/images/banner_pokerHK.jpg">
+				<img alt="image011" src="<?php echo base_url();?>assets/flash_game/images/Banner-480x235.jpg">
+				<img alt="image012" src="<?php echo base_url();?>assets/flash_game/images/465x280_4b02a.jpg">				
 			</div> 
 			<div id="contentsl1" class="contentsl">
 				<p>Top winners</p>
@@ -57,7 +57,7 @@
 	            <ul class="styleul">
 	              <li class="nick">Username: <input type="text" name="nick" id="lNick1" title="Nickname" value="Nickname" onblur="if(this.value=='') this.value='Nickname';" onfocus="if(this.value=='Nickname') this.value='';"></li>
 	              <li class="password">Password: <input type="password" name="pass" id="lPass1" title="Password" value="Password" onblur="if(this.value=='') this.value='Password';" onfocus="if(this.value=='Password') this.value='';"></li>
-	              <li class="login"><button type="submit" class="fbSubmit"><span><cufon class="cufon cufon-canvas" alt="Log" style="width: 27px; height: 12px;"><cufontext>Log In</cufontext></cufon></span></button></li>
+	              <li class="login"><button type="submit" class="fbSubmit123"><span>Login</span></button></li>
 	              <li class="passRecover"><a href="<?php echo base_url();?>dangky"><span>Forgot your password?</span></a></li>
 	            </ul>
 	          </form>
@@ -208,7 +208,7 @@
 <div id="main">
 <div id="container">
 				<div id="tipHolder"></div>
-				<div id="featureBoxesTop">
+				<!-- <div id="featureBoxesTop">
 					<div id="featureBox_1" class="featureBox  type_game gameId_110">
 						<?php foreach ($top1 as $key) 
 						{ ?>
@@ -251,8 +251,8 @@
 						</div>
 						<?php }?>
 					</div>
-				</div><br clear="both"/>
-			<div class="contBox" id="gamesTopGames">
+				</div> --><br clear="both"/>
+			<!-- <div class="contBox" id="gamesTopGames">
 					<h3>Top Games</h3>
 					<div class="container">
 						
@@ -312,7 +312,7 @@
 					</ul>
 			
 				</div><br clear="both" />
-			</div>
+			</div> -->
 			<div class="categories">
 				<?php foreach ($list_category as $key) 
 				{ ?>

@@ -1253,12 +1253,13 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #languages1 .active a{ background:url(../images/languagebar_skill7.png)5px 5px no-repeat}
 #languages1 .active span{text-transform:uppercase; font-weight:bold !important;}
 #languages1 .active1 a{ background:#007599;}
-
+.fbSubmit123:hover{color: #000000 }
+.fbSubmit123{ margin: 1px; background: url(../images/btnSprite.png) no-repeat scroll right -110px transparent; color: rgb(255, 255, 255); width: 70px; text-shadow: 0px 0px 2px rgb(12, 142, 191), 0px 0px 5px rgb(12, 142, 191), 0px 0px 10px rgb(12, 142, 191); font-weight: bold; border-radius: 2px 2px 2px 2px; cursor: pointer; }
 #status1{position:absolute;right:0;top:40px;font-size:11px;z-index:100;width:628px;height:38px;background-color:#3f5876;border-bottom:1px solid #68819a;border-left:1px solid #68819a;-moz-box-shadow:0 0 5px #10233F;-khtml-box-shadow:0 0 5px #10233F;-webkit-box-shadow:0 0 5px #10233F;box-shadow:0 0 5px #10233F}
 #status1 ul{margin:0;padding:0;border:0}#status1 li{list-style:none;float:left;padding:0; background:none; margin:0;}
 #status1 a{color:#fff;line-height:12px}#status1 a:hover{color:#ff1e00}#status1 .nick label,#status1 .password label{display:none;width:100px;background:#788A9F none repeat scroll 0 0}
-#lNick1,#lPass1{background:#788a9f;border:1px solid #788a9f;padding:1px 2px;font-family:"Trebuchet MS",Helvetica,Jamrul,sans-serif;margin:10px 3px 0;_margin:8px 3px 0;width:109px;height:15px;color:#fff}
-#lNick1{margin-left:10px}.ie9 #lNick1,.ie9 #lPass1{height:14px}#lNick1:hover,#lPass1:hover{background:#788a9f;border-color:#cfd5dd}
+#lNick1,#lPass1{background:#3D8EFA;border:1px solid #FFFFFF;padding:1px 2px;font-family:"Trebuchet MS",Helvetica,Jamrul,sans-serif;margin:10px 3px 0;_margin:8px 3px 0;width:109px;height:15px;color:#fff}
+#lNick1{margin-left:18px}#lPass1{margin-left:19px}.ie9 #lNick1,.ie9 #lPass1{height:14px}#lNick1:hover,#lPass1:hover{background:#788a9f;border-color:#cfd5dd}
 #lNick1:focus,#lPass1:focus{background:#9facbb;border-color:#cfd5dd}#status1 button{display:block;height:18px !important;line-height:1px;z-index:1111;cursor:pointer;color:#fff;font-weight:bold;padding:0 22px 2px 0;margin:8px 21px 10px 0;font-size:12px;border:0}
 .ie9 #status1 button{padding-top:2px;padding-right:25px}#status1 .login .login button{background:#3F5876 url(../images/login.png) no-repeat scroll right top;padding-right:26px;margin:10px 10px 0 3px}
 .ie7 #status1 .login .login button span{margin-left:-15px}.uc #status1 button{text-transform:uppercase}
@@ -1314,11 +1315,11 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 .slideshow{ position:relative; height:200px; margin:0 auto;}
 #contentslide1, #contentslide2{margin-right:14px}
 .slideshow img{width:317px; height:200px; position:absolute;}
-.contentsl{ background-color:rgb(203, 233, 248); width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
+.contentsl{ background-color:#0039A4; color:#FFFFFF; width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
 .contentsl ul{}
 .contentsl li{list-style:decimal; padding:0; margin-left:15px; line-height:22px; border-bottom:1px solid #ccc;}
-.contentsl a{ text-decoration: none; color:#333;}
-.contentsl p{ text-transform:uppercase; font-weight:bold; color:rgb(134, 132, 132); text-shadow:1px 1px 1px #fff}
+.contentsl a{ text-decoration: none; color:#FFFFFF;}
+.contentsl p{ text-transform:uppercase; font-weight:bold; color:#FFFFFF; text-shadow:1px 1px 1px #fff}
 #contentsl1 li{ background:none;}
 #contentsl2 li{ background:none;}
 #contentsl1 p{ background: url(../images/slct2.gif) no-repeat; padding-left:20px; }
