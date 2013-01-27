@@ -29,24 +29,60 @@
 				<div id="tipHolder"></div>
 				<div id="subNav">
 				<ul>
-					<li class="active " id="now"><a href="<?php echo base_url();?>giaidau"><span>current</span></a></li>
-					<li class="" id="past"><a href="<?php echo base_url();?>giaidau/past"><span>past</span></a></li>
-					<li class="" id="mine"><a href="<?php echo base_url();?>dangky/dangnhap"><span>My tournaments</span></a></li>
-					<li class="" id="create"><a href="<?php echo base_url();?>dangky/dangnhap"><span>Create tournament</span></a></li>
+					<li class="active " id="now"><a href="<?php echo base_url();?>giaidau"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									courant
+								<?php } else{ ?>
+									current
+								<?php } ?></span></a></li>
+					<li class="" id="past"><a href="<?php echo base_url();?>giaidau/past"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									passé
+								<?php } else{ ?>
+									past
+								<?php } ?></span></a></li>
+					<li class="" id="mine"><a href="<?php echo base_url();?>dangky/dangnhap"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Mes tournois
+								<?php } else{ ?>
+									My tournaments
+								<?php } ?></span></a></li>
+					<li class="" id="create"><a href="<?php echo base_url();?>dangky/dangnhap"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Créer tournoi
+								<?php } else{ ?>
+									Create tournament
+								<?php } ?></span></a></li>
 				</ul>
 			</div>
 			<div id="tournContainer">
 				<div class="helperTopRight"></div>
 				<div class="helperBottomLeft"></div><div class="helperBottomRight"></div>
 				<div id="tournToday" class="contBox tournList tournSect">
-					<div class="tournHelper"><h3><span>Tournaments today</span></h3>
+					<div class="tournHelper"><h3><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Tournois aujourd'hui
+								<?php } else{ ?>
+									Tournaments today
+								<?php } ?></span></h3>
 					<div class="container">
 						<ul style="width: 588px;margin-right:0;">
 							<?php foreach ($today as $item) 
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span>
+										<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->name_tourfr ?>
+								<?php } else{ ?>
+									<?php echo $item->name_tour ?>
+								<?php } ?></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #cfc29e" class="backgroundColor"></span>
 										<span class="to1_logo_5 to1_pos_8"></span><span style="display:block;background-image: url(http://static7.greentube.com/xsl_gamebase/assets/game_88/logo_137x77/game_88_logo_137x77_EN-US.png);" class="logo"></span>
@@ -60,11 +96,37 @@
 											<p style="color: #000000">08.Jan&nbsp;21:00</p>
 										</a>
 										<div class="desc">
-											<span class="label">Start: </span><?php echo $item->start_date ?> <abbr title="Central European Time">CET</abbr><br>
-											<span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!
+											<span class="label"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Début:
+								<?php } else{ ?>
+									Start: 
+								<?php } ?></span><?php echo $item->start_date ?> <abbr title="Central European Time">CET</abbr><br>
+											<span class="label"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Enjeu:
+								<?php } else{ ?>
+									Stake:  
+								<?php } ?></span>Free<br><span class="label">
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Mon statut:
+								<?php } else{ ?>
+									My status:	
+								<?php } ?></span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Pas inscrit!
+								<?php } else{ ?>
+									Not registered!
+								<?php } ?>
 										</div>
 										<div class="jackpot">
-											<h4><span>Jackpot</span></h4>
+											<h4><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Gros lot
+								<?php } else{ ?>
+									Jackpot
+								<?php } ?></span></h4>
 											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
 										</div>
 									</div>
@@ -77,14 +139,26 @@
 			</div>
 			<div id="tournWeek1" class="contBox tournList tournSect">
 				<div class="tournHelper">
-					<h3><span>Tournaments this week</span></h3>
+					<h3><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Tournois cette semaine
+								<?php } else{ ?>
+									Tournaments this week
+								<?php } ?></span></h3>
 					<div class="container">
 						<ul style="width: 1176px;margin-right:0;">
 							<?php foreach ($week as $item) 
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_29 tournId_32168 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><?php echo $item->name_tour ?><span></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title="">
+										<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->name_tourfr ?>
+								<?php } else{ ?>
+									<?php echo $item->name_tour ?>
+								<?php } ?><span></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #AABB22" class="backgroundColor"></span>
 										<span class="to1_logo_2 to1_pos_9"></span>
@@ -125,7 +199,13 @@
 			</div>
 			<div id="tournWeek2" class="contBox tournList tournSect">
 				<div class="tournHelper">
-					<h3><span>Tournaments next week</span></h3>
+					<h3><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Tournois semaine prochaine
+								<?php } else{ ?>
+									Tournaments next week
+								<?php } ?></span></h3>
 					<div class="container" style="height:243px;">
 						<ul style="width: 1176px;margin-right:0; position:absolute" class="slideimage">
 							
@@ -133,7 +213,13 @@
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span>
+										<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->name_tourfr ?>
+								<?php } else{ ?>
+									<?php echo $item->name_tour ?>
+								<?php } ?></span></a></h4>
 									<div class="to1_container">
 										<span style="background-color: #F4D454" class="backgroundColor"></span>
 										<span class="to1_logo_1 to1_pos_0"></span>
@@ -166,12 +252,36 @@
 					</div>
 				</div>
 				<ul class="paging">
-					<li class="prev inactive"><a data-gtt="Previous page" title="">Previous page</a></li>
+					<li class="prev inactive"><a data-gtt="Previous page" title="">
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Page précédente
+								<?php } else{ ?>
+									Previous page
+								<?php } ?></a></li>
 					<ol>
-						<li class="page1 active"><a data-gtt="Page 1" title="">Page 1</a></li>
-						<li class="page2"><a data-gtt="Page 2" title="">Page 2</a></li>
+						<li class="page1 active"><a data-gtt="Page 1" title="">
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									page 1
+								<?php } else{ ?>
+									Page 1
+								<?php } ?></a></li>
+						<li class="page2"><a data-gtt="Page 2" title="">
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Page 2
+								<?php } else{ ?>
+									Page 2
+								<?php } ?></a></li>
 					</ol>
-					<li class="next inactive"><a data-gtt="Next page" title="">Next page</a></li>
+					<li class="next inactive"><a data-gtt="Next page" title="">
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Page suivante
+								<?php } else{ ?>
+									Next page
+								<?php } ?></a></li>
 				</ul>
 			</div>
 		</div>

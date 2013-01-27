@@ -285,7 +285,7 @@ body.games ul.paging{width:440px;margin-left:0;padding-left:10px;background:url(
 .so1_small .pos_4{top:-162px;clip:rect(162px 102px 216px 0)}.so1_small .pos_5{top:-216px;clip:rect(216px 102px 270px 0)}
 .so1_small .pos_6{top:-270px;clip:rect(270px 102px 324px 0)}.so1_small .pos_7{top:-324px;clip:rect(324px 102px 378px 0)}
 .so1_small .pos_8{top:-378px;clip:rect(378px 102px 432px 0)}.so1_small .pos_9{top:-432px;clip:rect(432px 102px 486px 0)}
-.so1_small .pos_10{top:-486px;clip:rect(486px 102px 540px 0)}.so1_small .pos_11{top:-540px;clip:rect(540px 102px 594px 0)}
+.so1_small .pos_10{/*top:-486px;clip:rect(486px 102px 540px 0)*/}.so1_small .pos_11{top:-540px;clip:rect(540px 102px 594px 0)}
 .so1_small .pos_12{top:-594px;clip:rect(594px 102px 648px 0)}.so1_small .pos_13{top:-648px;clip:rect(648px 102px 702px 0)}
 .so1_small .pos_14{top:-702px;clip:rect(702px 102px 756px 0)}.so1_small .pos_15{top:-756px;clip:rect(756px 102px 810px 0)}
 .so1_small .pos_16{top:-810px;clip:rect(810px 102px 864px 0)}.so1_small .pos_17{top:-864px;clip:rect(864px 102px 918px 0)}
@@ -1251,7 +1251,7 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 #nav1 .help a{background-position:-396px -20px}#nav1 .help a:hover,#nav1 .help a:focus{background-position:-396px 3px}
 #nav1 .account a{background-position:-608px -20px;padding-left:24px}#nav1 .account a:hover,#nav1 .account a:focus{background-position:-608px 3px;padding-left:24px}
 #languages1 li{ background:none; width:150px; line-height:22px!important; height:22px;}
-#languages1{background:#207d0e; width:155px;}
+#languages1{background:#207d0e; /*width:155px;*/}
 #menulaguages{background-image:none !important}
 #languages1 .active1 span{ font-weight:normal !important; text-transform:none;}
 #languages1 .active1{}

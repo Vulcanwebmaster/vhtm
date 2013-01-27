@@ -15,8 +15,16 @@
 					<input type="text" name="name_tour" style="width:92%" value="<?php echo $info->name_tour;?>"/>
 				</fieldset>
 				<fieldset>
+					<label>Tên Giải đấu (fr)</label>
+					<input type="text" name="name_tourfr" style="width:92%" value="<?php echo $info->name_tourfr;?>"/>
+				</fieldset>
+				<fieldset>
 					<label>Overview</label>
 					<?php echo $this->ckeditor->editor('overview',$info->overview,$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Overview (fr)</label>
+					<?php echo $this->ckeditor->editor('overviewfr',$info->overviewfr,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Tên games</label>
@@ -33,10 +41,28 @@
 						<?php }}?>
 					</select>
 				</fieldset>
-				
+				<fieldset>
+					<label>Tên games (fr)</label>
+					<select name="game_id">
+						<option></option>
+						<?php foreach ($list as $item)
+						{
+							if ($item->game_id == $info->game_id)
+							{?>
+								<option value="<?php echo $item->game_id?>" selected="selected"><?php echo $item->namefr;?></option>
+							<?php }
+							else {?>
+								<option value="<?php echo $item->game_id?>"><?php echo $item->namefr;?></option>
+						<?php }}?>
+					</select>
+				</fieldset>
 				<fieldset>
 					<label>Rules</label>
 					<?php echo $this->ckeditor->editor('rules',$info->rules,$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Rules (fr)</label>
+					<?php echo $this->ckeditor->editor('rulesfr',$info->rulesfr,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Start_date</label>

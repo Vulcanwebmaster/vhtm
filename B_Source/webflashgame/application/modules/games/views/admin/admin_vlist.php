@@ -46,8 +46,10 @@
 						<tr> 
 							<th>STT</th>
 		    				<th>Name game</th>
+		    				<th>Name game (fr)</th>
 		    				<th>Danh mục games</th>
-		    				<th>Image</th>
+		    				<th>Danh mục games (fr)</th>
+		    				
 		    				<th>Sửa | Xóa</th>
 		    				
 						</tr> 
@@ -57,8 +59,9 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->name;?></td>
+			    				<td><?php echo $item->namefr;?></td>
 			    				<td><?php echo $item->category_name;?></td>
-			    				<td><?php echo $item->image;?></td>
+			    				<td><?php echo $item->category_namefr;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>games/admin/edit/<?php echo $item->game_id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->game_id;?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

@@ -9,7 +9,7 @@
 	});
 </script>
 		
-<form method="post" action="<?php echo base_url();?>quangcao/admin/edit/<?php echo $info->id;?>">	
+<form method="post" action="<?php echo base_url();?>danhmuc/admin/edit/<?php echo $info->id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		</header>
@@ -18,8 +18,13 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Tên quảng cáo </label>
-					<input type="text" name="name" style="width:92%" value="<?php echo $info->name;?>"/>
+					<label>Tên danh mục anh </label>
+					<input type="text" name="category_name" style="width:92%" value="<?php echo $info->category_name;?>"/>
+				</fieldset>
+				
+				<fieldset>
+					<label>Tên danh mục pháp </label>
+					<input type="text" name="category_namefr" style="width:92%" value="<?php echo $info->category_namefr;?>"/>
 				</fieldset>
 			</div>
 			

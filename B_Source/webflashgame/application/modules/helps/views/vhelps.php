@@ -95,25 +95,48 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 					<ul>
 						<?php foreach ($list_faq as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->titlefr?>
+								<?php } else{ ?>
+									<?php echo $item->title?>
+								<?php } ?></span></a></li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="contBox sideNav" id="contBox2">
-			<h4 class="toggler"><span>Rules</span></h4>
+			<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Règles
+								<?php } else{ ?>
+									Rules
+								<?php } ?></span></h4>
 			<div class="container" id="helpContainer303" style="display: block;">
 				<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 					<ul>
 						<?php foreach ($list_category as $key) 
 						{ ?>
-						<li class="gameToggler active" style="cursor: default;"><span><?php echo $key->category_name;?></span>
+						<li class="gameToggler active" style="cursor: default;"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $key->category_namefr;?>
+								<?php } else{ ?>
+									<?php echo $key->category_name;?>
+								<?php } ?></span>
 							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
 								<?php foreach ($list_games as $value) {?>
 										<?php if($value->category_id  ==  $key->id)
 											{?>
-								<li><a href="<?php echo base_url();?>helps/rules/<?php echo $value->game_id."-".$value->alias;?>"><span><?php echo $value->name; ?></span></a></li>
+								<li><a href="<?php echo base_url();?>helps/rules/<?php echo $value->game_id."-".$value->alias;?>"><span>
+									<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $value->namefr; ?>
+								<?php } else{ ?>
+									<?php echo $value->name; ?>
+								<?php } ?></span></a></li>
 								<?php } ?>
 							<?php } ?>
 							</ul>
@@ -126,26 +149,49 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 			
 	</div>
 	<div class="contBox sideNav" id="contBox3">
-		<h4 class="toggler"><span>General Help</span></h4>
+		<h4 class="toggler"><span>
+			<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Aide générale
+								<?php } else{ ?>
+									General Help
+								<?php } ?></span></h4>
 		<div class="container" id="helpContainer1" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 				<ul>
 						<?php foreach ($list_general as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/general/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<li><a href="<?php echo base_url();?>helps/general/<?php echo $item->id."-".$item->alias;?>"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->titlefr?>
+								<?php } else{ ?>
+									<?php echo $item->title?>
+								<?php } ?></span></a></li>
 						<?php } ?>
 					</ul>
 			</div>
 		</div>
 	</div>
 	<div class="contBox sideNav" id="contBox4">
-		<h4 class="toggler"><span>Technical Help</span></h4>
+		<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Aide technique
+								<?php } else{ ?>
+									Technical Help
+								<?php } ?></span></h4>
 		<div class="container" id="helpContainer22" style="display: none;">
 			<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 			<ul>
 				<?php foreach ($list_technical as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/technical/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<li><a href="<?php echo base_url();?>helps/technical/<?php echo $item->id."-".$item->alias;?>"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->titlefr?>
+								<?php } else{ ?>
+									<?php echo $item->title?>
+								<?php } ?></span></a></li>
 						<?php } ?>
 			</ul>
 		</div>

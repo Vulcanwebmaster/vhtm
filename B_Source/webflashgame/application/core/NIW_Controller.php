@@ -32,6 +32,25 @@ class NIW_Controller extends CI_Controller {
 		$this->bep_assets->load_asset_group('SITE');	
 	}
 	
+	
+	function loadLang()
+	{
+		//session_start();
+        if(isset($_SESSION['lang'])) {
+		   $lang=$_SESSION['lang'];
+        } else {
+        	$lang = 'fr';
+		} 
+		
+        if ($lang=='fr') {
+        	$_SESSION['lang']='ft';
+			$this->lang->load('flash','french');
+			
+		} else {
+			$this->lang->load('flash','english');
+			$_SESSION['lang']='en';
+		}
+	}
 	function set_default_value($data=NULL, $value=NULL)
 	{
 		if (is_array($data))

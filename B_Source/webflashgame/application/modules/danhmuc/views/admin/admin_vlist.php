@@ -45,7 +45,8 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tên danh mục</th> 
+		    				<th>Tên danh mục anh</th> 
+		    				<th>Tên danh mục Pháp</th> 
 		    				<th>Sửa|Xóa</th>
 		    				
 						</tr> 
@@ -55,6 +56,7 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->category_name;?></td> 
+			    				<td><?php echo $item->category_namefr;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>danhmuc/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

@@ -51,6 +51,7 @@
 		{
 			$input=array(
 						'category_name'=>$this->input->post('category_name'),
+						'category_namefr'=>$this->input->post('category_namefr'),
 						);
 			return $input;
 		}
@@ -58,7 +59,7 @@
 		
 		function insert()
 		{
-			if (!$this->input->post('name'))
+			if (!$this->input->post('category_name'))
 			{
 				$data['list']=$this->Mdanhmuc->getListFull('fg_category');
 				$data['config'] = $this->setupCKEditor('97%','200px');
@@ -70,7 +71,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('name','Tên ','required|trim');
+				$this->form_validation->set_rules('category_name','Tên ','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
@@ -103,7 +104,7 @@
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
 			//echo $this->input->post('courses_name');die();
-			if (!$this->input->post('name'))
+			if (!$this->input->post('category_name'))
 			{
 				$data['info']=$this->Mdanhmuc->getRowByColumn('fg_category','id',$id);
 				$data['title']='Sửa danh mục';
@@ -114,7 +115,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('name','Tên','required|trim');
+				$this->form_validation->set_rules('category_name','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())

@@ -9,7 +9,7 @@
 	});
 </script>
 		
-<form method="post" action="<?php echo base_url();?>quangcao/admin/insert">	
+<form method="post" action="<?php echo base_url();?>danhmuc/admin/insert">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		
@@ -18,19 +18,16 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên quảng cáo</label>
-					<input type="text" name="name" style="width:92%"/>
+					<label>Tên danh mục anh</label>
+					<input type="text" name="category_name" style="width:92%"/>
 				</fieldset>
 				
-				<fieldset>
-					<label>Nội dung </label>
-					<?php echo $this->ckeditor->editor('content','',$config);?>
-				</fieldset>
 				
 				<fieldset>
-					<label>Link </label>
-					<?php echo $this->ckeditor->editor('linkqc','',$config);?>
+					<label>Tên danh mục pháp</label>
+					<input type="text" name="category_namefr" style="width:92%"/>
 				</fieldset>
+				
 			</div>
 			
 			<footer style="float:left">

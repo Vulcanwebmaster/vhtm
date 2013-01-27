@@ -15,6 +15,10 @@
 					<input type="text" name="name1" style="width:95%" value="<?php echo $info->name;?>"/>
 				</fieldset>
 				<fieldset>
+					<label>Tên games (fr)</label>
+					<input type="text" name="namefr" style="width:95%" value="<?php echo $info->namefr;?>"/>
+				</fieldset>
+				<fieldset>
 					<label>Danh mục games</label>
 					<select name="category_id">
 						<option></option>
@@ -30,6 +34,21 @@
 					</select>
 				</fieldset>
 				<fieldset>
+					<label>Danh mục games (fr)</label>
+					<select name="category_id">
+						<option></option>
+						<?php foreach ($list as $item)
+						{
+							if ($item->id==$info->category_id)
+							{?>
+								<option value="<?php echo $item->id?>" selected="selected"><?php echo $item->category_namefr;?></option>
+							<?php }
+							else {?>
+								<option value="<?php echo $item->id?>"><?php echo $item->category_namefr;?></option>
+						<?php }}?>
+					</select>
+				</fieldset>
+				<fieldset>
 					<label>Image </label>
 					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
 				</fieldset>
@@ -39,10 +58,17 @@
 				</fieldset>
 				
 				<fieldset>
+					<label>Rules (fr)</label>
+					<?php echo $this->ckeditor->editor('rulesfr',$info->rulesfr,$config);?>
+				</fieldset>
+				<fieldset>
 					<label>Overview </label>
 					<?php echo $this->ckeditor->editor('overview',$info->overview,$config);?>
 				</fieldset>
-				
+				<fieldset>
+					<label>Overview (fr)</label>
+					<?php echo $this->ckeditor->editor('overviewfr',$info->overviewfr,$config);?>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">

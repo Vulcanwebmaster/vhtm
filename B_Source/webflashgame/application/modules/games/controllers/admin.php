@@ -25,10 +25,14 @@
 		function _input()
 		{
 			$input=array('name'=>$this->input->post('name1'),
+						'namefr'=>$this->input->post('namefr'),
 						'rules'=>$this->input->post('rules'),
+						'rulesfr'=>$this->input->post('rulesfr'),
 						'statistics'=>$this->input->post('statistics'),
+						'statisticsfr'=>$this->input->post('statisticsfr'),
 						'category_id'=>$this->input->post('category_id'),
 						'overview'=>$this->input->post('overview'),
+						'overviewfr'=>$this->input->post('overviewfr'),
 						'image'=>$this->input->post('image'),
 						);
 			return $input;
