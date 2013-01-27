@@ -1,16 +1,17 @@
 <div id="divAdRight" style="display: block; position: fixed;">
-<a href="http://vietdesigner.net">
-	
+<a href="<?php echo base_url();?>">
 	<img src="<?php echo base_url();?>assets/flash_game/images/0006.gif" width="150"; height="165px" /></br>
-	<img src="<?php echo base_url();?>assets/flash_game/images/boss_mario.gif" width="150"; height="165px" />
+</a>
+<a href="<?php echo base_url();?>">
+	<img src="<?php echo base_url();?>assets/flash_game/images/0043.gif" width="150"; height="165px" />
 </a>
 </div>
 <div id="divAdLeft" style="display: block; position: fixed;">
-<a href=" http://vietdesigner.net">
+<a href=" <?php echo base_url();?>">
 	<img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /></br>
+</a>
+<a href=" <?php echo base_url();?>">
 	<img src="<?php echo base_url();?>assets/flash_game/images/mario.gif" width="150"; height="165px" />
-	
-	
 </a>
 </div>
 <script>
