@@ -43,7 +43,7 @@ class NIW_Controller extends CI_Controller {
 		} 
 		
         if ($lang=='fr') {
-        	$_SESSION['lang']='ft';
+        	$_SESSION['lang']='fr';
 			$this->lang->load('flash','french');
 			
 		} else {

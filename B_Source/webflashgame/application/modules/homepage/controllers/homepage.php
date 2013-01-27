@@ -12,6 +12,7 @@ class Homepage extends NIW_controller {
 		$this->load->library('pagination');
 		$this->load->helper('text');
 		$this->load->library('form_validation');
+		$this->loadLang();
 	}
 	
 	public function index()
