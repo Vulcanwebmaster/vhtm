@@ -91,7 +91,7 @@
 	<li  id="menulaguages" class="active"><a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>" style="height: 40px;"><span style="display: block; " class="lang_name">French</span></a>
      <div  id="languages1" style="padding-top:5px; border-radius: 5px">
       <div><a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><span style="display: block; " class="lang_name">French </span></a></div>
-      <div><a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><span class="lang_name">English (US)</span></a></div>
+      <div style="padding-bottom: 10px"><a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><span class="lang_name">English (US)</span></a></div>
      </div>
       </li>
 				  </li>
