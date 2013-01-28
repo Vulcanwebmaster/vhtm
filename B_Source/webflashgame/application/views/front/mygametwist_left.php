@@ -29,13 +29,13 @@
 					<h4><span>My Friends</span></h4>
 					<div class="container">
 						<ul>
-							<li><a href="#"><span>Friends List</span></a></li>
-							<li><a href="#"><span>Ignore List</span></a></li>
+							<li <?php if(isset($menuleft)){if($menuleft==9){ echo "class='active'"; }} ?>><a href="<?php echo base_url();?>mygametwist/friendslist"><span>Friends List</span></a></li>
+							<li <?php if(isset($menuleft)){if($menuleft==10){ echo "class='active'"; }} ?>><a href="<?php echo base_url();?>mygametwist/ignorelist"><span>Ignore List</span></a></li>
 							<li><a href="#"><span>Invite friends</span></a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="contBox sideNav">
+				<!-- <div class="contBox sideNav">
 					<h4><span>Messages</span></h4>
 					<div class="container">
 						<ul>
@@ -44,7 +44,7 @@
 							<li><a href="#"><span>Outbox</span></a></li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div id="sideBar"></div>
 			<br clear="both" />

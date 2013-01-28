@@ -81,18 +81,54 @@
 				<img alt="image0100" src="<?php echo base_url();?>assets/flash_game/images/Poker-gif.gif">
 			</div>
 			<div id="contentsl3" class="contentsl">
+				
+				<?php if(!isset($_SESSION['front_user_fullname'])){ ?>
 				<!--  Form Login -->
 			<div class="login">
 	          <form method="post" enctype="application/x-www-form-urlencoded" action="<?php echo base_url()?>dangky/checkAccount">
 	            <ul class="styleul" id="ullogin">
 	              <li class="nick">Username: <input type="text" name="nick" id="lNick1" title="Nickname" value="Nickname" onblur="if(this.value=='') this.value='Nickname';" onfocus="if(this.value=='Nickname') this.value='';"></li>
 	              <li class="password">Password: <input type="password" name="pass" id="lPass1" title="Password" value="Password" onblur="if(this.value=='') this.value='Password';" onfocus="if(this.value=='Password') this.value='';"></li>
-	              <li class="login"><button type="submit" class="fbSubmit123"><span>Login</span></button></li>
-	              <li class="passRecover"><a href="<?php echo base_url();?>dangky"><span>Forgot your password?</span></a></li>
+	              <li class="login"><button type="submit" class="fbSubmit123"><span> 
+	              	<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									identifiant 
+								<?php } else{ ?>
+									Login
+								<?php } ?></span></button></li>
+	              
+	              <li class="passRecover"><a href="<?php echo base_url();?>dangky"><span>
+	              	<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Nouveau ici? Inscrivez-vous maintenant ! 
+								<?php } else{ ?>
+									New here? Register now!
+								<?php } ?></span></a></li>
 	            </ul>
 	          </form>
-	          <form class="arrow" action="<?php echo base_url()?>dangky" method="get" enctype="application/x-www-form-urlencoded"><button class="arrow fbSubmit" type="submit"><span><cufon class="cufon cufon-canvas" alt="Register" style="width: 55px; height: 10px;"><canvas width="62" height="12" style="width: 62px; height: 0px; top: -1px; left: -1px;"></canvas><cufontext>Register</cufontext></cufon></span></button></form>
+<!-- 	          <form class="arrow" action="<?php echo base_url()?>dangky" method="get" enctype="application/x-www-form-urlencoded"><button class="arrow fbSubmit" type="submit"><span><cufon class="cufon cufon-canvas" alt="Register" style="width: 55px; height: 10px;"><canvas width="62" height="12" style="width: 62px; height: 0px; top: -1px; left: -1px;"></canvas><cufontext>Register</cufontext></cufon></span></button></form> -->
 	        </div><!-- End Form Login -->
+	        <?php }else{ ?>
+	        	<div class="login">
+	        		<ul>
+			        	 <p> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Bonjour: 
+								<?php } else{ ?>
+									Welcome: 
+								<?php } ?> <?php echo $_SESSION['front_user_fullname'] ?></p>
+			        	<form method="post" enctype="application/x-www-form-urlencoded" action="<?php echo base_url()?>dangky/logOut">
+								<button type="submit" class="fbSubmit123" style="width: auto; padding: 5px"><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Vous déconnecter
+								<?php } else{ ?>
+									Logout
+								<?php } ?> </span></button>
+								<input name="logout" type="hidden" value="1">
+						</form>
+					</ul>	
+				</div>
+			 <?php } ?>
 	        <div id="arrow"></div>
 					<!-- <div class="playeronline">
 					<p style="color:#fff; font-size: 20px; margin:25px 0 0 0; padding:0 0 10px 0; font-weight:bold">3333</p>
@@ -449,10 +485,8 @@
 			<table style="width:1280px;">
 				<tr>
 					<td>
-						
-					
 		<div id="featureBox_4" class="featureBox statusSkill7 type_skill7">
-			<h3><a target="_blank" href="#"><span>Become a winner in no time!</span></a></h3>
+			<h3><a target="_blank" href="<?php echo base_url();?>mygametwist"><span>Become a winner in no time!</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/CASINO.gif);"  class="img"></span> -->
@@ -464,7 +498,7 @@
 			</div>
 		</div>
 		<div id="featureBox_5" class="featureBox  type_news">
-			<h3><a target="_self" href="<?php echo base_url();?>taikhoan"><span>My GameCarresdas</span></a></h3>
+			<h3><a target="_blank" href="<?php echo base_url();?>"><span>My GameCarresdas</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
@@ -476,7 +510,7 @@
 			</div>
 		</div>
 		<div id="featureBox_5" class="featureBox  type_news">
-			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameCarresdas</span></a></h3>
+			<h3><a target="_blank" href="<?php echo base_url();?>shop"><span>My GameCarresdas</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->
@@ -488,7 +522,7 @@
 			</div>
 		</div>
 		<div id="featureBox_5" class="featureBox  type_news">
-			<h3><a target="_self" href="<?php echo base_url();?>shop"><span>My GameCarresdas</span></a></h3>
+			<h3><a target="_blank" href="<?php echo base_url();?>shop"><span>My GameCarresdas</span></a></h3>
 			<div class="container">
 				<div style="background-color: " class="backgroundColor">
 	<!-- 				<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/5156-featurebox_meingametwist.jpg);" class="img"></span> -->

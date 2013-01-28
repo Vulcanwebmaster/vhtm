@@ -176,13 +176,35 @@ class Mygametwist extends NIW_Controller
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}
+		// List Friends
 		function friendslist()
 		{
+			$id = $_SESSION['front_user_id'];
 			$model=new CI_Model();
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
+			// Lay ra danh sach ban be qua id
+			$listfriend = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			$data['list_friends'] = $this->Mmygametwist->getListByIdFriends($listfriend->friendslist);
+			
 			$data['menuleft']  =  9;
 			$data['module']  =  $this->module;
-			$data['page']  =  'vvouchers';
+			$data['page']  =  'vfriendslist';
+			$data['index']  =  -1;
+			$this->load->view('front/container',$data);
+		}
+		// List Ignore Friends
+		function ignorelist()
+		{
+			$id = $_SESSION['front_user_id'];
+			$model=new CI_Model();
+			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
+			// Lay ra danh sach ban be qua id
+			$listignore = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			$data['list_ignore'] = $this->Mmygametwist->getListByIdFriends($listignore->ignorelist);
+			
+			$data['menuleft']  =  10;
+			$data['module']  =  $this->module;
+			$data['page']  =  'vignorelist';
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}

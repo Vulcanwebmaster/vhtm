@@ -226,11 +226,9 @@ function getRowByColumn($tableName='',$columnName='',$value='')
 	 	return $list;
 	 }
 	 
-	 function getSpByParentID($id){
+	 function getListByIdFriends($value=''){
 	 	// Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
-		  $query= $this->db->query("SELECT DISTINCT n_sanpham.*, n_danhmuc.parent_id
-										FROM n_sanpham, n_danhmuc
-										WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
+		  $query= $this->db->query("SELECT * FROM (`n_fg_accounts`) WHERE `id`IN ($value)");
 		  return $query->result();
 	 }
 }

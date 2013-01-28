@@ -3,7 +3,7 @@
 <?php $this->load->view('front/menu')?> <!-- Menu -->
 <div id="main">
 	<div id="container" style="float:left;margin-left:294px;position:relative;width:648px;_display:inline">
-						<div id="tipHolder"></div>
+			<div id="tipHolder"></div>
 				<div id="friendsContent">
 					<div class="contBox" id="friendsList">
 						<h3><span>Friends List</span></h3>
@@ -24,9 +24,9 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<?php foreach ($list_friends as $friends) {  ?>
+									<?php foreach ($list_ignore as $listignore) {  ?>
 										<tr class="light">
-										<td><a class="profile " href="#" target="profile"><span><?php echo $friends->username ?></span></a></td>
+										<td><a class="profile " href="#" target="profile"><span><?php echo $listignore->username ?></span></a></td>
 										<td class="status"><span class="offline"></span></td>
 										<td class="action">
 										<script type="text/javascript">
@@ -37,8 +37,6 @@
 											</td>
 										</tr>
 									<?php } ?>
-									
-									
 								</tbody>
 							</table>
 						</div>

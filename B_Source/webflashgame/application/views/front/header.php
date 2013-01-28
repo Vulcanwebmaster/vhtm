@@ -21,9 +21,9 @@
 					<li class="btnCommunity" id="pagemygametwist"><a data-gtt="My GameTwist" href="<?php echo base_url();?>mygametwist" title=""><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									Mes Jeux Twist
+									Mes Jeux
 								<?php } else{ ?>
-									My Games Twist
+									My Games
 								<?php } ?></span></a></li>
 					<li class="btnShop" id="pageshop"><a data-gtt="Shop" href="<?php echo base_url();?>shop" title=""><span>
 						<?php if ($_SESSION['lang']=="fr") 
@@ -50,19 +50,11 @@
 								<?php } ?></span></a>
      <div  id="languages1" style="padding-top:5px; border-radius: 5px">
       <div><a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><span style="display: block; " class="lang_name">
-      	<?php if ($_SESSION['lang']=="fr") 
-								{?>		
 									French
-								<?php } else{ ?>
-									English (US)
-								<?php } ?> </span></a></div>
+								</span></a></div>
       <div style="padding-bottom: 10px"><a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><span class="lang_name">
-      	<?php if ($_SESSION['lang']=="fr") 
-								{?>		
 									English (US)
-								<?php } else{ ?>
-									French
-								<?php } ?> </span></a></div>
+								</span></a></div>
      </div>
       </li>
 				  </li>

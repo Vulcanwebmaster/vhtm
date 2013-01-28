@@ -19,7 +19,7 @@
 					<h3><span>Welcome to the GameTwist community!</span></h3>
 					<div class="container">Meet up with your friends, find out about the latest news and play your favourite games.</div>
 				</div>
-				<div id="newMessages" class="contBox">
+				<!-- <div id="newMessages" class="contBox">
 					<h3><span>Write message</span></h3>
 					<div class="container">
 						<table class="listTable">
@@ -38,7 +38,7 @@
 							<a href="#">Messages</a>
 						</p>
 					</div>
-				</div>
+				</div> -->
 				<div class="contBox" id="friendsOnline">
 					<h3><span>Friends online</span></h3>
 					<div class="container">
