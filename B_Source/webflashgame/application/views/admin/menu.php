@@ -8,13 +8,15 @@
 	<ul class="toggle">
 		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Category</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>games/admin">Games</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>kenh/admin">Change</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>helps/admin">Helps</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">About us</a></li>
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>kenh/admin">Change</a></li> -->
+		<li class="icn_application"><a href="<?php echo base_url()?>faqs/admin">Faqs</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>general/admin">General</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>technical/admin">Technical</a></li>
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">About us</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>giaidau/admin">Tournaments</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Ads</a></li>
-		<li class="icn_application"><a href="#">Tài khoản</a></li>s
-		<li class="icn_application"><a href="#">Kênh</a></li>
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Ads</a></li> -->
+<!-- 		<li class="icn_application"><a href="#">Tài khoản</a></li>s -->
+<!-- 		<li class="icn_application"><a href="#">Kênh</a></li> -->
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

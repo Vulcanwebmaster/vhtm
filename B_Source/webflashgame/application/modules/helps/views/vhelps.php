@@ -20,12 +20,13 @@
 <?php $this->load->view('front/menu')?>
 <div id="main">
 		<div id="container">
-			<div id="printLink">
+			<!-- <div id="printLink">
 				<p><a href="javascript:pgPrint()">print</a></p>
-			</div>
+			</div> -->
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
-				<div class="container">
+				
+				<!-- <div class="container">
 					<div>
 						<p><strong>In the help menu you will find;</strong></p>
 						<ul>
@@ -45,7 +46,7 @@ Our support hotline is available 7 days a week (excl. public holidays) from 8am 
 Prices given are from landline telephones. Prices for calls from cell phones may be higher.<br></strong>
 						<p></p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div id="sideNav">
@@ -95,13 +96,7 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 					<ul>
 						<?php foreach ($list_faq as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span>
-							<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									<?php echo $item->titlefr?>
-								<?php } else{ ?>
-									<?php echo $item->title?>
-								<?php } ?></span></a></li>
+						<li><a href="<?php echo base_url();?>helps/faqs/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -110,7 +105,7 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 		<div class="contBox sideNav" id="contBox2">
 			<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									Règles
+									Aide des jeux
 								<?php } else{ ?>
 									Rules
 								<?php } ?></span></h4>
@@ -119,13 +114,7 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 					<ul>
 						<?php foreach ($list_category as $key) 
 						{ ?>
-						<li class="gameToggler active" style="cursor: default;"><span>
-							<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									<?php echo $key->category_namefr;?>
-								<?php } else{ ?>
-									<?php echo $key->category_name;?>
-								<?php } ?></span>
+						<li class="gameToggler active" style="cursor: default;"><span><?php echo $key->category_name;?></span>
 							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
 								<?php foreach ($list_games as $value) {?>
 										<?php if($value->category_id  ==  $key->id)
@@ -149,8 +138,7 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 			
 	</div>
 	<div class="contBox sideNav" id="contBox3">
-		<h4 class="toggler"><span>
-			<?php if ($_SESSION['lang']=="fr") 
+		<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Aide générale
 								<?php } else{ ?>

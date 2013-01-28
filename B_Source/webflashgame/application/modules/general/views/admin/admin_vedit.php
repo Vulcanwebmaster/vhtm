@@ -9,7 +9,7 @@
 	});
 </script>
 		
-<form method="post" action="<?php echo base_url();?>danhmuc/admin/edit/<?php echo $info->id;?>">	
+<form method="post" action="<?php echo base_url();?>general/admin/edit/<?php echo $info->id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		</header>
@@ -18,13 +18,21 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Name category (en) </label>
-					<input type="text" name="category_name" style="width:92%" value="<?php echo $info->category_name;?>"/>
+					<label>Title (en) </label>
+					<input type="text" name="title" style="width:92%" value="<?php echo $info->title;?>"/>
 				</fieldset>
 				
 				<fieldset>
-					<label>Name category (fr) </label>
-					<input type="text" name="category_namefr" style="width:92%" value="<?php echo $info->category_namefr;?>"/>
+					<label>Title (fr) </label>
+					<input type="text" name="titlefr" style="width:92%" value="<?php echo $info->titlefr;?>"/>
+				</fieldset>
+				<fieldset>
+					<label>Content (en)</label>
+					<?php echo $this->ckeditor->editor('content',$info->content,$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Content (fr) </label>
+					<?php echo $this->ckeditor->editor('contentfr',$info->contentfr,$config);?>
 				</fieldset>
 			</div>
 			

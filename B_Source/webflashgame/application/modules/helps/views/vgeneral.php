@@ -20,15 +20,9 @@
 <?php $this->load->view('front/menu')?>
 <div id="main">
 		<div id="container">
-			<div id="printLink">
-				<p><a href="javascript:pgPrint()">
-					<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									imprimer
-								<?php } else{ ?>
-									print
-								<?php } ?></a></p>
-			</div>
+			<!-- <div id="printLink">
+				<p><a href="javascript:pgPrint()"></a></p>
+			</div> -->
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
 				<div class="container">
@@ -37,17 +31,17 @@
 						<p><strong>
 							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									<?php echo $list_general1->titlefr ?>
+									<?php echo $list_general_detail->titlefr ?>
 								<?php } else{ ?>
-									<?php echo $list_general1->title ?>
+									<?php echo $list_general_detail->title ?>
 								<?php } ?></strong></p>
 						
 						<p><strong>
-						<?php if ($_SESSION['lang']=="fr") 
+							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									<?php echo $list_general1->contentfr ?>
+									<?php echo $list_general_detail->contentfr ?>
 								<?php } else{ ?>
-									<?php echo $list_general1->content ?>
+									<?php echo $list_general_detail->content ?>
 								<?php } ?></strong></p>
 					</div>
 				</div>
@@ -100,7 +94,7 @@
 					<ul>
 						<?php foreach ($list_faq as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span>
+						<li><a href="<?php echo base_url();?>helps/faqs/<?php echo $item->id."-".$item->alias;?>"><span>
 							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									<?php echo $item->titlefr?>
@@ -113,7 +107,12 @@
 			</div>
 		</div>
 		<div class="contBox sideNav" id="contBox2">
-			<h4 class="toggler"><span>Rules</span></h4>
+			<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Aide des jeux
+								<?php } else{ ?>
+									Rules
+								<?php } ?></span></h4>
 			<div class="container" id="helpContainer303" style="display: none;">
 				<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 					
@@ -143,14 +142,12 @@
 							</ul>
 						</li>
 						<?php }?>
-						
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="contBox sideNav" id="contBox3">
-		<h4 class="toggler"><span>
-			<?php if ($_SESSION['lang']=="fr") 
+		<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Aide générale
 								<?php } else{ ?>
@@ -174,8 +171,7 @@
 		</div>
 	</div>
 	<div class="contBox sideNav" id="contBox4">
-		<h4 class="toggler"><span>
-			<?php if ($_SESSION['lang']=="fr") 
+		<h4 class="toggler"><span><?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Aide technique
 								<?php } else{ ?>
@@ -186,7 +182,7 @@
 			<ul>
 				<?php foreach ($list_technical as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span>
+						<li><a href="<?php echo base_url();?>helps/technical/<?php echo $item->id."-".$item->alias;?>"><span>
 							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									<?php echo $item->titlefr?>

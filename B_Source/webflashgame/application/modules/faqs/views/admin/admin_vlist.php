@@ -12,10 +12,10 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa help này?");
+					var r=confirm("Are you delete this faq?");
 					if (r==true)
 					{
-						var uri="<?php echo base_url()?>helps/admin/delete/"+value;
+						var uri="<?php echo base_url()?>faqs/admin/delete/"+value;
 						window.location=uri;
 					}
 					else 
@@ -34,7 +34,7 @@
 	else $offset==strlen($str);
 	return substr($str, 0, $offset);
 }?>
-<form action="<?php echo base_url()?>helps/admin/saveColumn1" method="post">    
+<form action="<?php echo base_url()?>faqs/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
 			<h3><?php echo $title; ?></h3>			
@@ -44,10 +44,10 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>STT</th>
-		    				<th>Tiêu đề</th> 
-		    				<th>Mục helps</th>
-		    				<th>Sửa</th>
+							<th>Number</th>
+		    				<th>Title (en)</th> 
+		    				<th>Title (fr)</th> 
+		    				<th>Edit|Del</th>
 		    				
 						</tr> 
 					</thead> 
@@ -56,9 +56,9 @@
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->title;?></td> 
-			    				<td><?php echo $item->type;?></td>
+			    				<td><?php echo $item->titlefr;?></td> 
 			    				<td>
-			    					<a href="<?php echo base_url()?>helps/admin/edit/<?php echo $item->id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a href="<?php echo base_url()?>faqs/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
@@ -70,11 +70,13 @@
 			<center style="font-size: 15px;color:red">
 				<?php echo $this->pagination->create_links();?>
 			</center>
-			<footer>
-				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo base_url();?>helps/admin/insert">Thêm mới</a>
-				</div>
-			</footer>		
+				<footer>
+						
+						<div class="submit_link">
+							<a class="alt_btn" href="<?php echo base_url();?>faqs/admin/insert">Add new</a>
+						</div>
+				</footer>
+						
 		</div>
 	</article>
 </form>	

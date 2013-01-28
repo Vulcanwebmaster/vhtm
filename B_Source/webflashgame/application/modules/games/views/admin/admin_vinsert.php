@@ -18,11 +18,25 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên games </label>
+					<label>Name game (en)</label>
 					<input type="text" name="name1" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục game</label>
+					<label>Name game (fr)</label>
+					<input type="text" name="namefr" style="width:92%"/>
+				</fieldset>
+				<fieldset>
+					<label>Games category (en)</label>
+					<select name="category_id">
+						<option></option>
+						<?php foreach ($list as $item)
+						{?>
+							<option value="<?php echo $item->id?>"><?php echo $item->category_name;?></option>							
+						<?php }?>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label>Games category (fr)</label>
 					<select name="category_id">
 						<option></option>
 						<?php foreach ($list as $item)
@@ -36,12 +50,20 @@
 					<?php echo $this->ckeditor->editor('image','',$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Rules </label>
+					<label>Rules (en)</label>
 					<?php echo $this->ckeditor->editor('rules','',$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Overview </label>
+					<label>Rules (fr)</label>
+					<?php echo $this->ckeditor->editor('rulesfr','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Overview (en)</label>
 					<?php echo $this->ckeditor->editor('overview','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Overview (fr)</label>
+					<?php echo $this->ckeditor->editor('overviewfr','',$config);?>
 				</fieldset>
 			</div>
 			

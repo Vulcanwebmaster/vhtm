@@ -41,10 +41,8 @@
 		{
 			$input=array(
 						'title'=>$this->input->post('title'),
-						'title'=>$this->input->post('titlefr'),
 						'type'=>$this->input->post('type'),
 						'description'=>$this->input->post('description'),
-						'description'=>$this->input->post('descriptionfr'),
 						);
 			return $input;
 		}

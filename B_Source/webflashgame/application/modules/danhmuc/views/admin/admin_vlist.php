@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa danh mục này?");
+					var r=confirm("Are you delete this category?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>danhmuc/admin/delete/"+value;
@@ -44,10 +44,10 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>STT</th>
-		    				<th>Tên danh mục anh</th> 
-		    				<th>Tên danh mục Pháp</th> 
-		    				<th>Sửa|Xóa</th>
+							<th>Number</th>
+		    				<th>Name category (en)</th> 
+		    				<th>Name category (fr)</th> 
+		    				<th>Edit|Del</th>
 		    				
 						</tr> 
 					</thead> 
@@ -73,7 +73,7 @@
 				<footer>
 						
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>danhmuc/admin/insert">Thêm mới</a>
+							<a class="alt_btn" href="<?php echo base_url();?>danhmuc/admin/insert">Add new</a>
 						</div>
 				</footer>
 						

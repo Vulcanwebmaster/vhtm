@@ -96,27 +96,76 @@ position: relative;
 				<div id="gameHeader" class="game_49">
 					<div class="rating5">
 						<span class="gameHeaderStars" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);"></span>rating: 5</div>
-						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?><?php echo $list_chitiet->image ?>);"></span>
+						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?><?php echo $list_chitiet->image ?></span>
 						<dl>
-							<dt>Playing now:</dt>
+							<dt>
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Joueurs en ligne:
+								<?php } else{ ?>
+									Playing now:
+								<?php } ?></dt>
 							<dd>48</dd>
-							<dt>Type:</dt>
-							<dd>Arcade &amp; Other</dd>
-							<dt>Min. no. of players:</dt>
+							<dt><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Type:
+								<?php } else{ ?>
+									Type:
+								<?php } ?></dt>
+							<dd><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									OtherArcades & Autres
+								<?php } else{ ?>
+									Arcade &amp;
+								<?php } ?> </dd>
+							<dt><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Min. Réf. Nombre de joueurs:
+								<?php } else{ ?>
+									Min. no. of players:
+								<?php } ?></dt>
 							<dd>2</dd>
-							<dt>Duration:</dt>
+							<dt><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Durée:
+								<?php } else{ ?>
+									Duration:
+								<?php } ?></dt>
 							<dd>~ 3 min.</dd>
 						</dl>
-						<a class="room" href="#"><span>Play Bingo online!</span></a>
+						<a class="room" href="<?php echo base_url();?>games/api"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Jouer
+								<?php } else{ ?>
+									Play
+								<?php } ?>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $list_chitiet->namefr ?>
+								<?php } else{ ?>
+									<?php echo $list_chitiet->name ?>
+								<?php } ?>
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									en ligne!
+								<?php } else{ ?>
+									online!
+								<?php } ?></span></a>
 					</div>
 					<div id="gameShot">
-						<a rel="lightbox[set1]" data-gtt="Bingo" href="images/game_49_gameshot_780x480.jpg" title="">
-						<img alt="Bingo" src="images/game_49_gameshot_260x160.jpg"></a>
+						<a rel="lightbox[set1]" data-gtt="Bingo" href="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_780x480.jpg" title="">
+						<img alt="Bingo" src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_260x160.jpg"></a>
 					</div>
 				</div>
 			</div>
 			<div id="relatedGames" class="contBox">
-				<h3><span>Popular games</span></h3>
+				<h3><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Jeux les plus populaires
+								<?php } else{ ?>
+									Popular games
+								<?php } ?></span></h3>
 				<div class="container gameCat">
 					<ul class="gameList">
 						<li class="related">
@@ -129,7 +178,7 @@ position: relative;
 										<li>
 											<span class="border" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);"></span>
 											<span class="gameLogo pos_17" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_97_logo_137x77_EN-US.png);"></span>
-											<a class="room" href="#"><span class="link" style="display:block;background-image: url(images/gameSO1_OverlaySprite.png);"></span>
+											<a class="room" href="#"><span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
 											<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
 											<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
 											</a>
@@ -170,40 +219,65 @@ position: relative;
 				</ul>
 			</div>
 			<div class="contentTop"></div>
-			<div id="content" class="content1" style="">
+			<div id="content" class="content1">
 				<div class="contBox">
 					<div class="container">
-						<p><?php echo $list_chitiet->overview ?></p>
+						<p>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $list_chitiet->overviewfr ?>
+								<?php } else{ ?>
+									<?php echo $list_chitiet->overview ?>
+								<?php } ?></p>
 						<!--<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><b><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">Bingo </span></b><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">is played and loved the world over. Although there are many different variations, the general order of play is always the same. At GameTwist players have the opportunity to select between 1 and 60 Bingo cards, giving them a higher chance of winning.<o:p></o:p></span></p>
 						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt">
 						<span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt"><o:p>&nbsp;</o:p></span></p>
 						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">The following variations are available: 75-Ball and 90-Ball.<o:p></o:p></span></p>
 						<p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt"><o:p>&nbsp;</o:p></span></p><p class="MsoNoSpacing" style="margin: 0cm 0cm 0pt"><span lang="EN-GB" style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: DE-AT; mso-bidi-font-size: 7.5pt">Up to 50 players may play at a single Bingo table. The aim of the game is to mark off a certain pattern on the Bingo card with the numbers drawn at random. The player to achieve this first wins and the round comes to an end.<o:p></o:p></span></p>
-						<p></p>-->
+						-->
 					</div>
 				</div>
 			</div>
-			<div id="content" class="content2" style="display: none;">
+			<div id="content" class="content2">
 				<div class="contBox">
 					<div class="container">
-						<h3><span>Statistics</span></h3>
-					<div class="container"><p><a href="#">Statistics</a></p></div>
+						<h3><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Statistiques
+								<?php } else{ ?>
+									Statistics
+								<?php } ?></span></h3>
+					<div class="container"><p><a href="#">
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Statistiques
+								<?php } else{ ?>
+									Statistics
+								<?php } ?></a></p></div>
 					</div>
 				</div>
 			</div>
-			<div id="content" class="content3" style="display: none;">
+			
+			<div id="content" class="content3">
 				<div class="contBox">
 					<div class="container">
 					<div class="gamesHelpContent contBox">
-						<h3 id="a_4163"><span><?php echo $list_chitiet->rules ?></span></h3>
-						<div class="container">
-							<div><p>In the Bingo lobby players can decide to play at either a 75-Ball table or 90-Ball table. It is not possible to set up new tables. Simply click on �Enter� to join the desired table.</p><p>Bingo cards are displayed on the playing field. All 60 Bingo cards can be viewed using the scroll bar. Select a card by clicking on it, then click �Buy� to purchase it. It is also possible to select more than one card at once by using the �Card Selector� option. The �Card Selector� can be set to a number from 1 to 60, allowing the player to mark the corresponding number of cards. For example, if the �Card Selector� is set to 10, 10 playing cards will be marked.</p><p>By clicking on �New� the cards, which have neither been marked nor bought, are replaced by new cards.</p><p>Alternatively, players can use the �Auto-Buy� function. Clicking on this button opens a new window, where the player can select how many cards he/she wants to have and for how many rounds, e.g.: 10 rounds with 5 cards each. The entered number of cards will then be bought automatically at the start of each round.</p><p>The �Auto-Sorting� function can be toggled during the draw. This function orders the player�s cards according to how close the card is to being completed. This is on at the start of the game by default.</p><p>Clicking on the �Bingo� button announces that you have achieved �Bingo�. If you forget to click on the button, your winnings will be awarded anyway. If a player loses his/her connection to the game before clicking on �Bingo�, the win will also be valid.</p><h3>Rules</h3><p>There are two variations of Bingo to choose from: 75-Ball and 90-Ball. Up to 50 players can play at one table. The aim of the game is to form a specific pattern on the Bingo card by crossing out the drawn numbers. The player, who first forms the corresponding pattern, wins and the round comes to an end.</p><p><b>75-Ball Bingo</b></p><p>In this version of the game, the field measures 5 by 5, filled with numbers from 1 to 75. The player who wins the round wins the pot.</p><p><b>90-Ball Bingo </b></p><p>In this version of the game, the field measures 9 by 3. Per line, 5 numbers ranging from 1 to 90 are shown. There are three ways to win. The first is by completing a row, meaning that all 5 numbers in any of the rows on a card are marked off. The second way is by completing 2 such rows. The main way to win comes when all 15 numbers on a card are marked off (a �Full House�). In the 90-Ball variation, the pot is divided according to a predefined formula.</p><h3>Order of play</h3><p>Bingo basically consists of two phases: the purchase phase and the draw phase. The game begins with the purchase phase. This lasts 90 seconds. During this time the players can select and purchase the desired number of Bingo cards. Players can buy cards as often as they want within the given time limit. Each card costs a defined amount. The player�s stake is therefore the sum of cards bought, multiplied by the stake per card. A share of the stake is added to the pot, while the rest constitutes the operating fee.</p><p>The draw phase follows. Every player, who has purchased at least one card, takes part in the draw. Only the purchased cards will then be displayed in the playing field. If a player didn�t buy any cards for the game, he/she has the opportunity to buy cards for the next round. For the players involved in the game, one number after the next is drawn. The drawn numbers, provided that they are shown on the card(s), are marked off. As soon as the round has been won, the winner is announced and the next purchase phase can begin.</p>
+						<h3 id="a_4163"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $list_chitiet->rulesfr ?>
+								<?php } else{ ?>
+									<?php echo $list_chitiet->rules ?>
+								<?php } ?></span></h3>
+						<!--<div class="container">
+							<div><p>In the Bingo lobby players can decide to play at either a 75-Ball table or 90-Ball table. It is not possible to set up new tables. Simply click on ?nter?to join the desired table.</p><p>Bingo cards are displayed on the playing field. All 60 Bingo cards can be viewed using the scroll bar. Select a card by clicking on it, then click ?uy?to purchase it. It is also possible to select more than one card at once by using the ?ard Selector?option. The ?ard Selector?can be set to a number from 1 to 60, allowing the player to mark the corresponding number of cards. For example, if the ?ard Selector?is set to 10, 10 playing cards will be marked.</p><p>By clicking on ?ew?the cards, which have neither been marked nor bought, are replaced by new cards.</p><p>Alternatively, players can use the ?uto-Buy?function. Clicking on this button opens a new window, where the player can select how many cards he/she wants to have and for how many rounds, e.g.: 10 rounds with 5 cards each. The entered number of cards will then be bought automatically at the start of each round.</p><p>The ?uto-Sorting?function can be toggled during the draw. This function orders the player? cards according to how close the card is to being completed. This is on at the start of the game by default.</p><p>Clicking on the ?ingo?button announces that you have achieved ?ingo? If you forget to click on the button, your winnings will be awarded anyway. If a player loses his/her connection to the game before clicking on ?ingo? the win will also be valid.</p><h3>Rules</h3><p>There are two variations of Bingo to choose from: 75-Ball and 90-Ball. Up to 50 players can play at one table. The aim of the game is to form a specific pattern on the Bingo card by crossing out the drawn numbers. The player, who first forms the corresponding pattern, wins and the round comes to an end.</p><p><b>75-Ball Bingo</b></p><p>In this version of the game, the field measures 5 by 5, filled with numbers from 1 to 75. The player who wins the round wins the pot.</p><p><b>90-Ball Bingo </b></p><p>In this version of the game, the field measures 9 by 3. Per line, 5 numbers ranging from 1 to 90 are shown. There are three ways to win. The first is by completing a row, meaning that all 5 numbers in any of the rows on a card are marked off. The second way is by completing 2 such rows. The main way to win comes when all 15 numbers on a card are marked off (a ?ull House?. In the 90-Ball variation, the pot is divided according to a predefined formula.</p><h3>Order of play</h3><p>Bingo basically consists of two phases: the purchase phase and the draw phase. The game begins with the purchase phase. This lasts 90 seconds. During this time the players can select and purchase the desired number of Bingo cards. Players can buy cards as often as they want within the given time limit. Each card costs a defined amount. The player? stake is therefore the sum of cards bought, multiplied by the stake per card. A share of the stake is added to the pot, while the rest constitutes the operating fee.</p><p>The draw phase follows. Every player, who has purchased at least one card, takes part in the draw. Only the purchased cards will then be displayed in the playing field. If a player didn? buy any cards for the game, he/she has the opportunity to buy cards for the next round. For the players involved in the game, one number after the next is drawn. The drawn numbers, provided that they are shown on the card(s), are marked off. As soon as the round has been won, the winner is announced and the next purchase phase can begin.</p>
 							</div>
 								<ul class="playGames">
 									<li class="playGame"><a href="#" class="room"><span>Play Bingo online!</span></a></li>
 									<li class="backToTop"><a href="#subNav" data-gtt="top" title=""><span>top</span></a></li>
 								</ul>
-							</div>
+						</div>-->
 						</div>
 					</div>
 				</div>
@@ -211,42 +285,33 @@ position: relative;
 			<div class="contentBottom"></div>
 			<div id="stats">
 				<div class="contBox">
-					<h3><span>Statistics</span></h3>
-					<div class="container"><p><a href="#">Statistics</a></p></div>
+					<h3><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Statistiques
+								<?php } else{ ?>
+									Statistics
+								<?php } ?></span></h3>
+					<div class="container"><p><a href="#">
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Statistiques
+								<?php } else{ ?>
+									Statistics
+								<?php } ?>Statistics</a></p></div>
 				</div>
 			</div>
 		</div>
 		<div id="sideNav"></div>
 		<div id="sideBar">
-		<div id="playNowSideBar" class="contBox">
+		 <div id="playNowSideBar" class="contBox">
 			<h3>Bingo</h3>
 			<div class="container">
 				<p>12-35-75-9-4 ... BINGO! Who'll hit the jackpot?</p>
 				<button id="landingSend" class="formButton fbSubmit room">
 				<span id="game_49">Play now!</span></button>
 			</div>
-		</div>
-		<div id="tagCloud" class="contBox">
-			<h3><span>Arcade &amp; Other</span></h3>
-			<div class="container">
-				<ul>
-					<li><a style="font-size: 13px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/4-to-win/">4 to win </a></li>
-					<li><a style="font-size: 19px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Battlefleet/">Battlefleet </a></li>
-					<li><a style="font-size: 20px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Bingo/">Bingo </a></li>
-					<li><a style="font-size: 12px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/BloXX-Duel/">BloXX Duel </a></li>
-					<li><a style="font-size: 11px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Explosive/">Explosive </a></li>
-					<li><a style="font-size: 13px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Jewel-Magic/">Jewel Magic </a></li>
-					<li><a style="font-size: 12px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Persian-Treasures/">Persian Treasures </a></li>
-					<li><a style="font-size: 14px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Spin7/">Spin7 </a></li>
-					<li><a style="font-size: 11px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Sudoku/">Sudoku </a></li>
-					<li><a style="font-size: 10px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Sudoku-Bloxx/">Sudoku Bloxx </a></li>
-					<li><a style="font-size: 13px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Sugar!/">Sugar! </a></li>
-					<li><a style="font-size: 11px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Triball/">Triball </a></li>
-					<li><a style="font-size: 12px;padding: 0 0.4em 0.4em 0;line-height: 1.2em;" href="/Arcade-&amp;-Other/Zuminga/">Zuminga </a></li>
-				</ul>
-				<div class="footer"><a class="more" href="#">show all</a></div>
-			</div>
-		</div>
+		</div> 
 		<style>
 					#subNav a{ cursor:poiter;}
 				</style>

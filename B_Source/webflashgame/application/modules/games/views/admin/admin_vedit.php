@@ -11,15 +11,15 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tên games</label>
+					<label>Name games (en)</label>
 					<input type="text" name="name1" style="width:95%" value="<?php echo $info->name;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Tên games (fr)</label>
+					<label>Name games (fr)</label>
 					<input type="text" name="namefr" style="width:95%" value="<?php echo $info->namefr;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục games</label>
+					<label>Game category (en)</label>
 					<select name="category_id">
 						<option></option>
 						<?php foreach ($list as $item)
@@ -34,7 +34,7 @@
 					</select>
 				</fieldset>
 				<fieldset>
-					<label>Danh mục games (fr)</label>
+					<label>Game category (fr)</label>
 					<select name="category_id">
 						<option></option>
 						<?php foreach ($list as $item)
@@ -53,7 +53,7 @@
 					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Rules </label>
+					<label>Rules (en)</label>
 					<?php echo $this->ckeditor->editor('rules',$info->rules,$config);?>
 				</fieldset>
 				

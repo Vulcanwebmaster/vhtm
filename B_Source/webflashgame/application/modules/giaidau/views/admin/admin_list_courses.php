@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa khóa học này?");
+					var r=confirm("Are you delete this Tournament ?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>giaidau/admin/delete/"+value;
@@ -44,14 +44,14 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>STT</th>
-		    				<th>Tên giải đấu</th> 
-		    				<th>Tên giải đấu (fr)</th> 
-		    				<th>Tên game</th>
-		    				<th>Tên game (fr)</th>
+							<th>Number</th>
+		    				<th>Tournament name</th> 
+		    				<th>Tournament name (fr)</th> 
+		    				<th>Name game</th>
+		    				<th>Name game (fr)</th>
 		    				<th>Start date</th>
 		    				<th>End date</th>
-		    				<th>Sửa|Xóa</th>
+		    				<th style="width: 100px;">Edit | Del</th>
 		    				
 						</tr> 
 					</thead> 
@@ -80,7 +80,7 @@
 			</center>
 				<footer>
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>giaidau/admin/insert">Thêm mới</a>
+							<a class="alt_btn" href="<?php echo base_url();?>giaidau/admin/insert">Add new</a>
 						</div>
 				</footer>
 						

@@ -18,14 +18,24 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Name category (en)</label>
-					<input type="text" name="category_name" style="width:92%"/>
+					<label>Title (en)</label>
+					<input type="text" name="title" style="width:92%"/>
 				</fieldset>
 				
 				
 				<fieldset>
-					<label>Name category (fr)</label>
-					<input type="text" name="category_namefr" style="width:92%"/>
+					<label>Title (fr)</label>
+					<input type="text" name="titlefr" style="width:92%"/>
+				</fieldset>
+				
+				<fieldset>
+					<label>Content (en)</label>
+					<input type="text" name="content" style="width:92%"/>
+					<?php echo $this->ckeditor->editor('content','',$config);?>
+				</fieldset>
+				<fieldset>
+					<label>Content (fr)</label>
+					<?php echo $this->ckeditor->editor('contentfr','',$config);?>
 				</fieldset>
 				
 			</div>

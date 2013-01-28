@@ -64,6 +64,7 @@ class Dangky extends NIW_Controller
 				$_SESSION['front_user_fullname'] = $account->username;
 				$_SESSION['front_user_id'] = $account->id;
 				redirect(base_url(),'refresh');
+				
 			}
 			else 
 			{

@@ -14,8 +14,8 @@
 		
 		function index()
 		{
-			$data['title']='giải đấu';
-			$data['bcCurrent']='giải đấu';
+			$data['title']='Tournaments';
+			$data['bcCurrent']='Tournaments';
 			$data['list']=$this->Mgiaidau->getListCategory('fg_tournaments');
 			//var_dump($data['list']); die();
 			$data['module']=$this->module;
@@ -26,7 +26,7 @@
 		function _input()
 		{
 			$input=array('name_tour'=>$this->input->post('name_tour'),
-						'name_tour'=>$this->input->post('name_tourfr'),
+						'name_tourfr'=>$this->input->post('name_tourfr'),
 						'game_id'=>$this->input->post('game_id'),
 						'image'=>$this->input->post('image'),
 						'rules'=>$this->input->post('rules'),
@@ -50,35 +50,35 @@
 				$data['list']=$this->Mgiaidau->getListFull('fg_games');
 				$data['info']=$this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$id);
 				//var_dump($data['info']); die();
-				$data['title']='Sửa giải đấu';
-				$data['bcCurrent']='giải đấu';
+				$data['title']='Edit the tournament';
+				$data['bcCurrent']='Tournaments';
 				$data['module']=$this->module;
 				$data['page']='admin_edit_courses';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('name_tour','Tên','required|trim');
-				$this->form_validation->set_rules('game_id','Danh mục','required|trim');
+				$this->form_validation->set_rules('name_tour','Name','required|trim');
+				$this->form_validation->set_rules('game_id','Category','required|trim');
 				
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgiaidau->updateRowByColumn('fg_tournaments','tour_id',$id,$input))
 					{
-						$this->session->set_userdata('result','Cập nhật thành công');
+						$this->session->set_userdata('result','Update success!');
 					}
-					else $this->session->set_userdata('result','Cập nhật không thành công');
+					else $this->session->set_userdata('result','Update false!');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mgiaidau->getListFull('fg_games');
 					$data['info']=$this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$id);
-					$data['title']='Sửa khóa học';
-					$data['bcCurrent']='khóa học';
+					$data['title']='Updated Tournaments';
+					$data['bcCurrent']='Tournaments';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_courses';
 					$this->load->view('admin/container',$data);
@@ -95,34 +95,34 @@
 			if (!$this->input->post('name_tour'))
 			{
 				$data['list']=$this->Mgiaidau->getListFull('fg_games');
-				$data['title']='Thêm giải đấu';
-				$data['bcCurrent']='giải đấu';
+				$data['title']='Add Tournaments';
+				$data['bcCurrent']='Tournaments';
 				$data['module']=$this->module;
 				$data['page']='admin_insert_courses';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('name_tour','Tên','required|trim');
-				$this->form_validation->set_rules('game_id','Danh mục','required|trim');
+				$this->form_validation->set_rules('name_tour','Name','required|trim');
+				$this->form_validation->set_rules('game_id','Category','required|trim');
 				
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgiaidau->insertNewRow('fg_tournaments',$input))
 					{
-						$this->session->set_userdata('result','Thêm mới thành công');
+						$this->session->set_userdata('result','Add new success');
 					}
-					else $this->session->set_userdata('result','Thêm mới không thành công');
+					else $this->session->set_userdata('result','Add new not success');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mgiaidau->getListFull('fg_games');
-					$data['title']='Thêm giải đấu mới';
-					$data['bcCurrent']='giải đấu';
+					$data['title']='Add Tournaments';
+					$data['bcCurrent']='Tournaments';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_courses';
 					$this->load->view('admin/container',$data);
@@ -131,12 +131,12 @@
 		}
 		function delete($id=0)
 		{
-			if ($this->Mgiaidau->deleteRowByColumn('fg_tournaments','game_id',$id))
+			if ($this->Mgiaidau->deleteRowByColumn('fg_tournaments','tour_id',$id))
 			{
 				
-				$this->session->set_userdata('result','Xóa thành công');
+				$this->session->set_userdata('result','Delete success !');
 			}
-			else $this->session->set_userdata('result','Xóa không thành công');		
+			else $this->session->set_userdata('result','Delete success !');		
 			$this->index();
 		}
 	}

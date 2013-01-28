@@ -60,8 +60,13 @@ class Games extends NIW_Controller
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$model=new CI_Model();
 			$data['module']  =  $this->module;
-			$data['page']  =  'vdetaillogin';
-			$data['index']  =  -1;
+			if(isset($_SESSION['front_user_fullname'])){
+				$data['page']  =  'vdetail';
+			}else{
+				$data['page']  =  'vdetaillogin';
+			}
+				$data['index']  =  -1;
+			
 			$this->load->view('front/container',$data);
 	}
 	

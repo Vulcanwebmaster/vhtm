@@ -20,22 +20,15 @@
 <?php $this->load->view('front/menu')?>
 <div id="main">
 		<div id="container">
-			<div id="printLink">
-				<p><a href="javascript:pgPrint()">
-					<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									imprimer
-								<?php } else{ ?>
-									print
-								<?php } ?></a></p>
-			</div>
+			<!-- <div id="printLink">
+				<p><a href="javascript:pgPrint()">print</a></p>
+			</div> -->
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
 				<div class="container">
 					<div>
 						
-						<p><strong>
-							<?php if ($_SESSION['lang']=="fr") 
+						<p><strong><?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									<?php echo $list_chitiet->titlefr ?>
 								<?php } else{ ?>
@@ -43,7 +36,7 @@
 								<?php } ?></strong></p>
 						
 						<p><strong>
-						<?php if ($_SESSION['lang']=="fr") 
+							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									<?php echo $list_chitiet->contentfr ?>
 								<?php } else{ ?>
@@ -103,7 +96,7 @@
 						<li><a href="<?php echo base_url();?>helps/detail/<?php echo $item->id."-".$item->alias;?>"><span>
 							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									<?php echo $list_chitiet->titlefr ?>
+									<?php echo $item->titlefr?>
 								<?php } else{ ?>
 									<?php echo $item->title?>
 								<?php } ?></span></a></li>
@@ -113,36 +106,41 @@
 			</div>
 		</div>
 		<div class="contBox sideNav" id="contBox2">
-			<h4 class="toggler"><span>Rules</span></h4>
+			<h4 class="toggler"><span>
+				<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Aide des jeux
+								<?php } else{ ?>
+									Rules
+								<?php } ?></span></h4>
 			<div class="container" id="helpContainer303" style="display: none;">
 				<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 					
 					<ul>
-						<?php foreach ($list_category as $key) 
-						{ ?>
-						<li class="gameToggler active" style="cursor: default;"><span>
-							<?php if ($_SESSION['lang']=="fr") 
+						<?php foreach ($list_category as $item) 
+							{ ?>
+							<li class="gameToggler"><span>
+								<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									<?php echo $key->category_namefr;?>
+									<?php echo $item->category_namefr ?>
 								<?php } else{ ?>
-									<?php echo $key->category_name;?>
+									<?php echo $item->category_name ?>
 								<?php } ?></span>
-							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
-								<?php foreach ($list_games as $value) {?>
-										<?php if($value->category_id  ==  $key->id)
-											{?>
-								<li><a href="<?php echo base_url();?>helps/rules/<?php echo $value->game_id."-".$value->alias;?>"><span>
+							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
+								<?php foreach ($list_rule as $key) 
+								{ ?>
+								<li><a href=""><span>
 									<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									<?php echo $value->namefr; ?>
+									<?php echo $key->namefr ?>
 								<?php } else{ ?>
-									<?php echo $value->name; ?>
+									<?php echo $key->name ?>
 								<?php } ?></span></a></li>
-								<?php } ?>
-							<?php } ?>
+								<?php }?>
 							</ul>
-						</li>
+							</li>
 						<?php }?>
+						
 						
 				</ul>
 			</div>
@@ -164,9 +162,9 @@
 						<li><a href="<?php echo base_url();?>helps/general/<?php echo $item->id."-".$item->alias;?>"><span>
 							<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									<?php echo $list_chitiet->titlefr ?>
+									<?php echo $item->titlefr?>
 								<?php } else{ ?>
-									<?php echo $list_chitiet->title ?>
+									<?php echo $item->title?>
 								<?php } ?></span></a></li>
 						<?php } ?>
 					</ul>

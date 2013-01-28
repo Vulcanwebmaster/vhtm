@@ -16,7 +16,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Mdanhmuc');
+			$this->load->model('MFaqs');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 			
@@ -32,15 +32,15 @@
 		
 		function page($index=0)
 		{
-			$config['base_url']=base_url().'danhmuc/admin/page/';
+			$config['base_url']=base_url().'faqs/admin/page/';
 			$config['per_page']=10;
-			$config['total_rows']=count($this->Mdanhmuc->getListFull('fg_category'));
+			$config['total_rows']=count($this->MFaqs->getListFull('fg_category'));
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Danh mục';
-			$data['bcCurrent']='danh mục';
-			$data['list']=$this->Mdanhmuc->getListOffset('fg_category',10,$index);
+			$data['title']='Faqs';
+			$data['bcCurrent']='faqs';
+			$data['list']=$this->MFaqs->getListOffset('fg_faqs',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
@@ -50,8 +50,10 @@
 		function _input()
 		{
 			$input=array(
-						'category_name'=>$this->input->post('category_name'),
-						'category_namefr'=>$this->input->post('category_namefr'),
+						'title'=>$this->input->post('title'),
+						'titlefr'=>$this->input->post('titlefr'),
+						'content'=>$this->input->post('content'),
+						'contentfr'=>$this->input->post('contentfr'),
 						);
 			return $input;
 		}
@@ -59,25 +61,25 @@
 		
 		function insert()
 		{
-			if (!$this->input->post('category_name'))
+			if (!$this->input->post('title'))
 			{
-				$data['list']=$this->Mdanhmuc->getListFull('fg_category');
+				$data['list']=$this->MFaqs->getListFull('fg_faqs');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Add category';
-				$data['bcCurrent']='Category';
+				$data['title']='Add faqs';
+				$data['bcCurrent']='Faqs';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('category_name','Name ','required|trim');
+				$this->form_validation->set_rules('title','Title ','required|trim');
 				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mdanhmuc->insertNewRow('fg_category',$input))
+					if ($this->MFaqs->insertNewRow('fg_faqs',$input))
 					{
 						$this->session->set_userdata('result','Add new success');
 					}
@@ -86,10 +88,10 @@
 				}
 				else 
 				{
-					$data['list']=$this->Mdanhmuc->getListFull('fg_category');
+					$data['list']=$this->MFaqs->getListFull('fg_faqs');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Add category';
-					$data['bcCurrent']='category';
+					$data['title']='Add faqs';
+					$data['bcCurrent']='faqs';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -104,24 +106,24 @@
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
 			//echo $this->input->post('courses_name');die();
-			if (!$this->input->post('category_name'))
+			if (!$this->input->post('title'))
 			{
-				$data['info']=$this->Mdanhmuc->getRowByColumn('fg_category','id',$id);
-				$data['title']='Edit category';
-				$data['bcCurrent']='category';
+				$data['info']=$this->MFaqs->getRowByColumn('fg_faqs','id',$id);
+				$data['title']='Edit faqs';
+				$data['bcCurrent']='faqs';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('category_name','Name','required|trim');
+				$this->form_validation->set_rules('title','Title','required|trim');
 				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mdanhmuc->updateRowByColumn('fg_category','id',$id,$input))
+					if ($this->MFaqs->updateRowByColumn('fg_faqs','id',$id,$input))
 					{
 						$this->session->set_userdata('result','update success');
 					}
@@ -130,9 +132,9 @@
 				}
 				else 
 				{
-					$data['info']=$this->Mdanhmuc->getRowByColumn('fg_category','id',$id);
-					$data['title']='Edit category';
-					$data['bcCurrent']='category';
+					$data['info']=$this->MFaqs->getRowByColumn('fg_faqs','id',$id);
+					$data['title']='Edit faqs';
+					$data['bcCurrent']='faqs';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -143,7 +145,7 @@
 		
 		function delete($id=0)
 		{
-			if ($this->Mdanhmuc->deleteRowByColumn('fg_category','id',$id))
+			if ($this->MFaqs->deleteRowByColumn('fg_faqs','id',$id))
 			{
 				$this->session->set_userdata('result','Delete success');
 			}

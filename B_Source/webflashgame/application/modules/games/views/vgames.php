@@ -1,4 +1,9 @@
+<style type="text/css">
+	.so1_small img{ height:52px !important; width:102px !important; }
+	.so1_small p{ height:64px !important; width:112px !important; }
+</style>
 <style>
+
 	#main{
 /*		background: url(<?php echo base_url();?>assets/flash_game/images/backContentTop.jpg) no-repeat;*/
 	_zoom: 1;
@@ -44,27 +49,45 @@ color: #333;
 				<div id="tipHolder"></div>
 				<div class="contBox gamesCategory">
 					
-					<h3><span><?php if(isset($breadcrum1)){
+					<h3><span><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php if(isset($breadcrum1)){
+					 			
+									echo $breadcrum1->category_namefr; 
+								 }  ?>
+								<?php } else{ ?>
+									<?php if(isset($breadcrum1)){
 					 			
 									echo $breadcrum1->category_name; 
-								 
-							
-				 			 }  ?></span></h3>
+								 }  ?>
+								<?php } ?></span></h3>
 					<div class="container">
-						
+						<script>
+													$(document).ready(function(){
+													  $(".so1_container ul li p").show();
+													  $(".so1_container ul li p img").addClass("gameLogo pos_10");
+													});
+												</script>
 						<ul id="Card" style="">
 							<?php foreach ($items as $item) 
 							{ ?>
 							<li>
-								<div class=" so1_small rating friendsOnline gameId_62 external noOverlay">
-									<h4><a href="<?php echo base_url()?>games/detail/<?php echo $item->game_id."-".$item->alias?>" title=""><span><?php echo $item->name ?></span></a></h4>
+								<div class=" so1_small rating friendsOnline gameId_110"">
+									<h4><a href="<?php echo base_url()?>games/detail/<?php echo $item->game_id."-".$item->alias?>" title=""><span>
+										<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->namefr ?>
+								<?php } else{ ?>
+									<?php echo $item->name ?>
+								<?php } ?></span></a></h4>
 									<div class="so1_container" style="background-color: #898989">
 										<p></p>
 										<dl><dt><span>Playing now</span></dt><dd>619</dd></dl>
 										<ul>
 											<li>
 												<span class="border" style="display:block;background-image: url(images/gameSO1_small.png);"></span>
-												<span class="gameLogo pos_2" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/logosprite_102x54_4.png);"></span>
+<!-- 												<span class="gameLogo pos_2" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/logosprite_102x54_4.png);"></span> -->
+												<?php echo $item->image;?>
 												<a class="room" href="#">
 													<span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
 													<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
@@ -90,7 +113,13 @@ color: #333;
 						
 						<?php foreach ($list_category as $value) 
 				 			{ ?>
-						<li id="category8"><a href="<?php echo base_url()?>games/category/<?php echo $value->id."-".$value->alias?>"><span><?php echo $value->category_name?></span></a></li>
+						<li id="category8"><a href="<?php echo base_url()?>games/category/<?php echo $value->id."-".$value->alias?>"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $value->category_namefr?>
+								<?php } else{ ?>
+									<?php echo $value->category_name?>
+								<?php } ?></span></a></li>
 						<?php } ?>
 						<li id="skill7Button"><a target="_blank" href="#"><span>Skill7</span></a></li>
 						

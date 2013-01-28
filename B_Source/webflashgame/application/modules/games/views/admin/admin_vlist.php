@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa games này?");
+					var r=confirm("Are you delete this game?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>games/admin/delete/"+value;
@@ -34,6 +34,12 @@
 	else $offset==strlen($str);
 	return substr($str, 0, $offset);
 }?>
+
+<style type="text/css">
+	.ed123{
+		width:100px;
+	}
+</style>
 <form action="<?php echo base_url()?>games/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
@@ -44,14 +50,13 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>STT</th>
-		    				<th>Name game</th>
+							<th>Number</th>
+		    				<th>Name game (en)</th>
 		    				<th>Name game (fr)</th>
-		    				<th>Danh mục games</th>
-		    				<th>Danh mục games (fr)</th>
-		    				
-		    				<th>Sửa | Xóa</th>
-		    				
+		    				<th>Game category (en)</th>
+		    				<th>Game category (fr)</th>
+		    				<th class="ed123">Edit|Del</th>
+<!-- 		    				<th style="width: 100px;">Edit | Del</th> -->
 						</tr> 
 					</thead> 
 					<tbody>
@@ -77,7 +82,7 @@
 			</center>
 			<footer>
 				<div class="submit_link">
-					<a class="alt_btn" href="<?php echo base_url();?>games/admin/insert">Thêm mới</a>
+					<a class="alt_btn" href="<?php echo base_url();?>games/admin/insert">Add new</a>
 				</div>
 			</footer>		
 		</div>
