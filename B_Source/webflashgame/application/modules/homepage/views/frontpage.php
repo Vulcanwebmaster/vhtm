@@ -17,7 +17,7 @@
 				<img alt="image011" src="<?php echo base_url();?>assets/flash_game/images/Banner-480x235.jpg">
 				<img alt="image012" src="<?php echo base_url();?>assets/flash_game/images/465x280_4b02a.jpg">				
 			</div> 
-			<div id="contentsl1" class="contentsl">
+			<div id="contentsl1" class="contentsl" style="width:298px;">
 				<p><?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Les grands gagnants

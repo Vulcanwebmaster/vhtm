@@ -741,7 +741,7 @@ body.tournaments #subNav li{padding-right:20px}#subNav a{display:block;color:#6C
 #subNav #past a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -275px -30px}
 #subNav #mine a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -275px -62px}
 #subNav #create a:hover span{background:url(../images/tournNavIconSprite.png) no-repeat -276px -97px}
-#fbLikeBtn{position:absolute;right:0;padding-top:20px}#so2overlay,#to2overlay{z-index:200;position:absolute;top:0;left:0}#so2overlayTop,#to2overlayTop{width:529px;height:98px;position:relative}
+#fbLikeBtn{position:absolute;right:0;padding-top:20px}#so2overlay,#to2overlay{z-index:200;position:absolute;top:0;left:0}#so2overlayTop,#to2overlayTop{width:529px;height:98px;position:relative; padding:10px 0 0 10px;}
 body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,body.opera #so2overlayBottom .formButton,body.opera #to2overlayTop .btnClose a,body.opera #to2nav{z-index:10}
 #so2overlay .top,#to2overlay .top{width:529px;height:160px;position:absolute;top:0;clip:rect(0px 529px 99px 0);_zoom:1}
 #so2overlay.type1 #so2overlayBottom,#so2overlay.type2 #so2overlayBottom,#so2overlay.type3 #so2overlayBottom,#so2overlay.type4 #so2overlayBottom{width:529px;height:8px;padding:0 4px 0 33px;position:relative;width:492px}
@@ -766,7 +766,7 @@ body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,bod
 #so2overlay .rating5,#so2overlay .rating4,#so2overlay .rating3,#so2overlay .rating2,#so2overlay .rating1,#so2overlay .rating0,#to2overlay .rating5,#to2overlay .rating4,#to2overlay .rating3,#to2overlay .rating2,#to2overlay .rating1,#to2overlay .rating0{background:url(../images/overlayStars.gif);background-repeat:no-repeat;background-position:left 0;text-indent:-9999px;width:60px;height:9px;position:absolute;top:81px;left:137px}
 #so2overlay .rating4,#to2overlay .rating4{background-position:-12px 0}#so2overlay .rating3,#to2overlay .rating3{background-position:-24px 0}
 #so2overlay .rating2,#to2overlay .rating2{background-position:-36px 0}#so2overlay .rating1,#to2overlay .rating1{background-position:-48px 0}
-#so2overlay .rating0,#to2overlay .rating0{background-position:-60px 0}#so2nav,#to2nav{height:22px;overflow:hidden;position:absolute;top:76px;width:135px;margin:0;padding:0;right:148px;border-left:none}
+#so2overlay .rating0,#to2overlay .rating0{background-position:-60px 0}#so2nav,#to2nav{height:22px;overflow:hidden;position:absolute;top:76px;width:135px;margin:0;padding:0;right:159px;border-left:none}
 #to2nav{width:220px}#so2nav li,#to2nav li{list-style:none;float:right;padding:0;margin:0;background:0}
 #so2nav li a,#to2nav li a{display:block;text-indent:-9999px;width:21px;height:22px;background:url(../images/overlaySoToolsSprite.gif) no-repeat 0 0 !important}
 #to2nav li a{background:url(../images/overlayToToolsSprite.gif) no-repeat 0 0}
@@ -795,7 +795,7 @@ body.opera #so2overlayTop .btnClose a,body.opera #so2nav,body.opera #topGame,bod
 .ie #overlayJackpot h4{zoom:1;*filter:none}.ie #overlayJackpot h4 span{zoom:1}
 .uc #overlayJackpot h4{text-transform:uppercase}#overlayJackpot p{margin:1px 0 10px;padding:0 15px;font-size:18px;color:#CFEDFA;line-height:22px;font-weight:bold}
 ie #overlayJackpot p{zoom:1}#overlayJackpot .funCurrencyContainer{background-position:0 5px}
-#so2overlay .btnClose a,#to2overlay .btnClose a{display:block;height:13px;width:13px;line-height:13px;position:absolute;right:9px;text-indent:-9999px;top:5px;background:url(../images/closetooltip.png) no-repeat 0 -13px}
+#so2overlay .btnClose a,#to2overlay .btnClose a{display:block;height:13px;width:13px;line-height:13px;position:absolute;right:20px;text-indent:-9999px;top:5px;background:url(../images/closetooltip.png) no-repeat 0 -13px}
 #so2overlay .btnClose a:hover,#to2overlay .btnClose a:hover{background-position:0 0}
 #so2overlayBottom div{color:#FFF;float:left;font-size:11px;height:15px;margin:0;overflow:hidden;padding:0;position:absolute;top:5px;width:491px;cursor:default}
 .type1 #so2overlayBottom div,.type2 #so2overlayBottom div{display:none}#so2overlayBottom .funCurrencyContainer{display:inline-block}
