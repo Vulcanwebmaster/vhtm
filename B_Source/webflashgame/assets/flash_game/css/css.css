@@ -59,7 +59,7 @@ body.help #container .ulContainer li.active a{color:#005374;font-weight:bold;tex
 #mbImage #confirmEmailContainer .formButton{margin:20px auto 0}.login #fnLoginCheckbox{padding-left:143px;*padding-left:0;*text-align:right}
 .login .left #login,.pass_recover #passRecover,.pass_reset #passReset{width:55%}
 .login #error,.pass_recover #error,.pass_recover #formOK{margin:5px 10px -10px}
-.item a{ font-weight:normal !important; color:#39C}
+.item a, .container a{ font-weight:normal !important; color:#39C}
 .messages #error,.shop #shopGutschein #error{margin:30px 20px 0}.stats #fnStats h3{padding-bottom:10px}
 .stats #heading h3{margin:10px 10px 0}.stats #gameStats h3{border-bottom:0}
 .stats #fnStats select{width:209px}.stats #fnStats select,.account_details #accountDetailsTable select{font-size:13px}
