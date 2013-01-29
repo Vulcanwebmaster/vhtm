@@ -30,7 +30,7 @@ class NIW_Controller extends CI_Controller {
 		// Load the SITE asset group
 		$this->bep_assets->load_asset_group('SITE');	
 	}
-		function loadLang()
+	function loadLang()
 	{
 		//session_start();
         if(isset($_SESSION['lang'])) {
