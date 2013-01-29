@@ -33,6 +33,7 @@
 						'category_id'=>$this->input->post('category_id'),
 						'overview'=>$this->input->post('overview'),
 						'overviewfr'=>$this->input->post('overviewfr'),
+						'linkgame'=>$this->input->post('linkgame'),
 						'image'=>$this->input->post('image'),
 						);
 			return $input;
@@ -56,24 +57,24 @@
 			else 
 			{
 				$this->form_validation->set_rules('name1','Tên','required|trim');
-				$this->form_validation->set_rules('category_id','Danh mục','required|trim');
+				$this->form_validation->set_rules('category_id','Category','required|trim');
 				
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgames->insertNewRow('fg_games',$input))
 					{
-						$this->session->set_userdata('result','Thêm mới thành công');
+						$this->session->set_userdata('result','Add new success');
 					}
-					else $this->session->set_userdata('result','Thêm mới không thành công');
+					else $this->session->set_userdata('result','Add new not success');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mgames->getListFull('fg_category');
-					$data['title']='Thêm games';
+					$data['title']='Add games';
 					$data['bcCurrent']='games';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_courses';
@@ -92,7 +93,7 @@
 			{
 				$data['list']=$this->Mgames->getListFull('fg_category');
 				$data['info']=$this->Mgames->getRowByColumn('fg_games','game_id',$id);
-				$data['title']='Sửa games';
+				$data['title']='Edit games';
 				$data['bcCurrent']='games';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
@@ -100,26 +101,26 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('name1','Tên','required|trim');
-				$this->form_validation->set_rules('category_id','Danh mục','required|trim');
+				$this->form_validation->set_rules('name1','Name','required|trim');
+				$this->form_validation->set_rules('category_id','Category','required|trim');
 				
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgames->updateRowByColumn('fg_games','game_id',$id,$input))
 					{
-						$this->session->set_userdata('result','Cập nhật thành công');
+						$this->session->set_userdata('result','update success');
 					}
-					else $this->session->set_userdata('result','Cập nhật không thành công');
+					else $this->session->set_userdata('result','update not success');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mgames->getListFull('fg_category');
 					$data['info']=$this->Mgames->getRowByColumn('fg_games','game_id',$id);
-					$data['title']='Sửa games';
+					$data['title']='Edit games';
 					$data['bcCurrent']='games';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_courses';
@@ -132,9 +133,9 @@
 		{
 			if ($this->Mgames->deleteRowByColumn('fg_games','game_id',$id))
 			{
-				$this->session->set_userdata('result','Xóa thành công');
+				$this->session->set_userdata('result','Delete success');
 			}
-			else $this->session->set_userdata('result','Xóa không thành công');		
+			else $this->session->set_userdata('result','Delete not success');		
 			$this->index();
 		}
 	}

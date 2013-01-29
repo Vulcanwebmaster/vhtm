@@ -7,7 +7,7 @@
 					<li class="btnPlay first" id="pagehome"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									Maison
+									Page d'accueil
 								<?php } else{ ?>
 									Home
 								<?php } ?></span></a></li>
@@ -35,7 +35,7 @@
 					<li class="btnRules" id="pagehelp"><a data-gtt="Help" href="<?php echo base_url();?>helps" title=""><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									Jeux
+									Aide
 								<?php } else{ ?>
 									Help
 								<?php } ?></span></a></li>

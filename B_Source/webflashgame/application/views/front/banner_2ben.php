@@ -1,27 +1,43 @@
-<div id="divAdRight" style="display: block; position: fixed; top: 43px">
-<a href="<?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/0006.gif" width="150"; height="165px" /></br>
+<div class="banner_1" id="divAdRight" style="display: block; position: fixed; top: 43px">
+<?php foreach ($list_banner as $banner)
+		{?>
+<a href="<?php echo $banner->link1 ?>">
+<!-- 	<img src="<?php echo base_url();?>assets/flash_game/images/0006.gif" width="150"; height="165px" /> -->
+		<?php echo $banner->image1 ?>
+	</br>
 </a>
-<a href="<?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/0043.gif" width="150"; height="165px" />
+<a href="<?php echo $banner->link2 ?>">
+	<?php echo $banner->image2 ?>
+	<!-- <img src="<?php echo base_url();?>assets/flash_game/images/0043.gif" width="150"; height="165px" /> -->
 </a>
-<a href="<?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/0006.gif" width="150"; height="165px" /></br>
+<a href="<?php echo $banner->link3 ?>">
+<!-- 	<img src="<?php echo base_url();?>assets/flash_game/images/0006.gif" width="150"; height="165px" />--></br> 
+<?php echo $banner->image3 ?>
 </a>
 
 </div>
-<div id="divAdLeft" style="display: block; position: fixed; top:43px">
-<a href=" <?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /></br>
+<?php }?>
+<?php foreach ($list_banner as $banner)
+		{?>
+			<style type="text/css">
+			
+		</style>
+<div class="banner_1" id="divAdLeft" style="display: block; position: fixed; top:43px">
+<a href="<?php echo $banner->link4 ?>">
+	<!-- <img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /> -->
+	<?php echo $banner->image4 ?></br>
 </a>
-<a href=" <?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/Hinh-03(3).jpg" width="150"; height="165px" />
+<a href="<?php echo $banner->link5 ?>">
+	<!-- <img src="<?php echo base_url();?>assets/flash_game/images/Hinh-03(3).jpg" width="150"; height="165px" /> -->
+	<?php echo $banner->image5 ?>
 </a></br>
-<a href=" <?php echo base_url();?>">
-	<img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /></br>
+<a href="<?php echo $banner->link6 ?>">
+	<!-- <img src="<?php echo base_url();?>assets/flash_game/images/casino_1335193446489.gif" width="150"; height="165px" /> -->
+	<?php echo $banner->image6 ?></br>
 </a>
 
 </div>
+<?php } ?>
 <script>
     function FloatTopDiv()
     {

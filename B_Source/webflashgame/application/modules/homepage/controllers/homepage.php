@@ -22,6 +22,10 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');
+		$data['list_bannerheader'] = $this->Mhomepage->getListFull('fg_bannerheader');
+		$data['list_slide'] = $this->Mhomepage->getListFull('fg_slide');
+		$data['list_banner'] = $this->Mhomepage->getListFull('fg_banner');
 		$data['top1'] = $this->Mhomepage->getTopGame(1);
 		$data['top_game'] = $this->Mhomepage->getTopGame(11);
 		$data['list_category'] = $this->Mhomepage->getListFull('fg_category');

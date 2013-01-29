@@ -42,6 +42,10 @@ class Mygametwist extends NIW_Controller
 		function page()
 		{
 			$id = $_SESSION['front_user_id'];
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			$data['module']=$this->module;
@@ -53,6 +57,10 @@ class Mygametwist extends NIW_Controller
 		function personaldata()
 		{
 			$id = $_SESSION['front_user_id'];
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
 			$model=new CI_Model();
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
@@ -66,6 +74,10 @@ class Mygametwist extends NIW_Controller
 		function changepass()
 		{
 			$id = $_SESSION['front_user_id'];
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
 			$model=new CI_Model();
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
@@ -79,6 +91,10 @@ class Mygametwist extends NIW_Controller
 		function gamesetting()
 		{
 			$id = $_SESSION['front_user_id'];
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$listTest = $this->Mmygametwist->getListByColumn('st_gamesetting', 'account_id', $id); 
 			if (count($listTest) > 0)
 			{
@@ -96,6 +112,10 @@ class Mygametwist extends NIW_Controller
 		function generalsetting()
 		{
 			$id = $_SESSION['front_user_id'];
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$listTest = $this->Mmygametwist->getListByColumn('st_generalsetting', 'account_id', $id); 
 			if (count($listTest) > 0)
 			{
@@ -113,6 +133,10 @@ class Mygametwist extends NIW_Controller
 		function currencysetting()
 		{
 			$id = $_SESSION['front_user_id'];
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$listTest = $this->Mmygametwist->getListByColumn('st_currencysetting', 'account_id', $id); 
 			if (count($listTest) > 0)
 			{
@@ -131,6 +155,10 @@ class Mygametwist extends NIW_Controller
 		{
 			$id = $_SESSION['front_user_id'];
 			$model=new CI_Model();
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			$data['list_transaction'] = $this->Mmygametwist->getListByColumn('st_transaction','account_id',$id);
 		//	var_dump($data['list_transaction']);die();
@@ -144,6 +172,10 @@ class Mygametwist extends NIW_Controller
 		function subscriptionoverview()
 		{
 			$model=new CI_Model();
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			$data['menuleft']  =  6;
 			$data['module']  =  $this->module;
@@ -156,6 +188,10 @@ class Mygametwist extends NIW_Controller
 		{
 			$id = $_SESSION['front_user_id'];
 			$model=new CI_Model();
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			$data['list_statistics'] = $this->Mmygametwist->getListByColumn('st_statistics','account_id',$id);
 			$data['account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
@@ -169,6 +205,10 @@ class Mygametwist extends NIW_Controller
 		function vouchers()
 		{
 			$model=new CI_Model();
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			$data['menuleft']  =  8;
 			$data['module']  =  $this->module;
@@ -181,6 +221,10 @@ class Mygametwist extends NIW_Controller
 		{
 			$id = $_SESSION['front_user_id'];
 			$model=new CI_Model();
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			// Lay ra danh sach ban be qua id
 			$listfriend = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
@@ -197,6 +241,10 @@ class Mygametwist extends NIW_Controller
 		{
 			$id = $_SESSION['front_user_id'];
 			$model=new CI_Model();
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			// Lay ra danh sach ban be qua id
 			$listignore = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);

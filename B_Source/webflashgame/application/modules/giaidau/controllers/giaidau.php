@@ -22,6 +22,10 @@ class Giaidau extends NIW_Controller
 	 
 	function page($index=0)
 	{
+			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgiaidau->getListFull('fg_banner');
 			$data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			$data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			//var_dump($data['list_chitiet']); die();
@@ -39,6 +43,10 @@ class Giaidau extends NIW_Controller
 	
 	function past($index=0)
 	{
+			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgiaidau->getListFull('fg_banner');
 			$data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			$data['past'] = $this->Mgiaidau->gamePast();
 			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
@@ -51,6 +59,10 @@ class Giaidau extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgiaidau->getListFull('fg_banner');
 			 $data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			 $data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			 //var_dump($data['list_chitiet']); die();

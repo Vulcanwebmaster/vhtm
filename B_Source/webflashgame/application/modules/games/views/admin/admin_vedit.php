@@ -53,6 +53,10 @@
 					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
 				</fieldset>
 				<fieldset>
+					<label>Link game</label>
+					<input type="text" name="linkgame" style="width:95%" value="<?php echo $info->linkgame;?>"/>
+				</fieldset>
+				<fieldset>
 					<label>Rules (en)</label>
 					<?php echo $this->ckeditor->editor('rules',$info->rules,$config);?>
 				</fieldset>

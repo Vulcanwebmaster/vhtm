@@ -78,26 +78,41 @@
 								<?php } ?></a></dt></dl>
 		</li>
 	</ul>
+
 	<div class="siteInfo">
 		<table class="phone" cellspacing="0">
-			<tr>
-				<td>Austria:<br><b>0900 49 99 44</b><br> (€1.80/min. from a landline)</td>
-				<td>Germany:<br><b>0900 1 41 01 41</b><br>
-(€1.80/min. from a landline)</td>
+			<tr><?php foreach ($list_hotro as $key)
+			{?>	
+				<td><?php echo $key->country ?><br><b><?php echo $key->sdt ?></b><br> <?php echo $key->title ?></td>
+				<!-- <td>Germany:<br><b>0900 1 41 01 41</b><br>
+(€1.80/min. from a landline)</td> -->
 			</tr>
+			<?php }?>
 		</table>
-		<p>Hotline: 7 days a week (excl. public holidays), 8am - 10pm CET
+		<p>
 		</p>
 		<div class="email">
-			<p>
-				<i>E-mail Support: </i>
-				<a href="mailto:support@carresdas.com">support@carresdas.com</a>
+			<p><?php foreach ($list_hotro as $key)
+			{?>
+				<i><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Courriel de l'équipe support :
+								<?php } else{ ?>
+									E-mail Support:
+								<?php } ?> </i>
+				<a href="mailto:support@carresdas.com"><?php echo $key->email ?></a>
+				<?php } ?>
 			</p>
 		</div>
+			<div id="absalute" style="margin-left: 10px">
+						<a href="https://twitter.com/"><img src="<?php echo base_url();?>assets/flash_game/images/titwer.gif"/></a>
+						<a href="https://www.youtube.com/"><img src="<?php echo base_url();?>assets/flash_game/images/tube.gif" /></a>
+						<a href="http://www.facebook.com/"><img src="<?php echo base_url();?>assets/flash_game/images/face.gif"/></a>
+					</div>
 		<a href="#" id="poweredBy" target="_blank">
 					<?php if ($_SESSION['lang']=="fr") 
 								{?>		
-									Jeux alimentés par CARRESDAS
+									Games powered by CARRESDAS
 								<?php } else{ ?>
 									Games powered by CARRESDAS
 								<?php } ?> 

@@ -21,6 +21,10 @@ class Games extends NIW_Controller
 	
 	function page($index=0)
 	{
+			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$config['base_url'] = base_url().'games/page';
@@ -37,7 +41,10 @@ class Games extends NIW_Controller
 	}
 	
 	function api($index=0){
-		
+			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['title']='flashgame | Flash Games';
@@ -48,6 +55,10 @@ class Games extends NIW_Controller
 	}
 	function detail($index=0)
 	{
+			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_game_cate'] = $this->Mgames->getListFull('fg_category');
 			$data['category']  =  $this->Mgames->getListFullCategory('fg_games');
 			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
@@ -71,7 +82,10 @@ class Games extends NIW_Controller
 	}
 	
 	function gioithieu($index=0){
-		
+			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['title']='flashgame | Flash Games';
@@ -89,6 +103,10 @@ class Games extends NIW_Controller
 			}
 			$data['breadcrum1']  =  $this->Mgames->getRowByColumn('fg_category','id',$id);
 			//var_dump($data['breadcrum1']); die();
+			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items']=$this->Mgames->getListByColumn('fg_games','category_id',$id);
@@ -98,6 +116,10 @@ class Games extends NIW_Controller
 	}
 	
 	function rules($index=0){
+			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_chitiet'] = $this->Mgames->getListFull('fg_games');
 			$data['module']  =  $this->module;
 			$data['page']  =  'vdetaillogin';

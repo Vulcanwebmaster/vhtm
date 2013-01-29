@@ -3,6 +3,7 @@ table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,ca
 del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}
 abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}
+
 legend{color:#000}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
 input,button,textarea,select{*font-size:100%}body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small}
 select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif}
@@ -14,6 +15,8 @@ del{text-decoration:line-through}blockquote,ul,ol,dl{margin:1em}ol,ul,dl{margin-
 ol li{list-style:decimal outside}ul li{list-style:disc outside}dl dd{margin-left:1em}
 th,td{border:1px solid #000;padding:.5em}th{font-weight:bold;text-align:center}
 caption{margin-bottom:.5em;text-align:center}sup{vertical-align:super}sub{vertical-align:sub}
+.banner_1  img{ width:150px !important; height: 165px !important; }
+.banner_1  p{ padding:5px !important; margin: -14px !important; }
 .styleul li{ background: none !important; list-style: none !important; }
 p,fieldset,table,pre{margin-bottom:1em}button,input[type="checkbox"],input[type="radio"],input[type="reset"],input[type="submit"]{padding:1px}
 body{margin:0}th{text-align:left}html{background:transparent}body{background:#487db3 url(../images/may_1920x1200ed.jpg) top center no-repeat;padding:0 0 20px;font-family:Verdana,Arial,Helvetica,sans-serif;color:#333}
@@ -1323,7 +1326,12 @@ body.rtl.room #header h1{background-position:0 0;right:0;left:auto}.rtl #windowS
 .contentslide{float:left; width:32%; }
 .slideshow{ position:relative; height:200px; margin:0 auto;}
 #contentslide1, #contentslide2{margin-right:14px}
-.slideshow img{width:317px; height:200px; position:absolute;}
+/*.slideshow img{width:317px !important; height:200px !important; position:absolute;}*/
+.slideshow img {
+width: 317px !important;
+height: 200px !important;
+position: absolute;
+}
 .contentsl{ /*background-color:#0039A4;*/ background-color:#207d0e; color:#FFFFFF; width:299px;padding:10px;  border-radius: 3px;margin-top:4px; height:110px;} 
 .contentsl ul{}
 .contentsl li{list-style:decimal; padding:0; margin-left:15px; line-height:22px; border-bottom:1px solid #ccc;}

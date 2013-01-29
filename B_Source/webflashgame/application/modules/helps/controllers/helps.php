@@ -33,6 +33,10 @@ class Helps extends NIW_Controller
 			$config['total_rows'] = count($this->Mhelps->getListFull('fg_helps'));
 			$this->pagination->initialize($config);
 			$data['title']='games | Flash-games';
+			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mhelps->getListFull('fg_banner');
 			$data['list_faq'] = $this->Mhelps->getListFull('fg_faqs');
 			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
 			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
@@ -48,6 +52,10 @@ class Helps extends NIW_Controller
 		
 		function faqs($id)
 		{
+			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mhelps->getListFull('fg_banner');
 			$data['introducts'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['overview'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
@@ -66,6 +74,10 @@ class Helps extends NIW_Controller
 			$this->load->view('front/container',$data);
 		}
 		function rules($id){
+			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mhelps->getListFull('fg_banner');
 			$data['introducts'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['overview'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
@@ -85,6 +97,10 @@ class Helps extends NIW_Controller
 		}
 
 		function general($id){
+			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mhelps->getListFull('fg_banner');
 			$data['introducts'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['overview'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
@@ -105,6 +121,10 @@ class Helps extends NIW_Controller
 		}
 
 		function technical($id){
+			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mhelps->getListFull('fg_banner');
 			$data['introducts'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['overview'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');

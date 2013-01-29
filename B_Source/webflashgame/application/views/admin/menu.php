@@ -14,7 +14,12 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>technical/admin">Technical</a></li>
 <!-- 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">About us</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>giaidau/admin">Tournaments</a></li>
-<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Ads</a></li> -->
+		<li class="icn_application"><a href="<?php echo base_url()?>banner/admin">Banner</a></li> 
+		<li class="icn_application"><a href="<?php echo base_url()?>bannerheader/admin">Banner header</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Suppost</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>winner/admin">Top winner</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>toptournament/admin">Top top tournament</a></li>
 <!-- 		<li class="icn_application"><a href="#">Tài khoản</a></li>s -->
 <!-- 		<li class="icn_application"><a href="#">Kênh</a></li> -->
 	</ul>

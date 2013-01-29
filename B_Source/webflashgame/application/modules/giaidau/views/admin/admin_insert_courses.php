@@ -50,6 +50,10 @@
 					<?php echo $this->ckeditor->editor('rules','',$config);?>
 				</fieldset>
 				<fieldset>
+					<label>Image</label>
+					<?php echo $this->ckeditor->editor('image','',$config);?>
+				</fieldset>
+				<fieldset>
 					<label>Rules (fr)</label>
 					<?php echo $this->ckeditor->editor('rulesfr','',$config);?>
 				</fieldset>

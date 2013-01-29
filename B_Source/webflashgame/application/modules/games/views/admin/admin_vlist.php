@@ -55,6 +55,7 @@
 		    				<th>Name game (fr)</th>
 		    				<th>Game category (en)</th>
 		    				<th>Game category (fr)</th>
+		    				<th>Link game</th>
 		    				<th class="ed123">Edit|Del</th>
 <!-- 		    				<th style="width: 100px;">Edit | Del</th> -->
 						</tr> 
@@ -67,6 +68,7 @@
 			    				<td><?php echo $item->namefr;?></td>
 			    				<td><?php echo $item->category_name;?></td>
 			    				<td><?php echo $item->category_namefr;?></td>
+			    				<td><?php echo $item->linkgame;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>games/admin/edit/<?php echo $item->game_id?>" title="Sửa"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
 			    					<a class="del_button" onclick="confirmDel(<?php echo $item->game_id;?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>

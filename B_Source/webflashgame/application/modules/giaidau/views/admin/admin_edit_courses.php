@@ -61,6 +61,10 @@
 					<?php echo $this->ckeditor->editor('rules',$info->rules,$config);?>
 				</fieldset>
 				<fieldset>
+					<label>Image</label>
+					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
+				</fieldset>
+				<fieldset>
 					<label>Rules (fr)</label>
 					<?php echo $this->ckeditor->editor('rulesfr',$info->rulesfr,$config);?>
 				</fieldset>
