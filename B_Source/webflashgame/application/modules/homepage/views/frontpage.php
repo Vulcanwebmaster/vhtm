@@ -271,7 +271,7 @@
 				<div id="tipHolder"></div>
 
 			
-				</div> --><br clear="both"/>
+				</div> <br clear="both"/>
 			
 			<div class="categories">
 				<?php foreach ($list_category as $key) 
