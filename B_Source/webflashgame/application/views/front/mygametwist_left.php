@@ -25,7 +25,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="contBox sideNav">
+				<!-- <div class="contBox sideNav">
 					<h4><span>My Friends</span></h4>
 					<div class="container">
 						<ul>
@@ -35,7 +35,7 @@
 						</ul>
 					</div>
 				</div>
-				<!-- <div class="contBox sideNav">
+				<div class="contBox sideNav">
 					<h4><span>Messages</span></h4>
 					<div class="container">
 						<ul>

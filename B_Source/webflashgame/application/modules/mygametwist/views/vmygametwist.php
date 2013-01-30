@@ -51,7 +51,7 @@
 								<tr><td></td><td></td><td></td></tr>
 							</tfoot>
 							<tbody>
-								<tr><td colspan="3">No friends online. To <a href="friendslist.htm">Friends List</a></td></tr>
+								<tr><td colspan="3">No friends online. To <a href="<?php echo base_url();?>mygametwist/friendslist"">Friends List</a></td></tr>
 							</tbody>
 						</table>
 					</div>

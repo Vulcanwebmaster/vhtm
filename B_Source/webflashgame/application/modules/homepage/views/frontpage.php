@@ -28,7 +28,7 @@
 									Top winners
 								<?php } ?></p>
 				<ul class="1ct">
-						<li>
+					<li>
 							<a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/yahooicon.png" height="14" width="14"/>  lament</a>
 							<label class="label">$ 890</label>
 					</li>

@@ -107,7 +107,7 @@
 				</div>
 				<div class="contBox contItemsSide omnTwistPackage">
 				<div class="container">
-					<form method="get" action="#">
+					<form method="get" action="<?php echo base_url();?>shop/itemselection/">
 						<input type="hidden" name="id_item" value="">
 						<table class="itemTable listTable ">
 							<thead>
