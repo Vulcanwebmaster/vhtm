@@ -57,17 +57,26 @@
 				</div>
 				<div id="backgroundHack"></div>
 				<span class="detailsBackground" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/backgroundHackCutted.png);"></span>
-				
+				<style type="text/css">
+					.tuyet p img{
+						width: 303px !important;
+						height: 103px !important;
+						position: absolute;
+						left: 0px !important;
+						top: -23px !important;
+					}
+				</style> 
 				<div id="tournamentsDetailsHeader" class="contBox">
-					<div id="gameHeader" class="game_8">
-						<div class="rating2">
+					<div id="gameHeader" class="game_8 tuyet">
+						<div class="rating2 ">
 							<span class="gameHeaderStars" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);"></span>
 							rating: 2
 						</div>
-						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_8_logo_220x100_EN-US.png);"></span>
+							<?php echo $list_chitiet->image ?>
+<!-- 						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_8_logo_220x100_EN-US.png);"></span> -->
 						<div class="date">
-							<div>Jan<span>12</span></div>
-							<strong class="tournCufon">18:00</strong>
+							<div><?php echo date("M",strtotime($list_chitiet->start_date));?><span><?php echo date("d",strtotime($list_chitiet->start_date));?></span></div>
+							<strong class="tournCufon"><?php echo date("H:i",strtotime($list_chitiet->start_date));?></strong>
 						</div>
 					</div>
 					<div id="gameShot">
@@ -80,23 +89,25 @@
 				</div>
 				<div id="tournDetails">
 					<div class="contBox tournDetails">
-						<h3>Crazy Eights</h3>
+						<h3><?php echo $list_chitiet->name_tour?></h3>
 						<div class="container" style="height: 120px;">
 							<dl>
 								<dt class="stake">Stake:</dt>
 								<dd class="stake">Free</dd>
 								<dt>Start:</dt>
-								<dd> <?php echo $list_chitiet->start_date ?><abbr title="Central European Time">CET</abbr></dd>
+								<dd><?php echo date("m-d-Y H:i",strtotime($list_chitiet->start_date));?><abbr title="Central European Time"> CET</abbr></dd>
 								<dt>End:</dt>
-								<dd><?php echo $list_chitiet->end_date ?> <abbr title="Central European Time">CET</abbr></dd>
+								<dd><?php echo date("m-d-Y H:i",strtotime($list_chitiet->end_date));?><abbr title="Central European Time"> CET</abbr></dd>
 								<dt>Status:</dt>
-								<dd>Not started</dd>
+								<dd><?php if(date('Y-m-d H:i:s') < date("m-d-Y H:i",strtotime($list_chitiet->start_date))){
+									echo 'Over' ;
+								}else{ echo 'Not started'; } ?></dd>
 								<dt>Players:</dt>
 								<dd>393</dd>
 								<dt>Free space:</dt>
 								<dd>607</dd>
 								<dt>My status:</dt>
-								<dd>Not registered!</dd>
+								<dd></dd>
 								<dt></dt>
 								<dd class="link">								
 									<a id="tournamentsReg" href="#"><span>Register now!</span></a>
@@ -109,15 +120,15 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span>15.000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->one ?></span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span>12.500</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->two ?></span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span>10.000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->three ?></span></span></strong>
 							</div>
 						</div>
 					</div>
@@ -224,43 +235,18 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<tr class="light">
-										<td> - </td>
-										<td>saskia2302</td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-									</tr>
+									<?php foreach ($player_list as $item) 
+									{ ?>
 									<tr class="dark">
 										<td> - </td>
-										<td>arabis01</td>
+										<td><?php echo $item->username ?></td>
 										<td> - </td>
 										<td> - </td>
 										<td> - </td>
 										<td> - </td>
 										<td> - </td>
 									</tr>
-									<tr class="light">
-										<td> - </td>
-										<td>lefilou01</td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-									</tr>
-									<tr class="dark">
-										<td> - </td>
-										<td>borussenfan83</td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-										<td> - </td>
-									</tr>
-									
+									<?php } ?>
 								</tbody>
 							</table>
 							<ul class="paging">

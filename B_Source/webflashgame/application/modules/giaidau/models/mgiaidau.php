@@ -27,7 +27,54 @@ class Mgiaidau extends CI_Model
 		
 	}
 	
-	
+	function getListUsername()
+	{
+		$this->db->select();
+		$this->db->from('fg_list_player');
+		$this->db->join('fg_accounts','fg_accounts.id=fg_list_player.account_id');
+		
+		$ds=$this->db->get();
+		//var_dump($ds); die();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+		
+	}
+	function check($id_account,$id_tour){
+		$this->db->where('account_id', $id_account); 
+		$this->db->where('tour_id', $id_tour); 
+		 $this->db->from('fg_list_player');
+		$ds=$this->db->count_all('fg_list_player') == 1;
+		// //var_dump($ds); die();
+		// $list=array();
+	 	// foreach($ds->result() as $item)
+	 	// {
+	 		// $list[]=$item;
+	  // }
+	 	//$ds->free_result();
+	 	return $ds;
+	}
+	function getListAccount()
+	{
+		$this->db->select();
+		$this->db->from('fg_tournaments');
+		$this->db->join('fg_accounts','fg_accounts.id=fg_tournaments.tour_id');
+		
+		$ds=$this->db->get();
+		//var_dump($ds); die();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+		
+	}
 	function gameToday(){
 		$this->db->where('end_date >' ,date('Y-m-d'));
 		$this->db->where('end_date <' ,date('Y-m-d').' 23:59:59');
@@ -44,6 +91,7 @@ class Mgiaidau extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 	}
+	
 	
 	function gameWeek($index=''){
 		$this->db->where('start_date >' ,date("Y-m-d h:i:s "));

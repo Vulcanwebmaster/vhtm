@@ -41,6 +41,15 @@
 				<div id="tournToday" class="contBox tournList tournSect">
 					<div class="tournHelper"><h3><span>Tournaments past</span></h3>
 					<div class="container">
+						<style type="text/css">
+							.to1_container p{
+								display: block
+							}
+							.to1_container img{
+								width:140px !important; 
+								height: 80px !important;
+							}
+						</style>
 						<ul style="width: 588px;margin-right:0;">
 							<?php foreach ($past as $item) 
 							{ ?>
@@ -48,15 +57,14 @@
 								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
 									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
 									<div class="to1_container">
-										<span style="background-color: #cfc29e" class="backgroundColor"></span>
-										<span class="to1_logo_5 to1_pos_8"></span><span style="display:block;background-image: url(http://static7.greentube.com/xsl_gamebase/assets/game_88/logo_137x77/game_88_logo_137x77_EN-US.png);" class="logo"></span>
-										<span style="display:block;background-image: url(images//gameSO1_med.png);" class="border"></span>
+										<?php echo $item->image ?>
+										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
 										<a class="" href="/web/Tournaments-Details?id_tourn=32167">
 											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
-											<span style="display:block;background-image: url(images//gameTO1_OverlaySprite.png);" class="link"></span>
+											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
 											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="register">Register now!</span></span>
-											<span style="display:block;background-image: url(images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>
+											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>
 											<p style="color: #000000">08.Jan&nbsp;21:00</p>
 										</a>
 										<div class="desc">
@@ -69,6 +77,7 @@
 										</div>
 									</div>
 								</div>
+								
 							</li>
 							<?php }?>
 						</ul>

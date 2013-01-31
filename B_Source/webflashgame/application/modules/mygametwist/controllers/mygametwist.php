@@ -46,6 +46,11 @@ class Mygametwist extends NIW_Controller
 			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
 			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
+			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
+			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$data['list_account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			$data['module']=$this->module;

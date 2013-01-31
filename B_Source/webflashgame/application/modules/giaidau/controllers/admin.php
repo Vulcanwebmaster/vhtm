@@ -28,13 +28,13 @@
 			$input=array('name_tour'=>$this->input->post('name_tour'),
 						'name_tourfr'=>$this->input->post('name_tourfr'),
 						'game_id'=>$this->input->post('game_id'),
-						'image'=>$this->input->post('image'),
 						'rules'=>$this->input->post('rules'),
 						'rules'=>$this->input->post('rulesfr'),
 						'overview'=>$this->input->post('overview'),
 						'overview'=>$this->input->post('overviewfr'),
 						'end_date'=>$this->input->post('end_date'),
 						'start_date'=>$this->input->post('start_date'),
+						
 						);
 			return $input;
 		}

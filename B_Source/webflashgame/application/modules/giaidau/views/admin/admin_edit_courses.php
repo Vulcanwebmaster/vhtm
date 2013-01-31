@@ -15,6 +15,10 @@
 					<input type="text" name="name_tour" style="width:92%" value="<?php echo $info->name_tour;?>"/>
 				</fieldset>
 				<fieldset>
+					<label>Phần trăm web</label>
+					<input type="text" name="name_tour" style="width:92%" value="<?php echo $info->name_tour;?>"/>
+				</fieldset>
+				<fieldset>
 					<label>Tournament name (fr)</label>
 					<input type="text" name="name_tourfr" style="width:92%" value="<?php echo $info->name_tourfr;?>"/>
 				</fieldset>
@@ -68,13 +72,14 @@
 					<label>Rules (fr)</label>
 					<?php echo $this->ckeditor->editor('rulesfr',$info->rulesfr,$config);?>
 				</fieldset>
+				
 				<fieldset>
 					<label>Start_date</label>
-					<input type="text" name="start_date" value="<?php $info->start_date;?>"/>
+					<input type="text" name="start_date"  value="<?php echo $info->start_date;?>"/>
 				</fieldset>
 				<fieldset>
 					<label>End_date</label>
-					<input type="text" name="end_date" id="end_date" value="<?php $info->end_date;?>"/>
+					<input type="text" name="end_date" id="end_date" value="<?php echo $info->end_date;?>"/>
 				</fieldset>
 			</div>
 			

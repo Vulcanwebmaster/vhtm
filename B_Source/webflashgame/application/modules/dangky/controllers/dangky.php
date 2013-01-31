@@ -38,6 +38,11 @@ class Dangky extends NIW_Controller
 	
 	function dangNhap()
 	{
+		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
+		$data['list_bannerheader'] = $this->Mdangky->getListFull('fg_bannerheader');
+		$data['list_slide'] = $this->Mdangky->getListFull('fg_slide');
+		$data['list_banner'] = $this->Mdangky->getListFull('fg_banner');
+		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 		$data['title']='flashgame | Flash games';
 		$data['module']=$this->module;

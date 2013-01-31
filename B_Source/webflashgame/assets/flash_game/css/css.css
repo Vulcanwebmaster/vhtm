@@ -398,7 +398,7 @@ body.uc #gamesTopGames h3{text-transform:capitalize}#gamesTopGames .topGamesDesc
 .to1 .backgroundColor{top:6px;left:6px;width:125px;height:65px}.to1 .logo{width:137px;height:77px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;-moz-box-shadow:0 1px 3px #bbb;-webkit-box-shadow:0 1px 3px #bbb;box-shadow:0 1px 3px #bbb;opacity:.7}
 .tournStatus_5 .logo,.tournStatus_8 .logo{opacity:1}.tournStatus_7 .logo{opacity:.4}
 .to1 .border{width:157px;height:97px;top:-10px;left:-10px;clip:rect(10px 147px 87px 10px)}
-.to1_container a:link,.to1_container a:visited{top:0;left:0;width:137px;height:77px;outline:0;font-weight:bold;text-decoration:none;white-space:nowrap;text-align:left;text-align:center;font-size:9px;color:#999}
+.to1_container a:link,.to1_container a:visited{top:0;left:0;width:137px;height:77px;outline:0;font-weight:bold;text-decoration:none;white-space:nowrap;text-align:left;/*text-align:center;*/font-size:9px;color:#999}
 .to1_container a:hover,.to1_container a.hover{color:#fff;text-decoration:none;background:0}
 .to1 dl{margin:0;position:relative;top:6px;text-shadow:none}.to1 dd{color:#666;display:block;position:absolute;font-size:9px;font-weight:bold;padding:0;margin:0;right:6px;top:-1px;cursor:default;width:24px;text-align:right}
 .to1 dt span{display:block;position:absolute;top:0;left:auto;right:30px;text-indent:-9999px;width:10px;height:11px;line-height:11px;background:url(../images/gameSO1_PlayerIcon.png) no-repeat -3px -3px}
@@ -1004,7 +1004,7 @@ body.shop #shopGutschein #voucherPaging .container ul li table{width:548px;margi
 #tournToday .container,#tournWeek1 .container,#tournWeek2 .container,#tournPast .container,#tournWeek3 .container,#getAbos .container,#mobilGames .container{width:588px;padding:0;padding:0 0 20px}
 .tournList,#getAbos,#mobilGames{width:617px;position:relative;padding:0;margin:0 0 20px;background:url(../images/tournListBottom.jpg) no-repeat 0 bottom;width:598px}
 .tournList .tournHelper,#mobilGames .helper,#getAbos .helper{background:url(../images/tournListTop.jpg) no-repeat 0 top;width:589px}
-.tournList .container,#mobilGames .container,#getAbos .container{position:relative;display:block;overflow-x:hidden;overflow-y:hidden}
+.tournList .container,#mobilGames .container,#getAbos .container{/*position:relative;*/display:block;overflow-x:hidden;overflow-y:hidden}
 .tournList h3{margin:0;height:20px;overflow:hidden;position:relative;padding:10px;font-weight:bold;font-style:italic;color:#666;text-decoration:none;cursor:default}
 .tournList ul,#tournToday ul,#mobilGames ul{border:0;margin:none}.tournList ul. li,#getAbos ul. li,#mobilGames ul. li{display:inline;background-image:none;left:0}
 .static .tournList .container{overflow-x:scroll}.tournList .container ul{width:3289px;margin:0;border:0}

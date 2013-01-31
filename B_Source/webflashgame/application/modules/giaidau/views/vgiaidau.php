@@ -51,7 +51,7 @@
 								<?php } else{ ?>
 									My tournaments
 								<?php } ?></span></a></li>
-					<li class="" id="create"><a href="<?php echo base_url();?>dangky/dangnhap"><span>
+					<li class="" id="create"><a href="<?php echo base_url();?>setting"><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Créer tournoi
@@ -78,7 +78,38 @@
 													  $(".so1_container p img").addClass("gameLogo pos_10");
 													});
 												</script>
-						<ul style="width: 588px;margin-right:0;">
+								<ul style="width: 588px;margin-right:0;">
+							<?php foreach ($today as $item) 
+							{ ?>
+							<li class="">
+								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<div class="to1_container">
+										<?php echo $item->image ?>
+										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
+										<a class="" href="/web/Tournaments-Details?id_tourn=32167">
+											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
+											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
+											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
+											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="register">Register now!</span></span>
+											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>
+											<p style="color: #000000">08.Jan&nbsp;21:00</p>
+										</a>
+										<div class="desc">
+											<span class="label">Start: </span><?php echo $item->start_date ?> <abbr title="Central European Time">CET</abbr><br>
+											<span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!
+										</div>
+										<div class="jackpot">
+											<h4><span>Jackpot</span></h4>
+											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
+										</div>
+									</div>
+								</div>
+								
+							</li>
+							<?php }?>
+						</ul>				
+						<!-- <ul style="width: 588px;margin-right:0;">
 							<?php foreach ($today as $item) 
 							{  ?>
 							<li class="">
@@ -90,9 +121,16 @@
 								<?php } else{ ?>
 									<?php echo $item->name_tour ?>
 								<?php } ?></span></a></h4>
-									<div id="anhgame123" class="to1_container so1_container">
-<!-- 											<span style="background-color: #cfc29e" class="backgroundColor"></span>
-									<span class="to1_logo_5 to1_pos_8"></span><span style="display:block;background-image: url(http://static7.greentube.com/xsl_gamebase/assets/game_88/logo_137x77/game_88_logo_137x77_EN-US.png);" class="logo"></span> -->
+								<style type="text/css">
+													.to1_container p img{
+														display: block
+													}
+													.to1_container img{
+														width:136px !important;
+														height: 77px !important;
+													}
+												</style>
+									<div id="anhgame123" class="to1_container">
  										<?php echo $item->image ?>
 										
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);" class="border"></span>
@@ -142,7 +180,7 @@
 								</div>
 							</li>
 							<?php }?>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 			</div>
@@ -156,22 +194,60 @@
 									Tournaments this week
 								<?php } ?></span></h3>
 					<div class="container">
-						<ul style="width: 1176px;margin-right:0;">
+						<style type="text/css">
+													.to1_container p{
+														display: block
+													}
+													.to1_container img{
+														width:136px !important;
+														height: 77px !important;
+													}
+												</style>
+							<ul style="width: 588px;margin-right:0;">
+							<?php foreach ($week as $item) 
+							{ ?>
+							<li class="">
+								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<div class="to1_container">
+										<?php echo $item->image ?>
+										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
+										<a class="" href="/web/Tournaments-Details?id_tourn=32167">
+											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
+											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
+											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
+											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="register">Register now!</span></span>
+											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>
+											<p style="color: #000000">08.Jan&nbsp;21:00</p>
+										</a>
+										<div class="desc">
+											<span class="label">Start: </span><?php echo $item->start_date ?> <abbr title="Central European Time">CET</abbr><br>
+											<span class="label">Stake: </span>Free<br><span class="label">My status:	</span>Not registered!
+										</div>
+										<div class="jackpot">
+											<h4><span>Jackpot</span></h4>
+											<p><span class="funCurrencyContainer"><span>Twists </span>37.500</span></p>
+										</div>
+									</div>
+								</div>
+								
+							</li>
+							<?php }?>
+						</ul>									
+						<!-- <ul style="width: 1176px;margin-right:0;">
 							<?php foreach ($week as $item) 
 							{ ?>
 							<li class="">
 								<div class="to1  rating3  medium gameId_29 tournId_32168 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title="">
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span>
 										<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									<?php echo $item->name_tourfr ?>
 								<?php } else{ ?>
 									<?php echo $item->name_tour ?>
-								<?php } ?><span></span></a></h4>
+								<?php } ?></span></a></h4>
 									<div class="to1_container">
-										<span style="background-color: #AABB22" class="backgroundColor"></span>
-										<span class="to1_logo_2 to1_pos_9"></span>
-										<span style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_29/logo_137x77/game_29_logo_137x77_EN-US.png);" class="logo"></span>
+										<?php $item->image ?>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);" class="border"></span><a class="" href="/web/Tournaments-Details?id_tourn=32168">
 										<strong class="static switchPrize"><span>Twists 11.200</span></strong>
 										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>14</dd></dl>
@@ -194,7 +270,7 @@
 								</div>
 							</li>
 							<?php }?>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 				<!--<ul class="paging">
@@ -216,7 +292,7 @@
 									Tournaments next week
 								<?php } ?></span></h3>
 					<div class="container" style="height:243px;">
-						<ul style="width: 1176px;margin-right:0; position:absolute" class="slideimage">
+						<ul style="width: 700px;margin-right:0; position:absolute" class="slideimage">
 							
 							<?php foreach ($nextweek as $item) 
 							{ ?>
@@ -262,6 +338,9 @@
 					</div>
 				</div>
 				<ul class="paging">
+					<div align="center" style="height:50px; padding-top:10px">
+						<?php echo $this->pagination->create_links();?>
+					</div>
 					<li class="prev inactive"><a data-gtt="Previous page" title="">
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
