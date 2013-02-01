@@ -79,21 +79,15 @@
 					<div class="container">
 						<form name="setPaymentConstraint" id="setPaymentConstraint" action="" method="get">
 							<table class="formTable">
-								<tbody><tr>
+								<tbody>
+								<tr>
 									<td><label for="id_curr">Currency</label></td>
 									<td>	
 										<select name="id_curr" id="selectCurrency">
-											<option value="1" selected="">€ (EUR)</option>
-											<option value="2">$ (USD)</option>
-											<option value="3">£ (GBP)</option>
-											<option value="4">Fr (CHF)</option>
-											<option value="6">Ft (HUF)</option>
-											<option value="7">Kc (CZK)</option>
-											<option value="8">zl (PLN)</option>
-											<option value="9">lei (RON)</option>
-											<option value="10">Kn (HRK)</option>
-											<option value="23">??? (RUB)</option>
-											<option value="24">£ (TRY)</option>
+<!-- 											<option value="EUR" selected="">€ (EUR)</option> -->
+											<?php foreach ($list_tiente as $tiente) { ?>
+												<option value="<?php echo $tiente->name ?>"> <?php echo $tiente->icon ?>(<?php echo $tiente->name ?>)</option>
+											<?php } ?>
 										</select>
 									</td>
 								</tr>
@@ -200,102 +194,7 @@
 Note: Twists are the currency used at GameTwist. They cannot be paid out as real money at any time.
 						</div>
 					</div>
-				</div>
-				<div class="contBox contItemsSide omnSubscription">
-					<div class="container">
-						<form method="get" action="/web/Shop/Shop-Item">
-							<input type="hidden" name="id_item" value="">
-								<table class="itemTable listTable ">
-									<thead>
-										<tr>
-											<td colspan="5">Play to your heart's content with a Gold subscription ...</td>
-											<td></td>
-										</tr>
-									</thead>
-									<tfoot>
-										<tr>
-											<td colspan="5"></td>
-											<td></td>
-										</tr>
-									</tfoot>
-									<tbody>
-										<tr>
-											<td><img src="<?php echo base_url();?>assets/flash_game/images/abo_1_32x32.png" alt="" title="Gold Subscription - 1 month(s) (Twists: 52.500)"></td>
-											<td><span class="label">Gold Subscription - 1 month(s) (Twists: 52.500)</span></td>
-											<td class="regularPrice"></td>
-											<td class="sale"></td>
-											<td class="price">€ 8,50</td>
-											<td class="cta"><button class="formButton fbSubmit " value="2001" type="submit" data-omn="shopitem" data-omnvalue="52500" data-omnname="2001" id=""><span>Deposit now</span></button></td>
-										</tr>
-										<tr>
-											<td><img src="<?php echo base_url();?>assets/flash_game/images/abo_3_32x32.png" alt="" title="Gold Subscription - 3 month(s) (Twists: 157.500)"></td>
-											<td><span class="label">Gold Subscription - 3 month(s) (Twists: 157.500)</span></td><td class="regularPrice"></td><td class="sale"></td><td class="price">€ 22,50</td>
-											<td class="cta"><button class="formButton fbSubmit " value="2011" type="submit" data-omn="shopitem" data-omnvalue="157500" data-omnname="2011" id=""><span>Deposit now</span></button></td>
-										</tr>
-										<tr>
-											<td><img src="<?php echo base_url();?>assets/flash_game/images/abo_12_32x32.png" alt="" title="Gold Subscription - 12 month(s) (Twists: 630.000)"></td>
-											<td><span class="label">Gold Subscription - 12 month(s) (Twists: 630.000)</span></td>
-											<td class="regularPrice"></td>
-											<td class="sale"></td>
-											<td class="price">€ 72,00</td>
-											<td class="cta"><button class="formButton fbSubmit " value="2002" type="submit" data-omn="shopitem" data-omnvalue="630000" data-omnname="2002" id=""><span>Deposit now</span></button></td>
-										</tr>
-									</tbody>
-								</table>
-							</form>
-							<div class="itemDescription">
-								<strong>You can defeat them all? Get yourself a </strong>
-								<strong>GameTwist gold subscription and test yourself against the best of the best.</strong>
-								Alongside taking part in official tournaments you will also have the opportunity to create exclusive tournaments for you and your friends!<br><br>
-							</div>
-						</div>
-					</div>
-					<div class="contBox contItemsSide shopApp">
-						<div class="container">
-							<table class="itemTable listTable">
-								<thead>
-									<tr>
-										<td colspan="5">Mobile App - GameTwist on the go</td>
-										<td></td>
-									</tr>
-								</thead>
-								<tfoot>
-									<tr>
-										<td colspan="5"></td>
-										<td></td>
-									</tr>
-								</tfoot>
-								<tbody>
-									<tr>
-										<td><img src="<?php echo base_url();?>assets/flash_game/images/gt_mobilegames_shopicon.png" alt="" title=""></td>
-										<td><span class="label">GameTwist App for iOS</span></td>
-										<td class="regularPrice"></td>
-										<td class="sale"></td>
-										<td class="price">Free</td>
-										<td class="cta" style="text-align:center; height:72px">
-											<a href="http://wap.greentube.com/slots/market_forward.php?edition=com.funstage.gta_ios">
-											<img src="<?php echo base_url();?>assets/flash_game/images/app_ios.png" alt="" title="" style="-moz-opacity:0.5;"></a>
-										</td>
-									</tr>
-									<tr>
-										<td><img src="<?php echo base_url();?>assets/flash_game/images/gt_mobilegames_shopicon.png" alt="" title=""></td>
-										<td><span class="label">GameTwist App for Android</span></td>
-										<td class="regularPrice"></td>
-										<td class="sale"></td>
-										<td class="price">Free</td>
-										<td>
-											<a href="http://wap.greentube.com/slots/market_forward.php?edition=com.funstage.gta_android">
-											<img src="images/google_play.png" alt="" title=""></a>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<div class="itemDescription">Wherever you are, whenever you want to: Get our mobile App and play your favorite slots on your iPhone, Android cell phone or on your tablet PC! Start Lucky Lady’s Charm™ Deluxe anytime!</div>
-						</div>
-					</div>
-					<div class="contBox">
-						<div class="container">All prices incl. sales tax</div>
-					</div>
+				</div> <br clear="both" />
 					<div id="additionalContentBottom"></div>
 				</div>
 				<div id="sideNav"></div>

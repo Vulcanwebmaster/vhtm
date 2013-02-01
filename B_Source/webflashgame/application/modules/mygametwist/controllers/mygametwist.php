@@ -140,6 +140,7 @@ class Mygametwist extends NIW_Controller
 			$id = $_SESSION['front_user_id'];
 			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
+			$data['list_tiente'] = $this->Mmygametwist->getListFull('st_convertcurrency');
 			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
 			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
 			$listTest = $this->Mmygametwist->getListByColumn('st_currencysetting', 'account_id', $id); 

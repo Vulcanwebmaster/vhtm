@@ -33,6 +33,8 @@ class Shop extends NIW_Controller
 	
 	function page($index=0)
 	{
+			$data['list_tiente'] = $this->Mshop->getListFull('st_convertcurrency');
+			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
 			$data['title']='flashgame | Flash Games';
@@ -41,9 +43,10 @@ class Shop extends NIW_Controller
 			$data['page']='vshop';
 			$this->load->view('front/container',$data);
 	}
-	
+	// Shop 1
 	function itemselection($index=0)
 	{
+			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
 			$data['title']='flashgame | Flash Games';
@@ -52,15 +55,40 @@ class Shop extends NIW_Controller
 			$data['page']='vitemselection';
 			$this->load->view('front/container',$data);
 	}
-	
-	function itemselection1($index=0)
+	// Shop 2
+	function paymentmethod($index=0)
 	{
+			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');		
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
-			$data['page']='vitemselection';
+			$data['page']='vpaymentmethod';
+			$this->load->view('front/container',$data);
+	}
+	// Shop 3
+	function pay($index=0)
+	{
+			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');		
+			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
+			$data['list_category'] = $this->Mshop->getListFull('fg_category');
+			$data['title']='flashgame | Flash Games';
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vpay';
+			$this->load->view('front/container',$data);
+	}
+	// Shop 4
+	function confirmation($index=0)
+	{
+			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');		
+			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
+			$data['list_category'] = $this->Mshop->getListFull('fg_category');
+			$data['title']='flashgame | Flash Games';
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vconfirmation';
 			$this->load->view('front/container',$data);
 	}
 	

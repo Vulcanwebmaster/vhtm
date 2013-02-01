@@ -446,7 +446,6 @@
 		</div>
 	<div id="sideNav"></div>
 			<div id="sideBar"></div>
-		</div>
 			<script type="text/javascript">
 							$(document).ready(function(){
 								$('#so2overlay').hide();

@@ -27,17 +27,9 @@
 										<select id="id_curr" class="ffSelect" name="currency">
 											<?php if(isset($currency_setting->currency)){ ?>
 												<option selected="" value="<?php echo $currency_setting->currency ?>">(<?php echo $currency_setting->currency ?>)</option>
-												<option value="HRK">Kn (HRK)</option>
-												<option value="CZK">Kč (CZK)</option>
-												<option value="HUF">Ft (HUF)</option>
-												<option value="PLN">zł (PLN)</option>
-												<option value="EUR">€ (EUR)</option>
-												<option value="GBP">£ (GBP)</option>
-												<option value="RON">lei (RON)</option>
-												<option value="RUB">руб (RUB)</option>
-												<option value="CHF">Fr (CHF)</option>
-												<option value="TRY">₤ (TRY)</option>
-												<option value="USD">$ (USD)</option>
+											<?php foreach ($list_tiente as $tiente) { ?>
+												<option value="<?php echo $tiente->name ?>"> <?php echo $tiente->icon ?>(<?php echo $tiente->name ?>)</option>
+											<?php } ?>
 											<?php }else{ ?>
 												<option value="HRK">Kn (HRK)</option>
 												<option value="CZK">Kč (CZK)</option>
@@ -48,7 +40,6 @@
 												<option value="RON">lei (RON)</option>
 												<option value="RUB">руб (RUB)</option>
 												<option value="CHF">Fr (CHF)</option>
-												<option value="TRY">₤ (TRY)</option>
 												<option value="USD">$ (USD)</option>
 											<?php } ?>
 										</select>

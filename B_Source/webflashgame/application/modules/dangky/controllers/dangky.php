@@ -14,11 +14,13 @@ class Dangky extends NIW_Controller
 	function index()
 	{
 			$this->page();
+			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 	}
 	
 	function page($index=0)
 	{
+			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
@@ -94,6 +96,7 @@ class Dangky extends NIW_Controller
 	
 	function registAccount()
 	{
+		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 		//$this->data['product']=$this->Mdangnhap->getListOffset('ln_product',5,0);
 		if ($this->input->post("submit"))

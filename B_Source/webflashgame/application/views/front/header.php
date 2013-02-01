@@ -4,7 +4,7 @@
 			<div id="nav1">
 				<ul>
 
-					<li class="btnPlay first" id="pagehome"><a href="<?php echo base_url();?>homepage" data-gtt="Home" title=""><span>
+					<li class="btnPlay first" id="pagehome"><a href="<?php echo base_url();?>" data-gtt="Home" title=""><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Page d'accueil
