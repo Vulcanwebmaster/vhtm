@@ -21,6 +21,8 @@ class Games extends NIW_Controller
 	
 	function page($index=0)
 	{
+			$data['list_games'] = $this->Mgames->getListOffset('fg_games',8,0);
+			//var_dump($data['list_games']); die();
 			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');
@@ -32,7 +34,8 @@ class Games extends NIW_Controller
 			$config['total_rows'] = count($this->Mgames->getListFull('fg_games'));
 			$this->pagination->initialize($config);
 			$data['items'] = $this->Mgames->getListOffset('fg_games',10,$index);
-			$data['list_category'] = $this->Mgames->getListFull('fg_category');
+			$data['list_category'] = $this->Mgames->getListFull('fg_category','game_id',$index);
+			//var_dump($data['list_category']); die();
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -61,11 +64,15 @@ class Games extends NIW_Controller
 			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_game_cate'] = $this->Mgames->getListFull('fg_category');
 			$data['category']  =  $this->Mgames->getListFullCategory('fg_games');
+			$data['ten_danhmuc'] = $this->Mgames->getListCategory('fg_games');
+			//var_dump($data['ten_danhmuc']); die();
 			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
+			//var_dump($data['list_chitiet']); die();
+			$data['list_chitiet_category']  =  $this->Mgames->getRowByColumn('fg_category','id',$index);
 			$count=$data['list_chitiet'];
 			$luotchoi=$count->count_dem +1; 
 			$this->Mgames->updateRowByColumn('fg_games','game_id',$index,array('count_dem'=>$luotchoi));
-			$data['topgame']  =  $this->Mgames->topGame(1);
+			$data['topgame']  =  $this->Mgames->topGame(3);
 			$data['list_category'] = $this->Mgames->getListFull('fg_category');
 			$data['items']  =  $this->Mgames->getListOffset('fg_games',10,$index);
 			$data['list_games'] = $this->Mgames->getListFull('fg_games');

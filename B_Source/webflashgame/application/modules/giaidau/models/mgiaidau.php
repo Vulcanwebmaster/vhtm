@@ -26,8 +26,20 @@ class Mgiaidau extends CI_Model
 	 	return $list;
 		
 	}
-	
-	function getListUsername()
+	function getRowByColumn($tableName='',$columnName='',$value='')
+	 {
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get($tableName);
+	 	if ($ds->num_rows()>0)
+	 	{
+	 		$item=$ds->row(0);
+	 		$ds->free_result();
+	 		return $item;
+	 	}
+	 	else return false;
+	 }
+	 
+	function getListUsername($tableName='',$columnName='',$value='')
 	{
 		$this->db->select();
 		$this->db->from('fg_list_player');
@@ -45,18 +57,24 @@ class Mgiaidau extends CI_Model
 		
 	}
 	function check($id_account,$id_tour){
+		$this->db->select();
+		$this->db->from('fg_list_player');
 		$this->db->where('account_id', $id_account); 
 		$this->db->where('tour_id', $id_tour); 
-		 $this->db->from('fg_list_player');
-		$ds=$this->db->count_all('fg_list_player') == 1;
-		// //var_dump($ds); die();
-		// $list=array();
-	 	// foreach($ds->result() as $item)
-	 	// {
-	 		// $list[]=$item;
-	  // }
-	 	//$ds->free_result();
-	 	return $ds;
+		$ds=$this->db->get();
+		//var_dump($ds); die();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+		if(count($list) == 1){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	
 	}
 	function getListAccount()
 	{

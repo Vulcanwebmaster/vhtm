@@ -53,7 +53,7 @@
 						<ul style="width: 588px;margin-right:0;">
 							<?php foreach ($past as $item) 
 							{ ?>
-							<li class="">
+							<li class="item">
 								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
 									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
 									<div class="to1_container">
@@ -77,7 +77,38 @@
 										</div>
 									</div>
 								</div>
-								
+								<div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
+											<span class="top" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+											<div id="so2overlayTop">
+													<h3><span>		
+												Sizzling Hot Deluxe								</span></h3>
+													<div class="gameDesc"><p></p><p>
+				<span&#8230;< p=""></span&#8230;<></p></div>
+													<p class="gameShot"></p><p>
+				<img alt="" src="/flash_game/assets/flash_game/upload/images/game_110_logo_137x77_EN-US.png" style="width: 137px; height: 77px;"></p>
+			<p></p>
+													<ul id="so2nav">
+														<li class="btnPlay" style="width:21px;"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+														<li class="btnHelp" style="width:21px; float:left;"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+														<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
+														<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
+														<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
+													</ul>
+														<dl><dt>Playing now</dt><dd>82</dd></dl>
+														<div id="topGame"></div>
+														<div id="so2rating" class=""></div>
+														<span class="overlayStatus" style=";background-image: url(http://localhost/webflashgame/assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
+														<div class="btnClose">
+															<a href="#close" data-gtt="close" title=""><span>close</span></a>
+														</div>
+													</div>
+													<span class="overlayBottom" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+													<div id="so2overlayBottom">
+														<div><p><span class="tournDate"></span>&nbsp;<strong>Jackpot:</strong>&nbsp;<span class="tournPrize"></span></p><a class="formLink" href="#"><span>To the Tournament</span></a>
+															
+															</div>
+														</div><span class="overlayPointer" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+										</div>
 							</li>
 							<?php }?>
 						</ul>
@@ -89,6 +120,22 @@
 	<div id="sideNav"></div>
 	<div id="sideBar"></div>
 </div>
+<script type="text/javascript">
+							$(document).ready(function(){
+								$('#so2overlay').hide();
+								$('#pagehome').addClass('active');
+								$('.to1_container').mouseenter(function(){
+									$(this).parent().parent().children('#so2overlay').show();
+								})
+									$('.item').mouseleave(function(){
+									$(this).children('#so2overlay').hide();
+								})
+								$('.btnClose').click(function(){
+									$(this).parent().parent().parent().children('#so2overlay').css('display','none');
+									
+								})
+							})
+				</script>
 <script type="text/javascript">
 	$('#pagetournament').addClass('active');
 	$('#past').addClass('active');

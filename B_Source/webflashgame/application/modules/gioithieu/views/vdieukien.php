@@ -25,11 +25,8 @@
 
 <?php $this->load->view('front/menu')?>
 <div id="main">
-			<?php foreach ($list_dieukien as $item) 
-			{ ?>
-				 <?php echo $item->title ?>
-				 <?php echo $item->content ?>
-			<?php } ?>
+				 <?php echo $list_chitiet->title ?>
+				 <?php echo $list_chitiet->content ?>
 	<div id="sideNav"></div>
 	<div id="sideBar"></div>
 </div>

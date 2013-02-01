@@ -107,7 +107,12 @@
 								<dt>Free space:</dt>
 								<dd>607</dd>
 								<dt>My status:</dt>
-								<dd></dd>
+								<dd><?php if($checkStatus = TRUE){
+									 	echo "Registered";
+									 }else{
+									 	echo 'Not registered!';
+									 } ?>
+								</dd>
 								<dt></dt>
 								<dd class="link">								
 									<a id="tournamentsReg" href="#"><span>Register now!</span></a>
@@ -234,8 +239,8 @@
 										<td class="last"></td>
 									</tr>
 								</tfoot>
-								<tbody>
-									<?php foreach ($player_list as $item) 
+								 <tbody>
+									<?php foreach ($listPlayer as $item) 
 									{ ?>
 									<tr class="dark">
 										<td> - </td>
@@ -247,7 +252,7 @@
 										<td> - </td>
 									</tr>
 									<?php } ?>
-								</tbody>
+								</tbody> 
 							</table>
 							<ul class="paging">
 								<li class="prev inactive"><a data-gtt="Previous page" title=""><span>Previous page</span></a></li>

@@ -264,7 +264,7 @@ body.games ul.paging{width:440px;margin-left:0;padding-left:10px;background:url(
 .so1_medium ul li a span.c2a,.so1_small ul li a span.c2a{filter:progid:DXImageTransform.Microsoft.Glow(Color=#2b76ad,Strength=2);margin-left:-2px\9}
 .ie9 .so1_medium ul li a span.c2a,.ie9 .so1_small ul li a span.c2a{filter:none;margin-left:0}
 .uc .so1_medium ul li a,.uc .so1_small ul li a{text-transform:uppercase}.so1_medium ul li a:hover,.so1_small ul li a:hover{color:#fff;text-decoration:none;background-color:transparent;cursor:pointer}
-.so1_medium ul li a span,.so1_small ul li a span,.randomGame .so1_container a{display:block;text-indent:-9999px;overflow:hidden;height:32px;padding-top:45px}
+.so1_medium ul li a span,.so1_small ul li a span,.randomGame .so1_container a{display:block;/*text-indent:-9999px;*/overflow:hidden;height:32px;padding-top:45px}
 .so1_small ul li a span{height:21px;padding-top:32px}.so1_medium ul li a:hover span,.so1_medium ul li a.hover span,.so1_small ul li a:hover span,.so1_small ul li a.hover span{text-indent:0}
 .so1_medium ul li .link,.so1_small ul li .link{width:269px;height:133px;clip:rect(0px 147px 20px 10px);text-indent:0;top:51px;left:-10px}
 .so1_medium ul li a:hover .link,.so1_medium ul li a.hover .link,.so1_small ul li a:hover .link,.so1_small ul li a.hover .link{top:-46px;left:-10px;clip:rect(46px 147px 123px 10px)}

@@ -9,21 +9,21 @@
 								<?php } else{ ?>
 									About Us
 								<?php } ?></span></a></li>
-		<li><a href="<?php echo base_url();?>helps/dieukien"><span>
+		<li><a href="<?php echo base_url();?>gioithieu/dieukien"><span>
 			<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Conditions générales de vente
 								<?php } else{ ?>
 									Terms &amp; Conditions
 								<?php } ?></span></a></li>
-		<li><a href="<?php echo base_url();?>helps/dieukien"><span>
+		<li><a href="<?php echo base_url();?>gioithieu/baomat/4"><span>
 			<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Politique de confidentialité
 								<?php } else{ ?>
 									Privacy Policy
 								<?php } ?></span></a></li>
-		<li><a href="<?php echo base_url();?>chuongtrinh"><span>
+		<li><a href="<?php echo base_url();?>gioithieu/chuongtrinh/3"><span>
 			<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Programme d'affiliation

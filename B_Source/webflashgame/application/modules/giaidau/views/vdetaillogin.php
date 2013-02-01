@@ -66,6 +66,7 @@
 						top: -23px !important;
 					}
 				</style> 
+	
 				<div id="tournamentsDetailsHeader" class="contBox">
 					<div id="gameHeader" class="game_8 tuyet">
 						<div class="rating2 ">

@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa giới thiệu này này?");
+					var r=confirm("Are you delete this category ?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>gioithieu/admin/delete/"+value;
@@ -45,8 +45,8 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tiêu đề</th> 
-		    				<th>Sửa|Xóa</th>
+		    				<th>Title </th> 
+		    				<th>Edit</th>
 		    				
 						</tr> 
 					</thead> 
@@ -57,7 +57,6 @@
 			    				<td><?php echo $item->title;?></td> 
 			    				<td>
 			    					<a href="<?php echo base_url()?>gioithieu/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -65,16 +64,6 @@
 					</tbody> 
 				</table>
 			</div><!-- end of #tab1 -->
-			<center style="font-size: 15px;color:red">
-				<?php echo $this->pagination->create_links();?>
-			</center>
-				<footer>
-						
-						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>gioithieu/admin/insert">Thêm mới</a>
-						</div>
-				</footer>
-						
 		</div>
 	</article>
 </form>	

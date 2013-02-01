@@ -22,6 +22,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['list_games'] = $this->Mhomepage->getListOffset('fg_games',48,0);
 		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');
 		$data['list_bannerheader'] = $this->Mhomepage->getListFull('fg_bannerheader');
 		$data['list_slide'] = $this->Mhomepage->getListFull('fg_slide');
@@ -29,7 +30,7 @@ class Homepage extends NIW_controller {
 		$data['top1'] = $this->Mhomepage->getTopGame(1);
 		$data['top_game'] = $this->Mhomepage->getTopGame(11);
 		$data['list_category'] = $this->Mhomepage->getListFull('fg_category');
-		$data['list_games'] = $this->Mhomepage->getListFull('fg_games');
+		//$data['list_games'] = $this->Mhomepage->getListFull('fg_games');
 		$data['list_game_cate']  =  $this->Mhomepage->getListFullCategory('fg_games');
 		$data['title']='flash_game | Flash game';
 		$data['module'] = $this->module;

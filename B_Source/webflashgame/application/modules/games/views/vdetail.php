@@ -91,9 +91,35 @@ position: relative;
 			color: #60258D;
 		}
 	</style>
+	<style type="text/css">
+					.tuyet p img{
+						width: 213px !important;
+						height: 76px !important;
+						position: absolute;
+						left: 0px !important;
+						top: -11px !important;
+					}
+				</style>
 		<div class="contBox" id="gamesDetailsHeader">
 			<div class="container">
-				<div id="gameHeader" class="game_49">
+				<div class="game_49 tuyet" id="gameHeader">
+					<div class="rating5 tuyet">
+					<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);" class="gameHeaderStars"></span>rating: 5</div> 
+						<?php echo $list_chitiet->image ?> 
+<!-- 						<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_49_logo_220x100_EN-US.png);" class="gameHeaderLogo"></span> -->
+						<dl>
+							<dt>Playing now:</dt>
+							<dd>48</dd>
+							<dt>Type:</dt>
+<!-- 							<dd><?php echo $ten_danhmuc->category_name ?></dd> -->
+							<dt>Min. no. of players:</dt>
+							<dd>2</dd>
+							<dt>Duration:</dt>
+							<dd>~ 3 min.</dd>
+						</dl>
+						<a href="#" class="room"><span>Play <?php  echo $list_chitiet->name ?> online!</span></a>
+					</div>
+				<!-- <div id="gameHeader" class="game_49">
 					<div class="rating5">
 						<span class="gameHeaderStars" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);"></span>rating: 5</div>
 						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?><?php echo $list_chitiet->image ?></span>
@@ -152,13 +178,14 @@ position: relative;
 								<?php } else{ ?>
 									online!
 								<?php } ?></span></a>
-					</div>
+					</div> -->
 					<div id="gameShot">
 						<a rel="lightbox[set1]" data-gtt="Bingo" href="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_780x480.jpg" title="">
 						<img alt="Bingo" src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_260x160.jpg"></a>
 					</div>
 				</div>
 			</div>
+			
 			<div id="relatedGames" class="contBox">
 				<h3><span><?php if ($_SESSION['lang']=="fr") 
 								{?>		
@@ -166,37 +193,21 @@ position: relative;
 								<?php } else{ ?>
 									Popular games
 								<?php } ?></span></h3>
-				<div class="container gameCat">
+				<div class="container gameCat tuyet">
 					<ul class="gameList">
-						<li class="related">
-							<div class="noOverlay so1_medium rating friendsOnline gameId_97">
-								<h4><a href="#" title=""><span>Fruits &amp; Sevens</span></a></h4>
-								<div class="so1_container" style="background-color: #373131">
-									<p></p>
-									<dl><dt><span>Playing now</span></dt><dd>117</dd></dl>
-									<ul>
-										<li>
-											<span class="border" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);"></span>
-											<span class="gameLogo pos_17" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_97_logo_137x77_EN-US.png);"></span>
-											<a class="room" href="#"><span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
-											<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
-											<span class="c2a" style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;">Play now!</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="related">
+						<?php foreach ($topgame as $item) 
+							{ ?>
+						<li class="item">
 							<div class="noOverlay so1_medium rating friendsOnline gameId_21">
-								<h4><a href="#" title=""><span>Poker</span></a></h4>
+								<h4><a href="<?php echo base_url();?>games/detail/<?php echo $item->game_id."-".$item->alias;?>" title=""><span><?php echo $item->name ?></span></a></h4>
 								<div class="so1_container" style="background-color: #27567F">
 									<p></p>
 									<dl><dt><span>Playing now</span></dt><dd>255</dd></dl>
 									<ul>
 										<li>
 											<span class="border" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);"></span>
-											<span class="gameLogo pos_1" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_21_logo_137x77_EN-US.png);"></span>
+											<?php echo $item->image ?>
+<!-- 											<span class="gameLogo pos_1" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_21_logo_137x77_EN-US.png);"></span> -->
 											<a class="room" href="#">
 												<span class="link" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_OverlaySprite.png);"></span>
 												<span class="status" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
@@ -206,8 +217,41 @@ position: relative;
 									</ul>
 								</div>
 							</div>
-						</li>
+							<div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
+											<span class="top" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+											<div id="so2overlayTop">
+													<h3><span>		
+												Sizzling Hot Deluxe								</span></h3>
+													<div class="gameDesc"><p></p><p>
+				<span&#8230;< p=""></span&#8230;<></p></div>
+													<p class="gameShot"></p><p>
+				<img alt="" src="/flash_game/assets/flash_game/upload/images/game_110_logo_137x77_EN-US.png" style="width: 137px; height: 77px;"></p>
+			<p></p>
+													<ul id="so2nav">
+														<li class="btnPlay" style="width:21px;"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+														<li class="btnHelp" style="width:21px; float:left;"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+														<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
+														<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
+														<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
+													</ul>
+														<dl><dt>Playing now</dt><dd>82</dd></dl>
+														<div id="topGame"></div>
+														<div id="so2rating" class=""></div>
+														<span class="overlayStatus" style=";background-image: url(http://localhost/webflashgame/assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
+														<div class="btnClose">
+															<a href="#close" data-gtt="close" title=""><span>close</span></a>
+														</div>
+													</div>
+													<span class="overlayBottom" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+													<div id="so2overlayBottom">
+														<div><p><span class="tournDate"></span>&nbsp;<strong>Jackpot:</strong>&nbsp;<span class="tournPrize"></span></p><a class="formLink" href="#"><span>To the Tournament</span></a>
+															
+															</div>
+														</div><span class="overlayPointer" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+								</div>
 						
+						</li>
+						<?php }?>
 					</ul>
 				</div>
 			</div>
@@ -351,3 +395,19 @@ position: relative;
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+							$(document).ready(function(){
+								$('#so2overlay').hide();
+								$('#pagehome').addClass('active');
+								$('.to1_container').mouseenter(function(){
+									$(this).parent().parent().children('#so2overlay').show();
+								})
+									$('.item').mouseleave(function(){
+									$(this).children('#so2overlay').hide();
+								})
+								$('.btnClose').click(function(){
+									$(this).parent().parent().parent().children('#so2overlay').css('display','none');
+									
+								})
+							})
+				</script>

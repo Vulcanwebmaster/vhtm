@@ -42,6 +42,21 @@ color: #333;
      $('body').addClass('games_category uc hasSideBar noLeaderBoard root chrome, game_uc').removeClass('game_default');
     })
    </script>
+   			<script>
+$("li").hover(
+  function () {
+    $(this).append($("<span> ***</span>"));
+  },
+  function () {
+    $(this).find("span:last").remove();
+  }
+);
+ 
+//li with fade class
+$("li.fade").hover(function(){$(this).fadeOut(100);$(this).fadeIn(500);});
+ 
+</script>
+
 <?php $this->load->view('front/menu')?>
 <div id="main">
 	
@@ -71,7 +86,7 @@ color: #333;
 						<ul id="Card" style="">
 							<?php foreach ($items as $item) 
 							{ ?>
-							<li>
+							<li class="item">
 								<div class=" so1_small rating friendsOnline gameId_110"">
 									<h4><a href="<?php echo base_url()?>games/detail/<?php echo $item->game_id."-".$item->alias?>" title=""><span>
 										<?php if ($_SESSION['lang']=="fr") 
@@ -97,6 +112,38 @@ color: #333;
 										</ul>
 									</div>
 								</div>
+								<div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
+											<span class="top" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+											<div id="so2overlayTop">
+													<h3><span>		
+												Sizzling Hot Deluxe								</span></h3>
+													<div class="gameDesc"><p></p><p>
+				<span&#8230;< p=""></span&#8230;<></p></div>
+													<p class="gameShot"></p><p>
+				<img alt="" src="/flash_game/assets/flash_game/upload/images/game_110_logo_137x77_EN-US.png" style="width: 137px; height: 77px;"></p>
+			<p></p>
+													<ul id="so2nav">
+														<li class="btnPlay" style="width:21px;"><a href="#" data-gtt="Play" title=""><span>Play</span></a></li>
+														<li class="btnHelp" style="width:21px; float:left;"><a href="#" data-gtt="Rules" title=""><span>Rules</span></a></li>
+														<li class="btnStats"><a href="#" data-gtt="Statistics" title=""><span>Statistics</span></a></li>
+														<li class="btnInfo"><a href="#" data-gtt="Game Overview" title=""><span>Game Overview</span></a></li>
+														<li class="btnMobile"><a href="#" data-gtt="Mobile Games" title=""></a></li>
+													</ul>
+														<dl><dt>Playing now</dt><dd>82</dd></dl>
+														<div id="topGame"></div>
+														<div id="so2rating" class=""></div>
+														<span class="overlayStatus" style=";background-image: url(http://localhost/webflashgame/assets/flash_game/images/game_StatusSprite_EN-US.png);"></span>
+														<div class="btnClose">
+															<a href="#close" data-gtt="close" title=""><span>close</span></a>
+														</div>
+													</div>
+													<span class="overlayBottom" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+													<div id="so2overlayBottom">
+														<div><p><span class="tournDate"></span>&nbsp;<strong>Jackpot:</strong>&nbsp;<span class="tournPrize"></span></p><a class="formLink" href="#"><span>To the Tournament</span></a>
+															
+															</div>
+														</div><span class="overlayPointer" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
+										</div>
 							</li>
 								<?php } ?>
 						</ul>
@@ -173,3 +220,19 @@ color: #333;
 				})
 			</script>
 		</div>
+		<script type="text/javascript">
+							$(document).ready(function(){
+								$('#so2overlay').hide();
+								$('#pagehome').addClass('active');
+								$('.so1_container').mouseenter(function(){
+									$(this).parent().parent().children('#so2overlay').show();
+								})
+									$('.item').mouseleave(function(){
+									$(this).children('#so2overlay').hide();
+								})
+								$('.btnClose').click(function(){
+									$(this).parent().parent().parent().children('#so2overlay').css('display','none');
+									
+								})
+							})
+				</script>

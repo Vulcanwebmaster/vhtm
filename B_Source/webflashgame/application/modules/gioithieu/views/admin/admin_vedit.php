@@ -18,12 +18,12 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Tiêu đề </label>
+					<label>Title </label>
 					<input type="text" name="title" style="width:92%" value="<?php echo $info->title;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Nội dung </label>
-					<input type="text" name="content" style="width:92%" value="<?php echo $info->content;?>"/>
+					<label>Content </label>
+					<?php echo $this->ckeditor->editor('content',$info->content,$config);?>
 				</fieldset>
 			</div>
 			

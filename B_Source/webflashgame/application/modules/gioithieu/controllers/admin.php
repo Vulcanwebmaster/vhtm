@@ -38,8 +38,8 @@
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Giới thiệu';
-			$data['bcCurrent']='giới thiệu';
+			$data['title']='About Us';
+			$data['bcCurrent']='About Us';
 			$data['list']=$this->Mgioithieu->getListOffset('fg_about_us',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
@@ -107,32 +107,32 @@
 			if (!$this->input->post('title'))
 			{
 				$data['info']=$this->Mgioithieu->getRowByColumn('fg_about_us','id',$id);
-				$data['title']='Sửa giới thiệu';
-				$data['bcCurrent']='giới thiệu';
+				$data['title']='Edit About Us';
+				$data['bcCurrent']='About Us';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('title','Tên','required|trim');
-				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
+				$this->form_validation->set_rules('title','Title','required|trim');
+				$this->form_validation->set_message('required','Category %s not empty');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgioithieu->updateRowByColumn('fg_about_us','id',$id,$input))
 					{
-						$this->session->set_userdata('result','Cập nhật thành công');
+						$this->session->set_userdata('result','Update successful');
 					}
-					else $this->session->set_userdata('result','Cập nhật không thành công');
+					else $this->session->set_userdata('result','Update not successful');
 					$this->index();
 				}
 				else 
 				{
 					$data['info']=$this->Mgioithieu->getRowByColumn('fg_about_us','id',$id);
-					$data['title']='Sửa giới thiệu';
-					$data['bcCurrent']='giới thiệu';
+					$data['title']='Edit About Us';
+					$data['bcCurrent']='About Us';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
