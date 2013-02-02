@@ -24,7 +24,8 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<?php foreach ($list_friends as $friends) {  ?>
+									<?php if(isset($list_friends)){
+									 foreach ($list_friends as $friends) {  ?>
 										<tr class="light">
 										<td><a class="profile " href="#" target="profile"><span><?php echo $friends->username ?></span></a></td>
 										<td class="status"><span class="offline"></span></td>
@@ -36,7 +37,7 @@
 												<span>Remove player from list</span></a>
 											</td>
 										</tr>
-									<?php } ?>
+									<?php } } ?>
 									
 									
 								</tbody>

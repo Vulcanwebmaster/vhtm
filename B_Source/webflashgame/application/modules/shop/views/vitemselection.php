@@ -21,8 +21,8 @@
 								<div class="itemContainer">
 									<img src="images/abo_1_120x120.png"><div class="item">
 										<dl>
-											<dt>Gold Subscription - 1 month(s) (Twists: 52.500)</dt>
-											<dd class="price"> 8,50</dd>
+											<dt>Gold Subscription</dt>
+											<dd class="price"></dd><br />
 											<dd class="desc">Our one month introductory offer gives you a month of total access to GameTwist.  You will also receive free extra Twists and you can even host your own tournaments!  Order now!</dd>
 										</dl>
 										<form method="get" action="<?php echo base_url();?>shop/paymentmethod/">

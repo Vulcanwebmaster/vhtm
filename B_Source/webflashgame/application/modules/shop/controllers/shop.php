@@ -14,7 +14,7 @@ class Shop extends NIW_Controller
 			$this->loadLang();
 			$this->loadLogin();
 	}
-
+	
 	function loadLogin()
 	{
 		//Kiem tra neu ton tai session trong dangky/checklogin thi...			
@@ -33,10 +33,21 @@ class Shop extends NIW_Controller
 	
 	function page($index=0)
 	{
+			$id = $_SESSION['front_user_id'];
+			// Tính tỷ giá
+			$listTest = $this->Mshop->getListByColumn('st_currencysetting', 'account_id', $id); 
+			if (count($listTest) > 0)
+			{
+				$data['currency_setting'] = $this->Mshop->getRowByColumn('st_currencysetting','account_id',$id);
+				$data['convert_money'] = $this->Mshop->getRowByColumn('st_convertcurrency','name',$data['currency_setting']->currency);
+				$data['tygia'] = (float)$data['convert_money']->value_rate / (float)$data['convert_money']->euro_rate;
+			}
+			// End tính tỷ giá
 			$data['list_tiente'] = $this->Mshop->getListFull('st_convertcurrency');
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
+			$data['list_money'] = $this->Mshop->getListFull('st_convertcurrencyofgame');
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -46,6 +57,12 @@ class Shop extends NIW_Controller
 	// Shop 1
 	function itemselection($index=0)
 	{
+		
+		$luutygia = $this->input->post('tygia1');
+		if(isset($luutygia) && $luutygia!=''){
+			 $_SESSION['chuyentiennao'] = $luutygia;
+			 $_SESSION['currencygame_123'] = $this->input->post('currencygame123');
+		}
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
@@ -70,6 +87,12 @@ class Shop extends NIW_Controller
 	// Shop 3
 	function pay($index=0)
 	{
+			$id = $_SESSION['front_user_id'];
+			$listTest = $this->Mshop->getListByColumn('st_currencysetting', 'account_id', $id); 
+			if (count($listTest) > 0)
+			{
+				$data['currency_setting'] = $this->Mshop->getRowByColumn('st_currencysetting','account_id',$id);
+			}
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');		
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');

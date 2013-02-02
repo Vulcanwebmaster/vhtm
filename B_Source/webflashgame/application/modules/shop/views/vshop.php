@@ -77,17 +77,23 @@
 					<div id="formCloseBtn"><a href="javascript:void(0)"><span>close</span></a></div>
 					<h3><span>Change country/currency</span></h3>
 					<div class="container">
-						<form name="setPaymentConstraint" id="setPaymentConstraint" action="" method="get">
+						<form name="setPaymentConstraint" id="setPaymentConstraint" action="<?php echo base_url();?>mygametwist/updateCurrencySetting/" method="post">
 							<table class="formTable">
 								<tbody>
 								<tr>
 									<td><label for="id_curr">Currency</label></td>
 									<td>	
-										<select name="id_curr" id="selectCurrency">
+										<select name="currency" class="ffSelect" id="selectCurrency">
 <!-- 											<option value="EUR" selected="">€ (EUR)</option> -->
+											<?php if(isset($currency_setting->currency)){ ?>
+												<option selected="" value="<?php echo $currency_setting->currency ?>">(<?php echo $currency_setting->currency ?>)</option>
 											<?php foreach ($list_tiente as $tiente) { ?>
 												<option value="<?php echo $tiente->name ?>"> <?php echo $tiente->icon ?>(<?php echo $tiente->name ?>)</option>
 											<?php } ?>
+											<?php }else{ 
+													 foreach ($list_tiente as $tiente) { ?>
+												<option value="<?php echo $tiente->name ?>"> <?php echo $tiente->icon ?>(<?php echo $tiente->name ?>)</option>
+											<?php } } ?>
 										</select>
 									</td>
 								</tr>
@@ -101,7 +107,7 @@
 				</div>
 				<div class="contBox contItemsSide omnTwistPackage">
 				<div class="container">
-					<form method="get" action="<?php echo base_url();?>shop/itemselection/">
+					
 						<input type="hidden" name="id_item" value="">
 						<table class="itemTable listTable ">
 							<thead>
@@ -111,84 +117,34 @@
 								<tr><td colspan="5"></td><td></td></tr>
 							</tfoot>
 							<tbody>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="14.000 Twists"></td>
-									<td><span class="label">14.000 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 2,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2039" type="submit" data-omn="shopitem" data-omnvalue="14000" data-omnname="2039" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="22.500 Twists"></td>
-									<td><span class="label">22.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 3,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2043" type="submit" data-omn="shopitem" data-omnvalue="22500" data-omnname="2043" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="30.000 Twists"></td>
-									<td><span class="label">30.000 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 4,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2020" type="submit" data-omn="shopitem" data-omnvalue="30000" data-omnname="2020" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
-									<td><span class="label">37.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 5,00</td>
-									<td class="cta">
-										<button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id="">
-											<span>Deposit now</span>
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
-									<td><span class="label">37.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 5,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
-									<td><span class="label">37.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 5,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
-									<td><span class="label">37.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 5,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
-									<td><span class="label">37.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 5,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
-								</tr>
-								<tr>
-									<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="37.500 Twists"></td>
-									<td><span class="label">37.500 Twists</span></td>
-									<td class="regularPrice"></td>
-									<td class="sale"></td>
-									<td class="price">€ 5,00</td>
-									<td class="cta"><button class="formButton fbSubmit " value="2003" type="submit" data-omn="shopitem" data-omnvalue="37500" data-omnname="2003" id=""><span>Deposit now</span></button></td>
-								</tr>
+								
+								<!--------------- Tính tỷ giá và đổi tiền trong game ---------->
+								<?php foreach ($list_money as $money) { ?>
+								<form method="post" action="<?php echo base_url();?>shop/itemselection/">
+									<tr>
+										<td><img src="<?php echo base_url();?>assets/flash_game/images/twist.png" alt="" title="14.000 Twists"></td>
+										<td><span class="label"><?php echo $money->currency_game ?> Twists</span></td>
+										<td class="regularPrice"></td>
+										<td class="sale"></td>
+										<input type="hidden" name="currencygame123" value="<?php echo $money->currency_game ?> ">
+										<?php if(isset($convert_money, $tygia)){ ?>
+											<td class="price"> <?php echo $convert_money->icon.' '; echo $money->euro * $tygia ?></td>
+											<td class="cta">
+												<button class="formButton fbSubmit " name="tygia1" value="<?php echo $money->euro * $tygia ?>" type="submit" data-omn="shopitem" data-omnvalue="14000" data-omnname="2039" id=""><span>Deposit now</span></button>
+											</td>
+										<?php }else{ ?>
+											<td class="price">€ <?php echo $money->euro?></td>
+											<td class="cta">
+												<button class="formButton fbSubmit " name="tygia1" value="<?php echo $money->euro ?>" type="submit" data-omn="shopitem" data-omnvalue="14000" data-omnname="2039" id=""><span>Deposit now</span></button>
+											</td>
+										<?php } ?>
+									</tr>
+								</form>
+								<?php }  ?>
+								<!------------End Tính tỷ giá và đổi tiền trong game ---------->
+								
 							</tbody></table>
-						</form>
+						
 						<div class="itemDescription">
 							<b>Let's Twist at GameTwist:</b> There's something for everyone at GameTwist, so get your Twist pack here and start gaming!<br><br>
 Note: Twists are the currency used at GameTwist. They cannot be paid out as real money at any time.

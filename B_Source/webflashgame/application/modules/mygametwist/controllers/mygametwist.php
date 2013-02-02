@@ -234,8 +234,9 @@ class Mygametwist extends NIW_Controller
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			// Lay ra danh sach ban be qua id
 			$listfriend = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			if($listfriend->friendslist != 0){
 			$data['list_friends'] = $this->Mmygametwist->getListByIdFriends($listfriend->friendslist);
-			
+			}
 			$data['menuleft']  =  9;
 			$data['module']  =  $this->module;
 			$data['page']  =  'vfriendslist';
@@ -254,8 +255,9 @@ class Mygametwist extends NIW_Controller
 			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
 			// Lay ra danh sach ban be qua id
 			$listignore = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
+			if($listignore->ignorelist != 0){
 			$data['list_ignore'] = $this->Mmygametwist->getListByIdFriends($listignore->ignorelist);
-			
+			}
 			$data['menuleft']  =  10;
 			$data['module']  =  $this->module;
 			$data['page']  =  'vignorelist';
