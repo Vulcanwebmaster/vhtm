@@ -42,8 +42,16 @@ class Setting extends NIW_Controller
 			$data['items']=$this->Msetting->getListOffset('fg_setting',10,$index);
 			$data['module']=$this->module;
 			$data['index'] = -1;
-			$data['page']='vgiaidauuser';
-			$this->load->view('front/container',$data);
+			if(isset($_SESSION['front_user_fullname'])){
+				$data['page']='vgiaidauuser';
+				$this->load->view('front/container',$data);
+			}
+			else{
+				$_SESSION['front_login_error'] = 'input username and password.';
+				$this->session->set_userdata('result','username or password false.');
+				redirect(base_url().'dangky/dangnhap','refresh');
+			}
+			
 		}
 		
 		function _input()
@@ -62,6 +70,7 @@ class Setting extends NIW_Controller
 					'user_gold'=>$this->input->post('user_gold'));
 		return $input;
 		}
+		
 	
 	function send()
 		

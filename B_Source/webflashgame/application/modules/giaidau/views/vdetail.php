@@ -102,20 +102,20 @@
 								<dd><?php if(date('Y-m-d H:i:s') < date("m-d-Y H:i",strtotime($list_chitiet->start_date))){
 									echo 'Over' ;
 								}else{ echo 'Not started'; } ?></dd>
-								<dt>Players:</dt>
-								<dd>393</dd>
+								<!-- <dt>Players:</dt>
+								<dd><?php echo $player->player ?></dd>
 								<dt>Free space:</dt>
-								<dd>607</dd>
+								<dd><?php echo ($available->available)-($player->player) ?></dd> -->
 								<dt>My status:</dt>
-								<dd><?php if($checkStatus = TRUE){
-									 	echo "Registered";
+								<dd><?php  if($checkStatus){
+										 echo 'Registed';
 									 }else{
-									 	echo 'Not registered!';
+									 	echo 'Not Register';
 									 } ?>
 								</dd>
 								<dt></dt>
 								<dd class="link">								
-									<a id="tournamentsReg" href="#"><span>Register now!</span></a>
+									<a id="tournamentsReg" href="<?php echo base_url();?>setting/registAccount"><span>Register now!</span></a>
 								</dd>
 							</dl>
 						</div>
@@ -125,15 +125,15 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->one ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top1 ?>,000</span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->two ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top2 ?>,000</span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->three ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top4 ?>,000</span></span></strong>
 							</div>
 						</div>
 					</div>
@@ -299,7 +299,10 @@
 						<p id="countdown">31:25:07</p>
 					</div>
 					<div class="buttonHolder">
-						<button id="landingSend" class="formButton fbSubmit"><span>Register now!</span></button>
+				<form action="<?php echo base_url();?>giaidau/register" method="post" align="center">	
+						<input name="tour_id" type="hidden" value="<?php echo $_SESSION['id_giaidau']->tour_id ?>" />
+						<button name="dkthamgiagiaidau" id="landingSend" value="<?php echo $_SESSION['front_user_id']?>" class="formButton fbSubmit"><span>Register now!</span></button>  
+				</form>
 					</div>
 				</div>
 			</div>

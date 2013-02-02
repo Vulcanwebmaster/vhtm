@@ -8,7 +8,6 @@ class Mgiaidau extends CI_Model
 		$this->load->helper('date');
 	}
 	
-	
 	function getListCategory()
 	{
 		$this->db->select();
@@ -26,6 +25,7 @@ class Mgiaidau extends CI_Model
 	 	return $list;
 		
 	}
+	
 	function getRowByColumn($tableName='',$columnName='',$value='')
 	 {
 	 	$this->db->where($columnName,$value);
@@ -39,14 +39,15 @@ class Mgiaidau extends CI_Model
 	 	else return false;
 	 }
 	 
-	function getListUsername($tableName='',$columnName='',$value='')
+	function getListUsername($tableName='',$columnName='',$id_tour='')
 	{
+		
 		$this->db->select();
 		$this->db->from('fg_list_player');
+		$this->db->where('tour_id', $id_tour); 
 		$this->db->join('fg_accounts','fg_accounts.id=fg_list_player.account_id');
 		
 		$ds=$this->db->get();
-		//var_dump($ds); die();
 		$list=array();
 	 	foreach($ds->result() as $item)
 	 	{
@@ -54,8 +55,8 @@ class Mgiaidau extends CI_Model
 	 	}
 	 	$ds->free_result();
 	 	return $list;
-		
 	}
+	
 	function check($id_account,$id_tour){
 		$this->db->select();
 		$this->db->from('fg_list_player');
@@ -76,6 +77,22 @@ class Mgiaidau extends CI_Model
 		}
 	
 	}
+	
+	
+	function list_player($tableName='',$value=''){
+		$this->db->select("COUNT(*) AS MyCount");
+		$this->db->from("fg_list_player");
+		$this->db->where('fg_accounts','fg_accounts.id=fg_list_player.account_id');
+		$ds=$this->db->get(); 
+		//var_dump($ds); die();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	}
+	
 	function getListAccount()
 	{
 		$this->db->select();
@@ -93,6 +110,7 @@ class Mgiaidau extends CI_Model
 	 	return $list;
 		
 	}
+	
 	function gameToday(){
 		$this->db->where('end_date >' ,date('Y-m-d'));
 		$this->db->where('end_date <' ,date('Y-m-d').' 23:59:59');
@@ -109,7 +127,6 @@ class Mgiaidau extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 	}
-	
 	
 	function gameWeek($index=''){
 		$this->db->where('start_date >' ,date("Y-m-d h:i:s "));
@@ -140,6 +157,7 @@ class Mgiaidau extends CI_Model
    		 return gmdate("l", time() + $offsetSeconds);
 
 	}
+	
 	function gameNextWeek(){
 		$this->db->where('start_date >' ,date("Y-m-d", strtotime('next sunday')));
 		$this->db->select();
