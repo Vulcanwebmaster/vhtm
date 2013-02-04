@@ -278,7 +278,7 @@
 								<li class="next inactive">
 									<a href="#" data-gtt="Next page" title=""><span>Next page</span></a>
 								</li>
-								<li class="total"><span>1&nbsp;-&nbsp;20&nbsp;of&nbsp;395</span></li>
+								<li class="total"><span>1&nbsp;-&nbsp;20&nbsp;of&nbsp;<?php echo $listPlayer ?></span></li>
 							</ul>
 						</div>
 					</div>
@@ -306,14 +306,11 @@
 					<form action="<?php echo base_url();?>giaidau/register" method="post" align="center">	
 						<input name="tour_id" type="hidden" value="<?php echo $_SESSION['id_giaidau']->tour_id ?>" />
 						<button name="dkthamgiagiaidau" id="landingSend" value="<?php echo $_SESSION['front_user_id']?>" class="formButton fbSubmit"><span>Register now!</span></button>  
-				</form>
+					</form>
 					<?php
-										
 									 }else{
 									 	echo '';
 									 } ?>
-				
-				
 					</div>
 				</div>
 			</div>
