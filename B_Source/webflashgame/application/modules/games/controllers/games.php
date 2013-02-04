@@ -22,7 +22,6 @@ class Games extends NIW_Controller
 	function page($index=0)
 	{
 			$data['list_games'] = $this->Mgames->getListOffset('fg_games',8,0);
-			//var_dump($data['list_games']); die();
 			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mgames->getListFull('fg_slide');

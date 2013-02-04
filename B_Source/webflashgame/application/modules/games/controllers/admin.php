@@ -16,7 +16,7 @@
 		{
 			$data['title']='Games';
 			$data['bcCurrent']='games';
-			$data['list']=$this->Mgames->getListCategory('fg_games');
+			$data['list']=$this->Mgames->getListCategory1('fg_games');
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
@@ -48,7 +48,7 @@
 			if (!$this->input->post('name1'))
 			{
 				$data['list']=$this->Mgames->getListFull('fg_category');
-				$data['title']='Thêm games';
+				$data['title']='Add games';
 				$data['bcCurrent']='games';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
@@ -56,7 +56,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('name1','Tên','required|trim');
+				$this->form_validation->set_rules('name1','Name','required|trim');
 				$this->form_validation->set_rules('category_id','Category','required|trim');
 				
 				$this->form_validation->set_message('required','Category %s not empty');
