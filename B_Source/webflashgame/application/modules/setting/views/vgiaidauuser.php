@@ -75,8 +75,17 @@
 				 					<p style="text-transform: uppercase;float: left"> Tournament <span style="color:red"></span></p>
 					 				<input type="text" name="name_tour">
 					 				<p style="text-transform: uppercase;">Games 
-					 				<select name="name">
-										<option value="name_game">Tên game3</option>
+					 				<select name="game_id">
+										<option></option>
+										<?php foreach ($list as $item)
+											{
+												if ($item->game_id == $info->game_id)
+												{?>
+													<option value="<?php echo $item->game_id?>" selected="selected"><?php echo $item->name;?></option>
+												<?php }
+												else {?>
+													<option value="<?php echo $item->game_id?>"><?php echo $item->name;?></option>
+										<?php }}?>
 				 					</select>
 				 					</p>
 					 				<p style="text-transform: uppercase"> Top1 <span style="color:red">%</span>

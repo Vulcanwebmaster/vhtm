@@ -102,8 +102,8 @@ class Giaidau extends NIW_Controller
 			 //var_dump($data['list_chitiet']); die();
 			 $data['setting_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_setting','id',1);
 			 $data['checkStatus']  =  $this->Mgiaidau->check('id',$index);
-			$data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player','id',$index);
-			$data['list_player'] = $this->Mgiaidau->getListUsername('fg_list_player','id',$index);
+			 $data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player','id',$index);
+			 $data['list_player'] = $this->Mgiaidau->getListUsername('fg_list_player','id',$index);
 			 $data['list_chitiet']->tour_id;
 			 $_SESSION['id_giaidau']=$this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			 $id_giaidau=$data['list_chitiet']->tour_id;//lay duoc id cua giai dau

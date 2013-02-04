@@ -125,15 +125,18 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_chitiet->phantramweb// ($list_chitiet->tienthuong-($list_chitiet->tienthuong*$setting_chitiet->phantramweb))*($list_chitiet->top1)/100;//(($list_chitiet->top1)-($list_chitiet->tienthuong*($setting_chitiet->phantramweb)/100)) ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span>
+									
+									<?php echo (($list_chitiet->top1) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?>
+									</span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top2 ?>,000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top4 ?>,000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
 							</div>
 						</div>
 					</div>

@@ -65,12 +65,10 @@ class Games extends NIW_Controller
 			$data['list_banner'] = $this->Mgames->getListFull('fg_banner');
 			$data['list_game_cate'] = $this->Mgames->getListFull('fg_category');
 			$data['category']  =  $this->Mgames->getListFullCategory('fg_games');
-			$data['ten_danhmuc'] = $this->Mgames->getListCategory('fg_games','game_id',$index);
-			//var_dump($data['ten_danhmuc']); die();
+			$data['ds_danhmuc']=$this->Mgames->getListCategory('fg_games','game_id',$index);
+			//var_dump($data['ds_danhmuc']); die();
 			$data['list_chitiet']  =  $this->Mgames->getRowByColumn('fg_games','game_id',$index);
-			//var_dump($data['list_chitiet']); die();
 			$data['list_chitiet_category']  =  $this->Mgames->getListCategory('fg_category');
-			//var_dump($data['list_chitiet_category']); die();
 			$count=$data['list_chitiet'];
 			$luotchoi=$count->count_dem +1; 
 			$this->Mgames->updateRowByColumn('fg_games','game_id',$index,array('count_dem'=>$luotchoi));
