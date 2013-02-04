@@ -111,7 +111,10 @@ position: relative;
 							<dt>Playing now:</dt>
 							<dd>48</dd>
 							<dt>Type:</dt>
-							<dd>Arcade &amp; Other</dd>
+						<!-- 	<?php foreach ($ten_danhmuc as $key)
+			{?>	
+							 <dd><?php echo $key->category_name ?></dd>  
+						<?php 	} ?> -->
 							<dt>Min. no. of players:</dt>
 							<dd>2</dd>
 							<dt>Duration:</dt>

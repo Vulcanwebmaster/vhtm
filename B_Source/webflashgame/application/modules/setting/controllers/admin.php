@@ -21,7 +21,7 @@
 		//=============================================
 			$data['config'] = $this->setupCKEditor('97%','400px');
 			//=============================================
-				$data['info']=$this->Msetting->getRowByColumn('fg_setting','id','2');
+				$data['info']=$this->Msetting->getRowByColumn('fg_setting','id','1');
 				$data['title']='Edit setting';
 				$data['bcCurrent']='slide';
 				$data['module']=$this->module;
@@ -34,16 +34,6 @@
 		{
 			$input=array(
 						'phantramweb'=>$this->input->post('phantramweb'),
-						'top1'=>$this->input->post('top1'),
-						'top2'=>$this->input->post('top2'),
-						'top3'=>$this->input->post('top3'),
-						'top4'=>$this->input->post('top4'),
-						'top5'=>$this->input->post('top5'),
-						'top6'=>$this->input->post('top6'),
-						'top7'=>$this->input->post('top7'),
-						'top8'=>$this->input->post('top8'),
-						'top9'=>$this->input->post('top9'),
-						'top10'=>$this->input->post('top10'),
 						'user_gold'=>$this->input->post('user_gold'),
 						);
 			return $input;

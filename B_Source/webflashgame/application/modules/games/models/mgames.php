@@ -8,12 +8,12 @@ class Mgames extends CI_Model
 		$this->load->helper('date');
 	}
 	
-	function getListCategory()
+	function getListCategory($tableName='',$columnName='',$value='')
 	{
 		$this->db->select();
 		$this->db->from('fg_games');
 		$this->db->join('fg_category','fg_category.id=fg_games.category_id');
-		
+		//$this->db->where($columnName,$value);
 		$ds=$this->db->get();
 		//var_dump($ds); die();
 		$list=array();
@@ -26,6 +26,22 @@ class Mgames extends CI_Model
 		
 	}
 	
+	function getTypeCategory($tableName='',$columnName='',$value='')
+	 {
+		$this->db->from('fg_games');
+		$this->db->join('fg_category','fg_category.id=fg_games.category_id');
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get();
+		//var_dump($ds); die();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	 
 	function getCount(){
 		$this->db->select();
 		$this->db->from('fg_games');

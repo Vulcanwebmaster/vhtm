@@ -26,27 +26,6 @@
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
 				
-				<!-- <div class="container">
-					<div>
-						<p><strong>In the help menu you will find;</strong></p>
-						<ul>
-							<li><strong>game instructions,</strong></li>
-							<li><strong>
-		an introduction to our website and</strong></li>
-							<li><strong>answers to frequently asked questions (FAQs)</strong></li>
-						</ul>
-						<strong>
-covering all games and functions available at GameTwist.<br><br>
-Should you have any further questions, please do not hesitate to contact our support team at <a href="#">support@gametwist.com</a>.<br><br>
-Our support hotline is available 7 days a week (excl. public holidays) from 8am to 10pm:<br>
-						<ul>
-							<li><b>Germany: </b><strong>0900 141 0 141</strong> (�1.80/min.)</li>
-							<li><b>Austria: 0900 499 944</b> (�1.80/min.)</li>
-						</ul><br>
-Prices given are from landline telephones. Prices for calls from cell phones may be higher.<br></strong>
-						<p></p>
-					</div>
-				</div> -->
 			</div>
 		</div>
 		<div id="sideNav">
@@ -91,9 +70,15 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 		</script>
 		<form action="<?php echo base_url();?>setting/send" method="post" align="center">
 				 				<p><h4> Winnings Tournament</h4></p>
-					 				<div style="float:left"><p style="text-transform: uppercase"> Web <span style="color:red">%</span>
-					 				<input type="text" name="phantramweb"></p>
-					 				
+				 				
+					 				<div style=" width: 40%; float: left">
+				 					<p style="text-transform: uppercase;float: left"> Tournament <span style="color:red"></span></p>
+					 				<input type="text" name="name_tour">
+					 				<p style="text-transform: uppercase;">Games 
+					 				<select name="name">
+										<option value="name_game">Tên game3</option>
+				 					</select>
+				 					</p>
 					 				<p style="text-transform: uppercase"> Top1 <span style="color:red">%</span>
 					 				<input type="text" name="top1"></p>
 					 				
@@ -108,7 +93,9 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 					 				
 					 				<p style="text-transform: uppercase"> Top 5 <span style="color:red">%</span>
 					 				<input type="text" name="top5"></p>
+					 				<p style="text-transform: uppercase">Player<input type="text" name="players"></p>
 					 				</div>
+					 				
 					 				<div>
 					 				<p style="text-transform: uppercase"> Top 6 <span style="color:red">%</span>
 					 				<input type="text" name="top6"></p>
@@ -124,11 +111,14 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 					 				
 					 				<p style="text-transform: uppercase"> Top 10 <span style="color:red">%</span>
 					 				<input type="text" name="top10"></p>
+					 				<p style="text-transform: uppercase"> Start date <span style="color:red"></span>
+					 				<input type="text" name="start_time"></p>
 					 				
-					 				<p style="text-transform: uppercase"> User<span style="color:red">%</span>
-					 				<input type="text" name="user_gold">
+					 				<p style="text-transform: uppercase"> End date <span style="color:red"></span>
+					 				<input type="text" name="end_time"></p>
+					 				<p style="text-transform: uppercase;"> Winnings<input type="text" name="tienthuong">
 					 				</div>
-					 				<input type="submit" class="tuyet" value="Send" class="submitlh">
+					 				<input type="submit" class="tuyet" value="Create" class="submitlh">
 									</form>
 				<style type="text/css">
 					.tuyet{

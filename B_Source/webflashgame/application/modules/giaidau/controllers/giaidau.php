@@ -28,7 +28,6 @@ class Giaidau extends NIW_Controller
 			$config['total_rows']=count($this->Mgiaidau->getListByColumn('fg_tournaments','tour_id','1'));
 			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
-		//$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
 			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
@@ -74,14 +73,20 @@ class Giaidau extends NIW_Controller
 		
 	function register()
 	{
+		if($this->Mgiaidau->check2($_SESSION['front_user_id'])==TRUE){
 			$input=$this->_input2();
-			
 			$this->Mgiaidau->insertNewRow('fg_list_player',$input);
 			redirect(base_url(),'refresh');
+		}else{
+			redirect(base_url(),'refresh');
+		}
+			
 	}
+	
 	
 	function detail($index=0)
 	{
+			
 			$data['available'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			$data['player'] = $this->Mgiaidau->getRowByColumn('fg_list_player','tour_id',$index);
 			//var_dump($data['player']); die();
@@ -90,18 +95,24 @@ class Giaidau extends NIW_Controller
 			 $data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
 			 $data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
 			 
-			 $data['setting_detail'] = $this->Mgiaidau->getRowByColumn('fg_setting','tour_id',$index);
+			 $data['setting_detail'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			 //var_dump($data['setting_detail']); die();
 			 $data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			 $data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
+			 //var_dump($data['list_chitiet']); die();
+			 $data['setting_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_setting','id',1);
+			 $data['checkStatus']  =  $this->Mgiaidau->check('id',$index);
+			$data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player','id',$index);
+			$data['list_player'] = $this->Mgiaidau->getListUsername('fg_list_player','id',$index);
 			 $data['list_chitiet']->tour_id;
 			 $_SESSION['id_giaidau']=$this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			 $id_giaidau=$data['list_chitiet']->tour_id;//lay duoc id cua giai dau
 			 if(isset($_SESSION['front_user_fullname'])){
 				 $data['checkStatus']  =  $this->Mgiaidau->check($_SESSION['front_user_id'],$index);
 				 
-					 $data['listPlayer'] = $this->Mgiaidau->getListUsername('fg_list_player',$_SESSION['front_user_id'],$index);
-					 //var_dump($data['listPlayer']); die();
+					 $data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player',$_SESSION['front_user_id'],$index);
+					 //echo $data['listPlayer']; die();
+					 $data['list_player'] = $this->Mgiaidau->getListUsername('fg_list_player',$_SESSION['front_user_id'],$index);
 					 $data['items']  =  $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
 					 $data['list_tour'] = $this->Mgiaidau->getListFull('fg_tournaments');
 					 $model=new CI_Model();

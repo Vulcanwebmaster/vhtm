@@ -84,7 +84,7 @@
 						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg">
 						<dl class="tournCufon">
 							<dt>Jackpot</dt>
-							<dd><span class="funCurrencyContainer"><span>Twists </span>37.500</span></dd>
+							<dd><span class="funCurrencyContainer"><span>Twists </span>37.500<!-- <?php echo $key->tienthuong ?> --></span></dd>
 						</dl>
 					</div>
 				</div>
@@ -104,11 +104,15 @@
 									echo 'Over' ;
 								}else{ echo 'Not started'; } ?></dd>
 								<dt>Players:</dt>
-								<dd>393</dd>
-								<dt>Free space:</dt>
-								<dd>607</dd>
+								<dd><?php echo $listPlayer ?></dd>
+								<!-- <dt>Free space:</dt>
+								<dd><?php echo $listPlayer ?>607</dd> -->
 								<dt>My status:</dt>
-								<dd></dd>
+								<dd><?php  if($checkStatus){
+										 echo 'Registed';
+									 }else{
+									 	echo 'Not Register';
+									 } ?></dd>
 								<dt></dt>
 								<dd class="link">								
 									<a id="tournamentsReg" href="#"><span>Register now!</span></a>
@@ -121,15 +125,15 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->one ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_chitiet->phantramweb ?></span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->two ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top2 ?>,000</span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->three ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top4 ?>,000</span></span></strong>
 							</div>
 						</div>
 					</div>
@@ -236,7 +240,7 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<?php foreach ($player_list as $item) 
+									<?php foreach ($list_player as $item) 
 									{ ?>
 									<tr class="dark">
 										<td> - </td>

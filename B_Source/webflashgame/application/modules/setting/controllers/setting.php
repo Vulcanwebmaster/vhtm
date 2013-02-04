@@ -42,6 +42,8 @@ class Setting extends NIW_Controller
 			$data['items']=$this->Msetting->getListOffset('fg_setting',10,$index);
 			$data['module']=$this->module;
 			$data['index'] = -1;
+			//$data['account_chitiet']  =  $this->Msetting->getRowByColumn('fg_setting','id',$_SESSION['front_user_id']);
+			//var_dump($data['account_chitiet']); die();
 			if(isset($_SESSION['front_user_fullname'])){
 				$username = $_SESSION['front_user_fullname'];
 				$kiemtra = $this->Msetting->getRowByColumn('fg_accounts','username',$username);
@@ -61,9 +63,14 @@ class Setting extends NIW_Controller
 			
 		}
 		
+		function tienthuong()
+		{
+			
+		}
+		
 		function _input()
 		{
-		$input=array('phantramweb'=>$this->input->post('phantramweb'),
+		$input=array(
 					'top1'=>$this->input->post('top1'),
 					'top2'=>$this->input->post('top2'),
 					'top3'=>$this->input->post('top3'),
@@ -71,10 +78,14 @@ class Setting extends NIW_Controller
 					'top5'=>$this->input->post('top5'),
 					'top6'=>$this->input->post('top6'),
 					'top7'=>$this->input->post('top7'),
+					'game_id'=>$this->input->post('game_id'),
+					'start_time'=>$this->input->post('start_time'),
+					'end_time'=>$this->input->post('end_time'),
+					'players'=>$this->input->post('players'),
 					'top8'=>$this->input->post('top8'),
-					'top8'=>$this->input->post('top9'),
+					'top9'=>$this->input->post('top9'),
 					'top10'=>$this->input->post('top10'),
-					'user_gold'=>$this->input->post('user_gold'));
+					'tienthuong'=>$this->input->post('tienthuong'));
 		return $input;
 		}
 		
@@ -82,17 +93,18 @@ class Setting extends NIW_Controller
 	function send()
 		
 		{
-			 if(($this->input->post('phantramweb')) + ($this->input->post('top1'))
+			 if(($this->input->post('top1'))
 				+($this->input->post('top2'))+ ($this->input->post('top3'))
 				+($this->input->post('top4'))+ ($this->input->post('top5'))
 				+($this->input->post('top6'))+ ($this->input->post('top7'))
 				+($this->input->post('top8'))+ ($this->input->post('top9'))
-				+($this->input->post('top10'))
-				+($this->input->post('user_gold'))==100 
+				+($this->input->post('top10'))==100 
 				)
 			 	{
+			 		$data['thuong_detail']  =  $this->Msetting->getRowByColumn('fg_tournaments','tour_id',$index);
 			 		$input=$this->_input();
-					$this->Msetting->insertNewRow('fg_setting',$input);
+					$this->Msetting->insertNewRow('fg_tournaments',$input);
+					redirect(base_url(),'refresh');
 				}
 			else $this->session->set_userdata('lienhe_result','Send not success !');
 			

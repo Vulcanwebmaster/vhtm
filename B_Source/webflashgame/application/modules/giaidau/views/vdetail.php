@@ -102,10 +102,10 @@
 								<dd><?php if(date('Y-m-d H:i:s') < date("m-d-Y H:i",strtotime($list_chitiet->start_date))){
 									echo 'Over' ;
 								}else{ echo 'Not started'; } ?></dd>
-								<!-- <dt>Players:</dt>
-								<dd><?php echo $player->player ?></dd>
-								<dt>Free space:</dt>
-								<dd><?php echo ($available->available)-($player->player) ?></dd> -->
+								 <dt>Players:</dt>
+								<dd><?php echo $listPlayer ?></dd>
+								<!-- <dt>Free space:</dt>
+								<dd><?php echo ($available->available)-($player->player) ?></dd>  -->
 								<dt>My status:</dt>
 								<dd><?php  if($checkStatus){
 										 echo 'Registed';
@@ -125,7 +125,7 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top1 ?>,000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_chitiet->phantramweb// ($list_chitiet->tienthuong-($list_chitiet->tienthuong*$setting_chitiet->phantramweb))*($list_chitiet->top1)/100;//(($list_chitiet->top1)-($list_chitiet->tienthuong*($setting_chitiet->phantramweb)/100)) ?></span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
@@ -240,7 +240,7 @@
 									</tr>
 								</tfoot>
 								 <tbody>
-									<?php foreach ($listPlayer as $item) 
+									<?php foreach ($list_player as $item) 
 									{ ?>
 									<tr class="dark">
 										<td> - </td>
@@ -299,10 +299,18 @@
 						<p id="countdown">31:25:07</p>
 					</div>
 					<div class="buttonHolder">
-				<form action="<?php echo base_url();?>giaidau/register" method="post" align="center">	
+				<?php  if(!$checkStatus){ ?>
+					<form action="<?php echo base_url();?>giaidau/register" method="post" align="center">	
 						<input name="tour_id" type="hidden" value="<?php echo $_SESSION['id_giaidau']->tour_id ?>" />
 						<button name="dkthamgiagiaidau" id="landingSend" value="<?php echo $_SESSION['front_user_id']?>" class="formButton fbSubmit"><span>Register now!</span></button>  
 				</form>
+					<?php
+										
+									 }else{
+									 	echo '';
+									 } ?>
+				
+				
 					</div>
 				</div>
 			</div>

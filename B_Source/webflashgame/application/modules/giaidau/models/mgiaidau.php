@@ -26,17 +26,19 @@ class Mgiaidau extends CI_Model
 		
 	}
 	
-	function getRowByColumn($tableName='',$columnName='',$value='')
+	function getRowBySetting($tableName='')
 	 {
-	 	$this->db->where($columnName,$value);
+	 	$this->db->select();
+		
 	 	$ds=$this->db->get($tableName);
-	 	if ($ds->num_rows()>0)
+	 	$list=array();
+	 	foreach($ds->result() as $item)
 	 	{
-	 		$item=$ds->row(0);
-	 		$ds->free_result();
-	 		return $item;
+	 		$list[]=$item;
 	 	}
-	 	else return false;
+	 	$ds->free_result();
+		
+	 	return $list;
 	 }
 	 
 	function getListUsername($tableName='',$columnName='',$id_tour='')
@@ -56,7 +58,23 @@ class Mgiaidau extends CI_Model
 	 	$ds->free_result();
 	 	return $list;
 	}
-	
+	function CountPlayer($tableName='',$columnName='',$id_tour='')
+	{
+		
+		$this->db->select();
+		$this->db->from('fg_list_player');
+		$this->db->where('tour_id', $id_tour); 
+		$this->db->join('fg_accounts','fg_accounts.id=fg_list_player.account_id');
+		
+		$ds=$this->db->get();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return count($list);
+	}
 	function check($id_account,$id_tour){
 		$this->db->select();
 		$this->db->from('fg_list_player');
@@ -78,12 +96,11 @@ class Mgiaidau extends CI_Model
 	
 	}
 	
-	
-	function list_player($tableName='',$value=''){
-		$this->db->select("COUNT(*) AS MyCount");
-		$this->db->from("fg_list_player");
-		$this->db->where('fg_accounts','fg_accounts.id=fg_list_player.account_id');
-		$ds=$this->db->get(); 
+	function check2($id_account){
+		$this->db->select();
+		$this->db->from('fg_list_player');
+		$this->db->where('account_id', $id_account); 
+		$ds=$this->db->get();
 		//var_dump($ds); die();
 		$list=array();
 	 	foreach($ds->result() as $item)
@@ -91,7 +108,14 @@ class Mgiaidau extends CI_Model
 	 		$list[]=$item;
 	 	}
 	 	$ds->free_result();
+		if(count($list) == 1){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	
 	}
+	
 	
 	function getListAccount()
 	{
