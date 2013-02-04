@@ -28,6 +28,13 @@
 <div id="main">
 			<div id="container">
 				<div id="tipHolder"></div>
+				<?php if ($this->session->userdata('result')!='')
+						{
+						echo '<p style="color:red; padding-left:30px">';
+						echo $this->session->userdata('result');
+						$this->session->unset_userdata('result');
+						echo '</p>';
+						}?>
 				<div id="subNav">
 				<ul>
 					<li class="active " id="now"><a href="<?php echo base_url();?>giaidau"><span>

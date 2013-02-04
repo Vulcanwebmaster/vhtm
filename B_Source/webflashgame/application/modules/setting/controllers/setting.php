@@ -43,8 +43,15 @@ class Setting extends NIW_Controller
 			$data['module']=$this->module;
 			$data['index'] = -1;
 			if(isset($_SESSION['front_user_fullname'])){
-				$data['page']='vgiaidauuser';
-				$this->load->view('front/container',$data);
+				$username = $_SESSION['front_user_fullname'];
+				$kiemtra = $this->Msetting->getRowByColumn('fg_accounts','username',$username);
+				if($kiemtra->money >= 10000){
+					$data['page']='vgiaidauuser';
+					$this->load->view('front/container',$data);
+				}else{
+					$this->session->set_userdata('result','you must have a account user gold to create tournament.');
+					redirect(base_url().'giaidau','refresh');
+				}
 			}
 			else{
 				$_SESSION['front_login_error'] = 'input username and password.';
