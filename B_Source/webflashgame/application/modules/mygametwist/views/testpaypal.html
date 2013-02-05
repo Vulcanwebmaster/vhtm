@@ -1,0 +1,13 @@
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="payPalForm">
+ 
+<input type="hidden" name="item_number" value="14,000 Twists">	<!-- Phần này chính là phần sẽ hiển thị mô tả về sản phẩm của bạn thường là mã code phân loại sản phẩm của bạn -->
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="business" value="admin@user.vn">	<!-- Phần này bạn cần thay thế email của người thụ hưởng số tiền mà người mua thanh toán -->
+<input type="hidden" name="currency_code" value="EUR">		<!-- Phần này chính là mã tiền tệ mà bạn muốn thanh toán -->
+<input type="hidden" name="return" value="http://thegioimanguon.com/tao-form-thanh-toan-qua-paypal-tren-website"> <!-- Phần này bạn cần điền value là đường dẫn trang thanh toán  -->
+<input type="hidden" name="item_name" value="14,000 Twists" id="item_name"  size="45"> <!-- Phần này chính là phần ghi chú từ phía người mua, đây chính là phần sẽ được ghi vào invoice rằng họ đã mua cái gì. -->
+<input type="hidden"   name="amount"  value="1" id="amount" size="45"> <!-- Giá trị tiền tệ cần để đổi -->
+<input type="submit" name="Submit" value="Submit">
+ 
+</form>

@@ -80,11 +80,11 @@
 								<?php } ?></span></h3>
 					<div class="container">
 						<script>
-													$(document).ready(function(){
-													  $(".so1_container ul li p").show();
-													  $(".so1_container p img").addClass("gameLogo pos_10");
-													});
-												</script>
+							$(document).ready(function(){
+							  $(".so1_container ul li p").show();
+							  $(".so1_container p img").addClass("gameLogo pos_10");
+							});
+						</script>
 								<ul style="width: 588px;margin-right:0;">
 							<?php foreach ($today as $item) 
 							{ ?>

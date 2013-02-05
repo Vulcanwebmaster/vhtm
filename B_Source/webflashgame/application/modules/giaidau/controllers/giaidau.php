@@ -117,7 +117,6 @@ class Giaidau extends NIW_Controller
 					 $data['list_tour'] = $this->Mgiaidau->getListFull('fg_tournaments');
 					 $model=new CI_Model();
 					 $data['module']  =  $this->module;
-					
 					 $data['page']  =  'vdetail';
 				
 			}else{
