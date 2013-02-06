@@ -4,8 +4,11 @@
 	<title>Carresdas.fr</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
 	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true, chrome=1">	
+	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.nivo.slider.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/css.css"><style type="text/css"></style>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/mootools-core-1.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/flash_game/css/nivo-slider.css" type="text/css" media="screen" />
 	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/mootools-more-1.js"></script>
 	<!--<script type="text/javascript" src="js/jsErrorLogger.js"></script>-->
@@ -17,12 +20,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/themes/light/light.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/themes/dark/dark.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/themes/bar/bar.css" />
-	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.nivo.slider.js"></script>
+	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/modernizr.custom.53451.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-1.7.1.min.js"></script>
+	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.min.js"></script>
 <!-------------- Bắt lỗi bằng js ------------>	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/validationEngine.jquery.css" />
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.validationEngine-en.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.validationEngine.js"></script>
@@ -41,7 +44,7 @@
 <!--<body class="games  uc  noLeaderBoard root firefox">-->
 <body>
 	
-	<div id="wrapper" style="width:100%">
+	<div id="wrapper" style="width:100%; text-align: left">
 		<?php $this->load->view('front/header')?>
 
 		<?php $this->load->view('front/content')?>

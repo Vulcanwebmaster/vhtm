@@ -1,4 +1,8 @@
-
+ <script type="text/javascript">
+		    $(window).load(function() {
+		        $('#slider').nivoSlider();
+		    });
+		    </script>
 <div id="slider12">
 					
 						  <div class="slider-wrapper theme-default slider">
