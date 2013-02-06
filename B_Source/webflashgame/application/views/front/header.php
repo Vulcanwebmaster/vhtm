@@ -20,12 +20,12 @@
 					</div>
 					<div id="menu">
 						<ul>
-							<li><a href="#">
+							<li><a href="<?php echo base_url();?>giaidau">
 								<label>Jouner</label>
 								<p>enligne</p>
 								</a></li>
 							
-							<li><a href="#">
+							<li><a href="<?php echo base_url();?>giaidau">
 								<label>Tournois</label>
 								<p>jouer avec meilleurs</p>
 								</a></li>

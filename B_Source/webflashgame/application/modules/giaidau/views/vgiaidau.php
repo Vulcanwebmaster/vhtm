@@ -24,7 +24,6 @@
 		#anhgame123 img{  height: 52px !important; width: 102px !important; }
 </style>
 
-<?php $this->load->view('front/menu')?>
 <div id="main">
 			<div id="container">
 				<div id="tipHolder"></div>
