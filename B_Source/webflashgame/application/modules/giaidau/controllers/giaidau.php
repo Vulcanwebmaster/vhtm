@@ -86,9 +86,14 @@ class Giaidau extends NIW_Controller
 	
 	function detail($index=0)
 	{
-			
+			$data['avarta'] = $this->Mgiaidau->getListCategory('fg_tournaments','tour_id',$index);
+			//$data['avarta']->avarta;
+			//$avarta=$data['avarta']->avarta;
+			//var_dump($avarta); die();
 			$data['available'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
-			$data['player'] = $this->Mgiaidau->getRowByColumn('fg_list_player','tour_id',$index);
+			$available=$data['available']->players;
+			//var_dump($available); die();
+			$data['player'] = $this->Mgiaidau->CountPlayer('fg_list_player','tour_id',$index);
 			//var_dump($data['player']); die();
 			 $data['list_giaidau'] = $this->Mgiaidau->getListFull('fg_tournaments');
 			 $data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');

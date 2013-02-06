@@ -66,6 +66,7 @@
 						top: -23px !important;
 					}
 				</style> 
+	
 				<div id="tournamentsDetailsHeader" class="contBox">
 					<div id="gameHeader" class="game_8 tuyet">
 						<div class="rating2 ">
@@ -79,11 +80,29 @@
 							<strong class="tournCufon"><?php echo date("H:i",strtotime($list_chitiet->start_date));?></strong>
 						</div>
 					</div>
-					<div id="gameShot">
-						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg">
+					<style type="text/css">
+					.avarta p img{
+						width: 273px !important;
+						height: 164px !important;
+					}
+				</style>
+				<style type="text/css">
+					.mama p img{
+						width: 213px !important;
+						height: 76px !important;
+						position: absolute;
+						left: 0px !important;
+						top: -11px !important;
+					}
+				</style>
+					
+				</div>
+					<div id="gameShot" class="avarta">
+						<?php echo $list_chitiet->avarta ?>
+						<!-- <img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg"> -->
 						<dl class="tournCufon">
 							<dt>Jackpot</dt>
-							<dd><span class="funCurrencyContainer"><span>Twists </span>37.500</span></dd>
+							<dd><span class="funCurrencyContainer"><span>Belote </span><?php echo $list_chitiet->tienthuong?></span></dd>
 						</dl>
 					</div>
 				</div>
@@ -102,20 +121,19 @@
 								<dd><?php if(date('Y-m-d H:i:s') < date("m-d-Y H:i",strtotime($list_chitiet->start_date))){
 									echo 'Over' ;
 								}else{ echo 'Not started'; } ?></dd>
-								 <dt>Players:</dt>
+								<dt>Players:</dt>
 								<dd><?php echo $listPlayer ?></dd>
-								<dt>Free space:</dt>
-								<dd><?php echo ($available->players)-($player) ?></dd>  
+								 <dt>Free space:</dt>
+								<dd><?php echo ($available->players)-($player) ?></dd>
 								<dt>My status:</dt>
 								<dd><?php  if($checkStatus){
 										 echo 'Registed';
 									 }else{
 									 	echo 'Not Register';
-									 } ?>
-								</dd>
+									 } ?></dd>
 								<dt></dt>
 								<dd class="link">								
-									<a id="tournamentsReg" href="<?php echo base_url();?>setting/registAccount"><span>Register now!</span></a>
+									<a id="tournamentsReg" href="#"><span>Register now!</span></a>
 								</dd>
 							</dl>
 						</div>
@@ -125,18 +143,15 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span>
-									
-									<?php echo (($list_chitiet->top1) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?>
-									</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_chitiet->phantramweb ?></span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top2 ?>,000</span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top4 ?>,000</span></span></strong>
 							</div>
 						</div>
 					</div>
@@ -183,7 +198,7 @@
 						<tbody>         
 							<tr>             
 								<td>
-									<span style="font-weight: bold;"><?php echo $list_chitiet->name_tour ?><a target="_blank" href="#"></a></span>
+									<span style="font-weight: bold;"><?php echo $list_chitiet->name_tour ?><a target="_blank" href="#">Twists:</a></span>
 								</td>
 							</tr>    
 						</tbody>
@@ -195,8 +210,7 @@
 								<td>
 									<img width="128" height="178" alt="" src="<?php echo base_url();?>assets/flash_game/images/winnerposition.jpg"></td>             
 								<td>             
-									<p>The first three players will receive <?php echo (($list_chitiet->top1) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?>, <?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?> and <?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?> Belote respectively. <br>
-								 May the best player win!</p>             
+									<p><?php echo $list_chitiet->detail ?></p>             
 								</td>             
 							</tr>    
 						</tbody>
@@ -243,7 +257,7 @@
 										<td class="last"></td>
 									</tr>
 								</tfoot>
-								 <tbody>
+								<tbody>
 									<?php foreach ($list_player as $item) 
 									{ ?>
 									<tr class="dark">
@@ -256,7 +270,7 @@
 										<td> - </td>
 									</tr>
 									<?php } ?>
-								</tbody> 
+								</tbody>
 							</table>
 							<ul class="paging">
 								<li class="prev inactive"><a data-gtt="Previous page" title=""><span>Previous page</span></a></li>
@@ -279,7 +293,7 @@
 								<li class="next inactive">
 									<a href="#" data-gtt="Next page" title=""><span>Next page</span></a>
 								</li>
-								<li class="total"><span>1&nbsp;-&nbsp;20&nbsp;of&nbsp;<?php echo $listPlayer ?></span></li>
+								<li class="total"><span>1&nbsp;-&nbsp;20&nbsp;of&nbsp;395</span></li>
 							</ul>
 						</div>
 					</div>
@@ -296,25 +310,52 @@
 					});
 				});
 		</script>
-			<div id="tournamentSignOn" class="">
-				<div class="contBox">	
-					<div class="countdown tournStartCounter">
-						<p class="tournStartIn">Begins in:</p>
-						<p id="countdown">31:25:07</p>
-					</div>
-					<div class="buttonHolder">
-				<?php  if(!$checkStatus){ ?>
-					<form action="<?php echo base_url();?>giaidau/register" method="post" align="center">	
-						<input name="tour_id" type="hidden" value="<?php echo $_SESSION['id_giaidau']->tour_id ?>" />
-						<button name="dkthamgiagiaidau" id="landingSend" value="<?php echo $_SESSION['front_user_id']?>" class="formButton fbSubmit"><span>Register now!</span></button>  
-					</form>
-					<?php
-									 }else{
-									 	echo '';
-									 } ?>
-					</div>
-				</div>
-			</div>
+			<div class="contBox" id="sideBarLogin">
+			<h3><span>
+				<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Connexion
+								<?php } else{ ?>
+									Log In
+								<?php } ?></span></h3>
+			<form method="post" enctype="" name="fnLogin" id="fnLogin" class="container" action="<?php echo base_url()?>dangky/checkAccount">
+				<table>
+					<tbody><tr>
+						<td><input type="text" name="nick" id="lNick1" title="Nickname" value="Nickname" onblur="if(this.value=='') this.value='Nickname';" onfocus="if(this.value=='Nickname') this.value='';"></td>
+						<td>
+							<input type="password" name="pass" id="lPass1" title="Password" value="Password" onblur="if(this.value=='') this.value='Password';" onfocus="if(this.value=='Password') this.value='';">
+							
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input name="autologin" type="checkbox" id="autologin2" value="1" class="ffCheckbox">
+							<label for="autologin2">
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Rester identifié
+								<?php } else{ ?>
+									Stay logged in
+								<?php } ?></label>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button name="submit" type="submit" class="formButton fbSubmit" id="landingSend">
+							<span>
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Connexion
+								<?php } else{ ?>
+									Log In
+								<?php } ?></span>
+							</button>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
 			<div id="trust" class="contBox">
 				<h3>Simple &amp; Secure</h3>
 				<div class="container">

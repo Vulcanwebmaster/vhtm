@@ -29,6 +29,7 @@
 						'name_tourfr'=>$this->input->post('name_tourfr'),
 						'game_id'=>$this->input->post('game_id'),
 						'rules'=>$this->input->post('rules'),
+						'avarta'=>$this->input->post('avarta'),
 						'rules'=>$this->input->post('rulesfr'),
 						'overview'=>$this->input->post('overview'),
 						'overview'=>$this->input->post('overviewfr'),

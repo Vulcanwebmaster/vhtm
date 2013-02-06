@@ -8,7 +8,7 @@ class Mgiaidau extends CI_Model
 		$this->load->helper('date');
 	}
 	
-	function getListCategory()
+	function getListCategory($tableName='',$columnName='',$index='')
 	{
 		$this->db->select();
 		$this->db->from('fg_tournaments');
@@ -198,6 +198,19 @@ class Mgiaidau extends CI_Model
 	 	return $list;
 	}
 	
+	function getRowByColumn($tableName='',$columnName='',$value='')
+	 {
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get($tableName);
+	 	if ($ds->num_rows()>0)
+	 	{
+	 		$item=$ds->row(0);
+	 		$ds->free_result();
+	 		return $item;
+	 	}
+	 	else return false;
+	 }
+	 
 	function gamePast(){
 		$this->db->where('end_date <' ,date('Y-m-d'));
 		$this->db->select();

@@ -79,11 +79,17 @@
 							<strong class="tournCufon"><?php echo date("H:i",strtotime($list_chitiet->start_date));?></strong>
 						</div>
 					</div>
-					<div id="gameShot">
-						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg">
+					<!-- <style type="text/css">
+					.avarta p img{
+						width: 273px !important;
+						height: 164px !important;
+					}
+				</style> -->
+					<div id="gameShot" class="avarta">
+<!-- 						 <?php echo $list_chitiet->avarta ?> -->
 						<dl class="tournCufon">
 							<dt>Jackpot</dt>
-							<dd><span class="funCurrencyContainer"><span>Twists </span>37.500</span></dd>
+							<dd><span class="funCurrencyContainer"><span>Belote </span><?php echo $list_chitiet->tienthuong?></span></dd>
 						</dl>
 					</div>
 				</div>
@@ -211,7 +217,12 @@
 						</div>
 					</div>
 				</div>
-				<div id="content" class="content3" style="display: none;">
+				<!-- <div id="content" class="content3" style="display: none;"> -->
+					<div class="holder">
+					</div>
+					
+					<!-- item container -->
+					
 					<div id="tournRanking" class="contBox">
 						<h3><span>Tournament details&nbsp;-&nbsp;<?php echo $list_chitiet->name_tour ?></span></h3>
 						<div class="container">
@@ -244,6 +255,7 @@
 									</tr>
 								</tfoot>
 								 <tbody>
+								 	<ul id="itemContainer">
 									<?php foreach ($list_player as $item) 
 									{ ?>
 									<tr class="dark">
@@ -256,6 +268,7 @@
 										<td> - </td>
 									</tr>
 									<?php } ?>
+									</ul>
 								</tbody> 
 							</table>
 							<ul class="paging">
@@ -327,3 +340,45 @@
 	<script type="text/javascript">
 	$('#pagetournament').addClass('active')
 </script>
+<script type="text/javascript">
+/* when document is ready */
+  $(function() {
+    /* initiate plugin */
+    $("div.holder").jPages({
+        containerID: "itemContainer"
+    });
+});</script>
+<style type="text/css">
+ .holder {
+    margin:15px 0;
+}
+.holder a {
+    font-size:12px;
+    cursor:pointer;
+    margin:0 5px;
+    color:#333;
+}
+.holder a:hover {
+    background-color:#222;
+    color:#fff;
+}
+.holder a.jp-previous {
+    margin-right:15px;
+}
+.holder a.jp-next {
+    margin-left:15px;
+}
+.holder a.jp-current,a.jp-current:hover {
+    color:#FF4242;
+    font-weight:bold;
+}
+.holder a.jp-disabled,a.jp-disabled:hover {
+    color:#bbb;
+}
+.holder a.jp-current,a.jp-current:hover,.holder a.jp-disabled,a.jp-disabled:hover {
+    cursor:default;
+    background:none;
+}
+.holder span {
+    margin: 0 5px;
+}</style>

@@ -92,18 +92,28 @@ position: relative;
 		}
 	</style>
 	<style type="text/css">
-					.tuyet p img{
-						width: 213px !important;
-						height: 76px !important;
+					.tuyet1 p img{
+						width: 207px !important;
+						height: 84px !important;
 						position: absolute;
 						left: 0px !important;
 						top: -11px !important;
 					}
+					.tuyet p img{
+						width: 134px !important;
+						height: 94px !important;
+						position: absolute;
+						left: 0px !important;
+						top: -11px !important;
+					}
+					.so1_medium .so1Tourn, .so1_medium p, .so1_small .so1Tourn, .so1_small p{
+						display: block !important;
+					}
 				</style>
 		<div class="contBox" id="gamesDetailsHeader">
 			<div class="container">
-				<div class="game_49 tuyet" id="gameHeader">
-					<div class="rating5 tuyet">
+				<div class="game_49 tuyet1" id="gameHeader">
+					<div class="rating5 tuyet1">
 					<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);" class="gameHeaderStars"></span>rating: 5</div> 
 						<?php echo $list_chitiet->image ?> 
 <!-- 						<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_49_logo_220x100_EN-US.png);" class="gameHeaderLogo"></span> -->
@@ -115,76 +125,21 @@ position: relative;
 							{ ?>
  							<dd><?php echo $item->category_name;?></dd>  <?php } ?>
 							<dt>Min. no. of players:</dt>
-							<dd>2</dd>
+							<dd><?php echo $list_chitiet->min_player ?></dd>
 							<dt>Duration:</dt>
-							<dd>~ 3 min.</dd>
+							<dd>~ <?php echo $list_chitiet->duration ?> min.</dd>
 						</dl>
-						<a href="#" class="room"><span>Play <?php  echo $list_chitiet->name ?> online!</span></a>
 					</div>
-				<!-- <div id="gameHeader" class="game_49">
-					<div class="rating5">
-						<span class="gameHeaderStars" style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameHeaderStars.png);"></span>rating: 5</div>
-						<span class="gameHeaderLogo" style="display:block;background-image: url(<?php echo base_url();?><?php echo $list_chitiet->image ?></span>
-						<dl>
-							<dt>
-								<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									Joueurs en ligne:
-								<?php } else{ ?>
-									Playing now:
-								<?php } ?></dt>
-							<dd>48</dd>
-							<dt><?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									Type:
-								<?php } else{ ?>
-									Type:
-								<?php } ?></dt>
-							<dd><?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									OtherArcades & Autres
-								<?php } else{ ?>
-									Arcade &amp;
-								<?php } ?> </dd>
-							<dt><?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									Min. Réf. Nombre de joueurs:
-								<?php } else{ ?>
-									Min. no. of players:
-								<?php } ?></dt>
-							<dd>2</dd>
-							<dt><?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									Durée:
-								<?php } else{ ?>
-									Duration:
-								<?php } ?></dt>
-							<dd>~ 3 min.</dd>
-						</dl>
-						<a class="room" href="<?php echo base_url();?>games/api"><span>
-							<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									Jouer
-								<?php } else{ ?>
-									Play
-								<?php } ?>
-							<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									<?php echo $list_chitiet->namefr ?>
-								<?php } else{ ?>
-									<?php echo $list_chitiet->name ?>
-								<?php } ?>
-								<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									en ligne!
-								<?php } else{ ?>
-									online!
-								<?php } ?></span></a>
-					</div> -->
-					<div id="gameShot">
-						<a rel="lightbox[set1]" data-gtt="Bingo" href="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_780x480.jpg" title="">
-						<img alt="Bingo" src="<?php echo base_url();?>assets/flash_game/images/game_49_gameshot_260x160.jpg"></a>
+				
+					<div id="gameShot" class="avarta">
+						<?php echo $list_chitiet->avarta ?>
 					</div>
+					<style type="text/css">
+					.avarta p img{
+						width: 273px !important;
+						height: 164px !important;
+					}
+				</style>
 				</div>
 			</div>
 			
@@ -195,8 +150,8 @@ position: relative;
 								<?php } else{ ?>
 									Popular games
 								<?php } ?></span></h3>
-				<div class="container gameCat tuyet">
-					<ul class="gameList">
+				<div class="container gameCat">
+					<ul class="gameList tuyet">
 						<?php foreach ($topgame as $item) 
 							{ ?>
 						<li class="item">
@@ -351,11 +306,12 @@ position: relative;
 		<div id="sideNav"></div>
 		<div id="sideBar">
 		 <div id="playNowSideBar" class="contBox">
-			<h3>Bingo</h3>
+			<h3><?php echo $list_chitiet->name?></h3>
 			<div class="container">
-				<p>12-35-75-9-4 ... BINGO! Who'll hit the jackpot?</p>
-				<button id="landingSend" class="formButton fbSubmit room">
-				<span id="game_49">Play now!</span></button>
+				<p><?php echo $list_chitiet->name?>! Who'll hit the jackpot?</p>
+				<a href="<?php echo base_url();?>games/api/<?php echo $list_chitiet->game_id."-".$list_chitiet->alias;?>" class="room"><span>Play <?php  echo $list_chitiet->name ?> online!</span></a>
+				<!-- <button id="landingSend" class="formButton fbSubmit room">
+				<span id="game_49">Play now!<a href="<?php echo base_url();?>games/api"/></span></button> -->
 			</div>
 		</div> 
 		<style>
