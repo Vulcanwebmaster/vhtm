@@ -3,14 +3,14 @@
 					
 						  <div class="slider-wrapper theme-default slider">
 				            <div id="slider" class="nivoSlider" >
-				                <img src="images/Belote_26.png"/>
-				                <img src="images/mario_gif.gif"/>
-				                <img src="images/sl2.jpg"/>
-				                <img src="images/sl3.jpg"/>
+				                <img src="<?php echo base_url();?>assets/flash_game/images/Belote_26.png"/>
+				                <img src="<?php echo base_url();?>assets/flash_game/images/mario_gif.gif"/>
+				                <img src="<?php echo base_url();?>assets/flash_game/images/sl2.jpg"/>
+				                <img src="<?php echo base_url();?>assets/flash_game/images/sl3.jpg"/>
 				            </div>				           
 				        </div>
 				
-					<img src="images/bg.png"/>
+					<img src="<?php echo base_url();?>assets/flash_game/images/bg.png"/>
 				</div>
 <div id="main">
 					<div id="topmain">
@@ -50,7 +50,9 @@
 							<div id="new">
 								<p class="tieude">News</p>
 								<div class="contenttexxtmainlefft">
-									<p class="titlenew">Belote bienvenue:ụn jeu tres amusant</p>
+									<?php foreach ($list_news as $value) 
+				 			{ ?>
+									<p class="titlenew"><?php echo $value->name ?></p>
 									<div class="date">
 										<ul>
 											<li class="font123">02</li>
@@ -58,11 +60,12 @@
 											<li>FEV<br/>2013</li>
 										</ul>
 									</div>
+									<?php } ?>
 								</div><br clear="both" />
 								<div class="mainctentlmainleft">
 									<div class="topmainlefftct">
 										<ul>
-											<li><a href="#">par Imedgazou</a></li>
+											<li style="background:none"><a href="#">par Imedgazou</a></li>
 											<li>|</li>
 											<li class="imglimain"><a href="#">About, accuei</a></li>
 											<li>|</li>
@@ -70,7 +73,7 @@
 										</ul>
 									</div>
 									<div class="contentimgtext">
-										<img src="images/Belote_134.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/>
 										<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
 											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -79,7 +82,7 @@
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 										<lable>charger plus de nouvelles</lable>
-										<img src="images/row.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>
 							</div>
@@ -100,7 +103,7 @@
 								</div>								
 								<div class="mainctentlmainleft">									
 									<div class="contentimgtext">
-										<img src="images/Belote_134.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/>
 										<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
 											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -127,19 +130,19 @@
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
 								<ul>
 									<li>
-										<img src="images/Belote_74.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_74.png"/>
 										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
 									</li>
 									<li>
-										<img src="images/Belote_78.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_78.png"/>
 										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
 									</li>
 									<li>
-										<img src="images/Belote_80.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_80.png"/>
 										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
 									</li>
 									<li>
-										<img src="images/Belote_82.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/>
 										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
 									</li>
 								</ul>
@@ -149,19 +152,19 @@
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
 								<ul>
 									<li class="c1">
-										<img src="images/Belote_74.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_74.png"/>
 										<label><a href="#">Mon name et surname</a> $865.67</label>
 									</li>
 									<li class="c2">
-										<img src="images/Belote_78.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_78.png"/>
 										<label><a href="#">Mon name et surname</a> $865.67</label>
 									</li>
 									<li class="c2">
-										<img src="images/Belote_80.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_80.png"/>
 										<label><a href="#">Mon name et surname</a> $865.67</label>
 									</li>
 									<li class="c1">
-										<img src="images/Belote_82.png"/>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/>
 										<label><a href="#">Mon name et surname</a> $865.67</label>
 									</li>
 								</ul>
@@ -173,7 +176,7 @@
 									<div class="likef">
 										<label style="color:#0184a3">Belote.com</label>
 										<div style="margin-top:5px;">
-											<img src="images/Belote_102.png"/>
+											<img src="<?php echo base_url();?>assets/flash_game/images/Belote_102.png"/>
 											<label style="padding-top:5px">You like this</label>
 										</div>
 									</div><br clear="both"/>
@@ -194,7 +197,7 @@
 						</div>
 						</div>
 						<div id="bottommain">						
-		        			<div class="prev12"><img src="images/Belote_138.png"></div>
+		        			<div class="prev12"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_138.png"></div>
 			        			<div id="clickslide">			        		
 			        				<div style="width:90%; overflow: hidden;">
 			        		<!-- Slide Footer---->
