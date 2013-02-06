@@ -59,9 +59,9 @@
 									<p class="titlenew"><?php echo $value->name ?></p>
 									<div class="date">
 										<ul>
-											<li class="font123">02</li>
+											<li style="background: none" class="font123"><?php echo date("d",strtotime($value->create_date));?></li>
 											<li class="font123" style="font-weight:normal">|</li>
-											<li>FEV<br/>2013</li>
+											<li><?php echo date("M",strtotime($value->create_date));?><br/><?php echo date("Y",strtotime($value->create_date));?></li>
 										</ul>
 									</div>
 									<?php } ?>
@@ -76,12 +76,26 @@
 											<li class="imglimain1"><a href="#">10 comments</a></li>
 										</ul>
 									</div>
-									<div class="contentimgtext">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/>
-										<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+									<style type="text/css">
+										.tuyet p{
+										float: left;
+										width: 245px;
+										height: 203px;
+										}
+											.tuyet p img{
+										border: 1px solid #696969;
+										width: 245px !important;
+										height: 203px !important;
+										}									
+										</style>
+									<div class="contentimgtext tuyet">
+										<?php foreach ($list_news as $value) 
+				 			{ ?>
+				 						<?php echo $value->image ?>
+										<!-- <img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
+										<p style="width: 375px;text-align: left"> <?php echo $value->content ?>
 											</p>
+											<?php }?>
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
