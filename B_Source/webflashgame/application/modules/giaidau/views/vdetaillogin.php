@@ -80,11 +80,18 @@
 							<strong class="tournCufon"><?php echo date("H:i",strtotime($list_chitiet->start_date));?></strong>
 						</div>
 					</div>
-					<div id="gameShot">
-						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg">
+					<style type="text/css">
+					.avarta p img{
+						width: 232px !important;
+						height: 154px !important;
+					}
+				</style>
+					<div id="gameShot" class="avarta">
+<!-- 						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg"> -->
+						<?php echo $list_chitiet->avarta ?>
 						<dl class="tournCufon">
 							<dt>Jackpot</dt>
-							<dd><span class="funCurrencyContainer"><span>Twists </span>37.500<!-- <?php echo $key->tienthuong ?> --></span></dd>
+							<dd><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->tienthuong ?></span></dd>
 						</dl>
 					</div>
 				</div>
@@ -105,8 +112,8 @@
 								}else{ echo 'Not started'; } ?></dd>
 								<dt>Players:</dt>
 								<dd><?php echo $listPlayer ?></dd>
-								<!-- <dt>Free space:</dt>
-								<dd><?php echo $listPlayer ?>607</dd> -->
+								<dt>Free space:</dt>
+								<dd><?php echo ($available->players)-($player) ?></dd>
 								<dt>My status:</dt>
 								<dd><?php  if($checkStatus){
 										 echo 'Registed';
@@ -125,15 +132,18 @@
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_chitiet->phantramweb ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span>
+									
+									<?php echo (($list_chitiet->top1) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?>
+									</span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top2 ?>,000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo $setting_detail->top4 ?>,000</span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
 							</div>
 						</div>
 					</div>
@@ -192,7 +202,8 @@
 								<td>
 									<img width="128" height="178" alt="" src="<?php echo base_url();?>assets/flash_game/images/winnerposition.jpg"></td>             
 								<td>             
-									<p><?php echo $list_chitiet->detail ?></p>             
+									<p>The first three players will receive <?php echo (($list_chitiet->top1) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?>, <?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?> and <?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?> Belote respectively. <br>
+								 May the best player win!</p>             
 								</td>             
 							</tr>    
 						</tbody>
@@ -254,7 +265,7 @@
 									<?php } ?>
 								</tbody>
 							</table>
-							<ul class="paging">
+							<!-- <ul class="paging">
 								<li class="prev inactive"><a data-gtt="Previous page" title=""><span>Previous page</span></a></li>
 								<li>
 									<ol>
@@ -276,7 +287,7 @@
 									<a href="#" data-gtt="Next page" title=""><span>Next page</span></a>
 								</li>
 								<li class="total"><span>1&nbsp;-&nbsp;20&nbsp;of&nbsp;395</span></li>
-							</ul>
+							</ul> -->
 						</div>
 					</div>
 				</div>			
