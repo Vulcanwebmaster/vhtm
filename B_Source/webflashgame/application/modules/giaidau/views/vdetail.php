@@ -83,7 +83,7 @@
 						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg">
 						<dl class="tournCufon">
 							<dt>Jackpot</dt>
-							<dd><span class="funCurrencyContainer"><span>Twists </span>37.500</span></dd>
+							<dd><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->tienthuong ?></span></dd>
 						</dl>
 					</div>
 				</div>
@@ -256,9 +256,12 @@
 										<td> - </td>
 									</tr>
 									<?php } ?>
+									<center style="font-size: 15px;color:red">
+										<?php echo $this->pagination->create_links();?>
+									</center>
 								</tbody> 
 							</table>
-							<ul class="paging">
+							<!-- <ul class="paging">
 								<li class="prev inactive"><a data-gtt="Previous page" title=""><span>Previous page</span></a></li>
 								<li>
 									<ol>
@@ -280,7 +283,7 @@
 									<a href="#" data-gtt="Next page" title=""><span>Next page</span></a>
 								</li>
 								<li class="total"><span>1&nbsp;-&nbsp;20&nbsp;of&nbsp;<?php echo $listPlayer ?></span></li>
-							</ul>
+							</ul> -->
 						</div>
 					</div>
 				</div>			

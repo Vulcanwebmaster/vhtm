@@ -22,6 +22,11 @@ class Giaidau extends NIW_Controller
 	 
 	function page($index=0)
 	{
+			$config['base_url']=base_url().'giaidau/admin/page/';
+			$config['per_page']=1;
+			$config['total_rows']=count($this->Mgiaidau->getListFull('fg_tournaments'));
+			$config['uri_segment']=1;
+			$this->pagination->initialize($config);
 			
 			$config['base_url']=base_url().'homepage/page/';
 			$config['per_page']= 9;
@@ -39,7 +44,7 @@ class Giaidau extends NIW_Controller
 			$data['week'] = $this->Mgiaidau->gameWeek($index);
 			
 			$data['today'] = $this->Mgiaidau->gameToday();
-			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
+			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',1,$index);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
