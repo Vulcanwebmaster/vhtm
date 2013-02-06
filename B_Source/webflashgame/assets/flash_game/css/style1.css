@@ -1,116 +1,121 @@
-body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-family: Arial ; margin:0; padding:0; color:#888888}
+.dg-container{
+	width: 100%;
+	height: 200px;
+	position: relative;
+}
+.dg-wrapper{
+	width: 481px;
+	height: 200px;
+	margin: 0 auto;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	-ms-perspective: 1000px;
+	perspective: 1000px;
+}
+.dg-wrapper a{
+	width: 300px;
+	height: 200px;
+	display: block;
+	position: absolute;
+	left: 50px;
+	top: 0;
+	/*background: transparent url(../images/browser.png) no-repeat top left;*/
+	box-shadow: 3px 5px 5px rgba(0,0,0,0.3);
+}
+.dg-wrapper a.dg-transition{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.dg-wrapper a img{
+	display: block;
+	padding: 5px 0px 0px 1px;
+}
+.dg-wrapper img{ height:200px; width:370px;}
+.dg-wrapper a div{
+	font-style: italic;
+	text-align: center;
+	line-height: 50px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+	color: #333;
+	font-size: 16px;
+	width: 100%;
+	bottom: -55px;
+	display: none;
+	position: absolute;
+}
+.dg-wrapper a.dg-center div{
+	display: block;
+}
+.dg-container nav{
+	width: 58px;
+	position: absolute;
+	z-index: 1000;
+	bottom: 40px;
+	left: 50%;
+	margin-left: -29px;
+}
+.dg-container nav span{
+	text-indent: -9000px;
+	float: left;
+	cursor:pointer;
+	width: 24px;
+	height: 25px;
+	opacity: 0.8;
+	background: transparent url(../images/arrows.png) no-repeat top left;
+}
+.dg-container nav span:hover{
+	opacity: 1;
+}
+.dg-container nav span.dg-next{
+	background-position: top right;
+	margin-left: 10px;
+}
+#gallery, #upload {
+border: 1px solid #ccc; 
+margin: 10px auto; 
+width: 570px; 
+padding: 10px;
+}
 
-#wapper{ margin:0; padding:0;}
+#blank_gallery {
+font-family: Arial; 
+font-size: 18px; 
+font-weight: bold;
+text-align: center;
+}
 
-#header{ width:100%; height:170px}
-#topheader{ height: 50px;}
-#spacetopheader{ height:3px; background:#ff4400; border-bottom:1px solid #b9471d; float:left; width:49%;}
-#contenttopheader{ height:100%; width:624px; float:left; background:#ff4400; border-bottom:1px solid #b9471d; border-left:1px solid #b9471d}
-.formlogin{ margin:9px 0 0 15px; color:#fff;}
-.spacespace{ height: 3px; background:#ff4400}
-.usename{ background: #fff url(../images/Belote_10.png) 5px 6px no-repeat; padding-left:25px; border-radius:3px; border:1px solid #888888; width:110px; height: 24px;}
-.pass{ background:#fff url(../images/Belote_12.png) 5px 6px no-repeat; padding-left:25px; border-radius:3px; border:1px solid #888888; width:110px; height: 24px;}
-.login{ background:url(../images/Belote_05.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:12px;}
-.register{ background:url(../images/Belote_07.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:11px;}
-#bottomheader{ width:1000px; margin:0 auto;}
-#logo{ width:33%; float:left}
-#menu{ width: 67%; float:left; font-size:34px; margin-top:15px; font-family: "Times New Roman", Times, serif }
-#menu ul{ margin:0; padding:0 0 0 55px;}
-#menu li{ float:left; list-style:none; padding:20px; background:url(../images/vienmenu.png) -5px 10px no-repeat; cursor:pointer}
-#menu a{text-decoration:none; color:black;}
-#menu label{ font-weight:bold;}
-#menu p{font-size:14px; padding:0px; margin:0px;}
+.thumb {
+float: left; 
+width: 150px; 
+height: 100px; 
+padding: 10px; 
+margin: 10px; 
+background-color: #ddd;
+}
 
-#body{ width:100%; height:auto; clear:both; }
-#slider12{ width:100%; height:378px; background:#ff6b35;}
-#slider img{ width:1000px !important; height:378px !important;}
-.slider{ width:1000px; margin:0 auto;}
-#main{ width:1000px; margin:40px auto; }
-#topmain{ border-radius:5px; border:1px solid #e1dfdf; height: 150px; background:#fff; padding:15px;}
-.texttopmain{ width:33%; float:left; padding-left:3px;}
-.titlep{ color:black; font-size:18px; margin:0; padding:0; border-bottom:1px solid #e7e7e7; width:300px;}
-.numbertexttopmain{ width:18%; float:left;}
-.textcontent{ width:80%; float:left}
-.textcontent p{margin:0; padding:10px;}
-.submittextcontent{ background:url(../images/Belote_40.png) no-repeat; width:210px; height:48px; color:#fff; padding:11px 30px; font-size:18px; font-weight:bold;}
-.submittextcontent1{background:url(../images/Belote_43.png) no-repeat; width:210px; height:48px; color:#fff; padding:11px 30px; font-size:18px; font-weight:bold;}
-.submittextcontent2{background:url(../images/Belote_46.png) no-repeat; width:210px; height:48px; color:#fff; padding:11px 30px; font-size:18px; font-weight:bold;}
+.thumb:hover {
+outline: 1px solid #999;
+}
 
-#contentmain{ padding:10px; width:100%; margin-top:15px;}
-#contentmainleft{ width:70%; height:auto; float:left}
-#new, #play{background:#fff; border:1px solid #e3e3e3; border-radius:3px; padding:0; clear:both}
-.tieude{ width:98.7%; background:#e1e1e1; height:30px; padding:5px 0 10px 10px; margin:0; color:#696969; font-size:30px; font-weight:bold}
-.contenttexxtmainlefft{ padding:0 25px 25px 25px; border-bottom:1px solid #bdbdbc; height:38px; width:90%}
-.titlenew{ float:left; width:70%; color:black; font-size:18px; padding-top:10px;}
-.date{ float:right; width:25%; color:#979797}
-.date li{ float:left; list-style:none; font-size:20px; padding-right:5px;}
-.font123{ font-size:42px !important; font-weight:bold;}
-.topmainlefftct li{ float:left; list-style:none; padding-left:5px;}
-.topmainlefftct ul{ margin:0; padding:0;}
-.topmainlefftct a{ color:#696969; text-decoration:none;}
-.imglimain{ background:url(../images/Belote_56.png) 2px 0px no-repeat; padding-left:20px !important}
-.imglimain1{ background:url(../images/Belote_61.png) 3px 3px no-repeat; padding-left:20px !important}
-.mainctentlmainleft{ margin-top:-10px; padding:0}
-.contentimgtext{clear:both; padding:15px;}
-.topmainlefftct{ padding-left:15px;}
-.contentimgtext img{float:left; border:1px solid #696969; width:308px; height:203px}
-.contentimgtext p{ float:left; padding:0 10px; width:49%; margin:0;}
-.bottommainctentmailleft{ background:#e1e1e1; height:20px; text-align: center; margin-top:15px}
- #play{ margin-top:20px;}
-  #play .contenttexxtmainlefft{ height:30px !Important}
-#play .contentimgtext{ padding:0 15px !important}
-#play .contentimgtext img{ width:201px; height:164px}
-#play .contentimgtext p{ width:65%}
-#contentmainright{ float:left; width:27%;  margin-left:12px;}
-.l12323{ border:1px solid #e3e3e3; border-radius:3px; background:#fff;}
-.mainright1, #topturnois,#topjou{border-bottom:1px solid #e3e3e3; padding:10px}
-.mainright1 img{ float:left; width:77px; height:74px;}
-.ctmainrigt1{ float:right; width:66%; }
-.ctmainrigt1 p{ font-size:22px; font-weight:bold; color:#018eaf; padding:5px 0; margin:0; border-bottom:1px solid #e3e3e3}
-.ctmainrigt1 label{ font-size:20px ;font-weight:bold; color:#65c219}
-#topturnois p{ font-size:25px; font-weight:bold; background:url(../images/Belote_67.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78}
-#topturnois ul{ padding:0; margin:0}
-#topturnois li{ list-style:none; background:url(../images/Belote_71.png) 18px 0 no-repeat; height:35px; padding-top:5px; }
-#topturnois a{text-decoration:none; color:#888888; padding-left:5px}
-#topturnois label{ padding-left:33px}
-#topturnois img, #topjou img{ padding:0 0 0 2px}
-#topjou p{background:url(../images/Belote_84.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78; padding-top:8px;}
-#topjou ul{padding:0; margin:0}
-#topjou li{ list-style:none;}
-.c1{background:url(../images/Belote_88.png) 18px 0 no-repeat; height:35px; }
-.c2{background:url(../images/Belote_91.png) 18px 0 no-repeat; height:35px; }
-#topjou label{padding-left:24px;}
-#topjou a{text-decoration:none; color:#888888; padding-right:10px}
-#belte p{background:url(../images/Belote_95.png) 2px 0px no-repeat;padding-left:45px; height:40px; color:#015d78; padding-top:8px; padding-top:0;}
-#belte{border-bottom:1px solid #e3e3e3; margin-bottom:15px;}
-.faclide{border-bottom:1px solid #e3e3e3; padding:10px; border-bottom:1px solid #e3e3e3; padding-bottom:10px}
-.faclide img{float:left;}
-.likef{ margin-left:10px; float:left; }
-.likef label{}
-.plupginf{background:url(../images/Belote_107.png) 5px 0 no-repeat; padding: 0px 10px 10px 20px; font-size:11px;}
-.listgerular { margin-top:15px; margin-left:20px}
-.listgerular ul{ margin:0; padding:0}
-.listgerular li{ list-style:none; float:left; padding-right:10px}
-#bottommain{ border-radius:5px; background:#eeeeee; height:180px; width:89%; clear:both; margin-top:50px; padding:10px 50px; position: relative}
-.prev12{position:absolute; left:80px; top:85px; cursor: pointer}
-.next12{position:absolute; right:80px; top:85px; cursor: pointer}
-#clickslide{ height:130px; margin-top:30px}
-#clickslide{ clear:both; width:85%; position:relative; overflow: hidden; float:left; margin-bottom:30px; margin-left:63px;}
+img {
+border: 0;
+}
 
-.slideimage{ width:1400px; margin-bottom:50px; height:128px; position:absolute}
-.slideimage p{ float:left; width:220px !important; height: 128px !important; margin:0 25px 0 13px; text-align:center; background:#ffffff; border:1px solid #e3e3e3}
-.slideimage img{width:212px !important; height:120px; margin-top:3px; }
-
-
-#footer{ width:100%;}
-#footer1 { width:100%; height:80px; background:#ff4400;}
-.contentfooter1{ width:1000px; margin:0 auto;}
-.contentfooter1 p{ color:#fff; font-size:20px; padding:25px 10px; float:left; width:75%; margin:0}
-.sub{ float:right; background:black; width:20%; margin-top:25px; height:33px; text-align:center; color:#fff; padding-top:10px; font-size: 16px;}
-#footer2{ height:55px; background:#59acc3; }
-.contentfooter2{ width:1000px; margin:0 auto; color:black; padding-top:5px; position: relative; padding-left:100px}
-.contentfooter2 ul{ margin:0; padding:0}
-.contentfooter2 li{float:left; list-style:none; padding:5px}
-.uliu{ position:absolute; top:2px; right:35px;}
-#footer3{ background:black; height:50px; text-align:center; color:#fff; font-size:16px; padding-top:20px}
-
+#gallery:after {
+content: "."; 
+visibility: hidden; 
+display: block; 
+clear: both; 
+height: 0; 
+font-size: 0;
+}
