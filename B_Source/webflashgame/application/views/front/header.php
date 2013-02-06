@@ -40,7 +40,7 @@
 								<label>Francais </label>
 								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_22.png"/></p>
 								</a>
-								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/el.gif"/></p>
+								<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/el.gif"/></p>
 								</a>
 								</li>
 						</ul>
