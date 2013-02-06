@@ -1,3 +1,17 @@
+
+<div id="slider12">
+					
+						  <div class="slider-wrapper theme-default slider">
+				            <div id="slider" class="nivoSlider" >
+				                <img src="images/Belote_26.png"/>
+				                <img src="images/mario_gif.gif"/>
+				                <img src="images/sl2.jpg"/>
+				                <img src="images/sl3.jpg"/>
+				            </div>				           
+				        </div>
+				
+					<img src="images/bg.png"/>
+				</div>
 <div id="main">
 					<div id="topmain">
 						<div class="texttopmain">

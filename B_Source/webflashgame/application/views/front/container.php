@@ -38,9 +38,10 @@
 		</script/>
 	<!-----------endslide---------->
 </head>
-<body class="games  uc  noLeaderBoard root firefox">
+<!--<body class="games  uc  noLeaderBoard root firefox">-->
+<body>
 	
-	<div id="wrapper">
+	<div id="wrapper" style="width:100%">
 		<?php $this->load->view('front/header')?>
 
 		<?php $this->load->view('front/content')?>
