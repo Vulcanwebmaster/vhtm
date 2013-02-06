@@ -5,6 +5,7 @@
 					</div>
 					<div class="spacespace"></div>
 					<div id="contenttopheader">		
+						<?php if(!isset($_SESSION['front_user_fullname'])){ ?>
 						<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/checkAccount">
 							<input type="text" name="nick" class="usename" value="Nom d'utilisateur" onblur="if(this.value=='') this.value='Nom d'utilisateur';" onfocus="if(this.value=='Nom d'utilisateur') this.value='';" />
 							<input type="text" name="pass" class="pass" value="Mot de passe" onblur="if(this.value=='') this.value='Mot de passe';" onfocus="if(this.value=='Mot de passe') this.value='';"/>
@@ -12,7 +13,16 @@
 							or
 							<a style="padding: 8px 10px 10px 7px; text-decoration: none;" href="<?php echo base_url();?>dangky" class="register">enregistrer</a>
 						</form> 
-						
+						<?php }else{ ?>
+							 <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Bonjour: 
+								<?php } else{ ?>
+									Welcome: 
+								<?php } ?> <?php echo $_SESSION['front_user_fullname'] ?></p>
+						<?php } ?>
+							
+							
 					</div>
 				</div>
 				<div id="bottomheader">
