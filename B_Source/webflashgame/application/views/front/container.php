@@ -53,6 +53,6 @@
 		<?php $this->load->view('front/footer')?>
 		<?php $this->load->view('front/status-head')?>
 	</div>
-	<?php $this->load->view('front/feetback')?>
+	<!-- <?php $this->load->view('front/feetback')?> -->
 </body>
 </html>
