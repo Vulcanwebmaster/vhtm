@@ -579,7 +579,7 @@ body.games_details #main #container,body.tournaments_ #main #container{position:
 #gameShot{position:relative;_zoom:1;overflow:hidden}.games_details #gameShot a{display:block;width:260px;height:164px;margin:0 auto}
 #gameShot a span{cursor:pointer}.tournaments_ #gameShot img{display:block;width:260px;height:160px;border:2px solid #fff;margin:0 auto}
 .games_details #subNav,.tournaments_ #subNav{padding:0 10px}body.games_details #subNav span{padding:6px 0;right:-10px;top:1px}
-.games_details #subNav li a span,.tournaments_ #subNav li a span{background:url(../images/tableIconSprite_3.gif) no-repeat 0 0}
+.games_details #subNav li a span,.tournaments_ #subNav li a span{background:url(../images/tableIconSprite_3.gif) no-repeat 0 0; list-style:none;}
 .games_details #subNav li.active a span,.games_details #subNav li a:hover span,.tournaments_ #subNav li.active a span,.tournaments_ #subNav li a:hover span{color:#000}
 #subNav #btnSo3Details a span{background:url(../images/tableIconSprite_3.gif) no-repeat -1px -44px;padding-left:15px}
 #subNav #btnSo3Ranking a span{background:url(../images/tableIconSprite_3.gif) no-repeat -2px -68px;padding-left:19px}
@@ -728,7 +728,7 @@ p.info a{color:#666}p.success{color:#588f00;font-weight:bold;background:url(../i
 .help #nav.sticky .btnRules a span{background-position:-181px -44px}#nav #backToTop{position:absolute;top:0;left:50%;width:200px;height:44px;margin-left:-472px;display:none;background-image:none}
 #nav.sticky #backToTop{display:block}#nav.sticky li.active:first-child a{border-bottom:0}
 #subNav{clear:both}#subNav ul{margin:0;position:relative;bottom:-1px;_zoom:1;z-index:2;border-left:none;overflow:hidden}
-#subNav li{float:left;background:url(../images/subNavSprite.png) no-repeat right -111px;_background-image:url(../images/subNavSprite.gif);padding:0 20px 0 0;padding-right:15px;margin:0 1px 0 0}
+#subNav li{float:left;background:url(../images/subNavSprite.png) no-repeat right -111px;_background-image:url(../images/subNavSprite.gif);padding:0 20px 0 0;padding-right:15px;margin:0 1px 0 0; list-style: none}
 body.tournaments #subNav li{padding-right:20px}#subNav a{display:block;color:#6C6C6C;cursor:pointer;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;text-decoration:none;margin-right:1px;outline:0;background:url(../images/subNavSprite.png) no-repeat left -37px;_background-image:url(../images/subNavSprite.gif)}
 #subNav span{display:block;padding:6px 19px 6px 26px;border-bottom:0;position:relative;right:-15px}
 #subNav a:hover span{color:#000;text-shadow:2px 0 1px #fff,0 2px 1px #fff,-2px 0 1px #fff,0 -2px 1px #fff;_background-image:url(../images/subNavSprite.gif)}
@@ -812,7 +812,7 @@ ie #overlayJackpot p{zoom:1}#overlayJackpot .funCurrencyContainer{background-pos
 .print h2,.print h3,.print h4,.print #printTable,.print #printTable td{border:0}
 .print h2,.print #topLine,.print .contBox ol ul li{margin:0}.print h3{margin:1em 0 .5em}
 .print h4{margin:1em 0 .5em}.print p{color:#000}.print p,.print li{text-align:justify}
-.print p,.print ul,.print ol{page-break-inside:avoid}.print .contBox ol ul li{list-style-type:circle;padding:0}
+.print p,.print ul,.print ol{page-break-inside:avoid}.print .contBox ol ul li{}
 .print a:link,.print a:visited{color:#00f}.print #printTable{width:100%}.print #printHeader{display:table-header-group}
 .print #printFooter{display:table-footer-group}.print #printHeader td{padding-bottom:2em}
 .print #printFooter td{color:#444;text-align:right;font-size:11px}.print #printFooter td p{padding-top:2em;border-top:1px solid #ddd;text-align:right;color:#666}

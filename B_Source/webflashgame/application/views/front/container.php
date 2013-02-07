@@ -6,7 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true, chrome=1">	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.nivo.slider.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/css.css"><style type="text/css"></style>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/css.css">
+	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/mootools-core-1.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/flash_game/css/nivo-slider.css" type="text/css" media="screen" />
 	
@@ -23,8 +24,8 @@
 	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/modernizr.custom.53451.js"></script>
 	
-	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.min.js"></script>
-<!-------------- Bắt lỗi bằng js ------------>	
+	<!----<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.min.js"></script>
+---------- Bắt lỗi bằng js ------------>	
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/validationEngine.jquery.css" />
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.validationEngine-en.js"></script>

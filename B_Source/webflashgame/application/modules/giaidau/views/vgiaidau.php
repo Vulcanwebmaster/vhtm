@@ -18,10 +18,15 @@
 			}
 		#container{
 			float: left;
-			width: 648px;
+			width: 960px;
 		}
+		.tournList h3{ padding:27px;}
 		#anhgame123 p{ display: block; }
+		#main{ width:960px; padding:15px 24px 0 24px; background:#fff;}
 		#anhgame123 img{  height: 52px !important; width: 102px !important; }
+		#tournContainer, #siteShop, .tournList{width:960px !important}
+		.tournList .tournHelper, #mobilGames .helper, #getAbos .helper{ width:960px}
+		.contBox ul.paging{ width:960px !important;padding-bottom:15px !important}
 </style>
 
 <?php $this->load->view('front/menu')?>
@@ -85,7 +90,7 @@
 							  $(".so1_container p img").addClass("gameLogo pos_10");
 							});
 						</script>
-								<ul style="width: 588px;margin-right:0;">
+								<ul style="width: 100%;margin-right:0;">
 							<?php foreach ($today as $item) 
 							{ ?>
 							<li class="item">
@@ -163,14 +168,16 @@
 					<div class="container">
 						<style type="text/css">
 													.to1_container p{
-														display: block
+														display: block;
+														width:137px !important; height:12px !important; margin:0;
 													}
 													.to1_container img{
 														width:136px !important;
-														height: 77px !important;
+														height: 73px !important;
 													}
+													.tournList .container ul li, .siteshopMobileGames .container ul li{margin-right:0 !Important; width:160px!important}
 												</style>
-							<ul style="width: 588px;margin-right:0;">
+							<ul style="width: 100%;margin-right:0;">
 							<?php foreach ($week as $item) 
 							{ ?>
 							<li class="item">
@@ -248,7 +255,7 @@
 									Tournaments next week
 								<?php } ?></span></h3>
 					<div class="container" style="height:243px;">
-						<ul style="width: 700px;margin-right:0; position:absolute" class="slideimage">
+						<ul style="width: 100%;margin-right:0; position:absolute" class="slideimage">
 							
 							<?php foreach ($nextweek as $item) 
 							{ ?>

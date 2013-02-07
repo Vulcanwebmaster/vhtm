@@ -7,6 +7,7 @@
 					<div id="contenttopheader">		
 						<?php if(!isset($_SESSION['front_user_fullname'])){ ?>
 						<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/checkAccount">
+
 							<input type="text" name="nick" class="usename" value="Nom dutilisateur" onblur="if(this.value=='') this.value='Nom dutilisateur';" onfocus="if(this.value=='Nom dutilisateur') this.value='';" />
 							<input type="text" name="pass" class="pass" value="Mot de passe" 		 onblur="if(this.value=='') this.value='Mot de passe';" onfocus="if(this.value=='Mot de passe') this.value='';"/>
 							<input type="submit" name="submit" value="Login" class="login" />
@@ -77,7 +78,9 @@
 								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/el.gif"/></p></a>
 								<?php } elseif ($_SESSION['lang']=="fr"){ ?>
 								<label>Francais </label>
+
 								<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_22.png"/></p></a>
+
 								<?php }else { ?>
 								<label>Francais </label>
 								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_22.png"/></p></a>
