@@ -15,12 +15,13 @@
 							<a style="padding: 8px 10px 10px 7px; text-decoration: none;" href="<?php echo base_url();?>register" class="register">enregistrer</a>
 						</form> 
 						<?php }else{ ?>
+							<p style=" color: white; width: 190px; float: left; margin-left: 15px; font-size: 16px ">
 							 <?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Bonjour: 
 								<?php } else{ ?>
 									Welcome: 
-								<?php } ?> <?php echo $_SESSION['front_user_fullname'] ?>
+								<?php } ?> <?php echo $_SESSION['front_user_fullname'] ?></p>
 								<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/logOut">
 									<input type="submit" name="submit" value="Logout" class="login" />
 								</form>
