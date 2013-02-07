@@ -30,27 +30,54 @@
 					<div id="menu">
 						<ul>
 							<li><a href="<?php echo base_url()?>games/api">
-								<label>Jouner</label>
-								<p>enligne</p>
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>	
+									<label>Jouner</label>
+									<p>enligne</p>
+								<?php } elseif($_SESSION['lang']=="en"){ ?>
+									<label>Play</label>
+									<p>Online</p>	
+								<?php }else{ ?>	
+									<label>Jouner</label>
+									<p>enligne</p>
+								<?php } ?>	
 								</a></li>
 							
 							<li><a href="<?php echo base_url();?>tournament">
-								<label>Tournois</label>
-								<p>jouer avec meilleurs</p>
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>	
+									<label>Tournois</label>
+									<p>jouer avec meilleurs</p>
+								<?php } elseif($_SESSION['lang']=="en"){ ?>
+									<label>Tournament</label>
+									<p>play with the best</p>	
+								<?php }else{ ?>	
+									<label>Tournois</label>
+									<p>jouer avec meilleurs</p>
+								<?php } ?>	
 								</a></li>
 							
 							<li><a href="<?php echo base_url();?>helps">
-								<label>Aider</label>
-								<p>des problemes?</p>
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>	
+									<label>Aider</label>
+									<p>des problemes</p>
+								<?php } elseif($_SESSION['lang']=="en"){ ?>
+									<label>Help</label>
+									<p>problems</p>	
+								<?php }else{ ?>	
+									<label>Aider</label>
+									<p>des problemes</p>
+								<?php } ?>	
 								</a></li>
 							<li>
 								<?php if ($_SESSION['lang']=="en") 
 								{?>	
-								<label>Francais </label>
-								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_22.png"/></p></a>
-								<?php } elseif ($_SESSION['lang']=="fr"){ ?>
 								<label>English </label>
-								<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/el.gif"/></p></a>
+								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/el.gif"/></p></a>
+								<?php } elseif ($_SESSION['lang']=="fr"){ ?>
+								<label>Francais </label>
+								<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_22.png"/></p></a>
 								<?php }else { ?>
 								<label>Francais </label>
 								<a href="<?php echo base_url();?>changelang/change/fr/<?php echo $this->uri->uri_string();?>"><p style="text-align: center"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_22.png"/></p></a>

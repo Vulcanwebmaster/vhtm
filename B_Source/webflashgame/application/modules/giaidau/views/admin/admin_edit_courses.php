@@ -69,7 +69,7 @@
 					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Avarta</label>
+					<label>Avatar</label>
 					<?php echo $this->ckeditor->editor('avarta',$info->avarta,$config);?>
 				</fieldset>
 				<fieldset>
