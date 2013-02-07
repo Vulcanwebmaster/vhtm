@@ -7,12 +7,12 @@
 					
 				  <div class="slider-wrapper theme-default slider">
 		            <div id="slider" class="nivoSlider" >
-		                <img src="<?php echo base_url();?>assets/flash_game/images/Belote_26.png"/>
-		                <img src="<?php echo base_url();?>assets/flash_game/images/mario_gif.gif"/>
-		                <img src="<?php echo base_url();?>assets/flash_game/images/sl2.jpg"/>
-		                <img src="<?php echo base_url();?>assets/flash_game/images/sl3.jpg"/>
-		                 <img src="<?php echo base_url();?>assets/flash_game/images/sl4.jpg"/>
-		                  <img src="<?php echo base_url();?>assets/flash_game/images/sl5.jpg"/>
+		                <p><img src="<?php echo base_url();?>assets/flash_game/images/Belote_26.png"/></p>
+		                <p><img src="<?php echo base_url();?>assets/flash_game/images/mario_gif.gif"/></p>
+		                <p><img src="<?php echo base_url();?>assets/flash_game/images/sl2.jpg"/></p>
+		                <p><img src="<?php echo base_url();?>assets/flash_game/images/sl3.jpg"/></p>
+		                 <p><img src="<?php echo base_url();?>assets/flash_game/images/sl4.jpg"/></p>
+		                 <p><img src="<?php echo base_url();?>assets/flash_game/images/sl5.jpg"/></p>
 		            </div>				           
 		        </div>
 			
@@ -27,7 +27,7 @@
 							</div>
 							<div class="textcontent">
 								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-								<div class="submittextcontent">Enregistrer gratuit</div>
+								<div class="submittextcontent" style="padding:11px 16px;">Enregistrer gratuit</div>
 							</div>
 						</div>
 						<div class="texttopmain">
