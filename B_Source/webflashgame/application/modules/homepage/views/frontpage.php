@@ -78,24 +78,20 @@
 											<li class="imglimain1"><a href="#">10 comments</a></li>
 										</ul>
 									</div>
-									<style type="text/css">
+								<!--	<style type="text/css">
 										.tuyet p{
 										float: left;
 										width: 245px;
 										height: 203px;
 										}
-											.tuyet p img{
-										border: 1px solid #696969;
-										width: 245px !important;
-										height: 203px !important;
-										}									
-										</style>
+																		
+								</style>-->
 									<div class="contentimgtext tuyet">
 										<?php foreach ($list_news as $value) 
 				 			{ ?>
 				 						<?php echo $value->image ?>
 										<!-- <img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
-										<p style="width: 375px;text-align: left"> <?php echo $value->content ?>
+										<p class="p1"> <?php echo $value->content ?>
 											</p>
 											<?php }?>
 									</div><br clear="both" />
@@ -125,7 +121,7 @@
 									<div class="contentimgtext tuyet">
 										<?php echo $value->image?>
 <!-- 										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
-										<p style="width: 375px;text-align: left"> <?php echo $value->content ?>
+										<p class="p2"> <?php echo $value->content ?>
 											</p>
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">

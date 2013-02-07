@@ -53,14 +53,15 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .mainctentlmainleft{ margin-top:-10px; padding:0}
 .contentimgtext{clear:both; padding:15px;}
 .topmainlefftct{ padding-left:15px;}
-.contentimgtext img{float:left; border:1px solid #696969; width:308px; height:203px}
-.contentimgtext p{ float:left; padding:0 10px; width:49%; margin:0;}
+.contentimgtext img{float:left; border:1px solid #696969; width:308px !important; height:203px !important}
+.contentimgtext .p1{ float:left; padding:0 10px; width:47%; margin:0;}
 .bottommainctentmailleft{ background:#e1e1e1; height:20px; text-align: center; margin-top:15px}
  #play{ margin-top:20px;}
   #play .contenttexxtmainlefft{ height:30px !Important}
 #play .contentimgtext{ padding:0 15px !important}
-#play .contentimgtext img{ width:201px; height:164px}
-#play .contentimgtext p{ width:65%}
+#play .contentimgtext img{ width:201px !important; height:164px !important}
+#play .contentimgtext .p2{ width:65%; float:right; padding:0 10px}
+#play .contentimgtext p{float:left}
 #contentmainright{ float:left; width:27%;  margin-left:12px;}
 .l12323{ border:1px solid #e3e3e3; border-radius:3px; background:#fff;}
 .mainright1, #topturnois,#topjou{border-bottom:1px solid #e3e3e3; padding:10px}
