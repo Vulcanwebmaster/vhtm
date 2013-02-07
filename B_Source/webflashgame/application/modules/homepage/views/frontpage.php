@@ -28,7 +28,7 @@
 							<div class="textcontent">
 								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
 								<div class="submittextcontent" style="padding:11px 16px;">Enregistrer gratuit</div>
-							</div>
+							</div><br clear="both"/>
 						</div>
 						<div class="texttopmain">
 							<p class="titlep">Enregister</p>
@@ -38,7 +38,7 @@
 							<div class="textcontent">
 								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
 								<div class="submittextcontent1">Connecter</div>
-							</div>
+							</div><br clear="both"/>
 						</div>
 						<div class="texttopmain">
 							<p class="titlep">Enregister</p>
@@ -49,7 +49,7 @@
 								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
 								<div class="submittextcontent2">Jouer en ligne</div>
 							</div>
-						</div>
+						</div><br clear="both"/>
 					</div>
 					<div id="contentmain">
 						<div id="contentmainleft">

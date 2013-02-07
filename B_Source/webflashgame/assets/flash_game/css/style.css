@@ -12,7 +12,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .pass{ background:#fff url(../images/Belote_12.png) 5px 6px no-repeat !important; padding-left:25px !important; border-radius:3px !important; border:1px solid #888888 !important; width:130px !important; height: 24px !important;}
 .login{ background:url(../images/Belote_05.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:12px;}
 .register{ background:url(../images/Belote_07.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:11px;}
-#bottomheader{ width:1000px; margin:0 auto;}
+#bottomheader{ width:74.2%; margin:0 auto;}
 #logo{ width:32%; float:left; margin-top:-40px}
 #menu{ width: 68%; float:left; font-size:34px; margin-top:15px; font-family: "Times New Roman", Times, serif !important}
 #menu ul{ margin:0; padding:0 0 0 55px;}
@@ -26,7 +26,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 #slider img{ width:1000px !important; height:377px !important;}
 .slider{ width:1000px; margin:0 auto; }
 #main{ width:1000px; margin:40px auto; }
-#topmain{ border-radius:5px; border:1px solid #e1dfdf; height: 150px; background:#fff; padding:15px;}
+#topmain{ border-radius:5px; border:1px solid #e1dfdf; height: auto; background:#fff; padding:15px 15px 0 15px;}
 .texttopmain{ width:33%; float:left; padding-left:3px;}
 .titlep{ color:black; font-size:18px; margin:0; padding:0; border-bottom:1px solid #e7e7e7; width:300px;}
 .numbertexttopmain{ width:18%; float:left;}
