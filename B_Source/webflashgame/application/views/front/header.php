@@ -20,7 +20,10 @@
 									Bonjour: 
 								<?php } else{ ?>
 									Welcome: 
-								<?php } ?> <?php echo $_SESSION['front_user_fullname'] ?></p>
+								<?php } ?> <?php echo $_SESSION['front_user_fullname'] ?>
+								<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/logOut">
+									<input type="submit" name="submit" value="Logout" class="login" />
+								</form>
 						<?php } ?>
 					</div>
 				</div>

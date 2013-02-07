@@ -103,7 +103,7 @@
 											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
-											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="register">Register now!</span></span>
+											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="">Register now!</span></span>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>
 											<p style="color: #000000">08.Jan&nbsp;21:00</p>
 										</a>
@@ -117,7 +117,7 @@
 										</div>
 									</div>
 								</div>
-								<div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
+								<!-- <div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
 											<span class="top" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 											<div id="so2overlayTop">
 													<h3><span>		
@@ -148,7 +148,7 @@
 															
 															</div>
 														</div><span class="overlayPointer" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
-										</div>
+										</div> -->
 							</li>
 							<?php }?>
 						</ul>				
@@ -190,7 +190,7 @@
 											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
-											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="register">Register now!</span></span>
+											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="">Register now!</span></span>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>
 											<p style="color: #000000">08.Jan&nbsp;21:00</p>
 										</a>
@@ -204,7 +204,7 @@
 										</div>
 									</div>
 								</div>
-								<div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
+								<!-- <div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
 											<span class="top" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 											<div id="so2overlayTop">
 													<h3><span>		
@@ -235,7 +235,7 @@
 															
 															</div>
 														</div><span class="overlayPointer" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
-										</div>
+										</div> -->
 								
 							</li>
 							<?php }?>
@@ -278,7 +278,7 @@
 										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameTO1_OverlaySprite.png);" class="link"></span>
 										<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a">
-										<span class="register">Register now!</span></span>
+										<span class="">Register now!</span></span>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/tournSprite.png);clip: rect(0px 140px 65px 75px); top: -10px; left: -85px;" class="to1Status typeId1"></span>
 										<p style="color: #000000">14.Jan&nbsp;21:00</p>
 										</a>
@@ -295,7 +295,7 @@
 										</div>
 									</div>
 								</div>
-								<div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
+								<!-- <div id="so2overlay" style="top: -100px; left: -50px; display: none" class="friendsOnline type1">
 											<span class="top" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
 											<div id="so2overlayTop">
 													<h3><span>		
@@ -326,7 +326,7 @@
 															
 															</div>
 														</div><span class="overlayPointer" style="background-image: url(http://localhost/webflashgame/assets/flash_game/images/overlayBackSprite.png?v2);"></span>
-										</div>
+										</div> -->
 							</li>
 							<?php }?>
 						</ul>

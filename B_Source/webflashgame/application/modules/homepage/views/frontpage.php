@@ -81,8 +81,8 @@
 								<!--	<style type="text/css">
 										.tuyet p{
 										float: left;
-										width: 245px;
-										height: 203px;
+										width: auto ;
+										height: auto ;
 										}
 																		
 								</style>-->
