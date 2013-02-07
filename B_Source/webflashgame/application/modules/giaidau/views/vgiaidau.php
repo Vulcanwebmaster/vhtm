@@ -99,7 +99,7 @@
 									<div class="to1_container">
 										<?php echo $item->image ?>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
-										<a class="" href="/web/Tournaments-Details?id_tourn=32167">
+										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>">
 											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
@@ -186,7 +186,7 @@
 									<div class="to1_container">
 										<?php echo $item->image ?>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
-										<a class="" href="/web/Tournaments-Details?id_tourn=32167">
+										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>">
 											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
@@ -274,7 +274,7 @@
 										<?php echo $item->image ?>
 <!-- 										<span style="display:block;background-image: url(http://static8.greentube.com/xsl_gamebase/assets/game_20/logo_137x77/game_20_logo_137x77_EN-US.png);" class="logo"></span> -->
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameSO1_med.png);" class="border"></span>
-										<a class="" href="/#"><strong class="static switchPrize"><span>Twists 18.400</span></strong>
+										<a class="" href="#"><strong class="static switchPrize"><span>Twists 18.400</span></strong>
 										<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>23</dd></dl>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/gameTO1_OverlaySprite.png);" class="link"></span>
 										<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a">

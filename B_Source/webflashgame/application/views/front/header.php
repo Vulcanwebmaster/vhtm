@@ -9,7 +9,7 @@
 						<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/checkAccount">
 
 							<input type="text" name="nick" class="usename" value="Nom dutilisateur" onblur="if(this.value=='') this.value='Nom dutilisateur';" onfocus="if(this.value=='Nom dutilisateur') this.value='';" />
-							<input type="text" name="pass" class="pass" value="Mot de passe" 		 onblur="if(this.value=='') this.value='Mot de passe';" onfocus="if(this.value=='Mot de passe') this.value='';"/>
+							<input type="password" name="pass" class="pass" value="Mot de passe" 		 onblur="if(this.value=='') this.value='Mot de passe';" onfocus="if(this.value=='Mot de passe') this.value='';"/>
 							<input type="submit" name="submit" value="Login" class="login" />
 							or
 							<a style="padding: 8px 10px 10px 7px; text-decoration: none;" href="<?php echo base_url();?>register" class="register">enregistrer</a>
