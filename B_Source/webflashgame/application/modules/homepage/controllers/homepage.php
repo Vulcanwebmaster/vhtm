@@ -22,6 +22,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
 		$data['list_news'] = $this->Mhomepage->getListFull('fg_news');
 		$data['list_games'] = $this->Mhomepage->getListOffset('fg_games',48,0);
 		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');

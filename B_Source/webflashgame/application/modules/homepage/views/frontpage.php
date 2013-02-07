@@ -106,25 +106,24 @@
 							</div>
 							
 							<div id="play">
+									<?php foreach ($list_belote as $value) 
+				 			{ ?>
 								<p class="tieude">How to play</p>
 								<div class="contenttexxtmainlefft">
 									<p class="titlenew">Description</p>									
 								</div>
 								<div style="clear: both; padding:10px 20px 0 20px">
-									Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+									<?php echo $value->description?>
 											
 								</div>
 								<div class="contenttexxtmainlefft">
 									<p class="titlenew">Description</p>									
 								</div>								
 								<div class="mainctentlmainleft">									
-									<div class="contentimgtext">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/>
-										<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-											Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+									<div class="contentimgtext tuyet">
+										<?php echo $value->image?>
+<!-- 										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
+										<p style="width: 375px;text-align: left"> <?php echo $value->content ?>
 											</p>
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
@@ -133,6 +132,7 @@
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>
+								<?php }?>
 							</div>
 						</div>
 						<div id="contentmainright">
