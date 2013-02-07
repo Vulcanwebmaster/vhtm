@@ -4,11 +4,11 @@
 
 
 <div id="so2overlay" style="visibility: hidden; opacity: 0; top: -500px; left: 50px;" class="friendsOnline type1">
-			<span style="display:block;background-image: url(images/overlayBackSprite.png?v2);" class="top"></span>
+			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);" class="top"></span>
 			<div id="so2overlayTop"><h3><span>Poker</span></h3>
 		<div class="gameDesc"><p>Choose from 'Texas Hold'Em', '5-Card Draw' and 'Omaha', and show your skills!</p></div>
 		<p class="gameShot">
-			<img width="113" height="70" alt="" src="images/blank.gif"></p>
+			<img width="113" height="70" alt="" src="<?php echo base_url();?>assets/flash_game/images/blank.gif"></p>
 			<ul id="so2nav">
 				<li class="btnPlay">
 					<a data-gtt="Play" href="#" title=""><span>Play</span></a>
@@ -22,14 +22,14 @@
 			<dl><dt>Playing now</dt><dd>294</dd></dl>
 			<div id="topGame"></div>
 			<div id="so2rating" class=""></div>
-			<span style="display:block;background-image: url(images/game_StatusSprite_EN-US.png);" class="overlayStatus"></span>
+			<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/game_StatusSprite_EN-US.png);" class="overlayStatus"></span>
 			<div class="btnClose"><a data-gtt="close" href="#close" title=""><span>close</span></a></div>
 		</div>
-		<span style="display:block;background-image: url(images/overlayBackSprite.png?v2);" class="overlayBottom"></span>
+		<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);" class="overlayBottom"></span>
 		<div id="so2overlayBottom">
 			<div><p><span class="tournDate"></span>&nbsp;<strong>Jackpot:</strong>&nbsp;<span class="tournPrize"></span></p><a href="#" class="formLink"><span>To the Tournament</span></a></div>
 		</div>
-		<span style="display:block;background-image: url(images/overlayBackSprite.png?v2);" class="overlayPointer"></span>
+		<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images/overlayBackSprite.png?v2);" class="overlayPointer"></span>
 </div>
 
 <div id="peelSmall" style="position: absolute; z-index: 9999; right: 0px; top: 0px; width: 100px; height: 100px; overflow: hidden;">

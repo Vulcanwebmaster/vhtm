@@ -29,10 +29,34 @@
 				<div id="tipHolder"></div>
 				<div id="subNav">
 				<ul>
-					<li class=" " id="now"><a href="<?php echo base_url();?>giaidau"><span>current</span></a></li>
-					<li class="" id="past"><a href="<?php echo base_url();?>giaidau/past"><span>past</span></a></li>
-					<li class="" id="mine"><a href="<?php echo base_url();?>dangky/dangnhap"><span>My tournaments</span></a></li>
-					<li class="" id="create"><a href="<?php echo base_url();?>dangky/dangnhap"><span>Create tournament</span></a></li>
+					<li class="active " id="now"><a href="<?php echo base_url();?>giaidau"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									courant
+								<?php } else{ ?>
+									current
+								<?php } ?></span></a></li>
+					<li class="" id="past"><a href="<?php echo base_url();?>giaidau/past"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									passé
+								<?php } else{ ?>
+									past
+								<?php } ?></span></a></li>
+					<li class="" id="mine"><a href="<?php echo base_url();?>dangky/dangnhap"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Mes tournois
+								<?php } else{ ?>
+									My tournaments
+								<?php } ?></span></a></li>
+					<li class="" id="create"><a href="<?php echo base_url();?>setting"><span>
+						<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Créer tournoi
+								<?php } else{ ?>
+									Create tournament
+								<?php } ?></span></a></li>
 				</ul>
 			</div>
 			<div id="tournContainer">
