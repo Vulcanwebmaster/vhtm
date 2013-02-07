@@ -31,11 +31,11 @@ position: relative;
 
 </style>
 </style>
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
     $(document).ready(function(){
      $('body').addClass('games_details uc hasSideBar noLeaderBoard root chrome, game_uc').removeClass('game_default');
     })
-   </script>
+   </script> -->
 <?php $this->load->view('front/menu')?>
 <div id="main">
 	
