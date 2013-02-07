@@ -61,7 +61,7 @@ class Setting extends NIW_Controller
 			else{
 				$_SESSION['front_login_error'] = 'input username and password.';
 				$this->session->set_userdata('result','username or password false.');
-				redirect(base_url().'dangky/dangnhap','refresh');
+				redirect(base_url().'login','refresh');
 			}
 			
 		}

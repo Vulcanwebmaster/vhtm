@@ -79,7 +79,7 @@ class Dangky extends NIW_Controller
 				$_SESSION['front_login_error'] = 'input username and password.';
 				$this->session->set_userdata('result','username or password false.');
 				// $this->dangNhap();
-				redirect(base_url().'dangky/dangnhap','refresh');
+				redirect(base_url().'login','refresh');
 			}
 		$this->data['module'] = $this->module;
 		$this->load->view('front/container',$this->data);

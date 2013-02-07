@@ -42,5 +42,9 @@ $route['default_controller'] = "homepage";
 $route['404_override'] = '';
 
 $route['admin'] = 'admin/home';
+$route['tournament'] = 'giaidau';
+$route['register'] = 'dangky';
+$route['login'] = 'dangky/dangnhap';
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

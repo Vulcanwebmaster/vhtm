@@ -22,7 +22,7 @@ class Shop extends NIW_Controller
 			$id = $_SESSION['front_user_id'];
 			return $id;
 		}else{
-			redirect(base_url().'dangky/dangnhap');
+			redirect(base_url().'login');
 		}
 	}
 	
