@@ -38,26 +38,26 @@ $(document).pngFix( );
 	<div id="login-inner">
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<th>Username</th>
+			<th>Pseudo</th>
 			<td><input type="text" name="login_field" id="login_field" class="login-inp" value="<?php print set_value("login_field")?>"/></td>
 		</tr>
 		<tr>
-			<th>Password</th>
+			<th>Code</th>
 			<td><input type="password" name="password" id="password" onfocus="this.value=''" class="login-inp" /></td>
 		</tr>
 		<tr>
 			<th></th>
-			<td valign="top"><?php print form_checkbox('remember','yes',$this->input->post('remember'))?><label for="login-check">Remember me</label></td>
+			<td valign="top"><?php print form_checkbox('remember','yes',$this->input->post('remember'))?><label for="login-check">Rester connecté(e)</label></td>
 		</tr>
 		<tr>
 			<th></th>
-			<td><input type="submit" name="submit" class="submit-login"  /></td>
+			<td><input type="submit" name="submit"  value="Connexion"/></td>
 		</tr>
 		</table>
 	</div>
  	<!--  end login-inner -->
 	<div class="clear"></div>
-	<a href="<?php print site_url('auth/forgotten_password') ?>" class="forgot-pwd">Forgot Password?</a>
+	<a href="<?php print site_url('auth/forgotten_password') ?>" class="forgot-pwd">Mot de passe oublié?</a>
  </div>
  <!--  end loginbox -->
 <?php print form_close()?>

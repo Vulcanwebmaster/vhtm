@@ -41,7 +41,7 @@
 	 	return $list;
 		}
 		
-		function getTopGame($limit){
+	function getTopGame($limit){
 		$this->db->select();
 		$this->db->from('fg_games');
 		$this->db->order_by("count_dem", "desc");

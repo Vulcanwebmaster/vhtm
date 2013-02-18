@@ -14,8 +14,8 @@
 		
 		function index()
 		{
-			$data['title']='Tournaments';
-			$data['bcCurrent']='Tournaments';
+			$data['title']='Tournois';
+			$data['bcCurrent']='Tournois';
 			$data['list']=$this->Mgiaidau->getListCategory('fg_tournaments');
 			//var_dump($data['list']); die();
 			$data['module']=$this->module;
@@ -51,8 +51,8 @@
 				$data['list']=$this->Mgiaidau->getListFull('fg_games');
 				$data['info']=$this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$id);
 				//var_dump($data['info']); die();
-				$data['title']='Edit the tournament';
-				$data['bcCurrent']='Tournaments';
+				$data['title']='Modifier le tournoi';
+				$data['bcCurrent']='Tournois';
 				$data['module']=$this->module;
 				$data['page']='admin_edit_courses';
 				$this->load->view('admin/container',$data);
@@ -78,8 +78,8 @@
 				{
 					$data['list']=$this->Mgiaidau->getListFull('fg_games');
 					$data['info']=$this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$id);
-					$data['title']='Updated Tournaments';
-					$data['bcCurrent']='Tournaments';
+					$data['title']='Tournois mise à jour';
+					$data['bcCurrent']='Tournois';
 					$data['module']=$this->module;
 					$data['page']='admin_edit_courses';
 					$this->load->view('admin/container',$data);
@@ -96,8 +96,8 @@
 			if (!$this->input->post('name_tour'))
 			{
 				$data['list']=$this->Mgiaidau->getListFull('fg_games');
-				$data['title']='Add Tournaments';
-				$data['bcCurrent']='Tournaments';
+				$data['title']='Ajouter Tournois';
+				$data['bcCurrent']='Tournois';
 				$data['module']=$this->module;
 				$data['page']='admin_insert_courses';
 				$this->load->view('admin/container',$data);
@@ -114,16 +114,16 @@
 					$input=$this->_input();
 					if ($this->Mgiaidau->insertNewRow('fg_tournaments',$input))
 					{
-						$this->session->set_userdata('result','Add new success');
+						$this->session->set_userdata('result','Ajouter un nouveau succès');
 					}
-					else $this->session->set_userdata('result','Add new not success');
+					else $this->session->set_userdata('result','Ajouter un nouveau pas le succès');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mgiaidau->getListFull('fg_games');
-					$data['title']='Add Tournaments';
-					$data['bcCurrent']='Tournaments';
+					$data['title']='Ajouter Tournois';
+					$data['bcCurrent']='Tournois';
 					$data['module']=$this->module;
 					$data['page']='admin_insert_courses';
 					$this->load->view('admin/container',$data);
@@ -135,9 +135,9 @@
 			if ($this->Mgiaidau->deleteRowByColumn('fg_tournaments','tour_id',$id))
 			{
 				
-				$this->session->set_userdata('result','Delete success !');
+				$this->session->set_userdata('result','Supprimer le succès !');
 			}
-			else $this->session->set_userdata('result','Delete success !');		
+			else $this->session->set_userdata('result','Supprimer pas le succès !');		
 			$this->index();
 		}
 	}
