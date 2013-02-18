@@ -205,8 +205,7 @@
 										  fjs.parentNode.insertBefore(js, fjs);
 										}(document, 'script', 'facebook-jssdk'));</script>
 									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam"
-										 data-width="270" data-height="210" data-show-faces="true" data-stream="false" data-header="false"></div>
-								<div class="plupginf">Facebook social plugin</div>
+										 data-width="268" data-height="210" data-show-faces="true" data-stream="false" data-header="false"></div>
 							</div>
 						</div>
 						<div class="listgerular">

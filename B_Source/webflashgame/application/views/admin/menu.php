@@ -6,8 +6,8 @@
 	</ul>
 <h3>Pages</h3>
 	<ul class="toggle">
-		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Category</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>games/admin">Games</a></li>
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc/admin">Category</a></li> -->
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>games/admin">Games</a></li> -->
 <!-- 		<li class="icn_application"><a href="<?php echo base_url()?>kenh/admin">Change</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>faqs/admin">Faqs</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>general/admin">General</a></li>
