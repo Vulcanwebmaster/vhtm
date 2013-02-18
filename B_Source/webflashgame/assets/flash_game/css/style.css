@@ -25,7 +25,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 #slider12{ width:100%; height:378px; background:#ff6b35;}
 #slider img{ width:1000px !important; height:377px !important;}
 .slider{ width:1000px; margin:0 auto; }
-#main{ width:1000px; margin:40px auto; }
+#main{ width:74.2%; margin:40px auto; }
 #topmain{ border-radius:5px; border:1px solid #e1dfdf; height: auto; background:#fff; padding:15px 15px 0 15px;}
 .texttopmain{ width:33%; float:left; padding-left:3px;}
 .titlep{ color:black; font-size:18px; margin:0; padding:0; border-bottom:1px solid #e7e7e7; width:300px;}
@@ -105,12 +105,21 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 
 #footer{ width:100%;}
 #footer1 { width:100%; height:80px; background:#ff4400;}
-.contentfooter1{ width:1000px; margin:0 auto;}
+.contentfooter1{ width:74.2%; margin:0 auto;}
 .contentfooter1 p{ color:#fff; font-size:20px; padding:25px 10px; float:left; width:75%; margin:0}
 .sub{ float:right; background:black; width:20%; margin-top:25px; height:33px; text-align:center; color:#fff; padding-top:10px; font-size: 16px;}
 #footer2{ height:55px; background:#59acc3; }
-.contentfooter2{ width:1000px; margin:0 auto; color:black; padding-top:5px; position: relative; padding-left:100px}
+.contentfooter2{ width:74.2%; margin:0 auto; color:black; padding-top:5px; position: relative; padding-left:100px}
 .contentfooter2 ul{ margin:0; padding:0}
 .contentfooter2 li{float:left; list-style:none; padding:5px !important}
 .uliu{ position:absolute; top:2px; right:35px;}
 #footer3{ background:black; height:50px; text-align:center; color:#fff; font-size:16px; padding-top:20px}
+ /*===========add detail news==============*/
+ #titlenews{ font-weight:bold; font-size:20px; padding:10px; text-decoration:underline; color:black}
+ #imgnews{ position:relative; background:url(../images/global-sprite.png) -1px -921px no-repeat; width:556px; height:255px; margin:10px auto 0 auto; }
+  #imgnews img{ width: 538px !important; height:218px !important; margin:8px 0 0 9px;}
+  .addnews{background:#fff; border:1px solid #e3e3e3; border-radius:3px;}
+  #idcontentnews{padding:15px;}
+  .frmcm{ background:rgba(190, 190, 190, .2); border:solid #e9e9e9; border-width:1px 0; position:relative; padding:7px 10px 7px 9px;}
+  .frmcm textarea{ width:95%; margin:5px 5px 5px 1px;}
+  .submitfrmcm{ }

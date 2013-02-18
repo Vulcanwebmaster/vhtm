@@ -42,6 +42,52 @@ class Homepage extends NIW_controller {
 		$data['page'] = 'frontpage';
 		$this->load->view('front/container',$data);
 	}
+		
+	public function news($index=0)
+	{
+		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
+		$data['list_news'] = $this->Mhomepage->getListFull('fg_news');
+		$data['list_comment'] = $this->Mhomepage->getListFull('st_comment');
+		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');
+		$data['list_bannerheader'] = $this->Mhomepage->getListFull('fg_bannerheader');
+		$data['list_slide'] = $this->Mhomepage->getListFull('fg_slide');
+		$data['list_banner'] = $this->Mhomepage->getListFull('fg_banner');
+		$data['top1'] = $this->Mhomepage->getTopGame(1);
+		$data['top_game'] = $this->Mhomepage->getTopGame(11);
+		$data['list_category'] = $this->Mhomepage->getListFull('fg_category');
+		$data['list_game_cate']  =  $this->Mhomepage->getListFullCategory('fg_games');
+		$data['title']='flash_game | Flash game';
+		$data['module'] = $this->module;
+		$data['page'] = 'vnews';
+		$this->load->view('front/container',$data);
+	}
+	
+	function _input()
+	{
+		$input=array(
+					'comment_name'=>$this->input->post('comment_name'),
+					'comment_content'=>$this->input->post('comment_content'),
+					);
+		return $input;
+	}
+	
+	function comment()
+	{
+		$this->form_validation->set_rules('comment_name','Name','required|trim');
+		$this->form_validation->set_rules('comment_content','Content','required|trim');
+		if ($this->form_validation->run())
+		{
+			$input=$this->_input();
+			if ($this->Mhomepage->insertNewRow('st_comment',$input))
+			{
+				$this->session->set_userdata('result','Post is successfull !');
+			}
+			else $this->session->set_userdata('result','False !');
+		}
+		
+		redirect(base_url().'homepage/news','refresh');
+	}
+	
 	}
 
 /* End of file welcome.php */

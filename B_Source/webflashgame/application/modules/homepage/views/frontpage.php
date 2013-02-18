@@ -60,7 +60,7 @@
 								<p class="tieude">News</p>
 								<div class="contenttexxtmainlefft">
 									<?php foreach ($list_news as $value) 
-				 			{ ?>
+				 						{ ?>
 									<p class="titlenew"><?php echo $value->name ?></p>
 									<div class="date">
 										<ul>
@@ -78,7 +78,7 @@
 											<li>|</li>
 											<li class="imglimain"><a href="#">About, accuei</a></li>
 											<li>|</li>
-											<li class="imglimain1"><a href="#">10 comments</a></li>
+											<li class="imglimain1"><a href="<?php echo base_url();?>homepage/news">comments</a></li>
 										</ul>
 									</div>
 								<!--	<style type="text/css">
@@ -91,7 +91,7 @@
 								</style>-->
 									<div class="contentimgtext tuyet">
 										<?php foreach ($list_news as $value) 
-				 			{ ?>
+				 							{ ?>
 				 						<?php echo $value->image ?>
 										<!-- <img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
 										<p class="p1"> <?php echo $value->content ?>
