@@ -187,7 +187,7 @@
 							</div>
 							<div id="belte">
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_09.png"/></p>
-								<div class="faclide">
+								<!-- <div class="faclide">
 									<img src="<?php echo base_url();?>assets/flash_game/images/Belote_99.png"/>
 									<div class="likef">
 										<label style="color:#0184a3">Belote.com</label>
@@ -196,19 +196,25 @@
 											<label style="padding-top:5px">You like this</label>
 										</div>
 									</div><br clear="both"/>
-									
-								</div>
-								<div style="padding:10px"> You and 889,998 others like <labe style="color:#0184a3">Belote.com</labe></div>
+								</div> -->
+								<script>(function(d, s, id) {
+										  var js, fjs = d.getElementsByTagName(s)[0];
+										  if (d.getElementById(id)) return;
+										  js = d.createElement(s); js.id = id;
+										  js.src = "//connect.facebook.net/en/all.js#xfbml=1";
+										  fjs.parentNode.insertBefore(js, fjs);
+										}(document, 'script', 'facebook-jssdk'));</script>
+									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam"
+										 data-width="270" data-height="210" data-show-faces="true" data-stream="false" data-header="false"></div>
 								<div class="plupginf">Facebook social plugin</div>
 							</div>
 						</div>
 						<div class="listgerular">
 							<ul>
-								<li><img src="<?php echo base_url();?>assets/flash_game/images/Belote_113.png"/></li>
-								<li><img src="<?php echo base_url();?>assets/flash_game/images/Belote_115.png"/></li>
-								<li><img src="<?php echo base_url();?>assets/flash_game/images/Belote_117.png"/></li>
-								<li><img src="<?php echo base_url();?>assets/flash_game/images/Belote_119.png"/></li>
-								<li><img src="<?php echo base_url();?>assets/flash_game/images/Belote_123.png"/></li>
+								<li><a href="https://www.facebook.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_113.png"/></a></li>
+								<li><a href="https://twitter.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_115.png"/></a></li>
+								<li><a href="https://accounts.google.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_117.png"/></a></li>
+								<li><a href="http://www.youtube.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_119.png"/></a></li>
 							</ul>
 						</div>
 						</div>
