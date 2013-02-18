@@ -18,24 +18,24 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Title (en)</label>
+					<label>Titre (en)</label>
 					<input type="text" name="title" style="width:92%"/>
 				</fieldset>
 				
 				
 				<fieldset>
-					<label>Title (fr)</label>
+					<label>Titre (fr)</label>
 					<input type="text" name="titlefr" style="width:92%"/>
 				</fieldset>
 				
 				<fieldset>
-					<label>Content (en)</label>
-					<?php echo $this->ckeditor->editor('contentfr','',$config);?>
+					<label>Teneur (en)</label>
+					<?php echo $this->ckeditor->editor('content','',$config);?>
 				</fieldset>
 				
 				
 				<fieldset>
-					<label>Content (fr)</label>
+					<label>Teneur (fr)</label>
 					<?php echo $this->ckeditor->editor('contentfr','',$config);?>
 				</fieldset>
 				
@@ -43,7 +43,7 @@
 			
 			<footer style="float:left">
 					<div class="submit_link">
-						<input type="submit" name="submit" value="Thêm" class="alt_btn">
+						<input type="submit" name="submit" value="Plus" class="alt_btn">
 					</div>
 			</footer>
 		</div><!-- end of .tab_container -->

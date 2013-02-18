@@ -38,8 +38,8 @@
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Top tournament';
-			$data['bcCurrent']='top tournament';
+			$data['title']='Top turnois';
+			$data['bcCurrent']='Top turnois';
 			$data['list']=$this->Mtoptournament->getListOffset('fg_toptournament',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
@@ -63,8 +63,8 @@
 			{
 				$data['list']=$this->Mtoptournament->getListFull('fg_toptournament');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Add top tournament';
-				$data['bcCurrent']='top tournament';
+				$data['title']='Plus top turnois';
+				$data['bcCurrent']='top turnois';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
@@ -72,24 +72,24 @@
 			else 
 			{
 				$this->form_validation->set_rules('nickname','Name ','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mtoptournament->insertNewRow('fg_toptournament',$input))
 					{
-						$this->session->set_userdata('result','Add new success');
+						$this->session->set_userdata('result','Plus succès');
 					}
-					else $this->session->set_userdata('result','Add new failure');
+					else $this->session->set_userdata('result','Plus échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mtoptournament->getListFull('fg_toptournament');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Add top tournament';
-					$data['bcCurrent']='top tournament';
+					$data['title']='Plus top turnois';
+					$data['bcCurrent']='top turnois';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -107,8 +107,8 @@
 			if (!$this->input->post('nickname'))
 			{
 				$data['info']=$this->Mtoptournament->getRowByColumn('fg_toptournament','id',$id);
-				$data['title']='Edit top tournament';
-				$data['bcCurrent']='top tournament';
+				$data['title']='Éditer top turnois';
+				$data['bcCurrent']='top turnois';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
@@ -116,23 +116,23 @@
 			else 
 			{
 				$this->form_validation->set_rules('nickname','Name','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mtoptournament->updateRowByColumn('fg_toptournament','id',$id,$input))
 					{
-						$this->session->set_userdata('result','update success');
+						$this->session->set_userdata('result','Éditer succès');
 					}
-					else $this->session->set_userdata('result','update failute');
+					else $this->session->set_userdata('result','Éditer échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['info']=$this->Mtoptournament->getRowByColumn('fg_toptournament','id',$id);
-					$data['title']='Edit top tournament';
-					$data['bcCurrent']='top tournament';
+					$data['title']='Éditer top turnois';
+					$data['bcCurrent']='top turnois';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -145,9 +145,9 @@
 		{
 			if ($this->Mtoptournament->deleteRowByColumn('fg_toptournament','id',$id))
 			{
-				$this->session->set_userdata('result','Delete success');
+				$this->session->set_userdata('result','Effacer succès');
 			}
-			else $this->session->set_userdata('result','delete success');		
+			else $this->session->set_userdata('result','Effacer échec');		
 			$this->index();
 		}
 	}

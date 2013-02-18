@@ -18,13 +18,13 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Nick name</label>
+					<label>Pseudo</label>
 					<input type="text" name="nickname" style="width:92%"/>
 				</fieldset>
 				
 				
 				<fieldset>
-					<label>Time</label>
+					<label>Temps</label>
 					<input type="text" name="time_" style="width:92%"/>
 				</fieldset>
 				
@@ -32,7 +32,7 @@
 			
 			<footer style="float:left">
 					<div class="submit_link">
-						<input type="submit" name="submit" value="Add" class="alt_btn">
+						<input type="submit" name="submit" value="Plus" class="alt_btn">
 					</div>
 			</footer>
 		</div><!-- end of .tab_container -->

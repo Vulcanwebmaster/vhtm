@@ -22,7 +22,7 @@
 			$data['config'] = $this->setupCKEditor('97%','400px');
 			//=============================================
 				$data['info']=$this->Msetting->getRowByColumn('fg_setting','id','1');
-				$data['title']='Edit setting';
+				$data['title']='Modifier les paramètres';
 				$data['bcCurrent']='slide';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
@@ -39,21 +39,12 @@
 			return $input;
 		}
 	
-		function setting(){
-			$data['list_setting']  =  $this->Mgiaidau->getRowByColumn('fg_setting','id',$index);
-			echo 'phantram : '.(($data['list_setting']->phantram))/100 . '%'; die();
-			$data['list_tienthuong'] = $this->Mgiaidau->getListFull('fg_giaithuong');
-			$data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_giaithuong','id',$index);
-			echo 'Nhat :'.(($data['list_chitiet']->money_total)*50)/100 .'%';
-			echo 'Nhi : '.(($data['list_chitiet']->money_total)*20)/100 .'%';
-			echo 'Ba : '.(($data['list_chitiet']->money_total)*10)/100 .'%';
-		}
 		
 		function edit($id=1)
 		{
 			$this->form_validation->set_rules('phantramweb','phantramweb 1','required|trim');
 				
-			$this->form_validation->set_message('required','category  %s not empty');
+			$this->form_validation->set_message('required','Catégorie %s pas vide');
 			
 			$data['config'] = $this->setupCKEditor('97%','400px');
 			if ($this->form_validation->run())
@@ -61,16 +52,16 @@
 				$input=$this->_input();
 				if ($this->Msetting->updateRowByColumn('fg_setting','id',$id,$input))
 				{
-					$this->session->set_userdata('result','update success');
+					$this->session->set_userdata('result','Éditer succès');
 				}
-				else $this->session->set_userdata('result','update success');
+				else $this->session->set_userdata('result','Éditer échec');
 				$this->index();
 			}
 			else 
 			{
 				$data['info']=$this->Msetting->getRowByColumn('fg_setting','id',$id);
-				$data['title']='Edit setting';
-				$data['bcCurrent']='setting';
+				$data['title']='Modifier les paramètres';
+				$data['bcCurrent']='mise';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);

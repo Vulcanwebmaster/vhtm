@@ -65,7 +65,7 @@
 			{
 				$data['list']=$this->MFaqs->getListFull('fg_faqs');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Add faqs';
+				$data['title']='Ajouter faq';
 				$data['bcCurrent']='Faqs';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
@@ -74,23 +74,23 @@
 			else 
 			{
 				$this->form_validation->set_rules('title','Title ','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->MFaqs->insertNewRow('fg_faqs',$input))
 					{
-						$this->session->set_userdata('result','Add new success');
+						$this->session->set_userdata('result','Ajouter un nouveau succès');
 					}
-					else $this->session->set_userdata('result','Add new failure');
+					else $this->session->set_userdata('result','Ajouter nouvel échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->MFaqs->getListFull('fg_faqs');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Add faqs';
+					$data['title']='Ajouter faq';
 					$data['bcCurrent']='faqs';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
@@ -109,7 +109,7 @@
 			if (!$this->input->post('title'))
 			{
 				$data['info']=$this->MFaqs->getRowByColumn('fg_faqs','id',$id);
-				$data['title']='Edit faqs';
+				$data['title']='Modifier faq';
 				$data['bcCurrent']='faqs';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
@@ -118,22 +118,22 @@
 			else 
 			{
 				$this->form_validation->set_rules('title','Title','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->MFaqs->updateRowByColumn('fg_faqs','id',$id,$input))
 					{
-						$this->session->set_userdata('result','update success');
+						$this->session->set_userdata('result','Mettre à jour les succès');
 					}
-					else $this->session->set_userdata('result','update failute');
+					else $this->session->set_userdata('result','Mettre à jour les faux');
 					$this->index();
 				}
 				else 
 				{
 					$data['info']=$this->MFaqs->getRowByColumn('fg_faqs','id',$id);
-					$data['title']='Edit faqs';
+					$data['title']='Modifier faq';
 					$data['bcCurrent']='faqs';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
@@ -147,9 +147,9 @@
 		{
 			if ($this->MFaqs->deleteRowByColumn('fg_faqs','id',$id))
 			{
-				$this->session->set_userdata('result','Delete success');
+				$this->session->set_userdata('result','Effacer succès');
 			}
-			else $this->session->set_userdata('result','delete success');		
+			else $this->session->set_userdata('result','Effacer échec');		
 			$this->index();
 		}
 	}

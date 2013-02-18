@@ -18,13 +18,13 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Name</label>
+					<label>Pseudo</label>
 					<input type="text" name="name" style="width:92%"/>
 				</fieldset>
 				
 				
 				<fieldset>
-					<label>Money</label>
+					<label>Argent</label>
 					<input type="text" name="money" style="width:92%"/>
 				</fieldset>
 				

@@ -62,16 +62,16 @@
 				$this->form_validation->set_rules('name_tour','Name','required|trim');
 				$this->form_validation->set_rules('game_id','Category','required|trim');
 				
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgiaidau->updateRowByColumn('fg_tournaments','tour_id',$id,$input))
 					{
-						$this->session->set_userdata('result','Update success!');
+						$this->session->set_userdata('result','Plus succès!');
 					}
-					else $this->session->set_userdata('result','Update false!');
+					else $this->session->set_userdata('result','Plus échec!');
 					$this->index();
 				}
 				else 
@@ -107,7 +107,7 @@
 				$this->form_validation->set_rules('name_tour','Name','required|trim');
 				$this->form_validation->set_rules('game_id','Category','required|trim');
 				
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
@@ -135,9 +135,9 @@
 			if ($this->Mgiaidau->deleteRowByColumn('fg_tournaments','tour_id',$id))
 			{
 				
-				$this->session->set_userdata('result','Supprimer le succès !');
+				$this->session->set_userdata('result','Catégorie %s pas vide !');
 			}
-			else $this->session->set_userdata('result','Supprimer pas le succès !');		
+			else $this->session->set_userdata('result','Effacer échec !');		
 			$this->index();
 		}
 	}

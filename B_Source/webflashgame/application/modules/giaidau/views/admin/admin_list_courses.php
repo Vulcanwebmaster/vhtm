@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Are you delete this Tournament ?");
+					var r=confirm("Êtes-vous supprimer ce tournois ?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>giaidau/admin/delete/"+value;
@@ -44,14 +44,14 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>Number</th>
-		    				<th>Tournament name</th> 
-		    				<th>Tournament name (fr)</th> 
-		    				<th>Name game</th>
-		    				<th>Name game (fr)</th>
-		    				<th>Start date</th>
-		    				<th>End date</th>
-		    				<th style="width: 100px;">Edit | Del</th>
+							<th>Nombre</th>
+		    				<th>Nom du tournoi (en)</th> 
+		    				<th>Nom du tournoi (fr)</th> 
+<!-- 		    				<th>Name game</th> -->
+<!-- 		    				<th>Name game (fr)</th> -->
+		    				<th>Date de début</th>
+		    				<th>Date de fin</th>
+		    				<th>Éditer|Effacer</th>
 		    				
 						</tr> 
 					</thead> 
@@ -61,13 +61,13 @@
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->name_tour;?></td> 
 			    				<td><?php echo $item->name_tourfr;?></td> 
-			    				<td><?php echo $item->name;?></td>
-			    				<td><?php echo $item->namefr;?></td>
+<!-- 			    				<td><?php echo $item->name;?></td> -->
+<!-- 			    				<td><?php echo $item->namefr;?></td> -->
 			    				<td><?php echo $item->start_date;?></td> 
 			    				<td><?php echo $item->end_date;?></td>
 			    				<td>
-			    					<a href="<?php echo base_url()?>giaidau/admin/edit/<?php echo $item->tour_id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->tour_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>giaidau/admin/edit/<?php echo $item->tour_id?>" title="Éditer"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->tour_id?>)" title="Effacer"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -80,7 +80,7 @@
 			</center>
 				<footer>
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>giaidau/admin/insert">Add new</a>
+							<a class="alt_btn" href="<?php echo base_url();?>giaidau/admin/insert">Plus</a>
 						</div>
 				</footer>
 						

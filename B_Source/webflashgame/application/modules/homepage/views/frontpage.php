@@ -7,12 +7,15 @@
 					
 				  <div class="slider-wrapper theme-default slider">
 		            <div id="slider" class="nivoSlider" >
-		                <p><img src="<?php echo base_url();?>assets/flash_game/images/Belote_26.png"/></p>
-		                <p><img src="<?php echo base_url();?>assets/flash_game/images/mario_gif.gif"/></p>
-		                <p><img src="<?php echo base_url();?>assets/flash_game/images/sl2.jpg"/></p>
-		                <p><img src="<?php echo base_url();?>assets/flash_game/images/sl3.jpg"/></p>
-		                 <p><img src="<?php echo base_url();?>assets/flash_game/images/sl4.jpg"/></p>
-		                 <p><img src="<?php echo base_url();?>assets/flash_game/images/sl5.jpg"/></p>
+		            	<?php foreach ($image as $value) 
+				 			{ ?>
+		                 <?php echo $value->image1 ?>
+		                 <?php echo $value->image2 ?>
+		                 <?php echo $value->image3 ?>
+		                 <?php echo $value->image4 ?>
+		                 <?php echo $value->image5 ?>
+		                 <?php echo $value->image6 ?>
+		                 <?php } ?>
 		            </div>				           
 		        </div>
 			
@@ -223,12 +226,14 @@
 			        				<div style="width:90%; overflow: hidden;">
 			        		<!-- Slide Footer---->
 						        		<div class="slideimage">
-						        			
-												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_111.png"></p>
-												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_136.png"></p>											
-												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_133.png"></p>											
-												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"></p>								
-												<p style="margin-right: 10px"><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_111.png"></p>
+						        			<?php foreach ($photo as $value) 
+				 								{ ?>
+												<?php echo $value->image1 ?>
+												<?php echo $value->image2 ?>										
+												<?php echo $value->image3 ?>											
+												<?php echo $value->image4 ?>							
+												<?php echo $value->image5 ?>
+												<?php } ?>
 						        		
 						        		</div>
 			        		<!-- End Slide Footer---->

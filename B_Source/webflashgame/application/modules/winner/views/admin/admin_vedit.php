@@ -18,19 +18,19 @@
 			<div id="tab1" class="tab_content">
 				
 				<fieldset>
-					<label>Name</label>
+					<label>Pseudo</label>
 					<input type="text" name="name" style="width:92%" value="<?php echo $info->name;?>"/>
 				</fieldset>
 				
 				<fieldset>
-					<label>Money </label>
+					<label>Argent </label>
 					<input type="text" name="money" style="width:92%" value="<?php echo $info->money;?>"/>
 				</fieldset>
 			</div>
 			
 			<footer style="float:left">
 					<div class="submit_link">
-						<input type="submit" name="submit" value="Cập nhật" class="alt_btn">
+						<input type="submit" name="submit" value="Éditer" class="alt_btn">
 					</div>
 			</footer>
 		</div><!-- end of .tab_container -->

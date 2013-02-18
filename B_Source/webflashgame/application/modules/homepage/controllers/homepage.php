@@ -22,6 +22,9 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['image'] = $this->Mhomepage->getListFull('fg_bannerheader');
+		$data['photo'] = $this->Mhomepage->getListFull('fg_banner');
+		//var_dump($data['image']); die();
 		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
 		$data['list_news'] = $this->Mhomepage->getListFull('fg_news');
 		$data['list_games'] = $this->Mhomepage->getListOffset('fg_games',48,0);

@@ -10,12 +10,12 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Percent web</label>
+					<label>Web pour cent</label>
 					<input type="text" name="phantramweb" style="width:92%" value="<?php echo $info->phantramweb;?>"/>
 				</fieldset>
 				
 				<fieldset>
-					<label>User gold</label>
+					<label>Or utilisateurs</label>
 					<input type="text" name="user_gold" style="width:92%" value="<?php echo $info->user_gold;?>"/>
 				</fieldset>
 				
@@ -23,7 +23,7 @@
 			
 			<footer style="float:left">
 					<div class="submit_link">
-						<input type="submit" name="submit" value="Update" class="alt_btn">
+						<input type="submit" name="submit" value="Éditer" class="alt_btn">
 					</div>
 			</footer>
 		</div><!-- end of .tab_container -->

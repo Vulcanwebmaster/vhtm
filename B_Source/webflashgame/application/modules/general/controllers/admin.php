@@ -38,8 +38,8 @@
 			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='General';
-			$data['bcCurrent']='General';
+			$data['title']='Général';
+			$data['bcCurrent']='Général';
 			$data['list']=$this->Mgeneral->getListOffset('fg_general',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
@@ -65,8 +65,8 @@
 			{
 				$data['list']=$this->Mgeneral->getListFull('fg_general');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Add general';
-				$data['bcCurrent']='General';
+				$data['title']='Plus Général';
+				$data['bcCurrent']='Général';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
@@ -74,24 +74,24 @@
 			else 
 			{
 				$this->form_validation->set_rules('title','Title ','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgeneral->insertNewRow('fg_general',$input))
 					{
-						$this->session->set_userdata('result','Add new success');
+						$this->session->set_userdata('result','Plus succès');
 					}
-					else $this->session->set_userdata('result','Add new failure');
+					else $this->session->set_userdata('result','Plus échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mgeneral->getListFull('fg_faqs');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Add faqs';
-					$data['bcCurrent']='faqs';
+					$data['title']='Plus Général';
+					$data['bcCurrent']='Général';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -109,8 +109,8 @@
 			if (!$this->input->post('title'))
 			{
 				$data['info']=$this->Mgeneral->getRowByColumn('fg_general','id',$id);
-				$data['title']='Edit faqs';
-				$data['bcCurrent']='faqs';
+				$data['title']='Éditer Général';
+				$data['bcCurrent']='Général';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
@@ -118,23 +118,23 @@
 			else 
 			{
 				$this->form_validation->set_rules('title','Title','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mgeneral->updateRowByColumn('fg_general','id',$id,$input))
 					{
-						$this->session->set_userdata('result','update success');
+						$this->session->set_userdata('result','Éditer succès');
 					}
-					else $this->session->set_userdata('result','update failute');
+					else $this->session->set_userdata('result','Éditer échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['info']=$this->Mgeneral->getRowByColumn('fg_general','id',$id);
-					$data['title']='Edit faqs';
-					$data['bcCurrent']='faqs';
+					$data['title']='Éditer Général';
+					$data['bcCurrent']='Général';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -147,9 +147,9 @@
 		{
 			if ($this->Mgeneral->deleteRowByColumn('fg_general','id',$id))
 			{
-				$this->session->set_userdata('result','Delete success');
+				$this->session->set_userdata('result','Effacer succès');
 			}
-			else $this->session->set_userdata('result','delete success');		
+			else $this->session->set_userdata('result','Effacer échec');		
 			$this->index();
 		}
 	}

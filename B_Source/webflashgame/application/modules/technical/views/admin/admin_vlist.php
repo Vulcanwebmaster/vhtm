@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Are you delete this technical?");
+					var r=confirm("Êtes-vous supprimer ce général?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>technical/admin/delete/"+value;
@@ -44,10 +44,10 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>Number</th>
-		    				<th>Title (en)</th> 
-		    				<th>Title (fr)</th> 
-		    				<th>Edit|Del</th>
+							<th>Nombre</th>
+		    				<th>Titre (en)</th> 
+		    				<th>Titre (fr)</th> 
+		    				<th>Éditer|Effacer</th>
 		    				
 						</tr> 
 					</thead> 
@@ -58,8 +58,8 @@
 			    				<td><?php echo $item->title;?></td> 
 			    				<td><?php echo $item->titlefr;?></td> 
 			    				<td>
-			    					<a href="<?php echo base_url()?>technical/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>technical/admin/edit/<?php echo $item->id?>" title="Éditer"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Effacer"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -73,7 +73,7 @@
 				<footer>
 						
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>technical/admin/insert">Add new</a>
+							<a class="alt_btn" href="<?php echo base_url();?>technical/admin/insert">Plus</a>
 						</div>
 				</footer>
 						

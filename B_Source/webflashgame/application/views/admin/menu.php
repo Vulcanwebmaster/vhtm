@@ -13,19 +13,17 @@
 <!-- 		<li class="icn_application"><a href="<?php echo base_url()?>kenh/admin">Change</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>faqs/admin">Faqs</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>general/admin">Général</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>technical/admin">Technical</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>technical/admin">Technique</a></li>
 <!-- 		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">About us</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>giaidau/admin">Tournois </a></li>
-<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>banner/admin">bannière</a></li>   -->
-<!-- 	<li class="icn_application"><a href="<?php echo base_url()?>bannerheader/admin">Bannière d'en-tête</a></li>  -->
-		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Suppost</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Glissement</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>winner/admin">Le grand gagnant de</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>toptournament/admin">Haut tournoi de haut</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>banner/admin">Bannière</a></li>  
+		<li class="icn_application"><a href="<?php echo base_url()?>bannerheader/admin">Bannière d'en-tête</a></li>  
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Suppost</a></li> -->
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Glissement</a></li> -->
+		<li class="icn_application"><a href="<?php echo base_url()?>winner/admin">Top joueurs</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>toptournament/admin">Top turnois</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>setting/admin">Mise</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>gioithieu/admin">À propos de nous</a></li>
-<!-- 		<li class="icn_application"><a href="#">Tài khoản</a></li>s -->
-<!-- 		<li class="icn_application"><a href="#">Kênh</a></li> -->
+	
 	</ul>
 <h3>Utilisateurs</h3>
 	<ul class="toggle">

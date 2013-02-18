@@ -63,8 +63,8 @@
 			{
 				$data['list']=$this->Mwinner->getListFull('fg_winner');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Add winner';
-				$data['bcCurrent']='winner';
+				$data['title']='Plus joueurs';
+				$data['bcCurrent']='joueurs';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
@@ -72,24 +72,24 @@
 			else 
 			{
 				$this->form_validation->set_rules('name','Name ','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mwinner->insertNewRow('fg_winner',$input))
 					{
-						$this->session->set_userdata('result','Add new success');
+						$this->session->set_userdata('result','Plus succès');
 					}
-					else $this->session->set_userdata('result','Add new failure');
+					else $this->session->set_userdata('result','Plus échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['list']=$this->Mwinner->getListFull('fg_winner');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Add winner';
-					$data['bcCurrent']='winner';
+					$data['title']='Plus joueurs';
+					$data['bcCurrent']='joueurs';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -107,8 +107,8 @@
 			if (!$this->input->post('name'))
 			{
 				$data['info']=$this->Mwinner->getRowByColumn('fg_winner','id',$id);
-				$data['title']='Edit winner';
-				$data['bcCurrent']='winner';
+				$data['title']='Éditer joueurs';
+				$data['bcCurrent']='joueurs';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
@@ -116,23 +116,23 @@
 			else 
 			{
 				$this->form_validation->set_rules('name','Name','required|trim');
-				$this->form_validation->set_message('required','Category %s not empty');
+				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
 					if ($this->Mwinner->updateRowByColumn('fg_winner','id',$id,$input))
 					{
-						$this->session->set_userdata('result','update success');
+						$this->session->set_userdata('result','Éditer succès');
 					}
-					else $this->session->set_userdata('result','update failute');
+					else $this->session->set_userdata('result','Éditer échec');
 					$this->index();
 				}
 				else 
 				{
 					$data['info']=$this->Mwinner->getRowByColumn('fg_winner','id',$id);
-					$data['title']='Edit winner';
-					$data['bcCurrent']='winner';
+					$data['title']='Éditer joueurs';
+					$data['bcCurrent']='joueurs';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -145,9 +145,9 @@
 		{
 			if ($this->Mwinner->deleteRowByColumn('fg_winner','id',$id))
 			{
-				$this->session->set_userdata('result','Delete success');
+				$this->session->set_userdata('result','Effacer succès');
 			}
-			else $this->session->set_userdata('result','delete success');		
+			else $this->session->set_userdata('result','Effacer échec');		
 			$this->index();
 		}
 	}

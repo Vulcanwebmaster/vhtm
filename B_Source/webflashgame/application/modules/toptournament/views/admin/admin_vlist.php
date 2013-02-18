@@ -12,7 +12,7 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Are you delete this top tournament?");
+					var r=confirm("Êtes-vous supprimer ce top turnois?");
 					if (r==true)
 					{
 						var uri="<?php echo base_url()?>toptournament/admin/delete/"+value;
@@ -44,10 +44,10 @@
 				<table class="tablesorter" cellspacing="0"> 
 					<thead> 
 						<tr> 
-							<th>Number</th>
-		    				<th>Nick name</th> 
-		    				<th>Time</th>
-		    				<th>Edit|Del</th>
+							<th>Nombre</th>
+		    				<th>Pseudo</th> 
+		    				<th>Temps</th>
+		    				<th>Éditer|Effacer</th>
 						</tr> 
 					</thead> 
 					<tbody>
@@ -57,8 +57,8 @@
 			    				<td><?php echo $item->nickname;?></td> 
 			    				<td><?php echo $item->time_;?></td> 
 			    				<td>
-			    					<a href="<?php echo base_url()?>toptournament/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Delete"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
+			    					<a href="<?php echo base_url()?>toptournament/admin/edit/<?php echo $item->id?>" title="Éditer"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Effacer"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -72,7 +72,7 @@
 				<footer>
 						
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>toptournament/admin/insert">Add new</a>
+							<a class="alt_btn" href="<?php echo base_url();?>toptournament/admin/insert">Plus</a>
 						</div>
 				</footer>
 						
