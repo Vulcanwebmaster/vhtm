@@ -26,27 +26,80 @@
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
 				
-				 <div class="container">
-					<div>
-						<p><strong>In the help menu you will find;</strong></p>
-						<ul>
-							<li><strong>game instructions,</strong></li>
-							<li><strong>
-		an introduction to our website and</strong></li>
-							<li><strong>answers to frequently asked questions (FAQs)</strong></li>
-						</ul>
-						<strong>
-covering all games and functions available at GameTwist.<br><br>
-Should you have any further questions, please do not hesitate to contact our support team at <a href="#">support@gametwist.com</a>.<br><br>
-Our support hotline is available 7 days a week (excl. public holidays) from 8am to 10pm:<br>
-						<ul>
-							<li><b>Germany: </b><strong>0900 141 0 141</strong> (�1.80/min.)</li>
-							<li><b>Austria: 0900 499 944</b> (�1.80/min.)</li>
-						</ul><br>
-Prices given are from landline telephones. Prices for calls from cell phones may be higher.<br></strong>
-						<p></p>
-					</div>
-				</div> 
+				<div class="l12323" style="width: 309px !important;
+float: right !important;">
+							<div class="mainright1">
+								<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_52.png">
+								<div class="ctmainrigt1">
+									<p>40.000<br>joueurs inscrits</p>
+									<label>2.000 En Ligne</label>
+								</div><br clear="both">
+							</div>
+							<div id="topturnois">
+								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_03.png"></p>
+								<ul>
+									<li>
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_74.png">
+										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
+									</li>
+									<li>
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_78.png">
+										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
+									</li>
+									<li>
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_80.png">
+										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
+									</li>
+									<li>
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_82.png">
+										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
+									</li>
+								</ul>
+							</div>
+							
+							<div id="topjou">
+								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_06.png"></p>
+								<ul>
+									<li class="c1">
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_74.png">
+										<label><a href="#">Mon name et surname</a> $865.67</label>
+									</li>
+									<li class="c2">
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_78.png">
+										<label><a href="#">Mon name et surname</a> $865.67</label>
+									</li>
+									<li class="c2">
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_80.png">
+										<label><a href="#">Mon name et surname</a> $865.67</label>
+									</li>
+									<li class="c1">
+										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_82.png">
+										<label><a href="#">Mon name et surname</a> $865.67</label>
+									</li>
+								</ul>
+							</div>
+							<div id="belte">
+								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_09.png"></p>
+								<!-- <div class="faclide">
+									<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_99.png"/>
+									<div class="likef">
+										<label style="color:#0184a3">Belote.com</label>
+										<div style="margin-top:5px;">
+											<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_102.png"/>
+											<label style="padding-top:5px">You like this</label>
+										</div>
+									</div><br clear="both"/>
+								</div> -->
+								<script>(function(d, s, id) {
+										  var js, fjs = d.getElementsByTagName(s)[0];
+										  if (d.getElementById(id)) return;
+										  js = d.createElement(s); js.id = id;
+										  js.src = "//connect.facebook.net/en/all.js#xfbml=1";
+										  fjs.parentNode.insertBefore(js, fjs);
+										}(document, 'script', 'facebook-jssdk'));</script>
+									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam" data-width="268" data-height="210" data-show-faces="true" data-stream="false" data-header="false"></div>
+							</div>
+						</div>
 			</div>
 		</div>
 		<div id="sideNav">

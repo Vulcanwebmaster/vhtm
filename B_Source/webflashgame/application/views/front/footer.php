@@ -11,7 +11,7 @@
 						<label style="color:#fff">Nouvelles de twitter :</label> <label style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</label>
 						<div class="uliu">
 							<ul>
-								<li style="margin-top: 3px"><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_156.png"/></a></li>
+<!-- 								<li style="margin-top: 3px"><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_156.png"/></a></li> -->
 								<li ><a href="https://twitter.com/"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_149.png"/></a></li>
 								<li><a href="https://www.facebook.com/"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_151.png"/></a></li>
 								<li><a href="<?php echo base_url();?>rss"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_153.png"/></a></li>

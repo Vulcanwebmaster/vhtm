@@ -227,4 +227,22 @@ class Mgiaidau extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 	}
+	
+	function Topgiaidau($limit){
+		$this->db->select();
+		$this->db->from('fg_tournaments');
+		$this->db->order_by("count_dem", "desc");
+		//$this->db->order_by("title", "desc"); 
+		$this->db->limit($limit);
+		$ds=$this->db->get();
+		
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+		//var_dump($list);die();
+	 	return $list;
+	}
 }
