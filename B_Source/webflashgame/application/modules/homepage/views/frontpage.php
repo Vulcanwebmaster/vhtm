@@ -97,13 +97,13 @@
 				 							{ ?>
 				 						<?php echo $value->image ?>
 										<!-- <img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
-										<p class="p1"> <?php echo $value->content ?>
+										<p class="p1"> <?php echo word_limiter(strip_tags($value->content), 70); ?>
 											</p>
 											<?php }?>
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
-										<lable>charger plus de nouvelles</lable>
+										<lable><a href="<?php echo base_url();?>news">plus de nouvelles</a> </lable>
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>

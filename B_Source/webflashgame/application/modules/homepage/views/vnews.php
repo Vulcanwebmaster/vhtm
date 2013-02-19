@@ -124,13 +124,11 @@
 			        				<div style="width:90%; overflow: hidden;">
 			        		<!-- Slide Footer---->
 						        		<div class="slideimage">
-						        			
 												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_111.png"></p>
 												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_136.png"></p>											
 												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_133.png"></p>											
 												<p><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"></p>								
 												<p style="margin-right: 10px"><img alt="" src="<?php echo base_url();?>assets/flash_game/images/Belote_111.png"></p>
-						        		
 						        		</div>
 			        		<!-- End Slide Footer---->
 			        				</div>
