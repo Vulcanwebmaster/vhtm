@@ -7,7 +7,8 @@
 					<div id="contentmain">
 					<!---------------Chi tiet tin tuc -->
 							<div id="contentmainleft" class="addnews">
-								<?php foreach ($list_news as $value) { ?>
+								<?php if(isset($list_news)){
+								 foreach ($list_news as $value) { ?>
 								<div id="titlenews">
 									<?php echo $value->name ?>
 								</div>
@@ -23,10 +24,11 @@
 							<textarea name="comment_content" value="Comment" onblur="if(this.value=='') this.value='Comment';" onfocus="if(this.value=='Comment') this.value='';"></textarea>
 							<input type="submit" value="Comment" class="submitfrmcm" />
 							<div>
-								<?php foreach ($list_comment as $comment) { ?>
+								<?php if(isset($list_comment)){
+								 foreach ($list_comment as $comment) { ?>
 									<p style="font-size: 16px; font-weight: bold"><?php echo $comment->comment_name ?>:</p>
 									<?php echo $comment->comment_content ?></br>
-								<?php } ?>
+								<?php } } } ?>
 							</div>
 							
 						</form>
