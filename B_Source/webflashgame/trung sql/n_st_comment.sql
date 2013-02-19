@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 19, 2013 at 10:55 AM
+-- Generation Time: Feb 19, 2013 at 12:45 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `n_st_comment` (
   `comment_content` text COLLATE utf8_unicode_ci NOT NULL,
   `news_id` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `n_st_comment`
@@ -47,8 +47,7 @@ INSERT INTO `n_st_comment` (`id`, `comment_name`, `comment_content`, `news_id`) 
 (7, 's', 's', ''),
 (8, 'trungoc', 'trungpro', ''),
 (9, 'trungoc', 'trungoc', ''),
-(10, 'thuhang', 'thuhang', '2'),
-(11, 'Name', 'Comment', '1');
+(10, 'thuhang', 'thuhang', '2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

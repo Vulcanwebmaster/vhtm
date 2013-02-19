@@ -84,20 +84,16 @@
 											<?php }?>
 										</ul>
 									</div>
-								<!--	<style type="text/css">
-										.tuyet p{
-										float: left;
-										width: auto ;
-										height: auto ;
-										}
-																		
-								</style>-->
 									<div class="contentimgtext tuyet">
 										<?php foreach ($list_news as $value) 
 				 							{ ?>
 				 						<?php echo $value->image ?>
 										<!-- <img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
-										<p class="p1"> <?php echo word_limiter(strip_tags($value->content), 70); ?>
+										<p class="p1"> <?php if ($_SESSION['lang']=="fr"){
+														 	echo word_limiter(strip_tags($value->content), 70);
+														 } else{
+														 	echo word_limiter(strip_tags($value->contente), 70);
+														  }?>
 											</p>
 											<?php }?>
 									</div><br clear="both" />
@@ -237,11 +233,9 @@
 												<?php echo $value->image4 ?>							
 												<?php echo $value->image5 ?>
 												<?php } ?>
-						        		
 						        		</div>
 			        		<!-- End Slide Footer---->
 			        				</div>
-			        		
 			        		</div>
 			        	<div class="next12"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_141.png"></div>	
 		        	</div>

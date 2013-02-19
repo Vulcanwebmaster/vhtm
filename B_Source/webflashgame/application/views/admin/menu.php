@@ -18,7 +18,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>winner/admin">Top joueurs</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>toptournament/admin">Top turnois</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>setting/admin">Mise</a></li>
-	
+		<li class="icn_application"><a href="<?php echo base_url()?>news/admin">Nouvelles</a></li>
 	</ul>
 
 <h3>Système</h3>
