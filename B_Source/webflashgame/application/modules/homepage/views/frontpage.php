@@ -74,11 +74,14 @@
 								<div class="mainctentlmainleft">
 									<div class="topmainlefftct">
 										<ul>
-											<li style="background:none"><a href="#">par Imedgazou</a></li>
-											<li>|</li>
-											<li class="imglimain"><a href="#">About, accuei</a></li>
-											<li>|</li>
-											<li class="imglimain1"><a href="<?php echo base_url();?>homepage/news">comments</a></li>
+											<?php foreach($list_news as $item)
+											{?>
+												<li style="background:none"><a href="#">par Imedgazou</a></li>
+												<li>|</li>
+												<li class="imglimain"><a href="#">About, accuei</a></li>
+												<li>|</li>
+												<li class="imglimain1"><a href="<?php echo base_url();?>news/detail/<?php echo $item->id;?>">comments</a></li>
+											<?php }?>
 										</ul>
 									</div>
 								<!--	<style type="text/css">

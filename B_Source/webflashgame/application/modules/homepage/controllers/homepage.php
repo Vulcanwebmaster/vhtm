@@ -26,7 +26,7 @@ class Homepage extends NIW_controller {
 		$data['photo'] = $this->Mhomepage->getListFull('fg_banner');
 		//var_dump($data['image']); die();
 		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
-		$data['list_news'] = $this->Mhomepage->getListFull('fg_news');
+		$data['list_news'] = $this->Mhomepage->getListOffset('fg_news',1,0);
 		$data['list_games'] = $this->Mhomepage->getListOffset('fg_games',48,0);
 		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');
 		$data['list_bannerheader'] = $this->Mhomepage->getListFull('fg_bannerheader');
@@ -60,32 +60,6 @@ class Homepage extends NIW_controller {
 		$data['module'] = $this->module;
 		$data['page'] = 'vnews';
 		$this->load->view('front/container',$data);
-	}
-	
-	function _input()
-	{
-		$input=array(
-					'comment_name'=>$this->input->post('comment_name'),
-					'comment_content'=>$this->input->post('comment_content'),
-					);
-		return $input;
-	}
-	
-	function comment()
-	{
-		$this->form_validation->set_rules('comment_name','Name','required|trim');
-		$this->form_validation->set_rules('comment_content','Content','required|trim');
-		if ($this->form_validation->run())
-		{
-			$input=$this->_input();
-			if ($this->Mhomepage->insertNewRow('st_comment',$input))
-			{
-				$this->session->set_userdata('result','Post is successfull !');
-			}
-			else $this->session->set_userdata('result','False !');
-		}
-		
-		redirect(base_url().'homepage/news','refresh');
 	}
 	
 	}
