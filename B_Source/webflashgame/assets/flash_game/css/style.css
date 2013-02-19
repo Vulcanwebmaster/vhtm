@@ -120,9 +120,9 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
   #imgnews img{ width: 538px !important; height:218px !important; margin:8px 0 0 9px;}
   .addnews{background:#fff; border:1px solid #e3e3e3; border-radius:3px;}
   #idcontentnews{padding:15px;}
-  .frmcm{ background:rgba(190, 190, 190, .2); border:solid #e9e9e9; border-width:1px 0; position:relative; padding:7px 10px 7px 9px;}
-  .frmcm textarea{ width:95%; margin:5px 5px 5px 1px;}
-  .submitfrmcm{ }
+  .frmcm{ background:#f1f1f1; border:solid #e9e9e9; border-width:1px 0; position:relative; padding:7px 10px 7px 9px;}
+  .frmcm textarea{ width:95%; margin:5px 5px 5px 1px; padding:10px; height:60px;}
+  .submitfrmcm{ background:url(../images/submitdt.png) no-repeat; background-position: -352px -495px; border-color:#29447e #29447e #1a356e; color:#fff; background-color:#5b74a8; padding:3px !important; border:1px solid #999;}
   
   #listnews{ font-weight:bold; font-size:20px; border-bottom:1px solid #ccc; padding-left:20px; width:120px; margin-bottom:0;}
   #ullistnew{margin:0; padding:10px}
@@ -136,4 +136,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
   .textdetailnews{ float:left; width:81%; padding:0 10px;}
   .readmordetailnews{float:right; color:#018eaf; text-decoration:underline}
   .readmordetailnews a{ color:#018eaf; }
-
+  .frmcmdetail{ padding:10px; border-radius:3px; background:rgba(190, 190, 190, .2)}
+.contetncommentdt p{margin:0; padding:0; clear:both; }
+.sizepdetail{border-radius:5px;background:#fff; padding:5px 10px; margin-top:10px; clear:both}
+.comment_content{ margin-top:0 !Important; }

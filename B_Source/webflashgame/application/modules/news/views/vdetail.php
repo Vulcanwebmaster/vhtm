@@ -19,15 +19,19 @@
 									<?php echo $detail->content ?>
 								</div>
 						<form action="<?php echo base_url();?>news/comment" method="post" class="frmcm">
-							<input type="hidden" value="<?php echo $detail->id ?>" name="news_id" />
-							<input type="text" name="comment_name" value="Name" onblur="if(this.value=='') this.value='Name';" onfocus="if(this.value=='Name') this.value='';" />
-							<textarea name="comment_content" value="Comment" onblur="if(this.value=='') this.value='Comment';" onfocus="if(this.value=='Comment') this.value='';"></textarea>
-							<input type="submit" value="Comment" class="submitfrmcm" />
-							<div>
+							<div class="frmcmdetail">
+								<input type="hidden" value="<?php echo $detail->id ?>" name="news_id" />
+								<input type="text" name="comment_name" value="Name" onblur="if(this.value=='') this.value='Name';" onfocus="if(this.value=='Name') this.value='';" />
+								<textarea name="comment_content" value="Comment" onblur="if(this.value=='') this.value='Comment';" onfocus="if(this.value=='Comment') this.value='';"></textarea>
+								<input type="submit" value="Comment" class="submitfrmcm" />
+							</div>
+							<div class="contetncommentdt">
 								<?php if(isset($list_comment)){
 								 foreach ($list_comment as $comment) { ?>
-									<p style="font-size: 16px; font-weight: bold"><?php echo $comment->comment_name ?>:</p>
-									<?php echo $comment->comment_content ?></br>
+								 	<div class="sizepdetail">
+									<p style="font-size: 16px; font-weight: bold; color: #3b5998"><?php echo $comment->comment_name ?>:</p>
+									<p class="comment_content"><?php echo $comment->comment_content ?></p>
+									</div>
 								<?php } } } ?>
 							</div>
 							
