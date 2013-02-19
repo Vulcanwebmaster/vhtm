@@ -11,78 +11,44 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tournament name (en) </label>
+					<label>NOM DU TOURNOI (en) </label>
 					<input type="text" name="name_tour" style="width:92%" value="<?php echo $info->name_tour;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Phần trăm web</label>
-					<input type="text" name="name_tour" style="width:92%" value="<?php echo $info->name_tour;?>"/>
-				</fieldset>
-				<fieldset>
-					<label>Tournament name (fr)</label>
+					<label>NOM DU TOURNOI (fr)</label>
 					<input type="text" name="name_tourfr" style="width:92%" value="<?php echo $info->name_tourfr;?>"/>
 				</fieldset>
+			
 				<fieldset>
-					<label>Overview (en)</label>
-					<?php echo $this->ckeditor->editor('overview',$info->overview,$config);?>
+					<label>Joueur</label>
+					<input type="text" name="players" style="width:92%" value="<?php echo $info->players;?>"/>
 				</fieldset>
+				
+				
 				<fieldset>
-					<label>Overview (fr)</label>
-					<?php echo $this->ckeditor->editor('overviewfr',$info->overviewfr,$config);?>
+					<label>GAINS </label>
+					<input type="text" name="tienthuong" style="width:92%" value="<?php echo $info->tienthuong;?>"/>
 				</fieldset>
+				
 				<fieldset>
-					<label>Name game</label>
-					<select name="game_id">
-						<option></option>
-						<?php foreach ($list as $item)
-						{
-							if ($item->game_id == $info->game_id)
-							{?>
-								<option value="<?php echo $item->game_id?>" selected="selected"><?php echo $item->name;?></option>
-							<?php }
-							else {?>
-								<option value="<?php echo $item->game_id?>"><?php echo $item->name;?></option>
-						<?php }}?>
-					</select>
-				</fieldset>
-				<fieldset>
-					<label>Name games (fr)</label>
-					<select name="game_id">
-						<option></option>
-						<?php foreach ($list as $item)
-						{
-							if ($item->game_id == $info->game_id)
-							{?>
-								<option value="<?php echo $item->game_id?>" selected="selected"><?php echo $item->namefr;?></option>
-							<?php }
-							else {?>
-								<option value="<?php echo $item->game_id?>"><?php echo $item->namefr;?></option>
-						<?php }}?>
-					</select>
-				</fieldset>
-				<fieldset>
-					<label>Rules (en)</label>
+					<label>Règles (en)</label>
 					<?php echo $this->ckeditor->editor('rules',$info->rules,$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Image</label>
-					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
+					<label>Règles (fr)</label>
+					<?php echo $this->ckeditor->editor('rulesfr',$info->rulesfr,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Avatar</label>
 					<?php echo $this->ckeditor->editor('avarta',$info->avarta,$config);?>
 				</fieldset>
-				<fieldset>
-					<label>Rules (fr)</label>
-					<?php echo $this->ckeditor->editor('rulesfr',$info->rulesfr,$config);?>
-				</fieldset>
 				
 				<fieldset>
-					<label>Start_date</label>
+					<label>Date de début</label>
 					<input type="text" name="start_date"  value="<?php echo $info->start_date;?>"/>
 				</fieldset>
 				<fieldset>
-					<label>End_date</label>
+					<label>Date de fin</label>
 					<input type="text" name="end_date" id="end_date" value="<?php echo $info->end_date;?>"/>
 				</fieldset>
 			</div>

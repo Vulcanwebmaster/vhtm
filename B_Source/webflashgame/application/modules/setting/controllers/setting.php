@@ -29,8 +29,6 @@ class Setting extends NIW_Controller
 		function page($index=0)
 		{
 			$data['info']=$this->Msetting->getRowByColumn('fg_games','game_id',$index);
-			$data['list']=$this->Msetting->getListCategory('fg_games');
-			//var_dump($data['list']); die();
 			$data['list_hotro'] = $this->Msetting->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Msetting->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Msetting->getListFull('fg_slide');
@@ -66,10 +64,6 @@ class Setting extends NIW_Controller
 			
 		}
 		
-		function tienthuong()
-		{
-			
-		}
 		
 		function _input()
 		{
@@ -81,11 +75,14 @@ class Setting extends NIW_Controller
 					'top5'=>$this->input->post('top5'),
 					'top6'=>$this->input->post('top6'),
 					'top7'=>$this->input->post('top7'),
-					'game_id'=>$this->input->post('game_id'),
-					'start_time'=>$this->input->post('start_time'),
-					'end_time'=>$this->input->post('end_time'),
+					'name_tour'=>$this->input->post('name_tour'),
+					'name_tourfr'=>$this->input->post('name_tourfr'),
+					'start_date'=>$this->input->post('start_date'),
+					'end_date'=>$this->input->post('end_date'),
 					'players'=>$this->input->post('players'),
 					'top8'=>$this->input->post('top8'),
+					'rules'=>$this->input->post('rules'),
+					'rulesfr'=>$this->input->post('rulesfr'),
 					'top9'=>$this->input->post('top9'),
 					'top10'=>$this->input->post('top10'),
 					'tienthuong'=>$this->input->post('tienthuong'));
@@ -104,7 +101,7 @@ class Setting extends NIW_Controller
 				+($this->input->post('top10'))==100 
 				)
 			 	{
-			 		$data['thuong_detail']  =  $this->Msetting->getRowByColumn('fg_tournaments','tour_id',$index);
+			 		$data['thuong_detail']  =  $this->Msetting->getRowByColumn('fg_tournaments','tour_id',1);
 			 		$input=$this->_input();
 					$this->Msetting->insertNewRow('fg_tournaments',$input);
 					redirect(base_url(),'refresh');

@@ -47,8 +47,6 @@
 							<th>Nombre</th>
 		    				<th>Nom du tournoi (en)</th> 
 		    				<th>Nom du tournoi (fr)</th> 
-<!-- 		    				<th>Name game</th> -->
-<!-- 		    				<th>Name game (fr)</th> -->
 		    				<th>Date de début</th>
 		    				<th>Date de fin</th>
 		    				<th>Éditer|Effacer</th>
@@ -61,8 +59,6 @@
 					 		<tr><td><?php echo $i;?></td>
 			    				<td><?php echo $item->name_tour;?></td> 
 			    				<td><?php echo $item->name_tourfr;?></td> 
-<!-- 			    				<td><?php echo $item->name;?></td> -->
-<!-- 			    				<td><?php echo $item->namefr;?></td> -->
 			    				<td><?php echo $item->start_date;?></td> 
 			    				<td><?php echo $item->end_date;?></td>
 			    				<td>

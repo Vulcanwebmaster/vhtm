@@ -22,12 +22,6 @@ class Giaidau extends NIW_Controller
 	 
 	function page($index=0)
 	{
-			$config['base_url']=base_url().'giaidau/admin/page/';
-			$config['per_page']=1;
-			$config['total_rows']=count($this->Mgiaidau->getListFull('fg_tournaments'));
-			$config['uri_segment']=1;
-			$this->pagination->initialize($config);
-			
 			$config['base_url']=base_url().'homepage/page/';
 			$config['per_page']= 9;
 			$config['total_rows']=count($this->Mgiaidau->getListByColumn('fg_tournaments','tour_id','1'));
@@ -69,47 +63,42 @@ class Giaidau extends NIW_Controller
 	}
 	
 	function _input2()
-	{		
+	{	
 			$input = array('account_id'=>$this->input->post('dkthamgiagiaidau'),
 							'tour_id'=>$this->input->post('tour_id'),
 			);
+		//	var_dump($input); die();
 		return $input;
 	}
 		
 	function register()
 	{
-		if($this->Mgiaidau->check2($_SESSION['front_user_id'])==TRUE){
+		//if($this->Mgiaidau->check2($_SESSION['front_user_id'])==TRUE){
 			$input=$this->_input2();
 			$this->Mgiaidau->insertNewRow('fg_list_player',$input);
 			redirect(base_url(),'refresh');
-		}else{
-			redirect(base_url(),'refresh');
-		}
+		//}else{
+			//redirect(base_url(),'refresh');
+			//echo 'not oke'; die();
+		//}
 			
 	}
 	
 	
 	function detail($index=0)
 	{
-			$data['avarta'] = $this->Mgiaidau->getListCategory('fg_tournaments','tour_id',$index);
-			//$data['avarta']->avarta;
-			//$avarta=$data['avarta']->avarta;
-			//var_dump($avarta); die();
-			$data['available'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
-			$available=$data['available']->players;
-			//var_dump($available); die();
-			$data['player'] = $this->Mgiaidau->CountPlayer('fg_list_player','tour_id',$index);
-			//var_dump($data['player']); die();
+			// $data['avarta'] = $this->Mgiaidau->getListCategory('fg_tournaments','tour_id',$index);
+			 $data['available'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
+			 $available=$data['available']->players;
+			 $data['player'] = $this->Mgiaidau->CountPlayer('fg_list_player','tour_id',$index);
 			 $data['list_giaidau'] = $this->Mgiaidau->getListFull('fg_tournaments');
 			 $data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
 			 $data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
 			 $data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
 			 
 			 $data['setting_detail'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
-			 //var_dump($data['setting_detail']); die();
 			 $data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
 			 $data['list_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
-			 //var_dump($data['list_chitiet']); die();
 			 $data['setting_chitiet']  =  $this->Mgiaidau->getRowByColumn('fg_setting','id',1);
 			 $data['checkStatus']  =  $this->Mgiaidau->check('id',$index);
 			 $data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player','id',$index);
@@ -121,9 +110,12 @@ class Giaidau extends NIW_Controller
 				 $data['checkStatus']  =  $this->Mgiaidau->check($_SESSION['front_user_id'],$index);
 				 
 					 $data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player',$_SESSION['front_user_id'],$index);
+					 //var_dump($data['listPlayer']); die();
 					 //echo $data['listPlayer']; die();
 					 $data['list_player'] = $this->Mgiaidau->getListUsername('fg_list_player',$_SESSION['front_user_id'],$index);
+					 //var_dump($data['list_player']); die();
 					 $data['items']  =  $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
+					 //var_dump($data['items']); die();
 					 $data['list_tour'] = $this->Mgiaidau->getListFull('fg_tournaments');
 					 $model=new CI_Model();
 					 $data['module']  =  $this->module;

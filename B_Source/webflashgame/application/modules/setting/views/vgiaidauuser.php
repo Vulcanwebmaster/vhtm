@@ -69,15 +69,38 @@
 			})
 		</script>
 		<form action="<?php echo base_url();?>setting/send" method="post" align="center">
-				 				<p><h4> Winnings Tournament</h4></p>
+				 				<p><h4>
+				 					<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Tournoi gains
+								<?php } else{ ?>
+									Winnings Tournament
+								<?php } ?> </h4></p>
 				 				
-					 				<div style=" width: 52%; float: left; margin-left:70px">
-					 				<table>
+					 		<div style=" width: 52%; float: left; margin-left:70px">
+					 		<table>
 				 						<tr>
-				 							<td><p style="text-transform: uppercase;float: left"> Tournament <span style="color:red"></span></p></td>
+				 							<td><p style="text-transform: uppercase;float: left"> 
+				 								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Tournoi (en)
+								<?php } else{ ?>
+									 Tournament (en)
+								<?php } ?> <span style="color:red"></span></p></td>
 					 						<td><input type="text" name="name_tour"></td>
 					 					</tr>
+					 					
 					 					<tr>
+				 							<td><p style="text-transform: uppercase;float: left"> 
+				 								<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Tournoi (fr)
+								<?php } else{ ?>
+									 Tournament (fr)
+								<?php } ?> <span style="color:red"></span></p></td>
+					 						<td><input type="text" name="name_tourfr"></td>
+					 					</tr>
+					 					<!-- <tr>
 					 						<td><p style="text-transform: uppercase;">Games</p> </td>	
 					 						<td>
 							 				<select name="game_id" style="width: 170px;">
@@ -94,71 +117,167 @@
 						 					</select>
 						 					</td>
 						 					
-				 					</tr>
+				 					</tr> -->
 				 					<tr>
-							 				<td><p style="text-transform: uppercase"> Top1 <span style="color:red">%</span></p></td>
+							 				<td><p style="text-transform: uppercase"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 1 
+								<?php } else{ ?>
+									 Top 1
+								<?php } ?>   <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top1"></td>
 							 		</tr>	
 							 		<tr>	
-							 				<td><p style="text-transform: uppercase"> Top 2 <span style="color:red">%</span></p></td>
+							 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 2 
+								<?php } else{ ?>
+									 Top 2
+								<?php } ?> <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top2"></td>
 							 		</tr>	
 							 		<tr>	
-							 				<td><p style="text-transform: uppercase"> Top 3 <span style="color:red">%</span></p></td>
+							 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 3 
+								<?php } else{ ?>
+									 Top 3
+								<?php } ?>  <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top3"></td>
 							 		</tr>
 							 		<tr>	
-							 				<td><p style="text-transform: uppercase"> Top 4 <span style="color:red">%</span></p></td>
+							 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 4 
+								<?php } else{ ?>
+									 Top 4
+								<?php } ?>  <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top4"></td>
 							 		</tr>
 							 		<tr>	
-							 				<td><p style="text-transform: uppercase"> Top 5 <span style="color:red">%</span></p></td>
+							 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 5 
+								<?php } else{ ?>
+									 Top 5
+								<?php } ?>  <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top5"></td>
 							 		</tr>
 							 		<tr>
-							 				<td ><p style="text-transform: uppercase">Player</p></td>
+							 				<td ><p style="text-transform: uppercase"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Joueur
+								<?php } else{ ?>
+									 Player
+								<?php } ?> </p></td>
 							 				<td><input type="text" name="players"></td>
 							 		</tr>
-					 				</table>
+							 		
+							 		<tr>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Règles (en)
+								<?php } else{ ?>
+									Rules (en)
+								<?php } ?>  <span style="color:red"></span></p></td>
+									 				<td style="width: 100%"><textarea type="text" name="rules"></textarea></td>
+									 		</tr>
+					 	</table>
 					 				</div>
 					 				
 					 				<div>
 					 					<table>
 					 						<tr>
-									 				<td><p style="text-transform: uppercase"> Top 6 <span style="color:red">%</span></p></td>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 6 
+								<?php } else{ ?>
+									 Top 6
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top6"></td>
 									 		</tr>		
 									 		<tr>
-									 				<td><p style="text-transform: uppercase"> Top 7 <span style="color:red">%</span></p></td>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 7 
+								<?php } else{ ?>
+									 Top 7
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top7"></td>
 									 		</tr>	
 									 		<tr>
-									 				<td><p style="text-transform: uppercase"> Top 8 <span style="color:red">%</span></p></td>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 8 
+								<?php } else{ ?>
+									 Top 8
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top8"></td>
 									 		</tr>	
 									 		<tr>
-									 				<td><p style="text-transform: uppercase"> Top 9 <span style="color:red">%</span></p></td>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 9 
+								<?php } else{ ?>
+									 Top 9
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top9"></td>
 									 		</tr>	
 									 		<tr>
-									 				<td><p style="text-transform: uppercase"> Top 10 <span style="color:red">%</span></p></td>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Haut 10 
+								<?php } else{ ?>
+									 Top 10
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top10"></td>
 									 		</tr>
 									 		<tr>
-									 				<td><p style="text-transform: uppercase"> Start date <span style="color:red"></span></p></td>
-									 				<td><input type="text" name="start_time"></td>
+									 				<td><p style="text-transform: uppercase"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Date de début
+								<?php } else{ ?>
+									 Start date
+								<?php } ?>   <span style="color:red"></span></p></td>
+									 				<td><input type="text" name="start_date" id="datetimepicker2"></td>
 									 		</tr>	
 									 		<tr>
-									 				<td><p style="text-transform: uppercase"> End date <span style="color:red"></span></p></td>
-									 				<td><input type="text" name="end_time"></td>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Date de fin
+								<?php } else{ ?>
+									End date
+								<?php } ?>  <span style="color:red"></span></p></td>
+									 				<td><input type="text" name="end_date" id="datetimepicker1"></td>
 									 		</tr>
 									 		<tr>
-									 				<td><p style="text-transform: uppercase;"> Winnings</p></td>
+									 				<td><p style="text-transform: uppercase;"><?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Gains
+								<?php } else{ ?>
+									Winnings
+								<?php } ?> </p></td>
 									 				<td><input type="text" name="tienthuong"></td>
+									 		</tr>
+									 		
+									 
+									 <tr>
+									 				<td><p style="text-transform: uppercase"> <?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									Règles (fr)
+								<?php } else{ ?>
+									Rules (fr)
+								<?php } ?>  <span style="color:red"></span></p></td>
+									 				<td style="width: 100%"><textarea type="text" name="rulesfr"></textarea></td>
 									 		</tr>
 					 					</table>
 					 				</div>
+					 				<?php if ($_SESSION['lang']=="fr") 
+									{?>
+					 				<input type="submit" class="tuyet" value="Créer" class="submitlh">
+					 				<?php } else{ ?>
 					 				<input type="submit" class="tuyet" value="Create" class="submitlh">
+					 				<?php } ?>
 									</form>
 				<style type="text/css">
 					.tuyet{
@@ -166,6 +285,16 @@
 						height: 50px;
 						
 					}
+					.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+					.ui-timepicker-div dl { text-align: left; }
+					.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+					.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+					.ui-timepicker-div td { font-size: 90%; }
+					.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+					
+					.ui-timepicker-rtl{ direction: rtl; }
+					.ui-timepicker-rtl dl { text-align: right; }
+					.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
 				</style>
 </div>
 <div id="sideBar"></div>
@@ -173,3 +302,14 @@
 <script type="text/javascript">
 	$('#pagehelp').addClass('active')
 </script>
+	<link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.10.0/themes/smoothness/jquery-ui.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-ui-sliderAccess.js"></script>
+		<script>
+		$('#datetimepicker1').datetimepicker();
+		</script>
+		<script>
+		$('#datetimepicker2').datetimepicker();	
+		</script>

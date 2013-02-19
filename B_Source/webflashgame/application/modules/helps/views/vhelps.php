@@ -26,7 +26,7 @@
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
 				
-				<!-- <div class="container">
+				 <div class="container">
 					<div>
 						<p><strong>In the help menu you will find;</strong></p>
 						<ul>
@@ -46,7 +46,7 @@ Our support hotline is available 7 days a week (excl. public holidays) from 8am 
 Prices given are from landline telephones. Prices for calls from cell phones may be higher.<br></strong>
 						<p></p>
 					</div>
-				</div> -->
+				</div> 
 			</div>
 		</div>
 		<div id="sideNav">
@@ -96,7 +96,13 @@ Prices given are from landline telephones. Prices for calls from cell phones may
 					<ul>
 						<?php foreach ($list_faq as $item) 
 							{ ?>
-						<li><a href="<?php echo base_url();?>helps/faqs/<?php echo $item->id."-".$item->alias;?>"><span><?php echo $item->title?></span></a></li>
+						<li><a href="<?php echo base_url();?>helps/faqs/<?php echo $item->id."-".$item->alias;?>"><span>
+							<?php if ($_SESSION['lang']=="fr") 
+								{?>		
+									<?php echo $item->titlefr?>
+								<?php } else{ ?>
+									<?php echo $item->title?>
+								<?php } ?></span></a></li>
 						<?php } ?>
 					</ul>
 				</div>

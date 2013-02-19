@@ -1,9 +1,4 @@
-<h3>Page d'accueil</h3>
-	<ul class="toggle">
-		<li class="icn_photo"><a href="#">Curseur images</a></li>
-		<li class="icn_edit_article"><a href="#">Article</a></li>
-		<li class="icn_categories"><a href="#">Catégories</a></li>
-	</ul>
+
 <h3>Pages</h3>
 	<ul class="toggle">
 
@@ -25,14 +20,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>setting/admin">Mise</a></li>
 	
 	</ul>
-<h3>Utilisateurs</h3>
-	<ul class="toggle">
-		<li class="icn_view_users"><a href="<?php echo base_url()?>auth/admin/members/">Gérer les utilisateurs</a></li>
-	</ul>
-<h3>Médias</h3>
-	<ul class="toggle">
-		<li class="icn_folder"><a href="<?php echo base_url()?>filemanager/admin">Gestionnaire de fichiers</a></li>
-	</ul>
+
 <h3>Système</h3>
 	<ul class="toggle">
 		<!-- <li class="icn_settings"><a href="#">System Info</a></li> -->

@@ -12,9 +12,9 @@
 						<div class="uliu">
 							<ul>
 								<li style="margin-top: 3px"><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_156.png"/></a></li>
-								<li ><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_149.png"/></a></li>
-								<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_151.png"/></a></li>
-								<li><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_153.png"/></a></li>
+								<li ><a href="https://twitter.com/"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_149.png"/></a></li>
+								<li><a href="https://www.facebook.com/"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_151.png"/></a></li>
+								<li><a href="<?php echo base_url();?>rss"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_153.png"/></a></li>
 							</ul>
 						</div>
 					</div>

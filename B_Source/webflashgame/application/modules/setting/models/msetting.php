@@ -15,7 +15,6 @@ class Msetting extends CI_Model
 		$this->db->join('fg_games','fg_games.game_id=fg_tournaments.game_id');
 		
 		$ds=$this->db->get();
-		//var_dump($ds); die();
 		$list=array();
 	 	foreach($ds->result() as $item)
 	 	{

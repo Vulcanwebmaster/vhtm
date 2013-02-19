@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery.nivo.slider.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/flash_game/css/css.css">
-	
+	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-ui-timepicker-addon.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/mootools-core-1.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/flash_game/css/nivo-slider.css" type="text/css" media="screen" />
 	

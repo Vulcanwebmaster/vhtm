@@ -306,7 +306,7 @@
 						<p id="countdown">31:25:07</p>
 					</div>
 					<div class="buttonHolder">
-				<?php  if(!$checkStatus){ ?>
+				<?php 	 if(!$checkStatus){ ?>
 					<form action="<?php echo base_url();?>giaidau/register" method="post" align="center">	
 						<input name="tour_id" type="hidden" value="<?php echo $_SESSION['id_giaidau']->tour_id ?>" />
 						<button name="dkthamgiagiaidau" id="landingSend" value="<?php echo $_SESSION['front_user_id']?>" class="formButton fbSubmit"><span>Register now!</span></button>  

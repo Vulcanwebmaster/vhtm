@@ -9,7 +9,7 @@
 	});
 </script>
 		
-<form method="post" action="<?php echo base_url();?>danhmuc/admin/insert">	
+<form method="post" action="<?php echo base_url();?>faqs/admin/insert">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		
@@ -30,7 +30,6 @@
 				
 				<fieldset>
 					<label>Teneur (en)</label>
-					<input type="text" name="content" style="width:92%"/>
 					<?php echo $this->ckeditor->editor('content','',$config);?>
 				</fieldset>
 				<fieldset>

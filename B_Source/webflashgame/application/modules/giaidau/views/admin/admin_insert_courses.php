@@ -18,61 +18,37 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tournament name (en)</label>
+					<label>NOM DU TOURNOI (en)</label>
 					<input type="text" name="name_tour" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Tournament name (fr)</label>
+					<label>NOM DU TOURNOI (fr)</label>
 					<input type="text" name="name_tourfr" style="width:92%"/>
 				</fieldset>
-				
 				<fieldset>
-					<label>Name game (en)</label>
-					<select name="game_id">
-						<option></option>
-						<?php foreach ($list as $item)
-						{?>
-							<option value="<?php echo $item->game_id?>"><?php echo $item->name;?></option>							
-						<?php }?>
-					</select>
+					<label>Joueur</label>
+					<input type="text" name="players" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Name game (fr)</label>
-					<select name="game_id">
-						<option></option>
-						<?php foreach ($list as $item)
-						{?>
-							<option value="<?php echo $item->game_id?>"><?php echo $item->namefr;?></option>							
-						<?php }?>
-					</select>
+					<label>GAINS</label>
+					<input type="text" name="tienthuong" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Rules (en)</label>
+					<label>Règles (en)</label>
 					<?php echo $this->ckeditor->editor('rules','',$config);?>
 				</fieldset>
 				<fieldset>
-					<label>Image</label>
-					<?php echo $this->ckeditor->editor('image','',$config);?>
-				</fieldset>
-				<fieldset>
-					<label>Rules (fr)</label>
+					<label>Règles (fr)</label>
 					<?php echo $this->ckeditor->editor('rulesfr','',$config);?>
 				</fieldset>
+				
 				<fieldset>
-					<label>Overview (en)</label>
-					<?php echo $this->ckeditor->editor('overview','',$config);?>
+					<label>Date de début</label>
+					<input type="text" name="start_date" id="datetimepicker1" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
 				</fieldset>
 				<fieldset>
-					<label>Overview (fr)</label>
-					<?php echo $this->ckeditor->editor('overviewfr','',$config);?>
-				</fieldset>
-				<fieldset>
-					<label>Start_date</label>
-					<input type="text" name="start_date" id="start_date" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
-				</fieldset>
-				<fieldset>
-					<label>End_date</label>
-					<input type="text" name="end_date" id="start_date" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
+					<label>Date de fin</label>
+					<input type="text" name="end_date" id="datetimepicker2" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
 				</fieldset>
 			</div>
 			
@@ -84,4 +60,32 @@
 		</div><!-- end of .tab_container -->
 				</article><!-- end of content manager article -->	
 </form>
+<style type="text/css">
+					.tuyet{
+						width: 100px;
+						height: 50px;
+						
+					}
+					.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+					.ui-timepicker-div dl { text-align: left; }
+					.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+					.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+					.ui-timepicker-div td { font-size: 90%; }
+					.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+					
+					.ui-timepicker-rtl{ direction: rtl; }
+					.ui-timepicker-rtl dl { text-align: right; }
+					.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+				</style>
+<link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.10.0/themes/smoothness/jquery-ui.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-ui-sliderAccess.js"></script>
+		<script>
+		$('#datetimepicker1').datetimepicker();
+		</script>
+		<script>
+		$('#datetimepicker2').datetimepicker();	
+		</script>
 		

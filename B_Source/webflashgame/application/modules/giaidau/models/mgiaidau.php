@@ -8,23 +8,23 @@ class Mgiaidau extends CI_Model
 		$this->load->helper('date');
 	}
 	
-	function getListCategory($tableName='',$columnName='',$index='')
-	{
-		$this->db->select();
-		$this->db->from('fg_tournaments');
-		$this->db->join('fg_games','fg_games.game_id=fg_tournaments.game_id');
-		
-		$ds=$this->db->get();
-		//var_dump($ds); die();
-		$list=array();
-	 	foreach($ds->result() as $item)
-	 	{
-	 		$list[]=$item;
-	 	}
-	 	$ds->free_result();
-	 	return $list;
-		
-	}
+	 function getListCategory($tableName='',$columnName='',$index='')
+	 {
+		 $this->db->select();
+		 $this->db->from('fg_tournaments');
+		 $this->db->join('fg_games','fg_games.game_id=fg_tournaments.game_id');
+ 		
+		 $ds=$this->db->get();
+		 //var_dump($ds); die();
+		 $list=array();
+	 	 foreach($ds->result() as $item)
+	 	 {
+	 		 $list[]=$item;
+	 	 }
+	 	 $ds->free_result();
+	 	 return $list;
+ 		
+	 }
 	
 	function getRowBySetting($tableName='')
 	 {
@@ -41,23 +41,23 @@ class Mgiaidau extends CI_Model
 	 	return $list;
 	 }
 	 
-	function getListUsername($tableName='',$columnName='',$id_tour='')
-	{
-		
-		$this->db->select();
-		$this->db->from('fg_list_player');
-		$this->db->where('tour_id', $id_tour); 
-		$this->db->join('fg_accounts','fg_accounts.id=fg_list_player.account_id');
-		
-		$ds=$this->db->get();
-		$list=array();
-	 	foreach($ds->result() as $item)
-	 	{
-	 		$list[]=$item;
-	 	}
-	 	$ds->free_result();
-	 	return $list;
-	}
+	 function getListUsername($tableName='',$columnName='',$id_tour='')
+	 {
+ 		
+		 $this->db->select();
+		 $this->db->from('fg_list_player');
+		 $this->db->where('tour_id', $id_tour); 
+		 $this->db->join('fg_accounts','fg_accounts.id=fg_list_player.account_id');
+ 		
+		 $ds=$this->db->get();
+		 $list=array();
+	 	 foreach($ds->result() as $item)
+	 	 {
+	 		 $list[]=$item;
+	 	 }
+	 	 $ds->free_result();
+	 	 return $list;
+	 }
 	function CountPlayer($tableName='',$columnName='',$id_tour='')
 	{
 		
@@ -101,19 +101,20 @@ class Mgiaidau extends CI_Model
 		$this->db->from('fg_list_player');
 		$this->db->where('account_id', $id_account); 
 		$ds=$this->db->get();
-		//var_dump($ds); die();
 		$list=array();
 	 	foreach($ds->result() as $item)
 	 	{
 	 		$list[]=$item;
 	 	}
+		//var_dump($ds); die();
 	 	$ds->free_result();
+		//var_dump($list); die();
 		if(count($list) == 1){
 			return TRUE;
 		}else{
 			return FALSE;
 		}
-	
+	//var_dump($list); die();
 	}
 	
 	
@@ -183,7 +184,7 @@ class Mgiaidau extends CI_Model
 	}
 	
 	function gameNextWeek(){
-		$this->db->where('start_date >' ,date("Y-m-d", strtotime('next sunday')));
+		$this->db->where('start_date >' ,date("m-d-Y", strtotime('next sunday')));
 		$this->db->select();
 		$this->db->from('fg_tournaments');
 		$ds=$this->db->get();
