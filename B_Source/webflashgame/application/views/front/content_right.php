@@ -7,20 +7,29 @@
 			<label>2.000 En Ligne</label>
 		</div><br clear="both"/>
 	</div>
-	<div id="topturnois">
-		<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
-		<ul>
-			<?php $i=1; foreach ($topgiaidau as $value) 
-			{ ?>
-			<li>
-<!-- 										<div><?php echo date("M",strtotime($value->start_date));?><span><?php echo date("d",strtotime($value->start_date));?></span></div> -->
-			<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
-				<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php echo $value->name_tour?></a></label>
-			</li>
-			
-			<?php $i++ ; } ?>
-		</ul>
-	</div>
+	<style>
+								.datetimeDIV{
+									font-size: 11px;
+									position: absolute;
+									left: 27px;
+									top: -1px;
+									color: white
+								}
+							</style>
+							<div id="topturnois">
+								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
+								<ul>
+									<?php $i=1; foreach ($topgiaidau as $value) 
+				 					{ ?>
+									<li style="position:relative">
+									<div class="datetimeDIV"><?php echo date("M",strtotime($value->start_date));?><br /><span style="color: red"><?php echo date("d",strtotime($value->start_date));?></span></div>
+									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
+										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php echo $value->name_tour?></a></label>
+									</li>
+									
+									<?php $i++ ; } ?>
+								</ul>
+							</div>
 	
 	<div id="topjou">
 		<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
