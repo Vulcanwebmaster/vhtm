@@ -35,6 +35,7 @@
 			$input=array(
 						'phantramweb'=>$this->input->post('phantramweb'),
 						'user_gold'=>$this->input->post('user_gold'),
+						'linkface'=>$this->input->post('linkface'),
 						);
 			return $input;
 		}

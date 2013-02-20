@@ -27,6 +27,7 @@ class Homepage extends NIW_controller {
 		//var_dump($data['topgiaidau']); die();
 		$data['image'] = $this->Mhomepage->getListFull('fg_bannerheader');
 		$data['photo'] = $this->Mhomepage->getListFull('fg_banner');
+		$data['link_fanpage'] = $this->Mhomepage->getRowByColumn('fg_setting','id',1);
 		//var_dump($data['image']); die();
 		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
 		$data['list_news'] = $this->Mhomepage->getListOffset('fg_news',1,0);

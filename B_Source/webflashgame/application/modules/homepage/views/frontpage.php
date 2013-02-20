@@ -1,8 +1,8 @@
  <script type="text/javascript">
-		    $(window).load(function() {
-		        $('#slider').nivoSlider();
-		    });
-		    </script>
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+</script>
 <div id="slider12">
 					
 				  <div class="slider-wrapper theme-default slider">
@@ -143,94 +143,12 @@
 								<?php }?>
 							</div>
 						</div>
-						<div id="contentmainright">
-							<div class="l12323">
-							<div class="mainright1">
-								<img src="<?php echo base_url();?>assets/flash_game/images/Belote_52.png"/>
-								<div class="ctmainrigt1">
-									<p>40.000<br/>joueurs inscrits</p>
-									<label>2.000 En Ligne</label>
-								</div><br clear="both"/>
-							</div>
-							<div id="topturnois">
-								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
-								<ul>
-									<?php $i=1; foreach ($topgiaidau as $value) 
-				 					{ ?>
-									<li>
-<!-- 										<div><?php echo date("M",strtotime($value->start_date));?><span><?php echo date("d",strtotime($value->start_date));?></span></div> -->
-									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
-										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php echo $value->name_tour?></a></label>
-									</li>
-									
-									<?php $i++ ; } ?>
-								</ul>
-							</div>
-							
-							<div id="topjou">
-								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
-								<ul>
-									<?php $i=1; foreach ($topwin as $value) 
-				 					{ ?>
-									<li class="c1">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i;?>.png"/>
-										<label><?php echo $value->username ?> $<?php echo $value->money ?></label>
-									</li>
-									<?php  $i++ ; } ?>
-								</ul>
-							</div>
-							<div id="belte">
-								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_09.png"/></p>
-								<!-- <div class="faclide">
-									<img src="<?php echo base_url();?>assets/flash_game/images/Belote_99.png"/>
-									<div class="likef">
-										<label style="color:#0184a3">Belote.com</label>
-										<div style="margin-top:5px;">
-											<img src="<?php echo base_url();?>assets/flash_game/images/Belote_102.png"/>
-											<label style="padding-top:5px">You like this</label>
-										</div>
-									</div><br clear="both"/>
-								</div> -->
-								<script>(function(d, s, id) {
-										  var js, fjs = d.getElementsByTagName(s)[0];
-										  if (d.getElementById(id)) return;
-										  js = d.createElement(s); js.id = id;
-										  js.src = "//connect.facebook.net/en/all.js#xfbml=1";
-										  fjs.parentNode.insertBefore(js, fjs);
-										}(document, 'script', 'facebook-jssdk'));</script>
-									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam"
-										 data-width="268" data-height="210" data-show-faces="true" data-stream="false" data-header="false"></div>
-							</div>
-						</div>
-						<div class="listgerular">
-							<ul>
-								<li><a href="https://www.facebook.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_113.png"/></a></li>
-								<li><a href="https://twitter.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_115.png"/></a></li>
-								<li><a href="https://accounts.google.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_117.png"/></a></li>
-								<li><a href="http://www.youtube.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_119.png"/></a></li>
-							</ul>
-						</div>
-						</div>
-						<div id="bottommain">						
-		        			<div class="prev12"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_138.png"></div>
-			        			<div id="clickslide">			        		
-			        				<div style="width:90%; overflow: hidden;">
-			        		<!-- Slide Footer---->
-						        		<div class="slideimage">
-						        			<?php foreach ($photo as $value) 
-				 								{ ?>
-												<?php echo $value->image1 ?>
-												<?php echo $value->image2 ?>										
-												<?php echo $value->image3 ?>											
-												<?php echo $value->image4 ?>							
-												<?php echo $value->image5 ?>
-												<?php } ?>
-						        		</div>
-			        		<!-- End Slide Footer---->
-			        				</div>
-			        		</div>
-			        	<div class="next12"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_141.png"></div>	
-		        	</div>
+						<!-- Content Right-->
+						<?php $this->load->view('front/content_right')?>
+						<!-- Slide Footer -->
+						<?php $this->load->view('front/slide_bottom')?>
+						<!-- End Slide Footer -->
+						
 						</div>
 						<script type="text/javascript">
 						

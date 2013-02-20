@@ -19,6 +19,11 @@
 					<input type="text" name="user_gold" style="width:92%" value="<?php echo $info->user_gold;?>"/>
 				</fieldset>
 				
+				<fieldset>
+					<label>Fanpage</label>
+					<input type="text" name="linkface" style="width:92%" value="<?php echo $info->linkface;?>"/>
+				</fieldset>
+				
 			</div>
 			
 			<footer style="float:left">
