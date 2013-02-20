@@ -90,9 +90,9 @@ class Homepage extends NIW_controller {
 					mail($to,$subject,$message,$options);
 			if ($this->Mhomepage->insertNewRow('fg_email',$input))
 			{
-				$this->session->set_userdata('email_result','Gửi thành công !');
+				$this->session->set_userdata('email_result','Envoyé avec succès !');
 			}
-			else $this->session->set_userdata('email_result','Gửi không thành công !');
+			else $this->session->set_userdata('email_result','Envoi a échoué !');
 		}
 		$this->index();
 	}

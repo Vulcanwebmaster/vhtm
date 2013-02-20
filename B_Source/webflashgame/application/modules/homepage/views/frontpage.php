@@ -24,7 +24,11 @@
 <div id="main">
 					<div id="topmain">
 						<div class="texttopmain">
-							<p class="titlep">Enregister</p>
+							<p class="titlep"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Enregister';
+														 } else{
+														 	echo 'Register';
+														  }?></p>
 							<div class="numbertexttopmain">
 								<img src="<?php echo base_url();?>assets/flash_game/images/1.png"/>
 							</div>
@@ -34,7 +38,11 @@
 							</div><br clear="both"/>
 						</div>
 						<div class="texttopmain">
-							<p class="titlep">Enregister</p>
+							<p class="titlep"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Enregister';
+														 } else{
+														 	echo 'Register';
+														  }?></p>
 							<div class="numbertexttopmain">
 								<img src="<?php echo base_url();?>assets/flash_game/images/2.png"/>
 							</div>
@@ -44,7 +52,11 @@
 							</div><br clear="both"/>
 						</div>
 						<div class="texttopmain">
-							<p class="titlep">Enregister</p>
+							<p class="titlep"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Enregister';
+														 } else{
+														 	echo 'Register';
+														  }?></p>
 							<div class="numbertexttopmain">
 								<img src="<?php echo base_url();?>assets/flash_game/images/3.png"/>
 							</div>
@@ -57,11 +69,19 @@
 					<div id="contentmain">
 						<div id="contentmainleft">
 							<div id="new">
-								<p class="tieude">News</p>
+								<p class="tieude"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'News';
+														 } else{
+														 	echo 'News';
+														  }?></p>
 								<div class="contenttexxtmainlefft">
 									<?php foreach ($list_news as $value) 
 				 						{ ?>
-									<p class="titlenew"><?php echo $value->name ?></p>
+									<p class="titlenew"><?php if ($_SESSION['lang']=="fr"){
+														 	 echo $value->name;
+														 } else{
+														 	echo $value->namee;
+														  }?></p>
 									<div class="date">
 										<ul>
 											<li style="background: none" class="font123"><?php echo date("d",strtotime($value->create_date));?></li>
@@ -76,7 +96,11 @@
 										<ul>
 											<?php foreach($list_news as $item)
 											{?>
-												<li style="background:none"><a href="#">par Imedgazou</a></li>
+												<li style="background:none"><a href="#"><?php if ($_SESSION['lang']=="fr"){
+														 	 echo 'par Imedgazou';
+														 } else{
+														 	echo 'par Imed Gazou';
+														  }?></a></li>
 												<li>|</li>
 												<li class="imglimain"><a href="#">About, accuei</a></li>
 												<li>|</li>

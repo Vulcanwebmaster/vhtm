@@ -1,16 +1,22 @@
+<?php if (validation_errors())
+	{
+		echo '<div class="error-panel">';
+		//echo validation_errors('<p style="color:#f83d43">','</p>');
+		echo '</div>';
+	}?>
 	<div id="footer">
 				<div id="footer1">
 					<div class="contentfooter1">
 						<p>Abonnez-vous à notre newsleteret rester à jour sur les dernieres nouvelles</p>
-						<?php 
+					 	 <?php 
 								echo '<p style="color:#f83d43; margin:10px;  font-size: 13px; font-weight: bold ">'.$this->session->userdata('lienhe_result').'</p>';
 								$this->session->unset_userdata('email_result');
-							?>
+							?>  
 							<form action="<?php echo base_url();?>homepage/send" method="post">
 							<input name="e_mail" id="mod_virtuemart_search" maxlength="80" class="inputbox" type="text" size="20" value="your email address..." onblur="if(this.value=='') this.value='your email address...';" onfocus="if(this.value=='your email address...') this.value='';">
 							<input  type="submit" value="Subscribe" name="sendmail">
 							</form>
-							<?php echo validation_errors('','</p>'); ?>
+ 							<?php echo validation_errors('','</p>'); ?> 
 <!-- 						<div class="sub">Subscribe</div> -->
 					</div>
 				</div>
