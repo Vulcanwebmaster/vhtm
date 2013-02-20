@@ -10,14 +10,15 @@
 								<?php if(isset($detail)){
 								  ?>
 								<div id="titlenews">
-									<?php echo $detail->name ?>
+									<?php if ($_SESSION['lang']=="fr"){ echo $detail->name; }else{  echo $detail->namee; } ?>
 								</div>
 								<div id="imgnews">
 									<?php echo $detail->image ?>
 								</div>
 								<div id="idcontentnews">
-									<?php echo $detail->content ?>
+									<?php if ($_SESSION['lang']=="fr"){ echo $detail->content; }else{  echo $detail->contente; } ?>
 								</div>
+								<?php } ?>
 						<form action="<?php echo base_url();?>news/comment" method="post" class="frmcm">
 							<div class="frmcmdetail">
 								<input type="hidden" value="<?php echo $detail->id ?>" name="news_id" />
@@ -32,7 +33,7 @@
 									<p style="font-size: 16px; font-weight: bold; color: #3b5998"><?php echo $comment->comment_name ?>:</p>
 									<p class="comment_content"><?php echo $comment->comment_content ?></p>
 									</div>
-								<?php } } } ?>
+								<?php } }  ?>
 							</div>
 							
 						</form>

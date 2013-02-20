@@ -3,12 +3,14 @@ class Belote extends NIW_Controller
 {
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=strtolower(get_class());
 		$this->load->model('Mbelote');
 		$this->loadLang();
 		$this->load->library('pagination');
 		$this->load->helper('text');
+		$this->loadLang();
 	}
 	
 	function index()
@@ -31,6 +33,9 @@ class Belote extends NIW_Controller
 // 	
 	function detail($id=0)
 	{
+		$data['photo'] = $this->Mbelote->getListFull('fg_banner');
+		$data['link_fanpage'] = $this->Mbelote->getRowByColumn('fg_setting','id',1);
+		$data['list_belote'] = $this->Mbelote->getListFull('fg_belote');
 		$data['topwin']  =  $this->Mbelote->Topwin(4);
 		$data['topgiaidau']  =  $this->Mbelote->Topgiaidau(4);
 		//$data['list_comment'] = $this->Mbelote->getListByColumn('st_comment','news_id',$id);
@@ -40,29 +45,4 @@ class Belote extends NIW_Controller
 		$this->load->view('front/container',$data);		
 	}
 	
-	function _input()
-	{
-		$input=array(
-					'comment_name'=>$this->input->post('comment_name'),
-					'comment_content'=>$this->input->post('comment_content'),
-					'news_id'=>$this->input->post('news_id'),
-					);
-		return $input;
-	}
-	
-	function comment()
-	{
-		$this->form_validation->set_rules('comment_name','Name','required|trim');
-		$this->form_validation->set_rules('comment_content','Content','required|trim');
-		if ($this->form_validation->run())
-		{
-			$input=$this->_input();
-			if ($this->Mnews->insertNewRow('st_comment',$input))
-			{
-				$this->session->set_userdata('result','Post is successfull !');
-			}
-			else $this->session->set_userdata('result','False !');
-		}
-		 redirect(base_url().'news/page','refresh');
-	}
 }
