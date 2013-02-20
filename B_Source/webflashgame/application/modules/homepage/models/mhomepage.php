@@ -6,6 +6,25 @@
 			parent::__construct();
 		}
 	
+	//top giai dau co so tien thuong cao nhat
+	function Topgiaidau($limit)
+	{
+		$this->db->select();
+		$this->db->from('fg_tournaments');
+		$this->db->order_by("tienthuong", "desc");
+		//$this->db->order_by("title", "desc"); 
+		$this->db->limit($limit);
+		$ds=$this->db->get();
+		
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+		//var_dump($list);die();
+	 	return $list;
+	}
 	
 	function getListCategory()
 	{

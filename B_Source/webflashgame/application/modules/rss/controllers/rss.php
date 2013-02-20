@@ -35,11 +35,11 @@ class Rss extends NIW_Controller
 			echo "<?xml version=\"1.0\"?>\n\n";  
 			echo "<rss version=\"2.0\">\n\n";  //mo RSS  
 			echo "  <channel>\n";  
-			echo "    <title>Web Flash Game</title>\n";  
+			echo "    <title>WebFlashGame</title>\n";  
 			echo "    <link>linktrangchutrangweb.com</link>\n";  
 			echo "    <description>Web Flash Game</description>\n";  
-			echo "    <copyright>$copy_year Trung tam tieng Anh</copyright>\n";  
-			echo "    <generator>Web Flash Game</generator>\n";  
+			echo "    <copyright>$copy_year WebFlashGame</copyright>\n";  
+			echo "    <generator>WebFlashGame</generator>\n";  
 			echo "    <language>Francais</language>\n";  
 			echo "    <lastBuildDate>$last_built</lastBuildDate>\n";  
 			echo "    <managingEditor>adminmail@yourdoamain .com</managingEditor>\n";  
@@ -57,11 +57,11 @@ class Rss extends NIW_Controller
 			//////////  
 			foreach ( $data['list_news'] as $value) {
 			         	 echo "<item>\n";  
-				         echo "<title>$value->news_title</title>\n";  
+				         echo "<title>$value->name</title>\n";  
 				         echo "<link><?php echo base_url();?>news</link>\n";  
 						 
 				         //echo "<description>".word_limiter(strip_tags($value->news_content), 8)."</description>\n"; 
-				         echo "<description>".$value->news_image."".word_limiter(strip_tags($value->news_content),30)."</description>\n";
+				         echo "<description>".$value->image."".word_limiter(strip_tags($value->content),30)."</description>\n";
 				         echo "<guid></guid>\n";  
 			         	echo "</item>\n"; 
 						}

@@ -147,44 +147,27 @@
 							<div id="topturnois">
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
 								<ul>
+									<?php foreach ($topgiaidau as $value) 
+				 					{ ?>
 									<li>
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_74.png"/>
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
+<!-- 										<div><?php echo date("M",strtotime($value->start_date));?><span><?php echo date("d",strtotime($value->start_date));?></span></div> -->
+									<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/> 
+										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php echo $value->name_tour?></a></label>
 									</li>
-									<li>
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_78.png"/>
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
-									</li>
-									<li>
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_80.png"/>
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
-									</li>
-									<li>
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/>
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
-									</li>
+									<?php } ?>
 								</ul>
 							</div>
 							
 							<div id="topjou">
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
 								<ul>
-									<li class="c1">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_74.png"/>
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
-									<li class="c2">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_78.png"/>
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
-									<li class="c2">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_80.png"/>
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
+									<?php foreach ($list_belote as $value) 
+				 					{ ?>
 									<li class="c1">
 										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/>
 										<label><a href="#">Mon name et surname</a> $865.67</label>
 									</li>
+									<?php } ?>
 								</ul>
 							</div>
 							<div id="belte">
