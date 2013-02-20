@@ -77,7 +77,7 @@ class Homepage extends NIW_controller {
 	function send()
 	{
 		
-		$this->form_validation->set_rules('e_mail','Địa chỉ mail','required|trim|valid_email');
+		$this->form_validation->set_rules('e_mail',' mail','required|trim|valid_email');
 		if ($this->form_validation->run())
 		{
 			$input=$this->_input();
@@ -90,9 +90,9 @@ class Homepage extends NIW_controller {
 					mail($to,$subject,$message,$options);
 			if ($this->Mhomepage->insertNewRow('fg_email',$input))
 			{
-				$this->session->set_userdata('email_result','Envoyé avec succès !');
+				$this->session->set_userdata('result','Envoyé avec succès !');
 			}
-			else $this->session->set_userdata('email_result','Envoi a échoué !');
+			else $this->session->set_userdata('result','Envoi a échoué !');
 		}
 		$this->index();
 	}

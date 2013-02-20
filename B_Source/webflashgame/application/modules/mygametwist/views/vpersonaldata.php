@@ -32,7 +32,7 @@
 									<tr>
 										<td class="inputNames"><label for="email">E-mail</label></td>
 										<td class="inputElements">
-											<input name="email" class="validate[required] text-input" type="email" class="formField ffInput" id="email" value="<?php echo $list_account->email ?>"></td>
+											<input name="email" class="validate[required,custom[email]] text-input" type="email" class="formField ffInput" id="email" value="<?php echo $list_account->email ?>"></td>
 									</tr>
 									<tr>
 										<td></td>
