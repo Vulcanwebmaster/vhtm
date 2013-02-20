@@ -25,7 +25,15 @@
 			</div> -->
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
-				
+				<style>
+								.datetimeDIV{
+									font-size: 11px;
+									position: absolute;
+									left: 27px;
+									top: -1px;
+									color: white
+								}
+							</style>
 				<div class="l12323" style="width: 309px !important;
 float: right !important;">
 							<div class="mainright1">
@@ -36,48 +44,36 @@ float: right !important;">
 								</div><br clear="both">
 							</div>
 							<div id="topturnois">
-								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_03.png"></p>
+								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
 								<ul>
-									<li>
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_74.png">
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
+									<?php $i=1; foreach ($topgiaidau as $value) 
+				 					{ ?>
+									<li style="position:relative">
+									<div class="datetimeDIV"><?php echo date("M",strtotime($value->start_date));?><br /><span style="color: red"><?php echo date("d",strtotime($value->start_date));?></span></div>
+									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
+										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php if ($_SESSION['lang']=="fr"){
+														 	 echo $value->name_tourfr;
+														 } else{
+														 	echo $value->name_tour;
+														  }?></a></label>
 									</li>
-									<li>
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_78.png">
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
-									</li>
-									<li>
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_80.png">
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
-									</li>
-									<li>
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_82.png">
-										<label>12:00 <a href="#">Belot Tournoi Interna</a></label>
-									</li>
+									
+									<?php $i++ ; } ?>
 								</ul>
 							</div>
-							
-							<div id="topjou">
-								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_06.png"></p>
-								<ul>
-									<li class="c1">
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_74.png">
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
-									<li class="c2">
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_78.png">
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
-									<li class="c2">
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_80.png">
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
-									<li class="c1">
-										<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_82.png">
-										<label><a href="#">Mon name et surname</a> $865.67</label>
-									</li>
-								</ul>
-							</div>
+	
+	<div id="topjou">
+		<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
+		<ul>
+			<?php $i=1; foreach ($topwin as $value) 
+			{ ?>
+			<li class="c1">
+				<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i;?>.png"/>
+				<label><?php echo $value->username ?> $<?php echo $value->money ?></label>
+			</li>
+			<?php  $i++ ; } ?>
+		</ul>
+	</div>
 							<div id="belte">
 								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_09.png"></p>
 								<!-- <div class="faclide">

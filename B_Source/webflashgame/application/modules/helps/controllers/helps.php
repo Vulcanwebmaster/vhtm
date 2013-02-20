@@ -28,6 +28,8 @@ class Helps extends NIW_Controller
 	
 		function page($index=0)
 		{
+			$data['topwin']  =  $this->Mhelps->Topwin(4);
+			$data['topgiaidau']  =  $this->Mhelps->Topgiaidau(4);
 			$config['base_url'] = base_url().'helps/page';
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mhelps->getListFull('fg_helps'));
