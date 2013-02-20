@@ -82,6 +82,7 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/flash_game/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor();
 			//=============================================
+			//echo $this->input->post('courses_name');die();
 			if (!$this->input->post('description'))
 			{
 				$data['info']=$this->Mbelote->getRowByColumn('fg_belote','id',$id);
@@ -93,7 +94,7 @@
 			}
 			else 
 			{
-				$this->form_validation->set_rules('description','Name','required|trim');
+				$this->form_validation->set_rules('description','description','required|trim');
 				$this->form_validation->set_message('required','Catégorie %s pas vide');
 				
 				if ($this->form_validation->run())
@@ -112,7 +113,7 @@
 					$data['title']='Modifier belote';
 					$data['bcCurrent']='belote';
 					$data['module']=$this->module;
-					$data['page']='admin_edit_courses';
+					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
 				}
 			}

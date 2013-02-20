@@ -187,8 +187,8 @@
 										<?php echo $item->image ?>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
 										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>">
-											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
-											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
+											<!-- <strong class="static switchPrize"><span>Twists 37.500</span></strong>
+											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl> -->
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
 											<span style="position:absolute; left:0; width: 100%; text-align: center; cursor: pointer;" class="c2a"><span class="">Register now!</span></span>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//tournSprite.png);clip: rect(0px 65px 65px 0px); top: -10px; left: -10px;" class="to1Status typeId0"></span>

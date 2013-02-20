@@ -19,11 +19,11 @@
 			<div id="tab1" class="tab_content">
 				<fieldset>
 					<label>description (en)</label>
-					<input type="text" name="description" style="width:92%"/>
+					<?php echo $this->ckeditor->editor('description','',$config);?>
 				</fieldset>
 				<fieldset>
 					<label>description (fr)</label>
-					<input type="text" name="descriptionfr" style="width:92%"/>
+					<?php echo $this->ckeditor->editor('descriptionfr','',$config);?>
 				</fieldset>
 				<fieldset>
 					<label>Image </label>

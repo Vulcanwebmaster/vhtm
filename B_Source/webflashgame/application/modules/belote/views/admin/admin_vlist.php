@@ -51,9 +51,7 @@
 					<thead> 
 						<tr> 
 							<th>Nombre</th>
-		    				<th>description (en)</th>
 		    				<th>description (fr)</th>
-		    				<th>content (en)</th>
 		    				<th>content (fr)</th>
 		    				<th>Éditer|Effacer</th>
 <!-- 		    				<th style="width: 100px;">Edit | Del</th> -->
@@ -63,9 +61,7 @@
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
-			    				<td><?php echo $item->description;?></td>
 			    				<td><?php echo $item->descriptionfr;?></td>
-			    				<td><?php echo $item->content;?></td>
 			    				<td><?php echo $item->contentfr;?></td>
 			    				<td>
 			    					<a href="<?php echo base_url()?>belote/admin/edit/<?php echo $item->id?>" title="Éditer"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>

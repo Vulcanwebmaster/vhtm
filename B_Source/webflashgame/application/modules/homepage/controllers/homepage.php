@@ -22,6 +22,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['topwin']  =  $this->Mhomepage->Topwin(4);
 		$data['topgiaidau']  =  $this->Mhomepage->Topgiaidau(4);
 		//var_dump($data['topgiaidau']); die();
 		$data['image'] = $this->Mhomepage->getListFull('fg_bannerheader');

@@ -113,7 +113,11 @@
 									<p class="titlenew">Description</p>									
 								</div>
 								<div style="clear: both; padding:10px 20px 0 20px">
-									<?php echo $value->description?>
+									<?php if ($_SESSION['lang']=="fr"){
+														 	echo word_limiter(strip_tags($value->descriptionfr), 70);
+														 } else{
+														 	echo word_limiter(strip_tags($value->description), 70);
+														  }?>
 											
 								</div>
 								<div class="contenttexxtmainlefft">
@@ -123,12 +127,16 @@
 									<div class="contentimgtext tuyet">
 										<?php echo $value->image?>
 <!-- 										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_134.png"/> -->
-										<p class="p2"> <?php echo $value->content ?>
+										<p class="p2"><?php if ($_SESSION['lang']=="fr"){
+														 	echo word_limiter(strip_tags($value->contentfr), 70);
+														 } else{
+														 	echo word_limiter(strip_tags($value->content), 70);
+														  }?> 
 											</p>
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
-										<lable>charger plus de nouvelles</lable>
+										<lable><a href="<?php echo base_url();?>belote/detail/<?php echo $value->id;?>">charger plus de nouvelles</a></lable>
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>
@@ -147,27 +155,28 @@
 							<div id="topturnois">
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
 								<ul>
-									<?php foreach ($topgiaidau as $value) 
+									<?php $i=1; foreach ($topgiaidau as $value) 
 				 					{ ?>
 									<li>
 <!-- 										<div><?php echo date("M",strtotime($value->start_date));?><span><?php echo date("d",strtotime($value->start_date));?></span></div> -->
-									<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/> 
+									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
 										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php echo $value->name_tour?></a></label>
 									</li>
-									<?php } ?>
+									
+									<?php $i++ ; } ?>
 								</ul>
 							</div>
 							
 							<div id="topjou">
 								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
 								<ul>
-									<?php foreach ($list_belote as $value) 
+									<?php $i=1; foreach ($topwin as $value) 
 				 					{ ?>
 									<li class="c1">
-										<img src="<?php echo base_url();?>assets/flash_game/images/Belote_82.png"/>
-										<label><a href="#">Mon name et surname</a> $865.67</label>
+										<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i;?>.png"/>
+										<label><?php echo $value->username ?> $<?php echo $value->money ?></label>
 									</li>
-									<?php } ?>
+									<?php  $i++ ; } ?>
 								</ul>
 							</div>
 							<div id="belte">

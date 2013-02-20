@@ -12,14 +12,12 @@
 			<div id="tab1" class="tab_content">
 				<fieldset>
 					<label>description (en)</label>
-					<input type="text" name="description" style="width:95%" value="<?php echo $info->description;?>"/>
+					<?php echo $this->ckeditor->editor('description',$info->description,$config);?>
 				</fieldset>
 				<fieldset>
 					<label>description (fr)</label>
-					<input type="text" name="descriptionfr" style="width:95%" value="<?php echo $info->descriptionfr;?>"/>
+					<?php echo $this->ckeditor->editor('descriptionfr',$info->descriptionfr,$config);?>
 				</fieldset>
-				
-				
 				<fieldset>
 					<label>Image </label>
 					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
