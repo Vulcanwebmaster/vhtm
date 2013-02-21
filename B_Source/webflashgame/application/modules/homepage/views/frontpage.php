@@ -124,9 +124,13 @@
 															author: <?php echo $item->author;?>
 														<?php }?></li>
 												<li>|</li>
-												<li class="imglimain"><a href="#">About, accuei</a></li>
+												<?php foreach($list_tagv as $item)
+												{?>
+												<li class="imglimain"><a href="<?php echo base_url();?>tagv">
+													 <?php echo $item->name ?></a></li>
+												<?php }?>
 												<li>|</li>
-												<li class="imglimain1"><a href="<?php echo base_url();?>news/detail/<?php echo $item->id;?>">comments</a></li>
+												<li class="imglimain1"><a href="<?php echo base_url();?>news/detail/<?php echo $item->id."-".$value->alias;?>">comments</a></li>
 											<?php }?>
 										</ul>
 									</div>
@@ -182,7 +186,7 @@
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
-										<lable><a href="<?php echo base_url();?>belote/detail/<?php echo $value->id;?>">charger plus de nouvelles</a></lable>
+										<lable><a href="<?php echo base_url();?>belote/detail/<?php echo $value->id."-".$value->alias;?>">charger plus de nouvelles</a></lable>
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>

@@ -122,7 +122,7 @@
 							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
 								<?php foreach ($list_belote as $value) {?>
 										
-								<li><a href="<?php echo base_url();?>helps/belote/<?php echo $value->id;?>"><span>
+								<li><a href="<?php echo base_url();?>helps/belote/<?php echo $value->id."-".$value->alias;;?>"><span>
 									Belote</span></a></li>
 								<?php } ?>
 							

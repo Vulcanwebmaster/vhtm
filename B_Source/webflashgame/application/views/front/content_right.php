@@ -32,7 +32,7 @@
 									<li style="position:relative">
 									<div class="datetimeDIV"><?php echo date("M",strtotime($value->start_date));?><br /><span style="color: red"><?php echo date("d",strtotime($value->start_date));?></span></div>
 									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
-										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php if ($_SESSION['lang']=="fr"){
+										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id."-".$value->alias;?>"><?php if ($_SESSION['lang']=="fr"){
 														 	 echo $value->name_tourfr;
 														 } else{
 														 	echo $value->name_tour;

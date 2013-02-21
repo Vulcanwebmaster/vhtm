@@ -95,11 +95,11 @@
 							{ ?>
 							<li class="item">
 								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id."-".$item->alias;?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
 									<div class="to1_container">
 										<?php echo $item->image ?>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
-										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>">
+										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id."-".$item->alias;?>">
 											<strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl>
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
@@ -182,11 +182,11 @@
 							{ ?>
 							<li class="item">
 								<div class="to1  rating3  medium gameId_88 tournId_32167 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id."-".$item->alias;?>" title=""><span><?php echo $item->name_tour ?></span></a></h4>
 									<div class="to1_container">
 										<?php echo $item->image ?>
 										<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameSO1_med.png);" class="border"></span>
-										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>">
+										<a class="" href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id."-".$item->alias;?>">
 											<!-- <strong class="static switchPrize"><span>Twists 37.500</span></strong>
 											<dl style="color: #000000"><dt><span>Playing now</span></dt><dd>425</dd></dl> -->
 											<span style="display:block;background-image: url(<?php echo base_url();?>assets/flash_game/images//gameTO1_OverlaySprite.png);" class="link"></span>
@@ -261,7 +261,7 @@
 							{ ?>
 							<li class="item">
 								<div class="to1  rating3  medium gameId_20 tournId_32180 tournStatus_2">
-									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id?>" title=""><span>
+									<h4><a href="<?php echo base_url()?>giaidau/detail/<?php echo $item->tour_id."-".$item->alias;?>" title=""><span>
 										<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									<?php echo $item->name_tourfr ?>

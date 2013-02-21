@@ -49,6 +49,8 @@ class News extends NIW_Controller
 		$data['topwin']  =  $this->Mnews->Topwin(4);
 		$data['topgiaidau']  =  $this->Mnews->Topgiaidau(4);
 		$data['list_comment'] = $this->Mnews->getListByColumn('st_comment','news_id',$id);
+		$data['list_news'] = $this->Mnews->getListByColumn('fg_news','id',$id);
+		//var_dump($data['list_news']); die();
 		$data['detail']=$this->Mnews->getRowByColumn('fg_news','id',$id);
 		$data['module']=$this->module;
 		$data['page']='vdetail';

@@ -10,10 +10,10 @@
 						<?php echo $value->image ?>
 					</div>
 					<div class="textdetailnews">
-						<p class="titlelistnews"><a href="<?php echo base_url();?>news/detail/<?php echo $value->id;?>">
+						<p class="titlelistnews"><a href="<?php echo base_url();?>news/detail/<?php echo $value->id."-".$value->alias;?>">
 							<?php if ($_SESSION['lang']=="fr"){ echo $value->name;  } else{  echo $value->namee; }?></a></p>
 						<p class="contentlistnews"><?php if ($_SESSION['lang']=="fr"){ echo word_limiter(strip_tags($value->content), 25);  } else{ echo word_limiter(strip_tags($value->contente), 25);}?></p>
-						<p class="readmordetailnews"><a href="<?php echo base_url();?>news/detail/<?php echo $value->id;?>">Read more</a></p>
+						<p class="readmordetailnews"><a href="<?php echo base_url();?>news/detail/<?php echo $value->id."-".$value->alias;?>">Read more</a></p>
 					</div><br clear="both"/>
 				</li>
 				<?php } } ?>

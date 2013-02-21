@@ -22,6 +22,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['list_tagv']  =  $this->Mhomepage->getListFull('fg_tag');
 		$data['step']  =  $this->Mhomepage->getListFull('fg_step');
 		$data['topwin']  =  $this->Mhomepage->Topwin(4);
 		$data['topgiaidau']  =  $this->Mhomepage->Topgiaidau(4);

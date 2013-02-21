@@ -1,5 +1,5 @@
 <?php
-class Mnews extends CI_Model
+class Mtagv extends CI_Model
 {
 	function __construct()
 	{
@@ -33,13 +33,13 @@ class Mnews extends CI_Model
 	 	return $list;
 	}
 	
-	function getListTagvNews($tableName='',$columnName='',$id='')
+	function getListTagvNews($tableName='',$columnName='',$index='')
 	 {
  		
 		 $this->db->select();
-		 $this->db->from('fg_news_tag');
-		 $this->db->where('id', $id); 
-		 $this->db->join('fg_news','fg_news.id=fg_news_tag.id_news');
+		 $this->db->from('fg_news');
+		 $this->db->where('id', $index); 
+		 $this->db->join('fg_news_tag','fg_news_tag.id=fg_news_tag.id_news');
  		
 		 $ds=$this->db->get();
 		 $list=array();
