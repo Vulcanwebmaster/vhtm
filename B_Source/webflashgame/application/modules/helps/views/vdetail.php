@@ -117,29 +117,17 @@
 				<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 					
 					<ul>
-						<?php foreach ($list_category as $item) 
-							{ ?>
-							<li class="gameToggler"><span>
-								<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									<?php echo $item->category_namefr ?>
-								<?php } else{ ?>
-									<?php echo $item->category_name ?>
-								<?php } ?></span>
-							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
-								<?php foreach ($list_rule as $key) 
-								{ ?>
-								<li><a href=""><span>
-									<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									<?php echo $key->namefr ?>
-								<?php } else{ ?>
-									<?php echo $key->name ?>
-								<?php } ?></span></a></li>
-								<?php }?>
+						
+						<li class="gameToggler active" style="cursor: default;"><span></span>
+							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
+								<?php foreach ($list_belote as $value) {?>
+										
+								<li><a href="<?php echo base_url();?>helps/belote/<?php echo $value->id;?>"><span>
+									Belote</span></a></li>
+								<?php } ?>
+							
 							</ul>
-							</li>
-						<?php }?>
+						</li>
 						
 						
 				</ul>

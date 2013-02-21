@@ -36,8 +36,16 @@
 					<div>
 						<?php foreach ($list_help as $value) 
 				 							{ ?>
-						<p><strong><?php echo $value->title ?></strong></p>
-						<br> <?php echo $value->description ?><br></strong>
+						<p><strong><?php if ($_SESSION['lang']=="fr"){
+														  echo $value->titlefr;
+														 } else{
+														 	echo $value->title;
+														  }?></strong></p>
+						<br> <?php if ($_SESSION['lang']=="fr"){
+														 echo $value->descriptionfr;
+														 } else{
+														 	echo $value->description;
+														  }?><br></strong>
 						<?php }?>
 						<p></p>
 					</div>
@@ -113,25 +121,18 @@
 			<div class="container" id="helpContainer303" style="display: block;">
 				<div class="element" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; height: 0px;">
 					<ul>
-						<?php foreach ($list_category as $key) 
-						{ ?>
-						<li class="gameToggler active" style="cursor: default;"><span><?php echo $key->category_name;?></span>
+						
+						<li class="gameToggler active" style="cursor: default;"><span></span>
 							<ul class="gameElement" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden;">
-								<?php foreach ($list_games as $value) {?>
-										<?php if($value->category_id  ==  $key->id)
-											{?>
-								<li><a href="<?php echo base_url();?>helps/rules/<?php echo $value->game_id."-".$value->alias;?>"><span>
-									<?php if ($_SESSION['lang']=="fr") 
-								{?>		
-									<?php echo $value->namefr; ?>
-								<?php } else{ ?>
-									<?php echo $value->name; ?>
-								<?php } ?></span></a></li>
+								<?php foreach ($list_belote as $value) {?>
+										
+								<li><a href="<?php echo base_url();?>helps/belote/<?php echo $value->id;?>"><span>
+									Belote</span></a></li>
 								<?php } ?>
-							<?php } ?>
+							
 							</ul>
 						</li>
-						<?php }?>
+						
 						
 				</ul>
 			</div>
