@@ -3,17 +3,23 @@
 /*		background: url(<?php echo base_url();?>assets/flash_game/images/backContentTop.jpg) no-repeat;*/
 	_zoom: 1;
 	overflow: hidden;
-	padding: 54px 24px 0 24px;
+	padding: 4px 24px 0 24px;
 	}
 	
 	#sideNav{
 				float: left;
 			    width: 294px;
+			    background:#fff;
+			    border:1px solid #e3e3e3;
+			    border-radius:3px;
+			    padding:10px;
 			}
 			 #container{
 				float: right;
-			   
-			    width: 648px;
+			   background:#fff;
+			    border:1px solid #e3e3e3;
+			    border-radius:3px;
+			    width: 675px;
 			}
 </style>
 
