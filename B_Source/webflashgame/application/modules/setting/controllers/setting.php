@@ -28,6 +28,7 @@ class Setting extends NIW_Controller
 	
 		function page($index=0)
 		{
+			$data['step']  =  $this->Msetting->getListFull('fg_step');
 			$data['info']=$this->Msetting->getRowByColumn('fg_games','game_id',$index);
 			$data['list_hotro'] = $this->Msetting->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Msetting->getListFull('fg_bannerheader');

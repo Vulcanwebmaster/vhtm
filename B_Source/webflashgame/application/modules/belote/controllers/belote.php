@@ -33,6 +33,7 @@ class Belote extends NIW_Controller
 // 	
 	function detail($id=0)
 	{
+		$data['step']  =  $this->Mbelote->getListFull('fg_step');
 		$data['photo'] = $this->Mbelote->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mbelote->getRowByColumn('fg_setting','id',1);
 		$data['list_belote'] = $this->Mbelote->getListFull('fg_belote');

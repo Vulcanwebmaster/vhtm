@@ -36,7 +36,7 @@ class Giaidau extends NIW_Controller
 			$data['past'] = $this->Mgiaidau->gamePast();
 			$data['nextweek'] = $this->Mgiaidau->gameNextWeek();
 			$data['week'] = $this->Mgiaidau->gameWeek($index);
-			
+			$data['step']  =  $this->Mgiaidau->getListFull('fg_step');
 			$data['today'] = $this->Mgiaidau->gameToday();
 			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',1,$index);
 			$data['title']='flashgame | Flash Games';
@@ -48,6 +48,7 @@ class Giaidau extends NIW_Controller
 	
 	function past($index=0)
 	{
+			$data['step']  =  $this->Mgiaidau->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
@@ -87,7 +88,7 @@ class Giaidau extends NIW_Controller
 	
 	function detail($index=0)
 	{
-			// $data['avarta'] = $this->Mgiaidau->getListCategory('fg_tournaments','tour_id',$index);
+			$data['step']  =  $this->Mgiaidau->getListFull('fg_step');
 			 $data['available'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			 $available=$data['available']->players;
 			 $data['player'] = $this->Mgiaidau->CountPlayer('fg_list_player','tour_id',$index);
@@ -108,7 +109,7 @@ class Giaidau extends NIW_Controller
 			 $id_giaidau=$data['list_chitiet']->tour_id;//lay duoc id cua giai dau
 			 if(isset($_SESSION['front_user_fullname'])){
 				 $data['checkStatus']  =  $this->Mgiaidau->check($_SESSION['front_user_id'],$index);
-				 
+				 $data['step']  =  $this->Mgiaidau->getListFull('fg_step');
 					 $data['listPlayer'] = $this->Mgiaidau->CountPlayer('fg_list_player',$_SESSION['front_user_id'],$index);
 					 //var_dump($data['listPlayer']); die();
 					 //echo $data['listPlayer']; die();

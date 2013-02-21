@@ -25,77 +25,17 @@
 			</div> -->
 			<div id="tipHolder"></div>
 			<div class="contBox gamesHelpContent">
-				<style>
-								.datetimeDIV{
-									font-size: 11px;
-									position: absolute;
-									left: 27px;
-									top: -1px;
-									color: white
-								}
-							</style>
-				<div class="l12323" style="width: 309px !important;
-float: right !important;">
-							<div class="mainright1">
-								<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_52.png">
-								<div class="ctmainrigt1">
-									<p>40.000<br>joueurs inscrits</p>
-									<label>2.000 En Ligne</label>
-								</div><br clear="both">
-							</div>
-							<div id="topturnois">
-								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
-								<ul>
-									<?php $i=1; foreach ($topgiaidau as $value) 
-				 					{ ?>
-									<li style="position:relative">
-									<div class="datetimeDIV"><?php echo date("M",strtotime($value->start_date));?><br /><span style="color: red"><?php echo date("d",strtotime($value->start_date));?></span></div>
-									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
-										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id?>"><?php if ($_SESSION['lang']=="fr"){
-														 	 echo $value->name_tourfr;
-														 } else{
-														 	echo $value->name_tour;
-														  }?></a></label>
-									</li>
-									
-									<?php $i++ ; } ?>
-								</ul>
-							</div>
-	
-	<div id="topjou">
-		<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
-		<ul>
-			<?php $i=1; foreach ($topwin as $value) 
-			{ ?>
-			<li class="c1">
-				<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i;?>.png"/>
-				<label><?php echo $value->username ?> $<?php echo $value->money ?></label>
-			</li>
-			<?php  $i++ ; } ?>
-		</ul>
-	</div>
-							<div id="belte">
-								<p><img src="http://localhost/webflashgame/assets/flash_game/images/row_09.png"></p>
-								<!-- <div class="faclide">
-									<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_99.png"/>
-									<div class="likef">
-										<label style="color:#0184a3">Belote.com</label>
-										<div style="margin-top:5px;">
-											<img src="http://localhost/webflashgame/assets/flash_game/images/Belote_102.png"/>
-											<label style="padding-top:5px">You like this</label>
-										</div>
-									</div><br clear="both"/>
-								</div> -->
-								<script>(function(d, s, id) {
-										  var js, fjs = d.getElementsByTagName(s)[0];
-										  if (d.getElementById(id)) return;
-										  js = d.createElement(s); js.id = id;
-										  js.src = "//connect.facebook.net/en/all.js#xfbml=1";
-										  fjs.parentNode.insertBefore(js, fjs);
-										}(document, 'script', 'facebook-jssdk'));</script>
-									<div class="fb-like-box" data-href="http://www.facebook.com/NiwVietNam" data-width="268" data-height="210" data-show-faces="true" data-stream="false" data-header="false"></div>
-							</div>
-						</div>
+				
+				 <div class="container">
+					<div>
+						<?php foreach ($list_help as $value) 
+				 							{ ?>
+						<p><strong><?php echo $value->title ?></strong></p>
+						<br> <?php echo $value->description ?><br></strong>
+						<?php }?>
+						<p></p>
+					</div>
+				</div> 
 			</div>
 		</div>
 		<div id="sideNav">

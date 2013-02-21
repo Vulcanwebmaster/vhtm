@@ -19,6 +19,7 @@ class News extends NIW_Controller
 	
 	function page($index=0)
 	{
+		$data['step']  =  $this->Mnews->getListFull('fg_step');
 		$data['photo'] = $this->Mnews->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
 		$data['list_belote'] = $this->Mnews->getListFull('fg_belote');
@@ -37,6 +38,7 @@ class News extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$data['step']  =  $this->Mnews->getListFull('fg_step');
 		$data['photo'] = $this->Mnews->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
 		$data['list_belote'] = $this->Mnews->getListFull('fg_belote');

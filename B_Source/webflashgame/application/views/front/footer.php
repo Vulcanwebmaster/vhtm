@@ -22,8 +22,17 @@
 						}?>
 				<div id="footer1">
 					<div class="contentfooter1">
-						<p>Abonnez-vous à notre newsleteret rester à jour sur les dernieres nouvelles</p>
-
+						 <?php foreach ($step as $value) 
+				 						{ ?>
+													
+													<?php if ($_SESSION['lang']=="fr"){
+														 	echo $value->footerfr;
+														 } else{
+														 	echo $value->footer;
+														  }?>
+														
+														
+						<?php } ?> 
 						<!--<?php 
 								echo '<p style="color:#f83d43;padding:0; font-size: 13px; font-weight: bold ">'.$this->session->userdata('lienhe_result').'</p>';
 								$this->session->unset_userdata('email_result');
@@ -40,8 +49,33 @@
 				</div>
 				<div id="footer2">
 					<div class="contentfooter2">
-						<img src="<?php echo base_url();?>assets/flash_game/images/Belote_158.png"/>
-						<label style="color:#fff">Nouvelles de twitter :</label> <label style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</label>
+						<style type="text/css">
+							.tuyet222 p{
+								color: black !important;
+								margin-left: 112px !important;
+								margin-top: -16px !important;
+							}
+							.tuyet111 img{
+								color: black !important;
+								margin-left: -72px !important;
+							}
+						</style>
+						<img style="margin-left: -72px !important;" src="<?php echo base_url();?>assets/flash_game/images/Belote_158.png"/>
+						<label class="tuyet111" style="color:#fff"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Nouvelles de twitter :';
+														 } else{
+														 	echo 'New twitter : ';
+														  }?></label> <label class="tuyet222" style="font-size: 12px"><?php foreach ($step as $value) 
+				 						{ ?>
+													
+													<?php if ($_SESSION['lang']=="fr"){
+														 	echo $value->footerfr2;
+														 } else{
+														 	echo $value->footer2;
+														  }?>
+														
+														
+						<?php } ?> </label>
 						<div class="uliu">
 							<ul>
 <!-- 								<li style="margin-top: 3px"><a href="#"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_156.png"/></a></li> -->

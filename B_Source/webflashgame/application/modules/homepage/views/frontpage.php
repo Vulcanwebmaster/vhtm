@@ -33,8 +33,15 @@
 								<img src="<?php echo base_url();?>assets/flash_game/images/1.png"/>
 							</div>
 							<div class="textcontent">
-								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-								<div class="submittextcontent" style="padding:11px 16px;">Enregistrer gratuit</div>
+								<?php foreach ($step as $value) 
+				 						{ ?>
+								<p> <?php echo $value->b1fr ?></p>
+								<div class="submittextcontent" style="padding:11px 16px;"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Enregistrer gratuit';
+														 } else{
+														 	echo 'Register free';
+														  }?></div>
+								<?php }?>
 							</div><br clear="both"/>
 						</div>
 						<div class="texttopmain">
@@ -47,8 +54,15 @@
 								<img src="<?php echo base_url();?>assets/flash_game/images/2.png"/>
 							</div>
 							<div class="textcontent">
-								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-								<div class="submittextcontent1">Connecter</div>
+								<?php foreach ($step as $value) 
+				 						{ ?>
+								<p> <?php echo $value->b2fr ?></p>
+								<div class="submittextcontent" style="padding:11px 16px;"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Connecter';
+														 } else{
+														 	echo 'Login';
+														  }?></div>
+								<?php }?>
 							</div><br clear="both"/>
 						</div>
 						<div class="texttopmain">
@@ -61,8 +75,15 @@
 								<img src="<?php echo base_url();?>assets/flash_game/images/3.png"/>
 							</div>
 							<div class="textcontent">
-								<p> Lorem ipsum dolor sit amet, consectetur dipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-								<div class="submittextcontent2">Jouer en ligne</div>
+								<?php foreach ($step as $value) 
+				 						{ ?>
+								<p> <?php echo $value->b3fr ?></p>
+								<div class="submittextcontent" style="padding:11px 16px;"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Jouer en ligne';
+														 } else{
+														 	echo 'Play Online';
+														  }?></div>
+								<?php }?>
 							</div>
 						</div><br clear="both"/>
 					</div>
@@ -130,7 +151,7 @@
 							</div>
 							
 							<div id="play">
-									<?php foreach ($list_belote as $value) 
+								<?php foreach ($list_belote as $value) 
 				 			{ ?>
 								<p class="tieude">How to play</p>
 								<div class="contenttexxtmainlefft">

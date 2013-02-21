@@ -3,8 +3,16 @@
 	<div class="mainright1">
 		<img src="<?php echo base_url();?>assets/flash_game/images/Belote_52.png"/>
 		<div class="ctmainrigt1">
-			<p>40.000<br/>joueurs inscrits</p>
-			<label>2.000 En Ligne</label>
+			<p>40.000<br/><?php if ($_SESSION['lang']=="fr"){
+														 	 echo 'joueurs inscrits';
+														 } else{
+														 	echo 'registered players';
+														  }?></p>
+			<label>2.000 <?php if ($_SESSION['lang']=="fr"){
+														 	 echo 'En Ligne';
+														 } else{
+														 	echo 'Online';
+														  }?></label>
 		</div><br clear="both"/>
 	</div>
 	<style>

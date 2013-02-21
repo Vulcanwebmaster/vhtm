@@ -22,6 +22,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['step']  =  $this->Mhomepage->getListFull('fg_step');
 		$data['topwin']  =  $this->Mhomepage->Topwin(4);
 		$data['topgiaidau']  =  $this->Mhomepage->Topgiaidau(4);
 		//var_dump($data['topgiaidau']); die();
@@ -82,12 +83,13 @@ class Homepage extends NIW_controller {
 		{
 			$input=$this->_input();
 			$to = $input['e_mail'];
+			$news=
 			$from="tuyetapt@gmail.com";
-					$to=$_POST['e_mail'];
-					$subject="Đăng ký nhận thông tin thành công";
-					$message="Email của bạn đã đăng ký nhận tin tức và thông tin khóa học thành công.";
-					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
-					mail($to,$subject,$message,$options);
+			$to=$_POST['e_mail'];
+			$subject="Đăng ký nhận thông tin thành công";
+			$message="Email của bạn đã đăng ký nhận tin tức mới nhất và Chúng tôi sẽ tự động cập nhật và viết tin mới nhất gửi vào mail cho bạn.";
+			$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+			mail($to,$subject,$message,$options);
 			if ($this->Mhomepage->insertNewRow('fg_email',$input))
 			{
 				$this->session->set_userdata('result','Envoyé avec succès !');

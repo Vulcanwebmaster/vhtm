@@ -13,6 +13,7 @@ class Dangky extends NIW_Controller
 	
 	function index()
 	{
+			$data['step']  =  $this->Mdangky->getListFull('fg_step');
 			$this->page();
 			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
@@ -20,6 +21,7 @@ class Dangky extends NIW_Controller
 	
 	function page($index=0)
 	{
+			$data['step']  =  $this->Mdangky->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 			$data['title']='flashgame | Flash Games';
@@ -40,6 +42,7 @@ class Dangky extends NIW_Controller
 	
 	function dangNhap()
 	{
+		$data['step']  =  $this->Mdangky->getListFull('fg_step');
 		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 		$data['list_bannerheader'] = $this->Mdangky->getListFull('fg_bannerheader');
 		$data['list_slide'] = $this->Mdangky->getListFull('fg_slide');
@@ -96,6 +99,7 @@ class Dangky extends NIW_Controller
 	
 	function registAccount()
 	{
+		$data['step']  =  $this->Mdangky->getListFull('fg_step');
 		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 		//$this->data['product']=$this->Mdangnhap->getListOffset('ln_product',5,0);
