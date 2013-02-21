@@ -2,6 +2,8 @@
 <html slick-uniqueid="1" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
 <head>
 	<title>Carresdas.fr</title>
+	<meta name="description" content="<?php if(isset($meta_tag)){echo $meta_tag;} ?>">
+	<meta name="Keywords" content="<?php if(isset($meta_tag)){echo $meta_tag;} ?>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
 	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true, chrome=1">	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/flash_game/js/jquery-1.7.1.min.js"></script>

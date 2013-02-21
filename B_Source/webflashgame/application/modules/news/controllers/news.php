@@ -19,6 +19,8 @@ class News extends NIW_Controller
 	
 	function page($index=0)
 	{
+		$news = $this->Mnews->getRowByColumn('st_metatag','id',1);
+		$data['meta_tag'] = $news->meta_news;
 		$data['step']  =  $this->Mnews->getListFull('fg_step');
 		$data['photo'] = $this->Mnews->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
@@ -38,6 +40,8 @@ class News extends NIW_Controller
 	
 	function detail($id=0)
 	{
+		$news = $this->Mnews->getRowByColumn('st_metatag','id',1);
+		$data['meta_tag'] = $news->meta_news;
 		$data['step']  =  $this->Mnews->getListFull('fg_step');
 		$data['photo'] = $this->Mnews->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);

@@ -117,11 +117,12 @@
 										<ul>
 											<?php foreach($list_news as $item)
 											{?>
-												<li style="background:none"><a href="#"><?php if ($_SESSION['lang']=="fr"){
-														 	 echo 'par Imedgazou';
-														 } else{
-														 	echo 'par Imed Gazou';
-														  }?></a></li>
+												<li style="background:none">
+														<?php if ($_SESSION['lang']=="fr"){ ?>
+															auteur: <?php echo $item->author;?>
+														<?php } else{ ?>
+															author: <?php echo $item->author;?>
+														<?php }?></li>
 												<li>|</li>
 												<li class="imglimain"><a href="#">About, accuei</a></li>
 												<li>|</li>

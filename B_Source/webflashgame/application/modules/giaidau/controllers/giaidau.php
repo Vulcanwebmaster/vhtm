@@ -27,6 +27,8 @@ class Giaidau extends NIW_Controller
 			$config['total_rows']=count($this->Mgiaidau->getListByColumn('fg_tournaments','tour_id','1'));
 			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
+			$giaidau = $this->Mgiaidau->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $giaidau->meta_tourmanents;
 			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
@@ -48,6 +50,8 @@ class Giaidau extends NIW_Controller
 	
 	function past($index=0)
 	{
+			$giaidau = $this->Mgiaidau->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $giaidau->meta_tourmanents;
 			$data['step']  =  $this->Mgiaidau->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
@@ -88,6 +92,9 @@ class Giaidau extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			$giaidau = $this->Mgiaidau->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $giaidau->meta_tourmanents;
+			// $data['avarta'] = $this->Mgiaidau->getListCategory('fg_tournaments','tour_id',$index);
 			$data['step']  =  $this->Mgiaidau->getListFull('fg_step');
 			 $data['available'] = $this->Mgiaidau->getRowByColumn('fg_tournaments','tour_id',$index);
 			 $available=$data['available']->players;

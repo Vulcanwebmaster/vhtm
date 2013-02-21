@@ -47,7 +47,9 @@
 						'contente'=>$this->input->post('contente'),
 						'create_date'=>$this->input->post('create_date'),
 						'image'=>$this->input->post('image'),
-						'author'=>$this->input->post('author'));
+						'author'=>$this->input->post('author'),
+						'alias'=>$this->getAliasByName($this->input->post('name')),
+						);
 			return $input;
 		}
 		

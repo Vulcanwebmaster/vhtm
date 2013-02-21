@@ -36,6 +36,8 @@ class Helps extends NIW_Controller
 			$config['total_rows'] = count($this->Mhelps->getListFull('fg_helps'));
 			$this->pagination->initialize($config);
 			$data['title']='games | Flash-games';
+			$helps = $this->Mhelps->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $helps->meta_help;
 			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
@@ -58,6 +60,8 @@ class Helps extends NIW_Controller
 		
 		function faqs($id)
 		{
+			$helps = $this->Mhelps->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $helps->meta_help;
 			$data['step']  =  $this->Mhelps->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
@@ -83,6 +87,8 @@ class Helps extends NIW_Controller
 		function rules($id)
 		{
 			$data['step']  =  $this->Mhelps->getListFull('fg_step');
+			$helps = $this->Mhelps->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $helps->meta_help;
 			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
@@ -108,6 +114,8 @@ class Helps extends NIW_Controller
 		function general($id)
 		{
 			$data['step']  =  $this->Mhelps->getListFull('fg_step');
+			$helps = $this->Mhelps->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $helps->meta_help;
 			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
@@ -134,6 +142,8 @@ class Helps extends NIW_Controller
 		function technical($id)
 		{
 			$data['step']  =  $this->Mhelps->getListFull('fg_step');
+			$helps = $this->Mhelps->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $helps->meta_help;
 			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
