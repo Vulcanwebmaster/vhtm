@@ -124,7 +124,7 @@
 															author: <?php echo $item->author;?>
 														<?php }?></li>
 												<li>|</li>
-												
+											<?php }?>
 												<li class="imglimain">
 													<?php foreach($list_tagv as $item)
 													{?>
@@ -133,10 +133,11 @@
 													</a>
 													<?php }?>
 												</li>
-												
+												<?php foreach($list_news as $item)
+												{?>
 												<li>|</li>
 												<li class="imglimain1"><a href="<?php echo base_url();?>news/detail/<?php echo $item->id."-".$value->alias;?>">comments</a></li>
-											<?php }?>
+												<?php }?>
 										</ul>
 									</div>
 									<div class="contentimgtext tuyet">
