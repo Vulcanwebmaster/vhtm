@@ -70,7 +70,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .ctmainrigt1{ float:right; width:66%; }
 .ctmainrigt1 p{ font-size:22px; font-weight:bold; color:#018eaf; padding:5px 0; margin:0; border-bottom:1px solid #e3e3e3}
 .ctmainrigt1 label{ font-size:20px ;font-weight:bold; color:#65c219}
-#topturnois p{ padding-left:35px; font-size:26px; font-family:Times; font-weight:bold; background:url(../images/Belote_67.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78; margin:8px;}
+#topturnois p{ padding-left:31px; font-size:26px; font-family:Times; font-weight:bold; background:url(../images/Belote_67.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78; margin:8px;}
 #topturnois ul{ padding:0; margin:0}
 #topturnois li{ list-style:none; background:url(../images/Belote_71.png) 18px 0 no-repeat; height:35px; padding-top:5px; }
 #topturnois a{text-decoration:none; color:#888888; padding-left:5px}
