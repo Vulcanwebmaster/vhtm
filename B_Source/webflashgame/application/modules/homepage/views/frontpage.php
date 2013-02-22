@@ -129,7 +129,12 @@
 													<?php foreach($list_tagv as $item)
 													{?>
 													<a href="<?php echo base_url()?>news/category/<?php echo $item->id."-".$item->alias?>">
-													 <?php echo $item->name ?>
+														<?php if ($_SESSION['lang']=="fr"){ ?>
+															<?php echo $item->namefr ?>
+														<?php } else{ ?>
+															<?php echo $item->name ?>
+														<?php }?>
+													 
 													</a>
 													<?php }?>
 												</li>
