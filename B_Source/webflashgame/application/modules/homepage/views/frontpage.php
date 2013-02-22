@@ -126,7 +126,7 @@
 												<li>|</li>
 												<?php foreach($list_tagv as $item)
 												{?>
-												<li class="imglimain"><a href="<?php echo base_url();?>tagv">
+												<li class="imglimain"><a href="<?php echo base_url()?>news/category/<?php echo $item->id."-".$item->alias?>">
 													 <?php echo $item->name ?></a></li>
 												<?php }?>
 												<li>|</li>

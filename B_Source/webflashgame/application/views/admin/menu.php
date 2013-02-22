@@ -16,6 +16,7 @@
 <!-- 		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Suppost</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>belote/admin">Belote</a></li> 
 		<li class="icn_application"><a href="<?php echo base_url()?>step/admin">Étape</a></li> 
+<!-- 		<li class="icn_application"><a href="<?php echo base_url()?>tagv/admin">Balise</a></li> -->
 		<li class="icn_application"><a href="<?php echo base_url()?>helps/admin">Aider</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>winner/admin">Top joueurs</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>toptournament/admin">Top turnois</a></li>
