@@ -16,7 +16,7 @@ class Games extends NIW_Controller
 	
 	function index()
 	{
-			$this->page();
+		$this->page();
 	}
 	
 	function page($index=0)
@@ -44,6 +44,7 @@ class Games extends NIW_Controller
 	
 	function api($index=0)
 	{
+			$data['list_tagv']  =  $this->Mgames->getListFull('fg_tag');
 			$data['step']  =  $this->Mgames->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mgames->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mgames->getListFull('fg_bannerheader');

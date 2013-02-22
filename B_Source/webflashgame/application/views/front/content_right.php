@@ -25,7 +25,11 @@
 								}
 							</style>
 							<div id="topturnois">
-								<p><img src="<?php echo base_url();?>assets/flash_game/images/row_03.png" /></p>
+								<p><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Top Tournois';
+														 } else{
+														 	echo 'Top Tournaments';
+														  }?></p>
 								<ul>
 									<?php $i=1; foreach ($topgiaidau as $value) 
 				 					{ ?>
@@ -44,7 +48,12 @@
 							</div>
 	
 	<div id="topjou">
-		<p><img src="<?php echo base_url();?>assets/flash_game/images/row_06.png" /></p>
+		<p><?php if ($_SESSION['lang']=="fr"){
+		 	echo 'Top Joueurs';
+		 } else{
+		 	echo 'Top Players';
+		  }?>
+		</p>
 		<ul>
 			<?php $i=1; foreach ($topwin as $value) 
 			{ ?>
@@ -56,7 +65,12 @@
 		</ul>
 	</div>
 	<div id="belte">
-		<p><img src="<?php echo base_url();?>assets/flash_game/images/row_09.png"/></p>
+		<p><?php if ($_SESSION['lang']=="fr"){
+		 	echo 'Belote sur facebook';
+		 } else{
+		 	echo 'Belote on facebook';
+		  }?>
+		</p>
 		<!-- <div class="faclide">
 			<img src="<?php echo base_url();?>assets/flash_game/images/Belote_99.png"/>
 			<div class="likef">

@@ -48,6 +48,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .topmainlefftct li{ float:left; list-style:none; padding-left:5px;}
 .topmainlefftct ul{ margin:0; padding:0;}
 .topmainlefftct a{ color:#696969; text-decoration:none;}
+.topmainlefftct a:hover{ color: #ff6600; }
 .imglimain{ background:url(../images/Belote_56.png) 2px 0px no-repeat; padding-left:20px !important}
 .imglimain1{ background:url(../images/Belote_61.png) 3px 3px no-repeat; padding-left:20px !important}
 .mainctentlmainleft{ margin-top:-10px; padding:0}
@@ -69,20 +70,20 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .ctmainrigt1{ float:right; width:66%; }
 .ctmainrigt1 p{ font-size:22px; font-weight:bold; color:#018eaf; padding:5px 0; margin:0; border-bottom:1px solid #e3e3e3}
 .ctmainrigt1 label{ font-size:20px ;font-weight:bold; color:#65c219}
-#topturnois p{ font-size:25px; font-weight:bold; background:url(../images/Belote_67.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78; margin:8px;}
+#topturnois p{ padding-left:35px; font-size:26px; font-family:Times; font-weight:bold; background:url(../images/Belote_67.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78; margin:8px;}
 #topturnois ul{ padding:0; margin:0}
 #topturnois li{ list-style:none; background:url(../images/Belote_71.png) 18px 0 no-repeat; height:35px; padding-top:5px; }
 #topturnois a{text-decoration:none; color:#888888; padding-left:5px}
 #topturnois label{ padding-left:33px}
 #topturnois img, #topjou img{ padding:0 0 0 2px}
-#topjou p{background:url(../images/Belote_84.png) 12px 0px no-repeat; text-align:center; height:40px; color:#015d78; padding-top:8px; margin:5px;}
+#topjou p{background:url(../images/Belote_84.png) 12px 0px no-repeat; font-size:26px; font-family:Times; font-weight:bold; text-align:center; height:40px; color:#015d78; padding-top:8px; margin:5px;}
 #topjou ul{padding:0; margin:0}
 #topjou li{ list-style:none;}
 .c1{background:url(../images/Belote_88.png) 18px 0 no-repeat; height:35px; }
 .c2{background:url(../images/Belote_91.png) 18px 0 no-repeat; height:35px; }
 #topjou label{padding-left:24px;}
 #topjou a{text-decoration:none; color:#888888; padding-right:10px}
-#belte p{background:url(../images/Belote_95.png) 2px 0px no-repeat;padding-left:45px; height:40px; color:#015d78; padding-top:8px; padding-top:0;}
+#belte p{background:url(../images/Belote_95.png) 2px 0px no-repeat;padding-left:45px; font-size:25px; font-family:Times; font-weight:bold; height:40px; color:#015d78; padding-top:8px; padding-top:0;}
 #belte{border-bottom:1px solid #e3e3e3; margin-bottom:15px;}
 .faclide{border-bottom:1px solid #e3e3e3; padding:10px; border-bottom:1px solid #e3e3e3; padding-bottom:10px}
 .faclide img{float:left;}

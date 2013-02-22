@@ -124,11 +124,16 @@
 															author: <?php echo $item->author;?>
 														<?php }?></li>
 												<li>|</li>
-												<?php foreach($list_tagv as $item)
-												{?>
-												<li class="imglimain"><a href="<?php echo base_url()?>news/category/<?php echo $item->id."-".$item->alias?>">
-													 <?php echo $item->name ?></a></li>
-												<?php }?>
+												
+												<li class="imglimain">
+													<?php foreach($list_tagv as $item)
+													{?>
+													<a href="<?php echo base_url()?>news/category/<?php echo $item->id."-".$item->alias?>">
+													 <?php echo $item->name ?>
+													</a>
+													<?php }?>
+												</li>
+												
 												<li>|</li>
 												<li class="imglimain1"><a href="<?php echo base_url();?>news/detail/<?php echo $item->id."-".$value->alias;?>">comments</a></li>
 											<?php }?>
