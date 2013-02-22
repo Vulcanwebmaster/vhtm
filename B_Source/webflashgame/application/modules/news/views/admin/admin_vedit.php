@@ -40,6 +40,21 @@
 					<label>Teneur (En)</label>
 					<?php echo $this->ckeditor->editor('contente',$info->contente,$config);?>
 				</fieldset>
+			<!-- 	<fieldset>
+					<label>Balise</label>
+					<select name="courses_category">
+						<option></option>
+						<?php foreach ($list as $item)
+						{
+							if ($item->id==$info->courses_category)
+							{?>
+								<option value="<?php echo $item->id?>" selected="selected"><?php echo $item->cate_name;?></option>
+							<?php }
+							else {?>
+								<option value="<?php echo $item->id?>"><?php echo $item->cate_name;?></option>
+						<?php }}?>
+					</select>
+				</fieldset> -->
 				<fieldset>
 					<label>Images</label>
 					<?php echo $this->ckeditor->editor('image',$info->image,$config);?>
