@@ -39,8 +39,8 @@
 		
 		function _input()
 		{
+			
 			$input=array(
-						
 						'name'=>$this->input->post('name'),
 						'namee'=>$this->input->post('namee'),
 						'content'=>$this->input->post('content'),
@@ -57,6 +57,7 @@
 		{
 			if (!$this->input->post('name'))
 			{
+				$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 				$data['config'] = $this->setupCKEditor('97%','200px');
 				$data['title']='Add News';
 				$data['bcCurrent']='News';
@@ -82,6 +83,7 @@
 				}
 				else 
 				{
+					$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 					$data['config'] = $this->setupCKEditor('97%','200px');
 					$data['title']='Add News';
 					$data['bcCurrent']='News';
@@ -99,6 +101,7 @@
 			//=============================================
 			if (!$this->input->post('name'))
 			{
+				$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 				$data['info']=$this->Mnews->getRowByColumn('fg_news','id',$id);
 				$data['title']='Edit News';
 				$data['bcCurrent']='News';
@@ -115,8 +118,14 @@
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
+					
 					if ($this->Mnews->updateRowByColumn('fg_news','id',$id,$input))
 					{
+						$this->Mnews->deleteRowByColumn('fg_news_tag','id_news',$id);
+						foreach($this->input->post('tags') as $value){
+							$this->Mnews->insertNewRow('fg_news_tag',array('id_tagv'=>$value,'id_news'=>$id));
+						}
+						
 						$this->session->set_userdata('result','mise à jour réussie');
 					}
 					else $this->session->set_userdata('result','mettre à jour les faux');
@@ -124,6 +133,7 @@
 				}
 				else 
 				{
+					$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 					$data['info']=$this->Mnews->getRowByColumn('fg_news','id',$id);
 					$data['title']='Edit News';
 					$data['bcCurrent']='News';

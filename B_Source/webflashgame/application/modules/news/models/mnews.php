@@ -57,7 +57,6 @@ class Mnews extends CI_Model
 		 $this->db->from('fg_news_tag');
 		 $this->db->where('id', $id); 
 		 $this->db->join('fg_news','fg_news.id=fg_news_tag.id_news');
- 		
 		 $ds=$this->db->get();
 		 $list=array();
 	 	 foreach($ds->result() as $item)
@@ -76,7 +75,6 @@ class Mnews extends CI_Model
 		//$this->db->order_by("title", "desc"); 
 		$this->db->limit($limit);
 		$ds=$this->db->get();
-		
 	 	$list=array();
 	 	foreach($ds->result() as $item)
 	 	{
@@ -86,5 +84,14 @@ class Mnews extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 	}
+		
+	// function getSpByParentID($id)
+	 // {
+	 	// // Gọi ra các sản phẩm của các danh mục con có id danh mục cha...
+		  // $query= $this->db->query("SELECT n_sanpham.*, n_danhmuc.parent_id
+										// FROM n_sanpham, n_danhmuc
+										// WHERE n_danhmuc.parent_id ='".$id."'  and n_sanpham.danhmuc_id=n_danhmuc.id");
+		  // return $query->result();
+	 // }
 }
 ?>

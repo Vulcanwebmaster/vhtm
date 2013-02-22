@@ -40,6 +40,12 @@
 					<label>Teneur (En)</label>
 					<?php echo $this->ckeditor->editor('contente',$info->contente,$config);?>
 				</fieldset>
+				<fieldset>
+					<?php  foreach ($tag_name as $value) { ?>
+					<label><?php echo $value->name;?></label>
+					<input type="checkbox" name="tags[]" value="<?php echo $value->id;?>"/>
+					<?php } ?>
+				</fieldset>
 			<!-- 	<fieldset>
 					<label>Balise</label>
 					<select name="courses_category">

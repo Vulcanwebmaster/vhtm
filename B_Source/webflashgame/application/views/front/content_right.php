@@ -26,10 +26,10 @@
 							</style>
 							<div id="topturnois">
 								<p><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Top Tournois';
-														 } else{
-														 	echo 'Top Tournament';
-														  }?></p>
+									 	echo 'Top Tournois';
+									 } else{
+									 	echo 'Top Tournament';
+									  }?></p>
 								<ul>
 									<?php $i=1; foreach ($topgiaidau as $value) 
 				 					{ ?>
