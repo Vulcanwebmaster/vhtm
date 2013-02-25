@@ -91,9 +91,9 @@
 						<div id="contentmainleft">
 							<div id="new">
 								<p class="tieude"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'News';
+														 	echo $setting->newsfr;
 														 } else{
-														 	echo 'News';
+														 	echo $setting->news;
 														  }?></p>
 								<div class="contenttexxtmainlefft">
 									<?php foreach ($list_news as $value) 
@@ -169,7 +169,11 @@
 							<div id="play">
 								<?php foreach ($list_belote as $value) 
 				 			{ ?>
-								<p class="tieude">How to play</p>
+								<p class="tieude"><?php if ($_SESSION['lang']=="fr"){
+														 	echo $setting->playfr;
+														 } else{
+														 	echo $setting->play;
+														  }?></p>
 								<div class="contenttexxtmainlefft">
 									<p class="titlenew">Description</p>									
 								</div>

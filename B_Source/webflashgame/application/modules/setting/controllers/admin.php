@@ -33,12 +33,20 @@
 		function _input()
 		{
 			$input=array(
+						'newsfr'=>$this->input->post('newsfr'),
+						'playfr'=>$this->input->post('playfr'),
+						'news'=>$this->input->post('news'),
+						'play'=>$this->input->post('play'),
 						'phantramweb'=>$this->input->post('phantramweb'),
 						'user_gold'=>$this->input->post('user_gold'),
 						'linkface'=>$this->input->post('linkface'),
 						'linktwitter'=>$this->input->post('linktwitter'),
 						'linkgoogle'=>$this->input->post('linkgoogle'),
 						'linkyoutube'=>$this->input->post('linkyoutube'),
+						'personalfr'=>$this->input->post('personalfr'),
+						'personal'=>$this->input->post('personal'),
+						'settingfr'=>$this->input->post('settingfr'),
+						'setting'=>$this->input->post('setting'),
 						);
 			return $input;
 		}

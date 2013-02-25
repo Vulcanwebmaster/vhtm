@@ -25,7 +25,11 @@
 								<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/logOut">
 									<input type="submit" name="submit" value="Logout" class="login" />
 								</form>
-								<input type="submit" name="submit" value="Change Acount" class="login" />
+								<a style="color: blue" href="<?php echo base_url()?>mygametwist"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Changer de compte';
+														 } else{
+														 	echo 'Change Account';
+														  }?></a>
 						<?php } ?>
 					</div>
 				</div>

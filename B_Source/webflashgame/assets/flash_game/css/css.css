@@ -101,7 +101,7 @@ label{cursor:pointer;}.inputNames,body.content .formTable td:first-child{color:#
 .captcha{height:50px;border:1px solid #39C;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;padding:2px}
 #birthday_day,#birthday_month,#birthday_year{width:70px}#gender{margin:0}
 #gender td{text-align:left;border:0;padding:3px}#FormCheckbox{text-align:right}
-.funCurrencyContainer{background:url(../images/twist_sprite.png) no-repeat 0 0;_background:url(../images/twist_sprite.gif) no-repeat 0 0;display:inline;padding-left:20px}
+.funCurrencyContainer{/*background:url(../images/twist_sprite.png) no-repeat 0 0;*//*_background:url(../images/twist_sprite.gif)*/ no-repeat 0 0;display:inline;padding-left:20px}
 .funCurrencyContainer span{display:none}.topJackpot .funCurrencyContainer{background-position:0 3px;padding:0 5px 0 25px}
 .listRight{text-align:right}a[name="privacy"]{position:relative;top:-42px}
 u{text-decoration:none;font-weight:bold}body.mobile{background:transparent}

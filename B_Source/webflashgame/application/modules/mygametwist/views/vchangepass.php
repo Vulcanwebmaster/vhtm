@@ -1,20 +1,13 @@
-<!-------------------Container------------>
-<!-------------Check Password------------>
-	<script>
-		jQuery(document).ready(function(){
-			// binds form submission and fields to the validation engine
-			jQuery("#checkconfpass").validationEngine();
-		});
-	</script>
-<!-------------End Check Password------------>
-
-<?php $this->load->view('front/menu')?> <!-- Menu -->
 <div id="main">
 			<div id="container" style="float:left;margin-left:294px;position:relative;width:648px;_display:inline">
 				<div id="tipHolder"></div>
 				<div class="left">
 					<div class="contBox" id="settingsPassword">
-						<h3><span>Change password</span></h3>
+						<h3><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Changer le mot de passe';
+														 } else{
+														 	echo 'Change password';
+														  }?></span></h3>
 						<form action="<?php echo base_url();?>mygametwist/updateNewPass/" method="post" enctype="application/x-www-form-urlencoded" class="container" id="checkconfpass">
 							<table class="formTable">
 								<colgroup><col class="first"><col class="second"></colgroup>
@@ -22,7 +15,11 @@
 								<tfoot><tr><td></td><td></td></tr></tfoot>
 								<tbody>
 									<tr>
-										<td class="inputNames"><label for="old_pass">Current password</label></td>
+										<td class="inputNames"><label for="old_pass"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Mot de passe actuel';
+														 } else{
+														 	echo 'Current password';
+														  }?> </label></td>
 										<td class="inputElements"><input name="old_pass" type="password" class="validate[required] text-input" id="old_pass" maxlength="100" value=""></td>
 									<?php if ($this->session->userdata('result')!='')
 										{
@@ -33,14 +30,22 @@
 										}?>
 									</tr>
 									<tr>
-										<td class="inputNames"><label for="pass">New password</label></td>
+										<td class="inputNames"><label for="pass"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Nouveau mot de passe';
+														 } else{
+														 	echo 'New password';
+														  }?> </label></td>
 										<td class="inputElements" title="">
 											<input name="password" type="password" class="validate[required] text-input" id="pass" maxlength="100" value="">
 										</td>
 									</tr>
 									<tr>
 										<td class="inputNames">
-											<label for="pass_conf">Repeat password</label>
+											<label for="pass_conf"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Confirmer mot de passe';
+														 } else{
+														 	echo 'Repeat password';
+														  }?> </label>
 										</td>
 										<td class="inputElements">
 											<input name="pass_conf"  type="password" class="validate[required,equals[pass]] text-input" id="pass_conf" maxlength="100" value="">
@@ -53,7 +58,11 @@
 											<input name="nick" type="hidden" id="nick" value="">
 										</td>
 										<td class="inputElements">
-											<button type="submit" class="formButton fbSubmit" name="submit" value="Save"><span>Save</span></button>
+											<button type="submit" class="formButton fbSubmit" name="submit" value="Save"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Sauvegarder';
+														 } else{
+														 	echo 'Save';
+														  }?></span></button>
 										</td>
 									</tr>
 								</tbody>
@@ -61,11 +70,34 @@
 						</form>
 						</div>
 					</div>
-				</div>
+			</div>
 <!---------------------------Left------------------------->
-<?php $this->load->view('front/mygametwist_left')?>
-<!-------------End container--------------->
+
+			<!---------------------------left-------------------->
+			<div id="sideNav" style="float:left;width:294px;margin-left:-942px;position:relative">
+				<div class="contBox sideNav">
+					<h4><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Paramètres';
+														 } else{
+														 	echo 'Setting';
+														  }?></span></h4>
+					<div class="container">
+						<ul>
+							<li id="btnSettingsPersonal"><a href="http://localhost/webflashgame/mygametwist/personaldata"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Données personnelles';
+														 } else{
+														 	echo 'Personal information';
+														  }?></span></a></li>
+							<li id="btnSettingsPassword"><a href="http://localhost/webflashgame/mygametwist/changepass"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Changer le mot de passe';
+														 } else{
+														 	echo 'Change password';
+														  }?> </span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="sideBar"></div>
+			<br clear="both">
+<!---------------------------End left--------------------><!---------------------------End right-------------------->
 </div>
-<script type="text/javascript">
-	$('#pagemygametwist').addClass('active')
-</script>

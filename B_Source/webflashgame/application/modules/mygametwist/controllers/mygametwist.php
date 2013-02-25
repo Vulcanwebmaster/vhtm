@@ -41,6 +41,9 @@ class Mygametwist extends NIW_Controller
 	
 		function page()
 		{
+			$data['setting'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
+			$data['link_fanpage'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
+			$data['step']  =  $this->Mmygametwist->getListFull('fg_step');
 			$id = $_SESSION['front_user_id'];
 			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
@@ -61,6 +64,9 @@ class Mygametwist extends NIW_Controller
 		// vao giao dien cap nhat thong tin ca nhan
 		function personaldata()
 		{
+			$data['setting'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
+			$data['link_fanpage'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
+			$data['step']  =  $this->Mmygametwist->getListFull('fg_step');
 			$id = $_SESSION['front_user_id'];
 			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
@@ -78,6 +84,9 @@ class Mygametwist extends NIW_Controller
 		// vao giao dien doi pass
 		function changepass()
 		{
+			$data['setting'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
+			$data['link_fanpage'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
+			$data['step']  =  $this->Mmygametwist->getListFull('fg_step');
 			$id = $_SESSION['front_user_id'];
 			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');

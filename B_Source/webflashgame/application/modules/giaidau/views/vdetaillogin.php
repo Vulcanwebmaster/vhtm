@@ -90,8 +90,8 @@
 <!-- 						<img alt="Crazy Eights" src="<?php echo base_url();?>assets/flash_game/images/game_8_gameshot_260x160.jpg"> -->
 						<?php echo $list_chitiet->avarta ?>
 						<dl class="tournCufon">
-							<dt>Jackpot</dt>
-							<dd><span class="funCurrencyContainer"><span>Twists </span><?php echo $list_chitiet->tienthuong ?></span></dd>
+							<dt>Belote</dt>
+							<dd><span class=""><span>Belote </span><?php echo $list_chitiet->tienthuong ?>B</span></dd>
 						</dl>
 					</div>
 				</div>
@@ -100,21 +100,53 @@
 						<h3><?php echo $list_chitiet->name_tour?></h3>
 						<div class="container" style="height: 120px;">
 							<dl>
-								<dt class="stake">Stake:</dt>
-								<dd class="stake">Free</dd>
-								<dt>Start:</dt>
+								<dt class="stake"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Mise :';
+														 } else{
+														 	echo 'Stake:';
+														  }?></dt>
+								<dd class="stake"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Gratuit :';
+														 } else{
+														 	echo 'Free:';
+														  }?></dd>
+								<dt><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Horaires :';
+														 } else{
+														 	echo 'Start:';
+														  }?></dt>
 								<dd><?php echo date("m-d-Y H:i",strtotime($list_chitiet->start_date));?><abbr title="Central European Time"> CET</abbr></dd>
-								<dt>End:</dt>
+								<dt><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Fin :';
+														 } else{
+														 	echo 'End:';
+														  }?></dt>
 								<dd><?php echo date("m-d-Y H:i",strtotime($list_chitiet->end_date));?><abbr title="Central European Time"> CET</abbr></dd>
-								<dt>Status:</dt>
+								<dt><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Status:';
+														 } else{
+														 	echo 'Statut :';
+														  }?></dt>
 								<dd><?php if(date('Y-m-d H:i:s') < date("m-d-Y H:i",strtotime($list_chitiet->start_date))){
 									echo 'Over' ;
 								}else{ echo 'Not started'; } ?></dd>
-								<dt>Players:</dt>
+								<dt><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Joueur(s) :';
+														 } else{
+														 	echo 'Players:';
+														  }?></dt>
 								<dd><?php echo $listPlayer ?></dd>
-								<dt>Free space:</dt>
+								<dt><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Place(s) libre(s) :';
+														 } else{
+														 	echo 'Free space:';
+														  }?></dt>
 								<dd><?php echo ($available->players)-($player) ?></dd>
-								<dt>My status:</dt>
+								<dt><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Mon statut :';
+														 } else{
+														 	echo 'My status:';
+														  }?></dt>
 								<dd><?php  if($checkStatus){
 										 echo 'Registed';
 									 }else{
@@ -122,28 +154,28 @@
 									 } ?></dd>
 								<dt></dt>
 								<dd class="link">								
-									<a id="tournamentsReg" href="#"><span>Register now!</span></a>
+<!-- 									<a id="tournamentsReg" href="#"><span>Register now!</span></a> -->
 								</dd>
 							</dl>
 						</div>
 					</div>
 					<div class="contBox topJackpot">
-						<h3>Share of jackpot</h3>
+						<h3>Share of belote</h3>
 						<div class="container">
 							<div class="item pos_1">
 								<h3>1.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span>
+								<strong><span><span class="funCurrencyContainer"><span>Belote </span>
 									
 									<?php echo (($list_chitiet->top1) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?>
 									</span></span></strong>
 							</div>
 							<div class="item pos_2">
 								<h3>2.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Belote </span><?php echo (($list_chitiet->top2) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
 							</div>
 							<div class="item pos_3">
 								<h3>3.</h3>
-								<strong><span><span class="funCurrencyContainer"><span>Twists </span><?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
+								<strong><span><span class="funCurrencyContainer"><span>Belote </span><?php echo (($list_chitiet->top3) * ($list_chitiet->tienthuong))/ (100-($setting_chitiet->phantramweb + $setting_chitiet->user_gold)) ?></span></span></strong>
 							</div>
 						</div>
 					</div>
@@ -151,10 +183,22 @@
 				<div id="subNav" class="light">
 					<ul>
 						<li id="btnTo3Details" class="active">
-							<a rel="ax:/details"><span>Details</span></a>
+							<a rel="ax:/details"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Aperçu du tournoi';
+														 } else{
+														 	echo 'Details';
+														  }?></span></a>
 						</li>
-						<li id="btnTo3Rules" class=""><a rel="ax:/rules"><span>Tournament rules</span></a></li>
-						<li id="btnTo3Ranking" class="interceptLinks "><a rel="ax:/ranking"><span>Player list</span></a></li>
+						<li id="btnTo3Rules" class=""><a rel="ax:/rules"><span><a rel="ax:/rules"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Règles tournoi';
+														 } else{
+														 	echo 'Tournament rules';
+														  }?></span></a></li>
+						<li id="btnTo3Ranking" class="interceptLinks "><a rel="ax:/ranking"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Liste des participant(e)s';
+														 } else{
+														 	echo 'Player list';
+														  }?></span></a></li>
 					</ul>
 				</div>
 				<style>
