@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 20, 2013 at 08:41 AM
+-- Generation Time: Feb 25, 2013 at 09:17 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -43,6 +43,9 @@ CREATE TABLE IF NOT EXISTS `n_fg_setting` (
   `account_id` int(11) NOT NULL,
   `tour_id` int(11) NOT NULL,
   `linkface` text COLLATE utf8_unicode_ci NOT NULL,
+  `linktwitter` text COLLATE utf8_unicode_ci NOT NULL,
+  `linkgoogle` text COLLATE utf8_unicode_ci NOT NULL,
+  `linkyoutube` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
@@ -50,9 +53,9 @@ CREATE TABLE IF NOT EXISTS `n_fg_setting` (
 -- Dumping data for table `n_fg_setting`
 --
 
-INSERT INTO `n_fg_setting` (`id`, `phantramweb`, `top1`, `top2`, `top3`, `top4`, `top5`, `top6`, `top7`, `top8`, `top9`, `top10`, `user_gold`, `account_id`, `tour_id`, `linkface`) VALUES
-(1, '10', '', '', '', '', '', '', '', '', '', '', '10', 0, 0, 'http://www.facebook.com/NiwVietNam'),
-(2, '25', '5', '5', '5', '5', '5', '5', '5', '5', '', '5', '25', 0, 0, '');
+INSERT INTO `n_fg_setting` (`id`, `phantramweb`, `top1`, `top2`, `top3`, `top4`, `top5`, `top6`, `top7`, `top8`, `top9`, `top10`, `user_gold`, `account_id`, `tour_id`, `linkface`, `linktwitter`, `linkgoogle`, `linkyoutube`) VALUES
+(1, '10', '', '', '', '', '', '', '', '', '', '', '10', 0, 0, 'http://www.facebook.com/NiwVietNam', 'https://twitter.com/', 'https://mail.google.com', 'http://www.youtube.com/'),
+(2, '25', '5', '5', '5', '5', '5', '5', '5', '5', '', '5', '25', 0, 0, '', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
