@@ -36,6 +36,9 @@
 						'phantramweb'=>$this->input->post('phantramweb'),
 						'user_gold'=>$this->input->post('user_gold'),
 						'linkface'=>$this->input->post('linkface'),
+						'linktwitter'=>$this->input->post('linktwitter'),
+						'linkgoogle'=>$this->input->post('linkgoogle'),
+						'linkyoutube'=>$this->input->post('linkyoutube'),
 						);
 			return $input;
 		}

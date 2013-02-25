@@ -27,6 +27,7 @@ class Gioithieu extends NIW_Controller
 			$data['list_banner'] = $this->Mgioithieu->getListFull('fg_banner');
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_gioithieu'] = $this->Mgioithieu->getListFull('fg_about_us');
+			$data['link_fanpage'] = $this->Mgioithieu->getRowByColumn('fg_setting','id',1);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -44,6 +45,7 @@ class Gioithieu extends NIW_Controller
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_gioithieu'] = $this->Mgioithieu->getListFull('fg_about_us');
+			$data['link_fanpage'] = $this->Mgioithieu->getRowByColumn('fg_setting','id',1);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -61,6 +63,7 @@ class Gioithieu extends NIW_Controller
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_gioithieu'] = $this->Mgioithieu->getListFull('fg_about_us');
+			$data['link_fanpage'] = $this->Mgioithieu->getRowByColumn('fg_setting','id',1);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -79,6 +82,7 @@ class Gioithieu extends NIW_Controller
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_category'] = $this->Mgioithieu->getListFull('fg_category');
 			$data['list_detail'] = $this->Mgioithieu->getListFull('fg_about_us');
+			$data['link_fanpage'] = $this->Mgioithieu->getRowByColumn('fg_setting','id',1);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;

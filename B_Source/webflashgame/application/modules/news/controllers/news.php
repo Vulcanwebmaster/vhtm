@@ -28,6 +28,7 @@ class News extends NIW_Controller
 		$data['photo'] = $this->Mnews->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
 		$data['list_belote'] = $this->Mnews->getListFull('fg_belote');
+		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
 		$data['topwin']  =  $this->Mnews->Topwin(4);
 		$data['topgiaidau']  =  $this->Mnews->Topgiaidau(4);
 		$config['base_url']=base_url().'news/page/';
@@ -52,6 +53,7 @@ class News extends NIW_Controller
 		$data['photo'] = $this->Mnews->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
 		$data['list_belote'] = $this->Mnews->getListFull('fg_belote');
+		$data['link_fanpage'] = $this->Mnews->getRowByColumn('fg_setting','id',1);
 		$data['topwin']  =  $this->Mnews->Topwin(4);
 		$data['topgiaidau']  =  $this->Mnews->Topgiaidau(4);
 		$data['list_comment'] = $this->Mnews->getListByColumn('st_comment','news_id',$id);

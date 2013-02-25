@@ -35,6 +35,7 @@ class Setting extends NIW_Controller
 			$data['list_slide'] = $this->Msetting->getListFull('fg_slide');
 			$data['list_banner'] = $this->Msetting->getListFull('fg_banner');
 			$data['list_category'] = $this->Msetting->getListFull('fg_category');
+			$data['link_fanpage'] = $this->Msetting->getRowByColumn('fg_setting','id',1);
 			$data['list_games'] = $this->Msetting->getListFull('fg_games');
 			$config['base_url'] = base_url().'setting/page';
 			$config['per_page'] = 10;

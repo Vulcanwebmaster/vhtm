@@ -1,6 +1,13 @@
 	<?php 
 			echo validation_errors('<div class="error">','</div>');
 		?>	
+		<?php if ($this->session->userdata('result')!='')
+						{
+						echo '<p style="color:red; padding-left:30px">';
+						echo $this->session->userdata('result');
+						$this->session->unset_userdata('result');
+						echo '</p>';
+						}?>
 <form method="post" action="<?php echo base_url();?>setting/admin/edit/<?php echo $info->id;?>">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
@@ -20,8 +27,23 @@
 				</fieldset>
 				
 				<fieldset>
-					<label>Fanpage</label>
+					<label>Link Fanpage</label>
 					<input type="text" name="linkface" style="width:92%" value="<?php echo $info->linkface;?>"/>
+				</fieldset>
+				
+				<fieldset>
+					<label>Link Twitter</label>
+					<input type="text" name="linktwitter" style="width:92%" value="<?php echo $info->linktwitter;?>"/>
+				</fieldset>
+				
+				<fieldset>
+					<label>Link Google</label>
+					<input type="text" name="linkgoogle" style="width:92%" value="<?php echo $info->linkgoogle;?>"/>
+				</fieldset>
+				
+				<fieldset>
+					<label>Link Youtube</label>
+					<input type="text" name="linkyoutube" style="width:92%" value="<?php echo $info->linkyoutube;?>"/>
 				</fieldset>
 				
 			</div>

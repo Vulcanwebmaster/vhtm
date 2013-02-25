@@ -160,7 +160,7 @@
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
-										<lable><a href="<?php echo base_url();?>news">plus de nouvelles</a> </lable>
+										<lable class="chitiettin" ><a href="<?php echo base_url();?>news">plus de nouvelles</a> </lable>
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>
@@ -197,7 +197,7 @@
 									</div><br clear="both" />
 									<div class="bottommainctentmailleft">
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
-										<lable><a href="<?php echo base_url();?>belote/detail/<?php echo $value->id."-".$value->alias;?>">charger plus de nouvelles</a></lable>
+										<lable class="chitiettin"><a href="<?php echo base_url();?>belote/detail/<?php echo $value->id."-".$value->alias;?>">charger plus de nouvelles</a></lable>
 										<img src="<?php echo base_url();?>assets/flash_game/images/row.png"/>
 									</div>
 								</div>

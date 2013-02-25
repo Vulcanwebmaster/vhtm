@@ -61,6 +61,7 @@ class Homepage extends NIW_controller {
 		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
 		$data['list_news'] = $this->Mhomepage->getListFull('fg_news');
 		$data['list_comment'] = $this->Mhomepage->getListFull('st_comment');
+		$data['link_fanpage'] = $this->Mhomepage->getRowByColumn('fg_setting','id',1);
 		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');
 		$data['list_bannerheader'] = $this->Mhomepage->getListFull('fg_bannerheader');
 		$data['list_slide'] = $this->Mhomepage->getListFull('fg_slide');

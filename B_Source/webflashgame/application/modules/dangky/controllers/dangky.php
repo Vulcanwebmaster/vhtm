@@ -15,6 +15,7 @@ class Dangky extends NIW_Controller
 	{
 			$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
 			$data['step']  =  $this->Mdangky->getListFull('fg_step');
+			$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
 			$this->page();
 			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
@@ -26,6 +27,7 @@ class Dangky extends NIW_Controller
 			$data['step']  =  $this->Mdangky->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
+			$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
 			$data['title']='flashgame | Flash Games';
 			$data['module']=$this->module;
 			$data['index'] = -1;
@@ -51,7 +53,7 @@ class Dangky extends NIW_Controller
 		$data['list_slide'] = $this->Mdangky->getListFull('fg_slide');
 		$data['list_banner'] = $this->Mdangky->getListFull('fg_banner');
 		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
-		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
+		$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
 		$data['title']='flashgame | Flash games';
 		$data['module']=$this->module;
 		$data['index'] = -1;

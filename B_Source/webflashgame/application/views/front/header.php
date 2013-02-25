@@ -25,6 +25,7 @@
 								<form class="formlogin" method="post" action="<?php echo base_url()?>dangky/logOut">
 									<input type="submit" name="submit" value="Logout" class="login" />
 								</form>
+								<input type="submit" name="submit" value="Change Acount" class="login" />
 						<?php } ?>
 					</div>
 				</div>

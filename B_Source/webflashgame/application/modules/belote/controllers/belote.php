@@ -38,6 +38,7 @@ class Belote extends NIW_Controller
 		$data['photo'] = $this->Mbelote->getListFull('fg_banner');
 		$data['link_fanpage'] = $this->Mbelote->getRowByColumn('fg_setting','id',1);
 		$data['list_belote'] = $this->Mbelote->getListFull('fg_belote');
+		$data['link_fanpage'] = $this->Mbelote->getRowByColumn('fg_setting','id',1);
 		$data['topwin']  =  $this->Mbelote->Topwin(4);
 		$data['topgiaidau']  =  $this->Mbelote->Topgiaidau(4);
 		//$data['list_comment'] = $this->Mbelote->getListByColumn('st_comment','news_id',$id);

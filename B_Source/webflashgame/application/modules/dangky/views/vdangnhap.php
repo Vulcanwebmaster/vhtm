@@ -61,12 +61,12 @@
 										$this->session->unset_userdata('result');
 										echo '</p>';
 										}?>
-									<tr class="formTips" title="Stay logged in :: Remember log-in details">
+									<!-- <tr class="formTips" title="Stay logged in :: Remember log-in details">
 										<td id="fnLoginCheckbox" class="checkBoxTableCell inputElements">
 											<input name="autologin" type="checkbox" id="autologin" value="1" class="ffCheckbox">
 										</td>
 										<td class="autologinDesc inputDescription"><label for="autologin">Stay logged in</label></td>
-									</tr>
+									</tr> -->
 									<tr>
 										<td><input name="nextpage" type="hidden" id="nextpage" value="/web/OptionalData-Save"></td>
 										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span>Log In</span></button></td>

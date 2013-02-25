@@ -21,7 +21,9 @@
 									position: absolute;
 									left: 27px;
 									top: -1px;
-									color: white
+									color: white;
+									width:20px;
+									line-height:12px;
 								}
 							</style>
 							<div id="topturnois">
@@ -34,7 +36,10 @@
 									<?php $i=1; foreach ($topgiaidau as $value) 
 				 					{ ?>
 									<li style="position:relative">
-									<div class="datetimeDIV"><?php echo date("M",strtotime($value->start_date));?><br /><span style="color: red"><?php echo date("d",strtotime($value->start_date));?></span></div>
+									<div class="datetimeDIV">
+											<span><?php echo date("M",strtotime($value->start_date));?></span>
+											<span style="color: red; clear: both"><?php echo date("d",strtotime($value->start_date));?></span>
+									</div>
 									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
 										<label><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id."-".$value->alias;?>"><?php if ($_SESSION['lang']=="fr"){
 														 	 echo $value->name_tourfr;
@@ -94,10 +99,10 @@
 </div>
 <div class="listgerular">
 	<ul>
-		<li><a href="https://www.facebook.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_113.png"/></a></li>
-		<li><a href="https://twitter.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_115.png"/></a></li>
-		<li><a href="https://accounts.google.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_117.png"/></a></li>
-		<li><a href="http://www.youtube.com/" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_119.png"/></a></li>
+		<li><a href="<?php echo $link_fanpage->linkface ?>" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_113.png"/></a></li>
+		<li><a href="<?php echo $link_fanpage->linktwitter ?>" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_115.png"/></a></li>
+		<li><a href="<?php echo $link_fanpage->linkgoogle ?>" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_117.png"/></a></li>
+		<li><a href="<?php echo $link_fanpage->linkyoutube ?>" target="_blank"><img src="<?php echo base_url();?>assets/flash_game/images/Belote_119.png"/></a></li>
 	</ul>
 </div>
 </div>

@@ -24,6 +24,7 @@ class Danhmuc extends NIW_Controller
 			$config['base_url'] = base_url().'danhmuc/page';
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mdanhmuc->getListFull('fg_category'));
+			$data['link_fanpage'] = $this->Mdanhmuc->getRowByColumn('fg_setting','id',1);
 			$this->pagination->initialize($config);
 			$data['items'] = $this->Mdanhmuc->getListOffset('fg_category',10,$index);
 			$data['title']='flashgame | Flash Games';
@@ -39,6 +40,7 @@ class Danhmuc extends NIW_Controller
 			$data['list_courses'] = $this->Mdanhmuc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mdanhmuc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mdanhmuc->getListFullCategory('ta_courses');
+			$data['link_fanpage'] = $this->Mdanhmuc->getRowByColumn('fg_setting','id',1);
 			$data['list_chitiet']  =  $this->Mdanhmuc->getRowByColumn('ta_courses','courses_id',$index);
 			$data['items']  =  $this->Mdanhmuc->getListOffset('ta_courses',10,$index);
 			$model=new CI_Model();
@@ -58,6 +60,7 @@ class Danhmuc extends NIW_Controller
 			$data['list_games'] = $this->Mdanhmuc->getListFull('fg_games');
 			$data['list_category'] = $this->Mdanhmuc->getListFull('fg_category');
 			$data['category']  =  $this->Mdanhmuc->getListCategory('fg_category');
+			$data['link_fanpage'] = $this->Mdanhmuc->getRowByColumn('fg_setting','id',1);
 			//var_dump($data['category']); die();
 			$data['items']=$this->Mdanhmuc->getListByColumn('fg_games','category_id',$id);
 			//var_dump($data['items']); die();

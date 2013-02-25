@@ -40,6 +40,7 @@ class Helps extends NIW_Controller
 			$data['title']='games | Flash-games';
 			$helps = $this->Mhelps->getRowByColumn('st_metatag','id',1);
 			$data['meta_tag'] = $helps->meta_help;
+			$data['link_fanpage'] = $this->Mhelps->getRowByColumn('fg_setting','id',1);
 			$data['list_hotro'] = $this->Mhelps->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mhelps->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
@@ -69,6 +70,7 @@ class Helps extends NIW_Controller
 			$data['list_slide'] = $this->Mhelps->getListFull('fg_slide');
 			$data['list_banner'] = $this->Mhelps->getListFull('fg_banner');
 			$data['introducts'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
+			$data['link_fanpage'] = $this->Mhelps->getRowByColumn('fg_setting','id',1);
 			$data['overview'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
 			$data['list_chitiet']  =  $this->Mhelps->getRowByColumn('fg_faqs','id',$id);
@@ -98,6 +100,7 @@ class Helps extends NIW_Controller
 			$data['description'] = $this->Mhelps->getRowByColumn('fg_belote','id',1);
 			$data['content1'] = $this->Mhelps->getRowByColumn('fg_belote','id',1);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
+			$data['link_fanpage'] = $this->Mhelps->getRowByColumn('fg_setting','id',1);
 			$data['list_chitiet']  =  $this->Mhelps->getRowByColumn('fg_faqs','id',$id);
 			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
 			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
@@ -131,6 +134,7 @@ class Helps extends NIW_Controller
 			$data['overview'] = $this->Mhelps->getRowByColumn('fg_games','game_id',$id);
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
 			$data['list_chitiet']  =  $this->Mhelps->getRowByColumn('fg_faqs','id',$id);
+			$data['link_fanpage'] = $this->Mhelps->getRowByColumn('fg_setting','id',1);
 			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
 			$data['list_general_detail'] = $this->Mhelps->getRowByColumn('fg_general','id',$id);
 			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
@@ -162,6 +166,7 @@ class Helps extends NIW_Controller
 			$data['list_games'] = $this->Mhelps->getListFull('fg_games');
 			$data['list_chitiet']  =  $this->Mhelps->getRowByColumn('fg_faqs','id',$id);
 			$data['list_technical'] = $this->Mhelps->getListFull('fg_technical');
+			$data['link_fanpage'] = $this->Mhelps->getRowByColumn('fg_setting','id',1);
 			$data['list_technical_detail'] = $this->Mhelps->getRowByColumn('fg_technical','id',$id);
 			$data['list_general_detail'] = $this->Mhelps->getRowByColumn('fg_general','id',$id);
 			$data['list_general'] = $this->Mhelps->getListFull('fg_general');
