@@ -126,7 +126,7 @@
 												<li>|</li>
 											<?php }?>
 												<li class="imglimain">
-													<?php foreach($list_tagv as $item)
+													<?php foreach($list_news_tag as $item)
 													{?>
 													<a href="<?php echo base_url()?>news/category/<?php echo $item->id."-".$item->alias?>">
 														<?php if ($_SESSION['lang']=="fr"){ ?>

@@ -108,6 +108,24 @@ class Mgames extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 		}
+		
+		function CountOnline($tableName='',$columnName='',$index='')
+	{
+		
+		$this->db->select();
+		$this->db->from('fg_accounts');
+		$this->db->where('status', 1); 
+		
+		$ds=$this->db->get();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return count($list);
+	}
+	
 	function TopGame($limit){
 		$this->db->select();
 		$this->db->from('fg_games');

@@ -30,7 +30,7 @@
 			$this->pagination->initialize($config);
 			
 			$data['title']='Nouvelles';
-			$data['bcCurrent']='News';
+			$data['bcCurrent']='Nouvelles';
 			$data['list']=$this->Mnews->getListOffset('fg_news',15,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
@@ -59,8 +59,8 @@
 			{
 				$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Add News';
-				$data['bcCurrent']='News';
+				$data['title']='Ajouter NOUVELLES';
+				$data['bcCurrent']='NOUVELLES';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
@@ -76,6 +76,9 @@
 					$input=$this->_input();
 					if ($this->Mnews->insertNewRow('fg_news',$input))
 					{
+						 foreach($this->input->post('tags') as $value){
+							 $this->Mnews->insertNewRow('fg_news_tag',array('id_tagv'=>$value,'id_news'=>$inserId = $this->db->insert_id()));
+						 }
 						$this->session->set_userdata('result','ajouter réussie nouveau');
 					}
 					else $this->session->set_userdata('result','ajouter fausses nouvelles');
@@ -85,8 +88,8 @@
 				{
 					$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Add News';
-					$data['bcCurrent']='News';
+					$data['title']='Ajouter NOUVELLES';
+					$data['bcCurrent']='NOUVELLES';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -103,8 +106,8 @@
 			{
 				$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 				$data['info']=$this->Mnews->getRowByColumn('fg_news','id',$id);
-				$data['title']='Edit News';
-				$data['bcCurrent']='News';
+				$data['title']='Modifier NOUVELLES';
+				$data['bcCurrent']='NOUVELLES';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
@@ -135,8 +138,8 @@
 				{
 					$data['tag_name']=$this->Mnews->getListFull('fg_tag');
 					$data['info']=$this->Mnews->getRowByColumn('fg_news','id',$id);
-					$data['title']='Edit News';
-					$data['bcCurrent']='News';
+					$data['title']='Modifier NOUVELLES';
+					$data['bcCurrent']='NOUVELLES';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);

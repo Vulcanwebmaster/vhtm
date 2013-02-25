@@ -104,7 +104,7 @@
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
 			//echo $this->input->post('courses_name');die();
-			if (!$this->input->post('title'))
+			if (!$this->input->post('name'))
 			{
 				$data['info']=$this->Mtagv->getRowByColumn('fg_tag','id',$id);
 				$data['title']='Modifier Balise';

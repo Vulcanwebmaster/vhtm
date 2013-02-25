@@ -13,6 +13,23 @@ class Mnews extends CI_Model
 		$list=$this->db->get('fg_news');
 		return $list->row();
 	}
+	
+	function CountRegister($tableName='')
+	 {
+ 		
+		 $this->db->select('id');
+		 $this->db->from('fg_accounts');
+ 		
+		 $ds=$this->db->get();
+		 $list=array();
+	 	 foreach($ds->result() as $item)
+	 	 {
+	 		 $list[]=$item;
+	 	 }
+	 	 $ds->free_result();
+	 	 return count($list);
+	 }
+	
 	//top giai dau co so tien thuong cao nhat
 	function Topgiaidau($limit)
 	{
@@ -33,11 +50,29 @@ class Mnews extends CI_Model
 	 	return $list;
 	}
 	
-	function getListCategory()
+	function CountOnline($tableName='',$columnName='',$index='')
+	{
+		
+		$this->db->select();
+		$this->db->from('fg_accounts');
+		$this->db->where('status', 1); 
+		
+		$ds=$this->db->get();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return count($list);
+	}
+	function getListNewOfTag($tableName='',$columnName='',$id='')
 	{
 		$this->db->select();
 		$this->db->from('fg_news');
+		$this->db->where('id_tagv', $id); 
 		$this->db->join('fg_news_tag','fg_news_tag.id_news=fg_news.id');
+		
 		
 		$ds=$this->db->get();
 		//var_dump($ds); die();

@@ -26,6 +26,38 @@
 	 	return $list;
 	}
 	
+	function CountRegister($tableName='')
+	 {
+ 		
+		 $this->db->select('id');
+		 $this->db->from('fg_accounts');
+ 		
+		 $ds=$this->db->get();
+		 $list=array();
+	 	 foreach($ds->result() as $item)
+	 	 {
+	 		 $list[]=$item;
+	 	 }
+	 	 $ds->free_result();
+	 	 return count($list);
+	 }
+	
+	function CountOnline($tableName='',$columnName='',$index='')
+	{
+		
+		$this->db->select();
+		$this->db->from('fg_accounts');
+		$this->db->where('status', 1); 
+		
+		$ds=$this->db->get();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return count($list);
+	}
 	//top nguoi thang cuoc co so tien thuong cao nhat
 	function Topwin($limit)
 	{
@@ -64,6 +96,22 @@
 		
 	}
 	
+	function getListNewsTag($tableName='',$columnName='',$index='')
+	{
+		
+		$this->db->select();
+		$this->db->from('fg_news_tag');
+		$this->db->where('id_news', 1); 
+		$this->db->join('fg_tag','fg_tag.id=fg_news_tag.id_tagv');
+		$ds=$this->db->get();
+		$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	}
 	function getListFullCategory($tableName='')
 	 	{
 	 	$this->db->select();

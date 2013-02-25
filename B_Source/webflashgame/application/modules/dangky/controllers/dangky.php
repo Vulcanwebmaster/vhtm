@@ -13,6 +13,7 @@ class Dangky extends NIW_Controller
 	
 	function index()
 	{
+			$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
 			$data['step']  =  $this->Mdangky->getListFull('fg_step');
 			$this->page();
 			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
@@ -21,6 +22,7 @@ class Dangky extends NIW_Controller
 	
 	function page($index=0)
 	{
+			$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
 			$data['step']  =  $this->Mdangky->getListFull('fg_step');
 			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
@@ -42,6 +44,7 @@ class Dangky extends NIW_Controller
 	
 	function dangNhap()
 	{
+		$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
 		$data['step']  =  $this->Mdangky->getListFull('fg_step');
 		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 		$data['list_bannerheader'] = $this->Mdangky->getListFull('fg_bannerheader');
@@ -99,6 +102,7 @@ class Dangky extends NIW_Controller
 	
 	function registAccount()
 	{
+		$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
 		$data['step']  =  $this->Mdangky->getListFull('fg_step');
 		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 		$data['list_category'] = $this->Mdangky->getListFull('fg_category');

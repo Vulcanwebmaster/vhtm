@@ -183,6 +183,8 @@ class Mgiaidau extends CI_Model
 
 	}
 	
+	
+	
 	function gameNextWeek(){
 		$this->db->where('start_date >' ,date("m-d-Y", strtotime('next sunday')));
 		$this->db->select();

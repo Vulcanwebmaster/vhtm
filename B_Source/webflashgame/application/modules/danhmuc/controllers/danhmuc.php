@@ -20,7 +20,7 @@ class Danhmuc extends NIW_Controller
 	
 	function page($index=0)
 	{
-			
+			$data['online']  =  $this->Mdanhmuc->CountOnline('fg_tag','status',1);
 			$config['base_url'] = base_url().'danhmuc/page';
 			$config['per_page'] = 10;
 			$config['total_rows'] = count($this->Mdanhmuc->getListFull('fg_category'));
@@ -35,6 +35,7 @@ class Danhmuc extends NIW_Controller
 	
 	function detail($index=0)
 	{
+			$data['online']  =  $this->Mdanhmuc->CountOnline('fg_tag','status',1);
 			$data['list_courses'] = $this->Mdanhmuc->getListFull('ta_courses');
 			$data['list_courses_cate'] = $this->Mdanhmuc->getListFull('ta_courses_cate');
 			$data['category']  =  $this->Mdanhmuc->getListFullCategory('ta_courses');
@@ -53,6 +54,7 @@ class Danhmuc extends NIW_Controller
 			if (isset($temp)){
 				$id = $temp[0];
 			}
+			$data['online']  =  $this->Mdanhmuc->CountOnline('fg_tag','status',1);
 			$data['list_games'] = $this->Mdanhmuc->getListFull('fg_games');
 			$data['list_category'] = $this->Mdanhmuc->getListFull('fg_category');
 			$data['category']  =  $this->Mdanhmuc->getListCategory('fg_category');

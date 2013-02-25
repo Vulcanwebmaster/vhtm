@@ -22,8 +22,10 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
-		//$data['tag'] = $this->Mhomepage->getRowByColumn('fg_tag','id',1);
-		//var_dump($data['tag']); die();
+		
+		$data['online']  =  $this->Mhomepage->CountOnline('fg_tag','status',1);
+		//Số người đăng ký chơi game
+		$data['register']  =  $this->Mhomepage->CountRegister('fg_accounts');
 		$data['list_tagv']  =  $this->Mhomepage->getListFull('fg_tag');
 		$data['step']  =  $this->Mhomepage->getListFull('fg_step');
 		$data['topwin']  =  $this->Mhomepage->Topwin(4);
@@ -36,6 +38,8 @@ class Homepage extends NIW_controller {
 		$data['meta_tag'] = $homepage->meta_home;
 		$data['list_belote'] = $this->Mhomepage->getListFull('fg_belote');
 		$data['list_news'] = $this->Mhomepage->getListOffset('fg_news',1,0);
+		$data['list_news_tag'] = $this->Mhomepage->getListNewsTag('fg_news_tag','id_news',1);
+		//var_dump($data['list_news_tag']); die();
 		$data['list_games'] = $this->Mhomepage->getListOffset('fg_games',48,0);
 		$data['list_hotro'] = $this->Mhomepage->getListFull('fg_hotro');
 		$data['list_bannerheader'] = $this->Mhomepage->getListFull('fg_bannerheader');
@@ -90,8 +94,8 @@ class Homepage extends NIW_controller {
 			$news=
 			$from="tuyetapt@gmail.com";
 			$to=$_POST['e_mail'];
-			$subject="Đăng ký nhận thông tin thành công";
-			$message="Email của bạn đã đăng ký nhận tin tức mới nhất và Chúng tôi sẽ tự động cập nhật và viết tin mới nhất gửi vào mail cho bạn.";
+			$subject="Inscrivez-vous à l'information réussie";
+			$message="Envoyer votre registre pour recevoir les dernières nouvelles et nous mettra automatiquement à jour et publier les dernières nouvelles envoyées à votre courrier.";
 			$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
 			mail($to,$subject,$message,$options);
 			if ($this->Mhomepage->insertNewRow('fg_email',$input))

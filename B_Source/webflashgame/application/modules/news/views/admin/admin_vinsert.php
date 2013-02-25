@@ -46,6 +46,12 @@
 					<?php echo $this->ckeditor->editor('image','',$config);?>
 				</fieldset>
 				<fieldset>
+					<?php  foreach ($tag_name as $value) { ?>
+					<label><?php echo $value->name;?></label>
+					<input type="checkbox" name="tags[]" value="<?php echo $value->id;?>"/>
+					<?php } ?>
+				</fieldset>
+				<fieldset>
 					<label>date</label>
 					<input type="text" name="create_date" id="ngaythang" value="<?php echo date('Y/m/d', time()+7*3600);?>"/>
 				</fieldset>
