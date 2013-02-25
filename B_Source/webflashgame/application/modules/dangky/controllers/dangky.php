@@ -155,7 +155,69 @@ class Dangky extends NIW_Controller
 			$this->load->view('front/container',$this->data);
 		}
 	}
+
+	function forgotpass()
+	{
+		$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
+		$data['step']  =  $this->Mdangky->getListFull('fg_step');
+		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
+		$data['list_bannerheader'] = $this->Mdangky->getListFull('fg_bannerheader');
+		$data['list_slide'] = $this->Mdangky->getListFull('fg_slide');
+		$data['list_banner'] = $this->Mdangky->getListFull('fg_banner');
+		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
+		$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
+		$data['title']='flashgame | Flash games';
+		$data['module']=$this->module;
+		$data['index'] = -1;
+		//$relateAccounts = $this->Mdangky->getAccountByUserPass($nick, $password);
+		//var_dump($relateAccounts); die();
+		$data['page']='vforgotpass';
+		$this->load->view('front/container',$data);
+	}
 	
+	function checkEmail()
+	{
+			$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
+			$data['step']  =  $this->Mdangky->getListFull('fg_step');
+			$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
+			$data['list_category'] = $this->Mdangky->getListFull('fg_category');
+			
+			$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
+			$email = $this->input->post("email");
+			//get list accounts which have email and password are received values
+			$listTest = $this->Mdangky->getRowByColumn('fg_accounts', 'email', $email); 
+			// var_dump($listTest->email, $listTest->username);die();
+			if (count($listTest) != 0)
+			{
+				$characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+				$randomString = '';
+				for ($i = 0; $i < 6; $i++) {
+				    $randomString .= $characters[rand(0, strlen($characters) - 1)];
+				}
+				$new_password = $randomString;
+				
+				$this->form_validation->set_rules('e_mail',' mail','required|trim|valid_email');
+				// Ham send mail
+					$from="admin_gameflash@gmail.com";
+					$to=$listTest->email;
+					$subject="Inscrivez-vous à l'information réussie";
+					$message="Mat khau cua ban la: $new_password.";
+					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+					mail($to,$subject,$message,$options);
+				// End ham send mail
+					redirect(base_url().'dangky/forgotpass','refresh');
+				
+			}
+			else 
+			{
+				// if any items are exist, show error message
+				$_SESSION['front_register_error'] = "Email này không tồn tại. Vui lòng chọn email khác";
+				$this->session->set_userdata('result','Email ne pas exister, sil vous plait utilisez un autre email!!');
+				$this->data['module'] = $this->module;
+				redirect(base_url().'dangky/forgotpass','refresh');
+				$this->load->view('front/container', $this->data);
+			}
+	}
 	
 	
 	

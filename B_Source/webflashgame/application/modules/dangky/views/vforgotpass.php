@@ -36,23 +36,19 @@
 			<div id="container">	
 				<div id="tipHolder"></div>
 				<div id="heading">
-					<h3><span>Login</span></h3>
+					<h3><span>Mot de passe oublie</span></h3>
 				</div>
 				<div class="left">
 					<div id="login" class="contBox">
-						<form method="post" enctype="application/x-www-form-urlencoded" name="fnLogin" class="container" id="fnLogin" action="<?php echo base_url();?>dangky/checkAccount">
+						<form method="post" class="container" id="fnLogin" action="<?php echo base_url();?>dangky/checkEmail">
 							<table class="formTable">
 								<colgroup><col class="first"><col class="second"></colgroup>
 								<thead><tr><td class="first"></td><td class="last"></td></tr></thead>
 								<tfoot><tr><td class="first"></td><td class="last"></td></tr></tfoot>
 								<tbody>
 									<tr>
-										<td class="inputNames"><label for="nick">Nickname</label></td>
-										<td class="inputElements"><input name="nick" type="text" class="formField ffInput validate[required] text-input" id="nick" value=""></td>
-									</tr>
-									<tr>
-										<td class="inputNames"><label for="pass">Password</label></td>
-										<td class="inputElements"><input name="pass" type="password" class="formField ffInput validate[required] text-input" id="pass" value=""></td>
+										<td class="inputNames"><label for="nick">Email</label></td>
+										<td class="inputElements"><input name="email" type="text" class="formField ffInput validate[required,custom[email]] text-input" id="nick"></td>
 									</tr>
 									<?php if ($this->session->userdata('result')!='')
 										{
@@ -61,26 +57,15 @@
 										$this->session->unset_userdata('result');
 										echo '</p>';
 										}?>
-									<!-- <tr class="formTips" title="Stay logged in :: Remember log-in details">
-										<td id="fnLoginCheckbox" class="checkBoxTableCell inputElements">
-											<input name="autologin" type="checkbox" id="autologin" value="1" class="ffCheckbox">
-										</td>
-										<td class="autologinDesc inputDescription"><label for="autologin">Stay logged in</label></td>
-									</tr> -->
 									<tr>
 										<td><input name="nextpage" type="hidden" id="nextpage" value="/web/OptionalData-Save"></td>
-										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span>Log In</span></button></td>
+										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span>Send</span></button></td>
 									</tr>
 								</tbody>
 							</table>
-							<ul class="signonHelpers">
-								<li class="formTips"><a class="opener close" href="<?php echo base_url();?>dangky/forgotpass"><span>I forgot my password!</span></a></li>
-								<li><a class="opener close" href="<?php echo base_url();?>register"><span>New here? Register now!</span></a></li>
-							</ul>
 						</form>
 					</div>
 				</div>
-			<div class="right"></div>
 		</div>
 		<div id="sideNav"></div>
 		<div id="sideBar"></div>
