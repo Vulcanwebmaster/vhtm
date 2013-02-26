@@ -16,6 +16,7 @@ class Mygametwist extends NIW_Controller
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
+		$this->load->library('form_validation');
 		$this->load->library('pagination');
 		$this->load->model('Mmygametwist');
 		$this->load->library('session');
@@ -88,6 +89,7 @@ class Mygametwist extends NIW_Controller
 			$data['link_fanpage'] = $this->Mmygametwist->getRowByColumn('fg_setting','id',1);
 			$data['step']  =  $this->Mmygametwist->getListFull('fg_step');
 			$id = $_SESSION['front_user_id'];
+			//var_dump($id); die();
 			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
 			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
 			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
@@ -101,27 +103,7 @@ class Mygametwist extends NIW_Controller
 			$data['index']  =  -1;
 			$this->load->view('front/container',$data);
 		}
-		// Game Setting
-		function gamesetting()
-		{
-			$id = $_SESSION['front_user_id'];
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$listTest = $this->Mmygametwist->getListByColumn('st_gamesetting', 'account_id', $id); 
-			if (count($listTest) > 0)
-			{
-				$data['game_setting'] = $this->Mmygametwist->getRowByColumn('st_gamesetting','account_id',$id);
-			}
-			$model=new CI_Model();
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			$data['menuleft']  =  2;
-			$data['module']  =  $this->module;
-			$data['page']  	=  'vgamesetting';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
+		
 		// General Setting
 		function generalsetting()
 		{
@@ -166,149 +148,12 @@ class Mygametwist extends NIW_Controller
 			$this->load->view('front/container',$data);
 		}
 		//Twists overview
-		function twistsoverview()
-		{
-			$id = $_SESSION['front_user_id'];
-			$model=new CI_Model();
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			$data['list_transaction'] = $this->Mmygametwist->getListByColumn('st_transaction','account_id',$id);
-		//	var_dump($data['list_transaction']);die();
-			$data['menuleft']  =  5;
-			$data['module']  =  $this->module;
-			$data['page']  =  'vtwistsoverview';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
-		//Twists overview
-		function subscriptionoverview()
-		{
-			$model=new CI_Model();
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			$data['menuleft']  =  6;
-			$data['module']  =  $this->module;
-			$data['page']  =  'vsubscriptionoverview';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
-		//Twists statistics
-		function statistics()
-		{
-			$id = $_SESSION['front_user_id'];
-			$model=new CI_Model();
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			$data['list_statistics'] = $this->Mmygametwist->getListByColumn('st_statistics','account_id',$id);
-			$data['account'] = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
-			$data['menuleft']  =  7;
-			$data['module']  =  $this->module;
-			$data['page']  =  'vstatistics';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
-		//Twists vouchers
-		function vouchers()
-		{
-			$model=new CI_Model();
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			$data['menuleft']  =  8;
-			$data['module']  =  $this->module;
-			$data['page']  =  'vvouchers';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
-		// List Friends
-		function friendslist()
-		{
-			$id = $_SESSION['front_user_id'];
-			$model=new CI_Model();
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			// Lay ra danh sach ban be qua id
-			$listfriend = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
-			if($listfriend->friendslist != 0){
-			$data['list_friends'] = $this->Mmygametwist->getListByIdFriends($listfriend->friendslist);
-			}
-			$data['menuleft']  =  9;
-			$data['module']  =  $this->module;
-			$data['page']  =  'vfriendslist';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
-		// List Ignore Friends
-		function ignorelist()
-		{
-			$id = $_SESSION['front_user_id'];
-			$model=new CI_Model();
-			$data['list_hotro'] = $this->Mmygametwist->getListFull('fg_hotro');
-			$data['list_bannerheader'] = $this->Mmygametwist->getListFull('fg_bannerheader');
-			$data['list_slide'] = $this->Mmygametwist->getListFull('fg_slide');
-			$data['list_banner'] = $this->Mmygametwist->getListFull('fg_banner');
-			$data['list_category'] = $this->Mmygametwist->getListFull('fg_category');
-			// Lay ra danh sach ban be qua id
-			$listignore = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
-			if($listignore->ignorelist != 0){
-			$data['list_ignore'] = $this->Mmygametwist->getListByIdFriends($listignore->ignorelist);
-			}
-			$data['menuleft']  =  10;
-			$data['module']  =  $this->module;
-			$data['page']  =  'vignorelist';
-			$data['index']  =  -1;
-			$this->load->view('front/container',$data);
-		}
 		
 // *************** Cac function insert update ****************
 		// Lay du lieu tu form
-		function _inputCurrencySetting()
-		{
-			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
-			$input=array(
-						'currency'=>$this->input->post('currency'),
-						'account_id'=> $_SESSION['front_user_id'],
-						);
-			return $input;
-		}
+		
 		// Update Currency Setting
-		function updateCurrencySetting(){
-			$id = $_SESSION['front_user_id'];
-			$input= $this->_inputCurrencySetting();
-			//var_dump($input);die();
-			if($input == TRUE){
-				$listTest = $this->Mmygametwist->getListByColumn('st_currencysetting', 'account_id', $id); 
-				if (count($listTest) != 0)
-				{	
-					if ($this->Mmygametwist->updateRowByColumn('st_currencysetting','account_id',$id,$input))
-						{
-							$this->session->set_userdata('result','Update successful!!');
-						}
-						redirect(base_url().'mygametwist');
-				}else {
-					if ($this->Mmygametwist->insertNewRow('st_currencysetting',$input))
-						{
-							$this->session->set_userdata('result','Update successful!!');
-						}
-						redirect(base_url().'mygametwist');
-				}
-			}
-			redirect(base_url().'mygametwist');
-		}
+		
 		
 		// Lay du lieu tu form
 		function _inputGeneralSetting()
@@ -321,64 +166,11 @@ class Mygametwist extends NIW_Controller
 			return $input;
 		}
 		// Update general Setting
-		function updateGeneralSetting(){
-			$id = $_SESSION['front_user_id'];
-			$input= $this->_inputGeneralSetting();
-			//var_dump($input);die();
-			if($input == TRUE){
-				$listTest = $this->Mmygametwist->getListByColumn('st_generalsetting', 'account_id', $id); 
-				if (count($listTest) != 0)
-				{	
-					if ($this->Mmygametwist->updateRowByColumn('st_generalsetting','account_id',$id,$input))
-						{
-							$this->session->set_userdata('result','Update successful!!');
-						}
-						redirect(base_url().'mygametwist');
-				}else {
-					if ($this->Mmygametwist->insertNewRow('st_generalsetting',$input))
-						{
-							$this->session->set_userdata('result','Update successful!!');
-						}
-						redirect(base_url().'mygametwist');
-				}
-			}
-			redirect(base_url().'mygametwist');
-		}
+		
 		// Lay du lieu tu form
-		function _inputGameSetting()
-		{
-			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
-			$input=array(
-						'play'=>$this->input->post('play'),
-						'technology'=>$this->input->post('technology'),
-						'account_id'=> $_SESSION['front_user_id'],
-						);
-			return $input;
-		}
+		
 		// Update Game Setting
-		function updateGameSetting(){
-			$id = $_SESSION['front_user_id'];
-			$input= $this->_inputGameSetting();
-			//var_dump($input);die();
-			if($input == TRUE){
-				$listTest = $this->Mmygametwist->getListByColumn('st_gamesetting', 'account_id', $id); 
-				if (count($listTest) != 0)
-				{	
-					if ($this->Mmygametwist->updateRowByColumn('st_gamesetting','account_id',$id,$input))
-						{
-							$this->session->set_userdata('result','Update successful!!');
-						}
-						redirect(base_url().'mygametwist');
-				}else {
-					if ($this->Mmygametwist->insertNewRow('st_gamesetting',$input))
-						{
-							$this->session->set_userdata('result','Update successful!!');
-						}
-						redirect(base_url().'mygametwist');
-				}
-			}
-			redirect(base_url().'mygametwist');
-		}
+		
 		// Lay du lieu tu form
 		function _inputPassword()
 		{
@@ -391,6 +183,7 @@ class Mygametwist extends NIW_Controller
 		// Function doi pass
 		function updateNewPass(){
 			$id = $_SESSION['front_user_id'];
+			$this->form_validation->set_rules('password','Password','required|trim');
 			$list_account = $this->Mmygametwist->getRowByColumn('fg_accounts','id',$id);
 			$old_pass = $this->input->post('old_pass');
 			//echo "trung dep zdai";die();
@@ -398,11 +191,11 @@ class Mygametwist extends NIW_Controller
 				$input= $this->_inputPassword();			
 				if ($this->Mmygametwist->updateRowByColumn('fg_accounts','id',$id,$input))
 				{
-					$this->session->set_userdata('result','Update successful!!');
+					$this->session->set_userdata('result','Mise à jour réussie!');
 					redirect(base_url().'mygametwist');
 				}
 				}else{
-					$this->session->set_userdata('result','Current password false.');
+					$this->session->set_userdata('result','Faux mot de passe actuel.');
 					$this->changepass();
 				}
 		}
@@ -426,8 +219,8 @@ class Mygametwist extends NIW_Controller
 			//var_dump($input);die();
 			if($input == TRUE){
 				if ($this->Mmygametwist->updateRowByColumn('fg_accounts','id',$id,$input))
-					{
-						$this->session->set_userdata('result','Update successful!!');
+					{//Update successful!!
+						$this->session->set_userdata('result','Mise à jour réussie!');
 					}
 					redirect(base_url().'mygametwist');
 			}

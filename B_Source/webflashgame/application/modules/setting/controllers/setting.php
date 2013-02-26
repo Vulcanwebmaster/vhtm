@@ -54,13 +54,15 @@ class Setting extends NIW_Controller
 					$data['page']='vgiaidauuser';
 					$this->load->view('front/container',$data);
 				}else{
-					$this->session->set_userdata('result','you must have a account user gold to create tournament.');
+					$this->session->set_userdata('result','vous devez avoir un compte utilisateur en or pour créer tournoi.');
 					redirect(base_url().'giaidau','refresh');
 				}
 			}
 			else{
-				$_SESSION['front_login_error'] = 'input username and password.';
-				$this->session->set_userdata('result','username or password false.');
+				//input username and password.
+				$_SESSION['front_login_error'] = "nom d'utilisateur et mot de passe d'entrée";
+				//username or password false
+				$this->session->set_userdata('result',"nom d'utilisateur ou mot de passe faux");
 				redirect(base_url().'login','refresh');
 			}
 			

@@ -91,6 +91,24 @@ class Giaidau extends NIW_Controller
 			
 	}
 	
+	function mytournament(){
+			$giaidau = $this->Mgiaidau->getRowByColumn('st_metatag','id',1);
+			$data['meta_tag'] = $giaidau->meta_tourmanents;
+			$data['step']  =  $this->Mgiaidau->getListFull('fg_step');
+			$data['list_hotro'] = $this->Mgiaidau->getListFull('fg_hotro');
+			$data['list_bannerheader'] = $this->Mgiaidau->getListFull('fg_bannerheader');
+			$data['link_fanpage'] = $this->Mgiaidau->getRowByColumn('fg_setting','id',1);
+			$data['list_slide'] = $this->Mgiaidau->getListFull('fg_slide');
+			$data['list_banner'] = $this->Mgiaidau->getListFull('fg_banner');
+			$data['list_category'] = $this->Mgiaidau->getListFull('fg_category');
+			$data['past'] = $this->Mgiaidau->gamePast();
+			$data['items'] = $this->Mgiaidau->getListOffset('fg_tournaments',10,$index);
+			$data['title']='flashgame | Flash Games';
+			$data['module']=$this->module;
+			$data['index'] = -1;
+			$data['page']='vmytuornament';
+			$this->load->view('front/container',$data);
+	}
 	
 	function detail($index=0)
 	{

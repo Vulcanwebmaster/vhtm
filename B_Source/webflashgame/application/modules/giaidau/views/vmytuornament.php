@@ -63,7 +63,7 @@
 								<?php } else{ ?>
 									My tournaments
 								<?php } ?></span></a></li>
-					<li class="" id="create"><a href="<?php echo base_url();?>giaidau/mytournament"><span>
+					<li class="" id="create"><a href="<?php echo base_url();?>setting"><span>
 						<?php if ($_SESSION['lang']=="fr") 
 								{?>		
 									Créer tournoi

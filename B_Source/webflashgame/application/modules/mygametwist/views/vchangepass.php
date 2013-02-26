@@ -19,12 +19,13 @@
 														 	echo 'Mot de passe actuel';
 														 } else{
 														 	echo 'Current password';
-														  }?> </label></td>
+														  }?><span style="color: red">(*)</span> </label></td>
 										<td class="inputElements"><input name="old_pass" type="password" class="validate[required] text-input" id="old_pass" maxlength="100" value=""></td>
 									<?php if ($this->session->userdata('result')!='')
 										{
-										echo '<p style="color:red; padding-left:30px">';
-										echo $this->session->userdata('result');
+										//echo '<p style="color:red; padding-left:30px">';
+										echo '<p style="color:#f83d43; margin:10px;  font-size: 13px; font-weight: bold ">'.$this->session->userdata('result').'</p>';
+										//echo $this->session->userdata('result');
 										$this->session->unset_userdata('result');
 										echo '</p>';
 										}?>
@@ -34,7 +35,7 @@
 														 	echo 'Nouveau mot de passe';
 														 } else{
 														 	echo 'New password';
-														  }?> </label></td>
+														  }?><span style="color: red">(*)</span>  </label></td>
 										<td class="inputElements" title="">
 											<input name="password" type="password" class="validate[required] text-input" id="pass" maxlength="100" value="">
 										</td>
@@ -45,7 +46,7 @@
 														 	echo 'Confirmer mot de passe';
 														 } else{
 														 	echo 'Repeat password';
-														  }?> </label>
+														  }?><span style="color: red">(*)</span>  </label>
 										</td>
 										<td class="inputElements">
 											<input name="pass_conf"  type="password" class="validate[required,equals[pass]] text-input" id="pass_conf" maxlength="100" value="">
@@ -83,12 +84,12 @@
 														  }?></span></h4>
 					<div class="container">
 						<ul>
-							<li id="btnSettingsPersonal"><a href="http://localhost/webflashgame/mygametwist/personaldata"><span><?php if ($_SESSION['lang']=="fr"){
+							<li id="btnSettingsPersonal"><a href="<?php echo base_url();?>mygametwist/personaldata"><span><?php if ($_SESSION['lang']=="fr"){
 														 	echo 'Données personnelles';
 														 } else{
 														 	echo 'Personal information';
 														  }?></span></a></li>
-							<li id="btnSettingsPassword"><a href="http://localhost/webflashgame/mygametwist/changepass"><span><?php if ($_SESSION['lang']=="fr"){
+							<li id="btnSettingsPassword"><a href="<?php echo base_url();?>mygametwist/changepass"><span><?php if ($_SESSION['lang']=="fr"){
 														 	echo 'Changer le mot de passe';
 														 } else{
 														 	echo 'Change password';

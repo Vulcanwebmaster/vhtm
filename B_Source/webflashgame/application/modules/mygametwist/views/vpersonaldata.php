@@ -203,12 +203,12 @@
 														  }?></span></h4>
 					<div class="container">
 						<ul>
-							<li id="btnSettingsPersonal"><a href="http://localhost/webflashgame/mygametwist/personaldata"><span><?php if ($_SESSION['lang']=="fr"){
+							<li id="btnSettingsPersonal"><a href="<?php echo base_url();?>mygametwist/personaldata"><span><?php if ($_SESSION['lang']=="fr"){
 														 	echo 'Données personnelles';
 														 } else{
 														 	echo 'Personal information';
 														  }?></span></a></li>
-							<li id="btnSettingsPassword"><a href="http://localhost/webflashgame/mygametwist/changepass"><span><?php if ($_SESSION['lang']=="fr"){
+							<li id="btnSettingsPassword"><a href="<?php echo base_url();?>mygametwist/changepass"><span><?php if ($_SESSION['lang']=="fr"){
 														 	echo 'Changer le mot de passe';
 														 } else{
 														 	echo 'Change password';

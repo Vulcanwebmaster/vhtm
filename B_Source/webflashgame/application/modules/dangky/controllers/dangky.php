@@ -91,9 +91,9 @@ class Dangky extends NIW_Controller
 			}
 			else 
 			{
-				//if this account is not exist, login unsuccesful and redirect to login view.
-				$_SESSION['front_login_error'] = 'input username and password.';
-				$this->session->set_userdata('result','username or password false.');
+				//if this account is not exist, login unsuccesful and redirect to login view.,input username and password.
+				$_SESSION['front_login_error'] = "nom d'utilisateur et mot de passe d'entrée.";
+				$this->session->set_userdata('result',"nom d'utilisateur ou mot de passe faux.");
 				redirect(base_url().'login','refresh');
 			}
 		$this->data['module'] = $this->module;
@@ -127,15 +127,15 @@ class Dangky extends NIW_Controller
 			$listTest1 = $this->Mdangky->getListByColumn('fg_accounts', 'username', $username); 
 			if (count($listTest) > 0)
 			{
-				// if any items are exist, show error message
+				// if any items are exist, show error message Email này đã được sử dụng. Vui lòng chọn email khác
 				$_SESSION['front_register_error'] = "Email này đã được sử dụng. Vui lòng chọn email khác";
 				$this->session->set_userdata('result','Le courrier électronique est enregistré, sil vous plaît utilisez un autre e-mail!!');
 				$this->data['module'] = $this->module;
 				$this->data['page']	= 'vdangky';
 				$this->load->view('front/container', $this->data);
 			}elseif (count($listTest1) != 0) {
-				// if any items are exist, show error message
-				$this->session->set_userdata('result','nom dutilisateur est enregistré, sil vous plaît utilisez un autre nom dutilisateur!!');
+				// if any items are exist, show error message,username is registered, please use another username!!
+				$this->session->set_userdata('result',"nom d'utilisateur est enregistré, s'il vous plaît utilisez un autre nom d'utilisateur");
 				$this->data['module'] = $this->module;
 				$this->data['page']	= 'vdangky';
 				$this->load->view('front/container', $this->data);
@@ -150,7 +150,7 @@ class Dangky extends NIW_Controller
 					$_SESSION['front_user_fullname'] = $input['username'];
 					$_SESSION['front_user_id'] = mysql_insert_id();
 					echo "<script language = 'JavaScript'>
-						alert ('registry successful!!');
+						alert ('Registre succès!');
 					</script>";
 					//var_dump($input); die();
 					redirect(base_url(),'refresh');
