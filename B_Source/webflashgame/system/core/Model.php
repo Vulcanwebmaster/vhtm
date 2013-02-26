@@ -53,7 +53,7 @@ class CI_Model {
 	
 	//===================== MY FUNCTIONS ========================================
 	 
-function getRowByColumn($tableName='',$columnName='',$value='')
+	function getRowByColumn($tableName='',$columnName='',$value='')
 	 {
 	 	$this->db->where($columnName,$value);
 	 	$ds=$this->db->get($tableName);

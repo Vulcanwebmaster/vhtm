@@ -84,18 +84,31 @@
 							<li class="last">
 								<fieldset>
 									<ol>
-										<li>Security code<img src="http://www.gametwist.fr/web/Captcha-Image/?bc=000000&amp;fc=188eae&amp;h=58&amp;w=258&amp;fill=ffffff" alt="captcha image" border="0" class="captcha"></li>
 										<li title="">
-											<label for="securecode">Enter security code</label>
-											<input type="text" class="formField ffInput validate[required] text-input" name="code" value="" id="securecode">
+											<label for="nick"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Nom et prénom';
+														 } else{
+														 	echo 'Full name';
+														  }?></label>
+											<input name="fullname" type="text" class="formField ffInput validate[required] text-input" id="nick" value="">
 										</li>
-										<li id="regFormAgb">
-											<input name="agb" type="checkbox" id="agb" value="1" class="ffCheckbox">
-											<label for="agb">I accept the <a class="footer_info" target="_blank" href="#">General Terms &amp; Conditions</a></label>
+										
+										<li title="">
+											<label for="nick"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Pays';
+														 } else{
+														 	echo 'Country';
+														  }?></label>
+											<input name="country" type="text" class="formField ffInput validate[required] text-input" id="nick" value="">
 										</li>
-										<li id="regFormNewsletter">
-											<input name="newsletter" type="checkbox" id="newsletter" value="1" class="ffCheckbox" checked="">
-											<label for="newsletter">Yes, I would like to receive information about new games, promotions and interesting news by e-mail for free.*</label>
+										
+										<li title="">
+											<label for="pass"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Ville';
+														 } else{
+														 	echo 'City';
+														  }?></label>
+											<input name="city" type="text" class="formField ffInput validate[required] text-input"  id="pass" value="">
 										</li>
 									</ol>
 								</fieldset>
@@ -111,10 +124,10 @@
 						</div>
 						<ul class="signonHelpers">
 							<li>
-								<a href="#" title="Member login"><span>Member login</span></a>
+								<a href="<?php echo base_url();?>login" title="Member login"><span>Member login</span></a>
 							</li>
 							<li>
-								<a href="#" title="I forgot my password!"><span>I forgot my password!</span></a>
+								<a href="<?php echo base_url();?>dangky/forgotpass" title="I forgot my password!"><span>I forgot my password!</span></a>
 							</li>
 						</ul>
 					</form>

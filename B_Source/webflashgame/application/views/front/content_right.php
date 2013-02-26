@@ -41,7 +41,7 @@
 											<span style="color: red; clear: both"><?php echo date("d",strtotime($value->start_date));?></span>
 									</div>
 									<img src="<?php echo base_url();?>assets/flash_game/images/Belote<?php echo "_".$i; ?>.png"/> 
-										<label style="margin-left: 16px"><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id."-".$value->alias;?>"><?php if ($_SESSION['lang']=="fr"){
+										<label ><?php echo date("H:i",strtotime($value->start_date));?> <a href="<?php echo base_url()?>giaidau/detail/<?php echo $value->tour_id."-".$value->alias;?>"><?php if ($_SESSION['lang']=="fr"){
 														 	 echo $value->name_tourfr;
 														 } else{
 														 	echo $value->name_tour;

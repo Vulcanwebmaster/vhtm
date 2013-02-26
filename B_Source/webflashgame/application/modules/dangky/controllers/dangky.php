@@ -40,6 +40,9 @@ class Dangky extends NIW_Controller
 		$input = array("email"	=>	$this->input->post("email"),
 						"password"	=>	$this->input->post("pass"),
 						"username"	=>	$this->input->post("nick"),
+						"fullname"	=>	$this->input->post("fullname"),
+						"country"	=>	$this->input->post("country"),
+						"city"	=>	$this->input->post("city"),
 						);
 		return $input;
 	}
@@ -68,6 +71,11 @@ class Dangky extends NIW_Controller
 	 */
 	function checkAccount()
 	{
+		$data['online']  =  $this->Mdangky->CountOnline('fg_tag','status',1);
+		$data['step']  =  $this->Mdangky->getListFull('fg_step');
+		$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
+		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
+		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
 		//var_dump($this->input->post('nick'));die();
 			$nick = $this->input->post('nick');
 			$password = $this->input->post('pass');
@@ -86,7 +94,7 @@ class Dangky extends NIW_Controller
 				//if this account is not exist, login unsuccesful and redirect to login view.
 				$_SESSION['front_login_error'] = 'input username and password.';
 				$this->session->set_userdata('result','username or password false.');
-				// $this->dangNhap();
+				redirect(base_url().'login','refresh');
 			}
 		$this->data['module'] = $this->module;
 		$this->load->view('front/container',$this->data);
@@ -107,6 +115,7 @@ class Dangky extends NIW_Controller
 		$data['step']  =  $this->Mdangky->getListFull('fg_step');
 		$data['list_hotro'] = $this->Mdangky->getListFull('fg_hotro');
 		$data['list_category'] = $this->Mdangky->getListFull('fg_category');
+		$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
 		//$this->data['product']=$this->Mdangnhap->getListOffset('ln_product',5,0);
 		if ($this->input->post("submit"))
 		{
@@ -120,13 +129,13 @@ class Dangky extends NIW_Controller
 			{
 				// if any items are exist, show error message
 				$_SESSION['front_register_error'] = "Email này đã được sử dụng. Vui lòng chọn email khác";
-				$this->session->set_userdata('result','Email is registered, please use another email!!');
+				$this->session->set_userdata('result','Le courrier électronique est enregistré, sil vous plaît utilisez un autre e-mail!!');
 				$this->data['module'] = $this->module;
 				$this->data['page']	= 'vdangky';
 				$this->load->view('front/container', $this->data);
 			}elseif (count($listTest1) != 0) {
 				// if any items are exist, show error message
-				$this->session->set_userdata('result','username is registered, please use another username!!');
+				$this->session->set_userdata('result','nom dutilisateur est enregistré, sil vous plaît utilisez un autre nom dutilisateur!!');
 				$this->data['module'] = $this->module;
 				$this->data['page']	= 'vdangky';
 				$this->load->view('front/container', $this->data);
@@ -185,8 +194,7 @@ class Dangky extends NIW_Controller
 			$data['link_fanpage'] = $this->Mdangky->getRowByColumn('fg_setting','id',1);
 			$email = $this->input->post("email");
 			//get list accounts which have email and password are received values
-			$listTest = $this->Mdangky->getRowByColumn('fg_accounts', 'email', $email); 
-			// var_dump($listTest->email, $listTest->username);die();
+			$listTest = $this->Mdangky->getListByColumn('fg_accounts', 'email', $email); 
 			if (count($listTest) != 0)
 			{
 				$characters = '0123456789abcdefghijklmnopqrstuvwxyz';
@@ -195,18 +203,28 @@ class Dangky extends NIW_Controller
 				    $randomString .= $characters[rand(0, strlen($characters) - 1)];
 				}
 				$new_password = $randomString;
-				
-				$this->form_validation->set_rules('e_mail',' mail','required|trim|valid_email');
-				// Ham send mail
-					$from="admin_gameflash@gmail.com";
-					$to=$listTest->email;
-					$subject="Inscrivez-vous à l'information réussie";
-					$message="Mat khau cua ban la: $new_password.";
-					$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
-					mail($to,$subject,$message,$options);
-				// End ham send mail
-					redirect(base_url().'dangky/forgotpass','refresh');
-				
+				$input=array(
+						'password'=>$new_password,
+						);
+				if ($this->Mdangky->updateRowByColumn('fg_accounts','email',$email,$input))
+					{
+						foreach ($listTest as $giatrimoi) {
+							// Ham send mail
+							$from="admin_gameflash@gmail.com";
+							$to=$giatrimoi->email;
+							$subject="Message changer le mot de passe sur le Webflashgame";
+							$message="	Bonjour:  $giatrimoi->username ,\r\n
+										Vous venez de faire le mot de passe oublié,\n
+										Votre nouveau mot de passe est : $new_password";
+							$options="Content-type:text/html;charset=utf-8\r\nFrom:$from\r\nReply-to:$from";
+							mail($to,$subject,$message,$options);
+							// End ham send mail
+							$this->session->set_userdata('result','Envoyer le courrier envoyé avec succès!!');
+							redirect(base_url().'dangky/forgotpass','refresh');
+						}
+					}else {
+						$this->session->set_userdata('result','Passez envoyer panne électronique!!');
+					}
 			}
 			else 
 			{
