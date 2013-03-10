@@ -255,7 +255,7 @@ document.write('<div style="float:left; margin-left: 7px; margin-top: 3px;"><a h
 							<script type="text/javascript">
 							FB.init("YOUR_API_KEY_HERE", "<path from web root>/xd_receiver.htm");
 							</script>
-			 					</div>	
+			 				</div>	
 			 							 				
 					 			<br clear="both">
 					 		</div>

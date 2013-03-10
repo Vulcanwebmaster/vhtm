@@ -163,7 +163,6 @@
 							 				<div class="bottomcontentdt">
 							 					<a href="#" id="show-popup"><img src="<?php echo base_url();?>assets/trungtam-tienganh/images/iconmaildt.gif"/></a>
 							 				</div>
-							 				
 							 			</div><br clear="both" />
 
 <!----------- Binh chon------------>

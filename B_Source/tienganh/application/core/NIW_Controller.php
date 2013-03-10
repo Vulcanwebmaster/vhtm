@@ -48,6 +48,13 @@ class NIW_Controller extends CI_Controller {
 			$_SESSION['lang']='en';
 		}
 	}
+	function setLang()
+	{
+		if (!$this->session->userdata('lang'))
+		{
+			$this->session->set_userdata('lang','vn');
+		}
+	}
 	
 	function set_default_value($data=NULL, $value=NULL)
 	{
@@ -97,13 +104,7 @@ class NIW_Controller extends CI_Controller {
 		}
 	}
 	
-	function setLang()
-	{
-		if (!$this->session->userdata('lang'))
-		{
-			$this->session->set_userdata('lang','vn');
-		}
-	}
+
 	
 	function addVisiting()
 	{	
