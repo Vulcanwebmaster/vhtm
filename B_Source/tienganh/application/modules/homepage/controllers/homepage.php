@@ -25,6 +25,7 @@ class Homepage extends NIW_controller {
 	
 	public function page($index=0)
 	{
+		$data['list_giaovienft']=$this->Mhomepage->getRowByColumn('giaovienft','id','1');
 		$data['list_ttlienhe']=$this->Mhomepage->getListFull('ttlienhe');
 		$data['counting']=$this->getCounting();
 		$data['lang']=$this->session->userdata("lang");

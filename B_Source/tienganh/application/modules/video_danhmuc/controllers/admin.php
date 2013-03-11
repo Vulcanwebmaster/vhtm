@@ -1,4 +1,13 @@
+
 <?php
+/**
+ * 
+ * This class is controller of Thu vien in front. 
+ * There are some functions to list images, videos and get detail of them...
+ * @author Tuyetnt
+ * @date 2012/12/15
+ *
+ */
 	class Admin extends Admin_Controller
 	{
 		private $module;
@@ -7,7 +16,7 @@
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
-			$this->load->model('Mvedio');
+			$this->load->model('Mvideo_danhmuc');
 			$this->load->library('form_validation');
 			$this->load->library('session');
 			
@@ -16,57 +25,60 @@
 			//=============================================
 		}
 		
-		function index($index=0)
+		function index()
 		{
-			$config['base_url']=base_url().'vedio/admin/index/';
-			$config['per_page']=15;
-			$config['total_rows']=count($this->Mvedio->getListFull('ta_vedio'));
-			$data['list_Danhmuc_video']	= $this->Mvedio->getListFull('video_danhmuc');
-			$config['uri_segment']=3;
+			$this->page();
+		}
+		
+		function page($index=0)
+		{
+			$config['base_url']=base_url().'video_danhmuc/admin/page/';
+			$config['per_page']=10;
+			$config['total_rows']=count($this->Mvideo_danhmuc->getListFull('video_danhmuc'));
+			$config['uri_segment']=4;
 			$this->pagination->initialize($config);
 			
-			$data['title']='Thông tin video';
-			$data['bcCurrent']='Vedio';
-			$data['list']=$this->Mvedio->getListOffset('ta_vedio',15,$index);
+			$data['title']='Danh mục';
+			$data['bcCurrent']='danh mục';
+			$data['list']=$this->Mvideo_danhmuc->getListOffset('video_danhmuc',10,$index);
 			$data['module']=$this->module;
 			$data['page']='admin_vlist';
 			$this->load->view('admin/container',$data);
 		}
 		
+		
 		function _input()
 		{
 			$input=array(
-						'category_id'=>	$this->input->post('category_id'),
-						'vedio_title'=>$this->input->post('vedio_title'),
-						'vedio_titlee'=>$this->input->post('vedio_titlee'),
-						'link_vedio'=>$this->input->post('link_vedio'));
-		
+						'category_name'=>$this->input->post('category_name'),
+						'category_namee'=>$this->input->post('category_namee'),
+						'alias'=>$this->getAliasByName($this->input->post('category_name')),
+						);
 			return $input;
 		}
 		
+		
 		function insert()
 		{
-			if (!$this->input->post('vedio_title'))
+			if (!$this->input->post('category_name'))
 			{
-				$data['list']=$this->Mvedio->getListFull('ta_vedio');
+				$data['list']=$this->Mvideo_danhmuc->getListFull('video_danhmuc');
 				$data['config'] = $this->setupCKEditor('97%','200px');
-				$data['title']='Thêm video';
-				$data['bcCurrent']='Video';
-				$data['list_Danhmuc_video']	= $this->Mvedio->getListFull('video_danhmuc');
+				$data['title']='Thêm danh mục';
+				$data['bcCurrent']='Danh mục';
 				$data['module']=$this->module;
 				$data['page']='admin_vinsert';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('vedio_title','Tên','required|trim');
-				
+				$this->form_validation->set_rules('category_name','Tên ','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mvedio->insertNewRow('ta_vedio',$input))
+					if ($this->Mvideo_danhmuc->insertNewRow('video_danhmuc',$input))
 					{
 						$this->session->set_userdata('result','Thêm mới thành công');
 					}
@@ -75,11 +87,10 @@
 				}
 				else 
 				{
-					$data['list']=$this->Mvedio->getListFull('ta_vedio');
+					$data['list']=$this->Mvideo_danhmuc->getListFull('video_danhmuc');
 					$data['config'] = $this->setupCKEditor('97%','200px');
-					$data['title']='Thêm video';
-					$data['bcCurrent']='Video';
-					$data['list_Danhmuc_video']	= $this->Mvedio->getListFull('video_danhmuc');
+					$data['title']='Thêm danh mục';
+					$data['bcCurrent']='danh mục';
 					$data['module']=$this->module;
 					$data['page']='admin_vinsert';
 					$this->load->view('admin/container',$data);
@@ -87,32 +98,31 @@
 			}
 		}
 		
+
 		function edit($id=0)
 		{
 			//=============================================
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
-			if (!$this->input->post('vedio_title'))
+			//echo $this->input->post('courses_name');die();
+			if (!$this->input->post('category_name'))
 			{
-				$data['list']=$this->Mvedio->getListFull('ta_vedio');
-				$data['info']=$this->Mvedio->getRowByColumn('ta_vedio','vedio_id',$id);
-				$data['title']='Sửa video';
-				$data['bcCurrent']='Video';
-				$data['list_Danhmuc_video']	= $this->Mvedio->getListFull('video_danhmuc');
+				$data['info']=$this->Mvideo_danhmuc->getRowByColumn('video_danhmuc','id',$id);
+				$data['title']='Sửa danh mục';
+				$data['bcCurrent']='danh mục';
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
 			}
 			else 
 			{
-				$this->form_validation->set_rules('vedio_title','Tiêu đề (Việt)','required|trim');
-				
+				$this->form_validation->set_rules('category_name','Tên','required|trim');
 				$this->form_validation->set_message('required','Mục %s không được bỏ trống');
 				
 				if ($this->form_validation->run())
 				{
 					$input=$this->_input();
-					if ($this->Mvedio->updateRowByColumn('ta_vedio','vedio_id',$id,$input))
+					if ($this->Mvideo_danhmuc->updateRowByColumn('video_danhmuc','id',$id,$input))
 					{
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
@@ -121,11 +131,9 @@
 				}
 				else 
 				{
-					$data['list']=$this->Mvedio->getListFull('ta_vedio');
-					$data['info']=$this->Mvedio->getRowByColumn('ta_vedio','vedio_id',$id);
-					$data['title']='Sửa video';
-					$data['bcCurrent']='Video';
-					$data['list_Danhmuc_video']	= $this->Mvedio->getListFull('video_danhmuc');
+					$data['info']=$this->Mvideo_danhmuc->getRowByColumn('video_danhmuc','id',$id);
+					$data['title']='Sửa danh mục';
+					$data['bcCurrent']='danh mục';
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
@@ -133,9 +141,10 @@
 			}
 		}
 		
+		
 		function delete($id=0)
 		{
-			if ($this->Mvedio->deleteRowByColumn('ta_vedio','vedio_id',$id))
+			if ($this->Mvideo_danhmuc->deleteRowByColumn('video_danhmuc','id',$id))
 			{
 				$this->session->set_userdata('result','Xóa thành công');
 			}

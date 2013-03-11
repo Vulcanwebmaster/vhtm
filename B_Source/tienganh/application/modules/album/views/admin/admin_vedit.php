@@ -23,9 +23,11 @@
 				<fieldset>
 					<label>Danh mục</label>
 					<select name="category_id" id="category_id">
-						<option value="0" <?php if ($info->category_id == '0') echo "selected='selected'"?>>Hình ảnh trung tâm</option>
-						<option value="1" <?php if ($info->category_id == '1') echo "selected='selected'"?>>Hình ảnh khóa học</option>
-						<option value="2" <?php if ($info->category_id == '2') echo "selected='selected'"?>>Hình ảnh sự kiện</option>
+						<?php foreach ($list_Danhmuc_anh as $album)
+						{?>
+							<option <?php if ($album->id == $info->category_id) {
+									?> selected="selected" <?php }?> value="<?php echo $album->id?>"><?php echo $album->category_name?></option>
+						<?php }?>
 					</select>
 				</fieldset>
 				<fieldset>

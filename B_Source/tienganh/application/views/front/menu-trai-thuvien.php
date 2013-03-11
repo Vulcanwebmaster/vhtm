@@ -2,20 +2,25 @@
 	<div id="imgleftgv"><p align="center">Thư viện</p></div>
  	<div id="contentlefftgv">
  		<ul id="ul_leftgv">
- 			<?php if ($_SESSION['lang']=="vn") 
+ 			<!-- Hình ảnh Danh mục -->
+ 			<?php 
+ 				foreach ($list_danhmuc_album as $danhmuc_album) {
+ 				if ($_SESSION['lang']=="vn") 
 			{?>		
-				<li id="li_leftgv1"><a href="<?php echo base_url()?>thuvien/category/0">Hình ảnh trung tâm</a></li>
-	 			<li id="li_leftgv2"><a href="<?php echo base_url()?>thuvien/category/1">Hình ảnh khóa học</a></li>
-	 			<li id="li_leftgv3"><a href="<?php echo base_url()?>thuvien/category/2">Hình ảnh sự kiện</a></li>
-	 			<li id="li_leftgv4"><a href="<?php echo base_url()?>thuvien/video">Video khóa học</a></li>
+				<li id="li_leftgv4"><a href="<?php echo base_url()?>thuvien/category/<?php echo $danhmuc_album->id."/".$danhmuc_album->alias?>"><?php echo $danhmuc_album->category_name ?></a></li>
 			<?php } else{ ?>
-				<li id="li_leftgv1"><a href="<?php echo base_url()?>thuvien/category/0">Pictures center</a></li>
-	 			<li id="li_leftgv2"><a href="<?php echo base_url()?>thuvien/category/1">Pictures courses</a></li>
-	 			<li id="li_leftgv3"><a href="<?php echo base_url()?>thuvien/category/2">Event photos</a></li>
-	 			<li id="li_leftgv4"><a href="<?php echo base_url()?>thuvien/video">Video courses</a></li>
-			<?php } ?>
-
- 			
+				<li id="li_leftgv4"><a href="<?php echo base_url()?>thuvien/category/<?php echo $danhmuc_album->id."/".$danhmuc_album->alias?>"><?php echo $danhmuc_album->category_namee ?></a></li>
+			<?php } } ?>
+			<!-- Video Danh mục -->
+			<?php 
+ 				foreach ($list_danhmuc_video as $danhmuc_video) {
+ 				if ($_SESSION['lang']=="vn") 
+			{?>		
+				<li id="li_leftgv4"><a href="<?php echo base_url()?>thuvien/video/<?php echo $danhmuc_video->id."/".$danhmuc_video->alias?>"><?php echo $danhmuc_video->category_name ?></a></li>
+			<?php } else{ ?>
+				<li id="li_leftgv4"><a href="<?php echo base_url()?>thuvien/video/<?php echo $danhmuc_video->id."/".$danhmuc_video->alias?>"><?php echo $danhmuc_video->category_namee ?></a></li>
+			<?php } } ?>
+ 			<!--End Video Danh mục -->
  		</ul>
  	</div>
  	<!------Banner------->

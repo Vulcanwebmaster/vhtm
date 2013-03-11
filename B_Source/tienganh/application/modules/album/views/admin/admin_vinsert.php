@@ -22,9 +22,10 @@
 				<fieldset>
 					<label>Danh mục</label>
 					<select name="category_id" id="category_id">
-						<option value="0">Hình ảnh trung tâm</option>
-						<option value="1">Hình ảnh khóa học</option>
-						<option value="2">Hình ảnh sự kiện</option>
+						<?php foreach ($list_Danhmuc_anh as $album)
+						{?>
+							<option value="<?php echo $album->id?>"><?php echo $album->category_name?></option>
+						<?php }?>
 					</select>
 				</fieldset>
 				<fieldset>

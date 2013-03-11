@@ -30,6 +30,16 @@
 					<label>Link</label>
 					<input type="text" name="link_vedio" style="width:92%" value="<?php echo $info->link_vedio;?>"/>
 				</fieldset>
+				<fieldset>
+					<label>Danh mục Video</label>
+					<select name="category_id" id="category_id">
+						<?php foreach ($list_Danhmuc_video as $album)
+						{?>
+							<option <?php if ($album->id == $info->category_id) {
+									?> selected="selected" <?php }?> value="<?php echo $album->id?>"><?php echo $album->category_name?></option>
+						<?php }?>
+					</select>
+				</fieldset>
 			</div>
 			
 			<footer style="float:left">

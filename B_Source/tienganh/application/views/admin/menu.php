@@ -18,16 +18,20 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>hotro/admin">Hỗ trợ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>hotroonline/admin">Hỗ trợ trực tuyến</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>doitac/admin">Đối tác</a></li>
-		<li class="icn_application"><a href="<?php echo base_url()?>anh/admin">Hình ảnh</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>danhmuc_albumanh/admin">Danh mục hình ảnh</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>album/admin">Album</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>anh/admin">Hình ảnh</a></li>
+		
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio_home/admin">Video trang chủ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>video_fanpage/admin">Video Fan page</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>video_danhmuc/admin">Danh mục Video</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>vedio/admin">Video thư viện</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>quangcao/admin">Banner</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slide/admin">Slide</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>slidefooter/admin">Slide Footer</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>email/admin">Email</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>thongtinlienhe/admin">Thông tin liên hệ</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>giaovien_footer/admin">Giáo viên - footer</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

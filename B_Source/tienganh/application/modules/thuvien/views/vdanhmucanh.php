@@ -30,22 +30,13 @@
 				 			<p style="margin-top:-20px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimg.png"/></p>
 				 			<p><a style="color:#1b75bb">
 				 			<?php 
+				 				foreach ($list_danhmuc_album as $album) {
+									 
 				 			 if ($_SESSION['lang']=="vn") 
 							 {		
-								 if ($category_id == '0')
-										echo 'Hình ảnh trung tâm';
-									elseif ($category_id == '1')
-										echo 'Hình ảnh khóa học';
-									elseif ($category_id == '2')
-										echo 'Hình ảnh sự kiện';
-							 } else{ 
-								 if ($category_id == '0')
-										echo 'Picture center';
-									elseif ($category_id == '1')
-										echo 'Picture courses';
-									elseif ($category_id == '2')
-										echo 'Picture events';
-							 } ?>
+								 if ($category_id == $album->id)
+										echo $album->category_name;
+							 } } ?>
 				 			</a></p>
 				 			<p style="margin-top:8px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimgvd.png"/></p>
 				 			<p class="bgvdimgimg"></p>
@@ -59,7 +50,7 @@
 					 				<!-- p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p -->
 					 				<a href="<?php echo base_url()?>thuvien/album/<?php echo $item->album_id?>"><?php echo $item->album_avatar?></a>
 					 				<p align="center">
-					 					<a href="#" style="color:#1b75bb">
+					 					<a href="<?php echo base_url()?>thuvien/album/<?php echo $item->album_id?>" style="color:#1b75bb">
 					 						<?php if ($_SESSION['lang']=="vn") 
 											{?>		
 												<?php echo $item->album_name?>

@@ -12,10 +12,10 @@
 		function confirmDel(value)
 				{
 					var x;
-					var r=confirm("Bạn muốn xóa album ảnh này?");
+					var r=confirm("Bạn muốn xóa danh mục này?");
 					if (r==true)
 					{
-						var uri="<?php echo base_url()?>album/admin/delete/"+value;
+						var uri="<?php echo base_url()?>video_danhmuc/admin/delete/"+value;
 						window.location=uri;
 					}
 					else 
@@ -34,7 +34,7 @@
 	else $offset==strlen($str);
 	return substr($str, 0, $offset);
 }?>
-<form action="<?php echo base_url()?>album/admin/saveColumn1" method="post">    
+<form action="<?php echo base_url()?>video_danhmuc/admin/saveColumn1" method="post">    
 	<article class="module width_full" style="width:95%;">
 		<header>
 			<h3><?php echo $title; ?></h3>			
@@ -45,9 +45,7 @@
 					<thead> 
 						<tr> 
 							<th>STT</th>
-		    				<th>Tên Album</th>
-		    				<th>Danh mục</th> 
-		    				<th>Ảnh đại diện</th>
+		    				<th>Tên danh mục</th> 
 		    				<th>Sửa|Xóa</th>
 		    				
 						</tr> 
@@ -56,18 +54,10 @@
 					 	<?php $i=0; $count=0; foreach ($list as $item)
 					 	{ $i++; ?>
 					 		<tr><td><?php echo $i;?></td>
-			    				<td><?php echo $item->album_name;?></td> 
-			    				<td><?php foreach ($list_Danhmuc_anh as $album)
-									{ if ($album->id == $item->category_id) {
-											 echo $album->category_name;
-									 } } ?>
-								</td>
-			    				<td><?php echo $item->album_avatar;?></td>
+			    				<td><?php echo $item->category_name;?></td> 
 			    				<td>
-			    					<a href="<?php echo base_url();?>album/admin/edit/<?php echo $item->album_id?>" title="Edit">
-			    						<img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"/>
-		    						</a>
-			    					<a class="del_button" onclick="confirmDel(<?php echo $item->album_id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"/></a>
+			    					<a href="<?php echo base_url()?>video_danhmuc/admin/edit/<?php echo $item->id?>" title="Edit"><img src="<?php echo base_url()?>assets/admin/images/icn_edit.png"></a>
+			    					<a class="del_button" onclick="confirmDel(<?php echo $item->id?>)" title="Xóa"><img src="<?php echo base_url()?>assets/admin/images/icn_trash.png"></a>
 			    				</td>
 			    				
 							</tr>
@@ -81,7 +71,7 @@
 				<footer>
 						
 						<div class="submit_link">
-							<a class="alt_btn" href="<?php echo base_url();?>album/admin/insert">Thêm mới</a>
+							<a class="alt_btn" href="<?php echo base_url();?>video_danhmuc/admin/insert">Thêm mới</a>
 						</div>
 				</footer>
 						

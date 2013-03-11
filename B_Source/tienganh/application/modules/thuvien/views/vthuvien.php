@@ -9,47 +9,12 @@
 				 	<div id="contentgv">
 				 		<div id="titlecontentgv">
 				 			<p style="margin-top:-20px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimg.png"/></p>
-				 			<p><a href="#" style="color:#1b75bb">Video khóa học</a></p>
+				 			<p><a href="#" style="color:#1b75bb">Thư viện</a></p>
 				 			<p style="margin-top:8px"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/iconimgvd.png"/></p>
 				 			<p class="bgvdimgimg"></p>
 				 		</div>
 				 		<div id="contentmainvd">
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
-				 			<div class="bgvdcontentimg">
-				 				<p align="center"><img src="<?php echo base_url();?>/assets/trungtam-tienganh/images/trang-thu-vien-anh_10.png"/></p>
-				 				<p align="center">
-				 					<a href="#" style="color:#1b75bb">Khóa học<label style="color:#f6921e">(10)</label></a>
-				 				</p>
-				 			</div>
+				 			
 					 	</div>
 					 <!----------------------------->
 					 <div id="contentbotomgv">

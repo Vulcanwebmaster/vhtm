@@ -9,7 +9,7 @@
 	});
 </script>
 		
-<form method="post" action="<?php echo base_url();?>vedio/admin/insert">	
+<form method="post" action="<?php echo base_url();?>video_danhmuc/admin/insert">	
 	<article class="module width_3_quarter" style="width:95%;">
 		<header><h3 class="tabs_involved"><?php echo $title;?></h3>
 		
@@ -18,27 +18,13 @@
 			
 			<div id="tab1" class="tab_content">
 				<fieldset>
-					<label>Tiêu đề(Việt)</label>
-					<input type="text" name="vedio_title" style="width:92%"/>
+					<label>Tên danh mục(Việt)</label>
+					<input type="text" name="category_name" style="width:92%"/>
 				</fieldset>
 				<fieldset>
-					<label>Tiêu đề(Anh)</label>
-					<input type="text" name="vedio_titlee" style="width:92%"/>
+					<label>Tên danh mục(Anh)</label>
+					<input type="text" name="category_namee" style="width:92%"/>
 				</fieldset>
-				<fieldset>
-					<label>Link</label>
-					<input type="text" name="link_vedio" style="width:92%"/>
-				</fieldset>
-				<fieldset>
-					<label>Danh mục Video</label>
-					<select name="category_id" id="category_id">
-						<?php foreach ($list_Danhmuc_video as $album)
-						{?>
-							<option value="<?php echo $album->id?>"><?php echo $album->category_name?></option>
-						<?php }?>
-					</select>
-				</fieldset>
-				
 			</div>
 			
 			<footer style="float:left">

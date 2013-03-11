@@ -11,7 +11,7 @@
 						
 						<ul>
 							<?php foreach ($list_dichvu as $key) {?>
-								<li><a href="<?php echo base_url();?>">
+								<li><a href="<?php echo base_url('');?>" >
 									<?php if ($_SESSION['lang']=="vn") 
 										{
 											echo $key->ten; 
@@ -51,16 +51,16 @@
 						{?>		
 							<p>Giáo viên</p>
 							<ul>
-							<li><a href="#">Giáo viên học viện Jennifer</a></li>
-							<li><a href="#">Cảm nhận học viên</a></li>
-							<li><a href="#">Cảm nhận của phụ huynh</a></li>
+							<li><a href= " <?php echo $list_giaovienft->link1 ?> " ><?php echo $list_giaovienft->tieude1 ?></a></li>
+							<li><a href= " <?php echo $list_giaovienft->link2 ?> " ><?php echo $list_giaovienft->tieude2 ?></a></li>
+							<li><a href= " <?php echo $list_giaovienft->link3 ?> " ><?php echo $list_giaovienft->tieude3 ?></a></li>
 							</ul>
 						<?php } else{ ?>
 							<p>Teachers </p>
 							<ul>
-								<li><a href="#">Teachers Academy Jennifer</a></li>
-								<li><a href="#">Comments students</a></li>
-								<li><a href="#">Perceived by parents</a></li>
+								<li><a href="<?php echo $list_giaovienft->link1 ?>"><?php echo $list_giaovienft->tieudee1 ?></a></li>
+								<li><a href="<?php echo $list_giaovienft->link2 ?>"><?php echo $list_giaovienft->tieudee2 ?></a></li>
+								<li><a href="<?php echo $list_giaovienft->link3 ?>"><?php echo $list_giaovienft->tieudee3 ?></a></li>
 							</ul>	
 						<?php } ?>
 					</div>
@@ -72,7 +72,7 @@
 							<p>Support</p>
 						<?php } ?>
 						<ul>
-							<li><a href="#">
+							<li><a href="">
 								<?php if ($_SESSION['lang']=="vn") 
 								{?>		
 									Văn phòng học viện Jennifer
@@ -81,7 +81,7 @@
 								<?php } ?>
 
 								<br/>(+84) 04 665 22 666</a><br/>
-								<li><a href="#">
+								<li><a href="">
 									<?php if ($_SESSION['lang']=="vn") 
 									{?>		
 										Hỗ trợ trực tuyến
@@ -130,7 +130,6 @@
 								<li><a href="<?php echo base_url();?>thuvien">Library</a></li>
 								<li><a href="<?php echo base_url();?>lienhe">Contact Us</a></li>
 							<?php } ?>
-
 							
 						</ul>
 					</div>

@@ -29,12 +29,13 @@
 			$config['base_url']=base_url().'album/admin/index';
 			$config['per_page']=15;
 			$config['total_rows']=count($this->Malbum->getListFull('ta_albums'));
+			
 			$config['uri_segment']=3;
 			$this->pagination->initialize($config);
-			
 			$data['title']='Thông album ảnh';
 			$data['bcCurrent']='Album ảnh';
 			$data['list']=$this->Malbum->getListOffset('ta_albums',15,$index);
+			$data['list_Danhmuc_anh']	=	$this->Malbum->getListFull('ta_albums_category');
 			$data['module']		=	$this->module;
 			$data['page']		=	'admin_vlist';
 			
@@ -43,7 +44,7 @@
 		
 		function _input()
 		{
-			$input=array('category_id'	=>	$this->input->post('category_id'),
+			$input=array('category_id'		=>	$this->input->post('category_id'),
 						'album_name'		=>	$this->input->post('album_name'),
 						'album_namee'		=>	$this->input->post('album_namee'),
 						'album_avatar'		=>	$this->input->post('album_avatar'));
@@ -58,6 +59,7 @@
 				$data['config']		=	$this->setupCKEditor('97%','200px');
 				$data['title']		=	'Thêm album';
 				$data['bcCurrent']	=	'Album';
+				$data['list_Danhmuc_anh']	=	$this->Malbum->getListFull('ta_albums_category');
 				$data['module']		=	$this->module;
 				$data['page']		=	'admin_vinsert';
 				
@@ -83,6 +85,7 @@
 					$data['config']		=	$this->setupCKEditor('97%','200px');
 					$data['title']		=	'Thêm album';
 					$data['bcCurrent']	=	'Album';
+					$data['list_Danhmuc_anh']	=	$this->Malbum->getListFull('ta_albums_category');
 					$data['module']		=	$this->module;
 					$data['page']		=	'admin_vinsert';
 					
@@ -101,6 +104,7 @@
 				$data['info']=$this->Malbum->getRowByColumn('ta_albums','album_id',$id);
 				$data['title']='Sửa album';
 				$data['bcCurrent']='album';
+				$data['list_Danhmuc_anh']	=	$this->Malbum->getListFull('ta_albums_category');
 				$data['module']=$this->module;
 				$data['page']='admin_vedit';
 				$this->load->view('admin/container',$data);
@@ -127,6 +131,7 @@
 					$data['info']=$this->Malbum->getRowByColumn('ta_albums','album_id',$id);
 					$data['title']='Sửa album';
 					$data['bcCurrent']='Album';
+					$data['list_Danhmuc_anh']	=	$this->Malbum->getListFull('ta_albums_category');
 					$data['module']=$this->module;
 					$data['page']='admin_vedit';
 					$this->load->view('admin/container',$data);
