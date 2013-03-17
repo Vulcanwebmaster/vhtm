@@ -37,15 +37,14 @@
 				}
 				else 
 				{
-					clearInterval(moveanimation);
 					if (hideAtEnd == 1)
 					{
 						card.visible = false;
 					}
+					clearInterval(moveanimation);
+					
 				}
 			}
-			
-			
 			var moveanimation = setInterval(setStep, delay);
 		}
 	
@@ -68,7 +67,7 @@
 			ravaiable	= avaiable;
 			rplayedList	= playedList;						
 			
-			if (ravaiable == '1')
+			if (ravaiable == "1")
 			{
 				rcard.addEventListener(MouseEvent.CLICK, motionPress);
 				rcard.removeEventListener(MouseEvent.MOUSE_OVER, motionOver);			
@@ -103,6 +102,44 @@
 				rcard.y = rY;
 		}
 		
+		function getIndex()
+		{
+			
+			if (rcard.name == "mot") return 1;
+			else if (rcard.name == "hai") return 2;
+			else if (rcard.name == "ba") return 3;
+			else if (rcard.name == "bon") return 4;
+			else if (rcard.name == "nam") return 5;
+			else if (rcard.name == "sau") return 6;
+			else if (rcard.name == "bay") return 7;
+			else if (rcard.name == "tam") return 8;
+			else if (rcard.name == "chin") return 9;
+			else if (rcard.name == "muoi") return 10;
+			else if (rcard.name == "muoimot") return 11;
+			else if (rcard.name == "muoihai") return 12;
+			else if (rcard.name == "muoiba") return 13;
+			else if (rcard.name == "muoibon") return 14;
+			else if (rcard.name == "muoinam") return 15;
+			else if (rcard.name == "muoisau") return 16;
+			else if (rcard.name == "muoibay") return 17;
+			else if (rcard.name == "muoitam") return 18;
+			else if (rcard.name == "muoichin") return 19;
+			else if (rcard.name == "haimuoi") return 20;
+			else if (rcard.name == "haimot") return 21;
+			else if (rcard.name == "haihai") return 22;
+			else if (rcard.name == "haiba") return 23;
+			else if (rcard.name == "haitu") return 24;
+			else if (rcard.name == "hainam") return 25;
+			else if (rcard.name == "haisau") return 26;
+			else if (rcard.name == "haibay") return 27;
+			else if (rcard.name == "haitam") return 28;
+			else if (rcard.name == "haichin") return 29;
+			else if (rcard.name == "bamuoi") return 30;
+			else if (rcard.name == "bamot") return 31;
+			else if (rcard.name == "bahai") return 32;
+			else return 0;
+		}
+
 		public function motionPress(e:MouseEvent)
 		{
 			if (GlobalVars.vars.turn == 1)
@@ -134,9 +171,8 @@
 				
 				//var changeTurn = Player.changeForeHandPlayer(loader, _global.Server);
 				//remove card id and card from list
-				var index = rcardIdList.indexOf(rcard);
 				
-				trace("Index: " + index);
+				// trace("Index: " + index);
 				// submit a playing to server			
 				var urlLoaderPlaying:URLLoader = new URLLoader();
 				var urlRequest:URLRequest = new URLRequest(rServer+"api/updatePlaying");
@@ -144,14 +180,17 @@
 				
 				urlData.room_id = rroom_id;
 				urlData.account_id = raccount_id;
-				var idIndex = (rcard.x - rfirstX)/30 -1;
-				urlData.card_id = rcardIdList[idIndex];
+				var idIndex = getIndex();
+				trace("Index: " + idIndex);
+				urlData.card_id = idIndex;
 				urlRequest.data = urlData;
 				urlRequest.method = URLRequestMethod.POST;
 				
+				var index = rcardIdList.indexOf(rcard);
 				rcardIdList.splice(index,1);
+				index = rcardList.indexOf(rcard);
 				rcardList.splice(index,1);
-				_move(rcard, rcenterX + deltaX, rcenterY + deltaY, ranimationSpeed, rdelay, 0);
+				_move(rcard, rcenterX + deltaX, rcenterY + deltaY, 20, rdelay, 0);
 				
 				//urlLoaderPlaying.dataFormat = URLLoaderDataFormat.VARIABLES;
 				urlLoaderPlaying.load(urlRequest);
