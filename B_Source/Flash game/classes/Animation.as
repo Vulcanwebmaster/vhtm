@@ -132,13 +132,11 @@
 					deltaY = 0;
 				}
 				
-				_move(rcard, rcenterX + deltaX, rcenterY + deltaY, ranimationSpeed, rdelay, 0);
 				//var changeTurn = Player.changeForeHandPlayer(loader, _global.Server);
 				//remove card id and card from list
 				var index = rcardIdList.indexOf(rcard);
-				rcardIdList.splice(index,1);
-				rcardList.splice(index,1);
 				
+				trace("Index: " + index);
 				// submit a playing to server			
 				var urlLoaderPlaying:URLLoader = new URLLoader();
 				var urlRequest:URLRequest = new URLRequest(rServer+"api/updatePlaying");
@@ -151,8 +149,13 @@
 				urlRequest.data = urlData;
 				urlRequest.method = URLRequestMethod.POST;
 				
+				rcardIdList.splice(index,1);
+				rcardList.splice(index,1);
+				_move(rcard, rcenterX + deltaX, rcenterY + deltaY, ranimationSpeed, rdelay, 0);
+				
 				//urlLoaderPlaying.dataFormat = URLLoaderDataFormat.VARIABLES;
 				urlLoaderPlaying.load(urlRequest);
+				GlobalVars.vars.turn = 2;
 			}
 		}
 	}
