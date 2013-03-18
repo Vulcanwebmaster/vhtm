@@ -1,6 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html slick-uniqueid="1" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0046)http://www.templatemonster.com/demo/41126.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->  
 	<title>Carresdas.fr</title>
 	<meta name="description" content="<?php if(isset($meta_tag)){echo $meta_tag;} ?>">
 	<meta name="Keywords" content="<?php if(isset($meta_tag)){echo $meta_tag;} ?>">

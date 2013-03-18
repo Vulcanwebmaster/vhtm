@@ -16,10 +16,12 @@
 		                 <?php echo $value->image5 ?>
 		                 <?php echo $value->image6 ?>
 		                 <?php } ?>
+		                 
 		            </div>				           
 		        </div>
-			
-					<img src="<?php echo base_url();?>assets/flash_game/images/bg.png"/>
+		       
+				
+				<!--	<img src="<?php echo base_url();?>assets/flash_game/images/bg.png"/>-->
 	</div><!-----------end slide-------------->
 <div id="main">
 					<div id="topmain">

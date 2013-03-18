@@ -1,7 +1,6 @@
-body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-family: Arial !important; margin:0; padding:0; color:#888888; text-align:center}
+body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-family: Arial !important; margin:0 auto; padding:0; color:#888888; text-align:center; width:1350px}
 
-#wapper{ margin:0; padding:0; text-align:left;}
-#wapper{ margin:0; padding:0; text-align:left;}
+#wapper{ margin:0; padding:0; text-align:left; width:100%}
 #header{ width:100%; height:170px}
 #topheader{ height: 50px;}
 #spacetopheader{ height:3px; background:#ff4400; border-bottom:1px solid #b9471d; float:left; width:50%;}
@@ -12,9 +11,9 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .pass{ background:#fff url(../images/Belote_12.png) 5px 6px no-repeat !important; padding-left:25px !important; border-radius:3px !important; border:1px solid #888888 !important; width:130px !important; height: 24px !important;}
 .login{ background:url(../images/Belote_05.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:12px;}
 .register{ background:url(../images/Belote_07.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:11px;}
-#bottomheader{ width:74.2%; margin:0 auto;}
-#logo{ width:32%; float:left; margin-top:-40px}
-#menu{ width: 68%; float:left; font-size:34px; margin-top:15px; font-family: "Times New Roman", Times, serif !important}
+#bottomheader{ width:100%; margin:0 auto;}
+#logo{ width:23%; float:left; margin-top:-40px; margin-left:176px}
+#menu{ width: 62%; float:left; font-size:34px; margin-top:15px; font-family: "Times New Roman", Times, serif !important}
 #menu ul{ margin:0; padding:0 0 0 55px;}
 #menu li{ float:left; list-style:none; padding:20px; background:url(../images/vienmenu.png) -5px 10px no-repeat; cursor:pointer}
 #menu a{text-decoration:none; color:black;}
@@ -35,7 +34,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .submittextcontent{ background:url(../images/Belote_40.png) no-repeat; width:210px; height:48px; color:#fff; padding:11px 30px; font-size:18px; font-weight:bold; margin-left:40px;}
 .submittextcontent1{background:url(../images/Belote_43.png) no-repeat; width:210px; height:48px; color:#fff; padding:11px 50px; font-size:18px; font-weight:bold; margin-left:40px;}
 .submittextcontent2{background:url(../images/Belote_46.png) no-repeat; width:210px; height:48px; color:#fff; padding:11px 30px; font-size:18px; font-weight:bold; margin-left:50px;}
-#slider p{ width:100%; height:378px; margin:0; padding:0}
+#slider p{ width:100%; height:377px; margin:0; padding:0}
 #contentmain{ padding:10px; width:100%; margin-top:15px;}
 #contentmainleft{ width:70%; height:auto; float:left; margin-bottom:20px}
 #new, #play{background:#fff; border:1px solid #e3e3e3; border-radius:3px; padding:0; clear:both}
@@ -144,3 +143,5 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .sizepdetail{border-radius:5px;background:#fff; padding:5px 10px; margin-top:10px; clear:both}
 .comment_content{ margin-top:0 !Important; }
 .formemail{ float:right; width:23%;}
+.bottomslider{ background:url(../images/bg.png) repeat-x; width:100%; height:14px;}
+
