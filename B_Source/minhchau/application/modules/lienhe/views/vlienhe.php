@@ -17,13 +17,13 @@
 		    echo $nd_gioithieu->contente; 
 		} ?>
 		
-<!-- 		<?php if ($this->session->userdata('result')!='')
+		<?php if ($this->session->userdata('result')!='')
 		{
 			echo '<p style="color:red; padding-left:30px">';
 			echo $this->session->userdata('result');
 			$this->session->unset_userdata('result');
 			echo '</p>';
-		}?> -->
+		}?>
 		<?php if ($_SESSION['lang']=="vn") 
 		{?>		
 			<h3 style="margin-top:20px; font-weight:bold; font-size: 14px;">GỬI PHẢN HỒI</h3> 
@@ -51,7 +51,7 @@
 					<td><textarea name="noidung" class="formField ffInput validate[required] text-input"></textarea></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="Submit" class="submitlh" /></td>
+					<td colspan="2"><input type="submit" value="Gửi đi" class="submitlh" /></td>
 				</tr>
 				</table>
 		<?php } else{ ?>
