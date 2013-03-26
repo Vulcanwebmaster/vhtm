@@ -80,6 +80,24 @@ class NIW_Controller extends CI_Controller {
 		}
 	}
 	
+	function loadLang()
+	{
+		//session_start();
+        if(isset($_SESSION['lang'])) {
+		   $lang=$_SESSION['lang'];
+        } else {
+        	$lang = 'vn';
+		}
+		
+        if ($lang=='vn') {
+        	$_SESSION['lang']='vn';
+			$this->lang->load('mc','vietnamese');
+			
+		} else {
+			$this->lang->load('mc','english');
+			$_SESSION['lang']='en';
+		}
+	}
 	function setLang()
 	{
 		if (!$this->session->userdata('lang'))

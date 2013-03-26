@@ -6,6 +6,7 @@
 		<li class="icn_application"><a href="<?php echo base_url()?>lienhe/admin">Liên hệ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>dichvu/admin">Dịch vụ</a></li>
 		<li class="icn_application"><a href="<?php echo base_url()?>dathang/admin">Đặt hàng</a></li>
+		<li class="icn_application"><a href="<?php echo base_url()?>phanhoi/admin">Phản hồi</a></li>
 	</ul>
 <h3>Users</h3>
 	<ul class="toggle">

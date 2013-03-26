@@ -18,7 +18,7 @@
 		</h4><br />
 		<div class="big_view">
 			<?php echo $info->image;?>
-			<span><?php echo $info->price;?> VNĐ</span>
+<!-- 			<span><?php echo $info->price;?> VNĐ</span> -->
 		</div>
 		<div class="scroll" style="display:none">
 			<a href="#"><img src="images/pic1.jpg" alt="" width="62" height="62" /></a>

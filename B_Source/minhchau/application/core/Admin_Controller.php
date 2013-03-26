@@ -54,6 +54,13 @@ class Admin_Controller extends NIW_Controller
 		$config['cur_tag_close'] = '</li></a>';
 		return $config;
 	}
+	function SetLang()
+	{
+		if (!$this->session->userdata('lang'))
+		{
+			$this->session->set_userdata('lang','vn');
+		}
+	}
 	
 	function setupCKEditor($width='97%',$height='100px')
 	{
