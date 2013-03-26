@@ -10,7 +10,7 @@
 <div id="main_block" class="style1">																																																																													
 	<div id="item">
 		<h4>
-			<?php if ($lang=='vn')
+			<?php if ($_SESSION['lang']=="vn" )
 			{
 				echo $info->namev;
 			}
@@ -31,14 +31,27 @@
 	</div>
 	<div class="description">
 		<p>
-			<h2>Chức năng</h2><br /> 
-			<?php if ($lang=='vn') echo $info->usesv;
+			<?php if ($_SESSION['lang']=="vn") 
+			{?>		
+				<h2>Chức năng</h2><br /> 
+			<?php } else{ ?>
+				<h2>Function</h2><br /> 
+			<?php } ?>
+
+			
+			<?php if ($_SESSION['lang']=="vn" ) echo $info->usesv;
 			else echo $info->usese;?> 
 		</p>
 	</div>
 	<div class="technical-info" style="clear:both; padding-top:15px">
-		<h2>Thông số kỹ thuật</h2>
-		<?php if ($lang=='vn') echo $info->technical_infov;
+		<?php if ($_SESSION['lang']=="vn") 
+			{?>		
+				<h2>Thông số kỹ thuật</h2>
+			<?php } else{ ?>
+				<h2>Specifications</h2><br /> 
+			<?php } ?>
+		
+		<?php if ($_SESSION['lang']=="vn" ) echo $info->technical_infov;
 			else echo $info->technical_infoe;?> 
 	</div>
 </div>

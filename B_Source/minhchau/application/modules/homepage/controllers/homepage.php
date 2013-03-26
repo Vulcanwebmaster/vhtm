@@ -4,6 +4,7 @@ class Homepage extends NIW_controller {
 	
 	function __construct()
 	{
+		@session_start();
 		parent::__construct();
 		$this->module=basename(dirname(dirname(__FILE__)));
 		$this->module = strtolower(get_class());
@@ -12,15 +13,11 @@ class Homepage extends NIW_controller {
 		$this->load->library('session');
 		$this->setLang();
 		$this->loadLang();
-		if ($this->session->userdata('lang')=='vn')
-		{
-			$this->lang->load('mc','vietnamese');
-		}
-		else $this->lang->load('mc','english');
 	}
 	
 	public function index()
 	{
+		$data['lang']=$this->session->userdata("lang");
 		$data['listcate']=$this->Mhomepage->getListByColumn('mc_category','parent_id',0);
 		$data['aboutus']=$this->Mhomepage->getRowByColumn('mc_about_us','id',1);
 		$data['listnew']=$this->Mhomepage->getListByColumn('mc_product','is_new',1);

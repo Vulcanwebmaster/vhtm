@@ -1,9 +1,16 @@
 <?php 
 $newModel=new CI_Model();
-$lang=$this->session->userdata('lang');?>
+?>
 
 <div id="sidebar">
-			<h2 style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: #242424; font-weight: normal;"><?php echo $this->lang->line('left-danhmuc');?></h2>																																																																		
+			<h2 style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: #242424; font-weight: normal;">
+				<?php if ($_SESSION['lang']=="vn") 
+				{?>		
+					DANH MỤC
+				<?php } else{ ?>
+					CATEGORIES
+				<?php } ?>
+			</h2>																																																																		
 			<ul id="list">
 				<?php 
 					for ($i=0;$i<count($listcate);$i++)
@@ -15,7 +22,7 @@ $lang=$this->session->userdata('lang');?>
 										if (count($childs)==0) 
 											echo 'href="'.base_url().'sanpham/danhMuc/'.$listcate[$i]->id.'-'.$listcate[$i]->alias.'"';
 									?>>
-									<?php if ($lang=='vn') 
+									<?php if ($_SESSION['lang']=="vn") 
 												echo $listcate[$i]->namev; 
 										else echo $listcate[$i]->namee;?>
 								</a>
@@ -25,7 +32,7 @@ $lang=$this->session->userdata('lang');?>
 										<?php 
 											foreach ($childs as $item)
 											{
-												if ($lang=='vn')
+												if ($_SESSION['lang']=="vn")
 													echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namev.'</a></li>';
 												else echo'<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namee.'</a></li>';
 											}
@@ -39,7 +46,7 @@ $lang=$this->session->userdata('lang');?>
 								<a <?php $childs=$newModel->getListByColumn('mc_category','parent_id',$listcate[$i]->id);
 										if (count($childs)==0) echo 'href="'.base_url().'sanpham/danhMuc/'.$listcate[$i]->id.'-'.$listcate[$i]->alias.'"';
 									?>>
-									<?php if ($lang=='vn') 
+									<?php if ($_SESSION['lang']=="vn") 
 												echo $listcate[$i]->namev; 
 										else echo $listcate[$i]->namee;?>
 								</a>
@@ -49,7 +56,7 @@ $lang=$this->session->userdata('lang');?>
 										<?php 
 											foreach ($childs as $item)
 											{
-												if ($lang=='vn')
+												if ($_SESSION['lang']=="vn")
 													echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namev.'</a></li>';
 												else echo '<li><a href="'.base_url().'sanpham/danhMuc/'.$item->id.'-'.$item->alias.'">'.$item->namee.'</a></li>';
 											}

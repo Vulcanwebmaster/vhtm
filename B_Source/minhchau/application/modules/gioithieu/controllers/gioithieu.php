@@ -4,34 +4,20 @@
 		private $module;
 		function __construct()
 		{
+			@session_start();
 			parent::__construct();
 			$this->module=strtolower(get_class());
 			
 			$this->load->model('Mgioithieu');
 			$this->load->library('session');
 			$this->setLang();
-			
-			if ($this->session->userdata('lang')=='vn')
-			{
-				$this->lang->load('mc','vietnamese');
-			}
-			else $this->lang->load('mc','english');
+			$this->loadLang();
 		}
 		
 		function index()
 		{
-			//$this->session->set_userdata('lang','vn');
-			
-			if($this->session->userdata('lang')=='en')
-			{
-				$data['query'] = $this->Mgioithieu->getOne()->contente;
-				$data['title'] = 'About us';
-			}
-			elseif ($this->session->userdata('lang')=='vn')
-			{
-				$data['query'] = $this->Mgioithieu->getOne()->contentv;
-				$data['title'] = 'Giới thiệu';
-			}
+			$data['lang']=$this->session->userdata("lang");
+			$data['detail_gt']=$this->Mgioithieu->getRowByColumn('mc_about_us','id',1);
 			$data['listcate']=$this->Mgioithieu->getListByColumn('mc_category','parent_id',0);
 			$data['list']=$this->Mgioithieu->getListFull('mc_about_us');
 			$data['module']=$this->module;

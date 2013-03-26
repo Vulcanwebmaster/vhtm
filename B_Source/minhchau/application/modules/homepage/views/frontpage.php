@@ -11,13 +11,23 @@
 	<div class="about">
 		<h2><?php echo $this->lang->line('menu-gioithieu');?></h2>
 		<?php $newModel=new CI_Model();
-			echo $newModel->cutString($aboutus->contentv,1200).'...</p>';
+			if ($_SESSION['lang']=="vn"){
+				echo $newModel->cutString($aboutus->contentv,1200).'...</p>';
+			}else {
+			  	echo $newModel->cutString($aboutus->contente,1200).'...</p>';
+			} 
+			
 		?>
-		<a href="<?php echo base_url();?>gioithieu"><?php echo $this->lang->line('xemthem');?></a>
+		<a href="<?php echo base_url();?>gioithieu">
+		<?php if ($_SESSION['lang']=="vn") 
+		{?>		
+			Xem thêm
+		<?php } else{ ?>
+			Read more
+		<?php } ?>
+		</a>
 	</div>
 	<div class="news">
-		<!-- img src="<?php echo base_url();?>assets/minhchau/images/title3.gif" alt="" width="69" height="30" /><br />
-		<p>Illum secundum exerci erat plaga illum, enim, venio. Tamen causa ut diam torqueo sagaciter inhibeo si quae exerci lobortis. Appellatio vel hos autem, ludus luptatum mauris ratis jugis interdico. Gilvus consequat abico demoveo lenis validus typicus ut commodo. Consequat, eu voco cui eros, euismod quis illum, commodo. </p -->
 		<a href="<?php echo base_url();?>dathang"><img src="<?php echo base_url();?>assets/minhchau/images/order.png" alt="" style="width:220px; height:140px"/></a>
 	</div>
 	<h2 style="padding-top: 15px; clear:both"><?php echo $this->lang->line('home-spmoi');?></h2>
@@ -26,12 +36,19 @@
 		{?>
 			<div class="item">
 				<h3 style="margin-top:15px; margin-left:25px; text-transform:capitalize; color:#6c6c6c">
-					<?php if ($lang=='vn') echo $item->namev;
+					<?php if ($_SESSION['lang']=="vn") echo $item->namev;
 					else echo $item->namee;?>
 				</h3>
 				<?php echo $item->image;?>
 <!-- 				<span><?php echo $item->price;?> VNĐ</span> -->
-				<a href="<?php echo base_url();?>sanpham/chiTiet/<?php echo $item->id."-".$item->alias;?>" class="view">Chi tiết</a>
+				<a href="<?php echo base_url();?>sanpham/chiTiet/<?php echo $item->id."-".$item->alias;?>" class="view">
+					<?php if ($_SESSION['lang']=="vn") 
+					{?>		
+						Chi tiết
+					<?php } else{ ?>
+						Details
+					<?php } ?>
+					</a>
 			</div>
 		<?php }?>
 	</div>

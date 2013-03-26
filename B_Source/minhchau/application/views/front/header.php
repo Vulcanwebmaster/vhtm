@@ -2,11 +2,20 @@
 	<div id="header_inside">
 		<img src="<?php echo base_url();?>assets/minhchau/images/header.jpg" alt="setalpm" width="999" height="222" border="0" usemap="#Map" /><br />																																										
 		<ul id="menu">
-			<li><a id="menu-trangchu" href="<?php echo base_url();?>" class="but1"><?php echo $this->lang->line('menu-trangchu');?></a></li>
-			<li><a id="menu-gioithieu" href="<?php echo base_url();?>gioithieu" class="but1"><?php echo $this->lang->line('menu-gioithieu');?></a></li>
-			<li><a id="menu-sanpham" href="<?php echo base_url();?>sanpham" class="but1"><?php echo $this->lang->line('menu-sanpham');?></a></li>
-			<li><a id="menu-dichvu" href="<?php echo base_url(); ?>dichvu" class="but1"><?php echo $this->lang->line('menu-dichvu');?></a></li>
-			<li><a id="menu-lienhe" href="<?php echo base_url(); ?>lienhe" class="but1"><?php echo $this->lang->line('menu-lienhe');?></a></li>
+			<?php if ($_SESSION['lang']=="vn") 
+			{?>		
+				<li><a id="menu-trangchu" href="<?php echo base_url();?>" class="but1">TRANG CHỦ</a></li>
+				<li><a id="menu-gioithieu" href="<?php echo base_url();?>gioithieu" class="but1">GIỚI THIỆU</a></li>
+				<li><a id="menu-sanpham" href="<?php echo base_url();?>sanpham" class="but1">SẢN PHẨM</a></li>
+				<li><a id="menu-dichvu" href="<?php echo base_url(); ?>dichvu" class="but1">DỊCH VỤ</a></li>
+				<li><a id="menu-lienhe" href="<?php echo base_url(); ?>lienhe" class="but1">LIÊN HỆ</a></li>
+			<?php } else{ ?>
+				<li><a id="menu-trangchu" href="<?php echo base_url();?>" class="but1">HOME</a></li>
+				<li><a id="menu-gioithieu" href="<?php echo base_url();?>gioithieu" class="but1">ABOUT US</a></li>
+				<li><a id="menu-sanpham" href="<?php echo base_url();?>sanpham" class="but1">PRODUCTS</a></li>
+				<li><a id="menu-dichvu" href="<?php echo base_url(); ?>dichvu" class="but1">SERVICES</a></li>
+				<li><a id="menu-lienhe" href="<?php echo base_url(); ?>lienhe" class="but1">CONTACT US</a></li>
+			<?php } ?>
 		</ul>
 		<div id="img-language">
 			<a href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/vn19.jpg"/></a>

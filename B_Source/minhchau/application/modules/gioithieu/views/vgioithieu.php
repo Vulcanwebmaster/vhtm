@@ -5,6 +5,11 @@
 </script>
 <div id="main_block">
 	<div class="content">
-		<?php echo $query; ?>
+		<?php if ($_SESSION['lang']=="vn"){
+        	 echo $detail_gt->contentv; 
+		}else {
+			  echo $detail_gt->contente; 
+		} ?>
+
 	</div>
 </div>
