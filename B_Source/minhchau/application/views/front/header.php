@@ -13,5 +13,12 @@
 			<a href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>"><img src="<?php echo base_url();?>assets/minhchau/images/el.jpg"/></a>
 		</div>
 	</div>
+	<div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            <img src="<?php echo base_url();?>assets/minhchau/images/slide1.jpg"  alt="" />
+           <img src="<?php echo base_url();?>assets/minhchau/images/slide2.jpg"  alt="" /></a>
+            <img src="<?php echo base_url();?>assets/minhchau/images/slide3.jpg"  alt="" data-transition="slideInLeft" />
+        </div>           
+    </div>
 	
 </div>

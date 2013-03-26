@@ -15,6 +15,20 @@
 				$("input, textarea").uniform();
 			});
 		</script>
+		
+		<!-----slide------------->
+		 <link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/themes/default/default.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/themes/light/light.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/themes/dark/dark.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/themes/bar/bar.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/css/nivo-slider.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="<?php echo base_url();?>assets/minhchau/css/stylenivo.css" type="text/css" media="screen" />
+	    <script type="text/javascript" src="<?php echo base_url();?>assets/minhchau/js/jquery.nivo.slider.js"></script>
+	    <script type="text/javascript">
+	    $(window).load(function() {
+	        $('#slider').nivoSlider();
+	    });
+	    </script>
 	</head>
 	
 	<body>
