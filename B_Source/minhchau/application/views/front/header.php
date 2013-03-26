@@ -15,9 +15,9 @@
 	</div>
 	<div class="slider-wrapper theme-default">
         <div id="slider" class="nivoSlider">
-            <img src="<?php echo base_url();?>assets/minhchau/images/slide1.jpg"  alt="" />
-           <img src="<?php echo base_url();?>assets/minhchau/images/slide2.jpg"  alt="" /></a>
-            <img src="<?php echo base_url();?>assets/minhchau/images/slide3.jpg"  alt="" data-transition="slideInLeft" />
+            <p><img src="<?php echo base_url();?>assets/minhchau/images/slide1.jpg"  alt="" /></p>
+           <p><img src="<?php echo base_url();?>assets/minhchau/images/slide2.jpg"  alt="" /></p>
+            <p><img src="<?php echo base_url();?>assets/minhchau/images/slide3.jpg"  alt="" data-transition="slideInLeft" /></p>
         </div>           
     </div>
 	
