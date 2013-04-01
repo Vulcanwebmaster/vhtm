@@ -9,12 +9,12 @@
 							</style>
 							<div class="box" id="tags">
 								<h4>Tags</h4>
-								<?php foreach ($list_tagscloud as $_tagscloud){ ?>
-									<p ><a href="<?php echo base_url();?>tagcloud/page/<?php echo $_tagscloud->id.'/'.$_tagscloud->alias;?>"><b style="font-size:20px;">
+								<?php foreach ($list_tagv as $item){ ?>
+									<p ><a href="<?php echo base_url();?>tintuc/category/<?php echo $item->id.'/'.$item->alias;?>"><b style="font-size:20px;">
 										<?php if ( $_SESSION['lang']=="vn" ){
-												      echo $_tagscloud->tentag; 
+												      echo $item->tentag; 
 												}else {
-													  echo $_tagscloud->tentage; 
+													  echo $item->tentage; 
 												}
 										 ?></b>()</a></p>
 								<?php } ?>

@@ -23,18 +23,14 @@ class tintuc extends NIW_Controller
 	{
         // phân trang
         $config['base_url'] = base_url('tintuc/page'); // xác định trang phân trang
-        $config['total_rows']=6; // xác định tổng số record
-        $config['per_page'] = 5; // xác định số record ở mỗi trang
-        // $config['uri_segment'] = 4; // xác định segment chứa page number            
+        $config['total_rows']=8; // xác định tổng số record
+        $config['per_page'] = 3; // xác định số record ở mỗi trang
        
-         $this->pagination->initialize($config); 
-		
-		// $data['danhsach']= $this->Mtintuc->getListOffset('taikhoan',5,$index);
+        $this->pagination->initialize($config); 
+		$data['list_tagv'] = $this->Mtintuc->getListFull('tagcloud');
 		$data['title']='Niw - Tin tức';
-		$data['list2']=$this->Mtintuc->getListOffset123('tintuc',5,'duyet',1);
-		
+		$data['list2']=$this->Mtintuc->getListOffset123('tintuc',8,'duyet',1);
 
-		// $data['list']=$this->Mtintuc->getListOffsetODB('tintuc',5,'id','DESC','duyet',1);
 		$data['list_tagscloud']=$this->Mtintuc->getListFull('tagcloud');
 		// Meta tags
 		$tintuc = $this->Mtintuc->getRowByColumn('metatag','id',1);
@@ -51,6 +47,7 @@ class tintuc extends NIW_Controller
 	}
 	function detail($id=0)
 	{
+		$data['list_tagv'] = $this->Mtintuc->getListFull('tagcloud');
 		$data['tintuc']=$this->Mtintuc->getRowByColumn('tintuc','id',$id);
 		$data['list_tagscloud']=$this->Mtintuc->getListFull('tagcloud');
 		// Meta tags
@@ -66,5 +63,29 @@ class tintuc extends NIW_Controller
 		$data['index']= 6 ;
 		$data['page']='vdetail';
 		$this->load->view('front/container',$data);
+	}
+	
+	function category($id)
+	{
+		// Sử dụng hàm explode để tách chuỗi. dựa vào kí tự "-"
+			$temp = explode("-", $id);
+			if (isset($temp)){
+				$id = $temp[0];
+			}
+			$data['list_slide']=$this->Mtintuc->getRowByColumn('slide','id','1');
+			$data['category']  =  $this->Mtintuc->getListNewOfTag('tintuc_tags','id_tagv',$id);
+			//var_dump(category); die();
+			$data['items']=$this->Mtintuc->getListByColumn('tintuc','id',$id);
+			// Lấy ra ds tin tức & sản phẩm ở footer
+			$data['list_tintucft']=$this->Mtintuc->getListOffsetODB('tintuc',6,'id','DESC','duyet',1);
+			$data['list_sanphamft']=$this->Mtintuc->getListFullODB('sanpham',6,'id','DESC');
+			$data['list_tagv'] = $this->Mtintuc->getListFull('tagcloud');
+			$data['lang']=$this->session->userdata("lang");
+			//Lấy tin tức từ tag new 
+			$data['list_news_tag'] = $this->Mtintuc->getListNewOfTag('tintuc_tags','id_tagv',$id);
+		//	var_dump($data['list_news_tag']); die();
+			$data['module']  =  $this->module;
+			$data['page']  =  'vtintuctagv';
+			$this->load->view('front/container',$data);
 	}
 }
