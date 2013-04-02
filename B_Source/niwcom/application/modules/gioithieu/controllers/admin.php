@@ -18,7 +18,9 @@
 			$this->load->library('Ckeditor',array('instanceName' => 'CKEDITOR1','basePath' => base_url()."assets/niwcom/ckeditor/", 'outPut' => true));                             
 			$data['config'] = $this->setupCKEditor('97%','200px');
 			//=============================================
+			
 			$data['info'] = $this->Mgioithieu->getRowByColumn('gioithieu','id',1);
+			var_dump($data['info']);die();
 			$data['title'] = 'Sửa giới thiệu';
 			$data['bcCurrent'] = 'Giới thiệu';
 			$data['module'] = $this->module;
