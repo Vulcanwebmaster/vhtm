@@ -15,7 +15,7 @@
 							<input type="password" name="pass" class="pass" value="Mot de passe" 		 onblur="if(this.value=='') this.value='Mot de passe';" onfocus="if(this.value=='Mot de passe') this.value='';"/>
 							<input type="submit" name="submit" value="CONNEXION" class="login" />
 							
-							<a style="padding: 8px 10px 10px 7px; text-decoration: none;" href="<?php echo base_url();?>register" class="register">INSCRIPTION</a>
+							<a style="padding: 7px 17px; text-decoration: none;font-size: 12px;" href="<?php echo base_url();?>register" class="register">INSCRIPTION</a>
 						</form> 
 						<?php }else{ ?>
 							<p style=" color: white; width: 190px; float: left;  font-size: 16px ">
