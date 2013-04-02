@@ -91,7 +91,19 @@
 									<p>Jouer contre les meilleurs</p>
 								<?php } ?>	
 								</a></li>
-							
+							<li><a href="<?php echo base_url();?>shop">
+								<?php if ($_SESSION['lang']=="fr") 
+								{?>	
+									<label>Boutique</label>
+									<p> </p>
+								<?php } elseif($_SESSION['lang']=="en"){ ?>
+									<label>Shop</label>
+									<p> </p>	
+								<?php }else{ ?>	
+									<label>Boutique</label>
+									<p> </p>
+								<?php } ?>	
+								</a></li>
 							<li><a href="<?php echo base_url();?>helps">
 								<?php if ($_SESSION['lang']=="fr") 
 								{?>	
