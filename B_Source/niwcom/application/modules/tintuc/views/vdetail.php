@@ -53,8 +53,6 @@
 <!-- Slidebar -->
 <?php $this->load->view('front/slidebar_right');?>
 <!-- End Slidebar -->
-
-
                     <div class="clear">
                     </div>
                 </div>
