@@ -20,6 +20,7 @@ class dichvu extends NIW_Controller
 		$data['title']='Niw - Dịch vụ';
 		$data['list_dichvu']=$this->Mdichvu->getListFull('dichvu');
 		$data['list_slide']=$this->Mdichvu->getRowByColumn('slide','id','1');
+		$data['list_tagv'] = $this->Mdichvu->getListFull('tagcloud');
 		// Meta tags
 		$dichvu = $this->Mdichvu->getRowByColumn('metatag','id',1);
 		$data['meta_tag'] = $dichvu->meta_dichvu;
@@ -33,8 +34,10 @@ class dichvu extends NIW_Controller
 	}
 	function detail($id=0)
 	{
+		$data['list_dichvu']=$this->Mdichvu->getListFull('dichvu');
 		$data['list_tagscloud']=$this->Mdichvu->getListFull('tagcloud');
 		$data['dichvu']=$this->Mdichvu->getRowByColumn('dichvu','id',$id);
+		$data['list_tagv'] = $this->Mdichvu->getListFull('tagcloud');
 		// Meta tags
 		$dichvu = $this->Mdichvu->getRowByColumn('metatag','id',1);
 		$data['list_slide']=$this->Mdichvu->getRowByColumn('slide','id','1');

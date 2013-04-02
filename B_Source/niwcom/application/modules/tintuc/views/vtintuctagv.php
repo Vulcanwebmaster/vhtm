@@ -26,25 +26,27 @@
                         <?php if (isset($list_news_tag))
                             	{
                             		
-                            		foreach ($list_news_tag as $tintuc)
+                            		foreach ($list_news_tag as $key)
                             		{?>
                         <div class="blog">
                             <div class="box blog_left first">
                                 <!-- blog image-->
-                                	<?php if($tintuc->hinhanh!=""){ echo $tintuc->hinhanh; }else{ ?>
+                                	<?php if($key->hinhanh!=""){ echo $key->hinhanh; }else{ ?>
                                 		<img src="<?php echo base_url();?>assets/niwcom/images/logo150px.png" />
                                 	<?php } ?>
                                 <!-- / blog image -->
                             </div>
+													                           
                             <div class="box blog_right last">
                                 <!-- blog headline-->
                                 <h3>
-                                   <a style="font-size:20px" href="<?php echo base_url();?>tintuc/detail/<?php echo $tintuc->id."/".$tintuc->alias;?>">
+                                	
+                                   <a style="font-size:20px" href="<?php echo base_url();?>tintuc/detail/<?php echo $key->id_tintuc."/".$key->alias;?>">
                             						<?php 
                             							if ($_SESSION['lang']=="vn"){
-													         echo $tintuc->tieude; 
+													         echo $key->tieude; 
 														}else {
-															  echo $tintuc->tieudee; 
+															  echo $key->tieudee; 
 														} ?></a>
                                 </h3>
                                 <!-- / blog headline-->
@@ -53,12 +55,12 @@
                                 <!-- blog text-->
                                 <?php
 										if ($_SESSION['lang']=="vn"){
-									         echo substr(strip_tags($tintuc->noidung),0,300);
+									         echo substr(strip_tags($key->noidung),0,300);
 										}else {
-											 echo substr(strip_tags($tintuc->noidunge),0,300);
+											 echo substr(strip_tags($key->noidunge),0,300);
 										}                            					
             					 ?> ...<br />
-                                <a class="small_button" href="<?php echo base_url();?>tintuc/detail/<?php echo $tintuc->id."/".$tintuc->alias;?>">
+                                <a class="small_button" href="<?php echo base_url();?>tintuc/detail/<?php echo $key->id_tintuc."/".$key->alias;?>">
 	        						<?php if ($_SESSION['lang']=="vn")
 									{?>		
 										Xem tiếp
@@ -68,6 +70,7 @@
         						</a>
                                 <!-- /blog text-->
                             </div>
+                           
                             <div class="clear">
                             </div>
                         </div>

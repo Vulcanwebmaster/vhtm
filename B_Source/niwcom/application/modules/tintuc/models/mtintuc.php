@@ -33,4 +33,21 @@ class Mtintuc extends CI_Model
 	 	return $list;
 		
 	}
+	
+	 function getListTinTuc($tableName='',$offset='', $columnName='', $value='',$index='')
+	 {
+	 	$this->db->where($columnName,$value);
+	 	$ds=$this->db->get($tableName,$offset,$index);
+		
+		
+	 	$list=array();
+	 	foreach($ds->result() as $item)
+	 	{
+	 		$list[]=$item;
+	 	}
+	 	$ds->free_result();
+	 	return $list;
+	 }
+	
+	
 }

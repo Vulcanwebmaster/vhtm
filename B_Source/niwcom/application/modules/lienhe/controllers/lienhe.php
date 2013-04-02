@@ -15,6 +15,7 @@ class lienhe extends NIW_Controller
 	function index()
 	{
 		$data['lang']=$this->session->userdata("lang");
+		$data['list_tagv'] = $this->Mlienhe->getListFull('tagcloud');
 		// Meta tags
 		$data['list_slide']=$this->Mlienhe->getRowByColumn('slide','id','1');
 		$data['list_tagscloud']=$this->Mlienhe->getListFull('tagcloud');

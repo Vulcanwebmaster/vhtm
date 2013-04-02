@@ -25,7 +25,7 @@ class Gioithieu extends NIW_Controller
 		$data['list_slide']=$this->Mgioithieu->getRowByColumn('slide','id','1');
 		$data['list_tagscloud']=$this->Mgioithieu->getListFull('tagcloud');
 		$data['meta_tag'] = $gioithieu->meta_gioithieu;
-		
+		$data['list_tagv'] = $this->Mgioithieu->getListFull('tagcloud');
 		$data['index']= 2 ;
 		$data['module']=$this->module;
 		$data['page']='vgioithieu';
