@@ -77,7 +77,7 @@
 					<div id="formCloseBtn"><a href="javascript:void(0)"><span>close</span></a></div>
 					<h3><span>Change country/currency</span></h3>
 					<div class="container">
-						<form name="setPaymentConstraint" id="setPaymentConstraint" action="<?php echo base_url();?>mygametwist/updateCurrencySetting/" method="post">
+						<form name="setPaymentConstraint" id="setPaymentConstraint" action="<?php echo base_url();?>shop/updateCurrencySetting/" method="post">
 							<table class="formTable">
 								<tbody>
 								<tr>
@@ -109,7 +109,7 @@
 				<div class="container">
 					
 						<input type="hidden" name="id_item" value="">
-						<table class="itemTable listTable ">
+						<table style="width: 800px" class="itemTable listTable ">
 							<thead>
 								<tr><td colspan="5">Get Twists and start gaming ...</td><td></td></tr>
 							</thead>
@@ -145,10 +145,10 @@
 								
 							</tbody></table>
 						
-						<div class="itemDescription">
+						<!-- <div class="itemDescription">
 							<b>Let's Twist at GameTwist:</b> There's something for everyone at GameTwist, so get your Twist pack here and start gaming!<br><br>
 Note: Twists are the currency used at GameTwist. They cannot be paid out as real money at any time.
-						</div>
+						</div> -->
 					</div>
 				</div> <br clear="both" />
 					<div id="additionalContentBottom"></div>

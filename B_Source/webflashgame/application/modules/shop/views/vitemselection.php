@@ -19,7 +19,7 @@
 						<ul>
 							<li class="">
 								<div class="itemContainer">
-									<img src="images/abo_1_120x120.png"><div class="item">
+									<img src="<?php echo base_url();?>assets/flash_game/images/abo_1_120x120.png"><div class="item">
 										<dl>
 											<dt>Gold Subscription</dt>
 											<dd class="price"></dd><br />

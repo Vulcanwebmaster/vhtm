@@ -43,6 +43,9 @@ class Shop extends NIW_Controller
 				$data['tygia'] = (float)$data['convert_money']->value_rate / (float)$data['convert_money']->euro_rate;
 			}
 			// End tính tỷ giá
+			$data['step']  =  $this->Mshop->getListFull('fg_step');
+			$data['link_fanpage'] = $this->Mshop->getRowByColumn('fg_setting','id',1);
+			
 			$data['list_tiente'] = $this->Mshop->getListFull('st_convertcurrency');
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
@@ -63,6 +66,8 @@ class Shop extends NIW_Controller
 			 $_SESSION['chuyentiennao'] = $luutygia;
 			 $_SESSION['currencygame_123'] = $this->input->post('currencygame123');
 		}
+			$data['step']  =  $this->Mshop->getListFull('fg_step');
+			$data['link_fanpage'] = $this->Mshop->getRowByColumn('fg_setting','id',1);
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
@@ -75,6 +80,8 @@ class Shop extends NIW_Controller
 	// Shop 2
 	function paymentmethod($index=0)
 	{
+			$data['step']  =  $this->Mshop->getListFull('fg_step');
+			$data['link_fanpage'] = $this->Mshop->getRowByColumn('fg_setting','id',1);
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');		
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
@@ -87,6 +94,8 @@ class Shop extends NIW_Controller
 	// Shop 3
 	function pay($index=0)
 	{
+			$data['step']  =  $this->Mshop->getListFull('fg_step');
+			$data['link_fanpage'] = $this->Mshop->getRowByColumn('fg_setting','id',1);
 			$id = $_SESSION['front_user_id'];
 			$listTest = $this->Mshop->getListByColumn('st_currencysetting', 'account_id', $id); 
 			if (count($listTest) > 0)
@@ -105,6 +114,8 @@ class Shop extends NIW_Controller
 	// Shop 4
 	function confirmation($index=0)
 	{
+			$data['step']  =  $this->Mshop->getListFull('fg_step');
+			$data['link_fanpage'] = $this->Mshop->getRowByColumn('fg_setting','id',1);
 			$data['list_hotro'] = $this->Mshop->getListFull('fg_hotro');		
 			$data['items'] = $this->Mshop->getListOffset('fg_games',10,$index);
 			$data['list_category'] = $this->Mshop->getListFull('fg_category');
@@ -114,6 +125,40 @@ class Shop extends NIW_Controller
 			$data['page']='vconfirmation';
 			$this->load->view('front/container',$data);
 	}
+		// Lay du lieu tu form
+		function _inputCurrencySetting()
+		{
+			//$input= $this->input->post('email'); // Lấy giá trị từ vpersonaldata truyền vào name="..."
+			$input=array(
+						'currency'=>$this->input->post('currency'),
+						'account_id'=> $_SESSION['front_user_id'],
+						);
+			return $input;
+		}
+		// Update Currency Setting
+		function updateCurrencySetting(){
+			$id = $_SESSION['front_user_id'];
+			$input= $this->_inputCurrencySetting();
+			//var_dump($input);die();
+			if($input == TRUE){
+				$listTest = $this->Mshop->getListByColumn('st_currencysetting', 'account_id', $id); 
+				if (count($listTest) != 0)
+				{	
+					if ($this->Mshop->updateRowByColumn('st_currencysetting','account_id',$id,$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'shop');
+				}else {
+					if ($this->Mshop->insertNewRow('st_currencysetting',$input))
+						{
+							$this->session->set_userdata('result','Update successful!!');
+						}
+						redirect(base_url().'shop');
+				}
+			}
+			redirect(base_url().'shop');
+		}
 	
 }
 	
