@@ -60,22 +60,42 @@
 								<fieldset>
 									<ol>
 										<li title="">
-											<label for="nick">Nickname</label>
+											<label for="nick"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Pseudo';
+														 } else{
+														 	echo 'Nickname';
+														  }?></label>
 											<input name="nick" type="text" class="formField ffInput validate[required] text-input" id="nick" value="">
 										</li>
 										
 										<li title="">
-											<label for="pass">Password</label>
+											<label for="pass"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Mot de passe';
+														 } else{
+														 	echo 'Password';
+														  }?> </label>
 											<input name="pass" type="password" class="formField ffInput validate[required] text-input" id="pass" value="">
 										</li>
 										<li title="">
-											<label for="pass_conf">Repeat password</label>
+											<label for="pass_conf"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Répéter le mot de passe';
+														 } else{
+														 	echo 'Repeat Password';
+														  }?> </label>
 											<input name="pass_conf" type="password" class="validate[required,equals[pass]] text-input formField ffInput" id="pass_conf" value="">
 										</li>
 										<li title="">
-											<label for="email">E-mail</label>
+											<label for="email"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Courriel';
+														 } else{
+														 	echo 'E-mail';
+														  }?> </label>
 											<input name="email" type="text" class="formField ffInput validate[required] text-input" id="email" value="">
-											<span class="inputDescription">Important messages about the system and game results will be sent to this e-mail address.</span>
+											<span class="inputDescription"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Des messages du système et autres informations importantes seront envoyés à cette adresse email.';
+														 } else{
+														 	echo 'Important messages about the system and game results will be sent to this e-mail address.';
+														  }?></span>
 										</li>
 										
 									</ol>
@@ -116,18 +136,34 @@
 								<input name="nextpage" type="hidden" id="nextpage" value="">
 								<input name="xpf" type="hidden" id="xpf" value="">
 								<button type="submit" name="submit" class="formButton fbSubmit" value="1">
-								<span>Register</span></button>
+								<span><?php if ($_SESSION['lang']=="fr"){
+														 	echo "S'inscrire";
+														 } else{
+														 	echo 'Register';
+														  }?> </span></button>
 							</li>
 						</ol>
 						<div class="inputDescription" id="newsletterDescription">
-							<p>* You will receive information about games, promotions and features on our sites. This consent may be revoked at any time.</p>
+							<p><?php if ($_SESSION['lang']=="fr"){
+														 	echo "* Tu recevras des informations concernant les jeux, les promotions et autres nouveautés du site.";
+														 } else{
+														 	echo '* You will receive information about games, promotions and features on our sites. This consent may be revoked at any time.';
+														  }?></p>
 						</div>
 						<ul class="signonHelpers">
 							<li>
-								<a href="<?php echo base_url();?>login" title="Member login"><span>Member login</span></a>
+								<a href="<?php echo base_url();?>login" title="Member login"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo "Connexion pour les membres";
+														 } else{
+														 	echo 'Member login';
+														  }?> </span></a>
 							</li>
 							<li>
-								<a href="<?php echo base_url();?>dangky/forgotpass" title="I forgot my password!"><span>I forgot my password!</span></a>
+								<a href="<?php echo base_url();?>dangky/forgotpass" title="I forgot my password!"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo "J'ai oublié mon mot de passe ! ";
+														 } else{
+														 	echo 'I forgot my password!';
+														  }?></span></a>
 							</li>
 						</ul>
 					</form>

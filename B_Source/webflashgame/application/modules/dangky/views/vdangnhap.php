@@ -26,7 +26,7 @@
 	<script>
 		jQuery(document).ready(function(){
 			// binds form submission and fields to the validation engine
-			jQuery("#fnLogin").validationEngine();
+			jQuery("#fnLogin1").validationEngine();
 		});
 	</script>
 <!-------------End Check Password------------>
@@ -36,7 +36,11 @@
 			<div id="container">	
 				<div id="tipHolder"></div>
 				<div id="heading">
-					<h3><span>Login</span></h3>
+					<h3><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Connexion';
+														 } else{
+														 	echo 'Login';
+														  }?> </span></h3>
 				</div>
 				<div class="left">
 					<div id="login" class="contBox">
@@ -47,11 +51,19 @@
 								<tfoot><tr><td class="first"></td><td class="last"></td></tr></tfoot>
 								<tbody>
 									<tr>
-										<td class="inputNames"><label for="nick">Nickname</label></td>
+										<td class="inputNames"><label for="nick"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Pseudo';
+														 } else{
+														 	echo 'Nickname';
+														  }?> </label></td>
 										<td class="inputElements"><input name="nick" type="text" class="formField ffInput validate[required] text-input" id="nick" value=""></td>
 									</tr>
 									<tr>
-										<td class="inputNames"><label for="pass">Password</label></td>
+										<td class="inputNames"><label for="pass"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Mot de passe';
+														 } else{
+														 	echo 'Password';
+														  }?> </label></td>
 										<td class="inputElements"><input name="pass" type="password" class="formField ffInput validate[required] text-input" id="pass" value=""></td>
 									</tr>
 									<?php if ($this->session->userdata('result')!='')
@@ -69,13 +81,25 @@
 									</tr> -->
 									<tr>
 										<td><input name="nextpage" type="hidden" id="nextpage" value="/web/OptionalData-Save"></td>
-										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span>Log In</span></button></td>
+										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Connexion';
+														 } else{
+														 	echo 'Log In';
+														  }?> </span></button></td>
 									</tr>
 								</tbody>
 							</table>
 							<ul class="signonHelpers">
-								<li class="formTips"><a class="opener close" href="<?php echo base_url();?>dangky/forgotpass"><span>I forgot my password!</span></a></li>
-								<li><a class="opener close" href="<?php echo base_url();?>register"><span>New here? Register now!</span></a></li>
+								<li class="formTips"><a class="opener close" href="<?php echo base_url();?>dangky/forgotpass"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo "J'ai oublié mon mot de passe !";
+														 } else{
+														 	echo 'I forgot my password!';
+														  }?> </span></a></li>
+								<li><a class="opener close" href="<?php echo base_url();?>register"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo "Es-tu nouveau (nouvelle) ? Inscris-toi maintenant !";
+														 } else{
+														 	echo 'New here? Register now!';
+														  }?></span></a></li>
 							</ul>
 						</form>
 					</div>

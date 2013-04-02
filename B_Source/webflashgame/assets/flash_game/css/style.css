@@ -12,8 +12,8 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 .login{ background:url(../images/Belote_05.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:12px;}
 .register{ background:url(../images/Belote_07.png) no-repeat; width:85px; height:30px; border:0; color:#fff; cursor:pointer; text-transform: uppercase; font-weight:bold; font-size:11px;}
 #bottomheader{ width:100%; margin:0 auto;}
-#logo{ width:23%; float:left; margin-top:-40px; margin-left:176px}
-#menu{ width: 62%; float:left; font-size:34px; margin-top:15px; font-family: "Times New Roman", Times, serif !important}
+#logo{ width:27%; float:left; margin-top:-33px; margin-left:176px}
+#menu{ width: 56%; float:left; font-size:34px; margin-top:15px; font-family: "Times New Roman", Times, serif !important}
 #menu ul{ margin:0; padding:0 0 0 55px;}
 #menu li{ float:left; list-style:none; padding:20px; background:url(../images/vienmenu.png) -5px 10px no-repeat; cursor:pointer}
 #menu a{text-decoration:none; color:black;}
@@ -21,7 +21,7 @@ body{ background:url(../images/Belote_03.png) repeat; font-size:14px; font-famil
 #menu p{font-size:14px; padding:0px; margin:0px;}
 .item p{ width:137px !important; height:12px; margin:0;}
 #body{ width:100%; height:auto; clear:both; }
-#slider12{ width:100%; height:378px; background:#ff6b35;}
+#slider12{ width:100%; height:378px; background:#ff6b35; overflow:hidden}
 #slider img{ width:1000px !important; height:377px !important;}
 .slider{ width:1000px; margin:0 auto; }
 #main{ width:74.2%; margin:40px auto; }

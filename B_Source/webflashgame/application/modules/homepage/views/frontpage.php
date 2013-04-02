@@ -16,18 +16,16 @@
 		                 <?php echo $value->image5 ?>
 		                 <?php echo $value->image6 ?>
 		                 <?php } ?>
-		                 
 		            </div>				           
 		        </div>
-		       
-				
-				<!--	<img src="<?php echo base_url();?>assets/flash_game/images/bg.png"/>-->
+			
+					<img src="<?php echo base_url();?>assets/flash_game/images/bg.png"/>
 	</div><!-----------end slide-------------->
 <div id="main">
 					<div id="topmain">
 						<div class="texttopmain">
 							<p class="titlep"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Enregister';
+														 	echo 'S\'inscrire';
 														 } else{
 														 	echo 'Register';
 														  }?></p>
@@ -39,7 +37,7 @@
 				 						{ ?>
 								<p> <?php echo $value->b1fr ?></p>
 								<div class="submittextcontent" style="padding:11px 16px;"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Enregistrer gratuit';
+														 	echo 'S\'inscrire';
 														 } else{
 														 	echo 'Register free';
 														  }?></div>
@@ -48,9 +46,9 @@
 						</div>
 						<div class="texttopmain">
 							<p class="titlep"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Enregister';
+														 	echo 'Se connecter';
 														 } else{
-														 	echo 'Register';
+														 	echo 'Login';
 														  }?></p>
 							<div class="numbertexttopmain">
 								<img src="<?php echo base_url();?>assets/flash_game/images/2.png"/>
@@ -60,7 +58,7 @@
 				 						{ ?>
 								<p> <?php echo $value->b2fr ?></p>
 								<div class="submittextcontent" style="padding:11px 16px;"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Connecter';
+														 	echo 'Se Connecter';
 														 } else{
 														 	echo 'Login';
 														  }?></div>
@@ -69,9 +67,9 @@
 						</div>
 						<div class="texttopmain">
 							<p class="titlep"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Enregister';
+														 	echo 'Jouer';
 														 } else{
-														 	echo 'Register';
+														 	echo 'Play Online';
 														  }?></p>
 							<div class="numbertexttopmain">
 								<img src="<?php echo base_url();?>assets/flash_game/images/3.png"/>
@@ -81,7 +79,7 @@
 				 						{ ?>
 								<p> <?php echo $value->b3fr ?></p>
 								<div class="submittextcontent" style="padding:11px 16px;"><?php if ($_SESSION['lang']=="fr"){
-														 	echo 'Jouer en ligne';
+														 	echo 'Jouer';
 														 } else{
 														 	echo 'Play Online';
 														  }?></div>

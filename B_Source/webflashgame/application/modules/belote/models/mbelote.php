@@ -27,6 +27,21 @@ class Mbelote extends CI_Model
 		//var_dump($list);die();
 	 	return $list;
 	}
+	function CountRegister($tableName='')
+	 {
+ 		
+		 $this->db->select('id');
+		 $this->db->from('fg_accounts');
+ 		
+		 $ds=$this->db->get();
+		 $list=array();
+	 	 foreach($ds->result() as $item)
+	 	 {
+	 		 $list[]=$item;
+	 	 }
+	 	 $ds->free_result();
+	 	 return count($list);
+	 }
 	
 	function CountOnline($tableName='',$columnName='',$index='')
 	{

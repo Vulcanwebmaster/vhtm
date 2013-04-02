@@ -86,7 +86,7 @@
 									Tournoi (en)
 								<?php } else{ ?>
 									 Tournament (en)
-								<?php } ?> <span style="color:red">(*)</span></p></td>
+								<?php } ?> <span style="color:red"></span></p></td>
 					 						<td><input type="text" name="name_tour"></td>
 					 					</tr>
 					 					
@@ -97,7 +97,7 @@
 									Tournoi (fr)
 								<?php } else{ ?>
 									 Tournament (fr)
-								<?php } ?> <span style="color:red">(*)</span></p></td>
+								<?php } ?> <span style="color:red"></span></p></td>
 					 						<td><input type="text" name="name_tourfr"></td>
 					 					</tr>
 					 					<!-- <tr>
@@ -124,7 +124,7 @@
 									Haut 1 
 								<?php } else{ ?>
 									 Top 1
-								<?php } ?>   <span style="color:red">%(*)</span></p></td>
+								<?php } ?>   <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top1"></td>
 							 		</tr>	
 							 		<tr>	
@@ -133,7 +133,7 @@
 									Haut 2 
 								<?php } else{ ?>
 									 Top 2
-								<?php } ?> <span style="color:red">%(*)</span></p></td>
+								<?php } ?> <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top2"></td>
 							 		</tr>	
 							 		<tr>	
@@ -142,7 +142,7 @@
 									Haut 3 
 								<?php } else{ ?>
 									 Top 3
-								<?php } ?>  <span style="color:red">%(*)</span></p></td>
+								<?php } ?>  <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top3"></td>
 							 		</tr>
 							 		<tr>	
@@ -151,7 +151,7 @@
 									Haut 4 
 								<?php } else{ ?>
 									 Top 4
-								<?php } ?>  <span style="color:red">%(*)</span></p></td>
+								<?php } ?>  <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top4"></td>
 							 		</tr>
 							 		<tr>	
@@ -160,7 +160,7 @@
 									Haut 5 
 								<?php } else{ ?>
 									 Top 5
-								<?php } ?>  <span style="color:red">%(*)</span></p></td>
+								<?php } ?>  <span style="color:red">%</span></p></td>
 							 				<td><input type="text" name="top5"></td>
 							 		</tr>
 							 		<tr>
@@ -169,8 +169,8 @@
 									Joueur
 								<?php } else{ ?>
 									 Player
-								<?php } ?><span style="color: red">(*)</span> </p></td>
-							 				<td><input type="text" name="players"></span></td>
+								<?php } ?> </p></td>
+							 				<td><input type="text" name="players"></td>
 							 		</tr>
 							 		
 							 		<tr>
@@ -193,7 +193,7 @@
 									Haut 6 
 								<?php } else{ ?>
 									 Top 6
-								<?php } ?> <span style="color:red">%(*)</span></p></td>
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top6"></td>
 									 		</tr>		
 									 		<tr>
@@ -202,7 +202,7 @@
 									Haut 7 
 								<?php } else{ ?>
 									 Top 7
-								<?php } ?> <span style="color:red">%(*)</span></p></td>
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top7"></td>
 									 		</tr>	
 									 		<tr>
@@ -211,7 +211,7 @@
 									Haut 8 
 								<?php } else{ ?>
 									 Top 8
-								<?php } ?> <span style="color:red">%(*)</span></p></td>
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top8"></td>
 									 		</tr>	
 									 		<tr>
@@ -220,7 +220,7 @@
 									Haut 9 
 								<?php } else{ ?>
 									 Top 9
-								<?php } ?> <span style="color:red">%(*)</span></p></td>
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top9"></td>
 									 		</tr>	
 									 		<tr>
@@ -229,7 +229,7 @@
 									Haut 10 
 								<?php } else{ ?>
 									 Top 10
-								<?php } ?> <span style="color:red">%(*)</span></p></td>
+								<?php } ?> <span style="color:red">%</span></p></td>
 									 				<td><input type="text" name="top10"></td>
 									 		</tr>
 									 		<tr>
@@ -238,7 +238,7 @@
 									Date de début
 								<?php } else{ ?>
 									 Start date
-								<?php } ?>   <span style="color:red">(*)</span></p></td>
+								<?php } ?>   <span style="color:red"></span></p></td>
 									 				<td><input type="text" name="start_date" id="datetimepicker2"></td>
 									 		</tr>	
 									 		<tr>
@@ -247,7 +247,7 @@
 									Date de fin
 								<?php } else{ ?>
 									End date
-								<?php } ?>  <span style="color:red">(*)</span></p></td>
+								<?php } ?>  <span style="color:red"></span></p></td>
 									 				<td><input type="text" name="end_date" id="datetimepicker1"></td>
 									 		</tr>
 									 		<tr>

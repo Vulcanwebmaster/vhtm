@@ -36,7 +36,11 @@
 			<div id="container">	
 				<div id="tipHolder"></div>
 				<div id="heading">
-					<h3><span>Mot de passe oublie</span></h3>
+					<h3><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Mot de passe oublie';
+														 } else{
+														 	echo 'Forgot Password';
+														  }?> </span></h3>
 				</div>
 				<div class="left">
 					<div id="login" class="contBox">
@@ -47,7 +51,11 @@
 								<tfoot><tr><td class="first"></td><td class="last"></td></tr></tfoot>
 								<tbody>
 									<tr>
-										<td class="inputNames"><label for="nick">Email</label></td>
+										<td class="inputNames"><label for="nick"><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Courriel';
+														 } else{
+														 	echo 'Email';
+														  }?> </label></td>
 										<td class="inputElements"><input name="email" type="text" class="formField ffInput validate[required,custom[email]] text-input" id="nick"></td>
 									</tr>
 									<?php if ($this->session->userdata('result')!='')
@@ -59,7 +67,11 @@
 										}?>
 									<tr>
 										<td><input name="nextpage" type="hidden" id="nextpage" value="/web/OptionalData-Save"></td>
-										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span>Send</span></button></td>
+										<td class="inputElements"><button name="submit" type="submit" class="formButton fbSubmit"><span><?php if ($_SESSION['lang']=="fr"){
+														 	echo 'Envoyer';
+														 } else{
+														 	echo 'Send';
+														  }?> </span></button></td>
 									</tr>
 								</tbody>
 							</table>
