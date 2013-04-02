@@ -72,11 +72,12 @@
                             </div>
                         </div>
                         <?php } } ?>
-                        <!-- blog box-->
-                        <!-- paging-->
-                        <div class="paging blog" style="text-align: center">
+                         <div class="paging blog" style="text-align: center">
                         	<?php echo $this->pagination->create_links();?>
                         </div>
+                        <!-- blog box-->
+                        <!-- paging-->
+                        
                         <!-- / paging-->
                         <div class="clear">
                         </div>

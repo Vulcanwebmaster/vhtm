@@ -8,12 +8,22 @@ class sanpham extends NIW_Controller
 		$this->module=strtolower(get_class());
 		$this->load->model('Msanpham');
 		$this->load->helper('text'); //cop vao controller
+		$this->load->library('pagination');
 		$this->setLang();
 		$this->loadLang();
 	}
 	
-	function index()
-	{
+	function index($index=0)
+	{//Phân trang thành công
+				$config['base_url'] = base_url().'sanpham/index';
+				$config['per_page'] = 3;
+				$config['total_rows'] = count($this->Msanpham->getListFull('sanpham'));
+				$config['uri_segment'] = 3;
+				$this->pagination->initialize($config);
+				
+				//phai limit de lay so trang can phan
+				$data['items'] = $this->Msanpham->getListOffset('sanpham',4,$index);
+		
 		$data['lang']=$this->session->userdata("lang");
 		$data['title']='Niw - Sản phẩm';
 		$data['index']= 4 ;

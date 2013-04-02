@@ -19,17 +19,20 @@ class tintuc extends NIW_Controller
 	{
         $this->page();
 	}
-	function page()
+	function page($index=0)
 	{
-        // phân trang
-        $config['base_url'] = base_url('tintuc/page'); // xác định trang phân trang
-        $config['total_rows']=8; // xác định tổng số record
-        $config['per_page'] = 3; // xác định số record ở mỗi trang
-       
-        $this->pagination->initialize($config); 
+        $config['base_url'] = base_url().'tintuc/page';
+		$config['per_page'] = 3;
+		$config['total_rows'] = count($this->Mtintuc->getListFull('tintuc'));
+		$config['uri_segment'] = 3;
+		$this->pagination->initialize($config);
+				
+				//phai limit de lay so trang can phan
+		//$data['items'] = $this->Mtintuc->getListOffset('tintuc',4,$index);
+	    $data['list2']=$this->Mtintuc->getListOffset123('tintuc',8,'duyet',1,$index);
 		$data['list_tagv'] = $this->Mtintuc->getListFull('tagcloud');
 		$data['title']='Niw - Tin tức';
-		$data['list2']=$this->Mtintuc->getListOffset123('tintuc',8,'duyet',1);
+		
 
 		$data['list_tagscloud']=$this->Mtintuc->getListFull('tagcloud');
 		// Meta tags

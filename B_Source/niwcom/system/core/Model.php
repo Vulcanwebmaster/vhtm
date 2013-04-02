@@ -106,10 +106,10 @@ class CI_Model {
 	 	$ds->free_result();
 	 	return $list;
 	 }
- 	 function getListOffset123($tableName='',$offset='', $columnName='', $value='')
+ 	 function getListOffset123($tableName='',$offset='', $columnName='', $value='',$index='')
 	 {
 	 	$this->db->where($columnName,$value);
-	 	$ds=$this->db->get($tableName,$offset);
+	 	$ds=$this->db->get($tableName,$offset,$index);
 		
 		
 	 	$list=array();

@@ -110,7 +110,7 @@
                             <span>Các dịch vụ của NIW</span>
                         </li>
                         <li <?php if(isset($index)) if ($index == 4) echo 'class="current_page_item"'; ?>>
-                            <a href="<?php echo base_url();?>san-pham">Sản phẩm</a>
+                            <a href="<?php echo base_url();?>sanpham">Sản phẩm</a>
                             <span>Các sản phẩm của NIW</span>
                         </li>
                         <li <?php if(isset($index)) if ($index == 5) echo 'class="current_page_item"'; ?>>
@@ -118,7 +118,7 @@
                             <span>Thông tin liên hệ NIW</span>
                         </li>
                         <li <?php if(isset($index)) if ($index == 6) echo 'class="current_page_item"'; ?>>
-                            <a href="<?php echo base_url();?>tin-tuc">Tin tức</a>
+                            <a href="<?php echo base_url();?>tintuc">Tin tức</a>
                             <span>Tin tức - công nghệ</span>
                         </li>
 						<?php } else{ ?>
@@ -135,7 +135,7 @@
                             <span>The services of NIW</span>
                         </li>
                         <li <?php if(isset($index)) if ($index == 4) echo 'class="current_page_item"'; ?>>
-                            <a href="<?php echo base_url();?>san-pham">Products</a>
+                            <a href="<?php echo base_url();?>sanpham">Products</a>
                             <span>The products of NIW</span>
                         </li>
                         <li <?php if(isset($index)) if ($index == 5) echo 'class="current_page_item"'; ?>>
@@ -143,7 +143,7 @@
                             <span>Contact information NIW</span>
                         </li>
                         <li <?php if(isset($index)) if ($index == 6) echo 'class="current_page_item"'; ?>>
-                            <a href="<?php echo base_url();?>tin-tuc">News</a>
+                            <a href="<?php echo base_url();?>tintuc">News</a>
                             <span>News - Technology</span>
                         </li>	
 						<?php } ?>

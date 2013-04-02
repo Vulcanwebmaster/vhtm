@@ -32,9 +32,9 @@
                     <!-- row -->
                     <div class="row white">
                         <!-- box -->
-                        <?php if (isset($list_sanpham))
+                        <?php if (isset($items))
                             	{
-                            		foreach ($list_sanpham as $sanpham)
+                            		foreach ($items as $sanpham)
                             		{?>
                         <div class="box four">
                             <!-- title-->
@@ -54,9 +54,13 @@
                         <?php } } ?>
                         <!-- /box -->
                     </div>
+                    <div class="paging blog" style="text-align: center">
+                        	<?php echo $this->pagination->create_links();?>
+                        </div>
                     <!-- / row -->
                     <div class="clear">
                     </div>
+                    
                     <!-- End Porfolio Items -->
                     <!-- pagingation wrapper -->
                     <div class="row silver no-vertical-padding">
