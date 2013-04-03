@@ -27,15 +27,13 @@
 
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
-				<table class="tablesorter" cellspacing="0" style="width:1500px"> 
+				<table class="tablesorter" cellspacing="0" > 
 					<thead> 
 						<tr>
 		    				<th>Tên (V)</th>
 		    				<th>Model</th> 
 		    				<th>Hãng sản xuất</th>
 		    				<th>Giá</th>
-		    				<th>Công dụng (V)</th>
-		    				<th>Công dụng (E)</th>
 		    				<th>Hình ảnh</th>
 		    				<th>Mới</th>
 		    				<th>Action</th>
