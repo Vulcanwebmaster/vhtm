@@ -114,9 +114,10 @@
 					if ($this->Mtintuc->updateRowByColumn('tintuc','id',$id,$input))
 					{
 						$this->Mtintuc->deleteRowByColumn('tintuc_tags','id_tintuc',$id);
+						if($this->input->post('tags')!=NULL){
 						foreach($this->input->post('tags') as $value){
 							$this->Mtintuc->insertNewRow('tintuc_tags',array('id_tags'=>$value,'id_tintuc'=>$id));
-						}
+						}}
 						$this->session->set_userdata('result','Cập nhật thành công');
 					}
 					else $this->session->set_userdata('result','Cập nhật không thành công');
