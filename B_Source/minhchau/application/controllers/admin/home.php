@@ -10,10 +10,10 @@ class Home extends Admin_Controller {
 	
 	public function index()
 	{
-		$data["title"] = "Dash Broad";
+		$data["title"] = "Dash Board";
 		$data['page'] = "admin/home";
 		//Breadcrumb data
-		$data['bcCurrent'] = "Dash Broad";
+		$data['bcCurrent'] = "Dash Board";
 		
 		$this->load->view("admin/container",$data);
 	}
