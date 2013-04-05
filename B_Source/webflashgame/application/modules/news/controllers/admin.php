@@ -76,9 +76,10 @@
 					$input=$this->_input();
 					if ($this->Mnews->insertNewRow('fg_news',$input))
 					{
+						if($this->input->post('tags')!=NULL){
 						 foreach($this->input->post('tags') as $value){
 							 $this->Mnews->insertNewRow('fg_news_tag',array('id_tagv'=>$value,'id_news'=>$inserId = $this->db->insert_id()));
-						 }
+						 }}
 						$this->session->set_userdata('result','ajouter réussie nouveau');
 					}
 					else $this->session->set_userdata('result','ajouter fausses nouvelles');
@@ -125,10 +126,11 @@
 					if ($this->Mnews->updateRowByColumn('fg_news','id',$id,$input))
 					{
 						$this->Mnews->deleteRowByColumn('fg_news_tag','id_news',$id);
+						if($this->input->post('tags')!=NULL){
 						foreach($this->input->post('tags') as $value){
 							$this->Mnews->insertNewRow('fg_news_tag',array('id_tagv'=>$value,'id_news'=>$id));
 						}
-						
+						}
 						$this->session->set_userdata('result','mise à jour réussie');
 					}
 					else $this->session->set_userdata('result','mettre à jour les faux');

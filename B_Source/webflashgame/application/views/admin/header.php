@@ -1,3 +1,4 @@
+<?php ob_start() ?>
 <header id="header">
 	<hgroup>
 		<h1 class="site_title"><a href="<?php echo base_url()?>admin">Admin Site Web</a></h1>
