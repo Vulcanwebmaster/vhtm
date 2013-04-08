@@ -146,7 +146,20 @@ class Admin_Controller extends NIW_Controller
 		$name=str_replace('ữ', 'u', $name);
 		$name=str_replace('ư', 'u', $name);
 		
-		$name=str_replace(' ', '-', $name);
+		$name=str_replace('.', '-', $name);
+		$name=str_replace(';', '-', $name);
+		$name=str_replace(':', '-', $name);
+		$name=str_replace('?', '-', $name);
+		$name=str_replace('~', '-', $name);
+		$name=str_replace('!', '-', $name);
+		$name=str_replace('@', '-', $name);
+		$name=str_replace('#', '-', $name);
+		$name=str_replace('$', '-', $name);
+		$name=str_replace('%', '-', $name);
+		$name=str_replace('^', '-', $name);
+		$name=str_replace('&', '-', $name);
+		$name=str_replace('*', '-', $name);
+		$name=str_replace('', '-', $name);
 		$name=str_replace('đ', 'd', $name);
 		
 		return $name;
