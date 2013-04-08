@@ -59,7 +59,7 @@
 						{
 					?>
 							<div class="trangchuhehe">
-								<span style="font-weight:bold;"><?php echo $item->namev; ?></span>
+								<span style="font-weight:bold;"><?php if ($lang=='vn') echo $item->namev; else echo $item->namee; ?></span>
 								<br>
 								<a href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id."-".$item->id."-".$item->alias ?>" class="name">
 								<?php echo $item->image; ?>

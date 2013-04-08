@@ -10,7 +10,7 @@
         	</div>
 				
     		<div id="ja-content" class="clearfix">
-				<h1 class="componentheading">Tin tức </h1>
+				<h1 class="componentheading"><?php if ($lang=='vn') echo 'Tin tức'; else echo 'News'; ?> </h1>
 				<table class="blog" cellpadding="0" cellspacing="0">
 					<tr>
 						<td valign="top">

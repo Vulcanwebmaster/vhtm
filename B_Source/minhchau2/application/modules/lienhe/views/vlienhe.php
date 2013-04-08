@@ -18,7 +18,7 @@
 					<img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt="">
 					 <a href="<?php echo base_url() ?>lienhe"><?php echo $this->lang->line('content-lienhe'); ?> </a>
         	</div>
-			<h3 class="contentheading" style="color: red">Bạn hãy điền đầy đủ các thông tin dưới đây: </h3>
+			<h3 class="contentheading" style="color: red"><?php if ($lang=='vn') echo 'Bạn hãy điền đầy đủ các thông tin dưới đây:'; else echo 'Please fill out the information below:'; ?> </h3>
 			<div class="stuff">
         <div style="color:red">
          	<?php echo validation_errors();?>
@@ -42,7 +42,7 @@
 			<td><textarea name="contact_question" id="contact_question" class="Field300" rows="5" cols="50"></textarea></td></tr>
 			</table>
             <p class="Submit" style="text-align:center; width: 56%;">
-                <input type="submit" value="Gửi mẫu" class="ContactButton" style="height: 31px; width:85px">
+                <input type="submit" value="<?php if ($lang=='vn') echo 'Gửi mẫu'; else echo 'Send'; ?>" class="ContactButton" style="height: 31px; width:85px">
             </p>
          </form>
           

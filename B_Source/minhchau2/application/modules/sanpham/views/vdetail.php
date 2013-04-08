@@ -14,14 +14,12 @@
 					else echo $category->namee;
         		?>
 			</a><img src="<?php echo base_url()?>assets/minhchau2/images/arrow.png" alt=""> 
-        	
         		<?php
         			if($lang=='vn')
 						echo $product->namev;
 					else echo $product->namee;
         		?>
         	</div>
-
         	<!-- FEATURE PRODUCTS -->
         				<div id="ja-content" class="clearfix">
 						<div id="vmMainPage">
@@ -40,10 +38,6 @@
 											</h1>
 										</div>
 									</td>
-								<!--	<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px;">
-										<b>Các sản phẩm khác</b>
-									</td>
-								-->
 									<td>
 									</td>
 								</tr>
@@ -75,19 +69,19 @@
 																		<label style="color:#e04139;font-weight:bold; margin-left: 53px;">: <?php echo $product->model ?></label>
 																</div>
 																<div class="vmAttribChildDetail">
-																		<label style="color:#000000;font-weight:bold;">Hãng sản xuất </label>
+																		<label style="color:#000000;font-weight:bold;"><?php if ($lang=='vn') echo 'Hãng sản xuất'; else echo 'Manufacturer'; ?> </label>
 																		<label style="color:#e04139;font-weight:bold;">: <?php echo $product->hangsx ?></label>
 																</div>
 																<div class="vmAttribChildDetail">
-																		<label style="color:#000000;font-weight:bold;">Bảo hành </label>
+																		<label style="color:#000000;font-weight:bold;"><?php if ($lang=='vn') echo 'Bảo hành'; else echo 'Warranty'; ?> </label>
 																		<label style="color:#e04139;font-weight:bold;  margin-left: 30px;">: <?php echo $product->baohanh ?></label>
 																</div>
 																<div class="vmAttribChildDetail">
-																		<label style="color:#000000;font-weight:bold;">Kho hàng </label>
+																		<label style="color:#000000;font-weight:bold;"><?php if ($lang=='vn') echo 'Kho hàng'; else echo 'Warehouse'; ?> </label>
 																		<label style="color:#e04139;font-weight:bold; margin-left: 30px;">: <?php echo $product->khohang ?></label>
 																</div>
 																<div class="vmAttribChildDetail">
-																		<label style="color:#000000;font-weight:bold;">Giá tiền </label>
+																		<label style="color:#000000;font-weight:bold;"><?php if ($lang=='vn') echo 'Giá tiền'; else echo 'Price'; ?> </label>
 																		<label style="color:#e04139;font-weight:bold; margin-left: 41px;">: <?php echo $product->price ?> VNĐ</label>
 																</div>
 															</div>
@@ -98,26 +92,6 @@
 											<span style="font-style: italic;"></span>
 										</div>
 									</td>
-									<!--<td rowspan="2" style="background-color:#f9f9f9;padding-left:10px;font-family:Tahoma,Verdana,Arial;font-size:11px; vertical-align: top; width: 300px">
-										<table border="0" cellpadding="5" cellspacing="0" width="100%">     
-										<?php foreach ($relates as $item)
-										{?>	  
-											<tr align="left">
-												<td width="1" class="sectiontableentry3" style="padding:5px" ></td>
-												<td class="sectiontableentry2" style="text-transform:uppercase; padding:5px"> 
-												<span><a style="font-weight:bold;color:#033B7F;" title="" href="<?php echo base_url() ?>sanpham/chitiet/<?php echo $item->category_id?>/<?php echo $item->id ?>">
-													<?php if ($lang=="vn") echo $item->namev; else echo $item->namee ?>
-													</a></span></td>
-												</tr>
-												<tr align="left">
-													<td </td>
-													<td  class="sectiontableentry1" style="padding:5px">
-												<span style="font-weight:bold;color:#E04139;">Price: <?php echo $item->price ?></span>
-												</td>
-												</tr>
-										<?php }?>
-										</table>
-									</td>----->
 								</tr>        
 								<tr>
 									<td valign="bottom" align="center">
@@ -141,8 +115,8 @@
 											<div style="height: 23px;" class="ja-tabs-title-top">		
 													
 												<ul class="ja-tabs-title">
-													<li class="first"><h3><span>Chức năng</span></h3></li>
-													<li class="last"><h3><span>Thông số kĩ thuật</span></h3></li>
+													<li class="first"><h3><span><?php if ($lang=='vn') echo 'Chức năng'; else echo 'Function'; ?></span></h3></li>
+													<li class="last"><h3><span><?php if ($lang=='vn') echo 'Thông số kĩ thuật'; else echo 'Specifications'; ?></span></h3></li>
 													
 												</ul>
 											</div>
@@ -160,7 +134,7 @@
 												</div>
 												<div class="ja-tab-content" id="id_move2">
 													<div class="ja-tab-subcontent" >
-														<p><span style="font-size: 12pt;"><strong>THÔNG SỐ KỸ THUẬT<br></strong></span></p>
+														<p><span style="font-size: 12pt;"><strong><?php if ($lang=='vn') echo 'THÔNG SỐ KỸ THUẬT'; else echo 'Specifications'; ?><br></strong></span></p>
 														<span style="font-size: 12pt;"> </span> 
 														<ul>
 															<li><span style="font-size: 12pt;">
@@ -202,7 +176,7 @@
 						</table>
 						
 	<div id="relate_list">
-		<p style="font-weight: bold; font-size: 15px"> Sản phẩm liên quan</p>
+		<p style="font-weight: bold; font-size: 15px"><?php if ($lang=='vn') echo 'Sản phẩm liên quan'; else echo 'Related Products'; ?> </p>
 		<h4><?php echo $this->lang->line('detailpr-relates');?></h4>
 		<div id="items">
 			<?php foreach ($relates as $item)

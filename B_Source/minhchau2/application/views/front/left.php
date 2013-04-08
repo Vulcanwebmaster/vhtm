@@ -4,7 +4,12 @@
 ?>
 	<div id="ja-col">
 	  	<div class="moduletable_menuhilite">
-        <h3><span>Danh mục sản phẩm</span> </h3>
+        <h3><span><?php
+						if ($lang=='vn') 
+							echo 'Danh mục sản phẩm';
+						else echo 'List product';
+					?>
+        	</span> </h3>
 			
 				<?php
 					if(isset($parents))
@@ -73,7 +78,12 @@
         <!--------------end danh mục----------------------->
         <!---------------begin Hỗ trợ trực tuyến----------------------->
         <div class="moduletable">
-			<h3><span>HỖ TRỢ TRƯC TUYẾN</span></h3>
+			<h3><span><?php
+						if ($lang=='vn') 
+							echo 'HỖ TRỢ TRƯC TUYẾN';
+						else echo 'Support Online';
+					   ?>
+				</span></h3>
 			<div align="center">
 				<?php foreach ($list_hotro as $hotro)
 		        { ?>
@@ -86,7 +96,11 @@
 		<!---------------End Hỗ trợ trực tuyến----------------------->
         <!---------------begin đối tác----------------------->
 		<div class="moduletable_menuhilite">
-        	<h3><span>Đối tác</span></h3>
+        	<h3><span><?php
+						if ($lang=='vn') 
+							echo 'Đối tác';
+						else echo 'Partners';
+					   ?></span></h3>
         	        	<?php foreach($list_doitac as $doitac){ ?>
             	<p><a href="<?php echo $doitac->link ?>" target="_blank">
             				<?php echo $doitac->logo;?></a></p>

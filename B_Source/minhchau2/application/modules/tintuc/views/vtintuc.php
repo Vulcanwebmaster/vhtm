@@ -10,7 +10,7 @@
         	</div>
 				
     		<div id="ja-content" class="clearfix">
-				<h1 class="componentheading">Tin tức </h1>
+				<h1 class="componentheading"><?php if ($lang=='vn') echo 'Tin tức'; else echo 'News'; ?>  </h1>
 				<table class="blog" cellpadding="0" cellspacing="0">
 						<ul class="aboutus-menu">
 							<?php foreach($list_tintuc as $item)
@@ -23,40 +23,6 @@
 						  	    </li>
 						  	<?php }?>
 						</ul>
-					<!------<tr>
-						<td valign="top">
-									<?php foreach($list_tintuc as $item)
-										{?>
-							<div>							
-								<div class="contentpaneopen">
-									<h3 class="contentheading"><a href="<?php echo base_url();?>tintuc/detail/<?php echo $item->id;?>">
-										<?php if ($lang=="vn") echo strip_tags($item->tieude_v); else echo strip_tags($item->tieude_e);?></a></h2>
-									<div class="article-toolswrap">
-										<div class="article-tools clearfix">
-											<div class="article-meta">
-												<span class="createdate">
-													Ngày: <?php echo $item->ngaythang ?></span>
-											</div>
-										</div>
-									</div>
-									<div class="article-content">
-										<p><span style="font-size: 12pt !important ">
-												<?php 
-													if($lang=='vn')
-														echo $item->noidung_v;
-													else echo $item->noidung_e;
-												?>
-										   </span>
-										</p>
-								</div>
-							</div>
-
-							<span class="article_separator">&nbsp;</span>
-						</div>
-						<?php }?>
-					</td>
-				</tr>
-				------------->
 </table>
 
 </div>	

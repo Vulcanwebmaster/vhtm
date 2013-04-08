@@ -33,6 +33,14 @@
 						<span class="menu-title"><?php echo $this->lang->line('menu-lienhe')?></span></a>
 					</li> 
 				</ul>
-			</div>				
+			</div>		
+			<div style="float: right">
+                <a title="Viet Nam" class="j_ttip" href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>" >
+                	<img src="<?php echo base_url();?>assets/minhchau2/images/vietnam.jpg" height="20" alt="de" width="28" />
+                </a>
+            	<a title="English" class="j_ttip" href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>">
+                <img src="<?php echo base_url();?>assets/minhchau2/images/en.png" height="20" alt="en" width="28" />
+                </a>
+			</div>		
 		</div>
 <!-- END: MAIN NAVIGATION -->
