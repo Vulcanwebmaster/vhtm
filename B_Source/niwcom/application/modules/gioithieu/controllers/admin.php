@@ -20,7 +20,7 @@
 			//=============================================
 			
 			$data['info'] = $this->Mgioithieu->getRowByColumn('gioithieu','id',1);
-			var_dump($data['info']);die();
+			// var_dump($data['info']);die();
 			$data['title'] = 'Sửa giới thiệu';
 			$data['bcCurrent'] = 'Giới thiệu';
 			$data['module'] = $this->module;

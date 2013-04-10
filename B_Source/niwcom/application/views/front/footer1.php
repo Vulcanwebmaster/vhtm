@@ -1,124 +1,190 @@
-   
-   
-<div>
-	<div class="wrapper footer ie6fix" id="wrapper_footer_top" style="font-size: 10px">
-        <div class="overlay_top ie6fix">
-        </div>
-        <div class="center" id="footer_inside">
-            <div class="footerColumn column1 " style="width: 200px">
-                <div id="pages-3" class="box_small box widget widget_pages">
-                    <h3 class="widgettitle" id="xem">
-                    	<?php if ($_SESSION['lang']=="vn") 
-						{?>		
-							Xem...   
-						<?php } else{ ?>
-							Read...
-						<?php } ?>
-					</h3>
-                    <ul>
-                    	<?php if ($_SESSION['lang']=="vn") 
-						{?>		
-							<li class="page_item page-item-37 current_page_item"><a id="Trang_chu_footer" href="<?php echo base_url();?>">Trang chủ</a>
-	                            <ul class="children">
-	                                <li class="page_item page-item-50"><a href="<?php echo base_url();?>gioithieu" id="Gioi_thieu_footer">
-										Giới thiệu								</a></li>
-	                                <li class="page_item page-item-48"><a href="<?php echo base_url();?>dichvu" id="Dich_vu_footer">
-	                                	Dịch vụ    
-									</a></li>
-	                                <li class="page_item page-item-134"><a href="<?php echo base_url();?>tintuc" id="Tin_tuc_footer">
-	                                	Tin tức    
-									</a></li>
-	                            </ul>
-	                        </li>
-						<?php } else{ ?>
-							<li class="page_item page-item-37 current_page_item"><a id="Trang_chu_footer" href="<?php echo base_url();?>"> Homepage </a>
-	                            <ul class="children">
-	                                <li class="page_item page-item-50"><a href="<?php echo base_url();?>gioithieu" id="Gioi_thieu_footer">
-										About us								</a></li>
-	                                <li class="page_item page-item-48"><a href="<?php echo base_url();?>dichvu" id="Dich_vu_footer">
-	                                	Service     
-									</a></li>
-	                                <li class="page_item page-item-134"><a href="<?php echo base_url();?>tintuc" id="Tin_tuc_footer">
-	                                	News     
-									</a></li>
-	                            </ul>
-	                        </li>
-						<?php } ?>
 
-                        
+    </div>
+    <!-- / wrapper 2 end-->
+</div>
+<!-- / wrapper end-->
+ <!-- Footer -->
+        <div id="footer">
+            <div class="bottom_corners">
+            </div>
+            <!-- First Row -->
+            <div class="row footer">
+                <!-- box -->
+                <div class="box four first">
+                    <!-- Latest News -->
+                    <h5>
+                        Menu
+                    </h5>
+                    <ul class="footer_list">
+                        <?php if ($_SESSION['lang']=="vn") 
+						{?>		
+						<li class="current_page_item">
+                            <a href="<?php echo base_url();?>">Trang chủ</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>gioi-thieu">Giới thiệu</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>dich-vu">Dịch vụ</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>san-pham">Sản phẩm</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>lien-he">Liên hệ</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>tin-tuc">Tin tức</a>
+                        </li>
+						<?php } else{ ?>
+						<li class="current_page_item">
+                            <a href="<?php echo base_url();?>">Home</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>gioi-thieu">About us</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>dich-vu">Services</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>san-pham">Products</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>lien-he">Contact us</a>
+                        </li>
+                        <li >
+                            <a href="<?php echo base_url();?>tin-tuc">News</a>
+                        </li>	
+						<?php } ?>
                     </ul>
                 </div>
-            </div>
-            <div class="footerColumn column2 " style="width: 221px">
-                <div id="archives-3" class="box_small box widget widget_archive">
-                    <h3 class="widgettitle" id="download">
-                        Download</h3>
-                    <ul>
-                        <li><a href="http://kmplayer.en.softonic.com/" title="KMPlayer">KMPlayer Free</a></li>
-                        <li><a href="http://www.skype.com/intl/en/business/download/" title="SKYPE">Skype 5.6</a></li>
-                        <li><a href="http://free.avg.com/us-en/download" title="AVG">AVG Free Edition 2012 12.0</a></li>
-                        <li><a href="http://www.winxdvd.com/video-converter/download.htm" title="WINX">WinX
-                            Video Converter 4.5.6</a></li>
+                <!-- /box -->
+                <!-- box -->
+                <div class="box four">
+                    <!-- Links -->
+                    <h5>
+                        <?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Tin mới  
+						<?php } else{ ?>
+							Latest News
+						<?php } ?>
+                    </h5>
+                    <ul class="footer_list">
+                    	<?php foreach ($list_tintucft as $tintucft): ?>
+							<li>
+	                           <a href="<?php echo base_url();?>tintuc/detail/<?php echo $tintucft->id."/".$tintucft->alias;?>">
+            						<?php 
+            							if ($_SESSION['lang']=="vn"){
+									         echo word_limiter(strip_tags($tintucft->tieude), 6);
+										}else {
+											 echo word_limiter(strip_tags($tintucft->tieudee), 6);
+										} ?>
+								</a>
+	                        </li>
+						<?php endforeach ?>
                     </ul>
                 </div>
-            </div>
-            <div class="footerColumn column4 last" style="width: 445px">
-                <div id="community_news-3" class="box_small box widget community_news">
-                	<?php if ($_SESSION['lang']=="vn") 
-					{?>		
-						 <h3 class="widgettitle" id="tin_moi_nhat">
-                        Liên hệ</h3>
-                    	<ul>
-                    		<li>
-                    			<img alt="" src="<?php echo base_url();?>assets/niwcom/images/place-icon.png">
-                    			<span>Địa chỉ: Tòa nhà CT5B - Mễ Trì Thượng - Từ Liêm - Hà Nội.</span>
-                    		</li>
-                    		<li>
-                    			<img alt="" src="<?php echo base_url();?>assets/niwcom/images/phone-icon.png">
-                    			<span>Điện thoại: (+84) 85898964</span>
-                    		</li>
-                    		<li>
-                    			<img alt="" src="<?php echo base_url();?>assets/niwcom/images/mail-icon.png" style="height:10px; margin-top:5px">
-                    			<span>Email: support@niw.com.vn</span>
-                    		</li>
-                    	</ul>
-					<?php } else{ ?>
-						 <h3 class="widgettitle" id="tin_moi_nhat">
-                         Contact Us</h3>
-                    	<ul>
-                    		<li>
-                    			<img alt="" src="<?php echo base_url();?>assets/niwcom/images/place-icon.png">
-                    			<span>Address: CT5B Building - Me Tri Thuong - Tu Liem - Ha Noi.</span>
-                    		</li>
-                    		<li>
-                    			<img alt="" src="<?php echo base_url();?>assets/niwcom/images/phone-icon.png">
-                    			<span>Phone number: (+84) 85898964</span>
-                    		</li>
-                    		<li>
-                    			<img alt="" src="<?php echo base_url();?>assets/niwcom/images/mail-icon.png" style="height:10px; margin-top:5px">
-                    			<span>Email: support@niw.com.vn</span>
-                    		</li>
-                    	</ul>
-					<?php } ?>
-
-                   
+                <!-- /box -->
+                <!-- box -->
+                <div class="box four">
+                    <!-- box title-->
+                    <h5>
+                        <?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Sản phẩm  
+						<?php } else{ ?>
+							Products
+						<?php } ?>
+                    </h5>
+                    <!-- text-->
+                     <ul class="footer_list">
+                    	<?php foreach ($list_sanphamft as $sanphamft): ?>
+							<li>
+	                           <a target="_blank" href="<?php echo $sanphamft->link;?>">
+            						<?php echo $sanphamft->tensp ?>
+								</a>
+	                        </li>
+						<?php endforeach ?>
+                    </ul>
+                </div>
+                <!-- /box -->
+                <!-- box -->
+                <div class="box four last">
+                    <!-- box title-->
+                    <h5>
+                    	<?php if ($_SESSION['lang']=="vn") 
+						{?>		
+							Liên hệ
+						<?php } else{ ?>
+							Contact Form
+						<?php } ?>
+                    </h5>
+                    <div id="result_footer">
+                    </div>
+                    <div id="contact_form_footer">
+                        <!-- form -->
+                        		<?php if ($this->session->userdata('result')!='')
+								{
+									echo '<p style="color:red; padding-left:30px">';
+									echo $this->session->userdata('result');
+									$this->session->unset_userdata('result');
+									echo '</p>';
+								}?>
+                        <form action="<?php echo base_url();?>lienhe/send" id="validate_form_footer" method="post" class="showtextback">
+                            <fieldset>
+                                <ul>
+                                    <li>
+                                        <label for="name">
+                                        </label>
+                                        <input id="name" type="text" title="*" name="hoten" 
+                                         value="<?php if ($_SESSION['lang']=="vn") {?>Tên: (*)<?php } else{ ?>Your name: (*)<?php } ?>"
+                                         class="required" 
+                                         />
+                                    </li>
+                                    <li>
+                                        <label for="email">
+                                        </label>
+                                        <input id="email" type="text" title="*" name="email" 
+                                        value="<?php if ($_SESSION['lang']=="vn") {?>Email: (*)<?php } else{ ?>Your Email: (*)<?php } ?>" 
+                                        class="required email"
+                                        />
+                                    </li>
+                                    <li>
+                                        <label for="message">
+                                        </label>
+                                        <textarea id="message" title="*" name="noidung" rows="8" cols="40" class="required">
+                                            <?php if ($_SESSION['lang']=="vn") {?>Nội dung: (*)<?php } else{ ?>Your message: (*)<?php } ?>
+                                        </textarea>
+                                    </li>
+                                    <li>
+                                        <input type="submit" class="submitbutton2" value="<?php if ($_SESSION['lang']=="vn") {?>Gửi<?php } else{ ?>Send<?php } ?>" />
+                                        <span class="loading">
+                                        </span>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </form>
+                        <!--/ form -->
+                    </div>
+                </div>
+                <!-- /box -->
+                <div class="clear">
                 </div>
             </div>
-            <!--end footer_inside-->
+            <!-- / First Row -->
+            <!-- Second Row -->
+            <div class="second_footer">
+                <div class="row sfooter">
+                    Copyright © 2013, Công ty TNHH Công nghệ phần mềm - NIW, Design by <a href="http://niw.com.vn/"> NIW </a>
+                    <!-- social media icons -->
+                    <div class="social_media_icons">
+                        <a target="_blank" href="https://twitter.com/twitter" class="j_ttip" title="folllow us on twitter"><img src="<?php echo base_url();?>assets/niwcom/images/social_media/twitter_16.png" alt="" /></a>
+                        <a target="_blank" href="http://www.facebook.com/NiwVietNam" class="j_ttip" title="folllow us on facebook"><img src="<?php echo base_url();?>assets/niwcom/images/social_media/facebook_16.png" alt="" /></a>
+                    </div>
+                    <!-- / social media icons -->
+                </div>
+            </div>
+            <!-- / Second Row -->
         </div>
-    </div>
-
-    <div class="wrapper footer ie6fix" id="wrapper_footer_bottom">
-        <div id="footer_outside">
-            <span class="copyright">© Copyright <a href="http://niw.com.vn/">NIW – Công
-                ty TNHH Công nghệ phần mềm</a> - Design by NIW</span>
-            <ul class="social_bookmarks">
-                <li class="facebook"><a class="ie6fix" href="http://facebook.com.vn/">Facebook</a></li><li class="twitter"><a class="ie6fix" href="http://twitter.com/">Twitter</a></li><li class="flickr">
-                        <a class="ie6fix" href="http://www.flickr.com/">flickr</a></li>
-            </ul>
-            <a href="#top" class="scrollTop">top</a>
-            <!--end footer_outside-->
-        </div>
-        <!--end wrapper -->
-    </div>
-</div>	
+        <!-- / Footer -->
