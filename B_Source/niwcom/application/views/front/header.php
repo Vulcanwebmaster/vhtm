@@ -50,10 +50,10 @@
         <div id="mainHeader">
         <!--bookmarks-->
         <ul id="mainBooks">
-        	<li><a class="nws" href="http://www.snowdenindustries.com/newsletter.html?iframe=true&amp;width=670&amp;height=340" rel="blank"><span style="display: block;" class="nv">Newsletter</span><span style="display: none;" class="hv">&nbsp;</span></a></li>
+<!--         	<li><a class="nws" href="http://www.snowdenindustries.com/newsletter.html?iframe=true&amp;width=670&amp;height=340" rel="blank"><span style="display: block;" class="nv">Newsletter</span><span style="display: none;" class="hv">&nbsp;</span></a></li> -->
             <li><a class="fbk" href="http://www.facebook.com/NiwVietNam" rel="blank"><span style="display: block;" class="nv">Facebook</span><span style="display: none;" class="hv">&nbsp;</span></a></li>
             <li><a class="twi" href="http://twitter.com/" rel="blank"><span style="display: block;" class="nv">Twitter</span><span style="display: none;" class="hv">&nbsp;</span></a> </li>
-            <li><a class="lin" href="http://www.linkedin.com/in/dsnowden" rel="blank"><span style="display: block;" class="nv">Linked in</span><span style="display: none;" class="hv">&nbsp;</span></a></li>
+            <li><a class="lin" href="http://www.linkedin.com/" rel="blank"><span style="display: block;" class="nv">Linked in</span><span style="display: none;" class="hv">&nbsp;</span></a></li>
         </ul>
         <!--end bookmarks-->
         <div id="mainLogo">
