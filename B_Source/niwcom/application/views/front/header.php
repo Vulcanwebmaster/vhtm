@@ -50,6 +50,12 @@
         <div id="mainHeader">
         <!--bookmarks-->
         <ul id="mainBooks">
+                <a title="Viet Nam" class="j_ttip" href="<?php echo base_url();?>changelang/change/vn/<?php echo $this->uri->uri_string();?>" >
+                	<img src="<?php echo base_url();?>assets/niwcom/images/vietnam.jpg" height="18" alt="de" width="25" />
+                </a>
+            	<a title="English" class="j_ttip" href="<?php echo base_url();?>changelang/change/en/<?php echo $this->uri->uri_string();?>">
+                <img src="<?php echo base_url();?>assets/niwcom/images/assets/flags/en.png" height="18" alt="en" width="25" />
+                </a>
 <!--         	<li><a class="nws" href="http://www.snowdenindustries.com/newsletter.html?iframe=true&amp;width=670&amp;height=340" rel="blank"><span style="display: block;" class="nv">Newsletter</span><span style="display: none;" class="hv">&nbsp;</span></a></li> -->
             <li><a class="fbk" href="http://www.facebook.com/NiwVietNam" rel="blank"><span style="display: block;" class="nv">Facebook</span><span style="display: none;" class="hv">&nbsp;</span></a></li>
             <li><a class="twi" href="http://twitter.com/" rel="blank"><span style="display: block;" class="nv">Twitter</span><span style="display: none;" class="hv">&nbsp;</span></a> </li>
